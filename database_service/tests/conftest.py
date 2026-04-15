@@ -289,3 +289,67 @@ def pytest_addoption(parser):
         default=False,
         help="运行集成测试（需要外部服务）"
     )
+
+
+def pytest_sessionfinish(session, exitstatus):
+    """测试会话结束时调用，清理测试资源"""
+    print(f"\n🧹 测试会话结束，开始清理测试资源...")
+
+    try:
+        # 动态导入清理工具
+        import sys
+        import os
+        from pathlib import Path
+
+        # 获取项目根目录
+        current_dir = Path(__file__).parent
+        project_root = current_dir.parent.parent
+
+        # 添加路径
+        if str(project_root) not in sys.path:
+            sys.path.insert(0, str(project_root))
+
+        database_service_dir = project_root / "database_service"
+        if str(database_service_dir) not in sys.path:
+            sys.path.insert(0, str(database_service_dir))
+
+        # 导入清理工具
+        try:
+            from database_service.streams.utils.test_cleanup_tool import cleanup_test_environment
+
+            # 运行异步清理
+            import asyncio
+
+            async def run_cleanup():
+                try:
+                    result = await cleanup_test_environment(dry_run=False)
+
+                    if "error" in result:
+                        print(f"⚠️  清理失败: {result['error']}")
+                    else:
+                        streams_cleaned = result.get('streams_cleaned', 0)
+                        groups_cleaned = result.get('groups_cleaned', 0)
+                        memory_freed = result.get('memory_freed_bytes', 0)
+
+                        print(f"✅ 测试资源清理完成:")
+                        print(f"  清理Stream: {streams_cleaned} 个")
+                        print(f"  清理消费者组: {groups_cleaned} 个")
+
+                        if memory_freed > 0:
+                            print(f"  释放内存: {memory_freed / (1024 * 1024):.2f} MB")
+
+                        if streams_cleaned > 0 or groups_cleaned > 0:
+                            print(f"💡 避免了测试资源泄漏到生产环境")
+                except Exception as e:
+                    print(f"⚠️  清理过程出错: {e}")
+
+            # 运行异步清理
+            asyncio.run(run_cleanup())
+
+        except ImportError as e:
+            print(f"⚠️  清理工具不可用，跳过清理: {e}")
+        except Exception as e:
+            print(f"⚠️  清理过程出错: {e}")
+
+    except Exception as e:
+        print(f"⚠️  会话结束清理过程中出错: {e}")

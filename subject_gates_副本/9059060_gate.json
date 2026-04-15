@@ -1,0 +1,30 @@
+{
+  "must": [
+    "合作商",
+    "参股"
+  ],
+  "should": [
+    "公司"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "合作商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "合作商"
+    },
+    {
+      "term": "参股",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "参股"
+    }
+  ],
+  "subject_id": "9059060",
+  "quality": "weak",
+  "generated_at": "2026-04-04T16:03:44",
+  "semantic_type": "公司事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

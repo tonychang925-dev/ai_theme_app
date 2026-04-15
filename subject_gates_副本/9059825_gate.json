@@ -1,0 +1,37 @@
+{
+  "must": [
+    "阿里巴巴",
+    "阿里AI助手"
+  ],
+  "should": [
+    "个人AI助手应用",
+    "Qwen系列模型",
+    "开源大模型",
+    "阿里千问团队",
+    "通用AI助手灵光",
+    "ChatGPT",
+    "全球下载量已突破6亿次",
+    "对标ChatGPT等全球AI应用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "阿里巴巴",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "阿里巴巴"
+    },
+    {
+      "term": "阿里AI助手",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "阿里AI助手"
+    }
+  ],
+  "subject_id": "9059825",
+  "quality": "strong",
+  "generated_at": "2026-04-01T07:30:43",
+  "semantic_type": "技术突破与产品发布",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

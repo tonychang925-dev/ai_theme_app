@@ -1,0 +1,70 @@
+{
+  "must": [
+    "金融IT",
+    "证券IT",
+    "保险IT",
+    "银行IT",
+    "金融RPA"
+  ],
+  "should": [
+    "证券",
+    "保险",
+    "银行",
+    "金融",
+    "IT",
+    "RPA",
+    "一站式开户平台",
+    "人民币跨境支付系统",
+    "金融科技发展规划",
+    "离岸人民币金融市场",
+    "CIPS参与者",
+    "金融数字化智能化转型"
+  ],
+  "not": [
+    "债券市场对外开放",
+    "境内外金融市场联通合作",
+    "人民币债券",
+    "跨境投融资便利化",
+    "稳定币监管",
+    "数据要素试点",
+    "牌照申请"
+  ],
+  "evidence_refs": [
+    {
+      "term": "金融IT",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "金融IT"
+    },
+    {
+      "term": "证券IT",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "证券IT"
+    },
+    {
+      "term": "保险IT",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "保险IT"
+    },
+    {
+      "term": "银行IT",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "银行IT"
+    },
+    {
+      "term": "金融RPA",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "金融RPA"
+    }
+  ],
+  "subject_id": "9032675",
+  "quality": "weak",
+  "generated_at": "2026-04-02T08:20:16",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

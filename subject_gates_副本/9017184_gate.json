@@ -1,0 +1,60 @@
+{
+  "must": [
+    "医药外包（CXO）",
+    "CRO",
+    "CMO",
+    "CDMO"
+  ],
+  "should": [
+    "CSO",
+    "药物发现和研究",
+    "临床前CRO",
+    "临床CRO",
+    "大分子CDMO",
+    "小分子CDMO",
+    "细胞与基因治疗CTDMO",
+    "中国市场红利",
+    "全球产业转移",
+    "药品审评审批效率提升的政策措施",
+    "加快临床急需产品的审评审批",
+    "纳入优先审评审批程序"
+  ],
+  "not": [
+    "英伟达",
+    "礼来",
+    "联合研究实验室",
+    "人工智能"
+  ],
+  "evidence_refs": [
+    {
+      "term": "医药外包（CXO）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "医药外包（CXO）"
+    },
+    {
+      "term": "CRO",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "CRO"
+    },
+    {
+      "term": "CMO",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "CMO"
+    },
+    {
+      "term": "CDMO",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "CDMO"
+    }
+  ],
+  "subject_id": "9017184",
+  "quality": "strong",
+  "generated_at": "2026-03-31T16:48:17",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

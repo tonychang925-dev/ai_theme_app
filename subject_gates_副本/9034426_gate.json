@@ -1,0 +1,50 @@
+{
+  "must": [
+    "轴承",
+    "支承旋转轴",
+    "承受载荷"
+  ],
+  "should": [
+    "支承旋转轴或其他运动体",
+    "引导转动或移动运动",
+    "承受由轴或轴上零件传递而来的载荷",
+    "现代机械设备",
+    "机械的关节"
+  ],
+  "not": [
+    "宇树科技",
+    "四足机器狗",
+    "Unitree A2",
+    "新款产品",
+    "傅利叶",
+    "GRx系列",
+    "GR-3",
+    "医用康养机器人"
+  ],
+  "evidence_refs": [
+    {
+      "term": "轴承",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "轴承"
+    },
+    {
+      "term": "支承旋转轴",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "支承旋转轴"
+    },
+    {
+      "term": "承受载荷",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "承受载荷"
+    }
+  ],
+  "subject_id": "9034426",
+  "quality": "medium",
+  "generated_at": "2026-03-10T19:25:48",
+  "semantic_type": "机械基础零部件",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

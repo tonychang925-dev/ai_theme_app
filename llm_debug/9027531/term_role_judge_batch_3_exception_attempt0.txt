@@ -1,1 +1,0 @@
-ConnectionError(ReadTimeoutError("HTTPSConnectionPool(host='api.deepseek.com', port=443): Read timed out."))

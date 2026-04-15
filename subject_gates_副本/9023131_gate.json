@@ -1,0 +1,51 @@
+{
+  "must": [
+    "Megapack储能系统",
+    "特斯拉",
+    "上海储能超级工厂"
+  ],
+  "should": [
+    "集装箱大小的3兆瓦时电池系统",
+    "模块",
+    "逆变器",
+    "热系统",
+    "Powerwall",
+    "3兆瓦时电池系统",
+    "2XL型号",
+    "3.9MWh",
+    "多合一的公用事业级储能系统",
+    "储存风能或太阳能等清洁能源",
+    "在电力需求过剩时使用",
+    "年产能可达1万台"
+  ],
+  "not": [
+    "内华达超级工厂",
+    "电动汽车需求"
+  ],
+  "evidence_refs": [
+    {
+      "term": "Megapack储能系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Megapack储能系统"
+    },
+    {
+      "term": "特斯拉",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "特斯拉"
+    },
+    {
+      "term": "上海储能超级工厂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "上海储能超级工厂"
+    }
+  ],
+  "subject_id": "9023131",
+  "quality": "medium",
+  "generated_at": "2026-04-02T13:54:45",
+  "semantic_type": "技术产品与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

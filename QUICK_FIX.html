@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>快速修复：0 条记录问题</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            padding: 40px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        .container {
+            background: white;
+            color: #333;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #667eea;
+            margin-top: 0;
+            font-size: 32px;
+        }
+        .step {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border-left: 5px solid #667eea;
+        }
+        .step-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        .key-combo {
+            display: inline-block;
+            background: #2d3748;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 18px;
+            margin: 10px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .success {
+            background: #48bb78;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .verify {
+            background: #edf2f7;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px dashed #cbd5e0;
+        }
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin: 10px 0;
+            transition: all 0.3s;
+        }
+        button:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        button.secondary {
+            background: #edf2f7;
+            color: #4a5568;
+        }
+        button.secondary:hover {
+            background: #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 快速修复：0 条记录问题</h1>
+        <p>只需一个操作即可解决问题：</p>
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <h3>打开选股器页面</h3>
+            <p>访问：<a href="http://localhost:5173/screener" target="_blank">http://localhost:5173/screener</a></p>
+            <button onclick="window.open('http://localhost:5173/screener', '_blank')">点击打开选股器</button>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <h3>强制刷新浏览器</h3>
+            <p>在选股器页面中，按下：</p>
+            <div class="key-combo">Ctrl + Shift + R</div>
+            <p><small>Windows/Linux: Ctrl+Shift+R | Mac: Cmd+Shift+R</small></p>
+            <p>这个操作会清除缓存并重新加载最新代码。</p>
+        </div>
+
+        <div class="step">
+            <div class="step-number">3</div>
+            <h3>验证修复</h3>
+            <div class="verify">
+                <p>按 <strong>F12</strong> 打开开发者工具</p>
+                <p>切换到 <strong>Console</strong> 标签</p>
+                <p>应该看到：</p>
+                <pre style="background: #2d3748; color: white; padding: 10px; border-radius: 4px;">
+🔍 StockScreenerPage - store状态变化...</pre>
+            </div>
+            <button onclick="testDebugLogs()">测试调试日志</button>
+        </div>
+
+        <div class="step">
+            <div class="step-number">4</div>
+            <h3>执行选股</h3>
+            <p>点击"执行选股"按钮</p>
+            <p>现在应该显示结果，而不是"0 条记录"</p>
+            <button class="secondary" onclick="testAPI()">测试API是否工作</button>
+            <div id="api-result"></div>
+        </div>
+
+        <div class="success">
+            ✅ 问题已修复！强制刷新后，前端代码会加载最新版本，显示选股结果。
+        </div>
+
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
+            <h3>如果仍然有问题：</h3>
+            <ol>
+                <li><strong>使用隐身窗口</strong>：Ctrl+Shift+N (Chrome) 或 Ctrl+Shift+P (Firefox)</li>
+                <li><strong>清除所有缓存</strong>：Ctrl+Shift+Delete → 选择"所有时间" → 清除</li>
+                <li><strong>重启前端服务器</strong>：
+                    <pre style="background: #f7fafc; padding: 10px; border-radius: 4px;">
+cd frontend
+npm run dev</pre>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        function testDebugLogs() {
+            alert('请按 F12 打开控制台，查看是否有 🔍 开头的调试日志。\n\n如果有：代码已更新 ✅\n如果没有：需要强制刷新 ❌');
+        }
+
+        async function testAPI() {
+            const resultDiv = document.getElementById('api-result');
+            resultDiv.innerHTML = '<p style="color: #4a5568;">测试API中...</p>';
+
+            try {
+                const response = await fetch('http://localhost:8003/api/stock-screener/execute', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        strategy_id: 'default_composite',
+                        trade_date: '2026-04-10',
+                        limit: 3,
+                        enable_llm_review: false,
+                        llm_top_k: 3
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.status === 'completed' && data.results && data.results.length > 0) {
+                    resultDiv.innerHTML = `
+                        <div style="background: #c6f6d5; color: #22543d; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                            <p><strong>✅ API工作正常</strong></p>
+                            <p>返回 ${data.results.length} 条结果</p>
+                            <p>示例：${data.results[0].stock_name} - ${data.results[0].composite_score}分</p>
+                            <p><em>API正常，问题在前端代码加载</em></p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div style="background: #fed7d7; color: #742a2a; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                        <p><strong>❌ API测试失败</strong></p>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

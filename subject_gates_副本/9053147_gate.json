@@ -1,0 +1,56 @@
+{
+  "must": [
+    "英伟达AI芯片",
+    "英伟达H20",
+    "英伟达GB300"
+  ],
+  "should": [
+    "OpenAI",
+    "数据中心",
+    "吉瓦级英伟达系统",
+    "人工智能算力芯片",
+    "专用GPU",
+    "Rubin CPX",
+    "工业富联",
+    "合作伙伴关系",
+    "投资",
+    "基础设施建设",
+    "人工智能基础设施",
+    "长上下文工作负载"
+  ],
+  "not": [
+    "第三财季营收",
+    "同比增长",
+    "市场预期",
+    "第四财季营收",
+    "股价",
+    "收创记录新高",
+    "Q2季度财报"
+  ],
+  "evidence_refs": [
+    {
+      "term": "英伟达AI芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "英伟达AI芯片"
+    },
+    {
+      "term": "英伟达H20",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "英伟达H20"
+    },
+    {
+      "term": "英伟达GB300",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "英伟达GB300"
+    }
+  ],
+  "subject_id": "9053147",
+  "quality": "weak",
+  "generated_at": "2026-04-01T23:54:35",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

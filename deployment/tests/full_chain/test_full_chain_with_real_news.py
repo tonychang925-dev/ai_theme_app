@@ -1,0 +1,487 @@
+#!/usr/bin/env python3
+"""
+AI主题分析应用 - 全链路测试脚本（真实新闻）
+使用真实新闻源测试全链路性能和稳定性
+"""
+
+import json
+import time
+import asyncio
+import aiohttp
+from datetime import datetime, timedelta
+import sys
+import os
+import random
+
+# 添加项目根目录到路径
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+
+# 导入环境变量工具
+try:
+    from env_utils import get_deepseek_api_key
+except ImportError:
+    # 如果env_utils不存在，创建简单的替代函数
+    def get_deepseek_api_key(env_file=".env.theme"):
+        """从环境变量文件获取DeepSeek API密钥"""
+        import re
+        if os.path.exists(env_file):
+            try:
+                with open(env_file, 'r', encoding='utf-8') as f:
+                    for line in f:
+                        match = re.match(r'DEEPSEEK_API_KEY\s*=\s*(.+)', line.strip())
+                        if match:
+                            value = match.group(1).strip()
+                            # 移除引号
+                            if (value.startswith('"') and value.endswith('"')) or \
+                               (value.startswith("'") and value.endswith("'")):
+                                value = value[1:-1]
+                            return value
+            except Exception as e:
+                print(f"读取环境变量文件失败: {str(e)}")
+        return os.environ.get('DEEPSEEK_API_KEY')
+
+
+class RealNewsFullChainTester:
+    """真实新闻全链路测试器"""
+
+    def __init__(self, base_url="http://localhost:8002", api_key=None, env_file=".env.theme"):
+        self.base_url = base_url
+
+        # 优先使用传入的api_key，否则从环境文件读取
+        if api_key:
+            self.api_key = api_key
+        else:
+            self.api_key = get_deepseek_api_key(env_file)
+
+        self.session = None
+        self.test_results = []
+        self.performance_metrics = []
+
+        # 打印API密钥状态（安全地）
+        if self.api_key:
+            masked_key = self.api_key[:4] + '*' * (len(self.api_key) - 8) + self.api_key[-4:] if len(self.api_key) > 8 else '****'
+            print(f"使用API密钥: {masked_key}")
+        else:
+            print("警告: 未设置API密钥，某些功能可能受限")
+
+    async def __aenter__(self):
+        headers = {}
+        if self.api_key:
+            headers["Authorization"] = f"Bearer {self.api_key}"
+
+        self.session = aiohttp.ClientSession(headers=headers)
+        return self
+    
+    async def __aexit__(self, exc_type, exc_val, exc_tb):
+        if self.session:
+            await self.session.close()
+    
+    async def collect_real_news(self, count=50):
+        """收集真实新闻（模拟）"""
+        print(f"1. 收集真实新闻（目标: {count}条）...")
+        
+        # 模拟新闻源
+        news_sources = [
+            "财联社", "科创板日报", "新华社", "央视新闻", "第一财经",
+            "证券时报", "中国证券报", "界面新闻", "澎湃新闻", "每日经济新闻"
+        ]
+        
+        news_topics = [
+            "科技", "金融", "消费", "医药", "新能源", "人工智能",
+            "半导体", "汽车", "房地产", "教育", "旅游", "农业"
+        ]
+        
+        news_items = []
+        
+        for i in range(count):
+            source = random.choice(news_sources)
+            topic = random.choice(news_topics)
+            timestamp = datetime.now() - timedelta(minutes=random.randint(0, 60))
+            
+            # 生成模拟新闻内容
+            news_templates = [
+                f"{source}报道：{topic}行业迎来政策利好，相关企业有望受益",
+                f"据{source}消息，{topic}板块今日表现活跃，多只个股涨停",
+                f"{source}讯：{topic}领域技术创新取得突破，市场前景广阔",
+                f"{source}从权威渠道获悉，{topic}产业规划即将出台",
+                f"{source}快讯：{topic}概念股集体上涨，资金流入明显"
+            ]
+            
+            content = random.choice(news_templates)
+            
+            news_items.append({
+                "id": f"news_real_{i:04d}",
+                "content": content,
+                "source": source,
+                "topic": topic,
+                "timestamp": timestamp.isoformat(),
+                "metadata": {
+                    "test_type": "real_news_performance",
+                    "batch_id": f"batch_{datetime.now().strftime('%Y%m%d_%H%M')}"
+                }
+            })
+        
+        print(f"  生成 {len(news_items)} 条模拟真实新闻")
+        return news_items
+    
+    async def test_news_processing_performance(self, news_items, concurrent_workers=5):
+        """测试新闻处理性能"""
+        print(f"2. 测试新闻处理性能（并发数: {concurrent_workers}）...")
+        
+        semaphore = asyncio.Semaphore(concurrent_workers)
+        results = []
+        errors = []
+        
+        async def process_news(news):
+            async with semaphore:
+                start_time = time.time()
+                
+                try:
+                    payload = {
+                        "content": news["content"],
+                        "source": news["source"],
+                        "timestamp": news["timestamp"],
+                        "metadata": {
+                            **news["metadata"],
+                            "performance_test": True,
+                            "worker_id": id(asyncio.current_task())
+                        }
+                    }
+                    
+                    async with self.session.post(
+                        f"{self.base_url}/api/events/process",
+                        json=payload,
+                        timeout=60
+                    ) as response:
+                        end_time = time.time()
+                        response_time = end_time - start_time
+                        
+                        if response.status in [200, 202]:
+                            result = await response.json()
+                            
+                            return {
+                                "news_id": news["id"],
+                                "status": "success",
+                                "response_time": response_time,
+                                "event_id": result.get("event_id"),
+                                "worker_id": id(asyncio.current_task())
+                            }
+                        else:
+                            return {
+                                "news_id": news["id"],
+                                "status": f"error_{response.status}",
+                                "response_time": response_time,
+                                "error": await response.text(),
+                                "worker_id": id(asyncio.current_task())
+                            }
+                            
+                except Exception as e:
+                    end_time = time.time()
+                    return {
+                        "news_id": news["id"],
+                        "status": "exception",
+                        "response_time": end_time - start_time,
+                        "error": str(e),
+                        "worker_id": id(asyncio.current_task())
+                    }
+        
+        # 并发处理新闻
+        print(f"  开始并发处理 {len(news_items)} 条新闻...")
+        tasks = [process_news(news) for news in news_items]
+        results = await asyncio.gather(*tasks)
+        
+        # 分析结果
+        success_count = sum(1 for r in results if r["status"] == "success")
+        error_count = len(results) - success_count
+        
+        response_times = [r["response_time"] for r in results if r["response_time"]]
+        avg_response_time = sum(response_times) / len(response_times) if response_times else 0
+        
+        print(f"  处理完成: {success_count}/{len(news_items)} 成功")
+        print(f"  平均响应时间: {avg_response_time:.2f}秒")
+        
+        return results, avg_response_time
+    
+    async def monitor_system_metrics(self, duration_minutes=5):
+        """监控系统指标"""
+        print(f"3. 监控系统指标（时长: {duration_minutes}分钟）...")
+        
+        metrics = []
+        end_time = time.time() + duration_minutes * 60
+        
+        while time.time() < end_time:
+            try:
+                # 获取系统状态
+                async with self.session.get(f"{self.base_url}/api/health", timeout=5) as response:
+                    if response.status == 200:
+                        health_data = await response.json()
+                        
+                        # 获取主题数量
+                        async with self.session.get(f"{self.base_url}/api/themes?limit=1") as theme_res:
+                            theme_count = 0
+                            if theme_res.status == 200:
+                                theme_data = await theme_res.json()
+                                theme_count = theme_data.get("total", 0)
+                        
+                        # 获取情报流数量
+                        async with self.session.get(f"{self.base_url}/api/intel/feed?limit=1") as intel_res:
+                            intel_count = 0
+                            if intel_res.status == 200:
+                                intel_data = await intel_res.json()
+                                intel_count = intel_data.get("total", 0)
+                        
+                        metric = {
+                            "timestamp": datetime.now().isoformat(),
+                            "system_health": health_data.get("status", "unknown"),
+                            "theme_count": theme_count,
+                            "intel_count": intel_count,
+                            "response_time": response.elapsed.total_seconds()
+                        }
+                        
+                        metrics.append(metric)
+                        
+                        print(f"  监控点 {len(metrics)}: 主题={theme_count}, 情报={intel_count}, 响应={metric['response_time']:.3f}s")
+                        
+            except Exception as e:
+                print(f"  监控异常: {str(e)}")
+            
+            # 每30秒监控一次
+            await asyncio.sleep(30)
+        
+        return metrics
+    
+    async def test_concurrent_users(self, user_count=10, requests_per_user=20):
+        """测试并发用户"""
+        print(f"4. 测试并发用户（用户数: {user_count}, 请求数/用户: {requests_per_user}）...")
+        
+        async def simulate_user(user_id):
+            user_results = []
+            
+            for i in range(requests_per_user):
+                start_time = time.time()
+                
+                # 随机选择API端点
+                endpoints = [
+                    ("/api/themes", "GET"),
+                    ("/api/intel/feed", "GET"),
+                    ("/api/recap/daily", "GET"),
+                    ("/api/stocks/000001", "GET")
+                ]
+                
+                endpoint, method = random.choice(endpoints)
+                
+                try:
+                    if method == "GET":
+                        async with self.session.get(
+                            f"{self.base_url}{endpoint}",
+                            timeout=10
+                        ) as response:
+                            end_time = time.time()
+                            
+                            user_results.append({
+                                "user_id": user_id,
+                                "request_id": i,
+                                "endpoint": endpoint,
+                                "status": response.status,
+                                "response_time": end_time - start_time,
+                                "success": response.status == 200
+                            })
+                    
+                    # 随机延迟
+                    await asyncio.sleep(random.uniform(0.5, 2.0))
+                    
+                except Exception as e:
+                    end_time = time.time()
+                    user_results.append({
+                        "user_id": user_id,
+                        "request_id": i,
+                        "endpoint": endpoint,
+                        "status": "exception",
+                        "response_time": end_time - start_time,
+                        "success": False,
+                        "error": str(e)
+                    })
+            
+            return user_results
+        
+        # 并发模拟用户
+        print(f"  启动 {user_count} 个并发用户...")
+        tasks = [simulate_user(i) for i in range(user_count)]
+        all_results = await asyncio.gather(*tasks)
+        
+        # 扁平化结果
+        flat_results = []
+        for user_results in all_results:
+            flat_results.extend(user_results)
+        
+        # 计算性能指标
+        success_count = sum(1 for r in flat_results if r["success"])
+        total_requests = len(flat_results)
+        success_rate = success_count / total_requests if total_requests > 0 else 0
+        
+        response_times = [r["response_time"] for r in flat_results]
+        avg_response_time = sum(response_times) / len(response_times) if response_times else 0
+        
+        print(f"  并发测试完成: {success_count}/{total_requests} 成功 ({success_rate*100:.1f}%)")
+        print(f"  平均响应时间: {avg_response_time:.2f}秒")
+        
+        return flat_results, success_rate, avg_response_time
+    
+    async def generate_performance_report(self, all_results):
+        """生成性能报告"""
+        print("5. 生成性能报告...")
+        
+        report = {
+            "test_name": "full_chain_real_news_performance",
+            "start_time": datetime.now().isoformat(),
+            "test_configuration": {
+                "news_count": len(all_results.get("news_items", [])),
+                "concurrent_workers": 5,
+                "monitoring_duration_minutes": 5,
+                "concurrent_users": 10,
+                "requests_per_user": 20
+            },
+            "performance_metrics": {
+                "news_processing": {
+                    "total_news": len(all_results.get("processing_results", [])),
+                    "success_rate": all_results.get("processing_success_rate", 0),
+                    "avg_response_time": all_results.get("avg_processing_time", 0)
+                },
+                "concurrent_users": {
+                    "total_requests": len(all_results.get("concurrent_results", [])),
+                    "success_rate": all_results.get("concurrent_success_rate", 0),
+                    "avg_response_time": all_results.get("avg_concurrent_time", 0)
+                },
+                "system_stability": {
+                    "monitoring_points": len(all_results.get("system_metrics", [])),
+                    "avg_response_time": sum(m.get("response_time", 0) for m in all_results.get("system_metrics", [])) / max(1, len(all_results.get("system_metrics", [])))
+                }
+            },
+            "recommendations": []
+        }
+        
+        # 生成建议
+        if report["performance_metrics"]["news_processing"]["avg_response_time"] > 2.0:
+            report["recommendations"].append("新闻处理响应时间较长，建议优化AI模型推理性能")
+        
+        if report["performance_metrics"]["concurrent_users"]["success_rate"] < 0.95:
+            report["recommendations"].append("并发用户成功率较低，建议优化系统并发处理能力")
+        
+        if report["performance_metrics"]["concurrent_users"]["avg_response_time"] > 1.0:
+            report["recommendations"].append("并发响应时间较长，建议增加缓存或优化数据库查询")
+        
+        return report
+    
+    async def run_performance_test(self):
+        """运行性能测试"""
+        print("=" * 60)
+        print("AI主题分析应用 - 全链路性能测试（真实新闻）")
+        print(f"开始时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        print("=" * 60)
+        
+        start_time = time.time()
+        all_results = {}
+        
+        try:
+            # 1. 收集真实新闻
+            news_items = await self.collect_real_news(50)
+            all_results["news_items"] = news_items
+            
+            # 2. 测试新闻处理性能
+            processing_results, avg_processing_time = await self.test_news_processing_performance(news_items)
+            all_results["processing_results"] = processing_results
+            all_results["avg_processing_time"] = avg_processing_time
+            
+            processing_success = sum(1 for r in processing_results if r["status"] == "success")
+            all_results["processing_success_rate"] = processing_success / len(processing_results)
+            
+            # 3. 监控系统指标
+            print("\n等待系统稳定...")
+            await asyncio.sleep(30)
+            
+            system_metrics = await self.monitor_system_metrics(5)
+            all_results["system_metrics"] = system_metrics
+            
+            # 4. 测试并发用户
+            concurrent_results, concurrent_success_rate, avg_concurrent_time = await self.test_concurrent_users()
+            all_results["concurrent_results"] = concurrent_results
+            all_results["concurrent_success_rate"] = concurrent_success_rate
+            all_results["avg_concurrent_time"] = avg_concurrent_time
+            
+            # 5. 生成报告
+            report = await self.generate_performance_report(all_results)
+            
+            end_time = time.time()
+            report["end_time"] = datetime.fromtimestamp(end_time).isoformat()
+            report["total_duration_seconds"] = end_time - start_time
+            
+            # 保存报告
+            report_file = f"full_chain_real_news_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+            with open(report_file, 'w', encoding='utf-8') as f:
+                json.dump(report, f, ensure_ascii=False, indent=2)
+            
+            print("=" * 60)
+            print("性能测试完成报告:")
+            print(f"总耗时: {report['total_duration_seconds']:.2f} 秒")
+            print(f"新闻处理成功率: {report['performance_metrics']['news_processing']['success_rate']*100:.1f}%")
+            print(f"并发用户成功率: {report['performance_metrics']['concurrent_users']['success_rate']*100:.1f}%")
+            print(f"平均处理时间: {report['performance_metrics']['news_processing']['avg_response_time']:.2f}秒")
+            print(f"平均并发响应: {report['performance_metrics']['concurrent_users']['avg_response_time']:.2f}秒")
+            print(f"监控点数量: {report['performance_metrics']['system_stability']['monitoring_points']}")
+            
+            if report["recommendations"]:
+                print("\n优化建议:")
+                for i, rec in enumerate(report["recommendations"], 1):
+                    print(f"  {i}. {rec}")
+            
+            print(f"\n详细报告已保存到: {report_file}")
+            print("=" * 60)
+            
+            # 评估测试结果
+            success = (
+                report["performance_metrics"]["news_processing"]["success_rate"] > 0.8 and
+                report["performance_metrics"]["concurrent_users"]["success_rate"] > 0.9 and
+                report["performance_metrics"]["concurrent_users"]["avg_response_time"] < 2.0
+            )
+            
+            return success, report
+            
+        except Exception as e:
+            print(f"性能测试异常: {str(e)}")
+            return False, {"error": str(e)}
+
+
+async def main():
+    """主函数"""
+    import argparse
+    
+    parser = argparse.ArgumentParser(description='AI主题分析应用全链路性能测试（真实新闻）')
+    parser.add_argument('--base-url', default='http://localhost:8000', help='API基础URL')
+    parser.add_argument('--api-key', help='API密钥（如果不提供，将从.env.theme读取）')
+    parser.add_argument('--env-file', default='.env.theme', help='环境变量文件路径')
+    parser.add_argument('--news-count', type=int, default=50, help='测试新闻数量')
+    parser.add_argument('--concurrent-users', type=int, default=10, help='并发用户数')
+
+    args = parser.parse_args()
+
+    async with RealNewsFullChainTester(args.base_url, args.api_key, args.env_file) as tester:
+        success, report = await tester.run_performance_test()
+        
+        if success:
+            print("\n✅ 全链路性能测试通过！系统性能满足要求。")
+            return 0
+        else:
+            print("\n⚠️  全链路性能测试未完全通过，请查看报告中的建议。")
+            return 1
+
+
+if __name__ == "__main__":
+    try:
+        exit_code = asyncio.run(main())
+        sys.exit(exit_code)
+    except KeyboardInterrupt:
+        print("\n用户中断测试")
+        sys.exit(130)
+    except Exception as e:
+        print(f"测试异常: {str(e)}")
+        sys.exit(1)

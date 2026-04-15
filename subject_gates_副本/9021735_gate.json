@@ -1,0 +1,66 @@
+{
+  "must": [
+    "车载激光雷达",
+    "清洗系统",
+    "扫描系统",
+    "激光接收",
+    "激光发射"
+  ],
+  "should": [
+    "车载激光",
+    "迷你3D激光雷达",
+    "JT系列产品",
+    "MOVA 1000",
+    "锐科激光",
+    "3D打印激光器",
+    "光芯片产业",
+    "高精度三维环境感知",
+    "智能驾驶",
+    "上游增量零部件",
+    "无人驾驶出租车",
+    "试运行"
+  ],
+  "not": [
+    "股权",
+    "债券",
+    "保险"
+  ],
+  "evidence_refs": [
+    {
+      "term": "车载激光雷达",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "车载激光雷达"
+    },
+    {
+      "term": "清洗系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "清洗系统"
+    },
+    {
+      "term": "扫描系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "扫描系统"
+    },
+    {
+      "term": "激光接收",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "激光接收"
+    },
+    {
+      "term": "激光发射",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "激光发射"
+    }
+  ],
+  "subject_id": "9021735",
+  "quality": "weak",
+  "generated_at": "2026-04-02T09:22:38",
+  "semantic_type": "技术产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

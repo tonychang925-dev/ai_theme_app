@@ -1,0 +1,312 @@
+{
+  "trade_date": "2026-04-07",
+  "check_timestamp": "2026-04-14",
+  "results": {
+    "table_status": {
+      "subject_stock_daily_snapshot": {
+        "exists": true,
+        "status": "ok"
+      },
+      "theme_mainline_judgement": {
+        "exists": true,
+        "status": "ok"
+      },
+      "theme_cycle_judgement": {
+        "exists": true,
+        "status": "ok"
+      },
+      "theme_news_daily": {
+        "exists": false,
+        "status": "missing"
+      },
+      "theme_cycle_evidence_daily": {
+        "exists": true,
+        "status": "ok"
+      },
+      "theme_cycle_judgement_v2": {
+        "exists": true,
+        "status": "ok"
+      }
+    },
+    "subject_coverage": {
+      "total_subjects": 659,
+      "coverage": {
+        "theme_mainline_judgement": {
+          "subject_count": 659,
+          "coverage_ratio": 1.0,
+          "status": "ok"
+        },
+        "theme_cycle_judgement": {
+          "subject_count": 659,
+          "coverage_ratio": 1.0,
+          "status": "ok"
+        },
+        "theme_cycle_evidence_daily": {
+          "subject_count": 659,
+          "coverage_ratio": 1.0,
+          "status": "ok"
+        },
+        "theme_cycle_judgement_v2": {
+          "subject_count": 659,
+          "coverage_ratio": 1.0,
+          "status": "ok"
+        }
+      },
+      "status": "partial"
+    },
+    "evidence_field_status": {
+      "event_layer": {
+        "table_exists": true,
+        "status": "partial",
+        "field_coverage": {
+          "event_count_3d": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 659,
+            "data_ratio": 1.0,
+            "status": "ok"
+          },
+          "event_count_7d": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 659,
+            "data_ratio": 1.0,
+            "status": "ok"
+          },
+          "strong_event_count_7d": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 659,
+            "data_ratio": 1.0,
+            "status": "ok"
+          },
+          "event_recency_days": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 0,
+            "data_ratio": 0.0,
+            "status": "missing"
+          }
+        },
+        "summary": {
+          "total_fields": 4,
+          "ok_fields": 3,
+          "partial_fields": 0,
+          "missing_fields": 1
+        }
+      },
+      "leader_layer": {
+        "table_exists": true,
+        "status": "ok",
+        "field_coverage": {
+          "leader_stock_id": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 659,
+            "data_ratio": 1.0,
+            "status": "ok"
+          },
+          "leader_stock_name": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 659,
+            "data_ratio": 1.0,
+            "status": "ok"
+          },
+          "board_stock_count": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 659,
+            "data_ratio": 1.0,
+            "status": "ok"
+          },
+          "limit_down_count": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 659,
+            "data_ratio": 1.0,
+            "status": "ok"
+          },
+          "red_ratio": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 659,
+            "data_ratio": 1.0,
+            "status": "ok"
+          },
+          "big_drop_ratio": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 659,
+            "data_ratio": 1.0,
+            "status": "ok"
+          },
+          "front_row_strength_score": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 659,
+            "data_ratio": 1.0,
+            "status": "ok"
+          },
+          "relay_strength_score": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 659,
+            "data_ratio": 1.0,
+            "status": "ok"
+          },
+          "front_row_survival_ratio": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 659,
+            "data_ratio": 1.0,
+            "status": "ok"
+          }
+        },
+        "summary": {
+          "total_fields": 9,
+          "ok_fields": 9,
+          "partial_fields": 0,
+          "missing_fields": 0
+        }
+      },
+      "board_structure_layer": {
+        "table_exists": true,
+        "status": "ok",
+        "field_coverage": {
+          "limit_up_count": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 659,
+            "data_ratio": 1.0,
+            "status": "ok"
+          },
+          "limit_down_count": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 659,
+            "data_ratio": 1.0,
+            "status": "ok"
+          },
+          "red_ratio": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 659,
+            "data_ratio": 1.0,
+            "status": "ok"
+          },
+          "big_drop_ratio": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 659,
+            "data_ratio": 1.0,
+            "status": "ok"
+          },
+          "front_row_strength_score": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 659,
+            "data_ratio": 1.0,
+            "status": "ok"
+          }
+        },
+        "summary": {
+          "total_fields": 5,
+          "ok_fields": 5,
+          "partial_fields": 0,
+          "missing_fields": 0
+        }
+      },
+      "kline_layer": {
+        "table_exists": true,
+        "status": "partial",
+        "field_coverage": {
+          "theme_ret_3d": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 0,
+            "data_ratio": 0.0,
+            "status": "missing"
+          },
+          "theme_ret_5d": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 0,
+            "data_ratio": 0.0,
+            "status": "missing"
+          },
+          "theme_ret_10d": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 0,
+            "data_ratio": 0.0,
+            "status": "missing"
+          },
+          "above_ma5": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 659,
+            "data_ratio": 1.0,
+            "status": "ok"
+          },
+          "above_ma10": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 659,
+            "data_ratio": 1.0,
+            "status": "ok"
+          },
+          "above_ma20": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 659,
+            "data_ratio": 1.0,
+            "status": "ok"
+          },
+          "break_start_pivot": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 659,
+            "data_ratio": 1.0,
+            "status": "ok"
+          },
+          "volume_breakdown_flag": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 659,
+            "data_ratio": 1.0,
+            "status": "ok"
+          },
+          "theme_support_score": {
+            "exists": true,
+            "total_rows": 659,
+            "non_null_count": 659,
+            "data_ratio": 1.0,
+            "status": "ok"
+          }
+        },
+        "summary": {
+          "total_fields": 9,
+          "ok_fields": 6,
+          "partial_fields": 0,
+          "missing_fields": 3
+        }
+      }
+    },
+    "overall_status": {
+      "status": "partial",
+      "critical_tables_missing": [],
+      "layer_status_summary": [
+        "partial",
+        "ok",
+        "ok",
+        "partial"
+      ],
+      "recommendations": [
+        "⚠️ 表 theme_news_daily 不存在，可能需要创建",
+        "⚠️ event_layer 缺失字段: event_recency_days",
+        "⚠️ kline_layer 缺失字段: theme_ret_3d, theme_ret_5d, theme_ret_10d"
+      ]
+    }
+  }
+}

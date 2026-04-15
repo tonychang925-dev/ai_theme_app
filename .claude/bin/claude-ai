@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+set -euo pipefail
+exec /Users/admin/Desktop/ai_theme_app/.claude/bin/claude-dev-stable "$@"

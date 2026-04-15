@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端调试检查</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .step { margin: 15px 0; padding: 15px; border-left: 4px solid #007bff; background: #f8f9fa; }
+        .success { border-left-color: #28a745; background: #d4edda; }
+        .error { border-left-color: #dc3545; background: #f8d7da; }
+        .warning { border-left-color: #ffc107; background: #fff3cd; }
+        button { padding: 10px 20px; margin: 5px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        code { background: #f5f5f5; padding: 2px 4px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h1>前端调试检查</h1>
+    <p>检查前端代码是否已加载最新版本</p>
+
+    <div class="step">
+        <h3>步骤1: 打开浏览器控制台</h3>
+        <p>按 <code>F12</code> 打开开发者工具，切换到 <strong>Console</strong> 标签</p>
+    </div>
+
+    <div class="step">
+        <h3>步骤2: 打开选股器页面</h3>
+        <p>点击下方按钮打开选股器页面：</p>
+        <button onclick="window.open('http://localhost:5173/screener', '_blank')">打开选股器页面</button>
+    </div>
+
+    <div class="step">
+        <h3>步骤3: 检查控制台输出</h3>
+        <p>在控制台中应该看到类似这样的日志：</p>
+        <pre>🔍 StockScreenerPage - store状态变化 (时间戳: ...):
+  isExecuting: false
+  currentResults长度: 0
+  executionJobId: null
+  store对象: {...}</pre>
+        <p>如果看到这些日志，说明前端代码已加载最新版本。</p>
+    </div>
+
+    <div class="step">
+        <h3>步骤4: 执行选股测试</h3>
+        <p>在选股器页面点击"执行选股"按钮，然后在控制台中应该看到：</p>
+        <pre>🔍 executeScreening开始: selectedStrategyId=default_composite
+🔍 API响应 (时间戳: ...):
+  status: completed
+  job_id: exec_...
+  results长度: 44
+🔍 API直接返回结果，更新store状态
+🔍 store状态已更新: currentResults.length=44</pre>
+    </div>
+
+    <div class="step">
+        <h3>步骤5: 如果看不到调试日志</h3>
+        <p>如果看不到上述调试日志，说明前端代码没有重新加载：</p>
+        <ol>
+            <li><strong>强制刷新页面</strong>: 按 <code>Ctrl+Shift+R</code> (Windows/Linux) 或 <code>Cmd+Shift+R</code> (Mac)</li>
+            <li><strong>清除浏览器缓存</strong>: 在开发者工具中，右键刷新按钮 → "清空缓存并硬性重新加载"</li>
+            <li><strong>重启前端开发服务器</strong>:
+                <pre>cd frontend
+npm run dev</pre>
+            </li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h3>步骤6: 直接测试API</h3>
+        <p>点击下方按钮测试API是否工作：</p>
+        <button onclick="testAPI()">测试API</button>
+        <div id="api-test-result" style="margin-top: 10px;"></div>
+    </div>
+
+    <div class="step">
+        <h3>步骤7: 检查React组件</h3>
+        <p>如果有React DevTools扩展：</p>
+        <ul>
+            <li>查看 <code>StockScreenerPage</code> 组件的props</li>
+            <li>检查 <code>ResultsFormView</code> 组件是否接收到 <code>results</code> 数组</li>
+            <li>检查组件是否重新渲染</li>
+        </ul>
+    </div>
+
+    <script>
+        async function testAPI() {
+            const resultDiv = document.getElementById('api-test-result');
+            resultDiv.innerHTML = '<p>测试API中...</p>';
+
+            try {
+                const response = await fetch('http://localhost:8003/api/stock-screener/execute', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        strategy_id: 'default_composite',
+                        trade_date: '2026-04-10',
+                        limit: 3,
+                        enable_llm_review: false,
+                        llm_top_k: 3
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.status === 'completed' && data.results && data.results.length > 0) {
+                    resultDiv.innerHTML = `
+                        <div class="success">
+                            <p>✅ API工作正常</p>
+                            <p>返回 ${data.results.length} 条结果</p>
+                            <p>第一条结果: ${data.results[0].stock_name} (${data.results[0].stock_id}) - ${data.results[0].composite_score}分</p>
+                        </div>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="warning">
+                            <p>⚠️ API返回空结果</p>
+                            <p>状态: ${data.status}, 结果数量: ${data.results ? data.results.length : 0}</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="error">
+                        <p>❌ API测试失败</p>
+                        <p>错误: ${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

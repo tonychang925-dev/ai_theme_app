@@ -1,0 +1,37 @@
+{
+  "must": [
+    "供应商",
+    "参股"
+  ],
+  "should": [
+    "透平叶片",
+    "孤岛微电网",
+    "全球市场",
+    "燃气轮机研发设计",
+    "关键材料开发",
+    "关键部件制造",
+    "试验验证",
+    "运行维护"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "供应商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "供应商"
+    },
+    {
+      "term": "参股",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "参股"
+    }
+  ],
+  "subject_id": "9062904",
+  "quality": "weak",
+  "generated_at": "2026-04-02T05:42:30",
+  "semantic_type": "公司事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

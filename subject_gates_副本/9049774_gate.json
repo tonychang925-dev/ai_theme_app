@@ -1,0 +1,72 @@
+{
+  "must": [
+    "Robotaxi",
+    "Robobus",
+    "无人环卫",
+    "L4级自动驾驶技术",
+    "收费出行服务",
+    "示范运营牌照"
+  ],
+  "should": [
+    "京东",
+    "九识",
+    "邮政",
+    "百度",
+    "文远",
+    "美团",
+    "菜鸟",
+    "东风",
+    "港口集卡",
+    "纯视觉",
+    "激光雷达",
+    "示范应用牌照"
+  ],
+  "not": [
+    "公开道路测试",
+    "世界智能网联汽车大会"
+  ],
+  "evidence_refs": [
+    {
+      "term": "Robotaxi",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Robotaxi"
+    },
+    {
+      "term": "Robobus",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Robobus"
+    },
+    {
+      "term": "无人环卫",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "无人环卫"
+    },
+    {
+      "term": "L4级自动驾驶技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "L4级自动驾驶技术"
+    },
+    {
+      "term": "收费出行服务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "收费出行服务"
+    },
+    {
+      "term": "示范运营牌照",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "示范运营牌照"
+    }
+  ],
+  "subject_id": "9049774",
+  "quality": "strong",
+  "generated_at": "2026-03-31T16:34:34",
+  "semantic_type": "技术应用与商业化",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

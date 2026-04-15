@@ -1,0 +1,67 @@
+{
+  "must": [
+    "屏幕",
+    "摄像头",
+    "电池",
+    "充电器",
+    "AI手机硬件升级"
+  ],
+  "should": [
+    "声音",
+    "通信",
+    "代工",
+    "销售",
+    "设备",
+    "苹果公司",
+    "美国制造计划",
+    "NAND Flash市场",
+    "AI可穿戴新终端",
+    "新技术",
+    "部件",
+    "供给紧缩"
+  ],
+  "not": [
+    "全方位扩大国内需求",
+    "扩大内需战略",
+    "发挥投资的关键作用",
+    "供给体系的提升"
+  ],
+  "evidence_refs": [
+    {
+      "term": "屏幕",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "屏幕"
+    },
+    {
+      "term": "摄像头",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "摄像头"
+    },
+    {
+      "term": "电池",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电池"
+    },
+    {
+      "term": "充电器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "充电器"
+    },
+    {
+      "term": "AI手机硬件升级",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI手机硬件升级"
+    }
+  ],
+  "subject_id": "9019349",
+  "quality": "weak",
+  "generated_at": "2026-04-02T05:24:10",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

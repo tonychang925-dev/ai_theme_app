@@ -1,0 +1,78 @@
+{
+  "must": [
+    "氮肥",
+    "磷肥",
+    "钾肥",
+    "复合肥",
+    "原材料",
+    "基础肥生产"
+  ],
+  "should": [
+    "二次加工",
+    "销售",
+    "氮",
+    "磷",
+    "钾",
+    "生产三聚氰胺",
+    "尿醛胶",
+    "脱硫脱硝",
+    "加拿大",
+    "白俄罗斯",
+    "俄罗斯",
+    "亚洲"
+  ],
+  "not": [
+    "磷肥全面暂停出口",
+    "海关强制实施",
+    "零出口",
+    "海关硬管制",
+    "尿素严控出口",
+    "提前放储",
+    "出口配额",
+    "小包装尿素出口"
+  ],
+  "evidence_refs": [
+    {
+      "term": "氮肥",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "氮肥"
+    },
+    {
+      "term": "磷肥",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "磷肥"
+    },
+    {
+      "term": "钾肥",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "钾肥"
+    },
+    {
+      "term": "复合肥",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "复合肥"
+    },
+    {
+      "term": "原材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "原材料"
+    },
+    {
+      "term": "基础肥生产",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "基础肥生产"
+    }
+  ],
+  "subject_id": "9016356",
+  "quality": "strong",
+  "generated_at": "2026-04-02T14:09:49",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

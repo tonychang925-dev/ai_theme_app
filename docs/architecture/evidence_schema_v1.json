@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-theme-app.local/schemas/weak_to_strong/evidence_schema_v1.json",
+  "title": "WeakToStrong Evidence Schema v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "trace",
+    "inputs",
+    "scores",
+    "rules",
+    "decision"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "evidence_schema.v1"
+    },
+    "trace": {
+      "type": "object",
+      "required": [
+        "trade_date",
+        "stock_id",
+        "candidate_id",
+        "source_snapshot_id"
+      ],
+      "properties": {
+        "trade_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "stock_id": {
+          "type": "string"
+        },
+        "candidate_id": {
+          "type": [
+            "integer",
+            "string"
+          ]
+        },
+        "source_snapshot_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "inputs": {
+      "type": "object",
+      "properties": {
+        "candidate_type": {
+          "type": "string"
+        },
+        "rule_version": {
+          "type": "string"
+        },
+        "weak_type": {
+          "type": "string"
+        },
+        "support_type": {
+          "type": "string"
+        },
+        "expected_auction_pattern": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "scores": {
+      "type": "object",
+      "required": [
+        "price_strength",
+        "pattern_stability",
+        "last_minute_grab",
+        "plate_follow",
+        "risk_penalty",
+        "confirmation_score"
+      ],
+      "properties": {
+        "price_strength": {
+          "type": "number"
+        },
+        "pattern_stability": {
+          "type": "number"
+        },
+        "last_minute_grab": {
+          "type": "number"
+        },
+        "plate_follow": {
+          "type": "number"
+        },
+        "risk_penalty": {
+          "type": "number"
+        },
+        "confirmation_score": {
+          "type": "number"
+        },
+        "breakdown": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": true
+    },
+    "rules": {
+      "type": "object",
+      "required": [
+        "hard_rule_results"
+      ],
+      "properties": {
+        "hard_rule_results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "rule",
+              "passed"
+            ],
+            "properties": {
+              "rule": {
+                "type": "string"
+              },
+              "passed": {
+                "type": "boolean"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "mapping_warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "decision": {
+      "type": "object",
+      "required": [
+        "signal_level",
+        "decision"
+      ],
+      "properties": {
+        "signal_level": {
+          "type": "string",
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "X"
+          ]
+        },
+        "decision": {
+          "type": "string"
+        },
+        "data_status": {
+          "type": "string",
+          "enum": [
+            "ok",
+            "partial",
+            "delayed",
+            "missing"
+          ]
+        },
+        "data_latency_ms": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

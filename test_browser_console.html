@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浏览器控制台测试</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .instructions { background: #f0f9ff; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .step { margin: 10px 0; padding: 10px; background: white; border-radius: 4px; }
+        code { background: #f5f5f5; padding: 2px 4px; border-radius: 3px; }
+        .important { color: #d32f2f; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>浏览器控制台调试指南</h1>
+    <p>解决"0 条记录"问题</p>
+
+    <div class="instructions">
+        <h2>操作步骤：</h2>
+
+        <div class="step">
+            <h3>1. 打开浏览器开发者工具</h3>
+            <p>按 <code>F12</code> 或右键点击页面选择"检查"</p>
+        </div>
+
+        <div class="step">
+            <h3>2. 切换到Console标签</h3>
+            <p>查看是否有JavaScript错误</p>
+        </div>
+
+        <div class="step">
+            <h3>3. 执行选股操作</h3>
+            <p>在选股器页面点击"执行选股"按钮</p>
+        </div>
+
+        <div class="step">
+            <h3>4. 观察控制台输出</h3>
+            <p>应该看到类似这样的日志：</p>
+            <pre>🔍 executeScreening开始: selectedStrategyId=default_composite
+🔍 API响应: status=completed results.length=44
+🔍 API直接返回结果，更新store状态
+🔍 store状态已更新: currentResults.length=44
+🔍 StockScreenerPage - store状态变化:
+  isExecuting: false
+  currentResults长度: 44
+  executionJobId: exec_xxxxxx</pre>
+        </div>
+
+        <div class="step">
+            <h3>5. 检查Network标签</h3>
+            <p>查看API请求是否成功：</p>
+            <ul>
+                <li>找到 <code>/api/stock-screener/execute</code> 请求</li>
+                <li>检查Response标签查看API返回的数据</li>
+                <li>确认 <code>status: "completed"</code> 和 <code>results</code> 数组不为空</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>6. 检查React组件</h3>
+            <p>如果有React DevTools扩展：</p>
+            <ul>
+                <li>查看 <code>StockScreenerPage</code> 组件的props</li>
+                <li>检查 <code>currentResults</code> 是否更新</li>
+                <li>检查组件是否重新渲染</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="instructions">
+        <h2>常见问题诊断：</h2>
+
+        <div class="step">
+            <h3>问题1: 没有看到调试日志</h3>
+            <p class="important">可能原因：前端代码没有重新加载</p>
+            <p>解决方案：</p>
+            <ol>
+                <li>强制刷新页面：<code>Ctrl+Shift+R</code> (Windows/Linux) 或 <code>Cmd+Shift+R</code> (Mac)</li>
+                <li>清除浏览器缓存</li>
+                <li>重启前端开发服务器</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>问题2: 看到API错误</h3>
+            <p class="important">可能原因：后端服务问题</p>
+            <p>检查：</p>
+            <ol>
+                <li>后端服务是否运行：<code>http://localhost:8003/api/stock-screener/strategies</code></li>
+                <li>API响应状态码</li>
+                <li>控制台错误信息</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>问题3: store更新但页面不显示</h3>
+            <p class="important">可能原因：React渲染问题</p>
+            <p>检查：</p>
+            <ol>
+                <li>React组件是否正确订阅store</li>
+                <li>组件是否重新渲染（查看React DevTools）</li>
+                <li>是否有其他错误阻止渲染</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>问题4: 仍然显示"0 条记录"</h3>
+            <p class="important">可能原因：多个问题叠加</p>
+            <p>执行完整检查：</p>
+            <ol>
+                <li>打开 <code>realtime_store_debug.html</code> 监控store状态</li>
+                <li>运行 <code>final_verification_test.html</code> 验证系统功能</li>
+                <li>检查所有测试是否通过</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="instructions">
+        <h2>快速测试命令：</h2>
+        <p>在浏览器控制台中直接运行这些命令测试API：</p>
+        <pre>
+// 测试API是否工作
+fetch('http://localhost:8003/api/stock-screener/execute', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+        strategy_id: 'default_composite',
+        trade_date: '2026-04-10',
+        limit: 3,
+        enable_llm_review: false,
+        llm_top_k: 3
+    })
+})
+.then(r => r.json())
+.then(data => console.log('API响应:', data))
+.catch(err => console.error('API错误:', err));
+
+// 检查store状态（如果store是全局的）
+if (window.store) {
+    console.log('store状态:', {
+        isExecuting: window.store.isExecuting,
+        currentResults长度: window.store.currentResults.length,
+        currentResults: window.store.currentResults
+    });
+}
+        </pre>
+    </div>
+
+    <h2>下一步：</h2>
+    <p>根据控制台输出确定问题所在：</p>
+    <ol>
+        <li>如果看到调试日志和API成功响应 → 前端显示问题</li>
+        <li>如果看到API错误 → 后端服务问题</li>
+        <li>如果没有调试日志 → 前端代码没有加载</li>
+        <li>如果store更新但页面不显示 → React渲染问题</li>
+    </ol>
+
+    <p>打开 <a href="http://localhost:5173/screener" target="_blank">选股器页面</a> 开始调试。</p>
+</body>
+</html>

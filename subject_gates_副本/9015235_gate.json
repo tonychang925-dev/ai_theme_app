@@ -1,0 +1,40 @@
+{
+  "must": [
+    "制氢",
+    "储氢",
+    "燃料电池"
+  ],
+  "should": [
+    "电池车",
+    "加氢站",
+    "平台企业",
+    "检测设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "制氢",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "制氢"
+    },
+    {
+      "term": "储氢",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "储氢"
+    },
+    {
+      "term": "燃料电池",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "燃料电池"
+    }
+  ],
+  "subject_id": "9015235",
+  "quality": "weak",
+  "generated_at": "2026-04-02T05:41:17",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

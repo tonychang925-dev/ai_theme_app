@@ -23,6 +23,15 @@ from stock_service.services.mainline_judgement_service import (
     ThemeEventStats,
     ThemeMarketStats,
 )
+from stock_service.services.theme_mainline_enhancement_service import (
+    ThemeMainlineEnhancementService,
+    NoveltyScoreInputs,
+    TimingScoreInputs,
+    InfluenceScoreInputs,
+    CapitalPersistenceInputs,
+    InstitutionParticipationInputs,
+    RetailAttentionInputs,
+)
 
 
 def get_postgres_config() -> DatabaseConfig:
@@ -88,6 +97,78 @@ async def ensure_tables(manager: PostgresDatabaseManager) -> None:
         await conn.execute("ALTER TABLE theme_mainline_judgement ADD COLUMN IF NOT EXISTS source_trace JSONB NOT NULL DEFAULT '{}'::jsonb")
         await conn.execute("ALTER TABLE theme_mainline_judgement ADD COLUMN IF NOT EXISTS source_version VARCHAR(80) NOT NULL DEFAULT ''")
         await conn.execute("ALTER TABLE theme_mainline_judgement ADD COLUMN IF NOT EXISTS rule_version VARCHAR(80) NOT NULL DEFAULT ''")
+        # 新增主线增强字段（Phase 1：数据库扩展）
+        await conn.execute("ALTER TABLE theme_mainline_judgement ADD COLUMN IF NOT EXISTS novelty_score NUMERIC(6,2) NOT NULL DEFAULT 0")
+        await conn.execute("ALTER TABLE theme_mainline_judgement ADD COLUMN IF NOT EXISTS timing_score NUMERIC(6,2) NOT NULL DEFAULT 0")
+        await conn.execute("ALTER TABLE theme_mainline_judgement ADD COLUMN IF NOT EXISTS influence_score NUMERIC(6,2) NOT NULL DEFAULT 0")
+        await conn.execute("ALTER TABLE theme_mainline_judgement ADD COLUMN IF NOT EXISTS capital_persistence_score NUMERIC(6,2) NOT NULL DEFAULT 0")
+        await conn.execute("ALTER TABLE theme_mainline_judgement ADD COLUMN IF NOT EXISTS institution_participation_score NUMERIC(6,2) NOT NULL DEFAULT 0")
+        await conn.execute("ALTER TABLE theme_mainline_judgement ADD COLUMN IF NOT EXISTS retail_attention_score NUMERIC(6,2) NOT NULL DEFAULT 0")
+
+
+async def fetch_enhancement_data(
+    manager: PostgresDatabaseManager,
+    trade_date: date,
+    subject_key: str,
+    theme_name: str,
+) -> tuple:
+    """
+    获取增强评分所需数据
+    TODO: 实现真实数据获取，目前返回模拟数据
+    """
+    # 模拟新颖度数据
+    novelty_inputs = NoveltyScoreInputs(
+        first_appear_date=trade_date - timedelta(days=14),  # 14天前首次出现
+        media_coverage_frequency=0.7,
+        concept_novelty='new',  # 新概念
+        media_reports_last_7d=5,
+    )
+
+    # 模拟时机数据
+    timing_inputs = TimingScoreInputs(
+        market_health_score=75.0,  # 市场健康度75分
+        limit_up_count_market=35,   # 全市场涨停35家
+        days_since_last_main_theme=20,  # 距离上个主线20天
+        market_sentiment_score=70.0,   # 市场情绪70分
+    )
+
+    # 模拟影响广度数据
+    influence_inputs = InfluenceScoreInputs(
+        related_stock_count=25,     # 25只关联股票
+        industry_count=3,           # 3个行业
+        policy_level='national',    # 国家级政策
+        market_cap_total=500.0,     # 总市值500亿
+    )
+
+    # 模拟资金持续性数据
+    capital_inputs = CapitalPersistenceInputs(
+        net_inflow_days=4,          # 连续4天净流入
+        net_inflow_amount_avg=8.5,  # 日均净流入8.5亿
+        net_inflow_trend='moderate',  # 中等流入趋势
+    )
+
+    # 模拟机构参与度数据
+    institution_inputs = InstitutionParticipationInputs(
+        institution_seat_count=2,   # 2次机构席位
+        institution_research_count=1,  # 1次机构调研
+        fund_holding_ratio=0.05,    # 基金持股5%
+    )
+
+    # 模拟散户关注度数据
+    retail_inputs = RetailAttentionInputs(
+        search_index_score=65.0,     # 搜索指数65分
+        community_discussion_score=60.0,  # 社区讨论60分
+        social_media_mentions=120,   # 社交媒体提及120次
+    )
+
+    return (
+        novelty_inputs,
+        timing_inputs,
+        influence_inputs,
+        capital_inputs,
+        institution_inputs,
+        retail_inputs,
+    )
 
 
 async def fetch_event_rows(manager: PostgresDatabaseManager, trade_date_value: date, start_date: date):
@@ -193,6 +274,8 @@ async def upsert_rows(manager: PostgresDatabaseManager, judgements):
         event_chain_score, event_chain_continuity_score,
         market_recognition_score, mainline_stability_score,
         is_main_theme, theme_tier, limit_up_count,
+        novelty_score, timing_score, influence_score,
+        capital_persistence_score, institution_participation_score, retail_attention_score,
         evidence_logic, evidence_market, conclusion,
         source_type, source_trace_id, source_trace, source_version, rule_version
     ) VALUES (
@@ -200,8 +283,10 @@ async def upsert_rows(manager: PostgresDatabaseManager, judgements):
         $4, $5,
         $6, $7,
         $8, $9, $10,
-        $11::jsonb, $12::jsonb, $13,
-        $14, $15, $16::jsonb, $17, $18
+        $11, $12, $13,
+        $14, $15, $16,
+        $17::jsonb, $18::jsonb, $19,
+        $20, $21, $22::jsonb, $23, $24
     )
     ON CONFLICT (trade_date, subject_key)
     DO UPDATE SET
@@ -213,6 +298,12 @@ async def upsert_rows(manager: PostgresDatabaseManager, judgements):
         is_main_theme = EXCLUDED.is_main_theme,
         theme_tier = EXCLUDED.theme_tier,
         limit_up_count = EXCLUDED.limit_up_count,
+        novelty_score = EXCLUDED.novelty_score,
+        timing_score = EXCLUDED.timing_score,
+        influence_score = EXCLUDED.influence_score,
+        capital_persistence_score = EXCLUDED.capital_persistence_score,
+        institution_participation_score = EXCLUDED.institution_participation_score,
+        retail_attention_score = EXCLUDED.retail_attention_score,
         evidence_logic = EXCLUDED.evidence_logic,
         evidence_market = EXCLUDED.evidence_market,
         conclusion = EXCLUDED.conclusion,
@@ -235,6 +326,12 @@ async def upsert_rows(manager: PostgresDatabaseManager, judgements):
             item.is_main_theme,
             item.theme_tier,
             item.limit_up_count,
+            item.novelty_score,  # novelty_score
+            item.timing_score,   # timing_score
+            item.influence_score, # influence_score
+            item.capital_persistence_score,  # capital_persistence_score
+            item.institution_participation_score,  # institution_participation_score
+            item.retail_attention_score,  # retail_attention_score
             json.dumps(item.evidence_logic, ensure_ascii=False),
             json.dumps(item.evidence_market, ensure_ascii=False),
             item.conclusion,
@@ -319,6 +416,41 @@ async def main_async() -> int:
                 )
             )
 
+        # 主线题材判断增强 - 计算增强评分
+        enhancement_service = ThemeMainlineEnhancementService()
+        enhanced_judgements = []
+
+        for judgement in judgements:
+            # 获取增强数据（目前使用模拟数据）
+            (
+                novelty_inputs,
+                timing_inputs,
+                influence_inputs,
+                capital_inputs,
+                institution_inputs,
+                retail_inputs,
+            ) = await fetch_enhancement_data(
+                manager,
+                trade_date_value,
+                judgement.subject_key,
+                judgement.theme_name,
+            )
+
+            # 增强judgement
+            enhanced = enhancement_service.enhance_judgement_with_inputs(
+                judgement,
+                novelty_inputs,
+                timing_inputs,
+                influence_inputs,
+                capital_inputs,
+                institution_inputs,
+                retail_inputs,
+            )
+            enhanced_judgements.append(enhanced)
+
+        # 使用增强后的judgements替换原来的
+        judgements = enhanced_judgements
+
         await upsert_rows(manager, judgements)
 
         ranked = sorted(
@@ -336,10 +468,12 @@ async def main_async() -> int:
         print(f"[OK] failed={sum(1 for x in judgements if x.theme_tier == 'failed')}")
         for item in ranked[: args.top_k]:
             print(
-                f"[ROW] tier={item.theme_tier} theme={item.theme_name} "
-                f"event={item.event_chain_score:.2f} continuity={item.event_chain_continuity_score:.2f} "
-                f"market={item.market_recognition_score:.2f} stability={item.mainline_stability_score:.2f} "
-                f"limit_up={item.limit_up_count}"
+                f"[ROW] tier={item.theme_tier} theme={item.theme_name[:30]:<30} "
+                f"event={item.event_chain_score:5.2f} continuity={item.event_chain_continuity_score:5.2f} "
+                f"market={item.market_recognition_score:5.2f} stability={item.mainline_stability_score:5.2f} "
+                f"limit_up={item.limit_up_count:3d} "
+                f"novelty={item.novelty_score:5.2f} timing={item.timing_score:5.2f} influence={item.influence_score:5.2f} "
+                f"capital={item.capital_persistence_score:5.2f} inst={item.institution_participation_score:5.2f} retail={item.retail_attention_score:5.2f}"
             )
         return 0
     finally:

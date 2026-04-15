@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>检查现有按钮</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        iframe { width: 100%; height: 700px; border: 2px solid blue; }
+        .result { padding: 15px; margin: 15px 0; background: #f0f0f0; }
+    </style>
+</head>
+<body>
+    <h1>检查现有页面的按钮</h1>
+
+    <p>加载现有页面，查看有多少个按钮：</p>
+    <button onclick="loadPage()">加载页面</button>
+
+    <div id="iframe-container"></div>
+    <div id="button-list" class="result"></div>
+
+    <script>
+        async function loadPage() {
+            const container = document.getElementById('iframe-container');
+            const result = document.getElementById('button-list');
+
+            container.innerHTML = '<p>加载中...</p>';
+            result.innerHTML = '检查中...';
+
+            const iframe = document.createElement('iframe');
+            iframe.src = 'http://localhost:5173/';
+            iframe.style.width = '100%';
+            iframe.style.height = '700px';
+            iframe.style.border = 'none';
+
+            container.innerHTML = '';
+            container.appendChild(iframe);
+
+            iframe.onload = function() {
+                try {
+                    const doc = iframe.contentDocument || iframe.contentWindow.document;
+
+                    // 查找所有按钮
+                    const buttons = doc.querySelectorAll('button');
+                    result.innerHTML = `<h3>找到 ${buttons.length} 个按钮：</h3>`;
+
+                    if (buttons.length > 0) {
+                        // 按位置分组
+                        const headerButtons = [];
+                        const otherButtons = [];
+
+                        buttons.forEach(btn => {
+                            // 检查是否在header区域
+                            const inHeader = btn.closest('header') ||
+                                            btn.closest('.intel-topbar') ||
+                                            btn.closest('.collection-action-row');
+
+                            if (inHeader) {
+                                headerButtons.push(btn);
+                            } else {
+                                otherButtons.push(btn);
+                            }
+                        });
+
+                        // 显示header按钮
+                        result.innerHTML += `<h4>Header区域按钮 (${headerButtons.length}个)：</h4>`;
+                        headerButtons.forEach((btn, i) => {
+                            const text = btn.textContent.trim();
+                            const className = btn.className;
+                            const parent = btn.parentElement.className;
+
+                            result.innerHTML += `
+                                <div style="margin: 10px 0; padding: 10px; background: white; border-radius: 5px;">
+                                    <strong>${i+1}: "${text}"</strong><br>
+                                    类名: ${className}<br>
+                                    父元素类名: ${parent}<br>
+                                    位置: ${btn.offsetTop}px, ${btn.offsetLeft}px
+                                </div>
+                            `;
+                        });
+
+                        // 显示其他按钮
+                        result.innerHTML += `<h4>其他区域按钮 (${otherButtons.length}个)：</h4>`;
+                        otherButtons.forEach((btn, i) => {
+                            const text = btn.textContent.trim();
+                            result.innerHTML += `${i+1}: "${text}"<br>`;
+                        });
+
+                        // 检查collection-action-row
+                        const actionRow = doc.querySelector('.collection-action-row');
+                        if (actionRow) {
+                            result.innerHTML += `<h4>collection-action-row内容：</h4>`;
+                            result.innerHTML += `<pre>${actionRow.innerHTML}</pre>`;
+                        }
+                    }
+
+                } catch (error) {
+                    result.innerHTML = `错误: ${error.message}`;
+                }
+            };
+        }
+
+        // 自动加载
+        setTimeout(loadPage, 500);
+    </script>
+</body>
+</html>

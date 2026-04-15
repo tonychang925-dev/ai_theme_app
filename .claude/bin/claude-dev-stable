@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd /Users/admin/Desktop/ai_theme_app
+
+# 优先复用 ~/.claude（通常是 Claude 官方账号配置，技能执行更稳定）
+if [[ -f "${HOME}/.claude/settings.json" || -f "${HOME}/.claude/settings.local.json" ]]; then
+  export CLAUDE_CONFIG_DIR="${HOME}/.claude"
+else
+  # 回退到 shared 配置（与你在源码目录 bun run start 的行为一致）
+  export CLAUDE_CONFIG_DIR="/Users/admin/Desktop/claude-code-source-main/.claude-dev"
+fi
+
+exec bun /Users/admin/Desktop/claude-code-source-main/src/entrypoints/dev-cli.tsx "$@"

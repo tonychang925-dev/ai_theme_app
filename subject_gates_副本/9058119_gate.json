@@ -1,0 +1,48 @@
+{
+  "must": [
+    "食品饮料",
+    "电力",
+    "银行",
+    "医药"
+  ],
+  "should": [
+    "分红率较高",
+    "大蓝筹品种",
+    "防御属性",
+    "市场行情偏弱",
+    "分红率"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "食品饮料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "食品饮料"
+    },
+    {
+      "term": "电力",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电力"
+    },
+    {
+      "term": "银行",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "银行"
+    },
+    {
+      "term": "医药",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "医药"
+    }
+  ],
+  "subject_id": "9058119",
+  "quality": "medium",
+  "generated_at": "2026-04-01T01:32:53",
+  "semantic_type": "市场防御性投资品种",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

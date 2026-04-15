@@ -1,0 +1,43 @@
+{
+  "must": [
+    "国有资本投资运营公司",
+    "国务院",
+    "国资委"
+  ],
+  "should": [
+    "国有资产管理",
+    "国有企业改革",
+    "国有资本投资公司",
+    "国有资本运营公司",
+    "国有企业",
+    "国有资本",
+    "提高国有资本配置和运营效率"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国有资本投资运营公司",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国有资本投资运营公司"
+    },
+    {
+      "term": "国务院",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国务院"
+    },
+    {
+      "term": "国资委",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国资委"
+    }
+  ],
+  "subject_id": "9022312",
+  "quality": "weak",
+  "generated_at": "2026-04-02T08:24:50",
+  "semantic_type": "政策法规",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

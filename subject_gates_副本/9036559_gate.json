@@ -1,0 +1,62 @@
+{
+  "must": [
+    "以太网芯片",
+    "芯片",
+    "下一代ASIC",
+    "AI芯片ASIC"
+  ],
+  "should": [
+    "以太网",
+    "硅光子技术",
+    "芯片设计",
+    "芯片商博通",
+    "数据中心建设",
+    "信号处理速度",
+    "AI研发",
+    "人工智能营收",
+    "半导体业务",
+    "需求规模",
+    "Meta Platforms",
+    "斥资数十亿美元"
+  ],
+  "not": [
+    "Meta Platforms",
+    "斥资数十亿美元",
+    "购买谷歌TPU",
+    "股价飙升",
+    "市值突破",
+    "营收增长"
+  ],
+  "evidence_refs": [
+    {
+      "term": "以太网芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "以太网芯片"
+    },
+    {
+      "term": "芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "芯片"
+    },
+    {
+      "term": "下一代ASIC",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "下一代ASIC"
+    },
+    {
+      "term": "AI芯片ASIC",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI芯片ASIC"
+    }
+  ],
+  "subject_id": "9036559",
+  "quality": "weak",
+  "generated_at": "2026-04-02T02:12:48",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

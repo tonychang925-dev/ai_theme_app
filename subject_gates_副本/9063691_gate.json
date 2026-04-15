@@ -1,0 +1,69 @@
+{
+  "must": [
+    "砷化镓电池",
+    "晶硅",
+    "钙钛矿太阳能电池",
+    "P型+薄片化",
+    "HJT",
+    "BC（HBC）"
+  ],
+  "should": [
+    "军用和科研",
+    "商用卫星",
+    "柔性衬底",
+    "溶液加工技术",
+    "金属卤化物钙钛矿",
+    "钙钛矿",
+    "BC",
+    "HBC",
+    "可靠性",
+    "成本",
+    "能质比",
+    "比功率"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "砷化镓电池",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "砷化镓电池"
+    },
+    {
+      "term": "晶硅",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "晶硅"
+    },
+    {
+      "term": "钙钛矿太阳能电池",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "钙钛矿太阳能电池"
+    },
+    {
+      "term": "P型+薄片化",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "P型+薄片化"
+    },
+    {
+      "term": "HJT",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "HJT"
+    },
+    {
+      "term": "BC（HBC）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "BC（HBC）"
+    }
+  ],
+  "subject_id": "9063691",
+  "quality": "medium",
+  "generated_at": "2026-04-02T03:59:28",
+  "semantic_type": "技术路线与材料选择",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,78 @@
+{
+  "must": [
+    "石油及石油气",
+    "金属矿石",
+    "干果及坚果",
+    "化工原料",
+    "石化产品",
+    "石油沥青"
+  ],
+  "should": [
+    "原油",
+    "液化石油气（LPG）",
+    "铁矿砂",
+    "铜矿",
+    "开心果",
+    "葡萄干",
+    "尿素",
+    "中国",
+    "伊拉克",
+    "印度",
+    "藏红花",
+    "聚乙烯纤维"
+  ],
+  "not": [
+    "地缘冲突",
+    "供应链变动",
+    "伊朗阿巴斯港停运事件",
+    "地缘影响",
+    "伊朗港口爆炸事件",
+    "供应紧张",
+    "地缘冲击",
+    "阿巴斯港停运"
+  ],
+  "evidence_refs": [
+    {
+      "term": "石油及石油气",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "石油及石油气"
+    },
+    {
+      "term": "金属矿石",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "金属矿石"
+    },
+    {
+      "term": "干果及坚果",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "干果及坚果"
+    },
+    {
+      "term": "化工原料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "化工原料"
+    },
+    {
+      "term": "石化产品",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "石化产品"
+    },
+    {
+      "term": "石油沥青",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "石油沥青"
+    }
+  ],
+  "subject_id": "9050897",
+  "quality": "strong",
+  "generated_at": "2026-04-02T14:59:44",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

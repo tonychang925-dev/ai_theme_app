@@ -1,0 +1,69 @@
+{
+  "must": [
+    "大宗纸",
+    "木浆系",
+    "废纸系",
+    "特种纸",
+    "木浆",
+    "针叶浆需求量"
+  ],
+  "should": [
+    "国废",
+    "外废",
+    "煤炭",
+    "自有浆线",
+    "自备电厂",
+    "稳定废纸回收渠道",
+    "海外再生纤维产能",
+    "生活用纸",
+    "工业用纸",
+    "Arauco公司",
+    "原材料成本",
+    "能源动力成本"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大宗纸",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "大宗纸"
+    },
+    {
+      "term": "木浆系",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "木浆系"
+    },
+    {
+      "term": "废纸系",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "废纸系"
+    },
+    {
+      "term": "特种纸",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "特种纸"
+    },
+    {
+      "term": "木浆",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "木浆"
+    },
+    {
+      "term": "针叶浆需求量",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "针叶浆需求量"
+    }
+  ],
+  "subject_id": "9010074",
+  "quality": "medium",
+  "generated_at": "2026-04-02T11:02:40",
+  "semantic_type": "产业链成本分析",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

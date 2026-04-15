@@ -1,0 +1,51 @@
+{
+  "must": [
+    "特供酒",
+    "虚假标注",
+    "酒品",
+    "蛇茅"
+  ],
+  "should": [
+    "符号",
+    "标志性建筑物",
+    "官方活动",
+    "白酒行业",
+    "高端和次高端价位",
+    "次高端",
+    "白酒",
+    "黄酒"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特供酒",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "特供酒"
+    },
+    {
+      "term": "虚假标注",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "虚假标注"
+    },
+    {
+      "term": "酒品",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "酒品"
+    },
+    {
+      "term": "蛇茅",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "蛇茅"
+    }
+  ],
+  "subject_id": "9014347",
+  "quality": "strong",
+  "generated_at": "2026-04-01T04:22:11",
+  "semantic_type": "假冒伪劣产品",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

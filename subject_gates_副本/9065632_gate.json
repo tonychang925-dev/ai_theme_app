@@ -1,0 +1,56 @@
+{
+  "must": [
+    "资产重组",
+    "资产收购",
+    "资产剥离",
+    "资产置换"
+  ],
+  "should": [
+    "负债",
+    "股权",
+    "业务",
+    "保壳",
+    "科技类",
+    "房地产转型",
+    "能源类",
+    "国资入主"
+  ],
+  "not": [
+    "重组终止",
+    "监管问询",
+    "标的亏损",
+    "业绩暴雷"
+  ],
+  "evidence_refs": [
+    {
+      "term": "资产重组",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "资产重组"
+    },
+    {
+      "term": "资产收购",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "资产收购"
+    },
+    {
+      "term": "资产剥离",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "资产剥离"
+    },
+    {
+      "term": "资产置换",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "资产置换"
+    }
+  ],
+  "subject_id": "9065632",
+  "quality": "medium",
+  "generated_at": "2026-04-01T08:27:29",
+  "semantic_type": "公司资本运作事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

@@ -1,0 +1,35 @@
+{
+  "must": [
+    "不锈钢火箭海上回收",
+    "不锈钢火箭"
+  ],
+  "should": [
+    "试验平台",
+    "中标",
+    "海上液体火箭",
+    "发射回收试验",
+    "商业液体火箭",
+    "海上发射回收试验"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "不锈钢火箭海上回收",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "不锈钢火箭海上回收"
+    },
+    {
+      "term": "不锈钢火箭",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "不锈钢火箭"
+    }
+  ],
+  "subject_id": "9062381",
+  "quality": "weak",
+  "generated_at": "2026-03-31T17:02:26",
+  "semantic_type": "航天技术突破与商业化事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

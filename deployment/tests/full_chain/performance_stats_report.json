@@ -1,0 +1,110 @@
+{
+  "test_name": "performance_stats_test",
+  "timestamp": "2026-04-12 10:38:55",
+  "performance_metrics": {
+    "write_times": [
+      0.05,
+      0.08,
+      0.12,
+      0.07,
+      0.09
+    ],
+    "redis_publish_times": [
+      0.01,
+      0.02,
+      0.015,
+      0.018,
+      0.012
+    ],
+    "processing_times": [
+      2.5,
+      3.1,
+      2.8,
+      3.5,
+      2.9
+    ],
+    "stage_latencies": {
+      "news_to_event": [
+        0.8,
+        1.2,
+        0.9,
+        1.1,
+        1.0
+      ],
+      "event_to_classified": [
+        1.5,
+        1.8,
+        1.6,
+        2.0,
+        1.7
+      ],
+      "classified_to_theme": [
+        0.5,
+        0.6,
+        0.55,
+        0.7,
+        0.6
+      ],
+      "theme_to_decision": [
+        0.3,
+        0.4,
+        0.35,
+        0.45,
+        0.4
+      ]
+    },
+    "throughput": 25.5,
+    "success_count": 48,
+    "error_count": 2
+  },
+  "performance_standards": {
+    "db_write_latency": 0.1,
+    "redis_publish_latency": 0.05,
+    "news_to_event_latency": 2.0,
+    "event_to_classified_latency": 3.0,
+    "classified_to_theme_latency": 2.0,
+    "theme_to_decision_latency": 1.0,
+    "total_processing_latency": 8.0,
+    "throughput_min": 10.0,
+    "success_rate": 90.0,
+    "conversion_rate": 70.0
+  },
+  "verification": {
+    "standards": {
+      "db_write_latency": 0.1,
+      "redis_publish_latency": 0.05,
+      "news_to_event_latency": 2.0,
+      "event_to_classified_latency": 3.0,
+      "classified_to_theme_latency": 2.0,
+      "theme_to_decision_latency": 1.0,
+      "total_processing_latency": 8.0,
+      "throughput_min": 10.0,
+      "success_rate": 90.0,
+      "conversion_rate": 70.0
+    },
+    "actual_values": {
+      "db_write_latency": 0.082,
+      "redis_publish_latency": 0.015,
+      "news_to_event_latency": 1.0,
+      "event_to_classified_latency": 1.72,
+      "classified_to_theme_latency": 0.59,
+      "theme_to_decision_latency": 0.38,
+      "total_processing_latency": 2.96,
+      "throughput": 25.5,
+      "success_rate": 96.0
+    },
+    "passed": {
+      "db_write_latency": true,
+      "redis_publish_latency": true,
+      "news_to_event_latency": true,
+      "event_to_classified_latency": true,
+      "classified_to_theme_latency": true,
+      "theme_to_decision_latency": true,
+      "total_processing_latency": true,
+      "throughput": true,
+      "success_rate": true
+    },
+    "overall_passed": true,
+    "recommendations": []
+  }
+}

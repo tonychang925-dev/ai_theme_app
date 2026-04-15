@@ -1,0 +1,26 @@
+{
+  "must": [
+    "AIDC广告代理合作接入"
+  ],
+  "should": [
+    "广告代理",
+    "AIDC",
+    "合作",
+    "接入"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "AIDC广告代理合作接入",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AIDC广告代理合作接入"
+    }
+  ],
+  "subject_id": "9063773",
+  "quality": "weak",
+  "generated_at": "2026-04-02T09:27:36",
+  "semantic_type": "技术合作与接入事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

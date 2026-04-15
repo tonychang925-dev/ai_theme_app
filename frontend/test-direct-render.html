@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>直接渲染测试</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            padding: 20px;
+            background: #1a1a1a;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #3b82f6;
+        }
+        .test-area {
+            padding: 20px;
+            background: #2a2a2a;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .log {
+            background: #333;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .success {
+            border-left: 4px solid #10b981;
+        }
+        .error {
+            border-left: 4px solid #ef4444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>直接渲染测试</h1>
+
+        <div class="test-area">
+            <h3>测试IntelHeader组件渲染</h3>
+            <button onclick="testIntelHeader()">测试组件渲染</button>
+            <div id="result" class="log">点击按钮测试</div>
+        </div>
+
+        <div class="test-area">
+            <h3>渲染区域：</h3>
+            <div id="render-area"></div>
+        </div>
+    </div>
+
+    <script type="module">
+        async function testIntelHeader() {
+            const result = document.getElementById('result');
+            const renderArea = document.getElementById('render-area');
+
+            result.textContent = '加载中...';
+            result.className = 'log';
+
+            try {
+                // 1. 加载React
+                const reactModule = await import('http://localhost:5173/node_modules/.vite/deps/react.js?v=c8f69df2');
+                const React = reactModule.default || reactModule;
+
+                // 2. 加载ReactDOM
+                const reactDomModule = await import('http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=c8f69df2');
+                const ReactDOM = reactDomModule.default || reactDomModule;
+
+                // 3. 加载IntelHeader组件
+                const intelHeaderModule = await import('http://localhost:5173/src/components/intel/IntelHeader.tsx');
+                const IntelHeader = intelHeaderModule.IntelHeader;
+
+                console.log('✅ React加载成功:', React.version);
+                console.log('✅ ReactDOM加载成功');
+                console.log('✅ IntelHeader组件:', IntelHeader);
+
+                // 4. 渲染组件
+                const props = {
+                    sourceSummary: '测试来源',
+                    payloadCount: 42,
+                    liveStatus: 'live',
+                    sseConnectionState: null,
+                    liveNewCount: 0
+                };
+
+                renderArea.innerHTML = '';
+                const container = document.createElement('div');
+                renderArea.appendChild(container);
+
+                const root = ReactDOM.createRoot(container);
+                root.render(React.createElement(IntelHeader, props));
+
+                result.textContent = '✅ IntelHeader组件渲染成功！\n';
+                result.textContent += '查看上方渲染的组件，应该包含"AI选股"按钮。\n';
+                result.textContent += '检查控制台查看详细日志。';
+                result.className = 'log success';
+
+                // 等待渲染完成，然后检查按钮
+                setTimeout(() => {
+                    const buttons = container.querySelectorAll('button');
+                    console.log('找到的按钮数量:', buttons.length);
+                    buttons.forEach((btn, i) => {
+                        console.log(`按钮${i}:`, btn.textContent);
+                        if (btn.textContent.includes('AI选股')) {
+                            console.log('✅ 找到AI选股按钮！');
+                        }
+                    });
+                }, 100);
+
+            } catch (error) {
+                result.textContent = `❌ 渲染失败:\n${error.message}\n${error.stack}`;
+                result.className = 'log error';
+                console.error('渲染错误:', error);
+            }
+        }
+
+        // 页面加载时自动测试
+        window.addEventListener('load', () => {
+            console.log('=== 直接渲染测试页面已加载 ===');
+            console.log('时间:', new Date().toLocaleString());
+            console.log('点击"测试组件渲染"按钮测试IntelHeader组件');
+        });
+    </script>
+</body>
+</html>

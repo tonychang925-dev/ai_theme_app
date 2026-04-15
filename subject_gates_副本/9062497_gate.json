@@ -1,0 +1,37 @@
+{
+  "must": [
+    "新剑传动",
+    "人形机器人"
+  ],
+  "should": [
+    "滚轧成型蜗杆齿轮",
+    "座椅水平驱动器",
+    "行星滚柱丝杠-直线型电驱动关节",
+    "旋转型电驱动关节",
+    "半导体",
+    "通讯电子",
+    "汽车及新能源",
+    "智能汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新剑传动",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "新剑传动"
+    },
+    {
+      "term": "人形机器人",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人形机器人"
+    }
+  ],
+  "subject_id": "9062497",
+  "quality": "strong",
+  "generated_at": "2026-03-31T22:47:11",
+  "semantic_type": "公司事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

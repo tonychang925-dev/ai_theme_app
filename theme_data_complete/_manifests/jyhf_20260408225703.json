@@ -1,0 +1,37 @@
+{
+  "batch_id": "jyhf_20260408225703",
+  "started_at": "2026-04-08T22:57:04.709792",
+  "source": "jyhf",
+  "subject_count": 0,
+  "subjects": [],
+  "sync_mode": "lists_only",
+  "wanted_types": [
+    "lists"
+  ],
+  "files": [
+    {
+      "file_path": "theme_data_complete/lists/theme_hierarchy.jsonl",
+      "data_type": "lists",
+      "subject_key": null,
+      "file_hash": "96130fb5adfe0e48cbaca7f7d09361db3bb271f6e7de2d91ed59ec4136b5359c",
+      "file_size": 52541,
+      "source_updated_at": "2026-02-22T16:18:38.558055"
+    },
+    {
+      "file_path": "theme_data_complete/lists/full_theme_list.sync.jsonl",
+      "data_type": "lists",
+      "subject_key": null,
+      "file_hash": "d8ccaeb116dea0af10d00a5883c8bc19d661ec922d112b9466665500206e0c56",
+      "file_size": 433375,
+      "source_updated_at": "2026-04-08T22:57:04.704076"
+    }
+  ],
+  "stats": {
+    "total_requests": 1,
+    "success": 1,
+    "failed": 0,
+    "by_type": {
+      "lists": 1
+    }
+  }
+}

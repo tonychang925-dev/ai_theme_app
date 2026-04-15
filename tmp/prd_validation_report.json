@@ -1,37 +1,49 @@
 {
   "schema_version": "1.0",
-  "phase": "P3.phase3",
-  "checked_at": "2026-04-02T00:00:00+08:00",
+  "phase": "M5",
+  "checked_at": "2026-04-10T00:00:00+08:00",
   "checks": [
     {
       "name": "id_uniqueness",
       "passed": true,
       "severity": "info",
-      "details": "PRD-REQ-P3.phase3-001~008 与 PRD-UC-P3.phase3-01~04 在本次 Draft 中唯一。"
+      "details": "功能需求 FR-M5-001~012、用例 UC-M5-001~005、验收标准 AC-M5-001~007 在本次 Draft 中唯一无冲突。"
     },
     {
       "name": "requirement_verifiable",
       "passed": true,
       "severity": "info",
-      "details": "每条需求均包含触发条件、预期行为、约束或量化门槛。"
+      "details": "每条功能需求均包含触发条件、预期行为、约束描述，符合 PRD 文档协议要求。"
     },
     {
       "name": "traceability_complete",
       "passed": false,
       "severity": "warn",
-      "details": "机读映射已形成，但 ACCEPTANCE/WBS/TEST_CASE/PHASE_CONTRACT 仍为占位映射，未形成正式闭环。"
+      "details": "已创建机读映射文件 (prd_traceability.json)，但 ACCEPTANCE/WBS/TEST_CASE/PHASE_CONTRACT 仍为占位映射，未形成正式闭环。"
     },
     {
       "name": "conflict_resolution_recorded",
       "passed": true,
       "severity": "info",
-      "details": "已记录冲突：P3.phase3 只形成了 Draft PRD，尚未补齐正式 Acceptance/WBS/Phase Contract。"
+      "details": "本 PRD 基于前端技术设计文档创建，作为 M5 阶段更新，未发现与现有 PRD 的实质性冲突。文档依据：docs/architecture/个人投资助理项目-前端技术设计（第四阶段）.md。"
     },
     {
       "name": "schema_valid",
       "passed": true,
       "severity": "info",
-      "details": "JSON 结构按本地 schema 设计，待脚本校验确认。"
+      "details": "PRD 结构包含背景与目标、范围、功能需求、非功能需求、用例、验收标准、非目标、数据示例，符合 PRD 文档协议章节要求。"
+    },
+    {
+      "name": "acceptance_testable",
+      "passed": true,
+      "severity": "info",
+      "details": "验收标准 AC-M5-001~007 均为二元可判定，可映射到具体测试动作（如 API 调用、界面操作验证）。"
+    },
+    {
+      "name": "no_vague_statements",
+      "passed": true,
+      "severity": "info",
+      "details": "验收标准中未使用'尽量快''体验更好'等模糊语句，均使用可测量指标（如延迟时间、状态码、一致性验证）。"
     }
   ],
   "gate_ready": false

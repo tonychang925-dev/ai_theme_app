@@ -1,0 +1,65 @@
+{
+  "must": [
+    "非侵入式脑机接口",
+    "神经反馈训练",
+    "固态凝胶电极",
+    "高精度EEG信号采集芯片",
+    "强脑科技"
+  ],
+  "should": [
+    "AI解码算法",
+    "神经反馈训练系统",
+    "康复医疗",
+    "教育大健康",
+    "人机交互",
+    "自闭症干预系统",
+    "Focus专注力头环",
+    "深海豚安睡仪",
+    "EEG信号采集芯片",
+    "国内首家脑机接口独角兽",
+    "累计拥有460多项专利授权",
+    "已覆盖全国超过3000家教育机构"
+  ],
+  "not": [
+    "港股IPO",
+    "IPO申请"
+  ],
+  "evidence_refs": [
+    {
+      "term": "非侵入式脑机接口",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "非侵入式脑机接口"
+    },
+    {
+      "term": "神经反馈训练",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "神经反馈训练"
+    },
+    {
+      "term": "固态凝胶电极",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "固态凝胶电极"
+    },
+    {
+      "term": "高精度EEG信号采集芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高精度EEG信号采集芯片"
+    },
+    {
+      "term": "强脑科技",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "强脑科技"
+    }
+  ],
+  "subject_id": "9062203",
+  "quality": "strong",
+  "generated_at": "2026-04-01T05:42:18",
+  "semantic_type": "技术突破与商业化应用",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

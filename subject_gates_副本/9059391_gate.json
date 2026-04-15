@@ -1,0 +1,62 @@
+{
+  "must": [
+    "国家中心城市",
+    "长江上游经济中心",
+    "一带一路",
+    "长江经济带",
+    "西部大开发"
+  ],
+  "should": [
+    "西部陆海新通道物流和运营组织中心",
+    "国际物流枢纽",
+    "枢纽港产业园",
+    "中欧班列（成渝）",
+    "国际铁路港综合保税区",
+    "成渝中线高铁",
+    "成自宜高铁",
+    "综保区汽车KD件监管模式",
+    "税・关信用通",
+    "两江新区"
+  ],
+  "not": [
+    "行政区划调整"
+  ],
+  "evidence_refs": [
+    {
+      "term": "国家中心城市",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国家中心城市"
+    },
+    {
+      "term": "长江上游经济中心",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "长江上游经济中心"
+    },
+    {
+      "term": "一带一路",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "一带一路"
+    },
+    {
+      "term": "长江经济带",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "长江经济带"
+    },
+    {
+      "term": "西部大开发",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "西部大开发"
+    }
+  ],
+  "subject_id": "9059391",
+  "quality": "strong",
+  "generated_at": "2026-04-01T07:14:40",
+  "semantic_type": "区域发展战略与产业升级",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

@@ -1,0 +1,57 @@
+{
+  "must": [
+    "具身智能",
+    "华为",
+    "机器人"
+  ],
+  "should": [
+    "汽车制造",
+    "动力电池",
+    "地方政策",
+    "产业基金",
+    "人形机器人",
+    "仿生驱动",
+    "脑机接口",
+    "AI大模型",
+    "政策措施",
+    "人形机器人领域",
+    "人形机器人产业",
+    "新一代人工智能"
+  ],
+  "not": [
+    "世界机器人大会",
+    "机器人大会",
+    "世界机器人大赛",
+    "共融机器人挑战赛",
+    "BCI脑控机器人大赛",
+    "青少年机器人设计大赛",
+    "人形机器人全产业链专业展",
+    "国际人工智能与机器人大会"
+  ],
+  "evidence_refs": [
+    {
+      "term": "具身智能",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "具身智能"
+    },
+    {
+      "term": "华为",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "华为"
+    },
+    {
+      "term": "机器人",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "机器人"
+    }
+  ],
+  "subject_id": "9034824",
+  "quality": "medium",
+  "generated_at": "2026-03-10T11:38:35",
+  "semantic_type": "技术突破与产业应用",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

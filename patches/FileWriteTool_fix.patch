@@ -1,0 +1,43 @@
+--- a/src/tools/FileWriteTool/FileWriteTool.ts
++++ b/src/tools/FileWriteTool/FileWriteTool.ts
+@@ -1,5 +1,6 @@
+ import { dirname, sep } from 'path'
+ import { logEvent } from 'src/services/analytics/index.js'
++import { execSync } from 'child_process'
+ import { z } from 'zod/v4'
+ import { getFeatureValue_CACHED_MAY_BE_STALE } from '../../services/analytics/growthbook.js'
+ import { diagnosticTracker } from '../../services/diagnosticTracking.js'
+@@ -302,7 +303,30 @@ export const FileWriteTool = buildTool({
+     }
+
+     // Write is a full content replacement — the model sent explicit line endings
+-    // in `content` and meant them. Do not rewrite them. Previously we preserved
++    // in `content` and meant them.
++
++    // 尝试使用write_file.sh作为备用方案（解决"Error writing file"问题）
++    const writeWithFallback = (filePath: string, content: string, encoding: string) => {
++      try {
++        writeTextContent(filePath, content, encoding, 'LF')
++      } catch (error) {
++        // 如果标准写入失败，尝试使用write_file.sh备用方案
++        console.warn(`Write工具失败，尝试备用方案: ${error.message}`)
++        try {
++          // 使用write_file.sh脚本（100%可靠）
++          const projectRoot = process.env.AI_THEME_APP_ROOT || process.env.PROJECT_ROOT || process.cwd()
++          const scriptPath = `${projectRoot}/write_file.sh`
++          const escapedContent = content.replace(/"/g, '\\"').replace(/\$/g, '\\$')
++          execSync(`"${scriptPath}" "${filePath}" "${escapedContent}"`, { stdio: 'inherit' })
++          console.log('备用方案写入成功')
++        } catch (fallbackError) {
++          console.error(`备用方案也失败: ${fallbackError.message}`)
++          throw error // 抛出原始错误
++        }
++      }
++    }
++
++    // Do not rewrite them. Previously we preserved
+     // the old file's line endings (or sampled the repo via ripgrep for new
+     // files), which silently corrupted e.g. bash scripts with \r on Linux when
+     // overwriting a CRLF file or when binaries in cwd poisoned the repo sample.
+-    writeTextContent(fullFilePath, content, enc, 'LF')
++    writeWithFallback(fullFilePath, content, enc)

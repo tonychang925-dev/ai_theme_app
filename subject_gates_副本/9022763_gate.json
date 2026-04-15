@@ -1,0 +1,77 @@
+{
+  "must": [
+    "农业机械",
+    "农用动力机械",
+    "农田建设机械",
+    "土壤耕作机械",
+    "种植和施肥机械",
+    "植物保护机械"
+  ],
+  "should": [
+    "农田排灌机械",
+    "作物收获机械",
+    "农产品加工机械",
+    "畜牧业机械",
+    "农业运输机械",
+    "老旧柴油货车补贴政策",
+    "作物种植业",
+    "畜牧业生产",
+    "农、畜产品初加工和处理",
+    "部件",
+    "整机",
+    "农业机械报废更新补贴政策"
+  ],
+  "not": [
+    "中国国际农产品交易会",
+    "农业科技创新平台",
+    "农业企业走出去",
+    "增发国债",
+    "大规模设备更新",
+    "消费品以旧换新",
+    "超长期特别国债"
+  ],
+  "evidence_refs": [
+    {
+      "term": "农业机械",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "农业机械"
+    },
+    {
+      "term": "农用动力机械",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "农用动力机械"
+    },
+    {
+      "term": "农田建设机械",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "农田建设机械"
+    },
+    {
+      "term": "土壤耕作机械",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "土壤耕作机械"
+    },
+    {
+      "term": "种植和施肥机械",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "种植和施肥机械"
+    },
+    {
+      "term": "植物保护机械",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "植物保护机械"
+    }
+  ],
+  "subject_id": "9022763",
+  "quality": "medium",
+  "generated_at": "2026-04-01T01:39:36",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

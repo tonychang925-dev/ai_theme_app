@@ -382,12 +382,110 @@
 - Context
   - 第三阶段将引入 `Tushare` 资讯、公告和股票事实，用于复盘解释。
 - Problem
-  - 若把资讯直接当成“涨停真因”，会产生高误导性结论。
+  - 若把资讯直接当成”涨停真因”，会产生高误导性结论。
 - Proposed Decision
   - 对涨停原因仅输出候选归因、置信度和支撑证据，不输出确定性真因。
 - Alternatives
-  - 直接输出“该股涨停原因就是某条新闻”。
+  - 直接输出”该股涨停原因就是某条新闻”。
 - Consequences
   - 解释性更诚实；产品文案复杂度上升。
 - Trigger
   - 复盘系统开始输出个股涨停原因时。
+
+### ADR-029: 前端仅展示 AI 输出，禁止前端业务计算
+- Context
+  - 第四阶段前端投研工作台需要展示 AI 对市场的理解结果。
+- Problem
+  - 若前端进行排序、权重、评分等业务计算，会导致前后端认知不一致，破坏”AI为主，人为辅”原则。
+- Proposed Decision
+  - 前端仅负责展示 AI 输出，所有排序、权重、评分必须来自后端，前端不得重算。
+- Alternatives
+  - 允许前端在特定场景下进行轻量业务计算。
+- Consequences
+  - 前后端认知一致；前端职责清晰；需要后端提供完整计算数据。
+- Trigger
+  - 前端代码中出现排序、权重、评分等业务计算逻辑时。
+
+### ADR-030: DailyReview 数据结构与 API 契约冻结
+- Context
+  - 第四阶段需要前后端并行开发 DailyReview 功能。
+- Problem
+  - 若数据结构与 API 契约不冻结，前后端开发会频繁返工，影响交付进度。
+- Proposed Decision
+  - 立即冻结 `DailyReview`、`MarketSummary`、`ThemeReview`、`CapitalReview`、`TradingPrinciple` 等核心数据结构，字段只增不改语义。
+- Alternatives
+  - 保持契约灵活，允许开发过程中调整。
+- Consequences
+  - 前后端开发效率提升；契约稳定性增强；字段变更需要严格管理。
+- Trigger
+  - 开始 DailyReview 功能开发前。
+
+### ADR-031: 前端状态管理单一真源原则
+- Context
+  - 投研工作台三栏布局需要复杂的组件间状态同步。
+- Problem
+  - 若状态管理设计不当，会导致组件间状态漂移和渲染不一致。
+- Proposed Decision
+  - 采用单一真源状态管理，以 `currentThemeId` 为核心状态，派生状态统一管理。
+- Alternatives
+  - 允许多点状态管理，依赖事件总线同步。
+- Consequences
+  - 状态一致性提升；调试复杂度降低；需要精心设计状态派生关系。
+- Trigger
+  - 出现组件间状态不一致或渲染异常时。
+
+### ADR-032: 前端性能监控基线定义
+- Context
+  - 投研工作台需要高信息密度展示，对性能要求较高。
+- Problem
+  - 若无性能监控基线，页面卡顿会影响决策效率，且问题难以定位。
+- Proposed Decision
+  - 定义前端性能监控基线：题材切换 P95 < 1000ms，页面首次加载 P95 < 3000ms。
+- Alternatives
+  - 先开发后优化，依赖用户反馈发现问题。
+- Consequences
+  - 用户体验可衡量；问题定位快速；需要建立监控体系。
+- Trigger
+  - 用户反馈页面响应慢或性能测试不达标时。
+
+### ADR-033: 前端向后兼容策略
+- Context
+  - 前端需要支持产品持续迭代和 API 演进。
+- Problem
+  - 若无向后兼容策略，API 字段变更会导致旧版本前端不可用。
+- Proposed Decision
+  - 制定前端向后兼容策略，支持字段渐进式升级，旧字段至少保留一个版本周期。
+- Alternatives
+  - 强制用户升级，不保留向后兼容。
+- Consequences
+  - 用户体验平滑；升级风险降低；需要维护兼容逻辑。
+- Trigger
+  - API 字段变更或产品版本升级时。
+
+### ADR-034: 避免重型组件库，保持信息密度优先
+- Context
+  - 投研工作台需要高信息密度与高度定制化界面。
+- Problem
+  - AntD 等重型组件库会限制界面信息密度与定制能力。
+- Proposed Decision
+  - 采用 Tailwind CSS + 定制组件方案，避免引入 AntD 等重型组件库。
+- Alternatives
+  - 使用 AntD 等成熟组件库提升开发效率。
+- Consequences
+  - 界面信息密度最大化；定制能力强；开发效率可能受影响。
+- Trigger
+  - 评估前端技术栈或引入新组件库时。
+
+### ADR-035: 前端设计系统与组件库规范
+- Context
+  - 前端需要长期维护和多人协作开发。
+- Problem
+  - 若无统一设计系统，组件样式与交互会不一致，增加维护成本。
+- Proposed Decision
+  - 建立前端设计系统，定义基础组件、样式规范、交互模式。
+- Alternatives
+  - 各模块独立开发，后期统一。
+- Consequences
+  - 开发效率提升；用户体验一致；需要前期设计投入。
+- Trigger
+  - 开始大规模前端开发或出现样式不一致问题时。

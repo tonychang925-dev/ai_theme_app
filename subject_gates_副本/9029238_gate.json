@@ -1,0 +1,53 @@
+{
+  "must": [
+    "创业投资",
+    "科技型中小企业",
+    "初创或快速成长的高科技企业",
+    "推广实物分配股票试点"
+  ],
+  "should": [
+    "实物分配股票",
+    "设置容亏率",
+    "股权投资",
+    "企业孵化",
+    "科创板第五套上市标准",
+    "商业航天",
+    "独角兽企业",
+    "上市培育库",
+    "投融资路演",
+    "高能级孵化器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "创业投资",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "创业投资"
+    },
+    {
+      "term": "科技型中小企业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "科技型中小企业"
+    },
+    {
+      "term": "初创或快速成长的高科技企业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "初创或快速成长的高科技企业"
+    },
+    {
+      "term": "推广实物分配股票试点",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "推广实物分配股票试点"
+    }
+  ],
+  "subject_id": "9029238",
+  "quality": "strong",
+  "generated_at": "2026-04-01T06:27:39",
+  "semantic_type": "资本运营与投资模式",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

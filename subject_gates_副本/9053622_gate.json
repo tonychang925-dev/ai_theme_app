@@ -1,0 +1,75 @@
+{
+  "must": [
+    "盾构机",
+    "刀盘系统",
+    "液压系统",
+    "电气控制系统",
+    "主轴承",
+    "土压平衡盾构"
+  ],
+  "should": [
+    "壳体结构",
+    "注浆系统",
+    "渣土输送系统",
+    "水利水电工程",
+    "市政工程",
+    "能源管道",
+    "矿山",
+    "国防",
+    "主隧洞TBM",
+    "引水隧洞",
+    "支洞盾构机",
+    "掘进设备需求"
+  ],
+  "not": [
+    "雅鲁藏布江水电站",
+    "水电站工程启动",
+    "铁建重工",
+    "TBM个股",
+    "一字涨停"
+  ],
+  "evidence_refs": [
+    {
+      "term": "盾构机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "盾构机"
+    },
+    {
+      "term": "刀盘系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "刀盘系统"
+    },
+    {
+      "term": "液压系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "液压系统"
+    },
+    {
+      "term": "电气控制系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电气控制系统"
+    },
+    {
+      "term": "主轴承",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "主轴承"
+    },
+    {
+      "term": "土压平衡盾构",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "土压平衡盾构"
+    }
+  ],
+  "subject_id": "9053622",
+  "quality": "strong",
+  "generated_at": "2026-03-31T17:01:18",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

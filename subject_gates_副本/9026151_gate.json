@@ -1,0 +1,52 @@
+{
+  "must": [
+    "NMN（β-烟酰胺单核苷酸）",
+    "NAD+",
+    "NMN"
+  ],
+  "should": [
+    "NAD+水平",
+    "能量代谢",
+    "DNA修复",
+    "基因表达调控",
+    "衰老过程",
+    "老年相关疾病",
+    "对抗衰老",
+    "改善相关生理功能",
+    "补充NMN",
+    "提高NAD+水平"
+  ],
+  "not": [
+    "食品添加剂滥用",
+    "桃李面包",
+    "金禾实业",
+    "海口市市场监督管理局",
+    "六部门"
+  ],
+  "evidence_refs": [
+    {
+      "term": "NMN（β-烟酰胺单核苷酸）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "NMN（β-烟酰胺单核苷酸）"
+    },
+    {
+      "term": "NAD+",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "NAD+"
+    },
+    {
+      "term": "NMN",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "NMN"
+    }
+  ],
+  "subject_id": "9026151",
+  "quality": "strong",
+  "generated_at": "2026-04-02T08:04:32",
+  "semantic_type": "抗衰老生物技术",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

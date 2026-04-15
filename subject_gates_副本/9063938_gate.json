@@ -1,0 +1,36 @@
+{
+  "must": [
+    "液冷技术",
+    "液冷"
+  ],
+  "should": [
+    "供电"
+  ],
+  "not": [
+    "财报超预期",
+    "业绩指引",
+    "股价跳涨",
+    "单日涨幅",
+    "创历史新高"
+  ],
+  "evidence_refs": [
+    {
+      "term": "液冷技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "液冷技术"
+    },
+    {
+      "term": "液冷",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "液冷"
+    }
+  ],
+  "subject_id": "9063938",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:49:58",
+  "semantic_type": "技术应用与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

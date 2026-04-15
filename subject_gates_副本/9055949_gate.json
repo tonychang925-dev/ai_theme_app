@@ -1,0 +1,73 @@
+{
+  "must": [
+    "机器人大脑",
+    "多模态大模型",
+    "运动控制层",
+    "边缘算力芯片",
+    "高精度传感器",
+    "物理AI"
+  ],
+  "should": [
+    "协同系统",
+    "服装制造",
+    "康养服务",
+    "物流拣选",
+    "机器人",
+    "自动驾驶汽车",
+    "端到端模型轻量化",
+    "多机器人群体智能协作",
+    "仿真技术",
+    "世界模型",
+    "环境感知",
+    "任务规划"
+  ],
+  "not": [
+    "意识AI",
+    "生成式AI",
+    "代理式AI"
+  ],
+  "evidence_refs": [
+    {
+      "term": "机器人大脑",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "机器人大脑"
+    },
+    {
+      "term": "多模态大模型",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "多模态大模型"
+    },
+    {
+      "term": "边缘算力芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "边缘算力芯片"
+    },
+    {
+      "term": "高精度传感器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高精度传感器"
+    },
+    {
+      "term": "物理AI",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "物理AI"
+    },
+    {
+      "term": "运动控制层",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "运动控制层"
+    }
+  ],
+  "subject_id": "9055949",
+  "quality": "strong",
+  "generated_at": "2026-03-31T22:39:16",
+  "semantic_type": "技术突破与产业化应用",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

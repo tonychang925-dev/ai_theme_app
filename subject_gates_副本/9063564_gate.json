@@ -1,0 +1,78 @@
+{
+  "must": [
+    "AI变压器",
+    "干式变压器",
+    "固态变压器(SST)",
+    "移相变压器",
+    "非晶合金变压器",
+    "SiC/IGBT功率半导体"
+  ],
+  "should": [
+    "传统变压器",
+    "油浸变压器",
+    "铁芯",
+    "绕组",
+    "绝缘",
+    "冷却",
+    "智能监测",
+    "铜材绕组",
+    "绝缘材料",
+    "通信芯片",
+    "变压器油",
+    "液冷系统"
+  ],
+  "not": [
+    "全球数据中心变压器市场",
+    "全球固态变压器市场",
+    "国内变压器出口总值",
+    "中国AI专用变压器市场",
+    "满产状态",
+    "数据中心订单",
+    "英伟达发布GB300系列",
+    "供不应求"
+  ],
+  "evidence_refs": [
+    {
+      "term": "AI变压器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI变压器"
+    },
+    {
+      "term": "干式变压器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "干式变压器"
+    },
+    {
+      "term": "固态变压器(SST)",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "固态变压器(SST)"
+    },
+    {
+      "term": "移相变压器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "移相变压器"
+    },
+    {
+      "term": "非晶合金变压器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "非晶合金变压器"
+    },
+    {
+      "term": "SiC/IGBT功率半导体",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "SiC/IGBT功率半导体"
+    }
+  ],
+  "subject_id": "9063564",
+  "quality": "strong",
+  "generated_at": "2026-04-02T05:15:49",
+  "semantic_type": "技术产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

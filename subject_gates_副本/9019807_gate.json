@@ -1,0 +1,140 @@
+{
+  "must": [
+    "卫星互联网",
+    "卫星组网",
+    "空间段",
+    "地面段",
+    "用户端",
+    "低轨卫星",
+    "星间链路",
+    "卫星制造",
+    "卫星超级工厂",
+    "算力星座"
+  ],
+  "strong": [
+    "低轨卫星组网",
+    "卫星出厂即发射",
+    "太空数据中心",
+    "空间算力",
+    "中继传输",
+    "地面管控",
+    "组网发射",
+    "卫星大规模批量生产"
+  ],
+  "should": [
+    "火箭链",
+    "数据链",
+    "发射场",
+    "卫星超级工厂",
+    "部组件制造中心",
+    "高轨卫星",
+    "中轨卫星",
+    "地面通信网络",
+    "话音和短消息等通信服务",
+    "星间激光",
+    "地面和空中终端",
+    "天通",
+    "航天发射",
+    "卫星发射",
+    "全链条生态",
+    "产业链整合",
+    "商业航天",
+    "年产1000颗卫星",
+    "关键技术突破",
+    "试验星"
+  ],
+  "not": [
+    "雄安造卫星",
+    "雄安一号",
+    "首飞箭",
+    "加注合练",
+    "静态点火试验"
+  ],
+  "aliases": [
+    "卫星互联网",
+    "卫星互联",
+    "低轨卫星互联网"
+  ],
+  "entity_hints": [
+    "卫星互联网低轨卫星",
+    "卫星超级工厂",
+    "太空数据中心"
+  ],
+  "core_objects": [
+    "卫星互联网",
+    "卫星组网",
+    "低轨卫星",
+    "卫星制造",
+    "卫星超级工厂",
+    "算力星座",
+    "太空数据中心"
+  ],
+  "evidence_refs": [
+    {
+      "term": "卫星互联网",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "卫星互联网"
+    },
+    {
+      "term": "空间段",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "空间段"
+    },
+    {
+      "term": "地面段",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "地面段"
+    },
+    {
+      "term": "用户端",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "用户端"
+    },
+    {
+      "term": "低轨卫星",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "低轨卫星"
+    },
+    {
+      "term": "星间链路",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "星间链路"
+    },
+    {
+      "term": "卫星组网",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "卫星组网"
+    },
+    {
+      "term": "卫星制造",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "卫星制造"
+    },
+    {
+      "term": "卫星超级工厂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "卫星超级工厂"
+    },
+    {
+      "term": "算力星座",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "算力星座"
+    }
+  ],
+  "subject_id": "9019807",
+  "quality": "strong",
+  "generated_at": "2026-03-13T11:23:12",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

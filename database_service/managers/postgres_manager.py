@@ -1061,6 +1061,53 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.error(f"获取匹配事件失败 {event_id}: {e}")
             raise
 
+    async def enqueue_event_review(
+        self,
+        event_id: int,
+        reason: str,
+        source_channel: str = "realtime_news",
+        proposed_theme_name: Optional[str] = None,
+        proposed_theme_confidence: Optional[float] = None,
+    ) -> bool:
+        """将事件写入人工复核队列（幂等）。"""
+        try:
+            async with self.pool.acquire() as conn:
+                exists = await conn.fetchval(
+                    "SELECT to_regclass('public.event_review_queue')::text"
+                )
+                if not exists:
+                    logger.warning("event_review_queue 不存在，跳过写入复核队列")
+                    return False
+
+                await conn.execute(
+                    """
+                    INSERT INTO event_review_queue (
+                        event_id,
+                        review_status,
+                        proposed_theme_name,
+                        proposed_theme_confidence,
+                        reason,
+                        source_channel
+                    )
+                    VALUES ($1, 'waiting', $2, $3, $4, $5)
+                    ON CONFLICT (event_id) DO UPDATE
+                    SET review_status = 'waiting',
+                        proposed_theme_name = COALESCE(EXCLUDED.proposed_theme_name, event_review_queue.proposed_theme_name),
+                        proposed_theme_confidence = COALESCE(EXCLUDED.proposed_theme_confidence, event_review_queue.proposed_theme_confidence),
+                        reason = EXCLUDED.reason,
+                        source_channel = EXCLUDED.source_channel
+                    """,
+                    event_id,
+                    proposed_theme_name,
+                    proposed_theme_confidence,
+                    reason,
+                    source_channel,
+                )
+                return True
+        except Exception as e:
+            logger.error(f"写入 event_review_queue 失败 event_id={event_id}: {e}")
+            return False
+
     async def list_matchable_news_events(
         self,
         limit: int = 0,
@@ -1255,16 +1302,6 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         """创建结构化 news_event 记录并返回 news_event.id"""
         try:
             import json
-            from datetime import datetime
-
-            event_time = event_data.get("event_time")
-            if isinstance(event_time, str) and event_time.strip():
-                try:
-                    event_time = datetime.fromisoformat(event_time.strip().replace("Z", "+00:00"))
-                except ValueError:
-                    event_time = None
-            if isinstance(event_time, datetime) and event_time.tzinfo is not None:
-                event_time = event_time.replace(tzinfo=None)
 
             async with self.pool.acquire() as conn:
                 row = await conn.fetchrow(
@@ -1275,21 +1312,10 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                         impact_industries,
                         direction,
                         confidence,
-                        summary,
-                        theme_directive,
-                        theme_directive_processed,
-                        severity_score,
-                        source_weight,
-                        event_time,
-                        entities,
-                        causal_claim,
-                        evidence_set,
-                        raw_event_json
+                        summary
                     )
                     VALUES (
-                        $1, $2, $3, $4, $5, $6,
-                        $7::jsonb, $8, $9, $10, $11,
-                        $12::jsonb, $13::jsonb, $14::jsonb, $15::jsonb
+                        $1, $2, $3, $4, $5, $6
                     )
                     RETURNING id
                     """,
@@ -1298,16 +1324,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     event_data.get("impact_industries") or [],
                     event_data.get("direction"),
                     event_data.get("confidence"),
-                    event_data.get("summary"),
-                    json.dumps(event_data.get("theme_directive") or {}, ensure_ascii=False),
-                    bool(event_data.get("theme_directive_processed", False)),
-                    event_data.get("severity_score"),
-                    event_data.get("source_weight"),
-                    event_time,
-                    json.dumps(event_data.get("entities") or [], ensure_ascii=False),
-                    json.dumps(event_data.get("causal_claim") or [], ensure_ascii=False),
-                    json.dumps(event_data.get("evidence_set") or {}, ensure_ascii=False),
-                    json.dumps(event_data.get("raw_event_json") or {}, ensure_ascii=False),
+                    event_data.get("summary")
                 )
                 return int(row["id"]) if row else None
         except Exception as e:
@@ -1515,12 +1532,12 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     publish_time = publish_time.time()
             
             async with self.pool.acquire() as conn:
-                # 插入新闻数据
+                # 插入新闻数据 - 修复版：移除keywords和metadata列
                 row = await conn.fetchrow("""
-                    INSERT INTO news_raw 
-                    (news_id, title, content, source, publish_date, 
-                    publish_time, market, url, keywords, metadata)
-                    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+                    INSERT INTO news_raw
+                    (news_id, title, content, source, publish_date,
+                    publish_time, market, url)
+                    VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
                     ON CONFLICT (news_id) DO NOTHING
                     RETURNING news_id, id
                 """,
@@ -1531,9 +1548,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     publish_date,
                     publish_time,
                     news_data.get('market', 'A股'),
-                    news_data.get('url', ''),
-                    json.dumps(news_data.get('keywords', []), ensure_ascii=False),
-                    json.dumps(news_data.get('metadata', {}), ensure_ascii=False)
+                    news_data.get('url', '')
                 )
                 
                 if row:
@@ -1554,20 +1569,21 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         try:
             async with self.pool.acquire() as conn:
                 row = await conn.fetchrow("""
-                    SELECT 
+                    SELECT
                         id, news_id, title, content, source,
                         publish_date, publish_time, market, url,
-                        keywords, metadata, created_at, updated_at
+                        created_at, updated_at
                     FROM news_raw
                     WHERE news_id = $1
                 """, news_id)
-                
+
                 if row:
                     import json
-                    # 转换为字典并处理JSON字段
+                    # 转换为字典
                     result = dict(row)
-                    result['keywords'] = row['keywords'] if row['keywords'] else []
-                    result['metadata'] = row['metadata'] if row['metadata'] else {}
+                    # 添加默认的keywords和metadata字段（表中不存在这些列）
+                    result['keywords'] = []
+                    result['metadata'] = {}
                     return result
                 return None
                 
@@ -1580,21 +1596,22 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         try:
             async with self.pool.acquire() as conn:
                 rows = await conn.fetch("""
-                    SELECT 
+                    SELECT
                         id, news_id, title, content, source,
                         publish_date, publish_time, market, url,
-                        keywords, metadata, created_at, updated_at
+                        created_at, updated_at
                     FROM news_raw
                     ORDER BY created_at DESC
                     LIMIT $1
                 """, limit)
-                
+
                 results = []
                 for row in rows:
                     import json
                     result = dict(row)
-                    result['keywords'] = row['keywords'] if row['keywords'] else []
-                    result['metadata'] = row['metadata'] if row['metadata'] else {}
+                    # 添加默认的keywords和metadata字段（表中不存在这些列）
+                    result['keywords'] = []
+                    result['metadata'] = {}
                     results.append(result)
                 
                 logger.info(f"✅ 获取最近 {len(results)} 条新闻")
@@ -1637,8 +1654,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             'database_type': 'postgresql',
             'connection_status': self.connected if hasattr(self, 'connected') else True,
             'connection_info': {
-                'host': self.config.database_config.host,
-                'database': self.config.database_config.database
+                'host': self.config.postgres_host,
+                'database': self.config.postgres_database
             }
         })
         

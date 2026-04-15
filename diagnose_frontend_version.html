@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端版本诊断</title>
+    <style>
+        body { font-family: monospace; padding: 20px; font-size: 14px; }
+        .diagnostic { margin: 20px 0; padding: 15px; background: #1e1e1e; color: #d4d4d4; border-radius: 8px; }
+        .success { color: #6a9955; }
+        .error { color: #f48771; }
+        .warning { color: #cca700; }
+        .info { color: #9cdcfe; }
+        button { padding: 8px 16px; margin: 5px; background: #007acc; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #005a9e; }
+        pre { background: #252526; padding: 10px; border-radius: 4px; overflow: auto; }
+    </style>
+</head>
+<body>
+    <h1>前端版本诊断工具</h1>
+    <p>诊断前端代码是否已更新</p>
+
+    <div class="diagnostic">
+        <h3>诊断步骤</h3>
+        <ol>
+            <li>打开选股器页面: <a href="http://localhost:5173/screener" target="_blank">http://localhost:5173/screener</a></li>
+            <li>按 <code>F12</code> 打开开发者工具</li>
+            <li>在Console标签中运行以下命令：</li>
+        </ol>
+
+        <pre id="diagnostic-code">// 检查前端代码版本
+console.log('=== 前端代码版本诊断 ===');
+
+// 方法1: 检查页面中是否有调试日志
+console.log('检查方法1: 查看最近的控制台输出');
+console.log('如果看到以下日志，说明代码已更新:');
+console.log('  🔍 StockScreenerPage - store状态变化 (时间戳: ...)');
+console.log('  🔍 executeScreening开始: selectedStrategyId=');
+console.log('  🔍 API响应 (时间戳: ...):');
+
+// 方法2: 检查React组件
+console.log('\n检查方法2: React组件状态');
+console.log('如果有React DevTools扩展:');
+console.log('  1. 打开React DevTools');
+console.log('  2. 找到 StockScreenerPage 组件');
+console.log('  3. 检查 props 和 state');
+
+// 方法3: 直接测试API
+console.log('\n检查方法3: 直接测试API');
+console.log('在控制台运行以下代码测试API:');
+console.log(`
+fetch('http://localhost:8003/api/stock-screener/execute', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+        strategy_id: 'default_composite',
+        trade_date: '2026-04-10',
+        limit: 3,
+        enable_llm_review: false,
+        llm_top_k: 3
+    })
+})
+.then(r => r.json())
+.then(data => console.log('API响应:', data))
+.catch(err => console.error('API错误:', err));
+`);
+
+console.log('\n=== 诊断建议 ===');
+console.log('如果看不到调试日志，需要:');
+console.log('1. 强制刷新: Ctrl+Shift+R (Win/Linux) 或 Cmd+Shift+R (Mac)');
+console.log('2. 清除浏览器缓存');
+console.log('3. 重启前端开发服务器');</pre>
+
+        <button onclick="copyCode()">复制诊断代码</button>
+        <button onclick="runDiagnostic()">运行诊断</button>
+        <div id="diagnostic-result" style="margin-top: 10px;"></div>
+    </div>
+
+    <div class="diagnostic">
+        <h3>强制刷新指南</h3>
+        <p>如果诊断显示前端代码未更新：</p>
+        <ul>
+            <li><strong>Windows/Linux</strong>: 按 <code>Ctrl+Shift+R</code></li>
+            <li><strong>Mac</strong>: 按 <code>Cmd+Shift+R</code></li>
+            <li><strong>Chrome</strong>: 右键刷新按钮 → "清空缓存并硬性重新加载"</li>
+            <li><strong>Firefox</strong>: 按 <code>Ctrl+F5</code> 或 <code>Cmd+Shift+R</code></li>
+        </ul>
+
+        <p>或者清除浏览器缓存：</p>
+        <ol>
+            <li>按 <code>F12</code> 打开开发者工具</li>
+            <li>切换到 <strong>Application</strong> 标签 (Chrome) 或 <strong>Storage</strong> 标签 (Firefox)</li>
+            <li>点击 <strong>Clear storage</strong> 或 <strong>Clear site data</strong></li>
+            <li>勾选所有选项，点击 <strong>Clear site data</strong></li>
+        </ol>
+    </div>
+
+    <div class="diagnostic">
+        <h3>重启前端开发服务器</h3>
+        <p>如果强制刷新无效，可能需要重启前端开发服务器：</p>
+        <pre># 在终端中执行
+cd /Users/admin/Desktop/ai_theme_app/frontend
+# 停止当前服务器 (按 Ctrl+C)
+# 重新启动
+npm run dev</pre>
+    </div>
+
+    <div class="diagnostic">
+        <h3>验证API工作状态</h3>
+        <button onclick="verifyAPI()">验证API</button>
+        <div id="api-verify-result" style="margin-top: 10px;"></div>
+    </div>
+
+    <script>
+        function copyCode() {
+            const code = document.getElementById('diagnostic-code').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('诊断代码已复制到剪贴板');
+            });
+        }
+
+        function runDiagnostic() {
+            const code = document.getElementById('diagnostic-code').textContent;
+            try {
+                eval(code);
+                document.getElementById('diagnostic-result').innerHTML =
+                    '<p class="success">✅ 诊断代码已执行，请查看浏览器控制台</p>';
+            } catch (error) {
+                document.getElementById('diagnostic-result').innerHTML =
+                    `<p class="error">❌ 诊断执行失败: ${error.message}</p>`;
+            }
+        }
+
+        async function verifyAPI() {
+            const resultDiv = document.getElementById('api-verify-result');
+            resultDiv.innerHTML = '<p class="info">验证API中...</p>';
+
+            try {
+                const response = await fetch('http://localhost:8003/api/stock-screener/execute', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        strategy_id: 'default_composite',
+                        trade_date: '2026-04-10',
+                        limit: 2,
+                        enable_llm_review: false,
+                        llm_top_k: 2
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.status === 'completed' && data.results && data.results.length > 0) {
+                    resultDiv.innerHTML = `
+                        <div class="success">
+                            <p>✅ API工作正常</p>
+                            <p>返回 ${data.results.length} 条结果</p>
+                            <p>示例: ${data.results[0].stock_name} (${data.results[0].stock_id}) - ${data.results[0].composite_score}分</p>
+                        </div>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="warning">
+                            <p>⚠️ API返回异常</p>
+                            <p>状态: ${data.status}, 结果数量: ${data.results ? data.results.length : 0}</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="error">
+                        <p>❌ API验证失败</p>
+                        <p>错误: ${error.message}</p>
+                        <p>请检查后端服务是否运行: <code>http://localhost:8003</code></p>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

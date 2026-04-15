@@ -1,0 +1,45 @@
+{
+  "must": [
+    "上游勘探",
+    "上游采油",
+    "上游钻井",
+    "中游原油及一次加工"
+  ],
+  "should": [
+    "中游运输",
+    "下游销售"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "上游勘探",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "上游勘探"
+    },
+    {
+      "term": "上游采油",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "上游采油"
+    },
+    {
+      "term": "上游钻井",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "上游钻井"
+    },
+    {
+      "term": "中游原油及一次加工",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中游原油及一次加工"
+    }
+  ],
+  "subject_id": "9018216",
+  "quality": "weak",
+  "generated_at": "2026-04-04T16:07:26",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

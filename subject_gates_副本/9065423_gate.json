@@ -1,0 +1,31 @@
+{
+  "must": [
+    "大模型",
+    "词元工厂"
+  ],
+  "should": [
+    "芯片",
+    "服务器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大模型",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "大模型"
+    },
+    {
+      "term": "词元工厂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "词元工厂"
+    }
+  ],
+  "subject_id": "9065423",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:41:37",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

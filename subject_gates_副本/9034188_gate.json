@@ -1,0 +1,66 @@
+{
+  "must": [
+    "高端轴承",
+    "海缆",
+    "整机",
+    "铸件",
+    "塔桩"
+  ],
+  "should": [
+    "海上风电项目",
+    "海上风电机组",
+    "漂浮式海上风电",
+    "风电装备制造",
+    "新增风电装机容量",
+    "海洋经济高质量发展",
+    "风能企业",
+    "风电市场",
+    "风电装机",
+    "风电投资",
+    "北京国际风能大会",
+    "风能北京宣言"
+  ],
+  "not": [
+    "北京国际风能大会",
+    "风能北京宣言",
+    "全球风电市场展望"
+  ],
+  "evidence_refs": [
+    {
+      "term": "高端轴承",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高端轴承"
+    },
+    {
+      "term": "海缆",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "海缆"
+    },
+    {
+      "term": "整机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "整机"
+    },
+    {
+      "term": "铸件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "铸件"
+    },
+    {
+      "term": "塔桩",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "塔桩"
+    }
+  ],
+  "subject_id": "9034188",
+  "quality": "weak",
+  "generated_at": "2026-04-02T10:31:58",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

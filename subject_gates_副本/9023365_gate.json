@@ -1,0 +1,45 @@
+{
+  "must": [
+    "元旦",
+    "国庆节",
+    "烟花爆竹"
+  ],
+  "should": [
+    "清明节",
+    "劳动节",
+    "端午节",
+    "中秋节",
+    "法定节日",
+    "具体时段可能因地区规定而异",
+    "有序燃放烟花爆竹"
+  ],
+  "not": [
+    "禁止烟花爆竹"
+  ],
+  "evidence_refs": [
+    {
+      "term": "元旦",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "元旦"
+    },
+    {
+      "term": "国庆节",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国庆节"
+    },
+    {
+      "term": "烟花爆竹",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "烟花爆竹"
+    }
+  ],
+  "subject_id": "9023365",
+  "quality": "medium",
+  "generated_at": "2026-04-02T14:32:36",
+  "semantic_type": "节庆消费事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

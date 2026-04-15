@@ -1,0 +1,62 @@
+{
+  "must": [
+    "航空发动机",
+    "涡轮叶片",
+    "高温合金叶片",
+    "C919客机",
+    "长江1000A发动机"
+  ],
+  "should": [
+    "燃气轮机",
+    "大飞机领域",
+    "装备制造业",
+    "欧洲航空安全局等西方安全认证",
+    "大飞机基础研究联合基金",
+    "机载系统",
+    "零部件",
+    "新材料",
+    "试飞平台",
+    "适航认证流程",
+    "欧洲航空安全局",
+    "EASA"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航空发动机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "航空发动机"
+    },
+    {
+      "term": "涡轮叶片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "涡轮叶片"
+    },
+    {
+      "term": "高温合金叶片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高温合金叶片"
+    },
+    {
+      "term": "C919客机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "C919客机"
+    },
+    {
+      "term": "长江1000A发动机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "长江1000A发动机"
+    }
+  ],
+  "subject_id": "9013314",
+  "quality": "medium",
+  "generated_at": "2026-03-31T19:43:24",
+  "semantic_type": "技术突破与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

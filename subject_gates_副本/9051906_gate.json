@@ -1,0 +1,64 @@
+{
+  "must": [
+    "硅基OLED微显示技术",
+    "12英寸晶圆硅基OLED生产线",
+    "AR/VR设备",
+    "硅基OLED"
+  ],
+  "should": [
+    "电流驱动",
+    "叠层白光OLED器件",
+    "无人机",
+    "大疆",
+    "小米",
+    "XREAL",
+    "苹果",
+    "上海箕山管理咨询",
+    "精测电子",
+    "歌尔股份",
+    "华登国际",
+    "源码资本"
+  ],
+  "not": [
+    "二期产线在建",
+    "上市",
+    "募资",
+    "扩大产能",
+    "百镜大战",
+    "科创板上市申请",
+    "财务数据",
+    "苹果送样测试"
+  ],
+  "evidence_refs": [
+    {
+      "term": "硅基OLED微显示技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "硅基OLED微显示技术"
+    },
+    {
+      "term": "12英寸晶圆硅基OLED生产线",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "12英寸晶圆硅基OLED生产线"
+    },
+    {
+      "term": "AR/VR设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AR/VR设备"
+    },
+    {
+      "term": "硅基OLED",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "硅基OLED"
+    }
+  ],
+  "subject_id": "9051906",
+  "quality": "strong",
+  "generated_at": "2026-03-10T10:50:30",
+  "semantic_type": "技术突破与产业链布局",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

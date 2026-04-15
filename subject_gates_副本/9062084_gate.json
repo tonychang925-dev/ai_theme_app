@@ -1,0 +1,69 @@
+{
+  "must": [
+    "人工智能走向AS（人工超级智能）",
+    "通用机器人",
+    "可控核聚变商业化落地",
+    "常温超导",
+    "智能体互联网",
+    "计算材料学"
+  ],
+  "should": [
+    "ASI",
+    "人形机器人",
+    "智能体",
+    "可控核聚变",
+    "量子计算",
+    "AI医疗",
+    "元宇宙",
+    "太空旅行",
+    "飞行汽车",
+    "镜像世界",
+    "通信新纪元开启智能体互联网时代",
+    "计算材料学发展带动常温超导突破"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "人工智能走向AS（人工超级智能）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人工智能走向AS（人工超级智能）"
+    },
+    {
+      "term": "通用机器人",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "通用机器人"
+    },
+    {
+      "term": "可控核聚变商业化落地",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "可控核聚变商业化落地"
+    },
+    {
+      "term": "常温超导",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "常温超导"
+    },
+    {
+      "term": "智能体互联网",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能体互联网"
+    },
+    {
+      "term": "计算材料学",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "计算材料学"
+    }
+  ],
+  "subject_id": "9062084",
+  "quality": "medium",
+  "generated_at": "2026-03-31T19:40:43",
+  "semantic_type": "技术突破与产业变革",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

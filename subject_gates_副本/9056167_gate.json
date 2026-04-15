@@ -1,0 +1,32 @@
+{
+  "must": [
+    "苹果手机",
+    "端侧AI"
+  ],
+  "should": [
+    "西藏",
+    "零售业",
+    "Meta品牌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "苹果手机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "苹果手机"
+    },
+    {
+      "term": "端侧AI",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "端侧AI"
+    }
+  ],
+  "subject_id": "9056167",
+  "quality": "weak",
+  "generated_at": "2026-04-01T14:52:36",
+  "semantic_type": "消费电子产品",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

@@ -1,0 +1,71 @@
+{
+  "must": [
+    "磷",
+    "草甘膦",
+    "磷矿",
+    "草甘膦除草剂",
+    "元素磷"
+  ],
+  "should": [
+    "黄磷",
+    "烟雾弹",
+    "照明弹",
+    "燃烧装置",
+    "雷达半导体",
+    "传感器",
+    "武器系统电池",
+    "磷酸铁锂电池",
+    "电子级磷酸",
+    "美国磷矿生产",
+    "湿法磷酸",
+    "过磷酸"
+  ],
+  "not": [
+    "价格暴涨",
+    "供给格局重构",
+    "磷矿高度集中",
+    "美国禁令",
+    "定价权东移",
+    "中国受益",
+    "中国磷产量",
+    "磷矿总量管控"
+  ],
+  "evidence_refs": [
+    {
+      "term": "磷",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "磷"
+    },
+    {
+      "term": "草甘膦",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "草甘膦"
+    },
+    {
+      "term": "磷矿",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "磷矿"
+    },
+    {
+      "term": "草甘膦除草剂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "草甘膦除草剂"
+    },
+    {
+      "term": "元素磷",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "元素磷"
+    }
+  ],
+  "subject_id": "9064078",
+  "quality": "medium",
+  "generated_at": "2026-04-02T13:13:06",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

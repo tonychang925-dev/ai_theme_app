@@ -1,0 +1,78 @@
+{
+  "must": [
+    "餐饮外卖",
+    "即时零售",
+    "同城配送",
+    "美团",
+    "数字化平台",
+    "人工智能调度"
+  ],
+  "should": [
+    "跑腿代办",
+    "益海嘉里",
+    "中粮集团",
+    "食品原材料",
+    "蔬菜",
+    "肉类",
+    "调味品",
+    "一、二线城市",
+    "三、四线城市",
+    "乡镇农村地区",
+    "自营配送模式",
+    "众包配送模式"
+  ],
+  "not": [
+    "淘宝闪购",
+    "京东秒送",
+    "500亿元补贴",
+    "品牌破峰",
+    "百亿补贴",
+    "全民补贴",
+    "爆品直降",
+    "补贴金券"
+  ],
+  "evidence_refs": [
+    {
+      "term": "餐饮外卖",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "餐饮外卖"
+    },
+    {
+      "term": "即时零售",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "即时零售"
+    },
+    {
+      "term": "同城配送",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "同城配送"
+    },
+    {
+      "term": "美团",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "美团"
+    },
+    {
+      "term": "数字化平台",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数字化平台"
+    },
+    {
+      "term": "人工智能调度",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人工智能调度"
+    }
+  ],
+  "subject_id": "9046774",
+  "quality": "weak",
+  "generated_at": "2026-04-01T13:53:02",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

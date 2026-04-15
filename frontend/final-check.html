@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最终检查</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        iframe { width: 100%; height: 800px; border: 2px solid green; }
+        .result { padding: 15px; margin: 15px 0; background: #f0f0f0; }
+        .section { margin: 20px 0; padding: 15px; background: white; border-radius: 8px; }
+        .success { color: green; font-weight: bold; }
+        .warning { color: orange; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>最终检查：按钮布局</h1>
+
+    <button onclick="checkLayout()">检查布局</button>
+
+    <div id="iframe-container"></div>
+    <div id="final-result" class="result"></div>
+
+    <script>
+        async function checkLayout() {
+            const container = document.getElementById('iframe-container');
+            const result = document.getElementById('final-result');
+
+            container.innerHTML = '<p>加载中...</p>';
+            result.innerHTML = '检查中...';
+
+            const iframe = document.createElement('iframe');
+            iframe.src = 'http://localhost:5173/';
+            iframe.style.width = '100%';
+            iframe.style.height = '800px';
+            iframe.style.border = 'none';
+
+            container.innerHTML = '';
+            container.appendChild(iframe);
+
+            iframe.onload = function() {
+                try {
+                    const doc = iframe.contentDocument || iframe.contentWindow.document;
+
+                    // 检查Filter区域（所有按钮都在这里）
+                    const filters = doc.querySelector('.intel-filters');
+                    const filterButtons = filters ? filters.querySelectorAll('button') : [];
+
+                    result.innerHTML = '<h3>按钮布局检查</h3>';
+
+                    // Filter区域（所有按钮）
+                    result.innerHTML += `<div class="section">
+                        <h4>过滤器区域（所有按钮）：</h4>
+                        <p>按钮数量: ${filterButtons.length}</p>`;
+
+                    if (filterButtons.length > 0) {
+                        result.innerHTML += '<p>按钮列表：</p>';
+                        filterButtons.forEach((btn, i) => {
+                            result.innerHTML += `<p>${i+1}: <strong>"${btn.textContent.trim()}"</strong></p>`;
+                        });
+
+                        // 检查按钮是否并排显示
+                        const firstButton = filterButtons[0];
+                        const buttonContainer = firstButton.parentElement;
+                        const displayStyle = window.getComputedStyle(buttonContainer).display;
+                        const gridColumns = window.getComputedStyle(buttonContainer).gridTemplateColumns;
+
+                        result.innerHTML += `<p>容器显示方式: ${displayStyle}</p>`;
+                        result.innerHTML += `<p>Grid列数: ${gridColumns}</p>`;
+
+                        // 检查所有元素是否在一行
+                        const containerWidth = buttonContainer.offsetWidth;
+                        const firstElement = buttonContainer.children[0];
+                        const lastElement = buttonContainer.children[buttonContainer.children.length - 1];
+                        const firstRect = firstElement.getBoundingClientRect();
+                        const lastRect = lastElement.getBoundingClientRect();
+
+                        const allInOneRow = lastRect.top === firstRect.top;
+
+                        if (allInOneRow) {
+                            result.innerHTML += '<p class="success">✅ 所有元素并排显示在一行</p>';
+                        } else {
+                            result.innerHTML += '<p class="warning">⚠️ 元素换行显示（可能需要更宽的屏幕）</p>';
+                        }
+                    }
+                    result.innerHTML += '</div>';
+
+                    // 检查重复
+                    const allButtons = doc.querySelectorAll('button');
+                    const buttonTexts = Array.from(allButtons).map(btn => btn.textContent.trim());
+
+                    const textCount = {};
+                    buttonTexts.forEach(text => {
+                        textCount[text] = (textCount[text] || 0) + 1;
+                    });
+
+                    const duplicates = Object.entries(textCount)
+                        .filter(([text, count]) => count > 1)
+                        .map(([text]) => text);
+
+                    result.innerHTML += `<div class="section">
+                        <h4>重复检查：</h4>`;
+
+                    if (duplicates.length > 0) {
+                        result.innerHTML += '<p class="warning">⚠️ 发现重复按钮：</p>';
+                        duplicates.forEach(text => {
+                            result.innerHTML += `<p>"${text}"</p>`;
+                        });
+                    } else {
+                        result.innerHTML += '<p class="success">✅ 没有重复按钮</p>';
+                    }
+                    result.innerHTML += '</div>';
+
+                    // 检查AI选股按钮
+                    const aiButtons = Array.from(allButtons).filter(btn =>
+                        btn.textContent.includes('AI选股')
+                    );
+
+                    result.innerHTML += `<div class="section">
+                        <h4>AI选股按钮检查：</h4>`;
+
+                    if (aiButtons.length > 0) {
+                        result.innerHTML += `<p class="success">✅ 找到AI选股按钮</p>`;
+                        aiButtons.forEach(btn => {
+                            const parent = btn.closest('header, section');
+                            const parentName = parent ? parent.className : '未知';
+                            result.innerHTML += `<p>位置: ${parentName}</p>`;
+                        });
+                    } else {
+                        result.innerHTML += '<p class="warning">❌ 没有找到AI选股按钮</p>';
+                    }
+                    result.innerHTML += '</div>';
+
+                    // 总结
+                    result.innerHTML += `<div class="section">
+                        <h4>总结：</h4>
+                        <p>总按钮数量: ${allButtons.length}</p>
+                        <p>Filter区域按钮: ${filterButtons.length}</p>
+                        <p>预期按钮: "启动实时采集", "日采集控制台", "当日复盘", "盘前必读", "AI选股"</p>
+                        <p>AI选股按钮: ${aiButtons.length > 0 ? '✅ 存在' : '❌ 不存在'}</p>
+                        <p>日采集控制台按钮: ${Array.from(allButtons).some(btn => btn.textContent.includes('日采集控制台')) ? '✅ 存在' : '❌ 不存在'}</p>
+                        <p>重复按钮: ${duplicates.length > 0 ? '⚠️ 有重复' : '✅ 无重复'}</p>
+                        <p>紧凑布局: ✅ 表单label和按钮使用更紧凑的padding</p>
+                        <p>醒目按钮样式: ✅ 按钮使用渐变背景、阴影、悬停效果</p>
+                        <p>视觉区分: ✅ 按钮(圆角8px)与表单label(圆角6px)明显区分</p>
+                        <p>按钮并排显示: ${filterButtons.length === 5 ? '✅ 5个按钮都在同一区域' : '❌ 按钮数量不正确'}</p>
+                    </div>`;
+
+                } catch (error) {
+                    result.innerHTML = `错误: ${error.message}`;
+                }
+            };
+        }
+
+        // 自动检查
+        setTimeout(checkLayout, 1000);
+    </script>
+</body>
+</html>

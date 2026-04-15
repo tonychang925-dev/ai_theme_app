@@ -1,0 +1,60 @@
+{
+  "must": [
+    "工信部",
+    "国资委",
+    "国有汽车企业",
+    "新能源汽车业务",
+    "实施单独考核"
+  ],
+  "should": [
+    "优化发展环境",
+    "鼓励企业兼并重组",
+    "提高产业集中度",
+    "打击不正当竞争",
+    "健全新能源汽车安全标准体系",
+    "地方国资",
+    "中央直属",
+    "零跑汽车",
+    "股权合作",
+    "产业链合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工信部",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "工信部"
+    },
+    {
+      "term": "国资委",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国资委"
+    },
+    {
+      "term": "国有汽车企业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国有汽车企业"
+    },
+    {
+      "term": "新能源汽车业务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "新能源汽车业务"
+    },
+    {
+      "term": "实施单独考核",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "实施单独考核"
+    }
+  ],
+  "subject_id": "9025348",
+  "quality": "medium",
+  "generated_at": "2026-03-31T16:24:01",
+  "semantic_type": "政策驱动产业升级",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

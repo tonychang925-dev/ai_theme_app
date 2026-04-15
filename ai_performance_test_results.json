@@ -1,0 +1,265 @@
+{
+  "timestamp": "2026-04-11T20:25:06.997291",
+  "test_results": [
+    {
+      "test_name": "baseline_single",
+      "total_items": 10,
+      "total_time": 109.00653004646301,
+      "avg_processing_time": 10.900106084189265,
+      "throughput": 0.09173762338584297,
+      "throughput_units": "items/second",
+      "success_rate": 1.0,
+      "timestamp": "2026-04-11T20:13:49.947099",
+      "config": {}
+    },
+    {
+      "test_name": "batch_processing_2",
+      "total_items": 20,
+      "total_time": 60.88583183288574,
+      "avg_processing_time": 3.044061576750697,
+      "throughput": 0.3284836455038391,
+      "throughput_units": "items/second",
+      "success_rate": 1.0,
+      "timestamp": "2026-04-11T20:14:56.320458",
+      "config": {
+        "batch_size": 2
+      }
+    },
+    {
+      "test_name": "batch_processing_5",
+      "total_items": 20,
+      "total_time": 51.84020400047302,
+      "avg_processing_time": 2.5918742979227702,
+      "throughput": 0.3858009509340956,
+      "throughput_units": "items/second",
+      "success_rate": 1.0,
+      "timestamp": "2026-04-11T20:15:54.975386",
+      "config": {
+        "batch_size": 5
+      }
+    },
+    {
+      "test_name": "batch_processing_10",
+      "total_items": 20,
+      "total_time": 43.05163908004761,
+      "avg_processing_time": 2.152482435365723,
+      "throughput": 0.4645583867971487,
+      "throughput_units": "items/second",
+      "success_rate": 1.0,
+      "timestamp": "2026-04-11T20:16:44.582794",
+      "config": {
+        "batch_size": 10
+      }
+    },
+    {
+      "test_name": "quantized_fp32",
+      "total_items": 15,
+      "total_time": 163.64297223091125,
+      "avg_processing_time": 10.90875877948345,
+      "throughput": 0.09166296477941008,
+      "throughput_units": "items/second",
+      "success_rate": 1.0,
+      "timestamp": "2026-04-11T20:19:49.311814",
+      "config": {
+        "precision": "fp32"
+      }
+    },
+    {
+      "test_name": "quantized_fp16",
+      "total_items": 15,
+      "total_time": 109.68996691703796,
+      "avg_processing_time": 7.3114963407373885,
+      "throughput": 0.1367490612094448,
+      "throughput_units": "items/second",
+      "success_rate": 1.0,
+      "timestamp": "2026-04-11T20:21:53.464070",
+      "config": {
+        "precision": "fp16"
+      }
+    },
+    {
+      "test_name": "quantized_int8",
+      "total_items": 15,
+      "total_time": 82.44543528556824,
+      "avg_processing_time": 5.495881088403168,
+      "throughput": 0.18193851421906063,
+      "throughput_units": "items/second",
+      "success_rate": 1.0,
+      "timestamp": "2026-04-11T20:23:27.150824",
+      "config": {
+        "precision": "int8"
+      }
+    },
+    {
+      "test_name": "quantized_int4",
+      "total_items": 15,
+      "total_time": 56.52039885520935,
+      "avg_processing_time": 3.7674892461275338,
+      "throughput": 0.2653909084829023,
+      "throughput_units": "items/second",
+      "success_rate": 1.0,
+      "timestamp": "2026-04-11T20:24:30.684236",
+      "config": {
+        "precision": "int4"
+      }
+    },
+    {
+      "test_name": "gpu_accelerated",
+      "total_items": 30,
+      "total_time": 22.664396047592163,
+      "avg_processing_time": 0.7554238685695234,
+      "throughput": 1.323662008773764,
+      "throughput_units": "items/second",
+      "success_rate": 1.0,
+      "timestamp": "2026-04-11T20:24:55.770361",
+      "config": {
+        "batch_size": 10
+      }
+    },
+    {
+      "test_name": "combined_optimization",
+      "total_items": 25,
+      "total_time": 9.726970911026001,
+      "avg_processing_time": 0.3890160878883473,
+      "throughput": 2.5701732048629102,
+      "throughput_units": "items/second",
+      "success_rate": 1.0,
+      "timestamp": "2026-04-11T20:25:06.990508",
+      "config": {}
+    }
+  ],
+  "performance_metrics": {
+    "baseline": {
+      "test_name": "baseline_single",
+      "total_items": 10,
+      "total_time": 109.00653004646301,
+      "avg_processing_time": 10.900106084189265,
+      "throughput": 0.09173762338584297,
+      "throughput_units": "items/second",
+      "success_rate": 1.0,
+      "timestamp": "2026-04-11T20:13:49.947099",
+      "config": {}
+    },
+    "optimized": {},
+    "comparison": {
+      "improvements": [
+        {
+          "test_name": "batch_processing_2",
+          "throughput_baseline": 0.09173762338584297,
+          "throughput_optimized": 0.3284836455038391,
+          "throughput_improvement": 3.5806862373385937,
+          "throughput_improvement_percent": 258.0686237338594,
+          "processing_time_baseline": 10.900106084189265,
+          "processing_time_optimized": 3.044061576750697,
+          "processing_time_improvement": 3.580777132578341,
+          "processing_time_reduction_percent": 72.07310136947984
+        },
+        {
+          "test_name": "batch_processing_5",
+          "throughput_baseline": 0.09173762338584297,
+          "throughput_optimized": 0.3858009509340956,
+          "throughput_improvement": 4.205482294995149,
+          "throughput_improvement_percent": 320.5482294995149,
+          "processing_time_baseline": 10.900106084189265,
+          "processing_time_optimized": 2.5918742979227702,
+          "processing_time_improvement": 4.205491791374697,
+          "processing_time_reduction_percent": 76.22156813976045
+        },
+        {
+          "test_name": "batch_processing_10",
+          "throughput_baseline": 0.09173762338584297,
+          "throughput_optimized": 0.4645583867971487,
+          "throughput_improvement": 5.063989774873978,
+          "throughput_improvement_percent": 406.39897748739776,
+          "processing_time_baseline": 10.900106084189265,
+          "processing_time_optimized": 2.152482435365723,
+          "processing_time_improvement": 5.063969816941737,
+          "processing_time_reduction_percent": 80.25264691241928
+        },
+        {
+          "test_name": "quantized_fp32",
+          "throughput_baseline": 0.09173762338584297,
+          "throughput_optimized": 0.09166296477941008,
+          "throughput_improvement": 0.9991861724374645,
+          "throughput_improvement_percent": -0.08138275625354519,
+          "processing_time_baseline": 10.900106084189265,
+          "processing_time_optimized": 10.90875877948345,
+          "processing_time_improvement": 0.9992068121159247,
+          "processing_time_reduction_percent": -0.07938175305226558
+        },
+        {
+          "test_name": "quantized_fp16",
+          "throughput_baseline": 0.09173762338584297,
+          "throughput_optimized": 0.1367490612094448,
+          "throughput_improvement": 1.4906540649552955,
+          "throughput_improvement_percent": 49.06540649552955,
+          "processing_time_baseline": 10.900106084189265,
+          "processing_time_optimized": 7.3114963407373885,
+          "processing_time_improvement": 1.490817416327935,
+          "processing_time_reduction_percent": 32.92270474924275
+        },
+        {
+          "test_name": "quantized_int8",
+          "throughput_baseline": 0.09173762338584297,
+          "throughput_optimized": 0.18193851421906063,
+          "throughput_improvement": 1.9832486116828871,
+          "throughput_improvement_percent": 98.32486116828872,
+          "processing_time_baseline": 10.900106084189265,
+          "processing_time_optimized": 5.495881088403168,
+          "processing_time_improvement": 1.9833227664240272,
+          "processing_time_reduction_percent": 49.579563300076416
+        },
+        {
+          "test_name": "quantized_int4",
+          "throughput_baseline": 0.09173762338584297,
+          "throughput_optimized": 0.2653909084829023,
+          "throughput_improvement": 2.892934203959961,
+          "throughput_improvement_percent": 189.2934203959961,
+          "processing_time_baseline": 10.900106084189265,
+          "processing_time_optimized": 3.7674892461275338,
+          "processing_time_improvement": 2.8932016449398206,
+          "processing_time_reduction_percent": 65.43621486774039
+        },
+        {
+          "test_name": "gpu_accelerated",
+          "throughput_baseline": 0.09173762338584297,
+          "throughput_optimized": 1.323662008773764,
+          "throughput_improvement": 14.42878025307589,
+          "throughput_improvement_percent": 1342.878025307589,
+          "processing_time_baseline": 10.900106084189265,
+          "processing_time_optimized": 0.7554238685695234,
+          "processing_time_improvement": 14.429125869202137,
+          "processing_time_reduction_percent": 93.06957324327995
+        },
+        {
+          "test_name": "combined_optimization",
+          "throughput_baseline": 0.09173762338584297,
+          "throughput_optimized": 2.5701732048629102,
+          "throughput_improvement": 28.016566268050298,
+          "throughput_improvement_percent": 2701.6566268050296,
+          "processing_time_baseline": 10.900106084189265,
+          "processing_time_optimized": 0.3890160878883473,
+          "processing_time_improvement": 28.01967945170879,
+          "processing_time_reduction_percent": 96.43107979974049
+        }
+      ],
+      "baseline": {
+        "test_name": "baseline_single",
+        "total_items": 10,
+        "total_time": 109.00653004646301,
+        "avg_processing_time": 10.900106084189265,
+        "throughput": 0.09173762338584297,
+        "throughput_units": "items/second",
+        "success_rate": 1.0,
+        "timestamp": "2026-04-11T20:13:49.947099",
+        "config": {}
+      }
+    }
+  },
+  "summary": {
+    "total_tests": 10,
+    "baseline_throughput": 0.09173762338584297,
+    "best_optimization": "combined_optimization",
+    "best_improvement": 28.016566268050298
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "must": [
+    "光刻机",
+    "涂胶",
+    "曝光",
+    "显影",
+    "刻蚀",
+    "ASML"
+  ],
+  "should": [
+    "尼康",
+    "佳能",
+    "上海微电子装备（SMEE）",
+    "光学",
+    "机械",
+    "电子",
+    "材料",
+    "微机电系统（MEMS）生产",
+    "显示面板制造",
+    "功率器件制造",
+    "逻辑芯片",
+    "存储芯片"
+  ],
+  "not": [
+    "芯片设计",
+    "A股IPO",
+    "上市辅导备案"
+  ],
+  "evidence_refs": [
+    {
+      "term": "光刻机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光刻机"
+    },
+    {
+      "term": "涂胶",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "涂胶"
+    },
+    {
+      "term": "曝光",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "曝光"
+    },
+    {
+      "term": "显影",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "显影"
+    },
+    {
+      "term": "刻蚀",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "刻蚀"
+    },
+    {
+      "term": "ASML",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "ASML"
+    }
+  ],
+  "subject_id": "9018472",
+  "quality": "strong",
+  "generated_at": "2026-04-02T01:19:02",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

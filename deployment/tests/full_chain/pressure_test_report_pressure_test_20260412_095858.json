@@ -1,0 +1,42 @@
+{
+  "test_config": {
+    "concurrent_users": 1,
+    "news_per_user": 2,
+    "total_news_count": 2,
+    "batch_id": "pressure_test_20260412_095858",
+    "test_timestamp": "2026-04-12T09:59:28.939349"
+  },
+  "performance_summary": {
+    "total_success": 1,
+    "total_errors": 1,
+    "success_rate": 50.0,
+    "throughput_ops_per_second": 122.30965954654808
+  },
+  "latency_metrics": {
+    "db_write_latency": {
+      "avg": 0.0075147151947021484,
+      "min": 0.0075147151947021484,
+      "max": 0.0075147151947021484,
+      "p95": 0
+    },
+    "redis_latency": {
+      "avg": 0.007748126983642578,
+      "min": 0.007748126983642578,
+      "max": 0.007748126983642578,
+      "p95": 0
+    },
+    "total_processing_time": {
+      "avg": 0.015271902084350586,
+      "min": 0.015271902084350586,
+      "max": 0.015271902084350586
+    }
+  },
+  "bottleneck_analysis": {
+    "db_write_bottleneck": "否",
+    "redis_bottleneck": "否",
+    "concurrent_limit": 2
+  },
+  "recommendations": [
+    "成功率较低 (50.0%)，建议检查错误日志"
+  ]
+}

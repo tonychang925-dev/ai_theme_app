@@ -1,0 +1,48 @@
+{
+  "must": [
+    "数据中心",
+    "服务器",
+    "网络设备"
+  ],
+  "should": [
+    "电力系统",
+    "大模型训练",
+    "大模型推理",
+    "科学计算",
+    "全栈自研",
+    "全栈AI",
+    "金山算力中心",
+    "智算枢纽",
+    "真武芯片",
+    "千亿算力投入",
+    "AI算力集群",
+    "阿里云"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数据中心",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据中心"
+    },
+    {
+      "term": "服务器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "服务器"
+    },
+    {
+      "term": "网络设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "网络设备"
+    }
+  ],
+  "subject_id": "9041790",
+  "quality": "weak",
+  "generated_at": "2026-04-02T01:23:56",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

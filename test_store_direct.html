@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>直接Store测试</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        button { padding: 10px 20px; margin: 5px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        pre { background: #f8f9fa; padding: 10px; border-radius: 4px; overflow: auto; max-height: 400px; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>直接Store逻辑测试</h1>
+
+    <div>
+        <button onclick="testStoreLogic()">测试Store逻辑</button>
+        <button onclick="testAPIMock()">测试API模拟</button>
+    </div>
+
+    <div id="result"></div>
+
+    <script>
+        async function testStoreLogic() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<p>测试中...</p>';
+
+            try {
+                // 模拟store的executeScreening逻辑
+                const mockResponse = {
+                    data: {
+                        job_id: 'exec_test_123',
+                        status: 'completed',
+                        results: [
+                            {
+                                result_id: 'result_1',
+                                stock_id: '300131',
+                                stock_name: '英唐智控',
+                                composite_score: 83.5,
+                                dimension_scores: { mainline: 100, cycle: 95, leader: 100, technical: 0 },
+                                rank_position: 1,
+                                screening_reason: '测试数据'
+                            },
+                            {
+                                result_id: 'result_2',
+                                stock_id: '300489',
+                                stock_name: '光智科技',
+                                composite_score: 79.5,
+                                dimension_scores: { mainline: 100, cycle: 95, leader: 80, technical: 0 },
+                                rank_position: 2,
+                                screening_reason: '测试数据'
+                            }
+                        ],
+                        total_count: 2,
+                        execution_time_ms: 100,
+                        llm_review_status: 'disabled',
+                        llm_summary: { pass: 0, watch: 0, reject: 0, failed: 0 },
+                        diagnostics: {
+                            coverage_ratio: { theme: 1, mainline: 1, cycle: 1, leader: 0.5, technical: 0 },
+                            zero_score_count: 0,
+                            missing_dimension_count: { mainline: 0, cycle: 0, leader: 1, technical: 2 }
+                        }
+                    }
+                };
+
+                const result = mockResponse.data;
+
+                // 模拟store的逻辑
+                let storeState = {
+                    isExecuting: true,
+                    executionJobId: null,
+                    currentResults: [],
+                    executionStatus: {}
+                };
+
+                // 检查API是否直接返回了结果
+                if (result.status === 'completed' && result.results && result.results.length > 0) {
+                    // API直接返回了结果，直接使用
+                    storeState = {
+                        isExecuting: false,
+                        executionJobId: result.job_id,
+                        currentResults: result.results,
+                        executionStatus: {
+                            llmReviewStatus: result.llm_review_status,
+                            llmSummary: result.llm_summary,
+                            diagnostics: result.diagnostics
+                        }
+                    };
+
+                    resultDiv.innerHTML = `
+                        <p class="success">✅ Store逻辑测试通过</p>
+                        <p>状态: ${storeState.isExecuting ? '执行中' : '已完成'}</p>
+                        <p>Job ID: ${storeState.executionJobId}</p>
+                        <p>结果数量: ${storeState.currentResults.length}</p>
+                        <p>LLM复核状态: ${storeState.executionStatus.llmReviewStatus}</p>
+                        <h3>Store状态:</h3>
+                        <pre>${JSON.stringify(storeState, null, 2)}</pre>
+                    `;
+                } else {
+                    resultDiv.innerHTML = '<p class="error">❌ Store逻辑测试失败：API没有直接返回结果</p>';
+                }
+
+            } catch (error) {
+                resultDiv.innerHTML = `<p class="error">❌ Store逻辑测试出错: ${error.message}</p>`;
+            }
+        }
+
+        async function testAPIMock() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<p>测试API模拟...</p>';
+
+            try {
+                // 实际调用API
+                const response = await fetch('http://localhost:8003/api/stock-screener/execute', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        strategy_id: 'default_composite',
+                        trade_date: '2026-04-10',
+                        limit: 3,
+                        enable_llm_review: false,
+                        llm_top_k: 5
+                    })
+                });
+
+                const data = await response.json();
+
+                // 模拟store处理
+                const storeState = {
+                    isExecuting: false,
+                    executionJobId: data.job_id,
+                    currentResults: data.results || [],
+                    executionStatus: {
+                        llmReviewStatus: data.llm_review_status || 'unknown',
+                        llmSummary: data.llm_summary || {},
+                        diagnostics: data.diagnostics || {}
+                    }
+                };
+
+                resultDiv.innerHTML = `
+                    <p class="success">✅ API模拟测试通过</p>
+                    <p>API状态: ${data.status}</p>
+                    <p>API结果数量: ${data.results ? data.results.length : 0}</p>
+                    <p>Store结果数量: ${storeState.currentResults.length}</p>
+                    <p>Store执行状态: ${storeState.isExecuting ? '执行中' : '已完成'}</p>
+
+                    <h3>API响应:</h3>
+                    <pre>${JSON.stringify({
+                        status: data.status,
+                        job_id: data.job_id,
+                        results_count: data.results ? data.results.length : 0,
+                        llm_review_status: data.llm_review_status
+                    }, null, 2)}</pre>
+
+                    <h3>Store状态:</h3>
+                    <pre>${JSON.stringify({
+                        isExecuting: storeState.isExecuting,
+                        executionJobId: storeState.executionJobId,
+                        currentResultsCount: storeState.currentResults.length,
+                        executionStatus: storeState.executionStatus
+                    }, null, 2)}</pre>
+                `;
+
+                if (data.results && data.results.length > 0) {
+                    resultDiv.innerHTML += '<h3>前3条结果:</h3>';
+                    data.results.slice(0, 3).forEach((result, index) => {
+                        resultDiv.innerHTML += `
+                            <p>${index + 1}. ${result.stock_name} (${result.stock_id}): ${result.composite_score}分</p>
+                        `;
+                    });
+                }
+
+            } catch (error) {
+                resultDiv.innerHTML = `<p class="error">❌ API模拟测试出错: ${error.message}</p>`;
+            }
+        }
+
+        // 自动运行测试
+        setTimeout(testStoreLogic, 1000);
+    </script>
+</body>
+</html>

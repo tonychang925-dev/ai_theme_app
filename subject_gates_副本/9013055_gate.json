@@ -1,0 +1,53 @@
+{
+  "must": [
+    "构建全国统一大市场",
+    "完善市场经济基础制度",
+    "快递",
+    "农村地区快递服务"
+  ],
+  "should": [
+    "平台经济",
+    "低空经济",
+    "无人驾驶",
+    "跨境物流",
+    "大宗商品",
+    "智能物流设备",
+    "电子产品",
+    "化工",
+    "汽车",
+    "煤炭"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "构建全国统一大市场",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "构建全国统一大市场"
+    },
+    {
+      "term": "完善市场经济基础制度",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "完善市场经济基础制度"
+    },
+    {
+      "term": "快递",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "快递"
+    },
+    {
+      "term": "农村地区快递服务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "农村地区快递服务"
+    }
+  ],
+  "subject_id": "9013055",
+  "quality": "strong",
+  "generated_at": "2026-04-01T08:10:47",
+  "semantic_type": "产业融合与政策驱动",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

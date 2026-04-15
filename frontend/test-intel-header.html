@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试IntelHeader组件</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 20px;
+        }
+        .collection-action-row {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .tag.tag-button {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .tag.tag-button:hover {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body>
+    <h1>测试IntelHeader按钮行</h1>
+    <p>如果下面的按钮行显示正常，说明样式已加载。</p>
+
+    <div class="collection-action-row">
+        <button class="tag tag-button" type="button">AI选股</button>
+        <button class="tag tag-button" type="button">复盘工作台</button>
+        <button class="tag tag-button" type="button">日采集控制台</button>
+    </div>
+
+    <p style="margin-top: 30px; color: #888;">检查浏览器控制台是否有错误。</p>
+</body>
+</html>

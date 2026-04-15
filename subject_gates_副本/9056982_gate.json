@@ -1,0 +1,25 @@
+{
+  "must": [
+    "三维集成键合"
+  ],
+  "should": [
+    "已投",
+    "已投同类三维集成键合",
+    "潜在方向"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "三维集成键合",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "三维集成键合"
+    }
+  ],
+  "subject_id": "9056982",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:37:05",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

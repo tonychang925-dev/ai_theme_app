@@ -1,0 +1,74 @@
+{
+  "must": [
+    "动力煤",
+    "炼焦煤",
+    "无烟煤",
+    "化工用煤",
+    "煤矿机械设备",
+    "煤化工"
+  ],
+  "should": [
+    "褐煤",
+    "上游",
+    "中游",
+    "下游",
+    "采掘机",
+    "掘进机",
+    "民用爆破器材",
+    "工业炸药",
+    "雷管",
+    "勘探与技术服务",
+    "清洁利用技术",
+    "超临界发电"
+  ],
+  "not": [
+    "伊朗封锁霍尔木兹海峡",
+    "国际原油价格大涨",
+    "原油产业链",
+    "危机"
+  ],
+  "evidence_refs": [
+    {
+      "term": "动力煤",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "动力煤"
+    },
+    {
+      "term": "炼焦煤",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "炼焦煤"
+    },
+    {
+      "term": "无烟煤",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "无烟煤"
+    },
+    {
+      "term": "化工用煤",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "化工用煤"
+    },
+    {
+      "term": "煤矿机械设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "煤矿机械设备"
+    },
+    {
+      "term": "煤化工",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "煤化工"
+    }
+  ],
+  "subject_id": "9012624",
+  "quality": "strong",
+  "generated_at": "2026-04-02T16:28:14",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

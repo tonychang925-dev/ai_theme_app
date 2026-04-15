@@ -1,0 +1,51 @@
+{
+  "must": [
+    "首字百",
+    "二字百",
+    "三字百",
+    "四字百"
+  ],
+  "should": [
+    "实施方案",
+    "创新举措",
+    "提振消费专项行动",
+    "商品消费",
+    "服务消费",
+    "两重建设",
+    "民间投资",
+    "宏观政策"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "首字百",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "首字百"
+    },
+    {
+      "term": "二字百",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "二字百"
+    },
+    {
+      "term": "三字百",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "三字百"
+    },
+    {
+      "term": "四字百",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "四字百"
+    }
+  ],
+  "subject_id": "9037730",
+  "quality": "weak",
+  "generated_at": "2026-04-02T14:38:21",
+  "semantic_type": "文化娱乐事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

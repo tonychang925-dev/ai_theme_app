@@ -1,0 +1,62 @@
+{
+  "must": [
+    "热泵",
+    "空气源热泵",
+    "水源热泵",
+    "地源热泵（土壤源热泵）",
+    "热泵技术"
+  ],
+  "should": [
+    "家用空调",
+    "热水器",
+    "商业建筑供暖制冷",
+    "热泵零部件",
+    "蒸发器",
+    "地下水",
+    "地表水",
+    "工业废水",
+    "充分利用低品位热能的高效节能装置",
+    "有效利用难以应用的低品位热能",
+    "安装灵活",
+    "成本较低"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "热泵技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "热泵技术"
+    },
+    {
+      "term": "空气源热泵",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "空气源热泵"
+    },
+    {
+      "term": "水源热泵",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "水源热泵"
+    },
+    {
+      "term": "地源热泵（土壤源热泵）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "地源热泵（土壤源热泵）"
+    },
+    {
+      "term": "热泵",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "热泵"
+    }
+  ],
+  "subject_id": "9038264",
+  "quality": "strong",
+  "generated_at": "2026-04-02T07:48:47",
+  "semantic_type": "技术原理与应用",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

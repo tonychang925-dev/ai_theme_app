@@ -1,0 +1,78 @@
+{
+  "must": [
+    "糖的生产",
+    "甘蔗",
+    "甜菜",
+    "原糖",
+    "精炼糖",
+    "白糖"
+  ],
+  "should": [
+    "糖的分销",
+    "糖的销售",
+    "收割",
+    "榨汁",
+    "提炼",
+    "人工合成甜味剂",
+    "天然甜味剂",
+    "功能性糖醇",
+    "稀有糖",
+    "阿洛酮糖",
+    "食品饮料",
+    "医药"
+  ],
+  "not": [
+    "保龄宝",
+    "赤藓糖醇市场",
+    "巴西甘蔗产业协会",
+    "巴西主产区",
+    "金禾实业",
+    "三氯蔗糖价格",
+    "调价函",
+    "提价"
+  ],
+  "evidence_refs": [
+    {
+      "term": "糖的生产",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "糖的生产"
+    },
+    {
+      "term": "甘蔗",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "甘蔗"
+    },
+    {
+      "term": "甜菜",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "甜菜"
+    },
+    {
+      "term": "原糖",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "原糖"
+    },
+    {
+      "term": "精炼糖",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "精炼糖"
+    },
+    {
+      "term": "白糖",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "白糖"
+    }
+  ],
+  "subject_id": "9031423",
+  "quality": "strong",
+  "generated_at": "2026-04-02T13:43:36",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

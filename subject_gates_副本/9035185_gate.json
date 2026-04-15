@@ -1,0 +1,59 @@
+{
+  "must": [
+    "鸿蒙智家",
+    "华为",
+    "智能家居",
+    "华为全屋智能"
+  ],
+  "should": [
+    "硬件产品",
+    "家居",
+    "鸿蒙操作系统5",
+    "华为Pura80数字版",
+    "华为智慧生活",
+    "家庭影院",
+    "中控屏操控",
+    "智慧屏开关机",
+    "销售",
+    "终端数量",
+    "用户体验升级",
+    "就近设备精准响应"
+  ],
+  "not": [
+    "正式开售",
+    "华为Mate品牌盛典",
+    "全新亮相"
+  ],
+  "evidence_refs": [
+    {
+      "term": "鸿蒙智家",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "鸿蒙智家"
+    },
+    {
+      "term": "华为",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "华为"
+    },
+    {
+      "term": "智能家居",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能家居"
+    },
+    {
+      "term": "华为全屋智能",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "华为全屋智能"
+    }
+  ],
+  "subject_id": "9035185",
+  "quality": "medium",
+  "generated_at": "2026-04-01T05:38:26",
+  "semantic_type": "品牌商标应用",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

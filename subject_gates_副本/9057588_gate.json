@@ -1,0 +1,52 @@
+{
+  "must": [
+    "储能电芯",
+    "六氟磷酸锂",
+    "光伏硅片"
+  ],
+  "should": [
+    "小容量电芯",
+    "大容量电芯",
+    "锂电电解液",
+    "碳酸锂",
+    "多晶硅",
+    "供需阶段性错配",
+    "供需格局改善",
+    "供需关系缓和",
+    "国内外市场需求激增",
+    "新能源汽车和储能电池需求高增",
+    "终端电站项目启动和海外订单增加",
+    "产能扩张滞后或排产满负荷"
+  ],
+  "not": [
+    "上半年",
+    "抢装潮",
+    "美国关税窗口期"
+  ],
+  "evidence_refs": [
+    {
+      "term": "储能电芯",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "储能电芯"
+    },
+    {
+      "term": "六氟磷酸锂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "六氟磷酸锂"
+    },
+    {
+      "term": "光伏硅片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光伏硅片"
+    }
+  ],
+  "subject_id": "9057588",
+  "quality": "weak",
+  "generated_at": "2026-04-02T11:11:53",
+  "semantic_type": "供需变化",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

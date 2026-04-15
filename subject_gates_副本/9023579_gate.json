@@ -1,0 +1,37 @@
+{
+  "must": [
+    "高股息策略",
+    "高红利高股息板块"
+  ],
+  "should": [
+    "ST",
+    "主板",
+    "科创板",
+    "累计研发投入",
+    "累计营业收入",
+    "回购注销金额",
+    "电力",
+    "分红比例"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高股息策略",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高股息策略"
+    },
+    {
+      "term": "高红利高股息板块",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高红利高股息板块"
+    }
+  ],
+  "subject_id": "9023579",
+  "quality": "weak",
+  "generated_at": "2026-04-02T11:06:03",
+  "semantic_type": "未知题材",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

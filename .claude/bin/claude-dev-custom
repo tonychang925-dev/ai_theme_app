@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cd /Users/admin/Desktop/ai_theme_app
+
+SETTINGS_FILE="${CLAUDE_SETTINGS_FILE:-${1:-}}"
+if [[ -z "${SETTINGS_FILE}" ]]; then
+  if [[ -f "${HOME}/.claude/settings.json" ]]; then
+    SETTINGS_FILE="${HOME}/.claude/settings.json"
+  elif [[ -f "${HOME}/.claude/settings.local.json" ]]; then
+    SETTINGS_FILE="${HOME}/.claude/settings.local.json"
+  fi
+fi
+
+if [[ -z "${SETTINGS_FILE}" ]]; then
+  echo "Usage:"
+  echo "  CLAUDE_SETTINGS_FILE=/abs/path/settings.json ${0} [extra-args]"
+  echo "or"
+  echo "  ${0} /abs/path/settings.json [extra-args]"
+  exit 1
+fi
+
+if [[ "${1:-}" == "${SETTINGS_FILE}" ]]; then
+  shift || true
+fi
+
+# 关键：源码版若未显式设置 CLAUDE_CONFIG_DIR，会默认用当前目录 .claude-dev，
+# 从而读不到你 ~/.claude/.credentials.json，触发 OAuth 登录。
+if [[ -z "${CLAUDE_CONFIG_DIR:-}" ]]; then
+  SETTINGS_DIR="$(dirname "${SETTINGS_FILE}")"
+  if [[ -f "${SETTINGS_DIR}/.credentials.json" ]]; then
+    export CLAUDE_CONFIG_DIR="${SETTINGS_DIR}"
+  else
+    export CLAUDE_CONFIG_DIR="${HOME}/.claude"
+  fi
+fi
+
+exec bun /Users/admin/Desktop/claude-code-source-main/src/entrypoints/dev-cli.tsx --settings "${SETTINGS_FILE}" "$@"

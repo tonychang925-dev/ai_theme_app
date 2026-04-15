@@ -1,0 +1,51 @@
+{
+  "must": [
+    "广州体育场馆翻新",
+    "广东奥体中心",
+    "广东省人民体育场",
+    "越秀山体育场"
+  ],
+  "should": [
+    "显示屏",
+    "体育馆",
+    "转播",
+    "足球",
+    "消费",
+    "粤港澳三地办赛经验",
+    "国际资源",
+    "高水平国际赛事"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "广州体育场馆翻新",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "广州体育场馆翻新"
+    },
+    {
+      "term": "广东奥体中心",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "广东奥体中心"
+    },
+    {
+      "term": "广东省人民体育场",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "广东省人民体育场"
+    },
+    {
+      "term": "越秀山体育场",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "越秀山体育场"
+    }
+  ],
+  "subject_id": "9054349",
+  "quality": "medium",
+  "generated_at": "2026-04-01T03:20:10",
+  "semantic_type": "城市基础设施更新",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

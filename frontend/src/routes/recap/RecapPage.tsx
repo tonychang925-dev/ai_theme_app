@@ -77,6 +77,16 @@ function renderScoredCell(value: string) {
   );
 }
 
+function renderThemeLink(theme: string, subjectKey?: string, tradeDate?: string) {
+  if (!subjectKey || subjectKey === "--") return theme;
+  const suffix = tradeDate ? `?date=${encodeURIComponent(tradeDate)}` : "";
+  return (
+    <button type="button" className="recap-theme-link" onClick={() => navigateTo(`/themes/${subjectKey}${suffix}`)}>
+      {theme}
+    </button>
+  );
+}
+
 function renderDecisionTags(row: StrongStockRow) {
   const tags = [
     row.llmRole !== "--" ? { text: row.llmRole, cls: "is-role" } : null,
@@ -172,10 +182,13 @@ function renderAbnormalLabels(value: string) {
 
 type ThemeSummaryRow = {
   theme: string;
+  subjectKey: string;
   tier: string;
   eventScore: string;
   marketScore: string;
-  boardEnvironment: string;
+  totalInflow: string;
+  leaderInflow: string;
+  themeKline: string;
   cycleStage: string;
   actionAdvice: string;
   conclusion: string;
@@ -211,6 +224,49 @@ type AbnormalSignalRow = {
   capital: string;
   labels: string;
   conclusion: string;
+};
+
+type ThemeCapitalFlowRow = {
+  theme: string;
+  subjectKey: string;
+  tier: string;
+  totalInflow: string;
+  top3Inflow: string;
+  leaderInflow: string;
+  inflowCount: string;
+  themeKline: string;
+  stage: string;
+  action: string;
+};
+
+type StockCapitalFlowRow = {
+  stockName: string;
+  theme: string;
+  mainInflow: string;
+  rankOrder: string;
+  pctChg: string;
+  isLeader: string;
+  flag: string;
+};
+
+type WatchlistRow = {
+  category: string;
+  theme: string;
+  subjectKey: string;
+  stockName: string;
+  role: string;
+  stage: string;
+  action: string;
+  volumeRatio: string;
+  pattern: string;
+  flag: string;
+  dragonDays: string;
+  catalyst: string;
+  labels: string;
+};
+
+type WatchlistDisplayRow = WatchlistRow & {
+  showTheme: boolean;
 };
 
 function parseStrongStockBody(body: string): StrongStockRow {
@@ -317,10 +373,73 @@ function parseStrongStockBody(body: string): StrongStockRow {
   };
 }
 
-function parseThemeSummary(theme: string, body: string, boardEnvironment: string, cycleAction: string): ThemeSummaryRow {
+function parseWatchlistLine(value: string): WatchlistRow {
+  const raw = String(value || "");
+  const [category, bodyRaw = ""] = raw.split("：", 2);
+  const body = bodyRaw.trim();
+  const parts = body.split("｜").map((item) => item.trim()).filter(Boolean);
+  const theme = parts[0] || "--";
+  const stock = parts[1] || "--";
+  const detailParts = parts.slice(2);
+
+  const findValue = (prefix: string) =>
+    detailParts.find((item) => item.startsWith(prefix))?.slice(prefix.length).trim() || "--";
+
+  return {
+    category: category || "--",
+    theme,
+    subjectKey: findValue("subject_key "),
+    stockName: stock,
+    role: findValue("角色 "),
+    stage: findValue("阶段 "),
+    action: findValue("动作 "),
+    volumeRatio: findValue("量比 "),
+    pattern: findValue("形态 "),
+    flag: findValue("flag "),
+    dragonDays: findValue("近7日龙虎榜 "),
+    catalyst: findValue("催化 "),
+    labels: findValue("异动 "),
+  };
+}
+
+function parseThemeCapitalFlowRow(value: string): ThemeCapitalFlowRow {
+  const parsed = splitThemeLine(value);
+  const parts = parsed.body.split("；").map((item) => item.trim()).filter(Boolean);
+  const findValue = (prefix: string) => parts.find((item) => item.startsWith(prefix))?.slice(prefix.length).trim() || "--";
+  return {
+    theme: parsed.theme || "--",
+    subjectKey: findValue("subject_key "),
+    tier: zh(findValue("层级 ")),
+    totalInflow: findValue("总净流入 "),
+    top3Inflow: findValue("前3净流入 "),
+    leaderInflow: findValue("龙头净流入 "),
+    inflowCount: findValue("流入股 "),
+    themeKline: zh(findValue("题材K线 ")),
+    stage: findValue("阶段 "),
+    action: findValue("动作 "),
+  };
+}
+
+function parseStockCapitalFlowRow(value: string): StockCapitalFlowRow {
+  const parsed = splitThemeLine(value);
+  const parts = parsed.body.split("；").map((item) => item.trim()).filter(Boolean);
+  const findValue = (prefix: string) => parts.find((item) => item.startsWith(prefix))?.slice(prefix.length).trim() || "--";
+  return {
+    stockName: parsed.theme || "--",
+    theme: parts[0] || "--",
+    mainInflow: findValue("主力净流入 "),
+    rankOrder: findValue("题材内排名 "),
+    pctChg: findValue("涨幅 "),
+    isLeader: findValue("龙头 "),
+    flag: findValue("flag "),
+  };
+}
+
+function parseThemeSummary(theme: string, body: string, cycleAction: string): ThemeSummaryRow {
   const segments = body.split("；").map((item) => item.trim()).filter(Boolean);
   const cycleSegments = cycleAction.split("；").map((item) => item.trim()).filter(Boolean);
-  const rawTier = segments[0] ?? "--";
+  const findValue = (prefix: string) => segments.find((item) => item.startsWith(prefix))?.slice(prefix.length).trim() || "--";
+  const rawTier = findValue("层级 ");
   const stageRaw = (cycleSegments[0] ?? "").replace("阶段 ", "").trim();
   const stageMap: Record<string, string> = {
     start: "启动",
@@ -332,10 +451,13 @@ function parseThemeSummary(theme: string, body: string, boardEnvironment: string
   };
   return {
     theme,
+    subjectKey: findValue("subject_key "),
     tier: rawTier === "main" ? "主线" : rawTier === "strong_branch" ? "强分支" : zh(rawTier),
-    eventScore: (segments[1] ?? "").replace("事件 ", "").trim() || "--",
-    marketScore: (segments[2] ?? "").replace("市场 ", "").trim() || "--",
-    boardEnvironment: zh(boardEnvironment || "--"),
+    eventScore: findValue("事件 "),
+    marketScore: findValue("市场 "),
+    totalInflow: findValue("总净流入 "),
+    leaderInflow: findValue("龙头净流入 "),
+    themeKline: zh(findValue("题材K线 ")),
     cycleStage: zh((stageMap[stageRaw] ?? stageRaw) || "--"),
     actionAdvice: zh((cycleSegments[1] ?? "").replace("动作 ", "").trim() || "--"),
     conclusion: zh((cycleSegments[2] ?? "").replace("结论 ", "").trim() || "--"),
@@ -444,27 +566,49 @@ export function RecapPage() {
   const marketEnvironmentSection = sections.get("大盘环境总结") ?? [];
   const themeEnvironmentSection = sections.get("板块环境总结") ?? [];
   const themeSection = sections.get("主线与支线") ?? sections.get("可做主线与支线") ?? [];
+  const themeCapitalFlowSection = sections.get("主线资金流入前10") ?? sections.get("题材资金流入前10") ?? [];
   const cycleSection = sections.get("周期与动作") ?? [];
   const strongStockSection = sections.get("强势股分层") ?? sections.get("盘前重点盯盘个股") ?? [];
+  const watchlistSection = sections.get("次日观察清单") ?? [];
+  const stockCapitalFlowSection = sections.get("主线股票资金流入前20") ?? sections.get("股票资金流入前20") ?? [];
   const moneySection = sections.get("资金行为增强") ?? [];
   const abnormalSection = sections.get("当日异动股与资金行为") ?? [];
   const auctionSection = sections.get("竞价确认") ?? [];
   const auctionValidationSection = sections.get("竞价验证回看") ?? [];
   const auxSection = sections.get("龙虎榜") ?? sections.get("龙虎榜与来源链") ?? sections.get("失效条件") ?? [];
   const cycleByTheme = useMemo(() => buildThemeCycleMap(cycleSection), [cycleSection]);
-  const themeEnvironmentByTheme = useMemo(() => buildThemeTextMap(themeEnvironmentSection), [themeEnvironmentSection]);
-
   const strongStockGroups = useMemo(() => {
     const groups = new Map<string, StrongStockRow[]>();
     for (const item of strongStockSection) {
       const parsed = splitThemeLine(item);
       const key = parsed.theme || "未分类";
+      const row = parseStrongStockBody(parsed.body);
+      if (row.role === "淘汰") continue;
       const current = groups.get(key) ?? [];
-      current.push(parseStrongStockBody(parsed.body));
+      current.push(row);
       groups.set(key, current);
     }
-    return Array.from(groups.entries());
+    return Array.from(groups.entries()).filter(([, rows]) => rows.length > 0);
   }, [strongStockSection]);
+  const watchlistRows = useMemo(() => {
+    const rows = watchlistSection.map((item) => parseWatchlistLine(item));
+    rows.sort((a, b) => {
+      const themeCompare = a.theme.localeCompare(b.theme, "zh-CN");
+      if (themeCompare !== 0) return themeCompare;
+      const categoryCompare = a.category.localeCompare(b.category, "zh-CN");
+      if (categoryCompare !== 0) return categoryCompare;
+      return a.stockName.localeCompare(b.stockName, "zh-CN");
+    });
+    let lastTheme = "";
+    return rows.map((row): WatchlistDisplayRow => {
+      const showTheme = row.theme !== lastTheme;
+      lastTheme = row.theme;
+      return {
+        ...row,
+        showTheme,
+      };
+    });
+  }, [watchlistSection]);
   const themeSummaryRows = useMemo(
     () =>
       themeSection.map((item) => {
@@ -472,14 +616,38 @@ export function RecapPage() {
         return parseThemeSummary(
           parsed.theme || "未分类",
           parsed.body,
-          themeEnvironmentByTheme.get(parsed.theme) ?? "",
           cycleByTheme.get(parsed.theme) ?? "",
         );
       }),
-    [themeSection, themeEnvironmentByTheme, cycleByTheme],
+    [themeSection, cycleByTheme],
+  );
+  const themeCapitalFlowRows = useMemo(
+    () => themeCapitalFlowSection.map((item) => parseThemeCapitalFlowRow(item)),
+    [themeCapitalFlowSection],
+  );
+  const stockCapitalFlowRows = useMemo(
+    () => stockCapitalFlowSection.map((item) => parseStockCapitalFlowRow(item)),
+    [stockCapitalFlowSection],
   );
   const mainThemeRows = useMemo(() => themeSummaryRows.filter((row) => row.tier === "主线"), [themeSummaryRows]);
   const branchThemeRows = useMemo(() => themeSummaryRows.filter((row) => row.tier === "强分支"), [themeSummaryRows]);
+  const themeKeyByTheme = useMemo(() => {
+    const result = new Map<string, string>();
+    for (const row of themeSummaryRows) {
+      if (row.theme && row.subjectKey && row.subjectKey !== "--") result.set(row.theme, row.subjectKey);
+    }
+    for (const row of themeCapitalFlowRows) {
+      if (row.theme && row.subjectKey && row.subjectKey !== "--" && !result.has(row.theme)) {
+        result.set(row.theme, row.subjectKey);
+      }
+    }
+    for (const row of watchlistRows) {
+      if (row.theme && row.subjectKey && row.subjectKey !== "--" && !result.has(row.theme)) {
+        result.set(row.theme, row.subjectKey);
+      }
+    }
+    return result;
+  }, [themeSummaryRows, themeCapitalFlowRows, watchlistRows]);
   const moneyFlowRows = useMemo(
     () =>
       moneySection.map((item) => {
@@ -488,13 +656,29 @@ export function RecapPage() {
       }),
     [moneySection],
   );
+  const abnormalNote = useMemo(
+    () => abnormalSection.find((item) => item.startsWith("补充说明：")) ?? "",
+    [abnormalSection],
+  );
+  const abnormalDataSection = useMemo(
+    () => abnormalSection.filter((item) => !item.startsWith("补充说明：")),
+    [abnormalSection],
+  );
+  const dragonTigerNote = useMemo(
+    () => auxSection.find((item) => item.startsWith("说明：")) ?? "",
+    [auxSection],
+  );
+  const dragonTigerDataSection = useMemo(
+    () => auxSection.filter((item) => !item.startsWith("说明：")),
+    [auxSection],
+  );
   const abnormalRows = useMemo(
     () =>
-      abnormalSection.map((item) => {
+      abnormalDataSection.map((item) => {
         const parsed = splitThemeLine(item);
         return parseAbnormalSignalRow(parsed.theme || "未分类", parsed.body);
       }),
-    [abnormalSection],
+    [abnormalDataSection],
   );
   const sortedAbnormalRows = useMemo(() => {
     const rows = [...abnormalRows];
@@ -507,13 +691,13 @@ export function RecapPage() {
   }, [abnormalRows, abnormalSortDir, abnormalSortKey]);
   const dragonTigerRows = useMemo(
     () =>
-      auxSection.map((item) => {
+      dragonTigerDataSection.map((item) => {
         const parsed = splitThemeLine(item);
         return parsed.body.includes("/")
           ? parseDragonTigerRow(parsed.theme || "--", parsed.body)
           : parseDragonTigerLegacyRow(parsed.theme || "--", parsed.body);
       }),
-    [auxSection],
+    [dragonTigerDataSection],
   );
 
   useEffect(() => {
@@ -652,9 +836,11 @@ export function RecapPage() {
                             <thead>
                               <tr>
                                 <th>题材</th>
+                                <th>总净流入</th>
+                                <th>龙头净流入</th>
+                                <th>题材K线</th>
                                 <th>事件分</th>
                                 <th>市场分</th>
-                                <th>板块环境</th>
                                 <th>周期阶段</th>
                                 <th>操作建议</th>
                                 <th>结论</th>
@@ -663,10 +849,12 @@ export function RecapPage() {
                             <tbody>
                               {mainThemeRows.map((row, idx) => (
                                 <tr key={`main-theme-row-${idx}`}>
-                                  <td>{row.theme}</td>
+                                  <td>{renderThemeLink(row.theme, row.subjectKey, tradeDate)}</td>
+                                  <td>{row.totalInflow}</td>
+                                  <td>{row.leaderInflow}</td>
+                                  <td>{row.themeKline}</td>
                                   <td>{row.eventScore}</td>
                                   <td>{row.marketScore}</td>
-                                  <td>{row.boardEnvironment}</td>
                                   <td>{renderThemeStatusTags([row.cycleStage])}</td>
                                   <td>{renderThemeStatusTags([row.actionAdvice])}</td>
                                   <td>{row.conclusion}</td>
@@ -687,9 +875,11 @@ export function RecapPage() {
                               <thead>
                                 <tr>
                                   <th>题材</th>
+                                  <th>总净流入</th>
+                                  <th>龙头净流入</th>
+                                  <th>题材K线</th>
                                   <th>事件分</th>
                                   <th>市场分</th>
-                                  <th>板块环境</th>
                                   <th>周期阶段</th>
                                   <th>操作建议</th>
                                   <th>结论</th>
@@ -698,10 +888,12 @@ export function RecapPage() {
                               <tbody>
                                 {branchThemeRows.map((row, idx) => (
                                   <tr key={`branch-theme-row-${idx}`}>
-                                    <td>{row.theme}</td>
+                                    <td>{renderThemeLink(row.theme, row.subjectKey, tradeDate)}</td>
+                                    <td>{row.totalInflow}</td>
+                                    <td>{row.leaderInflow}</td>
+                                    <td>{row.themeKline}</td>
                                     <td>{row.eventScore}</td>
                                     <td>{row.marketScore}</td>
-                                    <td>{row.boardEnvironment}</td>
                                     <td>{renderThemeStatusTags([row.cycleStage])}</td>
                                     <td>{renderThemeStatusTags([row.actionAdvice])}</td>
                                     <td>{row.conclusion}</td>
@@ -726,6 +918,44 @@ export function RecapPage() {
                       })}
                     </ul>
                   )}
+                </div>
+              )}
+
+              {themeCapitalFlowRows.length > 0 && (
+                <div className="workspace-card">
+                  <span className="metric-label section-title">主线资金流入前10</span>
+                  <div className="recap-table-wrap">
+                    <table className="recap-table">
+                      <thead>
+                        <tr>
+                          <th>题材</th>
+                          <th>层级</th>
+                          <th>总净流入</th>
+                          <th>前3净流入</th>
+                          <th>龙头净流入</th>
+                          <th>流入股数</th>
+                          <th>题材K线</th>
+                          <th>阶段</th>
+                          <th>动作</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {themeCapitalFlowRows.map((row, idx) => (
+                          <tr key={`theme-capital-${idx}`}>
+                            <td>{renderThemeLink(row.theme, row.subjectKey, tradeDate)}</td>
+                            <td>{row.tier}</td>
+                            <td>{row.totalInflow}</td>
+                            <td>{row.top3Inflow}</td>
+                            <td>{row.leaderInflow}</td>
+                            <td>{row.inflowCount}</td>
+                            <td>{row.themeKline}</td>
+                            <td>{renderThemeStatusTags([row.stage])}</td>
+                            <td>{renderThemeStatusTags([row.action])}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               )}
 
@@ -774,7 +1004,7 @@ export function RecapPage() {
                                   <td>{row.klinePosition}</td>
                                   <td>{row.klinePattern}</td>
                                   <td>{renderDecisionTags(row)}</td>
-                                  <td>{row.llmReason}</td>
+                                  <td className="recap-cell-wrap recap-cell-llm-reason">{row.llmReason}</td>
                                   <td>{row.rationale}</td>
                                   </tr>
                                 ))}
@@ -800,9 +1030,92 @@ export function RecapPage() {
                 </div>
               )}
 
+              {watchlistSection.length > 0 && (
+                <div className="workspace-card">
+                  <span className="metric-label section-title">次日观察清单</span>
+                  <div className="recap-table-wrap">
+                    <table className="recap-table recap-table-watchlist">
+                      <thead>
+                        <tr>
+                          <th>股票</th>
+                          <th>类别</th>
+                          <th>题材</th>
+                          <th>角色</th>
+                          <th>阶段</th>
+                          <th>动作</th>
+                          <th>量比</th>
+                          <th>形态</th>
+                          <th>Flag</th>
+                          <th>龙虎榜</th>
+                          <th>催化/异动</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {watchlistRows.map((row, idx) => (
+                          <tr key={`watchlist-${idx}`}>
+                            <td className="recap-stock-highlight">{row.stockName}</td>
+                            <td>{row.category}</td>
+                            <td>{row.showTheme ? renderThemeLink(row.theme, row.subjectKey, tradeDate) : ""}</td>
+                            <td>{row.role}</td>
+                            <td>{renderThemeStatusTags([row.stage])}</td>
+                            <td>{row.action !== "--" ? row.action : "--"}</td>
+                            <td>{row.volumeRatio !== "--" ? row.volumeRatio : "--"}</td>
+                            <td className="recap-cell-wrap">{row.pattern !== "--" ? row.pattern : "--"}</td>
+                            <td>{row.flag !== "--" ? row.flag : "--"}</td>
+                            <td>{row.dragonDays !== "--" ? `${row.dragonDays}天` : "--"}</td>
+                            <td className="recap-cell-wrap">
+                              {zh(
+                                [row.catalyst !== "--" ? row.catalyst : "", row.labels !== "--" ? row.labels : ""]
+                                  .filter(Boolean)
+                                  .join("；") || "--",
+                              )}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
+
+              {stockCapitalFlowRows.length > 0 && (
+                <div className="workspace-card">
+                  <span className="metric-label section-title">股票资金流入前20</span>
+                  <div className="recap-table-wrap">
+                    <table className="recap-table">
+                      <thead>
+                        <tr>
+                          <th>股票</th>
+                          <th>题材</th>
+                          <th>主力净流入</th>
+                          <th>题材内排名</th>
+                          <th>涨幅</th>
+                          <th>龙头</th>
+                          <th>Flag</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {stockCapitalFlowRows.map((row, idx) => (
+                          <tr key={`stock-capital-${idx}`}>
+                            <td className="recap-stock-highlight">{row.stockName}</td>
+                            <td>{renderThemeLink(row.theme, themeKeyByTheme.get(row.theme), tradeDate)}</td>
+                            <td>{row.mainInflow}</td>
+                            <td>{row.rankOrder}</td>
+                            <td>{row.pctChg}</td>
+                            <td>{row.isLeader}</td>
+                            <td>{row.flag}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
+
               {abnormalSection.length > 0 && (
                 <div className="workspace-card">
                   <span className="metric-label section-title">当日异动股与资金行为</span>
+                  {abnormalNote && <p className="workspace-note">{zh(abnormalNote)}</p>}
                   <div className="recap-table-wrap">
                     <table className="recap-table">
                       <thead>
@@ -876,30 +1189,35 @@ export function RecapPage() {
                 <div className="workspace-card">
                   <span className="metric-label section-title">{payload.report_type === "post_market" ? "龙虎榜" : "失效条件"}</span>
                   {payload.report_type === "post_market" ? (
-                    <div className="recap-table-wrap">
-                      <table className="recap-table">
-                        <thead>
-                          <tr>
-                            <th>游资</th>
-                            <th>题材</th>
-                            <th>股票</th>
-                            <th>买卖</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {dragonTigerRows.flatMap((row, idx) =>
-                            row.items.map((item, subIdx) => (
-                              <tr key={`dragon-row-${idx}-${subIdx}`}>
-                                <td>{subIdx === 0 ? row.hotMoneyName : ""}</td>
-                                <td>{item.theme}</td>
-                                <td>{item.stockName}</td>
-                                <td>{item.sideNet}</td>
+                    <>
+                      {dragonTigerNote && <p className="workspace-note">{zh(dragonTigerNote)}</p>}
+                      {dragonTigerRows.length > 0 && (
+                        <div className="recap-table-wrap">
+                          <table className="recap-table">
+                            <thead>
+                              <tr>
+                                <th>游资</th>
+                                <th>题材</th>
+                                <th>股票</th>
+                                <th>买卖</th>
                               </tr>
-                            )),
-                          )}
-                        </tbody>
-                      </table>
-                    </div>
+                            </thead>
+                            <tbody>
+                              {dragonTigerRows.flatMap((row, idx) =>
+                                row.items.map((item, subIdx) => (
+                                  <tr key={`dragon-row-${idx}-${subIdx}`}>
+                                    <td>{subIdx === 0 ? row.hotMoneyName : ""}</td>
+                                    <td>{item.theme}</td>
+                                    <td>{item.stockName}</td>
+                                    <td>{item.sideNet}</td>
+                                  </tr>
+                                )),
+                              )}
+                            </tbody>
+                          </table>
+                        </div>
+                      )}
+                    </>
                   ) : (
                     <ul className="workspace-list">
                       {auxSection.map((item, idx) => {

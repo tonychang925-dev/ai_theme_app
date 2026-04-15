@@ -14,7 +14,7 @@ CURRENT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = CURRENT_DIR.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from database_service.config import DatabaseConfig, DatabaseType, RedisConfig
+from database_service.config import ConnectionPoolConfig, DatabaseConfig, DatabaseType, RedisConfig
 from database_service.managers.postgres_manager import PostgresDatabaseManager
 from stock_service.models import MarketEnvironmentMetrics
 from stock_service.services.market_environment_intraday_service import MarketEnvironmentIntradayService
@@ -32,6 +32,11 @@ def get_postgres_config() -> DatabaseConfig:
         table_names_config={"theme_master": "theme_master"},
         redis=RedisConfig(enabled=False),
         postgres_pool_size=5,
+        connection_pool=ConnectionPoolConfig(
+            min_size=1,
+            max_size=5,
+            command_timeout=180,
+        ),
     )
 
 

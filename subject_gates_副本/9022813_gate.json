@@ -1,0 +1,48 @@
+{
+  "must": [
+    "聚醚醚酮（PEEK）",
+    "PAEK",
+    "PEEK"
+  ],
+  "should": [
+    "聚醚酮酮（PEKK）",
+    "聚醚酮（PEK）",
+    "聚醚醚酮酮（PEEKK）",
+    "聚醚酮醚酮酮（PEKEKK）",
+    "医疗",
+    "汽车",
+    "机器人",
+    "电磁线",
+    "挤出工艺一次成型",
+    "特种工程塑料",
+    "特种高分子材料",
+    "LCP"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "聚醚醚酮（PEEK）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "聚醚醚酮（PEEK）"
+    },
+    {
+      "term": "PAEK",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "PAEK"
+    },
+    {
+      "term": "PEEK",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "PEEK"
+    }
+  ],
+  "subject_id": "9022813",
+  "quality": "strong",
+  "generated_at": "2026-04-02T05:49:01",
+  "semantic_type": "高性能材料技术",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

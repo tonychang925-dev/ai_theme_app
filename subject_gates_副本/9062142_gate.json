@@ -1,0 +1,44 @@
+{
+  "must": [
+    "参股",
+    "供货",
+    "公司"
+  ],
+  "should": [
+    "民商火箭企业",
+    "民商火箭发射链路",
+    "液体运载火箭研制",
+    "民商航天企业",
+    "全球首枚入轨的液氧甲烷火箭",
+    "蓝箭航天成立",
+    "朱雀一号运载火箭发射",
+    "全系统试车成功"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "参股",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "参股"
+    },
+    {
+      "term": "供货",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "供货"
+    },
+    {
+      "term": "公司",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "公司"
+    }
+  ],
+  "subject_id": "9062142",
+  "quality": "weak",
+  "generated_at": "2026-03-31T21:01:26",
+  "semantic_type": "公司事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

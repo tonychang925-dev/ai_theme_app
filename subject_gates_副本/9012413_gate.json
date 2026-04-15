@@ -1,0 +1,69 @@
+{
+  "must": [
+    "整机",
+    "液冷快充",
+    "运营",
+    "V2G双向传输",
+    "充电器件",
+    "大功率充电设施"
+  ],
+  "should": [
+    "监控计费",
+    "华为液冷快充",
+    "充电运营企业",
+    "场站建设",
+    "公交专用大功率充电设施",
+    "物流专用大功率充电设施",
+    "华为数字能源",
+    "临港多式联运中心",
+    "充电服务市场",
+    "平台互联互通",
+    "充电零售",
+    "优质运营商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "整机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "整机"
+    },
+    {
+      "term": "液冷快充",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "液冷快充"
+    },
+    {
+      "term": "运营",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "运营"
+    },
+    {
+      "term": "V2G双向传输",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "V2G双向传输"
+    },
+    {
+      "term": "充电器件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "充电器件"
+    },
+    {
+      "term": "大功率充电设施",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "大功率充电设施"
+    }
+  ],
+  "subject_id": "9012413",
+  "quality": "weak",
+  "generated_at": "2026-04-02T06:34:29",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

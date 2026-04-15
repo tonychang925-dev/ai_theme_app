@@ -1,0 +1,78 @@
+{
+  "must": [
+    "整车厂",
+    "一级供应商（Tier1）",
+    "汽车悬架",
+    "线控底盘",
+    "智能座舱",
+    "结构件"
+  ],
+  "should": [
+    "二级供应商（Tier2）",
+    "三级供应商（Tier3）",
+    "钢板弹簧悬架",
+    "螺旋弹簧悬架",
+    "空气弹簧悬架",
+    "车载信息娱乐系统",
+    "仪表盘",
+    "抬头显示（HUD）",
+    "前后中控屏",
+    "视觉感知系统",
+    "语音交互系统",
+    "座舱域控制器"
+  ],
+  "not": [
+    "新能源汽车行业座谈会",
+    "规范竞争秩序",
+    "产品价格监测",
+    "产品一致性监督检查",
+    "缩短供应商货款账期",
+    "网络乱象专项整治",
+    "产品质量监督抽检",
+    "缺陷调查"
+  ],
+  "evidence_refs": [
+    {
+      "term": "整车厂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "整车厂"
+    },
+    {
+      "term": "一级供应商（Tier1）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "一级供应商（Tier1）"
+    },
+    {
+      "term": "汽车悬架",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "汽车悬架"
+    },
+    {
+      "term": "线控底盘",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "线控底盘"
+    },
+    {
+      "term": "智能座舱",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能座舱"
+    },
+    {
+      "term": "结构件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "结构件"
+    }
+  ],
+  "subject_id": "9014198",
+  "quality": "strong",
+  "generated_at": "2026-03-31T22:36:21",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

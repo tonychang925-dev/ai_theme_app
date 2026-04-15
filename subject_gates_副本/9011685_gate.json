@@ -1,0 +1,76 @@
+{
+  "must": [
+    "旅游购物",
+    "旅游出行",
+    "景区运营",
+    "酒店住宿",
+    "在线旅游平台",
+    "文旅演艺"
+  ],
+  "should": [
+    "旅游餐饮",
+    "旅游住宿",
+    "旅游游览",
+    "旅游娱乐",
+    "基础设施",
+    "原材料供应",
+    "人力资源",
+    "政策与金融支持",
+    "出境旅游",
+    "入境旅游",
+    "主题公园",
+    "酒楼饭店"
+  ],
+  "not": [
+    "智慧旅游创新发展行动计划",
+    "智慧旅游创新发展",
+    "5G网络全覆盖",
+    "国内居民出游",
+    "入境游客",
+    "出境游客"
+  ],
+  "evidence_refs": [
+    {
+      "term": "旅游购物",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "旅游购物"
+    },
+    {
+      "term": "旅游出行",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "旅游出行"
+    },
+    {
+      "term": "景区运营",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "景区运营"
+    },
+    {
+      "term": "酒店住宿",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "酒店住宿"
+    },
+    {
+      "term": "在线旅游平台",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "在线旅游平台"
+    },
+    {
+      "term": "文旅演艺",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "文旅演艺"
+    }
+  ],
+  "subject_id": "9011685",
+  "quality": "strong",
+  "generated_at": "2026-03-31T22:11:07",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

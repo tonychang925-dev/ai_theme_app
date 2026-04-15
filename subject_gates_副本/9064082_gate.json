@@ -1,0 +1,65 @@
+{
+  "must": [
+    "覆铜板",
+    "铜箔",
+    "玻纤布",
+    "树脂",
+    "PCB",
+    "Low-DK超高端"
+  ],
+  "should": [
+    "生益科技",
+    "华正新材",
+    "南亚新材",
+    "消费电子",
+    "汽车电子",
+    "通信设备",
+    "服务器",
+    "E-glass中低端"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "覆铜板",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "覆铜板"
+    },
+    {
+      "term": "铜箔",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "铜箔"
+    },
+    {
+      "term": "玻纤布",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "玻纤布"
+    },
+    {
+      "term": "树脂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "树脂"
+    },
+    {
+      "term": "PCB",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "PCB"
+    },
+    {
+      "term": "Low-DK超高端",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Low-DK超高端"
+    }
+  ],
+  "subject_id": "9064082",
+  "quality": "weak",
+  "generated_at": "2026-04-01T23:42:55",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

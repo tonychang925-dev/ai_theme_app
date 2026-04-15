@@ -1,0 +1,74 @@
+{
+  "must": [
+    "星载算力载荷",
+    "运载火箭与发射服务",
+    "在轨运营与服务",
+    "星间通信系统",
+    "抗辐射芯片",
+    "卫星制造与集成"
+  ],
+  "should": [
+    "上游核心部件",
+    "太阳能电池",
+    "激光通信器件",
+    "散热系统",
+    "运载火箭发射",
+    "星座建设与组网",
+    "全球低延迟通信",
+    "应急与安全监测",
+    "科学计算与研究",
+    "星间激光通信",
+    "太空散热系统",
+    "计算芯片"
+  ],
+  "not": [
+    "国星宇航",
+    "中国卫星",
+    "海南批产线",
+    "航天电子"
+  ],
+  "evidence_refs": [
+    {
+      "term": "星载算力载荷",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "星载算力载荷"
+    },
+    {
+      "term": "运载火箭与发射服务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "运载火箭与发射服务"
+    },
+    {
+      "term": "在轨运营与服务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "在轨运营与服务"
+    },
+    {
+      "term": "星间通信系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "星间通信系统"
+    },
+    {
+      "term": "抗辐射芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "抗辐射芯片"
+    },
+    {
+      "term": "卫星制造与集成",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "卫星制造与集成"
+    }
+  ],
+  "subject_id": "9059490",
+  "quality": "strong",
+  "generated_at": "2026-03-31T20:57:37",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

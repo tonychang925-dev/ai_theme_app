@@ -1,0 +1,57 @@
+{
+  "must": [
+    "Sora 2视频生成模型",
+    "世界模拟器",
+    "OpenAI"
+  ],
+  "should": [
+    "AI音频生成能力",
+    "牛顿定律",
+    "流体力学",
+    "光学原理",
+    "iOS社交应用",
+    "客串功能",
+    "Sora场景",
+    "原版Sora模型",
+    "Sora应用",
+    "环境音",
+    "物体交互声",
+    "对话"
+  ],
+  "not": [
+    "AI产业动态",
+    "人工智能+制造政策",
+    "智谱上市大涨",
+    "MiniMax上市大涨",
+    "DeepSeek-V4推出",
+    "AI应用热潮",
+    "App Store免费榜第一",
+    "验证身份"
+  ],
+  "evidence_refs": [
+    {
+      "term": "Sora 2视频生成模型",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Sora 2视频生成模型"
+    },
+    {
+      "term": "世界模拟器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "世界模拟器"
+    },
+    {
+      "term": "OpenAI",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "OpenAI"
+    }
+  ],
+  "subject_id": "9057838",
+  "quality": "medium",
+  "generated_at": "2026-03-31T22:42:44",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

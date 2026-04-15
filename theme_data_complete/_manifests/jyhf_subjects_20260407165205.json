@@ -1,0 +1,98 @@
+{
+  "batch_id": "jyhf_subjects_20260407165205",
+  "started_at": "2026-04-07T16:52:13.216154",
+  "source": "jyhf",
+  "subject_count": 1,
+  "subjects": [
+    "9065881"
+  ],
+  "sync_mode": "subjects",
+  "wanted_types": [
+    "children",
+    "daily",
+    "details",
+    "history",
+    "lists",
+    "stock_details"
+  ],
+  "files": [
+    {
+      "file_path": "theme_data_complete/details/9065881_details.jsonl",
+      "data_type": "details",
+      "subject_key": "9065881",
+      "file_hash": "71fae3304161a58c9be8205321a1772841a8643d0b942c6cf758f87b52dbe076",
+      "file_size": 5382,
+      "source_updated_at": "2026-04-07T16:52:09.845714"
+    },
+    {
+      "file_path": "theme_data_complete/history/9065881_history.jsonl",
+      "data_type": "history",
+      "subject_key": "9065881",
+      "file_hash": "61835c220f48cc12af80e6faf596969b2e74f88eda44a72f7b7b3d70c160a0ed",
+      "file_size": 872,
+      "source_updated_at": "2026-04-07T16:52:11.145269"
+    },
+    {
+      "file_path": "theme_data_complete/daily/9065881_daily.jsonl",
+      "data_type": "daily",
+      "subject_key": "9065881",
+      "file_hash": "3badc6bf58b43710086067ad4bbed30ef5bbec822ce3da295aa4c1a488e8d58d",
+      "file_size": 164024,
+      "source_updated_at": "2026-04-07T16:52:11.841697"
+    },
+    {
+      "file_path": "theme_data_complete/children/9065881_children.jsonl",
+      "data_type": "children",
+      "subject_key": "9065881",
+      "file_hash": "1a38d299474038442cf7456cfd55ad72b6add3cb0c622d04e0cecf919679b694",
+      "file_size": 382,
+      "source_updated_at": "2026-04-07T16:52:12.525244"
+    },
+    {
+      "file_path": "theme_data_complete/stock_details/9065881_2026-04_stocks.jsonl",
+      "data_type": "stock_details",
+      "subject_key": "9065881",
+      "file_hash": "305e75eceae67ecb2c5a0e7566435d5e2d8043d48fa0677f087cccabd3025c3a",
+      "file_size": 5406,
+      "source_updated_at": "2026-04-07T16:52:13.167683"
+    },
+    {
+      "file_path": "theme_data_complete/stock_daily/9065881_2026-04-07_stocks.jsonl",
+      "data_type": "stock_daily",
+      "subject_key": "9065881",
+      "file_hash": "305e75eceae67ecb2c5a0e7566435d5e2d8043d48fa0677f087cccabd3025c3a",
+      "file_size": 5406,
+      "source_updated_at": "2026-04-07T16:52:13.170087"
+    },
+    {
+      "file_path": "theme_data_complete/lists/theme_hierarchy.jsonl",
+      "data_type": "lists",
+      "subject_key": null,
+      "file_hash": "96130fb5adfe0e48cbaca7f7d09361db3bb271f6e7de2d91ed59ec4136b5359c",
+      "file_size": 52541,
+      "source_updated_at": "2026-02-22T16:18:38.558055"
+    },
+    {
+      "file_path": "theme_data_complete/lists/full_theme_list.sync.jsonl",
+      "data_type": "lists",
+      "subject_key": null,
+      "file_hash": "10c2d886e9630885966b9a4b25c6830ba8f0012c056381f42d23a53184c50a0c",
+      "file_size": 431771,
+      "source_updated_at": "2026-04-07T16:52:09.215813"
+    }
+  ],
+  "stats": {
+    "total_requests": 7,
+    "success": 7,
+    "failed": 0,
+    "by_type": {
+      "lists": 1,
+      "details": 1,
+      "history_p1": 1,
+      "history_p2": 1,
+      "daily": 1,
+      "children": 1,
+      "stocks_2026-04-07": 1
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "must": [
+    "华为盘古大模型",
+    "E系列",
+    "P系列",
+    "U系列",
+    "S系列",
+    "十亿级参数"
+  ],
+  "should": [
+    "工业设计",
+    "自动驾驶",
+    "气象预测",
+    "机器人",
+    "政务",
+    "能源",
+    "营销",
+    "金融",
+    "医疗",
+    "校园",
+    "纺织",
+    "全系列"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "华为盘古大模型",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "华为盘古大模型"
+    },
+    {
+      "term": "E系列",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "E系列"
+    },
+    {
+      "term": "P系列",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "P系列"
+    },
+    {
+      "term": "U系列",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "U系列"
+    },
+    {
+      "term": "S系列",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "S系列"
+    },
+    {
+      "term": "十亿级参数",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "十亿级参数"
+    }
+  ],
+  "subject_id": "9043063",
+  "quality": "medium",
+  "generated_at": "2026-03-31T23:26:51",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

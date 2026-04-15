@@ -1,0 +1,1193 @@
+{
+  "experiment_time": "2026-04-11T17:46:28.289784",
+  "test_data_count": 20,
+  "single_processing": {
+    "experiment_type": "single_processing",
+    "data_count": 5,
+    "total_time": 53.61492705345154,
+    "avg_time_per_item": 10.722985410690308,
+    "throughput": 0.09325761079587476,
+    "results": [
+      {
+        "item_id": "news_0",
+        "result": {
+          "success": true,
+          "classification": "normal",
+          "confidence": 0.8381189506847755,
+          "processing_time": 11.006431772204323
+        },
+        "processing_time": 11.006883144378662
+      },
+      {
+        "item_id": "news_1",
+        "result": {
+          "success": true,
+          "classification": "normal",
+          "confidence": 0.8490990793853731,
+          "processing_time": 11.400343543667182
+        },
+        "processing_time": 11.400899887084961
+      },
+      {
+        "item_id": "news_2",
+        "result": {
+          "success": true,
+          "classification": "urgent",
+          "confidence": 0.7131039387335233,
+          "processing_time": 10.37274380489454
+        },
+        "processing_time": 10.373104095458984
+      },
+      {
+        "item_id": "news_3",
+        "result": {
+          "success": true,
+          "classification": "normal",
+          "confidence": 0.7990281281927294,
+          "processing_time": 10.356901261029961
+        },
+        "processing_time": 10.357898950576782
+      },
+      {
+        "item_id": "news_4",
+        "result": {
+          "success": true,
+          "classification": "urgent",
+          "confidence": 0.784755242777321,
+          "processing_time": 10.475624489479458
+        },
+        "processing_time": 10.475911855697632
+      }
+    ]
+  },
+  "batch_processing": [
+    {
+      "experiment_type": "batch_processing",
+      "data_count": 20,
+      "batch_size": 2,
+      "total_time": 58.849472999572754,
+      "avg_time_per_item": 2.9424736499786377,
+      "throughput": 0.3398501121691472,
+      "batch_count": 10,
+      "results": [
+        {
+          "item_id": "news_0",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.9445879147059486,
+            "processing_time": 2.8659139773810343,
+            "item_index": 0
+          },
+          "batch_index": 0,
+          "batch_size": 2,
+          "batch_processing_time": 5.732112884521484
+        },
+        {
+          "item_id": "news_1",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.7782743102142469,
+            "processing_time": 2.8659139773810343,
+            "item_index": 1
+          },
+          "batch_index": 0,
+          "batch_size": 2,
+          "batch_processing_time": 5.732112884521484
+        },
+        {
+          "item_id": "news_2",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.743962159635025,
+            "processing_time": 3.0683993187236913,
+            "item_index": 0
+          },
+          "batch_index": 1,
+          "batch_size": 2,
+          "batch_processing_time": 6.1375486850738525
+        },
+        {
+          "item_id": "news_3",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.9256598663899809,
+            "processing_time": 3.0683993187236913,
+            "item_index": 1
+          },
+          "batch_index": 1,
+          "batch_size": 2,
+          "batch_processing_time": 6.1375486850738525
+        },
+        {
+          "item_id": "news_4",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.8327897586979334,
+            "processing_time": 2.5999325250984464,
+            "item_index": 0
+          },
+          "batch_index": 2,
+          "batch_size": 2,
+          "batch_processing_time": 5.200151205062866
+        },
+        {
+          "item_id": "news_5",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.7423466714567166,
+            "processing_time": 2.5999325250984464,
+            "item_index": 1
+          },
+          "batch_index": 2,
+          "batch_size": 2,
+          "batch_processing_time": 5.200151205062866
+        },
+        {
+          "item_id": "news_6",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.8029902722400686,
+            "processing_time": 3.3563949967553475,
+            "item_index": 0
+          },
+          "batch_index": 3,
+          "batch_size": 2,
+          "batch_processing_time": 6.713156700134277
+        },
+        {
+          "item_id": "news_7",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.8036130185082133,
+            "processing_time": 3.3563949967553475,
+            "item_index": 1
+          },
+          "batch_index": 3,
+          "batch_size": 2,
+          "batch_processing_time": 6.713156700134277
+        },
+        {
+          "item_id": "news_8",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.9329815763607078,
+            "processing_time": 2.5262632974907815,
+            "item_index": 0
+          },
+          "batch_index": 4,
+          "batch_size": 2,
+          "batch_processing_time": 5.052914142608643
+        },
+        {
+          "item_id": "news_9",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.7551577195264699,
+            "processing_time": 2.5262632974907815,
+            "item_index": 1
+          },
+          "batch_index": 4,
+          "batch_size": 2,
+          "batch_processing_time": 5.052914142608643
+        },
+        {
+          "item_id": "news_10",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.7705553332553718,
+            "processing_time": 3.108287638114424,
+            "item_index": 0
+          },
+          "batch_index": 5,
+          "batch_size": 2,
+          "batch_processing_time": 6.216828107833862
+        },
+        {
+          "item_id": "news_11",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.7026188351514249,
+            "processing_time": 3.108287638114424,
+            "item_index": 1
+          },
+          "batch_index": 5,
+          "batch_size": 2,
+          "batch_processing_time": 6.216828107833862
+        },
+        {
+          "item_id": "news_12",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.8082445542627027,
+            "processing_time": 3.194312610474566,
+            "item_index": 0
+          },
+          "batch_index": 6,
+          "batch_size": 2,
+          "batch_processing_time": 6.388919115066528
+        },
+        {
+          "item_id": "news_13",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.8942522457679954,
+            "processing_time": 3.194312610474566,
+            "item_index": 1
+          },
+          "batch_index": 6,
+          "batch_size": 2,
+          "batch_processing_time": 6.388919115066528
+        },
+        {
+          "item_id": "news_14",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.8026437999647253,
+            "processing_time": 2.590167985715629,
+            "item_index": 0
+          },
+          "batch_index": 7,
+          "batch_size": 2,
+          "batch_processing_time": 5.180608034133911
+        },
+        {
+          "item_id": "news_15",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.7468753741087581,
+            "processing_time": 2.590167985715629,
+            "item_index": 1
+          },
+          "batch_index": 7,
+          "batch_size": 2,
+          "batch_processing_time": 5.180608034133911
+        },
+        {
+          "item_id": "news_16",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.8560223931849893,
+            "processing_time": 3.0062575408688366,
+            "item_index": 0
+          },
+          "batch_index": 8,
+          "batch_size": 2,
+          "batch_processing_time": 6.013407945632935
+        },
+        {
+          "item_id": "news_17",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.8550833699156145,
+            "processing_time": 3.0062575408688366,
+            "item_index": 1
+          },
+          "batch_index": 8,
+          "batch_size": 2,
+          "batch_processing_time": 6.013407945632935
+        },
+        {
+          "item_id": "news_18",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.8451601487181758,
+            "processing_time": 3.1059833399672208,
+            "item_index": 0
+          },
+          "batch_index": 9,
+          "batch_size": 2,
+          "batch_processing_time": 6.2122838497161865
+        },
+        {
+          "item_id": "news_19",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.7485791409484706,
+            "processing_time": 3.1059833399672208,
+            "item_index": 1
+          },
+          "batch_index": 9,
+          "batch_size": 2,
+          "batch_processing_time": 6.2122838497161865
+        }
+      ]
+    },
+    {
+      "experiment_type": "batch_processing",
+      "data_count": 20,
+      "batch_size": 3,
+      "total_time": 52.08060121536255,
+      "avg_time_per_item": 2.6040300607681273,
+      "throughput": 0.3840201444160839,
+      "batch_count": 7,
+      "results": [
+        {
+          "item_id": "news_0",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.8190678630955742,
+            "processing_time": 2.2534856663949547,
+            "item_index": 0
+          },
+          "batch_index": 0,
+          "batch_size": 3,
+          "batch_processing_time": 6.7608559131622314
+        },
+        {
+          "item_id": "news_1",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.8611760508213823,
+            "processing_time": 2.2534856663949547,
+            "item_index": 1
+          },
+          "batch_index": 0,
+          "batch_size": 3,
+          "batch_processing_time": 6.7608559131622314
+        },
+        {
+          "item_id": "news_2",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.9423776502402947,
+            "processing_time": 2.2534856663949547,
+            "item_index": 2
+          },
+          "batch_index": 0,
+          "batch_size": 3,
+          "batch_processing_time": 6.7608559131622314
+        },
+        {
+          "item_id": "news_3",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.7145828805290444,
+            "processing_time": 2.2496180525336795,
+            "item_index": 0
+          },
+          "batch_index": 1,
+          "batch_size": 3,
+          "batch_processing_time": 6.749080657958984
+        },
+        {
+          "item_id": "news_4",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.8721656109943386,
+            "processing_time": 2.2496180525336795,
+            "item_index": 1
+          },
+          "batch_index": 1,
+          "batch_size": 3,
+          "batch_processing_time": 6.749080657958984
+        },
+        {
+          "item_id": "news_5",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.7438864510022425,
+            "processing_time": 2.2496180525336795,
+            "item_index": 2
+          },
+          "batch_index": 1,
+          "batch_size": 3,
+          "batch_processing_time": 6.749080657958984
+        },
+        {
+          "item_id": "news_6",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.9389769982001086,
+            "processing_time": 2.431812721736289,
+            "item_index": 0
+          },
+          "batch_index": 2,
+          "batch_size": 3,
+          "batch_processing_time": 7.295774221420288
+        },
+        {
+          "item_id": "news_7",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.8543239112086622,
+            "processing_time": 2.431812721736289,
+            "item_index": 1
+          },
+          "batch_index": 2,
+          "batch_size": 3,
+          "batch_processing_time": 7.295774221420288
+        },
+        {
+          "item_id": "news_8",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.78977612365784,
+            "processing_time": 2.431812721736289,
+            "item_index": 2
+          },
+          "batch_index": 2,
+          "batch_size": 3,
+          "batch_processing_time": 7.295774221420288
+        },
+        {
+          "item_id": "news_9",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.8909079495569029,
+            "processing_time": 3.1059093053241615,
+            "item_index": 0
+          },
+          "batch_index": 3,
+          "batch_size": 3,
+          "batch_processing_time": 9.318007946014404
+        },
+        {
+          "item_id": "news_10",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.8063418517998592,
+            "processing_time": 3.1059093053241615,
+            "item_index": 1
+          },
+          "batch_index": 3,
+          "batch_size": 3,
+          "batch_processing_time": 9.318007946014404
+        },
+        {
+          "item_id": "news_11",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.8631022313321358,
+            "processing_time": 3.1059093053241615,
+            "item_index": 2
+          },
+          "batch_index": 3,
+          "batch_size": 3,
+          "batch_processing_time": 9.318007946014404
+        },
+        {
+          "item_id": "news_12",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.8065484240544376,
+            "processing_time": 2.3604842278809683,
+            "item_index": 0
+          },
+          "batch_index": 4,
+          "batch_size": 3,
+          "batch_processing_time": 7.081731081008911
+        },
+        {
+          "item_id": "news_13",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.8790025752857658,
+            "processing_time": 2.3604842278809683,
+            "item_index": 1
+          },
+          "batch_index": 4,
+          "batch_size": 3,
+          "batch_processing_time": 7.081731081008911
+        },
+        {
+          "item_id": "news_14",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.8732639904709403,
+            "processing_time": 2.3604842278809683,
+            "item_index": 2
+          },
+          "batch_index": 4,
+          "batch_size": 3,
+          "batch_processing_time": 7.081731081008911
+        },
+        {
+          "item_id": "news_15",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.9160737299237072,
+            "processing_time": 2.907980521151512,
+            "item_index": 0
+          },
+          "batch_index": 5,
+          "batch_size": 3,
+          "batch_processing_time": 8.724175214767456
+        },
+        {
+          "item_id": "news_16",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.7253094562393945,
+            "processing_time": 2.907980521151512,
+            "item_index": 1
+          },
+          "batch_index": 5,
+          "batch_size": 3,
+          "batch_processing_time": 8.724175214767456
+        },
+        {
+          "item_id": "news_17",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.946910512579386,
+            "processing_time": 2.907980521151512,
+            "item_index": 2
+          },
+          "batch_index": 5,
+          "batch_size": 3,
+          "batch_processing_time": 8.724175214767456
+        },
+        {
+          "item_id": "news_18",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.859113832203132,
+            "processing_time": 3.074651049891748,
+            "item_index": 0
+          },
+          "batch_index": 6,
+          "batch_size": 2,
+          "batch_processing_time": 6.149886131286621
+        },
+        {
+          "item_id": "news_19",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.8088734224439209,
+            "processing_time": 3.074651049891748,
+            "item_index": 1
+          },
+          "batch_index": 6,
+          "batch_size": 2,
+          "batch_processing_time": 6.149886131286621
+        }
+      ]
+    },
+    {
+      "experiment_type": "batch_processing",
+      "data_count": 20,
+      "batch_size": 5,
+      "total_time": 45.884917974472046,
+      "avg_time_per_item": 2.2942458987236023,
+      "throughput": 0.43587306860016506,
+      "batch_count": 4,
+      "results": [
+        {
+          "item_id": "news_0",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.7056194164207341,
+            "processing_time": 2.187402076170005,
+            "item_index": 0
+          },
+          "batch_index": 0,
+          "batch_size": 5,
+          "batch_processing_time": 10.93735408782959
+        },
+        {
+          "item_id": "news_1",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.8457736480834703,
+            "processing_time": 2.187402076170005,
+            "item_index": 1
+          },
+          "batch_index": 0,
+          "batch_size": 5,
+          "batch_processing_time": 10.93735408782959
+        },
+        {
+          "item_id": "news_2",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.7570695403735009,
+            "processing_time": 2.187402076170005,
+            "item_index": 2
+          },
+          "batch_index": 0,
+          "batch_size": 5,
+          "batch_processing_time": 10.93735408782959
+        },
+        {
+          "item_id": "news_3",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.8564275301755597,
+            "processing_time": 2.187402076170005,
+            "item_index": 3
+          },
+          "batch_index": 0,
+          "batch_size": 5,
+          "batch_processing_time": 10.93735408782959
+        },
+        {
+          "item_id": "news_4",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.908392162630196,
+            "processing_time": 2.187402076170005,
+            "item_index": 4
+          },
+          "batch_index": 0,
+          "batch_size": 5,
+          "batch_processing_time": 10.93735408782959
+        },
+        {
+          "item_id": "news_5",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.7972651890101257,
+            "processing_time": 2.77685913898283,
+            "item_index": 0
+          },
+          "batch_index": 1,
+          "batch_size": 5,
+          "batch_processing_time": 13.884629964828491
+        },
+        {
+          "item_id": "news_6",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.8128081926343113,
+            "processing_time": 2.77685913898283,
+            "item_index": 1
+          },
+          "batch_index": 1,
+          "batch_size": 5,
+          "batch_processing_time": 13.884629964828491
+        },
+        {
+          "item_id": "news_7",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.7846264209939571,
+            "processing_time": 2.77685913898283,
+            "item_index": 2
+          },
+          "batch_index": 1,
+          "batch_size": 5,
+          "batch_processing_time": 13.884629964828491
+        },
+        {
+          "item_id": "news_8",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.9262524647623982,
+            "processing_time": 2.77685913898283,
+            "item_index": 3
+          },
+          "batch_index": 1,
+          "batch_size": 5,
+          "batch_processing_time": 13.884629964828491
+        },
+        {
+          "item_id": "news_9",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.8546140947728099,
+            "processing_time": 2.77685913898283,
+            "item_index": 4
+          },
+          "batch_index": 1,
+          "batch_size": 5,
+          "batch_processing_time": 13.884629964828491
+        },
+        {
+          "item_id": "news_10",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.8065234331747928,
+            "processing_time": 2.2545002012057047,
+            "item_index": 0
+          },
+          "batch_index": 2,
+          "batch_size": 5,
+          "batch_processing_time": 11.273391962051392
+        },
+        {
+          "item_id": "news_11",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.9434443515604409,
+            "processing_time": 2.2545002012057047,
+            "item_index": 1
+          },
+          "batch_index": 2,
+          "batch_size": 5,
+          "batch_processing_time": 11.273391962051392
+        },
+        {
+          "item_id": "news_12",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.8849394584248419,
+            "processing_time": 2.2545002012057047,
+            "item_index": 2
+          },
+          "batch_index": 2,
+          "batch_size": 5,
+          "batch_processing_time": 11.273391962051392
+        },
+        {
+          "item_id": "news_13",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.8574494699834654,
+            "processing_time": 2.2545002012057047,
+            "item_index": 3
+          },
+          "batch_index": 2,
+          "batch_size": 5,
+          "batch_processing_time": 11.273391962051392
+        },
+        {
+          "item_id": "news_14",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.8957739437150987,
+            "processing_time": 2.2545002012057047,
+            "item_index": 4
+          },
+          "batch_index": 2,
+          "batch_size": 5,
+          "batch_processing_time": 11.273391962051392
+        },
+        {
+          "item_id": "news_15",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.833821255360766,
+            "processing_time": 1.9577217753270517,
+            "item_index": 0
+          },
+          "batch_index": 3,
+          "batch_size": 5,
+          "batch_processing_time": 9.788869857788086
+        },
+        {
+          "item_id": "news_16",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.769534607150858,
+            "processing_time": 1.9577217753270517,
+            "item_index": 1
+          },
+          "batch_index": 3,
+          "batch_size": 5,
+          "batch_processing_time": 9.788869857788086
+        },
+        {
+          "item_id": "news_17",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.7592572722099264,
+            "processing_time": 1.9577217753270517,
+            "item_index": 2
+          },
+          "batch_index": 3,
+          "batch_size": 5,
+          "batch_processing_time": 9.788869857788086
+        },
+        {
+          "item_id": "news_18",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.9298626260528434,
+            "processing_time": 1.9577217753270517,
+            "item_index": 3
+          },
+          "batch_index": 3,
+          "batch_size": 5,
+          "batch_processing_time": 9.788869857788086
+        },
+        {
+          "item_id": "news_19",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.7188343605147505,
+            "processing_time": 1.9577217753270517,
+            "item_index": 4
+          },
+          "batch_index": 3,
+          "batch_size": 5,
+          "batch_processing_time": 9.788869857788086
+        }
+      ]
+    },
+    {
+      "experiment_type": "batch_processing",
+      "data_count": 20,
+      "batch_size": 10,
+      "total_time": 38.08268475532532,
+      "avg_time_per_item": 1.9041342377662658,
+      "throughput": 0.5251730577425555,
+      "batch_count": 2,
+      "results": [
+        {
+          "item_id": "news_0",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.9246945381851918,
+            "processing_time": 1.8860691557858655,
+            "item_index": 0
+          },
+          "batch_index": 0,
+          "batch_size": 10,
+          "batch_processing_time": 18.871063947677612
+        },
+        {
+          "item_id": "news_1",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.9069985037573266,
+            "processing_time": 1.8860691557858655,
+            "item_index": 1
+          },
+          "batch_index": 0,
+          "batch_size": 10,
+          "batch_processing_time": 18.871063947677612
+        },
+        {
+          "item_id": "news_2",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.9377507312370249,
+            "processing_time": 1.8860691557858655,
+            "item_index": 2
+          },
+          "batch_index": 0,
+          "batch_size": 10,
+          "batch_processing_time": 18.871063947677612
+        },
+        {
+          "item_id": "news_3",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.8409831612394966,
+            "processing_time": 1.8860691557858655,
+            "item_index": 3
+          },
+          "batch_index": 0,
+          "batch_size": 10,
+          "batch_processing_time": 18.871063947677612
+        },
+        {
+          "item_id": "news_4",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.7409862534298359,
+            "processing_time": 1.8860691557858655,
+            "item_index": 4
+          },
+          "batch_index": 0,
+          "batch_size": 10,
+          "batch_processing_time": 18.871063947677612
+        },
+        {
+          "item_id": "news_5",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.8456540845961961,
+            "processing_time": 1.8860691557858655,
+            "item_index": 5
+          },
+          "batch_index": 0,
+          "batch_size": 10,
+          "batch_processing_time": 18.871063947677612
+        },
+        {
+          "item_id": "news_6",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.9365938881279661,
+            "processing_time": 1.8860691557858655,
+            "item_index": 6
+          },
+          "batch_index": 0,
+          "batch_size": 10,
+          "batch_processing_time": 18.871063947677612
+        },
+        {
+          "item_id": "news_7",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.9348631422834769,
+            "processing_time": 1.8860691557858655,
+            "item_index": 7
+          },
+          "batch_index": 0,
+          "batch_size": 10,
+          "batch_processing_time": 18.871063947677612
+        },
+        {
+          "item_id": "news_8",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.8379915330513628,
+            "processing_time": 1.8860691557858655,
+            "item_index": 8
+          },
+          "batch_index": 0,
+          "batch_size": 10,
+          "batch_processing_time": 18.871063947677612
+        },
+        {
+          "item_id": "news_9",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.7625877936302492,
+            "processing_time": 1.8860691557858655,
+            "item_index": 9
+          },
+          "batch_index": 0,
+          "batch_size": 10,
+          "batch_processing_time": 18.871063947677612
+        },
+        {
+          "item_id": "news_10",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.9464342664738556,
+            "processing_time": 1.9210874566206233,
+            "item_index": 0
+          },
+          "batch_index": 1,
+          "batch_size": 10,
+          "batch_processing_time": 19.21127486228943
+        },
+        {
+          "item_id": "news_11",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.7181041572399334,
+            "processing_time": 1.9210874566206233,
+            "item_index": 1
+          },
+          "batch_index": 1,
+          "batch_size": 10,
+          "batch_processing_time": 19.21127486228943
+        },
+        {
+          "item_id": "news_12",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.7881748981015554,
+            "processing_time": 1.9210874566206233,
+            "item_index": 2
+          },
+          "batch_index": 1,
+          "batch_size": 10,
+          "batch_processing_time": 19.21127486228943
+        },
+        {
+          "item_id": "news_13",
+          "result": {
+            "success": true,
+            "classification": "normal",
+            "confidence": 0.8575791091962041,
+            "processing_time": 1.9210874566206233,
+            "item_index": 3
+          },
+          "batch_index": 1,
+          "batch_size": 10,
+          "batch_processing_time": 19.21127486228943
+        },
+        {
+          "item_id": "news_14",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.9419308666622271,
+            "processing_time": 1.9210874566206233,
+            "item_index": 4
+          },
+          "batch_index": 1,
+          "batch_size": 10,
+          "batch_processing_time": 19.21127486228943
+        },
+        {
+          "item_id": "news_15",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.8183388613661232,
+            "processing_time": 1.9210874566206233,
+            "item_index": 5
+          },
+          "batch_index": 1,
+          "batch_size": 10,
+          "batch_processing_time": 19.21127486228943
+        },
+        {
+          "item_id": "news_16",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.7523160581050734,
+            "processing_time": 1.9210874566206233,
+            "item_index": 6
+          },
+          "batch_index": 1,
+          "batch_size": 10,
+          "batch_processing_time": 19.21127486228943
+        },
+        {
+          "item_id": "news_17",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.769014429388497,
+            "processing_time": 1.9210874566206233,
+            "item_index": 7
+          },
+          "batch_index": 1,
+          "batch_size": 10,
+          "batch_processing_time": 19.21127486228943
+        },
+        {
+          "item_id": "news_18",
+          "result": {
+            "success": true,
+            "classification": "important",
+            "confidence": 0.7704170172754904,
+            "processing_time": 1.9210874566206233,
+            "item_index": 8
+          },
+          "batch_index": 1,
+          "batch_size": 10,
+          "batch_processing_time": 19.21127486228943
+        },
+        {
+          "item_id": "news_19",
+          "result": {
+            "success": true,
+            "classification": "urgent",
+            "confidence": 0.9122813349970257,
+            "processing_time": 1.9210874566206233,
+            "item_index": 9
+          },
+          "batch_index": 1,
+          "batch_size": 10,
+          "batch_processing_time": 19.21127486228943
+        }
+      ]
+    }
+  ],
+  "parallel_processing": [
+    {
+      "experiment_type": "parallel_processing",
+      "data_count": 10,
+      "concurrency": 2,
+      "total_time": 56.684794902801514,
+      "avg_time_per_item": 5.668479490280151,
+      "throughput": 0.17641415157534202,
+      "success_count": 10,
+      "error_count": 0
+    },
+    {
+      "experiment_type": "parallel_processing",
+      "data_count": 10,
+      "concurrency": 3,
+      "total_time": 41.835529088974,
+      "avg_time_per_item": 4.1835529088974,
+      "throughput": 0.23903127838379745,
+      "success_count": 10,
+      "error_count": 0
+    },
+    {
+      "experiment_type": "parallel_processing",
+      "data_count": 10,
+      "concurrency": 5,
+      "total_time": 22.82402014732361,
+      "avg_time_per_item": 2.282402014732361,
+      "throughput": 0.4381349094266647,
+      "success_count": 10,
+      "error_count": 0
+    }
+  ],
+  "recommendations": [
+    {
+      "type": "performance",
+      "message": "最佳批量大小: 10 (平均 1.90秒/条)",
+      "improvement": "相比单条处理提升 82.2%"
+    },
+    {
+      "type": "performance",
+      "message": "最佳并发数: 5 (平均 2.28秒/条)",
+      "improvement": "相比单条处理提升 78.7%"
+    }
+  ]
+}

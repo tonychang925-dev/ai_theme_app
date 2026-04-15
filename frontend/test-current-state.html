@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试当前状态</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        iframe { width: 100%; height: 600px; border: 3px solid blue; }
+        .log { background: #f0f0f0; padding: 10px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>测试当前应用状态</h1>
+
+    <button onclick="testApp()">测试应用</button>
+    <button onclick="checkUrl()">检查URL</button>
+
+    <div id="iframe-container"></div>
+    <div id="result" class="log"></div>
+
+    <script>
+        function testApp() {
+            const result = document.getElementById('result');
+            const container = document.getElementById('iframe-container');
+
+            // 创建iframe加载应用
+            const iframe = document.createElement('iframe');
+            iframe.src = 'http://localhost:5173/';
+            iframe.style.width = '100%';
+            iframe.style.height = '600px';
+            iframe.style.border = '2px solid green';
+
+            container.innerHTML = '';
+            container.appendChild(iframe);
+
+            iframe.onload = function() {
+                try {
+                    const doc = iframe.contentDocument || iframe.contentWindow.document;
+
+                    // 检查URL
+                    const iframeUrl = iframe.contentWindow.location.href;
+                    result.innerHTML = `iframe URL: ${iframeUrl}<br>`;
+
+                    // 检查root
+                    const root = doc.getElementById('root');
+                    result.innerHTML += `root元素: ${root ? '找到' : '未找到'}<br>`;
+
+                    if (root && root.children.length > 0) {
+                        result.innerHTML += `root子元素数量: ${root.children.length}<br>`;
+
+                        // 检查第一个子元素
+                        const firstChild = root.children[0];
+                        result.innerHTML += `第一个子元素: ${firstChild.tagName}<br>`;
+                        result.innerHTML += `第一个子元素类名: ${firstChild.className}<br>`;
+
+                        // 检查是否是intel-shell
+                        if (firstChild.className.includes('intel-shell')) {
+                            result.innerHTML += `✅ 找到intel-shell<br>`;
+
+                            // 查找按钮
+                            const buttons = doc.querySelectorAll('button');
+                            result.innerHTML += `总按钮数量: ${buttons.length}<br>`;
+
+                            if (buttons.length > 0) {
+                                result.innerHTML += '<br>按钮列表:<br>';
+                                buttons.forEach((btn, i) => {
+                                    result.innerHTML += `${i}: "${btn.textContent.trim()}"<br>`;
+                                });
+                            }
+                        } else {
+                            result.innerHTML += `❌ 第一个子元素不是intel-shell<br>`;
+                            result.innerHTML += `实际渲染的是: ${firstChild.outerHTML.substring(0, 200)}...<br>`;
+                        }
+                    }
+                } catch (error) {
+                    result.innerHTML = `错误: ${error.message}`;
+                }
+            };
+        }
+
+        function checkUrl() {
+            const result = document.getElementById('result');
+            const url = window.location.href;
+
+            result.innerHTML = `
+                当前页面URL: ${url}<br>
+                路径名: ${window.location.pathname}<br>
+                查询参数: ${window.location.search}<br>
+                哈希: ${window.location.hash}<br>
+                <br>
+                正确的情报台URL: http://localhost:5173/<br>
+                带参数的URL: http://localhost:5173/?date=2026-04-11&type=all&session=all
+            `;
+        }
+
+        // 自动测试
+        setTimeout(testApp, 500);
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+{
+  "must": [
+    "合成生物学",
+    "合成生物制造产业",
+    "生物制造菌种计算设计",
+    "共性技术平台建设",
+    "合成生物制造技术创新中心"
+  ],
+  "should": [
+    "高通量筛选",
+    "基因编辑",
+    "合成生物制造产业创新发展行动计划",
+    "专业中试平台建设",
+    "创新联合体",
+    "人体干细胞",
+    "基因诊断与治疗技术开发",
+    "国际合作",
+    "合成生物促进发展",
+    "科学监管",
+    "新质生产力",
+    "高质量发展"
+  ],
+  "not": [
+    "智能网联新能源汽车产业"
+  ],
+  "evidence_refs": [
+    {
+      "term": "合成生物学",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "合成生物学"
+    },
+    {
+      "term": "合成生物制造产业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "合成生物制造产业"
+    },
+    {
+      "term": "生物制造菌种计算设计",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "生物制造菌种计算设计"
+    },
+    {
+      "term": "共性技术平台建设",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "共性技术平台建设"
+    },
+    {
+      "term": "合成生物制造技术创新中心",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "合成生物制造技术创新中心"
+    }
+  ],
+  "subject_id": "9023196",
+  "quality": "weak",
+  "generated_at": "2026-04-02T02:50:24",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

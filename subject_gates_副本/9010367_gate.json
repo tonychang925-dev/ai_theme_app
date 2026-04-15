@@ -1,0 +1,71 @@
+{
+  "must": [
+    "稀土永磁材料",
+    "稀土",
+    "稀土永磁",
+    "钕铁硼永磁材料",
+    "钐钴磁性材料",
+    "永磁材料"
+  ],
+  "should": [
+    "镧系元素",
+    "钪",
+    "钇",
+    "轻稀土",
+    "重稀土",
+    "钐",
+    "钕",
+    "独居石",
+    "氟碳铈矿",
+    "淋积型矿",
+    "岩矿型稀土矿",
+    "离子型稀土矿"
+  ],
+  "not": [
+    "包钢股份"
+  ],
+  "evidence_refs": [
+    {
+      "term": "稀土永磁材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "稀土永磁材料"
+    },
+    {
+      "term": "稀土",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "稀土"
+    },
+    {
+      "term": "稀土永磁",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "稀土永磁"
+    },
+    {
+      "term": "钕铁硼永磁材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "钕铁硼永磁材料"
+    },
+    {
+      "term": "钐钴磁性材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "钐钴磁性材料"
+    },
+    {
+      "term": "永磁材料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "永磁材料"
+    }
+  ],
+  "subject_id": "9010367",
+  "quality": "strong",
+  "generated_at": "2026-03-13T11:31:43",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

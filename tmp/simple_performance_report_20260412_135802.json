@@ -1,0 +1,47 @@
+{
+  "test_config": {
+    "total_messages": 5,
+    "concurrent_users": 1,
+    "start_time": "2026-04-12T13:57:45.417159",
+    "end_time": "2026-04-12T13:58:02.760303",
+    "total_duration": 17.343144178390503
+  },
+  "results": {
+    "success_count": 5,
+    "fail_count": 0,
+    "success_rate": 1.0,
+    "throughput": 0.28829835862346015
+  },
+  "detailed_results": [
+    {
+      "message_id": "perf_simple_116a8902_001",
+      "status": "success",
+      "publish_time": 0.006080150604248047,
+      "timestamp": "2026-04-12T13:57:57.171832"
+    },
+    {
+      "message_id": "perf_simple_116a8902_002",
+      "status": "success",
+      "publish_time": 0.005670785903930664,
+      "timestamp": "2026-04-12T13:57:57.280453"
+    },
+    {
+      "message_id": "perf_simple_116a8902_003",
+      "status": "success",
+      "publish_time": 0.006819009780883789,
+      "timestamp": "2026-04-12T13:57:57.392559"
+    },
+    {
+      "message_id": "perf_simple_116a8902_004",
+      "status": "success",
+      "publish_time": 0.0063629150390625,
+      "timestamp": "2026-04-12T13:57:57.507256"
+    },
+    {
+      "message_id": "perf_simple_116a8902_005",
+      "status": "success",
+      "publish_time": 0.015379905700683594,
+      "timestamp": "2026-04-12T13:57:57.629365"
+    }
+  ]
+}

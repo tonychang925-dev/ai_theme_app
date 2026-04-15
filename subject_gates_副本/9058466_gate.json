@@ -1,0 +1,69 @@
+{
+  "must": [
+    "深地资源开发",
+    "深地科学与技术",
+    "智能采矿技术",
+    "深地探测技术",
+    "深地开发工程技术与装备",
+    "城市地下空间"
+  ],
+  "should": [
+    "金属矿",
+    "油气",
+    "地热能",
+    "页岩油气",
+    "致密气",
+    "金",
+    "铜",
+    "铁",
+    "绿色采矿技术",
+    "安全采矿技术",
+    "物探设备",
+    "深地钻探装备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "深地资源开发",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "深地资源开发"
+    },
+    {
+      "term": "深地科学与技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "深地科学与技术"
+    },
+    {
+      "term": "智能采矿技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能采矿技术"
+    },
+    {
+      "term": "深地探测技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "深地探测技术"
+    },
+    {
+      "term": "深地开发工程技术与装备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "深地开发工程技术与装备"
+    },
+    {
+      "term": "城市地下空间",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "城市地下空间"
+    }
+  ],
+  "subject_id": "9058466",
+  "quality": "medium",
+  "generated_at": "2026-04-01T05:02:51",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

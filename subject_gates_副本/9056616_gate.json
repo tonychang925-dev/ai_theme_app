@@ -1,0 +1,74 @@
+{
+  "must": [
+    "联发科",
+    "MediaTek",
+    "天玑系列",
+    "智能手机芯片",
+    "智能电视平台",
+    "无线连接技术"
+  ],
+  "should": [
+    "Pentonic系列",
+    "Filogic系列",
+    "Genio系列",
+    "Dimensity Auto",
+    "Autus",
+    "智能手机",
+    "智能家居",
+    "汽车电子",
+    "智能电视",
+    "路由器",
+    "物联网设备",
+    "工业物联网"
+  ],
+  "not": [
+    "收购传闻",
+    "英伟达",
+    "GB10超级芯片",
+    "市场猜测"
+  ],
+  "evidence_refs": [
+    {
+      "term": "智能手机芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能手机芯片"
+    },
+    {
+      "term": "天玑系列",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "天玑系列"
+    },
+    {
+      "term": "智能电视平台",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能电视平台"
+    },
+    {
+      "term": "无线连接技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "无线连接技术"
+    },
+    {
+      "term": "联发科",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "联发科"
+    },
+    {
+      "term": "MediaTek",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "MediaTek"
+    }
+  ],
+  "subject_id": "9056616",
+  "quality": "strong",
+  "generated_at": "2026-04-02T06:58:21",
+  "semantic_type": "半导体产业链技术",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

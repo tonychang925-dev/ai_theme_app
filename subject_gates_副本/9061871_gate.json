@@ -1,0 +1,33 @@
+{
+  "must": [
+    "海峡两岸",
+    "福建省促进两岸标准共通条例"
+  ],
+  "should": [
+    "福建省民营经济促进条例",
+    "美军携武器入境",
+    "全面禁止生产",
+    "生育支持政策"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "海峡两岸",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "海峡两岸"
+    },
+    {
+      "term": "福建省促进两岸标准共通条例",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "福建省促进两岸标准共通条例"
+    }
+  ],
+  "subject_id": "9061871",
+  "quality": "weak",
+  "generated_at": "2026-04-02T08:29:36",
+  "semantic_type": "国际突发地缘政治事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

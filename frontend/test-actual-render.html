@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实际渲染测试</title>
+    <script>
+        // 直接测试实际页面的渲染
+        async function testActualPage() {
+            console.log('=== 测试实际页面渲染 ===');
+
+            // 1. 加载实际页面
+            const response = await fetch('http://localhost:5173');
+            const html = await response.text();
+
+            // 2. 创建iframe来加载实际页面
+            const iframe = document.createElement('iframe');
+            iframe.style.width = '100%';
+            iframe.style.height = '500px';
+            iframe.style.border = '2px solid #3b82f6';
+            iframe.style.borderRadius = '8px';
+            iframe.srcdoc = html;
+
+            document.getElementById('iframe-container').appendChild(iframe);
+
+            // 3. 等待iframe加载
+            iframe.onload = async () => {
+                console.log('iframe加载完成');
+
+                try {
+                    // 尝试访问iframe中的内容
+                    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+                    // 检查root元素内容
+                    const root = iframeDoc.getElementById('root');
+                    console.log('root元素:', root ? '找到' : '未找到');
+
+                    if (root) {
+                        // 检查root是否有子元素
+                        console.log('root子元素数量:', root.children.length);
+
+                        // 尝试查找按钮
+                        const buttons = iframeDoc.querySelectorAll('button');
+                        console.log('按钮数量:', buttons.length);
+
+                        // 检查是否有AI选股按钮
+                        let foundAiButton = false;
+                        buttons.forEach(btn => {
+                            if (btn.textContent.includes('AI选股')) {
+                                foundAiButton = true;
+                                console.log('找到AI选股按钮:', btn);
+                            }
+                        });
+
+                        if (foundAiButton) {
+                            document.getElementById('result').innerHTML = '<div style="color: green; font-weight: bold;">✅ 找到AI选股按钮！页面已更新。</div>';
+                        } else {
+                            document.getElementById('result').innerHTML = '<div style="color: red; font-weight: bold;">❌ 未找到AI选股按钮</div>';
+
+                            // 检查IntelHeader是否渲染
+                            const intelHeader = iframeDoc.querySelector('.intel-topbar');
+                            if (intelHeader) {
+                                console.log('找到intel-topbar:', intelHeader.innerHTML.substring(0, 200));
+                            }
+                        }
+                    }
+                } catch (error) {
+                    console.error('访问iframe内容失败:', error);
+                }
+            };
+        }
+
+        // 直接检查组件代码
+        async function checkComponentCode() {
+            console.log('=== 检查组件代码 ===');
+
+            const urls = [
+                'http://localhost:5173/src/components/intel/IntelHeader.tsx',
+                'http://localhost:5173/src/routes/intel/IntelPage.tsx',
+                'http://localhost:5173/src/App.tsx'
+            ];
+
+            for (const url of urls) {
+                try {
+                    const response = await fetch(url);
+                    const text = await response.text();
+                    const fileName = url.split('/').pop();
+
+                    console.log(`\n=== ${fileName} ===`);
+                    console.log('内容长度:', text.length, '字符');
+
+                    // 检查关键内容
+                    if (fileName === 'IntelHeader.tsx') {
+                        const hasButtonRow = text.includes('collection-action-row');
+                        const hasAiScreener = text.includes('AI选股');
+                        console.log('包含按钮行:', hasButtonRow);
+                        console.log('包含AI选股:', hasAiScreener);
+
+                        if (hasButtonRow && hasAiScreener) {
+                            // 提取按钮行代码片段
+                            const match = text.match(/collection-action-row[\s\S]{0,500}/);
+                            if (match) {
+                                console.log('按钮行代码片段:', match[0].substring(0, 300));
+                            }
+                        }
+                    }
+                } catch (error) {
+                    console.error(`加载${url}失败:`, error);
+                }
+            }
+        }
+
+        // 页面加载时运行测试
+        window.addEventListener('load', () => {
+            console.log('页面加载完成，开始测试...');
+            testActualPage();
+            checkComponentCode();
+        });
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            padding: 20px;
+            background: #1a1a1a;
+            color: white;
+        }
+        h1 {
+            color: #3b82f6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #2a2a2a;
+            border-radius: 12px;
+        }
+        #result {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            background: #333;
+        }
+        #iframe-container {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>实际页面渲染测试</h1>
+
+        <div class="test-section">
+            <h3>测试说明：</h3>
+            <p>这个页面会加载实际的应用页面到iframe中，然后检查是否渲染了AI选股按钮。</p>
+            <p>查看浏览器控制台（F12 → Console）查看详细输出。</p>
+        </div>
+
+        <div class="test-section">
+            <h3>测试结果：</h3>
+            <div id="result">测试中...</div>
+        </div>
+
+        <div class="test-section">
+            <h3>实际页面渲染：</h3>
+            <div id="iframe-container">
+                <p>加载中...</p>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>如果未找到AI选股按钮：</h3>
+            <p>可能的原因：</p>
+            <ol>
+                <li>代码未正确编译</li>
+                <li>JavaScript执行错误</li>
+                <li>React组件未正确渲染</li>
+                <li>CSS样式隐藏了按钮</li>
+            </ol>
+            <p>请提供浏览器控制台的截图。</p>
+        </div>
+    </div>
+</body>
+</html>

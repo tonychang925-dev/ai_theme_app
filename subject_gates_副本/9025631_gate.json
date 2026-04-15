@@ -1,0 +1,73 @@
+{
+  "must": [
+    "创新药",
+    "小分子药物",
+    "单克隆抗体",
+    "ADC药物",
+    "双特异性抗体",
+    "细胞与基因治疗"
+  ],
+  "should": [
+    "大分子生物药",
+    "小分子创新药",
+    "mRNA技术",
+    "靶点发现",
+    "先导化合物筛选",
+    "临床前研究",
+    "肿瘤疾病",
+    "自身免疫疾病",
+    "代谢疾病",
+    "神经系统疾病",
+    "感染性疾病",
+    "心血管疾病"
+  ],
+  "not": [
+    "卖单品",
+    "卖能力",
+    "快速跟随"
+  ],
+  "evidence_refs": [
+    {
+      "term": "创新药",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "创新药"
+    },
+    {
+      "term": "小分子药物",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "小分子药物"
+    },
+    {
+      "term": "单克隆抗体",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "单克隆抗体"
+    },
+    {
+      "term": "ADC药物",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "ADC药物"
+    },
+    {
+      "term": "双特异性抗体",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "双特异性抗体"
+    },
+    {
+      "term": "细胞与基因治疗",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "细胞与基因治疗"
+    }
+  ],
+  "subject_id": "9025631",
+  "quality": "strong",
+  "generated_at": "2026-03-31T20:38:11",
+  "semantic_type": "技术突破与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

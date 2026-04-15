@@ -1,0 +1,68 @@
+{
+  "must": [
+    "数据交易",
+    "文化产权交易",
+    "碳汇交易",
+    "资产上链",
+    "RWA资产代币化"
+  ],
+  "should": [
+    "中央银行数字货币",
+    "CBDC",
+    "稳定币发行",
+    "香港金管局",
+    "稳定币发行人监管制度",
+    "稳定币配套执行指引",
+    "稳定币发行人牌照",
+    "产学研RWA全球产业联盟",
+    "香港RWA全球产业联盟",
+    "中国通信工业协会区块链专业委员会",
+    "数字经济共同体",
+    "香港金管局Ensemble沙盒"
+  ],
+  "not": [
+    "韩元稳定币",
+    "韩国银行虚拟资产组",
+    "数字货币室",
+    "立法进展",
+    "技术简报会"
+  ],
+  "evidence_refs": [
+    {
+      "term": "数据交易",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据交易"
+    },
+    {
+      "term": "文化产权交易",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "文化产权交易"
+    },
+    {
+      "term": "碳汇交易",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "碳汇交易"
+    },
+    {
+      "term": "资产上链",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "资产上链"
+    },
+    {
+      "term": "RWA资产代币化",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "RWA资产代币化"
+    }
+  ],
+  "subject_id": "9051825",
+  "quality": "weak",
+  "generated_at": "2026-04-02T07:55:47",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

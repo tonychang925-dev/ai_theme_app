@@ -1,0 +1,46 @@
+{
+  "must": [
+    "商业健康保险创新药目录",
+    "药品集中采购",
+    "创新药对外授权"
+  ],
+  "should": [
+    "国家组织药品联合采购办公室",
+    "药品集采",
+    "国家医保局",
+    "恒瑞医药",
+    "GSK",
+    "HRS-9821项目",
+    "BD交易",
+    "新上市药品首发价格机制",
+    "创新程度高",
+    "临床价值大"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商业健康保险创新药目录",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "商业健康保险创新药目录"
+    },
+    {
+      "term": "药品集中采购",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "药品集中采购"
+    },
+    {
+      "term": "创新药对外授权",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "创新药对外授权"
+    }
+  ],
+  "subject_id": "9049134",
+  "quality": "strong",
+  "generated_at": "2026-03-31T23:09:51",
+  "semantic_type": "政策法规与商业模式",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

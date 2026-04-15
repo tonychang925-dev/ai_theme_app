@@ -15,6 +15,14 @@ from .producers.news_producer import NewsProducer
 from .producers.event_producer import EventProducer
 from .producers.theme_producer import ThemeProducer
 
+# 尝试导入清理调度器（可选依赖）
+try:
+    from .stream_cleanup_scheduler import StreamCleanupScheduler
+    CLEANUP_SCHEDULER_AVAILABLE = True
+except ImportError:
+    CLEANUP_SCHEDULER_AVAILABLE = False
+    StreamCleanupScheduler = None
+
 # 尝试导入重试管理器（可选依赖）
 try:
     from .utils.retry_manager import RetryManager, with_retry, RetryStrategy
@@ -86,6 +94,9 @@ class StreamEnhancedGateway:
             'failed_retries': 0,
             'retry_history': []
         }
+
+        # 清理调度器（可选）
+        self.cleanup_scheduler = None
         
         # 操作特定的重试配置
         self._operation_retry_configs = {
@@ -308,6 +319,20 @@ class StreamEnhancedGateway:
         # 启动 Stream 监控任务
         if self.config.redis_stream.enable_monitoring:
             asyncio.create_task(self._monitor_streams_task())
+
+        # 初始化清理调度器（如果可用且启用）
+        if CLEANUP_SCHEDULER_AVAILABLE and self.config.redis_stream.auto_cleanup:
+            try:
+                logger.info("🚀 初始化 Stream 清理调度器...")
+                self.cleanup_scheduler = StreamCleanupScheduler(
+                    self.stream_manager,
+                    self.config.redis_stream
+                )
+                await self.cleanup_scheduler.start()
+                logger.info("✅ Stream 清理调度器启动成功")
+            except Exception as e:
+                logger.warning(f"⚠️  Stream 清理调度器初始化失败，将继续运行: {e}")
+                self.cleanup_scheduler = None
     
     # ========== Stream 发布方法（增强版）==========
     
@@ -1073,11 +1098,16 @@ class StreamEnhancedGateway:
     async def close(self):
         """关闭连接"""
         try:
+            # 关闭清理调度器（如果存在）
+            if self.cleanup_scheduler:
+                await self.cleanup_scheduler.stop()
+                logger.info("✅ Stream 清理调度器已停止")
+
             if self.stream_manager:
                 await self.stream_manager.redis.close()
-            
+
             await self.base_gateway.close()
-            
+
             logger.info("✅ StreamEnhancedGateway 已关闭")
         except Exception as e:
             logger.error(f"关闭增强网关失败: {e}")

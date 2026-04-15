@@ -1,0 +1,50 @@
+{
+  "must": [
+    "高压直流电（HVDC）",
+    "第三代半导体氮化镓（GaN）技术",
+    "800V高压直流（HVDC）"
+  ],
+  "should": [
+    "IDM全产业链模式",
+    "800V直流电源架构",
+    "AI数据中心",
+    "AI服务器",
+    "数据中心",
+    "下一代数据中心电力解决方案",
+    "AI服务器与数据中心内部",
+    "高算力场景",
+    "减少传输损耗",
+    "提升整体能效",
+    "解决能效与功率密度瓶颈",
+    "全球专利超800项"
+  ],
+  "not": [
+    "英伟达"
+  ],
+  "evidence_refs": [
+    {
+      "term": "高压直流电（HVDC）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高压直流电（HVDC）"
+    },
+    {
+      "term": "800V高压直流（HVDC）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "800V高压直流（HVDC）"
+    },
+    {
+      "term": "第三代半导体氮化镓（GaN）技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "第三代半导体氮化镓（GaN）技术"
+    }
+  ],
+  "subject_id": "9054624",
+  "quality": "strong",
+  "generated_at": "2026-04-02T04:09:40",
+  "semantic_type": "技术突破与产业链应用",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

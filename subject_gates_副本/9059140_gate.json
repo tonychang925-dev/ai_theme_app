@@ -1,0 +1,59 @@
+{
+  "must": [
+    "一锅法脱氨交叉偶联策略",
+    "芳香胺",
+    "N-硝胺中间体",
+    "C-X键",
+    "C-C键"
+  ],
+  "should": [
+    "Negishi偶联",
+    "金属光氧化还原催化",
+    "重氮化反应替代",
+    "化工设备",
+    "C-N键",
+    "重氮盐中间体",
+    "脱除一氧化二氮（N₂O）",
+    "复杂分子的构建",
+    "硝酸介导"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "一锅法脱氨交叉偶联策略",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "一锅法脱氨交叉偶联策略"
+    },
+    {
+      "term": "芳香胺",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "芳香胺"
+    },
+    {
+      "term": "N-硝胺中间体",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "N-硝胺中间体"
+    },
+    {
+      "term": "C-X键",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "C-X键"
+    },
+    {
+      "term": "C-C键",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "C-C键"
+    }
+  ],
+  "subject_id": "9059140",
+  "quality": "strong",
+  "generated_at": "2026-04-02T03:33:27",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

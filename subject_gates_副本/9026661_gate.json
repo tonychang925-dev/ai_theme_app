@@ -1,0 +1,77 @@
+{
+  "must": [
+    "电机",
+    "汽车电机",
+    "人形机器人电机",
+    "低空经济电机",
+    "家用电机",
+    "工业电机"
+  ],
+  "should": [
+    "汽车",
+    "人形机器人",
+    "低空经济",
+    "家用",
+    "工业",
+    "工业人形机器人",
+    "商用人形形机器人",
+    "智元机器人",
+    "宇树科技",
+    "人形双足机器人",
+    "优必选科技",
+    "天工行者"
+  ],
+  "not": [
+    "优必选科技",
+    "天工行者",
+    "在手订单",
+    "人形机器人交付",
+    "代工服务采购",
+    "控股股东变更",
+    "智元借壳上市"
+  ],
+  "evidence_refs": [
+    {
+      "term": "电机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电机"
+    },
+    {
+      "term": "汽车电机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "汽车电机"
+    },
+    {
+      "term": "人形机器人电机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人形机器人电机"
+    },
+    {
+      "term": "低空经济电机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "低空经济电机"
+    },
+    {
+      "term": "家用电机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "家用电机"
+    },
+    {
+      "term": "工业电机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "工业电机"
+    }
+  ],
+  "subject_id": "9026661",
+  "quality": "weak",
+  "generated_at": "2026-03-31T23:01:25",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

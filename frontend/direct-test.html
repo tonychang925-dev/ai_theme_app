@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>直接测试</title>
+    <script>
+        // 直接测试页面内容
+        async function testPage() {
+            console.log('=== 开始测试 ===');
+
+            // 测试1: 访问页面
+            try {
+                const response = await fetch('http://localhost:5173');
+                console.log('1. 页面访问:', response.ok ? '✅ 成功' : '❌ 失败');
+
+                const html = await response.text();
+                const hasRoot = html.includes('<div id="root">');
+                console.log('2. 包含root元素:', hasRoot ? '✅' : '❌');
+
+                const hasReactScript = html.includes('react.js') || html.includes('React');
+                console.log('3. 包含React脚本:', hasReactScript ? '✅' : '❌');
+            } catch (error) {
+                console.log('1. 页面访问: ❌ 失败 -', error.message);
+            }
+
+            // 测试2: 检查IntelHeader组件
+            try {
+                const response = await fetch('http://localhost:5173/src/components/intel/IntelHeader.tsx');
+                const text = await response.text();
+
+                const tests = {
+                    '包含按钮行': text.includes('collection-action-row'),
+                    '包含AI选股': text.includes('AI选股'),
+                    '包含复盘工作台': text.includes('复盘工作台'),
+                    '包含日采集控制台': text.includes('日采集控制台'),
+                    '导入navigateTo': text.includes('navigateTo')
+                };
+
+                console.log('4. IntelHeader组件检查:');
+                Object.entries(tests).forEach(([name, passed]) => {
+                    console.log(`   ${name}: ${passed ? '✅' : '❌'}`);
+                });
+            } catch (error) {
+                console.log('4. IntelHeader检查: ❌ 失败 -', error.message);
+            }
+
+            // 测试3: 检查App.tsx
+            try {
+                const response = await fetch('http://localhost:5173/src/App.tsx');
+                const text = await response.text();
+
+                const tests = {
+                    '导入IntelPage': text.includes('import { IntelPage }'),
+                    '返回IntelPage': text.includes('return <IntelPage />')
+                };
+
+                console.log('5. App.tsx检查:');
+                Object.entries(tests).forEach(([name, passed]) => {
+                    console.log(`   ${name}: ${passed ? '✅' : '❌'}`);
+                });
+            } catch (error) {
+                console.log('5. App.tsx检查: ❌ 失败 -', error.message);
+            }
+
+            console.log('=== 测试完成 ===');
+            console.log('如果所有检查都通过✅，但页面不显示更新，可能是：');
+            console.log('1. 浏览器缓存 - 按 Ctrl+Shift+R 强制刷新');
+            console.log('2. JavaScript错误 - 查看控制台(F12)');
+            console.log('3. CSS样式问题 - 按钮可能被隐藏');
+        }
+
+        // 页面加载时运行测试
+        window.addEventListener('load', testPage);
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #3b82f6;
+        }
+        .result {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            background: #f3f4f6;
+        }
+        .success {
+            background: #d1fae5;
+            border-left: 4px solid #10b981;
+        }
+        .error {
+            background: #fee2e2;
+            border-left: 4px solid #ef4444;
+        }
+        .instructions {
+            background: #dbeafe;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>直接测试页面</h1>
+
+    <div class="instructions">
+        <p>这个页面会测试前端服务器的状态和组件更新。</p>
+        <p>查看浏览器控制台（F12 → Console）查看测试结果。</p>
+        <button onclick="testPage()">重新运行测试</button>
+        <button onclick="window.open('http://localhost:5173', '_blank')">打开应用</button>
+    </div>
+
+    <div id="results"></div>
+
+    <div class="instructions">
+        <h3>如果测试通过但页面不显示更新：</h3>
+        <ol>
+            <li>按 <strong>Ctrl+Shift+R</strong> 强制刷新页面</li>
+            <li>打开开发者工具（F12）</li>
+            <li>切换到 <strong>Network</strong> 标签页</li>
+            <li>勾选 <strong>Disable cache</strong></li>
+            <li>刷新页面</li>
+            <li>查看 <strong>Console</strong> 标签页是否有错误</li>
+        </ol>
+    </div>
+
+    <script>
+        // 显示测试结果
+        function displayResults() {
+            const results = document.getElementById('results');
+            results.innerHTML = `
+                <h3>手动检查：</h3>
+                <div class="result">
+                    <p><strong>1. 检查IntelHeader组件：</strong></p>
+                    <p>访问：<a href="http://localhost:5173/src/components/intel/IntelHeader.tsx" target="_blank">IntelHeader.tsx</a></p>
+                    <p>应该包含：collection-action-row, AI选股, 复盘工作台, 日采集控制台</p>
+                </div>
+                <div class="result">
+                    <p><strong>2. 检查App.tsx：</strong></p>
+                    <p>访问：<a href="http://localhost:5173/src/App.tsx" target="_blank">App.tsx</a></p>
+                    <p>第65行应该是：<code>return &lt;IntelPage /&gt;;</code></p>
+                </div>
+                <div class="result">
+                    <p><strong>3. 检查页面：</strong></p>
+                    <p>访问：<a href="http://localhost:5173" target="_blank">http://localhost:5173</a></p>
+                    <p>按 Ctrl+Shift+R 强制刷新</p>
+                </div>
+            `;
+        }
+
+        window.addEventListener('load', displayResults);
+    </script>
+</body>
+</html>

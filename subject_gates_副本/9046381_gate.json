@@ -1,0 +1,54 @@
+{
+  "must": [
+    "高纯石英砂",
+    "高纯石英砂的提纯技术",
+    "高端高纯石英砂（4N8及以上）"
+  ],
+  "should": [
+    "Spruce Pine矿区",
+    "石英坩埚",
+    "半导体",
+    "光伏",
+    "单晶硅拉制",
+    "北卡罗来纳州斯普鲁斯派恩",
+    "独特矿源",
+    "从原矿开采到提纯工艺的全链条控制",
+    "技术壁垒",
+    "全球占据垄断地位",
+    "年产量约18万至20万吨",
+    "自然资源部"
+  ],
+  "not": [
+    "自然资源部",
+    "新矿种",
+    "第174号矿种",
+    "对华加征关税",
+    "供应链主导权"
+  ],
+  "evidence_refs": [
+    {
+      "term": "高纯石英砂的提纯技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高纯石英砂的提纯技术"
+    },
+    {
+      "term": "高纯石英砂",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高纯石英砂"
+    },
+    {
+      "term": "高端高纯石英砂（4N8及以上）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高端高纯石英砂（4N8及以上）"
+    }
+  ],
+  "subject_id": "9046381",
+  "quality": "strong",
+  "generated_at": "2026-04-02T05:22:30",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

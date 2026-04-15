@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选股执行测试</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; background: #f5f5f5; border-radius: 8px; }
+        .success { color: green; font-weight: bold; }
+        .error { color: red; font-weight: bold; }
+        .warning { color: orange; font-weight: bold; }
+        button { padding: 10px 20px; margin: 5px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        pre { background: #f8f9fa; padding: 10px; border-radius: 4px; overflow: auto; max-height: 400px; }
+    </style>
+</head>
+<body>
+    <h1>选股执行测试</h1>
+
+    <div class="test-section">
+        <h2>1. 测试API直接调用</h2>
+        <button onclick="testDirectAPI()">测试直接API调用</button>
+        <div id="api-result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>2. 测试前端执行流程</h2>
+        <p>请手动测试前端页面：</p>
+        <ol>
+            <li>打开 <a href="http://localhost:5173/screener" target="_blank">选股器页面</a></li>
+            <li>选择日期：2026-04-10</li>
+            <li>选择策略：综合选股策略</li>
+            <li>点击"执行选股"按钮</li>
+            <li>检查是否有结果输出</li>
+        </ol>
+    </div>
+
+    <div class="test-section">
+        <h2>3. 问题诊断</h2>
+        <button onclick="diagnoseIssues()">运行诊断</button>
+        <div id="diagnosis-result"></div>
+    </div>
+
+    <script>
+        async function testDirectAPI() {
+            const resultDiv = document.getElementById('api-result');
+            resultDiv.innerHTML = '<p>测试中...</p>';
+
+            try {
+                const response = await fetch('http://localhost:8003/api/stock-screener/execute', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        strategy_id: 'default_composite',
+                        trade_date: '2026-04-10',
+                        limit: 5,
+                        enable_llm_review: false,
+                        llm_top_k: 20
+                    })
+                });
+
+                const data = await response.json();
+
+                resultDiv.innerHTML = `
+                    <p class="success">✅ API调用成功</p>
+                    <p>状态: ${data.status}</p>
+                    <p>结果数量: ${data.results ? data.results.length : 0}</p>
+                    <p>总数量: ${data.total_count}</p>
+                    <p>执行时间: ${data.execution_time_ms}ms</p>
+                    <p>Job ID: ${data.job_id}</p>
+                `;
+
+                if (data.results && data.results.length > 0) {
+                    resultDiv.innerHTML += '<p class="success">✅ API直接返回了结果</p>';
+                    resultDiv.innerHTML += '<h3>前5条结果:</h3><pre>' +
+                        JSON.stringify(data.results.slice(0, 5), null, 2) + '</pre>';
+                } else {
+                    resultDiv.innerHTML += '<p class="warning">⚠️ API返回了空结果数组</p>';
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<p class="error">❌ API调用失败: ${error.message}</p>`;
+            }
+        }
+
+        async function diagnoseIssues() {
+            const resultDiv = document.getElementById('diagnosis-result');
+            resultDiv.innerHTML = '<p>诊断中...</p>';
+
+            const issues = [];
+            const successes = [];
+
+            // 测试1: 检查API端点
+            try {
+                const response = await fetch('http://localhost:8003/api/stock-screener/strategies');
+                const data = await response.json();
+                successes.push('✅ 策略API端点正常');
+            } catch (error) {
+                issues.push(`❌ 策略API端点失败: ${error.message}`);
+            }
+
+            // 测试2: 检查执行端点
+            try {
+                const response = await fetch('http://localhost:8003/api/stock-screener/execute', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        strategy_id: 'default_composite',
+                        trade_date: '2026-04-10',
+                        limit: 2,
+                        enable_llm_review: false,
+                        llm_top_k: 5
+                    })
+                });
+                const data = await response.json();
+
+                if (data.status === 'completed') {
+                    successes.push('✅ 执行API端点正常，返回完成状态');
+
+                    if (data.results && data.results.length > 0) {
+                        successes.push(`✅ API直接返回 ${data.results.length} 条结果`);
+                    } else {
+                        issues.push('⚠️ API返回空结果数组');
+                    }
+                } else {
+                    issues.push(`⚠️ API返回状态: ${data.status}`);
+                }
+            } catch (error) {
+                issues.push(`❌ 执行API端点失败: ${error.message}`);
+            }
+
+            // 测试3: 检查执行状态端点
+            try {
+                const response = await fetch('http://localhost:8003/api/stock-screener/executions/test_job_id');
+                if (response.status === 404) {
+                    successes.push('✅ 执行状态端点存在（返回404是预期的）');
+                } else {
+                    const data = await response.json();
+                    successes.push('✅ 执行状态端点正常');
+                }
+            } catch (error) {
+                issues.push(`❌ 执行状态端点失败: ${error.message}`);
+            }
+
+            // 显示结果
+            resultDiv.innerHTML = '<h3>诊断结果:</h3>';
+
+            if (successes.length > 0) {
+                resultDiv.innerHTML += '<h4>成功项:</h4><ul>';
+                successes.forEach(s => resultDiv.innerHTML += `<li>${s}</li>`);
+                resultDiv.innerHTML += '</ul>';
+            }
+
+            if (issues.length > 0) {
+                resultDiv.innerHTML += '<h4>问题项:</h4><ul>';
+                issues.forEach(s => resultDiv.innerHTML += `<li>${s}</li>`);
+                resultDiv.innerHTML += '</ul>';
+            }
+
+            // 总结
+            if (issues.length === 0) {
+                resultDiv.innerHTML += '<p class="success">✅ 所有诊断测试通过</p>';
+                resultDiv.innerHTML += '<p>可能的问题：</p>';
+                resultDiv.innerHTML += '<ol>';
+                resultDiv.innerHTML += '<li>前端轮询逻辑可能需要更新</li>';
+                resultDiv.innerHTML += '<li>检查浏览器控制台是否有JavaScript错误</li>';
+                resultDiv.innerHTML += '<li>确保前端代码已重新编译</li>';
+                resultDiv.innerHTML += '</ol>';
+            } else {
+                resultDiv.innerHTML += '<p class="error">❌ 发现一些问题需要修复</p>';
+            }
+        }
+
+        // 自动运行API测试
+        setTimeout(testDirectAPI, 1000);
+    </script>
+</body>
+</html>

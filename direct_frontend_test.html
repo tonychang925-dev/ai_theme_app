@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>直接前端测试</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .test-case { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 8px; }
+        .test-header { display: flex; justify-content: space-between; align-items: center; }
+        .success { color: green; }
+        .error { color: red; }
+        .running { color: blue; }
+        button { padding: 8px 16px; margin: 5px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .test-result { margin-top: 10px; padding: 10px; background: #f8f9fa; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>直接前端问题诊断</h1>
+    <p>问题：前端显示"0 条记录"和"暂无选股结果"</p>
+
+    <div class="test-case">
+        <div class="test-header">
+            <h3>测试1: 检查Store状态更新</h3>
+            <button onclick="runTest1()">运行测试</button>
+        </div>
+        <div id="test1-result" class="test-result"></div>
+    </div>
+
+    <div class="test-case">
+        <div class="test-header">
+            <h3>测试2: 模拟完整用户流程</h3>
+            <button onclick="runTest2()">运行测试</button>
+        </div>
+        <div id="test2-result" class="test-result"></div>
+    </div>
+
+    <div class="test-case">
+        <div class="test-header">
+            <h3>测试3: 检查React组件渲染</h3>
+            <button onclick="runTest3()">运行测试</button>
+        </div>
+        <div id="test3-result" class="test-result"></div>
+    </div>
+
+    <script>
+        async function runTest1() {
+            const resultDiv = document.getElementById('test1-result');
+            resultDiv.innerHTML = '<span class="running">测试中...</span>';
+
+            try {
+                // 模拟store的executeScreening逻辑
+                const apiResponse = await fetch('http://localhost:8003/api/stock-screener/execute', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        strategy_id: 'default_composite',
+                        trade_date: '2026-04-10',
+                        limit: 3,
+                        enable_llm_review: false,
+                        llm_top_k: 3
+                    })
+                });
+
+                const apiData = await apiResponse.json();
+
+                // 模拟store状态
+                const storeState = {
+                    isExecuting: false,
+                    executionJobId: null,
+                    currentResults: [],
+                    executionStatus: {}
+                };
+
+                // 应用store逻辑
+                if (apiData.status === 'completed' && apiData.results && apiData.results.length > 0) {
+                    storeState.isExecuting = false;
+                    storeState.executionJobId = apiData.job_id;
+                    storeState.currentResults = apiData.results;
+                    storeState.executionStatus = {
+                        llmReviewStatus: apiData.llm_review_status
+                    };
+                }
+
+                resultDiv.innerHTML = `
+                    <div>
+                        <p class="success">✅ Store状态更新测试完成</p>
+                        <p>API状态: ${apiData.status}</p>
+                        <p>API结果数量: ${apiData.results ? apiData.results.length : 0}</p>
+                        <p>Store currentResults长度: ${storeState.currentResults.length}</p>
+                        <p>Store isExecuting: ${storeState.isExecuting}</p>
+
+                        <h4>诊断结果:</h4>
+                        ${storeState.currentResults.length > 0
+                            ? '<p class="success">✅ Store应该正确显示结果</p>'
+                            : '<p class="error">❌ Store的currentResults为空</p>'
+                        }
+
+                        <h4>可能的原因:</h4>
+                        <ol>
+                            <li>前端代码没有重新编译</li>
+                            <li>浏览器缓存了旧版本</li>
+                            <li>React组件没有重新渲染</li>
+                            <li>Zustand store状态没有正确传播</li>
+                        </ol>
+
+                        <h4>解决方案:</h4>
+                        <ol>
+                            <li>强制刷新浏览器 (Ctrl+Shift+R 或 Cmd+Shift+R)</li>
+                            <li>清除浏览器缓存</li>
+                            <li>重启前端开发服务器</li>
+                            <li>检查浏览器控制台错误</li>
+                        </ol>
+                    </div>
+                `;
+
+            } catch (error) {
+                resultDiv.innerHTML = `<p class="error">❌ 测试失败: ${error.message}</p>`;
+            }
+        }
+
+        async function runTest2() {
+            const resultDiv = document.getElementById('test2-result');
+            resultDiv.innerHTML = '<span class="running">模拟用户流程...</span>';
+
+            // 模拟用户操作步骤
+            const steps = [
+                '1. 用户打开选股器页面',
+                '2. 页面加载策略列表',
+                '3. 用户选择策略',
+                '4. 用户选择日期',
+                '5. 用户点击执行按钮',
+                '6. 前端调用API',
+                '7. API返回结果',
+                '8. Store更新状态',
+                '9. 组件重新渲染',
+                '10. 显示结果'
+            ];
+
+            let results = [];
+            let currentStep = 0;
+
+            const updateProgress = () => {
+                resultDiv.innerHTML = `
+                    <div>
+                        <p><strong>模拟用户流程:</strong></p>
+                        <ol>
+                            ${steps.map((step, index) => `
+                                <li style="color: ${index <= currentStep ? 'green' : 'gray'};">
+                                    ${step} ${index < currentStep ? '✅' : index === currentStep ? '⏳' : ''}
+                                </li>
+                            `).join('')}
+                        </ol>
+                        ${results.length > 0 ? `<p>收集到的结果: ${results.length} 条</p>` : ''}
+                    </div>
+                `;
+            };
+
+            // 逐步执行
+            const executeStep = async (stepIndex) => {
+                currentStep = stepIndex;
+                updateProgress();
+
+                switch(stepIndex) {
+                    case 1: // 加载策略
+                        await new Promise(resolve => setTimeout(resolve, 500));
+                        break;
+                    case 4: // 点击执行按钮
+                        await new Promise(resolve => setTimeout(resolve, 500));
+                        break;
+                    case 5: // 调用API
+                        try {
+                            const response = await fetch('http://localhost:8003/api/stock-screener/execute', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    strategy_id: 'default_composite',
+                                    trade_date: '2026-04-10',
+                                    limit: 2,
+                                    enable_llm_review: false,
+                                    llm_top_k: 2
+                                })
+                            });
+                            const data = await response.json();
+                            results = data.results || [];
+                        } catch (error) {
+                            console.error('API调用失败:', error);
+                        }
+                        break;
+                    case 9: // 显示结果
+                        updateProgress();
+                        setTimeout(() => {
+                            resultDiv.innerHTML += `
+                                <div style="margin-top: 20px; padding: 15px; background: ${results.length > 0 ? '#d4edda' : '#f8d7da'}; border-radius: 4px;">
+                                    <h4>最终结果:</h4>
+                                    <p>${results.length > 0
+                                        ? `✅ 成功获取 ${results.length} 条结果，前端应该显示这些结果`
+                                        : '❌ 没有获取到结果，前端显示"暂无选股结果"是正常的'}</p>
+                                    ${results.length > 0 ? `<p>示例: ${results[0].stock_name} (${results[0].stock_id}) - ${results[0].composite_score}分</p>` : ''}
+                                </div>
+                            `;
+                        }, 1000);
+                        return;
+                }
+
+                if (stepIndex < steps.length - 1) {
+                    setTimeout(() => executeStep(stepIndex + 1), 800);
+                }
+            };
+
+            // 开始执行
+            executeStep(0);
+        }
+
+        function runTest3() {
+            const resultDiv = document.getElementById('test3-result');
+            resultDiv.innerHTML = '<span class="running">检查React渲染问题...</span>';
+
+            setTimeout(() => {
+                resultDiv.innerHTML = `
+                    <div>
+                        <h4>React组件渲染问题诊断:</h4>
+
+                        <p><strong>常见问题:</strong></p>
+                        <ol>
+                            <li><strong>组件没有订阅store变化</strong>
+                                <br>确保使用 <code>useStockScreenerStore()</code> 而不是直接导入store
+                            </li>
+                            <li><strong>状态选择器问题</strong>
+                                <br>Zustand可能需要使用选择器函数: <code>useStockScreenerStore(state => state.currentResults)</code>
+                            </li>
+                            <li><strong>组件没有重新渲染</strong>
+                                <br>检查React DevTools中的组件更新
+                            </li>
+                            <li><strong>异步状态更新问题</strong>
+                                <br>确保在状态更新后组件能正确重新渲染
+                            </li>
+                        </ol>
+
+                        <p><strong>检查步骤:</strong></p>
+                        <ol>
+                            <li>打开浏览器开发者工具 (F12)</li>
+                            <li>转到"React DevTools"标签页</li>
+                            <li>检查<code>StockScreenerPage</code>组件的props和state</li>
+                            <li>查看<code>currentResults</code>是否更新</li>
+                            <li>检查组件是否重新渲染</li>
+                        </ol>
+
+                        <p><strong>快速修复:</strong></p>
+                        <ol>
+                            <li>在<code>StockScreenerPage.tsx</code>中添加调试日志:
+                                <pre>useEffect(() => {
+  console.log('currentResults updated:', store.currentResults.length);
+}, [store.currentResults]);</pre>
+                            </li>
+                            <li>检查store导入是否正确</li>
+                            <li>确保没有其他错误阻止渲染</li>
+                        </ol>
+                    </div>
+                `;
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

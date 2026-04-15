@@ -1,0 +1,72 @@
+{
+  "must": [
+    "直接液化",
+    "间接液化",
+    "柴油",
+    "石脑油",
+    "液化石油气",
+    "合成气"
+  ],
+  "should": [
+    "煤焦油加氢",
+    "煤粉制备",
+    "油煤浆制备",
+    "加氢液化反应",
+    "产物分离",
+    "加氢精制",
+    "成品油品生产",
+    "煤炭气化",
+    "费托合成",
+    "高温浆态床",
+    "低温固定床/浆态床",
+    "10-30MPa高压"
+  ],
+  "not": [
+    "国家科学技术进步奖一等奖",
+    "重大突破"
+  ],
+  "evidence_refs": [
+    {
+      "term": "直接液化",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "直接液化"
+    },
+    {
+      "term": "间接液化",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "间接液化"
+    },
+    {
+      "term": "柴油",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "柴油"
+    },
+    {
+      "term": "石脑油",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "石脑油"
+    },
+    {
+      "term": "液化石油气",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "液化石油气"
+    },
+    {
+      "term": "合成气",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "合成气"
+    }
+  ],
+  "subject_id": "9064753",
+  "quality": "strong",
+  "generated_at": "2026-04-02T14:46:27",
+  "semantic_type": "技术路线与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

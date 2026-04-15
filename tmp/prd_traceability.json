@@ -1,82 +1,108 @@
 {
   "schema_version": "1.0",
-  "phase": "P3.phase3",
-  "generated_at": "2026-04-02T00:00:00+08:00",
+  "phase": "M5",
+  "generated_at": "2026-04-10T00:00:00+08:00",
   "source_files": [
     "docs/project_control/PRD.md",
-    "docs/architecture/个人投资助理-项目架构设计-第三阶段.md",
-    "docs/project_control/ACCEPTANCE.md",
-    "docs/project_control/PLAN_WBS.md"
+    "docs/architecture/个人投资助理项目-前端技术设计（第四阶段）.md"
   ],
   "summary": {
-    "total_requirements": 8,
-    "mapped_requirements": 8,
+    "total_requirements": 12,
+    "mapped_requirements": 12,
     "unmapped_requirements": 0,
     "risk_level": "P1"
   },
   "traceability": [
     {
-      "requirement_id": "PRD-REQ-P3.phase3-001",
-      "use_case_ids": ["PRD-UC-P3.phase3-01"],
-      "acceptance_ids": ["ACPT-P3D-001"],
-      "test_case_ids": ["TC-P3D-001-sse-stream"],
-      "wbs_task_ids": ["P3.phase3-T01"]
+      "requirement_id": "FR-M5-001",
+      "use_case_ids": ["UC-M5-001"],
+      "acceptance_ids": ["AC-M5-001", "AC-M5-007"],
+      "test_case_ids": ["TC-M5-001-layout", "TC-M5-007-e2e"],
+      "wbs_task_ids": ["M5-T01"]
     },
     {
-      "requirement_id": "PRD-REQ-P3.phase3-002",
-      "use_case_ids": ["PRD-UC-P3.phase3-03"],
-      "acceptance_ids": ["ACPT-P3D-002"],
-      "test_case_ids": ["TC-P3D-002-minute-abnormal"],
-      "wbs_task_ids": ["P3.phase3-T02"]
+      "requirement_id": "FR-M5-002",
+      "use_case_ids": ["UC-M5-001"],
+      "acceptance_ids": ["AC-M5-001", "AC-M5-006"],
+      "test_case_ids": ["TC-M5-001-layout", "TC-M5-006-no-recalc"],
+      "wbs_task_ids": ["M5-T02"]
     },
     {
-      "requirement_id": "PRD-REQ-P3.phase3-003",
-      "use_case_ids": ["PRD-UC-P3.phase3-03"],
-      "acceptance_ids": ["ACPT-P3D-003"],
-      "test_case_ids": ["TC-P3D-003-feed-stock-linkage"],
-      "wbs_task_ids": ["P3.phase3-T03"]
+      "requirement_id": "FR-M5-003",
+      "use_case_ids": ["UC-M5-001"],
+      "acceptance_ids": ["AC-M5-001"],
+      "test_case_ids": ["TC-M5-001-layout"],
+      "wbs_task_ids": ["M5-T03"]
     },
     {
-      "requirement_id": "PRD-REQ-P3.phase3-004",
-      "use_case_ids": ["PRD-UC-P3.phase3-04"],
-      "acceptance_ids": ["ACPT-P3D-004"],
-      "test_case_ids": ["TC-P3D-004-light-chain-view"],
-      "wbs_task_ids": ["P3.phase3-T04"]
+      "requirement_id": "FR-M5-004",
+      "use_case_ids": ["UC-M5-001"],
+      "acceptance_ids": ["AC-M5-001"],
+      "test_case_ids": ["TC-M5-001-layout"],
+      "wbs_task_ids": ["M5-T04"]
     },
     {
-      "requirement_id": "PRD-REQ-P3.phase3-005",
-      "use_case_ids": ["PRD-UC-P3.phase3-01", "PRD-UC-P3.phase3-02"],
-      "acceptance_ids": ["ACPT-P3D-005"],
-      "test_case_ids": ["TC-P3D-005-front-refresh"],
-      "wbs_task_ids": ["P3.phase3-T05"]
+      "requirement_id": "FR-M5-005",
+      "use_case_ids": ["UC-M5-001"],
+      "acceptance_ids": ["AC-M5-001"],
+      "test_case_ids": ["TC-M5-001-layout"],
+      "wbs_task_ids": ["M5-T05"]
     },
     {
-      "requirement_id": "PRD-REQ-P3.phase3-006",
-      "use_case_ids": ["PRD-UC-P3.phase3-01"],
-      "acceptance_ids": ["ACPT-P3D-006"],
-      "test_case_ids": ["TC-P3D-006-priority-dedup"],
-      "wbs_task_ids": ["P3.phase3-T06"]
+      "requirement_id": "FR-M5-006",
+      "use_case_ids": ["UC-M5-002"],
+      "acceptance_ids": ["AC-M5-002", "AC-M5-005", "AC-M5-007"],
+      "test_case_ids": ["TC-M5-002-api-contract", "TC-M5-005-consistency", "TC-M5-007-e2e"],
+      "wbs_task_ids": ["M5-T06"]
     },
     {
-      "requirement_id": "PRD-REQ-P3.phase3-007",
-      "use_case_ids": ["PRD-UC-P3.phase3-02"],
-      "acceptance_ids": ["ACPT-P3D-007"],
-      "test_case_ids": ["TC-P3D-007-realtime-isolation"],
-      "wbs_task_ids": ["P3.phase3-T07"]
+      "requirement_id": "FR-M5-007",
+      "use_case_ids": ["UC-M5-002"],
+      "acceptance_ids": ["AC-M5-002", "AC-M5-003"],
+      "test_case_ids": ["TC-M5-002-api-contract", "TC-M5-003-auth"],
+      "wbs_task_ids": ["M5-T07"]
     },
     {
-      "requirement_id": "PRD-REQ-P3.phase3-008",
-      "use_case_ids": ["PRD-UC-P3.phase3-02"],
-      "acceptance_ids": ["ACPT-P3D-008"],
-      "test_case_ids": ["TC-P3D-008-scope-guard"],
-      "wbs_task_ids": ["P3.phase3-T08"]
+      "requirement_id": "FR-M5-008",
+      "use_case_ids": ["UC-M5-003"],
+      "acceptance_ids": ["AC-M5-003"],
+      "test_case_ids": ["TC-M5-003-auth"],
+      "wbs_task_ids": ["M5-T08"]
+    },
+    {
+      "requirement_id": "FR-M5-009",
+      "use_case_ids": ["UC-M5-004"],
+      "acceptance_ids": ["AC-M5-007"],
+      "test_case_ids": ["TC-M5-007-e2e"],
+      "wbs_task_ids": ["M5-T09"]
+    },
+    {
+      "requirement_id": "FR-M5-010",
+      "use_case_ids": ["UC-M5-001"],
+      "acceptance_ids": ["AC-M5-006"],
+      "test_case_ids": ["TC-M5-006-no-recalc"],
+      "wbs_task_ids": ["M5-T10"]
+    },
+    {
+      "requirement_id": "FR-M5-011",
+      "use_case_ids": ["UC-M5-005"],
+      "acceptance_ids": ["AC-M5-004"],
+      "test_case_ids": ["TC-M5-004-tech-stack"],
+      "wbs_task_ids": ["M5-T11"]
+    },
+    {
+      "requirement_id": "FR-M5-012",
+      "use_case_ids": ["UC-M5-001"],
+      "acceptance_ids": ["AC-M5-001", "AC-M5-007"],
+      "test_case_ids": ["TC-M5-001-layout", "TC-M5-007-e2e"],
+      "wbs_task_ids": ["M5-T12"]
     }
   ],
   "gaps": [
-    "ACCEPTANCE.md 尚未定义 P3.phase3 正式验收条目，当前 ACPT-P3D-001~008 为占位 ID。",
-    "PLAN_WBS.md 尚未定义 P3.phase3 正式任务，当前 P3.phase3-T01~T08 为占位任务 ID。",
-    "TEST_CASE_SPEC 尚未补充 P3.phase3 正式测试用例，当前 TC-P3D-* 为占位测试 ID。",
-    "PHASE_CONTRACT_P3.phase3.md 尚未创建，因此本阶段只能作为 Draft PRD，gate_ready=false。"
+    "ACCEPTANCE.md 尚未定义 M5 阶段正式验收条目，当前 AC-M5-001~007 为基于 PRD 推导的验收 ID。",
+    "PLAN_WBS.md 尚未定义 M5 阶段正式任务，当前 M5-T01~T12 为占位任务 ID。",
+    "TEST_CASE_SPEC 尚未补充 M5 阶段正式测试用例，当前 TC-M5-* 为占位测试 ID。",
+    "PHASE_CONTRACT_M5.md 尚未创建，因此本阶段只能作为 Draft PRD，gate_ready=false。"
   ],
   "gate_ready": false
 }

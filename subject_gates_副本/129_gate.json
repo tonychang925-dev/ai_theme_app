@@ -1,0 +1,57 @@
+{
+  "must": [
+    "航空运输",
+    "物流行业",
+    "供应链行业"
+  ],
+  "should": [
+    "金融支持政策",
+    "科技创新和技术改造再贷款",
+    "运输总周转量",
+    "旅客运输量",
+    "货邮运输量",
+    "民航运输总周转量",
+    "航空快件",
+    "技术改造再贷款",
+    "经济发展",
+    "电子商务增长",
+    "专业化",
+    "数字化"
+  ],
+  "not": [
+    "春运",
+    "出行总量",
+    "进出京人流",
+    "铁路春运",
+    "发送旅客",
+    "客流高峰日",
+    "元旦假期出游",
+    "高星酒店预订量"
+  ],
+  "evidence_refs": [
+    {
+      "term": "航空运输",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "航空运输"
+    },
+    {
+      "term": "物流行业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "物流行业"
+    },
+    {
+      "term": "供应链行业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "供应链行业"
+    }
+  ],
+  "subject_id": "129",
+  "quality": "strong",
+  "generated_at": "2026-03-31T18:45:20",
+  "semantic_type": "产业链/供应链与政策驱动复合型题材",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

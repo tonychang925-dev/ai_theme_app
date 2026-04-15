@@ -1,0 +1,75 @@
+{
+  "must": [
+    "CPU领域七大具备优势的A股企业",
+    "海光",
+    "龙芯",
+    "飞腾",
+    "CPU",
+    "高端CPU"
+  ],
+  "should": [
+    "云厂商数据中心升级",
+    "AI推理",
+    "云厂商数据中心",
+    "服务器 CPU",
+    "英特尔",
+    "AMD",
+    "高端 AI 适配型号",
+    "消费级 CPU",
+    "先进封装",
+    "AI推理阶段",
+    "AI加速",
+    "产能无法快速匹配需求增长"
+  ],
+  "not": [
+    "提价",
+    "货期延长",
+    "产能售罄",
+    "涨幅",
+    "结构性涨价"
+  ],
+  "evidence_refs": [
+    {
+      "term": "CPU领域七大具备优势的A股企业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "CPU领域七大具备优势的A股企业"
+    },
+    {
+      "term": "海光",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "海光"
+    },
+    {
+      "term": "龙芯",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "龙芯"
+    },
+    {
+      "term": "飞腾",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "飞腾"
+    },
+    {
+      "term": "CPU",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "CPU"
+    },
+    {
+      "term": "高端CPU",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高端CPU"
+    }
+  ],
+  "subject_id": "9063011",
+  "quality": "strong",
+  "generated_at": "2026-04-02T00:20:04",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

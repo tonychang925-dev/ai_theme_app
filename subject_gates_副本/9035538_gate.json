@@ -1,0 +1,64 @@
+{
+  "must": [
+    "灵巧手",
+    "机器人硬件",
+    "人形机器人",
+    "机器人系统"
+  ],
+  "should": [
+    "工业人形机器人",
+    "商用人形机器人",
+    "智元机器人",
+    "宇树科技",
+    "人形双足机器人",
+    "机器人软件",
+    "推理与执行能力",
+    "理解物理世界",
+    "在虚拟世界中进行训练",
+    "在物理世界中与人类安全协作",
+    "教育科研领域",
+    "代工服务"
+  ],
+  "not": [
+    "人形机器人第一股",
+    "优必选",
+    "锋龙股份",
+    "现金收购",
+    "Optimus机器人项目",
+    "特斯拉第三代机器人",
+    "量产",
+    "天工行者"
+  ],
+  "evidence_refs": [
+    {
+      "term": "灵巧手",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "灵巧手"
+    },
+    {
+      "term": "机器人硬件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "机器人硬件"
+    },
+    {
+      "term": "人形机器人",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人形机器人"
+    },
+    {
+      "term": "机器人系统",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "机器人系统"
+    }
+  ],
+  "subject_id": "9035538",
+  "quality": "strong",
+  "generated_at": "2026-03-10T10:40:22",
+  "semantic_type": "技术突破与应用",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

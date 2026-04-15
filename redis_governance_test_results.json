@@ -1,0 +1,88 @@
+{
+  "test_timestamp": "2026-04-11T21:40:53.876158",
+  "test_cases": [
+    {
+      "test_name": "消费者组管理",
+      "stream": "test:governance:stream",
+      "group": "test:governance:group",
+      "group_created": true,
+      "group_exists": true,
+      "groups_count": 1,
+      "timestamp": "2026-04-11T21:40:53.887101"
+    },
+    {
+      "test_name": "自动清理功能",
+      "dry_run_mode": true,
+      "cleanup_config": {
+        "cleanup_enabled": true,
+        "max_group_age_hours": 1,
+        "cleanup_interval_minutes": 60,
+        "min_idle_time_minutes": 5,
+        "max_pending_messages": 0,
+        "dry_run": true,
+        "protected_groups": [
+          "test_protected_group"
+        ],
+        "test_group_patterns": [
+          "test_.*",
+          "temp_.*",
+          "p2_.*",
+          "business_\\d{8}_\\d{6}",
+          "database_service_group:.*",
+          ".*test.*",
+          ".*update.*",
+          ".*cluster.*"
+        ],
+        "report_file": "consumer_group_cleanup_report.json"
+      },
+      "timestamp": "2026-04-11T21:40:53.889263"
+    },
+    {
+      "test_name": "监控告警功能",
+      "alert_type": "high_pending",
+      "alert_severity": "warning",
+      "alert_message": "测试告警: 高pending消息",
+      "alert_sent": true,
+      "alert_results": [
+        {
+          "service": "console",
+          "success": false,
+          "timestamp": "2026-04-11T21:40:53.923084"
+        }
+      ],
+      "timestamp": "2026-04-11T21:40:53.923091"
+    },
+    {
+      "test_name": "pending消息分析",
+      "stream": "test:pending:analysis",
+      "group": "test:pending:group",
+      "messages_created": 2,
+      "messages_consumed": 2,
+      "pending_count": 2,
+      "timestamp": "2026-04-11T21:40:53.926573"
+    },
+    {
+      "test_name": "内存使用监控",
+      "used_memory_human": "8.53M",
+      "used_memory_peak_human": "39.08G",
+      "mem_fragmentation_ratio": 0.25,
+      "timestamp": "2026-04-11T21:40:53.928805"
+    }
+  ],
+  "summary": {
+    "total_tests": 5,
+    "successful_tests": 5,
+    "failed_tests": 0,
+    "success_rate": 100.0,
+    "issues_found_count": 0,
+    "test_duration_seconds": 0.052857
+  },
+  "issues_found": [],
+  "recommendations": [
+    {
+      "type": "success",
+      "message": "✅ Redis治理功能测试通过率: 100.0%",
+      "action": "Redis治理功能基本正常，可以投入生产使用"
+    }
+  ]
+}

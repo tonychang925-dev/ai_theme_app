@@ -1,0 +1,61 @@
+{
+  "must": [
+    "控制模块",
+    "爆破服务",
+    "工业炸药",
+    "工业雷管"
+  ],
+  "should": [
+    "民爆公司",
+    "宏大民爆",
+    "重大水利工程",
+    "清洁能源基地建设",
+    "西北风电光伏",
+    "西南水电",
+    "海上风电",
+    "沿海核电",
+    "墨脱水电站",
+    "电力外送消纳",
+    "西藏本地自用",
+    "军品出口"
+  ],
+  "not": [
+    "武器采购计划",
+    "歼-10战斗机",
+    "新品牌战略",
+    "并购秘鲁南方炸药公司",
+    "秘鲁市场扎根"
+  ],
+  "evidence_refs": [
+    {
+      "term": "控制模块",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "控制模块"
+    },
+    {
+      "term": "爆破服务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "爆破服务"
+    },
+    {
+      "term": "工业炸药",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "工业炸药"
+    },
+    {
+      "term": "工业雷管",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "工业雷管"
+    }
+  ],
+  "subject_id": "9015543",
+  "quality": "weak",
+  "generated_at": "2026-04-02T11:31:24",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

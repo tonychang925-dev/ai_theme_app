@@ -5,9 +5,13 @@ import re
 import sys
 import time
 import uuid
+import statistics
+import math
 from collections import Counter, defaultdict
+from dataclasses import dataclass, field
+from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 import asyncpg
 import redis.asyncio as redis
@@ -47,8 +51,8 @@ THEME_KEY_MAP = {
 }
 
 
-def _load_gt_overrides() -> Dict[str, Dict[str, str]]:
-    overrides: Dict[str, Dict[str, str]] = {}
+def _load_gt_overrides() -> Dict[str, Dict[str, Any]]:
+    overrides: Dict[str, Dict[str, Any]] = {}
     if not GT_OVERRIDE_PATH.exists():
         return overrides
     for line in GT_OVERRIDE_PATH.read_text(encoding="utf-8").splitlines():
@@ -64,6 +68,8 @@ def _load_gt_overrides() -> Dict[str, Dict[str, str]]:
         overrides[raw_text] = {
             "expected_subject_key": gt_subject_key,
             "theme_name": theme_name or "",
+            "equivalent_subject_keys": [str(x).strip() for x in (obj.get("equivalent_subject_keys") or []) if str(x).strip()],
+            "equivalent_theme_names": [str(x).strip() for x in (obj.get("equivalent_theme_names") or []) if str(x).strip()],
         }
     return overrides
 
@@ -78,7 +84,7 @@ def _pg_kwargs() -> Dict[str, Any]:
     }
 
 
-def _parse_test_cases(limit: int) -> List[Dict[str, str]]:
+def _parse_test_cases(limit: int) -> List[Dict[str, Any]]:
     text = RAW_PATH.read_text(encoding="utf-8")
     parts = re.split(r"(?=测试集\d+:题材名称:)", text)
     rows: List[Dict[str, str]] = []
@@ -110,6 +116,8 @@ def _parse_test_cases(limit: int) -> List[Dict[str, str]]:
                 {
                     "theme_name": (override or {}).get("theme_name") or theme_name,
                     "expected_subject_key": (override or {}).get("expected_subject_key") or expected_subject_key,
+                    "equivalent_subject_keys": (override or {}).get("equivalent_subject_keys") or [],
+                    "equivalent_theme_names": (override or {}).get("equivalent_theme_names") or [],
                     "raw_text": raw_text,
                 }
             )
@@ -214,6 +222,7 @@ async def _cleanup_previous_test_data(conn: asyncpg.Connection) -> None:
 def _build_report(details: List[Dict[str, Any]]) -> Dict[str, Any]:
     processed = len(details)
     top1_hits = sum(1 for row in details if row.get("top1_hit"))
+    equivalent_top1_hits = sum(1 for row in details if row.get("equivalent_top1_hit"))
     by_theme: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
     for row in details:
         by_theme[row["expected_subject_key"]].append(row)
@@ -223,6 +232,7 @@ def _build_report(details: List[Dict[str, Any]]) -> Dict[str, Any]:
         total = len(rows)
         theme_name = rows[0]["expected_theme_name"]
         top1 = sum(1 for row in rows if row["top1_hit"])
+        equivalent_top1 = sum(1 for row in rows if row.get("equivalent_top1_hit"))
         pred_counter = Counter(row["matched_subject_key"] for row in rows if row["matched_subject_key"])
         confusion = [
             {"pred_subject_key": key, "count": count}
@@ -236,6 +246,8 @@ def _build_report(details: List[Dict[str, Any]]) -> Dict[str, Any]:
                 "total": total,
                 "top1_hit": top1,
                 "top1_accuracy": round(top1 / total, 4) if total else 0.0,
+                "equivalent_top1_hit": equivalent_top1,
+                "equivalent_top1_accuracy": round(equivalent_top1 / total, 4) if total else 0.0,
                 "most_common_top1_pred": pred_counter.most_common(1)[0][0] if pred_counter else None,
                 "most_common_top1_pred_count": pred_counter.most_common(1)[0][1] if pred_counter else 0,
                 "confusion_top1": confusion,
@@ -248,6 +260,8 @@ def _build_report(details: List[Dict[str, Any]]) -> Dict[str, Any]:
         "processed": processed,
         "top1_hits": top1_hits,
         "top1_accuracy": round(top1_hits / processed, 4) if processed else 0.0,
+        "equivalent_top1_hits": equivalent_top1_hits,
+        "equivalent_top1_accuracy": round(equivalent_top1_hits / processed, 4) if processed else 0.0,
         "failed": sum(1 for row in details if row.get("status") == "failed"),
         "per_theme_metrics": per_theme_metrics,
         "details": details,
@@ -488,6 +502,7 @@ async def main() -> None:
             match_result = decision.get("match_result", {}) or {}
             predicted = str(match_result.get("matched_subject_key") or "")
             top1_hit = predicted == sample["expected_subject_key"]
+            equivalent_top1_hit = top1_hit or predicted in set(sample.get("equivalent_subject_keys") or [])
             details.append(
                 {
                     "index": idx,
@@ -505,14 +520,18 @@ async def main() -> None:
                     "confidence": match_result.get("confidence"),
                     "reason_code": match_result.get("reason_code"),
                     "top1_hit": top1_hit,
+                    "equivalent_top1_hit": equivalent_top1_hit,
+                    "equivalent_subject_keys": sample.get("equivalent_subject_keys") or [],
+                    "equivalent_theme_names": sample.get("equivalent_theme_names") or [],
                 }
             )
             current_hits = sum(1 for row in details if row["top1_hit"])
+            current_equivalent_hits = sum(1 for row in details if row.get("equivalent_top1_hit"))
             _print_progress(
                 "decision received",
                 idx,
                 SAMPLE_SIZE,
-                f"{decision.get('action')} -> {predicted} | top1={current_hits/idx:.4f}",
+                f"{decision.get('action')} -> {predicted} | top1={current_hits/idx:.4f} | eq_top1={current_equivalent_hits/idx:.4f}",
             )
 
         report = _build_report(details)

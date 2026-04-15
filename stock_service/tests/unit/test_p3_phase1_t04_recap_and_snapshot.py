@@ -10,6 +10,9 @@ from stock_service.services.report_snapshot_service import ReportSnapshotService
 
 
 class _FakeReportRepository:
+    def __init__(self):
+        self.config = StockServiceConfig(project_root=Path("/tmp/ai_theme_app_test"))
+
     async def fetch_market_environment_judgement(self, trade_date: str):
         return {
             "market_health_score": 76.5,
@@ -156,6 +159,39 @@ class _FakeReportRepository:
             }
         ]
 
+    async def fetch_leader_llm_judgements(self, trade_date: str, limit: int = 30):
+        return [
+            {
+                "subject_key": "9025631",
+                "theme_name": "创新药",
+                "leader_stock_id": "300436.SZ",
+                "leader_status": "继续成立",
+                "confirmation_basis": "二连板确认",
+                "runner_up_stock_id": "",
+                "card_position_stock_id": "",
+                "supplement_stock_id": "",
+                "eliminated_stock_id": "",
+                "judgement_json": {
+                    "per_stock_reasoning": [
+                        {
+                            "stock_id": "300436.SZ",
+                            "role_label": "龙头",
+                            "reason": "两日连续领涨，且题材辨识度最高。",
+                        }
+                    ]
+                },
+            }
+        ]
+
+    async def fetch_stock_abnormal_signals(self, trade_date: str, limit: int = 120):
+        return []
+
+    async def fetch_hot_money_activities(self, trade_date: str, limit: int = 300):
+        return []
+
+    async def fetch_subject_theme_links_for_stocks(self, trade_date: str, stock_ids: list[str]):
+        return []
+
 
 async def test_build_post_market_report():
     service = RecapService(_FakeReportRepository())
@@ -170,12 +206,28 @@ async def test_build_post_market_report():
     assert report.sections[2][0] == "主线与支线"
     assert report.sections[3][0] == "周期与动作"
     assert report.sections[4][0] == "强势股分层"
-    assert report.sections[5][0] == "资金行为增强"
-    assert report.sections[6][0] == "龙虎榜与来源链"
+    assert report.sections[5][0] == "当日异动股与资金行为"
+    assert report.sections[6][0] == "资金行为增强"
+    assert report.sections[7][0] == "龙虎榜"
     assert "板块过热" in report.sections[1][1][0]
     assert "HIGH / 龙头/资金共振" in report.sections[4][1][0]
-    assert "龙头/资金共振" in report.sections[5][1][0]
-    assert "Trace abc123trace" in report.sections[6][1][0]
+    assert "LLM裁决角色 龙头" in report.sections[4][1][0]
+    assert "LLM确认状态 继续成立" in report.sections[4][1][0]
+    assert "龙头/资金共振" in report.sections[6][1][0]
+
+
+class _FakeReportRepositoryLargeLlm(_FakeReportRepository):
+    async def fetch_leader_llm_judgements(self, trade_date: str, limit: int = 30):
+        if limit < 500:
+            return []
+        return await super().fetch_leader_llm_judgements(trade_date, limit=limit)
+
+
+async def test_build_post_market_report_fetches_enough_llm_rows():
+    service = RecapService(_FakeReportRepositoryLargeLlm())
+    report = await service.build_post_market_report("2026-04-01")
+
+    assert "LLM裁决角色 龙头" in report.sections[4][1][0]
 
 
 async def test_build_pre_market_report():

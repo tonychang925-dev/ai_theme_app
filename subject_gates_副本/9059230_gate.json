@@ -1,0 +1,54 @@
+{
+  "must": [
+    "电力",
+    "电力储存",
+    "电力生产",
+    "电力设备"
+  ],
+  "should": [
+    "电费",
+    "数据中心",
+    "科技公司",
+    "人工智能"
+  ],
+  "not": [
+    "特朗普",
+    "拜登",
+    "民主党人",
+    "公用事业账单",
+    "微软",
+    "重大变革"
+  ],
+  "evidence_refs": [
+    {
+      "term": "电力",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电力"
+    },
+    {
+      "term": "电力储存",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电力储存"
+    },
+    {
+      "term": "电力生产",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电力生产"
+    },
+    {
+      "term": "电力设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电力设备"
+    }
+  ],
+  "subject_id": "9059230",
+  "quality": "weak",
+  "generated_at": "2026-04-02T07:03:43",
+  "semantic_type": "能源基础设施",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

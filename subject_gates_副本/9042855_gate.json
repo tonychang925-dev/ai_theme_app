@@ -1,0 +1,48 @@
+{
+  "must": [
+    "RISC-V",
+    "RISC-V芯片产品",
+    "开源指令集架构"
+  ],
+  "should": [
+    "阿里RISC-V联盟",
+    "中国RISC-V联盟",
+    "RISC-V专利联盟",
+    "开放计算系统",
+    "基础指令集",
+    "扩展指令集",
+    "科研机构",
+    "产业界合作",
+    "计算体系架构演进",
+    "系统软件设计",
+    "AI大规模分布式系统",
+    "Al硬件并行编程语言编译器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "RISC-V",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "RISC-V"
+    },
+    {
+      "term": "RISC-V芯片产品",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "RISC-V芯片产品"
+    },
+    {
+      "term": "开源指令集架构",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "开源指令集架构"
+    }
+  ],
+  "subject_id": "9042855",
+  "quality": "weak",
+  "generated_at": "2026-04-02T05:17:14",
+  "semantic_type": "技术标准与产业联盟",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

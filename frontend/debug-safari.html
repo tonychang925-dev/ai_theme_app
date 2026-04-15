@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safari调试</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            padding: 20px;
+            background: #1a1a1a;
+            color: white;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #ef4444;
+        }
+        .test-section {
+            padding: 20px;
+            background: #2a2a2a;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 6px solid #ef4444;
+        }
+        button {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .log {
+            background: #333;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .iframe-container {
+            width: 100%;
+            height: 600px;
+            border: 3px solid #ef4444;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔴 Safari无痕模式调试</h1>
+
+        <div class="test-section">
+            <h3>问题：Safari无痕模式看不到"AI选股"按钮</h3>
+            <p>让我们直接检查实际渲染的DOM。</p>
+        </div>
+
+        <div class="test-section">
+            <h3>步骤1：直接加载应用页面到iframe</h3>
+            <button onclick="loadAppInIframe()">加载应用页面</button>
+            <div id="iframe-container" class="iframe-container">
+                <p>点击按钮加载页面...</p>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>步骤2：检查DOM结构</h3>
+            <button onclick="inspectDOM()">检查DOM</button>
+            <div id="dom-result" class="log">点击按钮检查</div>
+        </div>
+
+        <div class="test-section">
+            <h3>步骤3：检查JavaScript错误</h3>
+            <button onclick="checkJSErrors()">检查JS错误</button>
+            <div id="js-result" class="log">点击按钮检查</div>
+        </div>
+
+        <div class="test-section">
+            <h3>步骤4：直接获取组件代码</h3>
+            <button onclick="getComponentCode()">获取组件代码</button>
+            <div id="code-result" class="log">点击按钮获取</div>
+        </div>
+    </div>
+
+    <script>
+        let iframe = null;
+
+        async function loadAppInIframe() {
+            const container = document.getElementById('iframe-container');
+            container.innerHTML = '<p>加载中...</p>';
+
+            try {
+                // 创建iframe
+                iframe = document.createElement('iframe');
+                iframe.src = 'http://localhost:5173';
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.style.border = 'none';
+
+                container.innerHTML = '';
+                container.appendChild(iframe);
+
+                // 等待iframe加载
+                iframe.onload = function() {
+                    console.log('✅ iframe加载完成');
+                    document.getElementById('dom-result').textContent = 'iframe已加载，点击"检查DOM"按钮查看内容';
+                };
+
+                iframe.onerror = function(error) {
+                    console.error('❌ iframe加载失败:', error);
+                    container.innerHTML = '<p style="color: #ef4444;">iframe加载失败，请检查控制台</p>';
+                };
+
+            } catch (error) {
+                console.error('加载iframe失败:', error);
+                container.innerHTML = `<p style="color: #ef4444;">错误: ${error.message}</p>`;
+            }
+        }
+
+        function inspectDOM() {
+            const result = document.getElementById('dom-result');
+            result.textContent = '检查中...';
+
+            if (!iframe) {
+                result.textContent = '❌ 请先加载iframe';
+                return;
+            }
+
+            try {
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+                // 检查root元素
+                const root = iframeDoc.getElementById('root');
+                result.textContent = `root元素: ${root ? '找到' : '未找到'}\n`;
+
+                if (root) {
+                    result.textContent += `root子元素数量: ${root.children.length}\n\n`;
+
+                    // 检查所有按钮
+                    const buttons = iframeDoc.querySelectorAll('button');
+                    result.textContent += `找到的按钮数量: ${buttons.length}\n`;
+
+                    if (buttons.length > 0) {
+                        result.textContent += '\n=== 按钮列表 ===\n';
+                        buttons.forEach((btn, i) => {
+                            result.textContent += `按钮${i}: "${btn.textContent.trim()}"\n`;
+                            result.textContent += `  类名: ${btn.className}\n`;
+                            result.textContent += `  是否可见: ${btn.offsetParent !== null}\n`;
+                        });
+                    }
+
+                    // 检查intel-topbar
+                    const topbar = iframeDoc.querySelector('.intel-topbar');
+                    result.textContent += `\nintel-topbar: ${topbar ? '找到' : '未找到'}\n`;
+
+                    if (topbar) {
+                        result.textContent += `intel-topbar HTML前500字符:\n${topbar.innerHTML.substring(0, 500)}...\n`;
+                    }
+
+                    // 检查collection-action-row
+                    const actionRow = iframeDoc.querySelector('.collection-action-row');
+                    result.textContent += `\ncollection-action-row: ${actionRow ? '找到' : '未找到'}\n`;
+
+                    if (actionRow) {
+                        result.textContent += `按钮行HTML:\n${actionRow.innerHTML}\n`;
+                    }
+                }
+
+            } catch (error) {
+                result.textContent = `❌ 检查DOM失败: ${error.message}\n${error.stack}`;
+                console.error('DOM检查错误:', error);
+            }
+        }
+
+        async function checkJSErrors() {
+            const result = document.getElementById('js-result');
+            result.textContent = '检查中...';
+
+            try {
+                // 检查是否有全局错误
+                const errors = [];
+
+                // 尝试加载关键模块
+                const modules = [
+                    'http://localhost:5173/src/App.tsx',
+                    'http://localhost:5173/src/routes/intel/IntelPage.tsx',
+                    'http://localhost:5173/src/components/intel/IntelHeader.tsx'
+                ];
+
+                for (const url of modules) {
+                    try {
+                        const response = await fetch(url);
+                        if (!response.ok) {
+                            errors.push(`❌ ${url}: HTTP ${response.status}`);
+                        } else {
+                            result.textContent += `✅ ${url}: 可访问\n`;
+                        }
+                    } catch (error) {
+                        errors.push(`❌ ${url}: ${error.message}`);
+                    }
+                }
+
+                if (errors.length > 0) {
+                    result.textContent += '\n=== 错误列表 ===\n' + errors.join('\n');
+                } else {
+                    result.textContent += '\n✅ 所有模块可访问';
+                }
+
+            } catch (error) {
+                result.textContent = `❌ 检查失败: ${error.message}`;
+            }
+        }
+
+        async function getComponentCode() {
+            const result = document.getElementById('code-result');
+            result.textContent = '获取中...';
+
+            try {
+                const response = await fetch('http://localhost:5173/src/components/intel/IntelHeader.tsx');
+                const text = await response.text();
+
+                // 提取关键部分
+                const lines = text.split('\n');
+                let relevantCode = '';
+
+                for (let i = 0; i < lines.length; i++) {
+                    if (lines[i].includes('collection-action-row') ||
+                        lines[i].includes('AI选股') ||
+                        lines[i].includes('tag tag-button')) {
+                        // 显示前后几行
+                        const start = Math.max(0, i - 3);
+                        const end = Math.min(lines.length, i + 4);
+                        relevantCode += lines.slice(start, end).join('\n') + '\n\n';
+                    }
+                }
+
+                result.textContent = `✅ 组件代码获取成功\n\n=== 关键代码片段 ===\n${relevantCode}`;
+
+            } catch (error) {
+                result.textContent = `❌ 获取代码失败: ${error.message}`;
+            }
+        }
+
+        // 页面加载时自动运行一些检查
+        window.addEventListener('load', () => {
+            console.log('=== Safari调试页面已加载 ===');
+            console.log('时间:', new Date().toLocaleString());
+
+            // 自动检查模块可访问性
+            setTimeout(checkJSErrors, 1000);
+        });
+    </script>
+</body>
+</html>

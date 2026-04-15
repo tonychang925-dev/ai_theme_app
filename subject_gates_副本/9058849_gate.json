@@ -1,0 +1,71 @@
+{
+  "must": [
+    "高通",
+    "基于近存储计算的全新内存架构",
+    "大型数据中心芯片市场",
+    "数据中心AI芯片业务",
+    "高通AI250解决方案",
+    "高通AI芯片"
+  ],
+  "should": [
+    "直接液冷散热方案",
+    "支持通过PCIe进行纵向扩展",
+    "支持通过以太网进行横向扩展",
+    "AI芯片市场",
+    "高通AI芯片的机架解决方案",
+    "显著降低功耗",
+    "单机柜功耗为160千瓦",
+    "降低对英伟达的依赖",
+    "加剧了该领域的竞争",
+    "人工智能加速器",
+    "机柜级AI推理",
+    "AI推理"
+  ],
+  "not": [
+    "英伟达"
+  ],
+  "evidence_refs": [
+    {
+      "term": "高通",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高通"
+    },
+    {
+      "term": "基于近存储计算的全新内存架构",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "基于近存储计算的全新内存架构"
+    },
+    {
+      "term": "大型数据中心芯片市场",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "大型数据中心芯片市场"
+    },
+    {
+      "term": "数据中心AI芯片业务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据中心AI芯片业务"
+    },
+    {
+      "term": "高通AI250解决方案",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高通AI250解决方案"
+    },
+    {
+      "term": "高通AI芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高通AI芯片"
+    }
+  ],
+  "subject_id": "9058849",
+  "quality": "strong",
+  "generated_at": "2026-03-10T12:42:04",
+  "semantic_type": "技术突破与市场竞争",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,69 @@
+{
+  "must": [
+    "量子通信",
+    "量子密码",
+    "量子密钥分发",
+    "量子计算机",
+    "量子比特",
+    "本源量子"
+  ],
+  "should": [
+    "量子计算",
+    "量子研究院",
+    "腔诱导自发双光子辐射",
+    "微纳量子纠缠光源",
+    "光量子信息处理芯片",
+    "超导量子比特",
+    "问天量子",
+    "后量子密码卡",
+    "芯片",
+    "光通信领域",
+    "传输速率",
+    "量子通信领域"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "量子通信",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "量子通信"
+    },
+    {
+      "term": "量子密码",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "量子密码"
+    },
+    {
+      "term": "本源量子",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "本源量子"
+    },
+    {
+      "term": "量子密钥分发",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "量子密钥分发"
+    },
+    {
+      "term": "量子计算机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "量子计算机"
+    },
+    {
+      "term": "量子比特",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "量子比特"
+    }
+  ],
+  "subject_id": "9026027",
+  "quality": "weak",
+  "generated_at": "2026-04-02T11:08:08",
+  "semantic_type": "技术突破与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

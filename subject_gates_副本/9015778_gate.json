@@ -1,0 +1,71 @@
+{
+  "must": [
+    "存储芯片",
+    "DRAM制造",
+    "NAND Flash制造",
+    "存储控制器芯片",
+    "存储模组组装"
+  ],
+  "should": [
+    "2D平面技术",
+    "3D堆叠技术",
+    "存算一体技术",
+    "新型非易失性存储",
+    "个人电脑",
+    "服务器",
+    "移动设备",
+    "固态硬盘",
+    "U盘",
+    "手机存储",
+    "混合键合",
+    "国产存储芯片"
+  ],
+  "not": [
+    "工信部",
+    "指导意见",
+    "产业基金",
+    "科创板上市",
+    "AI应用爆发",
+    "减产措施",
+    "市场供过于求",
+    "供应趋紧"
+  ],
+  "evidence_refs": [
+    {
+      "term": "存储芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "存储芯片"
+    },
+    {
+      "term": "DRAM制造",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "DRAM制造"
+    },
+    {
+      "term": "NAND Flash制造",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "NAND Flash制造"
+    },
+    {
+      "term": "存储控制器芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "存储控制器芯片"
+    },
+    {
+      "term": "存储模组组装",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "存储模组组装"
+    }
+  ],
+  "subject_id": "9015778",
+  "quality": "strong",
+  "generated_at": "2026-04-02T04:39:01",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

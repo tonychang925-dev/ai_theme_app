@@ -1,0 +1,69 @@
+{
+  "must": [
+    "原子级制造",
+    "定向去除",
+    "迁移",
+    "半导体与集成电路",
+    "量子科技与高端仪器",
+    "加工设备"
+  ],
+  "should": [
+    "量子力学",
+    "新能源与航空航天",
+    "生物医药",
+    "制造1纳米以下芯片",
+    "原子级量子比特器件和超灵敏传感器",
+    "1纳米以下芯片",
+    "原子级量子比特器件",
+    "超灵敏传感器",
+    "原子级金属粉体",
+    "原子级钝化层",
+    "纳米药物载体",
+    "高精度测量仪器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "原子级制造",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "原子级制造"
+    },
+    {
+      "term": "定向去除",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "定向去除"
+    },
+    {
+      "term": "迁移",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "迁移"
+    },
+    {
+      "term": "半导体与集成电路",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "半导体与集成电路"
+    },
+    {
+      "term": "量子科技与高端仪器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "量子科技与高端仪器"
+    },
+    {
+      "term": "加工设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "加工设备"
+    }
+  ],
+  "subject_id": "9042824",
+  "quality": "strong",
+  "generated_at": "2026-04-02T04:41:31",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,401 @@
+{
+  "metadata": {
+    "script_version": "1.1.0",
+    "run_time": "2026-04-11T17:36:14.350567",
+    "end_time": "2026-04-11T17:36:14.376579",
+    "config": {
+      "cleanup_enabled": true,
+      "max_group_age_hours": 24,
+      "cleanup_interval_minutes": 60,
+      "min_idle_time_minutes": 120,
+      "max_pending_messages": 0,
+      "dry_run": false,
+      "protected_groups": [
+        "news_storage_handlers",
+        "theme_processors_v1",
+        "major_workers",
+        "theme_workers",
+        "data_updaters",
+        "monitoring",
+        "news_business_processors",
+        "realtime_push_service",
+        "sse_pushers",
+        "event_review_writers"
+      ],
+      "test_group_patterns": [
+        "test_.*",
+        "temp_.*",
+        "p2_.*",
+        "business_\\d{8}_\\d{6}",
+        "database_service_group:.*",
+        ".*test.*",
+        ".*update.*",
+        ".*cluster.*"
+      ],
+      "report_file": "consumer_group_cleanup_actual_report_20260414.json"
+    },
+    "dry_run": false
+  },
+  "statistics": {
+    "total_streams": 24,
+    "total_groups": 22,
+    "groups_cleaned": 7,
+    "groups_protected": 15,
+    "groups_skipped": 0,
+    "error_count": 0
+  },
+  "details": [
+    {
+      "stream": "stream:integration:2",
+      "group": "int_group_2",
+      "analysis": {
+        "group": "int_group_2",
+        "stream": "stream:integration:2",
+        "consumers": 1,
+        "pending": 0,
+        "last_delivered": "1771395378206-0",
+        "action": "protect",
+        "reason": "active_consumers",
+        "risk_level": "none"
+      },
+      "timestamp": "2026-04-11T17:36:14.361352"
+    },
+    {
+      "stream": "stream:stats_events",
+      "group": "database_service_group:stats",
+      "analysis": {
+        "group": "database_service_group:stats",
+        "stream": "stream:stats_events",
+        "consumers": 0,
+        "pending": 0,
+        "last_delivered": "0-0",
+        "action": "clean",
+        "reason": "never_consumed",
+        "risk_level": "low"
+      },
+      "timestamp": "2026-04-11T17:36:14.362566",
+      "cleaned": true,
+      "cleaned_at": "2026-04-11T17:36:14.373284"
+    },
+    {
+      "stream": "stream:themes:updates",
+      "group": "update_subscribers",
+      "analysis": {
+        "group": "update_subscribers",
+        "stream": "stream:themes:updates",
+        "consumers": 0,
+        "pending": 0,
+        "last_delivered": "0-0",
+        "action": "clean",
+        "reason": "never_consumed",
+        "risk_level": "low"
+      },
+      "timestamp": "2026-04-11T17:36:14.363297",
+      "cleaned": true,
+      "cleaned_at": "2026-04-11T17:36:14.373889"
+    },
+    {
+      "stream": "stream:cache_events",
+      "group": "database_service_group:cache",
+      "analysis": {
+        "group": "database_service_group:cache",
+        "stream": "stream:cache_events",
+        "consumers": 0,
+        "pending": 0,
+        "last_delivered": "0-0",
+        "action": "clean",
+        "reason": "never_consumed",
+        "risk_level": "low"
+      },
+      "timestamp": "2026-04-11T17:36:14.363796",
+      "cleaned": true,
+      "cleaned_at": "2026-04-11T17:36:14.374467"
+    },
+    {
+      "stream": "stream:news:raw",
+      "group": "news_storage_handlers",
+      "analysis": {
+        "group": "news_storage_handlers",
+        "stream": "stream:news:raw",
+        "consumers": 64,
+        "pending": 0,
+        "last_delivered": "1775870820356-0",
+        "action": "protect",
+        "reason": "protected_group",
+        "risk_level": "none"
+      },
+      "timestamp": "2026-04-11T17:36:14.364406"
+    },
+    {
+      "stream": "stream:stress:publish",
+      "group": "stress_group",
+      "analysis": {
+        "group": "stress_group",
+        "stream": "stream:stress:publish",
+        "consumers": 2,
+        "pending": 0,
+        "last_delivered": "1768892374205-0",
+        "action": "protect",
+        "reason": "active_consumers",
+        "risk_level": "none"
+      },
+      "timestamp": "2026-04-11T17:36:14.364921"
+    },
+    {
+      "stream": "stream:integration:1",
+      "group": "int_group_1",
+      "analysis": {
+        "group": "int_group_1",
+        "stream": "stream:integration:1",
+        "consumers": 1,
+        "pending": 0,
+        "last_delivered": "1771395378204-0",
+        "action": "protect",
+        "reason": "active_consumers",
+        "risk_level": "none"
+      },
+      "timestamp": "2026-04-11T17:36:14.365350"
+    },
+    {
+      "stream": "stream:core:batch",
+      "group": "batch_group",
+      "analysis": {
+        "group": "batch_group",
+        "stream": "stream:core:batch",
+        "consumers": 1,
+        "pending": 0,
+        "last_delivered": "1768892374006-1",
+        "action": "protect",
+        "reason": "active_consumers",
+        "risk_level": "none"
+      },
+      "timestamp": "2026-04-11T17:36:14.365778"
+    },
+    {
+      "stream": "stream:theme:feed",
+      "group": "realtime_push_service",
+      "analysis": {
+        "group": "realtime_push_service",
+        "stream": "stream:theme:feed",
+        "consumers": 115,
+        "pending": 0,
+        "last_delivered": "0-0",
+        "action": "protect",
+        "reason": "protected_group",
+        "risk_level": "none"
+      },
+      "timestamp": "2026-04-11T17:36:14.366162"
+    },
+    {
+      "stream": "stream:event:feed",
+      "group": "event_review_writers",
+      "analysis": {
+        "group": "event_review_writers",
+        "stream": "stream:event:feed",
+        "consumers": 55,
+        "pending": 0,
+        "last_delivered": "1775870820412-0",
+        "action": "protect",
+        "reason": "protected_group",
+        "risk_level": "none"
+      },
+      "timestamp": "2026-04-11T17:36:14.366854"
+    },
+    {
+      "stream": "stream:event:feed",
+      "group": "realtime_push_service",
+      "analysis": {
+        "group": "realtime_push_service",
+        "stream": "stream:event:feed",
+        "consumers": 116,
+        "pending": 0,
+        "last_delivered": "1775811753255-0",
+        "action": "protect",
+        "reason": "protected_group",
+        "risk_level": "none"
+      },
+      "timestamp": "2026-04-11T17:36:14.366872"
+    },
+    {
+      "stream": "stream:event:feed",
+      "group": "sse_pushers",
+      "analysis": {
+        "group": "sse_pushers",
+        "stream": "stream:event:feed",
+        "consumers": 210,
+        "pending": 0,
+        "last_delivered": "1775870820412-0",
+        "action": "protect",
+        "reason": "protected_group",
+        "risk_level": "none"
+      },
+      "timestamp": "2026-04-11T17:36:14.366881"
+    },
+    {
+      "stream": "stream:event:feed",
+      "group": "sse_testers",
+      "analysis": {
+        "group": "sse_testers",
+        "stream": "stream:event:feed",
+        "consumers": 0,
+        "pending": 0,
+        "last_delivered": "0-0",
+        "action": "clean",
+        "reason": "never_consumed",
+        "risk_level": "low"
+      },
+      "timestamp": "2026-04-11T17:36:14.366905",
+      "cleaned": true,
+      "cleaned_at": "2026-04-11T17:36:14.375006"
+    },
+    {
+      "stream": "stream:compat:0",
+      "group": "compat_group",
+      "analysis": {
+        "group": "compat_group",
+        "stream": "stream:compat:0",
+        "consumers": 1,
+        "pending": 0,
+        "last_delivered": "1768892374200-0",
+        "action": "protect",
+        "reason": "active_consumers",
+        "risk_level": "none"
+      },
+      "timestamp": "2026-04-11T17:36:14.367912"
+    },
+    {
+      "stream": "stream:events:structured",
+      "group": "event_matchers",
+      "analysis": {
+        "group": "event_matchers",
+        "stream": "stream:events:structured",
+        "consumers": 101,
+        "pending": 0,
+        "last_delivered": "1775870820356-0",
+        "action": "protect",
+        "reason": "active_consumers",
+        "risk_level": "none"
+      },
+      "timestamp": "2026-04-11T17:36:14.368281"
+    },
+    {
+      "stream": "stream:stock:feed",
+      "group": "realtime_push_service",
+      "analysis": {
+        "group": "realtime_push_service",
+        "stream": "stream:stock:feed",
+        "consumers": 115,
+        "pending": 0,
+        "last_delivered": "0-0",
+        "action": "protect",
+        "reason": "protected_group",
+        "risk_level": "none"
+      },
+      "timestamp": "2026-04-11T17:36:14.368847"
+    },
+    {
+      "stream": "stream:theme_events",
+      "group": "database_service_group:themes",
+      "analysis": {
+        "group": "database_service_group:themes",
+        "stream": "stream:theme_events",
+        "consumers": 0,
+        "pending": 0,
+        "last_delivered": "0-0",
+        "action": "clean",
+        "reason": "never_consumed",
+        "risk_level": "low"
+      },
+      "timestamp": "2026-04-11T17:36:14.369363",
+      "cleaned": true,
+      "cleaned_at": "2026-04-11T17:36:14.375520"
+    },
+    {
+      "stream": "stream:events:pending",
+      "group": "clustering_workers",
+      "analysis": {
+        "group": "clustering_workers",
+        "stream": "stream:events:pending",
+        "consumers": 0,
+        "pending": 0,
+        "last_delivered": "0-0",
+        "action": "clean",
+        "reason": "never_consumed",
+        "risk_level": "low"
+      },
+      "timestamp": "2026-04-11T17:36:14.369943",
+      "cleaned": true,
+      "cleaned_at": "2026-04-11T17:36:14.376059"
+    },
+    {
+      "stream": "stream:final:check",
+      "group": "final_group",
+      "analysis": {
+        "group": "final_group",
+        "stream": "stream:final:check",
+        "consumers": 1,
+        "pending": 0,
+        "last_delivered": "1768892791660-0",
+        "action": "protect",
+        "reason": "active_consumers",
+        "risk_level": "none"
+      },
+      "timestamp": "2026-04-11T17:36:14.370704"
+    },
+    {
+      "stream": "stream:news:feed",
+      "group": "realtime_push_service",
+      "analysis": {
+        "group": "realtime_push_service",
+        "stream": "stream:news:feed",
+        "consumers": 115,
+        "pending": 0,
+        "last_delivered": "0-0",
+        "action": "protect",
+        "reason": "protected_group",
+        "risk_level": "none"
+      },
+      "timestamp": "2026-04-11T17:36:14.371151"
+    },
+    {
+      "stream": "stream:events:normal",
+      "group": "news_business_processors",
+      "analysis": {
+        "group": "news_business_processors",
+        "stream": "stream:events:normal",
+        "consumers": 66,
+        "pending": 1638,
+        "last_delivered": "1775871365873-0",
+        "action": "protect",
+        "reason": "protected_group",
+        "risk_level": "none"
+      },
+      "timestamp": "2026-04-11T17:36:14.371535"
+    },
+    {
+      "stream": "stream:relation_events",
+      "group": "database_service_group:relations",
+      "analysis": {
+        "group": "database_service_group:relations",
+        "stream": "stream:relation_events",
+        "consumers": 0,
+        "pending": 0,
+        "last_delivered": "0-0",
+        "action": "clean",
+        "reason": "never_consumed",
+        "risk_level": "low"
+      },
+      "timestamp": "2026-04-11T17:36:14.372339",
+      "cleaned": true,
+      "cleaned_at": "2026-04-11T17:36:14.376567"
+    }
+  ],
+  "errors": [],
+  "recommendations": [
+    {
+      "type": "success",
+      "message": "成功清理 7 个非活跃测试组",
+      "action": "监控系统内存使用变化"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "must": [
+    "阿尔兹海默病",
+    "β-淀粉样蛋白",
+    "Tau淀粉样蛋白",
+    "阿尔茨海默病疗法",
+    "阿尔茨海默病药物",
+    "Donanemab"
+  ],
+  "should": [
+    "小胶质细胞是大脑中的主要免疫细胞",
+    "临床III期",
+    "临床II期",
+    "临床I期",
+    "检测",
+    "多奈单抗注射液",
+    "记能达",
+    "Leqembi",
+    "礼来",
+    "小胶质细胞",
+    "记忆减退",
+    "词不达意"
+  ],
+  "not": [
+    "司美格鲁肽",
+    "2型糖尿病"
+  ],
+  "evidence_refs": [
+    {
+      "term": "阿尔兹海默病",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "阿尔兹海默病"
+    },
+    {
+      "term": "阿尔茨海默病疗法",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "阿尔茨海默病疗法"
+    },
+    {
+      "term": "阿尔茨海默病药物",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "阿尔茨海默病药物"
+    },
+    {
+      "term": "Donanemab",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Donanemab"
+    },
+    {
+      "term": "β-淀粉样蛋白",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "β-淀粉样蛋白"
+    },
+    {
+      "term": "Tau淀粉样蛋白",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Tau淀粉样蛋白"
+    }
+  ],
+  "subject_id": "9019056",
+  "quality": "strong",
+  "generated_at": "2026-04-02T22:24:56",
+  "semantic_type": "疾病与医疗技术",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

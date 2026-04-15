@@ -112,3 +112,40 @@ def test_trace_id_and_payload_version_are_normalized_for_v0_input():
     assert normalized["payload_version"] == "v0"
     assert normalized["trace_id"].startswith("trace_mid_004")
     assert normalized["idempotency_key"].startswith("evt-004:update_theme:sha256_")
+
+
+# TC-ID: TC-P1P0-005
+def test_realtime_auto_theme_creation_is_blocked_by_default():
+    exe = _executor()
+    decision = {
+        "action": "create_new_theme",
+        "source": "realtime_match",
+        "event_type": "major",
+    }
+    assert exe._should_block_realtime_theme_creation(decision) is True
+
+
+# TC-ID: TC-P1P0-006
+@pytest.mark.asyncio
+async def test_blocked_realtime_decision_enqueues_event_review_queue():
+    class _Gateway:
+        def __init__(self):
+            self.enqueue_event_review = AsyncMock(return_value=True)
+
+    redis = AsyncMock()
+    gateway = _Gateway()
+    exe = DecisionExecutor(redis_client=redis, db_gateway=gateway, consumer_name="ut_phase0")
+
+    decision = {
+        "decision_id": "d-006",
+        "event_id": 6006,
+        "event_data": {"event_id": 6006, "title": "t"},
+        "reason": "blocked_auto_theme_create_for_realtime",
+        "confidence": 0.73,
+        "theme_data": {"name": "候选题材"},
+    }
+
+    await exe._execute_publish_clustering_fixed(decision)
+
+    redis.xadd.assert_awaited_once()
+    gateway.enqueue_event_review.assert_awaited_once()

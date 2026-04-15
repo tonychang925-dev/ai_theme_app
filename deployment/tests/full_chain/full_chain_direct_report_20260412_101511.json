@@ -1,0 +1,30 @@
+{
+  "test_name": "full_chain_direct",
+  "start_time": "2026-04-12T10:05:04.683602",
+  "end_time": "2026-04-12T10:15:11.640970",
+  "duration_seconds": 606.9573681354523,
+  "test_config": {
+    "news_count": 30,
+    "batch_id": "test_batch_20260412_100504",
+    "written_count": 30
+  },
+  "processing_results": {
+    "news_raw": 0,
+    "events_structured": 0,
+    "events_classified": 0,
+    "theme_matched": 0,
+    "decisions": 0
+  },
+  "verification": {
+    "database_tables": {
+      "news_raw": 469,
+      "news_event": 45,
+      "event_theme_map": 62
+    },
+    "processing_stats": {},
+    "errors": [
+      "验证失败: relation \"theme_decision\" does not exist"
+    ]
+  },
+  "success": false
+}

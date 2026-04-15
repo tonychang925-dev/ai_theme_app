@@ -1,0 +1,53 @@
+{
+  "must": [
+    "突破性治疗品种名单",
+    "快速审评待遇",
+    "新药",
+    "突破性治疗"
+  ],
+  "should": [
+    "创新药支持政策",
+    "创新药",
+    "司美格鲁肽",
+    "Wegovy",
+    "补充新药申请",
+    "NDA",
+    "代谢功能障碍相关性脂肪性肝炎",
+    "MASH",
+    "TCR-T细胞疗法",
+    "商业健康保险"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "突破性治疗品种名单",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "突破性治疗品种名单"
+    },
+    {
+      "term": "快速审评待遇",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "快速审评待遇"
+    },
+    {
+      "term": "新药",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "新药"
+    },
+    {
+      "term": "突破性治疗",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "突破性治疗"
+    }
+  ],
+  "subject_id": "9030559",
+  "quality": "strong",
+  "generated_at": "2026-04-01T02:45:23",
+  "semantic_type": "药品审评政策",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

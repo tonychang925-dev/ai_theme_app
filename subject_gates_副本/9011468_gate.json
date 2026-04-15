@@ -1,0 +1,67 @@
+{
+  "must": [
+    "身份安全认证",
+    "网络监管",
+    "数据流通安全治理",
+    "人工智能安全治理",
+    "法律法规制定"
+  ],
+  "should": [
+    "生成式人工智能服务监管",
+    "密码学认证",
+    "生物特征识别",
+    "模型算法安全",
+    "数据安全",
+    "系统安全",
+    "上游基础技术和设备供应商",
+    "中游网络安全产品和服务提供商",
+    "执法检查",
+    "限制超出授权范围使用个人信息",
+    "训练数据处理规范",
+    "数据标注要求"
+  ],
+  "not": [
+    "OpenAI CEO",
+    "欺诈危机",
+    "Wiz",
+    "出售股份"
+  ],
+  "evidence_refs": [
+    {
+      "term": "身份安全认证",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "身份安全认证"
+    },
+    {
+      "term": "网络监管",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "网络监管"
+    },
+    {
+      "term": "数据流通安全治理",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据流通安全治理"
+    },
+    {
+      "term": "人工智能安全治理",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人工智能安全治理"
+    },
+    {
+      "term": "法律法规制定",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "法律法规制定"
+    }
+  ],
+  "subject_id": "9011468",
+  "quality": "strong",
+  "generated_at": "2026-03-10T10:18:13",
+  "semantic_type": "产业链与政策法规",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

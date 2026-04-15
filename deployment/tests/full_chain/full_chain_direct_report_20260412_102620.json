@@ -1,0 +1,83 @@
+{
+  "test_name": "full_chain_direct",
+  "start_time": "2026-04-12T10:16:14.190417",
+  "end_time": "2026-04-12T10:26:20.626488",
+  "duration_seconds": 606.4360711574554,
+  "test_config": {
+    "news_count": 5,
+    "batch_id": "test_batch_20260412_101614",
+    "written_count": 5
+  },
+  "performance_metrics": {
+    "write_times": [
+      0.0074689388275146484,
+      0.0005581378936767578,
+      0.0004470348358154297,
+      0.0004730224609375,
+      0.00043201446533203125
+    ],
+    "redis_publish_times": [
+      0.00718379020690918,
+      0.00031185150146484375,
+      0.0007631778717041016,
+      0.0007760524749755859,
+      0.0002453327178955078
+    ],
+    "processing_times": [],
+    "stage_latencies": {
+      "news_to_event": [],
+      "event_to_classified": [],
+      "classified_to_theme": [],
+      "theme_to_decision": []
+    },
+    "throughput": 267.685081180435,
+    "success_count": 5,
+    "error_count": 0,
+    "start_times": {
+      "test_news_0000": 1775960174.1911192,
+      "test_news_0001": 1775960174.20578,
+      "test_news_0002": 1775960174.2066538,
+      "test_news_0003": 1775960174.207867,
+      "test_news_0004": 1775960174.209119
+    },
+    "stage_completion_times": {
+      "news_raw": {},
+      "events_structured": {},
+      "events_classified": {},
+      "theme_matched": {},
+      "decisions": {}
+    }
+  },
+  "performance_standards": {
+    "db_write_latency": 0.1,
+    "redis_publish_latency": 0.05,
+    "news_to_event_latency": 2.0,
+    "event_to_classified_latency": 3.0,
+    "classified_to_theme_latency": 2.0,
+    "theme_to_decision_latency": 1.0,
+    "total_processing_latency": 8.0,
+    "throughput_min": 10.0,
+    "success_rate": 90.0,
+    "conversion_rate": 70.0
+  },
+  "processing_results": {
+    "news_raw": 0,
+    "events_structured": 0,
+    "events_classified": 0,
+    "theme_matched": 0,
+    "decisions": 0
+  },
+  "verification": {
+    "database_tables": {
+      "news_raw": 444,
+      "news_event": 45,
+      "event_theme_map": 62
+    },
+    "processing_stats": {},
+    "performance_verification": {},
+    "errors": [
+      "验证失败: relation \"theme_decision\" does not exist"
+    ]
+  },
+  "success": false
+}

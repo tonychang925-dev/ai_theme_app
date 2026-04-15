@@ -1,0 +1,53 @@
+{
+  "must": [
+    "承担国家任务或参与国家工程项目",
+    "核心技术产品",
+    "承研承制资质",
+    "发射许可"
+  ],
+  "should": [
+    "自主研发",
+    "制造",
+    "提供航天发射服务",
+    "运载能力",
+    "一箭多星能力",
+    "可重复使用技术",
+    "中大型运载火箭",
+    "发射载荷首次成功入轨",
+    "核心技术产品及关键部件的自主研发",
+    "天兵科技"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "承担国家任务或参与国家工程项目",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "承担国家任务或参与国家工程项目"
+    },
+    {
+      "term": "核心技术产品",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "核心技术产品"
+    },
+    {
+      "term": "承研承制资质",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "承研承制资质"
+    },
+    {
+      "term": "发射许可",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "发射许可"
+    }
+  ],
+  "subject_id": "9061851",
+  "quality": "medium",
+  "generated_at": "2026-04-01T05:05:53",
+  "semantic_type": "政策法规与产业标准",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

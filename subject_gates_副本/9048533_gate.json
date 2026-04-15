@@ -1,0 +1,37 @@
+{
+  "must": [
+    "轻工制造",
+    "电动汽车",
+    "消费电子"
+  ],
+  "should": [
+    "人工智能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轻工制造",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "轻工制造"
+    },
+    {
+      "term": "电动汽车",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电动汽车"
+    },
+    {
+      "term": "消费电子",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "消费电子"
+    }
+  ],
+  "subject_id": "9048533",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:48:57",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

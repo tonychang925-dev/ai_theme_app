@@ -1,0 +1,31 @@
+{
+  "must": [
+    "整机",
+    "算力支持"
+  ],
+  "should": [
+    "直接供货",
+    "潜在供货"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "整机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "整机"
+    },
+    {
+      "term": "算力支持",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "算力支持"
+    }
+  ],
+  "subject_id": "9060646",
+  "quality": "weak",
+  "generated_at": "2026-04-04T15:41:51",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

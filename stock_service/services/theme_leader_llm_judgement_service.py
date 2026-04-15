@@ -56,6 +56,116 @@ class ThemeLeaderLlmCandidateInput:
 
 class ThemeLeaderLlmJudgementService:
     prompt_version = "theme_leader_llm_judgement.v2"
+    screener_prompt_version = "screener_llm_review.v2"
+
+    @staticmethod
+    def extract_response_json(response: Any) -> dict[str, Any]:
+        """Normalize ReliableDeepSeekParser output into a plain JSON object."""
+        if isinstance(response, dict):
+            if isinstance(response.get("response"), str):
+                raw_text = str(response.get("response") or "").strip()
+                if raw_text.startswith("```json"):
+                    raw_text = raw_text[7:]
+                if raw_text.endswith("```"):
+                    raw_text = raw_text[:-3]
+                raw_text = raw_text.strip()
+                try:
+                    parsed_wrapper = json.loads(raw_text)
+                    if isinstance(parsed_wrapper, dict):
+                        return parsed_wrapper
+                except Exception:
+                    pass
+            return response
+        if isinstance(response, str):
+            raw_text = response.strip()
+            if raw_text.startswith("```json"):
+                raw_text = raw_text[7:]
+            if raw_text.endswith("```"):
+                raw_text = raw_text[:-3]
+            raw_text = raw_text.strip()
+            try:
+                parsed = json.loads(raw_text)
+                if isinstance(parsed, dict):
+                    return parsed
+            except Exception:
+                pass
+        return {}
+
+    @staticmethod
+    def parse_screener_review_response(response: Any) -> dict[str, Any]:
+        """Normalize screener review payload to a strict schema."""
+        parsed = ThemeLeaderLlmJudgementService.extract_response_json(response)
+        if not isinstance(parsed, dict):
+            return {}
+
+        decision = str(parsed.get("decision", "failed") or "failed").strip().lower()
+        if decision not in {"pass", "watch", "reject", "failed"}:
+            decision = "failed"
+
+        def _to_float_in_range(value: Any, min_v: float, max_v: float, default: float) -> float:
+            try:
+                num = float(value)
+            except Exception:
+                return default
+            if num < min_v:
+                return min_v
+            if num > max_v:
+                return max_v
+            return num
+
+        score = _to_float_in_range(parsed.get("score", 0), 0.0, 100.0, 0.0)
+        confidence = _to_float_in_range(parsed.get("confidence", 0), 0.0, 1.0, 0.0)
+        reasoning = str(parsed.get("reasoning", "") or "").strip()
+
+        risk_flags_raw = parsed.get("risk_flags", [])
+        if not isinstance(risk_flags_raw, list):
+            risk_flags_raw = [risk_flags_raw] if risk_flags_raw else []
+        risk_flags = [str(x).strip() for x in risk_flags_raw if str(x).strip()]
+
+        evidence_refs_raw = parsed.get("evidence_refs", [])
+        if not isinstance(evidence_refs_raw, list):
+            evidence_refs_raw = [evidence_refs_raw] if evidence_refs_raw else []
+        evidence_refs = [str(x).strip() for x in evidence_refs_raw if str(x).strip()]
+
+        return {
+            "decision": decision,
+            "score": score,
+            "confidence": confidence,
+            "reasoning": reasoning,
+            "risk_flags": risk_flags,
+            "evidence_refs": evidence_refs,
+        }
+
+    @staticmethod
+    def build_screener_review_prompt(
+        *,
+        trade_date: Any,
+        stock_id: str,
+        stock_name: str,
+        composite_score: Any,
+        mainline_score: Any,
+        cycle_score: Any,
+        leader_score: Any,
+        technical_score: Any,
+        theme_info_json: str,
+        screening_reason: str,
+    ) -> str:
+        return (
+            "你是A股短线交易复核裁决器。\n"
+            "任务：在规则选股结果基础上进行二次复核，输出 pass/watch/reject。\n"
+            "约束：\n"
+            "1. 只能依据给定字段，不得编造未提供的盘口或消息事实。\n"
+            "2. 优先判断短线成立性与风险暴露，再参考题材一致性。\n"
+            "3. 若证据不足，必须降低 confidence 并在 reasoning 标明不足点。\n"
+            "输出：严格 JSON，不要额外文字。\n"
+            "JSON字段：decision(pass/watch/reject/failed), score(0-100), confidence(0-1), reasoning, risk_flags(list), evidence_refs(list)\n"
+            f"交易日: {trade_date}\n"
+            f"股票: {stock_id} {stock_name}\n"
+            f"规则综合分: {composite_score}\n"
+            f"规则分项: mainline={mainline_score}, cycle={cycle_score}, leader={leader_score}, technical={technical_score}\n"
+            f"题材信息: {theme_info_json}\n"
+            f"规则理由: {screening_reason}\n"
+        )
 
     def _board_nature_candidate(self, row: ThemeLeaderLlmCandidateInput) -> str:
         open_pct = ((row.open_price / row.pre_close) - 1) * 100 if row.pre_close and row.open_price else 0.0
@@ -229,19 +339,7 @@ class ThemeLeaderLlmJudgementService:
         )
 
     def parse_llm_response(self, payload: dict[str, Any], response: dict[str, Any]) -> dict[str, Any]:
-        if isinstance(response.get("response"), str):
-            raw_text = str(response.get("response") or "").strip()
-            if raw_text.startswith("```json"):
-                raw_text = raw_text[7:]
-            if raw_text.endswith("```"):
-                raw_text = raw_text[:-3]
-            raw_text = raw_text.strip()
-            try:
-                parsed_wrapper = json.loads(raw_text)
-                if isinstance(parsed_wrapper, dict):
-                    response = parsed_wrapper
-            except Exception:
-                pass
+        response = self.extract_response_json(response)
 
         candidates = payload.get("candidates") or []
         valid_stock_ids = {str(item.get("stock_id") or "").strip() for item in candidates}

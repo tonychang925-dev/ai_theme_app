@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>检查路径逻辑</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .code { background: #f0f0f0; padding: 10px; margin: 10px 0; font-family: monospace; }
+        .result { padding: 10px; margin: 10px 0; border-left: 4px solid #3b82f6; }
+    </style>
+</head>
+<body>
+    <h1>检查App.tsx路径匹配逻辑</h1>
+
+    <div class="code">
+        // App.tsx中的路径匹配逻辑：
+        if (path.startsWith("/themes/")) { ... }
+        if (path.startsWith("/stocks/")) { ... }
+        if (path.startsWith("/recap")) { ... }
+        if (path.startsWith("/screener-test")) { ... }
+        if (path.startsWith("/screener")) { ... }
+        if (path.startsWith("/collection-debug")) { ... }
+        if (path.startsWith("/realtime-collector")) { ... }
+        if (path.startsWith("/collection")) { ... }
+        if (path.startsWith("/test")) { ... }
+        return &lt;IntelPage /&gt;  // 默认
+    </div>
+
+    <button onclick="checkCurrentPath()">检查当前路径</button>
+    <button onclick="simulateAppLogic()">模拟App逻辑</button>
+
+    <div id="result" class="result"></div>
+
+    <script>
+        function checkCurrentPath() {
+            const result = document.getElementById('result');
+            const path = window.location.pathname;
+
+            result.innerHTML = `
+                当前路径: <strong>${path}</strong><br>
+                完整URL: ${window.location.href}<br>
+                哈希: ${window.location.hash}<br>
+                搜索参数: ${window.location.search}
+            `;
+        }
+
+        function simulateAppLogic() {
+            const result = document.getElementById('result');
+            const path = window.location.pathname;
+
+            const routes = [
+                { prefix: '/themes/', name: 'ThemeWorkspacePage' },
+                { prefix: '/stocks/', name: 'StockWorkspacePage' },
+                { prefix: '/recap', name: 'RecapPage' },
+                { prefix: '/screener-test', name: 'TestPage' },
+                { prefix: '/screener', name: 'StockScreenerPage' },
+                { prefix: '/collection-debug', name: 'CollectionDebugPage' },
+                { prefix: '/realtime-collector', name: 'RealtimeCollectorPage' },
+                { prefix: '/collection', name: 'CollectionPage' },
+                { prefix: '/test', name: 'SSETestPanel' }
+            ];
+
+            let matchedRoute = null;
+
+            for (const route of routes) {
+                if (path.startsWith(route.prefix)) {
+                    matchedRoute = route;
+                    break;
+                }
+            }
+
+            if (matchedRoute) {
+                result.innerHTML = `匹配的路由: <strong>${matchedRoute.name}</strong> (前缀: ${matchedRoute.prefix})<br>`;
+                result.innerHTML += `不会渲染IntelPage！`;
+            } else {
+                result.innerHTML = `没有匹配任何特定路由<br>`;
+                result.innerHTML += `应该渲染: <strong>IntelPage</strong> (默认路由)`;
+            }
+
+            // 检查是否是根路径
+            if (path === '/' || path === '') {
+                result.innerHTML += `<br><br>✅ 根路径，应该渲染IntelPage`;
+            } else {
+                result.innerHTML += `<br><br>⚠️ 不是根路径，当前路径: ${path}`;
+            }
+        }
+
+        // 自动检查
+        setTimeout(() => {
+            checkCurrentPath();
+            simulateAppLogic();
+        }, 500);
+    </script>
+</body>
+</html>

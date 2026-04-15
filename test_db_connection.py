@@ -3,83 +3,67 @@
 测试数据库连接
 """
 import asyncio
-import sys
+import asyncpg
 import os
+from datetime import date
 
-sys.path.insert(0, os.getcwd())
+async def test_db():
+    print("测试数据库连接...")
 
-async def test_database():
-    print("🧪 测试数据库连接")
-    print("=" * 50)
-    
+    # 尝试从环境变量获取连接信息
+    db_host = os.getenv("DB_HOST", "localhost")
+    db_port = os.getenv("DB_PORT", "5432")
+    db_name = os.getenv("DB_NAME", "postgres")
+    db_user = os.getenv("DB_USER", "admin")
+    db_password = os.getenv("DB_PASSWORD", "")
+
+    print(f"连接参数: host={db_host}, port={db_port}, db={db_name}, user={db_user}")
+
     try:
-        from theme_service.config import settings
-        from theme_service.database import ThemeDatabase
-        
-        print(f"数据库URL: {settings.DATABASE_URL}")
-        
-        # 创建数据库连接
-        db = ThemeDatabase(settings.DATABASE_URL)
-        
-        print("1. 测试数据库初始化...")
-        success = await db.initialize()
-        
-        if success:
-            print("   ✅ 数据库初始化成功")
-        else:
-            print("   ❌ 数据库初始化失败")
-            return False
-        
-        print("\n2. 测试健康检查...")
-        healthy = await db.health_check()
-        
-        if healthy:
-            print("   ✅ 数据库连接正常")
-        else:
-            print("   ❌ 数据库连接失败")
-            return False
-        
-        print("\n3. 检查 news_event 表...")
+        conn = await asyncpg.connect(
+            host=db_host,
+            port=int(db_port),
+            database=db_name,
+            user=db_user,
+            password=db_password,
+            timeout=10
+        )
+        print("✅ 数据库连接成功")
+
+        # 测试查询
+        print("\n测试weak_to_strong_candidate_pool表...")
         try:
-            # 尝试查询事件
-            events = await db.get_recent_events(limit=5)
-            print(f"   ✅ 找到 {len(events)} 个事件")
-            
-            if events:
-                print("   最近事件示例:")
-                for i, event in enumerate(events[:3]):
-                    print(f"     {i+1}. ID:{event.get('id')} - {event.get('title', '无标题')[:30]}...")
+            count = await conn.fetchval("SELECT COUNT(*) FROM weak_to_strong_candidate_pool")
+            print(f"总记录数: {count}")
+
+            # 查询2026-04-07的数据
+            rows = await conn.fetch("""
+                SELECT trade_date, next_trade_date, stock_id, candidate_score
+                FROM weak_to_strong_candidate_pool
+                WHERE trade_date = $1 OR next_trade_date = $1
+                LIMIT 5
+            """, date(2026, 4, 7))
+
+            print(f"2026-04-07相关记录数: {len(rows)}")
+            for row in rows:
+                print(f"  stock_id={row['stock_id']}, trade_date={row['trade_date']}, next_trade_date={row['next_trade_date']}, score={row['candidate_score']}")
+
         except Exception as e:
-            print(f"   ⚠️  查询事件失败: {e}")
-            print("   可能需要手动创建表或等待 model_service 生成数据")
-        
-        print("\n4. 检查 theme_master 表...")
-        try:
-            themes = await db.get_themes_by_status("active", limit=5)
-            print(f"   ✅ 找到 {len(themes)} 个主题")
-        except Exception as e:
-            print(f"   ⚠️  查询主题失败: {e}")
-        
-        print("\n" + "=" * 50)
-        print("🎉 数据库连接测试完成")
-        return True
-        
+            print(f"查询表失败: {e}")
+            # 检查表是否存在
+            tables = await conn.fetch("""
+                SELECT table_name FROM information_schema.tables
+                WHERE table_schema = 'public'
+            """)
+            print(f"可用表: {[t['table_name'] for t in tables[:10]]}")
+
+        await conn.close()
+        print("\n✅ 数据库测试完成")
+
     except Exception as e:
-        print(f"\n❌ 测试失败: {e}")
+        print(f"❌ 数据库连接失败: {e}")
         import traceback
         traceback.print_exc()
-        return False
 
 if __name__ == "__main__":
-    print("测试 theme_service 数据库连接...")
-    print("注意: 需要确保 PostgreSQL 服务正在运行")
-    print("-" * 50)
-    
-    success = asyncio.run(test_database())
-    
-    if success:
-        print("\n✅ 数据库连接正常，可以开始数据流集成")
-    else:
-        print("\n⚠️  数据库连接有问题，需要先解决")
-    
-    sys.exit(0 if success else 1)
+    asyncio.run(test_db())

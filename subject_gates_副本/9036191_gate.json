@@ -1,0 +1,55 @@
+{
+  "must": [
+    "参股",
+    "供货",
+    "应用",
+    "人形机器人"
+  ],
+  "should": [
+    "核心零部件",
+    "本体制造",
+    "算法系统",
+    "应用场景",
+    "具身智能",
+    "百亿估值",
+    "出货量",
+    "营收",
+    "市场份额",
+    "销售收入",
+    "新兴产业",
+    "商业化量产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "参股",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "参股"
+    },
+    {
+      "term": "供货",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "供货"
+    },
+    {
+      "term": "应用",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "应用"
+    },
+    {
+      "term": "人形机器人",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人形机器人"
+    }
+  ],
+  "subject_id": "9036191",
+  "quality": "weak",
+  "generated_at": "2026-04-01T15:15:46",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

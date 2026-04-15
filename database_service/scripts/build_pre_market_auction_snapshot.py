@@ -63,10 +63,17 @@ def get_postgres_config() -> DatabaseConfig:
 def parse_args():
     parser = argparse.ArgumentParser(description="构建 pre_market_auction_snapshot")
     parser.add_argument("--trade-date", required=True, help="目标交易日 YYYY-MM-DD")
+    parser.add_argument(
+        "--universe-source",
+        default="auction_watch_universe",
+        choices=["auction_watch_universe", "weak_to_strong_candidates"],
+        help="候选来源：auction_watch_universe 或 weak_to_strong_candidates",
+    )
     parser.add_argument("--proxy-ratio", type=float, default=0.08, help="前一日最大分时成交额代理系数")
     parser.add_argument("--token", default=os.getenv("TUSHARE_TOKEN", ""), help="Tushare token，可选")
     parser.add_argument("--timeline-json", default="", help="可选：竞价时间序列 JSON 文件")
     parser.add_argument("--force-refresh", action="store_true", help="强制刷新竞价快照")
+    parser.add_argument("--max-stocks", type=int, default=0, help="可选：仅处理前N只（按候选优先级），0表示不限制")
     parser.add_argument("--top-k", type=int, default=20, help="输出预览前 K 条")
     return parser.parse_args()
 
@@ -108,6 +115,50 @@ async def fetch_watch_universe(manager: PostgresDatabaseManager, trade_date_valu
     async with manager.pool.acquire() as conn:
         rows = await conn.fetch(sql, trade_date_value)
     return [dict(r) for r in rows]
+
+
+def _role_label_from_candidate_type(candidate_type: str) -> str:
+    mapping = {
+        "dragon_repair": "龙头",
+        "subdragon_repair": "龙二",
+        "strong_trend_repair": "强趋势",
+        "bad_limit_repair": "强趋势",
+        "upper_shadow_repair": "强趋势",
+        "generic_repair": "强趋势",
+    }
+    return mapping.get(str(candidate_type or "").strip(), "强趋势")
+
+
+async def fetch_weak_to_strong_universe(manager: PostgresDatabaseManager, trade_date_value: date):
+    sql = """
+    SELECT
+        stock_id,
+        stock_name,
+        subject_key,
+        theme_name,
+        candidate_type,
+        candidate_score
+    FROM weak_to_strong_candidate_pool
+    WHERE next_trade_date = $1
+    ORDER BY candidate_score DESC, id ASC
+    """
+    async with manager.pool.acquire() as conn:
+        rows = await conn.fetch(sql, trade_date_value)
+    payload = []
+    for row in rows:
+        payload.append(
+            {
+                "stock_id": row["stock_id"],
+                "stock_name": row["stock_name"],
+                "subject_key": row["subject_key"],
+                "theme_name": row["theme_name"] or row["subject_key"] or "",
+                "role_label": _role_label_from_candidate_type(str(row["candidate_type"] or "")),
+                "theme_tier": "main",
+                "action_bias": "watch_open",
+                "is_reversal_watch": True,
+            }
+        )
+    return payload
 
 
 async def fetch_prev_day_context(manager: PostgresDatabaseManager, trade_date_value: date, stock_ids: list[str]):
@@ -270,9 +321,14 @@ async def main_async() -> int:
     try:
         await ensure_tables(manager)
         timeline_map = _load_timeline_map(args.timeline_json)
-        universe = await fetch_watch_universe(manager, trade_date_value)
+        if args.universe_source == "weak_to_strong_candidates":
+            universe = await fetch_weak_to_strong_universe(manager, trade_date_value)
+        else:
+            universe = await fetch_watch_universe(manager, trade_date_value)
+        if int(args.max_stocks or 0) > 0:
+            universe = universe[: max(int(args.max_stocks), 1)]
         if not universe:
-            print(f"[WARN] no auction_watch_universe for trade_date={args.trade_date}")
+            print(f"[WARN] no universe rows for trade_date={args.trade_date} source={args.universe_source}")
             return 0
 
         stock_ids = sorted({str(row["stock_id"]).upper() for row in universe})
@@ -347,6 +403,8 @@ async def main_async() -> int:
 
         await upsert_rows(manager, items)
         print(f"[OK] trade_date={args.trade_date}")
+        print(f"[OK] universe_source={args.universe_source}")
+        print(f"[OK] max_stocks={int(args.max_stocks or 0)}")
         print(f"[OK] raw_cache_hit={raw_result.cache_hit}")
         print(f"[OK] raw_snapshot_path={raw_result.snapshot_path}")
         print(f"[OK] raw_row_count={raw_result.row_count}")

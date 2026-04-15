@@ -1,0 +1,83 @@
+{
+  "test_configuration": {
+    "total_messages": 5,
+    "concurrent_users": 2,
+    "batch_size": 5,
+    "scenario": "constant_load",
+    "duration_seconds": null,
+    "run_id": "870b4904",
+    "batch_id": "stress_test_870b4904",
+    "test_start_time": "2026-04-12T21:25:20.816905",
+    "test_end_time": "2026-04-12T21:25:28.701865"
+  },
+  "performance_statistics": {
+    "overall_success_rate": 0.0,
+    "overall_failure_rate": 1.0,
+    "throughput": 0.0,
+    "test_duration": 7.884959936141968,
+    "news_raw_publish_latency": {
+      "count": 5,
+      "mean": 0.0028485774993896483,
+      "median": 0.002360105514526367,
+      "p50": 0.002360105514526367,
+      "p90": 0.004727029800415039,
+      "p95": 0.004777383804321289,
+      "p99": 0.0048176670074462895,
+      "min": 0.0005772113800048828,
+      "max": 0.004827737808227539,
+      "stddev": 0.0018162410504979204
+    },
+    "news_raw_to_db_latency": {
+      "count": 5,
+      "mean": 2.3887792110443113,
+      "median": 2.0866281986236572,
+      "p50": 2.0866281986236572,
+      "p90": 4.90190773010254,
+      "p95": 4.903055334091187,
+      "p99": 4.903973417282104,
+      "min": 0.01526188850402832,
+      "max": 4.904202938079834,
+      "stddev": 2.442879042650118
+    },
+    "db_to_news_event_latency": {
+      "count": 5,
+      "mean": 0.4187558650970459,
+      "median": 0.0021631717681884766,
+      "p50": 0.0021631717681884766,
+      "p90": 1.251044273376465,
+      "p95": 1.6646966934204097,
+      "p99": 1.9956186294555665,
+      "min": 0.0015270709991455078,
+      "max": 2.0783491134643555,
+      "stddev": 0.9277478315832778
+    },
+    "news_raw_storage_success_rate": 1.0,
+    "news_event_creation_success_rate": 1.0,
+    "structured_publishing_success_rate": 0.0,
+    "decision_generation_success_rate": 0.0,
+    "resource_usage": {}
+  },
+  "real_time_stats": {
+    "peak_concurrent": 2
+  },
+  "summary": {
+    "total_messages": 5,
+    "successful_messages": 0,
+    "failed_messages": 5,
+    "throughput_mps": 0.0,
+    "total_duration_seconds": 7.88
+  },
+  "resource_monitoring": {
+    "system": {
+      "cpu_avg": 52.25,
+      "cpu_max": 87.7,
+      "memory_avg": 69.0,
+      "memory_max": 69.9,
+      "memory_used_avg_mb": 4913.13818359375,
+      "disk_read_total_mb": 223.0234375,
+      "disk_write_total_mb": 10.6015625,
+      "network_sent_total_mb": 23.5546875,
+      "network_recv_total_mb": 23.4951171875
+    }
+  }
+}

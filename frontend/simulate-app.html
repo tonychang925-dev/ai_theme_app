@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模拟应用加载</title>
+    <script type="module">
+        // 模拟实际应用的加载过程
+        console.log('=== 开始模拟应用加载 ===');
+
+        // 1. 加载React
+        const reactPromise = import('http://localhost:5173/node_modules/.vite/deps/react.js?v=c8f69df2');
+
+        // 2. 加载ReactDOM
+        const reactDomPromise = import('http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=c8f69df2');
+
+        // 3. 加载App
+        const appPromise = import('http://localhost:5173/src/App.tsx');
+
+        Promise.all([reactPromise, reactDomPromise, appPromise])
+            .then(([reactModule, reactDomModule, appModule]) => {
+                console.log('✅ 所有模块加载成功');
+
+                const React = reactModule.default || reactModule;
+                const ReactDOM = reactDomModule.default || reactDomModule;
+                const App = appModule.App;
+
+                console.log('React:', React.version ? `v${React.version}` : '已加载');
+                console.log('ReactDOM:', '已加载');
+                console.log('App组件:', typeof App);
+
+                // 渲染应用
+                const root = ReactDOM.createRoot(document.getElementById('root'));
+                root.render(React.createElement(App));
+
+                console.log('✅ 应用渲染完成');
+                document.getElementById('status').textContent = '✅ 应用加载并渲染成功！';
+                document.getElementById('status').className = 'status success';
+            })
+            .catch(error => {
+                console.error('❌ 应用加载失败:', error);
+                document.getElementById('status').textContent = `❌ 加载失败: ${error.message}`;
+                document.getElementById('status').className = 'status error';
+                document.getElementById('error-details').textContent = error.stack;
+            });
+
+        // 监听未捕获的错误
+        window.addEventListener('error', (event) => {
+            console.error('未捕获的错误:', event.error);
+            document.getElementById('uncaught-errors').textContent += `\n${event.error.message}`;
+        });
+
+        window.addEventListener('unhandledrejection', (event) => {
+            console.error('未处理的Promise拒绝:', event.reason);
+            document.getElementById('uncaught-errors').textContent += `\nPromise拒绝: ${event.reason}`;
+        });
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            padding: 20px;
+            background: #1a1a1a;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #3b82f6;
+        }
+        .status {
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+        .success {
+            background: #10b98120;
+            border: 2px solid #10b981;
+            color: #a7f3d0;
+        }
+        .error {
+            background: #ef444420;
+            border: 2px solid #ef4444;
+            color: #fca5a5;
+        }
+        .info {
+            background: #3b82f620;
+            border: 2px solid #3b82f6;
+            color: #93c5fd;
+        }
+        .log {
+            background: #333;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        #root {
+            min-height: 200px;
+            background: #2a2a2a;
+            border-radius: 12px;
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px dashed #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>模拟应用加载</h1>
+
+        <div class="status info">
+            <p>这个页面模拟实际应用的加载过程，帮助诊断问题。</p>
+            <p>查看浏览器控制台（F12 → Console）查看详细日志。</p>
+        </div>
+
+        <div id="status" class="status">
+            加载中...
+        </div>
+
+        <div class="info">
+            <h3>渲染区域：</h3>
+            <div id="root">
+                <p>应用将渲染在这里...</p>
+            </div>
+        </div>
+
+        <div class="info">
+            <h3>未捕获的错误：</h3>
+            <div id="uncaught-errors" class="log">无</div>
+        </div>
+
+        <div class="info">
+            <h3>错误详情：</h3>
+            <div id="error-details" class="log">无</div>
+        </div>
+
+        <div class="info">
+            <h3>说明：</h3>
+            <p>如果上方显示"✅ 应用加载并渲染成功"，但实际页面不显示更新：</p>
+            <ol>
+                <li><strong>100%是浏览器缓存问题</strong></li>
+                <li>使用无痕模式访问：<code>http://localhost:5173</code></li>
+                <li>或按 Ctrl+Shift+R 强制刷新</li>
+            </ol>
+            <p>如果显示错误，请截图错误信息。</p>
+        </div>
+    </div>
+
+    <script>
+        // 记录页面加载时间
+        console.log('页面加载时间:', new Date().toLocaleString());
+        console.log('模拟应用页面URL:', window.location.href);
+    </script>
+</body>
+</html>

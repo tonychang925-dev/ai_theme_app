@@ -1,0 +1,44 @@
+{
+  "must": [
+    "合作",
+    "参股",
+    "公司"
+  ],
+  "should": [
+    "微纳量子纠缠光源",
+    "光量子信息处理芯片",
+    "超导量子比特",
+    "超导量子计算机",
+    "祖冲之三号",
+    "量子计算机",
+    "传输速率",
+    "技术实力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "合作",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "合作"
+    },
+    {
+      "term": "参股",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "参股"
+    },
+    {
+      "term": "公司",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "公司"
+    }
+  ],
+  "subject_id": "9035331",
+  "quality": "weak",
+  "generated_at": "2026-04-02T10:12:17",
+  "semantic_type": "公司事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

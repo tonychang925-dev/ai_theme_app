@@ -8,6 +8,7 @@ import json
 import aiohttp
 import asyncio
 import sys
+from pathlib import Path
 from typing import Dict, Any, Optional, List
 
 # === 导入BaseLLMParser ===
@@ -47,18 +48,43 @@ except ImportError:
         return None
 
 
+def get_deepseek_api_key() -> str:
+    """获取DEEPSEEK_API_KEY，优先从.env.theme文件读取"""
+    # 首先尝试从.env.theme文件读取
+    env_vars = {}
+    try:
+        env_path = Path(".env.theme")
+        if env_path.exists():
+            with open(env_path, 'r') as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith('#') and '=' in line:
+                        key, value = line.split('=', 1)
+                        env_vars[key.strip()] = value.strip()
+    except Exception:
+        pass
+
+    api_key = env_vars.get("DEEPSEEK_API_KEY", "").strip()
+
+    # 如果.env.theme中没有，尝试从环境变量读取
+    if not api_key:
+        api_key = os.getenv("DEEPSEEK_API_KEY", "").strip()
+
+    return api_key
+
+
 class DeepSeekParser(BaseLLMParser):
     """DeepSeek API解析器 - 🔥 只使用真实API，无模拟"""
-    
+
     def __init__(self, model_name: str = "deepseek-chat"):
         super().__init__(model_name)
-        
+
         # 🔥 强制要求真实API密钥
-        self.api_key = os.getenv("DEEPSEEK_API_KEY")
+        self.api_key = get_deepseek_api_key()
         if not self.api_key:
             raise ValueError(
                 "❌ DEEPSEEK_API_KEY 环境变量未设置\n"
-                "请在运行前设置: export DEEPSEEK_API_KEY='your-api-key'"
+                "请在运行前设置: export DEEPSEEK_API_KEY='your-api-key' 或添加到 .env.theme 文件"
             )
         
         # 🔥 检查是否为测试密钥

@@ -1,0 +1,48 @@
+{
+  "must": [
+    "乳制品",
+    "食品",
+    "饮料"
+  ],
+  "should": [
+    "调料",
+    "蔬菜",
+    "抽检监测力度",
+    "超范围",
+    "超限量",
+    "非法添加",
+    "零容忍",
+    "合规使用",
+    "责任底线",
+    "信誉基石",
+    "国内大循环",
+    "不合理限制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "乳制品",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "乳制品"
+    },
+    {
+      "term": "食品",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "食品"
+    },
+    {
+      "term": "饮料",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "饮料"
+    }
+  ],
+  "subject_id": "9016453",
+  "quality": "weak",
+  "generated_at": "2026-04-02T11:04:21",
+  "semantic_type": "消费品类",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

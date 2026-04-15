@@ -1,0 +1,38 @@
+{
+  "must": [
+    "铝土矿",
+    "氧化铝",
+    "电解铝"
+  ],
+  "should": [
+    "铝制品",
+    "再生铝"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铝土矿",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "铝土矿"
+    },
+    {
+      "term": "氧化铝",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "氧化铝"
+    },
+    {
+      "term": "电解铝",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电解铝"
+    }
+  ],
+  "subject_id": "9023134",
+  "quality": "weak",
+  "generated_at": "2026-04-04T16:08:14",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

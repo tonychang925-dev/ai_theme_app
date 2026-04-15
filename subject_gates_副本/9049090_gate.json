@@ -1,0 +1,57 @@
+{
+  "must": [
+    "数据中心供电",
+    "高压直流输电",
+    "HVDC供电方案"
+  ],
+  "should": [
+    "电信行业",
+    "互联网行业",
+    "双路供电设计",
+    "计算平台",
+    "单柜功率密度",
+    "高功率服务器",
+    "高能效",
+    "高功率密度",
+    "低维护成本",
+    "省去了逆变环节",
+    "减少了能量损耗",
+    "单柜功率密度可突破60kW"
+  ],
+  "not": [
+    "谷歌",
+    "Brookfield资产管理公司",
+    "达成协议",
+    "锁定发电量",
+    "人工智能发展计划",
+    "维谛",
+    "英伟达",
+    "战略协同"
+  ],
+  "evidence_refs": [
+    {
+      "term": "数据中心供电",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据中心供电"
+    },
+    {
+      "term": "高压直流输电",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高压直流输电"
+    },
+    {
+      "term": "HVDC供电方案",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "HVDC供电方案"
+    }
+  ],
+  "subject_id": "9049090",
+  "quality": "strong",
+  "generated_at": "2026-04-02T02:04:32",
+  "semantic_type": "技术突破与应用",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

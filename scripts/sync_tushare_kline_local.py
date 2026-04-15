@@ -99,7 +99,9 @@ def main() -> int:
 
     project_root = Path(args.project_root).resolve()
     start_date, end_date = _resolve_dates(args.start_date, args.end_date, args.months)
-    explicit_date_range = bool(args.start_date or args.end_date)
+    # 仅当显式传入 start_date 时，视为用户要求自定义历史区间。
+    # 日常盘后任务只传 end-date，不应因此禁用 resume/skip-existing。
+    explicit_date_range = bool(args.start_date)
     universe = _resolve_universe(project_root, args.stock_ids, args.from_jyhf_universe)
     if args.limit and args.limit > 0:
         universe = universe[: args.limit]
@@ -131,10 +133,14 @@ def main() -> int:
         attempted += 1
         target_path = store.daily_bar_dir / f"{stock_id}.jsonl"
         if args.resume and not explicit_date_range and stock_id in completed:
+            if attempted <= 5 or attempted % 200 == 0:
+                print(f"[SKIP] attempted={attempted}/{len(universe)} stock_id={stock_id} reason=resume_completed")
             continue
         if args.skip_existing and target_path.exists() and not explicit_date_range:
             skipped_existing += 1
             skipped.add(stock_id)
+            if attempted <= 5 or attempted % 200 == 0:
+                print(f"[SKIP] attempted={attempted}/{len(universe)} stock_id={stock_id} reason=existing_file")
             if args.resume:
                 _write_progress(progress_path, completed, skipped)
             continue

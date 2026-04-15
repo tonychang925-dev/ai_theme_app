@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
+cd "${PROJECT_DIR}"
+
+# 单入口 ./claude：默认使用 deepseek-chat，复杂任务再会话内 /model 手动切换
+if [[ -f "${HOME}/.claude/settings.fast.json" ]]; then
+  export CLAUDE_CONFIG_DIR="${HOME}/.claude"
+  exec bun /Users/admin/Desktop/claude-code-source-main/src/entrypoints/dev-cli.tsx --settings "${HOME}/.claude/settings.fast.json" "$@"
+fi
+
+# 如果用户显式传了 --model，则尊重用户参数；否则默认 deepseek-chat
+if [[ " $* " == *" --model "* ]]; then
+  exec /Users/admin/Desktop/ai_theme_app/.claude/bin/claude-dev-stable "$@"
+else
+  exec /Users/admin/Desktop/ai_theme_app/.claude/bin/claude-dev-stable --model deepseek-chat "$@"
+fi

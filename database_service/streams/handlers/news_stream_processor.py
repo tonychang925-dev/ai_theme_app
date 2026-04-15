@@ -3,7 +3,9 @@
 职责：监听新闻存储完成事件 → 触发业务处理（如AI分析）→ 处理结果
 """
 import asyncio
+import json
 import logging
+import time
 from datetime import datetime
 from typing import Dict, Any, Optional, List
 
@@ -18,6 +20,12 @@ except ImportError as e:
     HAS_MODEL_SERVICE = False
     logger.warning(f"⚠️ 无法导入ModelService: {e}")
     logger.info("💡 未检测到ModelService，news_stream_processor将无法启动")
+
+try:
+    from database_service.streams.services.local_qwen_triage_service import LocalQwenNewsTriageService
+    HAS_LOCAL_QWEN_TRIAGE = True
+except ImportError:
+    HAS_LOCAL_QWEN_TRIAGE = False
 
 
 class NewsStreamProcessor:
@@ -61,11 +69,30 @@ class NewsStreamProcessor:
             "processor_name": f"business_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
             "event_types": ["news.stored", "news.updated"],  # 监听的事件类型
             "enable_ai_analysis": self.config.get("enable_ai_analysis", True),  # 🔥 默认启用
+            "enable_local_triage": self.config.get("enable_local_triage", True),
+            "triage_mode": self.config.get("triage_mode", "prompt"),
+            "triage_block_on_skip": self.config.get("triage_block_on_skip", True),
+            "triage_pass_threshold": self.config.get("triage_pass_threshold", 0.06),
+            "triage_skip_threshold": self.config.get("triage_skip_threshold", -0.02),
+            "local_qwen_model_path": self.config.get("local_qwen_model_path", ""),
             "enable_sentiment_analysis": self.config.get("enable_sentiment_analysis", False),
             "enable_topic_extraction": self.config.get("enable_topic_extraction", False),
             "batch_processing": self.config.get("batch_processing", True),
             "batch_size": self.config.get("batch_size", 5)
         }
+
+        self.local_triage_service = None
+        if self.processor_config["enable_local_triage"] and HAS_LOCAL_QWEN_TRIAGE:
+            self.local_triage_service = LocalQwenNewsTriageService(
+                {
+                    "enable_local_triage": True,
+                    "triage_mode": self.processor_config["triage_mode"],
+                    "triage_pass_threshold": self.processor_config["triage_pass_threshold"],
+                    "triage_skip_threshold": self.processor_config["triage_skip_threshold"],
+                    "local_qwen_model_path": self.processor_config["local_qwen_model_path"],
+                }
+            )
+            logger.info("🧪 本地Qwen预筛选已启用（失败自动降级规则模式）")
         
         # 运行状态
         self.running = False
@@ -140,6 +167,9 @@ class NewsStreamProcessor:
                     
                     # 更新统计
                     await self._update_business_stats(processing_results)
+
+                    # 确认处理成功的消息
+                    await self._acknowledge_processed_events(events, processing_results)
                     
                 else:
                     # 没有事件时
@@ -155,33 +185,139 @@ class NewsStreamProcessor:
                 await asyncio.sleep(5)
     
     async def _listen_for_events(self) -> List[Dict[str, Any]]:
-        """监听事件"""
+        """监听事件 - 从 events_normal Stream消费news.stored事件"""
         try:
-            # 根据event_bus的实际接口调整
-            if hasattr(self.event_bus, 'subscribe'):
-                await asyncio.sleep(2)
-                return []
-            elif hasattr(self.event_bus, 'consume_events'):
-                return await self.event_bus.consume_events(
-                    event_types=self.processor_config["event_types"],
-                    count=self.processor_config["batch_size"]
+            if hasattr(self.event_bus, 'consume_from_stream'):
+                # 从独立业务事件流消费，避免与news_raw原始流形成回路
+                messages = await self.event_bus.consume_from_stream(
+                    stream="events_normal",
+                    group=self.processor_config["processor_group"],
+                    consumer=self.processor_config["processor_name"],
+                    count=self.processor_config["batch_size"],
+                    block_ms=5000  # 5秒阻塞等待
                 )
+                # 将消息转换为事件格式
+                if messages:
+                    logger.info(f"📥 收到 {len(messages)} 条原始消息")
+                events = []
+                message_ids_to_ack = []
+
+                for msg in messages:
+                    msg_id = msg.get('id')
+                    msg_data = msg.get('data', {})
+
+                    # 调试：查看原始消息结构
+                    logger.debug(f"原始消息 ID: {msg_id}, 数据键名: {list(msg_data.keys())}")
+
+                    # 处理payload字段：可能是JSON字符串
+                    event_data = msg_data
+                    if 'payload' in msg_data:
+                        try:
+                            # 解析payload JSON
+                            payload_str = msg_data['payload']
+                            if isinstance(payload_str, str):
+                                event_data = json.loads(payload_str)
+                                logger.debug(f"解析payload成功，event_data键名: {list(event_data.keys())}")
+                            else:
+                                # 如果不是字符串，直接使用
+                                event_data = payload_str
+                        except Exception as e:
+                            logger.warning(f"解析payload失败: {e}")
+                            # 仍然确认消息，避免pending堆积
+                            message_ids_to_ack.append(msg_id)
+                            continue
+                    else:
+                        logger.debug(f"消息无payload字段，直接使用msg_data")
+
+                    # 检查事件类型是否符合监听类型
+                    event_type = event_data.get('event_type')
+                    logger.debug(f"检查事件类型: {event_type}, 监听类型: {self.processor_config['event_types']}")
+
+                    if event_type in self.processor_config["event_types"]:
+                        events.append({
+                            'id': msg_id,
+                            'event_type': event_type,
+                            'data': event_data
+                        })
+                        logger.info(f"✅ 识别到事件: {event_type}, 消息ID: {msg_id}")
+                    else:
+                        logger.debug(f"不是监听的事件类型: {event_type}")
+                    # 记录所有消息ID用于确认
+                    message_ids_to_ack.append(msg_id)
+
+                # 确认所有消息（包括非事件消息）
+                await self._acknowledge_messages(message_ids_to_ack)
+                return events
             else:
+                # 降级处理
                 await asyncio.sleep(2)
                 return []
-                
         except Exception as e:
             logger.error(f"监听事件失败: {e}")
             return []
     
     async def _process_events_batch(self, events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-        """处理事件批次"""
+        """处理事件批次 - 优化版：并行处理以提高AI分析效率"""
+        if not events:
+            return []
+
+        # 记录批次信息
+        logger.info(f"🧠 并行处理批次: {len(events)} 个事件")
+
+        # 创建并行处理任务
+        tasks = [self._process_single_event(event) for event in events]
+
+        try:
+            # 并行执行所有任务，允许异常返回
+            results = await asyncio.gather(*tasks, return_exceptions=True)
+
+            processed_results = []
+            success_count = 0
+            error_count = 0
+
+            for i, result in enumerate(results):
+                if isinstance(result, Exception):
+                    # 处理异常结果
+                    error_count += 1
+                    logger.error(f"处理事件 {i} 失败: {result}")
+
+                    # 生成错误结果记录
+                    event_id = events[i].get('id', f'unknown_{i}')
+                    processed_results.append({
+                        "event_id": event_id,
+                        "event_type": events[i].get('event_type', 'unknown'),
+                        "processing_success": False,
+                        "business_results": {},
+                        "error": str(result),
+                        "processing_time": datetime.now().isoformat(),
+                        "source_type": "parallel_batch"
+                    })
+                else:
+                    # 正常结果
+                    success_count += 1
+                    processed_results.append(result)
+
+            # 记录批次处理统计
+            if success_count > 0:
+                logger.info(f"✅ 批次处理完成: {success_count} 成功, {error_count} 失败")
+
+            return processed_results
+
+        except Exception as e:
+            # 整体批次处理异常
+            logger.error(f"批次处理异常: {e}")
+            # 回退到顺序处理作为降级方案
+            logger.warning("⚠️  回退到顺序处理")
+            return await self._sequential_process_events_batch(events)
+
+    async def _sequential_process_events_batch(self, events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """顺序处理事件批次 - 降级方案"""
         results = []
-        
+
         for event in events:
             result = await self._process_single_event(event)
             results.append(result)
-        
+
         return results
     
     async def process_stream_message(self, message_id: str, message_data: Dict[str, Any]) -> Dict[str, Any]:
@@ -386,6 +522,10 @@ class NewsStreamProcessor:
             # 🔥 如果没有news_data字段，检查event_data本身是否就是新闻数据
             if not news_data and any(key in event_data for key in ['title', 'content', 'news_id']):
                 news_data = event_data
+
+            # 透传存储层产出的 news_raw 主键，供 news_event.news_id 使用
+            if isinstance(news_data, dict) and event_data.get("stored_news_id") is not None and news_data.get("stored_news_id") is None:
+                news_data["stored_news_id"] = event_data.get("stored_news_id")
             
             if not news_data or ('title' not in news_data and 'content' not in news_data):
                 result["error"] = "事件中没有有效的新闻数据"
@@ -419,12 +559,57 @@ class NewsStreamProcessor:
     
     async def _process_news_stored_event(self, news_data: Dict[str, Any]) -> Dict[str, Any]:
         """处理新闻存储完成事件：news_raw -> structured news_event -> structured stream"""
+        news_id = news_data.get('news_id', 'unknown')
+        logger.info(f"🔄 开始处理新闻存储事件: {news_id}")
+
         business_results = {
             "event_type": "news.stored",
             "processing_steps": [],
             "results": {}
         }
-        
+
+        # 步骤0: 本地预筛选（可选）
+        triage_decision = "PASS"
+        if self.local_triage_service:
+            triage_result = self.local_triage_service.evaluate(news_data)
+            triage_decision = str(triage_result.get("decision") or "PASS").upper()
+            business_results["results"]["local_triage"] = triage_result
+            business_results["processing_steps"].append("local_triage")
+
+            if triage_decision == "SKIP" and self.processor_config["triage_block_on_skip"]:
+                logger.info(f"⏭️ 本地预筛选判定跳过大模型: {news_id}, reason={triage_result.get('reason')}")
+                basic_structured_event = {
+                    "news_id": self._resolve_news_row_id(news_data),
+                    "event_type": "news.stored",
+                    "impact_industries": [],
+                    "direction": "neutral",
+                    "confidence": 0.2,
+                    "summary": news_data.get('title', '预筛选跳过'),
+                    "theme_directive": {
+                        "structuring_version": "1.0",
+                        "llm_request_id": None,
+                        "reason": f"triage_skip:{triage_result.get('reason')}",
+                    },
+                    "theme_directive_processed": False,
+                    "severity_score": 0.2,
+                    "source_weight": 0.3,
+                    "event_time": news_data.get('publish_date', datetime.now().isoformat()),
+                    "entities": [],
+                    "causal_claim": [],
+                    "evidence_set": {},
+                    "raw_event_json": news_data,
+                    "structuring_version": "1.0",
+                    "llm_request_id": None,
+                }
+                persistence = await self._persist_and_publish_structured_event(
+                    basic_structured_event,
+                    publish_stream=False,
+                )
+                business_results["results"]["structured_event"] = basic_structured_event
+                business_results["results"]["news_event_persistence"] = persistence
+                business_results["processing_steps"].append("news_event_persist_triage_only")
+                return business_results
+
         # 步骤1: AI分析（如果启用）
         if self.processor_config["enable_ai_analysis"]:
             try:
@@ -494,7 +679,62 @@ class NewsStreamProcessor:
                 self.business_stats["topic_extraction_count"] += 1
             except Exception as e:
                 logger.warning(f"主题提取失败: {e}")
-        
+
+        # 如果没有生成结构化事件（AI分析失败或未启用），创建一个基本的事件并发布
+        logger.info(f"🔄 检查是否需要创建基本结构化事件: {news_id}, structured_event 存在? {'structured_event' in business_results['results']}")
+        if "structured_event" not in business_results["results"]:
+            logger.info(f"🔄 AI分析失败或未启用，为 {news_id} 创建基本结构化事件")
+            try:
+                # news_event.news_id 仅允许整数 news_raw.id
+                fallback_news_row_id = self._resolve_news_row_id(news_data)
+                fallback_news_display_id = news_data.get("news_id") or news_data.get("id") or "unknown"
+                logger.info(
+                    f"🔄 创建基本结构化事件，新闻标识: {fallback_news_display_id}, news_row_id={fallback_news_row_id}"
+                )
+
+                # 创建基本的结构化事件
+                basic_structured_event = {
+                    "news_id": fallback_news_row_id,
+                    "event_type": "news.stored",
+                    "impact_industries": [],
+                    "direction": "neutral",
+                    "confidence": 0.5,
+                    "summary": news_data.get('title', '无标题新闻'),
+                    "theme_directive": {
+                        "structuring_version": "1.0",
+                        "llm_request_id": None,
+                        "reason": "ai_fallback",
+                    },
+                    "theme_directive_processed": False,
+                    "severity_score": 0.5,
+                    "source_weight": 0.5,
+                    "event_time": news_data.get('publish_date', datetime.now().isoformat()),
+                    "entities": [],
+                    "causal_claim": [],
+                    "evidence_set": {},
+                    "raw_event_json": news_data,
+                    "structuring_version": "1.0",
+                    "llm_request_id": None,
+                }
+
+                logger.info(
+                    f"🔄 调用 _persist_and_publish_structured_event: 标识={fallback_news_display_id}, news_row_id={fallback_news_row_id}"
+                )
+                persistence = await self._persist_and_publish_structured_event(basic_structured_event)
+                logger.info(f"🔄 _persist_and_publish_structured_event 返回: {persistence}")
+
+                business_results["results"]["structured_event"] = basic_structured_event
+                business_results["results"]["news_event_persistence"] = persistence
+                if persistence.get("structured_stream_published"):
+                    business_results["processing_steps"].append("structured_event_publish_fallback")
+                    logger.info(f"✅ 基本结构化事件发布成功: {fallback_news_display_id}")
+                else:
+                    logger.warning(
+                        f"⚠️ 基本结构化事件未发布到stream: {fallback_news_display_id}, persistence: {persistence}"
+                    )
+            except Exception as e:
+                logger.error(f"❌ 创建基本结构化事件失败: {e}", exc_info=True)
+
         return business_results
 
     def _build_structured_news_event(self, news_data: Dict[str, Any], structured_result: Dict[str, Any]) -> Dict[str, Any]:
@@ -527,56 +767,113 @@ class NewsStreamProcessor:
         }
 
     def _resolve_news_row_id(self, news_data: Dict[str, Any]) -> Any:
-        """优先使用已解析的 news_raw.id；否则回退到现有 news_id 字段"""
-        return (
-            news_data.get("news_row_id")
-            or news_data.get("raw_news_id")
-            or news_data.get("stored_news_id")
-            or news_data.get("id")
-            or news_data.get("news_id")
-        )
+        """解析可用于 news_event.news_id 的整型 news_raw.id，无法解析则返回 None。"""
+        candidates = [
+            news_data.get("news_row_id"),
+            news_data.get("stored_news_id"),
+            news_data.get("raw_news_id"),
+            news_data.get("id"),
+            news_data.get("news_id"),
+        ]
+        for value in candidates:
+            parsed = self._coerce_int(value)
+            if parsed is not None:
+                return parsed
+        return None
 
-    async def _persist_and_publish_structured_event(self, structured_event: Dict[str, Any]) -> Dict[str, Any]:
-        """先落库 news_event，再发布 structured 事件"""
+    @staticmethod
+    def _coerce_int(value: Any) -> Optional[int]:
+        """仅接受纯整型值（或纯数字字符串）。"""
+        if value is None:
+            return None
+        if isinstance(value, bool):
+            return None
+        if isinstance(value, int):
+            return value
+        if isinstance(value, str):
+            text = value.strip()
+            if text.isdigit():
+                try:
+                    return int(text)
+                except ValueError:
+                    return None
+        return None
+
+    async def _persist_and_publish_structured_event(
+        self,
+        structured_event: Dict[str, Any],
+        publish_stream: bool = True,
+    ) -> Dict[str, Any]:
+        """先落库 news_event，再按需发布 structured 事件。"""
         persistence = {
             "news_event_id": None,
             "structured_stream_published": False,
             "stream_message_id": None,
         }
 
-        if not self.database_gateway:
-            logger.warning("⚠️ 缺少 database_gateway，跳过 news_event 落库")
-            return persistence
+        news_row_id = structured_event.get("news_id")
+        logger.info(f"📝 开始持久化和发布结构化事件: news_row_id={news_row_id}")
 
-        news_event_id = await self.database_gateway.create_news_event(structured_event)
+        # 处理数据库落库
+        news_event_id = None
+        if self.database_gateway:
+            try:
+                news_event_id = await self.database_gateway.create_news_event(structured_event)
+                logger.info(f"✅ news_event 落库成功: {news_event_id}")
+            except Exception as e:
+                logger.error(f"❌ news_event 落库失败: {e}")
+                news_event_id = None
+        else:
+            logger.warning("⚠️ 缺少 database_gateway，跳过 news_event 落库")
+            # 仍然尝试发布到stream
+            logger.info(f"🔄 跳过落库，直接尝试发布到stream: news_row_id={news_row_id}")
+
         persistence["news_event_id"] = news_event_id
 
-        structured_message = {
-            "event_id": news_event_id,
-            "news_id": structured_event.get("news_id"),
-            "event_type": structured_event.get("event_type"),
-            "summary": structured_event.get("summary"),
-            "source": "news_stream_processor",
-            "structuring_version": structured_event.get("structuring_version"),
-            "llm_request_id": structured_event.get("llm_request_id"),
-        }
+        if publish_stream:
+            # 构建结构化消息，即使没有 news_event_id 也尝试发布
+            structured_message = {
+                "event_id": news_event_id or f"temp_{int(time.time())}_{news_row_id or 'none'}",
+                "news_id": structured_event.get("news_id"),
+                "event_type": structured_event.get("event_type"),
+                "summary": structured_event.get("summary"),
+                "source": "news_stream_processor",
+                "structuring_version": structured_event.get("structuring_version"),
+                "llm_request_id": structured_event.get("llm_request_id"),
+            }
 
-        message_id = await self._publish_structured_event(structured_message)
-        if message_id:
-            persistence["structured_stream_published"] = True
-            persistence["stream_message_id"] = message_id
+            message_id = await self._publish_structured_event(structured_message)
+            if message_id:
+                persistence["structured_stream_published"] = True
+                persistence["stream_message_id"] = message_id
+                logger.info(f"✅ 结构化事件发布成功: {message_id}")
+            else:
+                logger.warning("⚠️ 结构化事件发布失败")
+        else:
+            logger.info("⏸️ 已按策略跳过结构化事件发布（仅落库）")
 
         return persistence
 
     async def _publish_structured_event(self, structured_message: Dict[str, Any]) -> Optional[str]:
         """发布统一的结构化事件消息"""
         if not self.event_bus:
+            logger.warning("⚠️ 缺少 event_bus，无法发布结构化事件")
             return None
 
+        event_type = structured_message.get("event_type", "unknown")
+        news_id = structured_message.get("news_id", "unknown")
+
+        logger.info(f"📤 尝试发布结构化事件到stream: 事件类型={event_type}, 新闻ID={news_id}")
+
         if hasattr(self.event_bus, "publish_structured_event"):
+            logger.debug(f"使用 publish_structured_event 方法")
             return await self.event_bus.publish_structured_event(structured_message)
         if hasattr(self.event_bus, "publish_to_stream"):
-            return await self.event_bus.publish_to_stream("stream:events:structured", structured_message)
+            logger.info(f"使用 publish_to_stream 方法发布到 events_structured")
+            result = await self.event_bus.publish_to_stream("events_structured", structured_message)
+            logger.info(f"📤 发布结果: {result}")
+            return result
+        logger.warning("⚠️ event_bus 不支持发布方法")
         return None
     
     async def _process_news_updated_event(self, news_data: Dict[str, Any]) -> Dict[str, Any]:
@@ -621,6 +918,49 @@ class NewsStreamProcessor:
         if len(self.business_stats["business_results"]) > 100:
             self.business_stats["business_results"] = self.business_stats["business_results"][-100:]
     
+    async def _acknowledge_messages(self, message_ids: List[str]):
+        """确认消息（无论是否包含事件）"""
+        if not hasattr(self.event_bus, 'ack_message'):
+            return
+
+        for msg_id in message_ids:
+            try:
+                await self.event_bus.ack_message(
+                    stream="news_raw",
+                    group=self.processor_config["processor_group"],
+                    message_id=msg_id
+                )
+                logger.debug(f"✅ 确认消息: {msg_id}")
+            except Exception as e:
+                logger.warning(f"确认消息失败 {msg_id}: {e}")
+
+    async def _acknowledge_processed_events(self, events: List[Dict[str, Any]], processing_results: List[Dict[str, Any]]):
+        """确认处理成功的事件"""
+        if not hasattr(self.event_bus, 'ack_message'):
+            return
+
+        # 构建事件ID到处理结果的映射
+        event_result_map = {}
+        for result in processing_results:
+            if result.get("processing_success"):
+                event_id = result.get("event_id")
+                if event_id:
+                    event_result_map[event_id] = result
+
+        # 确认每个成功处理的事件
+        for event in events:
+            event_id = event.get('id')
+            if event_id in event_result_map:
+                try:
+                    await self.event_bus.ack_message(
+                        stream="news_raw",
+                        group=self.processor_config["processor_group"],
+                        message_id=event_id
+                    )
+                    logger.debug(f"✅ 确认消息: {event_id}")
+                except Exception as e:
+                    logger.warning(f"确认消息失败 {event_id}: {e}")
+
     async def stop_business_processing(self):
         """停止业务处理服务"""
         if not self.running:

@@ -1,0 +1,39 @@
+{
+  "must": [
+    "央企重组整合",
+    "国家发展改革委"
+  ],
+  "should": [
+    "钢铁",
+    "有色金属",
+    "能源化工",
+    "华润集团",
+    "中国宝武钢铁集团",
+    "中国五矿集团",
+    "中国石油化工集团",
+    "中国铝业集团",
+    "中小市值",
+    "中字头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "央企重组整合",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "央企重组整合"
+    },
+    {
+      "term": "国家发展改革委",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国家发展改革委"
+    }
+  ],
+  "subject_id": "9032516",
+  "quality": "weak",
+  "generated_at": "2026-04-02T08:44:00",
+  "semantic_type": "政策驱动型产业重组",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

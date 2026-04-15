@@ -1,0 +1,69 @@
+{
+  "must": [
+    "维生素A",
+    "维生素B族",
+    "维生素C",
+    "维生素D",
+    "维生素E",
+    "维生素K"
+  ],
+  "should": [
+    "维生素B1",
+    "泛酸（维生素B5）",
+    "维生素B6",
+    "生物素（维生素B7）",
+    "维生素B12",
+    "维生素B9叶酸",
+    "日本可乐丽",
+    "帝斯曼",
+    "浙江医药",
+    "安迪苏",
+    "金达威",
+    "天新药业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "维生素A",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "维生素A"
+    },
+    {
+      "term": "维生素B族",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "维生素B族"
+    },
+    {
+      "term": "维生素C",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "维生素C"
+    },
+    {
+      "term": "维生素D",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "维生素D"
+    },
+    {
+      "term": "维生素E",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "维生素E"
+    },
+    {
+      "term": "维生素K",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "维生素K"
+    }
+  ],
+  "subject_id": "9027463",
+  "quality": "strong",
+  "generated_at": "2026-04-02T03:40:21",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

@@ -1,0 +1,39 @@
+{
+  "must": [
+    "出口管制",
+    "两用物项"
+  ],
+  "should": [
+    "镓",
+    "锗",
+    "锑",
+    "超硬材料",
+    "石墨",
+    "稀土永磁",
+    "锂电池设备",
+    "正极材料",
+    "沉积设备",
+    "稀土"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "出口管制",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "出口管制"
+    },
+    {
+      "term": "两用物项",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "两用物项"
+    }
+  ],
+  "subject_id": "9035716",
+  "quality": "strong",
+  "generated_at": "2026-04-02T07:15:22",
+  "semantic_type": "政策法规",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

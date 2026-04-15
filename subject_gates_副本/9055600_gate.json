@@ -1,0 +1,48 @@
+{
+  "must": [
+    "电源设备",
+    "温控设备",
+    "IT设备"
+  ],
+  "should": [
+    "柴油发电机组",
+    "UPS不间断电源",
+    "HVDC高压直流系统",
+    "服务器电源",
+    "液冷技术方案",
+    "服务器",
+    "交换机",
+    "光模块",
+    "机柜",
+    "热捕获",
+    "热交换",
+    "热发散"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电源设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电源设备"
+    },
+    {
+      "term": "温控设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "温控设备"
+    },
+    {
+      "term": "IT设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "IT设备"
+    }
+  ],
+  "subject_id": "9055600",
+  "quality": "medium",
+  "generated_at": "2026-04-02T00:03:43",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

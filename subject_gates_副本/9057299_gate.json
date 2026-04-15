@@ -1,0 +1,65 @@
+{
+  "must": [
+    "封测",
+    "上游供货商",
+    "下游客户",
+    "PC芯片",
+    "数据中心芯片"
+  ],
+  "should": [
+    "参股/曾参股",
+    "分销",
+    "图形技术",
+    "类脑AI系统",
+    "极紫外光刻机",
+    "合作",
+    "制程迟滞",
+    "战略失误",
+    "竞争对手联手",
+    "资金链稳固",
+    "产品竞争力不足",
+    "工艺技术落后"
+  ],
+  "not": [
+    "裁员",
+    "净亏损"
+  ],
+  "evidence_refs": [
+    {
+      "term": "封测",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "封测"
+    },
+    {
+      "term": "上游供货商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "上游供货商"
+    },
+    {
+      "term": "下游客户",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "下游客户"
+    },
+    {
+      "term": "PC芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "PC芯片"
+    },
+    {
+      "term": "数据中心芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据中心芯片"
+    }
+  ],
+  "subject_id": "9057299",
+  "quality": "weak",
+  "generated_at": "2026-04-02T02:23:09",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

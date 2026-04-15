@@ -1,0 +1,60 @@
+{
+  "must": [
+    "AI营销",
+    "AI电商",
+    "AI教育",
+    "AI语音",
+    "AI制图"
+  ],
+  "should": [
+    "算力",
+    "算法",
+    "数据",
+    "人才队伍",
+    "开源开放生态体系",
+    "大模型",
+    "大算力",
+    "大数据",
+    "AI助手",
+    "腾讯云"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "AI营销",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI营销"
+    },
+    {
+      "term": "AI电商",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI电商"
+    },
+    {
+      "term": "AI教育",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI教育"
+    },
+    {
+      "term": "AI语音",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI语音"
+    },
+    {
+      "term": "AI制图",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI制图"
+    }
+  ],
+  "subject_id": "9022152",
+  "quality": "strong",
+  "generated_at": "2026-04-01T07:53:05",
+  "semantic_type": "技术突破与产业融合",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

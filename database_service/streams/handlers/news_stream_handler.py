@@ -150,7 +150,7 @@ class NewsStreamHandler:
         try:
             if hasattr(self.stream_bus, 'consume_from_stream'):
                 return await self.stream_bus.consume_from_stream(
-                    stream=self.consumer_config["stream_name"],
+                    stream=self._resolve_stream_key(),
                     group=self.consumer_config["consumer_group"],
                     consumer=self.consumer_config["consumer_name"],
                     count=self.consumer_config["batch_size"],
@@ -163,6 +163,15 @@ class NewsStreamHandler:
                 return []
                 
         except Exception as e:
+            err_text = str(e)
+            if "NOGROUP" in err_text:
+                logger.warning("检测到NOGROUP，正在重建新闻存储消费者组后继续运行")
+                try:
+                    await self._ensure_consumer_group()
+                except Exception as recreate_err:
+                    logger.error(f"NOGROUP后重建新闻存储消费者组失败: {recreate_err}")
+                return []
+
             logger.error(f"消费消息失败: {e}")
             return []
     
@@ -213,10 +222,26 @@ class NewsStreamHandler:
             
             # 4. 调用DatabaseGateway存储
             stored_news_id = await self.database_gateway.create_news(enhanced_data)
-            
+
             if stored_news_id:
                 result["storage_success"] = True
                 logger.debug(f"✅ 新闻存储成功: {news_id}")
+
+                # 5. 发布新闻存储完成事件，供后续业务处理
+                try:
+                    if hasattr(self.stream_bus, 'publish_to_stream'):
+                        event_data = {
+                            "event_type": "news.stored",
+                            "news_data": enhanced_data,
+                            "stored_news_id": stored_news_id,
+                            "storage_time": datetime.now().isoformat(),
+                            "source": "news_stream_handler"
+                        }
+                        # 发布到独立业务事件流，避免写回 news_raw 形成自吞回路
+                        await self.stream_bus.publish_to_stream("events_normal", event_data)
+                        logger.info(f"📤 发布新闻存储事件: {news_id}")
+                except Exception as e:
+                    logger.warning(f"发布新闻存储事件失败: {e}")
             else:
                 result["error"] = "新闻存储失败"
                 logger.error(f"❌ 新闻存储失败: {news_id}")
@@ -229,22 +254,27 @@ class NewsStreamHandler:
 
     # 修改 _extract_raw_data 方法
     def _extract_raw_data(self, message: Dict[str, Any]) -> Optional[Dict[str, Any]]:
-        """终极修正版：正确处理双层payload结构"""
-        
+        """终极修正版：正确处理双层payload结构，支持直接新闻字段格式"""
+
         message_data = message.get('data', {})
         message_id = message.get('id', 'unknown')
-        
+
         logger.info(f"\n🔍 处理消息 {message_id}")
-        
+
         try:
+            # 0. 检查消息数据是否直接包含新闻字段（无payload情况）
+            if self._contains_news_fields(message_data):
+                logger.info(f"   ✅ 消息数据直接包含新闻字段，键名: {list(message_data.keys())}")
+                return message_data
+
             # 1. 检查外层payload
             if 'payload' not in message_data:
                 logger.info(f"   ⚠️ 消息没有payload字段")
                 logger.info(f"   消息键名: {list(message_data.keys())}")
                 return None
-            
+
             outer_payload = message_data['payload']
-            
+
             # 2. 如果是字符串，解析JSON
             if isinstance(outer_payload, str):
                 try:
@@ -254,14 +284,14 @@ class NewsStreamHandler:
                 except Exception as e:
                     logger.info(f"   ❌ 外层payload JSON解析失败: {e}")
                     return None
-            
+
             # 3. outer_payload应该是字典
             if not isinstance(outer_payload, dict):
                 logger.info(f"   ⚠️ 外层payload不是字典: {type(outer_payload)}")
                 return None
-            
+
             logger.info(f"   外层payload键名: {list(outer_payload.keys())}")
-            
+
             # 4. 🔍 关键！检查内层payload
             if 'payload' not in outer_payload:
                 logger.info(f"   ⚠️ 外层payload没有内层payload字段")
@@ -269,10 +299,15 @@ class NewsStreamHandler:
                 if outer_payload.get('_t') == 'news' and outer_payload.get('_v') == 2:
                     logger.info(f"   ✅ 在外层payload发现v2格式（直接）")
                     return self._extract_v2_data(outer_payload)
+                # 检查外层payload是否直接包含新闻字段
+                if self._contains_news_fields(outer_payload):
+                    logger.info(f"   ✅ 外层payload直接包含新闻字段")
+                    return outer_payload
+                logger.info(f"   ❌ 外层payload既不是v2格式也不包含新闻字段")
                 return None
-            
+
             inner_payload = outer_payload['payload']
-            
+
             # 5. 如果是字符串，解析JSON
             if isinstance(inner_payload, str):
                 try:
@@ -282,19 +317,19 @@ class NewsStreamHandler:
                 except Exception as e:
                     logger.info(f"   ❌ 内层payload JSON解析失败: {e}")
                     return None
-            
+
             # 6. inner_payload应该是字典
             if not isinstance(inner_payload, dict):
                 logger.info(f"   ⚠️ 内层payload不是字典: {type(inner_payload)}")
                 return None
-            
+
             logger.info(f"   内层payload键名: {list(inner_payload.keys())}")
-            
+
             # 7. 检查是否是v2格式
             if inner_payload.get('_t') == 'news' and inner_payload.get('_v') == 2:
                 logger.info(f"   ✅ 在内层payload发现v2格式")
                 return self._extract_v2_data(inner_payload)
-            
+
             # 8. 如果不是v2，看看是什么
             logger.info(f"   ⚠️ 不是v2格式，检查其他可能")
             if 'news_data' in inner_payload:
@@ -302,10 +337,15 @@ class NewsStreamHandler:
                 news_data = inner_payload.get('news_data', {})
                 if isinstance(news_data, dict):
                     return news_data
-            
+
+            # 9. 检查内层payload是否直接包含新闻字段
+            if self._contains_news_fields(inner_payload):
+                logger.info(f"   ✅ 内层payload直接包含新闻字段")
+                return inner_payload
+
             logger.info(f"   ❌ 无法识别格式")
             return None
-            
+
         except Exception as e:
             logger.info(f"   ❌ 提取失败: {e}")
             import traceback
@@ -707,12 +747,67 @@ class NewsStreamHandler:
         
         return normalized
 
+    def _contains_news_fields(self, data: Dict[str, Any]) -> bool:
+        """检查字典是否包含可用的新闻正文字段（避免把外层wrapper误判为新闻数据）"""
+        if not isinstance(data, dict):
+            return False
+        # v2 结构化格式
+        if data.get("_t") == "news" and data.get("_v") == 2:
+            return True
+        # v1 格式
+        if isinstance(data.get("news_data"), dict):
+            return True
+        # 通用正文字段（至少有一个非空）
+        for key in ("title", "content", "标题", "内容", "t", "c"):
+            value = data.get(key)
+            if isinstance(value, str) and value.strip():
+                return True
+        return False
+
     def _enhance_news_data(self, raw_data: Dict[str, Any]) -> Dict[str, Any]:
         """修复版：正确提取中文字段"""
         enhanced = raw_data.copy()
         
         logger.info(f"\n🔍 增强新闻数据:")
         logger.info(f"   原始数据键名: {list(raw_data.keys())}")
+
+        # 0. 尝试从 payload 内补提取正文，避免 wrapper 结构导致 title/content 丢失
+        if ("title" not in enhanced or not enhanced.get("title")) and ("content" not in enhanced or not enhanced.get("content")):
+            payload_value = enhanced.get("payload")
+            payload_data = None
+            if isinstance(payload_value, str):
+                try:
+                    payload_data = json.loads(payload_value)
+                except Exception:
+                    payload_data = None
+            elif isinstance(payload_value, dict):
+                payload_data = payload_value
+
+            if isinstance(payload_data, dict):
+                if payload_data.get("_t") == "news" and payload_data.get("_v") == 2:
+                    if payload_data.get("t"):
+                        enhanced["title"] = payload_data.get("t")
+                    if payload_data.get("c"):
+                        enhanced["content"] = payload_data.get("c")
+                    if payload_data.get("s") and not enhanced.get("source"):
+                        enhanced["source"] = payload_data.get("s")
+                    if payload_data.get("d") and not enhanced.get("publish_date"):
+                        enhanced["publish_date"] = payload_data.get("d")
+                    if payload_data.get("id") and not enhanced.get("news_id"):
+                        enhanced["news_id"] = payload_data.get("id")
+                elif isinstance(payload_data.get("news_data"), dict):
+                    nested = payload_data.get("news_data")
+                    for src_key, dst_key in (
+                        ("title", "title"),
+                        ("content", "content"),
+                        ("标题", "title"),
+                        ("内容", "content"),
+                        ("source", "source"),
+                        ("publish_date", "publish_date"),
+                        ("news_id", "news_id"),
+                    ):
+                        if nested.get(src_key) and not enhanced.get(dst_key):
+                            enhanced[dst_key] = nested.get(src_key)
         
         # 1. 确保有标题（优先使用中文'标题'字段）
         if '标题' in enhanced and enhanced['标题']:
@@ -816,7 +911,7 @@ class NewsStreamHandler:
                 try:
                     if hasattr(self.stream_bus, 'ack_message'):
                         await self.stream_bus.ack_message(
-                            stream=self.consumer_config["stream_name"],
+                            stream=self._resolve_stream_key(),
                             group=self.consumer_config["consumer_group"],
                             message_id=message_id
                         )

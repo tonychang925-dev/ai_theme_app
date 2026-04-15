@@ -1,0 +1,48 @@
+{
+  "must": [
+    "宠物用品",
+    "宠物食品",
+    "宠物医疗"
+  ],
+  "should": [
+    "宠物医疗服务",
+    "功能性宠物食品",
+    "智能宠物用品",
+    "宠物智能除味器",
+    "宠物智能喂食器",
+    "宠物饲养",
+    "宠物交易",
+    "宠物美容",
+    "宠物训练",
+    "宠物保险",
+    "宠物殡葬",
+    "宠物消费"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "宠物用品",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "宠物用品"
+    },
+    {
+      "term": "宠物食品",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "宠物食品"
+    },
+    {
+      "term": "宠物医疗",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "宠物医疗"
+    }
+  ],
+  "subject_id": "9031196",
+  "quality": "weak",
+  "generated_at": "2026-04-02T04:15:21",
+  "semantic_type": "消费品类",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

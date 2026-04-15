@@ -1,0 +1,51 @@
+{
+  "must": [
+    "陈之汉（馆长）",
+    "网红",
+    "健身教练",
+    "成吉思汗健身俱乐部"
+  ],
+  "should": [
+    "成吉思汗健身俱乐部的创始人",
+    "台湾地区海军陆战队",
+    "黑社会经营讨债公司",
+    "搏击散打中正杯冠军",
+    "新竹市长杯冠军",
+    "华祥苑",
+    "旺旺集团",
+    "华祥苑国缤茶"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "陈之汉（馆长）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "陈之汉（馆长）"
+    },
+    {
+      "term": "网红",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "网红"
+    },
+    {
+      "term": "健身教练",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "健身教练"
+    },
+    {
+      "term": "成吉思汗健身俱乐部",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "成吉思汗健身俱乐部"
+    }
+  ],
+  "subject_id": "9061577",
+  "quality": "medium",
+  "generated_at": "2026-04-01T02:48:32",
+  "semantic_type": "网红/健身教练个人背景",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

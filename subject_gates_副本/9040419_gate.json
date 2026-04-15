@@ -1,0 +1,78 @@
+{
+  "must": [
+    "算力",
+    "算法",
+    "数据供给",
+    "健康管理",
+    "医疗研究",
+    "医学成像分析"
+  ],
+  "should": [
+    "政策支持",
+    "人才队伍建设",
+    "开源开放生态体系",
+    "医疗系统管理",
+    "制药行业",
+    "口服小分子候选药物",
+    "产业体系完备",
+    "市场规模大",
+    "应用场景丰富",
+    "开放场景",
+    "技术落地",
+    "安全能力水平"
+  ],
+  "not": [
+    "英伟达",
+    "礼来",
+    "联合研究实验室",
+    "石药集团",
+    "阿斯利康",
+    "授权合作",
+    "国务院常务会议",
+    "人工智能+行动"
+  ],
+  "evidence_refs": [
+    {
+      "term": "算力",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "算力"
+    },
+    {
+      "term": "算法",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "算法"
+    },
+    {
+      "term": "数据供给",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据供给"
+    },
+    {
+      "term": "健康管理",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "健康管理"
+    },
+    {
+      "term": "医疗研究",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "医疗研究"
+    },
+    {
+      "term": "医学成像分析",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "医学成像分析"
+    }
+  ],
+  "subject_id": "9040419",
+  "quality": "medium",
+  "generated_at": "2026-04-01T02:13:08",
+  "semantic_type": "技术应用与产业发展",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

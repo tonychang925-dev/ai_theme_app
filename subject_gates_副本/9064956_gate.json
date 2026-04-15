@@ -1,0 +1,61 @@
+{
+  "must": [
+    "本土清洁能源",
+    "光伏",
+    "风电",
+    "太阳能"
+  ],
+  "should": [
+    "下一代核能",
+    "小型模块化反应堆SMR",
+    "电网与灵活性技术",
+    "储能",
+    "氢能",
+    "绿氢",
+    "长时储能",
+    "重工业",
+    "钢铁",
+    "化工",
+    "重型交通燃料",
+    "组件大规模制造"
+  ],
+  "not": [
+    "中东美以伊朗战争",
+    "鹅乌冲突",
+    "中东冲突",
+    "石油供应受阻",
+    "俄罗斯对欧洲断气"
+  ],
+  "evidence_refs": [
+    {
+      "term": "本土清洁能源",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "本土清洁能源"
+    },
+    {
+      "term": "光伏",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光伏"
+    },
+    {
+      "term": "风电",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "风电"
+    },
+    {
+      "term": "太阳能",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "太阳能"
+    }
+  ],
+  "subject_id": "9064956",
+  "quality": "strong",
+  "generated_at": "2026-04-02T13:38:03",
+  "semantic_type": "能源转型与产业链发展",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

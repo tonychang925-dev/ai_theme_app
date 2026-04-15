@@ -1,0 +1,60 @@
+{
+  "must": [
+    "一带一路",
+    "丝绸之路经济带",
+    "21世纪海上丝绸之路",
+    "加强基础设施建设",
+    "中国"
+  ],
+  "should": [
+    "基建",
+    "港口",
+    "通信电力",
+    "旅游",
+    "参与国家",
+    "上市公司",
+    "国内沿线",
+    "国外沿线",
+    "跨境支付",
+    "一带一路概念股"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "一带一路",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "一带一路"
+    },
+    {
+      "term": "丝绸之路经济带",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "丝绸之路经济带"
+    },
+    {
+      "term": "21世纪海上丝绸之路",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "21世纪海上丝绸之路"
+    },
+    {
+      "term": "加强基础设施建设",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "加强基础设施建设"
+    },
+    {
+      "term": "中国",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中国"
+    }
+  ],
+  "subject_id": "9011782",
+  "quality": "strong",
+  "generated_at": "2026-04-01T02:08:57",
+  "semantic_type": "国际合作倡议",
+  "strategy_type": "policy_driven",
+  "source_type": 1
+}

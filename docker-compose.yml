@@ -1,0 +1,187 @@
+version: '3.8'
+
+services:
+  # PostgreSQL数据库
+  postgres:
+    image: postgres:15-alpine
+    container_name: ai-theme-postgres
+    environment:
+      POSTGRES_DB: ai_theme_app
+      POSTGRES_USER: ai_theme_user
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme123}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database_service/migrations/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ai_theme_user -d ai_theme_app"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ai-theme-network
+
+  # Redis缓存和消息队列
+  redis:
+    image: redis:7-alpine
+    container_name: ai-theme-redis
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ai-theme-network
+
+  # 后端API服务
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: ai-theme-backend
+    environment:
+      DATABASE_URL: postgresql://ai_theme_user:${POSTGRES_PASSWORD:-changeme123}@postgres:5432/ai_theme_app
+      REDIS_URL: redis://redis:6379/0
+      APP_ENV: production
+      APP_DEBUG: "false"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./logs:/app/logs
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - ai-theme-network
+
+  # 前端BFF服务
+  frontend-bff:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend-bff
+    container_name: ai-theme-frontend-bff
+    environment:
+      DATABASE_URL: postgresql://ai_theme_user:${POSTGRES_PASSWORD:-changeme123}@postgres:5432/ai_theme_app
+      REDIS_URL: redis://redis:6379/0
+      BACKEND_API_URL: http://backend:8000
+      APP_ENV: production
+    depends_on:
+      - backend
+      - postgres
+      - redis
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./logs:/app/logs
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - ai-theme-network
+
+  # AI模型服务
+  model-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.model-service
+    container_name: ai-theme-model-service
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      AI_MODEL_NAME: ${AI_MODEL_NAME:-gpt-4}
+      AI_MAX_TOKENS: ${AI_MAX_TOKENS:-2000}
+      REDIS_URL: redis://redis:6379/0
+      APP_ENV: production
+    depends_on:
+      - redis
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./logs:/app/logs
+      - ./model_service/models:/app/models
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - ai-theme-network
+
+  # 前端Web服务 (Nginx)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.frontend
+    container_name: ai-theme-frontend
+    depends_on:
+      - frontend-bff
+    ports:
+      - "8080:80"
+    volumes:
+      - ./frontend/dist:/usr/share/nginx/html
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - ai-theme-network
+
+  # 监控服务 (Prometheus + Grafana)
+  monitoring:
+    image: prom/prometheus:latest
+    container_name: ai-theme-monitoring
+    volumes:
+      - ./deployment/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    ports:
+      - "9090:9090"
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    networks:
+      - ai-theme-network
+
+  # 日志收集 (ELK Stack简化版)
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.10.0
+    container_name: ai-theme-logstash
+    volumes:
+      - ./deployment/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+      - ./logs:/var/log/ai-theme-app
+    ports:
+      - "5000:5000"
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+    networks:
+      - ai-theme-network
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  prometheus_data:
+    driver: local
+
+networks:
+  ai-theme-network:
+    driver: bridge

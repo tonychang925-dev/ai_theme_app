@@ -1,0 +1,48 @@
+{
+  "must": [
+    "建筑租赁",
+    "钢结构",
+    "房屋建设"
+  ],
+  "should": [
+    "专业工程",
+    "拉动投资",
+    "建筑光伏",
+    "光伏应用",
+    "技术改造",
+    "设备更新",
+    "超长期特别国债",
+    "技术改造再贷款",
+    "专项再贷款",
+    "制造业新型技术改造",
+    "城市试点",
+    "工业领域储备项目"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑租赁",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "建筑租赁"
+    },
+    {
+      "term": "钢结构",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "钢结构"
+    },
+    {
+      "term": "房屋建设",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "房屋建设"
+    }
+  ],
+  "subject_id": "9010250",
+  "quality": "weak",
+  "generated_at": "2026-04-01T14:18:27",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

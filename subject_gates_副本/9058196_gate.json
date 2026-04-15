@@ -1,0 +1,70 @@
+{
+  "must": [
+    "京东汽车一站式服务",
+    "买车养车资源",
+    "汽车用品和配件",
+    "京东养车门店",
+    "线上渠道"
+  ],
+  "should": [
+    "合作门店",
+    "京东汽车改装大店",
+    "自营贴膜工厂",
+    "整车制造",
+    "电池换电生态",
+    "宁德时代",
+    "时代电服",
+    "广汽集团",
+    "巧克力换电",
+    "用户洞察",
+    "一站式解决方案",
+    "用户消费洞察"
+  ],
+  "not": [
+    "京东双十一发布会",
+    "京东官宣",
+    "汽车方面的大动作",
+    "联合宁德时代",
+    "共同推出新车",
+    "京东联合广汽",
+    "宁德时代推出汽车"
+  ],
+  "evidence_refs": [
+    {
+      "term": "京东汽车一站式服务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "京东汽车一站式服务"
+    },
+    {
+      "term": "买车养车资源",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "买车养车资源"
+    },
+    {
+      "term": "汽车用品和配件",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "汽车用品和配件"
+    },
+    {
+      "term": "京东养车门店",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "京东养车门店"
+    },
+    {
+      "term": "线上渠道",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "线上渠道"
+    }
+  ],
+  "subject_id": "9058196",
+  "quality": "strong",
+  "generated_at": "2026-04-02T07:13:02",
+  "semantic_type": "汽车消费服务生态",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}
