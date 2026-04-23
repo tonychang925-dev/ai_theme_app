@@ -205,14 +205,14 @@ class W2SCandidateService:
 
         prior7_bonus = Decimal("0")
         if prior7_limitup_days >= 1:
-            prior7_bonus += Decimal("8")
+            prior7_bonus += Decimal("5")
         if prior7_strong_days >= 2:
-            prior7_bonus += Decimal("6")
+            prior7_bonus += Decimal("3")
 
         w2s_pathway_bonus = Decimal("0")
         if (
             watch_status in {"weakening", "weakening_keep"}
-            and support_type in {"previous_low", "prev_low_support", "platform_support", "ma_support"}
+            and support_type in {"previous_low", "prev_low_support", "platform_support"}
             and support_hit_score >= Decimal("70")
             and weakness_valid_score >= Decimal("60")
         ):
@@ -236,7 +236,7 @@ class W2SCandidateService:
         prior7_soft_pass = True
         formal_w2s_override = (
             watch_status in {"weakening", "weakening_keep"}
-            and support_type in {"previous_low", "prev_low_support", "platform_support", "ma_support"}
+            and support_type in {"previous_low", "prev_low_support", "platform_support"}
             and support_hit_score >= Decimal("75")
             and weakness_valid_score >= Decimal("60")
         )
@@ -268,7 +268,7 @@ class W2SCandidateService:
             formal_ok = (
                 candidate_score >= Decimal("60")
                 and support_hit_score >= Decimal("60")
-                and repair_or_takeover_score >= Decimal("55")
+                and repair_or_takeover_score >= Decimal("50")
                 and formal_day_gate
                 and not overheat_hard_gate
             )
