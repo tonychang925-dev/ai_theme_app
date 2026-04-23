@@ -24,6 +24,8 @@ class StrongWatchRecord:
     watch_status: str = "active"
     weak_days: int = 0
     prune_reason_code: str | None = None
+    prune_mode: str | None = None
+    removed_reason: str | None = None
     source: str = "strong_watch_pool"
 
 
@@ -41,11 +43,35 @@ class StrongWatchRefreshService:
                 continue
             rank = row.pool_rank if row.pool_rank is not None else 20
             rank_score = Decimal("100") / Decimal(str(max(rank, 1)))
-            momentum = max(Decimal("0"), min(Decimal("100"), bar.pct_chg * Decimal("10") + Decimal("50")))
-            watch_score = rank_score * Decimal("0.55") + momentum * Decimal("0.45")
-            support_level = bar.close_price * Decimal("0.97")
-            support_score = max(Decimal("0"), min(Decimal("100"), rank_score * Decimal("0.6") + momentum * Decimal("0.4")))
-            support_refs = [f"close={bar.close_price}", f"support_level={support_level}"]
+            momentum_score = max(Decimal("0"), min(Decimal("100"), bar.pct_chg * Decimal("10") + Decimal("50")))
+            ma_support = bar.close_price * Decimal("0.97")
+            prev_low_support = bar.low_price
+            platform_support = (bar.open_price + bar.pre_close) / Decimal("2")
+            support_level = max(ma_support, prev_low_support, platform_support)
+
+            if support_level == ma_support:
+                support_type = "ma_support"
+            elif support_level == prev_low_support:
+                support_type = "prev_low_support"
+            else:
+                support_type = "platform_support"
+
+            support_distance = (bar.close_price - support_level) / (bar.close_price if bar.close_price != 0 else Decimal("1"))
+            support_score = max(
+                Decimal("0"),
+                min(
+                    Decimal("100"),
+                    Decimal("100") - abs(support_distance * Decimal("260")),
+                ),
+            )
+            watch_score = rank_score * Decimal("0.35") + momentum_score * Decimal("0.35") + support_score * Decimal("0.30")
+            support_refs = [
+                f"close={bar.close_price}",
+                f"ma_support={ma_support}",
+                f"prev_low_support={prev_low_support}",
+                f"platform_support={platform_support}",
+                f"selected={support_type}:{support_level}",
+            ]
 
             if watch_score >= Decimal("80"):
                 grade = "S"
@@ -65,7 +91,7 @@ class StrongWatchRefreshService:
                     pool_rank=row.pool_rank,
                     watch_score=watch_score,
                     strong_grade=grade,
-                    support_type="dynamic_ma",
+                    support_type=support_type,
                     support_level=support_level,
                     support_score=support_score,
                     support_refs=support_refs,

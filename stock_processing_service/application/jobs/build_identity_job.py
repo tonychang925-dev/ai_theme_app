@@ -56,6 +56,8 @@ class BuildIdentityJob:
                 trade_date=trade_date.isoformat(),
                 affected_rows=0,
                 status="skipped_idempotent",
+                batch_id=batch_id,
+                trace_id=trace_id,
             )
 
         pool_rows = await self._read_port.get_subject_stock_pool_by_trade_date(trade_date)
@@ -154,6 +156,7 @@ class BuildIdentityJob:
                 ),
             )
         )
+        published_events = ["snapshot_built"]
 
         await self._idempotency_port.mark_job_completed(
             job_key,
@@ -170,4 +173,12 @@ class BuildIdentityJob:
             trade_date=trade_date.isoformat(),
             affected_rows=written_registry + written_review,
             status="ok",
+            batch_id=batch_id,
+            trace_id=trace_id,
+            metrics={
+                "identity_registry_rows": written_registry,
+                "identity_review_rows": written_review,
+                "subject_count": len(grouped),
+            },
+            published_events=published_events,
         )

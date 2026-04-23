@@ -10,6 +10,13 @@ from stock_processing_service.domain.services.strong_watch_refresh_service impor
     StrongWatchRecord,
     StrongWatchRefreshService,
 )
+from stock_processing_service.domain.services.strong_watch_history_service import (
+    StrongWatchHistoryRecord,
+    StrongWatchHistoryService,
+)
+from stock_processing_service.domain.services.strong_watch_roll_forward_service import (
+    StrongWatchRollForwardService,
+)
 from stock_processing_service.domain.services.strong_watch_seed_service import StrongWatchSeedService
 
 
@@ -20,11 +27,15 @@ class StrongWatchService:
         refresh_service: StrongWatchRefreshService | None = None,
         prune_service: StrongWatchPruneService | None = None,
         promote_service: StrongWatchPromoteService | None = None,
+        roll_forward_service: StrongWatchRollForwardService | None = None,
+        history_service: StrongWatchHistoryService | None = None,
     ) -> None:
         self._seed_service = seed_service or StrongWatchSeedService()
         self._refresh_service = refresh_service or StrongWatchRefreshService()
         self._prune_service = prune_service or StrongWatchPruneService()
         self._promote_service = promote_service or StrongWatchPromoteService()
+        self._roll_forward_service = roll_forward_service or StrongWatchRollForwardService()
+        self._history_service = history_service or StrongWatchHistoryService()
 
     def build_promoted_pool(
         self,
@@ -33,21 +44,36 @@ class StrongWatchService:
         bars: list[StockBarDTO],
         prior_active_rows: list[StrongWatchRecord] | None = None,
     ) -> tuple[list[SubjectStockPoolDTO], list[StrongWatchRecord]]:
+        promoted, kept, _history = self.build_promoted_pool_with_history(
+            trade_date=trade_date,
+            pool_rows=pool_rows,
+            bars=bars,
+            prior_active_rows=prior_active_rows,
+        )
+        return promoted, kept
+
+    def build_promoted_pool_with_history(
+        self,
+        trade_date: date,
+        pool_rows: list[SubjectStockPoolDTO],
+        bars: list[StockBarDTO],
+        prior_active_rows: list[StrongWatchRecord] | None = None,
+    ) -> tuple[list[SubjectStockPoolDTO], list[StrongWatchRecord], list[StrongWatchHistoryRecord]]:
         seeded = self._seed_service.seed(pool_rows)
-        rolled = self.roll_forward_active_pool(seeded, prior_active_rows or [])
+        rolled = self._roll_forward_service.roll_forward(
+            trade_date=trade_date,
+            seeded_rows=seeded,
+            prior_active_rows=prior_active_rows or [],
+        )
         refreshed = self._refresh_service.refresh(seeded, bars)
         # merge roll-forward weak_days baseline
         baseline_weak_days = {r.stock_id: r.weak_days for r in rolled}
         refreshed = [replace(r, weak_days=baseline_weak_days.get(r.stock_id, 0)) for r in refreshed]
-        kept, _pruned = self._prune_service.prune(refreshed)
+        kept, pruned = self._prune_service.prune(refreshed)
         promoted = self._promote_service.promote(trade_date, kept)
-        return promoted, kept
-
-    def roll_forward_active_pool(
-        self,
-        seeded_rows: list[SubjectStockPoolDTO],
-        prior_active_rows: list[StrongWatchRecord],
-    ) -> list[StrongWatchRecord]:
-        seeded_ids = {row.stock_id for row in seeded_rows}
-        # Keep prior active/weakening rows in baseline for weak_days continuity.
-        return [row for row in prior_active_rows if row.stock_id in seeded_ids and row.watch_status in {"active", "weakening"}]
+        history_rows = self._history_service.build_history_snapshot(
+            trade_date=trade_date,
+            kept_rows=kept,
+            pruned_rows=pruned,
+        )
+        return promoted, kept, history_rows

@@ -33,6 +33,8 @@ class AlgorithmStateWritePort(Protocol):
 
     async def upsert_mainline_identity_review_queue_rows(self, rows: list[dict[str, Any]]) -> int: ...
 
+    async def upsert_strong_watch_history_rows(self, rows: list[dict[str, Any]]) -> int: ...
+
 
 class StockWritePort(SnapshotWritePort, AlgorithmStateWritePort, Protocol):
     """Backward-compatible composite port."""

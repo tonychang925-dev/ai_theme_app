@@ -178,5 +178,8 @@ def test_build_pre_market_brief_job() -> None:
             trace_id="tp1",
         )
         assert skipped.status == "skipped_idempotent"
+        assert skipped.batch_id == "bp1"
+        assert skipped.trace_id == "tp1"
+        assert "idempotency_key_already_completed" in skipped.warnings
 
     asyncio.run(_run())

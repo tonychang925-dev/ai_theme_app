@@ -189,6 +189,10 @@ def test_build_daily_snapshot_job_end_to_end_and_idempotent() -> None:
 
         assert result.status == "ok"
         assert len(write_port.calls["daily"]) == 1
+        first_daily_row = write_port.calls["daily"][0][0]
+        assert "evidence_score_flags" in first_daily_row.score_breakdown
+        assert "evidence_missing_flags" in first_daily_row.score_breakdown
+        assert "evidence_support_refs" in first_daily_row.score_breakdown
         assert len(write_port.calls["subject"]) == 1
         assert len(write_port.calls["abnormal"]) == 1
         assert len(write_port.calls["leaderboard"]) == 1
@@ -207,5 +211,8 @@ def test_build_daily_snapshot_job_end_to_end_and_idempotent() -> None:
             lookback_days=5,
         )
         assert skipped.status == "skipped_idempotent"
+        assert skipped.batch_id == "b1"
+        assert skipped.trace_id == "t1"
+        assert "idempotency_key_already_completed" in skipped.warnings
 
     asyncio.run(_run())

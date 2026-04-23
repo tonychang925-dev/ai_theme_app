@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from dataclasses import replace
+
 from stock_processing_service.domain.services.strong_watch_refresh_service import StrongWatchRecord
 
 
@@ -13,13 +15,14 @@ class StrongWatchPruneService:
             # 2) delayed prune for weakening rows after weak_days threshold.
             support_break = row.support_score < 35
             if row.strong_grade == "REJECT" or support_break:
+                prune_reason_code = "HARD_PRUNE_SUPPORT_BREAK" if support_break else "HARD_PRUNE_REJECT_GRADE"
                 pruned.append(
-                    StrongWatchRecord(
-                        **{
-                            **row.__dict__,
-                            "watch_status": "removed",
-                            "prune_reason_code": "HARD_PRUNE_SUPPORT_BREAK" if support_break else "HARD_PRUNE_REJECT_GRADE",
-                        }
+                    replace(
+                        row,
+                        watch_status="removed",
+                        prune_mode="immediate",
+                        prune_reason_code=prune_reason_code,
+                        removed_reason=prune_reason_code.lower(),
                     )
                 )
                 continue
@@ -28,33 +31,27 @@ class StrongWatchPruneService:
                 weak_days = row.weak_days + 1
                 if weak_days >= 3:
                     pruned.append(
-                        StrongWatchRecord(
-                            **{
-                                **row.__dict__,
-                                "weak_days": weak_days,
-                                "watch_status": "removed",
-                                "prune_reason_code": "DELAYED_PRUNE_WEAK_DAYS",
-                            }
+                        replace(
+                            row,
+                            weak_days=weak_days,
+                            watch_status="removed",
+                            prune_mode="delayed",
+                            prune_reason_code="DELAYED_PRUNE_WEAK_DAYS",
+                            removed_reason="delayed_prune_weak_days",
                         )
                     )
                     continue
                 kept.append(
-                    StrongWatchRecord(
-                        **{
-                            **row.__dict__,
-                            "weak_days": weak_days,
-                            "watch_status": "weakening",
-                        }
+                    replace(
+                        row,
+                        weak_days=weak_days,
+                        watch_status="weakening",
+                        prune_mode=None,
+                        prune_reason_code=None,
+                        removed_reason=None,
                     )
                 )
                 continue
 
-            kept.append(
-                StrongWatchRecord(
-                    **{
-                        **row.__dict__,
-                        "watch_status": "active",
-                    }
-                )
-            )
+            kept.append(replace(row, watch_status="active", prune_mode=None, prune_reason_code=None, removed_reason=None))
         return kept, pruned

@@ -55,4 +55,6 @@ class RunQualityGateJob:
             trade_date=trade_date.isoformat(),
             affected_rows=len(snapshot_rows),
             status="ok" if len(violations) == 0 else "blocked",
+            warnings=violations,
+            metrics=output["metrics"],
         )

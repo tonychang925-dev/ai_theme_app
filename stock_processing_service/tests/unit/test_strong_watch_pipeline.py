@@ -54,6 +54,7 @@ def test_strong_watch_promote_pipeline() -> None:
     assert promoted[0].stock_id == "002000.SZ"
     assert promoted[0].metadata["candidate_source"] == "strong_watch_pool"
     assert "support_refs" in promoted[0].metadata
+    assert promoted[0].metadata["support_type"] in {"ma_support", "prev_low_support", "platform_support"}
 
 
 def test_strong_watch_two_stage_prune_roll_forward() -> None:
@@ -93,3 +94,7 @@ def test_strong_watch_two_stage_prune_roll_forward() -> None:
     promoted_d2, watch_d2 = service.build_promoted_pool(trade_date, pool_rows, bars, prior_active_rows=watch_d1)
     assert len(promoted_d2) == 0
     assert all(row.watch_status in {"weakening", "removed"} for row in watch_d2)
+    for row in watch_d2:
+        if row.watch_status == "removed":
+            assert row.prune_mode in {"immediate", "delayed"}
+            assert row.removed_reason

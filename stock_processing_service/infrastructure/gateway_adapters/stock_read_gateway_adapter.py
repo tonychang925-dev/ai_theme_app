@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import asdict, is_dataclass
 from datetime import date
 from decimal import Decimal
+import json
 from typing import Any
 
 from stock_processing_service.contracts.dto import (
@@ -39,6 +40,37 @@ def _d(value: Any) -> Decimal:
     return Decimal(str(value))
 
 
+def _json_obj(value: Any) -> dict[str, Any]:
+    if value is None:
+        return {}
+    if isinstance(value, dict):
+        return dict(value)
+    if isinstance(value, str):
+        try:
+            parsed = json.loads(value)
+            if isinstance(parsed, dict):
+                return parsed
+        except Exception:
+            return {}
+    return {}
+
+
+def _normalize_stock_id(value: Any) -> str:
+    stock_id = str(value or "").strip().upper()
+    if not stock_id:
+        return ""
+    if "." in stock_id:
+        return stock_id
+    if len(stock_id) == 6 and stock_id.isdigit():
+        if stock_id.startswith(("6", "9")):
+            return f"{stock_id}.SH"
+        if stock_id.startswith(("0", "2", "3")):
+            return f"{stock_id}.SZ"
+        if stock_id.startswith(("4", "8")):
+            return f"{stock_id}.BJ"
+    return stock_id
+
+
 class StockReadGatewayAdapter:
     def __init__(self, db_gateway: DatabaseGatewayStockFacade) -> None:
         self._db = db_gateway
@@ -63,7 +95,7 @@ class StockReadGatewayAdapter:
             result.append(
                 StockBarDTO(
                     trade_date=p.get("trade_date", trade_date),
-                    stock_id=str(p.get("stock_id", "")),
+                    stock_id=_normalize_stock_id(p.get("stock_id", "")),
                     stock_name=str(p.get("stock_name", "")),
                     open_price=_d(p.get("open_price")),
                     high_price=_d(p.get("high_price")),
@@ -89,7 +121,7 @@ class StockReadGatewayAdapter:
             result.append(
                 StockAuctionDTO(
                     trade_date=p.get("trade_date", trade_date),
-                    stock_id=str(p.get("stock_id", "")),
+                    stock_id=_normalize_stock_id(p.get("stock_id", "")),
                     auction_open_price=_d(p.get("auction_open_price")) if p.get("auction_open_price") is not None else None,
                     auction_open_pct=_d(p.get("auction_open_pct")) if p.get("auction_open_pct") is not None else None,
                     auction_volume=_d(p.get("auction_volume")) if p.get("auction_volume") is not None else None,
@@ -113,10 +145,10 @@ class StockReadGatewayAdapter:
                 SubjectStockPoolDTO(
                     trade_date=p.get("trade_date", trade_date),
                     subject_key=str(p.get("subject_key", "")),
-                    subject_name=str(p.get("subject_name", "")),
-                    stock_id=str(p.get("stock_id", "")),
+                    subject_name=str(p.get("subject_name") or p.get("theme_name") or p.get("subject_key") or ""),
+                    stock_id=_normalize_stock_id(p.get("stock_id", "")),
                     stock_name=p.get("stock_name"),
-                    pool_rank=p.get("pool_rank"),
+                    pool_rank=p.get("pool_rank", p.get("rank_order")),
                 )
             )
         return result
@@ -152,7 +184,7 @@ class StockReadGatewayAdapter:
             result.append(
                 PriorSnapshotDTO(
                     trade_date=p.get("trade_date", trade_date),
-                    stock_id=str(p.get("stock_id", "")),
+                    stock_id=_normalize_stock_id(p.get("stock_id", "")),
                     snapshot_version=str(p.get("snapshot_version", "")),
                     payload=dict(p.get("payload") or {}),
                 )
@@ -167,7 +199,7 @@ class StockReadGatewayAdapter:
         return BriefSnapshotDTO(
             trade_date=p.get("trade_date", trade_date),
             snapshot_version=str(p.get("snapshot_version", "")),
-            brief_doc=dict(p.get("brief_doc") or p.get("doc") or {}),
+            brief_doc=_json_obj(p.get("brief_doc") or p.get("doc") or p.get("payload")),
             batch_id=str(p.get("batch_id", "")),
             trace_id=str(p.get("trace_id", "")),
         )
@@ -180,7 +212,7 @@ class StockReadGatewayAdapter:
         return RecapSnapshotDTO(
             trade_date=p.get("trade_date", trade_date),
             snapshot_version=str(p.get("snapshot_version", "")),
-            recap_doc=dict(p.get("recap_doc") or p.get("doc") or {}),
+            recap_doc=_json_obj(p.get("recap_doc") or p.get("doc") or p.get("payload")),
             batch_id=str(p.get("batch_id", "")),
             trace_id=str(p.get("trace_id", "")),
         )

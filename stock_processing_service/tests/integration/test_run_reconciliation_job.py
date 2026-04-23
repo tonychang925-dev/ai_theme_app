@@ -28,8 +28,10 @@ def test_run_reconciliation_job_outputs(tmp_path: Path) -> None:
     assert result.status == "ok"
     summary_path = tmp_path / "summary"
     diff_path = tmp_path / "diff_samples.jsonl"
+    explanation_path = tmp_path / "diff_explanation.md"
     assert summary_path.exists()
     assert diff_path.exists()
+    assert explanation_path.exists()
 
     summary = json.loads(summary_path.read_text(encoding="utf-8"))
     assert summary["missing_in_new"] == 1
@@ -38,3 +40,12 @@ def test_run_reconciliation_job_outputs(tmp_path: Path) -> None:
 
     lines = [line for line in diff_path.read_text(encoding="utf-8").splitlines() if line.strip()]
     assert len(lines) == 3
+    parsed = [json.loads(line) for line in lines]
+    assert all("reason_category" in row for row in parsed)
+    assert any(row["reason_category"] == "input_missing" for row in parsed)
+    assert any(row["reason_category"] == "threshold_diff" for row in parsed)
+    explanation = explanation_path.read_text(encoding="utf-8")
+    assert "Reconciliation Diff Explanation" in explanation
+    assert "Category Counts" in explanation
+    assert "reason_category=" in explanation
+    assert "Top Diffs" in explanation
