@@ -119,12 +119,37 @@ class W2SCandidateService:
     def _in_range(value: Decimal, low: str, high: str) -> bool:
         return Decimal(low) <= value <= Decimal(high)
 
+    def _prior7_features(
+        self,
+        *,
+        stock_id: str,
+        prior_rows: list[PriorSnapshotDTO],
+        metadata: dict[str, Any],
+    ) -> tuple[int, int]:
+        m_limit = metadata.get("prior7_limitup_days")
+        m_strong = metadata.get("prior7_strong_days")
+        if m_limit is not None or m_strong is not None:
+            return int(m_limit or 0), int(m_strong or 0)
+
+        rows = [r for r in prior_rows if r.stock_id == stock_id]
+        limitup_days = 0
+        strong_days = 0
+        for r in rows:
+            pct_raw = (r.payload or {}).get("pct_chg")
+            pct = self._d(pct_raw, default="0")
+            if pct >= Decimal("9.5"):
+                limitup_days += 1
+            if pct >= Decimal("5"):
+                strong_days += 1
+        return limitup_days, strong_days
+
     def explain_candidate(
         self,
         *,
         row: SubjectStockPoolDTO,
         bar: StockBarDTO | None,
         prior: PriorSnapshotDTO | None,
+        prior_rows: list[PriorSnapshotDTO] | None = None,
     ) -> dict[str, Any]:
         source = str((row.metadata or {}).get("candidate_source", "pool_unknown"))
         metadata = row.metadata or {}
@@ -134,8 +159,11 @@ class W2SCandidateService:
         watch_score = self._d(metadata.get("watch_score"), default="60")
         support_score = self._d(metadata.get("support_score"), default="50")
         support_type = str(metadata.get("support_type") or "")
-        prior7_limitup_days = int(metadata.get("prior7_limitup_days") or 0)
-        prior7_strong_days = int(metadata.get("prior7_strong_days") or 0)
+        prior7_limitup_days, prior7_strong_days = self._prior7_features(
+            stock_id=row.stock_id,
+            prior_rows=prior_rows or [],
+            metadata=metadata,
+        )
 
         prior_state = ""
         if prior:
@@ -254,7 +282,12 @@ class W2SCandidateService:
         for row in pool_rows:
             bar = bar_by_stock.get(row.stock_id)
             prior = prior_by_stock.get(row.stock_id)
-            explain = self.explain_candidate(row=row, bar=bar, prior=prior)
+            explain = self.explain_candidate(
+                row=row,
+                bar=bar,
+                prior=prior,
+                prior_rows=prior_rows,
+            )
             if explain.get("candidate_source") != "strong_watch_pool":
                 continue
             level = str(explain.get("candidate_level") or "reject")

@@ -12,6 +12,7 @@ from stock_processing_service.application.jobs import (
     BuildPostMarketRecapJob,
     BuildPreMarketBriefJob,
 )
+from stock_processing_service.domain.services.strong_watch_service import StrongWatchService
 from stock_processing_service.domain.services.w2s_candidate_service import W2SCandidateService
 from stock_processing_service.infrastructure.gateway_adapters.stock_event_gateway_adapter import (
     StockEventGatewayAdapter,
@@ -356,6 +357,13 @@ async def _build_target_diagnostics(
     bars = await read_port.get_stock_daily_bars(trade_date)
     bars_by_stock = {b.stock_id: b for b in bars}
     pool_rows = await read_port.get_subject_stock_pool_by_trade_date(trade_date)
+    strong_watch_service = StrongWatchService()
+    promoted_rows, kept_rows, _history_rows = strong_watch_service.build_promoted_pool_with_history(
+        trade_date=trade_date,
+        pool_rows=pool_rows,
+        bars=bars,
+    )
+    kept_by_stock = {r.stock_id: r for r in kept_rows}
     prior_rows = await read_port.get_prior_stock_daily_snapshots(
         trade_date=trade_date,
         lookback_days=5,
@@ -367,14 +375,19 @@ async def _build_target_diagnostics(
     diagnostics: dict[str, Any] = {}
     for stock_id in target_stock_ids:
         stock_pool_rows = [r for r in pool_rows if r.stock_id == stock_id]
-        sorted_rows = sorted(stock_pool_rows, key=lambda r: (r.pool_rank is None, r.pool_rank or 9999))
-        selected_row = sorted_rows[0] if sorted_rows else None
+        promoted_for_stock = [r for r in promoted_rows if r.stock_id == stock_id]
+        sorted_promoted = sorted(promoted_for_stock, key=lambda r: (r.pool_rank is None, r.pool_rank or 9999))
+        selected_row = sorted_promoted[0] if sorted_promoted else None
+        if selected_row is None:
+            sorted_rows = sorted(stock_pool_rows, key=lambda r: (r.pool_rank is None, r.pool_rank or 9999))
+            selected_row = sorted_rows[0] if sorted_rows else None
         bar = bars_by_stock.get(stock_id)
         prior = prior_by_stock.get(stock_id)
         if selected_row is None:
             diagnostics[stock_id] = {
                 "present_in_pool": False,
                 "pool_subject_count": 0,
+                "present_in_promoted_pool": False,
                 "candidate_level": "reject",
                 "reject_reason": "missing_pool_row",
             }
@@ -384,8 +397,19 @@ async def _build_target_diagnostics(
             row=selected_row,
             bar=bar,
             prior=prior,
+            prior_rows=prior_rows,
         )
         explain["present_in_pool"] = True
         explain["pool_subject_count"] = len(stock_pool_rows)
+        explain["present_in_promoted_pool"] = bool(promoted_for_stock)
+        if stock_id in kept_by_stock:
+            kept = kept_by_stock[stock_id]
+            explain["strong_watch_record"] = {
+                "watch_score": str(kept.watch_score),
+                "strong_grade": kept.strong_grade,
+                "support_score": str(kept.support_score),
+                "support_type": kept.support_type,
+                "watch_status": kept.watch_status,
+            }
         diagnostics[stock_id] = explain
     return diagnostics
