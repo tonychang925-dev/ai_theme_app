@@ -40,6 +40,12 @@ class DBStockObjectGateway:
             return await fn(rows)
         return len(rows)
 
+    async def upsert_strong_watch_history_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._db, "upsert_strong_watch_history_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        return len(rows)
+
     async def upsert_stock_daily_snapshot(self, rows: list[dict[str, Any]]) -> int:
         return await self._db.upsert_stock_daily_snapshot_rows(rows)
 

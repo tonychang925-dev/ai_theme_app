@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import asdict
 from datetime import date, datetime, timezone
+from typing import Any
 from uuid import uuid4
 
 from stock_processing_service.application.cache import SnapshotCacheWriter
@@ -69,7 +70,7 @@ class BuildPostMarketRecapJob:
             stock_ids=[row.stock_id for row in pool_rows] if pool_rows else None,
         )
 
-        promoted_pool_rows, strong_watch_rows = self._strong_watch_service.build_promoted_pool(
+        promoted_pool_rows, strong_watch_rows, strong_watch_history = self._strong_watch_service.build_promoted_pool_with_history(
             trade_date=trade_date,
             pool_rows=pool_rows,
             bars=bars,
@@ -86,6 +87,22 @@ class BuildPostMarketRecapJob:
             "candidate_source": "strong_watch_pool",
             "strong_watch_input_count": len(strong_watch_rows),
             "strong_watch_promoted_count": len(promoted_pool_rows),
+            "strong_watch_history_count": len(strong_watch_history),
+            "strong_watch_history": [
+                {
+                    "stock_id": row.stock_id,
+                    "subject_key": row.subject_key,
+                    "watch_status": row.watch_status,
+                    "strong_grade": row.strong_grade,
+                    "watch_score": str(row.watch_score),
+                    "support_score": str(row.support_score),
+                    "support_type": row.support_type,
+                    "prune_mode": row.prune_mode,
+                    "prune_reason_code": row.prune_reason_code,
+                    "removed_reason": row.removed_reason,
+                }
+                for row in strong_watch_history[:100]
+            ],
             "candidate_count": len(candidates),
             "top_candidates": [
                 {
@@ -111,11 +128,31 @@ class BuildPostMarketRecapJob:
         )
 
         affected = await self._write_port.upsert_post_market_recap_snapshot(snapshot)
+        history_written = await self._upsert_strong_watch_history(strong_watch_history)
 
         if self._cache_port is not None:
             await self._cache_writer.write_value_cache(
                 f"sps:post_market_recap:{trade_date}",
                 asdict(snapshot),
+                ttl_seconds=SnapshotCacheWriter.TTL_24H,
+            )
+            await self._cache_writer.write_grouped_cache(
+                f"sps:strong_watch_history:{trade_date}",
+                [
+                    {
+                        "stock_id": row.stock_id,
+                        "subject_key": row.subject_key,
+                        "watch_status": row.watch_status,
+                        "strong_grade": row.strong_grade,
+                        "watch_score": str(row.watch_score),
+                        "support_score": str(row.support_score),
+                        "support_type": row.support_type,
+                        "prune_mode": row.prune_mode,
+                        "prune_reason_code": row.prune_reason_code,
+                        "removed_reason": row.removed_reason,
+                    }
+                    for row in strong_watch_history
+                ],
                 ttl_seconds=SnapshotCacheWriter.TTL_24H,
             )
             await self._cache_writer.write_current_version(
@@ -150,6 +187,7 @@ class BuildPostMarketRecapJob:
                 "trade_date": trade_date.isoformat(),
                 "snapshot_version": snapshot_version,
                 "candidate_count": len(candidates),
+                "strong_watch_history_rows": history_written,
             },
         )
 
@@ -163,8 +201,32 @@ class BuildPostMarketRecapJob:
             metrics={
                 "strong_watch_input_count": len(strong_watch_rows),
                 "strong_watch_promoted_count": len(promoted_pool_rows),
+                "strong_watch_history_count": len(strong_watch_history),
+                "strong_watch_history_written": history_written,
                 "candidate_count": len(candidates),
             },
             published_events=["snapshot_built"],
-            cache_writes=2 if self._cache_port is not None else 0,
+            cache_writes=3 if self._cache_port is not None else 0,
         )
+
+    async def _upsert_strong_watch_history(self, strong_watch_history: list[Any]) -> int:
+        fn = getattr(self._write_port, "upsert_strong_watch_history_rows", None)
+        if not callable(fn):
+            return 0
+        rows = [
+            {
+                "trade_date": row.trade_date.isoformat() if hasattr(row.trade_date, "isoformat") else row.trade_date,
+                "stock_id": row.stock_id,
+                "subject_key": row.subject_key,
+                "watch_status": row.watch_status,
+                "strong_grade": row.strong_grade,
+                "watch_score": str(row.watch_score),
+                "support_score": str(row.support_score),
+                "support_type": row.support_type,
+                "prune_mode": row.prune_mode,
+                "prune_reason_code": row.prune_reason_code,
+                "removed_reason": row.removed_reason,
+            }
+            for row in strong_watch_history
+        ]
+        return int(await fn(rows) or 0)

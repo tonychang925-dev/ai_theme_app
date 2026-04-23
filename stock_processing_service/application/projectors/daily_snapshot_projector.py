@@ -69,6 +69,10 @@ class DailySnapshotProjector:
                         "divergence_score": str(judgement.divergence_score),
                         "repair_score": str(judgement.repair_score),
                         "transition_type": transition.transition_type if transition else "unknown",
+                        "evidence_previous_state": evidence.previous_state,
+                        "evidence_support_refs": evidence.support_refs,
+                        "evidence_score_flags": evidence.score_flags,
+                        "evidence_missing_flags": evidence.missing_flags,
                     },
                 )
             )

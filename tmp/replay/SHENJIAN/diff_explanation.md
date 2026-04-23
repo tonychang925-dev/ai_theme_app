@@ -8,9 +8,13 @@
 - missing_in_old: 0
 - changed: 1
 
+## Category Counts
+
+- threshold_diff: 1
+
 ## Top Diffs
 
-- pk=2026-04-07|military_new_material|002361.SZ | reason=value_mismatch | diff_fields=candidate_score
+- pk=2026-04-07|military_new_material|002361.SZ | reason=value_mismatch | reason_category=threshold_diff | diff_fields=candidate_score,decision
 
 ## Action Suggestion
 

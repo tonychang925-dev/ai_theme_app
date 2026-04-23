@@ -8,6 +8,9 @@ from typing import Any
 
 from stock_processing_service.application.jobs import BuildPostMarketRecapJob
 from stock_processing_service.contracts.dto import PriorSnapshotDTO, StockBarDTO, SubjectStockPoolDTO
+from stock_processing_service.domain.services.strong_watch_history_service import (
+    StrongWatchHistoryRecord,
+)
 from stock_processing_service.domain.services.w2s_candidate_service import W2SCandidate
 
 
@@ -74,6 +77,7 @@ class _FakeReadPort:
 class _FakeWritePort:
     def __init__(self) -> None:
         self.recap_docs: list[Any] = []
+        self.strong_watch_history_rows: list[dict[str, Any]] = []
 
     async def upsert_stock_daily_snapshot_rows(self, rows):
         return len(rows)
@@ -93,6 +97,10 @@ class _FakeWritePort:
     async def upsert_post_market_recap_snapshot(self, doc):
         self.recap_docs.append(doc)
         return 1
+
+    async def upsert_strong_watch_history_rows(self, rows):
+        self.strong_watch_history_rows.extend(rows)
+        return len(rows)
 
 
 class _FakeEventPort:
@@ -167,9 +175,12 @@ def test_build_post_market_recap_job() -> None:
         recap_doc = write_port.recap_docs[0].recap_doc
         assert recap_doc["candidate_source"] == "strong_watch_pool"
         assert recap_doc["strong_watch_promoted_count"] >= recap_doc["candidate_count"]
+        assert recap_doc["strong_watch_history_count"] >= recap_doc["strong_watch_promoted_count"]
+        assert len(write_port.strong_watch_history_rows) == recap_doc["strong_watch_history_count"]
         assert len(event_port.events) == 1
         assert event_port.events[0]["event_name"] == "snapshot_built"
         assert "sps:post_market_recap:2026-04-23" in cache_port.cache
+        assert "sps:strong_watch_history:2026-04-23" in cache_port.cache
         assert "sps:post_market_recap:current:2026-04-23" in cache_port.cache
 
         skipped = await job.execute(
@@ -188,8 +199,8 @@ def test_build_post_market_recap_job() -> None:
 
 def test_build_post_market_recap_job_empty_strong_watch_pool() -> None:
     class _EmptyStrongWatchService:
-        def build_promoted_pool(self, trade_date, pool_rows, bars, prior_active_rows=None):
-            return [], []
+        def build_promoted_pool_with_history(self, trade_date, pool_rows, bars, prior_active_rows=None):
+            return [], [], []
 
     class _NoCandidateService:
         def build_candidates(self, bars, pool_rows, prior_rows):
@@ -223,6 +234,7 @@ def test_build_post_market_recap_job_empty_strong_watch_pool() -> None:
         recap_doc = write_port.recap_docs[0].recap_doc
         assert recap_doc["strong_watch_input_count"] == 0
         assert recap_doc["strong_watch_promoted_count"] == 0
+        assert recap_doc["strong_watch_history_count"] == 0
         assert recap_doc["candidate_count"] == 0
         assert event_port.events and event_port.events[0]["event_name"] == "snapshot_built"
 
@@ -231,7 +243,7 @@ def test_build_post_market_recap_job_empty_strong_watch_pool() -> None:
 
 def test_build_post_market_recap_job_promoted_pool_generates_candidates() -> None:
     class _PromotedStrongWatchService:
-        def build_promoted_pool(self, trade_date, pool_rows, bars, prior_active_rows=None):
+        def build_promoted_pool_with_history(self, trade_date, pool_rows, bars, prior_active_rows=None):
             promoted = [
                 SubjectStockPoolDTO(
                     trade_date=trade_date,
@@ -242,7 +254,22 @@ def test_build_post_market_recap_job_promoted_pool_generates_candidates() -> Non
                     pool_rank=1,
                 )
             ]
-            return promoted, []
+            history = [
+                StrongWatchHistoryRecord(
+                    trade_date=trade_date,
+                    stock_id="002000.SZ",
+                    subject_key="ai_chip",
+                    watch_status="active",
+                    strong_grade="A",
+                    watch_score=Decimal("70"),
+                    support_score=Decimal("65"),
+                    support_type="ma_support",
+                    prune_mode=None,
+                    prune_reason_code=None,
+                    removed_reason=None,
+                )
+            ]
+            return promoted, [], history
 
     class _OneCandidateService:
         def build_candidates(self, bars, pool_rows, prior_rows):
@@ -289,6 +316,7 @@ def test_build_post_market_recap_job_promoted_pool_generates_candidates() -> Non
         assert len(write_port.recap_docs) == 1
         recap_doc = write_port.recap_docs[0].recap_doc
         assert recap_doc["strong_watch_promoted_count"] == 1
+        assert recap_doc["strong_watch_history_count"] == 1
         assert recap_doc["candidate_count"] == 1
         assert len(recap_doc["top_candidates"]) == 1
         assert event_port.events and event_port.events[0]["event_name"] == "snapshot_built"

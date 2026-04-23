@@ -39,10 +39,20 @@ class StockWriteGatewayAdapter:
         return await self._db.upsert_theme_stock_leaderboard_rows([_row(r) for r in rows])
 
     async def upsert_pre_market_brief_snapshot(self, doc: PreMarketBriefSnapshot) -> int:
-        return await self._db.upsert_pre_market_brief_snapshot(_row(doc))
+        payload = _row(doc)
+        if "brief_doc" in payload and "payload" not in payload:
+            payload["payload"] = payload.pop("brief_doc")
+        if "source" in payload and "source_name" not in payload:
+            payload["source_name"] = payload.pop("source")
+        return await self._db.upsert_pre_market_brief_snapshot(payload)
 
     async def upsert_post_market_recap_snapshot(self, doc: PostMarketRecapSnapshot) -> int:
-        return await self._db.upsert_post_market_recap_snapshot(_row(doc))
+        payload = _row(doc)
+        if "recap_doc" in payload and "payload" not in payload:
+            payload["payload"] = payload.pop("recap_doc")
+        if "source" in payload and "source_name" not in payload:
+            payload["source_name"] = payload.pop("source")
+        return await self._db.upsert_post_market_recap_snapshot(payload)
 
     async def upsert_theme_mainline_identity_registry_rows(self, rows: list[dict[str, Any]]) -> int:
         fn = getattr(self._db, "upsert_theme_mainline_identity_registry_rows", None)
@@ -52,6 +62,12 @@ class StockWriteGatewayAdapter:
 
     async def upsert_mainline_identity_review_queue_rows(self, rows: list[dict[str, Any]]) -> int:
         fn = getattr(self._db, "upsert_mainline_identity_review_queue_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        return len(rows)
+
+    async def upsert_strong_watch_history_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._db, "upsert_strong_watch_history_rows", None)
         if callable(fn):
             return await fn(rows)
         return len(rows)
