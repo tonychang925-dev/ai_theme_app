@@ -12,7 +12,10 @@ from stock_processing_service.application.jobs import (
     BuildPostMarketRecapJob,
     BuildPreMarketBriefJob,
 )
-from stock_processing_service.domain.services.strong_watch_service import StrongWatchService
+from stock_processing_service.domain.services.strong_watch_seed_service import StrongWatchSeedService
+from stock_processing_service.domain.services.strong_watch_refresh_service import StrongWatchRefreshService
+from stock_processing_service.domain.services.strong_watch_prune_service import StrongWatchPruneService
+from stock_processing_service.domain.services.strong_watch_promote_service import StrongWatchPromoteService
 from stock_processing_service.domain.services.w2s_candidate_service import W2SCandidateService
 from stock_processing_service.infrastructure.gateway_adapters.stock_event_gateway_adapter import (
     StockEventGatewayAdapter,
@@ -357,13 +360,17 @@ async def _build_target_diagnostics(
     bars = await read_port.get_stock_daily_bars(trade_date)
     bars_by_stock = {b.stock_id: b for b in bars}
     pool_rows = await read_port.get_subject_stock_pool_by_trade_date(trade_date)
-    strong_watch_service = StrongWatchService()
-    promoted_rows, kept_rows, _history_rows = strong_watch_service.build_promoted_pool_with_history(
-        trade_date=trade_date,
-        pool_rows=pool_rows,
-        bars=bars,
-    )
+    seed_service = StrongWatchSeedService()
+    refresh_service = StrongWatchRefreshService()
+    prune_service = StrongWatchPruneService()
+    promote_service = StrongWatchPromoteService()
+    seeded_rows = seed_service.seed(pool_rows)
+    refreshed_rows = refresh_service.refresh(seeded_rows, bars)
+    kept_rows, pruned_rows = prune_service.prune(refreshed_rows)
+    promoted_rows = promote_service.promote(trade_date, kept_rows)
     kept_by_stock = {r.stock_id: r for r in kept_rows}
+    pruned_by_stock = {r.stock_id: r for r in pruned_rows}
+    refreshed_by_stock = {r.stock_id: r for r in refreshed_rows}
     prior_rows = await read_port.get_prior_stock_daily_snapshots(
         trade_date=trade_date,
         lookback_days=5,
@@ -378,18 +385,50 @@ async def _build_target_diagnostics(
         promoted_for_stock = [r for r in promoted_rows if r.stock_id == stock_id]
         sorted_promoted = sorted(promoted_for_stock, key=lambda r: (r.pool_rank is None, r.pool_rank or 9999))
         selected_row = sorted_promoted[0] if sorted_promoted else None
-        if selected_row is None:
-            sorted_rows = sorted(stock_pool_rows, key=lambda r: (r.pool_rank is None, r.pool_rank or 9999))
-            selected_row = sorted_rows[0] if sorted_rows else None
         bar = bars_by_stock.get(stock_id)
         prior = prior_by_stock.get(stock_id)
+        refreshed = refreshed_by_stock.get(stock_id)
+        kept = kept_by_stock.get(stock_id)
+        pruned = pruned_by_stock.get(stock_id)
+        base_trace = {
+            "present_in_pool": bool(stock_pool_rows),
+            "present_in_refreshed": refreshed is not None,
+            "present_in_kept": kept is not None,
+            "present_in_pruned": pruned is not None,
+            "present_in_promoted_pool": bool(promoted_for_stock),
+            "pool_subject_count": len(stock_pool_rows),
+        }
+        if refreshed is not None:
+            base_trace["refresh"] = {
+                "watch_score": str(refreshed.watch_score),
+                "strong_grade": refreshed.strong_grade,
+                "support_score": str(refreshed.support_score),
+                "support_type": refreshed.support_type,
+                "watch_status": refreshed.watch_status,
+            }
+        if pruned is not None:
+            base_trace["prune"] = {
+                "watch_status": pruned.watch_status,
+                "prune_mode": pruned.prune_mode,
+                "prune_reason_code": pruned.prune_reason_code,
+                "removed_reason": pruned.removed_reason,
+            }
+        if kept is not None:
+            base_trace["kept"] = {
+                "watch_status": kept.watch_status,
+                "weak_days": kept.weak_days,
+                "strong_grade": kept.strong_grade,
+            }
+
         if selected_row is None:
+            reject_reason = "not_in_promoted_pool"
+            if pruned is not None and pruned.prune_reason_code:
+                reject_reason = f"pruned:{pruned.prune_reason_code}"
             diagnostics[stock_id] = {
-                "present_in_pool": False,
-                "pool_subject_count": 0,
-                "present_in_promoted_pool": False,
+                **base_trace,
+                "candidate_source": "not_promoted",
                 "candidate_level": "reject",
-                "reject_reason": "missing_pool_row",
+                "reject_reason": reject_reason,
             }
             continue
 
@@ -399,17 +438,6 @@ async def _build_target_diagnostics(
             prior=prior,
             prior_rows=prior_rows,
         )
-        explain["present_in_pool"] = True
-        explain["pool_subject_count"] = len(stock_pool_rows)
-        explain["present_in_promoted_pool"] = bool(promoted_for_stock)
-        if stock_id in kept_by_stock:
-            kept = kept_by_stock[stock_id]
-            explain["strong_watch_record"] = {
-                "watch_score": str(kept.watch_score),
-                "strong_grade": kept.strong_grade,
-                "support_score": str(kept.support_score),
-                "support_type": kept.support_type,
-                "watch_status": kept.watch_status,
-            }
+        explain.update(base_trace)
         diagnostics[stock_id] = explain
     return diagnostics

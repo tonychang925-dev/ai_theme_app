@@ -125,11 +125,11 @@ class W2SCandidateService:
         stock_id: str,
         prior_rows: list[PriorSnapshotDTO],
         metadata: dict[str, Any],
-    ) -> tuple[int, int]:
+    ) -> tuple[int, int, str]:
         m_limit = metadata.get("prior7_limitup_days")
         m_strong = metadata.get("prior7_strong_days")
         if m_limit is not None or m_strong is not None:
-            return int(m_limit or 0), int(m_strong or 0)
+            return int(m_limit or 0), int(m_strong or 0), "metadata"
 
         rows = [r for r in prior_rows if r.stock_id == stock_id]
         limitup_days = 0
@@ -141,7 +141,7 @@ class W2SCandidateService:
                 limitup_days += 1
             if pct >= Decimal("5"):
                 strong_days += 1
-        return limitup_days, strong_days
+        return limitup_days, strong_days, "prior_snapshots"
 
     def explain_candidate(
         self,
@@ -159,7 +159,7 @@ class W2SCandidateService:
         watch_score = self._d(metadata.get("watch_score"), default="60")
         support_score = self._d(metadata.get("support_score"), default="50")
         support_type = str(metadata.get("support_type") or "")
-        prior7_limitup_days, prior7_strong_days = self._prior7_features(
+        prior7_limitup_days, prior7_strong_days, prior7_source = self._prior7_features(
             stock_id=row.stock_id,
             prior_rows=prior_rows or [],
             metadata=metadata,
@@ -254,6 +254,7 @@ class W2SCandidateService:
             "role_tags": role_tags,
             "prior7_limitup_days": prior7_limitup_days,
             "prior7_strong_days": prior7_strong_days,
+            "prior7_source": prior7_source,
             "mainline_context_score": str(mainline_context_score),
             "strong_gene_score": str(strong_gene_score),
             "support_hit_score": str(support_hit_score),
