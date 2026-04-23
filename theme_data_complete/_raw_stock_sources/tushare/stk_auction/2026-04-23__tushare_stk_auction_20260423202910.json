@@ -1,0 +1,193 @@
+{
+  "source_name": "tushare",
+  "dataset_name": "stk_auction",
+  "trade_date": "2026-04-23",
+  "batch_id": "tushare_stk_auction_20260423202910",
+  "metadata": {
+    "trade_date": "2026-04-23",
+    "requested_codes": [
+      "002254",
+      "002792",
+      "300067",
+      "300102",
+      "300476",
+      "301138",
+      "301230",
+      "600052",
+      "600481",
+      "600869",
+      "601138",
+      "601688",
+      "688048",
+      "688062",
+      "688382"
+    ]
+  },
+  "payload": [
+    {
+      "ts_code": "002254.SZ",
+      "trade_date": "20260423",
+      "vol": 184112,
+      "price": 10.88,
+      "amount": 2003138.56,
+      "pre_close": 10.87,
+      "turnover_rate": 0.0216458,
+      "volume_ratio": 0.763018,
+      "float_share": 85056.8
+    },
+    {
+      "ts_code": "002792.SZ",
+      "trade_date": "20260423",
+      "vol": 195000,
+      "price": 51.61,
+      "amount": 10063950.0,
+      "pre_close": 52.13,
+      "turnover_rate": 0.0577223,
+      "volume_ratio": 0.291791,
+      "float_share": 33782.4
+    },
+    {
+      "ts_code": "300067.SZ",
+      "trade_date": "20260423",
+      "vol": 12419342,
+      "price": 7.27,
+      "amount": 90288616.34,
+      "pre_close": 6.06,
+      "turnover_rate": 1.32475,
+      "volume_ratio": 93.7765,
+      "float_share": 93748.4
+    },
+    {
+      "ts_code": "300102.SZ",
+      "trade_date": "20260423",
+      "vol": 1229800,
+      "price": 35.54,
+      "amount": 43707092.0,
+      "pre_close": 36.79,
+      "turnover_rate": 0.134261,
+      "volume_ratio": 1.54754,
+      "float_share": 91597.7
+    },
+    {
+      "ts_code": "300476.SZ",
+      "trade_date": "20260423",
+      "vol": 513523,
+      "price": 346.11,
+      "amount": 177735445.53,
+      "pre_close": 342.78,
+      "turnover_rate": 0.0593534,
+      "volume_ratio": 0.996554,
+      "float_share": 86519.5
+    },
+    {
+      "ts_code": "301138.SZ",
+      "trade_date": "20260423",
+      "vol": 39200,
+      "price": 38.42,
+      "amount": 1506064.0,
+      "pre_close": 40.06,
+      "turnover_rate": 0.0571761,
+      "volume_ratio": 2.64593,
+      "float_share": 6856.01
+    },
+    {
+      "ts_code": "301230.SZ",
+      "trade_date": "20260423",
+      "vol": 83800,
+      "price": 43.4,
+      "amount": 3636920.0,
+      "pre_close": 43.82,
+      "turnover_rate": 0.0667113,
+      "volume_ratio": 0.965383,
+      "float_share": 12561.6
+    },
+    {
+      "ts_code": "600052.SH",
+      "trade_date": "20260423",
+      "vol": 3465000,
+      "price": 4.24,
+      "amount": 14691600.0,
+      "pre_close": 4.16,
+      "turnover_rate": 0.41045,
+      "volume_ratio": 20.3417,
+      "float_share": 84419.5
+    },
+    {
+      "ts_code": "600481.SH",
+      "trade_date": "20260423",
+      "vol": 787900,
+      "price": 6.68,
+      "amount": 5263172.0,
+      "pre_close": 6.6,
+      "turnover_rate": 0.0381701,
+      "volume_ratio": 1.40154,
+      "float_share": 206418.0
+    },
+    {
+      "ts_code": "600869.SH",
+      "trade_date": "20260423",
+      "vol": 2693200,
+      "price": 17.13,
+      "amount": 46134516.0,
+      "pre_close": 17.18,
+      "turnover_rate": 0.121351,
+      "volume_ratio": 2.28362,
+      "float_share": 221935.0
+    },
+    {
+      "ts_code": "601138.SH",
+      "trade_date": "20260423",
+      "vol": 3170900,
+      "price": 66.98,
+      "amount": 212386882.0,
+      "pre_close": 66.89,
+      "turnover_rate": 0.0159791,
+      "volume_ratio": 1.52921,
+      "float_share": 1984410.0
+    },
+    {
+      "ts_code": "601688.SH",
+      "trade_date": "20260423",
+      "vol": 413700,
+      "price": 19.3,
+      "amount": 7984410.0,
+      "pre_close": 19.38,
+      "turnover_rate": 0.00566188,
+      "volume_ratio": 0.479616,
+      "float_share": 730676.0
+    },
+    {
+      "ts_code": "688048.SH",
+      "trade_date": "20260423",
+      "vol": 287639,
+      "price": 383.9,
+      "amount": 110424612.0,
+      "pre_close": 372.91,
+      "turnover_rate": 0.163172,
+      "volume_ratio": 1.67726,
+      "float_share": 17628.0
+    },
+    {
+      "ts_code": "688062.SH",
+      "trade_date": "20260423",
+      "vol": 31571,
+      "price": 40.25,
+      "amount": 1270733.0,
+      "pre_close": 40.29,
+      "turnover_rate": 0.0154631,
+      "volume_ratio": 0.302332,
+      "float_share": 20417.0
+    },
+    {
+      "ts_code": "688382.SH",
+      "trade_date": "20260423",
+      "vol": 70660,
+      "price": 23.27,
+      "amount": 1644258.0,
+      "pre_close": 23.28,
+      "turnover_rate": 0.0122175,
+      "volume_ratio": 0.343096,
+      "float_share": 57834.8
+    }
+  ]
+}

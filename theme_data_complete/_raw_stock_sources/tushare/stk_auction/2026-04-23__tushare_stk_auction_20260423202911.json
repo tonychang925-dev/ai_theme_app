@@ -1,0 +1,49 @@
+{
+  "source_name": "tushare",
+  "dataset_name": "stk_auction",
+  "trade_date": "2026-04-23",
+  "batch_id": "tushare_stk_auction_20260423202911",
+  "metadata": {
+    "trade_date": "2026-04-23",
+    "requested_codes": [
+      "002580.SZ",
+      "002686.SZ",
+      "300027.SZ"
+    ]
+  },
+  "payload": [
+    {
+      "ts_code": "002580.SZ",
+      "trade_date": "20260423",
+      "vol": 6014460,
+      "price": 26.01,
+      "amount": 156436104.6,
+      "pre_close": 26.73,
+      "turnover_rate": 1.32964,
+      "volume_ratio": 6.21336,
+      "float_share": 45233.9
+    },
+    {
+      "ts_code": "002686.SZ",
+      "trade_date": "20260423",
+      "vol": 317400,
+      "price": 8.02,
+      "amount": 2545548.0,
+      "pre_close": 7.99,
+      "turnover_rate": 0.0607198,
+      "volume_ratio": 0.652895,
+      "float_share": 52272.9
+    },
+    {
+      "ts_code": "300027.SZ",
+      "trade_date": "20260423",
+      "vol": 2398000,
+      "price": 1.85,
+      "amount": 4436300.0,
+      "pre_close": 1.85,
+      "turnover_rate": 0.0964998,
+      "volume_ratio": 0.72195,
+      "float_share": 248498.0
+    }
+  ]
+}
