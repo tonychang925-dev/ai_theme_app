@@ -12,7 +12,7 @@ from stock_processing_service.contracts.snapshots import (
 )
 
 
-class StockWritePort(Protocol):
+class SnapshotWritePort(Protocol):
     async def upsert_stock_daily_snapshot_rows(self, rows: list[StockDailySnapshot]) -> int: ...
 
     async def upsert_subject_stock_daily_snapshot_rows(
@@ -27,9 +27,15 @@ class StockWritePort(Protocol):
 
     async def upsert_post_market_recap_snapshot(self, doc: PostMarketRecapSnapshot) -> int: ...
 
+
+class AlgorithmStateWritePort(Protocol):
     async def upsert_theme_mainline_identity_registry_rows(self, rows: list[dict[str, Any]]) -> int: ...
 
     async def upsert_mainline_identity_review_queue_rows(self, rows: list[dict[str, Any]]) -> int: ...
+
+
+class StockWritePort(SnapshotWritePort, AlgorithmStateWritePort, Protocol):
+    """Backward-compatible composite port."""
 
 
 # Backward-compatible alias

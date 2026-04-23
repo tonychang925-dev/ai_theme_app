@@ -1,11 +1,16 @@
 from __future__ import annotations
 
 from dataclasses import asdict
+from collections import defaultdict
 from datetime import date, datetime, timezone
-from decimal import Decimal
 from typing import Any
 from uuid import uuid4
 
+from stock_processing_service.application.projectors import (
+    AbnormalEventProjector,
+    DailySnapshotProjector,
+    LeaderboardProjector,
+)
 from stock_processing_service.contracts.dto import BuildResult
 from stock_processing_service.contracts.events import (
     AbnormalDetectedPayload,
@@ -27,7 +32,7 @@ from stock_processing_service.ports import (
     StockCachePort,
     StockEventPort,
     StockReadPort,
-    StockWritePort,
+    SnapshotWritePort,
 )
 
 
@@ -35,13 +40,16 @@ class BuildDailySnapshotJob:
     def __init__(
         self,
         read_port: StockReadPort,
-        write_port: StockWritePort,
+        write_port: SnapshotWritePort,
         event_port: StockEventPort,
         idempotency_port: IdempotencyPort,
         cache_port: StockCachePort | None = None,
         evidence_builder: CycleEvidenceBuilder | None = None,
         judgement_service: CycleJudgementService | None = None,
         transition_service: StateTransitionService | None = None,
+        daily_projector: DailySnapshotProjector | None = None,
+        abnormal_projector: AbnormalEventProjector | None = None,
+        leaderboard_projector: LeaderboardProjector | None = None,
     ) -> None:
         self._read_port = read_port
         self._write_port = write_port
@@ -51,6 +59,9 @@ class BuildDailySnapshotJob:
         self._evidence_builder = evidence_builder or CycleEvidenceBuilder()
         self._judgement_service = judgement_service or CycleJudgementService()
         self._transition_service = transition_service or StateTransitionService()
+        self._daily_projector = daily_projector or DailySnapshotProjector()
+        self._abnormal_projector = abnormal_projector or AbnormalEventProjector()
+        self._leaderboard_projector = leaderboard_projector or LeaderboardProjector()
 
     async def execute(
         self,
@@ -110,111 +121,31 @@ class BuildDailySnapshotJob:
         transition_by_stock = {t.stock_id: t for t in transitions}
 
         bars_by_stock = {bar.stock_id: bar for bar in bars}
-        daily_rows: list[StockDailySnapshot] = []
-        subject_daily_rows: list[SubjectStockDailySnapshot] = []
-        abnormal_rows: list[StockAbnormalEvent] = []
-        leaderboard_rows: list[ThemeStockLeaderboard] = []
-
-        for evidence, judgement in zip(evidences, judgements):
-            bar = bars_by_stock.get(evidence.stock_id)
-            if bar is None:
-                continue
-
-            transition = transition_by_stock.get(evidence.stock_id)
-            daily_rows.append(
-                StockDailySnapshot(
-                    trade_date=trade_date,
-                    stock_id=evidence.stock_id,
-                    stock_name=bar.stock_name,
-                    close_price=bar.close_price,
-                    pct_chg=bar.pct_chg,
-                    volume=bar.volume,
-                    amount=bar.amount,
-                    limit_up_price=bar.limit_up_price,
-                    limit_down_price=bar.limit_down_price,
-                    snapshot_version=snapshot_version,
-                    batch_id=batch_id,
-                    trace_id=trace_id,
-                    source_trace_id=trace_id,
-                    labels={"final_cycle_state": judgement.final_cycle_state},
-                    score_breakdown={
-                        "mainline_strength_score": str(judgement.mainline_strength_score),
-                        "fade_watch_score": str(judgement.fade_watch_score),
-                        "fade_confirmed_score": str(judgement.fade_confirmed_score),
-                        "divergence_score": str(judgement.divergence_score),
-                        "repair_score": str(judgement.repair_score),
-                        "transition_type": transition.transition_type if transition else "unknown",
-                    },
-                )
-            )
-
-            subject_daily_rows.append(
-                SubjectStockDailySnapshot(
-                    trade_date=trade_date,
-                    subject_key=evidence.subject_key,
-                    stock_id=evidence.stock_id,
-                    subject_name=evidence.subject_name,
-                    in_pool_flag=True,
-                    pool_rank=None,
-                    support_score=evidence.support_score,
-                    snapshot_version=snapshot_version,
-                    batch_id=batch_id,
-                    trace_id=trace_id,
-                    source_trace_id=trace_id,
-                    role_tags={"mainline_alive": judgement.final_mainline_alive},
-                    evidence_rules=["cycle_judgement_v1"],
-                )
-            )
-
-            if judgement.divergence_score >= Decimal("20") or judgement.fade_confirmed_score >= Decimal("55"):
-                abnormal_rows.append(
-                    StockAbnormalEvent(
-                        trade_date=trade_date,
-                        stock_id=evidence.stock_id,
-                        event_type="cycle_divergence",
-                        event_score=judgement.divergence_score,
-                        evidence_rules=["divergence>=20_or_fade_confirmed>=55"],
-                        raw_metrics={
-                            "divergence_score": str(judgement.divergence_score),
-                            "fade_confirmed_score": str(judgement.fade_confirmed_score),
-                        },
-                        snapshot_version=snapshot_version,
-                        batch_id=batch_id,
-                        trace_id=trace_id,
-                        source_trace_id=trace_id,
-                    )
-                )
-
-        grouped_subject: dict[str, list[tuple[str, Decimal]]] = {}
-        for judgement in judgements:
-            grouped_subject.setdefault(judgement.subject_key, []).append(
-                (judgement.stock_id, judgement.mainline_strength_score)
-            )
-
-        for subject_key, scored in grouped_subject.items():
-            scored_sorted = sorted(scored, key=lambda x: x[1], reverse=True)
-            subject_name = next((j.subject_name for j in judgements if j.subject_key == subject_key), subject_key)
-            for idx, (stock_id, score) in enumerate(scored_sorted, start=1):
-                leaderboard_rows.append(
-                    ThemeStockLeaderboard(
-                        trade_date=trade_date,
-                        subject_key=subject_key,
-                        stock_id=stock_id,
-                        leaderboard_rank=idx,
-                        leader_score=score,
-                        score_breakdown={"mainline_strength_score": str(score)},
-                        snapshot_version=snapshot_version,
-                        batch_id=batch_id,
-                        trace_id=trace_id,
-                        source_trace_id=trace_id,
-                        role_name="leader" if idx == 1 else None,
-                    )
-                )
-                await self._cache_set(
-                    f"sps:theme_leaderboard:{trade_date}:{subject_key}",
-                    [asdict(r) for r in leaderboard_rows if r.subject_key == subject_key],
-                    ttl_seconds=24 * 3600,
-                )
+        daily_rows, subject_daily_rows = self._daily_projector.project(
+            trade_date=trade_date,
+            snapshot_version=snapshot_version,
+            batch_id=batch_id,
+            trace_id=trace_id,
+            evidences=evidences,
+            judgements=judgements,
+            bars_by_stock=bars_by_stock,
+            transition_by_stock=transition_by_stock,
+        )
+        abnormal_rows = self._abnormal_projector.project(
+            trade_date=trade_date,
+            snapshot_version=snapshot_version,
+            batch_id=batch_id,
+            trace_id=trace_id,
+            evidences=evidences,
+            judgements=judgements,
+        )
+        leaderboard_rows = self._leaderboard_projector.project(
+            trade_date=trade_date,
+            snapshot_version=snapshot_version,
+            batch_id=batch_id,
+            trace_id=trace_id,
+            judgements=judgements,
+        )
 
         affected = 0
         affected += await self._write_port.upsert_stock_daily_snapshot_rows(daily_rows)
@@ -226,6 +157,15 @@ class BuildDailySnapshotJob:
             await self._cache_set(
                 f"sps:stock_daily_snapshot:{trade_date}:{row.stock_id}",
                 asdict(row),
+                ttl_seconds=24 * 3600,
+            )
+        leaderboard_by_subject: dict[str, list[ThemeStockLeaderboard]] = defaultdict(list)
+        for row in leaderboard_rows:
+            leaderboard_by_subject[row.subject_key].append(row)
+        for subject_key, rows in leaderboard_by_subject.items():
+            await self._cache_set(
+                f"sps:theme_leaderboard:{trade_date}:{subject_key}",
+                [asdict(r) for r in rows],
                 ttl_seconds=24 * 3600,
             )
         await self._cache_set(
@@ -256,6 +196,10 @@ class BuildDailySnapshotJob:
         )
 
         if abnormal_rows:
+            abnormal_types = sorted({row.event_type for row in abnormal_rows})
+            abnormal_by_stock: dict[str, int] = defaultdict(int)
+            for row in abnormal_rows:
+                abnormal_by_stock[row.stock_id] += 1
             await self._event_port.publish_stock_processing_event(
                 EventEnvelope(
                     event_id=str(uuid4()),
@@ -267,32 +211,33 @@ class BuildDailySnapshotJob:
                     occurred_at=occurred_at,
                     payload_version="v1",
                     payload=AbnormalDetectedPayload(
-                        stock_id=abnormal_rows[0].stock_id,
+                        stock_id="*batch*",
                         trade_date=trade_date,
-                        event_types=sorted({row.event_type for row in abnormal_rows}),
+                        event_types=abnormal_types + [f"stock_count:{len(abnormal_by_stock)}"],
                         row_count=len(abnormal_rows),
                     ),
                 )
             )
 
-        await self._event_port.publish_stock_processing_event(
-            EventEnvelope(
-                event_id=str(uuid4()),
-                event_name="leaderboard_updated",
-                trade_date=trade_date,
-                batch_id=batch_id,
-                trace_id=trace_id,
-                producer="stock_processing_service",
-                occurred_at=occurred_at,
-                payload_version="v1",
-                payload=LeaderboardUpdatedPayload(
-                    subject_key=leaderboard_rows[0].subject_key if leaderboard_rows else "",
+        for subject_key, rows in leaderboard_by_subject.items():
+            await self._event_port.publish_stock_processing_event(
+                EventEnvelope(
+                    event_id=str(uuid4()),
+                    event_name="leaderboard_updated",
                     trade_date=trade_date,
-                    row_count=len(leaderboard_rows),
-                    snapshot_version=snapshot_version,
-                ),
+                    batch_id=batch_id,
+                    trace_id=trace_id,
+                    producer="stock_processing_service",
+                    occurred_at=occurred_at,
+                    payload_version="v1",
+                    payload=LeaderboardUpdatedPayload(
+                        subject_key=subject_key,
+                        trade_date=trade_date,
+                        row_count=len(rows),
+                        snapshot_version=snapshot_version,
+                    ),
+                )
             )
-        )
 
         await self._idempotency_port.mark_job_completed(
             job_key,

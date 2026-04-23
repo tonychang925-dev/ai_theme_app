@@ -11,6 +11,7 @@ from stock_processing_service.contracts.snapshots import (
     SubjectStockDailySnapshot,
     ThemeStockLeaderboard,
 )
+from stock_processing_service.ports.database_gateway_stock_facade import DatabaseGatewayStockFacade
 
 
 def _row(row: Any) -> dict[str, Any]:
@@ -22,7 +23,7 @@ def _row(row: Any) -> dict[str, Any]:
 
 
 class StockWriteGatewayAdapter:
-    def __init__(self, db_gateway: Any) -> None:
+    def __init__(self, db_gateway: DatabaseGatewayStockFacade) -> None:
         self._db = db_gateway
 
     async def upsert_stock_daily_snapshot_rows(self, rows: list[StockDailySnapshot]) -> int:

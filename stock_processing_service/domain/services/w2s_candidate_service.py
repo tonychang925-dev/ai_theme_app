@@ -17,6 +17,7 @@ class W2SCandidate:
     momentum_score: Decimal
     candidate_score: Decimal
     candidate_level: str
+    candidate_source: str
     evidence_rules: list[str]
 
 
@@ -32,6 +33,9 @@ class W2SCandidateService:
 
         candidates: list[W2SCandidate] = []
         for row in pool_rows:
+            source = str((row.metadata or {}).get("candidate_source", "pool_unknown"))
+            if source != "strong_watch_pool":
+                continue
             bar = bar_by_stock.get(row.stock_id)
             if bar is None:
                 continue
@@ -72,6 +76,7 @@ class W2SCandidateService:
                     momentum_score=momentum_score,
                     candidate_score=candidate_score,
                     candidate_level=level,
+                    candidate_source=source,
                     evidence_rules=evidence,
                 )
             )

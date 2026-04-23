@@ -1,7 +1,8 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from decimal import Decimal
+from typing import Any
 
 from stock_processing_service.contracts.dto import StockBarDTO, SubjectStockPoolDTO
 
@@ -15,6 +16,14 @@ class StrongWatchRecord:
     pool_rank: int | None
     watch_score: Decimal
     strong_grade: str
+    support_type: str
+    support_level: Decimal
+    support_score: Decimal
+    support_refs: list[str] = field(default_factory=list)
+    role_tags: dict[str, Any] = field(default_factory=dict)
+    watch_status: str = "active"
+    weak_days: int = 0
+    prune_reason_code: str | None = None
     source: str = "strong_watch_pool"
 
 
@@ -34,6 +43,9 @@ class StrongWatchRefreshService:
             rank_score = Decimal("100") / Decimal(str(max(rank, 1)))
             momentum = max(Decimal("0"), min(Decimal("100"), bar.pct_chg * Decimal("10") + Decimal("50")))
             watch_score = rank_score * Decimal("0.55") + momentum * Decimal("0.45")
+            support_level = bar.close_price * Decimal("0.97")
+            support_score = max(Decimal("0"), min(Decimal("100"), rank_score * Decimal("0.6") + momentum * Decimal("0.4")))
+            support_refs = [f"close={bar.close_price}", f"support_level={support_level}"]
 
             if watch_score >= Decimal("80"):
                 grade = "S"
@@ -53,6 +65,15 @@ class StrongWatchRefreshService:
                     pool_rank=row.pool_rank,
                     watch_score=watch_score,
                     strong_grade=grade,
+                    support_type="dynamic_ma",
+                    support_level=support_level,
+                    support_score=support_score,
+                    support_refs=support_refs,
+                    role_tags={
+                        "watch_tier": grade,
+                        "is_leader": bool((row.pool_rank or 999) <= 1),
+                        "momentum_positive": bool(bar.pct_chg > Decimal("0")),
+                    },
                 )
             )
         return rows

@@ -22,7 +22,7 @@ class StateTransitionService:
                 transition_type = "new_entry"
             elif to_state in {"fade_watch", "fade_confirmed"}:
                 transition_type = "weakened"
-            elif to_state in {"mainline_active", "repair"}:
+            elif to_state in {"start", "fermentation", "acceleration", "repair"}:
                 transition_type = "strengthened"
             else:
                 transition_type = "state_shift"

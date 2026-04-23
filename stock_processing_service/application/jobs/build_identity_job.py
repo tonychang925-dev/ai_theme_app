@@ -12,14 +12,19 @@ from stock_processing_service.domain.services.identity_decider import IdentityDe
 from stock_processing_service.domain.services.identity_llm_review_service import IdentityLLMReviewService
 from stock_processing_service.domain.services.identity_scoring_service import IdentityScoringService
 from stock_processing_service.domain.services.one_day_tour_detector import OneDayTourDetector
-from stock_processing_service.ports import IdempotencyPort, StockEventPort, StockReadPort, StockWritePort
+from stock_processing_service.ports import (
+    AlgorithmStateWritePort,
+    IdempotencyPort,
+    StockEventPort,
+    StockReadPort,
+)
 
 
 class BuildIdentityJob:
     def __init__(
         self,
         read_port: StockReadPort,
-        write_port: StockWritePort,
+        write_port: AlgorithmStateWritePort,
         event_port: StockEventPort,
         idempotency_port: IdempotencyPort,
         scoring_service: IdentityScoringService | None = None,

@@ -20,6 +20,16 @@ class StrongWatchPromoteService:
                     stock_id=row.stock_id,
                     stock_name=row.stock_name,
                     pool_rank=row.pool_rank,
+                    metadata={
+                        "candidate_source": row.source,
+                        "watch_score": str(row.watch_score),
+                        "strong_grade": row.strong_grade,
+                        "support_type": row.support_type,
+                        "support_level": str(row.support_level),
+                        "support_score": str(row.support_score),
+                        "support_refs": row.support_refs,
+                        "role_tags": row.role_tags,
+                    },
                 )
             )
         return promoted
