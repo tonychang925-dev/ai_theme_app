@@ -3,7 +3,6 @@ from __future__ import annotations
 import os
 from dataclasses import dataclass
 from datetime import date
-from decimal import Decimal
 from typing import Any
 
 from database_service.gateway import DatabaseGateway
@@ -13,6 +12,7 @@ from stock_processing_service.application.jobs import (
     BuildPostMarketRecapJob,
     BuildPreMarketBriefJob,
 )
+from stock_processing_service.domain.services.w2s_candidate_service import W2SCandidateService
 from stock_processing_service.infrastructure.gateway_adapters.stock_event_gateway_adapter import (
     StockEventGatewayAdapter,
 )
@@ -362,37 +362,30 @@ async def _build_target_diagnostics(
         stock_ids=target_stock_ids,
     )
     prior_by_stock = {p.stock_id: p for p in prior_rows}
+    candidate_svc = W2SCandidateService()
 
     diagnostics: dict[str, Any] = {}
     for stock_id in target_stock_ids:
         stock_pool_rows = [r for r in pool_rows if r.stock_id == stock_id]
-        best_rank = min((r.pool_rank for r in stock_pool_rows if r.pool_rank is not None), default=None)
+        sorted_rows = sorted(stock_pool_rows, key=lambda r: (r.pool_rank is None, r.pool_rank or 9999))
+        selected_row = sorted_rows[0] if sorted_rows else None
         bar = bars_by_stock.get(stock_id)
-        prior_state = ""
         prior = prior_by_stock.get(stock_id)
-        if prior:
-            prior_state = str(prior.payload.get("final_cycle_state", ""))
+        if selected_row is None:
+            diagnostics[stock_id] = {
+                "present_in_pool": False,
+                "pool_subject_count": 0,
+                "candidate_level": "reject",
+                "reject_reason": "missing_pool_row",
+            }
+            continue
 
-        if best_rank is not None and bar is not None:
-            support_score = Decimal("100") / Decimal(str(max(best_rank, 1)))
-            momentum_score = max(Decimal("0"), min(Decimal("100"), bar.pct_chg * Decimal("10") + Decimal("50")))
-            continuity_bonus = Decimal("10") if prior_state in {"repair", "fade_watch"} else Decimal("0")
-            candidate_score_est = support_score * Decimal("0.45") + momentum_score * Decimal("0.45") + continuity_bonus
-        else:
-            support_score = None
-            momentum_score = None
-            continuity_bonus = None
-            candidate_score_est = None
-
-        diagnostics[stock_id] = {
-            "present_in_pool": bool(stock_pool_rows),
-            "pool_subject_count": len(stock_pool_rows),
-            "best_rank": best_rank,
-            "pct_chg": str(bar.pct_chg) if bar is not None else None,
-            "prior_state": prior_state or "unknown",
-            "support_score_est": str(support_score) if support_score is not None else None,
-            "momentum_score_est": str(momentum_score) if momentum_score is not None else None,
-            "continuity_bonus_est": str(continuity_bonus) if continuity_bonus is not None else None,
-            "candidate_score_est": str(candidate_score_est) if candidate_score_est is not None else None,
-        }
+        explain = candidate_svc.explain_candidate(
+            row=selected_row,
+            bar=bar,
+            prior=prior,
+        )
+        explain["present_in_pool"] = True
+        explain["pool_subject_count"] = len(stock_pool_rows)
+        diagnostics[stock_id] = explain
     return diagnostics
