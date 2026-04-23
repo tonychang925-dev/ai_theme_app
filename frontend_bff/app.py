@@ -325,43 +325,7 @@ def _looks_like_numeric_theme_name(value: Any) -> bool:
 
 
 async def _resolve_theme_name_map(subject_keys: List[str], trade_date: Optional[date] = None) -> Dict[str, str]:
-    keys = [str(k).strip() for k in subject_keys if str(k).strip()]
-    if not keys:
-        return {}
-    pool = await stock_screener_repo._ensure_pool()
-    sql = """
-    WITH keyset AS (
-      SELECT DISTINCT unnest($1::text[]) AS subject_key
-    )
-    SELECT
-      k.subject_key,
-      COALESCE(
-        (
-          SELECT NULLIF(v2.theme_name, '')
-          FROM theme_cycle_judgement_v2 v2
-          WHERE v2.subject_key = k.subject_key
-            AND NULLIF(v2.theme_name, '') IS NOT NULL
-            AND v2.theme_name !~ '^[0-9]+$'
-            AND ($2::date IS NULL OR v2.trade_date <= $2::date)
-          ORDER BY v2.trade_date DESC
-          LIMIT 1
-        ),
-        (
-          SELECT NULLIF(sh.subject_name, '')
-          FROM subject_history_staging sh
-          WHERE sh.subject_key = k.subject_key
-            AND NULLIF(sh.subject_name, '') IS NOT NULL
-            AND ($2::date IS NULL OR sh.rank_date <= $2::date)
-          ORDER BY sh.rank_date DESC
-          LIMIT 1
-        ),
-        k.subject_key
-      ) AS theme_name
-    FROM keyset k
-    """
-    async with pool.acquire() as conn:
-        rows = await conn.fetch(sql, keys, trade_date)
-    return {str(r["subject_key"]): str(r["theme_name"] or r["subject_key"]) for r in rows}
+    return await bff_repo.resolve_theme_name_map(subject_keys, trade_date)
 
 
 async def _normalize_result_theme_names(results: List[dict[str, Any]], trade_date: Optional[date] = None) -> None:
@@ -415,26 +379,11 @@ def _is_weak_to_strong_strategy(strategy: Optional[ScreeningStrategy], strategy_
 
 
 async def _resolve_prev_trade_date(trade_date: date) -> date:
-    pool = await stock_screener_repo._ensure_pool()
-    sql = """
-    SELECT MAX(trade_date) AS prev_trade_date
-    FROM subject_stock_daily_snapshot
-    WHERE trade_date < $1::date
-    """
-    async with pool.acquire() as conn:
-        prev_day = await conn.fetchval(sql, trade_date)
-    return prev_day or trade_date
+    return await bff_repo.resolve_prev_trade_date(trade_date)
 
 
 async def _resolve_next_trade_date(trade_date: date) -> date:
-    pool = await stock_screener_repo._ensure_pool()
-    sql = """
-    SELECT MIN(trade_date) AS next_trade_date
-    FROM subject_stock_daily_snapshot
-    WHERE trade_date > $1::date
-    """
-    async with pool.acquire() as conn:
-        next_day = await conn.fetchval(sql, trade_date)
+    next_day = await bff_repo.resolve_next_trade_date(trade_date)
     if not next_day:
         raise HTTPException(
             status_code=400,
@@ -444,179 +393,41 @@ async def _resolve_next_trade_date(trade_date: date) -> date:
 
 
 async def _infer_confirm_trade_date_from_candidate_trade_date(candidate_trade_date: date) -> Optional[date]:
-    pool = await stock_screener_repo._ensure_pool()
-    sql = """
-    SELECT MAX(next_trade_date) AS confirm_trade_date
-    FROM weak_to_strong_candidate_pool
-    WHERE trade_date = $1::date
-      AND next_trade_date > $1::date
-    """
-    async with pool.acquire() as conn:
-        inferred = await conn.fetchval(sql, candidate_trade_date)
-    return inferred
+    return await bff_repo.infer_confirm_trade_date_from_candidate_trade_date(candidate_trade_date)
 
 
 async def _fetch_w2s_candidates(next_trade_date: date, limit: int = 200) -> List[Dict[str, Any]]:
-    pool = await stock_screener_repo._ensure_pool()
-    sql = """
-    SELECT
-      id,
-      trade_date,
-      next_trade_date,
-      stock_id,
-      stock_name,
-      subject_key,
-      theme_name,
-      candidate_score,
-      pool_entry_type,
-      candidate_type,
-      weak_type,
-      support_type,
-      support_strength,
-      expected_open_low,
-      expected_open_high,
-      evidence_json
-    FROM weak_to_strong_candidate_pool
-    WHERE trade_date = $1::date
-    ORDER BY candidate_score DESC, id ASC
-    LIMIT $2
-    """
-    async with pool.acquire() as conn:
-        rows = await conn.fetch(sql, next_trade_date, max(int(limit), 1))
-    return [dict(r) for r in rows]
+    return await bff_repo.fetch_w2s_candidates_by_trade_date(
+        candidate_trade_date=next_trade_date,
+        limit=limit,
+    )
 
 
 async def _fetch_w2s_candidates_for_confirm_date(confirm_trade_date: date, limit: int = 200) -> List[Dict[str, Any]]:
-    pool = await stock_screener_repo._ensure_pool()
-    sql = """
-    SELECT
-      id,
-      trade_date,
-      next_trade_date,
-      stock_id,
-      stock_name,
-      subject_key,
-      theme_name,
-      candidate_score,
-      pool_entry_type,
-      candidate_type,
-      weak_type,
-      support_type,
-      support_strength,
-      expected_open_low,
-      expected_open_high,
-      evidence_json
-    FROM weak_to_strong_candidate_pool
-    WHERE next_trade_date = $1::date
-    ORDER BY candidate_score DESC, id ASC
-    LIMIT $2
-    """
-    async with pool.acquire() as conn:
-        rows = await conn.fetch(sql, confirm_trade_date, max(int(limit), 1))
-    return [dict(r) for r in rows]
+    return await bff_repo.fetch_w2s_candidates_for_confirm_date(
+        confirm_trade_date=confirm_trade_date,
+        limit=limit,
+    )
 
 
 async def _count_w2s_candidates_for_confirm_date(confirm_trade_date: date) -> int:
-    pool = await stock_screener_repo._ensure_pool()
-    sql = """
-    SELECT COUNT(*)::int AS cnt
-    FROM weak_to_strong_candidate_pool
-    WHERE next_trade_date = $1::date
-    """
-    async with pool.acquire() as conn:
-        return int(await conn.fetchval(sql, confirm_trade_date) or 0)
+    return await bff_repo.count_w2s_candidates_for_confirm_date(confirm_trade_date)
 
 
 async def _count_w2s_formal_candidates_for_confirm_date(confirm_trade_date: date) -> int:
-    pool = await stock_screener_repo._ensure_pool()
-    sql = """
-    SELECT COUNT(*)::int AS cnt
-    FROM weak_to_strong_candidate_pool
-    WHERE next_trade_date = $1::date
-      AND COALESCE(NULLIF(LOWER(pool_entry_type), ''), 'formal') = 'formal'
-    """
-    async with pool.acquire() as conn:
-        return int(await conn.fetchval(sql, confirm_trade_date) or 0)
+    return await bff_repo.count_w2s_formal_candidates_for_confirm_date(confirm_trade_date)
 
 
 async def _fetch_w2s_candidates_by_ids(candidate_ids: List[int]) -> List[Dict[str, Any]]:
-    cleaned_ids = sorted({int(item) for item in candidate_ids if int(item) > 0})
-    if not cleaned_ids:
-        return []
-    pool = await stock_screener_repo._ensure_pool()
-    sql = """
-    SELECT
-      id,
-      trade_date,
-      next_trade_date,
-      stock_id,
-      stock_name,
-      subject_key,
-      theme_name,
-      candidate_score,
-      pool_entry_type,
-      candidate_type,
-      weak_type,
-      support_type,
-      support_strength,
-      expected_open_low,
-      expected_open_high,
-      evidence_json
-    FROM weak_to_strong_candidate_pool
-    WHERE id = ANY($1::int[])
-    ORDER BY candidate_score DESC, id ASC
-    """
-    async with pool.acquire() as conn:
-        rows = await conn.fetch(sql, cleaned_ids)
-    return [dict(r) for r in rows]
+    return await bff_repo.fetch_w2s_candidates_by_ids(candidate_ids)
 
 
 async def _fetch_w2s_signals(trade_date: date) -> Dict[int, Dict[str, Any]]:
-    pool = await stock_screener_repo._ensure_pool()
-    sql = """
-    SELECT
-      candidate_id,
-      signal_level,
-      decision,
-      confirmation_score,
-      auction_open_pct,
-      auction_close_pct,
-      auction_pattern,
-      last_minute_grab_score,
-      plate_follow_score,
-      risk_penalty,
-      data_status,
-      evidence_json
-    FROM weak_to_strong_auction_signal
-    WHERE trade_date = $1::date
-    """
-    async with pool.acquire() as conn:
-        rows = await conn.fetch(sql, trade_date)
-    payload: Dict[int, Dict[str, Any]] = {}
-    for row in rows:
-        payload[int(row["candidate_id"])] = dict(row)
-    return payload
+    return await bff_repo.fetch_w2s_signals(trade_date)
 
 
 async def _get_w2s_snapshot_coverage(trade_date: date) -> Dict[str, int]:
-    pool = await stock_screener_repo._ensure_pool()
-    sql = """
-    SELECT
-      COUNT(*)::int AS candidate_cnt,
-      COUNT(*) FILTER (WHERE s.stock_id IS NOT NULL)::int AS snapshot_hit_cnt
-    FROM weak_to_strong_candidate_pool c
-    LEFT JOIN pre_market_auction_snapshot s
-      ON split_part(s.stock_id, '.', 1) = split_part(c.stock_id, '.', 1)
-     AND s.trade_date = c.next_trade_date
-    WHERE c.next_trade_date = $1::date
-      AND COALESCE(NULLIF(LOWER(c.pool_entry_type), ''), 'formal') = 'formal'
-    """
-    async with pool.acquire() as conn:
-        row = await conn.fetchrow(sql, trade_date)
-    return {
-        "candidate_cnt": int((row or {}).get("candidate_cnt") or 0),
-        "snapshot_hit_cnt": int((row or {}).get("snapshot_hit_cnt") or 0),
-    }
+    return await bff_repo.get_w2s_snapshot_coverage(trade_date)
 
 
 async def _has_w2s_snapshot_cache(trade_date: date) -> bool:
