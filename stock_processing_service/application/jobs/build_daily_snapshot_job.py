@@ -196,28 +196,30 @@ class BuildDailySnapshotJob:
         )
 
         if abnormal_rows:
-            abnormal_types = sorted({row.event_type for row in abnormal_rows})
             abnormal_by_stock: dict[str, int] = defaultdict(int)
+            abnormal_types_by_stock: dict[str, set[str]] = defaultdict(set)
             for row in abnormal_rows:
                 abnormal_by_stock[row.stock_id] += 1
-            await self._event_port.publish_stock_processing_event(
-                EventEnvelope(
-                    event_id=str(uuid4()),
-                    event_name="abnormal_detected",
-                    trade_date=trade_date,
-                    batch_id=batch_id,
-                    trace_id=trace_id,
-                    producer="stock_processing_service",
-                    occurred_at=occurred_at,
-                    payload_version="v1",
-                    payload=AbnormalDetectedPayload(
-                        stock_id="*batch*",
+                abnormal_types_by_stock[row.stock_id].add(row.event_type)
+            for stock_id, row_count in abnormal_by_stock.items():
+                await self._event_port.publish_stock_processing_event(
+                    EventEnvelope(
+                        event_id=str(uuid4()),
+                        event_name="abnormal_detected",
                         trade_date=trade_date,
-                        event_types=abnormal_types + [f"stock_count:{len(abnormal_by_stock)}"],
-                        row_count=len(abnormal_rows),
-                    ),
+                        batch_id=batch_id,
+                        trace_id=trace_id,
+                        producer="stock_processing_service",
+                        occurred_at=occurred_at,
+                        payload_version="v1",
+                        payload=AbnormalDetectedPayload(
+                            stock_id=stock_id,
+                            trade_date=trade_date,
+                            event_types=sorted(abnormal_types_by_stock.get(stock_id, set())),
+                            row_count=row_count,
+                        ),
+                    )
                 )
-            )
 
         for subject_key, rows in leaderboard_by_subject.items():
             await self._event_port.publish_stock_processing_event(

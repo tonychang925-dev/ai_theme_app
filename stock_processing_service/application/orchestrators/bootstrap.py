@@ -21,6 +21,7 @@ from stock_processing_service.infrastructure.gateway_adapters.stock_event_gatewa
 from stock_processing_service.infrastructure.gateway_adapters.stock_idempotency_gateway_adapter import (
     StockIdempotencyGatewayAdapter,
 )
+from stock_processing_service.ports.database_gateway_stock_facade import DatabaseGatewayStockFacade
 
 
 @dataclass
@@ -34,7 +35,9 @@ class StockProcessingContainer:
     run_reconciliation: RunReconciliationJob
 
 
-def build_container(db_gateway: Any, cache_client: Any | None = None) -> StockProcessingContainer:
+def build_container(
+    db_gateway: DatabaseGatewayStockFacade, cache_client: Any | None = None
+) -> StockProcessingContainer:
     theme_data_gateway = DBThemeDataGateway(db_gateway=db_gateway)
     stock_object_gateway = DBStockObjectGateway(db_gateway=db_gateway)
     cache_gateway = RedisCacheGateway(cache_client=cache_client) if cache_client else None
