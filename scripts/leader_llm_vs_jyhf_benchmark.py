@@ -58,13 +58,23 @@ async def fetch_theme_rows(conn: asyncpg.Connection, trade_date: date) -> list[d
     rows = await conn.fetch(
         """
         WITH chosen AS (
-            SELECT subject_key, theme_name, theme_tier,
-                   (COALESCE(event_chain_score, 0) + COALESCE(market_recognition_score, 0) + COALESCE(mainline_stability_score, 0)) AS total_score
-            FROM theme_mainline_judgement
-            WHERE trade_date = $1::date
-              AND theme_tier IN ('main', 'strong_branch')
+            SELECT
+                v2.subject_key,
+                COALESCE(NULLIF(v2.theme_name, ''), v2.subject_key) AS theme_name,
+                CASE
+                    WHEN COALESCE(v2.mainline_strength_score, 0) >= 75 THEN 'main'
+                    ELSE 'strong_branch'
+                END AS mainline_bucket,
+                (COALESCE(v2.mainline_strength_score, 0) + COALESCE(v2.confidence_score, 0) + COALESCE(e.event_continuity_score, 0)) AS total_score
+            FROM theme_cycle_judgement_v2 v2
+            LEFT JOIN theme_cycle_evidence_daily e
+              ON e.trade_date = v2.trade_date
+             AND e.subject_key = v2.subject_key
+            WHERE v2.trade_date = $1::date
+              AND COALESCE(v2.final_mainline_alive, FALSE) = TRUE
+              AND COALESCE(v2.fade_confirmed, FALSE) = FALSE
         )
-        SELECT c.subject_key, c.theme_name, c.theme_tier, c.total_score,
+        SELECT c.subject_key, c.theme_name, c.mainline_bucket, c.total_score,
                j.leader_stock_id AS llm_leader_stock_id,
                r.stock_id AS rule_leader_stock_id,
                r.stock_name AS rule_leader_stock_name
@@ -77,7 +87,7 @@ async def fetch_theme_rows(conn: asyncpg.Connection, trade_date: date) -> list[d
          AND r.subject_key = c.subject_key
          AND r.candidate_rank = 1
         WHERE COALESCE(j.leader_stock_id, '') <> ''
-        ORDER BY CASE c.theme_tier WHEN 'main' THEN 0 ELSE 1 END,
+        ORDER BY CASE c.mainline_bucket WHEN 'main' THEN 0 ELSE 1 END,
                  c.total_score DESC,
                  c.subject_key
         """,
@@ -162,7 +172,7 @@ async def build_report_for_date(conn: asyncpg.Connection, trade_date: date) -> d
             {
                 "subject_key": subject_key,
                 "theme_name": row["theme_name"],
-                "theme_tier": row["theme_tier"],
+                "mainline_bucket": row["mainline_bucket"],
                 "llm_leader": {
                     "stock_id": llm_id,
                     "stock_name": name_map.get(llm_id, ""),

@@ -634,6 +634,9 @@ Out of Scope：
 
 ## Phase P3.phase1 — Stock Service 双源事实层与复盘快照
 
+> 状态：`历史草案（Deprecated）`  
+> 生效说明：本节为早期 `P3.phase1` 草案（`PRD-REQ-P3.phase1-001~010`），仅保留审计与回溯用途；当前执行版本以文档后文 `## Phase P3.phase1 — stock_processing_service 需求收口增补（2026-04-23）` 为唯一生效基线。
+
 ### 1. 目标（Objective）
 建立第三阶段首批可执行闭环：以 `Tushare + JYHF` 为双源，落地股票日频事实对象层、题材股票拼接、盘前必读/盘后复盘快照与 Notion 输出基础。要求任一交易日可完整回放，复盘快照重复生成结果一致，且不以秒级全市场实时行情作为本阶段前置门槛。
 
@@ -660,16 +663,19 @@ Out of Scope：
 
 ### 3. 功能需求（Functional Requirements）
 
-- [ ] `PRD-REQ-P3.phase1-001` 必须接入 `Tushare` 作为第三阶段首批股票日频真源，提供交易日、证券主数据、日线事实字段的标准化入库能力；触发条件为交易日同步任务执行；预期行为为按交易日产出完整可回放的股票快照；约束为外部源原始响应必须先落本地快照再入库。
-- [ ] `PRD-REQ-P3.phase1-002` 必须复用 `JYHF` 作为题材事件与题材股票池真源，并将其与股票日频快照进行标准化拼接；触发条件为题材同步与股票快照同步完成；预期行为为任一股票可反查所属题材、任一题材可获取当日股票池快照；约束为不得在前端重复做“股票 -> 题材”拼接。
-- [ ] `PRD-REQ-P3.phase1-003` 必须建立 `stock_daily_snapshot` 与 `subject_stock_daily_snapshot` 两类基础对象；触发条件为交易日数据入库完成；预期行为为后续状态识别、复盘和页面均只读取对象层；约束为字段语义冻结、只增不改。
-- [ ] `PRD-REQ-P3.phase1-004` 必须基于日频事实对象计算 `stock_abnormal_event`，首批至少覆盖涨停、跌停、连板、龙头候选、扩散股候选；触发条件为当日快照入库后；预期行为为生成可解释的派生状态；约束为规则必须显式、可追溯，不得以黑盒评分直接替代。
-- [ ] `PRD-REQ-P3.phase1-005` 必须建立 `theme_stock_leaderboard`，输出题材内股票强弱排序与龙头候选结果；触发条件为题材池与股票快照均可用；预期行为为盘后复盘和个股工作台可直接消费；约束为排序依据必须可解释且可复现。
-- [ ] `PRD-REQ-P3.phase1-006` 必须建立 `pre_market_brief_snapshot`，将隔夜题材事件、重点股票观察对象和必要新闻事实汇总为盘前必读快照；触发条件为交易日上午盘前任务；预期行为为生成结构稳定、可重复发布的盘前报告；约束为报告必须基于已落库快照和事件对象，不得直接依赖外部 API 在线拼装。
-- [ ] `PRD-REQ-P3.phase1-007` 必须建立 `post_market_recap_snapshot`，输出盘后题材、股票、异动、龙头与复盘结论；触发条件为收盘后批任务；预期行为为生成可供前端和 Notion 共用的复盘快照；约束为同一交易日重复生成结果一致。
-- [ ] `PRD-REQ-P3.phase1-008` 必须提供 `frontend_bff` 只读出口，用于读取盘前必读、盘后复盘、题材股票榜单与股票异动对象；触发条件为前端访问；预期行为为前端只读聚合接口，不直连底层领域表；约束为字段契约冻结，禁止前端重算排序与结论。
-- [ ] `PRD-REQ-P3.phase1-009` 必须提供 `notion_publisher`，将盘前必读与盘后复盘快照同步到指定 Notion 页面；触发条件为报告快照生成成功；预期行为为 Notion 内容与前端读取内容一致；约束为 Notion 作为输出层，不得反向成为业务真源。
-- [ ] `PRD-REQ-P3.phase1-010` 必须明确拒绝将“秒级全市场实时行情处理”和“全量资金行为分析”作为本阶段上线门槛；触发条件为需求评审；预期行为为这些能力被标记为后续增强项；约束为不得因这两项未完成而阻塞 `P3.phase1` 上线。
+#### 3.1 历史归档清单（不纳入当前实施/验收跟踪）
+> 说明：以下 `PRD-REQ-P3.phase1-001~010` 仅用于历史回溯，不进入当前执行看板、验收门禁与排期统计。
+
+- `PRD-REQ-P3.phase1-001` 必须接入 `Tushare` 作为第三阶段首批股票日频真源，提供交易日、证券主数据、日线事实字段的标准化入库能力；触发条件为交易日同步任务执行；预期行为为按交易日产出完整可回放的股票快照；约束为外部源原始响应必须先落本地快照再入库。
+- `PRD-REQ-P3.phase1-002` 必须复用 `JYHF` 作为题材事件与题材股票池真源，并将其与股票日频快照进行标准化拼接；触发条件为题材同步与股票快照同步完成；预期行为为任一股票可反查所属题材、任一题材可获取当日股票池快照；约束为不得在前端重复做“股票 -> 题材”拼接。
+- `PRD-REQ-P3.phase1-003` 必须建立 `stock_daily_snapshot` 与 `subject_stock_daily_snapshot` 两类基础对象；触发条件为交易日数据入库完成；预期行为为后续状态识别、复盘和页面均只读取对象层；约束为字段语义冻结、只增不改。
+- `PRD-REQ-P3.phase1-004` 必须基于日频事实对象计算 `stock_abnormal_event`，首批至少覆盖涨停、跌停、连板、龙头候选、扩散股候选；触发条件为当日快照入库后；预期行为为生成可解释的派生状态；约束为规则必须显式、可追溯，不得以黑盒评分直接替代。
+- `PRD-REQ-P3.phase1-005` 必须建立 `theme_stock_leaderboard`，输出题材内股票强弱排序与龙头候选结果；触发条件为题材池与股票快照均可用；预期行为为盘后复盘和个股工作台可直接消费；约束为排序依据必须可解释且可复现。
+- `PRD-REQ-P3.phase1-006` 必须建立 `pre_market_brief_snapshot`，将隔夜题材事件、重点股票观察对象和必要新闻事实汇总为盘前必读快照；触发条件为交易日上午盘前任务；预期行为为生成结构稳定、可重复发布的盘前报告；约束为报告必须基于已落库快照和事件对象，不得直接依赖外部 API 在线拼装。
+- `PRD-REQ-P3.phase1-007` 必须建立 `post_market_recap_snapshot`，输出盘后题材、股票、异动、龙头与复盘结论；触发条件为收盘后批任务；预期行为为生成可供前端和 Notion 共用的复盘快照；约束为同一交易日重复生成结果一致。
+- `PRD-REQ-P3.phase1-008` 必须提供 `frontend_bff` 只读出口，用于读取盘前必读、盘后复盘、题材股票榜单与股票异动对象；触发条件为前端访问；预期行为为前端只读聚合接口，不直连底层领域表；约束为字段契约冻结，禁止前端重算排序与结论。
+- `PRD-REQ-P3.phase1-009` 必须提供 `notion_publisher`，将盘前必读与盘后复盘快照同步到指定 Notion 页面；触发条件为报告快照生成成功；预期行为为 Notion 内容与前端读取内容一致；约束为 Notion 作为输出层，不得反向成为业务真源。
+- `PRD-REQ-P3.phase1-010` 必须明确拒绝将“秒级全市场实时行情处理”和“全量资金行为分析”作为本阶段上线门槛；触发条件为需求评审；预期行为为这些能力被标记为后续增强项；约束为不得因这两项未完成而阻塞 `P3.phase1` 上线。
 
 ### 4. 非功能需求（NFR）
 
@@ -708,22 +714,8 @@ Out of Scope：
 
 ### 6. 验收映射（Acceptance Link）
 
-当前仓库尚未存在 `P3.phase1` 的正式 `ACCEPTANCE / PHASE_CONTRACT / TEST_CASE_SPEC / WBS` 闭环；但第三阶段已存在 `P3.phase0`（历史别名 `P3.phaseA`）的正式前置定义。本阶段先形成 `P3.phase1` 的 Draft PRD 合同，验收映射占位如下：
-
-- `PRD-REQ-P3.phase1-001` -> `ACPT-P3B-001`
-- `PRD-REQ-P3.phase1-002` -> `ACPT-P3B-002`
-- `PRD-REQ-P3.phase1-003` -> `ACPT-P3B-003`
-- `PRD-REQ-P3.phase1-004` -> `ACPT-P3B-004`
-- `PRD-REQ-P3.phase1-005` -> `ACPT-P3B-005`
-- `PRD-REQ-P3.phase1-006` -> `ACPT-P3B-006`
-- `PRD-REQ-P3.phase1-007` -> `ACPT-P3B-007`
-- `PRD-REQ-P3.phase1-008` -> `ACPT-P3B-008`
-- `PRD-REQ-P3.phase1-009` -> `ACPT-P3B-009`
-- `PRD-REQ-P3.phase1-010` -> `ACPT-P3B-010`
-
-说明：
-- 上述 `ACPT-P3B-*` 为待补正式验收 ID。
-- 在 `ACCEPTANCE.md`、`PLAN_WBS.md`、测试计划补齐之前，本阶段 `gate_ready=false`。
+本节为历史草案段，验收映射已迁移至“附录 A：P3.phase1 历史映射（001~010）”。  
+当前阶段门禁与验收真源以 `P3.phase1` 收口增补段（`PRD-REQ-P3.phase1-011~018`）及 `ACCEPTANCE.md` 中正式条目为准。
 
 ### 7. 数据与接口样例（如适用）
 
@@ -760,6 +752,21 @@ Out of Scope：
   ]
 }
 ```
+
+### 附录 A：P3.phase1 历史映射（001~010）
+
+以下映射仅用于历史回溯，不纳入当前实施门禁：
+
+- `PRD-REQ-P3.phase1-001` -> `ACPT-P3B-001`
+- `PRD-REQ-P3.phase1-002` -> `ACPT-P3B-002`
+- `PRD-REQ-P3.phase1-003` -> `ACPT-P3B-003`
+- `PRD-REQ-P3.phase1-004` -> `ACPT-P3B-004`
+- `PRD-REQ-P3.phase1-005` -> `ACPT-P3B-005`
+- `PRD-REQ-P3.phase1-006` -> `ACPT-P3B-006`
+- `PRD-REQ-P3.phase1-007` -> `ACPT-P3B-007`
+- `PRD-REQ-P3.phase1-008` -> `ACPT-P3B-008`
+- `PRD-REQ-P3.phase1-009` -> `ACPT-P3B-009`
+- `PRD-REQ-P3.phase1-010` -> `ACPT-P3B-010`
 
 错误路径要求：
 - 外部源拉取失败：任务失败并记录原因，不得写入半成品快照。
@@ -1379,3 +1386,103 @@ interface AIEvent {
 - 一致性门禁：回放一致率 100%。
 - 性能门禁：满足阶段声明的时延/吞吐指标。
 - 契约门禁：字段向后兼容，审计链完整。
+
+---
+
+## Phase P3.phase1 — stock_processing_service 需求收口增补（2026-04-23）
+
+> 状态：`当前生效（Active Baseline）`  
+> 生效说明：本节为 `P3.phase1` 当前唯一执行基线；`PRD-REQ-P3.phase1-011~018`、对应验收映射与门禁约束为实施与评审真源。
+
+### 1) 目标（Objective）
+
+在不破坏现有线上功能的前提下，建立 `stock_processing_service` 作为股票日频对象层唯一新生产链路，实现“业务与数据解耦、快照真源冻结、双轨可回滚”。
+
+量化目标：
+- `stock_processing_service` 模块内 `asyncpg/SQL/_client/_db` 违规项为 `0`。
+- 双轨对账覆盖率 `100%`，核心对象一致率 `>= 99.5%`。
+- 切流后 5 分钟内可一键回滚至旧链路。
+
+### 2) 范围（Scope）
+
+In Scope：
+- 冻结 `contracts/snapshots`、`contracts/dto`、`contracts/events`。
+- 冻结 `ports` 签名与 `DatabaseGateway` 股票域公开方法签名。
+- 对象层按 `stock_daily_snapshot / subject_stock_daily_snapshot / stock_abnormal_event / theme_stock_leaderboard / pre_market_brief_snapshot / post_market_recap_snapshot` 执行。
+- 形成 `summary + diff_samples.jsonl` 对账产物。
+
+Out of Scope：
+- 秒级全市场实时行情平台。
+- 全量资金行为深度分析。
+- 前端新功能扩展（仅做链路切换，不新增复杂交互）。
+
+### 3) 功能需求（Functional Requirements）
+
+- [ ] `PRD-REQ-P3.phase1-011` 必须将 `stock_processing_service` 定义为股票日频对象层唯一新生产链路；触发条件为 `P3.phase1` 开发；预期行为为新功能仅在该模块落地；约束为旧 `stock_service` 仅保留回退/对账/实验职责。
+- [ ] `PRD-REQ-P3.phase1-012` 必须强制 `Gateway First`，所有读写通过 `database_service.DatabaseGateway` 股票域显式方法；触发条件为任一数据读写需求；预期行为为业务层不出现底层存储实现；约束为禁止调用 `_client/_db`。
+- [ ] `PRD-REQ-P3.phase1-013` 必须强制 `Domain Pure`，领域层仅处理规则与评分；触发条件为领域规则实现；预期行为为领域层只收标准输入对象并输出标准结果对象；约束为禁止引入数据库/缓存/消息总线依赖。
+- [ ] `PRD-REQ-P3.phase1-014` 必须冻结 6 个对象的字段级最小 schema（含主键、必填、可空、文档型标记、upsert 覆盖策略）；触发条件为程序设计前；预期行为为对象口径唯一；约束为未冻结不得开工。
+- [ ] `PRD-REQ-P3.phase1-015` 必须统一事件 envelope（`event_id/event_name/trade_date/batch_id/trace_id/producer/occurred_at/payload_version/payload`）；触发条件为发布任何 stock stream 事件；预期行为为消费者可按版本稳定解析；约束为禁止私有消息格式。
+- [ ] `PRD-REQ-P3.phase1-016` 必须补齐缓存失效与版本切换策略；触发条件为对象重建或题材池增量同步；预期行为为写新版本后原子切换 `current`；约束为禁止边计算边覆盖当前版本。
+- [ ] `PRD-REQ-P3.phase1-017` 必须输出双轨对账产物 `summary + diff_samples.jsonl`；触发条件为每次灰度对账执行；预期行为为可定位样本级差异；约束为样本必须包含主键、旧值、新值、差异字段、差异原因分类。
+- [ ] `PRD-REQ-P3.phase1-018` 必须冻结程序设计前置门禁（contracts/ports/gateway/feature-flag）；触发条件为进入编码前评审；预期行为为协议先行；约束为任一门禁未过不得进入实现阶段。
+
+### 4) 非功能需求（NFR）
+
+- `NFR-P3.phase1-006` `stock_processing_service` 静态扫描必须满足：`import asyncpg == 0`、SQL 字符串定义 `== 0`、`_client/_db` 访问 `== 0`。
+- `NFR-P3.phase1-007` 双轨对账任务必须在单次运行结束后输出完整 JSON 结果，并保留最近 30 次运行记录。
+- `NFR-P3.phase1-008` 缓存版本切换必须保证读路径无半成品窗口（原子切换）。
+
+### 5) 用例（Given/When/Then）
+
+#### 用例 ID: PRD-UC-P3.phase1-06（协议冻结门禁）
+**Given**：准备进入 `stock_processing_service` 程序设计。  
+**When**：执行门禁检查。  
+**Then**：`contracts/dto`、`contracts/snapshots`、`contracts/events`、`ports`、`DatabaseGateway` 方法签名与 feature flag 全部冻结，否则阻断开发。
+
+#### 用例 ID: PRD-UC-P3.phase1-07（双轨对账输出）
+**Given**：旧链路与新链路完成同交易日运行。  
+**When**：触发对账任务。  
+**Then**：生成 `summary` 与 `diff_samples.jsonl`，且样本包含差异分类。
+
+#### 用例 ID: PRD-UC-P3.phase1-08（缓存版本切换）
+**Given**：交易日对象重建完成。  
+**When**：执行缓存刷新。  
+**Then**：先写新版本，再原子切换 `current`，读路径不出现半成品。
+
+### 6) 验收映射（Acceptance Link）
+
+- `PRD-REQ-P3.phase1-011` -> `ACPT-P3B-011`
+- `PRD-REQ-P3.phase1-012` -> `ACPT-P3B-012`
+- `PRD-REQ-P3.phase1-013` -> `ACPT-P3B-013`
+- `PRD-REQ-P3.phase1-014` -> `ACPT-P3B-014`
+- `PRD-REQ-P3.phase1-015` -> `ACPT-P3B-015`
+- `PRD-REQ-P3.phase1-016` -> `ACPT-P3B-016`
+- `PRD-REQ-P3.phase1-017` -> `ACPT-P3B-017`
+- `PRD-REQ-P3.phase1-018` -> `ACPT-P3B-018`
+
+说明：`ACPT-P3B-*` 已在 `ACCEPTANCE.md` 完成同步，作为 `P3.phase1` 正式验收 ID 使用。
+
+### 7) 风险与假设（Risks/Assumptions）
+
+- 风险等级：`P1`
+- 风险1：协议冻结后历史脚本不兼容。缓解：旧链路保留只读回退职责。
+- 风险2：灰度期差异量过大。缓解：先只切最小闭环对象，按交易日增量推进。
+- 假设：`frontend_bff` 已具备 feature flag 切流能力。
+
+### 8) 发布与回滚约束（Release Constraints）
+
+- 上线前置：连续 5 个交易日对账达标，且 `NFR-P3.phase1-006/007/008` 全通过。
+- 回滚触发：任一 P1 数据缺失、对账一致率低于阈值、BFF 读取异常持续 15 分钟。
+
+### 9) 通过判定（Exit Criteria）
+
+以下条件必须全部满足（AND）：
+1. `PRD-REQ-P3.phase1-011~018` 全部完成并验收通过。
+2. `NFR-P3.phase1-006~008` 全部通过。
+3. 双轨对账报告齐全，`diff_samples.jsonl` 可追溯。
+4. 回滚演练成功（5 分钟内切回）。
+
+### 10) Change Log
+
+- `2026-04-23`：新增 `P3.phase1` 收口增补（`PRD-REQ-P3.phase1-011~018`），将 `stock_processing_service` 的协议冻结、网关边界、缓存版本切换、事件 envelope、对账样本落盘与程序设计前置门禁纳入正式 PRD 合同。

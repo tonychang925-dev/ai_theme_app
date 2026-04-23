@@ -1,0 +1,185 @@
+from __future__ import annotations
+
+from dataclasses import asdict, is_dataclass
+from datetime import date
+from decimal import Decimal
+from typing import Any
+
+from stock_processing_service.contracts.dto import (
+    BriefSnapshotDTO,
+    PriorSnapshotDTO,
+    RecapSnapshotDTO,
+    StockAuctionDTO,
+    StockBarDTO,
+    SubjectContextDTO,
+    SubjectStockPoolDTO,
+    TradeCalendarDTO,
+)
+
+
+def _as_dict(row: Any) -> dict[str, Any]:
+    if row is None:
+        return {}
+    if isinstance(row, dict):
+        return dict(row)
+    if is_dataclass(row):
+        return asdict(row)
+    to_dict = getattr(row, "to_dict", None)
+    if callable(to_dict):
+        return dict(to_dict())
+    return dict(row)
+
+
+def _d(value: Any) -> Decimal:
+    if value is None:
+        return Decimal("0")
+    if isinstance(value, Decimal):
+        return value
+    return Decimal(str(value))
+
+
+class StockReadGatewayAdapter:
+    def __init__(self, db_gateway: Any) -> None:
+        self._db = db_gateway
+
+    async def get_trade_calendar(self, trade_date: date) -> TradeCalendarDTO | None:
+        row = await self._db.get_trade_calendar(trade_date)
+        if not row:
+            return None
+        payload = _as_dict(row)
+        return TradeCalendarDTO(
+            trade_date=payload.get("trade_date", trade_date),
+            calendar_is_open=bool(payload.get("calendar_is_open", payload.get("is_open", False))),
+            prev_trade_date=payload.get("prev_trade_date"),
+            next_trade_date=payload.get("next_trade_date"),
+        )
+
+    async def get_stock_daily_bars(self, trade_date: date, stock_ids: list[str] | None = None) -> list[StockBarDTO]:
+        rows = await self._db.get_stock_daily_bars(trade_date, stock_ids=stock_ids)
+        result: list[StockBarDTO] = []
+        for row in rows:
+            p = _as_dict(row)
+            result.append(
+                StockBarDTO(
+                    trade_date=p.get("trade_date", trade_date),
+                    stock_id=str(p.get("stock_id", "")),
+                    stock_name=str(p.get("stock_name", "")),
+                    open_price=_d(p.get("open_price")),
+                    high_price=_d(p.get("high_price")),
+                    low_price=_d(p.get("low_price")),
+                    close_price=_d(p.get("close_price")),
+                    pre_close=_d(p.get("pre_close")),
+                    pct_chg=_d(p.get("pct_chg")),
+                    volume=_d(p.get("volume")),
+                    amount=_d(p.get("amount")),
+                    limit_up_price=_d(p.get("limit_up_price")),
+                    limit_down_price=_d(p.get("limit_down_price")),
+                )
+            )
+        return result
+
+    async def get_stock_auction_snapshot(
+        self, trade_date: date, stock_ids: list[str] | None = None
+    ) -> list[StockAuctionDTO]:
+        rows = await self._db.get_stock_auction_snapshot(trade_date, stock_ids=stock_ids)
+        result: list[StockAuctionDTO] = []
+        for row in rows:
+            p = _as_dict(row)
+            result.append(
+                StockAuctionDTO(
+                    trade_date=p.get("trade_date", trade_date),
+                    stock_id=str(p.get("stock_id", "")),
+                    auction_open_price=_d(p.get("auction_open_price")) if p.get("auction_open_price") is not None else None,
+                    auction_open_pct=_d(p.get("auction_open_pct")) if p.get("auction_open_pct") is not None else None,
+                    auction_volume=_d(p.get("auction_volume")) if p.get("auction_volume") is not None else None,
+                    auction_amount=_d(p.get("auction_amount")) if p.get("auction_amount") is not None else None,
+                    tail_auction_close_price=_d(p.get("tail_auction_close_price"))
+                    if p.get("tail_auction_close_price") is not None
+                    else None,
+                    tail_auction_volume=_d(p.get("tail_auction_volume")) if p.get("tail_auction_volume") is not None else None,
+                    tail_auction_amount=_d(p.get("tail_auction_amount")) if p.get("tail_auction_amount") is not None else None,
+                    tail_auction_vwap=_d(p.get("tail_auction_vwap")) if p.get("tail_auction_vwap") is not None else None,
+                )
+            )
+        return result
+
+    async def get_subject_stock_pool_by_trade_date(self, trade_date: date) -> list[SubjectStockPoolDTO]:
+        rows = await self._db.get_subject_stock_pool_by_trade_date(trade_date)
+        result: list[SubjectStockPoolDTO] = []
+        for row in rows:
+            p = _as_dict(row)
+            result.append(
+                SubjectStockPoolDTO(
+                    trade_date=p.get("trade_date", trade_date),
+                    subject_key=str(p.get("subject_key", "")),
+                    subject_name=str(p.get("subject_name", "")),
+                    stock_id=str(p.get("stock_id", "")),
+                    stock_name=p.get("stock_name"),
+                    pool_rank=p.get("pool_rank"),
+                )
+            )
+        return result
+
+    async def get_subject_context_by_subject_keys(
+        self, subject_keys: list[str], trade_date: date
+    ) -> list[SubjectContextDTO]:
+        rows = await self._db.get_subject_context_by_subject_keys(subject_keys, trade_date)
+        result: list[SubjectContextDTO] = []
+        for row in rows:
+            p = _as_dict(row)
+            result.append(
+                SubjectContextDTO(
+                    trade_date=p.get("trade_date", trade_date),
+                    subject_key=str(p.get("subject_key", "")),
+                    subject_name=str(p.get("subject_name", "")),
+                    theme_event_summary=p.get("theme_event_summary"),
+                    theme_context_tags=list(p.get("theme_context_tags") or []),
+                    metadata=dict(p.get("metadata") or {}),
+                )
+            )
+        return result
+
+    async def get_prior_stock_daily_snapshots(
+        self, trade_date: date, lookback_days: int, stock_ids: list[str] | None = None
+    ) -> list[PriorSnapshotDTO]:
+        rows = await self._db.get_prior_stock_daily_snapshots(
+            trade_date=trade_date, lookback_days=lookback_days, stock_ids=stock_ids
+        )
+        result: list[PriorSnapshotDTO] = []
+        for row in rows:
+            p = _as_dict(row)
+            result.append(
+                PriorSnapshotDTO(
+                    trade_date=p.get("trade_date", trade_date),
+                    stock_id=str(p.get("stock_id", "")),
+                    snapshot_version=str(p.get("snapshot_version", "")),
+                    payload=dict(p.get("payload") or {}),
+                )
+            )
+        return result
+
+    async def get_existing_pre_market_brief_snapshot(self, trade_date: date) -> BriefSnapshotDTO | None:
+        row = await self._db.get_existing_pre_market_brief_snapshot(trade_date)
+        if not row:
+            return None
+        p = _as_dict(row)
+        return BriefSnapshotDTO(
+            trade_date=p.get("trade_date", trade_date),
+            snapshot_version=str(p.get("snapshot_version", "")),
+            brief_doc=dict(p.get("brief_doc") or p.get("doc") or {}),
+            batch_id=str(p.get("batch_id", "")),
+            trace_id=str(p.get("trace_id", "")),
+        )
+
+    async def get_existing_post_market_recap_snapshot(self, trade_date: date) -> RecapSnapshotDTO | None:
+        row = await self._db.get_existing_post_market_recap_snapshot(trade_date)
+        if not row:
+            return None
+        p = _as_dict(row)
+        return RecapSnapshotDTO(
+            trade_date=p.get("trade_date", trade_date),
+            snapshot_version=str(p.get("snapshot_version", "")),
+            recap_doc=dict(p.get("recap_doc") or p.get("doc") or {}),
+            batch_id=str(p.get("batch_id", "")),
+            trace_id=str(p.get("trace_id", "")),
+        )

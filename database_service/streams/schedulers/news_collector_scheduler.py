@@ -1,6 +1,6 @@
 # database_service/streams/schedulers/news_collector_scheduler.py
 """
-新闻收集调度器 - 集成现有组件
+新闻收集调度器 - 集成现有组件（仅真实新闻）
 """
 import asyncio
 from datetime import datetime
@@ -10,16 +10,16 @@ import logging
 logger = logging.getLogger(__name__)
 
 class NewsCollectorScheduler:
-    """新闻收集调度器"""
+    """新闻收集调度器（仅真实新闻）"""
     
-    def __init__(self, stream_gateway, news_generator):
+    def __init__(self, stream_gateway, news_service):
         """
         Args:
             stream_gateway: StreamEnhancedGateway实例
-            news_generator: 新闻生成器实例
+            news_service: 新闻服务实例
         """
         self.gateway = stream_gateway
-        self.news_generator = news_generator
+        self.news_service = news_service
         self.running = False
         self.collection_count = 0
         self.success_count = 0
@@ -38,9 +38,10 @@ class NewsCollectorScheduler:
                 
                 logger.info(f"\n🔄 开始第 {self.collection_count} 批次收集 ({start_time.strftime('%H:%M:%S')})")
                 
-                # 1. 获取模拟新闻
-                news_list = await self.news_generator.generate_mock_news(count=batch_size)
-                logger.info(f"📰 生成 {len(news_list)} 条模拟新闻")
+                # 1. 获取真实新闻
+                result = await self.news_service.crawl_real_news(limit=batch_size)
+                news_list = result.get("response", {}).get("news_list", []) if result.get("status") == "success" else []
+                logger.info(f"📰 获取 {len(news_list)} 条真实新闻")
                 
                 # 2. 发布到Stream
                 results = []

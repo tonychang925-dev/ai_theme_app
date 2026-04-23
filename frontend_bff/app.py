@@ -31,6 +31,42 @@ from stock_service.services.strategy_decision_service import StrategyDecisionSer
 from stock_service.services.weak_to_strong_candidate_builder import WeakToStrongCandidateBuilder
 from stock_service.services.weak_to_strong_auction_service import WeakToStrongAuctionService
 
+# P3 grey rollout flags (BFF-side only)
+DAILY_SNAPSHOT_FLAG = "stock_processing_service.daily_snapshot.enabled"
+PRE_MARKET_FLAG = "stock_processing_service.pre_market.enabled"
+POST_MARKET_FLAG = "stock_processing_service.post_market.enabled"
+QUALITY_GATE_REPORT_PATH = Path(os.getenv("QUALITY_GATE_REPORT_PATH", "tmp/quality_gate/gate_report.json"))
+
+
+def _env_flag(name: str, default: bool = False) -> bool:
+    value = str(os.getenv(name, str(default))).strip().lower()
+    return value in {"1", "true", "yes", "on"}
+
+
+def _read_quality_gate_report() -> dict[str, Any]:
+    if not QUALITY_GATE_REPORT_PATH.exists():
+        return {"gate_passed": False, "reason": f"missing gate report: {QUALITY_GATE_REPORT_PATH}"}
+    try:
+        return json.loads(QUALITY_GATE_REPORT_PATH.read_text(encoding="utf-8"))
+    except Exception as exc:
+        return {"gate_passed": False, "reason": f"invalid gate report: {exc}"}
+
+
+def _require_gate_for_flag(flag_name: str) -> None:
+    if not _env_flag(flag_name, default=False):
+        return
+    report = _read_quality_gate_report()
+    if not bool(report.get("gate_passed", False)):
+        raise HTTPException(
+            status_code=503,
+            detail={
+                "message": f"quality gate not passed, block rollout flag={flag_name}",
+                "gate_report_path": str(QUALITY_GATE_REPORT_PATH),
+                "gate_report": report,
+            },
+        )
+
+
 # 自定义JSON编码器处理Decimal类型
 class DecimalEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -222,6 +258,8 @@ class ScreenerStrategyUpdatePayload(BaseModel):
 class ScreenerExecutePayload(BaseModel):
     strategy_id: str
     trade_date: Optional[str] = None
+    candidate_trade_date: Optional[str] = None
+    confirm_trade_date: Optional[str] = None
     limit: int = 100
     min_score: float = 60.0
     auto_tune_min_score: bool = True
@@ -281,6 +319,73 @@ def _serialize_screening_result(item: Any) -> dict[str, Any]:
     }
 
 
+def _looks_like_numeric_theme_name(value: Any) -> bool:
+    text = str(value or "").strip()
+    return bool(text) and text.isdigit()
+
+
+async def _resolve_theme_name_map(subject_keys: List[str], trade_date: Optional[date] = None) -> Dict[str, str]:
+    keys = [str(k).strip() for k in subject_keys if str(k).strip()]
+    if not keys:
+        return {}
+    pool = await stock_screener_repo._ensure_pool()
+    sql = """
+    WITH keyset AS (
+      SELECT DISTINCT unnest($1::text[]) AS subject_key
+    )
+    SELECT
+      k.subject_key,
+      COALESCE(
+        (
+          SELECT NULLIF(v2.theme_name, '')
+          FROM theme_cycle_judgement_v2 v2
+          WHERE v2.subject_key = k.subject_key
+            AND NULLIF(v2.theme_name, '') IS NOT NULL
+            AND v2.theme_name !~ '^[0-9]+$'
+            AND ($2::date IS NULL OR v2.trade_date <= $2::date)
+          ORDER BY v2.trade_date DESC
+          LIMIT 1
+        ),
+        (
+          SELECT NULLIF(sh.subject_name, '')
+          FROM subject_history_staging sh
+          WHERE sh.subject_key = k.subject_key
+            AND NULLIF(sh.subject_name, '') IS NOT NULL
+            AND ($2::date IS NULL OR sh.rank_date <= $2::date)
+          ORDER BY sh.rank_date DESC
+          LIMIT 1
+        ),
+        k.subject_key
+      ) AS theme_name
+    FROM keyset k
+    """
+    async with pool.acquire() as conn:
+        rows = await conn.fetch(sql, keys, trade_date)
+    return {str(r["subject_key"]): str(r["theme_name"] or r["subject_key"]) for r in rows}
+
+
+async def _normalize_result_theme_names(results: List[dict[str, Any]], trade_date: Optional[date] = None) -> None:
+    subject_keys: List[str] = []
+    for item in results:
+        theme_info = item.get("theme_info") or {}
+        subject_key = str(theme_info.get("subject_key") or "").strip()
+        if subject_key:
+            subject_keys.append(subject_key)
+    theme_map = await _resolve_theme_name_map(subject_keys, trade_date)
+    if not theme_map:
+        return
+    for item in results:
+        theme_info = item.get("theme_info")
+        if not isinstance(theme_info, dict):
+            continue
+        subject_key = str(theme_info.get("subject_key") or "").strip()
+        if not subject_key:
+            continue
+        current_name = str(theme_info.get("theme_name") or "").strip()
+        if not current_name or _looks_like_numeric_theme_name(current_name):
+            theme_info["theme_name"] = theme_map.get(subject_key, subject_key)
+
+
 def _result_presence(result_payload: dict[str, Any]) -> dict[str, bool]:
     dim = result_payload.get("dimension_scores") or {}
     theme_info = result_payload.get("theme_info") or {}
@@ -321,6 +426,36 @@ async def _resolve_prev_trade_date(trade_date: date) -> date:
     return prev_day or trade_date
 
 
+async def _resolve_next_trade_date(trade_date: date) -> date:
+    pool = await stock_screener_repo._ensure_pool()
+    sql = """
+    SELECT MIN(trade_date) AS next_trade_date
+    FROM subject_stock_daily_snapshot
+    WHERE trade_date > $1::date
+    """
+    async with pool.acquire() as conn:
+        next_day = await conn.fetchval(sql, trade_date)
+    if not next_day:
+        raise HTTPException(
+            status_code=400,
+            detail=f"未找到 {trade_date.isoformat()} 之后的下一个交易日，无法执行盘前确认",
+        )
+    return next_day
+
+
+async def _infer_confirm_trade_date_from_candidate_trade_date(candidate_trade_date: date) -> Optional[date]:
+    pool = await stock_screener_repo._ensure_pool()
+    sql = """
+    SELECT MAX(next_trade_date) AS confirm_trade_date
+    FROM weak_to_strong_candidate_pool
+    WHERE trade_date = $1::date
+      AND next_trade_date > $1::date
+    """
+    async with pool.acquire() as conn:
+        inferred = await conn.fetchval(sql, candidate_trade_date)
+    return inferred
+
+
 async def _fetch_w2s_candidates(next_trade_date: date, limit: int = 200) -> List[Dict[str, Any]]:
     pool = await stock_screener_repo._ensure_pool()
     sql = """
@@ -333,6 +468,7 @@ async def _fetch_w2s_candidates(next_trade_date: date, limit: int = 200) -> List
       subject_key,
       theme_name,
       candidate_score,
+      pool_entry_type,
       candidate_type,
       weak_type,
       support_type,
@@ -341,12 +477,97 @@ async def _fetch_w2s_candidates(next_trade_date: date, limit: int = 200) -> List
       expected_open_high,
       evidence_json
     FROM weak_to_strong_candidate_pool
-    WHERE next_trade_date = $1::date OR trade_date = $1::date
+    WHERE trade_date = $1::date
     ORDER BY candidate_score DESC, id ASC
     LIMIT $2
     """
     async with pool.acquire() as conn:
         rows = await conn.fetch(sql, next_trade_date, max(int(limit), 1))
+    return [dict(r) for r in rows]
+
+
+async def _fetch_w2s_candidates_for_confirm_date(confirm_trade_date: date, limit: int = 200) -> List[Dict[str, Any]]:
+    pool = await stock_screener_repo._ensure_pool()
+    sql = """
+    SELECT
+      id,
+      trade_date,
+      next_trade_date,
+      stock_id,
+      stock_name,
+      subject_key,
+      theme_name,
+      candidate_score,
+      pool_entry_type,
+      candidate_type,
+      weak_type,
+      support_type,
+      support_strength,
+      expected_open_low,
+      expected_open_high,
+      evidence_json
+    FROM weak_to_strong_candidate_pool
+    WHERE next_trade_date = $1::date
+    ORDER BY candidate_score DESC, id ASC
+    LIMIT $2
+    """
+    async with pool.acquire() as conn:
+        rows = await conn.fetch(sql, confirm_trade_date, max(int(limit), 1))
+    return [dict(r) for r in rows]
+
+
+async def _count_w2s_candidates_for_confirm_date(confirm_trade_date: date) -> int:
+    pool = await stock_screener_repo._ensure_pool()
+    sql = """
+    SELECT COUNT(*)::int AS cnt
+    FROM weak_to_strong_candidate_pool
+    WHERE next_trade_date = $1::date
+    """
+    async with pool.acquire() as conn:
+        return int(await conn.fetchval(sql, confirm_trade_date) or 0)
+
+
+async def _count_w2s_formal_candidates_for_confirm_date(confirm_trade_date: date) -> int:
+    pool = await stock_screener_repo._ensure_pool()
+    sql = """
+    SELECT COUNT(*)::int AS cnt
+    FROM weak_to_strong_candidate_pool
+    WHERE next_trade_date = $1::date
+      AND COALESCE(NULLIF(LOWER(pool_entry_type), ''), 'formal') = 'formal'
+    """
+    async with pool.acquire() as conn:
+        return int(await conn.fetchval(sql, confirm_trade_date) or 0)
+
+
+async def _fetch_w2s_candidates_by_ids(candidate_ids: List[int]) -> List[Dict[str, Any]]:
+    cleaned_ids = sorted({int(item) for item in candidate_ids if int(item) > 0})
+    if not cleaned_ids:
+        return []
+    pool = await stock_screener_repo._ensure_pool()
+    sql = """
+    SELECT
+      id,
+      trade_date,
+      next_trade_date,
+      stock_id,
+      stock_name,
+      subject_key,
+      theme_name,
+      candidate_score,
+      pool_entry_type,
+      candidate_type,
+      weak_type,
+      support_type,
+      support_strength,
+      expected_open_low,
+      expected_open_high,
+      evidence_json
+    FROM weak_to_strong_candidate_pool
+    WHERE id = ANY($1::int[])
+    ORDER BY candidate_score DESC, id ASC
+    """
+    async with pool.acquire() as conn:
+        rows = await conn.fetch(sql, cleaned_ids)
     return [dict(r) for r in rows]
 
 
@@ -377,20 +598,35 @@ async def _fetch_w2s_signals(trade_date: date) -> Dict[int, Dict[str, Any]]:
     return payload
 
 
-async def _has_w2s_snapshot_cache(trade_date: date) -> bool:
+async def _get_w2s_snapshot_coverage(trade_date: date) -> Dict[str, int]:
     pool = await stock_screener_repo._ensure_pool()
     sql = """
-    SELECT 1
+    SELECT
+      COUNT(*)::int AS candidate_cnt,
+      COUNT(*) FILTER (WHERE s.stock_id IS NOT NULL)::int AS snapshot_hit_cnt
     FROM weak_to_strong_candidate_pool c
-    JOIN pre_market_auction_snapshot s
+    LEFT JOIN pre_market_auction_snapshot s
       ON split_part(s.stock_id, '.', 1) = split_part(c.stock_id, '.', 1)
      AND s.trade_date = c.next_trade_date
     WHERE c.next_trade_date = $1::date
-    LIMIT 1
+      AND COALESCE(NULLIF(LOWER(c.pool_entry_type), ''), 'formal') = 'formal'
     """
     async with pool.acquire() as conn:
         row = await conn.fetchrow(sql, trade_date)
-    return row is not None
+    return {
+        "candidate_cnt": int((row or {}).get("candidate_cnt") or 0),
+        "snapshot_hit_cnt": int((row or {}).get("snapshot_hit_cnt") or 0),
+    }
+
+
+async def _has_w2s_snapshot_cache(trade_date: date) -> bool:
+    coverage = await _get_w2s_snapshot_coverage(trade_date)
+    candidate_cnt = int(coverage.get("candidate_cnt") or 0)
+    snapshot_hit_cnt = int(coverage.get("snapshot_hit_cnt") or 0)
+    # 候选为0时视为已满足，无需额外快照。
+    if candidate_cnt <= 0:
+        return True
+    return snapshot_hit_cnt >= candidate_cnt
 
 
 def _load_env_file_values() -> Dict[str, str]:
@@ -421,9 +657,75 @@ def _resolve_tushare_token() -> str:
     return str(env_values.get("TUSHARE_TOKEN") or "").strip()
 
 
-async def _refresh_w2s_auction_snapshot(trade_date: date) -> None:
+def _to_business_candidate_type(candidate_type: Any) -> str:
+    code = str(candidate_type or "").strip().lower()
+    mapping = {
+        "strong_trend_repair": "强趋势回踩修复",
+        "trend_repair": "趋势修复",
+        "gap_support": "缺口承接位",
+        "previous_low": "前低承接位",
+        "previous_close": "昨收承接位",
+        "fibonacci_support": "斐波那契承接位",
+    }
+    if code in mapping:
+        return mapping[code]
+    if code.startswith("pivot_"):
+        return f"关键枢轴承接位（{code.replace('pivot_', '').upper()}）"
+    if not code:
+        return "--"
+    return str(candidate_type)
+
+
+def _to_business_decision(decision: Any) -> str:
+    code = str(decision or "").strip().lower()
+    mapping = {
+        "confirmed": "通过",
+        "watch": "观察",
+        "reject": "不通过",
+        "no_decision": "待判定",
+    }
+    return mapping.get(code, str(decision or ""))
+
+
+def _safe_float(value: Any, default: float = 0.0) -> float:
+    try:
+        if value is None:
+            return default
+        return float(value)
+    except Exception:
+        return default
+
+
+def _extract_w2s_detail_scores(replay: Dict[str, Any]) -> Dict[str, float]:
+    candidate_evidence = replay.get("candidate_evidence") or {}
+    signal_evidence = replay.get("signal_evidence") or {}
+    cycle_values = ((candidate_evidence.get("cycle_diagnostics") or {}).get("values") or {})
+    candidate_breakdown = ((candidate_evidence.get("scores") or {}).get("breakdown") or {})
+
+    mainline_strength = _safe_float(
+        replay.get("mainline_strength_score"),
+        _safe_float(cycle_values.get("mainline_strength_score"), 0.0),
+    )
+    leader_score = _safe_float(cycle_values.get("leader_alive_score"), 0.0)
+    support_strength = _safe_float(replay.get("support_strength"), _safe_float(cycle_values.get("support_strength"), 0.0))
+    candidate_score = _safe_float(replay.get("candidate_score"), _safe_float(candidate_breakdown.get("candidate_score"), 0.0))
+    confirmation_score = _safe_float(replay.get("confirmation_score"), _safe_float((signal_evidence.get("scores") or {}).get("confirmation_score"), 0.0))
+
+    return {
+        "mainline_strength": max(0.0, min(mainline_strength, 100.0)),
+        "leader_score": max(0.0, min(leader_score, 100.0)),
+        "support_strength": max(0.0, min(support_strength, 100.0)),
+        "candidate_score": max(0.0, min(candidate_score, 100.0)),
+        "confirmation_score": max(0.0, min(confirmation_score, 100.0)),
+    }
+
+
+async def _refresh_w2s_auction_snapshot(trade_date: date, min_required_stocks: int = 0) -> None:
     token = _resolve_tushare_token()
-    max_stocks = max(int(os.getenv("W2S_AUCTION_MAX_STOCKS", "80") or 80), 1)
+    base_max_stocks = max(int(os.getenv("W2S_AUCTION_MAX_STOCKS", "80") or 80), 1)
+    hard_cap = max(int(os.getenv("W2S_AUCTION_MAX_STOCKS_HARD_CAP", "2000") or 2000), 1)
+    dynamic_required = max(int(min_required_stocks or 0), 0)
+    max_stocks = min(max(base_max_stocks, dynamic_required), hard_cap)
     now_cn = datetime.now(ZoneInfo("Asia/Shanghai"))
     has_token = bool(token)
     if not has_token and trade_date == now_cn.date():
@@ -473,9 +775,12 @@ def _build_w2s_result_row(candidate: Dict[str, Any], signal: Optional[Dict[str, 
     composite = confirmation_score if signal else candidate_score
     signal_level = str((signal or {}).get("signal_level") or "")
     decision = str((signal or {}).get("decision") or "")
+    candidate_type_raw = str(candidate.get("candidate_type") or "")
+    candidate_type_label = _to_business_candidate_type(candidate_type_raw)
+    decision_label = _to_business_decision(decision)
     screening_reason = (
-        f"阶段一候选: {candidate.get('candidate_type') or '--'} / "
-        f"阶段二确认: {signal_level or '--'} {decision or ''}".strip()
+        f"阶段一入池依据：{candidate_type_label}；"
+        f"阶段二竞价确认：{signal_level or '--'} {decision_label}".strip()
     )
     return {
         "result_id": f"w2s_{candidate_id}",
@@ -497,7 +802,8 @@ def _build_w2s_result_row(candidate: Dict[str, Any], signal: Optional[Dict[str, 
         "weak_to_strong": {
             "candidate_id": candidate_id,
             "candidate_score": candidate_score,
-            "candidate_type": str(candidate.get("candidate_type") or ""),
+            "candidate_type": candidate_type_raw,
+            "candidate_type_label": candidate_type_label,
             "weak_type": str(candidate.get("weak_type") or ""),
             "support_type": str(candidate.get("support_type") or ""),
             "support_strength": float(candidate.get("support_strength") or 0.0),
@@ -505,6 +811,7 @@ def _build_w2s_result_row(candidate: Dict[str, Any], signal: Optional[Dict[str, 
             "expected_open_high": float(candidate.get("expected_open_high") or 0.0),
             "signal_level": signal_level,
             "decision": decision,
+            "decision_label": decision_label,
             "confirmation_score": confirmation_score,
             "auction_open_pct": float((signal or {}).get("auction_open_pct") or 0.0),
             "auction_close_pct": float((signal or {}).get("auction_close_pct") or 0.0),
@@ -528,12 +835,40 @@ async def _execute_weak_to_strong_two_stage(payload: ScreenerExecutePayload, tra
     run_stage2 = bool(payload.run_stage2)
     if not run_stage1 and not run_stage2:
         run_stage2 = True
-    stage1_limit = max(int(os.getenv("W2S_STAGE1_MAX_CANDIDATES", "20") or 20), 1)
+    hard_stage1_limit = 10
+    default_stage1_limit = min(max(int(os.getenv("W2S_STAGE1_MAX_CANDIDATES", "10") or 10), 1), hard_stage1_limit)
+    requested_stage1_limit = int(payload.limit or 0)
+    if requested_stage1_limit > 0:
+        stage1_limit = min(max(requested_stage1_limit, 1), hard_stage1_limit)
+    else:
+        stage1_limit = default_stage1_limit
+
+    # 双日期协议：
+    # - candidate_trade_date：盘后候选生成日
+    # - confirm_trade_date：盘前确认日（候选 next_trade_date）
+    candidate_trade_date = _parse_trade_date(payload.candidate_trade_date or payload.trade_date)
+    requested_confirm_trade_date = (
+        _parse_trade_date(payload.confirm_trade_date)
+        if payload.confirm_trade_date
+        else None
+    )
+    if requested_confirm_trade_date:
+        confirm_trade_date = requested_confirm_trade_date
+    elif run_stage1:
+        confirm_trade_date = await _resolve_next_trade_date(candidate_trade_date)
+    else:
+        # 兼容旧前端：若仅传 trade_date，先按 confirm_date 尝试；无候选则回退按 candidate_date 推断。
+        confirm_trade_date = candidate_trade_date
+        strict_candidates = await _fetch_w2s_candidates_for_confirm_date(confirm_trade_date, limit=1)
+        if not strict_candidates:
+            inferred_confirm = await _infer_confirm_trade_date_from_candidate_trade_date(candidate_trade_date)
+            if inferred_confirm:
+                confirm_trade_date = inferred_confirm
 
     # 同交易日盘前阶段二门禁：9:25 前禁止竞价确认，避免拿到不完整竞价数据
     if run_stage2:
         now_cn = datetime.now(ZoneInfo("Asia/Shanghai"))
-        if trade_date == now_cn.date():
+        if confirm_trade_date == now_cn.date():
             if now_cn.hour < 9 or (now_cn.hour == 9 and now_cn.minute < 25):
                 raise HTTPException(status_code=400, detail="盘前9:25之后才能采集！")
 
@@ -544,46 +879,92 @@ async def _execute_weak_to_strong_two_stage(payload: ScreenerExecutePayload, tra
     stage2_summary: Dict[str, Any] = {"status": "skipped", "level_count": {"A": 0, "B": 0, "C": 0, "X": 0}}
     try:
         if run_stage1:
-            # 盘后选股必须使用“当日盘后数据”，为下一交易日生成候选池。
-            source_trade_date = trade_date
-            try:
-                build_result = await asyncio.wait_for(
-                    candidate_builder.build(
-                        source_trade_date,
-                        next_trade_date=trade_date,
-                        max_candidates=stage1_limit,
-                    ),
-                    timeout=30.0
+            # 盘后阶段：使用 candidate_trade_date 的收盘截面，为 confirm_trade_date 生成候选池。
+            source_trade_date = candidate_trade_date
+            now_cn_date = datetime.now(ZoneInfo("Asia/Shanghai")).date()
+            prefer_cached_historical = str(os.getenv("W2S_PREFER_CACHED_HISTORICAL", "1")).lower() in {"1", "true", "yes", "on"}
+            should_try_cached_first = prefer_cached_historical and source_trade_date < now_cn_date
+            if should_try_cached_first:
+                existing_count = await _count_w2s_candidates_for_confirm_date(confirm_trade_date)
+                if existing_count > 0:
+                    stage1_summary = {
+                        "status": "cached",
+                        "source_trade_date": source_trade_date.isoformat(),
+                        "next_trade_date": confirm_trade_date.isoformat(),
+                        "candidate_count": existing_count,
+                        "candidate_limit": stage1_limit,
+                        "cache_policy": "historical_prefer_cached",
+                    }
+                else:
+                    stage1_summary = {"status": "cache_miss"}
+            if stage1_summary.get("status") == "cached":
+                logger.info(
+                    "弱转强盘后候选命中历史缓存: candidate_trade_date=%s confirm_trade_date=%s count=%s",
+                    source_trade_date.isoformat(),
+                    confirm_trade_date.isoformat(),
+                    stage1_summary.get("candidate_count"),
                 )
-                stage1_summary = {
-                    "status": "success",
-                    "source_trade_date": source_trade_date.isoformat(),
-                    "candidate_count": int(build_result.total_inserted),
-                    "candidate_limit": stage1_limit,
-                }
-            except asyncio.TimeoutError:
-                logger.error(f"弱转强候选构建超时(30s)，跳过构建，使用现有候选池数据")
-                stage1_summary = {
-                    "status": "timeout",
-                    "source_trade_date": source_trade_date.isoformat(),
-                    "candidate_count": 0,
-                    "candidate_limit": stage1_limit,
-                }
-            except Exception as e:
-                logger.error(f"弱转强候选构建失败: {e}")
-                stage1_summary = {
-                    "status": "error",
-                    "source_trade_date": source_trade_date.isoformat(),
-                    "candidate_count": 0,
-                    "candidate_limit": stage1_limit,
-                    "error": str(e)[:200]
-                }
+            else:
+                try:
+                    build_result = await asyncio.wait_for(
+                        candidate_builder.build(
+                            source_trade_date,
+                            next_trade_date=confirm_trade_date,
+                            max_candidates=stage1_limit,
+                        ),
+                        timeout=30.0
+                    )
+                    stage1_summary = {
+                        "status": "success",
+                        "source_trade_date": source_trade_date.isoformat(),
+                        "next_trade_date": confirm_trade_date.isoformat(),
+                        "candidate_count": int(build_result.total_inserted),
+                        "candidate_limit": stage1_limit,
+                    }
+                except asyncio.TimeoutError:
+                    logger.error(f"弱转强候选构建超时(30s)，跳过构建，使用现有候选池数据")
+                    stage1_summary = {
+                        "status": "timeout",
+                        "source_trade_date": source_trade_date.isoformat(),
+                        "next_trade_date": confirm_trade_date.isoformat(),
+                        "candidate_count": 0,
+                        "candidate_limit": stage1_limit,
+                    }
+                except Exception as e:
+                    logger.error(f"弱转强候选构建失败: {e}")
+                    stage1_summary = {
+                        "status": "error",
+                        "source_trade_date": source_trade_date.isoformat(),
+                        "next_trade_date": confirm_trade_date.isoformat(),
+                        "candidate_count": 0,
+                        "candidate_limit": stage1_limit,
+                        "error": str(e)[:200]
+                    }
 
         if run_stage2:
-            await _refresh_w2s_auction_snapshot(trade_date)
-            confirm_result = await auction_service.confirm(trade_date)
+            now_cn = datetime.now(ZoneInfo("Asia/Shanghai")).date()
+            refresh_historical = str(os.getenv("W2S_REFRESH_HISTORICAL", "0")).lower() in {"1", "true", "yes", "on"}
+            formal_candidate_count = await _count_w2s_formal_candidates_for_confirm_date(confirm_trade_date)
+            coverage_before = await _get_w2s_snapshot_coverage(confirm_trade_date)
+            is_full_coverage_before = int(coverage_before.get("snapshot_hit_cnt") or 0) >= int(coverage_before.get("candidate_cnt") or 0)
+            should_refresh_snapshot = (
+                confirm_trade_date >= now_cn
+                or refresh_historical
+                or not is_full_coverage_before
+            )
+            if should_refresh_snapshot:
+                await _refresh_w2s_auction_snapshot(
+                    confirm_trade_date,
+                    min_required_stocks=formal_candidate_count,
+                )
+            coverage_after = await _get_w2s_snapshot_coverage(confirm_trade_date)
+            confirm_result = await auction_service.confirm(confirm_trade_date)
             stage2_summary = {
                 "status": "success",
+                "confirm_trade_date": confirm_trade_date.isoformat(),
+                "snapshot_refresh_skipped": not should_refresh_snapshot,
+                "snapshot_candidate_cnt": int(coverage_after.get("candidate_cnt") or 0),
+                "snapshot_hit_cnt": int(coverage_after.get("snapshot_hit_cnt") or 0),
                 "total_candidates": int(confirm_result.total_candidates),
                 "persisted_count": int(confirm_result.persisted_count),
                 "level_count": confirm_result.level_count,
@@ -596,24 +977,56 @@ async def _execute_weak_to_strong_two_stage(payload: ScreenerExecutePayload, tra
         candidate_limit = 2000
     else:
         candidate_limit = stage1_limit
-    candidates = await _fetch_w2s_candidates(trade_date, limit=candidate_limit)
-    signals = await _fetch_w2s_signals(trade_date) if run_stage2 else {}
+    if run_stage2:
+        # 阶段二严格口径：候选必须来自 next_trade_date = confirm_trade_date
+        candidates = await _fetch_w2s_candidates_for_confirm_date(confirm_trade_date, limit=candidate_limit)
+    else:
+        # 阶段一展示优先与阶段二保持同口径：next_trade_date = confirm_trade_date
+        # 仅在历史兼容场景（严格口径空）时才回退到旧口径，避免页面出现“跳变”。
+        candidates = await _fetch_w2s_candidates_for_confirm_date(confirm_trade_date, limit=candidate_limit)
+        if not candidates:
+            candidates = await _fetch_w2s_candidates(candidate_trade_date, limit=candidate_limit)
+    signals = await _fetch_w2s_signals(confirm_trade_date) if run_stage2 else {}
     results: List[Dict[str, Any]] = []
     if run_stage2:
         # 两阶段结果以阶段二信号为主，避免受候选列表 limit 截断导致“有信号但显示0条”。
         candidate_map: Dict[int, Dict[str, Any]] = {
             int(c.get("id") or 0): c for c in candidates if int(c.get("id") or 0) > 0
         }
+        if signals:
+            missing_candidate_ids = [cid for cid in signals.keys() if cid not in candidate_map]
+            if missing_candidate_ids:
+                for row in await _fetch_w2s_candidates_by_ids(missing_candidate_ids):
+                    cid = int(row.get("id") or 0)
+                    if cid > 0:
+                        candidate_map[cid] = row
         sorted_signals = sorted(
             signals.items(),
             key=lambda kv: float((kv[1] or {}).get("confirmation_score") or 0.0),
             reverse=True,
         )
+        included_candidate_ids: set[int] = set()
         for candidate_id, signal in sorted_signals:
             candidate = candidate_map.get(int(candidate_id))
             if candidate is None:
                 continue
+            signal_level = str((signal or {}).get("signal_level") or "").upper()
+            decision = str((signal or {}).get("decision") or "").lower()
             results.append(_build_w2s_result_row(candidate, signal, len(results) + 1))
+            included_candidate_ids.add(int(candidate_id))
+
+        # observe_only 候选不参与正式竞价信号，但必须保留在结果中供用户继续观察。
+        for candidate in sorted(
+            candidates,
+            key=lambda c: float(c.get("candidate_score") or 0.0),
+            reverse=True,
+        ):
+            candidate_id = int(candidate.get("id") or 0)
+            if candidate_id <= 0 or candidate_id in included_candidate_ids:
+                continue
+            if str(candidate.get("pool_entry_type") or "").lower() != "observe_only":
+                continue
+            results.append(_build_w2s_result_row(candidate, None, len(results) + 1))
     else:
         for idx, candidate in enumerate(candidates, start=1):
             candidate_id = int(candidate.get("id") or 0)
@@ -624,12 +1037,15 @@ async def _execute_weak_to_strong_two_stage(payload: ScreenerExecutePayload, tra
         row["rank_position"] = i
 
     elapsed_ms = int((time.perf_counter() - started) * 1000)
+    effective_trade_date = confirm_trade_date if run_stage2 else candidate_trade_date
+    await _normalize_result_theme_names(results, effective_trade_date)
+    confirm_input_candidate_count = int(stage2_summary.get("total_candidates") or 0) if run_stage2 else 0
     return {
-        "job_id": f"w2s_{payload.strategy_id}_{trade_date.isoformat()}_{int(time.time())}",
+        "job_id": f"w2s_{payload.strategy_id}_{effective_trade_date.isoformat()}_{int(time.time())}",
         "status": "completed",
         "results": results,
         "total_count": len(results),
-        "trade_date": trade_date.isoformat(),
+        "trade_date": effective_trade_date.isoformat(),
         "execution_time_ms": elapsed_ms,
         "llm_review_status": "disabled_for_two_stage",
         "llm_summary": {"pass": 0, "watch": 0, "reject": 0, "failed": 0},
@@ -638,9 +1054,15 @@ async def _execute_weak_to_strong_two_stage(payload: ScreenerExecutePayload, tra
             "strategy_name": strategy_name,
             "run_stage1": run_stage1,
             "run_stage2": run_stage2,
+            "candidate_trade_date": candidate_trade_date.isoformat(),
+            "confirm_trade_date": confirm_trade_date.isoformat(),
+            "snapshot_trade_date": confirm_trade_date.isoformat(),
             "stage1": stage1_summary,
             "stage2": stage2_summary,
             "candidate_pool_count": len(candidates),
+            "confirm_input_candidate_count": confirm_input_candidate_count,
+            "confirm_filtered_out_count": max(len(candidates) - confirm_input_candidate_count, 0) if run_stage2 else 0,
+            "snapshot_hit_count": int(stage2_summary.get("total_candidates") or 0) if run_stage2 else 0,
             "signal_count": len(signals),
             "display_result_count": len(results),
         },
@@ -771,7 +1193,8 @@ async def execute_stock_screener(payload: ScreenerExecutePayload):
 
     strategy = await stock_screener_repo.get_strategy(payload.strategy_id)
     if _is_weak_to_strong_strategy(strategy, payload.strategy_id):
-        return await _execute_weak_to_strong_two_stage(payload, trade_date)
+        weak_to_strong_date = _parse_trade_date(payload.candidate_trade_date or payload.trade_date)
+        return await _execute_weak_to_strong_two_stage(payload, weak_to_strong_date)
 
     # 1. 市场状态评估 - 先有主线，再有选股
     decision_service = StrategyDecisionService()
@@ -878,6 +1301,7 @@ async def execute_stock_screener(payload: ScreenerExecutePayload):
     execution_time_ms = int((latest_exec or {}).get("execution_time_ms") or elapsed_ms)
 
     serialized_results = [_serialize_screening_result(item) for item in results]
+    await _normalize_result_theme_names(serialized_results, trade_date)
     presence_list = [_result_presence(x) for x in serialized_results]
     total = len(serialized_results)
     if total > 0:
@@ -985,7 +1409,10 @@ async def get_stock_screener_execution(job_id: str):
 
 
 @app.get("/api/stock-screener/results/{result_id}")
-async def get_stock_screener_result_detail(result_id: str):
+async def get_stock_screener_result_detail(
+    result_id: str,
+    view: Optional[str] = Query(default=None, description="详情视角：candidate|confirm"),
+):
     if result_id.startswith("w2s_"):
         try:
             candidate_id = int(result_id.split("_", 1)[1])
@@ -998,42 +1425,108 @@ async def get_stock_screener_result_detail(result_id: str):
             await service.close()
         if not replay:
             raise HTTPException(status_code=404, detail="result not found")
+        detail_view = str(view or "").strip().lower()
+        if detail_view not in {"candidate", "confirm"}:
+            detail_view = "confirm" if replay.get("signal_level") else "candidate"
+
         signal_evidence = replay.get("signal_evidence") or {}
         score_payload = ((signal_evidence or {}).get("scores") or {})
-        return {
+        detail_scores = _extract_w2s_detail_scores(replay)
+        candidate_score = detail_scores["candidate_score"]
+        confirmation_score = detail_scores["confirmation_score"]
+        cycle_score = confirmation_score if detail_view == "confirm" and confirmation_score > 0 else candidate_score
+        mainline_strength = detail_scores["mainline_strength"]
+        leader_score = detail_scores["leader_score"]
+        support_strength = detail_scores["support_strength"]
+        technical_score = support_strength
+        composite_score = round((mainline_strength * 0.35) + (cycle_score * 0.30) + (leader_score * 0.20) + (technical_score * 0.15), 2)
+
+        payload = {
             "result_id": result_id,
             "stock_id": replay.get("stock_id", ""),
             "stock_name": replay.get("stock_name", ""),
-            "composite_score": float(replay.get("confirmation_score") or replay.get("candidate_score") or 0.0),
+            "composite_score": composite_score,
             "dimension_scores": {
-                "mainline": 0.0,
-                "cycle": float(replay.get("confirmation_score") or 0.0),
-                "leader": 0.0,
-                "technical": 0.0,
+                "mainline": round(mainline_strength, 2),
+                "cycle": cycle_score,
+                "leader": round(leader_score, 2),
+                "technical": round(technical_score, 2),
             },
             "rank_position": None,
-            "screening_reason": f"弱转强两阶段结果：{replay.get('signal_level','')} / {replay.get('decision','')}",
-            "theme_info": {},
+            "theme_info": {
+                "subject_key": str(replay.get("subject_key") or ""),
+                "theme_name": str(replay.get("theme_name") or replay.get("subject_key") or ""),
+            },
             "dimension_details": {
-                "mainline": {"strength_score": 0, "heat_rank": 0, "capital_attention": 0, "reasoning": ""},
-                "cycle": {
-                    "stage_score": float(score_payload.get("pattern_stability") or 0.0),
-                    "duration_score": float(score_payload.get("last_minute_grab") or 0.0),
-                    "stability_score": float(score_payload.get("plate_follow") or 0.0),
-                    "reasoning": "",
+                "mainline": {
+                    "strength_score": round(mainline_strength, 2),
+                    "heat_rank": 0.0,
+                    "capital_attention": 0.0,
+                    "reasoning": "来自候选池主线强度评分（mainline_strength_score）。",
                 },
-                "leader": {"position_score": 0, "leading_effect": 0, "capital_recognition": 0, "reasoning": ""},
-                "technical": {"abnormal_score": 0, "pattern_score": 0, "volume_price_score": 0, "reasoning": ""},
+                "cycle": {
+                    "stage_score": float(score_payload.get("pattern_stability") or 0.0) if detail_view == "confirm" else candidate_score,
+                    "duration_score": float(score_payload.get("last_minute_grab") or 0.0) if detail_view == "confirm" else 0.0,
+                    "stability_score": float(score_payload.get("plate_follow") or 0.0) if detail_view == "confirm" else 0.0,
+                    "reasoning": (
+                        "盘前确认视角：在昨日候选基础上叠加今日竞价确认分。"
+                        if detail_view == "confirm"
+                        else "盘后候选视角：仅展示昨日入池依据与候选分。"
+                    ),
+                },
+                "leader": {
+                    "position_score": round(leader_score, 2),
+                    "leading_effect": round(leader_score, 2),
+                    "capital_recognition": 0.0,
+                    "reasoning": "来自候选证据中的龙头存活分（leader_alive_score）。",
+                },
+                "technical": {
+                    "abnormal_score": 0.0,
+                    "pattern_score": round(support_strength, 2),
+                    "volume_price_score": round(support_strength, 2),
+                    "reasoning": "技术形态分以K线支撑强度（support_strength）为核心。",
+                },
             },
             "created_at": datetime.now().isoformat(),
             "weak_to_strong_replay": replay,
         }
+        replay_candidate_type = replay.get("candidate_type") or replay.get("pool_entry_type") or ""
+        replay_decision = replay.get("decision") or ""
+        candidate_reason = (
+            f"阶段一入池依据：{_to_business_candidate_type(replay_candidate_type)}；"
+            f"候选分：{candidate_score:.2f}"
+        )
+        confirm_reason = (
+            f"{candidate_reason}；"
+            f"阶段二竞价确认：{replay.get('signal_level', '--')} {_to_business_decision(replay_decision)}；"
+            f"确认分：{confirmation_score:.2f}"
+        )
+        payload["screening_reason"] = confirm_reason if detail_view == "confirm" else candidate_reason
+        payload["weak_to_strong"] = {
+            "detail_view": detail_view,
+            "candidate_type": str(replay_candidate_type or ""),
+            "candidate_type_label": _to_business_candidate_type(replay_candidate_type),
+            "decision": str(replay_decision or ""),
+            "decision_label": _to_business_decision(replay_decision),
+            "signal_level": str(replay.get("signal_level") or ""),
+            "confirmation_score": confirmation_score,
+            "candidate_score": candidate_score,
+            "support_type": str(replay.get("support_type") or ""),
+            "support_strength": support_strength,
+            "candidate_trade_date": str(replay.get("candidate_trade_date") or ""),
+            "confirm_trade_date": str(replay.get("confirm_trade_date") or ""),
+        }
+        replay_trade_date = replay.get("confirm_trade_date") or replay.get("trade_date")
+        parsed_replay_trade_date = _parse_trade_date(str(replay_trade_date)) if replay_trade_date else None
+        await _normalize_result_theme_names([payload], parsed_replay_trade_date)
+        return payload
 
     detail = await stock_screener_service.get_result_detail(result_id)
     if not detail:
         raise HTTPException(status_code=404, detail="result not found")
 
     payload = _serialize_screening_result(detail)
+    await _normalize_result_theme_names([payload], detail.trade_date if getattr(detail, "trade_date", None) else None)
     payload["dimension_details"] = getattr(detail, "dimension_details", None)
     payload["created_at"] = detail.created_at.isoformat() if detail.created_at else None
     llm_review = await stock_screener_repo.get_llm_review(result_id)
@@ -1194,6 +1687,7 @@ async def get_intel_feed(
     stock_id: Optional[str] = Query(default=None),
     limit: int = Query(default=100, ge=1, le=500),
 ):
+    _require_gate_for_flag(DAILY_SNAPSHOT_FLAG)
     return await bff_repo.fetch_intel_feed_view(
         feed_date=date,
         session=session,
@@ -1202,6 +1696,28 @@ async def get_intel_feed(
         stock_id=stock_id,
         limit=limit,
     )
+
+
+@app.get("/api/intel/strong-stocks/watch")
+async def get_strong_stock_watch(
+    date: Optional[str] = Query(default=None),
+    window_days: int = Query(default=7, ge=1, le=30),
+    limit: int = Query(default=200, ge=1, le=500),
+    latest_per_stock: bool = Query(default=True),
+    include_removed: bool = Query(default=False),
+    stock_id: Optional[str] = Query(default=None),
+):
+    try:
+        return await bff_repo.fetch_strong_stock_watch_view(
+            trade_date=date,
+            window_days=window_days,
+            limit=limit,
+            latest_per_stock=latest_per_stock,
+            include_removed=include_removed,
+            stock_id=stock_id,
+        )
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
 
 
 @app.get("/api/intel/stream")
@@ -1213,6 +1729,7 @@ async def get_intel_stream(
     stock_id: Optional[str] = Query(default=None),
     limit: int = Query(default=20, ge=1, le=100),
 ):
+    _require_gate_for_flag(DAILY_SNAPSHOT_FLAG)
     async def event_generator():
         seen_item_ids: set[str] = set()
         heartbeat_interval = 15
@@ -1279,6 +1796,7 @@ async def get_intel_stream_realtime(
     stock_id: Optional[str] = Query(default=None),
     limit: int = Query(default=20, ge=1, le=100),
 ):
+    _require_gate_for_flag(DAILY_SNAPSHOT_FLAG)
     """
     实时SSE端点 - 直接从Redis Stream消费事件
 
@@ -1395,6 +1913,10 @@ async def get_recap(
     date: str = Query(...),
     report_type: str = Query(default="post_market", pattern="^(pre_market|post_market)$"),
 ):
+    if report_type == "pre_market":
+        _require_gate_for_flag(PRE_MARKET_FLAG)
+    else:
+        _require_gate_for_flag(POST_MARKET_FLAG)
     return await bff_repo.fetch_recap_view(
         trade_date=date,
         report_type=report_type,

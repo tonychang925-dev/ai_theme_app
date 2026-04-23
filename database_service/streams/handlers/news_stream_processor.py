@@ -5,6 +5,7 @@
 import asyncio
 import json
 import logging
+import os
 import time
 from datetime import datetime
 from typing import Dict, Any, Optional, List
@@ -560,6 +561,13 @@ class NewsStreamProcessor:
     async def _process_news_stored_event(self, news_data: Dict[str, Any]) -> Dict[str, Any]:
         """处理新闻存储完成事件：news_raw -> structured news_event -> structured stream"""
         news_id = news_data.get('news_id', 'unknown')
+        if self._is_stress_test_news(news_data):
+            logger.warning("🚫 业务处理层拦截压测新闻: news_id=%s", news_id)
+            return {
+                "event_type": "news.stored",
+                "processing_steps": ["stress_test_blocked"],
+                "results": {"blocked": True, "reason": "stress_test_news_blocked"},
+            }
         logger.info(f"🔄 开始处理新闻存储事件: {news_id}")
 
         business_results = {
@@ -736,6 +744,18 @@ class NewsStreamProcessor:
                 logger.error(f"❌ 创建基本结构化事件失败: {e}", exc_info=True)
 
         return business_results
+
+    @staticmethod
+    def _is_stress_test_news(news_data: Dict[str, Any]) -> bool:
+        """
+        判定是否为压测注入新闻。
+        默认拦截 stress_test_*，可通过 ALLOW_STRESS_TEST_NEWS=true 临时放开。
+        """
+        allow = str(os.getenv("ALLOW_STRESS_TEST_NEWS", "false")).strip().lower() in {"1", "true", "yes", "on"}
+        if allow:
+            return False
+        news_id = str(news_data.get("news_id") or "").strip().lower()
+        return news_id.startswith("stress_test_")
 
     def _build_structured_news_event(self, news_data: Dict[str, Any], structured_result: Dict[str, Any]) -> Dict[str, Any]:
         """将 ModelService 输出规范化为 news_event 落库结构"""

@@ -4,10 +4,13 @@ set -euo pipefail
 
 ROOT_DIR="/Users/admin/Desktop/ai_theme_app"
 BFF_HEALTH_URL="http://127.0.0.1:8003/health"
+THEME_HEALTH_URL="http://127.0.0.1:8002/health"
 BFF_FEED_URL="http://127.0.0.1:8003/api/intel/feed?type=all&session=all&limit=3"
 BFF_REVIEW_URL="http://127.0.0.1:8003/api/intel/feed?type=event_review&session=all&limit=3"
 
 START_SERVICES_PATTERN="database_service\\.streams\\.start_services"
+THEME_SERVICE_PATTERN="theme_service\\.app:app.*8002"
+BFF_WRAPPER_PATTERN="start_frontend_bff_wrapper\\.sh"
 BFF_PATTERN="frontend_bff\\.app:app.*8003"
 FRONTEND_PATTERN="vite --host|node .*vite .*--port 5173"
 
@@ -101,11 +104,14 @@ echo
 
 echo "[process]"
 print_proc "$START_SERVICES_PATTERN" "stream services"
+print_proc "$THEME_SERVICE_PATTERN" "theme_service:8002"
+print_proc "$BFF_WRAPPER_PATTERN" "frontend_bff wrapper"
 print_proc "$BFF_PATTERN" "frontend_bff:8003"
 print_proc "$FRONTEND_PATTERN" "frontend vite"
 echo
 
 echo "[http]"
+print_http "$THEME_HEALTH_URL" "theme_service /health"
 print_http "$BFF_HEALTH_URL" "bff /health"
 print_http "$BFF_FEED_URL" "bff /api/intel/feed?type=all"
 print_http "$BFF_REVIEW_URL" "bff /api/intel/feed?type=event_review"

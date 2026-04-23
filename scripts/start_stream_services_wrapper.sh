@@ -3,10 +3,15 @@
 set -euo pipefail
 
 ROOT_DIR="/Users/admin/Desktop/ai_theme_app"
-PYTHON_CMD="$ROOT_DIR/.venv/bin/python"
+THEME_MATCHER_PYTHON="/opt/miniconda3/envs/theme_matcher_env/bin/python"
+PYTHON_CMD="${STREAM_SERVICES_PYTHON:-}"
 
-if [[ ! -x "$PYTHON_CMD" ]]; then
-  if command -v python3 >/dev/null 2>&1; then
+if [[ -z "$PYTHON_CMD" ]]; then
+  if [[ -x "$THEME_MATCHER_PYTHON" ]]; then
+    PYTHON_CMD="$THEME_MATCHER_PYTHON"
+  elif [[ -x "$ROOT_DIR/.venv/bin/python" ]]; then
+    PYTHON_CMD="$ROOT_DIR/.venv/bin/python"
+  elif command -v python3 >/dev/null 2>&1; then
     PYTHON_CMD="python3"
   else
     echo "[wrapper] python not found"
@@ -14,7 +19,13 @@ if [[ ! -x "$PYTHON_CMD" ]]; then
   fi
 fi
 
+if [[ ! -x "$PYTHON_CMD" ]] && [[ "$PYTHON_CMD" != "python3" ]]; then
+  echo "[wrapper] invalid STREAM_SERVICES_PYTHON: $PYTHON_CMD"
+  exit 127
+fi
+
 echo "[wrapper] start stream services wrapper pid=$$ at $(date '+%F %T')"
+echo "[wrapper] selected python: $PYTHON_CMD"
 echo "[wrapper] cmd: $PYTHON_CMD -m database_service.streams.start_services"
 
 term_handler() {

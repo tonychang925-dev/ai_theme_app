@@ -61,6 +61,15 @@ def _flag_text(value) -> str:
         return str(value)
 
 
+def _is_numeric_theme_name(value) -> bool:
+    text = str(value or "").strip()
+    return bool(text) and text.isdigit()
+
+
+def _needs_theme_name_resolution(value) -> bool:
+    return not str(value or "").strip() or _is_numeric_theme_name(value)
+
+
 def _theme_kline_summary(candidates: list[dict], recent_rank: dict | None = None) -> str:
     if not candidates:
         return "--"
@@ -332,6 +341,37 @@ class RecapService:
             core = "走弱承接偏弱"
         return f"按当日强度+趋势分定义；{core}"
 
+    def _collect_subject_keys(self, *row_groups: list[dict]) -> list[str]:
+        keys: set[str] = set()
+        for rows in row_groups:
+            for row in rows or []:
+                subject_key = str(row.get("subject_key") or "").strip()
+                if subject_key:
+                    keys.add(subject_key)
+        return sorted(keys)
+
+    async def _resolve_theme_name_map(self, subject_keys: list[str]) -> dict[str, str]:
+        resolver = getattr(self.repository, "fetch_theme_name_map", None)
+        if not resolver:
+            return {}
+        try:
+            return await resolver(subject_keys)
+        except Exception:
+            return {}
+
+    async def _optional_fetch(self, method_name: str, default, *args, **kwargs):
+        fetcher = getattr(self.repository, method_name, None)
+        if not fetcher:
+            return default
+        return await fetcher(*args, **kwargs)
+
+    def _apply_theme_names(self, rows: list[dict], theme_name_map: dict[str, str]) -> None:
+        for row in rows or []:
+            subject_key = str(row.get("subject_key") or "").strip()
+            resolved_name = str(theme_name_map.get(subject_key) or "").strip()
+            if resolved_name and (_needs_theme_name_resolution(row.get("theme_name")) or resolved_name != subject_key):
+                row["theme_name"] = resolved_name
+
     async def build_pre_market_report(self, trade_date: str) -> MarketReport:
         plans = await self.repository.fetch_pre_market_execution_plans(trade_date, limit=30, include_avoid=False)
         recent_validations = await self.repository.fetch_recent_auction_signal_validations(trade_date, limit=12)
@@ -391,13 +431,14 @@ class RecapService:
         theme_environments = await self.repository.fetch_theme_environment_judgements(trade_date, limit=30)
         mainlines = await self.repository.fetch_mainline_judgements(trade_date, limit=30)
         cycles = await self.repository.fetch_cycle_judgements(trade_date, limit=30)
-        theme_recent_ranks = await self.repository.fetch_theme_recent_rank_stats(trade_date, lookback_days=5)
+        transitions = await self._optional_fetch("fetch_mainline_state_transitions", [], trade_date, limit=40)
+        theme_recent_ranks = await self._optional_fetch("fetch_theme_recent_rank_stats", [], trade_date, lookback_days=5)
         candidates = await self.repository.fetch_leader_candidates(trade_date, limit=120)
         llm_judgements = await self.repository.fetch_leader_llm_judgements(trade_date, limit=1000)
         dragon_tigers = await self.repository.fetch_dragon_tiger_objects(trade_date, limit=120)
-        recent_dragon_tiger_stats = await self.repository.fetch_recent_dragon_tiger_stats(trade_date, lookback_days=7)
-        theme_capital_flows = await self.repository.fetch_theme_capital_flow_top(trade_date, limit=50)
-        stock_capital_flows = await self.repository.fetch_stock_main_net_inflow_top(trade_date, limit=20)
+        recent_dragon_tiger_stats = await self._optional_fetch("fetch_recent_dragon_tiger_stats", [], trade_date, lookback_days=7)
+        theme_capital_flows = await self._optional_fetch("fetch_theme_capital_flow_top", [], trade_date, limit=50)
+        stock_capital_flows = await self._optional_fetch("fetch_stock_main_net_inflow_top", [], trade_date, limit=20)
         money_flows = await self.repository.fetch_money_flow_enhanced(trade_date, limit=120)
         abnormal_signals = await self.repository.fetch_stock_abnormal_signals(trade_date, limit=120)
         hot_money_activities = await self.repository.fetch_hot_money_activities(trade_date, limit=300)
@@ -405,6 +446,38 @@ class RecapService:
             trade_date,
             [str(row["stock_id"]) for row in dragon_tigers],
         )
+
+        theme_name_map = await self._resolve_theme_name_map(
+            self._collect_subject_keys(
+                theme_environments,
+                mainlines,
+                cycles,
+                transitions,
+                candidates,
+                llm_judgements,
+                theme_capital_flows,
+                stock_capital_flows,
+                money_flows,
+                abnormal_signals,
+                hot_money_activities,
+                subject_theme_links,
+            )
+        )
+        for rows in (
+            theme_environments,
+            mainlines,
+            cycles,
+            transitions,
+            candidates,
+            llm_judgements,
+            theme_capital_flows,
+            stock_capital_flows,
+            money_flows,
+            abnormal_signals,
+            hot_money_activities,
+            subject_theme_links,
+        ):
+            self._apply_theme_names(rows, theme_name_map)
 
         cycle_map = {row["subject_key"]: row for row in cycles}
         candidate_map: dict[str, list[dict]] = {}
@@ -426,7 +499,8 @@ class RecapService:
             (row["subject_key"], _canonical_stock_id(row["stock_id"])): row
             for row in money_flows
         }
-        mainline_tier_map = {str(row["subject_key"]): str(row.get("theme_tier") or "") for row in mainlines}
+        mainline_alive_map = {str(row["subject_key"]): bool(row.get("final_mainline_alive")) for row in mainlines}
+        mainline_strength_map = {str(row["subject_key"]): float(row.get("mainline_strength_score") or 0.0) for row in mainlines}
         theme_capital_flow_map = {
             str(row["subject_key"]): row
             for row in theme_capital_flows
@@ -438,6 +512,7 @@ class RecapService:
 
         theme_lines = []
         cycle_lines = []
+        transition_lines = []
         leader_lines = []
         theme_capital_flow_lines = []
         stock_capital_flow_lines = []
@@ -533,7 +608,7 @@ class RecapService:
                 theme_recent_rank_map.get(str(row["subject_key"])),
             )
             theme_capital_flow_lines.append(
-                f"{row['theme_name']}：subject_key {row['subject_key']}；层级 {row.get('theme_tier', '--')}；"
+                f"{row['theme_name']}：subject_key {row['subject_key']}；状态 {row.get('final_cycle_state', '--')}；"
                 f"总净流入 {_summarize_in_billions(row.get('main_net_inflow_sum'))}；"
                 f"前3净流入 {_summarize_in_billions(row.get('top3_main_net_inflow_sum'))}；"
                 f"龙头净流入 {_summarize_in_billions(row.get('leader_main_net_inflow'))}；"
@@ -560,15 +635,17 @@ class RecapService:
                 theme_recent_rank_map.get(str(row["subject_key"])),
             )
             theme_lines.append(
-                f"{row['theme_name']}：subject_key {row['subject_key']}；层级 {row['theme_tier']}；"
-                f"事件 {float(row.get('event_chain_score') or 0):.2f}；"
-                f"市场 {float(row.get('market_recognition_score') or 0):.2f}；"
+                f"{row['theme_name']}：subject_key {row['subject_key']}；层级 main；主线存活 {'是' if row.get('final_mainline_alive') else '否'}；"
+                f"状态 {row.get('final_cycle_state', '--')}；"
+                f"主线强度 {float(row.get('mainline_strength_score') or 0):.2f}；"
+                f"退潮风险 {float(row.get('fade_risk_score') or 0):.2f}；"
                 f"总净流入 {_summarize_in_billions(theme_capital.get('main_net_inflow_sum'))}；"
                 f"龙头净流入 {_summarize_in_billions(theme_capital.get('leader_main_net_inflow'))}；"
                 f"题材K线 {theme_kline_summary}"
             )
             cycle_lines.append(
-                f"{row['theme_name']}：阶段 {cycle.get('primary_cycle_stage', '--')}；动作 {cycle.get('action_bias', '--')}；结论 {cycle.get('conclusion', '--')}"
+                f"{row['theme_name']}：阶段 {row.get('final_cycle_state', cycle.get('primary_cycle_stage', '--'))}；"
+                f"退潮观察 {'是' if row.get('fade_watch') else '否'}；退潮确认 {'是' if row.get('fade_confirmed') else '否'}"
             )
             for candidate in _ordered_candidates(row["subject_key"])[:4]:
                 flow = money_flow_map.get((row["subject_key"], _canonical_stock_id(candidate["stock_id"])))
@@ -591,12 +668,30 @@ class RecapService:
                 evidence_items = [str(item) for item in (candidate.get("evidence") or []) if str(item).strip()]
                 evidence_summary = "；".join(evidence_items[:4]) if evidence_items else "--"
                 llm_item = llm_reasoning.get(_canonical_stock_id(candidate["stock_id"])) or {}
-                llm_role = llm_item.get("role_label") or _llm_final_role(row["subject_key"], candidate["stock_id"]) or "--"
-                display_role = llm_role if llm_role and llm_role != "--" else str(candidate.get("role_label") or "--")
-                llm_reason = _sanitize_inline_text(llm_item.get("reason") or "--")
                 llm_row = llm_map.get(row["subject_key"]) or {}
-                leader_status = _sanitize_inline_text(llm_row.get("leader_status") or "--")
-                confirmation_basis = _sanitize_inline_text(llm_row.get("confirmation_basis") or "--")
+                raw_llm_role = (
+                    llm_item.get("role_label")
+                    or _llm_final_role(row["subject_key"], candidate["stock_id"])
+                    or ""
+                )
+                display_role = raw_llm_role if raw_llm_role else str(candidate.get("role_label") or "--")
+
+                llm_reason = _sanitize_inline_text(
+                    llm_item.get("reason")
+                    or llm_row.get("reasoning_summary")
+                    or "未生成LLM个股理由，当前回退规则候选说明"
+                )
+                leader_status = _sanitize_inline_text(
+                    llm_row.get("leader_status")
+                    or ("未生成LLM裁决（回退规则角色）" if not raw_llm_role else "")
+                    or "--"
+                )
+                confirmation_basis = _sanitize_inline_text(
+                    llm_row.get("confirmation_basis")
+                    or ("规则候选回退（当日LLM未覆盖该题材）" if not raw_llm_role else "")
+                    or "--"
+                )
+                llm_role = raw_llm_role or display_role
                 kline_suffix = f"；{'；'.join(kline_parts)}" if kline_parts else ""
                 leader_lines.append(
                     f"{row['theme_name']}：{display_role} {candidate['stock_name']}({candidate['stock_id']})；"
@@ -619,6 +714,17 @@ class RecapService:
                         f"{row['theme_name']}：{leader['stock_name']}；{flow['role_enhanced']}；资金分层 {flow['money_flow_tier']}；得分 {float(flow.get('money_flow_score') or 0):.2f}；{explanation}"
                     )
 
+        transition_counts = {"upgrade": 0, "downgrade": 0, "fade": 0, "flat": 0}
+        for row in transitions:
+            t = str(row.get("transition_type") or "flat")
+            transition_counts[t] = transition_counts.get(t, 0) + 1
+            flags = [str(x) for x in (row.get("trigger_flags") or []) if str(x).strip()]
+            transition_lines.append(
+                f"{row['theme_name']}：{row.get('from_state', '--')} -> {row.get('to_state', '--')}；"
+                f"迁移 {t}；置信度 {float(row.get('confidence') or 0):.2f}；"
+                f"触发 {('/'.join(flags) if flags else '--')}"
+            )
+
         dragon_seen: set[tuple[str, str]] = set()
         dragon_hot_money_groups: dict[str, list[str]] = {}
         for dragon_tiger in dragon_tigers:
@@ -630,7 +736,8 @@ class RecapService:
             best_linked = sorted(
                 linked_candidates,
                 key=lambda item: (
-                    0 if mainline_tier_map.get(str(item.get("subject_key") or "")) == "main" else 1,
+                    0 if mainline_alive_map.get(str(item.get("subject_key") or "")) else 1,
+                    -mainline_strength_map.get(str(item.get("subject_key") or ""), 0.0),
                     0 if bool(item.get("is_leader")) else 1,
                     int(item.get("rank_order") or 9999),
                     str(item.get("theme_name") or ""),
@@ -688,7 +795,7 @@ class RecapService:
                 f"换手率 {float(row.get('turnover_rate') or 0):.2f}%；"
                 f"量比 {next((item.replace('量比 ', '') for item in evidence if item.startswith('量比 ')), '--')}；"
                 f"成交量/50日均量 {float(row.get('volume_ratio_to_ma50') or 0):.2f}；"
-                f"资金 {'；'.join(capital_note_parts) if capital_note_parts else '--'}；"
+                f"资金 {' / '.join(capital_note_parts) if capital_note_parts else '--'}；"
                 f"标签 {'/'.join(labels) if labels else '--'}；"
                 f"结论 {row.get('conclusion') or '--'}"
             )
@@ -728,7 +835,7 @@ class RecapService:
 
         for subject_key, items in candidate_map.items():
             cycle_stage = cycle_stage_map.get(str(subject_key), "--")
-            theme_tier = mainline_tier_map.get(str(subject_key), "")
+            mainline_alive = mainline_alive_map.get(str(subject_key), False)
             theme_env = theme_env_map.get(str(subject_key), {})
             action_bias = str(theme_env.get("action_bias") or "--")
             for candidate in items[:4]:
@@ -745,7 +852,11 @@ class RecapService:
                 is_limit_up = bool(candidate.get("is_limit_up"))
                 abnormal_score = _to_float(abnormal.get("abnormal_composite_score"))
                 abnormal_labels = [str(x) for x in (abnormal.get("abnormal_labels") or []) if str(x).strip()]
-                theme_name = candidate["theme_name"]
+                theme_name = str(
+                    candidate.get("theme_name")
+                    or theme_name_map.get(str(subject_key))
+                    or subject_key
+                )
                 stock_name = candidate["stock_name"]
                 catalyst = abnormal.get("conclusion") or "--"
 
@@ -761,7 +872,7 @@ class RecapService:
                     )
 
                 if (
-                    theme_tier in {"main", "strong_branch"}
+                    mainline_alive
                     and action_bias in {"可主做", "可做弱转强", "可观察"}
                     and llm_role in {"龙头", "龙二", "卡位"}
                     and (volume_ratio >= 1.2 or abnormal_score >= 60 or int(current_flag or 0) > 2)
@@ -777,7 +888,7 @@ class RecapService:
                     )
 
                 if (
-                    theme_tier in {"main", "strong_branch"}
+                    mainline_alive
                     and llm_role in {"龙头", "龙二", "卡位"}
                     and (is_limit_up or volume_ratio >= 1.5 or recent_dragon_days >= 1)
                 ):
@@ -811,23 +922,45 @@ class RecapService:
 
         watchlist_lines = [line for _, line in sorted(watchlist_entries, key=lambda item: (item[0], item[1]))][:24]
 
+        sections = [
+            ("大盘环境总结", market_environment_lines[:8]),
+            ("板块环境总结", theme_environment_lines[:15]),
+            ("主线与支线", theme_lines[:15]),
+        ]
+        if theme_capital_flow_lines:
+            sections.append(("主线资金流入前10", theme_capital_flow_lines[:10]))
+        sections.append(("周期与动作", cycle_lines[:15]))
+        if transition_lines:
+            sections.append(("主线迁移监控", transition_lines[:20]))
+        sections.append(("强势股分层", leader_lines[:20]))
+        if watchlist_lines:
+            sections.append(("次日观察清单", watchlist_lines[:24]))
+        if stock_capital_flow_lines:
+            sections.append(("主线股票资金流入前20", stock_capital_flow_lines[:20]))
+        sections.extend(
+            [
+                ("当日异动股与资金行为", abnormal_lines[:30]),
+                ("资金行为增强", money_flow_lines[:20]),
+                ("龙虎榜", dragon_tiger_lines[:40]),
+            ]
+        )
+
         return MarketReport(
             report_type="post_market",
             trade_date=trade_date,
             title=f"{trade_date} 盘后复盘",
             summary="基于主线、周期、龙头三张真源表生成的盘后复盘摘要。",
-            highlights=(market_environment_lines[:2] + theme_lines[:4])[:6],
-            sections=[
-                ("大盘环境总结", market_environment_lines[:8]),
-                ("板块环境总结", theme_environment_lines[:15]),
-                ("主线与支线", theme_lines[:15]),
-                ("主线资金流入前10", theme_capital_flow_lines[:10]),
-                ("周期与动作", cycle_lines[:15]),
-                ("强势股分层", leader_lines[:20]),
-                ("次日观察清单", watchlist_lines[:24]),
-                ("主线股票资金流入前20", stock_capital_flow_lines[:20]),
-                ("当日异动股与资金行为", abnormal_lines[:30]),
-                ("资金行为增强", money_flow_lines[:20]),
-                ("龙虎榜", dragon_tiger_lines[:40]),
-            ],
+            highlights=(
+                market_environment_lines[:2]
+                + [
+                    (
+                        f"主线迁移：升级 {transition_counts.get('upgrade', 0)} / "
+                        f"降级 {transition_counts.get('downgrade', 0)} / "
+                        f"退潮 {transition_counts.get('fade', 0)} / "
+                        f"平级 {transition_counts.get('flat', 0)}"
+                    )
+                ]
+                + theme_lines[:3]
+            )[:6],
+            sections=sections,
         )

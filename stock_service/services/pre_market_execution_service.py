@@ -9,9 +9,12 @@ from stock_service.models import PreMarketExecutionPlan
 class ExecutionMainlineInput:
     subject_key: str
     theme_name: str
-    is_main_theme: bool
-    theme_tier: str
+    mainline_alive: bool
+    final_cycle_state: str
+    mainline_strength_score: float
     conclusion: str
+    fade_watch: bool = False
+    fade_confirmed: bool = False
 
 
 @dataclass(frozen=True)
@@ -54,14 +57,19 @@ class PreMarketExecutionService:
     """
 
     def derive_theme_status(self, mainline: ExecutionMainlineInput, cycle: ExecutionCycleInput) -> str:
-        if cycle.primary_cycle_stage == "fade":
+        stage = str(cycle.primary_cycle_stage or "").lower()
+        if stage in {"fade", "fade_confirmed", "退潮", "退潮确认"} or mainline.fade_confirmed:
             return "证伪"
-        if mainline.is_main_theme:
-            if cycle.primary_cycle_stage in {"fermentation", "rebound", "start"}:
+        if mainline.mainline_alive:
+            if stage in {"fermentation", "rebound", "start", "repair", "发酵", "回流", "启动", "修复"}:
                 return "延续"
-            if cycle.primary_cycle_stage in {"divergence", "climax"}:
+            if stage in {"divergence", "climax", "fade_watch", "分歧", "高潮", "退潮观察"}:
                 return "弱化"
-        if mainline.theme_tier == "strong_branch" and cycle.primary_cycle_stage in {"start", "rebound"}:
+        if (
+            mainline.mainline_strength_score >= 70.0
+            and stage in {"rebound", "start", "repair", "回流", "启动", "修复"}
+            and not mainline.fade_watch
+        ):
             return "延续"
         return "弱化"
 

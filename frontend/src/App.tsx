@@ -5,6 +5,8 @@ import { resourceOptimizer } from "./utils/resourceOptimizer";
 import { PerformanceDebugPanel } from "./components/PerformanceDebugPanel";
 import {
   LazyIntelPage,
+  LazyStrongStockWatchPage,
+  LazyStrongStockWatchDetailPage,
   LazyRecapPage,
   LazyThemeWorkspacePage,
   LazyStockWorkspacePage,
@@ -89,6 +91,26 @@ export function App() {
       <LazyLoadErrorBoundary>
         <Suspense fallback={<LoadingFallback message="加载每日回顾..." />}>
           <LazyRecapPage />
+        </Suspense>
+      </LazyLoadErrorBoundary>
+    );
+  }
+
+  if (path.startsWith("/intel/strong-stocks/watch")) {
+    return (
+      <LazyLoadErrorBoundary>
+        <Suspense fallback={<LoadingFallback message="加载强势股跟踪..." />}>
+          <LazyStrongStockWatchPage />
+        </Suspense>
+      </LazyLoadErrorBoundary>
+    );
+  }
+
+  if (path.startsWith("/intel/strong-stocks/detail")) {
+    return (
+      <LazyLoadErrorBoundary>
+        <Suspense fallback={<LoadingFallback message="加载强势股详情..." />}>
+          <LazyStrongStockWatchDetailPage />
         </Suspense>
       </LazyLoadErrorBoundary>
     );

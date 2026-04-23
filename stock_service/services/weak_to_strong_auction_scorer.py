@@ -21,8 +21,8 @@ class AuctionScoreBreakdown:
 
 class WeakToStrongAuctionScorer:
     """按 v1.1 文档执行盘前竞价评分与分级。"""
-    A_THRESHOLD = 65.0
-    B_THRESHOLD = 52.0
+    A_THRESHOLD = 75.0
+    B_THRESHOLD = 55.0
 
     def score(self, row: AuctionFeatureRow) -> AuctionScoreBreakdown:
         hard_rejects = self._hard_rule_check(row)
@@ -30,6 +30,19 @@ class WeakToStrongAuctionScorer:
             hard_rejects.append(f"data_status={row.data_status}")
 
         if hard_rejects:
+            # observe_only 只用于观察和回放，不能产出正式 A/B/C 交易信号
+            if "pool_entry_not_formal" in hard_rejects:
+                return AuctionScoreBreakdown(
+                    price_strength=0.0,
+                    pattern_stability=0.0,
+                    last_minute_grab=0.0,
+                    plate_follow=0.0,
+                    risk_penalty=0.0,
+                    confirmation_score=0.0,
+                    hard_reject_reasons=hard_rejects,
+                    signal_level="X",
+                    decision="observe_only",
+                )
             return AuctionScoreBreakdown(
                 price_strength=0.0,
                 pattern_stability=0.0,
@@ -75,6 +88,10 @@ class WeakToStrongAuctionScorer:
         # 1) 必须来自候选池（当前输入已满足，保留检查）
         if row.candidate_id <= 0:
             reasons.append("not_in_candidate_pool")
+        if row.fade_confirmed:
+            reasons.append("fade_confirmed")
+        if row.pool_entry_type != "formal":
+            reasons.append("pool_entry_not_formal")
         # 2) 9:20-9:25 不可大起大落（用波动代理）
         if row.auction_path_volatility > 70.0:
             reasons.append("volatility_too_high")
@@ -90,7 +107,7 @@ class WeakToStrongAuctionScorer:
         if row.tail_drop_flag:
             reasons.append("tail_drop")
         # 6) 板块不可明显退潮
-        if row.need_plate_follow and row.plate_red_ratio < 0.20:
+        if row.need_plate_follow and row.plate_red_ratio < 0.20 and not row.fade_watch:
             reasons.append("plate_retreat")
         return reasons
 
@@ -183,6 +200,8 @@ class WeakToStrongAuctionScorer:
         penalty = 0.0
         if row.tail_drop_flag:
             penalty += 12.0
+        if row.fade_watch:
+            penalty += 3.0
         if row.auction_close_pct < 0:
             if row.auction_close_pct >= -1.0 and not row.tail_drop_flag:
                 penalty += 4.0
@@ -225,6 +244,11 @@ class WeakToStrongAuctionScorer:
                     "price_lift_last_minute": row.price_lift_last_minute,
                     "plate_red_ratio": row.plate_red_ratio,
                     "plate_leader_strength": row.plate_leader_strength,
+                    "pool_entry_type": row.pool_entry_type,
+                    "cycle_state": row.cycle_state,
+                    "mainline_strength_score": row.mainline_strength_score,
+                    "fade_watch": row.fade_watch,
+                    "fade_confirmed": row.fade_confirmed,
                 },
             },
             "rules": {

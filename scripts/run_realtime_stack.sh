@@ -188,11 +188,15 @@ check_redis_ready() {
 }
 
 START_SERVICES_PATTERN="python.*-m database_service.streams.start_services"
+THEME_SERVICE_PATTERN="uvicorn theme_service.app:app --host 0.0.0.0 --port 8002"
+BFF_WRAPPER_PATTERN="bash.*scripts/start_frontend_bff_wrapper.sh"
 BFF_PATTERN="uvicorn frontend_bff.app:app --host 0.0.0.0 --port 8003"
 FRONTEND_PATTERN="vite --host"
 
 if [[ "$RESTART" == "true" ]]; then
   stop_pattern_if_running "$START_SERVICES_PATTERN" "stream services"
+  stop_pattern_if_running "$THEME_SERVICE_PATTERN" "theme_service:8002"
+  stop_pattern_if_running "$BFF_WRAPPER_PATTERN" "frontend_bff wrapper"
   stop_pattern_if_running "$BFF_PATTERN" "frontend_bff:8003"
   if [[ "$WITH_FRONTEND" == "true" ]]; then
     stop_pattern_if_running "$FRONTEND_PATTERN" "frontend vite"
@@ -200,6 +204,7 @@ if [[ "$RESTART" == "true" ]]; then
 
   # 重启模式下清空旧日志，避免控制台持续显示历史错误。
   : > "$LOG_DIR/start_services.log"
+  : > "$LOG_DIR/theme_service_8002.log"
   : > "$LOG_DIR/frontend_bff_8003.log"
   : > "$LOG_DIR/frontend_vite.log"
 fi
@@ -266,10 +271,16 @@ start_if_absent \
   "$LOG_DIR/start_services.log" \
   "stream services"
 
+start_if_absent \
+  "$THEME_SERVICE_PATTERN" \
+  "$PYTHON_CMD -m uvicorn theme_service.app:app --host 0.0.0.0 --port 8002 --no-access-log" \
+  "$LOG_DIR/theme_service_8002.log" \
+  "theme_service:8002"
+
 ensure_bff_running \
-  "$BFF_PATTERN" \
+  "$BFF_WRAPPER_PATTERN" \
   "http://127.0.0.1:8003/health" \
-  "$PYTHON_CMD -m uvicorn frontend_bff.app:app --host 0.0.0.0 --port 8003 $BFF_ACCESS_LOG_FLAG" \
+  "BFF_PYTHON_CMD=$PYTHON_CMD BFF_ACCESS_LOG_FLAG='$BFF_ACCESS_LOG_FLAG' bash $ROOT_DIR/scripts/start_frontend_bff_wrapper.sh" \
   "$LOG_DIR/frontend_bff_8003.log"
 
 if [[ "$WITH_FRONTEND" == "true" ]]; then
@@ -286,10 +297,12 @@ if [[ "$WITH_FRONTEND" == "true" ]]; then
 fi
 
 wait_proc_ok "$START_SERVICES_PATTERN" "stream services" 15
+wait_proc_ok "$THEME_SERVICE_PATTERN" "theme_service:8002" 15
 if [[ "$WITH_FRONTEND" == "true" ]]; then
   wait_proc_ok "$FRONTEND_PATTERN" "frontend vite" 10
 fi
 
+wait_http_ok "http://127.0.0.1:8002/health" "theme_service" 40
 wait_http_ok "http://127.0.0.1:8003/health" "frontend_bff" 40
 curl -fsS "http://127.0.0.1:8003/api/intel/feed?type=event_review&session=all&limit=5" >/dev/null
 echo "[ok] intel event_review endpoint ready"
@@ -297,6 +310,12 @@ echo "[ok] intel event_review endpoint ready"
 if ! watchdog_proc_alive "$START_SERVICES_PATTERN" "stream services" "$WATCHDOG_SECONDS"; then
   echo "[diag] tail start_services.log"
   tail -n 120 "$LOG_DIR/start_services.log" || true
+  exit 1
+fi
+
+if ! watchdog_proc_alive "$THEME_SERVICE_PATTERN" "theme_service:8002" 15; then
+  echo "[diag] tail theme_service_8002.log"
+  tail -n 120 "$LOG_DIR/theme_service_8002.log" || true
   exit 1
 fi
 
@@ -313,16 +332,20 @@ cat <<EOF
 Realtime stack is up.
 Logs:
   $LOG_DIR/start_services.log
+  $LOG_DIR/theme_service_8002.log
   $LOG_DIR/frontend_bff_8003.log
   $LOG_DIR/frontend_vite.log
 
 Quick checks:
+  curl -sS "http://127.0.0.1:8002/health"
   curl -sS "http://127.0.0.1:8003/health"
   curl -sS "http://127.0.0.1:8003/api/intel/feed?type=all&session=all&limit=5"
   curl -sS "http://127.0.0.1:8003/api/intel/feed?type=event_review&session=all&limit=20"
 
 Stop commands:
   pkill -f "$START_SERVICES_PATTERN"
+  pkill -f "$THEME_SERVICE_PATTERN"
+  pkill -f "$BFF_WRAPPER_PATTERN"
   pkill -f "$BFF_PATTERN"
   pkill -f "$FRONTEND_PATTERN"
 EOF

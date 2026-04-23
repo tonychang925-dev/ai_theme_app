@@ -60,7 +60,9 @@ class WeakToStrongAuctionService:
             self.pool = None
 
     async def confirm(self, trade_date: date) -> AuctionConfirmResult:
-        features = await self.adapter.load_features(trade_date)
+        all_features = await self.adapter.load_features(trade_date)
+        # Phase 3 收口：只有 formal 才进入正式盘前确认与信号落库。
+        features = [f for f in all_features if (f.pool_entry_type or "formal") == "formal"]
         current_stock_ids = [f.stock_id for f in features]
         await self._delete_stale_rows(trade_date, current_stock_ids)
         rows = []
@@ -114,8 +116,17 @@ class WeakToStrongAuctionService:
             c.next_trade_date,
             c.stock_id,
             c.stock_name,
+            c.subject_key,
+            c.theme_name,
             c.candidate_type,
             c.candidate_score,
+            c.support_type,
+            c.support_strength,
+            c.pool_entry_type,
+            c.cycle_state,
+            c.mainline_strength_score,
+            c.fade_watch,
+            c.fade_confirmed,
             c.evidence_json AS candidate_evidence,
             s.trade_date AS signal_trade_date,
             s.signal_level,
@@ -137,10 +148,21 @@ class WeakToStrongAuctionService:
         signal_evidence = self._parse_json_field(row["signal_evidence"])
         return {
             "candidate_id": int(row["candidate_id"]),
+            "candidate_trade_date": row["candidate_trade_date"].isoformat() if row["candidate_trade_date"] else "",
+            "confirm_trade_date": row["next_trade_date"].isoformat() if row["next_trade_date"] else "",
             "stock_id": str(row["stock_id"]),
             "stock_name": str(row["stock_name"] or ""),
+            "subject_key": str(row["subject_key"] or ""),
+            "theme_name": str(row["theme_name"] or ""),
             "candidate_type": str(row["candidate_type"] or ""),
             "candidate_score": float(row["candidate_score"] or 0),
+            "support_type": str(row["support_type"] or ""),
+            "support_strength": float(row["support_strength"] or 0),
+            "pool_entry_type": str(row["pool_entry_type"] or ""),
+            "cycle_state": str(row["cycle_state"] or ""),
+            "mainline_strength_score": float(row["mainline_strength_score"] or 0),
+            "fade_watch": bool(row["fade_watch"]),
+            "fade_confirmed": bool(row["fade_confirmed"]),
             "signal_level": str(row["signal_level"] or ""),
             "decision": str(row["decision"] or ""),
             "confirmation_score": float(row["confirmation_score"] or 0),
@@ -164,6 +186,11 @@ class WeakToStrongAuctionService:
             c.stock_name,
             c.candidate_type,
             c.candidate_score,
+            c.pool_entry_type,
+            c.cycle_state,
+            c.mainline_strength_score,
+            c.fade_watch,
+            c.fade_confirmed,
             s.signal_level,
             s.decision,
             s.confirmation_score,
@@ -189,6 +216,11 @@ class WeakToStrongAuctionService:
                     "stock_name": str(row["stock_name"] or ""),
                     "candidate_type": str(row["candidate_type"] or ""),
                     "candidate_score": float(row["candidate_score"] or 0),
+                    "pool_entry_type": str(row["pool_entry_type"] or ""),
+                    "cycle_state": str(row["cycle_state"] or ""),
+                    "mainline_strength_score": float(row["mainline_strength_score"] or 0),
+                    "fade_watch": bool(row["fade_watch"]),
+                    "fade_confirmed": bool(row["fade_confirmed"]),
                     "signal_level": str(row["signal_level"] or ""),
                     "decision": str(row["decision"] or ""),
                     "confirmation_score": float(row["confirmation_score"] or 0),

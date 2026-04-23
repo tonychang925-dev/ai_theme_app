@@ -96,11 +96,15 @@ async def fetch_metrics(manager: PostgresDatabaseManager, trade_date_value: date
         morning_high_then_fall_ratio,
         intraday_fade_count,
         intraday_fade_ratio,
+        open_close_pullback_count,
+        open_close_pullback_ratio,
         high_mark_strong_count,
         high_mark_weak_count,
+        market_total_amount,
         market_volume_change_pct,
         market_avg_open_pct,
         market_avg_close_pct,
+        shanghai_index_pct_chg,
         source_type,
         source_trace_id,
         source_trace,
@@ -115,6 +119,15 @@ async def fetch_metrics(manager: PostgresDatabaseManager, trade_date_value: date
         return None
     item = dict(row)
     item["trade_date"] = item["trade_date"].isoformat()
+    source_trace = item.get("source_trace")
+    if isinstance(source_trace, str):
+        try:
+            source_trace = json.loads(source_trace)
+        except Exception:
+            source_trace = {}
+    if not isinstance(source_trace, dict):
+        source_trace = {}
+    item["source_trace"] = source_trace
     return MarketEnvironmentMetrics(**item)
 
 

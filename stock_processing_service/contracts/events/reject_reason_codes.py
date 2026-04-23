@@ -1,0 +1,18 @@
+from __future__ import annotations
+
+from typing import Final
+
+# D2 structured reject reason codes (frozen)
+REJECT_NO_AUCTION_DATA: Final[str] = "NO_AUCTION_DATA"
+REJECT_LOW_AUCTION_STRENGTH: Final[str] = "LOW_AUCTION_STRENGTH"
+REJECT_NEGATIVE_OPENING: Final[str] = "NEGATIVE_OPENING"
+REJECT_WEAK_AUCTION_AMOUNT: Final[str] = "WEAK_AUCTION_AMOUNT"
+REJECT_UNKNOWN: Final[str] = "UNKNOWN"
+
+ALL_REJECT_REASON_CODES: Final[set[str]] = {
+    REJECT_NO_AUCTION_DATA,
+    REJECT_LOW_AUCTION_STRENGTH,
+    REJECT_NEGATIVE_OPENING,
+    REJECT_WEAK_AUCTION_AMOUNT,
+    REJECT_UNKNOWN,
+}

@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
 """
-强势股清单跟踪服务
+强势股清单跟踪服务（兼容层）
 
-功能：
+定位：
+1. 历史兼容：保留旧内存态强势股跟踪逻辑，避免影响现有调用链
+2. 辅助特征：可输出强势股/异动股特征给新观察池服务消费
+3. 非主状态源：正式观察池主状态请使用 StrongStockTrackingService + strong_stock_watch_pool
+
+历史功能：
 1. 维护一周内的强势股清单（龙头、强势股）
 2. 结合主线逻辑，从强势股中筛选候选
 3. 检测前一日弱势、今日资金流入/异动/技术支撑位
@@ -37,7 +42,7 @@ logger = logging.getLogger(__name__)
 
 
 class StrongStockTrackerService:
-    """强势股清单跟踪服务"""
+    """旧版强势股跟踪兼容服务（非正式观察池主状态机）。"""
 
     def __init__(self, weak_to_strong_service: Optional[WeakToStrongService] = None):
         self.weak_to_strong_service = weak_to_strong_service or WeakToStrongService()

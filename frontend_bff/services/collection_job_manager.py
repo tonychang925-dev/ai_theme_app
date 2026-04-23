@@ -105,6 +105,8 @@ class CollectionJobManager:
             tasks.append(CollectionTaskState(key="dragon_tiger", title="龙虎榜构建"))
         if options.get("abnormal_signal", True):
             tasks.append(CollectionTaskState(key="abnormal_signal", title="异动股票构建"))
+        if options.get("strong_stock_watch", True):
+            tasks.append(CollectionTaskState(key="strong_stock_watch", title="强势股跟踪池更新"))
         if options.get("leader_llm", True):
             tasks.append(CollectionTaskState(key="leader_llm", title="龙头候选LLM裁决"))
         if options.get("recap_snapshot", True):
@@ -154,6 +156,8 @@ class CollectionJobManager:
             self._append_log(job, "未勾选 龙头候选LLM裁决，本次采集将跳过该步骤")
         if not options.get("recap_snapshot", True):
             self._append_log(job, "未勾选 盘后复盘快照生成，本次采集将跳过该步骤")
+        if options.get("recap_snapshot", True) and not options.get("auto_build_v2_if_missing", True):
+            self._append_log(job, "已关闭 v2周期缺失自动补建：盘后复盘将严格依赖当日v2数据")
         self.jobs[job_id] = job
         job.running_task = asyncio.create_task(self._run_job(job))
         return job
@@ -511,6 +515,15 @@ class CollectionJobManager:
                     cmd.extend(["--token", tushare_token])
                     await self._run_command(job, task, cmd, env=env, initial_percent=5, success_percent=55)
 
+                    # 将本地 daily_bar 导入数据库 stock_daily_snapshot，保证策略侧直接可用。
+                    cmd = [
+                        PYTHON_BIN,
+                        str(PROJECT_ROOT / "scripts" / "import_tushare_daily_bar_to_db.py"),
+                        "--trade-date",
+                        trade_date,
+                    ]
+                    await self._run_command(job, task, cmd, env=env, initial_percent=55, success_percent=65)
+
                     # 将盘前竞价链路并入 tushare_kline 任务：观察池 -> 竞价快照 -> 竞价信号
                     source_trade_date = (datetime.fromisoformat(trade_date).date() - timedelta(days=1)).isoformat()
                     cmd = [
@@ -521,7 +534,7 @@ class CollectionJobManager:
                         "--source-trade-date",
                         source_trade_date,
                     ]
-                    await self._run_command(job, task, cmd, env=env, initial_percent=55, success_percent=72)
+                    await self._run_command(job, task, cmd, env=env, initial_percent=65, success_percent=75)
 
                     cmd = [
                         PYTHON_BIN,
@@ -532,7 +545,7 @@ class CollectionJobManager:
                         tushare_token,
                         "--force-refresh",
                     ]
-                    await self._run_command(job, task, cmd, env=env, initial_percent=72, success_percent=84)
+                    await self._run_command(job, task, cmd, env=env, initial_percent=75, success_percent=87)
 
                     # 弱转强候选池专用竞价快照：用于两阶段策略盘前确认
                     cmd = [
@@ -548,7 +561,7 @@ class CollectionJobManager:
                         tushare_token,
                         "--force-refresh",
                     ]
-                    await self._run_command(job, task, cmd, env=env, initial_percent=84, success_percent=92)
+                    await self._run_command(job, task, cmd, env=env, initial_percent=87, success_percent=94)
 
                     cmd = [
                         PYTHON_BIN,
@@ -556,7 +569,7 @@ class CollectionJobManager:
                         "--trade-date",
                         trade_date,
                     ]
-                    await self._run_command(job, task, cmd, env=env, initial_percent=92, success_percent=100)
+                    await self._run_command(job, task, cmd, env=env, initial_percent=94, success_percent=100)
                 elif task.key == "dragon_tiger":
                     cmd = [
                         PYTHON_BIN,
@@ -591,6 +604,14 @@ class CollectionJobManager:
                         cmd.append("--require-tail-rush")
                     if env.get("TUSHARE_TOKEN"):
                         cmd.extend(["--token", env["TUSHARE_TOKEN"]])
+                    await self._run_command(job, task, cmd, env=env)
+                elif task.key == "strong_stock_watch":
+                    cmd = [
+                        PYTHON_BIN,
+                        str(PROJECT_ROOT / "stock_service" / "scripts" / "build_strong_stock_watch_pool.py"),
+                        "--trade-date",
+                        trade_date,
+                    ]
                     await self._run_command(job, task, cmd, env=env)
                 elif task.key == "leader_llm":
                     deepseek_api_key = env.get("DEEPSEEK_API_KEY", "").strip()
@@ -639,6 +660,8 @@ class CollectionJobManager:
                         "--trade-date",
                         trade_date,
                     ]
+                    if not options.get("auto_build_v2_if_missing", True):
+                        cmd.append("--disable-auto-build-v2-if-missing")
                     if not options.get("dragon_tiger", True):
                         cmd.append("--skip-dragon-tiger")
                     if not options.get("abnormal_signal", True):

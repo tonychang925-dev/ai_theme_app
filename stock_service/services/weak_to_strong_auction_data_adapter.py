@@ -24,6 +24,11 @@ class AuctionFeatureRow:
     need_plate_follow: bool
     support_level: float
     support_strength: float
+    pool_entry_type: str
+    cycle_state: str
+    mainline_strength_score: float
+    fade_watch: bool
+    fade_confirmed: bool
     # 标准化特征
     auction_open_pct: float
     auction_close_pct: float
@@ -85,6 +90,10 @@ class WeakToStrongAuctionDataAdapter:
         stock_ids = [str(r["stock_id"]) for r in candidate_rows]
         snapshots = await self._load_auction_snapshots(pool, trade_date, stock_ids)
         plate_ctx = await self._load_plate_context(pool, trade_date)
+        fallback_plate_ctx: Dict[str, Dict[str, float]] = {}
+        fallback_trade_date = candidate_rows[0].get("candidate_trade_date") if candidate_rows else None
+        if isinstance(fallback_trade_date, date) and fallback_trade_date != trade_date:
+            fallback_plate_ctx = await self._load_plate_context(pool, fallback_trade_date)
 
         now = datetime.now(timezone.utc)
         features: List[AuctionFeatureRow] = []
@@ -92,7 +101,11 @@ class WeakToStrongAuctionDataAdapter:
             stock_id = str(c["stock_id"])
             snap = snapshots.get(stock_id)
             subject_key = str(c.get("subject_key") or "")
-            plate = plate_ctx.get(subject_key, {"plate_red_ratio": 0.0, "plate_leader_strength": 0.0})
+            plate = plate_ctx.get(subject_key)
+            if plate is None and fallback_plate_ctx:
+                plate = fallback_plate_ctx.get(subject_key)
+            if plate is None:
+                plate = {"plate_red_ratio": 0.0, "plate_leader_strength": 0.0}
 
             data_status, latency_ms = self._calc_data_status(snap, now, trade_date)
             open_pct = float(snap.get("auction_open_pct") or 0.0) if snap else 0.0
@@ -119,6 +132,11 @@ class WeakToStrongAuctionDataAdapter:
                     need_plate_follow=bool(c.get("need_plate_follow") or False),
                     support_level=float(c.get("support_level") or 0.0),
                     support_strength=float(c.get("support_strength") or 0.0),
+                    pool_entry_type=str(c.get("pool_entry_type") or "formal"),
+                    cycle_state=str(c.get("cycle_state") or ""),
+                    mainline_strength_score=float(c.get("mainline_strength_score") or 0.0),
+                    fade_watch=bool(c.get("fade_watch") or False),
+                    fade_confirmed=bool(c.get("fade_confirmed") or False),
                     auction_open_pct=open_pct,
                     auction_close_pct=close_pct,
                     auction_high_pct=high_pct,
@@ -140,10 +158,11 @@ class WeakToStrongAuctionDataAdapter:
     async def _load_candidates(self, pool: asyncpg.Pool, trade_date: date) -> List[asyncpg.Record]:
         sql = """
         SELECT
-            id, stock_id, stock_name, subject_key, theme_name,
+            id, trade_date AS candidate_trade_date, stock_id, stock_name, subject_key, theme_name,
             candidate_type, expected_open_low, expected_open_high,
             need_last_minute_grab, need_plate_follow,
-            support_level, support_strength
+            support_level, support_strength,
+            pool_entry_type, cycle_state, mainline_strength_score, fade_watch, fade_confirmed
         FROM weak_to_strong_candidate_pool
         WHERE next_trade_date = $1::date
         ORDER BY candidate_score DESC, id ASC
@@ -228,8 +247,38 @@ class WeakToStrongAuctionDataAdapter:
         return payload
 
     async def _load_plate_context(self, pool: asyncpg.Pool, trade_date: date) -> Dict[str, Dict[str, float]]:
-        # 使用当日快照近似板块联动分：红盘率 + 前排强度
-        sql = """
+        # 盘前确认优先使用竞价快照构建题材联动代理：
+        # - plate_red_ratio: 题材内竞价红盘占比（auction_open_pct > 0）
+        # - plate_leader_strength: 题材内强开比例（auction_open_pct >= 2 或红区）
+        # 若竞价快照缺失，再回退到日频快照（仅作兜底）。
+        auction_sql = """
+        SELECT
+            subject_key,
+            AVG(CASE WHEN COALESCE(auction_open_pct, 0) > 0 THEN 1.0 ELSE 0.0 END) AS plate_red_ratio,
+            AVG(
+                CASE
+                    WHEN COALESCE(auction_open_pct, 0) >= 2.0 OR COALESCE(is_red_zone, FALSE) THEN 1.0
+                    ELSE 0.0
+                END
+            ) AS plate_leader_strength
+        FROM pre_market_auction_snapshot
+        WHERE trade_date = $1::date
+          AND subject_key IS NOT NULL
+          AND subject_key <> ''
+        GROUP BY subject_key
+        """
+        async with pool.acquire() as conn:
+            auction_rows = await conn.fetch(auction_sql, trade_date)
+        if auction_rows:
+            payload: Dict[str, Dict[str, float]] = {}
+            for row in auction_rows:
+                payload[str(row["subject_key"])] = {
+                    "plate_red_ratio": float(row["plate_red_ratio"] or 0.0),
+                    "plate_leader_strength": float(row["plate_leader_strength"] or 0.0),
+                }
+            return payload
+
+        daily_sql = """
         SELECT
             subject_key,
             AVG(CASE WHEN COALESCE(pct_chg, 0) > 0 THEN 1.0 ELSE 0.0 END) AS plate_red_ratio,
@@ -241,9 +290,9 @@ class WeakToStrongAuctionDataAdapter:
         GROUP BY subject_key
         """
         async with pool.acquire() as conn:
-            rows = await conn.fetch(sql, trade_date)
+            daily_rows = await conn.fetch(daily_sql, trade_date)
         payload: Dict[str, Dict[str, float]] = {}
-        for row in rows:
+        for row in daily_rows:
             payload[str(row["subject_key"])] = {
                 "plate_red_ratio": float(row["plate_red_ratio"] or 0.0),
                 "plate_leader_strength": float(row["plate_leader_strength"] or 0.0),
@@ -263,8 +312,19 @@ class WeakToStrongAuctionDataAdapter:
         source_type = str(snapshot.get("source_type") or "")
         if source_type.endswith(".proxy"):
             return "partial", latency_ms
+        shape_features = snapshot.get("shape_features")
+        if isinstance(shape_features, list):
+            shape_tokens = {str(item) for item in shape_features}
+            if "single_point_snapshot" in shape_tokens or "result_only_mode" in shape_tokens:
+                return "partial", latency_ms
+        source_trace = snapshot.get("source_trace")
+        if isinstance(source_trace, dict):
+            if str(source_trace.get("record_mode") or "").strip().lower() == "single_point":
+                return "partial", latency_ms
         # 历史交易日不按实时延迟判定 delayed，避免回放场景全部降级为 X。
-        if trade_date == date.today() and latency_ms > 2_000:
+        # 同交易日仅在 9:20-9:30 竞价窗口才启用严格实时延迟门禁；盘后回放不应触发 delayed。
+        now_cn = now_utc.astimezone()
+        if trade_date == date.today() and now_cn.hour == 9 and now_cn.minute <= 30 and latency_ms > 2_000:
             return "delayed", latency_ms
         return "ok", latency_ms
 

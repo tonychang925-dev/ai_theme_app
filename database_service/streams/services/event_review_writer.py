@@ -133,14 +133,11 @@ class EventReviewWriter:
                 payload = json.loads(payload_str)
                 logger.debug(f"解析后payload: {payload}")
 
-                # 检查是否需要复核
+                # 检查是否需要复核（新口径：只要命中有效题材即入复核，不再强依赖review_required）
                 review_required = payload.get("review_required", False)
-                logger.info(f"检查复核要求: message_id={message_id}, review_required={review_required}, payload_keys={list(payload.keys())}")
-                if not review_required:
-                    logger.info(f"跳过事件 (无需复核): {message_id}")
-                    self.stats["skipped"] += 1
-                    processed_ids.append(message_id)
-                    continue
+                logger.info(
+                    f"检查复核要求: message_id={message_id}, review_required={review_required}, payload_keys={list(payload.keys())}"
+                )
 
                 # 仅接收题材匹配链路产出的待复核事件，避免混入非匹配来源
                 source_type = str(payload.get("source_type") or "")
@@ -161,11 +158,13 @@ class EventReviewWriter:
 
                 # 提取主题信息
                 theme_names = payload.get("theme_names", [])
-                proposed_theme_name = theme_names[0] if theme_names else "其他"
+                generic_themes = {"其他", "未匹配", "unknown", "UNKNOWN", ""}
+                valid_themes = [str(name).strip() for name in theme_names if str(name).strip() not in generic_themes]
+                proposed_theme_name = valid_themes[0] if valid_themes else "其他"
                 confidence = payload.get("confidence", 0.5)
 
-                # 过滤“无意义复核”：题材=其他 或 置信度过低
-                if self.skip_generic_theme and proposed_theme_name in {"其他", "未匹配", "unknown", "UNKNOWN"}:
+                # 新入队规则：必须命中有效题材（非“其他”）
+                if self.skip_generic_theme and not valid_themes:
                     logger.info(f"跳过事件 (题材过于泛化): {message_id}, theme={proposed_theme_name}")
                     self.stats["skipped"] += 1
                     processed_ids.append(message_id)

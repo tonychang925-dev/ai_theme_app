@@ -57,6 +57,7 @@ export function CollectionDebugPage() {
   const [jobId, setJobId] = useState<string | null>(() => loadJobId());
   const [logs, setLogs] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
+  const [autoBuildV2IfMissing, setAutoBuildV2IfMissing] = useState(true);
   const logRef = useRef<HTMLDivElement | null>(null);
 
   function appendLog(line: string) {
@@ -136,6 +137,7 @@ export function CollectionDebugPage() {
           abnormal_signal: true,
           leader_llm: true,
           recap_snapshot: true,
+          auto_build_v2_if_missing: autoBuildV2IfMissing,
         },
         tushare_pause_seconds: 0.1,
         abnormal_filters: {
@@ -215,6 +217,14 @@ export function CollectionDebugPage() {
           <div className="workspace-note">
             采集窗口: {availability?.allowed ? "OPEN" : "LOCKED"} / {availability?.message ?? "--"}
           </div>
+          <label className="collection-check">
+            <input
+              type="checkbox"
+              checked={autoBuildV2IfMissing}
+              onChange={() => setAutoBuildV2IfMissing((s) => !s)}
+            />
+            <span>v2周期缺失时自动补建</span>
+          </label>
           <div className="collection-action-row">
             <button type="button" className="tag tag-button tag-active" onClick={handleStart} disabled={loading}>
               启动采集

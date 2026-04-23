@@ -30,6 +30,8 @@ export interface CreateStrategyRequest {
 export interface ExecuteScreeningRequest {
   strategy_id: string;
   trade_date?: string;
+  candidate_trade_date?: string;
+  confirm_trade_date?: string;
   limit?: number;
   min_score?: number;
   auto_tune_min_score?: boolean;
@@ -73,6 +75,16 @@ export interface ExecuteScreeningResponse {
   diagnostics?: {
     requested_trade_date?: string;
     resolved_trade_date?: string;
+    candidate_trade_date?: string;
+    confirm_trade_date?: string;
+    snapshot_trade_date?: string;
+    signal_count?: number;
+    snapshot_hit_count?: number;
+    confirm_input_candidate_count?: number;
+    confirm_filtered_out_count?: number;
+    stage2?: {
+      level_count?: { A?: number; B?: number; C?: number; X?: number };
+    };
     fallback_applied?: boolean;
     fallback_reason?: string | null;
     requested_snapshot_stock_count?: number;
@@ -122,6 +134,20 @@ export interface ScreeningResultDetail extends ScreeningResultItem {
     };
   };
   created_at: string;
+  weak_to_strong?: {
+    detail_view?: "candidate" | "confirm";
+    candidate_type?: string;
+    candidate_type_label?: string;
+    signal_level?: string;
+    decision?: string;
+    decision_label?: string;
+    candidate_score?: number;
+    confirmation_score?: number;
+    support_type?: string;
+    support_strength?: number;
+    candidate_trade_date?: string;
+    confirm_trade_date?: string;
+  };
 }
 
 export interface HistoryQueryParams {
@@ -201,7 +227,7 @@ async function request<T>(url: string, init?: RequestInit, options?: RequestOpti
     clearTimeout(timeoutId);
     if (error instanceof Error) {
       if (error.name === 'AbortError') {
-        throw new Error(`请求超时（${Math.round(timeoutMs / 1000)}秒），请检查网络连接或稍后重试`);
+        throw new Error(`请求超时（${Math.round(timeoutMs / 1000)}秒），后端处理时间过长，请稍后重试`);
       } else if (error.message.includes('Failed to fetch')) {
         throw new Error('无法连接到服务器，请检查网络连接或服务器状态');
       }
@@ -244,7 +270,8 @@ export const stockScreenerApi = {
 
   getExecutionStatus: (jobId: string) => request<ExecuteScreeningResponse>(`/api/stock-screener/executions/${jobId}`),
 
-  getResultDetail: (resultId: string) => request<ScreeningResultDetail>(`/api/stock-screener/results/${resultId}`),
+  getResultDetail: (resultId: string, params?: { view?: "candidate" | "confirm" }) =>
+    request<ScreeningResultDetail>(withQuery(`/api/stock-screener/results/${resultId}`, params as Record<string, unknown>)),
 
   getHistory: (params: HistoryQueryParams) =>
     request<HistoryResponse>(withQuery("/api/stock-screener/history", params as Record<string, unknown>)),

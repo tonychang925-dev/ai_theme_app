@@ -80,14 +80,32 @@ async def ensure_table(manager: PostgresDatabaseManager) -> None:
 async def fetch_rows(manager: PostgresDatabaseManager, trade_date_value: date):
     sql = """
     SELECT
-        m.trade_date::text AS trade_date,
-        m.subject_key,
-        m.theme_name,
-        COALESCE(m.theme_tier, '') AS theme_tier,
-        COALESCE(MAX(COALESCE(m.event_chain_score, 0) + COALESCE(m.market_recognition_score, 0) + COALESCE(m.mainline_stability_score, 0)), 0) AS ranking_score,
-        COALESCE(c.primary_cycle_stage, '') AS primary_cycle_stage,
-        COALESCE(c.leader_status, '') AS leader_status,
-        COALESCE(c.action_bias, '') AS action_bias,
+        v2.trade_date::text AS trade_date,
+        v2.subject_key,
+        COALESCE(NULLIF(v2.theme_name, ''), v2.subject_key) AS theme_name,
+        CASE
+            WHEN COALESCE(v2.mainline_strength_score, 0) >= 75 THEN 'main'
+            ELSE 'strong_branch'
+        END AS mainline_bucket,
+        BOOL_OR(COALESCE(v2.final_mainline_alive, FALSE)) AS mainline_alive,
+        MAX(COALESCE(v2.mainline_strength_score, 0)) AS mainline_strength_score,
+        BOOL_OR(COALESCE(v2.fade_watch, FALSE)) AS fade_watch,
+        BOOL_OR(COALESCE(v2.fade_confirmed, FALSE)) AS fade_confirmed,
+        MAX(COALESCE(v2.mainline_strength_score, 0)) AS ranking_score,
+        COALESCE(NULLIF(v2.final_cycle_state, ''), '') AS primary_cycle_stage,
+        CASE
+            WHEN COALESCE(v2.fade_confirmed, FALSE) THEN '龙头走弱'
+            WHEN COALESCE(v2.mainline_strength_score, 0) >= 75 THEN '龙头加强'
+            WHEN COALESCE(v2.mainline_strength_score, 0) >= 60 THEN '龙头强势'
+            ELSE '龙头分化'
+        END AS leader_status,
+        CASE
+            WHEN COALESCE(v2.fade_confirmed, FALSE) THEN '观望'
+            WHEN COALESCE(v2.final_cycle_state, '') IN ('climax', '高潮') THEN '警惕高潮'
+            WHEN COALESCE(v2.final_cycle_state, '') IN ('fermentation', '发酵', 'start', '启动') THEN '可主做'
+            WHEN COALESCE(v2.final_cycle_state, '') IN ('repair', '修复', 'divergence', '分歧', 'rebound', '回流') THEN '可做弱转强'
+            ELSE '可观察'
+        END AS action_bias,
         COUNT(l.stock_id) AS candidate_count,
         COUNT(*) FILTER (WHERE COALESCE(l.is_limit_up, FALSE)) AS limit_up_count,
         COALESCE(MAX(CASE WHEN l.candidate_rank = 1 THEN l.composite_score END), 0) AS top_candidate_score,
@@ -96,26 +114,20 @@ async def fetch_rows(manager: PostgresDatabaseManager, trade_date_value: date):
         COALESCE(MAX(CASE WHEN l.candidate_rank = 2 AND COALESCE(l.is_limit_up, FALSE) THEN 1 ELSE 0 END), 0) = 1 AS second_is_limit_up,
         COALESCE(MAX(CASE WHEN l.candidate_rank = 1 THEN l.role_label END), '') AS top_role_label,
         COALESCE(MAX(CASE WHEN l.candidate_rank = 2 THEN l.role_label END), '') AS second_role_label
-    FROM theme_mainline_judgement m
-    LEFT JOIN theme_cycle_judgement c
-      ON c.trade_date = m.trade_date
-     AND c.subject_key = m.subject_key
+    FROM theme_cycle_judgement_v2 v2
     LEFT JOIN theme_leader_candidate l
-      ON l.trade_date = m.trade_date
-     AND l.subject_key = m.subject_key
-    WHERE m.trade_date = $1::date
-      AND COALESCE(m.theme_tier, '') IN ('main', 'strong_branch')
+      ON l.trade_date = v2.trade_date
+     AND l.subject_key = v2.subject_key
+    WHERE v2.trade_date = $1::date
+      AND COALESCE(v2.final_mainline_alive, FALSE) = TRUE
+      AND COALESCE(v2.fade_confirmed, FALSE) = FALSE
     GROUP BY
-        m.trade_date, m.subject_key, m.theme_name, m.theme_tier,
-        c.primary_cycle_stage, c.leader_status, c.action_bias
+        v2.trade_date, v2.subject_key, v2.theme_name, v2.mainline_strength_score,
+        v2.final_cycle_state, v2.fade_confirmed
     ORDER BY
-        CASE COALESCE(m.theme_tier, '')
-            WHEN 'main' THEN 0
-            WHEN 'strong_branch' THEN 1
-            ELSE 2
-        END,
+        COALESCE(v2.mainline_strength_score, 0) DESC,
         ranking_score DESC,
-        m.subject_key
+        v2.subject_key
     """
     async with manager.pool.acquire() as conn:
         rows = await conn.fetch(sql, trade_date_value)
@@ -156,7 +168,7 @@ async def upsert_rows(manager: PostgresDatabaseManager, items: list[dict]) -> No
             _parse_trade_date(item["trade_date"]),
             item["subject_key"],
             item["theme_name"],
-            item["theme_tier"],
+            item["mainline_bucket"],
             item["primary_cycle_stage"],
             item["need_llm_judgement"],
             item["is_trade_focus"],
@@ -189,7 +201,7 @@ async def main_async() -> int:
                     trade_date=row["trade_date"],
                     subject_key=str(row["subject_key"] or ""),
                     theme_name=str(row["theme_name"] or ""),
-                    theme_tier=str(row["theme_tier"] or ""),
+                    mainline_bucket=str(row["mainline_bucket"] or ""),
                     primary_cycle_stage=str(row["primary_cycle_stage"] or ""),
                     leader_status=str(row["leader_status"] or ""),
                     action_bias=str(row["action_bias"] or ""),
@@ -201,9 +213,17 @@ async def main_async() -> int:
                     second_is_limit_up=bool(row["second_is_limit_up"]),
                     top_role_label=str(row["top_role_label"] or ""),
                     second_role_label=str(row["second_role_label"] or ""),
+                    mainline_alive=bool(row.get("mainline_alive")),
+                    mainline_strength_score=float(row.get("mainline_strength_score") or 0.0),
+                    fade_watch=bool(row.get("fade_watch")),
+                    fade_confirmed=bool(row.get("fade_confirmed")),
                 )
             )
             source_trace = {
+                "mainline_alive": bool(row.get("mainline_alive")),
+                "mainline_strength_score": float(row.get("mainline_strength_score") or 0.0),
+                "fade_watch": bool(row.get("fade_watch")),
+                "fade_confirmed": bool(row.get("fade_confirmed")),
                 "candidate_count": int(row["candidate_count"] or 0),
                 "limit_up_count": int(row["limit_up_count"] or 0),
                 "leader_status": str(row["leader_status"] or ""),

@@ -210,6 +210,10 @@ async def test_build_post_market_report():
     assert report.sections[6][0] == "资金行为增强"
     assert report.sections[7][0] == "龙虎榜"
     assert "板块过热" in report.sections[1][1][0]
+    assert "层级 main" in report.sections[2][1][0]
+    assert "主线存活 " in report.sections[2][1][0]
+    assert "状态 " in report.sections[2][1][0]
+    assert "主线强度 " in report.sections[2][1][0]
     assert "HIGH / 龙头/资金共振" in report.sections[4][1][0]
     assert "LLM裁决角色 龙头" in report.sections[4][1][0]
     assert "LLM确认状态 继续成立" in report.sections[4][1][0]

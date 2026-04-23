@@ -1,0 +1,56 @@
+from __future__ import annotations
+
+from dataclasses import asdict, is_dataclass
+from typing import Any
+
+from stock_processing_service.contracts.snapshots import (
+    PostMarketRecapSnapshot,
+    PreMarketBriefSnapshot,
+    StockAbnormalEvent,
+    StockDailySnapshot,
+    SubjectStockDailySnapshot,
+    ThemeStockLeaderboard,
+)
+
+
+def _row(row: Any) -> dict[str, Any]:
+    if isinstance(row, dict):
+        return dict(row)
+    if is_dataclass(row):
+        return asdict(row)
+    return dict(row)
+
+
+class StockWriteGatewayAdapter:
+    def __init__(self, db_gateway: Any) -> None:
+        self._db = db_gateway
+
+    async def upsert_stock_daily_snapshot_rows(self, rows: list[StockDailySnapshot]) -> int:
+        return await self._db.upsert_stock_daily_snapshot_rows([_row(r) for r in rows])
+
+    async def upsert_subject_stock_daily_snapshot_rows(self, rows: list[SubjectStockDailySnapshot]) -> int:
+        return await self._db.upsert_subject_stock_daily_snapshot_rows([_row(r) for r in rows])
+
+    async def upsert_stock_abnormal_event_rows(self, rows: list[StockAbnormalEvent]) -> int:
+        return await self._db.upsert_stock_abnormal_event_rows([_row(r) for r in rows])
+
+    async def upsert_theme_stock_leaderboard_rows(self, rows: list[ThemeStockLeaderboard]) -> int:
+        return await self._db.upsert_theme_stock_leaderboard_rows([_row(r) for r in rows])
+
+    async def upsert_pre_market_brief_snapshot(self, doc: PreMarketBriefSnapshot) -> int:
+        return await self._db.upsert_pre_market_brief_snapshot(_row(doc))
+
+    async def upsert_post_market_recap_snapshot(self, doc: PostMarketRecapSnapshot) -> int:
+        return await self._db.upsert_post_market_recap_snapshot(_row(doc))
+
+    async def upsert_theme_mainline_identity_registry_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._db, "upsert_theme_mainline_identity_registry_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        return len(rows)
+
+    async def upsert_mainline_identity_review_queue_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._db, "upsert_mainline_identity_review_queue_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        return len(rows)

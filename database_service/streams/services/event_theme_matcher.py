@@ -63,6 +63,21 @@ class EventThemeMatcher:
         self.output_stream_max_len = int(self.config.get("output_stream_max_len", 5000))
         self.dead_letter_stream = self.config.get("dead_letter_stream", "stream:dead:letter")
         self.theme_service_base_url = self.config.get("theme_service_base_url", "http://localhost:8002")
+        self.event_type_filter_mode = str(
+            self.config.get("event_type_filter_mode", "whitelist")
+        ).strip().lower()
+        self.allowed_event_types = {
+            str(x).strip() for x in self.config.get(
+                "allowed_event_types",
+                ["产品发布", "技术突破", "订单合作", "并购重组", "政策利好", "产能扩张"],
+            ) if str(x).strip()
+        }
+        self.low_value_event_types = {
+            str(x).strip() for x in self.config.get(
+                "low_value_event_types",
+                ["其他", "制裁"],
+            ) if str(x).strip()
+        }
         self._theme_service_client = None
         self._theme_service_disabled_until = 0.0
         self._theme_service_log_at = 0.0
@@ -85,6 +100,7 @@ class EventThemeMatcher:
             "total_messages_processed": 0,
             "successful_matches": 0,
             "failed_matches": 0,
+            "skipped_low_value": 0,
             "events_published": 0,
             "last_processing_time": None,
             "errors": [],
@@ -252,6 +268,16 @@ class EventThemeMatcher:
             logger.debug(f"消息 {message_id}: 提取的事件数据: {event_data}")
 
             # 执行事件-题材匹配
+            if self._should_skip_low_value_event(event_data):
+                self.stats["skipped_low_value"] += 1
+                logger.info(
+                    "消息 %s: 跳过低价值事件匹配, event_type=%s, summary=%s",
+                    message_id,
+                    event_data.get("event_type", "unknown"),
+                    str(event_data.get("summary", ""))[:80],
+                )
+                return True
+
             logger.debug(f"消息 {message_id}: 开始匹配...")
             match_result = await self.match_event_to_themes(event_data)
             logger.debug(f"消息 {message_id}: 匹配结果: {match_result}")
@@ -323,6 +349,21 @@ class EventThemeMatcher:
                 pass
 
         return None
+
+    def _should_skip_low_value_event(self, event_data: Dict[str, Any]) -> bool:
+        """事件类型过滤：默认白名单放行，避免泛化噪声污染题材主链路。"""
+        event_type = str(event_data.get("event_type") or "").strip()
+        if not event_type:
+            return True
+
+        # 默认策略：白名单放行
+        if self.event_type_filter_mode == "whitelist":
+            return event_type not in self.allowed_event_types
+
+        # 兼容策略：黑名单拦截
+        if event_type in self.low_value_event_types:
+            return True
+        return False
 
     async def match_event_to_themes(self, event_data: Dict) -> Dict:
         """

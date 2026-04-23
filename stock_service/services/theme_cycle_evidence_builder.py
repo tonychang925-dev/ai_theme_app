@@ -1,11 +1,27 @@
 from __future__ import annotations
 
 import json
+from dataclasses import dataclass
 from datetime import date, timedelta
 from typing import Dict, List, Optional, Any
 import asyncpg
 
+from stock_service.config import StockServiceConfig
 from stock_service.services.unified_cycle_scoring_service import CycleEvidenceInput
+
+
+@dataclass
+class ThemeCycleEvidence:
+    trade_date: date
+    subject_key: str
+    theme_name: str
+    mainline_strength_score: float
+    fade_risk_score: float
+    event_evidence_refs: List[Dict[str, Any]]
+    leader_evidence_refs: List[Dict[str, Any]]
+    board_structure_refs: List[Dict[str, Any]]
+    theme_kline_refs: List[Dict[str, Any]]
+    evidence_json: Dict[str, Any]
 
 
 class ThemeCycleEvidenceBuilder:
@@ -15,21 +31,21 @@ class ThemeCycleEvidenceBuilder:
     严格按照用户骨架设计：只构建证据，不做最终判决
     """
 
-    def __init__(self, config=None):
-        self.config = config
+    def __init__(self, config: Optional[StockServiceConfig] = None):
+        self.config = config or StockServiceConfig()
         self._pool: Optional[asyncpg.Pool] = None
         self._evidence_refs: Dict[str, List[Dict[str, Any]]] = {}
+        self._layer_payload: Dict[str, Any] = {}
 
     async def _ensure_pool(self) -> asyncpg.Pool:
         """确保数据库连接池存在"""
         if self._pool is None:
-            # 使用默认配置（与 enhanced_candidate_builder 保持一致）
             self._pool = await asyncpg.create_pool(
-                host='localhost',
-                port=5432,
-                user='postgres',
-                password='postgres',
-                database='stock_data_test',
+                host=self.config.postgres_host,
+                port=self.config.postgres_port,
+                user=self.config.postgres_user,
+                password=self.config.postgres_password,
+                database=self.config.postgres_database,
                 min_size=1,
                 max_size=5
             )
@@ -52,6 +68,18 @@ class ThemeCycleEvidenceBuilder:
         """
         return await conn.fetchval(sql, table_name)
 
+    async def _check_column_exists(self, conn: asyncpg.Connection, table_name: str, column_name: str) -> bool:
+        sql = """
+        SELECT EXISTS (
+            SELECT 1
+            FROM information_schema.columns
+            WHERE table_schema = 'public'
+              AND table_name = $1
+              AND column_name = $2
+        )
+        """
+        return bool(await conn.fetchval(sql, table_name, column_name))
+
     async def build_evidence_for_date(self, trade_date: date) -> List[CycleEvidenceInput]:
         """为指定交易日构建所有主题的周期证据
 
@@ -66,7 +94,7 @@ class ThemeCycleEvidenceBuilder:
                 # 这里可以调用迁移脚本，暂时跳过
                 return []
 
-            # 2. 获取所有需要处理的主题（从 theme_mainline_judgement）
+            # 2. 获取所有需要处理的主题（统一来源：subject_stock_daily_snapshot）
             subjects = await self._fetch_subjects_for_date(conn, trade_date)
             if not subjects:
                 print(f"⚠️ 交易日 {trade_date} 无主题数据")
@@ -94,15 +122,35 @@ class ThemeCycleEvidenceBuilder:
             print(f"📊 总计构建 {len(evidence_inputs)} 个主题的周期证据")
             return evidence_inputs
 
+    async def build(self, trade_date: date, subject_key: str, theme_name: str) -> ThemeCycleEvidence:
+        """按单主题构建四层证据并落库，返回统一证据对象。"""
+        pool = await self._ensure_pool()
+        async with pool.acquire() as conn:
+            evidence = await self._build_evidence_for_subject(conn, trade_date, subject_key, theme_name)
+            if evidence is None:
+                raise ValueError(f"无法构建周期证据: trade_date={trade_date} subject_key={subject_key}")
+            await self._save_evidence_to_db(conn, evidence)
+
+            mainline_strength_score = self._calc_mainline_strength_score(evidence)
+            fade_risk_score = self._calc_fade_risk_score(evidence)
+            payload = self._to_theme_cycle_evidence_payload(
+                evidence=evidence,
+                mainline_strength_score=mainline_strength_score,
+                fade_risk_score=fade_risk_score,
+            )
+            return payload
+
     async def _fetch_subjects_for_date(self, conn: asyncpg.Connection,
                                       trade_date: date) -> List[Dict[str, Any]]:
         """获取指定交易日需要处理的所有主题"""
         sql = """
-        SELECT DISTINCT
+        SELECT
             subject_key,
-            COALESCE(theme_name, subject_key) AS theme_name
-        FROM theme_mainline_judgement
+            subject_key AS theme_name
+        FROM subject_stock_daily_snapshot
         WHERE trade_date = $1
+          AND COALESCE(subject_key, '') <> ''
+        GROUP BY subject_key
         ORDER BY subject_key
         """
         rows = await conn.fetch(sql, trade_date)
@@ -140,7 +188,7 @@ class ThemeCycleEvidenceBuilder:
             # 事件层
             event_strength_score=float(event_data.get("event_strength_score", 0)),
             event_continuity_score=float(event_data.get("event_continuity_score", 0)),
-            strong_event_count_7d=int(event_data.get("strong_event_count_7d", 0)),
+            strong_event_count_7d=int(event_data.get("strong_event_count_7d") or 0),
             event_recency_days=event_data.get("event_recency_days"),
 
             # 龙头/接力层
@@ -150,8 +198,8 @@ class ThemeCycleEvidenceBuilder:
             front_row_survival_ratio=float(leader_data.get("front_row_survival_ratio", 0)),
 
             # 板块结构层
-            limit_up_count=int(board_data.get("limit_up_count", 0)),
-            limit_down_count=int(board_data.get("limit_down_count", 0)),
+            limit_up_count=int(board_data.get("limit_up_count") or 0),
+            limit_down_count=int(board_data.get("limit_down_count") or 0),
             red_ratio=float(board_data.get("red_ratio", 0)),
             big_drop_ratio=float(board_data.get("big_drop_ratio", 0)),
             front_row_strength_score=float(board_data.get("front_row_strength_score", 0)),
@@ -164,144 +212,211 @@ class ThemeCycleEvidenceBuilder:
             previous_cycle_state=previous_state
         )
 
+        self._layer_payload = {
+            "event": event_data,
+            "leader": leader_data,
+            "board": board_data,
+            "kline": kline_data,
+            "window": {
+                "lookback_days": 7,
+                "evidence_window_start": (trade_date - timedelta(days=7)),
+                "evidence_window_end": trade_date,
+            },
+        }
+
         return evidence
 
     async def _fetch_event_layer_evidence(self, conn: asyncpg.Connection,
                                          trade_date: date,
                                          subject_key: str) -> Dict[str, Any]:
         """获取事件层证据"""
-        sql = """
+        history_sql = """
         SELECT
-            event_chain_score,
-            event_chain_continuity_score
-        FROM theme_mainline_judgement
-        WHERE trade_date = $1 AND subject_key = $2
+            rank_date,
+            COALESCE(heat, 0) AS heat,
+            COALESCE(pct_chg, 0) AS pct_chg,
+            COALESCE(heat_name, '') AS heat_name
+        FROM theme_history_event
+        WHERE subject_key = $1
+          AND rank_date <= $2::date
+          AND rank_date >= ($2::date - INTERVAL '7 days')
+        ORDER BY rank_date DESC
         """
-        row = await conn.fetchrow(sql, trade_date, subject_key)
+        history_rows = await conn.fetch(history_sql, subject_key, trade_date)
+        if history_rows:
+            event_count_7d = len(history_rows)
+            event_count_3d = sum(1 for r in history_rows if (trade_date - r["rank_date"]).days <= 3)
+            strong_event_count_7d = sum(
+                1
+                for r in history_rows
+                if float(r["heat"] or 0) >= 70.0
+                or abs(float(r["pct_chg"] or 0.0)) >= 3.0
+                or str(r["heat_name"] or "") in {"高", "很高", "极高"}
+            )
+            active_days = len({r["rank_date"] for r in history_rows})
+            continuity = min(100.0, (active_days / 7.0) * 100.0)
+            avg_heat = sum(float(r["heat"] or 0.0) for r in history_rows) / max(event_count_7d, 1)
+            event_strength_score = min(100.0, strong_event_count_7d * 14.0 + event_count_3d * 6.0 + avg_heat * 0.45)
+            latest_dt = max(r["rank_date"] for r in history_rows)
+            event_recency_days = max((trade_date - latest_dt).days, 0)
 
-        if not row:
-            return {}
+            self._evidence_refs["event"] = [
+                {
+                    "table": "theme_history_event",
+                    "field": "event_count_3d",
+                    "query": "COUNT(rank_date where >= trade_date-3d)",
+                    "value": event_count_3d,
+                },
+                {
+                    "table": "theme_history_event",
+                    "field": "event_count_7d",
+                    "query": "COUNT(rank_date where >= trade_date-7d)",
+                    "value": event_count_7d,
+                },
+                {
+                    "table": "theme_history_event",
+                    "field": "strong_event_count_7d",
+                    "query": "heat>=70 OR abs(pct_chg)>=3 OR heat_name in 高/很高/极高",
+                    "value": strong_event_count_7d,
+                },
+                {
+                    "table": "derived",
+                    "field": "event_continuity_score",
+                    "query": "distinct_event_days/7 * 100",
+                    "value": continuity,
+                },
+                {
+                    "table": "derived",
+                    "field": "event_strength_score",
+                    "query": "strong*14 + count3d*6 + avg_heat*0.45",
+                    "value": round(event_strength_score, 3),
+                },
+            ]
+            return {
+                "event_count_3d": event_count_3d,
+                "event_count_7d": event_count_7d,
+                "event_strength_score": round(event_strength_score, 3),
+                "event_continuity_score": round(continuity, 3),
+                "strong_event_count_7d": strong_event_count_7d,
+                "event_recency_days": event_recency_days,
+            }
 
-        # 简化处理：使用现有字段映射
-        event_chain_score = float(row.get("event_chain_score", 0))
-        event_chain_continuity_score = float(row.get("event_chain_continuity_score", 0))
-
-        # 构建证据引用
-        event_refs = [
+        self._evidence_refs["event"] = [
             {
-                "table": "theme_mainline_judgement",
-                "field": "event_chain_score",
-                "query": "SELECT event_chain_score FROM theme_mainline_judgement WHERE trade_date = $1 AND subject_key = $2",
-                "value": event_chain_score
-            },
-            {
-                "table": "theme_mainline_judgement",
-                "field": "event_chain_continuity_score",
-                "query": "SELECT event_chain_continuity_score FROM theme_mainline_judgement WHERE trade_date = $1 AND subject_key = $2",
-                "value": event_chain_continuity_score
-            },
-            {
-                "table": "derived",
-                "field": "strong_event_count_7d",
-                "query": "IF(event_chain_score > 30, 1, 0) 估算逻辑",
-                "value": 1 if event_chain_score > 30 else 0
-            },
-            {
-                "table": "derived",
-                "field": "event_recency_days",
-                "query": "IF(event_chain_score > 0, 1, NULL) 估算逻辑",
-                "value": 1 if event_chain_score > 0 else None
+                "table": "theme_history_event",
+                "field": "*",
+                "query": "fallback disabled because theme_history_event unavailable",
+                "value": None,
             }
         ]
-        self._evidence_refs["event"] = event_refs
-
-        # 估算其他字段（简化版）
         return {
-            "event_strength_score": event_chain_score,  # 事件强度评分 ≈ 事件链分数
-            "event_continuity_score": event_chain_continuity_score,
-            "strong_event_count_7d": 1 if event_chain_score > 30 else 0,
-            "event_recency_days": 1 if event_chain_score > 0 else None
+            "event_count_3d": 0,
+            "event_count_7d": 0,
+            "event_strength_score": 0.0,
+            "event_continuity_score": 0.0,
+            "strong_event_count_7d": 0,
+            "event_recency_days": None,
         }
 
     async def _fetch_leader_layer_evidence(self, conn: asyncpg.Connection,
                                           trade_date: date,
                                           subject_key: str) -> Dict[str, Any]:
         """获取龙头层证据"""
-        sql = """
+        leader_sql = """
         SELECT
-            leader_status,
-            limit_up_count
-        FROM theme_cycle_judgement
-        WHERE trade_date = $1 AND subject_key = $2
+            stock_id,
+            stock_name,
+            COALESCE(pct_chg, 0) AS pct_chg,
+            COALESCE(limit_up, FALSE) AS limit_up
+        FROM subject_stock_daily_snapshot
+        WHERE trade_date = $1::date
+          AND subject_key = $2
+        ORDER BY COALESCE(is_leader, FALSE) DESC, COALESCE(rank_order, 999) ASC, COALESCE(pct_chg, -100) DESC
+        LIMIT 1
         """
-        row = await conn.fetchrow(sql, trade_date, subject_key)
-
-        if not row:
+        leader_row = await conn.fetchrow(leader_sql, trade_date, subject_key)
+        if not leader_row:
             return {}
 
-        leader_status = str(row.get("leader_status", ""))
-        limit_up_count = int(row.get("limit_up_count", 0))
+        leader_stock_id = str(leader_row.get("stock_id") or "")
+        leader_stock_name = str(leader_row.get("stock_name") or "")
+        leader_pct = float(leader_row.get("pct_chg") or 0.0)
+        leader_limit_up = bool(leader_row.get("limit_up") or False)
 
-        # 计算龙头存活评分
-        if "龙头加强" in leader_status or "龙头强势" in leader_status:
-            leader_alive_score = 80.0
-        elif "龙头活跃" in leader_status:
-            leader_alive_score = 60.0
-        else:
-            leader_alive_score = 30.0
+        relay_sql = """
+        SELECT
+            COUNT(*) FILTER (WHERE COALESCE(rank_order, 999) <= 5 AND COALESCE(pct_chg, 0) >= 0) AS relay_alive,
+            COUNT(*) FILTER (WHERE COALESCE(rank_order, 999) <= 5) AS relay_total,
+            COUNT(*) FILTER (WHERE COALESCE(rank_order, 999) <= 5 AND COALESCE(limit_up, FALSE)) AS relay_limit_up
+        FROM subject_stock_daily_snapshot
+        WHERE trade_date = $1::date
+          AND subject_key = $2
+        """
+        relay_row = await conn.fetchrow(relay_sql, trade_date, subject_key)
+        relay_alive = int(relay_row.get("relay_alive") or 0)
+        relay_total = int(relay_row.get("relay_total") or 0)
+        relay_limit_up = int(relay_row.get("relay_limit_up") or 0)
 
-        # 龙头破位标志：如果龙头走弱
-        leader_breakdown_flag = leader_status == "龙头走弱"
+        leader_alive_score = 0.0
+        if leader_limit_up:
+            leader_alive_score += 55.0
+        if leader_pct >= 5.0:
+            leader_alive_score += 25.0
+        elif leader_pct >= 0:
+            leader_alive_score += 15.0
+        elif leader_pct > -3.0:
+            leader_alive_score += 8.0
+        front_row_survival_ratio = (relay_alive / relay_total) if relay_total > 0 else 0.0
+        leader_alive_score += front_row_survival_ratio * 20.0
+        leader_alive_score = min(100.0, leader_alive_score)
 
-        # 接力强度评分：基于涨停数量
-        relay_strength_score = min(limit_up_count * 10.0, 100.0)
-
-        # 前排存活率：简化，基于涨停数量估算强势股数量
-        strong_stock_count = max(limit_up_count, 1)  # 估计
-        front_row_survival_ratio = min(limit_up_count / strong_stock_count, 1.0)
+        leader_breakdown_flag = leader_pct <= -7.0 or leader_pct <= -9.5
+        relay_strength_score = min(100.0, relay_limit_up * 15.0 + front_row_survival_ratio * 50.0)
 
         # 构建证据引用
         leader_refs = [
             {
-                "table": "theme_cycle_judgement",
-                "field": "leader_status",
-                "query": "SELECT leader_status FROM theme_cycle_judgement WHERE trade_date = $1 AND subject_key = $2",
-                "value": leader_status
+                "table": "subject_stock_daily_snapshot",
+                "field": "leader_stock",
+                "query": "ORDER BY is_leader DESC, rank_order ASC LIMIT 1",
+                "value": {"stock_id": leader_stock_id, "stock_name": leader_stock_name, "pct_chg": leader_pct, "limit_up": leader_limit_up},
             },
             {
-                "table": "theme_cycle_judgement",
-                "field": "limit_up_count",
-                "query": "SELECT limit_up_count FROM theme_cycle_judgement WHERE trade_date = $1 AND subject_key = $2",
-                "value": limit_up_count
+                "table": "subject_stock_daily_snapshot",
+                "field": "relay_stats",
+                "query": "front rank alive + limit_up stats",
+                "value": {"relay_alive": relay_alive, "relay_total": relay_total, "relay_limit_up": relay_limit_up},
             },
             {
                 "table": "derived",
                 "field": "leader_alive_score",
-                "query": "IF(leader_status contains '龙头加强' or '龙头强势', 80, IF(leader_status contains '龙头活跃', 60, 30))",
+                "query": "leader pct + limit_up + front_row_survival",
                 "value": leader_alive_score
             },
             {
                 "table": "derived",
                 "field": "leader_breakdown_flag",
-                "query": "leader_status == '龙头走弱'",
+                "query": "leader_pct <= -7.0",
                 "value": leader_breakdown_flag
             },
             {
                 "table": "derived",
                 "field": "relay_strength_score",
-                "query": "MIN(limit_up_count * 10.0, 100.0)",
+                "query": "relay_limit_up*15 + front_row_survival_ratio*50",
                 "value": relay_strength_score
             },
             {
                 "table": "derived",
                 "field": "front_row_survival_ratio",
-                "query": "MIN(limit_up_count / MAX(limit_up_count, 1), 1.0)",
+                "query": "relay_alive/relay_total",
                 "value": front_row_survival_ratio
             }
         ]
         self._evidence_refs["leader"] = leader_refs
 
         return {
+            "leader_stock_id": leader_stock_id,
+            "leader_stock_name": leader_stock_name,
             "leader_alive_score": leader_alive_score,
             "leader_breakdown_flag": leader_breakdown_flag,
             "relay_strength_score": relay_strength_score,
@@ -314,8 +429,20 @@ class ThemeCycleEvidenceBuilder:
         """获取板块结构层证据"""
         sql = """
         SELECT
-            limit_up_count
-        FROM theme_cycle_judgement
+            COUNT(*) AS board_stock_count,
+            SUM(CASE WHEN COALESCE(limit_up, FALSE) THEN 1 ELSE 0 END) AS limit_up_count,
+            SUM(CASE WHEN COALESCE(pct_chg, 0) <= -9.5 THEN 1 ELSE 0 END) AS limit_down_count,
+            AVG(CASE WHEN COALESCE(pct_chg, 0) > 0 THEN 1.0 ELSE 0.0 END) AS red_ratio,
+            AVG(CASE WHEN COALESCE(pct_chg, 0) <= -5.0 THEN 1.0 ELSE 0.0 END) AS big_drop_ratio,
+            SUM(CASE WHEN COALESCE(rank_order, 999) <= 3 OR COALESCE(is_leader, FALSE) THEN 1 ELSE 0 END) AS front_row_total,
+            SUM(
+                CASE
+                    WHEN (COALESCE(rank_order, 999) <= 3 OR COALESCE(is_leader, FALSE))
+                         AND (COALESCE(limit_up, FALSE) OR COALESCE(pct_chg, 0) >= 0)
+                    THEN 1 ELSE 0
+                END
+            ) AS front_row_alive
+        FROM subject_stock_daily_snapshot
         WHERE trade_date = $1 AND subject_key = $2
         """
         row = await conn.fetchrow(sql, trade_date, subject_key)
@@ -323,91 +450,187 @@ class ThemeCycleEvidenceBuilder:
         if not row:
             return {}
 
-        limit_up_count = int(row.get("limit_up_count", 0))
-
-        # 简化处理：使用默认值或估算
-        limit_down_count = 0  # 现有表无此字段
-
-        # 红盘比例：假设50%红盘
-        red_ratio = 0.5
-
-        # 大跌比例：假设10%大跌
-        big_drop_ratio = 0.1
-
-        # 前排强度评分：基于涨停数量
-        front_row_strength_score = min(limit_up_count * 15.0, 100.0)
+        board_stock_count = int(row.get("board_stock_count") or 0)
+        limit_up_count = int(row.get("limit_up_count") or 0)
+        limit_down_count = int(row.get("limit_down_count") or 0)
+        red_ratio = float(row.get("red_ratio") or 0.0)
+        big_drop_ratio = float(row.get("big_drop_ratio") or 0.0)
+        front_row_total = int(row.get("front_row_total") or 0)
+        front_row_alive = int(row.get("front_row_alive") or 0)
+        front_row_alive_ratio = (front_row_alive / front_row_total) if front_row_total > 0 else 0.0
+        front_row_strength_score = min(100.0, limit_up_count * 12.0 + front_row_alive_ratio * 40.0)
 
         # 构建证据引用
         board_refs = [
             {
-                "table": "theme_cycle_judgement",
+                "table": "subject_stock_daily_snapshot",
+                "field": "board_stock_count",
+                "query": "COUNT(*) by subject_key/trade_date",
+                "value": board_stock_count,
+            },
+            {
+                "table": "subject_stock_daily_snapshot",
                 "field": "limit_up_count",
-                "query": "SELECT limit_up_count FROM theme_cycle_judgement WHERE trade_date = $1 AND subject_key = $2",
+                "query": "SUM(limit_up)",
                 "value": limit_up_count
             },
             {
-                "table": "default",
+                "table": "subject_stock_daily_snapshot",
                 "field": "limit_down_count",
-                "query": "默认值0（现有表无此字段）",
+                "query": "SUM(pct_chg <= -9.5)",
                 "value": limit_down_count
             },
             {
-                "table": "default",
+                "table": "subject_stock_daily_snapshot",
                 "field": "red_ratio",
-                "query": "默认值0.5（估算）",
+                "query": "AVG(pct_chg > 0)",
                 "value": red_ratio
             },
             {
-                "table": "default",
+                "table": "subject_stock_daily_snapshot",
                 "field": "big_drop_ratio",
-                "query": "默认值0.1（估算）",
+                "query": "AVG(pct_chg <= -5.0)",
                 "value": big_drop_ratio
             },
             {
                 "table": "derived",
                 "field": "front_row_strength_score",
-                "query": "MIN(limit_up_count * 15.0, 100.0)",
+                "query": "MIN(100, limit_up_count*12 + front_row_alive_ratio*40)",
                 "value": front_row_strength_score
+            },
+            {
+                "table": "derived",
+                "field": "front_row_alive_ratio",
+                "query": "front_row_alive / front_row_total",
+                "value": {
+                    "front_row_alive": front_row_alive,
+                    "front_row_total": front_row_total,
+                    "front_row_alive_ratio": front_row_alive_ratio,
+                },
             }
         ]
         self._evidence_refs["board_structure"] = board_refs
 
         return {
+            "board_stock_count": board_stock_count,
             "limit_up_count": limit_up_count,
             "limit_down_count": limit_down_count,
             "red_ratio": red_ratio,
             "big_drop_ratio": big_drop_ratio,
-            "front_row_strength_score": front_row_strength_score
+            "front_row_strength_score": front_row_strength_score,
+            "front_row_total": front_row_total,
+            "front_row_alive": front_row_alive,
+            "front_row_alive_ratio": front_row_alive_ratio,
         }
 
     async def _fetch_kline_evidence(self, conn: asyncpg.Connection,
                                    trade_date: date,
                                    subject_key: str) -> Dict[str, Any]:
         """获取K线技术层证据"""
-        # 现有系统缺少板块K线数据，使用简化处理
-        theme_support_score = 60.0
-        break_start_pivot = False
+        sql = """
+        SELECT
+            trade_date,
+            AVG(COALESCE(close_price, 0)) AS avg_close,
+            AVG(COALESCE(pct_chg, 0)) AS avg_pct,
+            SUM(COALESCE(amount, 0)) AS total_amount
+        FROM subject_stock_daily_snapshot
+        WHERE subject_key = $1
+          AND trade_date <= $2::date
+          AND trade_date >= ($2::date - INTERVAL '30 days')
+        GROUP BY trade_date
+        ORDER BY trade_date DESC
+        """
+        rows = await conn.fetch(sql, subject_key, trade_date)
+        if not rows:
+            self._evidence_refs["theme_kline"] = []
+            return {}
+
+        closes = [float(r["avg_close"] or 0.0) for r in rows]
+        pcts = [float(r["avg_pct"] or 0.0) for r in rows]
+        amounts = [float(r["total_amount"] or 0.0) for r in rows]
+        cur_close = closes[0] if closes else 0.0
+        cur_amount = amounts[0] if amounts else 0.0
+
+        def _ma(values: List[float], n: int) -> float:
+            buf = values[:n]
+            if not buf:
+                return 0.0
+            return sum(buf) / len(buf)
+
+        ma5 = _ma(closes, 5)
+        ma10 = _ma(closes, 10)
+        ma20 = _ma(closes, 20)
+        amt_ma5 = _ma(amounts, 5)
+
+        theme_ret_3d = round(sum(pcts[:3]), 3)
+        theme_ret_5d = round(sum(pcts[:5]), 3)
+        theme_ret_10d = round(sum(pcts[:10]), 3)
+        above_ma5 = cur_close >= ma5 if ma5 > 0 else False
+        above_ma10 = cur_close >= ma10 if ma10 > 0 else False
+        above_ma20 = cur_close >= ma20 if ma20 > 0 else False
+
+        prior_window = closes[1:11]
+        start_pivot = min(prior_window) if prior_window else cur_close
+        break_start_pivot = (cur_close < start_pivot * 0.985) if start_pivot > 0 else False
+        volume_breakdown_flag = (cur_amount < amt_ma5 * 0.7 and pcts and pcts[0] < -1.0) if amt_ma5 > 0 else False
+
+        theme_support_score = 0.0
+        if above_ma5:
+            theme_support_score += 25.0
+        if above_ma10:
+            theme_support_score += 20.0
+        if above_ma20:
+            theme_support_score += 15.0
+        if not break_start_pivot:
+            theme_support_score += 20.0
+        if not volume_breakdown_flag:
+            theme_support_score += 20.0
+        theme_support_score = round(max(0.0, min(theme_support_score, 100.0)), 3)
 
         # 构建证据引用
         kline_refs = [
             {
-                "table": "default",
-                "field": "theme_support_score",
-                "query": "默认值60.0（中等支撑）",
-                "value": theme_support_score
+                "table": "subject_stock_daily_snapshot",
+                "field": "theme_ret_3d/5d/10d",
+                "query": "SUM(avg_pct over last n days by subject_key)",
+                "value": {"ret_3d": theme_ret_3d, "ret_5d": theme_ret_5d, "ret_10d": theme_ret_10d},
             },
             {
-                "table": "default",
-                "field": "break_start_pivot",
-                "query": "默认值False（未跌破启动枢轴）",
-                "value": break_start_pivot
-            }
+                "table": "subject_stock_daily_snapshot",
+                "field": "above_ma_flags",
+                "query": "avg_close vs MA5/MA10/MA20",
+                "value": {"above_ma5": above_ma5, "above_ma10": above_ma10, "above_ma20": above_ma20},
+            },
+            {
+                "table": "derived",
+                "field": "break_start_pivot/volume_breakdown_flag/theme_support_score",
+                "query": "cur_close vs pivot + amount breakdown + support scoring",
+                "value": {
+                    "break_start_pivot": break_start_pivot,
+                    "volume_breakdown_flag": volume_breakdown_flag,
+                    "theme_support_score": theme_support_score,
+                },
+            },
         ]
         self._evidence_refs["theme_kline"] = kline_refs
 
         return {
-            "theme_support_score": theme_support_score,  # 默认中等支撑
-            "break_start_pivot": break_start_pivot    # 默认未跌破启动枢轴
+            "theme_ret_3d": theme_ret_3d,
+            "theme_ret_5d": theme_ret_5d,
+            "theme_ret_10d": theme_ret_10d,
+            "above_ma5": above_ma5,
+            "above_ma10": above_ma10,
+            "above_ma20": above_ma20,
+            "theme_support_score": theme_support_score,
+            "break_start_pivot": break_start_pivot,
+            "volume_breakdown_flag": volume_breakdown_flag,
+            "cur_close": cur_close,
+            "ma5": ma5,
+            "ma10": ma10,
+            "ma20": ma20,
+            "start_pivot": start_pivot,
+            "cur_amount": cur_amount,
+            "amt_ma5": amt_ma5,
         }
 
     async def _fetch_previous_cycle_state(self, conn: asyncpg.Connection,
@@ -425,71 +648,91 @@ class ThemeCycleEvidenceBuilder:
         row_v2 = await conn.fetchrow(sql_v2, prev_date, subject_key)
         if row_v2:
             return str(row_v2.get("final_cycle_state"))
-
-        # 回退到原表
-        sql_original = """
-        SELECT primary_cycle_stage
-        FROM theme_cycle_judgement
-        WHERE trade_date = $1 AND subject_key = $2
-        """
-        row_original = await conn.fetchrow(sql_original, prev_date, subject_key)
-        if row_original:
-            return str(row_original.get("primary_cycle_stage"))
-
         return None
 
     async def _save_evidence_to_db(self, conn: asyncpg.Connection,
                                   evidence: CycleEvidenceInput) -> None:
         """将证据保存到数据库"""
-        sql = """
+        event_data = self._layer_payload.get("event", {})
+        leader_data = self._layer_payload.get("leader", {})
+        board_data = self._layer_payload.get("board", {})
+        kline_data = self._layer_payload.get("kline", {})
+        window_data = self._layer_payload.get("window", {})
+
+        mainline_strength_score = self._calc_mainline_strength_score(evidence)
+        fade_risk_score = self._calc_fade_risk_score(evidence)
+
+        has_updated_at = await self._check_column_exists(conn, "theme_cycle_evidence_daily", "updated_at")
+        upsert_suffix = ", updated_at = now()" if has_updated_at else ""
+        sql = f"""
         INSERT INTO theme_cycle_evidence_daily (
             trade_date, subject_key, theme_name,
+            event_count_3d, event_count_7d, strong_event_count_7d, event_recency_days,
             event_strength_score, event_continuity_score,
-            strong_event_count_7d, event_recency_days,
-            leader_alive_score, leader_breakdown_flag,
+            leader_stock_id, leader_stock_name, leader_alive_score, leader_breakdown_flag,
             relay_strength_score, front_row_survival_ratio,
-            limit_up_count, limit_down_count, red_ratio,
-            big_drop_ratio, front_row_strength_score,
-            theme_support_score, break_start_pivot,
-            event_evidence_refs, leader_evidence_refs,
-            board_structure_refs, theme_kline_refs,
+            board_stock_count, limit_up_count, limit_down_count, red_ratio, big_drop_ratio, front_row_strength_score,
+            theme_ret_3d, theme_ret_5d, theme_ret_10d, above_ma5, above_ma10, above_ma20,
+            break_start_pivot, volume_breakdown_flag, theme_support_score,
+            lookback_days, evidence_window_start, evidence_window_end,
+            event_evidence_refs, leader_evidence_refs, board_structure_refs, theme_kline_refs,
+            mainline_strength_score, fade_risk_score,
             evidence_json, source_version
         ) VALUES (
             $1, $2, $3,
-            $4, $5,
-            $6, $7,
+            $4, $5, $6, $7,
             $8, $9,
-            $10, $11,
-            $12, $13, $14,
-            $15, $16,
-            $17, $18,
-            $19, $20,
-            $21, $22,
-            $23, $24
+            $10, $11, $12, $13,
+            $14, $15,
+            $16, $17, $18, $19, $20, $21,
+            $22, $23, $24, $25, $26, $27,
+            $28, $29, $30,
+            $31, $32, $33,
+            $34, $35, $36, $37,
+            $38, $39,
+            $40, $41
         )
         ON CONFLICT (trade_date, subject_key) DO UPDATE SET
-            event_strength_score = EXCLUDED.event_strength_score,
-            event_continuity_score = EXCLUDED.event_continuity_score,
+            theme_name = EXCLUDED.theme_name,
+            event_count_3d = EXCLUDED.event_count_3d,
+            event_count_7d = EXCLUDED.event_count_7d,
             strong_event_count_7d = EXCLUDED.strong_event_count_7d,
             event_recency_days = EXCLUDED.event_recency_days,
+            event_strength_score = EXCLUDED.event_strength_score,
+            event_continuity_score = EXCLUDED.event_continuity_score,
+            leader_stock_id = EXCLUDED.leader_stock_id,
+            leader_stock_name = EXCLUDED.leader_stock_name,
             leader_alive_score = EXCLUDED.leader_alive_score,
             leader_breakdown_flag = EXCLUDED.leader_breakdown_flag,
             relay_strength_score = EXCLUDED.relay_strength_score,
             front_row_survival_ratio = EXCLUDED.front_row_survival_ratio,
+            board_stock_count = EXCLUDED.board_stock_count,
             limit_up_count = EXCLUDED.limit_up_count,
             limit_down_count = EXCLUDED.limit_down_count,
             red_ratio = EXCLUDED.red_ratio,
             big_drop_ratio = EXCLUDED.big_drop_ratio,
             front_row_strength_score = EXCLUDED.front_row_strength_score,
-            theme_support_score = EXCLUDED.theme_support_score,
+            theme_ret_3d = EXCLUDED.theme_ret_3d,
+            theme_ret_5d = EXCLUDED.theme_ret_5d,
+            theme_ret_10d = EXCLUDED.theme_ret_10d,
+            above_ma5 = EXCLUDED.above_ma5,
+            above_ma10 = EXCLUDED.above_ma10,
+            above_ma20 = EXCLUDED.above_ma20,
             break_start_pivot = EXCLUDED.break_start_pivot,
+            volume_breakdown_flag = EXCLUDED.volume_breakdown_flag,
+            theme_support_score = EXCLUDED.theme_support_score,
+            lookback_days = EXCLUDED.lookback_days,
+            evidence_window_start = EXCLUDED.evidence_window_start,
+            evidence_window_end = EXCLUDED.evidence_window_end,
             event_evidence_refs = EXCLUDED.event_evidence_refs,
             leader_evidence_refs = EXCLUDED.leader_evidence_refs,
             board_structure_refs = EXCLUDED.board_structure_refs,
             theme_kline_refs = EXCLUDED.theme_kline_refs,
+            mainline_strength_score = EXCLUDED.mainline_strength_score,
+            fade_risk_score = EXCLUDED.fade_risk_score,
             evidence_json = EXCLUDED.evidence_json,
-            source_version = EXCLUDED.source_version,
-            created_at = now()
+            source_version = EXCLUDED.source_version
+            {upsert_suffix}
         """
 
         # 构建evidence_json
@@ -498,29 +741,73 @@ class ThemeCycleEvidenceBuilder:
             "subject_key": evidence.subject_key,
             "theme_name": evidence.theme_name,
             "event_layer": {
+                "event_count_3d": int(event_data.get("event_count_3d") or 0),
+                "event_count_7d": int(event_data.get("event_count_7d") or 0),
                 "event_strength_score": evidence.event_strength_score,
                 "event_continuity_score": evidence.event_continuity_score,
                 "strong_event_count_7d": evidence.strong_event_count_7d,
                 "event_recency_days": evidence.event_recency_days
             },
             "leader_layer": {
+                "leader_stock_id": str(leader_data.get("leader_stock_id") or ""),
+                "leader_stock_name": str(leader_data.get("leader_stock_name") or ""),
                 "leader_alive_score": evidence.leader_alive_score,
                 "leader_breakdown_flag": evidence.leader_breakdown_flag,
                 "relay_strength_score": evidence.relay_strength_score,
                 "front_row_survival_ratio": evidence.front_row_survival_ratio
             },
             "board_layer": {
+                "board_stock_count": int(board_data.get("board_stock_count") or 0),
                 "limit_up_count": evidence.limit_up_count,
                 "limit_down_count": evidence.limit_down_count,
                 "red_ratio": evidence.red_ratio,
                 "big_drop_ratio": evidence.big_drop_ratio,
-                "front_row_strength_score": evidence.front_row_strength_score
+                "front_row_strength_score": evidence.front_row_strength_score,
+                "front_row_total": int(board_data.get("front_row_total") or 0),
+                "front_row_alive": int(board_data.get("front_row_alive") or 0),
+                "front_row_alive_ratio": float(board_data.get("front_row_alive_ratio") or 0.0),
             },
             "kline_layer": {
+                "theme_ret_3d": kline_data.get("theme_ret_3d"),
+                "theme_ret_5d": kline_data.get("theme_ret_5d"),
+                "theme_ret_10d": kline_data.get("theme_ret_10d"),
+                "above_ma5": kline_data.get("above_ma5"),
+                "above_ma10": kline_data.get("above_ma10"),
+                "above_ma20": kline_data.get("above_ma20"),
                 "theme_support_score": evidence.theme_support_score,
-                "break_start_pivot": evidence.break_start_pivot
+                "break_start_pivot": evidence.break_start_pivot,
+                "volume_breakdown_flag": kline_data.get("volume_breakdown_flag"),
             },
-            "previous_cycle_state": evidence.previous_cycle_state
+            "previous_cycle_state": evidence.previous_cycle_state,
+            "mainline_strength_score": mainline_strength_score,
+            "fade_risk_score": fade_risk_score,
+            "raw_features": {
+                "event": {
+                    "event_count_3d": int(event_data.get("event_count_3d") or 0),
+                    "event_count_7d": int(event_data.get("event_count_7d") or 0),
+                    "strong_event_count_7d": int(event_data.get("strong_event_count_7d") or 0),
+                    "event_recency_days": event_data.get("event_recency_days"),
+                },
+                "board": {
+                    "board_stock_count": int(board_data.get("board_stock_count") or 0),
+                    "limit_up_count": int(board_data.get("limit_up_count") or 0),
+                    "limit_down_count": int(board_data.get("limit_down_count") or 0),
+                    "red_ratio": float(board_data.get("red_ratio") or 0.0),
+                    "big_drop_ratio": float(board_data.get("big_drop_ratio") or 0.0),
+                    "front_row_total": int(board_data.get("front_row_total") or 0),
+                    "front_row_alive": int(board_data.get("front_row_alive") or 0),
+                    "front_row_alive_ratio": float(board_data.get("front_row_alive_ratio") or 0.0),
+                },
+                "kline": {
+                    "cur_close": kline_data.get("cur_close"),
+                    "ma5": kline_data.get("ma5"),
+                    "ma10": kline_data.get("ma10"),
+                    "ma20": kline_data.get("ma20"),
+                    "start_pivot": kline_data.get("start_pivot"),
+                    "cur_amount": kline_data.get("cur_amount"),
+                    "amt_ma5": kline_data.get("amt_ma5"),
+                },
+            },
         }
 
         await conn.execute(
@@ -528,27 +815,101 @@ class ThemeCycleEvidenceBuilder:
             date.fromisoformat(evidence.trade_date),
             evidence.subject_key,
             evidence.theme_name,
-            evidence.event_strength_score,
-            evidence.event_continuity_score,
+            int(event_data.get("event_count_3d") or 0),
+            int(event_data.get("event_count_7d") or 0),
             evidence.strong_event_count_7d,
             evidence.event_recency_days,
+            evidence.event_strength_score,
+            evidence.event_continuity_score,
+            str(leader_data.get("leader_stock_id") or ""),
+            str(leader_data.get("leader_stock_name") or ""),
             evidence.leader_alive_score,
             evidence.leader_breakdown_flag,
             evidence.relay_strength_score,
             evidence.front_row_survival_ratio,
+            int(board_data.get("board_stock_count") or 0),
             evidence.limit_up_count,
             evidence.limit_down_count,
             evidence.red_ratio,
             evidence.big_drop_ratio,
             evidence.front_row_strength_score,
-            evidence.theme_support_score,
+            kline_data.get("theme_ret_3d"),
+            kline_data.get("theme_ret_5d"),
+            kline_data.get("theme_ret_10d"),
+            bool(kline_data.get("above_ma5") or False),
+            bool(kline_data.get("above_ma10") or False),
+            bool(kline_data.get("above_ma20") or False),
             evidence.break_start_pivot,
+            bool(kline_data.get("volume_breakdown_flag") or False),
+            evidence.theme_support_score,
+            int(window_data.get("lookback_days") or 7),
+            window_data.get("evidence_window_start"),
+            window_data.get("evidence_window_end"),
             json.dumps(self._evidence_refs.get("event", []), ensure_ascii=False),
             json.dumps(self._evidence_refs.get("leader", []), ensure_ascii=False),
             json.dumps(self._evidence_refs.get("board_structure", []), ensure_ascii=False),
             json.dumps(self._evidence_refs.get("theme_kline", []), ensure_ascii=False),
+            mainline_strength_score,
+            fade_risk_score,
             json.dumps(evidence_dict, ensure_ascii=False),
             "theme_cycle_evidence.v1"
+        )
+
+    def _calc_mainline_strength_score(self, evidence: CycleEvidenceInput) -> float:
+        score = (
+            float(evidence.event_strength_score) * 0.20
+            + float(evidence.event_continuity_score) * 0.15
+            + float(evidence.leader_alive_score) * 0.25
+            + float(evidence.relay_strength_score) * 0.15
+            + float(evidence.front_row_strength_score) * 0.15
+            + float(evidence.theme_support_score) * 0.10
+        )
+        return round(max(0.0, min(score, 100.0)), 3)
+
+    def _calc_fade_risk_score(self, evidence: CycleEvidenceInput) -> float:
+        leader_break = 100.0 if bool(evidence.leader_breakdown_flag) else 0.0
+        continuity = float(evidence.event_continuity_score or 0.0)
+        recency = int(evidence.event_recency_days) if evidence.event_recency_days is not None else 7
+        strong_events = int(evidence.strong_event_count_7d or 0)
+        event_decay_score = 0.0
+        if strong_events == 0:
+            event_decay_score += 18.0
+        event_decay_score += min(max(recency, 0) * 4.0, 20.0)
+        event_decay_score += max(0.0, 40.0 - continuity) * 0.5
+        score = (
+            leader_break * 0.35
+            + float(evidence.big_drop_ratio) * 30.0
+            + float(evidence.limit_down_count) * 8.0
+            + max(0.0, 1.0 - float(evidence.red_ratio)) * 35.0
+            + min(event_decay_score, 25.0)
+        )
+        return round(max(0.0, min(score, 100.0)), 3)
+
+    def _to_theme_cycle_evidence_payload(
+        self,
+        *,
+        evidence: CycleEvidenceInput,
+        mainline_strength_score: float,
+        fade_risk_score: float,
+    ) -> ThemeCycleEvidence:
+        evidence_json = {
+            "trade_date": evidence.trade_date,
+            "subject_key": evidence.subject_key,
+            "theme_name": evidence.theme_name,
+            "mainline_strength_score": mainline_strength_score,
+            "fade_risk_score": fade_risk_score,
+        }
+        return ThemeCycleEvidence(
+            trade_date=date.fromisoformat(evidence.trade_date),
+            subject_key=evidence.subject_key,
+            theme_name=evidence.theme_name,
+            mainline_strength_score=mainline_strength_score,
+            fade_risk_score=fade_risk_score,
+            event_evidence_refs=self._evidence_refs.get("event", []),
+            leader_evidence_refs=self._evidence_refs.get("leader", []),
+            board_structure_refs=self._evidence_refs.get("board_structure", []),
+            theme_kline_refs=self._evidence_refs.get("theme_kline", []),
+            evidence_json=evidence_json,
         )
 
 

@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import asyncio
 import logging
+import warnings
 from dataclasses import dataclass, field
 from datetime import date, datetime
 from typing import Any, Dict, List, Optional, Tuple
@@ -154,7 +155,12 @@ class WeakToStrongDetectionInputs:
 
 
 class WeakToStrongService:
-    """弱转强策略服务"""
+    """弱转强策略服务（已降级为诊断层）。
+
+    正式主链请使用：
+    1. weak_to_strong_candidate_builder（盘后候选）
+    2. weak_to_strong_auction_service（盘前确认）
+    """
 
     def __init__(self, db_manager=None, kline_data_service=None):
         self.db_manager = db_manager
@@ -170,6 +176,11 @@ class WeakToStrongService:
         trade_date: date,
         inputs: WeakToStrongDetectionInputs
     ) -> List[WeakToStrongSignal]:
+        warnings.warn(
+            "WeakToStrongService 已降级为诊断/兼容层，不建议用于正式准入链路",
+            DeprecationWarning,
+            stacklevel=2,
+        )
         """
         检测弱转强信号
 

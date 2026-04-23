@@ -2,11 +2,13 @@ from __future__ import annotations
 
 import json
 import os
-import asyncio
 import aiohttp
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Dict, List, Optional, Any, Tuple
 import asyncpg
+
+from stock_service.config import StockServiceConfig
 
 
 @dataclass
@@ -79,22 +81,48 @@ class LlmCycleReviewService:
 
     # LLM模型配置（可扩展）
     MODEL_NAME = "deepseek-chat"  # 可根据实际配置调整
-    API_KEY = os.getenv("DEEPSEEK_API_KEY", "")
     API_BASE = os.getenv("DEEPSEEK_API_BASE", "https://api.deepseek.com")
 
     def __init__(self, config=None):
-        self.config = config
+        self.config = config or StockServiceConfig()
         self._pool: Optional[asyncpg.Pool] = None
+
+    @staticmethod
+    def _load_env_file(env_file_path: str = ".env.theme") -> Dict[str, str]:
+        """从 .env.theme 读取键值（仅用于补充运行时环境变量）。"""
+        env_vars: Dict[str, str] = {}
+        try:
+            env_path = Path(env_file_path)
+            if not env_path.exists():
+                return env_vars
+            with open(env_path, "r", encoding="utf-8") as f:
+                for raw_line in f:
+                    line = raw_line.strip()
+                    if not line or line.startswith("#") or "=" not in line:
+                        continue
+                    key, value = line.split("=", 1)
+                    env_vars[key.strip()] = value.strip()
+        except Exception:
+            return {}
+        return env_vars
+
+    def _get_deepseek_api_key(self) -> str:
+        """优先读运行时环境变量；未设置时回退 .env.theme。"""
+        api_key = os.getenv("DEEPSEEK_API_KEY", "").strip()
+        if api_key:
+            return api_key
+        env_vars = self._load_env_file(".env.theme")
+        return str(env_vars.get("DEEPSEEK_API_KEY", "")).strip()
 
     async def _ensure_pool(self) -> asyncpg.Pool:
         """确保数据库连接池存在"""
         if self._pool is None:
             self._pool = await asyncpg.create_pool(
-                host='localhost',
-                port=5432,
-                user='postgres',
-                password='postgres',
-                database='stock_data_test',
+                host=self.config.postgres_host,
+                port=self.config.postgres_port,
+                user=self.config.postgres_user,
+                password=self.config.postgres_password,
+                database=self.config.postgres_database,
                 min_size=1,
                 max_size=5
             )
@@ -118,6 +146,16 @@ class LlmCycleReviewService:
         rule_summary = self._format_rule_summary(input_data)
 
         prompt = f"""## 主线周期复核任务
+
+### 置顶规则（最高优先级，必须严格执行）
+以下规则来自《如何建立正确的交易体系.pdf》，优先级高于其他描述：
+
+1. 主线定义必须同时满足两大维度，缺一不可：
+   - 逻辑维度：题材具备“新颖度 + 时机 + 影响广度”中的有效支撑（可结合事件强度、连续性、时效性、题材技术支撑综合判断）
+   - 市场维度：题材持续被资金认可（可结合龙头存活、接力强度、涨停/跌停结构、红盘比例综合判断）
+2. 若任一维度证据不足，`mainline_alive_llm` 必须为 `false`，不得给出“主线存活”结论。
+3. 禁止把“一日游题材/单日异动”判为主线；当持续性不足时，优先判 `fade_watch` 或 `divergence`。
+4. 你的角色是“受控复核”，不是自由预测：只能基于输入证据做状态纠偏，不能创造新事实。
 
 ### 基础信息
 - 交易日：{input_data.trade_date}
@@ -169,6 +207,7 @@ class LlmCycleReviewService:
 3. 不得覆盖、篡改原始证据字段
 4. fade_watch可复核为divergence（如果分歧特征更明显）
 5. fade_watch可复核为fade_confirmed（仅当退潮证据充分）
+6. `mainline_alive_llm=true` 必须满足“逻辑维度 + 市场维度”同时成立
 
 请严格基于上述证据和规则层结论进行复核，输出JSON格式结果。
 """
@@ -234,35 +273,18 @@ class LlmCycleReviewService:
     async def call_llm_for_review(self, prompt: str) -> Dict[str, Any]:
         """调用LLM进行复核
 
-        实际调用DeepSeek API，若无API密钥则返回模拟数据
+        实际调用DeepSeek API。
+        无 API key / 调用异常时抛出异常，由上层走保守回退（维持规则层结论）。
         """
-        # 如果没有配置API密钥，返回模拟数据（兼容现有测试）
-        if not self.API_KEY:
-            print("⚠️  DEEPSEEK_API_KEY未配置，使用模拟LLM响应")
-            # 模拟LLM响应
-            mock_response = {
-                "cycle_state_llm": "fade_watch",
-                "mainline_alive_llm": True,
-                "support_fade_confirmed": False,
-                "confidence": 78,
-                "reasons": [
-                    "事件连续性评分较低，但龙头存活评分尚可",
-                    "板块结构整体稳定，无大面积跌停"
-                ],
-                "risk_flags": [
-                    "事件时效性较差，最近事件已超过3天",
-                    "板块K线支撑评分偏低"
-                ]
-            }
-            # 模拟API延迟
-            await asyncio.sleep(0.1)
-            return mock_response
+        api_key = self._get_deepseek_api_key()
+        if not api_key:
+            raise RuntimeError("missing_deepseek_api_key")
 
         # 实际调用DeepSeek API
         try:
             url = f"{self.API_BASE}/chat/completions"
             headers = {
-                "Authorization": f"Bearer {self.API_KEY}",
+                "Authorization": f"Bearer {api_key}",
                 "Content-Type": "application/json"
             }
             payload = {
@@ -291,16 +313,7 @@ class LlmCycleReviewService:
 
         except Exception as e:
             print(f"❌ LLM复核API调用异常: {e}")
-            # 降级：返回模拟数据
-            print("⚠️  降级到模拟响应")
-            return {
-                "cycle_state_llm": "fade_watch",
-                "mainline_alive_llm": True,
-                "support_fade_confirmed": False,
-                "confidence": 50,
-                "reasons": [f"API调用异常: {str(e)}"],
-                "risk_flags": ["LLM服务降级"]
-            }
+            raise
 
     def parse_llm_response(self, raw_response: Dict[str, Any]) -> CycleReviewOutput:
         """解析LLM响应，确保输出结构化
@@ -394,7 +407,7 @@ class LlmCycleReviewService:
         返回统计信息
         """
         pool = await self._ensure_pool()
-        async with pool.acquire() as conn:
+        async with pool.acquire() as read_conn:
             # 获取需要复核的主题列表
             sql = """
             SELECT
@@ -413,7 +426,7 @@ class LlmCycleReviewService:
                 AND v2.subject_key = e.subject_key
             WHERE v2.trade_date = $1
             """
-            rows = await conn.fetch(sql, trade_date)
+            rows = await read_conn.fetch(sql, trade_date)
 
         results = []
         success_count = 0
@@ -428,7 +441,8 @@ class LlmCycleReviewService:
                 review_output = await self.review_cycle_judgement(input_data)
 
                 # 保存复核结果到数据库
-                await self._save_review_result(conn, trade_date, row["subject_key"], review_output)
+                async with pool.acquire() as write_conn:
+                    await self._save_review_result(write_conn, trade_date, row["subject_key"], review_output)
 
                 results.append({
                     "subject_key": row["subject_key"],

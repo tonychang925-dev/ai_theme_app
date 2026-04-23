@@ -18,7 +18,7 @@ class AuctionCandidateInput:
     subject_key: str
     theme_name: str
     role_label: str
-    is_main_theme: bool
+    mainline_alive: bool
     action_bias: str
     position_label: str = ""
     pattern_labels: tuple[str, ...] = ()
@@ -64,7 +64,7 @@ class AuctionSignalService:
     def is_candidate_eligible(self, candidate: AuctionCandidateInput) -> bool:
         if candidate.role_label not in self.ALLOWED_ROLES and not candidate.is_reversal_watch:
             return False
-        if candidate.is_main_theme:
+        if candidate.mainline_alive:
             return True
         return candidate.action_bias in {"关注弱转强", "试错"}
 
@@ -227,7 +227,7 @@ class AuctionSignalService:
             return "承接不足"
         if snapshot.auction_open_pct < -1.0:
             return "低开不及预期"
-        if not candidate.is_main_theme and candidate.action_bias == "放弃":
+        if not candidate.mainline_alive and candidate.action_bias == "放弃":
             return "非主线降级"
         return ""
 

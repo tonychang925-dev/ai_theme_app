@@ -88,27 +88,43 @@ async def ensure_tables(manager: PostgresDatabaseManager) -> None:
     """
     async with manager.pool.acquire() as conn:
         await conn.execute(ddl)
-        await conn.execute("ALTER TABLE theme_cycle_judgement ADD COLUMN IF NOT EXISTS source_type VARCHAR(80) NOT NULL DEFAULT 'p3.phase2.cycle'")
-        await conn.execute("ALTER TABLE theme_cycle_judgement ADD COLUMN IF NOT EXISTS source_trace_id VARCHAR(40) NOT NULL DEFAULT ''")
-        await conn.execute("ALTER TABLE theme_cycle_judgement ADD COLUMN IF NOT EXISTS source_trace JSONB NOT NULL DEFAULT '{}'::jsonb")
-        await conn.execute("ALTER TABLE theme_cycle_judgement ADD COLUMN IF NOT EXISTS source_version VARCHAR(80) NOT NULL DEFAULT ''")
-        await conn.execute("ALTER TABLE theme_cycle_judgement ADD COLUMN IF NOT EXISTS rule_version VARCHAR(80) NOT NULL DEFAULT ''")
 
 
 async def fetch_mainline_rows(manager: PostgresDatabaseManager, trade_date_value: date):
     sql = """
     SELECT
-        subject_key,
-        theme_name,
-        is_main_theme,
-        theme_tier,
-        event_chain_score,
-        event_chain_continuity_score,
-        market_recognition_score,
-        mainline_stability_score,
-        limit_up_count
-    FROM theme_mainline_judgement
-    WHERE trade_date = $1
+        v2.subject_key,
+        COALESCE(NULLIF(v2.theme_name, ''), v2.subject_key) AS theme_name,
+        (
+          COALESCE(msd.is_mainline, FALSE)
+          AND COALESCE(msd.state, '') <> 'fade_confirmed'
+        ) AS is_main_theme,
+        CASE
+            WHEN (
+                COALESCE(msd.is_mainline, FALSE)
+                AND COALESCE(msd.state, '') <> 'fade_confirmed'
+                AND COALESCE(msd.mainline_strength_score, v2.mainline_strength_score, 0) >= 75
+            ) THEN 'main'
+            WHEN (
+                COALESCE(msd.is_mainline, FALSE)
+                AND COALESCE(msd.state, '') <> 'fade_confirmed'
+            ) THEN 'strong_branch'
+            ELSE 'inactive'
+        END AS theme_tier,
+        COALESCE(e.event_count_3d, 0) AS event_chain_score,
+        COALESCE(e.event_continuity_score, 0) AS event_chain_continuity_score,
+        COALESCE(v2.confidence_score, 0) AS market_recognition_score,
+        COALESCE(msd.mainline_strength_score, v2.mainline_strength_score, 0) AS mainline_stability_score,
+        COALESCE(e.limit_up_count, 0) AS limit_up_count
+    FROM theme_cycle_judgement_v2 v2
+    LEFT JOIN mainline_state_daily msd
+      ON msd.trade_date = v2.trade_date
+     AND msd.subject_key = v2.subject_key
+    LEFT JOIN theme_cycle_evidence_daily e
+      ON e.trade_date = v2.trade_date
+     AND e.subject_key = v2.subject_key
+    WHERE v2.trade_date = $1
+      AND COALESCE(v2.fade_confirmed, FALSE) = FALSE
     """
     async with manager.pool.acquire() as conn:
         rows = await conn.fetch(sql, trade_date_value)
@@ -323,7 +339,8 @@ async def main_async() -> int:
             judgement = service.build_judgement(args.trade_date, mainline, market, recent)
             source_trace = {
                 "datasets": [
-                    "theme_mainline_judgement",
+                    "theme_cycle_judgement_v2",
+                    "theme_cycle_evidence_daily",
                     "subject_stock_daily_snapshot",
                     "subject_rank_daily",
                 ],

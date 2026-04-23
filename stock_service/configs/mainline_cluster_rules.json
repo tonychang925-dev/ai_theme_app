@@ -1,0 +1,90 @@
+{
+  "clusters": [
+    {
+      "name": "commercial_space",
+      "keywords": [
+        "商业航天",
+        "卫星互联网",
+        "卫星",
+        "星链",
+        "航天",
+        "航天国家队",
+        "航天材料",
+        "太空",
+        "太空机器人",
+        "太空旅游",
+        "太空算力",
+        "太空光伏",
+        "火箭",
+        "火箭发射",
+        "可回收火箭",
+        "海上火箭回收",
+        "蓝箭航天",
+        "商业航天8大IPO",
+        "广州商业航天",
+        "SpaceX",
+        "spacex",
+        "安徽商业航天"
+      ],
+      "core_tokens": [
+        "商业航天",
+        "卫星互联网",
+        "SpaceX",
+        "spacex",
+        "火箭发射",
+        "安徽商业航天"
+      ],
+      "min_members": 3,
+      "min_strength_members": 3,
+      "min_limit_up_sum": 6,
+      "min_continuity": 70.0
+    },
+    {
+      "name": "data_center",
+      "keywords": [
+        "数据中心",
+        "液冷数据中心",
+        "数据中心电力设备",
+        "算力",
+        "算力租赁",
+        "国产算力",
+        "英伟达算力",
+        "算力基建"
+      ],
+      "core_tokens": [
+        "数据中心",
+        "液冷数据中心"
+      ],
+      "min_members": 2,
+      "min_strength_members": 2,
+      "min_limit_up_sum": 3,
+      "min_continuity": 58.0
+    },
+    {
+      "name": "optical_comm",
+      "keywords": [
+        "光通信",
+        "光模块",
+        "共封装光学",
+        "CPO",
+        "AI光纤",
+        "光纤光缆",
+        "1.6T光模块",
+        "硅光",
+        "光芯片",
+        "光互连"
+      ],
+      "core_tokens": [
+        "光通信",
+        "光模块",
+        "共封装光学",
+        "CPO",
+        "AI光纤"
+      ],
+      "min_members": 2,
+      "min_strength_members": 2,
+      "min_limit_up_sum": 3,
+      "min_continuity": 56.0
+    }
+  ]
+}

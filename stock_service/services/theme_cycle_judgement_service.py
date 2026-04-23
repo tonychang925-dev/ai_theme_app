@@ -1,18 +1,17 @@
 from __future__ import annotations
 
 import json
-from datetime import date, timedelta
+from datetime import date
 from typing import Dict, List, Optional, Any, Tuple
 import asyncpg
 
-from stock_service.services.unified_cycle_scoring_service import (
-    UnifiedCycleScoringService,
-    CycleEvidenceInput
-)
+from stock_service.config import StockServiceConfig
+from stock_service.services.unified_cycle_scoring_service import CycleEvidenceInput
+from stock_service.services.theme_cycle_evidence_builder import ThemeCycleEvidenceBuilder
+from stock_service.services.theme_cycle_judgement_service_v2 import ThemeCycleJudgementServiceV2
 from stock_service.services.llm_cycle_review_service import (
-    LlmCycleReviewService,
     CycleReviewInput,
-    CycleReviewOutput
+    LlmCycleReviewService,
 )
 
 
@@ -23,22 +22,32 @@ class ThemeCycleJudgementService:
     严格按照用户骨架设计：规则引擎为主，LLM仅做证据归纳+状态复核
     """
 
-    def __init__(self, config=None):
-        self.config = config
+    def __init__(self, config=None, *, allow_legacy: bool = False):
+        self.config = config or StockServiceConfig()
+        self.allow_legacy = bool(allow_legacy)
         self._pool: Optional[asyncpg.Pool] = None
-        self.scoring_service = UnifiedCycleScoringService()
-        self.llm_review_service = LlmCycleReviewService(config)
+        self.evidence_builder = ThemeCycleEvidenceBuilder(self.config)
+        self.v2_service = ThemeCycleJudgementServiceV2()
+        self.llm_review_service = LlmCycleReviewService(self.config)
+
+    def _ensure_legacy_enabled(self) -> None:
+        if self.allow_legacy:
+            return
+        raise RuntimeError(
+            "ThemeCycleJudgementService (legacy) is disabled by default. "
+            "Use theme_cycle_judgement_v2 + mainline_state_tracking pipeline, "
+            "or initialize with allow_legacy=True for temporary diagnostics only."
+        )
 
     async def _ensure_pool(self) -> asyncpg.Pool:
         """确保数据库连接池存在"""
         if self._pool is None:
-            # 使用默认配置
             self._pool = await asyncpg.create_pool(
-                host='localhost',
-                port=5432,
-                user='postgres',
-                password='postgres',
-                database='stock_data_test',
+                host=self.config.postgres_host,
+                port=self.config.postgres_port,
+                user=self.config.postgres_user,
+                password=self.config.postgres_password,
+                database=self.config.postgres_database,
                 min_size=1,
                 max_size=5
             )
@@ -49,6 +58,8 @@ class ThemeCycleJudgementService:
         if self._pool:
             await self._pool.close()
             self._pool = None
+        await self.evidence_builder.close()
+        await self.llm_review_service.close()
 
     async def judge_theme_cycle(self, trade_date: date,
                                subject_key: str,
@@ -58,24 +69,33 @@ class ThemeCycleJudgementService:
         流程：
         1. 从证据表读取证据
         2. 应用规则引擎（UnifiedCycleScoringService）
-        3. 应用LLM复核（模拟）
+        3. 应用受控LLM复核（仅允许指定边界纠偏）
         4. 确定最终判决
         5. 保存到V2表
 
         返回：判决结果字典
         """
+        self._ensure_legacy_enabled()
         pool = await self._ensure_pool()
         async with pool.acquire() as conn:
             # 1. 读取证据
             evidence = await self._load_evidence_from_db(conn, trade_date, subject_key)
             if not evidence:
-                print(f"❌ 主题 {subject_key} 无证据数据，跳过判决")
-                return {}
+                # 证据缺失时先尝试构建单主题证据，再重读。
+                try:
+                    await self.evidence_builder.build(trade_date, subject_key, theme_name or subject_key)
+                    evidence = await self._load_evidence_from_db(conn, trade_date, subject_key)
+                except Exception as e:
+                    print(f"❌ 主题 {subject_key} 证据构建失败，跳过判决: {e}")
+                    return {}
+                if not evidence:
+                    print(f"❌ 主题 {subject_key} 无证据数据，跳过判决")
+                    return {}
 
             # 2. 应用规则引擎
             rule_result = await self._apply_rule_engine(evidence)
 
-            # 3. 应用LLM复核（模拟）
+            # 3. 应用受控LLM复核
             llm_result = await self._apply_llm_review(evidence, rule_result)
 
             # 4. 确定最终判决
@@ -91,15 +111,22 @@ class ThemeCycleJudgementService:
             return final_judgement
 
     async def judge_all_themes_for_date(self, trade_date: date) -> List[Dict[str, Any]]:
-        """为指定交易日判决所有主题"""
+        """为指定交易日判决主线身份已确认主题。"""
+        self._ensure_legacy_enabled()
+        # 先构建当日证据，确保周期判定使用最新完整证据层。
+        await self.evidence_builder.build_evidence_for_date(trade_date)
         pool = await self._ensure_pool()
         async with pool.acquire() as conn:
-            # 获取所有有证据的主题
+            # 周期主链仅评估“身份已确认”的题材，避免口径漂移。
             sql = """
-            SELECT DISTINCT subject_key, theme_name
-            FROM theme_cycle_evidence_daily
-            WHERE trade_date = $1
-            ORDER BY subject_key
+            SELECT DISTINCT e.subject_key, e.theme_name
+            FROM theme_cycle_evidence_daily e
+            JOIN theme_mainline_identity_registry mr
+              ON mr.subject_key = e.subject_key
+            WHERE e.trade_date = $1::date
+              AND COALESCE(mr.is_main_theme, FALSE) = TRUE
+              AND COALESCE(NULLIF(LOWER(mr.identity_status), ''), 'observed') = 'confirmed'
+            ORDER BY e.subject_key
             """
             rows = await conn.fetch(sql, trade_date)
 
@@ -181,62 +208,75 @@ class ThemeCycleJudgementService:
     async def _fetch_previous_cycle_state(self, conn: asyncpg.Connection,
                                          trade_date: date,
                                          subject_key: str) -> Optional[str]:
-        """获取前一日周期状态"""
-        prev_date = trade_date - timedelta(days=1)
-
-        # 首先尝试从V2表查询
+        """获取上一交易日周期状态（非自然日-1）。"""
         sql_v2 = """
         SELECT final_cycle_state
         FROM theme_cycle_judgement_v2
-        WHERE trade_date = $1 AND subject_key = $2
+        WHERE subject_key = $1
+          AND trade_date < $2::date
+        ORDER BY trade_date DESC
+        LIMIT 1
         """
-        row_v2 = await conn.fetchrow(sql_v2, prev_date, subject_key)
+        row_v2 = await conn.fetchrow(sql_v2, subject_key, trade_date)
         if row_v2:
             return str(row_v2.get("final_cycle_state"))
-
-        # 回退到原表
-        sql_original = """
-        SELECT primary_cycle_stage
-        FROM theme_cycle_judgement
-        WHERE trade_date = $1 AND subject_key = $2
-        """
-        row_original = await conn.fetchrow(sql_original, prev_date, subject_key)
-        if row_original:
-            return str(row_original.get("primary_cycle_stage"))
-
         return None
 
     async def _apply_rule_engine(self, evidence: CycleEvidenceInput) -> Dict[str, Any]:
-        """应用规则引擎（UnifiedCycleScoringService）"""
-        # 计算所有评分
-        scores = self.scoring_service.calculate_all_scores(evidence)
-
-        # 确定主线存活规则
-        mainline_alive_rule = self.scoring_service.determine_mainline_alive_rule(
-            evidence, scores["mainline_strength_score"]
-        )
-
-        # 检查是否可以转换到repair状态
-        can_transition_to_repair = self.scoring_service.can_transition_to_repair(
-            scores["repair_score"], evidence.previous_cycle_state
-        )
-
-        # 确定退潮相关状态
-        fade_watch = scores.get("fade_watch", False)
-        fade_confirmed = scores.get("fade_confirmed", False)
-
-        # 构建规则结果
-        rule_result = {
-            "cycle_state_rule": scores["final_cycle_state"],
-            "mainline_alive_rule": mainline_alive_rule,
-            "fade_watch": fade_watch,
-            "fade_confirmed": fade_confirmed,
-            "scores": scores,
-            "can_transition_to_repair": can_transition_to_repair,
-            "rule_reasons": self._generate_rule_reasons(evidence, scores)
+        """应用规则引擎（ThemeCycleJudgementServiceV2）"""
+        evidence_payload = {
+            "trade_date": evidence.trade_date,
+            "subject_key": evidence.subject_key,
+            "theme_name": evidence.theme_name,
+            "event_strength_score": evidence.event_strength_score,
+            "event_continuity_score": evidence.event_continuity_score,
+            "strong_event_count_7d": evidence.strong_event_count_7d,
+            "event_recency_days": evidence.event_recency_days,
+            "leader_alive_score": evidence.leader_alive_score,
+            "leader_breakdown_flag": evidence.leader_breakdown_flag,
+            "relay_strength_score": evidence.relay_strength_score,
+            "front_row_survival_ratio": evidence.front_row_survival_ratio,
+            "limit_up_count": evidence.limit_up_count,
+            "limit_down_count": evidence.limit_down_count,
+            "red_ratio": evidence.red_ratio,
+            "big_drop_ratio": evidence.big_drop_ratio,
+            "front_row_strength_score": evidence.front_row_strength_score,
+            "theme_support_score": evidence.theme_support_score,
+            "break_start_pivot": evidence.break_start_pivot,
+            "previous_cycle_state": evidence.previous_cycle_state,
         }
-
-        return rule_result
+        v2 = self.v2_service.judge(evidence_payload, enable_llm_review=True)
+        fade_risk_score = round(
+            max(
+                0.0,
+                min(
+                    100.0,
+                    (100.0 - v2.mainline_strength_score) * 0.55 + v2.fade_watch_score * 0.45,
+                ),
+            ),
+            3,
+        )
+        scores = {
+            "mainline_strength_score": v2.mainline_strength_score,
+            "fade_risk_score": fade_risk_score,
+            "fade_watch_score": v2.fade_watch_score,
+            "fade_confirmed_score": v2.fade_confirmed_score,
+            "divergence_score": v2.divergence_score,
+            "repair_score": v2.repair_score,
+            "final_cycle_state": v2.final_cycle_state,
+            "leader_alive_score": evidence.leader_alive_score,
+        }
+        return {
+            "cycle_state_rule": v2.cycle_state_rule,
+            "mainline_alive_rule": v2.mainline_alive_rule,
+            "fade_watch": v2.fade_watch,
+            "fade_confirmed": v2.fade_confirmed,
+            "scores": scores,
+            "can_transition_to_repair": v2.score_flags.get("repair_transition_allowed", False),
+            "rule_reasons": list(v2.rule_reasons),
+            "decision_path": list(v2.decision_path),
+            "thresholds": dict(v2.thresholds),
+        }
 
     def _generate_rule_reasons(self, evidence: CycleEvidenceInput,
                               scores: Dict[str, Any]) -> List[str]:
@@ -288,64 +328,58 @@ class ThemeCycleJudgementService:
 
     async def _apply_llm_review(self, evidence: CycleEvidenceInput,
                                rule_result: Dict[str, Any]) -> Dict[str, Any]:
-        """应用LLM复核（实际调用LlmCycleReviewService）
+        """受控LLM复核：仅在指定触发条件下执行，其他场景沿用规则层。"""
+        confidence = float(self._calculate_rule_confidence(evidence, rule_result["scores"]))
 
-        按照设计文档7.2节触发时机：仅在规则层判fade_watch/fade_confirmed时触发LLM复核
-        """
-        # 检查是否触发LLM复核（设计文档7.2节）
-        should_trigger_llm = (
-            rule_result["cycle_state_rule"] in ["fade_watch", "fade_confirmed"] or
-            rule_result.get("fade_watch", False) or
-            rule_result.get("fade_confirmed", False)
-        )
-
-        if not should_trigger_llm:
-            # 不触发LLM复核时，直接使用规则层结论
+        if not self._should_trigger_llm_review(evidence, rule_result):
             return {
                 "cycle_state_llm": rule_result["cycle_state_rule"],
                 "mainline_alive_llm": rule_result["mainline_alive_rule"],
-                "llm_reasons": ["LLM复核：无需复核，直接采用规则层结论"],
+                "support_fade_confirmed": bool(rule_result.get("fade_confirmed", False)),
+                "llm_reasons": ["llm_review_not_triggered"],
                 "risk_flags": [],
-                "confidence": 50,
+                "confidence": confidence,
                 "agreement_with_rule": True,
                 "suggested_changes": [],
-                "evidence_quality_score": 50
+                "evidence_quality_score": 70.0,
+                "llm_applied": False,
+                "llm_prompt_version": None,
             }
 
-        # 构建LLM复核输入
-        review_input = self._build_llm_review_input(evidence, rule_result)
+        review_input = CycleReviewInput(**self._build_llm_review_input(evidence, rule_result))
+        review_output = await self.llm_review_service.review_cycle_judgement(review_input)
+        return {
+            "cycle_state_llm": review_output.cycle_state_llm,
+            "mainline_alive_llm": review_output.mainline_alive_llm,
+            "support_fade_confirmed": review_output.support_fade_confirmed,
+            "llm_reasons": list(review_output.reasons),
+            "risk_flags": list(review_output.risk_flags),
+            "confidence": float(review_output.confidence),
+            "agreement_with_rule": bool(review_output.agreement_with_rule),
+            "suggested_changes": list(review_output.suggested_changes),
+            "evidence_quality_score": int(review_output.evidence_quality_score),
+            "llm_applied": True,
+            "llm_prompt_version": self.llm_review_service.PROMPT_VERSION,
+        }
 
-        try:
-            # 调用LLM复核服务
-            review_output = await self.llm_review_service.review_cycle_judgement(review_input)
-
-            # 转换为内部格式
-            return {
-                "cycle_state_llm": review_output.cycle_state_llm,
-                "mainline_alive_llm": review_output.mainline_alive_llm,
-                "llm_reasons": review_output.reasons,
-                "risk_flags": review_output.risk_flags,
-                "confidence": review_output.confidence,
-                "agreement_with_rule": review_output.agreement_with_rule,
-                "suggested_changes": review_output.suggested_changes,
-                "evidence_quality_score": review_output.evidence_quality_score
-            }
-        except Exception as e:
-            print(f"⚠️ LLM复核失败，降级为规则层结论: {e}")
-            # 降级处理：使用规则层结论
-            return {
-                "cycle_state_llm": rule_result["cycle_state_rule"],
-                "mainline_alive_llm": rule_result["mainline_alive_rule"],
-                "llm_reasons": [f"LLM复核异常: {str(e)}，降级为规则层结论"],
-                "risk_flags": ["LLM服务异常"],
-                "confidence": 30,
-                "agreement_with_rule": True,
-                "suggested_changes": [],
-                "evidence_quality_score": 30
-            }
+    def _should_trigger_llm_review(self, evidence: CycleEvidenceInput, rule_result: Dict[str, Any]) -> bool:
+        """受控触发：
+        1) 规则层判 fade_watch；
+        2) 规则层判 fade_confirmed 且出现“强支撑核心”冲突证据。
+        """
+        if bool(rule_result.get("fade_watch", False)):
+            return True
+        if (
+            bool(rule_result.get("fade_confirmed", False))
+            and float(evidence.leader_alive_score) >= 55.0
+            and float(evidence.theme_support_score) >= 70.0
+            and float(evidence.event_continuity_score) >= 40.0
+        ):
+            return True
+        return False
 
     def _build_llm_review_input(self, evidence: CycleEvidenceInput,
-                               rule_result: Dict[str, Any]) -> CycleReviewInput:
+                               rule_result: Dict[str, Any]) -> Dict[str, Any]:
         """构建LLM复核输入数据
 
         将CycleEvidenceInput和规则结果转换为CycleReviewInput
@@ -385,32 +419,28 @@ class ThemeCycleJudgementService:
         # 计算规则层置信度（基于证据质量）
         confidence_score = self._calculate_rule_confidence(evidence, scores)
 
-        return CycleReviewInput(
-            trade_date=evidence.trade_date,
-            subject_key=evidence.subject_key,
-            theme_name=evidence.theme_name,
-
-            cycle_state_rule=rule_result["cycle_state_rule"],
-            mainline_alive_rule=rule_result["mainline_alive_rule"],
-            fade_watch=rule_result.get("fade_watch", False),
-            fade_confirmed=rule_result.get("fade_confirmed", False),
-
-            mainline_strength_score=scores.get("mainline_strength_score", 0),
-            fade_watch_score=scores.get("fade_watch_score", 0),
-            fade_confirmed_score=scores.get("fade_confirmed_score", 0),
-            divergence_score=scores.get("divergence_score", 0),
-            repair_score=scores.get("repair_score", 0),
-            confidence_score=confidence_score,
-
-            event_layer=event_layer,
-            leader_layer=leader_layer,
-            board_structure_layer=board_structure_layer,
-            theme_kline_layer=theme_kline_layer,
-
-            previous_cycle_state=evidence.previous_cycle_state,
-            state_transition_reason=None,  # 将在判决后填充
-            evidence_refs=[]
-        )
+        return {
+            "trade_date": evidence.trade_date,
+            "subject_key": evidence.subject_key,
+            "theme_name": evidence.theme_name,
+            "cycle_state_rule": rule_result["cycle_state_rule"],
+            "mainline_alive_rule": rule_result["mainline_alive_rule"],
+            "fade_watch": rule_result.get("fade_watch", False),
+            "fade_confirmed": rule_result.get("fade_confirmed", False),
+            "mainline_strength_score": scores.get("mainline_strength_score", 0),
+            "fade_watch_score": scores.get("fade_watch_score", 0),
+            "fade_confirmed_score": scores.get("fade_confirmed_score", 0),
+            "divergence_score": scores.get("divergence_score", 0),
+            "repair_score": scores.get("repair_score", 0),
+            "confidence_score": confidence_score,
+            "event_layer": event_layer,
+            "leader_layer": leader_layer,
+            "board_structure_layer": board_structure_layer,
+            "theme_kline_layer": theme_kline_layer,
+            "previous_cycle_state": evidence.previous_cycle_state,
+            "state_transition_reason": None,
+            "evidence_refs": [],
+        }
 
     def _determine_final_judgement(self,
                                   rule_result: Dict[str, Any],
@@ -426,18 +456,31 @@ class ThemeCycleJudgementService:
         rule_mainline_alive = rule_result["mainline_alive_rule"]
         llm_mainline_alive = llm_result["mainline_alive_llm"]
 
-        # 最终判决逻辑：以规则引擎为主，但如果LLM强烈反对且有理由，可采纳LLM
+        # 最终判决逻辑：规则引擎为主，LLM仅在受控边界内可纠偏。
         final_cycle_state = rule_cycle_state
         final_mainline_alive = rule_mainline_alive
 
-        # 如果LLM与规则引擎不一致，检查是否有充分理由
-        if rule_cycle_state != llm_cycle_state:
+        llm_applied = bool(llm_result.get("llm_applied", False))
+        allowed_transitions = {
+            "fade_watch": {"fade_watch", "divergence", "fade_confirmed"},
+            "fade_confirmed": {"fade_confirmed", "fade_watch", "divergence"},
+        }
+        allowed_states = allowed_transitions.get(rule_cycle_state, {rule_cycle_state})
+
+        if llm_applied and llm_cycle_state in allowed_states and rule_cycle_state != llm_cycle_state:
             llm_reasons = llm_result.get("llm_reasons", [])
-            # 简化处理：如果LLM提供了具体理由，可能采纳LLM
-            if len(llm_reasons) > 1:  # 不只是"同意规则引擎判断"
+            support_fade_confirmed = bool(llm_result.get("support_fade_confirmed", False))
+            if llm_cycle_state == "fade_confirmed" and not support_fade_confirmed:
+                llm_reasons = list(llm_reasons) + ["llm_override_rejected_no_fade_support"]
+                llm_result["llm_reasons"] = llm_reasons
+            elif len(llm_reasons) >= 1:
                 print(f"  ⚠️ 规则引擎({rule_cycle_state})与LLM({llm_cycle_state})不一致，采纳LLM")
                 final_cycle_state = llm_cycle_state
                 final_mainline_alive = llm_mainline_alive
+        elif llm_applied and llm_cycle_state not in allowed_states:
+            llm_reasons = list(llm_result.get("llm_reasons", []))
+            llm_reasons.append(f"llm_state_out_of_boundary:{rule_cycle_state}->{llm_cycle_state}")
+            llm_result["llm_reasons"] = llm_reasons
 
         # 确定退潮状态细分
         fade_watch = rule_result["fade_watch"]
@@ -630,7 +673,7 @@ class ThemeCycleJudgementService:
             # 版本控制
             "theme_cycle_judgement.v2",
             "state_machine.v1",
-            self.llm_review_service.PROMPT_VERSION if llm_result["cycle_state_llm"] else None,
+            llm_result.get("llm_prompt_version"),
             "theme_cycle_judgement.v2"
         )
 

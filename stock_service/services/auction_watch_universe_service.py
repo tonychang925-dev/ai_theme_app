@@ -9,8 +9,11 @@ from stock_service.models import AuctionWatchUniverse
 class WatchMainlineInput:
     subject_key: str
     theme_name: str
-    is_main_theme: bool
-    theme_tier: str
+    mainline_alive: bool
+    final_cycle_state: str
+    mainline_strength_score: float
+    fade_watch: bool = False
+    fade_confirmed: bool = False
 
 
 @dataclass(frozen=True)
@@ -54,9 +57,19 @@ class AuctionWatchUniverseService:
         priority = self.derive_candidate_priority(leader.role_label, is_reversal_watch)
         if priority == "P3":
             return False
-        if mainline.is_main_theme:
+        if mainline.fade_confirmed:
+            return False
+        if mainline.mainline_alive:
             return True
-        return cycle.action_bias in {"关注弱转强", "试错"}
+        stage = str(cycle.primary_cycle_stage or "").lower()
+        if stage in {"divergence", "rebound", "repair", "分歧", "回流", "修复"} and str(cycle.action_bias or "") in {
+            "关注弱转强",
+            "试错",
+            "可做弱转强",
+            "可观察",
+        }:
+            return True
+        return bool(is_reversal_watch and mainline.mainline_strength_score >= 60.0)
 
     def build_item(
         self,
@@ -75,7 +88,8 @@ class AuctionWatchUniverseService:
             stock_name=leader.stock_name,
             subject_key=mainline.subject_key,
             theme_name=mainline.theme_name,
-            theme_tier=mainline.theme_tier,
+            theme_tier="mainline_alive" if mainline.mainline_alive else "inactive",
+            mainline_alive=mainline.mainline_alive,
             primary_cycle_stage=cycle.primary_cycle_stage,
             action_bias=cycle.action_bias,
             role_label=leader.role_label,

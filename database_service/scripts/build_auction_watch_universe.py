@@ -61,6 +61,7 @@ async def ensure_tables(manager: PostgresDatabaseManager) -> None:
         subject_key TEXT NOT NULL DEFAULT '',
         theme_name TEXT NOT NULL DEFAULT '',
         theme_tier TEXT NOT NULL DEFAULT '',
+        mainline_alive BOOLEAN NOT NULL DEFAULT FALSE,
         primary_cycle_stage TEXT NOT NULL DEFAULT '',
         action_bias TEXT NOT NULL DEFAULT '',
         role_label TEXT NOT NULL DEFAULT '',
@@ -81,14 +82,24 @@ async def ensure_tables(manager: PostgresDatabaseManager) -> None:
     """
     async with manager.pool.acquire() as conn:
         await conn.execute(ddl)
+        await conn.execute(
+            "ALTER TABLE auction_watch_universe ADD COLUMN IF NOT EXISTS mainline_alive BOOLEAN NOT NULL DEFAULT FALSE"
+        )
 
 
 async def fetch_mainlines(manager: PostgresDatabaseManager, trade_date_value: date):
     sql = """
-    SELECT subject_key, theme_name, is_main_theme, theme_tier
-    FROM theme_mainline_judgement
-    WHERE trade_date = $1
-      AND theme_tier IN ('main', 'strong_branch')
+    SELECT
+        v2.subject_key,
+        COALESCE(NULLIF(v2.theme_name, ''), v2.subject_key) AS theme_name,
+        COALESCE(v2.final_mainline_alive, FALSE) AS mainline_alive,
+        COALESCE(v2.final_cycle_state, '') AS final_cycle_state,
+        COALESCE(v2.mainline_strength_score, 0) AS mainline_strength_score,
+        COALESCE(v2.fade_watch, FALSE) AS fade_watch,
+        COALESCE(v2.fade_confirmed, FALSE) AS fade_confirmed
+    FROM theme_cycle_judgement_v2 v2
+    WHERE v2.trade_date = $1
+      AND COALESCE(v2.final_mainline_alive, FALSE) = TRUE
     """
     async with manager.pool.acquire() as conn:
         rows = await conn.fetch(sql, trade_date_value)
@@ -97,9 +108,18 @@ async def fetch_mainlines(manager: PostgresDatabaseManager, trade_date_value: da
 
 async def fetch_cycles(manager: PostgresDatabaseManager, trade_date_value: date):
     sql = """
-    SELECT subject_key, primary_cycle_stage, action_bias
-    FROM theme_cycle_judgement
-    WHERE trade_date = $1
+    SELECT
+      v2.subject_key,
+      COALESCE(NULLIF(v2.final_cycle_state, ''), 'fade') AS primary_cycle_stage,
+      CASE
+        WHEN COALESCE(v2.fade_confirmed, FALSE) THEN '观望'
+        WHEN COALESCE(v2.final_cycle_state, '') IN ('climax', '高潮') THEN '警惕高潮'
+        WHEN COALESCE(v2.final_cycle_state, '') IN ('fermentation', '发酵', 'start', '启动') THEN '可主做'
+        WHEN COALESCE(v2.final_cycle_state, '') IN ('repair', '修复', 'divergence', '分歧', 'rebound', '回流') THEN '可做弱转强'
+        ELSE '可观察'
+      END AS action_bias
+    FROM theme_cycle_judgement_v2 v2
+    WHERE v2.trade_date = $1
     """
     async with manager.pool.acquire() as conn:
         rows = await conn.fetch(sql, trade_date_value)
@@ -123,14 +143,14 @@ async def upsert_rows(manager: PostgresDatabaseManager, items):
     sql = """
     INSERT INTO auction_watch_universe (
         source_trade_date, trade_date, stock_id, stock_name, subject_key, theme_name,
-        theme_tier, primary_cycle_stage, action_bias, role_label, candidate_rank,
+        theme_tier, mainline_alive, primary_cycle_stage, action_bias, role_label, candidate_rank,
         candidate_priority, is_reversal_watch, source_type, source_trace_id, source_trace,
         source_version, rule_version
     ) VALUES (
         $1, $2, $3, $4, $5, $6,
-        $7, $8, $9, $10, $11,
-        $12, $13, $14, $15, $16::jsonb,
-        $17, $18
+        $7, $8, $9, $10, $11, $12,
+        $13, $14, $15, $16, $17::jsonb,
+        $18, $19
     )
     ON CONFLICT (trade_date, stock_id, subject_key)
     DO UPDATE SET
@@ -138,6 +158,7 @@ async def upsert_rows(manager: PostgresDatabaseManager, items):
         stock_name = EXCLUDED.stock_name,
         theme_name = EXCLUDED.theme_name,
         theme_tier = EXCLUDED.theme_tier,
+        mainline_alive = EXCLUDED.mainline_alive,
         primary_cycle_stage = EXCLUDED.primary_cycle_stage,
         action_bias = EXCLUDED.action_bias,
         role_label = EXCLUDED.role_label,
@@ -160,6 +181,7 @@ async def upsert_rows(manager: PostgresDatabaseManager, items):
             item.subject_key,
             item.theme_name,
             item.theme_tier,
+            item.mainline_alive,
             item.primary_cycle_stage,
             item.action_bias,
             item.role_label,
@@ -200,8 +222,11 @@ async def main_async() -> int:
             mainline = WatchMainlineInput(
                 subject_key=subject_key,
                 theme_name=mainline_row["theme_name"],
-                is_main_theme=bool(mainline_row["is_main_theme"]),
-                theme_tier=mainline_row["theme_tier"],
+                mainline_alive=bool(mainline_row["mainline_alive"]),
+                final_cycle_state=str(mainline_row.get("final_cycle_state") or ""),
+                mainline_strength_score=float(mainline_row.get("mainline_strength_score") or 0.0),
+                fade_watch=bool(mainline_row.get("fade_watch") or False),
+                fade_confirmed=bool(mainline_row.get("fade_confirmed") or False),
             )
             cycle = WatchCycleInput(
                 subject_key=subject_key,

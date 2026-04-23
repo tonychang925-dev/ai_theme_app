@@ -149,10 +149,14 @@ stop_pattern() {
 }
 
 START_SERVICES_PATTERN="database_service\\.streams\\.start_services"
+THEME_SERVICE_PATTERN="theme_service\\.app:app.*8002"
+BFF_WRAPPER_PATTERN="start_frontend_bff_wrapper\\.sh"
 BFF_PATTERN="frontend_bff\\.app:app.*8003"
 FRONTEND_PATTERN="node.*vite|vite.*5173|vite --host"
 
 stop_pattern "$START_SERVICES_PATTERN" "stream services"
+stop_pattern "$THEME_SERVICE_PATTERN" "theme_service:8002"
+stop_pattern "$BFF_WRAPPER_PATTERN" "frontend_bff wrapper"
 
 # Only stop BFF if WITH_FRONTEND is true (stopping entire stack)
 if [[ "$WITH_FRONTEND" == "true" ]]; then
@@ -164,6 +168,8 @@ echo
 echo "Stopped requested services."
 echo "Check:"
 echo "  pgrep -f \"$START_SERVICES_PATTERN\""
+echo "  pgrep -f \"$THEME_SERVICE_PATTERN\""
+echo "  pgrep -f \"$BFF_WRAPPER_PATTERN\""
 echo "  pgrep -f \"$BFF_PATTERN\""
 if [[ "$WITH_FRONTEND" == "true" ]]; then
   echo "  pgrep -f \"$FRONTEND_PATTERN\""

@@ -27,6 +27,7 @@ export function RealtimeCollectorPage() {
   const terminalRef = useRef<HTMLDivElement | null>(null);
   const initializedRef = useRef(false);
   const logDigestRef = useRef<string>("");
+  const statusErrorNotifiedRef = useRef(false);
 
   function append(line: string) {
     setOutput((prev) => [...prev, `[${nowText()}] ${line}`].slice(-500));
@@ -79,12 +80,25 @@ export function RealtimeCollectorPage() {
 
   useEffect(() => {
     const timer = window.setInterval(() => {
-      refreshStatus().catch(() => undefined);
+      refreshStatus().catch((err) => {
+        setRunning("down");
+        if (!statusErrorNotifiedRef.current) {
+          const message = err instanceof Error ? err.message : "状态检查失败";
+          append(`状态轮询失败，已判定为未运行：${message}`);
+          statusErrorNotifiedRef.current = true;
+        }
+      });
       if (running === "up") {
         refreshLogs().catch(() => undefined);
       }
     }, 8000);
     return () => window.clearInterval(timer);
+  }, [running]);
+
+  useEffect(() => {
+    if (running === "up") {
+      statusErrorNotifiedRef.current = false;
+    }
   }, [running]);
 
   useEffect(() => {

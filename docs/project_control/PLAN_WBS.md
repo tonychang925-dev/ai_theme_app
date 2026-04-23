@@ -1,6 +1,10 @@
 # 项目计划（Project Plan）
 
 ## Change Log
+- 2026-04-23
+  - 按 `P3` 重构阶段要求重做第三阶段任务分解，替换旧 `P3.phase0~P3.phase3` WBS。
+  - 将 `P3.phase1.0` 执行门禁并入 `P3.phase1` 主里程碑（任务 `P3.phase1-T05~T10`）。
+  - 统一口径：`stock_processing_service` 为第三阶段股票侧唯一新生产链路。
 - 2026-04-02
   - 保留既有 `P1 / P2` 计划不动
   - 增量补充第三阶段 `P3.phase0 ~ P3.phase3` 里程碑、WBS、依赖与排期摘要
@@ -30,7 +34,7 @@
   - 题材知识对象与产品输出：已复刻真源 `theme_master / theme_profile_ext / subject_detail / stocks` + serving 对象 `theme_detail_snapshot / theme_history_event / theme_tree_relation / theme_stock_map`
   - 运营化层：`theme_heat_realtime` / `theme_heat_daily` / `theme_lifecycle` / `theme_rank_api`
   - 第三阶段统一出口：`frontend_bff`
-  - 第三阶段股票事实层：`stock_service` / `stock_daily_snapshot` / `subject_stock_daily_snapshot` / `stock_abnormal_event` / `theme_stock_leaderboard`
+  - 第三阶段股票事实层：`stock_processing_service` / `stock_daily_snapshot` / `subject_stock_daily_snapshot` / `stock_abnormal_event` / `theme_stock_leaderboard`
   - 第三阶段报告层：`recap_service` / `pre_market_brief_snapshot` / `post_market_recap_snapshot`
   - 第三阶段输出层：`notion_publisher`
   - 第三阶段实时增强：`intel stream(SSE)` / `minute_abnormal_event` / 轻量产业链视图
@@ -51,7 +55,7 @@
 - 关键路径与不确定性：
   - 关键路径：路由收敛 -> 契约化 -> 幂等门禁 -> 动态阈值 -> 分类复用改造 -> 裁判灰度 -> 回放门禁
   - 第二阶段关键路径：`ThemeMatchEngine` 入核 -> Unknown 闭环 -> 知识对象层 -> 热度与榜单运营化
-  - 第三阶段关键路径：`P3.phase0` 统一出口 -> 双源字段所有权 -> 快照对象层 -> 复盘快照 -> 工作台增强 -> `REST + SSE` 实时增强
+  - 第三阶段关键路径：`P3.phase0` 统一出口 -> `P3.phase1` 协议冻结与对象层 -> `P3.phase2` 复盘增强 -> `P3.phase3` 实时增强
   - 不确定性：动态阈值在热点分布下稳定性、LLM 裁判时延/成本波动、Unknown 聚类阈值稳定性、知识层来源治理复杂度、`Tushare` 权限边界、`JYHF` 与股票主数据映射一致性、实时链回补时序一致性
 
 ## 3. 里程碑总览（Milestone Overview）
@@ -66,10 +70,10 @@
 | P2.phase1 | 题材知识库与产品输出 | 建立题材对象层、详情/历史/层级/股票映射与核心接口 | High | 6人天 | P2.phase0 |
 | P2.phase2 | 热度、生命周期与榜单运营化 | 建立热度模型、生命周期状态机与榜单更新链路 | Medium | 4人天 | P2.phase1 |
 | P2.phase3 | Unknown 与新题材闭环 | 建立 Unknown 入池、聚类成团、草案与审核闭环 | High | 5人天 | P2.phase2 |
-| P3.phase0 | 前端统一产品出口第一版 | 收口 `frontend_bff / /api/*`，建立第三阶段统一产品出口 | Medium | 4人天 | P2.phase1 |
-| P3.phase1 | Stock Service 双源事实层与复盘快照 | 建立 `Tushare + JYHF` 双源事实对象层与盘前/盘后快照 | High | 6人天 | P3.phase0, P2.phase1 |
-| P3.phase2 | 复盘增强与工作台深化 | 增强龙虎榜/资金行为/个股工作台与 `/recap` 出口 | Medium-High | 5人天 | P3.phase1 |
-| P3.phase3 | 实时化与高级增强 | 建立 `SSE`、分钟级异动、轻量产业链视图等增强能力 | High | 5人天 | P3.phase2 |
+| P3.phase0 | 前端统一产品出口第一版 | 冻结 `frontend_bff` 统一出口、错误语义与只读 DTO 契约 | Medium | 4人天 | P2.phase1 |
+| P3.phase1 | stock_processing_service 对象层收口 | 建立 `Gateway First + Domain Pure` 的双源对象层与盘前/盘后快照主链 | High | 8人天 | P3.phase0, P2.phase1 |
+| P3.phase2 | 复盘增强与工作台深化 | 增强龙虎榜/资金行为/个股工作台与 `/recap`，强化来源链与解释性 | Medium-High | 6人天 | P3.phase1 |
+| P3.phase3 | 实时化与高级增强 | 建立 `REST + SSE` 双轨实时链、分钟级异动与轻量产业链视图 | High | 6人天 | P3.phase2 |
 
 ## 4. 里程碑详情（Milestone Detail）
 ### P1.phase0 — 运行时收敛与契约冻结
@@ -366,137 +370,134 @@
 
 ### P3.phase0 — 前端统一产品出口第一版
 #### Objective
-- 建立 `frontend_bff / /api/*` 第一版统一产品出口，承接第三阶段前端访问边界。
+- 冻结第三阶段统一出口：`frontend_bff` 作为唯一前端读取入口，稳定 `/api/*` 契约、错误语义与 partial 诊断。
 #### Scope
-- `frontend_bff`
-- `/api/intel/feed`
-- `/api/theme-workspace/{subject_key}`
-- `/api/stock-workspace/{stock_id}`
-- DTO 稳定层与超时/错误码治理
+- `frontend_bff` 边界冻结
+- `/api/intel/feed`、`/api/theme-workspace/{subject_key}`、`/api/stock-workspace/{stock_id}` 契约冻结
+- DTO 稳定层、错误码/超时/partial 规范
 #### Out of Scope
 - `SSE / WebSocket`
-- 重型实时推送
-- 重型产业链图谱服务
+- 分钟级异动
+- 重型产业链图谱
 #### Dependencies
 - `P2.phase1`
-- `PHASE_CONTRACT_P3.phaseA.md`（历史文件，对应 `P3.phase0`）
 #### Risks
 | 类型 | 描述 | 缓解策略 | 影响 | 概率 | 发现难度 |
 | --- | --- | --- | --- | --- | --- |
-| Contract | 前端继续依赖领域接口 | 强制 `/api/*` 收口 | 高 | 中 | 低 |
-| Integration | BFF 只是透传未真正稳住 DTO | 增加 DTO 稳定层与兼容门禁 | 中 | 中 | 中 |
+| Contract | 前端继续绕过 BFF 读底层接口 | 强制 `/api/*` 收口与契约门禁 | 高 | 中 | 低 |
+| Integration | DTO 漂移导致前端行为不一致 | DTO 版本化与回归检查 | 中 | 中 | 中 |
 #### DoD
-- [ ] `/api/*` 作为第三阶段统一前端出口
-- [ ] 三类工作台接口稳定
-- [ ] BFF 错误码与超时策略冻结
+- [ ] 三类核心接口契约冻结并评审通过
+- [ ] BFF 错误码、超时、partial 规范冻结
+- [ ] 前端无直连领域服务
 #### Acceptance Gate
 - 必跑命令：`.venv/bin/python -m pytest -q frontend_bff/tests/integration`
 - 必跑命令：`rg -n "frontend_bff|/api/intel/feed|/api/theme-workspace|/api/stock-workspace" .`
-- 阈值/指标：BFF 真实集成测试全部通过；前端长期契约统一收口到 `/api/*`
+- 阈值/指标：BFF 集成测试通过率=100%；前端直连领域接口数=0
 - 评审类型：Architecture + QA Gate
-- 失败判定：无独立 BFF、接口缺失或前端继续绑定领域服务即失败
+- 失败判定：接口缺失、契约未冻结或前端继续绕过 BFF 即失败
 
-### P3.phase1 — Stock Service 双源事实层与复盘快照
+### P3.phase1 — stock_processing_service 对象层收口（含 phase1.0 门禁硬化）
 #### Objective
-- 以 `Tushare + JYHF` 为双源，建立股票事实对象层、题材股票拼接与盘前/盘后快照。
+- 建立 `stock_processing_service` 作为唯一新生产链路，完成对象层、快照链、对账与回滚基线，并落地 `P3.phase1.0` 执行门禁。
 #### Scope
-- `stock_daily_snapshot`
-- `subject_stock_daily_snapshot`
-- `stock_abnormal_event`
-- `theme_stock_leaderboard`
-- `pre_market_brief_snapshot`
-- `post_market_recap_snapshot`
-- `notion_publisher`
+- `stock_processing_service` 分层落地（application/domain/ports/infrastructure）
+- 6 个冻结对象：`stock_daily_snapshot`、`subject_stock_daily_snapshot`、`stock_abnormal_event`、`theme_stock_leaderboard`、`pre_market_brief_snapshot`、`post_market_recap_snapshot`
+- `Gateway First`、统一事件 envelope、缓存版本切换、双轨对账
+- `P3.phase1.0` 门禁：CI 边界、snapshot pointer、stream runtime、reconcile gate、feature flag register
 #### Out of Scope
 - 秒级全市场实时行情
-- 全量资金行为分析
-- Tick 级处理
+- 高频策略引擎
+- 重型资金行为体系
 #### Dependencies
 - `P3.phase0`
 - `P2.phase1`
 #### Risks
 | 类型 | 描述 | 缓解策略 | 影响 | 概率 | 发现难度 |
 | --- | --- | --- | --- | --- | --- |
-| Data | 双源字段口径冲突 | 冻结字段真源所有权 | 高 | 中 | 中 |
-| Product | 页面与 Notion 结果漂移 | 冻结 snapshot 唯一真源 | 高 | 中 | 中 |
-| Service | `stock_service` 职责膨胀 | 仅保留事实对象层职责 | 高 | 高 | 中 |
+| Architecture | 业务层回退到直连 DB | CI 静态门禁阻断 `asyncpg/SQL/_client/_db` | 高 | 中 | 中 |
+| Data | 快照切换出现半成品读取 | `current pointer` 原子切换协议 | 高 | 中 | 高 |
+| Governance | 对账无阈值导致误切流 | 对账阈值矩阵 + 自动阻断 + 分级回滚 | 高 | 中 | 中 |
 #### DoD
-- [ ] 双源事实层稳定入库
-- [ ] 六类对象层可完整生成
-- [ ] 报告快照重复生成一致
-- [ ] Notion 发布不阻塞主链
+- [ ] `PRD-REQ-P3.phase1-011~018` 全部落地并有验证证据
+- [ ] `ACPT-P3B-011~018` 与 `ACPT-P3P10-001~005` 可执行验收通过
+- [ ] 连续 5 个交易日对账达标
+- [ ] 5 分钟内回滚演练通过
 #### Acceptance Gate
-- 必跑命令：`.venv/bin/python -m pytest -q`
-- 必跑命令：`rg -n "stock_daily_snapshot|subject_stock_daily_snapshot|stock_abnormal_event|theme_stock_leaderboard|pre_market_brief_snapshot|post_market_recap_snapshot" .`
-- 阈值/指标：任一交易日可完整回放；报告重复生成一致率=100%
-- 评审类型：Architecture + Data + QA Gate
-- 失败判定：快照缺失、结果不一致、或把实时行情作为本阶段门槛即失败
+- 必跑命令：`.venv/bin/python scripts/ci/check_sps_boundaries.py`
+- 必跑命令：`.venv/bin/python scripts/qa/verify_snapshot_pointer_atomicity.py --trade-date 2026-04-22`
+- 必跑命令：`.venv/bin/python scripts/qa/check_stream_runtime_contract.py`
+- 必跑命令：`.venv/bin/python scripts/qa/run_reconcile_gate.py --trade-date 2026-04-22`
+- 必跑命令：`.venv/bin/python scripts/qa/check_flag_register.py`
+- 阈值/指标：违规项=0；无半成品读取；对账达标并自动阻断生效；回滚成功率=100%
+- 评审类型：Architecture + Data + QA + Release Gate
+- 失败判定：任一门禁未通过即失败，不得进入 `P3.phase2`
 
 ### P3.phase2 — 复盘增强与工作台深化
 #### Objective
-- 在对象层稳定后，增强龙虎榜、资金行为、个股工作台和 `/recap` 产品出口。
+- 在对象层稳定前提下，增强龙虎榜/资金行为/个股工作台与 `/recap`，并保证结论可解释、可追溯、可兼容。
 #### Scope
 - 龙虎榜结构化对象
-- 资金行为增强字段
-- 个股工作台增强
-- `/recap` 只读出口
-- 来源链与解释性增强
+- 资金行为增强字段（轻量可解释）
+- 角色增强（龙头/前排/扩散/跟风）
+- 个股工作台聚合与 `/recap` 只读出口
+- 复盘来源链与证据字段完整性
 #### Out of Scope
 - `SSE`
-- 高频实时流
+- Tick 级实时平台
 - 重型产业链图谱
 #### Dependencies
 - `P3.phase1`
 #### Risks
 | 类型 | 描述 | 缓解策略 | 影响 | 概率 | 发现难度 |
 | --- | --- | --- | --- | --- | --- |
-| Explainability | 增强字段不可解释 | 强制来源链和规则显式化 | 高 | 中 | 中 |
-| Compatibility | 新字段破坏前序 DTO | 字段只增不改 | 高 | 低 | 低 |
-| Scope | 资金行为分析过度扩张 | 首批只做轻量增强 | 中 | 中 | 中 |
+| Explainability | 增强字段缺乏证据链 | 强制来源链覆盖率门禁 | 高 | 中 | 中 |
+| Compatibility | 新字段破坏既有 DTO | 字段只增不改 + 兼容回归 | 高 | 低 | 低 |
+| Scope | 资金行为范围膨胀拖慢交付 | 明确首批仅轻量增强 | 中 | 中 | 中 |
 #### DoD
-- [x] 龙虎榜与资金行为对象可追溯
-- [x] 个股工作台不再前端拼装
-- [x] `/recap` 产品出口稳定
-- [x] 来源链覆盖率=100%
+- [ ] 龙虎榜/资金行为对象可追溯
+- [ ] 个股工作台不再前端拼装
+- [ ] `/recap` 稳定消费增强对象
+- [ ] 来源链覆盖率=100%
 #### Acceptance Gate
 - 必跑命令：`.venv/bin/python -m pytest -q`
-- 必跑命令：`rg -n "dragon_tiger|money_flow|/recap|workspace" .`
-- 阈值/指标：来源链覆盖率=100%；增强字段向后兼容
+- 必跑命令：`rg -n "dragon_tiger|money_flow|/recap|workspace|source_trace_id" .`
+- 阈值/指标：来源链覆盖率=100%；向后兼容破坏数=0
 - 评审类型：Design + QA + Product Gate
-- 失败判定：来源链缺失、工作台退回前端拼装、或 DTO 破坏兼容即失败
+- 失败判定：来源链缺失、工作台回退前端拼装或 DTO 破坏兼容即失败
 
 ### P3.phase3 — 实时化与高级增强
 #### Objective
-- 在前序对象层和复盘链稳定后，补齐 `SSE`、分钟级异动和轻量产业链视图等实时增强能力。
+- 在前序快照闭环稳定后，落地 `REST + SSE` 双轨实时链、分钟级异动和轻量产业链视图，且不污染日频主链。
 #### Scope
-- `/api/intel/stream`
-- `SSE + REST` 双轨回补
+- `/api/intel/stream`（SSE）
+- `REST` 断线回补
 - `minute_abnormal_event`
-- 情报流与股票异动联动
-- 轻量产业链视图
+- 情报流与股票异动联动（去重/优先级）
+- 轻量产业链只读视图
 #### Out of Scope
-- Tick 级全市场实时平台
-- 高频策略信号引擎
-- 重型图谱服务
+- 全市场 Tick 平台
+- 高频交易策略引擎
+- 重型图谱引擎
 #### Dependencies
 - `P3.phase2`
 #### Risks
 | 类型 | 描述 | 缓解策略 | 影响 | 概率 | 发现难度 |
 | --- | --- | --- | --- | --- | --- |
-| Realtime | `SSE` 断线与回补失序 | 保留 `REST` 回补链 | 高 | 中 | 高 |
-| Data | 分钟级异动噪声过高 | 分钟级对象晚于日频对象层，先建可解释规则 | 中 | 高 | 中 |
-| Scope | 轻量产业链视图膨胀为重型图谱 | 明确只读层级视图边界 | 中 | 中 | 中 |
+| Realtime | SSE 断线与回补失序 | REST 回补兜底 + 重放校验 | 高 | 中 | 高 |
+| Data | 分钟级噪声误报放大 | 可解释规则 + 阈值分层 | 中 | 高 | 中 |
+| Isolation | 实时链影响快照主链 | 主链隔离门禁 + 故障注入演练 | 高 | 中 | 中 |
 #### DoD
-- [ ] `SSE` 实时链可用
-- [ ] `REST` 回补可用
+- [ ] SSE 与 REST 回补可用
 - [ ] 分钟级异动可解释且可重放
-- [ ] 实时链不影响日频快照主链
+- [ ] 实时链不影响日频主链
+- [ ] 轻量产业链视图可查询
 #### Acceptance Gate
 - 必跑命令：`.venv/bin/python -m pytest -q`
-- 必跑命令：`rg -n "intel/stream|SSE|minute_abnormal_event|industry_chain" .`
-- 阈值/指标：新增事件到前端可见 P95<3s；断线后可回补；实时链故障不影响快照主链
+- 必跑命令：`rg -n "intel/stream|SSE|minute_abnormal_event|industry_chain|replay" .`
+- 阈值/指标：SSE 端到端 P95<3s；回补成功率=100%；实时链故障不影响快照主链
 - 评审类型：Architecture + QA + Product Gate
-- 失败判定：`SSE` 无法回补、实时链污染主链、或轻量视图失控为重型图谱即失败
+- 失败判定：回补失败、实时链污染主链或轻量视图失控即失败
 
 ## 5. WBS（任务分解）
 ### WBS — P1.phase0
@@ -583,57 +584,65 @@
 | Task ID | 任务描述 | Depends On | 估算 | 风险 | 验证方式 | DoD Checklist |
 | --- | --- | --- | --- | --- | --- | --- |
 | P3.phase0-T01 | 统一 `P3.phaseA -> P3.phase0` 命名与历史兼容策略 | P2.phase1-T05 | 0.5人天 | 低 | 文档评审 | 文档更新,代码审查 |
-| P3.phase0-T02 | 冻结 `frontend_bff` 边界与 `/api/*` 长期契约 | P3.phase0-T01 | 1人天 | 中 | 接口评审 | 文档更新,代码审查 |
-| P3.phase0-T03 | 统一 `intel/theme-workspace/stock-workspace` DTO 稳定层 | P3.phase0-T02 | 1人天 | 中 | DTO 回归验证 | 单元测试,集成测试 |
-| P3.phase0-T04 | 补齐 BFF 超时、错误码、partial diagnostics 门禁 | P3.phase0-T03 | 1人天 | 中 | 集成测试 | 集成测试,文档更新 |
-| P3.phase0-T05 | 完成统一出口 phase0 评审归档 | P3.phase0-T04 | 0.5人天 | 低 | 门禁记录 | 文档更新,代码审查 |
+| P3.phase0-T02 | 冻结 `frontend_bff` 与 `/api/*` 长期契约（含错误语义） | P3.phase0-T01 | 1人天 | 中 | 契约评审 | 文档更新,代码审查 |
+| P3.phase0-T03 | 建立 `intel/theme/stock-workspace` DTO 稳定层与版本规则 | P3.phase0-T02 | 1人天 | 中 | DTO 回归验证 | 单元测试,集成测试 |
+| P3.phase0-T04 | 完成 BFF 超时、错误码、partial diagnostics 门禁配置 | P3.phase0-T03 | 1人天 | 中 | 集成测试 | 集成测试,文档更新 |
+| P3.phase0-T05 | phase0 统一出口门禁评审归档并输出基线报告 | P3.phase0-T04 | 0.5人天 | 低 | Gate 记录 | 文档更新,代码审查 |
 
 ### WBS — P3.phase1
 | Task ID | 任务描述 | Depends On | 估算 | 风险 | 验证方式 | DoD Checklist |
 | --- | --- | --- | --- | --- | --- | --- |
-| P3.phase1-T01 | 冻结 `Tushare + JYHF` 双源字段所有权与冲突裁决规则 | P3.phase0-T05 | 1人天 | 高 | 架构评审记录 | 文档更新,代码审查 |
-| P3.phase1-T02 | 设计 `stock_daily_snapshot / subject_stock_daily_snapshot` 对象层 | P3.phase1-T01 | 1.5人天 | 高 | 数据模型评审 | 文档更新,代码审查 |
-| P3.phase1-T03 | 设计 `stock_abnormal_event / theme_stock_leaderboard` 派生规则 | P3.phase1-T02 | 1.5人天 | 中 | 规则评审 | 文档更新,代码审查 |
-| P3.phase1-T04 | 设计 `pre_market_brief_snapshot / post_market_recap_snapshot` 报告快照 | P3.phase1-T03 | 1人天 | 中 | 报告样例评审 | 文档更新,代码审查 |
-| P3.phase1-T05 | 冻结 `stock_service = 事实对象层` 与 `notion_publisher = 输出层` 边界 | P3.phase1-T04 | 0.5人天 | 高 | ADR 与设计评审 | 文档更新,代码审查 |
-| P3.phase1-T06 | 完成双源事实层与复盘快照 phase1 门禁验证 | P3.phase1-T05 | 0.5人天 | 中 | 门禁记录 | 集成测试,文档更新 |
+| P3.phase1-T01 | 冻结 `stock_processing_service` 架构边界与职责（替代旧 `stock_service` 新生产职责） | P3.phase0-T05 | 1人天 | 高 | 架构评审记录 | 文档更新,代码审查 |
+| P3.phase1-T02 | 冻结 `DatabaseGateway` 股票域显式 API 与 ports 签名 | P3.phase1-T01 | 1人天 | 高 | API/ports 评审 | 文档更新,代码审查 |
+| P3.phase1-T03 | 冻结 6 个对象字段级最小 schema 与 upsert 策略 | P3.phase1-T02 | 1.5人天 | 高 | 数据模型评审 | 文档更新,代码审查 |
+| P3.phase1-T04 | 冻结统一事件 envelope 与 stream topic 规范 | P3.phase1-T02 | 1人天 | 中 | 契约评审 | 文档更新,代码审查 |
+| P3.phase1-T05 | 落地 `P3.phase1.0`-CI 边界门禁（`asyncpg/SQL/_client/_db`） | P3.phase1-T03 | 1人天 | 高 | `.venv/bin/python scripts/ci/check_sps_boundaries.py` | 单元测试,文档更新 |
+| P3.phase1-T06 | 网关升级：收敛 `DatabaseGateway` 为股票域高层领域 API（去透传 `_client` 语义） | P3.phase1-T02 | 1.5人天 | 高 | 网关接口审计与调用链检查 | 集成测试,文档更新 |
+| P3.phase1-T07 | `execute_query` 收口：业务路径禁用原始 SQL 通道并建立扫描门禁 | P3.phase1-T06 | 1人天 | 高 | 静态扫描与调用计数报告 | 单元测试,文档更新 |
+| P3.phase1-T08 | 落地 `snapshot current pointer` 原子切换与回滚脚本 | P3.phase1-T03 | 1.5人天 | 高 | `.venv/bin/python scripts/qa/verify_snapshot_pointer_atomicity.py --trade-date 2026-04-22` | 集成测试,文档更新 |
+| P3.phase1-T09 | 落地 stream 运行时契约与 DLQ 回放规范 | P3.phase1-T04 | 1人天 | 高 | `.venv/bin/python scripts/qa/check_stream_runtime_contract.py` | 集成测试,文档更新 |
+| P3.phase1-T10 | 落地对账阈值矩阵与自动阻断门禁 | P3.phase1-T08,P3.phase1-T09 | 1人天 | 高 | `.venv/bin/python scripts/qa/run_reconcile_gate.py --trade-date 2026-04-22` | 集成测试,文档更新 |
+| P3.phase1-T11 | 建立 Feature Flag Register 并完成回滚演练 | P3.phase1-T10 | 0.5人天 | 中 | `.venv/bin/python scripts/qa/check_flag_register.py` | 集成测试,文档更新 |
+| P3.phase1-T12 | 闭环验收：`输入事件 -> 快照对象 -> 发布事件` 回放与审计链验证 | P3.phase1-T06,P3.phase1-T09 | 1人天 | 高 | 闭环回放报告与审计核对 | 集成测试,文档更新 |
+| P3.phase1-T13 | phase1 门禁验收归档（`ACPT-P3B-011~022` + `ACPT-P3P10-001~005`） | P3.phase1-T11,P3.phase1-T12 | 0.5人天 | 中 | 验收记录 | 文档更新,代码审查 |
 
 ### WBS — P3.phase2
 | Task ID | 任务描述 | Depends On | 估算 | 风险 | 验证方式 | DoD Checklist |
 | --- | --- | --- | --- | --- | --- | --- |
-| P3.phase2-T01 | 设计龙虎榜结构化对象与来源链 | P3.phase1-T06 | 1人天 | 中 | 对象评审 | 文档更新,代码审查 |
-| P3.phase2-T02 | 设计资金行为增强字段与轻量解释规则 | P3.phase2-T01 | 1人天 | 高 | 规则评审 | 文档更新,代码审查 |
-| P3.phase2-T03 | 增强 `theme_stock_leaderboard`，区分龙头/前排/扩散股 | P3.phase2-T02 | 1人天 | 中 | 规则回放评审 | 文档更新,代码审查 |
-| P3.phase2-T04 | 设计个股工作台增强与 `/recap` 只读产品出口 | P3.phase2-T03 | 1.5人天 | 中 | API/页面契约评审 | 文档更新,代码审查 |
-| P3.phase2-T05 | 冻结 `recap_service` 为唯一报告聚合层 | P3.phase2-T04 | 0.5人天 | 高 | ADR 与设计评审 | 文档更新,代码审查 |
-| P3.phase2-T06 | 完成复盘增强与工作台 phase2 门禁验证 | P3.phase2-T05 | 0.5人天 | 中 | 门禁记录 | 集成测试,文档更新 |
+| P3.phase2-T01 | 冻结龙虎榜结构化对象与来源链（可回溯） | P3.phase1-T13 | 1人天 | 中 | 对象评审 | 文档更新,代码审查 |
+| P3.phase2-T02 | 冻结资金行为增强字段与轻量解释规则 | P3.phase2-T01 | 1人天 | 高 | 规则评审 | 文档更新,代码审查 |
+| P3.phase2-T03 | 增强 `theme_stock_leaderboard` 角色分层（龙头/前排/扩散/跟风） | P3.phase2-T02 | 1人天 | 中 | 规则回放评审 | 文档更新,代码审查 |
+| P3.phase2-T04 | 冻结个股工作台聚合契约（禁止前端拼装） | P3.phase2-T03 | 1.5人天 | 中 | API 契约评审 | 文档更新,代码审查 |
+| P3.phase2-T05 | 冻结 `/recap` 只读出口与 `recap_service` 唯一聚合边界 | P3.phase2-T04 | 1人天 | 高 | ADR 与接口评审 | 文档更新,代码审查 |
+| P3.phase2-T06 | phase2 门禁验收归档（来源链覆盖率/兼容性） | P3.phase2-T05 | 0.5人天 | 中 | 门禁记录 | 集成测试,文档更新 |
 
 ### WBS — P3.phase3
 | Task ID | 任务描述 | Depends On | 估算 | 风险 | 验证方式 | DoD Checklist |
 | --- | --- | --- | --- | --- | --- | --- |
-| P3.phase3-T01 | 设计 `REST + SSE` 双轨实时链与回补策略 | P3.phase2-T06 | 1人天 | 高 | 架构评审 | 文档更新,代码审查 |
-| P3.phase3-T02 | 设计 `minute_abnormal_event` 及其可解释规则 | P3.phase3-T01 | 1.5人天 | 高 | 规则评审 | 文档更新,代码审查 |
-| P3.phase3-T03 | 设计情报流与股票异动联动、去重与优先级排序 | P3.phase3-T02 | 1人天 | 中 | 流水线评审 | 文档更新,代码审查 |
-| P3.phase3-T04 | 设计轻量产业链视图与只读边界 | P3.phase3-T03 | 1人天 | 中 | 知识视图评审 | 文档更新,代码审查 |
-| P3.phase3-T05 | 定义实时链与日频快照主链隔离门禁 | P3.phase3-T04 | 0.5人天 | 高 | 失败注入设计评审 | 文档更新,代码审查 |
-| P3.phase3-T06 | 完成实时化与高级增强 phase3 门禁验证 | P3.phase3-T05 | 0.5人天 | 中 | 门禁记录 | 集成测试,文档更新 |
+| P3.phase3-T01 | 冻结 `REST + SSE` 双轨实时链路与断线回补策略 | P3.phase2-T06 | 1人天 | 高 | 架构评审 | 文档更新,代码审查 |
+| P3.phase3-T02 | 冻结 `minute_abnormal_event` 对象与可解释规则 | P3.phase3-T01 | 1.5人天 | 高 | 规则评审 | 文档更新,代码审查 |
+| P3.phase3-T03 | 冻结情报-题材-股票联动、去重与优先级策略 | P3.phase3-T02 | 1人天 | 中 | 流程回放评审 | 文档更新,代码审查 |
+| P3.phase3-T04 | 冻结轻量产业链视图与只读边界 | P3.phase3-T03 | 1人天 | 中 | 知识视图评审 | 文档更新,代码审查 |
+| P3.phase3-T05 | 实时链与日频快照主链隔离门禁（故障注入） | P3.phase3-T04 | 1人天 | 高 | 失败注入评审 | 集成测试,文档更新 |
+| P3.phase3-T06 | phase3 门禁验收归档（SSE P95/回补/主链隔离） | P3.phase3-T05 | 0.5人天 | 中 | 门禁记录 | 集成测试,文档更新 |
 
 ## 6. 依赖图（Dependency Graph）
 - Milestone dependency graph：
   - `P1.phase0 -> P1.phase1 -> P1.phase2 -> P1.phase3 -> P1.phase4`
   - `P1.phase4 -> P2.phase0 -> P2.phase1 -> P2.phase2 -> P2.phase3`
-  - `P2.phase1 -> P3.phase0 -> P3.phase1 -> P3.phase2 -> P3.phase3`
+  - `P2.phase1 -> P3.phase0 -> P3.phase1(含phase1.0门禁) -> P3.phase2 -> P3.phase3`
 - 关键路径：
   - `契约冻结 -> 路由统一幂等 -> 动态阈值 -> 分类复用改造 -> 验证体系落地 -> 回放门禁`
   - `判定内核入核 -> 知识对象层 -> 热度与榜单运营化 -> Unknown 闭环`
-  - `统一产品出口 -> 双源字段所有权 -> 快照对象层 -> 复盘快照 -> 工作台增强 -> REST + SSE 实时增强`
+  - `统一产品出口 -> Gateway/对象协议冻结 -> phase1.0 执行门禁 -> 复盘增强 -> REST + SSE 实时增强`
 - 可并行段：
   - `P1.phase2` 中 `T02` 与 `T03` 可并行（阈值治理与分类复用改造）。
   - `P1.phase3` 中指标看板准备可与 shadow 接入并行。
   - `P2.phase0` 中 `T02` 与 `T03` 可并行（单流兼容层接入与画像字段定义）。
   - `P2.phase1` 中 `T02` 与 `T03` 可并行（详情历史与层级股票关系建模）。
-  - `P3.phase1` 中 `T02` 与 `T03` 可并行（快照对象层与派生规则设计），但必须晚于双源字段所有权冻结。
-  - `P3.phase2` 中 `T01` 与 `T03` 可局部并行（龙虎榜对象与榜单增强），但 `/recap` 出口必须等待 `recap_service` 边界冻结。
+  - `P3.phase1` 中 `T03` 与 `T04` 可并行（对象 schema 与事件契约），但必须晚于 gateway/ports 冻结。
+  - `P3.phase1` 中 `T06` 与 `T07` 可并行（pointer 协议与 stream runtime），但都必须早于对账门禁 `T08`。
+  - `P3.phase2` 中 `T01` 与 `T03` 可局部并行（龙虎榜对象与榜单角色），但 `/recap` 出口必须等待 `T05` 边界冻结。
 - 风险集中区：
   - `P1.phase2`（阈值稳定性 + 分类一致性）
   - `P1.phase3`（真实模型验证与灰度成本）
@@ -641,7 +650,7 @@
   - `P2.phase0`（契约/兼容/性能预算）
   - `P2.phase1`（数据分层与来源治理）
   - `P2.phase3`（Unknown 聚类阈值与审核边界）
-  - `P3.phase1`（双源字段口径冲突、快照真源漂移、Notion 输出阻塞主链）
+  - `P3.phase1`（执行门禁缺失、快照 pointer 漂移、对账阈值失效）
   - `P3.phase3`（SSE 回补失序、分钟级噪声放大、实时链污染快照主链）
 - 阻塞节点：
   - `P1.phase0-T02`（契约冻结）
@@ -651,33 +660,34 @@
   - `P2.phase1-T01`（三层对象模型定稿）
   - `P2.phase3-T02`（Unknown 聚类阈值定稿）
   - `P3.phase0-T02`（BFF 长期契约冻结）
-  - `P3.phase1-T01`（双源字段所有权冻结）
-  - `P3.phase1-T05`（`stock_service / notion_publisher` 边界冻结）
+  - `P3.phase1-T02`（Gateway API + ports 签名冻结）
+  - `P3.phase1-T07`（`execute_query` 业务路径收口）
+  - `P3.phase1-T10`（对账门禁自动阻断）
   - `P3.phase2-T05`（`recap_service` 唯一聚合层冻结）
 - 跨阶段耦合点：
   - LLM 裁判策略与第二阶段语义演化接口存在耦合，需要 ADR 追踪。
   - `P2.phase0` 的三态决策直接约束 `P2.phase3` Unknown 闭环。
   - `P2.phase1` 的对象模型直接约束 `P2.phase2` 榜单与热度输出。
   - `P2.phase1` 的题材知识对象和 `theme_stock_map` 直接约束 `P3.phase1` 的题材-股票拼接与工作台展示。
-  - `P3.phase1` 的快照对象层直接约束 `P3.phase2` 复盘解释和 `P3.phase3` 实时链回补边界。
+  - `P3.phase1` 的协议冻结与门禁体系直接约束 `P3.phase2` 复盘解释和 `P3.phase3` 实时链回补边界。
 - 需要 ADR 的节点：
   - 动态阈值策略变更、分类真源复用策略、pending 清理规则。
   - ThemeMatchEngine 契约变更、Core/Profile/Knowledge 分层、热度公式与状态机规则、Unknown 聚类阈值变更。
-  - 双源字段所有权、快照对象层冻结、`stock_service` 事实对象层边界、`recap_service` 唯一聚合层、`REST + SSE` 双轨实时链、候选归因规则。
+  - Gateway 访问策略、快照 pointer 协议、stream runtime 契约、对账门禁阈值、feature flag register、`recap_service` 唯一聚合层、`REST + SSE` 双轨实时链。
 
 ## 7. 排期摘要（Timeline Summary）
 - 第一阶段保守估算：`26人天`
 - 第二阶段保守估算：`20人天`
-- 第三阶段保守估算：`20人天`
-- 项目总保守估算：`66人天`
+- 第三阶段保守估算：`24人天`
+- 项目总保守估算：`70人天`
 - 第一阶段激进估算：`18人天`
 - 第二阶段激进估算：`14人天`
-- 第三阶段激进估算：`14人天`
-- 项目总激进估算：`46人天`
+- 第三阶段激进估算：`18人天`
+- 项目总激进估算：`50人天`
 - 第一阶段风险调整估算：`21人天`
 - 第二阶段风险调整估算：`16人天`
-- 第三阶段风险调整估算：`16人天`
-- 项目总风险调整估算：`53人天`（推荐）
+- 第三阶段风险调整估算：`20人天`
+- 项目总风险调整估算：`57人天`（推荐）
 - 关键假设：
   - 核心开发 2 人 + 测试/评审 1 人可持续投入。
   - DeepSeek 真实调用环境可稳定提供验收所需配额。
@@ -688,8 +698,8 @@
   - 缓解：分阶段灰度（10%）+ 回放对齐 + ADR 审批后再扩量。
   - 第二阶段最大风险：`P2.phase0` 契约/兼容/性能未同时收敛，导致后续 P2.phase1~3 建在不稳定基线上。
   - 缓解：先完成 phase0 运行时基线与灰度门禁，再推进 Unknown、知识对象和榜单能力。
-  - 第三阶段最大风险：在 `stock_service` 对象层未冻结前过早扩张为实时行情平台，导致职责膨胀与报告真源漂移。
-  - 缓解：先完成 `P3.phase0~1`，冻结字段所有权、快照对象层和报告快照，再推进 `P3.phase2~3`。
+  - 第三阶段最大风险：在 `P3.phase1.0` 门禁与网关升级未落地前推进业务开发，导致边界失守与切流风险不可控。
+  - 缓解：严格执行 `P3.phase1-T01~T13`，门禁全通过后再推进 `P3.phase2~3`。
 
 ## 8. 2026-03-31 进度回写
 
@@ -701,17 +711,40 @@
   - `海洋经济`
   - `液冷数据中心`
 
-## 9. 2026-04-02 第三阶段 Draft 进度回写
+## 9. 2026-04-23 第三阶段重排进度回写
 
 - `P3.phase0` 当前状态：
   - 已形成统一产品出口第一版文档口径，历史 `P3.phaseA` 已统一记为 `P3.phase0`
   - `frontend_bff` / `/api/intel/feed` / 工作台出口已形成阶段边界基线
 - `P3.phase1` 当前状态：
-  - 已冻结 `Tushare + JYHF` 为第三阶段首批双源方案
-  - 已明确首批对象层、复盘快照、Notion 输出边界
-  - 当前仍处于架构/PRD/Acceptance/WBS 对齐阶段，尚未进入正式实现门禁
+  - 已冻结 `stock_processing_service` 方向与 `PRD-REQ-P3.phase1-011~018`
+  - 新增 `P3.phase1.0` 执行门禁条款（CI/Pointer/Stream/Reconcile/Flag）
+  - 当前进入“门禁先行”阶段：未完成 `P3.phase1-T01~T13` 前，不进入 `P3.phase2`
 - `P3.phase2 ~ P3.phase3` 当前状态：
-  - `P3.phase2`：核心主链已完成，阶段状态更新为 `接近完成（Near Done）`
-    - 已完成：龙虎榜结构化对象、资金行为增强、个股工作台深化、`/recap` 只读出口、来源链标准化、跨交易日一致性回测
-    - 剩余：规则调优、展示层优化、最终发布门禁确认
+  - `P3.phase2`：处于“重排后待执行”状态，依赖 `P3.phase1` 门禁完成
   - `P3.phase3`：仍处于 PRD/WBS/Contract 准备阶段，尚未进入正式开发排期
+
+## 10. P3 实施日程对齐（D1-D10）
+
+> 目的：将“实施建议”固化为 WBS 执行节奏，避免计划与 feature 设计分歧。
+
+| Day | 执行主题 | 对应任务 | 核心产出 | 当日验收命令 |
+| --- | --- | --- | --- | --- |
+| D1 | 冻结窗口与基线清理 | `P3.phase0-T01` | 分支冻结规则、运行数据剥离清单、P3真源文档确认、D1守卫报告 | `.venv/bin/python scripts/p3_d1_workspace_guard.py --output tmp/p3_d1_workspace_guard_report.json` |
+| D2 | 门禁脚本补齐（可执行） | `P3.phase1-T05/T08/T09/T10/T11` | `scripts/ci` 与 `scripts/qa` 五个门禁脚本骨架 | `.venv/bin/python scripts/ci/check_sps_boundaries.py --help` |
+| D3 | 网关股票域 API 冻结 | `P3.phase1-T02` | 显式 `get_*/upsert_*/publish_*` 接口清单 | `rg -n "def get_|def upsert_|def publish_" database_service/gateway.py` |
+| D4 | `execute_query` 业务收口 | `P3.phase1-T07` | 业务路径清零报告 + CI 阻断规则 | `rg -n "execute_query\\(" stock_processing_service database_service | rg -v "scripts|tests|docs"` |
+| D5 | `stock_processing_service` 网关适配补全 | `P3.phase1-T06` | market/theme/object gateway 非占位化 + 强类型端口接入 | `rg -n "NotImplementedError" stock_processing_service/infrastructure/gateway_adapters` |
+| D6 | 6对象 schema + upsert 策略落地 | `P3.phase1-T03` | 字段级 schema、主键、覆盖策略矩阵 | `.venv/bin/python -m pytest -q stock_processing_service/tests` |
+| D7 | 闭环打通与审计 | `P3.phase1-T12` | 输入事件->快照对象->发布事件闭环报告 | `.venv/bin/python scripts/qa/check_stream_runtime_contract.py` |
+| D8 | 双轨对账 | `P3.phase1-T10` | `summary + diff_samples.jsonl` | `.venv/bin/python scripts/qa/run_reconcile_gate.py --trade-date 2026-04-22` |
+| D9 | BFF 灰度切流 | `P3.phase0-T02/T04` | feature flag 切流记录、回滚预案 | `.venv/bin/python scripts/qa/check_flag_register.py` |
+| D10 | Phase1/1.0 验收归档 | `P3.phase1-T13` | `ACPT-P3B-011~022` 与 `ACPT-P3P10-001~005` 证据包 | `.venv/bin/python -m pytest -q` |
+
+### 10.1 一致性约束（WBS vs FEATURE）
+- `D1-D10` 为执行节拍真源；若 `FEATURE_SPEC_P3.md` 存在冲突，以本节节拍为准并要求同日同步修订 feature 文档。
+- `P3.phase1-T06/T07/T12` 属于阻塞项：未完成不得推进 `P3.phase2` 开发。
+- 任何新增 P3 任务必须同时补充：
+  - `PLAN_WBS.md`（里程碑/依赖）
+  - `FEATURE_SPEC_P3.md`（任务实现与测试）
+  - `feature_traceability_P3.json`（映射）

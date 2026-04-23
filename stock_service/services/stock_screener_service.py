@@ -18,6 +18,7 @@ from stock_service.stock_screener_models import (
 )
 from stock_service.repositories.stock_screener_repository import StockScreenerRepository
 from stock_service.services.weak_to_strong_service import WeakToStrongService, WeakToStrongDetectionInputs
+from stock_service.services.strong_stock_tracking_service import StrongStockTrackingService
 from stock_service.services.strong_stock_tracker_service import StrongStockTrackerService
 from stock_service.models import StrongStockRecord
 
@@ -78,6 +79,7 @@ class StockScreenerService:
         theme_repo: Any = None,
         stock_repo: Any = None,
         weak_to_strong_service: Optional[WeakToStrongService] = None,
+        strong_stock_tracking_service: Optional[StrongStockTrackingService] = None,
         strong_stock_tracker_service: Optional[StrongStockTrackerService] = None,
     ):
         # 为兼容旧调用方，保留 theme_repo/stock_repo 参数，但当前不依赖它们
@@ -85,6 +87,7 @@ class StockScreenerService:
         self.theme_repo = theme_repo
         self.stock_repo = stock_repo
         self.weak_to_strong_service = weak_to_strong_service or WeakToStrongService()
+        self.strong_stock_tracking_service = strong_stock_tracking_service or StrongStockTrackingService()
         self.strong_stock_tracker_service = strong_stock_tracker_service or StrongStockTrackerService()
 
     async def execute_screening(self, config: ScreeningConfig) -> List[ScreeningResult]:
@@ -270,25 +273,38 @@ class StockScreenerService:
 
         # 如果配置要求从强势股清单选股，优先从强势股清单获取
         if config.from_strong_stock_list:
+            # 新主链：优先从正式观察池 strong_stock_watch_pool 读取候选。
+            try:
+                watch_pool_stocks = await self.strong_stock_tracking_service.list_screening_candidates(
+                    config.trade_date
+                )
+                if watch_pool_stocks:
+                    stocks = [(item["stock_id"], item["stock_name"]) for item in watch_pool_stocks]
+                    logger.info(f"从观察池获取{len(stocks)}只候选股票")
+                    return stocks
+            except Exception as e:
+                logger.warning("读取观察池候选失败，回退旧兼容服务: %s", e)
+
+            # 兼容回退：旧内存态服务（后续可删除）。
             strong_stocks = self.strong_stock_tracker_service.get_weak_to_strong_candidates()
             if strong_stocks:
-                # 返回弱转强候选股
-                stocks = [(record.stock_id.split('.')[0] if '.' in record.stock_id else record.stock_id,
-                          record.stock_name)
-                         for record in strong_stocks]
-                logger.info(f"从强势股清单获取{len(stocks)}只弱转强候选股票")
+                stocks = [
+                    (record.stock_id.split(".")[0] if "." in record.stock_id else record.stock_id, record.stock_name)
+                    for record in strong_stocks
+                ]
+                logger.info(f"从旧强势股清单获取{len(stocks)}只弱转强候选股票")
                 return stocks
-            else:
-                # 如果没有弱转强候选，使用所有强势股
-                all_strong_stocks = list(self.strong_stock_tracker_service._strong_stocks.values())
-                if all_strong_stocks:
-                    stocks = [(record.stock_id.split('.')[0] if '.' in record.stock_id else record.stock_id,
-                              record.stock_name)
-                             for record in all_strong_stocks]
-                    logger.info(f"从强势股清单获取{len(stocks)}只强势股（无弱转强候选）")
-                    return stocks
-                else:
-                    logger.warning("配置要求从强势股清单选股，但强势股清单为空，回退到常规选股")
+
+            all_strong_stocks = list(self.strong_stock_tracker_service._strong_stocks.values())
+            if all_strong_stocks:
+                stocks = [
+                    (record.stock_id.split(".")[0] if "." in record.stock_id else record.stock_id, record.stock_name)
+                    for record in all_strong_stocks
+                ]
+                logger.info(f"从旧强势股清单获取{len(stocks)}只强势股（无弱转强候选）")
+                return stocks
+
+            logger.warning("配置要求从强势股清单选股，但观察池与兼容清单均为空，回退常规选股")
 
         pool = await self.screener_repo._ensure_pool()
 
@@ -307,20 +323,20 @@ class StockScreenerService:
             """
             params = [config.trade_date]
         else:
-            # 只从主线题材选股：通过JOIN theme_mainline_judgement表过滤
+            # 只从主线题材选股：统一口径=mainline_state_daily.is_mainline。
             sql = """
             SELECT DISTINCT
                 split_part(s.stock_id, '.', 1) AS stock_id,
                 MAX(s.stock_name) AS stock_name
             FROM subject_stock_daily_snapshot s
-            INNER JOIN theme_mainline_judgement m
-                ON m.trade_date = s.trade_date
-                AND m.subject_key = s.subject_key
-                AND m.theme_tier = 'main'
+            LEFT JOIN mainline_state_daily msd
+                ON msd.trade_date = s.trade_date
+                AND msd.subject_key = s.subject_key
             WHERE s.trade_date = $1::date
               AND s.stock_id IS NOT NULL
               AND s.stock_id <> ''
-              AND m.is_main_theme = TRUE
+              AND COALESCE(msd.is_mainline, FALSE) = TRUE
+              AND COALESCE(msd.state, '') <> 'fade_confirmed'
             GROUP BY split_part(s.stock_id, '.', 1)
             ORDER BY split_part(s.stock_id, '.', 1)
             """
@@ -392,19 +408,16 @@ class StockScreenerService:
                 sql_theme = """
                 SELECT
                     s.subject_key,
-                    COALESCE(NULLIF(tmj.theme_name, ''), NULLIF(tcj.theme_name, ''), s.subject_key) AS theme_name,
+                    COALESCE(NULLIF(v2.theme_name, ''), s.subject_key) AS theme_name,
                     s.amount,
                     s.limit_up,
                     s.is_leader,
                     s.rank_order,
                     s.pct_chg
                 FROM subject_stock_daily_snapshot s
-                LEFT JOIN theme_mainline_judgement tmj
-                  ON tmj.trade_date = s.trade_date
-                 AND tmj.subject_key = s.subject_key
-                LEFT JOIN theme_cycle_judgement tcj
-                  ON tcj.trade_date = s.trade_date
-                 AND tcj.subject_key = s.subject_key
+                LEFT JOIN theme_cycle_judgement_v2 v2
+                  ON v2.trade_date = s.trade_date
+                 AND v2.subject_key = s.subject_key
                 WHERE s.trade_date = $1::date
                   AND split_part(s.stock_id, '.', 1) = $2
                 ORDER BY s.amount DESC NULLS LAST
@@ -426,20 +439,26 @@ class StockScreenerService:
                 if context.theme_info:
                     sql_mainline = """
                     SELECT
-                        event_chain_score,
-                        market_recognition_score,
-                        mainline_stability_score,
-                        limit_up_count,
-                        theme_tier,
-                        novelty_score,
-                        timing_score,
-                        influence_score,
-                        capital_persistence_score,
-                        institution_participation_score,
-                        retail_attention_score
-                    FROM theme_mainline_judgement
-                    WHERE trade_date = $1::date
-                      AND subject_key = $2
+                        COALESCE(msd.is_mainline, v2.final_mainline_alive, FALSE) AS final_mainline_alive,
+                        COALESCE(msd.state, v2.final_cycle_state) AS final_cycle_state,
+                        COALESCE(msd.mainline_strength_score, v2.mainline_strength_score, 0) AS mainline_strength_score,
+                        v2.fade_risk_score,
+                        COALESCE(v2.fade_watch, FALSE) AS fade_watch,
+                        COALESCE(v2.fade_confirmed, FALSE) AS fade_confirmed,
+                        v2.confidence_score,
+                        COALESCE(e.limit_up_count, 0) AS limit_up_count,
+                        COALESCE(e.event_count_3d, 0) AS event_count_3d,
+                        COALESCE(e.event_count_7d, 0) AS event_count_7d,
+                        COALESCE(e.leader_alive_score, 0) AS leader_alive_score
+                    FROM theme_cycle_judgement_v2 v2
+                    LEFT JOIN mainline_state_daily msd
+                      ON msd.trade_date = v2.trade_date
+                     AND msd.subject_key = v2.subject_key
+                    LEFT JOIN theme_cycle_evidence_daily e
+                      ON e.trade_date = v2.trade_date
+                     AND e.subject_key = v2.subject_key
+                    WHERE v2.trade_date = $1::date
+                      AND v2.subject_key = $2
                     LIMIT 1
                     """
                     context.mainline_data = await conn.fetchrow(
@@ -452,25 +471,38 @@ class StockScreenerService:
                 if context.theme_info:
                     sql_cycle = """
                     SELECT
-                        primary_cycle_stage,
-                        confidence,
-                        action_bias,
-                        is_divergence,
-                        is_rebound,
-                        is_fermentation,
-                        is_start,
-                        is_climax,
-                        is_fade,
-                        limit_up_count,
-                        leader_status,
-                        board_effect_status,
-                        is_main_theme,
+                        COALESCE(NULLIF(v2.final_cycle_state, ''), 'unknown') AS primary_cycle_stage,
+                        COALESCE(v2.confidence_score, 0) AS confidence,
+                        CASE
+                            WHEN COALESCE(v2.fade_confirmed, FALSE) THEN '观望'
+                            WHEN COALESCE(v2.final_cycle_state, '') IN ('climax', '高潮') THEN '警惕高潮'
+                            WHEN COALESCE(v2.final_cycle_state, '') IN ('fermentation', '发酵', 'start', '启动') THEN '可主做'
+                            WHEN COALESCE(v2.final_cycle_state, '') IN ('repair', '修复', 'divergence', '分歧', 'rebound', '回流') THEN '可做弱转强'
+                            ELSE '可观察'
+                        END AS action_bias,
+                        COALESCE(v2.final_cycle_state, '') IN ('divergence', '分歧') AS is_divergence,
+                        COALESCE(v2.final_cycle_state, '') IN ('rebound', '回流') AS is_rebound,
+                        COALESCE(v2.final_cycle_state, '') IN ('fermentation', '发酵') AS is_fermentation,
+                        COALESCE(v2.final_cycle_state, '') IN ('start', '启动') AS is_start,
+                        COALESCE(v2.final_cycle_state, '') IN ('climax', '高潮') AS is_climax,
+                        COALESCE(v2.fade_confirmed, FALSE) AS is_fade,
+                        COALESCE(e.limit_up_count, 0) AS limit_up_count,
+                        CASE
+                            WHEN COALESCE(v2.fade_confirmed, FALSE) THEN '龙头走弱'
+                            WHEN COALESCE(v2.mainline_strength_score, 0) >= 75 THEN '龙头加强'
+                            WHEN COALESCE(v2.mainline_strength_score, 0) >= 60 THEN '龙头强势'
+                            ELSE '龙头分化'
+                        END AS leader_status,
+                        ''::text AS board_effect_status,
                         trade_date,
                         subject_key,
                         theme_name
-                    FROM theme_cycle_judgement
-                    WHERE trade_date = $1::date
-                      AND subject_key = $2
+                    FROM theme_cycle_judgement_v2 v2
+                    LEFT JOIN theme_cycle_evidence_daily e
+                      ON e.trade_date = v2.trade_date
+                     AND e.subject_key = v2.subject_key
+                    WHERE v2.trade_date = $1::date
+                      AND v2.subject_key = $2
                     LIMIT 1
                     """
                     context.cycle_data = await conn.fetchrow(
@@ -542,46 +574,26 @@ class StockScreenerService:
         if not row:
             return 0.0
         try:
-            # 原有字段
-            event_chain = float(row.get("event_chain_score") or 0)
-            recognition = float(row.get("market_recognition_score") or 0)
-            stability = float(row.get("mainline_stability_score") or 0)
-            limit_up_count = float(row.get("limit_up_count") or 0)
-            tier = str(row.get("theme_tier") or "")
+            mainline_alive = bool(row.get("final_mainline_alive") or False)
+            mainline_strength = float(row.get("mainline_strength_score") or 0.0)
+            confidence = float(row.get("confidence_score") or 0.0)
+            fade_risk = float(row.get("fade_risk_score") or 0.0)
+            limit_up_count = float(row.get("limit_up_count") or 0.0)
+            event_count_3d = float(row.get("event_count_3d") or 0.0)
+            event_count_7d = float(row.get("event_count_7d") or 0.0)
+            leader_alive_score = float(row.get("leader_alive_score") or 0.0)
 
-            # 新增增强字段
-            novelty_score = float(row.get("novelty_score") or 0)
-            timing_score = float(row.get("timing_score") or 0)
-            influence_score = float(row.get("influence_score") or 0)
-            capital_persistence_score = float(row.get("capital_persistence_score") or 0)
-            institution_participation_score = float(row.get("institution_participation_score") or 0)
-            retail_attention_score = float(row.get("retail_attention_score") or 0)
+            strength_component = min(max(mainline_strength, 0.0), 100.0) * 0.65
+            confidence_component = min(max(confidence, 0.0), 100.0) * 0.25
+            activity_component = min(
+                limit_up_count * 1.2 + event_count_3d * 1.0 + event_count_7d * 0.3 + leader_alive_score * 0.04,
+                12.0,
+            )
+            fade_penalty = min(max(fade_risk, 0.0), 100.0) * 0.12
 
-            # 1. 原有评分（最大100分）
-            base_score = 0.0
-            base_score += min(event_chain, 40)  # 0-40
-            base_score += min(recognition, 30)  # 0-30
-            base_score += min(stability, 30)    # 0-30
-
-            if tier == "main":
-                base_score += 5
-            elif tier == "strong_branch":
-                base_score += 2
-
-            base_score += min(limit_up_count, 5)
-
-            # 2. 逻辑维度增强评分（新颖度 + 时机 + 影响广度）
-            # 每个字段已经在其自身范围内（0-30, 0-25, 0-25），总和最大80
-            logic_dimension_total = novelty_score + timing_score + influence_score
-            logic_enhanced_score = logic_dimension_total * 0.3  # 最大80 * 0.3 = 24分
-
-            # 3. 市场维度增强评分（资金持续性 + 机构参与度 + 散户关注度）
-            # 每个字段已经在其自身范围内（0-15, 0-10, 0-10），总和最大35
-            market_dimension_total = capital_persistence_score + institution_participation_score + retail_attention_score
-            market_enhanced_score = market_dimension_total * 0.2  # 最大35 * 0.2 = 7分
-
-            # 4. 总分（限制在100分内）
-            total_score = base_score + logic_enhanced_score + market_enhanced_score
+            total_score = strength_component + confidence_component + activity_component - fade_penalty
+            if not mainline_alive:
+                total_score *= 0.35
             return min(total_score, 100.0)
         except Exception as e:
             logger.error("计算主线维度得分失败 %s: %s", context.stock_id, e)
@@ -629,13 +641,14 @@ class StockScreenerService:
                 theme_info = context.theme_info or {}
                 subject_key = theme_info.get("subject_key", "")
                 theme_name = theme_info.get("theme_name", subject_key)
+                mainline_alive = bool((context.mainline_data or {}).get("final_mainline_alive") or False)
 
                 # 构建cycle_judgement对象
                 cycle_judgement = ThemeCycleJudgement(
                     trade_date=trade_date,
                     subject_key=subject_key,
                     theme_name=theme_name,
-                    is_main_theme=bool(row.get("is_main_theme") or False),
+                    is_main_theme=mainline_alive,
                     is_start=bool(row.get("is_start") or False),
                     is_fermentation=bool(row.get("is_fermentation") or False),
                     is_divergence=bool(row.get("is_divergence") or False),

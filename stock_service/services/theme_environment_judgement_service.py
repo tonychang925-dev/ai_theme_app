@@ -9,8 +9,6 @@ from stock_service.models import ThemeEnvironmentJudgement
 class ThemeEnvironmentInput:
     subject_key: str
     theme_name: str
-    theme_tier: str
-    is_main_theme: bool
     primary_cycle_stage: str
     action_bias: str
     limit_up_count: int
@@ -18,6 +16,8 @@ class ThemeEnvironmentInput:
     member_count: int
     leader_limit_up: bool
     leader_pct_chg: float
+    mainline_alive: bool = False
+    mainline_strength_score: float = 0.0
 
 
 class ThemeEnvironmentJudgementService:
@@ -71,7 +71,7 @@ class ThemeEnvironmentJudgementService:
             return "可主做"
         if item.primary_cycle_stage in {"divergence", "rebound"}:
             return "可做弱转强"
-        if item.theme_tier in {"main", "strong_branch"}:
+        if item.mainline_alive and item.mainline_strength_score >= 50:
             return "可观察"
         return "放弃"
 
@@ -83,7 +83,7 @@ class ThemeEnvironmentJudgementService:
 
     def build_evidence(self, item: ThemeEnvironmentInput, health: str, effect: str, leader: str, follow: str) -> list[str]:
         return [
-            f"题材分层={item.theme_tier}；周期={item.primary_cycle_stage}",
+            f"主线存活={item.mainline_alive}；主线强度={item.mainline_strength_score:.1f}；周期={item.primary_cycle_stage}",
             f"涨停 {item.limit_up_count} 家；强势股 {item.strong_stock_count} 家；成分股 {item.member_count} 家",
             f"龙头涨幅 {item.leader_pct_chg:.2f}%；龙头涨停={item.leader_limit_up}",
             f"{health}；{effect}；{leader}；{follow}",

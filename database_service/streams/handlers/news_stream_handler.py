@@ -7,6 +7,7 @@ import asyncio
 import json
 import time
 import logging
+import os
 from datetime import datetime
 from typing import Dict, Any, Optional, List
 
@@ -208,6 +209,16 @@ class NewsStreamHandler:
             
             # 🔧 2. 数据增强（在存储前添加必要字段）
             enhanced_data = self._enhance_news_data(raw_data)
+
+            # 2.1 生产硬门禁：默认拦截 stress_test 注入新闻，避免污染实时链路
+            if self._is_stress_test_news(enhanced_data):
+                result["error"] = "stress_test_news_blocked"
+                logger.warning(
+                    "🚫 拦截压测新闻注入: news_id=%s title=%s",
+                    enhanced_data.get("news_id"),
+                    str(enhanced_data.get("title") or "")[:80],
+                )
+                return result
             
             # 3. 验证新闻数据
             validation_result = self._validate_news_data(enhanced_data)
@@ -219,6 +230,20 @@ class NewsStreamHandler:
             result["validation_passed"] = True
             news_id = enhanced_data['news_id']
             result["news_id"] = news_id
+
+            # 入库前幂等检查：已存在则直接标记重复并跳过后续业务事件发布
+            try:
+                existing_news = await self.database_gateway.get_news(news_id)
+            except Exception as e:
+                logger.warning(f"查询新闻是否已存在失败，继续尝试入库: {news_id}, err={e}")
+                existing_news = None
+
+            if existing_news:
+                result["storage_success"] = True
+                result["duplicate"] = True
+                self.storage_stats["duplicate_news"] += 1
+                logger.info(f"⏭️ 新闻已存在，跳过业务事件发布: {news_id}")
+                return result
             
             # 4. 调用DatabaseGateway存储
             stored_news_id = await self.database_gateway.create_news(enhanced_data)
@@ -251,6 +276,18 @@ class NewsStreamHandler:
             logger.error(f"处理存储消息 {message_id} 失败: {e}")
         
         return result
+
+    @staticmethod
+    def _is_stress_test_news(news_data: Dict[str, Any]) -> bool:
+        """
+        判定是否为压测注入新闻。
+        默认拦截 stress_test_*，可通过 ALLOW_STRESS_TEST_NEWS=true 临时放开。
+        """
+        allow = str(os.getenv("ALLOW_STRESS_TEST_NEWS", "false")).strip().lower() in {"1", "true", "yes", "on"}
+        if allow:
+            return False
+        news_id = str(news_data.get("news_id") or "").strip().lower()
+        return news_id.startswith("stress_test_")
 
     # 修改 _extract_raw_data 方法
     def _extract_raw_data(self, message: Dict[str, Any]) -> Optional[Dict[str, Any]]:

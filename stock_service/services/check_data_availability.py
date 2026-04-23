@@ -74,8 +74,6 @@ class DataAvailabilityChecker:
         tables_to_check = [
             # 源表
             "subject_stock_daily_snapshot",
-            "theme_mainline_judgement",
-            "theme_cycle_judgement",
             "theme_news_daily",
             # V2证据表
             "theme_cycle_evidence_daily",
@@ -120,8 +118,6 @@ class DataAvailabilityChecker:
 
         # 检查各表的主题覆盖
         tables_to_check = [
-            "theme_mainline_judgement",
-            "theme_cycle_judgement",
             "theme_cycle_evidence_daily",
             "theme_cycle_judgement_v2"
         ]
@@ -179,7 +175,7 @@ class DataAvailabilityChecker:
         # 定义四层证据字段映射
         evidence_layers = {
             "event_layer": {
-                "table": "theme_mainline_judgement",
+                "table": "theme_cycle_evidence_daily",
                 "fields": [
                     "event_count_3d",
                     "event_count_7d",
@@ -188,10 +184,11 @@ class DataAvailabilityChecker:
                 ]
             },
             "leader_layer": {
-                "table": "theme_cycle_judgement",
+                "table": "theme_cycle_evidence_daily",
                 "fields": [
                     "leader_stock_id",
                     "leader_stock_name",
+                    "leader_alive_score",
                     "board_stock_count",
                     "limit_down_count",
                     "red_ratio",
@@ -202,8 +199,9 @@ class DataAvailabilityChecker:
                 ]
             },
             "board_structure_layer": {
-                "table": "theme_cycle_judgement",  # 与leader_layer共用表
+                "table": "theme_cycle_evidence_daily",
                 "fields": [
+                    "board_stock_count",
                     "limit_up_count",
                     "limit_down_count",
                     "red_ratio",
@@ -338,7 +336,7 @@ class DataAvailabilityChecker:
         evidence_field_status = results.get("evidence_field_status", {})
 
         # 检查关键表是否存在
-        critical_tables = ["subject_stock_daily_snapshot", "theme_mainline_judgement", "theme_cycle_judgement"]
+        critical_tables = ["subject_stock_daily_snapshot", "theme_cycle_evidence_daily", "theme_cycle_judgement_v2"]
         critical_tables_missing = []
         for table in critical_tables:
             if not table_status.get(table, {}).get("exists", False):

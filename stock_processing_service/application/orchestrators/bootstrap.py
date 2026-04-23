@@ -1,0 +1,79 @@
+from __future__ import annotations
+
+from dataclasses import dataclass
+from typing import Any
+
+from stock_processing_service.application.jobs import (
+    BuildDailySnapshotJob,
+    BuildIdentityJob,
+    BuildPostMarketRecapJob,
+    BuildPreMarketBriefJob,
+    RunQualityGateJob,
+    RunReconciliationJob,
+)
+from stock_processing_service.application.use_cases import BuildStrongStockTrackingUseCase
+from stock_processing_service.infrastructure.gateway_adapters.db_stock_object_gateway import DBStockObjectGateway
+from stock_processing_service.infrastructure.gateway_adapters.db_theme_data_gateway import DBThemeDataGateway
+from stock_processing_service.infrastructure.gateway_adapters.redis_cache_gateway import RedisCacheGateway
+from stock_processing_service.infrastructure.gateway_adapters.stock_event_gateway_adapter import (
+    StockEventGatewayAdapter,
+)
+from stock_processing_service.infrastructure.gateway_adapters.stock_idempotency_gateway_adapter import (
+    StockIdempotencyGatewayAdapter,
+)
+
+
+@dataclass
+class StockProcessingContainer:
+    build_strong_stock_tracking: BuildStrongStockTrackingUseCase
+    build_daily_snapshot: BuildDailySnapshotJob
+    build_post_market_recap: BuildPostMarketRecapJob
+    build_pre_market_brief: BuildPreMarketBriefJob
+    build_identity: BuildIdentityJob
+    run_quality_gate: RunQualityGateJob
+    run_reconciliation: RunReconciliationJob
+
+
+def build_container(db_gateway: Any, cache_client: Any | None = None) -> StockProcessingContainer:
+    theme_data_gateway = DBThemeDataGateway(db_gateway=db_gateway)
+    stock_object_gateway = DBStockObjectGateway(db_gateway=db_gateway)
+    cache_gateway = RedisCacheGateway(cache_client=cache_client) if cache_client else None
+    event_gateway = StockEventGatewayAdapter(db_gateway=db_gateway)
+    idempotency_gateway = StockIdempotencyGatewayAdapter(db_gateway=db_gateway)
+
+    return StockProcessingContainer(
+        build_strong_stock_tracking=BuildStrongStockTrackingUseCase(
+            read_ports=theme_data_gateway,
+            write_ports=stock_object_gateway,
+            cache_ports=cache_gateway,
+        ),
+        build_daily_snapshot=BuildDailySnapshotJob(
+            read_port=theme_data_gateway,
+            write_port=stock_object_gateway,
+            event_port=event_gateway,
+            idempotency_port=idempotency_gateway,
+            cache_port=cache_gateway,
+        ),
+        build_post_market_recap=BuildPostMarketRecapJob(
+            read_port=theme_data_gateway,
+            write_port=stock_object_gateway,
+            event_port=event_gateway,
+            idempotency_port=idempotency_gateway,
+            cache_port=cache_gateway,
+        ),
+        build_pre_market_brief=BuildPreMarketBriefJob(
+            read_port=theme_data_gateway,
+            write_port=stock_object_gateway,
+            event_port=event_gateway,
+            idempotency_port=idempotency_gateway,
+            cache_port=cache_gateway,
+        ),
+        build_identity=BuildIdentityJob(
+            read_port=theme_data_gateway,
+            write_port=stock_object_gateway,
+            event_port=event_gateway,
+            idempotency_port=idempotency_gateway,
+        ),
+        run_quality_gate=RunQualityGateJob(),
+        run_reconciliation=RunReconciliationJob(),
+    )

@@ -1,0 +1,23 @@
+name: stock-processing-guardrails
+
+on:
+  pull_request:
+    paths:
+      - 'stock_processing_service/**'
+      - 'scripts/check_stock_processing_guardrails.sh'
+      - '.github/workflows/stock-processing-guardrails.yml'
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'stock_processing_service/**'
+      - 'scripts/check_stock_processing_guardrails.sh'
+
+jobs:
+  guardrails:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install ripgrep
+        run: sudo apt-get update && sudo apt-get install -y ripgrep
+      - name: Run guardrail checks
+        run: bash scripts/check_stock_processing_guardrails.sh

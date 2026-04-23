@@ -23,15 +23,6 @@ from stock_service.services.mainline_judgement_service import (
     ThemeEventStats,
     ThemeMarketStats,
 )
-from stock_service.services.theme_mainline_enhancement_service import (
-    ThemeMainlineEnhancementService,
-    NoveltyScoreInputs,
-    TimingScoreInputs,
-    InfluenceScoreInputs,
-    CapitalPersistenceInputs,
-    InstitutionParticipationInputs,
-    RetailAttentionInputs,
-)
 
 
 def get_postgres_config() -> DatabaseConfig:
@@ -50,10 +41,15 @@ def get_postgres_config() -> DatabaseConfig:
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="构建 theme_mainline_judgement")
+    parser = argparse.ArgumentParser(description="构建 theme_mainline_judgement（已废弃，默认阻断）")
     parser.add_argument("--trade-date", required=True, help="交易日 YYYY-MM-DD")
     parser.add_argument("--lookback-days", type=int, default=7, help="事件连续性回看天数")
     parser.add_argument("--top-k", type=int, default=20, help="输出预览前 K 条")
+    parser.add_argument(
+        "--allow-legacy",
+        action="store_true",
+        help="显式允许执行已废弃脚本（仅临时诊断使用）",
+    )
     return parser.parse_args()
 
 
@@ -104,71 +100,6 @@ async def ensure_tables(manager: PostgresDatabaseManager) -> None:
         await conn.execute("ALTER TABLE theme_mainline_judgement ADD COLUMN IF NOT EXISTS capital_persistence_score NUMERIC(6,2) NOT NULL DEFAULT 0")
         await conn.execute("ALTER TABLE theme_mainline_judgement ADD COLUMN IF NOT EXISTS institution_participation_score NUMERIC(6,2) NOT NULL DEFAULT 0")
         await conn.execute("ALTER TABLE theme_mainline_judgement ADD COLUMN IF NOT EXISTS retail_attention_score NUMERIC(6,2) NOT NULL DEFAULT 0")
-
-
-async def fetch_enhancement_data(
-    manager: PostgresDatabaseManager,
-    trade_date: date,
-    subject_key: str,
-    theme_name: str,
-) -> tuple:
-    """
-    获取增强评分所需数据
-    TODO: 实现真实数据获取，目前返回模拟数据
-    """
-    # 模拟新颖度数据
-    novelty_inputs = NoveltyScoreInputs(
-        first_appear_date=trade_date - timedelta(days=14),  # 14天前首次出现
-        media_coverage_frequency=0.7,
-        concept_novelty='new',  # 新概念
-        media_reports_last_7d=5,
-    )
-
-    # 模拟时机数据
-    timing_inputs = TimingScoreInputs(
-        market_health_score=75.0,  # 市场健康度75分
-        limit_up_count_market=35,   # 全市场涨停35家
-        days_since_last_main_theme=20,  # 距离上个主线20天
-        market_sentiment_score=70.0,   # 市场情绪70分
-    )
-
-    # 模拟影响广度数据
-    influence_inputs = InfluenceScoreInputs(
-        related_stock_count=25,     # 25只关联股票
-        industry_count=3,           # 3个行业
-        policy_level='national',    # 国家级政策
-        market_cap_total=500.0,     # 总市值500亿
-    )
-
-    # 模拟资金持续性数据
-    capital_inputs = CapitalPersistenceInputs(
-        net_inflow_days=4,          # 连续4天净流入
-        net_inflow_amount_avg=8.5,  # 日均净流入8.5亿
-        net_inflow_trend='moderate',  # 中等流入趋势
-    )
-
-    # 模拟机构参与度数据
-    institution_inputs = InstitutionParticipationInputs(
-        institution_seat_count=2,   # 2次机构席位
-        institution_research_count=1,  # 1次机构调研
-        fund_holding_ratio=0.05,    # 基金持股5%
-    )
-
-    # 模拟散户关注度数据
-    retail_inputs = RetailAttentionInputs(
-        search_index_score=65.0,     # 搜索指数65分
-        community_discussion_score=60.0,  # 社区讨论60分
-        social_media_mentions=120,   # 社交媒体提及120次
-    )
-
-    return (
-        novelty_inputs,
-        timing_inputs,
-        influence_inputs,
-        capital_inputs,
-        institution_inputs,
-        retail_inputs,
-    )
 
 
 async def fetch_event_rows(manager: PostgresDatabaseManager, trade_date_value: date, start_date: date):
@@ -349,6 +280,13 @@ async def upsert_rows(manager: PostgresDatabaseManager, judgements):
 
 async def main_async() -> int:
     args = parse_args()
+    if not args.allow_legacy:
+        print(
+            "[BLOCKED] build_theme_mainline_judgement is deprecated. "
+            "Use mainline_identity_registry + theme_cycle_judgement_v2 + mainline_state_tracking pipeline, "
+            "or pass --allow-legacy for temporary diagnostics."
+        )
+        return 2
     trade_date_value = _parse_trade_date(args.trade_date)
     start_date = trade_date_value - timedelta(days=max(args.lookback_days - 1, 0))
 
@@ -416,40 +354,22 @@ async def main_async() -> int:
                 )
             )
 
-        # 主线题材判断增强 - 计算增强评分
-        enhancement_service = ThemeMainlineEnhancementService()
-        enhanced_judgements = []
-
+        # 身份字段防漂移：主线身份仅由 theme_tier=main 决定，避免与周期字段互相污染。
+        normalized_judgements = []
         for judgement in judgements:
-            # 获取增强数据（目前使用模拟数据）
-            (
-                novelty_inputs,
-                timing_inputs,
-                influence_inputs,
-                capital_inputs,
-                institution_inputs,
-                retail_inputs,
-            ) = await fetch_enhancement_data(
-                manager,
-                trade_date_value,
-                judgement.subject_key,
-                judgement.theme_name,
+            should_main = (str(judgement.theme_tier).strip().lower() == "main")
+            if bool(judgement.is_main_theme) == should_main:
+                normalized_judgements.append(judgement)
+                continue
+            normalized_judgements.append(
+                type(judgement)(
+                    **{
+                        **judgement.__dict__,
+                        "is_main_theme": should_main,
+                    }
+                )
             )
-
-            # 增强judgement
-            enhanced = enhancement_service.enhance_judgement_with_inputs(
-                judgement,
-                novelty_inputs,
-                timing_inputs,
-                influence_inputs,
-                capital_inputs,
-                institution_inputs,
-                retail_inputs,
-            )
-            enhanced_judgements.append(enhanced)
-
-        # 使用增强后的judgements替换原来的
-        judgements = enhanced_judgements
+        judgements = normalized_judgements
 
         await upsert_rows(manager, judgements)
 
