@@ -191,15 +191,15 @@ class ThemeBoardStructureAggregator:
             "front_row_survival_ratio": 0.0
         }
 
-    async def update_theme_cycle_judgement(self, trade_date: date, subject_key: str) -> bool:
-        """更新theme_cycle_judgement表的板块结构字段"""
+    async def update_theme_cycle_evidence(self, trade_date: date, subject_key: str) -> bool:
+        """更新 theme_cycle_evidence_daily 表的板块结构字段"""
         try:
             metrics = await self.calculate_board_metrics(trade_date, subject_key)
 
             pool = await self._ensure_pool()
             async with pool.acquire() as conn:
                 sql = """
-                UPDATE theme_cycle_judgement
+                UPDATE theme_cycle_evidence_daily
                 SET
                     leader_stock_id = $3,
                     leader_stock_name = $4,
@@ -238,10 +238,10 @@ class ThemeBoardStructureAggregator:
         """批量更新指定交易日所有主题的板块结构字段"""
         pool = await self._ensure_pool()
         async with pool.acquire() as conn:
-            # 获取当日有cycle_judgement记录的所有主题
+            # 获取当日有 v2 周期记录的所有主题
             sql = """
             SELECT DISTINCT subject_key
-            FROM theme_cycle_judgement
+            FROM theme_cycle_judgement_v2
             WHERE trade_date = $1
             """
             rows = await conn.fetch(sql, trade_date)
@@ -254,7 +254,7 @@ class ThemeBoardStructureAggregator:
 
         for subject_key in subjects:
             try:
-                success = await self.update_theme_cycle_judgement(trade_date, subject_key)
+                success = await self.update_theme_cycle_evidence(trade_date, subject_key)
                 if success:
                     success_count += 1
                 else:

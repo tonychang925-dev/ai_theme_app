@@ -84,8 +84,10 @@ export function CollectionPage() {
     tushareKline: true,
     dragonTiger: true,
     abnormalSignal: true,
+    strongStockWatch: true,
     leaderLlm: true,
     recapSnapshot: true,
+    autoBuildV2IfMissing: true,
   });
   const [abnormalFilters, setAbnormalFilters] = useState({
     turnoverRate: true,
@@ -192,8 +194,10 @@ export function CollectionPage() {
           tushare_kline: options.tushareKline,
           dragon_tiger: options.dragonTiger,
           abnormal_signal: options.abnormalSignal,
+          strong_stock_watch: options.strongStockWatch,
           leader_llm: options.leaderLlm,
           recap_snapshot: options.recapSnapshot,
+          auto_build_v2_if_missing: options.autoBuildV2IfMissing,
         },
         tushare_pause_seconds: 0.1,
         abnormal_filters: {
@@ -339,6 +343,14 @@ export function CollectionPage() {
             <label className="collection-check">
               <input
                 type="checkbox"
+                checked={options.strongStockWatch}
+                onChange={() => setOptions((s) => ({ ...s, strongStockWatch: !s.strongStockWatch }))}
+              />
+              <span>强势股跟踪池</span>
+            </label>
+            <label className="collection-check">
+              <input
+                type="checkbox"
                 checked={options.leaderLlm}
                 onChange={() => setOptions((s) => ({ ...s, leaderLlm: !s.leaderLlm }))}
               />
@@ -351,6 +363,14 @@ export function CollectionPage() {
                 onChange={() => setOptions((s) => ({ ...s, recapSnapshot: !s.recapSnapshot }))}
               />
               <span>盘后复盘快照生成</span>
+            </label>
+            <label className="collection-check">
+              <input
+                type="checkbox"
+                checked={options.autoBuildV2IfMissing}
+                onChange={() => setOptions((s) => ({ ...s, autoBuildV2IfMissing: !s.autoBuildV2IfMissing }))}
+              />
+              <span>v2周期缺失时自动补建</span>
             </label>
           </div>
 

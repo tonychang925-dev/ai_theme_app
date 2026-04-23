@@ -1,10 +1,11 @@
 # news_crawler_service/services/news_crawler_service.py
 """
-新闻抓取服务 - 独立服务，提供真实新闻抓取和EnhancedNewsGenerator接口
+新闻抓取服务 - 独立服务，仅提供真实新闻抓取接口
 供其他模块（如database_service）调用
 """
 import asyncio
 import logging
+import os
 from datetime import datetime
 from typing import Dict, List, Any, Optional
 import traceback
@@ -13,22 +14,20 @@ logger = logging.getLogger(__name__)
 
 
 class NewsCrawlerService:
-    """新闻抓取服务 - 支持真实新闻抓取和模拟数据生成"""
+    """新闻抓取服务 - 仅支持真实新闻抓取"""
     
     def __init__(self):
         """
         初始化新闻抓取服务
         """
         self.collector = None
-        self.news_generator = None
         self.initialized = False
+        self.fetch_timeout_seconds = int(os.getenv("NEWS_CRAWLER_FETCH_TIMEOUT_SECONDS", "25"))
+        self.healthcheck_timeout_seconds = int(os.getenv("NEWS_CRAWLER_HEALTHCHECK_TIMEOUT_SECONDS", "8"))
         
         try:
             # 1. 初始化真实新闻采集器
             self._init_real_collector()
-            
-            # 2. 初始化模拟新闻生成器（用于测试/备选）
-            self._init_news_generator()
             
             self.initialized = True
             logger.info("📡 NewsCrawlerService初始化成功")
@@ -42,11 +41,10 @@ class NewsCrawlerService:
             "service": "NewsCrawlerService",
             "version": "3.0.0",
             "description": "支持真实新闻抓取的独立服务",
-            "features": ["real_news_crawling", "mock_news_generation", "batch_processing"],
+            "features": ["real_news_crawling", "batch_processing"],
             "initialized_at": datetime.now().isoformat(),
             "initialized": self.initialized,
-            "has_real_collector": self.collector is not None,
-            "has_mock_generator": self.news_generator is not None
+            "has_real_collector": self.collector is not None
         }
     
     def _init_real_collector(self):
@@ -63,21 +61,11 @@ class NewsCrawlerService:
             
         except ImportError as e:
             logger.warning(f"⚠️  无法导入财联社采集器: {e}")
-            logger.info("💡 将使用模拟数据模式运行")
+            logger.info("💡 未启用任何mock回退，采集将返回无数据")
             self.collector = None
         except Exception as e:
             logger.error(f"❌ 财联社采集器初始化失败: {e}")
             self.collector = None
-    
-    def _init_news_generator(self):
-        """初始化模拟新闻生成器"""
-        try:
-            from news_crawler_service.services.enhanced_news_generator import EnhancedNewsGenerator
-            self.news_generator = EnhancedNewsGenerator()
-            logger.info("✅ 模拟新闻生成器初始化成功")
-        except ImportError as e:
-            logger.warning(f"⚠️  无法导入模拟新闻生成器: {e}")
-            self.news_generator = None
     
     async def crawl_real_news(self, symbol: str = "全部", limit: int = 10) -> Dict[str, Any]:
         """
@@ -106,7 +94,10 @@ class NewsCrawlerService:
             self.collector.symbol = symbol
             
             # 执行抓取
-            news_items = await self.collector.fetch()
+            news_items = await asyncio.wait_for(
+                self.collector.fetch(),
+                timeout=self.fetch_timeout_seconds,
+            )
             
             # 限制返回数量
             if limit > 0 and len(news_items) > limit:
@@ -138,67 +129,22 @@ class NewsCrawlerService:
             
             logger.info(f"✅ 真实新闻抓取完成: {len(news_data)}条新闻")
             return result
+        except asyncio.TimeoutError:
+            logger.error(f"❌ 真实新闻抓取超时: {self.fetch_timeout_seconds}s")
+            return self._create_error_response(
+                f"真实新闻抓取超时({self.fetch_timeout_seconds}s)",
+                operation,
+                "AKShare/上游接口响应过慢或阻塞",
+            )
             
         except Exception as e:
             logger.error(f"❌ 真实新闻抓取失败: {e}")
             traceback.print_exc()
             return self._create_error_response(str(e), operation)
     
-    async def crawl_mock_news(self, count: int = 3, news_type: str = "stock") -> Dict[str, Any]:
-        """
-        生成模拟新闻 - 备选接口（当真实采集器不可用时使用）
-        
-        Args:
-            count: 抓取数量
-            news_type: 新闻类型
-            
-        Returns:
-            模拟新闻数据
-        """
-        operation = "crawl_mock_news"
-        
-        try:
-            logger.info(f"📡 生成模拟新闻: count={count}, type={news_type}")
-            
-            if not self.news_generator:
-                return self._create_error_response(
-                    "模拟新闻生成器未初始化", 
-                    operation,
-                    "无法生成模拟新闻"
-                )
-            
-            # 调用模拟生成器
-            news_list = await self.news_generator.generate_mock_news(count, news_type)
-            
-            # 构建响应
-            result = {
-                "operation": operation,
-                "status": "success",
-                "service": "NewsCrawlerService",
-                "request": {
-                    "count": count,
-                    "news_type": news_type
-                },
-                "response": {
-                    "news_count": len(news_list),
-                    "news_list": news_list,
-                    "generated_at": datetime.now().isoformat(),
-                    "source": "mock_generator",
-                    "note": "这是模拟数据，真实数据请使用 crawl_real_news"
-                },
-                "metadata": self.service_metadata
-            }
-            
-            logger.info(f"✅ 模拟新闻生成完成: {len(news_list)}条{news_type}新闻")
-            return result
-            
-        except Exception as e:
-            logger.error(f"❌ 模拟新闻生成失败: {e}")
-            return self._create_error_response(str(e), operation)
-    
     async def crawl_news_auto(self, count: int = 5, prefer_real: bool = True) -> Dict[str, Any]:
         """
-        智能抓取新闻 - 自动选择真实或模拟
+        智能抓取新闻 - 自动模式仅允许真实数据
         
         Args:
             count: 抓取数量
@@ -210,31 +156,33 @@ class NewsCrawlerService:
         operation = "crawl_news_auto"
         
         try:
-            logger.info(f"🤖 智能抓取新闻: count={count}, prefer_real={prefer_real}")
+            logger.info(f"🤖 智能抓取新闻: count={count}, prefer_real={prefer_real} (mock已禁用)")
             
             # 检查真实采集器可用性
             real_available = False
             if prefer_real and self.collector:
                 try:
-                    real_available = await self.collector.health_check()
+                    real_available = await asyncio.wait_for(
+                        self.collector.health_check(),
+                        timeout=self.healthcheck_timeout_seconds,
+                    )
                     logger.info(f"真实采集器健康检查: {real_available}")
+                except asyncio.TimeoutError:
+                    logger.warning(f"真实采集器健康检查超时: {self.healthcheck_timeout_seconds}s")
+                    real_available = False
                 except:
                     real_available = False
             
-            # 根据可用性选择模式
+            # 根据可用性选择模式（仅真实）
             if real_available:
                 result = await self.crawl_real_news("全部", count)
                 result["operation"] = operation
                 result["mode"] = "real"
-            elif self.news_generator:
-                result = await self.crawl_mock_news(count, "stock")
-                result["operation"] = operation
-                result["mode"] = "mock"
             else:
                 return self._create_error_response(
-                    "没有可用的新闻源", 
+                    "真实新闻源不可用", 
                     operation,
-                    "真实采集器和模拟生成器都不可用"
+                    "mock回退已禁用，请检查真实采集器状态"
                 )
             
             result["prefer_real"] = prefer_real
@@ -250,15 +198,15 @@ class NewsCrawlerService:
         self, 
         batch_size: int = 5, 
         mixed_types: bool = True,
-        mode: str = "auto"  # auto, real, mock
+        mode: str = "auto"  # auto, real
     ) -> Dict[str, Any]:
         """
         批量抓取新闻
         
         Args:
             batch_size: 批次大小
-            mixed_types: 是否混合类型（仅对mock模式有效）
-            mode: 抓取模式 auto/real/mock
+            mixed_types: 保留参数（当前仅真实模式生效）
+            mode: 抓取模式 auto/real
             
         Returns:
             批次结果
@@ -278,32 +226,6 @@ class NewsCrawlerService:
                     )
                 result = await self.crawl_real_news("全部", batch_size)
                 
-            elif mode == "mock":
-                # 模拟数据批次抓取
-                if not self.news_generator:
-                    return self._create_error_response(
-                        "模拟生成器未初始化", 
-                        operation,
-                        "无法使用mock模式"
-                    )
-                batch_result = await self.news_generator.generate_news_batch(
-                    batch_size=batch_size,
-                    mixed_types=mixed_types
-                )
-                
-                result = {
-                    "operation": operation,
-                    "status": "success",
-                    "service": "NewsCrawlerService",
-                    "request": {
-                        "batch_size": batch_size,
-                        "mixed_types": mixed_types,
-                        "mode": mode
-                    },
-                    "response": batch_result,
-                    "metadata": self.service_metadata
-                }
-                
             else:  # auto模式
                 # 智能选择
                 result = await self.crawl_news_auto(batch_size, prefer_real=True)
@@ -319,22 +241,12 @@ class NewsCrawlerService:
     async def get_service_status(self) -> Dict[str, Any]:
         """获取服务状态"""
         real_healthy = False
-        mock_healthy = False
-        
         # 检查真实采集器
         if self.collector:
             try:
                 real_healthy = await self.collector.health_check()
             except:
                 real_healthy = False
-        
-        # 检查模拟生成器
-        if self.news_generator:
-            try:
-                test_result = await self.crawl_mock_news(1, "stock")
-                mock_healthy = test_result["status"] == "success"
-            except:
-                mock_healthy = False
         
         return {
             "operation": "get_service_status",
@@ -346,11 +258,6 @@ class NewsCrawlerService:
                     "available": self.collector is not None,
                     "healthy": real_healthy,
                     "source": "财联社 (akshare)" if self.collector else "未初始化"
-                },
-                "mock_generator": {
-                    "available": self.news_generator is not None,
-                    "healthy": mock_healthy,
-                    "source": "模拟数据生成器" if self.news_generator else "未初始化"
                 }
             },
             "metadata": self.service_metadata,
@@ -411,15 +318,10 @@ async def test_crawler_service():
         status = await service.get_service_status()
         print(f"1. 服务状态: {status.get('status')}")
         print(f"   真实采集器: {status['components']['real_collector']['available']}")
-        print(f"   模拟生成器: {status['components']['mock_generator']['available']}")
         
-        # 2. 测试抓取（根据可用性选择）
-        if status['components']['real_collector']['available']:
-            print("\n2. 测试真实新闻抓取...")
-            result = await service.crawl_real_news(limit=3)
-        else:
-            print("\n2. 真实采集器不可用，测试模拟新闻...")
-            result = await service.crawl_mock_news(count=3)
+        # 2. 测试真实抓取
+        print("\n2. 测试真实新闻抓取...")
+        result = await service.crawl_real_news(limit=3)
         
         print(f"   操作: {result.get('operation')}")
         print(f"   状态: {result.get('status')}")

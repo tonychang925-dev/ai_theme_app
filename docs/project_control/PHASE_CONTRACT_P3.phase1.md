@@ -2,137 +2,83 @@
 
 ## 1. Phase Identity
 
-- Phase Name: Stock Service 双源事实层与复盘快照
+- Phase Name: stock_processing_service 对象层收口
 - Phase Code: `P3.phase1`
-- Parent Milestone: `P3`（第三阶段）
-- Risk Level: `P1`
+- Parent Milestone: `P3`
+- Risk Level: `P0`
 - Source Documents:
   - `docs/project_control/PRD.md`
   - `docs/project_control/prd_p1.md`
   - `docs/project_control/prd_p2.md`
+  - `docs/project_control/prd_p3.md`
   - `docs/project_control/ACCEPTANCE.md`
   - `docs/project_control/PLAN_WBS.md`
   - `docs/project_control/ARCH_REVIEW.md`
-  - `docs/adrs/ADR_LIST.md`
   - `docs/architecture/个人投资助理-项目架构设计-第三阶段.md`
-  - `docs/project_control/PHASE_CONTRACT_P3.phaseA.md`
-
----
 
 ## 1.1 Conflict Resolution
 
 | 冲突项 | 采用来源 | 放弃来源 | 裁决理由 |
 | --- | --- | --- | --- |
-| 股票事实真源 | `PRD.md` + `ADR-020` 中 `Tushare` 作为股票日频真源 | 将 `JYHF` 继续当作股票事实唯一真源 | 第三阶段首批必须把题材语义和股票事实分离 |
-| 首批上线门槛 | `ACCEPTANCE.md` + `ARCH_REVIEW.md` 中“快照优先、实时后置” | 将“秒级全市场实时行情/全量资金行为分析”作为 `P3.phase1` 门槛 | 当前阶段目标是稳定对象层与复盘快照，不是实时平台 |
-| 服务边界 | `ADR-022/023/024` 中 `stock_service=事实对象层`、`recap_service=唯一报告聚合层`、`Notion=输出层` | 在 `stock_service` 中同时实现报告拼装和 Notion 发布 | 避免职责膨胀与报告真源漂移 |
-| 第三阶段前置依赖 | `PLAN_WBS.md` 中 `P3.phase0 -> P3.phase1` | 直接绕过 `frontend_bff` / `P3.phase0` 进入事实层开发 | 第三阶段必须建立在统一产品出口和长期契约之上 |
-
----
+| 数据访问边界 | `DatabaseGateway` 显式领域 API | 业务层直连 `_client/_db` | 执行 Gateway First |
+| SQL 入口 | 领域方法读写 | 业务路径 `execute_query` | 避免回退到“服务写 SQL” |
+| 对象消费真源 | 6 个冻结对象 | 消费端二次重算 | 保障口径一致和可审计 |
 
 ## 2. Phase Objective（可量化）
 
-1. 接入 `Tushare + JYHF` 双源，并按交易日产出可完整回放的 `stock_daily_snapshot` 与 `subject_stock_daily_snapshot`。  
-2. 在对象层上稳定生成 `stock_abnormal_event` 与 `theme_stock_leaderboard`，保证规则显式、可追溯、可重复。  
-3. 生成 `pre_market_brief_snapshot` 与 `post_market_recap_snapshot`，并保证同一交易日重复生成结果一致率 `100%`。  
-4. 前端与 Notion 必须只消费同一份报告快照；`Notion` 发布失败不得阻塞主链。  
-5. 本阶段明确不以 `SSE`、分钟级异动、秒级全市场实时行情或全量资金行为分析作为上线门槛。  
-
----
+1. 新建 `stock_processing_service` 并作为唯一新生产链路。
+2. 打通 `输入事件 -> 快照对象 -> 发布事件` 标准闭环。
+3. 完成 `DatabaseGateway` 股票域高层接口升级并收口业务 SQL。
+4. 冻结对象、DTO、事件 envelope、ports、feature flag 协议。
 
 ## 3. Acceptance Targets（门禁条件）
 
-- [ ] 必须完成 `Tushare` 日频真源接入，并形成可回放的股票原始快照与标准化入库链。
-- [ ] 必须完成 `JYHF` 题材事件与题材股票池复用，并与股票快照形成稳定绑定。
-- [ ] 必须生成 `stock_daily_snapshot` 与 `subject_stock_daily_snapshot`。
-- [ ] 必须生成 `stock_abnormal_event` 与 `theme_stock_leaderboard`。
-- [ ] 必须生成 `pre_market_brief_snapshot` 与 `post_market_recap_snapshot`。
-- [ ] `frontend_bff` 与 `notion_publisher` 必须消费同一份报告快照。
-- [ ] `stock_service` 不得承担 Notion 发布与报告拼装职责。
-- [ ] 任一交易日对象层与报告快照必须支持完整回放。
-- [ ] Notion 发布失败不得阻塞快照落库，且必须保留失败原因。
-- [ ] 不得把“秒级全市场实时行情”和“全量资金行为分析”作为本阶段通过门槛。
-
----
+- [ ] `ACPT-P3B-011` 必须确认 `stock_processing_service` 作为股票日频对象层唯一新生产链路，旧 `stock_service` 仅用于回退/对账/实验。
+- [ ] `ACPT-P3B-012` 所有股票侧业务读写必须通过 `database_service.DatabaseGateway` 股票域显式方法，禁止 `_client/_db` 直达。
+- [ ] `ACPT-P3B-013` 领域层必须保持 `Domain Pure`：不依赖数据库/缓存/消息总线实现细节。
+- [ ] `ACPT-P3B-014` 六个冻结对象必须具备字段级最小 schema，且主键、必填字段、覆盖策略与架构文档一致。
+- [ ] `ACPT-P3B-015` 所有 stock stream 事件必须采用统一 envelope：`event_id/event_name/trade_date/batch_id/trace_id/producer/occurred_at/payload_version/payload`。
+- [ ] `ACPT-P3B-016` 缓存必须执行“先写新版本、后原子切换 current”策略，禁止读到半成品。
+- [ ] `ACPT-P3B-017` 双轨对账每次必须输出 `summary + diff_samples.jsonl`，且样本包含主键、旧值、新值、差异字段、差异原因分类。
+- [ ] `ACPT-P3B-018` 程序设计前置门禁（contracts/ports/gateway/feature-flag）未全部冻结时不得开工。
+- [ ] `ACPT-P3B-019` `DatabaseGateway` 必须完成股票域高层领域网关升级：业务侧仅可调用显式领域 API，不得透传 `_client` 语义。
+- [ ] `ACPT-P3B-020` 股票业务路径中 `execute_query` 调用次数必须为 0（仅允许基础设施内部或离线运维脚本使用）。
+- [ ] `ACPT-P3B-021` 必须形成标准化闭环：`输入事件 -> 快照对象 -> 发布事件`，并可回放、可审计、可幂等。
+- [ ] `ACPT-P3B-022` 6 个冻结对象必须成为唯一消费真源，BFF/Notion 不得绕过对象层重算核心结论。
 
 ## 4. Required Commands（必须执行命令）
 
-- `.venv/bin/python -m pytest -q`
-- `rg -n "stock_daily_snapshot|subject_stock_daily_snapshot|stock_abnormal_event|theme_stock_leaderboard|pre_market_brief_snapshot|post_market_recap_snapshot" /Users/admin/Desktop/ai_theme_app`
-- `rg -n "Tushare|JYHF|notion_publisher|stock_service|recap_service" /Users/admin/Desktop/ai_theme_app/docs/project_control /Users/admin/Desktop/ai_theme_app/docs/adrs`
-- `.venv/bin/python -m py_compile stock_service recap_service frontend_bff`
-
-Acceptance-测试映射：
-- `ACPT-P3B-001` -> `ACC-P3B-001` -> `.venv/bin/python -m pytest -q`
-- `ACPT-P3B-002` -> `ACC-P3B-001` / `ACC-P3B-002` -> `.venv/bin/python -m pytest -q`
-- `ACPT-P3B-003` -> `ACC-P3B-001` -> `rg -n "stock_daily_snapshot|subject_stock_daily_snapshot" /Users/admin/Desktop/ai_theme_app`
-- `ACPT-P3B-004` -> `ACC-P3B-002` -> `rg -n "stock_abnormal_event|theme_stock_leaderboard" /Users/admin/Desktop/ai_theme_app`
-- `ACPT-P3B-005` -> `ACC-P3B-003` -> `rg -n "pre_market_brief_snapshot|post_market_recap_snapshot" /Users/admin/Desktop/ai_theme_app`
-- `ACPT-P3B-006` -> `ACC-P3B-004` -> `.venv/bin/python -m pytest -q`
-- `ACPT-P3B-007` -> `ACC-P3B-003` / `ACC-P3B-004` -> `.venv/bin/python -m pytest -q`
-
----
+- `.venv/bin/python -m pytest -q stock_processing_service/tests`
+- `.venv/bin/python -m pytest -q database_service/tests`
+- `rg -n "execute_query\(|_client\.|_db\.|import asyncpg" stock_processing_service database_service`
+- `.venv/bin/python scripts/build_post_market_recap.py --help`
 
 ## 5. Deliverables
 
-- `stock_service` 事实对象层边界定义。
-- `Tushare + JYHF` 双源字段所有权与冲突裁决规则。
-- `stock_daily_snapshot / subject_stock_daily_snapshot` 对象定义与标准化链。
-- `stock_abnormal_event / theme_stock_leaderboard` 派生规则定义。
-- `pre_market_brief_snapshot / post_market_recap_snapshot` 报告快照定义。
-- `frontend_bff` 只读消费契约。
-- `notion_publisher` 输出契约与失败重试策略。
-- 文档更新：
-  - `docs/project_control/PHASE_CONTRACT_P3.phase1.md`
-  - `tmp/phase_contract_P3.phase1.json`
-
----
+- `stock_processing_service` 四层架构与 ports
+- 6 个冻结对象 schema + DTO + envelope
+- `DatabaseGateway` 股票域显式 API 集
+- `execute_query` 业务路径收口证据
+- 对账产物 `summary + diff_samples.jsonl`
+- `tmp/phase_contract_P3.phase1.json`
+- `tmp/phase_contract_consistency_P3.phase1.json`
 
 ## 6. Risk Matrix
 
 | Risk | Impact | Likelihood | Trigger | Owner | Mitigation |
 | --- | --- | --- | --- | --- | --- |
-| 双源字段口径漂移 | High | Medium | 同一业务字段由 `Tushare` 和 `JYHF` 同时提供且结果不一致 | 数据架构负责人 | 冻结字段所有权与冲突裁决规则 |
-| `stock_service` 职责膨胀 | High | High | 报告拼装、Notion 写入直接压入 `stock_service` | 平台负责人 | 强制维持事实对象层边界 |
-| 报告快照与 Notion 漂移 | High | Medium | 页面与 Notion 核心字段不一致 | 产品架构负责人 | 冻结快照唯一真源 |
-| Notion 发布阻塞主链 | Medium | Medium | 发布失败导致日频任务整体失败 | 平台负责人 | 异步重试 + 主链隔离 |
-| 将实时能力错误前移 | High | Medium | 评审或实施中出现 `SSE/分钟级异动` 作为首批门槛 | 架构负责人 | 严格按 `P3.phase1 -> P3.phase3` 顺序推进 |
-
----
+| 网关升级不彻底 | High | High | 业务仍直连 SQL | Backend | 静态扫描 + CI 阻断 |
+| 对象口径漂移 | High | Medium | 多处拼装结论 | Arch | 对象层唯一真源 |
+| 闭环断裂 | High | Medium | 无事件发布或不可回放 | Data | 闭环验收脚本 |
 
 ## 7. Rollback Plan
 
-- 代码回滚：
-  - 触发条件：对象层职责失控、BFF/Notion 契约漂移、报告生成逻辑不可重复。
-  - 方式：回切到上一版稳定对象层与报告模板，保留原始快照文件。
-- 数据回滚：
-  - 触发条件：某交易日快照缺失、错误覆盖或报告快照不一致。
-  - 方式：按 `trade_date / snapshot_version / report_id` 回滚对象层和快照。
-- 同步补偿回滚：
-  - 触发条件：`Tushare` 原始快照、标准化对象、报告快照三层不一致。
-  - 方式：从原始快照重新标准化并重建当日对象层与报告快照。
-
----
+- 代码回滚：feature flag 切回旧链路（只读回退）。
+- 数据回滚：按 `trade_date/batch_id` 回滚新对象批次。
+- 同步补偿回滚：重放输入事件，重建快照并重发事件。
 
 ## 8. Non-Goals
 
-- 不实现 `SSE / WebSocket` 实时推送。
-- 不实现分钟级异动对象。
-- 不实现全量资金行为分析。
-- 不建设 Tick 级全市场实时行情平台。
-- 不把 Notion 作为业务真源或回写源。
-
----
-
-## 9. 状态同步与对账基线
-
-- `Doing -> test-evidence -> In review/done -> milestone progress`
-- 阶段内所有对象层、报告快照、Notion 发布记录都必须保留 `trade_date / report_id / publish_status`。
-- 阶段末对账必须区分：
-  - `stock_daily_snapshot`
-  - `subject_stock_daily_snapshot`
-  - `stock_abnormal_event`
-  - `theme_stock_leaderboard`
-  - `pre_market_brief_snapshot`
-  - `post_market_recap_snapshot`
-- 本阶段在正式 `TEST_CASE_SPEC` 补齐前，合同状态为 Draft，`gate_ready=false`。
+- 不做分钟级实时行情。
+- 不做 Tick 级引擎。
+- 不让前端直接读取领域原表。

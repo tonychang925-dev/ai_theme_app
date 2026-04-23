@@ -80,14 +80,24 @@ async def fetch_rows(
     only_queued: bool = False,
 ) -> list[ThemeLeaderLlmCandidateInput]:
     chosen_themes_sql = """
-        SELECT subject_key, theme_name
-        FROM theme_mainline_judgement
-        WHERE trade_date = $1::date
-          AND theme_tier IN ('main', 'strong_branch')
+        SELECT
+            v2.subject_key,
+            COALESCE(NULLIF(v2.theme_name, ''), NULLIF(e.theme_name, ''), v2.subject_key) AS theme_name
+        FROM theme_cycle_judgement_v2 v2
+        LEFT JOIN theme_cycle_evidence_daily e
+          ON e.trade_date = v2.trade_date
+         AND e.subject_key = v2.subject_key
+        WHERE v2.trade_date = $1::date
+          AND COALESCE(v2.final_mainline_alive, FALSE) = TRUE
+          AND COALESCE(v2.fade_confirmed, FALSE) = FALSE
         ORDER BY
-            CASE theme_tier WHEN 'main' THEN 0 ELSE 1 END,
-            (event_chain_score + market_recognition_score + mainline_stability_score) DESC,
-            subject_key
+            CASE
+              WHEN COALESCE(v2.mainline_strength_score, 0) >= 75 THEN 0
+              ELSE 1
+            END,
+            COALESCE(v2.mainline_strength_score, 0) DESC,
+            COALESCE(e.event_continuity_score, 0) DESC,
+            v2.subject_key
         LIMIT COALESCE($2::int, 99999)
     """
     if only_queued:

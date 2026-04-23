@@ -224,30 +224,28 @@ class EnhancedCandidateBuilder(WeakToStrongCandidateBuilder):
                     break_start_pivot=bool(row["break_start_pivot"]),
                 )
 
-        # 回退：从现有表构建简化版本
-        # 查询theme_mainline_judgement和theme_cycle_judgement
+        # 回退：从 v2 + evidence 查询构建简化版本（不再依赖旧表）
         sql = """
         SELECT
-            m.event_chain_score,
-            m.event_chain_continuity_score,
-            c.limit_up_count,
-            c.leader_status,
-            c.board_effect_status,
-            c.is_fade
-        FROM theme_mainline_judgement m
-        LEFT JOIN theme_cycle_judgement c
-          ON c.trade_date = m.trade_date
-         AND c.subject_key = m.subject_key
-        WHERE m.trade_date = $1 AND m.subject_key = $2
+            COALESCE(e.event_strength_score, 0) AS event_strength_score,
+            COALESCE(e.event_continuity_score, 0) AS event_continuity_score,
+            COALESCE(e.limit_up_count, 0) AS limit_up_count,
+            COALESCE(v2.mainline_strength_score, 0) AS mainline_strength_score,
+            COALESCE(v2.fade_confirmed, FALSE) AS fade_confirmed
+        FROM theme_cycle_judgement_v2 v2
+        LEFT JOIN theme_cycle_evidence_daily e
+          ON e.trade_date = v2.trade_date
+         AND e.subject_key = v2.subject_key
+        WHERE v2.trade_date = $1 AND v2.subject_key = $2
         """
         row = await conn.fetchrow(sql, trade_date, subject_key)
         if row:
             # 简化映射：使用现有数据构建证据输入
-            event_chain_score = float(row["event_chain_score"] or 0)
-            event_chain_continuity_score = float(row["event_chain_continuity_score"] or 0)
+            event_chain_score = float(row["event_strength_score"] or 0)
+            event_chain_continuity_score = float(row["event_continuity_score"] or 0)
             limit_up_count = int(row["limit_up_count"] or 0)
-            leader_status = str(row["leader_status"] or "")
-            is_fade = bool(row["is_fade"])
+            mainline_strength_score = float(row["mainline_strength_score"] or 0)
+            is_fade = bool(row["fade_confirmed"])
 
             # 估算各项评分
             # 事件强度评分 ≈ 事件链分数
@@ -256,10 +254,10 @@ class EnhancedCandidateBuilder(WeakToStrongCandidateBuilder):
             event_continuity_score = event_chain_continuity_score
             # 强事件数量：简化，如果有事件链分数则假设至少1个
             strong_event_count_7d = 1 if event_chain_score > 30 else 0
-            # 龙头存活评分：基于leader_status估算
-            if "龙头加强" in leader_status or "龙头强势" in leader_status:
+            # 龙头存活评分：基于主线强度估算
+            if mainline_strength_score >= 75:
                 leader_alive_score = 80.0
-            elif "龙头活跃" in leader_status:
+            elif mainline_strength_score >= 60:
                 leader_alive_score = 60.0
             else:
                 leader_alive_score = 30.0
@@ -355,72 +353,6 @@ class EnhancedCandidateBuilder(WeakToStrongCandidateBuilder):
                         fade_confirmed=fade_confirmed,
                         previous_cycle_state=row["previous_cycle_state"]
                     )
-
-            # 回退：从原有表查询
-            sql = """
-            SELECT
-                is_main_theme,
-                primary_cycle_stage,
-                is_fade,
-                limit_up_count,
-                leader_status
-            FROM theme_cycle_judgement
-            WHERE trade_date = $1 AND subject_key = $2
-            """
-            row = await conn.fetchrow(sql, trade_date, subject_key)
-            if row:
-                # 简化转换：is_main_theme作为mainline_alive
-                mainline_alive = bool(row["is_main_theme"])
-                cycle_state = str(row["primary_cycle_stage"] or "")
-                is_fade = bool(row["is_fade"])
-                limit_up_count = int(row["limit_up_count"] or 0)
-                leader_status = str(row["leader_status"] or "")
-
-                # 退潮状态修正：检查硬证据
-                # 用户指出：退潮判断必须有硬证据，没有硬证据就不能判断是退潮
-                # 硬证据包括：龙头已死、板块大面积跌停、无接力卡位等
-                corrected_is_fade = is_fade
-                corrected_cycle_state = cycle_state
-
-                # 如果原状态为fade，检查是否满足硬证据
-                if cycle_state == "fade" or is_fade:
-                    # 硬证据检查：
-                    # 1. 是否有涨停或强势股活口
-                    has_live_stocks = limit_up_count > 0
-                    # 2. 龙头状态（简化：通过leader_status判断）
-                    leader_dead = "走弱" in leader_status or "跌停" in leader_status
-                    # 3. 板块结构（简化：涨停数极少）
-                    board_collapse = limit_up_count == 0
-
-                    # 如果不满足硬证据，修正状态为分歧或修复
-                    if has_live_stocks or not leader_dead:
-                        # 仍有活口或龙头未死，视为分歧而非退潮
-                        corrected_cycle_state = "divergence"
-                        corrected_is_fade = False
-                        # 打印修正日志（调试用）
-                        print(f"  ⚠️ 周期状态修正：主题{subject_key}，原状态fade，修正为divergence（有活口）")
-                    elif not board_collapse:
-                        # 板块未完全塌方
-                        corrected_cycle_state = "fade_watch"
-                        corrected_is_fade = True  # 但标记为观察而非确认
-                        print(f"  ⚠️ 周期状态修正：主题{subject_key}，原状态fade，修正为fade_watch（板块未完全塌方）")
-
-                # 估算强度评分
-                strength_score = 60.0 if mainline_alive else 30.0
-
-                # 退潮状态细分
-                fade_watch = corrected_is_fade
-                fade_confirmed = False  # 原表无此字段，且需要硬证据确认
-
-                return CycleFeatureInputs(
-                    subject_key=subject_key,
-                    trade_date=trade_date,
-                    mainline_alive=mainline_alive,
-                    mainline_strength_score=strength_score,
-                    cycle_state=corrected_cycle_state,
-                    fade_watch=fade_watch,
-                    fade_confirmed=fade_confirmed
-                )
 
         # 默认值
         return CycleFeatureInputs(
@@ -573,25 +505,28 @@ class EnhancedCandidateBuilder(WeakToStrongCandidateBuilder):
                 s.stock_id,
                 s.stock_name,
                 s.subject_key,
-                COALESCE(NULLIF(m.theme_name, ''), NULLIF(c.theme_name, ''), s.subject_key) AS theme_name,
+                COALESCE(NULLIF(v2.theme_name, ''), s.subject_key) AS theme_name,
                 s.rank_order,
                 s.pct_chg,
                 s.limit_up,
                 s.is_leader,
-                c.primary_cycle_stage,
-                c.action_bias,
-                c.is_divergence,
-                c.is_rebound,
-                c.is_fermentation,
-                c.is_fade,
-                m.is_main_theme
+                COALESCE(NULLIF(v2.final_cycle_state, ''), 'unknown') AS primary_cycle_stage,
+                CASE
+                    WHEN COALESCE(v2.fade_confirmed, FALSE) THEN '观望'
+                    WHEN COALESCE(v2.final_cycle_state, '') IN ('climax', '高潮') THEN '警惕高潮'
+                    WHEN COALESCE(v2.final_cycle_state, '') IN ('fermentation', '发酵', 'start', '启动') THEN '可主做'
+                    WHEN COALESCE(v2.final_cycle_state, '') IN ('repair', '修复', 'divergence', '分歧', 'rebound', '回流') THEN '关注弱转强'
+                    ELSE '可观察'
+                END AS action_bias,
+                COALESCE(v2.final_cycle_state, '') IN ('divergence', '分歧') AS is_divergence,
+                COALESCE(v2.final_cycle_state, '') IN ('rebound', '回流') AS is_rebound,
+                COALESCE(v2.final_cycle_state, '') IN ('fermentation', '发酵') AS is_fermentation,
+                COALESCE(v2.fade_confirmed, FALSE) AS is_fade,
+                COALESCE(v2.final_mainline_alive, FALSE) AS is_main_theme
             FROM subject_stock_daily_snapshot s
-            LEFT JOIN theme_mainline_judgement m
-              ON m.trade_date = s.trade_date
-             AND m.subject_key = s.subject_key
-            LEFT JOIN theme_cycle_judgement c
-              ON c.trade_date = s.trade_date
-             AND c.subject_key = s.subject_key
+            LEFT JOIN theme_cycle_judgement_v2 v2
+              ON v2.trade_date = s.trade_date
+             AND v2.subject_key = s.subject_key
             WHERE s.trade_date = $1::date
             ORDER BY split_part(s.stock_id, '.', 1), s.subject_key, s.rank_order ASC
         )

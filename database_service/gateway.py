@@ -9,6 +9,7 @@ from typing import Dict, List, Any, Optional, Callable, Union
 from datetime import datetime
 from functools import wraps
 import time
+from uuid import uuid4
 
 try:
     # 先尝试绝对导入（当gateway.py作为顶级模块导入时）
@@ -54,6 +55,7 @@ class DatabaseGateway:
         self._client = None
         self._initialized = False
         self._event_handlers = {}
+        self._idempotency_store: Dict[str, Dict[str, Any]] = {}
         self._stats = {
             'requests': 0,
             'success': 0,
@@ -267,6 +269,244 @@ class DatabaseGateway:
             self._record_request(False, start_time)
             logger.error(f"获取新闻失败 {news_id}: {e}")
             raise
+
+    async def get_subject_stock_pool_by_trade_date(self, trade_date) -> List[Dict[str, Any]]:
+        """按交易日读取题材股票池快照。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_subject_stock_pool_by_trade_date(trade_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"获取题材股票池失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def get_trade_calendar(self, trade_date) -> Dict[str, Any]:
+        """股票域显式读取：交易日历信息。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_trade_calendar(trade_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取交易日历失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def get_stock_daily_bars(self, trade_date, stock_ids: Optional[List[str]] = None) -> List[Dict[str, Any]]:
+        """股票域显式读取：日线行情快照。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_stock_daily_bars(trade_date, stock_ids=stock_ids)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取日线行情失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def get_stock_auction_snapshot(self, trade_date, stock_ids: Optional[List[str]] = None) -> List[Dict[str, Any]]:
+        """股票域显式读取：竞价快照（当前可降级为日频代理）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_stock_auction_snapshot(trade_date, stock_ids=stock_ids)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取竞价快照失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def get_subject_context_by_subject_keys(self, subject_keys: List[str], trade_date) -> List[Dict[str, Any]]:
+        """股票域显式读取：题材上下文。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_subject_context_by_subject_keys(subject_keys, trade_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取题材上下文失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def get_prior_stock_daily_snapshots(
+        self,
+        trade_date,
+        lookback_days: int,
+        stock_ids: Optional[List[str]] = None,
+    ) -> List[Dict[str, Any]]:
+        """股票域显式读取：历史窗口日线快照。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_prior_stock_daily_snapshots(
+                trade_date,
+                lookback_days=lookback_days,
+                stock_ids=stock_ids,
+            )
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取历史窗口快照失败 trade_date={trade_date}, lookback={lookback_days}: {e}")
+            raise
+
+    async def get_existing_pre_market_brief_snapshot(self, trade_date) -> Optional[Dict[str, Any]]:
+        """股票域显式读取：盘前快照文档。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_existing_pre_market_brief_snapshot(trade_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 pre_market_brief_snapshot 失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def get_existing_post_market_recap_snapshot(self, trade_date) -> Optional[Dict[str, Any]]:
+        """股票域显式读取：盘后复盘快照文档。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_existing_post_market_recap_snapshot(trade_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 post_market_recap_snapshot 失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def upsert_stock_daily_snapshot_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """批量 UPSERT stock_daily_snapshot。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_stock_daily_snapshot_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"批量写入 stock_daily_snapshot 失败: {e}")
+            raise
+
+    async def upsert_subject_stock_daily_snapshot_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：subject_stock_daily_snapshot。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_subject_stock_daily_snapshot_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"批量写入 subject_stock_daily_snapshot 失败: {e}")
+            raise
+
+    async def upsert_stock_abnormal_event_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：stock_abnormal_event。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_stock_abnormal_event_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"批量写入 stock_abnormal_event 失败: {e}")
+            raise
+
+    async def upsert_theme_stock_leaderboard_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：theme_stock_leaderboard。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_theme_stock_leaderboard_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"批量写入 theme_stock_leaderboard 失败: {e}")
+            raise
+
+    async def upsert_pre_market_brief_snapshot(self, doc: Dict[str, Any]) -> int:
+        """股票域显式写入：pre_market_brief_snapshot。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_pre_market_brief_snapshot(doc)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"写入 pre_market_brief_snapshot 失败: {e}")
+            raise
+
+    async def upsert_post_market_recap_snapshot(self, doc: Dict[str, Any]) -> int:
+        """股票域显式写入：post_market_recap_snapshot。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_post_market_recap_snapshot(doc)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"写入 post_market_recap_snapshot 失败: {e}")
+            raise
+
+    async def publish_stock_processing_event(self, event_name: str, payload: Dict[str, Any]) -> str:
+        """
+        股票域显式事件发布入口。
+        当前阶段先提供统一事件ID与日志落点；后续在 P3.phase1-T09 接入 stream runtime。
+        """
+        start_time = time.time()
+        event_id = f"sps-{uuid4().hex}"
+        logger.info(
+            "📤 stock_processing_event published: event_id=%s, event_name=%s, trade_date=%s",
+            event_id,
+            event_name,
+            payload.get("trade_date"),
+        )
+        self._record_request(True, start_time)
+        return event_id
+
+    async def acquire_job_idempotency(self, job_key: str, ttl_seconds: int) -> bool:
+        """股票域显式幂等入口：尝试抢占任务key。"""
+        now_ts = time.time()
+        entry = self._idempotency_store.get(job_key)
+        if entry and entry.get("expires_at", 0) > now_ts and not entry.get("completed"):
+            return False
+        self._idempotency_store[job_key] = {
+            "expires_at": now_ts + max(int(ttl_seconds), 1),
+            "completed": False,
+            "metadata": None,
+        }
+        return True
+
+    async def mark_job_completed(self, job_key: str, metadata: Optional[Dict[str, Any]] = None) -> None:
+        """股票域显式幂等入口：标记任务完成。"""
+        entry = self._idempotency_store.get(job_key) or {}
+        entry["completed"] = True
+        entry["metadata"] = metadata or {}
+        entry.setdefault("expires_at", time.time() + 3600)
+        self._idempotency_store[job_key] = entry
+
+    async def record_dead_letter(self, event_name: str, payload: Dict[str, Any], reason: str) -> str:
+        """股票域显式死信记录入口。"""
+        dead_letter_id = f"dlq-{uuid4().hex}"
+        logger.warning(
+            "☠️ stock_processing_dead_letter: id=%s event=%s reason=%s trade_date=%s",
+            dead_letter_id,
+            event_name,
+            reason,
+            payload.get("trade_date"),
+        )
+        return dead_letter_id
+
+    async def get_stock_daily_snapshot_by_trade_date(self, trade_date) -> List[Dict[str, Any]]:
+        """按交易日读取 stock_daily_snapshot。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_stock_daily_snapshot_by_trade_date(trade_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 stock_daily_snapshot 失败 trade_date={trade_date}: {e}")
+            raise
     
     async def get_theme_by_code(self, code: str) -> Optional[ThemeRecord]:
         """获取主题（按code）"""
@@ -345,8 +585,6 @@ class DatabaseGateway:
                 from database_service.interface import ThemeTags
                 updates['tags'] = ThemeTags.from_dict(updates['tags'])
             
-            # 修改前: result = await self._client._db.update_theme(theme_id, updates)
-            # 修改后: 直接调用客户端方法
             if hasattr(self._client, 'update_theme'):
                 result = await self._client.update_theme(theme_id, updates)
             else:
@@ -387,8 +625,6 @@ class DatabaseGateway:
         """根据分类代码获取主题"""
         try:
             start_time = time.time()
-            # 修改前: result = await self._client._db.get_themes_by_category(category_code, level, limit)
-            # 修改后: 直接调用客户端方法
             if hasattr(self._client, 'get_themes_by_category'):
                 result = await self._client.get_themes_by_category(category_code, level, limit)
             else:
@@ -405,8 +641,6 @@ class DatabaseGateway:
         """获取热度较高的主题"""
         try:
             start_time = time.time()
-            # 修改前: result = await self._client._db.get_themes_by_heat_level(min_heat, limit)
-            # 修改后: 直接调用客户端方法
             if hasattr(self._client, 'get_themes_by_heat_level'):
                 result = await self._client.get_themes_by_heat_level(min_heat, limit)
             else:
@@ -505,8 +739,6 @@ class DatabaseGateway:
         """搜索主题"""
         try:
             start_time = time.time()
-            # 修改前: result = await self._client._db.search_themes(query, limit)
-            # 修改后: 直接调用客户端方法
             if hasattr(self._client, 'search_themes'):
                 result = await self._client.search_themes(query, limit)
             else:
@@ -749,7 +981,7 @@ class DatabaseGateway:
     async def get_cache_stats(self) -> Dict[str, Any]:
         """获取缓存统计"""
         try:
-            if hasattr(self._client._db, 'get_cache_stats'):
+            if hasattr(self._client, 'get_cache_stats'):
                 return await self._client.get_cache_stats()
             return {'enabled': False, 'message': '缓存未启用'}
         except Exception as e:
@@ -769,7 +1001,7 @@ class DatabaseGateway:
     async def clear_cache(self, pattern: str = "*") -> int:
         """清除缓存"""
         try:
-            if hasattr(self._client._db, 'clear_cache'):
+            if hasattr(self._client, 'clear_cache'):
                 count = await self._client.clear_cache(pattern)
                 logger.info(f"✅ 清除缓存: {pattern} ({count}个键)")
                 return count

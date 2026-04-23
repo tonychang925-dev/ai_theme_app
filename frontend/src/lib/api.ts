@@ -40,6 +40,51 @@ export interface IntelFeedEvent {
   cursor?: string;
 }
 
+export interface StrongStockWatchItem {
+  trade_date: string;
+  stock_id: string;
+  stock_name: string;
+  subject_key?: string | null;
+  theme_name?: string | null;
+  watch_status: string;
+  watch_score?: number | null;
+  watch_priority?: number | null;
+  relay_role?: string | null;
+  pool_entry_type?: string | null;
+  cycle_state?: string | null;
+  mainline_strength_score?: number | null;
+  fade_watch?: boolean;
+  fade_confirmed?: boolean;
+  promoted_to_candidate?: boolean;
+  support_type?: string | null;
+  support_level?: number | null;
+  support_score?: number | null;
+  watch_start_date?: string | null;
+  last_trade_date?: string | null;
+  watch_window_days?: number | null;
+  pct_chg?: number | null;
+  current_flag?: number | null;
+  turnover_rate?: number | null;
+  main_net_inflow?: number | null;
+  selected_reason?: string;
+  labels_json?: Record<string, unknown>;
+  evidence_json?: Record<string, unknown>;
+}
+
+export interface StrongStockWatchView {
+  date_from: string;
+  date_to: string;
+  window_days: number;
+  latest_per_stock?: boolean;
+  include_removed?: boolean;
+  count: number;
+  items: StrongStockWatchItem[];
+  diagnostics?: {
+    partial: boolean;
+    source: string;
+  };
+}
+
 export interface ThemeWorkspaceView {
   subject_key: string;
   trade_date?: string | null;
@@ -212,6 +257,43 @@ export async function fetchIntelFeed(params: {
   } catch (error) {
     const message = error instanceof Error ? error.message : "unknown error";
     throw new Error(`intel feed request failed: ${message}`);
+  }
+}
+
+export async function fetchStrongStockWatch(params: {
+  date?: string;
+  windowDays?: number;
+  limit?: number;
+  latestPerStock?: boolean;
+  includeRemoved?: boolean;
+  stockId?: string;
+}): Promise<StrongStockWatchView> {
+  const query = new URLSearchParams();
+  if (params.date) query.set("date", params.date);
+  if (params.windowDays) query.set("window_days", String(params.windowDays));
+  if (params.limit) query.set("limit", String(params.limit));
+  if (params.latestPerStock !== undefined) query.set("latest_per_stock", String(params.latestPerStock));
+  if (params.includeRemoved !== undefined) query.set("include_removed", String(params.includeRemoved));
+  if (params.stockId) query.set("stock_id", params.stockId);
+
+  try {
+    const url = `/api/intel/strong-stocks/watch?${query.toString()}`;
+    const getResp = await fetch(url, { method: "GET" });
+    if (getResp.ok) {
+      return (await getResp.json()) as StrongStockWatchView;
+    }
+    if (getResp.status === 405) {
+      // 兼容旧网关/旧BFF仅放行POST的场景
+      const postResp = await fetch(url, { method: "POST" });
+      if (postResp.ok) {
+        return (await postResp.json()) as StrongStockWatchView;
+      }
+      throw new Error(`request failed: ${postResp.status}`);
+    }
+    throw new Error(`request failed: ${getResp.status}`);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "unknown error";
+    throw new Error(`strong stock watch request failed: ${message}`);
   }
 }
 

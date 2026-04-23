@@ -1,0 +1,52 @@
+{
+  "phase": "P3",
+  "generated_at": "2026-04-23T16:15:00+08:00",
+  "summary": {
+    "total_items": 6,
+    "passed": 5,
+    "failed": 0,
+    "doing": 0,
+    "todo": 1,
+    "gate_ready": false
+  },
+  "items": [
+    {
+      "id": "P3.phase0-T01",
+      "name": "D1 Workspace Guard",
+      "result": "passed",
+      "evidence": "tmp/p3_d1_workspace_guard_report.json",
+      "strict_exit_code": 0
+    },
+    {
+      "id": "P3.phase1-T05",
+      "name": "Boundary Gate Script",
+      "result": "passed",
+      "evidence": "tmp/p3_phase1_t05_boundary_report.json"
+    },
+    {
+      "id": "P3.phase1-T02",
+      "name": "DatabaseGateway API Freeze",
+      "result": "passed",
+      "evidence": "database_service/gateway.py"
+    },
+    {
+      "id": "P3.phase1-T06",
+      "name": "Gateway Adapter Upgrade",
+      "result": "passed",
+      "evidence": "stock_processing_service/tests/test_gateway_adapters.py",
+      "test_result": "4 passed"
+    },
+    {
+      "id": "P3.phase1-T07",
+      "name": "execute_query Business Path Close",
+      "result": "passed",
+      "evidence": "tmp/p3_phase1_t07_execute_query_gate_report.json",
+      "strict_exit_code": 0
+    },
+    {
+      "id": "P3.phase1-T12",
+      "name": "Closed Loop Replay",
+      "result": "todo"
+    }
+  ]
+}

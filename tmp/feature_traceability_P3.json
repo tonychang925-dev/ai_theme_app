@@ -1,0 +1,73 @@
+{
+  "phase": "P3",
+  "generated_at": "2026-04-23T16:15:00+08:00",
+  "source_docs": [
+    "docs/project_control/PLAN_WBS.md",
+    "docs/project_control/FEATURE_SPEC_P3.md",
+    "docs/project_control/ACCEPTANCE.md"
+  ],
+  "mappings": [
+    {
+      "wbs_id": "P3.phase0-T01",
+      "feature_id": "P3-FEAT-D1",
+      "acceptance_ids": ["ACPT-P3-001"],
+      "evidence": [
+        "tmp/p3_d1_workspace_guard_report.json",
+        "scripts/p3_d1_workspace_guard.py"
+      ],
+      "status": "done"
+    },
+    {
+      "wbs_id": "P3.phase1-T05",
+      "feature_id": "P3-FEAT-BOUNDARY-GATE",
+      "acceptance_ids": ["ACPT-P3P10-001"],
+      "evidence": [
+        "scripts/ci/check_sps_boundaries.py",
+        "tmp/p3_phase1_t05_boundary_report.json"
+      ],
+      "status": "done"
+    },
+    {
+      "wbs_id": "P3.phase1-T02",
+      "feature_id": "P3-FEAT-GW-API-FREEZE",
+      "acceptance_ids": ["ACPT-P3B-012", "ACPT-P3B-019"],
+      "evidence": [
+        "database_service/gateway.py",
+        "database_service/managers/postgres_manager.py"
+      ],
+      "status": "done"
+    },
+    {
+      "wbs_id": "P3.phase1-T06",
+      "feature_id": "P3-FEAT-GW-UPGRADE",
+      "acceptance_ids": ["ACPT-P3B-019"],
+      "evidence": [
+        "stock_processing_service/infrastructure/gateway_adapters/db_market_data_gateway.py",
+        "stock_processing_service/infrastructure/gateway_adapters/db_stock_object_gateway.py",
+        "stock_processing_service/infrastructure/gateway_adapters/db_theme_data_gateway.py",
+        "stock_processing_service/infrastructure/gateway_adapters/redis_cache_gateway.py",
+        "stock_processing_service/infrastructure/gateway_adapters/redis_event_bus_gateway.py",
+        "stock_processing_service/application/use_cases/build_strong_stock_tracking.py",
+        "stock_processing_service/tests/test_gateway_adapters.py"
+      ],
+      "status": "done"
+    },
+    {
+      "wbs_id": "P3.phase1-T07",
+      "feature_id": "P3-FEAT-EXECUTE-QUERY-CLOSE",
+      "acceptance_ids": ["ACPT-P3B-020"],
+      "evidence": [
+        "scripts/ci/check_no_execute_query.py",
+        "tmp/p3_phase1_t07_execute_query_gate_report.json"
+      ],
+      "status": "done"
+    },
+    {
+      "wbs_id": "P3.phase1-T12",
+      "feature_id": "P3-FEAT-STREAM-CLOSED-LOOP",
+      "acceptance_ids": ["ACPT-P3B-021"],
+      "status": "todo"
+    }
+  ],
+  "gaps": []
+}

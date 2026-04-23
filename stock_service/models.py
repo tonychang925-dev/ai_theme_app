@@ -93,6 +93,29 @@ class ThemeMainlineJudgement:
 
 
 @dataclass(frozen=True)
+class ThemeMainlineStateV2:
+    trade_date: str
+    subject_key: str
+    theme_name: str
+    mainline_alive: bool
+    mainline_bucket: str
+    event_count_3d: float
+    event_continuity_score: float
+    confidence_score: float
+    mainline_strength_score: float
+    limit_up_count: int
+    final_cycle_state: str
+    fade_risk_score: float = 0.0
+    conclusion: str = ""
+    rule_reasons: List[str] = field(default_factory=list)
+    source_type: str = "theme_cycle_judgement_v2"
+    source_trace_id: str = ""
+    source_trace: Dict[str, Any] = field(default_factory=dict)
+    source_version: str = "theme_cycle_judgement.v2"
+    rule_version: str = "theme_cycle_judgement.v2"
+
+
+@dataclass(frozen=True)
 class ThemeCycleJudgement:
     trade_date: str
     subject_key: str
@@ -287,6 +310,7 @@ class AuctionWatchUniverse:
     subject_key: str
     theme_name: str
     theme_tier: str
+    mainline_alive: bool
     primary_cycle_stage: str
     action_bias: str
     role_label: str
@@ -414,6 +438,10 @@ class MarketEnvironmentMetrics:
     market_volume_change_pct: float
     market_avg_open_pct: float
     market_avg_close_pct: float
+    market_total_amount: float = 0.0
+    shanghai_index_pct_chg: float = 0.0
+    open_close_pullback_count: int = 0
+    open_close_pullback_ratio: float = 0.0
     source_type: str = "p3.phase3.market_environment_metrics"
     source_trace_id: str = ""
     source_trace: Dict[str, Any] = field(default_factory=dict)

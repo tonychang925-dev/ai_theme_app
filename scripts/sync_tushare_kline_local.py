@@ -92,6 +92,28 @@ def _write_progress(path: Path, completed: set[str], skipped: set[str]) -> None:
     )
 
 
+def _read_last_trade_date(path: Path) -> str:
+    if not path.exists():
+        return ""
+    last = ""
+    try:
+        with path.open("r", encoding="utf-8", errors="ignore") as handle:
+            for line in handle:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    row = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                trade_date = str(row.get("trade_date") or "")
+                if trade_date:
+                    last = trade_date
+    except Exception:
+        return ""
+    return last
+
+
 def main() -> int:
     args = build_parser().parse_args()
     if not args.token:
@@ -132,18 +154,31 @@ def main() -> int:
     for stock_id in universe:
         attempted += 1
         target_path = store.daily_bar_dir / f"{stock_id}.jsonl"
-        if args.resume and not explicit_date_range and stock_id in completed:
+        last_trade_date = _read_last_trade_date(target_path) if target_path.exists() else ""
+        file_uptodate = bool(last_trade_date and last_trade_date >= end_date)
+        if args.resume and not explicit_date_range and stock_id in completed and file_uptodate:
             if attempted <= 5 or attempted % 200 == 0:
-                print(f"[SKIP] attempted={attempted}/{len(universe)} stock_id={stock_id} reason=resume_completed")
+                print(
+                    f"[SKIP] attempted={attempted}/{len(universe)} stock_id={stock_id} "
+                    f"reason=resume_completed_uptodate last_trade_date={last_trade_date}"
+                )
             continue
-        if args.skip_existing and target_path.exists() and not explicit_date_range:
+        if args.skip_existing and target_path.exists() and not explicit_date_range and file_uptodate:
             skipped_existing += 1
             skipped.add(stock_id)
             if attempted <= 5 or attempted % 200 == 0:
-                print(f"[SKIP] attempted={attempted}/{len(universe)} stock_id={stock_id} reason=existing_file")
+                print(
+                    f"[SKIP] attempted={attempted}/{len(universe)} stock_id={stock_id} "
+                    f"reason=existing_file_uptodate last_trade_date={last_trade_date}"
+                )
             if args.resume:
                 _write_progress(progress_path, completed, skipped)
             continue
+        if target_path.exists() and not file_uptodate and (attempted <= 5 or attempted % 200 == 0):
+            print(
+                f"[REFRESH] attempted={attempted}/{len(universe)} stock_id={stock_id} "
+                f"reason=stale_file last_trade_date={last_trade_date or 'none'} target_end_date={end_date}"
+            )
         frame = None
         for attempt in range(args.max_rate_limit_retries + 1):
             try:

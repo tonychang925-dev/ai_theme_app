@@ -115,15 +115,16 @@ async def run_check(trade_date: date, dsn: str, latency_threshold_ms: int) -> Ch
         if available_snapshot_stocks <= 0:
             warnings.append("No stock snapshots found for trade_date.")
 
-        # 3) 板块联动可用性
+        # 3) 主线周期联动可用性（统一口径：v2）
         plate_sql = """
         SELECT COUNT(*)
-        FROM theme_mainline_judgement
+        FROM theme_cycle_judgement_v2
         WHERE trade_date = $1::date
+          AND COALESCE(final_mainline_alive, FALSE) = TRUE
         """
         plate_count = await _fetch_count(conn, plate_sql, trade_date)
         if plate_count <= 0:
-            warnings.append("No theme_mainline_judgement records for trade_date.")
+            warnings.append("No mainline-alive rows in theme_cycle_judgement_v2 for trade_date.")
 
         # 4) 简化 data_status 统计（P0阶段，按数据面分层）
         # 说明：

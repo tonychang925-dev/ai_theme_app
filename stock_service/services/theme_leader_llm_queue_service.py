@@ -3,7 +3,6 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 
-ELIGIBLE_THEME_TIERS = {"main", "strong_branch"}
 ELIGIBLE_CYCLE_STAGES = {"start", "fermentation", "divergence", "rebound"}
 TRADE_FOCUS_ACTIONS = {"主做", "关注弱转强", "可主做", "可做弱转强"}
 UNCONFIRMED_LEADER_STATUSES = {"", "当日领涨候选", "待确认龙头"}
@@ -14,7 +13,7 @@ class ThemeLeaderLlmQueueInput:
     trade_date: str
     subject_key: str
     theme_name: str
-    theme_tier: str
+    mainline_bucket: str
     primary_cycle_stage: str
     leader_status: str
     action_bias: str
@@ -26,6 +25,10 @@ class ThemeLeaderLlmQueueInput:
     second_is_limit_up: bool
     top_role_label: str = ""
     second_role_label: str = ""
+    mainline_alive: bool = False
+    mainline_strength_score: float = 0.0
+    fade_watch: bool = False
+    fade_confirmed: bool = False
 
 
 @dataclass(frozen=True)
@@ -33,7 +36,7 @@ class ThemeLeaderLlmQueueDecision:
     trade_date: str
     subject_key: str
     theme_name: str
-    theme_tier: str
+    mainline_bucket: str
     primary_cycle_stage: str
     need_llm_judgement: bool
     is_trade_focus: bool
@@ -46,11 +49,18 @@ class ThemeLeaderLlmQueueDecision:
 
 class ThemeLeaderLlmQueueService:
     def evaluate(self, item: ThemeLeaderLlmQueueInput) -> ThemeLeaderLlmQueueDecision:
-        theme_tier = str(item.theme_tier or "").strip()
+        mainline_bucket = (
+            "main"
+            if bool(item.mainline_alive) and float(item.mainline_strength_score or 0.0) >= 75.0
+            else "strong_branch"
+            if bool(item.mainline_alive)
+            else "inactive"
+        )
         cycle_stage = str(item.primary_cycle_stage or "").strip()
         leader_status = str(item.leader_status or "").strip()
         action_bias = str(item.action_bias or "").strip()
         top_role_label = str(item.top_role_label or "").strip()
+        mainline_strength = float(item.mainline_strength_score or 0.0)
 
         is_trade_focus = action_bias in TRADE_FOCUS_ACTIONS or cycle_stage in {"divergence", "rebound"}
 
@@ -58,16 +68,28 @@ class ThemeLeaderLlmQueueService:
         priority = 0
         has_decision_conflict = False
 
-        if theme_tier not in ELIGIBLE_THEME_TIERS:
-            reasons.append("非主线/强分支，不进入龙头 LLM 裁决")
+        if not bool(item.mainline_alive):
+            reasons.append("主线未存活，不进入龙头 LLM 裁决")
+        elif bool(item.fade_confirmed):
+            reasons.append("主线退潮已确认，不进入龙头 LLM 裁决")
         elif cycle_stage not in ELIGIBLE_CYCLE_STAGES:
             reasons.append("非启动/发酵/分歧/弱转强阶段，不进入龙头 LLM 裁决")
         elif item.candidate_count <= 0:
             reasons.append("缺少候选股，不进入龙头 LLM 裁决")
         else:
-            priority += 200 if theme_tier == "main" else 120
+            if mainline_strength >= 80:
+                priority += 200
+                reasons.append("主线强度高，优先级提升")
+            elif mainline_strength >= 65:
+                priority += 150
+                reasons.append("主线强度中高，纳入优先队列")
+            else:
+                priority += 110
             if is_trade_focus:
                 priority += 20
+            if bool(item.fade_watch):
+                priority -= 20
+                reasons.append("处于退潮观察，优先级下调")
 
             if cycle_stage == "divergence":
                 priority += 70
@@ -110,7 +132,8 @@ class ThemeLeaderLlmQueueService:
                 has_decision_conflict = True
 
         need_llm_judgement = (
-            theme_tier in ELIGIBLE_THEME_TIERS
+            bool(item.mainline_alive)
+            and not bool(item.fade_confirmed)
             and cycle_stage in ELIGIBLE_CYCLE_STAGES
             and item.candidate_count > 0
             and has_decision_conflict
@@ -121,7 +144,7 @@ class ThemeLeaderLlmQueueService:
             trade_date=item.trade_date,
             subject_key=item.subject_key,
             theme_name=item.theme_name,
-            theme_tier=theme_tier,
+            mainline_bucket=mainline_bucket,
             primary_cycle_stage=cycle_stage,
             need_llm_judgement=need_llm_judgement,
             is_trade_focus=is_trade_focus,

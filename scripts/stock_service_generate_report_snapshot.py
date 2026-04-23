@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -35,11 +36,24 @@ def build_parser() -> argparse.ArgumentParser:
         default="stock_data_test",
         help="Target database name",
     )
+    parser.add_argument(
+        "--skip-legacy-entrypoint-gate",
+        action="store_true",
+        help="Skip legacy cycle entrypoint gate (for temporary diagnostics only)",
+    )
     return parser
 
 
 async def main_async() -> int:
     args = build_parser().parse_args()
+    if not args.skip_legacy_entrypoint_gate:
+        gate_cmd = [
+            sys.executable,
+            str(PROJECT_ROOT / "stock_service" / "scripts" / "check_legacy_cycle_entrypoints.py"),
+        ]
+        subprocess.run(gate_cmd, cwd=str(PROJECT_ROOT), check=True)
+    else:
+        print("[SKIP] legacy_cycle_entrypoint_gate (--skip-legacy-entrypoint-gate enabled)")
     config = StockServiceConfig(postgres_database=args.postgres_database)
     repo = ReportRepository(config)
     await repo.initialize()

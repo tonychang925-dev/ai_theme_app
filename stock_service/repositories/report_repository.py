@@ -30,6 +30,20 @@ def _coerce_json_list(value) -> list:
     return list(value) if hasattr(value, "__iter__") else []
 
 
+def _coerce_json_object(value) -> dict:
+    if value is None:
+        return {}
+    if isinstance(value, dict):
+        return value
+    if isinstance(value, str):
+        try:
+            parsed = json.loads(value)
+            return parsed if isinstance(parsed, dict) else {}
+        except Exception:
+            return {}
+    return {}
+
+
 class ReportRepository:
     def __init__(self, config: StockServiceConfig):
         self.config = config
@@ -51,6 +65,49 @@ class ReportRepository:
         if self.pool is not None:
             await self.pool.close()
             self.pool = None
+
+    async def fetch_theme_name_map(self, subject_keys: list[str]) -> dict[str, str]:
+        keys = sorted({str(key).strip() for key in subject_keys if str(key).strip()})
+        if not keys:
+            return {}
+        sql = """
+        WITH keys AS (
+            SELECT unnest($1::text[]) AS subject_key
+        )
+        SELECT
+            k.subject_key,
+            COALESCE(
+                CASE
+                    WHEN NULLIF(BTRIM(v.theme_name), '') IS NULL THEN NULL
+                    WHEN BTRIM(v.theme_name) ~ '^[0-9]+$' THEN NULL
+                    ELSE BTRIM(v.theme_name)
+                END,
+                CASE
+                    WHEN NULLIF(BTRIM(tm.name), '') IS NULL THEN NULL
+                    WHEN BTRIM(tm.name) ~ '^[0-9]+$' THEN NULL
+                    ELSE BTRIM(tm.name)
+                END,
+                k.subject_key
+            ) AS theme_name
+        FROM keys k
+        LEFT JOIN vw_subject_theme_binding v
+          ON v.subject_key = k.subject_key
+        LEFT JOIN theme_master tm
+          ON COALESCE(NULLIF(tm.source_id, ''), 'theme:' || tm.id::text) = k.subject_key
+        """
+        assert self.pool is not None
+        try:
+            async with self.pool.acquire() as conn:
+                rows = await conn.fetch(sql, keys)
+        except asyncpg.UndefinedTableError:
+            return {}
+        result: dict[str, str] = {}
+        for row in rows:
+            item = dict(row)
+            theme_name = str(item.get("theme_name") or "").strip()
+            if theme_name:
+                result[str(item["subject_key"])] = theme_name
+        return result
 
     async def fetch_jyhf_events(self, trade_date: str, limit: int = 50):
         sql = """
@@ -150,31 +207,32 @@ class ReportRepository:
     async def fetch_mainline_judgements(self, trade_date: str, limit: int = 30):
         sql = """
         SELECT
-            subject_key,
-            theme_name,
-            event_chain_score,
-            event_chain_continuity_score,
-            market_recognition_score,
-            mainline_stability_score,
-            is_main_theme,
-            theme_tier,
-            limit_up_count,
-            conclusion,
-            source_type,
-            source_trace_id,
-            source_trace,
-            source_version,
-            rule_version
-        FROM theme_mainline_judgement
-        WHERE trade_date = $1::date
+            v2.subject_key,
+            COALESCE(NULLIF(BTRIM(v2.theme_name), ''), v2.subject_key) AS theme_name,
+            COALESCE(msd.state, v2.final_cycle_state) AS final_cycle_state,
+            COALESCE(msd.is_mainline, v2.final_mainline_alive, FALSE) AS final_mainline_alive,
+            COALESCE(msd.mainline_strength_score, v2.mainline_strength_score, 0) AS mainline_strength_score,
+            v2.fade_risk_score,
+            v2.fade_watch,
+            v2.fade_confirmed,
+            v2.confidence_score,
+            e.event_count_3d,
+            e.event_count_7d,
+            e.limit_up_count
+        FROM theme_cycle_judgement_v2 v2
+        JOIN mainline_state_daily msd
+          ON msd.trade_date = v2.trade_date
+         AND msd.subject_key = v2.subject_key
+        LEFT JOIN theme_cycle_evidence_daily e
+          ON e.trade_date = v2.trade_date
+         AND e.subject_key = v2.subject_key
+        WHERE v2.trade_date = $1::date
+          AND COALESCE(msd.is_mainline, FALSE) = TRUE
+          AND COALESCE(msd.state, '') <> 'fade_confirmed'
         ORDER BY
-            CASE theme_tier
-                WHEN 'main' THEN 0
-                WHEN 'strong_branch' THEN 1
-                ELSE 2
-            END,
-            (event_chain_score + market_recognition_score + mainline_stability_score) DESC,
-            subject_key
+            COALESCE(msd.mainline_strength_score, v2.mainline_strength_score, 0) DESC,
+            COALESCE(v2.confidence_score, 0) DESC,
+            v2.subject_key
         LIMIT $2
         """
         assert self.pool is not None
@@ -186,30 +244,48 @@ class ReportRepository:
     async def fetch_cycle_judgements(self, trade_date: str, limit: int = 30):
         sql = """
         SELECT
-            subject_key,
-            theme_name,
-            is_main_theme,
-            primary_cycle_stage,
-            limit_up_count,
-            leader_status,
-            board_effect_status,
-            action_bias,
-            confidence,
-            conclusion,
-            source_type,
-            source_trace_id,
-            source_trace,
-            source_version,
-            rule_version
-        FROM theme_cycle_judgement
-        WHERE trade_date = $1::date
+            v2.subject_key,
+            COALESCE(NULLIF(BTRIM(v2.theme_name), ''), v2.subject_key) AS theme_name,
+            (
+                COALESCE(msd.is_mainline, FALSE)
+                AND COALESCE(msd.state, '') <> 'fade_confirmed'
+            ) AS is_main_theme,
+            COALESCE(NULLIF(BTRIM(msd.state), ''), NULLIF(BTRIM(v2.final_cycle_state), ''), 'unknown') AS primary_cycle_stage,
+            COALESCE(e.limit_up_count, 0) AS limit_up_count,
+            ''::text AS leader_status,
+            ''::text AS board_effect_status,
+            CASE
+                WHEN COALESCE(v2.fade_confirmed, FALSE) THEN '观望'
+                WHEN COALESCE(v2.final_cycle_state, '') IN ('climax', '高潮') THEN '警惕高潮'
+                WHEN COALESCE(v2.final_cycle_state, '') IN ('fermentation', '发酵', 'start', '启动') THEN '可主做'
+                WHEN COALESCE(v2.final_cycle_state, '') IN ('repair', '修复', 'divergence', '分歧', 'rebound', '回流') THEN '可做弱转强'
+                ELSE '可观察'
+            END AS action_bias,
+            COALESCE(v2.confidence_score, 0) AS confidence,
+            COALESCE(NULLIF(BTRIM(v2.state_transition_reason), ''), '') AS conclusion,
+            'theme_cycle_judgement_v2'::text AS source_type,
+            ''::text AS source_trace_id,
+            '{}'::jsonb AS source_trace,
+            COALESCE(NULLIF(BTRIM(v2.source_version), ''), 'theme_cycle_judgement.v2') AS source_version,
+            COALESCE(NULLIF(BTRIM(v2.state_machine_version), ''), 'theme_cycle_judgement.v2') AS rule_version
+        FROM theme_cycle_judgement_v2 v2
+        LEFT JOIN mainline_state_daily msd
+          ON msd.trade_date = v2.trade_date
+         AND msd.subject_key = v2.subject_key
+        LEFT JOIN theme_cycle_evidence_daily e
+          ON e.trade_date = v2.trade_date
+         AND e.subject_key = v2.subject_key
+        WHERE v2.trade_date = $1::date
         ORDER BY
             CASE
-                WHEN is_main_theme THEN 0
+                WHEN (
+                    COALESCE(msd.is_mainline, FALSE)
+                    AND COALESCE(msd.state, '') <> 'fade_confirmed'
+                ) THEN 0
                 ELSE 1
             END,
-            confidence DESC,
-            subject_key
+            COALESCE(v2.confidence_score, 0) DESC,
+            v2.subject_key
         LIMIT $2
         """
         assert self.pool is not None
@@ -217,6 +293,41 @@ class ReportRepository:
         async with self.pool.acquire() as conn:
             rows = await conn.fetch(sql, trade_date_value, limit)
         return [dict(r) for r in rows]
+
+    async def fetch_mainline_state_transitions(self, trade_date: str, limit: int = 40):
+        sql = """
+        SELECT
+            subject_key,
+            COALESCE(NULLIF(BTRIM(theme_name), ''), subject_key) AS theme_name,
+            COALESCE(NULLIF(BTRIM(from_state), ''), '--') AS from_state,
+            COALESCE(NULLIF(BTRIM(to_state), ''), '--') AS to_state,
+            COALESCE(NULLIF(BTRIM(transition_type), ''), 'flat') AS transition_type,
+            COALESCE(confidence, 0) AS confidence,
+            COALESCE(trigger_flags, '[]'::jsonb) AS trigger_flags
+        FROM mainline_state_transition
+        WHERE trade_date = $1::date
+        ORDER BY
+            CASE COALESCE(NULLIF(BTRIM(transition_type), ''), 'flat')
+                WHEN 'fade' THEN 0
+                WHEN 'downgrade' THEN 1
+                WHEN 'upgrade' THEN 2
+                ELSE 3
+            END,
+            COALESCE(confidence, 0) DESC,
+            subject_key
+        LIMIT $2
+        """
+        assert self.pool is not None
+        trade_date_value = _coerce_trade_date(trade_date)
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date_value, limit)
+
+        results = []
+        for row in rows:
+            item = dict(row)
+            item["trigger_flags"] = _coerce_json_list(item.get("trigger_flags"))
+            results.append(item)
+        return results
 
     async def fetch_theme_recent_rank_stats(self, trade_date: str, lookback_days: int = 5):
         sql = """
@@ -501,7 +612,13 @@ class ReportRepository:
             results.append(item)
         return results
 
-    async def fetch_stock_abnormal_signals(self, trade_date: str, limit: int = 120):
+    async def fetch_stock_abnormal_signals(
+        self,
+        trade_date: str,
+        limit: int = 120,
+        min_composite_score: float = 60.0,
+        max_main_net_rank: int = 2,
+    ):
         sql = """
         SELECT
             a.trade_date,
@@ -553,19 +670,85 @@ class ReportRepository:
          AND s.subject_key = a.subject_key
          AND split_part(s.stock_id, '.', 1) = split_part(a.stock_id, '.', 1)
         WHERE a.trade_date = $1::date
+          AND split_part(a.stock_id, '.', 1) NOT LIKE '688%'
+          AND UPPER(COALESCE(a.stock_name, '')) NOT LIKE 'ST%'
+          AND UPPER(COALESCE(a.stock_name, '')) NOT LIKE '*ST%'
+          AND COALESCE(a.abnormal_composite_score, 0) >= $3::numeric
+          AND (
+            (COALESCE(a.main_net_inflow_rank_in_theme, 0) > 0 AND COALESCE(a.main_net_inflow_rank_in_theme, 0) <= $4::int)
+            OR COALESCE(a.has_institution_buy, FALSE)
+            OR COALESCE(a.has_hot_money_buy, FALSE)
+            OR COALESCE(a.has_tail_rush_buy, FALSE)
+          )
         ORDER BY a.abnormal_composite_score DESC, a.theme_name ASC, a.stock_id ASC
         LIMIT $2
         """
         assert self.pool is not None
         trade_date_value = _coerce_trade_date(trade_date)
         async with self.pool.acquire() as conn:
-            rows = await conn.fetch(sql, trade_date_value, limit)
+            rows = await conn.fetch(
+                sql,
+                trade_date_value,
+                limit,
+                float(min_composite_score),
+                int(max_main_net_rank),
+            )
         results = []
         for row in rows:
             item = dict(row)
             item["hot_money_buy_names"] = _coerce_json_list(item.get("hot_money_buy_names"))
             item["abnormal_labels"] = _coerce_json_list(item.get("abnormal_labels"))
             item["evidence"] = _coerce_json_list(item.get("evidence"))
+            results.append(item)
+        return results
+
+    async def fetch_strong_stock_watch_history(self, trade_date: str, lookback_days: int = 7, limit: int = 120):
+        sql = """
+        SELECT
+            h.trade_date,
+            h.stock_id,
+            h.stock_name,
+            h.subject_key,
+            h.theme_name,
+            h.watch_status,
+            h.watch_score,
+            h.watch_priority,
+            h.relay_role,
+            h.pool_entry_type,
+            h.cycle_state,
+            h.mainline_strength_score,
+            h.fade_watch,
+            h.fade_confirmed,
+            h.promoted_to_candidate,
+            h.labels_json,
+            h.evidence_json,
+            a.turnover_rate,
+            a.abnormal_composite_score,
+            s.pct_chg,
+            COALESCE(NULLIF(s.raw_json->>35, ''), '0')::numeric AS main_net_inflow
+        FROM strong_stock_watch_history h
+        LEFT JOIN stock_abnormal_signal a
+          ON a.trade_date = h.trade_date
+         AND split_part(a.stock_id, '.', 1) = split_part(h.stock_id, '.', 1)
+        LEFT JOIN subject_stock_daily_snapshot s
+          ON s.trade_date = h.trade_date
+         AND split_part(s.stock_id, '.', 1) = split_part(h.stock_id, '.', 1)
+        WHERE h.trade_date BETWEEN ($1::date - (($2::int - 1) * INTERVAL '1 day')) AND $1::date
+        ORDER BY h.trade_date DESC, h.watch_score DESC, h.watch_priority DESC, h.stock_id ASC
+        LIMIT $3
+        """
+        assert self.pool is not None
+        trade_date_value = _coerce_trade_date(trade_date)
+        try:
+            async with self.pool.acquire() as conn:
+                rows = await conn.fetch(sql, trade_date_value, lookback_days, limit)
+        except asyncpg.UndefinedTableError:
+            return []
+        results = []
+        for row in rows:
+            item = dict(row)
+            item["labels_json"] = _coerce_json_object(item.get("labels_json"))
+            item["evidence_json"] = _coerce_json_object(item.get("evidence_json"))
             results.append(item)
         return results
 
@@ -588,27 +771,48 @@ class ReportRepository:
 
     async def fetch_theme_capital_flow_top(self, trade_date: str, limit: int = 10):
         sql = """
-        WITH base AS (
+        WITH mainline AS MATERIALIZED (
+            SELECT
+                v2.trade_date,
+                v2.subject_key,
+                COALESCE(NULLIF(BTRIM(v2.theme_name), ''), v2.subject_key) AS theme_name,
+                COALESCE(msd.state, v2.final_cycle_state) AS final_cycle_state,
+                COALESCE(msd.mainline_strength_score, v2.mainline_strength_score, 0) AS mainline_strength_score
+            FROM theme_cycle_judgement_v2 v2
+            JOIN mainline_state_daily msd
+              ON msd.trade_date = v2.trade_date
+             AND msd.subject_key = v2.subject_key
+            WHERE v2.trade_date = $1::date
+              AND COALESCE(msd.is_mainline, FALSE) = TRUE
+              AND COALESCE(msd.state, '') <> 'fade_confirmed'
+        ),
+        snapshot AS MATERIALIZED (
+            SELECT
+                subject_key,
+                rank_order,
+                is_leader,
+                COALESCE(NULLIF(raw_json->>35, ''), '0')::numeric AS main_net_inflow
+            FROM subject_stock_daily_snapshot
+            WHERE trade_date = $1::date
+        ),
+        base AS (
             SELECT
                 s.subject_key,
-                COALESCE(b.theme_name, s.subject_key) AS theme_name,
-                m.theme_tier,
-                COALESCE(NULLIF(s.raw_json->>35, ''), '0')::numeric AS main_net_inflow,
+                COALESCE(NULLIF(BTRIM(m.theme_name), ''), s.subject_key) AS theme_name,
+                m.final_cycle_state,
+                m.mainline_strength_score,
+                s.main_net_inflow,
                 s.rank_order,
                 s.is_leader
-            FROM subject_stock_daily_snapshot s
-            LEFT JOIN vw_subject_theme_binding b
-              ON b.subject_key = s.subject_key
-            JOIN theme_mainline_judgement m
-              ON m.trade_date = s.trade_date
-             AND m.subject_key = s.subject_key
-            WHERE s.trade_date = $1::date
-              AND m.theme_tier IN ('main', 'strong_branch')
+            FROM mainline m
+            JOIN snapshot s
+              ON m.subject_key = s.subject_key
         )
         SELECT
             subject_key,
             theme_name,
-            theme_tier,
+            final_cycle_state,
+            AVG(mainline_strength_score) AS mainline_strength_score,
             SUM(main_net_inflow) AS main_net_inflow_sum,
             AVG(main_net_inflow) AS main_net_inflow_avg,
             SUM(CASE WHEN main_net_inflow > 0 THEN 1 ELSE 0 END) AS positive_inflow_stock_count,
@@ -617,14 +821,10 @@ class ReportRepository:
             SUM(CASE WHEN rank_order <= 3 THEN main_net_inflow ELSE 0 END) AS top3_main_net_inflow_sum,
             COUNT(*) AS member_count
         FROM base
-        GROUP BY subject_key, theme_name, theme_tier
+        GROUP BY subject_key, theme_name, final_cycle_state
         HAVING SUM(main_net_inflow) > 0
         ORDER BY
-            CASE theme_tier
-                WHEN 'main' THEN 0
-                WHEN 'strong_branch' THEN 1
-                ELSE 2
-            END,
+            AVG(mainline_strength_score) DESC,
             SUM(main_net_inflow) DESC,
             theme_name ASC
         LIMIT $2
@@ -637,27 +837,52 @@ class ReportRepository:
 
     async def fetch_stock_main_net_inflow_top(self, trade_date: str, limit: int = 20):
         sql = """
-        WITH base AS (
+        WITH mainline AS MATERIALIZED (
             SELECT
-                split_part(s.stock_id, '.', 1) AS stock_code,
+                v2.trade_date,
+                v2.subject_key,
+                COALESCE(NULLIF(BTRIM(v2.theme_name), ''), v2.subject_key) AS theme_name,
+                COALESCE(msd.state, v2.final_cycle_state) AS final_cycle_state,
+                COALESCE(msd.mainline_strength_score, v2.mainline_strength_score, 0) AS mainline_strength_score
+            FROM theme_cycle_judgement_v2 v2
+            JOIN mainline_state_daily msd
+              ON msd.trade_date = v2.trade_date
+             AND msd.subject_key = v2.subject_key
+            WHERE v2.trade_date = $1::date
+              AND COALESCE(msd.is_mainline, FALSE) = TRUE
+              AND COALESCE(msd.state, '') <> 'fade_confirmed'
+        ),
+        snapshot AS MATERIALIZED (
+            SELECT
+                split_part(stock_id, '.', 1) AS stock_code,
+                stock_id,
+                stock_name,
+                subject_key,
+                rank_order,
+                pct_chg,
+                is_leader,
+                COALESCE(NULLIF(raw_json->>20, ''), '0')::integer AS current_flag,
+                COALESCE(NULLIF(raw_json->>35, ''), '0')::numeric AS main_net_inflow
+            FROM subject_stock_daily_snapshot
+            WHERE trade_date = $1::date
+        ),
+        base AS (
+            SELECT
+                s.stock_code,
                 s.stock_id,
                 s.stock_name,
                 s.subject_key,
-                COALESCE(b.theme_name, s.subject_key) AS theme_name,
-                m.theme_tier,
+                COALESCE(NULLIF(BTRIM(m.theme_name), ''), s.subject_key) AS theme_name,
+                m.final_cycle_state,
+                m.mainline_strength_score,
                 s.rank_order,
                 s.pct_chg,
                 s.is_leader,
-                COALESCE(NULLIF(s.raw_json->>20, ''), '0')::integer AS current_flag,
-                COALESCE(NULLIF(s.raw_json->>35, ''), '0')::numeric AS main_net_inflow
-            FROM subject_stock_daily_snapshot s
-            LEFT JOIN vw_subject_theme_binding b
-              ON b.subject_key = s.subject_key
-            JOIN theme_mainline_judgement m
-              ON m.trade_date = s.trade_date
-             AND m.subject_key = s.subject_key
-            WHERE s.trade_date = $1::date
-              AND m.theme_tier IN ('main', 'strong_branch')
+                s.current_flag,
+                s.main_net_inflow
+            FROM mainline m
+            JOIN snapshot s
+              ON m.subject_key = s.subject_key
         ),
         ranked AS (
             SELECT
@@ -678,7 +903,8 @@ class ReportRepository:
             stock_name,
             subject_key,
             theme_name,
-            theme_tier,
+            final_cycle_state,
+            mainline_strength_score,
             rank_order,
             pct_chg,
             is_leader,

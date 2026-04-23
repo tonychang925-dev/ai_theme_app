@@ -6,7 +6,7 @@
 
 功能：
 - 配置化采集频率（默认：每5分钟）
-- 支持真实/模拟模式切换
+- 仅支持真实新闻采集
 - 异常处理和重试机制
 - 采集统计和监控
 """
@@ -32,8 +32,7 @@ except Exception:
 class CollectionMode(Enum):
     """采集模式枚举"""
     REAL = "real"      # 真实新闻采集
-    MOCK = "mock"      # 模拟新闻生成
-    AUTO = "auto"      # 自动选择（优先真实，失败时降级）
+    AUTO = "auto"      # 自动选择（仅真实，不再降级到模拟）
 
 
 class RealTimeNewsCollector:
@@ -64,10 +63,16 @@ class RealTimeNewsCollector:
         self.collection_interval = self.config.get("collection_interval", 300)  # 默认5分钟（秒）
         self.max_retries = self.config.get("max_retries", 3)
         self.retry_delay = self.config.get("retry_delay", 10)  # 重试延迟（秒）
-        self.default_mode = CollectionMode(self.config.get("default_mode", "auto"))
+        default_mode_value = str(self.config.get("default_mode", "auto")).lower()
+        if default_mode_value == "mock":
+            logger.warning("检测到 default_mode=mock，核心链路已禁用mock，自动改为auto")
+            default_mode_value = "auto"
+        self.default_mode = CollectionMode(default_mode_value)
         self.enable_collector_prefilter = bool(self.config.get("enable_collector_prefilter", True))
         self.collector_drop_on_skip = bool(self.config.get("collector_drop_on_skip", True))
         self.collector_prefilter_use_prompt = bool(self.config.get("collector_prefilter_use_prompt", False))
+        self.dedup_window_seconds = int(self.config.get("collector_dedup_window_seconds", 1800))
+        self._recent_news_ids: Dict[str, float] = {}
 
         self.local_triage_service = None
         if self.enable_collector_prefilter and HAS_LOCAL_QWEN_TRIAGE:
@@ -101,6 +106,7 @@ class RealTimeNewsCollector:
             "mode_history": [],
             "news_published": 0,
             "news_prefilter_skipped": 0,
+            "news_dedup_skipped": 0,
             "errors": []
         }
 
@@ -186,7 +192,7 @@ class RealTimeNewsCollector:
         执行单次新闻采集并发布到Stream
 
         Args:
-            mode: 采集模式 ("real", "mock", "auto")
+            mode: 采集模式 ("real", "auto")
 
         Returns:
             采集结果字典
@@ -227,8 +233,14 @@ class RealTimeNewsCollector:
             result["news_after_prefilter"] = len(news_items)
             self.stats["news_prefilter_skipped"] += prefilter_skipped
 
+            # 采集侧短窗口去重：避免同一news_id在短时间内重复下游处理
+            news_items, dedup_skipped = self._dedup_news_items(news_items)
+            result["news_dedup_skipped"] = dedup_skipped
+            result["news_after_dedup"] = len(news_items)
+            self.stats["news_dedup_skipped"] += dedup_skipped
+
             if not news_items:
-                logger.info("采集前预筛选后无可发布新闻，本轮全部丢弃")
+                logger.info("采集预处理后无可发布新闻（预筛选/去重后全部丢弃）")
                 result["success"] = True
                 result["duration"] = time.time() - start_time
                 return result
@@ -239,7 +251,7 @@ class RealTimeNewsCollector:
             result["success"] = published_count > 0
 
             logger.info(f"采集模式 {actual_mode.value}: 采集{len(news_items)}条新闻, "
-                      f"发布{published_count}条到stream:news:raw")
+                        f"发布{published_count}条到stream:news:raw")
 
         except Exception as e:
             logger.error(f"新闻采集发布失败: {e}")
@@ -249,22 +261,55 @@ class RealTimeNewsCollector:
         result["duration"] = time.time() - start_time
         return result
 
+    def _dedup_news_items(self, news_items: List[Dict[str, Any]]) -> tuple[List[Dict[str, Any]], int]:
+        """基于news_id做短窗口去重，减少重复事件噪音。"""
+        if not news_items:
+            return news_items, 0
+
+        now_ts = time.time()
+        # 清理过期键
+        expired = [
+            news_id for news_id, ts in self._recent_news_ids.items()
+            if now_ts - ts > self.dedup_window_seconds
+        ]
+        for news_id in expired:
+            self._recent_news_ids.pop(news_id, None)
+
+        filtered: List[Dict[str, Any]] = []
+        skipped = 0
+        for item in news_items:
+            news_id = str(item.get("news_id") or "").strip()
+            if not news_id:
+                filtered.append(item)
+                continue
+
+            if news_id in self._recent_news_ids:
+                skipped += 1
+                logger.info("🚫 采集侧去重跳过重复新闻: %s", news_id)
+                continue
+
+            self._recent_news_ids[news_id] = now_ts
+            filtered.append(item)
+
+        return filtered, skipped
+
     def _determine_collection_mode(self, requested_mode: str) -> CollectionMode:
         """
         确定实际采集模式
 
         Args:
-            requested_mode: 请求的模式 ("real", "mock", "auto")
+            requested_mode: 请求的模式 ("real", "auto")
 
         Returns:
             实际的采集模式
         """
         if requested_mode == "auto":
-            # 自动模式：优先真实，如果不可用则使用模拟
+            # 自动模式：仅真实链路；真实不可用时返回REAL并在采集阶段返回空数据
             if self._is_real_mode_available():
                 return CollectionMode.REAL
             else:
-                return CollectionMode.MOCK
+                logger.warning("auto模式下真实采集不可用，本轮将不产出新闻（已禁用mock降级）")
+                return CollectionMode.REAL
         else:
             try:
                 return CollectionMode(requested_mode)
@@ -294,8 +339,6 @@ class RealTimeNewsCollector:
         """
         if mode == CollectionMode.REAL:
             return await self._collect_real_news()
-        elif mode == CollectionMode.MOCK:
-            return await self._collect_mock_news()
         else:
             raise ValueError(f"不支持的采集模式: {mode}")
 
@@ -369,26 +412,6 @@ class RealTimeNewsCollector:
         except Exception as e:
             logger.error(f"真实新闻采集失败: {e}")
             return []
-
-    async def _collect_mock_news(self) -> List[Dict]:
-        """生成模拟新闻"""
-        # 简单的模拟新闻生成
-        # 在实际应用中，可以调用news_crawler_service的模拟生成器
-        mock_news = [
-            {
-                "news_id": f"mock_news_{int(time.time())}_{i}",
-                "title": f"模拟新闻标题 {i+1} - {datetime.now().strftime('%H:%M')}",
-                "content": f"这是第 {i+1} 条模拟新闻内容，用于测试实时新闻采集流程。",
-                "source": "mock_source",
-                "publish_date": datetime.now().strftime("%Y-%m-%d"),
-                "publish_time": datetime.now().strftime("%H:%M:%S"),
-                "collected_at": datetime.now().isoformat()
-            }
-            for i in range(3)  # 生成3条模拟新闻
-        ]
-
-        logger.debug(f"生成了 {len(mock_news)} 条模拟新闻")
-        return mock_news
 
     async def _publish_news_to_stream(self, news_items: List[Dict]) -> int:
         """

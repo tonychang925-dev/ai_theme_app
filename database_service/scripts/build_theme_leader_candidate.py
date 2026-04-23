@@ -108,11 +108,19 @@ async def ensure_tables(manager: PostgresDatabaseManager) -> None:
 
 async def fetch_main_themes(manager: PostgresDatabaseManager, trade_date_value: date):
     sql = """
-    SELECT subject_key, theme_name
-    FROM theme_mainline_judgement
-    WHERE trade_date = $1
-      AND is_main_theme = TRUE
-    ORDER BY theme_name
+    SELECT
+        v2.subject_key,
+        COALESCE(NULLIF(v2.theme_name, ''), NULLIF(e.theme_name, ''), v2.subject_key) AS theme_name
+    FROM theme_cycle_judgement_v2 v2
+    LEFT JOIN theme_cycle_evidence_daily e
+      ON e.trade_date = v2.trade_date
+     AND e.subject_key = v2.subject_key
+    WHERE v2.trade_date = $1
+      AND COALESCE(v2.final_mainline_alive, FALSE) = TRUE
+      AND COALESCE(v2.fade_confirmed, FALSE) = FALSE
+    ORDER BY
+      COALESCE(v2.mainline_strength_score, 0) DESC,
+      v2.subject_key
     """
     async with manager.pool.acquire() as conn:
         rows = await conn.fetch(sql, trade_date_value)
@@ -333,7 +341,8 @@ async def main_async() -> int:
             for item in built:
                 source_trace = {
                     "datasets": [
-                        "theme_mainline_judgement",
+                        "theme_cycle_judgement_v2",
+                        "theme_cycle_evidence_daily",
                         "subject_stock_daily_snapshot",
                         "theme_data_complete.stock_daily",
                         "stock_position_judgement",

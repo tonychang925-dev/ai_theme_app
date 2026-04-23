@@ -25,6 +25,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--write-cursor", action="store_true", help="久赢采集后更新本地 cursor 快照")
     parser.add_argument("--skip-jyhf", action="store_true", help="跳过久赢股票快照采集")
     parser.add_argument("--skip-tushare", action="store_true", help="跳过 Tushare 日K线同步")
+    parser.add_argument("--skip-legacy-entrypoint-gate", action="store_true", help="跳过 legacy 周期入口扫描门禁（仅排障使用）")
     return parser
 
 
@@ -43,6 +44,15 @@ def main() -> int:
         env["JYHF_AUTH_TOKEN"] = args.jyhf_token
     if args.tushare_token:
         env["TUSHARE_TOKEN"] = args.tushare_token
+
+    if not args.skip_legacy_entrypoint_gate:
+        gate_cmd = [
+            python,
+            str(PROJECT_ROOT / "stock_service" / "scripts" / "check_legacy_cycle_entrypoints.py"),
+        ]
+        _run_step("legacy_cycle_entrypoint_gate", gate_cmd, env=env)
+    else:
+        print("[SKIP] legacy_cycle_entrypoint_gate (--skip-legacy-entrypoint-gate enabled)")
 
     if not args.skip_jyhf:
         list_cmd = [

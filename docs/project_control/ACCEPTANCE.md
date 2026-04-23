@@ -394,6 +394,136 @@ Then:
 - 必需日志字段：`trade_date, source_name, snapshot_type, subject_key, stock_id, report_id, publish_status`。
 - 必需指标：`stock_snapshot_rows`, `subject_stock_snapshot_rows`, `recap_snapshot_generated_count`, `notion_publish_fail_count`。
 
+### 7. 正式验收 ID（收口增补，2026-04-23）
+
+- [ ] `ACPT-P3B-011` 必须确认 `stock_processing_service` 作为股票日频对象层唯一新生产链路，旧 `stock_service` 仅用于回退/对账/实验。
+- [ ] `ACPT-P3B-012` 所有股票侧业务读写必须通过 `database_service.DatabaseGateway` 股票域显式方法，禁止 `_client/_db` 直达。
+- [ ] `ACPT-P3B-013` 领域层必须保持 `Domain Pure`：不依赖数据库/缓存/消息总线实现细节。
+- [ ] `ACPT-P3B-014` 六个冻结对象必须具备字段级最小 schema，且主键、必填字段、覆盖策略与架构文档一致。
+- [ ] `ACPT-P3B-015` 所有 stock stream 事件必须采用统一 envelope：`event_id/event_name/trade_date/batch_id/trace_id/producer/occurred_at/payload_version/payload`。
+- [ ] `ACPT-P3B-016` 缓存必须执行“先写新版本、后原子切换 current”策略，禁止读到半成品。
+- [ ] `ACPT-P3B-017` 双轨对账每次必须输出 `summary + diff_samples.jsonl`，且样本包含主键、旧值、新值、差异字段、差异原因分类。
+- [ ] `ACPT-P3B-018` 程序设计前置门禁（contracts/ports/gateway/feature-flag）未全部冻结时不得开工。
+- [ ] `ACPT-P3B-019` `DatabaseGateway` 必须完成股票域高层领域网关升级：业务侧仅可调用显式领域 API，不得透传 `_client` 语义。
+- [ ] `ACPT-P3B-020` 股票业务路径中 `execute_query` 调用次数必须为 0（仅允许基础设施内部或离线运维脚本使用）。
+- [ ] `ACPT-P3B-021` 必须形成标准化闭环：`输入事件 -> 快照对象 -> 发布事件`，并可回放、可审计、可幂等。
+- [ ] `ACPT-P3B-022` 6 个冻结对象必须成为唯一消费真源，BFF/Notion 不得绕过对象层重算核心结论。
+
+---
+
+## Phase P3.phase1.0 — 执行门禁硬化（CI/Pointer/Stream/Reconcile/Flag）
+
+### 1) 目标（Objective）
+在进入 `P3.phase1.1` 业务实现前，完成第三阶段门禁硬化：把架构原则转为可执行规则，保证“可阻断、可回滚、可审计”。
+
+### 2) 验收目标（Acceptance Targets）
+- [ ] `ACPT-P3P10-001` 必须落地 CI 边界硬门禁：`stock_processing_service` 禁止 `import asyncpg`、禁止 SQL 字符串、禁止 `_client/_db` 直达。
+- [ ] `ACPT-P3P10-002` 必须落地 `snapshot current pointer` 原子切换协议，保证读路径不出现半成品。
+- [ ] `ACPT-P3P10-003` 必须冻结 Stream 运行时契约：`consumer_group/ack/retry/backoff/dlq_replay`。
+- [ ] `ACPT-P3P10-004` 必须落地双轨对账阈值门禁（对象级/字段级）与失败分级（P0/P1/P2），并支持自动阻断切流。
+- [ ] `ACPT-P3P10-005` 必须建立 Feature Flag Register，包含开关命名、默认值、影响路由、回滚动作、观测指标。
+
+### 3) 验收用例（Given/When/Then）
+
+#### 案例 ID: ACC-P3P10-01（CI 边界硬门禁）
+Given:
+- 存在包含 `import asyncpg` 或 `_client/_db` 引用的违规提交样例
+When:
+- 执行 `.venv/bin/python scripts/ci/check_sps_boundaries.py`
+Then:
+- 命令返回非 0 退出码
+- 输出包含违规文件与命中规则
+
+#### 案例 ID: ACC-P3P10-02（Snapshot Pointer 原子切换）
+Given:
+- 指定交易日存在快照重建任务
+When:
+- 执行 `.venv/bin/python scripts/qa/verify_snapshot_pointer_atomicity.py --trade-date 2026-04-22`
+Then:
+- 报告显示“先写版本后切 pointer”
+- 无半成品读取证据
+- 中断恢复后 pointer 指向一致
+
+#### 案例 ID: ACC-P3P10-03（Stream 运行时契约）
+Given:
+- stream 消费者组配置已生效
+When:
+- 执行 `.venv/bin/python scripts/qa/check_stream_runtime_contract.py`
+Then:
+- 输出包含 group/ack/retry/backoff/dlq/replay 全量检查项
+- 任一缺失即返回非 0
+
+#### 案例 ID: ACC-P3P10-04（双轨对账阈值门禁）
+Given:
+- 同一交易日新旧链路均已运行完成
+When:
+- 执行 `.venv/bin/python scripts/qa/run_reconcile_gate.py --trade-date 2026-04-22`
+Then:
+- 产出 `summary + diff_samples.jsonl`
+- 报告包含对象级与字段级阈值判定
+- 阈值不达标时返回非 0 并标记阻断
+
+#### 案例 ID: ACC-P3P10-05（Feature Flag Register）
+Given:
+- 已定义 P3 灰度切流开关
+When:
+- 执行 `.venv/bin/python scripts/qa/check_flag_register.py`
+Then:
+- 每个开关包含 `name/default/owner/scope/rollback_action/observability`
+- 存在缺失项即返回非 0
+
+### 4) 边界与非目标（Boundary/Non-Goals）
+- 不实现新的业务策略、打分模型与页面功能。
+- 不在本阶段引入秒级全市场实时行情能力。
+- 不替换现有 `stock_service` 回退链路。
+
+### 5) 数据样例（如适用）
+
+输入（对账差异样例）：
+```json
+{
+  "pk": {"trade_date": "2026-04-22", "stock_id": "600000.SH"},
+  "old_value": {"leader_score": 71.2},
+  "new_value": {"leader_score": 68.4},
+  "diff_field": "leader_score",
+  "reason_type": "calculation_drift"
+}
+```
+
+预期输出（门禁判定）：
+```json
+{
+  "phase": "P3.phase1.0",
+  "gate": "reconcile",
+  "result": "fail",
+  "severity": "P1",
+  "auto_block": true
+}
+```
+
+### 6) 失败判定（Fail Fast Criteria）
+- 任一门禁命令无法执行或返回异常 traceback。
+- 存在绕过 `DatabaseGateway` 的数据访问路径。
+- 出现快照半成品读取或 pointer 漂移。
+- 对账阈值未达标但系统仍允许切流。
+- Feature flag 无法回滚或缺少登记。
+
+### 7) 可观察性要求（Observability）
+- 必需日志字段：`trace_id, batch_id, trade_date, gate_name, rule_id, result, severity, rollback_action`。
+- 必需指标：`gate_check_pass_rate`, `snapshot_pointer_switch_fail_count`, `stream_dlq_count`, `reconcile_block_count`, `flag_rollback_success_rate`。
+- 必需审计记录：每次门禁执行的命令、退出码、执行时间、产物路径。
+
+### 8) 变更兼容性说明（Compatibility）
+- 门禁硬化不得破坏既有 `P3.phase1` DTO。
+- 如需引入破坏性契约变更，必须先经 ADR 批准并给出回滚策略。
+
+### 9) 通过判定（Exit Criteria）
+以下条件必须全部满足（AND）：
+1. `ACPT-P3P10-001 ~ ACPT-P3P10-005` 全部通过。
+2. 所有验收命令可在同一环境重复执行且结果一致。
+3. 对账门禁可自动阻断并保留审计证据。
+4. Feature flag 回滚演练成功。
+
 ---
 
 ## Phase P3.phase2 — 复盘增强与工作台深化

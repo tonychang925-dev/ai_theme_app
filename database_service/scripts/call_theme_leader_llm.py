@@ -72,9 +72,9 @@ async def fetch_seed_rows(
     sql = """
     SELECT j.*
     FROM theme_leader_llm_judgement j
-    LEFT JOIN theme_mainline_judgement m
-      ON m.trade_date = j.trade_date
-     AND m.subject_key = j.subject_key
+    LEFT JOIN theme_cycle_judgement_v2 v2
+      ON v2.trade_date = j.trade_date
+     AND v2.subject_key = j.subject_key
     LEFT JOIN theme_leader_llm_queue q
       ON q.trade_date = j.trade_date
      AND q.subject_key = j.subject_key
@@ -84,12 +84,12 @@ async def fetch_seed_rows(
       AND ($5::boolean = FALSE OR COALESCE(j.model_name, '') = '' OR COALESCE(j.leader_status, '') = '')
     ORDER BY
       COALESCE(q.queue_priority, 0) DESC,
-      CASE m.theme_tier
-        WHEN 'main' THEN 0
-        WHEN 'strong_branch' THEN 1
+      CASE
+        WHEN COALESCE(v2.mainline_strength_score, 0) >= 75 THEN 0
+        WHEN COALESCE(v2.final_mainline_alive, FALSE) THEN 1
         ELSE 2
       END,
-      (COALESCE(m.event_chain_score, 0) + COALESCE(m.market_recognition_score, 0) + COALESCE(m.mainline_stability_score, 0)) DESC,
+      COALESCE(v2.mainline_strength_score, 0) DESC,
       j.subject_key
     LIMIT $3
     """
@@ -216,22 +216,25 @@ async def build_seed_rows(
 async def main_async() -> int:
     args = parse_args()
     api_key = args.api_key or os.getenv("DEEPSEEK_API_KEY", "")
-    if not api_key:
+    if not args.dry_run and not api_key:
         raise SystemExit("missing api key: use --api-key or DEEPSEEK_API_KEY")
 
-    os.environ["DEEPSEEK_API_KEY"] = api_key
+    if api_key:
+        os.environ["DEEPSEEK_API_KEY"] = api_key
 
     manager = PostgresDatabaseManager(get_postgres_config())
     await manager.connect()
-    parser: ReliableDeepSeekParser | None = ReliableDeepSeekParser(
-        model_name=args.model,
-        config={
-            "max_retries": args.max_retries,
-            "timeout": args.timeout,
-            "temperature": args.temperature,
-            "model_name": args.model,
-        },
-    )
+    parser: ReliableDeepSeekParser | None = None
+    if not args.dry_run:
+        parser = ReliableDeepSeekParser(
+            model_name=args.model,
+            config={
+                "max_retries": args.max_retries,
+                "timeout": args.timeout,
+                "temperature": args.temperature,
+                "model_name": args.model,
+            },
+        )
     try:
         await ensure_table(manager)
         seed_count = await build_seed_rows(manager, args.trade_date, args.limit_themes, args.subject_key, args.only_queued)
@@ -255,7 +258,7 @@ async def main_async() -> int:
         output_dir.mkdir(parents=True, exist_ok=True)
         service = ThemeLeaderLlmJudgementService()
 
-        if not args.skip_health_check:
+        if not args.skip_health_check and not args.dry_run:
             health = await parser.health_check()
             if not health.get("is_healthy", False):
                 raise SystemExit(f"ReliableDeepSeekParser health check failed: {json.dumps(health, ensure_ascii=False)}")
@@ -263,13 +266,14 @@ async def main_async() -> int:
             print(f"[OK] parser_model={args.model}")
 
         for item in rows:
+            if args.dry_run:
+                print(f"[DRY-RUN] subject_key={item.subject_key}")
+                continue
             response = await call_model(parser, item.prompt_text)
             response_path = output_dir / f"{item.trade_date}_{item.subject_key.replace(':', '_')}.json"
             response_path.write_text(json.dumps(response, ensure_ascii=False, indent=2), encoding="utf-8")
             print(f"[OK] subject_key={item.subject_key}")
             print(f"[OK] response_file={response_path}")
-            if args.dry_run:
-                continue
             updated = service.apply_llm_response(item, response, args.model)
             await upsert_result(manager, updated)
             print(f"[OK] leader={updated.leader_stock_id}")

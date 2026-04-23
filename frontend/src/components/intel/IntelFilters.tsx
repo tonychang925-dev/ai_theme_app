@@ -84,6 +84,13 @@ export function IntelFilters({
       >
         AI选股
       </button>
+      <button
+        type="button"
+        className="recap-filter-button"
+        onClick={() => navigateTo(`/intel/strong-stocks/watch?date=${date}&window_days=7`)}
+      >
+        强势股跟踪
+      </button>
     </section>
   );
 }

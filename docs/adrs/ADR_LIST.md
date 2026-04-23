@@ -1,5 +1,10 @@
 # ADR List
 
+> 文档维护守则（强制）：
+> 1. 本文档仅允许“增量追加”新 ADR 或增量附录，禁止覆盖历史 ADR 正文。  
+> 2. 历史 ADR 如失效，必须追加“失效说明/替代 ADR”，不得直接删除原条目。  
+> 3. 所有新增 ADR 必须保留 `Context/Decision/Alternatives/Consequences/Trigger` 五段结构。
+
 ### ADR-001: 第一阶段运行时单链路冻结
 - Context
   - `theme_processor/theme_service/news_stream_handler` 存在重复定义与并行行为。
@@ -489,3 +494,67 @@
   - 开发效率提升；用户体验一致；需要前期设计投入。
 - Trigger
   - 开始大规模前端开发或出现样式不一致问题时。
+
+---
+
+## 增量附录（2026-04-23，P3 执行门禁硬化）
+
+### ADR-301: Gateway 访问策略强制化
+- Context
+  - 第三阶段已定义 `Gateway First`，但缺 CI 级强制执行。
+- Proposed Decision
+  - 增加静态门禁，阻断 `stock_processing_service` 中的 `asyncpg/SQL/_client/_db`。
+- Alternatives
+  - 仅依赖 Code Review 人工约束。
+- Consequences
+  - 边界可持续；需维护规则与豁免流程。
+- Trigger
+  - 发现越层访问或新增模块绕过 gateway。
+
+### ADR-302: Snapshot Current Pointer 协议
+- Context
+  - 文档要求“先写新版本再切 current”，但无统一协议。
+- Proposed Decision
+  - 固化三步：写版本成功 -> 原子切换 current pointer -> 发布 `snapshot_built` 事件。
+- Alternatives
+  - 直接覆盖 current；消费端自行挑最新。
+- Consequences
+  - 避免半成品读取；需维护 pointer 元数据。
+- Trigger
+  - 快照对象重建、并发构建或回滚场景。
+
+### ADR-303: Stream Runtime Contract 标准化
+- Context
+  - 仅定义 stream 名称，缺运行时语义。
+- Proposed Decision
+  - 冻结 `consumer_group/ack/retry/backoff/dlq/replay` 标准。
+- Alternatives
+  - 各服务各自实现。
+- Consequences
+  - 提升恢复能力与一致性；统一改造成本上升。
+- Trigger
+  - 出现积压、重复消费、死信增长。
+
+### ADR-304: 双轨对账门禁标准
+- Context
+  - 仅有对账产物要求，缺阈值与分级。
+- Proposed Decision
+  - 增加对象级/字段级阈值、P0/P1/P2 失败分级与自动回滚条件。
+- Alternatives
+  - 人工主观判断切流。
+- Consequences
+  - 切流可量化可审计；需先建立阈值基线。
+- Trigger
+  - 任意灰度切流窗口开始前。
+
+### ADR-305: Feature Flag Register
+- Context
+  - 已要求冻结开关，但缺统一台账。
+- Proposed Decision
+  - 建立 flag register（名称、默认值、影响路由、观测指标、回滚动作）。
+- Alternatives
+  - 仅在代码注释维护。
+- Consequences
+  - 灰度与回滚可治理；增加维护成本。
+- Trigger
+  - 新增或变更任何切流开关。

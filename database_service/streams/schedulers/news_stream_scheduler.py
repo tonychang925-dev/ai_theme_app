@@ -2,7 +2,7 @@
 """
 改进的新闻Stream调度器 - 优化版本
 职责：调用新闻抓取服务 → 发布到Redis Stream
-支持真实新闻数据和模拟数据
+仅支持真实新闻数据
 """
 import hashlib
 import time
@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 
 
 class ImprovedNewsStreamScheduler:
-    """改进的新闻Stream调度器 - 支持真实和模拟新闻数据"""
+    """改进的新闻Stream调度器 - 仅支持真实新闻数据"""
     
     def __init__(self, stream_gateway, news_service, config=None):
         """
@@ -47,21 +47,19 @@ class ImprovedNewsStreamScheduler:
             "batches": [],
             "news_sources": {
                 "real": 0,
-                "mock": 0,
                 "unknown": 0
             }
         }
         
-        # 调度配置 - 新增真实/模拟模式配置
+        # 调度配置 - 仅真实模式
         self.schedule_config = {
             "interval_seconds": self.config.get("interval_seconds", 30),
             "batch_size": self.config.get("batch_size", 3),
             "news_type": self.config.get("news_type", "stock"),
             "stream_name": self.config.get("stream_name", "stream:news:raw"),
             "mixed_types": self.config.get("mixed_types", True),
-            "crawl_mode": self.config.get("crawl_mode", "auto"),  # auto/real/mock
+            "crawl_mode": self.config.get("crawl_mode", "auto"),  # auto/real
             "prefer_real": self.config.get("prefer_real", True),
-            "fallback_to_mock": self.config.get("fallback_to_mock", True),
             "max_real_retries": self.config.get("max_real_retries", 2)
         }
         
@@ -108,7 +106,7 @@ class ImprovedNewsStreamScheduler:
                 # 更新重试计数
                 if batch_result.get("source_type") == "real":
                     real_retry_count = 0  # 重置重试计数
-                elif batch_result.get("source_type") == "mock" and "fallback" in batch_result:
+                elif batch_result.get("source_type") == "unknown" and "fallback" in batch_result:
                     real_retry_count += 1  # 增加重试计数
                 
                 # 2. 发布到Stream
@@ -132,14 +130,12 @@ class ImprovedNewsStreamScheduler:
                 await asyncio.sleep(10)
     
     async def _fetch_news_batch(self, batch_id: str, real_retry_count: int) -> Dict[str, Any]:
-        """调用新闻服务获取新闻批次 - 支持真实/模拟数据"""
+        """调用新闻服务获取新闻批次 - 仅真实数据"""
         try:
             batch_size = self.schedule_config["batch_size"]
             news_type = self.schedule_config["news_type"]
-            mixed_types = self.schedule_config["mixed_types"]
             crawl_mode = self.schedule_config["crawl_mode"]
             prefer_real = self.schedule_config["prefer_real"]
-            fallback_to_mock = self.schedule_config["fallback_to_mock"]
             
             logger.info(f"📡 调用新闻服务: {batch_size}条新闻, 模式: {crawl_mode}")
             
@@ -156,31 +152,18 @@ class ImprovedNewsStreamScheduler:
                     source_type = "real"
                     
                 elif crawl_mode == "mock":
-                    # 强制使用模拟数据
-                    logger.info("🟡 使用模拟新闻模式...")
-                    if mixed_types:
-                        result = await self.news_service.crawl_news_batch(
-                            batch_size=batch_size,
-                            mixed_types=True,
-                            mode="mock"
-                        )
-                    else:
-                        result = await self.news_service.crawl_mock_news(
-                            count=batch_size,
-                            news_type=news_type
-                        )
-                    source_type = "mock"
+                    logger.warning("mock模式已禁用，自动切换为real")
+                    result = await self.news_service.crawl_real_news(limit=batch_size)
+                    source_type = "real"
                     
                 else:  # auto 模式
                     # 智能选择
                     logger.info("🤖 使用智能模式...")
                     
-                    # 检查是否需要降级到模拟模式
                     if real_retry_count >= self.schedule_config["max_real_retries"]:
-                        logger.warning(f"⚠️  真实新闻抓取失败次数过多({real_retry_count})，降级到模拟模式")
-                        result = await self.news_service.crawl_mock_news(count=batch_size)
-                        source_type = "mock"
-                        fallback_reason = f"real_retry_exceeded_{real_retry_count}"
+                        logger.warning(f"⚠️  真实新闻抓取失败次数过多({real_retry_count})，继续尝试真实源")
+                        result = await self.news_service.crawl_real_news(limit=batch_size)
+                        source_type = "real"
                     
                     elif prefer_real:
                         # 优先尝试真实数据
@@ -193,18 +176,13 @@ class ImprovedNewsStreamScheduler:
                             else:
                                 raise Exception("真实新闻返回空数据")
                         except Exception as e:
-                            logger.warning(f"⚠️  真实新闻抓取失败，尝试模拟新闻: {e}")
-                            if fallback_to_mock:
-                                result = await self.news_service.crawl_mock_news(count=batch_size)
-                                source_type = "mock"
-                                fallback_reason = f"real_failed_{str(e)[:50]}"
-                            else:
-                                raise e
+                            logger.warning(f"⚠️  真实新闻抓取失败: {e}")
+                            raise e
                     else:
-                        # 优先使用模拟数据
-                        logger.info("🟡 优先使用模拟新闻...")
-                        result = await self.news_service.crawl_mock_news(count=batch_size)
-                        source_type = "mock"
+                        # prefer_real=False 时也只允许真实源
+                        logger.info("🟢 仅支持真实源，执行真实新闻抓取...")
+                        result = await self.news_service.crawl_real_news(limit=batch_size)
+                        source_type = "real"
                 
             except Exception as e:
                 logger.error(f"新闻抓取异常: {e}")
@@ -244,9 +222,6 @@ class ImprovedNewsStreamScheduler:
             if source_type == "real":
                 self.stats["news_sources"]["real"] += len(news_list)
                 logger.info(f"✅ 获取 {len(news_list)} 条真实新闻")
-            elif source_type == "mock":
-                self.stats["news_sources"]["mock"] += len(news_list)
-                logger.info(f"✅ 生成 {len(news_list)} 条模拟新闻")
             else:
                 self.stats["news_sources"]["unknown"] += len(news_list)
                 logger.info(f"❌ 获取新闻失败")
@@ -566,7 +541,6 @@ class ImprovedNewsStreamScheduler:
         logger.info(f"   发布错误: {self.stats['error_count']}")
         logger.info(f"   新闻来源统计:")
         logger.info(f"     真实新闻: {self.stats['news_sources']['real']}")
-        logger.info(f"     模拟新闻: {self.stats['news_sources']['mock']}")
         logger.info(f"     未知来源: {self.stats['news_sources']['unknown']}")
     
     async def get_stats(self) -> Dict[str, Any]:
@@ -592,7 +566,6 @@ class ImprovedNewsStreamScheduler:
             "recent_batches": self.stats["batches"][-5:] if self.stats["batches"] else [],
             "source_distribution": {
                 "real_percentage": self.stats["news_sources"]["real"] / max(total_news, 1),
-                "mock_percentage": self.stats["news_sources"]["mock"] / max(total_news, 1),
                 "unknown_percentage": self.stats["news_sources"]["unknown"] / max(total_news, 1)
             }
         }
@@ -610,7 +583,7 @@ class ImprovedNewsStreamScheduler:
         Args:
             batch_size: 批次大小
             news_type: 新闻类型
-            mode: 抓取模式 (auto/real/mock)
+            mode: 抓取模式 (auto/real)
             force_real: 是否强制使用真实数据（即使失败也不降级）
         """
         if batch_size is None:
@@ -637,10 +610,9 @@ class ImprovedNewsStreamScheduler:
                 source_type = "real"
                 
             elif mode == "mock":
-                # 模拟模式
-                logger.info("🟡 使用模拟新闻模式...")
-                result = await self.news_service.crawl_mock_news(count=batch_size, news_type=news_type)
-                source_type = "mock"
+                logger.warning("手动mock模式已禁用，自动切换为real")
+                result = await self.news_service.crawl_real_news(limit=batch_size)
+                source_type = "real"
                 
             else:  # auto
                 # 自动模式
@@ -721,10 +693,10 @@ class ImprovedNewsStreamScheduler:
         切换抓取模式
         
         Args:
-            mode: 抓取模式 (auto/real/mock)
+            mode: 抓取模式 (auto/real)
             prefer_real: 是否优先真实数据（仅auto模式有效）
         """
-        valid_modes = ["auto", "real", "mock"]
+        valid_modes = ["auto", "real"]
         
         if mode not in valid_modes:
             return {

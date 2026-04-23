@@ -159,6 +159,10 @@ export class LazyLoadErrorBoundary extends React.Component<
 const routeChunks = {
   main: {
     intel: () => import('../routes/intel/IntelPage').then((m) => ({ default: m.IntelPage })),
+    strongStockWatch: () =>
+      import('../routes/intel/StrongStockWatchPage').then((m) => ({ default: m.StrongStockWatchPage })),
+    strongStockWatchDetail: () =>
+      import('../routes/intel/StrongStockWatchDetailPage').then((m) => ({ default: m.StrongStockWatchDetailPage })),
     recap: () => import('../routes/recap/RecapPage').then((m) => ({ default: m.RecapPage })),
   },
   theme: {
@@ -204,6 +208,14 @@ export function preloadRoutes(routeKeys: string[]): Promise<void[]> {
 }
 
 export const LazyIntelPage = createLazyComponent(routeChunks.main.intel, { name: 'IntelPage', timeout: 5000 });
+export const LazyStrongStockWatchPage = createLazyComponent(routeChunks.main.strongStockWatch, {
+  name: 'StrongStockWatchPage',
+  timeout: 5000,
+});
+export const LazyStrongStockWatchDetailPage = createLazyComponent(routeChunks.main.strongStockWatchDetail, {
+  name: 'StrongStockWatchDetailPage',
+  timeout: 5000,
+});
 export const LazyRecapPage = createLazyComponent(routeChunks.main.recap, { name: 'RecapPage', timeout: 5000 });
 export const LazyThemeWorkspacePage = createLazyComponent(routeChunks.theme.workspace, { name: 'ThemeWorkspacePage', timeout: 5000 });
 export const LazyStockWorkspacePage = createLazyComponent(routeChunks.stock.workspace, { name: 'StockWorkspacePage', timeout: 5000 });

@@ -103,3 +103,48 @@ def test_build_evidence_marks_intraday_mode_when_source_version_upgraded():
     )
 
     assert "分钟口径" in result.evidence[3]
+
+
+def test_build_evidence_includes_market_total_amount_and_index_pct():
+    service = MarketEnvironmentJudgementService()
+    result = service.build_judgement(
+        _metrics(
+            market_total_amount=1.234e12,
+            shanghai_index_pct_chg=0.0534,
+            source_trace={"shanghai_index_available": True},
+        )
+    )
+
+    assert "市场总成交额 1.23万亿" in result.evidence[4]
+    assert "上证指数涨跌幅 5.34%" in result.evidence[5]
+
+
+def test_build_evidence_uses_open_close_proxy_for_daily_proxy():
+    service = MarketEnvironmentJudgementService()
+    result = service.build_judgement(
+        _metrics(
+            source_version="market_environment_metrics.v1.daily_proxy",
+            intraday_fade_ratio=0.0,
+            open_close_pullback_ratio=0.42,
+        )
+    )
+
+    assert "开收承接不足占比 42.00%" in result.evidence[3]
+    assert "开收承接不足" in result.intraday_fade_status
+
+
+def test_build_evidence_uses_recent_7d_context_for_daily_proxy():
+    service = MarketEnvironmentJudgementService()
+    result = service.build_judgement(
+        _metrics(
+            source_version="market_environment_metrics.v1.daily_proxy",
+            open_close_pullback_ratio=0.3982,
+            source_trace={
+                "open_close_pullback_recent_7d": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+            },
+        )
+    )
+
+    assert "近7个交易日均值 0.00%" in result.evidence[3]
+    assert "当前值高于近期中枢" in result.evidence[3]
+    assert "明显" in result.intraday_fade_status

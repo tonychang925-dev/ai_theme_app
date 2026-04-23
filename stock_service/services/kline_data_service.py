@@ -8,6 +8,7 @@ import logging
 from datetime import date, datetime, timedelta
 from typing import List, Dict, Any, Optional, Tuple
 import json
+from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
@@ -24,6 +25,9 @@ class KlineDataService:
             "password": "zxbzj~925"
         }
         self._pool = None
+        self._local_kline_root = Path(__file__).resolve().parents[2] / "theme_data_complete" / "_stock_kline"
+        self._local_daily_bar_dir = self._local_kline_root / "tushare" / "daily_bar"
+        self._local_daily_bar_cache: Dict[str, List[Dict[str, Any]]] = {}
 
     async def get_connection(self) -> asyncpg.Connection:
         """获取数据库连接"""
@@ -41,6 +45,89 @@ class KlineDataService:
         if self._pool:
             await self._pool.close()
             self._pool = None
+
+    def _normalize_stock_ids(self, stock_id: str) -> Tuple[str, str]:
+        raw = (stock_id or "").strip().upper()
+        if not raw:
+            return "", ""
+        if "." in raw:
+            code, suffix = raw.split(".", 1)
+            if len(code) == 6 and code.isdigit() and suffix in {"SZ", "SH", "BJ"}:
+                return code, f"{code}.{suffix}"
+            raw = code
+        if len(raw) == 6 and raw.isdigit():
+            if raw.startswith(("60", "68")):
+                suffix = "SH"
+            elif raw.startswith(("43", "83", "87")):
+                suffix = "BJ"
+            else:
+                suffix = "SZ"
+            return raw, f"{raw}.{suffix}"
+        return raw, raw
+
+    def _daily_bar_path(self, stock_id: str) -> Path:
+        _, normalized = self._normalize_stock_ids(stock_id)
+        return self._local_daily_bar_dir / f"{normalized}.jsonl"
+
+    def _load_local_daily_bar(self, stock_id: str) -> List[Dict[str, Any]]:
+        raw_code, normalized = self._normalize_stock_ids(stock_id)
+        if not normalized:
+            return []
+        cache_key = normalized
+        if cache_key in self._local_daily_bar_cache:
+            return self._local_daily_bar_cache[cache_key]
+
+        path = self._daily_bar_path(normalized)
+        if not path.exists() and raw_code:
+            # 兼容文件名可能使用裸代码的场景
+            fallback = self._local_daily_bar_dir / f"{raw_code}.jsonl"
+            if fallback.exists():
+                path = fallback
+        if not path.exists():
+            self._local_daily_bar_cache[cache_key] = []
+            return []
+
+        rows: List[Dict[str, Any]] = []
+        try:
+            with path.open("r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        item = json.loads(line)
+                    except Exception:
+                        continue
+                    try:
+                        tdate = date.fromisoformat(str(item.get("trade_date")))
+                    except Exception:
+                        continue
+                    record = {
+                        "trade_date": tdate,
+                        "stock_id": normalized,
+                        "stock_name": item.get("stock_name"),
+                        "open_price": float(item.get("open_price")) if item.get("open_price") is not None else None,
+                        "high_price": float(item.get("high_price")) if item.get("high_price") is not None else None,
+                        "low_price": float(item.get("low_price")) if item.get("low_price") is not None else None,
+                        "close_price": float(item.get("close_price")) if item.get("close_price") is not None else None,
+                        "pre_close": float(item.get("pre_close")) if item.get("pre_close") is not None else None,
+                        "pct_chg": float(item.get("pct_chg")) if item.get("pct_chg") is not None else None,
+                        "change_amount": None,
+                        "volume": float(item.get("volume")) if item.get("volume") is not None else None,
+                        "amount": float(item.get("amount")) if item.get("amount") is not None else None,
+                        "limit_up": False,
+                        "is_leader": False,
+                        "rank_order": 999,
+                        "data_source": "local_tushare_daily_bar",
+                    }
+                    rows.append(record)
+            rows.sort(key=lambda x: x["trade_date"])
+        except Exception as e:
+            logger.warning(f"读取本地K线文件失败 {path}: {e}")
+            rows = []
+
+        self._local_daily_bar_cache[cache_key] = rows
+        return rows
 
     async def get_kline_data(
         self,
@@ -61,11 +148,72 @@ class KlineDataService:
         Returns:
             K线数据列表，按日期排序（从早到晚）
         """
+        # 计算日期范围
+        start_date = trade_date - timedelta(days=days_before)
+        end_date = trade_date + timedelta(days=days_after)
+
+        # 优先使用本地Tushare日K（半年+），避免主题快照窗口过短导致数据不足。
+        local_rows = self._load_local_daily_bar(stock_id)
+        if local_rows:
+            local_max_trade_date = local_rows[-1].get("trade_date")
+            if local_max_trade_date and local_max_trade_date >= trade_date:
+                sliced = [x for x in local_rows if start_date <= x["trade_date"] <= end_date]
+                if sliced:
+                    logger.info(f"本地K线命中: 股票{stock_id}从{start_date}到{end_date}共{len(sliced)}条")
+                    return sliced
+            else:
+                logger.warning(
+                    f"本地K线滞后，回退数据库: stock_id={stock_id}, "
+                    f"local_max_trade_date={local_max_trade_date}, target_trade_date={trade_date}"
+                )
+
         conn = await self.get_connection()
         try:
-            # 计算日期范围
-            start_date = trade_date - timedelta(days=days_before)
-            end_date = trade_date + timedelta(days=days_after)
+            raw_code, normalized = self._normalize_stock_ids(stock_id)
+
+            stock_daily_query = """
+            SELECT
+                trade_date,
+                stock_id,
+                stock_name,
+                open_price,
+                high_price,
+                low_price,
+                close_price,
+                pre_close,
+                pct_chg,
+                NULL::numeric AS change_amount,
+                volume,
+                amount,
+                FALSE AS limit_up,
+                FALSE AS is_leader,
+                999 AS rank_order
+            FROM stock_daily_snapshot
+            WHERE (
+                stock_id = $1
+                OR stock_id = $2
+                OR split_part(stock_id, '.', 1) = $3
+            )
+              AND trade_date >= $4
+              AND trade_date <= $5
+            ORDER BY trade_date ASC
+            """
+            rows = await conn.fetch(stock_daily_query, stock_id, normalized, raw_code, start_date, end_date)
+            if rows:
+                kline_data = []
+                for row in rows:
+                    record = dict(row)
+                    record['open_price'] = float(record['open_price']) if record['open_price'] is not None else None
+                    record['high_price'] = float(record['high_price']) if record['high_price'] is not None else None
+                    record['low_price'] = float(record['low_price']) if record['low_price'] is not None else None
+                    record['close_price'] = float(record['close_price']) if record['close_price'] is not None else None
+                    record['pct_chg'] = float(record['pct_chg']) if record['pct_chg'] is not None else None
+                    record['volume'] = float(record['volume']) if record['volume'] is not None else None
+                    record['amount'] = float(record['amount']) if record['amount'] is not None else None
+                    record['data_source'] = "stock_daily_snapshot"
+                    kline_data.append(record)
+                logger.info(f"获取到股票{stock_id} stock_daily_snapshot {len(kline_data)}条K线数据")
+                return kline_data
 
             query = """
             SELECT DISTINCT ON (trade_date)
@@ -85,13 +233,17 @@ class KlineDataService:
                 is_leader,
                 rank_order
             FROM subject_stock_daily_snapshot
-            WHERE stock_id = $1
-                AND trade_date >= $2
-                AND trade_date <= $3
+            WHERE (
+                stock_id = $1
+                OR stock_id = $2
+                OR split_part(stock_id, '.', 1) = $3
+            )
+                AND trade_date >= $4
+                AND trade_date <= $5
             ORDER BY trade_date ASC, rank_order ASC
             """
 
-            rows = await conn.fetch(query, stock_id, start_date, end_date)
+            rows = await conn.fetch(query, stock_id, normalized, raw_code, start_date, end_date)
 
             # 转换为字典列表
             kline_data = []
@@ -105,6 +257,7 @@ class KlineDataService:
                 record['pct_chg'] = float(record['pct_chg']) if record['pct_chg'] is not None else None
                 record['volume'] = float(record['volume']) if record['volume'] is not None else None
                 record['amount'] = float(record['amount']) if record['amount'] is not None else None
+                record['data_source'] = "subject_stock_daily_snapshot"
 
                 kline_data.append(record)
 
@@ -132,8 +285,49 @@ class KlineDataService:
         Returns:
             单日K线数据字典，如果不存在则返回None
         """
+        local_rows = self._load_local_daily_bar(stock_id)
+        if local_rows:
+            for row in reversed(local_rows):
+                if row.get("trade_date") == trade_date:
+                    return row
+
         conn = await self.get_connection()
         try:
+            raw_code, normalized = self._normalize_stock_ids(stock_id)
+            stock_daily_query = """
+            SELECT
+                trade_date,
+                stock_id,
+                stock_name,
+                open_price,
+                high_price,
+                low_price,
+                close_price,
+                pre_close,
+                pct_chg,
+                NULL::numeric AS change_amount,
+                volume,
+                amount,
+                FALSE AS limit_up,
+                FALSE AS is_leader,
+                999 AS rank_order
+            FROM stock_daily_snapshot
+            WHERE (stock_id = $1 OR stock_id = $2 OR split_part(stock_id, '.', 1) = $3)
+              AND trade_date = $4
+            LIMIT 1
+            """
+            row = await conn.fetchrow(stock_daily_query, stock_id, normalized, raw_code, trade_date)
+            if row:
+                record = dict(row)
+                record['open_price'] = float(record['open_price']) if record['open_price'] is not None else None
+                record['high_price'] = float(record['high_price']) if record['high_price'] is not None else None
+                record['low_price'] = float(record['low_price']) if record['low_price'] is not None else None
+                record['close_price'] = float(record['close_price']) if record['close_price'] is not None else None
+                record['pct_chg'] = float(record['pct_chg']) if record['pct_chg'] is not None else None
+                record['volume'] = float(record['volume']) if record['volume'] is not None else None
+                record['amount'] = float(record['amount']) if record['amount'] is not None else None
+                return record
+
             query = """
             SELECT
                 trade_date,
@@ -152,12 +346,13 @@ class KlineDataService:
                 is_leader,
                 rank_order
             FROM subject_stock_daily_snapshot
-            WHERE stock_id = $1 AND trade_date = $2
+            WHERE (stock_id = $1 OR stock_id = $2 OR split_part(stock_id, '.', 1) = $3)
+              AND trade_date = $4
             ORDER BY rank_order ASC
             LIMIT 1
             """
 
-            row = await conn.fetchrow(query, stock_id, trade_date)
+            row = await conn.fetchrow(query, stock_id, normalized, raw_code, trade_date)
 
             if row:
                 record = dict(row)
@@ -195,69 +390,49 @@ class KlineDataService:
         Returns:
             (前一日K线数据, 当日K线数据) 元组
         """
-        prev_date = current_date - timedelta(days=1)
-
-        # 同时获取两日数据，更高效
-        conn = await self.get_connection()
         try:
-            query = """
-            SELECT DISTINCT ON (trade_date)
-                trade_date,
-                stock_id,
-                stock_name,
-                open_price,
-                high_price,
-                low_price,
-                close_price,
-                pre_close,
-                pct_chg,
-                change_amount,
-                volume,
-                amount,
-                limit_up,
-                is_leader,
-                rank_order
-            FROM subject_stock_daily_snapshot
-            WHERE stock_id = $1
-                AND trade_date IN ($2, $3)
-            ORDER BY trade_date ASC, rank_order ASC
-            """
-
-            rows = await conn.fetch(query, stock_id, prev_date, current_date)
-
-            prev_kline = None
+            # 使用交易日序列定位“前一交易日”，避免自然日-1的误差。
+            kline_data = await self.get_kline_data(stock_id, current_date, days_before=20, days_after=0)
+            if not kline_data:
+                return None, None
             current_kline = None
-
-            for row in rows:
-                record = dict(row)
-                # 转换Decimal为float
-                record['open_price'] = float(record['open_price']) if record['open_price'] is not None else None
-                record['high_price'] = float(record['high_price']) if record['high_price'] is not None else None
-                record['low_price'] = float(record['low_price']) if record['low_price'] is not None else None
-                record['close_price'] = float(record['close_price']) if record['close_price'] is not None else None
-                record['pct_chg'] = float(record['pct_chg']) if record['pct_chg'] is not None else None
-                record['volume'] = float(record['volume']) if record['volume'] is not None else None
-                record['amount'] = float(record['amount']) if record['amount'] is not None else None
-
-                if record['trade_date'] == prev_date:
-                    prev_kline = record
-                elif record['trade_date'] == current_date:
-                    current_kline = record
-
+            prev_kline = None
+            for idx, row in enumerate(kline_data):
+                if row.get("trade_date") == current_date:
+                    current_kline = row
+                    if idx > 0:
+                        prev_kline = kline_data[idx - 1]
+                    break
+            if current_kline is None:
+                return None, None
             return prev_kline, current_kline
-
         except Exception as e:
             logger.error(f"获取股票{stock_id}前后两日K线数据失败: {e}")
             return None, None
-        finally:
-            await self.release_connection(conn)
 
     async def check_stock_exists(self, stock_id: str) -> bool:
         """检查股票是否存在于数据库中"""
+        if self._load_local_daily_bar(stock_id):
+            return True
         conn = await self.get_connection()
         try:
-            query = "SELECT 1 FROM subject_stock_daily_snapshot WHERE stock_id = $1 LIMIT 1"
-            row = await conn.fetchrow(query, stock_id)
+            raw_code, normalized = self._normalize_stock_ids(stock_id)
+            query_stock_daily = """
+            SELECT 1
+            FROM stock_daily_snapshot
+            WHERE stock_id = $1 OR stock_id = $2 OR split_part(stock_id, '.', 1) = $3
+            LIMIT 1
+            """
+            row = await conn.fetchrow(query_stock_daily, stock_id, normalized, raw_code)
+            if row is not None:
+                return True
+            query = """
+            SELECT 1
+            FROM subject_stock_daily_snapshot
+            WHERE stock_id = $1 OR stock_id = $2 OR split_part(stock_id, '.', 1) = $3
+            LIMIT 1
+            """
+            row = await conn.fetchrow(query, stock_id, normalized, raw_code)
             return row is not None
         finally:
             await self.release_connection(conn)
@@ -524,11 +699,29 @@ class KlineDataService:
         """
         # 获取更长时间的历史数据
         kline_data = await self.get_kline_data(stock_id, analysis_date, days_before=lookback_days, days_after=0)
+        source_tags = sorted({str(x.get("data_source") or "unknown") for x in kline_data})
+        trade_dates = [x.get("trade_date") for x in kline_data if x.get("trade_date") is not None]
+        min_trade_date = min(trade_dates) if trade_dates else None
+        max_trade_date = max(trade_dates) if trade_dates else None
+        is_new_listing_likely = bool(
+            len(kline_data) < 10
+            and min_trade_date is not None
+            and (analysis_date - min_trade_date).days <= 20
+        )
 
-        # 数据不足警告，但仍尝试进行分析
+        # 数据不足分级日志：新股短历史记为预期提示，非新股不足保留告警。
         has_sufficient_data = len(kline_data) >= 10
         if not has_sufficient_data:
-            logger.warning(f'高级分析数据不足: 期望≥10个交易日，当前{len(kline_data)}条，将进行有限分析')
+            log_msg = (
+                "高级分析数据不足: "
+                f"stock_id={stock_id}, analysis_date={analysis_date}, lookback_days={lookback_days}, "
+                f"records={len(kline_data)}, min_trade_date={min_trade_date}, max_trade_date={max_trade_date}, "
+                f"sources={source_tags}"
+            )
+            if is_new_listing_likely:
+                logger.info(f"{log_msg}, classify=new_listing_expected")
+            else:
+                logger.warning(f"{log_msg}, classify=unexpected_short_history")
 
         result = {
             'has_advanced_analysis': has_sufficient_data,
@@ -541,7 +734,11 @@ class KlineDataService:
                 'total_records': len(kline_data),
                 'analysis_period': lookback_days,
                 'available_days': len(kline_data),
-                'has_sufficient_data': has_sufficient_data
+                'has_sufficient_data': has_sufficient_data,
+                'min_trade_date': min_trade_date.isoformat() if min_trade_date else None,
+                'max_trade_date': max_trade_date.isoformat() if max_trade_date else None,
+                'is_new_listing_likely': is_new_listing_likely,
+                'data_sources': source_tags,
             }
         }
 
@@ -554,7 +751,21 @@ class KlineDataService:
         # 确保价格数据有效
         df = df[df['close_price'] > 0]
         if len(df) < 10:
-            logger.warning(f'有效数据不足: 期望≥10个有效交易日，当前{len(df)}条，分析结果可能受限')
+            valid_min_trade_date = None
+            valid_max_trade_date = None
+            if not df.empty:
+                valid_min_trade_date = df['trade_date'].min().date().isoformat()
+                valid_max_trade_date = df['trade_date'].max().date().isoformat()
+            log_msg = (
+                "有效数据不足: "
+                f"stock_id={stock_id}, analysis_date={analysis_date}, lookback_days={lookback_days}, "
+                f"valid_records={len(df)}, valid_min_trade_date={valid_min_trade_date}, "
+                f"valid_max_trade_date={valid_max_trade_date}, sources={source_tags}"
+            )
+            if is_new_listing_likely:
+                logger.info(f"{log_msg}, classify=new_listing_expected")
+            else:
+                logger.warning(f"{log_msg}, classify=unexpected_short_history")
             has_sufficient_data = False
             result['has_advanced_analysis'] = False
             result['data_summary']['has_sufficient_data'] = False

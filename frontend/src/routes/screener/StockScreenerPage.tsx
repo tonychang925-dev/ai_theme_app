@@ -84,11 +84,31 @@ export function StockScreenerPage() {
     : '正在执行选股分析...';
   const twoStageCandidateCount = isWeakToStrongTwoStage
     ? Number(
-      (store.executionStatus.diagnostics as any)?.candidate_pool_count
-      ?? (store.executionStatus.diagnostics as any)?.stage1?.candidate_count
-      ?? 0,
+      (store.executionStatus.diagnostics as any)?.candidate_pool_count ??
+      (store.executionStatus.diagnostics as any)?.display_result_count ??
+      (store.executionStatus.diagnostics as any)?.stage1?.candidate_count ??
+      0
     )
     : 0;
+  const confirmTradeDate =
+    String(
+      (store.executionStatus.diagnostics as any)?.confirm_trade_date ||
+      ''
+    ).trim() || undefined;
+  const stage2SignalCount = Number((store.executionStatus.diagnostics as any)?.signal_count ?? store.currentResults.length ?? 0);
+  const stage2SnapshotHitCount = Number((store.executionStatus.diagnostics as any)?.snapshot_hit_count ?? 0);
+  const stage2InputCandidateCount = Number((store.executionStatus.diagnostics as any)?.confirm_input_candidate_count ?? 0);
+  const stage2FilteredOutCount = Number((store.executionStatus.diagnostics as any)?.confirm_filtered_out_count ?? 0);
+  const stage2XCount = Number((store.executionStatus.diagnostics as any)?.stage2?.level_count?.X ?? 0);
+  // 调试：强制显示候选池数量
+  console.log('🔍 候选池数量调试:', {
+    twoStageCandidateCount,
+    diagnostics: store.executionStatus.diagnostics,
+    candidate_pool_count: (store.executionStatus.diagnostics as any)?.candidate_pool_count,
+    display_result_count: (store.executionStatus.diagnostics as any)?.display_result_count,
+    stage1_candidate_count: (store.executionStatus.diagnostics as any)?.stage1?.candidate_count,
+    storeCurrentResultsLength: store.currentResults.length
+  });
 
   // 调试日志
   console.log('🔍 调试twoStageCandidateCount:', {
@@ -165,7 +185,8 @@ export function StockScreenerPage() {
     } catch (err) {
       // 显示执行错误，但不处理网络错误（由NetworkStatusAlert处理）
       const errorMessage = err instanceof Error ? err.message : '选股执行失败';
-      if (!errorMessage.includes('网络连接') && !errorMessage.includes('无法连接到服务器')) {
+      const isTimeout = errorMessage.includes('请求超时');
+      if (isTimeout || (!errorMessage.includes('网络连接') && !errorMessage.includes('无法连接到服务器'))) {
         setError(errorMessage);
       }
     }
@@ -177,16 +198,17 @@ export function StockScreenerPage() {
       await store.executeScreening({ runStage1: false, runStage2: true });
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : '竞价确认执行失败';
-      if (!errorMessage.includes('网络连接') && !errorMessage.includes('无法连接到服务器')) {
+      const isTimeout = errorMessage.includes('请求超时');
+      if (isTimeout || (!errorMessage.includes('网络连接') && !errorMessage.includes('无法连接到服务器'))) {
         setError(errorMessage);
       }
     }
   };
 
   // 查看结果详情
-  const handleViewDetail = async (resultId: string) => {
+  const handleViewDetail = async (resultId: string, view?: 'candidate' | 'confirm') => {
     try {
-      await store.loadResultDetail(resultId);
+      await store.loadResultDetail(resultId, view);
       setShowDetailModal(true);
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : '加载详情失败';
@@ -497,6 +519,12 @@ export function StockScreenerPage() {
                 {isWeakToStrongTwoStage ? (
                   <WeakToStrongTwoStageView
                     tradeDate={store.tradeDate}
+                    confirmTradeDate={confirmTradeDate}
+                    signalCount={stage2SignalCount}
+                    snapshotHitCount={stage2SnapshotHitCount}
+                    confirmInputCandidateCount={stage2InputCandidateCount}
+                    confirmFilteredOutCount={stage2FilteredOutCount}
+                    xLevelCount={stage2XCount}
                     isExecuting={store.isExecuting}
                     runMode={runMode}
                     candidateCount={twoStageCandidateCount}

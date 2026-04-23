@@ -1610,7 +1610,7 @@ select {
 
 .intel-filters {
   display: grid;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-template-columns: repeat(9, minmax(0, 1fr));
   gap: 8px;
   margin-bottom: 14px;
 }
@@ -1642,7 +1642,7 @@ select {
 .recap-filter-button {
   border: 1px solid #444444;
   background: linear-gradient(135deg, #2a2a2a 0%, #252525 100%);
-  color: #ffffff;
+  color: #ffea63;
   border-radius: 8px;
   padding: 8px 12px;
   cursor: pointer;
@@ -1657,6 +1657,7 @@ select {
 .recap-filter-button:hover {
   border-color: #78a9ff;
   background: linear-gradient(135deg, #2f2f2f 0%, #2a2a2a 100%);
+  color: #fff07a;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transform: translateY(-1px);
 }
@@ -1664,6 +1665,433 @@ select {
 .recap-filter-button:active {
   transform: translateY(0);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.strong-watch-page {
+  display: grid;
+  gap: 14px;
+}
+
+.strong-watch-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: end;
+}
+
+.strong-watch-toolbar label {
+  display: grid;
+  gap: 4px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  min-width: 150px;
+}
+
+.strong-watch-toolbar span {
+  font-size: 12px;
+  color: #9f9f9f;
+}
+
+.strong-watch-toolbar input,
+.strong-watch-toolbar select {
+  border: none;
+  background: transparent;
+  color: #f5f5f5;
+  outline: none;
+}
+
+.strong-watch-summary {
+  margin-left: auto;
+  background: #171f2b;
+  border: 1px solid #2f435f;
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: grid;
+  gap: 2px;
+}
+
+.strong-watch-summary strong {
+  font-size: 18px;
+  color: #78a9ff;
+}
+
+.strong-watch-summary span {
+  color: #9f9f9f;
+  font-size: 12px;
+}
+
+.strong-watch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
+}
+
+.strong-watch-group-list {
+  display: grid;
+  gap: 12px;
+}
+
+.strong-watch-board {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 1fr);
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.strong-watch-board-quote {
+  background: #080a10;
+  border: 1px solid #1e2838;
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.strong-watch-board-col {
+  border: 1px solid #233047;
+  border-radius: 8px;
+  background: #070c12;
+  min-height: 620px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.strong-watch-board-market-col {
+  min-width: 280px;
+}
+
+.strong-watch-board-col-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  border-bottom: 1px solid #1f2d43;
+  background: #09111a;
+}
+
+.strong-watch-board-col-head h3 {
+  margin: 0;
+  font-size: 14px;
+  color: #8dc8ff;
+  font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+}
+
+.strong-watch-board-col-head span {
+  color: #8a9db4;
+  font-size: 12px;
+}
+
+.strong-watch-board-col-body {
+  padding: 6px 8px;
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.strong-watch-market-head {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.strong-watch-market-body {
+  gap: 8px;
+}
+
+.strong-watch-level-row {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  border-top: 1px solid #172338;
+  min-height: 56px;
+}
+
+.strong-watch-level-tag {
+  border-right: 1px solid #172338;
+  color: #8da6c4;
+  font-size: 12px;
+  text-align: center;
+  padding-top: 8px;
+  font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+}
+
+.strong-watch-level-content {
+  padding: 4px 6px;
+  display: grid;
+  gap: 4px;
+  align-content: start;
+}
+
+.strong-watch-level-empty {
+  color: #516781;
+  font-size: 12px;
+  padding: 6px 2px;
+}
+
+.strong-watch-market-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2px 8px;
+  border: 1px solid #1d2a3d;
+  background: #0d131f;
+  border-radius: 6px;
+  padding: 4px 6px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.strong-watch-market-item strong {
+  color: #f2f6ff;
+  font-size: 12px;
+}
+
+.strong-watch-market-item span {
+  color: #f7cf4a;
+  font-size: 12px;
+  font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+}
+
+.strong-watch-market-item em {
+  grid-column: 1 / -1;
+  color: #7e95b3;
+  font-style: normal;
+  font-size: 11px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.strong-watch-market-item.is-active {
+  border-color: #2b6bb4;
+}
+
+.strong-watch-market-item.is-weakening {
+  border-color: #9a7e33;
+}
+
+.strong-watch-market-item.is-removed {
+  border-color: #5a3a3a;
+}
+
+.strong-watch-board-row {
+  border: 1px solid #2f2f2f;
+  border-radius: 8px;
+  background: #171717;
+  padding: 8px;
+  display: grid;
+  gap: 6px;
+}
+
+.strong-watch-board-row.is-active {
+  border-color: #2d5ca0;
+}
+
+.strong-watch-board-row.is-weakening {
+  border-color: #8f742d;
+}
+
+.strong-watch-board-row.is-removed {
+  border-color: #5c3535;
+}
+
+.strong-watch-board-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.strong-watch-board-main strong {
+  color: #f2f2f2;
+  font-size: 13px;
+}
+
+.strong-watch-board-main span {
+  color: #9f9f9f;
+  font-size: 12px;
+}
+
+.strong-watch-board-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  font-size: 12px;
+  color: #cbcbcb;
+}
+
+.strong-watch-board-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.strong-watch-detail-page {
+  display: grid;
+  gap: 12px;
+}
+
+.strong-watch-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.strong-watch-detail-table-wrap {
+  overflow-x: auto;
+}
+
+.strong-watch-group-card {
+  border: 1px solid #2f2f2f;
+  border-radius: 12px;
+  background: #171717;
+  padding: 10px;
+}
+
+.strong-watch-group-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.strong-watch-group-head h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #f0f0f0;
+}
+
+.strong-watch-group-head span {
+  color: #9f9f9f;
+  font-size: 12px;
+}
+
+.strong-watch-table-wrap {
+  overflow-x: auto;
+}
+
+.strong-watch-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+.strong-watch-table th,
+.strong-watch-table td {
+  border-bottom: 1px solid #2b2b2b;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+}
+
+.strong-watch-table th {
+  color: #9f9f9f;
+  font-weight: 500;
+}
+
+.strong-watch-table td strong {
+  color: #f0f0f0;
+}
+
+.strong-watch-table tr.is-active td:first-child strong {
+  color: #8ec5ff;
+}
+
+.strong-watch-table tr.is-weakening td:first-child strong {
+  color: #ffe08a;
+}
+
+.strong-watch-table tr.is-removed td:first-child strong {
+  color: #ff9f9f;
+}
+
+.strong-watch-table-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.strong-watch-card {
+  border: 1px solid #2e2e2e;
+  background: #171717;
+  border-radius: 12px;
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.strong-watch-card.is-active {
+  border-color: #2e5ea8;
+}
+
+.strong-watch-card.is-weakening {
+  border-color: #8c6f2e;
+}
+
+.strong-watch-card.is-removed {
+  border-color: #5a3535;
+}
+
+.strong-watch-card-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.strong-watch-card-head h3 {
+  margin: 0;
+}
+
+.strong-watch-status {
+  font-size: 12px;
+  color: #9f9f9f;
+}
+
+.strong-watch-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.strong-watch-reason {
+  margin: 0;
+  color: #d2d2d2;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.strong-watch-metrics {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.strong-watch-metrics div {
+  background: #1f1f1f;
+  border: 1px solid #2f2f2f;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.strong-watch-metrics dt {
+  font-size: 12px;
+  color: #9f9f9f;
+}
+
+.strong-watch-metrics dd {
+  margin: 4px 0 0;
+  color: #f1f1f1;
+  font-size: 13px;
+}
+
+.strong-watch-metrics dd.up {
+  color: #e05a67;
+}
+
+.strong-watch-metrics dd.down {
+  color: #3cb179;
 }
 
 .intel-layout {
@@ -2248,6 +2676,14 @@ select {
 
   .intel-filters {
     grid-template-columns: 1fr;
+  }
+
+  .strong-watch-summary {
+    margin-left: 0;
+  }
+
+  .strong-watch-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .intel-layout {

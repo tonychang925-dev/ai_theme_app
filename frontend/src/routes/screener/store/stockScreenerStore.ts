@@ -1,6 +1,46 @@
 import { create } from 'zustand';
 import { stockScreenerApi } from '../../../lib/api/stockScreener';
 
+function formatTodayDate(): string {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+function nextTradeDate(dateText: string): string {
+  const base = new Date(`${dateText}T00:00:00`);
+  if (Number.isNaN(base.getTime())) {
+    return dateText;
+  }
+  const d = new Date(base);
+  d.setDate(d.getDate() + 1);
+  while (d.getDay() === 0 || d.getDay() === 6) {
+    d.setDate(d.getDate() + 1);
+  }
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+function prevTradeDate(dateText: string): string {
+  const base = new Date(`${dateText}T00:00:00`);
+  if (Number.isNaN(base.getTime())) {
+    return dateText;
+  }
+  const d = new Date(base);
+  d.setDate(d.getDate() - 1);
+  while (d.getDay() === 0 || d.getDay() === 6) {
+    d.setDate(d.getDate() - 1);
+  }
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
 // 类型定义
 export interface ScreeningStrategy {
   strategy_id: string;
@@ -107,6 +147,16 @@ export interface StockScreenerStoreType {
     diagnostics?: {
       requested_trade_date?: string;
       resolved_trade_date?: string;
+      candidate_trade_date?: string;
+      confirm_trade_date?: string;
+      snapshot_trade_date?: string;
+      signal_count?: number;
+      snapshot_hit_count?: number;
+      confirm_input_candidate_count?: number;
+      confirm_filtered_out_count?: number;
+      stage2?: {
+        level_count?: { A?: number; B?: number; C?: number; X?: number };
+      };
       fallback_applied?: boolean;
       fallback_reason?: string | null;
       requested_snapshot_stock_count?: number;
@@ -141,7 +191,7 @@ export interface StockScreenerStoreType {
   setTargetMinCount: (value: number) => void;
   setTargetMaxCount: (value: number) => void;
   executeScreening: (opts?: { runStage1?: boolean; runStage2?: boolean }) => Promise<void>;
-  loadResultDetail: (resultId: string) => Promise<void>;
+  loadResultDetail: (resultId: string, view?: 'candidate' | 'confirm') => Promise<void>;
   toggleFavorite: (stockId: string, stockName: string) => Promise<void>;
   loadFavorites: () => Promise<void>;
 }
@@ -150,7 +200,7 @@ export const useStockScreenerStore = create<StockScreenerStoreType>()((set, get)
   // 初始状态
   strategies: [],
   selectedStrategyId: null,
-  tradeDate: '2026-04-09',
+  tradeDate: formatTodayDate(),
   enableLlmReview: true, // 默认启用LLM复核
   autoTuneMinScore: true,
   targetMinCount: 30,
@@ -242,17 +292,23 @@ export const useStockScreenerStore = create<StockScreenerStoreType>()((set, get)
       const isWeakToStrong = Boolean(
         selected && (/weak_to_strong/i.test(selected.strategy_id) || /弱转强/.test(selected.strategy_name)),
       );
+      const runStage1 = Boolean(opts?.runStage1);
+      const runStage2 = Boolean(opts?.runStage2);
+      const candidateTradeDate = runStage2 && !runStage1 ? prevTradeDate(state.tradeDate) : state.tradeDate;
+      const confirmTradeDate = runStage2 && !runStage1 ? state.tradeDate : nextTradeDate(candidateTradeDate);
       const response = await stockScreenerApi.executeScreening({
         strategy_id: state.selectedStrategyId,
         trade_date: state.tradeDate,
-        limit: isWeakToStrong ? 20 : 50,
+        candidate_trade_date: isWeakToStrong ? candidateTradeDate : undefined,
+        confirm_trade_date: isWeakToStrong ? confirmTradeDate : undefined,
+        limit: isWeakToStrong ? state.targetMaxCount : 50,
         auto_tune_min_score: state.autoTuneMinScore,
         target_min_count: state.targetMinCount,
         target_max_count: state.targetMaxCount,
         enable_llm_review: state.enableLlmReview, // 使用用户选择的LLM复核设置
         llm_top_k: 20, // 默认TopK为20
-        run_stage1: opts?.runStage1,
-        run_stage2: opts?.runStage2,
+        run_stage1: runStage1,
+        run_stage2: runStage2,
       });
 
       const result = response.data;
@@ -352,9 +408,9 @@ export const useStockScreenerStore = create<StockScreenerStoreType>()((set, get)
   },
 
   // 加载结果详情
-  loadResultDetail: async (resultId: string) => {
+  loadResultDetail: async (resultId: string, view?: 'candidate' | 'confirm') => {
     try {
-      const response = await stockScreenerApi.getResultDetail(resultId);
+      const response = await stockScreenerApi.getResultDetail(resultId, view ? { view } : undefined);
       set({ resultDetail: response.data, selectedResultId: resultId });
     } catch (error) {
       console.error('加载结果详情失败:', error);

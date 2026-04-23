@@ -440,6 +440,10 @@ function parseThemeSummary(theme: string, body: string, cycleAction: string): Th
   const cycleSegments = cycleAction.split("；").map((item) => item.trim()).filter(Boolean);
   const findValue = (prefix: string) => segments.find((item) => item.startsWith(prefix))?.slice(prefix.length).trim() || "--";
   const rawTier = findValue("层级 ");
+  const mainlineAlive = findValue("主线存活 ");
+  const state = findValue("状态 ");
+  const mainlineStrength = findValue("主线强度 ");
+  const fadeRisk = findValue("退潮风险 ");
   const stageRaw = (cycleSegments[0] ?? "").replace("阶段 ", "").trim();
   const stageMap: Record<string, string> = {
     start: "启动",
@@ -449,16 +453,27 @@ function parseThemeSummary(theme: string, body: string, cycleAction: string): Th
     climax: "高潮",
     fade: "退潮",
   };
+  const tier =
+    rawTier === "main"
+      ? "主线"
+      : rawTier === "strong_branch"
+        ? "强分支"
+        : mainlineAlive === "是"
+          ? "主线"
+          : mainlineAlive === "否"
+            ? "强分支"
+            : zh(rawTier);
+  const cycleStage = zh((stageMap[stageRaw] ?? stageRaw) || (state !== "--" ? state : "--"));
   return {
     theme,
     subjectKey: findValue("subject_key "),
-    tier: rawTier === "main" ? "主线" : rawTier === "strong_branch" ? "强分支" : zh(rawTier),
-    eventScore: findValue("事件 "),
-    marketScore: findValue("市场 "),
+    tier,
+    eventScore: findValue("事件 ") !== "--" ? findValue("事件 ") : mainlineStrength,
+    marketScore: findValue("市场 ") !== "--" ? findValue("市场 ") : fadeRisk,
     totalInflow: findValue("总净流入 "),
     leaderInflow: findValue("龙头净流入 "),
     themeKline: zh(findValue("题材K线 ")),
-    cycleStage: zh((stageMap[stageRaw] ?? stageRaw) || "--"),
+    cycleStage,
     actionAdvice: zh((cycleSegments[1] ?? "").replace("动作 ", "").trim() || "--"),
     conclusion: zh((cycleSegments[2] ?? "").replace("结论 ", "").trim() || "--"),
   };
@@ -506,16 +521,29 @@ function parseDragonTigerLegacyRow(hotMoneyName: string, body: string): DragonTi
 
 function parseAbnormalSignalRow(theme: string, body: string): AbnormalSignalRow {
   const segments = body.split("；").map((item) => item.trim()).filter(Boolean);
+  const findValue = (prefix: string) =>
+    segments.find((item) => item.startsWith(prefix))?.slice(prefix.length).trim() || "--";
+  const stockName =
+    segments.find(
+      (item) =>
+        !item.startsWith("异动分 ") &&
+        !item.startsWith("换手率 ") &&
+        !item.startsWith("量比 ") &&
+        !item.startsWith("成交量/50日均量 ") &&
+        !item.startsWith("资金 ") &&
+        !item.startsWith("标签 ") &&
+        !item.startsWith("结论 "),
+    ) || "--";
   return {
     theme,
-    stockName: segments[0] ?? "--",
-    score: (segments[1] ?? "").replace("异动分 ", "").trim() || "--",
-    turnoverRate: (segments[2] ?? "").replace("换手率 ", "").trim() || "--",
-    volumeRatio: (segments[3] ?? "").replace("量比 ", "").trim() || "--",
-    volumeVsMa50: (segments[4] ?? "").replace("成交量/50日均量 ", "").trim() || "--",
-    capital: zh((segments[5] ?? "").replace("资金 ", "").trim() || "--"),
-    labels: zh((segments[6] ?? "").replace("标签 ", "").trim() || "--"),
-    conclusion: zh((segments[7] ?? "").replace("结论 ", "").trim() || "--"),
+    stockName,
+    score: findValue("异动分 "),
+    turnoverRate: findValue("换手率 "),
+    volumeRatio: findValue("量比 "),
+    volumeVsMa50: findValue("成交量/50日均量 "),
+    capital: zh(findValue("资金 ")),
+    labels: zh(findValue("标签 ")),
+    conclusion: zh(findValue("结论 ")),
   };
 }
 

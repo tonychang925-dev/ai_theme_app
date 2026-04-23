@@ -164,6 +164,7 @@ def apply_turnover_rank(rows: list[StockAbnormalInput]) -> list[StockAbnormalInp
                     amount=item.amount,
                     volume_ratio=item.volume_ratio,
                     turnover_rate=item.turnover_rate,
+                    main_net_inflow=item.main_net_inflow,
                     rank_order=item.rank_order,
                     turnover_rank_in_theme=idx,
                 )

@@ -1422,6 +1422,411 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.error(f"执行查询失败: {e}")
             raise
 
+    async def get_subject_stock_pool_by_trade_date(self, trade_date) -> List[Dict[str, Any]]:
+        """按交易日读取题材股票池快照。"""
+        sql = """
+        SELECT
+            trade_date,
+            subject_key,
+            stock_id,
+            stock_name,
+            rank_order,
+            close_price,
+            pct_chg,
+            limit_up,
+            is_leader
+        FROM subject_stock_daily_snapshot
+        WHERE trade_date = $1::date
+        ORDER BY subject_key, rank_order ASC
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+            return [dict(row) for row in rows]
+
+    async def upsert_stock_daily_snapshot_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """批量 UPSERT stock_daily_snapshot。"""
+        if not rows:
+            return 0
+
+        sql = """
+        INSERT INTO stock_daily_snapshot (
+            trade_date, stock_id, stock_name,
+            open_price, high_price, low_price, close_price, pre_close, pct_chg,
+            volume, amount, source_name
+        ) VALUES (
+            $1, $2, $3,
+            $4, $5, $6, $7, $8, $9,
+            $10, $11, $12
+        )
+        ON CONFLICT (trade_date, stock_id) DO UPDATE SET
+          stock_name = EXCLUDED.stock_name,
+          open_price = EXCLUDED.open_price,
+          high_price = EXCLUDED.high_price,
+          low_price = EXCLUDED.low_price,
+          close_price = EXCLUDED.close_price,
+          pre_close = EXCLUDED.pre_close,
+          pct_chg = EXCLUDED.pct_chg,
+          volume = EXCLUDED.volume,
+          amount = EXCLUDED.amount,
+          source_name = EXCLUDED.source_name,
+          updated_at = NOW()
+        """
+        payload = [self._normalize_stock_snapshot_row(row) for row in rows]
+        async with self.pool.acquire() as conn:
+            await conn.executemany(sql, payload)
+        return len(payload)
+
+    async def get_stock_daily_snapshot_by_trade_date(self, trade_date) -> List[Dict[str, Any]]:
+        """按交易日读取 stock_daily_snapshot。"""
+        sql = """
+        SELECT
+            trade_date, stock_id, stock_name,
+            open_price, high_price, low_price, close_price, pre_close, pct_chg,
+            volume, amount, source_name
+        FROM stock_daily_snapshot
+        WHERE trade_date = $1::date
+        ORDER BY stock_id
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+            return [dict(row) for row in rows]
+
+    async def get_trade_calendar(self, trade_date) -> Dict[str, Any]:
+        """
+        获取交易日历信息。
+        当前阶段先提供最小可用契约：交易日本身 + 邻近交易日（来自subject_stock_daily_snapshot）。
+        """
+        sql_prev = """
+        SELECT MAX(trade_date) AS prev_trade_date
+        FROM subject_stock_daily_snapshot
+        WHERE trade_date < $1::date
+        """
+        sql_next = """
+        SELECT MIN(trade_date) AS next_trade_date
+        FROM subject_stock_daily_snapshot
+        WHERE trade_date > $1::date
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                prev_row = await conn.fetchrow(sql_prev, trade_date)
+                next_row = await conn.fetchrow(sql_next, trade_date)
+                return {
+                    "trade_date": trade_date,
+                    "is_open": True,
+                    "prev_trade_date": prev_row.get("prev_trade_date") if prev_row else None,
+                    "next_trade_date": next_row.get("next_trade_date") if next_row else None,
+                }
+        except Exception as e:
+            logger.warning(f"交易日历读取失败，使用降级返回: {e}")
+            return {
+                "trade_date": trade_date,
+                "is_open": True,
+                "prev_trade_date": None,
+                "next_trade_date": None,
+            }
+
+    async def get_stock_daily_bars(self, trade_date, stock_ids: Optional[List[str]] = None) -> List[Dict[str, Any]]:
+        """读取股票日线（当前映射到 stock_daily_snapshot）。"""
+        sql = """
+        SELECT
+            trade_date, stock_id, stock_name,
+            open_price, high_price, low_price, close_price, pre_close, pct_chg,
+            volume, amount
+        FROM stock_daily_snapshot
+        WHERE trade_date = $1::date
+          AND ($2::text[] IS NULL OR stock_id = ANY($2::text[]))
+        ORDER BY stock_id
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date, stock_ids if stock_ids else None)
+            return [dict(row) for row in rows]
+
+    async def get_stock_auction_snapshot(self, trade_date, stock_ids: Optional[List[str]] = None) -> List[Dict[str, Any]]:
+        """
+        读取盘前竞价快照。
+        当前阶段无独立对象表时，先降级读取 stock_daily_snapshot 作为日频代理，确保契约可用。
+        """
+        rows = await self.get_stock_daily_bars(trade_date, stock_ids=stock_ids)
+        for row in rows:
+            row.setdefault("snapshot_type", "daily_proxy")
+        return rows
+
+    async def get_subject_context_by_subject_keys(self, subject_keys: List[str], trade_date) -> List[Dict[str, Any]]:
+        """按题材键批量读取题材上下文（最小上下文：subject_key/subject_name/trade_date）。"""
+        if not subject_keys:
+            return []
+        sql = """
+        SELECT
+            subject_key,
+            MAX(subject_name) AS subject_name,
+            $2::date AS trade_date
+        FROM subject_stock_daily_snapshot
+        WHERE trade_date = $2::date
+          AND subject_key = ANY($1::text[])
+        GROUP BY subject_key
+        ORDER BY subject_key
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, subject_keys, trade_date)
+            return [dict(row) for row in rows]
+
+    async def get_prior_stock_daily_snapshots(
+        self,
+        trade_date,
+        lookback_days: int,
+        stock_ids: Optional[List[str]] = None,
+    ) -> List[Dict[str, Any]]:
+        """读取交易日前 lookback_days 天的股票日线快照。"""
+        sql = """
+        SELECT
+            trade_date, stock_id, stock_name,
+            open_price, high_price, low_price, close_price, pre_close, pct_chg,
+            volume, amount
+        FROM stock_daily_snapshot
+        WHERE trade_date < $1::date
+          AND trade_date >= ($1::date - $2::int * INTERVAL '1 day')
+          AND ($3::text[] IS NULL OR stock_id = ANY($3::text[]))
+        ORDER BY trade_date DESC, stock_id
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date, lookback_days, stock_ids if stock_ids else None)
+            return [dict(row) for row in rows]
+
+    async def get_existing_pre_market_brief_snapshot(self, trade_date) -> Optional[Dict[str, Any]]:
+        """读取 pre_market_brief_snapshot 文档对象（存在则返回）。"""
+        sql = """
+        SELECT trade_date, snapshot_version, batch_id, trace_id, payload, created_at
+        FROM pre_market_brief_snapshot
+        WHERE trade_date = $1::date
+        LIMIT 1
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                row = await conn.fetchrow(sql, trade_date)
+                return dict(row) if row else None
+        except Exception as e:
+            logger.warning(f"读取 pre_market_brief_snapshot 失败（可能尚未迁移）: {e}")
+            return None
+
+    async def get_existing_post_market_recap_snapshot(self, trade_date) -> Optional[Dict[str, Any]]:
+        """读取 post_market_recap_snapshot 文档对象（存在则返回）。"""
+        sql = """
+        SELECT trade_date, snapshot_version, batch_id, trace_id, payload, created_at
+        FROM post_market_recap_snapshot
+        WHERE trade_date = $1::date
+        LIMIT 1
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                row = await conn.fetchrow(sql, trade_date)
+                return dict(row) if row else None
+        except Exception as e:
+            logger.warning(f"读取 post_market_recap_snapshot 失败（可能尚未迁移）: {e}")
+            return None
+
+    async def upsert_subject_stock_daily_snapshot_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """批量 UPSERT subject_stock_daily_snapshot（最小字段集）。"""
+        if not rows:
+            return 0
+        sql = """
+        INSERT INTO subject_stock_daily_snapshot (
+            trade_date, subject_key, subject_name, stock_id, stock_name,
+            rank_order, close_price, pct_chg, limit_up, is_leader
+        ) VALUES (
+            $1, $2, $3, $4, $5,
+            $6, $7, $8, $9, $10
+        )
+        ON CONFLICT (trade_date, subject_key, stock_id) DO UPDATE SET
+          subject_name = EXCLUDED.subject_name,
+          stock_name = EXCLUDED.stock_name,
+          rank_order = EXCLUDED.rank_order,
+          close_price = EXCLUDED.close_price,
+          pct_chg = EXCLUDED.pct_chg,
+          limit_up = EXCLUDED.limit_up,
+          is_leader = EXCLUDED.is_leader
+        """
+        payload = [
+            (
+                row.get("trade_date"),
+                row.get("subject_key"),
+                row.get("subject_name"),
+                row.get("stock_id"),
+                row.get("stock_name"),
+                row.get("rank_order"),
+                row.get("close_price"),
+                row.get("pct_chg"),
+                row.get("limit_up"),
+                row.get("is_leader"),
+            )
+            for row in rows
+        ]
+        try:
+            async with self.pool.acquire() as conn:
+                await conn.executemany(sql, payload)
+            return len(payload)
+        except Exception as e:
+            logger.warning(f"写入 subject_stock_daily_snapshot 失败（可能尚未迁移）: {e}")
+            return 0
+
+    async def upsert_stock_abnormal_event_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """批量 UPSERT stock_abnormal_event（对象层）。"""
+        if not rows:
+            return 0
+        sql = """
+        INSERT INTO stock_abnormal_event (
+            trade_date, stock_id, event_type, event_score, evidence_rules, raw_metrics
+        ) VALUES ($1, $2, $3, $4, $5::jsonb, $6::jsonb)
+        ON CONFLICT (trade_date, stock_id, event_type) DO UPDATE SET
+          event_score = EXCLUDED.event_score,
+          evidence_rules = EXCLUDED.evidence_rules,
+          raw_metrics = EXCLUDED.raw_metrics
+        """
+        payload = [
+            (
+                row.get("trade_date"),
+                row.get("stock_id"),
+                row.get("event_type"),
+                row.get("event_score"),
+                json.dumps(row.get("evidence_rules") or [], ensure_ascii=False),
+                json.dumps(row.get("raw_metrics") or {}, ensure_ascii=False),
+            )
+            for row in rows
+        ]
+        try:
+            async with self.pool.acquire() as conn:
+                await conn.executemany(sql, payload)
+            return len(payload)
+        except Exception as e:
+            logger.warning(f"写入 stock_abnormal_event 失败（可能尚未迁移）: {e}")
+            return 0
+
+    async def upsert_theme_stock_leaderboard_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """批量 UPSERT theme_stock_leaderboard（对象层）。"""
+        if not rows:
+            return 0
+        sql = """
+        INSERT INTO theme_stock_leaderboard (
+            trade_date, subject_key, stock_id, leaderboard_rank, leader_score, score_breakdown
+        ) VALUES ($1, $2, $3, $4, $5, $6::jsonb)
+        ON CONFLICT (trade_date, subject_key, stock_id) DO UPDATE SET
+          leaderboard_rank = EXCLUDED.leaderboard_rank,
+          leader_score = EXCLUDED.leader_score,
+          score_breakdown = EXCLUDED.score_breakdown
+        """
+        payload = [
+            (
+                row.get("trade_date"),
+                row.get("subject_key"),
+                row.get("stock_id"),
+                row.get("leaderboard_rank"),
+                row.get("leader_score"),
+                json.dumps(row.get("score_breakdown") or {}, ensure_ascii=False),
+            )
+            for row in rows
+        ]
+        try:
+            async with self.pool.acquire() as conn:
+                await conn.executemany(sql, payload)
+            return len(payload)
+        except Exception as e:
+            logger.warning(f"写入 theme_stock_leaderboard 失败（可能尚未迁移）: {e}")
+            return 0
+
+    async def upsert_pre_market_brief_snapshot(self, doc: Dict[str, Any]) -> int:
+        """UPSERT pre_market_brief_snapshot 文档对象。"""
+        sql = """
+        INSERT INTO pre_market_brief_snapshot (
+            trade_date, snapshot_version, batch_id, trace_id, payload, source_name
+        ) VALUES ($1, $2, $3, $4, $5::jsonb, $6)
+        ON CONFLICT (trade_date) DO UPDATE SET
+          snapshot_version = EXCLUDED.snapshot_version,
+          batch_id = EXCLUDED.batch_id,
+          trace_id = EXCLUDED.trace_id,
+          payload = EXCLUDED.payload,
+          source_name = EXCLUDED.source_name,
+          updated_at = NOW()
+        """
+        payload = (
+            doc.get("trade_date"),
+            doc.get("snapshot_version"),
+            doc.get("batch_id"),
+            doc.get("trace_id"),
+            json.dumps(doc.get("payload") or {}, ensure_ascii=False),
+            str(doc.get("source_name") or "stock_processing_service"),
+        )
+        try:
+            async with self.pool.acquire() as conn:
+                await conn.execute(sql, *payload)
+            return 1
+        except Exception as e:
+            logger.warning(f"写入 pre_market_brief_snapshot 失败（可能尚未迁移）: {e}")
+            return 0
+
+    async def upsert_post_market_recap_snapshot(self, doc: Dict[str, Any]) -> int:
+        """UPSERT post_market_recap_snapshot 文档对象。"""
+        sql = """
+        INSERT INTO post_market_recap_snapshot (
+            trade_date, snapshot_version, batch_id, trace_id, payload, source_name
+        ) VALUES ($1, $2, $3, $4, $5::jsonb, $6)
+        ON CONFLICT (trade_date) DO UPDATE SET
+          snapshot_version = EXCLUDED.snapshot_version,
+          batch_id = EXCLUDED.batch_id,
+          trace_id = EXCLUDED.trace_id,
+          payload = EXCLUDED.payload,
+          source_name = EXCLUDED.source_name,
+          updated_at = NOW()
+        """
+        payload = (
+            doc.get("trade_date"),
+            doc.get("snapshot_version"),
+            doc.get("batch_id"),
+            doc.get("trace_id"),
+            json.dumps(doc.get("payload") or {}, ensure_ascii=False),
+            str(doc.get("source_name") or "stock_processing_service"),
+        )
+        try:
+            async with self.pool.acquire() as conn:
+                await conn.execute(sql, *payload)
+            return 1
+        except Exception as e:
+            logger.warning(f"写入 post_market_recap_snapshot 失败（可能尚未迁移）: {e}")
+            return 0
+
+    @staticmethod
+    def _normalize_stock_snapshot_row(row: Dict[str, Any]) -> tuple:
+        def _pick(*keys: str):
+            for key in keys:
+                if key in row and row[key] is not None:
+                    return row[key]
+            return None
+
+        trade_date = _pick("trade_date")
+        stock_id = _pick("stock_id")
+        if not stock_id:
+            stock_code = _pick("stock_code")
+            market = str(_pick("market") or "").strip().upper()
+            if stock_code and market in {"SH", "SZ"}:
+                stock_id = f"{stock_code}.{market}"
+            elif stock_code:
+                stock_id = str(stock_code)
+        if not trade_date or not stock_id:
+            raise ValueError(f"invalid snapshot row, missing trade_date/stock_id: {row}")
+
+        return (
+            trade_date,
+            str(stock_id),
+            _pick("stock_name"),
+            _pick("open_price"),
+            _pick("high_price"),
+            _pick("low_price"),
+            _pick("close_price"),
+            _pick("pre_close"),
+            _pick("pct_chg"),
+            _pick("volume"),
+            _pick("amount"),
+            str(_pick("source_name") or "stock_processing_service"),
+        )
+
     async def cleanup_test_data(self, theme_id=None):
         """清理测试数据"""
         try:

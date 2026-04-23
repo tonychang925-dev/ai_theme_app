@@ -8,11 +8,15 @@
 from __future__ import annotations
 
 import asyncio
+import json
 from dataclasses import dataclass
 from datetime import date, datetime
-from typing import Optional, Tuple
+from typing import Optional
 
-from stock_service.models import MarketEnvironmentJudgement, ThemeMainlineJudgement
+import asyncpg
+
+from stock_service.config import StockServiceConfig
+from stock_service.models import MarketEnvironmentJudgement, ThemeMainlineStateV2
 
 
 @dataclass
@@ -73,95 +77,166 @@ class MarketState:
 class StrategyDecisionService:
     """策略决策服务：基于市场环境和主线状态决定操作模式"""
 
-    def __init__(self, db_manager=None):
+    def __init__(self, db_manager=None, config: Optional[StockServiceConfig] = None):
         self.db_manager = db_manager
+        self.config = config or StockServiceConfig()
+
+    async def _open_conn(self):
+        return await asyncpg.connect(
+            host=self.config.postgres_host,
+            port=self.config.postgres_port,
+            database=self.config.postgres_database,
+            user=self.config.postgres_user,
+            password=self.config.postgres_password,
+        )
 
     async def get_market_environment_judgement(self, trade_date: date) -> Optional[MarketEnvironmentJudgement]:
         """
         获取市场环境判断
         返回：MarketEnvironmentJudgement对象，如果不存在则返回None
         """
-        # TODO: 实现数据库查询，目前返回模拟数据
-        # 模拟数据：假设市场健康度75分
+        sql = """
+        SELECT
+            trade_date,
+            market_health_score,
+            market_bias,
+            breadth_status,
+            short_term_sentiment_status,
+            relay_sentiment_status,
+            intraday_fade_status,
+            action_bias,
+            conclusion,
+            evidence,
+            source_type,
+            source_trace_id,
+            source_trace,
+            source_version,
+            rule_version
+        FROM market_environment_judgement
+        WHERE trade_date = $1::date
+        LIMIT 1
+        """
+        conn = await self._open_conn()
+        try:
+            row = await conn.fetchrow(sql, trade_date)
+        finally:
+            await conn.close()
+        if not row:
+            return None
+        evidence = row["evidence"]
+        if isinstance(evidence, str):
+            try:
+                evidence = json.loads(evidence)
+            except Exception:
+                evidence = []
+        if not isinstance(evidence, list):
+            evidence = []
+        source_trace = row["source_trace"]
+        if isinstance(source_trace, str):
+            try:
+                source_trace = json.loads(source_trace)
+            except Exception:
+                source_trace = {}
+        if not isinstance(source_trace, dict):
+            source_trace = {}
         return MarketEnvironmentJudgement(
-            trade_date=trade_date.isoformat(),
-            market_health_score=75.0,
-            market_bias="risk_on",
-            breadth_status="市场广度强",
-            short_term_sentiment_status="短线情绪活跃",
-            relay_sentiment_status="接力生态健康",
-            intraday_fade_status="冲高回落风险可控",
-            action_bias="主做",
-            conclusion="大环境提供保护，可围绕主线前排与高辨识度个股积极进攻",
-            evidence=[],
-            source_type="p3.phase3.market_environment_judgement",
-            source_trace_id="",
-            source_trace={},
-            source_version="market_environment_judgement.v1.daily_proxy",
-            rule_version="market_environment_judgement.v1.daily_proxy"
+            trade_date=row["trade_date"].isoformat() if row.get("trade_date") else trade_date.isoformat(),
+            market_health_score=float(row.get("market_health_score") or 0.0),
+            market_bias=str(row.get("market_bias") or ""),
+            breadth_status=str(row.get("breadth_status") or ""),
+            short_term_sentiment_status=str(row.get("short_term_sentiment_status") or ""),
+            relay_sentiment_status=str(row.get("relay_sentiment_status") or ""),
+            intraday_fade_status=str(row.get("intraday_fade_status") or ""),
+            action_bias=str(row.get("action_bias") or ""),
+            conclusion=str(row.get("conclusion") or ""),
+            evidence=evidence,
+            source_type=str(row.get("source_type") or "p3.phase3.market_environment_judgement"),
+            source_trace_id=str(row.get("source_trace_id") or ""),
+            source_trace=source_trace,
+            source_version=str(row.get("source_version") or "market_environment_judgement.v1.daily_proxy"),
+            rule_version=str(row.get("rule_version") or "market_environment_judgement.v1.daily_proxy"),
         )
 
-    async def get_theme_mainline_judgements(self, trade_date: date) -> list[ThemeMainlineJudgement]:
+    async def get_mainline_theme_states(self, trade_date: date) -> list[ThemeMainlineStateV2]:
         """
-        获取主线题材判断结果
-        返回：ThemeMainlineJudgement列表
+        获取主线题材判断结果（统一口径：theme_cycle_judgement_v2）
         """
-        # TODO: 实现数据库查询，目前返回模拟数据
-        # 模拟数据：假设有2个主线题材
-        return [
-            ThemeMainlineJudgement(
-                trade_date=trade_date.isoformat(),
-                subject_key="AI芯片",
-                theme_name="人工智能芯片国产替代",
-                event_chain_score=28.5,
-                event_chain_continuity_score=25.6,
-                market_recognition_score=25.8,
-                mainline_stability_score=15.6,
-                is_main_theme=True,
-                theme_tier="main",
-                limit_up_count=8,
-                novelty_score=22.5,
-                timing_score=18.3,
-                influence_score=20.1,
-                capital_persistence_score=10.5,
-                institution_participation_score=6.8,
-                retail_attention_score=7.2,
-                conclusion="具备主线潜力，事件连续性良好，市场关注度提升",
-                evidence_logic=[],
-                evidence_market=[],
-                source_type="p3.phase2.mainline",
-                source_trace_id="",
-                source_trace={},
-                source_version="theme_mainline_judgement.v1",
-                rule_version="theme_mainline_judgement.v1"
-            ),
-            ThemeMainlineJudgement(
-                trade_date=trade_date.isoformat(),
-                subject_key="新能源",
-                theme_name="新能源汽车产业链",
-                event_chain_score=24.3,
-                event_chain_continuity_score=22.1,
-                market_recognition_score=23.5,
-                mainline_stability_score=14.2,
-                is_main_theme=True,
-                theme_tier="main",
-                limit_up_count=6,
-                novelty_score=18.5,
-                timing_score=16.8,
-                influence_score=22.3,
-                capital_persistence_score=8.5,
-                institution_participation_score=7.2,
-                retail_attention_score=6.5,
-                conclusion="具备主线潜力，事件连续性良好，市场关注度提升",
-                evidence_logic=[],
-                evidence_market=[],
-                source_type="p3.phase2.mainline",
-                source_trace_id="",
-                source_trace={},
-                source_version="theme_mainline_judgement.v1",
-                rule_version="theme_mainline_judgement.v1"
+        sql = """
+        SELECT
+            v2.trade_date,
+            v2.subject_key,
+            COALESCE(NULLIF(v2.theme_name, ''), v2.subject_key) AS theme_name,
+            COALESCE(msd.is_mainline, FALSE) AS mainline_alive,
+            COALESCE(msd.state, v2.final_cycle_state, '') AS final_cycle_state,
+            COALESCE(msd.mainline_strength_score, v2.mainline_strength_score, 0) AS mainline_strength_score,
+            COALESCE(v2.fade_risk_score, 0) AS fade_risk_score,
+            COALESCE(v2.confidence_score, 0) AS confidence_score,
+            COALESCE(v2.rule_reasons, '[]'::jsonb) AS rule_reasons,
+            COALESCE(e.event_count_3d, 0) AS event_count_3d,
+            COALESCE(e.event_continuity_score, 0) AS event_continuity_score,
+            COALESCE(e.limit_up_count, 0) AS limit_up_count
+        FROM theme_cycle_judgement_v2 v2
+        JOIN mainline_state_daily msd
+          ON msd.trade_date = v2.trade_date
+         AND msd.subject_key = v2.subject_key
+        LEFT JOIN theme_cycle_evidence_daily e
+          ON e.trade_date = v2.trade_date
+         AND e.subject_key = v2.subject_key
+        WHERE v2.trade_date = $1::date
+          AND COALESCE(msd.is_mainline, FALSE) = TRUE
+          AND COALESCE(msd.state, '') <> 'fade_confirmed'
+        ORDER BY
+            COALESCE(msd.mainline_strength_score, v2.mainline_strength_score, 0) DESC,
+            COALESCE(v2.confidence_score, 0) DESC,
+            v2.subject_key
+        """
+        conn = await self._open_conn()
+        try:
+            rows = await conn.fetch(sql, trade_date)
+        finally:
+            await conn.close()
+        results: list[ThemeMainlineStateV2] = []
+        for row in rows:
+            reasons = row["rule_reasons"]
+            if isinstance(reasons, str):
+                try:
+                    reasons = json.loads(reasons)
+                except Exception:
+                    reasons = []
+            if not isinstance(reasons, list):
+                reasons = []
+            results.append(
+                ThemeMainlineStateV2(
+                    trade_date=row["trade_date"].isoformat() if row.get("trade_date") else trade_date.isoformat(),
+                    subject_key=str(row["subject_key"]),
+                    theme_name=str(row["theme_name"]),
+                    mainline_alive=bool(row.get("mainline_alive") or False),
+                    mainline_bucket=(
+                        "main"
+                        if float(row.get("mainline_strength_score") or 0.0) >= 75.0
+                        else "strong_branch"
+                    ),
+                    event_count_3d=float(row.get("event_count_3d") or 0.0),
+                    event_continuity_score=float(row.get("event_continuity_score") or 0.0),
+                    confidence_score=float(row.get("confidence_score") or 0.0),
+                    mainline_strength_score=float(row.get("mainline_strength_score") or 0.0),
+                    limit_up_count=int(row.get("limit_up_count") or 0),
+                    final_cycle_state=str(row.get("final_cycle_state") or ""),
+                    fade_risk_score=float(row.get("fade_risk_score") or 0.0),
+                    conclusion=f"状态={row.get('final_cycle_state') or '--'}；主线强度={float(row.get('mainline_strength_score') or 0):.2f}",
+                    rule_reasons=[str(x) for x in reasons[:4]],
+                    source_type="theme_cycle_judgement_v2",
+                    source_trace_id="",
+                    source_trace={},
+                    source_version="theme_cycle_judgement.v2",
+                    rule_version="theme_cycle_judgement.v2",
+                )
             )
-        ]
+        return results
+
+    async def get_theme_mainline_judgements(self, trade_date: date) -> list[ThemeMainlineStateV2]:
+        """兼容旧方法名：返回主线状态列表（v2语义）。"""
+        return await self.get_mainline_theme_states(trade_date)
 
     async def assess_market_state(self, trade_date: date) -> MarketState:
         """
@@ -183,8 +258,8 @@ class StrategyDecisionService:
             market_health_score = market_env.market_health_score
 
             # 获取主线判断结果
-            mainline_judgements = await self.get_theme_mainline_judgements(trade_date)
-            main_theme_count = sum(1 for j in mainline_judgements if j.theme_tier == "main")
+            mainline_states = await self.get_mainline_theme_states(trade_date)
+            main_theme_count = sum(1 for j in mainline_states if j.mainline_alive)
 
             # 决策逻辑
             if market_health_score >= 70 and main_theme_count >= 1:

@@ -1,5 +1,10 @@
 # ARCH_REVIEW
 
+> 文档维护守则（强制）：
+> 1. 本文档仅允许“增量追加”新评审章节，禁止覆盖或替换历史章节正文。  
+> 2. 历史结论如需调整，必须以“变更记录 + 冲突裁决”方式追加说明。  
+> 3. 任何评审更新不得删除既有阶段编号与原始结论。
+
 ## Change Log
 
 - 2026-04-02
@@ -681,3 +686,35 @@ DailyReview页面：
 - 不建设用户个性化主题/皮肤系统
 - 不实现完整的社交分享功能
 - 不建设独立的用户账户与权限系统（依赖现有认证）
+
+---
+
+## 10. 第三阶段增量评审（P3 Incremental Review, 2026-04-23）
+
+### 10.1 增量说明
+- 本节为增量追加，不覆盖既有 `A/B/P4` 历史评审章节。
+- 评审对象：`docs/architecture/个人投资助理-项目架构设计-第三阶段.md`
+- 评审焦点：执行落地性（门禁、切换协议、运行时契约、对账阈值、灰度开关）
+
+### 10.2 增量风险结论（按优先级）
+- `P1`：`Gateway First` 缺 CI 级硬门禁，存在回退到直连数据库风险。
+- `P1`：`snapshot current` 仅有原则、缺统一协议，存在半成品读取风险。
+- `P1`：Stream 仅定义 topic，缺 `group/ack/retry/backoff/dlq/replay` 运行时契约。
+- `P1`：双轨对账缺阈值矩阵与失败分级，切流决策不可量化。
+- `P2`：TTL 与 feature flag 缺统一台账，跨环境一致性风险中等。
+
+### 10.3 增量 ADR 建议
+- `ADR-301`：Gateway 访问策略强制化（CI 阻断 `asyncpg/SQL/_client/_db`）
+- `ADR-302`：Snapshot Current Pointer 协议（写新版本 -> 原子切 current）
+- `ADR-303`：Stream Runtime Contract（group/ack/retry/backoff/dlq/replay）
+- `ADR-304`：Reconcile Gate 标准（对象级/字段级阈值 + 失败分级）
+- `ADR-305`：Feature Flag Register（开关台账 + 回滚动作）
+
+### 10.4 增量执行建议（P3.phase1.0）
+- 任务清单：`TASK-P3.1.0-001 ~ TASK-P3.1.0-005`
+- 进入 `P3.phase1.1` 前置条件：上述任务全部通过（AND）
+- 对应验收条款：`ACCEPTANCE.md` 中 `ACPT-P3P10-001 ~ ACPT-P3P10-005`
+
+### 10.5 增量冲突裁决
+- 冲突：第三阶段文档已声明“唯一执行真源”，但执行细则尚未完全协议化。
+- 裁决：保持架构方向不变，先补执行契约，再推进规模化开发与切流。

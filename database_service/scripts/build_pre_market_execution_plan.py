@@ -97,13 +97,28 @@ async def ensure_tables(manager: PostgresDatabaseManager) -> None:
 
 async def fetch_mainlines(manager: PostgresDatabaseManager, trade_date_value: date):
     sql = """
-    SELECT subject_key, theme_name, is_main_theme, theme_tier, conclusion
-    FROM theme_mainline_judgement
-    WHERE trade_date = $1
-      AND theme_tier IN ('main', 'strong_branch')
+    SELECT
+      v2.subject_key,
+      COALESCE(NULLIF(v2.theme_name, ''), v2.subject_key) AS theme_name,
+      COALESCE(v2.final_mainline_alive, FALSE) AS mainline_alive,
+      COALESCE(v2.final_cycle_state, '') AS final_cycle_state,
+      COALESCE(v2.mainline_strength_score, 0) AS mainline_strength_score,
+      COALESCE(v2.fade_watch, FALSE) AS fade_watch,
+      COALESCE(v2.fade_confirmed, FALSE) AS fade_confirmed,
+      (
+        '状态=' || COALESCE(v2.final_cycle_state, '--')
+        || ' 主线强度=' || ROUND(COALESCE(v2.mainline_strength_score, 0)::numeric, 2)::text
+      ) AS conclusion
+    FROM theme_cycle_judgement_v2 v2
+    JOIN mainline_state_daily msd
+      ON msd.trade_date = v2.trade_date
+     AND msd.subject_key = v2.subject_key
+    WHERE v2.trade_date = $1
+      AND COALESCE(msd.is_mainline, FALSE) = TRUE
+      AND COALESCE(v2.final_mainline_alive, FALSE) = TRUE
     ORDER BY
-      CASE theme_tier WHEN 'main' THEN 0 ELSE 1 END,
-      subject_key
+      COALESCE(v2.mainline_strength_score, 0) DESC,
+      v2.subject_key
     """
     async with manager.pool.acquire() as conn:
         rows = await conn.fetch(sql, trade_date_value)
@@ -112,9 +127,26 @@ async def fetch_mainlines(manager: PostgresDatabaseManager, trade_date_value: da
 
 async def fetch_cycles(manager: PostgresDatabaseManager, trade_date_value: date):
     sql = """
-    SELECT subject_key, primary_cycle_stage, action_bias, leader_status, board_effect_status, conclusion
-    FROM theme_cycle_judgement
-    WHERE trade_date = $1
+    SELECT
+      v2.subject_key,
+      COALESCE(NULLIF(v2.final_cycle_state, ''), 'fade') AS primary_cycle_stage,
+      CASE
+        WHEN COALESCE(v2.fade_confirmed, FALSE) THEN '观望'
+        WHEN COALESCE(v2.final_cycle_state, '') IN ('climax', '高潮') THEN '警惕高潮'
+        WHEN COALESCE(v2.final_cycle_state, '') IN ('fermentation', '发酵', 'start', '启动') THEN '可主做'
+        WHEN COALESCE(v2.final_cycle_state, '') IN ('repair', '修复', 'divergence', '分歧', 'rebound', '回流') THEN '可做弱转强'
+        ELSE '可观察'
+      END AS action_bias,
+      CASE
+        WHEN COALESCE(v2.fade_confirmed, FALSE) THEN '龙头走弱'
+        WHEN COALESCE(v2.mainline_strength_score, 0) >= 75 THEN '龙头加强'
+        WHEN COALESCE(v2.mainline_strength_score, 0) >= 60 THEN '龙头强势'
+        ELSE '龙头分化'
+      END AS leader_status,
+      ''::text AS board_effect_status,
+      COALESCE(NULLIF(BTRIM(v2.state_transition_reason), ''), '') AS conclusion
+    FROM theme_cycle_judgement_v2 v2
+    WHERE v2.trade_date = $1
     """
     async with manager.pool.acquire() as conn:
         rows = await conn.fetch(sql, trade_date_value)
@@ -307,8 +339,11 @@ async def main_async() -> int:
                     ExecutionMainlineInput(
                         subject_key=subject_key,
                         theme_name=row["theme_name"],
-                        is_main_theme=bool(row["is_main_theme"]),
-                        theme_tier=row["theme_tier"],
+                        mainline_alive=bool(row["mainline_alive"]),
+                        final_cycle_state=str(row.get("final_cycle_state") or ""),
+                        mainline_strength_score=float(row.get("mainline_strength_score") or 0.0),
+                        fade_watch=bool(row.get("fade_watch") or False),
+                        fade_confirmed=bool(row.get("fade_confirmed") or False),
                         conclusion=row["conclusion"],
                     ),
                     ExecutionCycleInput(

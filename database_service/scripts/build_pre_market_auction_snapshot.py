@@ -107,7 +107,7 @@ async def fetch_watch_universe(manager: PostgresDatabaseManager, trade_date_valu
     sql = """
     SELECT
         stock_id, stock_name, subject_key, theme_name, role_label,
-        theme_tier, primary_cycle_stage, action_bias, is_reversal_watch
+        mainline_alive, primary_cycle_stage, action_bias, is_reversal_watch
     FROM auction_watch_universe
     WHERE trade_date = $1
     ORDER BY candidate_priority, theme_name, candidate_rank, stock_id
@@ -153,7 +153,7 @@ async def fetch_weak_to_strong_universe(manager: PostgresDatabaseManager, trade_
                 "subject_key": row["subject_key"],
                 "theme_name": row["theme_name"] or row["subject_key"] or "",
                 "role_label": _role_label_from_candidate_type(str(row["candidate_type"] or "")),
-                "theme_tier": "main",
+                "mainline_alive": True,
                 "action_bias": "watch_open",
                 "is_reversal_watch": True,
             }
@@ -370,7 +370,7 @@ async def main_async() -> int:
                 subject_key=str(row["subject_key"]),
                 theme_name=row["theme_name"],
                 role_label=row["role_label"],
-                is_main_theme=row["theme_tier"] == "main",
+                mainline_alive=bool(row.get("mainline_alive")),
                 action_bias=row["action_bias"],
                 is_reversal_watch=bool(row["is_reversal_watch"]),
             )
