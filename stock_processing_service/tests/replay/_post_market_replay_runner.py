@@ -364,18 +364,18 @@ async def _build_target_diagnostics(
     refresh_service = StrongWatchRefreshService()
     prune_service = StrongWatchPruneService()
     promote_service = StrongWatchPromoteService()
+    prior_rows = await read_port.get_prior_stock_daily_snapshots(
+        trade_date=trade_date,
+        lookback_days=7,
+        stock_ids=target_stock_ids,
+    )
     seeded_rows = seed_service.seed(pool_rows)
-    refreshed_rows = refresh_service.refresh(seeded_rows, bars)
+    refreshed_rows = refresh_service.refresh(seeded_rows, bars, prior_rows=prior_rows)
     kept_rows, pruned_rows = prune_service.prune(refreshed_rows)
     promoted_rows = promote_service.promote(trade_date, kept_rows)
     kept_by_stock = {r.stock_id: r for r in kept_rows}
     pruned_by_stock = {r.stock_id: r for r in pruned_rows}
     refreshed_by_stock = {r.stock_id: r for r in refreshed_rows}
-    prior_rows = await read_port.get_prior_stock_daily_snapshots(
-        trade_date=trade_date,
-        lookback_days=5,
-        stock_ids=target_stock_ids,
-    )
     prior_by_stock = {p.stock_id: p for p in prior_rows}
     candidate_svc = W2SCandidateService()
 
@@ -402,8 +402,15 @@ async def _build_target_diagnostics(
             base_trace["refresh"] = {
                 "watch_score": str(refreshed.watch_score),
                 "strong_grade": refreshed.strong_grade,
+                "mainline_context_score": str(refreshed.mainline_context_score),
+                "strong_gene_score": str(refreshed.strong_gene_score),
                 "support_score": str(refreshed.support_score),
                 "support_type": refreshed.support_type,
+                "weakness_tolerance_score": str(refreshed.weakness_tolerance_score),
+                "prior7_limitup_days": refreshed.prior7_limitup_days,
+                "prior7_strong_days": refreshed.prior7_strong_days,
+                "prior7_best_watch_score": str(refreshed.prior7_best_watch_score),
+                "prior7_peak_rank": refreshed.prior7_peak_rank,
                 "watch_status": refreshed.watch_status,
             }
         if pruned is not None:
@@ -412,12 +419,14 @@ async def _build_target_diagnostics(
                 "prune_mode": pruned.prune_mode,
                 "prune_reason_code": pruned.prune_reason_code,
                 "removed_reason": pruned.removed_reason,
+                "kept_because": pruned.kept_because,
             }
         if kept is not None:
             base_trace["kept"] = {
                 "watch_status": kept.watch_status,
                 "weak_days": kept.weak_days,
                 "strong_grade": kept.strong_grade,
+                "kept_because": kept.kept_because,
             }
 
         if selected_row is None:

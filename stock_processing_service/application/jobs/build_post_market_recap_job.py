@@ -46,7 +46,7 @@ class BuildPostMarketRecapJob:
         snapshot_version: str,
         batch_id: str,
         trace_id: str,
-        lookback_days: int = 5,
+        lookback_days: int = 7,
     ) -> BuildResult:
         job_key = f"build_post_market_recap:{trade_date.isoformat()}:{snapshot_version}"
         acquired = await self._idempotency_port.acquire_job_idempotency(job_key=job_key, ttl_seconds=6 * 3600)
@@ -74,6 +74,7 @@ class BuildPostMarketRecapJob:
             trade_date=trade_date,
             pool_rows=pool_rows,
             bars=bars,
+            prior_rows=prior_rows,
         )
         candidates = self._candidate_service.build_candidates(
             bars=bars,
@@ -100,6 +101,7 @@ class BuildPostMarketRecapJob:
                     "prune_mode": row.prune_mode,
                     "prune_reason_code": row.prune_reason_code,
                     "removed_reason": row.removed_reason,
+                    "kept_because": row.kept_because,
                 }
                 for row in strong_watch_history[:100]
             ],
@@ -150,6 +152,7 @@ class BuildPostMarketRecapJob:
                         "prune_mode": row.prune_mode,
                         "prune_reason_code": row.prune_reason_code,
                         "removed_reason": row.removed_reason,
+                        "kept_because": row.kept_because,
                     }
                     for row in strong_watch_history
                 ],
@@ -226,6 +229,7 @@ class BuildPostMarketRecapJob:
                 "prune_mode": row.prune_mode,
                 "prune_reason_code": row.prune_reason_code,
                 "removed_reason": row.removed_reason,
+                "kept_because": row.kept_because,
             }
             for row in strong_watch_history
         ]

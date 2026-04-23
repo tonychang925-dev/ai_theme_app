@@ -4,7 +4,7 @@ from dataclasses import dataclass, field
 from decimal import Decimal
 from typing import Any
 
-from stock_processing_service.contracts.dto import StockBarDTO, SubjectStockPoolDTO
+from stock_processing_service.contracts.dto import PriorSnapshotDTO, StockBarDTO, SubjectStockPoolDTO
 
 
 @dataclass(frozen=True)
@@ -27,23 +27,140 @@ class StrongWatchRecord:
     prune_mode: str | None = None
     removed_reason: str | None = None
     source: str = "strong_watch_pool"
+    mainline_context_score: Decimal = Decimal("0")
+    strong_gene_score: Decimal = Decimal("0")
+    weakness_tolerance_score: Decimal = Decimal("0")
+    prior7_limitup_days: int = 0
+    prior7_strong_days: int = 0
+    prior7_best_watch_score: Decimal = Decimal("0")
+    prior7_peak_rank: int = 99
+    kept_because: str | None = None
 
 
 class StrongWatchRefreshService:
+    @staticmethod
+    def _d(value: Any, default: str = "0") -> Decimal:
+        if value is None:
+            return Decimal(default)
+        if isinstance(value, Decimal):
+            return value
+        try:
+            return Decimal(str(value))
+        except Exception:
+            return Decimal(default)
+
+    @staticmethod
+    def _in_range(value: Decimal, low: str, high: str) -> bool:
+        return Decimal(low) <= value <= Decimal(high)
+
+    def _weakness_tolerance_score(self, pct_chg: Decimal) -> Decimal:
+        # Weak-to-strong upstream should tolerate pullback and neutral days,
+        # while avoiding overheating and extreme breakdown.
+        if self._in_range(pct_chg, "-5", "-1"):
+            return Decimal("92")
+        if self._in_range(pct_chg, "-1", "2"):
+            return Decimal("76")
+        if self._in_range(pct_chg, "2", "4"):
+            return Decimal("56")
+        if pct_chg > Decimal("4"):
+            return Decimal("36")
+        if self._in_range(pct_chg, "-8", "-5"):
+            return Decimal("52")
+        return Decimal("24")
+
+    def _mainline_context_score(self, rank: int, metadata: dict[str, Any]) -> Decimal:
+        rank_score = Decimal("100") / Decimal(str(max(rank, 1)))
+        role_tags = metadata.get("role_tags") if isinstance(metadata.get("role_tags"), dict) else {}
+        leader_bonus = Decimal("14") if bool(role_tags.get("is_leader")) else Decimal("0")
+        front_row_bonus = Decimal("8") if bool(role_tags.get("is_front_row_core")) else Decimal("0")
+        return min(Decimal("100"), rank_score * Decimal("0.72") + leader_bonus + front_row_bonus)
+
+    def _prior7_features(
+        self,
+        *,
+        stock_id: str,
+        metadata: dict[str, Any],
+        prior_rows_by_stock: dict[str, list[PriorSnapshotDTO]],
+    ) -> tuple[int, int, Decimal, int]:
+        m_limit = metadata.get("prior7_limitup_days")
+        m_strong = metadata.get("prior7_strong_days")
+        m_best_watch = metadata.get("prior7_best_watch_score")
+        m_peak_rank = metadata.get("prior7_peak_rank")
+        if m_limit is not None or m_strong is not None or m_best_watch is not None or m_peak_rank is not None:
+            return (
+                int(m_limit or 0),
+                int(m_strong or 0),
+                self._d(m_best_watch),
+                int(m_peak_rank or 99),
+            )
+
+        rows = prior_rows_by_stock.get(stock_id, [])
+        limitup_days = 0
+        strong_days = 0
+        best_watch_score = Decimal("0")
+        peak_rank = 99
+        for r in rows:
+            payload = r.payload or {}
+            pct = self._d(payload.get("pct_chg"))
+            if pct >= Decimal("9.5"):
+                limitup_days += 1
+            if pct >= Decimal("5"):
+                strong_days += 1
+            best_watch_score = max(best_watch_score, self._d(payload.get("watch_score")))
+            rank = int(payload.get("pool_rank") or 99)
+            peak_rank = min(peak_rank, rank)
+        return limitup_days, strong_days, best_watch_score, peak_rank
+
+    def _strong_gene_score(
+        self,
+        *,
+        prior7_limitup_days: int,
+        prior7_strong_days: int,
+        prior7_best_watch_score: Decimal,
+        prior7_peak_rank: int,
+    ) -> Decimal:
+        history_score = min(
+            Decimal("100"),
+            Decimal(str(prior7_limitup_days * 25 + prior7_strong_days * 10)),
+        )
+        best_watch_bonus = min(Decimal("20"), prior7_best_watch_score * Decimal("0.2"))
+        peak_rank_bonus = Decimal("10") if prior7_peak_rank <= 3 else Decimal("0")
+        return min(
+            Decimal("100"),
+            history_score + best_watch_bonus + peak_rank_bonus,
+        )
+
     def refresh(
         self,
         seeded_rows: list[SubjectStockPoolDTO],
         bars: list[StockBarDTO],
+        prior_rows: list[PriorSnapshotDTO] | None = None,
     ) -> list[StrongWatchRecord]:
         bars_by_stock = {bar.stock_id: bar for bar in bars}
+        prior_rows_by_stock: dict[str, list[PriorSnapshotDTO]] = {}
+        for prior in prior_rows or []:
+            prior_rows_by_stock.setdefault(prior.stock_id, []).append(prior)
         rows: list[StrongWatchRecord] = []
         for row in seeded_rows:
             bar = bars_by_stock.get(row.stock_id)
             if bar is None:
                 continue
+            metadata = row.metadata if isinstance(row.metadata, dict) else {}
             rank = row.pool_rank if row.pool_rank is not None else 20
-            rank_score = Decimal("100") / Decimal(str(max(rank, 1)))
-            momentum_score = max(Decimal("0"), min(Decimal("100"), bar.pct_chg * Decimal("10") + Decimal("50")))
+            mainline_context_score = self._mainline_context_score(rank, metadata)
+            weakness_tolerance_score = self._weakness_tolerance_score(bar.pct_chg)
+            prior7_limitup_days, prior7_strong_days, prior7_best_watch_score, prior7_peak_rank = self._prior7_features(
+                stock_id=row.stock_id,
+                metadata=metadata,
+                prior_rows_by_stock=prior_rows_by_stock,
+            )
+            strong_gene_score = self._strong_gene_score(
+                prior7_limitup_days=prior7_limitup_days,
+                prior7_strong_days=prior7_strong_days,
+                prior7_best_watch_score=prior7_best_watch_score,
+                prior7_peak_rank=prior7_peak_rank,
+            )
+
             ma_support = bar.close_price * Decimal("0.97")
             prev_low_support = bar.low_price
             platform_support = (bar.open_price + bar.pre_close) / Decimal("2")
@@ -57,14 +174,6 @@ class StrongWatchRefreshService:
                 support_type = "platform_support"
 
             support_distance = (bar.close_price - support_level) / (bar.close_price if bar.close_price != 0 else Decimal("1"))
-            support_score = max(
-                Decimal("0"),
-                min(
-                    Decimal("100"),
-                    Decimal("100") - abs(support_distance * Decimal("260")),
-                ),
-            )
-            watch_score = rank_score * Decimal("0.35") + momentum_score * Decimal("0.35") + support_score * Decimal("0.30")
             support_refs = [
                 f"close={bar.close_price}",
                 f"ma_support={ma_support}",
@@ -72,13 +181,32 @@ class StrongWatchRefreshService:
                 f"platform_support={platform_support}",
                 f"selected={support_type}:{support_level}",
             ]
+            support_score = max(
+                Decimal("0"),
+                min(
+                    Decimal("100"),
+                    Decimal("100") - abs(support_distance * Decimal("260")),
+                ),
+            )
+            if support_type in {"previous_low", "prev_low_support", "platform_support", "ma_support"}:
+                support_score += Decimal("8")
+            support_score += min(Decimal("10"), Decimal(str(len([r for r in support_refs if r]) * 3)))
+            support_score = min(Decimal("100"), support_score)
+            watch_score = (
+                mainline_context_score * Decimal("0.20")
+                + strong_gene_score * Decimal("0.35")
+                + support_score * Decimal("0.25")
+                + weakness_tolerance_score * Decimal("0.20")
+            )
 
-            if watch_score >= Decimal("80"):
+            if watch_score >= Decimal("78"):
                 grade = "S"
-            elif watch_score >= Decimal("65"):
+            elif watch_score >= Decimal("66"):
                 grade = "A"
-            elif watch_score >= Decimal("50"):
+            elif watch_score >= Decimal("54"):
                 grade = "B"
+            elif watch_score >= Decimal("42"):
+                grade = "B_KEEP"
             else:
                 grade = "REJECT"
 
@@ -98,8 +226,20 @@ class StrongWatchRefreshService:
                     role_tags={
                         "watch_tier": grade,
                         "is_leader": bool((row.pool_rank or 999) <= 1),
+                        "is_front_row_core": bool((row.pool_rank or 999) <= 3),
                         "momentum_positive": bool(bar.pct_chg > Decimal("0")),
+                        "prior7_limitup_days": prior7_limitup_days,
+                        "prior7_strong_days": prior7_strong_days,
+                        "prior7_best_watch_score": str(prior7_best_watch_score),
+                        "prior7_peak_rank": prior7_peak_rank,
                     },
+                    mainline_context_score=mainline_context_score,
+                    strong_gene_score=strong_gene_score,
+                    weakness_tolerance_score=weakness_tolerance_score,
+                    prior7_limitup_days=prior7_limitup_days,
+                    prior7_strong_days=prior7_strong_days,
+                    prior7_best_watch_score=prior7_best_watch_score,
+                    prior7_peak_rank=prior7_peak_rank,
                 )
             )
         return rows

@@ -20,6 +20,7 @@ class StrongWatchHistoryRecord:
     prune_mode: str | None = None
     prune_reason_code: str | None = None
     removed_reason: str | None = None
+    kept_because: str | None = None
 
 
 class StrongWatchHistoryService:
@@ -44,7 +45,7 @@ class StrongWatchHistoryService:
                     prune_mode=row.prune_mode,
                     prune_reason_code=row.prune_reason_code,
                     removed_reason=row.removed_reason,
+                    kept_because=row.kept_because,
                 )
             )
         return rows
-

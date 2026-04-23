@@ -199,7 +199,9 @@ def test_build_post_market_recap_job() -> None:
 
 def test_build_post_market_recap_job_empty_strong_watch_pool() -> None:
     class _EmptyStrongWatchService:
-        def build_promoted_pool_with_history(self, trade_date, pool_rows, bars, prior_active_rows=None):
+        def build_promoted_pool_with_history(
+            self, trade_date, pool_rows, bars, prior_rows=None, prior_active_rows=None
+        ):
             return [], [], []
 
     class _NoCandidateService:
@@ -243,7 +245,9 @@ def test_build_post_market_recap_job_empty_strong_watch_pool() -> None:
 
 def test_build_post_market_recap_job_promoted_pool_generates_candidates() -> None:
     class _PromotedStrongWatchService:
-        def build_promoted_pool_with_history(self, trade_date, pool_rows, bars, prior_active_rows=None):
+        def build_promoted_pool_with_history(
+            self, trade_date, pool_rows, bars, prior_rows=None, prior_active_rows=None
+        ):
             promoted = [
                 SubjectStockPoolDTO(
                     trade_date=trade_date,

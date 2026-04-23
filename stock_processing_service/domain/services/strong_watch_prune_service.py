@@ -10,12 +10,23 @@ class StrongWatchPruneService:
         kept: list[StrongWatchRecord] = []
         pruned: list[StrongWatchRecord] = []
         for row in rows:
-            # Two-stage prune:
-            # 1) immediate prune for hard reject grade or severe support break.
-            # 2) delayed prune for weakening rows after weak_days threshold.
-            support_break = row.support_score < 35
-            if row.strong_grade == "REJECT" or support_break:
-                prune_reason_code = "HARD_PRUNE_SUPPORT_BREAK" if support_break else "HARD_PRUNE_REJECT_GRADE"
+            has_prior7_gene = row.prior7_limitup_days >= 1 or row.prior7_strong_days >= 2
+            support_ok = row.support_score >= 55
+            immediate_prune = (
+                row.strong_gene_score < 25
+                or row.support_score < 35
+                or row.weakness_tolerance_score < 20
+                or (row.strong_grade == "REJECT" and not (has_prior7_gene and support_ok))
+            )
+            if immediate_prune:
+                if row.strong_gene_score < 25:
+                    prune_reason_code = "HARD_PRUNE_WEAK_GENE"
+                elif row.support_score < 35:
+                    prune_reason_code = "HARD_PRUNE_SUPPORT_BREAK"
+                elif row.weakness_tolerance_score < 20:
+                    prune_reason_code = "HARD_PRUNE_INVALID_WEAK"
+                else:
+                    prune_reason_code = "HARD_PRUNE_REJECT_GRADE"
                 pruned.append(
                     replace(
                         row,
@@ -23,21 +34,24 @@ class StrongWatchPruneService:
                         prune_mode="immediate",
                         prune_reason_code=prune_reason_code,
                         removed_reason=prune_reason_code.lower(),
+                        kept_because=None,
                     )
                 )
                 continue
 
-            if row.strong_grade == "B":
+            keep_observe_bucket = row.strong_grade in {"B_KEEP", "B"} and has_prior7_gene and support_ok
+            if keep_observe_bucket:
                 weak_days = row.weak_days + 1
-                if weak_days >= 3:
+                if weak_days >= 5:
                     pruned.append(
                         replace(
                             row,
                             weak_days=weak_days,
                             watch_status="removed",
                             prune_mode="delayed",
-                            prune_reason_code="DELAYED_PRUNE_WEAK_DAYS",
-                            removed_reason="delayed_prune_weak_days",
+                            prune_reason_code="DELAYED_PRUNE_WEAKENING_KEEP_EXPIRE",
+                            removed_reason="delayed_prune_weakening_keep_expire",
+                            kept_because=None,
                         )
                     )
                     continue
@@ -45,13 +59,23 @@ class StrongWatchPruneService:
                     replace(
                         row,
                         weak_days=weak_days,
-                        watch_status="weakening",
+                        watch_status="weakening_keep",
                         prune_mode=None,
                         prune_reason_code=None,
                         removed_reason=None,
+                        kept_because="weakening_keep_gene_and_support",
                     )
                 )
                 continue
 
-            kept.append(replace(row, watch_status="active", prune_mode=None, prune_reason_code=None, removed_reason=None))
+            kept.append(
+                replace(
+                    row,
+                    watch_status="active",
+                    prune_mode=None,
+                    prune_reason_code=None,
+                    removed_reason=None,
+                    kept_because=None,
+                )
+            )
         return kept, pruned
