@@ -10,7 +10,7 @@ class StrongWatchPromoteService:
     def promote(self, trade_date: date, rows: list[StrongWatchRecord]) -> list[SubjectStockPoolDTO]:
         promoted: list[SubjectStockPoolDTO] = []
         for row in rows:
-            if row.strong_grade not in {"S", "A", "B"}:
+            if row.strong_grade not in {"S", "A", "B", "B_KEEP"}:
                 continue
             promoted.append(
                 SubjectStockPoolDTO(
@@ -29,6 +29,15 @@ class StrongWatchPromoteService:
                         "support_score": str(row.support_score),
                         "support_refs": row.support_refs,
                         "role_tags": row.role_tags,
+                        "mainline_context_score": str(row.mainline_context_score),
+                        "strong_gene_score": str(row.strong_gene_score),
+                        "weakness_tolerance_score": str(row.weakness_tolerance_score),
+                        "prior7_limitup_days": row.prior7_limitup_days,
+                        "prior7_strong_days": row.prior7_strong_days,
+                        "prior7_best_watch_score": str(row.prior7_best_watch_score),
+                        "prior7_peak_rank": row.prior7_peak_rank,
+                        "watch_status": row.watch_status,
+                        "kept_because": row.kept_because,
                     },
                 )
             )

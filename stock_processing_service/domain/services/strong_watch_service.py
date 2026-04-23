@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import replace
 from datetime import date
 
-from stock_processing_service.contracts.dto import StockBarDTO, SubjectStockPoolDTO
+from stock_processing_service.contracts.dto import PriorSnapshotDTO, StockBarDTO, SubjectStockPoolDTO
 from stock_processing_service.domain.services.strong_watch_prune_service import StrongWatchPruneService
 from stock_processing_service.domain.services.strong_watch_promote_service import StrongWatchPromoteService
 from stock_processing_service.domain.services.strong_watch_refresh_service import (
@@ -42,12 +42,14 @@ class StrongWatchService:
         trade_date: date,
         pool_rows: list[SubjectStockPoolDTO],
         bars: list[StockBarDTO],
+        prior_rows: list[PriorSnapshotDTO] | None = None,
         prior_active_rows: list[StrongWatchRecord] | None = None,
     ) -> tuple[list[SubjectStockPoolDTO], list[StrongWatchRecord]]:
         promoted, kept, _history = self.build_promoted_pool_with_history(
             trade_date=trade_date,
             pool_rows=pool_rows,
             bars=bars,
+            prior_rows=prior_rows,
             prior_active_rows=prior_active_rows,
         )
         return promoted, kept
@@ -57,6 +59,7 @@ class StrongWatchService:
         trade_date: date,
         pool_rows: list[SubjectStockPoolDTO],
         bars: list[StockBarDTO],
+        prior_rows: list[PriorSnapshotDTO] | None = None,
         prior_active_rows: list[StrongWatchRecord] | None = None,
     ) -> tuple[list[SubjectStockPoolDTO], list[StrongWatchRecord], list[StrongWatchHistoryRecord]]:
         seeded = self._seed_service.seed(pool_rows)
@@ -65,7 +68,7 @@ class StrongWatchService:
             seeded_rows=seeded,
             prior_active_rows=prior_active_rows or [],
         )
-        refreshed = self._refresh_service.refresh(seeded, bars)
+        refreshed = self._refresh_service.refresh(seeded, bars, prior_rows=prior_rows)
         # merge roll-forward weak_days baseline
         baseline_weak_days = {r.stock_id: r.weak_days for r in rolled}
         refreshed = [replace(r, weak_days=baseline_weak_days.get(r.stock_id, 0)) for r in refreshed]

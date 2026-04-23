@@ -20,9 +20,14 @@ class W2SCandidate:
     candidate_level: str
     candidate_source: str
     evidence_rules: list[str]
+    formal_bias: bool = False
+    overheated: bool = False
+    formal_fail_reason: str | None = None
+    reject_reason: str | None = None
 
 
 class W2SCandidateService:
+    MAX_CANDIDATES = 10
     @staticmethod
     def _d(value: Any, default: str = "0") -> Decimal:
         if value is None:
@@ -43,6 +48,8 @@ class W2SCandidateService:
             return Decimal("85")
         if grade == "B":
             return Decimal("75")
+        if grade == "B_KEEP":
+            return Decimal("68")
         return Decimal("50")
 
     @staticmethod
@@ -156,6 +163,8 @@ class W2SCandidateService:
         role_tags = metadata.get("role_tags") if isinstance(metadata.get("role_tags"), dict) else {}
         support_refs = metadata.get("support_refs") if isinstance(metadata.get("support_refs"), list) else []
         strong_grade = str(metadata.get("strong_grade") or "B")
+        watch_status = str(metadata.get("watch_status") or "")
+        kept_because = str(metadata.get("kept_because") or "")
         watch_score = self._d(metadata.get("watch_score"), default="60")
         support_score = self._d(metadata.get("support_score"), default="50")
         support_type = str(metadata.get("support_type") or "")
@@ -194,53 +203,97 @@ class W2SCandidateService:
         weakness_valid_score = self._weakness_valid_score(pct_chg)
         overheat_penalty = max(Decimal("0"), pct_chg) * Decimal("6")
 
+        prior7_bonus = Decimal("0")
+        if prior7_limitup_days >= 1:
+            prior7_bonus += Decimal("8")
+        if prior7_strong_days >= 2:
+            prior7_bonus += Decimal("6")
+
+        w2s_pathway_bonus = Decimal("0")
+        if (
+            watch_status in {"weakening", "weakening_keep"}
+            and support_type in {"previous_low", "prev_low_support", "platform_support", "ma_support"}
+            and support_hit_score >= Decimal("70")
+            and weakness_valid_score >= Decimal("60")
+        ):
+            w2s_pathway_bonus = Decimal("10")
+
         raw_score = (
-            mainline_context_score * Decimal("0.10")
-            + strong_gene_score * Decimal("0.20")
-            + support_hit_score * Decimal("0.35")
-            + repair_or_takeover_score * Decimal("0.10")
-            + weakness_valid_score * Decimal("0.25")
+            mainline_context_score * Decimal("0.08")
+            + strong_gene_score * Decimal("0.18")
+            + support_hit_score * Decimal("0.34")
+            + repair_or_takeover_score * Decimal("0.18")
+            + weakness_valid_score * Decimal("0.22")
         )
-        candidate_score = max(Decimal("0"), raw_score - overheat_penalty)
+        candidate_score = max(
+            Decimal("0"),
+            min(Decimal("100"), raw_score - overheat_penalty + prior7_bonus + w2s_pathway_bonus),
+        )
 
         formal_day_gate = self._in_range(pct_chg, "-6", "1.5")
         observe_day_gate = self._in_range(pct_chg, "-8", "3")
         prior7_formal_gate = prior7_limitup_days >= 1 or prior7_strong_days >= 2
+        prior7_soft_pass = True
+        formal_w2s_override = (
+            watch_status in {"weakening", "weakening_keep"}
+            and support_type in {"previous_low", "prev_low_support", "platform_support", "ma_support"}
+            and support_hit_score >= Decimal("75")
+            and weakness_valid_score >= Decimal("60")
+        )
 
         rank_overheat_gate = rank <= 2 and pct_chg > Decimal("3")
         leader_overheat_gate = bool(role_tags.get("is_leader")) and pct_chg > Decimal("2.5")
         tier_overheat_gate = str(role_tags.get("watch_tier", "")).upper() in {"S", "A"} and pct_chg > Decimal("4")
         overheat_hard_gate = rank_overheat_gate or leader_overheat_gate or tier_overheat_gate
+        overheated = overheat_hard_gate
 
+        extreme_invalid = (
+            pct_chg < Decimal("-8")
+            or pct_chg > Decimal("6")
+            or (bool(role_tags.get("is_leader")) and pct_chg > Decimal("5"))
+        )
         hard_reject = (
-            strong_grade.upper() not in {"S", "A", "B"}
-            or support_hit_score < Decimal("45")
-            or watch_score < Decimal("45")
-            or not observe_day_gate
+            strong_grade.upper() not in {"S", "A", "B", "B_KEEP"}
+            or watch_status == "removed"
+            or extreme_invalid
+            or (support_hit_score < Decimal("45") and repair_or_takeover_score < Decimal("45") and strong_gene_score < Decimal("45"))
         )
 
         level = "reject"
         reject_reason = ""
+        formal_fail_reason = ""
         if hard_reject:
             reject_reason = "hard_reject"
         else:
             formal_ok = (
-                candidate_score >= Decimal("66")
+                candidate_score >= Decimal("60")
                 and support_hit_score >= Decimal("60")
-                and strong_gene_score >= Decimal("58")
-                and weakness_valid_score >= Decimal("50")
+                and repair_or_takeover_score >= Decimal("55")
                 and formal_day_gate
-                and prior7_formal_gate
                 and not overheat_hard_gate
             )
+            if formal_w2s_override and candidate_score >= Decimal("60") and formal_day_gate and not overheat_hard_gate:
+                formal_ok = True
             if formal_ok:
                 level = "formal"
-            elif candidate_score >= Decimal("52"):
+            elif observe_day_gate and candidate_score >= Decimal("48"):
                 level = "observe_only"
                 if overheat_hard_gate:
-                    reject_reason = "formal_downgraded_overheat"
+                    formal_fail_reason = "overheated_front_row"
+                elif not formal_day_gate:
+                    formal_fail_reason = "formal_day_gate_failed"
+                elif support_hit_score < Decimal("60"):
+                    formal_fail_reason = "support_too_low"
+                elif repair_or_takeover_score < Decimal("55"):
+                    formal_fail_reason = "repair_score_too_low"
+                else:
+                    formal_fail_reason = "candidate_score_below_formal"
             else:
                 reject_reason = "score_below_observe_threshold"
+                if not observe_day_gate:
+                    formal_fail_reason = "observe_day_gate_failed"
+                else:
+                    formal_fail_reason = "candidate_score_below_observe"
 
         return {
             "candidate_source": source,
@@ -265,9 +318,17 @@ class W2SCandidateService:
             "formal_day_gate": formal_day_gate,
             "observe_day_gate": observe_day_gate,
             "prior7_formal_gate": prior7_formal_gate,
+            "prior7_soft_pass": prior7_soft_pass,
+            "formal_w2s_override": formal_w2s_override,
+            "prior7_bonus": str(prior7_bonus),
+            "w2s_pathway_bonus": str(w2s_pathway_bonus),
             "overheat_hard_gate": overheat_hard_gate,
+            "overheated": overheated,
             "candidate_level": level,
             "reject_reason": reject_reason,
+            "formal_fail_reason": formal_fail_reason,
+            "watch_status": watch_status or "unknown",
+            "kept_because": kept_because,
         }
 
     def build_candidates(
@@ -279,7 +340,8 @@ class W2SCandidateService:
         bar_by_stock = {bar.stock_id: bar for bar in bars}
         prior_by_stock = {row.stock_id: row for row in prior_rows}
 
-        candidates: list[W2SCandidate] = []
+        formal_items: list[tuple[W2SCandidate, dict[str, Any]]] = []
+        observe_items: list[tuple[W2SCandidate, dict[str, Any]]] = []
         for row in pool_rows:
             bar = bar_by_stock.get(row.stock_id)
             prior = prior_by_stock.get(row.stock_id)
@@ -312,25 +374,62 @@ class W2SCandidateService:
                 f"repair_or_takeover_score={explain['repair_or_takeover_score']}",
                 f"weakness_valid_score={explain['weakness_valid_score']}",
                 f"overheat_penalty={explain['overheat_penalty']}",
+                f"prior7_bonus={explain['prior7_bonus']}",
+                f"formal_bias={explain['formal_w2s_override']}",
+                f"overheated={explain['overheated']}",
             ]
             if explain.get("reject_reason"):
                 evidence.append(f"candidate_note={explain['reject_reason']}")
+            if explain.get("formal_fail_reason"):
+                evidence.append(f"formal_fail_reason={explain['formal_fail_reason']}")
 
-            candidates.append(
-                W2SCandidate(
-                    trade_date=str(row.trade_date),
-                    stock_id=row.stock_id,
-                    stock_name=row.stock_name or (bar.stock_name if bar else ""),
-                    subject_key=row.subject_key,
-                    subject_name=row.subject_name,
-                    support_score=self._d(explain.get("support_hit_score")),
-                    momentum_score=self._d(explain.get("weakness_valid_score")),
-                    candidate_score=self._d(explain.get("candidate_score")),
-                    candidate_level=level,
-                    candidate_source=str(explain.get("candidate_source", "")),
-                    evidence_rules=evidence,
-                )
+            candidate = W2SCandidate(
+                trade_date=str(row.trade_date),
+                stock_id=row.stock_id,
+                stock_name=row.stock_name or (bar.stock_name if bar else ""),
+                subject_key=row.subject_key,
+                subject_name=row.subject_name,
+                support_score=self._d(explain.get("support_hit_score")),
+                momentum_score=self._d(explain.get("weakness_valid_score")),
+                candidate_score=self._d(explain.get("candidate_score")),
+                candidate_level=level,
+                candidate_source=str(explain.get("candidate_source", "")),
+                evidence_rules=evidence,
+                formal_bias=bool(explain.get("formal_w2s_override")),
+                overheated=bool(explain.get("overheated")),
+                formal_fail_reason=str(explain.get("formal_fail_reason") or "") or None,
+                reject_reason=str(explain.get("reject_reason") or "") or None,
+            )
+            if level == "formal":
+                formal_items.append((candidate, explain))
+            else:
+                observe_items.append((candidate, explain))
+
+        preferred_support = {"previous_low", "prev_low_support", "platform_support"}
+
+        def _formal_key(item: tuple[W2SCandidate, dict[str, Any]]) -> tuple[int, Decimal, Decimal, Decimal, Decimal, Decimal]:
+            cand, exp = item
+            support_type = str(exp.get("support_type", ""))
+            support_pref = 1 if support_type in preferred_support else 0
+            return (
+                support_pref,
+                self._d(exp.get("support_hit_score")),
+                self._d(exp.get("repair_or_takeover_score")),
+                self._d(exp.get("weakness_valid_score")),
+                cand.candidate_score,
+                self._d(exp.get("strong_gene_score")),
             )
 
-        candidates.sort(key=lambda c: c.candidate_score, reverse=True)
-        return candidates
+        def _observe_key(item: tuple[W2SCandidate, dict[str, Any]]) -> tuple[Decimal, Decimal, Decimal, Decimal]:
+            cand, exp = item
+            return (
+                cand.candidate_score,
+                self._d(exp.get("support_hit_score")),
+                self._d(exp.get("strong_gene_score")),
+                self._d(exp.get("mainline_context_score")),
+            )
+
+        formal_items.sort(key=_formal_key, reverse=True)
+        observe_items.sort(key=_observe_key, reverse=True)
+        final = [c for c, _ in formal_items] + [c for c, _ in observe_items]
+        return final[: self.MAX_CANDIDATES]
