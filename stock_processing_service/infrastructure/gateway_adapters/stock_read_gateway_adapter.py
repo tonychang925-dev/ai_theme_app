@@ -181,12 +181,21 @@ class StockReadGatewayAdapter:
         result: list[PriorSnapshotDTO] = []
         for row in rows:
             p = _as_dict(row)
+            payload = dict(p.get("payload") or {})
+            # Compatibility bridge: prior rows may come from stock_daily_snapshot table.
+            # Promote core bar facts into payload so downstream services can derive prior7 features.
+            if "pct_chg" in p and p.get("pct_chg") is not None:
+                payload.setdefault("pct_chg", str(p.get("pct_chg")))
+            if "close_price" in p and p.get("close_price") is not None:
+                payload.setdefault("close_price", str(p.get("close_price")))
+            if "pre_close" in p and p.get("pre_close") is not None:
+                payload.setdefault("pre_close", str(p.get("pre_close")))
             result.append(
                 PriorSnapshotDTO(
                     trade_date=p.get("trade_date", trade_date),
                     stock_id=_normalize_stock_id(p.get("stock_id", "")),
                     snapshot_version=str(p.get("snapshot_version", "")),
-                    payload=dict(p.get("payload") or {}),
+                    payload=payload,
                 )
             )
         return result
