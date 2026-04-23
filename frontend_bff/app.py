@@ -17,6 +17,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from fastapi.responses import StreamingResponse
 import os
+import re
 
 from frontend_bff.repositories.bff_repository import FrontendBffRepository
 from frontend_bff.services.collection_job_manager import CollectionJobManager
@@ -36,6 +37,32 @@ DAILY_SNAPSHOT_FLAG = "stock_processing_service.daily_snapshot.enabled"
 PRE_MARKET_FLAG = "stock_processing_service.pre_market.enabled"
 POST_MARKET_FLAG = "stock_processing_service.post_market.enabled"
 QUALITY_GATE_REPORT_PATH = Path(os.getenv("QUALITY_GATE_REPORT_PATH", "tmp/quality_gate/gate_report.json"))
+BFF_STRICT_FROZEN_OBJECT_READ = str(os.getenv("BFF_STRICT_FROZEN_OBJECT_READ", "false")).lower() in {
+    "1",
+    "true",
+    "yes",
+    "on",
+}
+BFF_AUDIT_PROCESS_TABLE_READ = str(os.getenv("BFF_AUDIT_PROCESS_TABLE_READ", "true")).lower() in {
+    "1",
+    "true",
+    "yes",
+    "on",
+}
+_APP_PROCESS_STATE_TABLES = {
+    "theme_mainline_identity_registry",
+    "mainline_identity_review_queue",
+    "theme_cycle_judgement_v2",
+    "mainline_state_daily",
+    "mainline_state_transition",
+    "strong_stock_watch_pool",
+    "strong_stock_watch_history",
+    "weak_to_strong_candidate_pool",
+    "weak_to_strong_auction_signal",
+    "pre_market_execution_plan",
+    "pre_market_auction_signal_validation",
+}
+_APP_TABLE_PATTERN = re.compile(r"\b(?:from|join)\s+([a-zA-Z_][a-zA-Z0-9_]*)", re.IGNORECASE)
 
 
 def _env_flag(name: str, default: bool = False) -> bool:
@@ -64,6 +91,28 @@ def _require_gate_for_flag(flag_name: str) -> None:
                 "gate_report_path": str(QUALITY_GATE_REPORT_PATH),
                 "gate_report": report,
             },
+        )
+
+
+def _audit_and_guard_app_sql(*, endpoint: str, sql: str) -> None:
+    tables = {m.group(1).lower() for m in _APP_TABLE_PATTERN.finditer(sql or "")}
+    process_hits = sorted(t for t in tables if t in _APP_PROCESS_STATE_TABLES)
+    if not process_hits:
+        return
+    if BFF_AUDIT_PROCESS_TABLE_READ:
+        logger.warning(
+            "[BFF_APP_READ_AUDIT] endpoint=%s reads process tables=%s strict=%s",
+            endpoint,
+            ",".join(process_hits),
+            BFF_STRICT_FROZEN_OBJECT_READ,
+        )
+    if BFF_STRICT_FROZEN_OBJECT_READ:
+        raise HTTPException(
+            status_code=503,
+            detail=(
+                f"blocked process-table read in endpoint={endpoint}, "
+                f"tables={process_hits}; enable frozen snapshots or disable strict guard"
+            ),
         )
 
 
@@ -451,6 +500,10 @@ async def _infer_confirm_trade_date_from_candidate_trade_date(candidate_trade_da
     WHERE trade_date = $1::date
       AND next_trade_date > $1::date
     """
+    _audit_and_guard_app_sql(
+        endpoint="_infer_confirm_trade_date_from_candidate_trade_date",
+        sql=sql,
+    )
     async with pool.acquire() as conn:
         inferred = await conn.fetchval(sql, candidate_trade_date)
     return inferred
@@ -481,6 +534,7 @@ async def _fetch_w2s_candidates(next_trade_date: date, limit: int = 200) -> List
     ORDER BY candidate_score DESC, id ASC
     LIMIT $2
     """
+    _audit_and_guard_app_sql(endpoint="_fetch_w2s_candidates", sql=sql)
     async with pool.acquire() as conn:
         rows = await conn.fetch(sql, next_trade_date, max(int(limit), 1))
     return [dict(r) for r in rows]
@@ -511,6 +565,7 @@ async def _fetch_w2s_candidates_for_confirm_date(confirm_trade_date: date, limit
     ORDER BY candidate_score DESC, id ASC
     LIMIT $2
     """
+    _audit_and_guard_app_sql(endpoint="_fetch_w2s_candidates_for_confirm_date", sql=sql)
     async with pool.acquire() as conn:
         rows = await conn.fetch(sql, confirm_trade_date, max(int(limit), 1))
     return [dict(r) for r in rows]
@@ -523,6 +578,7 @@ async def _count_w2s_candidates_for_confirm_date(confirm_trade_date: date) -> in
     FROM weak_to_strong_candidate_pool
     WHERE next_trade_date = $1::date
     """
+    _audit_and_guard_app_sql(endpoint="_count_w2s_candidates_for_confirm_date", sql=sql)
     async with pool.acquire() as conn:
         return int(await conn.fetchval(sql, confirm_trade_date) or 0)
 
@@ -535,6 +591,7 @@ async def _count_w2s_formal_candidates_for_confirm_date(confirm_trade_date: date
     WHERE next_trade_date = $1::date
       AND COALESCE(NULLIF(LOWER(pool_entry_type), ''), 'formal') = 'formal'
     """
+    _audit_and_guard_app_sql(endpoint="_count_w2s_formal_candidates_for_confirm_date", sql=sql)
     async with pool.acquire() as conn:
         return int(await conn.fetchval(sql, confirm_trade_date) or 0)
 
@@ -566,6 +623,7 @@ async def _fetch_w2s_candidates_by_ids(candidate_ids: List[int]) -> List[Dict[st
     WHERE id = ANY($1::int[])
     ORDER BY candidate_score DESC, id ASC
     """
+    _audit_and_guard_app_sql(endpoint="_fetch_w2s_candidates_by_ids", sql=sql)
     async with pool.acquire() as conn:
         rows = await conn.fetch(sql, cleaned_ids)
     return [dict(r) for r in rows]
@@ -590,6 +648,7 @@ async def _fetch_w2s_signals(trade_date: date) -> Dict[int, Dict[str, Any]]:
     FROM weak_to_strong_auction_signal
     WHERE trade_date = $1::date
     """
+    _audit_and_guard_app_sql(endpoint="_fetch_w2s_signals", sql=sql)
     async with pool.acquire() as conn:
         rows = await conn.fetch(sql, trade_date)
     payload: Dict[int, Dict[str, Any]] = {}
@@ -611,6 +670,7 @@ async def _get_w2s_snapshot_coverage(trade_date: date) -> Dict[str, int]:
     WHERE c.next_trade_date = $1::date
       AND COALESCE(NULLIF(LOWER(c.pool_entry_type), ''), 'formal') = 'formal'
     """
+    _audit_and_guard_app_sql(endpoint="_get_w2s_snapshot_coverage", sql=sql)
     async with pool.acquire() as conn:
         row = await conn.fetchrow(sql, trade_date)
     return {
