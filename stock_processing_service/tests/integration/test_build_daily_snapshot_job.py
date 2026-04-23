@@ -207,5 +207,8 @@ def test_build_daily_snapshot_job_end_to_end_and_idempotent() -> None:
             lookback_days=5,
         )
         assert skipped.status == "skipped_idempotent"
+        assert skipped.batch_id == "b1"
+        assert skipped.trace_id == "t1"
+        assert "idempotency_key_already_completed" in skipped.warnings
 
     asyncio.run(_run())

@@ -3,9 +3,9 @@ from __future__ import annotations
 from dataclasses import asdict
 from collections import defaultdict
 from datetime import date, datetime, timezone
-from typing import Any
 from uuid import uuid4
 
+from stock_processing_service.application.cache import SnapshotCacheWriter
 from stock_processing_service.application.projectors import (
     AbnormalEventProjector,
     DailySnapshotProjector,
@@ -62,6 +62,7 @@ class BuildDailySnapshotJob:
         self._daily_projector = daily_projector or DailySnapshotProjector()
         self._abnormal_projector = abnormal_projector or AbnormalEventProjector()
         self._leaderboard_projector = leaderboard_projector or LeaderboardProjector()
+        self._cache_writer = SnapshotCacheWriter(cache_port)
 
     async def execute(
         self,
@@ -79,6 +80,10 @@ class BuildDailySnapshotJob:
                 trade_date=trade_date.isoformat(),
                 affected_rows=0,
                 status="skipped_idempotent",
+                batch_id=batch_id,
+                trace_id=trace_id,
+                warnings=["idempotency_key_already_completed"],
+                metrics={"job_key": job_key},
             )
 
         calendar = await self._read_port.get_trade_calendar(trade_date)
@@ -89,8 +94,16 @@ class BuildDailySnapshotJob:
                 trade_date=trade_date.isoformat(),
                 affected_rows=0,
                 status="market_closed",
+                batch_id=batch_id,
+                trace_id=trace_id,
+                warnings=["market_closed"],
+                metrics={"job_key": job_key},
             )
-        await self._cache_set(f"sps:calendar:{trade_date}", asdict(calendar), ttl_seconds=7 * 24 * 3600)
+        await self._cache_writer.write_value_cache(
+            f"sps:calendar:{trade_date}",
+            asdict(calendar),
+            ttl_seconds=SnapshotCacheWriter.TTL_7D,
+        )
 
         bars = await self._read_port.get_stock_daily_bars(trade_date)
         pool_rows = await self._read_port.get_subject_stock_pool_by_trade_date(trade_date)
@@ -102,12 +115,16 @@ class BuildDailySnapshotJob:
             stock_ids=[row.stock_id for row in pool_rows] if pool_rows else None,
         )
 
-        await self._cache_set(f"sps:subject_pool:{trade_date}", [asdict(r) for r in pool_rows], ttl_seconds=4 * 3600)
+        await self._cache_writer.write_grouped_cache(
+            f"sps:subject_pool:{trade_date}",
+            pool_rows,
+            ttl_seconds=SnapshotCacheWriter.TTL_4H,
+        )
         for ctx in context_rows:
-            await self._cache_set(
+            await self._cache_writer.write_row_cache(
                 f"sps:subject_context:{trade_date}:{ctx.subject_key}",
-                asdict(ctx),
-                ttl_seconds=2 * 3600,
+                ctx,
+                ttl_seconds=SnapshotCacheWriter.TTL_2H,
             )
 
         evidences = self._evidence_builder.build_evidences(bars, pool_rows, context_rows, prior_rows)
@@ -148,31 +165,36 @@ class BuildDailySnapshotJob:
         )
 
         affected = 0
+        published_events: list[str] = []
+        cache_writes = 0
         affected += await self._write_port.upsert_stock_daily_snapshot_rows(daily_rows)
         affected += await self._write_port.upsert_subject_stock_daily_snapshot_rows(subject_daily_rows)
         affected += await self._write_port.upsert_stock_abnormal_event_rows(abnormal_rows)
         affected += await self._write_port.upsert_theme_stock_leaderboard_rows(leaderboard_rows)
 
         for row in daily_rows:
-            await self._cache_set(
+            written = await self._cache_writer.write_row_cache(
                 f"sps:stock_daily_snapshot:{trade_date}:{row.stock_id}",
-                asdict(row),
-                ttl_seconds=24 * 3600,
+                row,
+                ttl_seconds=SnapshotCacheWriter.TTL_24H,
             )
+            cache_writes += 1 if written else 0
         leaderboard_by_subject: dict[str, list[ThemeStockLeaderboard]] = defaultdict(list)
         for row in leaderboard_rows:
             leaderboard_by_subject[row.subject_key].append(row)
         for subject_key, rows in leaderboard_by_subject.items():
-            await self._cache_set(
+            written = await self._cache_writer.write_grouped_cache(
                 f"sps:theme_leaderboard:{trade_date}:{subject_key}",
-                [asdict(r) for r in rows],
-                ttl_seconds=24 * 3600,
+                rows,
+                ttl_seconds=SnapshotCacheWriter.TTL_24H,
             )
-        await self._cache_set(
-            f"sps:stock_daily_snapshot:current:{trade_date}",
+            cache_writes += 1 if written else 0
+        current_written = await self._cache_writer.write_current_version(
+            "sps:stock_daily_snapshot",
+            trade_date,
             snapshot_version,
-            ttl_seconds=24 * 3600,
         )
+        cache_writes += 1 if current_written else 0
 
         occurred_at = datetime.now(timezone.utc)
         await self._event_port.publish_stock_processing_event(
@@ -194,6 +216,7 @@ class BuildDailySnapshotJob:
                 ),
             )
         )
+        published_events.append("snapshot_built")
 
         if abnormal_rows:
             abnormal_by_stock: dict[str, int] = defaultdict(int)
@@ -220,6 +243,7 @@ class BuildDailySnapshotJob:
                         ),
                     )
                 )
+                published_events.append("abnormal_detected")
 
         for subject_key, rows in leaderboard_by_subject.items():
             await self._event_port.publish_stock_processing_event(
@@ -240,6 +264,7 @@ class BuildDailySnapshotJob:
                     ),
                 )
             )
+            published_events.append("leaderboard_updated")
 
         await self._idempotency_port.mark_job_completed(
             job_key,
@@ -255,9 +280,15 @@ class BuildDailySnapshotJob:
             trade_date=trade_date.isoformat(),
             affected_rows=affected,
             status="ok",
+            batch_id=batch_id,
+            trace_id=trace_id,
+            warnings=[],
+            metrics={
+                "daily_rows": len(daily_rows),
+                "subject_daily_rows": len(subject_daily_rows),
+                "abnormal_rows": len(abnormal_rows),
+                "leaderboard_rows": len(leaderboard_rows),
+            },
+            published_events=published_events,
+            cache_writes=cache_writes,
         )
-
-    async def _cache_set(self, key: str, value: Any, ttl_seconds: int) -> None:
-        if self._cache_port is None:
-            return
-        await self._cache_port.set(key, value, ttl_seconds=ttl_seconds)

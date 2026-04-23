@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from dataclasses import asdict
 from datetime import date, datetime, timezone
-from typing import Any
 from uuid import uuid4
 
+from stock_processing_service.application.cache import SnapshotCacheWriter
 from stock_processing_service.contracts.dto import BuildResult
 from stock_processing_service.contracts.events import ALL_REJECT_REASON_CODES
 from stock_processing_service.contracts.events import EventEnvelope, SnapshotBuiltPayload
@@ -37,6 +37,7 @@ class BuildPreMarketBriefJob:
         self._event_port = event_port
         self._idempotency_port = idempotency_port
         self._cache_port = cache_port
+        self._cache_writer = SnapshotCacheWriter(cache_port)
         self._candidate_service = candidate_service or W2SCandidateService()
         self._confirm_service = confirm_service or W2SConfirmService(W2SAuctionScorer())
 
@@ -56,6 +57,10 @@ class BuildPreMarketBriefJob:
                 trade_date=trade_date.isoformat(),
                 affected_rows=0,
                 status="skipped_idempotent",
+                batch_id=batch_id,
+                trace_id=trace_id,
+                warnings=["idempotency_key_already_completed"],
+                metrics={"job_key": job_key},
             )
 
         bars = await self._read_port.get_stock_daily_bars(trade_date)
@@ -111,15 +116,15 @@ class BuildPreMarketBriefJob:
         affected = await self._write_port.upsert_pre_market_brief_snapshot(snapshot)
 
         if self._cache_port is not None:
-            await self._cache_port.set(
+            await self._cache_writer.write_value_cache(
                 f"sps:pre_market_brief:{trade_date}",
                 asdict(snapshot),
-                ttl_seconds=24 * 3600,
+                ttl_seconds=SnapshotCacheWriter.TTL_24H,
             )
-            await self._cache_port.set(
-                f"sps:pre_market_brief:current:{trade_date}",
+            await self._cache_writer.write_current_version(
+                "sps:pre_market_brief",
+                trade_date,
                 snapshot_version,
-                ttl_seconds=24 * 3600,
             )
 
         await self._event_port.publish_stock_processing_event(
@@ -156,4 +161,13 @@ class BuildPreMarketBriefJob:
             trade_date=trade_date.isoformat(),
             affected_rows=affected,
             status="ok",
+            batch_id=batch_id,
+            trace_id=trace_id,
+            metrics={
+                "candidate_count": len(candidates),
+                "confirmed_count": sum(1 for row in confirmed if row.approved),
+                "reject_count": len(rejected),
+            },
+            published_events=["snapshot_built"],
+            cache_writes=2 if self._cache_port is not None else 0,
         )

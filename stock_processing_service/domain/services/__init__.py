@@ -10,6 +10,7 @@ from .state_transition_service import StateTransition, StateTransitionService
 from .strong_watch_prune_service import StrongWatchPruneService
 from .strong_watch_promote_service import StrongWatchPromoteService
 from .strong_watch_refresh_service import StrongWatchRecord, StrongWatchRefreshService
+from .strong_watch_roll_forward_service import StrongWatchRollForwardService
 from .strong_watch_seed_service import StrongWatchSeedService
 from .strong_watch_service import StrongWatchService
 from .w2s_auction_scorer import AuctionScore, W2SAuctionScorer
@@ -38,6 +39,7 @@ __all__ = [
     "IdentityDecision",
     "IdentityDecider",
     "StrongWatchSeedService",
+    "StrongWatchRollForwardService",
     "StrongWatchRefreshService",
     "StrongWatchRecord",
     "StrongWatchPruneService",

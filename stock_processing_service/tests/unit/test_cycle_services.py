@@ -73,6 +73,9 @@ def test_cycle_pipeline_normal() -> None:
     evidences = builder.build_evidences(bars, pool, context, prior)
     assert len(evidences) == 1
     assert evidences[0].missing_flags["bar_missing"] is False
+    assert evidences[0].missing_flags["subject_pool_missing"] is False
+    assert evidences[0].score_flags["computed"] is True
+    assert isinstance(evidences[0].support_refs, list) and len(evidences[0].support_refs) >= 1
 
     judgements = judger.judge_many(evidences)
     assert len(judgements) == 1
@@ -118,6 +121,25 @@ def test_cycle_pipeline_missing_evidence() -> None:
     _, pool, context, prior = _base_rows()
     evidences = builder.build_evidences([], pool, context, prior)
     assert evidences[0].missing_flags["bar_missing"] is True
+    assert evidences[0].missing_flags["subject_pool_missing"] is False
+    assert evidences[0].score_flags["event_score_fallback"] is True
 
     judgement = judger.judge_many(evidences)[0]
     assert judgement.final_cycle_state in {"start", "fade_watch", "fade_confirmed"}
+
+
+def test_cycle_pipeline_extreme_weak_evidence() -> None:
+    builder = CycleEvidenceBuilder()
+    judger = CycleJudgementService()
+
+    bars, pool, context, prior = _base_rows(pct="-12.0", pool_rank=120)
+    context = []
+    prior = []
+    evidences = builder.build_evidences(bars, pool, context, prior)
+    e = evidences[0]
+    assert e.score_flags["event_score_fallback"] is True
+    assert e.missing_flags["context_missing"] is True
+    assert e.missing_flags["prior_missing"] is True
+
+    judgement = judger.judge_many(evidences)[0]
+    assert judgement.final_cycle_state in {"fade_watch", "fade_confirmed", "start"}

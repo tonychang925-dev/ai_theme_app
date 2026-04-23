@@ -57,6 +57,7 @@ class RunReconciliationJob:
         out.mkdir(parents=True, exist_ok=True)
         summary_path = out / "summary"
         diff_path = out / "diff_samples.jsonl"
+        explanation_path = out / "diff_explanation.md"
 
         summary_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
 
@@ -92,11 +93,38 @@ class RunReconciliationJob:
             for row in changed[:sample_limit]:
                 fh.write(json.dumps(row, ensure_ascii=False) + "\n")
 
+        explanation_path.write_text(
+            self._build_diff_explanation_markdown(
+                trade_date=trade_date,
+                summary=summary,
+                missing_in_new=missing_in_new,
+                missing_in_old=missing_in_old,
+                changed=changed,
+                sample_limit=sample_limit,
+            ),
+            encoding="utf-8",
+        )
+
         return BuildResult(
             name="run_reconciliation",
             trade_date=trade_date.isoformat(),
             affected_rows=len(missing_in_new) + len(missing_in_old) + len(changed),
             status="ok",
+            warnings=[] if summary["gate_passed"] else ["reconciliation_diff_detected"],
+            metrics={
+                "old_count": summary["old_count"],
+                "new_count": summary["new_count"],
+                "missing_in_new": summary["missing_in_new"],
+                "missing_in_old": summary["missing_in_old"],
+                "changed": summary["changed"],
+                "matched": summary["matched"],
+                "gate_passed": summary["gate_passed"],
+                "artifacts": {
+                    "summary": str(summary_path),
+                    "diff_samples": str(diff_path),
+                    "diff_explanation": str(explanation_path),
+                },
+            },
         )
 
     def _pk(self, row: dict[str, Any]) -> str:
@@ -107,3 +135,49 @@ class RunReconciliationJob:
         if "stock_id" in row and "trade_date" in row:
             return f"{row.get('trade_date')}|{row.get('stock_id')}"
         return json.dumps(row, sort_keys=True, ensure_ascii=False)
+
+    def _build_diff_explanation_markdown(
+        self,
+        *,
+        trade_date: date,
+        summary: dict[str, Any],
+        missing_in_new: list[str],
+        missing_in_old: list[str],
+        changed: list[dict[str, Any]],
+        sample_limit: int,
+    ) -> str:
+        lines: list[str] = []
+        lines.append("# Reconciliation Diff Explanation")
+        lines.append("")
+        lines.append(f"- trade_date: {trade_date.isoformat()}")
+        lines.append(f"- gate_passed: {summary.get('gate_passed')}")
+        lines.append(f"- old_count: {summary.get('old_count')}")
+        lines.append(f"- new_count: {summary.get('new_count')}")
+        lines.append(f"- missing_in_new: {summary.get('missing_in_new')}")
+        lines.append(f"- missing_in_old: {summary.get('missing_in_old')}")
+        lines.append(f"- changed: {summary.get('changed')}")
+        lines.append("")
+        lines.append("## Top Diffs")
+        lines.append("")
+        has_diff = False
+
+        for pk in missing_in_new[:sample_limit]:
+            lines.append(f"- pk={pk} | reason=missing_in_new")
+            has_diff = True
+        for pk in missing_in_old[:sample_limit]:
+            lines.append(f"- pk={pk} | reason=missing_in_old")
+            has_diff = True
+        for row in changed[:sample_limit]:
+            lines.append(
+                f"- pk={row.get('pk')} | reason=value_mismatch | diff_fields={','.join(row.get('diff_fields', []))}"
+            )
+            has_diff = True
+
+        if not has_diff:
+            lines.append("- no_diff")
+        lines.append("")
+        lines.append("## Action Suggestion")
+        lines.append("")
+        lines.append("- If gate_passed=false, classify each diff as input_missing/rule_diff/threshold_diff/order_diff/bug.")
+        lines.append("- For bug or unintended rule_diff, fix new chain before enabling BFF rollout flag.")
+        return "\n".join(lines) + "\n"

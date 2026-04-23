@@ -29,6 +29,7 @@ class CycleEvidence:
     relay_score: Decimal
     board_score: Decimal
     support_score: Decimal
+    support_refs: list[str] = field(default_factory=list)
 
     score_flags: dict[str, bool] = field(default_factory=dict)
     missing_flags: dict[str, bool] = field(default_factory=dict)
@@ -65,8 +66,21 @@ class CycleEvidenceBuilder:
                         relay_score=Decimal("0"),
                         board_score=Decimal("0"),
                         support_score=Decimal("0"),
-                        score_flags={"computed": False},
-                        missing_flags={"bar_missing": True},
+                        support_refs=[],
+                        score_flags={
+                            "computed": False,
+                            "event_score_fallback": True,
+                            "leader_score_fallback": True,
+                            "relay_score_fallback": True,
+                            "board_score_fallback": True,
+                            "support_score_fallback": True,
+                        },
+                        missing_flags={
+                            "bar_missing": True,
+                            "context_missing": context_by_subject.get(pool_row.subject_key) is None,
+                            "prior_missing": prior_by_stock.get(pool_row.stock_id) is None,
+                            "subject_pool_missing": False,
+                        },
                     )
                 )
                 continue
@@ -83,7 +97,7 @@ class CycleEvidenceBuilder:
             rank_score = Decimal("100") / Decimal(str(max(rank, 1)))
             pct = stock_bar.pct_chg
 
-            event_score = Decimal(str(min(len(tags) * 18, 100)))
+            event_score = Decimal(str(min(len(tags) * 18, 100))) if tags else Decimal("8")
             continuity_score = Decimal("45")
             if prev_state in {"start", "fermentation", "acceleration", "divergence", "repair"}:
                 continuity_score = Decimal("78")
@@ -94,6 +108,16 @@ class CycleEvidenceBuilder:
             relay_score = max(Decimal("0"), min(Decimal("100"), pct * Decimal("6") + Decimal("45")))
             board_score = max(Decimal("0"), min(Decimal("100"), Decimal(str(len(tags) * 14)) + rank_score * Decimal("0.4")))
             support_score = max(Decimal("0"), min(Decimal("100"), rank_score * Decimal("0.7") + continuity_score * Decimal("0.3")))
+
+            support_refs: list[str] = []
+            if rank <= 3:
+                support_refs.append("pool_rank_top3")
+            if continuity_score >= Decimal("70"):
+                support_refs.append("prior_state_continuity")
+            if pct >= Decimal("0"):
+                support_refs.append("non_negative_pct")
+            if not support_refs:
+                support_refs.append("fallback_support")
 
             evidences.append(
                 CycleEvidence(
@@ -110,11 +134,20 @@ class CycleEvidenceBuilder:
                     relay_score=relay_score,
                     board_score=board_score,
                     support_score=support_score,
-                    score_flags={"computed": True},
+                    support_refs=support_refs,
+                    score_flags={
+                        "computed": True,
+                        "event_score_fallback": not bool(tags),
+                        "leader_score_fallback": False,
+                        "relay_score_fallback": False,
+                        "board_score_fallback": False,
+                        "support_score_fallback": False,
+                    },
                     missing_flags={
                         "bar_missing": False,
                         "context_missing": context is None,
                         "prior_missing": prior is None,
+                        "subject_pool_missing": False,
                     },
                 )
             )
