@@ -282,34 +282,52 @@ class CollectionJobManager:
         job.current_step = task.key
         self._update_overall_progress(job)
         self._append_log(job, f"开始 {task.title}")
+        self._append_log(job, f"[DEBUG] cmd={' '.join(cmd)}")
+        if cmd:
+            self._append_log(job, f"[DEBUG] executable_exists={Path(cmd[0]).exists()} executable={cmd[0]}")
 
-        process = await asyncio.create_subprocess_exec(
-            *cmd,
-            cwd=str(PROJECT_ROOT),
-            stdout=asyncio.subprocess.PIPE,
-            stderr=asyncio.subprocess.STDOUT,
-            env=env,
-        )
-        job.active_process = process
-        line_count = 0
-        assert process.stdout is not None
-        while True:
-            if job.cancel_requested and process.returncode is None:
-                process.terminate()
-            line = await process.stdout.readline()
-            if not line:
-                break
-            text = line.decode("utf-8", errors="ignore").rstrip()
-            if text:
-                self._append_log(job, text)
+        async def _consume_stream(
+            stream: asyncio.StreamReader | None,
+            *,
+            is_stderr: bool = False,
+        ) -> int:
+            if stream is None:
+                return 0
+            consumed = 0
+            while True:
+                if job.cancel_requested and process.returncode is None:
+                    process.terminate()
+                line = await stream.readline()
+                if not line:
+                    break
+                text = line.decode("utf-8", errors="ignore").rstrip()
+                if not text:
+                    continue
+                consumed += 1
+                rendered = f"[stderr] {text}" if is_stderr else text
+                self._append_log(job, rendered)
                 task.current_label = text[:120]
-                line_count += 1
                 parsed_progress = self._parse_progress_percent(task.key, cmd, text)
                 if parsed_progress is not None:
                     task.progress_percent = max(task.progress_percent, parsed_progress)
                 else:
-                    task.progress_percent = min(90, max(task.progress_percent, 10 + line_count * 3))
+                    task.progress_percent = min(90, max(task.progress_percent, 10 + consumed * 3))
                 self._update_overall_progress(job)
+            return consumed
+
+        process = await asyncio.create_subprocess_exec(
+            *cmd,
+            cwd=str(PROJECT_ROOT),
+            stdin=asyncio.subprocess.DEVNULL,
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE,
+            env=env,
+        )
+        job.active_process = process
+        await asyncio.gather(
+            _consume_stream(process.stdout, is_stderr=False),
+            _consume_stream(process.stderr, is_stderr=True),
+        )
 
         return_code = await process.wait()
         job.active_process = None

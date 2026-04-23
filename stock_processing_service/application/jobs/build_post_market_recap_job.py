@@ -15,7 +15,7 @@ from stock_processing_service.ports import (
     StockCachePort,
     StockEventPort,
     StockReadPort,
-    StockWritePort,
+    SnapshotWritePort,
 )
 
 
@@ -23,7 +23,7 @@ class BuildPostMarketRecapJob:
     def __init__(
         self,
         read_port: StockReadPort,
-        write_port: StockWritePort,
+        write_port: SnapshotWritePort,
         event_port: StockEventPort,
         idempotency_port: IdempotencyPort,
         cache_port: StockCachePort | None = None,

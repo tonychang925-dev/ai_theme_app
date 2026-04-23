@@ -15,6 +15,7 @@ from stock_processing_service.contracts.dto import (
     SubjectStockPoolDTO,
     TradeCalendarDTO,
 )
+from stock_processing_service.ports.database_gateway_stock_facade import DatabaseGatewayStockFacade
 
 
 def _as_dict(row: Any) -> dict[str, Any]:
@@ -39,7 +40,7 @@ def _d(value: Any) -> Decimal:
 
 
 class StockReadGatewayAdapter:
-    def __init__(self, db_gateway: Any) -> None:
+    def __init__(self, db_gateway: DatabaseGatewayStockFacade) -> None:
         self._db = db_gateway
 
     async def get_trade_calendar(self, trade_date: date) -> TradeCalendarDTO | None:

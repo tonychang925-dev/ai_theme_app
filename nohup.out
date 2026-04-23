@@ -26529,3 +26529,178 @@ INFO:     127.0.0.1:61569 - "GET /api/intel/feed?date=2026-04-23&type=all&sessio
 INFO:     127.0.0.1:61596 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
 INFO:     127.0.0.1:61622 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
 INFO:     127.0.0.1:61658 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     Started server process [12491]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 48] error while attempting to bind on address ('0.0.0.0', 8003): [errno 48] address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     127.0.0.1:50493 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50492 - "GET /api/recap/defaults HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50498 - "GET /api/recap/defaults HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50491 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50499 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50510 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50521 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50531 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50534 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50549 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50563 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50570 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50576 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50589 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50600 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50606 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50615 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50629 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50641 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50644 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50654 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50664 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50673 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50676 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50689 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50703 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50712 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50719 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50728 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50738 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50744 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50750 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50766 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50787 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50791 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50801 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50812 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50822 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50825 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50838 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50852 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50862 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50868 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50878 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50888 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50895 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50901 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50914 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50930 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50933 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50943 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50953 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50967 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50970 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50980 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50996 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51006 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51012 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51022 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51032 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51039 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51045 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51058 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51101 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51108 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51160 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51191 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51246 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51249 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51259 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51294 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51336 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51385 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51435 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51531 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51571 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51661 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51698 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51721 - "GET /api/collection/availability?trade_date=2026-04-23 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51724 - "GET /api/collection/status?job_id=pm_collect_20260422_203554 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51727 - "GET /api/collection/availability?trade_date=2026-04-23 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51730 - "GET /api/collection/status?job_id=pm_collect_20260422_203554 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51741 - "POST /api/collection/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51746 - "GET /api/collection/status?job_id=pm_collect_20260423_193331 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51753 - "POST /api/collection/continue HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51761 - "GET /api/collection/status?job_id=pm_collect_20260423_193331 HTTP/1.1" 200 OK
+INFO:     Started server process [17222]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 48] error while attempting to bind on address ('0.0.0.0', 8003): [errno 48] address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     127.0.0.1:51804 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51801 - "GET /api/recap/defaults HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51809 - "GET /api/recap/defaults HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51798 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51812 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51821 - "GET /api/collection/availability?trade_date=2026-04-23 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51822 - "GET /api/collection/status?job_id=pm_collect_20260423_193331 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51825 - "GET /api/collection/availability?trade_date=2026-04-23 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51828 - "GET /api/collection/status?job_id=pm_collect_20260423_193331 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51834 - "POST /api/collection/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51840 - "GET /api/collection/status?job_id=pm_collect_20260423_193424 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51888 - "GET /api/collection/availability?trade_date=2026-04-23 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51889 - "GET /api/collection/status?job_id=pm_collect_20260423_193424 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51890 - "GET /api/collection/availability?trade_date=2026-04-23 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51891 - "GET /api/collection/status?job_id=pm_collect_20260423_193424 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51900 - "GET /api/recap/defaults HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51901 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51904 - "GET /api/recap/defaults HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51899 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51907 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51916 - "GET /api/intel/stream?date=2026-04-22&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51913 - "GET /api/intel/feed?date=2026-04-22&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51922 - "GET /api/intel/strong-stocks/watch?date=2026-04-22&window_days=7&limit=500&latest_per_stock=false&include_removed=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51925 - "GET /api/intel/strong-stocks/watch?date=2026-04-22&window_days=7&limit=500&latest_per_stock=false&include_removed=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51935 - "GET /api/intel/stream?date=2026-04-22&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51932 - "GET /api/recap/defaults HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51938 - "GET /api/recap/defaults HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51929 - "GET /api/intel/feed?date=2026-04-22&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51941 - "GET /api/intel/feed?date=2026-04-22&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51946 - "GET /api/collection/availability?trade_date=2026-04-23 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51947 - "GET /api/collection/status?job_id=pm_collect_20260423_193424 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51950 - "GET /api/collection/availability?trade_date=2026-04-23 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51953 - "GET /api/collection/status?job_id=pm_collect_20260423_193424 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51994 - "GET /api/collection/availability?trade_date=2026-04-23 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51995 - "GET /api/collection/status?job_id=pm_collect_20260423_193424 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51996 - "GET /api/collection/availability?trade_date=2026-04-23 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51997 - "GET /api/collection/status?job_id=pm_collect_20260423_193424 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52336 - "POST /api/collection/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52339 - "GET /api/collection/status?job_id=pm_collect_20260423_194110 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52357 - "GET /api/collection/availability?trade_date=2026-04-23 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52358 - "GET /api/collection/status?job_id=pm_collect_20260423_194110 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52361 - "GET /api/collection/availability?trade_date=2026-04-23 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52362 - "GET /api/collection/status?job_id=pm_collect_20260423_194110 HTTP/1.1" 200 OK
+INFO:     Started server process [17954]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 48] error while attempting to bind on address ('0.0.0.0', 8003): [errno 48] address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Started server process [17959]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 48] error while attempting to bind on address ('0.0.0.0', 8003): [errno 48] address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     127.0.0.1:52472 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52471 - "GET /api/recap/defaults HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52476 - "GET /api/recap/defaults HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52470 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52479 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52483 - "GET /api/intel/strong-stocks/watch?date=2026-04-23&window_days=7&limit=500&latest_per_stock=false&include_removed=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52486 - "GET /api/intel/strong-stocks/watch?date=2026-04-23&window_days=7&limit=500&latest_per_stock=false&include_removed=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52496 - "GET /api/recap/defaults HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52502 - "GET /api/intel/stream?date=2026-04-23&type=all&session=all&limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52501 - "GET /api/recap/defaults HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52493 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52505 - "GET /api/intel/feed?date=2026-04-23&type=all&session=all&limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52510 - "GET /api/collection/availability?trade_date=2026-04-23 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52511 - "GET /api/collection/status?job_id=pm_collect_20260423_194110 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52514 - "GET /api/collection/availability?trade_date=2026-04-23 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52517 - "GET /api/collection/status?job_id=pm_collect_20260423_194110 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52537 - "POST /api/collection/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52540 - "GET /api/collection/status?job_id=pm_collect_20260423_194300 HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [78657]

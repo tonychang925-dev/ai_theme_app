@@ -16,6 +16,9 @@ class CycleJudgement:
     fade_confirmed_score: Decimal
     divergence_score: Decimal
     repair_score: Decimal
+    acceleration_score: Decimal
+    fermentation_score: Decimal
+    fade_confirmed_evidence_count: int
     final_cycle_state: str
     final_mainline_alive: bool
 
@@ -24,43 +27,93 @@ class CycleJudgementService:
     def judge_many(self, evidences: list[CycleEvidence]) -> list[CycleJudgement]:
         return [self.judge_one(e) for e in evidences]
 
-    def judge_one(self, evidence: CycleEvidence) -> CycleJudgement:
+    def judge_one(self, e: CycleEvidence) -> CycleJudgement:
+        # Legacy-like score decomposition.
         mainline_strength = (
-            evidence.momentum_score * Decimal("0.40")
-            + evidence.support_score * Decimal("0.30")
-            + evidence.continuity_score * Decimal("0.20")
-            + evidence.context_score * Decimal("0.10")
+            e.event_score * Decimal("0.22")
+            + e.continuity_score * Decimal("0.12")
+            + e.leader_score * Decimal("0.26")
+            + e.relay_score * Decimal("0.16")
+            + e.board_score * Decimal("0.14")
+            + e.support_score * Decimal("0.10")
         )
-        fade_watch = max(Decimal("0"), Decimal("70") - evidence.momentum_score)
-        fade_confirmed = max(Decimal("0"), fade_watch - evidence.continuity_score * Decimal("0.2"))
-        divergence = max(Decimal("0"), evidence.support_score - evidence.momentum_score)
-        repair = max(Decimal("0"), evidence.continuity_score - fade_watch)
 
-        if mainline_strength >= Decimal("70"):
-            state = "mainline_active"
-            alive = True
-        elif repair >= Decimal("50"):
-            state = "repair"
-            alive = True
-        elif fade_confirmed >= Decimal("55"):
+        red_ratio = max(Decimal("0"), min(Decimal("1"), (e.leader_score + e.relay_score) / Decimal("200")))
+        fade_watch = (
+            max(Decimal("0"), Decimal("100") - e.leader_score) * Decimal("0.35")
+            + (Decimal("1") - red_ratio) * Decimal("45")
+            + max(Decimal("0"), Decimal("100") - e.support_score) * Decimal("0.2")
+        )
+        fade_confirmed = (
+            max(Decimal("0"), Decimal("100") - e.leader_score) * Decimal("0.45")
+            + (Decimal("1") - red_ratio) * Decimal("28")
+            + max(Decimal("0"), Decimal("40") - e.relay_score) * Decimal("0.45")
+        )
+        divergence = (
+            e.leader_score * Decimal("0.30")
+            + e.relay_score * Decimal("0.25")
+            + e.support_score * Decimal("0.20")
+            + (Decimal("1") - red_ratio) * Decimal("15")
+            + e.board_score * Decimal("0.10")
+        )
+        repair = (
+            e.continuity_score * Decimal("0.22")
+            + e.relay_score * Decimal("0.24")
+            + e.support_score * Decimal("0.20")
+            + red_ratio * Decimal("18")
+            + e.leader_score * Decimal("0.16")
+        )
+        acceleration = e.leader_score * Decimal("0.4") + e.board_score * Decimal("0.35") + e.event_score * Decimal("0.25")
+        fermentation = e.event_score * Decimal("0.35") + e.board_score * Decimal("0.35") + e.continuity_score * Decimal("0.30")
+
+        # Multi-evidence constraint for fade_confirmed.
+        evidence_count = 0
+        if e.leader_score < Decimal("40"):
+            evidence_count += 1
+        if e.relay_score < Decimal("40"):
+            evidence_count += 1
+        if e.support_score < Decimal("45"):
+            evidence_count += 1
+        if e.continuity_score < Decimal("50"):
+            evidence_count += 1
+
+        # Fixed priority:
+        # 1 fade_confirmed (evidence>=3), 2 repair (from divergence/fade_watch),
+        # 3 divergence, 4 fade_watch, 5 acceleration, 6 fermentation, 7 start
+        if fade_confirmed >= Decimal("60") and evidence_count >= 3:
             state = "fade_confirmed"
-            alive = False
-        elif fade_watch >= Decimal("45"):
+        elif repair >= Decimal("65") and e.previous_state in {"divergence", "fade_watch"}:
+            state = "repair"
+        elif divergence >= Decimal("60"):
+            state = "divergence"
+        elif fade_watch >= Decimal("50"):
             state = "fade_watch"
-            alive = False
+        elif acceleration >= Decimal("75"):
+            state = "acceleration"
+        elif fermentation >= Decimal("60"):
+            state = "fermentation"
         else:
-            state = "observed"
-            alive = False
+            state = "start"
+
+        mainline_alive = (
+            mainline_strength >= Decimal("60")
+            and e.leader_score >= Decimal("40")
+            and (e.event_score > Decimal("0") or e.continuity_score >= Decimal("40"))
+            and state != "fade_confirmed"
+        )
 
         return CycleJudgement(
-            stock_id=evidence.stock_id,
-            subject_key=evidence.subject_key,
-            subject_name=evidence.subject_name,
+            stock_id=e.stock_id,
+            subject_key=e.subject_key,
+            subject_name=e.subject_name,
             mainline_strength_score=mainline_strength,
             fade_watch_score=fade_watch,
             fade_confirmed_score=fade_confirmed,
             divergence_score=divergence,
             repair_score=repair,
+            acceleration_score=acceleration,
+            fermentation_score=fermentation,
+            fade_confirmed_evidence_count=evidence_count,
             final_cycle_state=state,
-            final_mainline_alive=alive,
+            final_mainline_alive=bool(mainline_alive),
         )

@@ -25,6 +25,7 @@ def test_reject_reason_no_auction_data() -> None:
             momentum_score=Decimal("70"),
             candidate_score=Decimal("70"),
             candidate_level="B",
+            candidate_source="strong_watch_pool",
             evidence_rules=["x"],
         )
     ]
@@ -47,6 +48,7 @@ def test_reject_reason_weak_auction_amount() -> None:
             momentum_score=Decimal("70"),
             candidate_score=Decimal("70"),
             candidate_level="B",
+            candidate_source="strong_watch_pool",
             evidence_rules=["x"],
         )
     ]
