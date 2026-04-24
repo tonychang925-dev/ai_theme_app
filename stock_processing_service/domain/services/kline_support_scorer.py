@@ -17,6 +17,9 @@ class SupportTypeScore:
     strength: Decimal
     source: str
     distance_pct: Decimal
+    zone_lower: Decimal = Decimal("0")
+    zone_upper: Decimal = Decimal("0")
+    hit_mode: str = "miss"
 
 
 @dataclass(frozen=True)
@@ -27,6 +30,7 @@ class SupportScoreResult:
     support_count: int = 0
     combined_strength: Decimal = Decimal("0")
     gap_hit: bool = False
+    gap_hit_mode: str = "miss"
     gap_level: Decimal = Decimal("0")
     gap_distance_pct: Decimal = Decimal("999")
     support_refs: list[str] = field(default_factory=list)
@@ -118,12 +122,50 @@ class KlineSupportScorer:
         strength = max(Decimal("0"), min(Decimal("1"), base - distance_penalty))
         return SupportTypeScore(candidate_type, level, strength, source, distance_pct)
 
-    def _detect_gap_support_from_history(self, df: pd.DataFrame, current_low: Decimal) -> list[SupportTypeScore]:
+    @staticmethod
+    def _distance_to_zone_pct(price: Decimal, zone_lower: Decimal, zone_upper: Decimal) -> Decimal:
+        if zone_lower <= 0 or zone_upper <= 0:
+            return Decimal("999")
+        if zone_lower <= price <= zone_upper:
+            return Decimal("0")
+        if price < zone_lower:
+            return (zone_lower - price) / zone_lower * Decimal("100")
+        return (price - zone_upper) / zone_upper * Decimal("100")
+
+    def _gap_hit_mode(
+        self,
+        current_low: Decimal,
+        current_close: Decimal,
+        zone_lower: Decimal,
+        zone_upper: Decimal,
+    ) -> str:
+        if zone_lower <= 0 or zone_upper <= 0:
+            return "miss"
+
+        if zone_lower <= current_low <= zone_upper or zone_lower <= current_close <= zone_upper:
+            return "inside"
+
+        low_to_zone = self._distance_to_zone_pct(current_low, zone_lower, zone_upper)
+        close_to_zone = self._distance_to_zone_pct(current_close, zone_lower, zone_upper)
+        nearest = min(low_to_zone, close_to_zone)
+
+        if nearest <= Decimal("2.5"):
+            return "touch"
+        if nearest <= Decimal("5"):
+            return "near"
+        return "miss"
+
+    def _detect_gap_support_from_history(
+        self,
+        df: pd.DataFrame,
+        current_low: Decimal,
+        current_close: Decimal,
+    ) -> list[SupportTypeScore]:
         """
         Legacy-aligned gap support detection:
         - Scan historical upward gaps (day_i.low > day_{i-1}.high * (1+0.1%))
-        - Treat gap lower edge (prev high) as support candidate
-        - Keep candidates reasonably near current price (<= 8% distance)
+        - Treat each gap as a zone: [prev_high, cur_low]
+        - Keep candidates reasonably near current price (<= 12% zone distance)
         """
         candidates: list[SupportTypeScore] = []
         if len(df) < 3:
@@ -139,22 +181,59 @@ class KlineSupportScorer:
             if cur_low <= prev_high * (Decimal("1") + gap_threshold):
                 continue
 
-            gap_support_level = prev_high
-            distance_pct = (abs(current_low - gap_support_level) / gap_support_level) * Decimal("100")
-            if distance_pct > Decimal("8"):
+            gap_lower = prev_high
+            gap_upper = cur_low
+            hit_mode = self._gap_hit_mode(
+                current_low=current_low,
+                current_close=current_close,
+                zone_lower=gap_lower,
+                zone_upper=gap_upper,
+            )
+            zone_distance_pct = min(
+                self._distance_to_zone_pct(current_low, gap_lower, gap_upper),
+                self._distance_to_zone_pct(current_close, gap_lower, gap_upper),
+            )
+            if zone_distance_pct > Decimal("12"):
                 continue
 
             # recency decay: fresher gap support is stronger
             age = last_idx - i
             recency_bonus = max(Decimal("0"), Decimal("0.12") - Decimal(str(age)) * Decimal("0.004"))
-            base = min(Decimal("0.95"), Decimal("0.78") + recency_bonus)
+            gap_size_pct = (gap_upper - gap_lower) / gap_lower * Decimal("100")
+            if gap_size_pct < Decimal("1"):
+                gap_size_bonus = Decimal("0.00")
+            elif gap_size_pct <= Decimal("3"):
+                gap_size_bonus = Decimal("0.05")
+            else:
+                gap_size_bonus = Decimal("0.08")
+
+            if hit_mode == "inside":
+                hit_bonus = Decimal("0.16")
+            elif hit_mode == "touch":
+                hit_bonus = Decimal("0.10")
+            elif hit_mode == "near":
+                hit_bonus = Decimal("0.04")
+            else:
+                hit_bonus = Decimal("0.00")
+
+            base = min(Decimal("0.95"), Decimal("0.72") + recency_bonus + gap_size_bonus + hit_bonus)
+            raw = self._score_level(
+                candidate_type="gap_support",
+                level=gap_lower,
+                current_low=current_low,
+                base=base,
+                source=f"historical_gap_i={i}",
+            )
             candidates.append(
-                self._score_level(
-                    candidate_type="gap_support",
-                    level=gap_support_level,
-                    current_low=current_low,
-                    base=base,
-                    source=f"historical_gap_i={i}",
+                SupportTypeScore(
+                    support_type="gap_support",
+                    support_level=raw.support_level,
+                    strength=raw.strength,
+                    source=raw.source,
+                    distance_pct=zone_distance_pct,
+                    zone_lower=gap_lower,
+                    zone_upper=gap_upper,
+                    hit_mode=hit_mode,
                 )
             )
         return candidates
@@ -184,6 +263,9 @@ class KlineSupportScorer:
                         strength=Decimal("0.65"),
                         source="fallback",
                         distance_pct=Decimal("0"),
+                        zone_lower=ma_support,
+                        zone_upper=ma_support,
+                        hit_mode="miss",
                     )
                 ],
             )
@@ -203,30 +285,52 @@ class KlineSupportScorer:
         if prev_high > 0:
             gap_threshold = Decimal("0.001")
             has_up_gap = current_low > (prev_high * (Decimal("1") + gap_threshold))
-            gap_support_level = prev_high
             if has_up_gap:
-                refs.append(f"up_gap_detected prev_high={prev_high}")
-                score = self._score_level(
+                gap_lower = prev_high
+                gap_upper = current_low
+                hit_mode = self._gap_hit_mode(
+                    current_low=current_low,
+                    current_close=current_close,
+                    zone_lower=gap_lower,
+                    zone_upper=gap_upper,
+                )
+                zone_distance_pct = min(
+                    self._distance_to_zone_pct(current_low, gap_lower, gap_upper),
+                    self._distance_to_zone_pct(current_close, gap_lower, gap_upper),
+                )
+                refs.append(f"up_gap_detected zone=[{gap_lower},{gap_upper}] hit_mode={hit_mode}")
+                raw = self._score_level(
                     candidate_type="gap_support",
-                    level=gap_support_level,
+                    level=gap_lower,
                     current_low=current_low,
                     base=Decimal("0.95"),
                     source="gap_support",
                 )
-                support_candidates.append(score)
+                support_candidates.append(
+                    SupportTypeScore(
+                        support_type="gap_support",
+                        support_level=raw.support_level,
+                        strength=raw.strength,
+                        source=raw.source,
+                        distance_pct=zone_distance_pct,
+                        zone_lower=gap_lower,
+                        zone_upper=gap_upper,
+                        hit_mode=hit_mode,
+                    )
+                )
                 # legacy-compatible implicit support: gap often coexists with previous_low structure
                 support_candidates.append(
                     self._score_level(
                         candidate_type="previous_low",
-                        level=gap_support_level,
+                        level=gap_lower,
                         current_low=current_low,
-                        base=min(Decimal("0.60"), score.strength * Decimal("0.75")),
+                        base=min(Decimal("0.60"), raw.strength * Decimal("0.75")),
                         source="gap_implied_previous_low",
                     )
                 )
 
         # historical gap scan (not only previous-day gap)
-        support_candidates.extend(self._detect_gap_support_from_history(df, current_low))
+        support_candidates.extend(self._detect_gap_support_from_history(df, current_low, current_close))
 
         # 2) previous_low support
         if prev_low > 0:
@@ -328,16 +432,27 @@ class KlineSupportScorer:
             )
 
         support_candidates.sort(key=lambda x: x.strength, reverse=True)
+        gap_candidates = [x for x in support_candidates if x.support_type == "gap_support"]
+        gap_candidates.sort(key=lambda x: x.strength, reverse=True)
+
         primary = support_candidates[0]
+        if gap_candidates:
+            best_gap = gap_candidates[0]
+            if best_gap.hit_mode in {"inside", "touch"}:
+                # valid gap zone is structurally stronger than non-gap supports at near strength
+                if primary.support_type != "gap_support" and (primary.strength - best_gap.strength) <= Decimal("0.08"):
+                    primary = best_gap
+
         top3 = support_candidates[:3]
         avg_top3 = sum((s.strength for s in top3), Decimal("0")) / Decimal(str(len(top3)))
         resonance_bonus = min(Decimal("0.20"), Decimal(str(max(0, len(support_candidates) - 1))) * Decimal("0.05"))
         combined_strength = min(Decimal("1"), primary.strength * Decimal("0.65") + avg_top3 * Decimal("0.35") + resonance_bonus)
         support_score = (combined_strength * Decimal("100")).quantize(Decimal("0.01"))
-        gap_candidates = [x for x in support_candidates if x.support_type == "gap_support"]
-        gap_hit = len(gap_candidates) > 0 and bool(gap_candidates[0].distance_pct <= Decimal("5"))
-        gap_level = gap_candidates[0].support_level if gap_candidates else Decimal("0")
-        gap_distance_pct = gap_candidates[0].distance_pct if gap_candidates else Decimal("999")
+        best_gap = gap_candidates[0] if gap_candidates else None
+        gap_hit = best_gap is not None and best_gap.hit_mode in {"inside", "touch"}
+        gap_hit_mode = best_gap.hit_mode if best_gap else "miss"
+        gap_level = best_gap.support_level if best_gap else Decimal("0")
+        gap_distance_pct = best_gap.distance_pct if best_gap else Decimal("999")
 
         refs.extend(
             [
@@ -345,6 +460,7 @@ class KlineSupportScorer:
                 f"primary_strength={primary.strength}",
                 f"combined_strength={combined_strength}",
                 f"support_count={len(support_candidates)}",
+                f"gap_hit_mode={gap_hit_mode}",
             ]
         )
         for item in support_candidates[:5]:
@@ -370,6 +486,7 @@ class KlineSupportScorer:
             support_count=len(support_candidates),
             combined_strength=combined_strength,
             gap_hit=gap_hit,
+            gap_hit_mode=gap_hit_mode,
             gap_level=gap_level,
             gap_distance_pct=gap_distance_pct,
             support_refs=refs,

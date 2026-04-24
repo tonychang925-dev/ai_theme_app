@@ -24,6 +24,7 @@ class StrongWatchRecord:
     support_count: int = 0
     support_combined_strength: Decimal = Decimal("0")
     gap_hit: bool = False
+    gap_hit_mode: str = "miss"
     gap_level: Decimal = Decimal("0")
     gap_distance_pct: Decimal = Decimal("999")
     role_tags: dict[str, Any] = field(default_factory=dict)
@@ -187,6 +188,7 @@ class StrongWatchRefreshService:
             support_count = support_result.support_count
             support_combined_strength = support_result.combined_strength
             gap_hit = support_result.gap_hit
+            gap_hit_mode = support_result.gap_hit_mode
             gap_level = support_result.gap_level
             gap_distance_pct = support_result.gap_distance_pct
             watch_score = (
@@ -223,6 +225,7 @@ class StrongWatchRefreshService:
                     support_count=support_count,
                     support_combined_strength=support_combined_strength,
                     gap_hit=gap_hit,
+                    gap_hit_mode=gap_hit_mode,
                     gap_level=gap_level,
                     gap_distance_pct=gap_distance_pct,
                     role_tags={

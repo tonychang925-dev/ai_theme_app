@@ -174,6 +174,7 @@ class W2SCandidateService:
         support_count = int(metadata.get("support_count") or 0)
         support_combined_strength = self._d(metadata.get("support_combined_strength"), default="0")
         gap_hit = bool(metadata.get("gap_hit") or False)
+        gap_hit_mode = str(metadata.get("gap_hit_mode") or "miss")
         gap_level = self._d(metadata.get("gap_level"), default="0")
         gap_distance_pct = self._d(metadata.get("gap_distance_pct"), default="999")
         prior7_limitup_days, prior7_strong_days, prior7_source = self._prior7_features(
@@ -315,6 +316,7 @@ class W2SCandidateService:
             "support_count": support_count,
             "support_combined_strength": str(support_combined_strength),
             "gap_hit": gap_hit,
+            "gap_hit_mode": gap_hit_mode,
             "gap_level": str(gap_level),
             "gap_distance_pct": str(gap_distance_pct),
             "role_tags": role_tags,
@@ -380,6 +382,7 @@ class W2SCandidateService:
                 f"support_count={explain.get('support_count', 0)}",
                 f"support_combined_strength={explain.get('support_combined_strength', '0')}",
                 f"gap_hit={explain.get('gap_hit', False)}",
+                f"gap_hit_mode={explain.get('gap_hit_mode', 'miss')}",
                 f"gap_level={explain.get('gap_level', '0')}",
                 f"gap_distance_pct={explain.get('gap_distance_pct', '999')}",
                 f"role_tags={explain['role_tags']}",
