@@ -32,6 +32,7 @@ class StrongWatchPromoteService:
                         "support_combined_strength": str(row.support_combined_strength),
                         "gap_hit": row.gap_hit,
                         "gap_hit_mode": row.gap_hit_mode,
+                        "gap_source": row.gap_source,
                         "gap_level": str(row.gap_level),
                         "gap_distance_pct": str(row.gap_distance_pct),
                         "role_tags": row.role_tags,
