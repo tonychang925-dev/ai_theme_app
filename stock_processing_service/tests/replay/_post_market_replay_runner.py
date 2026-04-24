@@ -98,6 +98,12 @@ class _ReplayDatabaseStockFacade:
     async def get_existing_post_market_recap_snapshot(self, trade_date: date):
         return await self._gateway.get_existing_post_market_recap_snapshot(trade_date)
 
+    async def get_mainline_identity_by_subject_keys(self, subject_keys: list[str], trade_date: date):
+        return await self._gateway.get_mainline_identity_by_subject_keys(subject_keys, trade_date)
+
+    async def get_mainline_cycle_by_subject_keys(self, subject_keys: list[str], trade_date: date):
+        return await self._gateway.get_mainline_cycle_by_subject_keys(subject_keys, trade_date)
+
     async def upsert_stock_daily_snapshot_rows(self, rows: list[dict[str, Any]]) -> int:
         return await self._gateway.upsert_stock_daily_snapshot_rows(rows)
 

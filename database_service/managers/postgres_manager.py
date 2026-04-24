@@ -1850,25 +1850,39 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         """读取 Layer B 周期状态真源。"""
         if not subject_keys:
             return []
-        sql = """
-        SELECT
-            trade_date,
-            subject_key,
-            COALESCE(final_cycle_state, '') AS final_cycle_state,
-            COALESCE(final_mainline_alive, FALSE) AS final_mainline_alive,
-            COALESCE(transition_type, '') AS transition_type,
-            COALESCE(mainline_strength_score, 0) AS mainline_strength_score,
-            COALESCE(repair_score, 0) AS repair_score,
-            COALESCE(divergence_score, 0) AS divergence_score,
-            COALESCE(fade_watch_score, 0) AS fade_watch_score,
-            COALESCE(fade_confirmed_score, 0) AS fade_confirmed_score
-        FROM theme_cycle_judgement_v2
-        WHERE trade_date = $2::date
-          AND subject_key = ANY($1::text[])
-        ORDER BY subject_key
-        """
+
         try:
             async with self.pool.acquire() as conn:
+                cols = await conn.fetch(
+                    """
+                    SELECT column_name
+                    FROM information_schema.columns
+                    WHERE table_schema = current_schema()
+                      AND table_name = 'theme_cycle_judgement_v2'
+                    """
+                )
+                col_set = {str(r["column_name"]) for r in cols}
+
+                def col(name: str, fallback: str) -> str:
+                    return name if name in col_set else fallback
+
+                sql = f"""
+                SELECT
+                    trade_date,
+                    subject_key,
+                    {col('final_cycle_state', "''::text")} AS final_cycle_state,
+                    {col('final_mainline_alive', 'FALSE')} AS final_mainline_alive,
+                    {col('transition_type', "''::text")} AS transition_type,
+                    {col('mainline_strength_score', '0::numeric')} AS mainline_strength_score,
+                    {col('repair_score', '0::numeric')} AS repair_score,
+                    {col('divergence_score', '0::numeric')} AS divergence_score,
+                    {col('fade_watch_score', '0::numeric')} AS fade_watch_score,
+                    {col('fade_confirmed_score', '0::numeric')} AS fade_confirmed_score
+                FROM theme_cycle_judgement_v2
+                WHERE trade_date = $2::date
+                  AND subject_key = ANY($1::text[])
+                ORDER BY subject_key
+                """
                 rows = await conn.fetch(sql, subject_keys, trade_date)
                 return [dict(row) for row in rows]
         except Exception as e:
