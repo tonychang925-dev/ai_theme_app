@@ -43,6 +43,7 @@ class StrongWatchService:
         pool_rows: list[SubjectStockPoolDTO],
         bars: list[StockBarDTO],
         prior_rows: list[PriorSnapshotDTO] | None = None,
+        history_bars: list[StockBarDTO] | None = None,
         prior_active_rows: list[StrongWatchRecord] | None = None,
     ) -> tuple[list[SubjectStockPoolDTO], list[StrongWatchRecord]]:
         promoted, kept, _history = self.build_promoted_pool_with_history(
@@ -50,6 +51,7 @@ class StrongWatchService:
             pool_rows=pool_rows,
             bars=bars,
             prior_rows=prior_rows,
+            history_bars=history_bars,
             prior_active_rows=prior_active_rows,
         )
         return promoted, kept
@@ -60,6 +62,7 @@ class StrongWatchService:
         pool_rows: list[SubjectStockPoolDTO],
         bars: list[StockBarDTO],
         prior_rows: list[PriorSnapshotDTO] | None = None,
+        history_bars: list[StockBarDTO] | None = None,
         prior_active_rows: list[StrongWatchRecord] | None = None,
     ) -> tuple[list[SubjectStockPoolDTO], list[StrongWatchRecord], list[StrongWatchHistoryRecord]]:
         seeded = self._seed_service.seed(pool_rows)
@@ -68,7 +71,12 @@ class StrongWatchService:
             seeded_rows=seeded,
             prior_active_rows=prior_active_rows or [],
         )
-        refreshed = self._refresh_service.refresh(seeded, bars, prior_rows=prior_rows)
+        refreshed = self._refresh_service.refresh(
+            seeded,
+            bars,
+            prior_rows=prior_rows,
+            history_bars=history_bars,
+        )
         # merge roll-forward weak_days baseline
         baseline_weak_days = {r.stock_id: r.weak_days for r in rolled}
         refreshed = [replace(r, weak_days=baseline_weak_days.get(r.stock_id, 0)) for r in refreshed]

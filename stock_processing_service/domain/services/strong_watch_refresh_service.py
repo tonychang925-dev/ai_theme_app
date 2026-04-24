@@ -5,6 +5,7 @@ from decimal import Decimal
 from typing import Any
 
 from stock_processing_service.contracts.dto import PriorSnapshotDTO, StockBarDTO, SubjectStockPoolDTO
+from stock_processing_service.domain.services.kline_support_scorer import KlineSupportScorer
 
 
 @dataclass(frozen=True)
@@ -20,6 +21,11 @@ class StrongWatchRecord:
     support_level: Decimal
     support_score: Decimal
     support_refs: list[str] = field(default_factory=list)
+    support_count: int = 0
+    support_combined_strength: Decimal = Decimal("0")
+    gap_hit: bool = False
+    gap_level: Decimal = Decimal("0")
+    gap_distance_pct: Decimal = Decimal("999")
     role_tags: dict[str, Any] = field(default_factory=dict)
     watch_status: str = "active"
     weak_days: int = 0
@@ -38,6 +44,9 @@ class StrongWatchRecord:
 
 
 class StrongWatchRefreshService:
+    def __init__(self, support_scorer: KlineSupportScorer | None = None) -> None:
+        self._support_scorer = support_scorer or KlineSupportScorer()
+
     @staticmethod
     def _d(value: Any, default: str = "0") -> Decimal:
         if value is None:
@@ -135,8 +144,12 @@ class StrongWatchRefreshService:
         seeded_rows: list[SubjectStockPoolDTO],
         bars: list[StockBarDTO],
         prior_rows: list[PriorSnapshotDTO] | None = None,
+        history_bars: list[StockBarDTO] | None = None,
     ) -> list[StrongWatchRecord]:
         bars_by_stock = {bar.stock_id: bar for bar in bars}
+        history_bars_by_stock: dict[str, list[StockBarDTO]] = {}
+        for hist in history_bars or []:
+            history_bars_by_stock.setdefault(hist.stock_id, []).append(hist)
         prior_rows_by_stock: dict[str, list[PriorSnapshotDTO]] = {}
         for prior in prior_rows or []:
             prior_rows_by_stock.setdefault(prior.stock_id, []).append(prior)
@@ -161,37 +174,21 @@ class StrongWatchRefreshService:
                 prior7_peak_rank=prior7_peak_rank,
             )
 
-            ma_support = bar.close_price * Decimal("0.97")
-            prev_low_support = bar.low_price
-            platform_support = (bar.open_price + bar.pre_close) / Decimal("2")
-            support_level = max(ma_support, prev_low_support, platform_support)
-
-            if support_level == ma_support:
-                support_type = "ma_support"
-            elif support_level == prev_low_support:
-                support_type = "prev_low_support"
-            else:
-                support_type = "platform_support"
-
-            support_distance = (bar.close_price - support_level) / (bar.close_price if bar.close_price != 0 else Decimal("1"))
-            support_refs = [
-                f"close={bar.close_price}",
-                f"ma_support={ma_support}",
-                f"prev_low_support={prev_low_support}",
-                f"platform_support={platform_support}",
-                f"selected={support_type}:{support_level}",
-            ]
-            support_score = max(
-                Decimal("0"),
-                min(
-                    Decimal("100"),
-                    Decimal("100") - abs(support_distance * Decimal("260")),
-                ),
+            support_result = self._support_scorer.score(
+                stock_id=row.stock_id,
+                current_bar=bar,
+                prior_rows=prior_rows_by_stock.get(row.stock_id, []),
+                history_bars=history_bars_by_stock.get(row.stock_id, []),
             )
-            if support_type in {"previous_low", "prev_low_support", "platform_support", "ma_support"}:
-                support_score += Decimal("8")
-            support_score += min(Decimal("10"), Decimal(str(len([r for r in support_refs if r]) * 3)))
-            support_score = min(Decimal("100"), support_score)
+            support_type = support_result.support_type
+            support_level = support_result.support_level
+            support_score = support_result.support_score
+            support_refs = list(support_result.support_refs)
+            support_count = support_result.support_count
+            support_combined_strength = support_result.combined_strength
+            gap_hit = support_result.gap_hit
+            gap_level = support_result.gap_level
+            gap_distance_pct = support_result.gap_distance_pct
             watch_score = (
                 mainline_context_score * Decimal("0.20")
                 + strong_gene_score * Decimal("0.35")
@@ -223,6 +220,11 @@ class StrongWatchRefreshService:
                     support_level=support_level,
                     support_score=support_score,
                     support_refs=support_refs,
+                    support_count=support_count,
+                    support_combined_strength=support_combined_strength,
+                    gap_hit=gap_hit,
+                    gap_level=gap_level,
+                    gap_distance_pct=gap_distance_pct,
                     role_tags={
                         "watch_tier": grade,
                         "is_leader": bool((row.pool_rank or 999) <= 1),

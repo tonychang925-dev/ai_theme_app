@@ -24,6 +24,9 @@ class W2SCandidate:
     overheated: bool = False
     formal_fail_reason: str | None = None
     reject_reason: str | None = None
+    support_type: str = ""
+    repair_or_takeover_score: Decimal = Decimal("0")
+    weakness_valid_score: Decimal = Decimal("0")
 
 
 class W2SCandidateService:
@@ -168,6 +171,11 @@ class W2SCandidateService:
         watch_score = self._d(metadata.get("watch_score"), default="60")
         support_score = self._d(metadata.get("support_score"), default="50")
         support_type = str(metadata.get("support_type") or "")
+        support_count = int(metadata.get("support_count") or 0)
+        support_combined_strength = self._d(metadata.get("support_combined_strength"), default="0")
+        gap_hit = bool(metadata.get("gap_hit") or False)
+        gap_level = self._d(metadata.get("gap_level"), default="0")
+        gap_distance_pct = self._d(metadata.get("gap_distance_pct"), default="999")
         prior7_limitup_days, prior7_strong_days, prior7_source = self._prior7_features(
             stock_id=row.stock_id,
             prior_rows=prior_rows or [],
@@ -304,6 +312,11 @@ class W2SCandidateService:
             "strong_grade": strong_grade,
             "support_score": str(support_score),
             "support_type": support_type or "unknown",
+            "support_count": support_count,
+            "support_combined_strength": str(support_combined_strength),
+            "gap_hit": gap_hit,
+            "gap_level": str(gap_level),
+            "gap_distance_pct": str(gap_distance_pct),
             "role_tags": role_tags,
             "prior7_limitup_days": prior7_limitup_days,
             "prior7_strong_days": prior7_strong_days,
@@ -340,8 +353,7 @@ class W2SCandidateService:
         bar_by_stock = {bar.stock_id: bar for bar in bars}
         prior_by_stock = {row.stock_id: row for row in prior_rows}
 
-        formal_items: list[tuple[W2SCandidate, dict[str, Any]]] = []
-        observe_items: list[tuple[W2SCandidate, dict[str, Any]]] = []
+        candidates: list[W2SCandidate] = []
         for row in pool_rows:
             bar = bar_by_stock.get(row.stock_id)
             prior = prior_by_stock.get(row.stock_id)
@@ -365,6 +377,11 @@ class W2SCandidateService:
                 f"strong_grade={explain['strong_grade']}",
                 f"support_score={explain['support_score']}",
                 f"support_type={explain['support_type']}",
+                f"support_count={explain.get('support_count', 0)}",
+                f"support_combined_strength={explain.get('support_combined_strength', '0')}",
+                f"gap_hit={explain.get('gap_hit', False)}",
+                f"gap_level={explain.get('gap_level', '0')}",
+                f"gap_distance_pct={explain.get('gap_distance_pct', '999')}",
                 f"role_tags={explain['role_tags']}",
                 f"prior7_limitup_days={explain['prior7_limitup_days']}",
                 f"prior7_strong_days={explain['prior7_strong_days']}",
@@ -399,37 +416,42 @@ class W2SCandidateService:
                 overheated=bool(explain.get("overheated")),
                 formal_fail_reason=str(explain.get("formal_fail_reason") or "") or None,
                 reject_reason=str(explain.get("reject_reason") or "") or None,
+                support_type=str(explain.get("support_type") or ""),
+                repair_or_takeover_score=self._d(explain.get("repair_or_takeover_score")),
+                weakness_valid_score=self._d(explain.get("weakness_valid_score")),
             )
-            if level == "formal":
-                formal_items.append((candidate, explain))
-            else:
-                observe_items.append((candidate, explain))
+            candidates.append(candidate)
 
-        preferred_support = {"previous_low", "prev_low_support", "platform_support"}
+        def _formal_support_priority(support_type: str) -> int:
+            st = (support_type or "").strip().lower()
+            if st in {"previous_low", "prev_low_support"}:
+                return 0
+            if st == "platform_support":
+                return 1
+            if st == "ma_support":
+                return 2
+            return 3
 
-        def _formal_key(item: tuple[W2SCandidate, dict[str, Any]]) -> tuple[int, Decimal, Decimal, Decimal, Decimal, Decimal]:
-            cand, exp = item
-            support_type = str(exp.get("support_type", ""))
-            support_pref = 1 if support_type in preferred_support else 0
+        formal_candidates = [c for c in candidates if c.candidate_level == "formal"]
+        observe_candidates = [c for c in candidates if c.candidate_level == "observe_only"]
+
+        def _formal_key(c: W2SCandidate) -> tuple[int, int, Decimal, Decimal, Decimal, Decimal]:
             return (
-                support_pref,
-                self._d(exp.get("support_hit_score")),
-                self._d(exp.get("repair_or_takeover_score")),
-                self._d(exp.get("weakness_valid_score")),
-                cand.candidate_score,
-                self._d(exp.get("strong_gene_score")),
+                0 if c.formal_bias else 1,
+                _formal_support_priority(c.support_type),
+                -c.support_score,
+                -c.candidate_score,
+                -c.repair_or_takeover_score,
+                -c.weakness_valid_score,
             )
 
-        def _observe_key(item: tuple[W2SCandidate, dict[str, Any]]) -> tuple[Decimal, Decimal, Decimal, Decimal]:
-            cand, exp = item
+        def _observe_key(c: W2SCandidate) -> tuple[Decimal, Decimal, Decimal]:
             return (
-                cand.candidate_score,
-                self._d(exp.get("support_hit_score")),
-                self._d(exp.get("strong_gene_score")),
-                self._d(exp.get("mainline_context_score")),
+                -c.candidate_score,
+                -c.support_score,
+                -c.weakness_valid_score,
             )
 
-        formal_items.sort(key=_formal_key, reverse=True)
-        observe_items.sort(key=_observe_key, reverse=True)
-        final = [c for c, _ in formal_items] + [c for c, _ in observe_items]
-        return final[: self.MAX_CANDIDATES]
+        formal_candidates.sort(key=_formal_key)
+        observe_candidates.sort(key=_observe_key)
+        return (formal_candidates + observe_candidates)[: self.MAX_CANDIDATES]

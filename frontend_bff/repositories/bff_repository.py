@@ -290,7 +290,7 @@ class FrontendBffRepository:
             ),
             ranked AS (
                 SELECT
-                    fs.first_trade_date::text AS trade_date,
+                    p.last_trade_date::text AS trade_date,
                     p.stock_id,
                     p.stock_name,
                     p.subject_key,
@@ -350,7 +350,7 @@ class FrontendBffRepository:
                     ORDER BY theme_name
                     LIMIT 1
                 ) v ON TRUE
-                WHERE fs.first_trade_date IN (SELECT trade_date FROM selected_trade_dates)
+                WHERE p.last_trade_date IN (SELECT trade_date FROM selected_trade_dates)
             )
             SELECT
                 trade_date,

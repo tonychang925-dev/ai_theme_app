@@ -22,6 +22,10 @@ class StockReadPort(Protocol):
         self, trade_date: date, stock_ids: list[str] | None = None
     ) -> list[StockBarDTO]: ...
 
+    async def get_stock_daily_bars_range(
+        self, start_date: date, end_date: date, stock_ids: list[str] | None = None
+    ) -> list[StockBarDTO]: ...
+
     async def get_stock_auction_snapshot(
         self, trade_date: date, stock_ids: list[str] | None = None
     ) -> list[StockAuctionDTO]: ...
