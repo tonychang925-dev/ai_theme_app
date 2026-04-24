@@ -83,8 +83,7 @@ export function StrongStockWatchPage() {
 
   const groupedItems = useMemo<DateBucket[]>(() => {
     const rows = (data?.items ?? [])
-      .filter((item) => !isDisallowed(item))
-      .filter((item) => item.watch_status === "active" || item.watch_status === "weakening");
+      .filter((item) => !isDisallowed(item));
 
     const byDate = new Map<string, StrongStockWatchItem[]>();
     for (const row of rows) {
