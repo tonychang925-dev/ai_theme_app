@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import os
 from dataclasses import dataclass
-from datetime import date
+from datetime import date, timedelta
 from typing import Any
 
 from database_service.gateway import DatabaseGateway
@@ -377,8 +377,19 @@ async def _build_target_diagnostics(
         lookback_days=7,
         stock_ids=target_stock_ids,
     )
+    history_start = trade_date - timedelta(days=90)
+    history_bars = await read_port.get_stock_daily_bars_range(
+        start_date=history_start,
+        end_date=trade_date,
+        stock_ids=target_stock_ids,
+    )
     seeded_rows = seed_service.seed(pool_rows)
-    refreshed_rows = refresh_service.refresh(seeded_rows, bars, prior_rows=prior_rows)
+    refreshed_rows = refresh_service.refresh(
+        seeded_rows,
+        bars,
+        prior_rows=prior_rows,
+        history_bars=history_bars,
+    )
     kept_rows, pruned_rows = prune_service.prune(refreshed_rows)
     promoted_rows = promote_service.promote(trade_date, kept_rows)
     kept_by_stock = {r.stock_id: r for r in kept_rows}

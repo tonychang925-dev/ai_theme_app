@@ -1,49 +1,30 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, field
-from datetime import date
 from decimal import Decimal
-import os
 from typing import Any
 
 import pandas as pd
 
 from stock_processing_service.contracts.dto import PriorSnapshotDTO, StockBarDTO
-
-
-@dataclass(frozen=True)
-class SupportTypeScore:
-    support_type: str
-    support_level: Decimal
-    strength: Decimal
-    source: str
-    distance_pct: Decimal
-    zone_lower: Decimal = Decimal("0")
-    zone_upper: Decimal = Decimal("0")
-    hit_mode: str = "miss"
-
-
-@dataclass(frozen=True)
-class SupportScoreResult:
-    support_type: str
-    support_level: Decimal
-    support_score: Decimal
-    support_count: int = 0
-    combined_strength: Decimal = Decimal("0")
-    gap_hit: bool = False
-    gap_hit_mode: str = "miss"
-    gap_source: str = ""
-    gap_level: Decimal = Decimal("0")
-    gap_distance_pct: Decimal = Decimal("999")
-    support_refs: list[str] = field(default_factory=list)
-    support_types: list[SupportTypeScore] = field(default_factory=list)
+from stock_processing_service.domain.services.gap_structure_detector import GapStructureDetector
+from stock_processing_service.domain.services.kline_support_scorer_types import (
+    MAStructure,
+    PreviousLowStructure,
+    SupportScoreResult,
+    SupportTypeScore,
+)
+from stock_processing_service.domain.services.support_structure_resolver import SupportStructureResolver
 
 
 class KlineSupportScorer:
-    """
-    Open-source based support scorer (pandas) for stock_processing_service.
-    It mirrors old-chain ideas: gap support + previous_low + MA supports + simple confluence bonus.
-    """
+    def __init__(
+        self,
+        *,
+        gap_detector: GapStructureDetector | None = None,
+        resolver: SupportStructureResolver | None = None,
+    ) -> None:
+        self._gap_detector = gap_detector or GapStructureDetector()
+        self._resolver = resolver or SupportStructureResolver()
 
     @staticmethod
     def _d(value: Any, default: str = "0") -> Decimal:
@@ -76,6 +57,7 @@ class KlineSupportScorer:
                     "close_price": hist.close_price,
                     "pre_close": hist.pre_close,
                     "pct_chg": hist.pct_chg,
+                    "source_tag": "history_bars",
                 }
             )
         for prior in prior_rows:
@@ -91,6 +73,7 @@ class KlineSupportScorer:
                     "close_price": self._d(payload.get("close_price")),
                     "pre_close": self._d(payload.get("pre_close")),
                     "pct_chg": self._d(payload.get("pct_chg")),
+                    "source_tag": "prior_rows",
                 }
             )
         rows.append(
@@ -102,6 +85,7 @@ class KlineSupportScorer:
                 "close_price": current_bar.close_price,
                 "pre_close": current_bar.pre_close,
                 "pct_chg": current_bar.pct_chg,
+                "source_tag": "current_bar",
             }
         )
         rows.sort(key=lambda x: x["trade_date"])
@@ -111,138 +95,51 @@ class KlineSupportScorer:
         for col in ["open_price", "high_price", "low_price", "close_price", "pre_close", "pct_chg"]:
             df[col] = pd.to_numeric(df[col], errors="coerce")
         df = df.dropna(subset=["close_price", "low_price", "high_price"]).copy()
-        df = df[
-            (df["close_price"] > 0)
-            & (df["low_price"] > 0)
-            & (df["high_price"] > 0)
-        ]
+        df = df[df["close_price"] > 0]
         return df
 
     @staticmethod
-    def _score_level(candidate_type: str, level: Decimal, current_low: Decimal, base: Decimal, source: str) -> SupportTypeScore:
-        if level <= 0:
-            return SupportTypeScore(candidate_type, Decimal("0"), Decimal("0"), source, Decimal("999"))
-        distance_pct = (abs(current_low - level) / level) * Decimal("100")
-        # closer support level => stronger
-        distance_penalty = min(Decimal("0.45"), distance_pct / Decimal("20"))
-        strength = max(Decimal("0"), min(Decimal("1"), base - distance_penalty))
-        return SupportTypeScore(candidate_type, level, strength, source, distance_pct)
-
-    @staticmethod
-    def _distance_to_zone_pct(price: Decimal, zone_lower: Decimal, zone_upper: Decimal) -> Decimal:
-        if zone_lower <= 0 or zone_upper <= 0:
+    def _distance_pct(a: Decimal, b: Decimal) -> Decimal:
+        if b <= 0:
             return Decimal("999")
-        if zone_lower <= price <= zone_upper:
-            return Decimal("0")
-        if price < zone_lower:
-            return (zone_lower - price) / zone_lower * Decimal("100")
-        return (price - zone_upper) / zone_upper * Decimal("100")
+        return (abs(a - b) / b) * Decimal("100")
 
-    def _gap_hit_mode(
-        self,
-        current_low: Decimal,
-        current_close: Decimal,
-        zone_lower: Decimal,
-        zone_upper: Decimal,
-    ) -> str:
-        if zone_lower <= 0 or zone_upper <= 0:
-            return "miss"
+    def _build_prev_low_structure(self, df: pd.DataFrame, current_low: Decimal) -> PreviousLowStructure | None:
+        if len(df) < 2:
+            return None
+        prev = df.iloc[-2]
+        prev_low = self._d(prev["low_price"])
+        if prev_low <= 0:
+            return None
+        distance_pct = self._distance_pct(current_low, prev_low)
+        return PreviousLowStructure(
+            level=prev_low,
+            distance_pct=distance_pct.quantize(Decimal("0.0001")),
+            is_valid=distance_pct <= Decimal("5"),
+        )
 
-        if zone_lower <= current_low <= zone_upper or zone_lower <= current_close <= zone_upper:
-            return "inside"
+    def _build_ma_structures(self, df: pd.DataFrame, current_low: Decimal) -> list[MAStructure]:
+        if df.empty:
+            return []
+        result: list[MAStructure] = []
+        close_s = pd.to_numeric(df["close_price"], errors="coerce")
 
-        low_to_zone = self._distance_to_zone_pct(current_low, zone_lower, zone_upper)
-        close_to_zone = self._distance_to_zone_pct(current_close, zone_lower, zone_upper)
-        nearest = min(low_to_zone, close_to_zone)
-
-        if nearest <= Decimal("2.5"):
-            return "touch"
-        if nearest <= Decimal("5"):
-            return "near"
-        return "miss"
-
-    def _detect_gap_support_from_history(
-        self,
-        df: pd.DataFrame,
-        current_low: Decimal,
-        current_close: Decimal,
-    ) -> list[SupportTypeScore]:
-        """
-        Legacy-aligned gap support detection:
-        - Scan historical upward gaps (day_i.low > day_{i-1}.high * (1+0.1%))
-        - Treat each gap as a zone: [prev_high, cur_low]
-        - Keep candidates reasonably near current price (<= 12% zone distance)
-        """
-        candidates: list[SupportTypeScore] = []
-        if len(df) < 3:
-            return candidates
-
-        gap_threshold = Decimal("0.001")
-        last_idx = len(df) - 1
-        for i in range(1, len(df)):
-            prev_high = self._d(df.iloc[i - 1]["high_price"])
-            cur_low = self._d(df.iloc[i]["low_price"])
-            if prev_high <= 0 or cur_low <= 0:
-                continue
-            if cur_low <= prev_high * (Decimal("1") + gap_threshold):
-                continue
-
-            gap_lower = prev_high
-            gap_upper = cur_low
-            hit_mode = self._gap_hit_mode(
-                current_low=current_low,
-                current_close=current_close,
-                zone_lower=gap_lower,
-                zone_upper=gap_upper,
-            )
-            zone_distance_pct = min(
-                self._distance_to_zone_pct(current_low, gap_lower, gap_upper),
-                self._distance_to_zone_pct(current_close, gap_lower, gap_upper),
-            )
-            if zone_distance_pct > Decimal("12"):
-                continue
-
-            # recency decay: fresher gap support is stronger
-            age = last_idx - i
-            recency_bonus = max(Decimal("0"), Decimal("0.12") - Decimal(str(age)) * Decimal("0.004"))
-            gap_size_pct = (gap_upper - gap_lower) / gap_lower * Decimal("100")
-            if gap_size_pct < Decimal("1"):
-                gap_size_bonus = Decimal("0.00")
-            elif gap_size_pct <= Decimal("3"):
-                gap_size_bonus = Decimal("0.05")
-            else:
-                gap_size_bonus = Decimal("0.08")
-
-            if hit_mode == "inside":
-                hit_bonus = Decimal("0.16")
-            elif hit_mode == "touch":
-                hit_bonus = Decimal("0.10")
-            elif hit_mode == "near":
-                hit_bonus = Decimal("0.04")
-            else:
-                hit_bonus = Decimal("0.00")
-
-            base = min(Decimal("0.95"), Decimal("0.72") + recency_bonus + gap_size_bonus + hit_bonus)
-            raw = self._score_level(
-                candidate_type="gap_support",
-                level=gap_lower,
-                current_low=current_low,
-                base=base,
-                source=f"historical_gap_i={i}",
-            )
-            candidates.append(
-                SupportTypeScore(
-                    support_type="gap_support",
-                    support_level=raw.support_level,
-                    strength=raw.strength,
-                    source=raw.source,
-                    distance_pct=zone_distance_pct,
-                    zone_lower=gap_lower,
-                    zone_upper=gap_upper,
-                    hit_mode=hit_mode,
-                )
-            )
-        return candidates
+        if len(close_s) >= 5:
+            sma5 = self._d(close_s.rolling(5).mean().iloc[-1])
+            if sma5 > 0:
+                dist = self._distance_pct(current_low, sma5)
+                result.append(MAStructure(level=sma5, ma_type="sma5", distance_pct=dist, is_valid=dist <= Decimal("5")))
+        if len(close_s) >= 10:
+            sma10 = self._d(close_s.rolling(10).mean().iloc[-1])
+            if sma10 > 0:
+                dist = self._distance_pct(current_low, sma10)
+                result.append(MAStructure(level=sma10, ma_type="sma10", distance_pct=dist, is_valid=dist <= Decimal("5")))
+        if len(close_s) >= 20:
+            ema20 = self._d(close_s.ewm(span=20, adjust=False).mean().iloc[-1])
+            if ema20 > 0:
+                dist = self._distance_pct(current_low, ema20)
+                result.append(MAStructure(level=ema20, ma_type="ema20", distance_pct=dist, is_valid=dist <= Decimal("5")))
+        return result
 
     def score(
         self,
@@ -252,7 +149,21 @@ class KlineSupportScorer:
         history_bars: list[StockBarDTO] | None = None,
     ) -> SupportScoreResult:
         df = self._to_history_frame(stock_id, current_bar, prior_rows, history_bars=history_bars)
-        # fallback to legacy simple behavior when history is insufficient
+        if df.empty:
+            return SupportScoreResult(
+                support_type="none",
+                support_level=Decimal("0"),
+                support_score=Decimal("0"),
+                support_count=0,
+                combined_strength=Decimal("0"),
+                gap_hit=False,
+                gap_level=Decimal("0"),
+                gap_distance_pct=Decimal("999"),
+                gap_hit_mode="miss",
+                gap_source="",
+                support_refs=["scorer_rule=no_history_df"],
+                support_types=[],
+            )
         if len(df) < 2:
             ma_support = current_bar.close_price * Decimal("0.97")
             return SupportScoreResult(
@@ -260,7 +171,12 @@ class KlineSupportScorer:
                 support_level=ma_support,
                 support_score=Decimal("65"),
                 support_count=1,
-                combined_strength=Decimal("0.65"),
+                combined_strength=Decimal("0.6500"),
+                gap_hit=False,
+                gap_level=Decimal("0"),
+                gap_distance_pct=Decimal("999"),
+                gap_hit_mode="miss",
+                gap_source="",
                 support_refs=[f"fallback_ma_support={ma_support}"],
                 support_types=[
                     SupportTypeScore(
@@ -276,345 +192,89 @@ class KlineSupportScorer:
                 ],
             )
 
-        cur = df.iloc[-1]
-        prev = df.iloc[-2]
-        current_low = self._d(cur["low_price"])
-        current_close = self._d(cur["close_price"])
-        prev_high = self._d(prev["high_price"])
-        prev_low = self._d(prev["low_price"])
-        prev_close = self._d(prev["close_price"])
+        current_low = self._d(current_bar.low_price)
+        current_close = self._d(current_bar.close_price)
 
-        support_candidates: list[SupportTypeScore] = []
-        refs: list[str] = []
+        ma_structures = self._build_ma_structures(df, current_low)
+        prev_low_structure = self._build_prev_low_structure(df, current_low)
+        ma_levels = {m.ma_type: m.level for m in ma_structures if m.level > 0}
+        prev_low_level = prev_low_structure.level if prev_low_structure else None
 
-        # 0) old-chain compatible near-gap support first
-        legacy_gap, legacy_gap_debug = self._detect_legacy_near_gap_support(df, current_low, current_close)
-        refs.extend(legacy_gap_debug)
-        if legacy_gap is not None:
-            support_candidates.append(legacy_gap)
-            refs.append(
-                f"legacy_gap_hit level={legacy_gap.support_level} zone=[{legacy_gap.zone_lower},{legacy_gap.zone_upper}]"
-            )
-
-        # 1) gap_support detection (legacy semantics)
-        if prev_high > 0:
-            gap_threshold = Decimal("0.001")
-            has_up_gap = current_low > (prev_high * (Decimal("1") + gap_threshold))
-            if has_up_gap:
-                gap_lower = prev_high
-                gap_upper = current_low
-                hit_mode = self._gap_hit_mode(
-                    current_low=current_low,
-                    current_close=current_close,
-                    zone_lower=gap_lower,
-                    zone_upper=gap_upper,
-                )
-                zone_distance_pct = min(
-                    self._distance_to_zone_pct(current_low, gap_lower, gap_upper),
-                    self._distance_to_zone_pct(current_close, gap_lower, gap_upper),
-                )
-                refs.append(f"up_gap_detected zone=[{gap_lower},{gap_upper}] hit_mode={hit_mode}")
-                raw = self._score_level(
-                    candidate_type="gap_support",
-                    level=gap_lower,
-                    current_low=current_low,
-                    base=Decimal("0.95"),
-                    source="gap_support",
-                )
-                support_candidates.append(
-                    SupportTypeScore(
-                        support_type="gap_support",
-                        support_level=raw.support_level,
-                        strength=raw.strength,
-                        source=raw.source,
-                        distance_pct=zone_distance_pct,
-                        zone_lower=gap_lower,
-                        zone_upper=gap_upper,
-                        hit_mode=hit_mode,
-                    )
-                )
-                # legacy-compatible implicit support: gap often coexists with previous_low structure
-                support_candidates.append(
-                    self._score_level(
-                        candidate_type="previous_low",
-                        level=gap_lower,
-                        current_low=current_low,
-                        base=min(Decimal("0.60"), raw.strength * Decimal("0.75")),
-                        source="gap_implied_previous_low",
-                    )
-                )
-
-        # historical gap scan (not only previous-day gap)
-        support_candidates.extend(self._detect_gap_support_from_history(df, current_low, current_close))
-
-        # 2) previous_low support
-        if prev_low > 0:
-            support_candidates.append(
-                self._score_level(
-                    candidate_type="previous_low",
-                    level=prev_low,
-                    current_low=current_low,
-                    base=Decimal("0.80"),
-                    source="previous_low",
-                )
-            )
-
-        # 3) previous_close support
-        if prev_close > 0:
-            support_candidates.append(
-                self._score_level(
-                    candidate_type="previous_close",
-                    level=prev_close,
-                    current_low=current_low,
-                    base=Decimal("0.72"),
-                    source="previous_close",
-                )
-            )
-
-        # 4) open-source indicators via pandas
-        close_s = pd.to_numeric(df["close_price"], errors="coerce")
-        high_s = pd.to_numeric(df["high_price"], errors="coerce")
-        low_s = pd.to_numeric(df["low_price"], errors="coerce")
-        ma5 = self._d(close_s.rolling(5).mean().iloc[-1]) if len(close_s) >= 5 else Decimal("0")
-        ma10 = self._d(close_s.rolling(10).mean().iloc[-1]) if len(close_s) >= 10 else Decimal("0")
-        ema20 = self._d(close_s.ewm(span=20, adjust=False).mean().iloc[-1]) if len(close_s) >= 20 else Decimal("0")
-        bb_mid = close_s.rolling(20).mean() if len(close_s) >= 20 else pd.Series(dtype="float64")
-        bb_std = close_s.rolling(20).std(ddof=0) if len(close_s) >= 20 else pd.Series(dtype="float64")
-        bb_lower = self._d((bb_mid - (bb_std * 2)).iloc[-1]) if len(close_s) >= 20 else Decimal("0")
-
-        if ma5 > 0:
-            support_candidates.append(
-                self._score_level("sma5_support", ma5, current_low, Decimal("0.65"), "sma5")
-            )
-        if ma10 > 0:
-            support_candidates.append(
-                self._score_level("sma10_support", ma10, current_low, Decimal("0.74"), "sma10")
-            )
-        if ema20 > 0:
-            support_candidates.append(
-                self._score_level("ema20_support", ema20, current_low, Decimal("0.82"), "ema20")
-            )
-        if bb_lower > 0:
-            support_candidates.append(
-                self._score_level("bb_lower_support", bb_lower, current_low, Decimal("0.86"), "bb_lower")
-            )
-
-        # 5) pivot supports (classic)
-        if prev_high > 0 and prev_low > 0 and prev_close > 0:
-            pivot = (prev_high + prev_low + prev_close) / Decimal("3")
-            s1 = (pivot * Decimal("2")) - prev_high
-            s2 = pivot - (prev_high - prev_low)
-            if s1 > 0:
-                support_candidates.append(
-                    self._score_level("pivot_support1", s1, current_low, Decimal("0.75"), "pivot_s1")
-                )
-            if s2 > 0:
-                support_candidates.append(
-                    self._score_level("pivot_support2", s2, current_low, Decimal("0.70"), "pivot_s2")
-                )
-
-        # 6) fibonacci nearest support (recent swing high/low)
-        lookback = min(len(df), 60)
-        if lookback >= 20:
-            recent = df.iloc[-lookback:]
-            swing_high = self._d(recent["high_price"].max())
-            swing_low = self._d(recent["low_price"].min())
-            swing_range = swing_high - swing_low
-            if swing_high > 0 and swing_low > 0 and swing_range > 0:
-                fib_levels = [
-                    swing_high - swing_range * Decimal("0.382"),
-                    swing_high - swing_range * Decimal("0.5"),
-                    swing_high - swing_range * Decimal("0.618"),
-                ]
-                fib_supports = [lvl for lvl in fib_levels if lvl <= current_close]
-                if fib_supports:
-                    fib_nearest = max(fib_supports)
-                    support_candidates.append(
-                        self._score_level("fibonacci_support", fib_nearest, current_low, Decimal("0.68"), "fibonacci")
-                    )
-
-        # map all supports for downstream introspection
-        support_candidates = [s for s in support_candidates if s.strength > 0]
-        if not support_candidates:
-            return SupportScoreResult(
-                support_type="none",
-                support_level=Decimal("0"),
-                support_score=Decimal("0"),
-                support_count=0,
-                combined_strength=Decimal("0"),
-                support_refs=["no_support_candidate"],
-                support_types=[],
-            )
-
-        support_candidates.sort(key=self._support_priority)
-        gap_candidates = [x for x in support_candidates if x.support_type == "gap_support"]
-        gap_candidates.sort(key=lambda x: x.strength, reverse=True)
-
-        primary = support_candidates[0]
-        if gap_candidates:
-            best_gap = gap_candidates[0]
-            if best_gap.hit_mode in {"inside", "touch"}:
-                # valid gap zone is structurally stronger than non-gap supports at near strength
-                if primary.support_type != "gap_support" and (primary.strength - best_gap.strength) <= Decimal("0.08"):
-                    primary = best_gap
-
-        top3 = support_candidates[:3]
-        avg_top3 = sum((s.strength for s in top3), Decimal("0")) / Decimal(str(len(top3)))
-        resonance_bonus = min(Decimal("0.20"), Decimal(str(max(0, len(support_candidates) - 1))) * Decimal("0.05"))
-        combined_strength = min(Decimal("1"), primary.strength * Decimal("0.65") + avg_top3 * Decimal("0.35") + resonance_bonus)
-        support_score = (combined_strength * Decimal("100")).quantize(Decimal("0.01"))
-        legacy_gap_candidates = [x for x in gap_candidates if x.hit_mode == "legacy_near_gap"]
-        if legacy_gap_candidates:
-            best_gap = sorted(legacy_gap_candidates, key=lambda x: x.strength, reverse=True)[0]
-        elif gap_candidates:
-            best_gap = gap_candidates[0]
-        else:
-            best_gap = None
-        gap_hit = best_gap is not None and best_gap.hit_mode in {"inside", "touch"}
-        if best_gap is not None and best_gap.hit_mode == "legacy_near_gap":
-            gap_hit = True
-        gap_hit_mode = best_gap.hit_mode if best_gap else "miss"
-        gap_source = best_gap.source if best_gap else ""
-        gap_level = best_gap.support_level if best_gap else Decimal("0")
-        gap_distance_pct = best_gap.distance_pct if best_gap else Decimal("999")
-
-        refs.extend(
-            [
-                f"primary={primary.support_type}:{primary.support_level}",
-                f"primary_strength={primary.strength}",
-                f"combined_strength={combined_strength}",
-                f"support_count={len(support_candidates)}",
-                f"gap_hit_mode={gap_hit_mode}",
-                f"gap_source={gap_source}",
-            ]
+        gap_structures = self._gap_detector.detect(
+            df=df,
+            current_trade_date=current_bar.trade_date,
+            current_low=current_low,
+            current_close=current_close,
+            ma_levels=ma_levels,
+            prev_low_level=prev_low_level,
         )
-        for item in support_candidates[:5]:
+        resolved = self._resolver.resolve(
+            gap_structures=gap_structures,
+            prev_low_structure=prev_low_structure,
+            ma_structures=ma_structures,
+        )
+
+        refs = list(resolved.support_refs)
+        refs.append(f"gap_structures_count={len(gap_structures)}")
+        for g in gap_structures[:40]:
             refs.append(
-                f"type={item.support_type}|level={item.support_level}|strength={item.strength}|dist={item.distance_pct}"
+                "legacy_gap_candidate "
+                f"id={g.gap_id} gap_level={g.gap_lower} zone=[{g.gap_lower},{g.gap_upper}] "
+                f"current_low={current_low} current_close={current_close} "
+                f"distance_pct={g.current_distance_pct} strict={g.strict_hit} soft={g.soft_hit} "
+                f"resonance={g.resonance_score} source=gap_structure"
             )
 
-        # normalize old/new naming bridge
-        mapped_type = primary.support_type
-        if mapped_type == "previous_low":
-            mapped_type = "prev_low_support"
-        elif mapped_type.startswith("sma") or mapped_type.startswith("ema"):
-            mapped_type = "ma_support"
-        elif mapped_type == "bb_lower_support":
-            mapped_type = "ma_support"
-        elif mapped_type.startswith("pivot_"):
-            mapped_type = "platform_support"
+        support_types: list[SupportTypeScore] = []
+        for g in gap_structures:
+            hit_mode = "strict" if g.strict_hit else "soft" if g.soft_hit else "miss"
+            strength = Decimal("0.90") if g.strict_hit else Decimal("0.80") if g.soft_hit else Decimal("0.55")
+            support_types.append(
+                SupportTypeScore(
+                    support_type="gap_support",
+                    support_level=g.gap_lower,
+                    strength=strength,
+                    source="gap_structure",
+                    distance_pct=g.current_distance_pct,
+                    zone_lower=g.gap_lower,
+                    zone_upper=g.gap_upper,
+                    hit_mode=hit_mode,
+                )
+            )
+
+        if prev_low_structure and prev_low_structure.is_valid:
+            support_types.append(
+                SupportTypeScore(
+                    support_type="previous_low",
+                    support_level=prev_low_structure.level,
+                    strength=Decimal("0.78"),
+                    source="previous_low",
+                    distance_pct=prev_low_structure.distance_pct,
+                )
+            )
+        for ma in ma_structures:
+            if ma.is_valid:
+                support_types.append(
+                    SupportTypeScore(
+                        support_type="ma_support",
+                        support_level=ma.level,
+                        strength=Decimal("0.70"),
+                        source=ma.ma_type,
+                        distance_pct=ma.distance_pct,
+                    )
+                )
 
         return SupportScoreResult(
-            support_type=mapped_type,
-            support_level=primary.support_level,
-            support_score=support_score,
-            support_count=len(support_candidates),
-            combined_strength=combined_strength,
-            gap_hit=gap_hit,
-            gap_hit_mode=gap_hit_mode,
-            gap_source=gap_source,
-            gap_level=gap_level,
-            gap_distance_pct=gap_distance_pct,
+            support_type=resolved.support_type,
+            support_level=resolved.support_level,
+            support_score=resolved.support_score,
+            support_count=len(support_types),
+            combined_strength=(resolved.support_score / Decimal("100")).quantize(Decimal("0.0001")),
+            gap_hit=resolved.gap_hit,
+            gap_hit_mode=resolved.gap_hit_mode,
+            gap_source=resolved.gap_source,
+            gap_level=resolved.gap_level,
+            gap_distance_pct=resolved.gap_distance_pct,
             support_refs=refs,
-            support_types=support_candidates,
+            support_types=support_types,
         )
-    def _detect_legacy_near_gap_support(
-        self,
-        df: pd.DataFrame,
-        current_low: Decimal,
-        current_close: Decimal,
-    ) -> tuple[SupportTypeScore | None, list[str]]:
-        """
-        Legacy-compatible gap rule from old chain:
-        - Scan recent 5 trading days for upward gaps
-        - Up-gap: day_i.low > day_{i-1}.high * (1 + 0.1%)
-        - Gap support hit: current_low in gap_level(prev_high) ±1% window
-        """
-        debug_lines: list[str] = []
-        if len(df) < 2:
-            return None, debug_lines
-
-        gap_threshold = Decimal("0.001")
-        window_pct = self._d(os.getenv("SPS_LEGACY_GAP_WINDOW_PCT"), default="1.0")
-        zone_scale = window_pct / Decimal("100")
-        debug_enabled = os.getenv("SPS_LEGACY_GAP_DEBUG", "0") == "1"
-        lookback = min(5, len(df) - 1)
-        best: SupportTypeScore | None = None
-
-        # Newest first, then older gaps; prefer smaller distance if multi-hit.
-        for off in range(1, lookback + 1):
-            i = len(df) - off
-            if i <= 0:
-                continue
-
-            prev = df.iloc[i - 1]
-            cur = df.iloc[i]
-            prev_high = self._d(prev["high_price"])
-            cur_low = self._d(cur["low_price"])
-            if prev_high <= 0 or cur_low <= 0:
-                continue
-            has_up_gap = cur_low > prev_high * (Decimal("1") + gap_threshold)
-            if not has_up_gap:
-                if debug_enabled:
-                    debug_lines.append(
-                        f"legacy_gap_candidate off={off} has_up_gap=False prev_high={prev_high} cur_low={cur_low}"
-                    )
-                continue
-
-            gap_support_level = prev_high
-            zone_lower = gap_support_level * (Decimal("1") - zone_scale)
-            zone_upper = gap_support_level * (Decimal("1") + zone_scale)
-            in_zone = zone_lower <= current_low <= zone_upper
-            offset_from_zone_pct = self._distance_to_zone_pct(current_low, zone_lower, zone_upper)
-            if debug_enabled:
-                debug_lines.append(
-                    "legacy_gap_candidate "
-                    f"off={off} prev_high={prev_high} cur_low={cur_low} gap_level={gap_support_level} "
-                    f"zone=[{zone_lower},{zone_upper}] current_low={current_low} current_close={current_close} "
-                    f"distance_pct={(abs(current_low - gap_support_level) / gap_support_level) * Decimal('100')} "
-                    f"offset_from_zone_pct={offset_from_zone_pct} in_zone={in_zone} window_pct={window_pct}"
-                )
-            if not in_zone:
-                continue
-
-            raw = self._score_level(
-                candidate_type="gap_support",
-                level=gap_support_level,
-                current_low=current_low,
-                base=Decimal("0.95"),
-                source=f"legacy_recent5_gap_offset_{off}",
-            )
-            strength = raw.strength
-            if current_close > gap_support_level:
-                strength = min(Decimal("1"), strength + Decimal("0.05"))
-
-            candidate = SupportTypeScore(
-                support_type="gap_support",
-                support_level=gap_support_level,
-                strength=strength,
-                source=f"legacy_recent5_gap_offset_{off}",
-                distance_pct=(abs(current_low - gap_support_level) / gap_support_level) * Decimal("100"),
-                zone_lower=zone_lower,
-                zone_upper=zone_upper,
-                hit_mode="legacy_near_gap",
-            )
-            if best is None or candidate.distance_pct < best.distance_pct:
-                best = candidate
-
-        if debug_enabled and best is not None:
-            debug_lines.append(
-                f"legacy_gap_selected source={best.source} gap_level={best.support_level} distance_pct={best.distance_pct}"
-            )
-        return best, debug_lines
-
-    @staticmethod
-    def _support_priority(s: SupportTypeScore) -> tuple[int, Decimal]:
-        if s.support_type == "gap_support" and s.hit_mode == "legacy_near_gap":
-            return (0, -s.strength)
-        if s.support_type == "gap_support":
-            return (1, -s.strength)
-        if s.support_type == "previous_low":
-            return (2, -s.strength)
-        if s.support_type == "platform_support":
-            return (3, -s.strength)
-        return (4, -s.strength)
