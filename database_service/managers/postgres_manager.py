@@ -1795,6 +1795,86 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.warning(f"读取 post_market_recap_snapshot 失败（可能尚未迁移）: {e}")
             return None
 
+    async def get_mainline_identity_by_subject_keys(
+        self,
+        subject_keys: List[str],
+        trade_date,
+    ) -> List[Dict[str, Any]]:
+        """读取 Layer A 主线身份真源。"""
+        if not subject_keys:
+            return []
+        sql = """
+        SELECT DISTINCT ON (subject_key)
+            subject_key,
+            COALESCE(identity_status, '') AS identity_status,
+            COALESCE(is_main_theme, FALSE) AS is_main_theme,
+            first_confirmed_date,
+            last_review_date,
+            COALESCE(rule_version, '') AS rule_version
+        FROM theme_mainline_identity_registry
+        WHERE subject_key = ANY($1::text[])
+          AND (
+            last_review_date IS NULL
+            OR last_review_date <= $2::date
+          )
+        ORDER BY subject_key, last_review_date DESC NULLS LAST, updated_at DESC NULLS LAST
+        """
+        fallback_sql = """
+        SELECT DISTINCT ON (subject_key)
+            subject_key,
+            COALESCE(identity_status, '') AS identity_status,
+            COALESCE(is_main_theme, FALSE) AS is_main_theme,
+            first_confirmed_date,
+            NULL::date AS last_review_date,
+            COALESCE(rule_version, '') AS rule_version
+        FROM theme_mainline_identity_registry
+        WHERE subject_key = ANY($1::text[])
+        ORDER BY subject_key, updated_at DESC NULLS LAST
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                try:
+                    rows = await conn.fetch(sql, subject_keys, trade_date)
+                except Exception:
+                    rows = await conn.fetch(fallback_sql, subject_keys)
+                return [dict(row) for row in rows]
+        except Exception as e:
+            logger.warning(f"读取 theme_mainline_identity_registry 失败（可能尚未迁移）: {e}")
+            return []
+
+    async def get_mainline_cycle_by_subject_keys(
+        self,
+        subject_keys: List[str],
+        trade_date,
+    ) -> List[Dict[str, Any]]:
+        """读取 Layer B 周期状态真源。"""
+        if not subject_keys:
+            return []
+        sql = """
+        SELECT
+            trade_date,
+            subject_key,
+            COALESCE(final_cycle_state, '') AS final_cycle_state,
+            COALESCE(final_mainline_alive, FALSE) AS final_mainline_alive,
+            COALESCE(transition_type, '') AS transition_type,
+            COALESCE(mainline_strength_score, 0) AS mainline_strength_score,
+            COALESCE(repair_score, 0) AS repair_score,
+            COALESCE(divergence_score, 0) AS divergence_score,
+            COALESCE(fade_watch_score, 0) AS fade_watch_score,
+            COALESCE(fade_confirmed_score, 0) AS fade_confirmed_score
+        FROM theme_cycle_judgement_v2
+        WHERE trade_date = $2::date
+          AND subject_key = ANY($1::text[])
+        ORDER BY subject_key
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                rows = await conn.fetch(sql, subject_keys, trade_date)
+                return [dict(row) for row in rows]
+        except Exception as e:
+            logger.warning(f"读取 theme_cycle_judgement_v2 失败（可能尚未迁移）: {e}")
+            return []
+
     async def upsert_subject_stock_daily_snapshot_rows(self, rows: List[Dict[str, Any]]) -> int:
         """批量 UPSERT subject_stock_daily_snapshot（最小字段集）。"""
         if not rows:

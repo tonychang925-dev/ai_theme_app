@@ -5,6 +5,8 @@ from typing import Protocol
 
 from stock_processing_service.contracts.dto import (
     BriefSnapshotDTO,
+    MainlineCycleDTO,
+    MainlineIdentityDTO,
     PriorSnapshotDTO,
     RecapSnapshotDTO,
     StockAuctionDTO,
@@ -49,6 +51,14 @@ class StockReadPort(Protocol):
     async def get_existing_post_market_recap_snapshot(
         self, trade_date: date
     ) -> RecapSnapshotDTO | None: ...
+
+    async def get_mainline_identity_by_subject_keys(
+        self, subject_keys: list[str], trade_date: date
+    ) -> list[MainlineIdentityDTO]: ...
+
+    async def get_mainline_cycle_by_subject_keys(
+        self, subject_keys: list[str], trade_date: date
+    ) -> list[MainlineCycleDTO]: ...
 
 
 # Backward-compatible alias

@@ -22,6 +22,7 @@ def test_admission_policy_passes_4_of_3_case() -> None:
     assert decision.limitup_gene_pass is True
     assert decision.theme_synergy_pass is True
     assert decision.structure_health_pass is True
+    assert decision.admission_status == "formal"
 
 
 def test_admission_policy_hard_reject_no_gene_and_isolated() -> None:
@@ -41,4 +42,4 @@ def test_admission_policy_hard_reject_no_gene_and_isolated() -> None:
     assert decision.reject_isolated_theme is True
     assert decision.hard_reject_any is True
     assert decision.pass_count_4of3 < 3
-
+    assert decision.admission_status == "reject"

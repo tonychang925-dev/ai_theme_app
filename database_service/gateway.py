@@ -396,6 +396,30 @@ class DatabaseGateway:
             logger.error(f"读取 post_market_recap_snapshot 失败 trade_date={trade_date}: {e}")
             raise
 
+    async def get_mainline_identity_by_subject_keys(self, subject_keys: List[str], trade_date) -> List[Dict[str, Any]]:
+        """股票域显式读取：Layer A 主线身份真源。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_mainline_identity_by_subject_keys(subject_keys, trade_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取主线身份失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def get_mainline_cycle_by_subject_keys(self, subject_keys: List[str], trade_date) -> List[Dict[str, Any]]:
+        """股票域显式读取：Layer B 周期状态真源。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_mainline_cycle_by_subject_keys(subject_keys, trade_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取周期状态失败 trade_date={trade_date}: {e}")
+            raise
+
     async def upsert_stock_daily_snapshot_rows(self, rows: List[Dict[str, Any]]) -> int:
         """批量 UPSERT stock_daily_snapshot。"""
         try:

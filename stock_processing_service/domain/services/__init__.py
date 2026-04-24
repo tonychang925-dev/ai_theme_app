@@ -15,6 +15,7 @@ from .strong_watch_refresh_service import StrongWatchRecord, StrongWatchRefreshS
 from .strong_watch_roll_forward_service import StrongWatchRollForwardService
 from .strong_watch_seed_service import StrongWatchSeedService
 from .strong_watch_service import StrongWatchService
+from .strong_watch_service import StrongWatchShadowSummary
 from .strong_watch_universe import (
     CycleStatus,
     StrongWatchUniverseBuilder,
@@ -61,4 +62,5 @@ __all__ = [
     "StrongWatchPruneService",
     "StrongWatchPromoteService",
     "StrongWatchService",
+    "StrongWatchShadowSummary",
 ]
