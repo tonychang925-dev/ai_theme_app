@@ -415,6 +415,10 @@ async def _build_target_diagnostics(
                 "support_score": str(refreshed.support_score),
                 "support_type": refreshed.support_type,
                 "weakness_tolerance_score": str(refreshed.weakness_tolerance_score),
+                "support_refs": list(refreshed.support_refs or []),
+                "legacy_gap_candidates": [
+                    x for x in list(refreshed.support_refs or []) if isinstance(x, str) and x.startswith("legacy_gap_candidate")
+                ],
                 "prior7_limitup_days": refreshed.prior7_limitup_days,
                 "prior7_strong_days": refreshed.prior7_strong_days,
                 "prior7_best_watch_score": str(refreshed.prior7_best_watch_score),
