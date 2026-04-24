@@ -31,6 +31,7 @@ class SupportScoreResult:
     combined_strength: Decimal = Decimal("0")
     gap_hit: bool = False
     gap_hit_mode: str = "miss"
+    gap_source: str = ""
     gap_level: Decimal = Decimal("0")
     gap_distance_pct: Decimal = Decimal("999")
     support_refs: list[str] = field(default_factory=list)
@@ -281,6 +282,14 @@ class KlineSupportScorer:
         support_candidates: list[SupportTypeScore] = []
         refs: list[str] = []
 
+        # 0) old-chain compatible near-gap support first
+        legacy_gap = self._detect_legacy_near_gap_support(df, current_low, current_close)
+        if legacy_gap is not None:
+            support_candidates.append(legacy_gap)
+            refs.append(
+                f"legacy_gap_hit level={legacy_gap.support_level} zone=[{legacy_gap.zone_lower},{legacy_gap.zone_upper}]"
+            )
+
         # 1) gap_support detection (legacy semantics)
         if prev_high > 0:
             gap_threshold = Decimal("0.001")
@@ -431,7 +440,7 @@ class KlineSupportScorer:
                 support_types=[],
             )
 
-        support_candidates.sort(key=lambda x: x.strength, reverse=True)
+        support_candidates.sort(key=self._support_priority)
         gap_candidates = [x for x in support_candidates if x.support_type == "gap_support"]
         gap_candidates.sort(key=lambda x: x.strength, reverse=True)
 
@@ -448,9 +457,18 @@ class KlineSupportScorer:
         resonance_bonus = min(Decimal("0.20"), Decimal(str(max(0, len(support_candidates) - 1))) * Decimal("0.05"))
         combined_strength = min(Decimal("1"), primary.strength * Decimal("0.65") + avg_top3 * Decimal("0.35") + resonance_bonus)
         support_score = (combined_strength * Decimal("100")).quantize(Decimal("0.01"))
-        best_gap = gap_candidates[0] if gap_candidates else None
+        legacy_gap_candidates = [x for x in gap_candidates if x.hit_mode == "legacy_near_gap"]
+        if legacy_gap_candidates:
+            best_gap = sorted(legacy_gap_candidates, key=lambda x: x.strength, reverse=True)[0]
+        elif gap_candidates:
+            best_gap = gap_candidates[0]
+        else:
+            best_gap = None
         gap_hit = best_gap is not None and best_gap.hit_mode in {"inside", "touch"}
+        if best_gap is not None and best_gap.hit_mode == "legacy_near_gap":
+            gap_hit = True
         gap_hit_mode = best_gap.hit_mode if best_gap else "miss"
+        gap_source = best_gap.source if best_gap else ""
         gap_level = best_gap.support_level if best_gap else Decimal("0")
         gap_distance_pct = best_gap.distance_pct if best_gap else Decimal("999")
 
@@ -461,6 +479,7 @@ class KlineSupportScorer:
                 f"combined_strength={combined_strength}",
                 f"support_count={len(support_candidates)}",
                 f"gap_hit_mode={gap_hit_mode}",
+                f"gap_source={gap_source}",
             ]
         )
         for item in support_candidates[:5]:
@@ -487,8 +506,74 @@ class KlineSupportScorer:
             combined_strength=combined_strength,
             gap_hit=gap_hit,
             gap_hit_mode=gap_hit_mode,
+            gap_source=gap_source,
             gap_level=gap_level,
             gap_distance_pct=gap_distance_pct,
             support_refs=refs,
             support_types=support_candidates,
         )
+    def _detect_legacy_near_gap_support(
+        self,
+        df: pd.DataFrame,
+        current_low: Decimal,
+        current_close: Decimal,
+    ) -> SupportTypeScore | None:
+        """
+        Legacy-compatible gap rule from old chain:
+        - Only compare current day with previous trading day
+        - Up-gap: current_low > prev_high * (1 + 0.1%)
+        - Gap support hit: current_low in prev_high ±1% window
+        """
+        if len(df) < 2:
+            return None
+
+        cur = df.iloc[-1]
+        prev = df.iloc[-2]
+        prev_high = self._d(prev["high_price"])
+        if prev_high <= 0:
+            return None
+
+        gap_threshold = Decimal("0.001")
+        if current_low <= prev_high * (Decimal("1") + gap_threshold):
+            return None
+
+        gap_support_level = prev_high
+        zone_lower = gap_support_level * Decimal("0.99")
+        zone_upper = gap_support_level * Decimal("1.01")
+        if not (zone_lower <= current_low <= zone_upper):
+            return None
+
+        raw = self._score_level(
+            candidate_type="gap_support",
+            level=gap_support_level,
+            current_low=current_low,
+            base=Decimal("0.95"),
+            source="legacy_prev_day_gap",
+        )
+        strength = raw.strength
+        if current_close > gap_support_level:
+            strength = min(Decimal("1"), strength + Decimal("0.05"))
+
+        distance_pct = (abs(current_low - gap_support_level) / gap_support_level) * Decimal("100")
+        return SupportTypeScore(
+            support_type="gap_support",
+            support_level=gap_support_level,
+            strength=strength,
+            source="legacy_prev_day_gap",
+            distance_pct=distance_pct,
+            zone_lower=zone_lower,
+            zone_upper=zone_upper,
+            hit_mode="legacy_near_gap",
+        )
+
+    @staticmethod
+    def _support_priority(s: SupportTypeScore) -> tuple[int, Decimal]:
+        if s.support_type == "gap_support" and s.hit_mode == "legacy_near_gap":
+            return (0, -s.strength)
+        if s.support_type == "gap_support":
+            return (1, -s.strength)
+        if s.support_type == "previous_low":
+            return (2, -s.strength)
+        if s.support_type == "platform_support":
+            return (3, -s.strength)
+        return (4, -s.strength)
