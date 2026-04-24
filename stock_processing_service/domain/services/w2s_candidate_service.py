@@ -109,8 +109,12 @@ class W2SCandidateService:
     ) -> Decimal:
         refs_bonus = Decimal(str(min(len(support_refs), 5) * 5))
         support_type_bonus = Decimal("0")
-        if support_type in {"previous_low", "prev_low_support", "ma_support", "platform_support"}:
+        if support_type == "gap_support":
+            support_type_bonus = Decimal("8")
+        elif support_type in {"previous_low", "prev_low_support", "platform_support"}:
             support_type_bonus = Decimal("5")
+        elif support_type == "ma_support":
+            support_type_bonus = Decimal("3")
         return min(Decimal("100"), support_score * Decimal("0.85") + refs_bonus + support_type_bonus)
 
     @staticmethod
@@ -258,6 +262,13 @@ class W2SCandidateService:
             and support_hit_score >= Decimal("75")
             and weakness_valid_score >= Decimal("60")
         )
+        gap_formal_override = (
+            watch_status in {"weakening", "weakening_keep"}
+            and support_type == "gap_support"
+            and gap_hit
+            and support_hit_score >= Decimal("70")
+            and weakness_valid_score >= Decimal("60")
+        )
 
         gap_structure_bonus = self._gap_structure_bonus(
             support_type=support_type,
@@ -270,7 +281,7 @@ class W2SCandidateService:
             repair_or_takeover_score=repair_or_takeover_score,
         )
         gap_formal_bias_bonus = Decimal("0")
-        if formal_w2s_override and support_type == "gap_support" and gap_hit:
+        if gap_formal_override:
             gap_formal_bias_bonus = Decimal("3")
 
         raw_score = (
@@ -330,7 +341,7 @@ class W2SCandidateService:
                 and formal_day_gate
                 and not overheat_hard_gate
             )
-            if formal_w2s_override and candidate_score >= Decimal("60") and formal_day_gate and not overheat_hard_gate:
+            if (formal_w2s_override or gap_formal_override) and candidate_score >= Decimal("60") and formal_day_gate and not overheat_hard_gate:
                 formal_ok = True
             if formal_ok:
                 level = "formal"
@@ -385,6 +396,7 @@ class W2SCandidateService:
             "prior7_formal_gate": prior7_formal_gate,
             "prior7_soft_pass": prior7_soft_pass,
             "formal_w2s_override": formal_w2s_override,
+            "gap_formal_override": gap_formal_override,
             "prior7_bonus": str(prior7_bonus),
             "w2s_pathway_bonus": str(w2s_pathway_bonus),
             "gap_structure_bonus": str(gap_structure_bonus),
