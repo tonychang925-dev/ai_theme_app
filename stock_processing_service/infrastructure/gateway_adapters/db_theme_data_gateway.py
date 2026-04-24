@@ -15,6 +15,14 @@ class DBThemeDataGateway:
     async def get_stock_daily_bars(self, trade_date: date, stock_ids: list[str] | None = None) -> list[dict[str, Any]]:
         return await self._db.get_stock_daily_bars(trade_date, stock_ids=stock_ids)
 
+    async def get_stock_daily_bars_range(
+        self,
+        start_date: date,
+        end_date: date,
+        stock_ids: list[str] | None = None,
+    ) -> list[dict[str, Any]]:
+        return await self._db.get_stock_daily_bars_range(start_date, end_date, stock_ids=stock_ids)
+
     async def get_stock_auction_snapshot(self, trade_date: date, stock_ids: list[str] | None = None) -> list[dict[str, Any]]:
         return await self._db.get_stock_auction_snapshot(trade_date, stock_ids=stock_ids)
 

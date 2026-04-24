@@ -1541,6 +1541,28 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             rows = await conn.fetch(sql, trade_date, stock_ids if stock_ids else None)
             return [dict(row) for row in rows]
 
+    async def get_stock_daily_bars_range(
+        self,
+        start_date,
+        end_date,
+        stock_ids: Optional[List[str]] = None,
+    ) -> List[Dict[str, Any]]:
+        """读取区间股票日线（用于支撑评分等历史K线分析）。"""
+        sql = """
+        SELECT
+            trade_date, stock_id, stock_name,
+            open_price, high_price, low_price, close_price, pre_close, pct_chg,
+            volume, amount
+        FROM stock_daily_snapshot
+        WHERE trade_date >= $1::date
+          AND trade_date <= $2::date
+          AND ($3::text[] IS NULL OR stock_id = ANY($3::text[]))
+        ORDER BY trade_date ASC, stock_id
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, start_date, end_date, stock_ids if stock_ids else None)
+            return [dict(row) for row in rows]
+
     async def get_stock_auction_snapshot(self, trade_date, stock_ids: Optional[List[str]] = None) -> List[Dict[str, Any]]:
         """
         读取盘前竞价快照。

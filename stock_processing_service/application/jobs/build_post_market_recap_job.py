@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import asdict
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from typing import Any
 from uuid import uuid4
 
@@ -69,12 +69,19 @@ class BuildPostMarketRecapJob:
             lookback_days=lookback_days,
             stock_ids=[row.stock_id for row in pool_rows] if pool_rows else None,
         )
+        history_start = trade_date - timedelta(days=90)
+        history_bars = await self._read_port.get_stock_daily_bars_range(
+            start_date=history_start,
+            end_date=trade_date,
+            stock_ids=[row.stock_id for row in pool_rows] if pool_rows else None,
+        )
 
         promoted_pool_rows, strong_watch_rows, strong_watch_history = self._strong_watch_service.build_promoted_pool_with_history(
             trade_date=trade_date,
             pool_rows=pool_rows,
             bars=bars,
             prior_rows=prior_rows,
+            history_bars=history_bars,
         )
         candidates = self._candidate_service.build_candidates(
             bars=bars,

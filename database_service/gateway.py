@@ -306,6 +306,27 @@ class DatabaseGateway:
             logger.error(f"读取日线行情失败 trade_date={trade_date}: {e}")
             raise
 
+    async def get_stock_daily_bars_range(
+        self,
+        start_date,
+        end_date,
+        stock_ids: Optional[List[str]] = None,
+    ) -> List[Dict[str, Any]]:
+        """股票域显式读取：区间日线行情。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_stock_daily_bars_range(
+                start_date,
+                end_date,
+                stock_ids=stock_ids,
+            )
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取区间日线失败 start={start_date}, end={end_date}: {e}")
+            raise
+
     async def get_stock_auction_snapshot(self, trade_date, stock_ids: Optional[List[str]] = None) -> List[Dict[str, Any]]:
         """股票域显式读取：竞价快照（当前可降级为日频代理）。"""
         try:

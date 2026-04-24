@@ -69,7 +69,13 @@ def test_strong_watch_promote_pipeline() -> None:
     assert promoted[0].stock_id == "002000.SZ"
     assert promoted[0].metadata["candidate_source"] == "strong_watch_pool"
     assert "support_refs" in promoted[0].metadata
-    assert promoted[0].metadata["support_type"] in {"ma_support", "prev_low_support", "platform_support"}
+    assert promoted[0].metadata["support_type"] in {
+        "ma_support",
+        "prev_low_support",
+        "platform_support",
+        "gap_support",
+        "previous_close",
+    }
 
 
 def test_strong_watch_two_stage_prune_roll_forward() -> None:

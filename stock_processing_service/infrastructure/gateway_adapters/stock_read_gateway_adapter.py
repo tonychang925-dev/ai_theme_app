@@ -111,6 +111,35 @@ class StockReadGatewayAdapter:
             )
         return result
 
+    async def get_stock_daily_bars_range(
+        self,
+        start_date: date,
+        end_date: date,
+        stock_ids: list[str] | None = None,
+    ) -> list[StockBarDTO]:
+        rows = await self._db.get_stock_daily_bars_range(start_date, end_date, stock_ids=stock_ids)
+        result: list[StockBarDTO] = []
+        for row in rows:
+            p = _as_dict(row)
+            result.append(
+                StockBarDTO(
+                    trade_date=p.get("trade_date", start_date),
+                    stock_id=_normalize_stock_id(p.get("stock_id", "")),
+                    stock_name=str(p.get("stock_name", "")),
+                    open_price=_d(p.get("open_price")),
+                    high_price=_d(p.get("high_price")),
+                    low_price=_d(p.get("low_price")),
+                    close_price=_d(p.get("close_price")),
+                    pre_close=_d(p.get("pre_close")),
+                    pct_chg=_d(p.get("pct_chg")),
+                    volume=_d(p.get("volume")),
+                    amount=_d(p.get("amount")),
+                    limit_up_price=_d(p.get("limit_up_price")),
+                    limit_down_price=_d(p.get("limit_down_price")),
+                )
+            )
+        return result
+
     async def get_stock_auction_snapshot(
         self, trade_date: date, stock_ids: list[str] | None = None
     ) -> list[StockAuctionDTO]:
@@ -190,6 +219,12 @@ class StockReadGatewayAdapter:
                 payload.setdefault("close_price", str(p.get("close_price")))
             if "pre_close" in p and p.get("pre_close") is not None:
                 payload.setdefault("pre_close", str(p.get("pre_close")))
+            if "open_price" in p and p.get("open_price") is not None:
+                payload.setdefault("open_price", str(p.get("open_price")))
+            if "high_price" in p and p.get("high_price") is not None:
+                payload.setdefault("high_price", str(p.get("high_price")))
+            if "low_price" in p and p.get("low_price") is not None:
+                payload.setdefault("low_price", str(p.get("low_price")))
             result.append(
                 PriorSnapshotDTO(
                     trade_date=p.get("trade_date", trade_date),

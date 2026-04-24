@@ -37,6 +37,15 @@ class _FakeReadPort:
             )
         ]
 
+    async def get_stock_daily_bars_range(
+        self,
+        start_date: date,
+        end_date: date,
+        stock_ids: list[str] | None = None,
+    ) -> list[StockBarDTO]:
+        bars = await self.get_stock_daily_bars(end_date, stock_ids=stock_ids)
+        return [bar for bar in bars if start_date <= bar.trade_date <= end_date]
+
     async def get_stock_auction_snapshot(self, trade_date: date, stock_ids: list[str] | None = None):
         return []
 
@@ -200,7 +209,7 @@ def test_build_post_market_recap_job() -> None:
 def test_build_post_market_recap_job_empty_strong_watch_pool() -> None:
     class _EmptyStrongWatchService:
         def build_promoted_pool_with_history(
-            self, trade_date, pool_rows, bars, prior_rows=None, prior_active_rows=None
+            self, trade_date, pool_rows, bars, prior_rows=None, history_bars=None, prior_active_rows=None
         ):
             return [], [], []
 
@@ -246,7 +255,7 @@ def test_build_post_market_recap_job_empty_strong_watch_pool() -> None:
 def test_build_post_market_recap_job_promoted_pool_generates_candidates() -> None:
     class _PromotedStrongWatchService:
         def build_promoted_pool_with_history(
-            self, trade_date, pool_rows, bars, prior_rows=None, prior_active_rows=None
+            self, trade_date, pool_rows, bars, prior_rows=None, history_bars=None, prior_active_rows=None
         ):
             promoted = [
                 SubjectStockPoolDTO(
