@@ -9,11 +9,18 @@ from .one_day_tour_detector import OneDayTourDetector, OneDayTourSignal
 from .state_transition_service import StateTransition, StateTransitionService
 from .strong_watch_prune_service import StrongWatchPruneService
 from .strong_watch_promote_service import StrongWatchPromoteService
+from .strong_watch_admission_policy import StrongWatchAdmissionDecision, StrongWatchAdmissionPolicy
 from .strong_watch_history_service import StrongWatchHistoryRecord, StrongWatchHistoryService
 from .strong_watch_refresh_service import StrongWatchRecord, StrongWatchRefreshService
 from .strong_watch_roll_forward_service import StrongWatchRollForwardService
 from .strong_watch_seed_service import StrongWatchSeedService
 from .strong_watch_service import StrongWatchService
+from .strong_watch_universe import (
+    CycleStatus,
+    StrongWatchUniverseBuilder,
+    SubjectIdentity,
+    UniverseBuildResult,
+)
 from .w2s_auction_scorer import AuctionScore, W2SAuctionScorer
 from .w2s_candidate_service import W2SCandidate, W2SCandidateService
 from .w2s_confirm_service import W2SConfirmedPick, W2SConfirmService
@@ -41,6 +48,12 @@ __all__ = [
     "IdentityDecider",
     "StrongWatchSeedService",
     "StrongWatchRollForwardService",
+    "StrongWatchAdmissionPolicy",
+    "StrongWatchAdmissionDecision",
+    "StrongWatchUniverseBuilder",
+    "SubjectIdentity",
+    "CycleStatus",
+    "UniverseBuildResult",
     "StrongWatchHistoryService",
     "StrongWatchHistoryRecord",
     "StrongWatchRefreshService",
