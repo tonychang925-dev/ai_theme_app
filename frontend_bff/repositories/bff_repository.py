@@ -266,34 +266,61 @@ class FrontendBffRepository:
                 ORDER BY trade_date DESC
                 LIMIT $2
             ),
-            active_pool AS (
-                SELECT
-                    p.*,
-                    split_part(p.stock_id, '.', 1) AS stock_code
-                FROM strong_stock_watch_pool p
-                WHERE p.watch_status IN ('active', 'weakening')
-                  AND split_part(p.stock_id, '.', 1) !~ '^688'
-                  AND UPPER(COALESCE(p.stock_name, '')) NOT LIKE 'ST%'
-                  AND UPPER(COALESCE(p.stock_name, '')) NOT LIKE '*ST%'
-                  AND ($3::text IS NULL OR split_part(p.stock_id, '.', 1) = split_part($3::text, '.', 1))
-            ),
-            first_seen AS (
+            window_first_seen AS (
                 SELECT
                     split_part(h.stock_id, '.', 1) AS stock_code,
                     MIN(h.trade_date) AS first_trade_date
                 FROM strong_stock_watch_history h
-                JOIN (SELECT DISTINCT stock_code FROM active_pool) a
-                  ON a.stock_code = split_part(h.stock_id, '.', 1)
                 WHERE h.watch_status IN ('active', 'weakening')
                   AND h.trade_date <= $1::date
                 GROUP BY split_part(h.stock_id, '.', 1)
+                HAVING MIN(h.trade_date) IN (SELECT trade_date FROM selected_trade_dates)
+            ),
+            latest_history AS (
+                SELECT DISTINCT ON (split_part(h.stock_id, '.', 1))
+                    split_part(h.stock_id, '.', 1) AS stock_code,
+                    h.trade_date,
+                    h.stock_id,
+                    h.stock_name,
+                    h.subject_key,
+                    h.theme_name,
+                    h.watch_status,
+                    h.watch_score,
+                    h.watch_priority,
+                    h.relay_role,
+                    h.pool_entry_type,
+                    h.cycle_state,
+                    h.mainline_strength_score,
+                    h.fade_watch,
+                    h.fade_confirmed,
+                    h.promoted_to_candidate,
+                    h.support_type,
+                    h.support_level,
+                    h.support_score,
+                    h.labels_json,
+                    h.evidence_json
+                FROM strong_stock_watch_history h
+                JOIN window_first_seen w
+                  ON w.stock_code = split_part(h.stock_id, '.', 1)
+                WHERE h.trade_date <= $1::date
+                ORDER BY
+                    split_part(h.stock_id, '.', 1),
+                    h.trade_date DESC,
+                    h.watch_score DESC NULLS LAST,
+                    h.watch_priority DESC NULLS LAST
+            ),
+            pool_state AS (
+                SELECT
+                    p.*,
+                    split_part(p.stock_id, '.', 1) AS stock_code
+                FROM strong_stock_watch_pool p
             ),
             ranked AS (
                 SELECT
-                    p.last_trade_date::text AS trade_date,
-                    p.stock_id,
-                    p.stock_name,
-                    p.subject_key,
+                    w.first_trade_date::text AS trade_date,
+                    COALESCE(p.stock_id, h.stock_id) AS stock_id,
+                    COALESCE(NULLIF(BTRIM(p.stock_name), ''), h.stock_name) AS stock_name,
+                    COALESCE(NULLIF(BTRIM(p.subject_key), ''), h.subject_key) AS subject_key,
                     COALESCE(
                         CASE
                             WHEN NULLIF(BTRIM(p.theme_name), '') IS NULL THEN NULL
@@ -305,26 +332,31 @@ class FrontendBffRepository:
                             WHEN BTRIM(v.theme_name) ~ '^[0-9]+$' THEN NULL
                             ELSE BTRIM(v.theme_name)
                         END,
-                        p.subject_key
+                        CASE
+                            WHEN NULLIF(BTRIM(h.theme_name), '') IS NULL THEN NULL
+                            WHEN BTRIM(h.theme_name) ~ '^[0-9]+$' THEN NULL
+                            ELSE BTRIM(h.theme_name)
+                        END,
+                        COALESCE(NULLIF(BTRIM(p.subject_key), ''), h.subject_key)
                     ) AS theme_name,
-                    p.watch_status,
-                    p.watch_score,
-                    p.watch_priority,
-                    p.relay_role,
-                    p.pool_entry_type,
-                    p.cycle_state,
-                    p.mainline_strength_score,
-                    p.fade_watch,
-                    p.fade_confirmed,
-                    p.candidate_promoted AS promoted_to_candidate,
-                    p.support_type,
-                    p.support_level,
-                    p.support_score,
-                    p.labels_json,
-                    p.evidence_json,
-                    fs.first_trade_date::text AS watch_start_date,
-                    p.last_trade_date::text AS last_trade_date,
-                    p.watch_window_days,
+                    COALESCE(p.watch_status, h.watch_status) AS watch_status,
+                    COALESCE(p.watch_score, h.watch_score) AS watch_score,
+                    COALESCE(p.watch_priority, h.watch_priority) AS watch_priority,
+                    COALESCE(p.relay_role, h.relay_role) AS relay_role,
+                    COALESCE(p.pool_entry_type, h.pool_entry_type) AS pool_entry_type,
+                    COALESCE(p.cycle_state, h.cycle_state) AS cycle_state,
+                    COALESCE(p.mainline_strength_score, h.mainline_strength_score) AS mainline_strength_score,
+                    COALESCE(p.fade_watch, h.fade_watch) AS fade_watch,
+                    COALESCE(p.fade_confirmed, h.fade_confirmed) AS fade_confirmed,
+                    COALESCE(p.candidate_promoted, h.promoted_to_candidate) AS promoted_to_candidate,
+                    COALESCE(p.support_type, h.support_type) AS support_type,
+                    COALESCE(p.support_level, h.support_level) AS support_level,
+                    COALESCE(p.support_score, h.support_score) AS support_score,
+                    COALESCE(p.labels_json, h.labels_json) AS labels_json,
+                    COALESCE(p.evidence_json, h.evidence_json) AS evidence_json,
+                    w.first_trade_date::text AS watch_start_date,
+                    COALESCE(p.last_trade_date, h.trade_date)::text AS last_trade_date,
+                    COALESCE(p.watch_window_days, 1) AS watch_window_days,
                     s.pct_chg,
                     CASE
                         WHEN jsonb_typeof(s.raw_json) = 'array' AND jsonb_array_length(s.raw_json) > 20
@@ -334,23 +366,28 @@ class FrontendBffRepository:
                     NULL::numeric AS turnover_rate,
                     COALESCE(NULLIF(s.raw_json->>35, ''), '0')::numeric AS main_net_inflow,
                     ROW_NUMBER() OVER (
-                        PARTITION BY split_part(p.stock_id, '.', 1)
-                        ORDER BY p.watch_score DESC, p.watch_priority DESC, p.last_trade_date DESC
+                        PARTITION BY w.stock_code
+                        ORDER BY COALESCE(p.watch_score, h.watch_score) DESC, COALESCE(p.watch_priority, h.watch_priority) DESC, COALESCE(p.last_trade_date, h.trade_date) DESC
                     ) AS stock_rn
-                FROM active_pool p
-                JOIN first_seen fs
-                  ON fs.stock_code = p.stock_code
+                FROM window_first_seen w
+                JOIN latest_history h
+                  ON h.stock_code = w.stock_code
+                LEFT JOIN pool_state p
+                  ON p.stock_code = w.stock_code
                 LEFT JOIN subject_stock_daily_snapshot s
-                  ON s.trade_date = p.last_trade_date
-                 AND split_part(s.stock_id, '.', 1) = split_part(p.stock_id, '.', 1)
+                  ON s.trade_date = COALESCE(p.last_trade_date, h.trade_date)
+                 AND split_part(s.stock_id, '.', 1) = w.stock_code
                 LEFT JOIN LATERAL (
                     SELECT theme_name
                     FROM vw_subject_theme_binding v
-                    WHERE v.subject_key = p.subject_key
+                    WHERE v.subject_key = COALESCE(NULLIF(BTRIM(p.subject_key), ''), h.subject_key)
                     ORDER BY theme_name
                     LIMIT 1
                 ) v ON TRUE
-                WHERE p.last_trade_date IN (SELECT trade_date FROM selected_trade_dates)
+                WHERE w.stock_code !~ '^688'
+                  AND UPPER(COALESCE(NULLIF(BTRIM(COALESCE(p.stock_name, h.stock_name)), ''), '')) NOT LIKE 'ST%'
+                  AND UPPER(COALESCE(NULLIF(BTRIM(COALESCE(p.stock_name, h.stock_name)), ''), '')) NOT LIKE '*ST%'
+                  AND ($3::text IS NULL OR w.stock_code = split_part($3::text, '.', 1))
             )
             SELECT
                 trade_date,

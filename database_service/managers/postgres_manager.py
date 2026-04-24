@@ -6,10 +6,11 @@ PostgreSQL数据库管理器 - 适配实际theme_master表结构
 import asyncio
 import logging
 from typing import Dict, List, Any, Optional, AsyncContextManager
-from datetime import datetime
+from datetime import datetime, date
 import asyncpg
 from asyncpg.pool import Pool
 import json
+from pathlib import Path
 
 
 try:
@@ -41,6 +42,124 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         super().__init__(config)
         self.pool: Optional[Pool] = None
         self.schema = config.postgres_schema
+        self._local_kline_root = Path(__file__).resolve().parents[2] / "theme_data_complete" / "_stock_kline"
+        self._local_daily_bar_dir = self._local_kline_root / "tushare" / "daily_bar"
+        self._local_daily_bar_cache: Dict[str, List[Dict[str, Any]]] = {}
+
+    @staticmethod
+    def _normalize_stock_ids(stock_id: str) -> tuple[str, str]:
+        raw = (stock_id or "").strip().upper()
+        if not raw:
+            return "", ""
+        if "." in raw:
+            code, suffix = raw.split(".", 1)
+            if len(code) == 6 and code.isdigit() and suffix in {"SZ", "SH", "BJ"}:
+                return code, f"{code}.{suffix}"
+            raw = code
+        if len(raw) == 6 and raw.isdigit():
+            if raw.startswith(("60", "68")):
+                suffix = "SH"
+            elif raw.startswith(("43", "83", "87")):
+                suffix = "BJ"
+            else:
+                suffix = "SZ"
+            return raw, f"{raw}.{suffix}"
+        return raw, raw
+
+    def _daily_bar_path(self, stock_id: str) -> Path:
+        _, normalized = self._normalize_stock_ids(stock_id)
+        return self._local_daily_bar_dir / f"{normalized}.jsonl"
+
+    def _load_local_daily_bar(self, stock_id: str) -> List[Dict[str, Any]]:
+        raw_code, normalized = self._normalize_stock_ids(stock_id)
+        if not normalized:
+            return []
+        if normalized in self._local_daily_bar_cache:
+            return self._local_daily_bar_cache[normalized]
+
+        path = self._daily_bar_path(normalized)
+        if not path.exists() and raw_code:
+            fallback = self._local_daily_bar_dir / f"{raw_code}.jsonl"
+            if fallback.exists():
+                path = fallback
+        if not path.exists():
+            self._local_daily_bar_cache[normalized] = []
+            return []
+
+        rows: List[Dict[str, Any]] = []
+        try:
+            with path.open("r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        item = json.loads(line)
+                        trade_date = date.fromisoformat(str(item.get("trade_date")))
+                    except Exception:
+                        continue
+                    rows.append(
+                        {
+                            "trade_date": trade_date,
+                            "stock_id": normalized,
+                            "stock_name": item.get("stock_name"),
+                            "open_price": item.get("open_price"),
+                            "high_price": item.get("high_price"),
+                            "low_price": item.get("low_price"),
+                            "close_price": item.get("close_price"),
+                            "pre_close": item.get("pre_close"),
+                            "pct_chg": item.get("pct_chg"),
+                            "volume": item.get("volume"),
+                            "amount": item.get("amount"),
+                            "source_name": "tushare_local_daily_bar",
+                        }
+                    )
+            rows.sort(key=lambda x: x["trade_date"])
+        except Exception as e:
+            logger.warning(f"读取本地Tushare日线失败 {path}: {e}")
+            rows = []
+
+        self._local_daily_bar_cache[normalized] = rows
+        return rows
+
+    def _lookup_local_daily_bar(self, stock_id: str, trade_date: date) -> Optional[Dict[str, Any]]:
+        rows = self._load_local_daily_bar(stock_id)
+        if not rows:
+            return None
+        for row in reversed(rows):
+            if row.get("trade_date") == trade_date:
+                return row
+            if row.get("trade_date") and row.get("trade_date") < trade_date:
+                break
+        return None
+
+    @staticmethod
+    def _needs_ohlc_backfill(row: Dict[str, Any]) -> bool:
+        return any(
+            row.get(k) is None
+            for k in ("open_price", "high_price", "low_price", "pre_close")
+        )
+
+    def _merge_row_with_local_tushare(self, row: Dict[str, Any]) -> Dict[str, Any]:
+        if not self._needs_ohlc_backfill(row):
+            return row
+        stock_id = str(row.get("stock_id") or "")
+        trade_date = row.get("trade_date")
+        if not stock_id or trade_date is None:
+            return row
+        local = self._lookup_local_daily_bar(stock_id, trade_date)
+        if not local:
+            return row
+
+        merged = dict(row)
+        for key in ("open_price", "high_price", "low_price", "pre_close", "volume", "amount"):
+            if merged.get(key) is None and local.get(key) is not None:
+                merged[key] = local.get(key)
+        if merged.get("stock_name") in (None, "") and local.get("stock_name"):
+            merged["stock_name"] = local.get("stock_name")
+        if merged.get("source_name") in (None, "", "stock_processing_service"):
+            merged["source_name"] = "tushare_local_backfill"
+        return merged
     
     async def connect(self) -> None:
         """连接PostgreSQL数据库池"""
@@ -1459,16 +1578,46 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             $10, $11, $12
         )
         ON CONFLICT (trade_date, stock_id) DO UPDATE SET
-          stock_name = EXCLUDED.stock_name,
-          open_price = EXCLUDED.open_price,
-          high_price = EXCLUDED.high_price,
-          low_price = EXCLUDED.low_price,
-          close_price = EXCLUDED.close_price,
-          pre_close = EXCLUDED.pre_close,
-          pct_chg = EXCLUDED.pct_chg,
-          volume = EXCLUDED.volume,
-          amount = EXCLUDED.amount,
-          source_name = EXCLUDED.source_name,
+          stock_name = CASE
+            WHEN EXCLUDED.source_name = 'stock_processing_service' THEN COALESCE(stock_daily_snapshot.stock_name, EXCLUDED.stock_name)
+            ELSE COALESCE(EXCLUDED.stock_name, stock_daily_snapshot.stock_name)
+          END,
+          open_price = CASE
+            WHEN EXCLUDED.source_name = 'stock_processing_service' THEN stock_daily_snapshot.open_price
+            ELSE COALESCE(EXCLUDED.open_price, stock_daily_snapshot.open_price)
+          END,
+          high_price = CASE
+            WHEN EXCLUDED.source_name = 'stock_processing_service' THEN stock_daily_snapshot.high_price
+            ELSE COALESCE(EXCLUDED.high_price, stock_daily_snapshot.high_price)
+          END,
+          low_price = CASE
+            WHEN EXCLUDED.source_name = 'stock_processing_service' THEN stock_daily_snapshot.low_price
+            ELSE COALESCE(EXCLUDED.low_price, stock_daily_snapshot.low_price)
+          END,
+          close_price = CASE
+            WHEN EXCLUDED.source_name = 'stock_processing_service' THEN stock_daily_snapshot.close_price
+            ELSE COALESCE(EXCLUDED.close_price, stock_daily_snapshot.close_price)
+          END,
+          pre_close = CASE
+            WHEN EXCLUDED.source_name = 'stock_processing_service' THEN stock_daily_snapshot.pre_close
+            ELSE COALESCE(EXCLUDED.pre_close, stock_daily_snapshot.pre_close)
+          END,
+          pct_chg = CASE
+            WHEN EXCLUDED.source_name = 'stock_processing_service' THEN stock_daily_snapshot.pct_chg
+            ELSE COALESCE(EXCLUDED.pct_chg, stock_daily_snapshot.pct_chg)
+          END,
+          volume = CASE
+            WHEN EXCLUDED.source_name = 'stock_processing_service' THEN stock_daily_snapshot.volume
+            ELSE COALESCE(EXCLUDED.volume, stock_daily_snapshot.volume)
+          END,
+          amount = CASE
+            WHEN EXCLUDED.source_name = 'stock_processing_service' THEN stock_daily_snapshot.amount
+            ELSE COALESCE(EXCLUDED.amount, stock_daily_snapshot.amount)
+          END,
+          source_name = CASE
+            WHEN EXCLUDED.source_name = 'stock_processing_service' THEN stock_daily_snapshot.source_name
+            ELSE COALESCE(EXCLUDED.source_name, stock_daily_snapshot.source_name)
+          END,
           updated_at = NOW()
         """
         payload = [self._normalize_stock_snapshot_row(row) for row in rows]
@@ -1539,7 +1688,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         """
         async with self.pool.acquire() as conn:
             rows = await conn.fetch(sql, trade_date, stock_ids if stock_ids else None)
-            return [dict(row) for row in rows]
+            return [self._merge_row_with_local_tushare(dict(row)) for row in rows]
 
     async def get_stock_daily_bars_range(
         self,
@@ -1561,7 +1710,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         """
         async with self.pool.acquire() as conn:
             rows = await conn.fetch(sql, start_date, end_date, stock_ids if stock_ids else None)
-            return [dict(row) for row in rows]
+            return [self._merge_row_with_local_tushare(dict(row)) for row in rows]
 
     async def get_stock_auction_snapshot(self, trade_date, stock_ids: Optional[List[str]] = None) -> List[Dict[str, Any]]:
         """
@@ -1612,7 +1761,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         """
         async with self.pool.acquire() as conn:
             rows = await conn.fetch(sql, trade_date, lookback_days, stock_ids if stock_ids else None)
-            return [dict(row) for row in rows]
+            return [self._merge_row_with_local_tushare(dict(row)) for row in rows]
 
     async def get_existing_pre_market_brief_snapshot(self, trade_date) -> Optional[Dict[str, Any]]:
         """读取 pre_market_brief_snapshot 文档对象（存在则返回）。"""
@@ -1814,8 +1963,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.warning(f"写入 post_market_recap_snapshot 失败（可能尚未迁移）: {e}")
             return 0
 
-    @staticmethod
-    def _normalize_stock_snapshot_row(row: Dict[str, Any]) -> tuple:
+    def _normalize_stock_snapshot_row(self, row: Dict[str, Any]) -> tuple:
         def _pick(*keys: str):
             for key in keys:
                 if key in row and row[key] is not None:
@@ -1834,19 +1982,55 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         if not trade_date or not stock_id:
             raise ValueError(f"invalid snapshot row, missing trade_date/stock_id: {row}")
 
+        source_name = str(_pick("source_name") or "stock_processing_service")
+        open_price = _pick("open_price")
+        high_price = _pick("high_price")
+        low_price = _pick("low_price")
+        close_price = _pick("close_price")
+        pre_close = _pick("pre_close")
+        pct_chg = _pick("pct_chg")
+        volume = _pick("volume")
+        amount = _pick("amount")
+
+        # If a stock_processing_service write carries incomplete market fields,
+        # backfill from local tushare daily_bar to avoid polluting market truth.
+        if source_name == "stock_processing_service":
+            probe = {
+                "trade_date": trade_date,
+                "stock_id": str(stock_id),
+                "open_price": open_price,
+                "high_price": high_price,
+                "low_price": low_price,
+                "pre_close": pre_close,
+                "volume": volume,
+                "amount": amount,
+                "stock_name": _pick("stock_name"),
+                "source_name": source_name,
+            }
+            merged = self._merge_row_with_local_tushare(probe)
+            open_price = merged.get("open_price")
+            high_price = merged.get("high_price")
+            low_price = merged.get("low_price")
+            pre_close = merged.get("pre_close")
+            volume = merged.get("volume")
+            amount = merged.get("amount")
+            if merged.get("stock_name") not in (None, ""):
+                row["stock_name"] = merged.get("stock_name")
+            source_name = str(merged.get("source_name") or source_name)
+
         return (
             trade_date,
             str(stock_id),
             _pick("stock_name"),
-            _pick("open_price"),
-            _pick("high_price"),
-            _pick("low_price"),
-            _pick("close_price"),
-            _pick("pre_close"),
-            _pick("pct_chg"),
-            _pick("volume"),
-            _pick("amount"),
-            str(_pick("source_name") or "stock_processing_service"),
+            open_price,
+            high_price,
+            low_price,
+            close_price,
+            pre_close,
+            pct_chg,
+            volume,
+            amount,
+            source_name,
         )
 
     async def cleanup_test_data(self, theme_id=None):

@@ -110,7 +110,11 @@ class KlineSupportScorer:
         for col in ["open_price", "high_price", "low_price", "close_price", "pre_close", "pct_chg"]:
             df[col] = pd.to_numeric(df[col], errors="coerce")
         df = df.dropna(subset=["close_price", "low_price", "high_price"]).copy()
-        df = df[df["close_price"] > 0]
+        df = df[
+            (df["close_price"] > 0)
+            & (df["low_price"] > 0)
+            & (df["high_price"] > 0)
+        ]
         return df
 
     @staticmethod
@@ -520,51 +524,63 @@ class KlineSupportScorer:
     ) -> SupportTypeScore | None:
         """
         Legacy-compatible gap rule from old chain:
-        - Only compare current day with previous trading day
-        - Up-gap: current_low > prev_high * (1 + 0.1%)
-        - Gap support hit: current_low in prev_high ±1% window
+        - Scan recent 5 trading days for upward gaps
+        - Up-gap: day_i.low > day_{i-1}.high * (1 + 0.1%)
+        - Gap support hit: current_low in gap_level(prev_high) ±1% window
         """
         if len(df) < 2:
             return None
 
-        cur = df.iloc[-1]
-        prev = df.iloc[-2]
-        prev_high = self._d(prev["high_price"])
-        if prev_high <= 0:
-            return None
-
         gap_threshold = Decimal("0.001")
-        if current_low <= prev_high * (Decimal("1") + gap_threshold):
-            return None
+        lookback = min(5, len(df) - 1)
+        best: SupportTypeScore | None = None
 
-        gap_support_level = prev_high
-        zone_lower = gap_support_level * Decimal("0.99")
-        zone_upper = gap_support_level * Decimal("1.01")
-        if not (zone_lower <= current_low <= zone_upper):
-            return None
+        # Newest first, then older gaps; prefer smaller distance if multi-hit.
+        for off in range(1, lookback + 1):
+            i = len(df) - off
+            if i <= 0:
+                continue
 
-        raw = self._score_level(
-            candidate_type="gap_support",
-            level=gap_support_level,
-            current_low=current_low,
-            base=Decimal("0.95"),
-            source="legacy_prev_day_gap",
-        )
-        strength = raw.strength
-        if current_close > gap_support_level:
-            strength = min(Decimal("1"), strength + Decimal("0.05"))
+            prev = df.iloc[i - 1]
+            cur = df.iloc[i]
+            prev_high = self._d(prev["high_price"])
+            cur_low = self._d(cur["low_price"])
+            if prev_high <= 0 or cur_low <= 0:
+                continue
+            if cur_low <= prev_high * (Decimal("1") + gap_threshold):
+                continue
 
-        distance_pct = (abs(current_low - gap_support_level) / gap_support_level) * Decimal("100")
-        return SupportTypeScore(
-            support_type="gap_support",
-            support_level=gap_support_level,
-            strength=strength,
-            source="legacy_prev_day_gap",
-            distance_pct=distance_pct,
-            zone_lower=zone_lower,
-            zone_upper=zone_upper,
-            hit_mode="legacy_near_gap",
-        )
+            gap_support_level = prev_high
+            zone_lower = gap_support_level * Decimal("0.99")
+            zone_upper = gap_support_level * Decimal("1.01")
+            if not (zone_lower <= current_low <= zone_upper):
+                continue
+
+            raw = self._score_level(
+                candidate_type="gap_support",
+                level=gap_support_level,
+                current_low=current_low,
+                base=Decimal("0.95"),
+                source=f"legacy_recent5_gap_offset_{off}",
+            )
+            strength = raw.strength
+            if current_close > gap_support_level:
+                strength = min(Decimal("1"), strength + Decimal("0.05"))
+
+            candidate = SupportTypeScore(
+                support_type="gap_support",
+                support_level=gap_support_level,
+                strength=strength,
+                source=f"legacy_recent5_gap_offset_{off}",
+                distance_pct=(abs(current_low - gap_support_level) / gap_support_level) * Decimal("100"),
+                zone_lower=zone_lower,
+                zone_upper=zone_upper,
+                hit_mode="legacy_near_gap",
+            )
+            if best is None or candidate.distance_pct < best.distance_pct:
+                best = candidate
+
+        return best
 
     @staticmethod
     def _support_priority(s: SupportTypeScore) -> tuple[int, Decimal]:
