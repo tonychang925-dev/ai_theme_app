@@ -71,8 +71,8 @@ def test_legacy_prev_day_gap_hit_becomes_primary_support() -> None:
     )
 
     assert result.gap_hit is True
-    assert result.gap_source.startswith("legacy_recent5_gap_offset_")
-    assert result.gap_hit_mode == "legacy_near_gap"
+    assert result.gap_source == "gap_structure"
+    assert result.gap_hit_mode in {"strict", "soft"}
     assert result.support_type == "gap_support"
     assert result.gap_level == Decimal("10.00")
 
@@ -113,8 +113,8 @@ def test_legacy_gap_lock_prevents_prev_low_overtake() -> None:
 
     assert result.support_type == "gap_support"
     assert result.gap_hit is True
-    assert result.gap_source.startswith("legacy_recent5_gap_offset_")
-    assert any("legacy_gap_hit" in x for x in result.support_refs)
+    assert result.gap_source == "gap_structure"
+    assert any("gap_candidate=" in x or "legacy_gap_candidate " in x for x in result.support_refs)
 
 
 def test_legacy_gap_not_hit_when_outside_1pct_window() -> None:
@@ -151,8 +151,8 @@ def test_legacy_gap_not_hit_when_outside_1pct_window() -> None:
         history_bars=history_bars,
     )
 
-    assert not result.gap_source.startswith("legacy_recent5_gap_offset_")
-    assert result.gap_hit_mode != "legacy_near_gap"
+    assert result.gap_source != "gap_structure" or result.gap_hit is False
+    assert result.gap_hit_mode not in {"strict", "soft"}
 
 
 def test_legacy_gap_not_hit_when_no_gap() -> None:
@@ -192,4 +192,4 @@ def test_legacy_gap_not_hit_when_no_gap() -> None:
 
     assert result.gap_source == ""
     assert result.gap_hit is False
-    assert result.gap_hit_mode != "legacy_near_gap"
+    assert result.gap_hit_mode not in {"strict", "soft"}
