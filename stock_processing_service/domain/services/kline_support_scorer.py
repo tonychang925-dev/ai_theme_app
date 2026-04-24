@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from datetime import date
 from decimal import Decimal
+import os
 from typing import Any
 
 import pandas as pd
@@ -287,7 +288,8 @@ class KlineSupportScorer:
         refs: list[str] = []
 
         # 0) old-chain compatible near-gap support first
-        legacy_gap = self._detect_legacy_near_gap_support(df, current_low, current_close)
+        legacy_gap, legacy_gap_debug = self._detect_legacy_near_gap_support(df, current_low, current_close)
+        refs.extend(legacy_gap_debug)
         if legacy_gap is not None:
             support_candidates.append(legacy_gap)
             refs.append(
@@ -521,17 +523,21 @@ class KlineSupportScorer:
         df: pd.DataFrame,
         current_low: Decimal,
         current_close: Decimal,
-    ) -> SupportTypeScore | None:
+    ) -> tuple[SupportTypeScore | None, list[str]]:
         """
         Legacy-compatible gap rule from old chain:
         - Scan recent 5 trading days for upward gaps
         - Up-gap: day_i.low > day_{i-1}.high * (1 + 0.1%)
         - Gap support hit: current_low in gap_level(prev_high) ±1% window
         """
+        debug_lines: list[str] = []
         if len(df) < 2:
-            return None
+            return None, debug_lines
 
         gap_threshold = Decimal("0.001")
+        window_pct = self._d(os.getenv("SPS_LEGACY_GAP_WINDOW_PCT"), default="1.0")
+        zone_scale = window_pct / Decimal("100")
+        debug_enabled = os.getenv("SPS_LEGACY_GAP_DEBUG", "0") == "1"
         lookback = min(5, len(df) - 1)
         best: SupportTypeScore | None = None
 
@@ -547,13 +553,28 @@ class KlineSupportScorer:
             cur_low = self._d(cur["low_price"])
             if prev_high <= 0 or cur_low <= 0:
                 continue
-            if cur_low <= prev_high * (Decimal("1") + gap_threshold):
+            has_up_gap = cur_low > prev_high * (Decimal("1") + gap_threshold)
+            if not has_up_gap:
+                if debug_enabled:
+                    debug_lines.append(
+                        f"legacy_gap_candidate off={off} has_up_gap=False prev_high={prev_high} cur_low={cur_low}"
+                    )
                 continue
 
             gap_support_level = prev_high
-            zone_lower = gap_support_level * Decimal("0.99")
-            zone_upper = gap_support_level * Decimal("1.01")
-            if not (zone_lower <= current_low <= zone_upper):
+            zone_lower = gap_support_level * (Decimal("1") - zone_scale)
+            zone_upper = gap_support_level * (Decimal("1") + zone_scale)
+            in_zone = zone_lower <= current_low <= zone_upper
+            offset_from_zone_pct = self._distance_to_zone_pct(current_low, zone_lower, zone_upper)
+            if debug_enabled:
+                debug_lines.append(
+                    "legacy_gap_candidate "
+                    f"off={off} prev_high={prev_high} cur_low={cur_low} gap_level={gap_support_level} "
+                    f"zone=[{zone_lower},{zone_upper}] current_low={current_low} current_close={current_close} "
+                    f"distance_pct={(abs(current_low - gap_support_level) / gap_support_level) * Decimal('100')} "
+                    f"offset_from_zone_pct={offset_from_zone_pct} in_zone={in_zone} window_pct={window_pct}"
+                )
+            if not in_zone:
                 continue
 
             raw = self._score_level(
@@ -580,7 +601,11 @@ class KlineSupportScorer:
             if best is None or candidate.distance_pct < best.distance_pct:
                 best = candidate
 
-        return best
+        if debug_enabled and best is not None:
+            debug_lines.append(
+                f"legacy_gap_selected source={best.source} gap_level={best.support_level} distance_pct={best.distance_pct}"
+            )
+        return best, debug_lines
 
     @staticmethod
     def _support_priority(s: SupportTypeScore) -> tuple[int, Decimal]:
