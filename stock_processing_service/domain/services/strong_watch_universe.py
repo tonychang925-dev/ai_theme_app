@@ -29,6 +29,9 @@ class UniverseBuildResult:
     observe_rows: list[SubjectStockPoolDTO]
     blocked_rows: list[SubjectStockPoolDTO]
     diagnostics: dict[str, dict[str, Any]]
+    formal_count: int = 0
+    observe_count: int = 0
+    blocked_count: int = 0
 
 
 class StrongWatchUniverseBuilder:
@@ -60,6 +63,13 @@ class StrongWatchUniverseBuilder:
                 is_main_theme=bool(raw.get("is_main_theme") or False),
                 rule_version=str(raw.get("rule_version") or ""),
             )
+        if hasattr(raw, "identity_status"):
+            return SubjectIdentity(
+                subject_key=subject_key,
+                identity_status=str(getattr(raw, "identity_status", "") or "").lower(),
+                is_main_theme=bool(getattr(raw, "is_main_theme", False)),
+                rule_version=str(getattr(raw, "rule_version", "") or ""),
+            )
         return None
 
     @staticmethod
@@ -75,6 +85,14 @@ class StrongWatchUniverseBuilder:
                 final_mainline_alive=bool(raw.get("final_mainline_alive") or False),
                 fade_watch=bool(raw.get("fade_watch") or False),
                 fade_confirmed=bool(raw.get("fade_confirmed") or False),
+            )
+        if hasattr(raw, "final_cycle_state") or hasattr(raw, "final_mainline_alive"):
+            return CycleStatus(
+                subject_key=subject_key,
+                final_cycle_state=str(getattr(raw, "final_cycle_state", "") or ""),
+                final_mainline_alive=bool(getattr(raw, "final_mainline_alive", False)),
+                fade_watch=bool(getattr(raw, "fade_watch", False)),
+                fade_confirmed=bool(getattr(raw, "fade_confirmed", False)),
             )
         return None
 
@@ -155,5 +173,7 @@ class StrongWatchUniverseBuilder:
             observe_rows=observe_rows,
             blocked_rows=blocked_rows,
             diagnostics=diagnostics,
+            formal_count=len(formal_rows),
+            observe_count=len(observe_rows),
+            blocked_count=len(blocked_rows),
         )
-

@@ -46,6 +46,9 @@ def test_universe_builder_routes_formal_observe_blocked() -> None:
     assert [r.stock_id for r in result.formal_rows] == ["A"]
     assert sorted(r.stock_id for r in result.observe_rows) == ["B", "C"]
     assert [r.stock_id for r in result.blocked_rows] == ["D"]
+    assert result.formal_count == 1
+    assert result.observe_count == 2
+    assert result.blocked_count == 1
     assert result.diagnostics["A"]["identity_confirmed_pass"] is True
     assert result.diagnostics["C"]["cycle_alive_pass"] is False
 
@@ -71,4 +74,3 @@ def test_universe_builder_strict_blocks_non_formal() -> None:
     assert [r.stock_id for r in result.formal_rows] == ["A"]
     assert result.observe_rows == []
     assert [r.stock_id for r in result.blocked_rows] == ["B"]
-

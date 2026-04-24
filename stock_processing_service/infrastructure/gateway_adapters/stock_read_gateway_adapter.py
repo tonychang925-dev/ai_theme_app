@@ -8,6 +8,8 @@ from typing import Any
 
 from stock_processing_service.contracts.dto import (
     BriefSnapshotDTO,
+    MainlineCycleDTO,
+    MainlineIdentityDTO,
     PriorSnapshotDTO,
     RecapSnapshotDTO,
     StockAuctionDTO,
@@ -260,3 +262,55 @@ class StockReadGatewayAdapter:
             batch_id=str(p.get("batch_id", "")),
             trace_id=str(p.get("trace_id", "")),
         )
+
+    async def get_mainline_identity_by_subject_keys(
+        self,
+        subject_keys: list[str],
+        trade_date: date,
+    ) -> list[MainlineIdentityDTO]:
+        rows = await self._db.get_mainline_identity_by_subject_keys(
+            subject_keys=subject_keys,
+            trade_date=trade_date,
+        )
+        result: list[MainlineIdentityDTO] = []
+        for row in rows:
+            p = _as_dict(row)
+            result.append(
+                MainlineIdentityDTO(
+                    subject_key=str(p.get("subject_key", "")),
+                    identity_status=str(p.get("identity_status", "")).lower(),
+                    is_main_theme=bool(p.get("is_main_theme", False)),
+                    first_confirmed_date=p.get("first_confirmed_date"),
+                    last_review_date=p.get("last_review_date"),
+                    rule_version=str(p.get("rule_version", "")),
+                )
+            )
+        return result
+
+    async def get_mainline_cycle_by_subject_keys(
+        self,
+        subject_keys: list[str],
+        trade_date: date,
+    ) -> list[MainlineCycleDTO]:
+        rows = await self._db.get_mainline_cycle_by_subject_keys(
+            subject_keys=subject_keys,
+            trade_date=trade_date,
+        )
+        result: list[MainlineCycleDTO] = []
+        for row in rows:
+            p = _as_dict(row)
+            result.append(
+                MainlineCycleDTO(
+                    trade_date=p.get("trade_date", trade_date),
+                    subject_key=str(p.get("subject_key", "")),
+                    final_cycle_state=str(p.get("final_cycle_state", "")),
+                    final_mainline_alive=bool(p.get("final_mainline_alive", False)),
+                    transition_type=str(p.get("transition_type", "")),
+                    mainline_strength_score=_d(p.get("mainline_strength_score")),
+                    repair_score=_d(p.get("repair_score")),
+                    divergence_score=_d(p.get("divergence_score")),
+                    fade_watch_score=_d(p.get("fade_watch_score")),
+                    fade_confirmed_score=_d(p.get("fade_confirmed_score")),
+                )
+            )
+        return result

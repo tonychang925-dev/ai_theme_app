@@ -75,14 +75,58 @@ class BuildPostMarketRecapJob:
             end_date=trade_date,
             stock_ids=[row.stock_id for row in pool_rows] if pool_rows else None,
         )
-
-        promoted_pool_rows, strong_watch_rows, strong_watch_history = self._strong_watch_service.build_promoted_pool_with_history(
+        subject_keys = sorted({row.subject_key for row in pool_rows if row.subject_key})
+        identities = await self._read_port.get_mainline_identity_by_subject_keys(
+            subject_keys=subject_keys,
             trade_date=trade_date,
-            pool_rows=pool_rows,
-            bars=bars,
-            prior_rows=prior_rows,
-            history_bars=history_bars,
         )
+        cycles = await self._read_port.get_mainline_cycle_by_subject_keys(
+            subject_keys=subject_keys,
+            trade_date=trade_date,
+        )
+        identities_by_subject = {x.subject_key: x for x in identities}
+        cycles_by_subject = {x.subject_key: x for x in cycles}
+
+        shadow_summary: dict[str, Any] = {}
+        if hasattr(self._strong_watch_service, "build_promoted_pool_with_history_and_shadow"):
+            try:
+                promoted_pool_rows, strong_watch_rows, strong_watch_history, shadow = self._strong_watch_service.build_promoted_pool_with_history_and_shadow(
+                    trade_date=trade_date,
+                    pool_rows=pool_rows,
+                    bars=bars,
+                    prior_rows=prior_rows,
+                    history_bars=history_bars,
+                    identities_by_subject=identities_by_subject,
+                    cycles_by_subject=cycles_by_subject,
+                )
+            except TypeError:
+                promoted_pool_rows, strong_watch_rows, strong_watch_history, shadow = self._strong_watch_service.build_promoted_pool_with_history_and_shadow(
+                    trade_date=trade_date,
+                    pool_rows=pool_rows,
+                    bars=bars,
+                    prior_rows=prior_rows,
+                    history_bars=history_bars,
+                )
+            shadow_summary = asdict(shadow)
+        else:
+            try:
+                promoted_pool_rows, strong_watch_rows, strong_watch_history = self._strong_watch_service.build_promoted_pool_with_history(
+                    trade_date=trade_date,
+                    pool_rows=pool_rows,
+                    bars=bars,
+                    prior_rows=prior_rows,
+                    history_bars=history_bars,
+                    identities_by_subject=identities_by_subject,
+                    cycles_by_subject=cycles_by_subject,
+                )
+            except TypeError:
+                promoted_pool_rows, strong_watch_rows, strong_watch_history = self._strong_watch_service.build_promoted_pool_with_history(
+                    trade_date=trade_date,
+                    pool_rows=pool_rows,
+                    bars=bars,
+                    prior_rows=prior_rows,
+                    history_bars=history_bars,
+                )
         candidates = self._candidate_service.build_candidates(
             bars=bars,
             pool_rows=promoted_pool_rows,
@@ -96,6 +140,7 @@ class BuildPostMarketRecapJob:
             "strong_watch_input_count": len(strong_watch_rows),
             "strong_watch_promoted_count": len(promoted_pool_rows),
             "strong_watch_history_count": len(strong_watch_history),
+            "strong_watch_shadow_summary": shadow_summary,
             "strong_watch_history": [
                 {
                     "stock_id": row.stock_id,
@@ -213,6 +258,12 @@ class BuildPostMarketRecapJob:
                 "strong_watch_promoted_count": len(promoted_pool_rows),
                 "strong_watch_history_count": len(strong_watch_history),
                 "strong_watch_history_written": history_written,
+                "strong_watch_shadow_universe_formal_count": int(shadow_summary.get("universe_formal_count") or 0),
+                "strong_watch_shadow_universe_observe_count": int(shadow_summary.get("universe_observe_count") or 0),
+                "strong_watch_shadow_universe_blocked_count": int(shadow_summary.get("universe_blocked_count") or 0),
+                "strong_watch_shadow_admission_formal_count": int(shadow_summary.get("admission_formal_count") or 0),
+                "strong_watch_shadow_admission_observe_count": int(shadow_summary.get("admission_observe_count") or 0),
+                "strong_watch_shadow_admission_reject_count": int(shadow_summary.get("admission_reject_count") or 0),
                 "candidate_count": len(candidates),
             },
             published_events=["snapshot_built"],

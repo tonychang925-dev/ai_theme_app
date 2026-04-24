@@ -55,6 +55,22 @@ class DBThemeDataGateway:
         row = await self._db.get_existing_post_market_recap_snapshot(trade_date)
         return dict(row) if row else None
 
+    async def get_mainline_identity_by_subject_keys(
+        self,
+        subject_keys: list[str],
+        trade_date: date,
+    ) -> list[dict[str, Any]]:
+        rows = await self._db.get_mainline_identity_by_subject_keys(subject_keys, trade_date)
+        return [dict(row) for row in rows]
+
+    async def get_mainline_cycle_by_subject_keys(
+        self,
+        subject_keys: list[str],
+        trade_date: date,
+    ) -> list[dict[str, Any]]:
+        rows = await self._db.get_mainline_cycle_by_subject_keys(subject_keys, trade_date)
+        return [dict(row) for row in rows]
+
     async def get_theme_events(self, trade_date: date) -> list[dict[str, Any]]:
         snapshot = await self._db.get_existing_post_market_recap_snapshot(trade_date)
         if not snapshot:

@@ -18,6 +18,7 @@ class StrongWatchAdmissionDecision:
     reject_junk_follower: bool
     hard_reject_any: bool
     pass_reasons: list[str]
+    admission_status: str
 
 
 class StrongWatchAdmissionPolicy:
@@ -97,6 +98,13 @@ class StrongWatchAdmissionPolicy:
         if structure_health_pass:
             pass_reasons.append("structure_health_pass")
 
+        if hard_reject_any:
+            admission_status = "reject"
+        elif pass_count_4of3 >= 3:
+            admission_status = "formal"
+        else:
+            admission_status = "observe_only"
+
         return StrongWatchAdmissionDecision(
             limitup_gene_pass=limitup_gene_pass,
             theme_synergy_pass=theme_synergy_pass,
@@ -109,5 +117,5 @@ class StrongWatchAdmissionPolicy:
             reject_junk_follower=reject_junk_follower,
             hard_reject_any=hard_reject_any,
             pass_reasons=pass_reasons,
+            admission_status=admission_status,
         )
-

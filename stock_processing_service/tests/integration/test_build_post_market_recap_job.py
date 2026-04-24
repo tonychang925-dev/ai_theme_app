@@ -7,7 +7,13 @@ from decimal import Decimal
 from typing import Any
 
 from stock_processing_service.application.jobs import BuildPostMarketRecapJob
-from stock_processing_service.contracts.dto import PriorSnapshotDTO, StockBarDTO, SubjectStockPoolDTO
+from stock_processing_service.contracts.dto import (
+    MainlineCycleDTO,
+    MainlineIdentityDTO,
+    PriorSnapshotDTO,
+    StockBarDTO,
+    SubjectStockPoolDTO,
+)
 from stock_processing_service.domain.services.strong_watch_history_service import (
     StrongWatchHistoryRecord,
 )
@@ -81,6 +87,28 @@ class _FakeReadPort:
 
     async def get_existing_post_market_recap_snapshot(self, trade_date: date):
         return None
+
+    async def get_mainline_identity_by_subject_keys(self, subject_keys: list[str], trade_date: date):
+        return [
+            MainlineIdentityDTO(
+                subject_key="ai_chip",
+                identity_status="confirmed",
+                is_main_theme=True,
+                first_confirmed_date=trade_date,
+                last_review_date=trade_date,
+                rule_version="test",
+            )
+        ]
+
+    async def get_mainline_cycle_by_subject_keys(self, subject_keys: list[str], trade_date: date):
+        return [
+            MainlineCycleDTO(
+                trade_date=trade_date,
+                subject_key="ai_chip",
+                final_cycle_state="repair",
+                final_mainline_alive=True,
+            )
+        ]
 
 
 class _FakeWritePort:

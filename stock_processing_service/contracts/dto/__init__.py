@@ -1,5 +1,6 @@
 from .brief_snapshot_dto import BriefSnapshotDTO
 from .input_dto import TradeDateInput, WindowInput
+from .mainline_context_dto import MainlineCycleDTO, MainlineIdentityDTO
 from .output_dto import BuildResult
 from .prior_snapshot_dto import PriorSnapshotDTO
 from .recap_snapshot_dto import RecapSnapshotDTO
@@ -26,6 +27,8 @@ __all__ = [
     "PriorSnapshotDTO",
     "BriefSnapshotDTO",
     "RecapSnapshotDTO",
+    "MainlineIdentityDTO",
+    "MainlineCycleDTO",
     "SnapshotDocDTO",
     "StockDailyBarDTO",
     "SubjectStockPoolRowDTO",
