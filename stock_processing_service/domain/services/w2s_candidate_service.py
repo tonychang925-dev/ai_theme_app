@@ -25,6 +25,11 @@ class W2SCandidate:
     formal_fail_reason: str | None = None
     reject_reason: str | None = None
     support_type: str = ""
+    gap_hit: bool = False
+    gap_hit_mode: str = "miss"
+    gap_source: str = ""
+    gap_structure_bonus: Decimal = Decimal("0")
+    gap_repair_bonus: Decimal = Decimal("0")
     repair_or_takeover_score: Decimal = Decimal("0")
     weakness_valid_score: Decimal = Decimal("0")
 
@@ -107,6 +112,26 @@ class W2SCandidateService:
         if support_type in {"previous_low", "prev_low_support", "ma_support", "platform_support"}:
             support_type_bonus = Decimal("5")
         return min(Decimal("100"), support_score * Decimal("0.85") + refs_bonus + support_type_bonus)
+
+    @staticmethod
+    def _gap_structure_bonus(support_type: str, gap_hit: bool, gap_hit_mode: str) -> Decimal:
+        if support_type != "gap_support" or not gap_hit:
+            return Decimal("0")
+        if gap_hit_mode == "strict":
+            return Decimal("10")
+        if gap_hit_mode == "soft":
+            return Decimal("6")
+        return Decimal("0")
+
+    @staticmethod
+    def _gap_repair_bonus(
+        support_type: str,
+        gap_hit: bool,
+        repair_or_takeover_score: Decimal,
+    ) -> Decimal:
+        if support_type == "gap_support" and gap_hit and repair_or_takeover_score >= Decimal("50"):
+            return Decimal("4")
+        return Decimal("0")
 
     @staticmethod
     def _repair_or_takeover_score(prior_state: str, role_tags: dict[str, Any]) -> Decimal:
@@ -227,6 +252,26 @@ class W2SCandidateService:
             and weakness_valid_score >= Decimal("60")
         ):
             w2s_pathway_bonus = Decimal("10")
+        formal_w2s_override = (
+            watch_status in {"weakening", "weakening_keep"}
+            and support_type in {"previous_low", "prev_low_support", "platform_support"}
+            and support_hit_score >= Decimal("75")
+            and weakness_valid_score >= Decimal("60")
+        )
+
+        gap_structure_bonus = self._gap_structure_bonus(
+            support_type=support_type,
+            gap_hit=gap_hit,
+            gap_hit_mode=gap_hit_mode,
+        )
+        gap_repair_bonus = self._gap_repair_bonus(
+            support_type=support_type,
+            gap_hit=gap_hit,
+            repair_or_takeover_score=repair_or_takeover_score,
+        )
+        gap_formal_bias_bonus = Decimal("0")
+        if formal_w2s_override and support_type == "gap_support" and gap_hit:
+            gap_formal_bias_bonus = Decimal("3")
 
         raw_score = (
             mainline_context_score * Decimal("0.08")
@@ -237,19 +282,22 @@ class W2SCandidateService:
         )
         candidate_score = max(
             Decimal("0"),
-            min(Decimal("100"), raw_score - overheat_penalty + prior7_bonus + w2s_pathway_bonus),
+            min(
+                Decimal("100"),
+                raw_score
+                - overheat_penalty
+                + prior7_bonus
+                + w2s_pathway_bonus
+                + gap_structure_bonus
+                + gap_repair_bonus
+                + gap_formal_bias_bonus,
+            ),
         )
 
         formal_day_gate = self._in_range(pct_chg, "-6", "1.5")
         observe_day_gate = self._in_range(pct_chg, "-8", "3")
         prior7_formal_gate = prior7_limitup_days >= 1 or prior7_strong_days >= 2
         prior7_soft_pass = True
-        formal_w2s_override = (
-            watch_status in {"weakening", "weakening_keep"}
-            and support_type in {"previous_low", "prev_low_support", "platform_support"}
-            and support_hit_score >= Decimal("75")
-            and weakness_valid_score >= Decimal("60")
-        )
 
         rank_overheat_gate = rank <= 2 and pct_chg > Decimal("3")
         leader_overheat_gate = bool(role_tags.get("is_leader")) and pct_chg > Decimal("2.5")
@@ -339,6 +387,9 @@ class W2SCandidateService:
             "formal_w2s_override": formal_w2s_override,
             "prior7_bonus": str(prior7_bonus),
             "w2s_pathway_bonus": str(w2s_pathway_bonus),
+            "gap_structure_bonus": str(gap_structure_bonus),
+            "gap_repair_bonus": str(gap_repair_bonus),
+            "gap_formal_bias_bonus": str(gap_formal_bias_bonus),
             "overheat_hard_gate": overheat_hard_gate,
             "overheated": overheated,
             "candidate_level": level,
@@ -388,6 +439,9 @@ class W2SCandidateService:
                 f"gap_source={explain.get('gap_source', '')}",
                 f"gap_level={explain.get('gap_level', '0')}",
                 f"gap_distance_pct={explain.get('gap_distance_pct', '999')}",
+                f"gap_structure_bonus={explain.get('gap_structure_bonus', '0')}",
+                f"gap_repair_bonus={explain.get('gap_repair_bonus', '0')}",
+                f"gap_formal_bias_bonus={explain.get('gap_formal_bias_bonus', '0')}",
                 f"role_tags={explain['role_tags']}",
                 f"prior7_limitup_days={explain['prior7_limitup_days']}",
                 f"prior7_strong_days={explain['prior7_strong_days']}",
@@ -423,6 +477,11 @@ class W2SCandidateService:
                 formal_fail_reason=str(explain.get("formal_fail_reason") or "") or None,
                 reject_reason=str(explain.get("reject_reason") or "") or None,
                 support_type=str(explain.get("support_type") or ""),
+                gap_hit=bool(explain.get("gap_hit")),
+                gap_hit_mode=str(explain.get("gap_hit_mode") or "miss"),
+                gap_source=str(explain.get("gap_source") or ""),
+                gap_structure_bonus=self._d(explain.get("gap_structure_bonus")),
+                gap_repair_bonus=self._d(explain.get("gap_repair_bonus")),
                 repair_or_takeover_score=self._d(explain.get("repair_or_takeover_score")),
                 weakness_valid_score=self._d(explain.get("weakness_valid_score")),
             )
@@ -441,14 +500,22 @@ class W2SCandidateService:
         formal_candidates = [c for c in candidates if c.candidate_level == "formal"]
         observe_candidates = [c for c in candidates if c.candidate_level == "observe_only"]
 
+        def _gap_priority(c: W2SCandidate) -> int:
+            if c.support_type == "gap_support" and c.gap_hit:
+                if c.gap_hit_mode == "strict":
+                    return 0
+                if c.gap_hit_mode == "soft":
+                    return 1
+            return 2
+
         def _formal_key(c: W2SCandidate) -> tuple[int, int, Decimal, Decimal, Decimal, Decimal]:
             return (
+                _gap_priority(c),
                 0 if c.formal_bias else 1,
-                _formal_support_priority(c.support_type),
-                -c.support_score,
-                -c.candidate_score,
                 -c.repair_or_takeover_score,
                 -c.weakness_valid_score,
+                -c.candidate_score,
+                _formal_support_priority(c.support_type),
             )
 
         def _observe_key(c: W2SCandidate) -> tuple[Decimal, Decimal, Decimal]:
