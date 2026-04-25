@@ -6,14 +6,14 @@ from stock_processing_service.contracts.snapshots import (
     PostMarketRecapSnapshot,
     PreMarketBriefSnapshot,
     StockAbnormalEvent,
-    StockDailySnapshot,
+    StockDailyStrategySnapshot,
     SubjectStockDailySnapshot,
     ThemeStockLeaderboard,
 )
 
 
 class SnapshotWritePort(Protocol):
-    async def upsert_stock_daily_snapshot_rows(self, rows: list[StockDailySnapshot]) -> int: ...
+    async def upsert_stock_daily_strategy_snapshot_rows(self, rows: list[StockDailyStrategySnapshot]) -> int: ...
 
     async def upsert_subject_stock_daily_snapshot_rows(
         self, rows: list[SubjectStockDailySnapshot]

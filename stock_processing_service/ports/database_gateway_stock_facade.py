@@ -20,7 +20,7 @@ from stock_processing_service.contracts.snapshots import (
     PostMarketRecapSnapshot,
     PreMarketBriefSnapshot,
     StockAbnormalEvent,
-    StockDailySnapshot,
+    StockDailyStrategySnapshot,
     SubjectStockDailySnapshot,
     ThemeStockLeaderboard,
 )
@@ -69,7 +69,11 @@ class DatabaseGatewayStockFacade(Protocol):
         self, subject_keys: list[str], trade_date: date
     ) -> list[MainlineCycleDTO]: ...
 
-    async def upsert_stock_daily_snapshot_rows(self, rows: list[StockDailySnapshot]) -> int: ...
+    async def get_prior_strong_watch_pool_rows(
+        self, trade_date: date, lookback_days: int
+    ) -> list[SubjectStockPoolDTO]: ...
+
+    async def upsert_stock_daily_strategy_snapshot_rows(self, rows: list[StockDailyStrategySnapshot]) -> int: ...
 
     async def upsert_subject_stock_daily_snapshot_rows(
         self, rows: list[SubjectStockDailySnapshot]

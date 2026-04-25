@@ -10,8 +10,11 @@ class DBStockObjectGateway:
     def __init__(self, db_gateway: Any) -> None:
         self._db = db_gateway
 
-    async def upsert_stock_daily_snapshot_rows(self, rows: list[dict[str, Any]]) -> int:
-        return await self.upsert_stock_daily_snapshot(rows)
+    async def upsert_stock_daily_strategy_snapshot_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._db, "upsert_stock_daily_strategy_snapshot_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        return 0
 
     async def upsert_subject_stock_daily_snapshot_rows(self, rows: list[dict[str, Any]]) -> int:
         return await self.upsert_subject_stock_daily_snapshot(rows)
@@ -45,9 +48,6 @@ class DBStockObjectGateway:
         if callable(fn):
             return await fn(rows)
         return len(rows)
-
-    async def upsert_stock_daily_snapshot(self, rows: list[dict[str, Any]]) -> int:
-        return await self._db.upsert_stock_daily_snapshot_rows(rows)
 
     async def upsert_subject_stock_daily_snapshot(self, rows: list[dict[str, Any]]) -> int:
         return await self._db.upsert_subject_stock_daily_snapshot_rows(rows)

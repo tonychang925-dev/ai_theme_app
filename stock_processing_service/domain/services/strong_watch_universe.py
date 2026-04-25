@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from decimal import Decimal
 from typing import Any
 
 from stock_processing_service.contracts.dto import SubjectStockPoolDTO
@@ -19,6 +20,9 @@ class CycleStatus:
     subject_key: str
     final_cycle_state: str
     final_mainline_alive: bool
+    transition_type: str = ""
+    transition_confidence: Decimal = Decimal("0")
+    trigger_flags: list[str] | None = None
     fade_watch: bool = False
     fade_confirmed: bool = False
 
@@ -83,6 +87,9 @@ class StrongWatchUniverseBuilder:
                 subject_key=subject_key,
                 final_cycle_state=str(raw.get("final_cycle_state") or ""),
                 final_mainline_alive=bool(raw.get("final_mainline_alive") or False),
+                transition_type=str(raw.get("transition_type") or ""),
+                transition_confidence=Decimal(str(raw.get("transition_confidence") or raw.get("confidence") or "0")),
+                trigger_flags=list(raw.get("trigger_flags") or []),
                 fade_watch=bool(raw.get("fade_watch") or False),
                 fade_confirmed=bool(raw.get("fade_confirmed") or False),
             )
@@ -91,6 +98,9 @@ class StrongWatchUniverseBuilder:
                 subject_key=subject_key,
                 final_cycle_state=str(getattr(raw, "final_cycle_state", "") or ""),
                 final_mainline_alive=bool(getattr(raw, "final_mainline_alive", False)),
+                transition_type=str(getattr(raw, "transition_type", "") or ""),
+                transition_confidence=Decimal(str(getattr(raw, "transition_confidence", getattr(raw, "confidence", "0")) or "0")),
+                trigger_flags=list(getattr(raw, "trigger_flags", []) or []),
                 fade_watch=bool(getattr(raw, "fade_watch", False)),
                 fade_confirmed=bool(getattr(raw, "fade_confirmed", False)),
             )
@@ -134,6 +144,16 @@ class StrongWatchUniverseBuilder:
 
             identity_confirmed = identity.identity_status == "confirmed" and identity.is_main_theme
             cycle_alive = cycle.final_mainline_alive
+            metadata = row.metadata if isinstance(row.metadata, dict) else {}
+            prior7_limitup_days = int(metadata.get("prior7_limitup_days") or 0)
+            recent_limit_up_count = int(metadata.get("recent_limit_up_count") or 0)
+            max_consecutive_limit_up_days = int(metadata.get("max_consecutive_limit_up_days") or 0)
+            # 旧链旁路：两连板（或近7日强势连板信号）允许入围，避免漏掉非主线但强势龙头。
+            two_board_entry = (
+                max_consecutive_limit_up_days >= 2
+                or recent_limit_up_count >= 2
+                or prior7_limitup_days >= 2
+            )
 
             diag = {
                 "identity_status": identity.identity_status,
@@ -141,7 +161,14 @@ class StrongWatchUniverseBuilder:
                 "identity_confirmed_pass": identity_confirmed,
                 "final_cycle_state": cycle.final_cycle_state,
                 "final_mainline_alive": cycle.final_mainline_alive,
+                "transition_type": cycle.transition_type,
+                "transition_confidence": str(cycle.transition_confidence),
+                "trigger_flags": list(cycle.trigger_flags or []),
                 "cycle_alive_pass": cycle_alive,
+                "two_board_entry": two_board_entry,
+                "prior7_limitup_days": prior7_limitup_days,
+                "recent_limit_up_count": recent_limit_up_count,
+                "max_consecutive_limit_up_days": max_consecutive_limit_up_days,
             }
 
             if identity_confirmed and cycle_alive:
@@ -149,6 +176,17 @@ class StrongWatchUniverseBuilder:
                 diagnostics[stock_id] = {
                     "universe_status": "formal",
                     "universe_reason": "identity_confirmed_and_cycle_alive",
+                    "entry_path": "mainline_strong",
+                    **diag,
+                }
+                continue
+
+            if two_board_entry:
+                formal_rows.append(row)
+                diagnostics[stock_id] = {
+                    "universe_status": "formal",
+                    "universe_reason": "two_board_entry",
+                    "entry_path": "two_board",
                     **diag,
                 }
                 continue

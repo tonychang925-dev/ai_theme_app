@@ -4,13 +4,14 @@ PostgreSQL数据库管理器 - 适配实际theme_master表结构
 基于实际的28字段表结构，包含申万行业分类
 """
 import asyncio
+import os
+from datetime import date
 import logging
 from typing import Dict, List, Any, Optional, AsyncContextManager
 from datetime import datetime, date
 import asyncpg
 from asyncpg.pool import Pool
 import json
-from pathlib import Path
 
 
 try:
@@ -42,124 +43,6 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         super().__init__(config)
         self.pool: Optional[Pool] = None
         self.schema = config.postgres_schema
-        self._local_kline_root = Path(__file__).resolve().parents[2] / "theme_data_complete" / "_stock_kline"
-        self._local_daily_bar_dir = self._local_kline_root / "tushare" / "daily_bar"
-        self._local_daily_bar_cache: Dict[str, List[Dict[str, Any]]] = {}
-
-    @staticmethod
-    def _normalize_stock_ids(stock_id: str) -> tuple[str, str]:
-        raw = (stock_id or "").strip().upper()
-        if not raw:
-            return "", ""
-        if "." in raw:
-            code, suffix = raw.split(".", 1)
-            if len(code) == 6 and code.isdigit() and suffix in {"SZ", "SH", "BJ"}:
-                return code, f"{code}.{suffix}"
-            raw = code
-        if len(raw) == 6 and raw.isdigit():
-            if raw.startswith(("60", "68")):
-                suffix = "SH"
-            elif raw.startswith(("43", "83", "87")):
-                suffix = "BJ"
-            else:
-                suffix = "SZ"
-            return raw, f"{raw}.{suffix}"
-        return raw, raw
-
-    def _daily_bar_path(self, stock_id: str) -> Path:
-        _, normalized = self._normalize_stock_ids(stock_id)
-        return self._local_daily_bar_dir / f"{normalized}.jsonl"
-
-    def _load_local_daily_bar(self, stock_id: str) -> List[Dict[str, Any]]:
-        raw_code, normalized = self._normalize_stock_ids(stock_id)
-        if not normalized:
-            return []
-        if normalized in self._local_daily_bar_cache:
-            return self._local_daily_bar_cache[normalized]
-
-        path = self._daily_bar_path(normalized)
-        if not path.exists() and raw_code:
-            fallback = self._local_daily_bar_dir / f"{raw_code}.jsonl"
-            if fallback.exists():
-                path = fallback
-        if not path.exists():
-            self._local_daily_bar_cache[normalized] = []
-            return []
-
-        rows: List[Dict[str, Any]] = []
-        try:
-            with path.open("r", encoding="utf-8") as f:
-                for line in f:
-                    line = line.strip()
-                    if not line:
-                        continue
-                    try:
-                        item = json.loads(line)
-                        trade_date = date.fromisoformat(str(item.get("trade_date")))
-                    except Exception:
-                        continue
-                    rows.append(
-                        {
-                            "trade_date": trade_date,
-                            "stock_id": normalized,
-                            "stock_name": item.get("stock_name"),
-                            "open_price": item.get("open_price"),
-                            "high_price": item.get("high_price"),
-                            "low_price": item.get("low_price"),
-                            "close_price": item.get("close_price"),
-                            "pre_close": item.get("pre_close"),
-                            "pct_chg": item.get("pct_chg"),
-                            "volume": item.get("volume"),
-                            "amount": item.get("amount"),
-                            "source_name": "tushare_local_daily_bar",
-                        }
-                    )
-            rows.sort(key=lambda x: x["trade_date"])
-        except Exception as e:
-            logger.warning(f"读取本地Tushare日线失败 {path}: {e}")
-            rows = []
-
-        self._local_daily_bar_cache[normalized] = rows
-        return rows
-
-    def _lookup_local_daily_bar(self, stock_id: str, trade_date: date) -> Optional[Dict[str, Any]]:
-        rows = self._load_local_daily_bar(stock_id)
-        if not rows:
-            return None
-        for row in reversed(rows):
-            if row.get("trade_date") == trade_date:
-                return row
-            if row.get("trade_date") and row.get("trade_date") < trade_date:
-                break
-        return None
-
-    @staticmethod
-    def _needs_ohlc_backfill(row: Dict[str, Any]) -> bool:
-        return any(
-            row.get(k) is None
-            for k in ("open_price", "high_price", "low_price", "pre_close")
-        )
-
-    def _merge_row_with_local_tushare(self, row: Dict[str, Any]) -> Dict[str, Any]:
-        if not self._needs_ohlc_backfill(row):
-            return row
-        stock_id = str(row.get("stock_id") or "")
-        trade_date = row.get("trade_date")
-        if not stock_id or trade_date is None:
-            return row
-        local = self._lookup_local_daily_bar(stock_id, trade_date)
-        if not local:
-            return row
-
-        merged = dict(row)
-        for key in ("open_price", "high_price", "low_price", "pre_close", "volume", "amount"):
-            if merged.get(key) is None and local.get(key) is not None:
-                merged[key] = local.get(key)
-        if merged.get("stock_name") in (None, "") and local.get("stock_name"):
-            merged["stock_name"] = local.get("stock_name")
-        if merged.get("source_name") in (None, "", "stock_processing_service"):
-            merged["source_name"] = "tushare_local_backfill"
-        return merged
     
     async def connect(self) -> None:
         """连接PostgreSQL数据库池"""
@@ -1544,6 +1427,61 @@ class PostgresDatabaseManager(BaseDatabaseManager):
     async def get_subject_stock_pool_by_trade_date(self, trade_date) -> List[Dict[str, Any]]:
         """按交易日读取题材股票池快照。"""
         sql = """
+        WITH base AS (
+            SELECT
+                s.trade_date,
+                s.subject_key,
+                s.stock_id,
+                COALESCE(NULLIF(s.stock_name, ''), m.stock_name) AS stock_name,
+                s.rank_order AS rank_order_raw,
+                COALESCE(s.close_price, m.close_price) AS close_price,
+                COALESCE(s.pct_chg, m.pct_chg) AS pct_chg,
+                s.limit_up AS limit_up_raw,
+                s.is_leader AS is_leader_raw
+            FROM subject_stock_daily_snapshot s
+            LEFT JOIN LATERAL (
+              SELECT stock_name, close_price, pct_chg
+              FROM stock_daily_snapshot m
+              WHERE m.trade_date = s.trade_date
+                AND m.stock_id = s.stock_id
+                AND m.source_name LIKE 'tushare%'
+              ORDER BY CASE WHEN m.source_name = 'tushare' THEN 0 ELSE 1 END, m.updated_at DESC NULLS LAST
+              LIMIT 1
+            ) m ON TRUE
+            WHERE s.trade_date = $1::date
+              AND COALESCE(s.stock_id, '') <> ''
+        ),
+        ranked AS (
+            SELECT
+                trade_date,
+                subject_key,
+                stock_id,
+                stock_name,
+                COALESCE(
+                    rank_order_raw,
+                    DENSE_RANK() OVER (
+                        PARTITION BY subject_key
+                        ORDER BY pct_chg DESC NULLS LAST, stock_id
+                    )
+                ) AS rank_order,
+                close_price,
+                pct_chg,
+                COALESCE(limit_up_raw, (pct_chg >= 9.5), FALSE) AS limit_up,
+                COALESCE(
+                    is_leader_raw,
+                    (
+                        COALESCE(
+                            rank_order_raw,
+                            DENSE_RANK() OVER (
+                                PARTITION BY subject_key
+                                ORDER BY pct_chg DESC NULLS LAST, stock_id
+                            )
+                        ) <= 1
+                    ),
+                    FALSE
+                ) AS is_leader
+            FROM base
+        )
         SELECT
             trade_date,
             subject_key,
@@ -1554,9 +1492,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             pct_chg,
             limit_up,
             is_leader
-        FROM subject_stock_daily_snapshot
-        WHERE trade_date = $1::date
-        ORDER BY subject_key, rank_order ASC
+        FROM ranked
+        ORDER BY subject_key, rank_order ASC, stock_id
         """
         async with self.pool.acquire() as conn:
             rows = await conn.fetch(sql, trade_date)
@@ -1566,6 +1503,23 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         """批量 UPSERT stock_daily_snapshot。"""
         if not rows:
             return 0
+        # Truth table hard gate: reject any non-truth source in market truth writes.
+        # Only tushare-derived sources are allowed in stock_daily_snapshot.
+        invalid_rows = []
+        for row in rows:
+            src = str(row.get("source_name") or "").strip().lower()
+            if not src.startswith("tushare"):
+                invalid_rows.append(row)
+        if invalid_rows:
+            logger.error(
+                "阻断写入 stock_daily_snapshot：检测到非真源 source_name，blocked=%s total=%s",
+                len(invalid_rows),
+                len(rows),
+            )
+            raise ValueError(
+                "blocked non-truth writes to stock_daily_snapshot; "
+                "only source_name like 'tushare*' is allowed"
+            )
 
         sql = """
         INSERT INTO stock_daily_snapshot (
@@ -1578,49 +1532,81 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             $10, $11, $12
         )
         ON CONFLICT (trade_date, stock_id) DO UPDATE SET
-          stock_name = CASE
-            WHEN EXCLUDED.source_name = 'stock_processing_service' THEN COALESCE(stock_daily_snapshot.stock_name, EXCLUDED.stock_name)
-            ELSE COALESCE(EXCLUDED.stock_name, stock_daily_snapshot.stock_name)
-          END,
-          open_price = CASE
-            WHEN EXCLUDED.source_name = 'stock_processing_service' THEN stock_daily_snapshot.open_price
-            ELSE COALESCE(EXCLUDED.open_price, stock_daily_snapshot.open_price)
-          END,
-          high_price = CASE
-            WHEN EXCLUDED.source_name = 'stock_processing_service' THEN stock_daily_snapshot.high_price
-            ELSE COALESCE(EXCLUDED.high_price, stock_daily_snapshot.high_price)
-          END,
-          low_price = CASE
-            WHEN EXCLUDED.source_name = 'stock_processing_service' THEN stock_daily_snapshot.low_price
-            ELSE COALESCE(EXCLUDED.low_price, stock_daily_snapshot.low_price)
-          END,
-          close_price = CASE
-            WHEN EXCLUDED.source_name = 'stock_processing_service' THEN stock_daily_snapshot.close_price
-            ELSE COALESCE(EXCLUDED.close_price, stock_daily_snapshot.close_price)
-          END,
-          pre_close = CASE
-            WHEN EXCLUDED.source_name = 'stock_processing_service' THEN stock_daily_snapshot.pre_close
-            ELSE COALESCE(EXCLUDED.pre_close, stock_daily_snapshot.pre_close)
-          END,
-          pct_chg = CASE
-            WHEN EXCLUDED.source_name = 'stock_processing_service' THEN stock_daily_snapshot.pct_chg
-            ELSE COALESCE(EXCLUDED.pct_chg, stock_daily_snapshot.pct_chg)
-          END,
-          volume = CASE
-            WHEN EXCLUDED.source_name = 'stock_processing_service' THEN stock_daily_snapshot.volume
-            ELSE COALESCE(EXCLUDED.volume, stock_daily_snapshot.volume)
-          END,
-          amount = CASE
-            WHEN EXCLUDED.source_name = 'stock_processing_service' THEN stock_daily_snapshot.amount
-            ELSE COALESCE(EXCLUDED.amount, stock_daily_snapshot.amount)
-          END,
-          source_name = CASE
-            WHEN EXCLUDED.source_name = 'stock_processing_service' THEN stock_daily_snapshot.source_name
-            ELSE COALESCE(EXCLUDED.source_name, stock_daily_snapshot.source_name)
-          END,
+          stock_name = COALESCE(EXCLUDED.stock_name, stock_daily_snapshot.stock_name),
+          open_price = COALESCE(EXCLUDED.open_price, stock_daily_snapshot.open_price),
+          high_price = COALESCE(EXCLUDED.high_price, stock_daily_snapshot.high_price),
+          low_price = COALESCE(EXCLUDED.low_price, stock_daily_snapshot.low_price),
+          close_price = COALESCE(EXCLUDED.close_price, stock_daily_snapshot.close_price),
+          pre_close = COALESCE(EXCLUDED.pre_close, stock_daily_snapshot.pre_close),
+          pct_chg = COALESCE(EXCLUDED.pct_chg, stock_daily_snapshot.pct_chg),
+          volume = COALESCE(EXCLUDED.volume, stock_daily_snapshot.volume),
+          amount = COALESCE(EXCLUDED.amount, stock_daily_snapshot.amount),
+          source_name = COALESCE(EXCLUDED.source_name, stock_daily_snapshot.source_name),
           updated_at = NOW()
         """
         payload = [self._normalize_stock_snapshot_row(row) for row in rows]
+        async with self.pool.acquire() as conn:
+            await conn.executemany(sql, payload)
+        return len(payload)
+
+    async def upsert_stock_daily_strategy_snapshot_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """批量 UPSERT stock_daily_strategy_snapshot（策略对象层）。"""
+        if not rows:
+            return 0
+
+        sql = """
+        INSERT INTO stock_daily_strategy_snapshot (
+            trade_date, stock_id, stock_name,
+            close_price, pct_chg, volume, amount, limit_up_price, limit_down_price,
+            snapshot_version, batch_id, trace_id, source_trace_id,
+            labels, score_breakdown, source_name
+        ) VALUES (
+            $1, $2, $3,
+            $4, $5, $6, $7, $8, $9,
+            $10, $11, $12, $13,
+            $14::jsonb, $15::jsonb, $16
+        )
+        ON CONFLICT (trade_date, stock_id) DO UPDATE SET
+          stock_name = COALESCE(EXCLUDED.stock_name, stock_daily_strategy_snapshot.stock_name),
+          close_price = COALESCE(EXCLUDED.close_price, stock_daily_strategy_snapshot.close_price),
+          pct_chg = COALESCE(EXCLUDED.pct_chg, stock_daily_strategy_snapshot.pct_chg),
+          volume = COALESCE(EXCLUDED.volume, stock_daily_strategy_snapshot.volume),
+          amount = COALESCE(EXCLUDED.amount, stock_daily_strategy_snapshot.amount),
+          limit_up_price = COALESCE(EXCLUDED.limit_up_price, stock_daily_strategy_snapshot.limit_up_price),
+          limit_down_price = COALESCE(EXCLUDED.limit_down_price, stock_daily_strategy_snapshot.limit_down_price),
+          snapshot_version = COALESCE(EXCLUDED.snapshot_version, stock_daily_strategy_snapshot.snapshot_version),
+          batch_id = COALESCE(EXCLUDED.batch_id, stock_daily_strategy_snapshot.batch_id),
+          trace_id = COALESCE(EXCLUDED.trace_id, stock_daily_strategy_snapshot.trace_id),
+          source_trace_id = COALESCE(EXCLUDED.source_trace_id, stock_daily_strategy_snapshot.source_trace_id),
+          labels = COALESCE(EXCLUDED.labels, stock_daily_strategy_snapshot.labels),
+          score_breakdown = COALESCE(EXCLUDED.score_breakdown, stock_daily_strategy_snapshot.score_breakdown),
+          source_name = COALESCE(EXCLUDED.source_name, stock_daily_strategy_snapshot.source_name),
+          updated_at = NOW()
+        """
+        payload = [
+            (
+                row.get("trade_date"),
+                row.get("stock_id"),
+                row.get("stock_name"),
+                row.get("close_price"),
+                row.get("pct_chg"),
+                row.get("volume"),
+                row.get("amount"),
+                row.get("limit_up_price"),
+                row.get("limit_down_price"),
+                row.get("snapshot_version"),
+                row.get("batch_id"),
+                row.get("trace_id"),
+                row.get("source_trace_id"),
+                json.dumps(row.get("labels") or {}, ensure_ascii=False),
+                json.dumps(row.get("score_breakdown") or {}, ensure_ascii=False),
+                str(row.get("source") or row.get("source_name") or "stock_processing_service"),
+            )
+            for row in rows
+            if row.get("trade_date") and row.get("stock_id")
+        ]
+        if not payload:
+            return 0
         async with self.pool.acquire() as conn:
             await conn.executemany(sql, payload)
         return len(payload)
@@ -1677,18 +1663,21 @@ class PostgresDatabaseManager(BaseDatabaseManager):
     async def get_stock_daily_bars(self, trade_date, stock_ids: Optional[List[str]] = None) -> List[Dict[str, Any]]:
         """读取股票日线（当前映射到 stock_daily_snapshot）。"""
         sql = """
-        SELECT
+        SELECT DISTINCT ON (stock_id)
             trade_date, stock_id, stock_name,
             open_price, high_price, low_price, close_price, pre_close, pct_chg,
             volume, amount
         FROM stock_daily_snapshot
         WHERE trade_date = $1::date
+          AND source_name LIKE 'tushare%'
           AND ($2::text[] IS NULL OR stock_id = ANY($2::text[]))
-        ORDER BY stock_id
+        ORDER BY stock_id,
+                 CASE WHEN source_name = 'tushare' THEN 0 ELSE 1 END,
+                 updated_at DESC NULLS LAST
         """
         async with self.pool.acquire() as conn:
             rows = await conn.fetch(sql, trade_date, stock_ids if stock_ids else None)
-            return [self._merge_row_with_local_tushare(dict(row)) for row in rows]
+            return [dict(row) for row in rows]
 
     async def get_stock_daily_bars_range(
         self,
@@ -1698,19 +1687,22 @@ class PostgresDatabaseManager(BaseDatabaseManager):
     ) -> List[Dict[str, Any]]:
         """读取区间股票日线（用于支撑评分等历史K线分析）。"""
         sql = """
-        SELECT
+        SELECT DISTINCT ON (trade_date, stock_id)
             trade_date, stock_id, stock_name,
             open_price, high_price, low_price, close_price, pre_close, pct_chg,
             volume, amount
         FROM stock_daily_snapshot
         WHERE trade_date >= $1::date
           AND trade_date <= $2::date
+          AND source_name LIKE 'tushare%'
           AND ($3::text[] IS NULL OR stock_id = ANY($3::text[]))
-        ORDER BY trade_date ASC, stock_id
+        ORDER BY trade_date ASC, stock_id,
+                 CASE WHEN source_name = 'tushare' THEN 0 ELSE 1 END,
+                 updated_at DESC NULLS LAST
         """
         async with self.pool.acquire() as conn:
             rows = await conn.fetch(sql, start_date, end_date, stock_ids if stock_ids else None)
-            return [self._merge_row_with_local_tushare(dict(row)) for row in rows]
+            return [dict(row) for row in rows]
 
     async def get_stock_auction_snapshot(self, trade_date, stock_ids: Optional[List[str]] = None) -> List[Dict[str, Any]]:
         """
@@ -1747,21 +1739,49 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         lookback_days: int,
         stock_ids: Optional[List[str]] = None,
     ) -> List[Dict[str, Any]]:
-        """读取交易日前 lookback_days 天的股票日线快照。"""
+        """读取交易日前 lookback_days 天的快照（真源行情 + 策略对象层拼接）。"""
         sql = """
+        WITH market_rows AS (
+            SELECT DISTINCT ON (m.trade_date, m.stock_id)
+                m.trade_date,
+                m.stock_id,
+                m.stock_name,
+                m.open_price,
+                m.high_price,
+                m.low_price,
+                m.close_price,
+                m.pre_close,
+                m.pct_chg,
+                m.volume,
+                m.amount
+            FROM stock_daily_snapshot m
+            WHERE m.trade_date < $1::date
+              AND m.trade_date >= ($1::date - $2::int * INTERVAL '1 day')
+              AND m.source_name LIKE 'tushare%'
+              AND ($3::text[] IS NULL OR m.stock_id = ANY($3::text[]))
+            ORDER BY m.trade_date DESC, m.stock_id,
+                     CASE WHEN m.source_name = 'tushare' THEN 0 ELSE 1 END,
+                     m.updated_at DESC NULLS LAST
+        )
         SELECT
-            trade_date, stock_id, stock_name,
-            open_price, high_price, low_price, close_price, pre_close, pct_chg,
-            volume, amount
-        FROM stock_daily_snapshot
-        WHERE trade_date < $1::date
-          AND trade_date >= ($1::date - $2::int * INTERVAL '1 day')
-          AND ($3::text[] IS NULL OR stock_id = ANY($3::text[]))
-        ORDER BY trade_date DESC, stock_id
+            m.trade_date, m.stock_id, m.stock_name,
+            m.open_price, m.high_price, m.low_price, m.close_price, m.pre_close, m.pct_chg,
+            m.volume, m.amount,
+            s.snapshot_version,
+            jsonb_build_object(
+                'final_cycle_state', COALESCE(s.labels->>'final_cycle_state', ''),
+                'labels', COALESCE(s.labels, '{}'::jsonb),
+                'score_breakdown', COALESCE(s.score_breakdown, '{}'::jsonb)
+            ) AS payload
+        FROM market_rows m
+        LEFT JOIN stock_daily_strategy_snapshot s
+          ON s.trade_date = m.trade_date
+         AND s.stock_id = m.stock_id
+        ORDER BY m.trade_date DESC, m.stock_id
         """
         async with self.pool.acquire() as conn:
             rows = await conn.fetch(sql, trade_date, lookback_days, stock_ids if stock_ids else None)
-            return [self._merge_row_with_local_tushare(dict(row)) for row in rows]
+            return [dict(row) for row in rows]
 
     async def get_existing_pre_market_brief_snapshot(self, trade_date) -> Optional[Dict[str, Any]]:
         """读取 pre_market_brief_snapshot 文档对象（存在则返回）。"""
@@ -1803,6 +1823,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         """读取 Layer A 主线身份真源。"""
         if not subject_keys:
             return []
+        page_size = 500
         sql = """
         SELECT DISTINCT ON (subject_key)
             subject_key,
@@ -1817,6 +1838,10 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             last_review_date IS NULL
             OR last_review_date <= $2::date
           )
+          AND (
+            first_confirmed_date IS NULL
+            OR first_confirmed_date <= $2::date
+          )
         ORDER BY subject_key, last_review_date DESC NULLS LAST, updated_at DESC NULLS LAST
         """
         fallback_sql = """
@@ -1829,15 +1854,39 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             COALESCE(rule_version, '') AS rule_version
         FROM theme_mainline_identity_registry
         WHERE subject_key = ANY($1::text[])
+          AND (
+            first_confirmed_date IS NULL
+            OR first_confirmed_date <= $2::date
+          )
         ORDER BY subject_key, updated_at DESC NULLS LAST
         """
+        legacy_anytime_sql = """
+        SELECT DISTINCT ON (subject_key)
+            subject_key,
+            COALESCE(identity_status, '') AS identity_status,
+            COALESCE(is_main_theme, FALSE) AS is_main_theme,
+            first_confirmed_date,
+            last_review_date,
+            COALESCE(rule_version, '') AS rule_version
+        FROM theme_mainline_identity_registry
+        WHERE subject_key = ANY($1::text[])
+        ORDER BY subject_key, updated_at DESC NULLS LAST
+        """
+        gate_mode = str(os.getenv("SPS_IDENTITY_GATE_MODE", "asof")).strip().lower()
         try:
             async with self.pool.acquire() as conn:
-                try:
-                    rows = await conn.fetch(sql, subject_keys, trade_date)
-                except Exception:
-                    rows = await conn.fetch(fallback_sql, subject_keys)
-                return [dict(row) for row in rows]
+                all_rows: list[Dict[str, Any]] = []
+                for i in range(0, len(subject_keys), page_size):
+                    chunk = subject_keys[i : i + page_size]
+                    if gate_mode == "legacy_anytime":
+                        rows = await conn.fetch(legacy_anytime_sql, chunk)
+                    else:
+                        try:
+                            rows = await conn.fetch(sql, chunk, trade_date)
+                        except Exception:
+                            rows = await conn.fetch(fallback_sql, chunk, trade_date)
+                    all_rows.extend(dict(row) for row in rows)
+                return all_rows
         except Exception as e:
             logger.warning(f"读取 theme_mainline_identity_registry 失败（可能尚未迁移）: {e}")
             return []
@@ -1850,6 +1899,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         """读取 Layer B 周期状态真源。"""
         if not subject_keys:
             return []
+        page_size = 500
 
         try:
             async with self.pool.acquire() as conn:
@@ -1872,7 +1922,62 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     subject_key,
                     {col('final_cycle_state', "''::text")} AS final_cycle_state,
                     {col('final_mainline_alive', 'FALSE')} AS final_mainline_alive,
-                    {col('transition_type', "''::text")} AS transition_type,
+                    CASE
+                        WHEN {col('final_cycle_state', "''::text")} = 'fade_confirmed' THEN 'fade'
+                        WHEN {col('previous_cycle_state', "''::text")} IN ('', 'unknown') THEN 'flat'
+                        WHEN {col('previous_cycle_state', "''::text")} = {col('final_cycle_state', "''::text")} THEN 'flat'
+                        ELSE CASE
+                            WHEN (
+                                CASE {col('final_cycle_state', "''::text")}
+                                  WHEN 'fade_confirmed' THEN 0
+                                  WHEN 'fade_watch' THEN 1
+                                  WHEN 'start' THEN 2
+                                  WHEN 'fermentation' THEN 3
+                                  WHEN 'divergence' THEN 4
+                                  WHEN 'repair' THEN 5
+                                  WHEN 'acceleration' THEN 6
+                                  ELSE -1
+                                END
+                            ) > (
+                                CASE {col('previous_cycle_state', "''::text")}
+                                  WHEN 'fade_confirmed' THEN 0
+                                  WHEN 'fade_watch' THEN 1
+                                  WHEN 'start' THEN 2
+                                  WHEN 'fermentation' THEN 3
+                                  WHEN 'divergence' THEN 4
+                                  WHEN 'repair' THEN 5
+                                  WHEN 'acceleration' THEN 6
+                                  ELSE -1
+                                END
+                            ) THEN 'upgrade'
+                            WHEN (
+                                CASE {col('final_cycle_state', "''::text")}
+                                  WHEN 'fade_confirmed' THEN 0
+                                  WHEN 'fade_watch' THEN 1
+                                  WHEN 'start' THEN 2
+                                  WHEN 'fermentation' THEN 3
+                                  WHEN 'divergence' THEN 4
+                                  WHEN 'repair' THEN 5
+                                  WHEN 'acceleration' THEN 6
+                                  ELSE -1
+                                END
+                            ) < (
+                                CASE {col('previous_cycle_state', "''::text")}
+                                  WHEN 'fade_confirmed' THEN 0
+                                  WHEN 'fade_watch' THEN 1
+                                  WHEN 'start' THEN 2
+                                  WHEN 'fermentation' THEN 3
+                                  WHEN 'divergence' THEN 4
+                                  WHEN 'repair' THEN 5
+                                  WHEN 'acceleration' THEN 6
+                                  ELSE -1
+                                END
+                            ) THEN 'downgrade'
+                            ELSE 'flat'
+                        END
+                    END AS transition_type,
+                    {col('confidence_score', '0::numeric')} AS transition_confidence,
+                    COALESCE({col('risk_flags', "'[]'::jsonb")}, '[]'::jsonb) AS trigger_flags,
                     {col('mainline_strength_score', '0::numeric')} AS mainline_strength_score,
                     {col('repair_score', '0::numeric')} AS repair_score,
                     {col('divergence_score', '0::numeric')} AS divergence_score,
@@ -1883,10 +1988,143 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                   AND subject_key = ANY($1::text[])
                 ORDER BY subject_key
                 """
-                rows = await conn.fetch(sql, subject_keys, trade_date)
-                return [dict(row) for row in rows]
+                all_rows: list[Dict[str, Any]] = []
+                for i in range(0, len(subject_keys), page_size):
+                    chunk = subject_keys[i : i + page_size]
+                    rows = await conn.fetch(sql, chunk, trade_date)
+                    all_rows.extend(dict(row) for row in rows)
+                return all_rows
         except Exception as e:
             logger.warning(f"读取 theme_cycle_judgement_v2 失败（可能尚未迁移）: {e}")
+            return []
+
+    async def get_prior_strong_watch_pool_rows(
+        self,
+        trade_date,
+        lookback_days: int,
+    ) -> List[Dict[str, Any]]:
+        """读取前 N 交易日 strong_stock_watch_history（弱转强输入跟踪池口径）。"""
+        sql = """
+        WITH w AS (
+            SELECT DISTINCT trade_date
+            FROM stock_daily_snapshot
+            WHERE trade_date <= $1::date
+            ORDER BY trade_date DESC
+            LIMIT $2
+        ),
+        h0 AS (
+            SELECT
+                h.trade_date,
+                h.stock_id,
+                h.stock_name,
+                h.subject_key,
+                COALESCE(h.theme_name, h.subject_key) AS subject_name,
+                NULL::int AS pool_rank,
+                h.watch_status,
+                h.watch_score,
+                COALESCE(h.pool_entry_type, '') AS pool_entry_type,
+                COALESCE(h.cycle_state, '') AS final_cycle_state,
+                COALESCE(h.labels_json->>'state_transition_type', '') AS transition_type_raw,
+                COALESCE(h.labels_json->>'state_transition_confidence', '0')::numeric AS transition_confidence_raw,
+                COALESCE(h.labels_json->'trigger_flags', '[]'::jsonb) AS trigger_flags_raw,
+                LAG(COALESCE(h.cycle_state, '')) OVER (PARTITION BY h.stock_id ORDER BY h.trade_date) AS prev_cycle_state,
+                COALESCE(h.support_type, '') AS support_type,
+                h.support_level,
+                h.support_score
+            FROM strong_stock_watch_history h
+            JOIN w ON w.trade_date = h.trade_date
+        )
+        SELECT
+            h0.trade_date,
+            h0.stock_id,
+            h0.stock_name,
+            h0.subject_key,
+            h0.subject_name,
+            h0.pool_rank,
+            h0.watch_status,
+            h0.watch_score,
+            h0.pool_entry_type,
+            h0.final_cycle_state,
+            CASE
+              WHEN h0.prev_cycle_state IN ('', 'unknown') THEN 'flat'
+              WHEN h0.transition_type_raw <> '' THEN h0.transition_type_raw
+              WHEN h0.final_cycle_state = 'fade_confirmed' THEN 'fade'
+              WHEN h0.prev_cycle_state = h0.final_cycle_state THEN 'flat'
+              WHEN (
+                CASE h0.final_cycle_state
+                  WHEN 'fade_confirmed' THEN 0
+                  WHEN 'fade_watch' THEN 1
+                  WHEN 'start' THEN 2
+                  WHEN 'fermentation' THEN 3
+                  WHEN 'divergence' THEN 4
+                  WHEN 'repair' THEN 5
+                  WHEN 'acceleration' THEN 6
+                  ELSE -1
+                END
+              ) > (
+                CASE h0.prev_cycle_state
+                  WHEN 'fade_confirmed' THEN 0
+                  WHEN 'fade_watch' THEN 1
+                  WHEN 'start' THEN 2
+                  WHEN 'fermentation' THEN 3
+                  WHEN 'divergence' THEN 4
+                  WHEN 'repair' THEN 5
+                  WHEN 'acceleration' THEN 6
+                  ELSE -1
+                END
+              ) THEN 'upgrade'
+              WHEN (
+                CASE h0.final_cycle_state
+                  WHEN 'fade_confirmed' THEN 0
+                  WHEN 'fade_watch' THEN 1
+                  WHEN 'start' THEN 2
+                  WHEN 'fermentation' THEN 3
+                  WHEN 'divergence' THEN 4
+                  WHEN 'repair' THEN 5
+                  WHEN 'acceleration' THEN 6
+                  ELSE -1
+                END
+              ) < (
+                CASE h0.prev_cycle_state
+                  WHEN 'fade_confirmed' THEN 0
+                  WHEN 'fade_watch' THEN 1
+                  WHEN 'start' THEN 2
+                  WHEN 'fermentation' THEN 3
+                  WHEN 'divergence' THEN 4
+                  WHEN 'repair' THEN 5
+                  WHEN 'acceleration' THEN 6
+                  ELSE -1
+                END
+              ) THEN 'downgrade'
+              ELSE 'flat'
+            END AS transition_type,
+            CASE
+              WHEN h0.transition_confidence_raw > 0 THEN h0.transition_confidence_raw
+              ELSE CASE
+                WHEN h0.prev_cycle_state IN ('', 'unknown') THEN 0.65
+                WHEN h0.prev_cycle_state = h0.final_cycle_state THEN 0.75
+                ELSE 0.80
+              END
+            END AS transition_confidence,
+            CASE
+              WHEN jsonb_array_length(h0.trigger_flags_raw) > 0 THEN h0.trigger_flags_raw
+              ELSE jsonb_build_array(
+                CONCAT('from=', COALESCE(h0.prev_cycle_state, 'unknown')),
+                CONCAT('to=', COALESCE(h0.final_cycle_state, 'unknown'))
+              )
+            END AS trigger_flags,
+            h0.support_type,
+            h0.support_level,
+            h0.support_score
+        FROM h0
+        ORDER BY h0.trade_date DESC, h0.stock_id
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                rows = await conn.fetch(sql, trade_date, int(max(1, lookback_days)))
+                return [dict(row) for row in rows]
+        except Exception as e:
+            logger.warning(f"读取 strong_stock_watch_history 失败（可能尚未迁移）: {e}")
             return []
 
     async def upsert_subject_stock_daily_snapshot_rows(self, rows: List[Dict[str, Any]]) -> int:
@@ -1912,7 +2150,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         """
         payload = [
             (
-                row.get("trade_date"),
+                date.fromisoformat(row.get("trade_date")) if isinstance(row.get("trade_date"), str) else row.get("trade_date"),
                 row.get("subject_key"),
                 row.get("subject_name"),
                 row.get("stock_id"),
@@ -2057,6 +2295,96 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.warning(f"写入 post_market_recap_snapshot 失败（可能尚未迁移）: {e}")
             return 0
 
+    async def upsert_strong_watch_history_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """批量 UPSERT strong_stock_watch_history（Layer C 跟踪池历史真源）。"""
+        if not rows:
+            return 0
+        sql = """
+        INSERT INTO strong_stock_watch_history (
+            trade_date,
+            stock_id,
+            stock_name,
+            subject_key,
+            theme_name,
+            watch_status,
+            watch_score,
+            watch_priority,
+            relay_role,
+            pool_entry_type,
+            cycle_state,
+            mainline_strength_score,
+            fade_watch,
+            fade_confirmed,
+            promoted_to_candidate,
+            removed_reason,
+            support_type,
+            support_level,
+            support_score,
+            labels_json,
+            evidence_json
+        ) VALUES (
+            $1::date, $2, $3, $4, $5, $6, $7::numeric, $8::numeric, $9, $10, $11, $12::numeric,
+            $13::boolean, $14::boolean, $15::boolean, $16, $17, $18::numeric, $19::numeric,
+            $20::jsonb, $21::jsonb
+        )
+        ON CONFLICT (trade_date, stock_id) DO UPDATE SET
+            stock_name = EXCLUDED.stock_name,
+            subject_key = EXCLUDED.subject_key,
+            theme_name = EXCLUDED.theme_name,
+            watch_status = EXCLUDED.watch_status,
+            watch_score = EXCLUDED.watch_score,
+            watch_priority = EXCLUDED.watch_priority,
+            relay_role = EXCLUDED.relay_role,
+            pool_entry_type = EXCLUDED.pool_entry_type,
+            cycle_state = EXCLUDED.cycle_state,
+            mainline_strength_score = EXCLUDED.mainline_strength_score,
+            fade_watch = EXCLUDED.fade_watch,
+            fade_confirmed = EXCLUDED.fade_confirmed,
+            promoted_to_candidate = EXCLUDED.promoted_to_candidate,
+            removed_reason = EXCLUDED.removed_reason,
+            support_type = EXCLUDED.support_type,
+            support_level = EXCLUDED.support_level,
+            support_score = EXCLUDED.support_score,
+            labels_json = EXCLUDED.labels_json,
+            evidence_json = EXCLUDED.evidence_json
+        """
+        payload = [
+            (
+                date.fromisoformat(row.get("trade_date")) if isinstance(row.get("trade_date"), str) else row.get("trade_date"),
+                row.get("stock_id"),
+                row.get("stock_name") or row.get("stock_id"),
+                row.get("subject_key"),
+                row.get("theme_name") or row.get("subject_key"),
+                row.get("watch_status") or "active",
+                row.get("watch_score") or "0",
+                row.get("watch_priority") or row.get("watch_score") or "0",
+                row.get("relay_role") or "unknown",
+                row.get("pool_entry_type") or "observe_only",
+                row.get("cycle_state") or "",
+                row.get("mainline_strength_score") or "0",
+                bool(row.get("fade_watch") or False),
+                bool(row.get("fade_confirmed") or False),
+                bool(row.get("promoted_to_candidate") or False),
+                row.get("removed_reason"),
+                row.get("support_type") or "",
+                row.get("support_level") or "0",
+                row.get("support_score") or "0",
+                json.dumps(row.get("labels_json") or {}, ensure_ascii=False),
+                json.dumps(row.get("evidence_json") or {}, ensure_ascii=False),
+            )
+            for row in rows
+            if row.get("trade_date") and row.get("stock_id")
+        ]
+        if not payload:
+            return 0
+        try:
+            async with self.pool.acquire() as conn:
+                await conn.executemany(sql, payload)
+            return len(payload)
+        except Exception as e:
+            logger.warning(f"写入 strong_stock_watch_history 失败（可能尚未迁移）: {e}")
+            return 0
+
     def _normalize_stock_snapshot_row(self, row: Dict[str, Any]) -> tuple:
         def _pick(*keys: str):
             for key in keys:
@@ -2076,7 +2404,9 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         if not trade_date or not stock_id:
             raise ValueError(f"invalid snapshot row, missing trade_date/stock_id: {row}")
 
-        source_name = str(_pick("source_name") or "stock_processing_service")
+        source_name = str(_pick("source_name") or "").strip()
+        if not source_name:
+            raise ValueError(f"invalid snapshot row, missing source_name: {row}")
         open_price = _pick("open_price")
         high_price = _pick("high_price")
         low_price = _pick("low_price")
@@ -2085,32 +2415,6 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         pct_chg = _pick("pct_chg")
         volume = _pick("volume")
         amount = _pick("amount")
-
-        # If a stock_processing_service write carries incomplete market fields,
-        # backfill from local tushare daily_bar to avoid polluting market truth.
-        if source_name == "stock_processing_service":
-            probe = {
-                "trade_date": trade_date,
-                "stock_id": str(stock_id),
-                "open_price": open_price,
-                "high_price": high_price,
-                "low_price": low_price,
-                "pre_close": pre_close,
-                "volume": volume,
-                "amount": amount,
-                "stock_name": _pick("stock_name"),
-                "source_name": source_name,
-            }
-            merged = self._merge_row_with_local_tushare(probe)
-            open_price = merged.get("open_price")
-            high_price = merged.get("high_price")
-            low_price = merged.get("low_price")
-            pre_close = merged.get("pre_close")
-            volume = merged.get("volume")
-            amount = merged.get("amount")
-            if merged.get("stock_name") not in (None, ""):
-                row["stock_name"] = merged.get("stock_name")
-            source_name = str(merged.get("source_name") or source_name)
 
         return (
             trade_date,

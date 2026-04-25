@@ -8,7 +8,7 @@ from decimal import Decimal
 from stock_processing_service.contracts.dto import StockBarDTO
 from stock_processing_service.contracts.snapshots import (
     StockAbnormalEvent,
-    StockDailySnapshot,
+    StockDailyStrategySnapshot,
     SubjectStockDailySnapshot,
     ThemeStockLeaderboard,
 )
@@ -19,7 +19,7 @@ from stock_processing_service.domain.services.state_transition_service import St
 
 @dataclass(frozen=True)
 class DailyProjectionBundle:
-    daily_rows: list[StockDailySnapshot]
+    daily_rows: list[StockDailyStrategySnapshot]
     subject_daily_rows: list[SubjectStockDailySnapshot]
     abnormal_rows: list[StockAbnormalEvent]
     leaderboard_rows: list[ThemeStockLeaderboard]
@@ -37,8 +37,8 @@ class DailySnapshotProjector:
         judgements: list[CycleJudgement],
         bars_by_stock: dict[str, StockBarDTO],
         transition_by_stock: dict[str, StateTransition],
-    ) -> tuple[list[StockDailySnapshot], list[SubjectStockDailySnapshot]]:
-        daily_rows: list[StockDailySnapshot] = []
+    ) -> tuple[list[StockDailyStrategySnapshot], list[SubjectStockDailySnapshot]]:
+        daily_rows: list[StockDailyStrategySnapshot] = []
         subject_daily_rows: list[SubjectStockDailySnapshot] = []
 
         for evidence, judgement in zip(evidences, judgements):
@@ -47,7 +47,7 @@ class DailySnapshotProjector:
                 continue
             transition = transition_by_stock.get(evidence.stock_id)
             daily_rows.append(
-                StockDailySnapshot(
+                StockDailyStrategySnapshot(
                     trade_date=trade_date,
                     stock_id=evidence.stock_id,
                     stock_name=bar.stock_name,

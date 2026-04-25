@@ -211,8 +211,25 @@ def test_build_post_market_recap_job() -> None:
         assert len(write_port.recap_docs) == 1
         recap_doc = write_port.recap_docs[0].recap_doc
         assert recap_doc["candidate_source"] == "strong_watch_pool"
+        assert recap_doc["layer_a_identity_source"] == "theme_mainline_identity_registry"
+        assert recap_doc["layer_b_cycle_source"] == "theme_cycle_judgement_v2"
+        assert recap_doc["layer_a_identity_hit_count"] >= 1
+        assert recap_doc["layer_b_cycle_hit_count"] >= 1
+        assert "shadow_layer_c_formal_count" in recap_doc
+        assert "shadow_layer_c_observe_count" in recap_doc
+        assert "shadow_layer_c_reject_count" in recap_doc
+        assert "input_fingerprint" in recap_doc
+        assert recap_doc["input_fingerprint"]["trade_date"] == "2026-04-23"
+        assert recap_doc["input_fingerprint"]["bars_count"] >= 1
+        assert recap_doc["input_fingerprint"]["pool_rows_count"] >= 1
+        assert recap_doc["input_fingerprint"]["fingerprint_sha256"]
         assert recap_doc["strong_watch_promoted_count"] >= recap_doc["candidate_count"]
         assert recap_doc["strong_watch_history_count"] >= recap_doc["strong_watch_promoted_count"]
+        if recap_doc.get("top_candidates"):
+            top0 = recap_doc["top_candidates"][0]
+            assert "transition_type" in top0
+            assert "transition_confidence" in top0
+            assert "trigger_flags" in top0
         assert len(write_port.strong_watch_history_rows) == recap_doc["strong_watch_history_count"]
         assert len(event_port.events) == 1
         assert event_port.events[0]["event_name"] == "snapshot_built"
@@ -283,7 +300,15 @@ def test_build_post_market_recap_job_empty_strong_watch_pool() -> None:
 def test_build_post_market_recap_job_promoted_pool_generates_candidates() -> None:
     class _PromotedStrongWatchService:
         def build_promoted_pool_with_history(
-            self, trade_date, pool_rows, bars, prior_rows=None, history_bars=None, prior_active_rows=None
+            self,
+            trade_date,
+            pool_rows,
+            bars,
+            prior_rows=None,
+            history_bars=None,
+            prior_active_rows=None,
+            identities_by_subject=None,
+            cycles_by_subject=None,
         ):
             promoted = [
                 SubjectStockPoolDTO(
@@ -299,12 +324,23 @@ def test_build_post_market_recap_job_promoted_pool_generates_candidates() -> Non
                 StrongWatchHistoryRecord(
                     trade_date=trade_date,
                     stock_id="002000.SZ",
+                    stock_name="SampleA",
                     subject_key="ai_chip",
+                    theme_name="AI Chip",
                     watch_status="active",
+                    pool_entry_type="formal",
+                    relay_role="leader",
                     strong_grade="A",
                     watch_score=Decimal("70"),
+                    watch_priority=Decimal("70"),
+                    cycle_state="repair",
+                    mainline_strength_score=Decimal("75"),
+                    fade_watch=False,
+                    fade_confirmed=False,
+                    promoted_to_candidate=True,
                     support_score=Decimal("65"),
                     support_type="ma_support",
+                    support_level=Decimal("12.0"),
                     prune_mode=None,
                     prune_reason_code=None,
                     removed_reason=None,
@@ -360,6 +396,9 @@ def test_build_post_market_recap_job_promoted_pool_generates_candidates() -> Non
         assert recap_doc["strong_watch_history_count"] == 1
         assert recap_doc["candidate_count"] == 1
         assert len(recap_doc["top_candidates"]) == 1
+        assert "transition_type" in recap_doc["top_candidates"][0]
+        assert "transition_confidence" in recap_doc["top_candidates"][0]
+        assert "trigger_flags" in recap_doc["top_candidates"][0]
         assert event_port.events and event_port.events[0]["event_name"] == "snapshot_built"
 
     asyncio.run(_run())

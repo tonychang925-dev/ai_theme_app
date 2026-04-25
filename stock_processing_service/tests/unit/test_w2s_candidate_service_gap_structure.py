@@ -62,7 +62,7 @@ def test_gap_strict_scores_higher_than_gap_soft() -> None:
                 "gap_hit": True,
                 "gap_hit_mode": "strict",
                 "gap_source": "gap_structure",
-                "role_tags": {"watch_tier": "B"},
+                "role_tags": {"watch_tier": "B", "two_board_entry": True},
                 "prior7_limitup_days": 0,
                 "prior7_strong_days": 1,
             },
@@ -79,7 +79,7 @@ def test_gap_strict_scores_higher_than_gap_soft() -> None:
                 "gap_hit": True,
                 "gap_hit_mode": "soft",
                 "gap_source": "gap_structure",
-                "role_tags": {"watch_tier": "B"},
+                "role_tags": {"watch_tier": "B", "two_board_entry": True},
                 "prior7_limitup_days": 0,
                 "prior7_strong_days": 1,
             },
@@ -108,7 +108,9 @@ def test_gap_repair_bonus_applies_for_soft_gap_with_repair() -> None:
                     "gap_hit": True,
                     "gap_hit_mode": "soft",
                     "gap_source": "gap_structure",
-                    "role_tags": {"watch_tier": "B"},
+                    "role_tags": {"watch_tier": "B", "two_board_entry": True},
+                    "prior7_limitup_days": 0,
+                    "prior7_strong_days": 1,
                 },
             )
         ],
@@ -138,7 +140,9 @@ def test_formal_ranking_prioritizes_gap_over_prev_low() -> None:
                 "gap_hit": True,
                 "gap_hit_mode": "strict",
                 "gap_source": "gap_structure",
-                "role_tags": {"watch_tier": "B"},
+                "role_tags": {"watch_tier": "B", "two_board_entry": True},
+                "prior7_limitup_days": 0,
+                "prior7_strong_days": 1,
             },
         ),
         _pool_row(
@@ -153,7 +157,9 @@ def test_formal_ranking_prioritizes_gap_over_prev_low() -> None:
                 "gap_hit": True,
                 "gap_hit_mode": "soft",
                 "gap_source": "gap_structure",
-                "role_tags": {"watch_tier": "B"},
+                "role_tags": {"watch_tier": "B", "two_board_entry": True},
+                "prior7_limitup_days": 0,
+                "prior7_strong_days": 1,
             },
         ),
         _pool_row(
@@ -168,7 +174,9 @@ def test_formal_ranking_prioritizes_gap_over_prev_low() -> None:
                 "gap_hit": False,
                 "gap_hit_mode": "miss",
                 "gap_source": "",
-                "role_tags": {"watch_tier": "B"},
+                "role_tags": {"watch_tier": "B", "two_board_entry": True},
+                "prior7_limitup_days": 0,
+                "prior7_strong_days": 1,
             },
         ),
     ]
@@ -179,7 +187,7 @@ def test_formal_ranking_prioritizes_gap_over_prev_low() -> None:
     )
     ranked_ids = [c.stock_id for c in out if c.candidate_level == "formal"]
     assert ranked_ids.index("G001.SZ") < ranked_ids.index("G002.SZ")
-    assert ranked_ids.index("G002.SZ") < ranked_ids.index("P001.SZ")
+    assert ranked_ids[:2] == ["G001.SZ", "G002.SZ"]
 
 
 def test_non_gap_gets_no_gap_bonus() -> None:
@@ -199,7 +207,9 @@ def test_non_gap_gets_no_gap_bonus() -> None:
                     "gap_hit": False,
                     "gap_hit_mode": "miss",
                     "gap_source": "",
-                    "role_tags": {"watch_tier": "B"},
+                    "role_tags": {"watch_tier": "B", "two_board_entry": True},
+                    "prior7_limitup_days": 0,
+                    "prior7_strong_days": 1,
                 },
             )
         ],
@@ -209,4 +219,3 @@ def test_non_gap_gets_no_gap_bonus() -> None:
     c = out[0]
     assert c.gap_structure_bonus == 0
     assert c.gap_repair_bonus == 0
-

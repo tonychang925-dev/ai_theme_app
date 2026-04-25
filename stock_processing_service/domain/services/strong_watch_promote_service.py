@@ -10,6 +10,8 @@ class StrongWatchPromoteService:
     def promote(self, trade_date: date, rows: list[StrongWatchRecord]) -> list[SubjectStockPoolDTO]:
         promoted: list[SubjectStockPoolDTO] = []
         for row in rows:
+            if str(getattr(row, "admission_status", "formal") or "formal") != "formal":
+                continue
             if row.strong_grade not in {"S", "A", "B", "B_KEEP"}:
                 continue
             promoted.append(
@@ -45,6 +47,7 @@ class StrongWatchPromoteService:
                         "prior7_peak_rank": row.prior7_peak_rank,
                         "watch_status": row.watch_status,
                         "kept_because": row.kept_because,
+                        "admission_status": row.admission_status,
                     },
                 )
             )

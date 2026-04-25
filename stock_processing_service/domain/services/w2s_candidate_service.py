@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from dataclasses import dataclass
 from decimal import Decimal
 from typing import Any
@@ -32,10 +33,22 @@ class W2SCandidate:
     gap_repair_bonus: Decimal = Decimal("0")
     repair_or_takeover_score: Decimal = Decimal("0")
     weakness_valid_score: Decimal = Decimal("0")
+    transition_type: str = ""
+    transition_confidence: Decimal = Decimal("0")
+    trigger_flags: list[str] | None = None
 
 
 class W2SCandidateService:
     MAX_CANDIDATES = 10
+
+    def __init__(self, *, formal_sa_gate_mode: str | None = None) -> None:
+        mode = formal_sa_gate_mode
+        if mode is None:
+            mode = os.getenv("W2S_FORMAL_SA_GATE_MODE", "off")
+        mode = str(mode).strip().lower()
+        if mode not in {"off", "soft", "hard"}:
+            mode = "off"
+        self._formal_sa_gate_mode = mode
     @staticmethod
     def _d(value: Any, default: str = "0") -> Decimal:
         if value is None:
@@ -158,6 +171,46 @@ class W2SCandidateService:
     def _in_range(value: Decimal, low: str, high: str) -> bool:
         return Decimal(low) <= value <= Decimal(high)
 
+    @staticmethod
+    def _weekly_midterm_gate(metadata: dict[str, Any]) -> tuple[bool, dict[str, Any]]:
+        # Align with old-chain ablation behavior: output diagnostics, no hard block.
+        weekly_data_sufficient = bool(metadata.get("weekly_data_sufficient") or False)
+        weekly_trend_up = bool(metadata.get("weekly_trend_up") or False)
+        weekly_filter_pass = bool(metadata.get("weekly_filter_pass") or False)
+        weekly_high_fall_flag = bool(metadata.get("weekly_high_fall_flag") or False)
+        weekly_position_pct = metadata.get("weekly_position_pct")
+        weekly_pullback_pct = metadata.get("weekly_pullback_pct")
+        return True, {
+            "passed": True,
+            "reason": "weekly_gate_disabled_ablation",
+            "weekly_data_sufficient": weekly_data_sufficient,
+            "weekly_trend_up": weekly_trend_up,
+            "weekly_filter_pass": weekly_filter_pass,
+            "weekly_high_fall_flag": weekly_high_fall_flag,
+            "weekly_position_pct": str(weekly_position_pct if weekly_position_pct is not None else ""),
+            "weekly_pullback_pct": str(weekly_pullback_pct if weekly_pullback_pct is not None else ""),
+        }
+
+    @staticmethod
+    def _legacy_watch_status_pass(watch_status: str) -> bool:
+        return (watch_status or "").strip().lower() in {"active", "weakening", "weakening_keep"}
+
+    @staticmethod
+    def _legacy_strong_history_gate(
+        *,
+        prior7_limitup_days: int,
+        prior7_strong_days: int,
+        two_board_entry: bool,
+    ) -> tuple[bool, str]:
+        # Old-chain semantics:
+        # 1) hard gene + strong history (both required), OR
+        # 2) two-board bypass (already vetted in Layer C).
+        if two_board_entry:
+            return True, "two_board_bypass"
+        if prior7_limitup_days >= 1 and prior7_strong_days >= 1:
+            return True, "prior7_dual_pass"
+        return False, "prior7_dual_fail"
+
     def _prior7_features(
         self,
         *,
@@ -207,11 +260,23 @@ class W2SCandidateService:
         gap_source = str(metadata.get("gap_source") or "")
         gap_level = self._d(metadata.get("gap_level"), default="0")
         gap_distance_pct = self._d(metadata.get("gap_distance_pct"), default="999")
+        transition_type = str(metadata.get("transition_type") or "")
+        transition_confidence = self._d(metadata.get("transition_confidence"), default="0")
+        trigger_flags = list(metadata.get("trigger_flags") or [])
+        two_board_entry = bool(role_tags.get("two_board_entry") or False)
+        # Data-shape guard: when prior state is unknown, transition should not be treated as upgrade/downgrade.
+        if any(str(x).startswith("from=unknown") for x in trigger_flags):
+            transition_type = "flat"
+            if transition_confidence <= Decimal("0"):
+                transition_confidence = Decimal("0.65")
+            else:
+                transition_confidence = min(transition_confidence, Decimal("0.65"))
         prior7_limitup_days, prior7_strong_days, prior7_source = self._prior7_features(
             stock_id=row.stock_id,
             prior_rows=prior_rows or [],
             metadata=metadata,
         )
+        weekly_gate_passed, weekly_gate_diag = self._weekly_midterm_gate(metadata)
 
         prior_state = ""
         if prior:
@@ -307,8 +372,14 @@ class W2SCandidateService:
 
         formal_day_gate = self._in_range(pct_chg, "-6", "1.5")
         observe_day_gate = self._in_range(pct_chg, "-8", "3")
-        prior7_formal_gate = prior7_limitup_days >= 1 or prior7_strong_days >= 2
-        prior7_soft_pass = True
+        legacy_watch_status_pass = self._legacy_watch_status_pass(watch_status)
+        legacy_strong_history_pass, legacy_strong_history_reason = self._legacy_strong_history_gate(
+            prior7_limitup_days=prior7_limitup_days,
+            prior7_strong_days=prior7_strong_days,
+            two_board_entry=two_board_entry,
+        )
+        prior7_formal_gate = legacy_strong_history_pass
+        prior7_soft_pass = legacy_strong_history_pass
 
         rank_overheat_gate = rank <= 2 and pct_chg > Decimal("3")
         leader_overheat_gate = bool(role_tags.get("is_leader")) and pct_chg > Decimal("2.5")
@@ -325,6 +396,8 @@ class W2SCandidateService:
             strong_grade.upper() not in {"S", "A", "B", "B_KEEP"}
             or watch_status == "removed"
             or extreme_invalid
+            or not legacy_watch_status_pass
+            or not prior7_soft_pass
             or (support_hit_score < Decimal("45") and repair_or_takeover_score < Decimal("45") and strong_gene_score < Decimal("45"))
         )
 
@@ -333,11 +406,16 @@ class W2SCandidateService:
         formal_fail_reason = ""
         if hard_reject:
             reject_reason = "hard_reject"
+            if not legacy_watch_status_pass:
+                reject_reason = "hard_reject_watch_status"
+            elif not prior7_soft_pass:
+                reject_reason = "hard_reject_strong_history_gate"
         else:
             formal_ok = (
                 candidate_score >= Decimal("60")
                 and support_hit_score >= Decimal("60")
                 and repair_or_takeover_score >= Decimal("50")
+                and prior7_formal_gate
                 and formal_day_gate
                 and not overheat_hard_gate
             )
@@ -345,7 +423,7 @@ class W2SCandidateService:
                 formal_ok = True
             if formal_ok:
                 level = "formal"
-            elif observe_day_gate and candidate_score >= Decimal("48"):
+            elif observe_day_gate and candidate_score >= Decimal("48") and prior7_soft_pass:
                 level = "observe_only"
                 if overheat_hard_gate:
                     formal_fail_reason = "overheated_front_row"
@@ -364,6 +442,22 @@ class W2SCandidateService:
                 else:
                     formal_fail_reason = "candidate_score_below_observe"
 
+        # Old-chain compatible S/A formal whitelist gate (source-scoped).
+        sa_whitelist_pass = strong_grade.upper() in {"S", "A"}
+        if (
+            str(source) == "strong_watch_pool"
+            and level == "formal"
+            and self._formal_sa_gate_mode in {"soft", "hard"}
+            and not sa_whitelist_pass
+        ):
+            if self._formal_sa_gate_mode == "hard":
+                level = "reject"
+                reject_reason = "formal_sa_gate_hard"
+                formal_fail_reason = "formal_sa_gate_hard"
+            else:
+                level = "observe_only"
+                formal_fail_reason = "formal_sa_gate_soft_demote"
+
         return {
             "candidate_source": source,
             "pool_rank": rank,
@@ -380,6 +474,9 @@ class W2SCandidateService:
             "gap_source": gap_source,
             "gap_level": str(gap_level),
             "gap_distance_pct": str(gap_distance_pct),
+            "transition_type": transition_type,
+            "transition_confidence": str(transition_confidence),
+            "trigger_flags": trigger_flags,
             "role_tags": role_tags,
             "prior7_limitup_days": prior7_limitup_days,
             "prior7_strong_days": prior7_strong_days,
@@ -395,6 +492,14 @@ class W2SCandidateService:
             "observe_day_gate": observe_day_gate,
             "prior7_formal_gate": prior7_formal_gate,
             "prior7_soft_pass": prior7_soft_pass,
+            "weekly_midterm_gate_passed": weekly_gate_passed,
+            "weekly_midterm_gate_reason": str(weekly_gate_diag.get("reason") or ""),
+            "legacy_watch_status_pass": legacy_watch_status_pass,
+            "legacy_strong_history_pass": legacy_strong_history_pass,
+            "legacy_strong_history_reason": legacy_strong_history_reason,
+            "two_board_entry": two_board_entry,
+            "formal_sa_gate_mode": self._formal_sa_gate_mode,
+            "formal_sa_whitelist_pass": sa_whitelist_pass,
             "formal_w2s_override": formal_w2s_override,
             "gap_formal_override": gap_formal_override,
             "prior7_bonus": str(prior7_bonus),
@@ -451,6 +556,9 @@ class W2SCandidateService:
                 f"gap_source={explain.get('gap_source', '')}",
                 f"gap_level={explain.get('gap_level', '0')}",
                 f"gap_distance_pct={explain.get('gap_distance_pct', '999')}",
+                f"transition_type={explain.get('transition_type', '')}",
+                f"transition_confidence={explain.get('transition_confidence', '0')}",
+                f"trigger_flags={explain.get('trigger_flags', [])}",
                 f"gap_structure_bonus={explain.get('gap_structure_bonus', '0')}",
                 f"gap_repair_bonus={explain.get('gap_repair_bonus', '0')}",
                 f"gap_formal_bias_bonus={explain.get('gap_formal_bias_bonus', '0')}",
@@ -464,7 +572,11 @@ class W2SCandidateService:
                 f"weakness_valid_score={explain['weakness_valid_score']}",
                 f"overheat_penalty={explain['overheat_penalty']}",
                 f"prior7_bonus={explain['prior7_bonus']}",
+                f"weekly_midterm_gate_passed={explain.get('weekly_midterm_gate_passed', True)}",
+                f"weekly_midterm_gate_reason={explain.get('weekly_midterm_gate_reason', '')}",
                 f"formal_bias={explain['formal_w2s_override']}",
+                f"formal_sa_gate_mode={explain.get('formal_sa_gate_mode', 'off')}",
+                f"formal_sa_whitelist_pass={explain.get('formal_sa_whitelist_pass', False)}",
                 f"overheated={explain['overheated']}",
             ]
             if explain.get("reject_reason"):
@@ -496,6 +608,9 @@ class W2SCandidateService:
                 gap_repair_bonus=self._d(explain.get("gap_repair_bonus")),
                 repair_or_takeover_score=self._d(explain.get("repair_or_takeover_score")),
                 weakness_valid_score=self._d(explain.get("weakness_valid_score")),
+                transition_type=str(explain.get("transition_type") or ""),
+                transition_confidence=self._d(explain.get("transition_confidence")),
+                trigger_flags=list(explain.get("trigger_flags") or []),
             )
             candidates.append(candidate)
 

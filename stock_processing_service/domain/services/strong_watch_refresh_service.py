@@ -43,6 +43,7 @@ class StrongWatchRecord:
     prior7_best_watch_score: Decimal = Decimal("0")
     prior7_peak_rank: int = 99
     kept_because: str | None = None
+    admission_status: str = "formal"
 
 
 class StrongWatchRefreshService:
@@ -211,6 +212,24 @@ class StrongWatchRefreshService:
             else:
                 grade = "REJECT"
 
+            recent_limit_up_count = int(metadata.get("recent_limit_up_count") or 0)
+            max_consecutive_limit_up_days = int(metadata.get("max_consecutive_limit_up_days") or 0)
+            final_mainline_alive = bool(metadata.get("final_mainline_alive") or False)
+            final_cycle_state = str(metadata.get("final_cycle_state") or "")
+            transition_type = str(metadata.get("transition_type") or "")
+            transition_confidence = self._d(metadata.get("transition_confidence"), default="0")
+            trigger_flags = list(metadata.get("trigger_flags") or [])
+            board_effect_confirmed = bool(
+                metadata.get("board_effect_confirmed")
+                or int(metadata.get("subject_limit_up_count") or 0) >= 2
+                or int(metadata.get("subject_strong_count") or 0) >= 3
+            )
+            two_board_entry = (
+                max_consecutive_limit_up_days >= 2
+                or recent_limit_up_count >= 2
+                or prior7_limitup_days >= 2
+            )
+
             rows.append(
                 StrongWatchRecord(
                     stock_id=row.stock_id,
@@ -236,6 +255,15 @@ class StrongWatchRefreshService:
                         "is_leader": bool((row.pool_rank or 999) <= 1),
                         "is_front_row_core": bool((row.pool_rank or 999) <= 3),
                         "momentum_positive": bool(bar.pct_chg > Decimal("0")),
+                        "final_mainline_alive": final_mainline_alive,
+                        "final_cycle_state": final_cycle_state,
+                        "transition_type": transition_type,
+                        "transition_confidence": str(transition_confidence),
+                        "trigger_flags": trigger_flags,
+                        "board_effect_confirmed": board_effect_confirmed,
+                        "recent_limit_up_count": recent_limit_up_count,
+                        "max_consecutive_limit_up_days": max_consecutive_limit_up_days,
+                        "two_board_entry": two_board_entry,
                         "prior7_limitup_days": prior7_limitup_days,
                         "prior7_strong_days": prior7_strong_days,
                         "prior7_best_watch_score": str(prior7_best_watch_score),

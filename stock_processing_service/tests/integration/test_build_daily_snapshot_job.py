@@ -88,14 +88,19 @@ class _FakeReadPort:
 class _FakeWritePort:
     def __init__(self) -> None:
         self.calls: dict[str, list[Any]] = {
-            "daily": [],
+            "daily_strategy": [],
+            "daily_market_fallback": [],
             "subject": [],
             "abnormal": [],
             "leaderboard": [],
         }
 
+    async def upsert_stock_daily_strategy_snapshot_rows(self, rows):
+        self.calls["daily_strategy"].append(rows)
+        return len(rows)
+
     async def upsert_stock_daily_snapshot_rows(self, rows):
-        self.calls["daily"].append(rows)
+        self.calls["daily_market_fallback"].append(rows)
         return len(rows)
 
     async def upsert_subject_stock_daily_snapshot_rows(self, rows):
@@ -188,8 +193,9 @@ def test_build_daily_snapshot_job_end_to_end_and_idempotent() -> None:
         )
 
         assert result.status == "ok"
-        assert len(write_port.calls["daily"]) == 1
-        first_daily_row = write_port.calls["daily"][0][0]
+        assert len(write_port.calls["daily_strategy"]) == 1
+        assert len(write_port.calls["daily_market_fallback"]) == 0
+        first_daily_row = write_port.calls["daily_strategy"][0][0]
         assert "evidence_score_flags" in first_daily_row.score_breakdown
         assert "evidence_missing_flags" in first_daily_row.score_breakdown
         assert "evidence_support_refs" in first_daily_row.score_breakdown
@@ -201,7 +207,7 @@ def test_build_daily_snapshot_job_end_to_end_and_idempotent() -> None:
         assert any(e["event_name"] == "leaderboard_updated" for e in event_port.events)
         assert idempotency_port.done
         assert "sps:calendar:2026-04-23" in cache_port.cache
-        assert "sps:stock_daily_snapshot:current:2026-04-23" in cache_port.cache
+        assert "sps:stock_daily_strategy_snapshot:current:2026-04-23" in cache_port.cache
 
         skipped = await job.execute(
             trade_date=date(2026, 4, 23),

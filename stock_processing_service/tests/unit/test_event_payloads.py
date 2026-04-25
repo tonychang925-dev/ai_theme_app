@@ -105,6 +105,9 @@ class _ReadPort:
 
 
 class _WritePort:
+    async def upsert_stock_daily_strategy_snapshot_rows(self, rows):
+        return len(rows)
+
     async def upsert_stock_daily_snapshot_rows(self, rows):
         return len(rows)
 
@@ -175,7 +178,7 @@ def test_event_payloads_grouped_publish() -> None:
     payload = snapshot_events[0]["payload"]
     assert payload.get("domain") == "daily_snapshot"
     assert payload.get("snapshot_version") == "v1"
-    assert payload.get("object_name") == "stock_daily_snapshot"
+    assert payload.get("object_name") == "stock_daily_strategy_snapshot"
 
     # abnormal_detected should be grouped by stock_id (one event per stock)
     stock_ids = {e["payload"].get("stock_id") for e in abnormal_events}

@@ -60,6 +60,10 @@ class StockReadPort(Protocol):
         self, subject_keys: list[str], trade_date: date
     ) -> list[MainlineCycleDTO]: ...
 
+    async def get_prior_strong_watch_pool_rows(
+        self, trade_date: date, lookback_days: int
+    ) -> list[SubjectStockPoolDTO]: ...
+
 
 # Backward-compatible alias
 StockReadPorts = StockReadPort

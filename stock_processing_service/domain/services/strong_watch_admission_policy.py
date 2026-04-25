@@ -44,31 +44,40 @@ class StrongWatchAdmissionPolicy:
         self,
         *,
         prior7_limitup_days: int,
+        recent_limit_up_count: int,
         subject_limit_up_count: int,
         subject_strong_count: int,
+        final_mainline_alive: bool,
+        board_effect_confirmed: bool,
+        two_board_entry: bool,
         pct_chg: Decimal,
         support_type: str,
         support_score: Decimal,
         is_leader: bool,
         rank_order: int,
     ) -> StrongWatchAdmissionDecision:
-        # Rule A: 涨停基因
-        limitup_gene_pass = prior7_limitup_days >= 1
+        # Rule A: 涨停基因（旧链兼容：两连板旁路也视作基因成立）
+        limitup_gene_pass = prior7_limitup_days >= 1 or recent_limit_up_count >= 2 or two_board_entry
 
-        # Rule B: 题材合力（主线+板块合力可在上游 universe gate 保证）
-        theme_synergy_pass = subject_limit_up_count >= 2 or subject_strong_count >= 3
+        # Rule B: 题材合力（主线存活 + 板块合力）
+        # 不再使用“缺统计默认通过”放宽，避免 Layer C 过量纳入。
+        # 两连板旁路由 two_board_entry 处理，而非把所有主线 alive 一律放行。
+        theme_synergy_pass = final_mainline_alive and (
+            board_effect_confirmed or subject_limit_up_count >= 2 or subject_strong_count >= 3
+        )
 
-        # Rule C: 量价健康（审计口径，偏保守）
-        volume_price_health_pass = pct_chg >= Decimal("-5")
+        # Rule C: 量价健康（避免极端日）
+        volume_price_health_pass = Decimal("-6") <= pct_chg <= Decimal("6")
 
-        # Rule D: 结构健康
+        # Rule D: 结构健康（旧链口径优先：gap/前低/平台）
         structure_health_pass = support_type in {
             "gap_support",
             "previous_low",
             "prev_low_support",
             "platform_support",
-            "ma_support",
         } and support_score >= Decimal("55")
+        if support_type == "ma_support" and support_score >= Decimal("70"):
+            structure_health_pass = True
 
         pass_count_4of3 = int(limitup_gene_pass) + int(theme_synergy_pass) + int(volume_price_health_pass) + int(
             structure_health_pass
@@ -76,7 +85,8 @@ class StrongWatchAdmissionPolicy:
 
         # Hard rejects
         reject_no_limitup_gene = not limitup_gene_pass
-        reject_isolated_theme = not theme_synergy_pass
+        # 两连板旁路时不因“非主线协同”直接拒绝
+        reject_isolated_theme = (not theme_synergy_pass) and (not two_board_entry) and (not final_mainline_alive)
         reject_break_support_with_heavy_drop = (not structure_health_pass) and pct_chg <= Decimal("-6")
         reject_junk_follower = (not is_leader) and rank_order > 10 and (not limitup_gene_pass) and (
             not theme_synergy_pass
@@ -98,9 +108,20 @@ class StrongWatchAdmissionPolicy:
         if structure_health_pass:
             pass_reasons.append("structure_health_pass")
 
+        old_chain_hard_pass = bool(
+            limitup_gene_pass
+            and (
+                pass_count_4of3 >= 3
+                or (theme_synergy_pass and recent_limit_up_count >= 2)
+                or (two_board_entry and pass_count_4of3 >= 2)
+                or ((is_leader or rank_order <= 3) and support_score >= Decimal("60"))
+                or (final_mainline_alive and limitup_gene_pass and support_score >= Decimal("60"))
+            )
+        )
+
         if hard_reject_any:
             admission_status = "reject"
-        elif pass_count_4of3 >= 3:
+        elif old_chain_hard_pass:
             admission_status = "formal"
         else:
             admission_status = "observe_only"
