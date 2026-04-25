@@ -7,7 +7,7 @@ from stock_processing_service.contracts.snapshots import (
     PostMarketRecapSnapshot,
     PreMarketBriefSnapshot,
     StockAbnormalEvent,
-    StockDailySnapshot,
+    StockDailyStrategySnapshot,
     SubjectStockDailySnapshot,
     ThemeStockLeaderboard,
 )
@@ -26,8 +26,11 @@ class StockWriteGatewayAdapter:
     def __init__(self, db_gateway: DatabaseGatewayStockFacade) -> None:
         self._db = db_gateway
 
-    async def upsert_stock_daily_snapshot_rows(self, rows: list[StockDailySnapshot]) -> int:
-        return await self._db.upsert_stock_daily_snapshot_rows([_row(r) for r in rows])
+    async def upsert_stock_daily_strategy_snapshot_rows(self, rows: list[StockDailyStrategySnapshot]) -> int:
+        fn = getattr(self._db, "upsert_stock_daily_strategy_snapshot_rows", None)
+        if callable(fn):
+            return await fn([_row(r) for r in rows])
+        return 0
 
     async def upsert_subject_stock_daily_snapshot_rows(self, rows: list[SubjectStockDailySnapshot]) -> int:
         return await self._db.upsert_subject_stock_daily_snapshot_rows([_row(r) for r in rows])

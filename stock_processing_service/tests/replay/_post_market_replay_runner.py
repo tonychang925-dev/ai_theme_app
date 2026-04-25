@@ -35,6 +35,7 @@ from stock_processing_service.infrastructure.gateway_adapters.stock_write_gatewa
 class ReplayExecutionResult:
     trade_date: date
     snapshot_version: str
+    identity_gate_mode: str
     daily_status: str
     daily_affected_rows: int
     recap_status: str
@@ -46,6 +47,7 @@ class ReplayExecutionResult:
 class PreMarketReplayExecutionResult:
     trade_date: date
     snapshot_version: str
+    identity_gate_mode: str
     pre_market_status: str
     brief_doc: dict[str, Any]
     target_diagnostics: dict[str, Any]
@@ -98,8 +100,26 @@ class _ReplayDatabaseStockFacade:
     async def get_existing_post_market_recap_snapshot(self, trade_date: date):
         return await self._gateway.get_existing_post_market_recap_snapshot(trade_date)
 
+    async def get_mainline_identity_by_subject_keys(self, subject_keys: list[str], trade_date: date):
+        return await self._gateway.get_mainline_identity_by_subject_keys(subject_keys, trade_date)
+
+    async def get_mainline_cycle_by_subject_keys(self, subject_keys: list[str], trade_date: date):
+        return await self._gateway.get_mainline_cycle_by_subject_keys(subject_keys, trade_date)
+
+    async def get_prior_strong_watch_pool_rows(self, trade_date: date, lookback_days: int):
+        fn = getattr(self._gateway, "get_prior_strong_watch_pool_rows", None)
+        if callable(fn):
+            return await fn(trade_date, lookback_days=lookback_days)
+        return []
+
     async def upsert_stock_daily_snapshot_rows(self, rows: list[dict[str, Any]]) -> int:
         return await self._gateway.upsert_stock_daily_snapshot_rows(rows)
+
+    async def upsert_stock_daily_strategy_snapshot_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._gateway, "upsert_stock_daily_strategy_snapshot_rows", None)
+        if callable(fn):
+            return int(await fn(rows) or 0)
+        return 0
 
     async def upsert_subject_stock_daily_snapshot_rows(self, rows: list[dict[str, Any]]) -> int:
         return await self._gateway.upsert_subject_stock_daily_snapshot_rows(rows)
@@ -303,6 +323,7 @@ async def run_post_market_replay(
     return ReplayExecutionResult(
         trade_date=trade_date,
         snapshot_version=snapshot_version,
+        identity_gate_mode=str(os.getenv("SPS_IDENTITY_GATE_MODE", "asof")).strip().lower(),
         daily_status=daily_result.status,
         daily_affected_rows=daily_result.affected_rows,
         recap_status=recap_result.status,
@@ -353,6 +374,7 @@ async def run_pre_market_replay(
     return PreMarketReplayExecutionResult(
         trade_date=trade_date,
         snapshot_version=snapshot_version,
+        identity_gate_mode=str(os.getenv("SPS_IDENTITY_GATE_MODE", "asof")).strip().lower(),
         pre_market_status=pre_market_result.status,
         brief_doc=brief_doc,
         target_diagnostics=target_diagnostics,
@@ -435,6 +457,10 @@ async def _build_target_diagnostics(
                 "prior7_best_watch_score": str(refreshed.prior7_best_watch_score),
                 "prior7_peak_rank": refreshed.prior7_peak_rank,
                 "watch_status": refreshed.watch_status,
+                "final_cycle_state": str((refreshed.role_tags or {}).get("final_cycle_state", "")),
+                "transition_type": str((refreshed.role_tags or {}).get("transition_type", "")),
+                "transition_confidence": str((refreshed.role_tags or {}).get("transition_confidence", "0")),
+                "trigger_flags": list((refreshed.role_tags or {}).get("trigger_flags", []) or []),
             }
         if pruned is not None:
             base_trace["prune"] = {

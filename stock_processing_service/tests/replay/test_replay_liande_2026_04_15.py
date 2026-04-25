@@ -46,4 +46,13 @@ async def test_replay_liande_2026_04_15() -> None:
     assert target.get("candidate_score") not in (None, "", "0", 0)
     assert target.get("subject_key")
     assert target.get("subject_name")
+    assert "transition_type" in target
+    assert "transition_confidence" in target
+    assert "trigger_flags" in target
     assert target.get("evidence_rules"), f"missing evidence_rules: {target}"
+
+    diag = result.target_diagnostics.get("605060.SH") or {}
+    refresh = diag.get("refresh") or {}
+    assert "transition_type" in refresh
+    assert "transition_confidence" in refresh
+    assert "trigger_flags" in refresh

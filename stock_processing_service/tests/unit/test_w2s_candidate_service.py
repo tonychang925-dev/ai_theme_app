@@ -44,6 +44,7 @@ def _pool(
         pool_rank=rank,
         metadata={
             "candidate_source": "strong_watch_pool",
+            "watch_status": "active",
             "watch_score": watch_score,
             "support_score": support_score,
             "support_type": "ma_support",
@@ -52,6 +53,9 @@ def _pool(
             "role_tags": {"is_leader": rank == 1, "watch_tier": strong_grade},
             "prior7_limitup_days": prior7_limitup_days,
             "prior7_strong_days": prior7_strong_days,
+            "transition_type": "upgrade",
+            "transition_confidence": "0.85",
+            "trigger_flags": ["state_rank_up"],
         },
     )
 
@@ -60,11 +64,11 @@ def test_w2s_candidate_service_builds_formal_and_observe_only() -> None:
     svc = W2SCandidateService()
     bars = [
         _bar("A.SZ", "-1.5"),
-        _bar("B.SZ", "1.0"),
+        _bar("B.SZ", "2.8"),
     ]
     pool_rows = [
         _pool("A.SZ", 1, watch_score="92", support_score="88", strong_grade="S", prior7_limitup_days=2, prior7_strong_days=3),
-        _pool("B.SZ", 1, watch_score="65", support_score="58", strong_grade="B", prior7_limitup_days=0, prior7_strong_days=1),
+        _pool("B.SZ", 1, watch_score="65", support_score="58", strong_grade="B", prior7_limitup_days=1, prior7_strong_days=1),
     ]
     prior = [
         PriorSnapshotDTO(
@@ -82,6 +86,7 @@ def test_w2s_candidate_service_builds_formal_and_observe_only() -> None:
     assert by_id["B.SZ"].candidate_level == "observe_only"
     assert any(rule.startswith("watch_score=") for rule in by_id["A.SZ"].evidence_rules)
     assert any(rule.startswith("support_hit_score=") for rule in by_id["A.SZ"].evidence_rules)
+    assert any(rule.startswith("transition_type=upgrade") for rule in by_id["A.SZ"].evidence_rules)
 
 
 def test_w2s_candidate_service_rejects_weak_watch_inputs() -> None:
@@ -91,4 +96,30 @@ def test_w2s_candidate_service_rejects_weak_watch_inputs() -> None:
         _pool("C.SZ", 3, watch_score="35", support_score="40", strong_grade="REJECT"),
     ]
     out = svc.build_candidates(bars=bars, pool_rows=pool_rows, prior_rows=[])
+    assert out == []
+
+
+def test_w2s_candidate_service_rejects_when_legacy_strong_history_gate_fails() -> None:
+    svc = W2SCandidateService()
+    bars = [_bar("D.SZ", "-2.0")]
+    row = _pool("D.SZ", 2, watch_score="70", support_score="75", strong_grade="B", prior7_limitup_days=0, prior7_strong_days=1)
+    out = svc.build_candidates(bars=bars, pool_rows=[row], prior_rows=[])
+    assert out == []
+
+
+def test_w2s_candidate_service_formal_sa_gate_soft_demotes_non_sa_formal() -> None:
+    svc = W2SCandidateService(formal_sa_gate_mode="soft")
+    bars = [_bar("E.SZ", "-1.5")]
+    row = _pool("E.SZ", 1, watch_score="90", support_score="88", strong_grade="B", prior7_limitup_days=2, prior7_strong_days=3)
+    out = svc.build_candidates(bars=bars, pool_rows=[row], prior_rows=[])
+    assert len(out) == 1
+    assert out[0].candidate_level == "observe_only"
+    assert any("formal_sa_gate_mode=soft" in x for x in out[0].evidence_rules)
+
+
+def test_w2s_candidate_service_formal_sa_gate_hard_rejects_non_sa_formal() -> None:
+    svc = W2SCandidateService(formal_sa_gate_mode="hard")
+    bars = [_bar("F.SZ", "-1.5")]
+    row = _pool("F.SZ", 1, watch_score="90", support_score="88", strong_grade="B", prior7_limitup_days=2, prior7_strong_days=3)
+    out = svc.build_candidates(bars=bars, pool_rows=[row], prior_rows=[])
     assert out == []

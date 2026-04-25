@@ -76,7 +76,7 @@ class _WritePort:
     def __init__(self):
         self.daily_calls = 0
 
-    async def upsert_stock_daily_snapshot_rows(self, rows):
+    async def upsert_stock_daily_strategy_snapshot_rows(self, rows):
         self.daily_calls += 1
         return len(rows)
 

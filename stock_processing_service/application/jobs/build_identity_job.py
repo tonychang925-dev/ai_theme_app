@@ -10,6 +10,7 @@ from stock_processing_service.contracts.dto import BuildResult
 from stock_processing_service.contracts.events import EventEnvelope, SnapshotBuiltPayload
 from stock_processing_service.domain.services.identity_decider import IdentityDecider
 from stock_processing_service.domain.services.identity_llm_review_service import IdentityLLMReviewService
+from stock_processing_service.domain.services.identity_rule_engine import IdentityRuleEngine, IdentityRuleInput
 from stock_processing_service.domain.services.identity_scoring_service import IdentityScoringService
 from stock_processing_service.domain.services.one_day_tour_detector import OneDayTourDetector
 from stock_processing_service.ports import (
@@ -31,6 +32,7 @@ class BuildIdentityJob:
         tour_detector: OneDayTourDetector | None = None,
         llm_review_service: IdentityLLMReviewService | None = None,
         decider: IdentityDecider | None = None,
+        rule_engine: IdentityRuleEngine | None = None,
     ) -> None:
         self._read_port = read_port
         self._write_port = write_port
@@ -40,6 +42,18 @@ class BuildIdentityJob:
         self._tour_detector = tour_detector or OneDayTourDetector()
         self._llm_review_service = llm_review_service or IdentityLLMReviewService()
         self._decider = decider or IdentityDecider()
+        self._rule_engine = rule_engine or IdentityRuleEngine()
+
+    @staticmethod
+    def _d(value: Any, default: str = "0") -> Decimal:
+        if value is None:
+            return Decimal(default)
+        if isinstance(value, Decimal):
+            return value
+        try:
+            return Decimal(str(value))
+        except Exception:
+            return Decimal(default)
 
     async def execute(
         self,
@@ -86,6 +100,25 @@ class BuildIdentityJob:
                     pct_values.append(bar.pct_chg)
             avg_pct = sum(pct_values, start=Decimal("0")) / Decimal(str(len(pct_values) or 1))
 
+            context_metadata = (ctx_by_subject.get(subject_key).metadata if subject_key in ctx_by_subject else {}) or {}
+
+            strong_event_count_7d = int(context_metadata.get("strong_event_count_7d") or 0)
+            event_count_3d = int(context_metadata.get("event_count_3d") or 0)
+            event_recency_days = int(context_metadata.get("event_recency_days") or 99)
+            event_strength_score = self._d(context_metadata.get("event_strength_score"), default="0")
+            event_continuity_score = self._d(context_metadata.get("event_continuity_score"), default="0")
+            heat_latest = self._d(context_metadata.get("heat_latest"), default="0")
+            avg_heat_5d = self._d(context_metadata.get("avg_heat_5d"), default="0")
+            limit_up_count = int(context_metadata.get("limit_up_count") or 0)
+            limit_up_ratio_today = self._d(context_metadata.get("limit_up_ratio_today"), default="0")
+            board_boom_days_5d = int(context_metadata.get("board_boom_days_5d") or 0)
+            front_row_strength_score = self._d(context_metadata.get("front_row_strength_score"), default="0")
+            front_row_alive_ratio = self._d(context_metadata.get("front_row_alive_ratio"), default="0")
+            net_inflow_sum_5d = self._d(context_metadata.get("net_inflow_sum_5d"), default="0")
+            net_inflow_days_5d = int(context_metadata.get("net_inflow_days_5d") or 0)
+            kline_support_hold = bool(context_metadata.get("kline_support_hold", False))
+            platform_breakout_flag = bool(context_metadata.get("platform_breakout_flag", False))
+
             score = self._scoring_service.score(
                 subject_key=subject_key,
                 subject_name=subject_name,
@@ -93,13 +126,38 @@ class BuildIdentityJob:
                 stock_count=len(rows),
             )
             tour_signal = self._tour_detector.detect(avg_pct_chg=avg_pct, stock_count=len(rows))
+            rule_input = IdentityRuleInput(
+                subject_key=subject_key,
+                subject_name=subject_name,
+                strong_event_count_7d=strong_event_count_7d,
+                event_count_3d=event_count_3d,
+                event_recency_days=event_recency_days,
+                event_strength_score=event_strength_score,
+                event_continuity_score=event_continuity_score,
+                heat_latest=heat_latest,
+                avg_heat_5d=avg_heat_5d,
+                limit_up_count=limit_up_count,
+                limit_up_ratio_today=limit_up_ratio_today,
+                board_boom_days_5d=board_boom_days_5d,
+                front_row_strength_score=front_row_strength_score,
+                front_row_alive_ratio=front_row_alive_ratio,
+                net_inflow_sum_5d=net_inflow_sum_5d,
+                net_inflow_days_5d=net_inflow_days_5d,
+                one_day_tour_flag=tour_signal.one_day_tour_flag,
+                kline_support_hold=kline_support_hold,
+                platform_breakout_flag=platform_breakout_flag,
+            )
+            rule = self._rule_engine.evaluate(rule_input)
             llm_verdict = self._llm_review_service.review(
-                composite_score=score.composite_score,
+                composite_score=rule.composite_score,
                 one_day_tour_flag=tour_signal.one_day_tour_flag,
             )
+            llm_verdict_for_decider = llm_verdict.verdict
+            if llm_verdict_for_decider == "confirmed" and not rule.rule_is_main_theme:
+                llm_verdict_for_decider = "review_pending"
             decision = self._decider.decide(
-                composite_score=score.composite_score,
-                llm_verdict=llm_verdict.verdict,
+                composite_score=rule.composite_score,
+                llm_verdict=llm_verdict_for_decider,
                 one_day_tour_flag=tour_signal.one_day_tour_flag,
             )
 
@@ -107,11 +165,18 @@ class BuildIdentityJob:
                 "trade_date": trade_date.isoformat(),
                 "subject_key": subject_key,
                 "subject_name": subject_name,
-                "logic_score": str(score.logic_score),
-                "market_score": str(score.market_score),
-                "composite_score": str(score.composite_score),
+                "logic_score": str(rule.logic_score),
+                "market_score": str(rule.market_score),
+                "composite_score": str(rule.composite_score),
                 "one_day_tour_flag": tour_signal.one_day_tour_flag,
                 "continuity_signal": tour_signal.continuity_signal,
+                "logic_ok": rule.logic_ok,
+                "market_ok": rule.market_ok,
+                "rule_is_main_theme": rule.rule_is_main_theme,
+                "rule_reasons": rule.reasons,
+                "legacy_composite_score": str(score.composite_score),
+                "llm_verdict": llm_verdict.verdict,
+                "llm_reason": llm_verdict.reason,
                 "identity_status": decision.identity_status,
                 "snapshot_version": snapshot_version,
                 "batch_id": batch_id,
@@ -128,6 +193,9 @@ class BuildIdentityJob:
                         "subject_name": subject_name,
                         "reason": decision.reason,
                         "llm_confidence": str(llm_verdict.confidence),
+                        "llm_verdict": llm_verdict.verdict,
+                        "rule_is_main_theme": rule.rule_is_main_theme,
+                        "rule_reasons": rule.reasons,
                         "snapshot_version": snapshot_version,
                         "batch_id": batch_id,
                         "trace_id": trace_id,

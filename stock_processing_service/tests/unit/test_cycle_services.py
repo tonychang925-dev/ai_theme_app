@@ -279,3 +279,51 @@ def test_cycle_state_sensitivity_to_evidence_gap() -> None:
     assert weak_judgement.final_cycle_state in {"fade_watch", "fade_confirmed"}
     assert weak_judgement.fade_confirmed_evidence_count >= 3
     assert normal_state != weak_judgement.final_cycle_state
+
+
+def test_transition_flat() -> None:
+    svc = StateTransitionService()
+    t = svc.build_transitions({"000001.SZ": "repair"}, {"000001.SZ": "repair"})[0]
+    assert t.transition_type == "flat"
+    assert t.confidence == Decimal("0.75")
+    assert "from=repair" in t.trigger_flags
+    assert "to=repair" in t.trigger_flags
+
+
+def test_transition_upgrade() -> None:
+    svc = StateTransitionService()
+    t = svc.build_transitions({"000001.SZ": "acceleration"}, {"000001.SZ": "start"})[0]
+    assert t.transition_type == "upgrade"
+    assert t.confidence == Decimal("0.90")
+    assert "state_rank_up" in t.trigger_flags
+
+
+def test_transition_downgrade() -> None:
+    svc = StateTransitionService()
+    t = svc.build_transitions({"000001.SZ": "fade_watch"}, {"000001.SZ": "repair"})[0]
+    assert t.transition_type == "downgrade"
+    assert t.confidence == Decimal("0.90")
+    assert "state_rank_down" in t.trigger_flags
+
+
+def test_transition_fade() -> None:
+    svc = StateTransitionService()
+    t = svc.build_transitions({"000001.SZ": "fade_confirmed"}, {"000001.SZ": "acceleration"})[0]
+    assert t.transition_type == "fade"
+    assert t.confidence == Decimal("0.95")
+    assert "enter_fade_confirmed" in t.trigger_flags
+
+
+def test_transition_unknown_prior_defaults_flat_with_flag() -> None:
+    svc = StateTransitionService()
+    t = svc.build_transitions({"000001.SZ": "start"}, {})[0]
+    assert t.transition_type == "flat"
+    assert t.confidence == Decimal("0.65")
+    assert "prior_state_missing" in t.trigger_flags
+
+
+def test_transition_recovery_signal_flag() -> None:
+    svc = StateTransitionService()
+    t = svc.build_transitions({"000001.SZ": "repair"}, {"000001.SZ": "fade_watch"})[0]
+    assert t.transition_type == "upgrade"
+    assert "recovery_signal" in t.trigger_flags

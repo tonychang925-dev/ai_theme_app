@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from dataclasses import field
 from datetime import date
 from decimal import Decimal
 
@@ -22,6 +23,8 @@ class MainlineCycleDTO:
     final_cycle_state: str
     final_mainline_alive: bool
     transition_type: str = ""
+    transition_confidence: Decimal = Decimal("0")
+    trigger_flags: list[str] = field(default_factory=list)
     mainline_strength_score: Decimal = Decimal("0")
     repair_score: Decimal = Decimal("0")
     divergence_score: Decimal = Decimal("0")

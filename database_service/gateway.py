@@ -420,6 +420,18 @@ class DatabaseGateway:
             logger.error(f"读取周期状态失败 trade_date={trade_date}: {e}")
             raise
 
+    async def get_prior_strong_watch_pool_rows(self, trade_date, lookback_days: int) -> List[Dict[str, Any]]:
+        """股票域显式读取：弱转强输入口径（前 N 交易日强势跟踪池历史）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_prior_strong_watch_pool_rows(trade_date, lookback_days=lookback_days)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 strong_stock_watch_history 失败 trade_date={trade_date}, lookback={lookback_days}: {e}")
+            raise
+
     async def upsert_stock_daily_snapshot_rows(self, rows: List[Dict[str, Any]]) -> int:
         """批量 UPSERT stock_daily_snapshot。"""
         try:
@@ -430,6 +442,18 @@ class DatabaseGateway:
         except Exception as e:
             self._record_request(False, start_time)
             logger.error(f"批量写入 stock_daily_snapshot 失败: {e}")
+            raise
+
+    async def upsert_stock_daily_strategy_snapshot_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：stock_daily_strategy_snapshot（策略对象层）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_stock_daily_strategy_snapshot_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"批量写入 stock_daily_strategy_snapshot 失败: {e}")
             raise
 
     async def upsert_subject_stock_daily_snapshot_rows(self, rows: List[Dict[str, Any]]) -> int:
@@ -490,6 +514,18 @@ class DatabaseGateway:
         except Exception as e:
             self._record_request(False, start_time)
             logger.error(f"写入 post_market_recap_snapshot 失败: {e}")
+            raise
+
+    async def upsert_strong_watch_history_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：strong_stock_watch_history。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_strong_watch_history_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"写入 strong_stock_watch_history 失败: {e}")
             raise
 
     async def publish_stock_processing_event(self, event_name: str, payload: Dict[str, Any]) -> str:

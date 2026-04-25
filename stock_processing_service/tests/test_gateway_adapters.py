@@ -38,7 +38,7 @@ class _FakeDb:
     async def get_all_active_themes(self, limit=5000):
         return [{"id": 1, "name": "人工智能"}]
 
-    async def upsert_stock_daily_snapshot_rows(self, rows):
+    async def upsert_stock_daily_strategy_snapshot_rows(self, rows):
         return len(rows)
 
     async def upsert_subject_stock_daily_snapshot_rows(self, rows):
@@ -94,8 +94,15 @@ async def test_db_theme_data_gateway_read_contract():
 @pytest.mark.asyncio
 async def test_db_stock_object_gateway_write_contract():
     adapter = DBStockObjectGateway(db_gateway=_FakeDb())
-    n = await adapter.upsert_stock_daily_snapshot_rows([{"trade_date": date(2026, 4, 22), "stock_id": "000001.SZ"}])
+    n = await adapter.upsert_stock_daily_strategy_snapshot_rows(
+        [{"trade_date": date(2026, 4, 22), "stock_id": "000001.SZ"}]
+    )
     assert n == 1
+
+
+def test_db_stock_object_gateway_has_no_truth_table_write_method():
+    adapter = DBStockObjectGateway(db_gateway=_FakeDb())
+    assert not hasattr(adapter, "upsert_stock_daily_snapshot_rows")
 
 
 @pytest.mark.asyncio

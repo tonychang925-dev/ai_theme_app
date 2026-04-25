@@ -54,7 +54,7 @@ async def has_tushare_truth(gateway: DatabaseGateway, trade_date: date, stock_id
     FROM stock_daily_snapshot
     WHERE trade_date = $1::date
       AND stock_id = $2
-      AND source_name = 'tushare'
+      AND source_name LIKE 'tushare%'
     LIMIT 1
     """
     rows = await gateway._client.execute_query(sql, (trade_date, stock_id))

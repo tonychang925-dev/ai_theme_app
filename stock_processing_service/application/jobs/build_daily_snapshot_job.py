@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import asdict
 from collections import defaultdict
 from datetime import date, datetime, timezone
+from decimal import Decimal
 from uuid import uuid4
 
 from stock_processing_service.application.cache import SnapshotCacheWriter
@@ -20,13 +21,16 @@ from stock_processing_service.contracts.events import (
 )
 from stock_processing_service.contracts.snapshots import (
     StockAbnormalEvent,
-    StockDailySnapshot,
+    StockDailyStrategySnapshot,
     SubjectStockDailySnapshot,
     ThemeStockLeaderboard,
 )
 from stock_processing_service.domain.services.cycle_evidence_builder import CycleEvidenceBuilder
 from stock_processing_service.domain.services.cycle_judgement_service import CycleJudgementService
+from stock_processing_service.domain.services.cycle_judgement_service import CycleJudgement
 from stock_processing_service.domain.services.state_transition_service import StateTransitionService
+from stock_processing_service.domain.services.subject_cycle_evidence_builder import SubjectCycleEvidenceBuilder
+from stock_processing_service.domain.services.subject_cycle_judgement_service import SubjectCycleJudgementService
 from stock_processing_service.ports import (
     IdempotencyPort,
     StockCachePort,
@@ -47,6 +51,8 @@ class BuildDailySnapshotJob:
         evidence_builder: CycleEvidenceBuilder | None = None,
         judgement_service: CycleJudgementService | None = None,
         transition_service: StateTransitionService | None = None,
+        subject_evidence_builder: SubjectCycleEvidenceBuilder | None = None,
+        subject_judgement_service: SubjectCycleJudgementService | None = None,
         daily_projector: DailySnapshotProjector | None = None,
         abnormal_projector: AbnormalEventProjector | None = None,
         leaderboard_projector: LeaderboardProjector | None = None,
@@ -59,6 +65,8 @@ class BuildDailySnapshotJob:
         self._evidence_builder = evidence_builder or CycleEvidenceBuilder()
         self._judgement_service = judgement_service or CycleJudgementService()
         self._transition_service = transition_service or StateTransitionService()
+        self._subject_evidence_builder = subject_evidence_builder or SubjectCycleEvidenceBuilder()
+        self._subject_judgement_service = subject_judgement_service or SubjectCycleJudgementService()
         self._daily_projector = daily_projector or DailySnapshotProjector()
         self._abnormal_projector = abnormal_projector or AbnormalEventProjector()
         self._leaderboard_projector = leaderboard_projector or LeaderboardProjector()
@@ -128,7 +136,34 @@ class BuildDailySnapshotJob:
             )
 
         evidences = self._evidence_builder.build_evidences(bars, pool_rows, context_rows, prior_rows)
-        judgements = self._judgement_service.judge_many(evidences)
+        # Layer B 主判定以 subject_key 为中心，个股仅消费题材主判定结果。
+        subject_evidences = self._subject_evidence_builder.build_many(evidences)
+        subject_judgements = self._subject_judgement_service.judge_many(subject_evidences)
+        subject_judgement_by_key = {j.subject_key: j for j in subject_judgements}
+        judgements = []
+        for e in evidences:
+            s = subject_judgement_by_key.get(e.subject_key)
+            if s is None:
+                # fallback for unexpected empty subject judgement
+                judgements.append(self._judgement_service.judge_one(e))
+                continue
+            judgements.append(
+                CycleJudgement(
+                    stock_id=e.stock_id,
+                    subject_key=e.subject_key,
+                    subject_name=e.subject_name,
+                    mainline_strength_score=s.mainline_strength_score,
+                    fade_watch_score=s.fade_watch_score,
+                    fade_confirmed_score=s.fade_confirmed_score,
+                    divergence_score=s.divergence_score,
+                    repair_score=s.repair_score,
+                    acceleration_score=Decimal("0"),
+                    fermentation_score=Decimal("0"),
+                    fade_confirmed_evidence_count=s.fade_confirmed_evidence_count,
+                    final_cycle_state=s.final_cycle_state,
+                    final_mainline_alive=s.final_mainline_alive,
+                )
+            )
 
         prior_state_by_stock: dict[str, str] = {
             row.stock_id: str(row.payload.get("final_cycle_state", "unknown")) for row in prior_rows
@@ -167,14 +202,21 @@ class BuildDailySnapshotJob:
         affected = 0
         published_events: list[str] = []
         cache_writes = 0
-        affected += await self._write_port.upsert_stock_daily_snapshot_rows(daily_rows)
+        strategy_upsert = getattr(self._write_port, "upsert_stock_daily_strategy_snapshot_rows", None)
+        if callable(strategy_upsert):
+            affected += await strategy_upsert(daily_rows)
+        else:
+            raise RuntimeError(
+                "SnapshotWritePort missing upsert_stock_daily_strategy_snapshot_rows; "
+                "strategy projection must never fallback to stock_daily_snapshot truth table"
+            )
         affected += await self._write_port.upsert_subject_stock_daily_snapshot_rows(subject_daily_rows)
         affected += await self._write_port.upsert_stock_abnormal_event_rows(abnormal_rows)
         affected += await self._write_port.upsert_theme_stock_leaderboard_rows(leaderboard_rows)
 
         for row in daily_rows:
             written = await self._cache_writer.write_row_cache(
-                f"sps:stock_daily_snapshot:{trade_date}:{row.stock_id}",
+                f"sps:stock_daily_strategy_snapshot:{trade_date}:{row.stock_id}",
                 row,
                 ttl_seconds=SnapshotCacheWriter.TTL_24H,
             )
@@ -190,7 +232,7 @@ class BuildDailySnapshotJob:
             )
             cache_writes += 1 if written else 0
         current_written = await self._cache_writer.write_current_version(
-            "sps:stock_daily_snapshot",
+            "sps:stock_daily_strategy_snapshot",
             trade_date,
             snapshot_version,
         )
@@ -210,7 +252,7 @@ class BuildDailySnapshotJob:
                 payload=SnapshotBuiltPayload(
                     domain="daily_snapshot",
                     snapshot_version=snapshot_version,
-                    object_name="stock_daily_snapshot",
+                    object_name="stock_daily_strategy_snapshot",
                     row_count=len(daily_rows),
                     success=True,
                 ),
