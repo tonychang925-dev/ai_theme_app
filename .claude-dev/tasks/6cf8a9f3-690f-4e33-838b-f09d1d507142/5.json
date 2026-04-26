@@ -1,0 +1,9 @@
+{
+  "id": "5",
+  "subject": "Check domain services for IO dependency violation",
+  "description": "检查 stock_processing_service/domain/services 中是否存在越层依赖 IO 实现的代码（domain -> infrastructure, domain -> DB直接调用）",
+  "activeForm": "Checking domain services for IO violations",
+  "status": "in_progress",
+  "blocks": [],
+  "blockedBy": []
+}

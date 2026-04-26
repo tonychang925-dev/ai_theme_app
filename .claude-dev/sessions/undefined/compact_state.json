@@ -1,0 +1,227 @@
+{
+  "session_goal": "阅读文档并分析当前代码架构与文档设计的差距，给出优化建议",
+  "current_task": "汇总所有发现，输出完整的差距分析报告和优化建议清单",
+  "constraints": [
+    "文档第三阶段强调'快照优先于实时'、'双源职责清晰：JYHF负责题材语义，Tushare负责股票日频真源'",
+    "文档要求 domain 层不得依赖 IO 实现，所有数据读写需经 ports + gateway adapters",
+    "文档硬禁止：domain -> infrastructure, domain -> DatabaseGateway, domain -> asyncpg",
+    "文档要求对外真源只允许 6 个冻结对象",
+    "BFF 不得直读旧过程表，只能消费 6 个冻结 snapshot",
+    "domain 层不得 import ports（ports 是边界抽象）"
+  ],
+  "decisions": [
+    {
+      "topic": "新链分层架构",
+      "decision": "stock_processing_service 采用 application/domain/ports/infrastructure/contracts 五层架构，与文档设计一致",
+      "reason": "文档明确要求按此分层落地，确保 domain 层纯业务规则、不耦合 IO"
+    },
+    {
+      "topic": "协议冻结先行",
+      "decision": "文档第14章冻结了 contracts/dto/snapshots/events/ports 签名，实际代码中已有对应文件",
+      "reason": "确保先冻结协议再编码，避免接口漂移"
+    },
+    {
+      "topic": "迁移策略：旧算法保留，旧真源地位不保留",
+      "decision": "旧 stock_service 中的算法能力迁移到 stock_processing_service，旧表和旧过程表降级为算法态/工作池/审计态对象",
+      "reason": "文档明确规定旧 stock_service 不承接新生产逻辑，对外真源统一切换到 6 个冻结对象"
+    },
+    {
+      "topic": "输出层解耦",
+      "decision": "前端/BFF/Notion 只能读冻结对象层（6个snapshot），不得回读旧过程表",
+      "reason": "文档要求 frontend_bff 与 notion_publisher 作为独立只读消费层，不参与核心计算"
+    },
+    {
+      "topic": "WritePort 拆分",
+      "decision": "实际代码将文档中的单一 StockWritePort 拆分为 SnapshotWritePort + AlgorithmStateWritePort 两个协议",
+      "reason": "分离快照写入和算法状态写入职责，符合接口隔离原则"
+    },
+    {
+      "topic": "BFF 读治理系统",
+      "decision": "frontend_bff/repositories/bff_repository.py 实现了 SQL 读治理系统，区分冻结对象表与过程状态表，支持 audit 模式和 hard-block 模式",
+      "reason": "当前默认 audit-only (strict=false)，确保现有业务连续性同时逐步收缩旧表读取"
+    }
+  ],
+  "files_touched": [
+    {
+      "path": "docs/architecture/个人投资助理-项目架构设计-第三阶段.md",
+      "summary": "完整读取了4000+行的第三阶段架构设计文档，包含架构总览、stock_service设计、迁移矩阵、协议冻结清单、首批文件清单、执行计划等",
+      "type": "read"
+    },
+    {
+      "path": "stock_processing_service/ports/read_ports.py",
+      "summary": "StockReadPort 协议接口，与文档冻结签名基本一致，额外增加了 get_stock_daily_bars_range / get_mainline_identity_by_subject_keys / get_mainline_cycle_by_subject_keys / get_prior_strong_watch_pool_rows 方法",
+      "type": "read"
+    },
+    {
+      "path": "stock_processing_service/ports/write_ports.py",
+      "summary": "拆分为 SnapshotWritePort + AlgorithmStateWritePort 两个协议，与文档中的单一 StockWritePort 不完全一致。额外包含algorithm state的写入方法",
+      "type": "read"
+    },
+    {
+      "path": "stock_processing_service/ports/idempotency_ports.py",
+      "summary": "IdempotencyPort 协议接口，与文档冻结签名完全一致",
+      "type": "read"
+    },
+    {
+      "path": "stock_processing_service/ports/cache_ports.py",
+      "summary": "StockCachePort 协议接口，与文档冻结签名基本一致，额外增加了 invalidate_pattern 方法",
+      "type": "read"
+    },
+    {
+      "path": "stock_processing_service/ports/database_gateway_stock_facade.py",
+      "summary": "统一的 DatabaseGatewayStockFacade 协议（30+ 方法），是 infrastructure gateway adapters 的实际依赖目标",
+      "type": "read"
+    },
+    {
+      "path": "stock_processing_service/application/jobs/build_daily_snapshot_job.py",
+      "summary": "日快照构建作业，无SQL无评分细节，通过Ports访问数据，使用CycleEvidenceBuilder/CycleJudgementService等domain services",
+      "type": "read"
+    },
+    {
+      "path": "stock_processing_service/application/jobs/build_identity_job.py",
+      "summary": "题材主线身份构建作业，无SQL，通过port调用IdentityScoringService/OneDayTourDetector/IdentityRuleEngine等domain services",
+      "type": "read"
+    },
+    {
+      "path": "stock_processing_service/application/jobs/build_post_market_recap_job.py",
+      "summary": "盘后回顾构建作业，使用StrongWatchService/W2SCandidateService等domain services，构建strong_watch_history和candidates",
+      "type": "read"
+    },
+    {
+      "path": "stock_processing_service/application/jobs/build_pre_market_brief_job.py",
+      "summary": "盘前简报构建作业，使用W2SCandidateService/W2SConfirmService等domain services",
+      "type": "read"
+    },
+    {
+      "path": "stock_processing_service/application/jobs/run_quality_gate_job.py",
+      "summary": "质量门禁作业，纯文件输出，无SQL，验证snapshot字段完整性和来源合规",
+      "type": "read"
+    },
+    {
+      "path": "stock_processing_service/application/jobs/run_reconciliation_job.py",
+      "summary": "双轨对账作业，对比新旧记录差异并生成差异报告，无评分细节",
+      "type": "read"
+    },
+    {
+      "path": "stock_processing_service/domain/services/",
+      "summary": "27个domain services文件，经全量检查确认零IO违规——无infrastructure引用、无DB客户端、无文件IO、无HTTP调用、无ports依赖",
+      "type": "read"
+    },
+    {
+      "path": "stock_processing_service/infrastructure/gateway_adapters/",
+      "summary": "12个gateway adapter文件，实现从Port协议到DatabaseGatewayStockFacade的适配转换",
+      "type": "read"
+    },
+    {
+      "path": "frontend_bff/app.py",
+      "summary": "83k 单体BFF文件，直接import stock_service的多个服务（WeakToStrongCandidateBuilder、WeakToStrongAuctionService等），违反文档要求",
+      "type": "read"
+    },
+    {
+      "path": "frontend_bff/repositories/bff_repository.py",
+      "summary": "BFF数据库仓库层，实现了读治理系统（冻结对象/过程表分类），但仍直接读取旧过程表（theme_cycle_judgement_v2、weak_to_strong_candidate_pool等）",
+      "type": "read"
+    },
+    {
+      "path": "frontend_bff/realtime_service.py",
+      "summary": "WebSocket实时推送服务集成，依赖database_service.streams.realtime_push_service（当前视为可选依赖）",
+      "type": "read"
+    },
+    {
+      "path": "notion_sync_manager.py",
+      "summary": "Notion同步管理单文件，使用notion_client SDK，不依赖stock_service",
+      "type": "read"
+    },
+    {
+      "path": "database_service/gateway.py",
+      "summary": "统一数据库网关（单例+门面模式），是实际DB访问层，内部使用asyncpg",
+      "type": "read"
+    },
+    {
+      "path": "database_service/managers/postgres_manager.py",
+      "summary": "PostgreSQL连接管理器，直接使用asyncpg创建连接池和执行SQL",
+      "type": "read"
+    }
+  ],
+  "known_failures": [
+    {
+      "type": "architectural_violation",
+      "location": "frontend_bff/app.py:25-32",
+      "summary": "BFF 直接 import stock_service 的多个模块（WeakToStrongCandidateBuilder等），违反文档'BFF不得依赖旧stock_service'的要求",
+      "resolved": false
+    },
+    {
+      "type": "architectural_violation",
+      "location": "frontend_bff/repositories/bff_repository.py",
+      "summary": "BFF 通过SQL直接读取旧过程表（theme_cycle_judgement_v2, weak_to_strong_candidate_pool, weak_to_strong_auction_signal, mainline_state_daily, mainline_state_transition, pre_market_execution_plan, subject_rank_daily等），虽然实现了治理审计但默认audit-only不阻断",
+      "resolved": false
+    },
+    {
+      "type": "architectural_violation",
+      "location": "frontend_bff/test_confirm.py:11",
+      "summary": "测试文件直接从stock_service导入服务",
+      "resolved": false
+    },
+    {
+      "type": "missing_service",
+      "location": "recap_service",
+      "summary": "独立的 recap_service 服务不存在，当前盘后回顾逻辑内嵌在 stock_service 和 frontend_bff 中",
+      "resolved": false
+    },
+    {
+      "type": "missing_service",
+      "location": "notion_publisher",
+      "summary": "独立的 notion_publisher 服务不存在，仅有单文件 notion_sync_manager.py",
+      "resolved": false
+    },
+    {
+      "type": "deviation_from_doc",
+      "location": "stock_processing_service/ports/write_ports.py",
+      "summary": "WritePort 拆分为两个协议，与文档中单一的 StockWritePort 不完全匹配",
+      "resolved": true
+    },
+    {
+      "type": "missing_service",
+      "location": "Industry Chain Graph Service",
+      "summary": "产业链图谱服务没有任何实现，仅有 theme_service 中的两个行业分类脚本",
+      "resolved": false
+    },
+    {
+      "type": "deviation_from_doc",
+      "location": "stock_processing_service/ports",
+      "summary": "Documentation freezes StockReadPort but actual code adds 4 extra methods not in the frozen signature (get_stock_daily_bars_range, get_mainline_identity_by_subject_keys, get_mainline_cycle_by_subject_keys, get_prior_strong_watch_pool_rows)",
+      "resolved": false
+    },
+    {
+      "type": "testing_gap",
+      "location": "stock_processing_service/tests",
+      "summary": "需要验证回放样本（神剑/联德）的完成度，当前未检查",
+      "resolved": false
+    }
+  ],
+  "open_questions": [
+    "recap_service 和 notion_publisher 作为独立服务是否存在？当前未找到对应目录，仅有单文件实现",
+    "frontend_bff 的 83k app.py 单体文件是否需要按文档要求拆分为独立服务模块？",
+    "SSE/WebSocket 实时推送能力虽然已有 realtime_service.py 集成，但依赖的 database_service.streams.realtime_push_service 是否已完整实现并上线？",
+    "旧 stock_service 是否仍有前置业务依赖导致不能完全下线？BFF 对其的直接 import 说明至少 weak_to_strong 流程仍在使用旧库",
+    "产业链图谱服务（Industry Chain Graph Service）需要何种轻量实现？",
+    "双轨切流的 BFF 灰度 feature flag 实际部署情况如何？DAILY_SNAPSHOT_FLAG 等环境变量是否有实际线上配置？",
+    "BFF 读治理系统的 BFF_STRICT_FROZEN_OBJECT_READ 何时可以切换为 true？需要哪些前置条件？",
+    "stock_processing_service 的测试回放样本（神剑/联德）的完成度和回放质量如何？"
+  ],
+  "next_actions": [
+    "完成差距分析报告输出：汇总所有发现的合规/违规项",
+    "评估 BFF 直读旧过程表的影响范围和迁移优先级",
+    "制定旧 stock_service 的逐步下线和迁移计划",
+    "检查 stock_processing_service/tests 中的回放样本完成度（神剑/联德）",
+    "检查双轨对账脚本（run_reconciliation_job）的实际输出和差异分析报告",
+    "评估 recap_service 缺失对前端的实际影响并确定是否需要新建独立服务",
+    "给出完整的差距分析报告和优化建议清单（7-10项高优先级建议）"
+  ],
+  "metadata": {
+    "timestamp": "2026-04-25T13:23:08.095Z",
+    "model": "gpt-5.4",
+    "level": "medium",
+    "schema_version": "1.0"
+  }
+}

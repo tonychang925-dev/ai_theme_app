@@ -1,10 +1,15 @@
 {
-  "numStartups": 4,
+  "numStartups": 5,
   "tipsHistory": {
     "new-user-warmup": 1,
     "plan-mode-for-complex-tasks": 1,
-    "memory-command": 3
+    "memory-command": 3,
+    "shift-enter": 5,
+    "theme-command": 5,
+    "colorterm-truecolor": 5
   },
+  "promptQueueUseCount": 1,
+  "showExpandedTodos": true,
   "firstStartTime": "2026-04-10T03:13:03.179Z",
   "opusProMigrationComplete": true,
   "sonnet1m45MigrationComplete": true,
@@ -28,13 +33,13 @@
       "hasClaudeMdExternalIncludesApproved": false,
       "hasClaudeMdExternalIncludesWarningShown": false,
       "exampleFiles": [
-        "theme_processor.py",
-        "theme_service.py",
+        "w2s_candidate_service.py",
+        "_post_market_replay_runner.py",
+        "postgres_manager.py",
         "gateway.py",
-        "test_theme_processor.py",
-        "265.md\""
+        "build_post_market_recap_job.py"
       ],
-      "exampleFilesGeneratedAt": 1776215576133,
+      "exampleFilesGeneratedAt": 1777122411750,
       "lastCost": 0,
       "lastAPIDuration": 0,
       "lastAPIDurationWithoutRetries": 0,
@@ -69,5 +74,6 @@
   },
   "lastReleaseNotesSeen": "2.1.88-source.0",
   "officialMarketplaceAutoInstallAttempted": true,
-  "officialMarketplaceAutoInstalled": true
+  "officialMarketplaceAutoInstalled": true,
+  "showSpinnerTree": false
 }
