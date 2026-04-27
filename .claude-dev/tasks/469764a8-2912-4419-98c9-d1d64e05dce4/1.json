@@ -1,0 +1,9 @@
+{
+  "id": "1",
+  "subject": "探索旧链 Layer A 输出相关数据库表操作",
+  "description": "搜索 theme_mainline_identity_registry 和 mainline_state_daily 表的引用及 SQL/ORM 写入代码",
+  "activeForm": "搜索旧链数据库表引用",
+  "status": "in_progress",
+  "blocks": [],
+  "blockedBy": []
+}

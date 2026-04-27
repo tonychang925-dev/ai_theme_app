@@ -1,0 +1,9 @@
+{
+  "id": "18",
+  "subject": "Test write path and backfill identity data",
+  "description": "Verify the fix works by running BuildIdentityJob and confirming data lands in the table",
+  "activeForm": "Testing write path and backfilling data",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

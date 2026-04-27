@@ -1,0 +1,9 @@
+{
+  "id": "25",
+  "subject": "Analyze theme_data_complete JSONL schemas for heat/fund flow mapping",
+  "description": "Understand the exact schema of history/, daily/, and stock_details/ JSONL files to map fields to required metadata (heat_latest, avg_heat_5d, net_inflow_sum_5d, net_inflow_days_5d)",
+  "activeForm": "Analyzing JSONL schemas",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

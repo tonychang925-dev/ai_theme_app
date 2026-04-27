@@ -1,0 +1,9 @@
+{
+  "id": "11",
+  "subject": "Create _layer_a_replay_runner.py",
+  "description": "Data adapter + orchestrator + JSON output + diff.json auto-generation for Layer A replay testing",
+  "activeForm": "Creating _layer_a_replay_runner.py",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

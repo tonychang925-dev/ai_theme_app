@@ -1,0 +1,9 @@
+{
+  "id": "14",
+  "subject": "Analyze and implement UniverseBuilder coverage strategy adjustment",
+  "description": "Analyze the root cause of UniverseBuilder blocking 99% of pool rows (due to Layer B covering only 8/668 keys), propose and implement a fallback strategy that balances architectural intent (non-mainline subjects should be blocked) with pragmatism (confirmed mainline subjects lacking cycle data should not be blocked)",
+  "activeForm": "Implementing UniverseBuilder coverage strategy",
+  "status": "in_progress",
+  "blocks": [],
+  "blockedBy": []
+}

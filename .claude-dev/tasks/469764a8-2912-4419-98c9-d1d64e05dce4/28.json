@@ -1,0 +1,8 @@
+{
+  "id": "28",
+  "subject": "Revert CTE SQL changes in postgres_manager.py",
+  "description": "Revert heat_stats/flow_stats/market_stats/board_boom_stats/event_stats_21d CTE modifications while keeping the upsert write methods",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

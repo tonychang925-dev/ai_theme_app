@@ -1,0 +1,8 @@
+{
+  "id": "31",
+  "subject": "Add JSONL enrichment to BuildIdentityJob",
+  "description": "Implement JSONL-based enrichment in BuildIdentityJob for heat_latest, avg_heat_5d, net_inflow_sum_5d, net_inflow_days_5d. Read theme_data_complete/history/{subject_id}_history.jsonl and theme_data_complete/stock_daily/{subject_id}_{date}_stocks.jsonl.",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

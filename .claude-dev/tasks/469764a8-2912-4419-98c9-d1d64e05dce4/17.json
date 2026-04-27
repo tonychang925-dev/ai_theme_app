@@ -1,0 +1,9 @@
+{
+  "id": "17",
+  "subject": "Add upsert_mainline_identity_review_queue_rows to both PostgresDatabaseManager and DatabaseGateway",
+  "description": "Same fix for the review queue write path",
+  "activeForm": "Adding upsert method for review queue",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}
