@@ -432,6 +432,27 @@ class DatabaseGateway:
             logger.error(f"读取 strong_stock_watch_history 失败 trade_date={trade_date}, lookback={lookback_days}: {e}")
             raise
 
+    async def get_subject_event_stats(
+        self,
+        trade_date,
+        subject_keys: List[str] | None = None,
+        lookback_days: int = 7,
+    ) -> List[Dict[str, Any]]:
+        """股票域显式读取：按 subject_keys 聚合事件统计（news_event + event_theme_map + theme_master）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_subject_event_stats(
+                trade_date=trade_date,
+                subject_keys=subject_keys,
+                lookback_days=lookback_days,
+            )
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 subject_event_stats 失败 trade_date={trade_date}: {e}")
+            raise
+
     async def upsert_stock_daily_snapshot_rows(self, rows: List[Dict[str, Any]]) -> int:
         """批量 UPSERT stock_daily_snapshot。"""
         try:

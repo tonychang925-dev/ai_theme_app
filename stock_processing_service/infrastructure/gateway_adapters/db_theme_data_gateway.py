@@ -78,6 +78,19 @@ class DBThemeDataGateway:
         payload = snapshot.get("payload") or {}
         return payload.get("theme_events", [])
 
+    async def get_subject_event_stats(
+        self,
+        trade_date,
+        subject_keys: list[str] | None = None,
+        lookback_days: int = 7,
+    ) -> list[dict[str, Any]]:
+        rows = await self._db.get_subject_event_stats(
+            trade_date=trade_date,
+            subject_keys=subject_keys,
+            lookback_days=lookback_days,
+        )
+        return [dict(row) for row in rows]
+
     async def get_theme_stock_pool(self, trade_date: date) -> list[dict[str, Any]]:
         return await self.get_subject_stock_pool_by_trade_date(trade_date)
 
