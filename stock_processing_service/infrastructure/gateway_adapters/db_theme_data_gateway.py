@@ -117,6 +117,18 @@ class DBThemeDataGateway:
             )
         return results
 
+    async def get_subject_cycle_evidence_daily(
+        self,
+        trade_date,
+        subject_keys: list[str] | None = None,
+    ) -> list[dict[str, Any]]:
+        """读取旧链 theme_cycle_evidence_daily 预计算证据。"""
+        rows = await self._db.get_subject_cycle_evidence_daily(
+            trade_date=trade_date,
+            subject_keys=subject_keys,
+        )
+        return [self._as_dict(r) for r in rows]
+
     async def get_theme_stock_pool(self, trade_date: date) -> list[dict[str, Any]]:
         return await self.get_subject_stock_pool_by_trade_date(trade_date)
 

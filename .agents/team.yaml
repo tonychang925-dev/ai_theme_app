@@ -1,0 +1,43 @@
+# Team-based approval workflow
+# Claude = developer (submits requests)
+# Tony = architect (reviews & approves)
+
+team:
+  name: ai-theme-app
+  design_docs:
+    - "项目架构设计-股票服务模块（核心算法&流程）.md"
+    - "主线判定与周期跟踪及弱转强联动设计方案.md"
+
+roles:
+  architect:
+    members: ["tony"]
+    can_approve: ["code_change", "git_operation", "dependency_change", "design_change"]
+  developer:
+    members: ["claude"]
+    can_request: true
+
+# Rules: which role must approve which type of command
+approval_rules:
+  - pattern: "git push|git commit|git tag"
+    require_role: architect
+    category: git_operation
+    message: "Git 操作需架构师审批"
+    design_doc_required: false
+
+  - pattern: "npm install|npm uninstall|pip install|pip uninstall|bun install"
+    require_role: architect
+    category: dependency_change
+    message: "依赖变更需架构师审批"
+    design_doc_required: false
+
+  - pattern: "rm -rf|sudo|chmod 777|> /etc/"
+    require_role: architect
+    category: dangerous
+    message: "危险操作需架构师审批"
+    auto_deny: true
+
+  - pattern: "python3.*autopilot_runner|bash.*scripts/.*deploy"
+    require_role: architect
+    category: design_change
+    message: "架构变更需架构师根据设计文档审批"
+    design_doc_required: true

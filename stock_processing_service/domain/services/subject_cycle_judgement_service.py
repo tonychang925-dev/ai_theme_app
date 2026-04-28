@@ -70,14 +70,19 @@ class SubjectCycleJudgementService:
             + e.leader_alive_score * Decimal("0.16")
         )
 
+        # ── 退潮证据 6 项（对齐生产 _count_fade_confirmed_evidence()）──
         evidence_count = 0
         if e.leader_breakdown_flag:
             evidence_count += 1
         if e.limit_down_count >= 1:
             evidence_count += 1
-        if e.big_drop_ratio >= Decimal("0.20"):
+        if e.red_ratio <= Decimal("0.45"):
             evidence_count += 1
-        if e.relay_strength_score < Decimal("40"):
+        if e.big_drop_ratio >= Decimal("0.30"):
+            evidence_count += 1
+        if e.relay_strength_score <= Decimal("35"):
+            evidence_count += 1
+        if e.theme_support_score <= Decimal("35"):
             evidence_count += 1
 
         fade_confirmed_flag = fade_confirmed >= self.THRESH_FADE_CONFIRMED and evidence_count >= 3

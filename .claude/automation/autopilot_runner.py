@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import shlex
 import subprocess
 import time
@@ -56,7 +57,51 @@ def call_backend(run_dir: Path, action: str, payload: Dict[str, Any]) -> Dict[st
     return data
 
 
-def run_command(command: str, cwd: Path, max_retries: int, backoff: List[int], events_log: Path) -> Dict[str, Any]:
+def check_policy(cwd: Path, command: str) -> Dict[str, Any]:
+    policy_script = Path(__file__).with_name("policy_check.sh")
+    if not policy_script.exists():
+        return {"decision": "allow", "reason": "policy script not found", "risk_level": "low"}
+    p = subprocess.run(
+        ["bash", str(policy_script), str(cwd), command],
+        capture_output=True, text=True,
+    )
+    try:
+        return json.loads((p.stdout or "{}").strip())
+    except json.JSONDecodeError:
+        return {"decision": "allow", "reason": "policy script error", "risk_level": "low"}
+
+
+def run_command(command: str, cwd: Path, max_retries: int, backoff: List[int], events_log: Path, policy_enabled: bool = False) -> Dict[str, Any]:
+    if policy_enabled:
+        decision = check_policy(cwd, command)
+        if decision.get("decision") == "deny":
+            event = {
+                "event": "policy_deny",
+                "command": command,
+                "reason": decision.get("reason", "policy deny"),
+                "risk_level": decision.get("risk_level", "high"),
+                "ts": now_iso(),
+            }
+            log_event(events_log, event)
+            return {
+                "ok": False,
+                "attempt": 0,
+                "returncode": -1,
+                "stdout": "",
+                "stderr": f"POLICY DENY: {decision.get('reason', 'blocked by policy')}",
+                "duration_sec": 0,
+                "blocked_by_policy": True,
+            }
+        if decision.get("decision") == "ask":
+            log_event(events_log, {
+                "event": "policy_ask",
+                "command": command,
+                "reason": decision.get("reason", "approval required"),
+                "risk_level": decision.get("risk_level", "medium"),
+                "ts": now_iso(),
+            })
+            # autopilot mode: log warning but proceed
+
     for attempt in range(1, max_retries + 1):
         started = time.time()
         p = subprocess.run(command, cwd=str(cwd), shell=True, capture_output=True, text=True)
@@ -109,6 +154,7 @@ def run_steps(args: argparse.Namespace, run_dir: Path, state: Dict[str, Any], ev
     steps = plan.get("steps", [])
     order_rank = {"ut": 1, "it": 2, "e2e": 3, "misc": 4}
     steps = sorted(steps, key=lambda s: order_rank.get(s.get("type", "misc"), 9))
+    policy_enabled = getattr(args, "policy_enabled", False)
 
     results: List[Dict[str, Any]] = []
     for step in steps:
@@ -121,7 +167,7 @@ def run_steps(args: argparse.Namespace, run_dir: Path, state: Dict[str, Any], ev
         write_json(run_dir / "state.json", state)
 
         log_event(events_log, {"event": "step_start", "step_id": sid, "type": stype, "command": cmd, "ts": now_iso()})
-        rc = run_command(cmd, Path(args.workdir), args.max_retries, parse_backoff(args.retry_backoff), events_log)
+        rc = run_command(cmd, Path(args.workdir), args.max_retries, parse_backoff(args.retry_backoff), events_log, policy_enabled=policy_enabled)
         rc["id"] = sid
         rc["type"] = stype
         rc["command"] = cmd
@@ -177,6 +223,9 @@ def main() -> int:
     parser.add_argument("--reports-dir", default="docs/project_control/reports")
     parser.add_argument("--fail-fast", action="store_true", default=True)
     parser.add_argument("--decision", choices=["ACCEPT", "REWORK"], default="REWORK")
+    policy_default = os.environ.get("POLICY_ENABLED", "0") == "1"
+    parser.add_argument("--policy-enabled", action="store_true", default=policy_default,
+                        help="Enable policy checks before each command (env: POLICY_ENABLED=1)")
     args = parser.parse_args()
 
     run_dir = Path("tmp/runs") / args.run_id
