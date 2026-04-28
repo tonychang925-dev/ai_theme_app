@@ -1,0 +1,9 @@
+{
+  "id": "22",
+  "subject": "Clean up debug logging from _test_identity_write_path.py",
+  "description": "Remove debug sections (lines 136-158) — direct write port test, direct gateway call test. Keep core verification logic.",
+  "activeForm": "Cleaning up test file",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

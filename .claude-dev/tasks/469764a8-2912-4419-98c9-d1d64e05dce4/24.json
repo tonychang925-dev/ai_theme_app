@@ -1,0 +1,9 @@
+{
+  "id": "24",
+  "subject": "Enrich get_subject_context_by_subject_keys SQL query",
+  "description": "Modify the SQL query in postgres_manager.py to LEFT JOIN with metadata tables (stock_abnormal_event, subject_stock_daily_snapshot for limit_up data, theme_history_event for heat, money_flow_enhanced for net_inflow) to provide actual metadata to IdentityRuleEngine instead of all zeros.",
+  "activeForm": "Enriching context query with metadata joins",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

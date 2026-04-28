@@ -18,3 +18,7 @@ model_service/models/qwen2.5
 .pytest_cache
 .vscode/
 venv/
+.claude/
+.claude-dev/
+theme_data_complete/
+tmp/

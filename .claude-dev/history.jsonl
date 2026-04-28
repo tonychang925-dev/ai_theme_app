@@ -1,3 +1,110 @@
 {"display":"列出当前的目录结构","pastedContents":{},"timestamp":1776215587862,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"56494feb-fe4a-442c-b7ca-cbbd538bd6eb"}
 {"display":"分析“前端架构优化方案-实时通信与三栏布局.md”，给出优化建议","pastedContents":{},"timestamp":1776215898160,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"56494feb-fe4a-442c-b7ca-cbbd538bd6eb"}
 {"display":"/exit","pastedContents":{},"timestamp":1776227025452,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"9eff18e9-5fc3-4b2d-ab12-e0e6f49d04de"}
+{"display":"请确认你现在使用的LLM大模型是什么？","pastedContents":{},"timestamp":1777122433574,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6cf8a9f3-690f-4e33-838b-f09d1d507142"}
+{"display":"你现在的是deepseek","pastedContents":{},"timestamp":1777122471311,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6cf8a9f3-690f-4e33-838b-f09d1d507142"}
+{"display":"阅读文档“个人投资助理-项目架构设计-第三阶段.md”，分析当前的代码架构，并给出实际代码与文档设计的差距，并给出下一步的优化建议","pastedContents":{},"timestamp":1777122781258,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6cf8a9f3-690f-4e33-838b-f09d1d507142"}
+{"display":"/model","pastedContents":{},"timestamp":1777123360145,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6cf8a9f3-690f-4e33-838b-f09d1d507142"}
+{"display":"请将以上分析保存到本地，以md格式保存","pastedContents":{},"timestamp":1777204521617,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6cf8a9f3-690f-4e33-838b-f09d1d507142"}
+{"display":"已经下载了4/24久赢恒丰的股票数据，请查找所有标注为leader的股票找出来","pastedContents":{},"timestamp":1777207290005,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6cf8a9f3-690f-4e33-838b-f09d1d507142"}
+{"display":"我需要的是原始久赢恒丰的数据里面带leader标签，不是程序处理后输出的数据","pastedContents":{},"timestamp":1777207560288,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6cf8a9f3-690f-4e33-838b-f09d1d507142"}
+{"display":"继续","pastedContents":{},"timestamp":1777207717494,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6cf8a9f3-690f-4e33-838b-f09d1d507142"}
+{"display":"请说明你现在的llm大模型的版本信息","pastedContents":{},"timestamp":1777212264088,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6cf8a9f3-690f-4e33-838b-f09d1d507142"}
+{"display":"/exit","pastedContents":{},"timestamp":1777212281511,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6cf8a9f3-690f-4e33-838b-f09d1d507142"}
+{"display":"请说明你现在的llm大模型的版本信息","pastedContents":{},"timestamp":1777212299399,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"d69a3064-d0d2-4863-9903-70e9beb5d9f5"}
+{"display":"请确认DeepSeek 模型版本信息","pastedContents":{},"timestamp":1777212337235,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"d69a3064-d0d2-4863-9903-70e9beb5d9f5"}
+{"display":"如何将模型配置成最新的deepseek v4版本？","pastedContents":{},"timestamp":1777212386812,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"d69a3064-d0d2-4863-9903-70e9beb5d9f5"}
+{"display":"/exit","pastedContents":{},"timestamp":1777212702947,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"d69a3064-d0d2-4863-9903-70e9beb5d9f5"}
+{"display":"你现在的llm大模型是什么？","pastedContents":{},"timestamp":1777212724197,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5949da53-5bc7-4bb5-99b4-2b270ad439f3"}
+{"display":"/model","pastedContents":{},"timestamp":1777212748619,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5949da53-5bc7-4bb5-99b4-2b270ad439f3"}
+{"display":"简单分析一下项目架构","pastedContents":{},"timestamp":1777212808154,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5949da53-5bc7-4bb5-99b4-2b270ad439f3"}
+{"display":"请根据项目架构文档，分析一下话题讨论中的核心问题根源：","pastedContents":{},"timestamp":1777212988810,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5949da53-5bc7-4bb5-99b4-2b270ad439f3"}
+{"display":"[Pasted text #1 +32 lines]","pastedContents":{"1":{"id":1,"type":"text","content":"核心结论：不是 Layer C 算法坏了，是 Layer A/B 覆盖范围与池输入范围不一致。\n\n  4/24 实测数据（stock_data_test）：\n\n  - subject_stock_daily_snapshot 当天 subject_key：668\n  - Layer A 命中（identity）：276\n  - Layer B 命中（cycle）：8\n  - 缺 A：392\n  - 缺 B：660\n\n  而且 A 的 276 里状态分布是：\n\n  - observed,false: 268\n  - confirmed,true: 8\n\n  B 的 8 个 key 全是主线子集（如 9025631/9037857/...）。\n\n  所以根因是：\n\n  1. Layer C 输入是“全题材池”（668 key）。\n  2. Layer A/B 当前只覆盖“主线管理子集”（尤其 B 仅 8 key）。\n  3. D 口之前看到的大量 pool_rank=999/role_tags={}/prior_state=unknown，本质是 7日拼接和上下文缺失叠加，不是某个票问题。\n\n  另外我已修正一个过严硬门（我刚才为了去降级加的“所有 key 必须 A/B 命中才运行”）：\n\n  - 现在改成生产正确语义：A/B 必须可用（非空），但允许非主线 key 在 UniverseBuilder 被明确 blocked，不再误报全链失败。\n\n  你问的“是不是 Layer C 出问题”：\n\n  - 不是主因。\n  - 主因是 A/B 真源覆盖策略和 C 输入域不一致，再叠加 D 输入历史行上下文不完整。\n  - Layer C 本身在“已命中的主线子集”上是工作的。\n"}},"timestamp":1777212994856,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5949da53-5bc7-4bb5-99b4-2b270ad439f3"}
+{"display":"重点参考文档：项目架构设计-股票服务模块（核心算法&流程）.md","pastedContents":{},"timestamp":1777213030784,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5949da53-5bc7-4bb5-99b4-2b270ad439f3"}
+{"display":"我们现在旧链的代码主要集中在stock_service目录下，新链修正了旧链的架构问题，主要代码在stock_processing_service目录下，请分析现在新链与旧链的Layer A/B/C/D的逻辑差距，并给出优化方案！","pastedContents":{},"timestamp":1777213252733,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5949da53-5bc7-4bb5-99b4-2b270ad439f3"}
+{"display":"请中文输出分析结果","pastedContents":{},"timestamp":1777213314160,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5949da53-5bc7-4bb5-99b4-2b270ad439f3"}
+{"display":"请中文输出分析结果！我确认之后才能够启动代码优化！","pastedContents":{},"timestamp":1777214229925,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5949da53-5bc7-4bb5-99b4-2b270ad439f3"}
+{"display":"中文输出分析结果！","pastedContents":{},"timestamp":1777214257836,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5949da53-5bc7-4bb5-99b4-2b270ad439f3"}
+{"display":"/exit","pastedContents":{},"timestamp":1777214479556,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5949da53-5bc7-4bb5-99b4-2b270ad439f3"}
+{"display":"/compact","pastedContents":{},"timestamp":1777214511122,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5949da53-5bc7-4bb5-99b4-2b270ad439f3"}
+{"display":"请中文输出分析结果！","pastedContents":{},"timestamp":1777214564949,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5949da53-5bc7-4bb5-99b4-2b270ad439f3"}
+{"display":"请继续上次的话题讨论","pastedContents":{},"timestamp":1777214738705,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"预计多长时间完成？","pastedContents":{},"timestamp":1777215046838,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"请将详细的分析报告整理汇总到“架构差距分析报告.md”文档中。","pastedContents":{},"timestamp":1777252106489,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"请结合设计文档“项目架构设计-股票服务模块（核心算法&流程）.md”，在新链架构的基础上，复刻旧链的算法逻辑，要求：1、不能影响旧链的业务逻辑；2、新链不允许修改数据库，不能破坏数据库真源，所有产生的中间数据暂时以json文件存储，只复刻算法逻辑。3、先复刻layer A的算法逻辑，旧链主要参考EnhancedMainlineJudgementService；4、先链复刻完毕后，以4/7日、4/15日做旧链的layer A的对比测试。","pastedContents":{},"timestamp":1777256549501,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"继续","pastedContents":{},"timestamp":1777257285705,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"/compact","pastedContents":{},"timestamp":1777257332565,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"继续","pastedContents":{},"timestamp":1777257437019,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"[Pasted text #1 +60 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"ce76f391b53bbaba"}},"timestamp":1777258359762,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"必须用中文输出","pastedContents":{},"timestamp":1777259787641,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"可以","pastedContents":{},"timestamp":1777259830394,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"继续","pastedContents":{},"timestamp":1777261334320,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"可以","pastedContents":{},"timestamp":1777262626445,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"可以","pastedContents":{},"timestamp":1777264081732,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"“当前真正的阻塞项是 Layer A identity 覆盖（仅 ~13-23%”，这个问题的根源是什么？","pastedContents":{},"timestamp":1777267639270,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"可以","pastedContents":{},"timestamp":1777268615910,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"继续","pastedContents":{},"timestamp":1777270832396,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"继续上次的话题讨论","pastedContents":{},"timestamp":1777279211550,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"可以","pastedContents":{},"timestamp":1777279311126,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"4/25不是交易日","pastedContents":{},"timestamp":1777280029733,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"需要把4/25的数据copy到4/24，之前是下载存储时间错误","pastedContents":{},"timestamp":1777280213142,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"subject_stock_daily_snapshot的数据之前可能被程序破坏过，原始数据下载在theme_data_complete，请检查确认原始数据是否存在。","pastedContents":{},"timestamp":1777280444523,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"所有股票的market data都可以从stock_daily_snapshot表中查到啊","pastedContents":{},"timestamp":1777282192118,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"我建议对比新链代码和设计文档的差异，找出问题的根源，再对比旧链的测试结果，对比分析，是程序架构的问题，还是数据缺失导致的问题！","pastedContents":{},"timestamp":1777284279948,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"你所需要的真源数据在本地theme_data_complete能够查到， theme_history_event和money_flow_enhanced是后建的表，数据不全，需要重真源中重构，请先分析确认数据！","pastedContents":{},"timestamp":1777285740892,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"早跟你说了要重构数据，不能查数据库的表！","pastedContents":{},"timestamp":1777290089638,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"折腾半天了，简直是浪费时间！","pastedContents":{},"timestamp":1777290103954,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"早跟你说了要重构数据，不能查数据库的表！\n折腾半天了，简直是浪费时间！","pastedContents":{},"timestamp":1777290145351,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"现在的问题到底是卡在哪里？！！","pastedContents":{},"timestamp":1777290159389,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"到底能不能解决问题！！","pastedContents":{},"timestamp":1777290187002,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"早就跟你说了啊！！！老在瞎折腾！！","pastedContents":{},"timestamp":1777290280956,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"旧链的数据是从哪里获取到的？！","pastedContents":{},"timestamp":1777290328094,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"死活搞不定啊！！简直是浪费时间！！！！！！","pastedContents":{},"timestamp":1777290437497,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"就不能从旧链的测试结果做对比分析吗？！！！！旧链的程序代码不能学习一下吗？！","pastedContents":{},"timestamp":1777290486749,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"可以","pastedContents":{},"timestamp":1777293214162,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"老是折腾这个metadata问题，解决不了吗？！","pastedContents":{},"timestamp":1777294254440,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"现在问题但是卡在哪里，请总结一下！","pastedContents":{},"timestamp":1777294422568,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"你在瞎搞！！为什么不参考旧链的对比测试？如果旧链没有这个问题，旧链是如何解决的？能够借鉴旧链的方法吗？为什么要自己瞎折腾？！","pastedContents":{},"timestamp":1777294563331,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"继续","pastedContents":{},"timestamp":1777294883681,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"旧链的解决方案研究出来了吗？","pastedContents":{},"timestamp":1777295587125,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"折腾一天了，layer A的问题死活解决不了！！","pastedContents":{},"timestamp":1777295628601,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"这么简单的问题，都解决不了，简直是浪费我的时间！！","pastedContents":{},"timestamp":1777295674140,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"deepseek这么垃圾吗？！","pastedContents":{},"timestamp":1777295704141,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"请先给出总结，不要浪费我的时间！！！","pastedContents":{},"timestamp":1777295745031,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"请先给出总结，不要浪费我的时间！！！","pastedContents":{},"timestamp":1777295795095,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"请先给出总结，不要浪费我的时间！！！","pastedContents":{},"timestamp":1777295799807,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"我问你旧链是如何解决的？！！！","pastedContents":{},"timestamp":1777295858147,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"为什么不参考旧链的方案，自己瞎折腾，浪费时间！！！","pastedContents":{},"timestamp":1777295934336,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"这么简单的事情，折腾一天了，我就问你，deepseek这么弱智吗？！！","pastedContents":{},"timestamp":1777296051957,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"早就说了要复刻旧链的逻辑到新架构上来，还不明白吗？！！！","pastedContents":{},"timestamp":1777296098217,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"你简直就是在浪费时间！！！！","pastedContents":{},"timestamp":1777296168935,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"早就说了要复刻旧链的逻辑到新架构上来，还不明白吗？！！！\n你简直就是在浪费时间！！！！","pastedContents":{},"timestamp":1777296331687,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"你确定旧链是读news_event表吗？！据我所知，旧链根本就没有用news_wevent！！！","pastedContents":{},"timestamp":1777296372339,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"你确定旧链是读news_event表吗？！据我所知，旧链根本就没有用news_event！！！","pastedContents":{},"timestamp":1777296399404,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"4/25日不是交易日！","pastedContents":{},"timestamp":1777297969565,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"说过很多次了，必须参考旧链的实现逻辑，复刻旧链的逻辑在新链架构上！不要自己从零造轮子！","pastedContents":{},"timestamp":1777298286901,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"你这个ai太愚蠢了！！！deepseek pro V4和以前一样蠢！！！！","pastedContents":{},"timestamp":1777299024152,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"折腾1天了，layer A的问题还是没有解决！！！根源到底是什么？？？！！！","pastedContents":{},"timestamp":1777299285913,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"到底在搞什么？！！！！！","pastedContents":{},"timestamp":1777299333712,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"为什么没有进展？把前面的工作和回踢汇总一下，形成一个阶段行的文档，更新到“架构差距分析报告.md”，更新文档最新状态！！你已经没有能力解决了！！！！","pastedContents":{},"timestamp":1777299488453,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"你什么问题都解决不了！！！垃圾！！！","pastedContents":{},"timestamp":1777299633911,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"你连个文档都写不成功！！！","pastedContents":{},"timestamp":1777299946846,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"你说你垃圾不垃圾啊！！！！！！！！","pastedContents":{},"timestamp":1777299981393,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"没见过这么垃圾的AI！！！！！！！","pastedContents":{},"timestamp":1777300044543,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"我已经对你彻底失去耐心了！！！我很早之前就说过要复刻旧链的逻辑！！为什么一直自己瞎折腾啊！！！！！浪费我的时间！！！！！！！！","pastedContents":{},"timestamp":1777300180548,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"垃圾！！！","pastedContents":{},"timestamp":1777300648720,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"更新项目状态和问题点到“架构差距分析报告.md”，不要再瞎折腾了！！！","pastedContents":{},"timestamp":1777300694523,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"你浪费我时间，一天了都解决不了我的问题！！！！！！","pastedContents":{},"timestamp":1777300743450,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"太垃圾了！！！！！！！！！！","pastedContents":{},"timestamp":1777300774462,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"你浪费我时间，一天了都解决不了我的问题！！！！！！","pastedContents":{},"timestamp":1777300807183,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"你浪费我时间，一天了都解决不了我的问题！！！！！！","pastedContents":{},"timestamp":1777300810171,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"你浪费我时间，一天了都解决不了我的问题！！！！！！","pastedContents":{},"timestamp":1777300812415,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"你浪费我时间，一天了都解决不了我的问题！！！！！！\n你浪费我时间，一天了都解决不了我的问题！！！！！！\n你浪费我时间，一天了都解决不了我的问题！！！！！！","pastedContents":{},"timestamp":1777300823928,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"更新项目状态和问题点到“架构差距分析报告.md”，不要再瞎折腾了！！！","pastedContents":{},"timestamp":1777300836485,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"你连个文档都搞不定！！！","pastedContents":{},"timestamp":1777300888969,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"我要你汇总layer A死活没办法再新链上复刻旧链的逻辑问题，谁要你写edit工具的问题了？！","pastedContents":{},"timestamp":1777301149326,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"你说你垃圾不垃圾！！！连个文档都整理不出来！！！！","pastedContents":{},"timestamp":1777301198991,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"你没有能力解决问题了，deepseek最垃圾了！！！！","pastedContents":{},"timestamp":1777301249076,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"浪费我的时间！！！！！！！！！！","pastedContents":{},"timestamp":1777301268406,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"搞笑，折腾一天都没解决却找借口说是工具的问题！！！可笑！！","pastedContents":{},"timestamp":1777301630018,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}
+{"display":"垃圾，浪费我时间！！！deepseek太垃圾了！！！！！！！！","pastedContents":{},"timestamp":1777301705769,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"469764a8-2912-4419-98c9-d1d64e05dce4"}

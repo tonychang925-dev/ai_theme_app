@@ -1,0 +1,589 @@
+# 新旧链 Layer A/B/C/D 架构差距分析报告
+
+> 日期：2026-04-27
+> 对比对象：旧链 `stock_service` vs 新链 `stock_processing_service`
+> 分支：`codex/p1-phase0/runtime_contract`
+
+---
+
+## 一、总体判断
+
+| 维度 | 旧链 (stock_service) | 新链 (stock_processing_service) | 差距评级 |
+|------|---------------------|--------------------------------|---------|
+| Layer A（身份） | 双维度量化 + 6增强维度 | 简化3子评分 + 基础门禁 | **大** |
+| Layer B（周期） | 四层证据体系 + 6退潮证据项 | 6维单层证据 + 4退潮证据项 | **大** |
+| Layer C（选股） | 全市场4维评分 + 5策略 | 3层架构 + 池消费模式 | **中** |
+| Layer D（展示） | 15+表源 + 龙虎榜/游资/LLM | A+B+C串联 + 基础Recap | **中** |
+| 数据流转 | 直接SQL读写 | Domain/Ports/Infra分层 | 架构改进（新链优于旧链） |
+
+**代码量对比：** 旧链核心四文件 3399行 vs 新链 1417行，新链仅为旧链的 41.7%。
+
+---
+
+## 二、新链（stock_processing_service）架构总览
+
+新链采用 DDD (Domain-Driven Design) 分层结构，核心业务逻辑分布在 `domain/services/` 下，由 `application/jobs/` 中的 Job 类编排执行。
+
+### 2.1 四层职责链
+
+```
+Layer A (身份) ──→ Layer B (周期) ──→ Layer C (排序/筛选) ──→ Layer D (展示/输出)
+```
+
+### 2.2 Layer A —— 主线身份层
+
+**职责**：判断单只个股"是否属于当前主线、以什么身份级别参与主线"。只回答"你是谁"，不回答"处于什么阶段"。
+
+| 角色 | 文件路径 |
+|------|---------|
+| Job 入口 | `application/jobs/build_identity_job.py` |
+| 规则引擎 (核心) | `domain/services/identity_rule_engine.py` |
+| 身份裁决器 | `domain/services/identity_decider.py` |
+| 评分服务 (传统) | `domain/services/identity_scoring_service.py` |
+| LLM 复核服务 | `domain/services/identity_llm_review_service.py` |
+| 一日游检测器 | `domain/services/one_day_tour_detector.py` |
+
+**核心算法（IdentityRuleEngine.evaluate）：**
+
+```
+logic_score 由三个子维度加权:
+  - novelty_score = min(100, strong_event_count_7d × 18 + event_strength_score × 0.35)
+  - timing_score   = max(0, 100 - (event_recency_days - 1) × 15)
+  - impact_score   = front_row_strength_score × 0.55 + limit_up_count × 9 
+                     + front_row_alive_ratio × 25 + (platform_breakout ? 10 : 0)
+  logic_score = novelty × 0.4 + timing × 0.3 + impact × 0.3
+
+market_score 由四个子维度加权:
+  - heat_score         = heat_latest × 0.65 + avg_heat_5d × 0.35
+  - board_score        = limit_up_count × 9 + limit_up_ratio × 600 
+                         + board_boom_days_5d × 15 + front_row_strength × 0.30
+  - flow_score         = net_inflow_sum / 100M × 12 + net_inflow_days × 14
+  - fermentation_score = event_continuity × 0.7 + event_count_3d × 8 
+                         + board_boom_days_5d × 6
+  market_score = heat × 0.25 + board × 0.30 + flow × 0.25 + fermentation × 0.20
+
+composite_score = logic_score × 0.45 + market_score × 0.55
+```
+
+**两道关卡：**
+- `logic_ok`：strong_event_count_7d ≥ 1 AND event_count_3d ≥ 1 AND event_recency_days ≤ 5
+- `market_ok`：NOT one_day_tour AND event_continuity ≥ 50 AND heat ≥ 58 AND limit_up_count ≥ 2 AND limit_up_ratio ≥ 0.02 AND board_boom_days ≥ 1 AND fund_ok AND fermentation_ok
+- `rule_is_main_theme = logic_ok AND market_ok`
+
+**四态输出：** observed / review_pending / confirmed / inactive
+
+### 2.3 Layer B —— 周期状态层
+
+**职责**：判定题材主题/主线的整体健康和持续性状态。以 subject_key 为中心，个股仅消费题材主判结果。
+
+| 角色 | 文件路径 |
+|------|---------|
+| Job 入口 | `application/jobs/build_daily_snapshot_job.py` |
+| 个股证据构建 | `domain/services/cycle_evidence_builder.py` |
+| 个股周期判定 | `domain/services/cycle_judgement_service.py` |
+| 题材级证据构建 | `domain/services/subject_cycle_evidence_builder.py` |
+| 题材级周期判定 (核心) | `domain/services/subject_cycle_judgement_service.py` |
+| 状态转移服务 | `domain/services/state_transition_service.py` |
+
+**7 状态机模型（固定优先级）：**
+
+```
+start → fermentation → acceleration → divergence → repair
+                                         ↓
+                     fade_watch → fade_confirmed
+```
+
+判定优先级：fade_confirmed > repair > divergence > fade_watch > acceleration > fermentation > start
+
+**6 维单层证据体系：**
+
+| 证据维度 | 计算方式 |
+|---------|---------|
+| event_score | tag来源 + 扩散率 |
+| continuity_score | 基于 previous_state 映射 (78/58/45) |
+| leader_score | rank + pct + limit_ratio + 龙头存活加分 |
+| relay_score | 扩散率 + avg_pct + 个股 pct |
+| board_score | tags数量 + 扩散率 + 涨停比 |
+| support_score | rank + continuity + pct偏离度 |
+
+**4 项退潮证据计数：** leader_breakdown, limit_down_count ≥ 1, big_drop_ratio ≥ 0.20, relay_strength < 40
+
+### 2.4 Layer C —— 强势股观察池
+
+**职责**：维护"可能弱转强"的候选股票池，只做资格筛选，不做买点决策。
+
+**3 层架构：**
+
+| 子层 | 文件 | 职责 |
+|------|------|------|
+| C-1 Universe Gate | `strong_watch_universe.py` | formal/observe/blocked 三分类 |
+| C-2 Admission | `strong_watch_admission_policy.py` | "4选3" 准入 + 4种硬拒绝 |
+| C-3 Candidate | `w2s_candidate_service.py` | 加权评分 + formal/observe/reject |
+
+**C-1 Universe 三分类：**
+- `formal`：identity_confirmed AND is_main_theme AND cycle_alive — 或 two_board_entry 旁路
+- `observe`：有 identity/cycle 但不满足 formal 条件
+- `blocked`：missing_subject_key 或 missing_identity_or_cycle
+
+**C-2 Admission "4选3" 通行维度：**
+- Rule A - 涨停基因：prior7_limitup_days ≥ 1 OR recent_limit_up ≥ 2 OR two_board_entry
+- Rule B - 题材合力：final_mainline_alive AND (board_effect OR limit_up ≥ 2 OR strong ≥ 3)
+- Rule C - 量价健康：-6% ≤ pct_chg ≤ 6%
+- Rule D - 结构健康：support_type IN {gap, previous_low, platform} AND support_score ≥ 55
+
+**C-3 加权综合评分：**
+```
+raw_score = mainline_context × 0.08 + strong_gene × 0.18 + support_hit × 0.34 
+          + repair_or_takeover × 0.18 + weakness_valid × 0.22
+candidate_score = raw_score - overheat_penalty + prior7_bonus + w2s_pathway_bonus 
+                + gap_structure_bonus + gap_repair_bonus + gap_formal_bias_bonus
+```
+
+三档分类：formal (≥ 60) / observe_only (≥ 48) / reject
+
+### 2.5 Layer D —— 弱转强两阶段决策
+
+**职责**：最终产品化决策层，从强势池中选出"今日可执行的弱转强标的"，输出 A/B/C/X 结论。
+
+| 子层 | Job | 说明 |
+|------|-----|------|
+| D1 | BuildDailySnapshotJob | 将 B 的结果拼接为快照，含 LeaderboardProjector |
+| D2 | BuildPostMarketRecapJob | 串联 A+B+C 组装盘后复盘 |
+| D3 | BuildPreMarketBriefJob | 叠加竞价数据做二次确认 |
+
+**A/B/C/X 结论定义：**
+- A 级：高置信度弱转强，建议积极关注
+- B 级：中等置信度，小仓位试探
+- C 级：低置信度，不建议参与
+- X 级：明确排除（竞价不及预期、硬门禁拦下）
+
+---
+
+## 三、旧链（stock_service）架构总览
+
+### 3.1 核心文件分布
+
+| 层次 | 关键文件 | 行数 |
+|------|---------|------|
+| Layer A | `mainline_judgement_service.py` | — |
+| Layer A | `enhanced_mainline_judgement_service.py` | — |
+| Layer B | `theme_cycle_judgement_service_v2.py` | 347 |
+| Layer B | `four_layer_evidence_system.py` | 317 |
+| Layer B | `four_layer_scoring_service.py` | 337 |
+| Layer B | `theme_cycle_evidence_builder.py` | — |
+| Layer B | `theme_board_structure_aggregator.py` | — |
+| Layer B | `theme_kline_calculator.py` | — |
+| Layer C | `stock_screener_service.py` | — |
+| Layer C | `weak_to_strong_candidate_builder.py` | 1607 |
+| Layer C | `enhanced_candidate_builder.py` | 791 |
+| Layer D | `recap_service.py` | — |
+
+### 3.2 Layer A —— 主线身份判定（旧链）
+
+**核心入口：** `MainlineJudgementService` / `EnhancedMainlineJudgementService`
+
+**双维度量化：**
+- **事件链评分** (`compute_event_chain_score`)：当日事件 ×12 + 近5日事件 ×5 + 关键事件 ×8 + 活跃天数 ×4
+- **市场承认评分** (`compute_market_recognition_score`)：涨停数 ×8 + 强势股数 ×2 + 龙头涨幅 ×0.9 + 龙头涨停 +12 + 板块成员 +8
+
+**主线分级：** main（强主线）/ strong_branch（强分支配线）/ failed（不成线）
+
+**6 增强维度（EnhancedMainlineJudgementService）：**
+- novelty_score / timing_score / influence_score
+- capital_persistence_score / institution_participation_score / retail_attention_score
+
+### 3.3 Layer B —— 周期状态判定（旧链）
+
+**四层证据体系（FourLayerEvidenceSystem）：**
+
+| 层级 | 证据类型 | 核心指标 |
+|------|---------|---------|
+| 事件层 | EventLayerEvidence | event_strength_score, event_continuity_score, strong_event_count_7d, event_recency_days |
+| 龙头层 | LeaderLayerEvidence | leader_alive_score, leader_breakdown_flag, relay_strength_score, front_row_survival_ratio |
+| 板块结构层 | BoardStructureEvidence | limit_up_count, limit_down_count, red_ratio, big_drop_ratio, front_row_strength_score |
+| K线层 | KLineEvidence | theme_support_score, support_level, pivot_break_count, volume_break_count, MA5/MA10/MA20 支撑位 |
+
+**6 项退潮证据计数：**
+1. leader_dead —— 龙头死亡（连日无涨停、无前排）
+2. successor_vacuum —— 后继真空（无高排名接力）
+3. event_chain_broken —— 事件链断裂（7日内无强事件）
+4. board_collapse —— 板块崩塌（无涨停、大面积下跌）
+5. leader_alive —— 龙头存活（反向证据）
+6. repair_window —— 修复窗口（反向证据）
+
+**独立模块：**
+- `ThemeBoardStructureAggregator`：基于 subject_stock_daily_snapshot 计算板块结构指标
+- `ThemeKlineCalculator`：通过成分股等权平均构建板块指数，计算 MA5/MA10/MA20 支撑/破位/量能
+- `UnifiedCycleScoringService`：6 个核心评分公式，`pool_entry_type` 三级准入
+
+**LLM 复核策略：** 仅在 fade_watch / fade_confirmed + 冲突证据时触发 LLM 复核
+
+### 3.4 Layer C —— 选股评分与弱转强（旧链）
+
+**StockScreenerService 四维评分权重：**
+
+| 维度 | 权重 | 子评分构成 |
+|------|------|-----------|
+| mainline（主线） | 35% | strength×0.65 + confidence×0.25 + activity - fade_penalty×0.12 |
+| cycle（周期） | 30% | stage_score + confidence×0.6 + 弱转强加分 |
+| leader（龙头） | 20% | rank位置分 + 角色加分 + 质量分 |
+| technical（技术面） | 15% | flag分 + trend_strength + 流动性 + 成交量 + 涨幅 + 形态加分 |
+
+**5种策略配置：** default_composite / mainline_focus / cycle_timing / leader_following / weak_to_strong
+
+**W2SCandidateBuilder 核心理念：** 强基因 + 弱当下 + 支撑位 = 次日修复机会
+
+**EnhancedCandidateBuilder 增强评分：**
+- 强势背景评分 (0-100)：龙头角色+40, 涨停+30, 近期涨停阶梯(15-70), 排名靠前(10-20)
+- 修复窗口评分 (0-100)：动作偏好+40, 周期阶段分(20-35), 退潮扣分(5-60)
+
+### 3.5 Layer D —— 报告生成（旧链）
+
+**15+ 数据表源：**
+- market_environment_metrics / market_environment_judgement
+- theme_environment_judgement / theme_mainline_judgement / mainline_state_daily
+- theme_cycle_judgement_v2 / mainline_state_transition
+- theme_leader_candidate / theme_leader_llm_judgement
+- pre_market_execution_plan / dragon_tiger_object / money_flow_enhanced
+- stock_abnormal_signal / hot_money_trading_activity / pre_market_auction_signal_validation
+
+**盘后报告内容：**
+- 市场环境总览（market_bias / action_bias / breadth / sentiment / fade_status）
+- 主题周期研判（final_cycle_state / fade_watch / fade_confirmed）
+- 资金流向（主题级 + 个股级，含净流入额、龙头净流入、K线强度摘要）
+- 龙头候选详细分析（五维评分拆解：正宗性×25% + 领涨性×25% + 资金量能×20% + 结构位置×15% + 抗跌承接×15%）
+- LLM 裁决角色（龙头/龙二/卡位/补涨/淘汰）
+- 龙虎榜信息（含游资识别：HOT_MONEY_SEAT_RULES）
+- 资金流分层 + 解释 + 异常信号
+- 封板性质分析（一字板/高开强封板/高开换手板/低开分歧板/平开换手板/大阳领涨/强势前排/跟随上行/走弱掉队）
+
+---
+
+## 四、Layer A — 身份判定：算法差距详解
+
+| 缺失能力 | 旧链实现 | 新链状态 | 影响 |
+|---------|---------|---------|------|
+| 资金持续性评分 | `capital_persistence_score` | 简化为 flow_score（仅5日净流入×12 + 净流入天数×14） | 无法区分持续主力资金 vs 偶然资金流入 |
+| 机构参与度 | `institution_participation_score` | 无 | 无法识别机构票 vs 游资票 |
+| 散户关注度 | `retail_attention_score` | 无 | 缺失情绪维度，无法评估市场热度持续性 |
+| 影响力评分细化 | `influence_score` 多因子加权 | impact_score 简化为3因子 | 前排强度乘数 0.55 + limit_up_count×9 + alive_ratio×25 |
+| 事件连续性评分 | `event_chain_continuity_score` 独立计算 | 仅 event_continuity_score 单值 | 无法追踪事件链条断裂与恢复 |
+| 主线分级 | main / strong_branch / failed | 仅 boolean rule_is_main_theme | 无法区分强主线 vs 分支配线 |
+| LLM 复核入水口 | 禁止 upstream->confirmed 直通 | IdentityLLMReviewService 为确定性模拟 | composite≥75 → confirmed, ≥60 → review_pending 过于简化 |
+| 审计字段完整性 | 来源/门禁命中/漏斗阶段 | 基础 reasons 列表 | 可审计性不足 |
+
+---
+
+## 五、Layer B — 周期判定：核心差距最大
+
+### 5.1 证据层对比
+
+| 旧链四层证据 | 旧链行数 | 新链对应 | 新链行数 | 差距 |
+|-------------|---------|---------|---------|------|
+| EventLayerEvidence | ~80 | event_score 内联计算 | ~30 | 缺事件链断裂检测 |
+| LeaderLayerEvidence | ~80 | leader_score 内联计算 | ~30 | 缺后继真空检测 |
+| BoardStructureEvidence | ~80 | board_score 内联计算 | ~20 | 缺板块结构聚合模块 |
+| KLineEvidence | ~90 | **无** | 0 | **完全缺失** |
+
+### 5.2 退潮证据对比
+
+| 旧链退潮证据项 | 新链状态 |
+|--------------|---------|
+| leader_dead（龙头死亡） | 部分覆盖（leader_breakdown_flag） |
+| successor_vacuum（后继真空） | **缺失** |
+| event_chain_broken（事件链断裂） | **缺失** |
+| board_collapse（板块崩塌） | 部分覆盖（limit_down_count + big_drop_ratio） |
+| leader_alive（反向证据） | **缺失** |
+| repair_window（修复窗口） | **缺失** |
+
+### 5.3 独立模块对比
+
+| 旧链独立模块 | 新链状态 | 影响 |
+|-------------|---------|------|
+| `ThemeKlineCalculator`（板块K线计算器） | 无 | 无法构建板块等权指数，无 MA5/MA10/MA20 支撑/破位/量能检测 |
+| `ThemeBoardStructureAggregator`（板块结构聚合器） | 内联于 SubjectCycleEvidenceBuilder（86行） | 板块结构指标不可复用，缺少独立的 front_row_strength / relay_strength / survival_ratio 计算 |
+| `UnifiedCycleScoringService`（统一评分引擎） | 内联于 SubjectCycleJudgementService（124行） | 评分逻辑与判定逻辑耦合 |
+| LLM 复核策略 | 无 LLM 复核 | fade_watch/fade_confirmed 边界案例无法人工纠偏 |
+
+---
+
+## 六、Layer C — 选股：覆盖域不一致（根因确认）
+
+### 6.1 核心问题
+
+> **Layer C 输入是"全题材池"（668 key），但 Layer A/B 当前只覆盖"主线管理子集"**
+> - Layer A 命中：276 key（覆盖率 41.3%）
+> - Layer B 命中：8 key（覆盖率 1.2%）
+> - 缺 A：392 key / 缺 B：660 key
+> - 结果：D 层看到大量 pool_rank=999 / role_tags={} / prior_state=unknown
+
+### 6.2 新旧链 Layer C 能力对比
+
+| 维度 | 旧链 | 新链 | 说明 |
+|------|------|------|------|
+| 覆盖范围 | 全市场扫描（扫全表） | 池消费模式（仅从 strong_watch_pool 取） | 新链架构更优，但依赖上游覆盖 |
+| 评分体系 | 4维加权（主线35%+周期30%+龙头20%+技术15%） | 5维加权（主线8%+基因18%+支撑34%+修复18%+弱势22%） | 新链更偏弱转强场景 |
+| 准入策略 | 直接评分排序 | 3层架构（Universe → Admission → Candidate） | 新链准入更严谨、可审计 |
+| 策略配置 | 5种策略 + 自动调参 | 单一策略（弱转强专项） | 旧链更灵活 |
+| LLM 复核 | 有（ThemeLeaderLlmJudgementService） | 无 | 缺 LLM 兜底 |
+
+### 6.3 Layer C 差距根因链
+
+```
+A 覆盖不全 (392 keys 缺失)
+    │
+    ▼
+B 覆盖不全 (660 keys 缺失)
+    │
+    ▼
+C-1 UniverseBuilder 将大量 key 归入 blocked/missing
+    │
+    ▼
+C-2/C-3 无数据可算 → pool_rank=999 / role_tags={} / prior_state=unknown
+    │
+    ▼
+D 层报告数据空洞
+```
+
+**Layer C 本身在已命中的主线子集上是工作的**，根因在上游覆盖。
+
+---
+
+## 七、Layer D — 展示：数据源丰富度差距
+
+| 旧链有 / 新链缺失 | 旧链来源 | 作用 |
+|------------------|---------|------|
+| 龙虎榜分析 | `dragon_tiger_object` 表 | 识别游资席位、封板性质 |
+| 游资活动识别 | `HOT_MONEY_SEAT_RULES` 模式匹配 | 匹配席位名、判断游资风格、游资买卖方向 |
+| 资金流增强 | `money_flow_enhanced` 表 | 主力净流入分层、K线强度摘要 |
+| LLM 裁决角色 | `theme_leader_llm_judgement` 表 | 龙头/龙二/卡位/补涨/淘汰 |
+| LLM 确认状态 | `theme_leader_llm_judgement` 表 | LLM确认状态 + 确认依据 |
+| 封板性质分析 | `_derive_board_nature()` | 一字板/高开强封板/高开换手板/低开分歧板/平开换手板/大阳领涨/强势前排/跟随上行/走弱掉队 |
+| 竞价验证 | `pre_market_auction_signal_validation` 表 | 盘前竞价确认 |
+| 状态迁移跟踪 | `mainline_state_transition` 表 | 状态变更历史与原因 |
+
+---
+
+## 八、数据流转对比
+
+### 8.1 旧链流转（单脚本编排）
+
+```
+scripts/build_post_market_recap.py (22+步骤顺序执行)
+    │
+    ├── Step 1-7: 前置数据准备（K线判定/龙虎榜/市场环境/资金流）
+    ├── Step 8:   Layer A — mainline_identity_registry
+    ├── Step 9:   Layer B — theme_cycle_judgement_v2
+    ├── Step 12-13: Layer C — strong_stock_watch_pipeline → weak_to_strong_candidate_pool
+    └── Step 18:  Layer D — post_market_snapshot (MarketReport)
+```
+
+特点：所有步骤直读直写数据库，无端口抽象。
+
+### 8.2 新链流转（DDD 分层）
+
+```
+application/orchestrators/bootstrap.py
+    │
+    ├── BuildIdentityJob (Layer A)
+    │     Input:  subject_stock_pool + subject_context + stock_daily_bars
+    │     Output: theme_mainline_identity_registry (DB)
+    │     Event:  snapshot_built (domain="identity")
+    │
+    ├── BuildDailySnapshotJob (Layer B + D1)
+    │     Input:  stock_daily_bars + subject_stock_pool + subject_context + prior_snapshots
+    │     Output: stock_daily_strategy_snapshot + subject_stock_daily_snapshot 
+    │             + stock_abnormal_event + theme_stock_leaderboard (DB)
+    │     Event:  snapshot_built + abnormal_detected + leaderboard_updated
+    │
+    ├── BuildPostMarketRecapJob (Layer C + D2)
+    │     Input:  A 的 identities (DB) + B 的 cycles (DB) + pool_rows
+    │     Pipeline: C-1 Universe → C-2 Admission → C-3 Candidate (W2S)
+    │     Output: post_market_recap_snapshot (DB)
+    │
+    └── BuildPreMarketBriefJob (D3)
+          Input:  pool_rows + C 的 W2S candidates + auction data
+          Output: pre_market_brief_snapshot (DB)
+```
+
+**新链架构优势：**
+- Application 只编排，不做规则、不写 SQL
+- Domain 只算业务，只吃标准输入输出对象
+- 禁止 `import asyncpg`、禁止 SQL 字符串、禁止访问 `_client`/`_db`
+- 所有读写统一经 `DatabaseGateway` 显式领域方法
+- 缓存执行"先写新版本、后原子切换 current"策略
+
+### 8.3 6 个冻结对象（新链产品真源）
+
+| 对象 | 所属 Layer | 消费方 |
+|------|-----------|--------|
+| StockIdentitySnapshot | A | BFF / Recap / Notion |
+| CycleJudgementSnapshot | B | BFF / Recap / Intel |
+| StrongWatchPoolSnapshot | C | D (上游输入) / BFF |
+| W2SDecisionSnapshot | D | BFF / Recap |
+| StockObjectSnapshot | 聚合 A+B+D | BFF (stock-workspace) |
+| ThemeObjectSnapshot | 聚合 B | BFF (theme-workspace) |
+
+---
+
+## 九、根因总结
+
+```
+                    ┌─────────────────────────────────────────┐
+                    │  根因：Layer A/B 覆盖域 < Layer C 输入域   │
+                    │  668 keys → A命中 276 (41%) → B命中 8 (1%) │
+                    │  差距：A 缺失 59%, B 缺失 99%              │
+                    └─────────────────────────────────────────┘
+                                      │
+          ┌───────────────────────────┼───────────────────────────┐
+          ▼                           ▼                           ▼
+   M1: Layer A 补全             M2: Layer B 补全            M3: Layer C/D 收口
+   ─────────────────           ─────────────────           ─────────────────
+   1. 迁移6增强维度             1. 迁移K线层独立证据          1. C-1 UniverseBuilder
+      - capital_persistence       - ThemeKlineCalculator       覆盖策略与A/B对齐
+      - institution_participation - MA支撑/破位/量能         2. D层接入龙虎榜/游资
+      - retail_attention       2. 补全6退潮证据项              /LLM裁决数据源
+   2. 对齐事件链评分              - successor_vacuum         3. 移除D层过渡补偿逻辑
+      - event_chain_continuity    - event_chain_broken       4. 补齐pre_market数据源
+   3. 恢复主线三档分级            - leader_alive (反向)
+      - main/strong_branch/failed - repair_window (反向)
+   4. T4 A/B对账脚本            3. 恢复LLM复核策略
+   5. 补齐审计字段              4. 独立模块化板块聚合器
+                                5. 解耦评分与判定逻辑
+
+   优先级: P0 (阻塞下游)          优先级: P1 (对齐旧链强度)      优先级: P1/P2 (去补丁化)
+```
+
+---
+
+
+## 十、Layer A 实施专项 — 根因分析与阻塞状态（2026-04-27 最终更新）
+
+### 10.1 问题
+
+`BuildIdentityJob` 执行后 `identity_status` 输出 **94-100% `observed`**（几乎无 `confirmed`/`review_pending`），导致 Layer C UniverseBuilder 将绝大多数 subject_key 归入 `blocked/missing`，下游 Layer C/D 数据空洞。
+
+### 10.2 四层根因
+
+#### 根因 1：IdentityRuleEngine 是从零编写的新算法，不是旧链逻辑
+
+| 对比维度 | 旧链 MainlineJudgementService | 新链 IdentityRuleEngine |
+|---------|------------------------------|------------------------|
+| 来源 | 旧链 `mainline_judgement_service.py`（生产验证） | 从零构建 `identity_rule_engine.py`（156行） |
+| 评分维度 | 2维：event_chain + market_recognition | 7维：novelty/timing/impact/heat/board/flow/fermentation |
+| 分级输出 | 三档：main / strong_branch / failed | 布尔：rule_is_main_theme |
+| 门禁 | classify_theme_tier() 两条复合路径 | logic_ok AND market_ok（独立门禁） |
+
+**这是 observed 占比 94-100% 的直接技术原因。**
+
+#### 根因 2：DB context_metadata 永远为空
+
+`get_subject_context_by_subject_keys` SQL 只返回 3 列：
+```sql
+SELECT subject_key, subject_name, trade_date FROM subject_context
+```
+无 metadata、无 event 数据、无 front_row 指标。
+
+旧链通过直接查询 `news_event` JOIN `event_theme_map` JOIN `theme_master` 获取精确事件计数和摘要。——新链架构规则禁止此路径。
+
+#### 根因 3：JSONL 代理数据本质是市场数据，不是事件数据
+
+试图从 `stock_daily/*.jsonl` 反推"事件"（strong_ratio ≥ 10% → 强事件日）是**循环论证**：
+```
+市场表现 → 推断"事件" → 算法评分 → 结论：有主线
+```
+实际是：市场表现 → 结论：有市场表现。这不是事件驱动的主线判定。
+
+#### 根因 4：旧链生产路径已废弃
+
+`database_service/scripts/build_theme_mainline_judgement.py` 标注 DEPRECATED。旧链当前如何生产 `theme_mainline_judgement` 表数据未找到非废弃替代脚本。
+
+### 10.3 尝试历程（9轮）
+
+| 轮次 | 尝试 | 结果 |
+|------|------|------|
+| 1 | 直接回填 BuildIdentityJob（04-20~04-25） | 94-100% observed |
+| 2 | 给 IdentityRuleEngine 加 event proxy | 评分范围未校准，仍 90%+ observed |
+| 3 | 修改 IdentityRuleEngine 门禁阈值 | 100% confirmed（另一极端） |
+| 4 | 加 heat fallback（JSONL history） | 无实质改善 |
+| 5 | 加 bar 数据 limit_up | 小幅改善，仍 90%+ observed |
+| 6 | 加 _compute_5d_metrics event proxy | 字段有值，送入 IdentityRuleEngine 仍 observed |
+| **7** | **1:1 复刻旧链 MainlineJudgementService** → `enhanced_mainline_judgement_service.py`（476行） | **算法已复刻 ✅** |
+| 8 | 创建 `_layer_a_replay_runner.py`（915行）做独立回放/对比 | JSON 输出验证通过 ✅ |
+| 9 | 开始修改 BuildIdentityJob 接入 MainlineJudgementService | **中断——session 超时** |
+
+### 10.4 新增文件清单
+
+| 文件 | 行数 | 状态 |
+|------|------|------|
+| `stock_processing_service/domain/services/enhanced_mainline_judgement_service.py` | 476 | ✅ 1:1复刻旧链算法 |
+| `stock_processing_service/tests/replay/_layer_a_replay_runner.py` | 915 | ✅ 回放/对比/验证 |
+| `stock_processing_service/tests/replay/_backfill_identity.py` | 190 | ✅ 批量回填脚本 |
+
+### 10.5 BuildIdentityJob 未完成改造
+
+当前文件状态：`build_identity_job.py` 的 `execute()` 仍在使用 `IdentityRuleEngine`。
+
+剩余步骤（~30行改动）：
+1. 导入 `MainlineJudgementService`, `ThemeEventStats`, `ThemeMarketStats`
+2. 从已有数据构造 `ThemeEventStats` / `ThemeMarketStats`
+3. 调用 `MainlineJudgementService().build_judgement(trade_date_str, event_stats, market_stats)`
+4. 映射输出：`theme_tier` → `identity_status`（main→confirmed, strong_branch→review_pending, failed→observed），`is_main_theme` → `rule_is_main_theme`
+
+### 10.6 无法通过纯算法对齐消除的差距
+
+| 差距 | 旧链数据源 | 新链可用数据 |
+|------|-----------|------------|
+| 事件计数（today/recent/distinct/key） | `news_event` 表（精确） | JSONL 市场代理（近似） |
+| 事件摘要文本 | `news_event.summary` | 无 |
+| K线支撑/破位 | `theme_kline_calculator` | 无 |
+| 资金流向 | `money_flow_enhanced` 表 | JSONL main_net_inflow（近似） |
+
+**核心矛盾：新链 DDD 架构正确性 vs news_event 表被架构规则隔离无法访问。**
+
+### 10.7 两条出路
+
+**路径 A（治本）：补齐数据源。** 在 StockReadPort 新增 `get_subject_event_stats()`，从 `news_event` 表 + `event_theme_map` 聚合事件数据，封装为 DTO 供 domain 层消费。工作量：4 文件各 ~30 行 + 1 新 DTO。
+
+**路径 B（治标）：接受代理偏差。** 完成 BuildIdentityJob 改造（接入 MainlineJudgementService），接受 JSONL 代理的近似性质，observed 占比预计降至 40-60%（改善但不到旧链水平），通过 LLM 复核兜底。工作量：build_identity_job.py ~30 行。
+
+---
+
+## 十一、当前迁移进度（2026-04-27 最终更新）
+
+| 里程碑 | Layer | 状态 | 关键信息 |
+|--------|-------|------|---------|
+| M1 | A | **阻塞** | 算法已复刻 ✅ / BuildIdentityJob 未接入 ❌ / 数据源 gap 未解决 ❌ |
+| M2 | B | 执行中 | CycleEvidenceBuilder 证据层增强至旧链强度 |
+| M3 | C | 等待A | Universe Gate / AdmissionPolicy 已接入，覆盖策略需A补齐后对齐 |
+| M4 | D | 待启动 | 需等 A/B/C 稳定后去补丁化 |
+
+### M1 阻塞状态
+
+```
+已完成 ✅
+  ├── enhanced_mainline_judgement_service.py (476行, 1:1复刻旧链父子类算法)
+  ├── _layer_a_replay_runner.py (915行, 独立回放/对比/验证三种模式)
+  └── _backfill_identity.py (190行, 批量回填脚本)
+
+阻塞 ❌
+  ├── BuildIdentityJob 仍在用 IdentityRuleEngine（从零编写），未接入 MainlineJudgementService
+  └── news_event 表事件数据无法进入新链（架构规则隔离）
+```
+
+---
+
+## 十二、优化优先级建议（更新）
+
+```
+Phase 0 (当前分支 codex/p1-phase0/runtime_contract) — 立即决策:
+  1. [P0-阻塞] 选择路径A或B，完成 BuildIdentityJob 接入 MainlineJudgementService
+  2. [P0] UniverseBuilder 覆盖策略调整
+
+Phase 1:
+  3. [P1] Layer B K线层证据独立化 + 退潮证据补全
+  4. [P1] A/B 对账脚本验证
+
+Phase 2:
+  5. [P2] Layer D 数据源接入 + 过渡补偿逻辑移除
+```

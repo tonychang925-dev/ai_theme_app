@@ -154,10 +154,22 @@ class _ReplayDatabaseStockFacade:
             return int(await fn(rows) or 0)
         return len(rows)
 
-    async def publish_stock_processing_event(self, event: dict[str, Any]) -> str:
-        event_name = str(event.get("event_name", "unknown"))
-        payload = dict(event.get("payload") or {})
-        payload.setdefault("trade_date", str(event.get("trade_date", "")))
+    async def publish_stock_processing_event(self, *args, **kwargs) -> str:
+        # Compatible with both adapter styles:
+        # 1) publish_stock_processing_event(event_dict)
+        # 2) publish_stock_processing_event(event_name, payload_dict)
+        if len(args) == 1 and isinstance(args[0], dict):
+            event = dict(args[0])
+            event_name = str(event.get("event_name", "unknown"))
+            payload = dict(event.get("payload") or {})
+            payload.setdefault("trade_date", str(event.get("trade_date", "")))
+            return await self._gateway.publish_stock_processing_event(event_name, payload)
+        if len(args) >= 2:
+            event_name = str(args[0] or "unknown")
+            payload = dict(args[1] or {})
+            return await self._gateway.publish_stock_processing_event(event_name, payload)
+        event_name = str(kwargs.get("event_name") or "unknown")
+        payload = dict(kwargs.get("payload") or {})
         return await self._gateway.publish_stock_processing_event(event_name, payload)
 
     async def acquire_job_idempotency(self, job_key: str, ttl_seconds: int) -> bool:

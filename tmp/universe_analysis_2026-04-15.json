@@ -1,0 +1,316 @@
+{
+  "meta": {
+    "trade_date": "2026-04-15",
+    "total_pool_rows": 52925,
+    "distinct_subject_keys": 663,
+    "identity_hit": 153,
+    "identity_coverage_pct": 23.1,
+    "cycle_hit": 663,
+    "cycle_coverage_pct": 100.0,
+    "cycle_table_exists": true
+  },
+  "identity_distribution": {
+    "by_status": {
+      "observed": 151,
+      "confirmed": 2
+    },
+    "is_main_theme_count": 2,
+    "confirmed_mainline_no_cycle_count": 0,
+    "confirmed_mainline_with_cycle_count": 2,
+    "confirmed_mainline_no_cycle_keys": []
+  },
+  "cycle_distribution": {
+    "by_state": {
+      "divergence": 544,
+      "start": 103,
+      "repair": 13,
+      "fade_confirmed": 1,
+      "fade_watch": 2
+    },
+    "alive_count": 26
+  },
+  "old_logic": {
+    "formal_count": 364,
+    "observe_count": 15047,
+    "blocked_count": 37514,
+    "blocked_reason_distribution": {
+      "missing_identity": 9573
+    },
+    "subject_level": {
+      "formal": 0,
+      "observe": 5,
+      "blocked": 658
+    }
+  },
+  "new_logic": {
+    "formal_count": 364,
+    "observe_count": 15047,
+    "blocked_count": 37514,
+    "blocked_reason_distribution": {
+      "missing_identity": 9573
+    },
+    "inferred_cycle_count": 0,
+    "db_cycle_count": 7399,
+    "subject_level": {
+      "formal": 3,
+      "observe": 141,
+      "blocked": 519
+    }
+  },
+  "migration": {
+    "stocks_migrated_blocked_to_observe": 0,
+    "stocks_newly_blocked": 0,
+    "subjects_migrated": 139,
+    "subject_migration_details": [
+      {
+        "subject_key": "69",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "observed",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9010286",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "observed",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9010317",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9011436",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9011446",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "observed",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9011456",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "observed",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9011558",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9011685",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "observed",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9012060",
+        "old_status": "blocked",
+        "new_status": "formal",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9012584",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9012624",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "observed",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9013055",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9013944",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "observed",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9014193",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9014347",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9015002",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "observed",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9015208",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9015970",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9016356",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "observed",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9017038",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9017116",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9017278",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "observed",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9017354",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "observed",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9017846",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9018144",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "observed",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9018216",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "observed",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9018411",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9018472",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "observed",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9018800",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9019937",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      }
+    ],
+    "sample_migrated_stock_ids": []
+  },
+  "delta": {
+    "formal_delta": 0,
+    "observe_delta": 0,
+    "blocked_delta": 0,
+    "subject_formal_delta": 3,
+    "subject_observe_delta": 136,
+    "subject_blocked_delta": -139
+  }
+}

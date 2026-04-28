@@ -1,0 +1,9 @@
+{
+  "id": "16",
+  "subject": "Add upsert_theme_mainline_identity_registry_rows to DatabaseGateway",
+  "description": "Add facade method in DatabaseGateway that delegates to self._client",
+  "activeForm": "Adding facade method to DatabaseGateway",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

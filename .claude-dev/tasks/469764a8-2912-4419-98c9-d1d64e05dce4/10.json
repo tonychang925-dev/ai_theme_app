@@ -1,0 +1,9 @@
+{
+  "id": "10",
+  "subject": "Create enhanced_mainline_judgement_service.py",
+  "description": "1:1 copy old chain EnhancedMainlineJudgementService + MainlineJudgementService algorithm into new chain, self-contained with inlined dataclasses",
+  "activeForm": "Creating enhanced_mainline_judgement_service.py",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

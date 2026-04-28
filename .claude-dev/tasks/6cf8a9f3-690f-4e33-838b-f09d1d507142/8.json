@@ -1,0 +1,9 @@
+{
+  "id": "8",
+  "subject": "Check old stock_service for remaining production dependencies",
+  "description": "分析旧 stock_service 中哪些模块仍被生产依赖，评估能否下线",
+  "activeForm": "Checking old stock_service dependencies",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

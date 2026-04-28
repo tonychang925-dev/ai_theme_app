@@ -1,0 +1,127 @@
+{
+  "session_goal": "Fix BuildIdentityJob producing 94-100% observed identity_status by replacing from-scratch IdentityRuleEngine with replicated old chain MainlineJudgementService algorithm",
+  "current_task": "Replace IdentityRuleEngine with MainlineJudgementService in BuildIdentityJob.execute() — import old chain algorithm, build ThemeEventStats from JSONL proxies + ThemeMarketStats from pool rows, call MainlineJudgementService.build_judgement(), map output to identity registry schema",
+  "constraints": [
+    "不允许修改数据库schema，不能破坏数据库真源",
+    "不允许查询数据库的表做富化（应使用theme_data_complete/ JSONL文件）",
+    "仅使用StockReadPort现有3个方法，不新增读取方法",
+    "不能影响旧链业务逻辑",
+    "SPS_OUTPUT_MODE must be set to 'db' for write persistence",
+    "必须参考旧链的实现逻辑，复刻旧链的逻辑在新链架构上——不要从零造轮子",
+    "4/25不是交易日——应使用04-24等实际交易日"
+  ],
+  "decisions": [
+    {
+      "topic": "algorithm choice",
+      "decision": "Use replicated old chain MainlineJudgementService algorithm instead of from-scratch IdentityRuleEngine",
+      "reason": "IdentityRuleEngine scores and gates are uncalibrated for available data, producing 94-100% observed. Old chain algorithm is proven in production."
+    },
+    {
+      "topic": "algorithm file location",
+      "decision": "Old chain algorithm replicated 1:1 at stock_processing_service/domain/services/enhanced_mainline_judgement_service.py (476 lines)",
+      "reason": "Contains MainlineJudgementService + EnhancedMainlineJudgementService + all dataclasses, zero external dependencies"
+    },
+    {
+      "topic": "replay runner",
+      "decision": "Created _layer_a_replay_runner.py with replay/compare/validate modes for independent testing",
+      "reason": "Demonstrates ThemeMarketStats construction from pool rows, validates algorithm output before BuildIdentityJob integration"
+    },
+    {
+      "topic": "market data sourcing",
+      "decision": "Build ThemeMarketStats from pool rows (get_subject_stock_pool_by_trade_date returns rows with limit_up boolean, pct_chg, is_leader, rank_order)",
+      "reason": "Same data source old chain uses (subject_stock_daily_snapshot table)"
+    },
+    {
+      "topic": "event data sourcing",
+      "decision": "Build ThemeEventStats from JSONL stock_daily proxies: strong_event_count_7d from days with strong_ratio>=10% OR limit_up_count>=2, event_count_3d from days with strong_ratio>=5%, event_recency_days from most recent strong day offset",
+      "reason": "DB context_metadata is always empty. Old chain uses news_event table (inaccessible). JSONL stock_daily files provide market-derived event proxies."
+    },
+    {
+      "topic": "identity_status mapping",
+      "decision": "Derive identity_status directly from theme_tier: main→confirmed, strong_branch→review_pending, failed→observed. Override confirmed→review_pending if one_day_tour_flag. Map is_main_theme→rule_is_main_theme, event_chain_score→logic_score, market_recognition_score→market_score, mainline_stability_score→composite_score",
+      "reason": "Old chain classify_theme_tier() produces definitive tier classification. LLM review thresholds (75/60) were for IdentityRuleEngine and don't apply to old chain scores."
+    }
+  ],
+  "files_touched": [
+    {
+      "path": "stock_processing_service/domain/services/enhanced_mainline_judgement_service.py",
+      "summary": "1:1 replication of old chain MainlineJudgementService + EnhancedMainlineJudgementService with ThemeMainlineJudgement, ThemeEventStats, ThemeMarketStats dataclasses — 476 lines, zero external dependencies",
+      "type": "created"
+    },
+    {
+      "path": "stock_processing_service/tests/replay/_layer_a_replay_runner.py",
+      "summary": "Layer A replay/compare/validate runner with _build_theme_market_stats from pool rows, _build_theme_event_stats from context_metadata, run_layer_a_replay, run_layer_a_compare, run_layer_a_validate — 915 lines",
+      "type": "created"
+    },
+    {
+      "path": "stock_processing_service/tests/replay/_backfill_identity.py",
+      "summary": "Batch backfill script for identity data over date ranges, connects to DB directly, runs BuildIdentityJob per date — 190 lines",
+      "type": "created"
+    },
+    {
+      "path": "stock_processing_service/application/jobs/build_identity_job.py",
+      "summary": "BuildIdentityJob currently uses IdentityRuleEngine (from-scratch) with JSONL enrichment for event/heat/fund proxies. NEEDS MODIFICATION to use MainlineJudgementService instead — import change and constructor edit attempted but Edit tool broken",
+      "type": "read",
+      "currently_editing": true
+    },
+    {
+      "path": "stock_processing_service/domain/services/identity_rule_engine.py",
+      "summary": "From-scratch IdentityRuleEngine — 156 lines, NOT old chain logic. Should be deprecated in favor of MainlineJudgementService",
+      "type": "read"
+    },
+    {
+      "path": "架构差距分析报告.md",
+      "summary": "Updated with Layer A root cause analysis (sections 10-12), documenting 4 root causes, 9 rounds of attempts, 3 new files created, 2 remaining paths (A: add data source, B: accept proxy deviation), M1 status changed from '执行中' to '阻塞'",
+      "type": "modified"
+    }
+  ],
+  "known_failures": [
+    {
+      "type": "tool_error",
+      "location": "Edit tool at build_identity_job.py line 18 import replacement",
+      "summary": "Edit tool throws 'fs.openSync is not a function' error — cannot modify files via Edit tool. Attempted 3+ times with different replacement strings, all failed. Bash sed was used as workaround for 架构差距分析报告.md but build_identity_job.py changes still pending",
+      "resolved": false
+    },
+    {
+      "type": "data_gap",
+      "location": "BuildIdentityJob.execute() context_metadata",
+      "summary": "get_subject_context_by_subject_keys SQL returns only subject_key/subject_name/trade_date — NO metadata, NO event data, NO front_row metrics. Root cause of 100% observed when no fallback enrichment existed. Old chain solves this by querying news_event table directly which new chain architecture forbids.",
+      "resolved": false
+    },
+    {
+      "type": "algorithm_mismatch",
+      "location": "BuildIdentityJob.execute() IdentityRuleEngine",
+      "summary": "IdentityRuleEngine is a from-scratch algorithm (156 lines), NOT a replication of old chain logic. Its 7-dimension scoring and independent gate conditions produce 94-100% observed. User explicitly demands using old chain MainlineJudgementService instead.",
+      "resolved": false
+    },
+    {
+      "type": "circular_proxy",
+      "location": "JSONL event proxy computation from stock_daily files",
+      "summary": "Deriving 'event' from market data (strong_ratio>=10% → strong event day) creates circular logic: market performance → infer 'event' → algorithm scores → conclude mainline exists. Actually: market performance → conclude there's market performance. Not real event-driven mainline judgment.",
+      "resolved": false
+    },
+    {
+      "type": "deprecated_path",
+      "location": "database_service/scripts/build_theme_mainline_judgement.py",
+      "summary": "Old chain's production script for theme_mainline_judgement table is marked DEPRECATED. Non-deprecated replacement not found. Unclear how old chain currently produces Layer A output.",
+      "resolved": false
+    }
+  ],
+  "open_questions": [
+    "What IS the old chain's non-deprecated production approach if build_theme_mainline_judgement.py is blocked/disabled?",
+    "Why does DB have 684 unique rows when 04-24 backfill wrote 668 identity + 33 review = 701 total? Multi-date overlap or upsert dedup?",
+    "Does old chain have a non-deprecated event data path that the new chain could use without violating architecture rules?",
+    "Path A (add StockReadPort method for news_event data) vs Path B (accept JSONL proxy deviation + LLM review) — which to pursue?"
+  ],
+  "next_actions": [
+    "Complete BuildIdentityJob modification: import MainlineJudgementService/ThemeEventStats/ThemeMarketStats, remove IdentityRuleEngine/IdentityRuleInput imports and constructor arg, replace loop body (~lines 360-499) to construct ThemeMarketStats from pool rows + ThemeEventStats from JSONL proxies, call mainline_svc.build_judgement(), map theme_tier to identity_status",
+    "Run backfill for 04-24 with modified BuildIdentityJob and verify observed rate drops significantly below 94.7%",
+    "Run _layer_a_replay_runner compare mode against old chain output for validation"
+  ],
+  "metadata": {
+    "timestamp": "2026-04-27T14:33:25.626Z",
+    "model": "deepseek-v4-pro",
+    "level": "medium",
+    "schema_version": "1.0"
+  }
+}

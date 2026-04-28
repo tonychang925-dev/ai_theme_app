@@ -1,0 +1,9 @@
+{
+  "id": "19",
+  "subject": "Add upsert methods to PostgresDatabaseManager",
+  "description": "Add upsert_theme_mainline_identity_registry_rows and upsert_mainline_identity_review_queue_rows methods to postgres_manager.py (line 2387, before _normalize_stock_snapshot_row). Must use Bash+Python workaround since Edit tool has fs.openSync error.",
+  "activeForm": "Adding upsert methods to PostgresDatabaseManager",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

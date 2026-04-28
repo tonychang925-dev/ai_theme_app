@@ -1,0 +1,252 @@
+frontend_bff/app.py.before_fix:25:from stock_service.config import DEFAULT_CONFIG
+frontend_bff/app.py.before_fix:26:from stock_service.stock_screener_models import ScreeningStrategy, UserFavorite
+frontend_bff/app.py.before_fix:27:from stock_service.repositories.stock_screener_repository import StockScreenerRepository
+frontend_bff/app.py.before_fix:28:from stock_service.services.stock_screener_service import ScreeningConfig, StockScreenerService
+frontend_bff/app.py.before_fix:29:from stock_service.services.stock_screener_llm_review_service import StockScreenerLlmReviewService
+frontend_bff/app.py.before_fix:30:from stock_service.services.strategy_decision_service import StrategyDecisionService, MarketState
+frontend_bff/app.py.before_fix:31:from stock_service.services.weak_to_strong_candidate_builder import WeakToStrongCandidateBuilder
+frontend_bff/app.py.before_fix:32:from stock_service.services.weak_to_strong_auction_service import WeakToStrongAuctionService
+frontend_bff/app.py.before_fix:78:stock_screener_repo = StockScreenerRepository(DEFAULT_CONFIG)
+frontend_bff/app.py.before_fix:79:stock_screener_service = StockScreenerService(stock_screener_repo)
+frontend_bff/app.py.before_fix:80:stock_screener_llm_review_service = StockScreenerLlmReviewService(stock_screener_repo)
+frontend_bff/app.py.before_fix:130:        await asyncio.wait_for(stock_screener_repo.initialize(), timeout=10)
+frontend_bff/app.py.before_fix:132:        logger.error("stock_screener_repo.initialize 超时(10s)，选股器接口将不可用")
+frontend_bff/app.py.before_fix:134:        logger.error(f"stock_screener_repo.initialize 失败，选股器接口将不可用: {exc}")
+frontend_bff/app.py.before_fix:141:        await stock_screener_repo.close()
+frontend_bff/app.py.before_fix:274:        "stock_id": getattr(item, "stock_id", ""),
+frontend_bff/app.py.before_fix:275:        "stock_name": getattr(item, "stock_name", ""),
+frontend_bff/app.py.before_fix:313:    pool = await stock_screener_repo._ensure_pool()
+frontend_bff/app.py.before_fix:324:    pool = await stock_screener_repo._ensure_pool()
+frontend_bff/app.py.before_fix:337:    pool = await stock_screener_repo._ensure_pool()
+frontend_bff/app.py.before_fix:343:      stock_id,
+frontend_bff/app.py.before_fix:344:      stock_name,
+frontend_bff/app.py.before_fix:367:    pool = await stock_screener_repo._ensure_pool()
+frontend_bff/app.py.before_fix:373:      stock_id,
+frontend_bff/app.py.before_fix:374:      stock_name,
+frontend_bff/app.py.before_fix:395:    pool = await stock_screener_repo._ensure_pool()
+frontend_bff/app.py.before_fix:401:      stock_id,
+frontend_bff/app.py.before_fix:402:      stock_name,
+frontend_bff/app.py.before_fix:422:    pool = await stock_screener_repo._ensure_pool()
+frontend_bff/app.py.before_fix:449:    pool = await stock_screener_repo._ensure_pool()
+frontend_bff/app.py.before_fix:454:      ON split_part(s.stock_id, '.', 1) = split_part(c.stock_id, '.', 1)
+frontend_bff/app.py.before_fix:550:        "stock_id": str(candidate.get("stock_id") or ""),
+frontend_bff/app.py.before_fix:551:        "stock_name": str(candidate.get("stock_name") or ""),
+frontend_bff/app.py.before_fix:594:    strategy = await stock_screener_repo.get_strategy(payload.strategy_id)
+frontend_bff/app.py.before_fix:791:    strategies = await stock_screener_repo.get_strategies(active_only=active_only)
+frontend_bff/app.py.before_fix:824:    created = await stock_screener_repo.create_strategy(strategy)
+frontend_bff/app.py.before_fix:843:    ok = await stock_screener_repo.update_strategy(strategy_id, updates)
+frontend_bff/app.py.before_fix:846:    strategy = await stock_screener_repo.get_strategy(strategy_id)
+frontend_bff/app.py.before_fix:864:    ok = await stock_screener_repo.delete_strategy(strategy_id)
+frontend_bff/app.py.before_fix:878:    strategy = await stock_screener_repo.get_strategy(payload.strategy_id)
+frontend_bff/app.py.before_fix:925:    requested_count = await stock_screener_repo.get_snapshot_stock_count(requested_trade_date)
+frontend_bff/app.py.before_fix:927:        fallback_date = await stock_screener_repo.get_latest_snapshot_trade_date(requested_trade_date)
+frontend_bff/app.py.before_fix:967:            stock_screener_service.execute_screening_with_meta(config),
+frontend_bff/app.py.before_fix:981:    latest_exec = await stock_screener_repo.get_latest_execution(payload.strategy_id, trade_date)
+frontend_bff/app.py.before_fix:1018:        llm_review_map, llm_review_status, llm_summary = await stock_screener_llm_review_service.review_results(
+frontend_bff/app.py.before_fix:1074:    execution = await stock_screener_repo.get_execution(job_id)
+frontend_bff/app.py.before_fix:1111:            "stock_id": replay.get("stock_id", ""),
+frontend_bff/app.py.before_fix:1112:            "stock_name": replay.get("stock_name", ""),
+frontend_bff/app.py.before_fix:1138:    detail = await stock_screener_service.get_result_detail(result_id)
+frontend_bff/app.py.before_fix:1145:    llm_review = await stock_screener_repo.get_llm_review(result_id)
+frontend_bff/app.py.before_fix:1156:    stock_id: Optional[str] = Query(default=None),
+frontend_bff/app.py.before_fix:1161:    result = await stock_screener_repo.query_history(
+frontend_bff/app.py.before_fix:1165:        stock_id=stock_id,
+frontend_bff/app.py.before_fix:1175:    favorites = await stock_screener_repo.get_user_favorites(user_id)
+frontend_bff/app.py.before_fix:1178:        result = await stock_screener_repo.get_result(item.result_id)
+frontend_bff/app.py.before_fix:1185:                "stock_id": result.stock_id,
+frontend_bff/app.py.before_fix:1186:                "stock_name": result.stock_name,
+frontend_bff/app.py.before_fix:1206:    ok = await stock_screener_repo.add_favorite(favorite)
+frontend_bff/app.py.before_fix:1209:    result = await stock_screener_repo.get_result(payload.result_id)
+frontend_bff/app.py.before_fix:1215:        "stock_id": result.stock_id,
+frontend_bff/app.py.before_fix:1216:        "stock_name": result.stock_name,
+frontend_bff/app.py.before_fix:1226:    ok = await stock_screener_repo.update_favorite(favorite_id, payload.notes, payload.tags)
+frontend_bff/app.py.before_fix:1234:    ok = await stock_screener_repo.remove_favorite(favorite_id)
+frontend_bff/app.py.before_fix:1246:    stats = await stock_screener_repo.get_statistics(
+frontend_bff/app.py.before_fix:1263:        result = await stock_screener_repo.get_result(result_id)
+frontend_bff/app.py.before_fix:1271:    filename = f"stock_screener_export_{datetime.now().strftime('%Y%m%d_%H%M%S')}.{ext}"
+frontend_bff/app.py.before_fix:1275:        headers = ["result_id", "stock_id", "stock_name", "composite_score", "rank_position", "screening_reason"]
+frontend_bff/app.py.before_fix:1280:                str(item.get("stock_id", "")),
+frontend_bff/app.py.before_fix:1281:                str(item.get("stock_name", "")),
+frontend_bff/app.py.before_fix:1298:    type: str = Query(default="all", pattern="^(all|event|event_review|theme_move|new_theme|stock_move)$"),
+frontend_bff/app.py.before_fix:1300:    stock_id: Optional[str] = Query(default=None),
+frontend_bff/app.py.before_fix:1308:        stock_id=stock_id,
+frontend_bff/app.py.before_fix:1317:    type: str = Query(default="all", pattern="^(all|event|event_review|theme_move|new_theme|stock_move)$"),
+frontend_bff/app.py.before_fix:1319:    stock_id: Optional[str] = Query(default=None),
+frontend_bff/app.py.before_fix:1335:                    stock_id=stock_id,
+frontend_bff/app.py.before_fix:1383:    type: str = Query(default="all", pattern="^(all|event|event_review|theme_move|new_theme|stock_move)$"),
+frontend_bff/app.py.before_fix:1385:    stock_id: Optional[str] = Query(default=None),
+frontend_bff/app.py.before_fix:1410:                "stock_id": stock_id,
+frontend_bff/app.py.before_fix:1457:    stock_mapping_scope: str = Query(default="pool", pattern="^(pool|leader_overlay|all)$"),
+frontend_bff/app.py.before_fix:1469:        stock_mapping_scope=stock_mapping_scope,
+frontend_bff/app.py.before_fix:1479:@app.get("/api/stock-workspace/{stock_id}")
+frontend_bff/app.py.before_fix:1481:    stock_id: str,
+frontend_bff/app.py.before_fix:1488:        stock_id=stock_id,
+frontend_bff/app.py.before_fix:1495:        raise HTTPException(status_code=404, detail=f"stock workspace not found for stock_id={stock_id}")
+frontend_bff/app.py.before_fix:1737:                "example_event_types": ["theme_move", "new_theme", "stock_move"]
+frontend_bff/app.py.before_fix:1752:                "example_event_types": ["stock_abnormal", "money_flow", "dragon_tiger"]
+frontend_bff/fix_function.py:25:    strategy = await stock_screener_repo.get_strategy(payload.strategy_id)
+frontend_bff/app.py.bak_datefix:25:from stock_service.config import DEFAULT_CONFIG
+frontend_bff/app.py.bak_datefix:26:from stock_service.stock_screener_models import ScreeningStrategy, UserFavorite
+frontend_bff/app.py.bak_datefix:27:from stock_service.repositories.stock_screener_repository import StockScreenerRepository
+frontend_bff/app.py.bak_datefix:28:from stock_service.services.stock_screener_service import ScreeningConfig, StockScreenerService
+frontend_bff/app.py.bak_datefix:29:from stock_service.services.stock_screener_llm_review_service import StockScreenerLlmReviewService
+frontend_bff/app.py.bak_datefix:30:from stock_service.services.strategy_decision_service import StrategyDecisionService, MarketState
+frontend_bff/app.py.bak_datefix:31:from stock_service.services.weak_to_strong_candidate_builder import WeakToStrongCandidateBuilder
+frontend_bff/app.py.bak_datefix:32:from stock_service.services.weak_to_strong_auction_service import WeakToStrongAuctionService
+frontend_bff/app.py.bak_datefix:78:stock_screener_repo = StockScreenerRepository(DEFAULT_CONFIG)
+frontend_bff/app.py.bak_datefix:79:stock_screener_service = StockScreenerService(stock_screener_repo)
+frontend_bff/app.py.bak_datefix:80:stock_screener_llm_review_service = StockScreenerLlmReviewService(stock_screener_repo)
+frontend_bff/app.py.bak_datefix:130:        await asyncio.wait_for(stock_screener_repo.initialize(), timeout=10)
+frontend_bff/app.py.bak_datefix:132:        logger.error("stock_screener_repo.initialize 超时(10s)，选股器接口将不可用")
+frontend_bff/app.py.bak_datefix:134:        logger.error(f"stock_screener_repo.initialize 失败，选股器接口将不可用: {exc}")
+frontend_bff/app.py.bak_datefix:141:        await stock_screener_repo.close()
+frontend_bff/app.py.bak_datefix:274:        "stock_id": getattr(item, "stock_id", ""),
+frontend_bff/app.py.bak_datefix:275:        "stock_name": getattr(item, "stock_name", ""),
+frontend_bff/app.py.bak_datefix:313:    pool = await stock_screener_repo._ensure_pool()
+frontend_bff/app.py.bak_datefix:324:    pool = await stock_screener_repo._ensure_pool()
+frontend_bff/app.py.bak_datefix:337:    pool = await stock_screener_repo._ensure_pool()
+frontend_bff/app.py.bak_datefix:343:      stock_id,
+frontend_bff/app.py.bak_datefix:344:      stock_name,
+frontend_bff/app.py.bak_datefix:367:    pool = await stock_screener_repo._ensure_pool()
+frontend_bff/app.py.bak_datefix:373:      stock_id,
+frontend_bff/app.py.bak_datefix:374:      stock_name,
+frontend_bff/app.py.bak_datefix:395:    pool = await stock_screener_repo._ensure_pool()
+frontend_bff/app.py.bak_datefix:401:      stock_id,
+frontend_bff/app.py.bak_datefix:402:      stock_name,
+frontend_bff/app.py.bak_datefix:422:    pool = await stock_screener_repo._ensure_pool()
+frontend_bff/app.py.bak_datefix:449:    pool = await stock_screener_repo._ensure_pool()
+frontend_bff/app.py.bak_datefix:454:      ON split_part(s.stock_id, '.', 1) = split_part(c.stock_id, '.', 1)
+frontend_bff/app.py.bak_datefix:550:        "stock_id": str(candidate.get("stock_id") or ""),
+frontend_bff/app.py.bak_datefix:551:        "stock_name": str(candidate.get("stock_name") or ""),
+frontend_bff/app.py.bak_datefix:594:    strategy = await stock_screener_repo.get_strategy(payload.strategy_id)
+frontend_bff/app.py.bak_datefix:791:    strategies = await stock_screener_repo.get_strategies(active_only=active_only)
+frontend_bff/app.py.bak_datefix:824:    created = await stock_screener_repo.create_strategy(strategy)
+frontend_bff/app.py.bak_datefix:843:    ok = await stock_screener_repo.update_strategy(strategy_id, updates)
+frontend_bff/app.py.bak_datefix:846:    strategy = await stock_screener_repo.get_strategy(strategy_id)
+frontend_bff/app.py.bak_datefix:864:    ok = await stock_screener_repo.delete_strategy(strategy_id)
+frontend_bff/app.py.bak_datefix:878:    strategy = await stock_screener_repo.get_strategy(payload.strategy_id)
+frontend_bff/app.py.bak_datefix:925:    requested_count = await stock_screener_repo.get_snapshot_stock_count(requested_trade_date)
+frontend_bff/app.py.bak_datefix:927:        fallback_date = await stock_screener_repo.get_latest_snapshot_trade_date(requested_trade_date)
+frontend_bff/app.py.bak_datefix:967:            stock_screener_service.execute_screening_with_meta(config),
+frontend_bff/app.py.bak_datefix:981:    latest_exec = await stock_screener_repo.get_latest_execution(payload.strategy_id, trade_date)
+frontend_bff/app.py.bak_datefix:1018:        llm_review_map, llm_review_status, llm_summary = await stock_screener_llm_review_service.review_results(
+frontend_bff/app.py.bak_datefix:1074:    execution = await stock_screener_repo.get_execution(job_id)
+frontend_bff/app.py.bak_datefix:1111:            "stock_id": replay.get("stock_id", ""),
+frontend_bff/app.py.bak_datefix:1112:            "stock_name": replay.get("stock_name", ""),
+frontend_bff/app.py.bak_datefix:1138:    detail = await stock_screener_service.get_result_detail(result_id)
+frontend_bff/app.py.bak_datefix:1145:    llm_review = await stock_screener_repo.get_llm_review(result_id)
+frontend_bff/app.py.bak_datefix:1156:    stock_id: Optional[str] = Query(default=None),
+frontend_bff/app.py.bak_datefix:1161:    result = await stock_screener_repo.query_history(
+frontend_bff/app.py.bak_datefix:1165:        stock_id=stock_id,
+frontend_bff/app.py.bak_datefix:1175:    favorites = await stock_screener_repo.get_user_favorites(user_id)
+frontend_bff/app.py.bak_datefix:1178:        result = await stock_screener_repo.get_result(item.result_id)
+frontend_bff/app.py.bak_datefix:1185:                "stock_id": result.stock_id,
+frontend_bff/app.py.bak_datefix:1186:                "stock_name": result.stock_name,
+frontend_bff/app.py.bak_datefix:1206:    ok = await stock_screener_repo.add_favorite(favorite)
+frontend_bff/app.py.bak_datefix:1209:    result = await stock_screener_repo.get_result(payload.result_id)
+frontend_bff/app.py.bak_datefix:1215:        "stock_id": result.stock_id,
+frontend_bff/app.py.bak_datefix:1216:        "stock_name": result.stock_name,
+frontend_bff/app.py.bak_datefix:1226:    ok = await stock_screener_repo.update_favorite(favorite_id, payload.notes, payload.tags)
+frontend_bff/app.py.bak_datefix:1234:    ok = await stock_screener_repo.remove_favorite(favorite_id)
+frontend_bff/app.py.bak_datefix:1246:    stats = await stock_screener_repo.get_statistics(
+frontend_bff/app.py.bak_datefix:1263:        result = await stock_screener_repo.get_result(result_id)
+frontend_bff/app.py.bak_datefix:1271:    filename = f"stock_screener_export_{datetime.now().strftime('%Y%m%d_%H%M%S')}.{ext}"
+frontend_bff/app.py.bak_datefix:1275:        headers = ["result_id", "stock_id", "stock_name", "composite_score", "rank_position", "screening_reason"]
+frontend_bff/app.py.bak_datefix:1280:                str(item.get("stock_id", "")),
+frontend_bff/app.py.bak_datefix:1281:                str(item.get("stock_name", "")),
+frontend_bff/app.py.bak_datefix:1298:    type: str = Query(default="all", pattern="^(all|event|event_review|theme_move|new_theme|stock_move)$"),
+frontend_bff/app.py.bak_datefix:1300:    stock_id: Optional[str] = Query(default=None),
+frontend_bff/app.py.bak_datefix:1308:        stock_id=stock_id,
+frontend_bff/app.py.bak_datefix:1317:    type: str = Query(default="all", pattern="^(all|event|event_review|theme_move|new_theme|stock_move)$"),
+frontend_bff/app.py.bak_datefix:1319:    stock_id: Optional[str] = Query(default=None),
+frontend_bff/app.py.bak_datefix:1335:                    stock_id=stock_id,
+frontend_bff/app.py.bak_datefix:1383:    type: str = Query(default="all", pattern="^(all|event|event_review|theme_move|new_theme|stock_move)$"),
+frontend_bff/app.py.bak_datefix:1385:    stock_id: Optional[str] = Query(default=None),
+frontend_bff/app.py.bak_datefix:1410:                "stock_id": stock_id,
+frontend_bff/app.py.bak_datefix:1457:    stock_mapping_scope: str = Query(default="pool", pattern="^(pool|leader_overlay|all)$"),
+frontend_bff/app.py.bak_datefix:1469:        stock_mapping_scope=stock_mapping_scope,
+frontend_bff/app.py.bak_datefix:1479:@app.get("/api/stock-workspace/{stock_id}")
+frontend_bff/app.py.bak_datefix:1481:    stock_id: str,
+frontend_bff/app.py.bak_datefix:1488:        stock_id=stock_id,
+frontend_bff/app.py.bak_datefix:1495:        raise HTTPException(status_code=404, detail=f"stock workspace not found for stock_id={stock_id}")
+frontend_bff/app.py.bak_datefix:1737:                "example_event_types": ["theme_move", "new_theme", "stock_move"]
+frontend_bff/app.py.bak_datefix:1752:                "example_event_types": ["stock_abnormal", "money_flow", "dragon_tiger"]
+frontend_bff/test_confirm.py:11:from stock_service.services.weak_to_strong_auction_service import WeakToStrongAuctionService
+frontend_bff/app.py:25:from stock_service.config import DEFAULT_CONFIG
+frontend_bff/app.py:26:from stock_service.stock_screener_models import ScreeningStrategy, UserFavorite
+frontend_bff/app.py:27:from stock_service.repositories.stock_screener_repository import StockScreenerRepository
+frontend_bff/app.py:28:from stock_service.services.stock_screener_service import ScreeningConfig, StockScreenerService
+frontend_bff/app.py:29:from stock_service.services.stock_screener_llm_review_service import StockScreenerLlmReviewService
+frontend_bff/app.py:30:from stock_service.services.strategy_decision_service import StrategyDecisionService, MarketState
+frontend_bff/app.py:31:from stock_service.services.weak_to_strong_candidate_builder import WeakToStrongCandidateBuilder
+frontend_bff/app.py:32:from stock_service.services.weak_to_strong_auction_service import WeakToStrongAuctionService
+frontend_bff/app.py:35:DAILY_SNAPSHOT_FLAG = "stock_processing_service.daily_snapshot.enabled"
+frontend_bff/app.py:36:PRE_MARKET_FLAG = "stock_processing_service.pre_market.enabled"
+frontend_bff/app.py:37:POST_MARKET_FLAG = "stock_processing_service.post_market.enabled"
+frontend_bff/app.py:114:stock_screener_repo = StockScreenerRepository(DEFAULT_CONFIG)
+frontend_bff/app.py:115:stock_screener_service = StockScreenerService(stock_screener_repo)
+frontend_bff/app.py:116:stock_screener_llm_review_service = StockScreenerLlmReviewService(stock_screener_repo)
+frontend_bff/app.py:166:        await asyncio.wait_for(stock_screener_repo.initialize(), timeout=10)
+frontend_bff/app.py:168:        logger.error("stock_screener_repo.initialize 超时(10s)，选股器接口将不可用")
+frontend_bff/app.py:170:        logger.error(f"stock_screener_repo.initialize 失败，选股器接口将不可用: {exc}")
+frontend_bff/app.py:177:        await stock_screener_repo.close()
+frontend_bff/app.py:312:        "stock_id": getattr(item, "stock_id", ""),
+frontend_bff/app.py:313:        "stock_name": getattr(item, "stock_name", ""),
+frontend_bff/app.py:598:        "stock_id": str(candidate.get("stock_id") or ""),
+frontend_bff/app.py:599:        "stock_name": str(candidate.get("stock_name") or ""),
+frontend_bff/app.py:642:    strategy = await stock_screener_repo.get_strategy(payload.strategy_id)
+frontend_bff/app.py:918:    strategies = await stock_screener_repo.get_strategies(active_only=active_only)
+frontend_bff/app.py:951:    created = await stock_screener_repo.create_strategy(strategy)
+frontend_bff/app.py:970:    ok = await stock_screener_repo.update_strategy(strategy_id, updates)
+frontend_bff/app.py:973:    strategy = await stock_screener_repo.get_strategy(strategy_id)
+frontend_bff/app.py:991:    ok = await stock_screener_repo.delete_strategy(strategy_id)
+frontend_bff/app.py:1005:    strategy = await stock_screener_repo.get_strategy(payload.strategy_id)
+frontend_bff/app.py:1053:    requested_count = await stock_screener_repo.get_snapshot_stock_count(requested_trade_date)
+frontend_bff/app.py:1055:        fallback_date = await stock_screener_repo.get_latest_snapshot_trade_date(requested_trade_date)
+frontend_bff/app.py:1095:            stock_screener_service.execute_screening_with_meta(config),
+frontend_bff/app.py:1109:    latest_exec = await stock_screener_repo.get_latest_execution(payload.strategy_id, trade_date)
+frontend_bff/app.py:1147:        llm_review_map, llm_review_status, llm_summary = await stock_screener_llm_review_service.review_results(
+frontend_bff/app.py:1203:    execution = await stock_screener_repo.get_execution(job_id)
+frontend_bff/app.py:1257:            "stock_id": replay.get("stock_id", ""),
+frontend_bff/app.py:1258:            "stock_name": replay.get("stock_name", ""),
+frontend_bff/app.py:1335:    detail = await stock_screener_service.get_result_detail(result_id)
+frontend_bff/app.py:1343:    llm_review = await stock_screener_repo.get_llm_review(result_id)
+frontend_bff/app.py:1354:    stock_id: Optional[str] = Query(default=None),
+frontend_bff/app.py:1359:    result = await stock_screener_repo.query_history(
+frontend_bff/app.py:1363:        stock_id=stock_id,
+frontend_bff/app.py:1373:    favorites = await stock_screener_repo.get_user_favorites(user_id)
+frontend_bff/app.py:1376:        result = await stock_screener_repo.get_result(item.result_id)
+frontend_bff/app.py:1383:                "stock_id": result.stock_id,
+frontend_bff/app.py:1384:                "stock_name": result.stock_name,
+frontend_bff/app.py:1404:    ok = await stock_screener_repo.add_favorite(favorite)
+frontend_bff/app.py:1407:    result = await stock_screener_repo.get_result(payload.result_id)
+frontend_bff/app.py:1413:        "stock_id": result.stock_id,
+frontend_bff/app.py:1414:        "stock_name": result.stock_name,
+frontend_bff/app.py:1424:    ok = await stock_screener_repo.update_favorite(favorite_id, payload.notes, payload.tags)
+frontend_bff/app.py:1432:    ok = await stock_screener_repo.remove_favorite(favorite_id)
+frontend_bff/app.py:1444:    stats = await stock_screener_repo.get_statistics(
+frontend_bff/app.py:1461:        result = await stock_screener_repo.get_result(result_id)
+frontend_bff/app.py:1469:    filename = f"stock_screener_export_{datetime.now().strftime('%Y%m%d_%H%M%S')}.{ext}"
+frontend_bff/app.py:1473:        headers = ["result_id", "stock_id", "stock_name", "composite_score", "rank_position", "screening_reason"]
+frontend_bff/app.py:1478:                str(item.get("stock_id", "")),
+frontend_bff/app.py:1479:                str(item.get("stock_name", "")),
+frontend_bff/app.py:1496:    type: str = Query(default="all", pattern="^(all|event|event_review|theme_move|new_theme|stock_move)$"),
+frontend_bff/app.py:1498:    stock_id: Optional[str] = Query(default=None),
+frontend_bff/app.py:1507:        stock_id=stock_id,
+frontend_bff/app.py:1519:    stock_id: Optional[str] = Query(default=None),
+frontend_bff/app.py:1528:            stock_id=stock_id,
+frontend_bff/app.py:1538:    type: str = Query(default="all", pattern="^(all|event|event_review|theme_move|new_theme|stock_move)$"),
+frontend_bff/app.py:1540:    stock_id: Optional[str] = Query(default=None),
+frontend_bff/app.py:1557:                    stock_id=stock_id,
+frontend_bff/app.py:1605:    type: str = Query(default="all", pattern="^(all|event|event_review|theme_move|new_theme|stock_move)$"),
+frontend_bff/app.py:1607:    stock_id: Optional[str] = Query(default=None),
+frontend_bff/app.py:1633:                "stock_id": stock_id,
+frontend_bff/app.py:1680:    stock_mapping_scope: str = Query(default="pool", pattern="^(pool|leader_overlay|all)$"),
+frontend_bff/app.py:1692:        stock_mapping_scope=stock_mapping_scope,
+frontend_bff/app.py:1702:@app.get("/api/stock-workspace/{stock_id}")
+frontend_bff/app.py:1704:    stock_id: str,
+frontend_bff/app.py:1711:        stock_id=stock_id,
+frontend_bff/app.py:1718:        raise HTTPException(status_code=404, detail=f"stock workspace not found for stock_id={stock_id}")
+frontend_bff/app.py:1964:                "example_event_types": ["theme_move", "new_theme", "stock_move"]
+
+[Showing results with pagination = limit: 250]

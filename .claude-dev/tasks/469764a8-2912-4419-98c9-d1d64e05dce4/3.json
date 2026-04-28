@@ -1,0 +1,9 @@
+{
+  "id": "3",
+  "subject": "搜索旧链数据库配置",
+  "description": "搜索 config.py 或 database 目录下的数据库连接配置",
+  "activeForm": "搜索数据库配置",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

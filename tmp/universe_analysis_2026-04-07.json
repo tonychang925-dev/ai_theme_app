@@ -1,0 +1,312 @@
+{
+  "meta": {
+    "trade_date": "2026-04-07",
+    "total_pool_rows": 52602,
+    "distinct_subject_keys": 659,
+    "identity_hit": 85,
+    "identity_coverage_pct": 12.9,
+    "cycle_hit": 659,
+    "cycle_coverage_pct": 100.0,
+    "cycle_table_exists": true
+  },
+  "identity_distribution": {
+    "by_status": {
+      "observed": 85
+    },
+    "is_main_theme_count": 0,
+    "confirmed_mainline_no_cycle_count": 0,
+    "confirmed_mainline_with_cycle_count": 0,
+    "confirmed_mainline_no_cycle_keys": []
+  },
+  "cycle_distribution": {
+    "by_state": {
+      "divergence": 628,
+      "start": 31
+    },
+    "alive_count": 10
+  },
+  "old_logic": {
+    "formal_count": 0,
+    "observe_count": 9005,
+    "blocked_count": 43597,
+    "blocked_reason_distribution": {
+      "missing_identity": 9972
+    },
+    "subject_level": {
+      "formal": 0,
+      "observe": 2,
+      "blocked": 657
+    }
+  },
+  "new_logic": {
+    "formal_count": 0,
+    "observe_count": 9005,
+    "blocked_count": 43597,
+    "blocked_reason_distribution": {
+      "missing_identity": 9972
+    },
+    "inferred_cycle_count": 0,
+    "db_cycle_count": 5428,
+    "subject_level": {
+      "formal": 0,
+      "observe": 149,
+      "blocked": 510
+    }
+  },
+  "migration": {
+    "stocks_migrated_blocked_to_observe": 0,
+    "stocks_newly_blocked": 0,
+    "subjects_migrated": 147,
+    "subject_migration_details": [
+      {
+        "subject_key": "9010074",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "observed",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9010286",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "observed",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9010317",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9010818",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9011398",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9011436",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9011446",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9011685",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "observed",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9012065",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9012188",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9012413",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9012443",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9012508",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9012747",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "observed",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9013944",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "observed",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9014206",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9014270",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9014383",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "observed",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9014764",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9015002",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "observed",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9015208",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9015543",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9015970",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9016453",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9016541",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "observed",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9016691",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9016988",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9017038",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9017116",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      },
+      {
+        "subject_key": "9017526",
+        "old_status": "blocked",
+        "new_status": "observe",
+        "cycle_source": "db",
+        "identity_status": "n/a",
+        "is_main_theme": false
+      }
+    ],
+    "sample_migrated_stock_ids": []
+  },
+  "delta": {
+    "formal_delta": 0,
+    "observe_delta": 0,
+    "blocked_delta": 0,
+    "subject_formal_delta": 0,
+    "subject_observe_delta": 147,
+    "subject_blocked_delta": -147
+  }
+}

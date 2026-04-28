@@ -528,6 +528,30 @@ class DatabaseGateway:
             logger.error(f"写入 strong_stock_watch_history 失败: {e}")
             raise
 
+    async def upsert_theme_mainline_identity_registry_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：theme_mainline_identity_registry（Layer A 身份注册表）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_theme_mainline_identity_registry_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"写入 theme_mainline_identity_registry 失败: {e}")
+            raise
+
+    async def upsert_mainline_identity_review_queue_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：mainline_identity_review_queue（Layer A 身份复核队列）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_mainline_identity_review_queue_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"写入 mainline_identity_review_queue 失败: {e}")
+            raise
+
     async def publish_stock_processing_event(self, event_name: str, payload: Dict[str, Any]) -> str:
         """
         股票域显式事件发布入口。

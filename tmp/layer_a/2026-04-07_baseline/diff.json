@@ -1,0 +1,1860 @@
+{
+  "meta": {
+    "trade_date": "2026-04-07",
+    "sample_name": "baseline",
+    "generated_at": "2026-04-27T11:39:29.366959"
+  },
+  "summary": {
+    "total_subjects": 659,
+    "matched_in_old_chain": 659,
+    "exact_match": 171,
+    "approx_match": 0,
+    "mismatch": 488,
+    "only_in_new": 0,
+    "only_in_old": 0
+  },
+  "field_stats": {
+    "event_chain_score": {
+      "exact": 631,
+      "approx": 0,
+      "mismatch": 28
+    },
+    "event_chain_continuity_score": {
+      "exact": 631,
+      "approx": 0,
+      "mismatch": 28
+    },
+    "market_recognition_score": {
+      "exact": 176,
+      "approx": 186,
+      "mismatch": 297
+    },
+    "mainline_stability_score": {
+      "exact": 177,
+      "approx": 199,
+      "mismatch": 283
+    },
+    "is_main_theme": {
+      "exact": 656,
+      "approx": 0,
+      "mismatch": 3
+    },
+    "theme_tier": {
+      "exact": 561,
+      "approx": 0,
+      "mismatch": 98
+    },
+    "mainline_strength_score": {
+      "exact": 0,
+      "approx": 0,
+      "mismatch": 659
+    },
+    "mainline_alive": {
+      "exact": 0,
+      "approx": 0,
+      "mismatch": 659
+    }
+  },
+  "mismatches": [
+    {
+      "subject_key": "1",
+      "theme_name": "1",
+      "field": "market_recognition_score",
+      "new_value": "81.05",
+      "old_value": "57.05",
+      "delta": "new=81.05 old=57.05",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "1",
+      "theme_name": "1",
+      "field": "mainline_stability_score",
+      "new_value": "50.0",
+      "old_value": "35.00",
+      "delta": "new=50.0 old=35.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "140",
+      "theme_name": "140",
+      "field": "market_recognition_score",
+      "new_value": "54.41",
+      "old_value": "42.41",
+      "delta": "new=54.41 old=42.41",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "140",
+      "theme_name": "140",
+      "field": "mainline_stability_score",
+      "new_value": "30.0",
+      "old_value": "20.00",
+      "delta": "new=30.0 old=20.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "140",
+      "theme_name": "140",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "failed",
+      "delta": "new=strong_branch old=failed",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "69",
+      "theme_name": "69",
+      "field": "market_recognition_score",
+      "new_value": "55.36",
+      "old_value": "43.36",
+      "delta": "new=55.36 old=43.36",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "69",
+      "theme_name": "69",
+      "field": "mainline_stability_score",
+      "new_value": "30.0",
+      "old_value": "20.00",
+      "delta": "new=30.0 old=20.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "69",
+      "theme_name": "69",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "failed",
+      "delta": "new=strong_branch old=failed",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "79",
+      "theme_name": "79",
+      "field": "market_recognition_score",
+      "new_value": "100.0",
+      "old_value": "85.01",
+      "delta": "new=100.0 old=85.01",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "79",
+      "theme_name": "79",
+      "field": "mainline_stability_score",
+      "new_value": "60.0",
+      "old_value": "50.00",
+      "delta": "new=60.0 old=50.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9010168",
+      "theme_name": "9010168",
+      "field": "market_recognition_score",
+      "new_value": "100.0",
+      "old_value": "90.00",
+      "delta": "new=100.0 old=90.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9010168",
+      "theme_name": "9010168",
+      "field": "mainline_stability_score",
+      "new_value": "60.0",
+      "old_value": "50.00",
+      "delta": "new=60.0 old=50.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9010250",
+      "theme_name": "9010250",
+      "field": "market_recognition_score",
+      "new_value": "81.03",
+      "old_value": "65.03",
+      "delta": "new=81.03 old=65.03",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9010250",
+      "theme_name": "9010250",
+      "field": "mainline_stability_score",
+      "new_value": "50.0",
+      "old_value": "40.00",
+      "delta": "new=50.0 old=40.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9010270",
+      "theme_name": "9010270",
+      "field": "market_recognition_score",
+      "new_value": "65.11",
+      "old_value": "47.11",
+      "delta": "new=65.11 old=47.11",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9010270",
+      "theme_name": "9010270",
+      "field": "mainline_stability_score",
+      "new_value": "40.0",
+      "old_value": "27.50",
+      "delta": "new=40.0 old=27.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9010286",
+      "theme_name": "9010286",
+      "field": "market_recognition_score",
+      "new_value": "100.0",
+      "old_value": "94.00",
+      "delta": "new=100.0 old=94.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9010367",
+      "theme_name": "9010367",
+      "field": "event_chain_score",
+      "new_value": "0.0",
+      "old_value": "21.00",
+      "delta": "new=0.0 old=21.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9010367",
+      "theme_name": "9010367",
+      "field": "event_chain_continuity_score",
+      "new_value": "0.0",
+      "old_value": "15.00",
+      "delta": "new=0.0 old=15.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9010367",
+      "theme_name": "9010367",
+      "field": "market_recognition_score",
+      "new_value": "65.01",
+      "old_value": "49.01",
+      "delta": "new=65.01 old=49.01",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9010467",
+      "theme_name": "9010467",
+      "field": "market_recognition_score",
+      "new_value": "100.0",
+      "old_value": "89.06",
+      "delta": "new=100.0 old=89.06",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9010473",
+      "theme_name": "9010473",
+      "field": "market_recognition_score",
+      "new_value": "97.01",
+      "old_value": "69.01",
+      "delta": "new=97.01 old=69.01",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9010473",
+      "theme_name": "9010473",
+      "field": "mainline_stability_score",
+      "new_value": "60.0",
+      "old_value": "45.00",
+      "delta": "new=60.0 old=45.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9010818",
+      "theme_name": "9010818",
+      "field": "market_recognition_score",
+      "new_value": "81.02",
+      "old_value": "55.02",
+      "delta": "new=81.02 old=55.02",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9010818",
+      "theme_name": "9010818",
+      "field": "mainline_stability_score",
+      "new_value": "50.0",
+      "old_value": "32.50",
+      "delta": "new=50.0 old=32.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9011211",
+      "theme_name": "9011211",
+      "field": "market_recognition_score",
+      "new_value": "52.98",
+      "old_value": "40.98",
+      "delta": "new=52.98 old=40.98",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9011211",
+      "theme_name": "9011211",
+      "field": "mainline_stability_score",
+      "new_value": "30.0",
+      "old_value": "20.00",
+      "delta": "new=30.0 old=20.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9011211",
+      "theme_name": "9011211",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "failed",
+      "delta": "new=strong_branch old=failed",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9011277",
+      "theme_name": "9011277",
+      "field": "market_recognition_score",
+      "new_value": "81.28",
+      "old_value": "63.28",
+      "delta": "new=81.28 old=63.28",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9011277",
+      "theme_name": "9011277",
+      "field": "mainline_stability_score",
+      "new_value": "50.0",
+      "old_value": "40.00",
+      "delta": "new=50.0 old=40.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9011436",
+      "theme_name": "9011436",
+      "field": "market_recognition_score",
+      "new_value": "61.03",
+      "old_value": "45.03",
+      "delta": "new=61.03 old=45.03",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9011436",
+      "theme_name": "9011436",
+      "field": "mainline_stability_score",
+      "new_value": "40.0",
+      "old_value": "25.00",
+      "delta": "new=40.0 old=25.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9011554",
+      "theme_name": "9011554",
+      "field": "event_chain_score",
+      "new_value": "0.0",
+      "old_value": "9.00",
+      "delta": "new=0.0 old=9.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9011554",
+      "theme_name": "9011554",
+      "field": "event_chain_continuity_score",
+      "new_value": "0.0",
+      "old_value": "17.00",
+      "delta": "new=0.0 old=17.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9011554",
+      "theme_name": "9011554",
+      "field": "mainline_stability_score",
+      "new_value": "5.0",
+      "old_value": "12.50",
+      "delta": "new=5.0 old=12.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9011685",
+      "theme_name": "9011685",
+      "field": "event_chain_score",
+      "new_value": "0.0",
+      "old_value": "9.00",
+      "delta": "new=0.0 old=9.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9011685",
+      "theme_name": "9011685",
+      "field": "event_chain_continuity_score",
+      "new_value": "0.0",
+      "old_value": "17.00",
+      "delta": "new=0.0 old=17.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9011685",
+      "theme_name": "9011685",
+      "field": "market_recognition_score",
+      "new_value": "57.02",
+      "old_value": "43.02",
+      "delta": "new=57.02 old=43.02",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9011768",
+      "theme_name": "9011768",
+      "field": "market_recognition_score",
+      "new_value": "97.05",
+      "old_value": "73.05",
+      "delta": "new=97.05 old=73.05",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9011768",
+      "theme_name": "9011768",
+      "field": "mainline_stability_score",
+      "new_value": "60.0",
+      "old_value": "45.00",
+      "delta": "new=60.0 old=45.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9011782",
+      "theme_name": "9011782",
+      "field": "market_recognition_score",
+      "new_value": "80.99",
+      "old_value": "58.99",
+      "delta": "new=80.99 old=58.99",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9011782",
+      "theme_name": "9011782",
+      "field": "mainline_stability_score",
+      "new_value": "50.0",
+      "old_value": "37.50",
+      "delta": "new=50.0 old=37.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9012065",
+      "theme_name": "9012065",
+      "field": "market_recognition_score",
+      "new_value": "56.99",
+      "old_value": "42.99",
+      "delta": "new=56.99 old=42.99",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9012065",
+      "theme_name": "9012065",
+      "field": "mainline_stability_score",
+      "new_value": "35.0",
+      "old_value": "22.50",
+      "delta": "new=35.0 old=22.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9012065",
+      "theme_name": "9012065",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "failed",
+      "delta": "new=strong_branch old=failed",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9012188",
+      "theme_name": "9012188",
+      "field": "market_recognition_score",
+      "new_value": "59.19",
+      "old_value": "47.19",
+      "delta": "new=59.19 old=47.19",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9012188",
+      "theme_name": "9012188",
+      "field": "mainline_stability_score",
+      "new_value": "30.0",
+      "old_value": "20.00",
+      "delta": "new=30.0 old=20.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9012396",
+      "theme_name": "9012396",
+      "field": "market_recognition_score",
+      "new_value": "81.03",
+      "old_value": "55.03",
+      "delta": "new=81.03 old=55.03",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9012396",
+      "theme_name": "9012396",
+      "field": "mainline_stability_score",
+      "new_value": "50.0",
+      "old_value": "32.50",
+      "delta": "new=50.0 old=32.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9012413",
+      "theme_name": "9012413",
+      "field": "market_recognition_score",
+      "new_value": "61.01",
+      "old_value": "45.01",
+      "delta": "new=61.01 old=45.01",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9012413",
+      "theme_name": "9012413",
+      "field": "mainline_stability_score",
+      "new_value": "40.0",
+      "old_value": "25.00",
+      "delta": "new=40.0 old=25.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9012443",
+      "theme_name": "9012443",
+      "field": "market_recognition_score",
+      "new_value": "34.98",
+      "old_value": "24.98",
+      "delta": "new=34.98 old=24.98",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9012443",
+      "theme_name": "9012443",
+      "field": "mainline_stability_score",
+      "new_value": "20.0",
+      "old_value": "12.50",
+      "delta": "new=20.0 old=12.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9012584",
+      "theme_name": "9012584",
+      "field": "market_recognition_score",
+      "new_value": "52.94",
+      "old_value": "40.94",
+      "delta": "new=52.94 old=40.94",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9012584",
+      "theme_name": "9012584",
+      "field": "mainline_stability_score",
+      "new_value": "30.0",
+      "old_value": "20.00",
+      "delta": "new=30.0 old=20.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9012584",
+      "theme_name": "9012584",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "failed",
+      "delta": "new=strong_branch old=failed",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9012624",
+      "theme_name": "9012624",
+      "field": "market_recognition_score",
+      "new_value": "31.66",
+      "old_value": "23.66",
+      "delta": "new=31.66 old=23.66",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9012624",
+      "theme_name": "9012624",
+      "field": "mainline_stability_score",
+      "new_value": "20.0",
+      "old_value": "10.00",
+      "delta": "new=20.0 old=10.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9012785",
+      "theme_name": "9012785",
+      "field": "market_recognition_score",
+      "new_value": "81.02",
+      "old_value": "57.02",
+      "delta": "new=81.02 old=57.02",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9012785",
+      "theme_name": "9012785",
+      "field": "mainline_stability_score",
+      "new_value": "50.0",
+      "old_value": "35.00",
+      "delta": "new=50.0 old=35.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9013021",
+      "theme_name": "9013021",
+      "field": "market_recognition_score",
+      "new_value": "57.0",
+      "old_value": "43.00",
+      "delta": "new=57.0 old=43.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9013021",
+      "theme_name": "9013021",
+      "field": "mainline_stability_score",
+      "new_value": "35.0",
+      "old_value": "22.50",
+      "delta": "new=35.0 old=22.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9013021",
+      "theme_name": "9013021",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "failed",
+      "delta": "new=strong_branch old=failed",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9013416",
+      "theme_name": "9013416",
+      "field": "market_recognition_score",
+      "new_value": "81.01",
+      "old_value": "59.01",
+      "delta": "new=81.01 old=59.01",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9013416",
+      "theme_name": "9013416",
+      "field": "mainline_stability_score",
+      "new_value": "50.0",
+      "old_value": "37.50",
+      "delta": "new=50.0 old=37.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9013718",
+      "theme_name": "9013718",
+      "field": "market_recognition_score",
+      "new_value": "80.98",
+      "old_value": "56.98",
+      "delta": "new=80.98 old=56.98",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9013718",
+      "theme_name": "9013718",
+      "field": "mainline_stability_score",
+      "new_value": "50.0",
+      "old_value": "35.00",
+      "delta": "new=50.0 old=35.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9013933",
+      "theme_name": "9013933",
+      "field": "event_chain_score",
+      "new_value": "0.0",
+      "old_value": "26.00",
+      "delta": "new=0.0 old=26.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9013933",
+      "theme_name": "9013933",
+      "field": "event_chain_continuity_score",
+      "new_value": "0.0",
+      "old_value": "34.00",
+      "delta": "new=0.0 old=34.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9013933",
+      "theme_name": "9013933",
+      "field": "market_recognition_score",
+      "new_value": "100.0",
+      "old_value": "67.02",
+      "delta": "new=100.0 old=67.02",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9013933",
+      "theme_name": "9013933",
+      "field": "is_main_theme",
+      "new_value": "False",
+      "old_value": "True",
+      "delta": "new=False old=True",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9013933",
+      "theme_name": "9013933",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "main",
+      "delta": "new=strong_branch old=main",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9013944",
+      "theme_name": "9013944",
+      "field": "market_recognition_score",
+      "new_value": "100.0",
+      "old_value": "90.00",
+      "delta": "new=100.0 old=90.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9013944",
+      "theme_name": "9013944",
+      "field": "mainline_stability_score",
+      "new_value": "60.0",
+      "old_value": "50.00",
+      "delta": "new=60.0 old=50.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9013989",
+      "theme_name": "9013989",
+      "field": "market_recognition_score",
+      "new_value": "48.97",
+      "old_value": "38.97",
+      "delta": "new=48.97 old=38.97",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9013989",
+      "theme_name": "9013989",
+      "field": "mainline_stability_score",
+      "new_value": "25.0",
+      "old_value": "17.50",
+      "delta": "new=25.0 old=17.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9013989",
+      "theme_name": "9013989",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "failed",
+      "delta": "new=strong_branch old=failed",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9014001",
+      "theme_name": "9014001",
+      "field": "market_recognition_score",
+      "new_value": "44.68",
+      "old_value": "26.68",
+      "delta": "new=44.68 old=26.68",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9014001",
+      "theme_name": "9014001",
+      "field": "mainline_stability_score",
+      "new_value": "25.0",
+      "old_value": "12.50",
+      "delta": "new=25.0 old=12.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9014072",
+      "theme_name": "9014072",
+      "field": "event_chain_score",
+      "new_value": "0.0",
+      "old_value": "17.00",
+      "delta": "new=0.0 old=17.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9014072",
+      "theme_name": "9014072",
+      "field": "event_chain_continuity_score",
+      "new_value": "0.0",
+      "old_value": "17.00",
+      "delta": "new=0.0 old=17.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9014072",
+      "theme_name": "9014072",
+      "field": "market_recognition_score",
+      "new_value": "97.11",
+      "old_value": "73.11",
+      "delta": "new=97.11 old=73.11",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9014198",
+      "theme_name": "9014198",
+      "field": "market_recognition_score",
+      "new_value": "58.38",
+      "old_value": "44.38",
+      "delta": "new=58.38 old=44.38",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9014198",
+      "theme_name": "9014198",
+      "field": "mainline_stability_score",
+      "new_value": "35.0",
+      "old_value": "22.50",
+      "delta": "new=35.0 old=22.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9014198",
+      "theme_name": "9014198",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "failed",
+      "delta": "new=strong_branch old=failed",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9014354",
+      "theme_name": "9014354",
+      "field": "market_recognition_score",
+      "new_value": "53.0",
+      "old_value": "41.00",
+      "delta": "new=53.0 old=41.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9014354",
+      "theme_name": "9014354",
+      "field": "mainline_stability_score",
+      "new_value": "30.0",
+      "old_value": "20.00",
+      "delta": "new=30.0 old=20.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9014354",
+      "theme_name": "9014354",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "failed",
+      "delta": "new=strong_branch old=failed",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9014383",
+      "theme_name": "9014383",
+      "field": "market_recognition_score",
+      "new_value": "49.03",
+      "old_value": "39.03",
+      "delta": "new=49.03 old=39.03",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9014383",
+      "theme_name": "9014383",
+      "field": "mainline_stability_score",
+      "new_value": "25.0",
+      "old_value": "17.50",
+      "delta": "new=25.0 old=17.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9014383",
+      "theme_name": "9014383",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "failed",
+      "delta": "new=strong_branch old=failed",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9014636",
+      "theme_name": "9014636",
+      "field": "market_recognition_score",
+      "new_value": "100.0",
+      "old_value": "83.06",
+      "delta": "new=100.0 old=83.06",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9014636",
+      "theme_name": "9014636",
+      "field": "mainline_stability_score",
+      "new_value": "60.0",
+      "old_value": "52.50",
+      "delta": "new=60.0 old=52.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9014764",
+      "theme_name": "9014764",
+      "field": "market_recognition_score",
+      "new_value": "53.01",
+      "old_value": "41.01",
+      "delta": "new=53.01 old=41.01",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9014764",
+      "theme_name": "9014764",
+      "field": "mainline_stability_score",
+      "new_value": "30.0",
+      "old_value": "20.00",
+      "delta": "new=30.0 old=20.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9014764",
+      "theme_name": "9014764",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "failed",
+      "delta": "new=strong_branch old=failed",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9015208",
+      "theme_name": "9015208",
+      "field": "market_recognition_score",
+      "new_value": "27.81",
+      "old_value": "21.81",
+      "delta": "new=27.81 old=21.81",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9015208",
+      "theme_name": "9015208",
+      "field": "mainline_stability_score",
+      "new_value": "15.0",
+      "old_value": "7.50",
+      "delta": "new=15.0 old=7.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9015235",
+      "theme_name": "9015235",
+      "field": "market_recognition_score",
+      "new_value": "65.03",
+      "old_value": "49.03",
+      "delta": "new=65.03 old=49.03",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9015235",
+      "theme_name": "9015235",
+      "field": "mainline_stability_score",
+      "new_value": "40.0",
+      "old_value": "30.00",
+      "delta": "new=40.0 old=30.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9015387",
+      "theme_name": "9015387",
+      "field": "market_recognition_score",
+      "new_value": "60.99",
+      "old_value": "44.99",
+      "delta": "new=60.99 old=44.99",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9015387",
+      "theme_name": "9015387",
+      "field": "mainline_stability_score",
+      "new_value": "40.0",
+      "old_value": "25.00",
+      "delta": "new=40.0 old=25.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9015387",
+      "theme_name": "9015387",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "failed",
+      "delta": "new=strong_branch old=failed",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9015543",
+      "theme_name": "9015543",
+      "field": "market_recognition_score",
+      "new_value": "81.02",
+      "old_value": "57.02",
+      "delta": "new=81.02 old=57.02",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9015543",
+      "theme_name": "9015543",
+      "field": "mainline_stability_score",
+      "new_value": "50.0",
+      "old_value": "35.00",
+      "delta": "new=50.0 old=35.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9015778",
+      "theme_name": "9015778",
+      "field": "event_chain_score",
+      "new_value": "0.0",
+      "old_value": "9.00",
+      "delta": "new=0.0 old=9.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9015778",
+      "theme_name": "9015778",
+      "field": "event_chain_continuity_score",
+      "new_value": "0.0",
+      "old_value": "17.00",
+      "delta": "new=0.0 old=17.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9015778",
+      "theme_name": "9015778",
+      "field": "market_recognition_score",
+      "new_value": "26.69",
+      "old_value": "20.69",
+      "delta": "new=26.69 old=20.69",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9015970",
+      "theme_name": "9015970",
+      "field": "market_recognition_score",
+      "new_value": "53.05",
+      "old_value": "41.05",
+      "delta": "new=53.05 old=41.05",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9015970",
+      "theme_name": "9015970",
+      "field": "mainline_stability_score",
+      "new_value": "30.0",
+      "old_value": "20.00",
+      "delta": "new=30.0 old=20.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9015970",
+      "theme_name": "9015970",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "failed",
+      "delta": "new=strong_branch old=failed",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9016356",
+      "theme_name": "9016356",
+      "field": "market_recognition_score",
+      "new_value": "100.0",
+      "old_value": "89.08",
+      "delta": "new=100.0 old=89.08",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9016453",
+      "theme_name": "9016453",
+      "field": "market_recognition_score",
+      "new_value": "64.96",
+      "old_value": "54.96",
+      "delta": "new=64.96 old=54.96",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9016541",
+      "theme_name": "9016541",
+      "field": "market_recognition_score",
+      "new_value": "100.0",
+      "old_value": "71.01",
+      "delta": "new=100.0 old=71.01",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9016541",
+      "theme_name": "9016541",
+      "field": "mainline_stability_score",
+      "new_value": "60.0",
+      "old_value": "42.50",
+      "delta": "new=60.0 old=42.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9016949",
+      "theme_name": "9016949",
+      "field": "market_recognition_score",
+      "new_value": "33.82",
+      "old_value": "27.82",
+      "delta": "new=33.82 old=27.82",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9016988",
+      "theme_name": "9016988",
+      "field": "market_recognition_score",
+      "new_value": "60.98",
+      "old_value": "44.98",
+      "delta": "new=60.98 old=44.98",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9016988",
+      "theme_name": "9016988",
+      "field": "mainline_stability_score",
+      "new_value": "40.0",
+      "old_value": "25.00",
+      "delta": "new=40.0 old=25.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9016988",
+      "theme_name": "9016988",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "failed",
+      "delta": "new=strong_branch old=failed",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017093",
+      "theme_name": "9017093",
+      "field": "market_recognition_score",
+      "new_value": "35.31",
+      "old_value": "25.31",
+      "delta": "new=35.31 old=25.31",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017093",
+      "theme_name": "9017093",
+      "field": "mainline_stability_score",
+      "new_value": "20.0",
+      "old_value": "12.50",
+      "delta": "new=20.0 old=12.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017116",
+      "theme_name": "9017116",
+      "field": "market_recognition_score",
+      "new_value": "76.99",
+      "old_value": "52.99",
+      "delta": "new=76.99 old=52.99",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017116",
+      "theme_name": "9017116",
+      "field": "mainline_stability_score",
+      "new_value": "50.0",
+      "old_value": "30.00",
+      "delta": "new=50.0 old=30.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017278",
+      "theme_name": "9017278",
+      "field": "market_recognition_score",
+      "new_value": "75.36",
+      "old_value": "53.36",
+      "delta": "new=75.36 old=53.36",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017278",
+      "theme_name": "9017278",
+      "field": "mainline_stability_score",
+      "new_value": "45.0",
+      "old_value": "27.50",
+      "delta": "new=45.0 old=27.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017354",
+      "theme_name": "9017354",
+      "field": "market_recognition_score",
+      "new_value": "49.05",
+      "old_value": "39.05",
+      "delta": "new=49.05 old=39.05",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017354",
+      "theme_name": "9017354",
+      "field": "mainline_stability_score",
+      "new_value": "25.0",
+      "old_value": "17.50",
+      "delta": "new=25.0 old=17.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017354",
+      "theme_name": "9017354",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "failed",
+      "delta": "new=strong_branch old=failed",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017397",
+      "theme_name": "9017397",
+      "field": "market_recognition_score",
+      "new_value": "69.0",
+      "old_value": "49.00",
+      "delta": "new=69.0 old=49.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017397",
+      "theme_name": "9017397",
+      "field": "mainline_stability_score",
+      "new_value": "40.0",
+      "old_value": "25.00",
+      "delta": "new=40.0 old=25.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017526",
+      "theme_name": "9017526",
+      "field": "market_recognition_score",
+      "new_value": "44.72",
+      "old_value": "28.72",
+      "delta": "new=44.72 old=28.72",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017526",
+      "theme_name": "9017526",
+      "field": "mainline_stability_score",
+      "new_value": "25.0",
+      "old_value": "15.00",
+      "delta": "new=25.0 old=15.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017613",
+      "theme_name": "9017613",
+      "field": "market_recognition_score",
+      "new_value": "49.0",
+      "old_value": "39.00",
+      "delta": "new=49.0 old=39.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017613",
+      "theme_name": "9017613",
+      "field": "mainline_stability_score",
+      "new_value": "25.0",
+      "old_value": "17.50",
+      "delta": "new=25.0 old=17.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017613",
+      "theme_name": "9017613",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "failed",
+      "delta": "new=strong_branch old=failed",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017645",
+      "theme_name": "9017645",
+      "field": "event_chain_score",
+      "new_value": "0.0",
+      "old_value": "18.00",
+      "delta": "new=0.0 old=18.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017645",
+      "theme_name": "9017645",
+      "field": "event_chain_continuity_score",
+      "new_value": "0.0",
+      "old_value": "34.00",
+      "delta": "new=0.0 old=34.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017645",
+      "theme_name": "9017645",
+      "field": "market_recognition_score",
+      "new_value": "57.02",
+      "old_value": "43.02",
+      "delta": "new=57.02 old=43.02",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017645",
+      "theme_name": "9017645",
+      "field": "mainline_stability_score",
+      "new_value": "35.0",
+      "old_value": "42.50",
+      "delta": "new=35.0 old=42.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017774",
+      "theme_name": "9017774",
+      "field": "market_recognition_score",
+      "new_value": "85.01",
+      "old_value": "61.01",
+      "delta": "new=85.01 old=61.01",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017774",
+      "theme_name": "9017774",
+      "field": "mainline_stability_score",
+      "new_value": "50.0",
+      "old_value": "35.00",
+      "delta": "new=50.0 old=35.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017846",
+      "theme_name": "9017846",
+      "field": "market_recognition_score",
+      "new_value": "56.9",
+      "old_value": "42.90",
+      "delta": "new=56.9 old=42.90",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017846",
+      "theme_name": "9017846",
+      "field": "mainline_stability_score",
+      "new_value": "35.0",
+      "old_value": "22.50",
+      "delta": "new=35.0 old=22.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017846",
+      "theme_name": "9017846",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "failed",
+      "delta": "new=strong_branch old=failed",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017950",
+      "theme_name": "9017950",
+      "field": "market_recognition_score",
+      "new_value": "26.98",
+      "old_value": "20.98",
+      "delta": "new=26.98 old=20.98",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9017950",
+      "theme_name": "9017950",
+      "field": "mainline_stability_score",
+      "new_value": "15.0",
+      "old_value": "7.50",
+      "delta": "new=15.0 old=7.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9018144",
+      "theme_name": "9018144",
+      "field": "event_chain_score",
+      "new_value": "0.0",
+      "old_value": "18.00",
+      "delta": "new=0.0 old=18.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9018144",
+      "theme_name": "9018144",
+      "field": "event_chain_continuity_score",
+      "new_value": "0.0",
+      "old_value": "34.00",
+      "delta": "new=0.0 old=34.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9018144",
+      "theme_name": "9018144",
+      "field": "mainline_stability_score",
+      "new_value": "60.0",
+      "old_value": "80.00",
+      "delta": "new=60.0 old=80.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9018144",
+      "theme_name": "9018144",
+      "field": "is_main_theme",
+      "new_value": "False",
+      "old_value": "True",
+      "delta": "new=False old=True",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9018144",
+      "theme_name": "9018144",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "main",
+      "delta": "new=strong_branch old=main",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9018216",
+      "theme_name": "9018216",
+      "field": "event_chain_score",
+      "new_value": "0.0",
+      "old_value": "30.00",
+      "delta": "new=0.0 old=30.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9018216",
+      "theme_name": "9018216",
+      "field": "event_chain_continuity_score",
+      "new_value": "0.0",
+      "old_value": "32.00",
+      "delta": "new=0.0 old=32.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9018216",
+      "theme_name": "9018216",
+      "field": "market_recognition_score",
+      "new_value": "81.0",
+      "old_value": "57.00",
+      "delta": "new=81.0 old=57.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9018411",
+      "theme_name": "9018411",
+      "field": "market_recognition_score",
+      "new_value": "31.68",
+      "old_value": "23.68",
+      "delta": "new=31.68 old=23.68",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9018411",
+      "theme_name": "9018411",
+      "field": "mainline_stability_score",
+      "new_value": "20.0",
+      "old_value": "10.00",
+      "delta": "new=20.0 old=10.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9018472",
+      "theme_name": "9018472",
+      "field": "event_chain_score",
+      "new_value": "0.0",
+      "old_value": "9.00",
+      "delta": "new=0.0 old=9.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9018472",
+      "theme_name": "9018472",
+      "field": "event_chain_continuity_score",
+      "new_value": "0.0",
+      "old_value": "17.00",
+      "delta": "new=0.0 old=17.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9018618",
+      "theme_name": "9018618",
+      "field": "market_recognition_score",
+      "new_value": "72.99",
+      "old_value": "50.99",
+      "delta": "new=72.99 old=50.99",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9018618",
+      "theme_name": "9018618",
+      "field": "mainline_stability_score",
+      "new_value": "45.0",
+      "old_value": "27.50",
+      "delta": "new=45.0 old=27.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9018638",
+      "theme_name": "9018638",
+      "field": "event_chain_score",
+      "new_value": "0.0",
+      "old_value": "9.00",
+      "delta": "new=0.0 old=9.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9018638",
+      "theme_name": "9018638",
+      "field": "event_chain_continuity_score",
+      "new_value": "0.0",
+      "old_value": "17.00",
+      "delta": "new=0.0 old=17.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9018638",
+      "theme_name": "9018638",
+      "field": "market_recognition_score",
+      "new_value": "61.03",
+      "old_value": "45.03",
+      "delta": "new=61.03 old=45.03",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9018672",
+      "theme_name": "9018672",
+      "field": "market_recognition_score",
+      "new_value": "97.03",
+      "old_value": "71.03",
+      "delta": "new=97.03 old=71.03",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9018672",
+      "theme_name": "9018672",
+      "field": "mainline_stability_score",
+      "new_value": "60.0",
+      "old_value": "45.00",
+      "delta": "new=60.0 old=45.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9018800",
+      "theme_name": "9018800",
+      "field": "market_recognition_score",
+      "new_value": "48.99",
+      "old_value": "38.99",
+      "delta": "new=48.99 old=38.99",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9018800",
+      "theme_name": "9018800",
+      "field": "mainline_stability_score",
+      "new_value": "25.0",
+      "old_value": "17.50",
+      "delta": "new=25.0 old=17.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9018800",
+      "theme_name": "9018800",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "failed",
+      "delta": "new=strong_branch old=failed",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9019056",
+      "theme_name": "9019056",
+      "field": "market_recognition_score",
+      "new_value": "56.99",
+      "old_value": "42.99",
+      "delta": "new=56.99 old=42.99",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9019056",
+      "theme_name": "9019056",
+      "field": "mainline_stability_score",
+      "new_value": "35.0",
+      "old_value": "22.50",
+      "delta": "new=35.0 old=22.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9019056",
+      "theme_name": "9019056",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "failed",
+      "delta": "new=strong_branch old=failed",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9019060",
+      "theme_name": "9019060",
+      "field": "market_recognition_score",
+      "new_value": "65.93",
+      "old_value": "45.93",
+      "delta": "new=65.93 old=45.93",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9019060",
+      "theme_name": "9019060",
+      "field": "mainline_stability_score",
+      "new_value": "35.0",
+      "old_value": "20.00",
+      "delta": "new=35.0 old=20.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9019314",
+      "theme_name": "9019314",
+      "field": "market_recognition_score",
+      "new_value": "77.01",
+      "old_value": "53.01",
+      "delta": "new=77.01 old=53.01",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9019314",
+      "theme_name": "9019314",
+      "field": "mainline_stability_score",
+      "new_value": "50.0",
+      "old_value": "30.00",
+      "delta": "new=50.0 old=30.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9019349",
+      "theme_name": "9019349",
+      "field": "market_recognition_score",
+      "new_value": "81.02",
+      "old_value": "59.02",
+      "delta": "new=81.02 old=59.02",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9019349",
+      "theme_name": "9019349",
+      "field": "mainline_stability_score",
+      "new_value": "50.0",
+      "old_value": "37.50",
+      "delta": "new=50.0 old=37.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9019807",
+      "theme_name": "9019807",
+      "field": "market_recognition_score",
+      "new_value": "65.01",
+      "old_value": "53.01",
+      "delta": "new=65.01 old=53.01",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9019937",
+      "theme_name": "9019937",
+      "field": "market_recognition_score",
+      "new_value": "52.98",
+      "old_value": "40.98",
+      "delta": "new=52.98 old=40.98",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9019937",
+      "theme_name": "9019937",
+      "field": "mainline_stability_score",
+      "new_value": "30.0",
+      "old_value": "20.00",
+      "delta": "new=30.0 old=20.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9019937",
+      "theme_name": "9019937",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "failed",
+      "delta": "new=strong_branch old=failed",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9020387",
+      "theme_name": "9020387",
+      "field": "market_recognition_score",
+      "new_value": "48.99",
+      "old_value": "38.99",
+      "delta": "new=48.99 old=38.99",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9020387",
+      "theme_name": "9020387",
+      "field": "mainline_stability_score",
+      "new_value": "25.0",
+      "old_value": "17.50",
+      "delta": "new=25.0 old=17.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9020387",
+      "theme_name": "9020387",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "failed",
+      "delta": "new=strong_branch old=failed",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9020414",
+      "theme_name": "9020414",
+      "field": "market_recognition_score",
+      "new_value": "27.27",
+      "old_value": "21.27",
+      "delta": "new=27.27 old=21.27",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9020414",
+      "theme_name": "9020414",
+      "field": "mainline_stability_score",
+      "new_value": "15.0",
+      "old_value": "7.50",
+      "delta": "new=15.0 old=7.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9020715",
+      "theme_name": "9020715",
+      "field": "market_recognition_score",
+      "new_value": "26.24",
+      "old_value": "20.24",
+      "delta": "new=26.24 old=20.24",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9020715",
+      "theme_name": "9020715",
+      "field": "mainline_stability_score",
+      "new_value": "15.0",
+      "old_value": "7.50",
+      "delta": "new=15.0 old=7.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9020774",
+      "theme_name": "9020774",
+      "field": "market_recognition_score",
+      "new_value": "48.95",
+      "old_value": "38.95",
+      "delta": "new=48.95 old=38.95",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9020774",
+      "theme_name": "9020774",
+      "field": "mainline_stability_score",
+      "new_value": "25.0",
+      "old_value": "17.50",
+      "delta": "new=25.0 old=17.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9020774",
+      "theme_name": "9020774",
+      "field": "theme_tier",
+      "new_value": "strong_branch",
+      "old_value": "failed",
+      "delta": "new=strong_branch old=failed",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9021093",
+      "theme_name": "9021093",
+      "field": "market_recognition_score",
+      "new_value": "100.0",
+      "old_value": "73.62",
+      "delta": "new=100.0 old=73.62",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9021093",
+      "theme_name": "9021093",
+      "field": "mainline_stability_score",
+      "new_value": "60.0",
+      "old_value": "45.00",
+      "delta": "new=60.0 old=45.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9021399",
+      "theme_name": "9021399",
+      "field": "market_recognition_score",
+      "new_value": "100.0",
+      "old_value": "86.00",
+      "delta": "new=100.0 old=86.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9021399",
+      "theme_name": "9021399",
+      "field": "mainline_stability_score",
+      "new_value": "60.0",
+      "old_value": "50.00",
+      "delta": "new=60.0 old=50.00",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9021735",
+      "theme_name": "9021735",
+      "field": "market_recognition_score",
+      "new_value": "24.83",
+      "old_value": "18.83",
+      "delta": "new=24.83 old=18.83",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9021735",
+      "theme_name": "9021735",
+      "field": "mainline_stability_score",
+      "new_value": "15.0",
+      "old_value": "7.50",
+      "delta": "new=15.0 old=7.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9021819",
+      "theme_name": "9021819",
+      "field": "market_recognition_score",
+      "new_value": "24.95",
+      "old_value": "18.95",
+      "delta": "new=24.95 old=18.95",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9021819",
+      "theme_name": "9021819",
+      "field": "mainline_stability_score",
+      "new_value": "15.0",
+      "old_value": "7.50",
+      "delta": "new=15.0 old=7.50",
+      "root_cause": "requires investigation"
+    },
+    {
+      "subject_key": "9022363",
+      "theme_name": "9022363",
+      "field": "market_recognition_score",
+      "new_value": "26.66",
+      "old_value": "20.66",
+      "delta": "new=26.66 old=20.66",
+      "root_cause": "requires investigation"
+    }
+  ]
+}
