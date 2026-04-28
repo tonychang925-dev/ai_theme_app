@@ -9,6 +9,15 @@ class DBThemeDataGateway:
     def __init__(self, db_gateway: Any) -> None:
         self._db = db_gateway
 
+    @staticmethod
+    def _as_dict(row: Any) -> dict[str, Any]:
+        """Convert asyncpg Record or dict to plain dict."""
+        if row is None:
+            return {}
+        if isinstance(row, dict):
+            return row
+        return dict(row)
+
     async def get_trade_calendar(self, trade_date: date) -> dict[str, Any]:
         return await self._db.get_trade_calendar(trade_date)
 
@@ -83,13 +92,30 @@ class DBThemeDataGateway:
         trade_date,
         subject_keys: list[str] | None = None,
         lookback_days: int = 7,
-    ) -> list[dict[str, Any]]:
+    ) -> list:
+        """按 subject_keys 聚合事件统计 → SubjectEventStatsDTO 列表。"""
+        from stock_processing_service.contracts.dto import SubjectEventStatsDTO
+
         rows = await self._db.get_subject_event_stats(
             trade_date=trade_date,
             subject_keys=subject_keys,
             lookback_days=lookback_days,
         )
-        return [dict(row) for row in rows]
+        results: list = []
+        for row in rows:
+            r = self._as_dict(row)
+            results.append(
+                SubjectEventStatsDTO(
+                    subject_key=str(r.get("subject_key", "")),
+                    theme_name=str(r.get("theme_name", "")),
+                    today_event_count=int(r.get("today_event_count") or 0),
+                    recent_event_count=int(r.get("recent_event_count") or 0),
+                    distinct_event_days=int(r.get("distinct_event_days") or 0),
+                    key_event_count=int(r.get("key_event_count") or 0),
+                    sample_summaries=list(r.get("sample_summaries") or []),
+                )
+            )
+        return results
 
     async def get_theme_stock_pool(self, trade_date: date) -> list[dict[str, Any]]:
         return await self.get_subject_stock_pool_by_trade_date(trade_date)

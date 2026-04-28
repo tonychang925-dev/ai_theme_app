@@ -1,152 +1,178 @@
 {
-  "session_goal": "Execute P0-A: Switch BuildIdentityJob from IdentityRuleEngine to EnhancedMainlineJudgementService with real event data channel (get_subject_event_stats) to fix 94-100% 'observed' output cascading to empty Layer C/D",
-  "current_task": "Wiring EnhancedMainlineJudgementService into BuildIdentityJob.execute() with dual-run feature flag and real event data from get_subject_event_stats()",
+  "session_goal": "P0-A: 将 BuildIdentityJob 从 IdentityRuleEngine 切换到 EnhancedMainlineJudgementService，接入真实事件数据（news_event/event_theme_map），通过双轨对比找出旧链 94-100% observed 率虚高的根因",
+  "current_task": "完成 4/7 和 4/15 新旧链 Layer A 双轨对比测试，输出分析报告",
   "constraints": [
-    "DDD layered architecture: Domain never imports asyncpg or writes SQL strings",
-    "All DB reads go through StockReadPort → DatabaseGatewayStockFacade → DatabaseGateway → PostgresDatabaseManager",
-    "Must keep old IdentityRuleEngine path as feature-flag fallback during dual-run",
-    "Route A (fundamental fix): real news_event + event_theme_map data, not JSONL market proxy",
-    "Existing contract patterns must be followed: Protocol classes, DTO dataclasses, Gateway Adapter delegation",
-    "KEY_EVENT_KEYWORDS counting done in PostgresManager after SQL aggregation (not in adapter layer)",
-    "SQL uses GROUP BY on tm.source_id with FILTER, ARRAY_AGG for summaries, Python post-processing for key_event_count",
-    "Only jyhf_history source events participate in aggregation"
+    "DDD 分层架构：Domain 层绝不导入 asyncpg 或写 SQL 字符串",
+    "所有 DB 读取通过 StockReadPort → DatabaseGatewayStockFacade → DatabaseGateway → PostgresDatabaseManager 通道",
+    "保留旧 IdentityRuleEngine 路径作为 feature-flag 回退（USE_ENHANCED_MAINLINE 环境变量）",
+    "路径 A（治本）：真实 news_event + event_theme_map 事件数据，非 JSONL 行情代理",
+    "仅 jyhf_history 来源事件参与聚合",
+    "必须用 Python Bash 脚本改文件（Edit 工具有 fs.openSync bug）"
   ],
   "decisions": [
     {
-      "topic": "P0/P1/P2 tier structure",
-      "decision": "Phase 0: switch Layer A to old-chain algorithm + real event data; Phase 1: strengthen Layer B + BFF governance; Phase 2: D layer cleanup",
-      "reason": "Layer A is single blocking bottleneck — 94-100% observed output cascades to empty Layer C/D"
+      "topic": "事件数据通道设计",
+      "decision": "在 StockReadPort、DatabaseGatewayStockFacade、DBThemeDataGateway、StockReadGatewayAdapter、DatabaseGateway、PostgresDatabaseManager 每一层新增 get_subject_event_stats(trade_date, subject_keys) → list[SubjectEventStatsDTO] 方法",
+      "reason": "遵循现有 DDD 模式：每层委托下一层；Domain 绝不直接写 SQL"
     },
     {
-      "topic": "Event data path (A vs B)",
-      "decision": "Path A (fundamental): add get_subject_event_stats() reading news_event/event_theme_map tables. Path B (JSONL proxy) only as temporary fallback",
-      "reason": "JSONL market proxy causes circular reasoning (market performance → inferred 'event' → conclusion of mainline). Real event data eliminates this."
+      "topic": "DTO 字段设计",
+      "decision": "SubjectEventStatsDTO 字段为 subject_key, theme_name, today_event_count, recent_event_count, distinct_event_days, key_event_count, sample_summaries——与 ThemeEventStats 1:1 映射",
+      "reason": "MainlineJudgementService.build_judgement() 的直接输入"
     },
     {
-      "topic": "Dual-run mechanism",
-      "decision": "Run both old IdentityRuleEngine and new EnhancedMainlineJudgementService side-by-side, write comparison JSON to tmp/, gate write-through on threshold validation",
-      "reason": "Prevents regression from algorithm switch or data quality issues being conflated"
+      "topic": "KEY_EVENT_KEYWORDS 计数位置",
+      "decision": "在 PostgresDatabaseManager 方法内做 Python 后处理，不在 adapter 层或 domain 层",
+      "reason": "简单字符串匹配不是复杂业务逻辑；SQL ILIKE/ANY 链不如 Python 简洁；保持 adapter 薄"
     },
     {
-      "topic": "Data channel design",
-      "decision": "New method get_subject_event_stats(trade_date, subject_keys) → list[SubjectEventStatsDTO] added at every layer: StockReadPort, DatabaseGatewayStockFacade, DBThemeDataGateway, StockReadGatewayAdapter, DatabaseGateway, PostgresDatabaseManager",
-      "reason": "Follows existing DDD pattern: each layer delegates to the next; Domain never touches SQL"
+      "topic": "Feature flag 机制",
+      "decision": "USE_ENHANCED_MAINLINE 环境变量控制新路径开关，DUAL_RUN_TRACE 环境变量控制对比 JSON 输出",
+      "reason": "配置简单，运行时切换无需改代码"
     },
     {
-      "topic": "SubjectEventStatsDTO fields",
-      "decision": "Fields: subject_key, theme_name, today_event_count, recent_event_count, distinct_event_days, key_event_count, sample_summaries — matches ThemeEventStats dataclass in enhanced_mainline_judgement_service.py",
-      "reason": "Exact 1:1 mapping to what MainlineJudgementService.build_judgement() expects as input"
+      "topic": "theme_tier → identity_status 映射",
+      "decision": "main → confirmed（one_day_tour 时降级为 observed），strong_branch → observed，failed → dismissed",
+      "reason": "对齐 enhanced service 输出与现有 identity_registry schema"
     },
     {
-      "topic": "KEY_EVENT_KEYWORDS counting location",
-      "decision": "Perform keyword counting in PostgresManager method after SQL aggregation (not in adapter layer or domain)",
-      "reason": "Simple string matching, not complex business logic. Keeps adapters thin and DTOs pre-populated."
+      "topic": "双轨对比机制",
+      "decision": "每次执行同时运行新旧两条链，输出对比 JSON 到 tmp/ 目录，由 USE_ENHANCED_MAINLINE 控制实际写入 DB 的路径",
+      "reason": "防止算法切换与数据质量问题混淆，方便逐题材分析分歧"
     },
     {
-      "topic": "SQL query design",
-      "decision": "Use GROUP BY on tm.source_id with FILTER for today_event_count, ARRAY_AGG for summaries, then Python post-processing for key_event_count from KEY_EVENT_KEYWORDS list",
-      "reason": "SQL aggregation is more efficient than N+1 queries; keyword matching is simpler in Python than SQL ILIKE/ANY chains"
-    },
-    {
-      "topic": "Insertion method for large files",
-      "decision": "Use Python script via Bash to do precise text replacements on postgres_manager.py (3209 lines) since Claude Code Edit tool has persistent fs.openSync bug",
-      "reason": "Edit tool fails with 'fs.openSync is not a function' error on this file. Python string replacement works reliably."
-    },
-    {
-      "topic": "feature flag mechanism",
-      "decision": "USE_ENHANCED_MAINLINE environment variable to gate new path",
-      "reason": "Simpler for configuration; allows runtime toggling without code changes"
+      "topic": "事件数据路径选择",
+      "decision": "采用路径 A（治本）：接入真实 news_event/event_theme_map 数据；路径 B（JSONL 行情代理）仅作临时回退",
+      "reason": "JSONL 行情代理造成循环论证（行情表现 → 推断'有事件' → 判定为主线），真实事件数据从根本上消除此问题"
     }
   ],
   "files_touched": [
     {
-      "path": "/Users/admin/Desktop/ai_theme_app/database_service/managers/postgres_manager.py",
-      "summary": "INSERTED get_subject_event_stats(trade_date, subject_keys, lookback_days) method (lines 1736-1802) with SQL joining news_event/event_theme_map/theme_master, GROUP BY with FILTER+ARRAY_AGG, Python post-processing for KEY_EVENT_KEYWORDS matching",
+      "path": "stock_processing_service/application/jobs/build_identity_job.py",
+      "summary": "大规模修改（+156行）：接入 EnhancedMainlineJudgementService，新旧双轨对比逻辑，feature flags，event stats 归一化处理，对比 JSON 输出到 tmp/",
       "type": "modified"
     },
     {
-      "path": "/Users/admin/Desktop/ai_theme_app/database_service/gateway.py",
-      "summary": "INSERTED get_subject_event_stats() delegation method (before upsert_stock_daily_snapshot_rows) that wraps self._client.get_subject_event_stats() with timing/error logging",
+      "path": "stock_processing_service/infrastructure/gateway_adapters/db_theme_data_gateway.py",
+      "summary": "修复 get_subject_event_stats 从返回 list[dict] 改为返回 list[SubjectEventStatsDTO]，新增 _as_dict 辅助方法",
       "type": "modified"
     },
     {
-      "path": "/Users/admin/Desktop/ai_theme_app/stock_processing_service/infrastructure/gateway_adapters/db_theme_data_gateway.py",
-      "summary": "INSERTED get_subject_event_stats() delegation method (before get_theme_stock_pool) that wraps self._db.get_subject_event_stats() with dict conversion",
+      "path": "stock_processing_service/tests/integration/test_build_identity_job.py",
+      "summary": "新增 get_subject_event_stats、get_mainline_identity_by_subject_keys、get_mainline_cycle_by_subject_keys、get_prior_strong_watch_pool_rows 桩方法到 _FakeReadPort",
       "type": "modified"
     },
     {
-      "path": "/Users/admin/Desktop/ai_theme_app/stock_processing_service/infrastructure/gateway_adapters/stock_read_gateway_adapter.py",
-      "summary": "INSERTED get_subject_event_stats() method (before get_prior_stock_daily_snapshots) with dict→SubjectEventStatsDTO mapping including today_event_count, recent_event_count, distinct_event_days, key_event_count, sample_summaries",
-      "type": "modified"
+      "path": "stock_processing_service/tests/replay/_diag_event_stats.py",
+      "summary": "新建诊断脚本：验证 news_event、event_theme_map、theme_master 表结构和数据可用性，测试 join 查询",
+      "type": "created"
     },
     {
-      "path": "/Users/admin/Desktop/ai_theme_app/database_service/scripts/build_theme_mainline_judgement.py",
-      "summary": "READ: Reference implementation from old chain — contains exact SQL pattern for fetch_event_rows() and build_event_stats()/build_market_stats() helper functions. Used as template for new get_subject_event_stats() in postgres_manager.py",
+      "path": "stock_processing_service/tests/replay/_dual_run_compare.py",
+      "summary": "新建双轨对比脚本：对指定日期运行 BuildIdentityJob，读取对比 JSON 并输出分歧分析",
+      "type": "created"
+    },
+    {
+      "path": "stock_processing_service/domain/services/enhanced_mainline_judgement_service.py",
+      "summary": "参考读取：ThemeEventStats、ThemeMarketStats dataclass 定义，MainlineJudgementService.build_judgement() 接口",
       "type": "read"
     },
     {
-      "path": "/Users/admin/Desktop/ai_theme_app/stock_processing_service/domain/services/enhanced_mainline_judgement_service.py",
-      "summary": "READ: Contains ThemeEventStats, ThemeMarketStats dataclasses, KEY_EVENT_KEYWORDS tuple, count_key_events(), build_judgement() method, and EnhancedMainlineJudgementService class. Key reference for wiring into BuildIdentityJob",
+      "path": "database_service/managers/postgres_manager.py",
+      "summary": "读取 get_subject_event_stats() 实现（L1736-1802）：SQL 三表联查 + Python KEY_EVENT_KEYWORDS 后处理；以及 get_subject_stock_pool_by_trade_date 确认表名",
       "type": "read"
     },
     {
-      "path": "/Users/admin/Desktop/ai_theme_app/stock_processing_service/application/jobs/build_identity_job.py",
-      "summary": "READ: Full BuildIdentityJob (549 lines) — currently uses IdentityRuleEngine + IdentityScoringService + OneDayTourDetector + IdentityLLMReviewService + IdentityDecider. Has JSONL enrichment helpers (_read_history_jsonl, _read_stock_daily_jsonl, _compute_5d_metrics). Context metadata always empty (root cause). Needs EnhancedMainlineJudgementService wiring with feature flag.",
-      "type": "read",
-      "currently_editing": true
-    },
-    {
-      "path": "/Users/admin/Desktop/ai_theme_app/stock_processing_service/tests/integration/test_build_identity_job.py",
-      "summary": "READ: Integration test with _FakeReadPort (missing get_subject_event_stats stub), _FakeWritePort, _FakeEventPort. Needs get_subject_event_stats() stub added to FakeReadPort.",
+      "path": "stock_processing_service/infrastructure/gateway_adapters/stock_read_gateway_adapter.py",
+      "summary": "读取 get_subject_event_stats() adapter 实现（L224-252）：dict → SubjectEventStatsDTO 映射",
       "type": "read"
     },
     {
-      "path": "/Users/admin/Desktop/ai_theme_app/stock_processing_service/ports/read_ports.py",
-      "summary": "READ: StockReadPort Protocol — previously modified with get_subject_event_stats signature",
+      "path": "stock_processing_service/contracts/dto/subject_event_stats_dto.py",
+      "summary": "读取 SubjectEventStatsDTO dataclass 定义",
       "type": "read"
     },
     {
-      "path": "/Users/admin/Desktop/ai_theme_app/stock_processing_service/ports/database_gateway_stock_facade.py",
-      "summary": "READ: DatabaseGatewayStockFacade Protocol — previously modified with get_subject_event_stats signature",
+      "path": "database_service/gateway.py",
+      "summary": "读取 get_subject_event_stats() gateway 层方法（L435-454）：委托给 _client（PostgresDatabaseManager）",
       "type": "read"
     },
     {
-      "path": "/Users/admin/Desktop/ai_theme_app/stock_processing_service/contracts/dto/__init__.py",
-      "summary": "READ: DTO exports — previously updated with SubjectEventStatsDTO import",
+      "path": "stock_processing_service/tests/replay/_test_identity_write_path.py",
+      "summary": "参考脚本：真实 DB 连接模式，用于构建双轨测试",
       "type": "read"
     },
     {
-      "path": "/Users/admin/Desktop/ai_theme_app/stock_processing_service/contracts/dto/subject_event_stats_dto.py",
-      "summary": "READ: SubjectEventStatsDTO dataclass (created in previous session). 1:1 mapping to ThemeEventStats",
+      "path": "stock_processing_service/tests/replay/_backfill_identity.py",
+      "summary": "参考批量回填脚本，可作为日期范围测试模板",
+      "type": "read"
+    },
+    {
+      "path": "stock_processing_service/ports/database_gateway_stock_facade.py",
+      "summary": "读取协议定义：get_subject_event_stats 接口声明",
       "type": "read"
     }
   ],
   "known_failures": [
     {
+      "type": "tooling",
+      "location": "Claude Code Edit tool",
+      "summary": "Edit tool 在所有文件上均报错 'fs.openSync is not a function'",
+      "resolved": true
+    },
+    {
       "type": "runtime",
-      "location": "BuildIdentityJob → IdentityRuleEngine",
-      "summary": "94-100% identity_status='observed' output. Root cause: IdentityRuleEngine is from-scratch algorithm, uses JSONL market proxy for event data (circular reasoning), DB context_metadata always empty. EnhancedMainlineJudgementService exists but not wired in.",
+      "location": "db_theme_data_gateway.py → get_subject_event_stats()",
+      "summary": "返回 list[dict] 导致 BuildIdentityJob.execute() L374 报 AttributeError: 'dict' object has no attribute 'subject_key'——已修复为返回 SubjectEventStatsDTO",
+      "resolved": true
+    },
+    {
+      "type": "runtime",
+      "location": "build_identity_job.py L374",
+      "summary": "event_stats_by_subject 构建时直接访问 es.subject_key，但 DBThemeDataGateway 返回的是 dict 而非 DTO——已修复：在 db_theme_data_gateway.py 中转换为 DTO，并在 build_identity_job.py 中增加 dict 防御性归一化",
+      "resolved": true
+    },
+    {
+      "type": "test",
+      "location": "stock_processing_service/tests/integration/test_build_post_market_recap_job.py",
+      "summary": "2 个集成测试失败（test_build_post_market_recap_job_empty_strong_watch_pool, test_build_post_market_recap_job_promoted_pool_generates_candidates）——预存问题，与 identity 改动无关",
       "resolved": false
     },
     {
-      "type": "tooling",
-      "location": "Claude Code Edit tool on postgres_manager.py",
-      "summary": "Edit tool fails with 'fs.openSync is not a function' error on large files (3209 lines). Write tool works but is impractical for 3200-line files.",
-      "resolved": true
+      "type": "test",
+      "location": "stock_processing_service/tests/unit/test_w2s_candidate_service.py",
+      "summary": "2 个单元测试失败——预存问题，与 identity 改动无关",
+      "resolved": false
+    },
+    {
+      "type": "test",
+      "location": "stock_processing_service/tests/unit/test_w2s_candidate_service_gap_structure.py",
+      "summary": "test_formal_ranking_prioritizes_gap_over_prev_low: 'G001.SZ' 不在列表中——预存问题，与 identity 改动无关",
+      "resolved": false
+    },
+    {
+      "type": "data_coverage",
+      "location": "event_theme_map 表",
+      "summary": "event_theme_map 仅 3,787 条映射覆盖 127,230 条 news_event 和 8,165 个 theme_master。659 个题材中仅 28-49 个有事件数据，导致新链 87-93% dismissed 率",
+      "resolved": false
     }
   ],
   "open_questions": [
-    "Should dual-run write comparison JSON to tmp/ directory or to a DB table?",
-    "Should the use_enhanced_mainline feature flag be environment variable or job parameter?"
+    "event_theme_map 覆盖是否需要大规模扩展？当前 3,787 条映射明显不足",
+    "新链 87-93% dismissed 率是否可接受？取决于业务上对'误杀'的容忍度",
+    "在覆盖完善前，是否采用混合策略（有事件走新链，无事件降级旧链旁路）？",
+    "切换阈值：当新链 coverage 达到多少时可以从旧链完全切换到新链？",
+    "旧链 89-98% observed 率中到底有多少是真正的循环论证虚高，多少是合理的？需要人工标注验证"
   ],
   "next_actions": [
-    "Wire EnhancedMainlineJudgementService into BuildIdentityJob.execute(): import EnhancedMainlineJudgementService/ThemeEventStats/ThemeMarketStats, add USE_ENHANCED_MAINLINE env var gate, call read_port.get_subject_event_stats(), construct ThemeEventStats + ThemeMarketStats per subject, call service.build_judgement(), map to identity_registry_rows format, dual-run comparison with old IdentityRuleEngine path, write comparison JSON to tmp/, gate write-through on threshold validation",
-    "Update test_build_identity_job.py _FakeReadPort to include get_subject_event_stats() stub returning empty list",
-    "Run test suite to verify no regressions",
-    "Verify DualRunDiffStore path established for comparison JSON output"
+    "决定事件覆盖策略方向（扩展 event_theme_map 映射 vs 混合过渡方案）",
+    "如选扩展：编写批量映射脚本，提高 news_event → theme_master 的 event_theme_map 覆盖率",
+    "如选混合：在 build_identity_job.py 中增加回退逻辑（event_stats 为空时降级走旧链）",
+    "将双轨对比结果（tmp/ 下的 JSON）提交给业务方确认 dismissed 率是否合理",
+    "对分歧最大的几个题材做人工标注验证，确定旧链虚高 vs 新链误杀的真实比例"
   ],
   "metadata": {
-    "timestamp": "2026-04-28T03:00:06.342Z",
+    "timestamp": "2026-04-28T03:53:09.690Z",
     "model": "deepseek-v4-pro",
     "level": "medium",
     "schema_version": "1.0"
