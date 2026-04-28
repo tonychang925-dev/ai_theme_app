@@ -233,16 +233,19 @@ class BuildIdentityJob:
     def _compute_5d_metrics(
         cls, subject_key: str, trade_date: date, _cache: dict[str, dict[str, Any]] | None = None,
     ) -> dict[str, Any]:
-        """Read stock_daily JSONL for 5-day window; return board_boom, net_inflow, and limit_up stats.
-        
-        Uses _cache (keyed by 'subject_key:date') to avoid re-reading the same file.
-        Returns keys: board_boom_days_5d, net_inflow_sum_5d, net_inflow_days_5d,
-                      limit_up_count (today), limit_up_ratio (today), stock_count (today).
+        """Read stock_daily JSONL for 7-day window; return board_boom, net_inflow, limit_up, and event proxy stats.
+
+        Event proxy fields (derived from market data when DB has no event metadata):
+        - strong_event_count_7d: days with strong_ratio >= 10% OR limit_up_count >= 2
+        - event_count_3d: days in last 3 with strong_ratio >= 5%
+        - event_recency_days: days since most recent strong day (0=today, 99=none)
+        - event_strength_score: scaled avg strong_ratio over 7d (0-100)
+        - event_continuity_score: max consecutive strong days * 20 (0-100)
         """
         if _cache is None:
             _cache = {}
         daily: list[dict[str, Any]] = []
-        for offset in range(5):
+        for offset in range(7):  # Extended to 7 days for event proxy computation
             d = trade_date - timedelta(days=offset)
             cache_key = f"{subject_key}:{d.isoformat()}"
             if cache_key not in _cache:
@@ -250,11 +253,53 @@ class BuildIdentityJob:
             daily.append(_cache[cache_key])
 
         today = daily[0]  # offset 0 = trade_date
-        board_boom_days = sum(1 for sd in daily if sd["limit_up_count"] >= 2)
-        total_inflow = sum((sd["net_inflow"] for sd in daily), start=Decimal("0"))
-        days_with_inflow = sum(1 for sd in daily if sd["net_inflow"] > 0)
+        # 5-day metrics (computed from first 5 days, backward compatible)
+        five_day = daily[:5]
+        board_boom_days = sum(1 for sd in five_day if sd["limit_up_count"] >= 2)
+        total_inflow = sum((sd["net_inflow"] for sd in five_day), start=Decimal("0"))
+        days_with_inflow = sum(1 for sd in five_day if sd["net_inflow"] > 0)
         # Market heat proxy: a day is "hot" if strong_ratio >= 10% or limit_up_count >= 2
-        days_hot_5d = sum(1 for sd in daily if sd.get("strong_ratio", 0.0) >= 0.10 or sd.get("limit_up_count", 0) >= 2)
+        days_hot_5d = sum(1 for sd in five_day if sd.get("strong_ratio", 0.0) >= 0.10 or sd.get("limit_up_count", 0) >= 2)
+
+        # ── Event proxy metrics from 7-day window ──
+        # Strong event day: strong_ratio >= 10% OR limit_up_count >= 2
+        def _is_strong_day(sd: dict[str, Any]) -> bool:
+            return sd.get("strong_ratio", 0.0) >= 0.10 or sd.get("limit_up_count", 0) >= 2
+
+        def _is_event_day(sd: dict[str, Any]) -> bool:
+            return sd.get("strong_ratio", 0.0) >= 0.05
+
+        strong_days = [sd for sd in daily if _is_strong_day(sd)]
+        strong_event_count_7d = len(strong_days)
+
+        # Event count in 3-day window
+        event_count_3d = sum(1 for sd in daily[:3] if _is_event_day(sd))
+
+        # Event recency: offset of most recent strong day (0 = today, 99 = none)
+        event_recency_days = 99
+        for i, sd in enumerate(daily):
+            if _is_strong_day(sd):
+                event_recency_days = i
+                break
+
+        # Event strength score: scaled avg strong_ratio over 7d
+        strong_ratios = [sd.get("strong_ratio", 0.0) for sd in daily]
+        avg_sr = sum(strong_ratios) / len(strong_ratios)
+        event_strength_score = Decimal(str(round(min(avg_sr * 500, 100), 2)))
+
+        # Event continuity score: max consecutive strong days * 25, capped at 100
+        # (25 multiplier calibrated so 2 consecutive days=50 passes market_ok threshold
+        #  — meaningful continuity in the 3-day data window)
+        max_consecutive = 0
+        cur = 0
+        for sd in daily:
+            if _is_strong_day(sd):
+                cur += 1
+                if cur > max_consecutive:
+                    max_consecutive = cur
+            else:
+                cur = 0
+        event_continuity_score = Decimal(str(min(max_consecutive * 25, 100)))
 
         return {
             "board_boom_days_5d": board_boom_days,
@@ -265,6 +310,12 @@ class BuildIdentityJob:
             "stock_count_today": today["stock_count"],
             "strong_ratio_today": today.get("strong_ratio", 0.0),
             "days_hot_5d_proxy": days_hot_5d,
+            # Event proxy fields
+            "strong_event_count_7d_proxy": strong_event_count_7d,
+            "event_count_3d_proxy": event_count_3d,
+            "event_recency_days_proxy": event_recency_days,
+            "event_strength_score_proxy": event_strength_score,
+            "event_continuity_score_proxy": event_continuity_score,
         }
 
 
@@ -333,8 +384,15 @@ class BuildIdentityJob:
             _lu_count, _lu_ratio = self._compute_limit_up_from_bars(rows, bars_by_stock)
             limit_up_count = _lu_count
             limit_up_ratio_today = Decimal(str(_lu_ratio))
-            # ── JSONL enrichment: 5-day metrics from stock_daily files (board_boom + net_inflow) ──
+            # ── JSONL enrichment: 7-day metrics from stock_daily files (board_boom + net_inflow + event proxy) ──
             _5d = self._compute_5d_metrics(subject_key, trade_date, _sd_cache)
+            # ── Event proxy: when DB context_metadata is empty (always), use market-derived proxies ──
+            if strong_event_count_7d == 0 and event_count_3d == 0:
+                strong_event_count_7d = _5d["strong_event_count_7d_proxy"]
+                event_count_3d = _5d["event_count_3d_proxy"]
+                event_recency_days = _5d["event_recency_days_proxy"]
+                event_strength_score = _5d["event_strength_score_proxy"]
+                event_continuity_score = _5d["event_continuity_score_proxy"]
             board_boom_days_5d = _5d["board_boom_days_5d"]
             net_inflow_sum_5d = _5d["net_inflow_sum_5d"]
             net_inflow_days_5d = _5d["net_inflow_days_5d"]

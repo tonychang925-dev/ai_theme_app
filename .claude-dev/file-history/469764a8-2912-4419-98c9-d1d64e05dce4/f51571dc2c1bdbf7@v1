@@ -1,8 +1,11 @@
 from __future__ import annotations
 
+import json
+import os
 from dataclasses import asdict
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from decimal import Decimal
+from pathlib import Path
 from typing import Any
 from types import SimpleNamespace
 from uuid import uuid4
@@ -80,6 +83,242 @@ class BuildIdentityJob:
                 result.append(r)
         return result
 
+
+    # ── JSONL enrichment helpers ──────────────────────────────────────────
+    _HISTORY_DIR = Path("theme_data_complete/history")
+    _STOCK_DAILY_DIR = Path("theme_data_complete/stock_daily")
+
+    @staticmethod
+    def _compute_limit_up_from_bars(
+        pool_rows: list[Any], bars_by_stock: dict[str, Any]
+    ) -> tuple[int, float]:
+        """Compute limit_up_count and limit_up_ratio_today from bars data (already in memory)."""
+        if not pool_rows:
+            return 0, 0.0
+        limit_up_count = 0
+        for row in pool_rows:
+            bar = bars_by_stock.get(row.stock_id)
+            if bar is None:
+                continue
+            limit_price = getattr(bar, 'limit_up_price', None)
+            close_price = getattr(bar, 'close_price', None)
+            if limit_price is not None and limit_price > 0 and close_price is not None and close_price >= limit_price:
+                limit_up_count += 1
+            elif getattr(bar, 'pct_chg', None) is not None:
+                try:
+                    if float(bar.pct_chg) >= 9.5:
+                        limit_up_count += 1
+                except (ValueError, TypeError):
+                    pass
+        return limit_up_count, limit_up_count / len(pool_rows)
+
+    @classmethod
+    def _read_history_jsonl(cls, subject_key: str, trade_date: date) -> dict[str, Any]:
+        """Read history JSONL for a subject and compute heat_latest, avg_heat_5d.
+        
+        Returns dict with keys: heat_latest, avg_heat_5d.
+        heat=1 in JSONL is calibrated to 100 (old chain: heat*100 if raw<=1.2).
+        """
+        result = {"heat_latest": Decimal("0"), "avg_heat_5d": Decimal("0")}
+        hist_file = cls._HISTORY_DIR / f"{subject_key}_history.jsonl"
+        if not hist_file.exists():
+            return result
+
+        window_start = trade_date - timedelta(days=4)
+        days_with_heat: set[str] = set()
+
+        try:
+            with open(hist_file) as f:
+                for line in f:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        entry = json.loads(line)
+                    except json.JSONDecodeError:
+                        continue
+                    rank_date_str = (entry.get("rankDate") or "")[:10]
+                    if not rank_date_str:
+                        continue
+                    try:
+                        rank_date = date.fromisoformat(rank_date_str)
+                    except ValueError:
+                        continue
+                    if window_start <= rank_date <= trade_date:
+                        days_with_heat.add(rank_date_str)
+        except Exception:
+            pass
+
+        if not days_with_heat:
+            return result
+
+        raw_latest = Decimal("1") if trade_date.isoformat() in days_with_heat else Decimal("0")
+        raw_avg = Decimal(str(len(days_with_heat))) / Decimal("5")
+
+        # Old chain calibration: heat * 100 if raw <= 1.2
+        heat_latest = raw_latest * 100 if raw_latest <= Decimal("1.2") else raw_latest
+        avg_heat_5d = raw_avg * 100 if raw_avg <= Decimal("1.2") else raw_avg
+
+        result["heat_latest"] = heat_latest
+        result["avg_heat_5d"] = avg_heat_5d
+        return result
+
+    @classmethod
+    def _read_stock_daily_jsonl(cls, subject_key: str, trade_date: date) -> dict[str, Any]:
+        """Read stock_daily JSONL for a subject + date. Compute per-subject aggregates.
+        
+        Returns dict with: net_inflow, limit_up_count, limit_up_ratio.
+        main_net_inflow is at index [34]; pct_chg is at index [10].
+        """
+        result = {
+            "net_inflow": Decimal("0"),
+            "limit_up_count": 0,
+            "limit_up_ratio": 0.0,
+            "stock_count": 0,
+            "strong_count": 0,
+            "strong_ratio": 0.0,
+        }
+        sd_file = cls._STOCK_DAILY_DIR / f"{subject_key}_{trade_date.isoformat()}_stocks.jsonl"
+        if not sd_file.exists():
+            return result
+
+        total_inflow = Decimal("0")
+        limit_up_count = 0
+        strong_count = 0
+        stock_count = 0
+
+        try:
+            with open(sd_file) as f:
+                for line in f:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        arr = json.loads(line)
+                    except json.JSONDecodeError:
+                        continue
+                    if not isinstance(arr, list) or len(arr) < 38:
+                        continue
+                    stock_count += 1
+
+                    # main_net_inflow at index [34]
+                    raw_inflow = arr[34]
+                    if raw_inflow is not None:
+                        try:
+                            total_inflow += Decimal(str(raw_inflow))
+                        except Exception:
+                            pass
+
+                    # pct_chg at index [10]; approximate limit_up: pct_chg >= 9.5%
+                    try:
+                        pct = float(arr[10]) if arr[10] is not None else 0.0
+                    except (ValueError, TypeError):
+                        pct = 0.0
+                    if pct >= 9.5:
+                        limit_up_count += 1
+                    if pct >= 5.0:
+                        strong_count += 1
+        except Exception:
+            pass
+
+        result["net_inflow"] = total_inflow
+        result["limit_up_count"] = limit_up_count
+        result["stock_count"] = stock_count
+        result["limit_up_ratio"] = (limit_up_count / stock_count) if stock_count > 0 else 0.0
+        result["strong_count"] = strong_count
+        result["strong_ratio"] = (strong_count / stock_count) if stock_count > 0 else 0.0
+        return result
+
+    @classmethod
+    def _compute_5d_metrics(
+        cls, subject_key: str, trade_date: date, _cache: dict[str, dict[str, Any]] | None = None,
+    ) -> dict[str, Any]:
+        """Read stock_daily JSONL for 7-day window; return board_boom, net_inflow, limit_up, and event proxy stats.
+
+        Event proxy fields (derived from market data when DB has no event metadata):
+        - strong_event_count_7d: days with strong_ratio >= 10% OR limit_up_count >= 2
+        - event_count_3d: days in last 3 with strong_ratio >= 5%
+        - event_recency_days: days since most recent strong day (0=today, 99=none)
+        - event_strength_score: scaled avg strong_ratio over 7d (0-100)
+        - event_continuity_score: max consecutive strong days * 20 (0-100)
+        """
+        if _cache is None:
+            _cache = {}
+        daily: list[dict[str, Any]] = []
+        for offset in range(7):  # Extended to 7 days for event proxy computation
+            d = trade_date - timedelta(days=offset)
+            cache_key = f"{subject_key}:{d.isoformat()}"
+            if cache_key not in _cache:
+                _cache[cache_key] = cls._read_stock_daily_jsonl(subject_key, d)
+            daily.append(_cache[cache_key])
+
+        today = daily[0]  # offset 0 = trade_date
+        # 5-day metrics (computed from first 5 days, backward compatible)
+        five_day = daily[:5]
+        board_boom_days = sum(1 for sd in five_day if sd["limit_up_count"] >= 2)
+        total_inflow = sum((sd["net_inflow"] for sd in five_day), start=Decimal("0"))
+        days_with_inflow = sum(1 for sd in five_day if sd["net_inflow"] > 0)
+        # Market heat proxy: a day is "hot" if strong_ratio >= 10% or limit_up_count >= 2
+        days_hot_5d = sum(1 for sd in five_day if sd.get("strong_ratio", 0.0) >= 0.10 or sd.get("limit_up_count", 0) >= 2)
+
+        # ── Event proxy metrics from 7-day window ──
+        # Strong event day: strong_ratio >= 10% OR limit_up_count >= 2
+        def _is_strong_day(sd: dict[str, Any]) -> bool:
+            return sd.get("strong_ratio", 0.0) >= 0.10 or sd.get("limit_up_count", 0) >= 2
+
+        def _is_event_day(sd: dict[str, Any]) -> bool:
+            return sd.get("strong_ratio", 0.0) >= 0.05
+
+        strong_days = [sd for sd in daily if _is_strong_day(sd)]
+        strong_event_count_7d = len(strong_days)
+
+        # Event count in 3-day window
+        event_count_3d = sum(1 for sd in daily[:3] if _is_event_day(sd))
+
+        # Event recency: offset of most recent strong day (0 = today, 99 = none)
+        event_recency_days = 99
+        for i, sd in enumerate(daily):
+            if _is_strong_day(sd):
+                event_recency_days = i
+                break
+
+        # Event strength score: scaled avg strong_ratio over 7d
+        strong_ratios = [sd.get("strong_ratio", 0.0) for sd in daily]
+        avg_sr = sum(strong_ratios) / len(strong_ratios)
+        event_strength_score = Decimal(str(round(min(avg_sr * 500, 100), 2)))
+
+        # Event continuity score: max consecutive strong days * 25, capped at 100
+        # (25 multiplier calibrated so 2 consecutive days=50 passes market_ok threshold
+        #  — meaningful continuity in the 3-day data window)
+        max_consecutive = 0
+        cur = 0
+        for sd in daily:
+            if _is_strong_day(sd):
+                cur += 1
+                if cur > max_consecutive:
+                    max_consecutive = cur
+            else:
+                cur = 0
+        event_continuity_score = Decimal(str(min(max_consecutive * 25, 100)))
+
+        return {
+            "board_boom_days_5d": board_boom_days,
+            "net_inflow_sum_5d": total_inflow,
+            "net_inflow_days_5d": days_with_inflow,
+            "limit_up_count_today": today["limit_up_count"],
+            "limit_up_ratio_today": today["limit_up_ratio"],
+            "stock_count_today": today["stock_count"],
+            "strong_ratio_today": today.get("strong_ratio", 0.0),
+            "days_hot_5d_proxy": days_hot_5d,
+            # Event proxy fields
+            "strong_event_count_7d_proxy": strong_event_count_7d,
+            "event_count_3d_proxy": event_count_3d,
+            "event_recency_days_proxy": event_recency_days,
+            "event_strength_score_proxy": event_strength_score,
+            "event_continuity_score_proxy": event_continuity_score,
+        }
+
+
     async def execute(
         self,
         trade_date: date,
@@ -117,6 +356,7 @@ class BuildIdentityJob:
         for row in pool_rows:
             grouped.setdefault(row.subject_key, []).append(row)
 
+        _sd_cache: dict[str, dict[str, Any]] = {}
         for subject_key, rows in grouped.items():
             subject_name = rows[0].subject_name
             context_tags = list((ctx_by_subject.get(subject_key).theme_context_tags if subject_key in ctx_by_subject else []) or [])
@@ -136,15 +376,42 @@ class BuildIdentityJob:
             event_recency_days = int(event_recency_days_raw) if event_recency_days_raw is not None else 99
             event_strength_score = self._d(context_metadata.get("event_strength_score"), default="0")
             event_continuity_score = self._d(context_metadata.get("event_continuity_score"), default="0")
-            heat_latest = self._d(context_metadata.get("heat_latest"), default="0")
-            avg_heat_5d = self._d(context_metadata.get("avg_heat_5d"), default="0")
-            limit_up_count = int(context_metadata.get("limit_up_count") or 0)
-            limit_up_ratio_today = self._d(context_metadata.get("limit_up_ratio_today"), default="0")
-            board_boom_days_5d = int(context_metadata.get("board_boom_days_5d") or 0)
+            # ── JSONL enrichment: heat from theme_data_complete/history/ ──
+            _heat_data = self._read_history_jsonl(subject_key, trade_date)
+            heat_latest = _heat_data["heat_latest"]
+            avg_heat_5d = _heat_data["avg_heat_5d"]
+            # ── Bar-based enrichment: limit_up computed from actual bar data ──
+            _lu_count, _lu_ratio = self._compute_limit_up_from_bars(rows, bars_by_stock)
+            limit_up_count = _lu_count
+            limit_up_ratio_today = Decimal(str(_lu_ratio))
+            # ── JSONL enrichment: 7-day metrics from stock_daily files (board_boom + net_inflow + event proxy) ──
+            _5d = self._compute_5d_metrics(subject_key, trade_date, _sd_cache)
+            # ── Event proxy: when DB context_metadata is empty (always), use market-derived proxies ──
+            if strong_event_count_7d == 0 and event_count_3d == 0:
+                strong_event_count_7d = _5d["strong_event_count_7d_proxy"]
+                event_count_3d = _5d["event_count_3d_proxy"]
+                event_recency_days = _5d["event_recency_days_proxy"]
+                event_strength_score = _5d["event_strength_score_proxy"]
+                event_continuity_score = _5d["event_continuity_score_proxy"]
+            board_boom_days_5d = _5d["board_boom_days_5d"]
+            net_inflow_sum_5d = _5d["net_inflow_sum_5d"]
+            net_inflow_days_5d = _5d["net_inflow_days_5d"]
+            # Use JSONL-based limit_up for today if bar data didn't capture it
+            if limit_up_count == 0 and _5d["limit_up_count_today"] > 0:
+                limit_up_count = _5d["limit_up_count_today"]
+                limit_up_ratio_today = Decimal(str(_5d["limit_up_ratio_today"]))
+            # ── Heat fallback: if no JYHF heat data, use market heat proxy from stock_daily ──
+            # "Hot" = strong_ratio >= 10% OR limit_up_count >= 2 (binary, matches old chain heat=1 semantics)
+            if heat_latest == 0 and avg_heat_5d == 0:
+                market_hot_today = (
+                    _5d.get("strong_ratio_today", 0.0) >= 0.10
+                    or _5d.get("limit_up_count_today", 0) >= 2
+                )
+                heat_latest = Decimal("100") if market_hot_today else Decimal("0")
+                days_hot_5d = _5d.get("days_hot_5d_proxy", 0)
+                avg_heat_5d = Decimal(str(days_hot_5d)) / Decimal("5") * Decimal("100")
             front_row_strength_score = self._d(context_metadata.get("front_row_strength_score"), default="0")
             front_row_alive_ratio = self._d(context_metadata.get("front_row_alive_ratio"), default="0")
-            net_inflow_sum_5d = self._d(context_metadata.get("net_inflow_sum_5d"), default="0")
-            net_inflow_days_5d = int(context_metadata.get("net_inflow_days_5d") or 0)
             kline_support_hold = bool(context_metadata.get("kline_support_hold", False))
             platform_breakout_flag = bool(context_metadata.get("platform_breakout_flag", False))
 

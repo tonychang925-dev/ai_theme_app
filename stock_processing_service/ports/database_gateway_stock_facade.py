@@ -15,7 +15,6 @@ from stock_processing_service.contracts.dto import (
     SubjectStockPoolDTO,
     TradeCalendarDTO,
 )
-from stock_processing_service.contracts.events import EventEnvelope
 from stock_processing_service.contracts.snapshots import (
     PostMarketRecapSnapshot,
     PreMarketBriefSnapshot,
@@ -93,7 +92,7 @@ class DatabaseGatewayStockFacade(Protocol):
 
     async def upsert_strong_watch_history_rows(self, rows: list[dict[str, Any]]) -> int: ...
 
-    async def publish_stock_processing_event(self, event: EventEnvelope[Any]) -> str: ...
+    async def publish_stock_processing_event(self, event_name: str, payload: dict[str, Any]) -> str: ...
 
     async def acquire_job_idempotency(self, job_key: str, ttl_seconds: int) -> bool: ...
 

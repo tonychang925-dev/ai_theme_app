@@ -3,13 +3,21 @@ from __future__ import annotations
 import os
 from dataclasses import asdict
 from datetime import date, datetime, timedelta, timezone
+from decimal import Decimal
 import hashlib
 import json
 from typing import Any
 from uuid import uuid4
 
 from stock_processing_service.application.cache import SnapshotCacheWriter
-from stock_processing_service.contracts.dto import BuildResult
+from stock_processing_service.contracts.dto import (
+    BuildResult,
+    MainlineCycleDTO,
+    MainlineIdentityDTO,
+    PriorSnapshotDTO,
+    StockBarDTO,
+    SubjectStockPoolDTO,
+)
 from stock_processing_service.contracts.events import EventEnvelope, SnapshotBuiltPayload
 from stock_processing_service.contracts.snapshots import PostMarketRecapSnapshot
 from stock_processing_service.domain.services.strong_watch_service import StrongWatchService
@@ -43,6 +51,107 @@ class BuildPostMarketRecapJob:
         self._candidate_service = candidate_service or W2SCandidateService()
         self._strong_watch_service = strong_watch_service or StrongWatchService()
 
+    @staticmethod
+    def _d(value: Any) -> Decimal:
+        if value is None:
+            return Decimal("0")
+        if isinstance(value, Decimal):
+            return value
+        try:
+            return Decimal(str(value))
+        except Exception:
+            return Decimal("0")
+
+    @staticmethod
+    def _to_stock_bar(row: Any, default_trade_date: date) -> StockBarDTO:
+        if isinstance(row, StockBarDTO):
+            return row
+        p = dict(row or {})
+        return StockBarDTO(
+            trade_date=p.get("trade_date", default_trade_date),
+            stock_id=str(p.get("stock_id", "")),
+            stock_name=str(p.get("stock_name", "")),
+            open_price=BuildPostMarketRecapJob._d(p.get("open_price")),
+            high_price=BuildPostMarketRecapJob._d(p.get("high_price")),
+            low_price=BuildPostMarketRecapJob._d(p.get("low_price")),
+            close_price=BuildPostMarketRecapJob._d(p.get("close_price")),
+            pre_close=BuildPostMarketRecapJob._d(p.get("pre_close")),
+            pct_chg=BuildPostMarketRecapJob._d(p.get("pct_chg")),
+            volume=BuildPostMarketRecapJob._d(p.get("volume")),
+            amount=BuildPostMarketRecapJob._d(p.get("amount")),
+            limit_up_price=BuildPostMarketRecapJob._d(p.get("limit_up_price")),
+            limit_down_price=BuildPostMarketRecapJob._d(p.get("limit_down_price")),
+        )
+
+    @staticmethod
+    def _to_pool_row(row: Any, default_trade_date: date) -> SubjectStockPoolDTO:
+        if isinstance(row, SubjectStockPoolDTO):
+            return row
+        p = dict(row or {})
+        metadata = p.get("metadata")
+        return SubjectStockPoolDTO(
+            trade_date=p.get("trade_date", default_trade_date),
+            subject_key=str(p.get("subject_key", "")),
+            subject_name=str(p.get("subject_name") or p.get("theme_name") or p.get("subject_key") or ""),
+            stock_id=str(p.get("stock_id", "")),
+            stock_name=p.get("stock_name"),
+            pool_rank=p.get("pool_rank", p.get("rank_order")),
+            metadata=dict(metadata) if isinstance(metadata, dict) else {},
+        )
+
+    @staticmethod
+    def _to_prior_row(row: Any, default_trade_date: date) -> PriorSnapshotDTO:
+        if isinstance(row, PriorSnapshotDTO):
+            return row
+        p = dict(row or {})
+        payload = p.get("payload")
+        if not isinstance(payload, dict):
+            payload = {}
+            for key in ("open_price", "high_price", "low_price", "close_price", "pre_close", "pct_chg", "watch_score"):
+                if p.get(key) is not None:
+                    payload[key] = str(p.get(key))
+        return PriorSnapshotDTO(
+            trade_date=p.get("trade_date", default_trade_date),
+            stock_id=str(p.get("stock_id", "")),
+            snapshot_version=str(p.get("snapshot_version", "")),
+            payload=payload,
+        )
+
+    @staticmethod
+    def _to_identity(row: Any) -> MainlineIdentityDTO:
+        if isinstance(row, MainlineIdentityDTO):
+            return row
+        p = dict(row or {})
+        return MainlineIdentityDTO(
+            subject_key=str(p.get("subject_key", "")),
+            identity_status=str(p.get("identity_status", "")),
+            is_main_theme=bool(p.get("is_main_theme", False)),
+            first_confirmed_date=p.get("first_confirmed_date"),
+            last_review_date=p.get("last_review_date"),
+            rule_version=str(p.get("rule_version", "")),
+        )
+
+    @staticmethod
+    def _to_cycle(row: Any, default_trade_date: date) -> MainlineCycleDTO:
+        if isinstance(row, MainlineCycleDTO):
+            return row
+        p = dict(row or {})
+        trigger_flags = p.get("trigger_flags")
+        return MainlineCycleDTO(
+            trade_date=p.get("trade_date", default_trade_date),
+            subject_key=str(p.get("subject_key", "")),
+            final_cycle_state=str(p.get("final_cycle_state", "")),
+            final_mainline_alive=bool(p.get("final_mainline_alive", False)),
+            transition_type=str(p.get("transition_type", "")),
+            transition_confidence=BuildPostMarketRecapJob._d(p.get("transition_confidence")),
+            trigger_flags=list(trigger_flags) if isinstance(trigger_flags, list) else [],
+            mainline_strength_score=BuildPostMarketRecapJob._d(p.get("mainline_strength_score")),
+            repair_score=BuildPostMarketRecapJob._d(p.get("repair_score")),
+            divergence_score=BuildPostMarketRecapJob._d(p.get("divergence_score")),
+            fade_watch_score=BuildPostMarketRecapJob._d(p.get("fade_watch_score")),
+            fade_confirmed_score=BuildPostMarketRecapJob._d(p.get("fade_confirmed_score")),
+        )
+
     async def execute(
         self,
         trade_date: date,
@@ -65,29 +174,35 @@ class BuildPostMarketRecapJob:
                 metrics={"job_key": job_key},
             )
 
-        bars = await self._read_port.get_stock_daily_bars(trade_date)
-        pool_rows = await self._read_port.get_subject_stock_pool_by_trade_date(trade_date)
-        prior_rows = await self._read_port.get_prior_stock_daily_snapshots(
+        bars_raw = await self._read_port.get_stock_daily_bars(trade_date)
+        pool_rows_raw = await self._read_port.get_subject_stock_pool_by_trade_date(trade_date)
+        prior_rows_raw = await self._read_port.get_prior_stock_daily_snapshots(
             trade_date=trade_date,
             lookback_days=lookback_days,
-            stock_ids=[row.stock_id for row in pool_rows] if pool_rows else None,
+            stock_ids=[str((dict(r).get("stock_id") if not isinstance(r, SubjectStockPoolDTO) else r.stock_id)) for r in pool_rows_raw] if pool_rows_raw else None,
         )
+        bars = [self._to_stock_bar(row, trade_date) for row in bars_raw]
+        pool_rows = [self._to_pool_row(row, trade_date) for row in pool_rows_raw]
+        prior_rows = [self._to_prior_row(row, trade_date) for row in prior_rows_raw]
         history_start = trade_date - timedelta(days=90)
-        history_bars = await self._read_port.get_stock_daily_bars_range(
+        history_bars_raw = await self._read_port.get_stock_daily_bars_range(
             start_date=history_start,
             end_date=trade_date,
             stock_ids=[row.stock_id for row in pool_rows] if pool_rows else None,
         )
+        history_bars = [self._to_stock_bar(row, history_start) for row in history_bars_raw]
         subject_keys = sorted({row.subject_key for row in pool_rows if row.subject_key})
         stock_ids = sorted({row.stock_id for row in pool_rows if row.stock_id})
-        identities = await self._read_port.get_mainline_identity_by_subject_keys(
+        identities_raw = await self._read_port.get_mainline_identity_by_subject_keys(
             subject_keys=subject_keys,
             trade_date=trade_date,
         )
-        cycles = await self._read_port.get_mainline_cycle_by_subject_keys(
+        cycles_raw = await self._read_port.get_mainline_cycle_by_subject_keys(
             subject_keys=subject_keys,
             trade_date=trade_date,
         )
+        identities = [self._to_identity(row) for row in identities_raw]
+        cycles = [self._to_cycle(row, trade_date) for row in cycles_raw]
         identities_by_subject = {x.subject_key: x for x in identities}
         cycles_by_subject = {x.subject_key: x for x in cycles}
         layer_a_identity_source = "theme_mainline_identity_registry"
@@ -106,44 +221,26 @@ class BuildPostMarketRecapJob:
 
         shadow_summary: dict[str, Any] = {}
         if hasattr(self._strong_watch_service, "build_promoted_pool_with_history_and_shadow"):
-            try:
-                promoted_pool_rows, strong_watch_rows, strong_watch_history, shadow = self._strong_watch_service.build_promoted_pool_with_history_and_shadow(
-                    trade_date=trade_date,
-                    pool_rows=pool_rows,
-                    bars=bars,
-                    prior_rows=prior_rows,
-                    history_bars=history_bars,
-                    identities_by_subject=identities_by_subject,
-                    cycles_by_subject=cycles_by_subject,
-                )
-            except TypeError:
-                promoted_pool_rows, strong_watch_rows, strong_watch_history, shadow = self._strong_watch_service.build_promoted_pool_with_history_and_shadow(
-                    trade_date=trade_date,
-                    pool_rows=pool_rows,
-                    bars=bars,
-                    prior_rows=prior_rows,
-                    history_bars=history_bars,
-                )
+            promoted_pool_rows, strong_watch_rows, strong_watch_history, shadow = self._strong_watch_service.build_promoted_pool_with_history_and_shadow(
+                trade_date=trade_date,
+                pool_rows=pool_rows,
+                bars=bars,
+                prior_rows=prior_rows,
+                history_bars=history_bars,
+                identities_by_subject=identities_by_subject,
+                cycles_by_subject=cycles_by_subject,
+            )
             shadow_summary = asdict(shadow)
         else:
-            try:
-                promoted_pool_rows, strong_watch_rows, strong_watch_history = self._strong_watch_service.build_promoted_pool_with_history(
-                    trade_date=trade_date,
-                    pool_rows=pool_rows,
-                    bars=bars,
-                    prior_rows=prior_rows,
-                    history_bars=history_bars,
-                    identities_by_subject=identities_by_subject,
-                    cycles_by_subject=cycles_by_subject,
-                )
-            except TypeError:
-                promoted_pool_rows, strong_watch_rows, strong_watch_history = self._strong_watch_service.build_promoted_pool_with_history(
-                    trade_date=trade_date,
-                    pool_rows=pool_rows,
-                    bars=bars,
-                    prior_rows=prior_rows,
-                    history_bars=history_bars,
-                )
+            promoted_pool_rows, strong_watch_rows, strong_watch_history = self._strong_watch_service.build_promoted_pool_with_history(
+                trade_date=trade_date,
+                pool_rows=pool_rows,
+                bars=bars,
+                prior_rows=prior_rows,
+                history_bars=history_bars,
+                identities_by_subject=identities_by_subject,
+                cycles_by_subject=cycles_by_subject,
+            )
         prior_watch_rows = await self._get_prior_strong_watch_rows(trade_date=trade_date, lookback_days=lookback_days)
         candidate_input_rows = self._build_candidate_input_rows(
             trade_date=trade_date,
@@ -155,6 +252,8 @@ class BuildPostMarketRecapJob:
             pool_rows=candidate_input_rows,
             prior_rows=prior_rows,
         )
+        formal_candidates = [c for c in candidates if str(getattr(c, "candidate_level", "")) == "formal"]
+        observe_candidates = [c for c in candidates if str(getattr(c, "candidate_level", "")) == "observe_only"]
 
         recap_doc = {
             "trade_date": trade_date.isoformat(),
@@ -197,7 +296,11 @@ class BuildPostMarketRecapJob:
                 }
                 for row in strong_watch_history[:100]
             ],
-            "candidate_count": len(candidates),
+            # Backward-compatible primary count now follows formal pool only.
+            "candidate_count": len(formal_candidates),
+            "candidate_count_total": len(candidates),
+            "candidate_count_formal": len(formal_candidates),
+            "candidate_count_observe": len(observe_candidates),
             "strong_watch_input_7d_preview": [
                 {
                     "stock_id": r.stock_id,
@@ -230,7 +333,7 @@ class BuildPostMarketRecapJob:
                     "trigger_flags": list(getattr(c, "trigger_flags", []) or []),
                     "evidence_rules": c.evidence_rules,
                 }
-                for c in candidates[:30]
+                for c in formal_candidates[:30]
             ],
         }
 

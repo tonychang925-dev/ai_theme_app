@@ -173,16 +173,27 @@ class W2SCandidateService:
 
     @staticmethod
     def _weekly_midterm_gate(metadata: dict[str, Any]) -> tuple[bool, dict[str, Any]]:
-        # Align with old-chain ablation behavior: output diagnostics, no hard block.
         weekly_data_sufficient = bool(metadata.get("weekly_data_sufficient") or False)
         weekly_trend_up = bool(metadata.get("weekly_trend_up") or False)
         weekly_filter_pass = bool(metadata.get("weekly_filter_pass") or False)
         weekly_high_fall_flag = bool(metadata.get("weekly_high_fall_flag") or False)
         weekly_position_pct = metadata.get("weekly_position_pct")
         weekly_pullback_pct = metadata.get("weekly_pullback_pct")
-        return True, {
-            "passed": True,
-            "reason": "weekly_gate_disabled_ablation",
+        if not weekly_data_sufficient:
+            return False, {
+                "passed": False,
+                "reason": "weekly_data_insufficient",
+                "weekly_data_sufficient": weekly_data_sufficient,
+                "weekly_trend_up": weekly_trend_up,
+                "weekly_filter_pass": weekly_filter_pass,
+                "weekly_high_fall_flag": weekly_high_fall_flag,
+                "weekly_position_pct": str(weekly_position_pct if weekly_position_pct is not None else ""),
+                "weekly_pullback_pct": str(weekly_pullback_pct if weekly_pullback_pct is not None else ""),
+            }
+        passed = weekly_filter_pass and weekly_trend_up and (not weekly_high_fall_flag)
+        return passed, {
+            "passed": passed,
+            "reason": "weekly_gate_passed" if passed else "weekly_gate_failed",
             "weekly_data_sufficient": weekly_data_sufficient,
             "weekly_trend_up": weekly_trend_up,
             "weekly_filter_pass": weekly_filter_pass,
@@ -264,13 +275,6 @@ class W2SCandidateService:
         transition_confidence = self._d(metadata.get("transition_confidence"), default="0")
         trigger_flags = list(metadata.get("trigger_flags") or [])
         two_board_entry = bool(role_tags.get("two_board_entry") or False)
-        # Data-shape guard: when prior state is unknown, transition should not be treated as upgrade/downgrade.
-        if any(str(x).startswith("from=unknown") for x in trigger_flags):
-            transition_type = "flat"
-            if transition_confidence <= Decimal("0"):
-                transition_confidence = Decimal("0.65")
-            else:
-                transition_confidence = min(transition_confidence, Decimal("0.65"))
         prior7_limitup_days, prior7_strong_days, prior7_source = self._prior7_features(
             stock_id=row.stock_id,
             prior_rows=prior_rows or [],
@@ -380,6 +384,17 @@ class W2SCandidateService:
         )
         prior7_formal_gate = legacy_strong_history_pass
         prior7_soft_pass = legacy_strong_history_pass
+        weak_phase_pass = watch_status in {"weakening", "weakening_keep"} or two_board_entry
+        rank_data_pass = two_board_entry or rank < 999
+        board_effect_pass = two_board_entry or prior7_limitup_days >= 1
+        support_type_formal_pass = (
+            (support_type == "gap_support" and gap_hit and support_hit_score >= Decimal("65"))
+            or (
+                support_type in {"previous_low", "prev_low_support", "platform_support"}
+                and support_hit_score >= Decimal("70")
+            )
+            or (support_type == "ma_support" and support_hit_score >= Decimal("78"))
+        )
 
         rank_overheat_gate = rank <= 2 and pct_chg > Decimal("3")
         leader_overheat_gate = bool(role_tags.get("is_leader")) and pct_chg > Decimal("2.5")
@@ -416,11 +431,14 @@ class W2SCandidateService:
                 and support_hit_score >= Decimal("60")
                 and repair_or_takeover_score >= Decimal("50")
                 and prior7_formal_gate
+                and weak_phase_pass
+                and rank_data_pass
+                and board_effect_pass
+                and support_type_formal_pass
                 and formal_day_gate
+                and weekly_gate_passed
                 and not overheat_hard_gate
             )
-            if (formal_w2s_override or gap_formal_override) and candidate_score >= Decimal("60") and formal_day_gate and not overheat_hard_gate:
-                formal_ok = True
             if formal_ok:
                 level = "formal"
             elif observe_day_gate and candidate_score >= Decimal("48") and prior7_soft_pass:
@@ -429,6 +447,14 @@ class W2SCandidateService:
                     formal_fail_reason = "overheated_front_row"
                 elif not formal_day_gate:
                     formal_fail_reason = "formal_day_gate_failed"
+                elif not weekly_gate_passed:
+                    formal_fail_reason = "weekly_midterm_gate_failed"
+                elif not rank_data_pass:
+                    formal_fail_reason = "rank_data_gate_failed"
+                elif not support_type_formal_pass:
+                    formal_fail_reason = "support_type_formal_gate_failed"
+                elif not board_effect_pass:
+                    formal_fail_reason = "board_effect_gate_failed"
                 elif support_hit_score < Decimal("60"):
                     formal_fail_reason = "support_too_low"
                 elif repair_or_takeover_score < Decimal("55"):
@@ -497,6 +523,10 @@ class W2SCandidateService:
             "legacy_watch_status_pass": legacy_watch_status_pass,
             "legacy_strong_history_pass": legacy_strong_history_pass,
             "legacy_strong_history_reason": legacy_strong_history_reason,
+            "weak_phase_pass": weak_phase_pass,
+            "rank_data_pass": rank_data_pass,
+            "board_effect_pass": board_effect_pass,
+            "support_type_formal_pass": support_type_formal_pass,
             "two_board_entry": two_board_entry,
             "formal_sa_gate_mode": self._formal_sa_gate_mode,
             "formal_sa_whitelist_pass": sa_whitelist_pass,
@@ -572,6 +602,11 @@ class W2SCandidateService:
                 f"weakness_valid_score={explain['weakness_valid_score']}",
                 f"overheat_penalty={explain['overheat_penalty']}",
                 f"prior7_bonus={explain['prior7_bonus']}",
+                f"weak_phase_pass={explain.get('weak_phase_pass', False)}",
+                f"rank_data_pass={explain.get('rank_data_pass', False)}",
+                f"board_effect_pass={explain.get('board_effect_pass', False)}",
+                f"support_type_formal_pass={explain.get('support_type_formal_pass', False)}",
+                f"watch_status={explain.get('watch_status', 'unknown')}",
                 f"weekly_midterm_gate_passed={explain.get('weekly_midterm_gate_passed', True)}",
                 f"weekly_midterm_gate_reason={explain.get('weekly_midterm_gate_reason', '')}",
                 f"formal_bias={explain['formal_w2s_override']}",
@@ -596,7 +631,7 @@ class W2SCandidateService:
                 candidate_level=level,
                 candidate_source=str(explain.get("candidate_source", "")),
                 evidence_rules=evidence,
-                formal_bias=bool(explain.get("formal_w2s_override")),
+                formal_bias=bool(explain.get("formal_w2s_override")) or bool(explain.get("gap_formal_override")),
                 overheated=bool(explain.get("overheated")),
                 formal_fail_reason=str(explain.get("formal_fail_reason") or "") or None,
                 reject_reason=str(explain.get("reject_reason") or "") or None,

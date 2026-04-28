@@ -1,226 +1,126 @@
 {
-  "session_goal": "阅读文档并分析当前代码架构与文档设计的差距，给出优化建议",
-  "current_task": "汇总所有发现，输出完整的差距分析报告和优化建议清单",
+  "session_goal": "Fix BuildIdentityJob producing 94-100% observed identity_status by replacing from-scratch IdentityRuleEngine with replicated old chain MainlineJudgementService algorithm",
+  "current_task": "Replace IdentityRuleEngine with MainlineJudgementService in BuildIdentityJob.execute() — import old chain algorithm, build ThemeEventStats from JSONL proxies + ThemeMarketStats from pool rows, call MainlineJudgementService.build_judgement(), map output to identity registry schema",
   "constraints": [
-    "文档第三阶段强调'快照优先于实时'、'双源职责清晰：JYHF负责题材语义，Tushare负责股票日频真源'",
-    "文档要求 domain 层不得依赖 IO 实现，所有数据读写需经 ports + gateway adapters",
-    "文档硬禁止：domain -> infrastructure, domain -> DatabaseGateway, domain -> asyncpg",
-    "文档要求对外真源只允许 6 个冻结对象",
-    "BFF 不得直读旧过程表，只能消费 6 个冻结 snapshot",
-    "domain 层不得 import ports（ports 是边界抽象）"
+    "不允许修改数据库schema，不能破坏数据库真源",
+    "不允许查询数据库的表做富化（应使用theme_data_complete/ JSONL文件）",
+    "仅使用StockReadPort现有3个方法，不新增读取方法",
+    "不能影响旧链业务逻辑",
+    "SPS_OUTPUT_MODE must be set to 'db' for write persistence",
+    "必须参考旧链的实现逻辑，复刻旧链的逻辑在新链架构上——不要从零造轮子",
+    "4/25不是交易日——应使用04-24等实际交易日"
   ],
   "decisions": [
     {
-      "topic": "新链分层架构",
-      "decision": "stock_processing_service 采用 application/domain/ports/infrastructure/contracts 五层架构，与文档设计一致",
-      "reason": "文档明确要求按此分层落地，确保 domain 层纯业务规则、不耦合 IO"
+      "topic": "algorithm choice",
+      "decision": "Use replicated old chain MainlineJudgementService algorithm instead of from-scratch IdentityRuleEngine",
+      "reason": "IdentityRuleEngine scores and gates are uncalibrated for available data, producing 94-100% observed. Old chain algorithm is proven in production."
     },
     {
-      "topic": "协议冻结先行",
-      "decision": "文档第14章冻结了 contracts/dto/snapshots/events/ports 签名，实际代码中已有对应文件",
-      "reason": "确保先冻结协议再编码，避免接口漂移"
+      "topic": "algorithm file location",
+      "decision": "Old chain algorithm replicated 1:1 at stock_processing_service/domain/services/enhanced_mainline_judgement_service.py (476 lines)",
+      "reason": "Contains MainlineJudgementService + EnhancedMainlineJudgementService + all dataclasses, zero external dependencies"
     },
     {
-      "topic": "迁移策略：旧算法保留，旧真源地位不保留",
-      "decision": "旧 stock_service 中的算法能力迁移到 stock_processing_service，旧表和旧过程表降级为算法态/工作池/审计态对象",
-      "reason": "文档明确规定旧 stock_service 不承接新生产逻辑，对外真源统一切换到 6 个冻结对象"
+      "topic": "replay runner",
+      "decision": "Created _layer_a_replay_runner.py with replay/compare/validate modes for independent testing",
+      "reason": "Demonstrates ThemeMarketStats construction from pool rows, validates algorithm output before BuildIdentityJob integration"
     },
     {
-      "topic": "输出层解耦",
-      "decision": "前端/BFF/Notion 只能读冻结对象层（6个snapshot），不得回读旧过程表",
-      "reason": "文档要求 frontend_bff 与 notion_publisher 作为独立只读消费层，不参与核心计算"
+      "topic": "market data sourcing",
+      "decision": "Build ThemeMarketStats from pool rows (get_subject_stock_pool_by_trade_date returns rows with limit_up boolean, pct_chg, is_leader, rank_order)",
+      "reason": "Same data source old chain uses (subject_stock_daily_snapshot table)"
     },
     {
-      "topic": "WritePort 拆分",
-      "decision": "实际代码将文档中的单一 StockWritePort 拆分为 SnapshotWritePort + AlgorithmStateWritePort 两个协议",
-      "reason": "分离快照写入和算法状态写入职责，符合接口隔离原则"
+      "topic": "event data sourcing",
+      "decision": "Build ThemeEventStats from JSONL stock_daily proxies: strong_event_count_7d from days with strong_ratio>=10% OR limit_up_count>=2, event_count_3d from days with strong_ratio>=5%, event_recency_days from most recent strong day offset",
+      "reason": "DB context_metadata is always empty. Old chain uses news_event table (inaccessible). JSONL stock_daily files provide market-derived event proxies."
     },
     {
-      "topic": "BFF 读治理系统",
-      "decision": "frontend_bff/repositories/bff_repository.py 实现了 SQL 读治理系统，区分冻结对象表与过程状态表，支持 audit 模式和 hard-block 模式",
-      "reason": "当前默认 audit-only (strict=false)，确保现有业务连续性同时逐步收缩旧表读取"
+      "topic": "identity_status mapping",
+      "decision": "Derive identity_status directly from theme_tier: main→confirmed, strong_branch→review_pending, failed→observed. Override confirmed→review_pending if one_day_tour_flag. Map is_main_theme→rule_is_main_theme, event_chain_score→logic_score, market_recognition_score→market_score, mainline_stability_score→composite_score",
+      "reason": "Old chain classify_theme_tier() produces definitive tier classification. LLM review thresholds (75/60) were for IdentityRuleEngine and don't apply to old chain scores."
     }
   ],
   "files_touched": [
     {
-      "path": "docs/architecture/个人投资助理-项目架构设计-第三阶段.md",
-      "summary": "完整读取了4000+行的第三阶段架构设计文档，包含架构总览、stock_service设计、迁移矩阵、协议冻结清单、首批文件清单、执行计划等",
-      "type": "read"
+      "path": "stock_processing_service/domain/services/enhanced_mainline_judgement_service.py",
+      "summary": "1:1 replication of old chain MainlineJudgementService + EnhancedMainlineJudgementService with ThemeMainlineJudgement, ThemeEventStats, ThemeMarketStats dataclasses — 476 lines, zero external dependencies",
+      "type": "created"
     },
     {
-      "path": "stock_processing_service/ports/read_ports.py",
-      "summary": "StockReadPort 协议接口，与文档冻结签名基本一致，额外增加了 get_stock_daily_bars_range / get_mainline_identity_by_subject_keys / get_mainline_cycle_by_subject_keys / get_prior_strong_watch_pool_rows 方法",
-      "type": "read"
+      "path": "stock_processing_service/tests/replay/_layer_a_replay_runner.py",
+      "summary": "Layer A replay/compare/validate runner with _build_theme_market_stats from pool rows, _build_theme_event_stats from context_metadata, run_layer_a_replay, run_layer_a_compare, run_layer_a_validate — 915 lines",
+      "type": "created"
     },
     {
-      "path": "stock_processing_service/ports/write_ports.py",
-      "summary": "拆分为 SnapshotWritePort + AlgorithmStateWritePort 两个协议，与文档中的单一 StockWritePort 不完全一致。额外包含algorithm state的写入方法",
-      "type": "read"
-    },
-    {
-      "path": "stock_processing_service/ports/idempotency_ports.py",
-      "summary": "IdempotencyPort 协议接口，与文档冻结签名完全一致",
-      "type": "read"
-    },
-    {
-      "path": "stock_processing_service/ports/cache_ports.py",
-      "summary": "StockCachePort 协议接口，与文档冻结签名基本一致，额外增加了 invalidate_pattern 方法",
-      "type": "read"
-    },
-    {
-      "path": "stock_processing_service/ports/database_gateway_stock_facade.py",
-      "summary": "统一的 DatabaseGatewayStockFacade 协议（30+ 方法），是 infrastructure gateway adapters 的实际依赖目标",
-      "type": "read"
-    },
-    {
-      "path": "stock_processing_service/application/jobs/build_daily_snapshot_job.py",
-      "summary": "日快照构建作业，无SQL无评分细节，通过Ports访问数据，使用CycleEvidenceBuilder/CycleJudgementService等domain services",
-      "type": "read"
+      "path": "stock_processing_service/tests/replay/_backfill_identity.py",
+      "summary": "Batch backfill script for identity data over date ranges, connects to DB directly, runs BuildIdentityJob per date — 190 lines",
+      "type": "created"
     },
     {
       "path": "stock_processing_service/application/jobs/build_identity_job.py",
-      "summary": "题材主线身份构建作业，无SQL，通过port调用IdentityScoringService/OneDayTourDetector/IdentityRuleEngine等domain services",
+      "summary": "BuildIdentityJob currently uses IdentityRuleEngine (from-scratch) with JSONL enrichment for event/heat/fund proxies. NEEDS MODIFICATION to use MainlineJudgementService instead — import change and constructor edit attempted but Edit tool broken",
+      "type": "read",
+      "currently_editing": true
+    },
+    {
+      "path": "stock_processing_service/domain/services/identity_rule_engine.py",
+      "summary": "From-scratch IdentityRuleEngine — 156 lines, NOT old chain logic. Should be deprecated in favor of MainlineJudgementService",
       "type": "read"
     },
     {
-      "path": "stock_processing_service/application/jobs/build_post_market_recap_job.py",
-      "summary": "盘后回顾构建作业，使用StrongWatchService/W2SCandidateService等domain services，构建strong_watch_history和candidates",
-      "type": "read"
-    },
-    {
-      "path": "stock_processing_service/application/jobs/build_pre_market_brief_job.py",
-      "summary": "盘前简报构建作业，使用W2SCandidateService/W2SConfirmService等domain services",
-      "type": "read"
-    },
-    {
-      "path": "stock_processing_service/application/jobs/run_quality_gate_job.py",
-      "summary": "质量门禁作业，纯文件输出，无SQL，验证snapshot字段完整性和来源合规",
-      "type": "read"
-    },
-    {
-      "path": "stock_processing_service/application/jobs/run_reconciliation_job.py",
-      "summary": "双轨对账作业，对比新旧记录差异并生成差异报告，无评分细节",
-      "type": "read"
-    },
-    {
-      "path": "stock_processing_service/domain/services/",
-      "summary": "27个domain services文件，经全量检查确认零IO违规——无infrastructure引用、无DB客户端、无文件IO、无HTTP调用、无ports依赖",
-      "type": "read"
-    },
-    {
-      "path": "stock_processing_service/infrastructure/gateway_adapters/",
-      "summary": "12个gateway adapter文件，实现从Port协议到DatabaseGatewayStockFacade的适配转换",
-      "type": "read"
-    },
-    {
-      "path": "frontend_bff/app.py",
-      "summary": "83k 单体BFF文件，直接import stock_service的多个服务（WeakToStrongCandidateBuilder、WeakToStrongAuctionService等），违反文档要求",
-      "type": "read"
-    },
-    {
-      "path": "frontend_bff/repositories/bff_repository.py",
-      "summary": "BFF数据库仓库层，实现了读治理系统（冻结对象/过程表分类），但仍直接读取旧过程表（theme_cycle_judgement_v2、weak_to_strong_candidate_pool等）",
-      "type": "read"
-    },
-    {
-      "path": "frontend_bff/realtime_service.py",
-      "summary": "WebSocket实时推送服务集成，依赖database_service.streams.realtime_push_service（当前视为可选依赖）",
-      "type": "read"
-    },
-    {
-      "path": "notion_sync_manager.py",
-      "summary": "Notion同步管理单文件，使用notion_client SDK，不依赖stock_service",
-      "type": "read"
-    },
-    {
-      "path": "database_service/gateway.py",
-      "summary": "统一数据库网关（单例+门面模式），是实际DB访问层，内部使用asyncpg",
-      "type": "read"
-    },
-    {
-      "path": "database_service/managers/postgres_manager.py",
-      "summary": "PostgreSQL连接管理器，直接使用asyncpg创建连接池和执行SQL",
-      "type": "read"
+      "path": "架构差距分析报告.md",
+      "summary": "Updated with Layer A root cause analysis (sections 10-12), documenting 4 root causes, 9 rounds of attempts, 3 new files created, 2 remaining paths (A: add data source, B: accept proxy deviation), M1 status changed from '执行中' to '阻塞'",
+      "type": "modified"
     }
   ],
   "known_failures": [
     {
-      "type": "architectural_violation",
-      "location": "frontend_bff/app.py:25-32",
-      "summary": "BFF 直接 import stock_service 的多个模块（WeakToStrongCandidateBuilder等），违反文档'BFF不得依赖旧stock_service'的要求",
+      "type": "tool_error",
+      "location": "Edit tool at build_identity_job.py line 18 import replacement",
+      "summary": "Edit tool throws 'fs.openSync is not a function' error — cannot modify files via Edit tool. Attempted 3+ times with different replacement strings, all failed. Bash sed was used as workaround for 架构差距分析报告.md but build_identity_job.py changes still pending",
       "resolved": false
     },
     {
-      "type": "architectural_violation",
-      "location": "frontend_bff/repositories/bff_repository.py",
-      "summary": "BFF 通过SQL直接读取旧过程表（theme_cycle_judgement_v2, weak_to_strong_candidate_pool, weak_to_strong_auction_signal, mainline_state_daily, mainline_state_transition, pre_market_execution_plan, subject_rank_daily等），虽然实现了治理审计但默认audit-only不阻断",
+      "type": "data_gap",
+      "location": "BuildIdentityJob.execute() context_metadata",
+      "summary": "get_subject_context_by_subject_keys SQL returns only subject_key/subject_name/trade_date — NO metadata, NO event data, NO front_row metrics. Root cause of 100% observed when no fallback enrichment existed. Old chain solves this by querying news_event table directly which new chain architecture forbids.",
       "resolved": false
     },
     {
-      "type": "architectural_violation",
-      "location": "frontend_bff/test_confirm.py:11",
-      "summary": "测试文件直接从stock_service导入服务",
+      "type": "algorithm_mismatch",
+      "location": "BuildIdentityJob.execute() IdentityRuleEngine",
+      "summary": "IdentityRuleEngine is a from-scratch algorithm (156 lines), NOT a replication of old chain logic. Its 7-dimension scoring and independent gate conditions produce 94-100% observed. User explicitly demands using old chain MainlineJudgementService instead.",
       "resolved": false
     },
     {
-      "type": "missing_service",
-      "location": "recap_service",
-      "summary": "独立的 recap_service 服务不存在，当前盘后回顾逻辑内嵌在 stock_service 和 frontend_bff 中",
+      "type": "circular_proxy",
+      "location": "JSONL event proxy computation from stock_daily files",
+      "summary": "Deriving 'event' from market data (strong_ratio>=10% → strong event day) creates circular logic: market performance → infer 'event' → algorithm scores → conclude mainline exists. Actually: market performance → conclude there's market performance. Not real event-driven mainline judgment.",
       "resolved": false
     },
     {
-      "type": "missing_service",
-      "location": "notion_publisher",
-      "summary": "独立的 notion_publisher 服务不存在，仅有单文件 notion_sync_manager.py",
-      "resolved": false
-    },
-    {
-      "type": "deviation_from_doc",
-      "location": "stock_processing_service/ports/write_ports.py",
-      "summary": "WritePort 拆分为两个协议，与文档中单一的 StockWritePort 不完全匹配",
-      "resolved": true
-    },
-    {
-      "type": "missing_service",
-      "location": "Industry Chain Graph Service",
-      "summary": "产业链图谱服务没有任何实现，仅有 theme_service 中的两个行业分类脚本",
-      "resolved": false
-    },
-    {
-      "type": "deviation_from_doc",
-      "location": "stock_processing_service/ports",
-      "summary": "Documentation freezes StockReadPort but actual code adds 4 extra methods not in the frozen signature (get_stock_daily_bars_range, get_mainline_identity_by_subject_keys, get_mainline_cycle_by_subject_keys, get_prior_strong_watch_pool_rows)",
-      "resolved": false
-    },
-    {
-      "type": "testing_gap",
-      "location": "stock_processing_service/tests",
-      "summary": "需要验证回放样本（神剑/联德）的完成度，当前未检查",
+      "type": "deprecated_path",
+      "location": "database_service/scripts/build_theme_mainline_judgement.py",
+      "summary": "Old chain's production script for theme_mainline_judgement table is marked DEPRECATED. Non-deprecated replacement not found. Unclear how old chain currently produces Layer A output.",
       "resolved": false
     }
   ],
   "open_questions": [
-    "recap_service 和 notion_publisher 作为独立服务是否存在？当前未找到对应目录，仅有单文件实现",
-    "frontend_bff 的 83k app.py 单体文件是否需要按文档要求拆分为独立服务模块？",
-    "SSE/WebSocket 实时推送能力虽然已有 realtime_service.py 集成，但依赖的 database_service.streams.realtime_push_service 是否已完整实现并上线？",
-    "旧 stock_service 是否仍有前置业务依赖导致不能完全下线？BFF 对其的直接 import 说明至少 weak_to_strong 流程仍在使用旧库",
-    "产业链图谱服务（Industry Chain Graph Service）需要何种轻量实现？",
-    "双轨切流的 BFF 灰度 feature flag 实际部署情况如何？DAILY_SNAPSHOT_FLAG 等环境变量是否有实际线上配置？",
-    "BFF 读治理系统的 BFF_STRICT_FROZEN_OBJECT_READ 何时可以切换为 true？需要哪些前置条件？",
-    "stock_processing_service 的测试回放样本（神剑/联德）的完成度和回放质量如何？"
+    "What IS the old chain's non-deprecated production approach if build_theme_mainline_judgement.py is blocked/disabled?",
+    "Why does DB have 684 unique rows when 04-24 backfill wrote 668 identity + 33 review = 701 total? Multi-date overlap or upsert dedup?",
+    "Does old chain have a non-deprecated event data path that the new chain could use without violating architecture rules?",
+    "Path A (add StockReadPort method for news_event data) vs Path B (accept JSONL proxy deviation + LLM review) — which to pursue?"
   ],
   "next_actions": [
-    "完成差距分析报告输出：汇总所有发现的合规/违规项",
-    "评估 BFF 直读旧过程表的影响范围和迁移优先级",
-    "制定旧 stock_service 的逐步下线和迁移计划",
-    "检查 stock_processing_service/tests 中的回放样本完成度（神剑/联德）",
-    "检查双轨对账脚本（run_reconciliation_job）的实际输出和差异分析报告",
-    "评估 recap_service 缺失对前端的实际影响并确定是否需要新建独立服务",
-    "给出完整的差距分析报告和优化建议清单（7-10项高优先级建议）"
+    "Complete BuildIdentityJob modification: import MainlineJudgementService/ThemeEventStats/ThemeMarketStats, remove IdentityRuleEngine/IdentityRuleInput imports and constructor arg, replace loop body (~lines 360-499) to construct ThemeMarketStats from pool rows + ThemeEventStats from JSONL proxies, call mainline_svc.build_judgement(), map theme_tier to identity_status",
+    "Run backfill for 04-24 with modified BuildIdentityJob and verify observed rate drops significantly below 94.7%",
+    "Run _layer_a_replay_runner compare mode against old chain output for validation"
   ],
   "metadata": {
-    "timestamp": "2026-04-25T13:23:08.095Z",
-    "model": "gpt-5.4",
+    "timestamp": "2026-04-27T14:33:25.626Z",
+    "model": "deepseek-v4-pro",
     "level": "medium",
     "schema_version": "1.0"
   }

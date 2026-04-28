@@ -456,30 +456,134 @@ application/orchestrators/bootstrap.py
 
 ---
 
-## 十、当前迁移进度
 
-| 里程碑 | Layer | 状态 | 关键待办 |
-|--------|-------|------|---------|
-| M1 | A | 执行中 | T1 规则模型迁移、T2 一日游门禁、T3 复核漏斗、T4 A/B 对账脚本 |
-| M2 | B | 执行中 | CycleEvidenceBuilder 证据层增强至旧链强度（四层→K线层独立） |
-| M3 | C | 过渡收口 | Universe Gate / AdmissionPolicy 已接入，覆盖策略需与 A/B 对齐 |
-| M4 | D | 待启动 | 需等 A/B/C 稳定后去补丁化，回收过渡补偿逻辑 |
+## 十、Layer A 实施专项 — 根因分析与阻塞状态（2026-04-27 最终更新）
+
+### 10.1 问题
+
+`BuildIdentityJob` 执行后 `identity_status` 输出 **94-100% `observed`**（几乎无 `confirmed`/`review_pending`），导致 Layer C UniverseBuilder 将绝大多数 subject_key 归入 `blocked/missing`，下游 Layer C/D 数据空洞。
+
+### 10.2 四层根因
+
+#### 根因 1：IdentityRuleEngine 是从零编写的新算法，不是旧链逻辑
+
+| 对比维度 | 旧链 MainlineJudgementService | 新链 IdentityRuleEngine |
+|---------|------------------------------|------------------------|
+| 来源 | 旧链 `mainline_judgement_service.py`（生产验证） | 从零构建 `identity_rule_engine.py`（156行） |
+| 评分维度 | 2维：event_chain + market_recognition | 7维：novelty/timing/impact/heat/board/flow/fermentation |
+| 分级输出 | 三档：main / strong_branch / failed | 布尔：rule_is_main_theme |
+| 门禁 | classify_theme_tier() 两条复合路径 | logic_ok AND market_ok（独立门禁） |
+
+**这是 observed 占比 94-100% 的直接技术原因。**
+
+#### 根因 2：DB context_metadata 永远为空
+
+`get_subject_context_by_subject_keys` SQL 只返回 3 列：
+```sql
+SELECT subject_key, subject_name, trade_date FROM subject_context
+```
+无 metadata、无 event 数据、无 front_row 指标。
+
+旧链通过直接查询 `news_event` JOIN `event_theme_map` JOIN `theme_master` 获取精确事件计数和摘要。——新链架构规则禁止此路径。
+
+#### 根因 3：JSONL 代理数据本质是市场数据，不是事件数据
+
+试图从 `stock_daily/*.jsonl` 反推"事件"（strong_ratio ≥ 10% → 强事件日）是**循环论证**：
+```
+市场表现 → 推断"事件" → 算法评分 → 结论：有主线
+```
+实际是：市场表现 → 结论：有市场表现。这不是事件驱动的主线判定。
+
+#### 根因 4：旧链生产路径已废弃
+
+`database_service/scripts/build_theme_mainline_judgement.py` 标注 DEPRECATED。旧链当前如何生产 `theme_mainline_judgement` 表数据未找到非废弃替代脚本。
+
+### 10.3 尝试历程（9轮）
+
+| 轮次 | 尝试 | 结果 |
+|------|------|------|
+| 1 | 直接回填 BuildIdentityJob（04-20~04-25） | 94-100% observed |
+| 2 | 给 IdentityRuleEngine 加 event proxy | 评分范围未校准，仍 90%+ observed |
+| 3 | 修改 IdentityRuleEngine 门禁阈值 | 100% confirmed（另一极端） |
+| 4 | 加 heat fallback（JSONL history） | 无实质改善 |
+| 5 | 加 bar 数据 limit_up | 小幅改善，仍 90%+ observed |
+| 6 | 加 _compute_5d_metrics event proxy | 字段有值，送入 IdentityRuleEngine 仍 observed |
+| **7** | **1:1 复刻旧链 MainlineJudgementService** → `enhanced_mainline_judgement_service.py`（476行） | **算法已复刻 ✅** |
+| 8 | 创建 `_layer_a_replay_runner.py`（915行）做独立回放/对比 | JSON 输出验证通过 ✅ |
+| 9 | 开始修改 BuildIdentityJob 接入 MainlineJudgementService | **中断——session 超时** |
+
+### 10.4 新增文件清单
+
+| 文件 | 行数 | 状态 |
+|------|------|------|
+| `stock_processing_service/domain/services/enhanced_mainline_judgement_service.py` | 476 | ✅ 1:1复刻旧链算法 |
+| `stock_processing_service/tests/replay/_layer_a_replay_runner.py` | 915 | ✅ 回放/对比/验证 |
+| `stock_processing_service/tests/replay/_backfill_identity.py` | 190 | ✅ 批量回填脚本 |
+
+### 10.5 BuildIdentityJob 未完成改造
+
+当前文件状态：`build_identity_job.py` 的 `execute()` 仍在使用 `IdentityRuleEngine`。
+
+剩余步骤（~30行改动）：
+1. 导入 `MainlineJudgementService`, `ThemeEventStats`, `ThemeMarketStats`
+2. 从已有数据构造 `ThemeEventStats` / `ThemeMarketStats`
+3. 调用 `MainlineJudgementService().build_judgement(trade_date_str, event_stats, market_stats)`
+4. 映射输出：`theme_tier` → `identity_status`（main→confirmed, strong_branch→review_pending, failed→observed），`is_main_theme` → `rule_is_main_theme`
+
+### 10.6 无法通过纯算法对齐消除的差距
+
+| 差距 | 旧链数据源 | 新链可用数据 |
+|------|-----------|------------|
+| 事件计数（today/recent/distinct/key） | `news_event` 表（精确） | JSONL 市场代理（近似） |
+| 事件摘要文本 | `news_event.summary` | 无 |
+| K线支撑/破位 | `theme_kline_calculator` | 无 |
+| 资金流向 | `money_flow_enhanced` 表 | JSONL main_net_inflow（近似） |
+
+**核心矛盾：新链 DDD 架构正确性 vs news_event 表被架构规则隔离无法访问。**
+
+### 10.7 两条出路
+
+**路径 A（治本）：补齐数据源。** 在 StockReadPort 新增 `get_subject_event_stats()`，从 `news_event` 表 + `event_theme_map` 聚合事件数据，封装为 DTO 供 domain 层消费。工作量：4 文件各 ~30 行 + 1 新 DTO。
+
+**路径 B（治标）：接受代理偏差。** 完成 BuildIdentityJob 改造（接入 MainlineJudgementService），接受 JSONL 代理的近似性质，observed 占比预计降至 40-60%（改善但不到旧链水平），通过 LLM 复核兜底。工作量：build_identity_job.py ~30 行。
 
 ---
 
-## 十一、优化优先级建议
+## 十一、当前迁移进度（2026-04-27 最终更新）
+
+| 里程碑 | Layer | 状态 | 关键信息 |
+|--------|-------|------|---------|
+| M1 | A | **阻塞** | 算法已复刻 ✅ / BuildIdentityJob 未接入 ❌ / 数据源 gap 未解决 ❌ |
+| M2 | B | 执行中 | CycleEvidenceBuilder 证据层增强至旧链强度 |
+| M3 | C | 等待A | Universe Gate / AdmissionPolicy 已接入，覆盖策略需A补齐后对齐 |
+| M4 | D | 待启动 | 需等 A/B/C 稳定后去补丁化 |
+
+### M1 阻塞状态
 
 ```
-Phase 0 (当前分支 codex/p1-phase0/runtime_contract):
-  1. Layer A 算法对齐（P0）：迁移缺失的3个增强维度 + 主线三档分级
-  2. A/B 对账脚本（P0）：验证新旧链输出一致性
-  3. UniverseBuilder 覆盖策略调整（P0）：确保 C 输入与 A/B 输出对齐
+已完成 ✅
+  ├── enhanced_mainline_judgement_service.py (476行, 1:1复刻旧链父子类算法)
+  ├── _layer_a_replay_runner.py (915行, 独立回放/对比/验证三种模式)
+  └── _backfill_identity.py (190行, 批量回填脚本)
+
+阻塞 ❌
+  ├── BuildIdentityJob 仍在用 IdentityRuleEngine（从零编写），未接入 MainlineJudgementService
+  └── news_event 表事件数据无法进入新链（架构规则隔离）
+```
+
+---
+
+## 十二、优化优先级建议（更新）
+
+```
+Phase 0 (当前分支 codex/p1-phase0/runtime_contract) — 立即决策:
+  1. [P0-阻塞] 选择路径A或B，完成 BuildIdentityJob 接入 MainlineJudgementService
+  2. [P0] UniverseBuilder 覆盖策略调整
 
 Phase 1:
-  4. Layer B K线层证据独立化（P1）：迁移 ThemeKlineCalculator 逻辑
-  5. Layer B 退潮证据补全（P1）：补充 successor_vacuum + event_chain_broken
+  3. [P1] Layer B K线层证据独立化 + 退潮证据补全
+  4. [P1] A/B 对账脚本验证
 
 Phase 2:
-  6. Layer D 数据源接入（P2）：龙虎榜/游资/LLM裁决/竞价验证
-  7. Layer D 过渡补偿逻辑移除（P2）
+  5. [P2] Layer D 数据源接入 + 过渡补偿逻辑移除
 ```

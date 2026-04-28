@@ -92,8 +92,11 @@ class StrongWatchService:
         identities_by_subject: dict[str, Any] | None = None,
         cycles_by_subject: dict[str, Any] | None = None,
     ) -> tuple[list[SubjectStockPoolDTO], list[StrongWatchRecord], list[StrongWatchHistoryRecord]]:
-        extracted_identities = identities_by_subject or self._extract_identities_from_pool(pool_rows)
-        extracted_cycles = cycles_by_subject or self._extract_cycles_from_pool(pool_rows)
+        extracted_identities, extracted_cycles = self._require_layer_ab_inputs(
+            pool_rows=pool_rows,
+            identities_by_subject=identities_by_subject,
+            cycles_by_subject=cycles_by_subject,
+        )
         universe = self._universe_builder.build_universe(
             pool_rows=pool_rows,
             identities_by_subject=extracted_identities,
@@ -221,6 +224,29 @@ class StrongWatchService:
         return out
 
     @staticmethod
+    def _require_layer_ab_inputs(
+        *,
+        pool_rows: list[SubjectStockPoolDTO],
+        identities_by_subject: dict[str, Any] | None,
+        cycles_by_subject: dict[str, Any] | None,
+    ) -> tuple[dict[str, Any], dict[str, Any]]:
+        if identities_by_subject is None or cycles_by_subject is None:
+            raise ValueError("Layer A/B inputs are required: identities_by_subject and cycles_by_subject must be provided")
+        subject_keys = {str(r.subject_key or "") for r in pool_rows if str(r.subject_key or "")}
+        # Production semantics:
+        # - Layer A/B must be present as authoritative inputs.
+        # - Non-mainline subject_keys can be absent and should be explicitly blocked by UniverseBuilder.
+        # - Only fail-fast when A/B are effectively unavailable for a non-empty universe.
+        if subject_keys and (len(identities_by_subject) == 0 or len(cycles_by_subject) == 0):
+            raise ValueError(
+                "Layer A/B inputs incomplete: "
+                f"identity_rows={len(identities_by_subject)}, "
+                f"cycle_rows={len(cycles_by_subject)}, "
+                f"pool_subject_keys={len(subject_keys)}"
+            )
+        return identities_by_subject, cycles_by_subject
+
+    @staticmethod
     def _extract_identities_from_pool(pool_rows: list[SubjectStockPoolDTO]) -> dict[str, dict[str, Any]]:
         out: dict[str, dict[str, Any]] = {}
         for row in pool_rows:
@@ -282,8 +308,11 @@ class StrongWatchService:
         identities_by_subject: dict[str, Any] | None = None,
         cycles_by_subject: dict[str, Any] | None = None,
     ) -> StrongWatchShadowSummary:
-        identities = identities_by_subject or self._extract_identities_from_pool(pool_rows)
-        cycles = cycles_by_subject or self._extract_cycles_from_pool(pool_rows)
+        identities, cycles = self._require_layer_ab_inputs(
+            pool_rows=pool_rows,
+            identities_by_subject=identities_by_subject,
+            cycles_by_subject=cycles_by_subject,
+        )
         universe = self._universe_builder.build_universe(
             pool_rows=pool_rows,
             identities_by_subject=identities,

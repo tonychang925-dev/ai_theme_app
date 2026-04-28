@@ -12,7 +12,7 @@ import asyncio
 import json
 import os
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from typing import List, Optional, Sequence, Tuple
 
@@ -130,8 +130,17 @@ async def ensure_tables(manager: PostgresDatabaseManager) -> None:
 def iter_stock_files(data_root: Path, trade_date: str, subject_keys: Optional[Sequence[str]]):
     stock_daily_dir = data_root / "stock_daily"
     wanted = {str(x) for x in subject_keys} if subject_keys is not None else None
-    pattern = f"*_{trade_date}_stocks.jsonl"
-    for path in sorted(stock_daily_dir.glob(pattern)):
+    # JYHF 文件名存在 T 日数据写在 T+1 文件的情况，候选集同时扫描两天文件。
+    target = _parse_trade_date(trade_date)
+    candidates = {trade_date, (target + timedelta(days=1)).isoformat()}
+    paths = []
+    for d in sorted(candidates):
+        paths.extend(sorted(stock_daily_dir.glob(f"*_{d}_stocks.jsonl")))
+    seen: set[Path] = set()
+    for path in paths:
+        if path in seen:
+            continue
+        seen.add(path)
         subject_key = path.name.split("_")[0]
         if wanted is not None and subject_key not in wanted:
             continue
@@ -156,10 +165,20 @@ def build_rows(data_root: Path, trade_date: str, subject_keys: Optional[Sequence
                     continue
                 if not isinstance(row, list) or len(row) < 15:
                     continue
+                row_trade_date_raw = row[0] if len(row) > 0 else None
+                if row_trade_date_raw in (None, ""):
+                    continue
+                try:
+                    row_trade_date = datetime.fromisoformat(str(row_trade_date_raw)).date()
+                except Exception:
+                    continue
+                # 以行内 trade_date 为准，杜绝文件名日期偏移导致漏导/错导。
+                if row_trade_date != trade_date_value:
+                    continue
                 pct_chg = _to_float(row[10] if len(row) > 10 else None)
                 rows.append(
                     (
-                        trade_date_value,
+                        row_trade_date,
                         subject_key,
                         _to_int(row[1] if len(row) > 1 else None),
                         str(row[2]) if len(row) > 2 and row[2] is not None else None,

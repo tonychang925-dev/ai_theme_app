@@ -60,12 +60,17 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--skip-theme-cycle-judgement",
         action="store_true",
-        help="兼容保留参数（deprecated no-op）。主链不再执行 legacy 周期自动补建。",
+        help="跳过 v2 周期数据门禁与自动补建（排障模式）。",
     )
     parser.add_argument("--skip-v2-identity-prior-enforce", action="store_true", help="跳过 v2 身份先验收敛（默认执行）")
     parser.add_argument("--skip-mainline-state-tracking", action="store_true", help="跳过主线状态快照与迁移构建")
     parser.add_argument("--mainline-state-report-topn", type=int, default=10, help="主线状态迁移日报每类输出前N条")
     parser.add_argument("--skip-mainline-transition-gate", action="store_true", help="跳过主线迁移分布门禁")
+    parser.add_argument(
+        "--strict-mainline-transition-gate",
+        action="store_true",
+        help="启用严格主线迁移门禁（当日无迁移样本时仍强制执行并可失败）。默认无样本仅告警并跳过。",
+    )
     parser.add_argument("--transition-gate-lookback-days", type=int, default=20, help="主线迁移门禁历史窗口天数")
     parser.add_argument("--transition-gate-min-total", type=int, default=8, help="主线迁移门禁最小样本数")
     parser.add_argument("--transition-gate-single-type-threshold", type=float, default=0.95, help="主线迁移门禁单类型集中阈值")
@@ -85,6 +90,11 @@ def build_parser() -> argparse.ArgumentParser:
         "--disable-auto-build-v2-if-missing",
         action="store_true",
         help="禁用v2周期数据缺失时自动补建（默认启用自动补建）",
+    )
+    parser.add_argument(
+        "--strict-v2-cycle-gate",
+        action="store_true",
+        help="启用严格 v2 门禁（缺失即阻断）。默认缺失只告警并继续，避免整链无快照。",
     )
     return parser
 
@@ -176,12 +186,32 @@ async def _assert_v2_cycle_gate_or_raise(trade_date_obj: date, trade_date_text: 
     )
 
 
+async def _fetch_mainline_transition_count(trade_date_obj: date) -> int:
+    cfg = StockServiceConfig()
+    conn = await asyncpg.connect(
+        host=cfg.postgres_host,
+        port=cfg.postgres_port,
+        database=cfg.postgres_database,
+        user=cfg.postgres_user,
+        password=cfg.postgres_password,
+    )
+    try:
+        row = await conn.fetchrow(
+            "SELECT COUNT(*)::int AS c FROM mainline_state_transition WHERE trade_date = $1::date",
+            trade_date_obj,
+        )
+        return int((row or {}).get("c") or 0)
+    finally:
+        await conn.close()
+
+
 async def _ensure_v2_cycle_with_optional_autobuild(
     trade_date_obj: date,
     trade_date_text: str,
     *,
     enable_auto_build: bool,
     top_k: int,
+    strict_gate: bool,
 ) -> int:
     readiness = await _fetch_v2_cycle_readiness(trade_date_obj)
     v2_rows = int(readiness.get("v2_cnt") or 0)
@@ -209,7 +239,18 @@ async def _ensure_v2_cycle_with_optional_autobuild(
                 str(max(1, int(top_k))),
             ],
         )
-    return await _assert_v2_cycle_gate_or_raise(trade_date_obj, trade_date_text)
+    readiness = await _fetch_v2_cycle_readiness(trade_date_obj)
+    v2_rows = int(readiness.get("v2_cnt") or 0)
+    evidence_rows = int(readiness.get("evidence_cnt") or 0)
+    if v2_rows > 0:
+        return v2_rows
+    if strict_gate:
+        return await _assert_v2_cycle_gate_or_raise(trade_date_obj, trade_date_text)
+    print(
+        "[WARN] v2_cycle_data_missing_but_continue "
+        f"trade_date={trade_date_text} evidence_rows={evidence_rows} v2_rows={v2_rows}"
+    )
+    return 0
 
 
 async def _resolve_next_trade_date(trade_date: date) -> Optional[date]:
@@ -352,13 +393,6 @@ async def _build_abnormal_fallback(args: argparse.Namespace) -> Path:
 async def main_async() -> int:
     args = build_parser().parse_args()
     trade_date_obj = datetime.strptime(args.trade_date, "%Y-%m-%d").date()
-    # 入口门禁：先检查v2周期数据；缺失时可自动补建并重检，避免末尾步骤才失败。
-    await _ensure_v2_cycle_with_optional_autobuild(
-        trade_date_obj,
-        args.trade_date,
-        enable_auto_build=not bool(args.disable_auto_build_v2_if_missing),
-        top_k=int(args.top_k),
-    )
     python = sys.executable
     db = args.postgres_database
 
@@ -451,7 +485,15 @@ async def main_async() -> int:
     else:
         print("[SKIP] mainline_identity_registry (--skip-mainline-identity enabled)")
     if args.skip_theme_cycle_judgement:
-        print("[DEPRECATED] --skip-theme-cycle-judgement is ignored (legacy auto bootstrap removed)")
+        print("[SKIP] theme_cycle_judgement_v2 gate/build (--skip-theme-cycle-judgement enabled)")
+    else:
+        await _ensure_v2_cycle_with_optional_autobuild(
+            trade_date_obj,
+            args.trade_date,
+            enable_auto_build=not bool(args.disable_auto_build_v2_if_missing),
+            top_k=int(args.top_k),
+            strict_gate=bool(args.strict_v2_cycle_gate),
+        )
     if not args.skip_v2_identity_prior_enforce:
         _run_step(
             "enforce_v2_identity_prior_gate",
@@ -509,31 +551,38 @@ async def main_async() -> int:
     else:
         print("[SKIP] weak_to_strong_candidate_pool (--skip-w2s-candidate-build enabled)")
     if not args.skip_mainline_transition_gate:
-        hard_gate_cmd = cmd(
-            "stock_service/scripts/run_mainline_hard_gate.py",
-            "--trade-date",
-            args.trade_date,
-            "--max-hidden-conflicts",
-            str(max(0, int(args.max_hidden_conflicts))),
-            "--max-dropped-conflicts",
-            str(max(0, int(args.max_dropped_conflicts))),
-            "--lookback-days",
-            str(max(1, args.transition_gate_lookback_days)),
-            "--min-total",
-            str(max(1, args.transition_gate_min_total)),
-            "--single-type-dominance-threshold",
-            str(args.transition_gate_single_type_threshold),
-            "--downgrade-jump-threshold",
-            str(args.transition_gate_downgrade_jump),
-            "--fade-jump-threshold",
-            str(args.transition_gate_fade_jump),
-            "--min-history-days",
-            str(max(1, args.transition_gate_min_history_days)),
-            "--skip-legacy-entrypoint-gate",
-        )
-        if args.disable_transition_gate_auto_tune:
-            hard_gate_cmd.append("--disable-transition-auto-tune")
-        _run_step("mainline_hard_gate", hard_gate_cmd)
+        transition_count = await _fetch_mainline_transition_count(trade_date_obj)
+        if transition_count <= 0 and not bool(args.strict_mainline_transition_gate):
+            print(
+                "[WARN] skip_mainline_hard_gate_no_transition_rows "
+                f"trade_date={args.trade_date} transition_rows={transition_count}"
+            )
+        else:
+            hard_gate_cmd = cmd(
+                "stock_service/scripts/run_mainline_hard_gate.py",
+                "--trade-date",
+                args.trade_date,
+                "--max-hidden-conflicts",
+                str(max(0, int(args.max_hidden_conflicts))),
+                "--max-dropped-conflicts",
+                str(max(0, int(args.max_dropped_conflicts))),
+                "--lookback-days",
+                str(max(1, args.transition_gate_lookback_days)),
+                "--min-total",
+                str(max(1, args.transition_gate_min_total)),
+                "--single-type-dominance-threshold",
+                str(args.transition_gate_single_type_threshold),
+                "--downgrade-jump-threshold",
+                str(args.transition_gate_downgrade_jump),
+                "--fade-jump-threshold",
+                str(args.transition_gate_fade_jump),
+                "--min-history-days",
+                str(max(1, args.transition_gate_min_history_days)),
+                "--skip-legacy-entrypoint-gate",
+            )
+            if args.disable_transition_gate_auto_tune:
+                hard_gate_cmd.append("--disable-transition-auto-tune")
+            _run_step("mainline_hard_gate", hard_gate_cmd)
     if not args.skip_upgrade_identity_trigger:
         upgrade_subjects = await _fetch_non_mainline_upgrade_subjects(trade_date_obj, topn=30)
         upgrade_count = len(upgrade_subjects)

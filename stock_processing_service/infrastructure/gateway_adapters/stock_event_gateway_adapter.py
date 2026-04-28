@@ -12,7 +12,8 @@ class StockEventGatewayAdapter:
         self._db = db_gateway
 
     async def publish_stock_processing_event(self, event: EventEnvelope[Any]) -> str:
-        return await self._db.publish_stock_processing_event(asdict(event))
+        payload = asdict(event)
+        return await self._db.publish_stock_processing_event(event.event_name, payload)
 
     async def record_dead_letter(self, event_name: str, payload: dict[str, Any], reason: str) -> str:
         dlq = DeadLetterPayload(original_event_name=event_name, reason=reason, payload_excerpt=payload)
