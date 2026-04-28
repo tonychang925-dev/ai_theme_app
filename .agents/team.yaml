@@ -1,6 +1,7 @@
-# Team-based approval workflow
+# Team-based approval workflow with OpenClaw auto-approval
 # Claude = developer (submits requests)
-# Tony = architect (reviews & approves)
+# OpenClaw = automated gatekeeper (auto-approves routine operations)
+# Tony = architect (reviews design-level changes only)
 
 team:
   name: ai-theme-app
@@ -15,29 +16,43 @@ roles:
   developer:
     members: ["claude"]
     can_request: true
+  auto_gatekeeper:
+    members: ["openclaw"]
+    can_approve: ["git_operation", "dependency_change"]
 
-# Rules: which role must approve which type of command
+# ── OpenClaw auto-approval config ──
+auto_approve:
+  enabled: true
+  gatekeeper: openclaw
+  # Rules with auto_approve:true → OpenClaw auto-approves, no human needed
+  # Rules without auto_approve → requires human architect approval
+
+# ── Approval rules ──
 approval_rules:
-  - pattern: "git push|git commit|git tag"
+  # ✅ Auto-approved by OpenClaw — routine git operations
+  - pattern: "git commit|git push|git tag"
     require_role: architect
     category: git_operation
-    message: "Git 操作需架构师审批"
-    design_doc_required: false
+    message: "Git 操作 — OpenClaw 自动审批"
+    auto_approve: true
 
+  # ✅ Auto-approved by OpenClaw — dependency management
   - pattern: "npm install|npm uninstall|pip install|pip uninstall|bun install"
     require_role: architect
     category: dependency_change
-    message: "依赖变更需架构师审批"
-    design_doc_required: false
+    message: "依赖变更 — OpenClaw 自动审批"
+    auto_approve: true
 
+  # ❌ Always denied — dangerous operations
   - pattern: "rm -rf|sudo|chmod 777|> /etc/"
     require_role: architect
     category: dangerous
-    message: "危险操作需架构师审批"
+    message: "危险操作已阻断"
     auto_deny: true
 
-  - pattern: "python3.*autopilot_runner|bash.*scripts/.*deploy"
+  # ⚠️ Requires human architect review — design changes
+  - pattern: "python3.*autopilot_runner|bash.*scripts/.*deploy|git reset --hard|git rebase"
     require_role: architect
     category: design_change
-    message: "架构变更需架构师根据设计文档审批"
+    message: "架构变更需架构师人工审批"
     design_doc_required: true

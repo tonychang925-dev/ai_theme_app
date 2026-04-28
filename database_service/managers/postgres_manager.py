@@ -2584,8 +2584,13 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             return 0
         try:
             async with self.pool.acquire() as conn:
-                async with conn.transaction():
+                await conn.execute("BEGIN")
+                try:
                     await conn.executemany(sql, payload)
+                    await conn.execute("COMMIT")
+                except Exception:
+                    await conn.execute("ROLLBACK")
+                    raise
             return len(payload)
         except Exception as e:
             logger.warning(f"写入 theme_mainline_identity_registry 失败（可能表尚未迁移）: {e}")
@@ -2655,8 +2660,13 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             return 0
         try:
             async with self.pool.acquire() as conn:
-                async with conn.transaction():
+                await conn.execute("BEGIN")
+                try:
                     await conn.executemany(sql, payload)
+                    await conn.execute("COMMIT")
+                except Exception:
+                    await conn.execute("ROLLBACK")
+                    raise
             return len(payload)
         except Exception as e:
             logger.warning(f"写入 mainline_identity_review_queue 失败（可能表尚未迁移）: {e}")
