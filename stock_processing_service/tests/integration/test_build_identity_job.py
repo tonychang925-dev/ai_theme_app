@@ -67,6 +67,26 @@ class _FakeReadPort:
     async def get_existing_post_market_recap_snapshot(self, trade_date: date):
         return None
 
+    async def get_subject_event_stats(
+        self, trade_date: date, subject_keys: list[str] | None = None
+    ):
+        return []
+
+    async def get_mainline_identity_by_subject_keys(
+        self, subject_keys: list[str], trade_date: date
+    ):
+        return []
+
+    async def get_mainline_cycle_by_subject_keys(
+        self, subject_keys: list[str], trade_date: date
+    ):
+        return []
+
+    async def get_prior_strong_watch_pool_rows(
+        self, trade_date: date, lookback_days: int
+    ):
+        return []
+
 
 class _FakeWritePort:
     def __init__(self) -> None:

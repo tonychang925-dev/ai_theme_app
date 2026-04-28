@@ -12,6 +12,7 @@ from stock_processing_service.contracts.dto import (
     StockAuctionDTO,
     StockBarDTO,
     SubjectContextDTO,
+    SubjectEventStatsDTO,
     SubjectStockPoolDTO,
     TradeCalendarDTO,
 )
@@ -71,6 +72,10 @@ class DatabaseGatewayStockFacade(Protocol):
     async def get_prior_strong_watch_pool_rows(
         self, trade_date: date, lookback_days: int
     ) -> list[SubjectStockPoolDTO]: ...
+
+    async def get_subject_event_stats(
+        self, trade_date: date, subject_keys: list[str] | None = None
+    ) -> list[SubjectEventStatsDTO]: ...
 
     async def upsert_stock_daily_strategy_snapshot_rows(self, rows: list[StockDailyStrategySnapshot]) -> int: ...
 

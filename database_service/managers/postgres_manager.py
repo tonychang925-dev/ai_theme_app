@@ -1733,6 +1733,74 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             rows = await conn.fetch(sql, subject_keys, trade_date)
             return [dict(row) for row in rows]
 
+    async def get_subject_event_stats(
+        self,
+        trade_date,
+        subject_keys: List[str] | None = None,
+        lookback_days: int = 7,
+    ) -> List[Dict[str, Any]]:
+        """按 subject_keys 聚合事件统计（news_event + event_theme_map + theme_master）。
+
+        返回每个 subject 的 today_event_count, recent_event_count, distinct_event_days,
+        sample_summaries 以及 Python 后处理的 key_event_count。
+        仅 jyhf_history 来源的事件参与聚合。
+        """
+        if not subject_keys:
+            return []
+        from datetime import timedelta
+
+        start_date = trade_date - timedelta(days=max(lookback_days - 1, 0))
+
+        sql = """
+        SELECT
+            tm.source_id AS subject_key,
+            MAX(tm.name) AS theme_name,
+            COUNT(*) FILTER (WHERE ne.event_time::date = $1::date) AS today_event_count,
+            COUNT(*) AS recent_event_count,
+            COUNT(DISTINCT ne.event_time::date) AS distinct_event_days,
+            ARRAY_AGG(COALESCE(ne.summary, '') ORDER BY ne.event_time DESC) AS summaries
+        FROM news_event ne
+        JOIN event_theme_map etm
+          ON etm.event_id = ne.id
+        JOIN theme_master tm
+          ON tm.id = etm.theme_id
+        WHERE ne.theme_directive->>'jyhf_source_type' = 'jyhf_history'
+          AND tm.source_system = 'jyhf'
+          AND tm.source_id IS NOT NULL
+          AND tm.source_id = ANY($2::text[])
+          AND ne.event_time::date BETWEEN $3::date AND $1::date
+        GROUP BY tm.source_id
+        ORDER BY tm.source_id
+        """
+        KEY_EVENT_KEYWORDS = (
+            "政策", "行动计划", "印发", "试验", "商用", "首飞",
+            "发射", "订单", "量产", "投产", "ipo", "募股",
+            "商业化", "里程碑",
+        )
+
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date, subject_keys, start_date)
+
+        results: list[dict[str, Any]] = []
+        for row in rows:
+            r = dict(row)
+            summaries_raw = r.get("summaries") or []
+            summaries: list[str] = []
+            for s in summaries_raw:
+                if s and str(s).strip():
+                    summaries.append(str(s).strip().splitlines()[0])
+            key_count = 0
+            for s in summaries:
+                lowered = s.lower()
+                if any(kw in lowered for kw in KEY_EVENT_KEYWORDS):
+                    key_count += 1
+            r["key_event_count"] = key_count
+            r["sample_summaries"] = summaries[:5]
+            r.pop("summaries", None)
+            results.append(r)
+
+        return results
+
     async def get_prior_stock_daily_snapshots(
         self,
         trade_date,

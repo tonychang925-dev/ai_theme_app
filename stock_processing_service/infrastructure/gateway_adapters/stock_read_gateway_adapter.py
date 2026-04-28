@@ -221,6 +221,36 @@ class StockReadGatewayAdapter:
             )
         return result
 
+    async def get_subject_event_stats(
+        self,
+        trade_date: date,
+        subject_keys: list[str] | None = None,
+        lookback_days: int = 7,
+    ) -> list:
+        """按 subject_keys 聚合事件统计 → SubjectEventStatsDTO 列表。"""
+        from stock_processing_service.contracts.dto import SubjectEventStatsDTO
+
+        rows = await self._db.get_subject_event_stats(
+            trade_date=trade_date,
+            subject_keys=subject_keys,
+            lookback_days=lookback_days,
+        )
+        results: list[SubjectEventStatsDTO] = []
+        for row in rows:
+            p = _as_dict(row)
+            results.append(
+                SubjectEventStatsDTO(
+                    subject_key=str(p.get("subject_key", "")),
+                    theme_name=str(p.get("theme_name", "")),
+                    today_event_count=int(p.get("today_event_count") or 0),
+                    recent_event_count=int(p.get("recent_event_count") or 0),
+                    distinct_event_days=int(p.get("distinct_event_days") or 0),
+                    key_event_count=int(p.get("key_event_count") or 0),
+                    sample_summaries=list(p.get("sample_summaries") or []),
+                )
+            )
+        return results
+
     async def get_prior_stock_daily_snapshots(
         self, trade_date: date, lookback_days: int, stock_ids: list[str] | None = None
     ) -> list[PriorSnapshotDTO]:

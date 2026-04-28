@@ -10,13 +10,18 @@ from typing import Any
 from types import SimpleNamespace
 from uuid import uuid4
 
-from stock_processing_service.contracts.dto import BuildResult
+from stock_processing_service.contracts.dto import BuildResult, SubjectEventStatsDTO
 from stock_processing_service.contracts.events import EventEnvelope, SnapshotBuiltPayload
 from stock_processing_service.domain.services.identity_decider import IdentityDecider
 from stock_processing_service.domain.services.identity_llm_review_service import IdentityLLMReviewService
 from stock_processing_service.domain.services.identity_rule_engine import IdentityRuleEngine, IdentityRuleInput
 from stock_processing_service.domain.services.identity_scoring_service import IdentityScoringService
 from stock_processing_service.domain.services.one_day_tour_detector import OneDayTourDetector
+from stock_processing_service.domain.services.enhanced_mainline_judgement_service import (
+    EnhancedMainlineJudgementService,
+    ThemeEventStats,
+    ThemeMarketStats,
+)
 from stock_processing_service.ports import (
     AlgorithmStateWritePort,
     IdempotencyPort,
@@ -37,6 +42,7 @@ class BuildIdentityJob:
         llm_review_service: IdentityLLMReviewService | None = None,
         decider: IdentityDecider | None = None,
         rule_engine: IdentityRuleEngine | None = None,
+        enhanced_service: EnhancedMainlineJudgementService | None = None,
     ) -> None:
         self._read_port = read_port
         self._write_port = write_port
@@ -47,6 +53,7 @@ class BuildIdentityJob:
         self._llm_review_service = llm_review_service or IdentityLLMReviewService()
         self._decider = decider or IdentityDecider()
         self._rule_engine = rule_engine or IdentityRuleEngine()
+        self._enhanced_service = enhanced_service or EnhancedMainlineJudgementService()
 
     @staticmethod
     def _d(value: Any, default: str = "0") -> Decimal:
@@ -83,6 +90,15 @@ class BuildIdentityJob:
                 result.append(r)
         return result
 
+    @staticmethod
+    def _map_theme_tier_to_status(theme_tier: str, one_day_tour_flag: bool) -> str:
+        """Map EnhancedMainlineJudgementService theme_tier to identity_status."""
+        if theme_tier == "main":
+            return "observed" if one_day_tour_flag else "confirmed"
+        elif theme_tier == "strong_branch":
+            return "observed"
+        else:
+            return "dismissed"
 
     # ── JSONL enrichment helpers ──────────────────────────────────────────
     _HISTORY_DIR = Path("theme_data_complete/history")
@@ -338,6 +354,10 @@ class BuildIdentityJob:
                 trace_id=trace_id,
             )
 
+        # ── Feature flags ──
+        USE_ENHANCED_MAINLINE = os.environ.get("USE_ENHANCED_MAINLINE", "0") == "1"
+        DUAL_RUN_TRACE_ENABLED = os.environ.get("DUAL_RUN_TRACE", "1") == "1"
+
         raw_pool_rows = await self._read_port.get_subject_stock_pool_by_trade_date(trade_date)
         pool_rows = self._normalize_rows(raw_pool_rows)
         subject_keys = sorted({row.subject_key for row in pool_rows})
@@ -346,11 +366,20 @@ class BuildIdentityJob:
         raw_bars = await self._read_port.get_stock_daily_bars(trade_date)
         bars = self._normalize_rows(raw_bars)
 
+        # ── Fetch real event data from news_event/event_theme_map (Path A: fundamental fix) ──
+        raw_event_stats = await self._read_port.get_subject_event_stats(
+            trade_date, subject_keys
+        ) if subject_keys else []
+        event_stats_by_subject: dict[str, Any] = {
+            es.subject_key: es for es in raw_event_stats
+        }
+
         ctx_by_subject = {c.subject_key: c for c in contexts}
         bars_by_stock = {bar.stock_id: bar for bar in bars}
 
         identity_registry_rows: list[dict[str, Any]] = []
         review_queue_rows: list[dict[str, Any]] = []
+        _comparisons: list[dict[str, Any]] = []
 
         grouped: dict[str, list[Any]] = {}
         for row in pool_rows:
@@ -367,6 +396,19 @@ class BuildIdentityJob:
                 if bar is not None:
                     pct_values.append(bar.pct_chg)
             avg_pct = sum(pct_values, start=Decimal("0")) / Decimal(str(len(pct_values) or 1))
+
+            # ── Compute market stats for enhanced mainline service ──
+            _strong_count = sum(1 for v in pct_values if float(v) >= 5.0)
+            _leader_pct = max((float(v) for v in pct_values), default=0.0)
+            _leader_lu = False
+            for _row in rows:
+                _bar = bars_by_stock.get(_row.stock_id)
+                if _bar is not None:
+                    _lp = float(getattr(_bar, 'limit_up_price', 0) or 0)
+                    _cp = float(getattr(_bar, 'close_price', 0) or 0)
+                    if _lp > 0 and _cp >= _lp:
+                        _leader_lu = True
+                        break
 
             context_metadata = (ctx_by_subject.get(subject_key).metadata if subject_key in ctx_by_subject else {}) or {}
 
@@ -457,7 +499,7 @@ class BuildIdentityJob:
                 one_day_tour_flag=tour_signal.one_day_tour_flag,
             )
 
-            identity_row = {
+            identity_row_old = {
                 "trade_date": trade_date.isoformat(),
                 "subject_key": subject_key,
                 "subject_name": subject_name,
@@ -479,24 +521,120 @@ class BuildIdentityJob:
                 "trace_id": trace_id,
                 "source_trace_id": trace_id,
             }
-            identity_registry_rows.append(identity_row)
 
-            if decision.identity_status == "review_pending":
+            # ── Enhanced Mainline path (Path A: real event data from news_event/event_theme_map) ──
+            _event_dto = event_stats_by_subject.get(subject_key)
+            _event_stats = ThemeEventStats(
+                subject_key=subject_key,
+                theme_name=_event_dto.theme_name if _event_dto else subject_name,
+                today_event_count=_event_dto.today_event_count if _event_dto else 0,
+                recent_event_count=_event_dto.recent_event_count if _event_dto else 0,
+                distinct_event_days=_event_dto.distinct_event_days if _event_dto else 0,
+                key_event_count=_event_dto.key_event_count if _event_dto else 0,
+                sample_summaries=list(_event_dto.sample_summaries) if _event_dto else [],
+            )
+            _market_stats = ThemeMarketStats(
+                subject_key=subject_key,
+                theme_name=subject_name,
+                limit_up_count=limit_up_count,
+                strong_stock_count=_strong_count,
+                leader_pct_chg=_leader_pct,
+                member_count=len(rows),
+                leader_limit_up=_leader_lu,
+            )
+            _judgement = self._enhanced_service.build_judgement(
+                trade_date=trade_date.isoformat(),
+                event_stats=_event_stats,
+                market_stats=_market_stats,
+            )
+            _new_status = self._map_theme_tier_to_status(
+                _judgement.theme_tier, tour_signal.one_day_tour_flag
+            )
+            identity_row_new = {
+                "trade_date": trade_date.isoformat(),
+                "subject_key": subject_key,
+                "subject_name": subject_name,
+                "logic_score": str(_judgement.event_chain_score),
+                "market_score": str(_judgement.market_recognition_score),
+                "composite_score": str(_judgement.mainline_stability_score),
+                "one_day_tour_flag": tour_signal.one_day_tour_flag,
+                "continuity_signal": tour_signal.continuity_signal,
+                "logic_ok": _judgement.event_chain_score >= 20.0,
+                "market_ok": _judgement.market_recognition_score >= 35.0,
+                "rule_is_main_theme": _judgement.is_main_theme,
+                "rule_reasons": [_judgement.conclusion] + _judgement.evidence_logic + _judgement.evidence_market,
+                "legacy_composite_score": str(score.composite_score),
+                "llm_verdict": "enhanced",
+                "llm_reason": _judgement.conclusion,
+                "identity_status": _new_status,
+                "snapshot_version": snapshot_version,
+                "batch_id": batch_id,
+                "trace_id": trace_id,
+                "source_trace_id": trace_id,
+            }
+
+            # ── Dual-run comparison ──
+            _comparisons.append({
+                "subject_key": subject_key,
+                "subject_name": subject_name,
+                "old": {
+                    "identity_status": identity_row_old["identity_status"],
+                    "rule_is_main_theme": identity_row_old["rule_is_main_theme"],
+                    "composite_score": identity_row_old["composite_score"],
+                    "logic_score": identity_row_old["logic_score"],
+                    "market_score": identity_row_old["market_score"],
+                },
+                "new": {
+                    "identity_status": identity_row_new["identity_status"],
+                    "rule_is_main_theme": identity_row_new["rule_is_main_theme"],
+                    "composite_score": identity_row_new["composite_score"],
+                    "logic_score": identity_row_new["logic_score"],
+                    "market_score": identity_row_new["market_score"],
+                    "theme_tier": _judgement.theme_tier,
+                    "conclusion": _judgement.conclusion,
+                },
+                "agreement": identity_row_old["identity_status"] == identity_row_new["identity_status"],
+            })
+
+            if USE_ENHANCED_MAINLINE:
+                identity_registry_rows.append(identity_row_new)
+                _selected_row = identity_row_new
+            else:
+                identity_registry_rows.append(identity_row_old)
+                _selected_row = identity_row_old
+
+            if _selected_row["identity_status"] == "review_pending":
                 review_queue_rows.append(
                     {
                         "trade_date": trade_date.isoformat(),
                         "subject_key": subject_key,
                         "subject_name": subject_name,
-                        "reason": decision.reason,
-                        "llm_confidence": str(llm_verdict.confidence),
-                        "llm_verdict": llm_verdict.verdict,
-                        "rule_is_main_theme": rule.rule_is_main_theme,
-                        "rule_reasons": rule.reasons,
+                        "reason": decision.reason if _selected_row is identity_row_old else _judgement.conclusion,
+                        "llm_confidence": str(llm_verdict.confidence) if _selected_row is identity_row_old else "0.0",
+                        "llm_verdict": _selected_row.get("llm_verdict", ""),
+                        "rule_is_main_theme": _selected_row["rule_is_main_theme"],
+                        "rule_reasons": _selected_row["rule_reasons"],
                         "snapshot_version": snapshot_version,
                         "batch_id": batch_id,
                         "trace_id": trace_id,
                     }
                 )
+
+        # ── Write dual-run comparison JSON to tmp/ ──
+        if _comparisons and DUAL_RUN_TRACE_ENABLED:
+            _comparison_path = Path("tmp") / f"dual_run_identity_{trade_date.isoformat()}_{snapshot_version}.json"
+            _comparison_path.parent.mkdir(parents=True, exist_ok=True)
+            _comparison_payload = {
+                "trade_date": trade_date.isoformat(),
+                "snapshot_version": snapshot_version,
+                "batch_id": batch_id,
+                "new_path_active": USE_ENHANCED_MAINLINE,
+                "total_subjects": len(_comparisons),
+                "agreement_count": sum(1 for c in _comparisons if c["agreement"]),
+                "disagreement_count": sum(1 for c in _comparisons if not c["agreement"]),
+                "comparisons": _comparisons,
+            }
+            _comparison_path.write_text(json.dumps(_comparison_payload, ensure_ascii=False, indent=2, default=str))
 
         written_registry = await self._write_port.upsert_theme_mainline_identity_registry_rows(identity_registry_rows)
         written_review = await self._write_port.upsert_mainline_identity_review_queue_rows(review_queue_rows)

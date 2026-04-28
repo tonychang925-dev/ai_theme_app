@@ -7,6 +7,7 @@ from .recap_snapshot_dto import RecapSnapshotDTO
 from .stock_auction_dto import StockAuctionDTO
 from .stock_bar_dto import StockBarDTO
 from .subject_context_dto import SubjectContextDTO
+from .subject_event_stats_dto import SubjectEventStatsDTO
 from .subject_stock_pool_dto import SubjectStockPoolDTO
 from .trade_calendar_dto import TradeCalendarDTO
 
@@ -24,6 +25,7 @@ __all__ = [
     "StockAuctionDTO",
     "SubjectStockPoolDTO",
     "SubjectContextDTO",
+    "SubjectEventStatsDTO",
     "PriorSnapshotDTO",
     "BriefSnapshotDTO",
     "RecapSnapshotDTO",
