@@ -370,8 +370,23 @@ class BuildIdentityJob:
         raw_event_stats = await self._read_port.get_subject_event_stats(
             trade_date, subject_keys
         ) if subject_keys else []
+        # Normalize: handle both DTO objects and plain dicts from different adapters
+        _normalized_event_stats: list[Any] = []
+        for _es in raw_event_stats:
+            if isinstance(_es, dict):
+                _normalized_event_stats.append(SimpleNamespace(
+                    subject_key=_es.get("subject_key", ""),
+                    theme_name=_es.get("theme_name", ""),
+                    today_event_count=_es.get("today_event_count", 0),
+                    recent_event_count=_es.get("recent_event_count", 0),
+                    distinct_event_days=_es.get("distinct_event_days", 0),
+                    key_event_count=_es.get("key_event_count", 0),
+                    sample_summaries=_es.get("sample_summaries", []),
+                ))
+            else:
+                _normalized_event_stats.append(_es)
         event_stats_by_subject: dict[str, Any] = {
-            es.subject_key: es for es in raw_event_stats
+            es.subject_key: es for es in _normalized_event_stats
         }
 
         ctx_by_subject = {c.subject_key: c for c in contexts}
