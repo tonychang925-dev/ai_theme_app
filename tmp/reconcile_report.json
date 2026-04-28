@@ -1,9 +1,0 @@
-{
-  "phase": "P1.phase0",
-  "generated_at": "2026-02-17T15:32:00",
-  "source": "tmp/p1_milestone_tasks_verify.json",
-  "total_phase_tasks": 4,
-  "done_tasks": 4,
-  "non_done_tasks": [],
-  "reconcile_action": "no-op"
-}

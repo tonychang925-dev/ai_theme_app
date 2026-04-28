@@ -1,9 +1,0 @@
-
-🔧 测试环境配置:
-  工作目录: /Users/admin/Desktop/ai_theme_app
-  测试标记: not integration
-
-🚀 开始测试会话
-  项目根目录: /Users/admin/Desktop/ai_theme_app
-....                                                                     [100%]
-4 passed in 0.07s

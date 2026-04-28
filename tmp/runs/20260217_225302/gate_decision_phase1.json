@@ -1,7 +1,0 @@
-{
-  "phase": "P1.phase1",
-  "run_id": "20260217_225302",
-  "decision": "WAITING_ACCEPTANCE",
-  "basis": "behavior_quality_gate+required_commands",
-  "generated_at": "2026-02-17T14:55:19Z"
-}

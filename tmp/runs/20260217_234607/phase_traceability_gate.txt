@@ -1,4 +1,0 @@
-✅ phase traceability gate passed
-- phase: P1.phase0
-- mapped_tasks: 4
-- tc_ids: 4

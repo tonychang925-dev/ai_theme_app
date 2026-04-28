@@ -1,3 +1,0 @@
-✅ behavior test quality gate passed
-- task_id: P1.phase1-T04
-- database_service/tests/streams/test_phase1_behavior_tests.py: tests=4, static_like=0, io_only=False
