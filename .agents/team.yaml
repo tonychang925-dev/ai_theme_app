@@ -1,0 +1,58 @@
+# Team-based approval workflow with OpenClaw auto-approval
+# Claude = developer (submits requests)
+# OpenClaw = automated gatekeeper (auto-approves routine operations)
+# Tony = architect (reviews design-level changes only)
+
+team:
+  name: ai-theme-app
+  design_docs:
+    - "项目架构设计-股票服务模块（核心算法&流程）.md"
+    - "主线判定与周期跟踪及弱转强联动设计方案.md"
+
+roles:
+  architect:
+    members: ["tony"]
+    can_approve: ["code_change", "git_operation", "dependency_change", "design_change"]
+  developer:
+    members: ["claude"]
+    can_request: true
+  auto_gatekeeper:
+    members: ["openclaw"]
+    can_approve: ["git_operation", "dependency_change"]
+
+# ── OpenClaw auto-approval config ──
+auto_approve:
+  enabled: true
+  gatekeeper: openclaw
+  # Rules with auto_approve:true → OpenClaw auto-approves, no human needed
+  # Rules without auto_approve → requires human architect approval
+
+# ── Approval rules ──
+approval_rules:
+  # ✅ Auto-approved by OpenClaw — routine git operations
+  - pattern: "git commit|git push|git tag"
+    require_role: architect
+    category: git_operation
+    message: "Git 操作 — OpenClaw 自动审批"
+    auto_approve: true
+
+  # ✅ Auto-approved by OpenClaw — dependency management
+  - pattern: "npm install|npm uninstall|pip install|pip uninstall|bun install"
+    require_role: architect
+    category: dependency_change
+    message: "依赖变更 — OpenClaw 自动审批"
+    auto_approve: true
+
+  # ❌ Always denied — dangerous operations
+  - pattern: "rm -rf|sudo|chmod 777|> /etc/"
+    require_role: architect
+    category: dangerous
+    message: "危险操作已阻断"
+    auto_deny: true
+
+  # ⚠️ Requires human architect review — design changes
+  - pattern: "python3.*autopilot_runner|bash.*scripts/.*deploy|git reset --hard|git rebase"
+    require_role: architect
+    category: design_change
+    message: "架构变更需架构师人工审批"
+    design_doc_required: true

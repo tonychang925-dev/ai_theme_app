@@ -10,18 +10,14 @@ from typing import Any
 from types import SimpleNamespace
 from uuid import uuid4
 
-from stock_processing_service.contracts.dto import BuildResult, SubjectEventStatsDTO
+from stock_processing_service.contracts.dto import BuildResult
 from stock_processing_service.contracts.events import EventEnvelope, SnapshotBuiltPayload
 from stock_processing_service.domain.services.identity_decider import IdentityDecider
 from stock_processing_service.domain.services.identity_llm_review_service import IdentityLLMReviewService
 from stock_processing_service.domain.services.identity_rule_engine import IdentityRuleEngine, IdentityRuleInput
 from stock_processing_service.domain.services.identity_scoring_service import IdentityScoringService
 from stock_processing_service.domain.services.one_day_tour_detector import OneDayTourDetector
-from stock_processing_service.domain.services.enhanced_mainline_judgement_service import (
-    EnhancedMainlineJudgementService,
-    ThemeEventStats,
-    ThemeMarketStats,
-)
+from stock_processing_service.domain.services.theme_kline_analyzer import ThemeKlineAnalyzer
 from stock_processing_service.ports import (
     AlgorithmStateWritePort,
     IdempotencyPort,
@@ -42,7 +38,7 @@ class BuildIdentityJob:
         llm_review_service: IdentityLLMReviewService | None = None,
         decider: IdentityDecider | None = None,
         rule_engine: IdentityRuleEngine | None = None,
-        enhanced_service: EnhancedMainlineJudgementService | None = None,
+        kline_analyzer: ThemeKlineAnalyzer | None = None,
     ) -> None:
         self._read_port = read_port
         self._write_port = write_port
@@ -53,7 +49,7 @@ class BuildIdentityJob:
         self._llm_review_service = llm_review_service or IdentityLLMReviewService()
         self._decider = decider or IdentityDecider()
         self._rule_engine = rule_engine or IdentityRuleEngine()
-        self._enhanced_service = enhanced_service or EnhancedMainlineJudgementService()
+        self._kline_analyzer = kline_analyzer or ThemeKlineAnalyzer()
 
     @staticmethod
     def _d(value: Any, default: str = "0") -> Decimal:
@@ -89,16 +85,6 @@ class BuildIdentityJob:
             else:
                 result.append(r)
         return result
-
-    @staticmethod
-    def _map_theme_tier_to_status(theme_tier: str, one_day_tour_flag: bool) -> str:
-        """Map EnhancedMainlineJudgementService theme_tier to identity_status."""
-        if theme_tier == "main":
-            return "observed" if one_day_tour_flag else "confirmed"
-        elif theme_tier == "strong_branch":
-            return "observed"
-        else:
-            return "dismissed"
 
     # ── JSONL enrichment helpers ──────────────────────────────────────────
     _HISTORY_DIR = Path("theme_data_complete/history")
@@ -193,6 +179,7 @@ class BuildIdentityJob:
             "stock_count": 0,
             "strong_count": 0,
             "strong_ratio": 0.0,
+            "avg_pct_chg": 0.0,
         }
         sd_file = cls._STOCK_DAILY_DIR / f"{subject_key}_{trade_date.isoformat()}_stocks.jsonl"
         if not sd_file.exists():
@@ -202,6 +189,7 @@ class BuildIdentityJob:
         limit_up_count = 0
         strong_count = 0
         stock_count = 0
+        sum_pct = 0.0
 
         try:
             with open(sd_file) as f:
@@ -230,6 +218,7 @@ class BuildIdentityJob:
                         pct = float(arr[10]) if arr[10] is not None else 0.0
                     except (ValueError, TypeError):
                         pct = 0.0
+                    sum_pct += pct
                     if pct >= 9.5:
                         limit_up_count += 1
                     if pct >= 5.0:
@@ -243,7 +232,163 @@ class BuildIdentityJob:
         result["limit_up_ratio"] = (limit_up_count / stock_count) if stock_count > 0 else 0.0
         result["strong_count"] = strong_count
         result["strong_ratio"] = (strong_count / stock_count) if stock_count > 0 else 0.0
+        result["avg_pct_chg"] = (sum_pct / stock_count) if stock_count > 0 else 0.0
         return result
+
+    @classmethod
+    def _fetch_subject_30d_returns(
+        cls, subject_key: str, trade_date: date,
+    ) -> list[float]:
+        """Read stock_daily JSONL for 30-day window; return avg pct_chg per day (chronological).
+
+        Used as input to ThemeKlineAnalyzer for one_day_tour/kline_support/platform_breakout.
+        """
+        daily_avg: list[tuple[date, float]] = []
+        for offset in range(30):
+            d = trade_date - timedelta(days=offset)
+            sd = cls._read_stock_daily_jsonl(subject_key, d)
+            if sd["stock_count"] == 0:
+                continue
+            daily_avg.append((d, sd["avg_pct_chg"]))
+        # Sort chronologically (oldest first)
+        daily_avg.sort(key=lambda x: x[0])
+        return [pct for _, pct in daily_avg]
+
+    @staticmethod
+    def _compute_heat_from_db(
+        heat_rows: list[dict[str, Any]], trade_date: date,
+    ) -> dict[str, Any]:
+        """Compute heat metrics from DB subject_rank_daily rows.
+
+        Replaces the JSONL-based _read_history_jsonl().
+        """
+        if not heat_rows:
+            return {"heat_latest": Decimal("0"), "avg_heat_5d": Decimal("0")}
+
+        td_str = trade_date.isoformat()
+        today_heat = Decimal("0")
+        heat_sum = Decimal("0")
+        heat_days = 0
+
+        for r in heat_rows:
+            h_raw = r.get("heat", 0)
+            try:
+                h = Decimal(str(h_raw))
+            except Exception:
+                h = Decimal("0")
+            # Calibrate: heat in subject_rank_daily is 0-1 or 0-100
+            if h <= Decimal("1.2"):
+                h = h * 100
+            heat_sum += h
+            heat_days += 1
+            if str(r.get("rank_date", ""))[:10] == td_str[:10]:
+                today_heat = h
+
+        avg_heat = (heat_sum / Decimal(str(max(heat_days, 1)))).quantize(Decimal("0.01"))
+        return {"heat_latest": today_heat, "avg_heat_5d": avg_heat}
+
+    @staticmethod
+    def _compute_5d_metrics_from_db(
+        daily_rows: list[dict[str, Any]], trade_date: date,
+    ) -> dict[str, Any]:
+        """Compute 5-day market metrics from DB subject_stock_daily_snapshot rows.
+
+        Replaces the JSONL-based _compute_5d_metrics(). Input rows are
+        per-subject daily aggregates from get_subject_market_stats().
+        """
+        if not daily_rows:
+            return {
+                "board_boom_days_5d": 0, "net_inflow_sum_5d": Decimal("0"), "net_inflow_days_5d": 0,
+                "limit_up_count_today": 0, "limit_up_ratio_today": 0.0, "stock_count_today": 0,
+                "strong_ratio_today": 0.0, "days_hot_5d_proxy": 0,
+                "strong_event_count_7d_proxy": 0, "event_count_3d_proxy": 0,
+                "event_recency_days_proxy": 99, "event_strength_score_proxy": Decimal("0"),
+                "event_continuity_score_proxy": Decimal("0"),
+            }
+
+        # Index by date
+        by_date: dict[str, dict[str, Any]] = {}
+        for r in daily_rows:
+            td_str = str(r.get("trade_date", ""))
+            by_date[td_str] = r
+
+        td_str = trade_date.isoformat()
+        today = by_date.get(td_str, {})
+        stock_count_today = int(today.get("stock_count") or 0)
+        limit_up_today = int(today.get("limit_up_count") or 0)
+        strong_today = int(today.get("strong_count") or 0)
+        strong_ratio_today = (strong_today / stock_count_today) if stock_count_today > 0 else 0.0
+        limit_up_ratio_today = (limit_up_today / stock_count_today) if stock_count_today > 0 else 0.0
+
+        # 7-day window counters
+        from datetime import timedelta
+        board_boom_days = 0
+        days_hot = 0
+        strong_event_days = 0
+        event_3d_days = 0
+        event_recency = 99
+
+        all_dates = sorted(by_date.keys())
+        for i, d_str in enumerate(all_dates):
+            d = date.fromisoformat(d_str[:10])
+            if (trade_date - d).days > 6:
+                continue
+            r = by_date[d_str]
+            sc = int(r.get("stock_count") or 0)
+            lu = int(r.get("limit_up_count") or 0)
+            st = int(r.get("strong_count") or 0)
+            sr = (st / sc) if sc > 0 else 0
+
+            if lu >= 2:
+                board_boom_days += 1
+            if sr >= 0.10 or lu >= 2:
+                days_hot += 1
+                strong_event_days += 1
+                offset = (trade_date - d).days
+                if offset < event_recency:
+                    event_recency = offset
+            if (trade_date - d).days <= 2 and sr >= 0.05:
+                event_3d_days += 1
+
+        # Event proxy scores
+        strong_ratios = []
+        consecutive = 0
+        max_consecutive = 0
+        for d_str in all_dates:
+            d = date.fromisoformat(d_str[:10])
+            if (trade_date - d).days > 6:
+                continue
+            r = by_date[d_str]
+            sc = int(r.get("stock_count") or 0)
+            st = int(r.get("strong_count") or 0)
+            sr = (st / sc) if sc > 0 else 0
+            strong_ratios.append(sr)
+            if sr >= 0.10 or int(r.get("limit_up_count") or 0) >= 2:
+                consecutive += 1
+                if consecutive > max_consecutive:
+                    max_consecutive = consecutive
+            else:
+                consecutive = 0
+
+        avg_sr = sum(strong_ratios) / len(strong_ratios) if strong_ratios else 0.0
+        event_strength = Decimal(str(round(min(avg_sr * 500, 100), 2)))
+        event_continuity = Decimal(str(min(max_consecutive * 25, 100)))
+
+        return {
+            "board_boom_days_5d": board_boom_days,
+            "net_inflow_sum_5d": Decimal("0"),  # DB snapshot doesn't have net_inflow
+            "net_inflow_days_5d": 0,
+            "limit_up_count_today": limit_up_today,
+            "limit_up_ratio_today": limit_up_ratio_today,
+            "stock_count_today": stock_count_today,
+            "strong_ratio_today": strong_ratio_today,
+            "days_hot_5d_proxy": days_hot,
+            "strong_event_count_7d_proxy": strong_event_days,
+            "event_count_3d_proxy": event_3d_days,
+            "event_recency_days_proxy": event_recency,
+            "event_strength_score_proxy": event_strength,
+            "event_continuity_score_proxy": event_continuity,
+        }
 
     @classmethod
     def _compute_5d_metrics(
@@ -389,6 +534,24 @@ class BuildIdentityJob:
             es.subject_key: es for es in _normalized_event_stats
         }
 
+        # ── Fetch DB market stats (replaces JSONL _compute_5d_metrics) ──
+        raw_market_stats = await self._read_port.get_subject_market_stats(
+            trade_date, subject_keys, lookback_days=7
+        ) if subject_keys else []
+        _market_by_subject: dict[str, list[dict[str, Any]]] = {}
+        for ms in raw_market_stats:
+            sk = ms["subject_key"] if isinstance(ms, dict) else ms.subject_key
+            _market_by_subject.setdefault(sk, []).append(ms)
+
+        # ── Fetch DB heat stats (replaces JSONL _read_history_jsonl) ──
+        raw_heat_stats = await self._read_port.get_subject_heat_stats(
+            trade_date, subject_keys, lookback_days=5
+        ) if subject_keys else []
+        _heat_by_subject: dict[str, list[dict[str, Any]]] = {}
+        for hs in raw_heat_stats:
+            sk = hs["subject_key"] if isinstance(hs, dict) else hs.subject_key
+            _heat_by_subject.setdefault(sk, []).append(hs)
+
         ctx_by_subject = {c.subject_key: c for c in contexts}
         bars_by_stock = {bar.stock_id: bar for bar in bars}
 
@@ -400,7 +563,6 @@ class BuildIdentityJob:
         for row in pool_rows:
             grouped.setdefault(row.subject_key, []).append(row)
 
-        _sd_cache: dict[str, dict[str, Any]] = {}
         for subject_key, rows in grouped.items():
             subject_name = rows[0].subject_name
             context_tags = list((ctx_by_subject.get(subject_key).theme_context_tags if subject_key in ctx_by_subject else []) or [])
@@ -433,18 +595,38 @@ class BuildIdentityJob:
             event_recency_days = int(event_recency_days_raw) if event_recency_days_raw is not None else 99
             event_strength_score = self._d(context_metadata.get("event_strength_score"), default="0")
             event_continuity_score = self._d(context_metadata.get("event_continuity_score"), default="0")
-            # ── JSONL enrichment: heat from theme_data_complete/history/ ──
-            _heat_data = self._read_history_jsonl(subject_key, trade_date)
+            # ── DB heat data (replaces JSONL _read_history_jsonl) ──
+            _heat_data = self._compute_heat_from_db(
+                _heat_by_subject.get(subject_key, []), trade_date
+            )
             heat_latest = _heat_data["heat_latest"]
             avg_heat_5d = _heat_data["avg_heat_5d"]
             # ── Bar-based enrichment: limit_up computed from actual bar data ──
             _lu_count, _lu_ratio = self._compute_limit_up_from_bars(rows, bars_by_stock)
             limit_up_count = _lu_count
             limit_up_ratio_today = Decimal(str(_lu_ratio))
-            # ── JSONL enrichment: 7-day metrics from stock_daily files (board_boom + net_inflow + event proxy) ──
-            _5d = self._compute_5d_metrics(subject_key, trade_date, _sd_cache)
-            # ── Event proxy: when DB context_metadata is empty (always), use market-derived proxies ──
-            if strong_event_count_7d == 0 and event_count_3d == 0:
+            # ── DB market stats (replaces JSONL _compute_5d_metrics) ──
+            _5d = self._compute_5d_metrics_from_db(
+                _market_by_subject.get(subject_key, []), trade_date
+            )
+            # ── Event data: DB (theme_history_event) first, JSONL proxy fallback ──
+            _event_dto = event_stats_by_subject.get(subject_key)
+            if _event_dto is not None and _event_dto.recent_event_count > 0:
+                # Use real event data from theme_history_event (design doc §3.5 event fields)
+                strong_event_count_7d = _event_dto.distinct_event_days
+                event_count_3d = (
+                    _event_dto.today_event_count
+                    + max(0, _event_dto.recent_event_count - _event_dto.today_event_count) * 3 // 7
+                )
+                event_recency_days = 0 if _event_dto.today_event_count > 0 else 1
+                event_strength_score = Decimal(
+                    str(min(_event_dto.key_event_count * 35 + _event_dto.recent_event_count * 5, 100))
+                )
+                event_continuity_score = Decimal(
+                    str(min(_event_dto.distinct_event_days * 20, 100))
+                )
+            elif strong_event_count_7d == 0 and event_count_3d == 0:
+                # Fall back to JSONL market proxy (legacy: market activity as event proxy)
                 strong_event_count_7d = _5d["strong_event_count_7d_proxy"]
                 event_count_3d = _5d["event_count_3d_proxy"]
                 event_recency_days = _5d["event_recency_days_proxy"]
@@ -469,8 +651,12 @@ class BuildIdentityJob:
                 avg_heat_5d = Decimal(str(days_hot_5d)) / Decimal("5") * Decimal("100")
             front_row_strength_score = self._d(context_metadata.get("front_row_strength_score"), default="0")
             front_row_alive_ratio = self._d(context_metadata.get("front_row_alive_ratio"), default="0")
-            kline_support_hold = bool(context_metadata.get("kline_support_hold", False))
-            platform_breakout_flag = bool(context_metadata.get("platform_breakout_flag", False))
+
+            # ── K-line TA analysis (design doc §3.4): compute theme-level K-line flags ──
+            _pct_30d = self._fetch_subject_30d_returns(subject_key, trade_date)
+            _kline = self._kline_analyzer.analyze(_pct_30d)
+            kline_support_hold = _kline.kline_support_hold
+            platform_breakout_flag = _kline.platform_breakout_flag
 
             score = self._scoring_service.score(
                 subject_key=subject_key,
@@ -479,6 +665,9 @@ class BuildIdentityJob:
                 stock_count=len(rows),
             )
             tour_signal = self._tour_detector.detect(avg_pct_chg=avg_pct, stock_count=len(rows))
+            # Combine simple detector's breadth-vs-magnitude with K-line shape analysis
+            # (matches production: one_day_tour_flag = risk_score OR one_day_tour_kline_flag)
+            _combined_tour_flag = tour_signal.one_day_tour_flag or _kline.one_day_tour_kline_flag
             rule_input = IdentityRuleInput(
                 subject_key=subject_key,
                 subject_name=subject_name,
@@ -496,14 +685,17 @@ class BuildIdentityJob:
                 front_row_alive_ratio=front_row_alive_ratio,
                 net_inflow_sum_5d=net_inflow_sum_5d,
                 net_inflow_days_5d=net_inflow_days_5d,
-                one_day_tour_flag=tour_signal.one_day_tour_flag,
+                one_day_tour_flag=_combined_tour_flag,
                 kline_support_hold=kline_support_hold,
                 platform_breakout_flag=platform_breakout_flag,
             )
             rule = self._rule_engine.evaluate(rule_input)
-            llm_verdict = self._llm_review_service.review(
+            llm_verdict = self._llm_review_service.review_with_rule(
                 composite_score=rule.composite_score,
-                one_day_tour_flag=tour_signal.one_day_tour_flag,
+                one_day_tour_flag=_combined_tour_flag,
+                logic_ok=rule.logic_ok,
+                market_ok=rule.market_ok,
+                rule_is_main_theme=rule.rule_is_main_theme,
             )
             llm_verdict_for_decider = llm_verdict.verdict
             if llm_verdict_for_decider == "confirmed" and not rule.rule_is_main_theme:
@@ -511,7 +703,10 @@ class BuildIdentityJob:
             decision = self._decider.decide(
                 composite_score=rule.composite_score,
                 llm_verdict=llm_verdict_for_decider,
-                one_day_tour_flag=tour_signal.one_day_tour_flag,
+                one_day_tour_flag=_combined_tour_flag,
+                logic_ok=rule.logic_ok,
+                rule_is_main_theme=rule.rule_is_main_theme,
+                platform_breakout_flag=platform_breakout_flag,
             )
 
             identity_row_old = {
@@ -521,7 +716,7 @@ class BuildIdentityJob:
                 "logic_score": str(rule.logic_score),
                 "market_score": str(rule.market_score),
                 "composite_score": str(rule.composite_score),
-                "one_day_tour_flag": tour_signal.one_day_tour_flag,
+                "one_day_tour_flag": _combined_tour_flag,
                 "continuity_signal": tour_signal.continuity_signal,
                 "logic_ok": rule.logic_ok,
                 "market_ok": rule.market_ok,
@@ -537,51 +732,25 @@ class BuildIdentityJob:
                 "source_trace_id": trace_id,
             }
 
-            # ── Enhanced Mainline path (Path A: real event data from news_event/event_theme_map) ──
-            _event_dto = event_stats_by_subject.get(subject_key)
-            _event_stats = ThemeEventStats(
-                subject_key=subject_key,
-                theme_name=_event_dto.theme_name if _event_dto else subject_name,
-                today_event_count=_event_dto.today_event_count if _event_dto else 0,
-                recent_event_count=_event_dto.recent_event_count if _event_dto else 0,
-                distinct_event_days=_event_dto.distinct_event_days if _event_dto else 0,
-                key_event_count=_event_dto.key_event_count if _event_dto else 0,
-                sample_summaries=list(_event_dto.sample_summaries) if _event_dto else [],
-            )
-            _market_stats = ThemeMarketStats(
-                subject_key=subject_key,
-                theme_name=subject_name,
-                limit_up_count=limit_up_count,
-                strong_stock_count=_strong_count,
-                leader_pct_chg=_leader_pct,
-                member_count=len(rows),
-                leader_limit_up=_leader_lu,
-            )
-            _judgement = self._enhanced_service.build_judgement(
-                trade_date=trade_date.isoformat(),
-                event_stats=_event_stats,
-                market_stats=_market_stats,
-            )
-            _new_status = self._map_theme_tier_to_status(
-                _judgement.theme_tier, tour_signal.one_day_tour_flag
-            )
+            # ── New chain: same IdentityRuleEngine + IdentityDecider logic as old chain ──
+            # (EnhancedMainlineJudgementService is reserved for Layer B/D consumption, not Layer A)
             identity_row_new = {
                 "trade_date": trade_date.isoformat(),
                 "subject_key": subject_key,
                 "subject_name": subject_name,
-                "logic_score": str(_judgement.event_chain_score),
-                "market_score": str(_judgement.market_recognition_score),
-                "composite_score": str(_judgement.mainline_stability_score),
-                "one_day_tour_flag": tour_signal.one_day_tour_flag,
+                "logic_score": str(rule.logic_score),
+                "market_score": str(rule.market_score),
+                "composite_score": str(rule.composite_score),
+                "one_day_tour_flag": _combined_tour_flag,
                 "continuity_signal": tour_signal.continuity_signal,
-                "logic_ok": _judgement.event_chain_score >= 20.0,
-                "market_ok": _judgement.market_recognition_score >= 35.0,
-                "rule_is_main_theme": _judgement.is_main_theme,
-                "rule_reasons": [_judgement.conclusion] + _judgement.evidence_logic + _judgement.evidence_market,
+                "logic_ok": rule.logic_ok,
+                "market_ok": rule.market_ok,
+                "rule_is_main_theme": rule.rule_is_main_theme,
+                "rule_reasons": rule.reasons,
                 "legacy_composite_score": str(score.composite_score),
-                "llm_verdict": "enhanced",
-                "llm_reason": _judgement.conclusion,
-                "identity_status": _new_status,
+                "llm_verdict": llm_verdict.verdict,
+                "llm_reason": llm_verdict.reason,
+                "identity_status": decision.identity_status,
                 "snapshot_version": snapshot_version,
                 "batch_id": batch_id,
                 "trace_id": trace_id,
@@ -605,8 +774,6 @@ class BuildIdentityJob:
                     "composite_score": identity_row_new["composite_score"],
                     "logic_score": identity_row_new["logic_score"],
                     "market_score": identity_row_new["market_score"],
-                    "theme_tier": _judgement.theme_tier,
-                    "conclusion": _judgement.conclusion,
                 },
                 "agreement": identity_row_old["identity_status"] == identity_row_new["identity_status"],
             })
@@ -624,8 +791,8 @@ class BuildIdentityJob:
                         "trade_date": trade_date.isoformat(),
                         "subject_key": subject_key,
                         "subject_name": subject_name,
-                        "reason": decision.reason if _selected_row is identity_row_old else _judgement.conclusion,
-                        "llm_confidence": str(llm_verdict.confidence) if _selected_row is identity_row_old else "0.0",
+                        "reason": decision.reason,
+                        "llm_confidence": str(llm_verdict.confidence),
                         "llm_verdict": _selected_row.get("llm_verdict", ""),
                         "rule_is_main_theme": _selected_row["rule_is_main_theme"],
                         "rule_reasons": _selected_row["rule_reasons"],

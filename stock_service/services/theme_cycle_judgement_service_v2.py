@@ -53,9 +53,18 @@ class ThemeCycleJudgementServiceV2:
         previous_cycle_state = str(evidence.get("previous_cycle_state") or "").lower()
         repair_transition_allowed = self._repair_transition_allowed(previous_cycle_state)
 
+        # 退潮确认需“多因素共振”：
+        # 1) 退潮评分达到阈值
+        # 2) 证据命中数达到阈值
+        # 3) 题材K线关键支撑出现破位信号（避免仅凭强度回落就判死）
+        support_break = (
+            bool(evidence.get("break_start_pivot"))
+            or float(evidence.get("theme_support_score") or 0.0) <= 35.0
+        )
         fade_confirmed = (
             fade_confirmed_score >= self.THRESHOLDS["fade_confirmed_min"]
             and fade_confirmed_evidence_count >= 3
+            and support_break
         )
         fade_watch = not fade_confirmed and fade_watch_score >= self.THRESHOLDS["fade_watch_min"]
         mainline_alive_rule = (
@@ -79,7 +88,9 @@ class ThemeCycleJudgementServiceV2:
         )
 
         final_cycle_state = cycle_state_rule
-        final_mainline_alive = mainline_alive_rule
+        # 口径统一：主线是否存活不由强度阈值直接否决。
+        # 只要未命中 fade_confirmed（硬退潮），即视为 alive，由 cycle_state 承载冷热分层。
+        final_mainline_alive = not fade_confirmed
         evidence_refs = {
             "event": list(evidence.get("event_evidence_refs") or []),
             "leader": list(evidence.get("leader_evidence_refs") or []),
@@ -96,6 +107,7 @@ class ThemeCycleJudgementServiceV2:
             "fade_watch_hit": fade_watch_score >= self.THRESHOLDS["fade_watch_min"],
             "fade_confirmed_hit": fade_confirmed_score >= self.THRESHOLDS["fade_confirmed_min"],
             "fade_confirmed_evidence_count_hit": fade_confirmed_evidence_count >= 3,
+            "kline_support_break_hit": support_break,
             "repair_hit": repair_score >= self.THRESHOLDS["repair_min"],
             "repair_transition_allowed": repair_transition_allowed,
             "divergence_hit": divergence_score >= self.THRESHOLDS["divergence_min"],
@@ -116,6 +128,7 @@ class ThemeCycleJudgementServiceV2:
             fade_watch_score=fade_watch_score,
             fade_confirmed_score=fade_confirmed_score,
             fade_confirmed_evidence_count=fade_confirmed_evidence_count,
+            kline_support_break=support_break,
             divergence_score=divergence_score,
             repair_score=repair_score,
             previous_cycle_state=previous_cycle_state,
@@ -129,8 +142,14 @@ class ThemeCycleJudgementServiceV2:
             and mainline_alive_llm is not None
             and cycle_state_rule in {"fade_watch", "divergence", "repair"}
         ):
-            final_mainline_alive = bool(mainline_alive_llm)
-            rule_reasons.append("mainline_alive_overridden_by_llm")
+            llm_alive = bool(mainline_alive_llm)
+            if fade_confirmed:
+                # 在硬退潮场景允许LLM复核纠偏。
+                final_mainline_alive = llm_alive
+                rule_reasons.append("mainline_alive_overridden_by_llm_on_fade_confirmed")
+            elif not llm_alive:
+                # 非退潮场景禁止“判死”，防止强度不足导致主线被错误终止。
+                rule_reasons.append("mainline_alive_llm_false_ignored_not_fade_confirmed")
 
         if enable_llm_review:
             llm_trigger_flags = self._llm_review_trigger_flags(
@@ -258,6 +277,7 @@ class ThemeCycleJudgementServiceV2:
         fade_watch_score: float,
         fade_confirmed_score: float,
         fade_confirmed_evidence_count: int,
+        kline_support_break: bool,
         divergence_score: float,
         repair_score: float,
         previous_cycle_state: str,
@@ -270,6 +290,7 @@ class ThemeCycleJudgementServiceV2:
             f"fade_watch_score={fade_watch_score:.2f}",
             f"fade_confirmed_score={fade_confirmed_score:.2f}",
             f"fade_confirmed_evidence_count={fade_confirmed_evidence_count}",
+            f"kline_support_break={kline_support_break}",
             f"divergence_score={divergence_score:.2f}",
             f"repair_score={repair_score:.2f}",
             f"previous_cycle_state={previous_cycle_state or 'none'}",

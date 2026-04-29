@@ -1,7 +1,10 @@
 from __future__ import annotations
 
 import json
-from datetime import date
+from collections import defaultdict
+import os
+from datetime import date, timedelta
+from pathlib import Path
 from typing import Dict, List, Optional, Any, Tuple
 import asyncpg
 
@@ -131,6 +134,9 @@ class ThemeCycleJudgementService:
             rows = await conn.fetch(sql, trade_date)
 
             judgements = []
+            fallback_rows = 0
+            failure_reason_counts: dict[str, int] = defaultdict(int)
+            failure_samples: list[dict[str, Any]] = []
             for row in rows:
                 subject_key = row["subject_key"]
                 theme_name = row["theme_name"]
@@ -142,11 +148,296 @@ class ThemeCycleJudgementService:
                     if judgement:
                         judgements.append(judgement)
                 except Exception as e:
-                    print(f"❌ 主题 {subject_key} 判决失败: {e}")
+                    reason = self._classify_cycle_failure_reason(str(e))
+                    failure_reason_counts[reason] += 1
+                    fb = await self._fallback_from_previous_snapshot(conn, trade_date, subject_key, theme_name, reason)
+                    if fb:
+                        fallback_rows += 1
+                        judgements.append(fb)
+                    if len(failure_samples) < 20:
+                        failure_samples.append(
+                            {
+                                "subject_key": subject_key,
+                                "theme_name": theme_name,
+                                "reason": reason,
+                                "error": str(e),
+                                "fallback_applied": bool(fb),
+                            }
+                        )
+                    print(f"❌ 主题 {subject_key} 判决失败[{reason}]: {e}")
                     continue
 
             print(f"📊 总计完成 {len(judgements)} 个主题的周期判决")
+            if failure_reason_counts:
+                total = len(rows)
+                failed = sum(failure_reason_counts.values())
+                success_rate = (len(judgements) / total) if total else 1.0
+                print(
+                    f"⚠️ 周期判定失败统计: input={total}, success={len(judgements)}, "
+                    f"failed={failed}, fallback={fallback_rows}, success_rate={success_rate:.3f}, "
+                    f"reasons={dict(failure_reason_counts)}"
+                )
+                print(
+                    "⚠️ 周期判定失败样本: "
+                    + json.dumps(failure_samples, ensure_ascii=False)
+                )
+                gate_meta = await self._enforce_cycle_gates(
+                    conn=conn,
+                    trade_date=trade_date,
+                    total=total,
+                    success=len(judgements),
+                    failed=failed,
+                    failure_samples=failure_samples,
+                )
+                self._write_cycle_diag_report(
+                    trade_date=trade_date,
+                    total=total,
+                    success=len(judgements),
+                    failed=failed,
+                    fallback_rows=fallback_rows,
+                    failure_reason_counts=dict(failure_reason_counts),
+                    failure_samples=failure_samples,
+                    gate_meta=gate_meta,
+                )
             return judgements
+
+    @staticmethod
+    def _classify_cycle_failure_reason(error_text: str) -> str:
+        msg = (error_text or "").lower()
+        if "previous" in msg or "prior" in msg:
+            return "missing_prior_state"
+        if "evidence" in msg or "无证据" in msg:
+            return "missing_evidence"
+        if "rank" in msg:
+            return "missing_rank_data"
+        if "shape" in msg or "attribute" in msg or "keyerror" in msg:
+            return "bad_input_shape"
+        if "constraint" in msg or "column" in msg or "table" in msg:
+            return "db_row_inconsistent"
+        return "unexpected_exception"
+
+    async def _enforce_cycle_gates(
+        self,
+        *,
+        conn: asyncpg.Connection,
+        trade_date: date,
+        total: int,
+        success: int,
+        failed: int,
+        failure_samples: list[dict[str, Any]],
+    ) -> dict[str, Any]:
+        min_success_rate = float(os.getenv("CYCLE_MIN_SUCCESS_RATE", "0.95"))
+        max_fail_count = int(os.getenv("CYCLE_MAX_FAIL_COUNT", "5"))
+        critical_source = "manual_env"
+        critical_keys = {
+            x.strip()
+            for x in os.getenv("CYCLE_CRITICAL_SUBJECT_KEYS", "").split(",")
+            if x.strip()
+        }
+        if not critical_keys and os.getenv("CYCLE_AUTO_CRITICAL_ENABLED", "1") == "1":
+            critical_keys = await self._build_auto_critical_keys(conn, trade_date)
+            critical_source = "auto_generated"
+        success_rate = (success / total) if total else 1.0
+        missing_critical = [
+            s for s in failure_samples if str(s.get("subject_key") or "") in critical_keys
+        ]
+        if success_rate < min_success_rate or failed >= max_fail_count or missing_critical:
+            raise RuntimeError(
+                "cycle_gate_failed:"
+                f" success_rate={success_rate:.3f}<{min_success_rate},"
+                f" failed={failed}>={max_fail_count},"
+                f" critical_miss={len(missing_critical)}"
+            )
+        return {
+            "critical_source": critical_source,
+            "critical_count": len(critical_keys),
+            "critical_keys_sample": sorted(list(critical_keys))[:20],
+        }
+
+    async def _build_auto_critical_keys(
+        self,
+        conn: asyncpg.Connection,
+        trade_date: date,
+    ) -> set[str]:
+        lookback_days = int(os.getenv("CYCLE_AUTO_CRITICAL_LOOKBACK_DAYS", "7"))
+        top_k = int(os.getenv("CYCLE_AUTO_CRITICAL_TOP_K", "50"))
+        start_date = trade_date - timedelta(days=max(lookback_days - 1, 0))
+        sql = """
+        WITH idt AS (
+          SELECT subject_key
+          FROM theme_mainline_identity_registry
+          WHERE COALESCE(is_main_theme, FALSE) = TRUE
+            AND COALESCE(NULLIF(LOWER(identity_status), ''), 'observed') = 'confirmed'
+        ),
+        evt AS (
+          SELECT
+            subject_key,
+            COUNT(*) FILTER (
+              WHERE rank_date >= $2::date
+                AND (
+                  COALESCE(heat, 0) >= 70
+                  OR ABS(COALESCE(pct_chg, 0)) >= 3
+                  OR COALESCE(heat_name, '') IN ('高', '很高', '极高')
+                )
+            ) AS strong_event_count_lookback
+          FROM theme_history_event
+          WHERE rank_date <= $1::date
+          GROUP BY subject_key
+        ),
+        watch AS (
+          SELECT
+            subject_key,
+            MAX(CASE WHEN trade_date >= $2::date THEN 1 ELSE 0 END) AS in_watch_recent
+          FROM strong_stock_watch_history
+          GROUP BY subject_key
+        ),
+        cand AS (
+          SELECT
+            subject_key,
+            MAX(CASE WHEN trade_date >= $2::date THEN 1 ELSE 0 END) AS in_candidate_recent
+          FROM weak_to_strong_candidate_pool
+          GROUP BY subject_key
+        )
+        SELECT i.subject_key
+        FROM idt i
+        LEFT JOIN evt e ON e.subject_key = i.subject_key
+        LEFT JOIN watch w ON w.subject_key = i.subject_key
+        LEFT JOIN cand c ON c.subject_key = i.subject_key
+        WHERE COALESCE(e.strong_event_count_lookback, 0) > 0
+           OR COALESCE(w.in_watch_recent, 0) = 1
+           OR COALESCE(c.in_candidate_recent, 0) = 1
+        ORDER BY i.subject_key
+        LIMIT $3
+        """
+        rows = await conn.fetch(sql, trade_date, start_date, max(1, top_k))
+        return {str(r.get("subject_key") or "") for r in rows if str(r.get("subject_key") or "")}
+
+    async def _fallback_from_previous_snapshot(
+        self,
+        conn: asyncpg.Connection,
+        trade_date: date,
+        subject_key: str,
+        theme_name: str,
+        reason: str,
+    ) -> Optional[Dict[str, Any]]:
+        # 仅 confirmed + main_theme 题材允许 fallback，避免污染口径
+        id_row = await conn.fetchrow(
+            """
+            SELECT COALESCE(is_main_theme, FALSE) AS is_main_theme,
+                   COALESCE(NULLIF(LOWER(identity_status), ''), 'observed') AS identity_status
+            FROM theme_mainline_identity_registry
+            WHERE subject_key = $1
+            ORDER BY last_review_date DESC NULLS LAST, updated_at DESC NULLS LAST
+            LIMIT 1
+            """,
+            subject_key,
+        )
+        if not id_row or not bool(id_row.get("is_main_theme")) or str(id_row.get("identity_status")) != "confirmed":
+            return None
+
+        sql = """
+        SELECT *
+        FROM theme_cycle_judgement_v2
+        WHERE subject_key = $1
+          AND trade_date < $2::date
+        ORDER BY trade_date DESC
+        LIMIT 1
+        """
+        prev = await conn.fetchrow(sql, subject_key, trade_date)
+        if not prev:
+            return None
+        prev_d = prev["trade_date"]
+        stale_days = max((trade_date - prev_d).days, 1) if prev_d else 1
+        state_reason = str(prev.get("state_transition_reason") or "")
+        fallback_reason = (
+            state_reason + ";" if state_reason else ""
+        ) + f"cycle_source=fallback_prev_trade_date;cycle_stale_days={stale_days};cycle_compute_failed=true;failure_reason={reason}"
+        await conn.execute(
+            """
+            INSERT INTO theme_cycle_judgement_v2 (
+              trade_date, subject_key, theme_name,
+              cycle_state_rule, mainline_alive_rule,
+              cycle_state_llm, mainline_alive_llm,
+              final_cycle_state, final_mainline_alive,
+              fade_watch, fade_confirmed,
+              mainline_strength_score, fade_risk_score,
+              fade_watch_score, fade_confirmed_score,
+              divergence_score, repair_score, confidence_score,
+              previous_cycle_state, state_transition_reason,
+              rule_reasons, llm_reasons, risk_flags, evidence_refs,
+              judgement_schema_version, state_machine_version,
+              llm_prompt_version, source_version
+            )
+            SELECT
+              $2::date, subject_key, COALESCE($3::text, theme_name),
+              cycle_state_rule, mainline_alive_rule,
+              cycle_state_llm, mainline_alive_llm,
+              final_cycle_state, final_mainline_alive,
+              fade_watch, fade_confirmed,
+              mainline_strength_score, fade_risk_score,
+              fade_watch_score, fade_confirmed_score,
+              divergence_score, repair_score, confidence_score,
+              previous_cycle_state, $4::text,
+              rule_reasons, llm_reasons, risk_flags, evidence_refs,
+              judgement_schema_version, state_machine_version,
+              llm_prompt_version, source_version
+            FROM theme_cycle_judgement_v2
+            WHERE subject_key = $1 AND trade_date = $5::date
+            ON CONFLICT (trade_date, subject_key) DO UPDATE SET
+              theme_name = EXCLUDED.theme_name,
+              final_cycle_state = EXCLUDED.final_cycle_state,
+              final_mainline_alive = EXCLUDED.final_mainline_alive,
+              fade_watch = EXCLUDED.fade_watch,
+              fade_confirmed = EXCLUDED.fade_confirmed,
+              mainline_strength_score = EXCLUDED.mainline_strength_score,
+              fade_risk_score = EXCLUDED.fade_risk_score,
+              fade_watch_score = EXCLUDED.fade_watch_score,
+              fade_confirmed_score = EXCLUDED.fade_confirmed_score,
+              divergence_score = EXCLUDED.divergence_score,
+              repair_score = EXCLUDED.repair_score,
+              confidence_score = EXCLUDED.confidence_score,
+              state_transition_reason = EXCLUDED.state_transition_reason
+            """,
+            subject_key, trade_date, theme_name, fallback_reason, prev_d
+        )
+        return {
+            "subject_key": subject_key,
+            "theme_name": theme_name,
+            "final_cycle_state": str(prev.get("final_cycle_state") or ""),
+            "final_mainline_alive": bool(prev.get("final_mainline_alive") or False),
+            "cycle_source": "fallback_prev_trade_date",
+            "cycle_stale_days": stale_days,
+            "cycle_compute_failed": True,
+        }
+
+    def _write_cycle_diag_report(
+        self,
+        *,
+        trade_date: date,
+        total: int,
+        success: int,
+        failed: int,
+        fallback_rows: int,
+        failure_reason_counts: dict[str, int],
+        failure_samples: list[dict[str, Any]],
+        gate_meta: dict[str, Any],
+    ) -> None:
+        out_dir = Path(os.getenv("CYCLE_DIAG_DIR", "tmp/cycle_diag"))
+        out_dir.mkdir(parents=True, exist_ok=True)
+        report = {
+            "trade_date": trade_date.isoformat(),
+            "total": total,
+            "success": success,
+            "failed": failed,
+            "fallback_rows": fallback_rows,
+            "success_rate": (success / total) if total else 1.0,
+            "failure_reason_counts": failure_reason_counts,
+            "failure_samples": failure_samples[:50],
+            "gate_meta": gate_meta,
+        }
+        (out_dir / f"cycle_judgement_diag_{trade_date.isoformat()}.json").write_text(
+            json.dumps(report, ensure_ascii=False, indent=2)
+        )
 
     async def _load_evidence_from_db(self, conn: asyncpg.Connection,
                                     trade_date: date,
@@ -458,7 +749,10 @@ class ThemeCycleJudgementService:
 
         # 最终判决逻辑：规则引擎为主，LLM仅在受控边界内可纠偏。
         final_cycle_state = rule_cycle_state
-        final_mainline_alive = rule_mainline_alive
+        # 关键口径修正：
+        # mainline_alive 不再由强度阈值直接否决，避免“未退潮但弱化”被判死亡。
+        # 仅在 fade_confirmed 时判定为不存活；其余状态维持存活，由强度分层表达冷热。
+        final_mainline_alive = not bool(rule_result.get("fade_confirmed", False))
 
         llm_applied = bool(llm_result.get("llm_applied", False))
         allowed_transitions = {
@@ -476,7 +770,8 @@ class ThemeCycleJudgementService:
             elif len(llm_reasons) >= 1:
                 print(f"  ⚠️ 规则引擎({rule_cycle_state})与LLM({llm_cycle_state})不一致，采纳LLM")
                 final_cycle_state = llm_cycle_state
-                final_mainline_alive = llm_mainline_alive
+                # cycle_state 允许LLM在受控边界纠偏，但 alive口径保持“非fade_confirmed即存活”。
+                final_mainline_alive = not (llm_cycle_state == "fade_confirmed")
         elif llm_applied and llm_cycle_state not in allowed_states:
             llm_reasons = list(llm_result.get("llm_reasons", []))
             llm_reasons.append(f"llm_state_out_of_boundary:{rule_cycle_state}->{llm_cycle_state}")
@@ -491,6 +786,9 @@ class ThemeCycleJudgementService:
             fade_watch = False
             fade_confirmed = False
 
+        # 最终兜底：alive 与退潮状态强一致
+        final_mainline_alive = not fade_confirmed
+
         # 构建最终判决
         return {
             "final_cycle_state": final_cycle_state,
@@ -500,6 +798,7 @@ class ThemeCycleJudgementService:
             "scores": rule_result["scores"],
             "rule_reasons": rule_result["rule_reasons"],
             "llm_reasons": llm_result["llm_reasons"],
+            "alive_reason": "not_fade_confirmed" if final_mainline_alive else "fade_confirmed",
             "state_transition_reason": self._generate_transition_reason(
                 rule_result, final_cycle_state
             )

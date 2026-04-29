@@ -131,6 +131,26 @@ class WeakToStrongSupportScorer:
                         )
                     )
 
+            # 关键结构支撑：前高突破后的回踩确认
+            # 语义：若当前回落到“前期显著高点”附近并收回其上，属于更强的结构性支撑。
+            breakout_level = self._detect_prior_breakout_level(df)
+            if breakout_level > 0:
+                breakout_candidate = self._score_level_candidate(
+                    candidate_type="prior_breakout_retest",
+                    level=breakout_level,
+                    anchor_price=current_low or current_close,
+                    atr_pct=atr_pct,
+                    base_weight=0.92,
+                    source="prior_breakout_retest",
+                )
+                if float(breakout_candidate.get("strength") or 0.0) > 0:
+                    close_reclaim_bonus = 1.08 if current_close >= breakout_level else 1.0
+                    breakout_candidate["strength"] = round(
+                        min(1.0, float(breakout_candidate.get("strength") or 0.0) * close_reclaim_bonus),
+                        4,
+                    )
+                    support_types.append(breakout_candidate)
+
             pivots = ((advanced_analysis or {}).get("pivot_points", {}).get("daily_pivots", {}))
             for key in ("support1", "support2"):
                 level = float(pivots.get(key) or 0.0)
@@ -317,6 +337,26 @@ class WeakToStrongSupportScorer:
         if atr <= 0 or close_price <= 0:
             return 0.0
         return atr / close_price * 100.0
+
+    def _detect_prior_breakout_level(self, df: pd.DataFrame) -> float:
+        """
+        在最近窗口中识别“突破前高”的关键位，作为回踩支撑候选。
+        用法：取当前日前一段时间的滚动最高点，避免把当日高点当成支撑。
+        """
+        try:
+            if df.empty or "high_price" not in df.columns:
+                return 0.0
+            high_s = pd.to_numeric(df["high_price"], errors="coerce")
+            if len(high_s) < 18:
+                return 0.0
+            # 排除最近3根，使用其前15根的最高点作为前高参考
+            window = high_s.iloc[-18:-3]
+            level = float(window.max() or 0.0)
+            if level <= 0:
+                return 0.0
+            return round(level, 4)
+        except Exception:
+            return 0.0
 
     def _build_weekly_context(self, df: pd.DataFrame) -> Dict[str, Any]:
         """周线中期结构：识别“低位上涨后的回踩”，过滤高位下跌。"""

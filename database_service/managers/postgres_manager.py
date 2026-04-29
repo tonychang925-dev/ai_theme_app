@@ -1739,7 +1739,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         subject_keys: List[str] | None = None,
         lookback_days: int = 7,
     ) -> List[Dict[str, Any]]:
-        """按 subject_keys 聚合事件统计（news_event + event_theme_map + theme_master）。
+        """按 subject_keys 聚合事件统计（theme_history_event 直查）。
 
         返回每个 subject 的 today_event_count, recent_event_count, distinct_event_days,
         sample_summaries 以及 Python 后处理的 key_event_count。
@@ -1753,24 +1753,18 @@ class PostgresDatabaseManager(BaseDatabaseManager):
 
         sql = """
         SELECT
-            tm.source_id AS subject_key,
-            MAX(tm.name) AS theme_name,
-            COUNT(*) FILTER (WHERE ne.event_time::date = $1::date) AS today_event_count,
+            the.subject_key,
+            MAX(the.theme_name) AS theme_name,
+            COUNT(*) FILTER (WHERE the.rank_date = $1::date) AS today_event_count,
             COUNT(*) AS recent_event_count,
-            COUNT(DISTINCT ne.event_time::date) AS distinct_event_days,
-            ARRAY_AGG(COALESCE(ne.summary, '') ORDER BY ne.event_time DESC) AS summaries
-        FROM news_event ne
-        JOIN event_theme_map etm
-          ON etm.event_id = ne.id
-        JOIN theme_master tm
-          ON tm.id = etm.theme_id
-        WHERE ne.theme_directive->>'jyhf_source_type' = 'jyhf_history'
-          AND tm.source_system = 'jyhf'
-          AND tm.source_id IS NOT NULL
-          AND tm.source_id = ANY($2::text[])
-          AND ne.event_time::date BETWEEN $3::date AND $1::date
-        GROUP BY tm.source_id
-        ORDER BY tm.source_id
+            COUNT(DISTINCT the.rank_date) AS distinct_event_days,
+            ARRAY_AGG(COALESCE(the.driver_summary, '') ORDER BY the.rank_date DESC) AS summaries
+        FROM theme_history_event the
+        WHERE the.source_type = 'jyhf_history'
+          AND the.subject_key = ANY($2::text[])
+          AND the.rank_date BETWEEN $3::date AND $1::date
+        GROUP BY the.subject_key
+        ORDER BY the.subject_key
         """
         KEY_EVENT_KEYWORDS = (
             "政策", "行动计划", "印发", "试验", "商用", "首飞",
@@ -1800,6 +1794,97 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             results.append(r)
 
         return results
+
+    async def get_subject_cycle_evidence_daily(
+        self,
+        trade_date,
+        subject_keys: List[str] | None = None,
+    ) -> List[Dict[str, Any]]:
+        """读取旧链已写入的 theme_cycle_evidence_daily 预计算证据。
+
+        旧链 ThemeCycleEvidenceBuilder + ThemeBoardStructureAggregator 每日写入该表，
+        包含 event/leader/board/kline 四层证据的全部预计算字段。
+        """
+        if not subject_keys:
+            return []
+        sql = """
+        SELECT
+            subject_key, trade_date, theme_name,
+            event_count_3d, event_count_7d, strong_event_count_7d,
+            event_recency_days, event_continuity_score, event_strength_score,
+            leader_alive_score, leader_breakdown_flag,
+            relay_strength_score, front_row_survival_ratio,
+            board_stock_count, limit_up_count, limit_down_count,
+            red_ratio, big_drop_ratio, front_row_strength_score,
+            theme_ret_3d, theme_ret_5d, theme_ret_10d,
+            above_ma5, above_ma10, above_ma20,
+            break_start_pivot, volume_breakdown_flag, theme_support_score,
+            mainline_strength_score, fade_risk_score,
+            evidence_json
+        FROM theme_cycle_evidence_daily
+        WHERE trade_date = $1::date
+          AND subject_key = ANY($2::text[])
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date, subject_keys)
+        return [dict(r) for r in rows]
+
+    async def get_subject_market_stats(
+        self,
+        trade_date,
+        subject_keys: List[str] | None = None,
+        lookback_days: int = 7,
+    ) -> List[Dict[str, Any]]:
+        """批量查询 subject 级市场统计（替代 JSONL stock_daily 文件读取）。
+
+        从 subject_stock_daily_snapshot 聚合每个 subject 每天的市场指标，
+        用于替代 _compute_5d_metrics() 中的 JSONL 文件依赖。
+        """
+        if not subject_keys:
+            return []
+        from datetime import timedelta
+        start_date = trade_date - timedelta(days=max(lookback_days - 1, 0))
+        sql = """
+        SELECT
+            subject_key,
+            trade_date,
+            COUNT(*) AS stock_count,
+            COUNT(*) FILTER (WHERE limit_up) AS limit_up_count,
+            COUNT(*) FILTER (WHERE pct_chg >= 5.0) AS strong_count,
+            AVG(pct_chg) AS avg_pct_chg,
+            SUM(CASE WHEN pct_chg <= -5.0 THEN 1 ELSE 0 END)::int AS weak_count
+        FROM subject_stock_daily_snapshot
+        WHERE subject_key = ANY($1::text[])
+          AND trade_date BETWEEN $2::date AND $3::date
+        GROUP BY subject_key, trade_date
+        ORDER BY subject_key, trade_date
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, subject_keys, start_date, trade_date)
+        return [dict(r) for r in rows]
+
+    async def get_subject_heat_stats(
+        self, trade_date, subject_keys: List[str] | None = None, lookback_days: int = 5
+    ) -> List[Dict[str, Any]]:
+        """批量查询 subject 级热度统计（替代 JSONL history 文件）。
+
+        从 subject_rank_daily 聚合每个 subject 的每日 heat 数据。
+        """
+        if not subject_keys:
+            return []
+        from datetime import timedelta
+        start_date = trade_date - timedelta(days=max(lookback_days - 1, 0))
+        sql = """
+        SELECT subject_key, rank_date, heat, heat_name, pct_chg
+        FROM subject_rank_daily
+        WHERE subject_key = ANY($1::text[])
+          AND source_system = 'jyhf'
+          AND rank_date BETWEEN $2::date AND $3::date
+        ORDER BY subject_key, rank_date
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, subject_keys, start_date, trade_date)
+        return [dict(r) for r in rows]
 
     async def get_prior_stock_daily_snapshots(
         self,
@@ -2447,7 +2532,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             return 0
         try:
             async with self.pool.acquire() as conn:
-                await conn.executemany(sql, payload)
+                async with conn.transaction():
+                    await conn.executemany(sql, payload)
             return len(payload)
         except Exception as e:
             logger.warning(f"写入 strong_stock_watch_history 失败（可能尚未迁移）: {e}")
@@ -2555,7 +2641,13 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             return 0
         try:
             async with self.pool.acquire() as conn:
-                await conn.executemany(sql, payload)
+                await conn.execute("BEGIN")
+                try:
+                    await conn.executemany(sql, payload)
+                    await conn.execute("COMMIT")
+                except Exception:
+                    await conn.execute("ROLLBACK")
+                    raise
             return len(payload)
         except Exception as e:
             logger.warning(f"写入 theme_mainline_identity_registry 失败（可能表尚未迁移）: {e}")
@@ -2625,7 +2717,13 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             return 0
         try:
             async with self.pool.acquire() as conn:
-                await conn.executemany(sql, payload)
+                await conn.execute("BEGIN")
+                try:
+                    await conn.executemany(sql, payload)
+                    await conn.execute("COMMIT")
+                except Exception:
+                    await conn.execute("ROLLBACK")
+                    raise
             return len(payload)
         except Exception as e:
             logger.warning(f"写入 mainline_identity_review_queue 失败（可能表尚未迁移）: {e}")
