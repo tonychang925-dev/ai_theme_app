@@ -254,6 +254,142 @@ class BuildIdentityJob:
         daily_avg.sort(key=lambda x: x[0])
         return [pct for _, pct in daily_avg]
 
+    @staticmethod
+    def _compute_heat_from_db(
+        heat_rows: list[dict[str, Any]], trade_date: date,
+    ) -> dict[str, Any]:
+        """Compute heat metrics from DB subject_rank_daily rows.
+
+        Replaces the JSONL-based _read_history_jsonl().
+        """
+        if not heat_rows:
+            return {"heat_latest": Decimal("0"), "avg_heat_5d": Decimal("0")}
+
+        td_str = trade_date.isoformat()
+        today_heat = Decimal("0")
+        heat_sum = Decimal("0")
+        heat_days = 0
+
+        for r in heat_rows:
+            h_raw = r.get("heat", 0)
+            try:
+                h = Decimal(str(h_raw))
+            except Exception:
+                h = Decimal("0")
+            # Calibrate: heat in subject_rank_daily is 0-1 or 0-100
+            if h <= Decimal("1.2"):
+                h = h * 100
+            heat_sum += h
+            heat_days += 1
+            if str(r.get("rank_date", ""))[:10] == td_str[:10]:
+                today_heat = h
+
+        avg_heat = (heat_sum / Decimal(str(max(heat_days, 1)))).quantize(Decimal("0.01"))
+        return {"heat_latest": today_heat, "avg_heat_5d": avg_heat}
+
+    @staticmethod
+    def _compute_5d_metrics_from_db(
+        daily_rows: list[dict[str, Any]], trade_date: date,
+    ) -> dict[str, Any]:
+        """Compute 5-day market metrics from DB subject_stock_daily_snapshot rows.
+
+        Replaces the JSONL-based _compute_5d_metrics(). Input rows are
+        per-subject daily aggregates from get_subject_market_stats().
+        """
+        if not daily_rows:
+            return {
+                "board_boom_days_5d": 0, "net_inflow_sum_5d": Decimal("0"), "net_inflow_days_5d": 0,
+                "limit_up_count_today": 0, "limit_up_ratio_today": 0.0, "stock_count_today": 0,
+                "strong_ratio_today": 0.0, "days_hot_5d_proxy": 0,
+                "strong_event_count_7d_proxy": 0, "event_count_3d_proxy": 0,
+                "event_recency_days_proxy": 99, "event_strength_score_proxy": Decimal("0"),
+                "event_continuity_score_proxy": Decimal("0"),
+            }
+
+        # Index by date
+        by_date: dict[str, dict[str, Any]] = {}
+        for r in daily_rows:
+            td_str = str(r.get("trade_date", ""))
+            by_date[td_str] = r
+
+        td_str = trade_date.isoformat()
+        today = by_date.get(td_str, {})
+        stock_count_today = int(today.get("stock_count") or 0)
+        limit_up_today = int(today.get("limit_up_count") or 0)
+        strong_today = int(today.get("strong_count") or 0)
+        strong_ratio_today = (strong_today / stock_count_today) if stock_count_today > 0 else 0.0
+        limit_up_ratio_today = (limit_up_today / stock_count_today) if stock_count_today > 0 else 0.0
+
+        # 7-day window counters
+        from datetime import timedelta
+        board_boom_days = 0
+        days_hot = 0
+        strong_event_days = 0
+        event_3d_days = 0
+        event_recency = 99
+
+        all_dates = sorted(by_date.keys())
+        for i, d_str in enumerate(all_dates):
+            d = date.fromisoformat(d_str[:10])
+            if (trade_date - d).days > 6:
+                continue
+            r = by_date[d_str]
+            sc = int(r.get("stock_count") or 0)
+            lu = int(r.get("limit_up_count") or 0)
+            st = int(r.get("strong_count") or 0)
+            sr = (st / sc) if sc > 0 else 0
+
+            if lu >= 2:
+                board_boom_days += 1
+            if sr >= 0.10 or lu >= 2:
+                days_hot += 1
+                strong_event_days += 1
+                offset = (trade_date - d).days
+                if offset < event_recency:
+                    event_recency = offset
+            if (trade_date - d).days <= 2 and sr >= 0.05:
+                event_3d_days += 1
+
+        # Event proxy scores
+        strong_ratios = []
+        consecutive = 0
+        max_consecutive = 0
+        for d_str in all_dates:
+            d = date.fromisoformat(d_str[:10])
+            if (trade_date - d).days > 6:
+                continue
+            r = by_date[d_str]
+            sc = int(r.get("stock_count") or 0)
+            st = int(r.get("strong_count") or 0)
+            sr = (st / sc) if sc > 0 else 0
+            strong_ratios.append(sr)
+            if sr >= 0.10 or int(r.get("limit_up_count") or 0) >= 2:
+                consecutive += 1
+                if consecutive > max_consecutive:
+                    max_consecutive = consecutive
+            else:
+                consecutive = 0
+
+        avg_sr = sum(strong_ratios) / len(strong_ratios) if strong_ratios else 0.0
+        event_strength = Decimal(str(round(min(avg_sr * 500, 100), 2)))
+        event_continuity = Decimal(str(min(max_consecutive * 25, 100)))
+
+        return {
+            "board_boom_days_5d": board_boom_days,
+            "net_inflow_sum_5d": Decimal("0"),  # DB snapshot doesn't have net_inflow
+            "net_inflow_days_5d": 0,
+            "limit_up_count_today": limit_up_today,
+            "limit_up_ratio_today": limit_up_ratio_today,
+            "stock_count_today": stock_count_today,
+            "strong_ratio_today": strong_ratio_today,
+            "days_hot_5d_proxy": days_hot,
+            "strong_event_count_7d_proxy": strong_event_days,
+            "event_count_3d_proxy": event_3d_days,
+            "event_recency_days_proxy": event_recency,
+            "event_strength_score_proxy": event_strength,
+            "event_continuity_score_proxy": event_continuity,
+        }
+
     @classmethod
     def _compute_5d_metrics(
         cls, subject_key: str, trade_date: date, _cache: dict[str, dict[str, Any]] | None = None,
@@ -398,6 +534,24 @@ class BuildIdentityJob:
             es.subject_key: es for es in _normalized_event_stats
         }
 
+        # ── Fetch DB market stats (replaces JSONL _compute_5d_metrics) ──
+        raw_market_stats = await self._read_port.get_subject_market_stats(
+            trade_date, subject_keys, lookback_days=7
+        ) if subject_keys else []
+        _market_by_subject: dict[str, list[dict[str, Any]]] = {}
+        for ms in raw_market_stats:
+            sk = ms["subject_key"] if isinstance(ms, dict) else ms.subject_key
+            _market_by_subject.setdefault(sk, []).append(ms)
+
+        # ── Fetch DB heat stats (replaces JSONL _read_history_jsonl) ──
+        raw_heat_stats = await self._read_port.get_subject_heat_stats(
+            trade_date, subject_keys, lookback_days=5
+        ) if subject_keys else []
+        _heat_by_subject: dict[str, list[dict[str, Any]]] = {}
+        for hs in raw_heat_stats:
+            sk = hs["subject_key"] if isinstance(hs, dict) else hs.subject_key
+            _heat_by_subject.setdefault(sk, []).append(hs)
+
         ctx_by_subject = {c.subject_key: c for c in contexts}
         bars_by_stock = {bar.stock_id: bar for bar in bars}
 
@@ -409,7 +563,6 @@ class BuildIdentityJob:
         for row in pool_rows:
             grouped.setdefault(row.subject_key, []).append(row)
 
-        _sd_cache: dict[str, dict[str, Any]] = {}
         for subject_key, rows in grouped.items():
             subject_name = rows[0].subject_name
             context_tags = list((ctx_by_subject.get(subject_key).theme_context_tags if subject_key in ctx_by_subject else []) or [])
@@ -442,16 +595,20 @@ class BuildIdentityJob:
             event_recency_days = int(event_recency_days_raw) if event_recency_days_raw is not None else 99
             event_strength_score = self._d(context_metadata.get("event_strength_score"), default="0")
             event_continuity_score = self._d(context_metadata.get("event_continuity_score"), default="0")
-            # ── JSONL enrichment: heat from theme_data_complete/history/ ──
-            _heat_data = self._read_history_jsonl(subject_key, trade_date)
+            # ── DB heat data (replaces JSONL _read_history_jsonl) ──
+            _heat_data = self._compute_heat_from_db(
+                _heat_by_subject.get(subject_key, []), trade_date
+            )
             heat_latest = _heat_data["heat_latest"]
             avg_heat_5d = _heat_data["avg_heat_5d"]
             # ── Bar-based enrichment: limit_up computed from actual bar data ──
             _lu_count, _lu_ratio = self._compute_limit_up_from_bars(rows, bars_by_stock)
             limit_up_count = _lu_count
             limit_up_ratio_today = Decimal(str(_lu_ratio))
-            # ── JSONL enrichment: 7-day metrics from stock_daily files (board_boom + net_inflow + event proxy) ──
-            _5d = self._compute_5d_metrics(subject_key, trade_date, _sd_cache)
+            # ── DB market stats (replaces JSONL _compute_5d_metrics) ──
+            _5d = self._compute_5d_metrics_from_db(
+                _market_by_subject.get(subject_key, []), trade_date
+            )
             # ── Event data: DB (theme_history_event) first, JSONL proxy fallback ──
             _event_dto = event_stats_by_subject.get(subject_key)
             if _event_dto is not None and _event_dto.recent_event_count > 0:
@@ -463,7 +620,7 @@ class BuildIdentityJob:
                 )
                 event_recency_days = 0 if _event_dto.today_event_count > 0 else 1
                 event_strength_score = Decimal(
-                    str(min(_event_dto.key_event_count * 25 + _event_dto.recent_event_count * 5, 100))
+                    str(min(_event_dto.key_event_count * 35 + _event_dto.recent_event_count * 5, 100))
                 )
                 event_continuity_score = Decimal(
                     str(min(_event_dto.distinct_event_days * 20, 100))

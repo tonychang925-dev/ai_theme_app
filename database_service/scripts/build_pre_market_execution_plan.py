@@ -302,11 +302,17 @@ async def upsert_rows(manager: PostgresDatabaseManager, plans):
 async def main_async() -> int:
     args = parse_args()
     target_trade_date = _parse_trade_date(args.trade_date)
-    source_trade_date = _parse_trade_date(args.source_trade_date) if args.source_trade_date else (target_trade_date - timedelta(days=1))
     manager = PostgresDatabaseManager(get_postgres_config())
     await manager.connect()
     try:
         await ensure_tables(manager)
+        source_trade_date = (
+            _parse_trade_date(args.source_trade_date)
+            if args.source_trade_date
+            else await fetch_prev_trade_date(manager, target_trade_date)
+        )
+        if source_trade_date is None:
+            raise RuntimeError(f"无法找到 {target_trade_date} 的上一交易日，终止构建 pre_market_execution_plan")
         mainlines = await fetch_mainlines(manager, source_trade_date)
         cycles = {str(row["subject_key"]): row for row in await fetch_cycles(manager, source_trade_date)}
         leaders = {str(row["subject_key"]): row for row in await fetch_leaders(manager, source_trade_date)}
@@ -386,6 +392,17 @@ async def main_async() -> int:
         return 0
     finally:
         await manager.disconnect()
+
+
+async def fetch_prev_trade_date(manager: PostgresDatabaseManager, trade_date_value: date) -> date | None:
+    sql = """
+    SELECT MAX(trade_date) AS prev_trade_date
+    FROM stock_daily_snapshot
+    WHERE trade_date < $1::date
+    """
+    async with manager.pool.acquire() as conn:
+        row = await conn.fetchrow(sql, trade_date_value)
+    return row.get("prev_trade_date") if row else None
 
 
 if __name__ == "__main__":

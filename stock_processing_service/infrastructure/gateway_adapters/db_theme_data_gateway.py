@@ -117,6 +117,24 @@ class DBThemeDataGateway:
             )
         return results
 
+    async def get_subject_market_stats(
+        self, trade_date, subject_keys: list[str] | None = None, lookback_days: int = 7
+    ) -> list[dict[str, Any]]:
+        """批量查询 subject 级市场统计（替代 JSONL stock_daily 文件读取）。"""
+        rows = await self._db.get_subject_market_stats(
+            trade_date=trade_date, subject_keys=subject_keys, lookback_days=lookback_days
+        )
+        return [self._as_dict(r) for r in rows]
+
+    async def get_subject_heat_stats(
+        self, trade_date, subject_keys: list[str] | None = None, lookback_days: int = 5
+    ) -> list[dict[str, Any]]:
+        """批量查询 subject 级热度统计（替代 JSONL history 文件）。"""
+        rows = await self._db.get_subject_heat_stats(
+            trade_date=trade_date, subject_keys=subject_keys, lookback_days=lookback_days
+        )
+        return [self._as_dict(r) for r in rows]
+
     async def get_subject_cycle_evidence_daily(
         self,
         trade_date,

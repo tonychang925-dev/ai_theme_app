@@ -6,7 +6,7 @@ import asyncio
 import json
 import os
 import sys
-from datetime import date, datetime, timedelta
+from datetime import date, datetime
 from pathlib import Path
 
 CURRENT_DIR = Path(__file__).resolve().parent
@@ -73,6 +73,11 @@ def parse_args():
     parser.add_argument("--token", default=os.getenv("TUSHARE_TOKEN", ""), help="Tushare token，可选")
     parser.add_argument("--timeline-json", default="", help="可选：竞价时间序列 JSON 文件")
     parser.add_argument("--force-refresh", action="store_true", help="强制刷新竞价快照")
+    parser.add_argument(
+        "--allow-online-fetch",
+        action="store_true",
+        help="允许在本地无缓存时在线拉取 Tushare；默认关闭（离线优先）",
+    )
     parser.add_argument("--max-stocks", type=int, default=0, help="可选：仅处理前N只（按候选优先级），0表示不限制")
     parser.add_argument("--top-k", type=int, default=20, help="输出预览前 K 条")
     return parser.parse_args()
@@ -333,11 +338,27 @@ async def main_async() -> int:
 
         stock_ids = sorted({str(row["stock_id"]).upper() for row in universe})
         raw_service = TushareAuctionSnapshotService(StockServiceConfig(tushare_token=args.token))
-        raw_result = raw_service.fetch_or_cache_stk_auction(
-            args.trade_date,
-            stock_ids,
-            force_refresh=args.force_refresh,
-        )
+        # 离线优先：先读本地缓存；仅在显式允许时才在线拉取。
+        raw_result = raw_service.load_cached_stk_auction(args.trade_date)
+        raw_fetch_mode = "local_cache"
+        raw_warn = ""
+        if raw_result is None:
+            if args.allow_online_fetch:
+                raw_fetch_mode = "online_fetch"
+                try:
+                    raw_result = raw_service.fetch_or_cache_stk_auction(
+                        args.trade_date,
+                        stock_ids,
+                        force_refresh=args.force_refresh,
+                    )
+                except Exception as exc:
+                    raw_warn = f"online_fetch_failed:{type(exc).__name__}"
+                    raw_result = None
+            else:
+                raw_warn = "no_local_cache_and_online_fetch_disabled"
+        if raw_result is None:
+            print(f"[WARN] no raw auction data for trade_date={args.trade_date}; snapshot_rows=0")
+            return 0
         raw_map = {}
         builder = AuctionSnapshotBuilderService()
         for record in raw_result.records:
@@ -345,7 +366,10 @@ async def main_async() -> int:
             for alias in _stock_id_aliases(parsed.stock_id):
                 raw_map[alias] = parsed
 
-        prev_day_context = await fetch_prev_day_context(manager, trade_date_value - timedelta(days=1), stock_ids)
+        prev_trade_date = await fetch_prev_trade_date(manager, trade_date_value)
+        if prev_trade_date is None:
+            raise RuntimeError(f"无法找到 {trade_date_value} 的上一交易日，终止构建 pre_market_auction_snapshot")
+        prev_day_context = await fetch_prev_day_context(manager, prev_trade_date, stock_ids)
         items = []
         for row in universe:
             stock_id = str(row["stock_id"]).upper()
@@ -405,9 +429,12 @@ async def main_async() -> int:
         print(f"[OK] trade_date={args.trade_date}")
         print(f"[OK] universe_source={args.universe_source}")
         print(f"[OK] max_stocks={int(args.max_stocks or 0)}")
+        print(f"[OK] raw_fetch_mode={raw_fetch_mode}")
         print(f"[OK] raw_cache_hit={raw_result.cache_hit}")
         print(f"[OK] raw_snapshot_path={raw_result.snapshot_path}")
         print(f"[OK] raw_row_count={raw_result.row_count}")
+        if raw_warn:
+            print(f"[WARN] {raw_warn}")
         print(f"[OK] timeline_matches={sum(1 for item in items if 'timeline_enhanced' in item.shape_features)}")
         print(f"[OK] snapshot_rows={len(items)}")
         for item in items[: args.top_k]:
@@ -419,6 +446,17 @@ async def main_async() -> int:
         return 0
     finally:
         await manager.disconnect()
+
+
+async def fetch_prev_trade_date(manager: PostgresDatabaseManager, trade_date_value: date) -> date | None:
+    sql = """
+    SELECT MAX(trade_date) AS prev_trade_date
+    FROM stock_daily_snapshot
+    WHERE trade_date < $1::date
+    """
+    async with manager.pool.acquire() as conn:
+        row = await conn.fetchrow(sql, trade_date_value)
+    return row.get("prev_trade_date") if row else None
 
 
 if __name__ == "__main__":

@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 import json
+from collections import defaultdict
 from dataclasses import dataclass
 from datetime import date, timedelta
+import os
+from pathlib import Path
 from typing import Dict, List, Optional, Any
 import asyncpg
 
@@ -102,6 +105,8 @@ class ThemeCycleEvidenceBuilder:
 
             # 3. 为每个主题构建证据
             evidence_inputs = []
+            failure_reason_counts: dict[str, int] = defaultdict(int)
+            failure_samples: list[dict[str, Any]] = []
             for subject in subjects:
                 subject_key = subject["subject_key"]
                 theme_name = subject["theme_name"]
@@ -116,10 +121,42 @@ class ThemeCycleEvidenceBuilder:
                         await self._save_evidence_to_db(conn, evidence)
                         print(f"✅ 主题 {subject_key} ({theme_name}) 证据构建完成")
                 except Exception as e:
-                    print(f"❌ 主题 {subject_key} 证据构建失败: {e}")
+                    reason = self._classify_evidence_failure_reason(str(e))
+                    failure_reason_counts[reason] += 1
+                    if len(failure_samples) < 20:
+                        failure_samples.append(
+                            {
+                                "subject_key": subject_key,
+                                "theme_name": theme_name,
+                                "reason": reason,
+                                "error": str(e),
+                            }
+                        )
+                    print(f"❌ 主题 {subject_key} 证据构建失败[{reason}]: {e}")
                     continue
 
             print(f"📊 总计构建 {len(evidence_inputs)} 个主题的周期证据")
+            if failure_reason_counts:
+                total = len(subjects)
+                failed = sum(failure_reason_counts.values())
+                success_rate = (len(evidence_inputs) / total) if total else 1.0
+                print(
+                    f"⚠️ 周期证据构建失败统计: input={total}, success={len(evidence_inputs)}, "
+                    f"failed={failed}, success_rate={success_rate:.3f}, reasons={dict(failure_reason_counts)}"
+                )
+                print(
+                    "⚠️ 周期证据构建失败样本: "
+                    + json.dumps(failure_samples, ensure_ascii=False)
+                )
+                self._write_evidence_diag_report(
+                    trade_date=trade_date,
+                    total=total,
+                    success=len(evidence_inputs),
+                    failed=failed,
+                    failure_reason_counts=dict(failure_reason_counts),
+                    failure_samples=failure_samples,
+                )
+                self._enforce_evidence_gates(total=total, success=len(evidence_inputs), failed=failed)
             return evidence_inputs
 
     async def build(self, trade_date: date, subject_key: str, theme_name: str) -> ThemeCycleEvidence:
@@ -636,19 +673,71 @@ class ThemeCycleEvidenceBuilder:
     async def _fetch_previous_cycle_state(self, conn: asyncpg.Connection,
                                          trade_date: date,
                                          subject_key: str) -> Optional[str]:
-        """获取前一日周期状态"""
-        prev_date = trade_date - timedelta(days=1)
-
-        # 首先尝试从V2表查询
+        """获取上一交易日最近周期状态（避免自然日-1导致非交易日断链）。"""
         sql_v2 = """
         SELECT final_cycle_state
         FROM theme_cycle_judgement_v2
-        WHERE trade_date = $1 AND subject_key = $2
+        WHERE subject_key = $1
+          AND trade_date < $2::date
+        ORDER BY trade_date DESC
+        LIMIT 1
         """
-        row_v2 = await conn.fetchrow(sql_v2, prev_date, subject_key)
+        row_v2 = await conn.fetchrow(sql_v2, subject_key, trade_date)
         if row_v2:
             return str(row_v2.get("final_cycle_state"))
         return None
+
+    @staticmethod
+    def _classify_evidence_failure_reason(error_text: str) -> str:
+        msg = (error_text or "").lower()
+        if "previous" in msg or "prior" in msg:
+            return "missing_prior_state"
+        if "theme_history_event" in msg or "evidence" in msg:
+            return "missing_evidence"
+        if "rank" in msg:
+            return "missing_rank_data"
+        if "shape" in msg or "attribute" in msg or "keyerror" in msg:
+            return "bad_input_shape"
+        if "constraint" in msg or "column" in msg or "table" in msg:
+            return "db_row_inconsistent"
+        return "unexpected_exception"
+
+    @staticmethod
+    def _enforce_evidence_gates(*, total: int, success: int, failed: int) -> None:
+        min_success_rate = float(os.getenv("EVIDENCE_MIN_SUCCESS_RATE", "0.95"))
+        max_fail_count = int(os.getenv("EVIDENCE_MAX_FAIL_COUNT", "10"))
+        success_rate = (success / total) if total else 1.0
+        if success_rate < min_success_rate or failed >= max_fail_count:
+            raise RuntimeError(
+                "evidence_gate_failed:"
+                f" success_rate={success_rate:.3f}<{min_success_rate},"
+                f" failed={failed}>={max_fail_count}"
+            )
+
+    @staticmethod
+    def _write_evidence_diag_report(
+        *,
+        trade_date: date,
+        total: int,
+        success: int,
+        failed: int,
+        failure_reason_counts: dict[str, int],
+        failure_samples: list[dict[str, Any]],
+    ) -> None:
+        out_dir = Path(os.getenv("CYCLE_DIAG_DIR", "tmp/cycle_diag"))
+        out_dir.mkdir(parents=True, exist_ok=True)
+        report = {
+            "trade_date": trade_date.isoformat(),
+            "total": total,
+            "success": success,
+            "failed": failed,
+            "success_rate": (success / total) if total else 1.0,
+            "failure_reason_counts": failure_reason_counts,
+            "failure_samples": failure_samples[:50],
+        }
+        (out_dir / f"cycle_evidence_diag_{trade_date.isoformat()}.json").write_text(
+            json.dumps(report, ensure_ascii=False, indent=2)
+        )
 
     async def _save_evidence_to_db(self, conn: asyncpg.Connection,
                                   evidence: CycleEvidenceInput) -> None:

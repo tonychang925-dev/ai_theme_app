@@ -140,6 +140,38 @@ async def fetch_watch_universe(manager: PostgresDatabaseManager, trade_date_valu
     return result
 
 
+async def fetch_w2s_candidate_map(manager: PostgresDatabaseManager, trade_date_value: date):
+    sql = """
+    SELECT
+        stock_id,
+        stock_name,
+        subject_key,
+        theme_name,
+        candidate_type
+    FROM weak_to_strong_candidate_pool
+    WHERE next_trade_date = $1::date
+    """
+    async with manager.pool.acquire() as conn:
+        rows = await conn.fetch(sql, trade_date_value)
+    result = {}
+    for row in rows:
+        stock_id = str(row["stock_id"]).upper()
+        subject_key = str(row["subject_key"])
+        result[(stock_id, subject_key)] = {
+            "stock_id": stock_id,
+            "stock_name": row["stock_name"] or "",
+            "subject_key": subject_key,
+            "theme_name": row["theme_name"] or subject_key,
+            "role_label": "龙头" if str(row["candidate_type"] or "") == "dragon_repair" else "强趋势",
+            "mainline_alive": True,
+            "action_bias": "watch_open",
+            "is_reversal_watch": True,
+            "position_label": "",
+            "pattern_labels": [],
+        }
+    return result
+
+
 async def upsert_rows(manager: PostgresDatabaseManager, items):
     sql = """
     INSERT INTO pre_market_auction_signal (
@@ -206,12 +238,15 @@ async def main_async() -> int:
     try:
         await ensure_tables(manager)
         watch_map = await fetch_watch_universe(manager, trade_date_value)
+        w2s_map = await fetch_w2s_candidate_map(manager, trade_date_value)
         rows = await fetch_snapshots(manager, trade_date_value)
         service = AuctionSignalService()
         items = []
         for row in rows:
             key = (str(row["stock_id"]).upper(), str(row["subject_key"]))
             candidate_row = watch_map.get(key)
+            if not candidate_row:
+                candidate_row = w2s_map.get(key)
             if not candidate_row:
                 continue
             snapshot = PreMarketAuctionSnapshot(

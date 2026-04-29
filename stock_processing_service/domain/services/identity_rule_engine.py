@@ -60,10 +60,12 @@ class IdentityRuleEngine:
     """
 
     def evaluate(self, x: IdentityRuleInput) -> IdentityRuleResult:
+        # 平衡频率与质量：降低事件天数权重(18→12)，提高事件强度权重(0.35→0.60)
+        # 对齐 PDF 文档——新颖度取决于事件级别而非出现天数
         novelty_score = min(
             Decimal("100"),
-            Decimal(str(x.strong_event_count_7d)) * Decimal("18")
-            + x.event_strength_score * Decimal("0.35"),
+            Decimal(str(x.strong_event_count_7d)) * Decimal("12")
+            + x.event_strength_score * Decimal("0.60"),
         )
         timing_score = min(
             Decimal("100"),

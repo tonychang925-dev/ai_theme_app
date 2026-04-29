@@ -520,13 +520,15 @@ async def upsert_row(manager: PostgresDatabaseManager, item: MarketEnvironmentMe
 async def main_async() -> int:
     args = parse_args()
     trade_date_value = _parse_trade_date(args.trade_date)
-    previous_trade_date = trade_date_value - timedelta(days=1)
     intraday_map = _load_intraday_map(args.intraday_json)
 
     manager = PostgresDatabaseManager(get_postgres_config())
     await manager.connect()
     try:
         await ensure_tables(manager)
+        previous_trade_date = await fetch_prev_trade_date(manager, trade_date_value)
+        if previous_trade_date is None:
+            raise RuntimeError(f"无法找到 {trade_date_value} 的上一交易日，终止计算")
         today_rows = await fetch_dedup_rows(manager, trade_date_value)
         previous_rows = await fetch_dedup_rows(manager, previous_trade_date)
         metrics = build_metrics(trade_date_value, today_rows, previous_rows, intraday_map=intraday_map)
@@ -557,6 +559,17 @@ async def main_async() -> int:
         return 0
     finally:
         await manager.disconnect()
+
+
+async def fetch_prev_trade_date(manager: PostgresDatabaseManager, trade_date_value: date) -> date | None:
+    sql = """
+    SELECT MAX(trade_date) AS prev_trade_date
+    FROM stock_daily_snapshot
+    WHERE trade_date < $1::date
+    """
+    async with manager.pool.acquire() as conn:
+        row = await conn.fetchrow(sql, trade_date_value)
+    return row.get("prev_trade_date") if row else None
 
 
 if __name__ == "__main__":

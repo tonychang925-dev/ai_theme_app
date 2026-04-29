@@ -1829,6 +1829,63 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             rows = await conn.fetch(sql, trade_date, subject_keys)
         return [dict(r) for r in rows]
 
+    async def get_subject_market_stats(
+        self,
+        trade_date,
+        subject_keys: List[str] | None = None,
+        lookback_days: int = 7,
+    ) -> List[Dict[str, Any]]:
+        """批量查询 subject 级市场统计（替代 JSONL stock_daily 文件读取）。
+
+        从 subject_stock_daily_snapshot 聚合每个 subject 每天的市场指标，
+        用于替代 _compute_5d_metrics() 中的 JSONL 文件依赖。
+        """
+        if not subject_keys:
+            return []
+        from datetime import timedelta
+        start_date = trade_date - timedelta(days=max(lookback_days - 1, 0))
+        sql = """
+        SELECT
+            subject_key,
+            trade_date,
+            COUNT(*) AS stock_count,
+            COUNT(*) FILTER (WHERE limit_up) AS limit_up_count,
+            COUNT(*) FILTER (WHERE pct_chg >= 5.0) AS strong_count,
+            AVG(pct_chg) AS avg_pct_chg,
+            SUM(CASE WHEN pct_chg <= -5.0 THEN 1 ELSE 0 END)::int AS weak_count
+        FROM subject_stock_daily_snapshot
+        WHERE subject_key = ANY($1::text[])
+          AND trade_date BETWEEN $2::date AND $3::date
+        GROUP BY subject_key, trade_date
+        ORDER BY subject_key, trade_date
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, subject_keys, start_date, trade_date)
+        return [dict(r) for r in rows]
+
+    async def get_subject_heat_stats(
+        self, trade_date, subject_keys: List[str] | None = None, lookback_days: int = 5
+    ) -> List[Dict[str, Any]]:
+        """批量查询 subject 级热度统计（替代 JSONL history 文件）。
+
+        从 subject_rank_daily 聚合每个 subject 的每日 heat 数据。
+        """
+        if not subject_keys:
+            return []
+        from datetime import timedelta
+        start_date = trade_date - timedelta(days=max(lookback_days - 1, 0))
+        sql = """
+        SELECT subject_key, rank_date, heat, heat_name, pct_chg
+        FROM subject_rank_daily
+        WHERE subject_key = ANY($1::text[])
+          AND source_system = 'jyhf'
+          AND rank_date BETWEEN $2::date AND $3::date
+        ORDER BY subject_key, rank_date
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, subject_keys, start_date, trade_date)
+        return [dict(r) for r in rows]
+
     async def get_prior_stock_daily_snapshots(
         self,
         trade_date,

@@ -275,10 +275,12 @@ class StrongStockAnalysisService:
             await self.release_connection(conn)
 
     async def _get_prev_day_stock_data(self, stock_id: str, trade_date: date) -> Optional[Dict[str, Any]]:
-        """获取前一日股票数据（用于连续领涨判断）"""
-        prev_date = trade_date - timedelta(days=1)
+        """获取上一交易日股票数据（用于连续领涨判断）"""
         conn = await self.get_connection()
         try:
+            prev_date = await self._get_prev_trade_date(conn, trade_date)
+            if prev_date is None:
+                return None
             query = """
             SELECT
                 stock_id,
@@ -651,8 +653,12 @@ class StrongStockAnalysisService:
         limit_up = stock_data.get('limit_up', False)
 
         # 获取前一日数据以判断是否连续涨停
-        prev_date = trade_date - timedelta(days=1)
-        prev_kline = await self._get_daily_kline(stock_id, prev_date)
+        conn = await self.get_connection()
+        try:
+            prev_date = await self._get_prev_trade_date(conn, trade_date)
+        finally:
+            await self.release_connection(conn)
+        prev_kline = await self._get_daily_kline(stock_id, prev_date) if prev_date else None
 
         limit_up_type = "非涨停"
         score = 30  # 基础分
@@ -726,6 +732,17 @@ class StrongStockAnalysisService:
             'reasons': reasons,
             'limit_up_details': limit_up_details
         }
+
+    async def _get_prev_trade_date(self, conn, trade_date: date) -> Optional[date]:
+        row = await conn.fetchrow(
+            """
+            SELECT MAX(trade_date) AS prev_trade_date
+            FROM stock_daily_snapshot
+            WHERE trade_date < $1::date
+            """,
+            trade_date,
+        )
+        return row.get("prev_trade_date") if row else None
 
     async def _analyze_capital_nature(self, stock_id: str, trade_date: date, stock_data: Dict[str, Any]) -> Dict[str, Any]:
         """分析资金性质"""
