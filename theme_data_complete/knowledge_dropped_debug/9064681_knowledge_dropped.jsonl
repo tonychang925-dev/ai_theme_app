@@ -1,7 +1,0 @@
-{"span_uid": "a9d2dee62dd8", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是一个表格数据，但内容与算电协同主题不直接相关（涉及风电、光伏、水电、储能等占比），且缺乏上下文解释，无法形成独立、完整的知识表达。"}
-{"span_uid": "3bfd49786a08", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为标题“3.1.2 基础设施构成”，没有具体内容，无法形成独立、完整的知识表达。"}
-{"span_uid": "0d41948bb27c", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述了产业的发展阶段（概念萌芽期、政策导入期、战略落地期），属于事件性或时间性信息，无法整理成稳定、可脱离原新闻上下文独立成立的知识表达。"}
-{"span_uid": "5c4b9e9c3e24", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段包含大量预测性数据（如2030年用电量、2025年智能算力规模等）和未来趋势描述，稳定性较低，不适合作为稳定知识块入库。"}
-{"span_uid": "28948db07313", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段包含具体事件（单机柜功耗突破50kW）和预测性数据（2026年增速），稳定性低，不适合作为稳定知识块入库。"}
-{"span_uid": "c4131e81e0cc", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "未来需求趋势预测", "stability": "low", "reason": "原文是具体预测（2027年占比72.6%），属于阶段性变化信息，但预测性强、时间点具体，稳定性低，不适合作为稳定知识入库。"}
-{"span_uid": "2658ae68ea79", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场规模预测", "stability": "low", "reason": "原文包含具体占比、政策要求（80%绿电占比强制要求）和未来市场规模预测（2030年），属于事件性、预测性信息，无法整理成稳定知识块。"}

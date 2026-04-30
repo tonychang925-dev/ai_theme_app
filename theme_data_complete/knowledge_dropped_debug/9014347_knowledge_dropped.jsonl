@@ -1,9 +1,0 @@
-{"span_uid": "cd4a67eae7c3", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文是具体时间点的行业动态和预测性表述，涉及龙头企业动作，属于事件性信息，无法形成稳定、可独立成立的知识块。"}
-{"span_uid": "c93c3631703c", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文是具体时间点的行业会议动态和企业策略描述，属于事件性信息，无法形成稳定、可独立成立的知识块。"}
-{"span_uid": "bb5ac46237ce", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文是具体时间点的季节性销售和政策支持描述，属于事件性信息，无法形成稳定、可独立成立的知识块。"}
-{"span_uid": "73ef25562053", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文是具体时间点的市场动销预测，涉及春节假期和宴席市场等临时性因素，属于事件性信息，无法形成稳定、可独立成立的知识块。"}
-{"span_uid": "e341307a2f3e", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为事件性预测和主观看法（强调白酒配置价值），无法整理成稳定、可独立成立的知识块。"}
-{"span_uid": "42d89bd2f013", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体时间（2024年末）的事件描述，涉及市场需求、动销、电商冲击等短期现象，无法形成稳定知识块。"}
-{"span_uid": "632c5dadcb66", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体情境下的主观看法（业内看法），且依赖上下文（下调经销商任务量），无法整理成稳定、可独立成立的知识块。"}
-{"span_uid": "6df39d1572d5", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "展会信息", "stability": "low", "reason": "原片段为具体事件信息（糖酒会举办详情），无法脱离上下文形成稳定知识块，适合丢弃。"}
-{"span_uid": "3f6200e6b94e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业营收记录", "stability": "low", "reason": "原片段为具体企业传闻事件，无法形成独立、稳定的题材知识，适合丢弃。"}

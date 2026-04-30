@@ -284,21 +284,6 @@ async function fetchJsonWithTimeout<T>(input: string, init?: RequestInit, timeou
   }
 }
 
-function useIntelV2Api(): boolean {
-  // Runtime toggle via localStorage/query/env-style global
-  // Priority: query param -> localStorage -> default(false)
-  try {
-    const query = new URLSearchParams(window.location.search);
-    const q = query.get("intel_v2");
-    if (q !== null) return q === "1" || q.toLowerCase() === "true";
-    const local = window.localStorage.getItem("ENABLE_INTEL_V2_STREAM");
-    if (local !== null) return local === "1" || local.toLowerCase() === "true";
-  } catch {
-    // ignore in non-browser/test env
-  }
-  return false;
-}
-
 export async function fetchIntelFeed(params: {
   date?: string;
   type?: IntelItemType;
@@ -312,17 +297,8 @@ export async function fetchIntelFeed(params: {
   if (params.limit) query.set("limit", String(params.limit));
 
   try {
-    const path = useIntelV2Api() ? "/api/v2/intel/feed" : "/api/intel/feed";
-    return await fetchJsonWithTimeout<IntelFeedView>(`${path}?${query.toString()}`, undefined, 10000);
+    return await fetchJsonWithTimeout<IntelFeedView>(`/api/v2/intel/feed?${query.toString()}`, undefined, 10000);
   } catch (error) {
-    // Fallback to v1 when v2 is enabled but temporarily unavailable.
-    if (useIntelV2Api()) {
-      try {
-        return await fetchJsonWithTimeout<IntelFeedView>(`/api/intel/feed?${query.toString()}`, undefined, 10000);
-      } catch {
-        // fallthrough
-      }
-    }
     const message = error instanceof Error ? error.message : "unknown error";
     throw new Error(`intel feed request failed: ${message}`);
   }
@@ -402,12 +378,10 @@ export async function fetchStrongStockWatch(params: {
   if (params.includeRemoved !== undefined) query.set("include_removed", String(params.includeRemoved));
   if (params.stockId) query.set("stock_id", params.stockId);
 
-  // 强势股页面必须使用完整字段口径（含板数/涨幅等），
-  // 统一走 frontend_bff 的 /api/intel/strong-stocks/watch。
-  // 禁止在此处走精简 /api/v2/strong_watch，避免字段缺失导致排序与展示失真。
+  // 强势股页面统一走 v2 口径，避免旧路由字段漂移。
 
   try {
-    const url = `/api/intel/strong-stocks/watch?${query.toString()}`;
+    const url = `/api/v2/intel/strong-stocks/watch?${query.toString()}`;
     const getResp = await fetch(url, { method: "GET" });
     if (!getResp.ok) throw new Error(`request failed: ${getResp.status}`);
     return (await getResp.json()) as StrongStockWatchView;
@@ -427,8 +401,7 @@ export function openIntelStream(params: {
   if (params.type) query.set("type", params.type);
   if (params.session) query.set("session", params.session);
   query.set("limit", "20");
-  const path = useIntelV2Api() ? "/api/v2/intel/stream" : "/api/intel/stream";
-  return new EventSource(`${path}?${query.toString()}`);
+  return new EventSource(`/api/v2/intel/stream?${query.toString()}`);
 }
 
 import { createSSEManager } from "./realtime/sseManager";
@@ -468,7 +441,7 @@ export async function fetchThemeWorkspace(subjectKey: string, tradeDate?: string
     stocks_limit: "10"
   });
   if (tradeDate) query.set("trade_date", tradeDate);
-  const response = await fetch(`/api/theme-workspace/${subjectKey}?${query.toString()}`);
+  const response = await fetch(`/api/v2/theme-workspace/${subjectKey}?${query.toString()}`);
   if (!response.ok) {
     throw new Error(`theme workspace request failed: ${response.status}`);
   }
@@ -482,7 +455,7 @@ export async function fetchStockWorkspace(stockId: string): Promise<StockWorkspa
     mapping_scope: "pool",
     themes_limit: "10"
   });
-  const response = await fetch(`/api/stock-workspace/${stockId}?${query.toString()}`);
+  const response = await fetch(`/api/v2/stock-workspace/${stockId}?${query.toString()}`);
   if (!response.ok) {
     throw new Error(`stock workspace request failed: ${response.status}`);
   }
@@ -497,7 +470,7 @@ export async function fetchRecap(params: {
     date: params.date,
     report_type: params.reportType ?? "post_market",
   });
-  const response = await fetch(`/api/recap?${query.toString()}`);
+  const response = await fetch(`/api/v2/recap?${query.toString()}`);
   if (!response.ok) {
     throw new Error(`recap request failed: ${response.status}`);
   }
@@ -609,7 +582,7 @@ export async function fetchRecapV2OrFallback(params: {
 }
 
 export async function fetchRecapDefaults(): Promise<RecapDefaultsView> {
-  const response = await fetch("/api/recap/defaults");
+  const response = await fetch("/api/v2/recap/defaults");
   if (!response.ok) {
     throw new Error(`recap defaults request failed: ${response.status}`);
   }
@@ -619,7 +592,7 @@ export async function fetchRecapDefaults(): Promise<RecapDefaultsView> {
 export async function fetchCollectionAvailability(tradeDate?: string): Promise<CollectionAvailability> {
   const query = new URLSearchParams();
   if (tradeDate) query.set("trade_date", tradeDate);
-  const response = await fetch(`/api/collection/availability?${query.toString()}`);
+  const response = await fetch(`/api/v2/collection/availability?${query.toString()}`);
   if (!response.ok) {
     throw new Error(`collection availability request failed: ${response.status}`);
   }
@@ -627,7 +600,7 @@ export async function fetchCollectionAvailability(tradeDate?: string): Promise<C
 }
 
 export async function startCollection(payload: unknown): Promise<CollectionJobStatus> {
-  const response = await fetch("/api/collection/start", {
+  const response = await fetch("/api/v2/collection/start", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
@@ -640,7 +613,7 @@ export async function startCollection(payload: unknown): Promise<CollectionJobSt
 }
 
 export async function fetchCollectionStatus(jobId: string): Promise<CollectionJobStatus> {
-  const response = await fetch(`/api/collection/status?job_id=${encodeURIComponent(jobId)}`);
+  const response = await fetch(`/api/v2/collection/status?job_id=${encodeURIComponent(jobId)}`);
   if (!response.ok) {
     throw new Error(`collection status request failed: ${response.status}`);
   }
@@ -648,7 +621,7 @@ export async function fetchCollectionStatus(jobId: string): Promise<CollectionJo
 }
 
 export async function cancelCollection(jobId: string): Promise<CollectionJobStatus> {
-  const response = await fetch("/api/collection/cancel", {
+  const response = await fetch("/api/v2/collection/cancel", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ job_id: jobId }),
@@ -660,7 +633,7 @@ export async function cancelCollection(jobId: string): Promise<CollectionJobStat
 }
 
 export async function continueCollection(jobId: string): Promise<CollectionJobStatus> {
-  const response = await fetch("/api/collection/continue", {
+  const response = await fetch("/api/v2/collection/continue", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ job_id: jobId }),
@@ -674,7 +647,7 @@ export async function continueCollection(jobId: string): Promise<CollectionJobSt
 export async function fetchRealtimeCollectorStatus(): Promise<RealtimeCollectorCommandResult> {
   try {
     return await fetchJsonWithTimeout<RealtimeCollectorCommandResult>(
-      "/api/realtime/collector/status",
+      "/api/v2/realtime/collector/status",
       undefined,
       15000,
     );
@@ -688,7 +661,7 @@ export async function startRealtimeCollector(
 ): Promise<RealtimeCollectorCommandResult> {
   try {
     return await fetchJsonWithTimeout<RealtimeCollectorCommandResult>(
-      "/api/realtime/collector/start",
+      "/api/v2/realtime/collector/start",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -706,7 +679,7 @@ export async function stopRealtimeCollector(
 ): Promise<RealtimeCollectorCommandResult> {
   try {
     return await fetchJsonWithTimeout<RealtimeCollectorCommandResult>(
-      "/api/realtime/collector/stop",
+      "/api/v2/realtime/collector/stop",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -722,7 +695,7 @@ export async function stopRealtimeCollector(
 export async function fetchRealtimeCollectorLogs(lines = 200): Promise<RealtimeCollectorLogs> {
   try {
     return await fetchJsonWithTimeout<RealtimeCollectorLogs>(
-      `/api/realtime/collector/logs?lines=${encodeURIComponent(String(lines))}`,
+      `/api/v2/realtime/collector/logs?lines=${encodeURIComponent(String(lines))}`,
       {
         cache: "no-store",
       },

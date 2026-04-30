@@ -1,2 +1,0 @@
-{"span_uid": "0a9aeb892060", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文是具体政策事件（国办发布意见），包含具体措施和日期，无法脱离原新闻上下文形成稳定、独立的知识块。"}
-{"span_uid": "fff2067bff38", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文是具体地方发展规划（黑龙江省实施方案），包含具体目标、日期和地点，无法脱离原新闻上下文形成稳定、独立的知识块。"}

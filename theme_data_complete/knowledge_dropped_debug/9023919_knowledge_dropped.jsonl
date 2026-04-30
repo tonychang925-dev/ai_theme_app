@@ -1,3 +1,0 @@
-{"span_uid": "ce3cf6100ff4", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅提及政策文件的印发和笼统目标，缺乏具体政策内容或可稳定入库的知识点，属于事件性信息，无法形成独立、稳定的知识块。"}
-{"span_uid": "72dedd263a1d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅列举政策文件名称和会议审议情况，属于具体事件公告，缺乏可脱离上下文独立成立的稳定知识表达，不适合作为知识块保留。"}
-{"span_uid": "13f7bd50aaf3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段描述特定年份的财政资金安排和具体工程支持措施，属于阶段性、事件性信息，无法整理成稳定、通用的环保知识块。"}

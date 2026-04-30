@@ -1,4 +1,0 @@
-{"span_uid": "1f463fd686c0", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "这是一条具体的政府采购限制措施事件，具有时效性和特定情境依赖，无法形成稳定、可独立理解的知识块。"}
-{"span_uid": "d276616e257e", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "与span_uid c068208f8a42内容高度重叠且更具体，已在前一条中涵盖，避免冗余。"}
-{"span_uid": "3ee2bbba3035", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是具体公司的合规经营表述，属于事件性、主观性内容，无法整理成稳定、可独立成立的医疗器械题材知识块。"}
-{"span_uid": "399d7b99daac", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是具体时间点的阶段性发展目标，属于事件性、预测性内容，无法整理成稳定、可独立成立的医疗器械题材知识块。"}

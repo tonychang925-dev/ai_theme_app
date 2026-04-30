@@ -15,7 +15,6 @@ from stock_processing_service.contracts.events import EventEnvelope, SnapshotBui
 from stock_processing_service.domain.services.identity_decider import IdentityDecider
 from stock_processing_service.domain.services.identity_llm_review_service import IdentityLLMReviewService
 from stock_processing_service.domain.services.identity_rule_engine import IdentityRuleEngine, IdentityRuleInput
-from stock_processing_service.domain.services.identity_scoring_service import IdentityScoringService
 from stock_processing_service.domain.services.one_day_tour_detector import OneDayTourDetector
 from stock_processing_service.domain.services.theme_kline_analyzer import ThemeKlineAnalyzer
 from stock_processing_service.ports import (
@@ -33,7 +32,6 @@ class BuildIdentityJob:
         write_port: AlgorithmStateWritePort,
         event_port: StockEventPort,
         idempotency_port: IdempotencyPort,
-        scoring_service: IdentityScoringService | None = None,
         tour_detector: OneDayTourDetector | None = None,
         llm_review_service: IdentityLLMReviewService | None = None,
         decider: IdentityDecider | None = None,
@@ -44,7 +42,6 @@ class BuildIdentityJob:
         self._write_port = write_port
         self._event_port = event_port
         self._idempotency_port = idempotency_port
-        self._scoring_service = scoring_service or IdentityScoringService()
         self._tour_detector = tour_detector or OneDayTourDetector()
         self._llm_review_service = llm_review_service or IdentityLLMReviewService()
         self._decider = decider or IdentityDecider()
@@ -658,12 +655,6 @@ class BuildIdentityJob:
             kline_support_hold = _kline.kline_support_hold
             platform_breakout_flag = _kline.platform_breakout_flag
 
-            score = self._scoring_service.score(
-                subject_key=subject_key,
-                subject_name=subject_name,
-                context_tags=context_tags,
-                stock_count=len(rows),
-            )
             tour_signal = self._tour_detector.detect(avg_pct_chg=avg_pct, stock_count=len(rows))
             # Combine simple detector's breadth-vs-magnitude with K-line shape analysis
             # (matches production: one_day_tour_flag = risk_score OR one_day_tour_kline_flag)
@@ -722,7 +713,9 @@ class BuildIdentityJob:
                 "market_ok": rule.market_ok,
                 "rule_is_main_theme": rule.rule_is_main_theme,
                 "rule_reasons": rule.reasons,
-                "legacy_composite_score": str(score.composite_score),
+                # Keep field for backward compatibility, but bind to the
+                # same rule-engine composite to avoid dual scoring drift.
+                "legacy_composite_score": str(rule.composite_score),
                 "llm_verdict": llm_verdict.verdict,
                 "llm_reason": llm_verdict.reason,
                 "identity_status": decision.identity_status,
@@ -747,7 +740,7 @@ class BuildIdentityJob:
                 "market_ok": rule.market_ok,
                 "rule_is_main_theme": rule.rule_is_main_theme,
                 "rule_reasons": rule.reasons,
-                "legacy_composite_score": str(score.composite_score),
+                "legacy_composite_score": str(rule.composite_score),
                 "llm_verdict": llm_verdict.verdict,
                 "llm_reason": llm_verdict.reason,
                 "identity_status": decision.identity_status,

@@ -19,7 +19,7 @@ export function TestPage() {
         <h3>下一步测试:</h3>
         <button
           onClick={() => {
-            fetch('/api/stock-screener/strategies')
+            fetch('/api/v2/stock-screener/strategies')
               .then(res => res.json())
               .then(data => alert(`获取到 ${data.length} 个策略`))
               .catch(err => alert(`API错误: ${err.message}`));

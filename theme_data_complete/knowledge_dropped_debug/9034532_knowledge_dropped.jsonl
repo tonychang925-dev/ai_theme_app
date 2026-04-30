@@ -1,3 +1,0 @@
-{"span_uid": "f358076485c9", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "科研成果转化数据", "stability": "low", "reason": "原文包含具体年份报告数据和增长百分比，属于阶段性统计信息，不稳定且依赖特定时间点，不适合作为稳定知识块保留。"}
-{"span_uid": "f358076485c9", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "政策支持信息", "stability": "low", "reason": "原文提到国家政策鼓励，属于阶段性政策信息，不稳定且可能随时间变化，不适合作为稳定知识块保留。"}
-{"span_uid": "f358076485c9", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "高校治理变化", "stability": "low", "reason": "原文提到校企改革推动高校治理提升，属于事件性或趋势性信息，不稳定且依赖特定改革背景，不适合作为稳定知识块保留。"}

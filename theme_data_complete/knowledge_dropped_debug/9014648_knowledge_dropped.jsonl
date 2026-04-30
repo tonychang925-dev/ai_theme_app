@@ -1,6 +1,0 @@
-{"span_uid": "dd1f38f5b193", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段描述的是2025年7月23日版权保护的具体重点工作，属于事件性、政策执行细节，无法整理成稳定、可独立成立的知识块，且与信创产业的核心知识关联较弱。"}
-{"span_uid": "f931c9640ef0", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段描述的是2025年7月23日软件正版化的具体推进机制，属于事件性、政策执行细节，无法整理成稳定、可独立成立的知识块，且与信创产业的核心知识关联较弱。"}
-{"span_uid": "9dcd94eb986d", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文为机构的主观看法和预测性表述，无法整理成稳定、独立成立的知识块，不适合保留。"}
-{"span_uid": "4ee3f06825a2", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原片段是研报预测和主观看法，无法整理成稳定、独立成立的知识块。"}
-{"span_uid": "07e4eb1de5c1", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原片段是证券分析预测，包含事件性、主观判断，无法形成稳定知识表达。"}
-{"span_uid": "97d918bec309", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段包含具体年份（2021年）、具体厂商市场份额和增长数据，属于事件性、时效性强的信息，无法形成稳定、可脱离原上下文的知识块，因此丢弃。"}

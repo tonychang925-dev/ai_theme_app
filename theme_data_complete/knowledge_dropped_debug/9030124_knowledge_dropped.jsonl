@@ -1,2 +1,0 @@
-{"span_uid": "b200fcf91bc2", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是关于上海自动驾驶开放区域的具体规划和时间表，属于特定事件和短期政策动态，无法整理成稳定、可独立成立的无人配送题材知识块。"}
-{"span_uid": "386da6c61e93", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "公司未来发展规划", "stability": "low", "reason": "该片段描述的是Serve Robotics的未来发展规划，包括扩大机器人队伍、与Uber Eats合作部署机器人、降低成本、扩展服务等，属于公司层面的具体计划、预测和主观目标，无法整理成稳定、可脱离原新闻上下文独立成立的知识表达。"}

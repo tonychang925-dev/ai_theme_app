@@ -1,4 +1,0 @@
-{"span_uid": "3ee2a77ba757", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场地位", "stability": "medium", "reason": "该片段仅为一条市场地位声明（如“领头羊”），属于事件性或阶段性信息，无法形成稳定、可独立成立的知识块，因此丢弃。"}
-{"span_uid": "6766477a6194", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "应用场景预测", "stability": "low", "reason": "该片段仅为一条未来预测（如“逐步解锁”），属于主观或趋势性表述，无法形成稳定、可独立成立的知识块，因此丢弃。"}
-{"span_uid": "f31d36e72cd9", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "业务收入结构", "stability": "medium", "reason": "该片段仅为一条具体业务收入数据（如同比增速、收入占比），属于事件性或阶段性财务信息，无法形成稳定、可独立成立的知识块，因此丢弃。"}
-{"span_uid": "648fcbe62ca6", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述公司具体战略转型状态和阶段性成果，属于事件性、新闻口吻的表述，无法整理成稳定、可独立成立的知识块，不适合作为题材知识入库。"}

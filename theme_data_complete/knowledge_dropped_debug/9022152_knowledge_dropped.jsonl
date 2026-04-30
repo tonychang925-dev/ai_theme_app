@@ -1,5 +1,0 @@
-{"span_uid": "462e15cb5290", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "金融应用标准发布", "stability": "medium", "reason": "该片段描述了具体事件（金融大模型应用评测指南发布），属于一次性事件，无法整理成稳定独立的知识块，因此丢弃。"}
-{"span_uid": "70abab07bc15", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "评测数据集发布", "stability": "low", "reason": "该片段描述了具体事件（金融大模型评测数据集发布），属于一次性事件，且稳定性低，无法整理成稳定独立的知识块，因此丢弃。"}
-{"span_uid": "b630dd35530b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "AI搜索引擎开发", "stability": "low", "reason": "片段主要描述Meta公司的具体开发目标和竞争意图，属于事件性、公司特定信息，无法形成稳定、可独立成立的知识块。"}
-{"span_uid": "702ed5e1167c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产品市场表现", "stability": "low", "reason": "片段是具体产品的市场表现（如销量增长、用户推荐值），属于事件性、阶段性信息，无法整理成稳定、可独立成立的知识块。"}
-{"span_uid": "8fe13c4544c8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "应用下载量排名", "stability": "low", "reason": "片段是具体应用的下载量和排名数据，属于事件性、阶段性信息，无法整理成稳定、可独立成立的知识块。"}

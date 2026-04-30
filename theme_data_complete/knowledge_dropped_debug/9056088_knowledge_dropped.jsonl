@@ -1,2 +1,0 @@
-{"span_uid": "26ada3f2d3e1", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅为统计标题，没有具体数据或完整知识表达，无法形成独立、稳定的知识块，因此丢弃。"}
-{"span_uid": "45aa80198254", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅提及《全面深化服务贸易创新发展试点总体方案》由商务部提出，属于具体政策事件信息，无法整理成稳定、可独立理解的知识表达，且与题材‘服务贸易八大分支’的本体定义或相关机制无直接关联。"}

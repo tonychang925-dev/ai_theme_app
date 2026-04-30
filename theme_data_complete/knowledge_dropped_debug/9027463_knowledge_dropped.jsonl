@@ -1,7 +1,0 @@
-{"span_uid": "f89fe8719966", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "维生素A市场价格", "stability": "low", "reason": "该片段仅为特定日期的市场价格参考，属于短期波动信息，无法形成稳定、可独立成立的知识块，且缺乏上下文支撑，故丢弃。"}
-{"span_uid": "91f47a41ac0e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "维生素E市场价格", "stability": "low", "reason": "该片段仅为特定日期的市场价格参考，属于短期波动信息，无法形成稳定、可独立成立的知识块，且缺乏上下文支撑，故丢弃。"}
-{"span_uid": "61e3cacc4c3f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "维生素A价格波动", "stability": "low", "reason": "该片段仅为特定日期的价格参考，属于短期波动信息，无法形成稳定、可独立成立的知识块，且缺乏上下文支撑，故丢弃。"}
-{"span_uid": "08eb823f49ad", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "维生素E价格波动", "stability": "low", "reason": "该片段仅为特定日期的价格参考，属于短期波动信息，无法形成稳定、可独立成立的知识块，且缺乏上下文支撑，故丢弃。"}
-{"span_uid": "ad9b8abdb340", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "价格波动数据", "stability": "low", "reason": "该片段是具体的维生素D3报价和短期涨幅数据，属于高度动态、事件性的价格信号，无法形成稳定、可独立成立的知识块，因此丢弃。"}
-{"span_uid": "8ded970166d8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "区域市场价格", "stability": "low", "reason": "该片段是欧洲市场维生素D3的具体报价范围，属于短期、事件性的价格信息，无法形成稳定、可独立成立的知识块，因此丢弃。"}
-{"span_uid": "f1e4c8a8fbba", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅包含一个具体日期的价格指数数值，属于事件性、时效性强的数据点，无法脱离原新闻上下文形成稳定、可独立理解的知识表达。它不构成对维生素题材的本体定义、相关环节或稳定信号，不适合作为可入库的知识块。"}

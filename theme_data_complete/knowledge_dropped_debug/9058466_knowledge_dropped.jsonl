@@ -1,2 +1,0 @@
-{"span_uid": "6fd4c377905a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "科学探测技术", "stability": "low", "reason": "该片段提及具体设备（“地壳一号”万米钻机）和计划，属于事件或进展信息，但表达较为简略，无法形成稳定、独立的知识块，且与核心知识重叠，因此丢弃。"}
-{"span_uid": "e82bd770230e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "地下实验室建设", "stability": "low", "reason": "该片段提及具体案例（中国锦屏地下实验室），属于事件或进展信息，但表达较为简略，无法形成稳定、独立的知识块，且与核心知识重叠，因此丢弃。"}

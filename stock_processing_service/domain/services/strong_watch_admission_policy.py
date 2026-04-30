@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from decimal import Decimal
 from typing import Any
+from stock_processing_service.domain.services.strong_watch_contracts import ADMISSION_REQUIRED_FIELDS
 
 
 @dataclass(frozen=True)
@@ -140,3 +141,6 @@ class StrongWatchAdmissionPolicy:
             pass_reasons=pass_reasons,
             admission_status=admission_status,
         )
+    @staticmethod
+    def required_fields() -> tuple[str, ...]:
+        return ADMISSION_REQUIRED_FIELDS

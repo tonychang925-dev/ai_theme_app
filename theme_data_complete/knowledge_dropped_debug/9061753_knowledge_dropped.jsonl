@@ -1,2 +1,0 @@
-{"span_uid": "17cbbd02c77f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅为事件性描述（'即将迈入提速阶段'），缺乏具体事实支撑，无法形成独立稳定的知识块。"}
-{"span_uid": "0a99c89b94e7", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段为基于当前发展节奏的预测（'预计从2026年开始'），属于未来计划而非稳定事实，不适合作为可入库知识。"}

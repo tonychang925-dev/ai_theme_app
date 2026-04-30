@@ -1,2 +1,0 @@
-{"span_uid": "0b2cfe50bcd4", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段详细描述了城市更新的具体行动计划、投资额、工程细节和年度目标，属于强事件化和新闻口吻的短期规划信息，难以整理成稳定、可独立成立的知识块，因此丢弃。"}
-{"span_uid": "023869c00889", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段涉及专项资金、具体项目数量、企业名称和行动计划，属于事件性、进展性信息，且内容较为零散，无法形成完整、稳定的知识表达，因此丢弃。"}

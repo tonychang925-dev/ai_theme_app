@@ -5,6 +5,10 @@ from decimal import Decimal
 from typing import Any
 
 from stock_processing_service.contracts.dto import SubjectStockPoolDTO
+from stock_processing_service.domain.services.strong_watch_contracts import (
+    UNIVERSE_REQUIRED_CYCLE_FIELDS,
+    UNIVERSE_REQUIRED_IDENTITY_FIELDS,
+)
 
 # —— 覆盖策略常量 ——
 
@@ -69,6 +73,8 @@ class StrongWatchUniverseBuilder:
         if isinstance(raw, SubjectIdentity):
             return raw
         if isinstance(raw, dict):
+            if any(k not in raw for k in UNIVERSE_REQUIRED_IDENTITY_FIELDS):
+                return None
             return SubjectIdentity(
                 subject_key=subject_key,
                 identity_status=str(raw.get("identity_status") or "").lower(),
@@ -91,6 +97,8 @@ class StrongWatchUniverseBuilder:
         if isinstance(raw, CycleStatus):
             return raw
         if isinstance(raw, dict):
+            if any(k not in raw for k in UNIVERSE_REQUIRED_CYCLE_FIELDS):
+                return None
             return CycleStatus(
                 subject_key=subject_key,
                 final_cycle_state=str(raw.get("final_cycle_state") or ""),
@@ -181,7 +189,7 @@ class StrongWatchUniverseBuilder:
                 blocked_rows.append(row)
                 diagnostics[stock_id] = {
                     "universe_status": "blocked",
-                    "universe_reason": "missing_identity",
+                    "universe_reason": "contract_missing_identity_fields",
                     "cycle_present": True,
                     "final_cycle_state": cycle.final_cycle_state if cycle else "n/a",
                 }

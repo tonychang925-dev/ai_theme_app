@@ -37,7 +37,7 @@ function testMemoryLeakDetection() {
     // 模拟EventSource创建
     for (let i = 0; i < 3; i++) {
       const mockConnection = {
-        url: `http://localhost:8000/api/test/${i}`,
+        url: `http://localhost:8000/api/v2/test/${i}`,
         readyState: 0, // CONNECTING
         createdAt: new Date()
       };

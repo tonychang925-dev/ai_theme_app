@@ -1,4 +1,0 @@
-{"span_uid": "f01146c090c6", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业投融资工具", "stability": "low", "reason": "该片段聚焦于特定企业（省旅投集团）的具体投融资策略和工具，与创投题材的通用知识关联较弱，且包含强事件性和具体主体信息，无法形成稳定、独立的知识块。"}
-{"span_uid": "0fb9cd77a0dd", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "科创基金分类", "stability": "low", "reason": "该片段仅列出基金分类的残句，缺乏完整上下文和独立解释，无法构成可独立理解的知识表达，且与特定事件（苏州国际科创大会）强相关，稳定性低。"}
-{"span_uid": "3744bc152d36", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述的是央行流动性工具的具体机制（如'以券换券'方式），与创投题材的直接关联性较弱，属于特定金融操作细节，无法整理成稳定、可独立理解的创投知识块。"}
-{"span_uid": "56217c000e0d", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是主观看法（政府基金是耐心资本最重要的扮演者），且依赖上下文，无法整理成稳定、独立的知识块。"}

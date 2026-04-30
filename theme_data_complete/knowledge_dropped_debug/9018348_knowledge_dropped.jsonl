@@ -1,2 +1,0 @@
-{"span_uid": "fdfa4deeeb1b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是个人预测性表述（'在3-5年的时间内，BC将成为光伏技术的主力军'），带有主观性和时间限定，无法整理成稳定、独立的知识块，应丢弃。"}
-{"span_uid": "9bac15a58038", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文为具体公司的主观看法和预测（\"相信它会逐步取代TOPCon\"），无法整理成稳定、可独立成立的知识块，且缺乏足够事实支撑，因此丢弃。"}

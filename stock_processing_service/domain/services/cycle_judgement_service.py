@@ -21,6 +21,9 @@ class CycleJudgement:
     fade_confirmed_evidence_count: int
     final_cycle_state: str
     final_mainline_alive: bool
+    decision_path: str = ""
+    evidence_count: int = 0
+    fade_reason_codes: list[str] | None = None
 
 
 class CycleJudgementService:

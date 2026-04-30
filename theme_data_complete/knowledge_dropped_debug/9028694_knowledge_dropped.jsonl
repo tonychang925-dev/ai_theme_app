@@ -1,2 +1,0 @@
-{"span_uid": "46be14219dcd", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文为具体日期和地区的天气预报，属于临时性事件信息，无法形成稳定、可独立成立的知识块。"}
-{"span_uid": "2d70b1eab14b", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文为具体日期和地区的温度预测，属于临时性事件信息，无法形成稳定、可独立成立的知识块。"}

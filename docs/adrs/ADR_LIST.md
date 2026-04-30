@@ -558,3 +558,58 @@
   - 灰度与回滚可治理；增加维护成本。
 - Trigger
   - 新增或变更任何切流开关。
+
+---
+
+## 增量附录（2026-04-30，P4.phase0）
+
+### ADR-P4-001: 前端 API 统一 v2 前缀与阻断策略
+- Context
+  - 第四阶段前端存在历史 `/api/*` 与 `/api/v2/*` 并存风险。
+- Decision
+  - 前端业务调用统一 `/api/v2/*`；CI 阻断非 v2 `/api/*`。
+- Alternatives
+  - 保留双前缀长期并存；仅人工评审约束。
+- Consequences
+  - 路径一致性提升；兼容层短期维护成本上升。
+- Trigger
+  - 出现新增非 v2 路径或线上口径不一致故障。
+
+### ADR-P4-002: 实时链路采用 SSE-first + feed fallback
+- Context
+  - 当前业务以服务端单向推送为主，WS 非首要瓶颈。
+- Decision
+  - `/api/v2/intel/stream` 为主通道，失败自动降级 `/api/v2/intel/feed`。
+- Alternatives
+  - 直接全量 WS；仅轮询 feed。
+- Consequences
+  - 实时性与复杂度平衡；需维护重连与降级逻辑。
+- Trigger
+  - SSE 成功率连续低于门槛或并发模型变化。
+
+### ADR-P4-003: frontend_bff 作为前端聚合真源
+- Context
+  - 前端直连多服务会扩大耦合与故障域。
+- Decision
+  - 前端只调用 BFF v2 接口；兼容期保留后端旧别名。
+- Alternatives
+  - 前端直连多后端；页面内自建聚合。
+- Consequences
+  - 边界清晰、回滚一致；BFF 编排复杂度增加。
+- Trigger
+  - 新页面接入或出现前端多服务直连趋势。
+
+### ADR-P4-004: 发布门禁采用三重判据
+- Context
+  - 单一测试无法覆盖契约、回放一致性与覆盖率三类风险。
+- Decision
+  - 发布前必须同时满足：
+  1) A/B 回放 `Disagreement=0`
+  2) Layer B 覆盖率 >= 95%
+  3) v2 contract tests + 路径阻断通过
+- Alternatives
+  - 仅接口测试；仅业务回放。
+- Consequences
+  - 线上回归风险下降；发布检查耗时略增。
+- Trigger
+  - 任一门禁失败或线上回归事件发生。

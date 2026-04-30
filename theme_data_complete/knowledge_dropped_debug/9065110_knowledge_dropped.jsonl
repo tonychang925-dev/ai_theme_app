@@ -1,1 +1,0 @@
-{"span_uid": "9815e69e5929", "action": "rewrite", "canonical_text": "其他风险警示（ST）的撤销条件包括违规问题整改（如资金占用、违规担保、内部控制）以及时间节点要求（如行政处罚满12个月或年报披露后）。", "final_type": "related", "final_role": "ST撤销条件", "stability": "high", "reason": "该片段描述了摘帽的另一类具体条件，是题材的关联知识。已去除具体案例和新闻口吻，保留稳定知识。", "drop_reason": "format_gate:deictic"}

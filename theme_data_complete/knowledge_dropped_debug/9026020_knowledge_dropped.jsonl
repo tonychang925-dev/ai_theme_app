@@ -1,6 +1,0 @@
-{"span_uid": "df9778eaaae0", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段主要描述国家电网的具体投资计划和建设目标，涉及政策、事件和具体主体，无法整理成稳定、可独立成立的题材知识块。"}
-{"span_uid": "550761b475a4", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段主要描述政策通知中的具体技术要求和措施，涉及事件、政策和具体应用场景，无法形成稳定、独立的题材知识块。"}
-{"span_uid": "19b20812e6cf", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为一条具体事件或预测性描述（全球变压器行业正处于卖方市场阶段），属于阶段性市场状态判断，无法整理成稳定、可独立成立的知识块，且缺乏具体支撑信息，不适合作为题材知识入库。"}
-{"span_uid": "92e70f531265", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅描述政策实施原则，属于具体政策事件中的口号式表述，无法整理成稳定、可独立成立的题材知识块。"}
-{"span_uid": "c8a822ed6092", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅描述具体政策框架和行动方案，属于事件性信息，无法形成稳定、可脱离原新闻上下文独立成立的知识表达。"}
-{"span_uid": "83da7c4a7f30", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段主要描述美国电网设备老旧的具体历史背景、基于假设的改造投资预测，属于特定国家的事件性、预测性信息，无法整理成脱离原新闻上下文的稳定知识块，且与变压器题材的本体定义、核心机制或稳定关联知识无关。"}

@@ -1,2 +1,0 @@
-{"span_uid": "2801b59b3cb0", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "生物技术产量提升方法", "stability": "low", "reason": "该片段描述了中国科学院天津工业生物所的具体技术进展，涉及特定机构、具体物质（NMN）和产量提升倍数，属于单一事件性信息，无法整理成脱离原新闻的稳定知识块，且与医药医疗题材的通用知识关联较弱。"}
-{"span_uid": "b75fc4b82dc0", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅提供了2024年医保药品初步形式审查的具体数量统计（440个药品，包括目录外244个和目录内196个，以及西药和中成药细分），属于一次性事件数据，无法形成稳定、可独立理解的知识块，且缺乏机制或趋势性信息。"}

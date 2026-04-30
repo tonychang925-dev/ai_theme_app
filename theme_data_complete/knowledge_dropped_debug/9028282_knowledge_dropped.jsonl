@@ -1,4 +1,0 @@
-{"span_uid": "6ef0b7135a5f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "智能泊车功能更新", "stability": "low", "reason": "该片段描述了具体OTA更新中的功能细节，属于事件性、临时性信息，无法形成稳定、独立的知识块。"}
-{"span_uid": "f4f052a051a4", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "行车场景覆盖扩展", "stability": "low", "reason": "该片段描述了具体OTA更新中的场景覆盖扩展，属于事件性、临时性信息，无法形成稳定、独立的知识块。"}
-{"span_uid": "238530abbc38", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "安全功能性能提升", "stability": "low", "reason": "该片段描述了具体OTA更新中的安全功能性能，属于事件性、临时性信息，无法形成稳定、独立的知识块。"}
-{"span_uid": "16a9c2985940", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场销售热度", "stability": "low", "reason": "该片段描述了具体时间点的市场销售情况，包含主观表述和新闻口吻，无法形成稳定、独立的知识块。"}

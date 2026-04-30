@@ -1,1 +1,0 @@
-{"span_uid": "d0beaffb7b6c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "区域贸易数据", "stability": "low", "reason": "原文是2024年长三角区域对一带一路国家进出口的具体数据，属于阶段性事件信息，无法脱离原新闻上下文形成稳定知识块，因此丢弃。"}

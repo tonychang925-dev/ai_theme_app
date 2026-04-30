@@ -147,7 +147,7 @@ class SSELeakTest {
 
     const leakIds = [];
     for (let i = 0; i < count; i++) {
-      const url = `http://localhost:8000/api/leak-test/${i}`;
+      const url = `http://localhost:8000/api/v2/leak-test/${i}`;
       const connectionId = this.createSSELeak(url);
       if (connectionId) {
         leakIds.push(connectionId);

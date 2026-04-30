@@ -1,2 +1,0 @@
-{"span_uid": "6af4f5d9a8fa", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅陈述“玻璃纤维是PCB板重要原材料”，是一个简单的事实陈述，缺乏独立性和深度，且与前面更详细的产业链知识重复，无法形成有效的知识块。"}
-{"span_uid": "994f696e19ee", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段与上一个片段内容相同，仅重复“玻璃纤维是PCB板重要原材料”，缺乏新信息或独立价值，无法形成有效的知识块。"}

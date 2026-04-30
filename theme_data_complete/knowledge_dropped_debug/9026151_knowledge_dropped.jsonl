@@ -1,2 +1,0 @@
-{"span_uid": "959686e89b17", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅提及新食品原料和食品相关产品新品种的审查事件，缺乏对食品添加剂本体的直接定义或稳定知识，且无法整理成独立成立的知识块。"}
-{"span_uid": "1620e247c4cf", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是具体事件信息（卫健委受理名单中出现β-烟酰胺），属于新闻口吻的阶段性进展，无法形成稳定、可脱离上下文的知识表达。"}

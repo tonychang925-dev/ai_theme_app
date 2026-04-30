@@ -1,6 +1,0 @@
-{"span_uid": "ae5ea638752b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段包含具体年份的产量增速预测、消费平台期和占比下降预测，这些是事件性、预测性的信息，不稳定且依赖特定时间点，无法整理成稳定知识块。"}
-{"span_uid": "65ee2e043b53", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "能源结构变化", "stability": "low", "reason": "原文是具体数据（占比78.1%）和事件性信息（新增装机），缺乏上下文无法独立成立，且数据可能随时间快速变化，不适合作为稳定知识块保留。"}
-{"span_uid": "ab55eb8f3d0f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "替代效应影响", "stability": "low", "reason": "原文是事件驱动型表述（受益于原油涨价、国际供应链短缺），依赖特定事件和时效性，无法整理成稳定、独立的知识表达。"}
-{"span_uid": "245d1fbb46df", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "煤化工增长数据", "stability": "low", "reason": "原文是具体数据（产能年增12%、利润率18%），缺乏上下文无法独立成立，且数据可能随时间快速变化，不适合作为稳定知识块保留。"}
-{"span_uid": "a9958997dafc", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "进口来源与结构", "stability": "low", "reason": "原文包含具体年份、进口量、同比变化等时效性数据，属于阶段性贸易数据，无法形成稳定知识块。"}
-{"span_uid": "6c071ce0f413", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "国际竞争焦点与进口变化", "stability": "low", "reason": "原文包含具体进口量、同比变化及原因（运输效率提升、政策激励），属于阶段性事件信息，无法形成稳定知识块。"}

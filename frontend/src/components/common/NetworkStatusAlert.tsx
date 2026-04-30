@@ -36,7 +36,7 @@ export function NetworkStatusAlert({ onRetry, suppress = false }: NetworkStatusA
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 10000);
 
-        const response = await fetch('/api/stock-screener/strategies', {
+        const response = await fetch('/api/v2/stock-screener/strategies', {
           method: 'GET',
           cache: 'no-store',
           signal: controller.signal,
