@@ -7,7 +7,7 @@ import type {
   IntelSession,
   SSEConnectionState,
 } from '../lib/api';
-import { fetchIntelFeed, fetchRecapDefaults, createIntelStreamManager } from '../lib/api';
+import { fetchRecapDefaults, createIntelStreamManager, fetchWorkspaceIntelContext } from '../lib/api';
 import { useApi } from '../lib/hooks/useApi';
 
 interface UseIntelFeedOptions {
@@ -16,6 +16,7 @@ interface UseIntelFeedOptions {
   initialSession?: IntelSession;
   initialSelectedItemId?: string | null;
   limit?: number;
+  subjectKey?: string | null;
 }
 
 interface UseIntelFeedReturn {
@@ -56,6 +57,7 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
     initialSession = 'all',
     initialSelectedItemId = null,
     limit = 50,
+    subjectKey = null,
   } = options;
 
   function todayString() {
@@ -87,7 +89,23 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
   const [session, setSession] = useState<IntelSession>(initialState.session);
 
   // Data fetching with useApi
-  const fetcher = useCallback(() => fetchIntelFeed({ date, type, session, limit }), [date, type, session, limit]);
+  const fetcher = useCallback(async () => {
+    const ctx = await fetchWorkspaceIntelContext({ date, session, limit, subjectKey: subjectKey || undefined });
+    const rawItems = ctx.items || [];
+    const filteredItems = type === 'all' ? rawItems : rawItems.filter((item) => item.item_type === type);
+    const data: IntelFeedView = {
+      items: filteredItems,
+      count: filteredItems.length,
+      date: ctx.date || date,
+      session,
+      type,
+      diagnostics: {
+        partial: false,
+        sources: [String(ctx.source || 'workspace_intel_context')],
+      },
+    };
+    return data;
+  }, [date, type, session, limit, subjectKey]);
 
   const {
     data: payload,
@@ -175,6 +193,30 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
   }, [date, type, session]);
 
   // SSE manager effect
+  const normalizeIntelItem = useCallback((raw: IntelFeedEvent["item"]): IntelFeedItem | null => {
+    if (!raw || typeof raw !== "object") return null;
+    const themeSubjectKeys = Array.isArray(raw.theme_subject_keys) ? raw.theme_subject_keys : [];
+    const themeNames = Array.isArray(raw.theme_names) ? raw.theme_names : [];
+    const stockIds = Array.isArray(raw.stock_ids) ? raw.stock_ids : [];
+    const stockNames = Array.isArray(raw.stock_names) ? raw.stock_names : [];
+    if (!raw.item_id || !raw.item_type || !raw.occurred_at) return null;
+    return {
+      item_id: String(raw.item_id),
+      item_type: raw.item_type,
+      occurred_at: String(raw.occurred_at),
+      title: String(raw.title || raw.summary || ""),
+      summary: String(raw.summary || raw.title || ""),
+      theme_subject_keys: themeSubjectKeys.map((x) => String(x)),
+      theme_names: themeNames.map((x) => String(x)),
+      stock_ids: stockIds.map((x) => String(x)),
+      stock_names: stockNames.map((x) => String(x)),
+      confidence: raw.confidence ?? null,
+      impact_score: raw.impact_score ?? null,
+      source_type: String(raw.source_type || "unknown"),
+      source_channel: raw.source_channel ? String(raw.source_channel) : undefined,
+    };
+  }, []);
+
   useEffect(() => {
     // 清理现有的SSE管理器
     if (sseManagerRef.current) {
@@ -190,8 +232,9 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
       { date, type, session },
       {
         onIntelItem: (event: IntelFeedEvent) => {
-          if (event?.item) {
-            mergeIncomingItems([event.item]);
+          const normalized = normalizeIntelItem(event?.item);
+          if (normalized) {
+            mergeIncomingItems([normalized]);
             setLiveStatus('live');
           }
         },
@@ -235,7 +278,7 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
         sseManagerRef.current = null;
       }
     };
-  }, [date, type, session, mergeIncomingItems]);
+  }, [date, type, session, mergeIncomingItems, normalizeIntelItem]);
 
   // Polling effect
   useEffect(() => {
@@ -246,7 +289,25 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
       if (!active) return;
 
       try {
-        const data = await fetchIntelFeed({ date, type, session, limit });
+        const ctx = await fetchWorkspaceIntelContext({
+          date,
+          session,
+          limit,
+          subjectKey: subjectKey || undefined,
+        });
+        const rawItems = ctx.items || [];
+        const scopedItems = type === 'all' ? rawItems : rawItems.filter((item) => item.item_type === type);
+        const data: IntelFeedView = {
+          items: scopedItems,
+          count: scopedItems.length,
+          date: ctx.date || date,
+          session,
+          type,
+          diagnostics: {
+            partial: false,
+            sources: [String(ctx.source || 'workspace_intel_context')],
+          },
+        };
         const currentIds = new Set((payload?.items ?? []).map((item) => item.item_id));
         const freshItems = data.items.filter((item) => !currentIds.has(item.item_id));
         if (freshItems.length > 0) {
@@ -286,7 +347,7 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
         window.clearTimeout(timeoutId);
       }
     };
-  }, [date, type, session, payload, pollingInterval, pollingErrorCount, limit, mergeIncomingItems]);
+  }, [date, type, session, payload, pollingInterval, pollingErrorCount, limit, mergeIncomingItems, subjectKey]);
 
   // URL sync effect
   useEffect(() => {

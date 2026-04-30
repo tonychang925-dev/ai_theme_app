@@ -40,6 +40,44 @@ export interface IntelFeedEvent {
   cursor?: string;
 }
 
+export interface ThemeRadarItem {
+  theme_id: string;
+  theme_name: string;
+  heat: number;
+  stage: string;
+  stock_count: number;
+}
+
+export interface ThemeRadarView {
+  date?: string;
+  themes: ThemeRadarItem[];
+  source?: string;
+}
+
+export interface IntelContextView {
+  date?: string;
+  subject_key?: string | null;
+  stock_id?: string | null;
+  items: IntelFeedItem[];
+  count: number;
+  diagnostics?: Record<string, unknown>;
+  source?: string;
+}
+
+export interface MarketValidationView {
+  trade_date: string;
+  subject_key?: string | null;
+  stock_id?: string | null;
+  candidate_level: string;
+  support_type: string;
+  support_score: number | null;
+  reject_reasons: string[];
+  strong_watch_count: number;
+  w2s_candidate_count: number;
+  stock_validation?: Record<string, unknown> | null;
+  source?: string;
+}
+
 export interface StrongStockWatchItem {
   trade_date: string;
   stock_id: string;
@@ -142,6 +180,12 @@ export interface MarketReportView {
   sections: MarketReportSection[];
 }
 
+interface PostMarketSnapshotView {
+  trade_date: string;
+  snapshot_version: string;
+  payload: Record<string, unknown>;
+}
+
 export interface RecapDefaultsView {
   latest_post_market_date?: string | null;
   latest_pre_market_date?: string | null;
@@ -240,6 +284,21 @@ async function fetchJsonWithTimeout<T>(input: string, init?: RequestInit, timeou
   }
 }
 
+function useIntelV2Api(): boolean {
+  // Runtime toggle via localStorage/query/env-style global
+  // Priority: query param -> localStorage -> default(false)
+  try {
+    const query = new URLSearchParams(window.location.search);
+    const q = query.get("intel_v2");
+    if (q !== null) return q === "1" || q.toLowerCase() === "true";
+    const local = window.localStorage.getItem("ENABLE_INTEL_V2_STREAM");
+    if (local !== null) return local === "1" || local.toLowerCase() === "true";
+  } catch {
+    // ignore in non-browser/test env
+  }
+  return false;
+}
+
 export async function fetchIntelFeed(params: {
   date?: string;
   type?: IntelItemType;
@@ -253,11 +312,78 @@ export async function fetchIntelFeed(params: {
   if (params.limit) query.set("limit", String(params.limit));
 
   try {
-    return await fetchJsonWithTimeout<IntelFeedView>(`/api/intel/feed?${query.toString()}`, undefined, 10000);
+    const path = useIntelV2Api() ? "/api/v2/intel/feed" : "/api/intel/feed";
+    return await fetchJsonWithTimeout<IntelFeedView>(`${path}?${query.toString()}`, undefined, 10000);
   } catch (error) {
+    // Fallback to v1 when v2 is enabled but temporarily unavailable.
+    if (useIntelV2Api()) {
+      try {
+        return await fetchJsonWithTimeout<IntelFeedView>(`/api/intel/feed?${query.toString()}`, undefined, 10000);
+      } catch {
+        // fallthrough
+      }
+    }
     const message = error instanceof Error ? error.message : "unknown error";
     throw new Error(`intel feed request failed: ${message}`);
   }
+}
+
+export async function fetchWorkspaceThemeRadar(params: {
+  date?: string;
+  session?: IntelSession;
+  limit?: number;
+}): Promise<ThemeRadarView> {
+  const query = new URLSearchParams();
+  if (params.date) query.set("date", params.date);
+  if (params.session) query.set("session", params.session);
+  if (params.limit) query.set("limit", String(params.limit));
+  return fetchJsonWithTimeout<ThemeRadarView>(`/api/v2/workspace/theme-radar?${query.toString()}`, undefined, 10000);
+}
+
+export async function fetchWorkspaceIntelContext(params: {
+  date?: string;
+  session?: IntelSession;
+  subjectKey?: string;
+  stockId?: string;
+  limit?: number;
+}): Promise<IntelContextView> {
+  const query = new URLSearchParams();
+  if (params.date) query.set("date", params.date);
+  if (params.session) query.set("session", params.session);
+  if (params.subjectKey) query.set("subject_key", params.subjectKey);
+  if (params.stockId) query.set("stock_id", params.stockId);
+  if (params.limit) query.set("limit", String(params.limit));
+  try {
+    return await fetchJsonWithTimeout<IntelContextView>(`/api/v2/workspace/intel-context?${query.toString()}`, undefined, 10000);
+  } catch (error) {
+    const msg = error instanceof Error ? error.message : "";
+    // Compatibility fallback for stale web_app_service instances missing workspace routes.
+    if (msg.includes("request failed: 405")) {
+      const feed = await fetchJsonWithTimeout<IntelFeedView>(`/api/v2/intel/feed?${query.toString()}`, undefined, 10000);
+      return {
+        date: feed.date,
+        subject_key: params.subjectKey ?? null,
+        stock_id: params.stockId ?? null,
+        items: feed.items || [],
+        count: Number(feed.count || 0),
+        diagnostics: feed.diagnostics || {},
+        source: "intel_feed_fallback_from_405",
+      };
+    }
+    throw error;
+  }
+}
+
+export async function fetchWorkspaceMarketValidation(params: {
+  tradeDate: string;
+  subjectKey?: string;
+  stockId?: string;
+}): Promise<MarketValidationView> {
+  const query = new URLSearchParams();
+  query.set("trade_date", params.tradeDate);
+  if (params.subjectKey) query.set("subject_key", params.subjectKey);
+  if (params.stockId) query.set("stock_id", params.stockId);
+  return fetchJsonWithTimeout<MarketValidationView>(`/api/v2/workspace/market-validation?${query.toString()}`, undefined, 10000);
 }
 
 export async function fetchStrongStockWatch(params: {
@@ -276,21 +402,15 @@ export async function fetchStrongStockWatch(params: {
   if (params.includeRemoved !== undefined) query.set("include_removed", String(params.includeRemoved));
   if (params.stockId) query.set("stock_id", params.stockId);
 
+  // 强势股页面必须使用完整字段口径（含板数/涨幅等），
+  // 统一走 frontend_bff 的 /api/intel/strong-stocks/watch。
+  // 禁止在此处走精简 /api/v2/strong_watch，避免字段缺失导致排序与展示失真。
+
   try {
     const url = `/api/intel/strong-stocks/watch?${query.toString()}`;
     const getResp = await fetch(url, { method: "GET" });
-    if (getResp.ok) {
-      return (await getResp.json()) as StrongStockWatchView;
-    }
-    if (getResp.status === 405) {
-      // 兼容旧网关/旧BFF仅放行POST的场景
-      const postResp = await fetch(url, { method: "POST" });
-      if (postResp.ok) {
-        return (await postResp.json()) as StrongStockWatchView;
-      }
-      throw new Error(`request failed: ${postResp.status}`);
-    }
-    throw new Error(`request failed: ${getResp.status}`);
+    if (!getResp.ok) throw new Error(`request failed: ${getResp.status}`);
+    return (await getResp.json()) as StrongStockWatchView;
   } catch (error) {
     const message = error instanceof Error ? error.message : "unknown error";
     throw new Error(`strong stock watch request failed: ${message}`);
@@ -307,7 +427,8 @@ export function openIntelStream(params: {
   if (params.type) query.set("type", params.type);
   if (params.session) query.set("session", params.session);
   query.set("limit", "20");
-  return new EventSource(`/api/intel/stream?${query.toString()}`);
+  const path = useIntelV2Api() ? "/api/v2/intel/stream" : "/api/intel/stream";
+  return new EventSource(`${path}?${query.toString()}`);
 }
 
 import { createSSEManager } from "./realtime/sseManager";
@@ -381,6 +502,110 @@ export async function fetchRecap(params: {
     throw new Error(`recap request failed: ${response.status}`);
   }
   return response.json();
+}
+
+function useRecapV2Api(): boolean {
+  try {
+    const query = new URLSearchParams(window.location.search);
+    const q = query.get("recap_v2");
+    if (q !== null) return q === "1" || q.toLowerCase() === "true";
+    const local = window.localStorage.getItem("ENABLE_RECAP_V2_SNAPSHOT");
+    if (local !== null) return local === "1" || local.toLowerCase() === "true";
+  } catch {
+    // ignore
+  }
+  return false;
+}
+
+function asMarketReportViewFromSnapshot(
+  snapshot: PostMarketSnapshotView,
+  reportType: "pre_market" | "post_market",
+): MarketReportView | null {
+  const payload = snapshot.payload || {};
+  const maybe = payload["report"] || payload["recap"] || payload["market_report"];
+  if (maybe && typeof maybe === "object") {
+    const obj = maybe as Record<string, unknown>;
+    const sections = Array.isArray(obj.sections) ? obj.sections : [];
+    return {
+      report_type: reportType,
+      trade_date: String(obj.trade_date || snapshot.trade_date),
+      title: String(obj.title || "盘后复盘"),
+      summary: String(obj.summary || ""),
+      highlights: Array.isArray(obj.highlights) ? obj.highlights.map((x) => String(x)) : [],
+      sections: sections.map((s) => {
+        const row = s as Record<string, unknown>;
+        return {
+          heading: String(row.heading || "--"),
+          items: Array.isArray(row.items) ? row.items.map((x) => String(x)) : [],
+        };
+      }),
+    };
+  }
+
+  const recapDocRaw = payload["recap_doc"] && typeof payload["recap_doc"] === "object" ? (payload["recap_doc"] as Record<string, unknown>) : null;
+  if (!recapDocRaw) return null;
+
+  const candidateCount = Number(recapDocRaw["candidate_count"] || 0);
+  const strongWatchInputCount = Number(recapDocRaw["strong_watch_input_count"] || 0);
+  const strongWatchPromotedCount = Number(recapDocRaw["strong_watch_promoted_count"] || 0);
+  const strongWatchHistoryCount = Number(recapDocRaw["strong_watch_history_count"] || 0);
+  const topCandidates = Array.isArray(recapDocRaw["top_candidates"]) ? (recapDocRaw["top_candidates"] as Array<Record<string, unknown>>) : [];
+
+  const candidateItems = topCandidates.slice(0, 20).map((item, idx) => {
+    const stockName = String(item["stock_name"] || item["stock_id"] || `候选${idx + 1}`);
+    const score = item["score"] ?? item["composite_score"] ?? "--";
+    const level = item["candidate_level"] ?? item["transition_type"] ?? "--";
+    return `${idx + 1}. ${stockName}｜评分 ${score}｜级别 ${level}`;
+  });
+
+  return {
+    report_type: reportType,
+    trade_date: snapshot.trade_date,
+    title: "盘后复盘（快照映射）",
+    summary: `候选 ${candidateCount} | 强势池输入 ${strongWatchInputCount} | 晋级 ${strongWatchPromotedCount}`,
+    highlights: [
+      `snapshot_version: ${snapshot.snapshot_version}`,
+      `strong_watch_history_count: ${strongWatchHistoryCount}`,
+    ],
+    sections: [
+      {
+        heading: "强势池与候选概览",
+        items: [
+          `candidate_count: ${candidateCount}`,
+          `strong_watch_input_count: ${strongWatchInputCount}`,
+          `strong_watch_promoted_count: ${strongWatchPromotedCount}`,
+          `strong_watch_history_count: ${strongWatchHistoryCount}`,
+        ],
+      },
+      {
+        heading: "弱转强候选明细（Top）",
+        items: candidateItems.length ? candidateItems : ["暂无候选"],
+      },
+    ],
+  };
+}
+
+export async function fetchRecapV2OrFallback(params: {
+  date: string;
+  reportType?: "pre_market" | "post_market";
+}): Promise<MarketReportView> {
+  const reportType = params.reportType ?? "post_market";
+  if (!useRecapV2Api()) {
+    return fetchRecap({ date: params.date, reportType });
+  }
+  try {
+    const query = new URLSearchParams({ trade_date: params.date });
+    const snapshot = await fetchJsonWithTimeout<PostMarketSnapshotView>(
+      `/api/v2/post_market_snapshot?${query.toString()}`,
+      undefined,
+      10000,
+    );
+    const mapped = asMarketReportViewFromSnapshot(snapshot, reportType);
+    if (mapped) return mapped;
+  } catch {
+    // fallback below
+  }
+  return fetchRecap({ date: params.date, reportType });
 }
 
 export async function fetchRecapDefaults(): Promise<RecapDefaultsView> {

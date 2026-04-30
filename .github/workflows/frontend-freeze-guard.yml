@@ -1,0 +1,21 @@
+name: frontend-freeze-guard
+
+on:
+  pull_request:
+    paths:
+      - 'frontend/**'
+      - 'scripts/guardrails/check_frontend_freeze_guards.py'
+      - '.github/workflows/frontend-freeze-guard.yml'
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'frontend/**'
+      - 'scripts/guardrails/check_frontend_freeze_guards.py'
+
+jobs:
+  freeze-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run frontend freeze guard
+        run: python3 scripts/guardrails/check_frontend_freeze_guards.py

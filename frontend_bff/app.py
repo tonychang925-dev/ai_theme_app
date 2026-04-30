@@ -16,6 +16,7 @@ from fastapi import FastAPI, HTTPException, Query, WebSocket, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from fastapi.responses import StreamingResponse
+import httpx
 import os
 
 from frontend_bff.repositories.bff_repository import FrontendBffRepository
@@ -76,6 +77,7 @@ class DecimalEncoder(json.JSONEncoder):
 
 # 设置logger
 logger = logging.getLogger(__name__)
+WEB_APP_SERVICE_BASE_URL = str(os.getenv("WEB_APP_SERVICE_BASE_URL", "http://127.0.0.1:8081")).rstrip("/")
 
 # 尝试导入SSE推送服务
 try:
@@ -1513,7 +1515,7 @@ async def get_intel_feed(
 async def get_strong_stock_watch(
     date: Optional[str] = Query(default=None),
     window_days: int = Query(default=7, ge=1, le=30),
-    limit: int = Query(default=200, ge=1, le=500),
+    limit: int = Query(default=1000, ge=1, le=5000),
     latest_per_stock: bool = Query(default=True),
     include_removed: bool = Query(default=False),
     stock_id: Optional[str] = Query(default=None),
@@ -1666,6 +1668,70 @@ async def get_intel_stream_realtime(
             "Connection": "keep-alive",
             "X-Accel-Buffering": "no",
         },
+    )
+
+
+async def _proxy_web_app_v2(path: str, params: dict[str, Any]) -> dict[str, Any]:
+    url = f"{WEB_APP_SERVICE_BASE_URL}{path}"
+    q = {k: v for k, v in params.items() if v is not None and v != ""}
+    try:
+        async with httpx.AsyncClient(timeout=15.0) as client:
+            resp = await client.get(url, params=q)
+            resp.raise_for_status()
+            data = resp.json()
+            return data if isinstance(data, dict) else {}
+    except httpx.ConnectError as exc:
+        raise HTTPException(
+            status_code=503,
+            detail={
+                "code": "WEB_APP_UPSTREAM_UNREACHABLE",
+                "message": str(exc),
+                "upstream": url,
+            },
+        )
+
+
+@app.get("/api/v2/workspace/theme-radar")
+async def proxy_workspace_theme_radar(
+    date: Optional[str] = Query(default=None),
+    session: str = Query(default="all"),
+    limit: int = Query(default=30, ge=1, le=200),
+):
+    return await _proxy_web_app_v2(
+        "/api/v2/workspace/theme-radar",
+        {"date": date, "session": session, "limit": limit},
+    )
+
+
+@app.get("/api/v2/workspace/intel-context")
+async def proxy_workspace_intel_context(
+    date: Optional[str] = Query(default=None),
+    session: str = Query(default="all"),
+    subject_key: Optional[str] = Query(default=None),
+    stock_id: Optional[str] = Query(default=None),
+    limit: int = Query(default=100, ge=1, le=500),
+):
+    return await _proxy_web_app_v2(
+        "/api/v2/workspace/intel-context",
+        {
+            "date": date,
+            "session": session,
+            "subject_key": subject_key,
+            "stock_id": stock_id,
+            "limit": limit,
+        },
+    )
+
+
+@app.get("/api/v2/workspace/market-validation")
+async def proxy_workspace_market_validation(
+    trade_date: str = Query(...),
+    subject_key: Optional[str] = Query(default=None),
+    stock_id: Optional[str] = Query(default=None),
+):
+    return await _proxy_web_app_v2(
+        "/api/v2/workspace/market-validation",
+        {"trade_date": trade_date, "subject_key": subject_key, "stock_id": stock_id},
     )
 
 

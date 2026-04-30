@@ -1,0 +1,27 @@
+name: frontend-db-guardrail
+
+on:
+  pull_request:
+    paths:
+      - 'frontend/**'
+      - 'frontend_bff/**'
+      - 'web_app_service/**'
+      - 'scripts/guardrails/**'
+      - '.ci/db_direct_access_baseline.json'
+      - '.github/workflows/frontend-db-guardrail.yml'
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'frontend/**'
+      - 'frontend_bff/**'
+      - 'web_app_service/**'
+      - 'scripts/guardrails/**'
+      - '.ci/db_direct_access_baseline.json'
+
+jobs:
+  guardrail:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run DB direct-access guardrail
+        run: python3 scripts/guardrails/check_db_direct_access_guardrail.py

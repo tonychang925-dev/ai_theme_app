@@ -1,0 +1,25 @@
+name: web-app-smoke-contract
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/run_web_app_http_smoke.sh'
+      - 'scripts/verify_web_app_http_smoke.py'
+      - 'scripts/check_web_app_smoke_scripts.sh'
+      - '.github/workflows/web-app-smoke-contract.yml'
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'scripts/run_web_app_http_smoke.sh'
+      - 'scripts/verify_web_app_http_smoke.py'
+      - 'scripts/check_web_app_smoke_scripts.sh'
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify smoke scripts contract
+        run: bash scripts/check_web_app_smoke_scripts.sh
+      - name: Python syntax check
+        run: python3 -m py_compile scripts/verify_web_app_http_smoke.py

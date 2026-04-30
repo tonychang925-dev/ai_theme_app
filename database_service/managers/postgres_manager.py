@@ -1968,6 +1968,225 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.warning(f"读取 post_market_recap_snapshot 失败（可能尚未迁移）: {e}")
             return None
 
+    async def get_latest_post_market_recap_trade_date(self):
+        sql = "SELECT MAX(trade_date) AS trade_date FROM post_market_recap_snapshot"
+        try:
+            async with self.pool.acquire() as conn:
+                return await conn.fetchval(sql)
+        except Exception as e:
+            logger.warning(f"读取 post_market_recap_snapshot 最新日期失败（可能尚未迁移）: {e}")
+            return None
+
+    async def get_latest_pre_market_brief_trade_date(self):
+        sql = "SELECT MAX(trade_date) AS trade_date FROM pre_market_brief_snapshot"
+        try:
+            async with self.pool.acquire() as conn:
+                return await conn.fetchval(sql)
+        except Exception as e:
+            logger.warning(f"读取 pre_market_brief_snapshot 最新日期失败（可能尚未迁移）: {e}")
+            return None
+
+    async def infer_confirm_trade_date_from_candidate_trade_date(self, candidate_trade_date):
+        sql = """
+        SELECT MAX(next_trade_date) AS confirm_trade_date
+        FROM weak_to_strong_candidate_pool
+        WHERE trade_date = $1::date
+          AND next_trade_date > $1::date
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                return await conn.fetchval(sql, candidate_trade_date)
+        except Exception as e:
+            logger.warning(f"推断确认交易日失败（可能尚未迁移）: {e}")
+            return None
+
+    async def get_w2s_candidates_by_trade_date(self, candidate_trade_date, limit: int = 200) -> List[Dict[str, Any]]:
+        sql = """
+        SELECT
+          id, trade_date, next_trade_date, stock_id, stock_name, subject_key, theme_name,
+          candidate_score, pool_entry_type, candidate_type, weak_type, support_type,
+          support_strength, expected_open_low, expected_open_high, evidence_json
+        FROM weak_to_strong_candidate_pool
+        WHERE trade_date = $1::date
+        ORDER BY candidate_score DESC, id ASC
+        LIMIT $2
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, candidate_trade_date, max(int(limit), 1))
+        return [dict(r) for r in rows]
+
+    async def get_w2s_signals_by_trade_date(self, trade_date) -> List[Dict[str, Any]]:
+        sql = """
+        SELECT
+          candidate_id, signal_level, decision, confirmation_score, auction_open_pct,
+          auction_close_pct, auction_pattern, last_minute_grab_score, plate_follow_score,
+          risk_penalty, data_status, evidence_json
+        FROM weak_to_strong_auction_signal
+        WHERE trade_date = $1::date
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+        return [dict(r) for r in rows]
+
+    async def get_w2s_candidates_for_confirm_date(self, confirm_trade_date, limit: int = 200) -> List[Dict[str, Any]]:
+        sql = """
+        SELECT
+          id, trade_date, next_trade_date, stock_id, stock_name, subject_key, theme_name,
+          candidate_score, pool_entry_type, candidate_type, weak_type, support_type,
+          support_strength, expected_open_low, expected_open_high, evidence_json
+        FROM weak_to_strong_candidate_pool
+        WHERE next_trade_date = $1::date
+        ORDER BY candidate_score DESC, id ASC
+        LIMIT $2
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, confirm_trade_date, max(int(limit), 1))
+        return [dict(r) for r in rows]
+
+    async def count_w2s_candidates_for_confirm_date(self, confirm_trade_date) -> int:
+        sql = """
+        SELECT COUNT(*)::int AS cnt
+        FROM weak_to_strong_candidate_pool
+        WHERE next_trade_date = $1::date
+        """
+        async with self.pool.acquire() as conn:
+            return int(await conn.fetchval(sql, confirm_trade_date) or 0)
+
+    async def count_w2s_formal_candidates_for_confirm_date(self, confirm_trade_date) -> int:
+        sql = """
+        SELECT COUNT(*)::int AS cnt
+        FROM weak_to_strong_candidate_pool
+        WHERE next_trade_date = $1::date
+          AND COALESCE(NULLIF(LOWER(pool_entry_type), ''), 'formal') = 'formal'
+        """
+        async with self.pool.acquire() as conn:
+            return int(await conn.fetchval(sql, confirm_trade_date) or 0)
+
+    async def get_w2s_candidates_by_ids(self, candidate_ids: List[int]) -> List[Dict[str, Any]]:
+        cleaned_ids = sorted({int(item) for item in candidate_ids if int(item) > 0})
+        if not cleaned_ids:
+            return []
+        sql = """
+        SELECT
+          id, trade_date, next_trade_date, stock_id, stock_name, subject_key, theme_name,
+          candidate_score, pool_entry_type, candidate_type, weak_type, support_type,
+          support_strength, expected_open_low, expected_open_high, evidence_json
+        FROM weak_to_strong_candidate_pool
+        WHERE id = ANY($1::int[])
+        ORDER BY candidate_score DESC, id ASC
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, cleaned_ids)
+        return [dict(r) for r in rows]
+
+    async def get_w2s_snapshot_coverage(self, confirm_trade_date) -> Dict[str, int]:
+        sql = """
+        SELECT
+          COUNT(*)::int AS candidate_cnt,
+          COUNT(*) FILTER (WHERE s.stock_id IS NOT NULL)::int AS snapshot_hit_cnt
+        FROM weak_to_strong_candidate_pool c
+        LEFT JOIN pre_market_auction_snapshot s
+          ON split_part(s.stock_id, '.', 1) = split_part(c.stock_id, '.', 1)
+         AND s.trade_date = c.next_trade_date
+        WHERE c.next_trade_date = $1::date
+          AND COALESCE(NULLIF(LOWER(c.pool_entry_type), ''), 'formal') = 'formal'
+        """
+        async with self.pool.acquire() as conn:
+            row = await conn.fetchrow(sql, confirm_trade_date)
+        m = dict(row) if row else {}
+        return {
+            "candidate_cnt": int(m.get("candidate_cnt") or 0),
+            "snapshot_hit_cnt": int(m.get("snapshot_hit_cnt") or 0),
+        }
+
+    async def get_latest_strong_watch_trade_date(self):
+        sql = "SELECT MAX(trade_date) AS trade_date FROM strong_stock_watch_history"
+        async with self.pool.acquire() as conn:
+            return await conn.fetchval(sql)
+
+    async def get_trade_dates_before_or_on(self, end_date, limit: int = 7) -> List[date]:
+        sql = """
+        SELECT DISTINCT trade_date
+        FROM stock_daily_snapshot
+        WHERE trade_date <= $1::date
+        ORDER BY trade_date DESC
+        LIMIT $2
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, end_date, max(int(limit), 1))
+        return [r["trade_date"] for r in rows if r.get("trade_date")]
+
+    async def get_strong_stock_watch_view_rows(
+        self,
+        end_date,
+        window_days: int = 7,
+        include_removed: bool = False,
+        latest_per_stock: bool = True,
+        stock_id: str | None = None,
+        limit: int = 200,
+    ) -> List[Dict[str, Any]]:
+        sql = """
+        WITH selected_trade_dates AS (
+            SELECT DISTINCT trade_date
+            FROM stock_daily_snapshot
+            WHERE trade_date <= $1::date
+            ORDER BY trade_date DESC
+            LIMIT $2
+        ),
+        base AS (
+            SELECT
+                h.trade_date::text AS trade_date,
+                h.stock_id,
+                h.stock_name,
+                h.subject_key,
+                COALESCE(NULLIF(BTRIM(h.theme_name), ''), h.subject_key) AS theme_name,
+                h.watch_status,
+                h.watch_score,
+                h.watch_priority,
+                h.relay_role,
+                h.pool_entry_type,
+                h.cycle_state,
+                h.mainline_strength_score,
+                h.fade_watch,
+                h.fade_confirmed,
+                h.promoted_to_candidate,
+                h.support_type,
+                h.support_level,
+                h.support_score,
+                h.labels_json,
+                h.evidence_json,
+                s.pct_chg,
+                COALESCE(NULLIF(s.raw_json->>20, ''), '0')::integer AS current_flag,
+                ROW_NUMBER() OVER (
+                    PARTITION BY split_part(h.stock_id, '.', 1)
+                    ORDER BY h.trade_date DESC, h.watch_score DESC, h.watch_priority DESC
+                ) AS rn
+            FROM strong_stock_watch_history h
+            LEFT JOIN subject_stock_daily_snapshot s
+              ON s.trade_date = h.trade_date
+             AND split_part(s.stock_id, '.', 1) = split_part(h.stock_id, '.', 1)
+            WHERE h.trade_date IN (SELECT trade_date FROM selected_trade_dates)
+              AND ($3::boolean OR h.watch_status IN ('active', 'weakening'))
+              AND ($4::text IS NULL OR split_part(h.stock_id, '.', 1) = split_part($4::text, '.', 1))
+        )
+        SELECT *
+        FROM base
+        WHERE ($5::boolean = FALSE OR rn = 1)
+        ORDER BY theme_name ASC, trade_date DESC, watch_score DESC, watch_priority DESC
+        LIMIT $6
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                sql,
+                end_date,
+                max(int(window_days), 1),
+                bool(include_removed),
+                stock_id,
+                bool(latest_per_stock),
+                max(int(limit), 1),
+            )
+        return [dict(r) for r in rows]
+
     async def get_mainline_identity_by_subject_keys(
         self,
         subject_keys: List[str],
