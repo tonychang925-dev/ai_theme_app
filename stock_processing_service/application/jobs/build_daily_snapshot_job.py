@@ -162,6 +162,9 @@ class BuildDailySnapshotJob:
                     fade_confirmed_evidence_count=s.fade_confirmed_evidence_count,
                     final_cycle_state=s.final_cycle_state,
                     final_mainline_alive=s.final_mainline_alive,
+                    decision_path=s.decision_path,
+                    evidence_count=s.evidence_count,
+                    fade_reason_codes=s.fade_reason_codes,
                 )
             )
 

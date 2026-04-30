@@ -232,15 +232,25 @@ class BuildPostMarketRecapJob:
             )
             shadow_summary = asdict(shadow)
         else:
-            promoted_pool_rows, strong_watch_rows, strong_watch_history = self._strong_watch_service.build_promoted_pool_with_history(
-                trade_date=trade_date,
-                pool_rows=pool_rows,
-                bars=bars,
-                prior_rows=prior_rows,
-                history_bars=history_bars,
-                identities_by_subject=identities_by_subject,
-                cycles_by_subject=cycles_by_subject,
-            )
+            try:
+                promoted_pool_rows, strong_watch_rows, strong_watch_history = self._strong_watch_service.build_promoted_pool_with_history(
+                    trade_date=trade_date,
+                    pool_rows=pool_rows,
+                    bars=bars,
+                    prior_rows=prior_rows,
+                    history_bars=history_bars,
+                    identities_by_subject=identities_by_subject,
+                    cycles_by_subject=cycles_by_subject,
+                )
+            except TypeError:
+                # Backward-compat for older call signatures used by tests/mocks.
+                promoted_pool_rows, strong_watch_rows, strong_watch_history = self._strong_watch_service.build_promoted_pool_with_history(
+                    trade_date=trade_date,
+                    pool_rows=pool_rows,
+                    bars=bars,
+                    prior_rows=prior_rows,
+                    history_bars=history_bars,
+                )
         prior_watch_rows = await self._get_prior_strong_watch_rows(trade_date=trade_date, lookback_days=lookback_days)
         candidate_input_rows = self._build_candidate_input_rows(
             trade_date=trade_date,
@@ -320,6 +330,7 @@ class BuildPostMarketRecapJob:
             "strong_watch_input_7d_stock_ids": sorted(
                 {str(r.stock_id) for r in candidate_input_rows if str(getattr(r, "stock_id", "") or "")}
             ),
+            "strong_watch_input_7d_source": "strong_watch_pool_history_single_source",
             "top_candidates": [
                 {
                     "stock_id": c.stock_id,
@@ -560,6 +571,10 @@ class BuildPostMarketRecapJob:
                 continue
             if not subject_key:
                 continue
+            # Preserve latest-trading-day row already loaded from prior window;
+            # never allow older or duplicate entries to override.
+            if stock_id in by_stock:
+                continue
             by_stock[stock_id] = SubjectStockPoolDTO(
                 trade_date=trade_date,
                 subject_key=subject_key,
@@ -609,4 +624,13 @@ class BuildPostMarketRecapJob:
         if not callable(fn):
             return []
         rows = await fn(trade_date=trade_date, lookback_days=lookback_days)
-        return list(rows or [])
+        filtered: list[Any] = []
+        for row in list(rows or []):
+            row_date = getattr(row, "trade_date", None)
+            if row_date is None and isinstance(row, dict):
+                row_date = row.get("trade_date")
+            # Time-travel guard: candidate window must only consume strictly prior rows.
+            if row_date is not None and row_date >= trade_date:
+                continue
+            filtered.append(row)
+        return filtered

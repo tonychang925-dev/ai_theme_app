@@ -74,3 +74,13 @@ def test_admission_policy_two_board_bypass_can_formal() -> None:
     assert decision.reject_isolated_theme is False
     assert decision.pass_count_4of3 >= 2
     assert decision.admission_status == "formal"
+
+
+def test_admission_policy_contract_required_fields_frozen() -> None:
+    policy = StrongWatchAdmissionPolicy()
+    required = set(policy.required_fields())
+    assert "prior7_limitup_days" in required
+    assert "recent_limit_up_count" in required
+    assert "final_mainline_alive" in required
+    assert "pct_chg" in required
+    assert "support_score" in required

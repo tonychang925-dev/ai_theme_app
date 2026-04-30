@@ -247,51 +247,51 @@ function withQuery(path: string, params?: Record<string, unknown>): string {
 }
 
 export const stockScreenerApi = {
-  getStrategies: () => request<ScreeningStrategy[]>("/api/stock-screener/strategies"),
+  getStrategies: () => request<ScreeningStrategy[]>("/api/v2/stock-screener/strategies"),
 
   createStrategy: (data: CreateStrategyRequest) =>
-    request<ScreeningStrategy>("/api/stock-screener/strategies", { method: "POST", body: JSON.stringify(data) }),
+    request<ScreeningStrategy>("/api/v2/stock-screener/strategies", { method: "POST", body: JSON.stringify(data) }),
 
   updateStrategy: (strategyId: string, data: Partial<CreateStrategyRequest>) =>
-    request<ScreeningStrategy>(`/api/stock-screener/strategies/${strategyId}`, {
+    request<ScreeningStrategy>(`/api/v2/stock-screener/strategies/${strategyId}`, {
       method: "PUT",
       body: JSON.stringify(data),
     }),
 
   deleteStrategy: (strategyId: string) =>
-    request<{ ok: boolean }>(`/api/stock-screener/strategies/${strategyId}`, { method: "DELETE" }),
+    request<{ ok: boolean }>(`/api/v2/stock-screener/strategies/${strategyId}`, { method: "DELETE" }),
 
   executeScreening: (data: ExecuteScreeningRequest) =>
     request<ExecuteScreeningResponse>(
-      "/api/stock-screener/execute",
+      "/api/v2/stock-screener/execute",
       { method: "POST", body: JSON.stringify(data) },
       { timeoutMs: 120000 },
     ),
 
-  getExecutionStatus: (jobId: string) => request<ExecuteScreeningResponse>(`/api/stock-screener/executions/${jobId}`),
+  getExecutionStatus: (jobId: string) => request<ExecuteScreeningResponse>(`/api/v2/stock-screener/executions/${jobId}`),
 
   getResultDetail: (resultId: string, params?: { view?: "candidate" | "confirm" }) =>
-    request<ScreeningResultDetail>(withQuery(`/api/stock-screener/results/${resultId}`, params as Record<string, unknown>)),
+    request<ScreeningResultDetail>(withQuery(`/api/v2/stock-screener/results/${resultId}`, params as Record<string, unknown>)),
 
   getHistory: (params: HistoryQueryParams) =>
-    request<HistoryResponse>(withQuery("/api/stock-screener/history", params as Record<string, unknown>)),
+    request<HistoryResponse>(withQuery("/api/v2/stock-screener/history", params as Record<string, unknown>)),
 
-  getFavorites: () => request<FavoriteItem[]>("/api/stock-screener/favorites"),
+  getFavorites: () => request<FavoriteItem[]>("/api/v2/stock-screener/favorites"),
 
   addFavorite: (data: AddFavoriteRequest) =>
-    request<FavoriteItem>("/api/stock-screener/favorites", { method: "POST", body: JSON.stringify(data) }),
+    request<FavoriteItem>("/api/v2/stock-screener/favorites", { method: "POST", body: JSON.stringify(data) }),
 
   updateFavorite: (favoriteId: string, data: { notes?: string; tags?: string[] }) =>
-    request<FavoriteItem>(`/api/stock-screener/favorites/${favoriteId}`, {
+    request<FavoriteItem>(`/api/v2/stock-screener/favorites/${favoriteId}`, {
       method: "PUT",
       body: JSON.stringify(data),
     }),
 
   removeFavorite: (favoriteId: string) =>
-    request<{ ok: boolean }>(`/api/stock-screener/favorites/${favoriteId}`, { method: "DELETE" }),
+    request<{ ok: boolean }>(`/api/v2/stock-screener/favorites/${favoriteId}`, { method: "DELETE" }),
 
   exportResults: (resultIds: string[], format: "csv" | "excel" | "json") =>
-    request<{ download_url: string }>("/api/stock-screener/export", {
+    request<{ download_url: string }>("/api/v2/stock-screener/export", {
       method: "POST",
       body: JSON.stringify({ result_ids: resultIds, format }),
     }),
@@ -302,5 +302,5 @@ export const stockScreenerApi = {
       avg_composite_score: number;
       top_themes: Array<{ subject_key: string; theme_name: string; count: number }>;
       score_distribution: Array<{ score_range: string; count: number }>;
-    }>(withQuery("/api/stock-screener/statistics", { strategy_id: strategyId, ...(dateRange || {}) })),
+    }>(withQuery("/api/v2/stock-screener/statistics", { strategy_id: strategyId, ...(dateRange || {}) })),
 };

@@ -92,6 +92,28 @@ async def intel_feed(
     return data if isinstance(data, dict) else {"items": [], "count": 0, "diagnostics": {"partial": True}}
 
 
+@router.get("/intel/strong-stocks/watch")
+async def intel_strong_stocks_watch(
+    date: str | None = Query(default=None),
+    window_days: int = Query(default=7, ge=1, le=30),
+    limit: int = Query(default=1000, ge=1, le=5000),
+    latest_per_stock: bool = Query(default=True),
+    include_removed: bool = Query(default=False),
+    stock_id: str | None = Query(default=None),
+) -> dict:
+    params = {
+        "date": date,
+        "window_days": str(window_days),
+        "limit": str(limit),
+        "latest_per_stock": str(latest_per_stock).lower(),
+        "include_removed": str(include_removed).lower(),
+        "stock_id": stock_id,
+    }
+    query = {k: v for k, v in params.items() if v is not None and v != ""}
+    data = await _proxy_json("/api/intel/strong-stocks/watch", query)
+    return data if isinstance(data, dict) else {"trade_date": date or "", "stocks": [], "diagnostics": {"partial": True}}
+
+
 @router.get("/workspace/theme-radar")
 async def workspace_theme_radar(
     date: str | None = Query(default=None),

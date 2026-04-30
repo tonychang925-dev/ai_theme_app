@@ -1,0 +1,192 @@
+name: p0-guardrail
+
+on:
+  pull_request:
+    branches: [ main, master ]
+    paths:
+      - 'frontend/**'
+      - 'web_app_service/**'
+      - 'stock_processing_service/**'
+      - 'docs/contracts/**'
+      - 'scripts/verify_intel_sse_schema.py'
+      - 'scripts/verify_web_app_http_smoke.py'
+      - 'scripts/run_web_app_http_smoke.sh'
+      - '.github/workflows/p0-guardrail.yml'
+  push:
+    branches: [ main, master ]
+    paths:
+      - 'frontend/**'
+      - 'web_app_service/**'
+      - 'stock_processing_service/**'
+      - 'docs/contracts/**'
+
+jobs:
+  frontend-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Block frontend direct DB access
+        run: |
+          if rg -n "asyncpg|psycopg|sqlalchemy|\bSELECT\b|\bINSERT\b|\bUPDATE\b|\bDELETE\b" frontend/src; then
+            echo "[FAIL] frontend/src contains forbidden DB or SQL patterns"
+            exit 1
+          fi
+
+      - name: Enforce v2 API path only in frontend/src
+        run: |
+          if rg -n --pcre2 "['\"]/api/(?!v2/)" frontend/src; then
+            echo "[FAIL] found non-v2 /api/* usage in frontend/src; use /api/v2/* only"
+            exit 1
+          fi
+
+  web-contract:
+    runs-on: ubuntu-latest
+    needs: frontend-guard
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Verify intel SSE schema script syntax
+        run: python -m py_compile scripts/verify_intel_sse_schema.py
+
+      - name: Verify web app smoke contract script syntax
+        run: python -m py_compile scripts/verify_web_app_http_smoke.py
+
+      - name: Verify shell smoke runner syntax
+        run: bash -n scripts/run_web_app_http_smoke.sh
+
+      - name: Run frontend_bff v2 contract alias tests
+        run: PYTHONPATH=. pytest -q frontend_bff/tests/unit/test_v2_contract_aliases.py
+
+  replay-gate:
+    runs-on: ubuntu-latest
+    needs: web-contract
+    env:
+      A_MATCH_THRESHOLD: "0.98"
+      B_CONFIRMED_COVERAGE_THRESHOLD: "0.95"
+      PGHOST: ${{ secrets.PGHOST }}
+      PGPORT: ${{ secrets.PGPORT }}
+      PGUSER: ${{ secrets.PGUSER }}
+      PGPASSWORD: ${{ secrets.PGPASSWORD }}
+      PGDATABASE: ${{ secrets.PGDATABASE }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install replay dependencies
+        run: python -m pip install --upgrade pip asyncpg
+
+      - name: Ensure replay artifacts path exists
+        run: mkdir -p tmp/replay_gate
+
+      - name: Validate DB secrets
+        run: |
+          test -n "$PGHOST" || (echo "[FAIL] missing secret PGHOST" && exit 1)
+          test -n "$PGPORT" || (echo "[FAIL] missing secret PGPORT" && exit 1)
+          test -n "$PGUSER" || (echo "[FAIL] missing secret PGUSER" && exit 1)
+          test -n "$PGPASSWORD" || (echo "[FAIL] missing secret PGPASSWORD" && exit 1)
+          if [ -z "$PGDATABASE" ]; then
+            echo "[WARN] missing PGDATABASE, fallback to stock_data_test"
+            echo "PGDATABASE=stock_data_test" >> "$GITHUB_ENV"
+          fi
+
+      - name: Run A/B replay compare for baseline dates
+        run: |
+          for d in 2026-04-07 2026-04-15 2026-04-22; do
+            python stock_processing_service/scripts/ab_compare_mainline_cycle.py \
+              --trade-date "$d" \
+              --host "$PGHOST" \
+              --port "$PGPORT" \
+              --database "$PGDATABASE" \
+              --user "$PGUSER" \
+              --password "$PGPASSWORD" \
+              > "tmp/replay_gate/ab_${d}.json"
+          done
+
+      - name: Calculate Layer B confirmed coverage
+        run: |
+          python stock_processing_service/scripts/calc_b_confirmed_coverage.py \
+            --trade-dates "2026-04-07,2026-04-15,2026-04-22" \
+            --host "$PGHOST" \
+            --port "$PGPORT" \
+            --database "$PGDATABASE" \
+            --user "$PGUSER" \
+            --password "$PGPASSWORD" \
+            > tmp/replay_gate/b_coverage.json
+
+      - name: Build replay gate metrics
+        run: |
+          python - <<'PY'
+import json
+from pathlib import Path
+
+dates = ["2026-04-07", "2026-04-15", "2026-04-22"]
+tot_subject_slots = 0
+tot_identity_diff = 0
+tot_main_theme_diff = 0
+
+for d in dates:
+    p = Path(f"tmp/replay_gate/ab_{d}.json")
+    if not p.exists():
+        raise SystemExit(f"[FAIL] missing replay output: {p}")
+    payload = json.loads(p.read_text())
+    summary = payload.get("summary", {})
+    total = int(summary.get("total_subjects", 0))
+    if total <= 0:
+        raise SystemExit(f"[FAIL] invalid total_subjects for {d}: {total}")
+    tot_subject_slots += total * 2
+    tot_identity_diff += int(summary.get("identity_diff_count", 0))
+    tot_main_theme_diff += int(summary.get("is_main_theme_diff_count", 0))
+
+a_match_rate = 1.0 - ((tot_identity_diff + tot_main_theme_diff) / tot_subject_slots)
+b_cov_payload = json.loads(Path("tmp/replay_gate/b_coverage.json").read_text())
+b_cov = b_cov_payload.get("b_confirmed_coverage", None)
+metrics = {
+    "a_match_rate": a_match_rate,
+    "a_inputs": {
+        "subject_slots": tot_subject_slots,
+        "identity_diff_count": tot_identity_diff,
+        "is_main_theme_diff_count": tot_main_theme_diff,
+    },
+    "b_confirmed_coverage": b_cov,
+    "source": "ab_compare_mainline_cycle.py (aggregated over 3 baseline dates)"
+}
+Path("tmp/replay_gate/metrics.json").write_text(json.dumps(metrics, ensure_ascii=False, indent=2))
+print(json.dumps(metrics, ensure_ascii=False, indent=2))
+PY
+
+      - name: Enforce A/B thresholds
+        run: |
+          python - <<'PY'
+import json
+import os
+from pathlib import Path
+
+p = Path("tmp/replay_gate/metrics.json")
+if not p.exists():
+    raise SystemExit("[FAIL] missing tmp/replay_gate/metrics.json")
+
+d = json.loads(p.read_text())
+a = float(d.get("a_match_rate", 0.0))
+b_raw = d.get("b_confirmed_coverage", None)
+a_th = float(os.environ["A_MATCH_THRESHOLD"])
+b_th = float(os.environ["B_CONFIRMED_COVERAGE_THRESHOLD"])
+
+print(f"[INFO] a_match_rate={a:.4f}, threshold={a_th:.4f}")
+if b_raw is None:
+    raise SystemExit("[FAIL] b_confirmed_coverage is missing. Add a coverage script and populate metrics.json.")
+b = float(b_raw)
+print(f"[INFO] b_confirmed_coverage={b:.4f}, threshold={b_th:.4f}")
+
+if a < a_th:
+    raise SystemExit(f"[FAIL] A layer match rate below threshold: {a:.4f} < {a_th:.4f}")
+if b < b_th:
+    raise SystemExit(f"[FAIL] B layer confirmed coverage below threshold: {b:.4f} < {b_th:.4f}")
+
+print("[PASS] replay gate thresholds satisfied")
+PY

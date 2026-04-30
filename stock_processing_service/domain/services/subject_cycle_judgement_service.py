@@ -18,6 +18,9 @@ class SubjectCycleJudgement:
     final_cycle_state: str
     final_mainline_alive: bool
     fade_confirmed_evidence_count: int
+    decision_path: str
+    evidence_count: int
+    fade_reason_codes: list[str]
 
 
 class SubjectCycleJudgementService:
@@ -72,18 +75,25 @@ class SubjectCycleJudgementService:
 
         # ── 退潮证据 6 项（对齐生产 _count_fade_confirmed_evidence()）──
         evidence_count = 0
+        fade_reason_codes: list[str] = []
         if e.leader_breakdown_flag:
             evidence_count += 1
+            fade_reason_codes.append("leader_breakdown")
         if e.limit_down_count >= 1:
             evidence_count += 1
+            fade_reason_codes.append("limit_down_count_ge_1")
         if e.red_ratio <= Decimal("0.45"):
             evidence_count += 1
+            fade_reason_codes.append("red_ratio_le_0_45")
         if e.big_drop_ratio >= Decimal("0.30"):
             evidence_count += 1
+            fade_reason_codes.append("big_drop_ratio_ge_0_30")
         if e.relay_strength_score <= Decimal("35"):
             evidence_count += 1
+            fade_reason_codes.append("relay_strength_le_35")
         if e.theme_support_score <= Decimal("35"):
             evidence_count += 1
+            fade_reason_codes.append("theme_support_le_35")
 
         fade_confirmed_flag = fade_confirmed >= self.THRESH_FADE_CONFIRMED and evidence_count >= 3
         fade_watch_flag = (not fade_confirmed_flag) and fade_watch >= self.THRESH_FADE_WATCH
@@ -91,18 +101,25 @@ class SubjectCycleJudgementService:
 
         if fade_confirmed_flag:
             state = "fade_confirmed"
+            decision_path = "fade_confirmed(score>=60,evidence>=3)"
         elif repair >= self.THRESH_REPAIR and repair_transition_allowed:
             state = "repair"
+            decision_path = "repair(score>=65,previous in divergence/fade_watch)"
         elif divergence >= self.THRESH_DIVERGENCE:
             state = "divergence"
+            decision_path = "divergence(score>=60)"
         elif fade_watch_flag:
             state = "fade_watch"
+            decision_path = "fade_watch(score>=50 and not fade_confirmed)"
         elif mainline_strength >= self.THRESH_ACCELERATION:
             state = "acceleration"
+            decision_path = "acceleration(mainline_strength>=75)"
         elif mainline_strength >= self.THRESH_FERMENTATION:
             state = "fermentation"
+            decision_path = "fermentation(mainline_strength>=60)"
         else:
             state = "start"
+            decision_path = "start(default)"
 
         mainline_alive = (
             mainline_strength >= self.THRESH_MAINLINE_ALIVE
@@ -125,5 +142,7 @@ class SubjectCycleJudgementService:
             final_cycle_state=state,
             final_mainline_alive=bool(mainline_alive),
             fade_confirmed_evidence_count=evidence_count,
+            decision_path=decision_path,
+            evidence_count=evidence_count,
+            fade_reason_codes=fade_reason_codes,
         )
-

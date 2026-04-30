@@ -73,6 +73,9 @@ class DailySnapshotProjector:
                         "evidence_support_refs": evidence.support_refs,
                         "evidence_score_flags": evidence.score_flags,
                         "evidence_missing_flags": evidence.missing_flags,
+                        "decision_path": judgement.decision_path,
+                        "evidence_count": judgement.evidence_count,
+                        "fade_reason_codes": judgement.fade_reason_codes or [],
                     },
                 )
             )
@@ -89,7 +92,13 @@ class DailySnapshotProjector:
                     batch_id=batch_id,
                     trace_id=trace_id,
                     source_trace_id=trace_id,
-                    role_tags={"mainline_alive": judgement.final_mainline_alive},
+                    role_tags={
+                        "mainline_alive": judgement.final_mainline_alive,
+                        "final_cycle_state": judgement.final_cycle_state,
+                        "decision_path": judgement.decision_path,
+                        "evidence_count": judgement.evidence_count,
+                        "fade_reason_codes": judgement.fade_reason_codes or [],
+                    },
                     evidence_rules=["cycle_judgement_v1"],
                 )
             )

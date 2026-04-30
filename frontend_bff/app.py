@@ -916,6 +916,7 @@ async def test_connection():
 
 
 @app.api_route("/api/stock-screener/strategies", methods=["GET", "HEAD"])
+@app.api_route("/api/v2/stock-screener/strategies", methods=["GET", "HEAD"])
 async def get_stock_screener_strategies(active_only: bool = Query(default=True)):
     strategies = await stock_screener_repo.get_strategies(active_only=active_only)
     return [
@@ -936,6 +937,7 @@ async def get_stock_screener_strategies(active_only: bool = Query(default=True))
 
 
 @app.post("/api/stock-screener/strategies")
+@app.post("/api/v2/stock-screener/strategies")
 async def create_stock_screener_strategy(payload: ScreenerStrategyPayload):
     now = datetime.now()
     strategy = ScreeningStrategy(
@@ -967,6 +969,7 @@ async def create_stock_screener_strategy(payload: ScreenerStrategyPayload):
 
 
 @app.put("/api/stock-screener/strategies/{strategy_id}")
+@app.put("/api/v2/stock-screener/strategies/{strategy_id}")
 async def update_stock_screener_strategy(strategy_id: str, payload: ScreenerStrategyUpdatePayload):
     updates = payload.model_dump(exclude_none=True)
     ok = await stock_screener_repo.update_strategy(strategy_id, updates)
@@ -989,6 +992,7 @@ async def update_stock_screener_strategy(strategy_id: str, payload: ScreenerStra
 
 
 @app.delete("/api/stock-screener/strategies/{strategy_id}")
+@app.delete("/api/v2/stock-screener/strategies/{strategy_id}")
 async def delete_stock_screener_strategy(strategy_id: str):
     ok = await stock_screener_repo.delete_strategy(strategy_id)
     if not ok:
@@ -997,6 +1001,7 @@ async def delete_stock_screener_strategy(strategy_id: str):
 
 
 @app.post("/api/stock-screener/execute")
+@app.post("/api/v2/stock-screener/execute")
 async def execute_stock_screener(payload: ScreenerExecutePayload):
     started = time.perf_counter()
     requested_trade_date = _parse_trade_date(payload.trade_date)
@@ -1201,6 +1206,7 @@ async def execute_stock_screener(payload: ScreenerExecutePayload):
 
 
 @app.get("/api/stock-screener/executions/{job_id}")
+@app.get("/api/v2/stock-screener/executions/{job_id}")
 async def get_stock_screener_execution(job_id: str):
     execution = await stock_screener_repo.get_execution(job_id)
     if not execution:
@@ -1222,6 +1228,7 @@ async def get_stock_screener_execution(job_id: str):
 
 
 @app.get("/api/stock-screener/results/{result_id}")
+@app.get("/api/v2/stock-screener/results/{result_id}")
 async def get_stock_screener_result_detail(
     result_id: str,
     view: Optional[str] = Query(default=None, description="详情视角：candidate|confirm"),
@@ -1349,6 +1356,7 @@ async def get_stock_screener_result_detail(
 
 
 @app.get("/api/stock-screener/history")
+@app.get("/api/v2/stock-screener/history")
 async def get_stock_screener_history(
     strategy_id: Optional[str] = Query(default=None),
     trade_date_from: Optional[str] = Query(default=None),
@@ -1371,6 +1379,7 @@ async def get_stock_screener_history(
 
 
 @app.get("/api/stock-screener/favorites")
+@app.get("/api/v2/stock-screener/favorites")
 async def get_stock_screener_favorites(user_id: str = Query(default="default")):
     favorites = await stock_screener_repo.get_user_favorites(user_id)
     result_items = []
@@ -1394,6 +1403,7 @@ async def get_stock_screener_favorites(user_id: str = Query(default="default")):
 
 
 @app.post("/api/stock-screener/favorites")
+@app.post("/api/v2/stock-screener/favorites")
 async def add_stock_screener_favorite(payload: ScreenerFavoritePayload, user_id: str = Query(default="default")):
     favorite = UserFavorite(
         favorite_id=f"fav_{uuid.uuid4().hex[:12]}",
@@ -1422,6 +1432,7 @@ async def add_stock_screener_favorite(payload: ScreenerFavoritePayload, user_id:
 
 
 @app.put("/api/stock-screener/favorites/{favorite_id}")
+@app.put("/api/v2/stock-screener/favorites/{favorite_id}")
 async def update_stock_screener_favorite(favorite_id: str, payload: ScreenerFavoriteUpdatePayload):
     ok = await stock_screener_repo.update_favorite(favorite_id, payload.notes, payload.tags)
     if not ok:
@@ -1430,6 +1441,7 @@ async def update_stock_screener_favorite(favorite_id: str, payload: ScreenerFavo
 
 
 @app.delete("/api/stock-screener/favorites/{favorite_id}")
+@app.delete("/api/v2/stock-screener/favorites/{favorite_id}")
 async def delete_stock_screener_favorite(favorite_id: str):
     ok = await stock_screener_repo.remove_favorite(favorite_id)
     if not ok:
@@ -1438,6 +1450,7 @@ async def delete_stock_screener_favorite(favorite_id: str):
 
 
 @app.get("/api/stock-screener/statistics")
+@app.get("/api/v2/stock-screener/statistics")
 async def get_stock_screener_statistics(
     strategy_id: Optional[str] = Query(default=None),
     from_date: Optional[str] = Query(default=None, alias="from"),
@@ -1457,6 +1470,7 @@ async def get_stock_screener_statistics(
 
 
 @app.post("/api/stock-screener/export")
+@app.post("/api/v2/stock-screener/export")
 async def export_stock_screener_results(payload: ScreenerExportPayload):
     export_items = []
     for result_id in payload.result_ids:
@@ -1492,6 +1506,7 @@ async def export_stock_screener_results(payload: ScreenerExportPayload):
 
 
 @app.get("/api/intel/feed")
+@app.get("/api/v2/intel/feed")
 async def get_intel_feed(
     date: Optional[str] = Query(default=None),
     session: str = Query(default="all", pattern="^(all|pre|intra|post)$"),
@@ -1512,6 +1527,7 @@ async def get_intel_feed(
 
 
 @app.get("/api/intel/strong-stocks/watch")
+@app.get("/api/v2/intel/strong-stocks/watch")
 async def get_strong_stock_watch(
     date: Optional[str] = Query(default=None),
     window_days: int = Query(default=7, ge=1, le=30),
@@ -1534,6 +1550,7 @@ async def get_strong_stock_watch(
 
 
 @app.get("/api/intel/stream")
+@app.get("/api/v2/intel/stream")
 async def get_intel_stream(
     date: Optional[str] = Query(default=None),
     session: str = Query(default="all", pattern="^(all|pre|intra|post)$"),
@@ -1601,6 +1618,7 @@ async def get_intel_stream(
 
 
 @app.get("/api/intel/stream/realtime")
+@app.get("/api/v2/intel/stream/realtime")
 async def get_intel_stream_realtime(
     date: Optional[str] = Query(default=None),
     session: str = Query(default="all", pattern="^(all|pre|intra|post)$"),
@@ -1736,6 +1754,7 @@ async def proxy_workspace_market_validation(
 
 
 @app.get("/api/theme-workspace/{subject_key}")
+@app.get("/api/v2/theme-workspace/{subject_key}")
 async def get_theme_workspace(
     subject_key: str,
     trade_date: Optional[str] = Query(default=None),
@@ -1766,6 +1785,7 @@ async def get_theme_workspace(
 
 
 @app.get("/api/stock-workspace/{stock_id}")
+@app.get("/api/v2/stock-workspace/{stock_id}")
 async def get_stock_workspace(
     stock_id: str,
     include_themes: bool = Query(default=True),
@@ -1786,6 +1806,7 @@ async def get_stock_workspace(
 
 
 @app.get("/api/recap")
+@app.get("/api/v2/recap")
 async def get_recap(
     date: str = Query(...),
     report_type: str = Query(default="post_market", pattern="^(pre_market|post_market)$"),
@@ -1801,16 +1822,19 @@ async def get_recap(
 
 
 @app.get("/api/recap/defaults")
+@app.get("/api/v2/recap/defaults")
 async def get_recap_defaults():
     return await bff_repo.fetch_recap_defaults()
 
 
 @app.get("/api/collection/availability")
+@app.get("/api/v2/collection/availability")
 async def get_collection_availability(trade_date: Optional[str] = Query(default=None)):
     return collection_job_manager.availability(trade_date)
 
 
 @app.post("/api/collection/start")
+@app.post("/api/v2/collection/start")
 async def start_collection(payload: CollectionStartRequest):
     availability = collection_job_manager.availability(payload.trade_date)
     if not availability["allowed"]:
@@ -1820,6 +1844,7 @@ async def start_collection(payload: CollectionStartRequest):
 
 
 @app.get("/api/collection/status")
+@app.get("/api/v2/collection/status")
 async def get_collection_status(job_id: str = Query(...)):
     job = collection_job_manager.get_job(job_id)
     if not job:
@@ -1828,6 +1853,7 @@ async def get_collection_status(job_id: str = Query(...)):
 
 
 @app.post("/api/collection/cancel")
+@app.post("/api/v2/collection/cancel")
 async def cancel_collection(payload: CollectionJobActionRequest):
     job = await collection_job_manager.cancel_job(payload.job_id)
     if not job:
@@ -1836,6 +1862,7 @@ async def cancel_collection(payload: CollectionJobActionRequest):
 
 
 @app.post("/api/collection/continue")
+@app.post("/api/v2/collection/continue")
 async def continue_collection(payload: CollectionJobActionRequest):
     job = await collection_job_manager.continue_job(payload.job_id)
     if not job:
@@ -1892,6 +1919,7 @@ async def _run_cmd(cmd: list[str], timeout_sec: int) -> dict[str, Any]:
 
 
 @app.get("/api/realtime/collector/status")
+@app.get("/api/v2/realtime/collector/status")
 async def get_realtime_collector_status():
     result = await _run_cmd(
         ["bash", str(_project_root() / "scripts" / "status_realtime_stack.sh")],
@@ -1901,6 +1929,7 @@ async def get_realtime_collector_status():
 
 
 @app.post("/api/realtime/collector/start")
+@app.post("/api/v2/realtime/collector/start")
 async def start_realtime_collector(payload: RealtimeCollectorActionRequest):
     result = await _run_cmd(
         _build_start_cmd(with_frontend=payload.with_frontend, restart=payload.restart),
@@ -1912,6 +1941,7 @@ async def start_realtime_collector(payload: RealtimeCollectorActionRequest):
 
 
 @app.post("/api/realtime/collector/stop")
+@app.post("/api/v2/realtime/collector/stop")
 async def stop_realtime_collector(payload: RealtimeCollectorActionRequest):
     result = await _run_cmd(
         _build_stop_cmd(with_frontend=payload.with_frontend, force=payload.force),
@@ -1937,6 +1967,7 @@ def _extract_log_line_timestamp(line: str) -> Optional[float]:
 
 
 @app.get("/api/realtime/collector/logs")
+@app.get("/api/v2/realtime/collector/logs")
 async def get_realtime_collector_logs(
     lines: int = Query(default=200, ge=20, le=2000),
     max_age_minutes: int = Query(default=180, ge=10, le=1440),

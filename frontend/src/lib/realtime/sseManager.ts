@@ -8,7 +8,7 @@
 import type { IntelItemType, IntelSession, IntelFeedEvent } from '../api';
 
 export interface SSEManagerOptions {
-  /** 基础URL路径，默认为'/api/intel/stream' */
+  /** 基础URL路径，默认为'/api/v2/intel/stream' */
   endpoint?: string;
 
   /** 最大重试次数，默认3次 */
@@ -107,7 +107,7 @@ export class SSEManager {
 
     // 设置默认选项
     this.options = {
-      endpoint: '/api/intel/stream',
+      endpoint: '/api/v2/intel/stream',
       maxRetries: 3,
       retryDelay: 1000,
       retryBackoffFactor: 2.0,
