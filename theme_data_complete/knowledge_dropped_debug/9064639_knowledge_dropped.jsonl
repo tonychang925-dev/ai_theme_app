@@ -1,2 +1,0 @@
-{"span_uid": "22c5e090db76", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产业意义与政策导向", "stability": "low", "reason": "该片段主要表达发展绿色燃料产业的意义和政策导向，包含主观看法和新闻口吻，无法整理成稳定、可独立成立的知识块，因此丢弃。"}
-{"span_uid": "e3b067eef634", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产能数据", "stability": "low", "reason": "原文为截至2025年底的具体产能数据，属于阶段性、时效性强的信号信息，且数据细节过多，难以整理为稳定、独立的知识块，因此丢弃。"}

@@ -1,3 +1,0 @@
-{"span_uid": "87f73ed981c0", "action": "keep", "canonical_text": "该产业包括火电、水电、核电、风电、太阳能发电等多种能源类型，是连接一次能源供给与社会经济需求的关键节点，为国民经济各领域提供不可替代的基础能源支撑。", "final_type": "core", "final_role": "能源类型与产业作用", "stability": "high", "reason": "该片段补充了电力运营产业的能源类型和产业作用，是稳定、独立成立的本体知识，无需改写。", "drop_reason": "format_gate:deictic"}
-{"span_uid": "02b113ed6584", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "未来用电量与装机预测", "stability": "low", "reason": "该片段为基于国家能源局和中电联的预测信息，涉及具体年份（2025年、2030年）的用电量和装机容量预测，属于未来展望和预测性内容，稳定性较低，不适合作为稳定知识块入库。"}
-{"span_uid": "c4377637afcf", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "电力投资总体分布", "stability": "low", "reason": "原文为2024年具体投资数据（如“1.78万亿元”、“65.8%”），属于阶段性事件信息，无法脱离具体年份独立成立，且未提供稳定知识结构，不适合作为可入库知识块。"}

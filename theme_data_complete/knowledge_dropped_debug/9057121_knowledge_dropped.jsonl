@@ -1,2 +1,0 @@
-{"span_uid": "4354bc170af7", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "硬件自研率优势", "stability": "low", "reason": "片段包含主观声称（“公司声称”）和事件化表述（“有助于控制成本和实现技术迭代”），无法形成稳定、独立的知识块。"}
-{"span_uid": "0aa4a3e18c5e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "合作技术方向", "stability": "low", "reason": "片段为具体合作事件内容，属于阶段性动态信息，且表述笼统，无法整理成稳定、独立的知识块。"}

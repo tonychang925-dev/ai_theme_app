@@ -1,8 +1,0 @@
-{"span_uid": "24fc376a9306", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为标题或目录项，未提供实质性知识内容，无法形成独立知识块。"}
-{"span_uid": "8d9e4d3cec4b", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为标题或目录项，未提供实质性知识内容，无法形成独立知识块。"}
-{"span_uid": "ca2fa89773dd", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文是具体的市场规模数据和预测（如2025年、2026年、2035年等），属于强时间依赖的预测信息，无法形成稳定、可独立成立的知识块，且易过时，因此丢弃。"}
-{"span_uid": "026f50cfe7b3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文主要是市场前景预测和趋势描述（如“预计未来五年...”、“将迎来爆发式增长”），包含大量预测性、事件化信息，无法整理成稳定知识块，因此丢弃。"}
-{"span_uid": "e56ff59eab68", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文为具体事件（司美格鲁肽专利到期）和预测性描述（2026年增长预测），无法整理成稳定、独立的知识块，适合丢弃。"}
-{"span_uid": "3266a44ed752", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "竞争产品销售额", "stability": "low", "reason": "文本包含具体年份和销售额数据，属于事件化信息，无法稳定独立成立，适合丢弃。"}
-{"span_uid": "066b140a337d", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文聚焦于具体企业（如诺泰生物、圣诺生物、翰宇药业）的生产能力、订单和成本数据，属于事件性或公司特定信息，无法整理成脱离原新闻的稳定知识块。"}
-{"span_uid": "0da7254befb2", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文是残句和短语组合（如“仿创结合的全产业链布局”），缺乏完整、可独立理解的知识表达，且聚焦于单一公司（华东医药）的特定信息，无法形成有效知识块。"}

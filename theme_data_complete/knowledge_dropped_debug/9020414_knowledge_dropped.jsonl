@@ -1,8 +1,0 @@
-{"span_uid": "f769decdc7cf", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "电商消费趋势", "stability": "low", "reason": "原片段为具体事件（美国黑五消费）和短期趋势，无法整理成稳定、可脱离原新闻上下文独立成立的知识块，适合丢弃。"}
-{"span_uid": "6184e064382e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文本为具体销售数据事件，属于短期、低稳定性的景气信号，无法形成稳定知识块，直接丢弃。"}
-{"span_uid": "f4401d0066ba", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文本为具体进出口数据事件，属于短期、低稳定性的景气信号，无法形成稳定知识块，直接丢弃。"}
-{"span_uid": "d2eedd70724e", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述京东平台的具体支付方式排序，属于特定公司的临时性事件信息，无法形成稳定、可独立理解的电商题材知识块。"}
-{"span_uid": "bb7532915366", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述淘宝平台引入微信支付的具体签约和上线计划，属于特定公司的短期事件，无法形成稳定、可独立理解的电商题材知识块。"}
-{"span_uid": "2e79e07ce26e", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段详细描述第四届中国新电商大会的具体活动安排，属于一次性事件信息，无法形成稳定、可独立理解的电商题材知识块。"}
-{"span_uid": "bc226e2b96e9", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体公司（淘天集团）的短期业绩指标（GMV增长、会员人数等），属于事件性信息，无法整理成稳定、可独立成立的题材知识块。"}
-{"span_uid": "078514da43a8", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为机构（花旗）对具体公司（京东）的业绩预测和股价催化剂分析，属于主观看法和事件性信息，无法形成稳定的题材知识。"}

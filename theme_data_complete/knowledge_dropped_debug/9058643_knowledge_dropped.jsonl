@@ -1,7 +1,0 @@
-{"span_uid": "1c493ba29d9a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "镁空气电池市场规模与进展", "stability": "low", "reason": "该片段包含具体年份的市场规模预测、特定项目渗透率和机构技术突破，属于事件性、预测性信息，无法整理成稳定、可独立成立的知识块。"}
-{"span_uid": "1335d8a5a339", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "medium", "reason": "原文为短期市场预测（2025-2030年），包含具体规模数据，属于事件化、趋势性信息，无法形成稳定独立的知识块。"}
-{"span_uid": "3fb00eb1cecb", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "medium", "reason": "原文为短期市场渗透率预测（突破10%），属于事件化、趋势性信息，无法形成稳定独立的知识块。"}
-{"span_uid": "31de74fa9ebb", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文为长期商业化前景预测（2030年后），属于事件化、趋势性信息，无法形成稳定独立的知识块。"}
-{"span_uid": "fe544c2778b3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文为长期技术突破预测（2030年后），属于事件化、趋势性信息，无法形成稳定独立的知识块。"}
-{"span_uid": "6b5e23bfd6f9", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "未来应用潜力", "stability": "low", "reason": "该片段是主观预测（“承载着厚望”），无法整理成稳定、独立成立的知识块，适合丢弃。"}
-{"span_uid": "937d17ca912f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "发展趋势与地位", "stability": "low", "reason": "该片段是未来趋势预测（“将推动”、“成为”），且包含时间限定（“未来十年”），无法形成稳定知识块，适合丢弃。"}

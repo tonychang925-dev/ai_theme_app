@@ -1,5 +1,0 @@
-{"span_uid": "88c917aea588", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是题材介绍和统计基础的说明，属于元信息或背景描述，无法形成独立、稳定的知识块，且包含具体机构分析等非通用信息。"}
-{"span_uid": "5bb2f4d4ac9e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业产能规划", "stability": "low", "reason": "原片段为具体企业（宁德时代）的产能规划、目标和时间点（如2027年全固态），属于事件性或预测性信息，无法脱离上下文形成稳定知识块，且题材为“全固态电池进度表”，此类具体规划信息易变，不适合作为入库知识。"}
-{"span_uid": "b0d7ed25bc8b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业产能规划", "stability": "low", "reason": "原片段为具体企业（比亚迪）的产能规划、目标和时间点（如2027年全固态），属于事件性或预测性信息，无法脱离上下文形成稳定知识块，且题材为“全固态电池进度表”，此类具体规划信息易变，不适合作为入库知识。"}
-{"span_uid": "ee52348974f2", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业产能与市占率", "stability": "low", "reason": "原片段为具体企业（赣锋锂业）的产能、市占率和量产状态（已量产半固态），属于事件性或阶段性信息，无法脱离上下文形成稳定知识块，且题材为“全固态电池进度表”，此类具体数据易变，不适合作为入库知识。"}
-{"span_uid": "0074d076da84", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "硅基负极材料产能建设企业", "stability": "low", "reason": "片段仅列出企业名称和产能建设行为，缺乏具体数据或进展细节，属于事件性列表，无法形成稳定、独立的知识块，因此丢弃。"}

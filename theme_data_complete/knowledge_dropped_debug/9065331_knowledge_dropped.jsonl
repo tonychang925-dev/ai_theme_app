@@ -1,8 +1,0 @@
-{"span_uid": "a6d149956e43", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为市场份额的列表式数据，缺乏完整句子和上下文，无法形成独立、可理解的知识表达，且与前一片段内容重叠。"}
-{"span_uid": "02253ab892ff", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为标题或引言，未提供具体知识内容，无法形成独立完整的知识表达。"}
-{"span_uid": "3812bd3106b8", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为辅材和供应商列表，缺乏完整知识表达，且具体厂家信息可能随时间变化，稳定性较低，不适合作为稳定知识块保留。"}
-{"span_uid": "5d738fa4cabb", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为企业产能列表，属于具体事件或数据点，缺乏稳定、可独立成立的知识表达，且产能数据可能频繁更新，不适合作为稳定知识块保留。"}
-{"span_uid": "2b013d1871fe", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段为2025年我国特定制酸产能占比数据，属于具体年份的阶段性信号信息，但缺乏上下文（如基准年或趋势对比），且作为孤立数据难以形成稳定、可独立理解的知识块，因此丢弃。"}
-{"span_uid": "7f0ab027aaa5", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "价格趋势", "stability": "low", "reason": "该片段主要描述2025年价格波动和2026年预测，属于具体事件和短期预测，无法整理成稳定、可独立成立的知识块。"}
-{"span_uid": "9d79da04b5b8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "供需缺口预测", "stability": "low", "reason": "该片段是具体的供需缺口预测数据，具有强时间性和不确定性，属于事件化或预测性信息，无法整理成稳定、独立成立的知识块，因此丢弃。"}
-{"span_uid": "70742ebfe283", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅包含一个具体的毛利数值（73.46元/吨），属于短期、动态的财务数据，无法形成稳定、可独立理解的知识表达。它缺乏对硫铁矿制酸法本身机制、优势或行业地位的描述，且数值易随时间变化，不适合作为题材知识入库。"}

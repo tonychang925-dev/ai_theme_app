@@ -1,3 +1,0 @@
-{"span_uid": "bca7bd8fb33f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文为具体年度旅游线路列表，属于事件性信息，无法形成稳定、可独立理解的知识块。"}
-{"span_uid": "209444848d52", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "medium", "reason": "原文为特定冰雪主题乐园的具体设计特征和规模数据，属于事件性信息，无法形成稳定、可独立理解的知识块。"}
-{"span_uid": "89f1448c0f9c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "旅游热度预测", "stability": "low", "reason": "原文本包含具体数据（环比上涨240%）和短期预测（延续至春节假期），属于事件性、时效性强的信息，无法整理成稳定、可独立成立的知识块，因此丢弃。"}

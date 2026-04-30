@@ -1,2 +1,0 @@
-{"span_uid": "33c753b82fea", "action": "drop", "canonical_text": "", "final_type": "related", "final_role": "行业地位描述", "stability": "low", "reason": "该片段包含比喻性表述（“制造业皇冠上的明珠”）和主观评价，不够稳定和客观，不适合作为可入库的知识块。"}
-{"span_uid": "060ded5dbb5f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段为表格形式的预测数据，包含具体年份和数值，属于阶段性变化信息，但过于依赖特定时间点，稳定性低，且难以整理为独立成立的知识块。"}

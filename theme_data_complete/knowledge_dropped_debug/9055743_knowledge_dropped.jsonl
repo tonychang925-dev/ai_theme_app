@@ -1,1 +1,0 @@
-{"span_uid": "f58f178f1cd2", "action": "drop", "canonical_text": "", "final_type": "core", "final_role": "", "stability": "high", "reason": "该片段仅重复了可见光透过率参数，内容已被第一个片段（span_uid: 524e5b342cf5）覆盖，为避免冗余，直接丢弃。"}

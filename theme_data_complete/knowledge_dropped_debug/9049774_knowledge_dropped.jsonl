@@ -1,9 +1,0 @@
-{"span_uid": "68414bc8be93", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "候选片段仅描述小马智行在特定区域的运营范围细节，过于具体且依赖上下文，无法形成稳定、可独立理解的知识块。"}
-{"span_uid": "856f1499ec6f", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述具体公司（小马智行）与特定合作伙伴（上海锦江集团）在特定区域（浦东金桥和花木核心区域）的自动驾驶出行服务开放计划，属于具体事件公告，无法整理成稳定、可独立成立的知识块。"}
-{"span_uid": "c4971169d2ba", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述如祺出行的具体战略规划，包括未来5年覆盖100个城市、超万辆车队、10亿投资等，属于公司层面的预测和计划，无法形成稳定、可独立成立的知识块。"}
-{"span_uid": "d7f6772d5b12", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文描述具体公司间的合作模式，属于事件性信息，无法形成稳定、可独立成立的知识块。"}
-{"span_uid": "20b3da3da1db", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文描述具体公司的安全兜底机制和售后流程，属于事件性、商业性信息，无法形成稳定、可独立成立的知识块。"}
-{"span_uid": "bdfee9058545", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文描述专利效果，属于主观评价或应用益处，无法形成稳定、可独立成立的知识块。"}
-{"span_uid": "36a83612684b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅为单一企业宣布进入Robotaxi赛道的事件信息，无法形成稳定、独立的知识块，且过于具体和事件化。"}
-{"span_uid": "8fd416c415b1", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段为具体企业在特定地区的合作部署事件，过于具体和事件化，无法形成稳定、独立的知识块。"}
-{"span_uid": "cad34f612605", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述具体公司（小马智行）在特定地点（迪拜）的测试事件，属于具体事件信息，无法整理成稳定、可独立理解的知识表达，不适合作为题材知识保留。"}

@@ -1,2 +1,0 @@
-{"span_uid": "f13c14baac15", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "包含具体年份和出货量预测，属于事件性或预测性信息，不稳定且无法整理成独立知识块。"}
-{"span_uid": "5444e08d28cb", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "地缘政治成本影响", "stability": "low", "reason": "该片段表述过于笼统和事件化（如“地缘政治因素导致供应链重构”），缺乏具体、稳定的知识内容，无法形成可独立理解的有效知识块。"}

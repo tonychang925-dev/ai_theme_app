@@ -1,2 +1,0 @@
-{"span_uid": "99be4d66faf3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "合作模式案例", "stability": "low", "reason": "该片段描述了一个具体事件（永辉超市与福建供销现代农服集团的合作），涉及特定公司、地点和模式名称（'琅岐模式'），属于新闻口吻的事件信息，无法整理成稳定、可独立成立的知识块。"}
-{"span_uid": "59e41c6eff14", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文为具体公司（供销大集）的业务战略表述，依赖特定企业上下文，无法形成脱离原新闻的稳定知识块；且内容为事件性、口号式，不符合知识规范化要求。"}

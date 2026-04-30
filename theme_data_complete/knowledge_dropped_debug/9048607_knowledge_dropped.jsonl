@@ -1,2 +1,0 @@
-{"span_uid": "a81ba3e2e1f5", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "片段描述了中国具体的执法行动（关闭网站、逮捕人员），属于事件性信息，不稳定且依赖新闻上下文，无法形成独立知识块。"}
-{"span_uid": "e5b28cc8e71d", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文仅为一条具体事件（2024年8月的监管扩展），无法整理成稳定、可独立成立的知识块，且缺乏足够上下文形成完整知识表达。"}

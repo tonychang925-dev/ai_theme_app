@@ -1,3 +1,0 @@
-{"span_uid": "375e642bc4e8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "性能对比", "stability": "low", "reason": "候选片段是一个表格形式的性能对比数据，具体比较雅江机组与三峡机组的指标，属于事件性或进展性信息，无法整理成稳定、独立的知识块，且缺乏上下文独立成立性。"}
-{"span_uid": "2957d8507dd5", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "供应链国产化", "stability": "low", "reason": "候选片段是一个表格形式的供应链国产化数据，列出具体企业和指标，属于事件性或进展性信息，无法整理成稳定、独立的知识块，且缺乏上下文独立成立性。"}
-{"span_uid": "ad28e7cea83f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "工程效益", "stability": "low", "reason": "候选片段描述了特种材料、TBM和水轮机带来的具体效益数据，如寿命、速度提升和发电量增加，属于事件性或进展性信息，无法整理成稳定、独立的知识块，且缺乏上下文独立成立性。"}

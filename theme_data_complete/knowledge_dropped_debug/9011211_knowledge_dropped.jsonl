@@ -1,2 +1,0 @@
-{"span_uid": "cf2d19dc2c96", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "创新药投资政策", "stability": "medium", "reason": "该片段主要描述针对创新药的投资政策，与中药题材关联度较低，且属于具体事件性信息，无法整理成稳定、独立的中药知识块。"}
-{"span_uid": "1394e103fc16", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "中药材价格波动", "stability": "low", "reason": "该片段描述具体时间点的价格涨幅和品种涨价情况，属于短期事件性信息，稳定性低，无法形成可独立成立的稳定知识块。"}

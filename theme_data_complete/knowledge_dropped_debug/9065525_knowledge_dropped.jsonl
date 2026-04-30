@@ -1,2 +1,0 @@
-{"span_uid": "b262a6bc2a60", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段主要包含具体时间节点和事件进展，如2026年6月底前的完成要求、国务院批准和当前整合阶段，属于阶段性变化信息，但过于具体和事件化，无法形成稳定独立的知识块，适合丢弃。"}
-{"span_uid": "7f9f665642fe", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段描述了资产整合的具体范围，如上市公司控股股东变更和非上市资产审计，属于阶段性进展信息，但内容零散且依赖具体事件上下文，无法整理成完整稳定的知识表达，适合丢弃。"}

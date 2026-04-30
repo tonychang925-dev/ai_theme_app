@@ -1,3 +1,0 @@
-{"span_uid": "a267b9ec08d4", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "研究进展机制", "stability": "low", "reason": "该片段仅为事件标题，缺乏具体机制描述，无法形成独立、完整的知识表达，且依赖具体研究事件，稳定性低。"}
-{"span_uid": "02cab6f7e110", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "研究方法进展", "stability": "low", "reason": "该片段仅为事件标题，缺乏具体解析内容，无法形成独立、完整的知识表达，且依赖具体研究事件，稳定性低。"}
-{"span_uid": "550b9c7d8622", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "神经元特征发现", "stability": "low", "reason": "该片段是残句，缺乏上下文，无法形成独立、完整的知识表达，且依赖具体研究事件，稳定性低。"}

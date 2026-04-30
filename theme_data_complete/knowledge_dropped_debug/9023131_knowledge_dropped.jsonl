@@ -1,2 +1,0 @@
-{"span_uid": "1dd8b6f4308f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "设计与制造地点", "stability": "low", "reason": "该片段仅为具体事件中的地点描述，缺乏独立知识价值，且依赖原新闻上下文，不适合作为稳定知识块保留。"}
-{"span_uid": "d1e8170496e4", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "供应协议保证条款", "stability": "low", "reason": "该片段仅为具体供应协议中的条款描述，依赖原事件上下文，且属于临时性商业安排，不适合作为稳定知识块保留。"}

@@ -1,2 +1,0 @@
-{"span_uid": "52b7c479f2f1", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为题材名称的简单重复，未提供任何实质性知识内容，无法形成独立的知识块。"}
-{"span_uid": "91eacd6577a1", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "应用产品信息", "stability": "low", "reason": "原文包含具体产品名称（如“华为Mate 50”）和事件性信息（如“全球首款”），属于阶段性、事件化的进展，无法改写为稳定、独立的知识块。虽然可归类为signal类型，但内容过于具体和时效性强，不适合作为可入库的题材知识。"}
