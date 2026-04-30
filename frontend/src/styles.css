@@ -1833,7 +1833,7 @@ select {
 
 .strong-watch-market-item {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(90px, 1fr) 70px 56px;
   gap: 2px 8px;
   border: 1px solid #1d2a3d;
   background: #0d131f;
@@ -1846,12 +1846,24 @@ select {
 .strong-watch-market-item strong {
   color: #f2f6ff;
   font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .strong-watch-market-item span {
   color: #f7cf4a;
   font-size: 12px;
   font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+  justify-self: end;
+}
+
+.strong-watch-market-item .strong-watch-pct {
+  color: #f7cf4a;
+}
+
+.strong-watch-market-item .strong-watch-board {
+  color: #9cd1ff;
 }
 
 .strong-watch-market-item em {

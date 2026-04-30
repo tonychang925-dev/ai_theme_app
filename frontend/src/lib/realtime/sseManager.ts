@@ -259,7 +259,7 @@ export class SSEManager {
       try {
         const messageEvent = event as MessageEvent;
         const payload = JSON.parse(messageEvent.data) as IntelFeedEvent;
-        if (payload?.item && this.eventHandlers.onIntelItem) {
+        if (this.isValidIntelEvent(payload) && this.eventHandlers.onIntelItem) {
           this.eventHandlers.onIntelItem(payload);
         }
         this.resetHeartbeatTimer();
@@ -450,6 +450,20 @@ export class SSEManager {
   private calculateConnectionDuration(): number {
     if (!this.state.connectedAt) return 0;
     return Date.now() - this.state.connectedAt.getTime();
+  }
+
+  private isValidIntelEvent(payload: IntelFeedEvent | null | undefined): payload is IntelFeedEvent {
+    if (!payload || typeof payload !== 'object') return false;
+    if (!payload.item || typeof payload.item !== 'object') return false;
+    const item = payload.item as unknown as Record<string, unknown>;
+    return (
+      typeof payload.event_id === 'string' &&
+      typeof payload.occurred_at === 'string' &&
+      typeof payload.event_type === 'string' &&
+      typeof item.item_id === 'string' &&
+      typeof item.item_type === 'string' &&
+      typeof item.occurred_at === 'string'
+    );
   }
 }
 

@@ -284,13 +284,18 @@ class StrongStockTrackingService:
              AND v2.subject_key = r.subject_key
             LEFT JOIN subject_strength ss
               ON ss.subject_key = r.subject_key
-            WHERE COALESCE(mr.is_main_theme, FALSE) = TRUE
-              AND COALESCE(mr.identity_status, '') = 'confirmed'
-              AND COALESCE(msd.state, COALESCE(v2.final_cycle_state, '')) <> 'fade_confirmed'
-              AND COALESCE(v2.fade_confirmed, FALSE) = FALSE
-              AND (
-                    COALESCE(ss.subject_limit_up_count, 0) >= 2
-                    OR COALESCE(ss.subject_strong_count, 0) >= 3
+            WHERE (
+                    (
+                        COALESCE(mr.is_main_theme, FALSE) = TRUE
+                        AND COALESCE(mr.identity_status, '') = 'confirmed'
+                        AND COALESCE(msd.state, COALESCE(v2.final_cycle_state, '')) <> 'fade_confirmed'
+                        AND COALESCE(v2.fade_confirmed, FALSE) = FALSE
+                        AND (
+                              COALESCE(ss.subject_limit_up_count, 0) >= 2
+                              OR COALESCE(ss.subject_strong_count, 0) >= 3
+                        )
+                    )
+                    OR COALESCE(r.recent_limit_up_count, 0) >= 2
               )
         ),
         ranked AS (
@@ -318,8 +323,13 @@ class StrongStockTrackingService:
         SELECT *
         FROM ranked
         WHERE rn = 1
-          AND recent_limit_up_count >= 1
-          AND (cond_gene + cond_volume + cond_structure) >= 2
+          AND (
+                COALESCE(recent_limit_up_count, 0) >= 2
+                OR (
+                    COALESCE(recent_limit_up_count, 0) >= 1
+                    AND (cond_gene + cond_volume + cond_structure) >= 2
+                )
+              )
         ORDER BY mainline_strength_score DESC, recent_limit_up_count DESC, best_rank ASC
         """
         async with pool.acquire() as conn:

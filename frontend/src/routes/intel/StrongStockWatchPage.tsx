@@ -42,11 +42,88 @@ function toneClass(item: StrongStockWatchItem): string {
   return "is-removed";
 }
 
-type DateBucket = {
-  key: string;
-  items: StrongStockWatchItem[];
-  levelMap: Map<number | "break", StrongStockWatchItem[]>;
-};
+function parseBoardLevel(item: StrongStockWatchItem): number {
+  const anyItem = item as unknown as { labels_json?: Record<string, unknown>; recent_limit_up_count?: number };
+  const fromLabels = Number(anyItem?.labels_json?.recent_limit_up_count ?? NaN);
+  const fromFlat = Number(anyItem?.recent_limit_up_count ?? NaN);
+  const fromFlag = Number(item.current_flag ?? NaN);
+  const lv = Number.isFinite(fromLabels) ? fromLabels : Number.isFinite(fromFlat) ? fromFlat : fromFlag;
+  return Number.isFinite(lv) ? Math.max(0, Math.floor(lv)) : 0;
+}
+
+function parsePctChg(item: StrongStockWatchItem): number | null {
+  const anyItem = item as unknown as { labels_json?: Record<string, unknown>; pct_chg?: number };
+  const fromItem = Number(anyItem?.pct_chg ?? NaN);
+  if (Number.isFinite(fromItem)) return fromItem;
+  const fromLabels = Number(anyItem?.labels_json?.pct_chg ?? NaN);
+  if (Number.isFinite(fromLabels)) return fromLabels;
+  return null;
+}
+
+function boardLabel(level: number): string {
+  if (level >= 2) return `${level}板`;
+  if (level === 1) return "1板";
+  return "--";
+}
+
+
+/**
+ * 展示契约（禁止随意变更）:
+ * 1) 页面保持“多日看板分列”样式。
+ * 2) 主口径仅展示“在池强势股”：watch_status in ('active','weakening')。
+ * 3) 每个交易日内去重：同日同股只保留最优一条（不做跨日压缩）。
+ * 4) 禁止用 promoted_to_candidate 参与 C 层强势池统计。
+ */
+function dedupByDate(rows: StrongStockWatchItem[]): StrongStockWatchItem[] {
+  const bestByDateCode = new Map<string, StrongStockWatchItem>();
+  for (const row of rows) {
+    const code = normalizeStockCode(row.stock_id);
+    const d = String(row.trade_date || "");
+    if (!code || !d) continue;
+    const k = `${d}#${code}`;
+    const prev = bestByDateCode.get(k);
+    if (!prev) {
+      bestByDateCode.set(k, row);
+      continue;
+    }
+    const prevFlag = Number(prev.current_flag || 0);
+    const curFlag = Number(row.current_flag || 0);
+    const prevScore = Number(prev.watch_score || 0);
+    const curScore = Number(row.watch_score || 0);
+    if (curFlag > prevFlag || (curFlag === prevFlag && curScore > prevScore)) {
+      bestByDateCode.set(k, row);
+    }
+  }
+  return [...bestByDateCode.values()];
+}
+
+function dedupByStockFirstEntry(rows: StrongStockWatchItem[]): StrongStockWatchItem[] {
+  const bestByCode = new Map<string, StrongStockWatchItem>();
+  for (const row of rows) {
+    const code = normalizeStockCode(row.stock_id);
+    if (!code) continue;
+    const prev = bestByCode.get(code);
+    if (!prev) {
+      bestByCode.set(code, row);
+      continue;
+    }
+    const d0 = String(prev.trade_date || "");
+    const d1 = String(row.trade_date || "");
+    if (d1 < d0) {
+      bestByCode.set(code, row);
+      continue;
+    }
+    if (d1 > d0) continue;
+    const prevFlag = Number(prev.current_flag || 0);
+    const curFlag = Number(row.current_flag || 0);
+    const prevScore = Number(prev.watch_score || 0);
+    const curScore = Number(row.watch_score || 0);
+    if (curFlag > prevFlag || (curFlag === prevFlag && curScore > prevScore)) {
+      bestByCode.set(code, row);
+    }
+  }
+  return [...bestByCode.values()];
+}
 
 export function StrongStockWatchPage() {
   const initialParams = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null;
@@ -62,7 +139,7 @@ export function StrongStockWatchPage() {
       fetchStrongStockWatch({
         date,
         windowDays,
-        limit: 500,
+        limit: 5000,
         latestPerStock: false,
         includeRemoved: false,
       }),
@@ -81,90 +158,78 @@ export function StrongStockWatchPage() {
     window.history.replaceState({}, "", `/intel/strong-stocks/watch?${params.toString()}`);
   }, [date, windowDays]);
 
-  const groupedItems = useMemo<DateBucket[]>(() => {
-    const rows = (data?.items ?? [])
-      .filter((item) => !isDisallowed(item));
-
-    const byDate = new Map<string, StrongStockWatchItem[]>();
-    for (const row of rows) {
-      const key = row.trade_date;
-      const list = byDate.get(key) ?? [];
-      list.push(row);
-      byDate.set(key, list);
+  const dedupStats = useMemo(() => {
+    const rawRows = data?.items ?? [];
+    const filteredRows = rawRows.filter(
+      (item) =>
+        !isDisallowed(item) &&
+        (String(item.watch_status || "") === "active" || String(item.watch_status || "") === "weakening"),
+    );
+    const uniqueByDateRows = dedupByDate(filteredRows);
+    const uniqueRows = dedupByStockFirstEntry(uniqueByDateRows);
+    const latestByCode = new Map<string, StrongStockWatchItem>();
+    for (const row of uniqueByDateRows) {
+      const code = normalizeStockCode(row.stock_id);
+      if (!code) continue;
+      const prev = latestByCode.get(code);
+      if (!prev) {
+        latestByCode.set(code, row);
+        continue;
+      }
+      const d0 = String(prev.trade_date || "");
+      const d1 = String(row.trade_date || "");
+      if (d1 > d0) {
+        latestByCode.set(code, row);
+      } else if (d1 === d0) {
+        const pLv = parseBoardLevel(prev);
+        const cLv = parseBoardLevel(row);
+        if (cLv > pLv || (cLv === pLv && Number(row.watch_score || 0) > Number(prev.watch_score || 0))) {
+          latestByCode.set(code, row);
+        }
+      }
     }
-
-    const keys = [...byDate.keys()].sort((a, b) => b.localeCompare(a, "zh-CN"));
-
-    return keys.map((key) => {
-      const dayRows = byDate.get(key) ?? [];
-      const dedup = new Map<string, StrongStockWatchItem>();
-      for (const row of dayRows) {
-        const code = normalizeStockCode(row.stock_id);
-        if (!code) continue;
-        const prev = dedup.get(code);
-        if (!prev) {
-          dedup.set(code, row);
-          continue;
-        }
-        const prevFlag = Number(prev.current_flag || 0);
-        const curFlag = Number(row.current_flag || 0);
-        const prevScore = Number(prev.watch_score || 0);
-        const curScore = Number(row.watch_score || 0);
-        if (curFlag > prevFlag || (curFlag === prevFlag && curScore > prevScore)) {
-          dedup.set(code, row);
-        }
-      }
-
-      const items = [...dedup.values()].sort((a, b) => {
-        const aFlag = Number(a.current_flag || 0);
-        const bFlag = Number(b.current_flag || 0);
-        if (bFlag !== aFlag) return bFlag - aFlag;
-        return Number(b.watch_score || 0) - Number(a.watch_score || 0);
-      });
-
-      const levelMap = new Map<number | "break", StrongStockWatchItem[]>();
-      const localLevels = new Set<number | "break">();
-      for (const item of items) {
-        const flag = Number(item.current_flag || 0);
-        localLevels.add(flag < 2 ? "break" : flag);
-      }
-      for (const lv of localLevels) {
-        levelMap.set(
-          lv,
-          items.filter((x) =>
-            lv === "break" ? Number(x.current_flag || 0) < 2 : Number(x.current_flag || 0) === lv,
-          ),
-        );
-      }
-
-      return { key, items, levelMap };
-    });
+    const tradeDates = [...new Set(filteredRows.map((x) => String(x.trade_date || "")).filter(Boolean))]
+      .sort((a, b) => b.localeCompare(a, "zh-CN"))
+      .slice(0, 7);
+    return {
+      rawCount: rawRows.length,
+      filteredCount: filteredRows.length,
+      dedupedCount: uniqueRows.length,
+      removedCount: Math.max(0, uniqueByDateRows.length - uniqueRows.length),
+      tradeDates,
+      uniqueRows,
+      latestByCode,
+    };
   }, [data?.items]);
 
-  const globalLevels = useMemo<Array<number | "break">>(() => {
-    const maxFlag = Math.max(
-      2,
-      ...groupedItems.flatMap((group) => group.items.map((x) => Number(x.current_flag || 0))),
-    );
-    const levels: Array<number | "break"> = [];
-    for (let lv = maxFlag; lv >= 2; lv -= 1) levels.push(lv);
-    if (groupedItems.some((group) => group.items.some((x) => Number(x.current_flag || 0) < 2))) {
-      levels.push("break");
+  const groupedItems = useMemo(() => {
+    const uniqueRows = dedupStats.uniqueRows;
+    const byDate = new Map<string, StrongStockWatchItem[]>();
+    for (const row of uniqueRows) {
+      const d = String(row.trade_date || "");
+      if (!d) continue;
+      const list = byDate.get(d) ?? [];
+      list.push(row);
+      byDate.set(d, list);
     }
-    return levels;
-  }, [groupedItems]);
+    const keys = dedupStats.tradeDates;
+    return keys.map((key) => {
+      const items = [...(byDate.get(key) ?? [])].sort((a, b) => {
+        const codeA = normalizeStockCode(a.stock_id);
+        const codeB = normalizeStockCode(b.stock_id);
+        const latestA = dedupStats.latestByCode.get(codeA) ?? a;
+        const latestB = dedupStats.latestByCode.get(codeB) ?? b;
+        const lvA = parseBoardLevel(latestA);
+        const lvB = parseBoardLevel(latestB);
+        if (lvB !== lvA) return lvB - lvA;
+        return Number(latestB.watch_score || 0) - Number(latestA.watch_score || 0);
+      });
+      return { key, items };
+    });
+  }, [dedupStats.uniqueRows, dedupStats.tradeDates, dedupStats.latestByCode]);
 
   const detailCount = groupedItems.reduce((sum, g) => sum + g.items.length, 0);
-  const totalCount = useMemo(() => {
-    const codes = new Set<string>();
-    for (const group of groupedItems) {
-      for (const item of group.items) {
-        const code = normalizeStockCode(item.stock_id);
-        if (code) codes.add(code);
-      }
-    }
-    return codes.size;
-  }, [groupedItems]);
+  const totalCount = detailCount;
 
   return (
     <div className="workspace-page strong-watch-page">
@@ -191,7 +256,11 @@ export function StrongStockWatchPage() {
         </label>
         <div className="strong-watch-summary">
           <strong>{totalCount}</strong>
-          <span>{windowDays}日去重强势股（明细 {detailCount} 条）</span>
+          <span>{windowDays}个交易日在池强势股展示（明细 {detailCount} 条）</span>
+          <span>debug: watch-page-v2026-04-30-bff-only</span>
+          <span>
+            原始 {dedupStats.rawCount} / 过滤后 {dedupStats.filteredCount} / 去重后 {dedupStats.dedupedCount} / 去重移除 {dedupStats.removedCount}
+          </span>
         </div>
       </section>
 
@@ -209,38 +278,36 @@ export function StrongStockWatchPage() {
                 <span>共{group.items.length}只</span>
               </header>
               <div className="strong-watch-board-col-body strong-watch-market-body">
-                {globalLevels.map((level) => {
-                  const items = group.levelMap.get(level) ?? [];
-                  return (
-                    <div key={`${group.key}-lv-${level}`} className="strong-watch-level-row">
-                      <div className="strong-watch-level-tag">{level === "break" ? "断板" : `${level}板`}</div>
-                      <div className="strong-watch-level-content">
-                        {items.length === 0 ? (
-                          <div className="strong-watch-level-empty">--</div>
-                        ) : (
-                          items.map((item) => (
-                            <button
-                              key={`${group.key}-${item.stock_id}-${level}`}
-                              type="button"
-                              className={`strong-watch-market-item ${toneClass(item)}`}
-                              onClick={() =>
-                                navigateTo(
-                                  `/intel/strong-stocks/detail?stock_id=${encodeURIComponent(item.stock_id)}&date=${encodeURIComponent(
-                                    date,
-                                  )}&window_days=${windowDays}`,
-                                )
-                              }
-                            >
-                              <strong>{item.stock_name}</strong>
-                              <span>{formatPct(item.pct_chg)}</span>
-                              <em>{item.theme_name || item.subject_key || "--"}</em>
-                            </button>
-                          ))
-                        )}
-                      </div>
-                    </div>
-                  );
-                })}
+                <div className="strong-watch-level-row">
+                  <div className="strong-watch-level-tag"></div>
+                  <div className="strong-watch-level-content">
+                    {group.items.length === 0 ? (
+                      <div className="strong-watch-level-empty">--</div>
+                    ) : (
+                      group.items.map((item) => (
+                        <button
+                          key={`${group.key}-${item.stock_id}`}
+                          type="button"
+                          className={`strong-watch-market-item ${toneClass(item)}`}
+                          onClick={() =>
+                            navigateTo(
+                              `/intel/strong-stocks/detail?stock_id=${encodeURIComponent(item.stock_id)}&date=${encodeURIComponent(
+                                date,
+                              )}&window_days=${windowDays}`,
+                            )
+                          }
+                        >
+                          <strong>{item.stock_name}</strong>
+                          <span className="strong-watch-pct">{formatPct(parsePctChg(item))}</span>
+                          <span className="strong-watch-board">
+                            {boardLabel(parseBoardLevel(dedupStats.latestByCode.get(normalizeStockCode(item.stock_id)) ?? item))}
+                          </span>
+                          <em>{item.theme_name || item.subject_key || "--"}</em>
+                        </button>
+                      ))
+                    )}
+                  </div>
+                </div>
               </div>
             </article>
           ))}

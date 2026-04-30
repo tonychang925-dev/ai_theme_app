@@ -396,6 +396,164 @@ class DatabaseGateway:
             logger.error(f"读取 post_market_recap_snapshot 失败 trade_date={trade_date}: {e}")
             raise
 
+    async def get_latest_post_market_recap_trade_date(self):
+        try:
+            start_time = time.time()
+            result = await self._client.get_latest_post_market_recap_trade_date()
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 post_market_recap_snapshot 最新日期失败: {e}")
+            raise
+
+    async def get_latest_pre_market_brief_trade_date(self):
+        try:
+            start_time = time.time()
+            result = await self._client.get_latest_pre_market_brief_trade_date()
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 pre_market_brief_snapshot 最新日期失败: {e}")
+            raise
+
+    async def infer_confirm_trade_date_from_candidate_trade_date(self, candidate_trade_date):
+        try:
+            start_time = time.time()
+            result = await self._client.infer_confirm_trade_date_from_candidate_trade_date(candidate_trade_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"推断候选确认交易日失败 candidate_trade_date={candidate_trade_date}: {e}")
+            raise
+
+    async def get_w2s_candidates_by_trade_date(self, candidate_trade_date, limit: int = 200) -> List[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            result = await self._client.get_w2s_candidates_by_trade_date(candidate_trade_date, limit=limit)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取弱转强候选失败 trade_date={candidate_trade_date}: {e}")
+            raise
+
+    async def get_w2s_signals_by_trade_date(self, trade_date) -> List[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            result = await self._client.get_w2s_signals_by_trade_date(trade_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取弱转强信号失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def get_w2s_candidates_for_confirm_date(self, confirm_trade_date, limit: int = 200) -> List[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            result = await self._client.get_w2s_candidates_for_confirm_date(confirm_trade_date, limit=limit)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取确认日弱转强候选失败 confirm_trade_date={confirm_trade_date}: {e}")
+            raise
+
+    async def count_w2s_candidates_for_confirm_date(self, confirm_trade_date) -> int:
+        try:
+            start_time = time.time()
+            result = await self._client.count_w2s_candidates_for_confirm_date(confirm_trade_date)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"统计确认日候选失败 confirm_trade_date={confirm_trade_date}: {e}")
+            raise
+
+    async def count_w2s_formal_candidates_for_confirm_date(self, confirm_trade_date) -> int:
+        try:
+            start_time = time.time()
+            result = await self._client.count_w2s_formal_candidates_for_confirm_date(confirm_trade_date)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"统计确认日 formal 候选失败 confirm_trade_date={confirm_trade_date}: {e}")
+            raise
+
+    async def get_w2s_candidates_by_ids(self, candidate_ids: List[int]) -> List[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            result = await self._client.get_w2s_candidates_by_ids(candidate_ids)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"按ID读取弱转强候选失败: {e}")
+            raise
+
+    async def get_w2s_snapshot_coverage(self, confirm_trade_date) -> Dict[str, int]:
+        try:
+            start_time = time.time()
+            result = await self._client.get_w2s_snapshot_coverage(confirm_trade_date)
+            self._record_request(True, start_time)
+            return dict(result or {})
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取竞价快照覆盖率失败 confirm_trade_date={confirm_trade_date}: {e}")
+            raise
+
+    async def get_latest_strong_watch_trade_date(self):
+        try:
+            start_time = time.time()
+            result = await self._client.get_latest_strong_watch_trade_date()
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 strong_stock_watch_history 最新日期失败: {e}")
+            raise
+
+    async def get_trade_dates_before_or_on(self, end_date, limit: int = 7) -> List:
+        try:
+            start_time = time.time()
+            result = await self._client.get_trade_dates_before_or_on(end_date, limit=limit)
+            self._record_request(True, start_time)
+            return list(result or [])
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取交易日窗口失败 end_date={end_date}, limit={limit}: {e}")
+            raise
+
+    async def get_strong_stock_watch_view_rows(
+        self,
+        end_date,
+        window_days: int = 7,
+        include_removed: bool = False,
+        latest_per_stock: bool = True,
+        stock_id: str | None = None,
+        limit: int = 200,
+    ) -> List[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            result = await self._client.get_strong_stock_watch_view_rows(
+                end_date=end_date,
+                window_days=window_days,
+                include_removed=include_removed,
+                latest_per_stock=latest_per_stock,
+                stock_id=stock_id,
+                limit=limit,
+            )
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 strong_watch_view 失败 end_date={end_date}: {e}")
+            raise
+
     async def get_mainline_identity_by_subject_keys(self, subject_keys: List[str], trade_date) -> List[Dict[str, Any]]:
         """股票域显式读取：Layer A 主线身份真源。"""
         try:
@@ -1125,9 +1283,14 @@ class DatabaseGateway:
             
             # 添加表结构信息
             if self._config.db_type.value != "memory":
+                table_names = getattr(self._config, "table_names", {})
+                if isinstance(table_names, dict):
+                    theme_table = table_names.get("theme_master", "theme_master")
+                else:
+                    theme_table = getattr(table_names, "theme_master", "theme_master")
                 stats['schema'] = {
                     'version': '28_fields_v1',
-                    'theme_table': self._config.table_names.theme_master,
+                    'theme_table': theme_table,
                     'has_code_field': True,
                     'has_category_fields': True,
                     'has_tags_field': True

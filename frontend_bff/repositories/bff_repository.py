@@ -6,8 +6,8 @@ import re
 from datetime import date
 from pathlib import Path
 from typing import Any, Dict, List, Optional
-
-import asyncpg
+from database_service.config import DatabaseConfig, DatabaseType
+from database_service.gateway import DatabaseGateway
 
 from stock_service.config import DEFAULT_CONFIG
 from stock_service.repositories.report_repository import ReportRepository
@@ -62,17 +62,24 @@ class FrontendBffRepository:
         self.phase1_repo = Phase1ReadRepository(database_url=database_url)
         self.report_repo = ReportRepository(DEFAULT_CONFIG)
         self.recap_service = RecapService(self.report_repo)
+        self._db_gateway: DatabaseGateway | None = None
 
     async def initialize(self) -> None:
         await self.phase1_repo.initialize()
         await self.report_repo.initialize()
+        if self._db_gateway is None:
+            cfg = DatabaseConfig(
+                db_type=DatabaseType.POSTGRESQL,
+                postgres_database=os.getenv("POSTGRES_DATABASE", "stock_data_test"),
+            )
+            self._db_gateway = await DatabaseGateway.initialize(config=cfg, auto_warm_cache=False)
 
     async def close(self) -> None:
         await self.phase1_repo.close()
         await self.report_repo.close()
 
     @property
-    def _pool(self) -> asyncpg.Pool:
+    def _pool(self):
         return self.phase1_repo._pool
 
     def _load_abnormal_fallback_lines(self, trade_date: str) -> List[str]:
@@ -236,7 +243,7 @@ class FrontendBffRepository:
     ) -> Dict[str, Any]:
         await self.initialize()
         safe_window = min(max(int(window_days), 1), 30)
-        safe_limit = min(max(int(limit), 1), 500)
+        safe_limit = min(max(int(limit), 1), 5000)
 
         if trade_date:
             try:
@@ -244,355 +251,31 @@ class FrontendBffRepository:
             except ValueError:
                 raise ValueError(f"invalid trade_date: {trade_date}")
         else:
-            sql_latest = """
-            SELECT MAX(trade_date) AS trade_date
-            FROM strong_stock_watch_history
-            """
-            async with self._pool.acquire() as conn:
-                self._audit_and_guard_sql(endpoint="fetch_strong_stock_watch_view.latest_date", sql=sql_latest)
-                latest = await conn.fetchval(sql_latest)
+            latest = None
+            if self._db_gateway is not None:
+                latest = await self._db_gateway.get_latest_strong_watch_trade_date()
             end_date = latest or date.today()
 
-        if not include_removed:
-            # 默认口径：
-            # 1) 仅展示当前仍在池内（active/weakening）的股票
-            # 2) 每只股票只展示历史真实首次入选日（MIN(history.trade_date)）
-            #    不使用 pool.watch_start_date（该字段可能被重置为最新日）
-            sql = """
-            WITH selected_trade_dates AS (
-                SELECT DISTINCT trade_date
-                FROM strong_stock_watch_history
-                WHERE trade_date <= $1::date
-                ORDER BY trade_date DESC
-                LIMIT $2
-            ),
-            window_first_seen AS (
-                SELECT
-                    split_part(h.stock_id, '.', 1) AS stock_code,
-                    MIN(h.trade_date) AS first_trade_date
-                FROM strong_stock_watch_history h
-                WHERE h.watch_status IN ('active', 'weakening')
-                  AND h.trade_date <= $1::date
-                GROUP BY split_part(h.stock_id, '.', 1)
-                HAVING MIN(h.trade_date) IN (SELECT trade_date FROM selected_trade_dates)
-            ),
-            latest_history AS (
-                SELECT DISTINCT ON (split_part(h.stock_id, '.', 1))
-                    split_part(h.stock_id, '.', 1) AS stock_code,
-                    h.trade_date,
-                    h.stock_id,
-                    h.stock_name,
-                    h.subject_key,
-                    h.theme_name,
-                    h.watch_status,
-                    h.watch_score,
-                    h.watch_priority,
-                    h.relay_role,
-                    h.pool_entry_type,
-                    h.cycle_state,
-                    h.mainline_strength_score,
-                    h.fade_watch,
-                    h.fade_confirmed,
-                    h.promoted_to_candidate,
-                    h.support_type,
-                    h.support_level,
-                    h.support_score,
-                    h.labels_json,
-                    h.evidence_json
-                FROM strong_stock_watch_history h
-                JOIN window_first_seen w
-                  ON w.stock_code = split_part(h.stock_id, '.', 1)
-                WHERE h.trade_date <= $1::date
-                ORDER BY
-                    split_part(h.stock_id, '.', 1),
-                    h.trade_date DESC,
-                    h.watch_score DESC NULLS LAST,
-                    h.watch_priority DESC NULLS LAST
-            ),
-            pool_state AS (
-                SELECT
-                    p.*,
-                    split_part(p.stock_id, '.', 1) AS stock_code
-                FROM strong_stock_watch_pool p
-            ),
-            ranked AS (
-                SELECT
-                    w.first_trade_date::text AS trade_date,
-                    COALESCE(p.stock_id, h.stock_id) AS stock_id,
-                    COALESCE(NULLIF(BTRIM(p.stock_name), ''), h.stock_name) AS stock_name,
-                    COALESCE(NULLIF(BTRIM(p.subject_key), ''), h.subject_key) AS subject_key,
-                    COALESCE(
-                        CASE
-                            WHEN NULLIF(BTRIM(p.theme_name), '') IS NULL THEN NULL
-                            WHEN BTRIM(p.theme_name) ~ '^[0-9]+$' THEN NULL
-                            ELSE BTRIM(p.theme_name)
-                        END,
-                        CASE
-                            WHEN NULLIF(BTRIM(v.theme_name), '') IS NULL THEN NULL
-                            WHEN BTRIM(v.theme_name) ~ '^[0-9]+$' THEN NULL
-                            ELSE BTRIM(v.theme_name)
-                        END,
-                        CASE
-                            WHEN NULLIF(BTRIM(h.theme_name), '') IS NULL THEN NULL
-                            WHEN BTRIM(h.theme_name) ~ '^[0-9]+$' THEN NULL
-                            ELSE BTRIM(h.theme_name)
-                        END,
-                        COALESCE(NULLIF(BTRIM(p.subject_key), ''), h.subject_key)
-                    ) AS theme_name,
-                    COALESCE(p.watch_status, h.watch_status) AS watch_status,
-                    COALESCE(p.watch_score, h.watch_score) AS watch_score,
-                    COALESCE(p.watch_priority, h.watch_priority) AS watch_priority,
-                    COALESCE(p.relay_role, h.relay_role) AS relay_role,
-                    COALESCE(p.pool_entry_type, h.pool_entry_type) AS pool_entry_type,
-                    COALESCE(p.cycle_state, h.cycle_state) AS cycle_state,
-                    COALESCE(p.mainline_strength_score, h.mainline_strength_score) AS mainline_strength_score,
-                    COALESCE(p.fade_watch, h.fade_watch) AS fade_watch,
-                    COALESCE(p.fade_confirmed, h.fade_confirmed) AS fade_confirmed,
-                    COALESCE(p.candidate_promoted, h.promoted_to_candidate) AS promoted_to_candidate,
-                    COALESCE(p.support_type, h.support_type) AS support_type,
-                    COALESCE(p.support_level, h.support_level) AS support_level,
-                    COALESCE(p.support_score, h.support_score) AS support_score,
-                    COALESCE(p.labels_json, h.labels_json) AS labels_json,
-                    COALESCE(p.evidence_json, h.evidence_json) AS evidence_json,
-                    w.first_trade_date::text AS watch_start_date,
-                    COALESCE(p.last_trade_date, h.trade_date)::text AS last_trade_date,
-                    COALESCE(p.watch_window_days, 1) AS watch_window_days,
-                    s.pct_chg,
-                    CASE
-                        WHEN jsonb_typeof(s.raw_json) = 'array' AND jsonb_array_length(s.raw_json) > 20
-                            THEN NULLIF(s.raw_json->>20, '')::integer
-                        ELSE NULL
-                    END AS current_flag,
-                    NULL::numeric AS turnover_rate,
-                    COALESCE(NULLIF(s.raw_json->>35, ''), '0')::numeric AS main_net_inflow,
-                    ROW_NUMBER() OVER (
-                        PARTITION BY w.stock_code
-                        ORDER BY COALESCE(p.watch_score, h.watch_score) DESC, COALESCE(p.watch_priority, h.watch_priority) DESC, COALESCE(p.last_trade_date, h.trade_date) DESC
-                    ) AS stock_rn
-                FROM window_first_seen w
-                JOIN latest_history h
-                  ON h.stock_code = w.stock_code
-                LEFT JOIN pool_state p
-                  ON p.stock_code = w.stock_code
-                LEFT JOIN subject_stock_daily_snapshot s
-                  ON s.trade_date = COALESCE(p.last_trade_date, h.trade_date)
-                 AND split_part(s.stock_id, '.', 1) = w.stock_code
-                LEFT JOIN LATERAL (
-                    SELECT theme_name
-                    FROM vw_subject_theme_binding v
-                    WHERE v.subject_key = COALESCE(NULLIF(BTRIM(p.subject_key), ''), h.subject_key)
-                    ORDER BY theme_name
-                    LIMIT 1
-                ) v ON TRUE
-                WHERE w.stock_code !~ '^688'
-                  AND UPPER(COALESCE(NULLIF(BTRIM(COALESCE(p.stock_name, h.stock_name)), ''), '')) NOT LIKE 'ST%'
-                  AND UPPER(COALESCE(NULLIF(BTRIM(COALESCE(p.stock_name, h.stock_name)), ''), '')) NOT LIKE '*ST%'
-                  AND ($3::text IS NULL OR w.stock_code = split_part($3::text, '.', 1))
-            )
-            SELECT
-                trade_date,
-                stock_id,
-                stock_name,
-                subject_key,
-                theme_name,
-                watch_status,
-                watch_score,
-                watch_priority,
-                relay_role,
-                pool_entry_type,
-                cycle_state,
-                mainline_strength_score,
-                fade_watch,
-                fade_confirmed,
-                promoted_to_candidate,
-                support_type,
-                support_level,
-                support_score,
-                labels_json,
-                evidence_json,
-                watch_start_date,
-                last_trade_date,
-                watch_window_days,
-                pct_chg,
-                current_flag,
-                turnover_rate,
-                main_net_inflow
-            FROM ranked
-            WHERE stock_rn = 1
-            ORDER BY theme_name ASC, watch_start_date DESC, watch_score DESC, watch_priority DESC
-            LIMIT $4
-            """
-            async with self._pool.acquire() as conn:
-                self._audit_and_guard_sql(endpoint="fetch_strong_stock_watch_view.active_only", sql=sql)
-                rows = await conn.fetch(
-                    sql,
-                    end_date,
-                    safe_window,
-                    stock_id,
-                    safe_limit,
-                )
-        else:
-            sql = """
-            WITH selected_trade_dates AS (
-                SELECT DISTINCT trade_date
-                FROM strong_stock_watch_history
-                WHERE trade_date <= $1::date
-                ORDER BY trade_date DESC
-                LIMIT $2
-            ),
-            base AS (
-                SELECT
-                    h.trade_date,
-                    h.stock_id,
-                    h.stock_name,
-                    h.subject_key,
-                    CASE
-                        WHEN NULLIF(BTRIM(h.theme_name), '') IS NULL THEN NULL
-                        WHEN BTRIM(h.theme_name) ~ '^[0-9]+$' THEN NULL
-                        ELSE BTRIM(h.theme_name)
-                    END AS raw_theme_name,
-                    h.watch_status,
-                    h.watch_score,
-                    h.watch_priority,
-                    h.relay_role,
-                    h.pool_entry_type,
-                    h.cycle_state,
-                    h.mainline_strength_score,
-                    h.fade_watch,
-                    h.fade_confirmed,
-                    h.promoted_to_candidate,
-                    h.support_type,
-                    h.support_level,
-                    h.support_score,
-                    h.labels_json,
-                    h.evidence_json,
-                    p.watch_start_date,
-                    p.last_trade_date,
-                    p.watch_window_days,
-                    s.pct_chg,
-                    CASE
-                        WHEN jsonb_typeof(s.raw_json) = 'array' AND jsonb_array_length(s.raw_json) > 20
-                            THEN NULLIF(s.raw_json->>20, '')::integer
-                        ELSE NULL
-                    END AS current_flag,
-                    NULL::numeric AS turnover_rate,
-                    COALESCE(NULLIF(s.raw_json->>35, ''), '0')::numeric AS main_net_inflow,
-                    ROW_NUMBER() OVER (
-                        PARTITION BY split_part(h.stock_id, '.', 1)
-                        ORDER BY h.trade_date DESC, h.watch_score DESC, h.watch_priority DESC
-                    ) AS rn,
-                    ROW_NUMBER() OVER (
-                        PARTITION BY h.trade_date, split_part(h.stock_id, '.', 1)
-                        ORDER BY h.watch_score DESC, h.watch_priority DESC
-                    ) AS day_rn
-                FROM strong_stock_watch_history h
-                LEFT JOIN strong_stock_watch_pool p
-                  ON split_part(p.stock_id, '.', 1) = split_part(h.stock_id, '.', 1)
-                LEFT JOIN subject_stock_daily_snapshot s
-                  ON s.trade_date = h.trade_date
-                 AND split_part(s.stock_id, '.', 1) = split_part(h.stock_id, '.', 1)
-                WHERE h.trade_date IN (SELECT trade_date FROM selected_trade_dates)
-                  AND ($3::boolean OR h.watch_status IN ('active', 'weakening'))
-                  AND split_part(h.stock_id, '.', 1) !~ '^688'
-                  AND UPPER(COALESCE(h.stock_name, '')) NOT LIKE 'ST%'
-                  AND UPPER(COALESCE(h.stock_name, '')) NOT LIKE '*ST%'
-                  AND ($5::text IS NULL OR split_part(h.stock_id, '.', 1) = split_part($5::text, '.', 1))
-            )
-            SELECT
-                b.trade_date::text AS trade_date,
-                b.stock_id,
-                b.stock_name,
-                b.subject_key,
-                COALESCE(
-                    b.raw_theme_name,
-                    CASE
-                        WHEN NULLIF(BTRIM(v.theme_name), '') IS NULL THEN NULL
-                        WHEN BTRIM(v.theme_name) ~ '^[0-9]+$' THEN NULL
-                        ELSE BTRIM(v.theme_name)
-                    END,
-                    b.subject_key
-                ) AS theme_name,
-                b.watch_status,
-                b.watch_score,
-                b.watch_priority,
-                b.relay_role,
-                b.pool_entry_type,
-                b.cycle_state,
-                b.mainline_strength_score,
-                b.fade_watch,
-                b.fade_confirmed,
-                b.promoted_to_candidate,
-                b.support_type,
-                b.support_level,
-                b.support_score,
-                b.labels_json,
-                b.evidence_json,
-                b.watch_start_date::text AS watch_start_date,
-                b.last_trade_date::text AS last_trade_date,
-                b.watch_window_days,
-                b.pct_chg,
-                b.current_flag,
-                b.turnover_rate,
-                b.main_net_inflow
-            FROM base b
-            LEFT JOIN LATERAL (
-                SELECT theme_name
-                FROM vw_subject_theme_binding v
-                WHERE v.subject_key = b.subject_key
-                ORDER BY theme_name
-                LIMIT 1
-            ) v ON TRUE
-            WHERE b.day_rn = 1
-              AND ($4::boolean = FALSE OR b.rn = 1)
-            ORDER BY theme_name ASC, b.trade_date DESC, b.watch_score DESC, b.watch_priority DESC
-            LIMIT $6
-            """
-            async with self._pool.acquire() as conn:
-                self._audit_and_guard_sql(endpoint="fetch_strong_stock_watch_view.include_removed", sql=sql)
-                rows = await conn.fetch(
-                    sql,
-                    end_date,
-                    safe_window,
-                    include_removed,
-                    latest_per_stock,
-                    stock_id,
-                    safe_limit,
-                )
+        if self._db_gateway is None:
+            return {
+                "date_from": end_date.isoformat(),
+                "date_to": end_date.isoformat(),
+                "window_days": safe_window,
+                "latest_per_stock": bool(latest_per_stock),
+                "include_removed": bool(include_removed),
+                "count": 0,
+                "items": [],
+                "diagnostics": {"partial": True, "source": "gateway_unavailable"},
+            }
 
-        items: List[Dict[str, Any]] = []
-        for row in rows:
-            item = dict(row)
-            labels_json = item.get("labels_json")
-            evidence_json = item.get("evidence_json")
-            if isinstance(labels_json, str):
-                try:
-                    labels_json = json.loads(labels_json)
-                except Exception:
-                    labels_json = {}
-            if isinstance(evidence_json, str):
-                try:
-                    evidence_json = json.loads(evidence_json)
-                except Exception:
-                    evidence_json = {}
-            if not isinstance(labels_json, dict):
-                labels_json = {}
-            if not isinstance(evidence_json, dict):
-                evidence_json = {}
-
-            reason_parts: List[str] = []
-            if labels_json.get("seed_reason"):
-                reason_parts.append(str(labels_json.get("seed_reason")))
-            relay_role = item.get("relay_role")
-            if relay_role:
-                reason_parts.append(f"角色:{relay_role}")
-            if item.get("watch_status"):
-                reason_parts.append(f"状态:{item.get('watch_status')}")
-            selected_reason = " | ".join(reason_parts) if reason_parts else "系统自动纳入强势股跟踪池"
-
-            item["labels_json"] = labels_json
-            item["evidence_json"] = evidence_json
-            item["selected_reason"] = selected_reason
-            items.append(item)
+        items = await self._db_gateway.get_strong_stock_watch_view_rows(
+            end_date=end_date,
+            window_days=safe_window,
+            include_removed=bool(include_removed),
+            latest_per_stock=bool(latest_per_stock),
+            stock_id=stock_id,
+            limit=safe_limit,
+        )
 
         trade_dates = sorted({str(item.get("trade_date") or "") for item in items if str(item.get("trade_date") or "")})
         date_from = trade_dates[0] if trade_dates else end_date.isoformat()
@@ -608,6 +291,8 @@ class FrontendBffRepository:
             "diagnostics": {
                 "partial": False,
                 "source": "strong_stock_watch_history",
+                "request_limit": safe_limit,
+                "likely_truncated": len(items) >= safe_limit,
             },
         }
 
@@ -1220,221 +905,81 @@ class FrontendBffRepository:
 
     async def resolve_prev_trade_date(self, trade_date: date) -> date:
         await self.initialize()
-        sql = """
-        SELECT MAX(trade_date) AS prev_trade_date
-        FROM subject_stock_daily_snapshot
-        WHERE trade_date < $1::date
-        """
-        self._audit_and_guard_sql(endpoint="resolve_prev_trade_date", sql=sql)
-        async with self._pool.acquire() as conn:
-            prev_day = await conn.fetchval(sql, trade_date)
+        if self._db_gateway is None:
+            return trade_date
+        cal = await self._db_gateway.get_trade_calendar(trade_date)
+        prev_day = (cal or {}).get("prev_trade_date") if isinstance(cal, dict) else None
         return prev_day or trade_date
 
     async def resolve_next_trade_date(self, trade_date: date) -> Optional[date]:
         await self.initialize()
-        sql = """
-        SELECT MIN(trade_date) AS next_trade_date
-        FROM subject_stock_daily_snapshot
-        WHERE trade_date > $1::date
-        """
-        self._audit_and_guard_sql(endpoint="resolve_next_trade_date", sql=sql)
-        async with self._pool.acquire() as conn:
-            return await conn.fetchval(sql, trade_date)
+        if self._db_gateway is None:
+            return None
+        cal = await self._db_gateway.get_trade_calendar(trade_date)
+        return (cal or {}).get("next_trade_date") if isinstance(cal, dict) else None
 
     async def fetch_recap_defaults(self) -> Dict[str, Any]:
-        await self.report_repo.initialize()
-        sql_frozen = """
-        SELECT
-          (SELECT MAX(trade_date)::text FROM post_market_recap_snapshot) AS latest_post_market_date,
-          (SELECT MAX(trade_date)::text FROM pre_market_brief_snapshot) AS latest_pre_market_date
-        """
-        sql_legacy_fallback = """
-        SELECT
-          (SELECT MAX(trade_date)::text FROM theme_cycle_judgement_v2) AS latest_post_market_date,
-          (SELECT MAX(trade_date)::text FROM pre_market_execution_plan) AS latest_pre_market_date
-        """
-        assert self.report_repo.pool is not None
-        async with self.report_repo.pool.acquire() as conn:
-            self._audit_and_guard_sql(endpoint="fetch_recap_defaults.frozen", sql=sql_frozen)
-            row = await conn.fetchrow(sql_frozen)
-            payload = dict(row) if row else {}
-
-            # Transition fallback: keep legacy defaults only when strict-block is disabled.
-            # This preserves current business continuity while frozen snapshots warm up.
-            if (
-                not BFF_STRICT_FROZEN_OBJECT_READ
-                and not payload.get("latest_post_market_date")
-                and not payload.get("latest_pre_market_date")
-            ):
-                self._audit_and_guard_sql(endpoint="fetch_recap_defaults.legacy_fallback", sql=sql_legacy_fallback)
-                legacy_row = await conn.fetchrow(sql_legacy_fallback)
-                legacy_payload = dict(legacy_row) if legacy_row else {}
-                payload["latest_post_market_date"] = legacy_payload.get("latest_post_market_date")
-                payload["latest_pre_market_date"] = legacy_payload.get("latest_pre_market_date")
-
+        await self.initialize()
+        latest_post = None
+        latest_pre = None
+        if self._db_gateway is not None:
+            latest_post = await self._db_gateway.get_latest_post_market_recap_trade_date()
+            latest_pre = await self._db_gateway.get_latest_pre_market_brief_trade_date()
         return {
-            "latest_post_market_date": payload.get("latest_post_market_date"),
-            "latest_pre_market_date": payload.get("latest_pre_market_date"),
+            "latest_post_market_date": str(latest_post) if latest_post else None,
+            "latest_pre_market_date": str(latest_pre) if latest_pre else None,
         }
 
     async def infer_confirm_trade_date_from_candidate_trade_date(
         self, candidate_trade_date: date
     ) -> Optional[date]:
         await self.initialize()
-        sql = """
-        SELECT MAX(next_trade_date) AS confirm_trade_date
-        FROM weak_to_strong_candidate_pool
-        WHERE trade_date = $1::date
-          AND next_trade_date > $1::date
-        """
-        self._audit_and_guard_sql(
-            endpoint="infer_confirm_trade_date_from_candidate_trade_date",
-            sql=sql,
-        )
-        async with self._pool.acquire() as conn:
-            return await conn.fetchval(sql, candidate_trade_date)
+        if self._db_gateway is None:
+            return None
+        return await self._db_gateway.infer_confirm_trade_date_from_candidate_trade_date(candidate_trade_date)
 
     async def fetch_w2s_candidates_by_trade_date(
         self, candidate_trade_date: date, limit: int = 200
     ) -> List[Dict[str, Any]]:
         await self.initialize()
-        sql = """
-        SELECT
-          id,
-          trade_date,
-          next_trade_date,
-          stock_id,
-          stock_name,
-          subject_key,
-          theme_name,
-          candidate_score,
-          pool_entry_type,
-          candidate_type,
-          weak_type,
-          support_type,
-          support_strength,
-          expected_open_low,
-          expected_open_high,
-          evidence_json
-        FROM weak_to_strong_candidate_pool
-        WHERE trade_date = $1::date
-        ORDER BY candidate_score DESC, id ASC
-        LIMIT $2
-        """
-        self._audit_and_guard_sql(endpoint="fetch_w2s_candidates_by_trade_date", sql=sql)
-        async with self._pool.acquire() as conn:
-            rows = await conn.fetch(sql, candidate_trade_date, max(int(limit), 1))
-        return [dict(r) for r in rows]
+        if self._db_gateway is None:
+            return []
+        return await self._db_gateway.get_w2s_candidates_by_trade_date(candidate_trade_date, limit=max(int(limit), 1))
 
     async def fetch_w2s_candidates_for_confirm_date(
         self, confirm_trade_date: date, limit: int = 200
     ) -> List[Dict[str, Any]]:
         await self.initialize()
-        sql = """
-        SELECT
-          id,
-          trade_date,
-          next_trade_date,
-          stock_id,
-          stock_name,
-          subject_key,
-          theme_name,
-          candidate_score,
-          pool_entry_type,
-          candidate_type,
-          weak_type,
-          support_type,
-          support_strength,
-          expected_open_low,
-          expected_open_high,
-          evidence_json
-        FROM weak_to_strong_candidate_pool
-        WHERE next_trade_date = $1::date
-        ORDER BY candidate_score DESC, id ASC
-        LIMIT $2
-        """
-        self._audit_and_guard_sql(endpoint="fetch_w2s_candidates_for_confirm_date", sql=sql)
-        async with self._pool.acquire() as conn:
-            rows = await conn.fetch(sql, confirm_trade_date, max(int(limit), 1))
-        return [dict(r) for r in rows]
+        if self._db_gateway is None:
+            return []
+        return await self._db_gateway.get_w2s_candidates_for_confirm_date(
+            confirm_trade_date, limit=max(int(limit), 1)
+        )
 
     async def count_w2s_candidates_for_confirm_date(self, confirm_trade_date: date) -> int:
         await self.initialize()
-        sql = """
-        SELECT COUNT(*)::int AS cnt
-        FROM weak_to_strong_candidate_pool
-        WHERE next_trade_date = $1::date
-        """
-        self._audit_and_guard_sql(endpoint="count_w2s_candidates_for_confirm_date", sql=sql)
-        async with self._pool.acquire() as conn:
-            return int(await conn.fetchval(sql, confirm_trade_date) or 0)
+        if self._db_gateway is None:
+            return 0
+        return int(await self._db_gateway.count_w2s_candidates_for_confirm_date(confirm_trade_date) or 0)
 
     async def count_w2s_formal_candidates_for_confirm_date(self, confirm_trade_date: date) -> int:
         await self.initialize()
-        sql = """
-        SELECT COUNT(*)::int AS cnt
-        FROM weak_to_strong_candidate_pool
-        WHERE next_trade_date = $1::date
-          AND COALESCE(NULLIF(LOWER(pool_entry_type), ''), 'formal') = 'formal'
-        """
-        self._audit_and_guard_sql(endpoint="count_w2s_formal_candidates_for_confirm_date", sql=sql)
-        async with self._pool.acquire() as conn:
-            return int(await conn.fetchval(sql, confirm_trade_date) or 0)
+        if self._db_gateway is None:
+            return 0
+        return int(await self._db_gateway.count_w2s_formal_candidates_for_confirm_date(confirm_trade_date) or 0)
 
     async def fetch_w2s_candidates_by_ids(self, candidate_ids: List[int]) -> List[Dict[str, Any]]:
         await self.initialize()
         cleaned_ids = sorted({int(item) for item in candidate_ids if int(item) > 0})
-        if not cleaned_ids:
+        if not cleaned_ids or self._db_gateway is None:
             return []
-        sql = """
-        SELECT
-          id,
-          trade_date,
-          next_trade_date,
-          stock_id,
-          stock_name,
-          subject_key,
-          theme_name,
-          candidate_score,
-          pool_entry_type,
-          candidate_type,
-          weak_type,
-          support_type,
-          support_strength,
-          expected_open_low,
-          expected_open_high,
-          evidence_json
-        FROM weak_to_strong_candidate_pool
-        WHERE id = ANY($1::int[])
-        ORDER BY candidate_score DESC, id ASC
-        """
-        self._audit_and_guard_sql(endpoint="fetch_w2s_candidates_by_ids", sql=sql)
-        async with self._pool.acquire() as conn:
-            rows = await conn.fetch(sql, cleaned_ids)
-        return [dict(r) for r in rows]
+        return await self._db_gateway.get_w2s_candidates_by_ids(cleaned_ids)
 
     async def fetch_w2s_signals(self, trade_date: date) -> Dict[int, Dict[str, Any]]:
         await self.initialize()
-        sql = """
-        SELECT
-          candidate_id,
-          signal_level,
-          decision,
-          confirmation_score,
-          auction_open_pct,
-          auction_close_pct,
-          auction_pattern,
-          last_minute_grab_score,
-          plate_follow_score,
-          risk_penalty,
-          data_status,
-          evidence_json
-        FROM weak_to_strong_auction_signal
-        WHERE trade_date = $1::date
-        """
-        self._audit_and_guard_sql(endpoint="fetch_w2s_signals", sql=sql)
-        async with self._pool.acquire() as conn:
-            rows = await conn.fetch(sql, trade_date)
+        if self._db_gateway is None:
+            return {}
+        rows = await self._db_gateway.get_w2s_signals_by_trade_date(trade_date)
         payload: Dict[int, Dict[str, Any]] = {}
         for row in rows:
             payload[int(row["candidate_id"])] = dict(row)
@@ -1442,22 +987,6 @@ class FrontendBffRepository:
 
     async def get_w2s_snapshot_coverage(self, confirm_trade_date: date) -> Dict[str, int]:
         await self.initialize()
-        sql = """
-        SELECT
-          COUNT(*)::int AS candidate_cnt,
-          COUNT(*) FILTER (WHERE s.stock_id IS NOT NULL)::int AS snapshot_hit_cnt
-        FROM weak_to_strong_candidate_pool c
-        LEFT JOIN pre_market_auction_snapshot s
-          ON split_part(s.stock_id, '.', 1) = split_part(c.stock_id, '.', 1)
-         AND s.trade_date = c.next_trade_date
-        WHERE c.next_trade_date = $1::date
-          AND COALESCE(NULLIF(LOWER(c.pool_entry_type), ''), 'formal') = 'formal'
-        """
-        self._audit_and_guard_sql(endpoint="get_w2s_snapshot_coverage", sql=sql)
-        async with self._pool.acquire() as conn:
-            row = await conn.fetchrow(sql, confirm_trade_date)
-        row_map = dict(row) if row else {}
-        return {
-            "candidate_cnt": int(row_map.get("candidate_cnt") or 0),
-            "snapshot_hit_cnt": int(row_map.get("snapshot_hit_cnt") or 0),
-        }
+        if self._db_gateway is None:
+            return {"candidate_cnt": 0, "snapshot_hit_cnt": 0}
+        return await self._db_gateway.get_w2s_snapshot_coverage(confirm_trade_date)

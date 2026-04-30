@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import type { MarketReportView } from "../../lib/api";
-import { fetchRecap } from "../../lib/api";
+import { fetchRecapV2OrFallback } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
 
 const DISPLAY_REPLACEMENTS: Array<[string, string]> = [
@@ -732,7 +732,7 @@ export function RecapPage() {
     let active = true;
     setLoading(true);
     setError(null);
-    fetchRecap({ date: tradeDate, reportType })
+    fetchRecapV2OrFallback({ date: tradeDate, reportType })
       .then((data) => {
         if (active) {
           setPayload(data);
