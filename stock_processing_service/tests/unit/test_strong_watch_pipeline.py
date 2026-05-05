@@ -28,7 +28,7 @@ def _identity_cycle(subject_key: str) -> tuple[dict[str, dict[str, object]], dic
     )
 
 
-def test_strong_watch_promote_pipeline() -> None:
+def test_strong_watch_promote_pipeline_respects_old_chain_thresholds() -> None:
     service = StrongWatchService()
     trade_date = date(2026, 4, 23)
 
@@ -74,7 +74,14 @@ def test_strong_watch_promote_pipeline() -> None:
             trade_date=date(2026, 4, 22),
             stock_id="002000.SZ",
             snapshot_version="v1",
-            payload={"pct_chg": "9.99"},
+            payload={
+                "open_price": "9.2",
+                "high_price": "10.1",
+                "low_price": "9.6",
+                "close_price": "10.0",
+                "pre_close": "9.1",
+                "pct_chg": "9.99",
+            },
         )
     ]
     identities, cycles = _identity_cycle("ai_chip")
@@ -86,18 +93,8 @@ def test_strong_watch_promote_pipeline() -> None:
         identities_by_subject=identities,
         cycles_by_subject=cycles,
     )
-    assert len(watch_rows) == 1
-    assert len(promoted) == 1
-    assert promoted[0].stock_id == "002000.SZ"
-    assert promoted[0].metadata["candidate_source"] == "strong_watch_pool"
-    assert "support_refs" in promoted[0].metadata
-    assert promoted[0].metadata["support_type"] in {
-        "ma_support",
-        "prev_low_support",
-        "platform_support",
-        "gap_support",
-        "previous_close",
-    }
+    assert watch_rows == []
+    assert promoted == []
 
 
 def test_strong_watch_two_stage_prune_roll_forward() -> None:
@@ -157,7 +154,7 @@ def test_strong_watch_two_stage_prune_roll_forward() -> None:
             assert row.removed_reason
 
 
-def test_strong_watch_refresh_keeps_prior7_weak_pullback() -> None:
+def test_strong_watch_refresh_low_score_pullback_is_not_force_kept() -> None:
     service = StrongWatchService()
     trade_date = date(2026, 4, 23)
     pool_rows = [
@@ -192,13 +189,27 @@ def test_strong_watch_refresh_keeps_prior7_weak_pullback() -> None:
             trade_date=date(2026, 4, 22),
             stock_id="002361.SZ",
             snapshot_version="v1",
-            payload={"pct_chg": "9.98"},
+            payload={
+                "open_price": "10.8",
+                "high_price": "12.0",
+                "low_price": "11.0",
+                "close_price": "11.9",
+                "pre_close": "10.8",
+                "pct_chg": "9.98",
+            },
         ),
         PriorSnapshotDTO(
             trade_date=date(2026, 4, 21),
             stock_id="002361.SZ",
             snapshot_version="v1",
-            payload={"pct_chg": "5.32"},
+            payload={
+                "open_price": "10.2",
+                "high_price": "10.9",
+                "low_price": "10.1",
+                "close_price": "10.8",
+                "pre_close": "10.25",
+                "pct_chg": "5.32",
+            },
         ),
     ]
 
@@ -211,16 +222,11 @@ def test_strong_watch_refresh_keeps_prior7_weak_pullback() -> None:
         identities_by_subject=identities,
         cycles_by_subject=cycles,
     )
-    assert kept
-    row = kept[0]
-    assert row.strong_grade in {"B", "B_KEEP", "A"}
-    assert row.watch_status != "removed"
-    assert row.strong_gene_score > Decimal("40")
-    assert row.weakness_tolerance_score >= Decimal("45")
-    assert promoted
+    assert kept == []
+    assert promoted == []
 
 
-def test_strong_watch_refresh_does_not_overreward_hot_leader() -> None:
+def test_strong_watch_refresh_hot_leader_still_needs_old_chain_gate() -> None:
     service = StrongWatchService()
     trade_date = date(2026, 4, 23)
     pool_rows = [
@@ -255,13 +261,27 @@ def test_strong_watch_refresh_does_not_overreward_hot_leader() -> None:
             trade_date=date(2026, 4, 22),
             stock_id="000001.SZ",
             snapshot_version="v1",
-            payload={"pct_chg": "9.99"},
+            payload={
+                "open_price": "9.1",
+                "high_price": "10.1",
+                "low_price": "9.7",
+                "close_price": "10.0",
+                "pre_close": "9.1",
+                "pct_chg": "9.99",
+            },
         ),
         PriorSnapshotDTO(
             trade_date=date(2026, 4, 21),
             stock_id="000001.SZ",
             snapshot_version="v1",
-            payload={"pct_chg": "5.20"},
+            payload={
+                "open_price": "8.8",
+                "high_price": "9.2",
+                "low_price": "8.7",
+                "close_price": "9.1",
+                "pre_close": "8.65",
+                "pct_chg": "5.20",
+            },
         ),
     ]
     identities, cycles = _identity_cycle("ai_chip")
@@ -273,10 +293,7 @@ def test_strong_watch_refresh_does_not_overreward_hot_leader() -> None:
         identities_by_subject=identities,
         cycles_by_subject=cycles,
     )
-    assert kept
-    row = kept[0]
-    assert row.weakness_tolerance_score <= Decimal("36")
-    assert row.watch_score < Decimal("86")
+    assert kept == []
 
 
 def test_strong_watch_prune_removes_invalid_weak_without_gene_support() -> None:
@@ -305,7 +322,7 @@ def test_strong_watch_prune_removes_invalid_weak_without_gene_support() -> None:
     assert pruned[0].prune_reason_code in {"HARD_PRUNE_WEAK_GENE", "HARD_PRUNE_SUPPORT_BREAK", "HARD_PRUNE_INVALID_WEAK"}
 
 
-def test_strong_watch_prune_keeps_b_keep_with_gene_and_support() -> None:
+def test_strong_watch_prune_rejects_low_score_observe_rows() -> None:
     prune = StrongWatchPruneService()
     rows = [
         StrongWatchRecord(
@@ -315,7 +332,7 @@ def test_strong_watch_prune_keeps_b_keep_with_gene_and_support() -> None:
             subject_name="s",
             pool_rank=15,
             watch_score=Decimal("47"),
-            strong_grade="B_KEEP",
+            strong_grade="REJECT",
             support_type="ma_support",
             support_level=Decimal("10"),
             support_score=Decimal("70"),
@@ -324,13 +341,13 @@ def test_strong_watch_prune_keeps_b_keep_with_gene_and_support() -> None:
             weakness_tolerance_score=Decimal("80"),
             prior7_limitup_days=1,
             prior7_strong_days=2,
+            admission_status="observe_only",
         )
     ]
     kept, pruned = prune.prune(rows)
-    assert not pruned
-    assert kept
-    assert kept[0].watch_status == "weakening"
-    assert kept[0].kept_because == "weakening_keep_gene_and_support"
+    assert kept == []
+    assert len(pruned) == 1
+    assert pruned[0].prune_reason_code == "HARD_PRUNE_OBSERVE_LOW_SCORE"
 
 
 def test_promote_only_formal_admission_rows() -> None:
@@ -343,8 +360,8 @@ def test_promote_only_formal_admission_rows() -> None:
             subject_key="s1",
             subject_name="s1",
             pool_rank=5,
-            watch_score=Decimal("72"),
-            strong_grade="B",
+            watch_score=Decimal("80"),
+            strong_grade="A",
             support_type="gap_support",
             support_level=Decimal("15"),
             support_score=Decimal("80"),
@@ -370,7 +387,7 @@ def test_promote_only_formal_admission_rows() -> None:
     assert promoted[0].metadata["admission_status"] == "formal"
 
 
-def test_soft_reject_downgraded_to_observe_only_not_pruned() -> None:
+def test_soft_reject_is_pruned_instead_of_downgraded() -> None:
     class _FakeRefresh:
         def refresh(self, seeded_rows, bars, prior_rows=None, history_bars=None):
             return [
@@ -439,10 +456,9 @@ def test_soft_reject_downgraded_to_observe_only_not_pruned() -> None:
     )
     assert promoted == []
     assert len(kept) == 1
-    assert kept[0].admission_status == "observe_only"
     assert kept[0].watch_status == "weakening"
-    assert kept[0].kept_because == "admission_soft_reject_observe_only"
-    assert any(r.watch_status == "weakening" for r in history)
+    assert kept[0].admission_status == "observe_only"
+    assert all(r.watch_status != "removed" for r in history)
 
 
 def test_strong_watch_prune_hard_prune_fade_confirmed() -> None:
@@ -465,6 +481,211 @@ def test_strong_watch_prune_hard_prune_fade_confirmed() -> None:
     assert len(pruned) == 1
     assert pruned[0].watch_status == "removed"
     assert pruned[0].prune_reason_code == "HARD_PRUNE_FADE_CONFIRMED"
+
+
+def test_strong_watch_roll_forward_keeps_prior_active_without_today_seed() -> None:
+    service = StrongWatchService()
+    trade_date = date(2026, 4, 30)
+    prior = StrongWatchRecord(
+        stock_id="002361.SZ",
+        stock_name="Shenjian",
+        subject_key="satellite",
+        subject_name="卫星互联网",
+        pool_rank=1,
+        watch_score=Decimal("82"),
+        strong_grade="A",
+        support_type="gap_support",
+        support_level=Decimal("10"),
+        support_score=Decimal("76"),
+        role_tags={
+            "final_cycle_state": "repair",
+            "final_mainline_alive": True,
+            "board_effect_confirmed": True,
+            "two_board_entry": True,
+        },
+        watch_age_days=3,
+        prior7_limitup_days=2,
+        prior7_strong_days=3,
+        prior7_best_watch_score=Decimal("82"),
+        prior7_peak_rank=1,
+    )
+    bars = [
+        StockBarDTO(
+            trade_date=trade_date,
+            stock_id="002361.SZ",
+            stock_name="Shenjian",
+            open_price=Decimal("12"),
+            high_price=Decimal("12.4"),
+            low_price=Decimal("11.8"),
+            close_price=Decimal("12.1"),
+            pre_close=Decimal("12"),
+            pct_chg=Decimal("0.83"),
+            volume=Decimal("100000"),
+            amount=Decimal("1200000"),
+            limit_up_price=Decimal("13.2"),
+            limit_down_price=Decimal("10.8"),
+        )
+    ]
+    identities, cycles = _identity_cycle("satellite")
+
+    promoted, kept = service.build_promoted_pool(
+        trade_date=trade_date,
+        pool_rows=[],
+        bars=bars,
+        prior_active_rows=[prior],
+        identities_by_subject=identities,
+        cycles_by_subject=cycles,
+    )
+
+    assert [row.stock_id for row in kept] == ["002361.SZ"]
+    assert kept[0].watch_age_days == 1
+    assert promoted and promoted[0].stock_id == "002361.SZ"
+
+
+def test_strong_watch_two_board_entry_renews_watch_window() -> None:
+    service = StrongWatchService()
+    trade_date = date(2026, 4, 17)
+    pool_rows = [
+        SubjectStockPoolDTO(
+            trade_date=trade_date,
+            subject_key="satellite",
+            subject_name="卫星互联网",
+            stock_id="600152.SH",
+            stock_name="维科技术",
+            pool_rank=2,
+            metadata={
+                "candidate_source": "strong_watch_pool",
+                "watch_status": "weakening",
+                "watch_score": "56.0",
+                "support_score": "78",
+                "support_type": "prev_low_support",
+                "strong_grade": "B",
+                "role_tags": {"is_leader": False, "watch_tier": "B"},
+                "prior7_limitup_days": 2,
+                "prior7_strong_days": 3,
+                "prior7_best_watch_score": "62.8",
+                "prior7_peak_rank": 2,
+                "recent_limit_up_count": 2,
+                "max_consecutive_limit_up_days": 2,
+                "transition_type": "upgrade",
+                "transition_confidence": "0.92",
+                "trigger_flags": ["state_rank_up"],
+            },
+        )
+    ]
+    bars = [
+        StockBarDTO(
+            trade_date=trade_date,
+            stock_id="600152.SH",
+            stock_name="维科技术",
+            open_price=Decimal("11.2"),
+            high_price=Decimal("12.0"),
+            low_price=Decimal("11.0"),
+            close_price=Decimal("11.9"),
+            pre_close=Decimal("10.8"),
+            pct_chg=Decimal("10.19"),
+            volume=Decimal("100000"),
+            amount=Decimal("1000000"),
+            limit_up_price=Decimal("11.88"),
+            limit_down_price=Decimal("9.72"),
+        )
+    ]
+    prior_active_rows = [
+        StrongWatchRecord(
+            stock_id="600152.SH",
+            stock_name="维科技术",
+            subject_key="satellite",
+            subject_name="卫星互联网",
+            pool_rank=2,
+            watch_score=Decimal("56.0"),
+            strong_grade="B",
+            support_type="prev_low_support",
+            support_level=Decimal("11.2"),
+            support_score=Decimal("78"),
+            role_tags={
+                "final_cycle_state": "repair",
+                "final_mainline_alive": True,
+                "board_effect_confirmed": True,
+            },
+            watch_status="weakening",
+            watch_age_days=3,
+            weak_days=3,
+            prior7_limitup_days=2,
+            prior7_strong_days=3,
+            prior7_best_watch_score=Decimal("62.8"),
+            prior7_peak_rank=2,
+        )
+    ]
+    identities, cycles = _identity_cycle("satellite")
+
+    promoted, kept = service.build_promoted_pool(
+        trade_date=trade_date,
+        pool_rows=pool_rows,
+        bars=bars,
+        prior_active_rows=prior_active_rows,
+        identities_by_subject=identities,
+        cycles_by_subject=cycles,
+    )
+
+    assert kept
+    assert kept[0].stock_id == "600152.SH"
+    assert kept[0].watch_status == "weakening"
+    assert kept[0].watch_age_days == 1
+    assert kept[0].weak_days == 1
+
+
+def test_strong_watch_prune_expires_after_7_trade_day_window() -> None:
+    prune = StrongWatchPruneService()
+    row = StrongWatchRecord(
+        stock_id="002361.SZ",
+        stock_name="Shenjian",
+        subject_key="satellite",
+        subject_name="卫星互联网",
+        pool_rank=1,
+        watch_score=Decimal("82"),
+        strong_grade="A",
+        support_type="gap_support",
+        support_level=Decimal("10"),
+        support_score=Decimal("78"),
+        role_tags={"final_cycle_state": "repair", "final_mainline_alive": True},
+        watch_age_days=8,
+        strong_gene_score=Decimal("80"),
+        weakness_tolerance_score=Decimal("70"),
+        prior7_limitup_days=2,
+    )
+
+    kept, pruned = prune.prune([row])
+
+    assert kept == []
+    assert len(pruned) == 1
+    assert pruned[0].prune_reason_code == "DELAYED_PRUNE_WATCH_WINDOW_EXPIRED"
+
+
+def test_strong_watch_prune_mainline_fade_watch_exit() -> None:
+    prune = StrongWatchPruneService()
+    row = StrongWatchRecord(
+        stock_id="002361.SZ",
+        stock_name="Shenjian",
+        subject_key="satellite",
+        subject_name="卫星互联网",
+        pool_rank=1,
+        watch_score=Decimal("82"),
+        strong_grade="A",
+        support_type="gap_support",
+        support_level=Decimal("10"),
+        support_score=Decimal("78"),
+        role_tags={"final_cycle_state": "fade_watch", "final_mainline_alive": False},
+        watch_age_days=4,
+        strong_gene_score=Decimal("80"),
+        weakness_tolerance_score=Decimal("70"),
+        prior7_limitup_days=2,
+    )
+
+    kept, pruned = prune.prune([row])
+
+    assert kept == []
+    assert len(pruned) == 1
+    assert pruned[0].prune_reason_code == "HARD_PRUNE_MAINLINE_FADE"
 
 
 def test_strong_watch_prune_observe_low_score_immediate_remove() -> None:

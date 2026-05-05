@@ -428,8 +428,6 @@ def _make_gate_rows(base_rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 "reject_no_limitup_gene": r["reject_no_limitup_gene"],
                 "reject_isolated_theme": r["reject_isolated_theme"],
                 "reject_break_support_with_heavy_drop": r["reject_break_support_with_heavy_drop"],
-                "reject_junk_follower": r["reject_junk_follower"],
-                "hard_reject_any": r["hard_reject_any"],
                 "watch_status": r["watch_status"],
                 "watch_score": r["watch_score"],
                 "strong_grade": r["strong_grade"],
@@ -501,14 +499,6 @@ async def _audit_one_date(conn: asyncpg.Connection, trade_date: date, out_dir: P
         reject_no_limitup_gene = not limitup_gene_pass
         reject_isolated_theme = not theme_synergy_pass
         reject_break_support_with_heavy_drop = (not structure_health_pass) and pct_chg <= -6.0
-        reject_junk_follower = (not is_leader) and rank_order > 10 and (not limitup_gene_pass) and (not theme_synergy_pass)
-        hard_reject_any = (
-            reject_no_limitup_gene
-            or reject_isolated_theme
-            or reject_break_support_with_heavy_drop
-            or reject_junk_follower
-        )
-
         promoted_to_formal = w.watch_status in {"active", "weakening_keep", "weakening"}
 
         merged.append(
@@ -548,8 +538,6 @@ async def _audit_one_date(conn: asyncpg.Connection, trade_date: date, out_dir: P
                 "reject_no_limitup_gene": reject_no_limitup_gene,
                 "reject_isolated_theme": reject_isolated_theme,
                 "reject_break_support_with_heavy_drop": reject_break_support_with_heavy_drop,
-                "reject_junk_follower": reject_junk_follower,
-                "hard_reject_any": hard_reject_any,
                 "promoted_to_formal": promoted_to_formal,
                 "rank_order": rank_order,
                 "pct_chg": pct_chg,
@@ -619,8 +607,6 @@ async def _audit_one_date(conn: asyncpg.Connection, trade_date: date, out_dir: P
             "reject_no_limitup_gene",
             "reject_isolated_theme",
             "reject_break_support_with_heavy_drop",
-            "reject_junk_follower",
-            "hard_reject_any",
             "watch_status",
             "watch_score",
             "strong_grade",
@@ -641,7 +627,6 @@ async def _audit_one_date(conn: asyncpg.Connection, trade_date: date, out_dir: P
         "identity_fail_count": sum(1 for r in kept_pool if not r["identity_confirmed_pass"]),
         "cycle_alive_fail_count": sum(1 for r in kept_pool if not r["cycle_alive_pass"]),
         "pass_4of3_fail_count": sum(1 for r in kept_pool if r["pass_count_4of3"] < 3),
-        "hard_reject_count": sum(1 for r in kept_pool if r["hard_reject_any"]),
         "total_rows": len(merged),
     }
 
@@ -681,7 +666,6 @@ async def _print_samples(conn: asyncpg.Connection, sample_specs: list[str]) -> N
             f"identity_confirmed_pass={r['identity_confirmed_pass']}, "
             f"cycle_alive_pass={r['cycle_alive_pass']}, "
             f"pass_count_4of3={r['pass_count_4of3']}, "
-            f"hard_reject_any={r['hard_reject_any']}, "
             f"watch_score={r['watch_score']}, strong_grade={r['strong_grade']}, "
             f"watch_status={r['watch_status']}, support_type={r['support_type']}, gap_hit={r['gap_hit']}"
         )
@@ -720,7 +704,6 @@ async def main() -> None:
         print(f"identity_fail_count={s['identity_fail_count']}")
         print(f"cycle_alive_fail_count={s['cycle_alive_fail_count']}")
         print(f"pass_4of3_fail_count={s['pass_4of3_fail_count']}")
-        print(f"hard_reject_count={s['hard_reject_count']}")
         print(f"total_rows={s['total_rows']}")
         print(f"csv_dir={out_dir}")
 

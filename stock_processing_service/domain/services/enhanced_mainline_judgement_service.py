@@ -4,7 +4,7 @@ from dataclasses import dataclass, field
 from datetime import date
 from typing import Any, Dict, Iterable, List, Optional
 
-# ── Dataclasses (inlined from stock_service.models to avoid cross‑chain dependency) ──
+# ── Dataclasses (inlined here to avoid cross-chain dependency) ──
 
 @dataclass(frozen=True)
 class ThemeMainlineJudgement:

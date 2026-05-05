@@ -6,7 +6,8 @@ from stock_processing_service.domain.services.strong_watch_refresh_service impor
 
 
 class StrongWatchPruneService:
-    OBSERVE_KEEP_MIN_SCORE = 42
+    OBSERVE_KEEP_MIN_SCORE = 62
+    WATCH_WINDOW_TRADE_DAYS = 7
 
     def prune(self, rows: list[StrongWatchRecord]) -> tuple[list[StrongWatchRecord], list[StrongWatchRecord]]:
         kept: list[StrongWatchRecord] = []
@@ -14,6 +15,7 @@ class StrongWatchPruneService:
         for row in rows:
             role_tags = row.role_tags if isinstance(row.role_tags, dict) else {}
             final_cycle_state = str(role_tags.get("final_cycle_state") or "").lower()
+            mainline_alive = bool(role_tags.get("final_mainline_alive") or False)
             fade_confirmed = bool(role_tags.get("fade_confirmed") or final_cycle_state == "fade_confirmed")
             if fade_confirmed:
                 pruned.append(
@@ -23,6 +25,30 @@ class StrongWatchPruneService:
                         prune_mode="immediate",
                         prune_reason_code="HARD_PRUNE_FADE_CONFIRMED",
                         removed_reason="hard_prune_fade_confirmed",
+                        kept_because=None,
+                    )
+                )
+                continue
+            if not mainline_alive and final_cycle_state == "fade_watch":
+                pruned.append(
+                    replace(
+                        row,
+                        watch_status="removed",
+                        prune_mode="immediate",
+                        prune_reason_code="HARD_PRUNE_MAINLINE_FADE",
+                        removed_reason="hard_prune_mainline_fade",
+                        kept_because=None,
+                    )
+                )
+                continue
+            if int(row.watch_age_days or 1) > self.WATCH_WINDOW_TRADE_DAYS:
+                pruned.append(
+                    replace(
+                        row,
+                        watch_status="removed",
+                        prune_mode="delayed",
+                        prune_reason_code="DELAYED_PRUNE_WATCH_WINDOW_EXPIRED",
+                        removed_reason="delayed_prune_watch_window_expired",
                         kept_because=None,
                     )
                 )
@@ -40,7 +66,8 @@ class StrongWatchPruneService:
                 )
                 continue
             if str(getattr(row, "admission_status", "formal") or "formal") == "observe_only":
-                if row.watch_score < self.OBSERVE_KEEP_MIN_SCORE:
+                two_board_entry = bool(role_tags.get("two_board_entry") or False)
+                if row.watch_score < self.OBSERVE_KEEP_MIN_SCORE and not two_board_entry:
                     pruned.append(
                         replace(
                             row,
@@ -103,35 +130,6 @@ class StrongWatchPruneService:
                         prune_reason_code=prune_reason_code,
                         removed_reason=prune_reason_code.lower(),
                         kept_because=None,
-                    )
-                )
-                continue
-
-            keep_observe_bucket = row.strong_grade in {"B_KEEP", "B"} and has_prior7_gene and support_ok
-            if keep_observe_bucket:
-                weak_days = row.weak_days + 1
-                if weak_days >= 5:
-                    pruned.append(
-                        replace(
-                            row,
-                            weak_days=weak_days,
-                            watch_status="removed",
-                            prune_mode="delayed",
-                            prune_reason_code="DELAYED_PRUNE_WEAKENING_KEEP_EXPIRE",
-                            removed_reason="delayed_prune_weakening_keep_expire",
-                            kept_because=None,
-                        )
-                    )
-                    continue
-                kept.append(
-                    replace(
-                        row,
-                        weak_days=weak_days,
-                        watch_status="weakening",
-                        prune_mode=None,
-                        prune_reason_code=None,
-                        removed_reason=None,
-                        kept_because="weakening_keep_gene_and_support",
                     )
                 )
                 continue

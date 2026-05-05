@@ -339,6 +339,17 @@ class StockReadGatewayAdapter:
         self._mainline_identity_cache[cache_key] = list(result)
         return result
 
+    async def get_mainline_identity_rule_inputs(
+        self,
+        trade_date: date,
+        subject_keys: list[str],
+    ) -> list[dict[str, Any]]:
+        rows = await self._db.get_mainline_identity_rule_inputs(
+            trade_date=trade_date,
+            subject_keys=subject_keys,
+        )
+        return [_as_dict(row) for row in rows]
+
     async def get_mainline_cycle_by_subject_keys(
         self,
         subject_keys: list[str],
@@ -403,6 +414,8 @@ class StockReadGatewayAdapter:
                         "support_score": str(p.get("support_score", "0")),
                         "watch_status": str(p.get("watch_status", "")),
                         "pool_entry_type": str(p.get("pool_entry_type", "")),
+                        "watch_age_days": int(p.get("watch_age_days") or 1),
+                        "weak_days": int(p.get("weak_days") or 0),
                         "eligible_for_candidate": StrongWatchService.is_candidate_eligible(
                             watch_status=str(p.get("watch_status", "")),
                             pool_entry_type=str(p.get("pool_entry_type", "")),

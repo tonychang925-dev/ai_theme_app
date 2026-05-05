@@ -554,15 +554,6 @@ export function StockScreenerPage() {
                     </div>
                   )}
 
-                  {store.executionStatus.diagnostics.fallback_applied && (
-                    <div className="screener-alert-card is-warn">
-                      <div className="screener-alert-title">交易日自动回退已触发</div>
-                      <div className="workspace-note">
-                        {store.executionStatus.diagnostics.fallback_reason || '无'}
-                      </div>
-                    </div>
-                  )}
-
                   <div>
                     <div className="screener-row-head">
                       <span className="metric-label">数据覆盖率</span>

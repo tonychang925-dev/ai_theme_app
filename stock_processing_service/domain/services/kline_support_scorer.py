@@ -165,31 +165,19 @@ class KlineSupportScorer:
                 support_types=[],
             )
         if len(df) < 2:
-            ma_support = current_bar.close_price * Decimal("0.97")
             return SupportScoreResult(
-                support_type="ma_support",
-                support_level=ma_support,
-                support_score=Decimal("65"),
-                support_count=1,
-                combined_strength=Decimal("0.6500"),
+                support_type="none",
+                support_level=Decimal("0"),
+                support_score=Decimal("0"),
+                support_count=0,
+                combined_strength=Decimal("0"),
                 gap_hit=False,
                 gap_level=Decimal("0"),
                 gap_distance_pct=Decimal("999"),
                 gap_hit_mode="miss",
                 gap_source="",
-                support_refs=[f"fallback_ma_support={ma_support}"],
-                support_types=[
-                    SupportTypeScore(
-                        support_type="ma_support",
-                        support_level=ma_support,
-                        strength=Decimal("0.65"),
-                        source="fallback",
-                        distance_pct=Decimal("0"),
-                        zone_lower=ma_support,
-                        zone_upper=ma_support,
-                        hit_mode="miss",
-                    )
-                ],
+                support_refs=["scorer_rule=insufficient_history"],
+                support_types=[],
             )
 
         current_low = self._d(current_bar.low_price)

@@ -15,21 +15,18 @@ class StrongWatchRollForwardService:
         seeded_rows: list[SubjectStockPoolDTO],
         prior_active_rows: list[StrongWatchRecord],
     ) -> list[StrongWatchRecord]:
-        seeded_ids = {row.stock_id for row in seeded_rows}
         baseline: list[StrongWatchRecord] = []
         for row in prior_active_rows:
-            if row.stock_id not in seeded_ids:
-                continue
             if row.watch_status not in {"active", "weakening"}:
                 continue
             baseline.append(
                 replace(
                     row,
                     watch_status="pending_refresh",
+                    watch_age_days=max(int(row.watch_age_days or 1) + 1, 1),
                     prune_mode=None,
                     prune_reason_code=None,
                     removed_reason=None,
                 )
             )
         return baseline
-

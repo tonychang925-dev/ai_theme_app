@@ -10,7 +10,14 @@ class _Dummy:
     pass
 
 
-def _mk_row(stock_id: str, d: date, support: str = "70") -> SimpleNamespace:
+def _mk_row(stock_id: str, d: date, support: str = "70", watch_age_days: int | None = None) -> SimpleNamespace:
+    metadata = {
+        "candidate_source": "strong_watch_pool",
+        "watch_status": "active",
+        "pool_entry_type": "formal",
+    }
+    if watch_age_days is not None:
+        metadata["watch_age_days"] = watch_age_days
     return SimpleNamespace(
         trade_date=d,
         stock_id=stock_id,
@@ -38,7 +45,7 @@ def _mk_row(stock_id: str, d: date, support: str = "70") -> SimpleNamespace:
         kept_because="",
         admission_status="formal",
         pool_entry_type="formal",
-        metadata={"candidate_source": "strong_watch_pool"},
+        metadata=metadata,
     )
 
 
@@ -49,7 +56,12 @@ def test_build_candidate_input_rows_prefers_same_day_row_over_prior_history() ->
     prior = [_mk_row("A", date(2026, 4, 21), support="78")]
     current = [_mk_row("A", td, support="65")]
 
-    rows = job._build_candidate_input_rows(trade_date=td, strong_watch_rows=current, prior_watch_rows=prior)
+    rows = job._build_candidate_input_rows(
+        trade_date=td,
+        strong_watch_rows=current,
+        promoted_pool_rows=[],
+        prior_watch_rows=prior,
+    )
     assert len(rows) == 1
     assert str(rows[0].metadata.get("support_score")) == "65"
 
@@ -70,3 +82,12 @@ def test_get_prior_rows_blocks_time_travel() -> None:
     out = asyncio.run(job._get_prior_strong_watch_rows(trade_date=date(2026, 4, 22), lookback_days=7))
     assert len(out) == 1
     assert out[0].stock_id == "A"
+
+
+def test_prior_active_records_preserve_persisted_watch_age() -> None:
+    rows = [_mk_row("A", date(2026, 4, 21), watch_age_days=8)]
+
+    records = BuildPostMarketRecapJob._build_prior_active_strong_watch_records(rows)
+
+    assert len(records) == 1
+    assert records[0].watch_age_days == 8

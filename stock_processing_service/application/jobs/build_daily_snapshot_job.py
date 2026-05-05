@@ -144,9 +144,7 @@ class BuildDailySnapshotJob:
         for e in evidences:
             s = subject_judgement_by_key.get(e.subject_key)
             if s is None:
-                # fallback for unexpected empty subject judgement
-                judgements.append(self._judgement_service.judge_one(e))
-                continue
+                raise RuntimeError(f"missing subject cycle judgement for subject_key={e.subject_key}")
             judgements.append(
                 CycleJudgement(
                     stock_id=e.stock_id,
@@ -211,7 +209,7 @@ class BuildDailySnapshotJob:
         else:
             raise RuntimeError(
                 "SnapshotWritePort missing upsert_stock_daily_strategy_snapshot_rows; "
-                "strategy projection must never fallback to stock_daily_snapshot truth table"
+                "strategy projection requires its own write target"
             )
         affected += await self._write_port.upsert_subject_stock_daily_snapshot_rows(subject_daily_rows)
         affected += await self._write_port.upsert_stock_abnormal_event_rows(abnormal_rows)

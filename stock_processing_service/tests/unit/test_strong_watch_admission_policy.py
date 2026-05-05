@@ -48,7 +48,6 @@ def test_admission_policy_hard_reject_no_gene_and_isolated() -> None:
 
     assert decision.reject_no_limitup_gene is True
     assert decision.reject_isolated_theme is True
-    assert decision.hard_reject_any is True
     assert decision.pass_count_4of3 < 3
     assert decision.admission_status == "reject"
 

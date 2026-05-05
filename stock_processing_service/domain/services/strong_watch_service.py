@@ -102,61 +102,85 @@ class StrongWatchService:
             identities_by_subject=extracted_identities,
             cycles_by_subject=extracted_cycles,
         )
-        enriched_formal_rows = self._enrich_rows_with_universe_diag(
-            universe_rows=universe.formal_rows,
+        universe_kept_rows = [*universe.formal_rows, *universe.observe_rows]
+        enriched_kept_rows = self._enrich_rows_with_universe_diag(
+            universe_rows=universe_kept_rows,
             diagnostics=universe.diagnostics,
         )
-
-        # Layer C 正式主链只消费 formal_rows。
-        # observe_rows/blocked_rows 仅用于 shadow 审计与历史快照，不进入正式 refresh/prune/promote。
-        seeded = self._seed_service.seed(enriched_formal_rows)
+        seeded = self._seed_service.seed(enriched_kept_rows)
         rolled = self._roll_forward_service.roll_forward(
             trade_date=trade_date,
             seeded_rows=seeded,
             prior_active_rows=prior_active_rows or [],
         )
+        seeded_ids = {row.stock_id for row in seeded}
+        carried_rows = [
+            self._pool_row_from_rolled_record(
+                trade_date=trade_date,
+                row=row,
+                identities_by_subject=extracted_identities,
+                cycles_by_subject=extracted_cycles,
+            )
+            for row in rolled
+            if row.stock_id not in seeded_ids
+        ]
+        refresh_rows = [*seeded, *carried_rows]
         refreshed = self._refresh_service.refresh(
-            seeded,
+            refresh_rows,
             bars,
             prior_rows=prior_rows,
             history_bars=history_bars,
         )
-        # merge roll-forward weak_days baseline
-        baseline_weak_days = {r.stock_id: r.weak_days for r in rolled}
-        refreshed = [replace(r, weak_days=baseline_weak_days.get(r.stock_id, 0)) for r in refreshed]
+        # Merge lifecycle baselines so the pool is a rolling 7-trading-day watch list,
+        # not only today's newly seeded strong stocks.
+        baseline_by_stock = {r.stock_id: r for r in rolled}
+        refreshed = [
+            replace(
+                r,
+                weak_days=r.weak_days if r.stock_id in baseline_by_stock else 0,
+                watch_age_days=r.watch_age_days if r.stock_id in baseline_by_stock else 1,
+            )
+            for r in refreshed
+        ]
         subject_stats = self._subject_day_stats(pool_rows)
         bars_by_stock = {b.stock_id: b for b in bars}
-        ranks = {r.stock_id: (r.pool_rank if r.pool_rank is not None else 999) for r in pool_rows}
+        ranks = {r.stock_id: (r.pool_rank if r.pool_rank is not None else 999) for r in refresh_rows}
 
         admission_kept: list[StrongWatchRecord] = []
         admission_pruned: list[StrongWatchRecord] = []
         for row in refreshed:
-            bar = bars_by_stock.get(row.stock_id)
-            pct = bar.pct_chg if bar is not None else Decimal("0")
-            sub = subject_stats.get(row.subject_key, {"subject_limit_up_count": 0, "subject_strong_count": 0})
+            if row.watch_status == "removed":
+                admission_pruned.append(
+                    replace(
+                        row,
+                        admission_status="reject",
+                        watch_status="removed",
+                        prune_mode="immediate",
+                        prune_reason_code="WATCH_SCORE_REJECT",
+                        removed_reason="watch_score_reject",
+                        kept_because=None,
+                    )
+                )
+                continue
             role_tags = row.role_tags if isinstance(row.role_tags, dict) else {}
-            decision = self._admission_policy.assess(
-                prior7_limitup_days=int(row.prior7_limitup_days or 0),
-                recent_limit_up_count=int(role_tags.get("recent_limit_up_count") or 0),
-                subject_limit_up_count=int(sub["subject_limit_up_count"]),
-                subject_strong_count=int(sub["subject_strong_count"]),
-                final_mainline_alive=bool(role_tags.get("final_mainline_alive") or False),
-                board_effect_confirmed=bool(role_tags.get("board_effect_confirmed") or False),
-                two_board_entry=bool(role_tags.get("two_board_entry") or False),
-                pct_chg=pct,
-                support_type=row.support_type,
-                support_score=row.support_score,
-                is_leader=bool(role_tags.get("is_leader") or False),
-                rank_order=int(ranks.get(row.stock_id, 999)),
-            )
-            if decision.admission_status == "formal":
+            two_board_entry = bool(role_tags.get("two_board_entry") or False)
+            if row.strong_grade in {"S", "A"} and row.watch_score >= Decimal("78"):
                 admission_kept.append(
                     replace(
                         row,
                         admission_status="formal",
                     )
                 )
-            elif decision.admission_status == "observe_only":
+            elif two_board_entry and row.watch_status in {"active", "weakening"}:
+                admission_kept.append(
+                    replace(
+                        row,
+                        watch_status="weakening",
+                        kept_because="two_board_formal_bypass",
+                        admission_status="observe_only",
+                    )
+                )
+            elif row.watch_status in {"active", "weakening"} and row.strong_grade in {"S", "A", "B"} and row.watch_score >= Decimal("62"):
                 admission_kept.append(
                     replace(
                         row,
@@ -166,31 +190,17 @@ class StrongWatchService:
                     )
                 )
             else:
-                hard_prune_reject = bool(
-                    decision.reject_break_support_with_heavy_drop or decision.reject_junk_follower
+                admission_pruned.append(
+                    replace(
+                        row,
+                        admission_status="reject",
+                        watch_status="removed",
+                        prune_mode="immediate",
+                        prune_reason_code="ADMISSION_REJECT",
+                        removed_reason="admission_reject",
+                        kept_because=None,
+                    )
                 )
-                if hard_prune_reject:
-                    admission_pruned.append(
-                        replace(
-                            row,
-                            admission_status="reject",
-                            watch_status="removed",
-                            prune_mode="immediate",
-                            prune_reason_code="ADMISSION_REJECT",
-                            removed_reason="admission_reject",
-                            kept_because=None,
-                        )
-                    )
-                else:
-                    # 分批接管策略：低置信 reject 先降级 observe_only，避免一次性过剔。
-                    admission_kept.append(
-                        replace(
-                            row,
-                            watch_status="weakening",
-                            admission_status="observe_only",
-                            kept_because="admission_soft_reject_observe_only",
-                        )
-                    )
 
         kept, pruned_by_rule = self._prune_service.prune(admission_kept)
         pruned = admission_pruned + pruned_by_rule
@@ -222,6 +232,70 @@ class StrongWatchService:
             md.setdefault("entry_path", str(diag.get("entry_path") or ""))
             out.append(replace(row, metadata=md))
         return out
+
+    @staticmethod
+    def _pool_row_from_rolled_record(
+        *,
+        trade_date: date,
+        row: StrongWatchRecord,
+        identities_by_subject: dict[str, Any],
+        cycles_by_subject: dict[str, Any],
+    ) -> SubjectStockPoolDTO:
+        md = dict(row.role_tags or {})
+        md.update(
+            {
+                "prior7_limitup_days": row.prior7_limitup_days,
+                "prior7_strong_days": row.prior7_strong_days,
+                "prior7_best_watch_score": str(row.prior7_best_watch_score),
+                "prior7_peak_rank": row.prior7_peak_rank,
+                "watch_age_days": row.watch_age_days,
+                "support_type": row.support_type,
+                "support_level": str(row.support_level),
+                "support_score": str(row.support_score),
+                "support_refs": list(row.support_refs or []),
+                "support_count": row.support_count,
+                "support_combined_strength": str(row.support_combined_strength),
+                "gap_hit": row.gap_hit,
+                "gap_hit_mode": row.gap_hit_mode,
+                "gap_source": row.gap_source,
+                "gap_level": str(row.gap_level),
+                "gap_distance_pct": str(row.gap_distance_pct),
+                "entry_path": str(md.get("entry_path") or "roll_forward"),
+            }
+        )
+        cycle = cycles_by_subject.get(row.subject_key)
+        if cycle is not None:
+            if isinstance(cycle, dict):
+                md["final_cycle_state"] = str(cycle.get("final_cycle_state") or md.get("final_cycle_state") or "")
+                md["final_mainline_alive"] = bool(cycle.get("final_mainline_alive") or False)
+                md["transition_type"] = str(cycle.get("transition_type") or md.get("transition_type") or "")
+                md["transition_confidence"] = str(cycle.get("transition_confidence") or cycle.get("confidence") or md.get("transition_confidence") or "0")
+                md["trigger_flags"] = list(cycle.get("trigger_flags") or md.get("trigger_flags") or [])
+                md["fade_confirmed"] = bool(cycle.get("fade_confirmed") or False)
+            else:
+                md["final_cycle_state"] = str(getattr(cycle, "final_cycle_state", "") or md.get("final_cycle_state") or "")
+                md["final_mainline_alive"] = bool(getattr(cycle, "final_mainline_alive", False))
+                md["transition_type"] = str(getattr(cycle, "transition_type", "") or md.get("transition_type") or "")
+                md["transition_confidence"] = str(getattr(cycle, "transition_confidence", md.get("transition_confidence", "0")) or "0")
+                md["trigger_flags"] = list(getattr(cycle, "trigger_flags", []) or md.get("trigger_flags") or [])
+                md["fade_confirmed"] = bool(getattr(cycle, "fade_confirmed", False))
+        identity = identities_by_subject.get(row.subject_key)
+        if identity is not None:
+            if isinstance(identity, dict):
+                md["identity_status"] = str(identity.get("identity_status") or md.get("identity_status") or "")
+                md["is_main_theme"] = bool(identity.get("is_main_theme") or False)
+            else:
+                md["identity_status"] = str(getattr(identity, "identity_status", "") or md.get("identity_status") or "")
+                md["is_main_theme"] = bool(getattr(identity, "is_main_theme", False))
+        return SubjectStockPoolDTO(
+            trade_date=trade_date,
+            subject_key=row.subject_key,
+            subject_name=row.subject_name,
+            stock_id=row.stock_id,
+            stock_name=row.stock_name,
+            pool_rank=row.pool_rank,
+            metadata=md,
+        )
 
     @staticmethod
     def _require_layer_ab_inputs(
@@ -318,12 +392,13 @@ class StrongWatchService:
             identities_by_subject=identities,
             cycles_by_subject=cycles,
         )
-        enriched_formal_rows = self._enrich_rows_with_universe_diag(
-            universe_rows=universe.formal_rows,
+        universe_kept_rows = [*universe.formal_rows, *universe.observe_rows]
+        enriched_kept_rows = self._enrich_rows_with_universe_diag(
+            universe_rows=universe_kept_rows,
             diagnostics=universe.diagnostics,
         )
 
-        if not universe.formal_rows:
+        if not universe_kept_rows:
             return StrongWatchShadowSummary(
                 universe_formal_count=universe.formal_count,
                 universe_observe_count=universe.observe_count,
@@ -335,7 +410,7 @@ class StrongWatchService:
                 admission_hard_reject_count=0,
             )
 
-        seeded = self._seed_service.seed(enriched_formal_rows)
+        seeded = self._seed_service.seed(enriched_kept_rows)
         refreshed = self._refresh_service.refresh(
             seeded_rows=seeded,
             bars=bars,
@@ -350,38 +425,15 @@ class StrongWatchService:
         admission_formal = 0
         admission_observe = 0
         admission_reject = 0
-        pass_4of3_fail = 0
-        hard_reject_cnt = 0
 
         for row in refreshed:
-            bar = bars_by_stock.get(row.stock_id)
-            pct = bar.pct_chg if bar is not None else Decimal("0")
-            sub = subject_stats.get(row.subject_key, {"subject_limit_up_count": 0, "subject_strong_count": 0})
             role_tags = row.role_tags if isinstance(row.role_tags, dict) else {}
-            decision = self._admission_policy.assess(
-                prior7_limitup_days=int(row.prior7_limitup_days or 0),
-                recent_limit_up_count=int(role_tags.get("recent_limit_up_count") or 0),
-                subject_limit_up_count=int(sub["subject_limit_up_count"]),
-                subject_strong_count=int(sub["subject_strong_count"]),
-                final_mainline_alive=bool(role_tags.get("final_mainline_alive") or False),
-                board_effect_confirmed=bool(role_tags.get("board_effect_confirmed") or False),
-                two_board_entry=bool(role_tags.get("two_board_entry") or False),
-                pct_chg=pct,
-                support_type=row.support_type,
-                support_score=row.support_score,
-                is_leader=bool(role_tags.get("is_leader") or False),
-                rank_order=int(ranks.get(row.stock_id, 999)),
-            )
-            if decision.admission_status == "formal":
+            if row.strong_grade in {"S", "A"} and row.watch_score >= Decimal("78"):
                 admission_formal += 1
-            elif decision.admission_status == "observe_only":
+            elif row.watch_status in {"active", "weakening"} and row.strong_grade in {"S", "A", "B"} and row.watch_score >= Decimal("62"):
                 admission_observe += 1
             else:
                 admission_reject += 1
-            if decision.pass_count_4of3 < 3:
-                pass_4of3_fail += 1
-            if decision.hard_reject_any:
-                hard_reject_cnt += 1
 
         return StrongWatchShadowSummary(
             universe_formal_count=universe.formal_count,
@@ -390,8 +442,8 @@ class StrongWatchService:
             admission_formal_count=admission_formal,
             admission_observe_count=admission_observe,
             admission_reject_count=admission_reject,
-            admission_pass_4of3_fail_count=pass_4of3_fail,
-            admission_hard_reject_count=hard_reject_cnt,
+            admission_pass_4of3_fail_count=0,
+            admission_hard_reject_count=0,
         )
 
     def build_promoted_pool_with_history_and_shadow(

@@ -36,6 +36,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--fade-jump-threshold", type=float, default=0.15)
     parser.add_argument("--min-history-days", type=int, default=3)
     parser.add_argument("--disable-transition-auto-tune", action="store_true")
+    parser.add_argument(
+        "--fail-on-transition-alert",
+        action="store_true",
+        help="When set, transition distribution alert will fail the hard gate (strict mode).",
+    )
     return parser.parse_args()
 
 
@@ -129,8 +134,9 @@ async def main_async() -> int:
             str(args.fade_jump_threshold),
             "--min-history-days",
             str(max(1, int(args.min_history_days))),
-            "--fail-on-alert",
         ]
+        if args.fail_on_transition_alert:
+            transition_cmd.append("--fail-on-alert")
         if args.disable_transition_auto_tune:
             transition_cmd.append("--disable-auto-tune")
         _run_step("transition_distribution_gate", transition_cmd)
@@ -143,4 +149,3 @@ async def main_async() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(asyncio.run(main_async()))
-

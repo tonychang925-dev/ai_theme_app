@@ -41,14 +41,8 @@ class W2SCandidate:
 class W2SCandidateService:
     MAX_CANDIDATES = 10
 
-    def __init__(self, *, formal_sa_gate_mode: str | None = None) -> None:
-        mode = formal_sa_gate_mode
-        if mode is None:
-            mode = os.getenv("W2S_FORMAL_SA_GATE_MODE", "off")
-        mode = str(mode).strip().lower()
-        if mode not in {"off", "soft", "hard"}:
-            mode = "off"
-        self._formal_sa_gate_mode = mode
+    def __init__(self) -> None:
+        pass
     @staticmethod
     def _d(value: Any, default: str = "0") -> Decimal:
         if value is None:
@@ -69,8 +63,6 @@ class W2SCandidateService:
             return Decimal("85")
         if grade == "B":
             return Decimal("75")
-        if grade == "B_KEEP":
-            return Decimal("68")
         return Decimal("50")
 
     @staticmethod
@@ -129,6 +121,15 @@ class W2SCandidateService:
         elif support_type == "ma_support":
             support_type_bonus = Decimal("3")
         return min(Decimal("100"), support_score * Decimal("0.85") + refs_bonus + support_type_bonus)
+
+    @staticmethod
+    def _support_strength(pct_chg: Decimal, prev_day_pct: Decimal, support_type: str) -> Decimal:
+        base = Decimal("20") if support_type == "none" else Decimal("45")
+        if prev_day_pct <= Decimal("-4"):
+            base += Decimal("15")
+        if Decimal("-1.5") <= pct_chg <= Decimal("2.5"):
+            base += Decimal("10")
+        return min(base, Decimal("95"))
 
     @staticmethod
     def _gap_structure_bonus(support_type: str, gap_hit: bool, gap_hit_mode: str) -> Decimal:
@@ -224,6 +225,82 @@ class W2SCandidateService:
             return True, "prior7_dual_pass"
         return False, "prior7_dual_fail"
 
+    @staticmethod
+    def _day_weak_score(pct_chg: Decimal) -> Decimal:
+        if pct_chg < Decimal("-4"):
+            return Decimal("20")
+        if pct_chg < Decimal("-2"):
+            return Decimal("16")
+        if pct_chg < Decimal("-1"):
+            return Decimal("10")
+        if pct_chg < Decimal("0"):
+            return Decimal("6")
+        return Decimal("0")
+
+    @staticmethod
+    def _classify_weak_type(pct_chg: float, prev_day_pct: float, prev_day_limit_up: bool) -> tuple[str, float]:
+        if prev_day_limit_up and pct_chg < 0:
+            return "bad_limit_up", min(100.0, abs(pct_chg) * 12.0 + 20.0)
+        if pct_chg <= -5.0:
+            return "big_negative_line", min(100.0, abs(pct_chg) * 10.0)
+        if -2.0 <= pct_chg <= 1.5 and prev_day_pct >= 4.0:
+            return "upper_shadow", 55.0
+        if pct_chg <= -1.0:
+            return "high_open_low_close", min(100.0, abs(pct_chg) * 8.0 + 10.0)
+        return "fake_break", 40.0
+
+    @staticmethod
+    def _prev_day_weak_score(prev_day_pct: Decimal) -> Decimal:
+        if prev_day_pct < Decimal("-3"):
+            return Decimal("10")
+        if prev_day_pct < Decimal("-1.5"):
+            return Decimal("8")
+        if prev_day_pct < Decimal("0"):
+            return Decimal("5")
+        return Decimal("0")
+
+    @staticmethod
+    def _fade_watch_penalty(*, fade_watch: bool, mainline_strength_score: Decimal) -> Decimal:
+        if not fade_watch:
+            return Decimal("0")
+        if mainline_strength_score >= Decimal("75"):
+            return Decimal("4")
+        if mainline_strength_score >= Decimal("60"):
+            return Decimal("8")
+        return Decimal("12")
+
+    def _candidate_score(
+        self,
+        *,
+        is_leader: bool,
+        limit_up: bool,
+        recent_limit_up_count: int,
+        rank_order: int,
+        stage: str,
+        weak_intensity: Decimal,
+        support_strength: Decimal,
+        day_weak_score: Decimal = Decimal("0"),
+        prev_day_weak_score: Decimal = Decimal("0"),
+        mainline_strength_score: Decimal = Decimal("0"),
+        fade_watch: bool = False,
+    ) -> Decimal:
+        score = Decimal("45")
+        if is_leader:
+            score += Decimal("18")
+        if limit_up:
+            score += Decimal("10")
+        score += min(Decimal(str(recent_limit_up_count)) * Decimal("4"), Decimal("12"))
+        if rank_order <= 3:
+            score += Decimal("8")
+        if stage in {"rebound", "fermentation", "回流", "发酵", "启动"}:
+            score += Decimal("8")
+        score += min(Decimal(str(weak_intensity)) * Decimal("0.08"), Decimal("8"))
+        score += min(support_strength * Decimal("0.1"), Decimal("9"))
+        score += day_weak_score + prev_day_weak_score
+        score += min(mainline_strength_score * Decimal("0.08"), Decimal("8"))
+        score -= self._fade_watch_penalty(fade_watch=fade_watch, mainline_strength_score=mainline_strength_score)
+        return max(Decimal("0"), min(score, Decimal("100")))
+
     def _prior7_features(
         self,
         *,
@@ -277,6 +354,7 @@ class W2SCandidateService:
         transition_confidence = self._d(metadata.get("transition_confidence"), default="0")
         trigger_flags = list(metadata.get("trigger_flags") or [])
         two_board_entry = bool(role_tags.get("two_board_entry") or False)
+        limit_up = bool(metadata.get("limit_up") or role_tags.get("limit_up") or False)
         prior7_limitup_days, prior7_strong_days, prior7_source = self._prior7_features(
             stock_id=row.stock_id,
             prior_rows=prior_rows or [],
@@ -287,6 +365,8 @@ class W2SCandidateService:
         prior_state = ""
         if prior:
             prior_state = str(prior.payload.get("final_cycle_state", ""))
+        prev_day_pct = self._d((prior.payload or {}).get("pct_chg") if prior else None, default="0")
+        prev_day_limit_up = bool((prior.payload or {}).get("limit_up") if prior else False) or prev_day_pct >= Decimal("9.5")
 
         if bar is None:
             return {
@@ -298,6 +378,9 @@ class W2SCandidateService:
         rank = row.pool_rank if row.pool_rank is not None else 999
         pct_chg = bar.pct_chg
         mainline_context_score = self._mainline_context_score(rank, role_tags)
+        weak_type, weak_intensity = self._classify_weak_type(float(pct_chg), float(prev_day_pct), prev_day_limit_up)
+        day_weak_score = self._day_weak_score(pct_chg)
+        prev_day_weak_score = self._prev_day_weak_score(prev_day_pct)
         strong_gene_score = self._strong_gene_score(
             watch_score,
             strong_grade,
@@ -309,6 +392,7 @@ class W2SCandidateService:
             support_type=support_type,
             support_refs=support_refs,
         )
+        support_strength = self._support_strength(pct_chg, prev_day_pct, support_type)
         repair_or_takeover_score = self._repair_or_takeover_score(prior_state, role_tags)
         weakness_valid_score = self._weakness_valid_score(pct_chg)
         overheat_penalty = max(Decimal("0"), pct_chg) * Decimal("6")
@@ -319,85 +403,29 @@ class W2SCandidateService:
         if prior7_strong_days >= 2:
             prior7_bonus += Decimal("3")
 
-        w2s_pathway_bonus = Decimal("0")
-        if (
-            watch_status in {"weakening", "weakening_keep"}
-            and support_type in {"previous_low", "prev_low_support", "platform_support"}
-            and support_hit_score >= Decimal("70")
-            and weakness_valid_score >= Decimal("60")
-        ):
-            w2s_pathway_bonus = Decimal("10")
-        formal_w2s_override = (
-            watch_status in {"weakening", "weakening_keep"}
-            and support_type in {"previous_low", "prev_low_support", "platform_support"}
-            and support_hit_score >= Decimal("75")
-            and weakness_valid_score >= Decimal("60")
-        )
-        gap_formal_override = (
-            watch_status in {"weakening", "weakening_keep"}
-            and support_type == "gap_support"
-            and gap_hit
-            and support_hit_score >= Decimal("70")
-            and weakness_valid_score >= Decimal("60")
-        )
-
         gap_structure_bonus = self._gap_structure_bonus(
             support_type=support_type,
             gap_hit=gap_hit,
             gap_hit_mode=gap_hit_mode,
         )
-        gap_repair_bonus = self._gap_repair_bonus(
-            support_type=support_type,
-            gap_hit=gap_hit,
-            repair_or_takeover_score=repair_or_takeover_score,
+        candidate_score = self._candidate_score(
+            is_leader=bool(role_tags.get("is_leader")),
+            limit_up=limit_up,
+            recent_limit_up_count=int(metadata.get("recent_limit_up_count") or 0),
+            rank_order=rank,
+            stage=prior_state,
+            weak_intensity=weak_intensity,
+            support_strength=support_strength,
+            day_weak_score=day_weak_score,
+            prev_day_weak_score=prev_day_weak_score,
+            mainline_strength_score=mainline_context_score,
+            fade_watch=bool(metadata.get("fade_watch") or role_tags.get("fade_watch") or False),
         )
-        gap_formal_bias_bonus = Decimal("0")
-        if gap_formal_override:
-            gap_formal_bias_bonus = Decimal("3")
-
-        raw_score = (
-            mainline_context_score * Decimal("0.08")
-            + strong_gene_score * Decimal("0.18")
-            + support_hit_score * Decimal("0.34")
-            + repair_or_takeover_score * Decimal("0.18")
-            + weakness_valid_score * Decimal("0.22")
-        )
-        candidate_score = max(
-            Decimal("0"),
-            min(
-                Decimal("100"),
-                raw_score
-                - overheat_penalty
-                + prior7_bonus
-                + w2s_pathway_bonus
-                + gap_structure_bonus
-                + gap_repair_bonus
-                + gap_formal_bias_bonus,
-            ),
-        )
-
-        formal_day_gate = self._in_range(pct_chg, "-6", "1.5")
-        observe_day_gate = self._in_range(pct_chg, "-8", "3")
         legacy_watch_status_pass = self._legacy_watch_status_pass(watch_status)
         legacy_strong_history_pass, legacy_strong_history_reason = self._legacy_strong_history_gate(
             prior7_limitup_days=prior7_limitup_days,
             prior7_strong_days=prior7_strong_days,
             two_board_entry=two_board_entry,
-        )
-        prior7_formal_gate = legacy_strong_history_pass
-        prior7_soft_pass = legacy_strong_history_pass
-        # Keep active as pass to preserve baseline candidate behavior; weak-phase
-        # tags still provide extra pathway bonuses when present.
-        weak_phase_pass = watch_status in {"active", "weakening", "weakening_keep"} or two_board_entry
-        rank_data_pass = two_board_entry or rank < 999
-        board_effect_pass = two_board_entry or prior7_limitup_days >= 1
-        support_type_formal_pass = (
-            (support_type == "gap_support" and gap_hit and support_hit_score >= Decimal("65"))
-            or (
-                support_type in {"previous_low", "prev_low_support", "platform_support"}
-                and support_hit_score >= Decimal("70")
-            )
-            or (support_type == "ma_support" and support_hit_score >= Decimal("78"))
         )
 
         rank_overheat_gate = rank <= 2 and pct_chg > Decimal("3")
@@ -406,87 +434,42 @@ class W2SCandidateService:
         overheat_hard_gate = rank_overheat_gate or leader_overheat_gate or tier_overheat_gate
         overheated = overheat_hard_gate
 
-        extreme_invalid = (
-            pct_chg < Decimal("-8")
-            or pct_chg > Decimal("6")
-            or (bool(role_tags.get("is_leader")) and pct_chg > Decimal("5"))
-        )
         hard_reject = (
-            strong_grade.upper() not in {"S", "A", "B", "B_KEEP"}
-            or watch_status == "removed"
-            or extreme_invalid
-            or not legacy_watch_status_pass
-            or not prior7_soft_pass
+            not legacy_watch_status_pass
+            or not legacy_strong_history_pass
             or (support_hit_score < Decimal("45") and repair_or_takeover_score < Decimal("45") and strong_gene_score < Decimal("45"))
         )
 
         level = "reject"
         reject_reason = ""
-        formal_fail_reason = ""
         if hard_reject:
             reject_reason = "hard_reject"
             if not legacy_watch_status_pass:
                 reject_reason = "hard_reject_watch_status"
-            elif not prior7_soft_pass:
+            elif not legacy_strong_history_pass:
                 reject_reason = "hard_reject_strong_history_gate"
         else:
+            support_strength = support_hit_score
+            day_weak_score = self._day_weak_score(pct_chg)
+            prev_day_weak_score = self._prev_day_weak_score(prev_day_pct)
+            strong_background = bool(role_tags.get("is_leader")) or limit_up or int(metadata.get("recent_limit_up_count") or 0) >= 2 or rank <= 3
             formal_ok = (
-                candidate_score >= Decimal("60")
-                and support_hit_score >= Decimal("60")
-                and repair_or_takeover_score >= Decimal("50")
-                and prior7_formal_gate
-                and weak_phase_pass
-                and rank_data_pass
-                and board_effect_pass
-                and support_type_formal_pass
-                and formal_day_gate
-                and weekly_gate_passed
-                and not overheat_hard_gate
+                support_strength >= Decimal("45")
+                and strong_background
+                and day_weak_score >= Decimal("4")
+                and prev_day_weak_score >= Decimal("2")
+            )
+            observe_only_ok = (
+                support_strength >= Decimal("60")
+                and day_weak_score >= Decimal("3")
+                and prev_day_weak_score >= Decimal("2")
             )
             if formal_ok:
                 level = "formal"
-            elif observe_day_gate and candidate_score >= Decimal("48") and prior7_soft_pass:
+            elif observe_only_ok:
                 level = "observe_only"
-                if overheat_hard_gate:
-                    formal_fail_reason = "overheated_front_row"
-                elif not formal_day_gate:
-                    formal_fail_reason = "formal_day_gate_failed"
-                elif not weekly_gate_passed:
-                    formal_fail_reason = "weekly_midterm_gate_failed"
-                elif not rank_data_pass:
-                    formal_fail_reason = "rank_data_gate_failed"
-                elif not support_type_formal_pass:
-                    formal_fail_reason = "support_type_formal_gate_failed"
-                elif not board_effect_pass:
-                    formal_fail_reason = "board_effect_gate_failed"
-                elif support_hit_score < Decimal("60"):
-                    formal_fail_reason = "support_too_low"
-                elif repair_or_takeover_score < Decimal("55"):
-                    formal_fail_reason = "repair_score_too_low"
-                else:
-                    formal_fail_reason = "candidate_score_below_formal"
             else:
                 reject_reason = "score_below_observe_threshold"
-                if not observe_day_gate:
-                    formal_fail_reason = "observe_day_gate_failed"
-                else:
-                    formal_fail_reason = "candidate_score_below_observe"
-
-        # Old-chain compatible S/A formal whitelist gate (source-scoped).
-        sa_whitelist_pass = strong_grade.upper() in {"S", "A"}
-        if (
-            str(source) == "strong_watch_pool"
-            and level == "formal"
-            and self._formal_sa_gate_mode in {"soft", "hard"}
-            and not sa_whitelist_pass
-        ):
-            if self._formal_sa_gate_mode == "hard":
-                level = "reject"
-                reject_reason = "formal_sa_gate_hard"
-                formal_fail_reason = "formal_sa_gate_hard"
-            else:
-                level = "observe_only"
-                formal_fail_reason = "formal_sa_gate_soft_demote"
 
         return {
             "candidate_source": source,
@@ -497,6 +480,7 @@ class W2SCandidateService:
             "strong_grade": strong_grade,
             "support_score": str(support_score),
             "support_type": support_type or "unknown",
+            "support_strength": str(support_strength),
             "support_count": support_count,
             "support_combined_strength": str(support_combined_strength),
             "gap_hit": gap_hit,
@@ -516,36 +500,22 @@ class W2SCandidateService:
             "support_hit_score": str(support_hit_score),
             "repair_or_takeover_score": str(repair_or_takeover_score),
             "weakness_valid_score": str(weakness_valid_score),
-            "overheat_penalty": str(overheat_penalty),
+            "overheat_penalty": str(self._fade_watch_penalty(fade_watch=bool(metadata.get("fade_watch") or role_tags.get("fade_watch") or False), mainline_strength_score=mainline_context_score)),
             "candidate_score": str(candidate_score),
-            "formal_day_gate": formal_day_gate,
-            "observe_day_gate": observe_day_gate,
-            "prior7_formal_gate": prior7_formal_gate,
-            "prior7_soft_pass": prior7_soft_pass,
             "weekly_midterm_gate_passed": weekly_gate_passed,
             "weekly_midterm_gate_reason": str(weekly_gate_diag.get("reason") or ""),
             "legacy_watch_status_pass": legacy_watch_status_pass,
             "legacy_strong_history_pass": legacy_strong_history_pass,
             "legacy_strong_history_reason": legacy_strong_history_reason,
-            "weak_phase_pass": weak_phase_pass,
-            "rank_data_pass": rank_data_pass,
-            "board_effect_pass": board_effect_pass,
-            "support_type_formal_pass": support_type_formal_pass,
             "two_board_entry": two_board_entry,
-            "formal_sa_gate_mode": self._formal_sa_gate_mode,
-            "formal_sa_whitelist_pass": sa_whitelist_pass,
-            "formal_w2s_override": formal_w2s_override,
-            "gap_formal_override": gap_formal_override,
-            "prior7_bonus": str(prior7_bonus),
-            "w2s_pathway_bonus": str(w2s_pathway_bonus),
-            "gap_structure_bonus": str(gap_structure_bonus),
-            "gap_repair_bonus": str(gap_repair_bonus),
-            "gap_formal_bias_bonus": str(gap_formal_bias_bonus),
-            "overheat_hard_gate": overheat_hard_gate,
-            "overheated": overheated,
+            "prior7_bonus": "0",
+            "gap_structure_bonus": "0",
+            "gap_repair_bonus": "0",
+            "gap_formal_bias_bonus": "0",
+            "overheat_hard_gate": False,
+            "overheated": bool(bool(metadata.get("fade_watch") or role_tags.get("fade_watch") or False)),
             "candidate_level": level,
             "reject_reason": reject_reason,
-            "formal_fail_reason": formal_fail_reason,
             "watch_status": watch_status or "unknown",
             "kept_because": kept_because,
         }
@@ -583,6 +553,7 @@ class W2SCandidateService:
                 f"strong_grade={explain['strong_grade']}",
                 f"support_score={explain['support_score']}",
                 f"support_type={explain['support_type']}",
+                f"support_strength={explain.get('support_strength', '0')}",
                 f"support_count={explain.get('support_count', 0)}",
                 f"support_combined_strength={explain.get('support_combined_strength', '0')}",
                 f"gap_hit={explain.get('gap_hit', False)}",
@@ -606,22 +577,13 @@ class W2SCandidateService:
                 f"weakness_valid_score={explain['weakness_valid_score']}",
                 f"overheat_penalty={explain['overheat_penalty']}",
                 f"prior7_bonus={explain['prior7_bonus']}",
-                f"weak_phase_pass={explain.get('weak_phase_pass', False)}",
-                f"rank_data_pass={explain.get('rank_data_pass', False)}",
-                f"board_effect_pass={explain.get('board_effect_pass', False)}",
-                f"support_type_formal_pass={explain.get('support_type_formal_pass', False)}",
                 f"watch_status={explain.get('watch_status', 'unknown')}",
                 f"weekly_midterm_gate_passed={explain.get('weekly_midterm_gate_passed', True)}",
                 f"weekly_midterm_gate_reason={explain.get('weekly_midterm_gate_reason', '')}",
-                f"formal_bias={explain['formal_w2s_override']}",
-                f"formal_sa_gate_mode={explain.get('formal_sa_gate_mode', 'off')}",
-                f"formal_sa_whitelist_pass={explain.get('formal_sa_whitelist_pass', False)}",
                 f"overheated={explain['overheated']}",
             ]
             if explain.get("reject_reason"):
                 evidence.append(f"candidate_note={explain['reject_reason']}")
-            if explain.get("formal_fail_reason"):
-                evidence.append(f"formal_fail_reason={explain['formal_fail_reason']}")
 
             candidate = W2SCandidate(
                 trade_date=str(row.trade_date),
@@ -635,9 +597,8 @@ class W2SCandidateService:
                 candidate_level=level,
                 candidate_source=str(explain.get("candidate_source", "")),
                 evidence_rules=evidence,
-                formal_bias=bool(explain.get("formal_w2s_override")) or bool(explain.get("gap_formal_override")),
+                formal_bias=False,
                 overheated=bool(explain.get("overheated")),
-                formal_fail_reason=str(explain.get("formal_fail_reason") or "") or None,
                 reject_reason=str(explain.get("reject_reason") or "") or None,
                 support_type=str(explain.get("support_type") or ""),
                 gap_hit=bool(explain.get("gap_hit")),

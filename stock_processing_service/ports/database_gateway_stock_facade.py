@@ -65,6 +65,10 @@ class DatabaseGatewayStockFacade(Protocol):
         self, subject_keys: list[str], trade_date: date
     ) -> list[MainlineIdentityDTO]: ...
 
+    async def get_mainline_identity_rule_inputs(
+        self, trade_date: date, subject_keys: list[str]
+    ) -> list[dict[str, Any]]: ...
+
     async def get_mainline_cycle_by_subject_keys(
         self, subject_keys: list[str], trade_date: date
     ) -> list[MainlineCycleDTO]: ...

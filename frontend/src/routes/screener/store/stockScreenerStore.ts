@@ -150,6 +150,9 @@ export interface StockScreenerStoreType {
       candidate_trade_date?: string;
       confirm_trade_date?: string;
       snapshot_trade_date?: string;
+      snapshot_channel?: string;
+      cache_writes?: number;
+      persisted_count?: number;
       signal_count?: number;
       snapshot_hit_count?: number;
       confirm_input_candidate_count?: number;
@@ -157,8 +160,6 @@ export interface StockScreenerStoreType {
       stage2?: {
         level_count?: { A?: number; B?: number; C?: number; X?: number };
       };
-      fallback_applied?: boolean;
-      fallback_reason?: string | null;
       requested_snapshot_stock_count?: number;
       resolved_snapshot_stock_count?: number;
       no_data_reason?: string | null;
@@ -295,7 +296,10 @@ export const useStockScreenerStore = create<StockScreenerStoreType>()((set, get)
       const runStage1 = Boolean(opts?.runStage1);
       const runStage2 = Boolean(opts?.runStage2);
       const candidateTradeDate = runStage2 && !runStage1 ? prevTradeDate(state.tradeDate) : state.tradeDate;
-      const confirmTradeDate = runStage2 && !runStage1 ? state.tradeDate : nextTradeDate(candidateTradeDate);
+      // 两阶段日期解析必须由后端基于真实交易日历/历史缓存决定。
+      // 前端仅在“盘前确认”时显式传 confirm_trade_date；“盘后选股”禁止猜 nextTradeDate，
+      // 否则会把 2026-04-30 这类历史回放错误打到 2026-05-01，导致结果被清空。
+      const confirmTradeDate = runStage2 && !runStage1 ? state.tradeDate : undefined;
       const response = await stockScreenerApi.executeScreening({
         strategy_id: state.selectedStrategyId,
         trade_date: state.tradeDate,

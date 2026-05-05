@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="860" viewBox="0 0 1400 860">
+  <rect width="1400" height="860" fill="#f5f6f8"/>
+  <text x="24" y="36" font-size="22" font-family="Arial" fill="#1f2937">Intel Wireframe - States</text>
+
+  <rect x="24" y="60" width="660" height="360" rx="8" fill="#fff" stroke="#cfd8e3"/>
+  <text x="40" y="92" font-size="16" font-family="Arial">Empty</text>
+  <text x="40" y="126" font-size="13" font-family="Arial" fill="#6b7280">暂无主题 / 暂无情报 / 暂无验证数据</text>
+
+  <rect x="716" y="60" width="660" height="360" rx="8" fill="#fff" stroke="#cfd8e3"/>
+  <text x="732" y="92" font-size="16" font-family="Arial">Loading</text>
+  <rect x="732" y="118" width="620" height="14" rx="7" fill="#e5e7eb"/>
+  <rect x="732" y="142" width="620" height="14" rx="7" fill="#e5e7eb"/>
+  <rect x="732" y="166" width="620" height="14" rx="7" fill="#e5e7eb"/>
+
+  <rect x="24" y="452" width="660" height="360" rx="8" fill="#fff" stroke="#cfd8e3"/>
+  <text x="40" y="484" font-size="16" font-family="Arial">Error</text>
+  <rect x="40" y="506" width="628" height="52" rx="6" fill="#fef2f2" stroke="#fecaca"/>
+  <text x="52" y="538" font-size="13" font-family="Arial" fill="#b91c1c">market validation request failed</text>
+
+  <rect x="716" y="452" width="660" height="360" rx="8" fill="#fff" stroke="#cfd8e3"/>
+  <text x="732" y="484" font-size="16" font-family="Arial">Fallback</text>
+  <rect x="732" y="506" width="290" height="30" rx="6" fill="#fffbeb" stroke="#f59e0b"/>
+  <text x="744" y="526" font-size="12" font-family="Arial" fill="#92400e">stream_state: fallback_to_feed</text>
+  <text x="732" y="562" font-size="13" font-family="Arial" fill="#6b7280">stream 异常后继续展示 feed 数据</text>
+</svg>

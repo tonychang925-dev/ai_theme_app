@@ -358,7 +358,7 @@ async def main_async() -> int:
                 raw_warn = "no_local_cache_and_online_fetch_disabled"
         if raw_result is None:
             print(f"[WARN] no raw auction data for trade_date={args.trade_date}; snapshot_rows=0")
-            return 0
+            return 2
         raw_map = {}
         builder = AuctionSnapshotBuilderService()
         for record in raw_result.records:

@@ -43,6 +43,11 @@ interface UseIntelFeedReturn {
   liveStatus: 'connecting' | 'live' | 'fallback';
   liveNewCount: number;
   sseConnectionState: SSEConnectionState | null;
+  streamDiagnostics: {
+    fallbackActive: boolean;
+    fallbackReason: string | null;
+    streamRecoveredAt: string | null;
+  };
   recapDates: { postMarket: string; preMarket: string };
 
   // Functions
@@ -130,6 +135,9 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
     preMarket: initialState.date,
   });
   const [sseConnectionState, setSseConnectionState] = useState<SSEConnectionState | null>(null);
+  const [fallbackActive, setFallbackActive] = useState(false);
+  const [fallbackReason, setFallbackReason] = useState<string | null>(null);
+  const [streamRecoveredAt, setStreamRecoveredAt] = useState<string | null>(null);
   const sseManagerRef = useRef<ReturnType<typeof createIntelStreamManager> | null>(null);
   const [pollingInterval, setPollingInterval] = useState(30000); // 默认30秒
   const [pollingErrorCount, setPollingErrorCount] = useState(0);
@@ -226,6 +234,9 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
 
     setLiveStatus('connecting');
     setSseConnectionState(null);
+    setFallbackActive(false);
+    setFallbackReason(null);
+    setStreamRecoveredAt(null);
 
     // 创建SSE管理器实例
     const manager = createIntelStreamManager(
@@ -246,8 +257,15 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
           // 根据SSE管理器状态更新liveStatus
           if (state.status === 'connected') {
             setLiveStatus('live');
+            if (fallbackActive) {
+              setFallbackActive(false);
+              setFallbackReason(null);
+              setStreamRecoveredAt(new Date().toISOString());
+            }
           } else if (state.status === 'error' || state.status === 'closed') {
             setLiveStatus('fallback');
+            setFallbackActive(true);
+            setFallbackReason(state.lastError || `sse_${state.status}`);
           } else if (state.status === 'connecting' || state.status === 'retrying') {
             setLiveStatus('connecting');
           }
@@ -255,9 +273,13 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
         onError: (error: Error) => {
           console.error('SSE连接错误:', error);
           setLiveStatus('fallback');
+          setFallbackActive(true);
+          setFallbackReason(error.message || 'sse_error');
         },
         onClose: () => {
           setLiveStatus('fallback');
+          setFallbackActive(true);
+          setFallbackReason('sse_closed');
         },
       },
       {
@@ -278,7 +300,7 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
         sseManagerRef.current = null;
       }
     };
-  }, [date, type, session, mergeIncomingItems, normalizeIntelItem]);
+  }, [date, type, session, mergeIncomingItems, normalizeIntelItem, fallbackActive]);
 
   // Polling effect
   useEffect(() => {
@@ -287,6 +309,11 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
 
     const poll = async () => {
       if (!active) return;
+      // Only poll when stream is degraded/fallback.
+      if (!fallbackActive) {
+        timeoutId = window.setTimeout(poll, pollingInterval);
+        return;
+      }
 
       try {
         const ctx = await fetchWorkspaceIntelContext({
@@ -347,7 +374,7 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
         window.clearTimeout(timeoutId);
       }
     };
-  }, [date, type, session, payload, pollingInterval, pollingErrorCount, limit, mergeIncomingItems, subjectKey]);
+  }, [date, type, session, payload, pollingInterval, pollingErrorCount, limit, mergeIncomingItems, subjectKey, fallbackActive]);
 
   // URL sync effect
   useEffect(() => {
@@ -388,6 +415,11 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
     liveStatus,
     liveNewCount,
     sseConnectionState,
+    streamDiagnostics: {
+      fallbackActive,
+      fallbackReason,
+      streamRecoveredAt,
+    },
     recapDates,
 
     // Functions

@@ -10,6 +10,33 @@ import { WeakToStrongTwoStageView } from './components/WeakToStrongTwoStageView'
 import { NetworkStatusAlert } from '../../components/common/NetworkStatusAlert';
 import { navigateTo } from '../../lib/navigation';
 
+function getShanghaiNowParts(): { date: string; hour: number; minute: number } {
+  const formatter = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Shanghai',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  });
+  const parts = formatter.formatToParts(new Date());
+  const lookup = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return {
+    date: `${lookup.year}-${lookup.month}-${lookup.day}`,
+    hour: Number(lookup.hour || 0),
+    minute: Number(lookup.minute || 0),
+  };
+}
+
+function isBeforePreMarketConfirmWindow(tradeDate: string): boolean {
+  const now = getShanghaiNowParts();
+  if (tradeDate !== now.date) {
+    return false;
+  }
+  return now.hour < 9 || (now.hour === 9 && now.minute < 25);
+}
+
 // 类型定义
 interface ScreeningResultItem {
   result_id: string;
@@ -65,6 +92,7 @@ export function StockScreenerPage() {
   const selectedStrategy = store.strategies.find((s: ScreeningStrategy) => s.strategy_id === store.selectedStrategyId) || null;
   const isWeakToStrongTwoStage = Boolean(
     selectedStrategy && (
+      selectedStrategy.strategy_type === 'weak_to_strong' ||
       /weak_to_strong/i.test(selectedStrategy.strategy_id) ||
       /弱转强/.test(selectedStrategy.strategy_name)
     ),
@@ -95,6 +123,13 @@ export function StockScreenerPage() {
       (store.executionStatus.diagnostics as any)?.confirm_trade_date ||
       ''
     ).trim() || undefined;
+  const snapshotChannel =
+    String(
+      (store.executionStatus.diagnostics as any)?.snapshot_channel ||
+      ''
+    ).trim() || undefined;
+  const stage2CacheWrites = Number((store.executionStatus.diagnostics as any)?.cache_writes ?? 0);
+  const stage2PersistedCount = Number((store.executionStatus.diagnostics as any)?.persisted_count ?? 0);
   const stage2SignalCount = Number((store.executionStatus.diagnostics as any)?.signal_count ?? store.currentResults.length ?? 0);
   const stage2SnapshotHitCount = Number((store.executionStatus.diagnostics as any)?.snapshot_hit_count ?? 0);
   const stage2InputCandidateCount = Number((store.executionStatus.diagnostics as any)?.confirm_input_candidate_count ?? 0);
@@ -194,6 +229,10 @@ export function StockScreenerPage() {
 
   const handleExecuteStage2Only = async () => {
     try {
+      if (isBeforePreMarketConfirmWindow(store.tradeDate)) {
+        setError('9:25分之后才能进行盘前确认！');
+        return;
+      }
       setRunMode('pre');
       await store.executeScreening({ runStage1: false, runStage2: true });
     } catch (err) {
@@ -297,6 +336,9 @@ export function StockScreenerPage() {
           <p className="eyebrow">Screener Workspace</p>
           <h1>AI选股器</h1>
           <p className="subtle">基于35%/30%/20%/15%决策序列的系统化选股工具</p>
+          <p className="subtle" style={{ color: '#b42318', fontWeight: 700 }}>
+            P4-SCREENER-MARKER-20260502
+          </p>
           <div className="collection-action-row">
             <button className="tag tag-button" type="button" onClick={handleExportResults}>
               导出结果
@@ -520,6 +562,9 @@ export function StockScreenerPage() {
                   <WeakToStrongTwoStageView
                     tradeDate={store.tradeDate}
                     confirmTradeDate={confirmTradeDate}
+                    snapshotChannel={snapshotChannel}
+                    cacheWrites={stage2CacheWrites}
+                    persistedCount={stage2PersistedCount}
                     signalCount={stage2SignalCount}
                     snapshotHitCount={stage2SnapshotHitCount}
                     confirmInputCandidateCount={stage2InputCandidateCount}
@@ -578,15 +623,6 @@ export function StockScreenerPage() {
                         <div className="screener-kpi-value">
                           {store.executionStatus.diagnostics.score_tuning.pre_filter_count}
                         </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {store.executionStatus.diagnostics.fallback_applied && (
-                    <div className="screener-alert-card is-warn">
-                      <div className="screener-alert-title">交易日自动回退已触发</div>
-                      <div className="workspace-note">
-                        {store.executionStatus.diagnostics.fallback_reason || '无'}
                       </div>
                     </div>
                   )}

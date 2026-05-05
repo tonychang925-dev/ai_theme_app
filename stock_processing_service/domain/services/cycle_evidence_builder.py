@@ -73,11 +73,11 @@ class CycleEvidenceBuilder:
                         support_refs=[],
                         score_flags={
                             "computed": False,
-                            "event_score_fallback": True,
-                            "leader_score_fallback": True,
-                            "relay_score_fallback": True,
-                            "board_score_fallback": True,
-                            "support_score_fallback": True,
+                            "event_score_missing": True,
+                            "leader_score_missing": True,
+                            "relay_score_missing": True,
+                            "board_score_missing": True,
+                            "support_score_missing": True,
                         },
                         missing_flags={
                             "bar_missing": True,
@@ -219,7 +219,7 @@ class CycleEvidenceBuilder:
             support_refs.append(f"subject_positive_ratio={diffusion_ratio:.2f}")
             support_refs.append(f"subject_limit_ratio={limit_ratio:.2f}")
             if not support_refs:
-                support_refs.append("fallback_support")
+                support_refs.append("support_evidence_missing")
 
             evidences.append(
                 CycleEvidence(
@@ -239,11 +239,11 @@ class CycleEvidenceBuilder:
                     support_refs=support_refs,
                     score_flags={
                         "computed": True,
-                        "event_score_fallback": (not bool(tags)) and tag_event_score <= Decimal("0"),
-                        "leader_score_fallback": subject_count <= 1,
-                        "relay_score_fallback": subject_count <= 1,
-                        "board_score_fallback": subject_count <= 1 and len(tags) <= 1,
-                        "support_score_fallback": False,
+                        "event_score_missing": (not bool(tags)) and tag_event_score <= Decimal("0"),
+                        "leader_score_missing": subject_count <= 1,
+                        "relay_score_missing": subject_count <= 1,
+                        "board_score_missing": subject_count <= 1 and len(tags) <= 1,
+                        "support_score_missing": False,
                         "event_score_external": external_event is not None,
                         "leader_score_external": external_leader is not None,
                         "relay_score_external": external_relay is not None,

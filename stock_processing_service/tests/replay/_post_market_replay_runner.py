@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import os
+import json
 from dataclasses import dataclass
 from datetime import date, timedelta
+from pathlib import Path
 from typing import Any
 
 from database_service.gateway import DatabaseGateway
@@ -41,6 +43,19 @@ class ReplayExecutionResult:
     recap_status: str
     recap_doc: dict[str, Any]
     target_diagnostics: dict[str, Any]
+
+
+@dataclass(frozen=True)
+class ReadOnlyReplayCheckResult:
+    trade_date: date
+    artifact_path: str
+    snapshot_version: str
+    candidate_count: int
+    candidate_count_total: int
+    strong_watch_input_7d_count: int
+    has_target_in_input_7d: bool
+    has_target_in_top_candidates: bool
+    target_preview: dict[str, Any]
 
 
 @dataclass(frozen=True)
@@ -196,6 +211,64 @@ def ensure_replay_write_ack() -> None:
         )
 
 
+def _load_local_replay_snapshot(trade_date: date, *, root: Path | None = None) -> dict[str, Any]:
+    base = root or Path("tmp") / "new_chain_runs" / trade_date.isoformat()
+    path = base / "post_market_recap_snapshot.jsonl"
+    if not path.exists():
+        raise FileNotFoundError(f"local replay artifact missing: {path}")
+    latest: dict[str, Any] | None = None
+    with path.open("r", encoding="utf-8") as fh:
+        for raw in fh:
+            line = raw.strip()
+            if not line:
+                continue
+            payload = json.loads(line)
+            if payload.get("object_name") != "post_market_recap_snapshot":
+                continue
+            latest = payload
+    if latest is None:
+        raise FileNotFoundError(f"no post_market_recap_snapshot entries in: {path}")
+    return latest
+
+
+def run_post_market_replay_readonly(
+    trade_date: date,
+    *,
+    target_stock_id: str = "002361.SZ",
+    artifact_root: Path | None = None,
+) -> ReadOnlyReplayCheckResult:
+    snapshot = _load_local_replay_snapshot(trade_date, root=artifact_root)
+    payload = dict(snapshot.get("payload") or {})
+    recap_doc = dict(payload.get("payload") or {})
+    preview = list(recap_doc.get("strong_watch_input_7d_preview") or [])
+    top_candidates = list(recap_doc.get("top_candidates") or [])
+    target_preview = next(
+        (
+            dict(row)
+            for row in preview
+            if str(row.get("stock_id") or "").strip() == target_stock_id
+        ),
+        {},
+    )
+    has_target_in_input_7d = any(
+        str(row.get("stock_id") or "").strip() == target_stock_id for row in preview
+    )
+    has_target_in_top_candidates = any(
+        str(row.get("stock_id") or "").strip() == target_stock_id for row in top_candidates
+    )
+    return ReadOnlyReplayCheckResult(
+        trade_date=trade_date,
+        artifact_path=str((artifact_root or Path("tmp") / "new_chain_runs" / trade_date.isoformat()) / "post_market_recap_snapshot.jsonl"),
+        snapshot_version=str(payload.get("snapshot_version") or ""),
+        candidate_count=int(recap_doc.get("candidate_count") or 0),
+        candidate_count_total=int(recap_doc.get("candidate_count_total") or 0),
+        strong_watch_input_7d_count=int(recap_doc.get("strong_watch_input_7d_count") or 0),
+        has_target_in_input_7d=has_target_in_input_7d,
+        has_target_in_top_candidates=has_target_in_top_candidates,
+        target_preview=target_preview,
+    )
+
+
 async def _assert_required_schema(gateway: DatabaseGateway, *, pre_market: bool = False) -> None:
     required_tables = {
         "stock_daily_snapshot",
@@ -284,64 +357,72 @@ async def run_post_market_replay(
     sample_name: str,
 ) -> ReplayExecutionResult:
     ensure_replay_write_ack()
+    previous_gate_mode = os.getenv("SPS_IDENTITY_GATE_MODE")
+    os.environ["SPS_IDENTITY_GATE_MODE"] = "legacy_anytime"
     gateway = await _get_replay_gateway()
-    await _assert_required_schema(gateway, pre_market=False)
-    facade = _ReplayDatabaseStockFacade(gateway)
+    try:
+        await _assert_required_schema(gateway, pre_market=False)
+        facade = _ReplayDatabaseStockFacade(gateway)
 
-    read_port = StockReadGatewayAdapter(db_gateway=facade)
-    write_port = StockWriteGatewayAdapter(db_gateway=facade)
-    event_port = StockEventGatewayAdapter(db_gateway=facade)
-    idempotency_port = StockIdempotencyGatewayAdapter(db_gateway=facade)
+        read_port = StockReadGatewayAdapter(db_gateway=facade)
+        write_port = StockWriteGatewayAdapter(db_gateway=facade)
+        event_port = StockEventGatewayAdapter(db_gateway=facade)
+        idempotency_port = StockIdempotencyGatewayAdapter(db_gateway=facade)
 
-    snapshot_version = f"replay_{trade_date.isoformat()}_{sample_name}_v1"
-    batch_id = f"replay_{trade_date.isoformat()}"
-    trace_id = f"replay_{sample_name}_{trade_date.isoformat()}"
+        snapshot_version = f"replay_{trade_date.isoformat()}_{sample_name}_v1"
+        batch_id = f"replay_{trade_date.isoformat()}"
+        trace_id = f"replay_{sample_name}_{trade_date.isoformat()}"
 
-    daily_job = BuildDailySnapshotJob(
-        read_port=read_port,
-        write_port=write_port,
-        event_port=event_port,
-        idempotency_port=idempotency_port,
-        cache_port=None,
-    )
-    recap_job = BuildPostMarketRecapJob(
-        read_port=read_port,
-        write_port=write_port,
-        event_port=event_port,
-        idempotency_port=idempotency_port,
-        cache_port=None,
-    )
+        daily_job = BuildDailySnapshotJob(
+            read_port=read_port,
+            write_port=write_port,
+            event_port=event_port,
+            idempotency_port=idempotency_port,
+            cache_port=None,
+        )
+        recap_job = BuildPostMarketRecapJob(
+            read_port=read_port,
+            write_port=write_port,
+            event_port=event_port,
+            idempotency_port=idempotency_port,
+            cache_port=None,
+        )
 
-    daily_result = await daily_job.execute(
-        trade_date=trade_date,
-        snapshot_version=snapshot_version,
-        batch_id=batch_id,
-        trace_id=trace_id,
-    )
-    recap_result = await recap_job.execute(
-        trade_date=trade_date,
-        snapshot_version=snapshot_version,
-        batch_id=batch_id,
-        trace_id=trace_id,
-    )
-    recap_snapshot = await read_port.get_existing_post_market_recap_snapshot(trade_date)
-    recap_doc = recap_snapshot.recap_doc if recap_snapshot else {}
-    target_diagnostics = await _build_target_diagnostics(
-        trade_date=trade_date,
-        read_port=read_port,
-        target_stock_ids=["002361.SZ", "605060.SH"],
-    )
+        daily_result = await daily_job.execute(
+            trade_date=trade_date,
+            snapshot_version=snapshot_version,
+            batch_id=batch_id,
+            trace_id=trace_id,
+        )
+        recap_result = await recap_job.execute(
+            trade_date=trade_date,
+            snapshot_version=snapshot_version,
+            batch_id=batch_id,
+            trace_id=trace_id,
+        )
+        recap_snapshot = await read_port.get_existing_post_market_recap_snapshot(trade_date)
+        recap_doc = recap_snapshot.recap_doc if recap_snapshot else {}
+        target_diagnostics = await _build_target_diagnostics(
+            trade_date=trade_date,
+            read_port=read_port,
+            target_stock_ids=["002361.SZ", "605060.SH"],
+        )
 
-    return ReplayExecutionResult(
-        trade_date=trade_date,
-        snapshot_version=snapshot_version,
-        identity_gate_mode=str(os.getenv("SPS_IDENTITY_GATE_MODE", "asof")).strip().lower(),
-        daily_status=daily_result.status,
-        daily_affected_rows=daily_result.affected_rows,
-        recap_status=recap_result.status,
-        recap_doc=recap_doc,
-        target_diagnostics=target_diagnostics,
-    )
+        return ReplayExecutionResult(
+            trade_date=trade_date,
+            snapshot_version=snapshot_version,
+            identity_gate_mode=str(os.getenv("SPS_IDENTITY_GATE_MODE", "asof")).strip().lower(),
+            daily_status=daily_result.status,
+            daily_affected_rows=daily_result.affected_rows,
+            recap_status=recap_result.status,
+            recap_doc=recap_doc,
+            target_diagnostics=target_diagnostics,
+        )
+    finally:
+        if previous_gate_mode is None:
+            os.environ.pop("SPS_IDENTITY_GATE_MODE", None)
+        else:
+            os.environ["SPS_IDENTITY_GATE_MODE"] = previous_gate_mode
 
 
 async def run_pre_market_replay(
@@ -349,48 +430,56 @@ async def run_pre_market_replay(
     sample_name: str,
 ) -> PreMarketReplayExecutionResult:
     ensure_replay_write_ack()
+    previous_gate_mode = os.getenv("SPS_IDENTITY_GATE_MODE")
+    os.environ["SPS_IDENTITY_GATE_MODE"] = "legacy_anytime"
     gateway = await _get_replay_gateway()
-    await _assert_required_schema(gateway, pre_market=True)
-    facade = _ReplayDatabaseStockFacade(gateway)
+    try:
+        await _assert_required_schema(gateway, pre_market=True)
+        facade = _ReplayDatabaseStockFacade(gateway)
 
-    read_port = StockReadGatewayAdapter(db_gateway=facade)
-    write_port = StockWriteGatewayAdapter(db_gateway=facade)
-    event_port = StockEventGatewayAdapter(db_gateway=facade)
-    idempotency_port = StockIdempotencyGatewayAdapter(db_gateway=facade)
+        read_port = StockReadGatewayAdapter(db_gateway=facade)
+        write_port = StockWriteGatewayAdapter(db_gateway=facade)
+        event_port = StockEventGatewayAdapter(db_gateway=facade)
+        idempotency_port = StockIdempotencyGatewayAdapter(db_gateway=facade)
 
-    snapshot_version = f"replay_{trade_date.isoformat()}_{sample_name}_v1"
-    batch_id = f"replay_{trade_date.isoformat()}"
-    trace_id = f"replay_pre_market_{sample_name}_{trade_date.isoformat()}"
+        snapshot_version = f"replay_{trade_date.isoformat()}_{sample_name}_v1"
+        batch_id = f"replay_{trade_date.isoformat()}"
+        trace_id = f"replay_pre_market_{sample_name}_{trade_date.isoformat()}"
 
-    pre_market_job = BuildPreMarketBriefJob(
-        read_port=read_port,
-        write_port=write_port,
-        event_port=event_port,
-        idempotency_port=idempotency_port,
-        cache_port=None,
-    )
-    pre_market_result = await pre_market_job.execute(
-        trade_date=trade_date,
-        snapshot_version=snapshot_version,
-        batch_id=batch_id,
-        trace_id=trace_id,
-    )
-    brief_snapshot = await read_port.get_existing_pre_market_brief_snapshot(trade_date)
-    brief_doc = brief_snapshot.brief_doc if brief_snapshot else {}
-    target_diagnostics = await _build_target_diagnostics(
-        trade_date=trade_date,
-        read_port=read_port,
-        target_stock_ids=["605060.SH"],
-    )
+        pre_market_job = BuildPreMarketBriefJob(
+            read_port=read_port,
+            write_port=write_port,
+            event_port=event_port,
+            idempotency_port=idempotency_port,
+            cache_port=None,
+        )
+        pre_market_result = await pre_market_job.execute(
+            trade_date=trade_date,
+            snapshot_version=snapshot_version,
+            batch_id=batch_id,
+            trace_id=trace_id,
+        )
+        brief_snapshot = await read_port.get_existing_pre_market_brief_snapshot(trade_date)
+        brief_doc = brief_snapshot.brief_doc if brief_snapshot else {}
+        target_diagnostics = await _build_target_diagnostics(
+            trade_date=trade_date,
+            read_port=read_port,
+            target_stock_ids=["605060.SH"],
+        )
 
-    return PreMarketReplayExecutionResult(
-        trade_date=trade_date,
-        snapshot_version=snapshot_version,
-        identity_gate_mode=str(os.getenv("SPS_IDENTITY_GATE_MODE", "asof")).strip().lower(),
-        pre_market_status=pre_market_result.status,
-        brief_doc=brief_doc,
-        target_diagnostics=target_diagnostics,
-    )
+        return PreMarketReplayExecutionResult(
+            trade_date=trade_date,
+            snapshot_version=snapshot_version,
+            identity_gate_mode=str(os.getenv("SPS_IDENTITY_GATE_MODE", "asof")).strip().lower(),
+            pre_market_status=pre_market_result.status,
+            brief_doc=brief_doc,
+            target_diagnostics=target_diagnostics,
+        )
+    finally:
+        if previous_gate_mode is None:
+            os.environ.pop("SPS_IDENTITY_GATE_MODE", None)
+        else:
+            os.environ["SPS_IDENTITY_GATE_MODE"] = previous_gate_mode
 
 
 async def _build_target_diagnostics(

@@ -78,6 +78,9 @@ export interface ExecuteScreeningResponse {
     candidate_trade_date?: string;
     confirm_trade_date?: string;
     snapshot_trade_date?: string;
+    snapshot_channel?: string;
+    cache_writes?: number;
+    persisted_count?: number;
     signal_count?: number;
     snapshot_hit_count?: number;
     confirm_input_candidate_count?: number;
@@ -85,8 +88,6 @@ export interface ExecuteScreeningResponse {
     stage2?: {
       level_count?: { A?: number; B?: number; C?: number; X?: number };
     };
-    fallback_applied?: boolean;
-    fallback_reason?: string | null;
     requested_snapshot_stock_count?: number;
     resolved_snapshot_stock_count?: number;
     no_data_reason?: string | null;
@@ -253,22 +254,16 @@ export const stockScreenerApi = {
     request<ScreeningStrategy>("/api/v2/stock-screener/strategies", { method: "POST", body: JSON.stringify(data) }),
 
   updateStrategy: (strategyId: string, data: Partial<CreateStrategyRequest>) =>
-    request<ScreeningStrategy>(`/api/v2/stock-screener/strategies/${strategyId}`, {
-      method: "PUT",
-      body: JSON.stringify(data),
-    }),
+    request<ScreeningStrategy>(`/api/v2/stock-screener/strategies/${strategyId}`, { method: "PUT", body: JSON.stringify(data) }),
 
   deleteStrategy: (strategyId: string) =>
     request<{ ok: boolean }>(`/api/v2/stock-screener/strategies/${strategyId}`, { method: "DELETE" }),
 
   executeScreening: (data: ExecuteScreeningRequest) =>
-    request<ExecuteScreeningResponse>(
-      "/api/v2/stock-screener/execute",
-      { method: "POST", body: JSON.stringify(data) },
-      { timeoutMs: 120000 },
-    ),
+    request<ExecuteScreeningResponse>("/api/v2/stock-screener/execute", { method: "POST", body: JSON.stringify(data) }, { timeoutMs: 120000 }),
 
-  getExecutionStatus: (jobId: string) => request<ExecuteScreeningResponse>(`/api/v2/stock-screener/executions/${jobId}`),
+  getExecutionStatus: (jobId: string) =>
+    request<ExecuteScreeningResponse>(`/api/v2/stock-screener/executions/${jobId}`),
 
   getResultDetail: (resultId: string, params?: { view?: "candidate" | "confirm" }) =>
     request<ScreeningResultDetail>(withQuery(`/api/v2/stock-screener/results/${resultId}`, params as Record<string, unknown>)),
@@ -279,13 +274,13 @@ export const stockScreenerApi = {
   getFavorites: () => request<FavoriteItem[]>("/api/v2/stock-screener/favorites"),
 
   addFavorite: (data: AddFavoriteRequest) =>
-    request<FavoriteItem>("/api/v2/stock-screener/favorites", { method: "POST", body: JSON.stringify(data) }),
-
-  updateFavorite: (favoriteId: string, data: { notes?: string; tags?: string[] }) =>
-    request<FavoriteItem>(`/api/v2/stock-screener/favorites/${favoriteId}`, {
-      method: "PUT",
+    request<FavoriteItem>("/api/v2/stock-screener/favorites", {
+      method: "POST",
       body: JSON.stringify(data),
     }),
+
+  updateFavorite: (favoriteId: string, data: { notes?: string; tags?: string[] }) =>
+    request<FavoriteItem>(`/api/v2/stock-screener/favorites/${favoriteId}`, { method: "PUT", body: JSON.stringify(data) }),
 
   removeFavorite: (favoriteId: string) =>
     request<{ ok: boolean }>(`/api/v2/stock-screener/favorites/${favoriteId}`, { method: "DELETE" }),

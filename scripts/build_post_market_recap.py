@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import os
 import subprocess
 import sys
 from datetime import date, datetime
@@ -21,6 +22,8 @@ from database_service.scripts.build_stock_abnormal_signal import (
     load_current_inputs,
 )
 from stock_service.config import StockServiceConfig
+from stock_service.repositories.report_repository import ReportRepository
+from stock_service.services.recap_service import RecapService
 from stock_service.services.stock_abnormal_signal_service import (
     StockAbnormalSignalService,
 )
@@ -78,6 +81,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--transition-gate-fade-jump", type=float, default=0.15, help="主线迁移门禁 fade 抬升阈值")
     parser.add_argument("--transition-gate-min-history-days", type=int, default=3, help="主线迁移门禁最小历史天数")
     parser.add_argument("--disable-transition-gate-auto-tune", action="store_true", help="关闭主线迁移门禁小样本自动调参")
+    parser.add_argument(
+        "--strict-transition-alert-fail",
+        action="store_true",
+        help="开启后，主线迁移分布告警将阻断复盘快照流程（默认仅告警不阻断）。",
+    )
     parser.add_argument("--max-hidden-conflicts", type=int, default=0, help="身份/周期口径冲突 hidden_conflicts 允许上限")
     parser.add_argument("--max-dropped-conflicts", type=int, default=0, help="身份/周期口径冲突 dropped_conflicts 允许上限")
     parser.add_argument("--skip-legacy-entrypoint-gate", action="store_true", help="跳过 legacy 周期入口扫描门禁（仅排障使用）")
@@ -392,9 +400,12 @@ async def _build_abnormal_fallback(args: argparse.Namespace) -> Path:
 
 async def main_async() -> int:
     args = build_parser().parse_args()
+    # Force a single DB target across this script and child processes.
+    os.environ["POSTGRES_DATABASE"] = args.postgres_database
     trade_date_obj = datetime.strptime(args.trade_date, "%Y-%m-%d").date()
     python = sys.executable
     db = args.postgres_database
+    print(f"[INFO] effective_database={db}")
 
     def cmd(path: str, *extra: str) -> list[str]:
         return [python, str(PROJECT_ROOT / path), *extra]
@@ -582,6 +593,8 @@ async def main_async() -> int:
             )
             if args.disable_transition_gate_auto_tune:
                 hard_gate_cmd.append("--disable-transition-auto-tune")
+            if args.strict_transition_alert_fail:
+                hard_gate_cmd.append("--fail-on-transition-alert")
             _run_step("mainline_hard_gate", hard_gate_cmd)
     if not args.skip_upgrade_identity_trigger:
         upgrade_subjects = await _fetch_non_mainline_upgrade_subjects(trade_date_obj, topn=30)
@@ -676,6 +689,90 @@ async def main_async() -> int:
     if args.batch_id:
         snapshot_cmd.extend(["--batch-id", args.batch_id])
     _run_step("post_market_snapshot", snapshot_cmd)
+    # Persist post-market recap snapshot as DB truth source (not just local json/md files).
+    recap_repo = ReportRepository(StockServiceConfig(postgres_database=db))
+    await recap_repo.initialize()
+    try:
+        recap_service = RecapService(recap_repo)
+        post_report = await recap_service.build_post_market_report(args.trade_date)
+    finally:
+        await recap_repo.close()
+
+    batch_id = args.batch_id or f"pm_snapshot_{args.trade_date.replace('-', '')}"
+    trace_id = f"build_post_market_recap:{args.trade_date}"
+    payload = {
+        "report": {
+            "report_type": post_report.report_type,
+            "trade_date": post_report.trade_date,
+            "title": post_report.title,
+            "summary": post_report.summary,
+            "highlights": list(post_report.highlights or []),
+            "sections": [
+                {"heading": heading, "items": list(items or [])}
+                for heading, items in list(post_report.sections or [])
+            ],
+            "metadata": dict(getattr(post_report, "metadata", {}) or {}),
+        }
+    }
+    cfg_upsert = StockServiceConfig(postgres_database=db)
+    conn_upsert = await asyncpg.connect(
+        host=cfg_upsert.postgres_host,
+        port=cfg_upsert.postgres_port,
+        database=cfg_upsert.postgres_database,
+        user=cfg_upsert.postgres_user,
+        password=cfg_upsert.postgres_password,
+    )
+    try:
+        await conn_upsert.execute(
+            """
+            INSERT INTO post_market_recap_snapshot (
+                trade_date, snapshot_version, batch_id, trace_id, payload, source_name
+            ) VALUES ($1, $2, $3, $4, $5::jsonb, $6)
+            ON CONFLICT (trade_date) DO UPDATE SET
+              snapshot_version = EXCLUDED.snapshot_version,
+              batch_id = EXCLUDED.batch_id,
+              trace_id = EXCLUDED.trace_id,
+              payload = EXCLUDED.payload,
+              source_name = EXCLUDED.source_name,
+              updated_at = NOW()
+            """,
+            trade_date_obj,
+            f"post_market_recap_v2:{args.trade_date}",
+            batch_id,
+            trace_id,
+            json.dumps(payload, ensure_ascii=False),
+            "stock_processing_service",
+        )
+    finally:
+        await conn_upsert.close()
+    print(f"[OK] post_market_recap_snapshot_upserted trade_date={args.trade_date} db={db}")
+    # Hard verify: recap snapshot row must exist in target DB after successful build.
+    cfg = StockServiceConfig(postgres_database=db)
+    conn = await asyncpg.connect(
+        host=cfg.postgres_host,
+        port=cfg.postgres_port,
+        database=cfg.postgres_database,
+        user=cfg.postgres_user,
+        password=cfg.postgres_password,
+    )
+    try:
+        row = await conn.fetchrow(
+            """
+            SELECT snapshot_version
+            FROM post_market_recap_snapshot
+            WHERE trade_date = $1::date
+            ORDER BY updated_at DESC NULLS LAST
+            LIMIT 1
+            """,
+            trade_date_obj,
+        )
+    finally:
+        await conn.close()
+    if not row or not str(row.get("snapshot_version") or "").strip():
+        raise RuntimeError(
+            f"post_market_snapshot_verify_failed: no recap snapshot row in db={db}, trade_date={args.trade_date}"
+        )
+    print(f"[OK] snapshot_verify_passed trade_date={args.trade_date} snapshot_version={row['snapshot_version']}")
     print(f"[OK] completed post-market recap for trade_date={args.trade_date}")
     return 0
 

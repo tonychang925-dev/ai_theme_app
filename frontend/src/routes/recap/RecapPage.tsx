@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
-import type { MarketReportView } from "../../lib/api";
-import { fetchRecapV2OrFallback } from "../../lib/api";
+import type { RecapViewModelV2 } from "../../lib/api";
+import { fetchRecapSnapshot } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
 
 const DISPLAY_REPLACEMENTS: Array<[string, string]> = [
@@ -570,7 +570,7 @@ function buildThemeTextMap(lines: string[]) {
   return result;
 }
 
-function sectionMap(payload: MarketReportView | null) {
+function sectionMap(payload: RecapViewModelV2 | null) {
   const map = new Map<string, string[]>();
   for (const section of payload?.sections ?? []) {
     map.set(section.heading, section.items);
@@ -587,7 +587,7 @@ export function RecapPage() {
   const [reportType, setReportType] = useState<"pre_market" | "post_market">(initialType);
   const [abnormalSortKey, setAbnormalSortKey] = useState<"score" | "turnoverRate" | "volumeRatio" | "volumeVsMa50">("score");
   const [abnormalSortDir, setAbnormalSortDir] = useState<"desc" | "asc">("desc");
-  const [payload, setPayload] = useState<MarketReportView | null>(null);
+  const [payload, setPayload] = useState<RecapViewModelV2 | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const sections = useMemo(() => sectionMap(payload), [payload]);
@@ -732,7 +732,7 @@ export function RecapPage() {
     let active = true;
     setLoading(true);
     setError(null);
-    fetchRecapV2OrFallback({ date: tradeDate, reportType })
+    fetchRecapSnapshot({ date: tradeDate, reportType })
       .then((data) => {
         if (active) {
           setPayload(data);

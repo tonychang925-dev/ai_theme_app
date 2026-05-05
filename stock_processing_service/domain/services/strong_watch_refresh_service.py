@@ -30,6 +30,7 @@ class StrongWatchRecord:
     gap_distance_pct: Decimal = Decimal("999")
     role_tags: dict[str, Any] = field(default_factory=dict)
     watch_status: str = "active"
+    watch_age_days: int = 1
     weak_days: int = 0
     prune_reason_code: str | None = None
     prune_mode: str | None = None
@@ -47,6 +48,9 @@ class StrongWatchRecord:
 
 
 class StrongWatchRefreshService:
+    ACTIVE_MIN_SCORE = Decimal("72")
+    WEAKENING_MIN_SCORE = Decimal("62")
+
     def __init__(self, support_scorer: KlineSupportScorer | None = None) -> None:
         self._support_scorer = support_scorer or KlineSupportScorer()
 
@@ -123,6 +127,51 @@ class StrongWatchRefreshService:
             peak_rank = min(peak_rank, rank)
         return limitup_days, strong_days, best_watch_score, peak_rank
 
+    def _recent_limit_up_features(
+        self,
+        *,
+        stock_id: str,
+        current_bar: StockBarDTO,
+        metadata: dict[str, Any],
+        history_bars_by_stock: dict[str, list[StockBarDTO]],
+        prior_rows_by_stock: dict[str, list[PriorSnapshotDTO]],
+    ) -> tuple[int, int]:
+        raw_recent = metadata.get("recent_limit_up_count")
+        raw_consecutive = metadata.get("max_consecutive_limit_up_days")
+        if raw_recent is not None or raw_consecutive is not None:
+            return int(raw_recent or 0), int(raw_consecutive or 0)
+
+        def _is_limit_up_pct(pct: Decimal) -> bool:
+            return pct >= Decimal("9.5")
+
+        history_days: list[tuple[Any, Decimal]] = []
+        for prior in prior_rows_by_stock.get(stock_id, []):
+            payload = prior.payload or {}
+            history_days.append((prior.trade_date, self._d(payload.get("pct_chg"))))
+        for hist in history_bars_by_stock.get(stock_id, []):
+            history_days.append((hist.trade_date, hist.pct_chg))
+        history_days.append((current_bar.trade_date, current_bar.pct_chg))
+
+        unique_days: dict[Any, Decimal] = {}
+        for trade_day, pct in history_days:
+            if trade_day is None:
+                continue
+            unique_days[trade_day] = pct
+        ordered = sorted(unique_days.items(), key=lambda item: item[0])
+        if not ordered:
+            return 0, 0
+
+        recent_window = ordered[-7:]
+        recent_limit_up_count = sum(1 for _, pct in recent_window if _is_limit_up_pct(pct))
+
+        consecutive = 0
+        for _, pct in reversed(ordered):
+            if _is_limit_up_pct(pct):
+                consecutive += 1
+                continue
+            break
+        return recent_limit_up_count, consecutive
+
     def _strong_gene_score(
         self,
         *,
@@ -194,6 +243,18 @@ class StrongWatchRefreshService:
             gap_source = support_result.gap_source
             gap_level = support_result.gap_level
             gap_distance_pct = support_result.gap_distance_pct
+            if support_type == "none" and self._d(metadata.get("support_score")) > Decimal("0"):
+                support_type = str(metadata.get("support_type") or "none")
+                support_level = self._d(metadata.get("support_level"))
+                support_score = self._d(metadata.get("support_score"))
+                support_refs = list(metadata.get("support_refs") or ["prior_support_snapshot"])
+                support_count = int(metadata.get("support_count") or 1)
+                support_combined_strength = self._d(metadata.get("support_combined_strength"))
+                gap_hit = bool(metadata.get("gap_hit") or False)
+                gap_hit_mode = str(metadata.get("gap_hit_mode") or "miss")
+                gap_source = str(metadata.get("gap_source") or "")
+                gap_level = self._d(metadata.get("gap_level"))
+                gap_distance_pct = self._d(metadata.get("gap_distance_pct"), default="999")
             watch_score = (
                 mainline_context_score * Decimal("0.20")
                 + strong_gene_score * Decimal("0.35")
@@ -201,19 +262,22 @@ class StrongWatchRefreshService:
                 + weakness_tolerance_score * Decimal("0.20")
             )
 
-            if watch_score >= Decimal("78"):
+            if watch_score >= Decimal("80"):
                 grade = "S"
-            elif watch_score >= Decimal("66"):
+            elif watch_score >= Decimal("65"):
                 grade = "A"
-            elif watch_score >= Decimal("54"):
+            elif watch_score >= Decimal("50"):
                 grade = "B"
-            elif watch_score >= Decimal("42"):
-                grade = "B_KEEP"
             else:
                 grade = "REJECT"
 
-            recent_limit_up_count = int(metadata.get("recent_limit_up_count") or 0)
-            max_consecutive_limit_up_days = int(metadata.get("max_consecutive_limit_up_days") or 0)
+            recent_limit_up_count, max_consecutive_limit_up_days = self._recent_limit_up_features(
+                stock_id=row.stock_id,
+                current_bar=bar,
+                metadata=metadata,
+                history_bars_by_stock=history_bars_by_stock,
+                prior_rows_by_stock=prior_rows_by_stock,
+            )
             final_mainline_alive = bool(metadata.get("final_mainline_alive") or False)
             final_cycle_state = str(metadata.get("final_cycle_state") or "")
             transition_type = str(metadata.get("transition_type") or "")
@@ -229,6 +293,28 @@ class StrongWatchRefreshService:
                 or recent_limit_up_count >= 2
                 or prior7_limitup_days >= 2
             )
+            if final_cycle_state == "fade_confirmed":
+                watch_status = "removed"
+            elif two_board_entry and watch_score < self.WEAKENING_MIN_SCORE:
+                # Old-chain-compatible board-gene bypass:
+                # a fresh two-board signal must enter the strong-watch path
+                # even if composite watch_score is still below the generic weakening floor.
+                watch_status = "weakening"
+            elif watch_score >= self.ACTIVE_MIN_SCORE:
+                watch_status = "active"
+            elif watch_score >= self.WEAKENING_MIN_SCORE:
+                watch_status = "weakening"
+            else:
+                watch_status = "removed"
+
+            watch_age_days = int(getattr(row, "watch_age_days", 1) or 1)
+            weak_days = int(getattr(row, "weak_days", 0) or 0)
+            if two_board_entry and watch_status in {"active", "weakening"}:
+                # Old-chain-compatible renewal:
+                # a fresh two-board signal renews the watch window instead of
+                # allowing the previous aging counter to run out.
+                watch_age_days = 1
+                weak_days = 0
 
             rows.append(
                 StrongWatchRecord(
@@ -269,6 +355,9 @@ class StrongWatchRefreshService:
                         "prior7_best_watch_score": str(prior7_best_watch_score),
                         "prior7_peak_rank": prior7_peak_rank,
                     },
+                    watch_status=watch_status,
+                    watch_age_days=watch_age_days,
+                    weak_days=weak_days,
                     mainline_context_score=mainline_context_score,
                     strong_gene_score=strong_gene_score,
                     weakness_tolerance_score=weakness_tolerance_score,

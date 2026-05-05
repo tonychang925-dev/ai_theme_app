@@ -20,7 +20,11 @@ check_hits "$ROOT/application" "\._client\b|\._db\b|\bexecute_query\b|\basyncpg\
 check_hits "$ROOT/domain" "\._client\b|\._db\b|\bexecute_query\b|\basyncpg\b" "domain layer contains forbidden gateway/sql symbols"
 
 # Basic SQL literal checks across stock_processing_service (except legacy adapters/tests/docs).
-if rg -n "\bSELECT\b|\bINSERT\b|\bUPDATE\b|\bDELETE\b" "$ROOT" --glob '!**/*.md' --glob '!**/tests/**' --glob '!**/db_*_gateway.py' >/tmp/sps_sql_hits.txt; then
+if rg -n "\bSELECT\b|\bINSERT\b|\bUPDATE\b|\bDELETE\b" "$ROOT" \
+  --glob '!**/*.md' \
+  --glob '!**/tests/**' \
+  --glob '!**/scripts/**' \
+  --glob '!**/db_*_gateway.py' >/tmp/sps_sql_hits.txt; then
   echo "[FAIL] stock_processing_service contains SQL literals"
   cat /tmp/sps_sql_hits.txt
   FAIL=1

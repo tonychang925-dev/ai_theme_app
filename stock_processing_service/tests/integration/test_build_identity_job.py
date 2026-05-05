@@ -77,6 +77,40 @@ class _FakeReadPort:
     ):
         return []
 
+    async def get_mainline_identity_rule_inputs(
+        self, trade_date: date, subject_keys: list[str]
+    ):
+        return [
+            {
+                "subject_key": "ai_chip",
+                "theme_name": "AI Chip",
+                "heat_latest": Decimal("72"),
+                "avg_heat_5d": Decimal("68"),
+                "hot_days_5d": 3,
+                "active_days_10d": 5,
+                "active_days_20d": 8,
+                "his_pct_chg_30d": [Decimal("0.5")] * 30,
+                "his_pct_chg_latest": Decimal("0.8"),
+                "strong_event_count_7d": 2,
+                "event_count_3d": 2,
+                "event_count_7d": 5,
+                "event_recency_days": 1,
+                "event_strength_score": Decimal("78"),
+                "event_continuity_score": Decimal("72"),
+                "board_stock_count": 100,
+                "limit_up_count": 3,
+                "front_row_strength_score": Decimal("74"),
+                "front_row_alive_ratio": Decimal("0.68"),
+                "above_ma10": True,
+                "above_ma20": True,
+                "theme_support_score": Decimal("80"),
+                "theme_ret_10d": Decimal("3"),
+                "board_boom_days_5d": 2,
+                "net_inflow_sum_5d": Decimal("520000000"),
+                "net_inflow_days_5d": 3,
+            }
+        ]
+
     async def get_mainline_cycle_by_subject_keys(
         self, subject_keys: list[str], trade_date: date
     ):

@@ -4,12 +4,6 @@ from dataclasses import asdict, is_dataclass
 from datetime import date
 from typing import Any
 
-from stock_processing_service.infrastructure.gateway_adapters.json_output import (
-    dump_json_only,
-    dump_json_only_rows,
-    is_json_only_mode,
-)
-
 
 class DBStockObjectGateway:
     """Adapter over DatabaseGateway for stock object-layer persistence."""
@@ -43,12 +37,10 @@ class DBStockObjectGateway:
         return payload
 
     async def upsert_stock_daily_strategy_snapshot_rows(self, rows: list[dict[str, Any]]) -> int:
-        if is_json_only_mode():
-            return dump_json_only_rows(object_name="stock_daily_strategy_snapshot", rows=rows)
         fn = getattr(self._db, "upsert_stock_daily_strategy_snapshot_rows", None)
         if callable(fn):
             return await fn(rows)
-        return 0
+        raise RuntimeError("DatabaseGateway missing upsert_stock_daily_strategy_snapshot_rows")
 
     async def upsert_subject_stock_daily_snapshot_rows(self, rows: list[dict[str, Any]]) -> int:
         return await self.upsert_subject_stock_daily_snapshot(rows)
@@ -66,54 +58,38 @@ class DBStockObjectGateway:
         return await self.upsert_post_market_snapshot(doc)
 
     async def upsert_theme_mainline_identity_registry_rows(self, rows: list[dict[str, Any]]) -> int:
-        if is_json_only_mode():
-            return dump_json_only_rows(object_name="theme_mainline_identity_registry", rows=rows)
         fn = getattr(self._db, "upsert_theme_mainline_identity_registry_rows", None)
         if callable(fn):
             return await fn(rows)
-        return len(rows)
+        raise RuntimeError("DatabaseGateway missing upsert_theme_mainline_identity_registry_rows")
 
     async def upsert_mainline_identity_review_queue_rows(self, rows: list[dict[str, Any]]) -> int:
-        if is_json_only_mode():
-            return dump_json_only_rows(object_name="mainline_identity_review_queue", rows=rows)
         fn = getattr(self._db, "upsert_mainline_identity_review_queue_rows", None)
         if callable(fn):
             return await fn(rows)
-        return len(rows)
+        raise RuntimeError("DatabaseGateway missing upsert_mainline_identity_review_queue_rows")
 
     async def upsert_strong_watch_history_rows(self, rows: list[dict[str, Any]]) -> int:
-        if is_json_only_mode():
-            return dump_json_only_rows(object_name="strong_stock_watch_history", rows=rows)
         fn = getattr(self._db, "upsert_strong_watch_history_rows", None)
         if callable(fn):
             return await fn(rows)
-        return len(rows)
+        raise RuntimeError("DatabaseGateway missing upsert_strong_watch_history_rows")
 
     async def upsert_subject_stock_daily_snapshot(self, rows: list[dict[str, Any]]) -> int:
-        if is_json_only_mode():
-            return dump_json_only_rows(object_name="subject_stock_daily_snapshot", rows=rows)
         return await self._db.upsert_subject_stock_daily_snapshot_rows(rows)
 
     async def upsert_stock_abnormal_events(self, rows: list[dict[str, Any]]) -> int:
-        if is_json_only_mode():
-            return dump_json_only_rows(object_name="stock_abnormal_event", rows=rows)
         return await self._db.upsert_stock_abnormal_event_rows(rows)
 
     async def upsert_theme_stock_leaderboard(self, rows: list[dict[str, Any]]) -> int:
-        if is_json_only_mode():
-            return dump_json_only_rows(object_name="theme_stock_leaderboard", rows=rows)
         return await self._db.upsert_theme_stock_leaderboard_rows(rows)
 
     async def upsert_pre_market_snapshot(self, row: dict[str, Any]) -> int:
         payload = self._to_dict(row)
-        if is_json_only_mode():
-            return dump_json_only(object_name="pre_market_brief_snapshot", payload=payload)
         return await self._db.upsert_pre_market_brief_snapshot(payload)
 
     async def upsert_post_market_snapshot(self, row: dict[str, Any]) -> int:
         payload = self._to_dict(row)
-        if is_json_only_mode():
-            return dump_json_only(object_name="post_market_recap_snapshot", payload=payload)
         return await self._db.upsert_post_market_recap_snapshot(payload)
 
     async def query_stock_daily_snapshot(self, trade_date: date) -> list[dict[str, Any]]:

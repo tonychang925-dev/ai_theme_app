@@ -280,7 +280,7 @@ export function SSETestPanel() {
           <li>检查网络断开时自动重试是否工作</li>
         </ul>
         <p style={{ marginTop: '10px', fontStyle: 'italic' }}>
-          注意：确保后端服务(frontend_bff)正在运行，端口8000可用。
+          注意：确保后端服务(web_app_service)正在运行，端口8000可用。
         </p>
       </div>
     </div>

@@ -192,6 +192,7 @@ THEME_SERVICE_PATTERN="uvicorn theme_service.app:app --host 0.0.0.0 --port 8002"
 BFF_WRAPPER_PATTERN="bash.*scripts/start_frontend_bff_wrapper.sh"
 BFF_PATTERN="uvicorn frontend_bff.app:app --host 0.0.0.0 --port 8003"
 FRONTEND_PATTERN="vite --host"
+FRONTEND_HEALTH_URL="http://127.0.0.1:5173/"
 
 if [[ "$RESTART" == "true" ]]; then
   stop_pattern_if_running "$START_SERVICES_PATTERN" "stream services"
@@ -286,7 +287,15 @@ ensure_bff_running \
 if [[ "$WITH_FRONTEND" == "true" ]]; then
   if [[ -f "$ROOT_DIR/frontend/package.json" ]] && command -v npm >/dev/null 2>&1; then
     if pgrep -f "$FRONTEND_PATTERN" >/dev/null 2>&1; then
-      echo "[skip] frontend vite already running"
+      if curl -fsS --max-time 2 "$FRONTEND_HEALTH_URL" >/dev/null 2>&1; then
+        echo "[skip] frontend vite already running"
+      else
+        echo "[repair] frontend vite process exists but 5173 is not reachable, restarting..."
+        pkill -f "$FRONTEND_PATTERN" || true
+        sleep 1
+        echo "[start] frontend vite"
+        (cd "$ROOT_DIR/frontend" && nohup npm run dev -- --host >"$LOG_DIR/frontend_vite.log" 2>&1 &)
+      fi
     else
       echo "[start] frontend vite"
       (cd "$ROOT_DIR/frontend" && nohup npm run dev -- --host >"$LOG_DIR/frontend_vite.log" 2>&1 &)
@@ -300,6 +309,7 @@ wait_proc_ok "$START_SERVICES_PATTERN" "stream services" 15
 wait_proc_ok "$THEME_SERVICE_PATTERN" "theme_service:8002" 15
 if [[ "$WITH_FRONTEND" == "true" ]]; then
   wait_proc_ok "$FRONTEND_PATTERN" "frontend vite" 10
+  wait_http_ok "$FRONTEND_HEALTH_URL" "frontend vite http" 40
 fi
 
 wait_http_ok "http://127.0.0.1:8002/health" "theme_service" 40

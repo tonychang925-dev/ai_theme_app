@@ -339,6 +339,17 @@ class DatabaseGateway:
             logger.error(f"读取竞价快照失败 trade_date={trade_date}: {e}")
             raise
 
+    async def upsert_pre_market_auction_snapshots(self, snapshots: List[Dict[str, Any]]) -> int:
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_pre_market_auction_snapshots(snapshots)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"写入竞价快照失败 snapshots={len(snapshots)}: {e}")
+            raise
+
     async def get_subject_context_by_subject_keys(self, subject_keys: List[str], trade_date) -> List[Dict[str, Any]]:
         """股票域显式读取：题材上下文。"""
         try:
@@ -349,6 +360,22 @@ class DatabaseGateway:
         except Exception as e:
             self._record_request(False, start_time)
             logger.error(f"读取题材上下文失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def resolve_theme_name_map(
+        self,
+        subject_keys: List[str],
+        trade_date=None,
+    ) -> Dict[str, str]:
+        """股票域显式读取：subject_key -> 题材展示名。"""
+        try:
+            start_time = time.time()
+            result = await self._client.resolve_theme_name_map(subject_keys, trade_date)
+            self._record_request(True, start_time)
+            return dict(result or {})
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"解析题材名称失败 trade_date={trade_date}: {e}")
             raise
 
     async def get_prior_stock_daily_snapshots(
@@ -416,6 +443,137 @@ class DatabaseGateway:
         except Exception as e:
             self._record_request(False, start_time)
             logger.error(f"读取 pre_market_brief_snapshot 最新日期失败: {e}")
+            raise
+
+    async def get_stock_screening_strategy(self, strategy_id: str) -> Optional[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            result = await self._client.get_stock_screening_strategy(strategy_id)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取选股策略失败 strategy_id={strategy_id}: {e}")
+            raise
+
+    async def get_stock_screening_strategies(self, active_only: bool = True) -> List[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            result = await self._client.get_stock_screening_strategies(active_only=active_only)
+            self._record_request(True, start_time)
+            return list(result or [])
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取选股策略列表失败: {e}")
+            raise
+
+    async def get_stock_screening_execution(self, execution_id: str) -> Optional[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            result = await self._client.get_stock_screening_execution(execution_id)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取选股执行失败 execution_id={execution_id}: {e}")
+            raise
+
+    async def get_stock_screening_result(self, result_id: str) -> Optional[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            result = await self._client.get_stock_screening_result(result_id)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取选股结果失败 result_id={result_id}: {e}")
+            raise
+
+    async def get_w2s_candidate_replay_by_id(self, candidate_id: int) -> Optional[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            result = await self._client.get_w2s_candidate_replay_by_id(candidate_id)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取弱转强回放详情失败 candidate_id={candidate_id}: {e}")
+            raise
+
+    async def query_stock_screening_history(self, **kwargs) -> Dict[str, Any]:
+        try:
+            start_time = time.time()
+            result = await self._client.query_stock_screening_history(**kwargs)
+            self._record_request(True, start_time)
+            return dict(result or {})
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"查询选股历史失败: {e}")
+            raise
+
+    async def get_stock_screening_favorites(self, user_id: str) -> List[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            result = await self._client.get_stock_screening_favorites(user_id)
+            self._record_request(True, start_time)
+            return list(result or [])
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取选股收藏失败 user_id={user_id}: {e}")
+            raise
+
+    async def add_stock_screening_favorite(self, favorite: Dict[str, Any]) -> bool:
+        try:
+            start_time = time.time()
+            result = await self._client.add_stock_screening_favorite(favorite)
+            self._record_request(True, start_time)
+            return bool(result)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"新增选股收藏失败: {e}")
+            raise
+
+    async def update_stock_screening_favorite(
+        self,
+        favorite_id: str,
+        notes: Optional[str],
+        tags: Optional[List[str]],
+    ) -> bool:
+        try:
+            start_time = time.time()
+            result = await self._client.update_stock_screening_favorite(favorite_id, notes, tags)
+            self._record_request(True, start_time)
+            return bool(result)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"更新选股收藏失败 favorite_id={favorite_id}: {e}")
+            raise
+
+    async def remove_stock_screening_favorite(self, favorite_id: str) -> bool:
+        try:
+            start_time = time.time()
+            result = await self._client.remove_stock_screening_favorite(favorite_id)
+            self._record_request(True, start_time)
+            return bool(result)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"删除选股收藏失败 favorite_id={favorite_id}: {e}")
+            raise
+
+    async def get_stock_screening_statistics(
+        self,
+        strategy_id: Optional[str] = None,
+        date_from=None,
+        date_to=None,
+    ) -> Dict[str, Any]:
+        try:
+            start_time = time.time()
+            result = await self._client.get_stock_screening_statistics(strategy_id, date_from, date_to)
+            self._record_request(True, start_time)
+            return dict(result or {})
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取选股统计失败: {e}")
             raise
 
     async def infer_confirm_trade_date_from_candidate_trade_date(self, candidate_trade_date):
@@ -564,6 +722,21 @@ class DatabaseGateway:
         except Exception as e:
             self._record_request(False, start_time)
             logger.error(f"读取主线身份失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def get_mainline_identity_rule_inputs(self, trade_date, subject_keys: List[str]) -> List[Dict[str, Any]]:
+        """股票域显式读取：Layer A 旧链等价规则输入。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_mainline_identity_rule_inputs(
+                trade_date=trade_date,
+                subject_keys=subject_keys,
+            )
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 Layer A 规则输入失败 trade_date={trade_date}: {e}")
             raise
 
     async def get_mainline_cycle_by_subject_keys(self, subject_keys: List[str], trade_date) -> List[Dict[str, Any]]:

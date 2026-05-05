@@ -30,7 +30,7 @@ class SubjectBoardStructureAggregator:
     - 前排强度 / 前排存活率
     - 龙头失位检测
 
-    对齐生产 stock_service/services/theme_board_structure_aggregator.py。
+    对齐生产板块结构聚合口径。
     """
 
     FRONT_ROW_SIZE = 3

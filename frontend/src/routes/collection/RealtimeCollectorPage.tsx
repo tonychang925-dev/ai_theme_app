@@ -37,7 +37,7 @@ export function RealtimeCollectorPage() {
     const result = await fetchRealtimeCollectorStatus();
     setStatusResult(result);
     const text = `${result.stdout}\n${result.stderr}`;
-    if (text.includes("[up]   stream services") && text.includes("[up]   frontend_bff:8003")) {
+    if (text.includes("[up]   web_app_service:8000") && text.includes("[up]   stock_processing_service:8090")) {
       setRunning("up");
     } else {
       setRunning("down");
@@ -47,7 +47,7 @@ export function RealtimeCollectorPage() {
 
   async function refreshLogs() {
     const result = await fetchRealtimeCollectorLogs(120);
-    const preferredOrder = ["start_services.log", "frontend_bff_8003.log"];
+    const preferredOrder = ["stock_processing_service_8090.log", "web_app_service_8000.log", "frontend_5173.log"];
     const merged = preferredOrder.flatMap((name) => {
       const lines = result.files[name] ?? [];
       if (!lines.length) return [];
@@ -69,7 +69,7 @@ export function RealtimeCollectorPage() {
     refreshStatus()
       .then(async (result) => {
         const text = `${result.stdout}\n${result.stderr}`;
-        if (text.includes("[up]   stream services")) {
+        if (text.includes("[up]   web_app_service:8000") || text.includes("[up]   stock_processing_service:8090")) {
           await refreshLogs();
         }
       })
@@ -116,7 +116,7 @@ export function RealtimeCollectorPage() {
     }
     append("开始启动实时事件采集链路...");
     try {
-      // 通过BFF接口触发启动时，不能restart BFF本身，否则会自杀式重启导致请求中断。
+      // 通过 web_app_service 触发启动时，不能重启 web_app_service 本身，否则会中断当前请求。
       const result = await startRealtimeCollector({ restart: false, with_frontend: false });
       append(`启动完成: rc=${result.return_code}`);
       await refreshStatus();
@@ -130,7 +130,7 @@ export function RealtimeCollectorPage() {
           await refreshLogs();
           append("已完成状态刷新。若仍未运行，请再次点击“启动实时采集”。");
         } catch {
-          append("启动超时后状态刷新失败，请确认BFF服务(8003)是否在线。");
+          append("启动超时后状态刷新失败，请确认 web_app_service(8000) 与 stock_processing_service(8090) 是否在线。");
         }
       } else {
         append(message.startsWith("启动失败:") ? message : `启动失败: ${message}`);
