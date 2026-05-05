@@ -1,10 +1,10 @@
 {
-  "numStartups": 17,
+  "numStartups": 18,
   "hasSeenTasksHint": true,
   "tipsHistory": {
     "new-user-warmup": 9,
     "plan-mode-for-complex-tasks": 14,
-    "memory-command": 3,
+    "memory-command": 18,
     "shift-enter": 15,
     "theme-command": 5,
     "colorterm-truecolor": 5,
@@ -12,14 +12,14 @@
     "prompt-queue": 5,
     "enter-to-steer-in-relatime": 5,
     "todo-list": 5,
-    "ide-upsell-external-terminal": 13,
+    "ide-upsell-external-terminal": 18,
     "install-github-app": 15,
     "install-slack-app": 17,
     "drag-and-drop-images": 17,
     "paste-images-mac": 17,
     "double-esc-code-restore": 17,
-    "continue": 7,
-    "shift-tab": 7,
+    "continue": 18,
+    "shift-tab": 18,
     "image-paste": 7,
     "custom-agents": 7,
     "agent-flag": 7,
@@ -30,9 +30,10 @@
     "permissions": 11,
     "rename-conversation": 11,
     "custom-commands": 11,
-    "color-when-multi-clauding": 15
+    "color-when-multi-clauding": 15,
+    "subagent-fanout-nudge": 18
   },
-  "promptQueueUseCount": 73,
+  "promptQueueUseCount": 74,
   "cachedGrowthBookFeatures": {
     "tengu_year_end_2025_campaign_promo": false,
     "tengu_umber_petrel": false,
@@ -474,12 +475,12 @@
       "hasClaudeMdExternalIncludesWarningShown": false,
       "exampleFiles": [
         "w2s_candidate_service.py",
-        "_post_market_replay_runner.py",
         "postgres_manager.py",
         "gateway.py",
-        "build_post_market_recap_job.py"
+        "build_identity_job.py",
+        "_post_market_replay_runner.py"
       ],
-      "exampleFilesGeneratedAt": 1777122411750,
+      "exampleFilesGeneratedAt": 1777979410796,
       "lastCost": 119.63468899999992,
       "lastAPIDuration": 20973296,
       "lastAPIDurationWithoutRetries": 20872263,

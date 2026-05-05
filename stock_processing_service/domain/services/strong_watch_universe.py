@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from dataclasses import dataclass
 from decimal import Decimal
 from typing import Any
@@ -200,11 +201,24 @@ class StrongWatchUniverseBuilder:
                 identity_confirmed_prelim = (
                     identity.identity_status == "confirmed" and identity.is_main_theme
                 )
-                if identity_confirmed_prelim:
+                if identity_confirmed_prelim and os.environ.get("LAYER_C_ALLOW_INFERRED_CYCLE", "0") == "1":
                     # B层覆盖缺口: identity 已确认为主线, 但 cycle 数据尚未生成
                     # 使用保守推断 cycle (alive=False), 归入 observe
+                    # Gate: LAYER_C_ALLOW_INFERRED_CYCLE (Phase 1: default 0, strict document path)
                     cycle = self._infer_cycle_for_confirmed_identity(subject_key)
                     cycle_source = "inferred"
+                elif identity_confirmed_prelim:
+                    # Gate closed: missing cycle → blocked (strict document path)
+                    blocked_rows.append(row)
+                    diagnostics[stock_id] = {
+                        "universe_status": "blocked",
+                        "universe_reason": "identity_confirmed_but_cycle_missing_inferred_disabled",
+                        "identity_present": True,
+                        "cycle_present": False,
+                        "identity_status": identity.identity_status,
+                        "is_main_theme": identity.is_main_theme,
+                    }
+                    continue
                 else:
                     blocked_rows.append(row)
                     diagnostics[stock_id] = {
@@ -258,7 +272,8 @@ class StrongWatchUniverseBuilder:
                 }
                 continue
 
-            if two_board_entry:
+            # Gate: LAYER_C_ALLOW_TWO_BOARD_BYPASS (Phase 1: default 1, Phase 2: default 0)
+            if two_board_entry and os.environ.get("LAYER_C_ALLOW_TWO_BOARD_BYPASS", "1") == "1":
                 formal_rows.append(row)
                 diagnostics[stock_id] = {
                     "universe_status": "formal",

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from dataclasses import dataclass
 from decimal import Decimal
 from typing import Any
@@ -97,18 +98,25 @@ class StrongWatchAdmissionPolicy:
         if structure_health_pass:
             pass_reasons.append("structure_health_pass")
 
-        old_chain_hard_pass = bool(
-            limitup_gene_pass
-            and (
-                pass_count_4of3 >= 3
-                or (theme_synergy_pass and recent_limit_up_count >= 2)
-                or (two_board_entry and pass_count_4of3 >= 2)
-                or ((is_leader or rank_order <= 3) and support_score >= Decimal("60"))
-                or (final_mainline_alive and limitup_gene_pass and support_score >= Decimal("60"))
+        # Gate: LAYER_C_ALLOW_OLD_CHAIN_HARD_PASS (Phase 1: default 1, Phase 2: default 0)
+        if os.environ.get("LAYER_C_ALLOW_OLD_CHAIN_HARD_PASS", "1") == "1":
+            old_chain_hard_pass = bool(
+                limitup_gene_pass
+                and (
+                    pass_count_4of3 >= 3
+                    or (theme_synergy_pass and recent_limit_up_count >= 2)
+                    or (two_board_entry and pass_count_4of3 >= 2)
+                    or ((is_leader or rank_order <= 3) and support_score >= Decimal("60"))
+                    or (final_mainline_alive and limitup_gene_pass and support_score >= Decimal("60"))
+                )
             )
-        )
+        else:
+            # Strict document path: pure 4-of-3 admission
+            old_chain_hard_pass = False
 
         if old_chain_hard_pass:
+            admission_status = "formal"
+        elif pass_count_4of3 >= 3:
             admission_status = "formal"
         elif limitup_gene_pass and structure_health_pass and volume_price_health_pass:
             admission_status = "observe_only"
