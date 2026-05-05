@@ -384,6 +384,18 @@ class StockReadGatewayAdapter:
         self._mainline_cycle_cache[cache_key] = list(result)
         return result
 
+    async def get_subject_cycle_evidence_daily(
+        self,
+        trade_date: date,
+        subject_keys: list[str] | None = None,
+    ) -> list[dict[str, Any]]:
+        """Read pre-computed four-layer evidence from theme_cycle_evidence_daily (old-chain truth source)."""
+        fn = getattr(self._db, "get_subject_cycle_evidence_daily", None)
+        if not callable(fn):
+            return []
+        rows = await fn(trade_date=trade_date, subject_keys=subject_keys)
+        return [_as_dict(row) for row in rows]
+
     async def get_prior_strong_watch_pool_rows(
         self,
         trade_date: date,

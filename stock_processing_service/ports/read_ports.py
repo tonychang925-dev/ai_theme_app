@@ -73,6 +73,10 @@ class StockReadPort(Protocol):
         self, trade_date: date, subject_keys: list[str] | None = None
     ) -> list[SubjectEventStatsDTO]: ...
 
+    async def get_subject_cycle_evidence_daily(
+        self, trade_date: date, subject_keys: list[str] | None = None
+    ) -> list[dict]: ...
+
 
 # Backward-compatible alias
 StockReadPorts = StockReadPort

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from dataclasses import asdict
 from collections import defaultdict
 from datetime import date, datetime, timezone
@@ -135,9 +136,35 @@ class BuildDailySnapshotJob:
                 ttl_seconds=SnapshotCacheWriter.TTL_2H,
             )
 
+        # Per-stock evidences are always computed (needed by projectors downstream).
         evidences = self._evidence_builder.build_evidences(bars, pool_rows, context_rows, prior_rows)
-        # Layer B 主判定以 subject_key 为中心，个股仅消费题材主判定结果。
-        subject_evidences = self._subject_evidence_builder.build_many(evidences)
+
+        # Layer B 主判定以 subject_key 为中心，优先消费旧链预计算四层证据真源。
+        db_evidence_rows = await self._read_port.get_subject_cycle_evidence_daily(
+            trade_date=trade_date,
+            subject_keys=subject_keys,
+        ) if subject_keys else []
+        layer_b_db_truth_missing = not bool(db_evidence_rows)
+
+        if db_evidence_rows:
+            subject_evidences = self._subject_evidence_builder.build_from_db(db_evidence_rows)
+            cycle_evidence_source = "db"
+        else:
+            if os.environ.get("LAYER_B_ALLOW_HEURISTIC_FALLBACK", "1") == "1":
+                import logging
+                _logger = logging.getLogger(__name__)
+                _logger.warning(
+                    "Layer B truth source missing: using heuristic fallback for %d subjects",
+                    len(subject_keys),
+                )
+                subject_evidences = self._subject_evidence_builder.build_many(evidences)
+                cycle_evidence_source = "heuristic_fallback"
+            else:
+                raise RuntimeError(
+                    f"Layer B: theme_cycle_evidence_daily empty for {len(subject_keys)} subjects "
+                    f"and LAYER_B_ALLOW_HEURISTIC_FALLBACK=0"
+                )
+
         subject_judgements = self._subject_judgement_service.judge_many(subject_evidences)
         subject_judgement_by_key = {j.subject_key: j for j in subject_judgements}
         judgements = []
@@ -330,6 +357,14 @@ class BuildDailySnapshotJob:
                 "daily_rows": len(daily_rows),
                 "subject_daily_rows": len(subject_daily_rows),
                 "abnormal_rows": len(abnormal_rows),
+                "cycle_evidence_source": cycle_evidence_source,
+                "layer_b_db_truth_missing": layer_b_db_truth_missing,
+                "db_evidence_row_count": len(db_evidence_rows) if db_evidence_rows else 0,
+                "subject_evidence_count": len(subject_evidences),
+                "heuristic_fallback_count": len(subject_evidences) if cycle_evidence_source == "heuristic_fallback" else 0,
+                "missing_db_subject_keys": sorted(
+                    set(subject_keys) - {r["subject_key"] for r in (db_evidence_rows or [])}
+                ) if db_evidence_rows else sorted(subject_keys),
                 "leaderboard_rows": len(leaderboard_rows),
             },
             published_events=published_events,

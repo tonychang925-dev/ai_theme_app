@@ -1,11 +1,9 @@
 from __future__ import annotations
 
-import json
 import os
 from dataclasses import asdict
 from datetime import date, datetime, timezone
 from decimal import Decimal
-from pathlib import Path
 from typing import Any
 from types import SimpleNamespace
 from uuid import uuid4
@@ -128,9 +126,7 @@ class BuildIdentityJob:
                 trace_id=trace_id,
             )
 
-        # ── Feature flags ──
-        USE_ENHANCED_MAINLINE = os.environ.get("USE_ENHANCED_MAINLINE", "0") == "1"
-        DUAL_RUN_TRACE_ENABLED = os.environ.get("DUAL_RUN_TRACE", "1") == "1"
+        # ── Single engine path: IdentityRuleEngine → IdentityLLMReviewService → IdentityDecider ──
 
         raw_pool_rows = await self._read_port.get_subject_stock_pool_by_trade_date(trade_date)
         pool_rows = self._normalize_rows(raw_pool_rows)
@@ -147,7 +143,6 @@ class BuildIdentityJob:
 
         identity_registry_rows: list[dict[str, Any]] = []
         review_queue_rows: list[dict[str, Any]] = []
-        _comparisons: list[dict[str, Any]] = []
 
         grouped: dict[str, list[Any]] = {}
         for row in pool_rows:
@@ -179,7 +174,7 @@ class BuildIdentityJob:
                 platform_breakout_flag=rule.platform_breakout_flag,
             )
 
-            identity_row_old = {
+            identity_row = {
                 "trade_date": trade_date.isoformat(),
                 "subject_key": subject_key,
                 "subject_name": subject_name,
@@ -204,60 +199,9 @@ class BuildIdentityJob:
                 "source_trace_id": trace_id,
             }
 
-            # ── New chain: same IdentityRuleEngine + IdentityDecider logic as old chain ──
-            # (EnhancedMainlineJudgementService is reserved for Layer B/D consumption, not Layer A)
-            identity_row_new = {
-                "trade_date": trade_date.isoformat(),
-                "subject_key": subject_key,
-                "subject_name": subject_name,
-                "logic_score": str(rule.logic_score),
-                "market_score": str(rule.market_score),
-                "composite_score": str(rule.composite_score),
-                "one_day_tour_flag": rule.one_day_tour_flag,
-                "continuity_signal": "weak_continuity" if rule.one_day_tour_flag else "normal",
-                "logic_ok": rule.logic_ok,
-                "market_ok": rule.market_ok,
-                "rule_is_main_theme": rule.rule_is_main_theme,
-                "rule_reasons": rule.reasons,
-                "legacy_composite_score": str(rule.composite_score),
-                "llm_verdict": llm_verdict.verdict,
-                "llm_reason": llm_verdict.reason,
-                "identity_status": decision.identity_status,
-                "snapshot_version": snapshot_version,
-                "batch_id": batch_id,
-                "trace_id": trace_id,
-                "source_trace_id": trace_id,
-            }
+            identity_registry_rows.append(identity_row)
 
-            # ── Dual-run comparison ──
-            _comparisons.append({
-                "subject_key": subject_key,
-                "subject_name": subject_name,
-                "old": {
-                    "identity_status": identity_row_old["identity_status"],
-                    "rule_is_main_theme": identity_row_old["rule_is_main_theme"],
-                    "composite_score": identity_row_old["composite_score"],
-                    "logic_score": identity_row_old["logic_score"],
-                    "market_score": identity_row_old["market_score"],
-                },
-                "new": {
-                    "identity_status": identity_row_new["identity_status"],
-                    "rule_is_main_theme": identity_row_new["rule_is_main_theme"],
-                    "composite_score": identity_row_new["composite_score"],
-                    "logic_score": identity_row_new["logic_score"],
-                    "market_score": identity_row_new["market_score"],
-                },
-                "agreement": identity_row_old["identity_status"] == identity_row_new["identity_status"],
-            })
-
-            if USE_ENHANCED_MAINLINE:
-                identity_registry_rows.append(identity_row_new)
-                _selected_row = identity_row_new
-            else:
-                identity_registry_rows.append(identity_row_old)
-                _selected_row = identity_row_old
-
-            if _selected_row["identity_status"] == "review_pending":
+            if identity_row["identity_status"] == "review_pending":
                 review_queue_rows.append(
                     {
                         "trade_date": trade_date.isoformat(),
@@ -265,30 +209,14 @@ class BuildIdentityJob:
                         "subject_name": subject_name,
                         "reason": decision.reason,
                         "llm_confidence": str(llm_verdict.confidence),
-                        "llm_verdict": _selected_row.get("llm_verdict", ""),
-                        "rule_is_main_theme": _selected_row["rule_is_main_theme"],
-                        "rule_reasons": _selected_row["rule_reasons"],
+                        "llm_verdict": identity_row.get("llm_verdict", ""),
+                        "rule_is_main_theme": identity_row["rule_is_main_theme"],
+                        "rule_reasons": identity_row["rule_reasons"],
                         "snapshot_version": snapshot_version,
                         "batch_id": batch_id,
                         "trace_id": trace_id,
                     }
                 )
-
-        # ── Write dual-run comparison JSON to tmp/ ──
-        if _comparisons and DUAL_RUN_TRACE_ENABLED:
-            _comparison_path = Path("tmp") / f"dual_run_identity_{trade_date.isoformat()}_{snapshot_version}.json"
-            _comparison_path.parent.mkdir(parents=True, exist_ok=True)
-            _comparison_payload = {
-                "trade_date": trade_date.isoformat(),
-                "snapshot_version": snapshot_version,
-                "batch_id": batch_id,
-                "new_path_active": USE_ENHANCED_MAINLINE,
-                "total_subjects": len(_comparisons),
-                "agreement_count": sum(1 for c in _comparisons if c["agreement"]),
-                "disagreement_count": sum(1 for c in _comparisons if not c["agreement"]),
-                "comparisons": _comparisons,
-            }
-            _comparison_path.write_text(json.dumps(_comparison_payload, ensure_ascii=False, indent=2, default=str))
 
         written_registry = await self._write_port.upsert_theme_mainline_identity_registry_rows(identity_registry_rows)
         written_review = await self._write_port.upsert_mainline_identity_review_queue_rows(review_queue_rows)
@@ -335,6 +263,8 @@ class BuildIdentityJob:
                 "identity_registry_rows": written_registry,
                 "identity_review_rows": written_review,
                 "subject_count": len(grouped),
+                "identity_engine": "identity_rule_engine",
+                "dual_run_enabled": False,
             },
             published_events=published_events,
         )
