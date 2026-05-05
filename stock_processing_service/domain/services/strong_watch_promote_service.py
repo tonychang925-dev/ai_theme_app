@@ -12,7 +12,9 @@ class StrongWatchPromoteService:
         for row in rows:
             if str(getattr(row, "admission_status", "formal") or "formal") != "formal":
                 continue
-            if row.strong_grade not in {"S", "A", "B", "B_KEEP"}:
+            if row.strong_grade not in {"S", "A"}:
+                continue
+            if row.watch_score < 78:
                 continue
             promoted.append(
                 SubjectStockPoolDTO(

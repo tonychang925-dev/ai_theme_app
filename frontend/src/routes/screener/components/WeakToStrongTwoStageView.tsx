@@ -23,6 +23,9 @@ interface ResultItem {
 interface WeakToStrongTwoStageViewProps {
   tradeDate: string;
   confirmTradeDate?: string;
+  snapshotChannel?: string;
+  cacheWrites?: number;
+  persistedCount?: number;
   signalCount?: number;
   snapshotHitCount?: number;
   confirmInputCandidateCount?: number;
@@ -66,6 +69,9 @@ export function WeakToStrongTwoStageView(props: WeakToStrongTwoStageViewProps) {
   const {
     tradeDate,
     confirmTradeDate,
+    snapshotChannel,
+    cacheWrites,
+    persistedCount,
     signalCount,
     snapshotHitCount,
     confirmInputCandidateCount,
@@ -142,6 +148,9 @@ export function WeakToStrongTwoStageView(props: WeakToStrongTwoStageViewProps) {
           <div className="metric-label">确认结果数</div>
           <div className="workspace-note">{stage2Text}</div>
           <div className="workspace-note">确认日：{confirmTradeDate || '--'}</div>
+          <div className="workspace-note">确认通道：{snapshotChannel || '--'}</div>
+          <div className="workspace-note">实时缓存写入：{cacheWrites ?? 0}</div>
+          <div className="workspace-note">竞价快照落库：{persistedCount ?? 0}</div>
           <div className="workspace-note">signal_count：{signalCount ?? confirmResults.length}</div>
           <div className="workspace-note">snapshot_hit_count：{snapshotHitCount ?? '--'}</div>
           <div className="workspace-note">阶段2输入候选数：{confirmInputCandidateCount ?? '--'}</div>

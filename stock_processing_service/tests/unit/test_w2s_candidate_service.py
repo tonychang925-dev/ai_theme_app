@@ -64,19 +64,25 @@ def test_w2s_candidate_service_builds_formal_and_observe_only() -> None:
     svc = W2SCandidateService()
     bars = [
         _bar("A.SZ", "-1.5"),
-        _bar("B.SZ", "2.8"),
+        _bar("B.SZ", "-0.5"),
     ]
     pool_rows = [
         _pool("A.SZ", 1, watch_score="92", support_score="88", strong_grade="S", prior7_limitup_days=2, prior7_strong_days=3),
-        _pool("B.SZ", 1, watch_score="65", support_score="58", strong_grade="B", prior7_limitup_days=1, prior7_strong_days=1),
+        _pool("B.SZ", 10, watch_score="65", support_score="58", strong_grade="B", prior7_limitup_days=1, prior7_strong_days=1),
     ]
     prior = [
         PriorSnapshotDTO(
             trade_date=date(2026, 4, 22),
             stock_id="A.SZ",
             snapshot_version="v1",
-            payload={"final_cycle_state": "repair"},
-        )
+            payload={"final_cycle_state": "repair", "pct_chg": "-2.5"},
+        ),
+        PriorSnapshotDTO(
+            trade_date=date(2026, 4, 22),
+            stock_id="B.SZ",
+            snapshot_version="v1",
+            payload={"final_cycle_state": "repair", "pct_chg": "-2.5"},
+        ),
     ]
 
     out = svc.build_candidates(bars=bars, pool_rows=pool_rows, prior_rows=prior)
@@ -107,19 +113,62 @@ def test_w2s_candidate_service_rejects_when_legacy_strong_history_gate_fails() -
     assert out == []
 
 
-def test_w2s_candidate_service_formal_sa_gate_soft_demotes_non_sa_formal() -> None:
-    svc = W2SCandidateService(formal_sa_gate_mode="soft")
+def test_w2s_candidate_service_keeps_b_grade_candidate_without_extra_gate() -> None:
+    svc = W2SCandidateService()
     bars = [_bar("E.SZ", "-1.5")]
-    row = _pool("E.SZ", 1, watch_score="90", support_score="88", strong_grade="B", prior7_limitup_days=2, prior7_strong_days=3)
-    out = svc.build_candidates(bars=bars, pool_rows=[row], prior_rows=[])
+    row = _pool("E.SZ", 10, watch_score="90", support_score="88", strong_grade="B", prior7_limitup_days=2, prior7_strong_days=3)
+    prior = [
+        PriorSnapshotDTO(
+            trade_date=date(2026, 4, 22),
+            stock_id="E.SZ",
+            snapshot_version="v1",
+            payload={"final_cycle_state": "repair", "pct_chg": "-2.5"},
+        )
+    ]
+    out = svc.build_candidates(bars=bars, pool_rows=[row], prior_rows=prior)
     assert len(out) == 1
-    assert out[0].candidate_level == "observe_only"
-    assert any("formal_sa_gate_mode=soft" in x for x in out[0].evidence_rules)
+    assert out[0].candidate_level in {"formal", "observe_only"}
+    assert any("strong_grade=B" in x for x in out[0].evidence_rules)
 
 
-def test_w2s_candidate_service_formal_sa_gate_hard_rejects_non_sa_formal() -> None:
-    svc = W2SCandidateService(formal_sa_gate_mode="hard")
+def test_w2s_candidate_service_no_longer_uses_formal_sa_gate() -> None:
+    svc = W2SCandidateService()
     bars = [_bar("F.SZ", "-1.5")]
-    row = _pool("F.SZ", 1, watch_score="90", support_score="88", strong_grade="B", prior7_limitup_days=2, prior7_strong_days=3)
-    out = svc.build_candidates(bars=bars, pool_rows=[row], prior_rows=[])
-    assert out == []
+    row = _pool("F.SZ", 10, watch_score="90", support_score="88", strong_grade="B", prior7_limitup_days=2, prior7_strong_days=3)
+    prior = [
+        PriorSnapshotDTO(
+            trade_date=date(2026, 4, 22),
+            stock_id="F.SZ",
+            snapshot_version="v1",
+            payload={"final_cycle_state": "repair", "pct_chg": "-2.5"},
+        )
+    ]
+    out = svc.build_candidates(bars=bars, pool_rows=[row], prior_rows=prior)
+    assert len(out) == 1
+    assert all("formal_sa_gate_mode" not in x for x in out[0].evidence_rules)
+
+
+def test_w2s_candidate_service_does_not_reject_missing_strong_grade() -> None:
+    svc = W2SCandidateService()
+    bars = [_bar("G.SZ", "-1.5")]
+    row = _pool(
+        "G.SZ",
+        10,
+        watch_score="90",
+        support_score="88",
+        strong_grade="",
+        prior7_limitup_days=2,
+        prior7_strong_days=3,
+    )
+    prior = [
+        PriorSnapshotDTO(
+            trade_date=date(2026, 4, 22),
+            stock_id="G.SZ",
+            snapshot_version="v1",
+            payload={"final_cycle_state": "repair", "pct_chg": "-2.5"},
+        )
+    ]
+
+    out = svc.build_candidates(bars=bars, pool_rows=[row], prior_rows=prior)
+    assert len(out) == 1
+    assert out[0].candidate_level in {"formal", "observe_only"}

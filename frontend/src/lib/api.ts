@@ -28,7 +28,6 @@ export interface IntelFeedView {
     sources: string[];
     source_channels?: string[];
     source_channel_counts?: Record<string, number>;
-    fallback_from?: string | null;
   };
 }
 
@@ -180,6 +179,13 @@ export interface MarketReportView {
   sections: MarketReportSection[];
 }
 
+export interface RecapViewModelV2 extends MarketReportView {
+  source: "recap_v2_snapshot" | "recap_v2_report";
+  diagnostics?: {
+    snapshot_version?: string;
+  };
+}
+
 interface PostMarketSnapshotView {
   trade_date: string;
   snapshot_version: string;
@@ -257,7 +263,7 @@ function normalizeRealtimeCollectorError(err: unknown, action: string): Error {
       lower.includes("econnrefused")
     ) {
       return new Error(
-        `${action}失败: 无法连接前端BFF(127.0.0.1:8003)，请先启动 realtime stack（./scripts/run_realtime_stack.sh --with-frontend --restart）`,
+        `${action}失败: 无法连接 web_app_service(127.0.0.1:8000)，请先启动新链前端栈（./scripts/start_new_chain_stack.sh --restart --with-frontend）`,
       );
     }
     return err;
@@ -329,25 +335,7 @@ export async function fetchWorkspaceIntelContext(params: {
   if (params.subjectKey) query.set("subject_key", params.subjectKey);
   if (params.stockId) query.set("stock_id", params.stockId);
   if (params.limit) query.set("limit", String(params.limit));
-  try {
-    return await fetchJsonWithTimeout<IntelContextView>(`/api/v2/workspace/intel-context?${query.toString()}`, undefined, 10000);
-  } catch (error) {
-    const msg = error instanceof Error ? error.message : "";
-    // Compatibility fallback for stale web_app_service instances missing workspace routes.
-    if (msg.includes("request failed: 405")) {
-      const feed = await fetchJsonWithTimeout<IntelFeedView>(`/api/v2/intel/feed?${query.toString()}`, undefined, 10000);
-      return {
-        date: feed.date,
-        subject_key: params.subjectKey ?? null,
-        stock_id: params.stockId ?? null,
-        items: feed.items || [],
-        count: Number(feed.count || 0),
-        diagnostics: feed.diagnostics || {},
-        source: "intel_feed_fallback_from_405",
-      };
-    }
-    throw error;
-  }
+  return fetchJsonWithTimeout<IntelContextView>(`/api/v2/workspace/intel-context?${query.toString()}`, undefined, 10000);
 }
 
 export async function fetchWorkspaceMarketValidation(params: {
@@ -381,7 +369,7 @@ export async function fetchStrongStockWatch(params: {
   // 强势股页面统一走 v2 口径，避免旧路由字段漂移。
 
   try {
-    const url = `/api/v2/intel/strong-stocks/watch?${query.toString()}`;
+    const url = `/api/v2/strong_watch/watch?${query.toString()}`;
     const getResp = await fetch(url, { method: "GET" });
     if (!getResp.ok) throw new Error(`request failed: ${getResp.status}`);
     return (await getResp.json()) as StrongStockWatchView;
@@ -441,7 +429,7 @@ export async function fetchThemeWorkspace(subjectKey: string, tradeDate?: string
     stocks_limit: "10"
   });
   if (tradeDate) query.set("trade_date", tradeDate);
-  const response = await fetch(`/api/v2/theme-workspace/${subjectKey}?${query.toString()}`);
+  const response = await fetch(`/api/v2/theme_workspace/${subjectKey}?${query.toString()}`);
   if (!response.ok) {
     throw new Error(`theme workspace request failed: ${response.status}`);
   }
@@ -455,45 +443,17 @@ export async function fetchStockWorkspace(stockId: string): Promise<StockWorkspa
     mapping_scope: "pool",
     themes_limit: "10"
   });
-  const response = await fetch(`/api/v2/stock-workspace/${stockId}?${query.toString()}`);
+  const response = await fetch(`/api/v2/stock_workspace/${stockId}?${query.toString()}`);
   if (!response.ok) {
     throw new Error(`stock workspace request failed: ${response.status}`);
   }
   return response.json();
 }
 
-export async function fetchRecap(params: {
-  date: string;
-  reportType?: "pre_market" | "post_market";
-}): Promise<MarketReportView> {
-  const query = new URLSearchParams({
-    date: params.date,
-    report_type: params.reportType ?? "post_market",
-  });
-  const response = await fetch(`/api/v2/recap?${query.toString()}`);
-  if (!response.ok) {
-    throw new Error(`recap request failed: ${response.status}`);
-  }
-  return response.json();
-}
-
-function useRecapV2Api(): boolean {
-  try {
-    const query = new URLSearchParams(window.location.search);
-    const q = query.get("recap_v2");
-    if (q !== null) return q === "1" || q.toLowerCase() === "true";
-    const local = window.localStorage.getItem("ENABLE_RECAP_V2_SNAPSHOT");
-    if (local !== null) return local === "1" || local.toLowerCase() === "true";
-  } catch {
-    // ignore
-  }
-  return false;
-}
-
 function asMarketReportViewFromSnapshot(
   snapshot: PostMarketSnapshotView,
   reportType: "pre_market" | "post_market",
-): MarketReportView | null {
+): RecapViewModelV2 | null {
   const payload = snapshot.payload || {};
   const maybe = payload["report"] || payload["recap"] || payload["market_report"];
   if (maybe && typeof maybe === "object") {
@@ -512,6 +472,8 @@ function asMarketReportViewFromSnapshot(
           items: Array.isArray(row.items) ? row.items.map((x) => String(x)) : [],
         };
       }),
+      source: "recap_v2_report",
+      diagnostics: { snapshot_version: snapshot.snapshot_version },
     };
   }
 
@@ -555,30 +517,27 @@ function asMarketReportViewFromSnapshot(
         items: candidateItems.length ? candidateItems : ["暂无候选"],
       },
     ],
+    source: "recap_v2_snapshot",
+    diagnostics: { snapshot_version: snapshot.snapshot_version },
   };
 }
 
-export async function fetchRecapV2OrFallback(params: {
+export async function fetchRecapSnapshot(params: {
   date: string;
   reportType?: "pre_market" | "post_market";
-}): Promise<MarketReportView> {
+}): Promise<RecapViewModelV2> {
   const reportType = params.reportType ?? "post_market";
-  if (!useRecapV2Api()) {
-    return fetchRecap({ date: params.date, reportType });
+  const query = new URLSearchParams({ trade_date: params.date });
+  const snapshot = await fetchJsonWithTimeout<PostMarketSnapshotView>(
+    `/api/v2/post_market_snapshot?${query.toString()}`,
+    undefined,
+    10000,
+  );
+  const mapped = asMarketReportViewFromSnapshot(snapshot, reportType);
+  if (!mapped) {
+    throw new Error(`post-market snapshot is unavailable or unmappable for ${params.date}`);
   }
-  try {
-    const query = new URLSearchParams({ trade_date: params.date });
-    const snapshot = await fetchJsonWithTimeout<PostMarketSnapshotView>(
-      `/api/v2/post_market_snapshot?${query.toString()}`,
-      undefined,
-      10000,
-    );
-    const mapped = asMarketReportViewFromSnapshot(snapshot, reportType);
-    if (mapped) return mapped;
-  } catch {
-    // fallback below
-  }
-  return fetchRecap({ date: params.date, reportType });
+  return mapped;
 }
 
 export async function fetchRecapDefaults(): Promise<RecapDefaultsView> {

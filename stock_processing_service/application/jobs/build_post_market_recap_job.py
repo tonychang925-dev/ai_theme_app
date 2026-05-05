@@ -20,6 +20,7 @@ from stock_processing_service.contracts.dto import (
 )
 from stock_processing_service.contracts.events import EventEnvelope, SnapshotBuiltPayload
 from stock_processing_service.contracts.snapshots import PostMarketRecapSnapshot
+from stock_processing_service.domain.services.strong_watch_refresh_service import StrongWatchRecord
 from stock_processing_service.domain.services.strong_watch_service import StrongWatchService
 from stock_processing_service.domain.services.w2s_candidate_service import W2SCandidateService
 from stock_processing_service.ports import (
@@ -63,13 +64,29 @@ class BuildPostMarketRecapJob:
             return Decimal("0")
 
     @staticmethod
+    def _normalize_stock_id(value: Any) -> str:
+        stock_id = str(value or "").strip().upper()
+        if not stock_id:
+            return ""
+        if "." in stock_id:
+            return stock_id
+        if len(stock_id) == 6 and stock_id.isdigit():
+            if stock_id.startswith(("6", "9")):
+                return f"{stock_id}.SH"
+            if stock_id.startswith(("0", "2", "3")):
+                return f"{stock_id}.SZ"
+            if stock_id.startswith(("4", "8")):
+                return f"{stock_id}.BJ"
+        return stock_id
+
+    @staticmethod
     def _to_stock_bar(row: Any, default_trade_date: date) -> StockBarDTO:
         if isinstance(row, StockBarDTO):
             return row
         p = dict(row or {})
         return StockBarDTO(
             trade_date=p.get("trade_date", default_trade_date),
-            stock_id=str(p.get("stock_id", "")),
+            stock_id=BuildPostMarketRecapJob._normalize_stock_id(p.get("stock_id", "")),
             stock_name=str(p.get("stock_name", "")),
             open_price=BuildPostMarketRecapJob._d(p.get("open_price")),
             high_price=BuildPostMarketRecapJob._d(p.get("high_price")),
@@ -93,7 +110,7 @@ class BuildPostMarketRecapJob:
             trade_date=p.get("trade_date", default_trade_date),
             subject_key=str(p.get("subject_key", "")),
             subject_name=str(p.get("subject_name") or p.get("theme_name") or p.get("subject_key") or ""),
-            stock_id=str(p.get("stock_id", "")),
+            stock_id=BuildPostMarketRecapJob._normalize_stock_id(p.get("stock_id", "")),
             stock_name=p.get("stock_name"),
             pool_rank=p.get("pool_rank", p.get("rank_order")),
             metadata=dict(metadata) if isinstance(metadata, dict) else {},
@@ -112,7 +129,7 @@ class BuildPostMarketRecapJob:
                     payload[key] = str(p.get(key))
         return PriorSnapshotDTO(
             trade_date=p.get("trade_date", default_trade_date),
-            stock_id=str(p.get("stock_id", "")),
+            stock_id=BuildPostMarketRecapJob._normalize_stock_id(p.get("stock_id", "")),
             snapshot_version=str(p.get("snapshot_version", "")),
             payload=payload,
         )
@@ -152,6 +169,81 @@ class BuildPostMarketRecapJob:
             fade_confirmed_score=BuildPostMarketRecapJob._d(p.get("fade_confirmed_score")),
         )
 
+    @staticmethod
+    def _grade_from_watch_score(score: Decimal) -> str:
+        if score >= Decimal("78"):
+            return "S"
+        if score >= Decimal("66"):
+            return "A"
+        if score >= Decimal("54"):
+            return "B"
+        return "REJECT"
+
+    @staticmethod
+    def _build_prior_active_strong_watch_records(prior_watch_rows: list[Any]) -> list[StrongWatchRecord]:
+        grouped: dict[str, list[Any]] = {}
+        for row in prior_watch_rows:
+            stock_id = str(getattr(row, "stock_id", "") or "")
+            if not stock_id:
+                continue
+            grouped.setdefault(stock_id, []).append(row)
+
+        records: list[StrongWatchRecord] = []
+        for stock_id, rows in grouped.items():
+            latest = rows[0]
+            md = getattr(latest, "metadata", {}) or {}
+            watch_status = str(md.get("watch_status") or "")
+            pool_entry_type = str(md.get("pool_entry_type") or "")
+            if not StrongWatchService.is_candidate_eligible(
+                watch_status=watch_status,
+                pool_entry_type=pool_entry_type,
+                candidate_source=str(md.get("candidate_source") or "strong_watch_pool"),
+            ):
+                continue
+            watch_score = BuildPostMarketRecapJob._d(md.get("watch_score"))
+            support_score = BuildPostMarketRecapJob._d(md.get("support_score"))
+            strong_grade = str(md.get("strong_grade") or "") or BuildPostMarketRecapJob._grade_from_watch_score(watch_score)
+            role_tags = dict(md.get("role_tags") or {})
+            for key in (
+                "final_cycle_state",
+                "transition_type",
+                "transition_confidence",
+                "trigger_flags",
+            ):
+                if key in md and key not in role_tags:
+                    role_tags[key] = md[key]
+            if "final_mainline_alive" not in role_tags:
+                final_state = str(role_tags.get("final_cycle_state") or "")
+                role_tags["final_mainline_alive"] = final_state not in {"fade_watch", "fade_confirmed", ""}
+            watch_age_days = int(md.get("watch_age_days") or len({getattr(r, "trade_date", None) for r in rows if getattr(r, "trade_date", None)}) or 1)
+            records.append(
+                StrongWatchRecord(
+                    stock_id=stock_id,
+                    stock_name=str(getattr(latest, "stock_name", "") or ""),
+                    subject_key=str(getattr(latest, "subject_key", "") or ""),
+                    subject_name=str(getattr(latest, "subject_name", "") or ""),
+                    pool_rank=getattr(latest, "pool_rank", None),
+                    watch_score=watch_score,
+                    strong_grade=strong_grade,
+                    support_type=str(md.get("support_type") or ""),
+                    support_level=BuildPostMarketRecapJob._d(md.get("support_level")),
+                    support_score=support_score,
+                    role_tags=role_tags,
+                    watch_status=watch_status,
+                    watch_age_days=watch_age_days,
+                    weak_days=int(md.get("weak_days") or 0),
+                    mainline_context_score=BuildPostMarketRecapJob._d(md.get("mainline_context_score")),
+                    strong_gene_score=BuildPostMarketRecapJob._d(md.get("strong_gene_score")),
+                    weakness_tolerance_score=BuildPostMarketRecapJob._d(md.get("weakness_tolerance_score")),
+                    prior7_limitup_days=int(md.get("prior7_limitup_days") or 0),
+                    prior7_strong_days=int(md.get("prior7_strong_days") or 0),
+                    prior7_best_watch_score=BuildPostMarketRecapJob._d(md.get("prior7_best_watch_score")),
+                    prior7_peak_rank=int(md.get("prior7_peak_rank") or 99),
+                    admission_status=pool_entry_type if pool_entry_type in {"formal", "observe_only"} else "formal",
+                )
+            )
+        return records
+
     async def execute(
         self,
         trade_date: date,
@@ -174,25 +266,40 @@ class BuildPostMarketRecapJob:
                 metrics={"job_key": job_key},
             )
 
-        bars_raw = await self._read_port.get_stock_daily_bars(trade_date)
         pool_rows_raw = await self._read_port.get_subject_stock_pool_by_trade_date(trade_date)
+        pool_rows = [self._to_pool_row(row, trade_date) for row in pool_rows_raw]
+        prior_watch_rows = await self._get_prior_strong_watch_rows(trade_date=trade_date, lookback_days=lookback_days)
+        stock_ids = sorted(
+            {
+                row.stock_id
+                for row in [*pool_rows, *prior_watch_rows]
+                if str(getattr(row, "stock_id", "") or "")
+            }
+        )
+        subject_keys = sorted(
+            {
+                row.subject_key
+                for row in [*pool_rows, *prior_watch_rows]
+                if str(getattr(row, "subject_key", "") or "")
+            }
+        )
+        prior_active_rows = self._build_prior_active_strong_watch_records(prior_watch_rows)
+
+        bars_raw = await self._read_port.get_stock_daily_bars(trade_date)
         prior_rows_raw = await self._read_port.get_prior_stock_daily_snapshots(
             trade_date=trade_date,
             lookback_days=lookback_days,
-            stock_ids=[str((dict(r).get("stock_id") if not isinstance(r, SubjectStockPoolDTO) else r.stock_id)) for r in pool_rows_raw] if pool_rows_raw else None,
+            stock_ids=stock_ids or None,
         )
         bars = [self._to_stock_bar(row, trade_date) for row in bars_raw]
-        pool_rows = [self._to_pool_row(row, trade_date) for row in pool_rows_raw]
         prior_rows = [self._to_prior_row(row, trade_date) for row in prior_rows_raw]
         history_start = trade_date - timedelta(days=90)
         history_bars_raw = await self._read_port.get_stock_daily_bars_range(
             start_date=history_start,
             end_date=trade_date,
-            stock_ids=[row.stock_id for row in pool_rows] if pool_rows else None,
+            stock_ids=stock_ids or None,
         )
         history_bars = [self._to_stock_bar(row, history_start) for row in history_bars_raw]
-        subject_keys = sorted({row.subject_key for row in pool_rows if row.subject_key})
-        stock_ids = sorted({row.stock_id for row in pool_rows if row.stock_id})
         identities_raw = await self._read_port.get_mainline_identity_by_subject_keys(
             subject_keys=subject_keys,
             trade_date=trade_date,
@@ -227,34 +334,26 @@ class BuildPostMarketRecapJob:
                 bars=bars,
                 prior_rows=prior_rows,
                 history_bars=history_bars,
+                prior_active_rows=prior_active_rows,
                 identities_by_subject=identities_by_subject,
                 cycles_by_subject=cycles_by_subject,
             )
             shadow_summary = asdict(shadow)
         else:
-            try:
-                promoted_pool_rows, strong_watch_rows, strong_watch_history = self._strong_watch_service.build_promoted_pool_with_history(
-                    trade_date=trade_date,
-                    pool_rows=pool_rows,
-                    bars=bars,
-                    prior_rows=prior_rows,
-                    history_bars=history_bars,
-                    identities_by_subject=identities_by_subject,
-                    cycles_by_subject=cycles_by_subject,
-                )
-            except TypeError:
-                # Backward-compat for older call signatures used by tests/mocks.
-                promoted_pool_rows, strong_watch_rows, strong_watch_history = self._strong_watch_service.build_promoted_pool_with_history(
-                    trade_date=trade_date,
-                    pool_rows=pool_rows,
-                    bars=bars,
-                    prior_rows=prior_rows,
-                    history_bars=history_bars,
-                )
-        prior_watch_rows = await self._get_prior_strong_watch_rows(trade_date=trade_date, lookback_days=lookback_days)
+            promoted_pool_rows, strong_watch_rows, strong_watch_history = self._strong_watch_service.build_promoted_pool_with_history(
+                trade_date=trade_date,
+                pool_rows=pool_rows,
+                bars=bars,
+                prior_rows=prior_rows,
+                history_bars=history_bars,
+                prior_active_rows=prior_active_rows,
+                identities_by_subject=identities_by_subject,
+                cycles_by_subject=cycles_by_subject,
+            )
         candidate_input_rows = self._build_candidate_input_rows(
             trade_date=trade_date,
             strong_watch_rows=strong_watch_rows,
+            promoted_pool_rows=promoted_pool_rows,
             prior_watch_rows=prior_watch_rows,
         )
         candidates = self._candidate_service.build_candidates(
@@ -262,8 +361,12 @@ class BuildPostMarketRecapJob:
             pool_rows=candidate_input_rows,
             prior_rows=prior_rows,
         )
-        formal_candidates = [c for c in candidates if str(getattr(c, "candidate_level", "")) == "formal"]
-        observe_candidates = [c for c in candidates if str(getattr(c, "candidate_level", "")) == "observe_only"]
+        formal_candidates = [
+            c
+            for c in candidates
+            if str(getattr(c, "candidate_level", "")).lower() in {"formal", "s", "a", "b"}
+        ]
+        observe_candidates = [c for c in candidates if str(getattr(c, "candidate_level", "")).lower() == "observe_only"]
 
         recap_doc = {
             "trade_date": trade_date.isoformat(),
@@ -306,8 +409,8 @@ class BuildPostMarketRecapJob:
                 }
                 for row in strong_watch_history[:100]
             ],
-            # Backward-compatible primary count now follows formal pool only.
-            "candidate_count": len(formal_candidates),
+            # Primary count follows the actual candidate list, with formal/observe split preserved separately.
+            "candidate_count": len(candidates),
             "candidate_count_total": len(candidates),
             "candidate_count_formal": len(formal_candidates),
             "candidate_count_observe": len(observe_candidates),
@@ -344,7 +447,7 @@ class BuildPostMarketRecapJob:
                     "trigger_flags": list(getattr(c, "trigger_flags", []) or []),
                     "evidence_rules": c.evidence_rules,
                 }
-                for c in formal_candidates[:30]
+                for c in candidates[:30]
             ],
         }
 
@@ -519,6 +622,7 @@ class BuildPostMarketRecapJob:
         *,
         trade_date: date,
         strong_watch_rows: list[Any],
+        promoted_pool_rows: list[Any],
         prior_watch_rows: list[Any],
     ) -> list[Any]:
         from stock_processing_service.contracts.dto import SubjectStockPoolDTO
@@ -543,19 +647,6 @@ class BuildPostMarketRecapJob:
                 candidate_source=source,
             )
 
-        # 先装入近7日历史跟踪池，确保 D1 输入遵循“跟踪池窗口”口径。
-        for row in prior_watch_rows:
-            if not _is_valid_prior_watch_row(row):
-                continue
-            stock_id = str(getattr(row, "stock_id", "") or "")
-            if not stock_id:
-                continue
-            # prior_watch_rows 由近到远返回；去重时保留“最近交易日”版本，避免被旧日 removed 状态覆盖。
-            if stock_id in by_stock:
-                continue
-            by_stock[stock_id] = row
-
-        rows: list[SubjectStockPoolDTO] = []
         for row in strong_watch_rows:
             watch_status = str(getattr(row, "watch_status", ""))
             pool_entry_type = str(getattr(row, "admission_status", "") or getattr(row, "pool_entry_type", ""))
@@ -571,10 +662,8 @@ class BuildPostMarketRecapJob:
                 continue
             if not subject_key:
                 continue
-            # Preserve latest-trading-day row already loaded from prior window;
-            # never allow older or duplicate entries to override.
-            if stock_id in by_stock:
-                continue
+            watch_score = BuildPostMarketRecapJob._d(getattr(row, "watch_score", "0"))
+            strong_grade = str(getattr(row, "strong_grade", "") or BuildPostMarketRecapJob._grade_from_watch_score(watch_score))
             by_stock[stock_id] = SubjectStockPoolDTO(
                 trade_date=trade_date,
                 subject_key=subject_key,
@@ -585,8 +674,8 @@ class BuildPostMarketRecapJob:
                 metadata={
                     # D1 入参统一标记为 strong_watch_pool，避免被 source=seed_proxy 等过滤掉。
                     "candidate_source": "strong_watch_pool",
-                    "watch_score": str(getattr(row, "watch_score", "0")),
-                    "strong_grade": getattr(row, "strong_grade", ""),
+                    "watch_score": str(watch_score),
+                    "strong_grade": strong_grade,
                     "support_type": getattr(row, "support_type", ""),
                     "support_level": str(getattr(row, "support_level", "0")),
                     "support_score": str(getattr(row, "support_score", "0")),
@@ -616,6 +705,39 @@ class BuildPostMarketRecapJob:
                     "kept_because": getattr(row, "kept_because", ""),
                 },
             )
+        for row in promoted_pool_rows:
+            stock_id = str(getattr(row, "stock_id", "") or "")
+            subject_key = str(getattr(row, "subject_key", "") or "")
+            if not stock_id or not subject_key or stock_id in by_stock:
+                continue
+            md = dict(getattr(row, "metadata", {}) or {})
+            strong_grade = str(md.get("strong_grade") or "")
+            if not strong_grade:
+                watch_score = BuildPostMarketRecapJob._d(md.get("watch_score"))
+                strong_grade = BuildPostMarketRecapJob._grade_from_watch_score(watch_score)
+                md["strong_grade"] = strong_grade
+            md.setdefault("candidate_source", "strong_watch_pool")
+            md.setdefault("watch_status", "active")
+            md.setdefault("pool_entry_type", "formal")
+            md.setdefault("eligible_for_candidate", True)
+            by_stock[stock_id] = SubjectStockPoolDTO(
+                trade_date=trade_date,
+                subject_key=subject_key,
+                subject_name=str(getattr(row, "subject_name", "") or ""),
+                stock_id=stock_id,
+                stock_name=getattr(row, "stock_name", ""),
+                pool_rank=getattr(row, "pool_rank", None),
+                metadata=md,
+            )
+        # 再装入近7日历史跟踪池，仅补充当日 refresh/promote 未覆盖的对象。
+        for row in prior_watch_rows:
+            if not _is_valid_prior_watch_row(row):
+                continue
+            stock_id = str(getattr(row, "stock_id", "") or "")
+            if not stock_id or stock_id in by_stock:
+                continue
+            by_stock[stock_id] = row
+        rows: list[SubjectStockPoolDTO] = []
         rows.extend(by_stock.values())
         return rows
 

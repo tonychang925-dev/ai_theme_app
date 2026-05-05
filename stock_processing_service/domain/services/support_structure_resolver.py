@@ -104,7 +104,7 @@ class SupportStructureResolver:
         if prev_low_structure and prev_low_structure.is_valid:
             refs = [
                 "primary_support=prev_low_support",
-                "resolver_rule=previous_low_fallback",
+                "resolver_rule=previous_low_support",
                 f"prev_low_level={prev_low_structure.level}",
                 f"prev_low_distance_pct={prev_low_structure.distance_pct}",
             ]
@@ -113,7 +113,7 @@ class SupportStructureResolver:
                 support_level=prev_low_structure.level,
                 support_score=self._prev_low_score,
                 support_refs=refs,
-                primary_reason="previous_low_fallback",
+                primary_reason="previous_low_support",
             )
 
         valid_mas = [m for m in ma_structures if m.is_valid]
@@ -122,7 +122,7 @@ class SupportStructureResolver:
             ma = valid_mas[0]
             refs = [
                 "primary_support=ma_support",
-                "resolver_rule=ma_fallback",
+                "resolver_rule=ma_support",
                 f"ma_type={ma.ma_type}",
                 f"ma_level={ma.level}",
                 f"ma_distance_pct={ma.distance_pct}",
@@ -132,7 +132,7 @@ class SupportStructureResolver:
                 support_level=ma.level,
                 support_score=self._ma_score,
                 support_refs=refs,
-                primary_reason="ma_fallback",
+                primary_reason="ma_support",
             )
 
         return ResolvedSupport(
@@ -142,4 +142,3 @@ class SupportStructureResolver:
             support_refs=["resolver_rule=no_valid_support"],
             primary_reason="none",
         )
-

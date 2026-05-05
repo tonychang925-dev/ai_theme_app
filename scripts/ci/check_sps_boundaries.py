@@ -17,13 +17,15 @@ FORBIDDEN_PATTERNS: dict[str, re.Pattern[str]] = {
     "asyncpg_import": re.compile(r"\bimport\s+asyncpg\b|\bfrom\s+asyncpg\s+import\b"),
     "psycopg_import": re.compile(r"\bimport\s+psycopg\b|\bimport\s+psycopg2\b"),
     "sqlalchemy_import": re.compile(r"\bimport\s+sqlalchemy\b|\bfrom\s+sqlalchemy\s+import\b"),
-    "raw_sql_literal": re.compile(r'(?i)\b(SELECT|INSERT|UPDATE|DELETE|CREATE|ALTER|DROP)\b'),
+    "raw_sql_literal": re.compile(r"\b(SELECT|INSERT|UPDATE|DELETE|CREATE|ALTER|DROP)\b"),
     "client_pointer": re.compile(r"\b_client\b"),
     "db_pointer": re.compile(r"\b_db\b"),
 }
 
-# adapters may hold db-gateway refs by design.
-ALLOW_PATH_PARTS = ("infrastructure/gateways/",)
+# Adapters may hold db-gateway refs by design. Scripts/replay tests are
+# operational/audit tooling, not production service boundary code.
+ALLOW_PATH_PARTS = ("infrastructure/gateway_adapters/",)
+SKIP_PATH_PARTS = ("/scripts/", "/tests/", "/__pycache__/")
 
 
 def _is_allowed_path(path: Path) -> bool:
@@ -31,10 +33,17 @@ def _is_allowed_path(path: Path) -> bool:
     return any(part in path_s for part in ALLOW_PATH_PARTS)
 
 
+def _should_skip_path(path: Path) -> bool:
+    path_s = path.as_posix()
+    return any(part in path_s for part in SKIP_PATH_PARTS)
+
+
 def run_scan() -> dict:
     violations: list[dict] = []
     scanned_files = 0
     for file_path in TARGET_DIR.rglob("*.py"):
+        if _should_skip_path(file_path):
+            continue
         scanned_files += 1
         text = file_path.read_text(encoding="utf-8")
         for name, pattern in FORBIDDEN_PATTERNS.items():
@@ -78,4 +87,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

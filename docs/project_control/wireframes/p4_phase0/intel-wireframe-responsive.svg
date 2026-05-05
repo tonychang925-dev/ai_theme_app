@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="860" viewBox="0 0 1400 860">
+  <rect width="1400" height="860" fill="#f5f6f8"/>
+  <text x="24" y="36" font-size="22" font-family="Arial" fill="#1f2937">Intel Wireframe - Responsive</text>
+
+  <rect x="24" y="70" width="430" height="760" rx="8" fill="#fff" stroke="#cfd8e3"/>
+  <text x="42" y="104" font-size="16" font-family="Arial">Desktop (&gt;=1280)</text>
+  <rect x="42" y="126" width="104" height="670" fill="#fff" stroke="#d7dce3" stroke-dasharray="4 4"/>
+  <rect x="152" y="126" width="170" height="670" fill="#fff" stroke="#d7dce3" stroke-dasharray="4 4"/>
+  <rect x="328" y="126" width="108" height="670" fill="#fff" stroke="#d7dce3" stroke-dasharray="4 4"/>
+  <text x="50" y="144" font-size="11" font-family="Arial">左 280</text>
+  <text x="166" y="144" font-size="11" font-family="Arial">中 auto</text>
+  <text x="338" y="144" font-size="11" font-family="Arial">右 320</text>
+
+  <rect x="484" y="70" width="430" height="760" rx="8" fill="#fff" stroke="#cfd8e3"/>
+  <text x="502" y="104" font-size="16" font-family="Arial">Tablet (768~1279)</text>
+  <rect x="502" y="126" width="150" height="670" fill="#fff" stroke="#d7dce3" stroke-dasharray="4 4"/>
+  <rect x="660" y="126" width="236" height="670" fill="#fff" stroke="#d7dce3" stroke-dasharray="4 4"/>
+  <text x="510" y="144" font-size="11" font-family="Arial">左栏</text>
+  <text x="674" y="144" font-size="11" font-family="Arial">中栏 + 右栏抽屉</text>
+
+  <rect x="944" y="70" width="430" height="760" rx="8" fill="#fff" stroke="#cfd8e3"/>
+  <text x="962" y="104" font-size="16" font-family="Arial">Mobile (&lt;768)</text>
+  <rect x="962" y="126" width="394" height="200" fill="#fff" stroke="#d7dce3" stroke-dasharray="4 4"/>
+  <rect x="962" y="340" width="394" height="200" fill="#fff" stroke="#d7dce3" stroke-dasharray="4 4"/>
+  <rect x="962" y="554" width="394" height="242" fill="#fff" stroke="#d7dce3" stroke-dasharray="4 4"/>
+  <text x="976" y="146" font-size="11" font-family="Arial">左栏</text>
+  <text x="976" y="360" font-size="11" font-family="Arial">中栏</text>
+  <text x="976" y="574" font-size="11" font-family="Arial">右栏</text>
+</svg>

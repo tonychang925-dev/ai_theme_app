@@ -3,7 +3,6 @@
 PostgreSQL数据库管理器 - 适配实际theme_master表结构
 基于实际的28字段表结构，包含申万行业分类
 """
-import asyncio
 import os
 from datetime import date
 import logging
@@ -1629,7 +1628,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
     async def get_trade_calendar(self, trade_date) -> Dict[str, Any]:
         """
         获取交易日历信息。
-        当前阶段先提供最小可用契约：交易日本身 + 邻近交易日（来自subject_stock_daily_snapshot）。
+        仅基于本地已落库交易日数据解析相邻交易日，不依赖外部在线 token。
         """
         sql_prev = """
         SELECT MAX(trade_date) AS prev_trade_date
@@ -1648,17 +1647,14 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 return {
                     "trade_date": trade_date,
                     "is_open": True,
+                    "calendar_is_open": True,
                     "prev_trade_date": prev_row.get("prev_trade_date") if prev_row else None,
                     "next_trade_date": next_row.get("next_trade_date") if next_row else None,
+                    "source": "subject_stock_daily_snapshot",
                 }
         except Exception as e:
-            logger.warning(f"交易日历读取失败，使用降级返回: {e}")
-            return {
-                "trade_date": trade_date,
-                "is_open": True,
-                "prev_trade_date": None,
-                "next_trade_date": None,
-            }
+            logger.warning(f"交易日历读取失败: {e}")
+            raise
 
     async def get_stock_daily_bars(self, trade_date, stock_ids: Optional[List[str]] = None) -> List[Dict[str, Any]]:
         """读取股票日线（当前映射到 stock_daily_snapshot）。"""
@@ -1706,13 +1702,115 @@ class PostgresDatabaseManager(BaseDatabaseManager):
 
     async def get_stock_auction_snapshot(self, trade_date, stock_ids: Optional[List[str]] = None) -> List[Dict[str, Any]]:
         """
-        读取盘前竞价快照。
-        当前阶段无独立对象表时，先降级读取 stock_daily_snapshot 作为日频代理，确保契约可用。
+        读取盘前竞价快照。只读取真实 pre_market_auction_snapshot，不使用日频代理。
         """
-        rows = await self.get_stock_daily_bars(trade_date, stock_ids=stock_ids)
-        for row in rows:
-            row.setdefault("snapshot_type", "daily_proxy")
-        return rows
+        sql = """
+        SELECT
+            trade_date, stock_id, stock_name,
+            auction_open_price, auction_open_pct, auction_volume, auction_amount,
+            NULL::numeric AS tail_auction_close_price,
+            NULL::numeric AS tail_auction_volume,
+            NULL::numeric AS tail_auction_amount,
+            NULL::numeric AS tail_auction_vwap
+        FROM pre_market_auction_snapshot
+        WHERE trade_date = $1::date
+          AND ($2::text[] IS NULL OR split_part(stock_id, '.', 1) = ANY($2::text[]))
+        ORDER BY stock_id
+        """
+        normalized = None
+        if stock_ids:
+            normalized = [str(item).split(".", 1)[0] for item in stock_ids if str(item).strip()]
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date, normalized)
+        return [dict(row) for row in rows]
+
+    async def upsert_pre_market_auction_snapshots(self, snapshots: List[Dict[str, Any]]) -> int:
+        if not snapshots:
+            return 0
+        sql = """
+        INSERT INTO pre_market_auction_snapshot (
+            trade_date, stock_id, stock_name, subject_key, theme_name, role_label,
+            window_start_time, window_end_time, last_minute_start_time, last_30s_start_time,
+            auction_open_price, pre_close, auction_open_pct, auction_volume, auction_amount,
+            last_minute_amount, last_minute_ratio, prev_day_max_intraday_amount, carry_ratio,
+            price_path_stability_score, is_red_zone, has_end_spike, has_end_drop, shape_features,
+            source_type, source_trace_id, source_trace, source_version, rule_version, updated_at
+        ) VALUES (
+            $1, $2, $3, $4, $5, $6,
+            $7, $8, $9, $10,
+            $11, $12, $13, $14, $15,
+            $16, $17, $18, $19,
+            $20, $21, $22, $23, $24::jsonb,
+            $25, $26, $27::jsonb, $28, $29, NOW()
+        )
+        ON CONFLICT (trade_date, stock_id) DO UPDATE SET
+            stock_name = EXCLUDED.stock_name,
+            subject_key = EXCLUDED.subject_key,
+            theme_name = EXCLUDED.theme_name,
+            role_label = EXCLUDED.role_label,
+            window_start_time = EXCLUDED.window_start_time,
+            window_end_time = EXCLUDED.window_end_time,
+            last_minute_start_time = EXCLUDED.last_minute_start_time,
+            last_30s_start_time = EXCLUDED.last_30s_start_time,
+            auction_open_price = EXCLUDED.auction_open_price,
+            pre_close = EXCLUDED.pre_close,
+            auction_open_pct = EXCLUDED.auction_open_pct,
+            auction_volume = EXCLUDED.auction_volume,
+            auction_amount = EXCLUDED.auction_amount,
+            last_minute_amount = EXCLUDED.last_minute_amount,
+            last_minute_ratio = EXCLUDED.last_minute_ratio,
+            prev_day_max_intraday_amount = EXCLUDED.prev_day_max_intraday_amount,
+            carry_ratio = EXCLUDED.carry_ratio,
+            price_path_stability_score = EXCLUDED.price_path_stability_score,
+            is_red_zone = EXCLUDED.is_red_zone,
+            has_end_spike = EXCLUDED.has_end_spike,
+            has_end_drop = EXCLUDED.has_end_drop,
+            shape_features = EXCLUDED.shape_features,
+            source_type = EXCLUDED.source_type,
+            source_trace_id = EXCLUDED.source_trace_id,
+            source_trace = EXCLUDED.source_trace,
+            source_version = EXCLUDED.source_version,
+            rule_version = EXCLUDED.rule_version,
+            updated_at = NOW()
+        """
+        payload = []
+        for item in snapshots:
+            payload.append(
+                (
+                    item["trade_date"],
+                    str(item.get("stock_id") or ""),
+                    str(item.get("stock_name") or ""),
+                    str(item.get("subject_key") or ""),
+                    str(item.get("theme_name") or ""),
+                    str(item.get("role_label") or ""),
+                    str(item.get("window_start_time") or "09:20:00"),
+                    str(item.get("window_end_time") or "09:25:00"),
+                    str(item.get("last_minute_start_time") or "09:24:00"),
+                    str(item.get("last_30s_start_time") or "09:24:30"),
+                    float(item.get("auction_open_price") or 0.0),
+                    float(item.get("pre_close") or 0.0),
+                    float(item.get("auction_open_pct") or 0.0),
+                    float(item.get("auction_volume") or 0.0),
+                    float(item.get("auction_amount") or 0.0),
+                    float(item.get("last_minute_amount") or 0.0),
+                    float(item.get("last_minute_ratio") or 0.0),
+                    float(item.get("prev_day_max_intraday_amount") or 0.0),
+                    float(item.get("carry_ratio") or 0.0),
+                    float(item.get("price_path_stability_score") or 0.0),
+                    bool(item.get("is_red_zone") or False),
+                    bool(item.get("has_end_spike") or False),
+                    bool(item.get("has_end_drop") or False),
+                    json.dumps(list(item.get("shape_features") or []), ensure_ascii=False),
+                    str(item.get("source_type") or "p3.phase3.auction_snapshot"),
+                    str(item.get("source_trace_id") or ""),
+                    json.dumps(dict(item.get("source_trace") or {}), ensure_ascii=False),
+                    str(item.get("source_version") or "auction_snapshot.v1"),
+                    str(item.get("rule_version") or "auction_snapshot.v1"),
+                )
+            )
+        async with self.pool.acquire() as conn:
+            await conn.executemany(sql, payload)
+        return len(payload)
 
     async def get_subject_context_by_subject_keys(self, subject_keys: List[str], trade_date) -> List[Dict[str, Any]]:
         """按题材键批量读取题材上下文（最小上下文：subject_key/subject_name/trade_date）。"""
@@ -1732,6 +1830,49 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         async with self.pool.acquire() as conn:
             rows = await conn.fetch(sql, subject_keys, trade_date)
             return [dict(row) for row in rows]
+
+    async def resolve_theme_name_map(
+        self,
+        subject_keys: List[str],
+        trade_date: Optional[date] = None,
+    ) -> Dict[str, str]:
+        """按 subject_key 解析题材展示名，供新链只读出口统一使用。"""
+        keys = [str(k).strip() for k in subject_keys if str(k).strip()]
+        if not keys:
+            return {}
+        sql = """
+        WITH keyset AS (
+          SELECT DISTINCT unnest($1::text[]) AS subject_key
+        )
+        SELECT
+          k.subject_key,
+          COALESCE(
+            (
+              SELECT NULLIF(v2.theme_name, '')
+              FROM theme_cycle_judgement_v2 v2
+              WHERE v2.subject_key = k.subject_key
+                AND NULLIF(v2.theme_name, '') IS NOT NULL
+                AND v2.theme_name !~ '^[0-9]+$'
+                AND ($2::date IS NULL OR v2.trade_date <= $2::date)
+              ORDER BY v2.trade_date DESC
+              LIMIT 1
+            ),
+            (
+              SELECT NULLIF(sh.subject_name, '')
+              FROM subject_history_staging sh
+              WHERE sh.subject_key = k.subject_key
+                AND NULLIF(sh.subject_name, '') IS NOT NULL
+                AND ($2::date IS NULL OR sh.rank_date <= $2::date)
+              ORDER BY sh.rank_date DESC
+              LIMIT 1
+            ),
+            k.subject_key
+          ) AS theme_name
+        FROM keyset k
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, sorted(set(keys)), trade_date)
+        return {str(row["subject_key"]): str(row["theme_name"] or row["subject_key"]) for row in rows}
 
     async def get_subject_event_stats(
         self,
@@ -1835,11 +1976,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         subject_keys: List[str] | None = None,
         lookback_days: int = 7,
     ) -> List[Dict[str, Any]]:
-        """批量查询 subject 级市场统计（替代 JSONL stock_daily 文件读取）。
-
-        从 subject_stock_daily_snapshot 聚合每个 subject 每天的市场指标，
-        用于替代 _compute_5d_metrics() 中的 JSONL 文件依赖。
-        """
+        """批量查询 subject 级市场统计。"""
         if not subject_keys:
             return []
         from datetime import timedelta
@@ -1866,10 +2003,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
     async def get_subject_heat_stats(
         self, trade_date, subject_keys: List[str] | None = None, lookback_days: int = 5
     ) -> List[Dict[str, Any]]:
-        """批量查询 subject 级热度统计（替代 JSONL history 文件）。
-
-        从 subject_rank_daily 聚合每个 subject 的每日 heat 数据。
-        """
+        """批量查询 subject 级热度统计。"""
         if not subject_keys:
             return []
         from datetime import timedelta
@@ -1986,6 +2120,178 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.warning(f"读取 pre_market_brief_snapshot 最新日期失败（可能尚未迁移）: {e}")
             return None
 
+    async def get_stock_screening_strategy(self, strategy_id: str) -> Optional[Dict[str, Any]]:
+        sql = """
+        SELECT strategy_id, strategy_name, strategy_type, description,
+               weight_config, filter_config, created_at, updated_at,
+               created_by, is_active
+        FROM stock_screening_strategy
+        WHERE strategy_id = $1
+        """
+        async with self.pool.acquire() as conn:
+            row = await conn.fetchrow(sql, strategy_id)
+        return dict(row) if row else None
+
+    async def get_stock_screening_strategies(self, active_only: bool = True) -> List[Dict[str, Any]]:
+        sql = """
+        SELECT strategy_id, strategy_name, strategy_type, description,
+               weight_config, filter_config, created_at, updated_at,
+               created_by, is_active
+        FROM stock_screening_strategy
+        WHERE ($1::boolean = false OR is_active = true)
+        ORDER BY created_at DESC
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, bool(active_only))
+        return [dict(row) for row in rows]
+
+    async def get_stock_screening_execution(self, execution_id: str) -> Optional[Dict[str, Any]]:
+        sql = """
+        SELECT execution_id, strategy_id, trade_date, status, total_stocks,
+               screened_stocks, results_count, execution_time_ms, error_message,
+               created_at, completed_at
+        FROM stock_screening_execution
+        WHERE execution_id = $1
+        """
+        async with self.pool.acquire() as conn:
+            row = await conn.fetchrow(sql, execution_id)
+        return dict(row) if row else None
+
+    async def get_stock_screening_result(self, result_id: str) -> Optional[Dict[str, Any]]:
+        sql = """
+        SELECT result_id, strategy_id, trade_date, stock_id, stock_name,
+               composite_score, dimension_scores, rank_position,
+               screening_reason, theme_info, created_at
+        FROM stock_screening_result
+        WHERE result_id = $1
+        """
+        async with self.pool.acquire() as conn:
+            row = await conn.fetchrow(sql, result_id)
+        return dict(row) if row else None
+
+    async def query_stock_screening_history(
+        self,
+        strategy_id: Optional[str] = None,
+        trade_date_from: Optional[date] = None,
+        trade_date_to: Optional[date] = None,
+        stock_id: Optional[str] = None,
+        min_score: Optional[float] = None,
+        limit: int = 50,
+        offset: int = 0,
+    ) -> Dict[str, Any]:
+        sql = """
+        SELECT result_id, strategy_id, trade_date, stock_id, stock_name,
+               composite_score, dimension_scores, rank_position,
+               screening_reason, theme_info, created_at,
+               COUNT(*) OVER() AS total_count
+        FROM stock_screening_result
+        WHERE ($1::text IS NULL OR strategy_id = $1)
+          AND ($2::date IS NULL OR trade_date >= $2::date)
+          AND ($3::date IS NULL OR trade_date <= $3::date)
+          AND ($4::text IS NULL OR stock_id = $4)
+          AND ($5::numeric IS NULL OR composite_score >= $5::numeric)
+        ORDER BY trade_date DESC, composite_score DESC
+        LIMIT $6 OFFSET $7
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                sql,
+                strategy_id,
+                trade_date_from,
+                trade_date_to,
+                stock_id,
+                min_score,
+                max(int(limit), 1),
+                max(int(offset), 0),
+            )
+        items = [dict(row) for row in rows]
+        total = int(items[0].get("total_count") or 0) if items else 0
+        for item in items:
+            item.pop("total_count", None)
+        return {"items": items, "total": total, "limit": max(int(limit), 1), "offset": max(int(offset), 0)}
+
+    async def get_stock_screening_favorites(self, user_id: str) -> List[Dict[str, Any]]:
+        sql = """
+        SELECT f.favorite_id, f.user_id, f.result_id, f.notes, f.tags, f.created_at,
+               r.stock_id, r.stock_name, r.composite_score
+        FROM user_stock_screening_favorite f
+        JOIN stock_screening_result r ON r.result_id = f.result_id
+        WHERE f.user_id = $1
+        ORDER BY f.created_at DESC
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, user_id)
+        return [dict(row) for row in rows]
+
+    async def add_stock_screening_favorite(self, favorite: Dict[str, Any]) -> bool:
+        sql = """
+        INSERT INTO user_stock_screening_favorite (
+            favorite_id, user_id, result_id, notes, tags, created_at
+        ) VALUES ($1, $2, $3, $4, $5::jsonb, $6)
+        ON CONFLICT (user_id, result_id) DO NOTHING
+        """
+        async with self.pool.acquire() as conn:
+            result = await conn.execute(
+                sql,
+                favorite.get("favorite_id"),
+                favorite.get("user_id"),
+                favorite.get("result_id"),
+                favorite.get("notes"),
+                json.dumps(favorite.get("tags") or [], ensure_ascii=False),
+                favorite.get("created_at") or datetime.now(),
+            )
+        return result.upper().startswith("INSERT 0 1")
+
+    async def update_stock_screening_favorite(
+        self,
+        favorite_id: str,
+        notes: Optional[str],
+        tags: Optional[List[str]],
+    ) -> bool:
+        sql = """
+        UPDATE user_stock_screening_favorite
+        SET notes = COALESCE($2, notes),
+            tags = COALESCE($3::jsonb, tags)
+        WHERE favorite_id = $1
+        """
+        async with self.pool.acquire() as conn:
+            result = await conn.execute(
+                sql,
+                favorite_id,
+                notes,
+                json.dumps(tags, ensure_ascii=False) if tags is not None else None,
+            )
+        return result.upper().startswith("UPDATE 1")
+
+    async def remove_stock_screening_favorite(self, favorite_id: str) -> bool:
+        async with self.pool.acquire() as conn:
+            result = await conn.execute("DELETE FROM user_stock_screening_favorite WHERE favorite_id = $1", favorite_id)
+        return result.upper().startswith("DELETE 1")
+
+    async def get_stock_screening_statistics(
+        self,
+        strategy_id: Optional[str] = None,
+        date_from: Optional[date] = None,
+        date_to: Optional[date] = None,
+    ) -> Dict[str, Any]:
+        sql = """
+        SELECT COUNT(*)::int AS total_results,
+               COALESCE(AVG(composite_score), 0)::numeric AS avg_composite_score
+        FROM stock_screening_result
+        WHERE ($1::text IS NULL OR strategy_id = $1)
+          AND ($2::date IS NULL OR trade_date >= $2::date)
+          AND ($3::date IS NULL OR trade_date <= $3::date)
+        """
+        async with self.pool.acquire() as conn:
+            row = await conn.fetchrow(sql, strategy_id, date_from, date_to)
+        data = dict(row) if row else {}
+        return {
+            "total_results": int(data.get("total_results") or 0),
+            "avg_composite_score": float(data.get("avg_composite_score") or 0),
+            "top_themes": [],
+            "score_distribution": [],
+        }
+
     async def infer_confirm_trade_date_from_candidate_trade_date(self, candidate_trade_date):
         sql = """
         SELECT MAX(next_trade_date) AS confirm_trade_date
@@ -2079,6 +2385,48 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             rows = await conn.fetch(sql, cleaned_ids)
         return [dict(r) for r in rows]
 
+    async def get_w2s_candidate_replay_by_id(self, candidate_id: int) -> Optional[Dict[str, Any]]:
+        sql = """
+        SELECT
+            c.id AS candidate_id,
+            c.trade_date AS candidate_trade_date,
+            c.next_trade_date,
+            c.stock_id,
+            c.stock_name,
+            c.subject_key,
+            c.theme_name,
+            c.candidate_type,
+            c.candidate_score,
+            c.support_type,
+            c.support_strength,
+            c.pool_entry_type,
+            c.cycle_state,
+            c.mainline_strength_score,
+            c.fade_watch,
+            c.fade_confirmed,
+            c.evidence_json AS candidate_evidence,
+            s.trade_date AS signal_trade_date,
+            s.signal_level,
+            s.decision,
+            s.confirmation_score,
+            s.data_status,
+            s.auction_open_pct,
+            s.auction_close_pct,
+            s.auction_pattern,
+            s.last_minute_grab_score,
+            s.plate_follow_score,
+            s.risk_penalty,
+            s.evidence_json AS signal_evidence
+        FROM weak_to_strong_candidate_pool c
+        LEFT JOIN weak_to_strong_auction_signal s
+          ON s.candidate_id = c.id
+        WHERE c.id = $1
+        LIMIT 1
+        """
+        async with self.pool.acquire() as conn:
+            row = await conn.fetchrow(sql, int(candidate_id))
+        return dict(row) if row else None
+
     async def get_w2s_snapshot_coverage(self, confirm_trade_date) -> Dict[str, int]:
         sql = """
         SELECT
@@ -2133,6 +2481,16 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             ORDER BY trade_date DESC
             LIMIT $2
         ),
+        daily_snapshot_dedup AS (
+            SELECT
+                s.trade_date,
+                split_part(s.stock_id, '.', 1) AS stock_code,
+                MAX(s.pct_chg) AS pct_chg,
+                MAX(COALESCE(NULLIF(s.raw_json->>20, ''), '0')::integer) AS current_flag
+            FROM subject_stock_daily_snapshot s
+            WHERE s.trade_date IN (SELECT trade_date FROM selected_trade_dates)
+            GROUP BY s.trade_date, split_part(s.stock_id, '.', 1)
+        ),
         base AS (
             SELECT
                 h.trade_date::text AS trade_date,
@@ -2156,15 +2514,15 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 h.labels_json,
                 h.evidence_json,
                 s.pct_chg,
-                COALESCE(NULLIF(s.raw_json->>20, ''), '0')::integer AS current_flag,
+                COALESCE(s.current_flag, 0) AS current_flag,
                 ROW_NUMBER() OVER (
                     PARTITION BY split_part(h.stock_id, '.', 1)
                     ORDER BY h.trade_date DESC, h.watch_score DESC, h.watch_priority DESC
                 ) AS rn
             FROM strong_stock_watch_history h
-            LEFT JOIN subject_stock_daily_snapshot s
+            LEFT JOIN daily_snapshot_dedup s
               ON s.trade_date = h.trade_date
-             AND split_part(s.stock_id, '.', 1) = split_part(h.stock_id, '.', 1)
+             AND s.stock_code = split_part(h.stock_id, '.', 1)
             WHERE h.trade_date IN (SELECT trade_date FROM selected_trade_dates)
               AND ($3::boolean OR h.watch_status IN ('active', 'weakening'))
               AND ($4::text IS NULL OR split_part(h.stock_id, '.', 1) = split_part($4::text, '.', 1))
@@ -2196,42 +2554,6 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         if not subject_keys:
             return []
         page_size = 500
-        sql = """
-        SELECT DISTINCT ON (subject_key)
-            subject_key,
-            COALESCE(identity_status, '') AS identity_status,
-            COALESCE(is_main_theme, FALSE) AS is_main_theme,
-            first_confirmed_date,
-            last_review_date,
-            COALESCE(rule_version, '') AS rule_version
-        FROM theme_mainline_identity_registry
-        WHERE subject_key = ANY($1::text[])
-          AND (
-            last_review_date IS NULL
-            OR last_review_date <= $2::date
-          )
-          AND (
-            first_confirmed_date IS NULL
-            OR first_confirmed_date <= $2::date
-          )
-        ORDER BY subject_key, last_review_date DESC NULLS LAST, updated_at DESC NULLS LAST
-        """
-        fallback_sql = """
-        SELECT DISTINCT ON (subject_key)
-            subject_key,
-            COALESCE(identity_status, '') AS identity_status,
-            COALESCE(is_main_theme, FALSE) AS is_main_theme,
-            first_confirmed_date,
-            NULL::date AS last_review_date,
-            COALESCE(rule_version, '') AS rule_version
-        FROM theme_mainline_identity_registry
-        WHERE subject_key = ANY($1::text[])
-          AND (
-            first_confirmed_date IS NULL
-            OR first_confirmed_date <= $2::date
-          )
-        ORDER BY subject_key, updated_at DESC NULLS LAST
-        """
         legacy_anytime_sql = """
         SELECT DISTINCT ON (subject_key)
             subject_key,
@@ -2250,18 +2572,250 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 all_rows: list[Dict[str, Any]] = []
                 for i in range(0, len(subject_keys), page_size):
                     chunk = subject_keys[i : i + page_size]
-                    if gate_mode == "legacy_anytime":
-                        rows = await conn.fetch(legacy_anytime_sql, chunk)
-                    else:
-                        try:
-                            rows = await conn.fetch(sql, chunk, trade_date)
-                        except Exception:
-                            rows = await conn.fetch(fallback_sql, chunk, trade_date)
+                    rows = await conn.fetch(legacy_anytime_sql, chunk)
                     all_rows.extend(dict(row) for row in rows)
                 return all_rows
         except Exception as e:
             logger.warning(f"读取 theme_mainline_identity_registry 失败（可能尚未迁移）: {e}")
             return []
+
+    async def get_mainline_identity_rule_inputs(
+        self,
+        trade_date,
+        subject_keys: List[str],
+    ) -> List[Dict[str, Any]]:
+        """读取 Layer A 身份规则输入。
+
+        SQL 口径必须与旧链 `stock_service/scripts/build_mainline_identity_registry.py`
+        `_fetch_latest_mainline_scores()` 保持一致；这里仅迁移数据访问边界，不改业务规则。
+        """
+        if not subject_keys:
+            return []
+
+        sql = """
+        WITH tw_5 AS (
+            SELECT rank_date
+            FROM (
+                SELECT DISTINCT r.rank_date
+                FROM subject_rank_daily r
+                WHERE r.rank_date <= $2::date
+                ORDER BY r.rank_date DESC
+                LIMIT 5
+            ) t
+        ),
+        tw_10 AS (
+            SELECT rank_date
+            FROM (
+                SELECT DISTINCT r.rank_date
+                FROM subject_rank_daily r
+                WHERE r.rank_date <= $2::date
+                ORDER BY r.rank_date DESC
+                LIMIT 10
+            ) t
+        ),
+        tw_20 AS (
+            SELECT rank_date
+            FROM (
+                SELECT DISTINCT r.rank_date
+                FROM subject_rank_daily r
+                WHERE r.rank_date <= $2::date
+                ORDER BY r.rank_date DESC
+                LIMIT 20
+            ) t
+        ),
+        tw_30 AS (
+            SELECT rank_date
+            FROM (
+                SELECT DISTINCT r.rank_date
+                FROM subject_rank_daily r
+                WHERE r.rank_date <= $2::date
+                ORDER BY r.rank_date DESC
+                LIMIT 30
+            ) t
+        ),
+        rank_latest AS (
+            SELECT
+                r.subject_key,
+                r.rank_date AS source_trade_date,
+                COALESCE(r.heat, 0) AS heat_latest,
+                COALESCE(r.his_pct_chg, 0) AS his_pct_chg_latest
+            FROM subject_rank_daily r
+            WHERE r.subject_key = $1
+              AND r.rank_date <= $2::date
+            ORDER BY r.rank_date DESC
+            LIMIT 1
+        ),
+        rank_5d AS (
+            SELECT
+                r.subject_key,
+                COALESCE(AVG(COALESCE(r.heat, 0)), 0) AS avg_heat_5d,
+                COUNT(*) FILTER (WHERE COALESCE(r.heat, 0) >= 70) AS hot_days_5d
+            FROM subject_rank_daily r
+            JOIN tw_5
+              ON tw_5.rank_date = r.rank_date
+            WHERE r.subject_key = $1
+            GROUP BY r.subject_key
+        ),
+        rank_20d AS (
+            SELECT
+                r.subject_key,
+                COUNT(*) AS active_days_20d
+            FROM subject_rank_daily r
+            JOIN tw_20
+              ON tw_20.rank_date = r.rank_date
+            WHERE r.subject_key = $1
+            GROUP BY r.subject_key
+        ),
+        rank_10d AS (
+            SELECT
+                r.subject_key,
+                COUNT(*) AS active_days_10d
+            FROM subject_rank_daily r
+            JOIN tw_10
+              ON tw_10.rank_date = r.rank_date
+            WHERE r.subject_key = $1
+            GROUP BY r.subject_key
+        ),
+        rank_30d AS (
+            SELECT
+                $1::varchar AS subject_key,
+                ARRAY_AGG(COALESCE(r.his_pct_chg, 0)::numeric ORDER BY tw_30.rank_date ASC) AS his_pct_chg_30d
+            FROM tw_30
+            LEFT JOIN subject_rank_daily r
+              ON r.subject_key = $1
+             AND r.rank_date = tw_30.rank_date
+        ),
+        ev_latest AS (
+            SELECT
+                e.subject_key,
+                e.trade_date,
+                COALESCE(e.theme_name, '') AS theme_name,
+                COALESCE(e.event_count_3d, 0) AS event_count_3d,
+                COALESCE(e.event_count_7d, 0) AS event_count_7d,
+                COALESCE(e.strong_event_count_7d, 0) AS strong_event_count_7d,
+                COALESCE(e.event_continuity_score, 0) AS event_continuity_score,
+                COALESCE(e.event_strength_score, 0) AS event_strength_score,
+                COALESCE(e.event_recency_days, 99) AS event_recency_days,
+                COALESCE(e.board_stock_count, 0) AS board_stock_count,
+                COALESCE(e.limit_up_count, 0) AS limit_up_count,
+                COALESCE(e.front_row_strength_score, 0) AS front_row_strength_score,
+                COALESCE(e.front_row_survival_ratio, 0) AS front_row_alive_ratio,
+                COALESCE(e.above_ma10, FALSE) AS above_ma10,
+                COALESCE(e.above_ma20, FALSE) AS above_ma20,
+                COALESCE(e.theme_support_score, 0) AS theme_support_score,
+                COALESCE(e.theme_ret_10d, 0) AS theme_ret_10d
+            FROM theme_cycle_evidence_daily e
+            WHERE e.subject_key = $1
+              AND e.trade_date <= $2::date
+            ORDER BY e.trade_date DESC
+            LIMIT 1
+        ),
+        ev_5d AS (
+            SELECT
+                e.subject_key,
+                COUNT(*) FILTER (
+                    WHERE COALESCE(e.limit_up_count, 0) >= 2
+                      AND (
+                        CASE
+                          WHEN COALESCE(e.board_stock_count, 0) > 0
+                          THEN COALESCE(e.limit_up_count, 0)::numeric / e.board_stock_count::numeric
+                          ELSE 0
+                        END
+                      ) >= 0.03
+                ) AS board_boom_days_5d
+            FROM theme_cycle_evidence_daily e
+            JOIN tw_5
+              ON tw_5.rank_date = e.trade_date
+            WHERE e.subject_key = $1
+            GROUP BY e.subject_key
+        ),
+        flow_daily AS (
+            SELECT
+                m.subject_key,
+                m.trade_date,
+                COALESCE(SUM(COALESCE(m.main_net_inflow, 0)), 0) AS net_inflow_day
+            FROM money_flow_enhanced m
+            JOIN tw_5
+              ON tw_5.rank_date = m.trade_date
+            WHERE m.subject_key = $1
+            GROUP BY m.subject_key, m.trade_date
+        ),
+        flow_5d AS (
+            SELECT
+                subject_key,
+                COALESCE(SUM(net_inflow_day), 0) AS net_inflow_sum_5d,
+                COUNT(*) FILTER (WHERE net_inflow_day > 0) AS net_inflow_days_5d
+            FROM flow_daily
+            GROUP BY subject_key
+        ),
+        base_subject AS (
+            SELECT $1::varchar AS subject_key
+        )
+        SELECT
+            b.subject_key,
+            COALESCE(v2n.theme_name, ev.theme_name, v.theme_name, b.subject_key) AS theme_name,
+            COALESCE(rl.source_trade_date, ev.trade_date, $2::date) AS source_trade_date,
+            COALESCE(rl.heat_latest, 0) AS heat_latest,
+            COALESCE(rl.his_pct_chg_latest, 0) AS his_pct_chg_latest,
+            COALESCE(r5.avg_heat_5d, 0) AS avg_heat_5d,
+            COALESCE(r5.hot_days_5d, 0) AS hot_days_5d,
+            COALESCE(r10.active_days_10d, 0) AS active_days_10d,
+            COALESCE(r20.active_days_20d, 0) AS active_days_20d,
+            COALESCE(r30.his_pct_chg_30d, ARRAY[]::numeric[]) AS his_pct_chg_30d,
+            COALESCE(ev.event_count_3d, 0) AS event_count_3d,
+            COALESCE(ev.event_count_7d, 0) AS event_count_7d,
+            COALESCE(ev.strong_event_count_7d, 0) AS strong_event_count_7d,
+            COALESCE(ev.event_continuity_score, 0) AS event_continuity_score,
+            COALESCE(ev.event_strength_score, 0) AS event_strength_score,
+            COALESCE(ev.event_recency_days, 99) AS event_recency_days,
+            COALESCE(ev.board_stock_count, 0) AS board_stock_count,
+            COALESCE(ev.limit_up_count, 0) AS limit_up_count,
+            COALESCE(ev.front_row_strength_score, 0) AS front_row_strength_score,
+            COALESCE(ev.front_row_alive_ratio, 0) AS front_row_alive_ratio,
+            COALESCE(ev.above_ma10, FALSE) AS above_ma10,
+            COALESCE(ev.above_ma20, FALSE) AS above_ma20,
+            COALESCE(ev.theme_support_score, 0) AS theme_support_score,
+            COALESCE(ev.theme_ret_10d, 0) AS theme_ret_10d,
+            COALESCE(ev5.board_boom_days_5d, 0) AS board_boom_days_5d,
+            COALESCE(f5.net_inflow_sum_5d, 0) AS net_inflow_sum_5d,
+            COALESCE(f5.net_inflow_days_5d, 0) AS net_inflow_days_5d
+        FROM base_subject b
+        LEFT JOIN rank_latest rl
+          ON rl.subject_key = b.subject_key
+        LEFT JOIN vw_subject_theme_binding v
+          ON v.subject_key = b.subject_key
+        LEFT JOIN (
+          SELECT v2.subject_key, v2.theme_name
+          FROM theme_cycle_judgement_v2 v2
+          WHERE v2.subject_key = $1
+            AND v2.trade_date <= $2::date
+          ORDER BY v2.trade_date DESC
+          LIMIT 1
+        ) v2n
+          ON v2n.subject_key = b.subject_key
+        LEFT JOIN rank_5d r5
+          ON r5.subject_key = b.subject_key
+        LEFT JOIN rank_10d r10
+          ON r10.subject_key = b.subject_key
+        LEFT JOIN rank_20d r20
+          ON r20.subject_key = b.subject_key
+        LEFT JOIN rank_30d r30
+          ON r30.subject_key = b.subject_key
+        LEFT JOIN ev_latest ev
+          ON ev.subject_key = b.subject_key
+        LEFT JOIN ev_5d ev5
+          ON ev5.subject_key = b.subject_key
+        LEFT JOIN flow_5d f5
+          ON f5.subject_key = b.subject_key
+        """
+
+        results: list[Dict[str, Any]] = []
+        async with self.pool.acquire() as conn:
+            for subject_key in sorted({str(x) for x in subject_keys if str(x).strip()}):
+                row = await conn.fetchrow(sql, subject_key, trade_date)
+                if row:
+                    results.append(dict(row))
+        return results
 
     async def get_mainline_cycle_by_subject_keys(
         self,
@@ -2285,8 +2839,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 )
                 col_set = {str(r["column_name"]) for r in cols}
 
-                def col(name: str, fallback: str) -> str:
-                    return name if name in col_set else fallback
+                def col(name: str, default_name: str) -> str:
+                    return name if name in col_set else default_name
 
                 sql = f"""
                 SELECT
@@ -2380,7 +2934,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         WITH w AS (
             SELECT DISTINCT trade_date
             FROM stock_daily_snapshot
-            WHERE trade_date <= $1::date
+            WHERE trade_date < $1::date
             ORDER BY trade_date DESC
             LIMIT $2
         ),
@@ -2399,6 +2953,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 COALESCE(h.labels_json->>'state_transition_type', '') AS transition_type_raw,
                 COALESCE(h.labels_json->>'state_transition_confidence', '0')::numeric AS transition_confidence_raw,
                 COALESCE(h.labels_json->'trigger_flags', '[]'::jsonb) AS trigger_flags_raw,
+                COALESCE(NULLIF(h.labels_json->>'watch_age_days', ''), '1')::int AS watch_age_days,
+                COALESCE(NULLIF(h.labels_json->>'weak_days', ''), '0')::int AS weak_days,
                 LAG(COALESCE(h.cycle_state, '')) OVER (PARTITION BY h.stock_id ORDER BY h.trade_date) AS prev_cycle_state,
                 COALESCE(h.support_type, '') AS support_type,
                 h.support_level,
@@ -2485,6 +3041,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 CONCAT('to=', COALESCE(h0.final_cycle_state, 'unknown'))
               )
             END AS trigger_flags,
+            h0.watch_age_days,
+            h0.weak_days,
             h0.support_type,
             h0.support_level,
             h0.support_score
@@ -3205,19 +3763,6 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.error(f"统计新闻数量失败: {e}")
             return 0
     
-    async def delete_test_news(self):
-        """删除测试新闻（清理用）"""
-        try:
-            async with self.pool.acquire() as conn:
-                result = await conn.execute("""
-                    DELETE FROM news_raw 
-                    WHERE source = 'mock_generator' 
-                    OR metadata->>'simulation' = 'true'
-                """)
-                logger.info(f"✅ 删除测试新闻: {result}")
-        except Exception as e:
-            logger.error(f"删除测试新闻失败: {e}")
-
     async def get_database_stats(self) -> Dict[str, Any]:
         """获取数据库统计信息 - 兼容方法"""
         # 调用已有的get_stats方法

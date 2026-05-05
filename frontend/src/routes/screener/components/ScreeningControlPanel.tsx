@@ -156,33 +156,31 @@ export function ScreeningControlPanel(props: ScreeningControlPanelProps) {
               {executionLabel || '执行中...'}
             </span>
           ) : (
-            (isTwoStageStrategy ? '盘后选股' : '执行选股')
+            '盘后选股'
           )}
         </button>
-        {isTwoStageStrategy && (
-          <button
-            type="button"
-            disabled={!selectedStrategy || isExecuting}
-            onClick={onExecuteStage2Only}
-            className="screener-run-button"
-            style={{ marginTop: 8 }}
-          >
-            {preRunning ? (
-              <span className="screener-run-inline">
-                <span className="screener-spinner" />
-                盘前确认执行中...
-              </span>
-            ) : (
-              '盘前确认'
-            )}
-          </button>
-        )}
+        <button
+          type="button"
+          disabled={!selectedStrategy || isExecuting}
+          onClick={onExecuteStage2Only}
+          className="screener-run-button"
+          style={{ marginTop: 8 }}
+        >
+          {preRunning ? (
+            <span className="screener-run-inline">
+              <span className="screener-spinner" />
+              盘前确认执行中...
+            </span>
+          ) : (
+            '盘前确认'
+          )}
+        </button>
         <p className="workspace-note">
           {!selectedStrategy
             ? '请先选择策略。'
             : isTwoStageStrategy
               ? `“盘后选股”仅生成候选池；“盘前确认”仅对候选池做9:25后竞价确认（${tradeDate}）。`
-              : `将使用“${selectedStrategy.strategy_name}”分析 ${tradeDate} 的数据。`}
+              : `当前策略不是弱转强两阶段策略，点击按钮仍可执行对应流程（${tradeDate}）。`}
         </p>
       </div>
     </div>

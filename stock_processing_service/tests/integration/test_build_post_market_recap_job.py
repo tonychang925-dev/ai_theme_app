@@ -254,7 +254,15 @@ def test_build_post_market_recap_job() -> None:
 def test_build_post_market_recap_job_empty_strong_watch_pool() -> None:
     class _EmptyStrongWatchService:
         def build_promoted_pool_with_history(
-            self, trade_date, pool_rows, bars, prior_rows=None, history_bars=None, prior_active_rows=None
+            self,
+            trade_date,
+            pool_rows,
+            bars,
+            prior_rows=None,
+            history_bars=None,
+            prior_active_rows=None,
+            identities_by_subject=None,
+            cycles_by_subject=None,
         ):
             return [], [], []
 
@@ -363,7 +371,20 @@ def test_build_post_market_recap_job_promoted_pool_generates_candidates() -> Non
                     candidate_level="A",
                     candidate_source="strong_watch_pool",
                     evidence_rules=["from_test"],
-                )
+                ),
+                W2SCandidate(
+                    trade_date=str(date(2026, 4, 23)),
+                    stock_id="002001.SZ",
+                    stock_name="SampleB",
+                    subject_key="ai_chip",
+                    subject_name="AI Chip",
+                    support_score=Decimal("68"),
+                    momentum_score=Decimal("62"),
+                    candidate_score=Decimal("66"),
+                    candidate_level="observe_only",
+                    candidate_source="strong_watch_pool",
+                    evidence_rules=["from_test_observe"],
+                ),
             ]
 
     async def _run() -> None:
@@ -394,8 +415,11 @@ def test_build_post_market_recap_job_promoted_pool_generates_candidates() -> Non
         recap_doc = write_port.recap_docs[0].recap_doc
         assert recap_doc["strong_watch_promoted_count"] == 1
         assert recap_doc["strong_watch_history_count"] == 1
-        assert recap_doc["candidate_count"] == 1
-        assert len(recap_doc["top_candidates"]) == 1
+        assert recap_doc["candidate_count"] == 2
+        assert recap_doc["candidate_count_formal"] == 1
+        assert recap_doc["candidate_count_observe"] == 1
+        assert len(recap_doc["top_candidates"]) == 2
+        assert any(c["stock_id"] == "002001.SZ" and c["candidate_level"] == "observe_only" for c in recap_doc["top_candidates"])
         assert "transition_type" in recap_doc["top_candidates"][0]
         assert "transition_confidence" in recap_doc["top_candidates"][0]
         assert "trigger_flags" in recap_doc["top_candidates"][0]

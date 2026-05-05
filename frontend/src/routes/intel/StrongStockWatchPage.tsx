@@ -71,8 +71,9 @@ function boardLabel(level: number): string {
  * 展示契约（禁止随意变更）:
  * 1) 页面保持“多日看板分列”样式。
  * 2) 主口径仅展示“在池强势股”：watch_status in ('active','weakening')。
- * 3) 每个交易日内去重：同日同股只保留最优一条（不做跨日压缩）。
- * 4) 禁止用 promoted_to_candidate 参与 C 层强势池统计。
+ * 3) 每个交易日内去重：同日同股只保留最优一条。
+ * 4) 7 日窗口内同一只股票只展示一次，并挂到“首次入选”的日期列。
+ * 5) 禁止用 promoted_to_candidate 参与 C 层强势池统计。
  */
 function dedupByDate(rows: StrongStockWatchItem[]): StrongStockWatchItem[] {
   const bestByDateCode = new Map<string, StrongStockWatchItem>();
@@ -97,32 +98,39 @@ function dedupByDate(rows: StrongStockWatchItem[]): StrongStockWatchItem[] {
   return [...bestByDateCode.values()];
 }
 
-function dedupByStockFirstEntry(rows: StrongStockWatchItem[]): StrongStockWatchItem[] {
-  const bestByCode = new Map<string, StrongStockWatchItem>();
+function pickBetterSameDayRow(a: StrongStockWatchItem, b: StrongStockWatchItem): StrongStockWatchItem {
+  const aFlag = Number(a.current_flag || 0);
+  const bFlag = Number(b.current_flag || 0);
+  if (bFlag > aFlag) return b;
+  if (bFlag < aFlag) return a;
+  return Number(b.watch_score || 0) > Number(a.watch_score || 0) ? b : a;
+}
+
+function dedupByStockEntryDate(rows: StrongStockWatchItem[]): StrongStockWatchItem[] {
+  const firstByCode = new Map<string, StrongStockWatchItem>();
   for (const row of rows) {
     const code = normalizeStockCode(row.stock_id);
     if (!code) continue;
-    const prev = bestByCode.get(code);
+    const prev = firstByCode.get(code);
     if (!prev) {
-      bestByCode.set(code, row);
+      firstByCode.set(code, row);
       continue;
     }
-    const d0 = String(prev.trade_date || "");
-    const d1 = String(row.trade_date || "");
-    if (d1 < d0) {
-      bestByCode.set(code, row);
+    const prevDate = String(prev.watch_start_date || prev.trade_date || "");
+    const currDate = String(row.watch_start_date || row.trade_date || "");
+    if (currDate < prevDate) {
+      firstByCode.set(code, row);
       continue;
     }
-    if (d1 > d0) continue;
-    const prevFlag = Number(prev.current_flag || 0);
-    const curFlag = Number(row.current_flag || 0);
-    const prevScore = Number(prev.watch_score || 0);
-    const curScore = Number(row.watch_score || 0);
-    if (curFlag > prevFlag || (curFlag === prevFlag && curScore > prevScore)) {
-      bestByCode.set(code, row);
+    if (currDate > prevDate) continue;
+    if (String(row.trade_date || "") < String(prev.trade_date || "")) {
+      firstByCode.set(code, row);
+      continue;
     }
+    if (String(row.trade_date || "") > String(prev.trade_date || "")) continue;
+    firstByCode.set(code, pickBetterSameDayRow(prev, row));
   }
-  return [...bestByCode.values()];
+  return [...firstByCode.values()];
 }
 
 export function StrongStockWatchPage() {
@@ -166,7 +174,7 @@ export function StrongStockWatchPage() {
         (String(item.watch_status || "") === "active" || String(item.watch_status || "") === "weakening"),
     );
     const uniqueByDateRows = dedupByDate(filteredRows);
-    const uniqueRows = dedupByStockFirstEntry(uniqueByDateRows);
+    const uniqueEntryRows = dedupByStockEntryDate(uniqueByDateRows);
     const latestByCode = new Map<string, StrongStockWatchItem>();
     for (const row of uniqueByDateRows) {
       const code = normalizeStockCode(row.stock_id);
@@ -194,10 +202,11 @@ export function StrongStockWatchPage() {
     return {
       rawCount: rawRows.length,
       filteredCount: filteredRows.length,
-      dedupedCount: uniqueRows.length,
-      removedCount: Math.max(0, uniqueByDateRows.length - uniqueRows.length),
+      dedupedCount: uniqueEntryRows.length,
+      removedCount: Math.max(0, uniqueByDateRows.length - uniqueEntryRows.length),
       tradeDates,
-      uniqueRows,
+      uniqueRows: uniqueEntryRows,
+      uniqueStockCount: uniqueEntryRows.length,
       latestByCode,
     };
   }, [data?.items]);
@@ -229,7 +238,7 @@ export function StrongStockWatchPage() {
   }, [dedupStats.uniqueRows, dedupStats.tradeDates, dedupStats.latestByCode]);
 
   const detailCount = groupedItems.reduce((sum, g) => sum + g.items.length, 0);
-  const totalCount = detailCount;
+  const totalCount = dedupStats.uniqueStockCount;
 
   return (
     <div className="workspace-page strong-watch-page">

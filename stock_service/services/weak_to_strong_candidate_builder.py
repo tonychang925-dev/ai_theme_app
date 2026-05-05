@@ -92,9 +92,9 @@ class WeakToStrongCandidateBuilder:
 
     @staticmethod
     def _validate_trade_dates(trade_date: date, next_trade_date: date) -> None:
-        if next_trade_date <= trade_date:
+        if next_trade_date < trade_date:
             raise ValueError(
-                "next_trade_date 非法：必须严格大于 candidate_trade_date "
+                "next_trade_date 非法：必须大于等于 candidate_trade_date "
                 f"(candidate_trade_date={trade_date.isoformat()}, next_trade_date={next_trade_date.isoformat()})"
             )
 

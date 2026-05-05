@@ -124,7 +124,7 @@ def test_cycle_pipeline_missing_evidence() -> None:
     evidences = builder.build_evidences([], pool, context, prior)
     assert evidences[0].missing_flags["bar_missing"] is True
     assert evidences[0].missing_flags["subject_pool_missing"] is False
-    assert evidences[0].score_flags["event_score_fallback"] is True
+    assert evidences[0].score_flags["event_score_missing"] is True
 
     judgement = judger.judge_many(evidences)[0]
     assert judgement.final_cycle_state in {"start", "fade_watch", "fade_confirmed"}
@@ -139,7 +139,7 @@ def test_cycle_pipeline_extreme_weak_evidence() -> None:
     prior = []
     evidences = builder.build_evidences(bars, pool, context, prior)
     e = evidences[0]
-    assert e.score_flags["event_score_fallback"] is True
+    assert e.score_flags["event_score_missing"] is True
     assert e.missing_flags["context_missing"] is True
     assert e.missing_flags["prior_missing"] is True
 
@@ -188,7 +188,7 @@ def test_cycle_pipeline_subject_diffusion_evidence() -> None:
     evidences = builder.build_evidences(bars, pool, context, prior)
     e1 = next(e for e in evidences if e.stock_id == "000001.SZ")
     assert any(item == "subject_diffusion_positive" for item in e1.support_refs)
-    assert e1.score_flags["relay_score_fallback"] is False
+    assert e1.score_flags["relay_score_missing"] is False
 
 
 def test_cycle_pipeline_external_evidence_override() -> None:

@@ -77,7 +77,7 @@ class DecimalEncoder(json.JSONEncoder):
 
 # 设置logger
 logger = logging.getLogger(__name__)
-WEB_APP_SERVICE_BASE_URL = str(os.getenv("WEB_APP_SERVICE_BASE_URL", "http://127.0.0.1:8081")).rstrip("/")
+WEB_APP_SERVICE_BASE_URL = str(os.getenv("WEB_APP_SERVICE_BASE_URL", "http://127.0.0.1:8000")).rstrip("/")
 
 # 尝试导入SSE推送服务
 try:
@@ -1528,6 +1528,7 @@ async def get_intel_feed(
 
 @app.get("/api/intel/strong-stocks/watch")
 @app.get("/api/v2/intel/strong-stocks/watch")
+@app.get("/api/v2/strong_watch/watch")
 async def get_strong_stock_watch(
     date: Optional[str] = Query(default=None),
     window_days: int = Query(default=7, ge=1, le=30),

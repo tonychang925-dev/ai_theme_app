@@ -16,8 +16,6 @@ class StrongWatchAdmissionDecision:
     reject_no_limitup_gene: bool
     reject_isolated_theme: bool
     reject_break_support_with_heavy_drop: bool
-    reject_junk_follower: bool
-    hard_reject_any: bool
     pass_reasons: list[str]
     admission_status: str
 
@@ -89,16 +87,6 @@ class StrongWatchAdmissionPolicy:
         # 两连板旁路时不因“非主线协同”直接拒绝
         reject_isolated_theme = (not theme_synergy_pass) and (not two_board_entry) and (not final_mainline_alive)
         reject_break_support_with_heavy_drop = (not structure_health_pass) and pct_chg <= Decimal("-6")
-        reject_junk_follower = (not is_leader) and rank_order > 10 and (not limitup_gene_pass) and (
-            not theme_synergy_pass
-        )
-        hard_reject_any = (
-            reject_no_limitup_gene
-            or reject_isolated_theme
-            or reject_break_support_with_heavy_drop
-            or reject_junk_follower
-        )
-
         pass_reasons: list[str] = []
         if limitup_gene_pass:
             pass_reasons.append("limitup_gene_pass")
@@ -120,12 +108,12 @@ class StrongWatchAdmissionPolicy:
             )
         )
 
-        if hard_reject_any:
-            admission_status = "reject"
-        elif old_chain_hard_pass:
+        if old_chain_hard_pass:
             admission_status = "formal"
-        else:
+        elif limitup_gene_pass and structure_health_pass and volume_price_health_pass:
             admission_status = "observe_only"
+        else:
+            admission_status = "reject"
 
         return StrongWatchAdmissionDecision(
             limitup_gene_pass=limitup_gene_pass,
@@ -136,8 +124,6 @@ class StrongWatchAdmissionPolicy:
             reject_no_limitup_gene=reject_no_limitup_gene,
             reject_isolated_theme=reject_isolated_theme,
             reject_break_support_with_heavy_drop=reject_break_support_with_heavy_drop,
-            reject_junk_follower=reject_junk_follower,
-            hard_reject_any=hard_reject_any,
             pass_reasons=pass_reasons,
             admission_status=admission_status,
         )

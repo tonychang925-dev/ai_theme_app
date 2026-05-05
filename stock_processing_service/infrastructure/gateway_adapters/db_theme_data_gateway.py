@@ -72,6 +72,17 @@ class DBThemeDataGateway:
         rows = await self._db.get_mainline_identity_by_subject_keys(subject_keys, trade_date)
         return [dict(row) for row in rows]
 
+    async def get_mainline_identity_rule_inputs(
+        self,
+        trade_date: date,
+        subject_keys: list[str],
+    ) -> list[dict[str, Any]]:
+        rows = await self._db.get_mainline_identity_rule_inputs(
+            trade_date=trade_date,
+            subject_keys=subject_keys,
+        )
+        return [self._as_dict(row) for row in rows]
+
     async def get_mainline_cycle_by_subject_keys(
         self,
         subject_keys: list[str],
@@ -79,6 +90,17 @@ class DBThemeDataGateway:
     ) -> list[dict[str, Any]]:
         rows = await self._db.get_mainline_cycle_by_subject_keys(subject_keys, trade_date)
         return [dict(row) for row in rows]
+
+    async def get_prior_strong_watch_pool_rows(
+        self,
+        trade_date: date,
+        lookback_days: int,
+    ) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_prior_strong_watch_pool_rows", None)
+        if not callable(fn):
+            raise RuntimeError("DatabaseGateway missing get_prior_strong_watch_pool_rows")
+        rows = await fn(trade_date=trade_date, lookback_days=lookback_days)
+        return [self._as_dict(row) for row in rows]
 
     async def get_theme_events(self, trade_date: date) -> list[dict[str, Any]]:
         snapshot = await self._db.get_existing_post_market_recap_snapshot(trade_date)
@@ -120,7 +142,7 @@ class DBThemeDataGateway:
     async def get_subject_market_stats(
         self, trade_date, subject_keys: list[str] | None = None, lookback_days: int = 7
     ) -> list[dict[str, Any]]:
-        """批量查询 subject 级市场统计（替代 JSONL stock_daily 文件读取）。"""
+        """批量查询 subject 级市场统计。"""
         rows = await self._db.get_subject_market_stats(
             trade_date=trade_date, subject_keys=subject_keys, lookback_days=lookback_days
         )
@@ -129,7 +151,7 @@ class DBThemeDataGateway:
     async def get_subject_heat_stats(
         self, trade_date, subject_keys: list[str] | None = None, lookback_days: int = 5
     ) -> list[dict[str, Any]]:
-        """批量查询 subject 级热度统计（替代 JSONL history 文件）。"""
+        """批量查询 subject 级热度统计。"""
         rows = await self._db.get_subject_heat_stats(
             trade_date=trade_date, subject_keys=subject_keys, lookback_days=lookback_days
         )

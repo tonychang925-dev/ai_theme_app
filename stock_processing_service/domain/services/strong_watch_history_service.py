@@ -78,6 +78,8 @@ class StrongWatchHistoryService:
                         "gap_source": str(row.gap_source or ""),
                         "gap_level": str(row.gap_level),
                         "gap_distance_pct": str(row.gap_distance_pct),
+                        "watch_age_days": int(row.watch_age_days or 1),
+                        "weak_days": int(row.weak_days or 0),
                         "state_transition_type": str((row.role_tags or {}).get("transition_type", "")),
                         "state_transition_confidence": str((row.role_tags or {}).get("transition_confidence", "0")),
                         "trigger_flags": list((row.role_tags or {}).get("trigger_flags", []) or []),

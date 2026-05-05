@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>P4.phase0 Intel Wireframe</title>
+  <style>
+    :root {
+      --bg: #f5f6f8;
+      --card: #ffffff;
+      --line: #d7dce3;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #0f766e;
+      --warn: #b45309;
+      --error: #b91c1c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f8fafc, #eef2f7);
+    }
+    .wrap { max-width: 1440px; margin: 0 auto; padding: 16px; }
+    .tabs { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .tab {
+      border: 1px solid var(--line); background: var(--card); color: var(--text);
+      padding: 8px 12px; border-radius: 8px; cursor: pointer; font-size: 13px;
+    }
+    .tab.active { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+    .topbar {
+      background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+      padding: 10px 12px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .chip { border: 1px dashed var(--line); border-radius: 6px; padding: 4px 8px; font-size: 12px; color: var(--muted); }
+    .chip.state { border-style: solid; }
+    .state-ok { border-color: #16a34a; color: #166534; }
+    .state-fallback { border-color: var(--warn); color: #92400e; }
+
+    .three-col {
+      display: grid;
+      grid-template-columns: 280px 1fr 320px;
+      gap: 10px;
+      min-height: 620px;
+    }
+    .col {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px;
+    }
+    .col h3 { margin: 0 0 8px; font-size: 14px; }
+    .item {
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      padding: 8px;
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+    .item.active { border-color: var(--accent); background: #f0fdfa; }
+    .meta { color: var(--muted); font-size: 11px; }
+
+    .state-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 10px;
+    }
+    .state-box {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px;
+      min-height: 220px;
+    }
+    .skeleton { height: 10px; border-radius: 5px; background: #e5e7eb; margin: 8px 0; }
+    .error { color: var(--error); border: 1px solid #fecaca; background: #fef2f2; padding: 8px; border-radius: 8px; font-size: 12px; }
+
+    .flow {
+      background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px;
+    }
+    .flow-row { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 8px; align-items: center; margin-bottom: 12px; }
+    .node { border: 1px solid var(--line); border-radius: 8px; padding: 10px; font-size: 12px; background: #fff; }
+    .arrow { color: var(--muted); font-weight: 700; }
+
+    .responsive-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; }
+    .device { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px; }
+    .frame { border: 1px dashed var(--line); border-radius: 8px; padding: 8px; min-height: 260px; }
+    .layout-desktop { display: grid; grid-template-columns: 28% 42% 30%; gap: 6px; }
+    .layout-tablet { display: grid; grid-template-columns: 38% 62%; gap: 6px; }
+    .layout-mobile { display: grid; grid-template-columns: 1fr; gap: 6px; }
+    .block { border: 1px dashed var(--line); border-radius: 6px; min-height: 72px; padding: 6px; font-size: 11px; }
+
+    @media (max-width: 1100px) {
+      .three-col { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="tabs">
+      <button class="tab active" data-target="main">Main</button>
+      <button class="tab" data-target="states">States</button>
+      <button class="tab" data-target="flow">Flow</button>
+      <button class="tab" data-target="responsive">Responsive</button>
+    </div>
+
+    <section id="main" class="panel active">
+      <div class="topbar">
+        <span class="chip">日期: 2026-04-30</span>
+        <span class="chip">session: all</span>
+        <span class="chip">type: all</span>
+        <span class="chip">搜索: subject/stock</span>
+        <span class="chip state state-ok">stream_state: connected</span>
+      </div>
+      <div class="three-col">
+        <div class="col">
+          <h3>ThemeRadar (左栏)</h3>
+          <div class="item active">钠离子电池<div class="meta">heat 12 | stage ACCELERATE | stocks 14</div></div>
+          <div class="item">AI眼镜<div class="meta">heat 8 | stage START | stocks 6</div></div>
+          <div class="item">低空经济<div class="meta">heat 7 | stage DIVERGE | stocks 9</div></div>
+        </div>
+        <div class="col">
+          <h3>IntelStream (中栏)</h3>
+          <div class="item active">09:35 盘中异动<div class="meta">左栏点击主题后按 subject_key 过滤</div></div>
+          <div class="item">10:02 资金回流<div class="meta">点击事件后更新 activeIntelItemId</div></div>
+          <div class="item">10:35 情绪分歧<div class="meta">含 stock_id 时驱动右栏个股验证</div></div>
+        </div>
+        <div class="col">
+          <h3>MarketValidation (右栏)</h3>
+          <div class="item">candidateLevel: observe</div>
+          <div class="item">supportType: prior_breakout_retest</div>
+          <div class="item">supportScore: 71.2</div>
+          <div class="item">rejectReasons: ["末端跳水"]</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="states" class="panel">
+      <div class="state-grid">
+        <div class="state-box">
+          <h3>Empty</h3>
+          <div class="item">暂无主题</div>
+          <div class="item">暂无情报</div>
+          <div class="item">暂无验证数据</div>
+        </div>
+        <div class="state-box">
+          <h3>Loading</h3>
+          <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+          <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+        </div>
+        <div class="state-box">
+          <h3>Error</h3>
+          <div class="error">面板级错误：market validation request failed</div>
+        </div>
+        <div class="state-box">
+          <h3>Fallback</h3>
+          <div class="chip state state-fallback">stream_state: fallback_to_feed</div>
+          <div class="item">继续显示 feed 数据，页面不中断</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="flow" class="panel">
+      <div class="flow">
+        <div class="flow-row">
+          <div class="node">左栏点击主题<br/>set selectedTheme</div>
+          <div class="arrow">→</div>
+          <div class="node">中栏按 subject_key 过滤</div>
+          <div class="arrow">→</div>
+          <div class="node">右栏刷新主题级验证</div>
+        </div>
+        <div class="flow-row">
+          <div class="node">中栏点击事件<br/>set activeIntelItemId</div>
+          <div class="arrow">→</div>
+          <div class="node">若事件含 stock_id<br/>set selectedStock</div>
+          <div class="arrow">→</div>
+          <div class="node">右栏切换个股验证视图</div>
+        </div>
+        <div class="flow-row">
+          <div class="node">日期切换<br/>set recapDate</div>
+          <div class="arrow">→</div>
+          <div class="node">三栏并行刷新</div>
+          <div class="arrow">→</div>
+          <div class="node">stream回放/静态模式</div>
+        </div>
+        <div class="flow-row">
+          <div class="node">SSE异常</div>
+          <div class="arrow">→</div>
+          <div class="node">stream_state=error</div>
+          <div class="arrow">→</div>
+          <div class="node">自动 fallback 到 feed</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="responsive" class="panel">
+      <div class="responsive-grid">
+        <div class="device">
+          <h3>Desktop (>=1280)</h3>
+          <div class="frame layout-desktop">
+            <div class="block">左栏 280</div>
+            <div class="block">中栏 auto</div>
+            <div class="block">右栏 320</div>
+          </div>
+        </div>
+        <div class="device">
+          <h3>Tablet (768~1279)</h3>
+          <div class="frame layout-tablet">
+            <div class="block">左栏</div>
+            <div class="block">中栏 + 右栏抽屉</div>
+          </div>
+        </div>
+        <div class="device">
+          <h3>Mobile (<768)</h3>
+          <div class="frame layout-mobile">
+            <div class="block">左栏</div>
+            <div class="block">中栏</div>
+            <div class="block">右栏</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const panels = document.querySelectorAll('.panel');
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.target).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

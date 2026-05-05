@@ -218,6 +218,7 @@
 #### Scope
 - `ThemeMatchEngine` 入核与旁路收敛。
 - 结构化事件单流入口收敛。
+
 - `ThemeProfile` 首期画像字段基线。
 - 三态决策与审计字段冻结。
 - 与 Redis Stream / `DecisionExecutor` 的兼容接入。
@@ -626,6 +627,46 @@
 | P3.phase3-T05 | 实时链与日频快照主链隔离门禁（故障注入） | P3.phase3-T04 | 1人天 | 高 | 失败注入评审 | 集成测试,文档更新 |
 | P3.phase3-T06 | phase3 门禁验收归档（SSE P95/回补/主链隔离） | P3.phase3-T05 | 0.5人天 | 中 | 门禁记录 | 集成测试,文档更新 |
 
+### WBS — P4.phase0
+
+| Task ID | 任务描述 | Depends On | 估算 | 风险 | 验证方式 | DoD Checklist |
+| --- | --- | --- | --- | --- | --- | --- |
+| P4.phase0-R01 | 路径收口门禁（只留 `/api/v2/*`）：扫描清零 + CI 阻断 | P3.phase3-T06 | 1人天 | 高 | `rg -n --pcre2 \"['\\\"]/api/(?!v2/)\" frontend/src` 为 0 | Code Complete; CI Green |
+| P4.phase0-R02 | 三栏最小 DTO 契约冻结：`ThemeRadar/IntelContext/MarketValidation` 字段与可空性定稿 | P4.phase0-R01 | 1人天 | 高 | DTO 字段清单评审通过 | Docs Updated; Gate Ready |
+| P4.phase0-R02A | 前端交互设计分解：线框图 + 交互时序 + 布局规范 + Web展示验收 | P4.phase0-R02 | 2人天 | 中 | 设计评审与联动验收通过 | Docs Updated; Design Reviewed |
+| P4.phase0-R03 | contract tests 首版落地：覆盖 `feed/stream/workspace/*/strong_watch/post_market_snapshot` + 错误码/边界/fallback | P4.phase0-R02A | 1人天 | 高 | contract tests 全通过 | Test Pass; CI Green |
+| P4.phase0-R04 | CI 综合门禁：路径阻断 + 契约阻断 + 页面禁重算 A/B/C/D 阻断 | P4.phase0-R03 | 0.5人天 | 高 | PR 门禁演练通过 | CI Green; Gate Ready |
+
+### WBS — P4.phase1
+| Task ID | 任务描述 | Depends On | 估算 | 风险 | 验证方式 | DoD Checklist |
+| --- | --- | --- | --- | --- | --- | --- |
+| P4.phase1-T04 | 页面迁移（高优先）`/recap` -> `RecapViewModelV2` + adapter | P4.phase0-R04 | 1.5人天 | 中 | recap 页面回归通过 | Code Complete; Test Pass |
+| P4.phase1-T05 | 页面迁移（高优先）`/intel/strong-stocks/watch` -> `/api/v2/strong_watch` 统一口径 | P4.phase1-T04 | 1人天 | 中 | watch 页面回归通过 | Code Complete; Test Pass |
+| P4.phase1-T06 | SSE payload 契约化：`intel_item/stream_state/theme_update/validation_update/error` 字段级校验 | P4.phase1-T05 | 1人天 | 高 | 坏 payload 转统一 error 事件 | Code Complete; Test Pass |
+| P4.phase1-T07 | SSE fallback 语义固化：stream 异常自动切 feed，并保留 diagnostics（`fallbackActive/fallbackReason/streamRecoveredAt`） | P4.phase1-T06 | 0.5人天 | 中 | 故障注入后 fallback 生效 | Test Pass; Observability Ready |
+
+### WBS — P4.phase2
+| Task ID | 任务描述 | Depends On | 估算 | 风险 | 验证方式 | DoD Checklist |
+| --- | --- | --- | --- | --- | --- | --- |
+| P4.phase2-T01 | 页面迁移（次高优先）`/collection` -> `/api/v2/collection/*` | P4.phase1-T07 | 1.5人天 | 中 | 页面回归通过 | Code Complete; Test Pass |
+| P4.phase2-T02 | 页面迁移（次高优先）`/realtime-collector` -> `/api/v2/realtime/*` | P4.phase2-T01 | 1.5人天 | 中 | 页面回归通过 | Code Complete; Test Pass |
+| P4.phase2-T03 | 状态治理：落地 `intelStore/themeStore/validationStore/workspaceStore` 及共享字段 | P4.phase2-T02 | 1人天 | 中 | 状态字段对齐评审通过 | Code Complete; Test Pass |
+| P4.phase2-T04 | 旧别名依赖清零与扫描阻断（页面级） | P4.phase2-T03 | 0.5人天 | 高 | 路径扫描为 0 | Gate Ready; CI Green |
+| P4.phase2-T05 | 灰度开关矩阵落地：`ENABLE_WEB_APP_SERVICE`/`ENABLE_INTEL_V2_STREAM`/`ENABLE_INTEL_THREE_COLUMN` | P4.phase2-T04 | 0.5人天 | 中 | 分阶段切换可用 | Code Complete; Gate Ready |
+| P4.phase2-T06 | 建立 5 交易日灰度指标日报（SSE 成功率/错误率/fallback/首屏性能/联动正确率） | P4.phase2-T05 | 1人天 | 中 | `scripts/collect_p4_phase2_metrics.py` 连续5日产出 | Observability Ready |
+| P4.phase2-T07 | 执行故障注入演练（SSE 断连/上游异常）与恢复验证 | P4.phase2-T06 | 1人天 | 高 | 演练报告通过 | Test Pass; Docs Updated |
+| P4.phase2-T08 | 回滚矩阵演练（入口/SSE/三栏）并记录 RTO<=5 分钟 | P4.phase2-T07 | 1人天 | 中 | 回滚演练记录 | Rollback Ready |
+| P4.phase2-T09 | 灰度缺陷收口：无未关闭 P0 阻断缺陷后进入 phase3 | P4.phase2-T08 | 0.5人天 | 高 | 缺陷清单为 0 | Gate Ready |
+
+### WBS — P4.phase3
+| Task ID | 任务描述 | Depends On | 估算 | 风险 | 验证方式 | DoD Checklist |
+| --- | --- | --- | --- | --- | --- | --- |
+| P4.phase3-T01 | 优化：三栏性能优化（懒加载/高频去抖/请求去重） | P4.phase2-T09 | 1人天 | 中 | 性能基线优于 phase2 | Perf Verified; Code Complete |
+| P4.phase3-T02 | 优化：SSE 稳定性优化（退避参数/心跳策略/异常恢复） | P4.phase3-T01 | 1人天 | 中 | SSE 成功率达标 | Observability Ready; Test Pass |
+| P4.phase3-T03 | 测试：全页面联动回归（intel/themes/stocks/screener/recap/watch/collection/realtime-collector） | P4.phase3-T02 | 1.5人天 | 高 | 全回归通过 | Test Pass; Report Ready |
+| P4.phase3-T04 | 测试：端到端灰度验收与回放 diff 审核 | P4.phase3-T03 | 1人天 | 高 | 验收报告通过 | Gate Ready; Docs Updated |
+| P4.phase3-T05 | 门禁：页面禁止临时重算 A/B/C/D，守门脚本与审计固化 | P4.phase3-T04 | 0.5人天 | 高 | 扫描与审计通过 | CI Green; Gate Ready |
+
 ## 6. 依赖图（Dependency Graph）
 - Milestone dependency graph：
   - `P1.phase0 -> P1.phase1 -> P1.phase2 -> P1.phase3 -> P1.phase4`
@@ -741,10 +782,60 @@
 | D9 | BFF 灰度切流 | `P3.phase0-T02/T04` | feature flag 切流记录、回滚预案 | `.venv/bin/python scripts/qa/check_flag_register.py` |
 | D10 | Phase1/1.0 验收归档 | `P3.phase1-T13` | `ACPT-P3B-011~022` 与 `ACPT-P3P10-001~005` 证据包 | `.venv/bin/python -m pytest -q` |
 
-### 10.1 一致性约束（WBS vs FEATURE）
+### 一致性约束（WBS vs FEATURE）
 - `D1-D10` 为执行节拍真源；若 `FEATURE_SPEC_P3.md` 存在冲突，以本节节拍为准并要求同日同步修订 feature 文档。
 - `P3.phase1-T06/T07/T12` 属于阻塞项：未完成不得推进 `P3.phase2` 开发。
 - 任何新增 P3 任务必须同时补充：
   - `PLAN_WBS.md`（里程碑/依赖）
   - `FEATURE_SPEC_P3.md`（任务实现与测试）
   - `feature_traceability_P3.json`（映射）
+
+### WBS — P4.phase0（2026-05-01 增量：新链收口）
+| Task ID | 任务描述 | Depends On | 估算 | 风险 | 验证方式 | DoD Checklist |
+| --- | --- | --- | --- | --- | --- | --- |
+| P4.phase0-R05 | 新链读取链路收口：`intel/feed`、`strong_watch/watch`、`workspace/market-validation` 统一收口到 `stock_processing_service` | P4.phase0-R04 | 1.5人天 | 高 | `/intel` 页面无 503 + 3 接口 contract 通过 | Code Complete; Test Pass; Gate Ready |
+| P4.phase0-R06 | 运行态防漂移治理：`vite.config.js/.ts` 统一、启动门禁、三跳探活 | P4.phase0-R05 | 1人天 | 高 | `5173 -> 8000 -> workspace` 探活通过 | Code Complete; Observability Ready |
+
+### WBS — P4.phase1（2026-05-01 增量：最大复用）
+| Task ID | 任务描述 | Depends On | 估算 | 风险 | 验证方式 | DoD Checklist |
+| --- | --- | --- | --- | --- | --- | --- |
+| P4.phase1-N01 | 复用迁移：将 `frontend_bff` 已验证聚合逻辑下沉到 `stock_processing_service/application` | P4.phase0-R06 | 2人天 | 高 | 接口结果与现网基线对账一致 | Code Complete; Test Pass |
+| P4.phase1-N02 | `gateway_adapter` 统一封装：禁止新增直连 SQL 读路径 | P4.phase1-N01 | 1.5人天 | 高 | 边界扫描通过 + adapter 单测通过 | Code Complete; CI Green |
+| P4.phase1-N03 | 历史复盘快照回灌（`pre_market_brief_snapshot` / `post_market_recap_snapshot`）并对齐新链读口 | P4.phase1-N02 | 1.5人天 | 高 | 指定交易日快照查询非 missing + `/api/v2/recap` 返回真实内容 | Code Complete; Test Pass; Data Ready |
+
+### WBS — P4.phase2（2026-05-01 增量：脚本服务化）
+| Task ID | 任务描述 | Depends On | 估算 | 风险 | 验证方式 | DoD Checklist |
+| --- | --- | --- | --- | --- | --- | --- |
+| P4.phase2-N00 | 运行边界收口：`/api/v2/collection/*` 仅走 `web_app_service:8000 -> stock_processing_service:8090`，禁止 `frontend_bff:8003` 运行态依赖 | P4.phase1-N02 | 1人天 | 高 | `curl :8000/healthz`=200；`curl :8090/api/v1/collection/availability` 返回 `allowed/server_time/message`；`curl :8000/api/v2/collection/availability` 返回同结构且不含 `web_app_service_proxy_safe_fallback`；`curl :8000/api/v2/intel/feed` 非 fallback 空壳 | Code Complete; Test Pass; Gate Ready |
+| P4.phase2-N01 | 第一批脚本服务化：strong_watch / w2s / recap 从 scripts 迁入 jobs | P4.phase1-N02 | 2人天 | 中 | 任务调度执行成功 + 结果一致 | Code Complete; Test Pass |
+| P4.phase2-N02 | 任务调度与审计：幂等键、重试、trace_id、失败回放 | P4.phase2-N01 | 1.5人天 | 中 | 失败任务可重放且可追踪 | Observability Ready; Gate Ready |
+
+### WBS — P4.phase3（2026-05-01 增量：收尾优化）
+| Task ID | 任务描述 | Depends On | 估算 | 风险 | 验证方式 | DoD Checklist |
+| --- | --- | --- | --- | --- | --- | --- |
+| P4.phase3-N01 | `intel/stream` 全量新链化（新流网关 + 事件契约校验） | P4.phase2-N02 | 2人天 | 高 | SSE 稳定性与契约测试通过 | Code Complete; Test Pass |
+| P4.phase3-N02 | 旧链运行路径下线：停用 `stock_service` 线上依赖入口与旧端口兼容 | P4.phase3-N01 | 1人天 | 高 | 5个交易日灰度无 P0 事故 | Gate Ready; Docs Updated |
+
+### P4.phase0 进度回写（2026-05-01）
+- 已完成：`P4.phase0-R01`、`P4.phase0-R02`、`P4.phase0-R03`、`P4.phase0-R04`、`P4.phase0-R05(第一阶段)`、`P4.phase0-R06`。
+- 未完成：`P4.phase0-R02A`（前端交互设计分解与动态交互验收）。
+- 风险备注：`R05` 当前为“新读口优先 + 兼容兜底”过渡态，后续 `P4.phase1-N01/N02` 继续完成旧代理完全移除。
+
+### P4.phase1 进度回写（2026-05-01）
+- 已完成：`P4.phase1-T06`（SSE payload 契约兼容，含 `heartbeat` 与 `intel_item.item` 嵌套兼容，contract tests 通过）。
+- 已完成：`P4.phase1-N01`（第一批）：
+  - `stock_processing_service` 增加 `/api/v1/intel_feed`。
+  - `web_app_service` 读链切换到 `WEB_APP_READ_MODE=http + STOCK_PROCESSING_READ_BASE_URL=8090`。
+  - `feed_date/item_type` 参数口径对齐，空参数清洗完成。
+- 已完成：`P4.phase1-T07`（前端稳定性子项）：
+  - 中栏默认全量展示，不再被左栏自动选择主题误过滤为空。
+  - 新增显式过滤开关（默认关闭）。
+  - 已加载列表不被瞬时 `loading/error` 覆盖清空。
+- 待继续：`P4.phase1-N02`（gateway_adapter 统一封装与边界门禁）。
+- 新增阻塞项：`P4.phase1-N03`（历史复盘快照回灌），未完成前 `/recap` 仍可能退化到兜底摘要。
+
+### P4.phase2 进度回写（2026-05-01 增量）
+- 新增并启动：`P4.phase2-N00`（禁止新旧服务混用）：
+  - `stock_processing_service` 已承载 `/api/v1/collection/availability|start|status|cancel|continue`。
+  - `web_app_service /api/v2/collection/*` 已改为仅转发 `stock_processing_service:8090`。
+  - 约束口径：允许复用旧链数据表与代码；禁止运行态依赖旧链服务进程（含 `frontend_bff:8003`）。

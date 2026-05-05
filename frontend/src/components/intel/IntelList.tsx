@@ -17,6 +17,23 @@ export function IntelList({
   selectedItemId,
   onItemClick,
 }: IntelListProps) {
+  // Guardrail: keep already loaded items visible even if a transient
+  // loading/error state appears during stream reconnect or fallback polling.
+  if (items.length > 0) {
+    return (
+      <section className="intel-list intel-list-dense">
+        {items.map((item) => (
+          <IntelListItem
+            key={item.item_id}
+            item={item}
+            active={selectedItemId === item.item_id}
+            onClick={onItemClick}
+          />
+        ))}
+      </section>
+    );
+  }
+
   if (loading) {
     return <div className="empty-state">正在加载情报流...</div>;
   }
@@ -29,16 +46,5 @@ export function IntelList({
     return <div className="empty-state">当日无情报项</div>;
   }
 
-  return (
-    <section className="intel-list intel-list-dense">
-      {items.map((item) => (
-        <IntelListItem
-          key={item.item_id}
-          item={item}
-          active={selectedItemId === item.item_id}
-          onClick={onItemClick}
-        />
-      ))}
-    </section>
-  );
+  return <div className="empty-state">当日无情报项</div>;
 }

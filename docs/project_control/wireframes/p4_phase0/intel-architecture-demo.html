@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intel Demo - 旧链交互复刻版</title>
+  <style>
+    :root { --line:#d8dee8; --bg:#f4f6fa; --card:#fff; --muted:#6a7280; --ok:#0f766e; --warn:#b45309; --err:#b91c1c; }
+    *{box-sizing:border-box} body{margin:0;font-family:Arial,"PingFang SC";background:var(--bg)}
+    .app{max-width:1500px;margin:0 auto;padding:12px}
+    .topbar{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px;display:grid;gap:10px}
+    .controls,.top-actions,.status{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .controls input,.controls select,.btn,.nav-btn{border:1px solid var(--line);border-radius:8px;padding:6px 10px;background:#fff;font-size:12px}
+    .btn,.nav-btn{cursor:pointer}
+    .chip{border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:12px}
+    .ok{border-color:#86efac;color:#166534;background:#f0fdf4}.warn{border-color:#fcd34d;color:#92400e;background:#fffbeb}.err{border-color:#fecaca;color:#991b1b;background:#fef2f2}
+    .layout{display:grid;grid-template-columns:280px 1fr 320px;gap:10px;min-height:calc(100vh - 130px)}
+    .panel{background:var(--card);border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column;min-height:0}
+    .panel h3{margin:0;padding:10px 12px;border-bottom:1px solid var(--line);font-size:14px}
+    .body{padding:10px;overflow:auto;display:flex;flex-direction:column;gap:8px}
+    .item{border:1px dashed var(--line);border-radius:10px;padding:8px;background:#fff;font-size:12px;cursor:pointer}
+    .item.active{border-style:solid;border-color:var(--ok);background:#f0fdfa}
+    .title{font-size:13px;font-weight:600}.meta{color:var(--muted);margin-top:4px}
+    @media (max-width:1199px){.layout{grid-template-columns:280px 1fr}.panel.right{display:none}}
+    @media (max-width:767px){.layout{grid-template-columns:1fr}}
+    .modal-backdrop{position:fixed;inset:0;background:rgba(15,23,42,.45);display:none;align-items:center;justify-content:center;z-index:99}
+    .modal{width:min(860px,92vw);max-height:82vh;overflow:auto;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px}
+    .modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;background:#f8fafc;border:1px dashed var(--line);padding:8px;border-radius:8px;white-space:pre-wrap}
+
+  </style>
+</head>
+<body>
+<div class="app">
+  <div class="topbar">
+    <div class="controls">
+      <span class="meta">日期</span><input id="dateInput" type="date" />
+      <span class="meta">session</span><select id="sessionSel"><option>all</option><option>pre</option><option>intra</option><option>post</option></select>
+      <span class="meta">type</span><select id="typeSel"><option>all</option><option>event</option><option>theme_move</option><option>new_theme</option></select>
+      <label class="meta">mode</label><select id="modeSel"><option value="mock">mock</option><option value="real">real</option></select><button class="btn" id="btnReconnect">重连SSE</button><button class="btn" id="btnSimError">模拟SSE异常</button>
+    </div>
+    <div class="status"><span id="streamState" class="chip">stream: disconnected</span><span id="fallbackState" class="chip">fallback: off</span><span id="pollState" class="chip">poll: idle</span></div>
+    <div class="top-actions">
+      <button class="nav-btn" data-route="/realtime-collector">实时事件采集</button>
+      <button class="nav-btn" data-route="/collection">日采集控制</button>
+      <button class="nav-btn" id="btnPostRecap">盘后复盘</button>
+      <button class="nav-btn" id="btnPreRecap">盘前必读</button>
+      <button class="nav-btn" data-route="/screener">AI选股器</button>
+      <button class="nav-btn" data-route="/intel/strong-stocks/watch">强势股跟踪</button>
+    </div>
+  </div>
+
+  <div class="layout">
+    <section class="panel"><h3>ThemeRadar（左栏）</h3><div id="themeBody" class="body"></div></section>
+    <section class="panel"><h3>IntelStream（中栏）</h3><div id="intelBody" class="body"></div></section>
+    <section class="panel right"><h3>MarketValidation（右栏）</h3><div id="validationBody" class="body"></div></section>
+  </div>
+</div>
+<script>
+const dateInput=document.getElementById('dateInput'); const sessionSel=document.getElementById('sessionSel'); const typeSel=document.getElementById('typeSel');
+const streamStateEl=document.getElementById('streamState'); const fallbackStateEl=document.getElementById('fallbackState'); const pollStateEl=document.getElementById('pollState');
+const themeBody=document.getElementById('themeBody'); const intelBody=document.getElementById('intelBody'); const validationBody=document.getElementById('validationBody');
+const btnReconnect=document.getElementById('btnReconnect'); const btnSimError=document.getElementById('btnSimError'); const modeSel=document.getElementById('modeSel');
+const btnPostRecap=document.getElementById('btnPostRecap'); const btnPreRecap=document.getElementById('btnPreRecap'); const topNavButtons=document.querySelectorAll('.nav-btn[data-route]');
+const today=new Date().toISOString().slice(0,10); dateInput.value=today;
+const state={selectedTheme:null,selectedStock:null,activeIntelItemId:null,pollInterval:30000,pollTimer:null,sseTimer:null,themes:[],items:[]};
+function setChip(el,text,cls=''){el.className='chip '+cls;el.textContent=text}
+function syncUrlState(){const q=new URLSearchParams(window.location.search);q.set('date',dateInput.value);q.set('session',sessionSel.value);q.set('type',typeSel.value);state.selectedTheme?q.set('subject_key',state.selectedTheme):q.delete('subject_key');state.selectedStock?q.set('stock_id',state.selectedStock):q.delete('stock_id');state.activeIntelItemId?q.set('item',state.activeIntelItemId):q.delete('item');window.history.replaceState({},'',`${window.location.pathname}?${q.toString()}`)}
+function renderThemes(){themeBody.innerHTML='';state.themes.forEach(t=>{const d=document.createElement('div');d.className='item'+(state.selectedTheme===t.theme_id?' active':'');d.innerHTML=`<div class="title">${t.theme_name}</div><div class="meta">heat ${t.heat} | stage ${t.stage} | stocks ${t.stock_count}</div>`;d.onclick=()=>{state.selectedTheme=t.theme_id;state.activeIntelItemId=null;renderThemes();renderIntel();renderValidation();syncUrlState()};themeBody.appendChild(d)});if(!state.themes.length)themeBody.innerHTML='<div class="meta">暂无主题</div>'}
+function filteredItems(){return state.items.filter(it=>!state.selectedTheme||(it.theme_subject_keys||[]).includes(state.selectedTheme))}
+function renderIntel(){intelBody.innerHTML='';const list=filteredItems();list.forEach(it=>{const d=document.createElement('div');d.className='item'+(state.activeIntelItemId===it.item_id?' active':'');d.innerHTML=`<div class="title">${it.title}</div><div class="meta">${it.occurred_at} | ${it.item_type}</div><div class="meta">${it.summary}</div>`;d.onclick=()=>{state.activeIntelItemId=it.item_id;state.selectedStock=(it.stock_ids&&it.stock_ids[0])||null;const next=(it.theme_subject_keys&&it.theme_subject_keys[0])||state.selectedTheme;if(next)state.selectedTheme=next;renderIntel();renderThemes();renderValidation();syncUrlState()};d.ondblclick=()=>{const subjectKey=(it.theme_subject_keys&&it.theme_subject_keys[0])||state.selectedTheme;if(subjectKey)window.location.href=`/themes/${encodeURIComponent(subjectKey)}`};intelBody.appendChild(d)});if(!list.length)intelBody.innerHTML='<div class="meta">暂无情报</div>'}
+function renderValidation(){const active=state.items.find(x=>x.item_id===state.activeIntelItemId)||null;const box=(k,v)=>`<div class=\"item\"><div class=\"meta\">${k}</div><div class=\"title\">${v??'--'}</div></div>`;validationBody.innerHTML=[box('selectedTheme',state.selectedTheme||'--'),box('selectedStock',state.selectedStock||'--'),box('candidateLevel',active?'observe':'unknown'),box('supportType',active?'prior_breakout_retest':'unknown'),box('supportScore',active?'71.2':'--')].join('');const actions=document.createElement('div');actions.className='item';actions.innerHTML=`<div class=\"meta\">快捷跳转</div><div style=\"margin-top:6px;display:flex;gap:8px;flex-wrap:wrap\"><button class=\"nav-btn\" id=\"goThemeBtn\">题材详情</button><button class=\"nav-btn\" id=\"goStockBtn\">个股详情</button><button class=\"nav-btn\" id=\"openEvidenceBtn\">查看验证细节</button></div>`;validationBody.appendChild(actions);const t=document.getElementById('goThemeBtn');const k=state.selectedTheme; if(t){t.onclick=()=>{if(k)window.location.href=`/themes/${encodeURIComponent(k)}`}};const st=document.getElementById('goStockBtn');const sid=state.selectedStock; if(st){st.onclick=()=>{if(sid)window.location.href=`/stocks/${encodeURIComponent(sid)}`}};const ev=document.getElementById('openEvidenceBtn'); if(ev){ev.onclick=()=>openEvidenceModal(active)}}
+
+async function fetchJson(url){const r=await fetch(url); if(!r.ok) throw new Error(`request failed: ${r.status}`); return r.json();}
+async function loadRealData(){
+  const date=dateInput.value; const session=sessionSel.value; const type=typeSel.value;
+  const q=new URLSearchParams({date,session,type,limit:'50'});
+  const [radar,ctx]=await Promise.all([
+    fetchJson(`/api/v2/workspace/theme-radar?${q.toString()}`),
+    fetchJson(`/api/v2/workspace/intel-context?${q.toString()}${state.selectedTheme?`&subject_key=${encodeURIComponent(state.selectedTheme)}`:''}`)
+  ]);
+  state.themes=(radar.themes||[]).map(t=>({theme_id:String(t.theme_id),theme_name:String(t.theme_name),heat:Number(t.heat||0),stage:String(t.stage||'UNKNOWN'),stock_count:Number(t.stock_count||0)}));
+  state.items=(ctx.items||[]).map(i=>({item_id:String(i.item_id||''),item_type:String(i.item_type||'event'),occurred_at:String(i.occurred_at||''),title:String(i.title||i.summary||''),summary:String(i.summary||i.title||''),theme_subject_keys:Array.isArray(i.theme_subject_keys)?i.theme_subject_keys.map(String):[],stock_ids:Array.isArray(i.stock_ids)?i.stock_ids.map(String):[]}));
+  if(!state.selectedTheme && state.themes.length) state.selectedTheme=state.themes[0].theme_id;
+  renderThemes(); renderIntel(); renderValidation();
+}
+
+function mockData(){state.themes=[{theme_id:'9035101',theme_name:'钠离子电池',heat:12,stage:'ACCELERATE',stock_count:14},{theme_id:'9001002',theme_name:'AI眼镜',heat:8,stage:'START',stock_count:6},{theme_id:'9012003',theme_name:'低空经济',heat:7,stage:'DIVERGE',stock_count:9}];state.items=[{item_id:'i1',item_type:'event',occurred_at:'09:35',title:'盘中异动',summary:'主线回流，强度提升',theme_subject_keys:['9035101'],stock_ids:['600152.SH']},{item_id:'i2',item_type:'theme_move',occurred_at:'10:02',title:'资金回流',summary:'量能配合增强',theme_subject_keys:['9035101','9001002'],stock_ids:['002000.SZ']},{item_id:'i3',item_type:'new_theme',occurred_at:'10:35',title:'情绪分歧',summary:'分歧加大需观察',theme_subject_keys:['9012003'],stock_ids:[]}];if(!state.selectedTheme)state.selectedTheme=state.themes[0].theme_id;renderThemes();renderIntel();renderValidation()}
+function stopPolling(){if(state.pollTimer){clearTimeout(state.pollTimer);state.pollTimer=null}setChip(pollStateEl,'poll: idle')}
+function startPolling(){stopPolling();setChip(pollStateEl,'poll: running','warn');const tick=()=>{renderIntel();state.pollTimer=setTimeout(tick,state.pollInterval)};state.pollTimer=setTimeout(tick,state.pollInterval)}
+function connectSSE(){clearInterval(state.sseTimer);setChip(streamStateEl,'stream: connecting');setChip(fallbackStateEl,'fallback: off');stopPolling();setTimeout(()=>{setChip(streamStateEl,'stream: connected','ok');state.sseTimer=setInterval(()=>{const ts=new Date();const hh=String(ts.getHours()).padStart(2,'0');const mm=String(ts.getMinutes()).padStart(2,'0');const ss=String(ts.getSeconds()).padStart(2,'0');state.items=[{item_id:'live-'+ts.getTime(),item_type:'event',occurred_at:`${hh}:${mm}:${ss}`,title:'SSE增量情报',summary:'实时推送更新',theme_subject_keys:[state.selectedTheme||'9035101'],stock_ids:['600152.SH']},...state.items].slice(0,60);renderIntel()},7000)},800)}
+function fallbackToFeed(){clearInterval(state.sseTimer);setChip(streamStateEl,'stream: error','err');setChip(fallbackStateEl,'fallback: on(feed)','warn');state.pollInterval=Math.min(Math.round(state.pollInterval*1.5),30000);startPolling()}
+btnReconnect.onclick=()=>{state.pollInterval=30000;connectSSE(); if(modeSel.value==='real'){loadRealData().catch(()=>{});} }; btnSimError.onclick=()=>fallbackToFeed();
+topNavButtons.forEach(btn=>btn.addEventListener('click',()=>{const route=btn.getAttribute('data-route');if(route)window.location.href=route}));
+btnPostRecap.onclick=()=>window.location.href=`/recap?date=${encodeURIComponent(dateInput.value)}&report_type=post_market`;
+btnPreRecap.onclick=()=>window.location.href=`/recap?date=${encodeURIComponent(dateInput.value)}&report_type=pre_market`;
+[dateInput,sessionSel,typeSel].forEach(el=>el.addEventListener('change',()=>{mockData();syncUrlState()}));
+
+const evidenceBackdrop=document.getElementById('evidenceBackdrop');
+const evidenceContent=document.getElementById('evidenceContent');
+const closeEvidenceBtn=document.getElementById('closeEvidenceBtn');
+function openEvidenceModal(active){
+  const payload={
+    selectedTheme: state.selectedTheme||null,
+    selectedStock: state.selectedStock||null,
+    candidateLevel: active?'observe':'unknown',
+    supportType: active?'prior_breakout_retest':'unknown',
+    supportScore: active?71.2:null,
+    rejectReasons: active?['末端跳水（示例）']:[],
+    evidence: active?{
+      source:'strong_watch_w2s_aggregate',
+      note:'演示版：此处复刻右栏验证结构，正式值由/api/v2/workspace/market-validation提供'
+    }:null
+  };
+  evidenceContent.textContent=JSON.stringify(payload,null,2);
+  evidenceBackdrop.style.display='flex';
+}
+if(closeEvidenceBtn){closeEvidenceBtn.onclick=()=>evidenceBackdrop.style.display='none';}
+if(evidenceBackdrop){evidenceBackdrop.addEventListener('click',(e)=>{if(e.target===evidenceBackdrop)evidenceBackdrop.style.display='none';});}
+
+(modeSel.value==='real'?loadRealData():Promise.resolve(mockData()));connectSSE();syncUrlState();
+</script>
+</body>
+</html>
