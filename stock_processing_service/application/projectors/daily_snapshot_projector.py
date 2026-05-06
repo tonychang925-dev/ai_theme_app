@@ -61,7 +61,11 @@ class DailySnapshotProjector:
                     batch_id=batch_id,
                     trace_id=trace_id,
                     source_trace_id=trace_id,
-                    labels={"final_cycle_state": judgement.final_cycle_state},
+                    labels={
+                        "final_cycle_state": judgement.final_cycle_state,
+                        "final_mainline_alive": judgement.final_mainline_alive,
+                        "mainline_alive_rule": judgement.mainline_alive_rule,
+                    },
                     score_breakdown={
                         "mainline_strength_score": str(judgement.mainline_strength_score),
                         "fade_watch_score": str(judgement.fade_watch_score),
@@ -76,6 +80,9 @@ class DailySnapshotProjector:
                         "decision_path": judgement.decision_path,
                         "evidence_count": judgement.evidence_count,
                         "fade_reason_codes": judgement.fade_reason_codes or [],
+                        "mainline_alive_rule": judgement.mainline_alive_rule,
+                        "support_break": judgement.support_break,
+                        "score_flags": judgement.score_flags or {},
                     },
                 )
             )
@@ -94,6 +101,9 @@ class DailySnapshotProjector:
                     source_trace_id=trace_id,
                     role_tags={
                         "mainline_alive": judgement.final_mainline_alive,
+                        "mainline_alive_rule": judgement.mainline_alive_rule,
+                        "support_break": judgement.support_break,
+                        "score_flags": judgement.score_flags or {},
                         "final_cycle_state": judgement.final_cycle_state,
                         "decision_path": judgement.decision_path,
                         "evidence_count": judgement.evidence_count,

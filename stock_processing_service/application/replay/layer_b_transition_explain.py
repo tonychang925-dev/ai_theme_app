@@ -135,6 +135,8 @@ class LayerBTransitionExplainBuilder:
             return "alive_conditions_passed"
         if final_state == "fade_confirmed":
             return "state=fade_confirmed treated as not alive"
+        if alive is False:
+            return f"persisted final_mainline_alive=false; old-chain-compatible policy only hard-kills fade_confirmed, final_cycle_state={final_state}"
         checks = [
             ("mainline_strength_score", self._dec(cycle.get("mainline_strength_score")), self.THRESH_MAINLINE_ALIVE),
             ("leader_alive_score", self._dec(evidence.get("leader_alive_score")), self.THRESH_MAINLINE_LEADER),
@@ -148,8 +150,6 @@ class LayerBTransitionExplainBuilder:
             failed.append("strong_event_count_7d=0 and event_continuity_score below threshold=40")
         if failed:
             return "; ".join(failed)
-        if alive is False:
-            return f"state={final_state} with alive flag false from persisted judgement"
         return "alive flag missing"
 
     @staticmethod

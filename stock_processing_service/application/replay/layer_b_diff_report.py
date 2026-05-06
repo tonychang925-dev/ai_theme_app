@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from decimal import Decimal, InvalidOperation
+import json
 from typing import Any
 
 
@@ -99,7 +100,7 @@ class LayerBDiffReportBuilder:
         )
 
     def _subject_row(self, *, evidence: dict[str, Any], cycle: dict[str, Any]) -> dict[str, Any]:
-        evidence_json = evidence.get("evidence_json") if isinstance(evidence.get("evidence_json"), dict) else {}
+        evidence_json = self._json_obj(evidence.get("evidence_json"))
         leader = evidence_json.get("leader_layer") if isinstance(evidence_json.get("leader_layer"), dict) else {}
         kline = evidence_json.get("kline_layer") if isinstance(evidence_json.get("kline_layer"), dict) else {}
         row = {
@@ -217,6 +218,18 @@ class LayerBDiffReportBuilder:
             "final_cycle_state": row.get("final_cycle_state"),
             "final_mainline_alive": row.get("final_mainline_alive"),
         }
+
+    @staticmethod
+    def _json_obj(value: Any) -> dict[str, Any]:
+        if isinstance(value, dict):
+            return dict(value)
+        if isinstance(value, str):
+            try:
+                parsed = json.loads(value)
+            except json.JSONDecodeError:
+                return {}
+            return dict(parsed) if isinstance(parsed, dict) else {}
+        return {}
 
     @staticmethod
     def _dec(value: Any) -> Decimal:
