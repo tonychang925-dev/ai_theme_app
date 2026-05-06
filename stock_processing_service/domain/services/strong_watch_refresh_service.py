@@ -298,6 +298,7 @@ class StrongWatchRefreshService:
             support_valid = support_score >= 50
             has_gene = prior7_limitup_days >= 1 or recent_limit_up_count >= 1 or two_board_entry
 
+            kept_because = None
             if final_cycle_state == "fade_confirmed":
                 watch_status = "removed"
             elif not support_valid and not has_gene:
@@ -305,8 +306,14 @@ class StrongWatchRefreshService:
             elif watch_score >= self.ACTIVE_MIN_SCORE:
                 watch_status = "active"
             elif has_gene or support_valid:
-                # Low score but valid structure or gene → keep observing (weakening_keep).
+                # Low score but valid structure or gene → keep observing.
                 watch_status = "weakening"
+                if has_gene and support_valid:
+                    kept_because = "gene_and_support_keep"
+                elif has_gene:
+                    kept_because = "gene_keep"
+                else:
+                    kept_because = "support_valid_keep"
             elif watch_score >= self.WEAKENING_MIN_SCORE:
                 watch_status = "weakening"
             else:
@@ -370,6 +377,7 @@ class StrongWatchRefreshService:
                     prior7_strong_days=prior7_strong_days,
                     prior7_best_watch_score=prior7_best_watch_score,
                     prior7_peak_rank=prior7_peak_rank,
+                    kept_because=kept_because,
                 )
             )
         return rows

@@ -210,11 +210,11 @@ class W2SCandidateService:
         }
 
     @staticmethod
-    def _legacy_watch_status_pass(watch_status: str) -> bool:
+    def _diagnostic_watch_status_pass(watch_status: str) -> bool:
         return (watch_status or "").strip().lower() in {"active", "weakening", "weakening_keep"}
 
     @staticmethod
-    def _legacy_strong_history_gate(
+    def _diagnostic_strong_history_gate(
         *,
         prior7_limitup_days: int,
         prior7_strong_days: int,
@@ -429,8 +429,8 @@ class W2SCandidateService:
             mainline_strength_score=mainline_context_score,
             fade_watch=bool(metadata.get("fade_watch") or role_tags.get("fade_watch") or False),
         )
-        legacy_watch_status_pass = self._legacy_watch_status_pass(watch_status)
-        legacy_strong_history_pass, legacy_strong_history_reason = self._legacy_strong_history_gate(
+        diagnostic_watch_status_pass = self._diagnostic_watch_status_pass(watch_status)
+        diagnostic_strong_history_pass, diagnostic_strong_history_reason = self._diagnostic_strong_history_gate(
             prior7_limitup_days=prior7_limitup_days,
             prior7_strong_days=prior7_strong_days,
             two_board_entry=two_board_entry,
@@ -527,9 +527,9 @@ class W2SCandidateService:
             "candidate_score": str(candidate_score),
             "weekly_midterm_gate_passed": weekly_gate_passed,
             "weekly_midterm_gate_reason": str(weekly_gate_diag.get("reason") or ""),
-            "legacy_watch_status_pass": legacy_watch_status_pass,
-            "legacy_strong_history_pass": legacy_strong_history_pass,
-            "legacy_strong_history_reason": legacy_strong_history_reason,
+            "diagnostic_watch_status_pass": diagnostic_watch_status_pass,
+            "diagnostic_strong_history_pass": diagnostic_strong_history_pass,
+            "diagnostic_strong_history_reason": diagnostic_strong_history_reason,
             "two_board_entry": two_board_entry,
             "prior7_bonus": "0",
             "gap_structure_bonus": "0",

@@ -414,6 +414,23 @@ class BuildPostMarketRecapJob:
             "candidate_count_total": len(candidates),
             "candidate_count_formal": len(formal_candidates),
             "candidate_count_observe": len(observe_candidates),
+            "observe_candidates_count": len(self._candidate_service.observe_candidates),
+            "observe_candidates": [
+                {
+                    "stock_id": c.stock_id,
+                    "stock_name": c.stock_name,
+                    "subject_key": c.subject_key,
+                    "subject_name": c.subject_name,
+                    "candidate_score": str(c.candidate_score),
+                    "candidate_level": c.candidate_level,
+                    "support_type": c.support_type,
+                    "support_score": str(c.support_score),
+                    "gap_hit": c.gap_hit,
+                    "gap_hit_mode": c.gap_hit_mode,
+                    "evidence_rules": c.evidence_rules[:30],
+                }
+                for c in self._candidate_service.observe_candidates[:20]
+            ],
             "strong_watch_input_7d_preview": [
                 {
                     "stock_id": r.stock_id,
