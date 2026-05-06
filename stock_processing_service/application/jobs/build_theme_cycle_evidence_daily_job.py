@@ -134,15 +134,20 @@ class BuildThemeCycleEvidenceDailyJob:
 
         # ── K-line evidence: build from historical bars ──
         kline_evidence_by_subject: dict[str, object] = {}
+        history_bar_count = 0
+        unique_stock_count = 0
         if subject_keys:
             try:
                 from datetime import timedelta
                 start_date = trade_date - timedelta(days=ThemeKlineEvidenceBuilder.HISTORY_NATURAL_DAYS)
+                all_pool_stock_ids = sorted({r.stock_id for r in pool_rows if r.stock_id})
+                unique_stock_count = len(all_pool_stock_ids)
                 history_bars = await self._read_port.get_stock_daily_bars_range(
                     start_date=start_date,
                     end_date=trade_date,
-                    stock_ids=None,
+                    stock_ids=all_pool_stock_ids if all_pool_stock_ids else None,
                 )
+                history_bar_count = len(history_bars)
                 # Group by date
                 bars_by_date: dict[str, list[object]] = {}
                 trade_dates_set: set[str] = set()
@@ -288,6 +293,8 @@ class BuildThemeCycleEvidenceDailyJob:
                 "prev_trade_date_missing": prev_trade_date_missing,
                 "evidence_event_source": "event_stats" if event_stats_by_subject else "pool_metadata",
                 "kline_evidence_hit_count": len(kline_evidence_by_subject),
+                "history_bar_count": history_bar_count,
+                "unique_stock_count": unique_stock_count,
                 "kline_evidence_source": "theme_kline_evidence_builder" if kline_evidence_by_subject else "none",
                 "kline_ok_count": sum(
                     1 for v in kline_evidence_by_subject.values()
