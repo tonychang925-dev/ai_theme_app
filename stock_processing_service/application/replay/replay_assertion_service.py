@@ -4,11 +4,15 @@ from dataclasses import asdict, is_dataclass
 from datetime import date
 from typing import Any, Protocol
 
+from stock_processing_service.application.replay.candidate_miss_report import CandidateMissReportBuilder
 from stock_processing_service.application.replay.replay_cases import ReplayCase
+from stock_processing_service.application.replay.replay_layer_b_report import LayerBDiagnosticReportBuilder
 
 
 class ReplayAssertionReadPort(Protocol):
     async def get_existing_post_market_recap_snapshot(self, trade_date: date) -> Any | None: ...
+
+    async def get_subject_stock_pool_by_trade_date(self, trade_date: date) -> list[Any]: ...
 
     async def get_mainline_identity_by_subject_keys(self, subject_keys: list[str], trade_date: date) -> list[Any]: ...
 
@@ -72,6 +76,21 @@ class ReplayAssertionService:
         observe = self._target_row(case.stock_id, observe_candidates)
         promoted = self._target_row(case.stock_id, promoted_pool)
         subject_key = str((best or promoted or observe or top or {}).get("subject_key") or "")
+        if not subject_key:
+            subject_key = await self._resolve_subject_key_for_stock(case.trade_date, case.stock_id)
+        diagnostics: dict[str, Any] = {
+            "target_best_row": best or {},
+            "candidate_miss": CandidateMissReportBuilder().build(
+                trade_date=case.trade_date.isoformat(),
+                stock_id=case.stock_id,
+                recap_doc=recap_doc,
+                top_candidates=top_candidates,
+                observe_candidates=observe_candidates,
+                promoted_pool=promoted_pool,
+                strong_watch_input=self._rows(recap_doc, "strong_watch_input_7d_preview", "strong_watch_input_preview"),
+                best_row=best,
+            ).to_dict(),
+        }
 
         if layer_a:
             if subject_key:
@@ -81,9 +100,18 @@ class ReplayAssertionService:
 
         if layer_b:
             if subject_key:
-                await self._assert_layer_b(layer_results, case.trade_date, subject_key, layer_b)
+                layer_b_diag = await self._assert_layer_b(layer_results, case.trade_date, case.stock_id, subject_key, layer_b)
+                diagnostics["layer_b_summary"] = layer_b_diag
             else:
                 self._record(layer_results, "layer_b.subject_key", expected="present", actual="missing")
+        elif subject_key:
+            diagnostics["layer_b_summary"] = await self._assert_layer_b(
+                {},
+                case.trade_date,
+                case.stock_id,
+                subject_key,
+                {},
+            )
 
         if "present_in_promoted_pool" in layer_c:
             self._record(
@@ -152,6 +180,7 @@ class ReplayAssertionService:
             "case_name": case.name,
             "passed": all(row.get("passed") is True for row in layer_results.values()),
             "layer_results": layer_results,
+            "diagnostics": diagnostics,
         }
 
     async def _assert_layer_a(
@@ -192,9 +221,10 @@ class ReplayAssertionService:
         self,
         out: dict[str, dict[str, Any]],
         trade_date: date,
+        stock_id: str,
         subject_key: str,
         expected: dict[str, Any],
-    ) -> None:
+    ) -> dict[str, Any]:
         cycle_rows = await self._read_port.get_mainline_cycle_by_subject_keys([subject_key], trade_date)
         cycle = self._first_by_subject(cycle_rows, subject_key)
         evidence_rows = await self._read_port.get_subject_cycle_evidence_daily(
@@ -252,6 +282,13 @@ class ReplayAssertionService:
                 expected=expected["kline_quality"],
                 actual=kline_layer.get("kline_quality"),
             )
+        return LayerBDiagnosticReportBuilder().build(
+            trade_date=trade_date.isoformat(),
+            stock_id=stock_id,
+            subject_key=subject_key,
+            evidence=evidence,
+            cycle=cycle,
+        ).to_dict()
 
     @staticmethod
     def _rows(recap_doc: dict[str, Any], *keys: str) -> list[dict[str, Any]]:
@@ -260,6 +297,18 @@ class ReplayAssertionService:
             if isinstance(rows, list):
                 return [dict(row) for row in rows if isinstance(row, dict)]
         return []
+
+    async def _resolve_subject_key_for_stock(self, trade_date: date, stock_id: str) -> str:
+        fn = getattr(self._read_port, "get_subject_stock_pool_by_trade_date", None)
+        if not callable(fn):
+            return ""
+        rows = await fn(trade_date)
+        target = str(stock_id).strip().upper()
+        for raw in rows:
+            row = _as_dict(raw)
+            if str(row.get("stock_id") or "").strip().upper() == target:
+                return str(row.get("subject_key") or "")
+        return ""
 
     @staticmethod
     def _target_row(stock_id: str, *groups: list[dict[str, Any]]) -> dict[str, Any] | None:

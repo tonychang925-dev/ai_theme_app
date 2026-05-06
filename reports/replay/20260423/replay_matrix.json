@@ -4,28 +4,28 @@
     "trade_date": "2026-04-23",
     "stock_id": "600152.SH",
     "mode": "ReplayMode.REUSE_ALL",
-    "snapshot_version": "replay_2026-04-23_weike_codex2",
+    "snapshot_version": "existing_snapshot_2026-04-23",
     "layer_results": [
       {
         "layer_name": "evidence",
-        "action": "manifest",
-        "status": "ok",
-        "affected_rows": 666,
-        "reason": ""
+        "action": "read_existing_snapshot",
+        "status": "reused",
+        "affected_rows": 0,
+        "reason": "report_regeneration"
       },
       {
         "layer_name": "daily",
-        "action": "manifest",
-        "status": "ok",
-        "affected_rows": 211376,
-        "reason": ""
+        "action": "read_existing_snapshot",
+        "status": "reused",
+        "affected_rows": 0,
+        "reason": "report_regeneration"
       },
       {
         "layer_name": "recap",
-        "action": "manifest",
-        "status": "ok",
-        "affected_rows": 1,
-        "reason": ""
+        "action": "read_existing_snapshot",
+        "status": "reused",
+        "affected_rows": 0,
+        "reason": "report_regeneration"
       }
     ],
     "assertions": {
@@ -55,6 +55,263 @@
             "reject_reason": ""
           },
           "passed": false
+        }
+      },
+      "diagnostics": {
+        "target_best_row": {},
+        "candidate_miss": {
+          "stock_id": "600152.SH",
+          "trade_date": "2026-04-23",
+          "presence": {
+            "in_pool": true,
+            "in_refreshed": true,
+            "in_kept": false,
+            "in_promoted_pool": false,
+            "in_top_candidates": false,
+            "in_observe_candidates": false
+          },
+          "ranking": {
+            "top_rank": null,
+            "top_total": 10,
+            "observe_rank": null,
+            "observe_total": 10,
+            "promoted_rank": null,
+            "input_rank": 55
+          },
+          "scores": {
+            "candidate_score": null,
+            "support_score": null,
+            "support_type": "prev_low_support",
+            "weakness_valid_score": null,
+            "strong_gene_score": null,
+            "repair_or_takeover_score": null,
+            "candidate_level": null,
+            "gap_hit": null
+          },
+          "selection": {
+            "selected": false,
+            "not_selected_reason": "missing_candidate_row",
+            "observe_top_n": 10,
+            "formal_top_n": 10,
+            "reject_reason": ""
+          }
+        },
+        "layer_b_summary": {
+          "trade_date": "2026-04-23",
+          "subject_key": "9014701",
+          "stock_id": "600152.SH",
+          "layer_b": {
+            "evidence": {
+              "theme_name": "9014701",
+              "event_strength_score": "0.000",
+              "event_continuity_score": "100.000",
+              "strong_event_count_7d": 0,
+              "event_recency_days": null,
+              "leader_alive_score": "0.000",
+              "leader_breakdown_flag": true,
+              "relay_strength_score": "0.000",
+              "front_row_survival_ratio": "0.417",
+              "limit_up_count": 120,
+              "limit_down_count": 0,
+              "red_ratio": "0.417",
+              "big_drop_ratio": "0.100",
+              "front_row_strength_score": "0.000",
+              "theme_support_score": "0.000",
+              "break_start_pivot": true,
+              "above_ma5": null,
+              "above_ma10": false,
+              "above_ma20": false,
+              "theme_ret_3d": null,
+              "theme_ret_5d": null,
+              "theme_ret_10d": null,
+              "kline_quality": null
+            },
+            "cycle": {
+              "mainline_strength_score": "35.300",
+              "fade_watch_score": "29.735",
+              "fade_confirmed_score": "16.324",
+              "divergence_score": "74.745",
+              "repair_score": "46.706",
+              "final_cycle_state": "divergence",
+              "final_mainline_alive": true
+            },
+            "diff_fields": [
+              {
+                "field": "event_strength_score",
+                "new_value": "0.000",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "event_continuity_score",
+                "new_value": "100.000",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "strong_event_count_7d",
+                "new_value": 0,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "event_recency_days",
+                "new_value": null,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "leader_alive_score",
+                "new_value": "0.000",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "leader_breakdown_flag",
+                "new_value": true,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "relay_strength_score",
+                "new_value": "0.000",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "front_row_survival_ratio",
+                "new_value": "0.417",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "limit_up_count",
+                "new_value": 120,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "limit_down_count",
+                "new_value": 0,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "red_ratio",
+                "new_value": "0.417",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "big_drop_ratio",
+                "new_value": "0.100",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "front_row_strength_score",
+                "new_value": "0.000",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "theme_support_score",
+                "new_value": "0.000",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "break_start_pivot",
+                "new_value": true,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "above_ma5",
+                "new_value": null,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "above_ma10",
+                "new_value": false,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "above_ma20",
+                "new_value": false,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "theme_ret_3d",
+                "new_value": null,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "theme_ret_5d",
+                "new_value": null,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "theme_ret_10d",
+                "new_value": null,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "kline_quality",
+                "new_value": null,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "mainline_strength_score",
+                "new_value": "35.300",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "fade_watch_score",
+                "new_value": "29.735",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "fade_confirmed_score",
+                "new_value": "16.324",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "divergence_score",
+                "new_value": "74.745",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "repair_score",
+                "new_value": "46.706",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "final_cycle_state",
+                "new_value": "divergence",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "final_mainline_alive",
+                "new_value": true,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              }
+            ]
+          }
         }
       },
       "identity_mode": "legacy_anytime_existing_registry"
