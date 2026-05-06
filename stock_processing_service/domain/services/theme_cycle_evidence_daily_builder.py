@@ -18,8 +18,8 @@ class ThemeCycleEvidenceDailyRow:
     event_continuity_score: Decimal
     strong_event_count_7d: int
     event_recency_days: int | None
-    event_count_3d: int = 0
-    event_count_7d: int = 0
+    event_count_3d: int
+    event_count_7d: int
 
     # Leader layer
     leader_alive_score: Decimal
