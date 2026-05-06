@@ -62,6 +62,7 @@ class BuildThemeCycleEvidenceDailyJob:
         pool_rows = await self._read_port.get_subject_stock_pool_by_trade_date(trade_date)
         subject_keys = sorted({r.subject_key for r in pool_rows})
         bars = await self._read_port.get_stock_daily_bars(trade_date)
+        warnings: list[str] = []
 
         # Heat scores: read from subject context or pool metadata
         heat_scores: dict[str, Decimal] = {}
@@ -71,13 +72,16 @@ class BuildThemeCycleEvidenceDailyJob:
             if hs is not None:
                 try:
                     heat_scores[r.subject_key] = Decimal(str(hs))
-                except Exception:
-                    pass
+                except Exception as e:
+                    warnings.append(f"heat_score_parse:{r.subject_key}:{e}")
 
         # Previous cycle states: use prior TRADING day (not calendar -1).
         previous_states: dict[str, str] = {}
         calendar = await self._read_port.get_trade_calendar(trade_date)
         prev_trade_date = calendar.prev_trade_date if calendar else None
+        prev_trade_date_missing = prev_trade_date is None
+        if prev_trade_date_missing:
+            warnings.append("prev_trade_date_missing:calendar_or_prev_trade_date_null")
 
         if prev_trade_date and subject_keys:
             try:
@@ -88,8 +92,8 @@ class BuildThemeCycleEvidenceDailyJob:
                 for c in cycles:
                     if c.final_cycle_state:
                         previous_states[c.subject_key] = c.final_cycle_state
-            except Exception:
-                pass
+            except Exception as e:
+                warnings.append(f"prev_cycle_read_failed:{type(e).__name__}:{e}")
 
         # Fallback: prior snapshots (only use subject_key, never final_cycle_state as key).
         if not previous_states:
@@ -104,8 +108,10 @@ class BuildThemeCycleEvidenceDailyJob:
                     cs = str(s.payload.get("final_cycle_state") or "")
                     if sk and cs and sk not in previous_states:
                         previous_states[sk] = cs
-            except Exception:
-                pass
+                if not previous_states:
+                    warnings.append("prior_state_all_empty:no_prior_cycles_or_snapshots")
+            except Exception as e:
+                warnings.append(f"prior_snaps_read_failed:{type(e).__name__}:{e}")
 
         # Event stats: real event data from theme_history_event
         event_stats_by_subject: dict[str, object] = {}
@@ -116,8 +122,10 @@ class BuildThemeCycleEvidenceDailyJob:
                     subject_keys=subject_keys,
                 )
                 event_stats_by_subject = {str(e.subject_key): e for e in event_stats_list}
-            except Exception:
-                pass
+            except Exception as e:
+                warnings.append(f"event_stats_read_failed:{type(e).__name__}:{e}")
+        if not event_stats_by_subject:
+            warnings.append("event_stats_empty:falling_back_to_pool_metadata")
 
         rows = self._builder.build_many(
             trade_date=trade_date,
@@ -212,10 +220,14 @@ class BuildThemeCycleEvidenceDailyJob:
             status="ok",
             batch_id=batch_id,
             trace_id=trace_id,
+            warnings=warnings,
             metrics={
                 "evidence_row_count": written,
                 "subject_key_count": len(subject_keys),
                 "prior_state_hit_count": len(previous_states),
+                "event_stats_hit_count": len(event_stats_by_subject),
+                "prev_trade_date_missing": prev_trade_date_missing,
+                "evidence_event_source": "event_stats" if event_stats_by_subject else "pool_metadata",
             },
             published_events=["snapshot_built"],
         )

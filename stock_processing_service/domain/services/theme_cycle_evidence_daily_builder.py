@@ -113,6 +113,7 @@ class ThemeCycleEvidenceDailyBuilder:
         m = max(len(stock_bars), 1)
 
         # ── Event layer ──
+        event_recency_source = "unknown"
         if event_stats is not None:
             # Real event stats from theme_history_event (preferred).
             event_strength = min(
@@ -125,7 +126,10 @@ class ThemeCycleEvidenceDailyBuilder:
             )
             strong_count = event_stats.key_event_count
             event_count_3d = event_stats.today_event_count
+            event_count_7d = event_stats.recent_event_count
+            # distinct_event_days is a proxy for recency, not exact last-event days.
             event_recency = event_stats.distinct_event_days if event_stats.distinct_event_days > 0 else None
+            event_recency_source = "distinct_event_days_proxy"
         else:
             # Fallback: pool metadata (weaker, use only when event_stats unavailable).
             event_scores: list[Decimal] = []
@@ -138,8 +142,10 @@ class ThemeCycleEvidenceDailyBuilder:
             event_continuity = min(Decimal("100"), Decimal(str(hot_days_5d * 15 + len(rows) * 3)))
             strong_count = sum(1 for s in event_scores if s >= Decimal("70"))
             event_count_3d = sum(1 for r in rows if int((r.metadata or {}).get("event_count_3d") or 0) > 0)
+            event_count_7d = sum(1 for r in rows if int((r.metadata or {}).get("event_count_7d") or 0) > 0)
             event_recency_raw = [r.metadata.get("event_recency_days") for r in rows if isinstance(r.metadata, dict) and r.metadata.get("event_recency_days") is not None]
             event_recency = int(min(event_recency_raw)) if event_recency_raw else None
+            event_recency_source = "pool_metadata"
 
         # ── Leader layer ──
         leader_scores: list[Decimal] = []
@@ -202,6 +208,7 @@ class ThemeCycleEvidenceDailyBuilder:
                 "event_continuity_score": str(event_continuity),
                 "strong_event_count_7d": strong_count,
                 "event_recency_days": event_recency,
+                "event_recency_source": event_recency_source,
             },
             "leader_layer": {
                 "leader_alive_score": str(leader_alive),
@@ -233,6 +240,7 @@ class ThemeCycleEvidenceDailyBuilder:
             strong_event_count_7d=strong_count,
             event_recency_days=event_recency,
             event_count_3d=event_count_3d,
+            event_count_7d=event_count_7d,
             leader_alive_score=leader_alive,
             leader_breakdown_flag=leader_breakdown,
             relay_strength_score=relay_strength,
