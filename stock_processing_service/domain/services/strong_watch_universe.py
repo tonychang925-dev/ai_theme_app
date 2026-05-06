@@ -202,7 +202,9 @@ class StrongWatchUniverseBuilder:
             prior7_limitup_days = int(metadata.get("prior7_limitup_days") or 0)
             recent_limit_up_count = int(metadata.get("recent_limit_up_count") or 0)
             max_consecutive_limit_up_days = int(metadata.get("max_consecutive_limit_up_days") or 0)
-            # 旧链旁路：两连板（或近7日强势连板信号）允许入围，避免漏掉非主线但强势龙头。
+            # two_board bypass is disabled by default (LAYER_C_ALLOW_TWO_BOARD_BYPASS=0).
+            # Only enabled for controlled replay/ablation experiments.
+            # Do not enable in production unless documented.
             two_board_entry = (
                 max_consecutive_limit_up_days >= 2
                 or recent_limit_up_count >= 2
