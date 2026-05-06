@@ -5,6 +5,7 @@ from datetime import date
 from enum import Enum
 from typing import Any, Protocol
 
+from stock_processing_service.application.replay.replay_assertion_service import ReplayAssertionService
 from stock_processing_service.application.replay.replay_cases import ReplayCase
 from stock_processing_service.application.replay.replay_manifest import (
     ReplayLayerManifest,
@@ -52,7 +53,10 @@ class ReplayRunReport:
 
     @property
     def ok(self) -> bool:
-        return all(r.status in {"ok", "skipped", "reused"} for r in self.layer_results)
+        allowed = {"ok", "rebuilt", "reused", "skipped_idempotent"}
+        layer_ok = all(r.status in allowed for r in self.layer_results)
+        assertions_ok = bool(self.assertions.get("passed", True))
+        return layer_ok and assertions_ok
 
 
 class ReplayRunner:
@@ -79,10 +83,16 @@ class ReplayRunner:
         manifest_store: ReplayManifestStore,
         jobs: dict[str, ReplayJob] | None = None,
         algorithm_versions: dict[str, str] | None = None,
+        assertion_service: ReplayAssertionService | None = None,
+        strict_reuse: bool = True,
+        require_input_hash: bool = True,
     ) -> None:
         self._manifest_store = manifest_store
         self._jobs = jobs or {}
         self._algorithm_versions = algorithm_versions or {}
+        self._assertion_service = assertion_service
+        self._strict_reuse = strict_reuse
+        self._require_input_hash = require_input_hash
 
     def layers_for_mode(self, mode: ReplayMode) -> tuple[str, ...]:
         return self.MODE_REBUILD_LAYERS[mode]
@@ -96,6 +106,7 @@ class ReplayRunner:
         batch_id: str,
         trace_id: str,
         input_hashes: dict[str, str] | None = None,
+        force: bool = False,
     ) -> ReplayRunReport:
         rebuild_layers = set(self.layers_for_mode(mode))
         input_hashes = input_hashes or {}
@@ -110,9 +121,10 @@ class ReplayRunner:
                 snapshot_version=snapshot_version,
                 algorithm_version=algorithm_version,
             )
+            missing_hash = self._require_input_hash and not input_hash
 
             if layer_name not in rebuild_layers:
-                if manifest and manifest.reusable_for(input_hash=input_hash):
+                if manifest and manifest.reusable_for(input_hash=input_hash, strict=self._strict_reuse):
                     layer_results.append(
                         ReplayLayerResult(
                             layer_name=layer_name,
@@ -122,17 +134,22 @@ class ReplayRunner:
                         )
                     )
                 else:
+                    strict_missing = mode == ReplayMode.REUSE_ALL or self._strict_reuse
                     layer_results.append(
                         ReplayLayerResult(
                             layer_name=layer_name,
                             action="reuse_existing_snapshot",
-                            status="skipped",
-                            reason="manifest_missing_or_input_changed",
+                            status="missing_snapshot" if strict_missing else "skipped_idempotent",
+                            reason="input_hash_missing" if missing_hash else "manifest_missing_or_input_changed",
                         )
                     )
                 continue
 
-            existing = manifest.reusable_for(input_hash=input_hash) if manifest else False
+            existing = (
+                (not force)
+                and manifest is not None
+                and manifest.reusable_for(input_hash=input_hash, strict=self._strict_reuse)
+            )
             if existing:
                 layer_results.append(
                     ReplayLayerResult(
@@ -140,6 +157,17 @@ class ReplayRunner:
                         action="skip_rebuild_manifest_reusable",
                         status="reused",
                         affected_rows=manifest.row_count if manifest else 0,
+                    )
+                )
+                continue
+
+            if missing_hash and not force:
+                layer_results.append(
+                    ReplayLayerResult(
+                        layer_name=layer_name,
+                        action="blocked_rebuild",
+                        status="failed",
+                        reason="input_hash_required",
                     )
                 )
                 continue
@@ -177,6 +205,11 @@ class ReplayRunner:
                 )
             )
 
+        assertions: dict[str, Any] = {"expected": case.expected}
+        if self._assertion_service is not None:
+            assertion_report = await self._assertion_service.assert_case(case)
+            assertions = assertion_report
+
         return ReplayRunReport(
             case_name=case.name,
             trade_date=case.trade_date,
@@ -184,5 +217,5 @@ class ReplayRunner:
             mode=mode,
             snapshot_version=snapshot_version,
             layer_results=layer_results,
-            assertions={"expected": case.expected},
+            assertions=assertions,
         )

@@ -6,6 +6,7 @@ import pytest
 
 from stock_processing_service.application.replay import (
     ReplayCase,
+    ReplayAssertionService,
     ReplayCaseLoader,
     ReplayLayerManifest,
     ReplayMode,
@@ -39,6 +40,17 @@ class _FakeJob:
 @pytest.mark.asyncio
 async def test_replay_runner_rebuild_feature_runs_only_evidence_daily_recap() -> None:
     store = InMemoryReplayManifestStore()
+    await store.upsert_layer_manifest(
+        ReplayLayerManifest(
+            trade_date=date(2026, 4, 22),
+            layer_name="identity",
+            snapshot_version="replay_v1",
+            algorithm_version="identity.v1",
+            input_hash="i1",
+            row_count=2,
+            status="ok",
+        )
+    )
     identity = _FakeJob("identity")
     evidence = _FakeJob("evidence", affected_rows=3)
     daily = _FakeJob("daily", affected_rows=5)
@@ -70,7 +82,7 @@ async def test_replay_runner_rebuild_feature_runs_only_evidence_daily_recap() ->
         snapshot_version="replay_v1",
         batch_id="batch",
         trace_id="trace",
-        input_hashes={"evidence": "e1", "daily": "d1", "recap": "r1"},
+        input_hashes={"identity": "i1", "evidence": "e1", "daily": "d1", "recap": "r1"},
     )
 
     assert report.ok is True
@@ -83,11 +95,93 @@ async def test_replay_runner_rebuild_feature_runs_only_evidence_daily_recap() ->
     assert len(evidence.calls) == 1
     assert len(daily.calls) == 1
     assert len(recap.calls) == 1
-    assert {row["layer_name"] for row in store.as_rows()} == {"evidence", "daily", "recap"}
+    assert {row["layer_name"] for row in store.as_rows()} == {"identity", "evidence", "daily", "recap"}
 
 
 @pytest.mark.asyncio
 async def test_replay_runner_reuses_manifest_when_hash_matches() -> None:
+    store = InMemoryReplayManifestStore()
+    for layer in ("identity", "evidence", "daily"):
+        await store.upsert_layer_manifest(
+            ReplayLayerManifest(
+                trade_date=date(2026, 4, 7),
+                layer_name=layer,
+                snapshot_version="replay_v1",
+                algorithm_version="v1",
+                input_hash=f"{layer}-hash",
+                row_count=1,
+                status="ok",
+            )
+        )
+    await store.upsert_layer_manifest(
+        ReplayLayerManifest(
+            trade_date=date(2026, 4, 7),
+            layer_name="recap",
+            snapshot_version="replay_v1",
+            algorithm_version="recap.v1",
+            input_hash="same",
+            row_count=9,
+            status="ok",
+        )
+    )
+    recap = _FakeJob("recap")
+    runner = ReplayRunner(
+        manifest_store=store,
+        jobs={"recap": recap},
+        algorithm_versions={"recap": "recap.v1"},
+    )
+    case = ReplayCase(
+        name="shenjian_2026_04_07",
+        trade_date=date(2026, 4, 7),
+        stock_id="002361.SZ",
+    )
+
+    report = await runner.run_case(
+        case,
+        mode=ReplayMode.REBUILD_OUTPUT,
+        snapshot_version="replay_v1",
+        batch_id="batch",
+        trace_id="trace",
+        input_hashes={
+            "identity": "identity-hash",
+            "evidence": "evidence-hash",
+            "daily": "daily-hash",
+            "recap": "same",
+        },
+    )
+
+    recap_result = next(r for r in report.layer_results if r.layer_name == "recap")
+    assert recap_result.action == "skip_rebuild_manifest_reusable"
+    assert recap_result.status == "reused"
+    assert recap_result.affected_rows == 9
+    assert len(recap.calls) == 0
+
+
+@pytest.mark.asyncio
+async def test_replay_runner_reuse_all_missing_manifest_is_not_ok() -> None:
+    store = InMemoryReplayManifestStore()
+    runner = ReplayRunner(manifest_store=store)
+    case = ReplayCase(
+        name="missing",
+        trade_date=date(2026, 4, 7),
+        stock_id="002361.SZ",
+    )
+
+    report = await runner.run_case(
+        case,
+        mode=ReplayMode.REUSE_ALL,
+        snapshot_version="replay_v1",
+        batch_id="batch",
+        trace_id="trace",
+        input_hashes={"identity": "i", "evidence": "e", "daily": "d", "recap": "r"},
+    )
+
+    assert report.ok is False
+    assert {r.status for r in report.layer_results} == {"missing_snapshot"}
+
+
+@pytest.mark.asyncio
+async def test_replay_runner_requires_input_hash_in_strict_mode() -> None:
     store = InMemoryReplayManifestStore()
     await store.upsert_layer_manifest(
         ReplayLayerManifest(
@@ -118,14 +212,72 @@ async def test_replay_runner_reuses_manifest_when_hash_matches() -> None:
         snapshot_version="replay_v1",
         batch_id="batch",
         trace_id="trace",
-        input_hashes={"recap": "same"},
+        input_hashes={},
     )
 
     recap_result = next(r for r in report.layer_results if r.layer_name == "recap")
-    assert recap_result.action == "skip_rebuild_manifest_reusable"
-    assert recap_result.status == "reused"
-    assert recap_result.affected_rows == 9
+    assert report.ok is False
+    assert recap_result.status == "failed"
+    assert recap_result.reason == "input_hash_required"
     assert len(recap.calls) == 0
+
+
+@pytest.mark.asyncio
+async def test_replay_runner_force_rebuild_ignores_reusable_manifest() -> None:
+    store = InMemoryReplayManifestStore()
+    for layer in ("identity", "evidence", "daily"):
+        await store.upsert_layer_manifest(
+            ReplayLayerManifest(
+                trade_date=date(2026, 4, 7),
+                layer_name=layer,
+                snapshot_version="replay_v1",
+                algorithm_version="v1",
+                input_hash=f"{layer}-hash",
+                row_count=1,
+                status="ok",
+            )
+        )
+    await store.upsert_layer_manifest(
+        ReplayLayerManifest(
+            trade_date=date(2026, 4, 7),
+            layer_name="recap",
+            snapshot_version="replay_v1",
+            algorithm_version="recap.v1",
+            input_hash="same",
+            row_count=9,
+            status="ok",
+        )
+    )
+    recap = _FakeJob("recap")
+    runner = ReplayRunner(
+        manifest_store=store,
+        jobs={"recap": recap},
+        algorithm_versions={"recap": "recap.v1"},
+    )
+    case = ReplayCase(
+        name="shenjian_2026_04_07",
+        trade_date=date(2026, 4, 7),
+        stock_id="002361.SZ",
+    )
+
+    report = await runner.run_case(
+        case,
+        mode=ReplayMode.REBUILD_OUTPUT,
+        snapshot_version="replay_v1",
+        batch_id="batch",
+        trace_id="trace",
+        input_hashes={
+            "identity": "identity-hash",
+            "evidence": "evidence-hash",
+            "daily": "daily-hash",
+            "recap": "same",
+        },
+        force=True,
+    )
+
+    recap_result = next(r for r in report.layer_results if r.layer_name == "recap")
+    assert recap_result.action == "rebuilt"
+    assert len(recap.calls) == 1
 
 
 def test_replay_case_loader_reads_fixed_yaml_cases() -> None:
@@ -143,6 +295,52 @@ def test_replay_case_loader_reads_fixed_yaml_cases() -> None:
         "formal",
         "observe_only",
     ]
+    assert by_name["weike_2026_04_23"].expected["layer_d"]["allowed_outcomes"] == [
+        {"candidate_level": "formal"},
+        {"candidate_level": "observe_only"},
+        {"candidate_level": "reject", "reject_reason_contains": "末端跳水"},
+    ]
+
+
+@pytest.mark.asyncio
+async def test_replay_assertion_service_asserts_recap_outputs() -> None:
+    class _Read:
+        async def get_existing_post_market_recap_snapshot(self, trade_date):
+            return {
+                "trade_date": trade_date,
+                "snapshot_version": "v1",
+                "recap_doc": {
+                    "top_candidates": [
+                        {
+                            "stock_id": "002361.SZ",
+                            "candidate_level": "formal",
+                            "support_type": "gap_support",
+                            "gap_hit": True,
+                        }
+                    ],
+                    "strong_watch_input_7d_preview": [{"stock_id": "002361.SZ"}],
+                },
+            }
+
+    svc = ReplayAssertionService(_Read())
+    case = ReplayCase(
+        name="shenjian_2026_04_07",
+        trade_date=date(2026, 4, 7),
+        stock_id="002361.SZ",
+        expected={
+            "layer_c": {"present_in_promoted_pool": True},
+            "layer_d": {
+                "present_in_top_candidates": True,
+                "support_type": "gap_support",
+                "gap_hit": True,
+            },
+        },
+    )
+
+    report = await svc.assert_case(case)
+
+    assert report["passed"] is True
+    assert report["layer_results"]["layer_d.support_type"]["actual"] == "gap_support"
 
 
 @pytest.mark.asyncio

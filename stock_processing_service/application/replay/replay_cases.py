@@ -44,7 +44,7 @@ class ReplayCaseLoader:
     @classmethod
     def _parse_minimal_yaml_list(cls, text: str) -> list[dict[str, Any]]:
         root: list[dict[str, Any]] = []
-        stack: list[tuple[int, dict[str, Any]]] = []
+        stack: list[tuple[int, Any, dict[str, Any] | None, str | None]] = []
 
         for raw in text.splitlines():
             if not raw.strip() or raw.lstrip().startswith("#"):
@@ -52,9 +52,26 @@ class ReplayCaseLoader:
             indent = len(raw) - len(raw.lstrip(" "))
             line = raw.strip()
             if line.startswith("- "):
-                item: dict[str, Any] = {}
-                root.append(item)
-                stack = [(indent, item)]
+                while stack and stack[-1][0] >= indent:
+                    stack.pop()
+                item = {}
+                if indent == 0:
+                    root.append(item)
+                    stack = [(indent, item, None, None)]
+                else:
+                    if not stack:
+                        raise ValueError(f"Invalid replay case YAML list indentation: {raw}")
+                    parent_container = stack[-1][1]
+                    if isinstance(parent_container, dict) and not parent_container and stack[-1][2] is not None:
+                        parent_dict = stack[-1][2]
+                        parent_key = stack[-1][3]
+                        parent_container = []
+                        parent_dict[parent_key] = parent_container
+                        stack[-1] = (stack[-1][0], parent_container, parent_dict, parent_key)
+                    if not isinstance(parent_container, list):
+                        raise ValueError(f"Invalid nested list parent in replay case YAML: {raw}")
+                    parent_container.append(item)
+                    stack.append((indent, item, None, None))
                 rest = line[2:].strip()
                 if rest:
                     key, value = cls._split_key_value(rest)
@@ -67,10 +84,12 @@ class ReplayCaseLoader:
             if not stack:
                 raise ValueError(f"Invalid replay case YAML indentation: {raw}")
             parent = stack[-1][1]
+            if not isinstance(parent, dict):
+                raise ValueError(f"Invalid replay case YAML parent: {raw}")
             if value == "":
                 child: dict[str, Any] = {}
                 parent[key] = child
-                stack.append((indent, child))
+                stack.append((indent, child, parent, key))
             else:
                 parent[key] = cls._parse_scalar(value)
 

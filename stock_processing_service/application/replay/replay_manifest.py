@@ -19,8 +19,12 @@ class ReplayLayerManifest:
     trace_id: str = ""
     created_at: datetime | None = None
 
-    def reusable_for(self, *, input_hash: str) -> bool:
-        return self.status == "ok" and (not input_hash or self.input_hash == input_hash)
+    def reusable_for(self, *, input_hash: str, strict: bool = True) -> bool:
+        if self.status != "ok":
+            return False
+        if strict and not input_hash:
+            return False
+        return (not input_hash) or self.input_hash == input_hash
 
 
 class ReplayManifestStore(Protocol):
