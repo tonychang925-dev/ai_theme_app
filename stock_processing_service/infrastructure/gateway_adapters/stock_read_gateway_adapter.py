@@ -209,6 +209,8 @@ class StockReadGatewayAdapter:
                     stock_name=p.get("stock_name"),
                     pool_rank=p.get("pool_rank", p.get("rank_order")),
                     metadata={
+                        "leader_signal_source": "db_pool_fields",
+                        "pool_rank": p.get("pool_rank", p.get("rank_order")),
                         "rank_order": p.get("rank_order", p.get("pool_rank")),
                         "pct_chg": str(p.get("pct_chg")) if p.get("pct_chg") is not None else "",
                         "close_price": str(p.get("close_price")) if p.get("close_price") is not None else "",

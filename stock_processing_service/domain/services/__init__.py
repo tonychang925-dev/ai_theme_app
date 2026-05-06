@@ -6,6 +6,7 @@ from .identity_decider import IdentityDecider, IdentityDecision
 from .identity_llm_review_service import IdentityLLMReviewService, IdentityLLMReviewVerdict
 from .identity_rule_engine import IdentityRuleEngine, IdentityRuleInput, IdentityRuleResult
 from .identity_scoring_service import IdentityScore, IdentityScoringService
+from .leader_evidence_builder import LeaderEvidence, LeaderEvidenceBuilder
 from .one_day_tour_detector import OneDayTourDetector, OneDayTourSignal
 from .state_transition_service import StateTransition, StateTransitionService
 from .strong_watch_prune_service import StrongWatchPruneService
@@ -54,6 +55,8 @@ __all__ = [
     "IdentityRuleEngine",
     "IdentityDecision",
     "IdentityDecider",
+    "LeaderEvidence",
+    "LeaderEvidenceBuilder",
     "StrongWatchSeedService",
     "StrongWatchRollForwardService",
     "StrongWatchPreSeedGeneEnricher",
