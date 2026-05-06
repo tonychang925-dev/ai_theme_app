@@ -5,6 +5,7 @@ from datetime import date
 from typing import Any, Protocol
 
 from stock_processing_service.application.replay.candidate_miss_report import CandidateMissReportBuilder
+from stock_processing_service.application.replay.layer_b_diff_report import LayerBDiffReportBuilder
 from stock_processing_service.application.replay.leader_layer_diagnostic_report import LeaderLayerDiagnosticReportBuilder
 from stock_processing_service.application.replay.replay_cases import ReplayCase
 from stock_processing_service.application.replay.replay_layer_b_report import LayerBDiagnosticReportBuilder
@@ -115,6 +116,8 @@ class ReplayAssertionService:
                 subject_key,
                 {},
             )
+        if subject_key:
+            diagnostics["layer_b_diff_report"] = await self._build_layer_b_diff_report(case.trade_date, case.stock_id)
 
         if "present_in_promoted_pool" in layer_c:
             self._record(
@@ -310,6 +313,37 @@ class ReplayAssertionService:
             cycle=cycle,
         ).to_dict()
         return report
+
+    async def _build_layer_b_diff_report(self, trade_date: date, stock_id: str) -> dict[str, Any]:
+        pool_rows = await self._read_port.get_subject_stock_pool_by_trade_date(trade_date)
+        target = str(stock_id).strip().upper()
+        subject_keys = sorted(
+            {
+                str(row.get("subject_key") or "")
+                for row in (_as_dict(raw) for raw in pool_rows)
+                if str(row.get("stock_id") or "").strip().upper() == target and str(row.get("subject_key") or "")
+            }
+        )
+        if not subject_keys:
+            return {
+                "trade_date": trade_date.isoformat(),
+                "stock_id": stock_id,
+                "report_type": "new_chain_self_diff",
+                "summary": {"subject_count": 0, "category_counts": {"A": 0, "B": 0, "C": 0}},
+                "field_names": [],
+                "subject_rows": [],
+            }
+        evidence_rows = await self._read_port.get_subject_cycle_evidence_daily(
+            trade_date=trade_date,
+            subject_keys=subject_keys,
+        )
+        cycle_rows = await self._read_port.get_mainline_cycle_by_subject_keys(subject_keys, trade_date)
+        return LayerBDiffReportBuilder().build(
+            trade_date=trade_date.isoformat(),
+            stock_id=stock_id,
+            evidence_rows=[_as_dict(row) for row in evidence_rows],
+            cycle_rows=[_as_dict(row) for row in cycle_rows],
+        ).to_dict()
 
     @staticmethod
     def _rows(recap_doc: dict[str, Any], *keys: str) -> list[dict[str, Any]]:
