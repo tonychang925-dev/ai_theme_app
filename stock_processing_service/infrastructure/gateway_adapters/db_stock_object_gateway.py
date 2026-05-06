@@ -75,6 +75,12 @@ class DBStockObjectGateway:
             return await fn(rows)
         raise RuntimeError("DatabaseGateway missing upsert_strong_watch_history_rows")
 
+    async def upsert_theme_cycle_evidence_daily_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._db, "upsert_theme_cycle_evidence_daily_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        raise RuntimeError("DatabaseGateway missing upsert_theme_cycle_evidence_daily_rows")
+
     async def upsert_subject_stock_daily_snapshot(self, rows: list[dict[str, Any]]) -> int:
         return await self._db.upsert_subject_stock_daily_snapshot_rows(rows)
 

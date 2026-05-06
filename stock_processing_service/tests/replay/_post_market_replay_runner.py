@@ -14,6 +14,9 @@ from stock_processing_service.application.jobs import (
     BuildPostMarketRecapJob,
     BuildPreMarketBriefJob,
 )
+from stock_processing_service.application.jobs.build_theme_cycle_evidence_daily_job import (
+    BuildThemeCycleEvidenceDailyJob,
+)
 from stock_processing_service.domain.services.strong_watch_seed_service import StrongWatchSeedService
 from stock_processing_service.domain.services.strong_watch_refresh_service import StrongWatchRefreshService
 from stock_processing_service.domain.services.strong_watch_prune_service import StrongWatchPruneService
@@ -121,6 +124,12 @@ class _ReplayDatabaseStockFacade:
     async def get_mainline_cycle_by_subject_keys(self, subject_keys: list[str], trade_date: date):
         return await self._gateway.get_mainline_cycle_by_subject_keys(subject_keys, trade_date)
 
+    async def get_subject_cycle_evidence_daily(self, trade_date: date, subject_keys: list[str] | None = None):
+        fn = getattr(self._gateway, "get_subject_cycle_evidence_daily", None)
+        if callable(fn):
+            return await fn(trade_date=trade_date, subject_keys=subject_keys)
+        return []
+
     async def get_prior_strong_watch_pool_rows(self, trade_date: date, lookback_days: int):
         fn = getattr(self._gateway, "get_prior_strong_watch_pool_rows", None)
         if callable(fn):
@@ -165,6 +174,12 @@ class _ReplayDatabaseStockFacade:
 
     async def upsert_strong_watch_history_rows(self, rows: list[dict[str, Any]]) -> int:
         fn = getattr(self._gateway, "upsert_strong_watch_history_rows", None)
+        if callable(fn):
+            return int(await fn(rows) or 0)
+        return len(rows)
+
+    async def upsert_theme_cycle_evidence_daily_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._gateway, "upsert_theme_cycle_evidence_daily_rows", None)
         if callable(fn):
             return int(await fn(rows) or 0)
         return len(rows)
@@ -373,6 +388,12 @@ async def run_post_market_replay(
         batch_id = f"replay_{trade_date.isoformat()}"
         trace_id = f"replay_{sample_name}_{trade_date.isoformat()}"
 
+        evidence_job = BuildThemeCycleEvidenceDailyJob(
+            read_port=read_port,
+            write_port=write_port,
+            event_port=event_port,
+            idempotency_port=idempotency_port,
+        )
         daily_job = BuildDailySnapshotJob(
             read_port=read_port,
             write_port=write_port,
@@ -388,6 +409,12 @@ async def run_post_market_replay(
             cache_port=None,
         )
 
+        _evidence_result = await evidence_job.execute(
+            trade_date=trade_date,
+            snapshot_version=snapshot_version,
+            batch_id=batch_id,
+            trace_id=trace_id,
+        )
         daily_result = await daily_job.execute(
             trade_date=trade_date,
             snapshot_version=snapshot_version,
