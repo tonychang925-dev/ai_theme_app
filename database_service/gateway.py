@@ -906,6 +906,18 @@ class DatabaseGateway:
             logger.error(f"写入 post_market_recap_snapshot 失败: {e}")
             raise
 
+    async def upsert_theme_cycle_evidence_daily_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：theme_cycle_evidence_daily（Layer B 四层证据真源）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_theme_cycle_evidence_daily_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"写入 theme_cycle_evidence_daily 失败: {e}")
+            raise
+
     async def upsert_strong_watch_history_rows(self, rows: List[Dict[str, Any]]) -> int:
         """股票域显式写入：strong_stock_watch_history。"""
         try:

@@ -4137,3 +4137,99 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         except Exception as e:
             logger.error(f"获取分类统计失败: {e}")
             return {}
+
+    async def upsert_theme_cycle_evidence_daily_rows(self, rows: list[dict[str, Any]]) -> int:
+        """写入 theme_cycle_evidence_daily 表（Layer B 四层证据真源）。"""
+        import json as _json
+        sql = """
+        INSERT INTO theme_cycle_evidence_daily (
+            subject_key, trade_date, theme_name,
+            event_count_3d, event_count_7d, strong_event_count_7d,
+            event_recency_days, event_continuity_score, event_strength_score,
+            leader_alive_score, leader_breakdown_flag,
+            relay_strength_score, front_row_survival_ratio,
+            board_stock_count, limit_up_count, limit_down_count,
+            red_ratio, big_drop_ratio, front_row_strength_score,
+            theme_support_score, break_start_pivot,
+            above_ma10, above_ma20,
+            evidence_json
+        ) VALUES (
+            $1, $2::date, $3,
+            $4::int, $5::int, $6::int,
+            $7::int, $8::numeric, $9::numeric,
+            $10::numeric, $11,
+            $12::numeric, $13::numeric,
+            $14::int, $15::int, $16::int,
+            $17::numeric, $18::numeric, $19::numeric,
+            $20::numeric, $21,
+            $22, $23,
+            $24::jsonb
+        )
+        ON CONFLICT (subject_key, trade_date) DO UPDATE SET
+            theme_name = EXCLUDED.theme_name,
+            event_count_3d = EXCLUDED.event_count_3d,
+            event_count_7d = EXCLUDED.event_count_7d,
+            strong_event_count_7d = EXCLUDED.strong_event_count_7d,
+            event_recency_days = EXCLUDED.event_recency_days,
+            event_continuity_score = EXCLUDED.event_continuity_score,
+            event_strength_score = EXCLUDED.event_strength_score,
+            leader_alive_score = EXCLUDED.leader_alive_score,
+            leader_breakdown_flag = EXCLUDED.leader_breakdown_flag,
+            relay_strength_score = EXCLUDED.relay_strength_score,
+            front_row_survival_ratio = EXCLUDED.front_row_survival_ratio,
+            board_stock_count = EXCLUDED.board_stock_count,
+            limit_up_count = EXCLUDED.limit_up_count,
+            limit_down_count = EXCLUDED.limit_down_count,
+            red_ratio = EXCLUDED.red_ratio,
+            big_drop_ratio = EXCLUDED.big_drop_ratio,
+            front_row_strength_score = EXCLUDED.front_row_strength_score,
+            theme_support_score = EXCLUDED.theme_support_score,
+            break_start_pivot = EXCLUDED.break_start_pivot,
+            above_ma10 = EXCLUDED.above_ma10,
+            above_ma20 = EXCLUDED.above_ma20,
+            evidence_json = EXCLUDED.evidence_json
+        """
+        payload = []
+        for row in rows:
+            sk = str(row.get("subject_key") or "")
+            if not sk:
+                continue
+            td = row.get("trade_date")
+            if isinstance(td, str):
+                td = date.fromisoformat(td)
+            ev = row.get("evidence_json") or {}
+            board_stock_count = int(ev.get("board_layer", {}).get("pool_size", len(
+                [r for r in (row.get("_pool_rows") or [])]
+            )) if isinstance(ev, dict) else 0)
+            payload.append((
+                sk,
+                td,
+                str(row.get("theme_name") or sk),
+                int(row.get("event_count_3d") or 0),
+                int(row.get("event_count_7d") or 0),
+                int(row.get("strong_event_count_7d") or 0),
+                row.get("event_recency_days"),
+                str(row.get("event_continuity_score") or "0"),
+                str(row.get("event_strength_score") or "0"),
+                str(row.get("leader_alive_score") or "0"),
+                bool(row.get("leader_breakdown_flag") or False),
+                str(row.get("relay_strength_score") or "0"),
+                str(row.get("front_row_survival_ratio") or "0"),
+                board_stock_count,
+                int(row.get("limit_up_count") or 0),
+                int(row.get("limit_down_count") or 0),
+                str(row.get("red_ratio") or "0"),
+                str(row.get("big_drop_ratio") or "0"),
+                str(row.get("front_row_strength_score") or "0"),
+                str(row.get("theme_support_score") or "0"),
+                bool(row.get("break_start_pivot") or False),
+                bool(row.get("above_ma10") or False),
+                bool(row.get("above_ma20") or False),
+                _json.dumps(ev, default=str, ensure_ascii=False) if isinstance(ev, dict) else str(ev),
+            ))
+        async with self.pool.acquire() as conn:
+            result = await conn.executemany(sql, payload)
+        total = sum(int(r or 0) for r in (result or []))
+        if total == 0:
+            total = len(payload)
+        return total
