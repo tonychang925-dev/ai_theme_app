@@ -142,15 +142,35 @@ class StrongWatchService:
         )
         # Merge lifecycle baselines so the pool is a rolling 7-trading-day watch list,
         # not only today's newly seeded strong stocks.
+        # Baseline provides the RollForward-incremented watch_age_days / weak_days.
+        # When Refresh triggered a renewal reset (two_board_entry → age=1/weak=0),
+        # the reset takes priority over the baseline increment.
         baseline_by_stock = {r.stock_id: r for r in rolled}
-        refreshed = [
-            replace(
-                r,
-                weak_days=r.weak_days if r.stock_id in baseline_by_stock else 0,
-                watch_age_days=r.watch_age_days if r.stock_id in baseline_by_stock else 1,
-            )
-            for r in refreshed
-        ]
+        merged_refreshed: list[StrongWatchRecord] = []
+        for r in refreshed:
+            baseline = baseline_by_stock.get(r.stock_id)
+            if baseline is None:
+                merged_refreshed.append(
+                    replace(r, watch_age_days=int(r.watch_age_days or 1), weak_days=int(r.weak_days or 0))
+                )
+                continue
+            role_tags = r.role_tags if isinstance(r.role_tags, dict) else {}
+            renewal_signal = bool(role_tags.get("two_board_entry") or False)
+            if renewal_signal and r.watch_status in {"active", "weakening"}:
+                # Refresh triggered renewal reset — preserve the reset values.
+                merged_refreshed.append(
+                    replace(r, watch_age_days=int(r.watch_age_days or 1), weak_days=int(r.weak_days or 0))
+                )
+            else:
+                # No renewal: use RollForward-incremented lifecycle from baseline.
+                merged_refreshed.append(
+                    replace(
+                        r,
+                        watch_age_days=int(baseline.watch_age_days or 1),
+                        weak_days=int(baseline.weak_days or 0),
+                    )
+                )
+        refreshed = merged_refreshed
         subject_stats = self._subject_day_stats(preseed_pool_rows)
         bars_by_stock = {b.stock_id: b for b in bars}
         ranks = {r.stock_id: (r.pool_rank if r.pool_rank is not None else 999) for r in refresh_rows}

@@ -3,29 +3,29 @@
     "case_name": "shenjian_2026_04_07",
     "trade_date": "2026-04-07",
     "stock_id": "002361.SZ",
-    "mode": "ReplayMode.REUSE_ALL",
-    "snapshot_version": "existing_snapshot_2026-04-07",
+    "mode": "ReplayMode.FULL_REBUILD",
+    "snapshot_version": "replay_2026-04-07_shenjian_v1",
     "layer_results": [
       {
         "layer_name": "evidence",
-        "action": "read_existing_snapshot",
-        "status": "reused",
-        "affected_rows": 0,
-        "reason": "report_regeneration"
+        "action": "rebuilt",
+        "status": "ok",
+        "affected_rows": 659,
+        "reason": ""
       },
       {
         "layer_name": "daily",
-        "action": "read_existing_snapshot",
-        "status": "reused",
-        "affected_rows": 0,
-        "reason": "report_regeneration"
+        "action": "rebuilt",
+        "status": "ok",
+        "affected_rows": 210272,
+        "reason": ""
       },
       {
         "layer_name": "recap",
-        "action": "read_existing_snapshot",
-        "status": "reused",
-        "affected_rows": 0,
-        "reason": "report_regeneration"
+        "action": "rebuilt",
+        "status": "ok",
+        "affected_rows": 1,
+        "reason": ""
       }
     ],
     "assertions": {
@@ -67,8 +67,8 @@
             "pool_rank=12",
             "pct_chg=-3.1131",
             "prior_state=unknown",
-            "watch_score=51.85000000000000000000000000",
-            "strong_grade=B",
+            "watch_score=48.35000000000000000000000000",
+            "strong_grade=REJECT",
             "support_score=80",
             "support_type=gap_support",
             "support_strength=100",
@@ -85,11 +85,11 @@
             "gap_structure_bonus=0",
             "gap_repair_bonus=0",
             "gap_formal_bias_bonus=0",
-            "role_tags={'watch_tier': 'B', 'is_leader': False, 'is_front_row_core': False, 'momentum_positive': False, 'final_mainline_alive': True, 'final_cycle_state': 'divergence', 'transition_type': 'upgrade', 'transition_confidence': '85.000', 'trigger_flags': [], 'board_effect_confirmed': False, 'recent_limit_up_count': 3, 'max_consecutive_limit_up_days': 0, 'two_board_entry': True, 'prior7_limitup_days': 1, 'prior7_strong_days': 1, 'prior7_best_watch_score': '0', 'prior7_peak_rank': 99}",
+            "role_tags={'watch_tier': 'REJECT', 'is_leader': False, 'is_front_row_core': False, 'momentum_positive': False, 'final_mainline_alive': True, 'final_cycle_state': 'divergence', 'transition_type': 'upgrade', 'transition_confidence': '85.000', 'trigger_flags': [], 'board_effect_confirmed': False, 'recent_limit_up_count': 3, 'max_consecutive_limit_up_days': 0, 'two_board_entry': True, 'prior7_limitup_days': 1, 'prior7_strong_days': 0, 'prior7_best_watch_score': '0', 'prior7_peak_rank': 99, 'renewal_signal': True, 'renewal_reason': 'two_board_renewal', 'watch_age_reset': True}",
             "prior7_limitup_days=1",
-            "prior7_strong_days=1",
+            "prior7_strong_days=0",
             "mainline_context_score=5.833333333333333333333333333",
-            "strong_gene_score=56.81000000000000000000000000",
+            "strong_gene_score=46.01000000000000000000000000",
             "support_hit_score=100",
             "repair_or_takeover_score=50",
             "weakness_valid_score=90",
@@ -135,6 +135,10 @@
             "reject_reason": ""
           },
           "c_layer_trace": {
+            "seed_gate_pass": null,
+            "seed_gate_reason": null,
+            "strong_gene_seed": null,
+            "strong_gene_seed_reason": null,
             "input_rank": null,
             "refresh_status": null,
             "kept": true,
@@ -144,8 +148,8 @@
               "pool_rank=12",
               "pct_chg=-3.1131",
               "prior_state=unknown",
-              "watch_score=51.85000000000000000000000000",
-              "strong_grade=B",
+              "watch_score=48.35000000000000000000000000",
+              "strong_grade=REJECT",
               "support_score=80",
               "support_type=gap_support",
               "support_strength=100",
@@ -162,11 +166,11 @@
               "gap_structure_bonus=0",
               "gap_repair_bonus=0",
               "gap_formal_bias_bonus=0",
-              "role_tags={'watch_tier': 'B', 'is_leader': False, 'is_front_row_core': False, 'momentum_positive': False, 'final_mainline_alive': True, 'final_cycle_state': 'divergence', 'transition_type': 'upgrade', 'transition_confidence': '85.000', 'trigger_flags': [], 'board_effect_confirmed': False, 'recent_limit_up_count': 3, 'max_consecutive_limit_up_days': 0, 'two_board_entry': True, 'prior7_limitup_days': 1, 'prior7_strong_days': 1, 'prior7_best_watch_score': '0', 'prior7_peak_rank': 99}",
+              "role_tags={'watch_tier': 'REJECT', 'is_leader': False, 'is_front_row_core': False, 'momentum_positive': False, 'final_mainline_alive': True, 'final_cycle_state': 'divergence', 'transition_type': 'upgrade', 'transition_confidence': '85.000', 'trigger_flags': [], 'board_effect_confirmed': False, 'recent_limit_up_count': 3, 'max_consecutive_limit_up_days': 0, 'two_board_entry': True, 'prior7_limitup_days': 1, 'prior7_strong_days': 0, 'prior7_best_watch_score': '0', 'prior7_peak_rank': 99, 'renewal_signal': True, 'renewal_reason': 'two_board_renewal', 'watch_age_reset': True}",
               "prior7_limitup_days=1",
-              "prior7_strong_days=1",
+              "prior7_strong_days=0",
               "mainline_context_score=5.833333333333333333333333333",
-              "strong_gene_score=56.81000000000000000000000000",
+              "strong_gene_score=46.01000000000000000000000000",
               "support_hit_score=100",
               "repair_or_takeover_score=50",
               "weakness_valid_score=90",
@@ -463,6 +467,12 @@
             ]
           }
         }
+      },
+      "input_hashes": {
+        "identity": "3c49c370f5a627687ae2d74f1b112b707a2884932557d0799a383bb1539f1745",
+        "evidence": "96d304896af2c2ee9cbe69032a47481e0c75495547cdb65052b2e7bc72b062a5",
+        "daily": "8d12beec6613ea238326b056cde72678735a3bd92b3fed9824a57cd21060fca1",
+        "recap": "918bfb3c63e84257b3f8c7230c380e050719ab23d106ae27afddd2e8329ac7da"
       },
       "identity_mode": "legacy_anytime_existing_registry"
     },
