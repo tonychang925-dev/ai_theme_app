@@ -321,18 +321,44 @@ class StrongWatchRefreshService:
 
             watch_age_days = int(getattr(row, "watch_age_days", 1) or 1)
             weak_days = int(getattr(row, "weak_days", 0) or 0)
-            renewal_signal = False
+
+            # ── Strong-watch renewal: any fresh strong signal resets the observation window ──
+            # Renewal is NOT exclusive to two_board_entry — it covers all strong-stock
+            # signals that confirm the stock is still worth observing.
+            current_limit_up = bar.pct_chg >= Decimal("9.5")
+            strong_rebound = (
+                bar.pct_chg >= Decimal("5")
+                and support_score >= Decimal("50")
+            )
+            watch_score_reactivation = (
+                watch_score >= self.ACTIVE_MIN_SCORE
+            )
+            renewal_signal = bool(
+                two_board_entry
+                or current_limit_up
+                or recent_limit_up_count >= 2
+                or prior7_limitup_days >= 2
+                or strong_rebound
+                or watch_score_reactivation
+            )
             renewal_reason = ""
             watch_age_reset = False
-            if two_board_entry and watch_status in {"active", "weakening"}:
-                # Old-chain-compatible renewal:
-                # a fresh two-board signal renews the watch window instead of
-                # allowing the previous aging counter to run out.
+            if renewal_signal and watch_status in {"active", "weakening"}:
                 watch_age_days = 1
                 weak_days = 0
-                renewal_signal = True
-                renewal_reason = "two_board_renewal"
                 watch_age_reset = True
+                if two_board_entry:
+                    renewal_reason = "two_board_renewal"
+                elif current_limit_up:
+                    renewal_reason = "limit_up_renewal"
+                elif recent_limit_up_count >= 2:
+                    renewal_reason = "recent_multi_limitup_renewal"
+                elif prior7_limitup_days >= 2:
+                    renewal_reason = "prior7_multi_limitup_renewal"
+                elif strong_rebound:
+                    renewal_reason = "strong_rebound_renewal"
+                elif watch_score_reactivation:
+                    renewal_reason = "watch_score_reactivation"
 
             rows.append(
                 StrongWatchRecord(
