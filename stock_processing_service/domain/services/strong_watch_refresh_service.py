@@ -319,8 +319,18 @@ class StrongWatchRefreshService:
             else:
                 watch_status = "removed"
 
-            watch_age_days = int(getattr(row, "watch_age_days", 1) or 1)
-            weak_days = int(getattr(row, "weak_days", 0) or 0)
+            # Read lifecycle from metadata first (SubjectStockPoolDTO), then attribute (StrongWatchRecord).
+            _md = row.metadata if isinstance(getattr(row, "metadata", None), dict) else {}
+            watch_age_days = int(
+                getattr(row, "watch_age_days", None)
+                or _md.get("watch_age_days")
+                or 1
+            )
+            weak_days = int(
+                getattr(row, "weak_days", None)
+                or _md.get("weak_days")
+                or 0
+            )
 
             # ── Strong-watch renewal: any fresh strong signal resets the observation window ──
             # Renewal is NOT exclusive to two_board_entry — it covers all strong-stock

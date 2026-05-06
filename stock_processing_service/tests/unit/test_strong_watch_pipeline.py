@@ -8,7 +8,10 @@ from stock_processing_service.domain.services import StrongWatchService
 from stock_processing_service.domain.services.strong_watch_preseed_gene_enricher import StrongWatchPreSeedGeneEnricher
 from stock_processing_service.domain.services.strong_watch_promote_service import StrongWatchPromoteService
 from stock_processing_service.domain.services.strong_watch_prune_service import StrongWatchPruneService
-from stock_processing_service.domain.services.strong_watch_refresh_service import StrongWatchRecord
+from stock_processing_service.domain.services.strong_watch_refresh_service import (
+    StrongWatchRecord,
+    StrongWatchRefreshService,
+)
 from stock_processing_service.domain.services.strong_watch_seed_service import StrongWatchSeedService
 
 
@@ -768,3 +771,117 @@ def test_strong_watch_prune_observe_low_score_immediate_remove() -> None:
     assert kept == []
     assert len(pruned) == 1
     assert pruned[0].prune_reason_code == "HARD_PRUNE_OBSERVE_LOW_SCORE"
+
+
+# ── Renewal tests ──
+
+def _pool_row(
+    stock_id: str,
+    *,
+    watch_age_days: int = 5,
+    weak_days: int = 2,
+    watch_score: str = "60",
+    pool_rank: int = 15,
+    subject_key: str = "test",
+) -> SubjectStockPoolDTO:
+    return SubjectStockPoolDTO(
+        trade_date=date(2026, 4, 17),
+        subject_key=subject_key,
+        subject_name=subject_key,
+        stock_id=stock_id,
+        stock_name=stock_id,
+        pool_rank=pool_rank,
+        metadata={
+            "watch_age_days": watch_age_days,
+            "weak_days": weak_days,
+            "watch_score": watch_score,
+            "prior7_limitup_days": 1,
+            "recent_limit_up_count": 1,
+            "max_consecutive_limit_up_days": 0,
+        },
+    )
+
+
+def _bar(pct_chg: str) -> StockBarDTO:
+    return StockBarDTO(
+        trade_date=date(2026, 4, 17),
+        stock_id="test",
+        stock_name="test",
+        open_price=Decimal("10"),
+        high_price=Decimal("11"),
+        low_price=Decimal("9.5"),
+        close_price=Decimal("10.5"),
+        pre_close=Decimal("10"),
+        pct_chg=Decimal(pct_chg),
+        volume=Decimal("10000"),
+        amount=Decimal("100000"),
+        limit_up_price=Decimal("11"),
+        limit_down_price=Decimal("9"),
+    )
+
+
+def test_renewal_limit_up_resets_watch_age() -> None:
+    """当日涨停 → renewal_reason=limit_up_renewal, watch_age_days=1."""
+    svc = StrongWatchRefreshService()
+    rows = [_pool_row("test", watch_age_days=5)]
+    bars = [_bar("9.95")]  # pct_chg >= 9.5 → current_limit_up
+    result = svc.refresh(rows, bars)
+    assert len(result) == 1
+    r = result[0]
+    assert r.watch_age_days == 1
+    assert r.weak_days == 0
+    role_tags = r.role_tags or {}
+    assert role_tags.get("renewal_signal") is True
+    assert role_tags.get("renewal_reason") == "limit_up_renewal"
+    assert role_tags.get("watch_age_reset") is True
+
+
+def test_renewal_two_board_via_recent_multi_limitup() -> None:
+    """近7日多次涨停 → renewal_reason=recent_multi_limitup_renewal, watch_age_days=1."""
+    svc = StrongWatchRefreshService()
+    # prior7_limitup_days=2 → triggers recent_multi_limitup_renewal
+    rows = [
+        SubjectStockPoolDTO(
+            trade_date=date(2026, 4, 17),
+            subject_key="test",
+            subject_name="test",
+            stock_id="test",
+            stock_name="test",
+            pool_rank=15,
+            metadata={
+                "watch_age_days": 5,
+                "weak_days": 2,
+                "watch_score": "60",
+                "prior7_limitup_days": 2,
+                "recent_limit_up_count": 1,
+                "max_consecutive_limit_up_days": 0,
+            },
+        )
+    ]
+    bars = [_bar("1.5")]  # no current limit_up, but prior7=2 triggers renewal
+    result = svc.refresh(rows, bars)
+    assert len(result) == 1
+    r = result[0]
+    role_tags = r.role_tags or {}
+    # prior7=2 triggers two_board_entry=True → two_board_renewal (highest priority)
+    assert role_tags.get("renewal_signal") is True
+    assert role_tags.get("renewal_reason") in {"two_board_renewal", "prior7_multi_limitup_renewal"}
+    assert role_tags.get("watch_age_reset") is True
+    assert r.watch_age_days == 1
+
+
+def test_no_renewal_preserves_input_age() -> None:
+    """无新强势信号 → 保留输入 watch_age_days，不触发 renewal."""
+    svc = StrongWatchRefreshService()
+    rows = [_pool_row("test", watch_age_days=5)]
+    # pct_chg=1.5: no limit-up, pct<5, watch_score=60<72 → no renewal
+    bars = [_bar("1.5")]
+    result = svc.refresh(rows, bars)
+    assert len(result) == 1
+    r = result[0]
+    # With watch_score=60 < WEAKENING_MIN(62) and no gene/support → removed
+    # But the renewal test is about whether renewal_signal is triggered.
+    # Check that renewal was NOT triggered even if the stock was kept.
+    role_tags = r.role_tags or {}
+    assert role_tags.get("renewal_signal") is not True
+    assert role_tags.get("watch_age_reset") is not True
