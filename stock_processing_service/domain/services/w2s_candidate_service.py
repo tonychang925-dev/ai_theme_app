@@ -39,7 +39,7 @@ class W2SCandidate:
 
 
 class W2SCandidateService:
-    MAX_CANDIDATES = 10
+    MAX_CANDIDATES = 20
 
     def __init__(self) -> None:
         pass
@@ -363,8 +363,12 @@ class W2SCandidateService:
         weekly_gate_passed, weekly_gate_diag = self._weekly_midterm_gate(metadata)
 
         prior_state = ""
+        prior_state_unknown = False
         if prior:
             prior_state = str(prior.payload.get("final_cycle_state", ""))
+        if not prior_state or prior_state.strip().lower() in {"", "unknown", "none"}:
+            prior_state_unknown = True
+            prior_state = "unknown"
         prev_day_pct = self._d((prior.payload or {}).get("pct_chg") if prior else None, default="0")
         prev_day_limit_up = bool((prior.payload or {}).get("limit_up") if prior else False) or prev_day_pct >= Decimal("9.5")
 
@@ -440,6 +444,9 @@ class W2SCandidateService:
             or (support_hit_score < Decimal("45") and repair_or_takeover_score < Decimal("45") and strong_gene_score < Decimal("45"))
         )
 
+        risk_flags: list[str] = []
+        _prev_day_weak_soft_pass = False
+
         level = "reject"
         reject_reason = ""
         if hard_reject:
@@ -453,16 +460,30 @@ class W2SCandidateService:
             day_weak_score = self._day_weak_score(pct_chg)
             prev_day_weak_score = self._prev_day_weak_score(prev_day_pct)
             strong_background = bool(role_tags.get("is_leader")) or limit_up or int(metadata.get("recent_limit_up_count") or 0) >= 2 or rank <= 3
+
+            # ── D layer: diagnose, don't re-judge ──
+            # prior_state=unknown is a soft risk (data missing), not a hard reject.
+            # D_LAYER_ALLOW_UNKNOWN_PRIOR_STATE (default 1): soft-pass prev_day_weak gate
+            # when prior_state is unknown, rather than falsely equating "unknown" to "prev_day_not_weak".
+            _allow_unknown_prior = os.environ.get("D_LAYER_ALLOW_UNKNOWN_PRIOR_STATE", "1") == "1"
+            _prev_day_weak_ok = prev_day_weak_score >= Decimal("2")
+            _prev_day_weak_soft_pass = False
+
+            if prior_state_unknown and _allow_unknown_prior:
+                _prev_day_weak_ok = True
+                _prev_day_weak_soft_pass = True
+                risk_flags.append("prior_state_unknown")
+
             formal_ok = (
                 support_strength >= Decimal("45")
                 and strong_background
                 and day_weak_score >= Decimal("4")
-                and prev_day_weak_score >= Decimal("2")
+                and _prev_day_weak_ok
             )
             observe_only_ok = (
                 support_strength >= Decimal("60")
                 and day_weak_score >= Decimal("3")
-                and prev_day_weak_score >= Decimal("2")
+                and _prev_day_weak_ok
             )
             if formal_ok:
                 level = "formal"
@@ -518,6 +539,9 @@ class W2SCandidateService:
             "reject_reason": reject_reason,
             "watch_status": watch_status or "unknown",
             "kept_because": kept_because,
+            "risk_flags": risk_flags,
+            "prior_state_unknown": prior_state_unknown,
+            "prev_day_weak_soft_pass": _prev_day_weak_soft_pass,
         }
 
     def build_candidates(
