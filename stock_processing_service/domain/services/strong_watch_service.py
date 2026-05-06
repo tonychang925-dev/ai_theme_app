@@ -20,6 +20,7 @@ from stock_processing_service.domain.services.strong_watch_history_service impor
 from stock_processing_service.domain.services.strong_watch_roll_forward_service import (
     StrongWatchRollForwardService,
 )
+from stock_processing_service.domain.services.strong_watch_preseed_gene_enricher import StrongWatchPreSeedGeneEnricher
 from stock_processing_service.domain.services.strong_watch_seed_service import StrongWatchSeedService
 from stock_processing_service.domain.services.strong_watch_universe import StrongWatchUniverseBuilder
 
@@ -48,6 +49,7 @@ class StrongWatchService:
         history_service: StrongWatchHistoryService | None = None,
         universe_builder: StrongWatchUniverseBuilder | None = None,
         admission_policy: StrongWatchAdmissionPolicy | None = None,
+        preseed_gene_enricher: StrongWatchPreSeedGeneEnricher | None = None,
     ) -> None:
         self._seed_service = seed_service or StrongWatchSeedService()
         self._refresh_service = refresh_service or StrongWatchRefreshService()
@@ -57,6 +59,7 @@ class StrongWatchService:
         self._history_service = history_service or StrongWatchHistoryService()
         self._universe_builder = universe_builder or StrongWatchUniverseBuilder()
         self._admission_policy = admission_policy or StrongWatchAdmissionPolicy()
+        self._preseed_gene_enricher = preseed_gene_enricher or StrongWatchPreSeedGeneEnricher()
 
     def build_promoted_pool(
         self,
@@ -97,8 +100,14 @@ class StrongWatchService:
             identities_by_subject=identities_by_subject,
             cycles_by_subject=cycles_by_subject,
         )
-        universe = self._universe_builder.build_universe(
+        preseed_pool_rows = self._preseed_gene_enricher.enrich(
             pool_rows=pool_rows,
+            bars=bars,
+            prior_rows=prior_rows,
+            history_bars=history_bars,
+        )
+        universe = self._universe_builder.build_universe(
+            pool_rows=preseed_pool_rows,
             identities_by_subject=extracted_identities,
             cycles_by_subject=extracted_cycles,
         )
@@ -142,7 +151,7 @@ class StrongWatchService:
             )
             for r in refreshed
         ]
-        subject_stats = self._subject_day_stats(pool_rows)
+        subject_stats = self._subject_day_stats(preseed_pool_rows)
         bars_by_stock = {b.stock_id: b for b in bars}
         ranks = {r.stock_id: (r.pool_rank if r.pool_rank is not None else 999) for r in refresh_rows}
 
@@ -391,8 +400,14 @@ class StrongWatchService:
             identities_by_subject=identities_by_subject,
             cycles_by_subject=cycles_by_subject,
         )
-        universe = self._universe_builder.build_universe(
+        preseed_pool_rows = self._preseed_gene_enricher.enrich(
             pool_rows=pool_rows,
+            bars=bars,
+            prior_rows=prior_rows,
+            history_bars=history_bars,
+        )
+        universe = self._universe_builder.build_universe(
+            pool_rows=preseed_pool_rows,
             identities_by_subject=identities,
             cycles_by_subject=cycles,
         )
@@ -422,7 +437,7 @@ class StrongWatchService:
             history_bars=history_bars,
         )
 
-        subject_stats = self._subject_day_stats(pool_rows)
+        subject_stats = self._subject_day_stats(preseed_pool_rows)
         bars_by_stock = {b.stock_id: b for b in bars}
 
         # Use AdmissionPolicy V2 (same as main chain) for shadow audit.

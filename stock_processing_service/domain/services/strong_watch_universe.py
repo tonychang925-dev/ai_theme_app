@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import os
 from dataclasses import dataclass
 from decimal import Decimal
 from typing import Any
@@ -47,7 +46,7 @@ class StrongWatchUniverseBuilder:
     Layer C-1 Universe gate.
 
     - formal: identity confirmed + main theme + mainline alive
-    - observe: identity/cycle known but not formal eligible
+    - observe: identity/cycle known but not formal eligible, or independent leader gene
     - blocked: missing subject key or missing identity/cycle context
     """
 
@@ -137,17 +136,47 @@ class StrongWatchUniverseBuilder:
                 }
                 continue
 
+            metadata = row.metadata if isinstance(row.metadata, dict) else {}
+            prior7_limitup_days = int(metadata.get("prior7_limitup_days") or 0)
+            recent_limit_up_count = int(metadata.get("recent_limit_up_count") or 0)
+            max_consecutive_limit_up_days = int(metadata.get("max_consecutive_limit_up_days") or 0)
+            two_board_entry = bool(metadata.get("two_board_entry") or False) or (
+                max_consecutive_limit_up_days >= 2
+                or recent_limit_up_count >= 2
+                or prior7_limitup_days >= 2
+            )
+            strong_gene_seed = bool(metadata.get("strong_gene_seed") or False) or two_board_entry
+            independent_gene_diag = {
+                "two_board_entry": two_board_entry,
+                "strong_gene_seed": strong_gene_seed,
+                "strong_gene_seed_reason": str(metadata.get("strong_gene_seed_reason") or ""),
+                "prior7_limitup_days": prior7_limitup_days,
+                "recent_limit_up_count": recent_limit_up_count,
+                "max_consecutive_limit_up_days": max_consecutive_limit_up_days,
+                "identity_scope": str(metadata.get("identity_scope") or ""),
+            }
+
             identity = self._normalize_identity(identities_by_subject.get(subject_key), subject_key)
             cycle = self._normalize_cycle(cycles_by_subject.get(subject_key), subject_key)
             cycle_source = "db"
 
             # ── 覆盖策略: 区分 "B层覆盖缺口" vs "真正非主线" ──
             # 原则:
-            #   1. identity + cycle 都缺失 → blocked (确认非主线)
-            #   2. identity 缺失(但 cycle 存在) → blocked (罕见边界, 保守处理)
-            #   3. identity 存在 + cycle 缺失 + identity 已确认主线 → observe (B层覆盖缺口, 保守降级)
-            #   4. identity 存在 + cycle 缺失 + identity 非主线 → blocked (正确排除)
+            #   1. 独立强势基因只授予个股观察资格，不确认 Layer A/B。
+            #   2. 非独立强势基因对象仍按 identity/cycle 缺失严格 blocked。
+            #   3. identity+cycle 的主线 formal 路径保持 confirmed+alive。
             if identity is None and cycle is None:
+                if strong_gene_seed:
+                    observe_rows.append(row)
+                    diagnostics[stock_id] = {
+                        "universe_status": "observe",
+                        "universe_reason": "independent_leader_without_layer_ab",
+                        "entry_path": "independent_leader",
+                        "identity_present": False,
+                        "cycle_present": False,
+                        **independent_gene_diag,
+                    }
+                    continue
                 blocked_rows.append(row)
                 diagnostics[stock_id] = {
                     "universe_status": "blocked",
@@ -156,6 +185,19 @@ class StrongWatchUniverseBuilder:
                 continue
 
             if identity is None:
+                if strong_gene_seed:
+                    observe_rows.append(row)
+                    diagnostics[stock_id] = {
+                        "universe_status": "observe",
+                        "universe_reason": "independent_leader_without_identity",
+                        "entry_path": "independent_leader",
+                        "identity_present": False,
+                        "cycle_present": True,
+                        "final_cycle_state": cycle.final_cycle_state if cycle else "n/a",
+                        "final_mainline_alive": cycle.final_mainline_alive if cycle else False,
+                        **independent_gene_diag,
+                    }
+                    continue
                 # cycle 存在但 identity 缺失 (罕见: 可能是旧数据残留)
                 blocked_rows.append(row)
                 diagnostics[stock_id] = {
@@ -172,6 +214,20 @@ class StrongWatchUniverseBuilder:
                 identity_confirmed_prelim = (
                     identity.identity_status == "confirmed" and identity.is_main_theme
                 )
+                if strong_gene_seed:
+                    observe_rows.append(row)
+                    diagnostics[stock_id] = {
+                        "universe_status": "observe",
+                        "universe_reason": "independent_leader_without_cycle",
+                        "entry_path": "independent_leader",
+                        "identity_present": True,
+                        "cycle_present": False,
+                        "identity_status": identity.identity_status,
+                        "is_main_theme": identity.is_main_theme,
+                        "identity_confirmed_pass": identity_confirmed_prelim,
+                        **independent_gene_diag,
+                    }
+                    continue
                 if identity_confirmed_prelim:
                     blocked_rows.append(row)
                     diagnostics[stock_id] = {
@@ -198,18 +254,6 @@ class StrongWatchUniverseBuilder:
             # ── 正常主线判定 (与原有逻辑一致) ──
             identity_confirmed = identity.identity_status == "confirmed" and identity.is_main_theme
             cycle_alive = cycle.final_mainline_alive
-            metadata = row.metadata if isinstance(row.metadata, dict) else {}
-            prior7_limitup_days = int(metadata.get("prior7_limitup_days") or 0)
-            recent_limit_up_count = int(metadata.get("recent_limit_up_count") or 0)
-            max_consecutive_limit_up_days = int(metadata.get("max_consecutive_limit_up_days") or 0)
-            # two_board bypass is disabled by default (LAYER_C_ALLOW_TWO_BOARD_BYPASS=0).
-            # Only enabled for controlled replay/ablation experiments.
-            # Do not enable in production unless documented.
-            two_board_entry = (
-                max_consecutive_limit_up_days >= 2
-                or recent_limit_up_count >= 2
-                or prior7_limitup_days >= 2
-            )
 
             diag = {
                 "identity_status": identity.identity_status,
@@ -222,10 +266,7 @@ class StrongWatchUniverseBuilder:
                 "trigger_flags": list(cycle.trigger_flags or []),
                 "cycle_alive_pass": cycle_alive,
                 "cycle_source": cycle_source,
-                "two_board_entry": two_board_entry,
-                "prior7_limitup_days": prior7_limitup_days,
-                "recent_limit_up_count": recent_limit_up_count,
-                "max_consecutive_limit_up_days": max_consecutive_limit_up_days,
+                **independent_gene_diag,
             }
 
             if identity_confirmed and cycle_alive:
@@ -238,13 +279,12 @@ class StrongWatchUniverseBuilder:
                 }
                 continue
 
-            # two_board bypass removed — strict document path only.
-            if two_board_entry and os.environ.get("LAYER_C_ALLOW_TWO_BOARD_BYPASS", "0") == "1":
-                formal_rows.append(row)
+            if strong_gene_seed:
+                observe_rows.append(row)
                 diagnostics[stock_id] = {
-                    "universe_status": "formal",
-                    "universe_reason": "two_board_entry",
-                    "entry_path": "two_board",
+                    "universe_status": "observe",
+                    "universe_reason": "independent_leader_entry",
+                    "entry_path": "independent_leader",
                     **diag,
                 }
                 continue
@@ -254,6 +294,7 @@ class StrongWatchUniverseBuilder:
                 diagnostics[stock_id] = {
                     "universe_status": "observe",
                     "universe_reason": "identity_or_cycle_not_formal",
+                    "entry_path": "mainline_observe",
                     **diag,
                 }
             else:

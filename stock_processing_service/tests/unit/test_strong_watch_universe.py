@@ -53,6 +53,36 @@ def test_universe_builder_routes_formal_observe_blocked() -> None:
     assert result.diagnostics["C"]["cycle_alive_pass"] is False
 
 
+def test_universe_builder_routes_independent_leader_gene_to_observe_without_layer_ab() -> None:
+    builder = StrongWatchUniverseBuilder()
+    row = SubjectStockPoolDTO(
+        trade_date=date(2026, 4, 23),
+        subject_key="S9",
+        subject_name="新主题",
+        stock_id="600152.SH",
+        stock_name="维科技术",
+        pool_rank=55,
+        metadata={
+            "strong_gene_seed": True,
+            "two_board_entry": True,
+            "strong_gene_seed_reason": "two_board_entry",
+            "identity_scope": "independent_stock_signal",
+        },
+    )
+
+    result = builder.build_universe(
+        pool_rows=[row],
+        identities_by_subject={},
+        cycles_by_subject={},
+    )
+
+    assert result.formal_rows == []
+    assert [r.stock_id for r in result.observe_rows] == ["600152.SH"]
+    assert result.blocked_rows == []
+    assert result.diagnostics["600152.SH"]["entry_path"] == "independent_leader"
+    assert result.diagnostics["600152.SH"]["universe_reason"] == "independent_leader_without_layer_ab"
+
+
 def test_universe_builder_strict_blocks_non_formal() -> None:
     builder = StrongWatchUniverseBuilder(allow_observe_when_not_formal=False)
     pool_rows = [_row("A", "S1"), _row("B", "S2")]
@@ -74,6 +104,30 @@ def test_universe_builder_strict_blocks_non_formal() -> None:
     assert [r.stock_id for r in result.formal_rows] == ["A"]
     assert result.observe_rows == []
     assert [r.stock_id for r in result.blocked_rows] == ["B"]
+
+
+def test_universe_builder_strict_still_keeps_independent_leader_gene_observe() -> None:
+    builder = StrongWatchUniverseBuilder(allow_observe_when_not_formal=False)
+    row = _row("B", "S2")
+    row = SubjectStockPoolDTO(
+        trade_date=row.trade_date,
+        subject_key=row.subject_key,
+        subject_name=row.subject_name,
+        stock_id=row.stock_id,
+        stock_name=row.stock_name,
+        pool_rank=55,
+        metadata={"strong_gene_seed": True, "two_board_entry": True},
+    )
+    result = builder.build_universe(
+        pool_rows=[row],
+        identities_by_subject={"S2": {"identity_status": "observed", "is_main_theme": False}},
+        cycles_by_subject={"S2": {"final_cycle_state": "divergence", "final_mainline_alive": False}},
+    )
+
+    assert result.formal_rows == []
+    assert [r.stock_id for r in result.observe_rows] == ["B"]
+    assert result.blocked_rows == []
+    assert result.diagnostics["B"]["entry_path"] == "independent_leader"
 
 
 def test_universe_builder_blocks_when_identity_contract_missing() -> None:
