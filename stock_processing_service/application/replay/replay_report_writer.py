@@ -49,8 +49,8 @@ class ReplayReportWriter:
         lines = [
             "# Replay Matrix",
             "",
-            "| case_name | trade_date | stock_id | mode | ok | layers | assertions |",
-            "|---|---|---|---|---:|---|---|",
+            "| case_name | trade_date | stock_id | mode | ok | reason | input_rank | promoted_rank | observe_rank | final_cycle_state | final_mainline_alive | layers | assertions |",
+            "|---|---|---|---|---:|---|---:|---:|---:|---|---:|---|---|",
         ]
         for row in payload:
             layers = row.get("layer_results") or []
@@ -63,23 +63,27 @@ class ReplayReportWriter:
             candidate_miss = diagnostics.get("candidate_miss") if isinstance(diagnostics.get("candidate_miss"), dict) else {}
             selection = candidate_miss.get("selection") if isinstance(candidate_miss.get("selection"), dict) else {}
             ranking = candidate_miss.get("ranking") if isinstance(candidate_miss.get("ranking"), dict) else {}
+            layer_b_summary = diagnostics.get("layer_b_summary") if isinstance(diagnostics.get("layer_b_summary"), dict) else {}
+            layer_b = layer_b_summary.get("layer_b") if isinstance(layer_b_summary.get("layer_b"), dict) else {}
+            cycle = layer_b.get("cycle") if isinstance(layer_b.get("cycle"), dict) else {}
             assertion_text = "passed=" + str(assertions.get("passed", ""))
             reason = selection.get("not_selected_reason", "")
-            rank_text = "observe_rank={}/{}".format(
-                ranking.get("observe_rank"),
-                ranking.get("observe_total"),
-            )
             lines.append(
-                "| {case} | {date} | {stock} | {mode} | {ok} | {layers} | {assertions}; {reason}; {rank} |".format(
+                "| {case} | {date} | {stock} | {mode} | {ok} | {reason} | {input_rank} | {promoted_rank} | {observe_rank}/{observe_total} | {cycle_state} | {alive} | {layers} | {assertions} |".format(
                     case=row.get("case_name", ""),
                     date=row.get("trade_date", ""),
                     stock=row.get("stock_id", ""),
                     mode=row.get("mode", ""),
                     ok=str(bool(row.get("ok"))).lower(),
+                    reason=str(reason).replace("|", "\\|"),
+                    input_rank=ranking.get("input_rank"),
+                    promoted_rank=ranking.get("promoted_rank"),
+                    observe_rank=ranking.get("observe_rank"),
+                    observe_total=ranking.get("observe_total"),
+                    cycle_state=str(cycle.get("final_cycle_state", "")).replace("|", "\\|"),
+                    alive=cycle.get("final_mainline_alive"),
                     layers=layer_text.replace("|", "\\|"),
                     assertions=assertion_text.replace("|", "\\|"),
-                    reason=str(reason).replace("|", "\\|"),
-                    rank=rank_text.replace("|", "\\|"),
                 )
             )
             failed = [

@@ -1,8 +1,8 @@
 # Replay Matrix
 
-| case_name | trade_date | stock_id | mode | ok | layers | assertions |
-|---|---|---|---|---:|---|---|
-| weike_2026_04_22 | 2026-04-22 | 600152.SH | ReplayMode.REUSE_ALL | false | evidence:reused, daily:reused, recap:reused | passed=False; missing_candidate_row; observe_rank=None/10 |
+| case_name | trade_date | stock_id | mode | ok | reason | input_rank | promoted_rank | observe_rank | final_cycle_state | final_mainline_alive | layers | assertions |
+|---|---|---|---|---:|---|---:|---:|---:|---|---:|---|---|
+| weike_2026_04_22 | 2026-04-22 | 600152.SH | ReplayMode.REUSE_ALL | false | in_input_but_not_promoted | 52 | None | None/10 | divergence | True | evidence:reused, daily:reused, recap:reused | passed=False |
 
 ## weike_2026_04_22 Failed Assertions
 
