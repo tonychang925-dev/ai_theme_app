@@ -74,3 +74,9 @@ class StockWriteGatewayAdapter:
         if callable(fn):
             return await fn(rows)
         raise RuntimeError("DatabaseGatewayStockFacade missing upsert_strong_watch_history_rows")
+
+    async def upsert_theme_cycle_evidence_daily_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._db, "upsert_theme_cycle_evidence_daily_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        raise RuntimeError("DatabaseGatewayStockFacade missing upsert_theme_cycle_evidence_daily_rows")

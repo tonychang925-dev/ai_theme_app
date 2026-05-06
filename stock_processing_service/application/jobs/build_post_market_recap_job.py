@@ -415,6 +415,17 @@ class BuildPostMarketRecapJob:
             "candidate_count_formal": len(formal_candidates),
             "candidate_count_observe": len(observe_candidates),
             "observe_candidates_count": len(self._candidate_service.observe_candidates),
+            "top_candidates_scope": "formal_plus_observe_ranked",
+            "formal_top_candidates": [
+                {
+                    "stock_id": c.stock_id,
+                    "stock_name": c.stock_name,
+                    "subject_key": c.subject_key,
+                    "candidate_score": str(c.candidate_score),
+                    "support_type": c.support_type,
+                }
+                for c in formal_candidates[:15]
+            ],
             "observe_candidates": [
                 {
                     "stock_id": c.stock_id,
@@ -567,6 +578,9 @@ class BuildPostMarketRecapJob:
                     shadow_summary.get("admission_hard_reject_count") or 0
                 ),
                 "candidate_count": len(candidates),
+                "candidate_count_formal": len(formal_candidates),
+                "candidate_count_observe": len(observe_candidates),
+                "observe_candidates_count": len(self._candidate_service.observe_candidates),
             },
             published_events=["snapshot_built"],
             cache_writes=3 if self._cache_port is not None else 0,
