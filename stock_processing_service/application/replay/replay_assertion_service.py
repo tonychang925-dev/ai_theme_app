@@ -5,6 +5,7 @@ from datetime import date
 from typing import Any, Protocol
 
 from stock_processing_service.application.replay.candidate_miss_report import CandidateMissReportBuilder
+from stock_processing_service.application.replay.leader_layer_diagnostic_report import LeaderLayerDiagnosticReportBuilder
 from stock_processing_service.application.replay.replay_cases import ReplayCase
 from stock_processing_service.application.replay.replay_layer_b_report import LayerBDiagnosticReportBuilder
 
@@ -13,6 +14,8 @@ class ReplayAssertionReadPort(Protocol):
     async def get_existing_post_market_recap_snapshot(self, trade_date: date) -> Any | None: ...
 
     async def get_subject_stock_pool_by_trade_date(self, trade_date: date) -> list[Any]: ...
+
+    async def get_stock_daily_bars(self, trade_date: date, stock_ids: list[str] | None = None) -> list[Any]: ...
 
     async def get_mainline_identity_by_subject_keys(self, subject_keys: list[str], trade_date: date) -> list[Any]: ...
 
@@ -282,13 +285,31 @@ class ReplayAssertionService:
                 expected=expected["kline_quality"],
                 actual=kline_layer.get("kline_quality"),
             )
-        return LayerBDiagnosticReportBuilder().build(
+        report = LayerBDiagnosticReportBuilder().build(
             trade_date=trade_date.isoformat(),
             stock_id=stock_id,
             subject_key=subject_key,
             evidence=evidence,
             cycle=cycle,
         ).to_dict()
+        pool_rows = await self._read_port.get_subject_stock_pool_by_trade_date(trade_date)
+        stock_ids: list[str] = []
+        for raw in pool_rows:
+            row = _as_dict(raw)
+            stock_id_value = str(row.get("stock_id") or "")
+            if stock_id_value:
+                stock_ids.append(stock_id_value)
+        bars = await self._read_port.get_stock_daily_bars(trade_date, stock_ids=stock_ids or None)
+        report["leader_layer_diagnostic"] = LeaderLayerDiagnosticReportBuilder().build(
+            trade_date=trade_date.isoformat(),
+            stock_id=stock_id,
+            subject_key=subject_key,
+            pool_rows=pool_rows,
+            bars=bars,
+            evidence=evidence,
+            cycle=cycle,
+        ).to_dict()
+        return report
 
     @staticmethod
     def _rows(recap_doc: dict[str, Any], *keys: str) -> list[dict[str, Any]]:

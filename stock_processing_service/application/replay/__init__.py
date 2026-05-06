@@ -1,5 +1,6 @@
 from .candidate_miss_report import CandidateMissReport, CandidateMissReportBuilder
 from .layer_b_transition_explain import LayerBTransitionExplain, LayerBTransitionExplainBuilder
+from .leader_layer_diagnostic_report import LeaderLayerDiagnosticReport, LeaderLayerDiagnosticReportBuilder
 from .replay_assertion_service import ReplayAssertionService
 from .replay_cases import ReplayCase, ReplayCaseLoader
 from .replay_input_hash import ReplayInputHashBuilder
@@ -13,6 +14,8 @@ __all__ = [
     "CandidateMissReportBuilder",
     "LayerBTransitionExplain",
     "LayerBTransitionExplainBuilder",
+    "LeaderLayerDiagnosticReport",
+    "LeaderLayerDiagnosticReportBuilder",
     "ReplayCase",
     "ReplayCaseLoader",
     "ReplayAssertionService",

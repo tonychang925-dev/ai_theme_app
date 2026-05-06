@@ -14,6 +14,7 @@ from stock_processing_service.application.replay import (
     ReplayReportWriter,
     ReplayRunner,
 )
+from stock_processing_service.application.replay.leader_layer_diagnostic_report import LeaderLayerDiagnosticReportBuilder
 from stock_processing_service.application.replay.replay_manifest import InMemoryReplayManifestStore
 from stock_processing_service.contracts.dto import BuildResult
 from stock_processing_service.infrastructure.gateway_adapters.replay_manifest_gateway_adapter import (
@@ -405,6 +406,43 @@ def test_replay_report_writer_outputs_json_and_markdown(tmp_path) -> None:
     assert "prev_low_support" in md
 
 
+def test_leader_layer_diagnostic_reports_missing_score_with_inferred_leader() -> None:
+    report = LeaderLayerDiagnosticReportBuilder().build(
+        trade_date="2026-04-15",
+        stock_id="605060.SH",
+        subject_key="s_liande",
+        pool_rows=[
+            {
+                "subject_key": "s_liande",
+                "stock_id": "605060.SH",
+                "stock_name": "联德股份",
+                "pool_rank": 1,
+                "metadata": {"pct_chg": "2.8", "is_leader": True, "limit_up": False},
+            },
+            {
+                "subject_key": "s_liande",
+                "stock_id": "600000.SH",
+                "stock_name": "同题材前排",
+                "pool_rank": 2,
+                "metadata": {"pct_chg": "-1.2", "is_leader": False, "limit_up": False},
+            },
+        ],
+        bars=[
+            {"stock_id": "605060.SH", "pct_chg": "2.8", "close_price": "10", "limit_up_price": "11"},
+            {"stock_id": "600000.SH", "pct_chg": "-1.2", "close_price": "9", "limit_up_price": "11"},
+        ],
+        evidence={"subject_key": "s_liande", "leader_alive_score": "0"},
+        cycle={"subject_key": "s_liande", "final_cycle_state": "divergence", "final_mainline_alive": False},
+    ).to_dict()
+
+    leader = report["leader_layer"]
+    assert leader["leader_score_source"] == "missing_pool_metadata_inferred_available"
+    assert leader["leader_stock_id"] == "605060.SH"
+    assert leader["leader_pct_chg"] == "2.8"
+    assert leader["leader_breakdown_reason"] == "leader_score_metadata_missing"
+    assert report["cycle_effect"]["final_cycle_state"] == "divergence"
+
+
 @pytest.mark.asyncio
 async def test_replay_assertion_service_supports_layer_a_b_expected_fields() -> None:
     class _Read:
@@ -433,11 +471,26 @@ async def test_replay_assertion_service_supports_layer_a_b_expected_fields() -> 
             return [
                 {
                     "subject_key": "s1",
+                    "leader_alive_score": "0",
                     "theme_support_score": "78",
                     "break_start_pivot": False,
                     "evidence_json": {"kline_layer": {"kline_quality": "ok"}},
                 }
             ]
+
+        async def get_subject_stock_pool_by_trade_date(self, trade_date):
+            return [
+                {
+                    "subject_key": "s1",
+                    "stock_id": "002361.SZ",
+                    "stock_name": "神剑股份",
+                    "pool_rank": 1,
+                    "metadata": {"pct_chg": "3.2", "is_leader": True},
+                }
+            ]
+
+        async def get_stock_daily_bars(self, trade_date, stock_ids=None):
+            return [{"stock_id": "002361.SZ", "pct_chg": "3.2", "close_price": "10", "limit_up_price": "11"}]
 
     svc = ReplayAssertionService(_Read())
     report = await svc.assert_case(
@@ -461,6 +514,12 @@ async def test_replay_assertion_service_supports_layer_a_b_expected_fields() -> 
     assert report["layer_results"]["layer_b.final_cycle_state_in"]["actual"] == "repair"
     assert report["diagnostics"]["candidate_miss"]["selection"]["not_selected_reason"] == "selected"
     assert report["diagnostics"]["layer_b_summary"]["layer_b"]["cycle"]["final_cycle_state"] == "repair"
+    assert (
+        report["diagnostics"]["layer_b_summary"]["leader_layer_diagnostic"]["leader_layer"][
+            "leader_score_source"
+        ]
+        == "missing_pool_metadata_inferred_available"
+    )
 
 
 @pytest.mark.asyncio
