@@ -98,8 +98,9 @@ class StrongWatchAdmissionPolicy:
         if structure_health_pass:
             pass_reasons.append("structure_health_pass")
 
-        # Gate: LAYER_C_ALLOW_OLD_CHAIN_HARD_PASS (Phase 1: default 1, Phase 2: default 0)
-        if os.environ.get("LAYER_C_ALLOW_OLD_CHAIN_HARD_PASS", "1") == "1":
+        # Strict document path: pure 4-of-3 admission only.
+        # old_chain_hard_pass removed — gate default 0.
+        if os.environ.get("LAYER_C_ALLOW_OLD_CHAIN_HARD_PASS", "0") == "1":
             old_chain_hard_pass = bool(
                 limitup_gene_pass
                 and (

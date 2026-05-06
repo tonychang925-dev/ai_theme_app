@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import os
 from dataclasses import dataclass, replace
 from datetime import date
 from decimal import Decimal
@@ -149,7 +148,6 @@ class StrongWatchService:
 
         admission_kept: list[StrongWatchRecord] = []
         admission_pruned: list[StrongWatchRecord] = []
-        _admission_v2 = os.environ.get("LAYER_C_ADMISSION_V2", "1") == "1"
         for row in refreshed:
             if row.watch_status == "removed":
                 admission_pruned.append(
@@ -167,89 +165,46 @@ class StrongWatchService:
             role_tags = row.role_tags if isinstance(row.role_tags, dict) else {}
             two_board_entry = bool(role_tags.get("two_board_entry") or False)
 
-            if _admission_v2:
-                # LAYER_C_ADMISSION_V2 is a migration gate only.
-                # After 5 consecutive trading days of stable replay,
-                # the old strong_grade admission path MUST be downgraded
-                # to reference-only (no longer drives admission decisions).
-                bar = bars_by_stock.get(row.stock_id)
-                pct_chg = bar.pct_chg if bar else Decimal("0")
-                stats = subject_stats.get(row.subject_key, {})
-                decision = self._admission_policy.assess(
-                    prior7_limitup_days=row.prior7_limitup_days,
-                    recent_limit_up_count=int(role_tags.get("recent_limit_up_count") or 0),
-                    subject_limit_up_count=stats.get("subject_limit_up_count", 0),
-                    subject_strong_count=stats.get("subject_strong_count", 0),
-                    final_mainline_alive=bool(role_tags.get("final_mainline_alive") or False),
-                    board_effect_confirmed=bool(role_tags.get("board_effect_confirmed") or False),
-                    two_board_entry=two_board_entry,
-                    pct_chg=pct_chg,
-                    support_type=str(row.support_type or ""),
-                    support_score=row.support_score,
-                    is_leader=bool(role_tags.get("is_leader") or False),
-                    rank_order=row.pool_rank if row.pool_rank is not None else 999,
+            bar = bars_by_stock.get(row.stock_id)
+            pct_chg = bar.pct_chg if bar else Decimal("0")
+            stats = subject_stats.get(row.subject_key, {})
+            decision = self._admission_policy.assess(
+                prior7_limitup_days=row.prior7_limitup_days,
+                recent_limit_up_count=int(role_tags.get("recent_limit_up_count") or 0),
+                subject_limit_up_count=stats.get("subject_limit_up_count", 0),
+                subject_strong_count=stats.get("subject_strong_count", 0),
+                final_mainline_alive=bool(role_tags.get("final_mainline_alive") or False),
+                board_effect_confirmed=bool(role_tags.get("board_effect_confirmed") or False),
+                two_board_entry=two_board_entry,
+                pct_chg=pct_chg,
+                support_type=str(row.support_type or ""),
+                support_score=row.support_score,
+                is_leader=bool(role_tags.get("is_leader") or False),
+                rank_order=row.pool_rank if row.pool_rank is not None else 999,
+            )
+            if decision.admission_status == "formal":
+                admission_kept.append(replace(row, admission_status="formal"))
+            elif decision.admission_status == "observe_only":
+                admission_kept.append(
+                    replace(
+                        row,
+                        watch_status="weakening",
+                        kept_because="admission_observe_only",
+                        admission_status="observe_only",
+                    )
                 )
-                if decision.admission_status == "formal":
-                    admission_kept.append(
-                        replace(row, admission_status="formal")
-                    )
-                elif decision.admission_status == "observe_only":
-                    admission_kept.append(
-                        replace(
-                            row,
-                            watch_status="weakening",
-                            kept_because="admission_v2_observe_only",
-                            admission_status="observe_only",
-                        )
-                    )
-                else:
-                    admission_pruned.append(
-                        replace(
-                            row,
-                            admission_status="reject",
-                            watch_status="removed",
-                            prune_mode="immediate",
-                            prune_reason_code="ADMISSION_V2_REJECT",
-                            removed_reason="admission_v2_reject",
-                            kept_because=None,
-                        )
-                    )
             else:
-                # Legacy path (LAYER_C_ADMISSION_V2=0): strong_grade + watch_score thresholds
-                if row.strong_grade in {"S", "A"} and row.watch_score >= Decimal("78"):
-                    admission_kept.append(
-                        replace(row, admission_status="formal")
+                admission_pruned.append(
+                    replace(
+                        row,
+                        admission_status="reject",
+                        watch_status="removed",
+                        prune_mode="immediate",
+                        prune_reason_code="ADMISSION_REJECT",
+                        removed_reason="admission_reject",
+                        kept_because=None,
                     )
-                elif two_board_entry and row.watch_status in {"active", "weakening"}:
-                    admission_kept.append(
-                        replace(
-                            row,
-                            watch_status="weakening",
-                            kept_because="two_board_formal_bypass",
-                            admission_status="observe_only",
-                        )
-                    )
-                elif row.watch_status in {"active", "weakening"} and row.strong_grade in {"S", "A", "B"} and row.watch_score >= Decimal("62"):
-                    admission_kept.append(
-                        replace(
-                            row,
-                            watch_status="weakening",
-                            kept_because="admission_observe_only",
-                            admission_status="observe_only",
-                        )
-                    )
-                else:
-                    admission_pruned.append(
-                        replace(
-                            row,
-                            admission_status="reject",
-                            watch_status="removed",
-                            prune_mode="immediate",
-                            prune_reason_code="ADMISSION_REJECT",
-                            removed_reason="admission_reject",
-                            kept_because=None,
-                        )
-                    )
+                )
 
         kept, pruned_by_rule = self._prune_service.prune(admission_kept)
         pruned = admission_pruned + pruned_by_rule

@@ -293,15 +293,20 @@ class StrongWatchRefreshService:
                 or recent_limit_up_count >= 2
                 or prior7_limitup_days >= 2
             )
+            # Structure-driven status: removed only on hard structural breaks.
+            # Low watch_score alone does not trigger removal.
+            support_valid = support_score >= 50
+            has_gene = prior7_limitup_days >= 1 or recent_limit_up_count >= 1 or two_board_entry
+
             if final_cycle_state == "fade_confirmed":
                 watch_status = "removed"
-            elif two_board_entry and watch_score < self.WEAKENING_MIN_SCORE:
-                # Old-chain-compatible board-gene bypass:
-                # a fresh two-board signal must enter the strong-watch path
-                # even if composite watch_score is still below the generic weakening floor.
-                watch_status = "weakening"
+            elif not support_valid and not has_gene:
+                watch_status = "removed"
             elif watch_score >= self.ACTIVE_MIN_SCORE:
                 watch_status = "active"
+            elif has_gene or support_valid:
+                # Low score but valid structure or gene → keep observing (weakening_keep).
+                watch_status = "weakening"
             elif watch_score >= self.WEAKENING_MIN_SCORE:
                 watch_status = "weakening"
             else:

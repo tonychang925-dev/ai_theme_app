@@ -42,7 +42,11 @@ class W2SCandidateService:
     MAX_CANDIDATES = 20
 
     def __init__(self) -> None:
-        pass
+        self._observe_candidates: list[W2SCandidate] = []
+
+    @property
+    def observe_candidates(self) -> list[W2SCandidate]:
+        return list(self._observe_candidates)
     @staticmethod
     def _d(value: Any, default: str = "0") -> Decimal:
         if value is None:
@@ -438,10 +442,12 @@ class W2SCandidateService:
         overheat_hard_gate = rank_overheat_gate or leader_overheat_gate or tier_overheat_gate
         overheated = overheat_hard_gate
 
+        # Hard reject: only structure-destroyed or zero-gene candidates.
+        # Legacy watch_status / strong_history gates removed.
         hard_reject = (
-            not legacy_watch_status_pass
-            or not legacy_strong_history_pass
-            or (support_hit_score < Decimal("45") and repair_or_takeover_score < Decimal("45") and strong_gene_score < Decimal("45"))
+            support_hit_score < Decimal("35")
+            and repair_or_takeover_score < Decimal("35")
+            and strong_gene_score < Decimal("35")
         )
 
         risk_flags: list[str] = []
@@ -451,10 +457,6 @@ class W2SCandidateService:
         reject_reason = ""
         if hard_reject:
             reject_reason = "hard_reject"
-            if not legacy_watch_status_pass:
-                reject_reason = "hard_reject_watch_status"
-            elif not legacy_strong_history_pass:
-                reject_reason = "hard_reject_strong_history_gate"
         else:
             support_strength = support_hit_score
             day_weak_score = self._day_weak_score(pct_chg)
@@ -669,13 +671,30 @@ class W2SCandidateService:
                 _formal_support_priority(c.support_type),
             )
 
-        def _observe_key(c: W2SCandidate) -> tuple[Decimal, Decimal, Decimal]:
+        def _observe_support_priority(support_type: str) -> int:
+            st = (support_type or "").strip().lower()
+            if st == "gap_support":
+                return 0
+            if st in {"previous_low", "prev_low_support"}:
+                return 1
+            if st == "platform_support":
+                return 2
+            if st == "ma_support":
+                return 3
+            return 4
+
+        def _observe_key(c: W2SCandidate) -> tuple[int, Decimal, Decimal, Decimal]:
             return (
-                -c.candidate_score,
+                _observe_support_priority(c.support_type),
                 -c.support_score,
                 -c.weakness_valid_score,
+                -c.candidate_score,
             )
 
         formal_candidates.sort(key=_formal_key)
         observe_candidates.sort(key=_observe_key)
-        return (formal_candidates + observe_candidates)[: self.MAX_CANDIDATES]
+
+        formal_top_n = 15
+        observe_top_n = 10
+        self._observe_candidates = observe_candidates[:observe_top_n]
+        return (formal_candidates[:formal_top_n] + observe_candidates[:observe_top_n])[: self.MAX_CANDIDATES]
