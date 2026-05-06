@@ -23,17 +23,20 @@ class ThemeKlineEvidence:
     ma10: Decimal
     ma20: Decimal
     avg_volume_ratio: Decimal
+    history_days: int = 0
+    kline_quality: str = "insufficient_history"
 
 
 class ThemeKlineEvidenceBuilder:
     """Build theme-level K-line evidence from component stock bars.
 
-    Constructs an equal-weighted composite index from component stocks'
-    historical daily bars, then computes MA/return/volume/support signals.
-    Pure domain service — no DB access.
+    Constructs an equal-weighted cumulative composite index (starting from 1000)
+    from component stocks' historical daily bars, then computes MA/return/volume/
+    support signals. Pure domain service — no DB access.
     """
 
-    LOOKBACK_BARS = 25
+    LOOKBACK_BARS = 30
+    HISTORY_NATURAL_DAYS = 60
 
     @staticmethod
     def _d(val: object) -> Decimal:
@@ -113,6 +116,14 @@ class ThemeKlineEvidenceBuilder:
             support_score += Decimal("5")
         support_score = min(Decimal("100"), max(Decimal("0"), support_score))
 
+        history_days = len(closes)
+        if history_days < 5:
+            kline_quality = "insufficient_history"
+        elif history_days < 20:
+            kline_quality = "minimal"
+        else:
+            kline_quality = "ok"
+
         return ThemeKlineEvidence(
             subject_key=subject_key,
             theme_ret_3d=theme_ret_3d,
@@ -129,6 +140,8 @@ class ThemeKlineEvidenceBuilder:
             ma10=ma10,
             ma20=ma20,
             avg_volume_ratio=avg_volume_ratio,
+            history_days=history_days,
+            kline_quality=kline_quality,
         )
 
     def _build_composite(
@@ -137,17 +150,18 @@ class ThemeKlineEvidenceBuilder:
         bars_by_date: dict[str, list[StockBarDTO]],
         trade_dates: list[str],
     ) -> list[tuple[str, Decimal, Decimal]]:
-        """Build equal-weighted composite: [(date, close, volume), ...]."""
+        """Build equal-weighted cumulative index from 1000: [(date, index_value, volume), ...]."""
         result: list[tuple[str, Decimal, Decimal]] = []
+        index = Decimal("1000")
         for td in trade_dates:
             day_bars = bars_by_date.get(td, [])
             stock_bars = {b.stock_id: b for b in day_bars if b.stock_id in set(stock_ids)}
             if not stock_bars:
                 continue
-            # Equal-weighted pct_chg
             pcts = [b.pct_chg for b in stock_bars.values()]
             avg_pct = sum(pcts, start=Decimal("0")) / Decimal(str(len(pcts)))
-            result.append((td, avg_pct, sum(
+            index = index * (Decimal("1") + avg_pct / Decimal("100"))
+            result.append((td, index, sum(
                 (b.volume for b in stock_bars.values()), start=Decimal("0")
             )))
         return result
@@ -160,9 +174,13 @@ class ThemeKlineEvidenceBuilder:
 
     @staticmethod
     def _ret(values: list[Decimal], window: int) -> Decimal:
+        """Percentage return over window: (last / prev - 1) * 100."""
         if len(values) < window + 1:
             return Decimal("0")
-        return values[-1] - values[-window - 1]
+        prev = values[-window - 1]
+        if prev <= Decimal("0"):
+            return Decimal("0")
+        return (values[-1] / prev - Decimal("1")) * Decimal("100")
 
     @staticmethod
     def _empty(subject_key: str) -> ThemeKlineEvidence:
