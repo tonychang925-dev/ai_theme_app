@@ -24,6 +24,9 @@ class CycleJudgement:
     decision_path: str = ""
     evidence_count: int = 0
     fade_reason_codes: list[str] | None = None
+    mainline_alive_rule: bool = False
+    support_break: bool = False
+    score_flags: dict[str, bool] | None = None
 
 
 class CycleJudgementService:

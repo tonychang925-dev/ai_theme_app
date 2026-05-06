@@ -180,6 +180,9 @@ class BuildDailySnapshotJob:
                     decision_path=s.decision_path,
                     evidence_count=s.evidence_count,
                     fade_reason_codes=s.fade_reason_codes,
+                    mainline_alive_rule=s.mainline_alive_rule,
+                    support_break=s.support_break,
+                    score_flags=s.score_flags,
                 )
             )
 

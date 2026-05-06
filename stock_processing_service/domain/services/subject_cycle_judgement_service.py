@@ -21,6 +21,9 @@ class SubjectCycleJudgement:
     decision_path: str
     evidence_count: int
     fade_reason_codes: list[str]
+    mainline_alive_rule: bool = False
+    support_break: bool = False
+    score_flags: dict[str, bool] | None = None
 
 
 class SubjectCycleJudgementService:
@@ -95,13 +98,18 @@ class SubjectCycleJudgementService:
             evidence_count += 1
             fade_reason_codes.append("theme_support_le_35")
 
-        fade_confirmed_flag = fade_confirmed >= self.THRESH_FADE_CONFIRMED and evidence_count >= 3
+        support_break = bool(e.break_start_pivot or e.theme_support_score <= Decimal("35"))
+        fade_confirmed_flag = (
+            fade_confirmed >= self.THRESH_FADE_CONFIRMED
+            and evidence_count >= 3
+            and support_break
+        )
         fade_watch_flag = (not fade_confirmed_flag) and fade_watch >= self.THRESH_FADE_WATCH
         repair_transition_allowed = e.previous_cycle_state in {"divergence", "fade_watch"}
 
         if fade_confirmed_flag:
             state = "fade_confirmed"
-            decision_path = "fade_confirmed(score>=60,evidence>=3)"
+            decision_path = "fade_confirmed(score>=60,evidence>=3,support_break)"
         elif repair >= self.THRESH_REPAIR and repair_transition_allowed:
             state = "repair"
             decision_path = "repair(score>=65,previous in divergence/fade_watch)"
@@ -121,15 +129,44 @@ class SubjectCycleJudgementService:
             state = "start"
             decision_path = "start(default)"
 
-        mainline_alive = (
+        mainline_alive_rule = (
             mainline_strength >= self.THRESH_MAINLINE_ALIVE
             and e.leader_alive_score >= self.THRESH_MAINLINE_LEADER
             and (
                 e.strong_event_count_7d > 0
                 or e.event_continuity_score >= self.THRESH_MAINLINE_EVENT_CONTINUITY
             )
-            and state != "fade_confirmed"
+            and not fade_confirmed_flag
         )
+        # Old-chain compatibility: final_mainline_alive means "not hard fade-confirmed".
+        # Strength/event/leader gates are kept as mainline_alive_rule diagnostics only.
+        mainline_alive = not fade_confirmed_flag
+        score_flags = {
+            "mainline_alive_hit": mainline_strength >= self.THRESH_MAINLINE_ALIVE,
+            "mainline_leader_hit": e.leader_alive_score >= self.THRESH_MAINLINE_LEADER,
+            "mainline_event_hit": (
+                e.strong_event_count_7d > 0
+                or e.event_continuity_score >= self.THRESH_MAINLINE_EVENT_CONTINUITY
+            ),
+            "fade_watch_hit": fade_watch >= self.THRESH_FADE_WATCH,
+            "fade_confirmed_hit": fade_confirmed >= self.THRESH_FADE_CONFIRMED,
+            "fade_confirmed_evidence_count_hit": evidence_count >= 3,
+            "kline_support_break_hit": support_break,
+            "repair_hit": repair >= self.THRESH_REPAIR,
+            "repair_transition_allowed": repair_transition_allowed,
+            "divergence_hit": divergence >= self.THRESH_DIVERGENCE,
+        }
+        if not mainline_alive_rule and mainline_alive:
+            event_gate_passed = bool(score_flags["mainline_event_hit"])
+            reason = "event_active_gate_failed_but_not_dead" if not event_gate_passed else "mainline_alive_rule_false_but_not_dead"
+            decision_path = f"{decision_path};{reason};support_break={str(support_break).lower()};final_alive=not_fade_confirmed"
+        elif (
+            fade_confirmed >= self.THRESH_FADE_CONFIRMED
+            and evidence_count >= 3
+            and not support_break
+            and mainline_alive
+        ):
+            decision_path = f"{decision_path};support_break=false;final_alive=not_fade_confirmed"
 
         return SubjectCycleJudgement(
             subject_key=e.subject_key,
@@ -145,4 +182,7 @@ class SubjectCycleJudgementService:
             decision_path=decision_path,
             evidence_count=evidence_count,
             fade_reason_codes=fade_reason_codes,
+            mainline_alive_rule=bool(mainline_alive_rule),
+            support_break=support_break,
+            score_flags=score_flags,
         )
