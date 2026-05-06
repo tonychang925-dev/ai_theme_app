@@ -17,6 +17,17 @@ from stock_processing_service.application.jobs import (
 from stock_processing_service.application.jobs.build_theme_cycle_evidence_daily_job import (
     BuildThemeCycleEvidenceDailyJob,
 )
+from stock_processing_service.application.replay import (
+    ReplayAssertionService,
+    ReplayCase,
+    ReplayCaseLoader,
+    ReplayInputHashBuilder,
+    ReplayLayerManifest,
+    ReplayMode,
+    ReplayReportWriter,
+    ReplayRunReport,
+)
+from stock_processing_service.application.replay.replay_runner import ReplayLayerResult
 from stock_processing_service.domain.services.strong_watch_seed_service import StrongWatchSeedService
 from stock_processing_service.domain.services.strong_watch_refresh_service import StrongWatchRefreshService
 from stock_processing_service.domain.services.strong_watch_prune_service import StrongWatchPruneService
@@ -34,6 +45,9 @@ from stock_processing_service.infrastructure.gateway_adapters.stock_read_gateway
 from stock_processing_service.infrastructure.gateway_adapters.stock_write_gateway_adapter import (
     StockWriteGatewayAdapter,
 )
+from stock_processing_service.infrastructure.gateway_adapters.replay_manifest_gateway_adapter import (
+    ReplayManifestGatewayAdapter,
+)
 
 
 @dataclass(frozen=True)
@@ -46,6 +60,9 @@ class ReplayExecutionResult:
     recap_status: str
     recap_doc: dict[str, Any]
     target_diagnostics: dict[str, Any]
+    assertion_report: dict[str, Any]
+    replay_report_paths: dict[str, str]
+    input_hashes: dict[str, str]
 
 
 @dataclass(frozen=True)
@@ -129,6 +146,29 @@ class _ReplayDatabaseStockFacade:
         if callable(fn):
             return await fn(trade_date=trade_date, subject_keys=subject_keys)
         return []
+
+    async def get_replay_snapshot_manifest(
+        self,
+        trade_date: date,
+        layer_name: str,
+        snapshot_version: str,
+        algorithm_version: str,
+    ):
+        fn = getattr(self._gateway, "get_replay_snapshot_manifest", None)
+        if callable(fn):
+            return await fn(
+                trade_date=trade_date,
+                layer_name=layer_name,
+                snapshot_version=snapshot_version,
+                algorithm_version=algorithm_version,
+            )
+        return None
+
+    async def upsert_replay_snapshot_manifest(self, row: dict[str, Any]) -> int:
+        fn = getattr(self._gateway, "upsert_replay_snapshot_manifest", None)
+        if callable(fn):
+            return int(await fn(row) or 0)
+        return 0
 
     async def get_prior_strong_watch_pool_rows(self, trade_date: date, lookback_days: int):
         fn = getattr(self._gateway, "get_prior_strong_watch_pool_rows", None)
@@ -284,6 +324,169 @@ def run_post_market_replay_readonly(
     )
 
 
+def _case_for_sample(*, trade_date: date, sample_name: str, target_stock_id: str | None = None) -> ReplayCase:
+    path = Path("stock_processing_service/tests/replay/cases/weak_to_strong_cases.yaml")
+    sample = sample_name.strip().lower()
+    if path.exists():
+        for case in ReplayCaseLoader.load(path):
+            if case.trade_date == trade_date and (
+                case.name.lower().startswith(sample)
+                or (target_stock_id and case.stock_id == target_stock_id)
+            ):
+                return case
+    stock_by_sample = {
+        "shenjian": "002361.SZ",
+        "liande": "605060.SH",
+        "weike": "600152.SH",
+    }
+    return ReplayCase(
+        name=f"{sample_name}_{trade_date.isoformat()}",
+        trade_date=trade_date,
+        stock_id=target_stock_id or stock_by_sample.get(sample, ""),
+        expected={},
+    )
+
+
+async def _build_replay_input_hashes(
+    *,
+    trade_date: date,
+    read_port: StockReadGatewayAdapter,
+    algorithm_versions: dict[str, str],
+) -> dict[str, str]:
+    pool_rows = await read_port.get_subject_stock_pool_by_trade_date(trade_date)
+    subject_keys = sorted({r.subject_key for r in pool_rows})
+    bars = await read_port.get_stock_daily_bars(trade_date)
+    evidence_rows = await read_port.get_subject_cycle_evidence_daily(
+        trade_date=trade_date,
+        subject_keys=subject_keys,
+    ) if subject_keys else []
+    prior_rows = await read_port.get_prior_stock_daily_snapshots(
+        trade_date=trade_date,
+        lookback_days=7,
+        stock_ids=[r.stock_id for r in pool_rows] if pool_rows else None,
+    )
+    event_stats = await read_port.get_subject_event_stats(
+        trade_date=trade_date,
+        subject_keys=subject_keys,
+    ) if subject_keys else []
+    layer_inputs = {
+        "identity": {
+            "input_row_count": len(subject_keys),
+            "extra": {
+                "subject_key_count": len(subject_keys),
+                "subject_keys": subject_keys,
+            },
+        },
+        "evidence": {
+            "input_row_count": len(pool_rows) + len(bars) + len(event_stats),
+            "extra": {
+                "pool_row_count": len(pool_rows),
+                "bar_count": len(bars),
+                "event_stats_count": len(event_stats),
+                "stock_count": len({r.stock_id for r in pool_rows}),
+            },
+        },
+        "daily": {
+            "input_row_count": len(evidence_rows),
+            "extra": {
+                "evidence_row_count": len(evidence_rows),
+                "subject_key_count": len(subject_keys),
+            },
+        },
+        "recap": {
+            "input_row_count": len(pool_rows) + len(bars) + len(prior_rows),
+            "extra": {
+                "pool_row_count": len(pool_rows),
+                "bar_count": len(bars),
+                "prior_row_count": len(prior_rows),
+            },
+        },
+    }
+    return ReplayInputHashBuilder.build_many(
+        trade_date=trade_date,
+        algorithm_versions=algorithm_versions,
+        layer_inputs=layer_inputs,
+    )
+
+
+def _replay_run_report_from_live_result(
+    *,
+    case: ReplayCase,
+    snapshot_version: str,
+    input_hashes: dict[str, str],
+    evidence_result,
+    daily_result,
+    recap_result,
+    assertion_report: dict[str, Any],
+) -> ReplayRunReport:
+    return ReplayRunReport(
+        case_name=case.name,
+        trade_date=case.trade_date,
+        stock_id=case.stock_id,
+        mode=ReplayMode.FULL_REBUILD,
+        snapshot_version=snapshot_version,
+        layer_results=[
+            ReplayLayerResult(
+                layer_name="evidence",
+                action="rebuilt",
+                status=evidence_result.status,
+                affected_rows=evidence_result.affected_rows,
+            ),
+            ReplayLayerResult(
+                layer_name="daily",
+                action="rebuilt",
+                status=daily_result.status,
+                affected_rows=daily_result.affected_rows,
+            ),
+            ReplayLayerResult(
+                layer_name="recap",
+                action="rebuilt",
+                status=recap_result.status,
+                affected_rows=recap_result.affected_rows,
+            ),
+        ],
+        assertions={
+            **assertion_report,
+            "input_hashes": input_hashes,
+        },
+    )
+
+
+async def _write_live_replay_manifests(
+    *,
+    facade: _ReplayDatabaseStockFacade,
+    trade_date: date,
+    snapshot_version: str,
+    algorithm_versions: dict[str, str],
+    input_hashes: dict[str, str],
+    batch_id: str,
+    trace_id: str,
+    evidence_result,
+    daily_result,
+    recap_result,
+) -> None:
+    store = ReplayManifestGatewayAdapter(facade)
+    for layer_name, result in (
+        ("evidence", evidence_result),
+        ("daily", daily_result),
+        ("recap", recap_result),
+    ):
+        await store.upsert_layer_manifest(
+            ReplayLayerManifest(
+                trade_date=trade_date,
+                layer_name=layer_name,
+                snapshot_version=snapshot_version,
+                algorithm_version=algorithm_versions[layer_name],
+                input_hash=input_hashes.get(layer_name, ""),
+                output_hash=str((result.metrics or {}).get("output_hash") or ""),
+                row_count=int(result.affected_rows or 0),
+                status=str(result.status or ""),
+                batch_id=batch_id,
+                trace_id=trace_id,
+            )
+        )
+
+
 async def _assert_required_schema(gateway: DatabaseGateway, *, pre_market: bool = False) -> None:
     required_tables = {
         "stock_daily_snapshot",
@@ -409,7 +612,7 @@ async def run_post_market_replay(
             cache_port=None,
         )
 
-        _evidence_result = await evidence_job.execute(
+        evidence_result = await evidence_job.execute(
             trade_date=trade_date,
             snapshot_version=snapshot_version,
             batch_id=batch_id,
@@ -434,6 +637,45 @@ async def run_post_market_replay(
             read_port=read_port,
             target_stock_ids=["002361.SZ", "605060.SH"],
         )
+        case = _case_for_sample(trade_date=trade_date, sample_name=sample_name)
+        assertion_service = ReplayAssertionService(read_port)
+        assertion_report = await assertion_service.assert_case(case)
+        algorithm_versions = {
+            "identity": "identity.v1",
+            "evidence": "theme_cycle_evidence_daily.v1",
+            "daily": "daily_snapshot.v1",
+            "recap": "post_market_recap.v1",
+        }
+        input_hashes = await _build_replay_input_hashes(
+            trade_date=trade_date,
+            read_port=read_port,
+            algorithm_versions=algorithm_versions,
+        )
+        await _write_live_replay_manifests(
+            facade=facade,
+            trade_date=trade_date,
+            snapshot_version=snapshot_version,
+            algorithm_versions=algorithm_versions,
+            input_hashes=input_hashes,
+            batch_id=batch_id,
+            trace_id=trace_id,
+            evidence_result=evidence_result,
+            daily_result=daily_result,
+            recap_result=recap_result,
+        )
+        replay_report = _replay_run_report_from_live_result(
+            case=case,
+            snapshot_version=snapshot_version,
+            input_hashes=input_hashes,
+            evidence_result=evidence_result,
+            daily_result=daily_result,
+            recap_result=recap_result,
+            assertion_report=assertion_report,
+        )
+        replay_report_paths = ReplayReportWriter().write_matrix(
+            trade_date=trade_date,
+            reports=[replay_report],
+        )
 
         return ReplayExecutionResult(
             trade_date=trade_date,
@@ -444,6 +686,9 @@ async def run_post_market_replay(
             recap_status=recap_result.status,
             recap_doc=recap_doc,
             target_diagnostics=target_diagnostics,
+            assertion_report=assertion_report,
+            replay_report_paths=replay_report_paths,
+            input_hashes=input_hashes,
         )
     finally:
         if previous_gate_mode is None:

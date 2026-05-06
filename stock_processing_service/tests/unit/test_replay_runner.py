@@ -8,8 +8,10 @@ from stock_processing_service.application.replay import (
     ReplayCase,
     ReplayAssertionService,
     ReplayCaseLoader,
+    ReplayInputHashBuilder,
     ReplayLayerManifest,
     ReplayMode,
+    ReplayReportWriter,
     ReplayRunner,
 )
 from stock_processing_service.application.replay.replay_manifest import InMemoryReplayManifestStore
@@ -341,6 +343,54 @@ async def test_replay_assertion_service_asserts_recap_outputs() -> None:
 
     assert report["passed"] is True
     assert report["layer_results"]["layer_d.support_type"]["actual"] == "gap_support"
+
+
+def test_replay_input_hash_builder_is_stable() -> None:
+    h1 = ReplayInputHashBuilder.build(
+        trade_date=date(2026, 4, 7),
+        layer="recap",
+        algorithm_version="recap.v1",
+        input_row_count=3,
+        extra={"b": 2, "a": [1, 2]},
+    )
+    h2 = ReplayInputHashBuilder.build(
+        trade_date=date(2026, 4, 7),
+        layer="recap",
+        algorithm_version="recap.v1",
+        input_row_count=3,
+        extra={"a": [1, 2], "b": 2},
+    )
+    h3 = ReplayInputHashBuilder.build(
+        trade_date=date(2026, 4, 7),
+        layer="recap",
+        algorithm_version="recap.v2",
+        input_row_count=3,
+        extra={"a": [1, 2], "b": 2},
+    )
+
+    assert h1 == h2
+    assert h1 != h3
+    assert len(h1) == 64
+
+
+def test_replay_report_writer_outputs_json_and_markdown(tmp_path) -> None:
+    report = {
+        "case_name": "shenjian_2026_04_07",
+        "trade_date": "2026-04-07",
+        "stock_id": "002361.SZ",
+        "mode": "full_rebuild",
+        "ok": True,
+        "layer_results": [{"layer_name": "recap", "status": "ok"}],
+        "assertions": {"passed": True},
+    }
+    paths = ReplayReportWriter(root=tmp_path).write_matrix(
+        trade_date=date(2026, 4, 7),
+        reports=[report],
+    )
+
+    assert paths["json"].endswith("20260407/replay_matrix.json")
+    assert paths["md"].endswith("20260407/replay_matrix.md")
+    assert "shenjian_2026_04_07" in (tmp_path / "20260407" / "replay_matrix.md").read_text()
 
 
 @pytest.mark.asyncio
