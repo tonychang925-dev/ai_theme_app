@@ -2,7 +2,7 @@
 
 | case_name | trade_date | stock_id | mode | ok | layers | assertions |
 |---|---|---|---|---:|---|---|
-| liande_2026_04_15 | 2026-04-15 | 605060.SH | ReplayMode.REUSE_ALL | false | evidence:ok, daily:ok, recap:ok | passed=False |
+| liande_2026_04_15 | 2026-04-15 | 605060.SH | ReplayMode.REUSE_ALL | false | evidence:reused, daily:reused, recap:reused | passed=False; not_in_promoted_pool; observe_rank=None/10 |
 
 ## liande_2026_04_15 Failed Assertions
 

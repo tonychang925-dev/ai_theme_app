@@ -59,9 +59,18 @@ class ReplayReportWriter:
                 for r in layers
             )
             assertions = row.get("assertions") or {}
+            diagnostics = assertions.get("diagnostics") if isinstance(assertions.get("diagnostics"), dict) else {}
+            candidate_miss = diagnostics.get("candidate_miss") if isinstance(diagnostics.get("candidate_miss"), dict) else {}
+            selection = candidate_miss.get("selection") if isinstance(candidate_miss.get("selection"), dict) else {}
+            ranking = candidate_miss.get("ranking") if isinstance(candidate_miss.get("ranking"), dict) else {}
             assertion_text = "passed=" + str(assertions.get("passed", ""))
+            reason = selection.get("not_selected_reason", "")
+            rank_text = "observe_rank={}/{}".format(
+                ranking.get("observe_rank"),
+                ranking.get("observe_total"),
+            )
             lines.append(
-                "| {case} | {date} | {stock} | {mode} | {ok} | {layers} | {assertions} |".format(
+                "| {case} | {date} | {stock} | {mode} | {ok} | {layers} | {assertions}; {reason}; {rank} |".format(
                     case=row.get("case_name", ""),
                     date=row.get("trade_date", ""),
                     stock=row.get("stock_id", ""),
@@ -69,6 +78,8 @@ class ReplayReportWriter:
                     ok=str(bool(row.get("ok"))).lower(),
                     layers=layer_text.replace("|", "\\|"),
                     assertions=assertion_text.replace("|", "\\|"),
+                    reason=str(reason).replace("|", "\\|"),
+                    rank=rank_text.replace("|", "\\|"),
                 )
             )
             failed = [

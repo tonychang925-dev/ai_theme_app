@@ -2,7 +2,7 @@
 
 | case_name | trade_date | stock_id | mode | ok | layers | assertions |
 |---|---|---|---|---:|---|---|
-| weike_2026_04_23 | 2026-04-23 | 600152.SH | ReplayMode.REUSE_ALL | false | evidence:ok, daily:ok, recap:ok | passed=False |
+| weike_2026_04_23 | 2026-04-23 | 600152.SH | ReplayMode.REUSE_ALL | false | evidence:reused, daily:reused, recap:reused | passed=False; missing_candidate_row; observe_rank=None/10 |
 
 ## weike_2026_04_23 Failed Assertions
 

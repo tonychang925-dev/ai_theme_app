@@ -459,6 +459,8 @@ async def test_replay_assertion_service_supports_layer_a_b_expected_fields() -> 
     assert report["passed"] is True
     assert report["layer_results"]["layer_a.identity_status"]["passed"] is True
     assert report["layer_results"]["layer_b.final_cycle_state_in"]["actual"] == "repair"
+    assert report["diagnostics"]["candidate_miss"]["selection"]["not_selected_reason"] == "selected"
+    assert report["diagnostics"]["layer_b_summary"]["layer_b"]["cycle"]["final_cycle_state"] == "repair"
 
 
 @pytest.mark.asyncio

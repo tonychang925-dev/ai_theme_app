@@ -4,28 +4,28 @@
     "trade_date": "2026-04-07",
     "stock_id": "002361.SZ",
     "mode": "ReplayMode.REUSE_ALL",
-    "snapshot_version": "replay_2026-04-07_shenjian_codex2",
+    "snapshot_version": "existing_snapshot_2026-04-07",
     "layer_results": [
       {
         "layer_name": "evidence",
-        "action": "manifest",
-        "status": "ok",
-        "affected_rows": 659,
-        "reason": ""
+        "action": "read_existing_snapshot",
+        "status": "reused",
+        "affected_rows": 0,
+        "reason": "report_regeneration"
       },
       {
         "layer_name": "daily",
-        "action": "manifest",
-        "status": "ok",
-        "affected_rows": 210272,
-        "reason": ""
+        "action": "read_existing_snapshot",
+        "status": "reused",
+        "affected_rows": 0,
+        "reason": "report_regeneration"
       },
       {
         "layer_name": "recap",
-        "action": "manifest",
-        "status": "ok",
-        "affected_rows": 1,
-        "reason": ""
+        "action": "read_existing_snapshot",
+        "status": "reused",
+        "affected_rows": 0,
+        "reason": "report_regeneration"
       }
     ],
     "assertions": {
@@ -51,6 +51,306 @@
           "expected": true,
           "actual": true,
           "passed": true
+        }
+      },
+      "diagnostics": {
+        "target_best_row": {
+          "gap_hit": true,
+          "stock_id": "002361.SZ",
+          "stock_name": "神剑股份",
+          "subject_key": "9062832",
+          "gap_hit_mode": "soft",
+          "subject_name": "9062832",
+          "support_type": "gap_support",
+          "support_score": "100",
+          "evidence_rules": [
+            "pool_rank=12",
+            "pct_chg=-3.1131",
+            "prior_state=unknown",
+            "watch_score=51.85000000000000000000000000",
+            "strong_grade=B",
+            "support_score=80",
+            "support_type=gap_support",
+            "support_strength=100",
+            "support_count=3",
+            "support_combined_strength=0.8000",
+            "gap_hit=True",
+            "gap_hit_mode=soft",
+            "gap_source=gap_structure",
+            "gap_level=15.0",
+            "gap_distance_pct=1.3333",
+            "transition_type=upgrade",
+            "transition_confidence=85.000",
+            "trigger_flags=[]",
+            "gap_structure_bonus=0",
+            "gap_repair_bonus=0",
+            "gap_formal_bias_bonus=0",
+            "role_tags={'watch_tier': 'B', 'is_leader': False, 'is_front_row_core': False, 'momentum_positive': False, 'final_mainline_alive': True, 'final_cycle_state': 'divergence', 'transition_type': 'upgrade', 'transition_confidence': '85.000', 'trigger_flags': [], 'board_effect_confirmed': False, 'recent_limit_up_count': 3, 'max_consecutive_limit_up_days': 0, 'two_board_entry': True, 'prior7_limitup_days': 1, 'prior7_strong_days': 1, 'prior7_best_watch_score': '0', 'prior7_peak_rank': 99}",
+            "prior7_limitup_days=1",
+            "prior7_strong_days=1",
+            "mainline_context_score=5.833333333333333333333333333",
+            "strong_gene_score=56.81000000000000000000000000",
+            "support_hit_score=100",
+            "repair_or_takeover_score=50",
+            "weakness_valid_score=90",
+            "overheat_penalty=0"
+          ],
+          "candidate_level": "observe_only",
+          "candidate_score": "70.55524266666666714666666667"
+        },
+        "candidate_miss": {
+          "stock_id": "002361.SZ",
+          "trade_date": "2026-04-07",
+          "presence": {
+            "in_pool": true,
+            "in_refreshed": false,
+            "in_kept": true,
+            "in_promoted_pool": true,
+            "in_top_candidates": true,
+            "in_observe_candidates": true
+          },
+          "ranking": {
+            "top_rank": 3,
+            "top_total": 10,
+            "observe_rank": 3,
+            "observe_total": 10,
+            "promoted_rank": null,
+            "input_rank": null
+          },
+          "scores": {
+            "candidate_score": "70.55524266666666714666666667",
+            "support_score": "100",
+            "support_type": "gap_support",
+            "weakness_valid_score": null,
+            "strong_gene_score": null,
+            "repair_or_takeover_score": null,
+            "candidate_level": "observe_only",
+            "gap_hit": true
+          },
+          "selection": {
+            "selected": true,
+            "not_selected_reason": "selected",
+            "observe_top_n": 10,
+            "formal_top_n": 10,
+            "reject_reason": ""
+          }
+        },
+        "layer_b_summary": {
+          "trade_date": "2026-04-07",
+          "subject_key": "9062832",
+          "stock_id": "002361.SZ",
+          "layer_b": {
+            "evidence": {
+              "theme_name": "9062832",
+              "event_strength_score": "0.000",
+              "event_continuity_score": "78.000",
+              "strong_event_count_7d": 0,
+              "event_recency_days": null,
+              "leader_alive_score": "0.000",
+              "leader_breakdown_flag": true,
+              "relay_strength_score": "0.000",
+              "front_row_survival_ratio": "0.692",
+              "limit_up_count": 26,
+              "limit_down_count": 0,
+              "red_ratio": "0.692",
+              "big_drop_ratio": "0.000",
+              "front_row_strength_score": "0.000",
+              "theme_support_score": "0.000",
+              "break_start_pivot": false,
+              "above_ma5": null,
+              "above_ma10": false,
+              "above_ma20": false,
+              "theme_ret_3d": null,
+              "theme_ret_5d": null,
+              "theme_ret_10d": null,
+              "kline_quality": null
+            },
+            "cycle": {
+              "mainline_strength_score": "35.300",
+              "fade_watch_score": "13.860",
+              "fade_confirmed_score": "8.624",
+              "divergence_score": "70.620",
+              "repair_score": "51.656",
+              "final_cycle_state": "divergence",
+              "final_mainline_alive": true
+            },
+            "diff_fields": [
+              {
+                "field": "event_strength_score",
+                "new_value": "0.000",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "event_continuity_score",
+                "new_value": "78.000",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "strong_event_count_7d",
+                "new_value": 0,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "event_recency_days",
+                "new_value": null,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "leader_alive_score",
+                "new_value": "0.000",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "leader_breakdown_flag",
+                "new_value": true,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "relay_strength_score",
+                "new_value": "0.000",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "front_row_survival_ratio",
+                "new_value": "0.692",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "limit_up_count",
+                "new_value": 26,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "limit_down_count",
+                "new_value": 0,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "red_ratio",
+                "new_value": "0.692",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "big_drop_ratio",
+                "new_value": "0.000",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "front_row_strength_score",
+                "new_value": "0.000",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "theme_support_score",
+                "new_value": "0.000",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "break_start_pivot",
+                "new_value": false,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "above_ma5",
+                "new_value": null,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "above_ma10",
+                "new_value": false,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "above_ma20",
+                "new_value": false,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "theme_ret_3d",
+                "new_value": null,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "theme_ret_5d",
+                "new_value": null,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "theme_ret_10d",
+                "new_value": null,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "kline_quality",
+                "new_value": null,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "mainline_strength_score",
+                "new_value": "35.300",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "fade_watch_score",
+                "new_value": "13.860",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "fade_confirmed_score",
+                "new_value": "8.624",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "divergence_score",
+                "new_value": "70.620",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "repair_score",
+                "new_value": "51.656",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "final_cycle_state",
+                "new_value": "divergence",
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              },
+              {
+                "field": "final_mainline_alive",
+                "new_value": true,
+                "old_value": null,
+                "diff_status": "diagnostic_only"
+              }
+            ]
+          }
         }
       },
       "identity_mode": "legacy_anytime_existing_registry"
