@@ -73,6 +73,16 @@ def _json_list(value: Any) -> list[Any]:
     return []
 
 
+def _bool(value: Any) -> bool:
+    if isinstance(value, bool):
+        return value
+    if value is None:
+        return False
+    if isinstance(value, str):
+        return value.strip().lower() in {"1", "true", "t", "yes", "y"}
+    return bool(value)
+
+
 def _normalize_stock_id(value: Any) -> str:
     stock_id = str(value or "").strip().upper()
     if not stock_id:
@@ -198,6 +208,13 @@ class StockReadGatewayAdapter:
                     stock_id=_normalize_stock_id(p.get("stock_id", "")),
                     stock_name=p.get("stock_name"),
                     pool_rank=p.get("pool_rank", p.get("rank_order")),
+                    metadata={
+                        "rank_order": p.get("rank_order", p.get("pool_rank")),
+                        "pct_chg": str(p.get("pct_chg")) if p.get("pct_chg") is not None else "",
+                        "close_price": str(p.get("close_price")) if p.get("close_price") is not None else "",
+                        "limit_up": _bool(p.get("limit_up")),
+                        "is_leader": _bool(p.get("is_leader")),
+                    },
                 )
             )
         return result
