@@ -74,32 +74,48 @@ class BuildThemeCycleEvidenceDailyJob:
                 except Exception:
                     pass
 
-        # Previous cycle states: query via read port for prior trading day
+        # Previous cycle states: use prior TRADING day (not calendar -1).
         previous_states: dict[str, str] = {}
-        try:
-            prior_snaps = await self._read_port.get_prior_stock_daily_snapshots(
-                trade_date=trade_date,
-                lookback_days=3,
-                stock_ids=None,
-            )
-            for s in prior_snaps:
-                sk = str(s.payload.get("subject_key") or s.payload.get("final_cycle_state") or "")
-                cs = str(s.payload.get("final_cycle_state") or "")
-                if cs and sk and sk not in previous_states:
-                    previous_states[sk] = cs
-        except Exception:
-            pass
+        calendar = await self._read_port.get_trade_calendar(trade_date)
+        prev_trade_date = calendar.prev_trade_date if calendar else None
 
-        # Also try mainline_cycle for previous states
-        if subject_keys:
+        if prev_trade_date and subject_keys:
             try:
                 cycles = await self._read_port.get_mainline_cycle_by_subject_keys(
                     subject_keys=subject_keys,
-                    trade_date=trade_date,
+                    trade_date=prev_trade_date,
                 )
                 for c in cycles:
-                    if c.subject_key not in previous_states:
+                    if c.final_cycle_state:
                         previous_states[c.subject_key] = c.final_cycle_state
+            except Exception:
+                pass
+
+        # Fallback: prior snapshots (only use subject_key, never final_cycle_state as key).
+        if not previous_states:
+            try:
+                prior_snaps = await self._read_port.get_prior_stock_daily_snapshots(
+                    trade_date=trade_date,
+                    lookback_days=3,
+                    stock_ids=None,
+                )
+                for s in prior_snaps:
+                    sk = str(s.payload.get("subject_key") or "")
+                    cs = str(s.payload.get("final_cycle_state") or "")
+                    if sk and cs and sk not in previous_states:
+                        previous_states[sk] = cs
+            except Exception:
+                pass
+
+        # Event stats: real event data from theme_history_event
+        event_stats_by_subject: dict[str, object] = {}
+        if subject_keys:
+            try:
+                event_stats_list = await self._read_port.get_subject_event_stats(
+                    trade_date=trade_date,
+                    subject_keys=subject_keys,
+                )
+                event_stats_by_subject = {str(e.subject_key): e for e in event_stats_list}
             except Exception:
                 pass
 
@@ -109,6 +125,7 @@ class BuildThemeCycleEvidenceDailyJob:
             bars=bars,
             heat_scores=heat_scores,
             previous_states=previous_states,
+            event_stats_by_subject=event_stats_by_subject,
         )
 
         write_rows = [
@@ -145,6 +162,19 @@ class BuildThemeCycleEvidenceDailyJob:
         ]
 
         written = await self._write_port.upsert_theme_cycle_evidence_daily_rows(write_rows)
+
+        # ── Write-verify: confirm DB truth was persisted ──
+        if written > 0:
+            verify_rows = await self._read_port.get_subject_cycle_evidence_daily(
+                trade_date=trade_date,
+                subject_keys=subject_keys,
+            )
+            if len(verify_rows) < len(write_rows):
+                raise RuntimeError(
+                    f"Write-verify failed: wrote {len(write_rows)} rows but "
+                    f"only {len(verify_rows)} rows readable back. "
+                    f"DatabaseGateway upsert may be a no-op stub."
+                )
 
         await self._event_port.publish_stock_processing_event(
             EventEnvelope(
