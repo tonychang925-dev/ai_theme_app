@@ -5,6 +5,7 @@ from datetime import date
 from decimal import Decimal
 
 from stock_processing_service.contracts.dto import StockBarDTO, SubjectEventStatsDTO, SubjectStockPoolDTO
+from stock_processing_service.domain.services.leader_evidence_builder import LeaderEvidenceBuilder
 from stock_processing_service.domain.services.theme_kline_evidence_builder import (
     ThemeKlineEvidence,
     ThemeKlineEvidenceBuilder,
@@ -156,26 +157,14 @@ class ThemeCycleEvidenceDailyBuilder:
             event_recency_source = "pool_metadata"
 
         # ── Leader layer ──
-        leader_scores: list[Decimal] = []
-        for r in rows:
-            md = r.metadata if isinstance(r.metadata, dict) else {}
-            ls = self._d(md.get("leader_score") or md.get("leader_alive_score"))
-            leader_scores.append(ls)
-        leader_alive = max(leader_scores) if leader_scores else Decimal("0")
-
-        # Leader breakdown: no leader with score >= 50 and no front-row stock above 0%
-        leader_breakdown = all(s < Decimal("50") for s in leader_scores) if leader_scores else True
-
-        # Relay: average of non-leader scores in top 5
-        sorted_scores = sorted(leader_scores, reverse=True)
-        relay_pool = sorted_scores[1:6] if len(sorted_scores) > 1 else []
-        relay_strength = sum(relay_pool, start=Decimal("0")) / Decimal(str(max(len(relay_pool), 1)))
-
-        # Front row survival: positive pct_stocks / total
-        positive_bars = sum(1 for b in stock_bars if b.pct_chg > Decimal("0"))
-        front_row_survival = Decimal(str(positive_bars)) / Decimal(str(m))
+        leader_evidence = LeaderEvidenceBuilder().build(rows=rows, bars_by_stock=bars_by_stock)
+        leader_alive = leader_evidence.leader_alive_score
+        leader_breakdown = leader_evidence.leader_breakdown_flag
+        relay_strength = leader_evidence.relay_strength_score
+        front_row_survival = leader_evidence.front_row_survival_ratio
 
         # ── Board structure layer ──
+        positive_bars = sum(1 for b in stock_bars if b.pct_chg > Decimal("0"))
         limit_up_count = sum(1 for b in stock_bars if b.close_price >= b.limit_up_price or b.pct_chg >= Decimal("9.5"))
         limit_down_count = sum(1 for b in stock_bars if b.close_price <= b.limit_down_price or b.pct_chg <= Decimal("-9.5"))
         red_ratio = Decimal(str(positive_bars)) / Decimal(str(m))
@@ -228,6 +217,16 @@ class ThemeCycleEvidenceDailyBuilder:
                 "leader_breakdown_flag": leader_breakdown,
                 "relay_strength_score": str(relay_strength),
                 "front_row_survival_ratio": str(front_row_survival),
+                "leader_score_source": leader_evidence.leader_score_source,
+                "leader_stock_id": leader_evidence.leader_stock_id,
+                "leader_stock_name": leader_evidence.leader_stock_name,
+                "leader_pct_chg": str(leader_evidence.leader_pct_chg) if leader_evidence.leader_pct_chg is not None else None,
+                "leader_limit_up": leader_evidence.leader_limit_up,
+                "leader_breakdown_reason": leader_evidence.leader_breakdown_reason,
+                "front_row_alive_count": leader_evidence.front_row_alive_count,
+                "front_row_limit_up_count": leader_evidence.front_row_limit_up_count,
+                "front_row_big_drop_count": leader_evidence.front_row_big_drop_count,
+                "successor_vacuum": leader_evidence.successor_vacuum,
             },
             "board_layer": {
                 "pool_size": len(rows),
