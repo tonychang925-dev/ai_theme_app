@@ -33,7 +33,7 @@
     "color-when-multi-clauding": 15,
     "subagent-fanout-nudge": 18
   },
-  "promptQueueUseCount": 74,
+  "promptQueueUseCount": 75,
   "cachedGrowthBookFeatures": {
     "tengu-top-of-feed-tip": {
       "tip": "",

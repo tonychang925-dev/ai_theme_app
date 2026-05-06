@@ -9,6 +9,9 @@ from stock_processing_service.contracts.events import EventEnvelope, SnapshotBui
 from stock_processing_service.domain.services.theme_cycle_evidence_daily_builder import (
     ThemeCycleEvidenceDailyBuilder,
 )
+from stock_processing_service.domain.services.theme_kline_evidence_builder import (
+    ThemeKlineEvidenceBuilder,
+)
 from stock_processing_service.ports import (
     AlgorithmStateWritePort,
     IdempotencyPort,
@@ -33,12 +36,14 @@ class BuildThemeCycleEvidenceDailyJob:
         event_port: StockEventPort,
         idempotency_port: IdempotencyPort,
         builder: ThemeCycleEvidenceDailyBuilder | None = None,
+        kline_builder: ThemeKlineEvidenceBuilder | None = None,
     ) -> None:
         self._read_port = read_port
         self._write_port = write_port
         self._event_port = event_port
         self._idempotency_port = idempotency_port
         self._builder = builder or ThemeCycleEvidenceDailyBuilder()
+        self._kline_builder = kline_builder or ThemeKlineEvidenceBuilder()
 
     async def execute(
         self,
@@ -127,6 +132,43 @@ class BuildThemeCycleEvidenceDailyJob:
         if not event_stats_by_subject:
             warnings.append("event_stats_empty:falling_back_to_pool_metadata")
 
+        # ── K-line evidence: build from historical bars ──
+        kline_evidence_by_subject: dict[str, object] = {}
+        if subject_keys:
+            try:
+                from datetime import timedelta
+                start_date = trade_date - timedelta(days=ThemeKlineEvidenceBuilder.LOOKBACK_BARS + 5)
+                history_bars = await self._read_port.get_stock_daily_bars_range(
+                    start_date=start_date,
+                    end_date=trade_date,
+                    stock_ids=None,
+                )
+                # Group by date
+                bars_by_date: dict[str, list[object]] = {}
+                trade_dates_set: set[str] = set()
+                for b in history_bars:
+                    td_str = str(getattr(b, "trade_date", "")) if not isinstance(b, dict) else str(b.get("trade_date", ""))
+                    if td_str:
+                        bars_by_date.setdefault(td_str, []).append(b)
+                        trade_dates_set.add(td_str)
+                sorted_dates = sorted(trade_dates_set)
+
+                # Per-subject K-line evidence
+                pools_by_subject: dict[str, list[str]] = {}
+                for r in pool_rows:
+                    pools_by_subject.setdefault(r.subject_key, []).append(r.stock_id)
+
+                for sk, stock_ids in pools_by_subject.items():
+                    kl = self._kline_builder.build_one(
+                        subject_key=sk,
+                        stock_ids=list(set(stock_ids)),
+                        bars_by_date=bars_by_date,
+                        trade_dates=sorted_dates,
+                    )
+                    kline_evidence_by_subject[sk] = kl
+            except Exception as e:
+                warnings.append(f"kline_evidence_build_failed:{type(e).__name__}:{e}")
+
         rows = self._builder.build_many(
             trade_date=trade_date,
             pool_rows=pool_rows,
@@ -134,10 +176,20 @@ class BuildThemeCycleEvidenceDailyJob:
             heat_scores=heat_scores,
             previous_states=previous_states,
             event_stats_by_subject=event_stats_by_subject,
+            kline_evidence_by_subject=kline_evidence_by_subject,
         )
 
-        write_rows = [
-            {
+        write_rows = []
+        for r in rows:
+            _ev = dict(r.evidence_json) if r.evidence_json else {}
+            _ev.setdefault("meta", {})
+            _ev["meta"].update({
+                "snapshot_version": snapshot_version,
+                "batch_id": batch_id,
+                "trace_id": trace_id,
+                "previous_cycle_state": r.previous_cycle_state,
+            })
+            write_rows.append({
                 "subject_key": r.subject_key,
                 "theme_name": r.theme_name,
                 "trade_date": r.trade_date,
@@ -161,13 +213,12 @@ class BuildThemeCycleEvidenceDailyJob:
                 "above_ma10": r.above_ma10,
                 "above_ma20": r.above_ma20,
                 "previous_cycle_state": r.previous_cycle_state,
-                "evidence_json": r.evidence_json,
+                "evidence_json": _ev,
                 "snapshot_version": snapshot_version,
                 "batch_id": batch_id,
                 "trace_id": trace_id,
-            }
-            for r in rows
-        ]
+            })
+        # ── End write_rows loop ──
 
         written = await self._write_port.upsert_theme_cycle_evidence_daily_rows(write_rows)
 
@@ -177,11 +228,19 @@ class BuildThemeCycleEvidenceDailyJob:
                 trade_date=trade_date,
                 subject_keys=subject_keys,
             )
+            verify_keys = {str(r.get("subject_key") or "") for r in verify_rows}
+            write_keys = {str(r.get("subject_key") or "") for r in write_rows}
+            missing_keys = write_keys - verify_keys
             if len(verify_rows) < len(write_rows):
                 raise RuntimeError(
                     f"Write-verify failed: wrote {len(write_rows)} rows but "
                     f"only {len(verify_rows)} rows readable back. "
+                    f"Missing subject_keys: {sorted(missing_keys)[:20]}. "
                     f"DatabaseGateway upsert may be a no-op stub."
+                )
+            if missing_keys:
+                warnings.append(
+                    f"write_verify_partial:missing_{len(missing_keys)}_of_{len(write_keys)}_subject_keys"
                 )
 
         await self._event_port.publish_stock_processing_event(
@@ -228,6 +287,8 @@ class BuildThemeCycleEvidenceDailyJob:
                 "event_stats_hit_count": len(event_stats_by_subject),
                 "prev_trade_date_missing": prev_trade_date_missing,
                 "evidence_event_source": "event_stats" if event_stats_by_subject else "pool_metadata",
+                "kline_evidence_hit_count": len(kline_evidence_by_subject),
+                "kline_evidence_source": "theme_kline_evidence_builder" if kline_evidence_by_subject else "none",
             },
             published_events=["snapshot_built"],
         )
