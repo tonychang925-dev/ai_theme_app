@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from datetime import date
 from decimal import Decimal
 
-from stock_processing_service.contracts.dto import StockBarDTO, SubjectStockPoolDTO
+from stock_processing_service.contracts.dto import StockBarDTO, SubjectEventStatsDTO, SubjectStockPoolDTO
 
 
 @dataclass(frozen=True)
@@ -61,11 +61,14 @@ class ThemeCycleEvidenceDailyBuilder:
         bars: list[StockBarDTO],
         heat_scores: dict[str, Decimal],
         previous_states: dict[str, str],
+        event_stats_by_subject: dict[str, SubjectEventStatsDTO] | None = None,
     ) -> list[ThemeCycleEvidenceDailyRow]:
         bars_by_stock = {b.stock_id: b for b in bars}
         subject_pools: dict[str, list[SubjectStockPoolDTO]] = {}
         for r in pool_rows:
             subject_pools.setdefault(r.subject_key, []).append(r)
+
+        _event_stats = event_stats_by_subject or {}
 
         out: list[ThemeCycleEvidenceDailyRow] = []
         for subject_key, rows in subject_pools.items():
@@ -77,6 +80,7 @@ class ThemeCycleEvidenceDailyBuilder:
                 bars_by_stock=bars_by_stock,
                 heat_score=heat_scores.get(subject_key, Decimal("0")),
                 previous_state=previous_states.get(subject_key, "unknown"),
+                event_stats=_event_stats.get(subject_key),
             )
             out.append(row)
         return out
@@ -102,30 +106,40 @@ class ThemeCycleEvidenceDailyBuilder:
         bars_by_stock: dict[str, StockBarDTO],
         heat_score: Decimal,
         previous_state: str,
+        event_stats: SubjectEventStatsDTO | None = None,
     ) -> ThemeCycleEvidenceDailyRow:
         n = max(len(rows), 1)
         stock_bars = [bars_by_stock[r.stock_id] for r in rows if r.stock_id in bars_by_stock]
         m = max(len(stock_bars), 1)
 
         # ── Event layer ──
-        event_scores: list[Decimal] = []
-        for r in rows:
-            md = r.metadata if isinstance(r.metadata, dict) else {}
-            es = self._d(md.get("event_score") or md.get("event_strength_score"))
-            event_scores.append(es)
-        event_strength = sum(event_scores, start=Decimal("0")) / Decimal(str(len(event_scores))) if event_scores else Decimal("0")
-
-        # Continuity: inferred from hot_days and event consistency
-        hot_days_5d = sum(1 for r in rows if int((r.metadata or {}).get("hot_days_5d") or 0) >= 1)
-        event_continuity = min(Decimal("100"), Decimal(str(hot_days_5d * 15 + len(rows) * 3)))
-
-        # Strong events: event_score >= 70
-        strong_count = sum(1 for s in event_scores if s >= Decimal("70"))
-        event_count_3d = sum(1 for r in rows if int((r.metadata or {}).get("event_count_3d") or 0) > 0)
-
-        # Recency: from pool metadata or default to heat recency estimate
-        event_recency_raw = [r.metadata.get("event_recency_days") for r in rows if isinstance(r.metadata, dict) and r.metadata.get("event_recency_days") is not None]
-        event_recency = int(min(event_recency_raw)) if event_recency_raw else None
+        if event_stats is not None:
+            # Real event stats from theme_history_event (preferred).
+            event_strength = min(
+                Decimal("100"),
+                Decimal(str(event_stats.today_event_count * 14 + event_stats.key_event_count * 8 + event_stats.distinct_event_days * 6)),
+            )
+            event_continuity = min(
+                Decimal("100"),
+                Decimal(str(event_stats.distinct_event_days * 15 + event_stats.recent_event_count * 3)),
+            )
+            strong_count = event_stats.key_event_count
+            event_count_3d = event_stats.today_event_count
+            event_recency = event_stats.distinct_event_days if event_stats.distinct_event_days > 0 else None
+        else:
+            # Fallback: pool metadata (weaker, use only when event_stats unavailable).
+            event_scores: list[Decimal] = []
+            for r in rows:
+                md = r.metadata if isinstance(r.metadata, dict) else {}
+                es = self._d(md.get("event_score") or md.get("event_strength_score"))
+                event_scores.append(es)
+            event_strength = sum(event_scores, start=Decimal("0")) / Decimal(str(len(event_scores))) if event_scores else Decimal("0")
+            hot_days_5d = sum(1 for r in rows if int((r.metadata or {}).get("hot_days_5d") or 0) >= 1)
+            event_continuity = min(Decimal("100"), Decimal(str(hot_days_5d * 15 + len(rows) * 3)))
+            strong_count = sum(1 for s in event_scores if s >= Decimal("70"))
+            event_count_3d = sum(1 for r in rows if int((r.metadata or {}).get("event_count_3d") or 0) > 0)
+            event_recency_raw = [r.metadata.get("event_recency_days") for r in rows if isinstance(r.metadata, dict) and r.metadata.get("event_recency_days") is not None]
+            event_recency = int(min(event_recency_raw)) if event_recency_raw else None
 
         # ── Leader layer ──
         leader_scores: list[Decimal] = []
