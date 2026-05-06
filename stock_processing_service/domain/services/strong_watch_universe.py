@@ -11,15 +11,6 @@ from stock_processing_service.domain.services.strong_watch_contracts import (
     UNIVERSE_REQUIRED_IDENTITY_FIELDS,
 )
 
-# —— 覆盖策略常量 ——
-
-# 当 identity 已确认为主线但 cycle 数据缺失时，使用的推断 cycle 状态
-# 保守策略: final_mainline_alive=False, 归入 observe (不自动升级为 formal)
-# 当 Layer B 覆盖提升后，真实 cycle 数据将自然替代推断值
-_INFERRED_CYCLE_STATE = "unknown"
-_INFERRED_MAINLINE_ALIVE = False
-
-
 @dataclass(frozen=True)
 class SubjectIdentity:
     subject_key: str
@@ -123,27 +114,6 @@ class StrongWatchUniverseBuilder:
             )
         return None
 
-    # ── 覆盖策略: cycle 推断 (Phase 0) ──
-
-    @staticmethod
-    def _infer_cycle_for_confirmed_identity(subject_key: str) -> CycleStatus:
-        """
-        当 identity 已确认为主线但 cycle 数据缺失时，使用保守推断值。
-        推断的 cycle 保证 subject 不会被 blocked，但也不会自动升级为 formal
-        (final_mainline_alive=False)，确保只有真实 B 层数据才能触发 formal 主线路径。
-        当 Layer B 覆盖提升后，真实 cycle 数据会自然替代推断值。
-        """
-        return CycleStatus(
-            subject_key=subject_key,
-            final_cycle_state=_INFERRED_CYCLE_STATE,
-            final_mainline_alive=_INFERRED_MAINLINE_ALIVE,
-            transition_type="",
-            transition_confidence=Decimal("0"),
-            trigger_flags=[],
-            fade_watch=False,
-            fade_confirmed=False,
-        )
-
     def build_universe(
         self,
         *,
@@ -197,22 +167,16 @@ class StrongWatchUniverseBuilder:
                 continue
 
             # identity 存在, 处理 cycle 缺失的情况
+            # Inferred cycle removed — strict document path: no cycle → blocked.
             if cycle is None:
                 identity_confirmed_prelim = (
                     identity.identity_status == "confirmed" and identity.is_main_theme
                 )
-                if identity_confirmed_prelim and os.environ.get("LAYER_C_ALLOW_INFERRED_CYCLE", "0") == "1":
-                    # B层覆盖缺口: identity 已确认为主线, 但 cycle 数据尚未生成
-                    # 使用保守推断 cycle (alive=False), 归入 observe
-                    # Gate: LAYER_C_ALLOW_INFERRED_CYCLE (Phase 1: default 0, strict document path)
-                    cycle = self._infer_cycle_for_confirmed_identity(subject_key)
-                    cycle_source = "inferred"
-                elif identity_confirmed_prelim:
-                    # Gate closed: missing cycle → blocked (strict document path)
+                if identity_confirmed_prelim:
                     blocked_rows.append(row)
                     diagnostics[stock_id] = {
                         "universe_status": "blocked",
-                        "universe_reason": "identity_confirmed_but_cycle_missing_inferred_disabled",
+                        "universe_reason": "identity_confirmed_but_cycle_missing",
                         "identity_present": True,
                         "cycle_present": False,
                         "identity_status": identity.identity_status,
@@ -272,8 +236,8 @@ class StrongWatchUniverseBuilder:
                 }
                 continue
 
-            # Gate: LAYER_C_ALLOW_TWO_BOARD_BYPASS (Phase 1: default 1, Phase 2: default 0)
-            if two_board_entry and os.environ.get("LAYER_C_ALLOW_TWO_BOARD_BYPASS", "1") == "1":
+            # two_board bypass removed — strict document path only.
+            if two_board_entry and os.environ.get("LAYER_C_ALLOW_TWO_BOARD_BYPASS", "0") == "1":
                 formal_rows.append(row)
                 diagnostics[stock_id] = {
                     "universe_status": "formal",

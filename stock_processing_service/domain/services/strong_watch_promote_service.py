@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import os
 from datetime import date
 from decimal import Decimal
 
@@ -9,29 +8,22 @@ from stock_processing_service.domain.services.strong_watch_refresh_service impor
 
 
 class StrongWatchPromoteService:
-    """Layer C promote: AdmissionPolicy-driven output, no independent business gates.
+    """Layer C promote: AdmissionPolicy-driven output only.
 
-    V2 (LAYER_C_PROMOTE_V2=1, default):
-      - Consumes admission_status from AdmissionPolicy.
-      - formal     → promote_bucket="formal"
-      - observe_only → promote_bucket="observe"
-      - reject / removed → dropped from promote output.
-      - strong_grade / watch_score are sorting factors only, NOT hard reject gates.
-
-    Legacy (LAYER_C_PROMOTE_V2=0):
-      - Original S/A grade + watch_score >= 78 hard gates.
+    - Consumes admission_status from AdmissionPolicy.
+    - formal → promote_bucket="formal"
+    - observe_only → promote_bucket="observe"
+    - reject / removed → dropped.
+    - strong_grade / watch_score are sorting factors, NOT hard gates.
+    - No legacy fallback.
     """
 
     def promote(
         self,
         trade_date: date,
         rows: list[StrongWatchRecord],
-        top_n: int = 20,
+        top_n: int = 100,
     ) -> list[SubjectStockPoolDTO]:
-        if os.environ.get("LAYER_C_PROMOTE_V2", "1") != "1":
-            return self._legacy_promote(trade_date, rows)
-
-        # Build (record, bucket, reason) triples — no dataclass mutation needed.
         eligible: list[tuple[StrongWatchRecord, str, str]] = []
         for row in rows:
             if row.watch_status == "removed":
@@ -41,7 +33,6 @@ class StrongWatchPromoteService:
                 eligible.append((row, "formal", "admission_formal"))
             elif admission == "observe_only":
                 eligible.append((row, "observe", "admission_observe_only"))
-            # reject or unknown → dropped
 
         ranked = sorted(
             eligible,
@@ -104,60 +95,6 @@ class StrongWatchPromoteService:
                 "promote_reason": promote_reason,
             },
         )
-
-    # ── Legacy path (LAYER_C_PROMOTE_V2=0) ──
-
-    @staticmethod
-    def _legacy_promote(
-        trade_date: date,
-        rows: list[StrongWatchRecord],
-    ) -> list[SubjectStockPoolDTO]:
-        promoted: list[SubjectStockPoolDTO] = []
-        for row in rows:
-            if str(getattr(row, "admission_status", "formal") or "formal") != "formal":
-                continue
-            if row.strong_grade not in {"S", "A"}:
-                continue
-            if row.watch_score < 78:
-                continue
-            promoted.append(
-                SubjectStockPoolDTO(
-                    trade_date=trade_date,
-                    subject_key=row.subject_key,
-                    subject_name=row.subject_name,
-                    stock_id=row.stock_id,
-                    stock_name=row.stock_name,
-                    pool_rank=row.pool_rank,
-                    metadata={
-                        "candidate_source": row.source,
-                        "watch_score": str(row.watch_score),
-                        "strong_grade": row.strong_grade,
-                        "support_type": row.support_type,
-                        "support_level": str(row.support_level),
-                        "support_score": str(row.support_score),
-                        "support_refs": row.support_refs,
-                        "support_count": row.support_count,
-                        "support_combined_strength": str(row.support_combined_strength),
-                        "gap_hit": row.gap_hit,
-                        "gap_hit_mode": row.gap_hit_mode,
-                        "gap_source": row.gap_source,
-                        "gap_level": str(row.gap_level),
-                        "gap_distance_pct": str(row.gap_distance_pct),
-                        "role_tags": row.role_tags,
-                        "mainline_context_score": str(row.mainline_context_score),
-                        "strong_gene_score": str(row.strong_gene_score),
-                        "weakness_tolerance_score": str(row.weakness_tolerance_score),
-                        "prior7_limitup_days": row.prior7_limitup_days,
-                        "prior7_strong_days": row.prior7_strong_days,
-                        "prior7_best_watch_score": str(row.prior7_best_watch_score),
-                        "prior7_peak_rank": row.prior7_peak_rank,
-                        "watch_status": row.watch_status,
-                        "kept_because": row.kept_because,
-                        "admission_status": row.admission_status,
-                    },
-                )
-            )
-        return promoted
 
     @staticmethod
     def _support_priority(support_type: str) -> int:
