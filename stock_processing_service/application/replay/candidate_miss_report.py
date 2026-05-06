@@ -82,6 +82,10 @@ class CandidateMissReportBuilder:
             reason = "in_input_but_not_promoted"
 
         c_layer_trace = {
+            "seed_gate_pass": row.get("seed_gate_pass"),
+            "seed_gate_reason": row.get("seed_gate_reason"),
+            "strong_gene_seed": row.get("strong_gene_seed"),
+            "strong_gene_seed_reason": row.get("strong_gene_seed_reason"),
             "input_rank": input_rank,
             "refresh_status": input_row.get("watch_status"),
             "kept": in_promoted or in_top or in_observe,

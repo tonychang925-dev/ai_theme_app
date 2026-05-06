@@ -14,6 +14,7 @@ from .strong_watch_admission_policy import StrongWatchAdmissionDecision, StrongW
 from .strong_watch_history_service import StrongWatchHistoryRecord, StrongWatchHistoryService
 from .strong_watch_refresh_service import StrongWatchRecord, StrongWatchRefreshService
 from .strong_watch_roll_forward_service import StrongWatchRollForwardService
+from .strong_watch_preseed_gene_enricher import StrongWatchPreSeedGeneEnricher
 from .strong_watch_seed_service import StrongWatchSeedService
 from .strong_watch_service import StrongWatchService
 from .strong_watch_service import StrongWatchShadowSummary
@@ -55,6 +56,7 @@ __all__ = [
     "IdentityDecider",
     "StrongWatchSeedService",
     "StrongWatchRollForwardService",
+    "StrongWatchPreSeedGeneEnricher",
     "StrongWatchAdmissionPolicy",
     "StrongWatchAdmissionDecision",
     "StrongWatchUniverseBuilder",

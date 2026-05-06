@@ -5,9 +5,11 @@ from decimal import Decimal
 
 from stock_processing_service.contracts.dto import PriorSnapshotDTO, StockBarDTO, SubjectStockPoolDTO
 from stock_processing_service.domain.services import StrongWatchService
+from stock_processing_service.domain.services.strong_watch_preseed_gene_enricher import StrongWatchPreSeedGeneEnricher
 from stock_processing_service.domain.services.strong_watch_promote_service import StrongWatchPromoteService
 from stock_processing_service.domain.services.strong_watch_prune_service import StrongWatchPruneService
 from stock_processing_service.domain.services.strong_watch_refresh_service import StrongWatchRecord
+from stock_processing_service.domain.services.strong_watch_seed_service import StrongWatchSeedService
 
 
 def _identity_cycle(subject_key: str) -> tuple[dict[str, dict[str, object]], dict[str, dict[str, object]]]:
@@ -26,6 +28,64 @@ def _identity_cycle(subject_key: str) -> tuple[dict[str, dict[str, object]], dic
             }
         },
     )
+
+
+def test_preseed_two_board_gene_breaks_seed_rank_gate_without_confirming_mainline() -> None:
+    trade_date = date(2026, 4, 23)
+    pool_rows = [
+        SubjectStockPoolDTO(
+            trade_date=trade_date,
+            subject_key="edge_theme",
+            subject_name="Edge Theme",
+            stock_id="600152.SH",
+            stock_name="Vekay",
+            pool_rank=55,
+        )
+    ]
+    bars = [
+        StockBarDTO(
+            trade_date=trade_date,
+            stock_id="600152.SH",
+            stock_name="Vekay",
+            open_price=Decimal("10"),
+            high_price=Decimal("10.2"),
+            low_price=Decimal("9.6"),
+            close_price=Decimal("9.8"),
+            pre_close=Decimal("10"),
+            pct_chg=Decimal("-2"),
+            volume=Decimal("10000"),
+            amount=Decimal("100000"),
+            limit_up_price=Decimal("11"),
+            limit_down_price=Decimal("9"),
+        )
+    ]
+    prior_rows = [
+        PriorSnapshotDTO(
+            trade_date=date(2026, 4, 21),
+            stock_id="600152.SH",
+            snapshot_version="v1",
+            payload={"pct_chg": "9.99"},
+        ),
+        PriorSnapshotDTO(
+            trade_date=date(2026, 4, 22),
+            stock_id="600152.SH",
+            snapshot_version="v1",
+            payload={"pct_chg": "10.01"},
+        ),
+    ]
+
+    enriched = StrongWatchPreSeedGeneEnricher().enrich(
+        pool_rows=pool_rows,
+        bars=bars,
+        prior_rows=prior_rows,
+    )
+    seeded = StrongWatchSeedService().seed(enriched)
+
+    assert [row.stock_id for row in seeded] == ["600152.SH"]
+    assert seeded[0].metadata["strong_gene_seed"] is True
+    assert seeded[0].metadata["two_board_entry"] is True
+    assert seeded[0].metadata["seed_gate_reason"] == "two_board_entry"
+    assert seeded[0].metadata["identity_scope"] == "independent_stock_signal"
 
 
 def test_strong_watch_promote_pipeline_respects_old_chain_thresholds() -> None:
