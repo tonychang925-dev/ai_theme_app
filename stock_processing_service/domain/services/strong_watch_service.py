@@ -155,7 +155,9 @@ class StrongWatchService:
                 )
                 continue
             role_tags = r.role_tags if isinstance(r.role_tags, dict) else {}
-            renewal_signal = bool(role_tags.get("two_board_entry") or False)
+            renewal_signal = bool(
+                role_tags.get("renewal_signal") or role_tags.get("watch_age_reset") or False
+            )
             if renewal_signal and r.watch_status in {"active", "weakening"}:
                 # Refresh triggered renewal reset — preserve the reset values.
                 merged_refreshed.append(
