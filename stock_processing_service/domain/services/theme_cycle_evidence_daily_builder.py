@@ -239,6 +239,8 @@ class ThemeCycleEvidenceDailyBuilder:
             },
             "kline_layer": {
                 "source": kline_source,
+                "kline_quality": kline.kline_quality if kline else "none",
+                "history_days": kline.history_days if kline else 0,
                 "theme_support_score": str(theme_support),
                 "break_start_pivot": break_start_pivot,
                 "above_ma10": above_ma10,

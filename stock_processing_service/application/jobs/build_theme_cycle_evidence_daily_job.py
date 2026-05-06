@@ -137,7 +137,7 @@ class BuildThemeCycleEvidenceDailyJob:
         if subject_keys:
             try:
                 from datetime import timedelta
-                start_date = trade_date - timedelta(days=ThemeKlineEvidenceBuilder.LOOKBACK_BARS + 5)
+                start_date = trade_date - timedelta(days=ThemeKlineEvidenceBuilder.HISTORY_NATURAL_DAYS)
                 history_bars = await self._read_port.get_stock_daily_bars_range(
                     start_date=start_date,
                     end_date=trade_date,
@@ -289,6 +289,14 @@ class BuildThemeCycleEvidenceDailyJob:
                 "evidence_event_source": "event_stats" if event_stats_by_subject else "pool_metadata",
                 "kline_evidence_hit_count": len(kline_evidence_by_subject),
                 "kline_evidence_source": "theme_kline_evidence_builder" if kline_evidence_by_subject else "none",
+                "kline_ok_count": sum(
+                    1 for v in kline_evidence_by_subject.values()
+                    if getattr(v, "kline_quality", "") == "ok"
+                ),
+                "kline_insufficient_count": sum(
+                    1 for v in kline_evidence_by_subject.values()
+                    if getattr(v, "kline_quality", "") in {"insufficient_history", "minimal"}
+                ),
             },
             published_events=["snapshot_built"],
         )
