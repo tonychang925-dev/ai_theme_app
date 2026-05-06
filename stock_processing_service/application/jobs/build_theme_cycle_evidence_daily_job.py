@@ -136,12 +136,14 @@ class BuildThemeCycleEvidenceDailyJob:
         kline_evidence_by_subject: dict[str, object] = {}
         history_bar_count = 0
         unique_stock_count = 0
+        history_query_scope = "none"
         if subject_keys:
             try:
                 from datetime import timedelta
                 start_date = trade_date - timedelta(days=ThemeKlineEvidenceBuilder.HISTORY_NATURAL_DAYS)
                 all_pool_stock_ids = sorted({r.stock_id for r in pool_rows if r.stock_id})
                 unique_stock_count = len(all_pool_stock_ids)
+                history_query_scope = "pool_stock_ids" if all_pool_stock_ids else "all_stocks_empty_pool"
                 history_bars = await self._read_port.get_stock_daily_bars_range(
                     start_date=start_date,
                     end_date=trade_date,
@@ -295,6 +297,7 @@ class BuildThemeCycleEvidenceDailyJob:
                 "kline_evidence_hit_count": len(kline_evidence_by_subject),
                 "history_bar_count": history_bar_count,
                 "unique_stock_count": unique_stock_count,
+                "history_query_scope": history_query_scope,
                 "kline_evidence_source": "theme_kline_evidence_builder" if kline_evidence_by_subject else "none",
                 "kline_ok_count": sum(
                     1 for v in kline_evidence_by_subject.values()

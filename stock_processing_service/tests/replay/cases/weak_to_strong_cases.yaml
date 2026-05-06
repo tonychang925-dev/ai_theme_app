@@ -36,5 +36,8 @@
     layer_c:
       present_in_promoted_pool: true
     layer_d:
-      candidate_level_in: ["formal", "observe_only"]
-      allow_reject_reason: "末端跳水"
+      allowed_outcomes:
+        - candidate_level: "formal"
+        - candidate_level: "observe_only"
+        - candidate_level: "reject"
+          reject_reason_contains: "末端跳水"
