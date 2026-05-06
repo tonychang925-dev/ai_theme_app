@@ -613,3 +613,79 @@
   - 线上回归风险下降；发布检查耗时略增。
 - Trigger
   - 任一门禁失败或线上回归事件发生。
+
+---
+
+## 增量附录（2026-05-06，P3 新旧股票链路）
+
+### ADR-P3-001: Layer B fade_confirmed 判定口径冻结
+- Context
+  - 旧链 `ThemeCycleJudgementServiceV2` 的 `fade_confirmed` 同时要求退潮分数、退潮证据数和 K 线支撑破位；新链 `SubjectCycleJudgementService` 当前主要依赖分数与证据数。
+- Decision
+  - 在字段级 diff 完成前，将该差异列为 P0 风险；后续必须通过 ADR 冻结为“补回 support_break”或“明确新链新口径并修订文档”二选一。
+- Alternatives
+  - 默认接受新链当前实现，不做专项回放。
+- Consequences
+  - 可避免主线误杀/误放行；短期需要增加退潮样本和字段级回放成本。
+- Trigger
+  - `fade_confirmed` 历史样本出现新旧链差异，或 Layer C/D 候选因周期状态漂移。
+
+### ADR-P3-002: theme_cycle_evidence_daily 作为 Layer B 唯一 DB 真源
+- Context
+  - 新链已完成 evidence 生成、写入、write-verify 和 `BuildDailySnapshotJob` fail-fast 消费。
+- Decision
+  - 生产路径只能消费 `theme_cycle_evidence_daily`；pool metadata、proxy recency、fallback 字段只能作为 diagnostic 或离线对账，不允许静默决定周期状态。
+- Alternatives
+  - 保留生产 fallback 以提升短期可用性。
+- Consequences
+  - 数据缺失会更早失败；但周期判定可解释性和回放一致性提升。
+- Trigger
+  - `event_stats_hit_count=0`、`kline_quality` 异常、DB 读回为空或 write-verify 失败。
+
+### ADR-P3-003: D1 candidate_score 公式版本化
+- Context
+  - 当前 `W2SCandidateService` 的候选评分与设计文档中的 5 维加权公式存在差异，且部分字段用于诊断而非正式评分。
+- Decision
+  - D1 评分必须引入明确版本号，并在代码、文档、回放样本中三方一致；如采用当前实现，需修订设计文档。
+- Alternatives
+  - 持续在代码中小步调参，不记录公式版本。
+- Consequences
+  - 排序解释和回放对账稳定；短期需要补充单测、样本报告和迁移说明。
+- Trigger
+  - 联德、维科等样本排序与业务预期不一致，或 observe/formal 分桶解释不一致。
+
+### ADR-P3-004: LLM 与增强数据不得覆盖 A/B/C 规则真源
+- Context
+  - LLM 复核仍是确定性 stub，龙虎榜/资金流/游资行为尚未稳定进入新链 D 层。
+- Decision
+  - LLM、龙虎榜、资金流优先作为 D 层解释、复核与报告增强；不得反向覆盖 Layer A 身份、Layer B 周期和 Layer C 入池规则真源。
+- Alternatives
+  - 将 LLM 或增强数据作为上游强判定输入。
+- Consequences
+  - 规则链路稳定性更高；边界样本的智能纠偏需要后置治理。
+- Trigger
+  - 接入真实 LLM API、龙虎榜、资金流或游资行为数据源时。
+
+### ADR-P3-005: 连续 replay matrix 作为第三阶段发布门禁
+- Context
+  - 当前 replay 已覆盖神剑、联德，但维科与反例连续矩阵不足，不能仅凭单日样本判断链路稳定。
+- Decision
+  - 第三阶段后续发布必须生成连续 replay matrix，至少包含交易日、样本、Layer A/B/C/D 状态、首个断点、candidate_level、reject_reason 和关键 diff。
+- Alternatives
+  - 继续以单个 replay 测试通过作为发布依据。
+- Consequences
+  - 发布前验证成本增加；但能定位断链首层并降低回归风险。
+- Trigger
+  - P3.next-1 之后任何涉及 evidence、cycle、strong watch、candidate、auction 的发布。
+
+### ADR-P3-006: Replay Snapshot Manifest 作为分层回放复用依据
+- Context
+  - 新链已有多张快照表和中间结果，调 D1 排序或 Layer B evidence 时不应每次重算 A/B/C/D 全链。
+- Decision
+  - 新增 `replay_snapshot_manifest`，以 `trade_date/layer_name/snapshot_version/algorithm_version/input_hash` 判断某层是否可复用；ReplayRunner 根据模式选择复用或重建。
+- Alternatives
+  - 每次 replay 都 full rebuild；或仅人工判断哪些表可复用。
+- Consequences
+  - 回放效率和可审计性提升；需要维护 algorithm_version 与 input_hash 生成规则。
+- Trigger
+  - 新增 replay 模式、批量回放样本、字段级 diff 或连续交易日矩阵时。

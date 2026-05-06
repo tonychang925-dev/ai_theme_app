@@ -4247,3 +4247,86 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             async with conn.transaction():
                 await conn.executemany(sql, payload)
         return len(payload)
+
+    async def get_replay_snapshot_manifest(
+        self,
+        trade_date: date,
+        layer_name: str,
+        snapshot_version: str,
+        algorithm_version: str,
+    ) -> Optional[Dict[str, Any]]:
+        """读取分层回放 manifest。"""
+        sql = """
+        SELECT
+            trade_date,
+            layer_name,
+            snapshot_version,
+            algorithm_version,
+            input_hash,
+            output_hash,
+            row_count,
+            status,
+            batch_id,
+            trace_id,
+            created_at
+        FROM replay_snapshot_manifest
+        WHERE trade_date = $1::date
+          AND layer_name = $2
+          AND snapshot_version = $3
+          AND algorithm_version = $4
+        """
+        async with self.pool.acquire() as conn:
+            row = await conn.fetchrow(
+                sql,
+                trade_date,
+                layer_name,
+                snapshot_version,
+                algorithm_version,
+            )
+        return dict(row) if row else None
+
+    async def upsert_replay_snapshot_manifest(self, row: Dict[str, Any]) -> int:
+        """写入分层回放 manifest。"""
+        sql = """
+        INSERT INTO replay_snapshot_manifest (
+            trade_date,
+            layer_name,
+            snapshot_version,
+            algorithm_version,
+            input_hash,
+            output_hash,
+            row_count,
+            status,
+            batch_id,
+            trace_id
+        ) VALUES (
+            $1::date, $2, $3, $4, $5, $6, $7::int, $8, $9, $10
+        )
+        ON CONFLICT (trade_date, layer_name, snapshot_version, algorithm_version)
+        DO UPDATE SET
+            input_hash = EXCLUDED.input_hash,
+            output_hash = EXCLUDED.output_hash,
+            row_count = EXCLUDED.row_count,
+            status = EXCLUDED.status,
+            batch_id = EXCLUDED.batch_id,
+            trace_id = EXCLUDED.trace_id,
+            created_at = now()
+        """
+        td = row.get("trade_date")
+        if isinstance(td, str):
+            td = date.fromisoformat(td)
+        async with self.pool.acquire() as conn:
+            await conn.execute(
+                sql,
+                td,
+                str(row.get("layer_name") or ""),
+                str(row.get("snapshot_version") or ""),
+                str(row.get("algorithm_version") or ""),
+                row.get("input_hash"),
+                row.get("output_hash"),
+                int(row.get("row_count") or 0),
+                str(row.get("status") or "ok"),
+                row.get("batch_id"),
+                row.get("trace_id"),
+            )
+        return 1

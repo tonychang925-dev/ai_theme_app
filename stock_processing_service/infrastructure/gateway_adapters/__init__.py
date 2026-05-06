@@ -4,6 +4,7 @@ from .stock_event_gateway_adapter import StockEventGatewayAdapter
 from .stock_idempotency_gateway_adapter import StockIdempotencyGatewayAdapter
 from .stock_read_gateway_adapter import StockReadGatewayAdapter
 from .stock_write_gateway_adapter import StockWriteGatewayAdapter
+from .replay_manifest_gateway_adapter import ReplayManifestGatewayAdapter
 
 __all__ = [
     "StockReadGatewayAdapter",
@@ -12,4 +13,5 @@ __all__ = [
     "StockCacheGatewayAdapter",
     "StockIdempotencyGatewayAdapter",
     "AuctionGatewayAdapter",
+    "ReplayManifestGatewayAdapter",
 ]

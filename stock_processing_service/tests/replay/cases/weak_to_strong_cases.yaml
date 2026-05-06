@@ -1,0 +1,40 @@
+- name: shenjian_2026_04_07
+  trade_date: "2026-04-07"
+  stock_id: "002361.SZ"
+  expected:
+    layer_c:
+      present_in_promoted_pool: true
+    layer_d:
+      present_in_top_candidates: true
+      support_type: "gap_support"
+      gap_hit: true
+
+- name: liande_2026_04_15
+  trade_date: "2026-04-15"
+  stock_id: "605060.SH"
+  expected:
+    layer_c:
+      present_in_promoted_pool: true
+    layer_d:
+      candidate_level: "observe_only"
+      support_type: "prev_low_support"
+      present_in_observe_candidates: true
+
+- name: weike_2026_04_22
+  trade_date: "2026-04-22"
+  stock_id: "600152.SH"
+  expected:
+    layer_c:
+      present_in_promoted_pool: true
+    layer_d:
+      candidate_level_in: ["formal", "observe_only"]
+
+- name: weike_2026_04_23
+  trade_date: "2026-04-23"
+  stock_id: "600152.SH"
+  expected:
+    layer_c:
+      present_in_promoted_pool: true
+    layer_d:
+      candidate_level_in: ["formal", "observe_only"]
+      allow_reject_reason: "末端跳水"

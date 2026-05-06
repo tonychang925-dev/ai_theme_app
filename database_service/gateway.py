@@ -918,6 +918,44 @@ class DatabaseGateway:
             logger.error(f"写入 theme_cycle_evidence_daily 失败: {e}")
             raise
 
+    async def get_replay_snapshot_manifest(
+        self,
+        trade_date,
+        layer_name: str,
+        snapshot_version: str,
+        algorithm_version: str,
+    ) -> Optional[Dict[str, Any]]:
+        """读取 replay_snapshot_manifest。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_replay_snapshot_manifest(
+                trade_date=trade_date,
+                layer_name=layer_name,
+                snapshot_version=snapshot_version,
+                algorithm_version=algorithm_version,
+            )
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(
+                "读取 replay_snapshot_manifest 失败 "
+                f"trade_date={trade_date}, layer={layer_name}: {e}"
+            )
+            raise
+
+    async def upsert_replay_snapshot_manifest(self, row: Dict[str, Any]) -> int:
+        """写入 replay_snapshot_manifest。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_replay_snapshot_manifest(row)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"写入 replay_snapshot_manifest 失败: {e}")
+            raise
+
     async def upsert_strong_watch_history_rows(self, rows: List[Dict[str, Any]]) -> int:
         """股票域显式写入：strong_stock_watch_history。"""
         try:
