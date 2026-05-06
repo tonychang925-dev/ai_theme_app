@@ -321,12 +321,18 @@ class StrongWatchRefreshService:
 
             watch_age_days = int(getattr(row, "watch_age_days", 1) or 1)
             weak_days = int(getattr(row, "weak_days", 0) or 0)
+            renewal_signal = False
+            renewal_reason = ""
+            watch_age_reset = False
             if two_board_entry and watch_status in {"active", "weakening"}:
                 # Old-chain-compatible renewal:
                 # a fresh two-board signal renews the watch window instead of
                 # allowing the previous aging counter to run out.
                 watch_age_days = 1
                 weak_days = 0
+                renewal_signal = True
+                renewal_reason = "two_board_renewal"
+                watch_age_reset = True
 
             rows.append(
                 StrongWatchRecord(
@@ -366,6 +372,9 @@ class StrongWatchRefreshService:
                         "prior7_strong_days": prior7_strong_days,
                         "prior7_best_watch_score": str(prior7_best_watch_score),
                         "prior7_peak_rank": prior7_peak_rank,
+                        "renewal_signal": renewal_signal,
+                        "renewal_reason": renewal_reason,
+                        "watch_age_reset": watch_age_reset,
                     },
                     watch_status=watch_status,
                     watch_age_days=watch_age_days,
