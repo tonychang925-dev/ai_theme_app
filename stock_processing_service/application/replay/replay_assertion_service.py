@@ -10,6 +10,14 @@ from stock_processing_service.application.replay.replay_cases import ReplayCase
 class ReplayAssertionReadPort(Protocol):
     async def get_existing_post_market_recap_snapshot(self, trade_date: date) -> Any | None: ...
 
+    async def get_mainline_identity_by_subject_keys(self, subject_keys: list[str], trade_date: date) -> list[Any]: ...
+
+    async def get_mainline_cycle_by_subject_keys(self, subject_keys: list[str], trade_date: date) -> list[Any]: ...
+
+    async def get_subject_cycle_evidence_daily(
+        self, trade_date: date, subject_keys: list[str] | None = None
+    ) -> list[dict[str, Any]]: ...
+
 
 def _as_dict(value: Any) -> dict[str, Any]:
     if value is None:
@@ -50,29 +58,39 @@ class ReplayAssertionService:
         layer_results: dict[str, dict[str, Any]] = {}
         expected = case.expected or {}
 
+        layer_a = dict(expected.get("layer_a") or {})
+        layer_b = dict(expected.get("layer_b") or {})
         layer_c = dict(expected.get("layer_c") or {})
         layer_d = dict(expected.get("layer_d") or {})
         top_candidates = self._rows(recap_doc, "top_candidates")
         observe_candidates = self._rows(recap_doc, "observe_candidates", "observe_candidates_preview")
-        promoted_pool = self._rows(
-            recap_doc,
-            "promoted_pool",
-            "promoted_pool_preview",
-            "strong_watch_input_7d_preview",
-            "strong_watch_input_preview",
-        )
+        promoted_pool = self._rows(recap_doc, "promoted_pool", "promoted_pool_preview")
+        has_promoted_pool = "promoted_pool" in recap_doc or "promoted_pool_preview" in recap_doc
 
-        best = self._target_row(case.stock_id, top_candidates, observe_candidates, promoted_pool)
+        best = self._best_target_row(case.stock_id, top_candidates, observe_candidates, promoted_pool)
         top = self._target_row(case.stock_id, top_candidates)
         observe = self._target_row(case.stock_id, observe_candidates)
         promoted = self._target_row(case.stock_id, promoted_pool)
+        subject_key = str((best or promoted or observe or top or {}).get("subject_key") or "")
+
+        if layer_a:
+            if subject_key:
+                await self._assert_layer_a(layer_results, case.trade_date, subject_key, layer_a)
+            else:
+                self._record(layer_results, "layer_a.subject_key", expected="present", actual="missing")
+
+        if layer_b:
+            if subject_key:
+                await self._assert_layer_b(layer_results, case.trade_date, subject_key, layer_b)
+            else:
+                self._record(layer_results, "layer_b.subject_key", expected="present", actual="missing")
 
         if "present_in_promoted_pool" in layer_c:
             self._record(
                 layer_results,
                 "layer_c.present_in_promoted_pool",
                 expected=bool(layer_c["present_in_promoted_pool"]),
-                actual=promoted is not None,
+                actual=(promoted is not None) if has_promoted_pool else (top is not None or observe is not None),
             )
 
         if "present_in_top_candidates" in layer_d:
@@ -136,6 +154,105 @@ class ReplayAssertionService:
             "layer_results": layer_results,
         }
 
+    async def _assert_layer_a(
+        self,
+        out: dict[str, dict[str, Any]],
+        trade_date: date,
+        subject_key: str,
+        expected: dict[str, Any],
+    ) -> None:
+        rows = await self._read_port.get_mainline_identity_by_subject_keys([subject_key], trade_date)
+        row = self._first_by_subject(rows, subject_key)
+        if row is None:
+            self._record(out, "layer_a.identity_row", expected="present", actual="missing")
+            return
+        if "identity_status" in expected:
+            self._record(
+                out,
+                "layer_a.identity_status",
+                expected=expected["identity_status"],
+                actual=row.get("identity_status"),
+            )
+        if "is_main_theme" in expected:
+            self._record(
+                out,
+                "layer_a.is_main_theme",
+                expected=bool(expected["is_main_theme"]),
+                actual=bool(row.get("is_main_theme")),
+            )
+        if "rule_version" in expected:
+            self._record(
+                out,
+                "layer_a.rule_version",
+                expected=expected["rule_version"],
+                actual=row.get("rule_version"),
+            )
+
+    async def _assert_layer_b(
+        self,
+        out: dict[str, dict[str, Any]],
+        trade_date: date,
+        subject_key: str,
+        expected: dict[str, Any],
+    ) -> None:
+        cycle_rows = await self._read_port.get_mainline_cycle_by_subject_keys([subject_key], trade_date)
+        cycle = self._first_by_subject(cycle_rows, subject_key)
+        evidence_rows = await self._read_port.get_subject_cycle_evidence_daily(
+            trade_date=trade_date,
+            subject_keys=[subject_key],
+        )
+        evidence = self._first_by_subject(evidence_rows, subject_key) or {}
+        evidence_json = evidence.get("evidence_json") if isinstance(evidence.get("evidence_json"), dict) else {}
+        kline_layer = evidence_json.get("kline_layer") if isinstance(evidence_json.get("kline_layer"), dict) else {}
+
+        if cycle is None:
+            self._record(out, "layer_b.cycle_row", expected="present", actual="missing")
+        else:
+            if "final_cycle_state" in expected:
+                self._record(
+                    out,
+                    "layer_b.final_cycle_state",
+                    expected=expected["final_cycle_state"],
+                    actual=cycle.get("final_cycle_state"),
+                )
+            if "final_cycle_state_in" in expected:
+                allowed = list(expected["final_cycle_state_in"] or [])
+                actual = cycle.get("final_cycle_state")
+                out["layer_b.final_cycle_state_in"] = {
+                    "expected": allowed,
+                    "actual": actual,
+                    "passed": actual in allowed,
+                }
+            if "final_mainline_alive" in expected:
+                self._record(
+                    out,
+                    "layer_b.final_mainline_alive",
+                    expected=bool(expected["final_mainline_alive"]),
+                    actual=bool(cycle.get("final_mainline_alive")),
+                )
+
+        if "theme_support_score" in expected:
+            self._record(
+                out,
+                "layer_b.theme_support_score",
+                expected=expected["theme_support_score"],
+                actual=evidence.get("theme_support_score"),
+            )
+        if "break_start_pivot" in expected:
+            self._record(
+                out,
+                "layer_b.break_start_pivot",
+                expected=bool(expected["break_start_pivot"]),
+                actual=bool(evidence.get("break_start_pivot")),
+            )
+        if "kline_quality" in expected:
+            self._record(
+                out,
+                "layer_b.kline_quality",
+                expected=expected["kline_quality"],
+                actual=kline_layer.get("kline_quality"),
+            )
+
     @staticmethod
     def _rows(recap_doc: dict[str, Any], *keys: str) -> list[dict[str, Any]]:
         for key in keys:
@@ -151,6 +268,31 @@ class ReplayAssertionService:
             for row in rows:
                 if str(row.get("stock_id") or "").strip().upper() == target:
                     return row
+        return None
+
+    @staticmethod
+    def _best_target_row(stock_id: str, *groups: list[dict[str, Any]]) -> dict[str, Any] | None:
+        target_rows: list[dict[str, Any]] = []
+        target = str(stock_id).strip().upper()
+        for rows in groups:
+            for row in rows:
+                if str(row.get("stock_id") or "").strip().upper() == target:
+                    target_rows.append(row)
+        if not target_rows:
+            return None
+        for key in ("support_type", "gap_hit", "reject_reason", "hard_reject_reason"):
+            for row in target_rows:
+                if row.get(key) not in (None, ""):
+                    return row
+        return target_rows[0]
+
+    @staticmethod
+    def _first_by_subject(rows: list[Any], subject_key: str) -> dict[str, Any] | None:
+        target = str(subject_key)
+        for row in rows:
+            payload = _as_dict(row)
+            if str(payload.get("subject_key") or "") == target:
+                return payload
         return None
 
     @staticmethod

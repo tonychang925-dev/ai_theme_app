@@ -63,6 +63,7 @@ class ReplayExecutionResult:
     assertion_report: dict[str, Any]
     replay_report_paths: dict[str, str]
     input_hashes: dict[str, str]
+    identity_mode: str
 
 
 @dataclass(frozen=True)
@@ -145,6 +146,21 @@ class _ReplayDatabaseStockFacade:
         fn = getattr(self._gateway, "get_subject_cycle_evidence_daily", None)
         if callable(fn):
             return await fn(trade_date=trade_date, subject_keys=subject_keys)
+        return []
+
+    async def get_subject_event_stats(
+        self,
+        trade_date: date,
+        subject_keys: list[str] | None = None,
+        lookback_days: int = 7,
+    ):
+        fn = getattr(self._gateway, "get_subject_event_stats", None)
+        if callable(fn):
+            return await fn(
+                trade_date=trade_date,
+                subject_keys=subject_keys,
+                lookback_days=lookback_days,
+            )
         return []
 
     async def get_replay_snapshot_manifest(
@@ -587,7 +603,8 @@ async def run_post_market_replay(
         event_port = StockEventGatewayAdapter(db_gateway=facade)
         idempotency_port = StockIdempotencyGatewayAdapter(db_gateway=facade)
 
-        snapshot_version = f"replay_{trade_date.isoformat()}_{sample_name}_v1"
+        snapshot_tag = os.getenv("REPLAY_SNAPSHOT_TAG", "v1")
+        snapshot_version = f"replay_{trade_date.isoformat()}_{sample_name}_{snapshot_tag}"
         batch_id = f"replay_{trade_date.isoformat()}"
         trace_id = f"replay_{sample_name}_{trade_date.isoformat()}"
 
@@ -672,6 +689,7 @@ async def run_post_market_replay(
             recap_result=recap_result,
             assertion_report=assertion_report,
         )
+        replay_report.assertions["identity_mode"] = "legacy_anytime_existing_registry"
         replay_report_paths = ReplayReportWriter().write_matrix(
             trade_date=trade_date,
             reports=[replay_report],
@@ -689,6 +707,7 @@ async def run_post_market_replay(
             assertion_report=assertion_report,
             replay_report_paths=replay_report_paths,
             input_hashes=input_hashes,
+            identity_mode="legacy_anytime_existing_registry",
         )
     finally:
         if previous_gate_mode is None:

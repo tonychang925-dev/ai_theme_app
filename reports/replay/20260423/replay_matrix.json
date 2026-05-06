@@ -1,0 +1,64 @@
+[
+  {
+    "case_name": "weike_2026_04_23",
+    "trade_date": "2026-04-23",
+    "stock_id": "600152.SH",
+    "mode": "ReplayMode.REUSE_ALL",
+    "snapshot_version": "replay_2026-04-23_weike_codex2",
+    "layer_results": [
+      {
+        "layer_name": "evidence",
+        "action": "manifest",
+        "status": "ok",
+        "affected_rows": 666,
+        "reason": ""
+      },
+      {
+        "layer_name": "daily",
+        "action": "manifest",
+        "status": "ok",
+        "affected_rows": 211376,
+        "reason": ""
+      },
+      {
+        "layer_name": "recap",
+        "action": "manifest",
+        "status": "ok",
+        "affected_rows": 1,
+        "reason": ""
+      }
+    ],
+    "assertions": {
+      "case_name": "weike_2026_04_23",
+      "passed": false,
+      "layer_results": {
+        "layer_c.present_in_promoted_pool": {
+          "expected": true,
+          "actual": false,
+          "passed": false
+        },
+        "layer_d.allowed_outcomes": {
+          "expected": [
+            {
+              "candidate_level": "formal"
+            },
+            {
+              "candidate_level": "observe_only"
+            },
+            {
+              "candidate_level": "reject",
+              "reject_reason_contains": "末端跳水"
+            }
+          ],
+          "actual": {
+            "candidate_level": "reject",
+            "reject_reason": ""
+          },
+          "passed": false
+        }
+      },
+      "identity_mode": "legacy_anytime_existing_registry"
+    },
+    "ok": false
+  }
+]

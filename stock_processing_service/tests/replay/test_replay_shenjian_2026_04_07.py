@@ -21,6 +21,9 @@ async def test_replay_shenjian_2026_04_07() -> None:
         assert result.daily_status == "ok"
         assert result.daily_affected_rows > 0
         assert result.recap_status == "ok"
+        assert result.assertion_report.get("passed") is True, result.assertion_report
+        assert result.identity_mode == "legacy_anytime_existing_registry"
+        assert result.replay_report_paths.get("json")
 
         recap_doc = result.recap_doc
         top_candidates = recap_doc.get("top_candidates", [])
