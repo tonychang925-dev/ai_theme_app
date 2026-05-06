@@ -90,10 +90,28 @@
           },
           "selection": {
             "selected": false,
-            "not_selected_reason": "missing_candidate_row",
+            "not_selected_reason": "in_input_but_not_promoted",
             "observe_top_n": 10,
             "formal_top_n": 10,
             "reject_reason": ""
+          },
+          "c_layer_trace": {
+            "input_rank": 55,
+            "refresh_status": null,
+            "kept": false,
+            "pruned": false,
+            "admission_status": null,
+            "admission_reasons": [],
+            "hard_reject_any": false,
+            "pass_count_4of3": null,
+            "promote_bucket": null,
+            "promoted_rank": null
+          },
+          "d_layer_trace": {
+            "candidate_row_created": false,
+            "candidate_level": null,
+            "hard_reject": null,
+            "not_selected_reason": "in_input_but_not_promoted"
           }
         },
         "layer_b_summary": {
@@ -133,7 +151,69 @@
               "divergence_score": "74.745",
               "repair_score": "46.706",
               "final_cycle_state": "divergence",
-              "final_mainline_alive": true
+              "final_mainline_alive": true,
+              "alive_decision_reason": "alive_conditions_passed"
+            },
+            "transition_explain": {
+              "subject_key": "9014701",
+              "trade_date": "2026-04-23",
+              "previous_cycle_state": null,
+              "final_cycle_state": "divergence",
+              "final_mainline_alive": true,
+              "scores": {
+                "mainline_strength_score": "35.300",
+                "fade_watch_score": "29.735",
+                "fade_confirmed_score": "16.324",
+                "divergence_score": "74.745",
+                "repair_score": "46.706"
+              },
+              "state_decision_trace": [
+                {
+                  "rule": "fade_confirmed",
+                  "passed": false,
+                  "reason": "fade_confirmed_score=16.324 threshold=60 evidence_count=0 threshold=3"
+                },
+                {
+                  "rule": "repair",
+                  "passed": false,
+                  "reason": "repair_score=46.706 threshold=65 previous_cycle_state=None"
+                },
+                {
+                  "rule": "divergence",
+                  "passed": true,
+                  "reason": "divergence_score=74.745 threshold=60"
+                },
+                {
+                  "rule": "fade_watch",
+                  "passed": false,
+                  "reason": "fade_watch_score=29.735 threshold=50"
+                },
+                {
+                  "rule": "acceleration",
+                  "passed": false,
+                  "reason": "mainline_strength_score=35.300 threshold=75"
+                },
+                {
+                  "rule": "fermentation",
+                  "passed": false,
+                  "reason": "mainline_strength_score=35.300 threshold=60"
+                },
+                {
+                  "rule": "final_cycle_state",
+                  "passed": true,
+                  "reason": "selected_state=divergence; decision_path="
+                }
+              ],
+              "alive_decision_reason": "alive_conditions_passed",
+              "evidence_drivers": {
+                "leader_alive_score": "0.000",
+                "leader_breakdown_flag": true,
+                "relay_strength_score": "0.000",
+                "red_ratio": "0.417",
+                "big_drop_ratio": "0.100",
+                "theme_support_score": "0.000",
+                "break_start_pivot": true
+              }
             },
             "diff_fields": [
               {

@@ -12,6 +12,8 @@ class CandidateMissReport:
     ranking: dict[str, int | None]
     scores: dict[str, Any]
     selection: dict[str, Any]
+    c_layer_trace: dict[str, Any]
+    d_layer_trace: dict[str, Any]
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -21,6 +23,8 @@ class CandidateMissReport:
             "ranking": self.ranking,
             "scores": self.scores,
             "selection": self.selection,
+            "c_layer_trace": self.c_layer_trace,
+            "d_layer_trace": self.d_layer_trace,
         }
 
 
@@ -45,7 +49,11 @@ class CandidateMissReportBuilder:
         in_observe = observe_rank is not None
         in_promoted = promoted_rank is not None
         in_input = input_rank is not None
-        row = best_row or self._target(stock_id, top_candidates, observe_candidates, promoted_pool, strong_watch_input) or {}
+        top_row = self._target(stock_id, top_candidates) or {}
+        observe_row = self._target(stock_id, observe_candidates) or {}
+        promoted_row = self._target(stock_id, promoted_pool) or {}
+        input_row = self._target(stock_id, strong_watch_input) or {}
+        row = best_row or top_row or observe_row or promoted_row or input_row or {}
         observe_total = int(recap_doc.get("observe_candidates_count") or len(observe_candidates) or 0)
         top_total = int(recap_doc.get("candidate_count") or len(top_candidates) or 0)
         observe_top_n = len(observe_candidates)
@@ -53,22 +61,44 @@ class CandidateMissReportBuilder:
         candidate_level = str(row.get("candidate_level") or "")
         reject_reason = str(row.get("reject_reason") or row.get("hard_reject_reason") or "")
 
+        candidate_row_created = in_top or in_observe
         reason = "selected"
         if not in_input and not in_promoted and not in_top and not in_observe:
-            reason = "not_in_promoted_pool"
+            reason = "not_in_input_pool"
         elif in_input and not (in_promoted or in_top or in_observe):
-            reason = "missing_candidate_row"
+            reason = "in_input_but_not_promoted"
+        elif in_promoted and not candidate_row_created:
+            reason = "in_promoted_but_not_candidate"
         elif reject_reason:
             reason = "d_layer_reject"
         elif candidate_level == "observe_only" and not in_observe:
             if observe_total > observe_top_n:
                 reason = "observe_rank_gt_observe_top_n"
             else:
-                reason = "missing_candidate_row"
+                reason = "candidate_rank_outside_output"
         elif candidate_level in {"formal", "s", "a", "b"} and not in_top:
             reason = "formal_rank_gt_formal_top_n"
         elif not candidate_level and in_input:
-            reason = "missing_candidate_row"
+            reason = "in_input_but_not_promoted"
+
+        c_layer_trace = {
+            "input_rank": input_rank,
+            "refresh_status": input_row.get("watch_status"),
+            "kept": in_promoted or in_top or in_observe,
+            "pruned": str(input_row.get("watch_status") or "").lower() == "removed",
+            "admission_status": self._first_value(row, "admission_status", "pool_entry_type", "candidate_level"),
+            "admission_reasons": self._list_value(row.get("admission_reasons") or row.get("evidence_rules")),
+            "hard_reject_any": bool(reject_reason),
+            "pass_count_4of3": row.get("pass_count_4of3"),
+            "promote_bucket": self._first_value(promoted_row, "promote_bucket", "pool_entry_type"),
+            "promoted_rank": promoted_rank,
+        }
+        d_layer_trace = {
+            "candidate_row_created": candidate_row_created,
+            "candidate_level": row.get("candidate_level"),
+            "hard_reject": reject_reason or None,
+            "not_selected_reason": reason,
+        }
 
         return CandidateMissReport(
             stock_id=stock_id,
@@ -106,6 +136,8 @@ class CandidateMissReportBuilder:
                 "formal_top_n": formal_top_n,
                 "reject_reason": reject_reason,
             },
+            c_layer_trace=c_layer_trace,
+            d_layer_trace=d_layer_trace,
         )
 
     @classmethod
@@ -124,3 +156,19 @@ class CandidateMissReportBuilder:
                 if str(row.get("stock_id") or "").strip().upper() == target:
                     return row
         return None
+
+    @staticmethod
+    def _first_value(row: dict[str, Any], *keys: str) -> Any:
+        for key in keys:
+            value = row.get(key)
+            if value not in (None, ""):
+                return value
+        return None
+
+    @staticmethod
+    def _list_value(value: Any) -> list[Any]:
+        if value is None:
+            return []
+        if isinstance(value, list):
+            return value
+        return [value]

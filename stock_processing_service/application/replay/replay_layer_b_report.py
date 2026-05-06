@@ -3,6 +3,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
+from stock_processing_service.application.replay.layer_b_transition_explain import LayerBTransitionExplainBuilder
+
 
 @dataclass(frozen=True)
 class LayerBDiagnosticReport:
@@ -34,6 +36,12 @@ class LayerBDiagnosticReportBuilder:
         cyc = dict(cycle or {})
         evidence_json = ev.get("evidence_json") if isinstance(ev.get("evidence_json"), dict) else {}
         kline = evidence_json.get("kline_layer") if isinstance(evidence_json.get("kline_layer"), dict) else {}
+        transition_explain = LayerBTransitionExplainBuilder().build(
+            trade_date=trade_date,
+            subject_key=subject_key,
+            evidence=ev,
+            cycle=cyc,
+        )
         return LayerBDiagnosticReport(
             trade_date=trade_date,
             stock_id=stock_id,
@@ -72,7 +80,9 @@ class LayerBDiagnosticReportBuilder:
                     "repair_score": cyc.get("repair_score"),
                     "final_cycle_state": cyc.get("final_cycle_state"),
                     "final_mainline_alive": cyc.get("final_mainline_alive"),
+                    "alive_decision_reason": transition_explain.alive_decision_reason,
                 },
+                "transition_explain": transition_explain.to_dict(),
                 "diff_fields": self._diagnostic_fields(ev=ev, cyc=cyc, kline=kline),
             },
         )
