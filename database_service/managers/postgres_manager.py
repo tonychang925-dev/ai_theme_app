@@ -4138,6 +4138,14 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.error(f"获取分类统计失败: {e}")
             return {}
 
+    @staticmethod
+    def _bool(v: Any) -> bool:
+        if isinstance(v, bool):
+            return v
+        if isinstance(v, str):
+            return v.strip().lower() in {"1", "true", "t", "yes", "y"}
+        return bool(v)
+
     async def upsert_theme_cycle_evidence_daily_rows(self, rows: list[dict[str, Any]]) -> int:
         """写入 theme_cycle_evidence_daily 表（Layer B 四层证据真源）。"""
         import json as _json
@@ -4198,9 +4206,14 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             if isinstance(td, str):
                 td = date.fromisoformat(td)
             ev = row.get("evidence_json") or {}
-            board_stock_count = int(ev.get("board_layer", {}).get("pool_size", len(
-                [r for r in (row.get("_pool_rows") or [])]
-            )) if isinstance(ev, dict) else 0)
+            if not isinstance(ev, dict):
+                ev = {}
+            board_layer = ev.get("board_layer", {}) if isinstance(ev.get("board_layer"), dict) else {}
+            board_stock_count = int(
+                row.get("board_stock_count")
+                or board_layer.get("pool_size")
+                or 0
+            )
             payload.append((
                 sk,
                 td,
@@ -4212,7 +4225,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 str(row.get("event_continuity_score") or "0"),
                 str(row.get("event_strength_score") or "0"),
                 str(row.get("leader_alive_score") or "0"),
-                bool(row.get("leader_breakdown_flag") or False),
+                self._bool(row.get("leader_breakdown_flag")),
                 str(row.get("relay_strength_score") or "0"),
                 str(row.get("front_row_survival_ratio") or "0"),
                 board_stock_count,
@@ -4222,14 +4235,15 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 str(row.get("big_drop_ratio") or "0"),
                 str(row.get("front_row_strength_score") or "0"),
                 str(row.get("theme_support_score") or "0"),
-                bool(row.get("break_start_pivot") or False),
-                bool(row.get("above_ma10") or False),
-                bool(row.get("above_ma20") or False),
-                _json.dumps(ev, default=str, ensure_ascii=False) if isinstance(ev, dict) else str(ev),
+                self._bool(row.get("break_start_pivot")),
+                self._bool(row.get("above_ma10")),
+                self._bool(row.get("above_ma20")),
+                _json.dumps(ev, default=str, ensure_ascii=False),
             ))
+        if not payload:
+            return 0
+        # asyncpg executemany returns None; actual persistence verified by SPS write-verify.
         async with self.pool.acquire() as conn:
-            result = await conn.executemany(sql, payload)
-        total = sum(int(r or 0) for r in (result or []))
-        if total == 0:
-            total = len(payload)
-        return total
+            async with conn.transaction():
+                await conn.executemany(sql, payload)
+        return len(payload)

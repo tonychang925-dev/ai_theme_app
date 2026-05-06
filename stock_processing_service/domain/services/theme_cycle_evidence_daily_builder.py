@@ -5,6 +5,10 @@ from datetime import date
 from decimal import Decimal
 
 from stock_processing_service.contracts.dto import StockBarDTO, SubjectEventStatsDTO, SubjectStockPoolDTO
+from stock_processing_service.domain.services.theme_kline_evidence_builder import (
+    ThemeKlineEvidence,
+    ThemeKlineEvidenceBuilder,
+)
 
 
 @dataclass(frozen=True)
@@ -62,6 +66,7 @@ class ThemeCycleEvidenceDailyBuilder:
         heat_scores: dict[str, Decimal],
         previous_states: dict[str, str],
         event_stats_by_subject: dict[str, SubjectEventStatsDTO] | None = None,
+        kline_evidence_by_subject: dict[str, ThemeKlineEvidence] | None = None,
     ) -> list[ThemeCycleEvidenceDailyRow]:
         bars_by_stock = {b.stock_id: b for b in bars}
         subject_pools: dict[str, list[SubjectStockPoolDTO]] = {}
@@ -69,6 +74,7 @@ class ThemeCycleEvidenceDailyBuilder:
             subject_pools.setdefault(r.subject_key, []).append(r)
 
         _event_stats = event_stats_by_subject or {}
+        _kline = kline_evidence_by_subject or {}
 
         out: list[ThemeCycleEvidenceDailyRow] = []
         for subject_key, rows in subject_pools.items():
@@ -81,6 +87,7 @@ class ThemeCycleEvidenceDailyBuilder:
                 heat_score=heat_scores.get(subject_key, Decimal("0")),
                 previous_state=previous_states.get(subject_key, "unknown"),
                 event_stats=_event_stats.get(subject_key),
+                kline=_kline.get(subject_key),
             )
             out.append(row)
         return out
@@ -107,6 +114,7 @@ class ThemeCycleEvidenceDailyBuilder:
         heat_score: Decimal,
         previous_state: str,
         event_stats: SubjectEventStatsDTO | None = None,
+        kline: ThemeKlineEvidence | None = None,
     ) -> ThemeCycleEvidenceDailyRow:
         n = max(len(rows), 1)
         stock_bars = [bars_by_stock[r.stock_id] for r in rows if r.stock_id in bars_by_stock]
@@ -184,19 +192,24 @@ class ThemeCycleEvidenceDailyBuilder:
         front_row_strength = sum(top3, start=Decimal("0")) / Decimal(str(max(len(top3), 1))) if top3 else Decimal("0")
 
         # ── K-line layer ──
-        support_scores: list[Decimal] = []
-        for r in rows:
-            md = r.metadata if isinstance(r.metadata, dict) else {}
-            ss = self._d(md.get("support_score") or md.get("theme_support_score"))
-            support_scores.append(ss)
-        theme_support = sum(support_scores, start=Decimal("0")) / Decimal(str(len(support_scores))) if support_scores else Decimal("0")
-
-        # Break start pivot: low support + negative trend
-        break_start_pivot = theme_support < Decimal("35") and red_ratio < Decimal("0.45")
-
-        # MA signals from pool metadata
-        above_ma10 = any(bool((r.metadata or {}).get("above_ma10")) for r in rows if isinstance(r.metadata, dict))
-        above_ma20 = any(bool((r.metadata or {}).get("above_ma20")) for r in rows if isinstance(r.metadata, dict))
+        if kline is not None:
+            theme_support = kline.theme_support_score
+            break_start_pivot = kline.break_start_pivot
+            above_ma10 = kline.above_ma10
+            above_ma20 = kline.above_ma20
+            kline_source = "theme_kline_evidence_builder"
+        else:
+            # Fallback: pool metadata (weaker).
+            support_scores: list[Decimal] = []
+            for r in rows:
+                md = r.metadata if isinstance(r.metadata, dict) else {}
+                ss = self._d(md.get("support_score") or md.get("theme_support_score"))
+                support_scores.append(ss)
+            theme_support = sum(support_scores, start=Decimal("0")) / Decimal(str(len(support_scores))) if support_scores else Decimal("0")
+            break_start_pivot = theme_support < Decimal("35") and red_ratio < Decimal("0.45")
+            above_ma10 = any(bool((r.metadata or {}).get("above_ma10")) for r in rows if isinstance(r.metadata, dict))
+            above_ma20 = any(bool((r.metadata or {}).get("above_ma20")) for r in rows if isinstance(r.metadata, dict))
+            kline_source = "pool_metadata"
 
         # ── Evidence JSON (for audit/replay) ──
         evidence_json = {
@@ -217,6 +230,7 @@ class ThemeCycleEvidenceDailyBuilder:
                 "front_row_survival_ratio": str(front_row_survival),
             },
             "board_layer": {
+                "pool_size": len(rows),
                 "limit_up_count": limit_up_count,
                 "limit_down_count": limit_down_count,
                 "red_ratio": str(red_ratio),
@@ -224,10 +238,21 @@ class ThemeCycleEvidenceDailyBuilder:
                 "front_row_strength_score": str(front_row_strength),
             },
             "kline_layer": {
+                "source": kline_source,
                 "theme_support_score": str(theme_support),
                 "break_start_pivot": break_start_pivot,
                 "above_ma10": above_ma10,
                 "above_ma20": above_ma20,
+                "above_ma5": kline.above_ma5 if kline else False,
+                "theme_ret_3d": str(kline.theme_ret_3d) if kline else "0",
+                "theme_ret_5d": str(kline.theme_ret_5d) if kline else "0",
+                "theme_ret_10d": str(kline.theme_ret_10d) if kline else "0",
+                "volume_breakdown_flag": kline.volume_breakdown_flag if kline else False,
+                "composite_last": str(kline.composite_last) if kline else "0",
+                "ma5": str(kline.ma5) if kline else "0",
+                "ma10": str(kline.ma10) if kline else "0",
+                "ma20": str(kline.ma20) if kline else "0",
+                "avg_volume_ratio": str(kline.avg_volume_ratio) if kline else "0",
             },
         }
 
