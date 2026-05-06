@@ -162,12 +162,9 @@ class BuildIdentityJob:
                 market_ok=rule.market_ok,
                 rule_is_main_theme=rule.rule_is_main_theme,
             )
-            llm_verdict_for_decider = llm_verdict.verdict
-            if llm_verdict_for_decider == "confirmed" and not rule.rule_is_main_theme:
-                llm_verdict_for_decider = "review_pending"
             decision = self._decider.decide(
                 composite_score=rule.composite_score,
-                llm_verdict=llm_verdict_for_decider,
+                llm_verdict=llm_verdict.verdict,
                 one_day_tour_flag=rule.one_day_tour_flag,
                 logic_ok=rule.logic_ok,
                 rule_is_main_theme=rule.rule_is_main_theme,
@@ -186,6 +183,7 @@ class BuildIdentityJob:
                 "logic_ok": rule.logic_ok,
                 "market_ok": rule.market_ok,
                 "rule_is_main_theme": rule.rule_is_main_theme,
+                "is_main_theme": decision.identity_status == "confirmed",
                 "rule_reasons": rule.reasons,
                 # Keep field for backward compatibility, but bind to the
                 # same rule-engine composite to avoid dual scoring drift.

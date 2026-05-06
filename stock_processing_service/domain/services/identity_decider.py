@@ -43,11 +43,19 @@ class IdentityDecider:
                 final_score=composite_score,
                 reason="confirmed_but_tour_risk",
             )
-        if llm_verdict == "confirmed":
+        # Hard gate: llm_verdict="confirmed" requires rule_is_main_theme=true.
+        # Prevents domain-level bypass when called outside BuildIdentityJob's outer guard.
+        if llm_verdict == "confirmed" and rule_is_main_theme:
             return IdentityDecision(
                 identity_status="confirmed",
                 final_score=composite_score,
                 reason="llm_confirmed",
+            )
+        if llm_verdict == "confirmed" and not rule_is_main_theme:
+            return IdentityDecision(
+                identity_status="review_pending",
+                final_score=composite_score,
+                reason="llm_confirmed_but_rule_not_main_theme",
             )
         if llm_verdict == "review_pending":
             return IdentityDecision(

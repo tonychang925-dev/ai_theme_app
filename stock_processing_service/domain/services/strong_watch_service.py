@@ -469,20 +469,43 @@ class StrongWatchService:
 
         subject_stats = self._subject_day_stats(pool_rows)
         bars_by_stock = {b.stock_id: b for b in bars}
-        ranks = {r.stock_id: (r.pool_rank if r.pool_rank is not None else 999) for r in pool_rows}
 
+        # Use AdmissionPolicy V2 (same as main chain) for shadow audit.
         admission_formal = 0
         admission_observe = 0
         admission_reject = 0
+        admission_pass_4of3_fail = 0
+        admission_hard_reject = 0
 
         for row in refreshed:
             role_tags = row.role_tags if isinstance(row.role_tags, dict) else {}
-            if row.strong_grade in {"S", "A"} and row.watch_score >= Decimal("78"):
+            bar = bars_by_stock.get(row.stock_id)
+            pct_chg = bar.pct_chg if bar else Decimal("0")
+            stats = subject_stats.get(row.subject_key, {})
+            decision = self._admission_policy.assess(
+                prior7_limitup_days=row.prior7_limitup_days,
+                recent_limit_up_count=int(role_tags.get("recent_limit_up_count") or 0),
+                subject_limit_up_count=stats.get("subject_limit_up_count", 0),
+                subject_strong_count=stats.get("subject_strong_count", 0),
+                final_mainline_alive=bool(role_tags.get("final_mainline_alive") or False),
+                board_effect_confirmed=bool(role_tags.get("board_effect_confirmed") or False),
+                two_board_entry=bool(role_tags.get("two_board_entry") or False),
+                pct_chg=pct_chg,
+                support_type=str(row.support_type or ""),
+                support_score=row.support_score,
+                is_leader=bool(role_tags.get("is_leader") or False),
+                rank_order=row.pool_rank if row.pool_rank is not None else 999,
+            )
+            if decision.admission_status == "formal":
                 admission_formal += 1
-            elif row.watch_status in {"active", "weakening"} and row.strong_grade in {"S", "A", "B"} and row.watch_score >= Decimal("62"):
+            elif decision.admission_status == "observe_only":
                 admission_observe += 1
             else:
                 admission_reject += 1
+            if decision.pass_count_4of3 < 3:
+                admission_pass_4of3_fail += 1
+            if decision.reject_no_limitup_gene or decision.reject_isolated_theme or decision.reject_break_support_with_heavy_drop:
+                admission_hard_reject += 1
 
         return StrongWatchShadowSummary(
             universe_formal_count=universe.formal_count,
@@ -491,8 +514,8 @@ class StrongWatchService:
             admission_formal_count=admission_formal,
             admission_observe_count=admission_observe,
             admission_reject_count=admission_reject,
-            admission_pass_4of3_fail_count=0,
-            admission_hard_reject_count=0,
+            admission_pass_4of3_fail_count=admission_pass_4of3_fail,
+            admission_hard_reject_count=admission_hard_reject,
         )
 
     def build_promoted_pool_with_history_and_shadow(
