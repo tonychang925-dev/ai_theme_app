@@ -71,4 +71,19 @@ class ReplayReportWriter:
                     assertions=assertion_text.replace("|", "\\|"),
                 )
             )
+            failed = [
+                (key, detail)
+                for key, detail in ((assertions.get("layer_results") or {}).items())
+                if isinstance(detail, dict) and detail.get("passed") is not True
+            ]
+            if failed:
+                lines.extend(["", f"## {row.get('case_name', '')} Failed Assertions", ""])
+                for key, detail in failed:
+                    lines.append(
+                        "- `{key}` expected `{expected}` actual `{actual}`".format(
+                            key=key,
+                            expected=detail.get("expected"),
+                            actual=detail.get("actual"),
+                        )
+                    )
         return "\n".join(lines) + "\n"

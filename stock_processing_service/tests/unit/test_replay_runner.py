@@ -381,7 +381,16 @@ def test_replay_report_writer_outputs_json_and_markdown(tmp_path) -> None:
         "mode": "full_rebuild",
         "ok": True,
         "layer_results": [{"layer_name": "recap", "status": "ok"}],
-        "assertions": {"passed": True},
+        "assertions": {
+            "passed": False,
+            "layer_results": {
+                "layer_d.support_type": {
+                    "expected": "gap_support",
+                    "actual": "prev_low_support",
+                    "passed": False,
+                }
+            },
+        },
     }
     paths = ReplayReportWriter(root=tmp_path).write_matrix(
         trade_date=date(2026, 4, 7),
@@ -390,7 +399,66 @@ def test_replay_report_writer_outputs_json_and_markdown(tmp_path) -> None:
 
     assert paths["json"].endswith("20260407/replay_matrix.json")
     assert paths["md"].endswith("20260407/replay_matrix.md")
-    assert "shenjian_2026_04_07" in (tmp_path / "20260407" / "replay_matrix.md").read_text()
+    md = (tmp_path / "20260407" / "replay_matrix.md").read_text()
+    assert "shenjian_2026_04_07" in md
+    assert "Failed Assertions" in md
+    assert "prev_low_support" in md
+
+
+@pytest.mark.asyncio
+async def test_replay_assertion_service_supports_layer_a_b_expected_fields() -> None:
+    class _Read:
+        async def get_existing_post_market_recap_snapshot(self, trade_date):
+            return {
+                "trade_date": trade_date,
+                "snapshot_version": "v1",
+                "recap_doc": {
+                    "top_candidates": [
+                        {
+                            "stock_id": "002361.SZ",
+                            "subject_key": "s1",
+                            "candidate_level": "formal",
+                        }
+                    ],
+                },
+            }
+
+        async def get_mainline_identity_by_subject_keys(self, subject_keys, trade_date):
+            return [{"subject_key": "s1", "identity_status": "confirmed", "is_main_theme": True}]
+
+        async def get_mainline_cycle_by_subject_keys(self, subject_keys, trade_date):
+            return [{"subject_key": "s1", "final_cycle_state": "repair", "final_mainline_alive": True}]
+
+        async def get_subject_cycle_evidence_daily(self, trade_date, subject_keys=None):
+            return [
+                {
+                    "subject_key": "s1",
+                    "theme_support_score": "78",
+                    "break_start_pivot": False,
+                    "evidence_json": {"kline_layer": {"kline_quality": "ok"}},
+                }
+            ]
+
+    svc = ReplayAssertionService(_Read())
+    report = await svc.assert_case(
+        ReplayCase(
+            name="ab_case",
+            trade_date=date(2026, 4, 7),
+            stock_id="002361.SZ",
+            expected={
+                "layer_a": {"identity_status": "confirmed", "is_main_theme": True},
+                "layer_b": {
+                    "final_cycle_state_in": ["repair", "divergence"],
+                    "final_mainline_alive": True,
+                    "kline_quality": "ok",
+                },
+            },
+        )
+    )
+
+    assert report["passed"] is True
+    assert report["layer_results"]["layer_a.identity_status"]["passed"] is True
+    assert report["layer_results"]["layer_b.final_cycle_state_in"]["actual"] == "repair"
 
 
 @pytest.mark.asyncio
