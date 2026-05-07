@@ -918,6 +918,18 @@ class DatabaseGateway:
             logger.error(f"写入 theme_cycle_evidence_daily 失败: {e}")
             raise
 
+    async def upsert_theme_cycle_judgement_v2_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：theme_cycle_judgement_v2（Layer B 周期判定真源）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_theme_cycle_judgement_v2_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"写入 theme_cycle_judgement_v2 失败: {e}")
+            raise
+
     async def get_replay_snapshot_manifest(
         self,
         trade_date,
