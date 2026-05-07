@@ -45,6 +45,11 @@ class StrongWatchPreSeedGeneEnricher:
                 metadata=metadata,
                 prior_rows=prior_by_stock.get(row.stock_id, []),
             )
+            prior7_strong_days = self._prior7_strong_days(
+                metadata=metadata,
+                prior_rows=prior_by_stock.get(row.stock_id, []),
+                history_bars=history_by_stock.get(row.stock_id, []),
+            )
             three_days_two_boards = self._three_days_two_boards(
                 stock_id=row.stock_id,
                 current_bar=bar,
@@ -58,11 +63,12 @@ class StrongWatchPreSeedGeneEnricher:
                 or three_days_two_boards
             )
             strong_gene_seed = bool(two_board_entry)
+            metadata.setdefault("prior7_limitup_days", prior7_limitup_days)
+            metadata.setdefault("prior7_strong_days", prior7_strong_days)
+            metadata.setdefault("recent_limit_up_count", recent_limit_up_count)
+            metadata.setdefault("max_consecutive_limit_up_days", max_consecutive_limit_up_days)
+            metadata.setdefault("three_days_two_boards", three_days_two_boards)
             if strong_gene_seed:
-                metadata.setdefault("prior7_limitup_days", prior7_limitup_days)
-                metadata.setdefault("recent_limit_up_count", recent_limit_up_count)
-                metadata.setdefault("max_consecutive_limit_up_days", max_consecutive_limit_up_days)
-                metadata.setdefault("three_days_two_boards", three_days_two_boards)
                 metadata["two_board_entry"] = bool(two_board_entry)
                 metadata["strong_gene_seed"] = True
                 metadata["strong_gene_seed_reason"] = self._reason(
@@ -151,6 +157,26 @@ class StrongWatchPreSeedGeneEnricher:
             return int(raw or 0)
         ordered = sorted(prior_rows, key=lambda row: row.trade_date)
         return sum(1 for row in ordered[-7:] if cls._d((row.payload or {}).get("pct_chg")) >= Decimal("9.5"))
+
+    @classmethod
+    def _prior7_strong_days(
+        cls,
+        *,
+        metadata: dict[str, Any],
+        prior_rows: list[PriorSnapshotDTO],
+        history_bars: list[StockBarDTO],
+    ) -> int:
+        raw = metadata.get("prior7_strong_days")
+        if raw is not None:
+            return int(raw or 0)
+        day_pct: dict[Any, Decimal] = {}
+        for prior in prior_rows:
+            payload = prior.payload or {}
+            day_pct[prior.trade_date] = cls._d(payload.get("pct_chg"))
+        for hist in history_bars:
+            day_pct[hist.trade_date] = hist.pct_chg
+        ordered = sorted(day_pct.items(), key=lambda item: item[0])
+        return sum(1 for _, pct in ordered[-7:] if pct >= Decimal("5"))
 
     @staticmethod
     def _reason(

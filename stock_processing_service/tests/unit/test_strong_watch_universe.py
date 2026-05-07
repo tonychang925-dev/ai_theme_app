@@ -18,7 +18,7 @@ def _row(stock_id: str, subject_key: str) -> SubjectStockPoolDTO:
     )
 
 
-def test_universe_builder_routes_formal_observe_blocked() -> None:
+def test_universe_builder_routes_formal_diagnostic_blocked_by_default() -> None:
     builder = StrongWatchUniverseBuilder()
     pool_rows = [
         _row("A", "S1"),
@@ -44,13 +44,37 @@ def test_universe_builder_routes_formal_observe_blocked() -> None:
     )
 
     assert [r.stock_id for r in result.formal_rows] == ["A"]
-    assert sorted(r.stock_id for r in result.observe_rows) == ["B", "C"]
-    assert [r.stock_id for r in result.blocked_rows] == ["D"]
+    assert result.observe_rows == []
+    assert sorted(r.stock_id for r in result.blocked_rows) == ["B", "C", "D"]
     assert result.formal_count == 1
-    assert result.observe_count == 2
-    assert result.blocked_count == 1
+    assert result.observe_count == 0
+    assert result.blocked_count == 3
     assert result.diagnostics["A"]["identity_confirmed_pass"] is True
     assert result.diagnostics["C"]["cycle_alive_pass"] is False
+    assert result.diagnostics["B"]["universe_status"] == "diagnostic_only"
+    assert result.diagnostics["B"]["entry_path"] == "observe_diagnostic"
+
+
+def test_universe_builder_can_still_emit_legacy_non_formal_observe_when_explicitly_enabled() -> None:
+    builder = StrongWatchUniverseBuilder(allow_observe_when_not_formal=True)
+    pool_rows = [_row("B", "S2"), _row("C", "S3")]
+    identities = {
+        "S2": {"identity_status": "observed", "is_main_theme": True},
+        "S3": {"identity_status": "confirmed", "is_main_theme": True},
+    }
+    cycles = {
+        "S2": {"final_cycle_state": "repair", "final_mainline_alive": True},
+        "S3": {"final_cycle_state": "fade_confirmed", "final_mainline_alive": False},
+    }
+
+    result = builder.build_universe(
+        pool_rows=pool_rows,
+        identities_by_subject=identities,
+        cycles_by_subject=cycles,
+    )
+
+    assert sorted(r.stock_id for r in result.observe_rows) == ["B", "C"]
+    assert result.blocked_rows == []
 
 
 def test_universe_builder_routes_independent_leader_gene_to_observe_without_layer_ab() -> None:

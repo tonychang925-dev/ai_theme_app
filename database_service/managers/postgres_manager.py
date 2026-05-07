@@ -2929,6 +2929,143 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.warning(f"读取 theme_cycle_judgement_v2 失败（可能尚未迁移）: {e}")
             return []
 
+    async def get_legacy_strong_watch_candidate_inputs(
+        self,
+        trade_date,
+        lookback_days: int = 7,
+    ) -> List[Dict[str, Any]]:
+        """读取旧链 weak_to_strong_candidate_builder 的正式 watch_pool 输入口径。"""
+        current_pool_sql = """
+        WITH watch_base AS (
+            SELECT
+                p.last_trade_date AS trade_date,
+                split_part(p.stock_id, '.', 1) AS stock_code,
+                p.stock_id,
+                COALESCE(s.stock_name, p.stock_name) AS stock_name,
+                COALESCE(NULLIF(p.subject_key, ''), s.subject_key) AS subject_key,
+                COALESCE(NULLIF(p.theme_name, ''), NULLIF(v2.theme_name, ''), s.subject_key, p.subject_key) AS theme_name,
+                COALESCE(s.rank_order, 999) AS rank_order,
+                COALESCE(s.pct_chg, 0) AS pct_chg,
+                COALESCE(s.low_price, 0) AS low_price,
+                COALESCE(s.close_price, 0) AS close_price,
+                COALESCE(s.limit_up, FALSE) AS limit_up,
+                COALESCE(s.is_leader, FALSE) AS is_leader,
+                COALESCE(mr.is_main_theme, FALSE) AS is_main_theme,
+                COALESCE(mr.identity_status, 'observed') AS identity_status,
+                COALESCE(v2.final_cycle_state, p.cycle_state, 'unknown') AS final_cycle_state,
+                (
+                    COALESCE(mr.is_main_theme, FALSE)
+                    AND COALESCE(mr.identity_status, '') = 'confirmed'
+                    AND COALESCE(v2.fade_confirmed, p.fade_confirmed, FALSE) = FALSE
+                ) AS final_mainline_alive,
+                COALESCE(v2.fade_watch, p.fade_watch, FALSE) AS fade_watch,
+                COALESCE(v2.fade_confirmed, p.fade_confirmed, FALSE) AS fade_confirmed,
+                COALESCE(v2.mainline_strength_score, e.mainline_strength_score, p.mainline_strength_score, 0) AS mainline_strength_score,
+                COALESCE(e.leader_alive_score, 0) AS leader_alive_score,
+                COALESCE(e.event_continuity_score, 0) AS event_continuity_score,
+                p.watch_score,
+                p.watch_priority,
+                p.pool_entry_type AS watch_pool_entry_type,
+                p.watch_status,
+                p.source_tag AS watch_source_tag,
+                p.labels_json AS watch_labels_json,
+                p.support_type,
+                p.support_level,
+                p.support_score
+            FROM strong_stock_watch_pool p
+            LEFT JOIN subject_stock_daily_snapshot s
+              ON s.trade_date = $1::date
+             AND split_part(s.stock_id, '.', 1) = split_part(p.stock_id, '.', 1)
+             AND COALESCE(NULLIF(p.subject_key, ''), s.subject_key) = s.subject_key
+            LEFT JOIN theme_mainline_identity_registry mr
+              ON mr.subject_key = COALESCE(NULLIF(p.subject_key, ''), s.subject_key)
+            LEFT JOIN theme_cycle_judgement_v2 v2
+              ON v2.trade_date = $1::date
+             AND v2.subject_key = COALESCE(NULLIF(p.subject_key, ''), s.subject_key)
+            LEFT JOIN theme_cycle_evidence_daily e
+              ON e.trade_date = $1::date
+             AND e.subject_key = COALESCE(NULLIF(p.subject_key, ''), s.subject_key)
+            WHERE p.watch_status IN ('active', 'weakening')
+              AND p.pool_entry_type IN ('formal', 'observe_only')
+              AND p.last_trade_date <= $1::date
+        ),
+        recent_stats AS (
+            SELECT stock_id, COUNT(*) FILTER (WHERE COALESCE(limit_up, FALSE) = TRUE) AS recent_limit_up_count
+            FROM subject_stock_daily_snapshot
+            WHERE trade_date <= $1::date
+              AND trade_date > ($1::date - INTERVAL '30 days')
+            GROUP BY stock_id
+        ),
+        prior7_stats AS (
+            SELECT
+                stock_id,
+                subject_key,
+                COUNT(DISTINCT trade_date) FILTER (WHERE COALESCE(limit_up, FALSE) = TRUE) AS prior7_limitup_days,
+                COUNT(DISTINCT trade_date) FILTER (
+                    WHERE COALESCE(limit_up, FALSE) = TRUE
+                       OR COALESCE(is_leader, FALSE) = TRUE
+                       OR COALESCE(rank_order, 999) <= 3
+                       OR COALESCE(pct_chg, 0) >= 7.0
+                ) AS prior7_strong_days
+            FROM subject_stock_daily_snapshot
+            WHERE trade_date < $1::date
+              AND trade_date >= ($1::date - ($2::int * INTERVAL '1 day'))
+            GROUP BY stock_id, subject_key
+        ),
+        prev_day AS (
+            SELECT stock_id, pct_chg AS prev_day_pct_chg, limit_up AS prev_day_limit_up, low_price AS prev_day_low_price, close_price AS prev_day_close_price
+            FROM (
+                SELECT stock_id, pct_chg, limit_up, low_price, close_price,
+                       ROW_NUMBER() OVER (PARTITION BY stock_id ORDER BY trade_date DESC) AS rn
+                FROM subject_stock_daily_snapshot
+                WHERE trade_date < $1::date
+            ) t
+            WHERE rn = 1
+        )
+        SELECT
+            b.*,
+            COALESCE(rs.recent_limit_up_count, 0) AS recent_limit_up_count,
+            COALESCE(p7.prior7_limitup_days, 0) AS prior7_limitup_days,
+            COALESCE(p7.prior7_strong_days, 0) AS prior7_strong_days,
+            pd.prev_day_pct_chg,
+            pd.prev_day_limit_up,
+            pd.prev_day_low_price,
+            pd.prev_day_close_price
+        FROM watch_base b
+        LEFT JOIN recent_stats rs ON split_part(rs.stock_id, '.', 1) = split_part(b.stock_id, '.', 1)
+        LEFT JOIN prior7_stats p7 ON split_part(p7.stock_id, '.', 1) = split_part(b.stock_id, '.', 1) AND p7.subject_key = b.subject_key
+        LEFT JOIN prev_day pd ON split_part(pd.stock_id, '.', 1) = split_part(b.stock_id, '.', 1)
+        ORDER BY b.watch_priority DESC NULLS LAST, b.watch_score DESC NULLS LAST
+        """
+        history_sql = current_pool_sql.replace(
+            "p.last_trade_date AS trade_date,",
+            "p.trade_date AS trade_date,",
+            1,
+        ).replace(
+            "FROM strong_stock_watch_pool p",
+            "FROM strong_stock_watch_history p",
+            1,
+        ).replace(
+            "p.source_tag AS watch_source_tag,",
+            "'history_snapshot'::text AS watch_source_tag,",
+            1,
+        ).replace(
+            "AND p.last_trade_date <= $1::date",
+            "AND p.trade_date = $1::date",
+            1,
+        )
+        try:
+            async with self.pool.acquire() as conn:
+                latest_pool_trade_date = await conn.fetchval(
+                    "SELECT MAX(last_trade_date) AS latest_trade_date FROM strong_stock_watch_pool"
+                )
+                sql = history_sql if latest_pool_trade_date and trade_date < latest_pool_trade_date else current_pool_sql
+                rows = await conn.fetch(sql, trade_date, int(max(1, lookback_days)))
+                return [dict(row) for row in rows]
+        except Exception as e:
+            logger.warning(f"读取 legacy strong watch candidate inputs 失败: {e}")
+            return []
+
     async def get_prior_strong_watch_pool_rows(
         self,
         trade_date,

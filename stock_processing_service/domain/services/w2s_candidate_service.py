@@ -52,6 +52,34 @@ class W2SCandidateService:
     @property
     def all_candidates(self) -> list[W2SCandidate]:
         return list(self._all_candidates)
+
+    @staticmethod
+    def _legacy_watch_mode_enabled() -> bool | None:
+        raw = os.environ.get("SPS_LAYER_C_INPUT_MODE")
+        if raw is None:
+            return None
+        return raw.strip().lower() == "legacy_watch_pool"
+
+    @classmethod
+    def _is_legacy_watch_row(cls, row: SubjectStockPoolDTO) -> bool:
+        metadata = row.metadata or {}
+        source = str(metadata.get("candidate_source") or metadata.get("watch_source_tag") or metadata.get("source_tag") or "")
+        return source in {"legacy_strong_watch_pool", "legacy_strong_watch_history"}
+
+    @classmethod
+    def _legacy_watch_mode_for_row(cls, row: SubjectStockPoolDTO) -> bool:
+        explicit = cls._legacy_watch_mode_enabled()
+        if explicit is not None:
+            return explicit
+        return cls._is_legacy_watch_row(row)
+
+    @classmethod
+    def _legacy_watch_mode_for_rows(cls, rows: list[SubjectStockPoolDTO]) -> bool:
+        explicit = cls._legacy_watch_mode_enabled()
+        if explicit is not None:
+            return explicit
+        return any(cls._is_legacy_watch_row(row) for row in rows)
+
     @staticmethod
     def _d(value: Any, default: str = "0") -> Decimal:
         if value is None:
@@ -460,8 +488,15 @@ class W2SCandidateService:
 
         level = "reject"
         reject_reason = ""
+        legacy_watch_mode = self._legacy_watch_mode_for_row(row)
         if hard_reject:
             reject_reason = "hard_reject"
+        elif legacy_watch_mode and pct_chg > Decimal("-1"):
+            reject_reason = "legacy_day_weak_gate_failed"
+        elif legacy_watch_mode and not diagnostic_strong_history_pass:
+            reject_reason = "legacy_strong_history_gate_failed"
+        elif legacy_watch_mode and support_hit_score < Decimal("45"):
+            reject_reason = "legacy_support_gate_failed"
         else:
             support_strength = support_hit_score
             day_weak_score = self._day_weak_score(pct_chg)
@@ -698,6 +733,12 @@ class W2SCandidateService:
 
         formal_candidates.sort(key=_formal_key)
         observe_candidates.sort(key=_observe_key)
+
+        if self._legacy_watch_mode_for_rows(pool_rows):
+            legacy_ranked = sorted(candidates, key=lambda c: c.candidate_score, reverse=True)
+            self._all_candidates = legacy_ranked[:10]
+            self._observe_candidates = [c for c in self._all_candidates if c.candidate_level == "observe_only"]
+            return self._all_candidates
 
         formal_top_n = 15
         observe_top_n = 10

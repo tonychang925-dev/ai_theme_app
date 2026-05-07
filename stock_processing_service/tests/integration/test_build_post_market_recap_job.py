@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import asyncio
+import os
+from contextlib import contextmanager
 from dataclasses import asdict
 from datetime import date
 from decimal import Decimal
@@ -18,6 +20,19 @@ from stock_processing_service.domain.services.strong_watch_history_service impor
     StrongWatchHistoryRecord,
 )
 from stock_processing_service.domain.services.w2s_candidate_service import W2SCandidate
+
+
+@contextmanager
+def _layer_c_mode(value: str):
+    old = os.environ.get("SPS_LAYER_C_INPUT_MODE")
+    os.environ["SPS_LAYER_C_INPUT_MODE"] = value
+    try:
+        yield
+    finally:
+        if old is None:
+            os.environ.pop("SPS_LAYER_C_INPUT_MODE", None)
+        else:
+            os.environ["SPS_LAYER_C_INPUT_MODE"] = old
 
 
 class _FakeReadPort:
@@ -64,6 +79,34 @@ class _FakeReadPort:
                 stock_id="002000.SZ",
                 stock_name="SampleA",
                 pool_rank=1,
+            )
+        ]
+
+    async def get_legacy_strong_watch_candidate_inputs(
+        self,
+        trade_date: date,
+        lookback_days: int = 7,
+    ) -> list[SubjectStockPoolDTO]:
+        return [
+            SubjectStockPoolDTO(
+                trade_date=trade_date,
+                subject_key="ai_chip",
+                subject_name="AI Chip",
+                stock_id="002000.SZ",
+                stock_name="SampleA",
+                pool_rank=1,
+                metadata={
+                    "candidate_source": "legacy_strong_watch_pool",
+                    "watch_status": "active",
+                    "pool_entry_type": "formal",
+                    "watch_pool_entry_type": "formal",
+                    "watch_score": "70",
+                    "watch_priority": "70",
+                    "prior7_limitup_days": 1,
+                    "prior7_strong_days": 1,
+                    "final_mainline_alive": True,
+                    "final_cycle_state": "repair",
+                },
             )
         ]
 
@@ -186,26 +229,27 @@ class _FakeCachePort:
 
 def test_build_post_market_recap_job() -> None:
     async def _run() -> None:
-        read_port = _FakeReadPort()
-        write_port = _FakeWritePort()
-        event_port = _FakeEventPort()
-        idempotency_port = _FakeIdempotencyPort()
-        cache_port = _FakeCachePort()
+        with _layer_c_mode("new_layer_c"):
+            read_port = _FakeReadPort()
+            write_port = _FakeWritePort()
+            event_port = _FakeEventPort()
+            idempotency_port = _FakeIdempotencyPort()
+            cache_port = _FakeCachePort()
 
-        job = BuildPostMarketRecapJob(
-            read_port=read_port,
-            write_port=write_port,
-            event_port=event_port,
-            idempotency_port=idempotency_port,
-            cache_port=cache_port,
-        )
+            job = BuildPostMarketRecapJob(
+                read_port=read_port,
+                write_port=write_port,
+                event_port=event_port,
+                idempotency_port=idempotency_port,
+                cache_port=cache_port,
+            )
 
-        result = await job.execute(
-            trade_date=date(2026, 4, 23),
-            snapshot_version="pm-v1",
-            batch_id="bpm1",
-            trace_id="tpm1",
-        )
+            result = await job.execute(
+                trade_date=date(2026, 4, 23),
+                snapshot_version="pm-v1",
+                batch_id="bpm1",
+                trace_id="tpm1",
+            )
         assert result.status == "ok"
         assert result.affected_rows == 1
         assert len(write_port.recap_docs) == 1
@@ -251,6 +295,69 @@ def test_build_post_market_recap_job() -> None:
     asyncio.run(_run())
 
 
+def test_layer_c_legacy_watch_pool_input_mode_does_not_use_new_c_as_candidate_source() -> None:
+    class _RaisingStrongWatchService:
+        def build_promoted_pool_with_history_and_shadow(self, *args, **kwargs):
+            raise AssertionError("new Layer C must not run unless shadow is explicitly enabled")
+
+        def build_promoted_pool_with_history(self, *args, **kwargs):
+            raise AssertionError("new Layer C must not run unless shadow is explicitly enabled")
+
+    class _RecordingCandidateService:
+        def __init__(self) -> None:
+            self.pool_rows: list[SubjectStockPoolDTO] = []
+            self.all_candidates: list[W2SCandidate] = []
+            self.observe_candidates: list[W2SCandidate] = []
+
+        def build_candidates(self, bars, pool_rows, prior_rows):
+            self.pool_rows = list(pool_rows)
+            self.all_candidates = []
+            self.observe_candidates = []
+            return []
+
+    async def _run() -> None:
+        os.environ.pop("SPS_LAYER_C_INPUT_MODE", None)
+        os.environ.pop("SPS_LAYER_C_SHADOW_ENABLED", None)
+        read_port = _FakeReadPort()
+        write_port = _FakeWritePort()
+        event_port = _FakeEventPort()
+        idempotency_port = _FakeIdempotencyPort()
+        cache_port = _FakeCachePort()
+        candidate_service = _RecordingCandidateService()
+
+        job = BuildPostMarketRecapJob(
+            read_port=read_port,
+            write_port=write_port,
+            event_port=event_port,
+            idempotency_port=idempotency_port,
+            cache_port=cache_port,
+            strong_watch_service=_RaisingStrongWatchService(),
+            candidate_service=candidate_service,
+        )
+
+        result = await job.execute(
+            trade_date=date(2026, 4, 23),
+            snapshot_version="pm-v-legacy",
+            batch_id="bpm-legacy",
+            trace_id="tpm-legacy",
+        )
+
+        assert result.status == "ok"
+        assert len(candidate_service.pool_rows) == 1
+        assert candidate_service.pool_rows[0].stock_id == "002000.SZ"
+        assert candidate_service.pool_rows[0].metadata["candidate_source"] == "legacy_strong_watch_pool"
+        recap_doc = write_port.recap_docs[0].recap_doc
+        assert recap_doc["layer_c_input_mode"] == "legacy_watch_pool"
+        assert recap_doc["layer_c_shadow_enabled"] is False
+        assert recap_doc["legacy_watch_input_count"] == 1
+        assert recap_doc["strong_watch_input_count"] == 0
+        assert recap_doc["strong_watch_promoted_count"] == 1
+        assert recap_doc["strong_watch_history_count"] == 0
+        assert write_port.strong_watch_history_rows == []
+
+    asyncio.run(_run())
+
+
 def test_build_post_market_recap_job_empty_strong_watch_pool() -> None:
     class _EmptyStrongWatchService:
         def build_promoted_pool_with_history(
@@ -271,28 +378,29 @@ def test_build_post_market_recap_job_empty_strong_watch_pool() -> None:
             return []
 
     async def _run() -> None:
-        read_port = _FakeReadPort()
-        write_port = _FakeWritePort()
-        event_port = _FakeEventPort()
-        idempotency_port = _FakeIdempotencyPort()
-        cache_port = _FakeCachePort()
+        with _layer_c_mode("new_layer_c"):
+            read_port = _FakeReadPort()
+            write_port = _FakeWritePort()
+            event_port = _FakeEventPort()
+            idempotency_port = _FakeIdempotencyPort()
+            cache_port = _FakeCachePort()
 
-        job = BuildPostMarketRecapJob(
-            read_port=read_port,
-            write_port=write_port,
-            event_port=event_port,
-            idempotency_port=idempotency_port,
-            cache_port=cache_port,
-            strong_watch_service=_EmptyStrongWatchService(),
-            candidate_service=_NoCandidateService(),
-        )
+            job = BuildPostMarketRecapJob(
+                read_port=read_port,
+                write_port=write_port,
+                event_port=event_port,
+                idempotency_port=idempotency_port,
+                cache_port=cache_port,
+                strong_watch_service=_EmptyStrongWatchService(),
+                candidate_service=_NoCandidateService(),
+            )
 
-        result = await job.execute(
-            trade_date=date(2026, 4, 23),
-            snapshot_version="pm-v-empty",
-            batch_id="bpm-empty",
-            trace_id="tpm-empty",
-        )
+            result = await job.execute(
+                trade_date=date(2026, 4, 23),
+                snapshot_version="pm-v-empty",
+                batch_id="bpm-empty",
+                trace_id="tpm-empty",
+            )
         assert result.status == "ok"
         assert len(write_port.recap_docs) == 1
         recap_doc = write_port.recap_docs[0].recap_doc
@@ -388,28 +496,29 @@ def test_build_post_market_recap_job_promoted_pool_generates_candidates() -> Non
             ]
 
     async def _run() -> None:
-        read_port = _FakeReadPort()
-        write_port = _FakeWritePort()
-        event_port = _FakeEventPort()
-        idempotency_port = _FakeIdempotencyPort()
-        cache_port = _FakeCachePort()
+        with _layer_c_mode("new_layer_c"):
+            read_port = _FakeReadPort()
+            write_port = _FakeWritePort()
+            event_port = _FakeEventPort()
+            idempotency_port = _FakeIdempotencyPort()
+            cache_port = _FakeCachePort()
 
-        job = BuildPostMarketRecapJob(
-            read_port=read_port,
-            write_port=write_port,
-            event_port=event_port,
-            idempotency_port=idempotency_port,
-            cache_port=cache_port,
-            strong_watch_service=_PromotedStrongWatchService(),
-            candidate_service=_OneCandidateService(),
-        )
+            job = BuildPostMarketRecapJob(
+                read_port=read_port,
+                write_port=write_port,
+                event_port=event_port,
+                idempotency_port=idempotency_port,
+                cache_port=cache_port,
+                strong_watch_service=_PromotedStrongWatchService(),
+                candidate_service=_OneCandidateService(),
+            )
 
-        result = await job.execute(
-            trade_date=date(2026, 4, 23),
-            snapshot_version="pm-v-promoted",
-            batch_id="bpm-promoted",
-            trace_id="tpm-promoted",
-        )
+            result = await job.execute(
+                trade_date=date(2026, 4, 23),
+                snapshot_version="pm-v-promoted",
+                batch_id="bpm-promoted",
+                trace_id="tpm-promoted",
+            )
         assert result.status == "ok"
         assert len(write_port.recap_docs) == 1
         recap_doc = write_port.recap_docs[0].recap_doc
