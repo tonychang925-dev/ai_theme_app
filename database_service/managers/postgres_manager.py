@@ -3150,9 +3150,14 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 latest_pool_trade_date = await conn.fetchval(
                     "SELECT MAX(last_trade_date) AS latest_trade_date FROM strong_stock_watch_pool"
                 )
-                sql = history_sql if latest_pool_trade_date and trade_date < latest_pool_trade_date else current_pool_sql
+                source_used = "strong_stock_watch_history" if latest_pool_trade_date and trade_date < latest_pool_trade_date else "strong_stock_watch_pool"
+                sql = history_sql if source_used == "strong_stock_watch_history" else current_pool_sql
                 rows = await conn.fetch(sql, trade_date, int(max(1, lookback_days)))
-                return [dict(row) for row in rows]
+                result = [dict(row) for row in rows]
+                for row in result:
+                    row["_legacy_source_used"] = source_used
+                    row["_legacy_latest_pool_trade_date"] = latest_pool_trade_date
+                return result
         except Exception as e:
             logger.exception("读取 legacy strong watch candidate inputs 失败 trade_date=%s lookback_days=%s", trade_date, lookback_days)
             raise RuntimeError("get_legacy_strong_watch_candidate_inputs failed") from e
