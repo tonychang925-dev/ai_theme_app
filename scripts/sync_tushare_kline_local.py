@@ -116,6 +116,7 @@ def _read_last_trade_date(path: Path) -> str:
 
 def main() -> int:
     args = build_parser().parse_args()
+    args.token = str(args.token or "").strip().strip("\"'").strip()
     if not args.token:
         raise SystemExit("missing token: pass --token or export TUSHARE_TOKEN")
 
@@ -174,15 +175,20 @@ def main() -> int:
             if args.resume:
                 _write_progress(progress_path, completed, skipped)
             continue
+        # Incremental fetch: only query missing tail, not full history range.
+        query_start = start_date
+        if target_path.exists() and last_trade_date and last_trade_date < end_date:
+            query_start = last_trade_date
         if target_path.exists() and not file_uptodate and (attempted <= 5 or attempted % 200 == 0):
             print(
                 f"[REFRESH] attempted={attempted}/{len(universe)} stock_id={stock_id} "
-                f"reason=stale_file last_trade_date={last_trade_date or 'none'} target_end_date={end_date}"
+                f"reason=stale_file last_trade_date={last_trade_date or 'none'} "
+                f"query_range={query_start}..{end_date}"
             )
         frame = None
         for attempt in range(args.max_rate_limit_retries + 1):
             try:
-                frame = adapter.fetch_daily_history(stock_id, start_date, end_date)
+                frame = adapter.fetch_daily_history(stock_id, query_start, end_date)
                 break
             except RuntimeError as exc:
                 message = str(exc)

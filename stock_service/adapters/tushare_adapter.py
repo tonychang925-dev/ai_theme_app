@@ -1,7 +1,14 @@
 from __future__ import annotations
 
+import math
 import time
 from typing import Iterable, Optional
+
+import pandas as pd
+import requests
+
+
+TUSHARE_URL = "http://api.tushare.pro"
 
 
 def _normalize_ts_code(value: str) -> str:
@@ -18,50 +25,24 @@ def _normalize_ts_code(value: str) -> str:
 
 
 class TushareAdapter:
-    """
-    Tushare adapter skeleton.
-
-    当前阶段目标是先冻结接入边界，不把外部数据源直接耦合进报告逻辑。
-    后续只需要在这里补全：
-    - daily / adj_factor / limit_list
-    - concept / moneyflow / top_inst
-    """
+    """Tushare adapter using direct HTTP to api.tushare.pro."""
 
     def __init__(self, token: str, *, timeout: int = 60, retry_count: int = 2, pause_seconds: float = 0.5):
-        self.token = token
+        self.token = str(token or "").strip().strip("\"'").strip()
         self.timeout = timeout
         self.retry_count = retry_count
         self.pause_seconds = pause_seconds
-        self._pro = None
-
-    def _client(self):
-        if self._pro is not None:
-            return self._pro
-        if not self.token:
-            raise RuntimeError("missing TUSHARE_TOKEN")
-        try:
-            import tushare as ts  # type: ignore
-        except Exception as exc:
-            raise RuntimeError("tushare package not installed") from exc
-        ts.set_token(self.token)
-        self._pro = ts.pro_api(token=self.token, timeout=self.timeout)
-        return self._pro
-
-    def fetch_daily_quotes(self, trade_date: str, ts_codes: Optional[Iterable[str]] = None):
-        trade_date_compact = trade_date.replace("-", "")
-        return self._fetch_batched("daily", trade_date_compact, ts_codes)
 
     def fetch_daily_history(self, ts_code: str, start_date: str, end_date: str):
-        normalized_code = _normalize_ts_code(ts_code)
-        return self._query_with_retry(
-            "daily",
-            ts_code=normalized_code,
-            start_date=start_date.replace("-", ""),
-            end_date=end_date.replace("-", ""),
-        )
+        return self._query("daily", ts_code=_normalize_ts_code(ts_code),
+                           start_date=start_date.replace("-", ""),
+                           end_date=end_date.replace("-", ""))
 
-    def fetch_limit_list(self, trade_date: str):
-        return self._query_with_retry("limit_list_d", trade_date=trade_date.replace("-", ""))
+    def fetch_daily_quotes(self, trade_date: str, ts_codes: Optional[Iterable[str]] = None):
+        return self._fetch_batched("daily", trade_date.replace("-", ""), ts_codes)
+
+    def fetch_limit_list(self, trade_date: str, ts_codes: Optional[Iterable[str]] = None):
+        return self._query("limit_list_d", trade_date=trade_date.replace("-", ""))
 
     def fetch_top_list(self, trade_date: str, ts_codes: Optional[Iterable[str]] = None):
         return self._fetch_batched("top_list", trade_date.replace("-", ""), ts_codes)
@@ -75,55 +56,35 @@ class TushareAdapter:
     def fetch_stk_auction_c(self, trade_date: str, ts_codes: Optional[Iterable[str]] = None):
         return self._fetch_batched("stk_auction_c", trade_date.replace("-", ""), ts_codes)
 
-    def _fetch_batched(self, api_name: str, trade_date_compact: str, ts_codes: Optional[Iterable[str]] = None):
+    def _fetch_batched(self, api_name: str, trade_date_compact: str, ts_codes: Optional[Iterable[str]]):
         if not ts_codes:
-            return self._query_with_retry(api_name, trade_date=trade_date_compact)
-
-        batches = []
-        batch: list[str] = []
-        for ts_code in ts_codes:
-            value = _normalize_ts_code(str(ts_code or ""))
-            if not value:
-                continue
-            batch.append(value)
-            if len(batch) >= 20:
-                batches.append(batch)
-                batch = []
-        if batch:
-            batches.append(batch)
-
-        frames = []
-        for batch_codes in batches:
-            frame = self._query_with_retry(
-                api_name,
-                trade_date=trade_date_compact,
-                ts_code=",".join(batch_codes),
-            )
-            frames.append(frame)
-            if self.pause_seconds > 0:
+            return self._query(api_name, trade_date=trade_date_compact)
+        codes = [_normalize_ts_code(str(x)) for x in ts_codes if str(x or "").strip()]
+        if not codes:
+            return self._query(api_name, trade_date=trade_date_compact)
+        merged = None
+        for i in range(0, len(codes), 20):
+            chunk = codes[i:i + 20]
+            frame = self._query(api_name, ts_code=",".join(chunk), trade_date=trade_date_compact)
+            if frame is not None:
+                merged = frame if merged is None else pd.concat([merged, frame], ignore_index=True)
+            if i + 20 < len(codes) and self.pause_seconds > 0:
                 time.sleep(self.pause_seconds)
+        return merged
 
-        if not frames:
-            return None
-        if len(frames) == 1:
-            return frames[0]
-
-        try:
-            import pandas as pd  # type: ignore
-
-            return pd.concat(frames, ignore_index=True)
-        except Exception:
-            merged: list[dict] = []
-            for frame in frames:
-                merged.extend(self.to_records(frame))
-            return merged
-
-    def _query_with_retry(self, api_name: str, **kwargs):
-        pro = self._client()
+    def _query(self, api_name: str, **kwargs):
+        payload = {"api_name": api_name, "token": self.token, "params": kwargs, "fields": ""}
         last_exc = None
         for attempt in range(self.retry_count + 1):
             try:
-                return getattr(pro, api_name)(**kwargs)
+                resp = requests.post(TUSHARE_URL, json=payload, timeout=self.timeout)
+                result = resp.json()
+                if result.get("code") != 0:
+                    raise RuntimeError(result.get("msg", "unknown error"))
+                data = result.get("data", {})
+                if not data or not data.get("items"):
+                    return None
+                return pd.DataFrame(data["items"], columns=data["fields"])
             except Exception as exc:
                 last_exc = exc
                 if attempt >= self.retry_count:
@@ -140,6 +101,11 @@ class TushareAdapter:
             return [frame]
         if isinstance(frame, list):
             return [item for item in frame if isinstance(item, dict)]
-        if hasattr(frame, "to_dict"):
-            return list(frame.to_dict(orient="records"))
-        raise TypeError("unsupported tushare response type: missing to_dict(orient='records')")
+        if not hasattr(frame, "to_dict"):
+            raise TypeError("unsupported tushare response type: missing to_dict(orient='records')")
+        records = frame.to_dict(orient="records")
+        for r in records:
+            for k, v in r.items():
+                if isinstance(v, float) and math.isnan(v):
+                    r[k] = None
+        return records

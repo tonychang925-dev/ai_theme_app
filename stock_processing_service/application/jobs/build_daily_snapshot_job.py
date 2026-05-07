@@ -157,6 +157,7 @@ class BuildDailySnapshotJob:
 
         subject_judgements = self._subject_judgement_service.judge_many(subject_evidences)
         subject_judgement_by_key = {j.subject_key: j for j in subject_judgements}
+        cycle_written = 0  # cycle data written to stock_daily_strategy_snapshot by projectors
         judgements = []
         for e in evidences:
             s = subject_judgement_by_key.get(e.subject_key)
@@ -354,6 +355,7 @@ class BuildDailySnapshotJob:
                 "layer_b_db_truth_missing": layer_b_db_truth_missing,
                 "db_evidence_row_count": len(db_evidence_rows) if db_evidence_rows else 0,
                 "subject_evidence_count": len(subject_evidences),
+                "cycle_judgement_written": cycle_written,
                 "heuristic_fallback_count": len(subject_evidences) if cycle_evidence_source == "heuristic_fallback" else 0,
                 "missing_db_subject_keys": sorted(
                     set(subject_keys) - {r["subject_key"] for r in (db_evidence_rows or [])}

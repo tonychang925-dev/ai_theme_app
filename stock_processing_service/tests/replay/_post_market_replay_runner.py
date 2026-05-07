@@ -240,6 +240,12 @@ class _ReplayDatabaseStockFacade:
             return int(await fn(rows) or 0)
         return len(rows)
 
+    async def upsert_theme_cycle_judgement_v2_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._gateway, "upsert_theme_cycle_judgement_v2_rows", None)
+        if callable(fn):
+            return int(await fn(rows) or 0)
+        return len(rows)
+
     async def publish_stock_processing_event(self, *args, **kwargs) -> str:
         # Compatible with both adapter styles:
         # 1) publish_stock_processing_event(event_dict)
