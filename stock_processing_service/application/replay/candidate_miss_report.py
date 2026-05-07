@@ -45,23 +45,35 @@ class CandidateMissReportBuilder:
         observe_rank = self._rank(stock_id, observe_candidates)
         promoted_rank = self._rank(stock_id, promoted_pool)
         input_rank = self._rank(stock_id, strong_watch_input)
+        in_input_ids = self._contains_stock_id(recap_doc.get("strong_watch_input_7d_stock_ids"), stock_id)
+        in_promoted_ids = self._contains_stock_id(recap_doc.get("promoted_pool_stock_ids"), stock_id)
         in_top = top_rank is not None
         in_observe = observe_rank is not None
-        in_promoted = promoted_rank is not None
-        in_input = input_rank is not None
+        in_promoted = promoted_rank is not None or in_promoted_ids
+        in_input = input_rank is not None or in_input_ids
         top_row = self._target(stock_id, top_candidates) or {}
         observe_row = self._target(stock_id, observe_candidates) or {}
         promoted_row = self._target(stock_id, promoted_pool) or {}
         input_row = self._target(stock_id, strong_watch_input) or {}
         row = best_row or top_row or observe_row or promoted_row or input_row or {}
-        observe_total = int(recap_doc.get("observe_candidates_count") or len(observe_candidates) or 0)
+        if observe_rank is None and str(row.get("candidate_level") or "") == "observe_only":
+            try:
+                observe_rank = int(row.get("candidate_rank") or 0) or None
+            except (TypeError, ValueError):
+                observe_rank = None
+        observe_total = int(
+            recap_doc.get("candidate_count_observe")
+            or recap_doc.get("observe_candidates_count")
+            or len(observe_candidates)
+            or 0
+        )
         top_total = int(recap_doc.get("candidate_count") or len(top_candidates) or 0)
         observe_top_n = len(observe_candidates)
         formal_top_n = len(top_candidates)
         candidate_level = str(row.get("candidate_level") or "")
         reject_reason = str(row.get("reject_reason") or row.get("hard_reject_reason") or "")
 
-        candidate_row_created = in_top or in_observe
+        candidate_row_created = in_top or in_observe or bool(candidate_level)
         reason = "selected"
         if not in_input and not in_promoted and not in_top and not in_observe:
             reason = "not_in_input_pool"
@@ -151,6 +163,13 @@ class CandidateMissReportBuilder:
             if str(row.get("stock_id") or "").strip().upper() == target:
                 return idx
         return None
+
+    @classmethod
+    def _contains_stock_id(cls, values: Any, stock_id: str) -> bool:
+        target = str(stock_id).strip().upper()
+        if not target or not isinstance(values, list):
+            return False
+        return any(str(value).strip().upper() == target for value in values)
 
     @classmethod
     def _target(cls, stock_id: str, *groups: list[dict[str, Any]]) -> dict[str, Any] | None:

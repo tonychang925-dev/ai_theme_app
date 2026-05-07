@@ -4,7 +4,7 @@
     "trade_date": "2026-04-15",
     "stock_id": "605060.SH",
     "mode": "ReplayMode.FULL_REBUILD",
-    "snapshot_version": "replay_2026-04-15_liande_v5",
+    "snapshot_version": "replay_2026-04-15_liande_v7",
     "layer_results": [
       {
         "layer_name": "evidence",
@@ -34,8 +34,8 @@
       "layer_results": {
         "layer_c.present_in_promoted_pool": {
           "expected": true,
-          "actual": false,
-          "passed": false
+          "actual": true,
+          "passed": true
         },
         "layer_d.present_in_observe_candidates": {
           "expected": true,
@@ -44,25 +44,39 @@
         },
         "layer_d.support_type": {
           "expected": "prev_low_support",
-          "actual": null,
-          "passed": false
+          "actual": "prev_low_support",
+          "passed": true
         },
         "layer_d.candidate_level": {
           "expected": "observe_only",
-          "actual": null,
-          "passed": false
+          "actual": "observe_only",
+          "passed": true
         }
       },
       "diagnostics": {
-        "target_best_row": {},
+        "target_best_row": {
+          "gap_hit": false,
+          "stock_id": "605060.SH",
+          "stock_name": "联德股份",
+          "subject_key": "9028694",
+          "gap_hit_mode": "miss",
+          "subject_name": "9028694",
+          "support_type": "prev_low_support",
+          "support_score": "96.30",
+          "candidate_rank": 73,
+          "candidate_level": "observe_only",
+          "candidate_score": "70.07789672727272695272727273",
+          "weakness_valid_score": "90",
+          "repair_or_takeover_score": "50"
+        },
         "candidate_miss": {
           "stock_id": "605060.SH",
           "trade_date": "2026-04-15",
           "presence": {
-            "in_pool": false,
-            "in_refreshed": false,
-            "in_kept": false,
-            "in_promoted_pool": false,
+            "in_pool": true,
+            "in_refreshed": true,
+            "in_kept": true,
+            "in_promoted_pool": true,
             "in_top_candidates": false,
             "in_observe_candidates": false
           },
@@ -70,23 +84,23 @@
             "top_rank": null,
             "top_total": 12,
             "observe_rank": null,
-            "observe_total": 10,
-            "promoted_rank": null,
+            "observe_total": 286,
+            "promoted_rank": 57,
             "input_rank": null
           },
           "scores": {
-            "candidate_score": null,
-            "support_score": null,
-            "support_type": null,
-            "weakness_valid_score": null,
+            "candidate_score": "70.07789672727272695272727273",
+            "support_score": "96.30",
+            "support_type": "prev_low_support",
+            "weakness_valid_score": "90",
             "strong_gene_score": null,
-            "repair_or_takeover_score": null,
-            "candidate_level": null,
-            "gap_hit": null
+            "repair_or_takeover_score": "50",
+            "candidate_level": "observe_only",
+            "gap_hit": false
           },
           "selection": {
             "selected": false,
-            "not_selected_reason": "not_in_input_pool",
+            "not_selected_reason": "observe_rank_gt_observe_top_n",
             "observe_top_n": 10,
             "formal_top_n": 12,
             "reject_reason": ""
@@ -98,20 +112,20 @@
             "strong_gene_seed_reason": null,
             "input_rank": null,
             "refresh_status": null,
-            "kept": false,
+            "kept": true,
             "pruned": false,
-            "admission_status": null,
+            "admission_status": "observe_only",
             "admission_reasons": [],
             "hard_reject_any": false,
             "pass_count_4of3": null,
-            "promote_bucket": null,
-            "promoted_rank": null
+            "promote_bucket": "formal",
+            "promoted_rank": 57
           },
           "d_layer_trace": {
-            "candidate_row_created": false,
-            "candidate_level": null,
+            "candidate_row_created": true,
+            "candidate_level": "observe_only",
             "hard_reject": null,
-            "not_selected_reason": "not_in_input_pool"
+            "not_selected_reason": "observe_rank_gt_observe_top_n"
           }
         },
         "layer_b_summary": {

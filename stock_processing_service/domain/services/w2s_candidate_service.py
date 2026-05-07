@@ -43,10 +43,15 @@ class W2SCandidateService:
 
     def __init__(self) -> None:
         self._observe_candidates: list[W2SCandidate] = []
+        self._all_candidates: list[W2SCandidate] = []
 
     @property
     def observe_candidates(self) -> list[W2SCandidate]:
         return list(self._observe_candidates)
+
+    @property
+    def all_candidates(self) -> list[W2SCandidate]:
+        return list(self._all_candidates)
     @staticmethod
     def _d(value: Any, default: str = "0") -> Decimal:
         if value is None:
@@ -696,5 +701,6 @@ class W2SCandidateService:
 
         formal_top_n = 15
         observe_top_n = 10
+        self._all_candidates = [*formal_candidates, *observe_candidates]
         self._observe_candidates = observe_candidates[:observe_top_n]
         return (formal_candidates[:formal_top_n] + observe_candidates[:observe_top_n])[: self.MAX_CANDIDATES]

@@ -361,12 +361,13 @@ class BuildPostMarketRecapJob:
             pool_rows=candidate_input_rows,
             prior_rows=prior_rows,
         )
+        all_candidates = getattr(self._candidate_service, "all_candidates", candidates)
         formal_candidates = [
             c
-            for c in candidates
+            for c in all_candidates
             if str(getattr(c, "candidate_level", "")).lower() in {"formal", "s", "a", "b"}
         ]
-        observe_candidates = [c for c in candidates if str(getattr(c, "candidate_level", "")).lower() == "observe_only"]
+        observe_candidates = [c for c in all_candidates if str(getattr(c, "candidate_level", "")).lower() == "observe_only"]
 
         recap_doc = {
             "trade_date": trade_date.isoformat(),
@@ -412,6 +413,7 @@ class BuildPostMarketRecapJob:
             # Primary count follows the actual candidate list, with formal/observe split preserved separately.
             "candidate_count": len(candidates),
             "candidate_count_total": len(candidates),
+            "candidate_count_all": len(all_candidates),
             "candidate_count_formal": len(formal_candidates),
             "candidate_count_observe": len(observe_candidates),
             "observe_candidates_count": len(self._candidate_service.observe_candidates),
@@ -442,6 +444,24 @@ class BuildPostMarketRecapJob:
                 }
                 for c in self._candidate_service.observe_candidates[:20]
             ],
+            "candidate_diagnostics": [
+                {
+                    "stock_id": c.stock_id,
+                    "stock_name": c.stock_name,
+                    "subject_key": c.subject_key,
+                    "subject_name": c.subject_name,
+                    "candidate_score": str(c.candidate_score),
+                    "candidate_level": c.candidate_level,
+                    "support_type": c.support_type,
+                    "support_score": str(c.support_score),
+                    "weakness_valid_score": str(c.weakness_valid_score),
+                    "repair_or_takeover_score": str(c.repair_or_takeover_score),
+                    "gap_hit": c.gap_hit,
+                    "gap_hit_mode": c.gap_hit_mode,
+                    "candidate_rank": idx,
+                }
+                for idx, c in enumerate(all_candidates, start=1)
+            ],
             "strong_watch_input_7d_preview": [
                 {
                     "stock_id": r.stock_id,
@@ -467,6 +487,36 @@ class BuildPostMarketRecapJob:
                 {str(r.stock_id) for r in candidate_input_rows if str(getattr(r, "stock_id", "") or "")}
             ),
             "strong_watch_input_7d_source": "strong_watch_pool_history_single_source",
+            "promoted_pool_stock_ids": sorted(
+                {str(getattr(r, "stock_id", "") or "") for r in promoted_pool_rows if str(getattr(r, "stock_id", "") or "")}
+            ),
+            "promoted_pool_preview": [
+                {
+                    "stock_id": r.stock_id,
+                    "stock_name": r.stock_name,
+                    "subject_key": r.subject_key,
+                    "subject_name": r.subject_name,
+                    "pool_rank": r.pool_rank,
+                    "watch_status": str((getattr(r, "metadata", {}) or {}).get("watch_status", "")),
+                    "strong_grade": str((getattr(r, "metadata", {}) or {}).get("strong_grade", "")),
+                    "watch_score": str((getattr(r, "metadata", {}) or {}).get("watch_score", "")),
+                    "support_score": str((getattr(r, "metadata", {}) or {}).get("support_score", "")),
+                    "support_type": str((getattr(r, "metadata", {}) or {}).get("support_type", "")),
+                    "gap_hit": bool((getattr(r, "metadata", {}) or {}).get("gap_hit") or False),
+                    "seed_gate_pass": bool((getattr(r, "metadata", {}) or {}).get("seed_gate_pass") or False),
+                    "seed_gate_reason": str((getattr(r, "metadata", {}) or {}).get("seed_gate_reason", "")),
+                    "strong_gene_seed": bool((getattr(r, "metadata", {}) or {}).get("strong_gene_seed") or False),
+                    "strong_gene_seed_reason": str((getattr(r, "metadata", {}) or {}).get("strong_gene_seed_reason", "")),
+                    "two_board_entry": bool((getattr(r, "metadata", {}) or {}).get("two_board_entry") or False),
+                    "admission_status": str((getattr(r, "metadata", {}) or {}).get("admission_status", "")),
+                    "promote_bucket": str((getattr(r, "metadata", {}) or {}).get("promote_bucket", "")),
+                    "promote_reason": str((getattr(r, "metadata", {}) or {}).get("promote_reason", "")),
+                    "prior7_limitup_days": int((getattr(r, "metadata", {}) or {}).get("prior7_limitup_days") or 0),
+                    "recent_limit_up_count": int(((getattr(r, "metadata", {}) or {}).get("role_tags", {}) or {}).get("recent_limit_up_count") or 0),
+                    "final_cycle_state": str(((getattr(r, "metadata", {}) or {}).get("role_tags", {}) or {}).get("final_cycle_state", "")),
+                }
+                for r in promoted_pool_rows[:200]
+            ],
             "top_candidates": [
                 {
                     "stock_id": c.stock_id,
