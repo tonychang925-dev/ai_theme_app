@@ -73,9 +73,10 @@ class ReplayAssertionService:
         top_candidates = self._rows(recap_doc, "top_candidates")
         observe_candidates = self._rows(recap_doc, "observe_candidates", "observe_candidates_preview")
         promoted_pool = self._rows(recap_doc, "promoted_pool", "promoted_pool_preview")
+        candidate_diagnostics = self._rows(recap_doc, "candidate_diagnostics")
         has_promoted_pool = "promoted_pool" in recap_doc or "promoted_pool_preview" in recap_doc
 
-        best = self._best_target_row(case.stock_id, top_candidates, observe_candidates, promoted_pool)
+        best = self._best_target_row(case.stock_id, top_candidates, observe_candidates, promoted_pool, candidate_diagnostics)
         top = self._target_row(case.stock_id, top_candidates)
         observe = self._target_row(case.stock_id, observe_candidates)
         promoted = self._target_row(case.stock_id, promoted_pool)
@@ -384,7 +385,7 @@ class ReplayAssertionService:
                     target_rows.append(row)
         if not target_rows:
             return None
-        for key in ("support_type", "gap_hit", "reject_reason", "hard_reject_reason"):
+        for key in ("candidate_level", "support_type", "gap_hit", "reject_reason", "hard_reject_reason"):
             for row in target_rows:
                 if row.get(key) not in (None, ""):
                     return row
