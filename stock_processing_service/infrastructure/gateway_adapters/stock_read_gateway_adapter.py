@@ -18,7 +18,7 @@ from stock_processing_service.contracts.dto import (
     SubjectStockPoolDTO,
     TradeCalendarDTO,
 )
-from stock_processing_service.domain.services.strong_watch_service import StrongWatchService
+from stock_processing_service.domain.services.strong_stock_tracking_service import StrongStockTrackingService
 from stock_processing_service.ports.database_gateway_stock_facade import DatabaseGatewayStockFacade
 
 
@@ -260,7 +260,7 @@ class StockReadGatewayAdapter:
                     "strong_grade": strong_grade,
                     "watch_labels_json": labels,
                     "legacy_raw_row_count": 1,
-                    "eligible_for_candidate": StrongWatchService.is_candidate_eligible(
+                    "eligible_for_candidate": StrongStockTrackingService.is_candidate_eligible(
                         watch_status=watch_status,
                         pool_entry_type=watch_pool_entry_type,
                         candidate_source="strong_watch_pool",
@@ -549,7 +549,7 @@ class StockReadGatewayAdapter:
                         "pool_entry_type": str(p.get("pool_entry_type", "")),
                         "watch_age_days": int(p.get("watch_age_days") or 1),
                         "weak_days": int(p.get("weak_days") or 0),
-                        "eligible_for_candidate": StrongWatchService.is_candidate_eligible(
+                        "eligible_for_candidate": StrongStockTrackingService.is_candidate_eligible(
                             watch_status=str(p.get("watch_status", "")),
                             pool_entry_type=str(p.get("pool_entry_type", "")),
                             candidate_source="strong_watch_pool",
@@ -563,3 +563,67 @@ class StockReadGatewayAdapter:
                 )
             )
         return result
+
+    async def get_mainline_state_daily(
+        self,
+        trade_date: date,
+        subject_keys: list[str],
+    ) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_mainline_state_daily", None)
+        if not callable(fn):
+            return []
+        rows = await fn(trade_date=trade_date, subject_keys=subject_keys)
+        return [_as_dict(row) for row in rows]
+
+    async def get_subject_board_stats(
+        self,
+        trade_date: date,
+    ) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_subject_board_stats", None)
+        if not callable(fn):
+            return []
+        rows = await fn(trade_date=trade_date)
+        return [_as_dict(row) for row in rows]
+
+    async def get_stock_position_judgement(
+        self,
+        trade_date: date,
+        stock_ids: list[str] | None = None,
+    ) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_stock_position_judgement", None)
+        if not callable(fn):
+            return []
+        rows = await fn(trade_date=trade_date, stock_ids=stock_ids)
+        return [_as_dict(row) for row in rows]
+
+    async def get_stock_pattern_judgement(
+        self,
+        trade_date: date,
+        stock_ids: list[str] | None = None,
+    ) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_stock_pattern_judgement", None)
+        if not callable(fn):
+            return []
+        rows = await fn(trade_date=trade_date, stock_ids=stock_ids)
+        return [_as_dict(row) for row in rows]
+
+    async def get_strong_watch_seed_rows(
+        self,
+        trade_date: date,
+        lookback_days: int = 7,
+    ) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_strong_watch_seed_rows", None)
+        if not callable(fn):
+            return []
+        rows = await fn(trade_date=trade_date, lookback_days=lookback_days)
+        return [_as_dict(row) for row in rows]
+
+    async def get_strong_watch_refresh_rows(
+        self,
+        trade_date: date,
+    ) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_strong_watch_refresh_rows", None)
+        if not callable(fn):
+            return []
+        rows = await fn(trade_date=trade_date)
+        return [_as_dict(row) for row in rows]

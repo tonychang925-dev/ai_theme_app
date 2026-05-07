@@ -1,8 +1,8 @@
+"""Integration test for BuildPostMarketRecapJob — v2 seed-query architecture."""
+
 from __future__ import annotations
 
 import asyncio
-import os
-from contextlib import contextmanager
 from dataclasses import asdict
 from datetime import date
 from decimal import Decimal
@@ -16,24 +16,10 @@ from stock_processing_service.contracts.dto import (
     StockBarDTO,
     SubjectStockPoolDTO,
 )
-from stock_processing_service.domain.services.strong_watch_history_service import (
-    StrongWatchHistoryRecord,
-)
 from stock_processing_service.domain.services.w2s_candidate_service import W2SCandidate
 
 
-@contextmanager
-def _layer_c_mode(value: str):
-    old = os.environ.get("SPS_LAYER_C_INPUT_MODE")
-    os.environ["SPS_LAYER_C_INPUT_MODE"] = value
-    try:
-        yield
-    finally:
-        if old is None:
-            os.environ.pop("SPS_LAYER_C_INPUT_MODE", None)
-        else:
-            os.environ["SPS_LAYER_C_INPUT_MODE"] = old
-
+# ── Fake Read Port (with new Layer C gateway methods) ──
 
 class _FakeReadPort:
     async def get_trade_calendar(self, trade_date: date):
@@ -42,87 +28,84 @@ class _FakeReadPort:
     async def get_stock_daily_bars(self, trade_date: date, stock_ids: list[str] | None = None) -> list[StockBarDTO]:
         return [
             StockBarDTO(
-                trade_date=trade_date,
-                stock_id="002000.SZ",
-                stock_name="SampleA",
-                open_price=Decimal("12"),
-                high_price=Decimal("13"),
-                low_price=Decimal("11.8"),
-                close_price=Decimal("12.9"),
-                pre_close=Decimal("12"),
-                pct_chg=Decimal("7.5"),
-                volume=Decimal("30000"),
-                amount=Decimal("350000"),
-                limit_up_price=Decimal("13.2"),
-                limit_down_price=Decimal("10.8"),
+                trade_date=trade_date, stock_id="002000.SZ", stock_name="SampleA",
+                open_price=Decimal("12"), high_price=Decimal("13"), low_price=Decimal("11.8"),
+                close_price=Decimal("12.9"), pre_close=Decimal("12"), pct_chg=Decimal("7.5"),
+                volume=Decimal("30000"), amount=Decimal("350000"),
+                limit_up_price=Decimal("13.2"), limit_down_price=Decimal("10.8"),
             )
         ]
 
-    async def get_stock_daily_bars_range(
-        self,
-        start_date: date,
-        end_date: date,
-        stock_ids: list[str] | None = None,
-    ) -> list[StockBarDTO]:
+    async def get_stock_daily_bars_range(self, start_date: date, end_date: date, stock_ids=None):
         bars = await self.get_stock_daily_bars(end_date, stock_ids=stock_ids)
         return [bar for bar in bars if start_date <= bar.trade_date <= end_date]
 
-    async def get_stock_auction_snapshot(self, trade_date: date, stock_ids: list[str] | None = None):
+    async def get_stock_auction_snapshot(self, trade_date: date, stock_ids=None):
         return []
 
-    async def get_subject_stock_pool_by_trade_date(self, trade_date: date) -> list[SubjectStockPoolDTO]:
+    async def get_subject_stock_pool_by_trade_date(self, trade_date: date):
+        return []
+
+    async def get_legacy_strong_watch_candidate_inputs(self, trade_date: date, lookback_days: int = 7):
+        return []
+
+    # ── New Layer C gateway methods ──
+
+    async def get_strong_watch_seed_rows(self, trade_date: date, lookback_days: int = 7) -> list[dict[str, Any]]:
+        """Return one seed candidate matching old-chain _fetch_seed_rows output format."""
         return [
-            SubjectStockPoolDTO(
-                trade_date=trade_date,
-                subject_key="ai_chip",
-                subject_name="AI Chip",
-                stock_id="002000.SZ",
-                stock_name="SampleA",
-                pool_rank=1,
-            )
+            {
+                "stock_id": "002000.SZ",
+                "stock_name": "SampleA",
+                "subject_key": "ai_chip",
+                "theme_name": "AI Chip",
+                "recent_limit_up_count": 2,
+                "is_leader_flag": 1,
+                "best_rank": 1,
+                "current_flag_today": 2,
+                "is_main_theme": True,
+                "identity_status": "confirmed",
+                "final_mainline_alive": True,
+                "mainline_strength_score": 72.0,
+                "subject_limit_up_count": 2,
+                "subject_strong_count": 3,
+                "cond_gene": 1,
+                "cond_volume": 1,
+                "cond_structure": 1,
+            }
         ]
 
-    async def get_legacy_strong_watch_candidate_inputs(
-        self,
-        trade_date: date,
-        lookback_days: int = 7,
-    ) -> list[SubjectStockPoolDTO]:
+    async def get_strong_watch_refresh_rows(self, trade_date: date) -> list[dict[str, Any]]:
+        return []
+
+    async def get_subject_board_stats(self, trade_date: date) -> list[dict[str, Any]]:
         return [
-            SubjectStockPoolDTO(
-                trade_date=trade_date,
-                subject_key="ai_chip",
-                subject_name="AI Chip",
-                stock_id="002000.SZ",
-                stock_name="SampleA",
-                pool_rank=1,
-                metadata={
-                    "candidate_source": "legacy_strong_watch_pool",
-                    "watch_status": "active",
-                    "pool_entry_type": "formal",
-                    "watch_pool_entry_type": "formal",
-                    "watch_score": "70",
-                    "watch_priority": "70",
-                    "prior7_limitup_days": 1,
-                    "prior7_strong_days": 1,
-                    "final_mainline_alive": True,
-                    "final_cycle_state": "repair",
-                },
-            )
+            {"subject_key": "ai_chip", "subject_limit_up_count": 2, "subject_strong_count": 3},
+        ]
+
+    async def get_stock_position_judgement(self, trade_date: date, stock_ids=None) -> list[dict[str, Any]]:
+        return [
+            {"stock_id": "002000.SZ", "position_label": "突破前高",
+             "ma_alignment_status": "均线多头", "trend_strength_score": 75.0},
+        ]
+
+    async def get_stock_pattern_judgement(self, trade_date: date, stock_ids=None) -> list[dict[str, Any]]:
+        return [
+            {"stock_id": "002000.SZ",
+             "pattern_labels": ["高量不破"],
+             "volume_pattern_status": "放量上涨",
+             "breakout_status": "放量突破",
+             "pullback_status": "缩量回踩",
+             "risk_pattern_status": ""},
         ]
 
     async def get_subject_context_by_subject_keys(self, subject_keys: list[str], trade_date: date):
         return []
 
-    async def get_prior_stock_daily_snapshots(
-        self, trade_date: date, lookback_days: int, stock_ids: list[str] | None = None
-    ) -> list[PriorSnapshotDTO]:
+    async def get_prior_stock_daily_snapshots(self, trade_date: date, lookback_days: int, stock_ids=None):
         return [
-            PriorSnapshotDTO(
-                trade_date=trade_date,
-                stock_id="002000.SZ",
-                snapshot_version="v-prev",
-                payload={"final_cycle_state": "repair"},
-            )
+            PriorSnapshotDTO(trade_date=trade_date, stock_id="002000.SZ",
+                             snapshot_version="v-prev", payload={"pct_chg": "3.0"}),
         ]
 
     async def get_existing_pre_market_brief_snapshot(self, trade_date: date):
@@ -133,46 +116,42 @@ class _FakeReadPort:
 
     async def get_mainline_identity_by_subject_keys(self, subject_keys: list[str], trade_date: date):
         return [
-            MainlineIdentityDTO(
-                subject_key="ai_chip",
-                identity_status="confirmed",
-                is_main_theme=True,
-                first_confirmed_date=trade_date,
-                last_review_date=trade_date,
-                rule_version="test",
-            )
+            MainlineIdentityDTO(subject_key="ai_chip", identity_status="confirmed",
+                                is_main_theme=True, first_confirmed_date=trade_date,
+                                last_review_date=trade_date, rule_version="test"),
         ]
 
     async def get_mainline_cycle_by_subject_keys(self, subject_keys: list[str], trade_date: date):
         return [
-            MainlineCycleDTO(
-                trade_date=trade_date,
-                subject_key="ai_chip",
-                final_cycle_state="repair",
-                final_mainline_alive=True,
-            )
+            MainlineCycleDTO(trade_date=trade_date, subject_key="ai_chip",
+                             final_cycle_state="repair", final_mainline_alive=True),
         ]
 
+    async def get_mainline_identity_rule_inputs(self, trade_date: date, subject_keys: list[str]):
+        return []
+
+    async def get_prior_strong_watch_pool_rows(self, trade_date: date, lookback_days: int):
+        return []
+
+    async def get_subject_event_stats(self, trade_date: date, subject_keys=None):
+        return []
+
+    async def get_subject_cycle_evidence_daily(self, trade_date: date, subject_keys=None):
+        return []
+
+
+# ── Fake ports ──
 
 class _FakeWritePort:
     def __init__(self) -> None:
         self.recap_docs: list[Any] = []
         self.strong_watch_history_rows: list[dict[str, Any]] = []
 
-    async def upsert_stock_daily_snapshot_rows(self, rows):
-        return len(rows)
-
-    async def upsert_subject_stock_daily_snapshot_rows(self, rows):
-        return len(rows)
-
-    async def upsert_stock_abnormal_event_rows(self, rows):
-        return len(rows)
-
-    async def upsert_theme_stock_leaderboard_rows(self, rows):
-        return len(rows)
-
-    async def upsert_pre_market_brief_snapshot(self, doc):
-        return 1
+    async def upsert_stock_daily_snapshot_rows(self, rows): return len(rows)
+    async def upsert_subject_stock_daily_snapshot_rows(self, rows): return len(rows)
+    async def upsert_stock_abnormal_event_rows(self, rows): return len(rows)
+    async def upsert_theme_stock_leaderboard_rows(self, rows): return len(rows)
+    async def upsert_pre_market_brief_snapshot(self, doc): return 1
 
     async def upsert_post_market_recap_snapshot(self, doc):
         self.recap_docs.append(doc)
@@ -181,6 +160,10 @@ class _FakeWritePort:
     async def upsert_strong_watch_history_rows(self, rows):
         self.strong_watch_history_rows.extend(rows)
         return len(rows)
+
+    async def upsert_theme_mainline_identity_registry_rows(self, rows): return len(rows)
+    async def upsert_mainline_identity_review_queue_rows(self, rows): return len(rows)
+    async def upsert_theme_cycle_evidence_daily_rows(self, rows): return len(rows)
 
 
 class _FakeEventPort:
@@ -227,103 +210,17 @@ class _FakeCachePort:
         return 0
 
 
-def test_build_post_market_recap_job() -> None:
-    async def _run() -> None:
-        with _layer_c_mode("new_layer_c"):
-            read_port = _FakeReadPort()
-            write_port = _FakeWritePort()
-            event_port = _FakeEventPort()
-            idempotency_port = _FakeIdempotencyPort()
-            cache_port = _FakeCachePort()
+# ── Tests ──
 
-            job = BuildPostMarketRecapJob(
-                read_port=read_port,
-                write_port=write_port,
-                event_port=event_port,
-                idempotency_port=idempotency_port,
-                cache_port=cache_port,
-            )
-
-            result = await job.execute(
-                trade_date=date(2026, 4, 23),
-                snapshot_version="pm-v1",
-                batch_id="bpm1",
-                trace_id="tpm1",
-            )
-        assert result.status == "ok"
-        assert result.affected_rows == 1
-        assert len(write_port.recap_docs) == 1
-        recap_doc = write_port.recap_docs[0].recap_doc
-        assert recap_doc["candidate_source"] == "strong_watch_pool"
-        assert recap_doc["layer_a_identity_source"] == "theme_mainline_identity_registry"
-        assert recap_doc["layer_b_cycle_source"] == "theme_cycle_judgement_v2"
-        assert recap_doc["layer_a_identity_hit_count"] >= 1
-        assert recap_doc["layer_b_cycle_hit_count"] >= 1
-        assert "shadow_layer_c_formal_count" in recap_doc
-        assert "shadow_layer_c_observe_count" in recap_doc
-        assert "shadow_layer_c_reject_count" in recap_doc
-        assert "input_fingerprint" in recap_doc
-        assert recap_doc["input_fingerprint"]["trade_date"] == "2026-04-23"
-        assert recap_doc["input_fingerprint"]["bars_count"] >= 1
-        assert recap_doc["input_fingerprint"]["pool_rows_count"] >= 1
-        assert recap_doc["input_fingerprint"]["fingerprint_sha256"]
-        assert recap_doc["strong_watch_promoted_count"] >= recap_doc["candidate_count"]
-        assert recap_doc["strong_watch_history_count"] >= recap_doc["strong_watch_promoted_count"]
-        if recap_doc.get("top_candidates"):
-            top0 = recap_doc["top_candidates"][0]
-            assert "transition_type" in top0
-            assert "transition_confidence" in top0
-            assert "trigger_flags" in top0
-        assert len(write_port.strong_watch_history_rows) == recap_doc["strong_watch_history_count"]
-        assert len(event_port.events) == 1
-        assert event_port.events[0]["event_name"] == "snapshot_built"
-        assert "sps:post_market_recap:2026-04-23" in cache_port.cache
-        assert "sps:strong_watch_history:2026-04-23" in cache_port.cache
-        assert "sps:post_market_recap:current:2026-04-23" in cache_port.cache
-
-        skipped = await job.execute(
-            trade_date=date(2026, 4, 23),
-            snapshot_version="pm-v1",
-            batch_id="bpm1",
-            trace_id="tpm1",
-        )
-        assert skipped.status == "skipped_idempotent"
-        assert skipped.batch_id == "bpm1"
-        assert skipped.trace_id == "tpm1"
-        assert "idempotency_key_already_completed" in skipped.warnings
-
-    asyncio.run(_run())
-
-
-def test_layer_c_legacy_watch_pool_input_mode_does_not_use_new_c_as_candidate_source() -> None:
-    class _RaisingStrongWatchService:
-        def build_promoted_pool_with_history_and_shadow(self, *args, **kwargs):
-            raise AssertionError("new Layer C must not run unless shadow is explicitly enabled")
-
-        def build_promoted_pool_with_history(self, *args, **kwargs):
-            raise AssertionError("new Layer C must not run unless shadow is explicitly enabled")
-
-    class _RecordingCandidateService:
-        def __init__(self) -> None:
-            self.pool_rows: list[SubjectStockPoolDTO] = []
-            self.all_candidates: list[W2SCandidate] = []
-            self.observe_candidates: list[W2SCandidate] = []
-
-        def build_candidates(self, bars, pool_rows, prior_rows):
-            self.pool_rows = list(pool_rows)
-            self.all_candidates = []
-            self.observe_candidates = []
-            return []
+def test_build_post_market_recap_job_seed_query_flow() -> None:
+    """Smoke test: job runs successfully with seed-query architecture."""
 
     async def _run() -> None:
-        os.environ.pop("SPS_LAYER_C_INPUT_MODE", None)
-        os.environ.pop("SPS_LAYER_C_SHADOW_ENABLED", None)
         read_port = _FakeReadPort()
         write_port = _FakeWritePort()
         event_port = _FakeEventPort()
         idempotency_port = _FakeIdempotencyPort()
         cache_port = _FakeCachePort()
-        candidate_service = _RecordingCandidateService()
 
         job = BuildPostMarketRecapJob(
             read_port=read_port,
@@ -331,207 +228,60 @@ def test_layer_c_legacy_watch_pool_input_mode_does_not_use_new_c_as_candidate_so
             event_port=event_port,
             idempotency_port=idempotency_port,
             cache_port=cache_port,
-            strong_watch_service=_RaisingStrongWatchService(),
-            candidate_service=candidate_service,
         )
 
         result = await job.execute(
             trade_date=date(2026, 4, 23),
-            snapshot_version="pm-v-legacy",
-            batch_id="bpm-legacy",
-            trace_id="tpm-legacy",
+            snapshot_version="pm-v2",
+            batch_id="bpm2",
+            trace_id="tpm2",
+        )
+        assert result.status == "ok"
+        assert result.affected_rows == 1
+        assert len(write_port.recap_docs) == 1
+        recap_doc = write_port.recap_docs[0].recap_doc
+        assert recap_doc["candidate_source"] == "strong_watch_pool"
+        assert recap_doc["layer_c_input_mode"] == "seed_query"
+        assert recap_doc["layer_a_identity_hit_count"] >= 1
+        assert recap_doc["layer_b_cycle_hit_count"] >= 1
+
+        # Idempotency check
+        skipped = await job.execute(
+            trade_date=date(2026, 4, 23),
+            snapshot_version="pm-v2",
+            batch_id="bpm2",
+            trace_id="tpm2",
+        )
+        assert skipped.status == "skipped_idempotent"
+
+    asyncio.run(_run())
+
+
+def test_build_post_market_recap_job_idempotency() -> None:
+    """Verify idempotency blocks duplicate runs."""
+
+    async def _run() -> None:
+        read_port = _FakeReadPort()
+        write_port = _FakeWritePort()
+        event_port = _FakeEventPort()
+        idempotency_port = _FakeIdempotencyPort()
+        cache_port = _FakeCachePort()
+
+        job = BuildPostMarketRecapJob(
+            read_port=read_port,
+            write_port=write_port,
+            event_port=event_port,
+            idempotency_port=idempotency_port,
+            cache_port=cache_port,
         )
 
-        assert result.status == "ok"
-        assert len(candidate_service.pool_rows) == 1
-        assert candidate_service.pool_rows[0].stock_id == "002000.SZ"
-        assert candidate_service.pool_rows[0].metadata["candidate_source"] == "legacy_strong_watch_pool"
-        recap_doc = write_port.recap_docs[0].recap_doc
-        assert recap_doc["layer_c_input_mode"] == "legacy_watch_pool"
-        assert recap_doc["layer_c_shadow_enabled"] is False
-        assert recap_doc["legacy_watch_input_count"] == 1
-        assert recap_doc["strong_watch_input_count"] == 0
-        assert recap_doc["strong_watch_promoted_count"] == 1
-        assert recap_doc["strong_watch_history_count"] == 0
-        assert write_port.strong_watch_history_rows == []
+        r1 = await job.execute(trade_date=date(2026, 4, 23), snapshot_version="pm-v3",
+                                batch_id="bpm3", trace_id="tpm3")
+        assert r1.status == "ok"
 
-    asyncio.run(_run())
-
-
-def test_build_post_market_recap_job_empty_strong_watch_pool() -> None:
-    class _EmptyStrongWatchService:
-        def build_promoted_pool_with_history(
-            self,
-            trade_date,
-            pool_rows,
-            bars,
-            prior_rows=None,
-            history_bars=None,
-            prior_active_rows=None,
-            identities_by_subject=None,
-            cycles_by_subject=None,
-        ):
-            return [], [], []
-
-    class _NoCandidateService:
-        def build_candidates(self, bars, pool_rows, prior_rows):
-            return []
-
-    async def _run() -> None:
-        with _layer_c_mode("new_layer_c"):
-            read_port = _FakeReadPort()
-            write_port = _FakeWritePort()
-            event_port = _FakeEventPort()
-            idempotency_port = _FakeIdempotencyPort()
-            cache_port = _FakeCachePort()
-
-            job = BuildPostMarketRecapJob(
-                read_port=read_port,
-                write_port=write_port,
-                event_port=event_port,
-                idempotency_port=idempotency_port,
-                cache_port=cache_port,
-                strong_watch_service=_EmptyStrongWatchService(),
-                candidate_service=_NoCandidateService(),
-            )
-
-            result = await job.execute(
-                trade_date=date(2026, 4, 23),
-                snapshot_version="pm-v-empty",
-                batch_id="bpm-empty",
-                trace_id="tpm-empty",
-            )
-        assert result.status == "ok"
-        assert len(write_port.recap_docs) == 1
-        recap_doc = write_port.recap_docs[0].recap_doc
-        assert recap_doc["strong_watch_input_count"] == 0
-        assert recap_doc["strong_watch_promoted_count"] == 0
-        assert recap_doc["strong_watch_history_count"] == 0
-        assert recap_doc["candidate_count"] == 0
-        assert event_port.events and event_port.events[0]["event_name"] == "snapshot_built"
-
-    asyncio.run(_run())
-
-
-def test_build_post_market_recap_job_promoted_pool_generates_candidates() -> None:
-    class _PromotedStrongWatchService:
-        def build_promoted_pool_with_history(
-            self,
-            trade_date,
-            pool_rows,
-            bars,
-            prior_rows=None,
-            history_bars=None,
-            prior_active_rows=None,
-            identities_by_subject=None,
-            cycles_by_subject=None,
-        ):
-            promoted = [
-                SubjectStockPoolDTO(
-                    trade_date=trade_date,
-                    subject_key="ai_chip",
-                    subject_name="AI Chip",
-                    stock_id="002000.SZ",
-                    stock_name="SampleA",
-                    pool_rank=1,
-                )
-            ]
-            history = [
-                StrongWatchHistoryRecord(
-                    trade_date=trade_date,
-                    stock_id="002000.SZ",
-                    stock_name="SampleA",
-                    subject_key="ai_chip",
-                    theme_name="AI Chip",
-                    watch_status="active",
-                    pool_entry_type="formal",
-                    relay_role="leader",
-                    strong_grade="A",
-                    watch_score=Decimal("70"),
-                    watch_priority=Decimal("70"),
-                    cycle_state="repair",
-                    mainline_strength_score=Decimal("75"),
-                    fade_watch=False,
-                    fade_confirmed=False,
-                    promoted_to_candidate=True,
-                    support_score=Decimal("65"),
-                    support_type="ma_support",
-                    support_level=Decimal("12.0"),
-                    prune_mode=None,
-                    prune_reason_code=None,
-                    removed_reason=None,
-                )
-            ]
-            return promoted, [], history
-
-    class _OneCandidateService:
-        def build_candidates(self, bars, pool_rows, prior_rows):
-            return [
-                W2SCandidate(
-                    trade_date=str(date(2026, 4, 23)),
-                    stock_id="002000.SZ",
-                    stock_name="SampleA",
-                    subject_key="ai_chip",
-                    subject_name="AI Chip",
-                    support_score=Decimal("80"),
-                    momentum_score=Decimal("74"),
-                    candidate_score=Decimal("77"),
-                    candidate_level="A",
-                    candidate_source="strong_watch_pool",
-                    evidence_rules=["from_test"],
-                ),
-                W2SCandidate(
-                    trade_date=str(date(2026, 4, 23)),
-                    stock_id="002001.SZ",
-                    stock_name="SampleB",
-                    subject_key="ai_chip",
-                    subject_name="AI Chip",
-                    support_score=Decimal("68"),
-                    momentum_score=Decimal("62"),
-                    candidate_score=Decimal("66"),
-                    candidate_level="observe_only",
-                    candidate_source="strong_watch_pool",
-                    evidence_rules=["from_test_observe"],
-                ),
-            ]
-
-    async def _run() -> None:
-        with _layer_c_mode("new_layer_c"):
-            read_port = _FakeReadPort()
-            write_port = _FakeWritePort()
-            event_port = _FakeEventPort()
-            idempotency_port = _FakeIdempotencyPort()
-            cache_port = _FakeCachePort()
-
-            job = BuildPostMarketRecapJob(
-                read_port=read_port,
-                write_port=write_port,
-                event_port=event_port,
-                idempotency_port=idempotency_port,
-                cache_port=cache_port,
-                strong_watch_service=_PromotedStrongWatchService(),
-                candidate_service=_OneCandidateService(),
-            )
-
-            result = await job.execute(
-                trade_date=date(2026, 4, 23),
-                snapshot_version="pm-v-promoted",
-                batch_id="bpm-promoted",
-                trace_id="tpm-promoted",
-            )
-        assert result.status == "ok"
-        assert len(write_port.recap_docs) == 1
-        recap_doc = write_port.recap_docs[0].recap_doc
-        assert recap_doc["strong_watch_promoted_count"] == 1
-        assert recap_doc["strong_watch_history_count"] == 1
-        assert recap_doc["candidate_count"] == 2
-        assert recap_doc["candidate_count_formal"] == 1
-        assert recap_doc["candidate_count_observe"] == 1
-        assert len(recap_doc["top_candidates"]) == 2
-        assert any(c["stock_id"] == "002001.SZ" and c["candidate_level"] == "observe_only" for c in recap_doc["top_candidates"])
-        assert "transition_type" in recap_doc["top_candidates"][0]
-        assert "transition_confidence" in recap_doc["top_candidates"][0]
-        assert "trigger_flags" in recap_doc["top_candidates"][0]
-        assert event_port.events and event_port.events[0]["event_name"] == "snapshot_built"
+        r2 = await job.execute(trade_date=date(2026, 4, 23), snapshot_version="pm-v3",
+                                batch_id="bpm3", trace_id="tpm3")
+        assert r2.status == "skipped_idempotent"
+        assert r2.batch_id == "bpm3"
 
     asyncio.run(_run())

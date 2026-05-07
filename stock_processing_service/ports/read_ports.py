@@ -81,6 +81,30 @@ class StockReadPort(Protocol):
         self, trade_date: date, subject_keys: list[str] | None = None
     ) -> list[dict]: ...
 
+    async def get_mainline_state_daily(
+        self, trade_date: date, subject_keys: list[str]
+    ) -> list[dict[str, Any]]: ...
+
+    async def get_subject_board_stats(
+        self, trade_date: date
+    ) -> list[dict[str, Any]]: ...
+
+    async def get_stock_position_judgement(
+        self, trade_date: date, stock_ids: list[str] | None = None
+    ) -> list[dict[str, Any]]: ...
+
+    async def get_stock_pattern_judgement(
+        self, trade_date: date, stock_ids: list[str] | None = None
+    ) -> list[dict[str, Any]]: ...
+
+    async def get_strong_watch_seed_rows(
+        self, trade_date: date, lookback_days: int = 7
+    ) -> list[dict[str, Any]]: ...
+
+    async def get_strong_watch_refresh_rows(
+        self, trade_date: date
+    ) -> list[dict[str, Any]]: ...
+
 
 # Backward-compatible alias
 StockReadPorts = StockReadPort

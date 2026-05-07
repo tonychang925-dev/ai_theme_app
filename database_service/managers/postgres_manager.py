@@ -1975,6 +1975,286 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             rows = await conn.fetch(sql, *params)
         return [dict(r) for r in rows]
 
+    async def get_mainline_state_daily(
+        self, trade_date, subject_keys: List[str]
+    ) -> List[Dict[str, Any]]:
+        """读取 mainline_state_daily 状态快照（按 trade_date + subject_keys 过滤）。"""
+        if not subject_keys:
+            return []
+        sql = """
+        SELECT
+            trade_date,
+            subject_key,
+            theme_name,
+            state,
+            state_score,
+            is_mainline,
+            mainline_strength_score,
+            fade_watch_score,
+            fade_confirmed_score,
+            divergence_score,
+            repair_score
+        FROM mainline_state_daily
+        WHERE trade_date = $1::date
+          AND subject_key = ANY($2::text[])
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date, subject_keys)
+        return [dict(r) for r in rows]
+
+    async def get_subject_board_stats(
+        self, trade_date
+    ) -> List[Dict[str, Any]]:
+        """当日各 subject 板块强度统计（涨停数/强势股数，不分 subject 过滤）。
+
+        等价于旧链 subject_strength CTE:
+          subject_limit_up_count = COUNT(DISTINCT stock_id) FILTER (WHERE limit_up)
+          subject_strong_count = COUNT(DISTINCT stock_id) FILTER (
+            WHERE limit_up OR pct_chg>=7.0 OR rank_order<=3)
+        """
+        sql = """
+        SELECT
+            subject_key,
+            COUNT(DISTINCT stock_id) FILTER (WHERE COALESCE(limit_up, FALSE)) AS subject_limit_up_count,
+            COUNT(DISTINCT stock_id) FILTER (
+                WHERE COALESCE(limit_up, FALSE)
+                   OR COALESCE(pct_chg, 0) >= 7.0
+                   OR COALESCE(rank_order, 999) <= 3
+            ) AS subject_strong_count
+        FROM subject_stock_daily_snapshot
+        WHERE trade_date = $1::date
+        GROUP BY subject_key
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+        return [dict(r) for r in rows]
+
+    async def get_stock_position_judgement(
+        self, trade_date, stock_ids: List[str] | None = None
+    ) -> List[Dict[str, Any]]:
+        """读取个股位置与均线判断（stock_position_judgement 表）。"""
+        if not stock_ids:
+            return []
+        sql = """
+        SELECT
+            trade_date,
+            stock_id,
+            stock_name,
+            position_label,
+            ma_alignment_status,
+            trend_strength_score
+        FROM stock_position_judgement
+        WHERE trade_date = $1::date
+          AND split_part(stock_id, '.', 1) = ANY($2::text[])
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date, stock_ids)
+        return [dict(r) for r in rows]
+
+    async def get_stock_pattern_judgement(
+        self, trade_date, stock_ids: List[str] | None = None
+    ) -> List[Dict[str, Any]]:
+        """读取个股形态与量价模式判断（stock_pattern_judgement 表）。"""
+        if not stock_ids:
+            return []
+        sql = """
+        SELECT
+            trade_date,
+            stock_id,
+            stock_name,
+            COALESCE(pattern_labels, '[]'::jsonb) AS pattern_labels,
+            COALESCE(volume_pattern_status, '') AS volume_pattern_status,
+            COALESCE(breakout_status, '') AS breakout_status,
+            COALESCE(pullback_status, '') AS pullback_status,
+            COALESCE(risk_pattern_status, '') AS risk_pattern_status
+        FROM stock_pattern_judgement
+        WHERE trade_date = $1::date
+          AND split_part(stock_id, '.', 1) = ANY($2::text[])
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date, stock_ids)
+        return [dict(r) for r in rows]
+
+    async def get_strong_watch_seed_rows(
+        self, trade_date, lookback_days: int = 7
+    ) -> List[Dict[str, Any]]:
+        """强势股观察池种子候选查询 — 复刻旧链 StrongStockTrackingService._fetch_seed_rows SQL。
+
+        完整复刻旧链 4-CTE 查询:
+          1. recent_trade_days — 最近 N 个交易日
+          2. recent — 7日窗口 stock+subject 聚合
+          3. subject_strength — 当日板块强度
+          4. eligible — 双路径过滤 + identity/cycle/state JOIN
+          5. ranked — cond_gene/cond_volume/cond_structure + ROW_NUMBER 去重
+          最终: rn=1 AND (recent_limit_up>=2 OR (>=1 AND 3条件>=2))
+        """
+        sql = """
+        WITH recent_trade_days AS (
+            SELECT t.trade_date
+            FROM (
+                SELECT DISTINCT s.trade_date
+                FROM subject_stock_daily_snapshot s
+                WHERE s.trade_date <= $1::date
+                ORDER BY s.trade_date DESC
+                LIMIT $2::int
+            ) t
+        ),
+        recent AS (
+            SELECT
+                stock_id,
+                MAX(stock_name) AS stock_name,
+                subject_key,
+                COUNT(DISTINCT trade_date) FILTER (WHERE COALESCE(limit_up, FALSE)) AS recent_limit_up_count,
+                MAX(CASE WHEN COALESCE(is_leader, FALSE) THEN 1 ELSE 0 END) AS is_leader_flag,
+                MIN(COALESCE(rank_order, 999)) AS best_rank,
+                MAX(
+                    CASE
+                        WHEN trade_date = $1::date
+                             AND jsonb_typeof(raw_json) = 'array'
+                             AND jsonb_array_length(raw_json) > 20
+                        THEN COALESCE(NULLIF(raw_json->>20, ''), '0')::int
+                        ELSE 0
+                    END
+                ) AS current_flag_today
+            FROM subject_stock_daily_snapshot
+            WHERE trade_date IN (SELECT trade_date FROM recent_trade_days)
+            GROUP BY stock_id, subject_key
+        ),
+        subject_strength AS (
+            SELECT
+                subject_key,
+                COUNT(DISTINCT stock_id) FILTER (WHERE COALESCE(limit_up, FALSE)) AS subject_limit_up_count,
+                COUNT(DISTINCT stock_id) FILTER (
+                    WHERE COALESCE(limit_up, FALSE)
+                       OR COALESCE(pct_chg, 0) >= 7.0
+                       OR COALESCE(rank_order, 999) <= 3
+                ) AS subject_strong_count
+            FROM subject_stock_daily_snapshot
+            WHERE trade_date = $1::date
+            GROUP BY subject_key
+        ),
+        eligible AS (
+            SELECT
+                r.*,
+                COALESCE(v2.theme_name, r.subject_key) AS theme_name,
+                COALESCE(mr.is_main_theme, FALSE) AS is_main_theme,
+                COALESCE(mr.identity_status, 'observed') AS identity_status,
+                (
+                    COALESCE(mr.is_main_theme, FALSE)
+                    AND COALESCE(mr.identity_status, '') = 'confirmed'
+                    AND COALESCE(msd.state, COALESCE(v2.final_cycle_state, '')) <> 'fade_confirmed'
+                    AND COALESCE(v2.fade_confirmed, FALSE) = FALSE
+                ) AS final_mainline_alive,
+                COALESCE(msd.mainline_strength_score, v2.mainline_strength_score, 0) AS mainline_strength_score,
+                COALESCE(ss.subject_limit_up_count, 0) AS subject_limit_up_count,
+                COALESCE(ss.subject_strong_count, 0) AS subject_strong_count
+            FROM recent r
+            LEFT JOIN theme_mainline_identity_registry mr
+              ON mr.subject_key = r.subject_key
+            LEFT JOIN mainline_state_daily msd
+              ON msd.trade_date = $1::date
+             AND msd.subject_key = r.subject_key
+            LEFT JOIN theme_cycle_judgement_v2 v2
+              ON v2.trade_date = $1::date
+             AND v2.subject_key = r.subject_key
+            LEFT JOIN subject_strength ss
+              ON ss.subject_key = r.subject_key
+            WHERE (
+                (
+                    COALESCE(mr.is_main_theme, FALSE) = TRUE
+                    AND COALESCE(mr.identity_status, '') = 'confirmed'
+                    AND COALESCE(msd.state, COALESCE(v2.final_cycle_state, '')) <> 'fade_confirmed'
+                    AND COALESCE(v2.fade_confirmed, FALSE) = FALSE
+                    AND (
+                        COALESCE(ss.subject_limit_up_count, 0) >= 2
+                        OR COALESCE(ss.subject_strong_count, 0) >= 3
+                    )
+                )
+                OR COALESCE(r.recent_limit_up_count, 0) >= 2
+            )
+        ),
+        ranked AS (
+            SELECT
+                e.*,
+                CASE
+                    WHEN e.recent_limit_up_count >= 2
+                      OR (e.is_leader_flag = 1 AND e.recent_limit_up_count >= 1)
+                    THEN 1 ELSE 0
+                END AS cond_gene,
+                CASE WHEN e.current_flag_today >= 2 THEN 1 ELSE 0 END AS cond_volume,
+                CASE WHEN e.is_leader_flag = 1 OR e.best_rank <= 5 THEN 1 ELSE 0 END AS cond_structure,
+                ROW_NUMBER() OVER (
+                    PARTITION BY e.stock_id
+                    ORDER BY
+                        e.mainline_strength_score DESC,
+                        e.subject_limit_up_count DESC,
+                        e.subject_strong_count DESC,
+                        e.recent_limit_up_count DESC,
+                        e.is_leader_flag DESC,
+                        e.best_rank ASC
+                ) AS rn
+            FROM eligible e
+        )
+        SELECT *
+        FROM ranked
+        WHERE rn = 1
+          AND (
+                COALESCE(recent_limit_up_count, 0) >= 2
+                OR (
+                    COALESCE(recent_limit_up_count, 0) >= 1
+                    AND (cond_gene + cond_volume + cond_structure) >= 2
+                )
+              )
+        ORDER BY mainline_strength_score DESC, recent_limit_up_count DESC, best_rank ASC
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date, int(max(1, lookback_days)))
+        return [dict(r) for r in rows]
+
+    async def get_strong_watch_refresh_rows(
+        self, trade_date
+    ) -> List[Dict[str, Any]]:
+        """强势股观察池 refresh 候选 — 复刻旧链 StrongStockTrackingService._fetch_refresh_watch_pool SQL。
+
+        读取 strong_stock_watch_pool 中 pending_seed/pending_refresh/active/weakening 状态的股票，
+        附加上当日 current_flag_today。
+        """
+        sql = """
+        SELECT
+            p.*,
+            COALESCE(sf.current_flag_today, 0) AS current_flag_today
+        FROM strong_stock_watch_pool p
+        LEFT JOIN (
+            SELECT
+                split_part(stock_id, '.', 1) AS stock_code,
+                MAX(
+                    CASE
+                        WHEN jsonb_typeof(raw_json) = 'array' AND jsonb_array_length(raw_json) > 20
+                        THEN COALESCE(NULLIF(raw_json->>20, ''), '0')::int
+                        ELSE 0
+                    END
+                ) AS current_flag_today
+            FROM subject_stock_daily_snapshot
+            WHERE trade_date = $1::date
+            GROUP BY split_part(stock_id, '.', 1)
+        ) sf
+          ON sf.stock_code = split_part(p.stock_id, '.', 1)
+        WHERE p.watch_status IN ('pending_seed', 'pending_refresh', 'active', 'weakening')
+          AND p.last_trade_date <= $1::date
+        ORDER BY
+            CASE
+                WHEN p.watch_status = 'pending_seed' THEN 0
+                WHEN p.watch_status = 'pending_refresh' THEN 1
+                WHEN p.watch_status = 'active' THEN 2
+                ELSE 3
+            END ASC,
+            p.watch_score DESC,
+            p.watch_priority DESC
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+        return [dict(r) for r in rows]
+
     async def get_subject_market_stats(
         self,
         trade_date,
