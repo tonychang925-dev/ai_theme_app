@@ -73,6 +73,14 @@ class MAStructure:
 
 
 @dataclass(frozen=True)
+class BBLowerStructure:
+    level: Decimal
+    distance_pct: Decimal
+    is_valid: bool
+    source: str = "bb_lower_support"
+
+
+@dataclass(frozen=True)
 class ResolvedSupport:
     support_type: str
     support_level: Decimal

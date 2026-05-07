@@ -155,6 +155,8 @@ class W2SCandidateService:
             support_type_bonus = Decimal("8")
         elif support_type in {"previous_low", "prev_low_support", "platform_support"}:
             support_type_bonus = Decimal("5")
+        elif support_type == "bb_lower_support":
+            support_type_bonus = Decimal("4")
         elif support_type == "ma_support":
             support_type_bonus = Decimal("3")
         return min(Decimal("100"), support_score * Decimal("0.85") + refs_bonus + support_type_bonus)
