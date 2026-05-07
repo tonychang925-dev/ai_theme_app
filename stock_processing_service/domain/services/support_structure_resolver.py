@@ -3,6 +3,7 @@ from __future__ import annotations
 from decimal import Decimal
 
 from stock_processing_service.domain.services.kline_support_scorer_types import (
+    BBLowerStructure,
     GapStructure,
     MAStructure,
     PreviousLowStructure,
@@ -17,11 +18,13 @@ class SupportStructureResolver:
         strict_gap_score: Decimal = Decimal("88"),
         soft_gap_score: Decimal = Decimal("80"),
         prev_low_score: Decimal = Decimal("78"),
+        bb_lower_score: Decimal = Decimal("75"),
         ma_score: Decimal = Decimal("70"),
     ) -> None:
         self._strict_gap_score = strict_gap_score
         self._soft_gap_score = soft_gap_score
         self._prev_low_score = prev_low_score
+        self._bb_lower_score = bb_lower_score
         self._ma_score = ma_score
 
     @staticmethod
@@ -47,6 +50,7 @@ class SupportStructureResolver:
         gap_structures: list[GapStructure],
         prev_low_structure: PreviousLowStructure | None,
         ma_structures: list[MAStructure],
+        bb_lower_structure: BBLowerStructure | None = None,
     ) -> ResolvedSupport:
         best_gap = self._pick_best_gap(gap_structures)
 
@@ -99,6 +103,21 @@ class SupportStructureResolver:
                 gap_hit_mode="soft",
                 gap_level=best_gap.gap_lower,
                 gap_distance_pct=best_gap.current_distance_pct,
+            )
+
+        if bb_lower_structure and bb_lower_structure.is_valid:
+            refs = [
+                "primary_support=bb_lower_support",
+                "resolver_rule=bb_lower_support",
+                f"bb_lower_level={bb_lower_structure.level}",
+                f"bb_lower_distance_pct={bb_lower_structure.distance_pct}",
+            ]
+            return ResolvedSupport(
+                support_type="bb_lower_support",
+                support_level=bb_lower_structure.level,
+                support_score=self._bb_lower_score,
+                support_refs=refs,
+                primary_reason="bb_lower_support",
             )
 
         if prev_low_structure and prev_low_structure.is_valid:

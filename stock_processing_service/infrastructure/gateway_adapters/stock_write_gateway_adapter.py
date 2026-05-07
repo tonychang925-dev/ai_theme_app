@@ -57,10 +57,19 @@ class StockWriteGatewayAdapter:
             payload["source_name"] = payload.pop("source")
         return await self._db.upsert_post_market_recap_snapshot(payload)
 
-    async def upsert_theme_mainline_identity_registry_rows(self, rows: list[dict[str, Any]]) -> int:
+    async def upsert_theme_mainline_identity_registry_rows(
+        self, rows: list[dict[str, Any]],
+        *,
+        allow_historical_overwrite: bool = False,
+        allow_unsafe_demotion: bool = False,
+    ) -> int:
         fn = getattr(self._db, "upsert_theme_mainline_identity_registry_rows", None)
         if callable(fn):
-            return await fn(rows)
+            return await fn(
+                rows,
+                allow_historical_overwrite=allow_historical_overwrite,
+                allow_unsafe_demotion=allow_unsafe_demotion,
+            )
         raise RuntimeError("DatabaseGatewayStockFacade missing upsert_theme_mainline_identity_registry_rows")
 
     async def upsert_mainline_identity_review_queue_rows(self, rows: list[dict[str, Any]]) -> int:
@@ -68,6 +77,20 @@ class StockWriteGatewayAdapter:
         if callable(fn):
             return await fn(rows)
         raise RuntimeError("DatabaseGatewayStockFacade missing upsert_mainline_identity_review_queue_rows")
+
+    async def upsert_strong_watch_pool_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._db, "upsert_strong_watch_pool_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        return 0
+
+    async def apply_lifecycle_downgrade(
+        self, trade_date, deactivate_fade_days: int = 2
+    ) -> int:
+        fn = getattr(self._db, "apply_lifecycle_downgrade", None)
+        if callable(fn):
+            return await fn(trade_date, deactivate_fade_days)
+        return 0
 
     async def upsert_strong_watch_history_rows(self, rows: list[dict[str, Any]]) -> int:
         fn = getattr(self._db, "upsert_strong_watch_history_rows", None)

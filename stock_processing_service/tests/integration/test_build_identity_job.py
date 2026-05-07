@@ -145,7 +145,9 @@ class _FakeWritePort:
     async def upsert_post_market_recap_snapshot(self, doc):
         return 1
 
-    async def upsert_theme_mainline_identity_registry_rows(self, rows):
+    async def upsert_theme_mainline_identity_registry_rows(
+        self, rows, *, allow_historical_overwrite=False, allow_unsafe_demotion=False
+    ):
         self.identity_rows.extend(rows)
         return len(rows)
 

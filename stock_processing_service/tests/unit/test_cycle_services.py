@@ -246,7 +246,9 @@ def test_cycle_state_sensitivity_to_evidence_gap() -> None:
     normal_evidence = builder.build_evidences(bars, pool, context, prior)[0]
     normal_state = judger.judge_many([normal_evidence])[0].final_cycle_state
 
-    # Evidence-gap scenario: same input frame, but explicit weak external evidence injected.
+    # Evidence-gap scenario: explicitly inject old-chain fade signals:
+    # leader_breakdown_flag=True, limit_down_count=2, big_drop_ratio=0.5,
+    # low relay/support scores → should trigger fade_confirmed under old chain formulas
     pool_weak = [
         SubjectStockPoolDTO(
             trade_date=pool[0].trade_date,
@@ -256,11 +258,18 @@ def test_cycle_state_sensitivity_to_evidence_gap() -> None:
             stock_name=pool[0].stock_name,
             pool_rank=pool[0].pool_rank,
             metadata={
-                "leader_score": "20",
+                "leader_score": "10",
                 "relay_score": "20",
-                "board_score": "22",
-                "support_score": "20",
+                "board_score": "15",
+                "support_score": "25",
                 "event_score": "10",
+                # old chain 6-dim evidence signals
+                "leader_breakdown_flag": True,
+                "limit_down_count": 2,
+                "big_drop_ratio": 0.35,
+                "front_row_survival_ratio": 0.3,
+                "break_start_pivot": True,
+                "strong_event_count_7d": 0,
             },
         )
     ]
@@ -275,7 +284,8 @@ def test_cycle_state_sensitivity_to_evidence_gap() -> None:
     weak_evidence = builder.build_evidences(bars, pool_weak, context, prior_weak)[0]
     weak_judgement = judger.judge_many([weak_evidence])[0]
 
-    # We expect a meaningful state shift under evidence degradation.
+    # Under old chain formulas with leader_breakdown + limit_down + big_drop,
+    # we expect fade_watch or fade_confirmed
     assert weak_judgement.final_cycle_state in {"fade_watch", "fade_confirmed"}
     assert weak_judgement.fade_confirmed_evidence_count >= 3
     assert normal_state != weak_judgement.final_cycle_state

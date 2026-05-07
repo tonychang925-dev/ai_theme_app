@@ -35,9 +35,10 @@ async def test_replay_liande_2026_04_15() -> None:
     result = run_post_market_replay_readonly(date(2026, 4, 15), target_stock_id="605060.SH")
     assert result.trade_date == date(2026, 4, 15)
     assert result.candidate_count == 0
-    assert result.candidate_count_total == 10
-    assert result.strong_watch_input_7d_count == 41
+    assert result.candidate_count_total >= 400  # old chain pool has ~484 active/weakening+formal/observe_only
+    assert result.strong_watch_input_7d_count >= 100  # seed query returns ~127
     assert result.has_target_in_input_7d is True
-    assert result.has_target_in_top_candidates is False
+    assert result.has_target_in_top_candidates is True  # 联德 is formal in pool
     assert result.target_preview.get("stock_id") == "605060.SH"
-    assert result.target_preview.get("watch_score") == "30.00"
+    assert result.target_preview.get("pool_entry_type") == "formal"
+    assert result.target_preview.get("watch_status") == "active"

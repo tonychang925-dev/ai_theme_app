@@ -840,6 +840,90 @@ class DatabaseGateway:
             logger.error(f"读取 subject_heat_stats 失败 trade_date={trade_date}: {e}")
             raise
 
+    async def get_mainline_state_daily(
+        self, trade_date, subject_keys: List[str]
+    ) -> List[Dict[str, Any]]:
+        """股票域显式读取：mainline_state_daily 状态快照。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_mainline_state_daily(trade_date, subject_keys)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 mainline_state_daily 失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def get_subject_board_stats(
+        self, trade_date
+    ) -> List[Dict[str, Any]]:
+        """股票域显式读取：当日各 subject 板块强度统计（涨停数/强势股数）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_subject_board_stats(trade_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 subject_board_stats 失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def get_stock_position_judgement(
+        self, trade_date, stock_ids: List[str] | None = None
+    ) -> List[Dict[str, Any]]:
+        """股票域显式读取：个股位置与均线判断。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_stock_position_judgement(trade_date, stock_ids=stock_ids)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 stock_position_judgement 失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def get_stock_pattern_judgement(
+        self, trade_date, stock_ids: List[str] | None = None
+    ) -> List[Dict[str, Any]]:
+        """股票域显式读取：个股形态与量价模式判断。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_stock_pattern_judgement(trade_date, stock_ids=stock_ids)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 stock_pattern_judgement 失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def get_strong_watch_seed_rows(
+        self, trade_date, lookback_days: int = 7
+    ) -> List[Dict[str, Any]]:
+        """股票域显式读取：强势股观察池种子候选（复刻旧链 _fetch_seed_rows SQL）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_strong_watch_seed_rows(trade_date, lookback_days)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 strong_watch_seed_rows 失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def get_strong_watch_refresh_rows(
+        self, trade_date
+    ) -> List[Dict[str, Any]]:
+        """股票域显式读取：强势股观察池 refresh 候选（复刻旧链 _fetch_refresh_watch_pool SQL）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_strong_watch_refresh_rows(trade_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 strong_watch_refresh_rows 失败 trade_date={trade_date}: {e}")
+            raise
+
     async def upsert_stock_daily_snapshot_rows(self, rows: List[Dict[str, Any]]) -> int:
         """批量 UPSERT stock_daily_snapshot。"""
         """批量 UPSERT stock_daily_snapshot。"""
@@ -987,6 +1071,18 @@ class DatabaseGateway:
             logger.error(f"写入 replay_snapshot_manifest 失败: {e}")
             raise
 
+    async def upsert_strong_watch_pool_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：strong_stock_watch_pool（Layer C 持久池）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_strong_watch_pool_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"写入 strong_stock_watch_pool 失败: {e}")
+            raise
+
     async def upsert_strong_watch_history_rows(self, rows: List[Dict[str, Any]]) -> int:
         """股票域显式写入：strong_stock_watch_history。"""
         try:
@@ -999,11 +1095,20 @@ class DatabaseGateway:
             logger.error(f"写入 strong_stock_watch_history 失败: {e}")
             raise
 
-    async def upsert_theme_mainline_identity_registry_rows(self, rows: List[Dict[str, Any]]) -> int:
+    async def upsert_theme_mainline_identity_registry_rows(
+        self, rows: List[Dict[str, Any]],
+        *,
+        allow_historical_overwrite: bool = False,
+        allow_unsafe_demotion: bool = False,
+    ) -> int:
         """股票域显式写入：theme_mainline_identity_registry（Layer A 身份注册表）。"""
         try:
             start_time = time.time()
-            result = await self._client.upsert_theme_mainline_identity_registry_rows(rows)
+            result = await self._client.upsert_theme_mainline_identity_registry_rows(
+                rows,
+                allow_historical_overwrite=allow_historical_overwrite,
+                allow_unsafe_demotion=allow_unsafe_demotion,
+            )
             self._record_request(True, start_time)
             return int(result or 0)
         except Exception as e:
@@ -1021,6 +1126,20 @@ class DatabaseGateway:
         except Exception as e:
             self._record_request(False, start_time)
             logger.error(f"写入 mainline_identity_review_queue 失败: {e}")
+            raise
+
+    async def apply_lifecycle_downgrade(
+        self, trade_date, deactivate_fade_days: int = 2
+    ) -> int:
+        """股票域显式写入：主线生命周期降级（连续 fade → inactive）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.apply_lifecycle_downgrade(trade_date, deactivate_fade_days)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"lifecycle downgrade 失败 trade_date={trade_date}: {e}")
             raise
 
     async def publish_stock_processing_event(self, event_name: str, payload: Dict[str, Any]) -> str:

@@ -1975,6 +1975,286 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             rows = await conn.fetch(sql, *params)
         return [dict(r) for r in rows]
 
+    async def get_mainline_state_daily(
+        self, trade_date, subject_keys: List[str]
+    ) -> List[Dict[str, Any]]:
+        """读取 mainline_state_daily 状态快照（按 trade_date + subject_keys 过滤）。"""
+        if not subject_keys:
+            return []
+        sql = """
+        SELECT
+            trade_date,
+            subject_key,
+            theme_name,
+            state,
+            state_score,
+            is_mainline,
+            mainline_strength_score,
+            fade_watch_score,
+            fade_confirmed_score,
+            divergence_score,
+            repair_score
+        FROM mainline_state_daily
+        WHERE trade_date = $1::date
+          AND subject_key = ANY($2::text[])
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date, subject_keys)
+        return [dict(r) for r in rows]
+
+    async def get_subject_board_stats(
+        self, trade_date
+    ) -> List[Dict[str, Any]]:
+        """当日各 subject 板块强度统计（涨停数/强势股数，不分 subject 过滤）。
+
+        等价于旧链 subject_strength CTE:
+          subject_limit_up_count = COUNT(DISTINCT stock_id) FILTER (WHERE limit_up)
+          subject_strong_count = COUNT(DISTINCT stock_id) FILTER (
+            WHERE limit_up OR pct_chg>=7.0 OR rank_order<=3)
+        """
+        sql = """
+        SELECT
+            subject_key,
+            COUNT(DISTINCT stock_id) FILTER (WHERE COALESCE(limit_up, FALSE)) AS subject_limit_up_count,
+            COUNT(DISTINCT stock_id) FILTER (
+                WHERE COALESCE(limit_up, FALSE)
+                   OR COALESCE(pct_chg, 0) >= 7.0
+                   OR COALESCE(rank_order, 999) <= 3
+            ) AS subject_strong_count
+        FROM subject_stock_daily_snapshot
+        WHERE trade_date = $1::date
+        GROUP BY subject_key
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+        return [dict(r) for r in rows]
+
+    async def get_stock_position_judgement(
+        self, trade_date, stock_ids: List[str] | None = None
+    ) -> List[Dict[str, Any]]:
+        """读取个股位置与均线判断（stock_position_judgement 表）。"""
+        if not stock_ids:
+            return []
+        sql = """
+        SELECT
+            trade_date,
+            stock_id,
+            stock_name,
+            position_label,
+            ma_alignment_status,
+            trend_strength_score
+        FROM stock_position_judgement
+        WHERE trade_date = $1::date
+          AND split_part(stock_id, '.', 1) = ANY($2::text[])
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date, stock_ids)
+        return [dict(r) for r in rows]
+
+    async def get_stock_pattern_judgement(
+        self, trade_date, stock_ids: List[str] | None = None
+    ) -> List[Dict[str, Any]]:
+        """读取个股形态与量价模式判断（stock_pattern_judgement 表）。"""
+        if not stock_ids:
+            return []
+        sql = """
+        SELECT
+            trade_date,
+            stock_id,
+            stock_name,
+            COALESCE(pattern_labels, '[]'::jsonb) AS pattern_labels,
+            COALESCE(volume_pattern_status, '') AS volume_pattern_status,
+            COALESCE(breakout_status, '') AS breakout_status,
+            COALESCE(pullback_status, '') AS pullback_status,
+            COALESCE(risk_pattern_status, '') AS risk_pattern_status
+        FROM stock_pattern_judgement
+        WHERE trade_date = $1::date
+          AND split_part(stock_id, '.', 1) = ANY($2::text[])
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date, stock_ids)
+        return [dict(r) for r in rows]
+
+    async def get_strong_watch_seed_rows(
+        self, trade_date, lookback_days: int = 7
+    ) -> List[Dict[str, Any]]:
+        """强势股观察池种子候选查询 — 复刻旧链 StrongStockTrackingService._fetch_seed_rows SQL。
+
+        完整复刻旧链 4-CTE 查询:
+          1. recent_trade_days — 最近 N 个交易日
+          2. recent — 7日窗口 stock+subject 聚合
+          3. subject_strength — 当日板块强度
+          4. eligible — 双路径过滤 + identity/cycle/state JOIN
+          5. ranked — cond_gene/cond_volume/cond_structure + ROW_NUMBER 去重
+          最终: rn=1 AND (recent_limit_up>=2 OR (>=1 AND 3条件>=2))
+        """
+        sql = """
+        WITH recent_trade_days AS (
+            SELECT t.trade_date
+            FROM (
+                SELECT DISTINCT s.trade_date
+                FROM subject_stock_daily_snapshot s
+                WHERE s.trade_date <= $1::date
+                ORDER BY s.trade_date DESC
+                LIMIT $2::int
+            ) t
+        ),
+        recent AS (
+            SELECT
+                stock_id,
+                MAX(stock_name) AS stock_name,
+                subject_key,
+                COUNT(DISTINCT trade_date) FILTER (WHERE COALESCE(limit_up, FALSE)) AS recent_limit_up_count,
+                MAX(CASE WHEN COALESCE(is_leader, FALSE) THEN 1 ELSE 0 END) AS is_leader_flag,
+                MIN(COALESCE(rank_order, 999)) AS best_rank,
+                MAX(
+                    CASE
+                        WHEN trade_date = $1::date
+                             AND jsonb_typeof(raw_json) = 'array'
+                             AND jsonb_array_length(raw_json) > 20
+                        THEN COALESCE(NULLIF(raw_json->>20, ''), '0')::int
+                        ELSE 0
+                    END
+                ) AS current_flag_today
+            FROM subject_stock_daily_snapshot
+            WHERE trade_date IN (SELECT trade_date FROM recent_trade_days)
+            GROUP BY stock_id, subject_key
+        ),
+        subject_strength AS (
+            SELECT
+                subject_key,
+                COUNT(DISTINCT stock_id) FILTER (WHERE COALESCE(limit_up, FALSE)) AS subject_limit_up_count,
+                COUNT(DISTINCT stock_id) FILTER (
+                    WHERE COALESCE(limit_up, FALSE)
+                       OR COALESCE(pct_chg, 0) >= 7.0
+                       OR COALESCE(rank_order, 999) <= 3
+                ) AS subject_strong_count
+            FROM subject_stock_daily_snapshot
+            WHERE trade_date = $1::date
+            GROUP BY subject_key
+        ),
+        eligible AS (
+            SELECT
+                r.*,
+                COALESCE(v2.theme_name, r.subject_key) AS theme_name,
+                COALESCE(mr.is_main_theme, FALSE) AS is_main_theme,
+                COALESCE(mr.identity_status, 'observed') AS identity_status,
+                (
+                    COALESCE(mr.is_main_theme, FALSE)
+                    AND COALESCE(mr.identity_status, '') = 'confirmed'
+                    AND COALESCE(msd.state, COALESCE(v2.final_cycle_state, '')) <> 'fade_confirmed'
+                    AND COALESCE(v2.fade_confirmed, FALSE) = FALSE
+                ) AS final_mainline_alive,
+                COALESCE(msd.mainline_strength_score, v2.mainline_strength_score, 0) AS mainline_strength_score,
+                COALESCE(ss.subject_limit_up_count, 0) AS subject_limit_up_count,
+                COALESCE(ss.subject_strong_count, 0) AS subject_strong_count
+            FROM recent r
+            LEFT JOIN theme_mainline_identity_registry mr
+              ON mr.subject_key = r.subject_key
+            LEFT JOIN mainline_state_daily msd
+              ON msd.trade_date = $1::date
+             AND msd.subject_key = r.subject_key
+            LEFT JOIN theme_cycle_judgement_v2 v2
+              ON v2.trade_date = $1::date
+             AND v2.subject_key = r.subject_key
+            LEFT JOIN subject_strength ss
+              ON ss.subject_key = r.subject_key
+            WHERE (
+                (
+                    COALESCE(mr.is_main_theme, FALSE) = TRUE
+                    AND COALESCE(mr.identity_status, '') = 'confirmed'
+                    AND COALESCE(msd.state, COALESCE(v2.final_cycle_state, '')) <> 'fade_confirmed'
+                    AND COALESCE(v2.fade_confirmed, FALSE) = FALSE
+                    AND (
+                        COALESCE(ss.subject_limit_up_count, 0) >= 2
+                        OR COALESCE(ss.subject_strong_count, 0) >= 3
+                    )
+                )
+                OR COALESCE(r.recent_limit_up_count, 0) >= 2
+            )
+        ),
+        ranked AS (
+            SELECT
+                e.*,
+                CASE
+                    WHEN e.recent_limit_up_count >= 2
+                      OR (e.is_leader_flag = 1 AND e.recent_limit_up_count >= 1)
+                    THEN 1 ELSE 0
+                END AS cond_gene,
+                CASE WHEN e.current_flag_today >= 2 THEN 1 ELSE 0 END AS cond_volume,
+                CASE WHEN e.is_leader_flag = 1 OR e.best_rank <= 5 THEN 1 ELSE 0 END AS cond_structure,
+                ROW_NUMBER() OVER (
+                    PARTITION BY e.stock_id
+                    ORDER BY
+                        e.mainline_strength_score DESC,
+                        e.subject_limit_up_count DESC,
+                        e.subject_strong_count DESC,
+                        e.recent_limit_up_count DESC,
+                        e.is_leader_flag DESC,
+                        e.best_rank ASC
+                ) AS rn
+            FROM eligible e
+        )
+        SELECT *
+        FROM ranked
+        WHERE rn = 1
+          AND (
+                COALESCE(recent_limit_up_count, 0) >= 2
+                OR (
+                    COALESCE(recent_limit_up_count, 0) >= 1
+                    AND (cond_gene + cond_volume + cond_structure) >= 2
+                )
+              )
+        ORDER BY mainline_strength_score DESC, recent_limit_up_count DESC, best_rank ASC
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date, int(max(1, lookback_days)))
+        return [dict(r) for r in rows]
+
+    async def get_strong_watch_refresh_rows(
+        self, trade_date
+    ) -> List[Dict[str, Any]]:
+        """强势股观察池 refresh 候选 — 复刻旧链 StrongStockTrackingService._fetch_refresh_watch_pool SQL。
+
+        读取 strong_stock_watch_pool 中 pending_seed/pending_refresh/active/weakening 状态的股票，
+        附加上当日 current_flag_today。
+        """
+        sql = """
+        SELECT
+            p.*,
+            COALESCE(sf.current_flag_today, 0) AS current_flag_today
+        FROM strong_stock_watch_pool p
+        LEFT JOIN (
+            SELECT
+                split_part(stock_id, '.', 1) AS stock_code,
+                MAX(
+                    CASE
+                        WHEN jsonb_typeof(raw_json) = 'array' AND jsonb_array_length(raw_json) > 20
+                        THEN COALESCE(NULLIF(raw_json->>20, ''), '0')::int
+                        ELSE 0
+                    END
+                ) AS current_flag_today
+            FROM subject_stock_daily_snapshot
+            WHERE trade_date = $1::date
+            GROUP BY split_part(stock_id, '.', 1)
+        ) sf
+          ON sf.stock_code = split_part(p.stock_id, '.', 1)
+        WHERE p.watch_status IN ('pending_seed', 'pending_refresh', 'active', 'weakening')
+          AND p.last_trade_date <= $1::date
+        ORDER BY
+            CASE
+                WHEN p.watch_status = 'pending_seed' THEN 0
+                WHEN p.watch_status = 'pending_refresh' THEN 1
+                WHEN p.watch_status = 'active' THEN 2
+                ELSE 3
+            END ASC,
+            p.watch_score DESC,
+            p.watch_priority DESC
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+        return [dict(r) for r in rows]
+
     async def get_subject_market_stats(
         self,
         trade_date,
@@ -3463,6 +3743,103 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.warning(f"写入 post_market_recap_snapshot 失败（可能尚未迁移）: {e}")
             return 0
 
+    async def upsert_strong_watch_pool_rows(self, rows: list[dict[str, Any]]) -> int:
+        """UPSERT strong_stock_watch_pool — 等价于旧链 _upsert_watch_pool_seed + _update_watch_pool_row。
+
+        新链 Layer C 独立维护持久池，不再依赖旧链 strong_stock_watch_pool 表。
+        """
+        sql = """
+        INSERT INTO strong_stock_watch_pool (
+            stock_id, stock_name, subject_key, theme_name,
+            watch_start_date, last_trade_date, watch_window_days,
+            source_tag, relay_role, watch_status,
+            watch_priority, watch_score,
+            pool_entry_type, candidate_promoted,
+            cycle_state, mainline_strength_score,
+            fade_watch, fade_confirmed,
+            support_type, support_level, support_score,
+            labels_json, evidence_json,
+            created_at, updated_at
+        ) VALUES (
+            $1, $2, $3, $4,
+            $5::date, $6::date, $7,
+            $8, $9, $10,
+            $11::numeric, $12::numeric,
+            $13, FALSE,
+            $14, $15::numeric,
+            $16, $17,
+            $18, $19::numeric, $20::numeric,
+            $21::jsonb, $22::jsonb,
+            now(), now()
+        )
+        ON CONFLICT (stock_id) DO UPDATE SET
+            stock_name = EXCLUDED.stock_name,
+            subject_key = EXCLUDED.subject_key,
+            theme_name = EXCLUDED.theme_name,
+            last_trade_date = GREATEST(strong_stock_watch_pool.last_trade_date, EXCLUDED.last_trade_date),
+            watch_window_days = GREATEST(strong_stock_watch_pool.watch_window_days, 1),
+            source_tag = EXCLUDED.source_tag,
+            relay_role = EXCLUDED.relay_role,
+            watch_status = EXCLUDED.watch_status,
+            watch_priority = EXCLUDED.watch_priority,
+            watch_score = EXCLUDED.watch_score,
+            pool_entry_type = EXCLUDED.pool_entry_type,
+            cycle_state = EXCLUDED.cycle_state,
+            mainline_strength_score = EXCLUDED.mainline_strength_score,
+            fade_watch = EXCLUDED.fade_watch,
+            fade_confirmed = EXCLUDED.fade_confirmed,
+            support_type = EXCLUDED.support_type,
+            support_level = EXCLUDED.support_level,
+            support_score = EXCLUDED.support_score,
+            labels_json = EXCLUDED.labels_json,
+            evidence_json = EXCLUDED.evidence_json,
+            updated_at = now()
+        """
+        payload = []
+        for row in rows:
+            trade_date = row.get("trade_date")
+            if isinstance(trade_date, str):
+                trade_date_val = date.fromisoformat(trade_date)
+            elif isinstance(trade_date, date):
+                trade_date_val = trade_date
+            else:
+                trade_date_val = None
+            if not trade_date_val or not row.get("stock_id"):
+                continue
+            payload.append((
+                str(row.get("stock_id") or ""),
+                str(row.get("stock_name") or ""),
+                str(row.get("subject_key") or ""),
+                str(row.get("theme_name") or ""),
+                trade_date_val,
+                trade_date_val,
+                1,  # watch_window_days (initial)
+                str(row.get("source_tag") or ""),
+                str(row.get("relay_role") or "unknown"),
+                str(row.get("watch_status") or "pending_seed"),
+                str(row.get("watch_priority") or "0"),
+                str(row.get("watch_score") or "0"),
+                str(row.get("pool_entry_type") or "observe_only"),
+                str(row.get("cycle_state") or ""),
+                str(row.get("mainline_strength_score") or "0"),
+                bool(row.get("fade_watch") or False),
+                bool(row.get("fade_confirmed") or False),
+                row.get("support_type"),
+                str(row.get("support_level") or "0"),
+                str(row.get("support_score") or "0"),
+                json.dumps(row.get("labels") or {}, ensure_ascii=False),
+                json.dumps(row.get("evidence") or {}, ensure_ascii=False),
+            ))
+        if not payload:
+            return 0
+        try:
+            async with self.pool.acquire() as conn:
+                await conn.executemany(sql, payload)
+            return len(payload)
+        except Exception as e:
+            logger.warning(f"写入 strong_stock_watch_pool 失败: {e}")
+            return 0
+
     async def upsert_strong_watch_history_rows(self, rows: List[Dict[str, Any]]) -> int:
         """批量 UPSERT strong_stock_watch_history（Layer C 跟踪池历史真源）。"""
         if not rows:
@@ -3554,8 +3931,21 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.warning(f"写入 strong_stock_watch_history 失败（可能尚未迁移）: {e}")
             return 0
 
-    async def upsert_theme_mainline_identity_registry_rows(self, rows: list[dict[str, Any]]) -> int:
-        """写入 theme_mainline_identity_registry 表（Layer A 身份注册表）。"""
+    async def upsert_theme_mainline_identity_registry_rows(
+        self,
+        rows: list[dict[str, Any]],
+        *,
+        allow_historical_overwrite: bool = False,
+        allow_unsafe_demotion: bool = False,
+    ) -> int:
+        """写入 theme_mainline_identity_registry 表（Layer A 身份注册表）。
+
+        含旧链等价写入保护：
+        1. first_confirmed_date：仅首次确认时写入，永不覆盖
+        2. 历史覆盖保护：不允许旧数据覆盖新数据（除非 allow_historical_overwrite=True）
+        3. 降级保护：不允许非LLM路径将 confirmed 降级（除非 allow_unsafe_demotion=True）
+        4. rule_version：追溯确认来源（manual_override/cluster_bootstrap/cluster_comp/llm/rule）
+        """
         sql = """
         INSERT INTO theme_mainline_identity_registry (
             subject_key, theme_name, is_main_theme, identity_status,
@@ -3595,6 +3985,23 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             llm_reviewed_at = EXCLUDED.llm_reviewed_at,
             rule_version = EXCLUDED.rule_version,
             updated_at = NOW()
+        WHERE (
+            -- Guard 1: 不允许旧数据覆盖新数据
+            EXCLUDED.last_review_date >= COALESCE(
+                theme_mainline_identity_registry.last_review_date, DATE '1900-01-01'
+            )
+            OR $22::boolean = TRUE
+        )
+          AND (
+            -- Guard 2: 不允许非LLM路径静默降级 confirmed → observed/inactive
+            $23::boolean = TRUE
+            OR NOT (
+                COALESCE(theme_mainline_identity_registry.is_main_theme, FALSE) = TRUE
+                AND COALESCE(NULLIF(LOWER(theme_mainline_identity_registry.identity_status), ''), 'observed') = 'confirmed'
+                AND COALESCE(EXCLUDED.is_main_theme, FALSE) = FALSE
+                AND COALESCE(EXCLUDED.llm_applied, FALSE) = FALSE
+            )
+        )
         """
         payload = []
         for row in rows:
@@ -3623,12 +4030,18 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 "rule_is_main_theme": bool(row.get("rule_is_main_theme") or False),
                 "rule_reasons": list(row.get("rule_reasons") or []),
                 "identity_status": identity_status,
+                "cluster_comp_count": int(row.get("cluster_comp_count") or 0),
+                "cluster_bootstrap_count": int(row.get("cluster_bootstrap_count") or 0),
                 "llm_verdict": str(row.get("llm_verdict") or ""),
                 "llm_reason": str(row.get("llm_reason") or ""),
                 "snapshot_version": str(row.get("snapshot_version") or ""),
                 "batch_id": str(row.get("batch_id") or ""),
                 "trace_id": str(row.get("trace_id") or ""),
             }
+            # rule_version 溯源：根据确认来源写入不同的规则版本
+            rule_version = str(row.get("rule_version") or "")
+            if not rule_version:
+                rule_version = str(row.get("snapshot_version") or "mainline_identity_registry.v7")
             payload.append((
                 str(row.get("subject_key") or ""),
                 str(row.get("subject_name") or row.get("subject_key") or ""),
@@ -3643,14 +4056,16 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 str(row.get("composite_score") or "0"),
                 json.dumps(evidence, ensure_ascii=False),
                 bool(row.get("rule_is_main_theme") or False),
-                False,  # llm_applied
-                None,   # llm_is_main_theme
-                None,   # llm_confidence
-                json.dumps([], ensure_ascii=False),  # llm_reasons
-                json.dumps([], ensure_ascii=False),  # llm_risk_flags
-                "",     # llm_model
+                bool(row.get("llm_applied") or False),
+                bool(row.get("llm_is_main_theme")) if row.get("llm_is_main_theme") is not None else None,
+                int(row.get("llm_confidence") or 0) if row.get("llm_confidence") is not None else None,
+                json.dumps(list(row.get("llm_reasons") or []), ensure_ascii=False),
+                json.dumps(list(row.get("llm_risk_flags") or []), ensure_ascii=False),
+                str(row.get("llm_model") or ""),
                 None,   # llm_reviewed_at
-                str(row.get("snapshot_version") or ""),  # rule_version
+                rule_version,
+                bool(allow_historical_overwrite),  # $22
+                bool(allow_unsafe_demotion),       # $23
             ))
         if not payload:
             return 0
@@ -3742,6 +4157,76 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             return len(payload)
         except Exception as e:
             logger.warning(f"写入 mainline_identity_review_queue 失败（可能表尚未迁移）: {e}")
+            return 0
+
+    async def apply_lifecycle_downgrade(
+        self, trade_date, deactivate_fade_days: int = 2
+    ) -> int:
+        """生命周期降级：连续 fade_confirmed → is_main_theme=FALSE, identity_status='inactive'。
+
+        等价于旧链 _apply_lifecycle_downgrade (L2005-2059)。
+        """
+        window = max(int(deactivate_fade_days), 1)
+        sql = """
+        WITH latest AS (
+            SELECT
+                v2.subject_key,
+                v2.fade_confirmed,
+                ROW_NUMBER() OVER (
+                    PARTITION BY v2.subject_key
+                    ORDER BY v2.trade_date DESC
+                ) AS rn
+            FROM theme_cycle_judgement_v2 v2
+            JOIN theme_mainline_identity_registry mr
+              ON mr.subject_key = v2.subject_key
+            WHERE v2.trade_date <= $1::date
+              AND mr.identity_status = 'confirmed'
+        ),
+        agg AS (
+            SELECT
+                subject_key,
+                COUNT(*) AS sampled_days,
+                COUNT(*) FILTER (WHERE fade_confirmed) AS fade_days
+            FROM latest
+            WHERE rn <= $2::int
+            GROUP BY subject_key
+        ),
+        to_deactivate AS (
+            SELECT subject_key
+            FROM agg
+            WHERE sampled_days = $2::int
+              AND fade_days = $2::int
+        )
+        UPDATE theme_mainline_identity_registry mr
+        SET
+            is_main_theme = FALSE,
+            identity_status = 'inactive',
+            last_review_date = $1::date,
+            evidence_json = COALESCE(mr.evidence_json, '{}'::jsonb) || jsonb_build_object(
+                'lifecycle',
+                jsonb_build_object(
+                    'deactivated_on', $1::text,
+                    'reason', 'consecutive_fade_confirmed',
+                    'window_days', $2::int
+                )
+            ),
+            updated_at = NOW()
+        WHERE mr.subject_key IN (SELECT subject_key FROM to_deactivate)
+          AND mr.identity_status = 'confirmed'
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                result = await conn.execute(sql, trade_date, window)
+                raw = result.split()[-1] if result else "0"
+                count = int(raw)
+                if count > 0:
+                    logger.info(
+                        f"lifecycle downgrade: {count} confirmed mainlines deactivated "
+                        f"on {trade_date} (window={window})"
+                    )
+                return count
+        except Exception as e:
+            logger.warning(f"lifecycle downgrade 失败 trade_date={trade_date}: {e}")
             return 0
 
 

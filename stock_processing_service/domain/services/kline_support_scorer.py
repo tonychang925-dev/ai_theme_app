@@ -8,6 +8,7 @@ import pandas as pd
 from stock_processing_service.contracts.dto import PriorSnapshotDTO, StockBarDTO
 from stock_processing_service.domain.services.gap_structure_detector import GapStructureDetector
 from stock_processing_service.domain.services.kline_support_scorer_types import (
+    BBLowerStructure,
     MAStructure,
     PreviousLowStructure,
     SupportScoreResult,
@@ -141,6 +142,59 @@ class KlineSupportScorer:
                 result.append(MAStructure(level=ema20, ma_type="ema20", distance_pct=dist, is_valid=dist <= Decimal("5")))
         return result
 
+    def _build_bb_lower_structure(self, df: pd.DataFrame, current_low: Decimal) -> BBLowerStructure | None:
+        """布林下轨支撑检测 — 使用 pandas_ta 或裸计算。"""
+        if len(df) < 20:
+            return None
+        close_s = pd.to_numeric(df["close_price"], errors="coerce")
+        try:
+            # 优先 pandas_ta
+            import pandas_ta as pta
+            bb = pta.bbands(close_s, length=20, std=2.0)
+            if bb is not None and "BBL_20_2.0" in bb.columns:
+                bb_lower = self._d(bb["BBL_20_2.0"].iloc[-1])
+            else:
+                raise ImportError("bbands column not found")
+        except Exception:
+            # fallback: 裸计算
+            sma20 = close_s.rolling(20).mean()
+            std20 = close_s.rolling(20).std()
+            bb_lower = self._d((sma20 - 2.0 * std20).iloc[-1])
+        if bb_lower <= 0:
+            return None
+        dist = self._distance_pct(current_low, bb_lower)
+        return BBLowerStructure(
+            level=bb_lower,
+            distance_pct=dist,
+            is_valid=dist <= Decimal("5"),
+        )
+
+    @staticmethod
+    def _compute_rsi14(df: pd.DataFrame) -> Decimal | None:
+        """RSI14 计算 — 优先 pandas_ta，fallback 裸计算。"""
+        if len(df) < 14:
+            return None
+        close_s = pd.to_numeric(df["close_price"], errors="coerce")
+        try:
+            import pandas_ta as pta
+            rsi_series = pta.rsi(close_s, length=14)
+            if rsi_series is not None and len(rsi_series) > 0:
+                val = float(rsi_series.iloc[-1])
+                if pd.notna(val):
+                    return Decimal(str(round(val, 2)))
+        except Exception:
+            pass
+        # fallback: 裸计算
+        delta = close_s.diff()
+        gain = delta.where(delta > 0, 0.0).rolling(14).mean()
+        loss = (-delta.where(delta < 0, 0.0)).rolling(14).mean()
+        rs = gain / loss.replace(0, 1e-9)
+        rsi = 100.0 - (100.0 / (1.0 + rs))
+        val = float(rsi.iloc[-1])
+        if pd.notna(val):
+            return Decimal(str(round(val, 2)))
+        return None
+
     def score(
         self,
         stock_id: str,
@@ -185,6 +239,9 @@ class KlineSupportScorer:
 
         ma_structures = self._build_ma_structures(df, current_low)
         prev_low_structure = self._build_prev_low_structure(df, current_low)
+        bb_lower_structure = self._build_bb_lower_structure(df, current_low)
+        rsi14 = self._compute_rsi14(df)
+
         ma_levels = {m.ma_type: m.level for m in ma_structures if m.level > 0}
         prev_low_level = prev_low_structure.level if prev_low_structure else None
 
@@ -200,6 +257,7 @@ class KlineSupportScorer:
             gap_structures=gap_structures,
             prev_low_structure=prev_low_structure,
             ma_structures=ma_structures,
+            bb_lower_structure=bb_lower_structure,
         )
 
         refs = list(resolved.support_refs)
@@ -240,6 +298,16 @@ class KlineSupportScorer:
                     distance_pct=prev_low_structure.distance_pct,
                 )
             )
+        if bb_lower_structure and bb_lower_structure.is_valid:
+            support_types.append(
+                SupportTypeScore(
+                    support_type="bb_lower_support",
+                    support_level=bb_lower_structure.level,
+                    strength=Decimal("0.72"),
+                    source="bb_lower",
+                    distance_pct=bb_lower_structure.distance_pct,
+                )
+            )
         for ma in ma_structures:
             if ma.is_valid:
                 support_types.append(
@@ -252,12 +320,34 @@ class KlineSupportScorer:
                     )
                 )
 
+        # ── O2: RSI 超卖加分 ──
+        rsi_bonus = Decimal("0")
+        if rsi14 is not None:
+            if Decimal("0") < rsi14 <= Decimal("35"):
+                rsi_bonus = Decimal("0.04")
+            elif Decimal("35") < rsi14 <= Decimal("45"):
+                rsi_bonus = Decimal("0.02")
+
+        # ── O3: 多支撑共振加分（每多一种有效支撑类型+0.03，上限0.12）──
+        unique_types: set[str] = set()
+        for st in support_types:
+            unique_types.add(st.support_type)
+        resonance_bonus = min(Decimal(str(len(unique_types) - 1)) * Decimal("0.03"), Decimal("0.12"))
+
+        combined = (resolved.support_score / Decimal("100")) + rsi_bonus + resonance_bonus
+        combined = min(max(combined, Decimal("0")), Decimal("1"))
+
+        refs.append(f"rsi14={rsi14}")
+        refs.append(f"rsi_bonus={rsi_bonus}")
+        refs.append(f"resonance_bonus={resonance_bonus}")
+        refs.append(f"unique_support_types={len(unique_types)}")
+
         return SupportScoreResult(
             support_type=resolved.support_type,
             support_level=resolved.support_level,
             support_score=resolved.support_score,
             support_count=len(support_types),
-            combined_strength=(resolved.support_score / Decimal("100")).quantize(Decimal("0.0001")),
+            combined_strength=combined.quantize(Decimal("0.0001")),
             gap_hit=resolved.gap_hit,
             gap_hit_mode=resolved.gap_hit_mode,
             gap_source=resolved.gap_source,

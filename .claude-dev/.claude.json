@@ -1,9 +1,9 @@
 {
-  "numStartups": 18,
+  "numStartups": 19,
   "hasSeenTasksHint": true,
   "tipsHistory": {
     "new-user-warmup": 9,
-    "plan-mode-for-complex-tasks": 14,
+    "plan-mode-for-complex-tasks": 19,
     "memory-command": 18,
     "shift-enter": 15,
     "theme-command": 5,
@@ -33,7 +33,7 @@
     "color-when-multi-clauding": 15,
     "subagent-fanout-nudge": 18
   },
-  "promptQueueUseCount": 87,
+  "promptQueueUseCount": 95,
   "cachedGrowthBookFeatures": {
     "tengu_quiet_harbor": false,
     "tengu_bridge_requires_action_details": true,
