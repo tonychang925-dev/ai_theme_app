@@ -221,6 +221,108 @@ class StockReadGatewayAdapter:
             )
         return result
 
+    async def get_legacy_strong_watch_candidate_inputs(
+        self,
+        trade_date: date,
+        lookback_days: int = 7,
+    ) -> list[SubjectStockPoolDTO]:
+        fn = getattr(self._db, "get_legacy_strong_watch_candidate_inputs", None)
+        if not callable(fn):
+            return []
+        rows = await fn(trade_date=trade_date, lookback_days=lookback_days)
+        by_stock: dict[str, SubjectStockPoolDTO] = {}
+        for row in rows:
+            p = _as_dict(row)
+            labels = _json_obj(p.get("watch_labels_json"))
+            strong_grade = str(labels.get("strong_grade") or p.get("strong_grade") or "").upper()
+            watch_pool_entry_type = str(p.get("watch_pool_entry_type") or p.get("pool_entry_type") or "")
+            watch_status = str(p.get("watch_status") or "")
+            rank = p.get("rank_order", p.get("pool_rank"))
+            stock_id = _normalize_stock_id(p.get("stock_id", ""))
+            if not stock_id:
+                continue
+            candidate = SubjectStockPoolDTO(
+                trade_date=p.get("trade_date", trade_date),
+                subject_key=str(p.get("subject_key", "")),
+                subject_name=str(p.get("theme_name") or p.get("subject_name") or p.get("subject_key") or ""),
+                stock_id=stock_id,
+                stock_name=p.get("stock_name"),
+                pool_rank=rank,
+                metadata={
+                    "candidate_source": "strong_watch_pool",
+                    "watch_source_tag": str(p.get("watch_source_tag") or ""),
+                    "source_tag": str(p.get("watch_source_tag") or ""),
+                    "watch_score": str(p.get("watch_score", "0")),
+                    "watch_priority": str(p.get("watch_priority", "0")),
+                    "watch_pool_entry_type": watch_pool_entry_type,
+                    "pool_entry_type": watch_pool_entry_type,
+                    "watch_status": watch_status,
+                    "strong_grade": strong_grade,
+                    "watch_labels_json": labels,
+                    "legacy_raw_row_count": 1,
+                    "eligible_for_candidate": StrongWatchService.is_candidate_eligible(
+                        watch_status=watch_status,
+                        pool_entry_type=watch_pool_entry_type,
+                        candidate_source="strong_watch_pool",
+                    ),
+                    "rank_order": rank,
+                    "pool_rank": rank,
+                    "pct_chg": str(p.get("pct_chg", "0")),
+                    "low_price": str(p.get("low_price", "0")),
+                    "close_price": str(p.get("close_price", "0")),
+                    "limit_up": _bool(p.get("limit_up")),
+                    "is_leader": _bool(p.get("is_leader")),
+                    "recent_limit_up_count": int(p.get("recent_limit_up_count") or 0),
+                    "prior7_limitup_days": int(p.get("prior7_limitup_days") or 0),
+                    "prior7_strong_days": int(p.get("prior7_strong_days") or 0),
+                    "prev_day_pct_chg": str(p.get("prev_day_pct_chg", "0")),
+                    "prev_day_low_price": str(p.get("prev_day_low_price", "0")),
+                    "prev_day_close_price": str(p.get("prev_day_close_price", "0")),
+                    "prev_day_limit_up": _bool(p.get("prev_day_limit_up")),
+                    "identity_status": str(p.get("identity_status") or ""),
+                    "is_main_theme": _bool(p.get("is_main_theme")),
+                    "final_mainline_alive": _bool(p.get("final_mainline_alive")),
+                    "fade_watch": _bool(p.get("fade_watch")),
+                    "fade_confirmed": _bool(p.get("fade_confirmed")),
+                    "final_cycle_state": str(p.get("final_cycle_state") or ""),
+                    "mainline_strength_score": str(p.get("mainline_strength_score", "0")),
+                    "leader_alive_score": str(p.get("leader_alive_score", "0")),
+                    "event_continuity_score": str(p.get("event_continuity_score", "0")),
+                    "support_type": str(p.get("support_type") or ""),
+                    "support_level": str(p.get("support_level", "0")),
+                    "support_score": str(p.get("support_score", "0")),
+                    "role_tags": {
+                        "is_leader": _bool(p.get("is_leader")),
+                        "final_mainline_alive": _bool(p.get("final_mainline_alive")),
+                        "final_cycle_state": str(p.get("final_cycle_state") or ""),
+                        "watch_tier": strong_grade,
+                    },
+                },
+            )
+            current = by_stock.get(stock_id)
+            if current is None:
+                by_stock[stock_id] = candidate
+                continue
+            current.metadata["legacy_raw_row_count"] = int(current.metadata.get("legacy_raw_row_count") or 1) + 1
+            if self._legacy_watch_sort_key(candidate) > self._legacy_watch_sort_key(current):
+                candidate.metadata["legacy_raw_row_count"] = current.metadata["legacy_raw_row_count"]
+                by_stock[stock_id] = candidate
+        return list(by_stock.values())
+
+    @staticmethod
+    def _legacy_watch_sort_key(row: SubjectStockPoolDTO) -> tuple:
+        metadata = row.metadata if isinstance(row.metadata, dict) else {}
+        rank = row.pool_rank if row.pool_rank is not None else 999
+        return (
+            1 if str(metadata.get("pool_entry_type") or "") == "formal" else 0,
+            _d(metadata.get("watch_priority")),
+            _d(metadata.get("watch_score")),
+            int(metadata.get("prior7_limitup_days") or 0),
+            int(metadata.get("prior7_strong_days") or 0),
+            _d(metadata.get("support_score")),
+            -int(rank or 999),
+        )
+
     async def get_subject_context_by_subject_keys(
         self, subject_keys: list[str], trade_date: date
     ) -> list[SubjectContextDTO]:

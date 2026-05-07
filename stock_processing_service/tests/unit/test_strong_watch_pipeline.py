@@ -91,6 +91,49 @@ def test_preseed_two_board_gene_breaks_seed_rank_gate_without_confirming_mainlin
     assert seeded[0].metadata["identity_scope"] == "independent_stock_signal"
 
 
+def test_seed_rank_pass_alone_does_not_enter_old_chain_watch_pool() -> None:
+    trade_date = date(2026, 4, 23)
+    row = SubjectStockPoolDTO(
+        trade_date=trade_date,
+        subject_key="ai_chip",
+        subject_name="AI Chip",
+        stock_id="002999.SZ",
+        stock_name="RankOnly",
+        pool_rank=12,
+        metadata={
+            "identity_status": "confirmed",
+            "is_main_theme": True,
+            "final_mainline_alive": True,
+        },
+    )
+
+    assert StrongWatchSeedService().seed([row]) == []
+
+
+def test_seed_old_chain_static_gate_requires_strength_history() -> None:
+    trade_date = date(2026, 4, 23)
+    row = SubjectStockPoolDTO(
+        trade_date=trade_date,
+        subject_key="ai_chip",
+        subject_name="AI Chip",
+        stock_id="002998.SZ",
+        stock_name="AlphaHistory",
+        pool_rank=3,
+        metadata={
+            "identity_status": "confirmed",
+            "is_main_theme": True,
+            "final_mainline_alive": True,
+            "prior7_limitup_days": 1,
+            "prior7_strong_days": 1,
+        },
+    )
+
+    seeded = StrongWatchSeedService().seed([row])
+
+    assert [r.stock_id for r in seeded] == ["002998.SZ"]
+    assert seeded[0].metadata["seed_gate_reason"] == "old_chain_static_gate"
+
+
 def test_strong_watch_promote_pipeline_respects_old_chain_thresholds() -> None:
     service = StrongWatchService()
     trade_date = date(2026, 4, 23)

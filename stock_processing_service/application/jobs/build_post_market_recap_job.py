@@ -326,36 +326,59 @@ class BuildPostMarketRecapJob:
             stock_ids=stock_ids,
         )
 
+        layer_c_input_mode = str(os.getenv("SPS_LAYER_C_INPUT_MODE", "legacy_watch_pool")).strip().lower()
+        layer_c_shadow_enabled = str(os.getenv("SPS_LAYER_C_SHADOW_ENABLED", "0")).strip().lower() in {
+            "1",
+            "true",
+            "yes",
+            "on",
+        }
+        run_new_layer_c = layer_c_input_mode != "legacy_watch_pool" or layer_c_shadow_enabled
         shadow_summary: dict[str, Any] = {}
-        if hasattr(self._strong_watch_service, "build_promoted_pool_with_history_and_shadow"):
-            promoted_pool_rows, strong_watch_rows, strong_watch_history, shadow = self._strong_watch_service.build_promoted_pool_with_history_and_shadow(
-                trade_date=trade_date,
-                pool_rows=pool_rows,
-                bars=bars,
-                prior_rows=prior_rows,
-                history_bars=history_bars,
-                prior_active_rows=prior_active_rows,
-                identities_by_subject=identities_by_subject,
-                cycles_by_subject=cycles_by_subject,
-            )
-            shadow_summary = asdict(shadow)
+        promoted_pool_rows: list[Any] = []
+        strong_watch_rows: list[Any] = []
+        strong_watch_history: list[Any] = []
+        if run_new_layer_c:
+            if hasattr(self._strong_watch_service, "build_promoted_pool_with_history_and_shadow"):
+                promoted_pool_rows, strong_watch_rows, strong_watch_history, shadow = self._strong_watch_service.build_promoted_pool_with_history_and_shadow(
+                    trade_date=trade_date,
+                    pool_rows=pool_rows,
+                    bars=bars,
+                    prior_rows=prior_rows,
+                    history_bars=history_bars,
+                    prior_active_rows=prior_active_rows,
+                    identities_by_subject=identities_by_subject,
+                    cycles_by_subject=cycles_by_subject,
+                )
+                shadow_summary = asdict(shadow)
+            else:
+                promoted_pool_rows, strong_watch_rows, strong_watch_history = self._strong_watch_service.build_promoted_pool_with_history(
+                    trade_date=trade_date,
+                    pool_rows=pool_rows,
+                    bars=bars,
+                    prior_rows=prior_rows,
+                    history_bars=history_bars,
+                    prior_active_rows=prior_active_rows,
+                    identities_by_subject=identities_by_subject,
+                    cycles_by_subject=cycles_by_subject,
+                )
+        legacy_watch_input_count = 0
+        if layer_c_input_mode == "legacy_watch_pool":
+            fn = getattr(self._read_port, "get_legacy_strong_watch_candidate_inputs", None)
+            if not callable(fn):
+                raise RuntimeError("SPS_LAYER_C_INPUT_MODE=legacy_watch_pool requires get_legacy_strong_watch_candidate_inputs")
+            candidate_input_rows = await fn(trade_date=trade_date, lookback_days=lookback_days)
+            legacy_watch_input_count = len(candidate_input_rows)
+            promoted_pool_rows = list(candidate_input_rows)
+            strong_watch_rows = []
+            strong_watch_history = []
         else:
-            promoted_pool_rows, strong_watch_rows, strong_watch_history = self._strong_watch_service.build_promoted_pool_with_history(
+            candidate_input_rows = self._build_candidate_input_rows(
                 trade_date=trade_date,
-                pool_rows=pool_rows,
-                bars=bars,
-                prior_rows=prior_rows,
-                history_bars=history_bars,
-                prior_active_rows=prior_active_rows,
-                identities_by_subject=identities_by_subject,
-                cycles_by_subject=cycles_by_subject,
+                strong_watch_rows=strong_watch_rows,
+                promoted_pool_rows=promoted_pool_rows,
+                prior_watch_rows=prior_watch_rows,
             )
-        candidate_input_rows = self._build_candidate_input_rows(
-            trade_date=trade_date,
-            strong_watch_rows=strong_watch_rows,
-            promoted_pool_rows=promoted_pool_rows,
-            prior_watch_rows=prior_watch_rows,
-        )
         candidates = self._candidate_service.build_candidates(
             bars=bars,
             pool_rows=candidate_input_rows,
@@ -368,12 +391,16 @@ class BuildPostMarketRecapJob:
             if str(getattr(c, "candidate_level", "")).lower() in {"formal", "s", "a", "b"}
         ]
         observe_candidates = [c for c in all_candidates if str(getattr(c, "candidate_level", "")).lower() == "observe_only"]
+        candidate_service_observe_candidates = getattr(self._candidate_service, "observe_candidates", observe_candidates)
 
         recap_doc = {
             "trade_date": trade_date.isoformat(),
             "snapshot_version": snapshot_version,
             "identity_gate_mode": str(os.getenv("SPS_IDENTITY_GATE_MODE", "asof")).strip().lower(),
             "candidate_source": "strong_watch_pool",
+            "layer_c_input_mode": layer_c_input_mode,
+            "layer_c_shadow_enabled": layer_c_shadow_enabled,
+            "legacy_watch_input_count": legacy_watch_input_count,
             "strong_watch_input_count": len(strong_watch_rows),
             "strong_watch_input_7d_count": len(candidate_input_rows),
             "strong_watch_promoted_count": len(promoted_pool_rows),
@@ -416,7 +443,7 @@ class BuildPostMarketRecapJob:
             "candidate_count_all": len(all_candidates),
             "candidate_count_formal": len(formal_candidates),
             "candidate_count_observe": len(observe_candidates),
-            "observe_candidates_count": len(self._candidate_service.observe_candidates),
+            "observe_candidates_count": len(candidate_service_observe_candidates),
             "top_candidates_scope": "formal_plus_observe_ranked",
             "formal_top_candidates": [
                 {
@@ -442,7 +469,7 @@ class BuildPostMarketRecapJob:
                     "gap_hit_mode": c.gap_hit_mode,
                     "evidence_rules": c.evidence_rules[:30],
                 }
-                for c in self._candidate_service.observe_candidates[:20]
+                for c in candidate_service_observe_candidates[:20]
             ],
             "candidate_diagnostics": [
                 {
@@ -486,7 +513,11 @@ class BuildPostMarketRecapJob:
             "strong_watch_input_7d_stock_ids": sorted(
                 {str(r.stock_id) for r in candidate_input_rows if str(getattr(r, "stock_id", "") or "")}
             ),
-            "strong_watch_input_7d_source": "strong_watch_pool_history_single_source",
+            "strong_watch_input_7d_source": (
+                "legacy_strong_watch_pool_or_history"
+                if layer_c_input_mode == "legacy_watch_pool"
+                else "strong_watch_pool_history_single_source"
+            ),
             "promoted_pool_stock_ids": sorted(
                 {str(getattr(r, "stock_id", "") or "") for r in promoted_pool_rows if str(getattr(r, "stock_id", "") or "")}
             ),
@@ -632,10 +663,12 @@ class BuildPostMarketRecapJob:
                 "strong_watch_shadow_admission_hard_reject_count": int(
                     shadow_summary.get("admission_hard_reject_count") or 0
                 ),
+                "layer_c_input_mode": layer_c_input_mode,
+                "legacy_watch_input_count": legacy_watch_input_count,
                 "candidate_count": len(candidates),
                 "candidate_count_formal": len(formal_candidates),
                 "candidate_count_observe": len(observe_candidates),
-                "observe_candidates_count": len(self._candidate_service.observe_candidates),
+                "observe_candidates_count": len(candidate_service_observe_candidates),
             },
             published_events=["snapshot_built"],
             cache_writes=3 if self._cache_port is not None else 0,

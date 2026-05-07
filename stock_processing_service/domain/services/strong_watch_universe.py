@@ -46,14 +46,19 @@ class StrongWatchUniverseBuilder:
     Layer C-1 Universe gate.
 
     - formal: identity confirmed + main theme + mainline alive
-    - observe: identity/cycle known but not formal eligible, or independent leader gene
+    - observe: independent leader gene only
     - blocked: missing subject key or missing identity/cycle context
+
+    Old-chain compatibility:
+    ordinary non-formal subject rows are diagnostics only. They must not enter
+    the production strong-watch pool as observe rows, because old-chain D1 only
+    consumes an already-converged strong_stock_watch_pool/history source.
     """
 
     def __init__(
         self,
         *,
-        allow_observe_when_not_formal: bool = True,
+        allow_observe_when_not_formal: bool = False,
     ) -> None:
         self._allow_observe_when_not_formal = allow_observe_when_not_formal
 
@@ -300,8 +305,9 @@ class StrongWatchUniverseBuilder:
             else:
                 blocked_rows.append(row)
                 diagnostics[stock_id] = {
-                    "universe_status": "blocked",
-                    "universe_reason": "identity_or_cycle_not_formal",
+                    "universe_status": "diagnostic_only",
+                    "universe_reason": "identity_or_cycle_not_formal_not_watch_pool_eligible",
+                    "entry_path": "observe_diagnostic",
                     **diag,
                 }
 

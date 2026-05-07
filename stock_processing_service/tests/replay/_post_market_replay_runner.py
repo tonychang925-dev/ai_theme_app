@@ -192,6 +192,12 @@ class _ReplayDatabaseStockFacade:
             return await fn(trade_date, lookback_days=lookback_days)
         return []
 
+    async def get_legacy_strong_watch_candidate_inputs(self, trade_date: date, lookback_days: int = 7):
+        fn = getattr(self._gateway, "get_legacy_strong_watch_candidate_inputs", None)
+        if callable(fn):
+            return await fn(trade_date, lookback_days=lookback_days)
+        return []
+
     async def upsert_stock_daily_snapshot_rows(self, rows: list[dict[str, Any]]) -> int:
         return await self._gateway.upsert_stock_daily_snapshot_rows(rows)
 

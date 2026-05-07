@@ -763,6 +763,25 @@ class DatabaseGateway:
             logger.error(f"读取 strong_stock_watch_history 失败 trade_date={trade_date}, lookback={lookback_days}: {e}")
             raise
 
+    async def get_legacy_strong_watch_candidate_inputs(
+        self,
+        trade_date,
+        lookback_days: int = 7,
+    ) -> List[Dict[str, Any]]:
+        """股票域显式读取：旧链 weak_to_strong_candidate_builder 的 watch_pool 输入口径。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_legacy_strong_watch_candidate_inputs(
+                trade_date,
+                lookback_days=lookback_days,
+            )
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 legacy strong watch candidate inputs 失败 trade_date={trade_date}: {e}")
+            raise
+
     async def get_subject_event_stats(
         self,
         trade_date,
