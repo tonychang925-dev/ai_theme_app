@@ -121,40 +121,25 @@ class ThemeCycleEvidenceDailyBuilder:
         stock_bars = [bars_by_stock[r.stock_id] for r in rows if r.stock_id in bars_by_stock]
         m = max(len(stock_bars), 1)
 
-        # ── Event layer ──
-        event_recency_source = "unknown"
-        if event_stats is not None:
-            # Real event stats from theme_history_event (preferred).
-            event_strength = min(
-                Decimal("100"),
-                Decimal(str(event_stats.today_event_count * 14 + event_stats.key_event_count * 8 + event_stats.distinct_event_days * 6)),
+        # ── Event layer (mandatory: event_stats from theme_history_event) ──
+        if event_stats is None:
+            raise ValueError(
+                f"Evidence builder: event_stats is None for subject={subject_key}. "
+                f"Real event data from theme_history_event is mandatory."
             )
-            event_continuity = min(
-                Decimal("100"),
-                Decimal(str(event_stats.distinct_event_days * 15 + event_stats.recent_event_count * 3)),
-            )
-            strong_count = event_stats.key_event_count
-            event_count_3d = event_stats.today_event_count
-            event_count_7d = event_stats.recent_event_count
-            # distinct_event_days is a proxy for recency, not exact last-event days.
-            event_recency = event_stats.distinct_event_days if event_stats.distinct_event_days > 0 else None
-            event_recency_source = "distinct_event_days_proxy"
-        else:
-            # Fallback: pool metadata (weaker, use only when event_stats unavailable).
-            event_scores: list[Decimal] = []
-            for r in rows:
-                md = r.metadata if isinstance(r.metadata, dict) else {}
-                es = self._d(md.get("event_score") or md.get("event_strength_score"))
-                event_scores.append(es)
-            event_strength = sum(event_scores, start=Decimal("0")) / Decimal(str(len(event_scores))) if event_scores else Decimal("0")
-            hot_days_5d = sum(1 for r in rows if int((r.metadata or {}).get("hot_days_5d") or 0) >= 1)
-            event_continuity = min(Decimal("100"), Decimal(str(hot_days_5d * 15 + len(rows) * 3)))
-            strong_count = sum(1 for s in event_scores if s >= Decimal("70"))
-            event_count_3d = sum(1 for r in rows if int((r.metadata or {}).get("event_count_3d") or 0) > 0)
-            event_count_7d = sum(1 for r in rows if int((r.metadata or {}).get("event_count_7d") or 0) > 0)
-            event_recency_raw = [r.metadata.get("event_recency_days") for r in rows if isinstance(r.metadata, dict) and r.metadata.get("event_recency_days") is not None]
-            event_recency = int(min(event_recency_raw)) if event_recency_raw else None
-            event_recency_source = "pool_metadata"
+        event_strength = min(
+            Decimal("100"),
+            Decimal(str(event_stats.today_event_count * 14 + event_stats.key_event_count * 8 + event_stats.distinct_event_days * 6)),
+        )
+        event_continuity = min(
+            Decimal("100"),
+            Decimal(str(event_stats.distinct_event_days * 15 + event_stats.recent_event_count * 3)),
+        )
+        strong_count = event_stats.key_event_count
+        event_count_3d = event_stats.today_event_count
+        event_count_7d = event_stats.recent_event_count
+        event_recency = event_stats.distinct_event_days if event_stats.distinct_event_days > 0 else None
+        event_recency_source = "distinct_event_days_proxy"
 
         # ── Leader layer ──
         leader_evidence = LeaderEvidenceBuilder().build(rows=rows, bars_by_stock=bars_by_stock)
@@ -180,25 +165,17 @@ class ThemeCycleEvidenceDailyBuilder:
         top3 = sorted(watch_scores, reverse=True)[:3]
         front_row_strength = sum(top3, start=Decimal("0")) / Decimal(str(max(len(top3), 1))) if top3 else Decimal("0")
 
-        # ── K-line layer ──
-        if kline is not None:
-            theme_support = kline.theme_support_score
-            break_start_pivot = kline.break_start_pivot
-            above_ma10 = kline.above_ma10
-            above_ma20 = kline.above_ma20
-            kline_source = "theme_kline_evidence_builder"
-        else:
-            # Fallback: pool metadata (weaker).
-            support_scores: list[Decimal] = []
-            for r in rows:
-                md = r.metadata if isinstance(r.metadata, dict) else {}
-                ss = self._d(md.get("support_score") or md.get("theme_support_score"))
-                support_scores.append(ss)
-            theme_support = sum(support_scores, start=Decimal("0")) / Decimal(str(len(support_scores))) if support_scores else Decimal("0")
-            break_start_pivot = theme_support < Decimal("35") and red_ratio < Decimal("0.45")
-            above_ma10 = any(bool((r.metadata or {}).get("above_ma10")) for r in rows if isinstance(r.metadata, dict))
-            above_ma20 = any(bool((r.metadata or {}).get("above_ma20")) for r in rows if isinstance(r.metadata, dict))
-            kline_source = "pool_metadata"
+        # ── K-line layer (mandatory: ThemeKlineEvidence from ThemeKlineEvidenceBuilder) ──
+        if kline is None:
+            raise ValueError(
+                f"Evidence builder: kline evidence is None for subject={subject_key}. "
+                f"ThemeKlineEvidenceBuilder output is mandatory."
+            )
+        theme_support = kline.theme_support_score
+        break_start_pivot = kline.break_start_pivot
+        above_ma10 = kline.above_ma10
+        above_ma20 = kline.above_ma20
+        kline_source = "theme_kline_evidence_builder"
 
         # ── Evidence JSON (for audit/replay) ──
         evidence_json = {

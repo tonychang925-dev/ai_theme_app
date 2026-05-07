@@ -72,7 +72,7 @@ class ThemeKlineEvidenceBuilder:
         if len(composite) < 5:
             return self._empty(subject_key)
 
-        closes = [c for _, c in composite]
+        closes = [c for _, c, _ in composite]
         volumes = [v for _, _, v in composite]
         last_close = closes[-1]
 

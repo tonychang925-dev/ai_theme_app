@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import os
 import re
 import signal
@@ -14,6 +15,34 @@ import json
 
 PROJECT_ROOT = Path("/Users/admin/Desktop/ai_theme_app")
 PYTHON_BIN = str(PROJECT_ROOT / ".venv" / "bin" / "python")
+
+
+_SECRET_ARG_NAMES = {"--token", "--api-key", "--auth-token"}
+
+
+def _normalize_secret(value: Any) -> str:
+    return str(value or "").strip().strip("\"'").strip()
+
+
+def _secret_fingerprint(value: str) -> str:
+    if not value:
+        return "missing"
+    digest = hashlib.sha256(value.encode("utf-8")).hexdigest()[:8]
+    return f"len={len(value)} sha8={digest}"
+
+
+def _redact_cmd(cmd: list[str]) -> str:
+    redacted: list[str] = []
+    mask_next = False
+    for part in cmd:
+        if mask_next:
+            redacted.append("<redacted>")
+            mask_next = False
+            continue
+        redacted.append(part)
+        if part in _SECRET_ARG_NAMES:
+            mask_next = True
+    return " ".join(redacted)
 
 
 @dataclass
@@ -282,7 +311,7 @@ class CollectionJobManager:
         job.current_step = task.key
         self._update_overall_progress(job)
         self._append_log(job, f"开始 {task.title}")
-        self._append_log(job, f"[DEBUG] cmd={' '.join(cmd)}")
+        self._append_log(job, f"[DEBUG] cmd={_redact_cmd(cmd)}")
         if cmd:
             self._append_log(job, f"[DEBUG] executable_exists={Path(cmd[0]).exists()} executable={cmd[0]}")
 
@@ -349,26 +378,26 @@ class CollectionJobManager:
     def _collection_env(self, payload: dict[str, Any]) -> dict[str, str]:
         env = os.environ.copy()
         env_file_values = self._load_env_file_values()
-        tushare_token = str(
+        tushare_token = _normalize_secret(
             payload.get("tushare_token")
             or os.getenv("TUSHARE_TOKEN", "")
             or env_file_values.get("TUSHARE_TOKEN", "")
-        ).strip()
-        jyhf_token = str(
+        )
+        jyhf_token = _normalize_secret(
             payload.get("jyhf_token")
             or os.getenv("JYHF_AUTH_TOKEN", "")
             or env_file_values.get("JYHF_AUTH_TOKEN", "")
-        ).strip()
-        deepseek_api_key = str(
+        )
+        deepseek_api_key = _normalize_secret(
             payload.get("deepseek_api_key")
             or os.getenv("DEEPSEEK_API_KEY", "")
             or env_file_values.get("DEEPSEEK_API_KEY", "")
-        ).strip()
-        deepseek_model = str(
+        )
+        deepseek_model = _normalize_secret(
             payload.get("deepseek_model")
             or os.getenv("DEEPSEEK_MODEL", "")
             or env_file_values.get("DEEPSEEK_MODEL", "")
-        ).strip()
+        )
         if tushare_token:
             env["TUSHARE_TOKEN"] = tushare_token
         if jyhf_token:
@@ -514,9 +543,10 @@ class CollectionJobManager:
                     ]
                     await self._run_command(job, task, cmd, env=env, initial_percent=55, success_percent=100)
                 elif task.key == "tushare_kline":
-                    tushare_token = env.get("TUSHARE_TOKEN", "").strip()
+                    tushare_token = _normalize_secret(env.get("TUSHARE_TOKEN", ""))
                     if not tushare_token:
                         raise RuntimeError("缺少 Tushare token：请设置环境变量 TUSHARE_TOKEN，或在项目 .env/.env.local 中配置。")
+                    self._append_log(job, f"[DEBUG] tushare_token={_secret_fingerprint(tushare_token)} source=backend_env_or_env_file")
                     cmd = [
                         PYTHON_BIN,
                         str(PROJECT_ROOT / "scripts" / "sync_tushare_kline_local.py"),

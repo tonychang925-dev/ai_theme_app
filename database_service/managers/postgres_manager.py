@@ -1946,9 +1946,14 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         旧链 ThemeCycleEvidenceBuilder + ThemeBoardStructureAggregator 每日写入该表，
         包含 event/leader/board/kline 四层证据的全部预计算字段。
         """
-        if not subject_keys:
+        if subject_keys is not None and not subject_keys:
             return []
-        sql = """
+        where_subject_keys = ""
+        params: list[Any] = [trade_date]
+        if subject_keys is not None:
+            where_subject_keys = "AND subject_key = ANY($2::text[])"
+            params.append(subject_keys)
+        sql = f"""
         SELECT
             subject_key, trade_date, theme_name,
             event_count_3d, event_count_7d, strong_event_count_7d,
@@ -1964,10 +1969,10 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             evidence_json
         FROM theme_cycle_evidence_daily
         WHERE trade_date = $1::date
-          AND subject_key = ANY($2::text[])
+          {where_subject_keys}
         """
         async with self.pool.acquire() as conn:
-            rows = await conn.fetch(sql, trade_date, subject_keys)
+            rows = await conn.fetch(sql, *params)
         return [dict(r) for r in rows]
 
     async def get_subject_market_stats(
@@ -4145,6 +4150,72 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         if isinstance(v, str):
             return v.strip().lower() in {"1", "true", "t", "yes", "y"}
         return bool(v)
+
+    async def upsert_theme_cycle_judgement_v2_rows(self, rows: list[dict[str, Any]]) -> int:
+        """Write corrected cycle judgements to theme_cycle_judgement_v2.
+
+        REQUIRES: (subject_key, trade_date) unique constraint on the table.
+        All audit fields are packed into evidence_json.
+        """
+        import json as _json
+
+        async with self.pool.acquire() as conn:
+            col_rows = await conn.fetch(
+                "SELECT column_name FROM information_schema.columns"
+                " WHERE table_schema = current_schema()"
+                " AND table_name = 'theme_cycle_judgement_v2'"
+            )
+        col_set = {str(r["column_name"]) for r in col_rows}
+        has_ev_json = "evidence_json" in col_set
+
+        sql = (
+            "INSERT INTO theme_cycle_judgement_v2 (subject_key, trade_date, final_cycle_state, final_mainline_alive"
+            + (", evidence_json" if has_ev_json else "")
+            + ") VALUES ($1, $2::date, $3, $4"
+            + (", $5::jsonb" if has_ev_json else "")
+            + ") ON CONFLICT (subject_key, trade_date) DO UPDATE SET"
+            " final_cycle_state = EXCLUDED.final_cycle_state,"
+            " final_mainline_alive = EXCLUDED.final_mainline_alive"
+            + (", evidence_json = EXCLUDED.evidence_json" if has_ev_json else "")
+        )
+
+        payload = []
+        for row in rows:
+            sk = str(row.get("subject_key") or "")
+            if not sk:
+                continue
+            td = row.get("trade_date")
+            if isinstance(td, str):
+                td = date.fromisoformat(td)
+            vals = [sk, td, str(row.get("final_cycle_state") or ""), bool(row.get("final_mainline_alive") or False)]
+            if has_ev_json:
+                audit = {
+                    "snapshot_version": str(row.get("snapshot_version") or ""),
+                    "batch_id": str(row.get("batch_id") or ""),
+                    "trace_id": str(row.get("trace_id") or ""),
+                    "decision_path": str(row.get("decision_path") or ""),
+                    "mainline_alive_rule": bool(row.get("mainline_alive_rule") or False),
+                    "support_break": bool(row.get("support_break") or False),
+                    "score_flags": row.get("score_flags") or {},
+                    "fade_reason_codes": list(row.get("fade_reason_codes") or []),
+                    "fade_confirmed_evidence_count": int(row.get("fade_confirmed_evidence_count") or 0),
+                    "mainline_strength_score": str(row.get("mainline_strength_score") or "0"),
+                    "fade_watch_score": str(row.get("fade_watch_score") or "0"),
+                    "fade_confirmed_score": str(row.get("fade_confirmed_score") or "0"),
+                    "divergence_score": str(row.get("divergence_score") or "0"),
+                    "repair_score": str(row.get("repair_score") or "0"),
+                    "evidence_count": int(row.get("evidence_count") or 0),
+                    "rule_version": str(row.get("rule_version") or "subject_cycle_judgement.v2"),
+                    "source_version": str(row.get("source_version") or "stock_processing_service"),
+                }
+                vals.append(_json.dumps(audit, default=str))
+            payload.append(tuple(vals))
+        if not payload:
+            return 0
+        async with self.pool.acquire() as conn:
+            async with conn.transaction():
+                await conn.executemany(sql, payload)
+        return len(payload)
 
     async def upsert_theme_cycle_evidence_daily_rows(self, rows: list[dict[str, Any]]) -> int:
         """写入 theme_cycle_evidence_daily 表（Layer B 四层证据真源）。"""

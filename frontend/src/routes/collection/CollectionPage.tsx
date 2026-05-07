@@ -14,7 +14,16 @@ import { navigateTo } from "../../lib/navigation";
 const COLLECTION_JOB_STORAGE_KEY = "collection:latest-job";
 
 function todayString() {
-  return new Date().toISOString().slice(0, 10);
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+}
+
+function isHistoricalTradeDate(value: string) {
+  return /^\d{4}-\d{2}-\d{2}$/.test(value) && value < todayString();
 }
 
 function timeText(value: string) {
@@ -175,7 +184,7 @@ export function CollectionPage() {
   }, [job?.job_id, job?.status]);
 
   async function handleStart() {
-    if (!availability?.allowed) {
+    if (!isHistoricalTradeDate(tradeDate) && !availability?.allowed) {
       setErrorState({
         step: "启动前校验",
         message: availability?.message || "当前交易日暂不可采集",
