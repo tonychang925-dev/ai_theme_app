@@ -3,29 +3,29 @@
     "case_name": "liande_2026_04_15",
     "trade_date": "2026-04-15",
     "stock_id": "605060.SH",
-    "mode": "ReplayMode.REUSE_ALL",
-    "snapshot_version": "existing_snapshot_2026-04-15",
+    "mode": "ReplayMode.FULL_REBUILD",
+    "snapshot_version": "replay_2026-04-15_liande_v5",
     "layer_results": [
       {
         "layer_name": "evidence",
-        "action": "read_existing_snapshot",
-        "status": "reused",
-        "affected_rows": 0,
-        "reason": "report_regeneration"
+        "action": "rebuilt",
+        "status": "ok",
+        "affected_rows": 663,
+        "reason": ""
       },
       {
         "layer_name": "daily",
-        "action": "read_existing_snapshot",
-        "status": "reused",
-        "affected_rows": 0,
-        "reason": "report_regeneration"
+        "action": "rebuilt",
+        "status": "ok",
+        "affected_rows": 212293,
+        "reason": ""
       },
       {
         "layer_name": "recap",
-        "action": "read_existing_snapshot",
-        "status": "reused",
-        "affected_rows": 0,
-        "reason": "report_regeneration"
+        "action": "rebuilt",
+        "status": "ok",
+        "affected_rows": 1,
+        "reason": ""
       }
     ],
     "assertions": {
@@ -92,6 +92,10 @@
             "reject_reason": ""
           },
           "c_layer_trace": {
+            "seed_gate_pass": null,
+            "seed_gate_reason": null,
+            "strong_gene_seed": null,
+            "strong_gene_seed_reason": null,
             "input_rank": null,
             "refresh_status": null,
             "kept": false,
@@ -118,50 +122,50 @@
             "evidence": {
               "theme_name": "9028694",
               "event_strength_score": "0.000",
-              "event_continuity_score": "100.000",
+              "event_continuity_score": "0.000",
               "strong_event_count_7d": 0,
               "event_recency_days": null,
-              "leader_alive_score": "0.000",
-              "leader_breakdown_flag": true,
-              "relay_strength_score": "0.000",
-              "front_row_survival_ratio": "0.356",
+              "leader_alive_score": "80.000",
+              "leader_breakdown_flag": false,
+              "relay_strength_score": "48.000",
+              "front_row_survival_ratio": "1.000",
               "limit_up_count": 90,
               "limit_down_count": 0,
               "red_ratio": "0.356",
               "big_drop_ratio": "0.022",
               "front_row_strength_score": "0.000",
-              "theme_support_score": "0.000",
-              "break_start_pivot": true,
+              "theme_support_score": "100.000",
+              "break_start_pivot": false,
               "above_ma5": null,
-              "above_ma10": false,
-              "above_ma20": false,
+              "above_ma10": true,
+              "above_ma20": true,
               "theme_ret_3d": null,
               "theme_ret_5d": null,
               "theme_ret_10d": null,
               "kline_quality": null
             },
             "cycle": {
-              "mainline_strength_score": "35.300",
+              "mainline_strength_score": "38.480",
               "fade_watch_score": "29.750",
               "fade_confirmed_score": "18.032",
-              "divergence_score": "75.660",
-              "repair_score": "45.608",
+              "divergence_score": "85.660",
+              "repair_score": "50.728",
               "final_cycle_state": "divergence",
-              "final_mainline_alive": false,
-              "alive_decision_reason": "mainline_strength_score=35.300 below threshold=60; leader_alive_score=0.000 below threshold=40"
+              "final_mainline_alive": true,
+              "alive_decision_reason": "alive_conditions_passed"
             },
             "transition_explain": {
               "subject_key": "9028694",
               "trade_date": "2026-04-15",
               "previous_cycle_state": null,
               "final_cycle_state": "divergence",
-              "final_mainline_alive": false,
+              "final_mainline_alive": true,
               "scores": {
-                "mainline_strength_score": "35.300",
+                "mainline_strength_score": "38.480",
                 "fade_watch_score": "29.750",
                 "fade_confirmed_score": "18.032",
-                "divergence_score": "75.660",
-                "repair_score": "45.608"
+                "divergence_score": "85.660",
+                "repair_score": "50.728"
               },
               "state_decision_trace": [
                 {
@@ -172,12 +176,12 @@
                 {
                   "rule": "repair",
                   "passed": false,
-                  "reason": "repair_score=45.608 threshold=65 previous_cycle_state=None"
+                  "reason": "repair_score=50.728 threshold=65 previous_cycle_state=None"
                 },
                 {
                   "rule": "divergence",
                   "passed": true,
-                  "reason": "divergence_score=75.660 threshold=60"
+                  "reason": "divergence_score=85.660 threshold=60"
                 },
                 {
                   "rule": "fade_watch",
@@ -187,12 +191,12 @@
                 {
                   "rule": "acceleration",
                   "passed": false,
-                  "reason": "mainline_strength_score=35.300 threshold=75"
+                  "reason": "mainline_strength_score=38.480 threshold=75"
                 },
                 {
                   "rule": "fermentation",
                   "passed": false,
-                  "reason": "mainline_strength_score=35.300 threshold=60"
+                  "reason": "mainline_strength_score=38.480 threshold=60"
                 },
                 {
                   "rule": "final_cycle_state",
@@ -200,15 +204,15 @@
                   "reason": "selected_state=divergence; decision_path="
                 }
               ],
-              "alive_decision_reason": "mainline_strength_score=35.300 below threshold=60; leader_alive_score=0.000 below threshold=40",
+              "alive_decision_reason": "alive_conditions_passed",
               "evidence_drivers": {
-                "leader_alive_score": "0.000",
-                "leader_breakdown_flag": true,
-                "relay_strength_score": "0.000",
+                "leader_alive_score": "80.000",
+                "leader_breakdown_flag": false,
+                "relay_strength_score": "48.000",
                 "red_ratio": "0.356",
                 "big_drop_ratio": "0.022",
-                "theme_support_score": "0.000",
-                "break_start_pivot": true
+                "theme_support_score": "100.000",
+                "break_start_pivot": false
               }
             },
             "diff_fields": [
@@ -220,7 +224,7 @@
               },
               {
                 "field": "event_continuity_score",
-                "new_value": "100.000",
+                "new_value": "0.000",
                 "old_value": null,
                 "diff_status": "diagnostic_only"
               },
@@ -238,25 +242,25 @@
               },
               {
                 "field": "leader_alive_score",
-                "new_value": "0.000",
+                "new_value": "80.000",
                 "old_value": null,
                 "diff_status": "diagnostic_only"
               },
               {
                 "field": "leader_breakdown_flag",
-                "new_value": true,
+                "new_value": false,
                 "old_value": null,
                 "diff_status": "diagnostic_only"
               },
               {
                 "field": "relay_strength_score",
-                "new_value": "0.000",
+                "new_value": "48.000",
                 "old_value": null,
                 "diff_status": "diagnostic_only"
               },
               {
                 "field": "front_row_survival_ratio",
-                "new_value": "0.356",
+                "new_value": "1.000",
                 "old_value": null,
                 "diff_status": "diagnostic_only"
               },
@@ -292,13 +296,13 @@
               },
               {
                 "field": "theme_support_score",
-                "new_value": "0.000",
+                "new_value": "100.000",
                 "old_value": null,
                 "diff_status": "diagnostic_only"
               },
               {
                 "field": "break_start_pivot",
-                "new_value": true,
+                "new_value": false,
                 "old_value": null,
                 "diff_status": "diagnostic_only"
               },
@@ -310,13 +314,13 @@
               },
               {
                 "field": "above_ma10",
-                "new_value": false,
+                "new_value": true,
                 "old_value": null,
                 "diff_status": "diagnostic_only"
               },
               {
                 "field": "above_ma20",
-                "new_value": false,
+                "new_value": true,
                 "old_value": null,
                 "diff_status": "diagnostic_only"
               },
@@ -346,7 +350,7 @@
               },
               {
                 "field": "mainline_strength_score",
-                "new_value": "35.300",
+                "new_value": "38.480",
                 "old_value": null,
                 "diff_status": "diagnostic_only"
               },
@@ -364,13 +368,13 @@
               },
               {
                 "field": "divergence_score",
-                "new_value": "75.660",
+                "new_value": "85.660",
                 "old_value": null,
                 "diff_status": "diagnostic_only"
               },
               {
                 "field": "repair_score",
-                "new_value": "45.608",
+                "new_value": "50.728",
                 "old_value": null,
                 "diff_status": "diagnostic_only"
               },
@@ -382,13 +386,403 @@
               },
               {
                 "field": "final_mainline_alive",
-                "new_value": false,
+                "new_value": true,
                 "old_value": null,
                 "diff_status": "diagnostic_only"
               }
             ]
+          },
+          "leader_layer_diagnostic": {
+            "trade_date": "2026-04-15",
+            "stock_id": "605060.SH",
+            "subject_key": "9028694",
+            "leader_layer": {
+              "leader_alive_score": "80.000",
+              "leader_score_source": "inferred",
+              "leader_stock_id": "001238.SZ",
+              "leader_stock_name": "浙江正特",
+              "leader_pct_chg": "5.6583",
+              "leader_limit_up": false,
+              "leader_big_drop": false,
+              "front_row_alive_count": 5,
+              "front_row_limit_up_count": 0,
+              "front_row_big_drop_count": 0,
+              "successor_vacuum": false,
+              "leader_breakdown_reason": "leader_inferred_from_rank",
+              "pool_stock_count": 90,
+              "front_row_count": 5
+            },
+            "cycle_effect": {
+              "mainline_strength_score": "38.480",
+              "final_cycle_state": "divergence",
+              "final_mainline_alive": true
+            }
           }
+        },
+        "layer_b_diff_report": {
+          "trade_date": "2026-04-15",
+          "stock_id": "605060.SH",
+          "report_type": "new_chain_self_diff",
+          "summary": {
+            "subject_count": 7,
+            "category_counts": {
+              "A": 7,
+              "B": 0,
+              "C": 0
+            },
+            "hint_counts": {
+              "board_structure_weak": 6,
+              "event_layer_below_alive_gate": 7,
+              "mainline_strength_below_60": 7,
+              "state_machine_selected_divergence": 7
+            },
+            "best_alive_subject": {
+              "subject_key": "9064286",
+              "theme_name": "9064286",
+              "mainline_strength_score": "48.568",
+              "final_cycle_state": "divergence",
+              "final_mainline_alive": true
+            },
+            "best_dead_subject": null
+          },
+          "field_names": [
+            "subject_key",
+            "theme_name",
+            "category",
+            "leader_alive_score",
+            "leader_score_source",
+            "leader_breakdown_flag",
+            "front_row_survival_ratio",
+            "front_row_limit_up_count",
+            "event_strength_score",
+            "event_continuity_score",
+            "event_count_3d",
+            "event_count_7d",
+            "strong_event_count_7d",
+            "event_recency_days",
+            "limit_up_count",
+            "red_ratio",
+            "big_drop_ratio",
+            "front_row_strength_score",
+            "theme_support_score",
+            "break_start_pivot",
+            "above_ma10",
+            "above_ma20",
+            "kline_quality",
+            "theme_ret_3d",
+            "theme_ret_5d",
+            "theme_ret_10d",
+            "mainline_strength_score",
+            "fade_watch_score",
+            "fade_confirmed_score",
+            "divergence_score",
+            "repair_score",
+            "final_cycle_state",
+            "final_mainline_alive",
+            "alive_decision_reason"
+          ],
+          "subject_rows": [
+            {
+              "subject_key": "9064286",
+              "theme_name": "9064286",
+              "leader_alive_score": "100.000",
+              "leader_score_source": "db_pool_fields_inferred",
+              "leader_breakdown_flag": false,
+              "front_row_survival_ratio": "1.000",
+              "front_row_limit_up_count": 2,
+              "event_strength_score": "6.000",
+              "event_continuity_score": "18.000",
+              "event_count_3d": 0,
+              "event_count_7d": 1,
+              "strong_event_count_7d": 0,
+              "event_recency_days": 1,
+              "limit_up_count": 50,
+              "red_ratio": "0.320",
+              "big_drop_ratio": "0.080",
+              "front_row_strength_score": "0.000",
+              "theme_support_score": "100.000",
+              "break_start_pivot": false,
+              "above_ma10": true,
+              "above_ma20": true,
+              "kline_quality": "ok",
+              "theme_ret_3d": "-0.4847144888168537886400000000",
+              "theme_ret_5d": "1.590991605846809087517360800",
+              "theme_ret_10d": "8.214209450233890119444904800",
+              "mainline_strength_score": "48.568",
+              "fade_watch_score": "33.400",
+              "fade_confirmed_score": "19.040",
+              "divergence_score": "94.400",
+              "repair_score": "59.352",
+              "final_cycle_state": "divergence",
+              "final_mainline_alive": true,
+              "alive_decision_reason": "alive_conditions_passed",
+              "category": "A",
+              "diagnostic_hints": [
+                "event_layer_below_alive_gate",
+                "mainline_strength_below_60",
+                "board_structure_weak",
+                "state_machine_selected_divergence"
+              ]
+            },
+            {
+              "subject_key": "9037857",
+              "theme_name": "9037857",
+              "leader_alive_score": "100.000",
+              "leader_score_source": "db_pool_fields_inferred",
+              "leader_breakdown_flag": false,
+              "front_row_survival_ratio": "1.000",
+              "front_row_limit_up_count": 2,
+              "event_strength_score": "0.000",
+              "event_continuity_score": "0.000",
+              "event_count_3d": 0,
+              "event_count_7d": 0,
+              "strong_event_count_7d": 0,
+              "event_recency_days": null,
+              "limit_up_count": 268,
+              "red_ratio": "0.299",
+              "big_drop_ratio": "0.030",
+              "front_row_strength_score": "0.000",
+              "theme_support_score": "100.000",
+              "break_start_pivot": false,
+              "above_ma10": true,
+              "above_ma20": true,
+              "kline_quality": "ok",
+              "theme_ret_3d": "1.354384834141861894194099600",
+              "theme_ret_5d": "3.446206849671539533103503400",
+              "theme_ret_10d": "8.732032829964242418162337400",
+              "mainline_strength_score": "48.480",
+              "fade_watch_score": "52.595",
+              "fade_confirmed_score": "47.628",
+              "divergence_score": "100.015",
+              "repair_score": "60.102",
+              "final_cycle_state": "divergence",
+              "final_mainline_alive": true,
+              "alive_decision_reason": "alive_conditions_passed",
+              "category": "A",
+              "diagnostic_hints": [
+                "event_layer_below_alive_gate",
+                "mainline_strength_below_60",
+                "board_structure_weak",
+                "state_machine_selected_divergence"
+              ]
+            },
+            {
+              "subject_key": "9059230",
+              "theme_name": "9059230",
+              "leader_alive_score": "90.000",
+              "leader_score_source": "db_pool_fields_inferred",
+              "leader_breakdown_flag": false,
+              "front_row_survival_ratio": "1.000",
+              "front_row_limit_up_count": 0,
+              "event_strength_score": "0.000",
+              "event_continuity_score": "0.000",
+              "event_count_3d": 0,
+              "event_count_7d": 0,
+              "strong_event_count_7d": 0,
+              "event_recency_days": null,
+              "limit_up_count": 116,
+              "red_ratio": "0.293",
+              "big_drop_ratio": "0.034",
+              "front_row_strength_score": "0.000",
+              "theme_support_score": "100.000",
+              "break_start_pivot": false,
+              "above_ma10": true,
+              "above_ma20": true,
+              "kline_quality": "ok",
+              "theme_ret_3d": "-0.0113534623619251511490836300",
+              "theme_ret_5d": "1.622878356611541008592467000",
+              "theme_ret_10d": "4.852744472682323390257751800",
+              "mainline_strength_score": "44.088",
+              "fade_watch_score": "33.005",
+              "fade_confirmed_score": "19.796",
+              "divergence_score": "94.305",
+              "repair_score": "55.706",
+              "final_cycle_state": "divergence",
+              "final_mainline_alive": true,
+              "alive_decision_reason": "alive_conditions_passed",
+              "category": "A",
+              "diagnostic_hints": [
+                "event_layer_below_alive_gate",
+                "mainline_strength_below_60",
+                "board_structure_weak",
+                "state_machine_selected_divergence"
+              ]
+            },
+            {
+              "subject_key": "9048311",
+              "theme_name": "9048311",
+              "leader_alive_score": "80.000",
+              "leader_score_source": "db_pool_fields_inferred",
+              "leader_breakdown_flag": false,
+              "front_row_survival_ratio": "1.000",
+              "front_row_limit_up_count": 0,
+              "event_strength_score": "0.000",
+              "event_continuity_score": "0.000",
+              "event_count_3d": 0,
+              "event_count_7d": 0,
+              "strong_event_count_7d": 0,
+              "event_recency_days": null,
+              "limit_up_count": 34,
+              "red_ratio": "0.529",
+              "big_drop_ratio": "0.000",
+              "front_row_strength_score": "0.000",
+              "theme_support_score": "100.000",
+              "break_start_pivot": false,
+              "above_ma10": true,
+              "above_ma20": true,
+              "kline_quality": "ok",
+              "theme_ret_3d": "2.786075221263681465743944600",
+              "theme_ret_5d": "3.824866980870640839618678600",
+              "theme_ret_10d": "9.240540049445758181416982800",
+              "mainline_strength_score": "39.760",
+              "fade_watch_score": "21.195",
+              "fade_confirmed_score": "13.188",
+              "divergence_score": "85.065",
+              "repair_score": "55.762",
+              "final_cycle_state": "divergence",
+              "final_mainline_alive": true,
+              "alive_decision_reason": "alive_conditions_passed",
+              "category": "A",
+              "diagnostic_hints": [
+                "event_layer_below_alive_gate",
+                "mainline_strength_below_60",
+                "state_machine_selected_divergence"
+              ]
+            },
+            {
+              "subject_key": "9028694",
+              "theme_name": "9028694",
+              "leader_alive_score": "80.000",
+              "leader_score_source": "db_pool_fields_inferred",
+              "leader_breakdown_flag": false,
+              "front_row_survival_ratio": "1.000",
+              "front_row_limit_up_count": 0,
+              "event_strength_score": "0.000",
+              "event_continuity_score": "0.000",
+              "event_count_3d": 0,
+              "event_count_7d": 0,
+              "strong_event_count_7d": 0,
+              "event_recency_days": null,
+              "limit_up_count": 90,
+              "red_ratio": "0.356",
+              "big_drop_ratio": "0.022",
+              "front_row_strength_score": "0.000",
+              "theme_support_score": "100.000",
+              "break_start_pivot": false,
+              "above_ma10": true,
+              "above_ma20": true,
+              "kline_quality": "ok",
+              "theme_ret_3d": "0.539634522676551959466666600",
+              "theme_ret_5d": "0.025719688417391909256322900",
+              "theme_ret_10d": "0.579264758570470150985431400",
+              "mainline_strength_score": "38.480",
+              "fade_watch_score": "29.750",
+              "fade_confirmed_score": "18.032",
+              "divergence_score": "85.660",
+              "repair_score": "50.728",
+              "final_cycle_state": "divergence",
+              "final_mainline_alive": true,
+              "alive_decision_reason": "alive_conditions_passed",
+              "category": "A",
+              "diagnostic_hints": [
+                "event_layer_below_alive_gate",
+                "mainline_strength_below_60",
+                "board_structure_weak",
+                "state_machine_selected_divergence"
+              ]
+            },
+            {
+              "subject_key": "9060250",
+              "theme_name": "9060250",
+              "leader_alive_score": "72.000",
+              "leader_score_source": "db_pool_fields_inferred",
+              "leader_breakdown_flag": false,
+              "front_row_survival_ratio": "1.000",
+              "front_row_limit_up_count": 0,
+              "event_strength_score": "0.000",
+              "event_continuity_score": "0.000",
+              "event_count_3d": 0,
+              "event_count_7d": 0,
+              "strong_event_count_7d": 0,
+              "event_recency_days": null,
+              "limit_up_count": 170,
+              "red_ratio": "0.165",
+              "big_drop_ratio": "0.082",
+              "front_row_strength_score": "0.000",
+              "theme_support_score": "90.000",
+              "break_start_pivot": false,
+              "above_ma10": true,
+              "above_ma20": true,
+              "kline_quality": "ok",
+              "theme_ret_3d": "-0.9620087004483587759381233600",
+              "theme_ret_5d": "0.569540804707965448030899200",
+              "theme_ret_10d": "7.738682696121243994727848800",
+              "mainline_strength_score": "36.232",
+              "fade_watch_score": "40.445",
+              "fade_confirmed_score": "23.380",
+              "divergence_score": "85.425",
+              "repair_score": "45.258",
+              "final_cycle_state": "divergence",
+              "final_mainline_alive": true,
+              "alive_decision_reason": "alive_conditions_passed",
+              "category": "A",
+              "diagnostic_hints": [
+                "event_layer_below_alive_gate",
+                "mainline_strength_below_60",
+                "board_structure_weak",
+                "state_machine_selected_divergence"
+              ]
+            },
+            {
+              "subject_key": "9062904",
+              "theme_name": "9062904",
+              "leader_alive_score": "72.000",
+              "leader_score_source": "db_pool_fields_inferred",
+              "leader_breakdown_flag": false,
+              "front_row_survival_ratio": "1.000",
+              "front_row_limit_up_count": 0,
+              "event_strength_score": "0.000",
+              "event_continuity_score": "0.000",
+              "event_count_3d": 0,
+              "event_count_7d": 0,
+              "strong_event_count_7d": 0,
+              "event_recency_days": null,
+              "limit_up_count": 52,
+              "red_ratio": "0.346",
+              "big_drop_ratio": "0.077",
+              "front_row_strength_score": "0.000",
+              "theme_support_score": "90.000",
+              "break_start_pivot": false,
+              "above_ma10": true,
+              "above_ma20": true,
+              "kline_quality": "ok",
+              "theme_ret_3d": "-0.9577342181438159553937186700",
+              "theme_ret_5d": "0.894418220068834630110416300",
+              "theme_ret_10d": "6.188145255017875255622363500",
+              "mainline_strength_score": "35.624",
+              "fade_watch_score": "32.125",
+              "fade_confirmed_score": "18.312",
+              "divergence_score": "81.760",
+              "repair_score": "47.604",
+              "final_cycle_state": "divergence",
+              "final_mainline_alive": true,
+              "alive_decision_reason": "alive_conditions_passed",
+              "category": "A",
+              "diagnostic_hints": [
+                "event_layer_below_alive_gate",
+                "mainline_strength_below_60",
+                "board_structure_weak",
+                "state_machine_selected_divergence"
+              ]
+            }
+          ]
         }
+      },
+      "input_hashes": {
+        "identity": "57233da5778ef757187b54d0204d74e34840155b0ec49fd3e83cf9029608e8c3",
+        "evidence": "5612fd7d217507a3d2027d5f47b3bf902e41eba7f38e706f730894e7bf911173",
+        "daily": "3d587b06b2f6c32f895491f3a02b527fd03d1dbb151e40c507fe1557f35fc8f2",
+        "recap": "f6151641a66ad216843c61b7ade54e0104c53d6626ccaef371d74efcf7390e57"
       },
       "identity_mode": "legacy_anytime_existing_registry"
     },
