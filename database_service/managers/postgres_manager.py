@@ -3743,6 +3743,103 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.warning(f"写入 post_market_recap_snapshot 失败（可能尚未迁移）: {e}")
             return 0
 
+    async def upsert_strong_watch_pool_rows(self, rows: list[dict[str, Any]]) -> int:
+        """UPSERT strong_stock_watch_pool — 等价于旧链 _upsert_watch_pool_seed + _update_watch_pool_row。
+
+        新链 Layer C 独立维护持久池，不再依赖旧链 strong_stock_watch_pool 表。
+        """
+        sql = """
+        INSERT INTO strong_stock_watch_pool (
+            stock_id, stock_name, subject_key, theme_name,
+            watch_start_date, last_trade_date, watch_window_days,
+            source_tag, relay_role, watch_status,
+            watch_priority, watch_score,
+            pool_entry_type, candidate_promoted,
+            cycle_state, mainline_strength_score,
+            fade_watch, fade_confirmed,
+            support_type, support_level, support_score,
+            labels_json, evidence_json,
+            created_at, updated_at
+        ) VALUES (
+            $1, $2, $3, $4,
+            $5::date, $6::date, $7,
+            $8, $9, $10,
+            $11::numeric, $12::numeric,
+            $13, FALSE,
+            $14, $15::numeric,
+            $16, $17,
+            $18, $19::numeric, $20::numeric,
+            $21::jsonb, $22::jsonb,
+            now(), now()
+        )
+        ON CONFLICT (stock_id) DO UPDATE SET
+            stock_name = EXCLUDED.stock_name,
+            subject_key = EXCLUDED.subject_key,
+            theme_name = EXCLUDED.theme_name,
+            last_trade_date = GREATEST(strong_stock_watch_pool.last_trade_date, EXCLUDED.last_trade_date),
+            watch_window_days = GREATEST(strong_stock_watch_pool.watch_window_days, 1),
+            source_tag = EXCLUDED.source_tag,
+            relay_role = EXCLUDED.relay_role,
+            watch_status = EXCLUDED.watch_status,
+            watch_priority = EXCLUDED.watch_priority,
+            watch_score = EXCLUDED.watch_score,
+            pool_entry_type = EXCLUDED.pool_entry_type,
+            cycle_state = EXCLUDED.cycle_state,
+            mainline_strength_score = EXCLUDED.mainline_strength_score,
+            fade_watch = EXCLUDED.fade_watch,
+            fade_confirmed = EXCLUDED.fade_confirmed,
+            support_type = EXCLUDED.support_type,
+            support_level = EXCLUDED.support_level,
+            support_score = EXCLUDED.support_score,
+            labels_json = EXCLUDED.labels_json,
+            evidence_json = EXCLUDED.evidence_json,
+            updated_at = now()
+        """
+        payload = []
+        for row in rows:
+            trade_date = row.get("trade_date")
+            if isinstance(trade_date, str):
+                trade_date_val = date.fromisoformat(trade_date)
+            elif isinstance(trade_date, date):
+                trade_date_val = trade_date
+            else:
+                trade_date_val = None
+            if not trade_date_val or not row.get("stock_id"):
+                continue
+            payload.append((
+                str(row.get("stock_id") or ""),
+                str(row.get("stock_name") or ""),
+                str(row.get("subject_key") or ""),
+                str(row.get("theme_name") or ""),
+                trade_date_val,
+                trade_date_val,
+                1,  # watch_window_days (initial)
+                str(row.get("source_tag") or ""),
+                str(row.get("relay_role") or "unknown"),
+                str(row.get("watch_status") or "pending_seed"),
+                str(row.get("watch_priority") or "0"),
+                str(row.get("watch_score") or "0"),
+                str(row.get("pool_entry_type") or "observe_only"),
+                str(row.get("cycle_state") or ""),
+                str(row.get("mainline_strength_score") or "0"),
+                bool(row.get("fade_watch") or False),
+                bool(row.get("fade_confirmed") or False),
+                row.get("support_type"),
+                str(row.get("support_level") or "0"),
+                str(row.get("support_score") or "0"),
+                json.dumps(row.get("labels") or {}, ensure_ascii=False),
+                json.dumps(row.get("evidence") or {}, ensure_ascii=False),
+            ))
+        if not payload:
+            return 0
+        try:
+            async with self.pool.acquire() as conn:
+                await conn.executemany(sql, payload)
+            return len(payload)
+        except Exception as e:
+            logger.warning(f"写入 strong_stock_watch_pool 失败: {e}")
+            return 0
+
     async def upsert_strong_watch_history_rows(self, rows: List[Dict[str, Any]]) -> int:
         """批量 UPSERT strong_stock_watch_history（Layer C 跟踪池历史真源）。"""
         if not rows:
@@ -3834,8 +3931,21 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.warning(f"写入 strong_stock_watch_history 失败（可能尚未迁移）: {e}")
             return 0
 
-    async def upsert_theme_mainline_identity_registry_rows(self, rows: list[dict[str, Any]]) -> int:
-        """写入 theme_mainline_identity_registry 表（Layer A 身份注册表）。"""
+    async def upsert_theme_mainline_identity_registry_rows(
+        self,
+        rows: list[dict[str, Any]],
+        *,
+        allow_historical_overwrite: bool = False,
+        allow_unsafe_demotion: bool = False,
+    ) -> int:
+        """写入 theme_mainline_identity_registry 表（Layer A 身份注册表）。
+
+        含旧链等价写入保护：
+        1. first_confirmed_date：仅首次确认时写入，永不覆盖
+        2. 历史覆盖保护：不允许旧数据覆盖新数据（除非 allow_historical_overwrite=True）
+        3. 降级保护：不允许非LLM路径将 confirmed 降级（除非 allow_unsafe_demotion=True）
+        4. rule_version：追溯确认来源（manual_override/cluster_bootstrap/cluster_comp/llm/rule）
+        """
         sql = """
         INSERT INTO theme_mainline_identity_registry (
             subject_key, theme_name, is_main_theme, identity_status,
@@ -3875,6 +3985,23 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             llm_reviewed_at = EXCLUDED.llm_reviewed_at,
             rule_version = EXCLUDED.rule_version,
             updated_at = NOW()
+        WHERE (
+            -- Guard 1: 不允许旧数据覆盖新数据
+            EXCLUDED.last_review_date >= COALESCE(
+                theme_mainline_identity_registry.last_review_date, DATE '1900-01-01'
+            )
+            OR $22::boolean = TRUE
+        )
+          AND (
+            -- Guard 2: 不允许非LLM路径静默降级 confirmed → observed/inactive
+            $23::boolean = TRUE
+            OR NOT (
+                COALESCE(theme_mainline_identity_registry.is_main_theme, FALSE) = TRUE
+                AND COALESCE(NULLIF(LOWER(theme_mainline_identity_registry.identity_status), ''), 'observed') = 'confirmed'
+                AND COALESCE(EXCLUDED.is_main_theme, FALSE) = FALSE
+                AND COALESCE(EXCLUDED.llm_applied, FALSE) = FALSE
+            )
+        )
         """
         payload = []
         for row in rows:
@@ -3903,12 +4030,18 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 "rule_is_main_theme": bool(row.get("rule_is_main_theme") or False),
                 "rule_reasons": list(row.get("rule_reasons") or []),
                 "identity_status": identity_status,
+                "cluster_comp_count": int(row.get("cluster_comp_count") or 0),
+                "cluster_bootstrap_count": int(row.get("cluster_bootstrap_count") or 0),
                 "llm_verdict": str(row.get("llm_verdict") or ""),
                 "llm_reason": str(row.get("llm_reason") or ""),
                 "snapshot_version": str(row.get("snapshot_version") or ""),
                 "batch_id": str(row.get("batch_id") or ""),
                 "trace_id": str(row.get("trace_id") or ""),
             }
+            # rule_version 溯源：根据确认来源写入不同的规则版本
+            rule_version = str(row.get("rule_version") or "")
+            if not rule_version:
+                rule_version = str(row.get("snapshot_version") or "mainline_identity_registry.v7")
             payload.append((
                 str(row.get("subject_key") or ""),
                 str(row.get("subject_name") or row.get("subject_key") or ""),
@@ -3923,14 +4056,16 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 str(row.get("composite_score") or "0"),
                 json.dumps(evidence, ensure_ascii=False),
                 bool(row.get("rule_is_main_theme") or False),
-                False,  # llm_applied
-                None,   # llm_is_main_theme
-                None,   # llm_confidence
-                json.dumps([], ensure_ascii=False),  # llm_reasons
-                json.dumps([], ensure_ascii=False),  # llm_risk_flags
-                "",     # llm_model
+                bool(row.get("llm_applied") or False),
+                bool(row.get("llm_is_main_theme")) if row.get("llm_is_main_theme") is not None else None,
+                int(row.get("llm_confidence") or 0) if row.get("llm_confidence") is not None else None,
+                json.dumps(list(row.get("llm_reasons") or []), ensure_ascii=False),
+                json.dumps(list(row.get("llm_risk_flags") or []), ensure_ascii=False),
+                str(row.get("llm_model") or ""),
                 None,   # llm_reviewed_at
-                str(row.get("snapshot_version") or ""),  # rule_version
+                rule_version,
+                bool(allow_historical_overwrite),  # $22
+                bool(allow_unsafe_demotion),       # $23
             ))
         if not payload:
             return 0
@@ -4022,6 +4157,76 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             return len(payload)
         except Exception as e:
             logger.warning(f"写入 mainline_identity_review_queue 失败（可能表尚未迁移）: {e}")
+            return 0
+
+    async def apply_lifecycle_downgrade(
+        self, trade_date, deactivate_fade_days: int = 2
+    ) -> int:
+        """生命周期降级：连续 fade_confirmed → is_main_theme=FALSE, identity_status='inactive'。
+
+        等价于旧链 _apply_lifecycle_downgrade (L2005-2059)。
+        """
+        window = max(int(deactivate_fade_days), 1)
+        sql = """
+        WITH latest AS (
+            SELECT
+                v2.subject_key,
+                v2.fade_confirmed,
+                ROW_NUMBER() OVER (
+                    PARTITION BY v2.subject_key
+                    ORDER BY v2.trade_date DESC
+                ) AS rn
+            FROM theme_cycle_judgement_v2 v2
+            JOIN theme_mainline_identity_registry mr
+              ON mr.subject_key = v2.subject_key
+            WHERE v2.trade_date <= $1::date
+              AND mr.identity_status = 'confirmed'
+        ),
+        agg AS (
+            SELECT
+                subject_key,
+                COUNT(*) AS sampled_days,
+                COUNT(*) FILTER (WHERE fade_confirmed) AS fade_days
+            FROM latest
+            WHERE rn <= $2::int
+            GROUP BY subject_key
+        ),
+        to_deactivate AS (
+            SELECT subject_key
+            FROM agg
+            WHERE sampled_days = $2::int
+              AND fade_days = $2::int
+        )
+        UPDATE theme_mainline_identity_registry mr
+        SET
+            is_main_theme = FALSE,
+            identity_status = 'inactive',
+            last_review_date = $1::date,
+            evidence_json = COALESCE(mr.evidence_json, '{}'::jsonb) || jsonb_build_object(
+                'lifecycle',
+                jsonb_build_object(
+                    'deactivated_on', $1::text,
+                    'reason', 'consecutive_fade_confirmed',
+                    'window_days', $2::int
+                )
+            ),
+            updated_at = NOW()
+        WHERE mr.subject_key IN (SELECT subject_key FROM to_deactivate)
+          AND mr.identity_status = 'confirmed'
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                result = await conn.execute(sql, trade_date, window)
+                raw = result.split()[-1] if result else "0"
+                count = int(raw)
+                if count > 0:
+                    logger.info(
+                        f"lifecycle downgrade: {count} confirmed mainlines deactivated "
+                        f"on {trade_date} (window={window})"
+                    )
+                return count
+        except Exception as e:
+            logger.warning(f"lifecycle downgrade 失败 trade_date={trade_date}: {e}")
             return 0
 
 

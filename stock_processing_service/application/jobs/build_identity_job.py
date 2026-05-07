@@ -10,9 +10,17 @@ from uuid import uuid4
 
 from stock_processing_service.contracts.dto import BuildResult
 from stock_processing_service.contracts.events import EventEnvelope, SnapshotBuiltPayload
-from stock_processing_service.domain.services.identity_decider import IdentityDecider
-from stock_processing_service.domain.services.identity_llm_review_service import IdentityLLMReviewService
+from stock_processing_service.domain.services.identity_decider import IdentityDecider, IdentityDecision
+from stock_processing_service.domain.services.identity_llm_review_service import (
+    IdentityLLMReviewService,
+    IdentityLLMReviewVerdict,
+)
 from stock_processing_service.domain.services.identity_rule_engine import IdentityRuleEngine, IdentityRuleInput
+from stock_processing_service.domain.services.mainline_cluster_rules import (
+    ClusterDecisionInput,
+    MainlineClusterRegistry,
+    apply_manual_mainline_overrides,
+)
 from stock_processing_service.ports import (
     AlgorithmStateWritePort,
     IdempotencyPort,
@@ -31,6 +39,7 @@ class BuildIdentityJob:
         llm_review_service: IdentityLLMReviewService | None = None,
         decider: IdentityDecider | None = None,
         rule_engine: IdentityRuleEngine | None = None,
+        cluster_registry: MainlineClusterRegistry | None = None,
     ) -> None:
         self._read_port = read_port
         self._write_port = write_port
@@ -39,6 +48,14 @@ class BuildIdentityJob:
         self._llm_review_service = llm_review_service or IdentityLLMReviewService()
         self._decider = decider or IdentityDecider()
         self._rule_engine = rule_engine or IdentityRuleEngine()
+        bootstrap_enabled = os.environ.get("IDENTITY_CLUSTER_BOOTSTRAP", "0") in {"1", "true", "yes"}
+        self._cluster_registry = cluster_registry or MainlineClusterRegistry(
+            bootstrap_enabled=bootstrap_enabled,
+        )
+        self._manual_override_config_path = os.environ.get(
+            "IDENTITY_MANUAL_OVERRIDE_CONFIG", ""
+        )
+        self._deactivate_fade_days = int(os.environ.get("IDENTITY_DEACTIVATE_FADE_DAYS", "2"))
 
     @staticmethod
     def _d(value: Any, default: str = "0") -> Decimal:
@@ -126,7 +143,8 @@ class BuildIdentityJob:
                 trace_id=trace_id,
             )
 
-        # ── Single engine path: IdentityRuleEngine → IdentityLLMReviewService → IdentityDecider ──
+        # ── Phase 1: Rule engine evaluation for ALL subjects ──
+        # 必须先收集所有结果，cluster compensation 需要全局视角
 
         raw_pool_rows = await self._read_port.get_subject_stock_pool_by_trade_date(trade_date)
         pool_rows = self._normalize_rows(raw_pool_rows)
@@ -148,28 +166,173 @@ class BuildIdentityJob:
         for row in pool_rows:
             grouped.setdefault(row.subject_key, []).append(row)
 
+        # Step 1: 所有 subject 跑 rule engine → 收集 IdentityRuleResult
+        rule_results: dict[str, Any] = {}  # subject_key → IdentityRuleResult
+        subject_name_map: dict[str, str] = {}
+        cluster_inputs: list[ClusterDecisionInput] = []
+
         for subject_key, rows in grouped.items():
             rule_row = rule_inputs_by_subject.get(subject_key)
             if not rule_row:
-                raise RuntimeError(f"Layer A missing rule input from database_service gateway: trade_date={trade_date}, subject_key={subject_key}")
+                raise RuntimeError(
+                    f"Layer A missing rule input: trade_date={trade_date}, subject_key={subject_key}"
+                )
             rule_input = self._identity_rule_input_from_row(rule_row)
             subject_name = rule_input.subject_name
+            subject_name_map[subject_key] = subject_name
             rule = self._rule_engine.evaluate(rule_input)
-            llm_verdict = self._llm_review_service.review_with_rule(
-                composite_score=rule.composite_score,
-                one_day_tour_flag=rule.one_day_tour_flag,
-                logic_ok=rule.logic_ok,
-                market_ok=rule.market_ok,
-                rule_is_main_theme=rule.rule_is_main_theme,
+            rule_results[subject_key] = rule
+
+            # 构建 cluster 输入（证据从 rule_input 提取）
+            cluster_inputs.append(
+                ClusterDecisionInput(
+                    subject_key=subject_key,
+                    theme_name=subject_name,
+                    rule_is_main_theme=rule.rule_is_main_theme,
+                    evidence={
+                        "active_days_10d": int(rule_row.get("active_days_10d") or 0),
+                        "limit_up_count": int(rule_row.get("limit_up_count") or 0),
+                        "mainline_continuity_score": float(rule.mainline_continuity_score),
+                        "event_count_3d": int(rule_row.get("event_count_3d") or 0),
+                        "net_inflow_days_5d": int(rule_row.get("net_inflow_days_5d") or 0),
+                        "one_day_tour_flag": rule.one_day_tour_flag,
+                    },
+                )
             )
-            decision = self._decider.decide(
-                composite_score=rule.composite_score,
-                llm_verdict=llm_verdict.verdict,
-                one_day_tour_flag=rule.one_day_tour_flag,
-                logic_ok=rule.logic_ok,
-                rule_is_main_theme=rule.rule_is_main_theme,
-                platform_breakout_flag=rule.platform_breakout_flag,
-            )
+
+        # Step 2: 旧链等价 — cluster compensation → bootstrap → manual overrides
+        cluster_comp_count = self._cluster_registry.apply_cluster_compensation(cluster_inputs)
+        cluster_bootstrap_count = self._cluster_registry.apply_cluster_bootstrap_direct_confirm(
+            cluster_inputs
+        )
+        manual_override_count = apply_manual_mainline_overrides(
+            cluster_inputs,
+            config_path=self._manual_override_config_path or None,
+        ) if self._manual_override_config_path else 0
+
+        # 将 cluster 结果回写到 rule_results 的 rule_is_main_theme
+        cluster_by_subject = {ci.subject_key: ci for ci in cluster_inputs}
+        for subject_key, rule in rule_results.items():
+            ci = cluster_by_subject.get(subject_key)
+            if ci and ci.rule_is_main_theme and not rule.rule_is_main_theme:
+                # cluster 补偿修改了 rule_is_main_theme，记录原因
+                rule.reasons.append(
+                    f"cluster_compensation:{ci.evidence.get('cluster_compensation_cluster', 'unknown')}"
+                )
+
+        # Step 3: LLM review + decider + upgrade trigger（使用 cluster 修正后的 rule_is_main_theme）
+
+        # ── 预取 upgrade_trigger 所需的 prev_candidate 状态 ──
+        prev_candidate_map: dict[str, bool] = {}
+        if hasattr(self._read_port, "get_mainline_identity_rule_inputs"):
+            # 复用已有 rule_inputs_by_subject 中的 evidence 数据即可
+            pass
+
+        for subject_key, rows in grouped.items():
+            rule = rule_results[subject_key]
+            subject_name = subject_name_map[subject_key]
+            ci = cluster_by_subject.get(subject_key)
+
+            # 若 cluster bootstrap 已直确认为 confirmed，跳过 LLM
+            if ci and ci.identity_status == "confirmed":
+                llm_verdict = self._llm_review_service.review_with_rule(
+                    composite_score=rule.composite_score,
+                    one_day_tour_flag=rule.one_day_tour_flag,
+                    logic_ok=rule.logic_ok,
+                    market_ok=rule.market_ok,
+                    rule_is_main_theme=True,
+                )
+                decision = self._decider.decide(
+                    composite_score=rule.composite_score,
+                    llm_verdict="confirmed",
+                    one_day_tour_flag=rule.one_day_tour_flag,
+                    logic_ok=rule.logic_ok,
+                    rule_is_main_theme=True,
+                    platform_breakout_flag=rule.platform_breakout_flag,
+                )
+            else:
+                # 正常路径：rule_is_main_theme 可能已被 cluster compensation 修改
+                rule_is_mt = ci.rule_is_main_theme if ci else rule.rule_is_main_theme
+                llm_verdict = self._llm_review_service.review_with_rule(
+                    composite_score=rule.composite_score,
+                    one_day_tour_flag=rule.one_day_tour_flag,
+                    logic_ok=rule.logic_ok,
+                    market_ok=rule.market_ok,
+                    rule_is_main_theme=rule_is_mt,
+                )
+                decision = self._decider.decide(
+                    composite_score=rule.composite_score,
+                    llm_verdict=llm_verdict.verdict,
+                    one_day_tour_flag=rule.one_day_tour_flag,
+                    logic_ok=rule.logic_ok,
+                    rule_is_main_theme=rule_is_mt,
+                    platform_breakout_flag=rule.platform_breakout_flag,
+                )
+
+            # ── Upgrade trigger: 6条件检查 + super_strong 路径（旧链 _apply_upgrade_trigger）──
+            if decision.identity_status != "confirmed" and rule_row:
+                ev = rule_row
+                board_ok = bool(
+                    int(ev.get("board_boom_days_5d") or 0) >= 2
+                    and int(ev.get("limit_up_count") or 0) >= 2
+                )
+                event_ok = bool(
+                    int(ev.get("event_count_3d") or 0) >= 1
+                    and int(ev.get("event_recency_days") or 99) <= 3
+                    and int(ev.get("strong_event_count_7d") or 0) >= 1
+                )
+                flow_ok = bool(
+                    int(ev.get("net_inflow_days_5d") or 0) >= 3
+                    and float(ev.get("net_inflow_sum_5d") or 0.0) > 0.0
+                )
+                logic_hard = bool(
+                    float(ev.get("novelty_score") or 0.0) >= 55.0
+                    or float(rule.logic_score) >= 65.0
+                )
+                continuity_ok = bool(
+                    float(getattr(rule, "mainline_continuity_score", 0)) >= 70.0
+                )
+                risk_ok = bool(
+                    float(getattr(rule, "one_day_tour_risk_score", 100.0)) < 70.0
+                )
+                base_candidate = bool(
+                    board_ok and event_ok and flow_ok and logic_hard and continuity_ok and risk_ok
+                )
+                if base_candidate:
+                    # super_strong 路径：limit_up>=4 AND net_inflow_days>=4 AND continuity>=80 — 豁免2日等待
+                    super_strong = bool(
+                        int(ev.get("limit_up_count") or 0) >= 4
+                        and int(ev.get("net_inflow_days_5d") or 0) >= 4
+                        and float(getattr(rule, "mainline_continuity_score", 0)) >= 80.0
+                    )
+                    # prev_candidate 标志从 cluster_inputs evidence 读取
+                    was_upgrade_candidate = bool(
+                        ci.evidence.get("upgrade_candidate") if ci else False
+                    )
+                    if super_strong or was_upgrade_candidate:
+                        decision = IdentityDecision(
+                            identity_status="review_pending",
+                            final_score=rule.composite_score,
+                            reason="upgrade_trigger_review_pending",
+                        )
+                        # fail-closed: 不允许 LLM 旁路
+                        llm_verdict = IdentityLLMReviewVerdict(
+                            verdict="review_pending",
+                            confidence=Decimal("0.72"),
+                            reason="upgrade_trigger",
+                        )
+
+            # ── rule_version 溯源：按旧链优先级确定确认来源 ──
+            if ci and ci.evidence.get("cluster_bootstrap_direct_confirm"):
+                rule_version = "mainline_identity_registry.v8_cluster_bootstrap_direct_confirm"
+            elif ci and ci.evidence.get("cluster_compensation_mainline"):
+                rule_version = "mainline_identity_registry.v5_cluster_compensation"
+            elif decision.identity_status == "review_pending" and decision.reason.startswith("upgrade"):
+                rule_version = "mainline_identity_registry.v6_upgrade_trigger"
+            elif llm_verdict.verdict == "confirmed":
+                rule_version = "mainline_identity_registry.v7_open_source_kline_llm"
+            else:
+                rule_version = "mainline_identity_registry.v7_open_source_kline"
 
             identity_row = {
                 "trade_date": trade_date.isoformat(),
@@ -185,8 +348,6 @@ class BuildIdentityJob:
                 "rule_is_main_theme": rule.rule_is_main_theme,
                 "is_main_theme": decision.identity_status == "confirmed",
                 "rule_reasons": rule.reasons,
-                # Keep field for backward compatibility, but bind to the
-                # same rule-engine composite to avoid dual scoring drift.
                 "legacy_composite_score": str(rule.composite_score),
                 "llm_verdict": llm_verdict.verdict,
                 "llm_reason": llm_verdict.reason,
@@ -195,7 +356,19 @@ class BuildIdentityJob:
                 "batch_id": batch_id,
                 "trace_id": trace_id,
                 "source_trace_id": trace_id,
+                "cluster_comp_count": cluster_comp_count,
+                "cluster_bootstrap_count": cluster_bootstrap_count,
+                "rule_version": rule_version,
+                "llm_applied": llm_verdict.verdict != "deterministic",
+                "llm_is_main_theme": llm_verdict.verdict == "confirmed",
+                "llm_confidence": int(llm_verdict.confidence) if llm_verdict.confidence else 0,
+                "llm_reasons": [llm_verdict.reason] if llm_verdict.reason else [],
+                "llm_risk_flags": [],
+                "llm_model": "",
             }
+
+            if ci and ci.evidence.get("cluster_compensation_mainline"):
+                identity_row["rule_is_main_theme"] = True
 
             identity_registry_rows.append(identity_row)
 
@@ -216,8 +389,22 @@ class BuildIdentityJob:
                     }
                 )
 
-        written_registry = await self._write_port.upsert_theme_mainline_identity_registry_rows(identity_registry_rows)
+        # 写入保护：backfill 模式允许历史覆盖；正常模式禁止非LLM降级
+        allow_historical = os.environ.get("IDENTITY_ALLOW_HISTORICAL_OVERWRITE", "0") in {"1", "true", "yes"}
+        allow_unsafe_demotion = os.environ.get("IDENTITY_ALLOW_UNSAFE_DEMOTION", "0") in {"1", "true", "yes"}
+        written_registry = await self._write_port.upsert_theme_mainline_identity_registry_rows(
+            identity_registry_rows,
+            allow_historical_overwrite=allow_historical,
+            allow_unsafe_demotion=allow_unsafe_demotion,
+        )
         written_review = await self._write_port.upsert_mainline_identity_review_queue_rows(review_queue_rows)
+
+        # ── 生命周期降级：连续 fade_confirmed → inactive ──
+        lifecycle_downgrade_count = 0
+        if hasattr(self._write_port, "apply_lifecycle_downgrade"):
+            lifecycle_downgrade_count = await self._write_port.apply_lifecycle_downgrade(
+                trade_date, deactivate_fade_days=2
+            )
 
         await self._event_port.publish_stock_processing_event(
             EventEnvelope(

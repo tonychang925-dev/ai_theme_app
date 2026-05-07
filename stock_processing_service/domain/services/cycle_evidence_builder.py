@@ -32,6 +32,17 @@ class CycleEvidence:
     support_score: Decimal
     support_refs: list[str] = field(default_factory=list)
 
+    # ── 旧链 6 维证据字段（等价于 theme_cycle_judgement_service_v2 judge() 输入）──
+    # 这些是 per-subject 维度的原始证据，不是从6个score反推的
+    leader_breakdown_flag: bool = False         # Leader层：龙头破位标志
+    red_ratio: Decimal = Decimal("0")           # Board层：红盘比 (0-1)，真实板块数据
+    big_drop_ratio: Decimal = Decimal("0")      # Board层：大幅下跌比 (0-1)
+    limit_down_count: int = 0                   # Board层：跌停数
+    front_row_survival_ratio: Decimal = Decimal("0")  # Leader层：前排存活率 (0-1)
+    break_start_pivot: bool = False             # Kline层：支撑破位（旧链 support_break 核心条件）
+    theme_support_score: Decimal = Decimal("0") # Kline层：题材支撑评分（用于 old chain support_break 判定）
+    strong_event_count_7d: int = 0              # Event层：7日强事件数
+
     score_flags: dict[str, bool] = field(default_factory=dict)
     missing_flags: dict[str, bool] = field(default_factory=dict)
 
@@ -221,6 +232,41 @@ class CycleEvidenceBuilder:
             if not support_refs:
                 support_refs.append("support_evidence_missing")
 
+            # ── 旧链等价 6 维证据字段 ──
+            # red_ratio: 板块红盘比 = 正涨幅股票占比。优先从 metadata 取，否则从 subject bars 推算
+            if "red_ratio" in metadata or "red_ratio" in context_meta:
+                red_ratio_val = Decimal(str(metadata.get("red_ratio") or context_meta.get("red_ratio") or "0"))
+            else:
+                red_ratio_val = diffusion_ratio / Decimal("100")
+            # big_drop_ratio: 大幅下跌比。优先 metadata，否则从 bars 推算
+            if "big_drop_ratio" in metadata or "big_drop_ratio" in context_meta:
+                big_drop_ratio_val = Decimal(str(metadata.get("big_drop_ratio") or context_meta.get("big_drop_ratio") or "0"))
+            else:
+                big_drop_count = sum(1 for b in subject_bars if b.pct_chg <= Decimal("-5"))
+                big_drop_ratio_val = Decimal(str(big_drop_count)) / Decimal(str(max(subject_count, 1)))
+            # limit_down_count: 跌停数。优先 metadata，否则从 bars 推算
+            if "limit_down_count" in metadata or "limit_down_count" in context_meta:
+                limit_down_count_val = int(
+                    metadata.get("limit_down_count")
+                    or context_meta.get("limit_down_count")
+                    or 0
+                )
+            else:
+                limit_down_count_val = sum(1 for b in subject_bars if b.close_price <= b.limit_down_price and b.limit_down_price > Decimal("0"))
+            # leader_breakdown_flag: 龙头破位
+            leader_bd = bool(metadata.get("leader_breakdown_flag") or context_meta.get("leader_breakdown_flag") or False)
+            # front_row_survival_ratio: 前排存活率
+            front_survival = Decimal(str(metadata.get("front_row_survival_ratio") or context_meta.get("front_row_survival_ratio") or "1.0"))
+            # break_start_pivot: 支撑破位
+            break_pivot = bool(metadata.get("break_start_pivot") or context_meta.get("break_start_pivot") or False)
+            # theme_support_score: K线支撑分
+            if "theme_support_score" in metadata or "theme_support_score" in context_meta:
+                theme_support_score_val = Decimal(str(metadata.get("theme_support_score") or context_meta.get("theme_support_score") or "0"))
+            else:
+                theme_support_score_val = support_score
+            # strong_event_count_7d
+            strong_evt = int(metadata.get("strong_event_count_7d") or context_meta.get("strong_event_count_7d") or 0)
+
             evidences.append(
                 CycleEvidence(
                     trade_date=stock_bar.trade_date,
@@ -237,6 +283,14 @@ class CycleEvidenceBuilder:
                     board_score=board_score,
                     support_score=support_score,
                     support_refs=support_refs,
+                    leader_breakdown_flag=leader_bd,
+                    red_ratio=red_ratio_val,
+                    big_drop_ratio=big_drop_ratio_val,
+                    limit_down_count=limit_down_count_val,
+                    front_row_survival_ratio=front_survival,
+                    break_start_pivot=break_pivot,
+                    theme_support_score=theme_support_score_val,
+                    strong_event_count_7d=strong_evt,
                     score_flags={
                         "computed": True,
                         "event_score_missing": (not bool(tags)) and tag_event_score <= Decimal("0"),

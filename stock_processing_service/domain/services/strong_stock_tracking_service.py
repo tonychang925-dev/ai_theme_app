@@ -364,11 +364,17 @@ class StrongStockTrackingService:
             or trend_strength_score >= 70.0
         )
         pass_count = int(rule_a_gene) + int(rule_b_theme) + int(rule_c_volume) + int(rule_d_structure)
+        # 硬门禁判定：
+        #   - 常规路径：4选3（pass_count >= 3）
+        #   - 主线承接豁免：(rule_b_theme AND recent_limit_up_count >= 2)
+        #   - 独立龙头豁免：(recent_limit_up_count >= 2 AND pass_count >= 2)
+        #     两连板个股不依赖主线身份确认，基因+结构/量价至少2条件即可入池
         passed = bool(
             rule_a_gene
             and (
                 pass_count >= 3
                 or (rule_b_theme and recent_limit_up_count >= 2)
+                or (recent_limit_up_count >= 2 and pass_count >= 2)
             )
         )
         return {

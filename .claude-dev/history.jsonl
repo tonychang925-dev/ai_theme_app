@@ -306,3 +306,19 @@
 {"display":"[Pasted text #1 +7 lines]","pastedContents":{"1":{"id":1,"type":"text","content":"推翻新链现有 Layer C 业务逻辑，重建为“旧链 C 层逻辑的新架构实现”。不是 patch，不是调参，不是保留 Universe/Seed/Refresh/Prune/Promote 那套新逻辑继续缝。\n\n但这里要区分两件事：\n\n要推翻：新链 Layer C 的业务逻辑实现\n要保留：新链 Ports / Gateway / Adapter / Job / Domain 分层架构\n\n旧链直接在 StrongStockTrackingService 里写 SQL 和 asyncpg；新链不能这么做。新链只保留工程架构，把旧链业务逻辑原样迁过去。"}},"timestamp":1778149246390,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
 {"display":"请确认是否符合我的伤暑要求？","pastedContents":{},"timestamp":1778149301339,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
 {"display":"继续下一阶段的任务","pastedContents":{},"timestamp":1778154404636,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"以4/15日联徳股份为了，先用新链程序测试请7个交易日（4/7日-4/15日）的C层滚动输出结果，先确认每日强势股池的数量是否合理，再验证联徳股份是否出现在强势股池中并保持到4/15日！","pastedContents":{},"timestamp":1778156760700,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"4/15日前7个交易日的数据","pastedContents":{},"timestamp":1778156787633,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"联徳股份从4/8日开始涨停，4/10再次涨停，4/7日是下跌到最低点，因此4/10应该入围强势股！","pastedContents":{},"timestamp":1778158049465,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"绝不允许自己造逻辑！！必须先复刻旧链逻辑！","pastedContents":{},"timestamp":1778158443127,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"请阅读设计文档，final_mainline_alive有明确的规则定义！","pastedContents":{},"timestamp":1778158652303,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"是的，你的判断很对！需要先运行 Layer A（BuildIdentityJob）为这个时间段产出主线身份数据，然后 Layer C                               \n  的完整评分链路就能跑通","pastedContents":{},"timestamp":1778158689200,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"跑完layer A，还要重建layer B数据才完整！","pastedContents":{},"timestamp":1778159318655,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"请确认旧链在layer A中有一个主线聚类规则，请查看代码和设计文档，是否有次规则定义！","pastedContents":{},"timestamp":1778159421755,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"需要","pastedContents":{},"timestamp":1778159590937,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"跑 Layer B backfill","pastedContents":{},"timestamp":1778160255076,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"重新核查旧链A/B/C层与新链的差距，并给出详细分析总结和下一步的优化计划","pastedContents":{},"timestamp":1778161706095,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"按M0开始修复Layer B评分公式","pastedContents":{},"timestamp":1778162599318,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"按M1修复Layer A写入保护","pastedContents":{},"timestamp":1778163204573,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"按M2修复Layer A手动覆写和生命周期降级","pastedContents":{},"timestamp":1778163711574,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"继续","pastedContents":{},"timestamp":1778164191434,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"继续","pastedContents":{},"timestamp":1778164549191,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}

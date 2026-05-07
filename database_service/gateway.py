@@ -1071,6 +1071,18 @@ class DatabaseGateway:
             logger.error(f"写入 replay_snapshot_manifest 失败: {e}")
             raise
 
+    async def upsert_strong_watch_pool_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：strong_stock_watch_pool（Layer C 持久池）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_strong_watch_pool_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"写入 strong_stock_watch_pool 失败: {e}")
+            raise
+
     async def upsert_strong_watch_history_rows(self, rows: List[Dict[str, Any]]) -> int:
         """股票域显式写入：strong_stock_watch_history。"""
         try:
@@ -1083,11 +1095,20 @@ class DatabaseGateway:
             logger.error(f"写入 strong_stock_watch_history 失败: {e}")
             raise
 
-    async def upsert_theme_mainline_identity_registry_rows(self, rows: List[Dict[str, Any]]) -> int:
+    async def upsert_theme_mainline_identity_registry_rows(
+        self, rows: List[Dict[str, Any]],
+        *,
+        allow_historical_overwrite: bool = False,
+        allow_unsafe_demotion: bool = False,
+    ) -> int:
         """股票域显式写入：theme_mainline_identity_registry（Layer A 身份注册表）。"""
         try:
             start_time = time.time()
-            result = await self._client.upsert_theme_mainline_identity_registry_rows(rows)
+            result = await self._client.upsert_theme_mainline_identity_registry_rows(
+                rows,
+                allow_historical_overwrite=allow_historical_overwrite,
+                allow_unsafe_demotion=allow_unsafe_demotion,
+            )
             self._record_request(True, start_time)
             return int(result or 0)
         except Exception as e:
@@ -1105,6 +1126,20 @@ class DatabaseGateway:
         except Exception as e:
             self._record_request(False, start_time)
             logger.error(f"写入 mainline_identity_review_queue 失败: {e}")
+            raise
+
+    async def apply_lifecycle_downgrade(
+        self, trade_date, deactivate_fade_days: int = 2
+    ) -> int:
+        """股票域显式写入：主线生命周期降级（连续 fade → inactive）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.apply_lifecycle_downgrade(trade_date, deactivate_fade_days)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"lifecycle downgrade 失败 trade_date={trade_date}: {e}")
             raise
 
     async def publish_stock_processing_event(self, event_name: str, payload: Dict[str, Any]) -> str:

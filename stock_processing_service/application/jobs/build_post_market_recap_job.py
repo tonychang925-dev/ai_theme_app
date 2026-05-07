@@ -499,6 +499,37 @@ class BuildPostMarketRecapJob:
             )
         candidate_input_rows = list(by_stock.values())
 
+        # ── Step 7b: 持久池写入（等价旧链 _upsert_watch_pool_seed + _update_watch_pool_row）──
+        pool_write_rows: list[dict[str, Any]] = []
+        for result in watch_pool_results:
+            if not result.stock_id:
+                continue
+            pool_write_rows.append({
+                "trade_date": trade_date,
+                "stock_id": result.stock_id,
+                "stock_name": result.stock_name,
+                "subject_key": result.subject_key,
+                "theme_name": result.theme_name,
+                "source_tag": result.source_tag,
+                "relay_role": result.relay_role,
+                "watch_status": result.watch_status,
+                "watch_priority": str(result.watch_priority),
+                "watch_score": str(result.watch_score),
+                "pool_entry_type": result.pool_entry_type,
+                "cycle_state": result.cycle_state,
+                "mainline_strength_score": str(result.mainline_strength_score),
+                "fade_watch": result.fade_watch,
+                "fade_confirmed": result.fade_confirmed,
+                "support_type": result.support_type,
+                "support_level": str(result.support_level or "0"),
+                "support_score": str(result.support_score),
+                "labels": result.labels,
+                "evidence": result.evidence,
+            })
+        pool_written = 0
+        if hasattr(self._write_port, "upsert_strong_watch_pool_rows"):
+            pool_written = await self._write_port.upsert_strong_watch_pool_rows(pool_write_rows)
+
         # 构建 recap_doc 所需元数据
         pool_rows: list[Any] = []  # 保留兼容性
         stock_ids = all_stock_ids
@@ -508,6 +539,7 @@ class BuildPostMarketRecapJob:
         promoted_pool_rows: list[Any] = candidate_input_rows
         shadow_summary: dict[str, Any] = {}
         legacy_watch_input_count = 0
+        strong_watch_pool_written = pool_written
         layer_c_input_mode = "seed_query"
         layer_c_shadow_enabled = False
         layer_a_identity_source = "theme_mainline_identity_registry"
@@ -541,6 +573,7 @@ class BuildPostMarketRecapJob:
             "strong_watch_input_7d_count": len(candidate_input_rows),
             "strong_watch_promoted_count": len(promoted_pool_rows),
             "strong_watch_history_count": len(strong_watch_history),
+            "strong_watch_pool_written": strong_watch_pool_written,
             "strong_watch_shadow_summary": shadow_summary,
             "shadow_layer_c_formal_count": int(shadow_summary.get("admission_formal_count") or 0),
             "shadow_layer_c_observe_count": int(shadow_summary.get("admission_observe_count") or 0),

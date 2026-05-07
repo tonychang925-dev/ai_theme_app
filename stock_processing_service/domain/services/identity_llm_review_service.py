@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from dataclasses import dataclass
 from decimal import Decimal
 from typing import Any
@@ -41,8 +42,31 @@ class IdentityLLMReviewService:
         logic_ok: bool,
         market_ok: bool,
         rule_is_main_theme: bool,
+        *,
+        subject_name: str = "",
+        evidence_summary: dict[str, Any] | None = None,
     ) -> IdentityLLMReviewVerdict:
-        """使用完整规则引擎输出的复核。"""
+        """使用完整规则引擎输出的复核。
+
+        若环境变量 IDENTITY_LLM_API_URL 已设置，使用真实 LLM API 调用；
+        否则回退到确定性规则复核。
+        """
+        api_url = os.environ.get("IDENTITY_LLM_API_URL", "").strip()
+        api_key = os.environ.get("IDENTITY_LLM_API_KEY", "").strip()
+
+        if api_url and api_key:
+            return self._api_review(
+                composite_score=composite_score,
+                one_day_tour_flag=one_day_tour_flag,
+                logic_ok=logic_ok,
+                market_ok=market_ok,
+                rule_is_main_theme=rule_is_main_theme,
+                subject_name=subject_name,
+                evidence_summary=evidence_summary or {},
+                api_url=api_url,
+                api_key=api_key,
+            )
+
         return self._deterministic_review(
             composite_score=composite_score,
             one_day_tour_flag=one_day_tour_flag,
@@ -50,6 +74,93 @@ class IdentityLLMReviewService:
             market_ok=market_ok,
             rule_is_main_theme=rule_is_main_theme,
         )
+
+    @staticmethod
+    def _api_review(
+        *,
+        composite_score: Decimal,
+        one_day_tour_flag: bool,
+        logic_ok: bool,
+        market_ok: bool,
+        rule_is_main_theme: bool,
+        subject_name: str,
+        evidence_summary: dict[str, Any],
+        api_url: str,
+        api_key: str,
+    ) -> IdentityLLMReviewVerdict:
+        """真实 LLM API 调用 — 等价于旧链 _apply_llm_review() 的 API 调用部分。"""
+        import json as _json
+        from urllib.request import Request, urlopen
+        from urllib.error import URLError
+
+        prompt = f"""你是A股主线身份判定复核专家。严格执行以下规则：
+1) 同时复核逻辑维度 + 市场维度，不能只看单维度。
+2) 逻辑维度：新颖度、时机、影响广度。
+3) 市场维度：热度、板块强度、资金持续流入、事件持续发酵。
+4) 禁止自由发挥，严格依据硬数据与规则阈值判断。
+5) 一日游题材、单日异动、缺乏持续性的题材，不得判为主线。
+
+题材：{subject_name}
+composite_score={float(composite_score):.2f}
+one_day_tour_flag={one_day_tour_flag}
+logic_ok={logic_ok}
+market_ok={market_ok}
+rule_is_main_theme={rule_is_main_theme}
+
+证据摘要：{_json.dumps(evidence_summary, ensure_ascii=False, default=str)}
+
+输出必须是JSON：
+{{"is_main_theme": true/false, "confidence": 0.0-1.0, "reasons": ["..."], "risk_flags": ["..."]}}"""
+
+        try:
+            req = Request(
+                api_url,
+                data=_json.dumps({
+                    "model": os.environ.get("IDENTITY_LLM_MODEL", "deepseek-chat"),
+                    "messages": [{"role": "user", "content": prompt}],
+                    "temperature": 0.1,
+                    "max_tokens": 512,
+                }).encode("utf-8"),
+                headers={
+                    "Content-Type": "application/json",
+                    "Authorization": f"Bearer {api_key}",
+                },
+            )
+            with urlopen(req, timeout=30) as resp:
+                body = _json.loads(resp.read())
+            content = body.get("choices", [{}])[0].get("message", {}).get("content", "{}")
+            result = _json.loads(content) if isinstance(content, str) else content
+        except (URLError, _json.JSONDecodeError, KeyError, IndexError, OSError) as e:
+            # API failure → fail-closed: review_pending
+            return IdentityLLMReviewVerdict(
+                verdict="review_pending",
+                confidence=Decimal("0.50"),
+                reason=f"llm_api_failed:{e}",
+            )
+
+        is_main = bool(result.get("is_main_theme") or False)
+        confidence = Decimal(str(result.get("confidence") or 0.5))
+        reasons = result.get("reasons", [])
+        risk_flags = result.get("risk_flags", [])
+
+        if is_main:
+            return IdentityLLMReviewVerdict(
+                verdict="confirmed",
+                confidence=min(max(confidence, Decimal("0.60")), Decimal("0.95")),
+                reason="; ".join(reasons) if reasons else "llm_confirmed",
+            )
+        elif confidence >= Decimal("0.60"):
+            return IdentityLLMReviewVerdict(
+                verdict="review_pending",
+                confidence=confidence,
+                reason="; ".join(reasons) if reasons else "llm_review_pending",
+            )
+        else:
+            return IdentityLLMReviewVerdict(
+                verdict="observed",
+                confidence=confidence,
+                reason="; ".join(reasons) if reasons else "llm_observed",
+            )
 
     @staticmethod
     def _deterministic_review(
