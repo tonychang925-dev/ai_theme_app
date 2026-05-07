@@ -157,7 +157,8 @@ class BuildDailySnapshotJob:
 
         subject_judgements = self._subject_judgement_service.judge_many(subject_evidences)
         subject_judgement_by_key = {j.subject_key: j for j in subject_judgements}
-        cycle_written = 0  # cycle data written to stock_daily_strategy_snapshot by projectors
+        subject_evidence_by_key = {e.subject_key: e for e in subject_evidences}
+        cycle_written = 0
         judgements = []
         for e in evidences:
             s = subject_judgement_by_key.get(e.subject_key)
@@ -185,6 +186,47 @@ class BuildDailySnapshotJob:
                     support_break=s.support_break,
                     score_flags=s.score_flags,
                 )
+            )
+
+        cycle_rows = []
+        for s in subject_judgements:
+            source_evidence = subject_evidence_by_key.get(s.subject_key)
+            cycle_rows.append(
+                {
+                    "trade_date": trade_date,
+                    "subject_key": s.subject_key,
+                    "theme_name": s.subject_name,
+                    "cycle_state_rule": s.final_cycle_state,
+                    "mainline_alive_rule": s.mainline_alive_rule,
+                    "final_cycle_state": s.final_cycle_state,
+                    "final_mainline_alive": s.final_mainline_alive,
+                    "fade_watch": s.final_cycle_state == "fade_watch",
+                    "fade_confirmed": s.final_cycle_state == "fade_confirmed",
+                    "mainline_strength_score": s.mainline_strength_score,
+                    "fade_watch_score": s.fade_watch_score,
+                    "fade_confirmed_score": s.fade_confirmed_score,
+                    "divergence_score": s.divergence_score,
+                    "repair_score": s.repair_score,
+                    "confidence_score": Decimal("0"),
+                    "previous_cycle_state": source_evidence.previous_cycle_state if source_evidence else "unknown",
+                    "state_transition_reason": s.decision_path,
+                    "rule_reasons": [s.decision_path],
+                    "risk_flags": s.fade_reason_codes,
+                    "evidence_refs": [],
+                    "fade_reason_codes": s.fade_reason_codes,
+                    "fade_confirmed_evidence_count": s.fade_confirmed_evidence_count,
+                    "decision_path": s.decision_path,
+                    "evidence_count": s.evidence_count,
+                    "support_break": s.support_break,
+                    "score_flags": s.score_flags or {},
+                    "snapshot_version": snapshot_version,
+                    "batch_id": batch_id,
+                    "trace_id": trace_id,
+                    "rule_version": "subject_cycle_judgement.v2.old_chain_alive",
+                    "judgement_schema_version": "theme_cycle_judgement.v2",
+                    "state_machine_version": "subject_cycle_state_machine.v2",
+                    "source_version": "stock_processing_service.layer_b.v2",
+                }
             )
 
         prior_state_by_stock: dict[str, str] = {
@@ -224,6 +266,10 @@ class BuildDailySnapshotJob:
         affected = 0
         published_events: list[str] = []
         cache_writes = 0
+        cycle_upsert = getattr(self._write_port, "upsert_theme_cycle_judgement_v2_rows", None)
+        if callable(cycle_upsert):
+            cycle_written = await cycle_upsert(cycle_rows)
+            affected += cycle_written
         strategy_upsert = getattr(self._write_port, "upsert_stock_daily_strategy_snapshot_rows", None)
         if callable(strategy_upsert):
             affected += await strategy_upsert(daily_rows)

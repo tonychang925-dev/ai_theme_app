@@ -78,6 +78,31 @@ class _FakeReadPort:
             )
         ]
 
+    async def get_subject_cycle_evidence_daily(self, trade_date: date, subject_keys=None):
+        return [
+            {
+                "subject_key": "robotics",
+                "trade_date": trade_date,
+                "theme_name": "Robotics",
+                "event_strength_score": Decimal("80"),
+                "event_continuity_score": Decimal("70"),
+                "strong_event_count_7d": 1,
+                "event_recency_days": 1,
+                "leader_alive_score": Decimal("90"),
+                "leader_breakdown_flag": False,
+                "relay_strength_score": Decimal("70"),
+                "front_row_survival_ratio": Decimal("1"),
+                "limit_up_count": 1,
+                "limit_down_count": 0,
+                "red_ratio": Decimal("0.80"),
+                "big_drop_ratio": Decimal("0.00"),
+                "front_row_strength_score": Decimal("75"),
+                "theme_support_score": Decimal("72"),
+                "break_start_pivot": False,
+                "evidence_json": {"previous_cycle_state": "divergence"},
+            }
+        ]
+
     async def get_existing_pre_market_brief_snapshot(self, trade_date: date):
         return None
 
@@ -93,6 +118,7 @@ class _FakeWritePort:
             "subject": [],
             "abnormal": [],
             "leaderboard": [],
+            "cycle": [],
         }
 
     async def upsert_stock_daily_strategy_snapshot_rows(self, rows):
@@ -113,6 +139,10 @@ class _FakeWritePort:
 
     async def upsert_theme_stock_leaderboard_rows(self, rows):
         self.calls["leaderboard"].append(rows)
+        return len(rows)
+
+    async def upsert_theme_cycle_judgement_v2_rows(self, rows):
+        self.calls["cycle"].append(rows)
         return len(rows)
 
     async def upsert_pre_market_brief_snapshot(self, doc):
@@ -202,6 +232,12 @@ def test_build_daily_snapshot_job_end_to_end_and_idempotent() -> None:
         assert len(write_port.calls["subject"]) == 1
         assert len(write_port.calls["abnormal"]) == 1
         assert len(write_port.calls["leaderboard"]) == 1
+        assert len(write_port.calls["cycle"]) == 1
+        cycle_row = write_port.calls["cycle"][0][0]
+        assert cycle_row["snapshot_version"] == "v1"
+        assert cycle_row["batch_id"] == "b1"
+        assert cycle_row["trace_id"] == "t1"
+        assert cycle_row["rule_version"] == "subject_cycle_judgement.v2.old_chain_alive"
         assert len(event_port.events) >= 2
         assert any(e["event_name"] == "snapshot_built" for e in event_port.events)
         assert any(e["event_name"] == "leaderboard_updated" for e in event_port.events)

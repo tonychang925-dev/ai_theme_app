@@ -103,6 +103,31 @@ class _ReadPort:
             ),
         ]
 
+    async def get_subject_cycle_evidence_daily(self, trade_date: date, subject_keys: list[str] | None = None):
+        return [
+            {
+                "subject_key": "robotics",
+                "trade_date": trade_date,
+                "theme_name": "Robotics",
+                "event_strength_score": Decimal("35"),
+                "event_continuity_score": Decimal("30"),
+                "strong_event_count_7d": 0,
+                "event_recency_days": 5,
+                "leader_alive_score": Decimal("30"),
+                "leader_breakdown_flag": True,
+                "relay_strength_score": Decimal("20"),
+                "front_row_survival_ratio": Decimal("0"),
+                "limit_up_count": 0,
+                "limit_down_count": 1,
+                "red_ratio": Decimal("0.20"),
+                "big_drop_ratio": Decimal("0.50"),
+                "front_row_strength_score": Decimal("20"),
+                "theme_support_score": Decimal("30"),
+                "break_start_pivot": True,
+                "evidence_json": {"previous_cycle_state": "fade_watch"},
+            }
+        ]
+
 
 class _WritePort:
     async def upsert_stock_daily_strategy_snapshot_rows(self, rows):
