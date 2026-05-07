@@ -71,6 +71,31 @@ class _ReadPort:
             )
         ]
 
+    async def get_subject_cycle_evidence_daily(self, trade_date: date, subject_keys=None):
+        return [
+            {
+                "subject_key": "robotics",
+                "trade_date": trade_date,
+                "theme_name": "Robotics",
+                "event_strength_score": Decimal("80"),
+                "event_continuity_score": Decimal("70"),
+                "strong_event_count_7d": 1,
+                "event_recency_days": 1,
+                "leader_alive_score": Decimal("90"),
+                "leader_breakdown_flag": False,
+                "relay_strength_score": Decimal("70"),
+                "front_row_survival_ratio": Decimal("1"),
+                "limit_up_count": 1,
+                "limit_down_count": 0,
+                "red_ratio": Decimal("0.80"),
+                "big_drop_ratio": Decimal("0.00"),
+                "front_row_strength_score": Decimal("75"),
+                "theme_support_score": Decimal("72"),
+                "break_start_pivot": False,
+                "evidence_json": {"previous_cycle_state": "divergence"},
+            }
+        ]
+
 
 class _WritePort:
     def __init__(self):

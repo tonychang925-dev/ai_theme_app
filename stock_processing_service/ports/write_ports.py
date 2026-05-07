@@ -37,6 +37,8 @@ class AlgorithmStateWritePort(Protocol):
 
     async def upsert_theme_cycle_evidence_daily_rows(self, rows: list[dict[str, Any]]) -> int: ...
 
+    async def upsert_theme_cycle_judgement_v2_rows(self, rows: list[dict[str, Any]]) -> int: ...
+
 
 class StockWritePort(SnapshotWritePort, AlgorithmStateWritePort, Protocol):
     """Backward-compatible composite port."""

@@ -7,7 +7,7 @@ import os
 from datetime import date
 import logging
 from typing import Dict, List, Any, Optional, AsyncContextManager
-from datetime import datetime, date
+from datetime import datetime, date, timezone
 import asyncpg
 from asyncpg.pool import Pool
 import json
@@ -4155,7 +4155,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         """Write corrected cycle judgements to theme_cycle_judgement_v2.
 
         REQUIRES: (subject_key, trade_date) unique constraint on the table.
-        All audit fields are packed into evidence_json.
+        Audit fields are written to first-class columns when the migration is
+        present, and mirrored into evidence_json when that legacy column exists.
         """
         import json as _json
 
@@ -4166,17 +4167,66 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 " AND table_name = 'theme_cycle_judgement_v2'"
             )
         col_set = {str(r["column_name"]) for r in col_rows}
-        has_ev_json = "evidence_json" in col_set
+        jsonb_columns = {"rule_reasons", "llm_reasons", "risk_flags", "evidence_refs", "score_flags", "evidence_json"}
+        desired_columns = [
+            "subject_key",
+            "trade_date",
+            "theme_name",
+            "cycle_state_rule",
+            "mainline_alive_rule",
+            "cycle_state_llm",
+            "mainline_alive_llm",
+            "final_cycle_state",
+            "final_mainline_alive",
+            "fade_watch",
+            "fade_confirmed",
+            "mainline_strength_score",
+            "fade_risk_score",
+            "fade_watch_score",
+            "fade_confirmed_score",
+            "divergence_score",
+            "repair_score",
+            "confidence_score",
+            "previous_cycle_state",
+            "state_transition_reason",
+            "rule_reasons",
+            "llm_reasons",
+            "risk_flags",
+            "evidence_refs",
+            "judgement_schema_version",
+            "state_machine_version",
+            "llm_prompt_version",
+            "snapshot_version",
+            "batch_id",
+            "trace_id",
+            "rule_version",
+            "source_version",
+            "updated_at",
+            "evidence_json",
+        ]
+        insert_columns = [c for c in desired_columns if c in col_set]
+        required_columns = {"subject_key", "trade_date", "final_cycle_state", "final_mainline_alive"}
+        missing_required = sorted(required_columns - set(insert_columns))
+        if missing_required:
+            raise RuntimeError(f"theme_cycle_judgement_v2 missing required columns: {missing_required}")
 
+        placeholders = []
+        for idx, col in enumerate(insert_columns, start=1):
+            if col == "trade_date":
+                placeholders.append(f"${idx}::date")
+            elif col in jsonb_columns:
+                placeholders.append(f"${idx}::jsonb")
+            else:
+                placeholders.append(f"${idx}")
+        update_columns = [
+            c for c in insert_columns if c not in {"subject_key", "trade_date", "created_at"}
+        ]
+        update_clause = ", ".join(f"{c} = EXCLUDED.{c}" for c in update_columns)
         sql = (
-            "INSERT INTO theme_cycle_judgement_v2 (subject_key, trade_date, final_cycle_state, final_mainline_alive"
-            + (", evidence_json" if has_ev_json else "")
-            + ") VALUES ($1, $2::date, $3, $4"
-            + (", $5::jsonb" if has_ev_json else "")
-            + ") ON CONFLICT (subject_key, trade_date) DO UPDATE SET"
-            " final_cycle_state = EXCLUDED.final_cycle_state,"
-            " final_mainline_alive = EXCLUDED.final_mainline_alive"
-            + (", evidence_json = EXCLUDED.evidence_json" if has_ev_json else "")
+            f"INSERT INTO theme_cycle_judgement_v2 ({', '.join(insert_columns)}) "
+            f"VALUES ({', '.join(placeholders)}) "
+            "ON CONFLICT (subject_key, trade_date) DO UPDATE SET "
+            f"{update_clause}"
         )
 
         payload = []
@@ -4187,28 +4237,63 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             td = row.get("trade_date")
             if isinstance(td, str):
                 td = date.fromisoformat(td)
-            vals = [sk, td, str(row.get("final_cycle_state") or ""), bool(row.get("final_mainline_alive") or False)]
-            if has_ev_json:
-                audit = {
-                    "snapshot_version": str(row.get("snapshot_version") or ""),
-                    "batch_id": str(row.get("batch_id") or ""),
-                    "trace_id": str(row.get("trace_id") or ""),
-                    "decision_path": str(row.get("decision_path") or ""),
-                    "mainline_alive_rule": bool(row.get("mainline_alive_rule") or False),
-                    "support_break": bool(row.get("support_break") or False),
-                    "score_flags": row.get("score_flags") or {},
-                    "fade_reason_codes": list(row.get("fade_reason_codes") or []),
-                    "fade_confirmed_evidence_count": int(row.get("fade_confirmed_evidence_count") or 0),
-                    "mainline_strength_score": str(row.get("mainline_strength_score") or "0"),
-                    "fade_watch_score": str(row.get("fade_watch_score") or "0"),
-                    "fade_confirmed_score": str(row.get("fade_confirmed_score") or "0"),
-                    "divergence_score": str(row.get("divergence_score") or "0"),
-                    "repair_score": str(row.get("repair_score") or "0"),
-                    "evidence_count": int(row.get("evidence_count") or 0),
-                    "rule_version": str(row.get("rule_version") or "subject_cycle_judgement.v2"),
-                    "source_version": str(row.get("source_version") or "stock_processing_service"),
-                }
-                vals.append(_json.dumps(audit, default=str))
+            now = datetime.now(timezone.utc)
+            audit = {
+                "snapshot_version": str(row.get("snapshot_version") or ""),
+                "batch_id": str(row.get("batch_id") or ""),
+                "trace_id": str(row.get("trace_id") or ""),
+                "decision_path": str(row.get("decision_path") or ""),
+                "mainline_alive_rule": self._bool(row.get("mainline_alive_rule")),
+                "support_break": self._bool(row.get("support_break")),
+                "score_flags": row.get("score_flags") or {},
+                "fade_reason_codes": list(row.get("fade_reason_codes") or []),
+                "fade_confirmed_evidence_count": int(row.get("fade_confirmed_evidence_count") or 0),
+                "mainline_strength_score": str(row.get("mainline_strength_score") or "0"),
+                "fade_watch_score": str(row.get("fade_watch_score") or "0"),
+                "fade_confirmed_score": str(row.get("fade_confirmed_score") or "0"),
+                "divergence_score": str(row.get("divergence_score") or "0"),
+                "repair_score": str(row.get("repair_score") or "0"),
+                "evidence_count": int(row.get("evidence_count") or 0),
+                "rule_version": str(row.get("rule_version") or "subject_cycle_judgement.v2"),
+                "source_version": str(row.get("source_version") or "stock_processing_service"),
+            }
+            values_by_column = {
+                "subject_key": sk,
+                "trade_date": td,
+                "theme_name": str(row.get("theme_name") or row.get("subject_name") or sk),
+                "cycle_state_rule": str(row.get("cycle_state_rule") or row.get("final_cycle_state") or ""),
+                "mainline_alive_rule": self._bool(row.get("mainline_alive_rule")),
+                "cycle_state_llm": row.get("cycle_state_llm"),
+                "mainline_alive_llm": row.get("mainline_alive_llm"),
+                "final_cycle_state": str(row.get("final_cycle_state") or ""),
+                "final_mainline_alive": self._bool(row.get("final_mainline_alive")),
+                "fade_watch": self._bool(row.get("fade_watch")) or str(row.get("final_cycle_state") or "") == "fade_watch",
+                "fade_confirmed": self._bool(row.get("fade_confirmed")) or str(row.get("final_cycle_state") or "") == "fade_confirmed",
+                "mainline_strength_score": row.get("mainline_strength_score") or 0,
+                "fade_risk_score": row.get("fade_risk_score") or row.get("fade_watch_score") or 0,
+                "fade_watch_score": row.get("fade_watch_score") or 0,
+                "fade_confirmed_score": row.get("fade_confirmed_score") or 0,
+                "divergence_score": row.get("divergence_score") or 0,
+                "repair_score": row.get("repair_score") or 0,
+                "confidence_score": row.get("confidence_score") or 0,
+                "previous_cycle_state": row.get("previous_cycle_state"),
+                "state_transition_reason": row.get("state_transition_reason") or row.get("decision_path"),
+                "rule_reasons": _json.dumps(row.get("rule_reasons") or [], default=str),
+                "llm_reasons": _json.dumps(row.get("llm_reasons") or [], default=str),
+                "risk_flags": _json.dumps(row.get("risk_flags") or row.get("fade_reason_codes") or [], default=str),
+                "evidence_refs": _json.dumps(row.get("evidence_refs") or [], default=str),
+                "judgement_schema_version": str(row.get("judgement_schema_version") or "theme_cycle_judgement.v2"),
+                "state_machine_version": str(row.get("state_machine_version") or "subject_cycle_state_machine.v2"),
+                "llm_prompt_version": row.get("llm_prompt_version"),
+                "snapshot_version": str(row.get("snapshot_version") or ""),
+                "batch_id": str(row.get("batch_id") or ""),
+                "trace_id": str(row.get("trace_id") or ""),
+                "rule_version": str(row.get("rule_version") or "subject_cycle_judgement.v2"),
+                "source_version": str(row.get("source_version") or "stock_processing_service"),
+                "updated_at": row.get("updated_at") or now,
+                "evidence_json": _json.dumps(audit, default=str),
+            }
+            vals = [values_by_column[c] for c in insert_columns]
             payload.append(tuple(vals))
         if not payload:
             return 0
