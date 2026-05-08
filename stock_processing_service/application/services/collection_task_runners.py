@@ -66,15 +66,11 @@ class PostMarketRecapRunner:
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         if context.container is None:
-            try:
-                from stock_processing_service.application.orchestrators.bootstrap import build_container
-                context.container = build_container()
-            except Exception as e:
-                return CollectionTaskResult(
-                    status="failed",
-                    current_label="容器初始化失败",
-                    error_message=str(e),
-                )
+            return CollectionTaskResult(
+                status="failed",
+                current_label="容器未注入",
+                error_message="container is None: api_app 需要注入 container 到 CollectionJobManager",
+            )
 
         job = context.container.build_post_market_recap
         trade_date_val = date.fromisoformat(context.trade_date)
