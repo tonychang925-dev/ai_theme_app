@@ -14,6 +14,7 @@ import json
 
 from stock_processing_service.application.services.collection_orchestrator import (
     CollectionCommandPlanner,
+    CollectionTaskStep,
 )
 from stock_processing_service.application.services.collection_task_registry import (
     CollectionTaskContext,
@@ -545,7 +546,45 @@ class CollectionJobManager:
                     self._update_overall_progress(job)
                     job.next_step_index = index + 1
                     continue
-                # ── Runner 优先：如果 plan 指定了 runner_key，使用服务化 Runner ──
+                # ── 多 step 模式（推荐）：逐 step 执行，支持混合 Runner + 脚本 ──
+                if plan.steps:
+                    for step in plan.steps:
+                        if step.runner_key:
+                            runner = self._registry.get(step.runner_key)
+                            if runner is None:
+                                task.status = "failed"
+                                task.error_message = f"未知 runner_key: {step.runner_key}"
+                                self._append_log(job, f"[ERROR] 未知 step runner_key: {step.runner_key}")
+                                return
+                            self._append_log(job, f"[STEP-RUNNER] {step.runner_key} 开始执行")
+                            step_context = CollectionTaskContext(
+                                trade_date=job.trade_date, payload=payload, env=env,
+                                container=self._container,
+                                commands=([c.cmd for c in step.commands] if step.commands else None),
+                            )
+                            try:
+                                result = await runner.run(step_context)
+                                if result.status == "failed":
+                                    task.status = "failed"
+                                    task.error_message = result.error_message or f"step {step.key} failed"
+                                    self._append_log(job, f"[STEP-RUNNER] {step.runner_key} 失败: {result.error_message}")
+                                    return
+                                task.current_label = result.current_label
+                            except Exception as e:
+                                task.status = "failed"
+                                task.error_message = str(e)
+                                self._append_log(job, f"[STEP-RUNNER] {step.runner_key} 异常: {e}")
+                                return
+                        elif step.commands:
+                            for command in step.commands:
+                                await self._run_command(job, task, command.cmd, env=env)
+                    task.status = "success"
+                    task.progress_percent = 100
+                    self._update_overall_progress(job)
+                    job.next_step_index = index + 1
+                    continue
+
+                # ── 旧兼容：runner_key 优先 ──
                 if plan.runner_key:
                     await self._run_with_runner(job, task, plan, env, payload)
                     job.next_step_index = index + 1
