@@ -186,16 +186,11 @@ class CollectionCommandPlanner:
                         runner_key="tushare.daily_bar",
                         label="Tushare日线采集 (API→DB)",
                     ),
-                    # Step 2-5: 竞价子任务 — 仍用旧脚本（后续逐步迁移）
+                    # Step 2: 竞价观察池 — 已服务化
                     CollectionTaskStep(
                         key="auction_watch",
-                        commands=[CollectionCommand([
-                            self._python_bin,
-                            str(self._project_root / "database_service" / "scripts" / "build_auction_watch_universe.py"),
-                            "--trade-date", trade_date,
-                            "--source-trade-date", source_trade_date,
-                        ])],
-                        label="竞价观察池构建",
+                        runner_key="auction.watch_universe",
+                        label="竞价观察池构建 (服务化)",
                     ),
                     CollectionTaskStep(
                         key="auction_snapshot_all",

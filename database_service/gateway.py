@@ -1083,6 +1083,54 @@ class DatabaseGateway:
             logger.error(f"写入 strong_stock_watch_pool 失败: {e}")
             raise
 
+    async def get_auction_board_leaders(self, trade_date) -> List[Dict[str, Any]]:
+        """股票域显式读取：auction 竞价观察池龙头候选。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_auction_board_leaders(trade_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 auction_board_leaders 失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def get_auction_mainlines(self, trade_date) -> List[Dict[str, Any]]:
+        """股票域显式读取：auction 竞价所需主线存活状态。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_auction_mainlines(trade_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 auction_mainlines 失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def get_auction_cycles(self, trade_date) -> List[Dict[str, Any]]:
+        """股票域显式读取：auction 竞价所需周期状态。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_auction_cycles(trade_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 auction_cycles 失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def upsert_auction_watch_universe_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：auction_watch_universe（竞价观察池）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_auction_watch_universe_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"写入 auction_watch_universe 失败: {e}")
+            raise
+
     async def upsert_dragon_tiger_object_rows(self, rows: List[Dict[str, Any]]) -> int:
         """股票域显式写入：dragon_tiger_object（龙虎榜对象层）。"""
         try:

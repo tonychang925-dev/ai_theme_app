@@ -155,6 +155,26 @@ class BuildDragonTigerObjectRunner:
             )
 
 
+class AuctionWatchUniverseRunner:
+    """竞价观察池构建 Runner — 新链 Job 架构。"""
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        if context.container is None:
+            return CollectionTaskResult(status="failed", current_label="容器未注入", error_message="container is None")
+        try:
+            from datetime import date
+            trade_date_val = date.fromisoformat(context.trade_date)
+            job = context.container.build_auction_watch_universe
+            result = await job.execute(trade_date=trade_date_val)
+            return CollectionTaskResult(
+                status="success" if result.status.startswith("ok") else "failed",
+                current_label=f"竞价观察池构建完成 ({result.affected_rows} rows)",
+                logs=[f"auction_watch_universe status={result.status} rows={result.affected_rows}"],
+            )
+        except Exception as e:
+            return CollectionTaskResult(status="failed", current_label="竞价观察池构建异常", error_message=str(e))
+
+
 class TushareKlineRunner:
     """Tushare K线采集 Runner — 直接拉取 API → Gateway 写入，不经过本地 JSONL。"""
 

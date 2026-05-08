@@ -3841,6 +3841,120 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.warning(f"写入 strong_stock_watch_pool 失败: {e}")
             return 0
 
+    async def get_auction_board_leaders(self, trade_date) -> list[dict[str, Any]]:
+        """读取 auction 竞价观察池所需的龙头候选数据。"""
+        sql = """
+        SELECT subject_key, stock_id, stock_name, role_label, candidate_rank
+        FROM theme_leader_candidate
+        WHERE trade_date = $1::date
+          AND role_label IN ('龙头', '龙二', '卡位', '强趋势')
+        ORDER BY subject_key, candidate_rank ASC, composite_score DESC
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+        return [dict(r) for r in rows]
+
+    async def get_auction_mainlines(self, trade_date) -> list[dict[str, Any]]:
+        """读取 auction 所需的主线存活状态。"""
+        sql = """
+        SELECT
+            v2.subject_key,
+            COALESCE(NULLIF(v2.theme_name, ''), v2.subject_key) AS theme_name,
+            COALESCE(v2.final_mainline_alive, FALSE) AS mainline_alive,
+            COALESCE(v2.final_cycle_state, '') AS final_cycle_state,
+            COALESCE(v2.mainline_strength_score, 0) AS mainline_strength_score,
+            COALESCE(v2.fade_watch, FALSE) AS fade_watch,
+            COALESCE(v2.fade_confirmed, FALSE) AS fade_confirmed
+        FROM theme_cycle_judgement_v2 v2
+        WHERE v2.trade_date = $1::date
+          AND COALESCE(v2.final_mainline_alive, FALSE) = TRUE
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+        return [dict(r) for r in rows]
+
+    async def get_auction_cycles(self, trade_date) -> list[dict[str, Any]]:
+        """读取 auction 所需的周期状态与操作偏向。"""
+        sql = """
+        SELECT
+            v2.subject_key,
+            COALESCE(NULLIF(v2.final_cycle_state, ''), 'fade') AS primary_cycle_stage,
+            CASE
+                WHEN COALESCE(v2.fade_confirmed, FALSE) THEN '观望'
+                WHEN COALESCE(v2.final_cycle_state, '') IN ('climax', '高潮') THEN '警惕高潮'
+                WHEN COALESCE(v2.final_cycle_state, '') IN ('fermentation', '发酵', 'start', '启动') THEN '可主做'
+                WHEN COALESCE(v2.final_cycle_state, '') IN ('repair', '修复', 'divergence', '分歧', 'rebound', '回流') THEN '可做弱转强'
+                ELSE '可观察'
+            END AS action_bias
+        FROM theme_cycle_judgement_v2 v2
+        WHERE v2.trade_date = $1::date
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+        return [dict(r) for r in rows]
+
+    async def upsert_auction_watch_universe_rows(self, rows: list[dict[str, Any]]) -> int:
+        """批量 UPSERT auction_watch_universe 表。"""
+        if not rows:
+            return 0
+        sql = """
+        INSERT INTO auction_watch_universe (
+            source_trade_date, trade_date, stock_id, stock_name, subject_key, theme_name,
+            theme_tier, mainline_alive, primary_cycle_stage, action_bias, role_label, candidate_rank,
+            candidate_priority, is_reversal_watch, source_type, source_trace_id, source_trace,
+            source_version, rule_version
+        ) VALUES (
+            $1::date, $2::date, $3, $4, $5, $6,
+            $7, $8, $9, $10, $11, $12,
+            $13, $14, $15, $16, $17::jsonb,
+            $18, $19
+        )
+        ON CONFLICT (trade_date, stock_id, subject_key) DO UPDATE SET
+            source_trade_date = EXCLUDED.source_trade_date,
+            stock_name = EXCLUDED.stock_name,
+            theme_name = EXCLUDED.theme_name,
+            theme_tier = EXCLUDED.theme_tier,
+            mainline_alive = EXCLUDED.mainline_alive,
+            primary_cycle_stage = EXCLUDED.primary_cycle_stage,
+            action_bias = EXCLUDED.action_bias,
+            role_label = EXCLUDED.role_label,
+            candidate_rank = EXCLUDED.candidate_rank,
+            candidate_priority = EXCLUDED.candidate_priority,
+            is_reversal_watch = EXCLUDED.is_reversal_watch,
+            source_type = EXCLUDED.source_type,
+            source_trace_id = EXCLUDED.source_trace_id,
+            source_trace = EXCLUDED.source_trace,
+            source_version = EXCLUDED.source_version,
+            rule_version = EXCLUDED.rule_version,
+            updated_at = NOW()
+        """
+        payload = []
+        for row in rows:
+            payload.append((
+                row.get("source_trade_date"),
+                row.get("trade_date"),
+                row.get("stock_id", ""),
+                row.get("stock_name", ""),
+                row.get("subject_key", ""),
+                row.get("theme_name", ""),
+                row.get("theme_tier", ""),
+                row.get("mainline_alive", False),
+                row.get("primary_cycle_stage", ""),
+                row.get("action_bias", ""),
+                row.get("role_label", ""),
+                row.get("candidate_rank", 0),
+                row.get("candidate_priority", ""),
+                row.get("is_reversal_watch", False),
+                row.get("source_type", ""),
+                row.get("source_trace_id", ""),
+                json.dumps(row.get("source_trace", {}), ensure_ascii=False),
+                row.get("source_version", ""),
+                row.get("rule_version", ""),
+            ))
+        async with self.pool.acquire() as conn:
+            await conn.executemany(sql, payload)
+        return len(payload)
+
     async def upsert_dragon_tiger_object_rows(self, rows: list[dict[str, Any]]) -> int:
         """批量 UPSERT dragon_tiger_object 表。"""
         if not rows:

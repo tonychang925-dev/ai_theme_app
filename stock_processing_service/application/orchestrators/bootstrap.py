@@ -14,6 +14,9 @@ from stock_processing_service.application.jobs import (
 from stock_processing_service.application.jobs.build_dragon_tiger_object_job import (
     BuildDragonTigerObjectJob,
 )
+from stock_processing_service.application.jobs.build_auction_watch_universe_job import (
+    BuildAuctionWatchUniverseJob,
+)
 from stock_processing_service.application.jobs.build_tushare_daily_bar_job import (
     BuildTushareDailyBarJob,
 )
@@ -41,6 +44,7 @@ class StockProcessingContainer:
     run_reconciliation: RunReconciliationJob
     build_dragon_tiger_object: BuildDragonTigerObjectJob
     build_tushare_daily_bar: BuildTushareDailyBarJob
+    build_auction_watch_universe: BuildAuctionWatchUniverseJob
 
 
 def build_container(
@@ -91,6 +95,10 @@ def build_container(
             write_port=stock_object_gateway,
         ),
         build_tushare_daily_bar=BuildTushareDailyBarJob(
+            write_port=stock_object_gateway,
+        ),
+        build_auction_watch_universe=BuildAuctionWatchUniverseJob(
+            read_port=theme_data_gateway,
             write_port=stock_object_gateway,
         ),
     )

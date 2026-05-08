@@ -90,6 +90,7 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
     PostMarketRecapRunner 是第一个服务化 Runner。
     """
     from stock_processing_service.application.services.collection_task_runners import (
+        AuctionWatchUniverseRunner,
         BuildDragonTigerObjectRunner,
         BuildStockAbnormalSignalRunner,
         PostMarketRecapRunner,
@@ -101,6 +102,7 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
     registry.register("abnormal.signal", BuildStockAbnormalSignalRunner())
     registry.register("dragon_tiger.object", BuildDragonTigerObjectRunner())
     registry.register("tushare.kline", TushareKlineRunner())
+    registry.register("auction.watch_universe", AuctionWatchUniverseRunner())
 
 
 __all__ = [
