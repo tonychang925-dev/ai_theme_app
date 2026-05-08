@@ -101,6 +101,9 @@ class _WritePort:
     def __init__(self):
         self.daily_calls = 0
 
+    async def upsert_theme_cycle_judgement_v2_rows(self, rows):
+        return len(rows)
+
     async def upsert_stock_daily_strategy_snapshot_rows(self, rows):
         self.daily_calls += 1
         return len(rows)

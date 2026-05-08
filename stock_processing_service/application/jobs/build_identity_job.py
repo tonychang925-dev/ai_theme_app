@@ -288,6 +288,7 @@ class BuildIdentityJob:
                 board_ok = bool(
                     int(ev.get("board_boom_days_5d") or 0) >= 2
                     and int(ev.get("limit_up_count") or 0) >= 2
+                    and float(ev.get("limit_up_ratio_today") or 0.0) >= 0.02
                 )
                 event_ok = bool(
                     int(ev.get("event_count_3d") or 0) >= 1
@@ -379,6 +380,8 @@ class BuildIdentityJob:
             }
 
             if ci and ci.evidence.get("cluster_compensation_mainline"):
+                identity_row["rule_is_main_theme"] = True
+            if ci and ci.evidence.get("cluster_bootstrap_direct_confirm"):
                 identity_row["rule_is_main_theme"] = True
 
             identity_registry_rows.append(identity_row)

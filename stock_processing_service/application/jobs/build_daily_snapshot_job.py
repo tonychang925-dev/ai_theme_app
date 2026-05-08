@@ -266,10 +266,8 @@ class BuildDailySnapshotJob:
         affected = 0
         published_events: list[str] = []
         cache_writes = 0
-        cycle_upsert = getattr(self._write_port, "upsert_theme_cycle_judgement_v2_rows", None)
-        if callable(cycle_upsert):
-            cycle_written = await cycle_upsert(cycle_rows)
-            affected += cycle_written
+        cycle_written = await self._write_port.upsert_theme_cycle_judgement_v2_rows(cycle_rows)
+        affected += cycle_written
         strategy_upsert = getattr(self._write_port, "upsert_stock_daily_strategy_snapshot_rows", None)
         if callable(strategy_upsert):
             affected += await strategy_upsert(daily_rows)
