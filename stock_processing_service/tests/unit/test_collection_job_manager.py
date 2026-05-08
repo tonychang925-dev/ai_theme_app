@@ -182,8 +182,9 @@ def test_collection_planner_market_auxiliary_commands_preserve_tokens():
         env={"TUSHARE_TOKEN": "abc123"},
     )
 
-    assert "build_dragon_tiger_object.py" in dragon.commands[0].cmd[1]
-    assert dragon.commands[0].cmd[-2:] == ["--token", "abc123"]
+    # dragon_tiger 已切换到服务化 Runner
+    assert dragon.runner_key == "dragon_tiger.object"
+    assert len(dragon.commands) == 0
     # abnormal_signal 已切换到服务化 Runner
     assert abnormal.runner_key == "abnormal.signal"
     assert len(abnormal.commands) == 0

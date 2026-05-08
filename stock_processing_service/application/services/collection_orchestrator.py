@@ -256,18 +256,7 @@ class CollectionCommandPlanner:
             )
 
         if task_key == "dragon_tiger":
-            cmd = [
-                self._python_bin,
-                str(self._project_root / "database_service" / "scripts" / "build_dragon_tiger_object.py"),
-                "--trade-date",
-                trade_date,
-            ]
-            if env.get("TUSHARE_TOKEN"):
-                cmd.extend(["--token", env["TUSHARE_TOKEN"]])
-            return CollectionTaskPlan(
-                runner_key="script.default",
-                commands=[CollectionCommand(cmd)],
-            )
+            return CollectionTaskPlan(runner_key="dragon_tiger.object")
 
         if task_key == "abnormal_signal":
             return CollectionTaskPlan(
