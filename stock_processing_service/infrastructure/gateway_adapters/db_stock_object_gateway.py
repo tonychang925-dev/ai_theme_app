@@ -109,24 +109,6 @@ class DBStockObjectGateway:
         payload = row.get("payload") or {}
         return payload.get("stock_abnormal_event_rows", [])
 
-    async def get_auction_board_leaders(self, trade_date) -> list[dict[str, Any]]:
-        fn = getattr(self._db, "get_auction_board_leaders", None)
-        if callable(fn):
-            return await fn(trade_date)
-        return []
-
-    async def get_auction_mainlines(self, trade_date) -> list[dict[str, Any]]:
-        fn = getattr(self._db, "get_auction_mainlines", None)
-        if callable(fn):
-            return await fn(trade_date)
-        return []
-
-    async def get_auction_cycles(self, trade_date) -> list[dict[str, Any]]:
-        fn = getattr(self._db, "get_auction_cycles", None)
-        if callable(fn):
-            return await fn(trade_date)
-        return []
-
     async def upsert_auction_watch_universe_rows(self, rows: list[dict[str, Any]]) -> int:
         fn = getattr(self._db, "upsert_auction_watch_universe_rows", None)
         if callable(fn):
