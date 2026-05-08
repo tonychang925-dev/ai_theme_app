@@ -237,3 +237,161 @@
 - 不让前端/BFF 直连 DB 或绕过 `stock_processing_service` 输出。
 - 不在证据质量稳定前，把 LLM 结果作为 A/B/C 真源。
 - 不在本轮建设 Tick 级或秒级全市场行情平台。
+
+---
+
+# ARCH REVIEW — 前端功能调用与旧链脚本服务化迁移评审（2026-05-08）
+
+## 1. 当前架构摘要
+
+本次核查覆盖 `frontend/src`、`web_app_service`、`stock_processing_service`、`database_service`、`stock_service` 与根目录 `scripts`。当前前端调用链基本形成三段式：
+
+`frontend/src/lib/api.ts` -> `web_app_service /api/v2/*` -> `stock_processing_service /api/v1/*` -> `DatabaseGateway/StockReadGatewayAdapter` -> PostgreSQL。
+
+读模型路径整体方向正确：前端只消费 `/api/v2/*`，`web_app_service` 做 BFF/代理/视图转换，`stock_processing_service` 承担股票域应用服务与快照输出。但采集与旧链迁移路径仍存在明显旧架构残留：
+
+- `CollectionPage` 通过 `/api/v2/collection/*` 启动采集，最终进入 `stock_processing_service/application/jobs/collection_job_manager.py`。
+- `CollectionJobManager` 仍在 API 进程内拼接命令并 `create_subprocess_exec` 调用 `sync_jyhf_to_local.py`、`database_service/scripts/*.py`、`scripts/build_post_market_recap.py` 等脚本。
+- 旧链 `stock_service/services/*` 和 `stock_service/scripts/*` 大量直接使用 `asyncpg`、直接 SQL、直接写表。
+- 新链虽然已有 Ports/Gateway/Domain/Application 分层，但 `stock_processing_service/api_app.py` 仍直接 import 部分 `stock_service` 模块，采集、竞价、LLM 队列、龙虎榜、异动等仍未完全服务化。
+- Layer C 迁移还处于不稳定阶段：新链 `BuildPostMarketRecapJob` 当前实际路径仍是 `layer_c_input_mode = "seed_query"`，未在应用层真正完成 `SPS_LAYER_C_INPUT_MODE=legacy_watch_pool` 的生产入口切换；已有 `legacy_layer_c_output_report` 只能证明表读口/adapter，不等价于旧链程序 dry-run。
+
+## 2. 风险矩阵
+
+| 风险ID | 等级 | 风险描述 | 影响范围 | 概率 | 发现难度 | 缓解措施 | Trigger | Owner |
+|---|---|---|---|---|---|---|---|---|
+| R-SVC-001 | P0 | 采集任务由 API 进程直接拉起旧脚本，参数、环境、日志、取消、超时都耦合在 BFF/API 运行时 | 日采集、补采、盘前竞价、盘后 recap | 高 | 低 | 建立 `CollectionOrchestrator` 与独立应用服务；脚本降为 CLI wrapper | 前端采集报错、token 引号污染、任务中断后状态丢失 | Backend |
+| R-SVC-002 | P0 | 旧链脚本直接 SQL 写核心表，绕过新链 Port/Gateway 与版本审计 | 强势池、弱转强、主线状态、竞价、异动 | 高 | 中 | 逐脚本抽取 Application Service，SQL 移入 `DatabaseGateway` 显式方法 | 脚本和新链写同一表、replay 读写不一致 | Backend/Data |
+| R-SVC-003 | P0 | Layer C 尚未按旧链程序 dry-run 验明真相；读旧链表不能代表旧链程序输出 | StrongWatch、W2S 候选 | 高 | 中 | 新增 `OldChainLayerCDryRunService`，四路对比 A/B/C/D | legacy table effective_count 与旧链程序输出不一致 | Domain/QA |
+| R-SVC-004 | P0 | `BuildPostMarketRecapJob` 未真正接入 `legacy_watch_pool` 生产开关，仍显示 `seed_query` | 盘后 recap、D 层候选输入 | 高 | 低 | 在应用层切换生产输入，当前新 C 层降为 shadow | 设置 `SPS_LAYER_C_INPUT_MODE` 但 recap_doc 仍为 `seed_query` | Domain |
+| R-SVC-005 | P1 | `stock_processing_service/api_app.py` 直接 import `stock_service` 旧模块，边界不干净 | API、竞价确认、Tushare 采集 | 中 | 低 | 迁移到 `infrastructure/external` 与 domain/application service | 新链 API 依赖旧链模型/服务 | Backend |
+| R-SVC-006 | P1 | `web_app_service/core/read_client.py` 对上游异常返回 error payload，可能让前端误读为空数据或部分数据 | 前端工作台、复盘页 | 中 | 中 | 关键接口 fail-fast，非关键接口明确 `partial=true` | 上游 500/连接失败但前端显示空列表 | BFF |
+| R-SVC-007 | P1 | `web_app_service` 与 `frontend_bff` 并存，BFF 边界可能漂移 | 前端 API 契约 | 中 | 中 | 明确唯一生产 BFF，另一路仅保留 legacy/dev | 同一功能存在两个 BFF 路由或不同 DTO | FE/BFF |
+
+## 3. 维度化发现
+
+### 契约与调用一致性
+
+- 前端主入口已集中在 `frontend/src/lib/api.ts`，这是正确方向。
+- `/api/v2/collection/*` 到 `/api/v1/collection/*` 的代理链路清晰，但后端执行层不是服务模块，而是脚本编排器。
+- 复盘、强势池、候选读模型路径相对干净，采集/构建路径仍是旧脚本驱动。
+
+### 服务边界
+
+- 新链已有 `application/jobs`、`domain/services`、`ports`、`infrastructure/gateway_adapters`，具备承接旧脚本服务化的骨架。
+- 旧脚本迁移的目标不应是“把脚本搬到 stock_processing_service/scripts”，而是抽出可测试的 Application Service；脚本只保留 argparse 与调用容器。
+
+### 数据访问
+
+- 正确边界应是：业务层不直接 SQL；所有 SQL 收敛到 `database_service/managers/postgres_manager.py` 或 `database_service/gateway.py` 显式方法。
+- 当前旧链 `stock_service/services/*`、`database_service/scripts/*`、根 `scripts/*` 仍存在大量 direct SQL，属于迁移清单。
+
+### 可观测性与回放
+
+- 已有 replay、legacy Layer C output report、manifest 等骨架，但缺旧链程序 dry-run。
+- 对旧链迁移不能用“当前表内容”替代“旧链程序输出”；必须用 dry-run 结果做复刻真源。
+
+## 4. 目标架构
+
+目标分层：
+
+1. `frontend`：只负责 UI 与 `/api/v2/*` 调用，不持有业务流程逻辑。
+2. `web_app_service`：唯一生产 BFF，负责前端聚合、DTO 兼容、SSE/轮询代理，不跑脚本、不连 DB。
+3. `stock_processing_service`：股票域应用服务中心，暴露命令 API 与查询 API；内部通过 Orchestrator 调用服务模块。
+4. `domain/services`：纯规则与评分逻辑，无 SQL、无 subprocess。
+5. `ports`：定义读写、外部行情、LLM、任务状态等接口。
+6. `infrastructure/gateway_adapters`：适配 `DatabaseGateway`、Tushare、LLM、Redis。
+7. `database_service`：唯一 SQL 实现层。
+8. `scripts`：只作为 CLI wrapper，调用新链容器或应用服务，不承载业务规则。
+
+建议新增或收口的服务模块：
+
+- `stock_processing_service/application/services/collection_orchestrator.py`
+- `stock_processing_service/application/services/market_data_collection_service.py`
+- `stock_processing_service/application/services/legacy_layer_c_dry_run_service.py`
+- `stock_processing_service/application/services/strong_watch_pool_build_service.py`
+- `stock_processing_service/application/services/weak_to_strong_candidate_build_service.py`
+- `stock_processing_service/application/services/pre_market_auction_service.py`
+- `stock_processing_service/infrastructure/external/tushare_market_data_adapter.py`
+
+## 5. 迁移计划
+
+### M0：调用链与脚本清单冻结
+
+- 输出前端页面 -> BFF -> SPS API -> Application Service/Script 的调用矩阵。
+- 对所有 direct SQL 脚本标记 Owner、写入表、读取表、是否生产调用。
+- CI 增加边界扫描：`stock_processing_service` 禁止新增 direct SQL 和直接 import 旧链服务。
+
+### M1：采集链路服务化止血
+
+- 将 `CollectionJobManager` 从“脚本执行器”改为“任务编排器”。
+- `jyhf/tushare/dragon_tiger/abnormal/leader_llm/recap` 分别抽成应用服务。
+- 前端 job 状态持久化到 DB 表，替代内存 `self.jobs`。
+- 脚本保留，但只调用对应服务模块。
+
+### M2：Layer C 旧链程序 dry-run 与四路 diff
+
+- 新增 `OldChainLayerCDryRunService`：调用旧链真实生成逻辑，`dry_run=True`，不写库。
+- 对 `2026-04-15` 输出四路：
+  - A. old_chain_layer_c_dry_run
+  - B. legacy_table_layer_c
+  - C. new_chain_layer_c_shadow
+  - D. production_layer_c_input
+- 只有 A/D 对齐后，才继续迁移新 C 层。
+
+### M3：旧链核心脚本逐个抽服务
+
+优先级：
+1. `stock_service/services/weak_to_strong_candidate_builder.py`
+2. `stock_service/scripts/build_strong_stock_watch_pool.py`
+3. `stock_service/scripts/build_mainline_identity_registry.py`
+4. `database_service/scripts/build_theme_cycle_judgement.py`
+5. `database_service/scripts/build_pre_market_auction_snapshot.py`
+6. `database_service/scripts/build_pre_market_auction_signal.py`
+7. `database_service/scripts/build_stock_abnormal_signal.py`
+
+每个脚本迁移标准：
+- 旧逻辑先原样抽入 Application Service。
+- SQL 移入 Gateway 显式方法。
+- 增加 dry-run。
+- 增加 replay/diff report。
+- CLI wrapper 不再直接 SQL。
+
+### M4：API 边界清理
+
+- `stock_processing_service/api_app.py` 不再直接 import `stock_service`。
+- BFF 对上游错误使用统一错误模型。
+- `frontend_bff` 与 `web_app_service` 做生产边界裁决，只保留一个生产 BFF。
+
+## 6. 子阶段方案
+
+| 子阶段 | 核心目标 | 验收门禁 | 回滚 |
+|---|---|---|---|
+| SVC.phase0 | 调用链与脚本清单冻结 | 生成调用矩阵 + direct SQL inventory | 不改生产逻辑 |
+| SVC.phase1 | CollectionJobManager 服务化 | 前端采集功能通过，任务状态可恢复 | 保留旧脚本 wrapper |
+| SVC.phase2 | Layer C old-chain dry-run 真源 | 四路 diff 报告生成，A/D 对齐 | production 继续 legacy watch pool |
+| SVC.phase3 | W2S/StrongWatch 服务迁移 | old/new replay matrix 通过 | 回退旧脚本 CLI |
+| SVC.phase4 | API/BFF 边界清理 | 禁止 `stock_processing_service -> stock_service` 依赖 | 保留临时 adapter |
+
+## 7. ADR 建议清单
+
+- ADR-SVC-001：脚本只能作为 CLI wrapper，业务逻辑必须进入 Application Service。
+- ADR-SVC-002：`stock_processing_service` 禁止直接 SQL，SQL 只能经 `database_service` Gateway。
+- ADR-SVC-003：采集任务由 `CollectionOrchestrator` 管理，不允许 API 进程直接拼业务脚本命令。
+- ADR-SVC-004：Layer C 迁移以旧链程序 dry-run 为真源，不能以旧表内容替代旧链逻辑。
+- ADR-SVC-005：前端生产链只允许一个 BFF 真源。
+
+## 8. 冲突裁决记录
+
+| 冲突 | 裁决 | 理由 |
+|---|---|---|
+| “旧链表读口”是否等价旧链 Layer C 输出 | 不等价，必须跑旧链程序 dry-run | 表可能被新链/历史快照污染，程序输出才是复刻真源 |
+| 新 C 层是否继续作为生产入口 | 暂不应作为生产入口 | 现有代码显示仍有 `seed_query` 主路径，且旧链入口未闭环验证 |
+| 旧脚本迁移是重写还是封装 | 先原样抽服务，再重构 | 当前优先级是复刻与可回放，不能先改算法 |
+
+## 9. 非目标范围
+
+- 不在本轮调整联德/维科/神剑策略阈值。
+- 不把旧 SQL 直接复制到 `stock_processing_service`。
+- 不让前端直接调用脚本或数据库。
+- 不在旧链 dry-run 未完成前宣称 Layer C 已复刻完成。

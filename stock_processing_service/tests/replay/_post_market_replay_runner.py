@@ -83,7 +83,7 @@ class ReplayLiveResult:
 _TARGET_MAP: dict[str, str] = {
     "shenjian": "002361.SZ",
     "liande": "605060.SH",
-    "weike": "300707.SZ",
+    "weike": "600152.SH",
 }
 
 

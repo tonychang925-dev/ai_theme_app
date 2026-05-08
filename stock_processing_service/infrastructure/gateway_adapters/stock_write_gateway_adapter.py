@@ -79,10 +79,12 @@ class StockWriteGatewayAdapter:
         raise RuntimeError("DatabaseGatewayStockFacade missing upsert_mainline_identity_review_queue_rows")
 
     async def upsert_strong_watch_pool_rows(self, rows: list[dict[str, Any]]) -> int:
+        if not rows:
+            return 0
         fn = getattr(self._db, "upsert_strong_watch_pool_rows", None)
         if callable(fn):
             return await fn(rows)
-        return 0
+        raise RuntimeError("DatabaseGatewayStockFacade missing upsert_strong_watch_pool_rows")
 
     async def apply_lifecycle_downgrade(
         self, trade_date, deactivate_fade_days: int = 2

@@ -67,6 +67,7 @@ class IdentityRuleResult:
     platform_breakout_strength: Decimal
     mainline_continuity_score: Decimal
     one_day_tour_risk_score: Decimal
+    jyhf_hot_mainline_flag: bool = False
     reasons: list[str] = field(default_factory=list)
 
 
@@ -203,7 +204,11 @@ class IdentityRuleEngine:
             and x.strong_event_count_7d >= 1
         )
 
+        # 旧链 jyhf_hot_mainline_flag: active_days_10d >= 4
+        jyhf_hot_mainline_flag = bool(x.active_days_10d >= 4)
+
         reasons: list[str] = [
+            f"jyhf_hot_mainline_flag={jyhf_hot_mainline_flag}",
             f"novelty_score={novelty_score:.2f}",
             f"timing_score={timing_score:.2f}",
             f"impact_score={impact_score:.2f}",
@@ -234,5 +239,6 @@ class IdentityRuleEngine:
             platform_breakout_strength=_legacy_round(platform_breakout_strength),
             mainline_continuity_score=_legacy_round(mainline_continuity_score),
             one_day_tour_risk_score=_legacy_round(one_day_tour_risk_score),
+            jyhf_hot_mainline_flag=jyhf_hot_mainline_flag,
             reasons=reasons,
         )

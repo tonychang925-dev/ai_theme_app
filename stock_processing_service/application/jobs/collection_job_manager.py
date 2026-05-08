@@ -6,11 +6,15 @@ import os
 import re
 import signal
 from dataclasses import asdict, dataclass, field
-from datetime import datetime, date, timedelta
+from datetime import datetime, date
 from pathlib import Path
 from typing import Any, Optional
 from zoneinfo import ZoneInfo
 import json
+
+from stock_processing_service.application.services.collection_orchestrator import (
+    CollectionCommandPlanner,
+)
 
 
 PROJECT_ROOT = Path("/Users/admin/Desktop/ai_theme_app")
@@ -93,8 +97,9 @@ class CollectionJob:
 
 
 class CollectionJobManager:
-    def __init__(self) -> None:
+    def __init__(self, command_planner: CollectionCommandPlanner | None = None) -> None:
         self.jobs: dict[str, CollectionJob] = {}
+        self._command_planner = command_planner or CollectionCommandPlanner()
 
     def availability(self, trade_date: str | None = None) -> dict[str, Any]:
         now = datetime.now(ZoneInfo("Asia/Shanghai"))
@@ -232,27 +237,7 @@ class CollectionJobManager:
         return key
 
     def _format_abnormal_filter_summary(self, payload: dict[str, Any]) -> str:
-        abnormal_filters = payload.get("abnormal_filters") or {}
-        enabled: list[str] = []
-        if abnormal_filters.get("turnover_rate"):
-            enabled.append("换手率")
-        if abnormal_filters.get("main_net_inflow"):
-            enabled.append("资金流入")
-        if abnormal_filters.get("hot_money_buy"):
-            enabled.append("游资买入")
-        if abnormal_filters.get("institution_buy"):
-            enabled.append("机构买入")
-        if abnormal_filters.get("tail_rush"):
-            enabled.append("尾盘抢筹")
-        if not enabled:
-            enabled.append("默认资金聚焦口径")
-        min_turnover = payload.get("min_turnover_rate", 3.0)
-        min_score = payload.get("min_composite_score", 40.0)
-        return (
-            f"异动过滤策略：{' / '.join(enabled)}"
-            f"｜最小换手率={min_turnover}"
-            f"｜最小综合分={min_score}"
-        )
+        return CollectionCommandPlanner.format_abnormal_filter_summary(payload)
 
     def _latest_jyhf_subject_keys(self) -> list[str]:
         candidate_files = [
@@ -460,263 +445,39 @@ class CollectionJobManager:
     async def _run_job(self, job: CollectionJob, start_index: int = 0) -> None:
         payload = job.payload
         env = self._collection_env(payload)
-        options = payload.get("options") or {}
-        abnormal_filters = payload.get("abnormal_filters") or {}
         trade_date = job.trade_date
-        tushare_pause = str(payload.get("tushare_pause_seconds", 0.1))
-        min_turnover = str(payload.get("min_turnover_rate", 3.0))
-        min_score = str(payload.get("min_composite_score", 40.0))
 
         try:
             for index in range(start_index, len(job.tasks)):
                 task = job.tasks[index]
                 job.next_step_index = index
-                if task.key == "jyhf":
-                    cmd = [
-                        PYTHON_BIN,
-                        str(PROJECT_ROOT / "sync_jyhf_to_local.py"),
-                        "--types",
-                        "lists",
-                    ]
-                    await self._run_command(job, task, cmd, env=env, initial_percent=5, success_percent=15)
-                    cmd = [
-                        PYTHON_BIN,
-                        str(PROJECT_ROOT / "database_service" / "scripts" / "load_subject_node_staging.py"),
-                    ]
-                    await self._run_command(job, task, cmd, env=env, initial_percent=15, success_percent=25)
-                    cmd = [
-                        PYTHON_BIN,
-                        str(PROJECT_ROOT / "sync_jyhf_to_local.py"),
-                        "--use-latest-list-subjects",
-                        "--types",
-                        "details",
-                    ]
-                    await self._run_command(job, task, cmd, env=env, initial_percent=25, success_percent=45)
-                    cmd = [
-                        PYTHON_BIN,
-                        str(PROJECT_ROOT / "sync_jyhf_to_local.py"),
-                        "--use-latest-list-subjects",
-                        "--types",
-                        "stock_details",
-                        "--trade-date",
-                        trade_date,
-                        "--resume",
-                        "--skip-existing",
-                    ]
-                    await self._run_command(job, task, cmd, env=env, initial_percent=45, success_percent=85)
-                    cmd = [
-                        PYTHON_BIN,
-                        str(PROJECT_ROOT / "database_service" / "scripts" / "import_jyhf_stock_daily_incremental.py"),
-                        "--trade-date",
-                        trade_date,
-                    ]
-                    await self._run_command(job, task, cmd, env=env, initial_percent=85, success_percent=100)
-                elif task.key == "jyhf_history":
-                    subject_keys = self._latest_jyhf_subject_keys()
-                    if not subject_keys:
-                        raise RuntimeError("缺少最新题材列表：请先执行股票快照日采集，或确认 theme_data_complete/lists/full_theme_list.sync.jsonl 已生成。")
-                    subjects_file = self._write_subject_keys_file(trade_date, subject_keys)
-                    batch_id = f"collection_jyhf_history_{trade_date.replace('-', '')}"
-                    cmd = [
-                        PYTHON_BIN,
-                        str(PROJECT_ROOT / "sync_jyhf_to_local.py"),
-                        "--use-latest-list-subjects",
-                        "--types",
-                        "history",
-                        "--history-mode",
-                        "incremental",
-                        "--history-backfill-date",
-                        trade_date,
-                        "--batch-id",
-                        batch_id,
-                    ]
-                    await self._run_command(job, task, cmd, env=env, initial_percent=10, success_percent=55)
-                    cmd = [
-                        PYTHON_BIN,
-                        str(PROJECT_ROOT / "database_service" / "scripts" / "import_jyhf_history_incremental.py"),
-                        "--subjects-file",
-                        str(subjects_file),
-                        "--batch-id",
-                        batch_id,
-                        "--mode",
-                        "append",
-                    ]
-                    await self._run_command(job, task, cmd, env=env, initial_percent=55, success_percent=100)
-                elif task.key == "tushare_kline":
+                plan = self._command_planner.build_task_plan(
+                    task_key=task.key,
+                    trade_date=trade_date,
+                    payload=payload,
+                    env=env,
+                )
+                if task.key == "tushare_kline":
                     tushare_token = _normalize_secret(env.get("TUSHARE_TOKEN", ""))
-                    if not tushare_token:
-                        raise RuntimeError("缺少 Tushare token：请设置环境变量 TUSHARE_TOKEN，或在项目 .env/.env.local 中配置。")
                     self._append_log(job, f"[DEBUG] tushare_token={_secret_fingerprint(tushare_token)} source=backend_env_or_env_file")
-                    cmd = [
-                        PYTHON_BIN,
-                        str(PROJECT_ROOT / "scripts" / "sync_tushare_kline_local.py"),
-                        "--from-jyhf-universe",
-                        "--end-date",
-                        trade_date,
-                        "--months",
-                        "6",
-                        "--pause-seconds",
-                        tushare_pause,
-                        "--resume",
-                        "--skip-existing",
-                    ]
-                    cmd.extend(["--token", tushare_token])
-                    await self._run_command(job, task, cmd, env=env, initial_percent=5, success_percent=55)
-
-                    # 将本地 daily_bar 导入数据库 stock_daily_snapshot，保证策略侧直接可用。
-                    cmd = [
-                        PYTHON_BIN,
-                        str(PROJECT_ROOT / "scripts" / "import_tushare_daily_bar_to_db.py"),
-                        "--trade-date",
-                        trade_date,
-                    ]
-                    await self._run_command(job, task, cmd, env=env, initial_percent=55, success_percent=65)
-
-                    # 将盘前竞价链路并入 tushare_kline 任务：观察池 -> 竞价快照 -> 竞价信号
-                    source_trade_date = (datetime.fromisoformat(trade_date).date() - timedelta(days=1)).isoformat()
-                    cmd = [
-                        PYTHON_BIN,
-                        str(PROJECT_ROOT / "database_service" / "scripts" / "build_auction_watch_universe.py"),
-                        "--trade-date",
-                        trade_date,
-                        "--source-trade-date",
-                        source_trade_date,
-                    ]
-                    await self._run_command(job, task, cmd, env=env, initial_percent=65, success_percent=75)
-
-                    cmd = [
-                        PYTHON_BIN,
-                        str(PROJECT_ROOT / "database_service" / "scripts" / "build_pre_market_auction_snapshot.py"),
-                        "--trade-date",
-                        trade_date,
-                        "--token",
-                        tushare_token,
-                        "--allow-online-fetch",
-                        "--force-refresh",
-                    ]
-                    await self._run_command(job, task, cmd, env=env, initial_percent=75, success_percent=87)
-
-                    # 弱转强候选池专用竞价快照：用于两阶段策略盘前确认
-                    cmd = [
-                        PYTHON_BIN,
-                        str(PROJECT_ROOT / "database_service" / "scripts" / "build_pre_market_auction_snapshot.py"),
-                        "--trade-date",
-                        trade_date,
-                        "--universe-source",
-                        "weak_to_strong_candidates",
-                        "--max-stocks",
-                        "120",
-                        "--token",
-                        tushare_token,
-                        "--allow-online-fetch",
-                        "--force-refresh",
-                    ]
-                    await self._run_command(job, task, cmd, env=env, initial_percent=87, success_percent=94)
-
-                    cmd = [
-                        PYTHON_BIN,
-                        str(PROJECT_ROOT / "database_service" / "scripts" / "build_pre_market_auction_signal.py"),
-                        "--trade-date",
-                        trade_date,
-                    ]
-                    await self._run_command(job, task, cmd, env=env, initial_percent=94, success_percent=100)
-                elif task.key == "dragon_tiger":
-                    cmd = [
-                        PYTHON_BIN,
-                        str(PROJECT_ROOT / "database_service" / "scripts" / "build_dragon_tiger_object.py"),
-                        "--trade-date",
-                        trade_date,
-                    ]
-                    if env.get("TUSHARE_TOKEN"):
-                        cmd.extend(["--token", env["TUSHARE_TOKEN"]])
-                    await self._run_command(job, task, cmd, env=env)
-                elif task.key == "abnormal_signal":
-                    self._append_log(job, self._format_abnormal_filter_summary(payload))
-                    cmd = [
-                        PYTHON_BIN,
-                        str(PROJECT_ROOT / "database_service" / "scripts" / "build_stock_abnormal_signal.py"),
-                        "--trade-date",
-                        trade_date,
-                        "--min-turnover-rate",
-                        min_turnover,
-                        "--min-composite-score",
-                        min_score,
-                    ]
-                    if abnormal_filters.get("turnover_rate"):
-                        cmd.append("--require-turnover")
-                    if abnormal_filters.get("main_net_inflow"):
-                        cmd.append("--require-main-net-inflow")
-                    if abnormal_filters.get("hot_money_buy"):
-                        cmd.append("--require-hot-money-buy")
-                    if abnormal_filters.get("institution_buy"):
-                        cmd.append("--require-institution-buy")
-                    if abnormal_filters.get("tail_rush"):
-                        cmd.append("--require-tail-rush")
-                    if env.get("TUSHARE_TOKEN"):
-                        cmd.extend(["--token", env["TUSHARE_TOKEN"]])
-                    await self._run_command(job, task, cmd, env=env)
-                elif task.key == "strong_stock_watch":
-                    task.status = "success"
-                    task.current_label = "由 recap_snapshot 新链任务统一生成"
+                for message in plan.pre_logs:
+                    self._append_log(job, message)
+                if plan.terminal_status is not None:
+                    task.status = plan.terminal_status
+                    task.current_label = plan.terminal_label
                     task.progress_percent = 100
                     self._update_overall_progress(job)
-                    self._append_log(job, "强势股池独立旧链脚本已禁用，改由 recap_snapshot 新链任务统一生成")
-                elif task.key == "leader_llm":
-                    deepseek_api_key = env.get("DEEPSEEK_API_KEY", "").strip()
-                    leader_llm_max_themes = str(payload.get("leader_llm_max_themes", 5))
-                    if not deepseek_api_key:
-                        task.status = "skipped"
-                        task.current_label = "未配置 DEEPSEEK_API_KEY，已跳过"
-                        task.progress_percent = 100
-                        self._update_overall_progress(job)
-                        self._append_log(job, "未配置 DEEPSEEK_API_KEY，跳过龙头候选 LLM 裁决")
-                        continue
-                    cmd = [
-                        PYTHON_BIN,
-                        str(PROJECT_ROOT / "database_service" / "scripts" / "build_theme_leader_llm_queue.py"),
-                        "--trade-date",
-                        trade_date,
-                    ]
-                    await self._run_command(job, task, cmd, env=env, initial_percent=10, success_percent=30)
-                    cmd = [
-                        PYTHON_BIN,
-                        str(PROJECT_ROOT / "database_service" / "scripts" / "build_theme_leader_llm_judgement.py"),
-                        "--trade-date",
-                        trade_date,
-                        "--only-queued",
-                        "--limit-themes",
-                        leader_llm_max_themes,
-                    ]
-                    await self._run_command(job, task, cmd, env=env, initial_percent=30, success_percent=55)
-                    cmd = [
-                        PYTHON_BIN,
-                        str(PROJECT_ROOT / "database_service" / "scripts" / "call_theme_leader_llm.py"),
-                        "--trade-date",
-                        trade_date,
-                        "--limit",
-                        leader_llm_max_themes,
-                        "--limit-themes",
-                        leader_llm_max_themes,
-                        "--only-queued",
-                        "--only-pending",
-                    ]
-                    await self._run_command(job, task, cmd, env=env, initial_percent=55, success_percent=100)
-                elif task.key == "recap_snapshot":
-                    cmd = [
-                        PYTHON_BIN,
-                        str(PROJECT_ROOT / "scripts" / "build_post_market_recap.py"),
-                        "--trade-date",
-                        trade_date,
-                    ]
-                    if not options.get("auto_build_v2_if_missing", True):
-                        cmd.append("--disable-auto-build-v2-if-missing")
-                    if not options.get("dragon_tiger", True):
-                        cmd.append("--skip-dragon-tiger")
-                    if not options.get("abnormal_signal", True):
-                        cmd.append("--skip-abnormal-signal")
-                    if env.get("TUSHARE_TOKEN"):
-                        cmd.extend(["--token", env["TUSHARE_TOKEN"]])
-                    await self._run_command(job, task, cmd, env=env)
+                    job.next_step_index = index + 1
+                    continue
+                for command in plan.commands:
+                    await self._run_command(
+                        job,
+                        task,
+                        command.cmd,
+                        env=env,
+                        initial_percent=command.initial_percent,
+                        success_percent=command.success_percent,
+                    )
                 job.next_step_index = index + 1
 
             job.status = "success"

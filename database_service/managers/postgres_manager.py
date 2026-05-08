@@ -3776,7 +3776,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             stock_name = EXCLUDED.stock_name,
             subject_key = EXCLUDED.subject_key,
             theme_name = EXCLUDED.theme_name,
-            last_trade_date = GREATEST(strong_stock_watch_pool.last_trade_date, EXCLUDED.last_trade_date),
+            last_trade_date = EXCLUDED.last_trade_date,
             watch_window_days = GREATEST(strong_stock_watch_pool.watch_window_days, 1),
             source_tag = EXCLUDED.source_tag,
             relay_role = EXCLUDED.relay_role,
