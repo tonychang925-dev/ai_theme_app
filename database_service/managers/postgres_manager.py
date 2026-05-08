@@ -3841,6 +3841,82 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.warning(f"写入 strong_stock_watch_pool 失败: {e}")
             return 0
 
+    async def upsert_dragon_tiger_object_rows(self, rows: list[dict[str, Any]]) -> int:
+        """批量 UPSERT dragon_tiger_object 表。"""
+        if not rows:
+            return 0
+        sql = """
+        INSERT INTO dragon_tiger_object (
+            trade_date, stock_id, stock_name, reason,
+            close_price, pct_change, turnover_rate, total_amount,
+            billboard_buy_amount, billboard_sell_amount, billboard_amount, net_amount,
+            net_rate, amount_rate, float_market_value,
+            institution_buy_amount, institution_sell_amount, institution_net_buy, institution_seat_count,
+            seat_summary, source_trace_id, source_trace, source_version, rule_version
+        ) VALUES (
+            $1::date, $2, $3, $4,
+            $5::numeric, $6::numeric, $7::numeric, $8::numeric,
+            $9::numeric, $10::numeric, $11::numeric, $12::numeric,
+            $13::numeric, $14::numeric, $15::numeric,
+            $16::numeric, $17::numeric, $18::numeric, $19,
+            $20::jsonb, $21, $22::jsonb, $23, $24
+        )
+        ON CONFLICT (trade_date, stock_id, reason) DO UPDATE SET
+            stock_name = EXCLUDED.stock_name,
+            close_price = EXCLUDED.close_price,
+            pct_change = EXCLUDED.pct_change,
+            turnover_rate = EXCLUDED.turnover_rate,
+            total_amount = EXCLUDED.total_amount,
+            billboard_buy_amount = EXCLUDED.billboard_buy_amount,
+            billboard_sell_amount = EXCLUDED.billboard_sell_amount,
+            billboard_amount = EXCLUDED.billboard_amount,
+            net_amount = EXCLUDED.net_amount,
+            net_rate = EXCLUDED.net_rate,
+            amount_rate = EXCLUDED.amount_rate,
+            float_market_value = EXCLUDED.float_market_value,
+            institution_buy_amount = EXCLUDED.institution_buy_amount,
+            institution_sell_amount = EXCLUDED.institution_sell_amount,
+            institution_net_buy = EXCLUDED.institution_net_buy,
+            institution_seat_count = EXCLUDED.institution_seat_count,
+            seat_summary = EXCLUDED.seat_summary,
+            source_trace_id = EXCLUDED.source_trace_id,
+            source_trace = EXCLUDED.source_trace,
+            source_version = EXCLUDED.source_version,
+            rule_version = EXCLUDED.rule_version,
+            updated_at = NOW()
+        """
+        payload = []
+        for row in rows:
+            payload.append((
+                row.get("trade_date"),
+                row.get("stock_id", ""),
+                row.get("stock_name", ""),
+                row.get("reason", ""),
+                str(row.get("close_price", 0)),
+                str(row.get("pct_change", 0)),
+                str(row.get("turnover_rate", 0)),
+                str(row.get("total_amount", 0)),
+                str(row.get("billboard_buy_amount", 0)),
+                str(row.get("billboard_sell_amount", 0)),
+                str(row.get("billboard_amount", 0)),
+                str(row.get("net_amount", 0)),
+                str(row.get("net_rate", 0)),
+                str(row.get("amount_rate", 0)),
+                str(row.get("float_market_value", 0)),
+                str(row.get("institution_buy_amount", 0)),
+                str(row.get("institution_sell_amount", 0)),
+                str(row.get("institution_net_buy", 0)),
+                row.get("institution_seat_count", 0),
+                json.dumps(row.get("seat_summary", []), ensure_ascii=False),
+                str(row.get("source_trace_id", "")),
+                json.dumps(row.get("source_trace", {}), ensure_ascii=False),
+                str(row.get("source_version", "")),
+                str(row.get("rule_version", "")),
+            ))
+        async with self.pool.acquire() as conn:
+            await conn.executemany(sql, payload)
+        return len(payload)
+
     async def promote_strong_watch_candidates(self, trade_date) -> int:
         """标记 candidate_promoted=TRUE — 等价旧链 promote_watch_candidates()。"""
         sql = """

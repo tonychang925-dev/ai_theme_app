@@ -165,8 +165,9 @@ async def upsert_rows(manager: PostgresDatabaseManager, objects):
         await conn.executemany(sql, payload)
 
 
-async def main_async() -> int:
-    args = parse_args()
+async def main_async(args: argparse.Namespace | None = None) -> int:
+    if args is None:
+        args = parse_args()
     manager = PostgresDatabaseManager(get_postgres_config())
     await manager.connect()
     try:

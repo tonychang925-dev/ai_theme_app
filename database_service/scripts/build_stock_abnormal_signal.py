@@ -580,8 +580,9 @@ async def upsert_rows(manager: PostgresDatabaseManager, rows):
         )
 
 
-async def main_async() -> int:
-    args = parse_args()
+async def main_async(args: argparse.Namespace | None = None) -> int:
+    if args is None:
+        args = parse_args()
     service = StockAbnormalSignalService()
     raw_inputs = load_current_inputs(
         args.trade_date,
