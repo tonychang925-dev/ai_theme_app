@@ -82,7 +82,6 @@ class BuildStockAbnormalSignalRunner:
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
             import argparse
-            import sys
             from pathlib import Path as _Path
 
             trade_date = context.trade_date
@@ -107,36 +106,8 @@ class BuildStockAbnormalSignalRunner:
             ns.details_root = str(proj_root / "theme_data_complete" / "stock_details")
             ns.kline_root = str(proj_root / "theme_data_complete" / "_stock_kline" / "tushare" / "daily_bar")
 
-            # 构造等价旧脚本命令行参数的 sys.argv
-            saved_argv = sys.argv
-            argv = [
-                "build_stock_abnormal_signal.py",
-                "--trade-date", trade_date,
-                "--min-turnover-rate", str(ns.min_turnover_rate),
-                "--min-composite-score", str(ns.min_composite_score),
-            ]
-            if ns.require_turnover:
-                argv.append("--require-turnover")
-            if ns.require_main_net_inflow:
-                argv.append("--require-main-net-inflow")
-            if ns.require_hot_money_buy:
-                argv.append("--require-hot-money-buy")
-            if ns.require_institution_buy:
-                argv.append("--require-institution-buy")
-            if ns.require_tail_rush:
-                argv.append("--require-tail-rush")
-            if ns.token:
-                argv.extend(["--token", ns.token])
-            if ns.limit:
-                argv.extend(["--limit", str(ns.limit)])
-            if ns.max_main_net_rank:
-                argv.extend(["--max-main-net-rank", str(ns.max_main_net_rank)])
-            sys.argv = argv
-            try:
-                from database_service.scripts.build_stock_abnormal_signal import main_async
-                exit_code = await main_async()
-            finally:
-                sys.argv = saved_argv
+            from database_service.scripts.build_stock_abnormal_signal import main_async
+            exit_code = await main_async(args=ns)
 
             return CollectionTaskResult(
                 status="success" if exit_code == 0 else "failed",
@@ -152,30 +123,26 @@ class BuildStockAbnormalSignalRunner:
 
 
 class BuildDragonTigerObjectRunner:
-    """龙虎榜对象构建 Runner — 进程内调用旧链服务。"""
+    """龙虎榜对象构建 Runner — 新链 Job 架构。"""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
-            import sys
+            from datetime import date
 
-            trade_date = context.trade_date
+            from stock_processing_service.application.jobs.build_dragon_tiger_object_job import (
+                BuildDragonTigerObjectJob,
+            )
+
+            trade_date_val = date.fromisoformat(context.trade_date)
             token = context.env.get("TUSHARE_TOKEN", "")
 
-            saved_argv = sys.argv
-            argv = ["build_dragon_tiger_object.py", "--trade-date", trade_date]
-            if token:
-                argv.extend(["--token", token])
-            sys.argv = argv
-            try:
-                from database_service.scripts.build_dragon_tiger_object import main_async
-                exit_code = await main_async()
-            finally:
-                sys.argv = saved_argv
+            job = BuildDragonTigerObjectJob()
+            result = await job.execute(trade_date=trade_date_val, tushare_token=token)
 
             return CollectionTaskResult(
-                status="success" if exit_code == 0 else "failed",
-                current_label=f"龙虎榜对象构建完成 (exit={exit_code})",
-                logs=[f"dragon_tiger exit_code={exit_code}"],
+                status="success" if result.status.startswith("ok") else "failed",
+                current_label=f"龙虎榜对象构建完成 ({result.affected_rows} rows)",
+                logs=[f"dragon_tiger status={result.status} rows={result.affected_rows}"],
             )
         except Exception as e:
             return CollectionTaskResult(
