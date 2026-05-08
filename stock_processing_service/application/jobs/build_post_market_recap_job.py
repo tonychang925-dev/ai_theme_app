@@ -552,40 +552,38 @@ class BuildPostMarketRecapJob:
         prune_count = await self._write_port.prune_strong_watch_pool(trade_date)
 
         # ── Step 7e: 旧链等价 history snapshot（写入 strong_stock_watch_history）──
-        history_written = 0
-        if hasattr(self._write_port, "upsert_strong_watch_history_rows"):
-            history_rows = [
-                {
-                    "trade_date": trade_date,
-                    "stock_id": r.stock_id,
-                    "stock_name": r.stock_name,
-                    "subject_key": r.subject_key,
-                    "theme_name": r.theme_name,
-                    "watch_status": r.watch_status,
-                    "watch_score": str(r.watch_score),
-                    "watch_priority": str(r.watch_priority),
-                    "pool_entry_type": r.pool_entry_type,
-                    "relay_role": r.relay_role,
-                    "cycle_state": r.cycle_state,
-                    "mainline_strength_score": str(r.mainline_strength_score),
-                    "fade_watch": r.fade_watch,
-                    "fade_confirmed": r.fade_confirmed,
-                    "promoted_to_candidate": r.stock_id in formal_ids,
-                    "strong_grade": r.strong_grade,
-                    "removed_reason": r.removed_reason or "",
-                    "prune_mode": "immediate" if r.watch_status == "removed" else None,
-                    "prune_reason_code": r.removed_reason or "",
-                    "kept_because": None,
-                    "watch_window_days": stock_window_days.get(r.stock_id, 7),
-                    "support_type": r.support_type,
-                    "support_level": str(r.support_level or "0"),
-                    "support_score": str(r.support_score),
-                    "labels_json": r.labels,
-                    "evidence_json": r.evidence,
-                }
-                for r in watch_pool_results if r.stock_id
-            ]
-            history_written = await self._write_port.upsert_strong_watch_history_rows(history_rows)
+        history_rows = [
+            {
+                "trade_date": trade_date,
+                "stock_id": r.stock_id,
+                "stock_name": r.stock_name,
+                "subject_key": r.subject_key,
+                "theme_name": r.theme_name,
+                "watch_status": r.watch_status,
+                "watch_score": str(r.watch_score),
+                "watch_priority": str(r.watch_priority),
+                "pool_entry_type": r.pool_entry_type,
+                "relay_role": r.relay_role,
+                "cycle_state": r.cycle_state,
+                "mainline_strength_score": str(r.mainline_strength_score),
+                "fade_watch": r.fade_watch,
+                "fade_confirmed": r.fade_confirmed,
+                "promoted_to_candidate": r.stock_id in formal_ids,
+                "strong_grade": r.strong_grade,
+                "removed_reason": r.removed_reason or "",
+                "prune_mode": "immediate" if r.watch_status == "removed" else None,
+                "prune_reason_code": r.removed_reason or "",
+                "kept_because": None,
+                "watch_window_days": stock_window_days.get(r.stock_id, 7),
+                "support_type": r.support_type,
+                "support_level": str(r.support_level or "0"),
+                "support_score": str(r.support_score),
+                "labels_json": r.labels,
+                "evidence_json": r.evidence,
+            }
+            for r in watch_pool_results if r.stock_id
+        ]
+        history_written = await self._write_port.upsert_strong_watch_history_rows(history_rows)
 
         # 构建 recap_doc 所需元数据
         pool_rows: list[Any] = []  # 保留兼容性
