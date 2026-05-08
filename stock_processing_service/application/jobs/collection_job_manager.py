@@ -560,6 +560,8 @@ class CollectionJobManager:
                             step_context = CollectionTaskContext(
                                 trade_date=job.trade_date, payload=payload, env=env,
                                 container=self._container,
+                                project_root=Path(self._project_root) if self._project_root else None,
+                                python_bin=self._python_bin,
                                 commands=([c.cmd for c in step.commands] if step.commands else None),
                             )
                             try:
