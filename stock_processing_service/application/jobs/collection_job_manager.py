@@ -106,9 +106,21 @@ class CollectionJob:
 
 
 class CollectionJobManager:
-    def __init__(self, command_planner: CollectionCommandPlanner | None = None) -> None:
+    def __init__(
+        self,
+        command_planner: CollectionCommandPlanner | None = None,
+        *,
+        container: Any | None = None,
+        registry: CollectionTaskRegistry | None = None,
+        project_root: str | None = None,
+        python_bin: str | None = None,
+    ) -> None:
         self.jobs: dict[str, CollectionJob] = {}
         self._command_planner = command_planner or CollectionCommandPlanner()
+        self._container = container
+        self._registry = registry or get_default_registry()
+        self._project_root = project_root or os.environ.get("COLLECTION_PROJECT_ROOT", str(PROJECT_ROOT))
+        self._python_bin = python_bin or os.environ.get("COLLECTION_PYTHON_BIN", PYTHON_BIN)
 
     def availability(self, trade_date: str | None = None) -> dict[str, Any]:
         now = datetime.now(ZoneInfo("Asia/Shanghai"))
@@ -313,8 +325,9 @@ class CollectionJobManager:
             trade_date=job.trade_date,
             payload=payload,
             env=env,
-            project_root=PROJECT_ROOT,
-            python_bin=PYTHON_BIN,
+            container=self._container,
+            project_root=Path(self._project_root) if self._project_root else None,
+            python_bin=self._python_bin,
             commands=plan.commands if hasattr(plan, "commands") else None,
         )
 
