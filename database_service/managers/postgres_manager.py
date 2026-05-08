@@ -3841,6 +3841,86 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.warning(f"写入 strong_stock_watch_pool 失败: {e}")
             return 0
 
+    async def get_auction_watch_universe(self, trade_date) -> list[dict[str, Any]]:
+        """读取竞价观察池（auction_watch_universe 表）。"""
+        sql = """
+        SELECT stock_id, stock_name, subject_key, theme_name, role_label,
+               mainline_alive, primary_cycle_stage, action_bias, is_reversal_watch
+        FROM auction_watch_universe
+        WHERE trade_date = $1::date
+        ORDER BY candidate_priority, theme_name, candidate_rank, stock_id
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+        return [dict(r) for r in rows]
+
+    async def get_w2s_candidates_by_next_date(self, confirm_date) -> list[dict[str, Any]]:
+        """读取弱转强候选池（按确认日筛选）。"""
+        sql = """
+        SELECT stock_id, stock_name, subject_key, theme_name, candidate_type, candidate_score
+        FROM weak_to_strong_candidate_pool
+        WHERE next_trade_date = $1::date
+        ORDER BY candidate_score DESC, id ASC
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, confirm_date)
+        return [dict(r) for r in rows]
+
+    async def upsert_pre_market_auction_snapshot_rows(self, rows: list[dict[str, Any]]) -> int:
+        """批量 UPSERT pre_market_auction_snapshot 表。"""
+        if not rows:
+            return 0
+        sql = """
+        INSERT INTO pre_market_auction_snapshot (
+            trade_date, stock_id, stock_name, subject_key, theme_name, role_label,
+            window_start_time, window_end_time, last_minute_start_time, last_30s_start_time,
+            auction_open_price, pre_close, auction_open_pct, auction_volume, auction_amount,
+            last_minute_amount, last_minute_ratio, prev_day_max_intraday_amount, carry_ratio,
+            price_path_stability_score, is_red_zone, has_end_spike, has_end_drop,
+            shape_features, source_type, source_trace_id, source_trace, source_version, rule_version
+        ) VALUES (
+            $1::date, $2, $3, $4, $5, $6,
+            $7, $8, $9, $10,
+            $11::numeric, $12::numeric, $13::numeric, $14::numeric, $15::numeric,
+            $16::numeric, $17::numeric, $18::numeric, $19::numeric,
+            $20::numeric, $21, $22, $23,
+            $24::jsonb, $25, $26, $27::jsonb, $28, $29
+        )
+        ON CONFLICT (trade_date, stock_id) DO UPDATE SET
+            stock_name = EXCLUDED.stock_name, subject_key = EXCLUDED.subject_key,
+            theme_name = EXCLUDED.theme_name, role_label = EXCLUDED.role_label,
+            auction_open_price = EXCLUDED.auction_open_price, pre_close = EXCLUDED.pre_close,
+            auction_open_pct = EXCLUDED.auction_open_pct, auction_volume = EXCLUDED.auction_volume,
+            auction_amount = EXCLUDED.auction_amount, last_minute_amount = EXCLUDED.last_minute_amount,
+            last_minute_ratio = EXCLUDED.last_minute_ratio, carry_ratio = EXCLUDED.carry_ratio,
+            price_path_stability_score = EXCLUDED.price_path_stability_score,
+            is_red_zone = EXCLUDED.is_red_zone, has_end_spike = EXCLUDED.has_end_spike,
+            has_end_drop = EXCLUDED.has_end_drop, shape_features = EXCLUDED.shape_features,
+            source_trace_id = EXCLUDED.source_trace_id, source_trace = EXCLUDED.source_trace,
+            updated_at = NOW()
+        """
+        payload = []
+        for row in rows:
+            payload.append((
+                row.get("trade_date"), str(row.get("stock_id", "")), str(row.get("stock_name", "")),
+                str(row.get("subject_key", "")), str(row.get("theme_name", "")), str(row.get("role_label", "")),
+                str(row.get("window_start_time", "09:20:00")), str(row.get("window_end_time", "09:25:00")),
+                str(row.get("last_minute_start_time", "09:24:00")), str(row.get("last_30s_start_time", "09:24:30")),
+                str(row.get("auction_open_price", 0)), str(row.get("pre_close", 0)),
+                str(row.get("auction_open_pct", 0)), str(row.get("auction_volume", 0)),
+                str(row.get("auction_amount", 0)), str(row.get("last_minute_amount", 0)),
+                str(row.get("last_minute_ratio", 0)), str(row.get("prev_day_max_intraday_amount", 0)),
+                str(row.get("carry_ratio", 0)), str(row.get("price_path_stability_score", 0)),
+                bool(row.get("is_red_zone", False)), bool(row.get("has_end_spike", False)),
+                bool(row.get("has_end_drop", False)), json.dumps(row.get("shape_features", []), ensure_ascii=False),
+                str(row.get("source_type", "")), str(row.get("source_trace_id", "")),
+                json.dumps(row.get("source_trace", {}), ensure_ascii=False),
+                str(row.get("source_version", "")), str(row.get("rule_version", "")),
+            ))
+        async with self.pool.acquire() as conn:
+            await conn.executemany(sql, payload)
+        return len(payload)
+
     async def get_auction_board_leaders(self, trade_date) -> list[dict[str, Any]]:
         """读取 auction 竞价观察池所需的龙头候选数据。"""
         sql = """

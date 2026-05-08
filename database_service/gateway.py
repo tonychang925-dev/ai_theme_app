@@ -1083,6 +1083,42 @@ class DatabaseGateway:
             logger.error(f"写入 strong_stock_watch_pool 失败: {e}")
             raise
 
+    async def get_auction_watch_universe(self, trade_date) -> List[Dict[str, Any]]:
+        """股票域显式读取：竞价观察池。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_auction_watch_universe(trade_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 auction_watch_universe 失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def get_w2s_candidates_by_next_date(self, confirm_date) -> List[Dict[str, Any]]:
+        """股票域显式读取：弱转强候选池（按确认日）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_w2s_candidates_by_next_date(confirm_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 w2s_candidates 失败 confirm_date={confirm_date}: {e}")
+            raise
+
+    async def upsert_pre_market_auction_snapshot_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：pre_market_auction_snapshot（竞价快照对象层）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_pre_market_auction_snapshot_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"写入 pre_market_auction_snapshot 失败: {e}")
+            raise
+
     async def get_auction_board_leaders(self, trade_date) -> List[Dict[str, Any]]:
         """股票域显式读取：auction 竞价观察池龙头候选。"""
         try:
