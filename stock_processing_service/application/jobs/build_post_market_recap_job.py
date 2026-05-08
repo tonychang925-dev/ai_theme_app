@@ -508,8 +508,12 @@ class BuildPostMarketRecapJob:
         candidate_input_rows = list(by_stock.values())
 
         # ── Step 7a.5: 计算 watch_window_days（等价旧链 _recompute_watch_window_days）──
-        # 基于种子查询的 7 日窗口，每只种子股票默认跟踪 7 个交易日
-        stock_window_days: dict[str, int] = {r.stock_id: 7 for r in watch_pool_results if r.stock_id}
+        # 从种子查询结果中提取真实的交易日出现天数
+        stock_window_days: dict[str, int] = {}
+        for row in seed_rows_raw:
+            sid = self._normalize_stock_id(str(row.get("stock_id") or ""))
+            if sid:
+                stock_window_days[sid] = int(row.get("total_trade_days") or 7)
 
         # ── Step 7b: 持久池写入（等价旧链 _upsert_watch_pool_seed + _update_watch_pool_row）──
         pool_write_rows: list[dict[str, Any]] = []
