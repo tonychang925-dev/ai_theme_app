@@ -15,6 +15,15 @@ import json
 from stock_processing_service.application.services.collection_orchestrator import (
     CollectionCommandPlanner,
 )
+from stock_processing_service.application.services.collection_task_registry import (
+    CollectionTaskContext,
+    CollectionTaskResult,
+    get_default_registry,
+)
+from stock_processing_service.application.services.collection_task_runners import (
+    PostMarketRecapRunner,
+    ScriptCommandRunner,
+)
 
 
 PROJECT_ROOT = Path("/Users/admin/Desktop/ai_theme_app")
@@ -280,6 +289,58 @@ class CollectionJobManager:
         path.write_text("\n".join(subject_keys) + ("\n" if subject_keys else ""), encoding="utf-8")
         return path
 
+    async def _run_with_runner(
+        self,
+        job: CollectionJob,
+        task: CollectionTaskState,
+        plan: Any,
+        env: dict[str, str],
+        payload: dict[str, Any],
+    ) -> None:
+        """通过 Runner 协议执行任务（替代脚本子进程）。"""
+        registry = get_default_registry()
+        runner = registry.get(plan.runner_key)
+        if runner is None:
+            task.status = "failed"
+            task.error_message = f"未知 runner_key: {plan.runner_key}"
+            self._append_log(job, f"[ERROR] 未知 runner_key: {plan.runner_key}")
+            return
+
+        task.status = "running"
+        self._append_log(job, f"[RUNNER] {plan.runner_key} 开始执行")
+
+        context = CollectionTaskContext(
+            trade_date=job.trade_date,
+            payload=payload,
+            env=env,
+            project_root=PROJECT_ROOT,
+            python_bin=PYTHON_BIN,
+            commands=plan.commands if hasattr(plan, "commands") else None,
+        )
+
+        try:
+            result = await runner.run(context)
+            if result.status == "success":
+                task.status = "success"
+                task.current_label = result.current_label
+                task.progress_percent = result.progress_percent
+            elif result.status == "failed":
+                task.status = "failed"
+                task.error_message = result.error_message
+                task.current_label = result.current_label
+                self._append_log(job, f"[RUNNER] {plan.runner_key} 执行失败: {result.error_message}")
+            else:
+                task.status = result.status
+                task.current_label = result.current_label
+            for log_line in result.logs:
+                self._append_log(job, log_line)
+        except Exception as e:
+            task.status = "failed"
+            task.error_message = str(e)
+            self._append_log(job, f"[RUNNER] {plan.runner_key} 异常: {e}")
+
+        self._update_overall_progress(job)
+
     async def _run_command(
         self,
         job: CollectionJob,
@@ -467,6 +528,11 @@ class CollectionJobManager:
                     task.current_label = plan.terminal_label
                     task.progress_percent = 100
                     self._update_overall_progress(job)
+                    job.next_step_index = index + 1
+                    continue
+                # ── Runner 优先：如果 plan 指定了 runner_key，使用服务化 Runner ──
+                if plan.runner_key:
+                    await self._run_with_runner(job, task, plan, env, payload)
                     job.next_step_index = index + 1
                     continue
                 for command in plan.commands:

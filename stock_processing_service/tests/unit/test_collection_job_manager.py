@@ -90,11 +90,10 @@ def test_collection_planner_recap_command_preserves_skip_flags():
         env={"TUSHARE_TOKEN": "abc123"},
     )
 
-    cmd = plan.commands[0].cmd
-    assert "--disable-auto-build-v2-if-missing" in cmd
-    assert "--skip-dragon-tiger" in cmd
-    assert "--skip-abnormal-signal" in cmd
-    assert cmd[cmd.index("--token") + 1] == "abc123"
+    # recap_snapshot 已切换到服务化 Runner，不再产生脚本命令
+    assert plan.runner_key == "recap.snapshot"
+    assert len(plan.commands) == 0
+    assert "PostMarketRecapRunner" in plan.pre_logs[0] or "BuildPostMarketRecapJob" in plan.pre_logs[0]
 
 
 def test_collection_planner_jyhf_commands_preserve_script_order():
