@@ -1083,6 +1083,18 @@ class DatabaseGateway:
             logger.error(f"写入 strong_stock_watch_pool 失败: {e}")
             raise
 
+    async def upsert_dragon_tiger_object_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：dragon_tiger_object（龙虎榜对象层）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_dragon_tiger_object_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"写入 dragon_tiger_object 失败: {e}")
+            raise
+
     async def promote_strong_watch_candidates(self, trade_date) -> int:
         """股票域显式写入：标记 candidate_promoted（等价旧链 promote_watch_candidates）。"""
         try:

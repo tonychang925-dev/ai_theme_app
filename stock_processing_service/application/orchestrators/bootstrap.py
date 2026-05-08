@@ -11,6 +11,9 @@ from stock_processing_service.application.jobs import (
     RunQualityGateJob,
     RunReconciliationJob,
 )
+from stock_processing_service.application.jobs.build_dragon_tiger_object_job import (
+    BuildDragonTigerObjectJob,
+)
 from stock_processing_service.application.use_cases import BuildStrongStockTrackingUseCase
 from stock_processing_service.infrastructure.gateway_adapters.db_stock_object_gateway import DBStockObjectGateway
 from stock_processing_service.infrastructure.gateway_adapters.db_theme_data_gateway import DBThemeDataGateway
@@ -33,6 +36,7 @@ class StockProcessingContainer:
     build_identity: BuildIdentityJob
     run_quality_gate: RunQualityGateJob
     run_reconciliation: RunReconciliationJob
+    build_dragon_tiger_object: BuildDragonTigerObjectJob
 
 
 def build_container(
@@ -79,4 +83,7 @@ def build_container(
         ),
         run_quality_gate=RunQualityGateJob(),
         run_reconciliation=RunReconciliationJob(),
+        build_dragon_tiger_object=BuildDragonTigerObjectJob(
+            write_port=stock_object_gateway,
+        ),
     )

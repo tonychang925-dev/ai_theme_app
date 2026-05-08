@@ -126,17 +126,20 @@ class BuildDragonTigerObjectRunner:
     """龙虎榜对象构建 Runner — 新链 Job 架构。"""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        if context.container is None:
+            return CollectionTaskResult(
+                status="failed",
+                current_label="容器未注入",
+                error_message="container is None: api_app 需要注入 container 到 CollectionJobManager",
+            )
+
         try:
             from datetime import date
-
-            from stock_processing_service.application.jobs.build_dragon_tiger_object_job import (
-                BuildDragonTigerObjectJob,
-            )
 
             trade_date_val = date.fromisoformat(context.trade_date)
             token = context.env.get("TUSHARE_TOKEN", "")
 
-            job = BuildDragonTigerObjectJob()
+            job = context.container.build_dragon_tiger_object
             result = await job.execute(trade_date=trade_date_val, tushare_token=token)
 
             return CollectionTaskResult(
