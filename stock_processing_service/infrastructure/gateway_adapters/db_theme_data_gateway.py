@@ -181,3 +181,21 @@ class DBThemeDataGateway:
             else:
                 result.append(theme.to_dict())
         return result
+
+    async def get_auction_board_leaders(self, trade_date) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_auction_board_leaders", None)
+        if callable(fn):
+            return [self._as_dict(r) for r in await fn(trade_date)]
+        raise RuntimeError("DatabaseGateway missing get_auction_board_leaders")
+
+    async def get_auction_mainlines(self, trade_date) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_auction_mainlines", None)
+        if callable(fn):
+            return [self._as_dict(r) for r in await fn(trade_date)]
+        raise RuntimeError("DatabaseGateway missing get_auction_mainlines")
+
+    async def get_auction_cycles(self, trade_date) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_auction_cycles", None)
+        if callable(fn):
+            return [self._as_dict(r) for r in await fn(trade_date)]
+        raise RuntimeError("DatabaseGateway missing get_auction_cycles")

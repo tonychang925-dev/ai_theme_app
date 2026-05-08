@@ -34,20 +34,19 @@ class BuildAuctionWatchUniverseJob:
             return BuildResult(name="build_auction_watch_universe", trade_date=str(trade_date),
                                affected_rows=0, status="failed", warnings=["missing source_trade_date"])
 
-        # 读取龙头/主线/周期
-        leaders = []
-        mainlines = {}
-        cycles = {}
-        if self._read_port:
-            ldr_fn = getattr(self._read_port, "get_auction_board_leaders", None)
-            ml_fn = getattr(self._read_port, "get_auction_mainlines", None)
-            cyc_fn = getattr(self._read_port, "get_auction_cycles", None)
-            if callable(ldr_fn):
-                leaders = await ldr_fn(source_trade_date)
-            if callable(ml_fn):
-                mainlines = {str(r["subject_key"]): r for r in await ml_fn(source_trade_date)}
-            if callable(cyc_fn):
-                cycles = {str(r["subject_key"]): r for r in await cyc_fn(source_trade_date)}
+        # 读取龙头/主线/周期（fail-fast：缺方法直接抛错）
+        required_reads = [
+            "get_auction_board_leaders",
+            "get_auction_mainlines",
+            "get_auction_cycles",
+        ]
+        for name in required_reads:
+            if self._read_port is None or not callable(getattr(self._read_port, name, None)):
+                raise RuntimeError(f"read_port missing required method: {name}")
+
+        leaders = await self._read_port.get_auction_board_leaders(source_trade_date)
+        mainlines = {str(r["subject_key"]): r for r in await self._read_port.get_auction_mainlines(source_trade_date)}
+        cycles = {str(r["subject_key"]): r for r in await self._read_port.get_auction_cycles(source_trade_date)}
 
         # 构建 items
         service = AuctionWatchUniverseService()
