@@ -55,12 +55,12 @@ def test_collection_planner_builds_tushare_commands_without_shell_quotes():
 
     # tushare_kline 已切换为多 step 模式
     assert len(plan.steps) == 5
-    # Step 1: K线 Runner, Step 2: 竞价观察池 Runner
+    # Step 1: K线 Runner, Step 2-4: 竞价 Runner
     assert plan.steps[0].runner_key == "tushare.daily_bar"
     assert plan.steps[1].runner_key == "auction.watch_universe"
-    # Step 3-5: 竞价脚本（每步含1个 command）
-    for step in plan.steps[2:]:
-        assert len(step.commands) == 1
+    assert plan.steps[2].runner_key == "auction.snapshot_all"
+    assert plan.steps[3].runner_key == "auction.snapshot_w2s"
+    assert plan.steps[4].runner_key == "auction.signal"
 
 
 def test_collection_planner_keeps_strong_watch_as_service_owned_step():
