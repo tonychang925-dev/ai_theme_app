@@ -546,14 +546,10 @@ class BuildPostMarketRecapJob:
                       if r.watch_status in {"active", "weakening"}
                       and r.pool_entry_type in {"formal", "observe_only"}
                       and not r.fade_confirmed}
-        promote_count = 0
-        if hasattr(self._write_port, "promote_strong_watch_candidates"):
-            promote_count = await self._write_port.promote_strong_watch_candidates(trade_date)
+        promote_count = await self._write_port.promote_strong_watch_candidates(trade_date)
 
         # ── Step 7d: 旧链等价 prune（DB UPDATE removed/reject）──
-        prune_count = 0
-        if hasattr(self._write_port, "prune_strong_watch_pool"):
-            prune_count = await self._write_port.prune_strong_watch_pool(trade_date)
+        prune_count = await self._write_port.prune_strong_watch_pool(trade_date)
 
         # ── Step 7e: 旧链等价 history snapshot（写入 strong_stock_watch_history）──
         history_written = 0
@@ -580,6 +576,7 @@ class BuildPostMarketRecapJob:
                     "prune_mode": "immediate" if r.watch_status == "removed" else None,
                     "prune_reason_code": r.removed_reason or "",
                     "kept_because": None,
+                    "watch_window_days": stock_window_days.get(r.stock_id, 7),
                     "support_type": r.support_type,
                     "support_level": str(r.support_level or "0"),
                     "support_score": str(r.support_score),
