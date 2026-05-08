@@ -264,9 +264,13 @@ class CollectionCommandPlanner:
             ]
             if env.get("TUSHARE_TOKEN"):
                 cmd.extend(["--token", env["TUSHARE_TOKEN"]])
-            return CollectionTaskPlan(commands=[CollectionCommand(cmd)])
+            return CollectionTaskPlan(
+                runner_key="script.default",
+                commands=[CollectionCommand(cmd)],
+            )
 
         if task_key == "abnormal_signal":
+            # 通过 ScriptCommandRunner 执行（后续替换为 BuildStockAbnormalSignalRunner）
             cmd = [
                 self._python_bin,
                 str(self._project_root / "database_service" / "scripts" / "build_stock_abnormal_signal.py"),
@@ -290,8 +294,9 @@ class CollectionCommandPlanner:
             if env.get("TUSHARE_TOKEN"):
                 cmd.extend(["--token", env["TUSHARE_TOKEN"]])
             return CollectionTaskPlan(
-                pre_logs=[self.format_abnormal_filter_summary(payload)],
+                runner_key="script.default",
                 commands=[CollectionCommand(cmd)],
+                pre_logs=[self.format_abnormal_filter_summary(payload)],
             )
 
         if task_key == "strong_stock_watch":

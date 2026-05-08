@@ -116,11 +116,14 @@ class CollectionJobManager:
         python_bin: str | None = None,
     ) -> None:
         self.jobs: dict[str, CollectionJob] = {}
-        self._command_planner = command_planner or CollectionCommandPlanner()
         self._container = container
         self._registry = registry or get_default_registry()
         self._project_root = project_root or os.environ.get("COLLECTION_PROJECT_ROOT", str(PROJECT_ROOT))
         self._python_bin = python_bin or os.environ.get("COLLECTION_PYTHON_BIN", PYTHON_BIN)
+        self._command_planner = command_planner or CollectionCommandPlanner(
+            project_root=Path(self._project_root),
+            python_bin=self._python_bin,
+        )
 
     def availability(self, trade_date: str | None = None) -> dict[str, Any]:
         now = datetime.now(ZoneInfo("Asia/Shanghai"))
@@ -310,8 +313,7 @@ class CollectionJobManager:
         payload: dict[str, Any],
     ) -> None:
         """通过 Runner 协议执行任务（替代脚本子进程）。"""
-        registry = get_default_registry()
-        runner = registry.get(plan.runner_key)
+        runner = self._registry.get(plan.runner_key)
         if runner is None:
             task.status = "failed"
             task.error_message = f"未知 runner_key: {plan.runner_key}"

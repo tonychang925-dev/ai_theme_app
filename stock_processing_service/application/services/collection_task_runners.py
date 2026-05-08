@@ -13,7 +13,14 @@ from uuid import uuid4
 from stock_processing_service.application.services.collection_task_registry import (
     CollectionTaskContext,
     CollectionTaskResult,
+    CollectionTaskRunner,
+    get_default_registry,
 )
+
+# ── 注册表中已有的 Runner key ──
+# "script.default"    → ScriptCommandRunner (兼容旧脚本)
+# "recap.snapshot"    → PostMarketRecapRunner (服务化 recap)
+# "abnormal.signal"   → BuildStockAbnormalSignalRunner (服务化异动检测)
 
 
 class ScriptCommandRunner:
@@ -27,8 +34,16 @@ class ScriptCommandRunner:
         if not context.commands:
             return CollectionTaskResult(status="success", current_label="无命令执行", progress_percent=100)
 
+        # 兼容 CollectionCommand 对象和原始 list[str]
+        raw_commands: list[list[str]] = []
+        for item in context.commands:
+            if hasattr(item, "cmd"):
+                raw_commands.append(list(item.cmd))
+            elif isinstance(item, list):
+                raw_commands.append(item)
+
         logs: list[str] = []
-        for cmd in context.commands:
+        for cmd in raw_commands:
             try:
                 proc = await asyncio.create_subprocess_exec(
                     *cmd,
