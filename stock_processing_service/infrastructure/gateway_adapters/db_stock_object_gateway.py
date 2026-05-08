@@ -109,6 +109,12 @@ class DBStockObjectGateway:
         payload = row.get("payload") or {}
         return payload.get("stock_abnormal_event_rows", [])
 
+    async def upsert_dragon_tiger_object_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._db, "upsert_dragon_tiger_object_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        raise RuntimeError("DatabaseGateway missing upsert_dragon_tiger_object_rows")
+
     async def query_theme_stock_leaderboard(self, trade_date: date) -> list[dict[str, Any]]:
         row = await self._db.get_existing_post_market_recap_snapshot(trade_date)
         if not row:
