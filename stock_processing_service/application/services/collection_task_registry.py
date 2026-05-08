@@ -90,11 +90,13 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
     PostMarketRecapRunner 是第一个服务化 Runner。
     """
     from stock_processing_service.application.services.collection_task_runners import (
+        BuildStockAbnormalSignalRunner,
         PostMarketRecapRunner,
         ScriptCommandRunner,
     )
     registry.register("script.default", ScriptCommandRunner())
     registry.register("recap.snapshot", PostMarketRecapRunner())
+    registry.register("abnormal.signal", BuildStockAbnormalSignalRunner())
 
 
 __all__ = [

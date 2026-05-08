@@ -270,32 +270,8 @@ class CollectionCommandPlanner:
             )
 
         if task_key == "abnormal_signal":
-            # 通过 ScriptCommandRunner 执行（后续替换为 BuildStockAbnormalSignalRunner）
-            cmd = [
-                self._python_bin,
-                str(self._project_root / "database_service" / "scripts" / "build_stock_abnormal_signal.py"),
-                "--trade-date",
-                trade_date,
-                "--min-turnover-rate",
-                min_turnover,
-                "--min-composite-score",
-                min_score,
-            ]
-            if abnormal_filters.get("turnover_rate"):
-                cmd.append("--require-turnover")
-            if abnormal_filters.get("main_net_inflow"):
-                cmd.append("--require-main-net-inflow")
-            if abnormal_filters.get("hot_money_buy"):
-                cmd.append("--require-hot-money-buy")
-            if abnormal_filters.get("institution_buy"):
-                cmd.append("--require-institution-buy")
-            if abnormal_filters.get("tail_rush"):
-                cmd.append("--require-tail-rush")
-            if env.get("TUSHARE_TOKEN"):
-                cmd.extend(["--token", env["TUSHARE_TOKEN"]])
             return CollectionTaskPlan(
-                runner_key="script.default",
-                commands=[CollectionCommand(cmd)],
+                runner_key="abnormal.signal",
                 pre_logs=[self.format_abnormal_filter_summary(payload)],
             )
 
