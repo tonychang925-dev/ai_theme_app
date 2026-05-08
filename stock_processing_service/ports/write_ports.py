@@ -40,7 +40,17 @@ class AlgorithmStateWritePort(Protocol):
     async def upsert_theme_cycle_judgement_v2_rows(self, rows: list[dict[str, Any]]) -> int: ...
 
 
-class StockWritePort(SnapshotWritePort, AlgorithmStateWritePort, Protocol):
+class StrongWatchWritePort(Protocol):
+    """Layer C 强势池写入端口。"""
+
+    async def upsert_strong_watch_pool_rows(self, rows: list[dict[str, Any]]) -> int: ...
+
+    async def promote_strong_watch_candidates(self, trade_date: Any) -> int: ...
+
+    async def prune_strong_watch_pool(self, trade_date: Any, weakening_min_score: float = 62.0) -> int: ...
+
+
+class StockWritePort(SnapshotWritePort, AlgorithmStateWritePort, StrongWatchWritePort, Protocol):
     """Backward-compatible composite port."""
 
 
