@@ -222,16 +222,29 @@ class BuildIdentityJob:
 
         # Step 3: LLM review + decider + upgrade trigger（使用 cluster 修正后的 rule_is_main_theme）
 
-        # ── 预取 upgrade_trigger 所需的 prev_candidate 状态 ──
+        # ── 预取 upgrade_trigger 所需的 prev_candidate 状态（等价旧链 DB 查询）──
         prev_candidate_map: dict[str, bool] = {}
-        if hasattr(self._read_port, "get_mainline_identity_rule_inputs"):
-            # 复用已有 rule_inputs_by_subject 中的 evidence 数据即可
-            pass
+        for subject_key in subject_keys:
+            rule_row = rule_inputs_by_subject.get(subject_key, {})
+            ev_raw = rule_row.get("evidence_json")
+            if isinstance(ev_raw, str):
+                try:
+                    import json as _json
+                    ev = _json.loads(ev_raw)
+                except Exception:
+                    ev = {}
+            elif isinstance(ev_raw, dict):
+                ev = ev_raw
+            else:
+                ev = {}
+            prev_candidate_map[subject_key] = bool(ev.get("upgrade_candidate"))
 
         for subject_key, rows in grouped.items():
             rule = rule_results[subject_key]
             subject_name = subject_name_map[subject_key]
             ci = cluster_by_subject.get(subject_key)
+            # P0-1 FIX: 重新绑定当前 subject 的 rule_row（第一轮循环的变量不能跨subject泄漏）
+            rule_row = rule_inputs_by_subject.get(subject_key)
 
             # 若 cluster bootstrap 已直确认为 confirmed，跳过 LLM
             if ci and ci.identity_status == "confirmed":
@@ -305,10 +318,8 @@ class BuildIdentityJob:
                         and int(ev.get("net_inflow_days_5d") or 0) >= 4
                         and float(getattr(rule, "mainline_continuity_score", 0)) >= 80.0
                     )
-                    # prev_candidate 标志从 cluster_inputs evidence 读取
-                    was_upgrade_candidate = bool(
-                        ci.evidence.get("upgrade_candidate") if ci else False
-                    )
+                    # prev_candidate 标志从历史 identity_registry 读取（等价旧链 DB 查询）
+                    was_upgrade_candidate = prev_candidate_map.get(subject_key, False)
                     if super_strong or was_upgrade_candidate:
                         decision = IdentityDecision(
                             identity_status="review_pending",

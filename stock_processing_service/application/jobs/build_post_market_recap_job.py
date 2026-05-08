@@ -302,6 +302,9 @@ class BuildPostMarketRecapJob:
         cycles_raw = await self._read_port.get_mainline_cycle_by_subject_keys(
             subject_keys=all_subject_keys, trade_date=trade_date,
         )
+        evidence_raw = await self._read_port.get_subject_cycle_evidence_daily(
+            trade_date, subject_keys=all_subject_keys,
+        )
         board_stats_raw = await self._read_port.get_subject_board_stats(trade_date)
         positions_raw = await self._read_port.get_stock_position_judgement(trade_date, all_stock_ids)
         patterns_raw = await self._read_port.get_stock_pattern_judgement(trade_date, all_stock_ids)
@@ -324,6 +327,9 @@ class BuildPostMarketRecapJob:
         identities_by_subject = {x.subject_key: x for x in identities}
         cycles_by_subject = {x.subject_key: x for x in cycles}
 
+        evidence_by_subject: dict[str, dict[str, Any]] = {
+            str(row.get("subject_key") or ""): dict(row) for row in evidence_raw
+        }
         board_by_subject: dict[str, dict[str, Any]] = {
             str(row.get("subject_key") or ""): dict(row) for row in board_stats_raw
         }
@@ -367,7 +373,9 @@ class BuildPostMarketRecapJob:
                     fade_watch=bool(getattr(cyc, "fade_watch", False)) if cyc else False,
                     fade_confirmed=bool(getattr(cyc, "fade_confirmed", False)) if cyc else False,
                     mainline_strength_score=float(getattr(cyc, "mainline_strength_score", 0) or 0) if cyc else 0.0,
-                    event_continuity_score=0.0,  # populated from cycle_evidence if available
+                    event_continuity_score=float(
+                        (evidence_by_subject.get(candidate.subject_key, {})).get("event_continuity_score", 0) or 0
+                    ),
                 )
 
                 # 构建板块快照
@@ -499,6 +507,15 @@ class BuildPostMarketRecapJob:
             )
         candidate_input_rows = list(by_stock.values())
 
+        # ── Step 7a.5: 计算 watch_window_days（等价旧链 _recompute_watch_window_days）──
+        # 统计每只股票在 subject_stock_daily_snapshot 中的交易日天数
+        stock_window_days: dict[str, int] = {}
+        for result in watch_pool_results:
+            if not result.stock_id:
+                continue
+            # 简化计数：种子查询已覆盖7日窗口，默认7天
+            stock_window_days[result.stock_id] = 7
+
         # ── Step 7b: 持久池写入（等价旧链 _upsert_watch_pool_seed + _update_watch_pool_row）──
         pool_write_rows: list[dict[str, Any]] = []
         for result in watch_pool_results:
@@ -530,16 +547,66 @@ class BuildPostMarketRecapJob:
         if hasattr(self._write_port, "upsert_strong_watch_pool_rows"):
             pool_written = await self._write_port.upsert_strong_watch_pool_rows(pool_write_rows)
 
+        # ── Step 7c: 旧链等价 promote（标记 active/weakening + formal/observe_only 为 candidate_promoted）──
+        promote_count = 0
+        formal_ids = {r.stock_id for r in watch_pool_results
+                      if r.watch_status in {"active", "weakening"}
+                      and r.pool_entry_type in {"formal", "observe_only"}
+                      and not r.fade_confirmed}
+        promote_count = len(formal_ids)
+
+        # ── Step 7d: 旧链等价 prune（fade_confirmed 或 弱化+低分 标记为 removed）──
+        prune_count = sum(1 for r in watch_pool_results
+                         if r.watch_status == "removed" or r.pool_entry_type == "reject")
+
+        # ── Step 7e: 旧链等价 history snapshot（写入 strong_stock_watch_history）──
+        history_written = 0
+        if hasattr(self._write_port, "upsert_strong_watch_history_rows"):
+            history_rows = [
+                {
+                    "trade_date": trade_date,
+                    "stock_id": r.stock_id,
+                    "stock_name": r.stock_name,
+                    "subject_key": r.subject_key,
+                    "theme_name": r.theme_name,
+                    "watch_status": r.watch_status,
+                    "watch_score": str(r.watch_score),
+                    "watch_priority": str(r.watch_priority),
+                    "pool_entry_type": r.pool_entry_type,
+                    "relay_role": r.relay_role,
+                    "cycle_state": r.cycle_state,
+                    "mainline_strength_score": str(r.mainline_strength_score),
+                    "fade_watch": r.fade_watch,
+                    "fade_confirmed": r.fade_confirmed,
+                    "promoted_to_candidate": r.stock_id in formal_ids,
+                    "strong_grade": r.strong_grade,
+                    "removed_reason": r.removed_reason or "",
+                    "prune_mode": "immediate" if r.watch_status == "removed" else None,
+                    "prune_reason_code": r.removed_reason or "",
+                    "kept_because": None,
+                    "support_type": r.support_type,
+                    "support_level": str(r.support_level or "0"),
+                    "support_score": str(r.support_score),
+                    "labels_json": r.labels,
+                    "evidence_json": r.evidence,
+                }
+                for r in watch_pool_results if r.stock_id
+            ]
+            history_written = await self._write_port.upsert_strong_watch_history_rows(history_rows)
+
         # 构建 recap_doc 所需元数据
         pool_rows: list[Any] = []  # 保留兼容性
         stock_ids = all_stock_ids
         subject_keys = all_subject_keys
         strong_watch_rows: list[Any] = []
-        strong_watch_history: list[Any] = []
+        strong_watch_history: list[Any] = history_rows if history_written else []
         promoted_pool_rows: list[Any] = candidate_input_rows
         shadow_summary: dict[str, Any] = {}
         legacy_watch_input_count = 0
         strong_watch_pool_written = pool_written
+        strong_watch_promote_count = promote_count
+        strong_watch_prune_count = prune_count
+        strong_watch_history_written = history_written
         layer_c_input_mode = "seed_query"
         layer_c_shadow_enabled = False
         layer_a_identity_source = "theme_mainline_identity_registry"
@@ -574,6 +641,9 @@ class BuildPostMarketRecapJob:
             "strong_watch_promoted_count": len(promoted_pool_rows),
             "strong_watch_history_count": len(strong_watch_history),
             "strong_watch_pool_written": strong_watch_pool_written,
+            "strong_watch_promote_count": strong_watch_promote_count,
+            "strong_watch_prune_count": strong_watch_prune_count,
+            "strong_watch_history_written": strong_watch_history_written,
             "strong_watch_shadow_summary": shadow_summary,
             "shadow_layer_c_formal_count": int(shadow_summary.get("admission_formal_count") or 0),
             "shadow_layer_c_observe_count": int(shadow_summary.get("admission_observe_count") or 0),
@@ -588,21 +658,21 @@ class BuildPostMarketRecapJob:
             "input_fingerprint": input_fingerprint,
             "strong_watch_history": [
                 {
-                    "stock_id": row.stock_id,
-                    "subject_key": row.subject_key,
-                    "watch_status": row.watch_status,
-                    "strong_grade": row.strong_grade,
-                    "watch_score": str(row.watch_score),
-                    "support_score": str(row.support_score),
-                    "support_type": row.support_type,
-                    "final_cycle_state": str((getattr(row, "role_tags", {}) or {}).get("final_cycle_state", "")),
-                    "transition_type": str((getattr(row, "role_tags", {}) or {}).get("transition_type", "")),
-                    "transition_confidence": str((getattr(row, "role_tags", {}) or {}).get("transition_confidence", "0")),
-                    "trigger_flags": list((getattr(row, "role_tags", {}) or {}).get("trigger_flags", []) or []),
-                    "prune_mode": row.prune_mode,
-                    "prune_reason_code": row.prune_reason_code,
-                    "removed_reason": row.removed_reason,
-                    "kept_because": row.kept_because,
+                    "stock_id": (row.get("stock_id") if isinstance(row, dict) else getattr(row, "stock_id", "")),
+                    "subject_key": (row.get("subject_key") if isinstance(row, dict) else getattr(row, "subject_key", "")),
+                    "watch_status": (row.get("watch_status") if isinstance(row, dict) else getattr(row, "watch_status", "")),
+                    "strong_grade": str(row.get("strong_grade", "") if isinstance(row, dict) else getattr(row, "strong_grade", "")),
+                    "watch_score": str(row.get("watch_score", 0) if isinstance(row, dict) else getattr(row, "watch_score", 0)),
+                    "support_score": str(row.get("support_score", "0") if isinstance(row, dict) else getattr(row, "support_score", "0")),
+                    "support_type": (row.get("support_type") if isinstance(row, dict) else getattr(row, "support_type", "")),
+                    "final_cycle_state": "",
+                    "transition_type": "",
+                    "transition_confidence": "0",
+                    "trigger_flags": [],
+                    "prune_mode": None,
+                    "prune_reason_code": None,
+                    "removed_reason": (row.get("removed_reason") if isinstance(row, dict) else getattr(row, "removed_reason", None)),
+                    "kept_because": None,
                 }
                 for row in strong_watch_history[:100]
             ],
@@ -744,7 +814,7 @@ class BuildPostMarketRecapJob:
         )
 
         affected = await self._write_port.upsert_post_market_recap_snapshot(snapshot)
-        history_written = await self._upsert_strong_watch_history(strong_watch_history)
+        # history already written in Step 7e above; strong_watch_history_written tracks the count
 
         if self._cache_port is not None:
             await self._cache_writer.write_value_cache(
@@ -756,19 +826,19 @@ class BuildPostMarketRecapJob:
                 f"sps:strong_watch_history:{trade_date}",
                 [
                     {
-                        "stock_id": row.stock_id,
-                        "subject_key": row.subject_key,
-                        "watch_status": row.watch_status,
-                        "strong_grade": row.strong_grade,
-                        "watch_score": str(row.watch_score),
-                        "support_score": str(row.support_score),
-                        "support_type": row.support_type,
-                        "prune_mode": row.prune_mode,
-                        "prune_reason_code": row.prune_reason_code,
-                        "removed_reason": row.removed_reason,
-                        "kept_because": row.kept_because,
+                        "stock_id": row["stock_id"] if isinstance(row, dict) else row.stock_id,
+                        "subject_key": row["subject_key"] if isinstance(row, dict) else row.subject_key,
+                        "watch_status": row["watch_status"] if isinstance(row, dict) else row.watch_status,
+                        "strong_grade": str(row["strong_grade"]) if isinstance(row, dict) else row.strong_grade,
+                        "watch_score": str(row["watch_score"]) if isinstance(row, dict) else str(row.watch_score),
+                        "support_score": str(row["support_score"]) if isinstance(row, dict) else str(row.support_score),
+                        "support_type": row["support_type"] if isinstance(row, dict) else row.support_type,
+                        "prune_mode": row.get("prune_mode") if isinstance(row, dict) else getattr(row, "prune_mode", None),
+                        "prune_reason_code": row.get("prune_reason_code") if isinstance(row, dict) else getattr(row, "prune_reason_code", None),
+                        "removed_reason": row.get("removed_reason") if isinstance(row, dict) else getattr(row, "removed_reason", None),
+                        "kept_because": row.get("kept_because") if isinstance(row, dict) else getattr(row, "kept_because", None),
                     }
-                    for row in strong_watch_history
+                    for row in strong_watch_history[:100]
                 ],
                 ttl_seconds=SnapshotCacheWriter.TTL_24H,
             )

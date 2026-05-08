@@ -689,3 +689,67 @@
   - 回放效率和可审计性提升；需要维护 algorithm_version 与 input_hash 生成规则。
 - Trigger
   - 新增 replay 模式、批量回放样本、字段级 diff 或连续交易日矩阵时。
+
+---
+
+## 增量附录（2026-05-08，前端调用与旧脚本服务化迁移）
+
+### ADR-SVC-001: 旧脚本只能作为 CLI Wrapper
+- Context
+  - 当前前端采集链路最终由 `CollectionJobManager` 在 API 进程中拼接命令并启动旧脚本；旧脚本内部承载业务规则和 SQL。
+- Decision
+  - 旧脚本迁移后只能保留 argparse、参数校验和调用应用服务；业务流程必须进入 `stock_processing_service/application/services` 或 `application/jobs`。
+- Alternatives
+  - 继续维护脚本作为生产业务入口。
+- Consequences
+  - 服务可测试、可注入、可回放；短期需要抽象任务状态、外部数据源和 DB Gateway。
+- Trigger
+  - 任一旧脚本被前端采集、replay、recap 或定时任务作为生产入口调用时。
+
+### ADR-SVC-002: stock_processing_service 禁止直接 SQL
+- Context
+  - 新链已有 Ports/Gateway 分层，但旧链 `stock_service` 与多处脚本仍直接 `asyncpg` 读写核心表。
+- Decision
+  - `stock_processing_service` 内不允许新增 direct SQL；所有数据库访问必须通过 Port 和 `database_service` Gateway 显式方法。
+- Alternatives
+  - 为迁移速度在新链内部临时复制旧 SQL。
+- Consequences
+  - 边界清晰、审计一致；迁移早期 Gateway 方法会增加。
+- Trigger
+  - 迁移旧链脚本、增加新应用服务、或新增写库路径时。
+
+### ADR-SVC-003: 采集任务由 CollectionOrchestrator 管理
+- Context
+  - 现有采集任务使用内存 job 状态和 subprocess，曾出现 token 引号污染、历史日采集窗口判断等工程问题。
+- Decision
+  - 建立 `CollectionOrchestrator` 和分任务服务模块；前端只提交采集命令，任务状态持久化，API 不直接拼业务脚本。
+- Alternatives
+  - 继续扩展当前 `CollectionJobManager` 脚本编排。
+- Consequences
+  - 任务可恢复、可取消、可审计；需要增加 job 表、任务事件和服务接口。
+- Trigger
+  - 采集链路继续承载 Tushare/JYHF/龙虎榜/异动/Leader LLM/recap 等生产流程时。
+
+### ADR-SVC-004: Layer C 迁移以旧链程序 dry-run 为真源
+- Context
+  - 读取 `strong_stock_watch_pool/history` 表只能证明当前表内容，不能证明旧链程序真实输出；表可能被新链或历史快照污染。
+- Decision
+  - Layer C 迁移必须新增旧链程序 dry-run，输出 old dry-run、legacy table、新链 shadow、production input 四路 diff。
+- Alternatives
+  - 直接使用 legacy table 作为旧链 C 层真源。
+- Consequences
+  - 能定位“旧链程序逻辑”“表数据污染”“新链 shadow 偏差”“生产输入偏差”；短期需要给旧链构建器补 dry-run。
+- Trigger
+  - 任何声明 Layer C 已复刻、切换生产 C 入口、或调整 C/D 候选池规模前。
+
+### ADR-SVC-005: 前端生产链只允许一个 BFF 真源
+- Context
+  - 项目中同时存在 `web_app_service` 与 `frontend_bff`，当前前端主要调用 `/api/v2/*`，但双 BFF 容易导致 DTO 与路由漂移。
+- Decision
+  - 明确一个生产 BFF；另一路只能作为 legacy/dev/实验入口，不允许前端生产页面混用。
+- Alternatives
+  - 两套 BFF 长期并行并各自补兼容。
+- Consequences
+  - 前端契约稳定；需要清理或标记非生产路由。
+- Trigger
+  - 新增前端页面、改 `/api/v2/*` DTO、或迁移旧页面时。
