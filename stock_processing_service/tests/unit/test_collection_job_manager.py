@@ -184,14 +184,9 @@ def test_collection_planner_market_auxiliary_commands_preserve_tokens():
 
     assert "build_dragon_tiger_object.py" in dragon.commands[0].cmd[1]
     assert dragon.commands[0].cmd[-2:] == ["--token", "abc123"]
-    abnormal_cmd = abnormal.commands[0].cmd
-    assert "build_stock_abnormal_signal.py" in abnormal_cmd[1]
-    assert "--require-turnover" in abnormal_cmd
-    assert "--require-main-net-inflow" in abnormal_cmd
-    assert "--require-hot-money-buy" in abnormal_cmd
-    assert "--require-institution-buy" in abnormal_cmd
-    assert "--require-tail-rush" in abnormal_cmd
-    assert abnormal_cmd[-2:] == ["--token", "abc123"]
+    # abnormal_signal 已切换到服务化 Runner
+    assert abnormal.runner_key == "abnormal.signal"
+    assert len(abnormal.commands) == 0
 
 
 def test_collection_planner_leader_llm_skip_and_commands():
