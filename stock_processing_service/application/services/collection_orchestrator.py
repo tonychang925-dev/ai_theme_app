@@ -24,6 +24,8 @@ class CollectionTaskPlan:
     pre_logs: list[str] = field(default_factory=list)
     terminal_status: str | None = None
     terminal_label: str = ""
+    # 服务化 Runner key：非空时 JobManager 使用 Runner 执行，不再执行 commands
+    runner_key: str = ""
 
 
 class CollectionCommandPlanner:
@@ -353,21 +355,11 @@ class CollectionCommandPlanner:
             )
 
         if task_key == "recap_snapshot":
-            cmd = [
-                self._python_bin,
-                str(self._project_root / "scripts" / "build_post_market_recap.py"),
-                "--trade-date",
-                trade_date,
-            ]
-            if not options.get("auto_build_v2_if_missing", True):
-                cmd.append("--disable-auto-build-v2-if-missing")
-            if not options.get("dragon_tiger", True):
-                cmd.append("--skip-dragon-tiger")
-            if not options.get("abnormal_signal", True):
-                cmd.append("--skip-abnormal-signal")
-            if env.get("TUSHARE_TOKEN"):
-                cmd.extend(["--token", env["TUSHARE_TOKEN"]])
-            return CollectionTaskPlan(commands=[CollectionCommand(cmd)])
+            # 服务化路径：通过 PostMarketRecapRunner 直接调用 BuildPostMarketRecapJob
+            return CollectionTaskPlan(
+                runner_key="recap.snapshot",
+                pre_logs=["recap_snapshot 已切换到新链 BuildPostMarketRecapJob 服务化执行"],
+            )
 
         return CollectionTaskPlan(terminal_status="skipped", terminal_label="未知任务，已跳过")
 

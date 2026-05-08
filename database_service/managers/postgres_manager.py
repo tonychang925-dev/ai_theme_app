@@ -3865,7 +3865,28 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             return 0
 
     async def prune_strong_watch_pool(self, trade_date, weakening_min_score: float = 62.0) -> int:
-        """清理已失效观察对象 — 等价旧链 prune_watch_pool() + 写 history。"""
+        """清理已失效观察对象 — 等价旧链 prune_watch_pool() + 写 history。
+
+        严格复刻旧链：
+        1. _resolve_cutoff_trade_date(trade_date, lookback_trade_days=3)
+        2. UPDATE WHERE last_trade_date <= cutoff_trade_date
+        3. 查询本次 removed 对象，写 history（用原始 trade_date）
+        4. fail-fast 异常
+        """
+        # 旧链 _resolve_cutoff_trade_date: 向前 3 个交易日
+        cutoff_sql = """
+        SELECT x.trade_date
+        FROM (
+            SELECT DISTINCT s.trade_date
+            FROM subject_stock_daily_snapshot s
+            WHERE s.trade_date <= $1::date
+            ORDER BY s.trade_date DESC
+            LIMIT 4
+        ) x
+        ORDER BY x.trade_date ASC
+        LIMIT 1
+        """
+
         prune_sql = """
         UPDATE strong_stock_watch_pool
         SET watch_status = 'removed',
@@ -3881,7 +3902,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         )
           AND watch_status <> 'removed'
         """
-        # 等价旧链 prune 后查询被清理对象并写 history
+
         history_sql = """
         INSERT INTO strong_stock_watch_history (
             trade_date, stock_id, stock_name, subject_key, theme_name,
@@ -3903,15 +3924,15 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             CASE
               WHEN COALESCE(p.fade_confirmed, FALSE) THEN 'fade_confirmed'
               WHEN p.watch_status = 'removed' AND p.pool_entry_type = 'reject'
-                THEN 'removed_unclassified'
+                THEN 'weakening_score_below_cutoff'
               ELSE NULL
             END,
             p.support_type, p.support_level, p.support_score,
             p.labels_json, p.evidence_json,
-            now()
+            NOW()
         FROM strong_stock_watch_pool p
         WHERE p.watch_status = 'removed'
-          AND p.updated_at::date = $1::date
+          AND p.pool_entry_type = 'reject'
         ON CONFLICT (trade_date, stock_id) DO UPDATE SET
             watch_status = EXCLUDED.watch_status,
             watch_score = EXCLUDED.watch_score,
@@ -3919,18 +3940,23 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             removed_reason = EXCLUDED.removed_reason,
             updated_at = NOW()
         """
-        try:
-            async with self.pool.acquire() as conn:
-                async with conn.transaction():
-                    result = await conn.execute(prune_sql, trade_date, weakening_min_score)
-                    count = int(result.split()[-1]) if result else 0
-                    if count > 0:
-                        await conn.execute(history_sql, trade_date)
-                        logger.info(f"prune_strong_watch_pool: {count} stocks removed + history written on {trade_date}")
+
+        async with self.pool.acquire() as conn:
+            async with conn.transaction():
+                cutoff_row = await conn.fetchrow(cutoff_sql, trade_date)
+                cutoff_trade_date = cutoff_row["trade_date"] if cutoff_row else trade_date
+
+                result = await conn.execute(prune_sql, cutoff_trade_date, weakening_min_score)
+                count = int(result.split()[-1]) if result else 0
+
+                if count > 0:
+                    await conn.execute(history_sql, trade_date)
+
+                logger.info(
+                    "prune_strong_watch_pool: %s stocks removed + history written on %s (cutoff=%s)",
+                    count, trade_date, cutoff_trade_date,
+                )
                 return count
-        except Exception as e:
-            logger.warning(f"prune_strong_watch_pool 失败 trade_date={trade_date}: {e}")
-            return 0
 
     async def upsert_strong_watch_history_rows(self, rows: List[Dict[str, Any]]) -> int:
         """批量 UPSERT strong_stock_watch_history（Layer C 跟踪池历史真源）。"""
