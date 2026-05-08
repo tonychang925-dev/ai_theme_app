@@ -155,6 +155,41 @@ class BuildDragonTigerObjectRunner:
             )
 
 
+class TushareKlineRunner:
+    """Tushare K线采集 Runner — 直接拉取 API → Gateway 写入，不经过本地 JSONL。"""
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        if context.container is None:
+            return CollectionTaskResult(
+                status="failed", current_label="容器未注入",
+                error_message="container is None",
+            )
+        try:
+            from datetime import date
+
+            token = context.env.get("TUSHARE_TOKEN", "")
+            if not token:
+                return CollectionTaskResult(
+                    status="failed", current_label="缺少 Tushare token",
+                    error_message="TUSHARE_TOKEN not set",
+                )
+            pause = float(context.payload.get("tushare_pause_seconds", 0.1))
+            trade_date_val = date.fromisoformat(context.trade_date)
+
+            job = context.container.build_tushare_daily_bar
+            result = await job.execute(trade_date=trade_date_val, token=token, pause_seconds=pause)
+
+            return CollectionTaskResult(
+                status="success" if result.status.startswith("ok") else "failed",
+                current_label=f"Tushare日线采集完成 ({result.affected_rows} rows)",
+                logs=[f"tushare_kline status={result.status} rows={result.affected_rows}"],
+            )
+        except Exception as e:
+            return CollectionTaskResult(
+                status="failed", current_label="Tushare日线采集异常", error_message=str(e),
+            )
+
+
 class PostMarketRecapRunner:
     """服务化盘后复盘 Runner。
 

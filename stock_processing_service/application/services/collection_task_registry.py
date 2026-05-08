@@ -94,11 +94,13 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
         BuildStockAbnormalSignalRunner,
         PostMarketRecapRunner,
         ScriptCommandRunner,
+        TushareKlineRunner,
     )
     registry.register("script.default", ScriptCommandRunner())
     registry.register("recap.snapshot", PostMarketRecapRunner())
     registry.register("abnormal.signal", BuildStockAbnormalSignalRunner())
     registry.register("dragon_tiger.object", BuildDragonTigerObjectRunner())
+    registry.register("tushare.kline", TushareKlineRunner())
 
 
 __all__ = [
