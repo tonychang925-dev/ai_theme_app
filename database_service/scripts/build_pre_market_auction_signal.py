@@ -230,8 +230,9 @@ async def upsert_rows(manager: PostgresDatabaseManager, items):
         await conn.executemany(sql, payload)
 
 
-async def main_async() -> int:
-    args = parse_args()
+async def main_async(args: argparse.Namespace | None = None) -> int:
+    if args is None:
+        args = parse_args()
     trade_date_value = _parse_trade_date(args.trade_date)
     manager = PostgresDatabaseManager(get_postgres_config())
     await manager.connect()

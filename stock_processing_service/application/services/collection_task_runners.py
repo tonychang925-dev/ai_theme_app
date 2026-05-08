@@ -155,6 +155,60 @@ class BuildDragonTigerObjectRunner:
             )
 
 
+class AuctionSnapshotRunner:
+    """竞价快照 Runner — 进程内调用旧链服务（semi-service 模式）。"""
+
+    def __init__(self, universe_source: str = "auction_watch_universe", max_stocks: int = 0) -> None:
+        self._universe_source = universe_source
+        self._max_stocks = max_stocks
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        try:
+            import argparse
+
+            token = context.env.get("TUSHARE_TOKEN", "")
+            if not token:
+                return CollectionTaskResult(status="failed", current_label="缺少 Tushare token", error_message="TUSHARE_TOKEN not set")
+
+            ns = argparse.Namespace()
+            ns.trade_date = context.trade_date
+            ns.token = token
+            ns.allow_online_fetch = True
+            ns.force_refresh = True
+            ns.universe_source = self._universe_source
+            ns.max_stocks = self._max_stocks
+
+            from database_service.scripts.build_pre_market_auction_snapshot import main_async
+            exit_code = await main_async(args=ns)
+
+            return CollectionTaskResult(
+                status="success" if exit_code == 0 else "failed",
+                current_label=f"竞价快照完成 (source={self._universe_source}, exit={exit_code})",
+                logs=[f"auction_snapshot source={self._universe_source} exit_code={exit_code}"],
+            )
+        except Exception as e:
+            return CollectionTaskResult(status="failed", current_label="竞价快照异常", error_message=str(e))
+
+
+class AuctionSignalRunner:
+    """竞价信号 Runner — 进程内调用旧链服务（semi-service 模式）。"""
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        try:
+            import argparse
+            ns = argparse.Namespace()
+            ns.trade_date = context.trade_date
+            from database_service.scripts.build_pre_market_auction_signal import main_async
+            exit_code = await main_async(args=ns)
+            return CollectionTaskResult(
+                status="success" if exit_code == 0 else "failed",
+                current_label=f"竞价信号生成完成 (exit={exit_code})",
+                logs=[f"auction_signal exit_code={exit_code}"],
+            )
+        except Exception as e:
+            return CollectionTaskResult(status="failed", current_label="竞价信号生成异常", error_message=str(e))
+
+
 class AuctionWatchUniverseRunner:
     """竞价观察池构建 Runner — 新链 Job 架构。"""
 

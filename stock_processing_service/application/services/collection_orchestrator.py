@@ -176,7 +176,6 @@ class CollectionCommandPlanner:
             tushare_token = str(env.get("TUSHARE_TOKEN", "")).strip().strip("\"'").strip()
             if not tushare_token:
                 raise RuntimeError("缺少 Tushare token：请设置环境变量 TUSHARE_TOKEN，或在项目 .env/.env.local 中配置。")
-            source_trade_date = (datetime.fromisoformat(trade_date).date() - timedelta(days=1)).isoformat()
             return CollectionTaskPlan(
                 pre_logs=["Tushare K线已切换到 BuildTushareDailyBarJob (API→Gateway→DB)，不再经过本地JSONL中转"],
                 steps=[
@@ -194,35 +193,17 @@ class CollectionCommandPlanner:
                     ),
                     CollectionTaskStep(
                         key="auction_snapshot_all",
-                        commands=[CollectionCommand([
-                            self._python_bin,
-                            str(self._project_root / "database_service" / "scripts" / "build_pre_market_auction_snapshot.py"),
-                            "--trade-date", trade_date,
-                            "--token", tushare_token,
-                            "--allow-online-fetch", "--force-refresh",
-                        ])],
+                        runner_key="auction.snapshot_all",
                         label="竞价快照(全量)",
                     ),
                     CollectionTaskStep(
                         key="auction_snapshot_w2s",
-                        commands=[CollectionCommand([
-                            self._python_bin,
-                            str(self._project_root / "database_service" / "scripts" / "build_pre_market_auction_snapshot.py"),
-                            "--trade-date", trade_date,
-                            "--universe-source", "weak_to_strong_candidates",
-                            "--max-stocks", "120",
-                            "--token", tushare_token,
-                            "--allow-online-fetch", "--force-refresh",
-                        ])],
+                        runner_key="auction.snapshot_w2s",
                         label="竞价快照(弱转强候选)",
                     ),
                     CollectionTaskStep(
                         key="auction_signal",
-                        commands=[CollectionCommand([
-                            self._python_bin,
-                            str(self._project_root / "database_service" / "scripts" / "build_pre_market_auction_signal.py"),
-                            "--trade-date", trade_date,
-                        ])],
+                        runner_key="auction.signal",
                         label="竞价信号生成",
                     ),
                 ],
