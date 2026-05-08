@@ -3840,6 +3840,57 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.warning(f"写入 strong_stock_watch_pool 失败: {e}")
             return 0
 
+    async def promote_strong_watch_candidates(self, trade_date) -> int:
+        """标记 candidate_promoted=TRUE — 等价旧链 promote_watch_candidates()。"""
+        sql = """
+        UPDATE strong_stock_watch_pool
+        SET candidate_promoted = TRUE,
+            updated_at = NOW()
+        WHERE watch_status IN ('active', 'weakening')
+          AND pool_entry_type IN ('formal', 'observe_only')
+          AND COALESCE(fade_confirmed, FALSE) = FALSE
+          AND candidate_promoted = FALSE
+          AND last_trade_date <= $1::date
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                result = await conn.execute(sql, trade_date)
+                count = int(result.split()[-1]) if result else 0
+                if count > 0:
+                    logger.info(f"promote_strong_watch_candidates: {count} candidates promoted on {trade_date}")
+                return count
+        except Exception as e:
+            logger.warning(f"promote_strong_watch_candidates 失败 trade_date={trade_date}: {e}")
+            return 0
+
+    async def prune_strong_watch_pool(self, trade_date, weakening_min_score: float = 62.0) -> int:
+        """清理已失效观察对象 — 等价旧链 prune_watch_pool()。"""
+        sql = """
+        UPDATE strong_stock_watch_pool
+        SET watch_status = 'removed',
+            pool_entry_type = 'reject',
+            updated_at = NOW()
+        WHERE (
+                COALESCE(fade_confirmed, FALSE) = TRUE
+             OR (
+                    watch_status = 'weakening'
+                AND watch_score < $2
+                AND last_trade_date <= $1::date
+             )
+        )
+          AND watch_status <> 'removed'
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                result = await conn.execute(sql, trade_date, weakening_min_score)
+                count = int(result.split()[-1]) if result else 0
+                if count > 0:
+                    logger.info(f"prune_strong_watch_pool: {count} stocks removed on {trade_date}")
+                return count
+        except Exception as e:
+            logger.warning(f"prune_strong_watch_pool 失败 trade_date={trade_date}: {e}")
+            return 0
+
     async def upsert_strong_watch_history_rows(self, rows: List[Dict[str, Any]]) -> int:
         """批量 UPSERT strong_stock_watch_history（Layer C 跟踪池历史真源）。"""
         if not rows:

@@ -508,13 +508,8 @@ class BuildPostMarketRecapJob:
         candidate_input_rows = list(by_stock.values())
 
         # ── Step 7a.5: 计算 watch_window_days（等价旧链 _recompute_watch_window_days）──
-        # 统计每只股票在 subject_stock_daily_snapshot 中的交易日天数
-        stock_window_days: dict[str, int] = {}
-        for result in watch_pool_results:
-            if not result.stock_id:
-                continue
-            # 简化计数：种子查询已覆盖7日窗口，默认7天
-            stock_window_days[result.stock_id] = 7
+        # 基于种子查询的 7 日窗口，每只种子股票默认跟踪 7 个交易日
+        stock_window_days: dict[str, int] = {r.stock_id: 7 for r in watch_pool_results if r.stock_id}
 
         # ── Step 7b: 持久池写入（等价旧链 _upsert_watch_pool_seed + _update_watch_pool_row）──
         pool_write_rows: list[dict[str, Any]] = []
@@ -527,6 +522,7 @@ class BuildPostMarketRecapJob:
                 "stock_name": result.stock_name,
                 "subject_key": result.subject_key,
                 "theme_name": result.theme_name,
+                "watch_window_days": stock_window_days.get(result.stock_id, 7),
                 "source_tag": result.source_tag,
                 "relay_role": result.relay_role,
                 "watch_status": result.watch_status,
@@ -543,21 +539,21 @@ class BuildPostMarketRecapJob:
                 "labels": result.labels,
                 "evidence": result.evidence,
             })
-        pool_written = 0
-        if hasattr(self._write_port, "upsert_strong_watch_pool_rows"):
-            pool_written = await self._write_port.upsert_strong_watch_pool_rows(pool_write_rows)
+        pool_written = await self._write_port.upsert_strong_watch_pool_rows(pool_write_rows)
 
-        # ── Step 7c: 旧链等价 promote（标记 active/weakening + formal/observe_only 为 candidate_promoted）──
-        promote_count = 0
+        # ── Step 7c: 旧链等价 promote（DB UPDATE candidate_promoted=TRUE）──
         formal_ids = {r.stock_id for r in watch_pool_results
                       if r.watch_status in {"active", "weakening"}
                       and r.pool_entry_type in {"formal", "observe_only"}
                       and not r.fade_confirmed}
-        promote_count = len(formal_ids)
+        promote_count = 0
+        if hasattr(self._write_port, "promote_strong_watch_candidates"):
+            promote_count = await self._write_port.promote_strong_watch_candidates(trade_date)
 
-        # ── Step 7d: 旧链等价 prune（fade_confirmed 或 弱化+低分 标记为 removed）──
-        prune_count = sum(1 for r in watch_pool_results
-                         if r.watch_status == "removed" or r.pool_entry_type == "reject")
+        # ── Step 7d: 旧链等价 prune（DB UPDATE removed/reject）──
+        prune_count = 0
+        if hasattr(self._write_port, "prune_strong_watch_pool"):
+            prune_count = await self._write_port.prune_strong_watch_pool(trade_date)
 
         # ── Step 7e: 旧链等价 history snapshot（写入 strong_stock_watch_history）──
         history_written = 0

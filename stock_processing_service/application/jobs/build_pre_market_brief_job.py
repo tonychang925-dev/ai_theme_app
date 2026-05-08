@@ -64,7 +64,14 @@ class BuildPreMarketBriefJob:
             )
 
         bars = await self._read_port.get_stock_daily_bars(trade_date)
-        pools = await self._read_port.get_subject_stock_pool_by_trade_date(trade_date)
+        # ── D2 输入：消费盘后 D1 候选池，不是全量 subject_stock_pool ──
+        # 优先从 strong_stock_watch_pool 读取 candidate_promoted=TRUE 的对象
+        promoted_fn = getattr(self._read_port, "get_prior_strong_watch_pool_rows", None)
+        if callable(promoted_fn):
+            pools = await promoted_fn(trade_date=trade_date, lookback_days=lookback_days)
+        else:
+            # 兼容回退：仍从 subject_stock_pool 读取（旧路径，逐步淘汰）
+            pools = await self._read_port.get_subject_stock_pool_by_trade_date(trade_date)
         prior = await self._read_port.get_prior_stock_daily_snapshots(
             trade_date=trade_date,
             lookback_days=lookback_days,
