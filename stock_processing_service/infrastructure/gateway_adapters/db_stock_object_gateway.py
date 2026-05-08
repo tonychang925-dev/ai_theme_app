@@ -115,6 +115,12 @@ class DBStockObjectGateway:
             return await fn(rows)
         raise RuntimeError("DatabaseGateway missing upsert_auction_watch_universe_rows")
 
+    async def upsert_pre_market_auction_snapshot_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._db, "upsert_pre_market_auction_snapshot_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        raise RuntimeError("DatabaseGateway missing upsert_pre_market_auction_snapshot_rows")
+
     async def upsert_dragon_tiger_object_rows(self, rows: list[dict[str, Any]]) -> int:
         fn = getattr(self._db, "upsert_dragon_tiger_object_rows", None)
         if callable(fn):

@@ -199,3 +199,15 @@ class DBThemeDataGateway:
         if callable(fn):
             return [self._as_dict(r) for r in await fn(trade_date)]
         raise RuntimeError("DatabaseGateway missing get_auction_cycles")
+
+    async def get_auction_watch_universe(self, trade_date) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_auction_watch_universe", None)
+        if callable(fn):
+            return [self._as_dict(r) for r in await fn(trade_date)]
+        raise RuntimeError("DatabaseGateway missing get_auction_watch_universe")
+
+    async def get_w2s_candidates_by_next_date(self, confirm_date) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_w2s_candidates_by_next_date", None)
+        if callable(fn):
+            return [self._as_dict(r) for r in await fn(confirm_date)]
+        raise RuntimeError("DatabaseGateway missing get_w2s_candidates_by_next_date")
