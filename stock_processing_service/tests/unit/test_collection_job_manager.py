@@ -53,10 +53,14 @@ def test_collection_planner_builds_tushare_commands_without_shell_quotes():
         env={"TUSHARE_TOKEN": "  'abc123'  "},
     )
 
-    first_cmd = plan.commands[0].cmd
-    token_index = first_cmd.index("--token") + 1
-    assert first_cmd[token_index] == "abc123"
-    assert len(plan.commands) == 6
+    # tushare_kline 已切换为多 step 模式
+    assert len(plan.steps) == 5
+    # Step 1: K线 — Runner
+    assert plan.steps[0].runner_key == "tushare.daily_bar"
+    assert len(plan.steps[0].commands) == 0
+    # Step 2-5: 竞价脚本（每步含1个 command）
+    for step in plan.steps[1:]:
+        assert len(step.commands) == 1
 
 
 def test_collection_planner_keeps_strong_watch_as_service_owned_step():

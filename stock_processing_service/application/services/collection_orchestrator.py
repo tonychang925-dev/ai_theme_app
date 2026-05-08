@@ -19,12 +19,23 @@ class CollectionCommand:
 
 
 @dataclass(frozen=True)
+class CollectionTaskStep:
+    """采集任务中的单步——可以是 Runner 或脚本命令。"""
+    key: str = ""
+    runner_key: str = ""
+    commands: list[CollectionCommand] = field(default_factory=list)
+    label: str = ""
+
+
+@dataclass(frozen=True)
 class CollectionTaskPlan:
+    # 多步模式（推荐）：逐 step 执行，支持混合 Runner + 脚本
+    steps: list[CollectionTaskStep] = field(default_factory=list)
+    # 旧兼容模式
     commands: list[CollectionCommand] = field(default_factory=list)
     pre_logs: list[str] = field(default_factory=list)
     terminal_status: str | None = None
     terminal_label: str = ""
-    # 服务化 Runner key：非空时 JobManager 使用 Runner 执行，不再执行 commands
     runner_key: str = ""
 
 
@@ -167,90 +178,57 @@ class CollectionCommandPlanner:
                 raise RuntimeError("缺少 Tushare token：请设置环境变量 TUSHARE_TOKEN，或在项目 .env/.env.local 中配置。")
             source_trade_date = (datetime.fromisoformat(trade_date).date() - timedelta(days=1)).isoformat()
             return CollectionTaskPlan(
-                pre_logs=[],
-                commands=[
-                    CollectionCommand(
-                        [
-                            self._python_bin,
-                            str(self._project_root / "scripts" / "sync_tushare_kline_local.py"),
-                            "--from-jyhf-universe",
-                            "--end-date",
-                            trade_date,
-                            "--months",
-                            "6",
-                            "--pause-seconds",
-                            tushare_pause,
-                            "--resume",
-                            "--skip-existing",
-                            "--token",
-                            tushare_token,
-                        ],
-                        initial_percent=5,
-                        success_percent=55,
+                pre_logs=["Tushare K线已切换到 BuildTushareDailyBarJob (API→Gateway→DB)，不再经过本地JSONL中转"],
+                steps=[
+                    # Step 1: K线采集 — 完全服务化（Tushare API → Gateway → DB）
+                    CollectionTaskStep(
+                        key="kline",
+                        runner_key="tushare.daily_bar",
+                        label="Tushare日线采集 (API→DB)",
                     ),
-                    CollectionCommand(
-                        [
-                            self._python_bin,
-                            str(self._project_root / "scripts" / "import_tushare_daily_bar_to_db.py"),
-                            "--trade-date",
-                            trade_date,
-                        ],
-                        initial_percent=55,
-                        success_percent=65,
-                    ),
-                    CollectionCommand(
-                        [
+                    # Step 2-5: 竞价子任务 — 仍用旧脚本（后续逐步迁移）
+                    CollectionTaskStep(
+                        key="auction_watch",
+                        commands=[CollectionCommand([
                             self._python_bin,
                             str(self._project_root / "database_service" / "scripts" / "build_auction_watch_universe.py"),
-                            "--trade-date",
-                            trade_date,
-                            "--source-trade-date",
-                            source_trade_date,
-                        ],
-                        initial_percent=65,
-                        success_percent=75,
+                            "--trade-date", trade_date,
+                            "--source-trade-date", source_trade_date,
+                        ])],
+                        label="竞价观察池构建",
                     ),
-                    CollectionCommand(
-                        [
+                    CollectionTaskStep(
+                        key="auction_snapshot_all",
+                        commands=[CollectionCommand([
                             self._python_bin,
                             str(self._project_root / "database_service" / "scripts" / "build_pre_market_auction_snapshot.py"),
-                            "--trade-date",
-                            trade_date,
-                            "--token",
-                            tushare_token,
-                            "--allow-online-fetch",
-                            "--force-refresh",
-                        ],
-                        initial_percent=75,
-                        success_percent=87,
+                            "--trade-date", trade_date,
+                            "--token", tushare_token,
+                            "--allow-online-fetch", "--force-refresh",
+                        ])],
+                        label="竞价快照(全量)",
                     ),
-                    CollectionCommand(
-                        [
+                    CollectionTaskStep(
+                        key="auction_snapshot_w2s",
+                        commands=[CollectionCommand([
                             self._python_bin,
                             str(self._project_root / "database_service" / "scripts" / "build_pre_market_auction_snapshot.py"),
-                            "--trade-date",
-                            trade_date,
-                            "--universe-source",
-                            "weak_to_strong_candidates",
-                            "--max-stocks",
-                            "120",
-                            "--token",
-                            tushare_token,
-                            "--allow-online-fetch",
-                            "--force-refresh",
-                        ],
-                        initial_percent=87,
-                        success_percent=94,
+                            "--trade-date", trade_date,
+                            "--universe-source", "weak_to_strong_candidates",
+                            "--max-stocks", "120",
+                            "--token", tushare_token,
+                            "--allow-online-fetch", "--force-refresh",
+                        ])],
+                        label="竞价快照(弱转强候选)",
                     ),
-                    CollectionCommand(
-                        [
+                    CollectionTaskStep(
+                        key="auction_signal",
+                        commands=[CollectionCommand([
                             self._python_bin,
                             str(self._project_root / "database_service" / "scripts" / "build_pre_market_auction_signal.py"),
-                            "--trade-date",
-                            trade_date,
-                        ],
-                        initial_percent=94,
-                        success_percent=100,
+                            "--trade-date", trade_date,
+                        ])],
+                        label="竞价信号生成",
                     ),
                 ],
             )
