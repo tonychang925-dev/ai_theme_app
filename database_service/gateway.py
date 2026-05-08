@@ -1083,6 +1083,30 @@ class DatabaseGateway:
             logger.error(f"写入 strong_stock_watch_pool 失败: {e}")
             raise
 
+    async def promote_strong_watch_candidates(self, trade_date) -> int:
+        """股票域显式写入：标记 candidate_promoted（等价旧链 promote_watch_candidates）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.promote_strong_watch_candidates(trade_date)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"promote_strong_watch_candidates 失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def prune_strong_watch_pool(self, trade_date, weakening_min_score: float = 62.0) -> int:
+        """股票域显式写入：清理失效观察对象（等价旧链 prune_watch_pool）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.prune_strong_watch_pool(trade_date, weakening_min_score)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"prune_strong_watch_pool 失败 trade_date={trade_date}: {e}")
+            raise
+
     async def upsert_strong_watch_history_rows(self, rows: List[Dict[str, Any]]) -> int:
         """股票域显式写入：strong_stock_watch_history。"""
         try:

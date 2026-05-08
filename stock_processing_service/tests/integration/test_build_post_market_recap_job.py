@@ -157,6 +157,15 @@ class _FakeWritePort:
         self.recap_docs.append(doc)
         return 1
 
+    async def upsert_strong_watch_pool_rows(self, rows, **kwargs):
+        return len(rows)
+
+    async def promote_strong_watch_candidates(self, trade_date):
+        return 0
+
+    async def prune_strong_watch_pool(self, trade_date, weakening_min_score=62.0):
+        return 0
+
     async def upsert_strong_watch_history_rows(self, rows):
         self.strong_watch_history_rows.extend(rows)
         return len(rows)

@@ -86,6 +86,18 @@ class StockWriteGatewayAdapter:
             return await fn(rows)
         raise RuntimeError("DatabaseGatewayStockFacade missing upsert_strong_watch_pool_rows")
 
+    async def promote_strong_watch_candidates(self, trade_date) -> int:
+        fn = getattr(self._db, "promote_strong_watch_candidates", None)
+        if callable(fn):
+            return await fn(trade_date)
+        raise RuntimeError("DatabaseGatewayStockFacade missing promote_strong_watch_candidates")
+
+    async def prune_strong_watch_pool(self, trade_date, weakening_min_score: float = 62.0) -> int:
+        fn = getattr(self._db, "prune_strong_watch_pool", None)
+        if callable(fn):
+            return await fn(trade_date, weakening_min_score)
+        raise RuntimeError("DatabaseGatewayStockFacade missing prune_strong_watch_pool")
+
     async def apply_lifecycle_downgrade(
         self, trade_date, deactivate_fade_days: int = 2
     ) -> int:

@@ -1,11 +1,15 @@
 from __future__ import annotations
 
 from stock_processing_service.application.jobs.collection_job_manager import (
+    CollectionJob,
     CollectionJobManager,
+    CollectionTaskState,
     _redact_cmd,
 )
 from stock_processing_service.application.services.collection_orchestrator import (
+    CollectionCommand,
     CollectionCommandPlanner,
+    CollectionTaskPlan,
 )
 
 
@@ -213,3 +217,102 @@ def test_collection_planner_leader_llm_skip_and_commands():
     assert "build_theme_leader_llm_judgement.py" in planned.commands[1].cmd[1]
     assert "call_theme_leader_llm.py" in planned.commands[2].cmd[1]
     assert planned.commands[1].cmd[-1] == "7"
+
+
+def test_collection_planner_unknown_task_is_skipped():
+    planner = CollectionCommandPlanner()
+
+    plan = planner.build_task_plan(
+        task_key="unknown_task",
+        trade_date="2026-05-06",
+        payload={},
+        env={},
+    )
+
+    assert plan.commands == []
+    assert plan.terminal_status == "skipped"
+    assert plan.terminal_label == "未知任务，已跳过"
+
+
+def test_collection_job_manager_executes_planned_commands_in_order():
+    class FakePlanner:
+        def build_task_plan(self, *, task_key, trade_date, payload, env):
+            return CollectionTaskPlan(
+                pre_logs=[f"prelog:{task_key}:{trade_date}"],
+                commands=[
+                    CollectionCommand(["python", f"{task_key}_1.py"], initial_percent=10, success_percent=50),
+                    CollectionCommand(["python", f"{task_key}_2.py"], initial_percent=50, success_percent=100),
+                ],
+            )
+
+    class RecordingManager(CollectionJobManager):
+        def __init__(self):
+            super().__init__(command_planner=FakePlanner())
+            self.commands = []
+
+        async def _run_command(self, job, task, cmd, env=None, *, initial_percent=5, success_percent=100):
+            self.commands.append((task.key, cmd, initial_percent, success_percent))
+            task.status = "success"
+            task.progress_percent = success_percent
+            self._update_overall_progress(job)
+
+    manager = RecordingManager()
+    job = CollectionJob(
+        job_id="job1",
+        trade_date="2026-05-06",
+        payload={},
+        status="running",
+        total_steps=1,
+        tasks=[CollectionTaskState(key="jyhf", title="股票快照日采集")],
+    )
+
+    import asyncio
+
+    asyncio.run(manager._run_job(job))
+
+    assert manager.commands == [
+        ("jyhf", ["python", "jyhf_1.py"], 10, 50),
+        ("jyhf", ["python", "jyhf_2.py"], 50, 100),
+    ]
+    assert any("prelog:jyhf:2026-05-06" in line for line in job.logs)
+    assert job.status == "success"
+    assert job.completed_steps == 1
+    assert job.progress_percent == 100
+
+
+def test_collection_job_manager_applies_terminal_plan_without_running_command():
+    class FakePlanner:
+        def build_task_plan(self, *, task_key, trade_date, payload, env):
+            return CollectionTaskPlan(
+                pre_logs=["terminal prelog"],
+                terminal_status="skipped",
+                terminal_label="terminal label",
+            )
+
+    class RecordingManager(CollectionJobManager):
+        def __init__(self):
+            super().__init__(command_planner=FakePlanner())
+            self.commands = []
+
+        async def _run_command(self, job, task, cmd, env=None, *, initial_percent=5, success_percent=100):
+            self.commands.append(cmd)
+
+    manager = RecordingManager()
+    job = CollectionJob(
+        job_id="job1",
+        trade_date="2026-05-06",
+        payload={},
+        status="running",
+        total_steps=1,
+        tasks=[CollectionTaskState(key="leader_llm", title="龙头候选LLM裁决")],
+    )
+
+    import asyncio
+
+    asyncio.run(manager._run_job(job))
+
+    assert manager.commands == []
+    assert job.tasks[0].status == "skipped"
+    assert job.tasks[0].current_label == "terminal label"
+    assert any("terminal prelog" in line for line in job.logs)
+    assert job.status == "success"
