@@ -1,8 +1,7 @@
-from __future__ import annotations
-
 import json
 import subprocess
 import time
+from collections.abc import Callable
 
 
 class JyhfAppManager:
@@ -23,7 +22,7 @@ class JyhfAppManager:
         except Exception:
             return False
 
-    def ensure_running(self) -> bool:
+    def ensure_running(self, should_stop: Callable[[], bool] | None = None) -> bool:
         if self.is_running_with_cdp():
             return True
         subprocess.Popen(
@@ -31,10 +30,11 @@ class JyhfAppManager:
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
         )
-        for _ in range(20):
-            time.sleep(2)
+        for _ in range(6):
+            if should_stop and should_stop():
+                raise RuntimeError("JYHF app startup cancelled")
+            time.sleep(1)
             if self.is_running_with_cdp():
-                time.sleep(3)
+                time.sleep(1)
                 return True
         raise RuntimeError("failed to start JYHF app with CDP")
-

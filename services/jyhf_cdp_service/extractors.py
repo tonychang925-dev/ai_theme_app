@@ -11,7 +11,7 @@ class NewEventExtractor:
             "document.querySelector('#app').__vue_app__.config.globalProperties.$router.push('/')",
             timeout=8.0,
         )
-        cdp.evaluate(
+        result = cdp.evaluate(
             """
             (function() {
                 var all = document.querySelectorAll('*');
@@ -26,6 +26,8 @@ class NewEventExtractor:
             """,
             timeout=8.0,
         )
+        if result != "clicked":
+            raise RuntimeError(f"new event tab not found: {result}")
 
     def read(self, cdp: CDPClient) -> tuple[list[dict], str, str]:
         raw = cdp.evaluate(
@@ -59,7 +61,7 @@ class NewEventExtractor:
                         currentRaw = [line];
                     } else if (current) {
                         currentRaw.push(line);
-                        if (!current.subject_name && line.length > 1 && !line.includes('%') && !line.includes('驱动') && !line.includes('20')) {
+                        if (!current.subject_name && line.length > 1 && !line.includes('%') && !line.includes('驱动') && !/^\\d{4}-\\d{2}-\\d{2}/.test(line)) {
                             current.subject_name = line;
                         } else if (current.subject_name && !current.pct_chg_text && /^[+-]?\\d+\\.?\\d*%$/.test(line)) {
                             current.pct_chg_text = line;
@@ -80,4 +82,3 @@ class NewEventExtractor:
         )
         payload = json.loads(raw) if isinstance(raw, str) else (raw or {})
         return payload.get("events") or [], str(payload.get("feed_date") or ""), str(payload.get("body_text") or "")
-

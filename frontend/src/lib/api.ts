@@ -268,7 +268,8 @@ export interface JyhfCdpCollectorStatus {
   new_event_count_total: number;
   duplicate_count_total: number;
   parse_error_count_total: number;
-  pushed_to_intel_count_total: number;
+  pushed_to_stream_count_total: number;
+  pushed_to_intel_count_total?: number;
   review_queue_count_total: number;
   last_error?: string | null;
 }

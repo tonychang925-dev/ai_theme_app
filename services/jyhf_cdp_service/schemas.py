@@ -7,6 +7,9 @@ class CollectorStatus(BaseModel):
     service: str = "jyhf_cdp_service"
     running: bool = True
     collector_running: bool = False
+    collector_state: str = "stopped"
+    started_at: str | None = None
+    uptime_seconds: float = 0.0
     app_running: bool = False
     cdp_connected: bool = False
     cdp_port: int = 9223
@@ -19,6 +22,7 @@ class CollectorStatus(BaseModel):
     duplicate_count_total: int = 0
     parse_error_count_total: int = 0
     pushed_to_stream_count_total: int = 0
+    pushed_to_intel_count_total: int = 0
     review_queue_count_total: int = 0
     last_error: str | None = None
 
