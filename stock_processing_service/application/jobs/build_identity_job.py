@@ -143,15 +143,67 @@ class BuildIdentityJob:
                 trace_id=trace_id,
             )
 
-        # ── Phase 1: Rule engine evaluation for ALL subjects ──
-        # 必须先收集所有结果，cluster compensation 需要全局视角
+        # ── Phase 1: 构建 Identity Universe（主线 + 异动 + 新题材）──
+        # 不扫全量 600+ subject，只评估：
+        #   1. prior confirmed + cycle alive（存续主线）
+        #   2. subject_rank_daily 当日强热度（异动题材）
+        #   3. 已有 cycle 记录的活跃 subject
 
-        raw_pool_rows = await self._read_port.get_subject_stock_pool_by_trade_date(trade_date)
-        pool_rows = self._normalize_rows(raw_pool_rows)
-        subject_keys = sorted({row.subject_key for row in pool_rows})
+        universe_keys: set[str] = set()
+
+        # 1. 当日排名热点（subject_rank_daily）
+        try:
+            rank_hot = await self._read_port.get_subject_rank_daily(trade_date, limit=50)
+            for r in (rank_hot or []):
+                sk = str(r.get("subject_key") or "").strip()
+                if sk:
+                    universe_keys.add(sk)
+        except Exception:
+            pass
+
+        # 2. 存续主线：prior confirmed + prior cycle alive
+        prior_confirmed = set()
+        prior_cycle_alive = set()
+        try:
+            prior_ids = await self._read_port.get_mainline_identity_by_subject_keys([], trade_date)
+            for r in (prior_ids or []):
+                sk = str(r.get("subject_key") or "").strip()
+                if sk and bool(r.get("is_main_theme")) and str(r.get("identity_status") or "") == "confirmed":
+                    prior_confirmed.add(sk)
+        except Exception:
+            pass
+        try:
+            prior_cycles = await self._read_port.get_mainline_cycle_by_subject_keys([], trade_date)
+            for r in (prior_cycles or []):
+                sk = str(r.get("subject_key") or "").strip()
+                if sk and bool(r.get("final_mainline_alive")):
+                    prior_cycle_alive.add(sk)
+        except Exception:
+            pass
+        universe_keys.update(prior_confirmed)
+        universe_keys.update(prior_cycle_alive)
+
+        # 3. 如果 universe 太小，补充 subject_stock_pool 中的 leader subjects
+        if len(universe_keys) < 20:
+            try:
+                pool_rows_raw = await self._read_port.get_subject_stock_pool_by_trade_date(trade_date)
+                for row in (pool_rows_raw or []):
+                    sk = str(getattr(row, "subject_key", ""))
+                    if sk and (getattr(row, "is_leader", False) or getattr(row, "limit_up", False)):
+                        universe_keys.add(sk)
+            except Exception:
+                pass
+
+        subject_keys = sorted(universe_keys)
+        if not subject_keys:
+            return BuildResult(
+                name="build_identity", trade_date=trade_date.isoformat(),
+                affected_rows=0, status="ok_no_data",
+                batch_id=batch_id, trace_id=trace_id,
+            )
+
         raw_rule_inputs = await self._read_port.get_mainline_identity_rule_inputs(
-            trade_date=trade_date,
-            subject_keys=subject_keys,
+            trade_date=trade_date, subject_keys=subject_keys,
         ) if subject_keys else []
         rule_inputs_by_subject = {
             str(row.get("subject_key") or ""): dict(row)
@@ -162,16 +214,12 @@ class BuildIdentityJob:
         identity_registry_rows: list[dict[str, Any]] = []
         review_queue_rows: list[dict[str, Any]] = []
 
-        grouped: dict[str, list[Any]] = {}
-        for row in pool_rows:
-            grouped.setdefault(row.subject_key, []).append(row)
-
-        # Step 1: 所有 subject 跑 rule engine → 收集 IdentityRuleResult
+        # Step 1: 所有 universe subject 跑 rule engine → 收集 IdentityRuleResult
         rule_results: dict[str, Any] = {}  # subject_key → IdentityRuleResult
         subject_name_map: dict[str, str] = {}
         cluster_inputs: list[ClusterDecisionInput] = []
 
-        for subject_key, rows in grouped.items():
+        for subject_key in subject_keys:
             rule_row = rule_inputs_by_subject.get(subject_key)
             if not rule_row:
                 raise RuntimeError(
@@ -268,7 +316,7 @@ class BuildIdentityJob:
                 ev = {}
             prev_candidate_map[subject_key] = bool(ev.get("upgrade_candidate"))
 
-        for subject_key, rows in grouped.items():
+        for subject_key in subject_keys:
             rule = rule_results[subject_key]
             subject_name = subject_name_map[subject_key]
             ci = cluster_by_subject.get(subject_key)

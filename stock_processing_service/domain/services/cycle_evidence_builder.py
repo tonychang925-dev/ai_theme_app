@@ -48,6 +48,34 @@ class CycleEvidence:
 
 
 class CycleEvidenceBuilder:
+
+    @staticmethod
+    def from_subject_evidence_row(row: dict[str, Any], trade_date: date) -> CycleEvidence:
+        """从 subject_cycle_evidence_daily 行构建 CycleEvidence（subject 级）。"""
+        return CycleEvidence(
+            trade_date=trade_date,
+            stock_id=str(row.get("subject_key") or ""),
+            subject_key=str(row.get("subject_key") or ""),
+            subject_name=str(row.get("theme_name") or row.get("subject_key") or ""),
+            close_price=Decimal(str(row.get("close_price") or 0)),
+            pct_chg=Decimal(str(row.get("pct_chg") or 0)),
+            previous_state=str(row.get("previous_state") or "unknown"),
+            event_score=Decimal(str(row.get("event_strength_score") or 0)),
+            continuity_score=Decimal(str(row.get("event_continuity_score") or 0)),
+            leader_score=Decimal(str(row.get("leader_alive_score") or 0)),
+            relay_score=Decimal(str(row.get("relay_strength_score") or 0)),
+            board_score=Decimal(str(row.get("board_score") or 0)),
+            support_score=Decimal(str(row.get("theme_support_score") or 0)),
+            leader_breakdown_flag=bool(row.get("leader_breakdown_flag")),
+            red_ratio=Decimal(str(row.get("red_ratio") or 0)),
+            big_drop_ratio=Decimal(str(row.get("big_drop_ratio") or 0)),
+            limit_down_count=int(row.get("limit_down_count") or 0),
+            front_row_survival_ratio=Decimal(str(row.get("front_row_survival_ratio") or 0)),
+            break_start_pivot=bool(row.get("break_start_pivot")),
+            theme_support_score=Decimal(str(row.get("theme_support_score") or 0)),
+            strong_event_count_7d=int(row.get("strong_event_count_7d") or 0),
+        )
+
     def build_evidences(
         self,
         bars: list[StockBarDTO],

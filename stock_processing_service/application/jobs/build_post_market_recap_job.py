@@ -52,6 +52,7 @@ class BuildPostMarketRecapJob:
         tracking_service: StrongStockTrackingService | None = None,
         identity_job: Any | None = None,  # BuildIdentityJob — Layer A 前置
         mainline_state_job: Any | None = None,  # BuildMainlineStateJob — Layer B 前置
+        cycle_judgement_job: Any | None = None,  # BuildCycleJudgementJob — Layer B 前置
     ) -> None:
         self._read_port = read_port
         self._write_port = write_port
@@ -63,6 +64,7 @@ class BuildPostMarketRecapJob:
         self._tracking_service = tracking_service or StrongStockTrackingService()
         self._identity_job = identity_job
         self._mainline_state_job = mainline_state_job
+        self._cycle_judgement_job = cycle_judgement_job
 
     @staticmethod
     def _d(value: Any) -> Decimal:
@@ -300,6 +302,13 @@ class BuildPostMarketRecapJob:
         )
 
         # ── Step 3.5: Layer A/B 前置（新链自闭环）──
+        # 执行顺序: Cycle → Identity → MainlineState
+        if self._cycle_judgement_job is not None:
+            await self._cycle_judgement_job.execute(
+                trade_date=trade_date,
+                batch_id=batch_id,
+                trace_id=trace_id,
+            )
         if self._identity_job is not None:
             await self._identity_job.execute(
                 trade_date=trade_date,

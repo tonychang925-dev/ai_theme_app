@@ -1,5 +1,6 @@
 """Application-level jobs entrypoint."""
 
+from .build_cycle_judgement_job import BuildCycleJudgementJob
 from .build_daily_snapshot_job import BuildDailySnapshotJob
 from .build_identity_job import BuildIdentityJob
 from .build_mainline_state_job import BuildMainlineStateJob
@@ -9,6 +10,7 @@ from .run_quality_gate_job import RunQualityGateJob
 from .run_reconciliation_job import RunReconciliationJob
 
 __all__ = [
+    "BuildCycleJudgementJob",
     "BuildDailySnapshotJob",
     "BuildIdentityJob",
     "BuildMainlineStateJob",
