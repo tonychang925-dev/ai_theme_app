@@ -33,7 +33,7 @@
     "color-when-multi-clauding": 15,
     "subagent-fanout-nudge": 18
   },
-  "promptQueueUseCount": 126,
+  "promptQueueUseCount": 128,
   "cachedGrowthBookFeatures": {
     "tengu_pewter_ledger": "OFF",
     "tengu_read_dedup_killswitch": false,

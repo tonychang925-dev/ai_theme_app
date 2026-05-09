@@ -25,9 +25,11 @@ function nowText() {
 
 export function RealtimeCollectorPage() {
   const [running, setRunning] = useState<"unknown" | "up" | "down">("unknown");
-  const [busy, setBusy] = useState(false);
+  const [mainBusy, setMainBusy] = useState(false);
+  const [jyhfBusy, setJyhfBusy] = useState(false);
   const [statusResult, setStatusResult] = useState<RealtimeCollectorCommandResult | null>(null);
   const [jyhfStatus, setJyhfStatus] = useState<JyhfCdpCollectorStatus | null>(null);
+  const [jyhfError, setJyhfError] = useState<string | null>(null);
   const [logs, setLogs] = useState<string[]>([]);
   const [jyhfLogs, setJyhfLogs] = useState<string[]>([]);
   const [output, setOutput] = useState<string[]>([]);
@@ -71,6 +73,7 @@ export function RealtimeCollectorPage() {
   async function refreshJyhfCdpStatus() {
     const result = await fetchJyhfCdpCollectorStatus();
     setJyhfStatus(result);
+    setJyhfError(null);
     return result;
   }
 
@@ -94,7 +97,9 @@ export function RealtimeCollectorPage() {
       .catch(() => {
         setRunning("down");
       });
-    refreshJyhfCdpStatus().catch(() => undefined);
+    refreshJyhfCdpStatus().catch((err) => {
+      setJyhfError(err instanceof Error ? err.message : "JYHF-CDP 服务未连接");
+    });
     refreshJyhfCdpLogs().catch(() => undefined);
   }, []);
 
@@ -111,7 +116,9 @@ export function RealtimeCollectorPage() {
       if (running === "up") {
         refreshLogs().catch(() => undefined);
       }
-      refreshJyhfCdpStatus().catch(() => undefined);
+      refreshJyhfCdpStatus().catch((err) => {
+        setJyhfError(err instanceof Error ? err.message : "JYHF-CDP 服务未连接");
+      });
       refreshJyhfCdpLogs().catch(() => undefined);
     }, 8000);
     return () => window.clearInterval(timer);
@@ -127,13 +134,13 @@ export function RealtimeCollectorPage() {
     const panel = terminalRef.current;
     if (!panel) return;
     panel.scrollTop = panel.scrollHeight;
-  }, [logs, output]);
+  }, [logs, jyhfLogs, output]);
 
   async function handleStart() {
-    setBusy(true);
+    setMainBusy(true);
     if (running === "up") {
       append("实时采集链路已在运行，跳过重复启动");
-      setBusy(false);
+      setMainBusy(false);
       return;
     }
     append("开始启动实时事件采集链路...");
@@ -158,12 +165,12 @@ export function RealtimeCollectorPage() {
         append(message.startsWith("启动失败:") ? message : `启动失败: ${message}`);
       }
     } finally {
-      setBusy(false);
+      setMainBusy(false);
     }
   }
 
   async function handleStop() {
-    setBusy(true);
+    setMainBusy(true);
     append("开始停止实时事件采集链路...");
     try {
       const result = await stopRealtimeCollector({ force: false, with_frontend: false });
@@ -174,12 +181,12 @@ export function RealtimeCollectorPage() {
       const message = err instanceof Error ? err.message : "停止失败";
       append(message.startsWith("停止失败:") ? message : `停止失败: ${message}`);
     } finally {
-      setBusy(false);
+      setMainBusy(false);
     }
   }
 
   async function handleRefresh() {
-    setBusy(true);
+    setMainBusy(true);
     try {
       await refreshStatus();
       await refreshLogs();
@@ -188,12 +195,12 @@ export function RealtimeCollectorPage() {
       const message = err instanceof Error ? err.message : "刷新失败";
       append(`刷新失败: ${message}`);
     } finally {
-      setBusy(false);
+      setMainBusy(false);
     }
   }
 
   async function handleStartJyhfCdp() {
-    setBusy(true);
+    setJyhfBusy(true);
     append("开始启动 JYHF DOM 采集器...");
     try {
       const result = await startJyhfCdpCollector();
@@ -204,12 +211,12 @@ export function RealtimeCollectorPage() {
       const message = err instanceof Error ? err.message : "启动失败";
       append(message.startsWith("JYHF-CDP 启动失败:") ? message : `JYHF-CDP 启动失败: ${message}`);
     } finally {
-      setBusy(false);
+      setJyhfBusy(false);
     }
   }
 
   async function handleStopJyhfCdp() {
-    setBusy(true);
+    setJyhfBusy(true);
     append("开始停止 JYHF DOM 采集器...");
     try {
       const result = await stopJyhfCdpCollector();
@@ -220,12 +227,12 @@ export function RealtimeCollectorPage() {
       const message = err instanceof Error ? err.message : "停止失败";
       append(message.startsWith("JYHF-CDP 停止失败:") ? message : `JYHF-CDP 停止失败: ${message}`);
     } finally {
-      setBusy(false);
+      setJyhfBusy(false);
     }
   }
 
   async function handleRefreshJyhfCdp() {
-    setBusy(true);
+    setJyhfBusy(true);
     try {
       await refreshJyhfCdpStatus();
       await refreshJyhfCdpLogs();
@@ -234,7 +241,7 @@ export function RealtimeCollectorPage() {
       const message = err instanceof Error ? err.message : "刷新失败";
       append(`JYHF-CDP 刷新失败: ${message}`);
     } finally {
-      setBusy(false);
+      setJyhfBusy(false);
     }
   }
 
@@ -267,7 +274,7 @@ export function RealtimeCollectorPage() {
             </div>
             <div>
               <span className="metric-label">执行状态</span>
-              <strong>{busy ? "执行中" : "空闲"}</strong>
+              <strong>{mainBusy ? "执行中" : "空闲"}</strong>
             </div>
             <div>
               <span className="metric-label">来源</span>
@@ -275,8 +282,8 @@ export function RealtimeCollectorPage() {
             </div>
           </div>
           <div className="collection-action-row">
-            <button type="button" className={`tag tag-button ${running === "down" ? "tag-active" : ""}`} onClick={handleStart} disabled={busy}>
-              {busy ? (
+            <button type="button" className={`tag tag-button ${running === "down" ? "tag-active" : ""}`} onClick={handleStart} disabled={mainBusy}>
+              {mainBusy ? (
                 <span className="screener-run-inline">
                   <span className="screener-spinner" />
                   处理中...
@@ -285,8 +292,8 @@ export function RealtimeCollectorPage() {
                 "启动实时采集"
               )}
             </button>
-            <button type="button" className={`tag tag-button ${running === "up" ? "tag-active" : ""}`} onClick={handleStop} disabled={busy}>
-              {busy ? (
+            <button type="button" className={`tag tag-button ${running === "up" ? "tag-active" : ""}`} onClick={handleStop} disabled={mainBusy}>
+              {mainBusy ? (
                 <span className="screener-run-inline">
                   <span className="screener-spinner" />
                   处理中...
@@ -295,8 +302,8 @@ export function RealtimeCollectorPage() {
                 "停止实时采集"
               )}
             </button>
-            <button type="button" className="tag tag-button" onClick={handleRefresh} disabled={busy}>
-              {busy ? (
+            <button type="button" className="tag tag-button" onClick={handleRefresh} disabled={mainBusy}>
+              {mainBusy ? (
                 <span className="screener-run-inline">
                   <span className="screener-spinner" />
                   处理中...
@@ -306,7 +313,7 @@ export function RealtimeCollectorPage() {
               )}
             </button>
             <span className="collection-status-indicator">
-              {busy
+              {mainBusy
                 ? "⏳ 正在执行，请稍候..."
                 : running === "up"
                   ? "🟢 采集运行中"
@@ -360,17 +367,21 @@ export function RealtimeCollectorPage() {
             </div>
           </div>
           <div className="collection-action-row">
-            <button type="button" className={`tag tag-button ${jyhfCollectorRunning ? "tag-active" : ""}`} onClick={handleStartJyhfCdp} disabled={busy || jyhfCollectorRunning}>
+            <button type="button" className={`tag tag-button ${jyhfCollectorRunning ? "tag-active" : ""}`} onClick={handleStartJyhfCdp} disabled={jyhfBusy || jyhfCollectorRunning}>
               启动 JYHF DOM 采集
             </button>
-            <button type="button" className="tag tag-button" onClick={handleStopJyhfCdp} disabled={busy || !jyhfCollectorRunning}>
+            <button type="button" className="tag tag-button" onClick={handleStopJyhfCdp} disabled={jyhfBusy || !jyhfCollectorRunning}>
               停止 JYHF DOM 采集
             </button>
-            <button type="button" className="tag tag-button" onClick={handleRefreshJyhfCdp} disabled={busy}>
+            <button type="button" className="tag tag-button" onClick={handleRefreshJyhfCdp} disabled={jyhfBusy}>
               刷新 JYHF 状态
             </button>
             <span className="collection-status-indicator">
-              {jyhfStatus?.last_error ? `⚠ ${jyhfStatus.last_error}` : "仅控制采集器，不写入情报台"}
+              {jyhfError
+                ? `⚠ JYHF-CDP 服务未连接：${jyhfError}`
+                : jyhfStatus?.last_error
+                  ? `⚠ ${jyhfStatus.last_error}`
+                  : "仅控制采集器，不写入情报台"}
             </span>
           </div>
         </section>
