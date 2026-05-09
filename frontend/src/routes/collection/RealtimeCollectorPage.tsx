@@ -1,9 +1,14 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
+  fetchJyhfCdpCollectorLogs,
+  fetchJyhfCdpCollectorStatus,
   fetchRealtimeCollectorLogs,
   fetchRealtimeCollectorStatus,
+  startJyhfCdpCollector,
   startRealtimeCollector,
+  stopJyhfCdpCollector,
   stopRealtimeCollector,
+  type JyhfCdpCollectorStatus,
   type RealtimeCollectorCommandResult,
 } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
@@ -22,7 +27,9 @@ export function RealtimeCollectorPage() {
   const [running, setRunning] = useState<"unknown" | "up" | "down">("unknown");
   const [busy, setBusy] = useState(false);
   const [statusResult, setStatusResult] = useState<RealtimeCollectorCommandResult | null>(null);
+  const [jyhfStatus, setJyhfStatus] = useState<JyhfCdpCollectorStatus | null>(null);
   const [logs, setLogs] = useState<string[]>([]);
+  const [jyhfLogs, setJyhfLogs] = useState<string[]>([]);
   const [output, setOutput] = useState<string[]>([]);
   const terminalRef = useRef<HTMLDivElement | null>(null);
   const initializedRef = useRef(false);
@@ -61,6 +68,17 @@ export function RealtimeCollectorPage() {
     }
   }
 
+  async function refreshJyhfCdpStatus() {
+    const result = await fetchJyhfCdpCollectorStatus();
+    setJyhfStatus(result);
+    return result;
+  }
+
+  async function refreshJyhfCdpLogs() {
+    const result = await fetchJyhfCdpCollectorLogs(200);
+    setJyhfLogs((result.lines ?? []).slice(-500));
+  }
+
   useEffect(() => {
     if (initializedRef.current) return;
     initializedRef.current = true;
@@ -76,6 +94,8 @@ export function RealtimeCollectorPage() {
       .catch(() => {
         setRunning("down");
       });
+    refreshJyhfCdpStatus().catch(() => undefined);
+    refreshJyhfCdpLogs().catch(() => undefined);
   }, []);
 
   useEffect(() => {
@@ -91,6 +111,8 @@ export function RealtimeCollectorPage() {
       if (running === "up") {
         refreshLogs().catch(() => undefined);
       }
+      refreshJyhfCdpStatus().catch(() => undefined);
+      refreshJyhfCdpLogs().catch(() => undefined);
     }, 8000);
     return () => window.clearInterval(timer);
   }, [running]);
@@ -170,7 +192,57 @@ export function RealtimeCollectorPage() {
     }
   }
 
-  const mergedLogs = useMemo(() => [...output, ...logs], [output, logs]);
+  async function handleStartJyhfCdp() {
+    setBusy(true);
+    append("开始启动 JYHF DOM 采集器...");
+    try {
+      const result = await startJyhfCdpCollector();
+      append(`JYHF-CDP 启动完成: rc=${result.return_code}`);
+      await refreshJyhfCdpStatus();
+      await refreshJyhfCdpLogs();
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "启动失败";
+      append(message.startsWith("JYHF-CDP 启动失败:") ? message : `JYHF-CDP 启动失败: ${message}`);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function handleStopJyhfCdp() {
+    setBusy(true);
+    append("开始停止 JYHF DOM 采集器...");
+    try {
+      const result = await stopJyhfCdpCollector();
+      append(`JYHF-CDP 停止完成: rc=${result.return_code}`);
+      await refreshJyhfCdpStatus();
+      await refreshJyhfCdpLogs();
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "停止失败";
+      append(message.startsWith("JYHF-CDP 停止失败:") ? message : `JYHF-CDP 停止失败: ${message}`);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function handleRefreshJyhfCdp() {
+    setBusy(true);
+    try {
+      await refreshJyhfCdpStatus();
+      await refreshJyhfCdpLogs();
+      append("已刷新 JYHF-CDP 状态与日志");
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "刷新失败";
+      append(`JYHF-CDP 刷新失败: ${message}`);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  const mergedLogs = useMemo(() => {
+    const jyhfBlock = jyhfLogs.length ? ["===== jyhf_cdp_service.log =====", ...jyhfLogs, ""] : [];
+    return [...output, ...jyhfBlock, ...logs];
+  }, [output, jyhfLogs, logs]);
+  const jyhfCollectorRunning = Boolean(jyhfStatus?.collector_running ?? jyhfStatus?.running);
 
   return (
     <div className="workspace-page">
@@ -241,6 +313,64 @@ export function RealtimeCollectorPage() {
                   : running === "down"
                     ? "🔴 采集已停止"
                     : "⚪ 状态检查中"}
+            </span>
+          </div>
+        </section>
+
+        <section className="workspace-card collection-debug-control">
+          <span className="metric-label section-title">JYHF DOM 采集源</span>
+          <div className="collection-debug-status">
+            <div>
+              <span className="metric-label">采集器</span>
+              <strong>{jyhfCollectorRunning ? "运行中" : "未运行"}</strong>
+            </div>
+            <div>
+              <span className="metric-label">JYHF App</span>
+              <strong>{jyhfStatus?.app_running ? "已启动" : "未确认"}</strong>
+            </div>
+            <div>
+              <span className="metric-label">CDP</span>
+              <strong>{jyhfStatus?.cdp_connected ? `已连接:${jyhfStatus.cdp_port}` : `未连接:${jyhfStatus?.cdp_port ?? 9223}`}</strong>
+            </div>
+            <div>
+              <span className="metric-label">当前页面</span>
+              <strong>{jyhfStatus?.current_tab || jyhfStatus?.current_route || "--"}</strong>
+            </div>
+            <div>
+              <span className="metric-label">最近采集</span>
+              <strong>{jyhfStatus?.last_capture_at || "--"}</strong>
+            </div>
+            <div>
+              <span className="metric-label">最近事件</span>
+              <strong>{jyhfStatus?.last_event_at || "--"}</strong>
+            </div>
+          </div>
+          <div className="collection-debug-status">
+            <div>
+              <span className="metric-label">累计采集</span>
+              <strong>{jyhfStatus?.capture_count_total ?? 0}</strong>
+            </div>
+            <div>
+              <span className="metric-label">新增/重复</span>
+              <strong>{jyhfStatus ? `${jyhfStatus.new_event_count_total}/${jyhfStatus.duplicate_count_total}` : "0/0"}</strong>
+            </div>
+            <div>
+              <span className="metric-label">解析失败</span>
+              <strong>{jyhfStatus?.parse_error_count_total ?? 0}</strong>
+            </div>
+          </div>
+          <div className="collection-action-row">
+            <button type="button" className={`tag tag-button ${jyhfCollectorRunning ? "tag-active" : ""}`} onClick={handleStartJyhfCdp} disabled={busy || jyhfCollectorRunning}>
+              启动 JYHF DOM 采集
+            </button>
+            <button type="button" className="tag tag-button" onClick={handleStopJyhfCdp} disabled={busy || !jyhfCollectorRunning}>
+              停止 JYHF DOM 采集
+            </button>
+            <button type="button" className="tag tag-button" onClick={handleRefreshJyhfCdp} disabled={busy}>
+              刷新 JYHF 状态
+            </button>
+            <span className="collection-status-indicator">
+              {jyhfStatus?.last_error ? `⚠ ${jyhfStatus.last_error}` : "仅控制采集器，不写入情报台"}
             </span>
           </div>
         </section>

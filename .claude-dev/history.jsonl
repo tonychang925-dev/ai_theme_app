@@ -451,3 +451,14 @@
 {"display":"请确认现在前端展示的“强势股跟踪”池是新链逻辑的数据结果","pastedContents":{},"timestamp":1778311632043,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
 {"display":"现在需要用新链逻辑重建4/15-5/6日的所有A/B/C/C 层的数据","pastedContents":{},"timestamp":1778312031494,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
 {"display":"A/B/C/D层的数据重构","pastedContents":{},"timestamp":1778312049462,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"查看了5/8日的前7个交易日的强势股池的数量高达168只，其中4/27日一天的强势股就高达59只，请核查是否正常！理论上，一天不可能有这么多入围到强势股池的！","pastedContents":{},"timestamp":1778313766853,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"为什么我这里看到5/7日是70只？","pastedContents":{},"timestamp":1778315158667,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"我刚才测了4/27日的“ai选股”的弱转强策略，结果是0！请分析原因。","pastedContents":{},"timestamp":1778315679706,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"我说的是点击“盘后选股”之后，弱转强的候选结果输出为0！不是说强势股池的结果！","pastedContents":{},"timestamp":1778316058487,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"也就是D1层的结果4/27日盘后为0！","pastedContents":{},"timestamp":1778316096182,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"绝不允许任何回退、降级处理！！","pastedContents":{},"timestamp":1778316224791,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"必须从根源上找到问题，而不是回避！！","pastedContents":{},"timestamp":1778316245189,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"请核查4/27日的前7个交易日的强势股池的数量，为什么1个都进不了D1？！","pastedContents":{},"timestamp":1778316312750,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"不是刚才重建了A/B/C层数据了吗？怎么4/27只有一个主线有数据？！","pastedContents":{},"timestamp":1778316803574,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"绝不允许擅自修改限定条件，必须从根源上分析问题，而不是人为的降低门槛或者高回退绕开问题！！！","pastedContents":{},"timestamp":1778316922751,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"不应该只有4/27日，是4/27日的前7个交易日！","pastedContents":{},"timestamp":1778317177506,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
