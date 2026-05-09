@@ -50,6 +50,8 @@ class BuildPostMarketRecapJob:
         cache_port: StockCachePort | None = None,
         candidate_service: W2SCandidateService | None = None,
         tracking_service: StrongStockTrackingService | None = None,
+        identity_job: Any | None = None,  # BuildIdentityJob — Layer A 前置
+        mainline_state_job: Any | None = None,  # BuildMainlineStateJob — Layer B 前置
     ) -> None:
         self._read_port = read_port
         self._write_port = write_port
@@ -59,6 +61,8 @@ class BuildPostMarketRecapJob:
         self._cache_writer = SnapshotCacheWriter(cache_port)
         self._candidate_service = candidate_service or W2SCandidateService()
         self._tracking_service = tracking_service or StrongStockTrackingService()
+        self._identity_job = identity_job
+        self._mainline_state_job = mainline_state_job
 
     @staticmethod
     def _d(value: Any) -> Decimal:
@@ -294,6 +298,21 @@ class BuildPostMarketRecapJob:
             {s.subject_key for s in seed_candidates if s.subject_key}
             | {str(row.get("subject_key") or "") for row in refresh_rows_raw if str(row.get("subject_key") or "")}
         )
+
+        # ── Step 3.5: Layer A/B 前置（新链自闭环）──
+        if self._identity_job is not None:
+            await self._identity_job.execute(
+                trade_date=trade_date,
+                snapshot_version="recap_identity.v1",
+                batch_id=batch_id,
+                trace_id=trace_id,
+            )
+        if self._mainline_state_job is not None:
+            await self._mainline_state_job.execute(
+                trade_date=trade_date,
+                batch_id=batch_id,
+                trace_id=trace_id,
+            )
 
         # Step 4: 预取评分所需的外部数据
         identities_raw = await self._read_port.get_mainline_identity_by_subject_keys(

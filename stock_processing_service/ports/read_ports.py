@@ -85,6 +85,10 @@ class StockReadPort(Protocol):
         self, trade_date: date, subject_keys: list[str]
     ) -> list[dict[str, Any]]: ...
 
+    async def get_prior_mainline_state_daily(
+        self, trade_date: date
+    ) -> list[dict[str, Any]]: ...
+
     async def get_subject_board_stats(
         self, trade_date: date
     ) -> list[dict[str, Any]]: ...

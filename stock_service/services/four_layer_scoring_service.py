@@ -300,9 +300,6 @@ class FourLayerScoringService:
         divergence_score = self.calculate_divergence_score(mainline_strength_score, sub_scores.repair_window_score)
         repair_score = self.calculate_repair_score(divergence_score, previous_strength_score)
 
-        # 计算最终主线存活状态
-        final_mainline_alive = is_main_theme
-
         # 确定周期状态（简化版，基于证据的状态机）
         if fade_confirmed_score >= 80.0:
             final_cycle_state = "fade_confirmed"
@@ -318,6 +315,11 @@ class FourLayerScoringService:
             final_cycle_state = "acceleration"
         else:
             final_cycle_state = "start" if is_main_theme else "divergence"
+
+        # ── final_mainline_alive ──
+        # 设计文档 §25.3：final_mainline_alive = NOT fade_confirmed
+        # 不等于 is_main_theme。强度不够 ≠ 主线死亡。
+        final_mainline_alive = (final_cycle_state != "fade_confirmed")
 
         return {
             "final_mainline_alive": final_mainline_alive,

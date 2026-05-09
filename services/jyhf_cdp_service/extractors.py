@@ -1,24 +1,44 @@
 from __future__ import annotations
 
 import json
+import time
 
 from services.jyhf_cdp_service.cdp_client import CDPClient
 
 
 class NewEventExtractor:
     def prepare(self, cdp: CDPClient) -> None:
-        cdp.evaluate(
-            "document.querySelector('#app').__vue_app__.config.globalProperties.$router.push('/')",
+        route_result = cdp.evaluate(
+            """
+            (function() {
+                try {
+                    var app = document.querySelector('#app');
+                    if (app && app.__vue_app__) {
+                        app.__vue_app__.config.globalProperties.$router.push('/');
+                        return 'router_push';
+                    }
+                } catch (e) {}
+                window.location.hash = '#/';
+                return 'hash_push';
+            })()
+            """,
             timeout=8.0,
         )
+        time.sleep(4)
         result = cdp.evaluate(
             """
             (function() {
                 var all = document.querySelectorAll('*');
                 for (var i = 0; i < all.length; i++) {
                     if (all[i].textContent.trim() === '新事件' && all[i].children.length === 0) {
-                        all[i].click();
-                        return 'clicked';
+                        var node = all[i];
+                        for (var depth = 0; depth < 5 && node; depth++) {
+                            if (node.click) {
+                                node.click();
+                                return 'clicked_depth_' + depth;
+                            }
+                            node = node.parentElement;
+                        }
                     }
                 }
                 return 'not_found';
@@ -26,8 +46,9 @@ class NewEventExtractor:
             """,
             timeout=8.0,
         )
-        if result != "clicked":
-            raise RuntimeError(f"new event tab not found: {result}")
+        time.sleep(2)
+        if not str(result).startswith("clicked"):
+            raise RuntimeError(f"new event tab not found: route={route_result} click={result}")
 
     def read(self, cdp: CDPClient) -> tuple[list[dict], str, str]:
         raw = cdp.evaluate(
@@ -40,6 +61,8 @@ class NewEventExtractor:
                 var dateMatch = section.match(/\\d{4}-\\d{2}-\\d{2}/);
                 if (!dateMatch) return JSON.stringify({events: [], feed_date: '', body_text: text});
                 var feedText = section.substring(dateMatch.index);
+                // 修复 innerText 将 driver_desc 与 新闻来源 合并到同一行的问题
+                feedText = feedText.replace(/（新闻来源[：:]/g, '\\n（新闻来源：');
                 var lines = feedText.split('\\n');
                 var results = [];
                 var feedDate = '';

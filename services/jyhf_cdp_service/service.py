@@ -10,6 +10,7 @@ from services.jyhf_cdp_service.app_manager import JyhfAppManager
 from services.jyhf_cdp_service.cdp_client import CDPClient
 from services.jyhf_cdp_service.config import JyhfCdpServiceConfig
 from services.jyhf_cdp_service.extractors import NewEventExtractor
+from services.jyhf_cdp_service.intel_pusher import IntelPusher
 from services.jyhf_cdp_service.normalizer import JyhfEventNormalizer
 from services.jyhf_cdp_service.schemas import CollectorStatus
 from services.jyhf_cdp_service.sinks import RawEventJsonlSink
@@ -29,6 +30,7 @@ class JyhfCdpCollectorService:
         self._extractor = NewEventExtractor()
         self._normalizer = JyhfEventNormalizer()
         self._sink = RawEventJsonlSink(config.raw_event_dir)
+        self._intel_pusher = IntelPusher(config, logger) if config.allow_push_intel else None
         self._task: asyncio.Task | None = None
         self._stop_event = asyncio.Event()
         self._lifecycle_lock = asyncio.Lock()
@@ -131,10 +133,14 @@ class JyhfCdpCollectorService:
         capture_time = datetime.now(CN_TZ)
         if not raw_events or not feed_date:
             self._save_snapshot(body_text, "empty_or_missing_feed_date", capture_time)
+        if self._stop_event.is_set() or run_id != self._run_id:
+            return
         new_count = 0
         duplicate_count = 0
         last_event_at = None
         for raw in raw_events:
+            if self._stop_event.is_set() or run_id != self._run_id:
+                return
             event = self._normalizer.normalize(raw, feed_date=feed_date, capture_time=capture_time)
             last_event_at = self._format_event_datetime(event.trade_date, event.event_time) or last_event_at
             if self._dedup.seen(event.dedup_key):
@@ -143,10 +149,13 @@ class JyhfCdpCollectorService:
             self._sink.write(event)
             self._dedup.mark(event.dedup_key)
             new_count += 1
+            if self._intel_pusher:
+                self._intel_pusher.push(event)
 
         totals["capture_count_total"] = int(totals.get("capture_count_total") or 0) + len(raw_events)
         totals["new_event_count_total"] = int(totals.get("new_event_count_total") or 0) + new_count
         totals["duplicate_count_total"] = int(totals.get("duplicate_count_total") or 0) + duplicate_count
+        totals["pushed_to_stream_count_total"] = int(totals.get("pushed_to_stream_count_total") or 0) + new_count
         if self._stop_event.is_set() or run_id != self._run_id:
             return
         self._status.update(
@@ -161,6 +170,7 @@ class JyhfCdpCollectorService:
             capture_count_total=totals["capture_count_total"],
             new_event_count_total=totals["new_event_count_total"],
             duplicate_count_total=totals["duplicate_count_total"],
+            pushed_to_stream_count_total=totals["pushed_to_stream_count_total"],
             uptime_seconds=self._uptime_seconds(capture_time),
             last_error=None,
         )
