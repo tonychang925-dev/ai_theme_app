@@ -6,6 +6,7 @@ from typing import Any
 from stock_processing_service.application.jobs import (
     BuildDailySnapshotJob,
     BuildIdentityJob,
+    BuildMainlineStateJob,
     BuildPostMarketRecapJob,
     BuildPreMarketBriefJob,
     RunQualityGateJob,
@@ -37,6 +38,7 @@ from stock_processing_service.ports.database_gateway_stock_facade import Databas
 class StockProcessingContainer:
     build_strong_stock_tracking: BuildStrongStockTrackingUseCase
     build_daily_snapshot: BuildDailySnapshotJob
+    build_mainline_state: Any  # BuildMainlineStateJob
     build_post_market_recap: BuildPostMarketRecapJob
     build_pre_market_brief: BuildPreMarketBriefJob
     build_identity: BuildIdentityJob
@@ -69,12 +71,29 @@ def build_container(
             idempotency_port=idempotency_gateway,
             cache_port=cache_gateway,
         ),
+        build_mainline_state=(
+            _mainline_state_job := BuildMainlineStateJob(
+                read_port=theme_data_gateway,
+                write_port=stock_object_gateway,
+                event_port=event_gateway,
+            )
+        ),
+        build_identity=(
+            _identity_job := BuildIdentityJob(
+                read_port=theme_data_gateway,
+                write_port=stock_object_gateway,
+                event_port=event_gateway,
+                idempotency_port=idempotency_gateway,
+            )
+        ),
         build_post_market_recap=BuildPostMarketRecapJob(
             read_port=theme_data_gateway,
             write_port=stock_object_gateway,
             event_port=event_gateway,
             idempotency_port=idempotency_gateway,
             cache_port=cache_gateway,
+            identity_job=_identity_job,
+            mainline_state_job=_mainline_state_job,
         ),
         build_pre_market_brief=BuildPreMarketBriefJob(
             read_port=theme_data_gateway,
@@ -82,12 +101,6 @@ def build_container(
             event_port=event_gateway,
             idempotency_port=idempotency_gateway,
             cache_port=cache_gateway,
-        ),
-        build_identity=BuildIdentityJob(
-            read_port=theme_data_gateway,
-            write_port=stock_object_gateway,
-            event_port=event_gateway,
-            idempotency_port=idempotency_gateway,
         ),
         run_quality_gate=RunQualityGateJob(),
         run_reconciliation=RunReconciliationJob(),

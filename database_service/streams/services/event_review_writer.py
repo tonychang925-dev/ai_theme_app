@@ -140,16 +140,18 @@ class EventReviewWriter:
                 )
 
                 # 仅接收题材匹配链路产出的待复核事件，避免混入非匹配来源
+                # 同时接受 jyhf_cdp 来源的事件
                 source_type = str(payload.get("source_type") or "")
-                if source_type != "event_theme_map":
-                    logger.info(f"跳过事件 (非题材匹配来源): {message_id}, source_type={source_type or 'unknown'}")
+                source_channel = str(payload.get("source_channel") or "")
+                if source_type != "event_theme_map" and source_channel != "jyhf_cdp":
+                    logger.info(f"跳过事件 (非题材匹配/非jyhf_cdp来源): {message_id}, source_type={source_type or 'unknown'}, source_channel={source_channel or 'unknown'}")
                     self.stats["skipped"] += 1
                     processed_ids.append(message_id)
                     continue
 
-                # 提取事件信息
-                event_id = payload.get("original_event_id", "")
-                logger.info(f"提取事件ID: message_id={message_id}, original_event_id={event_id}, type={type(event_id)}")
+                # 提取事件信息 (兼容 event_theme_map 的 original_event_id 和 jyhf_cdp 的 item_id)
+                event_id = payload.get("original_event_id") or payload.get("item_id", "")
+                logger.info(f"提取事件ID: message_id={message_id}, event_id={event_id}, type={type(event_id)}")
                 if not event_id:
                     logger.warning(f"事件ID缺失: {message_id}")
                     self.stats["skipped"] += 1
@@ -183,13 +185,14 @@ class EventReviewWriter:
                     summary = f"事件 {event_id} 需要复核"
 
                 # 构建复核记录
+                review_source_channel = source_channel if source_channel == "jyhf_cdp" else "event_theme_matcher"
                 review_record = {
                     "event_id": self._extract_event_id_number(event_id),
                     "review_status": "waiting",
                     "proposed_theme_name": proposed_theme_name,
                     "proposed_theme_confidence": float(confidence),
                     "reason": summary[:500],  # 限制长度
-                    "source_channel": "event_theme_matcher",
+                    "source_channel": review_source_channel,
                     "created_at": datetime.now()
                 }
 

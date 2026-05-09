@@ -14,6 +14,10 @@ class JyhfCdpServiceConfig:
     interval_seconds: float = 20.0
     app_path: str = "/Applications/久赢恒丰.app"
     allow_push_intel: bool = False
+    redis_host: str = "127.0.0.1"
+    redis_port: int = 6379
+    redis_db: int = 0
+    redis_stream_feed: str = "stream:event:feed"
 
     @property
     def runtime_dir(self) -> Path:
@@ -50,5 +54,9 @@ def load_config() -> JyhfCdpServiceConfig:
         interval_seconds=float(os.getenv("JYHF_CDP_INTERVAL_SECONDS", "20")),
         app_path=str(os.getenv("JYHF_APP_PATH", "/Applications/久赢恒丰.app")),
         allow_push_intel=str(os.getenv("JYHF_CDP_PUSH_INTEL", "0")).lower() in {"1", "true", "yes", "on"},
+        redis_host=str(os.getenv("REDIS_HOST", "127.0.0.1")),
+        redis_port=int(os.getenv("REDIS_PORT", "6379")),
+        redis_db=int(os.getenv("REDIS_DB", "0")),
+        redis_stream_feed=str(os.getenv("JYHF_CDP_REDIS_STREAM_FEED", "stream:event:feed")),
     )
 

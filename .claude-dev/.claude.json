@@ -1,5 +1,5 @@
 {
-  "numStartups": 20,
+  "numStartups": 21,
   "hasSeenTasksHint": true,
   "tipsHistory": {
     "new-user-warmup": 9,
@@ -27,13 +27,14 @@
     "web-app": 8,
     "mobile-app": 9,
     "feedback-command": 9,
-    "permissions": 11,
+    "permissions": 21,
     "rename-conversation": 11,
     "custom-commands": 11,
     "color-when-multi-clauding": 15,
-    "subagent-fanout-nudge": 18
+    "subagent-fanout-nudge": 21
   },
-  "promptQueueUseCount": 128,
+  "promptQueueUseCount": 139,
+  "showExpandedTodos": true,
   "cachedGrowthBookFeatures": {
     "tengu_amber_flint": true,
     "tengu_lichen_compass": false,

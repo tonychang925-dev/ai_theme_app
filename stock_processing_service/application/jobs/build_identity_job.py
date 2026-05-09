@@ -222,6 +222,35 @@ class BuildIdentityJob:
 
         # Step 3: LLM review + decider + upgrade trigger（使用 cluster 修正后的 rule_is_main_theme）
 
+        # ── 预取主线存续继承所需的状态 ──
+        # 设计文档 §25.3：已确认主线只受生命周期降级管理（连续 fade_confirmed），
+        # 不因市场热度短期波动而降级。
+        prior_identity_map: dict[str, bool] = {}
+        prior_confirmed_map: dict[str, bool] = {}
+        if subject_keys:
+            raw_prior = await self._read_port.get_mainline_identity_by_subject_keys(
+                subject_keys, trade_date
+            )
+            for pr in (raw_prior or []):
+                sk = str(pr.get("subject_key") or "").strip()
+                if sk:
+                    prior_identity_map[sk] = bool(pr.get("is_main_theme"))
+                    prior_confirmed_map[sk] = (
+                        bool(pr.get("is_main_theme"))
+                        and str(pr.get("identity_status") or "") == "confirmed"
+                    )
+        cycle_alive_map: dict[str, bool] = {}
+        cycle_fade_map: dict[str, bool] = {}
+        if subject_keys:
+            raw_cycles = await self._read_port.get_mainline_cycle_by_subject_keys(
+                subject_keys, trade_date
+            )
+            for cy in (raw_cycles or []):
+                sk = str(cy.get("subject_key") or "").strip()
+                if sk:
+                    cycle_alive_map[sk] = bool(cy.get("final_mainline_alive"))
+                    cycle_fade_map[sk] = bool(cy.get("fade_confirmed"))
+
         # ── 预取 upgrade_trigger 所需的 prev_candidate 状态（等价旧链 DB 查询）──
         prev_candidate_map: dict[str, bool] = {}
         for subject_key in subject_keys:
@@ -246,6 +275,15 @@ class BuildIdentityJob:
             # P0-1 FIX: 重新绑定当前 subject 的 rule_row（第一轮循环的变量不能跨subject泄漏）
             rule_row = rule_inputs_by_subject.get(subject_key)
 
+            # ── 主线存续继承（§25.3）──
+            # 已确认主线 + 当前未硬退潮 → rule_is_main_theme 强制为 True
+            # 后续 LLM + decider 路径正常流转
+            inherited = (
+                prior_confirmed_map.get(subject_key, False)
+                and cycle_alive_map.get(subject_key, False)
+                and not cycle_fade_map.get(subject_key, False)
+            )
+
             # 若 cluster bootstrap 已直确认为 confirmed，跳过 LLM
             if ci and ci.identity_status == "confirmed":
                 llm_verdict = self._llm_review_service.review_with_rule(
@@ -265,7 +303,8 @@ class BuildIdentityJob:
                 )
             else:
                 # 正常路径：rule_is_main_theme 可能已被 cluster compensation 修改
-                rule_is_mt = ci.rule_is_main_theme if ci else rule.rule_is_main_theme
+                # 若主线存续继承触发，强制 rule_is_main_theme=True
+                rule_is_mt = True if inherited else (ci.rule_is_main_theme if ci else rule.rule_is_main_theme)
                 llm_verdict = self._llm_review_service.review_with_rule(
                     composite_score=rule.composite_score,
                     one_day_tour_flag=rule.one_day_tour_flag,

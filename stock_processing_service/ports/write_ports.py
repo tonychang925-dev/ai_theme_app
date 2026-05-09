@@ -39,6 +39,10 @@ class AlgorithmStateWritePort(Protocol):
 
     async def upsert_theme_cycle_judgement_v2_rows(self, rows: list[dict[str, Any]]) -> int: ...
 
+    async def upsert_mainline_state_daily_rows(self, rows: list[dict[str, Any]]) -> int: ...
+
+    async def upsert_mainline_state_transition_rows(self, rows: list[dict[str, Any]]) -> int: ...
+
 
 class StrongWatchWritePort(Protocol):
     """Layer C 强势池写入端口。"""

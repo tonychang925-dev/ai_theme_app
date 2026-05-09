@@ -100,6 +100,13 @@ class DBThemeDataGateway:
         rows = await self._db.get_mainline_cycle_by_subject_keys(subject_keys, trade_date)
         return [dict(row) for row in rows]
 
+    async def get_prior_mainline_state_daily(self, trade_date: date) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_prior_mainline_state_daily", None)
+        if callable(fn):
+            rows = await fn(trade_date)
+            return [self._as_dict(r) for r in rows]
+        return []
+
     async def get_prior_strong_watch_pool_rows(
         self,
         trade_date: date,

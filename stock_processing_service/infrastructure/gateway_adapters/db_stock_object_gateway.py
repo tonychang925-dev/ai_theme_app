@@ -158,3 +158,15 @@ class DBStockObjectGateway:
             return []
         payload = row.get("payload") or {}
         return payload.get("theme_stock_leaderboard_rows", [])
+
+    async def upsert_mainline_state_daily_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._db, "upsert_mainline_state_daily_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        raise RuntimeError("DatabaseGateway missing upsert_mainline_state_daily_rows")
+
+    async def upsert_mainline_state_transition_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._db, "upsert_mainline_state_transition_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        raise RuntimeError("DatabaseGateway missing upsert_mainline_state_transition_rows")

@@ -2022,6 +2022,22 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             rows = await conn.fetch(sql, trade_date, subject_keys)
         return [dict(r) for r in rows]
 
+    async def get_prior_mainline_state_daily(self, trade_date) -> List[Dict[str, Any]]:
+        """读取前一交易日 mainline_state_daily 状态快照（仅主线）。"""
+        sql = """
+        WITH last_trade_date AS (
+            SELECT MAX(trade_date) AS prior_date
+            FROM mainline_state_daily
+            WHERE trade_date < $1::date
+        )
+        SELECT * FROM mainline_state_daily msd
+        JOIN last_trade_date ltd ON msd.trade_date = ltd.prior_date
+        WHERE msd.is_mainline = TRUE
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+        return [dict(r) for r in rows]
+
     async def get_subject_board_stats(
         self, trade_date
     ) -> List[Dict[str, Any]]:
@@ -5276,6 +5292,89 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         if isinstance(v, str):
             return v.strip().lower() in {"1", "true", "t", "yes", "y"}
         return bool(v)
+
+    async def upsert_mainline_state_daily_rows(self, rows: list[dict[str, Any]]) -> int:
+        """写入 mainline_state_daily 状态快照。"""
+        sql = """
+        INSERT INTO mainline_state_daily (
+            trade_date, subject_key, theme_name,
+            state, state_score, is_mainline,
+            mainline_strength_score, fade_watch_score, fade_confirmed_score,
+            divergence_score, repair_score,
+            evidence_json, source_version, created_at, updated_at
+        ) VALUES (
+            $1, $2, $3,
+            $4, $5, $6,
+            $7, $8, $9,
+            $10, $11,
+            $12::jsonb, $13, now(), now()
+        )
+        ON CONFLICT (trade_date, subject_key) DO UPDATE SET
+            theme_name = EXCLUDED.theme_name,
+            state = EXCLUDED.state,
+            state_score = EXCLUDED.state_score,
+            is_mainline = EXCLUDED.is_mainline,
+            mainline_strength_score = EXCLUDED.mainline_strength_score,
+            fade_watch_score = EXCLUDED.fade_watch_score,
+            fade_confirmed_score = EXCLUDED.fade_confirmed_score,
+            divergence_score = EXCLUDED.divergence_score,
+            repair_score = EXCLUDED.repair_score,
+            evidence_json = EXCLUDED.evidence_json,
+            updated_at = now()
+        """
+        count = 0
+        async with self.pool.acquire() as conn:
+            for row in rows:
+                await conn.execute(sql,
+                    row.get("trade_date"), row.get("subject_key"), row.get("theme_name"),
+                    row.get("state"), row.get("state_score"), row.get("is_mainline"),
+                    row.get("mainline_strength_score"), row.get("fade_watch_score"),
+                    row.get("fade_confirmed_score"), row.get("divergence_score"),
+                    row.get("repair_score"),
+                    _safe_json_dumps(row.get("evidence_json") or {}),
+                    row.get("source_version", "mainline_state_transition.v2"),
+                )
+                count += 1
+        return count
+
+    async def upsert_mainline_state_transition_rows(self, rows: list[dict[str, Any]]) -> int:
+        """写入 mainline_state_transition 迁移记录。"""
+        sql = """
+        INSERT INTO mainline_state_transition (
+            trade_date, subject_key, theme_name,
+            from_state, to_state, transition_type,
+            from_score, to_score, confidence,
+            trigger_flags, evidence_json, source_version, created_at
+        ) VALUES (
+            $1, $2, $3,
+            $4, $5, $6,
+            $7, $8, $9,
+            $10::jsonb, $11::jsonb, $12, now()
+        )
+        ON CONFLICT (trade_date, subject_key) DO UPDATE SET
+            theme_name = EXCLUDED.theme_name,
+            from_state = EXCLUDED.from_state,
+            to_state = EXCLUDED.to_state,
+            transition_type = EXCLUDED.transition_type,
+            from_score = EXCLUDED.from_score,
+            to_score = EXCLUDED.to_score,
+            confidence = EXCLUDED.confidence,
+            trigger_flags = EXCLUDED.trigger_flags,
+            evidence_json = EXCLUDED.evidence_json
+        """
+        count = 0
+        async with self.pool.acquire() as conn:
+            for row in rows:
+                await conn.execute(sql,
+                    row.get("trade_date"), row.get("subject_key"), row.get("theme_name"),
+                    row.get("from_state"), row.get("to_state"), row.get("transition_type"),
+                    row.get("from_score"), row.get("to_score"), row.get("confidence"),
+                    _safe_json_dumps(row.get("trigger_flags") or []),
+                    _safe_json_dumps(row.get("evidence_json") or {}),
+                    row.get("source_version", "mainline_state_transition.v2"),
+                )
+                count += 1
+        return count
 
     async def upsert_theme_cycle_judgement_v2_rows(self, rows: list[dict[str, Any]]) -> int:
         """Write corrected cycle judgements to theme_cycle_judgement_v2.
