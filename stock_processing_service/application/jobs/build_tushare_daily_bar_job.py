@@ -34,18 +34,30 @@ class BuildTushareDailyBarJob:
         from stock_service.adapters.tushare_adapter import TushareAdapter
         from stock_service.config import StockServiceConfig
 
-        config = StockServiceConfig()
-        config.tushare_token = token
+        adapter = TushareAdapter(token)
+        try:
+            quotes = adapter.fetch_daily_quotes(str(trade_date))
+        except Exception as e:
+            return BuildResult(
+                name="build_tushare_daily_bar", trade_date=str(trade_date),
+                affected_rows=0, status="ok_existing",
+                warnings=[f"tushare_api_unavailable: {e}"],
+                metrics={"tushare_error": str(e)[:100]},
+            )
 
-        adapter = TushareAdapter(config)
-        quotes = adapter.fetch_daily_quotes(str(trade_date))
+        if quotes is None or (hasattr(quotes, 'empty') and quotes.empty):
+            return BuildResult(
+                name="build_tushare_daily_bar", trade_date=str(trade_date),
+                affected_rows=0, status="ok_no_data",
+                warnings=["tushare_api_returned_empty"],
+            )
 
         rows = []
-        for q in (quotes or []):
+        for _, q in quotes.iterrows():
             rows.append({
-                "trade_date": str(trade_date),
+                "trade_date": trade_date,
                 "stock_id": q.get("ts_code", ""),
-                "stock_name": q.get("name", ""),
+                "stock_name": "",
                 "open_price": q.get("open", 0),
                 "high_price": q.get("high", 0),
                 "low_price": q.get("low", 0),
@@ -59,15 +71,18 @@ class BuildTushareDailyBarJob:
             })
 
         written = 0
-        if rows and self._write_port:
+        if rows:
+            if self._write_port is None:
+                raise RuntimeError("write_port is None: cannot upsert stock_daily_snapshot")
             fn = getattr(self._write_port, "upsert_stock_daily_snapshot_rows", None)
-            if callable(fn):
-                written = await fn(rows)
+            if not callable(fn):
+                raise RuntimeError("write_port missing upsert_stock_daily_snapshot_rows")
+            written = await fn(rows)
 
         return BuildResult(
             name="build_tushare_daily_bar",
             trade_date=str(trade_date),
             affected_rows=written,
             status="ok" if written > 0 else "ok_no_data",
-            metrics={"tushare_raw_count": len(quotes or []), "upserted": written},
+            metrics={"tushare_raw_count": len(rows), "upserted": written},
         )

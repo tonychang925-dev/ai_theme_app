@@ -95,15 +95,17 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
         AuctionWatchUniverseRunner,
         BuildDragonTigerObjectRunner,
         BuildStockAbnormalSignalRunner,
+        PostMarketRecapReportRunner,
         PostMarketRecapRunner,
         ScriptCommandRunner,
         TushareKlineRunner,
     )
     registry.register("script.default", ScriptCommandRunner())
     registry.register("recap.snapshot", PostMarketRecapRunner())
+    registry.register("recap.report", PostMarketRecapReportRunner())
     registry.register("abnormal.signal", BuildStockAbnormalSignalRunner())
     registry.register("dragon_tiger.object", BuildDragonTigerObjectRunner())
-    registry.register("tushare.kline", TushareKlineRunner())
+    registry.register("tushare.daily_bar", TushareKlineRunner())
     registry.register("auction.watch_universe", AuctionWatchUniverseRunner())
     registry.register("auction.snapshot_all", AuctionSnapshotRunner(universe_source="auction_watch_universe"))
     registry.register("auction.snapshot_w2s", AuctionSnapshotRunner(universe_source="weak_to_strong_candidates", max_stocks=120))

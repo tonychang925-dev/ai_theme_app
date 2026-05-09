@@ -211,10 +211,11 @@ def test_collection_planner_leader_llm_skip_and_commands():
     )
 
     assert skipped.terminal_status == "skipped"
-    assert len(planned.commands) == 3
+    assert len(planned.commands) == 4
     assert "build_theme_leader_llm_queue.py" in planned.commands[0].cmd[1]
     assert "build_theme_leader_llm_judgement.py" in planned.commands[1].cmd[1]
     assert "call_theme_leader_llm.py" in planned.commands[2].cmd[1]
+    assert "build_theme_leader_candidate.py" in planned.commands[3].cmd[1]
     assert planned.commands[1].cmd[-1] == "7"
 
 

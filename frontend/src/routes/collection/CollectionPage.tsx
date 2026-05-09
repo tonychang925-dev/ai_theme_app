@@ -266,7 +266,7 @@ export function CollectionPage() {
   return (
     <div className="workspace-page">
       <header className="workspace-topbar">
-        <button className="back-button" type="button" onClick={() => navigateTo("/")}>
+        <button className="back-button" type="button" onClick={() => navigateTo(`/?date=${tradeDate}`)}>
           返回情报台
         </button>
         <div>

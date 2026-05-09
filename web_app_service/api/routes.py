@@ -191,8 +191,11 @@ def _as_recap_view_model_v2_from_snapshot(snapshot: dict, report_type: str) -> d
         }
 
     recap_doc = payload.get("recap_doc") if isinstance(payload.get("recap_doc"), dict) else {}
+    # 新链格式：recap_doc 内容直接作为 payload 存储（无嵌套 recap_doc key）
+    if not recap_doc and isinstance(payload.get("candidate_count"), (int, float)):
+        recap_doc = payload
     candidate_count = int(recap_doc.get("candidate_count") or 0)
-    strong_watch_input_count = int(recap_doc.get("strong_watch_input_count") or 0)
+    strong_watch_input_count = int(recap_doc.get("strong_watch_input_count") or recap_doc.get("strong_watch_input_7d_count") or 0)
     strong_watch_promoted_count = int(recap_doc.get("strong_watch_promoted_count") or 0)
     strong_watch_history_count = int(recap_doc.get("strong_watch_history_count") or 0)
 
@@ -482,6 +485,16 @@ async def intel_feed(
         limit=limit,
     )
     return data if isinstance(data, dict) else {"items": [], "count": 0, "diagnostics": {"partial": True}}
+
+
+@router.get("/intel/feed/defaults")
+async def intel_feed_defaults() -> dict:
+    """返回情报台最近有数据的日期。"""
+    try:
+        data = await _proxy_stock_processing_json("/api/v1/intel_feed/defaults", {})
+        return data if isinstance(data, dict) else {"latest_intel_date": None}
+    except Exception:
+        return {"latest_intel_date": None}
 
 
 @router.get("/intel/strong-stocks/watch")

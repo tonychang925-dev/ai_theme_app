@@ -11,6 +11,25 @@ class DBStockObjectGateway:
     def __init__(self, db_gateway: Any) -> None:
         self._db = db_gateway
 
+    def __getattr__(self, name: str):
+        if name.startswith("_"):
+            raise AttributeError(name)
+        attr = getattr(self._db, name, None)
+        if attr is None:
+            raise AttributeError(f"DatabaseGateway missing method: {name}")
+        return attr
+
+    @staticmethod
+    def _json_safe(obj: Any) -> Any:
+        from decimal import Decimal
+        if isinstance(obj, dict):
+            return {k: DBStockObjectGateway._json_safe(v) for k, v in obj.items()}
+        if isinstance(obj, list):
+            return [DBStockObjectGateway._json_safe(i) for i in obj]
+        if isinstance(obj, Decimal):
+            return float(obj)
+        return obj
+
     @staticmethod
     def _to_dict(obj: Any) -> dict[str, Any]:
         if obj is None:
@@ -95,7 +114,7 @@ class DBStockObjectGateway:
         return await self._db.upsert_pre_market_brief_snapshot(payload)
 
     async def upsert_post_market_snapshot(self, row: dict[str, Any]) -> int:
-        payload = self._to_dict(row)
+        payload = self._json_safe(self._to_dict(row))
         return await self._db.upsert_post_market_recap_snapshot(payload)
 
     async def query_stock_daily_snapshot(self, trade_date: date) -> list[dict[str, Any]]:
@@ -114,6 +133,12 @@ class DBStockObjectGateway:
         if callable(fn):
             return await fn(rows)
         raise RuntimeError("DatabaseGateway missing upsert_auction_watch_universe_rows")
+
+    async def upsert_stock_daily_snapshot_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._db, "upsert_stock_daily_snapshot_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        raise RuntimeError("DatabaseGateway missing upsert_stock_daily_snapshot_rows")
 
     async def upsert_pre_market_auction_snapshot_rows(self, rows: list[dict[str, Any]]) -> int:
         fn = getattr(self._db, "upsert_pre_market_auction_snapshot_rows", None)

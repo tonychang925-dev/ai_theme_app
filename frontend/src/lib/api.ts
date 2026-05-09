@@ -477,11 +477,17 @@ function asMarketReportViewFromSnapshot(
     };
   }
 
-  const recapDocRaw = payload["recap_doc"] && typeof payload["recap_doc"] === "object" ? (payload["recap_doc"] as Record<string, unknown>) : null;
+  let recapDocRaw: Record<string, unknown> | null = null;
+  if (payload["recap_doc"] && typeof payload["recap_doc"] === "object") {
+    recapDocRaw = payload["recap_doc"] as Record<string, unknown>;
+  } else if (typeof payload["candidate_count"] === "number") {
+    // 新链格式：recap_doc 内容直接作为 payload 存储（无嵌套 recap_doc key）
+    recapDocRaw = payload as Record<string, unknown>;
+  }
   if (!recapDocRaw) return null;
 
   const candidateCount = Number(recapDocRaw["candidate_count"] || 0);
-  const strongWatchInputCount = Number(recapDocRaw["strong_watch_input_count"] || 0);
+  const strongWatchInputCount = Number(recapDocRaw["strong_watch_input_count"] || recapDocRaw["strong_watch_input_7d_count"] || 0);
   const strongWatchPromotedCount = Number(recapDocRaw["strong_watch_promoted_count"] || 0);
   const strongWatchHistoryCount = Number(recapDocRaw["strong_watch_history_count"] || 0);
   const topCandidates = Array.isArray(recapDocRaw["top_candidates"]) ? (recapDocRaw["top_candidates"] as Array<Record<string, unknown>>) : [];

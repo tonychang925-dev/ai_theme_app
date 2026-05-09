@@ -75,6 +75,16 @@ class StockProcessingReadClient:
         stock_id: str | None = None,
         limit: int = 100,
     ) -> dict[str, Any]:
+        # 未指定日期时不调用上游（上游要求 feed_date 必填）
+        if not date:
+            return {
+                "items": [],
+                "count": 0,
+                "date": None,
+                "session": session,
+                "type": item_type,
+                "diagnostics": {"partial": True, "source": "no_date_provided", "hint": "请指定 date 参数"},
+            }
         payload = await self._get_json(
             "/api/v1/intel_feed",
             {
@@ -94,7 +104,12 @@ class StockProcessingReadClient:
             "date": date,
             "session": session,
             "type": item_type,
-            "diagnostics": {"partial": True, "source": "stock_processing_read_api_unavailable"},
+            "diagnostics": {
+                "partial": True,
+                "source": "stock_processing_read_api_unavailable",
+                "upstream_error": payload.get("error"),
+                "upstream": payload.get("upstream"),
+            },
         }
 
     async def _get_json(self, path: str, params: dict[str, Any]) -> dict[str, Any]:

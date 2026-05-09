@@ -177,6 +177,10 @@ class AuctionSnapshotRunner:
             ns.force_refresh = True
             ns.universe_source = self._universe_source
             ns.max_stocks = self._max_stocks
+            ns.timeline_json = str(context.payload.get("auction_timeline_json", "") or "")
+            ns.source_trade_date = ""
+            ns.top_k = int(context.payload.get("auction_top_k", 20))
+            ns.proxy_ratio = float(context.payload.get("auction_proxy_ratio", 0.08))
 
             from database_service.scripts.build_pre_market_auction_snapshot import main_async
             exit_code = await main_async(args=ns)
@@ -198,6 +202,8 @@ class AuctionSignalRunner:
             import argparse
             ns = argparse.Namespace()
             ns.trade_date = context.trade_date
+            ns.top_k = 40
+            ns.source_trade_date = ""
             from database_service.scripts.build_pre_market_auction_signal import main_async
             exit_code = await main_async(args=ns)
             return CollectionTaskResult(
@@ -255,8 +261,8 @@ class TushareKlineRunner:
 
             return CollectionTaskResult(
                 status="success" if result.status.startswith("ok") else "failed",
-                current_label=f"Tushare日线采集完成 ({result.affected_rows} rows)",
-                logs=[f"tushare_kline status={result.status} rows={result.affected_rows}"],
+                current_label=f"Tushare日线采集完成 ({result.status})",
+                logs=[f"tushare_kline status={result.status} rows={result.affected_rows}"] + list(result.warnings or []),
             )
         except Exception as e:
             return CollectionTaskResult(
@@ -299,3 +305,81 @@ class PostMarketRecapRunner:
             current_label=f"盘后复盘快照生成完成 ({result.status})",
             logs=logs,
         )
+
+
+class PostMarketRecapReportRunner:
+    """盘后复盘 LLM 报告生成 Runner。
+
+    在新链 BuildPostMarketRecapJob 完成 W2S 数据生成后，
+    调用旧链 RecapService 生成结构化 report 字段并 upsert 到现有快照中，
+    确保 frontend 盘后复盘页面保持旧格式兼容。
+    """
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        try:
+            from stock_service.repositories.report_repository import ReportRepository
+            from stock_service.config import StockServiceConfig
+            from stock_service.services.recap_service import RecapService
+            import asyncpg
+            import json
+            from datetime import date as _date
+
+            trade_date = context.trade_date
+            cfg = StockServiceConfig(postgres_database="stock_data_test")
+            repo = ReportRepository(cfg)
+            await repo.initialize()
+            try:
+                service = RecapService(repo)
+                report = await service.build_post_market_report(trade_date)
+
+                conn = await asyncpg.connect(
+                    host=cfg.postgres_host, port=cfg.postgres_port,
+                    database=cfg.postgres_database, user=cfg.postgres_user,
+                    password=cfg.postgres_password,
+                )
+                try:
+                    trade_date_obj = _date.fromisoformat(trade_date)
+                    existing = await conn.fetchrow(
+                        "SELECT payload FROM post_market_recap_snapshot WHERE trade_date = $1",
+                        trade_date_obj,
+                    )
+                    existing_payload = json.loads(existing["payload"]) if existing else {}
+
+                    existing_payload["report"] = {
+                        "report_type": report.report_type,
+                        "trade_date": report.trade_date,
+                        "title": report.title,
+                        "summary": report.summary,
+                        "highlights": list(report.highlights or []),
+                        "sections": [
+                            {"heading": heading, "items": list(items or [])}
+                            for heading, items in list(report.sections or [])
+                        ],
+                        "metadata": dict(getattr(report, "metadata", {}) or {}),
+                    }
+
+                    await conn.execute(
+                        """UPDATE post_market_recap_snapshot
+                           SET payload = $1::jsonb, updated_at = NOW()
+                           WHERE trade_date = $2""",
+                        json.dumps(existing_payload, ensure_ascii=False, default=str),
+                        trade_date_obj,
+                    )
+                finally:
+                    await conn.close()
+            finally:
+                await repo.close()
+
+            section_count = len(report.sections or [])
+            highlight_count = len(report.highlights or [])
+            return CollectionTaskResult(
+                status="success",
+                current_label=f"盘后复盘 LLM 报告生成完成 ({section_count} 章节, {highlight_count} 要点)",
+                logs=[f"recap_report sections={section_count} highlights={highlight_count}"],
+            )
+        except Exception as e:
+            return CollectionTaskResult(
+                status="failed",
+                current_label="盘后复盘报告生成异常",
+                error_message=str(e),
+            )

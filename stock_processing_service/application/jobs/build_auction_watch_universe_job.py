@@ -29,7 +29,16 @@ class BuildAuctionWatchUniverseJob:
             fn = getattr(self._read_port, "get_trade_calendar", None)
             if callable(fn):
                 cal = await fn(trade_date)
-                source_trade_date = cal.prev_trade_date if cal else None
+                # TradeCalendarDTO 或 dict
+                if hasattr(cal, "prev_trade_date"):
+                    source_trade_date = cal.prev_trade_date
+                elif isinstance(cal, dict):
+                    source_trade_date_str = cal.get("prev_trade_date")
+                    if source_trade_date_str:
+                        if isinstance(source_trade_date_str, str):
+                            source_trade_date = date.fromisoformat(source_trade_date_str)
+                        elif isinstance(source_trade_date_str, date):
+                            source_trade_date = source_trade_date_str
         if source_trade_date is None:
             return BuildResult(name="build_auction_watch_universe", trade_date=str(trade_date),
                                affected_rows=0, status="failed", warnings=["missing source_trade_date"])
@@ -94,8 +103,8 @@ class BuildAuctionWatchUniverseJob:
         if items and self._write_port:
             rows = [
                 {
-                    "source_trade_date": item.source_trade_date,
-                    "trade_date": item.trade_date,
+                    "source_trade_date": date.fromisoformat(item.source_trade_date) if isinstance(item.source_trade_date, str) else item.source_trade_date,
+                    "trade_date": date.fromisoformat(item.trade_date) if isinstance(item.trade_date, str) else item.trade_date,
                     "stock_id": item.stock_id,
                     "stock_name": item.stock_name,
                     "subject_key": item.subject_key,

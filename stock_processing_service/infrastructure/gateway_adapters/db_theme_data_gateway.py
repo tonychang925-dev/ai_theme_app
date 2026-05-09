@@ -9,6 +9,15 @@ class DBThemeDataGateway:
     def __init__(self, db_gateway: Any) -> None:
         self._db = db_gateway
 
+    def __getattr__(self, name: str):
+        """将未显式定义的方法委托给底层 DatabaseGateway。"""
+        if name.startswith("_"):
+            raise AttributeError(name)
+        attr = getattr(self._db, name, None)
+        if attr is None:
+            raise AttributeError(f"DatabaseGateway missing method: {name}")
+        return attr
+
     @staticmethod
     def _as_dict(row: Any) -> dict[str, Any]:
         """Convert asyncpg Record or dict to plain dict."""
@@ -211,3 +220,15 @@ class DBThemeDataGateway:
         if callable(fn):
             return [self._as_dict(r) for r in await fn(confirm_date)]
         raise RuntimeError("DatabaseGateway missing get_w2s_candidates_by_next_date")
+
+    async def get_strong_watch_seed_rows(self, trade_date, lookback_days: int = 7) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_strong_watch_seed_rows", None)
+        if callable(fn):
+            return [self._as_dict(r) for r in await fn(trade_date, lookback_days)]
+        raise RuntimeError("DatabaseGateway missing get_strong_watch_seed_rows")
+
+    async def get_subject_board_stats(self, trade_date) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_subject_board_stats", None)
+        if callable(fn):
+            return [self._as_dict(r) for r in await fn(trade_date)]
+        raise RuntimeError("DatabaseGateway missing get_subject_board_stats")
