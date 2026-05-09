@@ -11,6 +11,26 @@ from datetime import datetime, date, timezone
 import asyncpg
 from asyncpg.pool import Pool
 import json
+from decimal import Decimal
+from datetime import date as _date, datetime as _datetime
+
+
+def _json_default(obj):
+    """Postgres JSONB 安全序列化兜底。"""
+    if isinstance(obj, Decimal):
+        return float(obj)
+    if isinstance(obj, (_datetime, _date)):
+        return obj.isoformat()
+    if isinstance(obj, set):
+        return list(obj)
+    return str(obj)
+
+
+def _safe_json_dumps(value, default_empty=None) -> str:
+    """安全 JSON 序列化，自动处理 Decimal/date/datetime/set。"""
+    if value is None:
+        value = default_empty if default_empty is not None else {}
+    return json.dumps(value, ensure_ascii=False, default=_json_default)
 
 
 try:
@@ -1597,8 +1617,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 row.get("batch_id"),
                 row.get("trace_id"),
                 row.get("source_trace_id"),
-                json.dumps(row.get("labels") or {}, ensure_ascii=False),
-                json.dumps(row.get("score_breakdown") or {}, ensure_ascii=False),
+                _safe_json_dumps(row.get("labels"), {}),
+                _safe_json_dumps(row.get("score_breakdown"), {}),
                 str(row.get("source") or row.get("source_name") or "stock_processing_service"),
             )
             for row in rows
@@ -1800,10 +1820,10 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     bool(item.get("is_red_zone") or False),
                     bool(item.get("has_end_spike") or False),
                     bool(item.get("has_end_drop") or False),
-                    json.dumps(list(item.get("shape_features") or []), ensure_ascii=False),
+                    _safe_json_dumps(item.get("shape_features"), []),
                     str(item.get("source_type") or "p3.phase3.auction_snapshot"),
                     str(item.get("source_trace_id") or ""),
-                    json.dumps(dict(item.get("source_trace") or {}), ensure_ascii=False),
+                    _safe_json_dumps(item.get("source_trace"), {}),
                     str(item.get("source_version") or "auction_snapshot.v1"),
                     str(item.get("rule_version") or "auction_snapshot.v1"),
                 )
@@ -3639,8 +3659,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 row.get("stock_id"),
                 row.get("event_type"),
                 row.get("event_score"),
-                json.dumps(row.get("evidence_rules") or [], ensure_ascii=False),
-                json.dumps(row.get("raw_metrics") or {}, ensure_ascii=False),
+                _safe_json_dumps(row.get("evidence_rules"), []),
+                _safe_json_dumps(row.get("raw_metrics"), {}),
             )
             for row in rows
         ]
@@ -3672,7 +3692,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 row.get("stock_id"),
                 row.get("leaderboard_rank"),
                 row.get("leader_score"),
-                json.dumps(row.get("score_breakdown") or {}, ensure_ascii=False),
+                _safe_json_dumps(row.get("score_breakdown"), {}),
             )
             for row in rows
         ]
@@ -3694,7 +3714,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
           snapshot_version = EXCLUDED.snapshot_version,
           batch_id = EXCLUDED.batch_id,
           trace_id = EXCLUDED.trace_id,
-          payload = EXCLUDED.payload,
+          payload = EXCLUDED.payload || pre_market_brief_snapshot.payload,
           source_name = EXCLUDED.source_name,
           updated_at = NOW()
         """
@@ -3703,7 +3723,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             doc.get("snapshot_version"),
             doc.get("batch_id"),
             doc.get("trace_id"),
-            json.dumps(doc.get("payload") or {}, ensure_ascii=False),
+            json.dumps(doc.get("payload") or {}, ensure_ascii=False, default=str),
             str(doc.get("source_name") or "stock_processing_service"),
         )
         try:
@@ -3724,7 +3744,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
           snapshot_version = EXCLUDED.snapshot_version,
           batch_id = EXCLUDED.batch_id,
           trace_id = EXCLUDED.trace_id,
-          payload = EXCLUDED.payload,
+          payload = EXCLUDED.payload || post_market_recap_snapshot.payload,
           source_name = EXCLUDED.source_name,
           updated_at = NOW()
         """
@@ -3733,7 +3753,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             doc.get("snapshot_version"),
             doc.get("batch_id"),
             doc.get("trace_id"),
-            json.dumps(doc.get("payload") or {}, ensure_ascii=False),
+            json.dumps(doc.get("payload") or {}, ensure_ascii=False, default=str),
             str(doc.get("source_name") or "stock_processing_service"),
         )
         try:
@@ -3828,8 +3848,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 row.get("support_type"),
                 str(row.get("support_level") or "0"),
                 str(row.get("support_score") or "0"),
-                json.dumps(row.get("labels") or {}, ensure_ascii=False),
-                json.dumps(row.get("evidence") or {}, ensure_ascii=False),
+                _safe_json_dumps(row.get("labels"), {}),
+                _safe_json_dumps(row.get("evidence"), {}),
             ))
         if not payload:
             return 0
@@ -3912,9 +3932,9 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 str(row.get("last_minute_ratio", 0)), str(row.get("prev_day_max_intraday_amount", 0)),
                 str(row.get("carry_ratio", 0)), str(row.get("price_path_stability_score", 0)),
                 bool(row.get("is_red_zone", False)), bool(row.get("has_end_spike", False)),
-                bool(row.get("has_end_drop", False)), json.dumps(row.get("shape_features", []), ensure_ascii=False),
+                bool(row.get("has_end_drop", False)), _safe_json_dumps(row.get("shape_features"), []),
                 str(row.get("source_type", "")), str(row.get("source_trace_id", "")),
-                json.dumps(row.get("source_trace", {}), ensure_ascii=False),
+                _safe_json_dumps(row.get("source_trace"), {}),
                 str(row.get("source_version", "")), str(row.get("rule_version", "")),
             ))
         async with self.pool.acquire() as conn:
@@ -4027,7 +4047,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 row.get("is_reversal_watch", False),
                 row.get("source_type", ""),
                 row.get("source_trace_id", ""),
-                json.dumps(row.get("source_trace", {}), ensure_ascii=False),
+                _safe_json_dumps(row.get("source_trace"), {}),
                 row.get("source_version", ""),
                 row.get("rule_version", ""),
             ))
@@ -4101,9 +4121,9 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 str(row.get("institution_sell_amount", 0)),
                 str(row.get("institution_net_buy", 0)),
                 row.get("institution_seat_count", 0),
-                json.dumps(row.get("seat_summary", []), ensure_ascii=False),
+                _safe_json_dumps(row.get("seat_summary"), []),
                 str(row.get("source_trace_id", "")),
-                json.dumps(row.get("source_trace", {}), ensure_ascii=False),
+                _safe_json_dumps(row.get("source_trace"), {}),
                 str(row.get("source_version", "")),
                 str(row.get("rule_version", "")),
             ))
@@ -4302,8 +4322,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 row.get("support_type") or "",
                 row.get("support_level") or "0",
                 row.get("support_score") or "0",
-                json.dumps(row.get("labels_json") or {}, ensure_ascii=False),
-                json.dumps(row.get("evidence_json") or {}, ensure_ascii=False),
+                _safe_json_dumps(row.get("labels_json"), {}),
+                _safe_json_dumps(row.get("evidence_json"), {}),
             )
             for row in rows
             if row.get("trade_date") and row.get("stock_id")
@@ -4442,13 +4462,13 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 str(row.get("logic_score") or "0"),
                 str(row.get("market_score") or "0"),
                 str(row.get("composite_score") or "0"),
-                json.dumps(evidence, ensure_ascii=False),
+                _safe_json_dumps(evidence, {}),
                 bool(row.get("rule_is_main_theme") or False),
                 bool(row.get("llm_applied") or False),
                 bool(row.get("llm_is_main_theme")) if row.get("llm_is_main_theme") is not None else None,
                 int(row.get("llm_confidence") or 0) if row.get("llm_confidence") is not None else None,
-                json.dumps(list(row.get("llm_reasons") or []), ensure_ascii=False),
-                json.dumps(list(row.get("llm_risk_flags") or []), ensure_ascii=False),
+                _safe_json_dumps(row.get("llm_reasons"), []),
+                _safe_json_dumps(row.get("llm_risk_flags"), []),
                 str(row.get("llm_model") or ""),
                 None,   # llm_reviewed_at
                 rule_version,
@@ -4528,8 +4548,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 "build_identity",
                 "pending",
                 priority_score,
-                json.dumps(trigger_flags, ensure_ascii=False),
-                json.dumps(evidence, ensure_ascii=False),
+                _safe_json_dumps(trigger_flags, []),
+                _safe_json_dumps(evidence, {}),
             ))
         if not payload:
             return 0

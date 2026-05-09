@@ -8,7 +8,7 @@ import pandas as pd
 import requests
 
 
-TUSHARE_URL = "http://api.tushare.pro"
+TUSHARE_URL = "https://api.tushare.pro"
 
 
 def _normalize_ts_code(value: str) -> str:

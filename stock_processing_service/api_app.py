@@ -61,7 +61,11 @@ async def lifespan(app: FastAPI):
     app.state.gateway = gw
     app.state.container = build_container(facade)
     app.state.phase1_repo = Phase1ReadRepository()
-    app.state.collection_job_manager = CollectionJobManager()
+    from stock_processing_service.application.services.collection_task_registry import get_default_registry
+    app.state.collection_job_manager = CollectionJobManager(
+        container=app.state.container,
+        registry=get_default_registry(),
+    )
     await app.state.phase1_repo.initialize()
     try:
         yield
@@ -1228,6 +1232,33 @@ async def get_intel_feed(
         limit=limit,
     )
     return {"items": items, "count": len(items), "date": feed_date, "session": session, "type": item_type}
+
+
+@app.get("/api/v1/intel_feed/defaults")
+async def get_intel_feed_defaults() -> dict[str, Any]:
+    """返回情报台最近有数据的日期，供前端默认选中。"""
+    try:
+        latest_event = await app.state.phase1_repo.fetch_latest_intel_event_date()
+    except Exception:
+        latest_event = None
+    # 同时取 vw_theme_history_candidate 的最大 rank_date
+    try:
+        await app.state.phase1_repo.initialize()
+        async with app.state.phase1_repo._pool.acquire() as conn:
+            row = await conn.fetchrow(
+                "SELECT MAX(rank_date)::text FROM vw_theme_history_candidate "
+                "WHERE source_type IN ('jyhf_history', 'jyhf_rank_daily')"
+            )
+            latest_theme = row[0] if row else None
+    except Exception:
+        latest_theme = None
+    latest_date = latest_event or latest_theme
+    if latest_theme and (not latest_date or latest_theme > latest_date):
+        latest_date = latest_theme
+    return {
+        "latest_intel_date": latest_date,
+        "source": "vw_theme_history_candidate + news_event",
+    }
 
 
 @app.get("/api/v1/collection/availability")

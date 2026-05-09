@@ -453,6 +453,15 @@ class BuildPostMarketRecapJob:
                     labels_json = {}
             elif not isinstance(labels_json, dict):
                 labels_json = {}
+            # 解析 evidence_json（可能是 JSON 字符串，与 labels_json 同样的处理）
+            ev_raw = row.get("evidence_json") or {}
+            if isinstance(ev_raw, str):
+                try:
+                    ev_raw = json.loads(ev_raw)
+                except Exception:
+                    ev_raw = {}
+            elif not isinstance(ev_raw, dict):
+                ev_raw = {}
             refresh_candidate = WatchSeedRow(
                 stock_id=sid,
                 stock_name=str(row.get("stock_name") or ""),
@@ -468,7 +477,7 @@ class BuildPostMarketRecapJob:
                 subject_limit_up_count=int(labels_json.get("subject_limit_up_count") or 0),
                 subject_strong_count=int(labels_json.get("subject_strong_count") or 0),
                 labels=dict(labels_json),
-                evidence=dict(row.get("evidence_json") or {}),
+                evidence=ev_raw,
             )
             _score_all([refresh_candidate], {sid: int(row.get("current_flag_today") or 0)})
 
@@ -631,7 +640,7 @@ class BuildPostMarketRecapJob:
             "layer_c_input_mode": layer_c_input_mode,
             "layer_c_shadow_enabled": layer_c_shadow_enabled,
             "legacy_watch_input_count": legacy_watch_input_count,
-            "strong_watch_input_count": len(strong_watch_rows),
+            "strong_watch_input_count": len(candidate_input_rows),
             "strong_watch_input_7d_count": len(candidate_input_rows),
             "strong_watch_promoted_count": len(promoted_pool_rows),
             "strong_watch_history_count": len(strong_watch_history),
@@ -799,13 +808,21 @@ class BuildPostMarketRecapJob:
             ],
         }
 
+        # Convert Decimal values to float for JSON serialization
+        def _serialize(obj):
+            if isinstance(obj, dict): return {k: _serialize(v) for k, v in obj.items()}
+            if isinstance(obj, list): return [_serialize(i) for i in obj]
+            from decimal import Decimal
+            if isinstance(obj, Decimal): return float(obj)
+            return obj
+
         snapshot = PostMarketRecapSnapshot(
             trade_date=trade_date,
             snapshot_version=snapshot_version,
             batch_id=batch_id,
             trace_id=trace_id,
             source_trace_id=trace_id,
-            recap_doc=recap_doc,
+            recap_doc=_serialize(recap_doc),
         )
 
         affected = await self._write_port.upsert_post_market_recap_snapshot(snapshot)
@@ -881,7 +898,7 @@ class BuildPostMarketRecapJob:
             batch_id=batch_id,
             trace_id=trace_id,
             metrics={
-                "strong_watch_input_count": len(strong_watch_rows),
+                "strong_watch_input_count": len(candidate_input_rows),
                 "strong_watch_promoted_count": len(promoted_pool_rows),
                 "strong_watch_history_count": len(strong_watch_history),
                 "strong_watch_history_written": history_written,

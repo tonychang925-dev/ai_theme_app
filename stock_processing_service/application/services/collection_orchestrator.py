@@ -273,16 +273,41 @@ class CollectionCommandPlanner:
                             "--only-pending",
                         ],
                         initial_percent=55,
+                        success_percent=80,
+                    ),
+                    CollectionCommand(
+                        [
+                            self._python_bin,
+                            str(self._project_root / "database_service" / "scripts" / "build_theme_leader_candidate.py"),
+                            "--trade-date",
+                            trade_date,
+                        ],
+                        initial_percent=80,
                         success_percent=100,
                     ),
                 ]
             )
 
         if task_key == "recap_snapshot":
-            # 服务化路径：通过 PostMarketRecapRunner 直接调用 BuildPostMarketRecapJob
+            # 两步：
+            #   Step 1: recap.snapshot — 新链 W2S 数据生成 (BuildPostMarketRecapJob)
+            #   Step 2: recap.report   — 旧链 LLM 报告生成 (RecapService → upsert report 到快照)
             return CollectionTaskPlan(
-                runner_key="recap.snapshot",
-                pre_logs=["recap_snapshot 已切换到新链 BuildPostMarketRecapJob 服务化执行"],
+                pre_logs=["recap_snapshot: Step1 新链数据生成 + Step2 LLM 报告"],
+                steps=[
+                    CollectionTaskStep(
+                        key="recap_data",
+                        runner_key="recap.snapshot",
+                        label="盘后复盘数据生成",
+                        success_percent=70,
+                    ),
+                    CollectionTaskStep(
+                        key="recap_report",
+                        runner_key="recap.report",
+                        label="盘后复盘 LLM 报告生成",
+                        success_percent=100,
+                    ),
+                ],
             )
 
         return CollectionTaskPlan(terminal_status="skipped", terminal_label="未知任务，已跳过")
