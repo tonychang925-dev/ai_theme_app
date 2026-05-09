@@ -332,8 +332,29 @@ class ThemeCycleJudgementService:
             """,
             subject_key,
         )
-        if not id_row or not bool(id_row.get("is_main_theme")) or str(id_row.get("identity_status")) != "confirmed":
-            return None
+        # ── 身份门禁（修正）：不再仅限 confirmed ──
+        # 1. prior confirmed（含继承）→ 放行
+        # 2. prior cycle alive → 放行（存续主线即使某日 market_ok=false 也不阻断）
+        # 3. 当日有 rank 数据 → 放行（异动/新题材可能升级）
+        is_confirmed = bool(id_row and bool(id_row.get("is_main_theme")) and str(id_row.get("identity_status")) == "confirmed")
+        if is_confirmed:
+            pass  # 放行
+        else:
+            # 检查是否有 prior cycle alive
+            prior_cycle = await conn.fetchrow(
+                "SELECT final_mainline_alive, fade_confirmed FROM theme_cycle_judgement_v2"
+                " WHERE subject_key = $1 AND trade_date < $2::date"
+                " ORDER BY trade_date DESC LIMIT 1",
+                subject_key, trade_date,
+            )
+            has_prior_alive = bool(prior_cycle and bool(prior_cycle.get("final_mainline_alive")) and not bool(prior_cycle.get("fade_confirmed")))
+            # 检查当日是否有 rank 数据
+            has_rank = bool(await conn.fetchval(
+                "SELECT 1 FROM subject_rank_daily WHERE subject_key = $1 AND rank_date = $2::date LIMIT 1",
+                subject_key, trade_date,
+            ))
+            if not has_prior_alive and not has_rank:
+                return None
 
         sql = """
         SELECT *

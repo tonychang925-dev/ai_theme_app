@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from typing import Any
 
 from stock_processing_service.application.jobs import (
+    BuildCycleJudgementJob,
     BuildDailySnapshotJob,
     BuildIdentityJob,
     BuildMainlineStateJob,
@@ -38,6 +39,7 @@ from stock_processing_service.ports.database_gateway_stock_facade import Databas
 class StockProcessingContainer:
     build_strong_stock_tracking: BuildStrongStockTrackingUseCase
     build_daily_snapshot: BuildDailySnapshotJob
+    build_cycle_judgement: Any  # BuildCycleJudgementJob
     build_mainline_state: Any  # BuildMainlineStateJob
     build_post_market_recap: BuildPostMarketRecapJob
     build_pre_market_brief: BuildPreMarketBriefJob
@@ -71,6 +73,13 @@ def build_container(
             idempotency_port=idempotency_gateway,
             cache_port=cache_gateway,
         ),
+        build_cycle_judgement=(
+            _cycle_job := BuildCycleJudgementJob(
+                read_port=theme_data_gateway,
+                write_port=stock_object_gateway,
+                event_port=event_gateway,
+            )
+        ),
         build_mainline_state=(
             _mainline_state_job := BuildMainlineStateJob(
                 read_port=theme_data_gateway,
@@ -94,6 +103,7 @@ def build_container(
             cache_port=cache_gateway,
             identity_job=_identity_job,
             mainline_state_job=_mainline_state_job,
+            cycle_judgement_job=_cycle_job,
         ),
         build_pre_market_brief=BuildPreMarketBriefJob(
             read_port=theme_data_gateway,

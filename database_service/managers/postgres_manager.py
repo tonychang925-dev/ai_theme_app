@@ -2038,6 +2038,19 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             rows = await conn.fetch(sql, trade_date)
         return [dict(r) for r in rows]
 
+    async def get_subject_rank_daily(self, trade_date, limit: int = 100) -> List[Dict[str, Any]]:
+        """读取当日 subject_rank_daily 热点排行。"""
+        sql = """
+        SELECT subject_key, subject_name, heat, heat_name, pct_chg, his_pct_chg, description
+        FROM subject_rank_daily
+        WHERE rank_date = $1::date
+        ORDER BY heat DESC NULLS LAST
+        LIMIT $2
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date, limit)
+        return [dict(r) for r in rows]
+
     async def get_subject_board_stats(
         self, trade_date
     ) -> List[Dict[str, Any]]:
