@@ -143,58 +143,16 @@ class BuildIdentityJob:
                 trace_id=trace_id,
             )
 
-        # ── Phase 1: 构建 Identity Universe（主线 + 异动 + 新题材）──
-        # 不扫全量 600+ subject，只评估：
-        #   1. prior confirmed + cycle alive（存续主线）
-        #   2. subject_rank_daily 当日强热度（异动题材）
-        #   3. 已有 cycle 记录的活跃 subject
-
-        universe_keys: set[str] = set()
-
-        # 1. 当日排名热点（subject_rank_daily）
-        try:
-            rank_hot = await self._read_port.get_subject_rank_daily(trade_date, limit=50)
-            for r in (rank_hot or []):
-                sk = str(r.get("subject_key") or "").strip()
-                if sk:
-                    universe_keys.add(sk)
-        except Exception:
-            pass
-
-        # 2. 存续主线：prior confirmed + prior cycle alive
-        prior_confirmed = set()
-        prior_cycle_alive = set()
-        try:
-            prior_ids = await self._read_port.get_mainline_identity_by_subject_keys([], trade_date)
-            for r in (prior_ids or []):
-                sk = str(r.get("subject_key") or "").strip()
-                if sk and bool(r.get("is_main_theme")) and str(r.get("identity_status") or "") == "confirmed":
-                    prior_confirmed.add(sk)
-        except Exception:
-            pass
-        try:
-            prior_cycles = await self._read_port.get_mainline_cycle_by_subject_keys([], trade_date)
-            for r in (prior_cycles or []):
-                sk = str(r.get("subject_key") or "").strip()
-                if sk and bool(r.get("final_mainline_alive")):
-                    prior_cycle_alive.add(sk)
-        except Exception:
-            pass
-        universe_keys.update(prior_confirmed)
-        universe_keys.update(prior_cycle_alive)
-
-        # 3. 如果 universe 太小，补充 subject_stock_pool 中的 leader subjects
-        if len(universe_keys) < 20:
-            try:
-                pool_rows_raw = await self._read_port.get_subject_stock_pool_by_trade_date(trade_date)
-                for row in (pool_rows_raw or []):
-                    sk = str(getattr(row, "subject_key", ""))
-                    if sk and (getattr(row, "is_leader", False) or getattr(row, "limit_up", False)):
-                        universe_keys.add(sk)
-            except Exception:
-                pass
-
-        subject_keys = sorted(universe_keys)
+        # ── Phase 0: 构建 Identity Universe（6 源）──
+        from stock_processing_service.domain.services.mainline_identity_universe_builder import (
+            MainlineIdentityUniverseBuilder,
+        )
+        universe_builder = MainlineIdentityUniverseBuilder(self._read_port)
+        universe_rows = await universe_builder.build(trade_date)
+        subject_keys = sorted({r.subject_key for r in universe_rows})
+        universe_source_counts: dict[str, int] = {}
+        for r in universe_rows:
+            universe_source_counts[r.universe_source] = universe_source_counts.get(r.universe_source, 0) + 1
         if not subject_keys:
             return BuildResult(
                 name="build_identity", trade_date=trade_date.isoformat(),
@@ -548,7 +506,8 @@ class BuildIdentityJob:
             metrics={
                 "identity_registry_rows": written_registry,
                 "identity_review_rows": written_review,
-                "subject_count": len(grouped),
+                "universe_subject_count": len(subject_keys),
+                "universe_source_counts": universe_source_counts,
                 "identity_engine": "identity_rule_engine",
                 "dual_run_enabled": False,
             },

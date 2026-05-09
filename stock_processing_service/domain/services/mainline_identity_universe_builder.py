@@ -54,23 +54,24 @@ class MainlineIdentityUniverseBuilder:
     async def build(self, trade_date: date) -> list[IdentityUniverseRow]:
         """构建当日主线身份候选 Universe。"""
         rows: dict[str, IdentityUniverseRow] = {}
+        self.source_errors: dict[str, str] = {}
 
-        # ── 1. current confirmed ──
+        # ── 1. current confirmed (P0: fail-fast on read error) ──
         await self._add_confirmed(rows, trade_date)
 
-        # ── 2. prior alive ──
+        # ── 2. prior alive (P0: fail-fast) ──
         await self._add_prior_alive(rows, trade_date)
 
-        # ── 3. hot rank top100 ──
+        # ── 3. hot rank top100 (P0: warn but continue) ──
         await self._add_hot_rank(rows, trade_date)
 
-        # ── 4. abnormal themes ──
+        # ── 4. abnormal themes (P1: warn, don't block) ──
         await self._add_abnormal(rows, trade_date)
 
-        # ── 5. new themes ──
+        # ── 5. new themes (P1: warn, don't block) ──
         await self._add_new_themes(rows, trade_date)
 
-        # ── 6. cluster related (from prior confirmed clusters) ──
+        # ── 6. cluster related (P1: warn, don't block) ──
         await self._add_cluster_related(rows, trade_date)
 
         return sorted(rows.values(), key=lambda r: r.priority_score, reverse=True)
@@ -92,8 +93,8 @@ class MainlineIdentityUniverseBuilder:
                         prior_identity_status="confirmed",
                         is_current_confirmed=True,
                     )
-        except Exception:
-            pass
+        except Exception as e:
+            self.source_errors["confirmed"] = str(e)
 
     async def _add_prior_alive(self, rows: dict, trade_date: date) -> None:
         try:
@@ -113,10 +114,11 @@ class MainlineIdentityUniverseBuilder:
                         prior_final_mainline_alive=True,
                         is_prior_alive=True,
                     )
-        except Exception:
-            pass
+        except Exception as e:
+            self.source_errors["prior_alive"] = str(e)
 
     async def _add_hot_rank(self, rows: dict, trade_date: date) -> None:
+        source_name = "hot_rank"
         try:
             rank_rows = await self._read.get_subject_rank_daily(trade_date, limit=self.MAX_HOT_RANK)
             for r in (rank_rows or []):
@@ -141,11 +143,12 @@ class MainlineIdentityUniverseBuilder:
                     is_hot_rank_theme=True,
                     is_abnormal_theme=(heat >= self.ABNORMAL_HEAT_MIN or pct >= self.ABNORMAL_PCT_CHG_MIN),
                 )
-        except Exception:
-            pass
+        except Exception as e:
+            self.source_errors[source_name] = str(e)
 
     async def _add_abnormal(self, rows: dict, trade_date: date) -> None:
         """异动题材：event_count_3d >= 1 或 heat jump 的 subject。"""
+        source_name = "abnormal"
         try:
             evidence_rows = await self._read.get_subject_cycle_evidence_daily(trade_date)
             for r in (evidence_rows or []):
@@ -169,11 +172,12 @@ class MainlineIdentityUniverseBuilder:
                         is_abnormal_theme=True,
                         is_event_burst_theme=True,
                     )
-        except Exception:
-            pass
+        except Exception as e:
+            self.source_errors[source_name] = str(e)
 
     async def _add_new_themes(self, rows: dict, trade_date: date) -> None:
         """新题材：从 subject_rank_daily 中首次出现的 subject。"""
+        source_name = "new_theme"
         try:
             new_rows = await self._read.get_new_subject_rank_entries(trade_date)
             for r in (new_rows or []):
@@ -188,11 +192,12 @@ class MainlineIdentityUniverseBuilder:
                     priority_score=60.0,
                     is_new_theme=True,
                 )
-        except Exception:
-            pass
+        except Exception as e:
+            self.source_errors[source_name] = str(e)
 
     async def _add_cluster_related(self, rows: dict, trade_date: date) -> None:
         """同簇强相关题材：从已确认主线的簇中拉入相关题材。"""
+        source_name = "cluster"
         confirmed_sks = {sk for sk, r in rows.items() if r.is_current_confirmed or r.is_prior_alive}
         if not confirmed_sks:
             return
@@ -210,5 +215,5 @@ class MainlineIdentityUniverseBuilder:
                     priority_score=50.0,
                     is_cluster_related=True,
                 )
-        except Exception:
-            pass
+        except Exception as e:
+            self.source_errors[source_name] = str(e)
