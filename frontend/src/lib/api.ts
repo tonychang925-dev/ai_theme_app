@@ -252,6 +252,32 @@ export interface RealtimeCollectorLogs {
   files: Record<string, string[]>;
 }
 
+export interface JyhfCdpCollectorStatus {
+  service?: string;
+  running: boolean;
+  collector_running?: boolean;
+  pid?: number | null;
+  app_running: boolean;
+  cdp_connected: boolean;
+  cdp_port: number;
+  current_route?: string | null;
+  current_tab?: string | null;
+  last_capture_at?: string | null;
+  last_event_at?: string | null;
+  capture_count_total: number;
+  new_event_count_total: number;
+  duplicate_count_total: number;
+  parse_error_count_total: number;
+  pushed_to_intel_count_total: number;
+  review_queue_count_total: number;
+  last_error?: string | null;
+}
+
+export interface JyhfCdpCollectorLogs {
+  log_file: string;
+  lines: string[];
+}
+
 function normalizeRealtimeCollectorError(err: unknown, action: string): Error {
   if (err instanceof Error) {
     const lower = err.message.toLowerCase();
@@ -668,5 +694,61 @@ export async function fetchRealtimeCollectorLogs(lines = 200): Promise<RealtimeC
     );
   } catch (err) {
     throw normalizeRealtimeCollectorError(err, "日志拉取");
+  }
+}
+
+export async function fetchJyhfCdpCollectorStatus(): Promise<JyhfCdpCollectorStatus> {
+  try {
+    return await fetchJsonWithTimeout<JyhfCdpCollectorStatus>(
+      "/api/v2/realtime/jyhf-cdp/status",
+      { cache: "no-store" },
+      10000,
+    );
+  } catch (err) {
+    throw normalizeRealtimeCollectorError(err, "JYHF-CDP 状态检查");
+  }
+}
+
+export async function startJyhfCdpCollector(): Promise<RealtimeCollectorCommandResult> {
+  try {
+    return await fetchJsonWithTimeout<RealtimeCollectorCommandResult>(
+      "/api/v2/realtime/jyhf-cdp/start",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({}),
+      },
+      30000,
+    );
+  } catch (err) {
+    throw normalizeRealtimeCollectorError(err, "JYHF-CDP 启动");
+  }
+}
+
+export async function stopJyhfCdpCollector(): Promise<RealtimeCollectorCommandResult> {
+  try {
+    return await fetchJsonWithTimeout<RealtimeCollectorCommandResult>(
+      "/api/v2/realtime/jyhf-cdp/stop",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({}),
+      },
+      30000,
+    );
+  } catch (err) {
+    throw normalizeRealtimeCollectorError(err, "JYHF-CDP 停止");
+  }
+}
+
+export async function fetchJyhfCdpCollectorLogs(lines = 300): Promise<JyhfCdpCollectorLogs> {
+  try {
+    return await fetchJsonWithTimeout<JyhfCdpCollectorLogs>(
+      `/api/v2/realtime/jyhf-cdp/logs?lines=${encodeURIComponent(String(lines))}`,
+      { cache: "no-store" },
+      10000,
+    );
+  } catch (err) {
+    throw normalizeRealtimeCollectorError(err, "JYHF-CDP 日志拉取");
   }
 }

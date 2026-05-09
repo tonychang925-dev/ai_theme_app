@@ -61,6 +61,7 @@ def _normalize_theme_name(value: object) -> str:
 
 
 STOCK_PROCESSING_BASE_URL = str(os.getenv("STOCK_PROCESSING_READ_BASE_URL", "http://127.0.0.1:8090")).rstrip("/")
+JYHF_CDP_SERVICE_BASE_URL = str(os.getenv("JYHF_CDP_SERVICE_BASE_URL", "http://127.0.0.1:8095")).rstrip("/")
 ALLOWED_SSE_EVENTS = {
     "intel_item",
     "heartbeat",
@@ -127,6 +128,34 @@ async def _proxy_stock_processing_request_json(
     if isinstance(data, (dict, list)):
         return data
     return {}
+
+
+async def _proxy_jyhf_cdp_service_json(
+    method: str,
+    path: str,
+    *,
+    params: dict | None = None,
+    payload: dict | None = None,
+    timeout: float = 10.0,
+) -> dict:
+    url = f"{JYHF_CDP_SERVICE_BASE_URL}{path}"
+    try:
+        async with httpx.AsyncClient(timeout=timeout) as http:
+            resp = await http.request(method.upper(), url, params=params, json=payload)
+            resp.raise_for_status()
+            data = resp.json()
+    except httpx.HTTPStatusError as exc:
+        raise HTTPException(status_code=exc.response.status_code, detail=exc.response.text) from exc
+    except Exception as exc:
+        raise HTTPException(
+            status_code=503,
+            detail={
+                "code": "JYHF_CDP_SERVICE_UNAVAILABLE",
+                "message": str(exc),
+                "upstream": url,
+            },
+        ) from exc
+    return data if isinstance(data, dict) else {}
 
 
 def _emit_sse(event: str, payload: dict) -> bytes:
@@ -465,6 +494,57 @@ async def collection_cancel(payload: dict) -> dict:
 @router.post("/collection/continue")
 async def collection_continue(payload: dict) -> dict:
     return await _proxy_stock_processing_post_json("/api/v1/collection/continue", payload)
+
+
+@router.get("/realtime/jyhf-cdp/status")
+async def jyhf_cdp_collector_status() -> dict:
+    data = await _proxy_jyhf_cdp_service_json(
+        "GET",
+        "/status",
+        timeout=10.0,
+    )
+    if isinstance(data, dict):
+        return data
+    raise HTTPException(status_code=502, detail="invalid jyhf-cdp status response")
+
+
+@router.post("/realtime/jyhf-cdp/start")
+async def jyhf_cdp_collector_start(payload: dict | None = None) -> dict:
+    data = await _proxy_jyhf_cdp_service_json(
+        "POST",
+        "/collector/start",
+        payload=payload or {},
+        timeout=30.0,
+    )
+    if isinstance(data, dict):
+        return data
+    raise HTTPException(status_code=502, detail="invalid jyhf-cdp start response")
+
+
+@router.post("/realtime/jyhf-cdp/stop")
+async def jyhf_cdp_collector_stop(payload: dict | None = None) -> dict:
+    data = await _proxy_jyhf_cdp_service_json(
+        "POST",
+        "/collector/stop",
+        payload=payload or {},
+        timeout=30.0,
+    )
+    if isinstance(data, dict):
+        return data
+    raise HTTPException(status_code=502, detail="invalid jyhf-cdp stop response")
+
+
+@router.get("/realtime/jyhf-cdp/logs")
+async def jyhf_cdp_collector_logs(lines: int = Query(default=300, ge=20, le=2000)) -> dict:
+    data = await _proxy_jyhf_cdp_service_json(
+        "GET",
+        "/collector/logs",
+        params={"lines": lines},
+        timeout=10.0,
+    )
+    if isinstance(data, dict):
+        return data
+    raise HTTPException(status_code=502, detail="invalid jyhf-cdp logs response")
 
 
 @router.get("/intel/feed")
