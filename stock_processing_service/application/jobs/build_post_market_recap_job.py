@@ -459,6 +459,7 @@ class BuildPostMarketRecapJob:
                 result = self._tracking_service.score_watch_row(
                     candidate,
                     current_flag_today=flag_today,
+                    close_price=float(bar.close_price) if bar.close_price else None,
                     cycle=cycle_snap,
                     board=board_snap,
                     support_result=support_result,
