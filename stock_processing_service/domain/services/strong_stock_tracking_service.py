@@ -393,6 +393,7 @@ class StrongStockTrackingService:
         row: WatchSeedRow,
         *,
         current_flag_today: int | None = None,
+        close_price: float | None = None,
         cycle: CycleSnapshot | None = None,
         board: BoardSnapshot | None = None,
         support_result: SupportScoreResult | None = None,
@@ -403,6 +404,9 @@ class StrongStockTrackingService:
 
         等价于旧链 _score_watch_row（strong_stock_tracking_service.py:543-958）。
         所有外部数据通过参数传入，Domain 不做任何 I/O。
+
+        close_price 用于支撑破位判定：当 broken_board + mainline_alive 时，
+        若 close_price < support_level 则判定 support_broken 进而剔除。
         """
         stock_id = row.stock_id
         stock_name = row.stock_name
@@ -616,11 +620,21 @@ class StrongStockTrackingService:
         if cycle_state not in CYCLE_STATES:
             cycle_state = ""
 
+        # ── 支撑破位判定（设计文档 26.6：跌破支撑线方可剔除）──
+        support_broken = False
+        if support_result is not None and support_result.support_level is not None and close_price is not None:
+            support_broken = float(close_price) < float(support_result.support_level)
+
         # ── watch_status 判定 ──
         if fade_confirmed or cycle_state == CYCLE_STATE_FADE_CONFIRMED:
             watch_status = "removed"
         elif broken_board:
-            watch_status = "weakening" if final_mainline_alive else "removed"
+            if not final_mainline_alive:
+                watch_status = "removed"
+            elif support_broken:
+                watch_status = "removed"
+            else:
+                watch_status = "weakening"
         elif watch_score >= self.ACTIVE_MIN_SCORE:
             watch_status = "active"
         elif watch_score >= self.WEAKENING_MIN_SCORE:
@@ -641,7 +655,7 @@ class StrongStockTrackingService:
         # ── pool_entry_type ──
         if fade_confirmed or cycle_state == CYCLE_STATE_FADE_CONFIRMED:
             pool_entry_type = "reject"
-        elif broken_board and final_mainline_alive:
+        elif broken_board and final_mainline_alive and not support_broken:
             pool_entry_type = "observe_only"
         elif (
             strong_grade in {"S", "A"}
@@ -659,6 +673,8 @@ class StrongStockTrackingService:
         if watch_status == "removed":
             if fade_confirmed or cycle_state == CYCLE_STATE_FADE_CONFIRMED:
                 removed_reason = "fade_confirmed"
+            elif broken_board and support_broken:
+                removed_reason = "support_broken"
             elif broken_board and not final_mainline_alive:
                 removed_reason = "broken_board_non_mainline"
             elif watch_score < self.WEAKENING_MIN_SCORE:
@@ -707,6 +723,7 @@ class StrongStockTrackingService:
             "support_level": support_level,
             "support_score": support_score,
             "support_strength": support_strength,
+            "support_broken": support_broken,
         })
         if removed_reason:
             labels["removed_reason"] = removed_reason

@@ -1,5 +1,5 @@
 {
-  "numStartups": 21,
+  "numStartups": 23,
   "hasSeenTasksHint": true,
   "tipsHistory": {
     "new-user-warmup": 9,
@@ -21,7 +21,7 @@
     "continue": 18,
     "shift-tab": 18,
     "image-paste": 7,
-    "custom-agents": 7,
+    "custom-agents": 23,
     "agent-flag": 7,
     "desktop-app": 7,
     "web-app": 8,
@@ -33,7 +33,11 @@
     "color-when-multi-clauding": 15,
     "subagent-fanout-nudge": 21
   },
+<<<<<<< Updated upstream
   "promptQueueUseCount": 142,
+=======
+  "promptQueueUseCount": 173,
+>>>>>>> Stashed changes
   "showExpandedTodos": true,
   "cachedGrowthBookFeatures": {
     "tengu_amber_flint": true,
@@ -486,61 +490,61 @@
         "_post_market_replay_runner.py"
       ],
       "exampleFilesGeneratedAt": 1777979410796,
-      "lastCost": 5.468927000000001,
-      "lastAPIDuration": 1990455,
-      "lastAPIDurationWithoutRetries": 1987521,
-      "lastToolDuration": 308145,
-      "lastDuration": 10743711,
-      "lastLinesAdded": 0,
-      "lastLinesRemoved": 0,
-      "lastTotalInputTokens": 156047,
-      "lastTotalOutputTokens": 63764,
+      "lastCost": 709.5473580000005,
+      "lastAPIDuration": 51208052,
+      "lastAPIDurationWithoutRetries": 50946436,
+      "lastToolDuration": 29963770,
+      "lastDuration": 264600002,
+      "lastLinesAdded": 11696,
+      "lastLinesRemoved": 3024,
+      "lastTotalInputTokens": 8555794,
+      "lastTotalOutputTokens": 1179428,
       "lastTotalCacheCreationInputTokens": 0,
-      "lastTotalCacheReadInputTokens": 6189184,
+      "lastTotalCacheReadInputTokens": 1274565376,
       "lastTotalWebSearchRequests": 0,
-      "lastFpsAverage": 4.95,
-      "lastFpsLow1Pct": 83.01,
+      "lastFpsAverage": 3.87,
+      "lastFpsLow1Pct": 23.53,
       "lastModelUsage": {
         "deepseek-v4-flash": {
-          "inputTokens": 22912,
-          "outputTokens": 4691,
-          "cacheReadInputTokens": 0,
+          "inputTokens": 52998,
+          "outputTokens": 18547,
+          "cacheReadInputTokens": 152064,
           "cacheCreationInputTokens": 0,
           "webSearchRequests": 0,
-          "costUSD": 0.231835
+          "costUSD": 0.8046970000000001
         },
         "deepseek-v4-pro": {
-          "inputTokens": 133135,
-          "outputTokens": 59073,
-          "cacheReadInputTokens": 6189184,
+          "inputTokens": 8502796,
+          "outputTokens": 1160881,
+          "cacheReadInputTokens": 1274413312,
           "cacheCreationInputTokens": 0,
           "webSearchRequests": 0,
-          "costUSD": 5.237092
+          "costUSD": 708.7426610000006
         }
       },
-      "lastSessionId": "d8eb81cc-39d7-4b47-a91c-37127604e269",
+      "lastSessionId": "295b60c4-04a2-4c16-8e9c-623c1fbce6ad",
       "lastSessionMetrics": {
-        "frame_duration_ms_count": 46983,
-        "frame_duration_ms_min": 0.06193599999824073,
-        "frame_duration_ms_max": 548.4893169999123,
-        "frame_duration_ms_avg": 1.9296893239693031,
-        "frame_duration_ms_p50": 1.384029500070028,
-        "frame_duration_ms_p95": 3.635570299997921,
-        "frame_duration_ms_p99": 11.246913480162613,
-        "pre_tool_hook_duration_ms_count": 69,
+        "frame_duration_ms_count": 1022678,
+        "frame_duration_ms_min": 0.0659319999977015,
+        "frame_duration_ms_max": 3679.2182649970055,
+        "frame_duration_ms_avg": 4.80657789879956,
+        "frame_duration_ms_p50": 2.856386996805668,
+        "frame_duration_ms_p95": 10.528535348176945,
+        "frame_duration_ms_p99": 42.19943357773124,
+        "pre_tool_hook_duration_ms_count": 2382,
         "pre_tool_hook_duration_ms_min": 0,
-        "pre_tool_hook_duration_ms_max": 2,
-        "pre_tool_hook_duration_ms_avg": 0.2028985507246377,
+        "pre_tool_hook_duration_ms_max": 247,
+        "pre_tool_hook_duration_ms_avg": 0.7770780856423174,
         "pre_tool_hook_duration_ms_p50": 0,
-        "pre_tool_hook_duration_ms_p95": 1,
-        "pre_tool_hook_duration_ms_p99": 2,
-        "hook_duration_ms_count": 16,
+        "pre_tool_hook_duration_ms_p95": 2,
+        "pre_tool_hook_duration_ms_p99": 9,
+        "hook_duration_ms_count": 1494,
         "hook_duration_ms_min": 0,
-        "hook_duration_ms_max": 1,
-        "hook_duration_ms_avg": 0.1875,
+        "hook_duration_ms_max": 20998,
+        "hook_duration_ms_avg": 14.470548862115127,
         "hook_duration_ms_p50": 0,
         "hook_duration_ms_p95": 1,
-        "hook_duration_ms_p99": 1
+        "hook_duration_ms_p99": 5
       }
     }
   },
