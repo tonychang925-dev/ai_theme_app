@@ -1006,7 +1006,7 @@ async def _execute_weak_to_strong_two_stage(payload: ScreenerExecutePayload, tra
     if run_stage1:
         stage1_summary = await asyncio.wait_for(
             _run_post_market_recap_for_screener(candidate_trade_date, stage1_limit),
-            timeout=30.0,
+            timeout=120.0,
         )
 
     candidates = await _fetch_recap_w2s_candidates(candidate_trade_date, limit=candidate_limit)

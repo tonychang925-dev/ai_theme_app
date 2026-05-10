@@ -2041,7 +2041,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
     async def get_subject_rank_daily(self, trade_date, limit: int = 100) -> List[Dict[str, Any]]:
         """读取当日 subject_rank_daily 热点排行。"""
         sql = """
-        SELECT subject_key, subject_name, heat, heat_name, pct_chg, his_pct_chg, description
+        SELECT subject_key, description AS subject_name, heat, heat_name, pct_chg, his_pct_chg, description
         FROM subject_rank_daily
         WHERE rank_date = $1::date
         ORDER BY heat DESC NULLS LAST
@@ -2050,6 +2050,26 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         async with self.pool.acquire() as conn:
             rows = await conn.fetch(sql, trade_date, limit)
         return [dict(r) for r in rows]
+
+    async def get_new_subject_rank_entries(self, trade_date) -> List[Dict[str, Any]]:
+        """读取当日首次出现的 subject（在 subject_rank_daily 中首次出现）。"""
+        sql = """
+        SELECT r.subject_key, r.description AS subject_name, r.heat, r.pct_chg
+        FROM subject_rank_daily r
+        WHERE r.rank_date = $1::date
+          AND NOT EXISTS (
+            SELECT 1 FROM subject_rank_daily r2
+            WHERE r2.subject_key = r.subject_key AND r2.rank_date < $1::date
+          )
+        LIMIT 50
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+        return [dict(r) for r in rows]
+
+    async def get_cluster_related_subjects(self, confirmed_sks: list[str], trade_date) -> List[Dict[str, Any]]:
+        """读取与已确认主线同簇的相关题材（空实现，后续补 cluster 逻辑）。"""
+        return []
 
     async def get_subject_board_stats(
         self, trade_date
@@ -2880,6 +2900,21 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             )
         return [dict(r) for r in rows]
 
+    async def get_all_confirmed_mainlines(self) -> List[Dict[str, Any]]:
+        """读取所有当前已确认主线（不限制 subject_keys）。"""
+        sql = """
+        SELECT DISTINCT ON (subject_key)
+            subject_key, theme_name, identity_status, is_main_theme,
+            first_confirmed_date, last_review_date, rule_version,
+            composite_score, source_trade_date
+        FROM theme_mainline_identity_registry
+        WHERE is_main_theme = TRUE AND identity_status = 'confirmed'
+        ORDER BY subject_key, last_review_date DESC NULLS LAST
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql)
+        return [dict(r) for r in rows]
+
     async def get_mainline_identity_by_subject_keys(
         self,
         subject_keys: List[str],
@@ -3151,6 +3186,45 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 if row:
                     results.append(dict(row))
         return results
+
+    async def get_all_cycle_judgements(self, trade_date) -> List[Dict[str, Any]]:
+        """读取当日所有 theme_cycle_judgement_v2 行（不限制 subject_keys）。"""
+        sql = """
+        SELECT subject_key, theme_name, final_cycle_state, final_mainline_alive,
+               fade_watch, fade_confirmed, mainline_strength_score,
+               fade_watch_score, fade_confirmed_score, divergence_score, repair_score
+        FROM theme_cycle_judgement_v2 WHERE trade_date = $1::date
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+        return [dict(r) for r in rows]
+
+    async def get_all_prior_alive_cycles(self, trade_date) -> List[Dict[str, Any]]:
+        """读取上一交易日已确认主线且仍存续的 subject。
+
+        必须同时满足：
+        - cycle: final_mainline_alive=true AND NOT fade_confirmed
+        - identity: is_main_theme=true AND identity_status='confirmed'
+        """
+        sql = """
+        WITH last_date AS (
+            SELECT MAX(trade_date) as prior_date
+            FROM theme_cycle_judgement_v2 WHERE trade_date < $1::date
+        )
+        SELECT DISTINCT ON (v2.subject_key)
+            v2.subject_key, v2.theme_name, v2.final_cycle_state,
+            v2.final_mainline_alive, v2.fade_confirmed, v2.mainline_strength_score
+        FROM theme_cycle_judgement_v2 v2
+        JOIN last_date ld ON v2.trade_date = ld.prior_date
+        JOIN theme_mainline_identity_registry mr
+          ON mr.subject_key = v2.subject_key
+         AND mr.is_main_theme = TRUE
+         AND mr.identity_status = 'confirmed'
+        WHERE v2.final_mainline_alive = TRUE AND v2.fade_confirmed = FALSE
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+        return [dict(r) for r in rows]
 
     async def get_mainline_cycle_by_subject_keys(
         self,
@@ -4397,7 +4471,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             $13, $14, $15, $16,
             $17::jsonb, $18::jsonb, $19, $20, $21
         )
-        ON CONFLICT (subject_key) DO UPDATE SET
+        ON CONFLICT (subject_key, source_trade_date) DO UPDATE SET
             theme_name = EXCLUDED.theme_name,
             is_main_theme = EXCLUDED.is_main_theme,
             identity_status = EXCLUDED.identity_status,
@@ -4430,13 +4504,20 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             OR $22::boolean = TRUE
         )
           AND (
-            -- Guard 2: 不允许非LLM路径静默降级 confirmed → observed/inactive
+            -- Guard 2: 不允许非LLM路径静默降级 confirmed → observed/inactive/review_pending
             $23::boolean = TRUE
             OR NOT (
                 COALESCE(theme_mainline_identity_registry.is_main_theme, FALSE) = TRUE
                 AND COALESCE(NULLIF(LOWER(theme_mainline_identity_registry.identity_status), ''), 'observed') = 'confirmed'
-                AND COALESCE(EXCLUDED.is_main_theme, FALSE) = FALSE
-                AND COALESCE(EXCLUDED.llm_applied, FALSE) = FALSE
+                AND (
+                    -- is_main_theme 被标记为 false
+                    COALESCE(EXCLUDED.is_main_theme, FALSE) = FALSE
+                    -- 或 identity_status 从 confirmed 降级（仅 llm_applied=true 且 is_main_theme 仍为 true 时允许）
+                    OR (
+                        COALESCE(NULLIF(LOWER(EXCLUDED.identity_status), ''), 'observed') != 'confirmed'
+                        AND COALESCE(EXCLUDED.llm_applied, FALSE) = FALSE
+                    )
+                )
             )
         )
         """

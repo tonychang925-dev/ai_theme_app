@@ -56,10 +56,13 @@ class BuildCycleJudgementJob:
         source_errors: dict[str, str] = {}
 
         # Step 1: 构建 tracked universe（复用 6 源 UniverseBuilder）
+        universe_builder = MainlineIdentityUniverseBuilder(self._read_port)
         try:
-            universe_builder = MainlineIdentityUniverseBuilder(self._read_port)
             universe_rows = await universe_builder.build(trade_date)
             tracked_keys = {r.subject_key for r in universe_rows}
+            # 合并 UniverseBuilder 内部的 source_errors
+            if hasattr(universe_builder, "source_errors"):
+                source_errors.update(universe_builder.source_errors)
         except Exception as e:
             source_errors["universe_builder"] = str(e)
             # 降级：仅 confirmed + prior alive

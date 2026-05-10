@@ -67,7 +67,7 @@ class ConnectionPoolConfig:
     max_queries: int = 50000
     max_inactive_connection_lifetime: float = 300.0  # 秒
     connection_timeout: int = 30  # 秒
-    command_timeout: int = 30  # 秒
+    command_timeout: int = 120  # 秒
 
 
 @dataclass

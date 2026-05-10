@@ -446,6 +446,7 @@ class BuildPostMarketRecapJob:
                     low_price=Decimal("0"), close_price=Decimal("0"),
                     pre_close=Decimal("0"), pct_chg=Decimal("0"),
                     volume=Decimal("0"), amount=Decimal("0"),
+                    limit_up_price=Decimal("0"), limit_down_price=Decimal("0"),
                 )
                 stock_prior = prior_by_stock.get(stock_id, [])
                 stock_history = history_bars_by_stock.get(stock_id, [])

@@ -22,6 +22,7 @@ class CollectorStatus(BaseModel):
     duplicate_count_total: int = 0
     parse_error_count_total: int = 0
     pushed_to_stream_count_total: int = 0
+    pushed_to_db_count_total: int = 0
     pushed_to_intel_count_total: int = 0
     review_queue_count_total: int = 0
     last_error: str | None = None

@@ -78,6 +78,7 @@ class DecimalEncoder(json.JSONEncoder):
 # 设置logger
 logger = logging.getLogger(__name__)
 WEB_APP_SERVICE_BASE_URL = str(os.getenv("WEB_APP_SERVICE_BASE_URL", "http://127.0.0.1:8000")).rstrip("/")
+JYHF_CDP_SERVICE_BASE_URL = str(os.getenv("JYHF_CDP_SERVICE_BASE_URL", "http://127.0.0.1:8095")).rstrip("/")
 
 # 尝试导入SSE推送服务
 try:
@@ -1694,7 +1695,7 @@ async def _proxy_web_app_v2(path: str, params: dict[str, Any]) -> dict[str, Any]
     url = f"{WEB_APP_SERVICE_BASE_URL}{path}"
     q = {k: v for k, v in params.items() if v is not None and v != ""}
     try:
-        async with httpx.AsyncClient(timeout=15.0) as client:
+        async with httpx.AsyncClient(timeout=120.0) as client:
             resp = await client.get(url, params=q)
             resp.raise_for_status()
             data = resp.json()
@@ -1917,6 +1918,55 @@ async def _run_cmd(cmd: list[str], timeout_sec: int) -> dict[str, Any]:
         "stderr": stderr.decode("utf-8", errors="replace"),
         "command": cmd,
     }
+
+
+async def _proxy_jyhf_cdp(method: str, path: str, *, params: dict | None = None, payload: dict | None = None, timeout: float = 15.0) -> dict:
+    """Proxy request to jyhf_cdp_service."""
+    url = f"{JYHF_CDP_SERVICE_BASE_URL}{path}"
+    try:
+        async with httpx.AsyncClient(timeout=timeout) as http:
+            resp = await http.request(method.upper(), url, params=params, json=payload)
+            resp.raise_for_status()
+            data = resp.json()
+            return data if isinstance(data, dict) else {}
+    except httpx.HTTPStatusError as exc:
+        raise HTTPException(status_code=exc.response.status_code, detail=exc.response.text) from exc
+    except Exception as exc:
+        raise HTTPException(
+            status_code=503,
+            detail={"code": "JYHF_CDP_SERVICE_UNAVAILABLE", "message": str(exc), "upstream": url},
+        ) from exc
+
+
+@app.get("/api/v2/realtime/jyhf-cdp/status")
+@app.get("/api/realtime/jyhf-cdp/status")
+async def jyhf_cdp_status():
+    return await _proxy_jyhf_cdp("GET", "/status")
+
+
+@app.post("/api/v2/realtime/jyhf-cdp/start")
+@app.post("/api/realtime/jyhf-cdp/start")
+async def jyhf_cdp_start(payload: dict | None = None):
+    return await _proxy_jyhf_cdp("POST", "/collector/start", payload=payload or {}, timeout=30.0)
+
+
+@app.post("/api/v2/realtime/jyhf-cdp/stop")
+@app.post("/api/realtime/jyhf-cdp/stop")
+async def jyhf_cdp_stop(payload: dict | None = None):
+    return await _proxy_jyhf_cdp("POST", "/collector/stop", payload=payload or {}, timeout=30.0)
+
+
+@app.post("/api/v2/realtime/jyhf-cdp/restart")
+@app.post("/api/realtime/jyhf-cdp/restart")
+async def jyhf_cdp_restart(payload: dict | None = None):
+    await _proxy_jyhf_cdp("POST", "/collector/stop", payload=payload or {}, timeout=15.0)
+    return await _proxy_jyhf_cdp("POST", "/collector/start", payload=payload or {}, timeout=30.0)
+
+
+@app.get("/api/v2/realtime/jyhf-cdp/logs")
+@app.get("/api/realtime/jyhf-cdp/logs")
+async def jyhf_cdp_logs(lines: int = Query(default=300, ge=20, le=2000)):
+    return await _proxy_jyhf_cdp("GET", "/collector/logs", params={"lines": lines})
 
 
 @app.get("/api/realtime/collector/status")

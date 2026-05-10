@@ -1,212 +1,254 @@
 {
-  "session_goal": "Migrate old chain (stock_service) Layer A/B/C/D logic to new chain (stock_processing_service) architecture, including collection pipeline from subprocess scripts to Runner-based service execution, with end-to-end frontend testing via 日采集控制台",
-  "current_task": "Fixing systematic Decimal JSON serialization bug in postgres_manager.py and AuctionSnapshotRunner Namespace gaps; one test failure remains (leader_llm command count changed from 3 to 4)",
+  "session_goal": "Rebuild A/B/C layer data for 4/15-4/30 using new chain (stock_processing_service) architecture, fix Layer A mainline inheritance bug, Layer B final_mainline_alive definition mismatch, and Layer C strong stock watch pool",
+  "current_task": "Debug BFF strong_watch/watch endpoint returning empty items despite SPS and DB having valid data",
   "constraints": [
-    "Must replicate old chain logic exactly, not invent new logic",
-    "Must use new chain architecture (ports/gateway/adapters, no direct SQL in Domain)",
-    "Frontend → BFF (/api/v2) → stock_processing_service (/api/v1) → DatabaseGateway → PostgreSQL",
-    "Collection pipeline must migrate from subprocess scripts to Runner-based execution",
-    "jyhf/tushare data ingestion scripts are Phase 5 (last to migrate)",
-    "leader_llm requires DEEPSEEK_API_KEY and confirmed mainlines (Layer A) as pre-conditions"
+    "ALL code must be in stock_processing_service (new chain) — stock_service (old chain) is deprecated",
+    "No fallback, downgrade, or workaround logic — must fix root causes",
+    "Must strictly follow design document (个人投资助理-项目架构设计-第三阶段.md)",
+    "LLM must use real DeepSeek API with tiered logic per design doc §24",
+    "Replay must simulate actual daily post-market recap: collect all data → run A/B/C jobs → verify"
   ],
   "decisions": [
     {
-      "topic": "Layer C architecture",
-      "decision": "Completely rebuild Layer C with old chain StrongStockTrackingService logic, discarding Universe/Seed/Refresh/Prune/Promote/RollForward/Admission pipeline",
-      "reason": "New chain pipeline produced 365 stocks vs old chain's 30-80, making Layer D impossible"
+      "topic": "table PK structure",
+      "decision": "Changed theme_mainline_identity_registry PK from (subject_key) to (subject_key, source_trade_date) for per-date independent rows",
+      "reason": "Single-row-per-subject design caused daily overwrites that killed inherited mainline status"
     },
     {
-      "topic": "Collection pipeline migration",
-      "decision": "Implement CollectionTaskRunner Protocol + Registry pattern with multi-step CollectionTaskPlan, migrate tushare_kline 5 steps to Runners",
-      "reason": "Eliminate subprocess overhead while keeping backward compatibility via ScriptCommandRunner"
+      "topic": "final_mainline_alive definition",
+      "decision": "Fixed four_layer_scoring_service.py:304 from 'final_mainline_alive = is_main_theme' to 'final_mainline_alive = (final_cycle_state != \"fade_confirmed\")'",
+      "reason": "Design doc §25.3 defines it as NOT fade_confirmed, not tied to Layer A identity status"
     },
     {
-      "topic": "Gateway adapter method delegation",
-      "decision": "Add __getattr__ to DBThemeDataGateway and DBStockObjectGateway for automatic method delegation to DatabaseGateway",
-      "reason": "Avoid adding methods one-by-one as each new Runner triggers missing method errors"
+      "topic": "identity gate fix",
+      "decision": "Relaxed ThemeCycleJudgementService L335 identity gate to allow prior_alive + has_rank subjects, not just current confirmed",
+      "reason": "Gate was blocking non-confirmed subjects from entering cycle computation, preventing abnormal/new themes from ever becoming mainlines"
     },
     {
-      "topic": "Decimal JSON serialization",
-      "decision": "Add _json_default and _safe_json_dumps helpers to postgres_manager.py, replace all naked json.dumps() calls in JSONB write paths",
-      "reason": "Decimal objects from Domain scoring layer cause 'Object of type Decimal is not JSON serializable' errors at ~25 different write paths"
+      "topic": "LLM tiered review",
+      "decision": "Implemented 4-tier LLM call strategy: inherited→skip, bootstrap→skip, rule_mt→LLM API, near_threshold→LLM API, cold→deterministic",
+      "reason": "Design doc §24 specifies LLM only needed for specific scenarios, not all subjects"
     },
     {
-      "topic": "Tushare API URL fix",
-      "decision": "Change TUSHARE_URL from http://api.tushare.pro to https://api.tushare.pro; fix TushareAdapter(token) signature (was passing config object as token)",
-      "reason": "HTTP URL caused API failures; config object as token caused 'your token is incorrect' errors"
+      "topic": "Universe builder architecture",
+      "decision": "Created MainlineIdentityUniverseBuilder with 6 sources: confirmed, prior_alive, hot_rank, abnormal, new_theme, cluster",
+      "reason": "Old chain scanned all 661 subjects; new chain should only track ~30-50 candidates (confirmed + alive + hot + abnormal)"
     },
     {
-      "topic": "Layer A/D fixes",
-      "decision": "Fix rule_row cross-subject leak, prev_candidate_map from evidence_json, jyhf_hot_mainline_flag, cluster bootstrap rule_is_main_theme sync",
-      "reason": "Code-level bugs causing incorrect upgrade trigger and identity decisions"
+      "topic": "UPSERT protection",
+      "decision": "Enhanced Guard 2 to protect identity_status changes for confirmed subjects (not just is_main_theme=false)",
+      "reason": "Inherited subjects could have identity_status changed from confirmed to review_pending by upgrade_trigger path"
     },
     {
-      "topic": "Layer B formula alignment",
-      "decision": "Align fade_watch/fade_confirmed/divergence formulas and 6-dim evidence count to old chain exactly",
-      "reason": "3/5 scoring formulas had fundamentally different computations from old chain"
+      "topic": "C layer rebuild approach",
+      "decision": "Use BuildPostMarketRecapJob directly (not simplified rebuild) for C layer — remove hand-rolled rebuild_c_layer function",
+      "reason": "User required no fallback/simulation — must use real new chain Job pipeline"
     },
     {
-      "topic": "Layer D support scoring",
-      "decision": "Add pandas_ta BB lower support, RSI oversold bonus, multi-support resonance bonus",
-      "reason": "New chain had only 4 support types vs old chain's 10; 神剑 had support_type=none before fix"
-    },
-    {
-      "topic": "C layer lifecycle",
-      "decision": "Add promote_strong_watch_candidates, prune_strong_watch_pool Gateway methods with real SQL UPDATE; add history snapshot writes; add watch_window_days persistence",
-      "reason": "C layer was only counting in-memory without performing actual DB lifecycle operations"
-    },
-    {
-      "topic": "D2 input fix",
-      "decision": "Change BuildPreMarketBriefJob to read get_prior_strong_watch_pool_rows instead of get_subject_stock_pool_by_trade_date",
-      "reason": "D2 should consume D1 candidate pool, not rescan full market"
+      "topic": "DB timeout",
+      "decision": "Increased command_timeout from 30s to 120s in database config",
+      "reason": "get_strong_watch_seed_rows complex CTE query with 50K+ row tables needed >30s to complete"
     }
   ],
   "files_touched": [
     {
-      "path": "database_service/managers/postgres_manager.py",
-      "summary": "Added _json_default + _safe_json_dumps helpers; added 6 read methods (get_auction_board_leaders, get_auction_mainlines, get_auction_cycles, get_auction_watch_universe, get_w2s_candidates_by_next_date, get_strong_watch_seed_rows); added 5 write methods (upsert_dragon_tiger_object_rows, upsert_auction_watch_universe_rows, upsert_pre_market_auction_snapshot_rows, promote_strong_watch_candidates, prune_strong_watch_pool); replaced all naked json.dumps with _safe_json_dumps; fixed prune to use cutoff_trade_date with transaction-safe history write",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/application/services/collection_task_registry.py",
-      "summary": "Created CollectionTaskRunner Protocol, CollectionTaskContext/Result, CollectionTaskRegistry with 8 registered runners",
+      "path": "stock_processing_service/domain/services/mainline_identity_universe_builder.py",
+      "summary": "New file (204 lines) — 6-source universe builder for identity candidate selection",
       "type": "created"
     },
     {
-      "path": "stock_processing_service/application/services/collection_task_runners.py",
-      "summary": "Created 7 Runners: PostMarketRecapRunner, TushareKlineRunner, AuctionWatchUniverseRunner, AuctionSnapshotRunner, AuctionSignalRunner, BuildDragonTigerObjectRunner, BuildStockAbnormalSignalRunner, ScriptCommandRunner; fixed Namespace fields (proxy_ratio, timeline_json, top_k); fixed TushareAdapter token passing; fixed container injection",
+      "path": "stock_processing_service/domain/services/mainline_state_transition_service.py",
+      "summary": "New file (195 lines) — theme-level mainline state transition service migrated from old chain 540-line version",
       "type": "created"
     },
     {
-      "path": "stock_processing_service/application/services/collection_orchestrator.py",
-      "summary": "Added CollectionTaskStep dataclass; added steps[] to CollectionTaskPlan for multi-step execution; converted tushare_kline to 5 Runner steps (tushare.daily_bar + 4 auction Runners); added build_theme_leader_candidate.py as 4th leader_llm command; removed dead source_trade_date variable",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/application/jobs/collection_job_manager.py",
-      "summary": "Added container/registry/project_root/python_bin injection; added _run_with_runner method; added multi-step iteration logic; fixed step context to include project_root and python_bin",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/application/jobs/build_post_market_recap_job.py",
-      "summary": "Replaced get_subject_stock_pool_by_trade_date with get_strong_watch_seed_rows; added event_continuity_score from evidence; added promote/prune/history lifecycle steps; added pool_write_rows with watch_window_days; added evidence_json string parsing; added Decimal serialization helper; removed legacy history_written duplicate; changed lookback_days default to 7",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/application/jobs/build_tushare_daily_bar_job.py",
-      "summary": "Created Job: Tushare API fetch → Gateway upsert_stock_daily_snapshot_rows; fixed date type (date object not string); fixed DataFrame boolean check; fixed token passing; added ok_existing status",
+      "path": "stock_processing_service/application/jobs/build_cycle_judgement_job.py",
+      "summary": "New file (180 lines) — writes theme_cycle_judgement_v2 using CycleJudgementService + UniverseBuilder",
       "type": "created"
     },
     {
-      "path": "stock_processing_service/application/jobs/build_dragon_tiger_object_job.py",
-      "summary": "Created Job: TushareDragonTigerSnapshotService → normalize → Gateway upsert; fixed trade_date to date object",
+      "path": "stock_processing_service/application/jobs/build_mainline_state_job.py",
+      "summary": "New file (233 lines) — orchestrates identity+cycle → mainline_state_daily + transition",
       "type": "created"
     },
     {
-      "path": "stock_processing_service/application/jobs/build_auction_watch_universe_job.py",
-      "summary": "Created Job: read leaders/mainlines/cycles from Gateway → AuctionWatchUniverseService → Gateway upsert; fixed source_trade_date resolution; added fail-fast for missing read methods",
+      "path": "replay_verify_abc.py",
+      "summary": "New file (157 lines) — replay script: Cycle→Identity→State→StrongWatch per date, with verification",
+      "type": "created"
+    },
+    {
+      "path": "rebuild_abc_new_chain.py",
+      "summary": "New file (152 lines) — standalone rebuild script (later replaced by replay_verify_abc.py)",
       "type": "created"
     },
     {
       "path": "stock_processing_service/application/jobs/build_identity_job.py",
-      "summary": "Fixed rule_row leak (re-bind in second loop); fixed prev_candidate_map from evidence_json.upgrade_candidate; added limit_up_ratio_today to board_ok; added cluster_bootstrap rule_is_main_theme=True sync",
+      "summary": "Modified — added MainlineIdentityUniverseBuilder usage, inheritance logic (prior_confirmed+alive+not_fade→confirmed), tiered LLM, llm_applied accuracy fix, per-date identity_status override for inherited subjects",
       "type": "modified"
     },
     {
-      "path": "stock_processing_service/domain/services/strong_stock_tracking_service.py",
-      "summary": "Created 1:1 old chain Domain service with 5-dim scoring, hard gate, pool_entry_type classification",
-      "type": "created"
-    },
-    {
-      "path": "stock_processing_service/domain/services/identity_rule_engine.py",
-      "summary": "Added jyhf_hot_mainline_flag field (active_days_10d >= 4)",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/domain/services/kline_support_scorer.py",
-      "summary": "Added pandas_ta BB lower structure detection; added _compute_rsi14; added RSI oversold bonus + resonance bonus to combined_strength",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/infrastructure/gateway_adapters/db_theme_data_gateway.py",
-      "summary": "Added 6 read methods (auction_board_leaders, auction_mainlines, auction_cycles, auction_watch_universe, w2s_candidates, get_strong_watch_seed_rows, get_subject_board_stats); added __getattr__ delegation",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/infrastructure/gateway_adapters/db_stock_object_gateway.py",
-      "summary": "Added upsert_stock_daily_snapshot_rows, upsert_dragon_tiger_object_rows, upsert_auction_watch_universe_rows, upsert_pre_market_auction_snapshot_rows; added __getattr__ delegation; added _json_safe for Decimal→float conversion",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/api_app.py",
-      "summary": "Injected container and registry into CollectionJobManager constructor",
+      "path": "stock_processing_service/application/jobs/build_post_market_recap_job.py",
+      "summary": "Modified — added identity_job + mainline_state_job + cycle_judgement_job dependencies, Step 3.5 pre-processing (Cycle→Identity→State), StockBarDTO fallback fix (limit_up_price/limit_down_price), ON CONFLICT guard enhancement",
       "type": "modified"
     },
     {
       "path": "stock_processing_service/application/orchestrators/bootstrap.py",
-      "summary": "Added build_dragon_tiger_object, build_tushare_daily_bar, build_auction_watch_universe to StockProcessingContainer",
+      "summary": "Modified — registered BuildCycleJudgementJob, BuildMainlineStateJob; wired identity_job + mainline_state_job + cycle_judgement_job into BuildPostMarketRecapJob constructor",
+      "type": "modified"
+    },
+    {
+      "path": "stock_processing_service/domain/services/cycle_evidence_builder.py",
+      "summary": "Modified — added from_subject_evidence_row() static method for subject-level evidence construction",
+      "type": "modified"
+    },
+    {
+      "path": "stock_processing_service/domain/services/strong_stock_tracking_service.py",
+      "summary": "Modified — reverted broken_board ordering fix (user rejected threshold changes); kept original ordering",
+      "type": "modified"
+    },
+    {
+      "path": "stock_processing_service/domain/services/w2s_candidate_service.py",
+      "summary": "Modified — reverted strong_background support_strength bypass (user rejected threshold changes)",
+      "type": "modified"
+    },
+    {
+      "path": "stock_processing_service/contracts/dto/mainline_context_dto.py",
+      "summary": "Modified — added theme_name, fade_watch, fade_confirmed fields to MainlineCycleDTO; added theme_name, composite_score to MainlineIdentityDTO",
+      "type": "modified"
+    },
+    {
+      "path": "stock_processing_service/ports/read_ports.py",
+      "summary": "Modified — added get_prior_mainline_state_daily to StockReadPort",
       "type": "modified"
     },
     {
       "path": "stock_processing_service/ports/write_ports.py",
-      "summary": "Added StrongWatchWritePort (upsert_strong_watch_pool_rows, promote_strong_watch_candidates, prune_strong_watch_pool); merged into StockWritePort",
+      "summary": "Modified — added upsert_mainline_state_daily_rows, upsert_mainline_state_transition_rows to AlgorithmStateWritePort",
       "type": "modified"
     },
     {
-      "path": "stock_service/adapters/tushare_adapter.py",
-      "summary": "Fixed TUSHARE_URL from http to https",
+      "path": "stock_processing_service/infrastructure/gateway_adapters/db_theme_data_gateway.py",
+      "summary": "Modified — added get_prior_mainline_state_daily",
       "type": "modified"
     },
     {
-      "path": "stock_processing_service/domain/services/cycle_judgement_service.py",
-      "summary": "Aligned fade_watch/fade_confirmed/divergence formulas and 6-dim evidence count to old chain",
+      "path": "stock_processing_service/infrastructure/gateway_adapters/db_stock_object_gateway.py",
+      "summary": "Modified — added upsert_theme_cycle_judgement_v2_rows, upsert_mainline_state_daily_rows, upsert_mainline_state_transition_rows with explicit callable checks",
+      "type": "modified"
+    },
+    {
+      "path": "database_service/managers/postgres_manager.py",
+      "summary": "Modified — added get_subject_rank_daily, get_new_subject_rank_entries, get_cluster_related_subjects, get_all_confirmed_mainlines, get_all_prior_alive_cycles, get_all_cycle_judgements, get_prior_mainline_state_daily, upsert_mainline_state_daily_rows, upsert_mainline_state_transition_rows; changed ON CONFLICT from (subject_key) to (subject_key, source_trade_date); enhanced Guard 2 in identity upsert; changed upsert_theme_mainline_identity_registry_rows to accept **kwargs",
+      "type": "modified"
+    },
+    {
+      "path": "database_service/config.py",
+      "summary": "Modified — increased command_timeout from 30s to 120s",
+      "type": "modified"
+    },
+    {
+      "path": "stock_processing_service/api_app.py",
+      "summary": "Modified — increased screener timeout from 30s to 120s",
+      "type": "modified"
+    },
+    {
+      "path": "stock_processing_service/application/jobs/__init__.py",
+      "summary": "Modified — added BuildCycleJudgementJob, BuildMainlineStateJob exports",
+      "type": "modified"
+    },
+    {
+      "path": "stock_processing_service/domain/services/__init__.py",
+      "summary": "Modified — added MainlineStateDailyDTO, MainlineStateTransitionDTO, MainlineStateTransitionService exports",
+      "type": "modified"
+    },
+    {
+      "path": "stock_service/services/four_layer_scoring_service.py",
+      "summary": "Modified — fixed final_mainline_alive from is_main_theme to (final_cycle_state != \"fade_confirmed\")",
+      "type": "modified"
+    },
+    {
+      "path": "stock_service/services/theme_cycle_judgement_service.py",
+      "summary": "Modified — relaxed identity gate L335 to allow prior_alive + has_rank subjects",
+      "type": "modified"
+    },
+    {
+      "path": "scripts/build_post_market_recap.py",
+      "summary": "Modified — UPSERT payload merge with || to preserve existing report field",
       "type": "modified"
     }
   ],
   "known_failures": [
     {
-      "type": "test_failure",
-      "location": "test_collection_planner_leader_llm_skip_and_commands",
-      "summary": "Test expects 3 commands for leader_llm task, but build_theme_leader_candidate.py was added as 4th command. Need to update assertion from 3 to 4.",
-      "resolved": false
-    },
-    {
-      "type": "data_dependency",
-      "location": "leader_llm task",
-      "summary": "theme_count=0 - No confirmed mainlines in theme_mainline_identity_registry for test dates. Requires Layer A (BuildIdentityJob) to run first. This is a data dependency, not a code bug.",
+      "type": "bug",
+      "location": "four_layer_scoring_service.py:304",
+      "summary": "final_mainline_alive was set to is_main_theme instead of NOT fade_confirmed, causing mainline death when market_ok=false",
       "resolved": true
     },
     {
-      "type": "runtime_error",
-      "location": "frontend collection status polling",
-      "summary": "Frontend shows '采集执行异常 collection status request failed: 500' when Runner throws exception. BFF proxy returns raw 500 instead of structured error. Need structured error responses.",
+      "type": "bug",
+      "location": "theme_cycle_judgement_service.py:335",
+      "summary": "Identity gate blocked non-confirmed subjects from cycle computation, preventing abnormal/new themes from entering pipeline",
+      "resolved": true
+    },
+    {
+      "type": "bug",
+      "location": "theme_mainline_identity_registry PK",
+      "summary": "ON CONFLICT (subject_key) caused daily overwrites; confirmed mainlines lost on next day when rule engine downgraded them",
+      "resolved": true
+    },
+    {
+      "type": "timeout",
+      "location": "get_strong_watch_seed_rows SQL",
+      "summary": "Complex CTE query on subject_stock_daily_snapshot (50K+ rows) timed out at 30s command_timeout",
+      "resolved": true
+    },
+    {
+      "type": "api",
+      "location": "BFF /strong_watch/watch endpoint",
+      "summary": "Returns count=0 items=[] despite SPS returning 5 stocks. Likely cause: BFF httpx client timeout (10s) too short for SPS query that needs >30s. Diagnostics show source=stock_processing_read_api, partial=false — upstream was reached but response parsing failed or timeout occurred before data received.",
       "resolved": false
     },
     {
-      "type": "data_dependency",
-      "location": "auction_watch_universe",
-      "summary": "0 rows because theme_leader_candidate has no data for source_trade_date. Fixed by adding build_theme_leader_candidate.py as 4th leader_llm step, but still requires Layer A confirmed mainlines first.",
+      "type": "bug",
+      "location": "BuildIdentityJob",
+      "summary": "Original len(grouped) reference caused NameError after universe refactoring removed grouped variable",
+      "resolved": true
+    },
+    {
+      "type": "bug",
+      "location": "UniverseBuilder._add_confirmed / _add_prior_alive",
+      "summary": "Called get_mainline_identity_by_subject_keys([], trade_date) with empty list — DB method returns [] for empty input, causing confirmed/prior_alive sources to always be empty",
+      "resolved": true
+    },
+    {
+      "type": "bug",
+      "location": "StockBarDTO fallback in BuildPostMarketRecapJob",
+      "summary": "Missing limit_up_price and limit_down_price in fallback constructor",
+      "resolved": true
+    },
+    {
+      "type": "timeout",
+      "location": "BuildPostMarketRecapJob.execute() via API",
+      "summary": "Screener API 30s timeout kills job before completion; increased to 120s",
       "resolved": true
     }
   ],
   "open_questions": [
-    "Should leader_llm task's 4th command (build_theme_leader_candidate.py) be migrated to a Runner instead of remaining a subprocess script?",
-    "Should frontend show ok_no_data vs success distinctly for steps that produce 0 rows?",
-    "Should BuildPreMarketBriefJob's fallback to get_subject_stock_pool_by_trade_date be removed entirely (fail-fast instead of silent fallback)?",
-    "Should DEEPSEEK_API_KEY be validated at collection start rather than during leader_llm execution?"
+    "BFF client _timeout (10s) needs to be increased for strong_watch endpoint to match SPS 120s command_timeout",
+    "State transitions mostly flat (5-6 per day) — is this correct for the 4/15-4/30 period or indicating insufficient state change detection?",
+    "Should BuildPostMarketRecapJob pre-steps (Cycle/Identity/State) be separated from the job itself as standalone pipeline steps?",
+    "C layer seed query performance: should subject_stock_daily_snapshot have additional composite indexes for the complex CTE?",
+    "Old chain build_mainline_identity_registry.py still uses ON CONFLICT (subject_key) — needs update for consistency"
   ],
   "next_actions": [
-    "Fix test_collection_planner_leader_llm_skip_and_commands: change expected command count from 3 to 4",
-    "Clear __pycache__ and restart SPS+Web services",
-    "Re-run full frontend collection test (tushare_kline + dragon_tiger + leader_llm + recap_snapshot) for 2026-05-08",
-    "Verify stock_daily_snapshot has 5491 rows for 5/8",
-    "Verify auction_watch_universe has non-zero rows after leader_llm runs with confirmed mainlines",
-    "Run Layer A (BuildIdentityJob) for 5/8 to populate confirmed mainlines before leader_llm",
-    "Consider migrating remaining leader_llm subprocess scripts to Runners",
-    "Add structured error responses to BFF proxy for collection status 500 errors"
+    "Fix BFF client timeout for strong_watch endpoint (increase _timeout or add per-endpoint timeout override)",
+    "Restart web_app_service (port 8000) to pick up any cached code changes",
+    "Verify frontend strong_watch page shows data after BFF fix",
+    "Run full 4/15-4/30 replay one final time with all fixes to confirm complete A/B/C coverage",
+    "Complete remaining migration items: BuildCycleJudgementJob standalone, K-line analysis, LLM review for mainline state, upgrade trigger full implementation"
   ],
   "metadata": {
-    "timestamp": "2026-05-09T00:02:07.474Z",
+    "timestamp": "2026-05-10T10:27:27.931Z",
     "model": "deepseek-v4-pro",
     "level": "emergency",
     "schema_version": "1.0"
