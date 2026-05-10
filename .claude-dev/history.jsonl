@@ -559,3 +559,20 @@
 {"display":"我有本地轻量化qwen2.5 1.5B模型，请评估此模型是否可以胜任？","pastedContents":{},"timestamp":1778384070183,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"a062c604-f043-442e-af6d-754606d65843"}
 {"display":"仍然显示“当前7日窗口无强势股记录”！！！","pastedContents":{},"timestamp":1778408127751,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
 {"display":"需要切换到theme_matcher_env环境！","pastedContents":{},"timestamp":1778408195363,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"a062c604-f043-442e-af6d-754606d65843"}
+<<<<<<< Updated upstream
+=======
+{"display":"4/22日高达88只，请确认一天有这么多强势股入围吗？","pastedContents":{},"timestamp":1778409738383,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+{"display":"继续上次的话题讨论：“[Pasted text #1 +48 lines]”","pastedContents":{"1":{"id":1,"type":"text","contentHash":"2d75c05ad5f4fed9"}},"timestamp":1778410005050,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"7213daea-707b-41ca-9b21-dd388868e246"}
+{"display":"继续上次的话题讨论：[Pasted text #1 +196 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"61b4fdfec5997611"}},"timestamp":1778410066573,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"e1e94598-3825-421b-a67e-83c92c47c653"}
+{"display":"请检查C层的入围条件是否复核旧链和设计文档的逻辑！","pastedContents":{},"timestamp":1778410095463,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"7213daea-707b-41ca-9b21-dd388868e246"}
+{"display":"我测试发现一个有趣的现象，选择某个交易日后，此时的7天列出的强势股池离当天在最远的那一天的数量急剧增加（100+），而其他的数量都是正常（10+）左右！请分析原因！","pastedContents":{},"timestamp":1778410534547,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"7213daea-707b-41ca-9b21-dd388868e246"}
+>>>>>>> Stashed changes
+{"display":"请确认一下之前我的stock_fact的数据是如何产生的，是deepseek提取的吗？我记得久赢恒丰的数据里面有提供stock_light数据，本地数据库中也有存储，请确认数据是否可用？","pastedContents":{},"timestamp":1778411177600,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"e1e94598-3825-421b-a67e-83c92c47c653"}
+{"display":"说错了，是stock_lightspots数据表","pastedContents":{},"timestamp":1778412353522,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"e1e94598-3825-421b-a67e-83c92c47c653"}
+{"display":"独立龙头豁免规则是在正确的，不能删除！但是broken_board + mainline_alive 全部保留为 \"weakening\"，这个逻辑还需要细化，比如分特别低的，也必须要剔除！broken_board具体含义是什么，是符合设计文档的定义吗？","pastedContents":{},"timestamp":1778412606909,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"7213daea-707b-41ca-9b21-dd388868e246"}
+{"display":"独立龙头豁免规则也要符合设计文档，请核查设计文档关于独立龙头豁免规则的定义。","pastedContents":{},"timestamp":1778412701994,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"7213daea-707b-41ca-9b21-dd388868e246"}
+{"display":"watch_score的评分公式是否合理，请确认设计文档的定义！我认为只有跌破支撑线的强势股才可以被剔除，否则就是弱转强的候选，因为只有弱且不破支撑才有机会转强，而不是直接剔除！","pastedContents":{},"timestamp":1778413056482,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"7213daea-707b-41ca-9b21-dd388868e246"}
+{"display":"可以","pastedContents":{},"timestamp":1778414013946,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"e1e94598-3825-421b-a67e-83c92c47c653"}
+{"display":"继续","pastedContents":{},"timestamp":1778414086946,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"e1e94598-3825-421b-a67e-83c92c47c653"}
+>>>>>>> Stashed changes
+{"display":"重新构建4/15-4/30的C层数据","pastedContents":{},"timestamp":1778414257078,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"7213daea-707b-41ca-9b21-dd388868e246"}
