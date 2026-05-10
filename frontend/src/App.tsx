@@ -8,6 +8,7 @@ import {
   LazyStrongStockWatchPage,
   LazyStrongStockWatchDetailPage,
   LazyRecapPage,
+  LazyMobileHomePage,
   LazyThemeWorkspacePage,
   LazyStockWorkspacePage,
   LazyStockScreenerPage,
@@ -63,6 +64,17 @@ export function App() {
       clearInterval(intervalId);
     };
   }, [path]);
+
+
+  if (path === "/mobile" || path.startsWith("/mobile/")) {
+    return (
+      <LazyLoadErrorBoundary>
+        <Suspense fallback={<LoadingFallback message="加载移动端驾驶舱..." />}>
+          <LazyMobileHomePage />
+        </Suspense>
+      </LazyLoadErrorBoundary>
+    );
+  }
 
   if (path.startsWith("/themes/")) {
     const subjectKey = path.replace("/themes/", "").trim();
