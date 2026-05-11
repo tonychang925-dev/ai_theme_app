@@ -1,6 +1,6 @@
 # 研选荐股 — 问题背景、方案探索与总结
 
-> 2026-05-11
+> 2026-05-11（更新：2026-05-11 晚间 — Phase 2 双路召回 + IVFFlat修复 + Prompt优化后结果）
 
 ---
 
@@ -120,47 +120,68 @@
 
 ## 四、结论
 
-### 4.1 已验证可行
+### 4.1 Phase 1 已验证（查表路径）
 
-**2次LLM调用 + theme_stock_map查表架构**，在 JYHF 映射覆盖好的情况下运行良好：
+**2次LLM调用 + theme_stock_map查表**，JYHF映射覆盖好的事件运行良好：
 
-- **AI光纤事件：** 全链路跑通。LLM提取"AI算力光纤光缆, 光纤行业量价齐升" → 匹配"光纤光缆"主题 → 21只候选 → Gate → LLM核查 → 7只精选（长飞光纤、亨通光电、中天科技、烽火通信、通鼎互联、永鼎股份、天邑股份）。7只全是光纤光缆核心标的。
+- **AI光纤事件：** 全链路跑通。7只全是光纤光缆核心标的。
 
-- **算力事件：** 方向正确。早期版本被标题"算力租赁"带偏，修复提取prompt后正确提取"国产算力" → 匹配"国产算力"主题 → 浪潮信息、中科曙光、拓维信息等国产算力核心标的。**但优刻得(688158)和紫光股份(000938)未被命中。**
+### 4.2 Phase 2 已验证（双路召回）
 
-### 4.2 未解决的卡点
+**查表(Pool A) + embedding召回(Pool B) + hinted搜索(Pool C) → Gate → LLM批量核查**
 
-**JYHF `theme_stock_map` 数据覆盖不完全。** 优刻得和紫光股份不在"国产算力"主题映射中——它们分布在"云服务"、"上海智算中心"、"AI一体机"等其它主题下，且都是 member 级别。
+算力事件最终结果（Prompt优化 + IVFFlat重建 + Gate修正后）：
 
-**文本描述与股票证据之间存在语义鸿沟。** 研报写"积极参与全国多个算力中心建设"，优刻得的lightspots/remark写的是"中立第三方云计算服务商"——语义高度相关但字面不匹配。ILIKE无法跨过这个鸿沟。尝试用token分词扩大匹配范围则引入大量噪声（"AI"匹配到"AI光纤"等无关主题）。
+| # | 股票 | 来源 | LLM | 理由 |
+|---|------|------|-----|------|
+| 1 | **000977 浪潮信息** | Pool A (core) | ✅ MATCH | AI服务器龙头，算力基础设施核心 |
+| 2 | **300442 润泽科技** | Pool B (embedding) | ✅ MATCH | 数据中心运营商，参与算力中心建设 |
+| 3 | **000938 紫光股份** | Pool B (embedding) | ✅ MATCH | ICT基础设施龙头，参与算力中心 |
+| 4-7 | 天源迪科、首都在线、云从科技、恒为科技 | Pool B (embedding) | ⚠️ PARTIAL | 部分相关 |
 
-### 4.3 架构定位
+**LLM提取：** `['国产算力', '算力基础设施', '算力中心建设', '智谱AI底层算力']` — 精准，无统计噪音。
+**主题匹配：** `['国产算力']` — 正确命中。
+**紫光股份(000938)连续命中。**
 
-当前 `StockRecommendService` 是一个**确定性查表+LLM精排**的荐股引擎：
-- 优点：快（2次LLM，~10秒）、可解释、不修改已有代码
-- 局限：只能找到 JYHF 映射表里已有的主题→股票关联
-- 适用：主题映射覆盖良好的事件
+### 4.3 双路召回关键修复
+
+| 问题 | 根因 | 修复 |
+|------|------|------|
+| embedding召回不稳定 | IVFFlat索引未rebuild（新增2,804条后） | `REINDEX INDEX idx_stock_profile_embedding_cosine` |
+| LLM提取带偏 | 标题"算力租赁"噱头误导提取 | 优化prompt：强调提取投资主题、带限定词、过滤统计数字 |
+| embedding股gate排序被碾压 | semantic_match基础分=0，低于core股(=5) | 提升semantic_match/hinted_match基础分至2 |
+| 主题匹配全乱 | token分词+反向匹配引入噪声 | 回退到纯ILIKE，去掉分词和反向匹配 |
+
+### 4.4 仍存在的局限
+
+**优刻得(688158)仍未命中。** 其profile为"第三方云计算服务商"，与"算力中心建设"的embedding余弦相似度仅0.658，无法进入pool B的top 50。需要更强语义匹配（cross-encoder reranker）或直接补充JYHF映射。
+
+**JYHF `theme_stock_map` 覆盖不完全**是根本性约束，embedding召回可部分弥补但无法完全替代。
+
+### 4.5 架构定位
+
+当前 `StockRecommendService` 是一个**双路召回+LLM精排**的荐股引擎：
+- Pool A（查表）：精确，可解释，覆盖JYHF已映射股票
+- Pool B（embedding）：语义兜底，可找回映射遗漏的股票
+- LLM核查（2次调用，~10秒）：全文推理，最终质量把关
 
 ---
 
 ## 五、下一步方案建议
 
-### 5.1 补全语义匹配层
+### 5.1 短期（立即可做）
 
-在现有查表路径之外，增加一条**语义召回路径**：
+1. **修复 embedding 召回未命中优刻得**：引入 cross-encoder reranker 对 pool B 做精排，或扩充优刻得的 profile 文本（加入"算力""智算云"等关键词）
+2. **调参优化**：增加 embedding 召回 top_k（50→100）、降低相似度阈值（0.5→0.4），扩大候选覆盖面
+3. **补充 JYHF 映射**：将优刻得、紫光股份等明显遗漏的股票手动加入对应主题的 `theme_stock_map`
 
-```
-现有: search_intents → ILIKE匹配theme_gate_profile → theme_stock_map → 候选池A
-新增: search_intents → embedding(search_intents) vs stock_profile_ext → 候选池B
-合并: A ∪ B → Gate排序 → LLM核查 → 精选
-```
+### 5.2 中期
 
-候选池B通过 embedding 余弦相似度直接召回与搜索意图语义相关的股票，不经过主题映射表。可解决"算力中心建设 → 优刻得（云计算服务商）"这类语义匹配。
+1. **cross-encoder reranker**：在 Gate 和 LLM 之间插入 reranker，对候选股票做精细相关性打分（参考题材匹配成功经验）
+2. **Prompt few-shot 优化**：收集典型事件的正确 intents 作为 few-shot 示例
+3. **stock_profile_ext 增量维护**：新增股票自动生成 embedding 并 rebuild 索引
 
-### 5.2 增强 LLM 提取 Prompt 质量
+### 5.3 长期
 
-当前 prompt 偏简单。可考虑使用 few-shot 示例引导 LLM 提取更精准的 search_intents。
-
-### 5.3 提升主题匹配覆盖率
-
-对 JYHF 主题数据进行质量检查，识别"该有但未映射"的股票，补充到 `theme_stock_map` 中。
+1. **混合检索升级**：Dense + Sparse（BM25）+ RRF 融合，提升候选池质量
+2. **新题材发现闭环**：Unknown → 聚类 → 人审 → 入库（参考题材匹配架构）

@@ -768,7 +768,7 @@ class BuildPostMarketRecapJob:
         subject_keys = all_subject_keys
         strong_watch_rows: list[Any] = []
         strong_watch_history: list[Any] = history_rows if history_written else []
-        promoted_pool_rows: list[Any] = candidate_input_rows
+        promoted_pool_rows: list[Any] = d1_input_rows
         shadow_summary: dict[str, Any] = {}
         legacy_watch_input_count = 0
         strong_watch_pool_written = pool_written
@@ -817,8 +817,8 @@ class BuildPostMarketRecapJob:
             "layer_c_input_mode": layer_c_input_mode,
             "layer_c_shadow_enabled": layer_c_shadow_enabled,
             "legacy_watch_input_count": legacy_watch_input_count,
-            "strong_watch_input_count": len(candidate_input_rows),
-            "strong_watch_input_7d_count": len(candidate_input_rows),
+            "strong_watch_input_count": len(d1_input_rows),
+            "strong_watch_input_7d_count": len(d1_input_rows),
             "strong_watch_promoted_count": len(promoted_pool_rows),
             "strong_watch_history_count": len(strong_watch_history),
             "strong_watch_pool_written": strong_watch_pool_written,
@@ -928,10 +928,10 @@ class BuildPostMarketRecapJob:
                     "transition_type": str((r.metadata or {}).get("transition_type", "")),
                     "transition_confidence": str((r.metadata or {}).get("transition_confidence", "0")),
                 }
-                for r in candidate_input_rows[:100]
+                for r in d1_input_rows[:100]
             ],
             "strong_watch_input_7d_stock_ids": sorted(
-                {str(r.stock_id) for r in candidate_input_rows if str(getattr(r, "stock_id", "") or "")}
+                {str(r.get("stock_id", "")) for r in d1_input_rows if str(r.get("stock_id", "") or "")}
             ),
             "strong_watch_input_7d_source": (
                 "legacy_strong_watch_pool_or_history"
@@ -1075,7 +1075,7 @@ class BuildPostMarketRecapJob:
             batch_id=batch_id,
             trace_id=trace_id,
             metrics={
-                "strong_watch_input_count": len(candidate_input_rows),
+                "strong_watch_input_count": len(d1_input_rows),
                 "strong_watch_promoted_count": len(promoted_pool_rows),
                 "strong_watch_history_count": len(strong_watch_history),
                 "strong_watch_history_written": history_written,
@@ -1165,7 +1165,7 @@ class BuildPostMarketRecapJob:
         return int(await fn(rows) or 0)
 
     @staticmethod
-    def _build_candidate_input_rows(
+    def _build_d1_input_rows(
         *,
         trade_date: date,
         strong_watch_rows: list[Any],
