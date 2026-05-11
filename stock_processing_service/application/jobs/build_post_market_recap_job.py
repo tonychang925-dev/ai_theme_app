@@ -640,6 +640,11 @@ class BuildPostMarketRecapJob:
                 else: candidate_score -= 12.0
             candidate_score = max(0.0, min(candidate_score, 100.0))
 
+            # ── 旧链 observe_only 上限（注：旧链 classify_pool_entry 的 prev_day_weak>=2 为已知 bug 不复制）──
+            watch_pool_entry_type = str(result.pool_entry_type or "observe_only")
+            if watch_pool_entry_type == "observe_only":
+                candidate_score = min(candidate_score, 69.0)
+
             # ── 旧链 _classify_candidate_type ──
             if is_leader and recent_limit_up_count >= 3:
                 candidate_type = "dragon_repair"
@@ -657,7 +662,6 @@ class BuildPostMarketRecapJob:
             # ── 旧链 _apply_watch_context ──
             watch_score = float(result.watch_score or 0)
             strong_grade = str(result.strong_grade or "")
-            watch_pool_entry_type = str(result.pool_entry_type or "observe_only")
 
             if watch_pool_entry_type == "formal":
                 candidate_score = min(100.0, max(candidate_score, 70.0))

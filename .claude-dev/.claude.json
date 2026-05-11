@@ -33,7 +33,8 @@
     "color-when-multi-clauding": 15,
     "subagent-fanout-nudge": 21
   },
-  "promptQueueUseCount": 201,
+  "promptQueueUseCount": 202,
+  "showExpandedTodos": true,
   "cachedGrowthBookFeatures": {
     "tengu_amber_flint": true,
     "tengu_lichen_compass": false,
