@@ -2661,6 +2661,109 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.warning(f"推断确认交易日失败（可能尚未迁移）: {e}")
             return None
 
+    async def get_w2s_candidate_inputs(self, trade_date) -> List[Dict[str, Any]]:
+        """等价旧链 _fetch_watch_candidate_inputs：为 D1 提供完整输入字段。
+
+        从 strong_stock_watch_pool 出发，JOIN subject_stock_daily_snapshot、
+        theme_mainline_identity_registry、theme_cycle_judgement_v2 等，
+        附加 prior7_limitup_days / prior7_strong_days / prev_day 数据。
+        """
+        sql = """
+        WITH watch_base AS (
+            SELECT
+                split_part(w.stock_id, '.', 1) AS stock_code,
+                w.stock_id,
+                COALESCE(s.stock_name, w.stock_name) AS stock_name,
+                COALESCE(NULLIF(w.subject_key, ''), s.subject_key) AS subject_key,
+                COALESCE(NULLIF(w.theme_name, ''), NULLIF(v2.theme_name, ''), s.subject_key, w.subject_key) AS theme_name,
+                COALESCE(s.rank_order, 999) AS rank_order,
+                COALESCE(s.pct_chg, 0) AS pct_chg,
+                COALESCE(s.low_price, 0) AS low_price,
+                COALESCE(s.close_price, 0) AS close_price,
+                COALESCE(s.limit_up, FALSE) AS limit_up,
+                COALESCE(s.is_leader, FALSE) AS is_leader,
+                COALESCE(mr.is_main_theme, FALSE) AS is_main_theme,
+                COALESCE(mr.identity_status, 'observed') AS identity_status,
+                COALESCE(v2.final_cycle_state, w.cycle_state, 'unknown') AS final_cycle_state,
+                (
+                    COALESCE(mr.is_main_theme, FALSE)
+                    AND COALESCE(mr.identity_status, '') = 'confirmed'
+                    AND COALESCE(msd.state, COALESCE(v2.final_cycle_state, w.cycle_state, '')) <> 'fade_confirmed'
+                    AND COALESCE(v2.fade_confirmed, w.fade_confirmed, FALSE) = FALSE
+                ) AS final_mainline_alive,
+                COALESCE(v2.fade_watch, w.fade_watch, FALSE) AS fade_watch,
+                COALESCE(v2.fade_confirmed, w.fade_confirmed, FALSE) AS fade_confirmed,
+                COALESCE(v2.mainline_strength_score, e.mainline_strength_score, w.mainline_strength_score, 0) AS mainline_strength_score,
+                COALESCE(e.leader_alive_score, 0) AS leader_alive_score,
+                COALESCE(e.event_continuity_score, 0) AS event_continuity_score,
+                w.watch_score,
+                w.watch_priority,
+                w.pool_entry_type AS watch_pool_entry_type,
+                w.watch_status,
+                w.source_tag AS watch_source_tag,
+                w.labels_json AS watch_labels_json
+            FROM strong_stock_watch_pool w
+            LEFT JOIN subject_stock_daily_snapshot s
+              ON s.trade_date = $1::date
+             AND split_part(s.stock_id, '.', 1) = split_part(w.stock_id, '.', 1)
+             AND (COALESCE(NULLIF(w.subject_key, ''), s.subject_key) = s.subject_key)
+            LEFT JOIN theme_mainline_identity_registry mr
+              ON mr.subject_key = COALESCE(NULLIF(w.subject_key, ''), s.subject_key)
+            LEFT JOIN mainline_state_daily msd
+              ON msd.trade_date = $1::date
+             AND msd.subject_key = COALESCE(NULLIF(w.subject_key, ''), s.subject_key)
+            LEFT JOIN theme_cycle_judgement_v2 v2
+              ON v2.trade_date = $1::date
+             AND v2.subject_key = COALESCE(NULLIF(w.subject_key, ''), s.subject_key)
+            LEFT JOIN theme_cycle_evidence_daily e
+              ON e.trade_date = $1::date
+             AND e.subject_key = COALESCE(NULLIF(w.subject_key, ''), s.subject_key)
+            WHERE w.watch_status IN ('active', 'weakening')
+              AND w.pool_entry_type IN ('formal', 'observe_only')
+              AND w.last_trade_date <= $1::date
+        ),
+        recent_stats AS (
+            SELECT stock_id, COUNT(*) FILTER (WHERE COALESCE(limit_up, FALSE) = TRUE) AS recent_limit_up_count
+            FROM subject_stock_daily_snapshot
+            WHERE trade_date <= $1::date AND trade_date > ($1::date - INTERVAL '30 days')
+            GROUP BY stock_id
+        ),
+        prior7_stats AS (
+            SELECT stock_id, subject_key,
+                COUNT(DISTINCT trade_date) FILTER (WHERE COALESCE(limit_up, FALSE) = TRUE) AS prior7_limitup_days,
+                COUNT(DISTINCT trade_date) FILTER (
+                    WHERE COALESCE(limit_up, FALSE) = TRUE OR COALESCE(is_leader, FALSE) = TRUE
+                       OR COALESCE(rank_order, 999) <= 3 OR COALESCE(pct_chg, 0) >= 7.0
+                ) AS prior7_strong_days
+            FROM subject_stock_daily_snapshot
+            WHERE trade_date < $1::date AND trade_date >= ($1::date - INTERVAL '7 days')
+            GROUP BY stock_id, subject_key
+        ),
+        prev_day AS (
+            SELECT stock_id, pct_chg AS prev_day_pct_chg, limit_up AS prev_day_limit_up,
+                   low_price AS prev_day_low_price, close_price AS prev_day_close_price
+            FROM (
+                SELECT stock_id, pct_chg, limit_up, low_price, close_price,
+                    ROW_NUMBER() OVER (PARTITION BY stock_id ORDER BY trade_date DESC) AS rn
+                FROM subject_stock_daily_snapshot WHERE trade_date < $1::date
+            ) t WHERE rn = 1
+        )
+        SELECT b.*,
+            COALESCE(rs.recent_limit_up_count, 0) AS recent_limit_up_count,
+            COALESCE(p7.prior7_limitup_days, 0) AS prior7_limitup_days,
+            COALESCE(p7.prior7_strong_days, 0) AS prior7_strong_days,
+            pd.prev_day_pct_chg, pd.prev_day_limit_up, pd.prev_day_low_price, pd.prev_day_close_price
+        FROM watch_base b
+        LEFT JOIN recent_stats rs ON split_part(rs.stock_id, '.', 1) = split_part(b.stock_id, '.', 1)
+        LEFT JOIN prior7_stats p7 ON split_part(p7.stock_id, '.', 1) = split_part(b.stock_id, '.', 1)
+            AND p7.subject_key = b.subject_key
+        LEFT JOIN prev_day pd ON split_part(pd.stock_id, '.', 1) = split_part(b.stock_id, '.', 1)
+        ORDER BY b.watch_priority DESC NULLS LAST, b.watch_score DESC NULLS LAST
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+        return [dict(r) for r in rows]
+
     async def get_w2s_candidates_by_trade_date(self, candidate_trade_date, limit: int = 200) -> List[Dict[str, Any]]:
         """旧链 D1 候选 — 从 weak_to_strong_candidate_pool 读取（等价旧链 WeakToStrongCandidateBuilder）。"""
         sql = """

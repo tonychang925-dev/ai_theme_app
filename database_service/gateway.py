@@ -587,6 +587,18 @@ class DatabaseGateway:
             logger.error(f"推断候选确认交易日失败 candidate_trade_date={candidate_trade_date}: {e}")
             raise
 
+    async def get_w2s_candidate_inputs(self, trade_date) -> List[Dict[str, Any]]:
+        """等价旧链 _fetch_watch_candidate_inputs：D1 候选输入数据。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_w2s_candidate_inputs(trade_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 w2s_candidate_inputs 失败 trade_date={trade_date}: {e}")
+            return []
+
     async def get_w2s_candidates_by_trade_date(self, candidate_trade_date, limit: int = 200) -> List[Dict[str, Any]]:
         try:
             start_time = time.time()

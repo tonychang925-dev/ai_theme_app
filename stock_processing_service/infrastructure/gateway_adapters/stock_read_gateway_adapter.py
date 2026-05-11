@@ -607,6 +607,13 @@ class StockReadGatewayAdapter:
         rows = await fn(trade_date=trade_date, stock_ids=stock_ids)
         return [_as_dict(row) for row in rows]
 
+    async def get_w2s_candidate_inputs(self, trade_date: date) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_w2s_candidate_inputs", None)
+        if not callable(fn):
+            return []
+        rows = await fn(trade_date=trade_date)
+        return [_as_dict(row) for row in rows]
+
     async def get_strong_watch_seed_rows(
         self,
         trade_date: date,

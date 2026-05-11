@@ -101,6 +101,10 @@ class StockReadPort(Protocol):
         self, trade_date: date, stock_ids: list[str] | None = None
     ) -> list[dict[str, Any]]: ...
 
+    async def get_w2s_candidate_inputs(
+        self, trade_date: date
+    ) -> list[dict[str, Any]]: ...
+
     async def get_strong_watch_seed_rows(
         self, trade_date: date, lookback_days: int = 7
     ) -> list[dict[str, Any]]: ...

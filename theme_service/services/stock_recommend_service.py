@@ -1,8 +1,8 @@
 """
-stock_recommend_service.py — 研选荐股服务（精简版）
+stock_recommend_service.py — 研选荐股服务
 
-极简链路，最少LLM调用:
-  1次LLM结构化提取 → 主题匹配(DB) → 查表(theme_stock_map) → 规则评分 → 精选输出
+全链路（Phase 2: 双路召回）:
+  1次LLM提取 → 主题查表(池A) + embedding召回(池B) → 合并A∪B → Gate → LLM核查 → 精选
 
 不修改任何已有组件。
 """
@@ -13,10 +13,13 @@ import json
 import logging
 import os
 import re
+import numpy as np
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, Tuple
 
 logger = logging.getLogger(__name__)
+
+STOP_TOKENS = {'日均', '调用', '用量', '排行', '第一', '十大', '唯一', '市场', '行业', '机构', '建议', '关注'}
 
 # ============================================================
 # Prompt
@@ -146,16 +149,28 @@ class StockRecommendService:
         result.matched = True
         result.matched_theme_name = matched[0]["concept"]
 
-        # Step 3a: 查表（主题映射）
-        stocks = await self._fetch_and_enrich(matched)
+        # Step 3a: 池A — 主题查表
+        stocks_a = await self._fetch_and_enrich(matched)
 
-        # Step 3b: 用较长短语直接搜股票证据（补齐JYHF映射遗漏）
+        # Step 3b: 池B — embedding 语义召回（intents + 主题概念）
+        theme_concepts = [t["concept"] for t in matched]
+        stocks_b = await self._embedding_recall(intents, theme_concepts)
+
+        # Step 3c: 池C — ILIKE hinted 搜索
+        stocks_c = {}
         long = [t for t in intents if len(t) >= 6]
         if long:
-            extra = await self._search_stocks_by_hints(long)
-            for sid, s in extra.items():
+            stocks_c = await self._search_stocks_by_hints(long)
+
+        # 合并 A ∪ B ∪ C（A的relation_type优先保留）
+        stocks = dict(stocks_a)
+        for pool in (stocks_b, stocks_c):
+            for sid, s in pool.items():
                 if sid not in stocks:
                     stocks[sid] = s
+
+        # 规则粗筛
+        stocks = self._rule_filter(stocks)
 
         # Step 4: Gate 排序
         for s in stocks.values():
@@ -181,8 +196,8 @@ class StockRecommendService:
         result.audit = {
             "intents": intents,
             "matched_themes": [t["concept"] for t in matched],
-            "total_candidates": len(stocks),
-            "llm_calls": 2 if use_llm_verify else 1,
+            "pool_a": len(stocks_a), "pool_b": len(stocks_b), "pool_c": len(stocks_c),
+            "merged": len(stocks), "llm_calls": 2 if use_llm_verify else 1,
         }
         return result
 
@@ -228,67 +243,42 @@ class StockRecommendService:
     # Step 2: 主题匹配
     # ----------------------------------------------------------
     async def _match_themes(self, terms: List[str]) -> List[Dict]:
+        """纯 ILIKE 匹配：intent 短语 vs theme concept/search_text。"""
         conn = await self._get_conn()
         if not conn: return []
         try:
             conds, params = [], []
-            for t in terms[:10]:
-                # 1. 整词 ILIKE + 反向匹配
-                conds.append(f"(concept ILIKE ${len(params)+1} OR search_text ILIKE ${len(params)+2})")
-                params.extend([f"%{t}%", f"%{t}%"])
-                conds.append(
-                    f"(char_length(concept) >= 2 AND ${len(params)+1} ILIKE '%' || concept || '%')"
-                )
-                params.append(t)
-                # 2. 手动分词：对长短语拆2-3字中文token（过滤短英文/数字）
-                tokens = [tok for tok in re.findall(r'[\u4e00-\u9fff\w]{2,3}', t)
-                          if len(tok) >= 3 or re.search(r'[\u4e00-\u9fff]', tok)]
-                # 同时过滤过于通用的token
-                STOP_TOKENS = {'日均','调用','用量','排行','第一','十大','唯一','市场','行业'}
-                tokens = [tok for tok in tokens if tok not in STOP_TOKENS]
-                if len(tokens) >= 2:
-                    token_conds = []
-                    for tok in tokens:
-                        token_conds.append(f"concept ILIKE ${len(params)+1}")
-                        params.append(f"%{tok}%")
-                        token_conds.append(f"search_text ILIKE ${len(params)+1}")
-                        params.append(f"%{tok}%")
-                    conds.append(f"({' OR '.join(token_conds)})")
+            for t in terms:
+                if len(t) < 2: continue
+                conds.append(f"(concept ILIKE ${len(params)+1})")
+                params.append(f"%{t}%")
 
-            where_clause = ' OR '.join(conds)
-            try:
-                rows = await conn.fetch(f"""
-                    SELECT subject_key, concept, quality, semantic_type
-                    FROM theme_gate_profile
-                    WHERE char_length(coalesce(concept,'')) >= 1
-                      AND ({where_clause})
-                    ORDER BY CASE quality WHEN 'strong' THEN 1 WHEN 'moderate' THEN 2 ELSE 3 END
-                    LIMIT 15
-                """, *params)
-            except Exception as e:
-                logger.error(f"_match_themes SQL({len(params)}p): {e}")
-                rows = []
-
-            results = []
-            for r in rows:
-                concept = (r["concept"] or "").strip()
-                if len(concept) < 2:
-                    continue
-                # 能通过ILIKE筛选至少得1分；精确命中额外加分
-                score = 1
-                for t in terms:
-                    if t in concept:
-                        score += 10
-                    elif len(concept) >= 2 and concept in t:
-                        score += 10
-                results.append({"subject_key": r["subject_key"],
-                                "concept": concept,
-                                "quality": r.get("quality","weak"),
-                                "match_score": score})
-            results.sort(key=lambda x: x["match_score"], reverse=True)
-            return results[:6]
+            if not conds: return []
+            rows = await conn.fetch(f"""
+                SELECT subject_key, concept, quality
+                FROM theme_gate_profile
+                WHERE char_length(coalesce(concept,'')) >= 2
+                  AND ({' OR '.join(conds)})
+                ORDER BY CASE quality WHEN 'strong' THEN 1 WHEN 'moderate' THEN 2 ELSE 3 END
+                LIMIT 10
+            """, *params)
+        except Exception as e:
+            logger.error(f"_match_themes: {e}")
+            return []
         finally:
             await conn.close()
+
+        results = []
+        for r in rows:
+            concept = (r["concept"] or "").strip()
+            if len(concept) < 2: continue
+            score = 1
+            for t in terms:
+                if t in concept: score += 10
+            results.append({"subject_key": r["subject_key"], "concept": concept,
+                            "quality": r.get("quality","weak"), "match_score": score})
+        results.sort(key=lambda x: x["match_score"], reverse=True)
+        return results[:8]
 
     # ----------------------------------------------------------
     # Step 3+4: 查表 + 证据
@@ -504,6 +494,82 @@ class StockRecommendService:
         finally:
             await conn.close()
         return stocks
+
+    # ----------------------------------------------------------
+    # Embedding 语义召回（池B）
+    # ----------------------------------------------------------
+
+    _embedding_model = None
+
+    @classmethod
+    def _get_embedding_model(cls):
+        if cls._embedding_model is None:
+            from text2vec import SentenceModel
+            cls._embedding_model = SentenceModel()
+        return cls._embedding_model
+
+    async def _embedding_recall(self, intents: List[str], theme_concepts: List[str] = None, top_k: int = 50) -> Dict[str, Dict]:
+        """用 intents + 匹配主题名 联合做 embedding 语义召回。"""
+        stocks: Dict[str, Dict] = {}
+        if not intents:
+            return stocks
+
+        try:
+            model = self._get_embedding_model()
+            # 组合 intents + 匹配到的主题概念（更精准的语义锚点）
+            query_parts = list(intents)
+            if theme_concepts:
+                query_parts.extend(theme_concepts)
+            query_text = " ".join(query_parts)
+            query_emb = model.encode(query_text)
+            vec_str = f"[{','.join(f'{v:.6f}' for v in query_emb)}]"
+
+            conn = await self._get_conn()
+            if not conn:
+                return stocks
+            try:
+                # 提高 IVFFlat probes 确保召回完整（避免近似索引遗漏）
+                await conn.execute("SET LOCAL ivfflat.probes = 100")
+                rows = await conn.fetch("""
+                    SELECT spe.stock_id, spe.stock_name, spe.profile_text,
+                           1 - (spe.embedding <=> $1::vector) AS similarity
+                    FROM stock_profile_ext spe
+                    WHERE spe.embedding IS NOT NULL
+                      AND spe.stock_name NOT LIKE '%ST%'
+                      AND spe.stock_name NOT LIKE '%*ST%'
+                    ORDER BY spe.embedding <=> $1::vector
+                    LIMIT $2
+                """, vec_str, top_k)
+                for r in rows:
+                    sid = r['stock_id']
+                    sim = float(r['similarity'])
+                    if sim < 0.5:  # 最低相似度阈值
+                        continue
+                    stocks[sid] = {
+                        "stock_id": sid,
+                        "stock_name": r['stock_name'],
+                        "relation_type": "semantic_match",
+                        "confidence": round(sim, 2),
+                        "reason": f"embedding召回(sim={sim:.2f})",
+                        "theme_matches": ["semantic_match"],
+                    }
+            finally:
+                await conn.close()
+        except Exception as e:
+            logger.warning(f"embedding召回失败: {e}")
+        return stocks
+
+    # ----------------------------------------------------------
+    # 规则粗筛
+    # ----------------------------------------------------------
+    @staticmethod
+    def _rule_filter(stocks: Dict[str, Dict]) -> Dict[str, Dict]:
+        """规则粗筛：过滤ST、退市等明显不合适的股票。"""
+        return {
+            sid: s for sid, s in stocks.items()
+            if "ST" not in s.get("stock_name", "")
+            and "*ST" not in s.get("stock_name", "")
+        }
 
     async def _get_conn(self):
         import asyncpg
