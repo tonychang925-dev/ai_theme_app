@@ -13,13 +13,10 @@ import json
 import logging
 import os
 import re
-import numpy as np
 from dataclasses import dataclass, field
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional
 
 logger = logging.getLogger(__name__)
-
-STOP_TOKENS = {'日均', '调用', '用量', '排行', '第一', '十大', '唯一', '市场', '行业', '机构', '建议', '关注'}
 
 # ============================================================
 # Prompt
@@ -206,38 +203,18 @@ class StockRecommendService:
     # ----------------------------------------------------------
     async def _extract_research(self, text: str) -> Dict[str, Any]:
         if not self._llm:
-            return self._fallback_extract(text)
-        try:
-            resp = await self._llm.chat_completion(
-                messages=[
-                    {"role": "system", "content": RESEARCH_EXTRACT_SYSTEM},
-                    {"role": "user", "content": f"提取下列文本:\n\n{text[:3000]}"},
-                ],
-                temperature=0.1, max_tokens=400,
-            )
-            m = re.search(r'\{[\s\S]*\}', resp.get("content", ""))
-            if m: return json.loads(m.group())
-        except Exception as e:
-            logger.warning(f"LLM提取失败: {e}")
-        return self._fallback_extract(text)
-
-    def _fallback_extract(self, text: str) -> Dict[str, Any]:
-        intents = []
-        kw_map = [
-            (["国产算力", "算力基础设施", "算力中心"], ["国产算力", "算力基础设施"]),
-            (["AI光纤", "AI算力光纤", "AI光通信"], ["AI光纤", "光通信"]),
-            (["光纤", "光缆", "光纤光缆"], ["光纤光缆"]),
-            (["光模块", "800G", "1.6T", "CPO", "硅光"], ["光模块", "800G光模块"]),
-            (["算力租赁", "GPU出租"], ["算力租赁"]),
-            (["游戏", "二次元", "动漫", "电竞"], ["游戏"]),
-        ]
-        for triggers, terms in kw_map:
-            if any(t in text for t in triggers):
-                intents.extend(terms)
-        for pat in [r'(\d+G\s*(?:高速)?\s*光模块)', r'(\S*(?:光纤|光缆|光器件|光芯片))',
-                    r'((?:AI|人工智能)\S{0,8}(?:算力|服务器))']:
-            intents.extend(m.group(1) for m in re.finditer(pat, text))
-        return {"search_intents": intents[:10], "summary": text[:60]}
+            raise RuntimeError("StockRecommendService: LLM客户端未注入，无法提取。请调用 set_llm_client()")
+        resp = await self._llm.chat_completion(
+            messages=[
+                {"role": "system", "content": RESEARCH_EXTRACT_SYSTEM},
+                {"role": "user", "content": f"提取下列文本:\n\n{text[:3000]}"},
+            ],
+            temperature=0.1, max_tokens=400,
+        )
+        m = re.search(r'\{[\s\S]*\}', resp.get("content", ""))
+        if not m:
+            raise RuntimeError(f"LLM提取未返回合法JSON: {resp.get('content','')[:200]}")
+        return json.loads(m.group())
 
     # ----------------------------------------------------------
     # Step 2: 主题匹配
