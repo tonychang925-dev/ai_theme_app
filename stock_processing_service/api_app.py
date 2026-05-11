@@ -569,73 +569,47 @@ def _obj(value: Any) -> Dict[str, Any]:
 
 
 async def _fetch_recap_w2s_candidates(candidate_trade_date: date, limit: int = 200) -> List[Dict[str, Any]]:
-    row = await app.state.gateway.get_existing_post_market_recap_snapshot(candidate_trade_date)
-    if not row:
+    """D1 候选 — 直接读 strong_stock_watch_pool，不依赖 post_market_recap_snapshot。
+
+    设计文档 26.8：候选来源 100% 来自强势池。
+    """
+    rows = await app.state.gateway.get_w2s_candidates_by_trade_date(candidate_trade_date, limit=max(int(limit), 1))
+    if not rows:
         return []
-    payload = _normalize_recap_payload(row)
-    recap_doc = dict(payload.get("recap_doc") or payload or {})
-    raw_candidates = list(recap_doc.get("top_candidates") or [])
-    preview_by_stock = {
-        str(item.get("stock_id") or "").strip(): dict(item)
-        for item in list(recap_doc.get("strong_watch_input_7d_preview") or [])
-        if isinstance(item, dict) and str(item.get("stock_id") or "").strip()
-    }
-    history_by_stock = {
-        str(item.get("stock_id") or "").strip(): dict(item)
-        for item in list(recap_doc.get("strong_watch_history") or [])
-        if isinstance(item, dict) and str(item.get("stock_id") or "").strip()
-    }
     out: List[Dict[str, Any]] = []
-    for item in raw_candidates[: max(int(limit), 1)]:
-        if not isinstance(item, dict):
+    for row in rows:
+        if not isinstance(row, dict):
             continue
-        stock_id = str(item.get("stock_id") or "").strip()
-        preview_row = preview_by_stock.get(stock_id) or {}
-        history_row = history_by_stock.get(stock_id) or {}
-        candidate_score = item.get("candidate_score") or "0"
-        candidate_level = str(item.get("candidate_level") or "formal")
+        stock_id = str(row.get("stock_id") or "").strip()
+        score = str(row.get("candidate_score") or "0")
         evidence_json = {
-            "source": "post_market_recap_snapshot",
-            "recap_top_candidate": {
+            "source": "strong_stock_watch_pool",
+            "d1_candidate": {
                 "stock_id": stock_id,
-                "stock_name": str(item.get("stock_name") or ""),
-                "subject_key": str(item.get("subject_key") or ""),
-                "subject_name": str(item.get("subject_name") or ""),
-                "candidate_score": str(candidate_score),
-                "candidate_level": candidate_level,
-                "transition_type": str(item.get("transition_type") or ""),
-                "transition_confidence": str(item.get("transition_confidence") or "0"),
-                "trigger_flags": list(item.get("trigger_flags") or []),
-                "evidence_rules": list(item.get("evidence_rules") or []),
+                "stock_name": str(row.get("stock_name") or ""),
+                "subject_key": str(row.get("subject_key") or ""),
+                "subject_name": str(row.get("theme_name") or ""),
+                "candidate_score": score,
+                "pool_entry_type": str(row.get("pool_entry_type") or "observe_only"),
             },
-            "strong_watch_preview": preview_row,
-            "strong_watch_history": history_row,
         }
-        out.append(
-            {
-                "id": 0,
-                "trade_date": candidate_trade_date,
-                "stock_id": stock_id,
-                "stock_name": str(item.get("stock_name") or preview_row.get("stock_name") or ""),
-                "subject_key": str(item.get("subject_key") or preview_row.get("subject_key") or ""),
-                "theme_name": str(
-                    item.get("subject_name")
-                    or item.get("theme_name")
-                    or preview_row.get("subject_name")
-                    or preview_row.get("subject_key")
-                    or ""
-                ),
-                "candidate_score": candidate_score,
-                "pool_entry_type": candidate_level or "formal",
-                "candidate_type": str(item.get("transition_type") or preview_row.get("transition_type") or "strong_watch_recap"),
-                "weak_type": str(item.get("transition_type") or preview_row.get("transition_type") or ""),
-                "support_type": str(preview_row.get("support_type") or history_row.get("support_type") or ""),
-                "support_strength": history_row.get("support_score") or 0,
-                "expected_open_low": 0,
-                "expected_open_high": 0,
-                "evidence_json": evidence_json,
-            }
-        )
+        out.append({
+            "id": 0,
+            "trade_date": candidate_trade_date,
+            "stock_id": stock_id,
+            "stock_name": str(row.get("stock_name") or ""),
+            "subject_key": str(row.get("subject_key") or ""),
+            "theme_name": str(row.get("theme_name") or ""),
+            "candidate_score": score,
+            "pool_entry_type": str(row.get("pool_entry_type") or "observe_only"),
+            "candidate_type": "weak_to_strong",
+            "weak_type": str(row.get("weak_type") or ""),
+            "support_type": str(row.get("support_type") or ""),
+            "support_strength": row.get("support_strength") or 0,
+            "expected_open_low": 0,
+            "expected_open_high": 0,
+            "evidence_json": evidence_json,
+        })
     return out
 
 
@@ -1197,17 +1171,17 @@ async def get_strong_watch(
 
 @app.get("/api/v1/w2s_candidates")
 async def get_w2s_candidates(trade_date: str = Query(..., description="YYYY-MM-DD")) -> dict[str, Any]:
+    """D1 弱转强候选 — 等价旧链 WeakToStrongCandidateBuilder，从 strong_stock_watch_pool 产出。
+
+    设计文档 13.3.4 / 26.8：候选来源 100% 来自强势池，
+    watch_status IN ('active','weakening') AND pool_entry_type IN ('formal','observe_only')。
+    """
     try:
         d = date.fromisoformat(trade_date)
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=f"invalid trade_date: {trade_date}") from exc
-    row = await app.state.gateway.get_existing_post_market_recap_snapshot(d)
-    if not row:
-        return {"trade_date": trade_date, "candidates": []}
-    payload = _normalize_recap_payload(row)
-    recap_doc = dict(payload.get("recap_doc") or {})
-    candidates = list(recap_doc.get("top_candidates") or [])
-    return {"trade_date": str(row.get("trade_date") or trade_date), "candidates": candidates}
+    rows = await app.state.gateway.get_w2s_candidates_by_trade_date(d, limit=200)
+    return {"trade_date": trade_date, "candidates": list(rows or [])}
 
 
 @app.get("/api/v1/intel_feed")

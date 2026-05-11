@@ -1083,6 +1083,30 @@ class DatabaseGateway:
             logger.error(f"写入 strong_stock_watch_pool 失败: {e}")
             raise
 
+    async def upsert_weak_to_strong_candidate_pool_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：weak_to_strong_candidate_pool（D1 候选池）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_weak_to_strong_candidate_pool_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"写入 weak_to_strong_candidate_pool 失败: {e}")
+            return 0
+
+    async def recompute_strong_watch_window_days(self, stock_ids: list[str]) -> int:
+        """等价旧链 _recompute_watch_window_days：以交易日计数重算观察窗天数。"""
+        try:
+            start_time = time.time()
+            result = await self._client.recompute_strong_watch_window_days(stock_ids)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"recompute_strong_watch_window_days 失败: {e}")
+            return 0
+
     async def get_auction_watch_universe(self, trade_date) -> List[Dict[str, Any]]:
         """股票域显式读取：竞价观察池。"""
         try:

@@ -136,7 +136,7 @@ class StrongStockTrackingService:
     async def prune_watch_pool(self, trade_date: date) -> int:
         """
         清理已失效观察对象：
-        1) 已确认退潮；2) 弱化且评分持续偏低的对象。
+        1) 已确认退潮；2) 弱化且评分持续偏低；3) 7日窗口到期未获续命。
         """
         pool = await self._ensure_pool()
         async with pool.acquire() as conn:
@@ -152,6 +152,10 @@ class StrongStockTrackingService:
                     watch_status = 'weakening'
                 AND watch_score < $2
                 AND last_trade_date <= $1::date
+             )
+             OR (
+                    watch_window_days >= 7
+                AND watch_status <> 'removed'
              )
         )
           AND watch_status <> 'removed'

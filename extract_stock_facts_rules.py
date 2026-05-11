@@ -449,10 +449,11 @@ async def evaluate_against_deepseek(pool, sample_size: int = 100):
     async with pool.acquire() as conn:
         # Get stocks that have BOTH lightspots and DeepSeek facts
         rows = await conn.fetch("""
-            SELECT DISTINCT sf.stock_id
+            SELECT sf.stock_id
             FROM stock_facts sf
             INNER JOIN stock_lightspots sl ON sf.stock_id = sl.stock_id
             WHERE sf.source = 'jyhf_stock_detail'
+            GROUP BY sf.stock_id
             ORDER BY RANDOM()
             LIMIT $1
         """, sample_size)

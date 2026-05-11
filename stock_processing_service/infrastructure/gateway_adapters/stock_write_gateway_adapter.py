@@ -86,6 +86,22 @@ class StockWriteGatewayAdapter:
             return await fn(rows)
         raise RuntimeError("DatabaseGatewayStockFacade missing upsert_strong_watch_pool_rows")
 
+    async def upsert_weak_to_strong_candidate_pool_rows(self, rows: list[dict[str, Any]]) -> int:
+        if not rows:
+            return 0
+        fn = getattr(self._db, "upsert_weak_to_strong_candidate_pool_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        raise RuntimeError("DatabaseGatewayStockFacade missing upsert_weak_to_strong_candidate_pool_rows")
+
+    async def recompute_strong_watch_window_days(self, stock_ids: list[str]) -> int:
+        if not stock_ids:
+            return 0
+        fn = getattr(self._db, "recompute_strong_watch_window_days", None)
+        if callable(fn):
+            return await fn(stock_ids)
+        raise RuntimeError("DatabaseGatewayStockFacade missing recompute_strong_watch_window_days")
+
     async def promote_strong_watch_candidates(self, trade_date) -> int:
         fn = getattr(self._db, "promote_strong_watch_candidates", None)
         if callable(fn):
