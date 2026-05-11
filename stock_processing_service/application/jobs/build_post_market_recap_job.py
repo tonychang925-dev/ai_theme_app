@@ -337,6 +337,16 @@ class BuildPostMarketRecapJob:
         positions_raw = await self._read_port.get_stock_position_judgement(trade_date, all_stock_ids)
         patterns_raw = await self._read_port.get_stock_pattern_judgement(trade_date, all_stock_ids)
         bars_raw = await self._read_port.get_stock_daily_bars(trade_date, all_stock_ids)
+        # ── 前一交易日数据（等价旧链 prev_day_pct_chg / prev_day_limit_up 来源）──
+        prev_trade_date = trade_date
+        cal = await self._read_port.get_trade_calendar(trade_date)
+        if cal is not None:
+            prev_td = cal.prev_trade_date if hasattr(cal, "prev_trade_date") else (cal.get("prev_trade_date") if isinstance(cal, dict) else None)
+            if prev_td is not None:
+                if isinstance(prev_td, str):
+                    prev_td = date.fromisoformat(prev_td)
+                prev_trade_date = prev_td
+        prev_day_bars_raw = await self._read_port.get_stock_daily_bars(prev_trade_date, all_stock_ids)
         prior_rows_raw = await self._read_port.get_prior_stock_daily_snapshots(
             trade_date=trade_date, lookback_days=lookback_days, stock_ids=all_stock_ids,
         )
@@ -347,6 +357,7 @@ class BuildPostMarketRecapJob:
 
         # Step 5: 转换为 Domain DTOs
         bars = [self._to_stock_bar(row, trade_date) for row in bars_raw]
+        prev_day_bars = [self._to_stock_bar(row, prev_trade_date) for row in prev_day_bars_raw]
         prior_rows = [self._to_prior_row(row, trade_date) for row in prior_rows_raw]
         history_bars = [self._to_stock_bar(row, history_start) for row in history_bars_raw]
 
@@ -373,6 +384,7 @@ class BuildPostMarketRecapJob:
         # Step 6: Domain 层评分（等价旧链 _score_watch_row × N）
         support_scorer = KlineSupportScorer()
         bars_by_stock = {b.stock_id: b for b in bars}
+        prev_day_bars_by_stock = {b.stock_id: b for b in prev_day_bars}
         prior_by_stock: dict[str, list[PriorSnapshotDTO]] = {}
         for pr in prior_rows:
             prior_by_stock.setdefault(pr.stock_id, []).append(pr)
@@ -511,78 +523,41 @@ class BuildPostMarketRecapJob:
             )
             _score_all([refresh_candidate], {sid: int(row.get("current_flag_today") or 0)})
 
-        # Step 7: 构建 D1 候选输入 — 等价旧链 _to_candidate + _apply_watch_context
-        candidate_input_rows: list[SubjectStockPoolDTO] = []
+        # Step 7: 构建 D1 候选 — 等价旧链 _fetch_watch_candidate_inputs + _to_candidate + _apply_watch_context
+        d1_input_rows = await self._read_port.get_w2s_candidate_inputs(trade_date)
         d1_candidates_for_pool: list[dict[str, Any]] = []
-        by_stock: dict[str, SubjectStockPoolDTO] = {}
-        for result in watch_pool_results:
-            if not self._tracking_service.is_candidate_eligible(
-                watch_status=result.watch_status,
-                pool_entry_type=result.pool_entry_type,
-                candidate_source="strong_watch_pool",
-            ):
-                continue
-            if not result.stock_id:
-                continue
-            by_stock[result.stock_id] = SubjectStockPoolDTO(
-                trade_date=trade_date,
-                subject_key=result.subject_key,
-                subject_name=result.theme_name,
-                stock_id=result.stock_id,
-                stock_name=result.stock_name,
-                pool_rank=None,
-                metadata={
-                    "candidate_source": "strong_watch_pool",
-                    "watch_score": str(result.watch_score),
-                    "watch_priority": str(result.watch_priority),
-                    "strong_grade": result.strong_grade,
-                    "pool_entry_type": result.pool_entry_type,
-                    "watch_status": result.watch_status,
-                    "support_type": str(result.support_type or ""),
-                    "support_level": str(result.support_level or ""),
-                    "support_score": str(result.support_score),
-                    "role_tags": result.labels,
-                    "eligible_for_candidate": True,
-                },
-            )
 
-            # ── 旧链 _to_candidate 完整复刻（设计文档 27.4）──
-            bar = bars_by_stock.get(result.stock_id)
-            if bar is None:
-                continue
-            pct_chg = float(bar.pct_chg or 0)
-
-            # 查找前一日 bar
-            stock_history = history_bars_by_stock.get(result.stock_id, [])
-            stock_history_sorted = sorted(stock_history, key=lambda b: b.trade_date)
-            prev_bar = None
-            for hb in reversed(stock_history_sorted):
-                if hb.trade_date < trade_date:
-                    prev_bar = hb
-                    break
-            prev_day_pct = float(prev_bar.pct_chg or 0) if prev_bar else 0.0
-            prev_day_limit_up = False  # from bar data we don't have limit_up; use pct_chg >= 9.5 as proxy
-            if prev_bar and float(prev_bar.pct_chg or 0) >= 9.5:
-                prev_day_limit_up = True
-
-            labels = result.labels or {}
-            is_leader = bool(labels.get("is_dragon_head") or labels.get("is_leader") or False)
-            recent_limit_up_count = int(labels.get("recent_limit_up_count") or 0)
-            support_type = str(result.support_type or "")
-            support_strength = float(result.support_score or 0)
-            prior7_limitup_days = int(labels.get("recent_limit_up_count") or 0)
-            prior7_strong_days = int(labels.get("subject_strong_count") or 0)
-            mainline_strength_score = float(labels.get("mainline_strength_score", 0) or 0)
-            fade_watch = bool(labels.get("fade_watch") or False)
+        for row in d1_input_rows:
+            # ── 旧链 _to_candidate 硬约束（使用旧链同名字段）──
+            pct_chg = float(row.get("pct_chg") or 0)
+            limit_up = bool(row.get("limit_up") or False)
+            is_leader = bool(row.get("is_leader") or False)
+            rank_order = int(row.get("rank_order") or 999)
+            recent_limit_up_count = int(row.get("recent_limit_up_count") or 0)
+            prior7_limitup_days = int(row.get("prior7_limitup_days") or 0)
+            prior7_strong_days = int(row.get("prior7_strong_days") or 0)
+            prev_day_pct = float(row.get("prev_day_pct_chg") or 0.0)
+            prev_day_limit_up = bool(row.get("prev_day_limit_up") or False)
+            fade_watch = bool(row.get("fade_watch") or False)
+            fade_confirmed = bool(row.get("fade_confirmed") or False)
+            mainline_strength_score = float(row.get("mainline_strength_score") or 0.0)
+            watch_score = float(row.get("watch_score") or 0.0)
+            watch_pool_entry_type = str(row.get("watch_pool_entry_type") or "observe_only")
+            watch_labels = row.get("watch_labels_json") or {}
+            if isinstance(watch_labels, str):
+                watch_labels = json.loads(watch_labels) if watch_labels else {}
+            strong_grade = str(watch_labels.get("strong_grade") or "").upper()
+            support_type = str(watch_labels.get("support_type") or "")
+            support_strength = float(watch_labels.get("support_score") or 0)
 
             # 1) pct_chg >= 0 或 limit_up → 必须弱势日
-            if pct_chg >= 0.0:
+            if pct_chg >= 0.0 or limit_up:
                 continue
-            # 2) 跌幅不足 -1.0% → 不够弱
+            # 2) 跌幅不足 -1.0%
             if pct_chg > -1.0:
                 continue
             # 3) strong_history
-            strong_history = (is_leader or recent_limit_up_count >= 1)
+            strong_history = (is_leader or prev_day_limit_up or recent_limit_up_count >= 1 or rank_order <= 5)
             if not strong_history:
                 continue
             # 4) has_limitup_gene
@@ -612,24 +587,23 @@ class BuildPostMarketRecapJob:
                 weak_type = "fake_break"
                 weak_intensity = 40.0
 
-            # ── 旧链 _day_weak_score ──
+            # ── 旧链 _day_weak_score / _prev_day_weak_score ──
             if pct_chg < -4.0: day_weak_score = 20.0
             elif pct_chg < -2.0: day_weak_score = 16.0
             elif pct_chg < -1.0: day_weak_score = 10.0
-            elif pct_chg < 0: day_weak_score = 6.0
-            else: day_weak_score = 0.0
+            else: day_weak_score = 6.0
 
-            # ── 旧链 _prev_day_weak_score ──
             if prev_day_pct < -3.0: prev_day_weak_score = 10.0
             elif prev_day_pct < -1.5: prev_day_weak_score = 8.0
             elif prev_day_pct < 0: prev_day_weak_score = 5.0
             else: prev_day_weak_score = 0.0
 
-            # ── 旧链 _candidate_score（精确复刻）──
+            # ── 旧链 _candidate_score ──
             candidate_score = 45.0
-            if is_leader:
-                candidate_score += 18.0
+            if is_leader: candidate_score += 18.0
+            if limit_up: candidate_score += 10.0
             candidate_score += min(recent_limit_up_count * 4.0, 12.0)
+            if rank_order <= 3: candidate_score += 8.0
             candidate_score += min(weak_intensity * 0.08, 8.0)
             candidate_score += min(support_strength * 0.1, 9.0)
             candidate_score += day_weak_score + prev_day_weak_score
@@ -640,12 +614,11 @@ class BuildPostMarketRecapJob:
                 else: candidate_score -= 12.0
             candidate_score = max(0.0, min(candidate_score, 100.0))
 
-            # ── 旧链 observe_only 上限（注：旧链 classify_pool_entry 的 prev_day_weak>=2 为已知 bug 不复制）──
-            watch_pool_entry_type = str(result.pool_entry_type or "observe_only")
+            # ── observe_only 上限 ──
             if watch_pool_entry_type == "observe_only":
                 candidate_score = min(candidate_score, 69.0)
 
-            # ── 旧链 _classify_candidate_type ──
+            # ── _classify_candidate_type ──
             if is_leader and recent_limit_up_count >= 3:
                 candidate_type = "dragon_repair"
             elif is_leader:
@@ -659,15 +632,12 @@ class BuildPostMarketRecapJob:
             else:
                 candidate_type = "generic_repair"
 
-            # ── 旧链 _apply_watch_context ──
-            watch_score = float(result.watch_score or 0)
-            strong_grade = str(result.strong_grade or "")
-
+            # ── _apply_watch_context ──
             if watch_pool_entry_type == "formal":
                 candidate_score = min(100.0, max(candidate_score, 70.0))
             if strong_grade == "B":
                 candidate_score = min(69.0, candidate_score)
-            elif strong_grade in {"S", "A"} and watch_pool_entry_type == "observe_only":
+            elif strong_grade in {"S", "A"}:
                 candidate_score = min(100.0, max(candidate_score, 72.0))
             score_boost = min(max(watch_score * 0.08, 0.0), 8.0)
             if strong_grade in {"S", "A"}:
@@ -677,10 +647,10 @@ class BuildPostMarketRecapJob:
             d1_candidates_for_pool.append({
                 "trade_date": trade_date,
                 "next_trade_date": trade_date,
-                "stock_id": result.stock_id,
-                "stock_name": result.stock_name,
-                "subject_key": result.subject_key,
-                "theme_name": result.theme_name,
+                "stock_id": str(row.get("stock_id") or ""),
+                "stock_name": str(row.get("stock_name") or ""),
+                "subject_key": str(row.get("subject_key") or ""),
+                "theme_name": str(row.get("theme_name") or ""),
                 "candidate_score": str(candidate_score),
                 "candidate_type": candidate_type,
                 "rule_version": "weak_to_strong_candidate.v2",
@@ -691,7 +661,7 @@ class BuildPostMarketRecapJob:
                 "prev_limit_up_count": recent_limit_up_count,
                 "max_consecutive_limit_up_days": 0,
                 "support_type": support_type,
-                "support_level": str(result.support_level or "0"),
+                "support_level": str(row.get("support_level") or "0"),
                 "support_strength": str(support_strength),
                 "expected_open_low": "0",
                 "expected_open_high": "0",
@@ -700,23 +670,18 @@ class BuildPostMarketRecapJob:
                 "need_plate_follow": False,
                 "evidence_json": json.dumps({
                     "source": "strong_watch_pool",
-                    "pct_chg": str(bar.pct_chg),
+                    "pct_chg": str(pct_chg),
                     "prev_day_pct": str(prev_day_pct),
                     "weak_type": weak_type,
-                    "weak_intensity": str(weak_intensity),
                     "support_type": support_type,
                     "support_strength": str(support_strength),
-                    "day_weak_score": str(day_weak_score),
-                    "prev_day_weak_score": str(prev_day_weak_score),
                 }),
                 "pool_entry_type": watch_pool_entry_type,
-                "cycle_state": str(result.cycle_state or ""),
+                "cycle_state": str(row.get("final_cycle_state") or ""),
                 "mainline_strength_score": str(mainline_strength_score),
                 "fade_watch": fade_watch,
-                "fade_confirmed": bool(labels.get("fade_confirmed") or False),
+                "fade_confirmed": fade_confirmed,
             })
-
-        candidate_input_rows = list(by_stock.values())
 
         # ── Step 7b: 持久池写入（等价旧链 _upsert_watch_pool_seed + _update_watch_pool_row）──
         pool_write_rows: list[dict[str, Any]] = []

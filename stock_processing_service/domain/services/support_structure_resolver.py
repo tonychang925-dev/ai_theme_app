@@ -17,8 +17,8 @@ class SupportStructureResolver:
         *,
         strict_gap_score: Decimal = Decimal("88"),
         soft_gap_score: Decimal = Decimal("80"),
-        prev_low_score: Decimal = Decimal("78"),
-        bb_lower_score: Decimal = Decimal("75"),
+        prev_low_score: Decimal = Decimal("80"),
+        bb_lower_score: Decimal = Decimal("86"),
         ma_score: Decimal = Decimal("70"),
     ) -> None:
         self._strict_gap_score = strict_gap_score

@@ -195,6 +195,76 @@ class KlineSupportScorer:
             return Decimal(str(round(val, 2)))
         return None
 
+    @staticmethod
+    def _detect_prior_breakout_level(df: pd.DataFrame) -> Decimal:
+        """旧链 _detect_prior_breakout_level 复刻：前15日（排除最近3日）最高价作为突破回踩支撑位。"""
+        try:
+            if df.empty or "high_price" not in df.columns:
+                return Decimal("0")
+            high_s = pd.to_numeric(df["high_price"], errors="coerce")
+            if len(high_s) < 18:
+                return Decimal("0")
+            window = high_s.iloc[-18:-3]
+            level = float(window.max() or 0.0)
+            if level <= 0:
+                return Decimal("0")
+            return Decimal(str(round(level, 4)))
+        except Exception:
+            return Decimal("0")
+
+    @staticmethod
+    def _compute_pivot_points(df: pd.DataFrame) -> dict[str, Decimal]:
+        """旧链 _calculate_pivot_points 日线枢轴点：P=(H+L+C)/3, S1=2P-H, S2=P-(H-L)"""
+        try:
+            if len(df) < 2:
+                return {}
+            prev = df.iloc[-2]
+            h = float(prev.get("high_price", 0) or 0)
+            l = float(prev.get("low_price", 0) or 0)
+            c = float(prev.get("close_price", 0) or 0)
+            pivot = (h + l + c) / 3.0
+            if pivot <= 0:
+                return {}
+            s1 = 2.0 * pivot - h
+            s2 = pivot - (h - l)
+            result: dict[str, Decimal] = {}
+            if s1 > 0:
+                result["support1"] = Decimal(str(round(s1, 4)))
+            if s2 > 0 and s2 < s1:
+                result["support2"] = Decimal(str(round(s2, 4)))
+            return result
+        except Exception:
+            return {}
+
+    @staticmethod
+    def _compute_fibonacci_support(df: pd.DataFrame, current_price: Decimal) -> Decimal:
+        """旧链 _calculate_fibonacci_levels：最近10天高低点，斐波那契回撤 nearest_support。"""
+        try:
+            if len(df) < 10:
+                return Decimal("0")
+            highs = pd.to_numeric(df["high_price"], errors="coerce")
+            lows = pd.to_numeric(df["low_price"], errors="coerce")
+            lookback = min(10, len(highs))
+            recent_high = float(highs.iloc[-lookback:].max())
+            recent_low = float(lows.iloc[-lookback:].min())
+            if recent_high <= recent_low:
+                return Decimal("0")
+            price_range = recent_high - recent_low
+            fib_levels = [0.236, 0.382, 0.5, 0.618, 0.786]
+            cp = float(current_price)
+            nearest_support = Decimal("0")
+            nearest_dist = float("inf")
+            for level in fib_levels:
+                retracement = recent_high - price_range * level
+                if retracement < cp:
+                    dist = abs((cp - retracement) / cp * 100) if cp > 0 else 100
+                    if dist < nearest_dist:
+                        nearest_dist = dist
+                        nearest_support = Decimal(str(round(retracement, 4)))
+            return nearest_support
+        except Exception:
+            return Decimal("0")
+
     def score(
         self,
         stock_id: str,
@@ -293,7 +363,7 @@ class KlineSupportScorer:
                 SupportTypeScore(
                     support_type="previous_low",
                     support_level=prev_low_structure.level,
-                    strength=Decimal("0.78"),
+                    strength=Decimal("0.80"),
                     source="previous_low",
                     distance_pct=prev_low_structure.distance_pct,
                 )
@@ -303,22 +373,85 @@ class KlineSupportScorer:
                 SupportTypeScore(
                     support_type="bb_lower_support",
                     support_level=bb_lower_structure.level,
-                    strength=Decimal("0.72"),
+                    strength=Decimal("0.86"),
                     source="bb_lower",
                     distance_pct=bb_lower_structure.distance_pct,
                 )
             )
+        # ── MA 支撑：独立类型，复刻旧链权重（设计文档 27.1）──
+        _ma_weight: dict[str, str] = {"sma5": "0.65", "sma10": "0.74", "ema20": "0.82"}
         for ma in ma_structures:
             if ma.is_valid:
                 support_types.append(
                     SupportTypeScore(
-                        support_type="ma_support",
+                        support_type=f"{ma.ma_type}_support",
                         support_level=ma.level,
-                        strength=Decimal("0.70"),
+                        strength=Decimal(_ma_weight.get(ma.ma_type, "0.70")),
                         source=ma.ma_type,
                         distance_pct=ma.distance_pct,
                     )
                 )
+
+        # ── previous_close 支撑（旧链权重 0.72）──
+        if len(df) >= 2:
+            prev_close = self._d(df["close_price"].iloc[-2])
+            if prev_close > 0:
+                prev_close_dist = self._distance_pct(current_low, prev_close)
+                support_types.append(
+                    SupportTypeScore(
+                        support_type="previous_close",
+                        support_level=prev_close,
+                        strength=Decimal("0.72"),
+                        source="previous_close",
+                        distance_pct=prev_close_dist,
+                    )
+                )
+
+        # ── prior_breakout_retest：前15日最高价回踩（旧链权重 0.92）──
+        breakout_level = self._detect_prior_breakout_level(df)
+        if breakout_level > Decimal("0"):
+            breakout_dist = self._distance_pct(current_low, breakout_level)
+            breakout_strength = Decimal("0.92")
+            if current_close >= breakout_level:
+                breakout_strength = min(Decimal("1.0"), breakout_strength * Decimal("1.08"))
+            support_types.append(
+                SupportTypeScore(
+                    support_type="prior_breakout_retest",
+                    support_level=breakout_level,
+                    strength=breakout_strength,
+                    source="prior_breakout_retest",
+                    distance_pct=breakout_dist,
+                )
+            )
+
+        # ── pivot 支撑（旧链权重 0.75）──
+        pivot_points = self._compute_pivot_points(df)
+        for pk, pv in pivot_points.items():
+            if pv > Decimal("0"):
+                dist = self._distance_pct(current_low, pv)
+                support_types.append(
+                    SupportTypeScore(
+                        support_type=f"pivot_{pk}",
+                        support_level=pv,
+                        strength=Decimal("0.75"),
+                        source="daily_pivot",
+                        distance_pct=dist,
+                    )
+                )
+
+        # ── fibonacci 回撤支撑（旧链权重 0.68，nearest_support below current_price）──
+        fib_support = self._compute_fibonacci_support(df, current_close)
+        if fib_support > Decimal("0"):
+            fib_dist = self._distance_pct(current_low, fib_support)
+            support_types.append(
+                SupportTypeScore(
+                    support_type="fibonacci_support",
+                    support_level=fib_support,
+                    strength=Decimal("0.68"),
+                    source="fibonacci_retracement",
+                    distance_pct=fib_dist,
+                )
+            )
 
         # ── O2: RSI 超卖加分 ──
         rsi_bonus = Decimal("0")
