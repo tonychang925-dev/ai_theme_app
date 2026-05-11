@@ -9,10 +9,11 @@ from zoneinfo import ZoneInfo
 from services.jyhf_cdp_service.app_manager import JyhfAppManager
 from services.jyhf_cdp_service.cdp_client import CDPClient
 from services.jyhf_cdp_service.config import JyhfCdpServiceConfig
+from services.jyhf_cdp_service.db_sink import DatabaseSink
 from services.jyhf_cdp_service.extractors import NewEventExtractor
 from services.jyhf_cdp_service.intel_pusher import IntelPusher
 from services.jyhf_cdp_service.normalizer import JyhfEventNormalizer
-from services.jyhf_cdp_service.schemas import CollectorStatus
+from services.jyhf_cdp_service.schemas import CollectorStatus, RawJyhfCdpEvent
 from services.jyhf_cdp_service.sinks import RawEventJsonlSink
 from services.jyhf_cdp_service.state import DedupStore, StatusStore
 
@@ -31,10 +32,13 @@ class JyhfCdpCollectorService:
         self._normalizer = JyhfEventNormalizer()
         self._sink = RawEventJsonlSink(config.raw_event_dir)
         self._intel_pusher = IntelPusher(config, logger) if config.allow_push_intel else None
+        self._db_sink = DatabaseSink(config, logger) if config.allow_push_db else None
         self._task: asyncio.Task | None = None
         self._stop_event = asyncio.Event()
         self._lifecycle_lock = asyncio.Lock()
         self._capture_lock = Lock()
+        self._db_events_lock = Lock()
+        self._pending_db_events: list[RawJyhfCdpEvent] = []
         self._run_id = 0
         self._started_at: datetime | None = None
 
@@ -87,6 +91,7 @@ class JyhfCdpCollectorService:
         while not self._stop_event.is_set() and run_id == self._run_id:
             try:
                 await asyncio.to_thread(self._capture_once, totals, run_id)
+                await self._flush_db_events()
             except asyncio.CancelledError:
                 raise
             except Exception as exc:
@@ -151,6 +156,9 @@ class JyhfCdpCollectorService:
             new_count += 1
             if self._intel_pusher:
                 self._intel_pusher.push(event)
+            if self._db_sink:
+                with self._db_events_lock:
+                    self._pending_db_events.append(event)
 
         totals["capture_count_total"] = int(totals.get("capture_count_total") or 0) + len(raw_events)
         totals["new_event_count_total"] = int(totals.get("new_event_count_total") or 0) + new_count
@@ -175,6 +183,23 @@ class JyhfCdpCollectorService:
             last_error=None,
         )
         self._logger.info("capture ok events=%s new=%s duplicate=%s", len(raw_events), new_count, duplicate_count)
+
+    async def _flush_db_events(self) -> None:
+        if not self._db_sink:
+            return
+        with self._db_events_lock:
+            if not self._pending_db_events:
+                return
+            events = self._pending_db_events
+            self._pending_db_events = []
+        batch_id = f"cdp_{datetime.now(CN_TZ).strftime('%Y%m%d_%H%M%S')}"
+        try:
+            written = await self._db_sink.write_events(events, batch_id)
+            self._status.update(pushed_to_db_count_total=int(
+                (self._status.get().pushed_to_db_count_total or 0) + written
+            ))
+        except Exception:
+            self._logger.exception("db_sink flush failed batch_id=%s count=%s", batch_id, len(events))
 
     def _uptime_seconds(self, now: datetime | None = None) -> float:
         if not self._started_at:

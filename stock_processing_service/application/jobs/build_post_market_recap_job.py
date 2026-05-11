@@ -446,6 +446,7 @@ class BuildPostMarketRecapJob:
                     low_price=Decimal("0"), close_price=Decimal("0"),
                     pre_close=Decimal("0"), pct_chg=Decimal("0"),
                     volume=Decimal("0"), amount=Decimal("0"),
+                    limit_up_price=Decimal("0"), limit_down_price=Decimal("0"),
                 )
                 stock_prior = prior_by_stock.get(stock_id, [])
                 stock_history = history_bars_by_stock.get(stock_id, [])
@@ -510,8 +511,9 @@ class BuildPostMarketRecapJob:
             )
             _score_all([refresh_candidate], {sid: int(row.get("current_flag_today") or 0)})
 
-        # Step 7: 构建 D1 候选输入 — 只消费 formal/observe_only + active/weakening
+        # Step 7: 构建 D1 候选输入 — 等价旧链 _to_candidate + _apply_watch_context
         candidate_input_rows: list[SubjectStockPoolDTO] = []
+        d1_candidates_for_pool: list[dict[str, Any]] = []
         by_stock: dict[str, SubjectStockPoolDTO] = {}
         for result in watch_pool_results:
             if not self._tracking_service.is_candidate_eligible(
@@ -543,15 +545,178 @@ class BuildPostMarketRecapJob:
                     "eligible_for_candidate": True,
                 },
             )
-        candidate_input_rows = list(by_stock.values())
 
-        # ── Step 7a.5: 计算 watch_window_days（等价旧链 _recompute_watch_window_days）──
-        # 从种子查询结果中提取真实的交易日出现天数
-        stock_window_days: dict[str, int] = {}
-        for row in seed_rows_raw:
-            sid = self._normalize_stock_id(str(row.get("stock_id") or ""))
-            if sid:
-                stock_window_days[sid] = int(row.get("total_trade_days") or 7)
+            # ── 旧链 _to_candidate 完整复刻（设计文档 27.4）──
+            bar = bars_by_stock.get(result.stock_id)
+            if bar is None:
+                continue
+            pct_chg = float(bar.pct_chg or 0)
+
+            # 查找前一日 bar
+            stock_history = history_bars_by_stock.get(result.stock_id, [])
+            stock_history_sorted = sorted(stock_history, key=lambda b: b.trade_date)
+            prev_bar = None
+            for hb in reversed(stock_history_sorted):
+                if hb.trade_date < trade_date:
+                    prev_bar = hb
+                    break
+            prev_day_pct = float(prev_bar.pct_chg or 0) if prev_bar else 0.0
+            prev_day_limit_up = False  # from bar data we don't have limit_up; use pct_chg >= 9.5 as proxy
+            if prev_bar and float(prev_bar.pct_chg or 0) >= 9.5:
+                prev_day_limit_up = True
+
+            labels = result.labels or {}
+            is_leader = bool(labels.get("is_dragon_head") or labels.get("is_leader") or False)
+            recent_limit_up_count = int(labels.get("recent_limit_up_count") or 0)
+            support_type = str(result.support_type or "")
+            support_strength = float(result.support_score or 0)
+            prior7_limitup_days = int(labels.get("recent_limit_up_count") or 0)
+            prior7_strong_days = int(labels.get("subject_strong_count") or 0)
+            mainline_strength_score = float(labels.get("mainline_strength_score", 0) or 0)
+            fade_watch = bool(labels.get("fade_watch") or False)
+
+            # 1) pct_chg >= 0 或 limit_up → 必须弱势日
+            if pct_chg >= 0.0:
+                continue
+            # 2) 跌幅不足 -1.0% → 不够弱
+            if pct_chg > -1.0:
+                continue
+            # 3) strong_history
+            strong_history = (is_leader or recent_limit_up_count >= 1)
+            if not strong_history:
+                continue
+            # 4) has_limitup_gene
+            if prior7_limitup_days < 1:
+                continue
+            # 5) recent_strong_history
+            if prior7_strong_days < 1:
+                continue
+            # 6) support_available
+            if support_type in {"", "none"} or support_strength < 45.0:
+                continue
+
+            # ── 旧链 _classify_weak_type ──
+            if prev_day_limit_up and pct_chg < 0:
+                weak_type = "bad_limit_up"
+                weak_intensity = min(100.0, abs(pct_chg) * 12.0 + 20.0)
+            elif pct_chg <= -5.0:
+                weak_type = "big_negative_line"
+                weak_intensity = min(100.0, abs(pct_chg) * 10.0)
+            elif -2.0 <= pct_chg <= 1.5 and prev_day_pct >= 4.0:
+                weak_type = "upper_shadow"
+                weak_intensity = 55.0
+            elif pct_chg <= -1.0:
+                weak_type = "high_open_low_close"
+                weak_intensity = min(100.0, abs(pct_chg) * 8.0 + 10.0)
+            else:
+                weak_type = "fake_break"
+                weak_intensity = 40.0
+
+            # ── 旧链 _day_weak_score ──
+            if pct_chg < -4.0: day_weak_score = 20.0
+            elif pct_chg < -2.0: day_weak_score = 16.0
+            elif pct_chg < -1.0: day_weak_score = 10.0
+            elif pct_chg < 0: day_weak_score = 6.0
+            else: day_weak_score = 0.0
+
+            # ── 旧链 _prev_day_weak_score ──
+            if prev_day_pct < -3.0: prev_day_weak_score = 10.0
+            elif prev_day_pct < -1.5: prev_day_weak_score = 8.0
+            elif prev_day_pct < 0: prev_day_weak_score = 5.0
+            else: prev_day_weak_score = 0.0
+
+            # ── 旧链 _candidate_score（精确复刻）──
+            candidate_score = 45.0
+            if is_leader:
+                candidate_score += 18.0
+            candidate_score += min(recent_limit_up_count * 4.0, 12.0)
+            candidate_score += min(weak_intensity * 0.08, 8.0)
+            candidate_score += min(support_strength * 0.1, 9.0)
+            candidate_score += day_weak_score + prev_day_weak_score
+            candidate_score += min(mainline_strength_score * 0.08, 8.0)
+            if fade_watch:
+                if mainline_strength_score >= 75.0: candidate_score -= 4.0
+                elif mainline_strength_score >= 60.0: candidate_score -= 8.0
+                else: candidate_score -= 12.0
+            candidate_score = max(0.0, min(candidate_score, 100.0))
+
+            # ── 旧链 observe_only 上限（注：旧链 classify_pool_entry 的 prev_day_weak>=2 为已知 bug 不复制）──
+            watch_pool_entry_type = str(result.pool_entry_type or "observe_only")
+            if watch_pool_entry_type == "observe_only":
+                candidate_score = min(candidate_score, 69.0)
+
+            # ── 旧链 _classify_candidate_type ──
+            if is_leader and recent_limit_up_count >= 3:
+                candidate_type = "dragon_repair"
+            elif is_leader:
+                candidate_type = "subdragon_repair"
+            elif weak_type == "bad_limit_up":
+                candidate_type = "bad_limit_repair"
+            elif weak_type == "upper_shadow":
+                candidate_type = "upper_shadow_repair"
+            elif recent_limit_up_count >= 1:
+                candidate_type = "strong_trend_repair"
+            else:
+                candidate_type = "generic_repair"
+
+            # ── 旧链 _apply_watch_context ──
+            watch_score = float(result.watch_score or 0)
+            strong_grade = str(result.strong_grade or "")
+
+            if watch_pool_entry_type == "formal":
+                candidate_score = min(100.0, max(candidate_score, 70.0))
+            if strong_grade == "B":
+                candidate_score = min(69.0, candidate_score)
+            elif strong_grade in {"S", "A"} and watch_pool_entry_type == "observe_only":
+                candidate_score = min(100.0, max(candidate_score, 72.0))
+            score_boost = min(max(watch_score * 0.08, 0.0), 8.0)
+            if strong_grade in {"S", "A"}:
+                score_boost = min(12.0, score_boost + 3.0)
+            candidate_score = round(min(100.0, candidate_score + score_boost), 2)
+
+            d1_candidates_for_pool.append({
+                "trade_date": trade_date,
+                "next_trade_date": trade_date,
+                "stock_id": result.stock_id,
+                "stock_name": result.stock_name,
+                "subject_key": result.subject_key,
+                "theme_name": result.theme_name,
+                "candidate_score": str(candidate_score),
+                "candidate_type": candidate_type,
+                "rule_version": "weak_to_strong_candidate.v2",
+                "weak_type": weak_type,
+                "weak_intensity": str(weak_intensity),
+                "is_dragon_head": is_leader,
+                "dragon_head_level": "dragon" if is_leader else "",
+                "prev_limit_up_count": recent_limit_up_count,
+                "max_consecutive_limit_up_days": 0,
+                "support_type": support_type,
+                "support_level": str(result.support_level or "0"),
+                "support_strength": str(support_strength),
+                "expected_open_low": "0",
+                "expected_open_high": "0",
+                "expected_auction_pattern": "",
+                "need_last_minute_grab": False,
+                "need_plate_follow": False,
+                "evidence_json": json.dumps({
+                    "source": "strong_watch_pool",
+                    "pct_chg": str(bar.pct_chg),
+                    "prev_day_pct": str(prev_day_pct),
+                    "weak_type": weak_type,
+                    "weak_intensity": str(weak_intensity),
+                    "support_type": support_type,
+                    "support_strength": str(support_strength),
+                    "day_weak_score": str(day_weak_score),
+                    "prev_day_weak_score": str(prev_day_weak_score),
+                }),
+                "pool_entry_type": watch_pool_entry_type,
+                "cycle_state": str(result.cycle_state or ""),
+                "mainline_strength_score": str(mainline_strength_score),
+                "fade_watch": fade_watch,
+                "fade_confirmed": bool(labels.get("fade_confirmed") or False),
+            })
+
+        candidate_input_rows = list(by_stock.values())
 
         # ── Step 7b: 持久池写入（等价旧链 _upsert_watch_pool_seed + _update_watch_pool_row）──
         pool_write_rows: list[dict[str, Any]] = []
@@ -564,7 +729,7 @@ class BuildPostMarketRecapJob:
                 "stock_name": result.stock_name,
                 "subject_key": result.subject_key,
                 "theme_name": result.theme_name,
-                "watch_window_days": stock_window_days.get(result.stock_id, 7),
+                "watch_window_days": 1,  # 初始值，后续由 recompute_strong_watch_window_days 修正
                 "source_tag": result.source_tag,
                 "relay_role": result.relay_role,
                 "watch_status": result.watch_status,
@@ -582,6 +747,11 @@ class BuildPostMarketRecapJob:
                 "evidence": result.evidence,
             })
         pool_written = await self._write_port.upsert_strong_watch_pool_rows(pool_write_rows)
+
+        # ── Step 7b.5: 重算 watch_window_days（等价旧链 _recompute_watch_window_days）──
+        all_written_ids = [str(r["stock_id"]) for r in pool_write_rows if r.get("stock_id")]
+        if all_written_ids:
+            await self._write_port.recompute_strong_watch_window_days(all_written_ids)
 
         # ── Step 7c: 旧链等价 promote（DB UPDATE candidate_promoted=TRUE）──
         formal_ids = {r.stock_id for r in watch_pool_results
@@ -616,7 +786,7 @@ class BuildPostMarketRecapJob:
                 "prune_mode": "immediate" if r.watch_status == "removed" else None,
                 "prune_reason_code": r.removed_reason or "",
                 "kept_because": None,
-                "watch_window_days": stock_window_days.get(r.stock_id, 7),
+                "watch_window_days": 1,  # 初始值，后续由 recompute_strong_watch_window_days 修正
                 "support_type": r.support_type,
                 "support_level": str(r.support_level or "0"),
                 "support_score": str(r.support_score),
@@ -647,19 +817,32 @@ class BuildPostMarketRecapJob:
         layer_a_identity_hit_count = len(identities_by_subject)
         layer_b_cycle_hit_count = len(cycles_by_subject)
         input_fingerprint = "v2_seed_query"
-        candidates = self._candidate_service.build_candidates(
-            bars=bars,
-            pool_rows=candidate_input_rows,
-            prior_rows=prior_rows,
-        )
-        all_candidates = getattr(self._candidate_service, "all_candidates", candidates)
-        formal_candidates = [
-            c
-            for c in all_candidates
-            if str(getattr(c, "candidate_level", "")).lower() in {"formal", "s", "a", "b"}
+        # ── 旧链等价 D1 候选：排序 + top 10 + 写入 weak_to_strong_candidate_pool ──
+        d1_candidates_for_pool.sort(key=lambda x: float(x.get("candidate_score") or 0), reverse=True)
+        d1_candidates_for_pool = d1_candidates_for_pool[:10]  # HARD_MAX_CANDIDATES = 10
+        d1_written = await self._write_port.upsert_weak_to_strong_candidate_pool_rows(d1_candidates_for_pool) if d1_candidates_for_pool else 0
+
+        # 构建兼容 recap_doc 的 candidates 列表
+        candidates = [
+            {
+                "stock_id": c["stock_id"],
+                "stock_name": c["stock_name"],
+                "subject_key": c["subject_key"],
+                "subject_name": c["theme_name"],
+                "candidate_score": c["candidate_score"],
+                "candidate_level": c["pool_entry_type"],
+                "candidate_type": c["candidate_type"],
+                "transition_type": c["weak_type"],
+                "transition_confidence": "50",
+                "trigger_flags": [],
+                "evidence_rules": [],
+                "support_type": c["support_type"],
+            }
+            for c in d1_candidates_for_pool
         ]
-        observe_candidates = [c for c in all_candidates if str(getattr(c, "candidate_level", "")).lower() == "observe_only"]
-        candidate_service_observe_candidates = getattr(self._candidate_service, "observe_candidates", observe_candidates)
+        formal_candidates = [c for c in candidates if str(c.get("candidate_level", "")).lower() in {"formal", "s", "a", "b"}]
+        observe_candidates = [c for c in candidates if str(c.get("candidate_level", "")).lower() == "observe_only"]
+        candidate_service_observe_candidates = observe_candidates
 
         recap_doc = {
             "trade_date": trade_date.isoformat(),
@@ -712,54 +895,54 @@ class BuildPostMarketRecapJob:
             # Primary count follows the actual candidate list, with formal/observe split preserved separately.
             "candidate_count": len(candidates),
             "candidate_count_total": len(candidates),
-            "candidate_count_all": len(all_candidates),
+            "candidate_count_all": len(candidates),
             "candidate_count_formal": len(formal_candidates),
             "candidate_count_observe": len(observe_candidates),
             "observe_candidates_count": len(candidate_service_observe_candidates),
             "top_candidates_scope": "formal_plus_observe_ranked",
             "formal_top_candidates": [
                 {
-                    "stock_id": c.stock_id,
-                    "stock_name": c.stock_name,
-                    "subject_key": c.subject_key,
-                    "candidate_score": str(c.candidate_score),
-                    "support_type": c.support_type,
+                    "stock_id": c["stock_id"],
+                    "stock_name": c["stock_name"],
+                    "subject_key": c["subject_key"],
+                    "candidate_score": str(c["candidate_score"]),
+                    "support_type": c.get("support_type", ""),
                 }
                 for c in formal_candidates[:15]
             ],
             "observe_candidates": [
                 {
-                    "stock_id": c.stock_id,
-                    "stock_name": c.stock_name,
-                    "subject_key": c.subject_key,
-                    "subject_name": c.subject_name,
-                    "candidate_score": str(c.candidate_score),
-                    "candidate_level": c.candidate_level,
-                    "support_type": c.support_type,
-                    "support_score": str(c.support_score),
-                    "gap_hit": c.gap_hit,
-                    "gap_hit_mode": c.gap_hit_mode,
-                    "evidence_rules": c.evidence_rules[:30],
+                    "stock_id": c["stock_id"],
+                    "stock_name": c["stock_name"],
+                    "subject_key": c["subject_key"],
+                    "subject_name": c["subject_name"],
+                    "candidate_score": str(c["candidate_score"]),
+                    "candidate_level": c["candidate_level"],
+                    "support_type": c.get("support_type", ""),
+                    "support_score": str(c.get("support_score", "0")),
+                    "gap_hit": c.get("gap_hit", False),
+                    "gap_hit_mode": c.get("gap_hit_mode", "miss"),
+                    "evidence_rules": c.get("evidence_rules", [])[:30],
                 }
                 for c in candidate_service_observe_candidates[:20]
             ],
             "candidate_diagnostics": [
                 {
-                    "stock_id": c.stock_id,
-                    "stock_name": c.stock_name,
-                    "subject_key": c.subject_key,
-                    "subject_name": c.subject_name,
-                    "candidate_score": str(c.candidate_score),
-                    "candidate_level": c.candidate_level,
-                    "support_type": c.support_type,
-                    "support_score": str(c.support_score),
-                    "weakness_valid_score": str(c.weakness_valid_score),
-                    "repair_or_takeover_score": str(c.repair_or_takeover_score),
-                    "gap_hit": c.gap_hit,
-                    "gap_hit_mode": c.gap_hit_mode,
+                    "stock_id": c["stock_id"],
+                    "stock_name": c["stock_name"],
+                    "subject_key": c["subject_key"],
+                    "subject_name": c["subject_name"],
+                    "candidate_score": str(c["candidate_score"]),
+                    "candidate_level": c["candidate_level"],
+                    "support_type": c.get("support_type", ""),
+                    "support_score": str(c.get("support_score", "0")),
+                    "weakness_valid_score": str(c.get("weakness_valid_score", "0")),
+                    "repair_or_takeover_score": str(c.get("repair_or_takeover_score", "0")),
+                    "gap_hit": c.get("gap_hit", False),
+                    "gap_hit_mode": c.get("gap_hit_mode", "miss"),
                     "candidate_rank": idx,
                 }
-                for idx, c in enumerate(all_candidates, start=1)
+                for idx, c in enumerate(candidates, start=1)
             ],
             "strong_watch_input_7d_preview": [
                 {
@@ -822,16 +1005,16 @@ class BuildPostMarketRecapJob:
             ],
             "top_candidates": [
                 {
-                    "stock_id": c.stock_id,
-                    "stock_name": c.stock_name,
-                    "subject_key": c.subject_key,
-                    "subject_name": c.subject_name,
-                    "candidate_score": str(c.candidate_score),
-                    "candidate_level": c.candidate_level,
+                    "stock_id": c["stock_id"],
+                    "stock_name": c["stock_name"],
+                    "subject_key": c["subject_key"],
+                    "subject_name": c["subject_name"],
+                    "candidate_score": str(c["candidate_score"]),
+                    "candidate_level": c["candidate_level"],
                     "transition_type": str(getattr(c, "transition_type", "") or ""),
                     "transition_confidence": str(getattr(c, "transition_confidence", "0")),
                     "trigger_flags": list(getattr(c, "trigger_flags", []) or []),
-                    "evidence_rules": c.evidence_rules,
+                    "evidence_rules": c.get("evidence_rules", []),
                 }
                 for c in candidates[:30]
             ],

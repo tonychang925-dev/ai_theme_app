@@ -18,6 +18,13 @@ class JyhfCdpServiceConfig:
     redis_port: int = 6379
     redis_db: int = 0
     redis_stream_feed: str = "stream:event:feed"
+    # PostgreSQL for subject_history_staging writes
+    pg_host: str = "localhost"
+    pg_port: int = 5432
+    pg_database: str = "stock_data_test"
+    pg_username: str = "postgres"
+    pg_password: str = ""
+    allow_push_db: bool = False
 
     @property
     def runtime_dir(self) -> Path:
@@ -58,5 +65,11 @@ def load_config() -> JyhfCdpServiceConfig:
         redis_port=int(os.getenv("REDIS_PORT", "6379")),
         redis_db=int(os.getenv("REDIS_DB", "0")),
         redis_stream_feed=str(os.getenv("JYHF_CDP_REDIS_STREAM_FEED", "stream:event:feed")),
+        pg_host=str(os.getenv("PG_HOST", "localhost")),
+        pg_port=int(os.getenv("PG_PORT", "5432")),
+        pg_database=str(os.getenv("PG_DATABASE", "stock_data_test")),
+        pg_username=str(os.getenv("PG_USERNAME", "postgres")),
+        pg_password=str(os.getenv("PG_PASSWORD", "")),
+        allow_push_db=str(os.getenv("JYHF_CDP_PUSH_DB", "0")).lower() in {"1", "true", "yes", "on"},
     )
 

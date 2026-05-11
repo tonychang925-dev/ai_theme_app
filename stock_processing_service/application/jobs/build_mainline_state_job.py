@@ -57,19 +57,36 @@ class BuildMainlineStateJob:
         batch_id = batch_id or uuid4().hex[:12]
         trace_id = trace_id or uuid4().hex[:12]
 
-        # Step 1: 读取 identity + cycle
-        identities_raw = await self._read_port.get_mainline_identity_by_subject_keys(
-            [], trade_date
-        )
+        # Step 1: 读取 identity + cycle（使用 get_all_* 方法，避免 empty subject_keys 返回空）
+        # 优先使用 get_all_* 方法（不受 subject_keys 过滤限制）
         identities: dict[str, MainlineIdentityDTO] = {}
+        identities_raw = []
+        try:
+            fn = getattr(self._read_port, "get_all_confirmed_mainlines", None)
+            if callable(fn):
+                identities_raw = await fn()
+        except Exception:
+            pass
+        if not identities_raw:
+            identities_raw = await self._read_port.get_mainline_identity_by_subject_keys(
+                [], trade_date
+            )
         for row in (identities_raw or []):
             dto = self._to_identity(row)
             identities[dto.subject_key] = dto
 
-        cycles_raw = await self._read_port.get_mainline_cycle_by_subject_keys(
-            [], trade_date
-        )
         cycles: list[MainlineCycleDTO] = []
+        cycles_raw = []
+        try:
+            fn = getattr(self._read_port, "get_all_cycle_judgements", None)
+            if callable(fn):
+                cycles_raw = await fn(trade_date)
+        except Exception:
+            pass
+        if not cycles_raw:
+            cycles_raw = await self._read_port.get_mainline_cycle_by_subject_keys(
+                [], trade_date
+            )
         for row in (cycles_raw or []):
             cycles.append(self._to_cycle(row))
 
@@ -201,6 +218,7 @@ class BuildMainlineStateJob:
     @staticmethod
     def _to_cycle(row: dict[str, Any]) -> MainlineCycleDTO:
         return MainlineCycleDTO(
+            trade_date=row.get("trade_date", date.today()),
             subject_key=str(row.get("subject_key") or ""),
             theme_name=str(row.get("theme_name") or ""),
             final_cycle_state=str(row.get("final_cycle_state") or "start"),

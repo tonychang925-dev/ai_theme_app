@@ -643,6 +643,63 @@ class Phase1ReadRepository:
             items.append(dict(row))
         return items
 
+    async def _fetch_intel_jyhf_cdp_events(
+        self,
+        feed_date: date,
+        session: str,
+        subject_key: Optional[str],
+        stock_id: Optional[str],
+        limit: int,
+    ) -> List[Dict[str, Any]]:
+        """JYHF CDP DOM 实时采集事件 → 情报台 event 条目。"""
+        sql = """
+        SELECT
+            ('event:jyhf_cdp:' || id::text) AS item_id,
+            'event'::text AS item_type,
+            CASE
+                WHEN (raw_json->>'event_time')::text IS NOT NULL AND (raw_json->>'event_time')::text <> ''
+                THEN (rank_date::text || 'T' || (raw_json->>'event_time')::text || ':00')::timestamp
+                ELSE COALESCE(rank_date::timestamp, created_at)
+            END AS occurred_at,
+            COALESCE(NULLIF(subject_name, ''), subject_key) AS title,
+            COALESCE(NULLIF(description, ''), subject_name, subject_key) AS summary,
+            ARRAY[subject_key]::text[] AS theme_subject_keys,
+            ARRAY[COALESCE(NULLIF(subject_name, ''), subject_key)]::text[] AS theme_names,
+            ARRAY[]::text[] AS stock_ids,
+            ARRAY[]::text[] AS stock_names,
+            NULL::numeric AS confidence,
+            COALESCE(pct_chg, 0)::numeric AS impact_score,
+            'jyhf_cdp_dom'::text AS source_type,
+            'jyhf_cdp'::text AS source_channel
+        FROM subject_history_staging
+        WHERE source_type = 'jyhf_cdp'
+          AND rank_date = $1::date
+          AND ($2::text IS NULL OR subject_key = $2)
+        ORDER BY
+            CASE
+                WHEN (raw_json->>'event_time')::text IS NOT NULL AND (raw_json->>'event_time')::text <> ''
+                THEN (rank_date::text || 'T' || (raw_json->>'event_time')::text || ':00')::timestamp
+                ELSE COALESCE(rank_date::timestamp, created_at)
+            END DESC NULLS LAST, id DESC
+        LIMIT $3
+        """
+        async with self._pool.acquire() as conn:
+            rows = await conn.fetch(sql, feed_date, subject_key, limit)
+
+        items: List[Dict[str, Any]] = []
+        for row in rows:
+            occurred_at = row["occurred_at"]
+            if session != "all" and isinstance(occured_at, datetime):
+                hm = occurred_at.hour * 60 + occurred_at.minute
+                if session == "pre" and hm >= 9 * 60 + 30:
+                    continue
+                if session == "intra" and not (9 * 60 + 30 <= hm < 15 * 60):
+                    continue
+                if session == "post" and hm < 15 * 60:
+                    continue
+            items.append(dict(row))
+        return items
+
     async def _has_event_review_table(self) -> bool:
         if self._event_review_table_exists is not None:
             return self._event_review_table_exists
@@ -923,6 +980,7 @@ class Phase1ReadRepository:
 
         if item_type in {"all", "event"}:
             items.extend(await self._fetch_intel_events(target_date, session, subject_key, stock_id, limit))
+            items.extend(await self._fetch_intel_jyhf_cdp_events(target_date, session, subject_key, stock_id, limit))
         if item_type in {"all", "event_review"}:
             items.extend(await self._fetch_intel_event_reviews(target_date, session, subject_key, stock_id, limit))
         if item_type in {"all", "theme_move"}:

@@ -77,8 +77,13 @@ class MainlineIdentityUniverseBuilder:
         return sorted(rows.values(), key=lambda r: r.priority_score, reverse=True)
 
     async def _add_confirmed(self, rows: dict, trade_date: date) -> None:
+        # 读取所有当前已确认主线（不限于当天 source_trade_date）
         try:
-            id_rows = await self._read.get_mainline_identity_by_subject_keys([], trade_date)
+            fn = getattr(self._read, "get_all_confirmed_mainlines", None)
+            if callable(fn):
+                id_rows = await fn()
+            else:
+                id_rows = []
             for r in (id_rows or []):
                 sk = str(r.get("subject_key") or "").strip()
                 if not sk or sk in rows:
@@ -97,23 +102,30 @@ class MainlineIdentityUniverseBuilder:
             self.source_errors["confirmed"] = str(e)
 
     async def _add_prior_alive(self, rows: dict, trade_date: date) -> None:
+        """存续主线：已确认主线 + cycle 仍 alive + 未退潮。
+
+        SQL 层已 JOIN identity_registry 过滤，只返回已确认主线的存续 cycle。
+        """
         try:
-            cyc_rows = await self._read.get_mainline_cycle_by_subject_keys([], trade_date)
+            fn = getattr(self._read, "get_all_prior_alive_cycles", None)
+            if not callable(fn):
+                self.source_errors["prior_alive"] = "method not available"
+                return
+            cyc_rows = await fn(trade_date)
             for r in (cyc_rows or []):
                 sk = str(r.get("subject_key") or "").strip()
                 if not sk or sk in rows:
                     continue
-                if bool(r.get("final_mainline_alive")) and not bool(r.get("fade_confirmed")):
-                    rows[sk] = IdentityUniverseRow(
-                        trade_date=trade_date, subject_key=sk,
-                        theme_name=str(r.get("theme_name") or sk),
-                        universe_source="prior_alive",
-                        candidate_type="alive",
-                        priority_score=90.0,
-                        prior_cycle_state=str(r.get("final_cycle_state") or ""),
-                        prior_final_mainline_alive=True,
-                        is_prior_alive=True,
-                    )
+                rows[sk] = IdentityUniverseRow(
+                    trade_date=trade_date, subject_key=sk,
+                    theme_name=str(r.get("theme_name") or sk),
+                    universe_source="prior_alive",
+                    candidate_type="alive",
+                    priority_score=90.0,
+                    prior_cycle_state=str(r.get("final_cycle_state") or ""),
+                    prior_final_mainline_alive=True,
+                    is_prior_alive=True,
+                )
         except Exception as e:
             self.source_errors["prior_alive"] = str(e)
 
@@ -136,7 +148,7 @@ class MainlineIdentityUniverseBuilder:
                     continue
                 rows[sk] = IdentityUniverseRow(
                     trade_date=trade_date, subject_key=sk,
-                    theme_name=str(r.get("subject_name") or sk),
+                    theme_name=str(r.get("description") or r.get("subject_name") or sk),
                     universe_source="hot_rank",
                     candidate_type="hot",
                     priority_score=min(heat, 70.0),
@@ -186,7 +198,7 @@ class MainlineIdentityUniverseBuilder:
                     continue
                 rows[sk] = IdentityUniverseRow(
                     trade_date=trade_date, subject_key=sk,
-                    theme_name=str(r.get("subject_name") or sk),
+                    theme_name=str(r.get("description") or r.get("subject_name") or sk),
                     universe_source="new_theme",
                     candidate_type="new",
                     priority_score=60.0,
@@ -209,7 +221,7 @@ class MainlineIdentityUniverseBuilder:
                     continue
                 rows[sk] = IdentityUniverseRow(
                     trade_date=trade_date, subject_key=sk,
-                    theme_name=str(r.get("subject_name") or sk),
+                    theme_name=str(r.get("description") or r.get("subject_name") or sk),
                     universe_source="cluster",
                     candidate_type="cluster",
                     priority_score=50.0,

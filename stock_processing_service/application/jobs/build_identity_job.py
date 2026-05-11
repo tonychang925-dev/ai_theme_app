@@ -290,14 +290,25 @@ class BuildIdentityJob:
                 and not cycle_fade_map.get(subject_key, False)
             )
 
-            # 若 cluster bootstrap 已直确认为 confirmed，跳过 LLM
-            if ci and ci.identity_status == "confirmed":
-                llm_verdict = self._llm_review_service.review_with_rule(
-                    composite_score=rule.composite_score,
-                    one_day_tour_flag=rule.one_day_tour_flag,
-                    logic_ok=rule.logic_ok,
-                    market_ok=rule.market_ok,
-                    rule_is_main_theme=True,
+            # ── LLM 判定分层（设计文档 §24）──
+            # - 继承主线：跳过 LLM，直接 confirmed
+            # - cluster bootstrap：跳过 LLM，直接 confirmed
+            # - rule_is_main_theme=true（非继承）：LLM 复核确认
+            # - rule_is_main_theme=false 但满足 upgrade 条件：LLM 判定是否升级
+            # - 其他（rule=fasle, 不满足 upgrade）：规则决策，不调用 LLM
+
+            should_call_llm = (
+                (not inherited)
+                and (not (ci and ci.identity_status == "confirmed"))
+                and (rule.rule_is_main_theme or rule.logic_ok or float(rule.composite_score) >= 55.0)
+            )
+
+            if inherited or (ci and ci.identity_status == "confirmed"):
+                # 继承或 bootstrap 已确认 → deterministic confirmed，不调用 LLM
+                llm_verdict = IdentityLLMReviewVerdict(
+                    verdict="confirmed",
+                    confidence=Decimal("1.0"),
+                    reason="inherited_confirmed_mainline" if inherited else "cluster_bootstrap_direct_confirm",
                 )
                 decision = self._decider.decide(
                     composite_score=rule.composite_score,
@@ -307,16 +318,32 @@ class BuildIdentityJob:
                     rule_is_main_theme=True,
                     platform_breakout_flag=rule.platform_breakout_flag,
                 )
-            else:
-                # 正常路径：rule_is_main_theme 可能已被 cluster compensation 修改
-                # 若主线存续继承触发，强制 rule_is_main_theme=True
-                rule_is_mt = True if inherited else (ci.rule_is_main_theme if ci else rule.rule_is_main_theme)
+                rule_is_mt = True
+            elif should_call_llm:
+                # 需要 LLM 判定：rule 通过 或 接近阈值
+                rule_is_mt = ci.rule_is_main_theme if ci else rule.rule_is_main_theme
                 llm_verdict = self._llm_review_service.review_with_rule(
                     composite_score=rule.composite_score,
                     one_day_tour_flag=rule.one_day_tour_flag,
                     logic_ok=rule.logic_ok,
                     market_ok=rule.market_ok,
                     rule_is_main_theme=rule_is_mt,
+                )
+                decision = self._decider.decide(
+                    composite_score=rule.composite_score,
+                    llm_verdict=llm_verdict.verdict,
+                    one_day_tour_flag=rule.one_day_tour_flag,
+                    logic_ok=rule.logic_ok,
+                    rule_is_main_theme=rule_is_mt,
+                    platform_breakout_flag=rule.platform_breakout_flag,
+                )
+            else:
+                # 不需 LLM：rule 未通过，且不接近阈值 → 规则决策
+                rule_is_mt = ci.rule_is_main_theme if ci else rule.rule_is_main_theme
+                llm_verdict = IdentityLLMReviewVerdict(
+                    verdict="observed" if rule_is_mt else "review_pending",
+                    confidence=Decimal("0.6"),
+                    reason="rule_based_no_llm_needed",
                 )
                 decision = self._decider.decide(
                     composite_score=rule.composite_score,
@@ -391,6 +418,10 @@ class BuildIdentityJob:
             else:
                 rule_version = "mainline_identity_registry.v7_open_source_kline"
 
+            # 继承主线：强制 is_main_theme=true, identity_status=confirmed
+            _effective_is_main = (decision.identity_status == "confirmed") or inherited
+            _effective_status = "confirmed" if inherited else decision.identity_status
+
             identity_row = {
                 "trade_date": trade_date.isoformat(),
                 "subject_key": subject_key,
@@ -403,12 +434,12 @@ class BuildIdentityJob:
                 "logic_ok": rule.logic_ok,
                 "market_ok": rule.market_ok,
                 "rule_is_main_theme": rule.rule_is_main_theme,
-                "is_main_theme": decision.identity_status == "confirmed",
+                "is_main_theme": _effective_is_main,
                 "rule_reasons": rule.reasons,
                 "legacy_composite_score": str(rule.composite_score),
                 "llm_verdict": llm_verdict.verdict,
                 "llm_reason": llm_verdict.reason,
-                "identity_status": decision.identity_status,
+                "identity_status": _effective_status,
                 "snapshot_version": snapshot_version,
                 "batch_id": batch_id,
                 "trace_id": trace_id,
@@ -416,7 +447,7 @@ class BuildIdentityJob:
                 "cluster_comp_count": cluster_comp_count,
                 "cluster_bootstrap_count": cluster_bootstrap_count,
                 "rule_version": rule_version,
-                "llm_applied": llm_verdict.verdict != "deterministic",
+                "llm_applied": (not inherited) and (llm_verdict.verdict != "deterministic"),
                 "llm_is_main_theme": llm_verdict.verdict == "confirmed",
                 "llm_confidence": int(llm_verdict.confidence) if llm_verdict.confidence else 0,
                 "llm_reasons": [llm_verdict.reason] if llm_verdict.reason else [],
@@ -508,6 +539,7 @@ class BuildIdentityJob:
                 "identity_review_rows": written_review,
                 "universe_subject_count": len(subject_keys),
                 "universe_source_counts": universe_source_counts,
+                "universe_source_errors": getattr(universe_builder, "source_errors", {}),
                 "identity_engine": "identity_rule_engine",
                 "dual_run_enabled": False,
             },

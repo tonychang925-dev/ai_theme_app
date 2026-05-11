@@ -33,11 +33,15 @@
     "color-when-multi-clauding": 15,
     "subagent-fanout-nudge": 21
   },
+<<<<<<< HEAD
+  "promptQueueUseCount": 202,
+=======
 <<<<<<< Updated upstream
   "promptQueueUseCount": 142,
 =======
   "promptQueueUseCount": 173,
 >>>>>>> Stashed changes
+>>>>>>> main
   "showExpandedTodos": true,
   "cachedGrowthBookFeatures": {
     "tengu_amber_flint": true,

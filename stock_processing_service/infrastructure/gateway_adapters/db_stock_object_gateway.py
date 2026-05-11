@@ -76,10 +76,10 @@ class DBStockObjectGateway:
     async def upsert_post_market_recap_snapshot(self, doc: dict[str, Any]) -> int:
         return await self.upsert_post_market_snapshot(doc)
 
-    async def upsert_theme_mainline_identity_registry_rows(self, rows: list[dict[str, Any]]) -> int:
+    async def upsert_theme_mainline_identity_registry_rows(self, rows: list[dict[str, Any]], **kwargs) -> int:
         fn = getattr(self._db, "upsert_theme_mainline_identity_registry_rows", None)
         if callable(fn):
-            return await fn(rows)
+            return await fn(rows, **kwargs)
         raise RuntimeError("DatabaseGateway missing upsert_theme_mainline_identity_registry_rows")
 
     async def upsert_mainline_identity_review_queue_rows(self, rows: list[dict[str, Any]]) -> int:
@@ -158,6 +158,12 @@ class DBStockObjectGateway:
             return []
         payload = row.get("payload") or {}
         return payload.get("theme_stock_leaderboard_rows", [])
+
+    async def upsert_theme_cycle_judgement_v2_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._db, "upsert_theme_cycle_judgement_v2_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        raise RuntimeError("DatabaseGateway missing upsert_theme_cycle_judgement_v2_rows")
 
     async def upsert_mainline_state_daily_rows(self, rows: list[dict[str, Any]]) -> int:
         fn = getattr(self._db, "upsert_mainline_state_daily_rows", None)
