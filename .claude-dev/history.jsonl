@@ -506,6 +506,11 @@
 {"display":"继续 #6","pastedContents":{},"timestamp":1778330563300,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
 {"display":"启动 SSE 实时栈，验证前端情报台可见性","pastedContents":{},"timestamp":1778330628862,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"a062c604-f043-442e-af6d-754606d65843"}
 {"display":"[Pasted text #1 +248 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"c8d6c59d4d6fc928"}},"timestamp":1778331652323,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> main
 {"display":"[Pasted text #1 +56 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"7de47725c50cb8c5"}},"timestamp":1778332565144,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
 {"display":"继续","pastedContents":{},"timestamp":1778332782748,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
 {"display":"继续","pastedContents":{},"timestamp":1778332816999,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
@@ -559,8 +564,11 @@
 {"display":"我有本地轻量化qwen2.5 1.5B模型，请评估此模型是否可以胜任？","pastedContents":{},"timestamp":1778384070183,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"a062c604-f043-442e-af6d-754606d65843"}
 {"display":"仍然显示“当前7日窗口无强势股记录”！！！","pastedContents":{},"timestamp":1778408127751,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
 {"display":"需要切换到theme_matcher_env环境！","pastedContents":{},"timestamp":1778408195363,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"a062c604-f043-442e-af6d-754606d65843"}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> main
 {"display":"4/22日高达88只，请确认一天有这么多强势股入围吗？","pastedContents":{},"timestamp":1778409738383,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"295b60c4-04a2-4c16-8e9c-623c1fbce6ad"}
 {"display":"继续上次的话题讨论：“[Pasted text #1 +48 lines]”","pastedContents":{"1":{"id":1,"type":"text","contentHash":"2d75c05ad5f4fed9"}},"timestamp":1778410005050,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"7213daea-707b-41ca-9b21-dd388868e246"}
 {"display":"继续上次的话题讨论：[Pasted text #1 +196 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"61b4fdfec5997611"}},"timestamp":1778410066573,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"e1e94598-3825-421b-a67e-83c92c47c653"}
@@ -572,6 +580,7 @@
 {"display":"独立龙头豁免规则是在正确的，不能删除！但是broken_board + mainline_alive 全部保留为 \"weakening\"，这个逻辑还需要细化，比如分特别低的，也必须要剔除！broken_board具体含义是什么，是符合设计文档的定义吗？","pastedContents":{},"timestamp":1778412606909,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"7213daea-707b-41ca-9b21-dd388868e246"}
 {"display":"独立龙头豁免规则也要符合设计文档，请核查设计文档关于独立龙头豁免规则的定义。","pastedContents":{},"timestamp":1778412701994,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"7213daea-707b-41ca-9b21-dd388868e246"}
 {"display":"watch_score的评分公式是否合理，请确认设计文档的定义！我认为只有跌破支撑线的强势股才可以被剔除，否则就是弱转强的候选，因为只有弱且不破支撑才有机会转强，而不是直接剔除！","pastedContents":{},"timestamp":1778413056482,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"7213daea-707b-41ca-9b21-dd388868e246"}
+<<<<<<< HEAD
 {"display":"可以","pastedContents":{},"timestamp":1778414013946,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"e1e94598-3825-421b-a67e-83c92c47c653"}
 {"display":"继续","pastedContents":{},"timestamp":1778414086946,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"e1e94598-3825-421b-a67e-83c92c47c653"}
 >>>>>>> Stashed changes
@@ -653,3 +662,7 @@
 {"display":"瞎搞！！！为什么新链不能复刻旧链啊？！把代码逻辑看懂了，直接按照新的架构需求复刻这个旧链逻辑！！","pastedContents":{},"timestamp":1778460279003,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"7213daea-707b-41ca-9b21-dd388868e246"}
 {"display":"这个不能复刻！这个是我们之前发现的旧链的问题，不能强制要求连跌两天，必须符合设计文档要求！！这个旧链已知的bug！","pastedContents":{},"timestamp":1778460415268,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"7213daea-707b-41ca-9b21-dd388868e246"}
 {"display":"我建议先梳理旧链D层的所有细节和程序算法流程，然后对比设计文档和新链逻辑，找出差异点，列出对比清单，给出修复计划！！","pastedContents":{},"timestamp":1778460515795,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"7213daea-707b-41ca-9b21-dd388868e246"}
+=======
+>>>>>>> main
+{"display":"旧链支撑类型 11 种，新链只有5种，这个问题怎么没列出来？","pastedContents":{},"timestamp":1778461243210,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"7213daea-707b-41ca-9b21-dd388868e246"}
+{"display":"prev_day 数据来源、_enforce_formal_sa_whitelist 具体是什么含义？","pastedContents":{},"timestamp":1778461354820,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"7213daea-707b-41ca-9b21-dd388868e246"}

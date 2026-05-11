@@ -178,6 +178,9 @@ const routeChunks = {
     debug: () => import('../routes/collection/CollectionDebugPage').then((m) => ({ default: m.CollectionDebugPage })),
     realtime: () => import('../routes/collection/RealtimeCollectorPage').then((m) => ({ default: m.RealtimeCollectorPage })),
   },
+  mobile: {
+    home: () => import('../routes/mobile/MobileHomePage').then((m) => ({ default: m.MobileHomePage })),
+  },
   test: {
     sse: () => import('../components/SSETestPanel').then((m) => ({ default: m.SSETestPanel })),
     memoryLeak: () => import('../components/MemoryLeakTestPanel').then((m) => ({ default: m.MemoryLeakTestPanel })),
@@ -217,6 +220,7 @@ export const LazyStrongStockWatchDetailPage = createLazyComponent(routeChunks.ma
   timeout: 5000,
 });
 export const LazyRecapPage = createLazyComponent(routeChunks.main.recap, { name: 'RecapPage', timeout: 5000 });
+export const LazyMobileHomePage = createLazyComponent(routeChunks.mobile.home, { name: 'MobileHomePage', timeout: 5000 });
 export const LazyThemeWorkspacePage = createLazyComponent(routeChunks.theme.workspace, { name: 'ThemeWorkspacePage', timeout: 5000 });
 export const LazyStockWorkspacePage = createLazyComponent(routeChunks.stock.workspace, { name: 'StockWorkspacePage', timeout: 5000 });
 export const LazyStockScreenerPage = createLazyComponent(routeChunks.stock.screener, { name: 'StockScreenerPage', timeout: 5000 });

@@ -620,7 +620,7 @@ class StrongStockTrackingService:
         if cycle_state not in CYCLE_STATES:
             cycle_state = ""
 
-        # ── 支撑破位判定 ──
+        # ── 支撑破位判定（设计文档 26.6：跌破支撑线方可剔除）──
         support_broken = False
         if support_result is not None and support_result.support_level is not None and close_price is not None:
             support_broken = float(close_price) < float(support_result.support_level)
