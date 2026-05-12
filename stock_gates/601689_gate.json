@@ -1,0 +1,46 @@
+{
+  "stock_id": "601689",
+  "stock_name": "拓普集团",
+  "concept": "汽车零部件平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "减震系统",
+    "底盘轻量化",
+    "NVH减震",
+    "智能刹车系统IBS"
+  ],
+  "should": [
+    "车身轻量化",
+    "底盘电子",
+    "热管理",
+    "一体化压铸",
+    "电子真空泵EVP",
+    "电动助力转向管柱C-EPS",
+    "传统车",
+    "电动车",
+    "智能车",
+    "Tier0.5模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "减震系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "底盘轻量化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "NVH减震",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能刹车系统IBS",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:38:03"
+}

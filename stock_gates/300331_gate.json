@@ -1,0 +1,38 @@
+{
+  "stock_id": "300331",
+  "stock_name": "苏大维格",
+  "concept": "微纳光学制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "微纳光学产品",
+    "反光材料",
+    "新型显示与照明"
+  ],
+  "should": [
+    "触控业务",
+    "表面浮栅光栅衍射光波导技术",
+    "AR眼镜光波导镜片",
+    "全息光场3D显示",
+    "微纳光学制造",
+    "反光材料行业第三",
+    "高端微棱镜膜国产替代"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "微纳光学产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "反光材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新型显示与照明",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:22:53"
+}

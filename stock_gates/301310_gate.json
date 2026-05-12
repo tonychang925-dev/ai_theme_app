@@ -1,0 +1,36 @@
+{
+  "stock_id": "301310",
+  "stock_name": "鑫宏业",
+  "concept": "特种线缆",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏线缆",
+    "新能源汽车线缆"
+  ],
+  "should": [
+    "工业线缆",
+    "国家级专精特新小巨人",
+    "特种线缆",
+    "光伏电池板",
+    "光伏接线盒",
+    "光伏连接器",
+    "光伏逆变器",
+    "充电桩",
+    "充电枪",
+    "储能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏线缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车线缆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:02:28"
+}

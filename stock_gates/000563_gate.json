@@ -1,0 +1,51 @@
+{
+  "stock_id": "000563",
+  "stock_name": "陕国投A",
+  "concept": "信托服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "信托服务",
+    "信托业务",
+    "资产管理信托",
+    "资产服务信托",
+    "公益慈善信托"
+  ],
+  "should": [
+    "固有业务",
+    "自有资金贷款及投资业务",
+    "金融产品投资",
+    "金融股权投资",
+    "财富规划及代际传承",
+    "托管",
+    "破产隔离和风险处置",
+    "投融资",
+    "重组并购",
+    "投资顾问等中介业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "信托服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信托业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "资产管理信托",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "资产服务信托",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公益慈善信托",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:56:39"
+}

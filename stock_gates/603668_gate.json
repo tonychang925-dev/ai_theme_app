@@ -1,0 +1,36 @@
+{
+  "stock_id": "603668",
+  "stock_name": "天马科技",
+  "concept": "特种水产饲料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种水产饲料",
+    "鳗鲡料"
+  ],
+  "should": [
+    "畜禽饲料",
+    "玻璃鳗配合饲料",
+    "鳗鲡养殖",
+    "水产品及食品加工",
+    "原料贸易",
+    "饲料生产",
+    "大黄鱼料",
+    "石斑鱼料",
+    "鲟鱼料",
+    "种苗微粒子配合饲料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种水产饲料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "鳗鲡料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:54:22"
+}

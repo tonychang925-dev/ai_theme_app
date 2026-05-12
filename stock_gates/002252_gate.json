@@ -1,0 +1,51 @@
+{
+  "stock_id": "002252",
+  "stock_name": "上海莱士",
+  "concept": "血液制品龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "人血白蛋白",
+    "静注人免疫球蛋白",
+    "人凝血因子VIII",
+    "人凝血酶原复合物",
+    "人纤维蛋白原"
+  ],
+  "should": [
+    "人凝血酶",
+    "人纤维蛋白粘合剂",
+    "人免疫球蛋白",
+    "乙型肝炎人免疫球蛋白",
+    "破伤风人免疫球蛋白",
+    "狂犬病人免疫球蛋白",
+    "血液制品龙头",
+    "单采血浆站41家",
+    "采浆范围11个省",
+    "浆站数量行业领先"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "人血白蛋白",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "静注人免疫球蛋白",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人凝血因子VIII",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人凝血酶原复合物",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人纤维蛋白原",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:31:54"
+}

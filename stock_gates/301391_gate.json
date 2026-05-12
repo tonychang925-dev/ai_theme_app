@@ -1,0 +1,40 @@
+{
+  "stock_id": "301391",
+  "stock_name": "卡莱特",
+  "concept": "视频图像显示控制",
+  "strategy_type": "industry_chain",
+  "must": [
+    "视频图像显示控制",
+    "LED显示控制系统",
+    "视频处理设备"
+  ],
+  "should": [
+    "云联网播放器",
+    "视频处理算法",
+    "光学校正",
+    "色彩管理",
+    "图像拼接",
+    "矩阵切换",
+    "多画面处理",
+    "跨平台控制",
+    "超高清渲染"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "视频图像显示控制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LED显示控制系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "视频处理设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:04:38"
+}

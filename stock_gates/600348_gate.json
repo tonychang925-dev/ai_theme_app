@@ -1,0 +1,40 @@
+{
+  "stock_id": "600348",
+  "stock_name": "华阳股份",
+  "concept": "煤电新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "无烟煤",
+    "钠离子电池",
+    "飞轮储能"
+  ],
+  "should": [
+    "光伏组件",
+    "电力",
+    "热力",
+    "全磁悬浮飞轮储能技术",
+    "钠离子电池正负极材料生产",
+    "煤电新能源",
+    "化肥",
+    "冶金",
+    "机械"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "无烟煤",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钠离子电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "飞轮储能",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:15:50"
+}

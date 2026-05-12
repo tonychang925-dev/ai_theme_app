@@ -1,0 +1,41 @@
+{
+  "stock_id": "000630",
+  "stock_name": "铜陵有色",
+  "concept": "铜全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "阴极铜",
+    "硫酸",
+    "铜箔"
+  ],
+  "should": [
+    "铜板带",
+    "黄金",
+    "白银",
+    "铜箔加工",
+    "铜全产业链",
+    "新能源汽车",
+    "智能家电",
+    "5G通讯",
+    "国内主要阴极铜生产企业",
+    "铜箔行业龙头企业主要供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "阴极铜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硫酸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铜箔",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:59:00"
+}

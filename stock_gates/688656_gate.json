@@ -1,0 +1,38 @@
+{
+  "stock_id": "688656",
+  "stock_name": "浩欧博",
+  "concept": "过敏自免检测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "过敏原检测试剂",
+    "自身免疫检测试剂",
+    "化学发光检测产品"
+  ],
+  "should": [
+    "过敏自免检测",
+    "化学发光平台",
+    "IgE过敏原检测",
+    "食物特异性IgG过敏原检测",
+    "过敏性疾病临床辅助诊断",
+    "自身免疫性疾病临床辅助诊断",
+    "过敏原检测国内领先"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "过敏原检测试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自身免疫检测试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化学发光检测产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:23:07"
+}

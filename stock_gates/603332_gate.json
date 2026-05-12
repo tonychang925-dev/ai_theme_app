@@ -1,0 +1,36 @@
+{
+  "stock_id": "603332",
+  "stock_name": "苏州龙杰",
+  "concept": "差别化聚酯纤维",
+  "strategy_type": "industry_chain",
+  "must": [
+    "差别化涤纶长丝",
+    "PTT纤维"
+  ],
+  "should": [
+    "仿皮草纤维",
+    "仿麂皮纤维",
+    "差别化聚酯纤维",
+    "再生环保纤维",
+    "物理改性",
+    "化学改性",
+    "工艺改性",
+    "在线添加",
+    "功能复合",
+    "家纺"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "差别化涤纶长丝",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PTT纤维",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:49:26"
+}

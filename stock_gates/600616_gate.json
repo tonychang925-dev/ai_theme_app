@@ -1,0 +1,36 @@
+{
+  "stock_id": "600616",
+  "stock_name": "金枫酒业",
+  "concept": "黄酒生产销售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "黄酒",
+    "石库门海派黄酒"
+  ],
+  "should": [
+    "黄酒生产销售",
+    "商超渠道",
+    "新零售生鲜平台",
+    "抖音",
+    "酒行渠道",
+    "社区团购",
+    "上海商超渠道市场占有率50%",
+    "黄酒行业三家上市公司之一",
+    "长三角跨区布局",
+    "红卟卟系列果味黄酒"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "黄酒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "石库门海派黄酒",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:22:57"
+}

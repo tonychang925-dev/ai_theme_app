@@ -1,0 +1,36 @@
+{
+  "stock_id": "002520",
+  "stock_name": "日发精机",
+  "concept": "高端数控机床",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端数控机床",
+    "航空航天智能装备"
+  ],
+  "should": [
+    "航空运营及服务",
+    "电主轴",
+    "转台",
+    "摆动头",
+    "矩阵式刀库",
+    "桁架机械手直角坐标机器人",
+    "汽车",
+    "航空航天",
+    "工程机械",
+    "铁路"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端数控机床",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航空航天智能装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:45:23"
+}

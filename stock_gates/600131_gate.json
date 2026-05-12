@@ -1,0 +1,46 @@
+{
+  "stock_id": "600131",
+  "stock_name": "国网信通",
+  "concept": "电网数字化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字底座+能源应用",
+    "电网数字化",
+    "云网基础设施",
+    "电力数字化"
+  ],
+  "should": [
+    "企业数字化",
+    "云网基础设施产品",
+    "电力数字化服务",
+    "云网融合技术产品",
+    "数字企业基础设施平台",
+    "数字化服务",
+    "通信网络建设",
+    "云网基础设施建设",
+    "公共事业",
+    "能源服务企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字底座+能源应用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电网数字化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云网基础设施",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力数字化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:09:57"
+}

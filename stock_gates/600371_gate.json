@@ -1,0 +1,27 @@
+{
+  "stock_id": "600371",
+  "stock_name": "万向德农",
+  "concept": "玉米种子龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "玉米杂交种子"
+  ],
+  "should": [
+    "杂交育种技术",
+    "单倍体育种",
+    "分子标记育种",
+    "玉米种子龙头",
+    "玉米种植",
+    "育繁推一体化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "玉米杂交种子",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:16:14"
+}

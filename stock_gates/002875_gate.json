@@ -1,0 +1,31 @@
+{
+  "stock_id": "002875",
+  "stock_name": "安奈儿",
+  "concept": "中高端童装",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中高端童装"
+  ],
+  "should": [
+    "大童装",
+    "小童装",
+    "电子束接枝技术",
+    "抗病毒抗菌功能纺织品",
+    "上衣",
+    "外套",
+    "裤",
+    "裙",
+    "羽绒服",
+    "家居服"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中高端童装",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:01:14"
+}

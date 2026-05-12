@@ -1,0 +1,41 @@
+{
+  "stock_id": "688128",
+  "stock_name": "中国电研",
+  "concept": "电器检测龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电器检测龙头",
+    "电子电器领域检测龙头",
+    "质量技术服务"
+  ],
+  "should": [
+    "智能装备",
+    "环保涂料及树脂",
+    "工业产品环境适应性技术",
+    "高串串联化成分容新技术",
+    "电器",
+    "汽车",
+    "5G通讯",
+    "医疗健康",
+    "锂电装备",
+    "标准制修订能力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电器检测龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子电器领域检测龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "质量技术服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:09:18"
+}

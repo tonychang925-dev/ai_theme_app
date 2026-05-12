@@ -1,0 +1,41 @@
+{
+  "stock_id": "688636",
+  "stock_name": "智明达",
+  "concept": "军用嵌入式计算机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "军用嵌入式计算机",
+    "机载嵌入式计算机",
+    "弹载嵌入式计算机"
+  ],
+  "should": [
+    "综合化核心处理机",
+    "机载航电系统",
+    "弹载电子信息系统",
+    "嵌入式微处理器",
+    "嵌入式操作系统",
+    "实时操作系统",
+    "惯导系统",
+    "红外导引头",
+    "雷达导引头",
+    "激光导引头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "军用嵌入式计算机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机载嵌入式计算机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "弹载嵌入式计算机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:22:58"
+}

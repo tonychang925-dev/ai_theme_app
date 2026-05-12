@@ -1,0 +1,46 @@
+{
+  "stock_id": "002545",
+  "stock_name": "东方铁塔",
+  "concept": "钢结构与钾肥",
+  "strategy_type": "industry_chain",
+  "must": [
+    "输变电铁塔",
+    "电力钢结构",
+    "钢管塔",
+    "高耸广播电视发射铁塔"
+  ],
+  "should": [
+    "氯化钾",
+    "风电设备",
+    "海洋工程装备",
+    "民用建筑高端装备",
+    "公用钢结构建筑",
+    "清洁能源",
+    "石油化工",
+    "电力",
+    "广电",
+    "通信"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "输变电铁塔",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力钢结构",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钢管塔",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高耸广播电视发射铁塔",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:46:44"
+}

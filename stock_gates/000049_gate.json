@@ -1,0 +1,30 @@
+{
+  "stock_id": "000049",
+  "stock_name": "德赛电池",
+  "concept": "消费级电池龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "消费级电池龙头"
+  ],
+  "should": [
+    "电源管理系统",
+    "中型锂电池电源管理系统及封装集成",
+    "无汞碱锰电池",
+    "一次锂电池",
+    "锌空气电池",
+    "镍氢电池",
+    "智能手机",
+    "电动工具",
+    "智能可穿戴设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "消费级电池龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T16:48:51"
+}

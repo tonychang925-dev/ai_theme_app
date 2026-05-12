@@ -1,0 +1,46 @@
+{
+  "stock_id": "300872",
+  "stock_name": "天阳科技",
+  "concept": "银行IT服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "银行IT服务",
+    "技术开发",
+    "云计算",
+    "核心业务系统"
+  ],
+  "should": [
+    "金融云",
+    "技术服务",
+    "咨询服务",
+    "系统集成",
+    "风险管理",
+    "商业智能",
+    "信贷操作系统",
+    "中间业务系统",
+    "政策性银行",
+    "国有银行"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "银行IT服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "技术开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云计算",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核心业务系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:47:06"
+}

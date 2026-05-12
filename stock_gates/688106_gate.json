@@ -1,0 +1,51 @@
+{
+  "stock_id": "688106",
+  "stock_name": "金宏气体",
+  "concept": "电子特种气体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子特种气体",
+    "超纯氨",
+    "高纯氧化亚氮",
+    "电子级正硅酸乙酯",
+    "高纯二氧化碳"
+  ],
+  "should": [
+    "电子级八氟环丁烷",
+    "电子级溴化氢",
+    "硅烷气",
+    "氦气",
+    "氢气",
+    "电解制氢设备",
+    "综合气体解决方案供应商",
+    "自主研发",
+    "国产替代",
+    "进口替代"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子特种气体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超纯氨",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高纯氧化亚氮",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子级正硅酸乙酯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高纯二氧化碳",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:08:33"
+}

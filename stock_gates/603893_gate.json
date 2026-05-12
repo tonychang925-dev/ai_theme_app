@@ -1,0 +1,40 @@
+{
+  "stock_id": "603893",
+  "stock_name": "瑞芯微",
+  "concept": "AIoT芯片设计",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能应用处理器SoC芯片",
+    "旗舰芯片RK3588",
+    "旗舰芯片RK3588S"
+  ],
+  "should": [
+    "边缘计算网关",
+    "RV系列",
+    "RK系列",
+    "AIoT芯片设计",
+    "集成电路设计",
+    "汽车电子",
+    "智能家居",
+    "机器人",
+    "智慧显示"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能应用处理器SoC芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "旗舰芯片RK3588",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "旗舰芯片RK3588S",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:58:21"
+}

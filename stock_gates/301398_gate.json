@@ -1,0 +1,36 @@
+{
+  "stock_id": "301398",
+  "stock_name": "星源卓镁",
+  "concept": "镁合金压铸",
+  "strategy_type": "industry_chain",
+  "must": [
+    "镁合金压铸",
+    "镁合金精密压铸件"
+  ],
+  "should": [
+    "铝合金精密压铸件",
+    "配套压铸模具",
+    "压铸成型工艺技术",
+    "精密加工工艺技术",
+    "防开裂成型技术",
+    "局部加压成型技术",
+    "顶出防变形控制技术",
+    "镁合金静电喷涂技术",
+    "汽车车灯散热支架",
+    "汽车座椅扶手结构件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "镁合金压铸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "镁合金精密压铸件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:04:56"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "002029",
+  "stock_name": "七匹狼",
+  "concept": "男装品牌运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "男装品牌运营",
+    "茄克衫",
+    "品牌运营商"
+  ],
+  "should": [
+    "衬衫",
+    "西服",
+    "裤装",
+    "针织衫",
+    "男士内衣",
+    "内裤",
+    "袜子",
+    "针纺产品",
+    "天猫电商",
+    "京东"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "男装品牌运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "茄克衫",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "品牌运营商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:19:16"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "000153",
+  "stock_name": "丰原药业",
+  "concept": "医药制造与流通",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药制造",
+    "商业流通"
+  ],
+  "should": [
+    "解热镇痛",
+    "心血管",
+    "神经系统",
+    "抗生素",
+    "原料药",
+    "医药批发和配送",
+    "医药零售连锁",
+    "妇儿",
+    "泌尿系统",
+    "营养类"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医药制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商业流通",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:50:42"
+}

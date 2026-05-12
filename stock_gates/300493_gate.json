@@ -1,0 +1,41 @@
+{
+  "stock_id": "300493",
+  "stock_name": "润欣科技",
+  "concept": "IC解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "IC解决方案",
+    "IC定制设计",
+    "IC应用方案设计"
+  ],
+  "should": [
+    "IC产品分销",
+    "无线通讯及智能处理器芯片",
+    "射频元器件",
+    "传感器及通讯模块",
+    "无线连接IC",
+    "射频器件",
+    "传感应用技术",
+    "智慧家电",
+    "汽车电子",
+    "授权分销商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "IC解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IC定制设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IC应用方案设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:29:56"
+}

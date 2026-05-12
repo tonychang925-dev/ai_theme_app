@@ -1,0 +1,41 @@
+{
+  "stock_id": "002320",
+  "stock_name": "海峡股份",
+  "concept": "琼州海峡客滚运输",
+  "strategy_type": "industry_chain",
+  "must": [
+    "琼州海峡客滚运输",
+    "客滚运输",
+    "海口-海安航线"
+  ],
+  "should": [
+    "港口服务",
+    "海口-北海航线",
+    "海口(三亚)-西沙旅游客运航线",
+    "客滚船舶",
+    "新海港",
+    "秀英港",
+    "新海港商业枢纽",
+    "西沙航线",
+    "运力规模",
+    "港口资源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "琼州海峡客滚运输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "客滚运输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海口-海安航线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:35:19"
+}

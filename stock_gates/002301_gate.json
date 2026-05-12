@@ -1,0 +1,36 @@
+{
+  "stock_id": "002301",
+  "stock_name": "齐心集团",
+  "concept": "企业办公服务平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "企业办公服务平台",
+    "SaaS云视频服务"
+  ],
+  "should": [
+    "办公行政物资",
+    "MRO物资",
+    "员工福利品",
+    "营销物料",
+    "好视通视频协作及方案服务",
+    "SuperSVC智能超分算法",
+    "灵犀视频引擎技术",
+    "夜莺智能降噪",
+    "AVC+SVC双擎驱动技术",
+    "智能混响抑制算法（IRS）"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "企业办公服务平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SaaS云视频服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:34:37"
+}

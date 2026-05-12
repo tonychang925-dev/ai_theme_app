@@ -1,0 +1,31 @@
+{
+  "stock_id": "600085",
+  "stock_name": "同仁堂",
+  "concept": "百年中药品牌",
+  "strategy_type": "industry_chain",
+  "must": [
+    "安宫牛黄丸"
+  ],
+  "should": [
+    "牛黄清心丸",
+    "大活络丸",
+    "六味地黄丸",
+    "阿胶",
+    "百年中药品牌",
+    "国家级非物质文化遗产制作工艺",
+    "原粉丸剂工艺",
+    "高热昏迷",
+    "热入心包",
+    "痰迷心窍"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "安宫牛黄丸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:08:47"
+}

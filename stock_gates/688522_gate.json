@@ -1,0 +1,30 @@
+{
+  "stock_id": "688522",
+  "stock_name": "纳睿雷达",
+  "concept": "相控阵雷达",
+  "strategy_type": "industry_chain",
+  "must": [
+    "相控阵雷达",
+    "全极化有源相控阵雷达技术"
+  ],
+  "should": [
+    "雷达软件",
+    "协同观测技术",
+    "雷达精细化探测系统",
+    "风暴三维风场反演"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "相控阵雷达",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全极化有源相控阵雷达技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:19:46"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "603661",
+  "stock_name": "恒林股份",
+  "concept": "家居制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "办公椅",
+    "沙发",
+    "按摩椅"
+  ],
+  "should": [
+    "SPC地板",
+    "竹地板",
+    "竹家具",
+    "毫米级坐垫前端上翘技术",
+    "平滑后移底盘技术",
+    "七段式弹力分布坐感网布",
+    "云感座面系统",
+    "语音识别按摩休闲椅",
+    "3D摇摆运动健康椅",
+    "家居制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "办公椅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "沙发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "按摩椅",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:54:11"
+}

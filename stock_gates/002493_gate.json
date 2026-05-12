@@ -1,0 +1,51 @@
+{
+  "stock_id": "002493",
+  "stock_name": "荣盛石化",
+  "concept": "石化炼化一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PTA",
+    "聚酯纤维",
+    "聚酯产品",
+    "PET",
+    "全球最大的PTA产能"
+  ],
+  "should": [
+    "全球最大的单体炼厂",
+    "全球最具价值25大化学品牌第8名",
+    "石化炼化一体化",
+    "化工品",
+    "油品",
+    "烯烃",
+    "芳烃",
+    "聚乙烯",
+    "聚丙烯",
+    "EVA"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PTA",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚酯纤维",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚酯产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PET",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球最大的PTA产能",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:44:24"
+}

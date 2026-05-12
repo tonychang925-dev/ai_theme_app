@@ -1,0 +1,45 @@
+{
+  "stock_id": "688046",
+  "stock_name": "药康生物",
+  "concept": "模式动物服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商品化小鼠模型",
+    "斑点鼠",
+    "人源化小鼠模型",
+    "模式动物销售"
+  ],
+  "should": [
+    "功能药效业务",
+    "基因编辑技术",
+    "全敲除计划",
+    "人源化技术",
+    "免疫缺陷小鼠模型",
+    "模式动物服务",
+    "新药开发",
+    "肿瘤学研究",
+    "免疫学研究"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商品化小鼠模型",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "斑点鼠",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人源化小鼠模型",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "模式动物销售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:06:21"
+}

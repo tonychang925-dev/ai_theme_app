@@ -1,0 +1,28 @@
+{
+  "stock_id": "000948",
+  "stock_name": "南天信息",
+  "concept": "金融科技服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "银行IT"
+  ],
+  "should": [
+    "智能终端",
+    "核心系统",
+    "数字人民币流通服务平台",
+    "金融科技服务",
+    "数字化服务",
+    "银行IT解决方案市场第四",
+    "六大细分市场前三"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "银行IT",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:11:58"
+}

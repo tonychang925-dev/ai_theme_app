@@ -1,0 +1,41 @@
+{
+  "stock_id": "002587",
+  "stock_name": "奥拓电子",
+  "concept": "LED应用与金融科技",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LED应用与金融科技",
+    "金融科技",
+    "LED显示"
+  ],
+  "should": [
+    "智慧照明",
+    "Mini LED显示屏",
+    "MicroLED",
+    "建设银行",
+    "工商银行",
+    "中国银行",
+    "中国电信",
+    "小间距LED",
+    "5G应用",
+    "银行网点智慧化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED应用与金融科技",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融科技",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LED显示",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:48:45"
+}

@@ -1,0 +1,44 @@
+{
+  "stock_id": "002926",
+  "stock_name": "华西证券",
+  "concept": "西部证券领先",
+  "strategy_type": "industry_chain",
+  "must": [
+    "经纪及财富管理业务",
+    "投资银行业务",
+    "资产管理业务",
+    "投资业务"
+  ],
+  "should": [
+    "信用业务",
+    "公募基金管理业务",
+    "西部证券领先",
+    "西部地区综合实力领先",
+    "极具发展潜力的区位优势",
+    "财富管理转型",
+    "非方向性投资交易能力",
+    "债券投资和资产证券化竞争力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "经纪及财富管理业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资银行业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "资产管理业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:03:41"
+}

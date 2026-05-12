@@ -1,0 +1,39 @@
+{
+  "stock_id": "688530",
+  "stock_name": "欧莱新材",
+  "concept": "溅射靶材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "溅射靶材",
+    "高性能溅射靶材技术"
+  ],
+  "should": [
+    "铜靶",
+    "铝靶",
+    "钼及钼合金靶",
+    "ITO靶",
+    "TFT-LCD半导体显示",
+    "触控屏",
+    "建筑玻璃",
+    "MiniLED",
+    "MicroLED",
+    "集成电路封装"
+  ],
+  "not": [
+    "主控芯片",
+    "固件开发"
+  ],
+  "evidence_refs": [
+    {
+      "term": "溅射靶材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高性能溅射靶材技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:19:56"
+}

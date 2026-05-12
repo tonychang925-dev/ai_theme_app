@@ -1,0 +1,24 @@
+{
+  "stock_id": "002205",
+  "stock_name": "国统股份",
+  "concept": "高端混凝土制品",
+  "strategy_type": "industry_chain",
+  "must": [],
+  "should": [
+    "地铁管片",
+    "PC构件",
+    "铁路轨道板",
+    "风电塔筒",
+    "高端混凝土制品",
+    "超大口径",
+    "可深覆土",
+    "耐高工压",
+    "耐腐蚀",
+    "使用寿命长"
+  ],
+  "not": [],
+  "evidence_refs": [],
+  "quality": "weak",
+  "must_count": 0,
+  "generated_at": "2026-05-11T17:29:16"
+}

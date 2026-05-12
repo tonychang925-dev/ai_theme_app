@@ -1,0 +1,35 @@
+{
+  "stock_id": "688488",
+  "stock_name": "艾迪药业",
+  "concept": "抗艾与人源蛋白",
+  "strategy_type": "industry_chain",
+  "must": [
+    "艾诺米替片",
+    "艾诺韦林片"
+  ],
+  "should": [
+    "人源蛋白粗品",
+    "尿激酶",
+    "人源蛋白制剂",
+    "抗艾与人源蛋白",
+    "抗HIV新药研发",
+    "人源蛋白技术",
+    "HIV治疗",
+    "抗HIV治疗领域先发优势",
+    "人源蛋白领域优势"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "艾诺米替片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "艾诺韦林片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:18:56"
+}

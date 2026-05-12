@@ -1,0 +1,35 @@
+{
+  "stock_id": "000932",
+  "stock_name": "华菱钢铁",
+  "concept": "钢铁制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "宽厚板",
+    "无缝钢管"
+  ],
+  "should": [
+    "热冷轧薄板",
+    "线棒材",
+    "能源与油气",
+    "造船和海工",
+    "高建和桥梁",
+    "机械",
+    "汽车和家电",
+    "全球最大的单体宽厚板生产商",
+    "国内第二的专业化无缝钢管供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "宽厚板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无缝钢管",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:10:03"
+}

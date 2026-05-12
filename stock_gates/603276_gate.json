@@ -1,0 +1,40 @@
+{
+  "stock_id": "603276",
+  "stock_name": "恒兴新材",
+  "concept": "精细化工中间体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "有机酮",
+    "有机酯",
+    "有机酸"
+  ],
+  "should": [
+    "分离技术",
+    "加氢技术",
+    "绿色合成技术",
+    "绿色除草剂",
+    "锂电池电解液",
+    "绿色食品及饲料添加剂",
+    "高档环保溶剂",
+    "医药中间体",
+    "3-戊酮全球市占率第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "有机酮",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有机酯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有机酸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:47:49"
+}

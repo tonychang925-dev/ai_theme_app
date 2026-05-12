@@ -1,0 +1,44 @@
+{
+  "stock_id": "600509",
+  "stock_name": "天富能源",
+  "concept": "综合能源服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "发、供、调一体化",
+    "电力供应",
+    "新疆能源基地"
+  ],
+  "should": [
+    "光伏发电",
+    "天然气供应",
+    "火电",
+    "水电",
+    "光伏",
+    "储能设备",
+    "西气东输",
+    "综合能源服务",
+    "源网荷储",
+    "八师垄断"
+  ],
+  "not": [
+    "电价机制改革",
+    "输配电费独立核算"
+  ],
+  "evidence_refs": [
+    {
+      "term": "发、供、调一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力供应",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新疆能源基地",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:19:45"
+}

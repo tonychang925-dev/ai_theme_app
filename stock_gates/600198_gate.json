@@ -1,0 +1,36 @@
+{
+  "stock_id": "600198",
+  "stock_name": "大唐电信",
+  "concept": "安全芯片+特种通信",
+  "strategy_type": "industry_chain",
+  "must": [
+    "安全芯片+特种通信",
+    "自主可控平台"
+  ],
+  "should": [
+    "二代身份证芯片和模块",
+    "社保卡芯片和模块",
+    "金融支付芯片",
+    "物联网安全芯片",
+    "智能安全",
+    "生物识别",
+    "指纹传感器和指纹算法芯片",
+    "读卡器芯片",
+    "终端安全芯片",
+    "通信体制创新设计"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "安全芯片+特种通信",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自主可控平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:11:35"
+}

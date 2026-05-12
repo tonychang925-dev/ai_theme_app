@@ -1,0 +1,51 @@
+{
+  "stock_id": "001239",
+  "stock_name": "永达股份",
+  "concept": "金属结构件制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "盾构机盾体",
+    "刀盘体",
+    "管片机",
+    "车架",
+    "臂架"
+  ],
+  "should": [
+    "隧道洞壁支撑管片",
+    "副臂",
+    "塔机结构件",
+    "风电机组机舱底座",
+    "机座",
+    "转子支架",
+    "定子支架",
+    "锁定盘",
+    "金属结构件制造",
+    "隧道掘进"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "盾构机盾体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "刀盘体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "管片机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车架",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "臂架",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:14:43"
+}

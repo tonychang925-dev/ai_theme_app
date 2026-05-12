@@ -1,0 +1,38 @@
+{
+  "stock_id": "000983",
+  "stock_name": "山西焦煤",
+  "concept": "焦煤生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "焦煤生产",
+    "炼焦精煤",
+    "资产注入"
+  ],
+  "should": [
+    "焦炭",
+    "煤化工",
+    "电力热力",
+    "长协兑现",
+    "钢铁冶炼",
+    "高长协占比",
+    "客户集中度高"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "焦煤生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "炼焦精煤",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "资产注入",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:12:11"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "000968",
+  "stock_name": "蓝焰控股",
+  "concept": "煤层气开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤层气开发",
+    "煤矿瓦斯治理",
+    "煤层气利用"
+  ],
+  "should": [
+    "煤层气（煤矿瓦斯）",
+    "煤层气勘查",
+    "采煤采气一体化",
+    "钻完井",
+    "压裂",
+    "排采",
+    "提高采收率",
+    "工业用气",
+    "民用燃气",
+    "全产业链生产运营模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤层气开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤矿瓦斯治理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤层气利用",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:11:37"
+}

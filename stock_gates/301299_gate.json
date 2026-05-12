@@ -1,0 +1,49 @@
+{
+  "stock_id": "301299",
+  "stock_name": "卓创资讯",
+  "concept": "大宗商品信息服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大宗商品信息服务",
+    "市场数据监测",
+    "交易价格评估",
+    "行业数据分析"
+  ],
+  "should": [
+    "行业深度研究",
+    "资讯服务",
+    "行业深度研究及咨询",
+    "行业会议会展及现场商务活动",
+    "宣传推广",
+    "云计算",
+    "物联网",
+    "大数据",
+    "人工智能",
+    "5G"
+  ],
+  "not": [
+    "化工",
+    "农产品"
+  ],
+  "evidence_refs": [
+    {
+      "term": "大宗商品信息服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "市场数据监测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "交易价格评估",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "行业数据分析",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:02:09"
+}

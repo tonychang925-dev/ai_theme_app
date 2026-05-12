@@ -1,0 +1,36 @@
+{
+  "stock_id": "002790",
+  "stock_name": "瑞尔特",
+  "concept": "冲水组件龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "冲水组件龙头",
+    "节水型冲水组件"
+  ],
+  "should": [
+    "智能坐便器",
+    "智能坐便盖",
+    "静音缓降盖板",
+    "挂式水箱",
+    "隐藏式水箱",
+    "节水",
+    "静音",
+    "防溅",
+    "除臭",
+    "烘干"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "冲水组件龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "节水型冲水组件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:57:35"
+}

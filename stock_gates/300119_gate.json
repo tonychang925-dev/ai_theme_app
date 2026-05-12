@@ -1,0 +1,41 @@
+{
+  "stock_id": "300119",
+  "stock_name": "瑞普生物",
+  "concept": "兽用生物制品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "兽用生物制品",
+    "兽用原料药",
+    "兽用药物制剂"
+  ],
+  "should": [
+    "兽用功能性添加剂",
+    "国家重大动物疫病防控疫苗生产企业",
+    "经济动物",
+    "伴侣动物",
+    "猪",
+    "鸡",
+    "水禽",
+    "牛",
+    "羊",
+    "宠物"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "兽用生物制品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "兽用原料药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "兽用药物制剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:13:46"
+}

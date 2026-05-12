@@ -1,0 +1,30 @@
+{
+  "stock_id": "002397",
+  "stock_name": "梦洁股份",
+  "concept": "高端床上用品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端床上用品"
+  ],
+  "should": [
+    "梦洁太空被",
+    "梦洁咖啡被",
+    "i系列全能枕",
+    "净系列羽绒被",
+    "7A级别原料标准",
+    "749项专利",
+    "国家级工业设计中心",
+    "华中地区绝对领先",
+    "连续14年同类产品销量第一名"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端床上用品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:39:31"
+}

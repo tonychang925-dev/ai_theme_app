@@ -1,0 +1,46 @@
+{
+  "stock_id": "002077",
+  "stock_name": "大港股份",
+  "concept": "集成电路封装测试",
+  "strategy_type": "industry_chain",
+  "must": [
+    "集成电路封装测试",
+    "集成电路封装",
+    "集成电路测试",
+    "园区环保服务"
+  ],
+  "should": [
+    "TSV",
+    "micro-bumping",
+    "RDL",
+    "FC",
+    "Bumping",
+    "MEMS",
+    "WLP",
+    "SiP",
+    "WLFO",
+    "图像处理传感芯片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "集成电路封装测试",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集成电路封装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集成电路测试",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "园区环保服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:22:06"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "688226",
+  "stock_name": "威腾电气",
+  "concept": "母线及光伏焊带",
+  "strategy_type": "industry_chain",
+  "must": [
+    "母线及光伏焊带",
+    "母线",
+    "光伏焊带"
+  ],
+  "should": [
+    "储能系统",
+    "金属离相封闭母线",
+    "LV低压密集型母线",
+    "低温焊带",
+    "MBB焊带",
+    "SMBB焊带",
+    "反光焊带",
+    "输配电及控制设备",
+    "光伏组件",
+    "储能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "母线及光伏焊带",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "母线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏焊带",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:12:25"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300157",
+  "stock_name": "新锦动力",
+  "concept": "油气高端装备服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "油气高端装备服务",
+    "离心式压缩机",
+    "工业汽轮机"
+  ],
+  "should": [
+    "成套设备",
+    "油气勘探开发专业软件",
+    "自主研发技术",
+    "石油化工",
+    "煤化工",
+    "天然气化工",
+    "空分",
+    "冶金",
+    "石油和天然气集采及储运",
+    "高端装备制造商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "油气高端装备服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "离心式压缩机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业汽轮机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:15:31"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "603486",
+  "stock_name": "科沃斯",
+  "concept": "智能清洁电器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "科沃斯",
+    "添可",
+    "家庭服务机器人",
+    "智能生活电器"
+  ],
+  "should": [
+    "YEEDI",
+    "悠尼",
+    "地宝系列",
+    "窗宝系列",
+    "沁宝系列",
+    "飘万系列",
+    "芙万系列",
+    "食万系列",
+    "SLAM算法",
+    "3D结构光导航"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "科沃斯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "添可",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "家庭服务机器人",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能生活电器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:51:16"
+}

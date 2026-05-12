@@ -1,0 +1,44 @@
+{
+  "stock_id": "600380",
+  "stock_name": "健康元",
+  "concept": "医药健康",
+  "strategy_type": "industry_chain",
+  "must": [
+    "化学制剂",
+    "化学原料药",
+    "诊断试剂及设备",
+    "保健品"
+  ],
+  "should": [
+    "妥布霉素吸入溶液",
+    "吸入给药",
+    "缓释微球",
+    "抗体技术",
+    "复杂注射剂",
+    "抗病毒",
+    "高端抗生素",
+    "高端宠物药"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "化学制剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化学原料药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "诊断试剂及设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "保健品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:16:46"
+}

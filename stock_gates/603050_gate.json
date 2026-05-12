@@ -1,0 +1,41 @@
+{
+  "stock_id": "603050",
+  "stock_name": "科林电气",
+  "concept": "智能电网设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高低压开关及成套设备",
+    "智能配网设备",
+    "一二次设备融合技术"
+  ],
+  "should": [
+    "智能变电设备",
+    "智能用电设备",
+    "分布式光伏发电设备",
+    "5G光伏并网有序调控系统",
+    "微机继电保护及综合自动化技术",
+    "智能电网配电",
+    "智能电网变电",
+    "智能电网用电",
+    "分布式光伏发电",
+    "配电自动化终端市占率领先"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高低压开关及成套设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能配网设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一二次设备融合技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:42:18"
+}

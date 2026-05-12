@@ -1,0 +1,39 @@
+{
+  "stock_id": "300766",
+  "stock_name": "每日互动",
+  "concept": "数据智能服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数据智能服务",
+    "个推SDK",
+    "数据智能产品"
+  ],
+  "should": [
+    "推送技术",
+    "人民日报",
+    "京东",
+    "服务与解决方案",
+    "数据能力",
+    "行业知识(Know-How)",
+    "各行业数字化升级",
+    "数十万APP"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数据智能服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "个推SDK",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据智能产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:42:11"
+}

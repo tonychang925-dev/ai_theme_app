@@ -1,0 +1,46 @@
+{
+  "stock_id": "603368",
+  "stock_name": "柳药集团",
+  "concept": "中药产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中药产业链",
+    "批发业务",
+    "零售业务",
+    "工业板块"
+  ],
+  "should": [
+    "中药饮片",
+    "特色中药",
+    "中药配方颗粒",
+    "配方颗粒",
+    "动态DR",
+    "车载DR",
+    "骨密度仪",
+    "口腔CT",
+    "磁共振成像系统",
+    "越南河内办事处"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中药产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "批发业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "零售业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业板块",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:50:17"
+}

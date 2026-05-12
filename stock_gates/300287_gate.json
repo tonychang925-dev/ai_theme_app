@@ -1,0 +1,36 @@
+{
+  "stock_id": "300287",
+  "stock_name": "飞利信",
+  "concept": "智能会议系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能会议系统",
+    "音视频技术"
+  ],
+  "should": [
+    "智能建筑系统",
+    "数据中心",
+    "轨道交通火灾自动报警系统",
+    "主控芯片",
+    "大数据",
+    "物联网",
+    "地理信息",
+    "元宇宙",
+    "固件开发",
+    "数字城市"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能会议系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "音视频技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:21:06"
+}

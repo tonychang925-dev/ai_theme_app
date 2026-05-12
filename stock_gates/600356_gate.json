@@ -1,0 +1,36 @@
+{
+  "stock_id": "600356",
+  "stock_name": "恒丰纸业",
+  "concept": "特种纸龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种纸龙头",
+    "卷烟纸"
+  ],
+  "should": [
+    "特种纸研发制造技术",
+    "智能工厂一体化生产运营管控平台",
+    "滤棒成形纸",
+    "烟用接装纸原纸",
+    "新型烟草用纸",
+    "大麻浆",
+    "亚麻浆",
+    "数字化管理",
+    "传统烟草",
+    "新兴烟草"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种纸龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "卷烟纸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:16:00"
+}

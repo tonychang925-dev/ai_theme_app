@@ -1,0 +1,31 @@
+{
+  "stock_id": "688310",
+  "stock_name": "迈得医疗",
+  "concept": "医用耗材智能装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医用耗材智能装备"
+  ],
+  "should": [
+    "安全输注类装备",
+    "血液净化类装备",
+    "定制化智能装备",
+    "软件接口",
+    "设计路线",
+    "医用耗材生产",
+    "安全输注",
+    "血液净化",
+    "性价比优势",
+    "深度绑定下游客户"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医用耗材智能装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:14:56"
+}

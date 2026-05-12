@@ -1,0 +1,41 @@
+{
+  "stock_id": "002279",
+  "stock_name": "久其软件",
+  "concept": "管理软件与大数据服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "专业的管理软件供应商",
+    "大数据综合服务提供商",
+    "管理软件与大数据服务"
+  ],
+  "should": [
+    "政府报表与统计产品",
+    "资产管理产品",
+    "企业绩效产品",
+    "财务产品",
+    "智慧法院产品",
+    "云计算",
+    "大数据应用技术",
+    "财政",
+    "统计",
+    "交通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "专业的管理软件供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大数据综合服务提供商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "管理软件与大数据服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:33:11"
+}

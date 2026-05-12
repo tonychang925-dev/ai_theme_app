@@ -1,0 +1,35 @@
+{
+  "stock_id": "002215",
+  "stock_name": "诺普信",
+  "concept": "农药制剂与生鲜消费",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农药制剂",
+    "现代特色生鲜消费"
+  ],
+  "should": [
+    "植物营养",
+    "环境友好型绿色农药制剂",
+    "品种选育",
+    "标准种植管理",
+    "农业服务",
+    "特色作物种植",
+    "品牌营销",
+    "农药制剂行业龙头",
+    "中国农药制剂50强榜首"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农药制剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "现代特色生鲜消费",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:29:38"
+}

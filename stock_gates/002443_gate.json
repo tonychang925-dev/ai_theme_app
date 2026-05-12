@@ -1,0 +1,41 @@
+{
+  "stock_id": "002443",
+  "stock_name": "金洲管道",
+  "concept": "焊接钢管制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "热浸镀锌钢管",
+    "钢塑复合管材管件",
+    "双面埋弧焊螺旋钢管"
+  ],
+  "should": [
+    "高频焊管",
+    "不锈钢管材管件",
+    "大口径卷制直缝埋弧焊接钢管",
+    "直缝埋弧焊钢管",
+    "直缝电阻焊钢管",
+    "FBE/2PE/3PE防腐钢管",
+    "焊接钢管制造",
+    "消防",
+    "燃气",
+    "石油天然气输送"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "热浸镀锌钢管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钢塑复合管材管件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "双面埋弧焊螺旋钢管",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:42:04"
+}

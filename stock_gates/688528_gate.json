@@ -1,0 +1,31 @@
+{
+  "stock_id": "688528",
+  "stock_name": "秦川物联",
+  "concept": "物联网智慧城市",
+  "strategy_type": "industry_chain",
+  "must": [
+    "物联网智能燃气表"
+  ],
+  "should": [
+    "物联网智能水表",
+    "家用可燃气体探测器",
+    "IFMP工业物联网平台",
+    "物联网智慧城市",
+    "物联网技术",
+    "主控芯片",
+    "固件开发",
+    "智慧燃气",
+    "智慧水务",
+    "智慧城市"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "物联网智能燃气表",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:19:52"
+}

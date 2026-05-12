@@ -1,0 +1,41 @@
+{
+  "stock_id": "300288",
+  "stock_name": "朗玛信息",
+  "concept": "互联网医疗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "互联网医疗",
+    "医疗服务+互联网医疗服务",
+    "医疗服务"
+  ],
+  "should": [
+    "医疗健康信息服务",
+    "电信及增值电信业务",
+    "在线问诊",
+    "网络购药",
+    "远程问诊",
+    "智能健康监测",
+    "智能健康监测硬件",
+    "医药电商",
+    "移动通信转售",
+    "IPTV业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "互联网医疗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗服务+互联网医疗服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:21:14"
+}

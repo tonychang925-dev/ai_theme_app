@@ -1,0 +1,31 @@
+{
+  "stock_id": "002779",
+  "stock_name": "中坚科技",
+  "concept": "园林机械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "园林机械"
+  ],
+  "should": [
+    "链锯",
+    "割灌机",
+    "绿篱修剪机",
+    "坐骑式草坪割草机",
+    "清扫机",
+    "手推式割草机",
+    "汽油动力",
+    "锂电池动力",
+    "智能化",
+    "无人化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "园林机械",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:57:10"
+}

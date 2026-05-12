@@ -1,0 +1,36 @@
+{
+  "stock_id": "688019",
+  "stock_name": "安集科技",
+  "concept": "CMP抛光液龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "CMP抛光液龙头",
+    "CMP抛光液"
+  ],
+  "should": [
+    "光刻胶去除剂",
+    "铜抛光液",
+    "钨抛光液",
+    "阻挡层抛光液",
+    "硅抛光液",
+    "介电材料抛光液",
+    "刻蚀后清洗液",
+    "光刻胶剥离液",
+    "刻蚀液",
+    "晶圆厂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "CMP抛光液龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CMP抛光液",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:05:38"
+}

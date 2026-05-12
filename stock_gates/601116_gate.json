@@ -1,0 +1,31 @@
+{
+  "stock_id": "601116",
+  "stock_name": "三江购物",
+  "concept": "社区生鲜超市",
+  "strategy_type": "industry_chain",
+  "must": [
+    "社区生鲜超市",
+    "全公司数字化1.0"
+  ],
+  "should": [
+    "宁波奉化加工配送中心",
+    "杭州萧山冷链集配中心",
+    "数智化再造",
+    "365天100%检测",
+    "全供应链100%冷链保鲜"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "社区生鲜超市",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全公司数字化1.0",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:34:22"
+}

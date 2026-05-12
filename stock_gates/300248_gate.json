@@ -1,0 +1,32 @@
+{
+  "stock_id": "300248",
+  "stock_name": "新开普",
+  "concept": "智慧校园服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧校园",
+    "教育信息化解决方案"
+  ],
+  "should": [
+    "智慧校园服务",
+    "校园管理信息化",
+    "智慧政企",
+    "教育信息化2.0",
+    "教育新基建",
+    "智慧教育"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧校园",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "教育信息化解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:19:16"
+}

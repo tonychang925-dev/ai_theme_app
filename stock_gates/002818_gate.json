@@ -1,0 +1,30 @@
+{
+  "stock_id": "002818",
+  "stock_name": "富森美",
+  "concept": "家居流通服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "装饰建材家居流通服务"
+  ],
+  "should": [
+    "家居流通服务",
+    "区域知名家居卖场",
+    "背靠川派家具制造集群",
+    "合作数千家全国知名制造企业",
+    "数千家成都家居产业带企业",
+    "数百家全球家居工厂",
+    "新房装修",
+    "存量房再装修",
+    "智能家居消费"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "装饰建材家居流通服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:58:32"
+}

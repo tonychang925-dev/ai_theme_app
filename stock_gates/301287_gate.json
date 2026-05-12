@@ -1,0 +1,31 @@
+{
+  "stock_id": "301287",
+  "stock_name": "康力源",
+  "concept": "健身器材制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "室内健身器材"
+  ],
+  "should": [
+    "室外全民健身器材",
+    "无氧器械",
+    "有氧器械",
+    "综合训练器",
+    "自由力量训练器",
+    "哑铃凳",
+    "举重床",
+    "健身器材制造",
+    "家用健身",
+    "商用健身"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "室内健身器材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:01:52"
+}

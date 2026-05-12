@@ -1,0 +1,51 @@
+{
+  "stock_id": "300414",
+  "stock_name": "中光防雷",
+  "concept": "雷电防护",
+  "strategy_type": "industry_chain",
+  "must": [
+    "雷电防护",
+    "SPD（浪涌保护器）",
+    "通信",
+    "航天国防",
+    "铁路与轨道交通"
+  ],
+  "should": [
+    "接地产品",
+    "避雷针",
+    "雷电监测产品",
+    "磁性元器件",
+    "其他雷电防护设备",
+    "电力",
+    "研发",
+    "设计",
+    "生产",
+    "检测"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "雷电防护",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SPD（浪涌保护器）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通信",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航天国防",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铁路与轨道交通",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:26:22"
+}

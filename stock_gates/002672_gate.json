@@ -1,0 +1,30 @@
+{
+  "stock_id": "002672",
+  "stock_name": "东江环保",
+  "concept": "废物资源化利用",
+  "strategy_type": "industry_chain",
+  "must": [
+    "稀贵金属回收利用"
+  ],
+  "should": [
+    "市政废物资源化利用与无害化处理",
+    "一站式环保工程与服务",
+    "智慧安环管理平台",
+    "智慧环保运营管理平台",
+    "危废智能化工厂",
+    "废物资源化利用",
+    "工业危废处理",
+    "稀贵金属回收",
+    "市政废物处理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "稀贵金属回收利用",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:52:41"
+}

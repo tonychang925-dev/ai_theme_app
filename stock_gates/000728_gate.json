@@ -1,0 +1,41 @@
+{
+  "stock_id": "000728",
+  "stock_name": "国元证券",
+  "concept": "综合证券服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "零售经纪",
+    "投资银行",
+    "财富管理"
+  ],
+  "should": [
+    "投融资",
+    "场外市场",
+    "总资产排名第24",
+    "净资产排名第22",
+    "净资本排名第27",
+    "营业收入排名第26",
+    "利润总额排名第23",
+    "净利润排名第23",
+    "股票主承销家数排名第17",
+    "股票主承销金额排名第25"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "零售经纪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资银行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "财富管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:02:38"
+}

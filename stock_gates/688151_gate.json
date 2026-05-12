@@ -1,0 +1,51 @@
+{
+  "stock_id": "688151",
+  "stock_name": "华强科技",
+  "concept": "防化军工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "防化军工",
+    "个体防护装备",
+    "集体防护装备",
+    "国家人防工程防化设备",
+    "国内领先的防化军工企业"
+  ],
+  "should": [
+    "医药包装及医疗器械",
+    "透气式防毒服研制",
+    "防毒面具技术",
+    "球形活性炭及其复合技术",
+    "无铅射线防护材料技术",
+    "笔式注射器用橡胶组件技术",
+    "预灌冲活塞技术",
+    "军兵种装备",
+    "人防工程",
+    "医药包装"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "防化军工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "个体防护装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集体防护装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国家人防工程防化设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内领先的防化军工企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:09:57"
+}

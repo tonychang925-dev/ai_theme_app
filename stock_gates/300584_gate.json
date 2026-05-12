@@ -1,0 +1,41 @@
+{
+  "stock_id": "300584",
+  "stock_name": "海辰药业",
+  "concept": "化学制药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "化学制药",
+    "注射用盐酸兰地洛尔",
+    "盐酸兰地洛尔合成工艺"
+  ],
+  "should": [
+    "注射用托拉塞米",
+    "注射用替加环素",
+    "托拉塞米冻干粉针生产工艺",
+    "替加环素合成新工艺",
+    "利伐沙班片",
+    "注射用头孢西酮钠",
+    "心脑血管",
+    "利尿",
+    "抗感染",
+    "消化系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "化学制药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "注射用盐酸兰地洛尔",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "盐酸兰地洛尔合成工艺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:33:53"
+}

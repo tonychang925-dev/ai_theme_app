@@ -1,0 +1,35 @@
+{
+  "stock_id": "300827",
+  "stock_name": "上能电气",
+  "concept": "光伏储能设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏逆变器",
+    "储能系统集成",
+    "储能双向变流器"
+  ],
+  "should": [
+    "储能集成技术",
+    "电力电子变换和控制技术",
+    "光伏储能设备",
+    "全球出货量第五"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏逆变器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能系统集成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能双向变流器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:44:51"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "002333",
+  "stock_name": "罗普斯金",
+  "concept": "铝合金产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铝建筑型材",
+    "高端系统门窗定制"
+  ],
+  "should": [
+    "再生铝合金铸棒",
+    "光伏铝合金边框",
+    "系统化设计",
+    "制造",
+    "安装",
+    "建筑领域门窗",
+    "幕墙",
+    "光伏",
+    "交通运输",
+    "电子电力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铝建筑型材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端系统门窗定制",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:35:52"
+}

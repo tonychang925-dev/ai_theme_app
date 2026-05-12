@@ -1,0 +1,41 @@
+{
+  "stock_id": "603823",
+  "stock_name": "百合花",
+  "concept": "有机颜料龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "有机颜料龙头",
+    "有机颜料",
+    "高性能有机颜料"
+  ],
+  "should": [
+    "磷酸铁锂",
+    "电池级碳酸锂",
+    "钠离子电池正极材料",
+    "连续硝化装置技改",
+    "高性能有机颜料工艺优化",
+    "钠离子正极材料结晶水技术",
+    "黑粉回收电池级碳酸锂收率提升",
+    "新能源材料研发",
+    "汽车漆",
+    "建筑装饰"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "有机颜料龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有机颜料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高性能有机颜料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:57:15"
+}

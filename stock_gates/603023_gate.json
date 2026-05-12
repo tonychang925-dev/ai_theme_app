@@ -1,0 +1,46 @@
+{
+  "stock_id": "603023",
+  "stock_name": "威帝股份",
+  "concept": "汽车电子控制",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车电子控制",
+    "CAN总线控制系统",
+    "控制器（ECU控制单元）",
+    "云总线车联网系统"
+  ],
+  "should": [
+    "总线控制单元",
+    "传感器",
+    "全液晶仪表",
+    "主控芯片",
+    "固件开发",
+    "软硬件仿真分析",
+    "需求管理工具软件DOORS",
+    "客车",
+    "卡车",
+    "新能源客车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车电子控制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CAN总线控制系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "控制器（ECU控制单元）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云总线车联网系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:41:24"
+}

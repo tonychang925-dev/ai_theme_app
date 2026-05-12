@@ -1,0 +1,51 @@
+{
+  "stock_id": "002069",
+  "stock_name": "獐子岛",
+  "concept": "海洋牧场",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国家一类清洁海域",
+    "海水增养殖",
+    "海珍品种业",
+    "海洋牧场",
+    "东北地区唯一渔业上市公司"
+  ],
+  "should": [
+    "海洋食品",
+    "刺参",
+    "虾夷扇贝",
+    "鲍鱼",
+    "海胆",
+    "海螺",
+    "海洋预制菜",
+    "北纬39度海域",
+    "国家级海洋牧场示范区",
+    "国家高新技术企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国家一类清洁海域",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海水增养殖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海珍品种业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海洋牧场",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "东北地区唯一渔业上市公司",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:21:39"
+}

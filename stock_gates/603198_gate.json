@@ -1,0 +1,35 @@
+{
+  "stock_id": "603198",
+  "stock_name": "迎驾贡酒",
+  "concept": "生态白酒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生态洞藏系列"
+  ],
+  "should": [
+    "迎驾之星系列",
+    "百年迎驾贡系列",
+    "迎驾普酒",
+    "小迎驾",
+    "生态白酒",
+    "中高端商务用酒",
+    "中低端白酒",
+    "自饮用酒",
+    "安徽省",
+    "白酒大省"
+  ],
+  "not": [
+    "古井贡酒",
+    "口子窖",
+    "金种子"
+  ],
+  "evidence_refs": [
+    {
+      "term": "生态洞藏系列",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:46:13"
+}

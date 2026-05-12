@@ -1,0 +1,36 @@
+{
+  "stock_id": "000721",
+  "stock_name": "西安饮食",
+  "concept": "老字号餐饮",
+  "strategy_type": "industry_chain",
+  "must": [
+    "餐饮服务",
+    "食品工业"
+  ],
+  "should": [
+    "牛羊肉泡馍",
+    "葫芦头泡馍",
+    "老字号餐饮",
+    "凉菜",
+    "热菜",
+    "水饺",
+    "烤鸭",
+    "涮锅",
+    "糕点烘焙类",
+    "肉制品类"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "餐饮服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "食品工业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:02:10"
+}

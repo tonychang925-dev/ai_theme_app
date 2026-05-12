@@ -1,0 +1,41 @@
+{
+  "stock_id": "002188",
+  "stock_name": "中天服务",
+  "concept": "物业管理服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "物业管理服务",
+    "物业管理及配套服务",
+    "基础物业管理服务"
+  ],
+  "should": [
+    "综合配套服务",
+    "案场服务",
+    "增值服务",
+    "综合管理",
+    "房屋及共用设施设备的维护管理",
+    "公共秩序维护",
+    "保洁服务",
+    "绿化管理",
+    "装饰装修管理服务",
+    "停车管理服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "物业管理服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物业管理及配套服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "基础物业管理服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:28:15"
+}

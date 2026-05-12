@@ -1,0 +1,46 @@
+{
+  "stock_id": "600345",
+  "stock_name": "长江通信",
+  "concept": "智慧交通",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧交通",
+    "云哨",
+    "集指平台",
+    "高速智慧大脑"
+  ],
+  "should": [
+    "校车安全监管系统",
+    "卫星（北斗）导航及位置服务技术",
+    "智能视频巡检AI识别算法",
+    "物联网",
+    "移动互联网",
+    "云计算",
+    "大数据",
+    "智慧交管",
+    "智慧交运",
+    "智慧机场"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧交通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云哨",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集指平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高速智慧大脑",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:15:42"
+}

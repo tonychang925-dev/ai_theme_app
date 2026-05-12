@@ -1,0 +1,41 @@
+{
+  "stock_id": "300967",
+  "stock_name": "晓鸣股份",
+  "concept": "蛋鸡制种",
+  "strategy_type": "industry_chain",
+  "must": [
+    "蛋鸡制种",
+    "商品代蛋雏鸡",
+    "集中养殖，分散孵化"
+  ],
+  "should": [
+    "祖代蛋种鸡养殖",
+    "父母代蛋种鸡养殖",
+    "海兰褐",
+    "海兰白",
+    "海兰灰",
+    "海兰粉",
+    "高标准生物安全体系",
+    "无抗化养殖",
+    "蛋鸡养殖",
+    "鸡蛋生产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "蛋鸡制种",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商品代蛋雏鸡",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集中养殖，分散孵化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:51:07"
+}

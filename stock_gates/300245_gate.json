@@ -1,0 +1,33 @@
+{
+  "stock_id": "300245",
+  "stock_name": "天玑科技",
+  "concept": "IT基础设施服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "IT基础设施服务",
+    "IT支持与维护服务"
+  ],
+  "should": [
+    "IT外包服务",
+    "IT专业服务",
+    "IT软件服务",
+    "信创工作委员会会员单位",
+    "软件能力成熟度等级-SPCA5级",
+    "智慧政务",
+    "智慧港口"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "IT基础设施服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IT支持与维护服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:19:12"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "300965",
+  "stock_name": "恒宇信通",
+  "concept": "机载显控设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "机载显控设备",
+    "机载多功能显控设备"
+  ],
+  "should": [
+    "嵌入式计算机模块",
+    "综合化设计",
+    "模块化系统结构",
+    "通用化设计",
+    "智能化技术",
+    "军用直升机",
+    "运输直升机",
+    "通用直升机",
+    "独家供应商",
+    "双流水供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "机载显控设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机载多功能显控设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:51:03"
+}

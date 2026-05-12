@@ -1,0 +1,39 @@
+{
+  "stock_id": "002227",
+  "stock_name": "奥特迅",
+  "concept": "电力电源设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力自动化电源业务",
+    "电动汽车充电业务",
+    "电能质量治理业务"
+  ],
+  "should": [
+    "高频开关技术",
+    "兆瓦级充电堆技术",
+    "ChaoJi充电系统",
+    "V2G充放电机",
+    "储能变流器",
+    "电力电源设备",
+    "电力自动化电源细分行业龙头企业",
+    "深圳最大公共充电运营商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力自动化电源业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电动汽车充电业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电能质量治理业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:30:35"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "300543",
+  "stock_name": "朗科智能",
+  "concept": "智能控制器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能控制器",
+    "新能源电池包"
+  ],
+  "should": [
+    "BMS",
+    "电器控制器及成品",
+    "智能电源及控制器",
+    "锂电池",
+    "植物照明",
+    "洗地机等新消费家电整机成品",
+    "无刷电机",
+    "智能控制技术",
+    "电机技术",
+    "电池管理技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能控制器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源电池包",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:32:09"
+}

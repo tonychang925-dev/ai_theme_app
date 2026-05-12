@@ -1,0 +1,46 @@
+{
+  "stock_id": "600979",
+  "stock_name": "广安爱众",
+  "concept": "综合能源服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合能源服务",
+    "水电气综合供应",
+    "分布式光伏",
+    "售电"
+  ],
+  "should": [
+    "集中供暖",
+    "生活服务",
+    "智慧爱众系统",
+    "数据中台",
+    "智能表预付费",
+    "计量数字化",
+    "城镇居民生活",
+    "生产用水",
+    "园区企业",
+    "南方供暖市场"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合能源服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水电气综合供应",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分布式光伏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "售电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:32:21"
+}

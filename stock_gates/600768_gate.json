@@ -1,0 +1,31 @@
+{
+  "stock_id": "600768",
+  "stock_name": "宁波富邦",
+  "concept": "工业铝型材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业铝型材"
+  ],
+  "should": [
+    "汽车配件型材",
+    "手电筒系列型材",
+    "幕墙型材",
+    "电动工具系列型材",
+    "熔炼",
+    "挤压",
+    "氧化",
+    "汽车配件",
+    "手电筒",
+    "幕墙"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业铝型材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:27:06"
+}

@@ -1,0 +1,35 @@
+{
+  "stock_id": "301006",
+  "stock_name": "迈拓股份",
+  "concept": "智能超声仪表",
+  "strategy_type": "industry_chain",
+  "must": [
+    "超声水表",
+    "超声热量表"
+  ],
+  "should": [
+    "智能控制阀",
+    "智能衡流阀",
+    "智能超声仪表",
+    "超声波流体测量技术",
+    "电子传感技术",
+    "远程通讯技术",
+    "无线射频技术",
+    "智慧水务",
+    "供水管网分区计量"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "超声水表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超声热量表",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:52:49"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "002193",
+  "stock_name": "如意集团",
+  "concept": "精纺呢绒面料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精纺呢绒面料",
+    "西装"
+  ],
+  "should": [
+    "高效短流程嵌入式复合纺纱技术",
+    "国家级技术研发中心",
+    "国家纺纱工程技术研究中心",
+    "后整理技术",
+    "提花技术",
+    "智能制造技术",
+    "高端定制",
+    "职业装",
+    "商务系列",
+    "休闲系列"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精纺呢绒面料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "西装",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:28:27"
+}

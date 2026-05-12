@@ -1,0 +1,41 @@
+{
+  "stock_id": "688084",
+  "stock_name": "晶品特装",
+  "concept": "军工特种装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "军工特种装备",
+    "光电侦察设备",
+    "军用机器人系统"
+  ],
+  "should": [
+    "无人机光电吊舱",
+    "手持光电侦察设备",
+    "单兵夜视镜",
+    "手持穿墙雷达",
+    "排爆机器人",
+    "多用途机器人",
+    "便携式侦察机器人",
+    "军用无人车",
+    "智能感知",
+    "伺服跟踪"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "军工特种装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光电侦察设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "军用机器人系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:07:50"
+}

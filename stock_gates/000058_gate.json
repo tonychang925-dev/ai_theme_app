@@ -1,0 +1,31 @@
+{
+  "stock_id": "000058",
+  "stock_name": "深赛格",
+  "concept": "电子市场综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子市场流通"
+  ],
+  "should": [
+    "物业经营管理与城市服务",
+    "新能源业务",
+    "检验检测认证",
+    "碲化镉发电玻璃",
+    "光伏逆变器",
+    "储能",
+    "光热",
+    "光伏充电桩",
+    "定制光伏产品",
+    "光伏发电技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子市场流通",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T16:49:05"
+}

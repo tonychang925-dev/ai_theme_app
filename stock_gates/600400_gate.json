@@ -1,0 +1,48 @@
+{
+  "stock_id": "600400",
+  "stock_name": "红豆股份",
+  "concept": "男装品牌",
+  "strategy_type": "industry_chain",
+  "must": [
+    "衬衫",
+    "西服",
+    "西裤",
+    "男装全域零售",
+    "职业装定制"
+  ],
+  "should": [
+    "茄克",
+    "T恤",
+    "毛衫",
+    "5G智能工厂",
+    "服装专利",
+    "中央配送中心",
+    "产业链协同"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "衬衫",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "西服",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "西裤",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "男装全域零售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "职业装定制",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:17:04"
+}

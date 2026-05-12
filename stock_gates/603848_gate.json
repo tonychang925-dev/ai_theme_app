@@ -1,0 +1,32 @@
+{
+  "stock_id": "603848",
+  "stock_name": "好太太",
+  "concept": "智能家居",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能晾衣架",
+    "智能门锁"
+  ],
+  "should": [
+    "智能窗帘",
+    "电热毛巾架",
+    "智能面板",
+    "智能控制",
+    "智能晾衣机细分赛道品牌力遥遥领先",
+    "智能门锁均价高于行业平均"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能晾衣架",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能门锁",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:57:27"
+}

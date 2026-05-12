@@ -1,0 +1,46 @@
+{
+  "stock_id": "002236",
+  "stock_name": "大华股份",
+  "concept": "智慧物联",
+  "strategy_type": "industry_chain",
+  "must": [
+    "视频感知产品",
+    "AIoT",
+    "物联数智平台",
+    "多维感知技术"
+  ],
+  "should": [
+    "全彩超感光系列",
+    "全景多细节系列",
+    "全景多目拼接",
+    "超景深3.0",
+    "重瞳2.0",
+    "预测聚焦",
+    "运动目标自适应跟踪",
+    "flicker消除",
+    "4K极光3.0",
+    "自动宽动态"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "视频感知产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AIoT",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物联数智平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多维感知技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:31:00"
+}

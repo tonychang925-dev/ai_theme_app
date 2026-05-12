@@ -1,0 +1,36 @@
+{
+  "stock_id": "002967",
+  "stock_name": "广电计量",
+  "concept": "计量检测服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "计量检测服务",
+    "计量检测"
+  ],
+  "should": [
+    "检验检测认证",
+    "建筑工程",
+    "环保",
+    "卫生",
+    "农业",
+    "质检",
+    "食品",
+    "药品",
+    "机械",
+    "电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "计量检测服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "计量检测",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:05:23"
+}

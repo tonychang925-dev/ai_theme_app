@@ -1,0 +1,34 @@
+{
+  "stock_id": "002543",
+  "stock_name": "万和电气",
+  "concept": "厨卫电器龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "燃气热水器",
+    "燃气具技术"
+  ],
+  "should": [
+    "电热水器",
+    "油烟机",
+    "燃气灶",
+    "烤炉",
+    "壁挂炉",
+    "热水器技术",
+    "厨卫电器龙头",
+    "国内生产规模最大的燃气具龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "燃气热水器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "燃气具技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:46:30"
+}

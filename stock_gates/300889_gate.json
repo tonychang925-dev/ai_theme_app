@@ -1,0 +1,45 @@
+{
+  "stock_id": "300889",
+  "stock_name": "爱克股份",
+  "concept": "智能照明系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能照明系统",
+    "智慧路灯",
+    "云控系统",
+    "智能控制系统"
+  ],
+  "should": [
+    "多杆合一",
+    "点光源",
+    "线条灯",
+    "洗墙灯",
+    "投光灯",
+    "物联网应用",
+    "城市整体亮化",
+    "智慧城市照明",
+    "智慧道路照明"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能照明系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧路灯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云控系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能控制系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:47:52"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "300151",
+  "stock_name": "昌红科技",
+  "concept": "精密模具与医疗耗材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密模具与医疗耗材",
+    "医疗器械及耗材"
+  ],
+  "should": [
+    "办公自动化设备核心精密注塑件",
+    "基因测序全产业链",
+    "生命科学实验室",
+    "辅助生殖",
+    "体外诊断",
+    "标本采集&处理系统服务",
+    "模具开发技术",
+    "模内注塑技术",
+    "增材制造技术",
+    "自动剪切技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密模具与医疗耗材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗器械及耗材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:15:20"
+}

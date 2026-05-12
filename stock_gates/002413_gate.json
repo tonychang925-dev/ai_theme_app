@@ -1,0 +1,46 @@
+{
+  "stock_id": "002413",
+  "stock_name": "雷科防务",
+  "concept": "军工电子信息",
+  "strategy_type": "industry_chain",
+  "must": [
+    "雷达系统",
+    "卫星应用",
+    "安全存储",
+    "智能弹药"
+  ],
+  "should": [
+    "新体制雷达算法",
+    "全频段有源无源天伺馈",
+    "全频段高集成度低成本TR组件",
+    "国产化异构并行处理",
+    "多源遥感信息处理算法",
+    "自主可控闪存控制技术",
+    "毫米波雷达",
+    "相控阵雷达",
+    "合成孔径雷达",
+    "卫星应用装备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "雷达系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "卫星应用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "安全存储",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能弹药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:40:32"
+}

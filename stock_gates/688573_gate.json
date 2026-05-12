@@ -1,0 +1,46 @@
+{
+  "stock_id": "688573",
+  "stock_name": "信宇人",
+  "concept": "锂电干燥设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电干燥设备",
+    "干燥设备",
+    "涂布设备",
+    "国家级专精特新小巨人"
+  ],
+  "should": [
+    "SDC涂布机",
+    "辊分设备",
+    "SDC复合型高效干燥技术",
+    "全数字化分切技术",
+    "双辊同步防掉粉技术",
+    "智能高效微单元烘烤技术",
+    "冷热液流干燥技术",
+    "陶瓷模头",
+    "SDC新型挤压模头",
+    "新型对流辐射气浮风嘴"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电干燥设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "干燥设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涂布设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国家级专精特新小巨人",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:21:03"
+}

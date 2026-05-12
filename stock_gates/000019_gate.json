@@ -1,0 +1,46 @@
+{
+  "stock_id": "000019",
+  "stock_name": "深粮控股",
+  "concept": "智慧粮油食品供应链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧粮油食品供应链",
+    "批发零售业务",
+    "食品加工制造业务",
+    "粮食供应链优质服务商"
+  ],
+  "should": [
+    "大米",
+    "小麦",
+    "稻谷",
+    "玉米",
+    "高粱",
+    "食用油",
+    "精品茶",
+    "饮料",
+    "调味品",
+    "预制食品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧粮油食品供应链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "批发零售业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "食品加工制造业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "粮食供应链优质服务商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:47:17"
+}

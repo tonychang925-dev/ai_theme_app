@@ -1,0 +1,27 @@
+{
+  "stock_id": "603706",
+  "stock_name": "东方环宇",
+  "concept": "城市燃气供应",
+  "strategy_type": "industry_chain",
+  "must": [
+    "天然气销售"
+  ],
+  "should": [
+    "供热业务",
+    "天然气设施设备安装",
+    "城市燃气供应",
+    "居民用气",
+    "非居民用气",
+    "供热用户"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "天然气销售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:55:14"
+}

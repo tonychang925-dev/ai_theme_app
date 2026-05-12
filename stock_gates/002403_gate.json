@@ -1,0 +1,36 @@
+{
+  "stock_id": "002403",
+  "stock_name": "爱仕达",
+  "concept": "炊具与机器人",
+  "strategy_type": "industry_chain",
+  "must": [
+    "炊具",
+    "工业机器人"
+  ],
+  "should": [
+    "小家电",
+    "家居用品",
+    "机器人控制器C100",
+    "智能WMS/WCS系统",
+    "炊具与机器人",
+    "智能制造解决方案",
+    "复合金属加工工艺",
+    "数字化设计与智能化生产",
+    "全球锅具龙头",
+    "我国最大的炊具民族品牌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "炊具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业机器人",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:39:58"
+}

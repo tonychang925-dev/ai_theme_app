@@ -1,0 +1,41 @@
+{
+  "stock_id": "600977",
+  "stock_name": "中国电影",
+  "concept": "电影全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "出品",
+    "发行",
+    "放映"
+  ],
+  "should": [
+    "流浪地球2",
+    "CINITY技术",
+    "LED虚拟拍摄",
+    "智慧播放服务器",
+    "中影基地",
+    "中影云平台",
+    "中影融资",
+    "电影全产业链",
+    "春节档影片",
+    "发行影片448部"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "出品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "放映",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:32:16"
+}

@@ -1,0 +1,32 @@
+{
+  "stock_id": "601233",
+  "stock_name": "桐昆股份",
+  "concept": "涤纶长丝龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "涤纶长丝龙头",
+    "涤纶长丝"
+  ],
+  "should": [
+    "POY",
+    "740万吨/年",
+    "420万吨/年PTA",
+    "上游PTA延伸",
+    "国内市场占有率接近20%",
+    "产销量连续19年居全国第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "涤纶长丝龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涤纶长丝",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:35:44"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "600428",
+  "stock_name": "中远海特",
+  "concept": "特种船运输",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种船运输",
+    "汽车船",
+    "多用途船"
+  ],
+  "should": [
+    "半潜船",
+    "重吊船",
+    "纸浆船",
+    "木材船",
+    "沥青船",
+    "钻井平台",
+    "机车及火车车厢",
+    "风电设备",
+    "桥吊",
+    "成套设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种船运输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车船",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多用途船",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:17:42"
+}

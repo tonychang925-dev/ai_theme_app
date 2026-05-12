@@ -1,0 +1,46 @@
+{
+  "stock_id": "601318",
+  "stock_name": "中国平安",
+  "concept": "综合金融+医疗健康",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合金融+医疗健康",
+    "综合金融",
+    "医疗健康",
+    "保险"
+  ],
+  "should": [
+    "代理人渠道",
+    "银行",
+    "投资",
+    "健康管理服务",
+    "高端养老",
+    "居家养老",
+    "AI坐席",
+    "AI视频机器人",
+    "多元化渠道",
+    "线上+线下销售模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合金融+医疗健康",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合金融",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗健康",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "保险",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:36:02"
+}

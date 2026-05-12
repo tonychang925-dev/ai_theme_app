@@ -1,0 +1,29 @@
+{
+  "stock_id": "301045",
+  "stock_name": "天禄科技",
+  "concept": "导光板制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "导光板"
+  ],
+  "should": [
+    "光学板材",
+    "导光板制造",
+    "精密模具加工",
+    "台式显示器",
+    "笔记本电脑",
+    "平板电脑",
+    "高端灯具",
+    "液晶电视"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "导光板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:54:23"
+}

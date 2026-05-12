@@ -1,0 +1,31 @@
+{
+  "stock_id": "003018",
+  "stock_name": "金富科技",
+  "concept": "塑料防盗瓶盖",
+  "strategy_type": "industry_chain",
+  "must": [
+    "塑料防盗瓶盖"
+  ],
+  "should": [
+    "3025盖",
+    "2925盖",
+    "T2925盖",
+    "1881盖",
+    "PC桶装水盖",
+    "4.5L桶装水盖",
+    "38盖",
+    "新型拉环盖",
+    "两片盖",
+    "塑料组合盖"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "塑料防盗瓶盖",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:07:47"
+}

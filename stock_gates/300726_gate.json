@@ -1,0 +1,41 @@
+{
+  "stock_id": "300726",
+  "stock_name": "宏达电子",
+  "concept": "军用钽电容龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "军用钽电容龙头",
+    "钽电容器",
+    "高可靠电子元器件"
+  ],
+  "should": [
+    "电源模块",
+    "多层瓷介电容器",
+    "微波器件组件",
+    "电感器",
+    "磁珠",
+    "变压器",
+    "电阻",
+    "船舶",
+    "地面装备",
+    "指挥系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "军用钽电容龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钽电容器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高可靠电子元器件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:40:40"
+}

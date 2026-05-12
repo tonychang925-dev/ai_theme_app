@@ -1,0 +1,51 @@
+{
+  "stock_id": "002401",
+  "stock_name": "中远海科",
+  "concept": "智慧交通航运",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧交通",
+    "智慧航运",
+    "智慧物流",
+    "大数据",
+    "人工智能"
+  ],
+  "should": [
+    "智慧安防",
+    "物联网",
+    "移动互联网",
+    "全息感知",
+    "车路协同",
+    "数据中台",
+    "业务中台",
+    "智慧公路云平台",
+    "高速公路收费综合业务平台",
+    "高速公路省级视频联网云平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧交通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧航运",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧物流",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大数据",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人工智能",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:39:55"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "300421",
+  "stock_name": "力星股份",
+  "concept": "精密滚动体制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钢球"
+  ],
+  "should": [
+    "滚子",
+    "汽车轮毂轴承",
+    "大型风力发电机组变桨和偏航轴承",
+    "轻工家电精密电机轴承",
+    "航空设备制造专用轴承",
+    "精密滚动体制造",
+    "球坯镦压",
+    "热处理",
+    "钢球表面强化",
+    "树脂砂轮精研"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钢球",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:26:37"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "000812",
+  "stock_name": "陕西金叶",
+  "concept": "烟草配套+教育",
+  "strategy_type": "industry_chain",
+  "must": [
+    "烟草配套产业",
+    "教育产业"
+  ],
+  "should": [
+    "烟标",
+    "烟用丝束",
+    "咀棒",
+    "高等学历教育",
+    "互联网智慧校园",
+    "教育投资",
+    "省级企业技术中心",
+    "CNAS国家实验室认可",
+    "分析检测中心",
+    "医养产业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "烟草配套产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "教育产业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:05:42"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "603307",
+  "stock_name": "扬州金泉",
+  "concept": "户外用品制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "帐篷",
+    "睡袋",
+    "户外服装",
+    "背包",
+    "ODM"
+  ],
+  "should": [
+    "户外用品制造",
+    "中游产品制造企业",
+    "代加工生产",
+    "VF Corporation",
+    "Oberalp Group"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "帐篷",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "睡袋",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "户外服装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "背包",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ODM",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:48:43"
+}

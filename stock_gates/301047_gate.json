@@ -1,0 +1,41 @@
+{
+  "stock_id": "301047",
+  "stock_name": "义翘神州",
+  "concept": "生物试剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生物试剂",
+    "蛋白",
+    "抗体"
+  ],
+  "should": [
+    "试剂盒",
+    "培养基",
+    "自主研发",
+    "快速研发能力",
+    "分子生物学",
+    "细胞生物学",
+    "免疫学",
+    "一站式采购",
+    "定制化服务",
+    "本土化支持"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生物试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蛋白",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "抗体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:54:34"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "600031",
+  "stock_name": "三一重工",
+  "concept": "工程机械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "挖掘机械",
+    "混凝土机械"
+  ],
+  "should": [
+    "起重机械",
+    "桩工机械",
+    "筑路机械",
+    "国内挖掘机市占率第一",
+    "全球工程机械第五"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "挖掘机械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "混凝土机械",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:07:31"
+}

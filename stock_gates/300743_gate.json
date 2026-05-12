@@ -1,0 +1,36 @@
+{
+  "stock_id": "300743",
+  "stock_name": "天地数码",
+  "concept": "热转印碳带",
+  "strategy_type": "industry_chain",
+  "must": [
+    "热转印碳带",
+    "条码碳带"
+  ],
+  "should": [
+    "蜡基碳带",
+    "混合基碳带",
+    "树脂基碳带",
+    "微电子技术",
+    "光刻技术",
+    "半导体电热元件技术",
+    "激光技术",
+    "热转印成像材料技术",
+    "PET薄膜",
+    "蜡"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "热转印碳带",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "条码碳带",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:41:15"
+}

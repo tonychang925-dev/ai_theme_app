@@ -1,0 +1,36 @@
+{
+  "stock_id": "300811",
+  "stock_name": "铂科新材",
+  "concept": "金属软磁材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金属软磁粉芯",
+    "金属软磁粉"
+  ],
+  "should": [
+    "磁芯研发",
+    "粉体研发",
+    "金属软磁材料",
+    "电感元件设计",
+    "光伏发电",
+    "新能源汽车及充电桩",
+    "数据中心",
+    "储能",
+    "变频空调",
+    "消费电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金属软磁粉芯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金属软磁粉",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:44:06"
+}

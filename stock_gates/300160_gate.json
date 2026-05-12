@@ -1,0 +1,31 @@
+{
+  "stock_id": "300160",
+  "stock_name": "秀强股份",
+  "concept": "家电玻璃龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "家电玻璃龙头"
+  ],
+  "should": [
+    "多曲面彩晶玻璃",
+    "镀膜玻璃",
+    "层架玻璃",
+    "盖板玻璃",
+    "智能玻璃模组",
+    "BIPV",
+    "印刷",
+    "镀膜",
+    "多曲面技术",
+    "AR镀膜技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "家电玻璃龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:15:35"
+}

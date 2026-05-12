@@ -1,0 +1,46 @@
+{
+  "stock_id": "600750",
+  "stock_name": "华润江中",
+  "concept": "中药OTC",
+  "strategy_type": "industry_chain",
+  "must": [
+    "非处方药",
+    "中药OTC",
+    "大健康",
+    "健胃消食片"
+  ],
+  "should": [
+    "处方药",
+    "乳酸菌素片",
+    "多维元素片",
+    "复方草珊瑚含片",
+    "活菌药物",
+    "蚓激酶肠溶胶囊",
+    "中药新药临床前研究",
+    "智能制造",
+    "胃肠健康",
+    "术后康复营养"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "非处方药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中药OTC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大健康",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "健胃消食片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:26:42"
+}

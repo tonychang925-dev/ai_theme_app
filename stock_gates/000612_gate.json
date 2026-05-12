@@ -1,0 +1,41 @@
+{
+  "stock_id": "000612",
+  "stock_name": "焦作万方",
+  "concept": "电解铝冶炼",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电解铝冶炼",
+    "电解铝液",
+    "铝锭"
+  ],
+  "should": [
+    "铝合金制品",
+    "大型预焙电解槽技术",
+    "铝水直接合金化",
+    "建筑",
+    "交通运输",
+    "电力",
+    "包装",
+    "轨道交通",
+    "新能源汽车",
+    "光伏电站"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电解铝冶炼",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电解铝液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铝锭",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:58:22"
+}

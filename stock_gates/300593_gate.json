@@ -1,0 +1,33 @@
+{
+  "stock_id": "300593",
+  "stock_name": "新雷能",
+  "concept": "特种电源龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "模块电源",
+    "定制电源"
+  ],
+  "should": [
+    "大功率电源及系统",
+    "特种电源龙头",
+    "国产替代龙头",
+    "第一梯队",
+    "市占率6%",
+    "海外出口",
+    "海外营收增长"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "模块电源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "定制电源",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:34:19"
+}

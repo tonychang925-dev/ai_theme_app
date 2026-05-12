@@ -1,0 +1,41 @@
+{
+  "stock_id": "300688",
+  "stock_name": "创业黑马",
+  "concept": "中小企业赋能",
+  "strategy_type": "industry_chain",
+  "must": [
+    "企业加速服务",
+    "企业服务",
+    "SaaS模式服务"
+  ],
+  "should": [
+    "知识产权服务",
+    "财税服务",
+    "黑马营",
+    "黑马实验室",
+    "科创云",
+    "加速云",
+    "产业大脑",
+    "中小企业赋能",
+    "线下服务",
+    "营销服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "企业加速服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "企业服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SaaS模式服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:38:57"
+}

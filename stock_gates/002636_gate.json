@@ -1,0 +1,31 @@
+{
+  "stock_id": "002636",
+  "stock_name": "金安国纪",
+  "concept": "覆铜板材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "覆铜板"
+  ],
+  "should": [
+    "覆铜板材料",
+    "半固化片",
+    "印制电路板",
+    "电子级玻纤布",
+    "无卤环保",
+    "高阻燃",
+    "耐CAF",
+    "高TG",
+    "高CTI",
+    "消费电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "覆铜板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:50:51"
+}

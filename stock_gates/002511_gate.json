@@ -1,0 +1,31 @@
+{
+  "stock_id": "002511",
+  "stock_name": "中顺洁柔",
+  "concept": "生活用纸",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生活用纸"
+  ],
+  "should": [
+    "卫生纸",
+    "纸面巾",
+    "纸手帕",
+    "餐巾纸",
+    "湿巾",
+    "厨房纸巾",
+    "个人护理产品（卫生巾）",
+    "洁面巾",
+    "压花工艺",
+    "纯物理复合技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生活用纸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:45:02"
+}

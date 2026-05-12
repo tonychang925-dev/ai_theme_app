@@ -1,0 +1,46 @@
+{
+  "stock_id": "300059",
+  "stock_name": "东方财富",
+  "concept": "互联网金融平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "互联网金融平台",
+    "财富管理",
+    "基金代销",
+    "证券经纪"
+  ],
+  "should": [
+    "财经资讯",
+    "金融数据服务",
+    "东方财富网",
+    "天天基金网",
+    "股吧",
+    "东方财富通",
+    "Choice",
+    "证券业务",
+    "金融电商",
+    "广告/数据"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "互联网金融平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "财富管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "基金代销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "证券经纪",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:11:34"
+}

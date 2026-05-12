@@ -1,0 +1,40 @@
+{
+  "stock_id": "688021",
+  "stock_name": "奥福科技",
+  "concept": "蜂窝陶瓷载体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "蜂窝陶瓷载体",
+    "蜂窝陶瓷技术",
+    "大尺寸蜂窝陶瓷载体"
+  ],
+  "should": [
+    "直通式载体",
+    "壁流式载体",
+    "VOCs废气处理设备",
+    "原材料国产替代",
+    "柴油车尾气处理",
+    "重型柴油车尾气处理",
+    "非道路和船舶市场",
+    "乘用车市场",
+    "国内蜂窝陶瓷载体制造企业领先地位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "蜂窝陶瓷载体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蜂窝陶瓷技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大尺寸蜂窝陶瓷载体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:05:39"
+}

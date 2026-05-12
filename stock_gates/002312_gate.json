@@ -1,0 +1,40 @@
+{
+  "stock_id": "002312",
+  "stock_name": "川发龙蟒",
+  "concept": "精细磷化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精细磷化工",
+    "工业级磷酸一铵",
+    "饲料级磷酸氢钙"
+  ],
+  "should": [
+    "磷酸铁（锂）",
+    "肥料级磷酸一铵",
+    "复合肥",
+    "硫-磷-钛循环经济",
+    "磷资源梯级利用",
+    "磷系灭火剂",
+    "水溶肥",
+    "磷酸铁锂动力电池",
+    "农业磷肥"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精细磷化工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业级磷酸一铵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "饲料级磷酸氢钙",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:34:57"
+}

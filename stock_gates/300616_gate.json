@@ -1,0 +1,41 @@
+{
+  "stock_id": "300616",
+  "stock_name": "尚品宅配",
+  "concept": "全屋定制家具",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全屋板式定制家具",
+    "全屋定制家具",
+    "定制生产"
+  ],
+  "should": [
+    "柔性化生产工艺",
+    "设计软件及信息化整体解决方案",
+    "配套家居产品",
+    "装修用主辅材",
+    "虚拟制造技术",
+    "信息系统",
+    "自动加工系统",
+    "数字控制加工设备",
+    "按客户订单生产",
+    "降低库存资金占用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全屋板式定制家具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全屋定制家具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "定制生产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:35:26"
+}

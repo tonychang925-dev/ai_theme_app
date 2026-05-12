@@ -1,0 +1,51 @@
+{
+  "stock_id": "000895",
+  "stock_name": "双汇发展",
+  "concept": "肉类加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "肉类加工",
+    "肉制品业务",
+    "屠宰业务",
+    "冷鲜肉",
+    "肉制品加工"
+  ],
+  "should": [
+    "冻肉",
+    "火腿肠类",
+    "火腿类",
+    "香肠类",
+    "酱卤熟食类",
+    "餐饮食材类",
+    "罐头类",
+    "饲料",
+    "养殖",
+    "调味品生产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "肉类加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "肉制品业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "屠宰业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冷鲜肉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "肉制品加工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:08:36"
+}

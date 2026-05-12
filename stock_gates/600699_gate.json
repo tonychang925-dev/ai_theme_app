@@ -1,0 +1,46 @@
+{
+  "stock_id": "600699",
+  "stock_name": "均胜电子",
+  "concept": "汽车安全与智能",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车安全",
+    "全球第二大汽车安全供应商",
+    "智能座舱",
+    "智能驾驶"
+  ],
+  "should": [
+    "汽车电子",
+    "安全气囊",
+    "安全带",
+    "方向盘",
+    "新能源管理",
+    "域控制器",
+    "人机交互",
+    "激光雷达",
+    "中央计算单元",
+    "电池管理系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车安全",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球第二大汽车安全供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能座舱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能驾驶",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:25:16"
+}

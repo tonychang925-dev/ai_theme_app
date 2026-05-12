@@ -1,0 +1,46 @@
+{
+  "stock_id": "605338",
+  "stock_name": "巴比食品",
+  "concept": "中式面点速冻",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中式面点速冻",
+    "包子",
+    "馒头",
+    "团餐业务"
+  ],
+  "should": [
+    "工业化生产",
+    "全冷链配送",
+    "直营",
+    "加盟",
+    "团体供餐",
+    "加盟门店",
+    "大型企事业单位",
+    "学校",
+    "医院",
+    "连锁餐饮"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中式面点速冻",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "包子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "馒头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "团餐业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:03:51"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "600567",
+  "stock_name": "山鹰国际",
+  "concept": "造纸包装龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "造纸包装龙头",
+    "箱板纸",
+    "瓦楞原纸",
+    "特种纸"
+  ],
+  "should": [
+    "纸板",
+    "纸箱",
+    "云融网络",
+    "产业链一体化",
+    "数字化转型",
+    "消费电子",
+    "家电",
+    "化工",
+    "轻工",
+    "回收纤维贸易"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "造纸包装龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "箱板纸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "瓦楞原纸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种纸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:21:19"
+}

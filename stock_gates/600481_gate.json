@@ -1,0 +1,41 @@
+{
+  "stock_id": "600481",
+  "stock_name": "双良节能",
+  "concept": "节能光伏装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "多晶硅还原炉",
+    "大尺寸单晶硅棒",
+    "高效光伏组件"
+  ],
+  "should": [
+    "溴化锂冷热机组",
+    "换热器",
+    "空冷系统",
+    "硅片",
+    "节能光伏装备",
+    "自主研发",
+    "节能高效",
+    "光伏多晶硅行业",
+    "石油化工",
+    "供热"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "多晶硅还原炉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大尺寸单晶硅棒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高效光伏组件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:18:52"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300698",
+  "stock_name": "万马科技",
+  "concept": "通信电子与车联网",
+  "strategy_type": "industry_chain",
+  "must": [
+    "车联网",
+    "车联网连接管理",
+    "车载网络管理服务"
+  ],
+  "should": [
+    "通信电子",
+    "通讯物理连接设备",
+    "通信电子与车联网",
+    "三大通信运营商",
+    "广电公司",
+    "铁路通信公司",
+    "吉利汽车",
+    "上汽乘用车",
+    "东风汽车",
+    "天际汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "车联网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车联网连接管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载网络管理服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:39:29"
+}

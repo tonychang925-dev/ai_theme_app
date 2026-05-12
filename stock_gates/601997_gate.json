@@ -1,0 +1,25 @@
+{
+  "stock_id": "601997",
+  "stock_name": "贵阳银行",
+  "concept": "贵州城商行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "贵州城商行"
+  ],
+  "should": [
+    "公司银行业务",
+    "个人银行业务",
+    "资金业务",
+    "贵州88个县域全覆盖"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "贵州城商行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:40:32"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "003020",
+  "stock_name": "立方制药",
+  "concept": "渗透泵控释制剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "渗透泵控释制剂",
+    "渗透泵控释技术",
+    "激光打孔渗透泵控释技术",
+    "盐酸哌甲酯缓释片"
+  ],
+  "should": [
+    "非洛地平缓释片（II）",
+    "甲磺酸多沙唑嗪缓释片",
+    "硝苯地平控释片",
+    "配方技术",
+    "制剂评价技术",
+    "制剂工程化技术",
+    "关键设备技术",
+    "高速激光打孔机",
+    "体内释药平稳",
+    "0级释放"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "渗透泵控释制剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "渗透泵控释技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "激光打孔渗透泵控释技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "盐酸哌甲酯缓释片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:07:54"
+}

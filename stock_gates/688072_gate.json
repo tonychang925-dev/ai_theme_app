@@ -1,0 +1,41 @@
+{
+  "stock_id": "688072",
+  "stock_name": "拓荆科技",
+  "concept": "半导体薄膜沉积设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体薄膜沉积设备",
+    "PECVD",
+    "ALD"
+  ],
+  "should": [
+    "SACVD",
+    "HDPCVD",
+    "Flowable CVD",
+    "先进键合设备",
+    "量检测设备",
+    "自主研发设计",
+    "知识产权体系",
+    "多项国家重大专项/课题",
+    "研发平台",
+    "工艺型号外延开发能力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体薄膜沉积设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PECVD",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ALD",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:07:20"
+}

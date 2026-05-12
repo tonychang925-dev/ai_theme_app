@@ -1,0 +1,51 @@
+{
+  "stock_id": "600118",
+  "stock_name": "中国卫星",
+  "concept": "宇航制造与卫星应用",
+  "strategy_type": "industry_chain",
+  "must": [
+    "宇航制造与卫星应用",
+    "宇航制造",
+    "卫星应用",
+    "卫星系统研制",
+    "北斗导航应用"
+  ],
+  "should": [
+    "小/微小卫星",
+    "宇航部组件",
+    "卫星通导遥终端",
+    "大型地面应用系统",
+    "智能遥感卫星",
+    "星载导航",
+    "空间太阳电池",
+    "Ku频段高通量机载卫通终端",
+    "商业遥感卫星应用",
+    "通信卫星地面系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "宇航制造与卫星应用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "宇航制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "卫星应用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "卫星系统研制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "北斗导航应用",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:09:42"
+}

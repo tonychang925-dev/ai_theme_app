@@ -1,0 +1,33 @@
+{
+  "stock_id": "603408",
+  "stock_name": "建霖家居",
+  "concept": "厨卫家居",
+  "strategy_type": "industry_chain",
+  "must": [
+    "厨卫家居",
+    "全屋智能家居"
+  ],
+  "should": [
+    "智能电控技术",
+    "智能装备技术",
+    "材料表面技术",
+    "成型技术",
+    "地产精装",
+    "品牌升级",
+    "康养产业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "厨卫家居",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全屋智能家居",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:50:50"
+}

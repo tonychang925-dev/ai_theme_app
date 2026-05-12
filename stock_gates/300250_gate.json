@@ -1,0 +1,50 @@
+{
+  "stock_id": "300250",
+  "stock_name": "初灵信息",
+  "concept": "边缘计算与数据感知",
+  "strategy_type": "industry_chain",
+  "must": [
+    "边缘计算与数据感知",
+    "智能连接",
+    "数据感知",
+    "AI应用",
+    "边缘计算"
+  ],
+  "should": [
+    "数据感知(DPI)",
+    "政企高品质专线接入",
+    "中小企业互联网接入",
+    "数据分析",
+    "信令和云计算",
+    "AI分析",
+    "运营商4/5G网络性能分析",
+    "用户感知分析",
+    "专线业务质量分析"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "边缘计算与数据感知",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能连接",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据感知",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AI应用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "边缘计算",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:19:28"
+}

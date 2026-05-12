@@ -1,0 +1,36 @@
+{
+  "stock_id": "300620",
+  "stock_name": "光库科技",
+  "concept": "光电子器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光纤激光器件",
+    "光通讯器件"
+  ],
+  "should": [
+    "激光雷达光源模块及器件",
+    "高可靠性光纤器件制造技术",
+    "高功率器件热管理技术",
+    "保偏器件应力轴对位技术",
+    "光纤端面微结构处理技术",
+    "光电子器件",
+    "光纤激光",
+    "光纤通讯",
+    "数据中心",
+    "人工智能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光纤激光器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光通讯器件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:35:41"
+}

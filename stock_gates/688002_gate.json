@@ -1,0 +1,51 @@
+{
+  "stock_id": "688002",
+  "stock_name": "睿创微纳",
+  "concept": "红外热成像与多维感知",
+  "strategy_type": "industry_chain",
+  "must": [
+    "非制冷红外热成像技术",
+    "红外探测器芯片",
+    "热成像机芯模组",
+    "MEMS传感技术",
+    "非制冷红外热像仪"
+  ],
+  "should": [
+    "T/R组件",
+    "相控阵子系统",
+    "雷达整机",
+    "化合物半导体单片微波芯片",
+    "硅基毫米波芯片",
+    "车载红外热成像产品",
+    "双光谱云台",
+    "气体泄漏检测仪",
+    "红外瞄准镜",
+    "短波红外机芯组件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "非制冷红外热成像技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "红外探测器芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热成像机芯模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MEMS传感技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "非制冷红外热像仪",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:05:10"
+}

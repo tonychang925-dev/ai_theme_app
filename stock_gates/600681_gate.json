@@ -1,0 +1,32 @@
+{
+  "stock_id": "600681",
+  "stock_name": "百川能源",
+  "concept": "燃气综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "燃气综合服务",
+    "城市管道燃气销售"
+  ],
+  "should": [
+    "燃气工程安装",
+    "燃气具销售",
+    "中石油",
+    "管道天然气",
+    "居民用户",
+    "工商业用户"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "燃气综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市管道燃气销售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:24:46"
+}

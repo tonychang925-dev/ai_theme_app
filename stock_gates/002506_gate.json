@@ -1,0 +1,41 @@
+{
+  "stock_id": "002506",
+  "stock_name": "协鑫集成",
+  "concept": "光伏制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏制造",
+    "光伏组件",
+    "光伏电池"
+  ],
+  "should": [
+    "PERC技术",
+    "N型电池",
+    "TOPCon",
+    "HJT",
+    "XBC",
+    "地面电站",
+    "分布式光伏",
+    "工商业光伏",
+    "户用光伏",
+    "全球前十"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏电池",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:44:42"
+}

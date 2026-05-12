@@ -1,0 +1,51 @@
+{
+  "stock_id": "601949",
+  "stock_name": "中国出版",
+  "concept": "出版国家队",
+  "strategy_type": "industry_chain",
+  "must": [
+    "图书出版",
+    "商务印书馆",
+    "中华书局",
+    "人民文学出版社",
+    "教材发行"
+  ],
+  "should": [
+    "报刊出版",
+    "电子音像出版",
+    "版权业务",
+    "物资供应",
+    "印刷",
+    "中国大百科全书出版社",
+    "人民音乐出版社",
+    "三联书店",
+    "中国民主法制出版社",
+    "出版国家队"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "图书出版",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商务印书馆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中华书局",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人民文学出版社",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "教材发行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:40:07"
+}

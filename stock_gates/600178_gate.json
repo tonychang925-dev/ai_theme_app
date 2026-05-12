@@ -1,0 +1,38 @@
+{
+  "stock_id": "600178",
+  "stock_name": "东安动力",
+  "concept": "微型汽车发动机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "微型汽车发动机",
+    "新能源增程动力系统",
+    "混动系统"
+  ],
+  "should": [
+    "变速器",
+    "DAPDS开发流程",
+    "原创性引领性科技",
+    "节能技术",
+    "技术升级",
+    "国内最大的微型汽车发动机生产企业",
+    "独立汽油机企业首位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "微型汽车发动机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源增程动力系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "混动系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:10:59"
+}

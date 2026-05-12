@@ -1,0 +1,36 @@
+{
+  "stock_id": "688255",
+  "stock_name": "凯尔达",
+  "concept": "焊接机器人龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "焊接机器人龙头",
+    "焊接机器人"
+  ],
+  "should": [
+    "工业焊接设备",
+    "机器人专用焊接设备",
+    "机器人手臂及控制器",
+    "激光焊接机器人",
+    "超低飞溅焊接",
+    "伺服焊接",
+    "飞行激光焊接",
+    "工业PC+EtherCAT技术",
+    "自产机器人整机",
+    "年产4400台生产能力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "焊接机器人龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "焊接机器人",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:13:11"
+}

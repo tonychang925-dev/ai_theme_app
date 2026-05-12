@@ -1,0 +1,51 @@
+{
+  "stock_id": "601717",
+  "stock_name": "中创智领",
+  "concept": "煤机与汽车零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤矿机械",
+    "采煤机",
+    "掘进机",
+    "刮板输送机",
+    "液压支架"
+  ],
+  "should": [
+    "汽车零部件",
+    "缸体缸盖",
+    "活塞环",
+    "凸轮轴",
+    "起动机",
+    "发电机",
+    "48V BRM能量回收系统",
+    "戴姆勒",
+    "宝马",
+    "大众"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤矿机械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "采煤机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "掘进机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "刮板输送机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液压支架",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:38:16"
+}

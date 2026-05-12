@@ -1,0 +1,46 @@
+{
+  "stock_id": "300098",
+  "stock_name": "高新兴",
+  "concept": "智慧城市物联网",
+  "strategy_type": "industry_chain",
+  "must": [
+    "物联网",
+    "视频人工智能",
+    "智慧城市物联网",
+    "人工智能"
+  ],
+  "should": [
+    "车联网",
+    "智慧交通",
+    "公共安全",
+    "5G通信",
+    "云计算",
+    "大数据",
+    "智慧城市",
+    "智能制造",
+    "智能交通",
+    "公共服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "物联网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "视频人工智能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧城市物联网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人工智能",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:13:03"
+}

@@ -1,0 +1,39 @@
+{
+  "stock_id": "605018",
+  "stock_name": "长华集团",
+  "concept": "汽车零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "紧固件",
+    "冲焊件",
+    "铝压铸"
+  ],
+  "should": [
+    "轻量化铝合金压铸",
+    "高强度紧固件",
+    "铸铝冲焊总成件",
+    "汽车车身",
+    "底盘",
+    "动力总成系统",
+    "国内乘用车紧固件头部企业",
+    "新能源冲焊件产品客户认可"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "紧固件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冲焊件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铝压铸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:01:08"
+}

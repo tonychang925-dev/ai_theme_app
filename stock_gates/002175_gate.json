@@ -1,0 +1,44 @@
+{
+  "stock_id": "002175",
+  "stock_name": "东方智造",
+  "concept": "精密测量仪器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子数显卡尺",
+    "电子数显千分尺",
+    "电子数显指示表",
+    "工业现场测量物联网系统"
+  ],
+  "should": [
+    "绝对位置测量容栅位移测量方法",
+    "主控芯片",
+    "精密测量仪器",
+    "智能化精密仪器仪表",
+    "自动化测量解决方案",
+    "固件开发",
+    "数字化测量技术",
+    "制造业位移测量"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子数显卡尺",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子数显千分尺",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子数显指示表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业现场测量物联网系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:27:30"
+}

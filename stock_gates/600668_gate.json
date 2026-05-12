@@ -1,0 +1,41 @@
+{
+  "stock_id": "600668",
+  "stock_name": "尖峰集团",
+  "concept": "水泥医药双主业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水泥医药双主业",
+    "水泥",
+    "医药"
+  ],
+  "should": [
+    "药品",
+    "健康品",
+    "商贸物流",
+    "铁路",
+    "公路",
+    "机场",
+    "水利",
+    "基础设施",
+    "房屋建设",
+    "建材"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水泥医药双主业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水泥",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:24:28"
+}

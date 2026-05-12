@@ -1,0 +1,46 @@
+{
+  "stock_id": "002761",
+  "stock_name": "浙江建投",
+  "concept": "现代建筑服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "现代建筑服务",
+    "建筑施工",
+    "工程设计",
+    "建筑产业投资"
+  ],
+  "should": [
+    "建筑工业制造",
+    "建筑专业服务",
+    "投融资建造",
+    "房屋建筑",
+    "市政路桥",
+    "轨道交通",
+    "水利水电",
+    "设备安装",
+    "装饰装修",
+    "浙江省属国有企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "现代建筑服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑施工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑产业投资",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:56:26"
+}

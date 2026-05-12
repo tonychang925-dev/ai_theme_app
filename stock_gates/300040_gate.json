@@ -1,0 +1,31 @@
+{
+  "stock_id": "300040",
+  "stock_name": "九洲集团",
+  "concept": "输配电设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "输配电设备"
+  ],
+  "should": [
+    "电力电子元器件",
+    "配电开关控制设备",
+    "变压器",
+    "整流器",
+    "电感器",
+    "电容器及其配套设备",
+    "国家电网公司集采供应商",
+    "电力",
+    "轨道交通",
+    "能源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "输配电设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:10:34"
+}

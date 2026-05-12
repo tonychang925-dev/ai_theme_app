@@ -1,0 +1,45 @@
+{
+  "stock_id": "601311",
+  "stock_name": "骆驼股份",
+  "concept": "铅酸电池龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车低压铅酸电池",
+    "启停电池",
+    "铅酸电池平台",
+    "国内铅酸蓄电池主要生产商"
+  ],
+  "should": [
+    "锂电池",
+    "燃料电池",
+    "驻车空调电池",
+    "新能源汽车辅助电池",
+    "锂电池平台",
+    "产品研发",
+    "技术攻关",
+    "工艺升级",
+    "行业领先地位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车低压铅酸电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "启停电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铅酸电池平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内铅酸蓄电池主要生产商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:36:00"
+}

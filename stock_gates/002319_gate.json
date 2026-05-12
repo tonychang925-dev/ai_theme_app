@@ -1,0 +1,36 @@
+{
+  "stock_id": "002319",
+  "stock_name": "乐通股份",
+  "concept": "油墨制造与互联网广告",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中高档凹印油墨",
+    "油墨自动化生产线"
+  ],
+  "should": [
+    "互联网广告投放服务",
+    "程序化投放能力",
+    "数据分析",
+    "饮料包装",
+    "食品包装",
+    "卷烟包装",
+    "电子制品",
+    "品牌广告",
+    "短视频营销",
+    "直播营销"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中高档凹印油墨",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "油墨自动化生产线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:35:13"
+}

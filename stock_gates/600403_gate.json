@@ -1,0 +1,31 @@
+{
+  "stock_id": "600403",
+  "stock_name": "大有能源",
+  "concept": "煤炭开采",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤炭开采"
+  ],
+  "should": [
+    "长焰煤",
+    "焦煤",
+    "贫煤",
+    "洗精煤",
+    "气煤",
+    "化工",
+    "发电",
+    "工业锅炉",
+    "炼焦",
+    "建材"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤炭开采",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:17:05"
+}

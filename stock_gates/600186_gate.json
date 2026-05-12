@@ -1,0 +1,46 @@
+{
+  "stock_id": "600186",
+  "stock_name": "莲花控股",
+  "concept": "味精调味品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "味精",
+    "绿色食品",
+    "中国名牌",
+    "中国驰名商标"
+  ],
+  "should": [
+    "鸡精",
+    "味精调味品",
+    "复合调味料",
+    "氨基酸调味品",
+    "发酵加工",
+    "全产业链生产",
+    "中小包装味精终端市场主导地位",
+    "国内最大的鸡精汤块出口基地",
+    "味精行业唯一入选企业",
+    "专有技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "味精",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "绿色食品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中国名牌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中国驰名商标",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:11:20"
+}

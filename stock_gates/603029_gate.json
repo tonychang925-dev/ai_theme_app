@@ -1,0 +1,51 @@
+{
+  "stock_id": "603029",
+  "stock_name": "天鹅股份",
+  "concept": "棉花加工机械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "棉花加工机械",
+    "轧花设备",
+    "剥绒设备",
+    "棉花采摘机械",
+    "棉花加工"
+  ],
+  "should": [
+    "六行自走式打包采棉机",
+    "三行自走式打包采棉机",
+    "三行自走式箱式采棉机",
+    "智能配肥机",
+    "玉米收获机",
+    "秸秆打捆机",
+    "粮食烘干机",
+    "棉花质量追溯系统（QTS）",
+    "国家专利发明160余项",
+    "国家科技进步二等奖2项"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "棉花加工机械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轧花设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "剥绒设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "棉花采摘机械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "棉花加工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:41:51"
+}

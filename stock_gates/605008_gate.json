@@ -1,0 +1,50 @@
+{
+  "stock_id": "605008",
+  "stock_name": "长鸿高科",
+  "concept": "热塑性弹性体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "热塑性弹性体",
+    "SBS",
+    "SEBS",
+    "SEPS",
+    "TPES"
+  ],
+  "should": [
+    "ES系列",
+    "BDO",
+    "加氢技术",
+    "发泡级新型热塑性弹性体材料",
+    "高端鞋材",
+    "光伏胶膜",
+    "胶粘剂",
+    "可降解塑料制品",
+    "全国最大的可降解塑料供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "热塑性弹性体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SBS",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SEBS",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SEPS",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "TPES",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:01:02"
+}

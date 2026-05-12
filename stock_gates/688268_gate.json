@@ -1,0 +1,36 @@
+{
+  "stock_id": "688268",
+  "stock_name": "华特气体",
+  "concept": "特种气体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种气体",
+    "光刻气"
+  ],
+  "should": [
+    "氟碳类特气",
+    "高纯六氟乙烷",
+    "高纯四氟化碳",
+    "高纯二氧化碳",
+    "高纯氨",
+    "高纯一氧化碳",
+    "高纯三氟甲烷",
+    "高纯八氟丙烷",
+    "高纯一氧化氮",
+    "气体纯化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种气体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光刻气",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:13:40"
+}

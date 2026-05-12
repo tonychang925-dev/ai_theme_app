@@ -1,0 +1,48 @@
+{
+  "stock_id": "601158",
+  "stock_name": "重庆水务",
+  "concept": "区域水务龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "区域水务龙头",
+    "污水处理",
+    "自来水销售",
+    "供水特许经营权",
+    "排水特许经营权"
+  ],
+  "should": [
+    "水环境综合治理",
+    "污泥处置",
+    "工程施工服务",
+    "重庆市主城区约56%自来水市场",
+    "重庆市约71.2%污水处理市场",
+    "股权投资",
+    "联合体模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "区域水务龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "污水处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自来水销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "供水特许经营权",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "排水特许经营权",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:34:58"
+}

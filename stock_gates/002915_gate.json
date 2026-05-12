@@ -1,0 +1,36 @@
+{
+  "stock_id": "002915",
+  "stock_name": "中欣氟材",
+  "concept": "氟精细化学品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "氟精细化学品",
+    "含氟精细化学品生产"
+  ],
+  "should": [
+    "2,3,4,5-四氟苯系列",
+    "2,3,5,6-四氟苯系列",
+    "氟喹诺酮类环合酸系列",
+    "六氟磷酸钠",
+    "双氟磺酰亚胺锂",
+    "双三氟甲基磺酰亚胺锂",
+    "第4代制冷剂",
+    "三氟系列产品",
+    "微反应器技术",
+    "新能源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "氟精细化学品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "含氟精细化学品生产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:03:05"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "600863",
+  "stock_name": "华能蒙电",
+  "concept": "内蒙古电力龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "火力发电",
+    "电力",
+    "供热"
+  ],
+  "should": [
+    "风力发电",
+    "太阳能发电",
+    "煤炭生产及销售",
+    "煤炭",
+    "蒸汽",
+    "热水",
+    "内蒙古电力龙头",
+    "蒙西电网",
+    "华北电网",
+    "东北电网"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "火力发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "供热",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:29:49"
+}

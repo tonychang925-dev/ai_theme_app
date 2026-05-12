@@ -1,0 +1,41 @@
+{
+  "stock_id": "002658",
+  "stock_name": "雪迪龙",
+  "concept": "环境监测服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环境监测系统",
+    "温室气体监测系统",
+    "工业过程分析系统"
+  ],
+  "should": [
+    "光谱仪",
+    "色谱仪",
+    "质谱仪",
+    "环境监测服务",
+    "分析技术",
+    "精密机械",
+    "电子电路",
+    "自动化",
+    "信息技术",
+    "环境监测"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环境监测系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "温室气体监测系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业过程分析系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:51:54"
+}

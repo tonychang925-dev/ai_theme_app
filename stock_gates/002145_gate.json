@@ -1,0 +1,29 @@
+{
+  "stock_id": "002145",
+  "stock_name": "钛能化学",
+  "concept": "钛白粉生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金红石型钛白粉",
+    "硫酸法工艺"
+  ],
+  "should": [
+    "钛白粉生产",
+    "国内第二",
+    "全球第六"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金红石型钛白粉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硫酸法工艺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:25:30"
+}

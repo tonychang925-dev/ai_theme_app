@@ -1,0 +1,41 @@
+{
+  "stock_id": "688220",
+  "stock_name": "翱捷科技",
+  "concept": "无线通信芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "蜂窝基带芯片",
+    "无线通信芯片",
+    "非蜂窝物联网芯片"
+  ],
+  "should": [
+    "全制式蜂窝基带技术",
+    "多协议非蜂窝物联网芯片技术",
+    "芯片定制服务",
+    "超大规模芯片设计",
+    "半导体IP授权业务",
+    "智能手机",
+    "智能穿戴",
+    "AIoT",
+    "汽车电子",
+    "车联网"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "蜂窝基带芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无线通信芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "非蜂窝物联网芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:12:15"
+}

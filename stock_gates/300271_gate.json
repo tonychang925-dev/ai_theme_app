@@ -1,0 +1,49 @@
+{
+  "stock_id": "300271",
+  "stock_name": "华宇软件",
+  "concept": "法律科技服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "法律科技服务",
+    "法律科技",
+    "智慧法院",
+    "数字检察",
+    "法治社会治理"
+  ],
+  "should": [
+    "政企数字化",
+    "大数据",
+    "人工智能",
+    "区块链",
+    "教育信息化",
+    "国内法律科技市场主要领导者",
+    "教育信息化头部企业",
+    "信息技术应用创新重要参与者"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "法律科技服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "法律科技",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧法院",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字检察",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "法治社会治理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:20:39"
+}

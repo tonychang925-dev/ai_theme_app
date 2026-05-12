@@ -1,0 +1,41 @@
+{
+  "stock_id": "605488",
+  "stock_name": "福莱新材",
+  "concept": "功能性涂布复合材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "功能性涂布复合材料",
+    "广告喷墨打印材料",
+    "标签标识印刷材料"
+  ],
+  "should": [
+    "功能基膜材料",
+    "涂布技术",
+    "电子级功能材料",
+    "广告喷墨打印",
+    "标签标识印刷",
+    "消费电子",
+    "汽车电子",
+    "快消品包装",
+    "家居装饰",
+    "建筑装饰"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "功能性涂布复合材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "广告喷墨打印材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "标签标识印刷材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:04:27"
+}

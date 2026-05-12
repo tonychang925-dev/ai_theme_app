@@ -1,0 +1,41 @@
+{
+  "stock_id": "002073",
+  "stock_name": "软控股份",
+  "concept": "轮胎橡胶智能装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轮胎橡胶智能装备",
+    "智能化装备",
+    "系统软件服务"
+  ],
+  "should": [
+    "机器视觉",
+    "智能算法",
+    "故障预测与健康管理",
+    "虚拟现实",
+    "轮胎生产配料",
+    "密炼",
+    "压延",
+    "裁断",
+    "成型",
+    "硫化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轮胎橡胶智能装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能化装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "系统软件服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:21:37"
+}

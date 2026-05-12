@@ -1,0 +1,31 @@
+{
+  "stock_id": "300877",
+  "stock_name": "金春股份",
+  "concept": "非织造布",
+  "strategy_type": "industry_chain",
+  "must": [
+    "非织造布"
+  ],
+  "should": [
+    "水刺非织造布",
+    "可降解非织造布",
+    "热风非织造布",
+    "超细纤维非织造布",
+    "熔喷无纺布",
+    "ES复合短纤维",
+    "无纺布研发",
+    "生产工艺优化",
+    "定制化产品研发",
+    "规模化非织造布生产商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "非织造布",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:47:17"
+}

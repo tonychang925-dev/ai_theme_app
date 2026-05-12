@@ -1,0 +1,31 @@
+{
+  "stock_id": "600620",
+  "stock_name": "天宸股份",
+  "concept": "健康城综合运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "出租车客运",
+    "物业租赁"
+  ],
+  "should": [
+    "康复医院建设",
+    "健康城综合运营",
+    "房地产销售",
+    "医疗服务",
+    "运输客运"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "出租车客运",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物业租赁",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:23:07"
+}

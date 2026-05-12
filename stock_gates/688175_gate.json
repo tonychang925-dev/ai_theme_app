@@ -1,0 +1,41 @@
+{
+  "stock_id": "688175",
+  "stock_name": "高凌信息",
+  "concept": "军用通信设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "军用电信网通信设备",
+    "军用通信设备"
+  ],
+  "should": [
+    "IMS接入层设备",
+    "IMS核心层设备",
+    "网络内容安全产品",
+    "网络空间内生安全设备",
+    "环保物联网应用",
+    "拟态防御技术",
+    "电信网反诈技术",
+    "有害内容防范技术",
+    "噪声自动监测技术",
+    "国防通信安全"
+  ],
+  "not": [
+    "环境质量监测",
+    "污染源监控",
+    "电信网反诈",
+    "有害信息防范"
+  ],
+  "evidence_refs": [
+    {
+      "term": "军用电信网通信设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "军用通信设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:10:49"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "605198",
+  "stock_name": "安德利",
+  "concept": "浓缩果汁生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "浓缩果汁生产",
+    "浓缩苹果汁"
+  ],
+  "should": [
+    "浓缩梨汁",
+    "果糖",
+    "浓缩柠檬汁",
+    "浓缩桃汁",
+    "浓缩草莓汁",
+    "先进的生产技术",
+    "精细化管理",
+    "饮料生产商",
+    "贸易商",
+    "苹果醋酿造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "浓缩果汁生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "浓缩苹果汁",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:02:59"
+}

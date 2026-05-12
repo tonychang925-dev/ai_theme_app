@@ -1,0 +1,46 @@
+{
+  "stock_id": "600468",
+  "stock_name": "百利电气",
+  "concept": "输配电及控制设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "输配电及控制设备",
+    "电线电缆",
+    "泵",
+    "超导电力技术"
+  ],
+  "should": [
+    "SVG",
+    "SVC",
+    "电磁线",
+    "线圈",
+    "定子嵌线",
+    "铜排",
+    "单螺杆泵",
+    "双螺杆泵",
+    "三螺杆泵",
+    "离心泵"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "输配电及控制设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电线电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "泵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超导电力技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:18:35"
+}

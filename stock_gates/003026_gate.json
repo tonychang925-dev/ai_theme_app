@@ -1,0 +1,46 @@
+{
+  "stock_id": "003026",
+  "stock_name": "中晶科技",
+  "concept": "半导体硅材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体硅材料",
+    "半导体晶棒",
+    "研磨硅片",
+    "半导体功率芯片及器件"
+  ],
+  "should": [
+    "抛光片",
+    "化腐片",
+    "单晶硅生长",
+    "硅片加工",
+    "功率芯片制造",
+    "功率二极管",
+    "功率晶体管",
+    "大功率整流器",
+    "晶闸管",
+    "过压/过流保护器件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体硅材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体晶棒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "研磨硅片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体功率芯片及器件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:08:05"
+}

@@ -1,0 +1,24 @@
+{
+  "stock_id": "688185",
+  "stock_name": "康希诺",
+  "concept": "创新疫苗研发",
+  "strategy_type": "industry_chain",
+  "must": [],
+  "should": [
+    "重组肺炎蛋白疫苗",
+    "重组结核病疫苗",
+    "合成疫苗技术",
+    "基于病毒载体技术",
+    "mRNA技术",
+    "蛋白结构设计和重组技术",
+    "制剂及给药技术",
+    "创新疫苗研发",
+    "预防埃博拉病毒病",
+    "预防脑膜炎"
+  ],
+  "not": [],
+  "evidence_refs": [],
+  "quality": "weak",
+  "must_count": 0,
+  "generated_at": "2026-05-11T20:11:03"
+}

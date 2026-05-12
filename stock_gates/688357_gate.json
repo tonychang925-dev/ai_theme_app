@@ -1,0 +1,36 @@
+{
+  "stock_id": "688357",
+  "stock_name": "建龙微纳",
+  "concept": "分子筛全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "成型分子筛",
+    "分子筛原粉"
+  ],
+  "should": [
+    "分子筛活化粉",
+    "活性氧化铝",
+    "分子筛全产业链",
+    "医疗保健制氧",
+    "工业制氧",
+    "制氢",
+    "气体干燥与净化",
+    "煤化工",
+    "石油化工",
+    "环境保护"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "成型分子筛",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分子筛原粉",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:16:23"
+}

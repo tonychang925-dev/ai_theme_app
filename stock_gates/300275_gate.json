@@ -1,0 +1,41 @@
+{
+  "stock_id": "300275",
+  "stock_name": "梅安森",
+  "concept": "矿山安全物联网",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤矿安全生产监测监控设备",
+    "成套安全保障系统",
+    "矿山安全物联网"
+  ],
+  "should": [
+    "智能感知",
+    "物联网",
+    "大数据分析",
+    "智能一体化污水处理装置",
+    "污染源在线监测系统",
+    "空气质量在线监测系统",
+    "ITSS运维服务",
+    "矿山安全",
+    "环保监测",
+    "整体解决方案提供商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤矿安全生产监测监控设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "成套安全保障系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "矿山安全物联网",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:20:41"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "000990",
+  "stock_name": "诚志股份",
+  "concept": "生命科技与化工新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生命医疗",
+    "D-核糖"
+  ],
+  "should": [
+    "清洁能源",
+    "半导体显示材料",
+    "液晶材料",
+    "大中华最大混合液晶供应商",
+    "工业气体",
+    "乙烯",
+    "丙烯",
+    "丁辛醇",
+    "洁净燃烧技术",
+    "UOP/HYDRO技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生命医疗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "D-核糖",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:12:38"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "002132",
+  "stock_name": "恒星科技",
+  "concept": "金刚线有机硅",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金刚线",
+    "有机硅"
+  ],
+  "should": [
+    "金属线材",
+    "单机16线镀槽机",
+    "母线自产",
+    "废砂复用",
+    "光伏晶硅切割",
+    "汽车轮胎",
+    "橡胶软管",
+    "电力电缆",
+    "架空电力线",
+    "高速铁路"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金刚线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有机硅",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:24:54"
+}

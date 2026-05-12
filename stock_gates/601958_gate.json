@@ -1,0 +1,41 @@
+{
+  "stock_id": "601958",
+  "stock_name": "金钼股份",
+  "concept": "钼业龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钼业龙头",
+    "国内钼行业龙头企业",
+    "钼精矿产能排名第一"
+  ],
+  "should": [
+    "钼炉料",
+    "钼化工",
+    "钼金属",
+    "钼矿采选",
+    "冶炼",
+    "深加工",
+    "钢铁工业",
+    "汽车喷涂",
+    "高温元件",
+    "农用肥料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钼业龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内钼行业龙头企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钼精矿产能排名第一",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:40:07"
+}

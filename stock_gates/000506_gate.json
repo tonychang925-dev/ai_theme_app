@@ -1,0 +1,46 @@
+{
+  "stock_id": "000506",
+  "stock_name": "招金黄金",
+  "concept": "黄金矿业开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "黄金矿业开发",
+    "黄金",
+    "矿业投资",
+    "房地产开发"
+  ],
+  "should": [
+    "金锭",
+    "黄金勘探",
+    "黄金开采",
+    "黄金冶炼",
+    "国家货币储备金",
+    "资产投资保值",
+    "个人首饰消费",
+    "工业及医疗原材料",
+    "斐济唯一在产矿山",
+    "大型金矿"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "黄金矿业开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "黄金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "矿业投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "房地产开发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:52:56"
+}

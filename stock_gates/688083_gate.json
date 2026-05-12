@@ -1,0 +1,41 @@
+{
+  "stock_id": "688083",
+  "stock_name": "中望软件",
+  "concept": "国产CAD",
+  "strategy_type": "industry_chain",
+  "must": [
+    "2D CAD",
+    "3D CAD",
+    "CAE"
+  ],
+  "should": [
+    "ZWCAD",
+    "ZW3D",
+    "Overdrive几何建模引擎",
+    "ZWMeshWorks",
+    "ZWSim-EM",
+    "ZWSimStructural",
+    "国产CAD",
+    "跨平台三维软光栅显示技术",
+    "高质量曲面建模",
+    "全机床仿真技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "2D CAD",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "3D CAD",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CAE",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:07:47"
+}

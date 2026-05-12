@@ -1,0 +1,41 @@
+{
+  "stock_id": "301345",
+  "stock_name": "涛涛车业",
+  "concept": "新能源智能出行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全地形车",
+    "电动滑板车",
+    "电动平衡车"
+  ],
+  "should": [
+    "电动高尔夫球车",
+    "电动自行车",
+    "锂电池动力",
+    "动态稳定技术",
+    "精密固态陀螺仪",
+    "伺服控制系统",
+    "短途交通代步",
+    "休闲娱乐",
+    "特种作业",
+    "全地形车出口国内前二"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全地形车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电动滑板车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电动平衡车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:03:23"
+}

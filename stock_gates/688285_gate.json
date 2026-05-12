@@ -1,0 +1,36 @@
+{
+  "stock_id": "688285",
+  "stock_name": "高铁电气",
+  "concept": "轨道交通供电装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轨道交通供电装备",
+    "电气化铁路接触网产品",
+    "城市轨道交通供电设备"
+  ],
+  "should": [
+    "接触轨",
+    "柔性悬挂",
+    "刚性悬挂",
+    "轨外产品",
+    "龙头企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轨道交通供电装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电气化铁路接触网产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市轨道交通供电设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:14:17"
+}

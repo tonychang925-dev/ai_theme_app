@@ -1,0 +1,41 @@
+{
+  "stock_id": "603979",
+  "stock_name": "金诚信",
+  "concept": "矿山开发服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "矿山开发服务",
+    "矿山工程建设",
+    "采矿运营管理"
+  ],
+  "should": [
+    "矿山设计与技术研发",
+    "矿建+服务",
+    "服务+资源",
+    "智慧矿山建设",
+    "自然崩落法",
+    "遥控和自动驾驶铲运机技术",
+    "大中型非煤类矿山",
+    "赞比亚",
+    "刚果（金）",
+    "塞尔维亚"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "矿山开发服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "矿山工程建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "采矿运营管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:00:15"
+}

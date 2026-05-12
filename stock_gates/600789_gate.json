@@ -1,0 +1,41 @@
+{
+  "stock_id": "600789",
+  "stock_name": "鲁抗医药",
+  "concept": "抗生素研发生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "抗生素研发生产",
+    "抗生素",
+    "全身抗感染类药物"
+  ],
+  "should": [
+    "心脑血管和降糖类",
+    "兽药制剂",
+    "农药制剂",
+    "发酵自控系统",
+    "合成自控系统",
+    "溶媒回收自控系统",
+    "主控芯片",
+    "固件开发",
+    "呼吸类",
+    "抗癌类"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "抗生素研发生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "抗生素",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全身抗感染类药物",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:27:44"
+}

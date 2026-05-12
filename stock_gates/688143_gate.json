@@ -1,0 +1,35 @@
+{
+  "stock_id": "688143",
+  "stock_name": "长盈通",
+  "concept": "光纤环器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光纤环器件",
+    "光纤陀螺"
+  ],
+  "should": [
+    "特种光纤",
+    "胶粘剂和涂覆材料",
+    "光器件设备及其他",
+    "光纤环产业化关键技术",
+    "保偏光纤自主量产能力",
+    "军用惯性导航",
+    "环-纤-胶-模块-设备一体化布局",
+    "主力供应商",
+    "独家供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光纤环器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光纤陀螺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:09:40"
+}

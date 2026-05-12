@@ -1,0 +1,41 @@
+{
+  "stock_id": "600901",
+  "stock_name": "江苏金租",
+  "concept": "金融租赁",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金融租赁",
+    "厂商租赁",
+    "小单零售"
+  ],
+  "should": [
+    "融资租赁",
+    "直租",
+    "售后回租",
+    "厂商合作模式",
+    "绿色能源",
+    "汽车金融",
+    "高端装备",
+    "基础设施",
+    "交通运输",
+    "能源环保"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金融租赁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "厂商租赁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小单零售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:30:56"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "301069",
+  "stock_name": "凯盛新材",
+  "concept": "精细化工中间体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "氯化亚砜",
+    "芳纶聚合单体"
+  ],
+  "should": [
+    "聚醚酮酮(PEKK)",
+    "对硝基苯甲酰氯",
+    "氯醚",
+    "精细化工中间体",
+    "亲电取代法合成PEKK",
+    "浓度梯度差量控制工艺",
+    "金属离子高温洗脱技术",
+    "锂亚电池电解液",
+    "新型动力锂电池电解质",
+    "芳纶聚合"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "氯化亚砜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "芳纶聚合单体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:55:18"
+}

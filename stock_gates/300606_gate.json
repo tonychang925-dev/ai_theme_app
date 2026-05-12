@@ -1,0 +1,36 @@
+{
+  "stock_id": "300606",
+  "stock_name": "金太阳",
+  "concept": "精密研磨抛光",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高档涂附磨具产品",
+    "自动化生产线",
+    "新型精密抛光材料"
+  ],
+  "should": [
+    "高端智能装备",
+    "精密结构件",
+    "精密研磨抛光",
+    "柔性加工能力",
+    "国产替代"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高档涂附磨具产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自动化生产线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新型精密抛光材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:34:55"
+}

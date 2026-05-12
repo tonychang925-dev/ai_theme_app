@@ -1,0 +1,36 @@
+{
+  "stock_id": "603866",
+  "stock_name": "桃李面包",
+  "concept": "短保面包龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "短保面包龙头",
+    "面包及糕点"
+  ],
+  "should": [
+    "月饼",
+    "粽子",
+    "直营",
+    "经销",
+    "中央工厂+批发",
+    "一级物流",
+    "二级物流",
+    "东北市场",
+    "华北地区",
+    "空白市场"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "短保面包龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "面包及糕点",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:57:40"
+}

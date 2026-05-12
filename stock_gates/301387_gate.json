@@ -1,0 +1,35 @@
+{
+  "stock_id": "301387",
+  "stock_name": "光大同创",
+  "concept": "消费电子防护",
+  "strategy_type": "industry_chain",
+  "must": [
+    "消费电子防护",
+    "防护性产品",
+    "功能性产品"
+  ],
+  "should": [
+    "碳纤维背板",
+    "个人电脑",
+    "智能手机",
+    "智能穿戴设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "消费电子防护",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "防护性产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功能性产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:04:28"
+}

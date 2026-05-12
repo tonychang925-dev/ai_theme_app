@@ -1,0 +1,41 @@
+{
+  "stock_id": "002351",
+  "stock_name": "漫步者",
+  "concept": "音频品牌",
+  "strategy_type": "industry_chain",
+  "must": [
+    "音频品牌",
+    "智能耳机",
+    "漫步者"
+  ],
+  "should": [
+    "多媒体音响",
+    "TWS系列",
+    "NB系列",
+    "LolliPods系列",
+    "静电耳机",
+    "音频技术",
+    "声迈",
+    "Volona",
+    "STAX",
+    "教育耳机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "音频品牌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能耳机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "漫步者",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:37:16"
+}

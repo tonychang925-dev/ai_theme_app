@@ -1,0 +1,36 @@
+{
+  "stock_id": "605259",
+  "stock_name": "绿田机械",
+  "concept": "高压清洁设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高压清洗机",
+    "高压清洁设备"
+  ],
+  "should": [
+    "发电机组",
+    "水泵机组",
+    "发动机",
+    "高压水射流技术",
+    "农业灌溉",
+    "园林浇灌",
+    "应急抽排水",
+    "家庭应急供电",
+    "汽车清洁美容",
+    "建筑物清洗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高压清洗机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高压清洁设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:03:12"
+}

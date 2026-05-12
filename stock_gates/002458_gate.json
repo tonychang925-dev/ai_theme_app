@@ -1,0 +1,41 @@
+{
+  "stock_id": "002458",
+  "stock_name": "益生股份",
+  "concept": "白羽种鸡龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "白羽种鸡龙头",
+    "种鸡",
+    "种猪"
+  ],
+  "should": [
+    "祖代肉种鸡引进与饲养",
+    "父母代肉种鸡雏鸡生产与销售",
+    "商品代肉鸡雏鸡生产与销售",
+    "利丰新品系白羽肉鸡",
+    "益生909小型白羽肉鸡",
+    "活鸡杀白条鸡",
+    "屠宰分割",
+    "替代三黄鸡屠宰加工",
+    "祖代白羽肉鸡行业龙头",
+    "外销白羽肉鸡苗数量最多"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "白羽种鸡龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "种鸡",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "种猪",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:42:37"
+}

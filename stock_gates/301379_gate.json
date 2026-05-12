@@ -1,0 +1,31 @@
+{
+  "stock_id": "301379",
+  "stock_name": "天山电子",
+  "concept": "专业显示模组",
+  "strategy_type": "industry_chain",
+  "must": [
+    "专业显示模组"
+  ],
+  "should": [
+    "单色液晶显示模组",
+    "彩色液晶显示模组",
+    "单色液晶显示屏",
+    "智能家居",
+    "智能金融数据终端",
+    "通讯设备",
+    "工业控制及自动化",
+    "民生能源",
+    "健康医疗",
+    "车载电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "专业显示模组",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:04:15"
+}

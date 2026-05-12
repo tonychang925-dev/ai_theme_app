@@ -1,0 +1,41 @@
+{
+  "stock_id": "600778",
+  "stock_name": "友好集团",
+  "concept": "新疆商业零售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大型综合超市",
+    "社区便利店",
+    "标准超市"
+  ],
+  "should": [
+    "百货商场",
+    "购物中心",
+    "超市便利店",
+    "联营",
+    "自营",
+    "租赁",
+    "品牌资源库",
+    "首店指标",
+    "数智化转型",
+    "线上营销平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大型综合超市",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "社区便利店",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "标准超市",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:27:28"
+}

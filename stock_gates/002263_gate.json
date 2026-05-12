@@ -1,0 +1,46 @@
+{
+  "stock_id": "002263",
+  "stock_name": "大东南",
+  "concept": "薄膜新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "薄膜新材料",
+    "BOPET膜",
+    "BOPP电容膜",
+    "光学级薄膜"
+  ],
+  "should": [
+    "CPP膜",
+    "改性原料研发",
+    "高性能高分子膜联合实验室",
+    "高分子材料实验室",
+    "差异化产品研发",
+    "特高压输变电",
+    "智能电网",
+    "消费电子",
+    "平板显示",
+    "光伏"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "薄膜新材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "BOPET膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "BOPP电容膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光学级薄膜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:32:18"
+}

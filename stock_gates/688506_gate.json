@@ -1,0 +1,24 @@
+{
+  "stock_id": "688506",
+  "stock_name": "百利天恒",
+  "concept": "创新生物药",
+  "strategy_type": "industry_chain",
+  "must": [],
+  "should": [
+    "仿制药",
+    "中成药",
+    "SI-B001",
+    "SI-B003",
+    "创新生物药",
+    "创新药物",
+    "非小细胞肺癌",
+    "鼻咽癌",
+    "结直肠癌",
+    "乳腺癌"
+  ],
+  "not": [],
+  "evidence_refs": [],
+  "quality": "weak",
+  "must_count": 0,
+  "generated_at": "2026-05-11T20:19:16"
+}

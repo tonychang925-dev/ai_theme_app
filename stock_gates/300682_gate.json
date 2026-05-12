@@ -1,0 +1,41 @@
+{
+  "stock_id": "300682",
+  "stock_name": "朗新科技",
+  "concept": "能源数字化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "能源互联网",
+    "新电途聚合充电平台",
+    "虚拟电厂"
+  ],
+  "should": [
+    "聚合充电平台",
+    "新耀光伏云平台",
+    "售电牌照",
+    "平台产品",
+    "能源数字化",
+    "电力能源数字化升级",
+    "电动汽车充电",
+    "家庭能源消费",
+    "能效管理",
+    "第三方中立平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "能源互联网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新电途聚合充电平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "虚拟电厂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:38:42"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "000027",
+  "stock_name": "深圳能源",
+  "concept": "清洁能源综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "清洁能源综合服务",
+    "绿色电力",
+    "生态环保",
+    "综合燃气",
+    "能源国际"
+  ],
+  "should": [
+    "城市固废处理",
+    "废水处理",
+    "环卫一体化",
+    "餐厨处理",
+    "城市燃气供应",
+    "高压管网",
+    "LNG接收站",
+    "天然气贸易",
+    "燃煤发电",
+    "天然气发电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "清洁能源综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "绿色电力",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生态环保",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合燃气",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "能源国际",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:47:21"
+}

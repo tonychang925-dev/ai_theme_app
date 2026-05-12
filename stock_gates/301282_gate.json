@@ -1,0 +1,31 @@
+{
+  "stock_id": "301282",
+  "stock_name": "金禄电子",
+  "concept": "汽车电子PCB",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车电子PCB",
+    "BMS用PCB板"
+  ],
+  "should": [
+    "三电系统PCB",
+    "储能",
+    "宁德时代BMS用PCB最大供应商",
+    "宁德时代PCB采购占比60%",
+    "大电流大电压需求的PCB技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车电子PCB",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "BMS用PCB板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:01:45"
+}

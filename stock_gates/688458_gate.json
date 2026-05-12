@@ -1,0 +1,31 @@
+{
+  "stock_id": "688458",
+  "stock_name": "美芯晟",
+  "concept": "模拟芯片设计",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高性能模拟及数模混合芯片",
+    "无线充电芯片"
+  ],
+  "should": [
+    "LED照明驱动芯片",
+    "模拟芯片设计",
+    "主控芯片",
+    "固件开发",
+    "国家级专精特新‘小巨人’"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高性能模拟及数模混合芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无线充电芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:18:33"
+}

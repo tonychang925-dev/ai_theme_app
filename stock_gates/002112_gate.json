@@ -1,0 +1,51 @@
+{
+  "stock_id": "002112",
+  "stock_name": "三变科技",
+  "concept": "输变电设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "输变电设备",
+    "油浸式电力变压器",
+    "树脂绝缘干式变压器",
+    "组合式变电站",
+    "特种变压器"
+  ],
+  "should": [
+    "防腐型石化专用变压器",
+    "地埋式变压器",
+    "风电场组合式变压器",
+    "非晶合金变压器",
+    "单相自保护变压器",
+    "电缆分支箱",
+    "环网柜",
+    "开关柜",
+    "低损耗",
+    "低噪声"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "输变电设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "油浸式电力变压器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "树脂绝缘干式变压器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "组合式变电站",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种变压器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:24:01"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "002635",
+  "stock_name": "安洁科技",
+  "concept": "精密零部件制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "一站式精密制造平台",
+    "精密功能器件",
+    "精密结构件",
+    "模组类产品"
+  ],
+  "should": [
+    "大功率无线充电系统",
+    "氢燃料电池核心部件",
+    "硬盘顶盖",
+    "磁盘夹具",
+    "磁盘分离器",
+    "无线充电磁性材料",
+    "散热屏蔽技术",
+    "精密零部件制造",
+    "一站式精密制造",
+    "模具制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "一站式精密制造平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密功能器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密结构件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "模组类产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:50:59"
+}

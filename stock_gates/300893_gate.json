@@ -1,0 +1,46 @@
+{
+  "stock_id": "300893",
+  "stock_name": "松原安全",
+  "concept": "汽车被动安全",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车被动安全",
+    "汽车安全带总成",
+    "安全气囊",
+    "方向盘"
+  ],
+  "should": [
+    "预紧限力安全带",
+    "特殊座椅安全装置",
+    "主动安全带",
+    "电机式安全带",
+    "集成主被动可逆预紧式安全带总成",
+    "乘用车",
+    "商用车",
+    "特殊座椅",
+    "智能驾驶",
+    "一级供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车被动安全",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车安全带总成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "安全气囊",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "方向盘",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:48:06"
+}

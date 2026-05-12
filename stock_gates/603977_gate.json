@@ -1,0 +1,48 @@
+{
+  "stock_id": "603977",
+  "stock_name": "国泰集团",
+  "concept": "民爆器材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "民爆器材",
+    "工业炸药",
+    "工业雷管",
+    "工业索类",
+    "爆破工程"
+  ],
+  "should": [
+    "乳化炸药",
+    "改性铵油炸药",
+    "管索系列",
+    "现场混装炸药技术",
+    "采矿业",
+    "基础建设业",
+    "江西省内最大的民爆器械生产企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "民爆器材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业炸药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业雷管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业索类",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "爆破工程",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:00:01"
+}

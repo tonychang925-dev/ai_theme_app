@@ -1,0 +1,41 @@
+{
+  "stock_id": "002343",
+  "stock_name": "慈文传媒",
+  "concept": "泛文娱运营商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "影视剧投资、制作及发行",
+    "泛文娱产业优质运营商",
+    "自有IP"
+  ],
+  "should": [
+    "艺人经纪",
+    "游戏产品及渠道推广",
+    "电视剧",
+    "网络剧",
+    "电影",
+    "网络电影",
+    "泛文娱运营商",
+    "互动剧",
+    "VR内容",
+    "精品原创"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "影视剧投资、制作及发行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "泛文娱产业优质运营商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自有IP",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:36:36"
+}

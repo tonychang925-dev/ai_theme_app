@@ -1,0 +1,41 @@
+{
+  "stock_id": "600569",
+  "stock_name": "安阳钢铁",
+  "concept": "钢铁联合企业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钢铁联合企业",
+    "风电用钢",
+    "水电用钢"
+  ],
+  "should": [
+    "中厚板",
+    "热轧卷板",
+    "冷轧卷板",
+    "高速线材",
+    "建材",
+    "型材",
+    "低碳节能技术改造",
+    "煤气回收攻关",
+    "固废综合利用",
+    "信息化与工业化深度融合"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钢铁联合企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电用钢",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水电用钢",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:21:22"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300488",
+  "stock_name": "恒锋工具",
+  "concept": "精密刀具专家",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密刀具专家",
+    "精密复杂刃量具",
+    "精密高效刀具"
+  ],
+  "should": [
+    "高端生产性服务",
+    "专用高速钢材料开发应用技术",
+    "全系列高速钢热处理技术",
+    "精密花键在线测量技术",
+    "硬质合金高强度钎焊技术",
+    "螺旋拉削成套技术",
+    "60米高速拉削技术",
+    "冷挤压成型技术",
+    "航空发动机涡轮盘榫槽加工技术",
+    "航空航天"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密刀具专家",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密复杂刃量具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密高效刀具",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:29:36"
+}

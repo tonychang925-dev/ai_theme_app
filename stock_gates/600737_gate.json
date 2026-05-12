@@ -1,0 +1,41 @@
+{
+  "stock_id": "600737",
+  "stock_name": "中粮糖业",
+  "concept": "食糖番茄双链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "食糖",
+    "番茄制品",
+    "世界最大番茄制品生产企业"
+  ],
+  "should": [
+    "制糖",
+    "进口及港口炼糖",
+    "烘焙糖",
+    "饮料用糖",
+    "番茄丁",
+    "披萨酱",
+    "意面酱",
+    "国内贸易",
+    "仓储物流",
+    "品牌渠道"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "食糖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "番茄制品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "世界最大番茄制品生产企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:26:21"
+}

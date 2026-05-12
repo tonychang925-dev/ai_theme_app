@@ -1,0 +1,36 @@
+{
+  "stock_id": "688355",
+  "stock_name": "明志科技",
+  "concept": "装备铸件双驱",
+  "strategy_type": "industry_chain",
+  "must": [
+    "制芯装备",
+    "铝合金铸件"
+  ],
+  "should": [
+    "精密组芯铸造工艺",
+    "集成式智能制芯单元技术",
+    "智能制芯控制系统软件1.0",
+    "装备铸件双驱",
+    "壁挂炉",
+    "轨道交通",
+    "汽车",
+    "热能工程",
+    "高端制芯装备国产替代",
+    "海外市场拓展"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "制芯装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铝合金铸件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:16:17"
+}

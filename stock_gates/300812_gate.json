@@ -1,0 +1,45 @@
+{
+  "stock_id": "300812",
+  "stock_name": "易天股份",
+  "concept": "平板显示模组设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "平板显示模组设备",
+    "偏光片贴附系列设备",
+    "背光组装系列设备",
+    "全贴合系列设备"
+  ],
+  "should": [
+    "清洗设备",
+    "邦定设备",
+    "全自动偏光片贴附技术",
+    "Mini LED巨量转移技术",
+    "半导体微组装设备",
+    "Mini LED巨量转移生产设备",
+    "其他自动化专用设备",
+    "SHEET贴附方式",
+    "模块化经营模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "平板显示模组设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "偏光片贴附系列设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "背光组装系列设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全贴合系列设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:44:15"
+}

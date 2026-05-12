@@ -1,0 +1,41 @@
+{
+  "stock_id": "002081",
+  "stock_name": "金螳螂",
+  "concept": "装饰龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "装饰龙头",
+    "EPC总承包",
+    "装饰行业百强第1名"
+  ],
+  "should": [
+    "室内装饰",
+    "酒店装饰",
+    "幕墙",
+    "景观",
+    "软装",
+    "家具",
+    "机电设备安装",
+    "文体会展建筑装饰",
+    "商业建筑装饰",
+    "交通运输基础设施装饰"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "装饰龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "EPC总承包",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "装饰行业百强第1名",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:22:13"
+}

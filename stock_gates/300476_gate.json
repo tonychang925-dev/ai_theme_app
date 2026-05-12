@@ -1,0 +1,51 @@
+{
+  "stock_id": "300476",
+  "stock_name": "胜宏科技",
+  "concept": "AI PCB 领军",
+  "strategy_type": "industry_chain",
+  "must": [
+    "AI PCB 领军",
+    "高阶HDI",
+    "高多层PCB",
+    "AI算力卡",
+    "AI及通用服务器"
+  ],
+  "should": [
+    "数据中心交换机",
+    "光模块",
+    "英伟达供应商",
+    "AMD供应商",
+    "英特尔供应商",
+    "特斯拉供应商",
+    "微软供应商",
+    "博世供应商",
+    "亚马逊供应商",
+    "谷歌供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "AI PCB 领军",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高阶HDI",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高多层PCB",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AI算力卡",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AI及通用服务器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:29:02"
+}

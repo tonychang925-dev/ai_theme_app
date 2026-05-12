@@ -1,0 +1,41 @@
+{
+  "stock_id": "300823",
+  "stock_name": "建科智能",
+  "concept": "智能钢筋加工装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能钢筋加工装备",
+    "数控钢筋加工装备",
+    "钢筋加工机器人装备"
+  ],
+  "should": [
+    "计算机数字程序控制技术",
+    "智能化技术",
+    "高速铁路",
+    "高速公路",
+    "桥梁隧道",
+    "装配式建筑",
+    "城市综合地下管廊",
+    "城市轨道交通",
+    "钢筋加工配送中心",
+    "国内最大"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能钢筋加工装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数控钢筋加工装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钢筋加工机器人装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:44:36"
+}

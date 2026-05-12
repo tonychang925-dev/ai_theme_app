@@ -1,0 +1,43 @@
+{
+  "stock_id": "688556",
+  "stock_name": "高测股份",
+  "concept": "光伏切割一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏切割一体化",
+    "切割设备",
+    "金刚线耗材",
+    "硅片及切割加工服务"
+  ],
+  "should": [
+    "轮胎测试设备",
+    "大尺寸+薄片化切割",
+    "金刚线细线化",
+    "切片代工工艺",
+    "光伏切割设备龙头",
+    "金刚线市占率11%",
+    "切片代工新模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏切割一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "切割设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金刚线耗材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硅片及切割加工服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:20:23"
+}

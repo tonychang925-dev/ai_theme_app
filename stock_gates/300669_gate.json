@@ -1,0 +1,38 @@
+{
+  "stock_id": "300669",
+  "stock_name": "沪宁股份",
+  "concept": "电梯安全部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电梯安全部件",
+    "安全钳",
+    "缓冲器"
+  ],
+  "should": [
+    "滚轮导靴",
+    "新梯市场",
+    "改造梯市场",
+    "加装电梯市场",
+    "家用电梯市场",
+    "市场占有率20%-25%",
+    "连续五年销量排名第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电梯安全部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "安全钳",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "缓冲器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:37:58"
+}

@@ -1,0 +1,49 @@
+{
+  "stock_id": "000537",
+  "stock_name": "绿发电力",
+  "concept": "新能源发电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源发电",
+    "海上风电",
+    "陆地风电",
+    "光伏发电",
+    "储能"
+  ],
+  "should": [
+    "光热发电",
+    "清洁能源基地",
+    "大型风光基地",
+    "多能互补集成开发",
+    "风光热储调荷智能调度",
+    "新能源资产开发",
+    "项目储备",
+    "滚动开发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海上风电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "陆地风电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:55:11"
+}

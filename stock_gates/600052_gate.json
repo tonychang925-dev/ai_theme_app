@@ -1,0 +1,31 @@
+{
+  "stock_id": "600052",
+  "stock_name": "东望时代",
+  "concept": "校园节能服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高校热水供应服务",
+    "校园热水供应系统"
+  ],
+  "should": [
+    "校园节能服务",
+    "智能-节能技术",
+    "节能技术研发",
+    "智慧校园信息化建设",
+    "智慧后勤整体解决方案"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高校热水供应服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "校园热水供应系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:07:56"
+}

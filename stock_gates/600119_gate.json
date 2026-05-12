@@ -1,0 +1,36 @@
+{
+  "stock_id": "600119",
+  "stock_name": "长江投资",
+  "concept": "气象探空仪",
+  "strategy_type": "industry_chain",
+  "must": [
+    "气象高空数字探空仪系列",
+    "气象探空仪"
+  ],
+  "should": [
+    "电场探空仪",
+    "真风算法",
+    "智能风传感器",
+    "新型智能基测箱",
+    "小型气象站",
+    "校园气象站",
+    "农田小气候站",
+    "暴雨强度公式修订及雨型研究项目",
+    "气象科创课程",
+    "全自动生产线改造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "气象高空数字探空仪系列",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "气象探空仪",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:09:41"
+}

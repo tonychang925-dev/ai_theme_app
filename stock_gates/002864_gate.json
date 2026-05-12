@@ -1,0 +1,31 @@
+{
+  "stock_id": "002864",
+  "stock_name": "盘龙药业",
+  "concept": "风湿骨科中成药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "盘龙七片"
+  ],
+  "should": [
+    "骨松宝片",
+    "风湿骨科中成药",
+    "膝骨关节炎",
+    "类风湿关节炎",
+    "强直性脊柱炎",
+    "骨折骨痛",
+    "预防骨质疏松",
+    "中老年人群",
+    "独家生产",
+    "国家医保甲类药品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "盘龙七片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:00:44"
+}

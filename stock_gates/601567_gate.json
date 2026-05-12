@@ -1,0 +1,41 @@
+{
+  "stock_id": "601567",
+  "stock_name": "三星医疗",
+  "concept": "智能配用电与医疗服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能配用电与医疗服务",
+    "智能电表",
+    "康复医院"
+  ],
+  "should": [
+    "感应式电能表",
+    "电子式电能表",
+    "预装式变电站(光伏)",
+    "预装式变电站(风变)",
+    "风力变压器",
+    "光伏逆变器",
+    "充电桩",
+    "品牌优势",
+    "差异销售策略",
+    "整体解决方案"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能配用电与医疗服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能电表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "康复医院",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:37:03"
+}

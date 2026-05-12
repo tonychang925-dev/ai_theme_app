@@ -1,0 +1,46 @@
+{
+  "stock_id": "300850",
+  "stock_name": "新强联",
+  "concept": "风电轴承",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风电轴承",
+    "主轴轴承",
+    "偏航变桨轴承",
+    "齿轮箱轴承"
+  ],
+  "should": [
+    "独立变桨轴承",
+    "无软带淬火工艺",
+    "独立变桨技术",
+    "单点式支承技术",
+    "风力发电",
+    "盾构机",
+    "海工装备",
+    "国内首个风电轴承全布局企业",
+    "国内创新型高端轴承龙头企业",
+    "大兆瓦主轴轴承国内领先"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风电轴承",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "主轴轴承",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "偏航变桨轴承",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "齿轮箱轴承",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:45:56"
+}

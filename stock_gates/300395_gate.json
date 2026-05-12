@@ -1,0 +1,41 @@
+{
+  "stock_id": "300395",
+  "stock_name": "菲利华",
+  "concept": "高端石英玻璃",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端石英玻璃",
+    "石英玻璃材料",
+    "石英玻璃纤维"
+  ],
+  "should": [
+    "石英玻璃制品",
+    "石英玻璃纤维材料",
+    "复合材料及制品",
+    "气熔石英玻璃",
+    "合成石英玻璃",
+    "电熔石英玻璃",
+    "航空航天",
+    "半导体",
+    "光通讯",
+    "高端光学"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端石英玻璃",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "石英玻璃材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "石英玻璃纤维",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:25:24"
+}

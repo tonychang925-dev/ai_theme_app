@@ -1,0 +1,51 @@
+{
+  "stock_id": "600299",
+  "stock_name": "安迪苏",
+  "concept": "动物营养添加剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "动物营养添加剂",
+    "蛋氨酸",
+    "过瘤胃包被蛋氨酸",
+    "液体蛋氨酸生产",
+    "固体蛋氨酸生产"
+  ],
+  "should": [
+    "维生素",
+    "硫酸铵",
+    "硫酸钠",
+    "酶",
+    "溶血卵磷脂",
+    "喜利硒",
+    "安泰来",
+    "健肠宝",
+    "水产饲料添加剂",
+    "斐康蛋白"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "动物营养添加剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蛋氨酸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "过瘤胃包被蛋氨酸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液体蛋氨酸生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "固体蛋氨酸生产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:14:24"
+}

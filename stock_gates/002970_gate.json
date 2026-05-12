@@ -1,0 +1,41 @@
+{
+  "stock_id": "002970",
+  "stock_name": "锐明技术",
+  "concept": "车载视频监控",
+  "strategy_type": "industry_chain",
+  "must": [
+    "车载视频监控",
+    "车载监控终端系统",
+    "智能视频终端系统"
+  ],
+  "should": [
+    "驾驶员行为监测系统",
+    "高级辅助驾驶系统",
+    "盲区行人监测系统",
+    "安全驾驶舱监测系统",
+    "防偷油系统",
+    "防货物丢失损坏系统",
+    "公交客流统计平台",
+    "出租车辅助刹车系统",
+    "人工智能",
+    "高清视频"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "车载视频监控",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载监控终端系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能视频终端系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:05:42"
+}

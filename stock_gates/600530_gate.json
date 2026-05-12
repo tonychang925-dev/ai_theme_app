@@ -1,0 +1,30 @@
+{
+  "stock_id": "600530",
+  "stock_name": "交大昂立",
+  "concept": "保健品与医养服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "保健品与医养服务"
+  ],
+  "should": [
+    "益生菌菌粉",
+    "植物提取物",
+    "自营营利性老年医疗护理机构",
+    "线下实体店",
+    "线上电商",
+    "电视购物",
+    "老年群体",
+    "医疗护理",
+    "康复理疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "保健品与医养服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:20:26"
+}

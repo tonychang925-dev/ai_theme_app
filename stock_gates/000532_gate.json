@@ -1,0 +1,36 @@
+{
+  "stock_id": "000532",
+  "stock_name": "华金资本",
+  "concept": "产融结合",
+  "strategy_type": "industry_chain",
+  "must": [
+    "投资与管理",
+    "电子设备制造"
+  ],
+  "should": [
+    "电子器件制造",
+    "水质净化",
+    "医疗器械业",
+    "新能源自动化生产设备",
+    "铝电解电容器",
+    "锂电池组装线技术",
+    "锂电池大圆柱卷绕机技术",
+    "高速卷绕机技术",
+    "产融结合",
+    "新能源汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "投资与管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子设备制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:54:55"
+}

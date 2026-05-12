@@ -1,0 +1,40 @@
+{
+  "stock_id": "002366",
+  "stock_name": "融发核电",
+  "concept": "核电装备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "核电主管道",
+    "高端核级材料制造技术",
+    "核电主泵泵壳"
+  ],
+  "should": [
+    "高端奥氏体不锈钢锻件制造",
+    "主泵泵壳国产化技术",
+    "核电主设备支承铸件",
+    "核电装备制造",
+    "石化装备产品",
+    "其他行业用高端材料",
+    "核岛主管道设备领先地位",
+    "核后处理装备领先地位",
+    "核岛装备材料研制先行者"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "核电主管道",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端核级材料制造技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核电主泵泵壳",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:37:56"
+}

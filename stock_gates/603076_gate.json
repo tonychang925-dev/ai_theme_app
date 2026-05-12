@@ -1,0 +1,41 @@
+{
+  "stock_id": "603076",
+  "stock_name": "乐惠国际",
+  "concept": "啤酒设备与精酿",
+  "strategy_type": "industry_chain",
+  "must": [
+    "啤酒设备与精酿",
+    "啤酒酿造设备",
+    "无菌灌装设备"
+  ],
+  "should": [
+    "精酿啤酒",
+    "智能售酒机",
+    "易拉罐无菌灌装线",
+    "Cutebrw当日鲜",
+    "keg桶无菌灌装机",
+    "啤酒高端化",
+    "精酿啤酒市场",
+    "包装机械市场",
+    "啤酒设备领军企业",
+    "海外业务占比提高"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "啤酒设备与精酿",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "啤酒酿造设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无菌灌装设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:42:54"
+}

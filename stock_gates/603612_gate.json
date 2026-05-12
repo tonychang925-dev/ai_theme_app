@@ -1,0 +1,33 @@
+{
+  "stock_id": "603612",
+  "stock_name": "索通发展",
+  "concept": "预焙阳极龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "预焙阳极龙头",
+    "预焙阳极"
+  ],
+  "should": [
+    "低消耗高电流密度绿色节能预焙阳极",
+    "铝工业电解槽",
+    "最大石油焦采购商",
+    "市占率第一",
+    "出口份额领先",
+    "规模优势",
+    "原材料成本壁垒"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "预焙阳极龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "预焙阳极",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:53:16"
+}

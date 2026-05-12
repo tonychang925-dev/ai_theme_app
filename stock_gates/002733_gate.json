@@ -1,0 +1,46 @@
+{
+  "stock_id": "002733",
+  "stock_name": "雄韬股份",
+  "concept": "铅酸锂电龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铅酸锂电龙头",
+    "IDC数据中心",
+    "阀控式密封铅酸蓄电池",
+    "锂离子电池"
+  ],
+  "should": [
+    "燃料电池",
+    "钠离子电池",
+    "CTB技术",
+    "高压化成/分容工艺",
+    "容量富余化设计",
+    "高精密防爆压力阀",
+    "单体短路保护结构",
+    "通信",
+    "电动交通工具",
+    "储能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铅酸锂电龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IDC数据中心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "阀控式密封铅酸蓄电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂离子电池",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:55:27"
+}

@@ -1,0 +1,34 @@
+{
+  "stock_id": "603369",
+  "stock_name": "今世缘",
+  "concept": "江苏白酒品牌",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国缘",
+    "今世缘"
+  ],
+  "should": [
+    "高沟",
+    "江苏白酒品牌",
+    "中国高端中度白酒",
+    "中国人的喜酒",
+    "正宗苏派老名酒",
+    "1+1+1+N深度协同",
+    "控价分利",
+    "大区制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国缘",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "今世缘",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:50:15"
+}

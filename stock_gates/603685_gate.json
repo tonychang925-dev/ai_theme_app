@@ -1,0 +1,35 @@
+{
+  "stock_id": "603685",
+  "stock_name": "晨丰科技",
+  "concept": "照明结构组件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "照明结构组件",
+    "LED灯泡散热器",
+    "灯头类"
+  ],
+  "should": [
+    "印制电路板",
+    "灯具金属件",
+    "LED照明",
+    "传统照明"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "照明结构组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LED灯泡散热器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "灯头类",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:54:41"
+}

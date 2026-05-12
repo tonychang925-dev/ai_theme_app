@@ -1,0 +1,41 @@
+{
+  "stock_id": "601011",
+  "stock_name": "宝泰隆",
+  "concept": "煤化工与新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "石墨烯",
+    "磷酸铁锂",
+    "页岩气"
+  ],
+  "should": [
+    "焦炭",
+    "甲醇",
+    "针状焦",
+    "氢气提纯",
+    "轻烃改造",
+    "石墨烯导热膜",
+    "针状焦萃取",
+    "加氢站项目",
+    "氢能",
+    "热管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "石墨烯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磷酸铁锂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "页岩气",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:33:20"
+}

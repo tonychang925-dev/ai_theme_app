@@ -1,0 +1,33 @@
+{
+  "stock_id": "002396",
+  "stock_name": "星网锐捷",
+  "concept": "网络设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数据中心交换机",
+    "企业级网络设备"
+  ],
+  "should": [
+    "通讯产品",
+    "网络终端",
+    "网络设备",
+    "自主创新",
+    "集成再创新",
+    "数据中心",
+    "互联网"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数据中心交换机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "企业级网络设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:39:31"
+}

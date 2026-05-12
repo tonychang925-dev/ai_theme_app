@@ -1,0 +1,39 @@
+{
+  "stock_id": "600100",
+  "stock_name": "同方股份",
+  "concept": "科研成果产业化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "核技术应用",
+    "数字信息",
+    "智慧能源管理"
+  ],
+  "should": [
+    "安检设备",
+    "矿石智能分选",
+    "新能源电池检测",
+    "零碳园区",
+    "碳纳米管冷阴极分布式X射线源",
+    "金矿品位分析技术",
+    "科研成果产业化",
+    "节能环保"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "核技术应用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字信息",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧能源管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:09:04"
+}

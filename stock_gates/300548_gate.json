@@ -1,0 +1,46 @@
+{
+  "stock_id": "300548",
+  "stock_name": "长芯博创",
+  "concept": "光电子器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "集成光电子器件",
+    "光电子器件",
+    "有源光缆",
+    "光收发模块"
+  ],
+  "should": [
+    "PLC光分路器",
+    "综合布线",
+    "光电芯片",
+    "光电模组",
+    "硅光",
+    "CPO",
+    "铜缆",
+    "系统解决方案",
+    "全球AOC出货量领先",
+    "MPO连接器技术领先"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "集成光电子器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光电子器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有源光缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光收发模块",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:32:19"
+}

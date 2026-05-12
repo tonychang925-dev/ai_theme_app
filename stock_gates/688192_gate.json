@@ -1,0 +1,38 @@
+{
+  "stock_id": "688192",
+  "stock_name": "迪哲医药",
+  "concept": "创新驱动生物医药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "舒沃替尼",
+    "戈利昔替尼",
+    "转化医学"
+  ],
+  "should": [
+    "DZD8586",
+    "DZD1516",
+    "DZD2269",
+    "创新驱动生物医药",
+    "恶性肿瘤",
+    "自身免疫性疾病",
+    "肾病"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "舒沃替尼",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "戈利昔替尼",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "转化医学",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:11:20"
+}

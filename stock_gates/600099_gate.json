@@ -1,0 +1,24 @@
+{
+  "stock_id": "600099",
+  "stock_name": "林海股份",
+  "concept": "小型机械装备",
+  "strategy_type": "industry_chain",
+  "must": [],
+  "should": [
+    "摩托车",
+    "踏板摩托车",
+    "小型机械装备",
+    "小型动力及配套机械制造",
+    "关键零部件技术",
+    "排放控制技术",
+    "中国机械工业集团旗下",
+    "央企背景",
+    "国内一流生产制造系统",
+    "国内领先技术水平"
+  ],
+  "not": [],
+  "evidence_refs": [],
+  "quality": "weak",
+  "must_count": 0,
+  "generated_at": "2026-05-11T19:09:02"
+}

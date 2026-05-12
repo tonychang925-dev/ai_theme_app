@@ -1,0 +1,46 @@
+{
+  "stock_id": "002960",
+  "stock_name": "青鸟消防",
+  "concept": "消防安全系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "通用消防报警",
+    "储能消防",
+    "应急疏散",
+    "泛工业消防"
+  ],
+  "should": [
+    "消防安全系统",
+    "朱鹮芯片",
+    "热解粒子探测",
+    "储能电站",
+    "PACK级解决方案",
+    "簇级解决方案",
+    "舱级解决方案",
+    "站级解决方案",
+    "自研协议",
+    "本安型火焰探测"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "通用消防报警",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能消防",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "应急疏散",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "泛工业消防",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:05:05"
+}

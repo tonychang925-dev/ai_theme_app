@@ -1,0 +1,46 @@
+{
+  "stock_id": "600690",
+  "stock_name": "海尔智家",
+  "concept": "全球家电龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "冰箱",
+    "洗衣机",
+    "空调",
+    "卡萨帝"
+  ],
+  "should": [
+    "热水器",
+    "厨电",
+    "净水器",
+    "GEA",
+    "三洋白电",
+    "FPA",
+    "Candy",
+    "全球家电龙头",
+    "国内份额领先",
+    "全球市占率提升"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "冰箱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "洗衣机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空调",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "卡萨帝",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:25:02"
+}

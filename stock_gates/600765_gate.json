@@ -1,0 +1,51 @@
+{
+  "stock_id": "600765",
+  "stock_name": "中航重机",
+  "concept": "航空锻造龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航空锻造龙头",
+    "飞机机身机翼结构锻件",
+    "航空发动机盘轴类锻件",
+    "环形锻件",
+    "航天发动机环锻件"
+  ],
+  "should": [
+    "中小型锻件",
+    "汽轮机叶片",
+    "核电叶片",
+    "高压柱塞泵及马达",
+    "列管式热交换器",
+    "板翅式热交换器",
+    "环形散热器",
+    "胀接装配式热交换器",
+    "套管式热交换器",
+    "精锻技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航空锻造龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "飞机机身机翼结构锻件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航空发动机盘轴类锻件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环形锻件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航天发动机环锻件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:27:13"
+}

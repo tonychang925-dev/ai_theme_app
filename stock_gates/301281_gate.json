@@ -1,0 +1,31 @@
+{
+  "stock_id": "301281",
+  "stock_name": "科源制药",
+  "concept": "降糖原料药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "格列齐特",
+    "盐酸二甲双胍"
+  ],
+  "should": [
+    "盐酸罗哌卡因",
+    "单硝酸异山梨酯",
+    "降糖原料药",
+    "原料药供应商",
+    "与下游制剂客户保持深度合作关系"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "格列齐特",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "盐酸二甲双胍",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:01:42"
+}

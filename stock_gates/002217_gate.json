@@ -1,0 +1,51 @@
+{
+  "stock_id": "002217",
+  "stock_name": "合力泰",
+  "concept": "智能硬件方案商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能硬件方案商",
+    "新型显示产品",
+    "光电传感产品",
+    "柔性线路板",
+    "5G材料及应用产品"
+  ],
+  "should": [
+    "OLED",
+    "TFT",
+    "TN",
+    "STN",
+    "电子纸",
+    "主控芯片",
+    "固件开发",
+    "京东方",
+    "富士康",
+    "智能汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能硬件方案商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新型显示产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光电传感产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "柔性线路板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "5G材料及应用产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:29:56"
+}

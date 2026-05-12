@@ -1,0 +1,35 @@
+{
+  "stock_id": "688529",
+  "stock_name": "豪森智能",
+  "concept": "汽车自动化装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车自动化装备",
+    "驱动电机生产线"
+  ],
+  "should": [
+    "氢燃料电池生产线",
+    "传统燃油车",
+    "新能源汽车",
+    "氢燃料电池",
+    "扁线电机定子/转子/总装/测试",
+    "圆柱电池",
+    "方形电池",
+    "软包电池",
+    "新能源在手订单占比超50%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车自动化装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "驱动电机生产线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:19:56"
+}

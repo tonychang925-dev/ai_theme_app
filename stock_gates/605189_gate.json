@@ -1,0 +1,34 @@
+{
+  "stock_id": "605189",
+  "stock_name": "富春染织",
+  "concept": "色纱龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "色纱",
+    "仓储式生产"
+  ],
+  "should": [
+    "筒子染色法",
+    "贸易纱",
+    "受托加工",
+    "色纱龙头",
+    "标准化生产",
+    "袜子",
+    "毛巾",
+    "家纺"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "色纱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "仓储式生产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:02:46"
+}

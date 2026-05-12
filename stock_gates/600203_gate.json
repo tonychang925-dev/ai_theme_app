@@ -1,0 +1,46 @@
+{
+  "stock_id": "600203",
+  "stock_name": "福日电子",
+  "concept": "芯片制造与智能终端",
+  "strategy_type": "industry_chain",
+  "must": [
+    "4-6英寸芯片制造",
+    "彩显FBT产品",
+    "手机ODM",
+    "LED封装"
+  ],
+  "should": [
+    "TWS耳机",
+    "全屋智能中控屏",
+    "智能头盔",
+    "无人机OEM",
+    "5G NR RedCap模组",
+    "裸眼3D LED显示屏",
+    "芯片制造与智能终端",
+    "显示屏出口",
+    "智能手机",
+    "景观亮化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "4-6英寸芯片制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "彩显FBT产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "手机ODM",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LED封装",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:11:43"
+}

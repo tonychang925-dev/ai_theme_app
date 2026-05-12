@@ -1,0 +1,41 @@
+{
+  "stock_id": "002775",
+  "stock_name": "文科股份",
+  "concept": "园林生态综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生态工程施工",
+    "园林生态综合服务",
+    "城市园林绿化一级资质"
+  ],
+  "should": [
+    "景观设计",
+    "园林养护",
+    "绿化苗木种植",
+    "科教文旅",
+    "国家风景园林工程专项设计甲级资质",
+    "市政公用工程施工总承包壹级",
+    "水环境综合治理",
+    "生态系统修复",
+    "生态旅游",
+    "文化旅游综合体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生态工程施工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "园林生态综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市园林绿化一级资质",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:56:57"
+}

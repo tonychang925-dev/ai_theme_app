@@ -1,0 +1,36 @@
+{
+  "stock_id": "605389",
+  "stock_name": "长龄液压",
+  "concept": "液压关键部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "液压中央回转接头",
+    "液压涨紧装置"
+  ],
+  "should": [
+    "液压泵阀",
+    "液压关键部件",
+    "国家标准主持起草",
+    "自主知识产权",
+    "挖掘机",
+    "起重机",
+    "推土机",
+    "光伏跟踪支架",
+    "高空作业",
+    "农业机械"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "液压中央回转接头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液压涨紧装置",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:04:19"
+}

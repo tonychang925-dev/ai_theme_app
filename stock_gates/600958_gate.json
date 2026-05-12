@@ -1,0 +1,38 @@
+{
+  "stock_id": "600958",
+  "stock_name": "东方证券",
+  "concept": "大资管券商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大资管券商",
+    "东证资管",
+    "汇添富基金"
+  ],
+  "should": [
+    "资产管理计划",
+    "券商公募证券投资基金产品",
+    "私募股权投资基金管理",
+    "投资管理",
+    "净资本排名第13",
+    "归母净资产排名第12",
+    "归母净利润排名第12"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大资管券商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "东证资管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汇添富基金",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:31:37"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "600489",
+  "stock_name": "中金黄金",
+  "concept": "黄金开采冶炼",
+  "strategy_type": "industry_chain",
+  "must": [
+    "黄金开采冶炼",
+    "标准金"
+  ],
+  "should": [
+    "冶炼金",
+    "电解铜",
+    "冶炼银",
+    "地质找矿",
+    "数字化矿山建设",
+    "两化融合",
+    "黄金避险保值",
+    "标准金占全国产量20.1%",
+    "资源储量金金属量507.3吨",
+    "铜金属量226万吨"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "黄金开采冶炼",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "标准金",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:19:04"
+}

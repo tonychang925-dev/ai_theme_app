@@ -1,0 +1,31 @@
+{
+  "stock_id": "600351",
+  "stock_name": "亚宝药业",
+  "concept": "儿童医药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "丁桂儿脐贴"
+  ],
+  "should": [
+    "薏芽健脾凝胶",
+    "塞来昔布胶囊",
+    "甲钴胺注射液",
+    "盐酸法舒地尔注射液",
+    "索拉非尼片",
+    "儿童止泻",
+    "儿童消化",
+    "周围神经病变",
+    "肿瘤治疗",
+    "儿童止泻外用品类第一品牌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "丁桂儿脐贴",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:15:48"
+}

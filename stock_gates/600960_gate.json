@@ -1,0 +1,33 @@
+{
+  "stock_id": "600960",
+  "stock_name": "渤海汽车",
+  "concept": "汽车活塞轻量化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "活塞",
+    "锻钢活塞"
+  ],
+  "should": [
+    "轻量化缸体",
+    "变速箱壳体",
+    "汽车活塞轻量化",
+    "轻量化铸造",
+    "免热处理材料",
+    "国内活塞领军龙头",
+    "唯一主产内燃机活塞上市公司"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "活塞",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锻钢活塞",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:31:43"
+}

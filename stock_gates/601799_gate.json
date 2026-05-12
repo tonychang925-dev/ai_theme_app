@@ -1,0 +1,51 @@
+{
+  "stock_id": "601799",
+  "stock_name": "星宇股份",
+  "concept": "汽车车灯",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车车灯",
+    "LED灯",
+    "ADB智能大灯",
+    "矩阵式大灯",
+    "DLP大灯"
+  ],
+  "should": [
+    "汽车前照灯",
+    "后组合灯",
+    "雾灯",
+    "日间行车灯",
+    "室内灯",
+    "氛围灯",
+    "一汽-大众",
+    "上汽大众",
+    "上汽通用",
+    "戴姆勒"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车车灯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LED灯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ADB智能大灯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "矩阵式大灯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "DLP大灯",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:38:46"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300369",
+  "stock_name": "绿盟科技",
+  "concept": "网络安全解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "网络安全解决方案",
+    "网络安全产品",
+    "数据安全产品",
+    "云安全产品"
+  ],
+  "should": [
+    "安全威胁检测技术",
+    "数据安全防护技术",
+    "云安全防护技术",
+    "国内领先的综合性网络安全公司",
+    "全球业务覆盖"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "网络安全解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "网络安全产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据安全产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云安全产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:24:13"
+}

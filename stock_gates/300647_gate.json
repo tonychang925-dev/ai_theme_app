@@ -1,0 +1,36 @@
+{
+  "stock_id": "300647",
+  "stock_name": "超频三",
+  "concept": "散热与锂电材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "散热器研发、生产、销售",
+    "国家级高新技术企业"
+  ],
+  "should": [
+    "锂电池正极材料",
+    "锂电池回收利用",
+    "散热材料与介质",
+    "散热结构与工艺",
+    "电池拆解回收技术",
+    "消费类电子产品",
+    "LED照明产品",
+    "新能源汽车",
+    "储能设备",
+    "云计算服务器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "散热器研发、生产、销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国家级高新技术企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:36:49"
+}

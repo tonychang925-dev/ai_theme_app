@@ -1,0 +1,29 @@
+{
+  "stock_id": "601818",
+  "stock_name": "光大银行",
+  "concept": "财富管理银行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "一流财富管理银行",
+    "财富管理银行"
+  ],
+  "should": [
+    "投行",
+    "电子银行",
+    "信用卡"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "一流财富管理银行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "财富管理银行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:38:51"
+}

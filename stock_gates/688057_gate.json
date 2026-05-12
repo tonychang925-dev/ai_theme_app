@@ -1,0 +1,36 @@
+{
+  "stock_id": "688057",
+  "stock_name": "金达莱",
+  "concept": "水环境治理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "FMBR污水处理新工艺",
+    "水污染治理装备"
+  ],
+  "should": [
+    "JDL重金属废水处理新工艺",
+    "物联网废水处理监控系统",
+    "高盐重金属废水处理工艺",
+    "水环境治理",
+    "碳氮磷同步深度去除",
+    "污泥源头减量",
+    "膜油污染及其控制技术",
+    "新型膜组件优化设计及开发",
+    "FMBR工艺生化性边界探索",
+    "水环境整体解决方案"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "FMBR污水处理新工艺",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水污染治理装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:06:43"
+}

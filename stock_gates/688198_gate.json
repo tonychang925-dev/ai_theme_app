@@ -1,0 +1,46 @@
+{
+  "stock_id": "688198",
+  "stock_name": "佰仁医疗",
+  "concept": "动物源性植介入器械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "人工生物心脏瓣膜",
+    "动物源性植介入器械",
+    "介入瓣中瓣系统",
+    "介入主动脉瓣"
+  ],
+  "should": [
+    "肺动脉带瓣管道",
+    "瓣膜成形环",
+    "心胸外科生物补片",
+    "神经外科微血管减压垫片",
+    "流出道单瓣补片",
+    "眼科生物补片",
+    "动物组织工程",
+    "化学改性处理技术",
+    "抗排异",
+    "抗钙化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "人工生物心脏瓣膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动物源性植介入器械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "介入瓣中瓣系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "介入主动脉瓣",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:11:37"
+}

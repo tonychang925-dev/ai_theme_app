@@ -1,0 +1,30 @@
+{
+  "stock_id": "688206",
+  "stock_name": "概伦电子",
+  "concept": "EDA领军企业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "器件建模及验证EDA工具"
+  ],
+  "should": [
+    "器件建模",
+    "电路仿真验证",
+    "测试仪器和系统",
+    "主控芯片",
+    "固件开发",
+    "存储器设计与制造",
+    "先进工艺开发",
+    "高端芯片研发",
+    "模拟/混合信号电路设计"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "器件建模及验证EDA工具",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:11:47"
+}

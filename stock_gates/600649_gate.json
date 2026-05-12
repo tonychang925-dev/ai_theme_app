@@ -1,0 +1,48 @@
+{
+  "stock_id": "600649",
+  "stock_name": "城投控股",
+  "concept": "上海房地产综合开发运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "上海房地产综合开发运营",
+    "地产开发",
+    "地产运营",
+    "保障房",
+    "城市更新"
+  ],
+  "should": [
+    "商品住宅",
+    "租赁房",
+    "城投宽庭",
+    "股权投资",
+    "酒店运营",
+    "租赁社区",
+    "社区餐饮"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "上海房地产综合开发运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "地产开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "地产运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "保障房",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市更新",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:23:55"
+}

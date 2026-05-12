@@ -1,0 +1,51 @@
+{
+  "stock_id": "000928",
+  "stock_name": "中钢国际",
+  "concept": "冶金工程服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "冶金工程服务",
+    "工程总承包",
+    "工业工程",
+    "技术开发",
+    "工业服务"
+  ],
+  "should": [
+    "带式焙烧机智能造球和台车控制技术",
+    "氢基直接还原耐火材料研究开发",
+    "富氢碳循环高炉新技术开发",
+    "低压力竖炉炉型与直接还原工艺",
+    "低能耗量子电炉炼钢工艺",
+    "热机轧制",
+    "双热机轧制",
+    "多热机轧制",
+    "等温轧制",
+    "高棒精轧机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "冶金工程服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程总承包",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "技术开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:10:01"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300938",
+  "stock_name": "信测标准",
+  "concept": "第三方检测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "第三方检测",
+    "质检技术服务",
+    "检验检测认证服务"
+  ],
+  "should": [
+    "CMA资质",
+    "CNAS认可",
+    "动植物",
+    "工业产品",
+    "商品",
+    "专项技术",
+    "成果",
+    "管理体系",
+    "人员能力",
+    "电子电器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "第三方检测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "质检技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "检验检测认证服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:50:02"
+}

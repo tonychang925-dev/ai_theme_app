@@ -1,0 +1,27 @@
+{
+  "stock_id": "601518",
+  "stock_name": "吉林高速",
+  "concept": "高速公路运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "长平高速公路"
+  ],
+  "should": [
+    "高速公路运营",
+    "收费公路投资、建设、营运和管理",
+    "收费公路运营",
+    "通行费追缴",
+    "ETC发行",
+    "旅游景点推广"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "长平高速公路",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:36:44"
+}

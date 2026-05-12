@@ -1,0 +1,46 @@
+{
+  "stock_id": "000597",
+  "stock_name": "东北制药",
+  "concept": "化学制药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "维生素C系列",
+    "磷霉素系列",
+    "齐多夫定片",
+    "两步发酵法"
+  ],
+  "should": [
+    "卡孕栓",
+    "吡拉西坦系列",
+    "地衣芽孢杆菌（整肠生）",
+    "盐酸吗啡注射液",
+    "对乙酰氨基酚片",
+    "HIV分子诊断试剂",
+    "化学全合成",
+    "核酸和基因芯片",
+    "化学制药",
+    "化学制药（原料药、制剂）"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "维生素C系列",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磷霉素系列",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "齐多夫定片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "两步发酵法",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:57:59"
+}

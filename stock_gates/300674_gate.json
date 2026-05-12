@@ -1,0 +1,29 @@
+{
+  "stock_id": "300674",
+  "stock_name": "宇信科技",
+  "concept": "银行IT解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "银行IT解决方案"
+  ],
+  "should": [
+    "信贷系统",
+    "渠道系统",
+    "管理类系统",
+    "软件产品",
+    "实施服务",
+    "银行IT细分龙头",
+    "信贷业务龙头",
+    "渠道业务龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "银行IT解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:38:18"
+}

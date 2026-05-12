@@ -1,0 +1,41 @@
+{
+  "stock_id": "300289",
+  "stock_name": "利德曼",
+  "concept": "体外诊断",
+  "strategy_type": "industry_chain",
+  "must": [
+    "体外诊断试剂",
+    "诊断仪器",
+    "生化诊断试剂"
+  ],
+  "should": [
+    "生物化学原料",
+    "化学发光免疫诊断",
+    "分子诊断",
+    "POCT",
+    "医疗机构检验科",
+    "体检中心",
+    "第三方检测实验室",
+    "血站",
+    "疾控中心",
+    "国内临床生化检测试剂领军品牌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "体外诊断试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "诊断仪器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生化诊断试剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:21:13"
+}

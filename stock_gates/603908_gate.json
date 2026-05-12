@@ -1,0 +1,40 @@
+{
+  "stock_id": "603908",
+  "stock_name": "牧高笛",
+  "concept": "户外露营装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "户外露营装备",
+    "露营帐篷",
+    "自主品牌业务"
+  ],
+  "should": [
+    "户外服饰",
+    "冷山系列帐篷",
+    "OEM/ODM业务",
+    "纪元系列帐篷",
+    "防风防雨设计",
+    "轻量化便携设计",
+    "铝合金支架",
+    "防水涂层",
+    "国外产能占比约40%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "户外露营装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "露营帐篷",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自主品牌业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:58:45"
+}

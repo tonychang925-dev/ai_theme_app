@@ -1,0 +1,29 @@
+{
+  "stock_id": "301325",
+  "stock_name": "曼恩斯特",
+  "concept": "涂布技术方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高精密狭缝式涂布模头"
+  ],
+  "should": [
+    "涂布模头增值与改造",
+    "模头腔体设计",
+    "模头加工工艺",
+    "薄层涂布",
+    "全自动涂布模头技术",
+    "涂布技术方案",
+    "涂布设备",
+    "锂电池涂布"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高精密狭缝式涂布模头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:02:55"
+}

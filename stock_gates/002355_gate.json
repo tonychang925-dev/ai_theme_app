@@ -1,0 +1,41 @@
+{
+  "stock_id": "002355",
+  "stock_name": "兴民智通",
+  "concept": "车轮制造与车联网",
+  "strategy_type": "industry_chain",
+  "must": [
+    "车轮制造与车联网",
+    "新能源汽车车轮",
+    "联络中心（TSP）服务"
+  ],
+  "should": [
+    "乘用车仿铝车轮",
+    "乘用车车轮",
+    "商用车无内胎轻量化车轮",
+    "轻卡无内胎车轮",
+    "轻卡型钢车轮",
+    "商用车型钢车轮",
+    "农林机械车轮",
+    "整车轻量化",
+    "汽车制造商配套",
+    "一级供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "车轮制造与车联网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车车轮",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "联络中心（TSP）服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:37:34"
+}

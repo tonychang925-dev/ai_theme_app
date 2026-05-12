@@ -1,0 +1,41 @@
+{
+  "stock_id": "601333",
+  "stock_name": "广深铁路",
+  "concept": "铁路客货运输",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铁路客货运输",
+    "铁路运营服务",
+    "广深铁路"
+  ],
+  "should": [
+    "过港直通车旅客列车运输",
+    "武广铁路",
+    "广珠城际",
+    "广深港铁路",
+    "广珠铁路",
+    "厦深铁路",
+    "南广铁路",
+    "贵广铁路",
+    "珠三角城际",
+    "茂湛铁路"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铁路客货运输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铁路运营服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "广深铁路",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:36:19"
+}

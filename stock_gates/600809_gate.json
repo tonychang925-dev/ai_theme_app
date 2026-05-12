@@ -1,0 +1,51 @@
+{
+  "stock_id": "600809",
+  "stock_name": "山西汾酒",
+  "concept": "清香型白酒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "玻汾",
+    "青花20",
+    "青花30",
+    "中国酒魂",
+    "全国化"
+  ],
+  "should": [
+    "青花40",
+    "青花50",
+    "献礼版玻汾",
+    "巴拿马",
+    "老白汾",
+    "华东市场",
+    "华南市场",
+    "长三角",
+    "珠三角",
+    "粤港澳大湾区"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "玻汾",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "青花20",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "青花30",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中国酒魂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全国化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:28:29"
+}

@@ -1,0 +1,45 @@
+{
+  "stock_id": "301049",
+  "stock_name": "超越科技",
+  "concept": "废物资源化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业危险废物处置",
+    "医疗废物处置",
+    "废弃电器电子产品拆解",
+    "资源化利用技术"
+  ],
+  "should": [
+    "无害化安全处置技术",
+    "报废车辆拆解",
+    "废硫酸综合利用技术",
+    "废弃电器电子产品模块化回收线技术",
+    "废物资源化",
+    "资源综合利用",
+    "节能环保",
+    "危险废物处置企业",
+    "电子废物拆解企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业危险废物处置",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗废物处置",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "废弃电器电子产品拆解",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "资源化利用技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:54:35"
+}

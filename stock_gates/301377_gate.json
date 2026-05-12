@@ -1,0 +1,41 @@
+{
+  "stock_id": "301377",
+  "stock_name": "鼎泰高科",
+  "concept": "PCB钻针龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PCB钻针龙头",
+    "微型钻针",
+    "铣刀"
+  ],
+  "should": [
+    "数控刀具",
+    "刀具生产设备",
+    "PCB用高分子材料",
+    "陶瓷基板钻针",
+    "背板钻针",
+    "环保型无卤素板钻针",
+    "软板钻针",
+    "0.02mm微钻技术",
+    "0.1mm直径微钻批量生产",
+    "高端通用刀具制造设备研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PCB钻针龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "微型钻针",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铣刀",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:04:20"
+}

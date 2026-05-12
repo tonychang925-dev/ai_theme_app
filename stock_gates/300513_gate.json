@@ -1,0 +1,51 @@
+{
+  "stock_id": "300513",
+  "stock_name": "恒实科技",
+  "concept": "综合能源服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "虚拟电厂",
+    "综合能源服务",
+    "能源聚合商运营管控平台",
+    "虚拟电厂交易运营平台",
+    "碳排放大数据管理运营平台"
+  ],
+  "should": [
+    "物联网",
+    "泛在电力物联网",
+    "智慧物联应用业务",
+    "通信设计服务",
+    "通信技术",
+    "传感系统",
+    "大数据分析",
+    "数据治理",
+    "综合能源改造",
+    "电力市场交易"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "虚拟电厂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合能源服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "能源聚合商运营管控平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "虚拟电厂交易运营平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳排放大数据管理运营平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:30:40"
+}

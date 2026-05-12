@@ -1,0 +1,31 @@
+{
+  "stock_id": "301349",
+  "stock_name": "信德新材",
+  "concept": "负极包覆材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "负极包覆材料"
+  ],
+  "should": [
+    "沥青基碳纤维",
+    "橡胶增塑剂",
+    "裂解萘馏分",
+    "碳纤维可纺沥青",
+    "包覆材料生产工艺",
+    "纺丝",
+    "碳化",
+    "上游一体化技术",
+    "锂电池负极材料",
+    "热场材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "负极包覆材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:03:31"
+}

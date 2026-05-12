@@ -1,0 +1,31 @@
+{
+  "stock_id": "300416",
+  "stock_name": "苏试试验",
+  "concept": "试验设备与服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "试验设备与服务"
+  ],
+  "should": [
+    "力学环境试验设备",
+    "气候环境试验设备",
+    "综合环境试验设备",
+    "分析测试系统及传感器",
+    "模拟力学环境",
+    "模拟气候环境",
+    "综合环境模拟",
+    "状态监测",
+    "故障诊断",
+    "振动测试"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "试验设备与服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:26:27"
+}

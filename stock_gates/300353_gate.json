@@ -1,0 +1,35 @@
+{
+  "stock_id": "300353",
+  "stock_name": "东土科技",
+  "concept": "工业互联网",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业互联网",
+    "工业互联网网络产品"
+  ],
+  "should": [
+    "工业软件",
+    "MaVIEW工业控制编程平台",
+    "软件定义控制",
+    "工业制造",
+    "能源电网",
+    "交通",
+    "石油化工",
+    "冶金",
+    "防务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业互联网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业互联网网络产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:23:34"
+}

@@ -1,0 +1,38 @@
+{
+  "stock_id": "688096",
+  "stock_name": "京源环保",
+  "concept": "工业水处理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业水处理",
+    "环保水处理专用设备",
+    "工业废水电子絮凝处理技术"
+  ],
+  "should": [
+    "高难废水零排放技术",
+    "高难废水电催化氧化技术",
+    "电力行业",
+    "钢铁行业",
+    "化工行业",
+    "市政",
+    "金属制品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业水处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环保水处理专用设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业废水电子絮凝处理技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:08:11"
+}

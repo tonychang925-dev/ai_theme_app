@@ -1,0 +1,46 @@
+{
+  "stock_id": "600157",
+  "stock_name": "永泰能源",
+  "concept": "综合能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合能源",
+    "煤炭开采",
+    "火力发电",
+    "新能源储能"
+  ],
+  "should": [
+    "石化仓储",
+    "优质主焦煤",
+    "配焦煤",
+    "钒矿资源",
+    "电力供应",
+    "燃料油调和",
+    "储能辅助调频",
+    "煤电互补",
+    "综合能源供应",
+    "稀缺煤种"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合能源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭开采",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "火力发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源储能",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:10:31"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "300499",
+  "stock_name": "高澜股份",
+  "concept": "热管理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "热管理设备",
+    "液冷板",
+    "冷量分配单元(CDU)",
+    "数据中心"
+  ],
+  "should": [
+    "控制系统产品",
+    "流体连接部件",
+    "歧管",
+    "浸没腔体(TANK)",
+    "流体输送单元",
+    "热管理",
+    "液冷技术",
+    "浸没式液冷技术",
+    "冷板式液冷技术",
+    "泵驱两相液冷系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "热管理设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液冷板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冷量分配单元(CDU)",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据中心",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:30:09"
+}

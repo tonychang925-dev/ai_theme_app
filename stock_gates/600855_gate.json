@@ -1,0 +1,46 @@
+{
+  "stock_id": "600855",
+  "stock_name": "航天长峰",
+  "concept": "军工电子与医疗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "安保科技",
+    "电源",
+    "医疗",
+    "电子信息"
+  ],
+  "should": [
+    "航天科工品牌",
+    "国产化模块电源",
+    "制冷型红外机芯",
+    "高速成像硬件电路",
+    "红外凝视成像",
+    "边海防信息化",
+    "公安政法",
+    "轨道交通",
+    "高速公路ETC",
+    "ICU整体解决方案"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "安保科技",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子信息",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:29:35"
+}

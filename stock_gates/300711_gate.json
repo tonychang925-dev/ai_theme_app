@@ -1,0 +1,33 @@
+{
+  "stock_id": "300711",
+  "stock_name": "广哈通信",
+  "concept": "指挥调度系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "指挥调度系统",
+    "数字与多媒体指挥调度系统"
+  ],
+  "should": [
+    "指挥调度通信产品",
+    "国防",
+    "电力",
+    "铁路",
+    "国防领域主要供应商",
+    "电力领域三家主流供应商之一",
+    "铁路领域三家资质供应商之一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "指挥调度系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字与多媒体指挥调度系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:39:55"
+}

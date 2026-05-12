@@ -1,0 +1,36 @@
+{
+  "stock_id": "002929",
+  "stock_name": "润建股份",
+  "concept": "通信网络管维",
+  "strategy_type": "industry_chain",
+  "must": [
+    "通信网络管维",
+    "信息网络管维"
+  ],
+  "should": [
+    "能源业务",
+    "新能源发电站运维",
+    "线上数字平台+线下技术服务",
+    "运营商",
+    "中国铁塔",
+    "咨询设计",
+    "优化",
+    "运维",
+    "产品集成",
+    "综合能源管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "通信网络管维",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信息网络管维",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:03:38"
+}

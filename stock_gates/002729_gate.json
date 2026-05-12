@@ -1,0 +1,45 @@
+{
+  "stock_id": "002729",
+  "stock_name": "好利科技",
+  "concept": "电路保护元器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力熔断器",
+    "电子熔断器",
+    "光伏熔断器",
+    "储能用熔断器"
+  ],
+  "should": [
+    "管状熔断器",
+    "径向引线式熔断器",
+    "焊锡材料专利",
+    "管体结构专利",
+    "熔断器生产设备专利",
+    "国内熔断器行业首家上市公司",
+    "全球知名熔断器生产商",
+    "行业标准起草者",
+    "全国熔断器标准化技术委员会委员"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力熔断器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子熔断器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏熔断器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能用熔断器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:55:07"
+}

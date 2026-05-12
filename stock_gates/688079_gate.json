@@ -1,0 +1,51 @@
+{
+  "stock_id": "688079",
+  "stock_name": "美迪凯",
+  "concept": "光学光电子元器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光学光电子元器件",
+    "半导体光学",
+    "半导体微纳电路",
+    "半导体封测",
+    "AR/MR部品及微纳光学"
+  ],
+  "should": [
+    "精密光学零部件",
+    "智慧终端制造",
+    "生物识别零部件",
+    "微纳电子",
+    "环境光芯片多通道光路层加工工艺",
+    "SAWFiter的整套加工技术",
+    "12寸背金产品镀膜技术",
+    "灰度光刻",
+    "纳米压印",
+    "晶圆封装工艺"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光学光电子元器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体光学",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体微纳电路",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体封测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AR/MR部品及微纳光学",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:07:41"
+}

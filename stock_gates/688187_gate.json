@@ -1,0 +1,41 @@
+{
+  "stock_id": "688187",
+  "stock_name": "时代电气",
+  "concept": "轨交功率半导体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轨交功率半导体",
+    "功率半导体器件",
+    "轨道交通牵引变流系统"
+  ],
+  "should": [
+    "新能源汽车电驱系统",
+    "工业变流产品",
+    "传感器件",
+    "海工装备",
+    "第五代/第六代工艺技术",
+    "沟道自对准",
+    "薄片技术",
+    "沟槽栅氧技术",
+    "双面焊合金化技术",
+    "SBD集成技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轨交功率半导体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功率半导体器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轨道交通牵引变流系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:11:29"
+}

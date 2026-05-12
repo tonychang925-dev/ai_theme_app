@@ -1,0 +1,46 @@
+{
+  "stock_id": "000411",
+  "stock_name": "英特集团",
+  "concept": "医药流通",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药流通",
+    "药品批发",
+    "医疗器械批发",
+    "医药零售"
+  ],
+  "should": [
+    "B2B电子商务平台",
+    "DTP药店",
+    "英特公共医药物流信息服务平台",
+    "招标市场",
+    "非招标市场",
+    "多库联动",
+    "冷链一体化运输网络",
+    "温州",
+    "嘉兴",
+    "绍兴（上虞）"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医药流通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "药品批发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗器械批发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药零售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:52:02"
+}

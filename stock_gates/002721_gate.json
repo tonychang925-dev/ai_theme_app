@@ -1,0 +1,36 @@
+{
+  "stock_id": "002721",
+  "stock_name": "金一文化",
+  "concept": "贵金属珠宝",
+  "strategy_type": "industry_chain",
+  "must": [
+    "贵金属工艺品",
+    "黄金珠宝首饰"
+  ],
+  "should": [
+    "投资金",
+    "黄金",
+    "铂金",
+    "k金",
+    "钻石镶嵌",
+    "翡翠玉石",
+    "贵金属珠宝",
+    "首饰",
+    "随手礼",
+    "银行渠道"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "贵金属工艺品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "黄金珠宝首饰",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:54:49"
+}

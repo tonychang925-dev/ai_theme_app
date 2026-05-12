@@ -1,0 +1,37 @@
+{
+  "stock_id": "301318",
+  "stock_name": "维海德",
+  "concept": "音视频通讯设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "音视频通讯设备",
+    "视频会议终端",
+    "会议麦克风"
+  ],
+  "should": [
+    "视频处理SoC技术",
+    "视频编解码技术",
+    "视频会议",
+    "教育录播",
+    "视频会议行业中游",
+    "音视频通讯设备主要供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "音视频通讯设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "视频会议终端",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "会议麦克风",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:02:42"
+}

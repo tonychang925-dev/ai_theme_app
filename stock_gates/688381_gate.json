@@ -1,0 +1,41 @@
+{
+  "stock_id": "688381",
+  "stock_name": "帝奥微",
+  "concept": "高性能模拟芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高性能模拟开关",
+    "高性能模拟芯片",
+    "模拟开关市占率国内第一"
+  ],
+  "should": [
+    "信号链模拟芯片",
+    "电源管理模拟芯片",
+    "高速MIPI开关",
+    "运算放大器",
+    "AC-DC",
+    "DC-DC",
+    "高性能充电产品",
+    "模拟芯片设计",
+    "消费电子",
+    "智能LED照明"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高性能模拟开关",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高性能模拟芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "模拟开关市占率国内第一",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:17:11"
+}

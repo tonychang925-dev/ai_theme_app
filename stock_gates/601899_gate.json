@@ -1,0 +1,41 @@
+{
+  "stock_id": "601899",
+  "stock_name": "紫金矿业",
+  "concept": "金属矿业开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "矿产铜",
+    "矿产金",
+    "卡莫阿铜矿"
+  ],
+  "should": [
+    "新能源新材料领域",
+    "矿产锌",
+    "锂盐",
+    "自然崩落法",
+    "Timok铜金矿",
+    "巨龙铜矿",
+    "新锂公司盐湖",
+    "金属矿业开发",
+    "矿山开发",
+    "冶炼加工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "矿产铜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "矿产金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "卡莫阿铜矿",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:39:39"
+}

@@ -1,0 +1,49 @@
+{
+  "stock_id": "002020",
+  "stock_name": "京新药业",
+  "concept": "精神神经心脑血管",
+  "strategy_type": "industry_chain",
+  "must": [
+    "心血管系统",
+    "消化系统",
+    "精神神经系统",
+    "左乙拉西坦",
+    "瑞舒伐他汀"
+  ],
+  "should": [
+    "匹伐他汀钙",
+    "康复新液",
+    "左氧氟沙星",
+    "环丙沙星",
+    "医疗影像显示终端",
+    "失眠障碍治疗",
+    "精神神经心脑血管",
+    "全球主流大设备厂商战略合作伙伴"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "心血管系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "消化系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精神神经系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "左乙拉西坦",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "瑞舒伐他汀",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:18:44"
+}

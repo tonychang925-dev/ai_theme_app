@@ -1,0 +1,40 @@
+{
+  "stock_id": "301229",
+  "stock_name": "纽泰格",
+  "concept": "汽车轻量化零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铝压铸",
+    "吹注塑",
+    "汽车悬架系统零部件"
+  ],
+  "should": [
+    "支架类铝铸件",
+    "内外饰塑料件",
+    "注塑模具",
+    "发泡模具",
+    "压铸模具",
+    "汽车轻量化零部件",
+    "汽车轻量化",
+    "新能源汽车",
+    "汽车零部件供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铝压铸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "吹注塑",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车悬架系统零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:59:49"
+}

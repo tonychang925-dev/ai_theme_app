@@ -1,0 +1,51 @@
+{
+  "stock_id": "688686",
+  "stock_name": "奥普特",
+  "concept": "机器视觉",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光源",
+    "光源控制器",
+    "镜头",
+    "工业相机",
+    "视觉控制系统"
+  ],
+  "should": [
+    "3D激光传感器",
+    "工业读码器",
+    "自研视觉软件Scismart",
+    "AI算法",
+    "3D算法",
+    "主控芯片",
+    "固件开发",
+    "国产机器视觉开拓者",
+    "打破国际品牌垄断",
+    "核心零部件全覆盖"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光源控制器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "镜头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业相机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "视觉控制系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:24:01"
+}

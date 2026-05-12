@@ -1,0 +1,38 @@
+{
+  "stock_id": "001326",
+  "stock_name": "联域股份",
+  "concept": "LED照明制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "户外照明",
+    "工业照明",
+    "中、大功率LED照明产品"
+  ],
+  "should": [
+    "灯具",
+    "光源",
+    "植物照明",
+    "体育照明",
+    "防爆照明",
+    "LED照明制造",
+    "智能化技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "户外照明",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业照明",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中、大功率LED照明产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:16:27"
+}

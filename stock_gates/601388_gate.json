@@ -1,0 +1,37 @@
+{
+  "stock_id": "601388",
+  "stock_name": "怡球资源",
+  "concept": "铝资源再生",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铝资源再生",
+    "铝合金锭",
+    "马来西亚扩建项目"
+  ],
+  "should": [
+    "废料回收贸易",
+    "免热处理铸造铝合金",
+    "自动金属分选系统",
+    "美国废料回收贸易",
+    "设备技术革新",
+    "国内铝资源再生领域龙头企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铝资源再生",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铝合金锭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "马来西亚扩建项目",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:36:32"
+}

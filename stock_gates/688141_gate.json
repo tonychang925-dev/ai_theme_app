@@ -1,0 +1,41 @@
+{
+  "stock_id": "688141",
+  "stock_name": "杰华特",
+  "concept": "模拟芯片平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电源管理芯片",
+    "信号链芯片",
+    "DC-DC芯片"
+  ],
+  "should": [
+    "AC-DC芯片",
+    "线性电源芯片",
+    "电池管理芯片",
+    "检测芯片",
+    "接口芯片",
+    "转换器芯片",
+    "模拟芯片平台",
+    "BCD工艺",
+    "虚拟IDM模式",
+    "同步整流技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电源管理芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信号链芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "DC-DC芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:09:44"
+}

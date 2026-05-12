@@ -1,0 +1,31 @@
+{
+  "stock_id": "603978",
+  "stock_name": "深圳新星",
+  "concept": "铝晶粒细化剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铝晶粒细化剂"
+  ],
+  "should": [
+    "六氟磷酸锂",
+    "铝中间合金",
+    "颗粒精炼剂",
+    "氟铝酸钾",
+    "生产工艺改进",
+    "降本增效",
+    "铝材加工",
+    "新能源汽车",
+    "储能",
+    "消费电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铝晶粒细化剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:00:00"
+}

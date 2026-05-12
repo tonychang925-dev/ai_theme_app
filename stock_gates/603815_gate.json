@@ -1,0 +1,24 @@
+{
+  "stock_id": "603815",
+  "stock_name": "交建股份",
+  "concept": "公路市政施工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "公路、市政基础设施施工"
+  ],
+  "should": [
+    "公路市政施工",
+    "投资、设计、施工、养护一体化",
+    "安徽省资质齐全、资质等级较高"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "公路、市政基础设施施工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:56:55"
+}

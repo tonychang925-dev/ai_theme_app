@@ -1,0 +1,26 @@
+{
+  "stock_id": "301001",
+  "stock_name": "凯淳股份",
+  "concept": "电商服务商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "天猫五星级服务商"
+  ],
+  "should": [
+    "电商服务商",
+    "代运营",
+    "营销",
+    "咨询",
+    "头部服务商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "天猫五星级服务商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:52:33"
+}

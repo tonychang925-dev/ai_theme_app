@@ -1,0 +1,41 @@
+{
+  "stock_id": "688358",
+  "stock_name": "祥生医疗",
+  "concept": "便携超声",
+  "strategy_type": "industry_chain",
+  "must": [
+    "便携超声",
+    "便携式彩超",
+    "推车式彩超"
+  ],
+  "should": [
+    "黑白超",
+    "SonoAI人工智能",
+    "SonoFusion融合成像",
+    "SonoContrast造影成像",
+    "多模式复合成像技术",
+    "融合谐波成像技术",
+    "自适应动态范围调整技术",
+    "穿刺增强技术",
+    "针显示技术",
+    "脉冲压缩"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "便携超声",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "便携式彩超",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "推车式彩超",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:16:32"
+}

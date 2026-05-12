@@ -1,0 +1,41 @@
+{
+  "stock_id": "600199",
+  "stock_name": "金种子酒",
+  "concept": "安徽名酒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金种子",
+    "金种子馥合香",
+    "醉三秋"
+  ],
+  "should": [
+    "种子",
+    "和泰",
+    "颍州",
+    "醉三秋1507",
+    "地蕴醉三秋",
+    "柔和经典种子酒",
+    "徽蕴金种子",
+    "华润战投",
+    "安徽名酒",
+    "次高端"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金种子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金种子馥合香",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "醉三秋",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:11:43"
+}

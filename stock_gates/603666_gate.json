@@ -1,0 +1,46 @@
+{
+  "stock_id": "603666",
+  "stock_name": "亿嘉和",
+  "concept": "特种机器人",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种机器人",
+    "巡检机器人",
+    "操作机器人",
+    "消防系列机器人"
+  ],
+  "should": [
+    "防爆巡检机器人",
+    "商用清洁机器人",
+    "智慧共享充电系统",
+    "车辆检测机器人",
+    "设备健康度管理系统",
+    "立体巡视系统",
+    "机器人算法平台",
+    "机器人中央控制系统",
+    "定位与规划控制系统",
+    "硬件平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种机器人",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "巡检机器人",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "操作机器人",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "消防系列机器人",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:54:21"
+}

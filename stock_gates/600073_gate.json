@@ -1,0 +1,41 @@
+{
+  "stock_id": "600073",
+  "stock_name": "光明肉业",
+  "concept": "肉制品与休闲食品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "午餐肉",
+    "蜂蜜",
+    "大白兔奶糖"
+  ],
+  "should": [
+    "牛羊肉",
+    "生猪养殖",
+    "屠宰分销",
+    "肉制品深加工",
+    "分销",
+    "餐饮",
+    "预制菜",
+    "半成品",
+    "休闲食品",
+    "国内市占率第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "午餐肉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蜂蜜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大白兔奶糖",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:08:32"
+}

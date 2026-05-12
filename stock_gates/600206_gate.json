@@ -1,0 +1,41 @@
+{
+  "stock_id": "600206",
+  "stock_name": "有研新材",
+  "concept": "超高纯金属靶材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "超高纯金属靶材",
+    "集成电路用靶材",
+    "高纯溅射靶材"
+  ],
+  "should": [
+    "磁性材料及磁体",
+    "稀土金属",
+    "特种红外光学材料",
+    "发光材料",
+    "生物医用材料",
+    "口腔器械",
+    "贵金属",
+    "高纯金属提纯",
+    "合金化技术",
+    "稀土资源开发利用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "超高纯金属靶材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集成电路用靶材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高纯溅射靶材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:11:47"
+}

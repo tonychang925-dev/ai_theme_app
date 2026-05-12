@@ -1,0 +1,46 @@
+{
+  "stock_id": "002204",
+  "stock_name": "大连重工",
+  "concept": "重型机械装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "重型机械装备",
+    "大型重点骨干企业",
+    "冶金设备",
+    "新能源设备"
+  ],
+  "should": [
+    "物料搬运设备",
+    "传动与控制系统",
+    "船用设备",
+    "机电液一体化设计",
+    "新能源设备制造重点企业",
+    "国家高新技术企业",
+    "制造",
+    "总装发运",
+    "安装调试",
+    "工程总承包"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "重型机械装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大型重点骨干企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冶金设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:29:03"
+}

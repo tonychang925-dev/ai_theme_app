@@ -1,0 +1,46 @@
+{
+  "stock_id": "603321",
+  "stock_name": "梅轮电梯",
+  "concept": "电梯制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "客梯",
+    "货梯",
+    "自动扶梯",
+    "自动人行道"
+  ],
+  "should": [
+    "专精特新小巨人企业",
+    "浅底坑加装电梯",
+    "无机房钢带梯",
+    "无机房消防员电梯",
+    "超高速乘客电梯",
+    "大吨位载货电梯",
+    "电梯制造",
+    "住宅",
+    "商场",
+    "酒店"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "客梯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "货梯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自动扶梯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自动人行道",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:49:09"
+}

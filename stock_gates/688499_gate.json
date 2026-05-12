@@ -1,0 +1,36 @@
+{
+  "stock_id": "688499",
+  "stock_name": "利元亨",
+  "concept": "锂电设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电设备",
+    "锂电池制造设备"
+  ],
+  "should": [
+    "方形动力电池电芯装配线",
+    "三层全自动热冷压化成容量测试机",
+    "复杂工况多任务支持与协同技术",
+    "智能机器人技术",
+    "参数化设计技术",
+    "消费锂电",
+    "动力锂电",
+    "汽车零部件",
+    "精密电子",
+    "整线解决方案提供商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂电池制造设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:19:04"
+}

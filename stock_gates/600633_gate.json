@@ -1,0 +1,46 @@
+{
+  "stock_id": "600633",
+  "stock_name": "浙数文化",
+  "concept": "数字文化科技",
+  "strategy_type": "industry_chain",
+  "must": [
+    "边锋游戏大厅",
+    "游戏茶苑",
+    "雀神广东麻将",
+    "Idle Arks"
+  ],
+  "should": [
+    "City OS未来城市操作系统",
+    "天枢",
+    "天目云",
+    "云上世界",
+    "全媒体智能中台",
+    "数字文化科技",
+    "休闲游戏",
+    "海外游戏",
+    "全域电竞",
+    "艺术品拍卖"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "边锋游戏大厅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "游戏茶苑",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "雀神广东麻将",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "Idle Arks",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:23:33"
+}

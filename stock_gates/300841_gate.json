@@ -1,0 +1,33 @@
+{
+  "stock_id": "300841",
+  "stock_name": "康华生物",
+  "concept": "人二倍体狂苗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "人二倍体细胞狂犬病疫苗",
+    "人二倍体狂苗"
+  ],
+  "should": [
+    "宠物疫苗",
+    "人二倍体细胞培养",
+    "临床数据积累",
+    "疾控中心覆盖",
+    "宠物医院合作",
+    "独家上市",
+    "主要销售方"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "人二倍体细胞狂犬病疫苗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人二倍体狂苗",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:45:34"
+}

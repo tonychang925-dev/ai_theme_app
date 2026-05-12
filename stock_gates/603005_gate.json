@@ -1,0 +1,36 @@
+{
+  "stock_id": "603005",
+  "stock_name": "晶方科技",
+  "concept": "影像传感芯片封测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "影像传感芯片封测",
+    "CIS芯片"
+  ],
+  "should": [
+    "TOF芯片",
+    "生物身份识别芯片",
+    "MEMS芯片",
+    "车规STACK封装工艺",
+    "晶圆级光学器件(WLO)制造技术",
+    "智能手机",
+    "安防监控数码",
+    "汽车电子",
+    "AR/VR",
+    "医疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "影像传感芯片封测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CIS芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:40:51"
+}

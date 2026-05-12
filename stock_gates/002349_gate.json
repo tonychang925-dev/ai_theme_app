@@ -1,0 +1,51 @@
+{
+  "stock_id": "002349",
+  "stock_name": "精华制药",
+  "concept": "中药及原料药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "传统中成药制剂",
+    "化学原料药及中间体",
+    "中药材及中药饮片",
+    "王氏保赤丸",
+    "季德胜蛇药片"
+  ],
+  "should": [
+    "化工医药中间体",
+    "生物制药",
+    "正柴胡饮颗粒",
+    "大柴胡颗粒",
+    "金荞麦片",
+    "西莱美片",
+    "苯巴比妥片",
+    "丙硫氧嘧啶片",
+    "潘生丁片",
+    "去痛片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "传统中成药制剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化学原料药及中间体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中药材及中药饮片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "王氏保赤丸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "季德胜蛇药片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:37:00"
+}

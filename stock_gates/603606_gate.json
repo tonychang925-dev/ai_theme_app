@@ -1,0 +1,46 @@
+{
+  "stock_id": "603606",
+  "stock_name": "东方电缆",
+  "concept": "海缆龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "海缆龙头",
+    "海上风电",
+    "超高压交流海缆",
+    "柔性直流海缆"
+  ],
+  "should": [
+    "阵列电缆",
+    "送出主缆",
+    "风电动态缆",
+    "脐带缆",
+    "超高压电力电缆",
+    "岛屿联网",
+    "海洋油气",
+    "高电压海缆差异化竞争",
+    "技术和项目经验壁垒",
+    "海缆产品市占率A股第二"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "海缆龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海上风电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超高压交流海缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "柔性直流海缆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:53:08"
+}

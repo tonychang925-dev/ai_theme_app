@@ -1,0 +1,36 @@
+{
+  "stock_id": "600479",
+  "stock_name": "千金药业",
+  "concept": "妇科中成药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "妇科千金片",
+    "妇科千金胶囊"
+  ],
+  "should": [
+    "补血益母丸",
+    "补血益母颗粒",
+    "妇科中成药",
+    "中药新药开发",
+    "经典名方制剂研究",
+    "化药产品开发",
+    "中药精提物应用",
+    "妇科炎症治疗",
+    "产后恢复",
+    "国家基本药物"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "妇科千金片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "妇科千金胶囊",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:18:48"
+}

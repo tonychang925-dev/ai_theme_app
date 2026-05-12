@@ -1,0 +1,34 @@
+{
+  "stock_id": "300703",
+  "stock_name": "创源股份",
+  "concept": "时尚文教用品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "时尚文教用品",
+    "文教办公用品"
+  ],
+  "should": [
+    "学生文具",
+    "本册印制",
+    "体育健身器材",
+    "海外学生文具市场",
+    "办公文具市场",
+    "体育赛事",
+    "出口市场领先地位",
+    "海外线上销售渠道"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "时尚文教用品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "文教办公用品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:39:39"
+}

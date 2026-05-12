@@ -1,0 +1,46 @@
+{
+  "stock_id": "603982",
+  "stock_name": "泉峰汽车",
+  "concept": "铝合金精密压铸",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铝合金精密压铸",
+    "铝合金精密压铸件",
+    "大型压铸技术",
+    "车身结构件"
+  ],
+  "should": [
+    "机加工件",
+    "电机壳体组件",
+    "电控壳组件",
+    "车载充电器壳体组件",
+    "传动零部件",
+    "引擎零部件",
+    "转向与刹车零部件",
+    "热交换零部件",
+    "模具设计能力",
+    "同步设计开发能力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铝合金精密压铸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铝合金精密压铸件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大型压铸技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车身结构件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:00:14"
+}

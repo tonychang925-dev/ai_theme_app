@@ -1,0 +1,40 @@
+{
+  "stock_id": "300774",
+  "stock_name": "倍杰特",
+  "concept": "水处理方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水处理解决方案",
+    "废水零排放",
+    "高含盐废水分盐"
+  ],
+  "should": [
+    "运营管理及技术服务",
+    "商品制造与销售",
+    "分盐零排放",
+    "高难度污水处理系统",
+    "中水回用系统",
+    "高盐水减化及零排放系统",
+    "EP",
+    "水处理方案",
+    "再生水利用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水处理解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "废水零排放",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高含盐废水分盐",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:42:36"
+}

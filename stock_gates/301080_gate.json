@@ -1,0 +1,36 @@
+{
+  "stock_id": "301080",
+  "stock_name": "百普赛斯",
+  "concept": "重组蛋白试剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "重组蛋白试剂",
+    "重组蛋白"
+  ],
+  "should": [
+    "检测服务",
+    "高表达宿主与载体平台",
+    "高密度细胞培养平台",
+    "蛋白制备及制剂平台",
+    "蛋白衍生修饰标记平台",
+    "高整合性蛋白分析技术平台",
+    "膜蛋白表达技术平台",
+    "全长人CD20膜蛋白",
+    "全长人CD133膜蛋白",
+    "人CCR5 GPCR膜蛋白"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "重组蛋白试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重组蛋白",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:55:50"
+}

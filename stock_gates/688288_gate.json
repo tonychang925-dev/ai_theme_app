@@ -1,0 +1,51 @@
+{
+  "stock_id": "688288",
+  "stock_name": "鸿泉技术",
+  "concept": "汽车智能网联",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车智能网联",
+    "ADAS高级辅助驾驶系统",
+    "T-BOX",
+    "行驶记录仪",
+    "商用车"
+  ],
+  "should": [
+    "后装市场",
+    "车载中控屏",
+    "汽车仪表",
+    "车身控制器",
+    "网关",
+    "5G",
+    "V2X",
+    "嵌入式软件",
+    "人工智能算法",
+    "重卡"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车智能网联",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ADAS高级辅助驾驶系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "T-BOX",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "行驶记录仪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商用车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:14:21"
+}

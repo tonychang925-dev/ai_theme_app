@@ -1,0 +1,46 @@
+{
+  "stock_id": "002551",
+  "stock_name": "尚荣医疗",
+  "concept": "医院建设整体方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医院建设整体解决方案",
+    "医疗系统集成一站式服务",
+    "洁净技术",
+    "智能自控手术室"
+  ],
+  "should": [
+    "医院建设整体方案",
+    "特种医疗设施",
+    "医院手术部",
+    "ICU",
+    "规划设计",
+    "装饰施工",
+    "软件开发",
+    "医疗设备研发生产",
+    "项目融资",
+    "后期运维"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医院建设整体解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗系统集成一站式服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "洁净技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能自控手术室",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:46:57"
+}

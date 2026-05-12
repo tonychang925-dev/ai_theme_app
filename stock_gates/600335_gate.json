@@ -1,0 +1,41 @@
+{
+  "stock_id": "600335",
+  "stock_name": "国机汽车",
+  "concept": "汽车综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车综合服务",
+    "汽车贸易服务",
+    "汽车工程技术服务"
+  ],
+  "should": [
+    "大众",
+    "菲亚特克莱斯勒",
+    "捷豹路虎",
+    "福特",
+    "通用",
+    "特斯拉",
+    "保时捷",
+    "林肯",
+    "阿斯顿马丁",
+    "沃尔沃"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车贸易服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车工程技术服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:15:31"
+}

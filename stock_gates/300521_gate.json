@@ -1,0 +1,41 @@
+{
+  "stock_id": "300521",
+  "stock_name": "爱司凯",
+  "concept": "工业化打印",
+  "strategy_type": "industry_chain",
+  "must": [
+    "胶印CTP",
+    "柔印CTP",
+    "256路激光光阀技术"
+  ],
+  "should": [
+    "3D砂型打印设备",
+    "金属3D打印设备",
+    "工业化打印",
+    "全数字化设计生产",
+    "3D建模",
+    "铸造分模设计",
+    "有限元分析",
+    "浇冒口设置与流道设计",
+    "航空航天",
+    "汽车制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "胶印CTP",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "柔印CTP",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "256路激光光阀技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:31:07"
+}

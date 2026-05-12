@@ -1,0 +1,41 @@
+{
+  "stock_id": "002165",
+  "stock_name": "红宝丽",
+  "concept": "环氧丙烷衍生品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "聚氨酯硬泡组合聚醚",
+    "异丙醇胺系列产品",
+    "环氧丙烷"
+  ],
+  "should": [
+    "过氧化二异丙苯",
+    "聚氨酯保温板",
+    "异丙苯法新工艺（共氧化法）",
+    "环氧丙烷衍生品",
+    "超临界工艺",
+    "结构阻燃技术",
+    "冰箱（柜）",
+    "集装箱",
+    "汽车",
+    "船舶"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "聚氨酯硬泡组合聚醚",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "异丙醇胺系列产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环氧丙烷",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:26:51"
+}

@@ -1,0 +1,49 @@
+{
+  "stock_id": "001298",
+  "stock_name": "好上好",
+  "concept": "电子元器件分销",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子元器件分销",
+    "SoC芯片",
+    "无线芯片及模块",
+    "电源及功率器件",
+    "模拟/数字器件"
+  ],
+  "should": [
+    "存储器",
+    "LED器件",
+    "传感器",
+    "处理器",
+    "光电器件",
+    "结构件及被动器件",
+    "原厂授权代理",
+    "授权分销商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子元器件分销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SoC芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无线芯片及模块",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电源及功率器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "模拟/数字器件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:15:39"
+}

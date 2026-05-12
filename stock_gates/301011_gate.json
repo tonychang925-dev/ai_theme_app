@@ -1,0 +1,51 @@
+{
+  "stock_id": "301011",
+  "stock_name": "华立科技",
+  "concept": "游戏游艺龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国内游艺设备龙头",
+    "游戏游艺设备",
+    "动漫IP衍生产品",
+    "游戏游艺设备运营",
+    "游戏游艺设备研发"
+  ],
+  "should": [
+    "游戏游艺设备销售",
+    "游戏游艺设备生产",
+    "IP卡片",
+    "游戏引擎开发",
+    "游戏游艺设备设计",
+    "游戏游艺龙头",
+    "AI技术",
+    "VR技术",
+    "AR技术",
+    "5G技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国内游艺设备龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "游戏游艺设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动漫IP衍生产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "游戏游艺设备运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "游戏游艺设备研发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:53:06"
+}

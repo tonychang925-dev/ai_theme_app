@@ -1,0 +1,36 @@
+{
+  "stock_id": "600712",
+  "stock_name": "南宁百货",
+  "concept": "商业零售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商业零售",
+    "百货"
+  ],
+  "should": [
+    "家电",
+    "超市",
+    "汽车",
+    "电子商务",
+    "实体零售",
+    "线上销售",
+    "线上线下融合",
+    "业态调整",
+    "品牌汰换",
+    "门店转租"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商业零售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "百货",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:25:31"
+}

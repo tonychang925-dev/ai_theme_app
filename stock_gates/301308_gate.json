@@ -1,0 +1,51 @@
+{
+  "stock_id": "301308",
+  "stock_name": "江波龙",
+  "concept": "半导体存储",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球第二大独立存储器厂商",
+    "嵌入式存储",
+    "移动存储",
+    "固态硬盘",
+    "半导体存储"
+  ],
+  "should": [
+    "主控芯片设计",
+    "固件开发",
+    "NAND颗粒分析",
+    "封装测试",
+    "内存条",
+    "B2B品牌FORESEE全球第五",
+    "B2C品牌Lexar全球第二",
+    "智能手机",
+    "计算机",
+    "汽车电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球第二大独立存储器厂商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "嵌入式存储",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动存储",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "固态硬盘",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体存储",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:02:27"
+}

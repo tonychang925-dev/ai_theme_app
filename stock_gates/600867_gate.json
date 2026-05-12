@@ -1,0 +1,35 @@
+{
+  "stock_id": "600867",
+  "stock_name": "通化东宝",
+  "concept": "重组胰岛素",
+  "strategy_type": "industry_chain",
+  "must": [
+    "重组人胰岛素",
+    "重组胰岛素"
+  ],
+  "should": [
+    "甘精胰岛素",
+    "门冬胰岛素30注射液",
+    "门冬胰岛素50注射液",
+    "自主创新",
+    "糖尿病治疗",
+    "痛风/高尿酸血症治疗",
+    "非酒精性脂肪性肝炎（NASH）",
+    "人胰岛素市场份额全国第一",
+    "市场份额持续攀升"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "重组人胰岛素",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重组胰岛素",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:29:59"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "300519",
+  "stock_name": "新光药业",
+  "concept": "中药保健品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "西洋参口服液"
+  ],
+  "should": [
+    "黄芪生脉饮",
+    "伸筋丹胶囊",
+    "中药保健品",
+    "提高免疫能力",
+    "冠心病患者",
+    "中老年虚弱症",
+    "颈椎病",
+    "肩周炎",
+    "骨折后遗症",
+    "慢性关节炎"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "西洋参口服液",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:30:58"
+}

@@ -1,0 +1,43 @@
+{
+  "stock_id": "605555",
+  "stock_name": "德昌股份",
+  "concept": "小家电及汽车电机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "小家电代工",
+    "吸尘器代工",
+    "EPS电机",
+    "小家电及汽车电机"
+  ],
+  "should": [
+    "头发护理电器代工",
+    "TTI",
+    "采埃孚",
+    "头发护理电器（美发梳、吹风机）",
+    "刹车电机",
+    "与TTI相互依存度提升",
+    "供应占TTI同类采购比例超80%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "小家电代工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "吸尘器代工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "EPS电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小家电及汽车电机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:04:39"
+}

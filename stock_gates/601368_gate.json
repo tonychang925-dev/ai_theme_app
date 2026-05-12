@@ -1,0 +1,48 @@
+{
+  "stock_id": "601368",
+  "stock_name": "绿城水务",
+  "concept": "水务运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水务运营",
+    "污水处理",
+    "供水服务",
+    "自来水生产供应",
+    "污水处理服务"
+  ],
+  "should": [
+    "污泥处理",
+    "智慧水务",
+    "制水工艺",
+    "水质分析",
+    "废水回用",
+    "国内自动化程度最高",
+    "少数拥有废水处理系统的水厂之一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水务运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "污水处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "供水服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自来水生产供应",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "污水处理服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:36:22"
+}

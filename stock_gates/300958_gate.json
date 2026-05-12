@@ -1,0 +1,36 @@
+{
+  "stock_id": "300958",
+  "stock_name": "建工修复",
+  "concept": "环境修复服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环境修复服务",
+    "土壤修复",
+    "地下水修复"
+  ],
+  "should": [
+    "连续9次入围行业领先企业榜单",
+    "北京红狮涂料厂土壤修复项目",
+    "北京焦化厂南厂区土壤修复项目",
+    "天津农药厂修复项目",
+    "原位热脱附"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环境修复服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "土壤修复",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "地下水修复",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:50:52"
+}

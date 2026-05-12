@@ -1,0 +1,36 @@
+{
+  "stock_id": "002582",
+  "stock_name": "好想你",
+  "concept": "红枣健康食品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中国红枣龙头企业",
+    "双中国驰名商标"
+  ],
+  "should": [
+    "拥抱您",
+    "清菲菲",
+    "小冻粮",
+    "我的早餐",
+    "我的粉丝",
+    "我的鲜饮",
+    "豆菲菲",
+    "红小派",
+    "简单巧厨",
+    "红枣健康食品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中国红枣龙头企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "双中国驰名商标",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:48:30"
+}

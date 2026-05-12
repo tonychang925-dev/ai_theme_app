@@ -1,0 +1,30 @@
+{
+  "stock_id": "601878",
+  "stock_name": "浙商证券",
+  "concept": "综合券商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "财富管理"
+  ],
+  "should": [
+    "经纪业务",
+    "信用业务",
+    "财富管理转型",
+    "资产配置模式",
+    "零售客户",
+    "机构客户",
+    "全牌照经营",
+    "区位优势",
+    "金融科技投入"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "财富管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:39:19"
+}

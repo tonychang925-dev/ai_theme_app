@@ -1,0 +1,46 @@
+{
+  "stock_id": "002011",
+  "stock_name": "盾安环境",
+  "concept": "制冷元器件龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球制冷元器件龙头",
+    "新能源汽车热管理",
+    "四通阀市占率全球第一",
+    "截止阀市占率全球第一"
+  ],
+  "should": [
+    "制冷阀件",
+    "热交换产品",
+    "汽零产品",
+    "商用中央空调",
+    "特种中央空调",
+    "冷链设备",
+    "电子膨胀阀",
+    "CO2电子膨胀阀",
+    "微米级制造精度",
+    "智能算法控温"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球制冷元器件龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车热管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "四通阀市占率全球第一",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "截止阀市占率全球第一",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:18:24"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "600850",
+  "stock_name": "电科数字",
+  "concept": "行业数字化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金融科技",
+    "数字水利",
+    "信创及国产化解决方案",
+    "金融信创"
+  ],
+  "should": [
+    "增值销售",
+    "专业服务",
+    "高端工控平台",
+    "智能数据处理平台",
+    "实时信号处理平台",
+    "嵌入式信息处理平台",
+    "轨交安全计算机",
+    "物联态势感知平台",
+    "适配验证云平台",
+    "金融云基地"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金融科技",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字水利",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信创及国产化解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融信创",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:29:31"
+}

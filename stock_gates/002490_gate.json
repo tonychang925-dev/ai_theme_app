@@ -1,0 +1,46 @@
+{
+  "stock_id": "002490",
+  "stock_name": "山东墨龙",
+  "concept": "石油钻采设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "石油钻采设备",
+    "石油钻采机械装备",
+    "油气开采装备",
+    "高端铸锻件"
+  ],
+  "should": [
+    "石油天然气输送装备",
+    "管类产品",
+    "HIsmelt熔融还原技术",
+    "热风喷枪设备",
+    "EH抽油杆产品",
+    "高抗拉强度高抗变形防粘扣油管",
+    "抽油泵渗硼泵筒工艺",
+    "特种双通道抽油泵",
+    "液压冷拔油缸管",
+    "油气能源钻采"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "石油钻采设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "石油钻采机械装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "油气开采装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端铸锻件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:44:12"
+}

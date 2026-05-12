@@ -1,0 +1,38 @@
+{
+  "stock_id": "001266",
+  "stock_name": "宏英智能",
+  "concept": "移动机械智能电控",
+  "strategy_type": "industry_chain",
+  "must": [
+    "移动机械智能电控",
+    "智能电控产品",
+    "智能电控总成"
+  ],
+  "should": [
+    "三一集团",
+    "中联重科",
+    "潍柴雷沃重工",
+    "山河智能",
+    "自主研发",
+    "移动机械",
+    "专用车辆"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "移动机械智能电控",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能电控产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能电控总成",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:14:56"
+}

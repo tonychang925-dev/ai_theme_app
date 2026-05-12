@@ -1,0 +1,41 @@
+{
+  "stock_id": "300370",
+  "stock_name": "安控科技",
+  "concept": "智慧产业自动化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "自动化",
+    "工业自动化",
+    "智慧产业"
+  ],
+  "should": [
+    "油气服务",
+    "人工智能",
+    "大数据",
+    "智慧产业自动化",
+    "信息化技术",
+    "5G",
+    "视觉识别",
+    "石油天然气勘探生产",
+    "制造业智能制造",
+    "能源行业数字化转型"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "自动化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业自动化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧产业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:24:16"
+}

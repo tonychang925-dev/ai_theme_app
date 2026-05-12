@@ -1,0 +1,41 @@
+{
+  "stock_id": "002436",
+  "stock_name": "兴森科技",
+  "concept": "先进电子电路方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "先进电子电路方案",
+    "IC封装基板",
+    "半导体测试板"
+  ],
+  "should": [
+    "高多层PCB板",
+    "软硬结合板",
+    "高密度互连HDI板",
+    "类载板(SLP)",
+    "ATE半导体测试板",
+    "快速打样",
+    "量产制造",
+    "一站式服务",
+    "半导体",
+    "AI服务器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "先进电子电路方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IC封装基板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体测试板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:41:41"
+}

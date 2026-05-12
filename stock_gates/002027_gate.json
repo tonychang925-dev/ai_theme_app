@@ -1,0 +1,44 @@
+{
+  "stock_id": "002027",
+  "stock_name": "分众传媒",
+  "concept": "楼宇媒体运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "楼宇媒体",
+    "电梯电视媒体",
+    "电梯海报媒体"
+  ],
+  "should": [
+    "影院银幕广告媒体",
+    "终端卖场媒体",
+    "互联网广告主",
+    "快消品广告主",
+    "电梯媒体终端超过260万个",
+    "覆盖约330个城市地区",
+    "4亿中国城市主流人群",
+    "一二线城市高档写字楼覆盖率91%",
+    "楼宇媒体运营",
+    "开创电梯媒体广告模式"
+  ],
+  "not": [
+    "游戏广告治理",
+    "医疗、保险、直播广告监管"
+  ],
+  "evidence_refs": [
+    {
+      "term": "楼宇媒体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电梯电视媒体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电梯海报媒体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:19:01"
+}

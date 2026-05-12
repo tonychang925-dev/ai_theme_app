@@ -1,0 +1,31 @@
+{
+  "stock_id": "000989",
+  "stock_name": "九芝堂",
+  "concept": "中华老字号中药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "疏血通注射液"
+  ],
+  "should": [
+    "六味地黄丸",
+    "安宫牛黄丸",
+    "阿胶",
+    "足光散",
+    "斯奇康注射液",
+    "中华老字号中药",
+    "国家级非物质文化遗产保护",
+    "国家企业技术中心",
+    "国家博士后科研工作站",
+    "中医药工程学重点学科"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "疏血通注射液",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:12:34"
+}

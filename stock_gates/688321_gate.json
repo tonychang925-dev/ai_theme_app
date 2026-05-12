@@ -1,0 +1,31 @@
+{
+  "stock_id": "688321",
+  "stock_name": "微芯生物",
+  "concept": "原创小分子新药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "西达本胺"
+  ],
+  "should": [
+    "西格列他钠",
+    "西奥罗尼",
+    "化学基因组学核心技术平台",
+    "原创小分子新药",
+    "表观遗传调控剂",
+    "三通路靶向激酶抑制剂",
+    "外周T细胞淋巴瘤",
+    "2型糖尿病",
+    "弥漫大B细胞淋巴瘤",
+    "非小细胞肺癌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "西达本胺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:15:22"
+}

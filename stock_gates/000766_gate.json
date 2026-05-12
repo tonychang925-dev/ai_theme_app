@@ -1,0 +1,36 @@
+{
+  "stock_id": "000766",
+  "stock_name": "通化金马",
+  "concept": "风湿骨病中成药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风湿祛痛胶囊",
+    "小金丸"
+  ],
+  "should": [
+    "蜡样芽孢杆菌活菌胶囊",
+    "骨瓜提取物制剂",
+    "血栓通注射液",
+    "清开灵片",
+    "小儿热速清颗粒",
+    "复方嗜酸乳杆菌片",
+    "清肝健脾口服液",
+    "芩石利咽口服液",
+    "天然麝香小金丸",
+    "消咳喘胶囊"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风湿祛痛胶囊",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小金丸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:04:08"
+}

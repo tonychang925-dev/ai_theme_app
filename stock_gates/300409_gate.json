@@ -1,0 +1,46 @@
+{
+  "stock_id": "300409",
+  "stock_name": "道氏技术",
+  "concept": "新材料综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "碳材料",
+    "锂电材料",
+    "陶瓷材料",
+    "碳纳米管导电剂"
+  ],
+  "should": [
+    "三元前驱体",
+    "钴盐",
+    "陶瓷墨水",
+    "陶瓷釉料",
+    "湿法冶炼技术",
+    "石墨烯导电浆料",
+    "新材料综合服务",
+    "生产工艺",
+    "设备设计",
+    "配方优化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "碳材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂电材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "陶瓷材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳纳米管导电剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:26:08"
+}

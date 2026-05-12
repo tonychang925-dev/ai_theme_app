@@ -1,0 +1,41 @@
+{
+  "stock_id": "600475",
+  "stock_name": "华光环能",
+  "concept": "环保能源综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "热电运营",
+    "市政环保",
+    "新能源"
+  ],
+  "should": [
+    "电站锅炉",
+    "装备制造",
+    "固废处置设备",
+    "环保设备",
+    "光伏项目",
+    "锅炉",
+    "环保能源综合服务",
+    "固废处置",
+    "电站建设",
+    "热电联产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "热电运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "市政环保",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:18:39"
+}

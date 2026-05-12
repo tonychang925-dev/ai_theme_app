@@ -1,0 +1,40 @@
+{
+  "stock_id": "002795",
+  "stock_name": "永和智控",
+  "concept": "肿瘤精准放疗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "肿瘤精准放射治疗",
+    "肿瘤精准放疗",
+    "水暖阀门管件"
+  ],
+  "should": [
+    "头部伽玛刀",
+    "体部伽玛刀",
+    "直线加速器",
+    "PET-CT",
+    "3.0T核磁共振",
+    "128层断层螺旋CT",
+    "紫铜/碳钢类卡压产品",
+    "TRV产品",
+    "分水器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "肿瘤精准放射治疗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "肿瘤精准放疗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水暖阀门管件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:57:54"
+}

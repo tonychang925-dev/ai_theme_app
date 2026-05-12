@@ -1,0 +1,31 @@
+{
+  "stock_id": "301578",
+  "stock_name": "辰奕智能",
+  "concept": "智能遥控器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能遥控器"
+  ],
+  "should": [
+    "智能产品",
+    "微控制单元",
+    "自动控制技术",
+    "传感技术",
+    "微电子技术",
+    "通讯技术",
+    "电力电子技术",
+    "电磁兼容技术",
+    "数据处理技术",
+    "解码驱动技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能遥控器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:06:31"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "301017",
+  "stock_name": "漱玉平民",
+  "concept": "医药零售连锁",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药零售连锁",
+    "中西成药"
+  ],
+  "should": [
+    "保健食品",
+    "中药饮片",
+    "健康器械",
+    "批发加盟",
+    "直营门店",
+    "B2C",
+    "O2O",
+    "集中采购",
+    "地区采购",
+    "自主配送"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医药零售连锁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中西成药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:53:19"
+}

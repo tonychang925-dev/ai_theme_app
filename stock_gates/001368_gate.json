@@ -1,0 +1,33 @@
+{
+  "stock_id": "001368",
+  "stock_name": "通达创智",
+  "concept": "户外家居制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "体育户外用品",
+    "家居生活用品"
+  ],
+  "should": [
+    "户外家居制造",
+    "户外运动",
+    "家居生活",
+    "健康护理",
+    "出口型企业",
+    "制造环节",
+    "健康护理用品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "体育户外用品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "家居生活用品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:17:19"
+}

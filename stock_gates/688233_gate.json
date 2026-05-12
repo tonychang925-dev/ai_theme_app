@@ -1,0 +1,36 @@
+{
+  "stock_id": "688233",
+  "stock_name": "神工股份",
+  "concept": "刻蚀硅材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "刻蚀用单晶硅材料",
+    "刻蚀硅材料"
+  ],
+  "should": [
+    "硅电极",
+    "硅片",
+    "大尺寸单晶硅生长",
+    "高纯度控制",
+    "热场设计",
+    "精密加工",
+    "12英寸先进制程芯片刻蚀",
+    "干法刻蚀机",
+    "国内唯一实现刻蚀用单晶硅材料量产",
+    "国际先进半导体材料供应链"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "刻蚀用单晶硅材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "刻蚀硅材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:12:40"
+}

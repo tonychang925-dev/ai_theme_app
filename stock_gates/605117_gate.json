@@ -1,0 +1,29 @@
+{
+  "stock_id": "605117",
+  "stock_name": "德业股份",
+  "concept": "逆变器及家电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "逆变器",
+    "储能逆变器"
+  ],
+  "should": [
+    "组串式逆变器",
+    "微型并网逆变器",
+    "变频空调整机解决方案供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "逆变器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能逆变器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:01:57"
+}

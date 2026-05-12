@@ -1,0 +1,46 @@
+{
+  "stock_id": "601139",
+  "stock_name": "深圳燃气",
+  "concept": "城市燃气综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "城市燃气综合服务",
+    "城市燃气",
+    "天然气批发",
+    "管道气"
+  ],
+  "should": [
+    "光伏胶膜",
+    "光伏发电",
+    "液化石油气批发",
+    "大鹏LNG",
+    "大鹏TUA",
+    "迭福LNG",
+    "居民用户",
+    "工商用户",
+    "电厂用户",
+    "气源供应到终端销售的全部环节"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "城市燃气综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市燃气",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天然气批发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "管道气",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:34:48"
+}

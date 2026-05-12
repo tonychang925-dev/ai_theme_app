@@ -1,0 +1,40 @@
+{
+  "stock_id": "603639",
+  "stock_name": "海利尔",
+  "concept": "农药制剂与原药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农药制剂与原药",
+    "原药",
+    "制剂加工"
+  ],
+  "should": [
+    "杀虫剂",
+    "杀菌剂",
+    "除草剂",
+    "中间体合成",
+    "原药生产",
+    "农业生产",
+    "病虫害防治",
+    "国家定点农药生产企业",
+    "农药制剂产值和销售额行业前列"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农药制剂与原药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "制剂加工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:53:48"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "600302",
+  "stock_name": "标准股份",
+  "concept": "缝制设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "缝制设备",
+    "工业缝纫机"
+  ],
+  "should": [
+    "智能多轴平缝机",
+    "微油平台智能平缝机",
+    "步进款双针机",
+    "多电机驱动控制技术",
+    "物联网管理系统",
+    "标准智云",
+    "服饰",
+    "箱包",
+    "家具",
+    "汽车内饰"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "缝制设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业缝纫机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:14:20"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "002745",
+  "stock_name": "木林森",
+  "concept": "LED照明封装",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LED照明封装",
+    "品牌照明业务",
+    "LED智能制造业务"
+  ],
+  "should": [
+    "朗德万斯",
+    "木林森",
+    "新型封装技术",
+    "白光灯珠",
+    "RGB直显",
+    "家居与办公照明",
+    "工业照明",
+    "智能照明",
+    "植物照明",
+    "健康照明"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED照明封装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "品牌照明业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LED智能制造业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:55:45"
+}

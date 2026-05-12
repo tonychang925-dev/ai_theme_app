@@ -1,0 +1,40 @@
+{
+  "stock_id": "300274",
+  "stock_name": "阳光电源",
+  "concept": "新能源电源设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "储能系统",
+    "光伏逆变器",
+    "新能源电源设备"
+  ],
+  "should": [
+    "电力电子技术",
+    "风电变流器",
+    "光伏并网逆变器",
+    "中压直挂光伏逆变器",
+    "2000V逆变器",
+    "光伏并网电站",
+    "储能项目",
+    "独立储能项目",
+    "储能系统出货量全国第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "储能系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏逆变器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源电源设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:20:35"
+}

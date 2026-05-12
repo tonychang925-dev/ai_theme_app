@@ -1,0 +1,35 @@
+{
+  "stock_id": "301000",
+  "stock_name": "肇民科技",
+  "concept": "精密注塑件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密注塑件",
+    "精密注塑模具",
+    "特种工程塑料应用开发"
+  ],
+  "should": [
+    "汽车功能结构件",
+    "精密注塑成型",
+    "新能源车部件",
+    "高端厨卫家电功能件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密注塑件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密注塑模具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种工程塑料应用开发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:52:33"
+}

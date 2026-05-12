@@ -1,0 +1,41 @@
+{
+  "stock_id": "600602",
+  "stock_name": "云赛智联",
+  "concept": "云服务大数据",
+  "strategy_type": "industry_chain",
+  "must": [
+    "云服务大数据",
+    "一站式数据开放平台",
+    "湖仓一体数字平台"
+  ],
+  "should": [
+    "行业解决方案",
+    "智能化产品",
+    "IDC综合运营管理平台",
+    "MSP云管平台",
+    "政务云中间层管理平台软件",
+    "信可得混合云管理平台",
+    "数据抽取ETL工具",
+    "云低代码开发云平台",
+    "多链一体化链管平台",
+    "数脑"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "云服务大数据",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一站式数据开放平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "湖仓一体数字平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:22:43"
+}

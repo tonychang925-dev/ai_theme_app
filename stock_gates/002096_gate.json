@@ -1,0 +1,41 @@
+{
+  "stock_id": "002096",
+  "stock_name": "易普力",
+  "concept": "民爆全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业炸药",
+    "工业雷管",
+    "工程爆破服务"
+  ],
+  "should": [
+    "工业导爆管",
+    "工业导爆索",
+    "军用火工品",
+    "消防系列产品",
+    "民爆全产业链",
+    "工业互联网+安全生产",
+    "民爆装备研发设计",
+    "生产制造",
+    "试验验证",
+    "矿山开采"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业炸药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业雷管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程爆破服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:22:53"
+}

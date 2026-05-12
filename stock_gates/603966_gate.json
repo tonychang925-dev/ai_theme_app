@@ -1,0 +1,33 @@
+{
+  "stock_id": "603966",
+  "stock_name": "法兰泰克",
+  "concept": "工业起重机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业起重机",
+    "欧式起重机械"
+  ],
+  "should": [
+    "电动葫芦",
+    "桥门式起重机",
+    "缆索起重机",
+    "高空作业平台",
+    "自动化技术",
+    "智能化技术",
+    "水利水电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业起重机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "欧式起重机械",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:59:46"
+}

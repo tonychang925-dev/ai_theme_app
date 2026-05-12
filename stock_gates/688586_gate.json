@@ -1,0 +1,46 @@
+{
+  "stock_id": "688586",
+  "stock_name": "江航装备",
+  "concept": "航空装备与特种制冷",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航空氧气系统",
+    "机载油箱惰性化防护系统",
+    "飞机副油箱",
+    "特种制冷设备"
+  ],
+  "should": [
+    "敏感元件",
+    "氧气地面设备",
+    "空间站环控生保系统",
+    "工业用特种耐高温空调",
+    "专用车空调",
+    "军用制冷技术",
+    "环控集成系统",
+    "航空发动机配套",
+    "地面装备保障",
+    "国内各大主机厂配套"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航空氧气系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机载油箱惰性化防护系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "飞机副油箱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种制冷设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:21:25"
+}

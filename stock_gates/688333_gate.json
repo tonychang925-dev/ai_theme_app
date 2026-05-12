@@ -1,0 +1,40 @@
+{
+  "stock_id": "688333",
+  "stock_name": "铂力特",
+  "concept": "金属增材制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金属增材制造",
+    "3D打印设备研发及生产",
+    "金属3D打印设备"
+  ],
+  "should": [
+    "钛合金粉末",
+    "高温合金粉末",
+    "航空航天",
+    "医疗",
+    "汽车",
+    "消费电子",
+    "工业机械",
+    "科研",
+    "增材技术工艺"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金属增材制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "3D打印设备研发及生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金属3D打印设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:15:45"
+}

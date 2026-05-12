@@ -1,0 +1,46 @@
+{
+  "stock_id": "000070",
+  "stock_name": "特发信息",
+  "concept": "光纤光缆与智慧服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光纤光缆与智慧服务",
+    "光纤",
+    "光缆",
+    "电子信息处理技术"
+  ],
+  "should": [
+    "光纤连接器",
+    "配线产品",
+    "馈线电缆",
+    "数据线缆",
+    "架空裸导地线",
+    "光缆金具及附件",
+    "网络终端设备",
+    "主控芯片",
+    "固件开发",
+    "双千兆网络"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光纤光缆与智慧服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光纤",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子信息处理技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:50:07"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "688259",
+  "stock_name": "创耀科技",
+  "concept": "接入网通信芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "接入网通信芯片",
+    "接入网网络芯片"
+  ],
+  "should": [
+    "电力线载波通信芯片",
+    "16端口局端芯片",
+    "电力线载波通信",
+    "物理层核心通信算法",
+    "嵌入式软件",
+    "大规模SoC芯片设计",
+    "信号调制解调",
+    "信道编解码",
+    "通用网关平台",
+    "VDSL2宽带接入技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "接入网通信芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "接入网网络芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:13:24"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "688681",
+  "stock_name": "科汇股份",
+  "concept": "开关磁阻电机龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "开关磁阻电机",
+    "配电网自动化产品"
+  ],
+  "should": [
+    "输电线路故障行波测距产品",
+    "电力电缆故障探测与定位装置",
+    "用户侧储能控制系统",
+    "电力系统同步时钟",
+    "行波测距",
+    "低压脉冲反射法",
+    "脉冲电流法",
+    "多次脉冲法",
+    "直流电阻法",
+    "低压电力物联网技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "开关磁阻电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "配电网自动化产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:23:57"
+}

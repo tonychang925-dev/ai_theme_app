@@ -1,0 +1,50 @@
+{
+  "stock_id": "300869",
+  "stock_name": "康泰医学",
+  "concept": "医疗诊断监护",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医疗诊断监护",
+    "血氧类",
+    "心电类",
+    "监护类",
+    "血压类"
+  ],
+  "should": [
+    "超声类",
+    "分析测试类",
+    "血氧类产品的核心技术和生产工艺",
+    "监护类产品的核心技术和生产工艺",
+    "心电类产品的核心技术和生产工艺",
+    "超声类产品的核心技术和生产工艺",
+    "血压类产品的核心技术和生产工艺",
+    "各级医院",
+    "门诊部"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医疗诊断监护",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "血氧类",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "心电类",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "监护类",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "血压类",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:46:53"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "002663",
+  "stock_name": "普邦股份",
+  "concept": "生态景观服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生态景观"
+  ],
+  "should": [
+    "城市运营",
+    "生态景观服务",
+    "绿色建设",
+    "水环境治理",
+    "绿色建材",
+    "立体绿化",
+    "规划咨询",
+    "设备采购",
+    "工程建设",
+    "养护运营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生态景观",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:52:07"
+}

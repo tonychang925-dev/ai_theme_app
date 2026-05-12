@@ -1,0 +1,36 @@
+{
+  "stock_id": "603230",
+  "stock_name": "内蒙新华",
+  "concept": "出版物发行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "出版物发行",
+    "中小学教材发行"
+  ],
+  "should": [
+    "实体书店运营",
+    "教育服务",
+    "线上+线下双渠道",
+    "全网连锁发行",
+    "多媒体营销矩阵",
+    "物流供应网络",
+    "仓储运输协同",
+    "智慧化物流",
+    "全民阅读活动",
+    "文化讲座"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "出版物发行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中小学教材发行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:47:07"
+}

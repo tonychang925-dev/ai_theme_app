@@ -1,0 +1,46 @@
+{
+  "stock_id": "300031",
+  "stock_name": "宝通科技",
+  "concept": "游戏+工业双轮驱动",
+  "strategy_type": "industry_chain",
+  "must": [
+    "游戏+工业双轮驱动",
+    "工业散货物料输送",
+    "移动互联网游戏",
+    "VR/AR/MR"
+  ],
+  "should": [
+    "智能输送技术",
+    "无人驾驶",
+    "橡胶输送带",
+    "VR游戏",
+    "移动游戏海外发行",
+    "矿产开采",
+    "钢铁冶炼",
+    "建材水泥",
+    "港口码头",
+    "火力发电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "游戏+工业双轮驱动",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业散货物料输送",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动互联网游戏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "VR/AR/MR",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:10:15"
+}

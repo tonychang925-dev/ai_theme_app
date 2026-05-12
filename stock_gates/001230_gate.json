@@ -1,0 +1,35 @@
+{
+  "stock_id": "001230",
+  "stock_name": "劲旅环境",
+  "concept": "环卫综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "投资运营管理服务",
+    "装备制造"
+  ],
+  "should": [
+    "环卫车辆",
+    "垃圾压缩设备",
+    "深埋式垃圾桶",
+    "厕所类产品",
+    "农村污水处理设备",
+    "环卫综合服务",
+    "清扫保洁",
+    "生活垃圾分类收集转运",
+    "厕所管护"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "投资运营管理服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "装备制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:14:23"
+}

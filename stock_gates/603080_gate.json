@@ -1,0 +1,33 @@
+{
+  "stock_id": "603080",
+  "stock_name": "新疆火炬",
+  "concept": "城市燃气供应",
+  "strategy_type": "industry_chain",
+  "must": [
+    "城市燃气供应",
+    "加油加气站运营管理"
+  ],
+  "should": [
+    "燃气设施设备安装服务",
+    "中压燃气管道",
+    "加气站",
+    "油气合建站",
+    "LNG综合站",
+    "城市热力供应",
+    "新疆西南部气源优势"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "城市燃气供应",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "加油加气站运营管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:43:02"
+}

@@ -1,0 +1,32 @@
+{
+  "stock_id": "300398",
+  "stock_name": "飞凯材料",
+  "concept": "电子化工材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光纤光缆涂覆材料供应商",
+    "电子化工材料"
+  ],
+  "should": [
+    "屏幕显示材料",
+    "半导体材料",
+    "紫外固化材料",
+    "有机合成材料",
+    "液晶显示行业",
+    "集成电路行业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光纤光缆涂覆材料供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子化工材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:25:29"
+}

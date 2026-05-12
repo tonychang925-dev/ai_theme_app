@@ -1,0 +1,24 @@
+{
+  "stock_id": "688176",
+  "stock_name": "亚虹医药",
+  "concept": "泌尿生殖肿瘤创新药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "泌尿生殖肿瘤创新药"
+  ],
+  "should": [
+    "靶向免疫调节正常化（TIMN）",
+    "前药和精准药物递送（PADD）",
+    "口服靶向治疗药物"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "泌尿生殖肿瘤创新药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:10:48"
+}

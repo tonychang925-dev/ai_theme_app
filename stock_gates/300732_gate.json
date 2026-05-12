@@ -1,0 +1,35 @@
+{
+  "stock_id": "300732",
+  "stock_name": "设研院",
+  "concept": "交通工程设计咨询",
+  "strategy_type": "industry_chain",
+  "must": [
+    "河南省交通设计领域龙头",
+    "交通工程设计咨询"
+  ],
+  "should": [
+    "全生命周期工程技术服务",
+    "智库服务与数字化产品",
+    "智能制造及研发成果转化",
+    "公路行业甲级",
+    "市政行业甲级",
+    "建筑行业甲级",
+    "电子通讯广电行业甲级",
+    "煤炭行业甲级",
+    "全国同类企业领先方阵"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "河南省交通设计领域龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "交通工程设计咨询",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:40:46"
+}

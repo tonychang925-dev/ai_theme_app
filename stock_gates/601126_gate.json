@@ -1,0 +1,51 @@
+{
+  "stock_id": "601126",
+  "stock_name": "四方股份",
+  "concept": "电力二次设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "继电保护",
+    "自动化系统",
+    "智能配电开关",
+    "新能源接入管理",
+    "并网控制"
+  ],
+  "should": [
+    "风电机组变流器",
+    "主控制器",
+    "风电场监控系统",
+    "升压站保护监控",
+    "风/光功率控制",
+    "风/光功率预测",
+    "电能质量监测",
+    "无功补偿",
+    "时钟同步装置",
+    "主控芯片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "继电保护",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自动化系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能配电开关",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源接入管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "并网控制",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:34:42"
+}

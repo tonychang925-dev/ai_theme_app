@@ -1,0 +1,36 @@
+{
+  "stock_id": "600237",
+  "stock_name": "铜峰电子",
+  "concept": "薄膜电容器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "薄膜电容器",
+    "薄膜材料"
+  ],
+  "should": [
+    "金属化镀膜",
+    "电容器薄膜",
+    "金属化薄膜",
+    "高真空镀膜",
+    "家电",
+    "通讯",
+    "电网",
+    "轨道交通",
+    "新能源",
+    "电源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "薄膜电容器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "薄膜材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:12:44"
+}

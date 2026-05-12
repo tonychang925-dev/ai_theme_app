@@ -1,0 +1,32 @@
+{
+  "stock_id": "002585",
+  "stock_name": "双星新材",
+  "concept": "聚酯薄膜龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球BOPET行业龙头",
+    "聚酯薄膜龙头"
+  ],
+  "should": [
+    "聚酯薄膜",
+    "高功能性聚酯膜材料",
+    "功能性聚酯（PET）薄膜",
+    "高分子薄膜材料",
+    "光学薄膜",
+    "光电膜材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球BOPET行业龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚酯薄膜龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:48:35"
+}

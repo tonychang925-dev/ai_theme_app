@@ -1,0 +1,31 @@
+{
+  "stock_id": "603313",
+  "stock_name": "梦百合",
+  "concept": "记忆绵家居",
+  "strategy_type": "industry_chain",
+  "must": [
+    "记忆绵家居",
+    "记忆绵家居制品"
+  ],
+  "should": [
+    "国内记忆绵家居制品最大的龙头之一",
+    "规模化生产及供应链优势",
+    "品牌国际化",
+    "产能全球化",
+    "ODM向OBM转型"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "记忆绵家居",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "记忆绵家居制品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:48:50"
+}

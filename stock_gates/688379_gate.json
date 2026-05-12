@@ -1,0 +1,41 @@
+{
+  "stock_id": "688379",
+  "stock_name": "华光新材",
+  "concept": "钎焊材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钎焊材料",
+    "银浆",
+    "电子连接材料"
+  ],
+  "should": [
+    "铜基钎料",
+    "银钎料",
+    "焊条",
+    "焊膏",
+    "锡焊膏",
+    "绿色钎料",
+    "复合钎料",
+    "焊丝",
+    "焊环",
+    "焊带（片）"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钎焊材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "银浆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子连接材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:17:16"
+}

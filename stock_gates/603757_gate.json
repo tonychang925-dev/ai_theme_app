@@ -1,0 +1,36 @@
+{
+  "stock_id": "603757",
+  "stock_name": "大元泵业",
+  "concept": "泵业龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "家用屏蔽泵",
+    "液冷泵"
+  ],
+  "should": [
+    "泵业龙头",
+    "屏蔽泵结构",
+    "电机技术",
+    "农泵",
+    "立卧式多级离心泵",
+    "工业用泵",
+    "化工",
+    "制冷",
+    "制氢",
+    "半导体与电子工业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "家用屏蔽泵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液冷泵",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:56:04"
+}

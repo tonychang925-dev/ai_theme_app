@@ -1,0 +1,36 @@
+{
+  "stock_id": "300845",
+  "stock_name": "捷安高科",
+  "concept": "虚拟仿真实训",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轨道交通仿真实训产品",
+    "应急安全仿真产品"
+  ],
+  "should": [
+    "虚拟现实(VR)",
+    "增强现实(AR)",
+    "系统仿真",
+    "航海航空仿真产品",
+    "虚拟仿真实训",
+    "轨道交通实训",
+    "应急安全培训",
+    "航海船舶仿真",
+    "航空仿真",
+    "整体解决方案提供商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轨道交通仿真实训产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "应急安全仿真产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:45:44"
+}

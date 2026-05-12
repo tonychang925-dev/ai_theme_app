@@ -1,0 +1,46 @@
+{
+  "stock_id": "600019",
+  "stock_name": "宝钢股份",
+  "concept": "钢铁联合企业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "世界级钢铁联合企业",
+    "汽车用钢",
+    "硅钢",
+    "能源及重大工程用钢"
+  ],
+  "should": [
+    "碳钢薄板",
+    "厚板",
+    "钢管",
+    "高等级薄板",
+    "镀锡板",
+    "长材",
+    "新一代汽车高强钢",
+    "取向硅钢",
+    "高等级家电用钢",
+    "能源海工用钢"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "世界级钢铁联合企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车用钢",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硅钢",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "能源及重大工程用钢",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:07:23"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "600580",
+  "stock_name": "卧龙电驱",
+  "concept": "电机龙头制造商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球工业电机龙头",
+    "EV电机",
+    "高压电机",
+    "低压电机"
+  ],
+  "should": [
+    "驱动控制",
+    "工业自动化",
+    "发电机",
+    "日用电机",
+    "主控芯片",
+    "固件开发",
+    "电机龙头制造商",
+    "油气",
+    "石化",
+    "电力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球工业电机龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "EV电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高压电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "低压电机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:21:45"
+}

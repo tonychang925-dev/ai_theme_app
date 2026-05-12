@@ -1,0 +1,46 @@
+{
+  "stock_id": "300451",
+  "stock_name": "创业慧康",
+  "concept": "医疗IT服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "一体两翼",
+    "医保信息化",
+    "医院信息化",
+    "公卫信息化"
+  ],
+  "should": [
+    "区域信息化",
+    "个人健康信息化",
+    "HI系统",
+    "CIS系统",
+    "电子病历系统",
+    "检验系统",
+    "医学影像系统",
+    "医院信息集成平台",
+    "医疗IT服务",
+    "大数据"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "一体两翼",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医保信息化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医院信息化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公卫信息化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:28:00"
+}

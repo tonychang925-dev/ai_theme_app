@@ -1,0 +1,33 @@
+{
+  "stock_id": "002988",
+  "stock_name": "豪美新材",
+  "concept": "汽车轻量化铝型材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车轻量化铝型材",
+    "系统门窗"
+  ],
+  "should": [
+    "建筑用铝型材",
+    "一般工业用铝型材",
+    "铝加工工艺",
+    "再生铝业务",
+    "新能源汽车",
+    "铝型材制造商",
+    "全产业链布局"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车轻量化铝型材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "系统门窗",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:06:17"
+}

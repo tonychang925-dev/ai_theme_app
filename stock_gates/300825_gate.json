@@ -1,0 +1,36 @@
+{
+  "stock_id": "300825",
+  "stock_name": "阿尔特",
+  "concept": "汽车设计龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车设计龙头",
+    "整车设计"
+  ],
+  "should": [
+    "大众",
+    "奔驰",
+    "一汽集团",
+    "东风汽车",
+    "蔚来汽车",
+    "小鹏汽车",
+    "一汽大众",
+    "东风日产",
+    "V6发动机",
+    "减速器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车设计龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "整车设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:44:50"
+}

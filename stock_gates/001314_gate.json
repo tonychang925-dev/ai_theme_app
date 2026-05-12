@@ -1,0 +1,41 @@
+{
+  "stock_id": "001314",
+  "stock_name": "亿道信息",
+  "concept": "智能硬件ODM",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能硬件ODM",
+    "笔记本电脑",
+    "平板电脑"
+  ],
+  "should": [
+    "智能硬件产品",
+    "加固智能行业终端",
+    "XR及AIoT产品",
+    "产品定义",
+    "研发设计",
+    "工业设计",
+    "结构设计",
+    "硬件设计",
+    "软件设计",
+    "平台型研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能硬件ODM",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "笔记本电脑",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "平板电脑",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:16:05"
+}

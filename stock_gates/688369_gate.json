@@ -1,0 +1,35 @@
+{
+  "stock_id": "688369",
+  "stock_name": "致远互联",
+  "concept": "协同管理软件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "协同管理软件",
+    "协同管理软件产品"
+  ],
+  "should": [
+    "协同技术平台V5",
+    "协同管理技术平台V8",
+    "技术服务",
+    "云原生",
+    "微服务架构",
+    "J2EE",
+    "HTML5",
+    "Restful",
+    "中间件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "协同管理软件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "协同管理软件产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:16:49"
+}

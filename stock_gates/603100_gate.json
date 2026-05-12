@@ -1,0 +1,46 @@
+{
+  "stock_id": "603100",
+  "stock_name": "川仪股份",
+  "concept": "自动化仪表龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能变送器",
+    "智能调节阀",
+    "智能执行机构",
+    "系统集成及总包服务"
+  ],
+  "should": [
+    "LNG低温高压调节阀",
+    "LNG深冷蝶阀",
+    "智能流量仪表",
+    "物位仪表",
+    "温度仪表",
+    "控制设备及装置",
+    "分析仪器",
+    "自动化仪表龙头",
+    "产品精度",
+    "最大压力量程"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能变送器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能调节阀",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能执行机构",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "系统集成及总包服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:43:45"
+}

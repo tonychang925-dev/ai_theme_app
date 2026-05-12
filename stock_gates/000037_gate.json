@@ -1,0 +1,38 @@
+{
+  "stock_id": "000037",
+  "stock_name": "深南电A",
+  "concept": "燃机发电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "燃机发电",
+    "生产经营供电供热",
+    "燃机发电厂"
+  ],
+  "should": [
+    "发电厂技术咨询和技术服务",
+    "9E型燃气-蒸汽联合循环发电机组",
+    "珠江三角洲电力负荷中心区",
+    "主力调峰电源",
+    "天然气",
+    "电力市场竞争激烈",
+    "燃料价格持续高企"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "燃机发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生产经营供电供热",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "燃机发电厂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:48:25"
+}

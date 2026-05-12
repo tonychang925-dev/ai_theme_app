@@ -1,0 +1,51 @@
+{
+  "stock_id": "002186",
+  "stock_name": "全聚德",
+  "concept": "餐饮服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全聚德",
+    "仿膳",
+    "丰泽园",
+    "四川饭店",
+    "全聚德挂炉烤鸭技艺"
+  ],
+  "should": [
+    "仿膳（清廷御膳）制作技艺",
+    "全聚德全鸭席制作技艺",
+    "餐饮服务",
+    "食品加工销售",
+    "直营门店",
+    "加盟门店",
+    "肉类产品",
+    "面食类产品",
+    "调味品",
+    "鸭熟食"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全聚德",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "仿膳",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "丰泽园",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "四川饭店",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全聚德挂炉烤鸭技艺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:28:08"
+}

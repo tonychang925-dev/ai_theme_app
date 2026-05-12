@@ -1,0 +1,46 @@
+{
+  "stock_id": "600523",
+  "stock_name": "贵航股份",
+  "concept": "汽车零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车零部件",
+    "航品",
+    "民品",
+    "新能源业务"
+  ],
+  "should": [
+    "成飞",
+    "西飞",
+    "沈飞",
+    "比亚迪",
+    "华为",
+    "预研",
+    "技术降本",
+    "质量降本",
+    "生产管理降本",
+    "关键配套"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "民品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:20:14"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "688157",
+  "stock_name": "松井股份",
+  "concept": "高端涂料龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端涂料龙头",
+    "涂料",
+    "动力电池绝缘涂层材料"
+  ],
+  "should": [
+    "油墨",
+    "胶粘剂",
+    "特种功能涂层材料",
+    "PVD涂料",
+    "水性涂料",
+    "UV色漆",
+    "防雾涂料",
+    "硬化涂料",
+    "钢琴黑涂料",
+    "高端消费电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端涂料龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涂料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动力电池绝缘涂层材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:10:12"
+}

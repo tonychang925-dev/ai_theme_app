@@ -1,0 +1,36 @@
+{
+  "stock_id": "000783",
+  "stock_name": "长江证券",
+  "concept": "综合金融服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合金融服务",
+    "投顾队伍"
+  ],
+  "should": [
+    "经纪及证券金融业务",
+    "证券自营业务",
+    "投资银行业务",
+    "资产管理业务",
+    "另类投资及私募股权投资管理业务",
+    "海外业务",
+    "研究驱动业务发展新模式",
+    "财富管理买方能力建设",
+    "公私联动",
+    "总分联动"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合金融服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投顾队伍",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:04:31"
+}

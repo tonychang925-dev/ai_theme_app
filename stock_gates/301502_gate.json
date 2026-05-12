@@ -1,0 +1,40 @@
+{
+  "stock_id": "301502",
+  "stock_name": "华阳智能",
+  "concept": "微特电机供应商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "微特电机",
+    "微特电机组件",
+    "微特电机供应商"
+  ],
+  "should": [
+    "精密给药装置",
+    "家用电器",
+    "安防",
+    "医疗",
+    "汽车",
+    "新能源",
+    "电子信息",
+    "航空航天",
+    "军工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "微特电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "微特电机组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "微特电机供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:05:34"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "300270",
+  "stock_name": "中威电子",
+  "concept": "安防视频传输",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字视频光纤传输产品",
+    "安防视频产品",
+    "光纤传输技术"
+  ],
+  "should": [
+    "物联网",
+    "AI",
+    "大数据",
+    "云计算",
+    "5G",
+    "北斗",
+    "安防视频传输",
+    "智慧停车",
+    "高速公路机电工程"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字视频光纤传输产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "安防视频产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光纤传输技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:20:27"
+}

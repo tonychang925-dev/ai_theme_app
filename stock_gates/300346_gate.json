@@ -1,0 +1,36 @@
+{
+  "stock_id": "300346",
+  "stock_name": "南大光电",
+  "concept": "半导体材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "ArF光刻胶",
+    "含氟特气"
+  ],
+  "should": [
+    "MO源",
+    "磷烷",
+    "砷烷",
+    "MO源合成制备",
+    "纯化技术",
+    "分析检测",
+    "封装容器",
+    "ArF光刻胶研发",
+    "全球MO源主要生产商",
+    "国内前三含氟电子特种气体供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "ArF光刻胶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "含氟特气",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:23:20"
+}

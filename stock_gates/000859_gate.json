@@ -1,0 +1,46 @@
+{
+  "stock_id": "000859",
+  "stock_name": "国风新材",
+  "concept": "高端薄膜材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端薄膜材料",
+    "聚酰亚胺薄膜",
+    "高分子功能膜材料",
+    "电子信息用膜材料"
+  ],
+  "should": [
+    "新能源汽车配套材料",
+    "配方工艺",
+    "双向拉伸聚丙烯薄膜",
+    "双向拉伸聚酯薄膜",
+    "预涂膜材料",
+    "电容器用薄膜",
+    "木塑新材料",
+    "技术开发",
+    "设备驾驭",
+    "技术升级"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端薄膜材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚酰亚胺薄膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高分子功能膜材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子信息用膜材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:07:13"
+}

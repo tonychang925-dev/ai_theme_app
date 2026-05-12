@@ -1,0 +1,46 @@
+{
+  "stock_id": "600738",
+  "stock_name": "丽尚国潮",
+  "concept": "新零售国货",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新零售国货",
+    "专业市场管理",
+    "商贸百货零售",
+    "新国货品牌孵化"
+  ],
+  "should": [
+    "跨境电商",
+    "杭州环北",
+    "南京环北",
+    "兰州亚欧商厦",
+    "旅投黑虎",
+    "海旅免税",
+    "菜鸟物流",
+    "旺豪超市",
+    "柯泰儿",
+    "线上线下融合"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新零售国货",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "专业市场管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商贸百货零售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新国货品牌孵化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:26:21"
+}

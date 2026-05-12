@@ -1,0 +1,46 @@
+{
+  "stock_id": "300840",
+  "stock_name": "酷特智能",
+  "concept": "C2M产业互联网",
+  "strategy_type": "industry_chain",
+  "must": [
+    "C2M产业互联网",
+    "C2M产业互联网平台",
+    "智能制造",
+    "大规模个性化定制"
+  ],
+  "should": [
+    "个性化定制服装",
+    "个性化定制解决方案",
+    "柔性化生产",
+    "版型数据库",
+    "款式数据库",
+    "工艺数据库",
+    "BOM数据库",
+    "数字化治理体系",
+    "男士正装",
+    "女装"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "C2M产业互联网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "C2M产业互联网平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大规模个性化定制",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:45:32"
+}

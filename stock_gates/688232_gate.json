@@ -1,0 +1,41 @@
+{
+  "stock_id": "688232",
+  "stock_name": "新点软件",
+  "concept": "智慧城市软件服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧招采",
+    "智慧政务",
+    "数字建筑"
+  ],
+  "should": [
+    "智慧公共资源交易平台",
+    "智慧企业招采平台",
+    "第三方招采平台",
+    "规划咨询",
+    "软件开发",
+    "智能设备研发",
+    "实施交付",
+    "持续运营维护",
+    "产品力",
+    "渠道力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧招采",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧政务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字建筑",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:12:36"
+}

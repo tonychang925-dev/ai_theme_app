@@ -1,0 +1,46 @@
+{
+  "stock_id": "002683",
+  "stock_name": "广东宏大",
+  "concept": "矿山民爆一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "矿山民爆一体化",
+    "矿服",
+    "民爆",
+    "军工"
+  ],
+  "should": [
+    "工业炸药",
+    "雷管",
+    "塑料导爆管",
+    "中继起爆具",
+    "导弹武器系统",
+    "智能弹药装备",
+    "单兵作战装备",
+    "矿业一体化方案解决服务",
+    "管家式服务",
+    "露天矿山"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "矿山民爆一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "矿服",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "民爆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "军工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:53:24"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "600066",
+  "stock_name": "宇通客车",
+  "concept": "全球客车龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球客车龙头",
+    "大中型客车",
+    "新能源客车"
+  ],
+  "should": [
+    "自动驾驶技术",
+    "车联网技术",
+    "智能网联云平台技术",
+    "多场景燃料电池系统",
+    "T7高端商务车",
+    "校车",
+    "景区车",
+    "机场摆渡车",
+    "自动驾驶微循环车",
+    "客车专用车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球客车龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大中型客车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源客车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:08:25"
+}

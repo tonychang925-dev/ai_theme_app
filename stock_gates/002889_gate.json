@@ -1,0 +1,30 @@
+{
+  "stock_id": "002889",
+  "stock_name": "东方嘉盛",
+  "concept": "数字供应链服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字供应链服务"
+  ],
+  "should": [
+    "国际物流服务",
+    "AI智能数字报关平台",
+    "产品采购分销交易服务",
+    "全球知名消费品品牌客户",
+    "全球头部电商平台客户",
+    "物联网",
+    "人工智能",
+    "大数据",
+    "云计算"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字供应链服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:01:53"
+}

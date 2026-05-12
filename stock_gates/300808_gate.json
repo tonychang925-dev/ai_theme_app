@@ -1,0 +1,36 @@
+{
+  "stock_id": "300808",
+  "stock_name": "久量股份",
+  "concept": "LED照明品牌",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LED移动照明",
+    "LED家居照明"
+  ],
+  "should": [
+    "便携式储能产品",
+    "智能控制",
+    "节能环保",
+    "结构创新",
+    "应用创新",
+    "帐篷露营",
+    "户外徒步",
+    "警示照明",
+    "宿舍照明",
+    "商超"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED移动照明",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LED家居照明",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:44:00"
+}

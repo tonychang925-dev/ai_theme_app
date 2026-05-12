@@ -1,0 +1,36 @@
+{
+  "stock_id": "002290",
+  "stock_name": "禾盛新材",
+  "concept": "家电复合材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "有机涂层板(PCM)",
+    "覆膜板(VCM)"
+  ],
+  "should": [
+    "三涂三烘PCM/VCM生产线",
+    "省级工程技术研究中心",
+    "家电复合材料",
+    "87项专利",
+    "冰箱",
+    "洗衣机",
+    "电视机",
+    "冷柜",
+    "空调",
+    "国内最大家电彩涂钢板制造商之一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "有机涂层板(PCM)",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "覆膜板(VCM)",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:33:40"
+}

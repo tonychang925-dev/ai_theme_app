@@ -1,0 +1,36 @@
+{
+  "stock_id": "600875",
+  "stock_name": "东方电气",
+  "concept": "发电设备龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "发电设备龙头",
+    "发电设备"
+  ],
+  "should": [
+    "核岛主设备",
+    "常规岛设备",
+    "风电设备",
+    "光伏设备",
+    "百万千瓦等级核电机组自主研制",
+    "第三代核电技术",
+    "大功率陆用/海上风电机组自主研发",
+    "批量制造能力",
+    "核岛主设备国内份额33%",
+    "常规岛设备国内份额50%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "发电设备龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发电设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:30:15"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "002179",
+  "stock_name": "中航光电",
+  "concept": "特种连接器龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国内特种防务连接器龙头",
+    "特种连接器龙头"
+  ],
+  "should": [
+    "电连接器",
+    "光器件及光电设备",
+    "医疗齿科",
+    "光电信号传输",
+    "机械力量控制",
+    "高压互连解决方案",
+    "军用装备",
+    "新能源汽车",
+    "通信无线基站",
+    "数据中心"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国内特种防务连接器龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种连接器龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:27:39"
+}

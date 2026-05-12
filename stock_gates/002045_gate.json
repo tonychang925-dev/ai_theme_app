@@ -1,0 +1,46 @@
+{
+  "stock_id": "002045",
+  "stock_name": "国光电器",
+  "concept": "电声制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "扬声器",
+    "汽车音响",
+    "VR/AR声学组件",
+    "智能音箱"
+  ],
+  "should": [
+    "蓝牙音箱",
+    "Wi-Fi音箱",
+    "可穿戴产品(VR/AR)",
+    "汽车",
+    "智能手机",
+    "无线耳机",
+    "智能穿戴设备",
+    "电声制造",
+    "扬声器设计",
+    "扬声器制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "扬声器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车音响",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "VR/AR声学组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能音箱",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:20:09"
+}

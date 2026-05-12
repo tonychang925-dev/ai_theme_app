@@ -1,0 +1,41 @@
+{
+  "stock_id": "688339",
+  "stock_name": "亿华通",
+  "concept": "氢燃料电池系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "氢燃料电池系统",
+    "燃料电池系统",
+    "燃料电池电堆"
+  ],
+  "should": [
+    "双极板",
+    "燃料电池汽车",
+    "燃料电池发动机系统研发",
+    "燃料电池电堆批量化制造",
+    "重型卡车",
+    "客车",
+    "特殊用车",
+    "乘用车",
+    "纵向一体化生产布局",
+    "燃料电池电堆自供"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "氢燃料电池系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "燃料电池系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "燃料电池电堆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:15:54"
+}

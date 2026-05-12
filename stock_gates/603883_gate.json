@@ -1,0 +1,36 @@
+{
+  "stock_id": "603883",
+  "stock_name": "老百姓",
+  "concept": "连锁药店",
+  "strategy_type": "industry_chain",
+  "must": [
+    "连锁药店",
+    "药品及健康相关商品销售"
+  ],
+  "should": [
+    "DTP专业药房",
+    "电子商务O2O",
+    "中医馆",
+    "药品批发与制造",
+    "DTP药房",
+    "直营",
+    "星火并购",
+    "加盟",
+    "联盟",
+    "院边店"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "连锁药店",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "药品及健康相关商品销售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:58:06"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "600423",
+  "stock_name": "柳化股份",
+  "concept": "双氧水生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "双氧水"
+  ],
+  "should": [
+    "27.5%双氧水",
+    "50%双氧水",
+    "蒽醌钯催化剂工艺",
+    "双氧水生产",
+    "漂白",
+    "有机物合成",
+    "氧化剂",
+    "催化剂",
+    "引发剂",
+    "羟基化剂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "双氧水",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:17:43"
+}

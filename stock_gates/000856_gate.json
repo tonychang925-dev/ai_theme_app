@@ -1,0 +1,41 @@
+{
+  "stock_id": "000856",
+  "stock_name": "冀东装备",
+  "concept": "水泥装备服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水泥装备制造",
+    "水泥装备服务",
+    "维修业务"
+  ],
+  "should": [
+    "窑协同处置垃圾焚烧飞灰技术",
+    "原料立磨外循环绿色节能系统装备",
+    "水泥工厂智能清仓机器人",
+    "大功率永磁直驱电机",
+    "装备研发",
+    "设备成套",
+    "建筑安装",
+    "生产调试",
+    "备件供应",
+    "维修服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水泥装备制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水泥装备服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "维修业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:07:02"
+}

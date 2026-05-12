@@ -1,0 +1,36 @@
+{
+  "stock_id": "002264",
+  "stock_name": "新华都",
+  "concept": "白酒电商服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "白酒电商服务",
+    "电商运营服务"
+  ],
+  "should": [
+    "泸州老窖",
+    "山西汾酒",
+    "水井坊",
+    "习酒",
+    "天猫",
+    "京东",
+    "拼多多",
+    "抖音",
+    "唯品会",
+    "互联网全渠道销售"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "白酒电商服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电商运营服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:32:16"
+}

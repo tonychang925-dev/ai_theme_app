@@ -1,0 +1,31 @@
+{
+  "stock_id": "603221",
+  "stock_name": "爱丽家居",
+  "concept": "PVC弹性地板",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PVC弹性地板"
+  ],
+  "should": [
+    "新型地板生产设备",
+    "SPC鱼骨地板",
+    "PP锁扣地板",
+    "发泡鱼骨锁扣",
+    "新型弹性地板锁扣",
+    "商场",
+    "医院",
+    "写字楼",
+    "酒店",
+    "公共场所"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PVC弹性地板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:46:51"
+}

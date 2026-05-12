@@ -1,0 +1,36 @@
+{
+  "stock_id": "300747",
+  "stock_name": "锐科激光",
+  "concept": "光纤激光器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光纤激光器",
+    "高功率光纤激光器技术"
+  ],
+  "should": [
+    "脉冲光纤激光器",
+    "连续光纤激光器",
+    "准连续光纤激光器",
+    "直接半导体激光器",
+    "绿光激光器",
+    "蓝光激光器",
+    "ABP光束可调激光器",
+    "带光闸高功率光纤激光器",
+    "超快激光器",
+    "垂直集成能力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光纤激光器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高功率光纤激光器技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:41:31"
+}

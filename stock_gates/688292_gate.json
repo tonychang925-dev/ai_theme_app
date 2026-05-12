@@ -1,0 +1,41 @@
+{
+  "stock_id": "688292",
+  "stock_name": "浩瀚深度",
+  "concept": "网络可视化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能采集管理系统",
+    "互联网流量智能化管控",
+    "信息安全防护"
+  ],
+  "should": [
+    "智能化应用系统",
+    "互联网信息安全防护系统",
+    "异常流量监测防护系统",
+    "高性能DPI探针设备",
+    "软件DPI探针设备",
+    "软件DPI系统",
+    "IDC出口",
+    "自产高性能DPI探针",
+    "网络可视化",
+    "基于FPGA专用芯片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能采集管理系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "互联网流量智能化管控",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信息安全防护",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:14:31"
+}

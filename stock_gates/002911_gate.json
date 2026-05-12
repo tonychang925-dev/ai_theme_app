@@ -1,0 +1,36 @@
+{
+  "stock_id": "002911",
+  "stock_name": "佛燃能源",
+  "concept": "综合能源服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "燃气供应",
+    "管道燃气独家特许经营权"
+  ],
+  "should": [
+    "油品",
+    "氢能",
+    "热能",
+    "光伏",
+    "储能",
+    "SOFC固体氧化物燃料电池",
+    "氢能装备制造研发",
+    "管道检测",
+    "窑炉热工装备制造与节能减排",
+    "综合能源服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "燃气供应",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "管道燃气独家特许经营权",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:02:54"
+}

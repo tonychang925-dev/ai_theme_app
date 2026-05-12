@@ -1,0 +1,46 @@
+{
+  "stock_id": "688418",
+  "stock_name": "震有科技",
+  "concept": "通信网络设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "通信网络设备",
+    "核心网络系统",
+    "集中式局端系统",
+    "指挥调度系统"
+  ],
+  "should": [
+    "软交换系统",
+    "IMS核心网",
+    "信令网",
+    "集中式综合业务接入网",
+    "技术与维保服务",
+    "公网通信",
+    "专网通信",
+    "煤矿通信",
+    "政府通信",
+    "电力通信"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "通信网络设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核心网络系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集中式局端系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "指挥调度系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:18:02"
+}

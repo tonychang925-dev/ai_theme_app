@@ -1,0 +1,51 @@
+{
+  "stock_id": "600284",
+  "stock_name": "浦东建设",
+  "concept": "浦东基建排头兵",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑工程施工",
+    "基础设施项目投资",
+    "市政工程",
+    "建筑工程",
+    "浦东新区"
+  ],
+  "should": [
+    "园区开发",
+    "沥青砼及相关产品生产销售",
+    "环保业务",
+    "桥梁工程",
+    "公路工程",
+    "长三角（上海、江苏、浙江、安徽）",
+    "浦东基建排头兵",
+    "各类建设资质齐全",
+    "科技研发能力突出",
+    "施工技术能力过硬"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑工程施工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "基础设施项目投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "市政工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "浦东新区",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:14:00"
+}

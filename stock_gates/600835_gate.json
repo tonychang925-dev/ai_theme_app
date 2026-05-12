@@ -1,0 +1,51 @@
+{
+  "stock_id": "600835",
+  "stock_name": "上海机电",
+  "concept": "电梯制造与服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电梯制造与服务",
+    "电梯制造",
+    "新梯销售",
+    "旧梯改造",
+    "老房加装"
+  ],
+  "should": [
+    "SmartEYE监控系统",
+    "SmartK-II型智慧扶梯",
+    "LEHY-Pro电梯",
+    "菱云系列曳引驱动乘客电梯",
+    "LEHY-H电梯",
+    "LNK智能电梯数字化解决方案",
+    "国家企业技术中心",
+    "上海市高新技术企业",
+    "智能化技术",
+    "物联网"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电梯制造与服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电梯制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新梯销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "旧梯改造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "老房加装",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:29:14"
+}

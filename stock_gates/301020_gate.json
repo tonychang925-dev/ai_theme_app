@@ -1,0 +1,41 @@
+{
+  "stock_id": "301020",
+  "stock_name": "密封科技",
+  "concept": "发动机密封件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "发动机密封件",
+    "密封垫片",
+    "金属涂胶板"
+  ],
+  "should": [
+    "隔热防护罩",
+    "密封纤维板",
+    "汽车",
+    "摩托车",
+    "造船",
+    "通用机械",
+    "制冷",
+    "石化",
+    "同步研发与设计",
+    "自主知识产权"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "发动机密封件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "密封垫片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金属涂胶板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:53:27"
+}

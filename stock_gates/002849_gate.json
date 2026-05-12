@@ -1,0 +1,44 @@
+{
+  "stock_id": "002849",
+  "stock_name": "威星智能",
+  "concept": "智慧计量方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能燃气表终端",
+    "智慧计量方案",
+    "NB-IoT通讯技术",
+    "超声波计量技术"
+  ],
+  "should": [
+    "智慧水务解决方案",
+    "新一代超声波计量仪表",
+    "IC卡读写加密技术",
+    "RF无线",
+    "LoRA",
+    "城市燃气运营商",
+    "水务公司",
+    "智慧计量解决方案供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能燃气表终端",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧计量方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "NB-IoT通讯技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超声波计量技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:00:06"
+}

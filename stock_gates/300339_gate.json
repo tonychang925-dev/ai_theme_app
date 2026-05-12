@@ -1,0 +1,51 @@
+{
+  "stock_id": "300339",
+  "stock_name": "润和软件",
+  "concept": "金融科技与智能物联",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金融科技业务",
+    "分布式技术",
+    "人工智能",
+    "金融专业测试",
+    "数字化业务中台"
+  ],
+  "should": [
+    "区块链",
+    "云计算",
+    "大数据",
+    "5G",
+    "隐私计算",
+    "OpenHarmony",
+    "openEuler",
+    "自动化测试",
+    "数字化测试",
+    "智能化测试"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金融科技业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分布式技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人工智能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融专业测试",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字化业务中台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:23:15"
+}

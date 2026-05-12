@@ -1,0 +1,35 @@
+{
+  "stock_id": "300140",
+  "stock_name": "节能环境",
+  "concept": "智慧环保综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧环保综合服务",
+    "节能环保装备"
+  ],
+  "should": [
+    "水处理装备",
+    "固废处理装备",
+    "膜法水处理技术",
+    "城镇污水处理",
+    "县域垃圾焚烧",
+    "餐厨垃圾资源化",
+    "废旧物资循环利用",
+    "污水资源化技术",
+    "海水淡化技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧环保综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "节能环保装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:14:53"
+}

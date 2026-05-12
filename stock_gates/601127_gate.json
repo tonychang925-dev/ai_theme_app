@@ -1,0 +1,36 @@
+{
+  "stock_id": "601127",
+  "stock_name": "赛力斯",
+  "concept": "智能汽车生态",
+  "strategy_type": "industry_chain",
+  "must": [
+    "华为乾崑ADS",
+    "鸿蒙座舱"
+  ],
+  "should": [
+    "超级增程系统",
+    "电驱",
+    "电控",
+    "蓝电新能源汽车",
+    "瑞驰电动商用车",
+    "风光SUV",
+    "HUAWEIADS",
+    "智能汽车生态",
+    "新能源汽车",
+    "智能驾驶"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "华为乾崑ADS",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "鸿蒙座舱",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:34:32"
+}

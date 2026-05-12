@@ -1,0 +1,36 @@
+{
+  "stock_id": "300240",
+  "stock_name": "飞力达",
+  "concept": "智造供应链管理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智造供应链管理",
+    "综合物流服务"
+  ],
+  "should": [
+    "国际货代服务",
+    "数字孪生",
+    "物联网",
+    "5G无人驾驶",
+    "无人搬运车",
+    "RPA",
+    "OCR算法",
+    "RFID",
+    "智能接单",
+    "智能运输调度"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智造供应链管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合物流服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:18:59"
+}

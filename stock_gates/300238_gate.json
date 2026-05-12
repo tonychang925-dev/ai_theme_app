@@ -1,0 +1,36 @@
+{
+  "stock_id": "300238",
+  "stock_name": "冠昊生物",
+  "concept": "再生医学材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "再生医学材料",
+    "动物源性生物材料技术平台"
+  ],
+  "should": [
+    "生物型硬脑（脊）膜补片",
+    "B型硬脑膜补片",
+    "胸普外科修补膜",
+    "无菌生物护创膜",
+    "艾瑞欧乳房补片",
+    "本维莫德乳膏",
+    "神经外科",
+    "胸普外科",
+    "皮肤科",
+    "骨科"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "再生医学材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动物源性生物材料技术平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:18:53"
+}

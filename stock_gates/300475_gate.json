@@ -1,0 +1,45 @@
+{
+  "stock_id": "300475",
+  "stock_name": "香农芯创",
+  "concept": "电子元器件分销",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子元器件分销",
+    "SK海力士",
+    "联发科",
+    "AMD"
+  ],
+  "should": [
+    "半导体自研产品",
+    "企业级DDR4/DDR5内存",
+    "企业级SSD",
+    "Giga Device",
+    "大唐存储",
+    "寒武纪",
+    "阿里巴巴",
+    "字节跳动",
+    "DDR4 RDIMM"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子元器件分销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SK海力士",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "联发科",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AMD",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:28:53"
+}

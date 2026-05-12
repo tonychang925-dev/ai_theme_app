@@ -1,0 +1,36 @@
+{
+  "stock_id": "300781",
+  "stock_name": "因赛集团",
+  "concept": "品牌管理营销",
+  "strategy_type": "industry_chain",
+  "must": [
+    "品牌管理",
+    "品+效+销+智能"
+  ],
+  "should": [
+    "战略咨询",
+    "数字整合营销",
+    "公关传播",
+    "媒介代理",
+    "ChatGPT",
+    "品牌管理营销",
+    "5G",
+    "人工智能",
+    "大数据",
+    "虚拟数字人"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "品牌管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "品+效+销+智能",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:42:54"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "603689",
+  "stock_name": "皖天然气",
+  "concept": "安徽天然气管网",
+  "strategy_type": "industry_chain",
+  "must": [
+    "安徽天然气管网"
+  ],
+  "should": [
+    "城市燃气",
+    "CNG/LNG",
+    "综合能源",
+    "天然气贸易与加工",
+    "设施安装",
+    "城市燃气公司",
+    "直供工业用户",
+    "安徽省长输管道占比约70%",
+    "区域先入优势",
+    "代输服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "安徽天然气管网",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:54:50"
+}

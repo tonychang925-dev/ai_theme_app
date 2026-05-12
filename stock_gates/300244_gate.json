@@ -1,0 +1,46 @@
+{
+  "stock_id": "300244",
+  "stock_name": "迪安诊断",
+  "concept": "医学诊断服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医学诊断整体化解决方案",
+    "服务+产品",
+    "第三方独立医学实验室",
+    "精准医疗"
+  ],
+  "should": [
+    "医学诊断服务",
+    "体外诊断",
+    "基因检测",
+    "实验室自建检测方法(LDT)",
+    "院内合作共建",
+    "检验外送",
+    "肿瘤",
+    "感染",
+    "遗传",
+    "妇幼"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医学诊断整体化解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "服务+产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "第三方独立医学实验室",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精准医疗",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:19:07"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "002348",
+  "stock_name": "高乐股份",
+  "concept": "玩具+教育",
+  "strategy_type": "industry_chain",
+  "must": [
+    "玩具+教育",
+    "电子电动玩具",
+    "K12教育信息化系统集成",
+    "自主品牌GOLDLOK"
+  ],
+  "should": [
+    "智慧云课堂",
+    "益智玩具",
+    "智能互动玩具",
+    "知名IP形象授权玩具",
+    "云计算",
+    "电动火车",
+    "互动对打机器人",
+    "电动车",
+    "线控仿真飞机",
+    "智能女仔"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "玩具+教育",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子电动玩具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "K12教育信息化系统集成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自主品牌GOLDLOK",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:37:03"
+}

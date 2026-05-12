@@ -1,0 +1,33 @@
+{
+  "stock_id": "002016",
+  "stock_name": "世荣兆业",
+  "concept": "珠海地产开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "珠海地产开发",
+    "房地产开发与经营"
+  ],
+  "should": [
+    "住宅开发",
+    "商业综合体",
+    "配套商业",
+    "集团主控",
+    "分项目管理",
+    "珠海市西区",
+    "斗门区"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "珠海地产开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "房地产开发与经营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:18:26"
+}

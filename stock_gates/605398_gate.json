@@ -1,0 +1,46 @@
+{
+  "stock_id": "605398",
+  "stock_name": "新炬网络",
+  "concept": "智能运维服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能运维服务",
+    "第三方运维服务与工程",
+    "智能运维产品及服务",
+    "多云全栈智能运维"
+  ],
+  "should": [
+    "软件产品及开发",
+    "原厂软硬件及服务销售",
+    "行业解决方案",
+    "HI+AI人机协同",
+    "ZnSQL异构数据库智能管理平台",
+    "SQL审核管理平台",
+    "流批一体数据中台",
+    "数据治理及数据资产管理平台",
+    "NewSQL数据库云管平台",
+    "电信"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能运维服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "第三方运维服务与工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能运维产品及服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多云全栈智能运维",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:04:25"
+}

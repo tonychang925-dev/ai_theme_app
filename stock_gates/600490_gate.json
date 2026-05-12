@@ -1,0 +1,41 @@
+{
+  "stock_id": "600490",
+  "stock_name": "鹏欣资源",
+  "concept": "综合资源服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合资源服务",
+    "阴极铜",
+    "黄金"
+  ],
+  "should": [
+    "氢氧化钴",
+    "硫酸",
+    "二氧化硫",
+    "勘探",
+    "开采",
+    "冶炼加工",
+    "新能源",
+    "贸易",
+    "金融",
+    "矿业生产为基础"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合资源服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "阴极铜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "黄金",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:19:05"
+}

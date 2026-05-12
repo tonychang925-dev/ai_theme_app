@@ -1,0 +1,41 @@
+{
+  "stock_id": "300557",
+  "stock_name": "理工光科",
+  "concept": "光纤传感安全监测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光纤传感安全监测",
+    "光纤传感技术",
+    "光栅阵列传感技术"
+  ],
+  "should": [
+    "油罐火灾报警系统",
+    "隧道火灾报警系统",
+    "智慧管廊及智能化监测系统",
+    "智能周界入侵报警系统",
+    "智能桥梁结构健康监测系统",
+    "消防报警系统及服务",
+    "智能道面系统",
+    "长输管道安全监测预警系统",
+    "光纤敏感材料",
+    "智能化仪表"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光纤传感安全监测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光纤传感技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光栅阵列传感技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:32:42"
+}

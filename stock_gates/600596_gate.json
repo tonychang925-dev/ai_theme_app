@@ -1,0 +1,41 @@
+{
+  "stock_id": "600596",
+  "stock_name": "新安股份",
+  "concept": "草甘膦有机硅",
+  "strategy_type": "industry_chain",
+  "must": [
+    "草甘膦",
+    "有机硅",
+    "我国最大的草甘膦生产企业"
+  ],
+  "should": [
+    "工业硅",
+    "特种硅烷",
+    "高温硅橡胶",
+    "磷系阻燃剂",
+    "锂电池石墨负极材料",
+    "光伏级三氯氢硅",
+    "精草铵膦",
+    "五氯化磷",
+    "硅基负极",
+    "光纤"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "草甘膦",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有机硅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "我国最大的草甘膦生产企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:22:22"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "688678",
+  "stock_name": "福立旺",
+  "concept": "精密金属零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密金属零部件",
+    "连接器",
+    "金刚线母线"
+  ],
+  "should": [
+    "精密弹簧",
+    "异型簧",
+    "卷簧",
+    "冲压件",
+    "MIM件",
+    "车削件",
+    "天窗驱动管及组装部件",
+    "3C行业",
+    "汽车零部件行业",
+    "光伏行业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密金属零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "连接器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金刚线母线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:23:43"
+}

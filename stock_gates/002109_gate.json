@@ -1,0 +1,45 @@
+{
+  "stock_id": "002109",
+  "stock_name": "兴化股份",
+  "concept": "煤化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "合成氨",
+    "甲醇",
+    "甲胺",
+    "DMF"
+  ],
+  "should": [
+    "乙醇",
+    "煤浆气化",
+    "低温甲醇洗",
+    "液氮洗",
+    "氨醇互补",
+    "综合利用",
+    "煤炭产地优势",
+    "陕西及周边区域价格影响力",
+    "全国DMF产能占比约10%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "合成氨",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "甲醇",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "甲胺",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "DMF",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:23:43"
+}

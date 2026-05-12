@@ -1,0 +1,31 @@
+{
+  "stock_id": "002327",
+  "stock_name": "富安娜",
+  "concept": "家居用品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "床上用品"
+  ],
+  "should": [
+    "家居用品",
+    "家居生活类产品",
+    "设计创新",
+    "健康睡眠",
+    "行业标准制定参与者",
+    "国家高新技术企业",
+    "平网印花",
+    "新国绣数码印花",
+    "天雪工艺",
+    "澜蕴纱胶原蛋白面料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "床上用品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:35:35"
+}

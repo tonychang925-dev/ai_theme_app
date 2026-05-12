@@ -1,0 +1,46 @@
+{
+  "stock_id": "301555",
+  "stock_name": "惠柏新材",
+  "concept": "特种环氧树脂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种环氧树脂",
+    "风电叶片用环氧树脂",
+    "新型复合材料用环氧树脂",
+    "风电叶片"
+  ],
+  "should": [
+    "电子电气绝缘封装用环氧树脂",
+    "轨道交通",
+    "汽车轻量化",
+    "LED封装",
+    "电子元器件",
+    "储氢瓶",
+    "体育休闲",
+    "新型显示屏",
+    "特种配方改性",
+    "工艺配方"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种环氧树脂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电叶片用环氧树脂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新型复合材料用环氧树脂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电叶片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:06:17"
+}

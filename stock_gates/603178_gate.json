@@ -1,0 +1,46 @@
+{
+  "stock_id": "603178",
+  "stock_name": "圣龙股份",
+  "concept": "动力总成零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "动力总成零部件",
+    "发动机油泵",
+    "变速箱油泵",
+    "凸轮轴"
+  ],
+  "should": [
+    "减速器",
+    "动力总成",
+    "直流无刷电机",
+    "NVH检测",
+    "高自动化产线",
+    "智能在线辅助系统",
+    "比亚迪供应商",
+    "理想汽车定点",
+    "博格华纳定点",
+    "潍柴动力供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "动力总成零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发动机油泵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "变速箱油泵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "凸轮轴",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:45:34"
+}

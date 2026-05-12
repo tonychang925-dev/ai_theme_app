@@ -1,0 +1,46 @@
+{
+  "stock_id": "000985",
+  "stock_name": "大庆华科",
+  "concept": "石油化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "聚丙烯",
+    "精制C5",
+    "C9石油树脂",
+    "精制乙腈"
+  ],
+  "should": [
+    "路标漆",
+    "热熔压敏胶",
+    "涂料",
+    "橡胶",
+    "彩色沥青",
+    "油墨",
+    "塑编",
+    "汽车家电",
+    "日用品",
+    "塑料托盘"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "聚丙烯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精制C5",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "C9石油树脂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精制乙腈",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:12:21"
+}

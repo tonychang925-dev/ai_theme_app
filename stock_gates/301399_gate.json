@@ -1,0 +1,46 @@
+{
+  "stock_id": "301399",
+  "stock_name": "英特科技",
+  "concept": "高效换热器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高效换热器",
+    "高效新型壳管式换热器",
+    "同轴套管式换热器",
+    "降膜式换热器"
+  ],
+  "should": [
+    "蒸发式冷凝器",
+    "液冷散热器",
+    "分配器",
+    "高效换热器产品设计",
+    "生产工艺",
+    "分析检测",
+    "热泵",
+    "空调",
+    "采暖",
+    "热水"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高效换热器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高效新型壳管式换热器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "同轴套管式换热器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "降膜式换热器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:04:51"
+}

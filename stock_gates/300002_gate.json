@@ -1,0 +1,41 @@
+{
+  "stock_id": "300002",
+  "stock_name": "神州泰岳",
+  "concept": "双轮驱动",
+  "strategy_type": "industry_chain",
+  "must": [
+    "手游",
+    "SLG出海龙头",
+    "ICT运维"
+  ],
+  "should": [
+    "运营商业务",
+    "物联网与通信",
+    "人工智能与大数据",
+    "智能运维",
+    "双轮驱动",
+    "CMMI L5",
+    "授权专利800余项",
+    "软件著作权千余项",
+    "中国厂商出海收入TOP10",
+    "A股稀缺SLG出海厂商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "手游",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SLG出海龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ICT运维",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:09:07"
+}

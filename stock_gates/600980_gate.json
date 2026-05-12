@@ -1,0 +1,36 @@
+{
+  "stock_id": "600980",
+  "stock_name": "北矿科技",
+  "concept": "磁性材料与矿冶装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铁氧体磁性材料",
+    "高性能烧结/粘结类铁氧体"
+  ],
+  "should": [
+    "矿冶装备",
+    "超大型浮选装备",
+    "智能巡检机器人",
+    "磁滚筒",
+    "干式磁选装备",
+    "立磨机",
+    "沸腾焙烧炉",
+    "富氧高效熔炼技术",
+    "磁性材料与矿冶装备",
+    "有色冶金装备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铁氧体磁性材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高性能烧结/粘结类铁氧体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:32:23"
+}

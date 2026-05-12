@@ -1,0 +1,31 @@
+{
+  "stock_id": "600792",
+  "stock_name": "云煤能源",
+  "concept": "焦炭生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "焦炭生产",
+    "焦炭"
+  ],
+  "should": [
+    "煤化工产品",
+    "炼钢",
+    "配煤成本控制",
+    "全焦成本降低",
+    "单耗管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "焦炭生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "焦炭",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:27:49"
+}

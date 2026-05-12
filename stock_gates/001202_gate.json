@@ -1,0 +1,36 @@
+{
+  "stock_id": "001202",
+  "stock_name": "炬申股份",
+  "concept": "有色金属物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "有色金属物流",
+    "多式联运业务"
+  ],
+  "should": [
+    "直运业务",
+    "仓储综合业务",
+    "网络货运平台",
+    "电解铝产业链客户",
+    "铝产业链企业",
+    "新疆—华南",
+    "新疆—华东",
+    "西南—华南",
+    "西南—华北",
+    "铝产业链纵向布局"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "有色金属物流",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多式联运业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:12:59"
+}

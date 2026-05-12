@@ -1,0 +1,31 @@
+{
+  "stock_id": "003037",
+  "stock_name": "三和管桩",
+  "concept": "预应力混凝土管桩",
+  "strategy_type": "industry_chain",
+  "must": [
+    "预应力混凝土管桩"
+  ],
+  "should": [
+    "离心和预应力工艺",
+    "免压蒸生产技术",
+    "耐腐蚀预制混凝土桩",
+    "啮合式机械连接专用部件",
+    "高层民用建筑",
+    "工业厂房",
+    "大型设备基础",
+    "城市高架道路基础",
+    "公路",
+    "桥梁"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "预应力混凝土管桩",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:08:33"
+}

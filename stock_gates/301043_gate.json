@@ -1,0 +1,34 @@
+{
+  "stock_id": "301043",
+  "stock_name": "绿岛风",
+  "concept": "室内通风系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "室内通风系统",
+    "新风系列产品"
+  ],
+  "should": [
+    "风幕机",
+    "空气处理机组",
+    "自主研发设计",
+    "生产能力",
+    "较早进入通风领域",
+    "内资专业室内通风系统产品厂商",
+    "产销量大",
+    "销售渠道广"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "室内通风系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新风系列产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:54:21"
+}

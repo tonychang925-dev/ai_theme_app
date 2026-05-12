@@ -1,0 +1,46 @@
+{
+  "stock_id": "600231",
+  "stock_name": "凌钢股份",
+  "concept": "钢铁冶炼加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "热轧中宽带钢",
+    "螺纹钢",
+    "圆钢",
+    "研产销用服考核一体化"
+  ],
+  "should": [
+    "线材",
+    "焊接钢管",
+    "铁精矿",
+    "无缝钢管",
+    "工业互联网平台",
+    "低成本战略",
+    "超低排放和装备升级改造",
+    "数字赋能",
+    "铁路",
+    "船舶"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "热轧中宽带钢",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "螺纹钢",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "圆钢",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "研产销用服考核一体化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:12:32"
+}

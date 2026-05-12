@@ -1,0 +1,41 @@
+{
+  "stock_id": "688171",
+  "stock_name": "纬德信息",
+  "concept": "电力信息安全",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力信息安全",
+    "智能安全网关",
+    "信息安全云平台"
+  ],
+  "should": [
+    "态势感知产品",
+    "嵌入式软件",
+    "加密芯片",
+    "控制芯片",
+    "配电自动化终端",
+    "工业大数据分析",
+    "数据融合",
+    "数据挖掘",
+    "数据安全管理展示",
+    "镜像技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力信息安全",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能安全网关",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信息安全云平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:10:37"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "603833",
+  "stock_name": "欧派家居",
+  "concept": "大家居定制",
+  "strategy_type": "industry_chain",
+  "must": [
+    "厨柜",
+    "衣柜",
+    "整装"
+  ],
+  "should": [
+    "木门",
+    "卫浴",
+    "软体配套",
+    "主辅材",
+    "3D沉浸式效果图",
+    "生产基地（5个）",
+    "门店（7000余家）",
+    "大家居定制",
+    "定制设计",
+    "一站式解决方案"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "厨柜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "衣柜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "整装",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:57:22"
+}

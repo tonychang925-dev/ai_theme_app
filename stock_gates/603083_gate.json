@@ -1,0 +1,31 @@
+{
+  "stock_id": "603083",
+  "stock_name": "剑桥科技",
+  "concept": "光通信与ICT终端",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高速光模块"
+  ],
+  "should": [
+    "光纤接入产品PON",
+    "10G GPON",
+    "25G/50G GPON",
+    "Wi-Fi Mesh家庭网关产品",
+    "5G FWA CPE",
+    "企业及运营商级WLAN产品",
+    "硅光技术",
+    "LPO",
+    "LRO",
+    "3nm DSP"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高速光模块",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:43:27"
+}

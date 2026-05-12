@@ -1,0 +1,51 @@
+{
+  "stock_id": "600517",
+  "stock_name": "国网英大",
+  "concept": "金融+先进制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金融+先进制造",
+    "金融业务",
+    "制造业务",
+    "碳资产管理平台",
+    "碳e融"
+  ],
+  "should": [
+    "信托产品",
+    "证券投资类信托",
+    "固定收益类信托",
+    "绿色债券",
+    "交碳保",
+    "非晶立体卷变压器",
+    "纳米铝合金金具",
+    "风电场防雷改造",
+    "套管在线监测装置",
+    "氢储能应急电源车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金融+先进制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "制造业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳资产管理平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳e融",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:20:04"
+}

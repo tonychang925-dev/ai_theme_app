@@ -1,0 +1,50 @@
+{
+  "stock_id": "600252",
+  "stock_name": "中恒集团",
+  "concept": "医药健康产业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "制药",
+    "健康食品",
+    "血栓通注射剂",
+    "艾司奥美拉唑镁肠溶胶囊",
+    "龟苓膏"
+  ],
+  "should": [
+    "日化",
+    "田七口腔护理产品",
+    "药物提纯与冻干技术",
+    "中药注射剂技术",
+    "三七研究中心",
+    "深圳清华大学研究院共建研发中心",
+    "数字化车间建设",
+    "健康食品市场",
+    "日化市场"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "制药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "健康食品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "血栓通注射剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "艾司奥美拉唑镁肠溶胶囊",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "龟苓膏",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:13:07"
+}

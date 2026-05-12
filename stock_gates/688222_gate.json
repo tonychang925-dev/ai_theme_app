@@ -1,0 +1,33 @@
+{
+  "stock_id": "688222",
+  "stock_name": "成都先导",
+  "concept": "新药发现与优化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "DEL技术",
+    "FBDD/SBDD技术"
+  ],
+  "should": [
+    "STO技术",
+    "TPD技术",
+    "核酸药物",
+    "新药发现与优化",
+    "新药研发服务",
+    "在研项目转让",
+    "药物上市"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "DEL技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "FBDD/SBDD技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:12:17"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "688266",
+  "stock_name": "泽璟制药",
+  "concept": "创新药研发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "创新药研发",
+    "多纳非尼片",
+    "重组人凝血酶",
+    "盐酸杰克替尼片"
+  ],
+  "should": [
+    "注射用重组人促甲状腺激素",
+    "肿瘤",
+    "出血及血液疾病",
+    "免疫炎症性疾病",
+    "肝胆疾病",
+    "新药上市申请",
+    "III期临床试验",
+    "II期临床试验",
+    "I期临床试验",
+    "临床前研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "创新药研发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多纳非尼片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重组人凝血酶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "盐酸杰克替尼片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:13:34"
+}

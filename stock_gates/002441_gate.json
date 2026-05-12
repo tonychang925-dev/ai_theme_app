@@ -1,0 +1,41 @@
+{
+  "stock_id": "002441",
+  "stock_name": "众业达",
+  "concept": "电气分销龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电气分销龙头",
+    "输配电产品",
+    "工业自动化产品"
+  ],
+  "should": [
+    "低压电气产品",
+    "工控产品",
+    "中压电气产品",
+    "系统集成产品",
+    "成套制造产品",
+    "线上商城",
+    "工业速派服务",
+    "分销商",
+    "多品牌经营",
+    "全国性销售和物流网络"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电气分销龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "输配电产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业自动化产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:41:49"
+}

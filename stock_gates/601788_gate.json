@@ -1,0 +1,51 @@
+{
+  "stock_id": "601788",
+  "stock_name": "光大证券",
+  "concept": "证券金融集团",
+  "strategy_type": "industry_chain",
+  "must": [
+    "证券金融集团",
+    "财富管理业务集群",
+    "企业融资业务集群",
+    "机构客户业务集群",
+    "投资交易业务集群"
+  ],
+  "should": [
+    "零售业务",
+    "融资融券业务",
+    "股票质押业务",
+    "期货经纪业务",
+    "海外财富管理及经纪业务",
+    "金阳光投顾",
+    "金阳光基金管家",
+    "金阳光30",
+    "基金投顾服务",
+    "证券投顾服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "证券金融集团",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "财富管理业务集群",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "企业融资业务集群",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机构客户业务集群",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资交易业务集群",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:38:31"
+}

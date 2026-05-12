@@ -1,0 +1,36 @@
+{
+  "stock_id": "000935",
+  "stock_name": "四川双马",
+  "concept": "产业投资管理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "产业投资及管理",
+    "股权投资基金"
+  ],
+  "should": [
+    "产业投资管理",
+    "私募股权投资基金",
+    "西藏锦合",
+    "成都和谐双马",
+    "管理费",
+    "业绩报酬",
+    "投资收益",
+    "先进制造",
+    "科技行业",
+    "二级市场投资"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "产业投资及管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "股权投资基金",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:10:14"
+}

@@ -1,0 +1,44 @@
+{
+  "stock_id": "301016",
+  "stock_name": "雷尔伟",
+  "concept": "轨道交通部件制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "搅拌摩擦焊",
+    "轨道交通部件制造",
+    "车体部件",
+    "城市轨道交通"
+  ],
+  "should": [
+    "电气系统部件",
+    "高速动车组",
+    "中国中车子公司核心供应商",
+    "转向架零部件",
+    "超塑成形技术",
+    "智能化控制技术",
+    "城际动车组",
+    "阿尔斯通合作企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "搅拌摩擦焊",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轨道交通部件制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车体部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市轨道交通",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:53:15"
+}

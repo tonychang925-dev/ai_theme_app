@@ -1,0 +1,31 @@
+{
+  "stock_id": "688739",
+  "stock_name": "成大生物",
+  "concept": "人用疫苗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "人用狂犬病疫苗"
+  ],
+  "should": [
+    "乙脑灭活疫苗",
+    "重组蛋白疫苗技术平台",
+    "mRNA疫苗技术平台",
+    "人用疫苗",
+    "狂犬病预防",
+    "乙脑预防",
+    "HPV预防",
+    "水痘预防",
+    "流脑预防",
+    "肺炎预防"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "人用狂犬病疫苗",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:24:41"
+}

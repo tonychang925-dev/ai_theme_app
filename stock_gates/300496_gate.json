@@ -1,0 +1,33 @@
+{
+  "stock_id": "300496",
+  "stock_name": "中科创达",
+  "concept": "汽车软件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能座舱",
+    "车联网"
+  ],
+  "should": [
+    "操作系统技术",
+    "汽车软件",
+    "主控芯片",
+    "固件开发",
+    "智能手机",
+    "智能物联网",
+    "智能网联汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能座舱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车联网",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:29:53"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "000898",
+  "stock_name": "鞍钢股份",
+  "concept": "钢铁制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钢铁制造"
+  ],
+  "should": [
+    "热轧卷板",
+    "冷轧板",
+    "冷轧硅钢",
+    "高性能结构钢",
+    "低屈强比高韧性桥梁钢",
+    "极寒环境高强韧易焊接海洋装备用钢",
+    "机械",
+    "冶金",
+    "石油",
+    "化工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钢铁制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:08:47"
+}

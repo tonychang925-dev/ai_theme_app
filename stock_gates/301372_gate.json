@@ -1,0 +1,36 @@
+{
+  "stock_id": "301372",
+  "stock_name": "科净源",
+  "concept": "水环境治理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水环境治理工程建设及运营",
+    "水处理设备生产与研发"
+  ],
+  "should": [
+    "孢子转移装置(微纳米气浮)",
+    "速分生物处理装置",
+    "智能离子平衡装置",
+    "水环境治理",
+    "污水处理厂提标改造",
+    "河湖流域治理",
+    "景观河湖水治理",
+    "循环水系统治理",
+    "农村污水和黑臭坑塘系统治理",
+    "工业园区节能降碳减排"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水环境治理工程建设及运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水处理设备生产与研发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:04:06"
+}

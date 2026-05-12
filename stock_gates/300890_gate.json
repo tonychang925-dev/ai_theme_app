@@ -1,0 +1,36 @@
+{
+  "stock_id": "300890",
+  "stock_name": "翔丰华",
+  "concept": "锂电负极材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电负极材料",
+    "石墨负极材料"
+  ],
+  "should": [
+    "硅碳负极",
+    "硬碳负极",
+    "B型-二氧化钛",
+    "石墨烯",
+    "粉体工程",
+    "粉体理化性能检测",
+    "粉体电性能检测",
+    "材料表征",
+    "动力电池",
+    "3C消费电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电负极材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "石墨负极材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:47:55"
+}

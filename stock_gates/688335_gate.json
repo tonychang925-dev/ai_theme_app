@@ -1,0 +1,26 @@
+{
+  "stock_id": "688335",
+  "stock_name": "复洁科技",
+  "concept": "污泥处理与环保",
+  "strategy_type": "industry_chain",
+  "must": [
+    "污泥处理"
+  ],
+  "should": [
+    "高温水源热泵技术",
+    "废气净化",
+    "市政污泥处理",
+    "煤化工",
+    "锂电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "污泥处理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:15:45"
+}

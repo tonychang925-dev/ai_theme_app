@@ -1,0 +1,41 @@
+{
+  "stock_id": "688179",
+  "stock_name": "阿拉丁",
+  "concept": "科研试剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "科研试剂",
+    "高端化学试剂",
+    "生命科学试剂"
+  ],
+  "should": [
+    "分析色谱试剂",
+    "材料科学试剂",
+    "实验耗材",
+    "自研品牌",
+    "质量控制标准",
+    "大数据分析研判",
+    "生物医药",
+    "新材料",
+    "新能源",
+    "节能环保"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "科研试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端化学试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生命科学试剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:10:48"
+}

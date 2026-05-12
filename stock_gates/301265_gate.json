@@ -1,0 +1,45 @@
+{
+  "stock_id": "301265",
+  "stock_name": "华新环保",
+  "concept": "固废资源化利用",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子废弃物拆解",
+    "报废机动车拆解",
+    "废旧电子设备回收再利用",
+    "危险废物处置"
+  ],
+  "should": [
+    "电子废弃物拆解产物",
+    "报废机动车拆解产物",
+    "废旧电子设备回收再利用产品",
+    "危险废物处置服务",
+    "固废资源化利用",
+    "再生金属冶炼企业",
+    "塑料制造企业",
+    "零部件再利用企业",
+    "危险废物处理企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子废弃物拆解",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "报废机动车拆解",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "废旧电子设备回收再利用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "危险废物处置",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:01:17"
+}

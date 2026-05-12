@@ -1,0 +1,41 @@
+{
+  "stock_id": "002550",
+  "stock_name": "千红制药",
+  "concept": "肝素及酶制剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "肝素及酶制剂",
+    "胰激肽原酶系列",
+    "肝素钠及低分子肝素系列"
+  ],
+  "should": [
+    "复方消化酶胶囊Ⅱ",
+    "门冬酰胺酶系列",
+    "微丸定点释放制剂",
+    "双层包衣定向释放",
+    "超滤、亲和层析技术",
+    "糖尿病微循环障碍",
+    "助消化",
+    "急性淋巴细胞性白血病",
+    "血栓防治",
+    "血液透析"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "肝素及酶制剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "胰激肽原酶系列",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "肝素钠及低分子肝素系列",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:46:53"
+}

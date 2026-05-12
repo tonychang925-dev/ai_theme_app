@@ -1,0 +1,49 @@
+{
+  "stock_id": "688051",
+  "stock_name": "佳华科技",
+  "concept": "物联网数据服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "物联网数据服务",
+    "感知及平台建设",
+    "数据运营服务",
+    "智慧环保",
+    "智慧城市"
+  ],
+  "should": [
+    "碳排放及碳资产管理",
+    "海东青时序数据库",
+    "云链平台",
+    "AI云平台",
+    "边缘计算",
+    "标识解析",
+    "协议转换",
+    "团体标准编制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "物联网数据服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "感知及平台建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据运营服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧环保",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧城市",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:06:30"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "000757",
+  "stock_name": "浩物股份",
+  "concept": "汽车曲轴制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车曲轴制造",
+    "乘用车发动机曲轴",
+    "内燃机发动机曲轴研发",
+    "内燃机发动机曲轴制造"
+  ],
+  "should": [
+    "商用车发动机曲轴",
+    "工程机械发动机曲轴",
+    "农用机械发动机曲轴",
+    "国内汽车发动机曲轴行业前茅",
+    "为主机厂配套"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车曲轴制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乘用车发动机曲轴",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "内燃机发动机曲轴研发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "内燃机发动机曲轴制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:03:36"
+}

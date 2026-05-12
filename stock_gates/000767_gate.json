@@ -1,0 +1,43 @@
+{
+  "stock_id": "000767",
+  "stock_name": "晋控电力",
+  "concept": "煤电+新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤电+新能源",
+    "煤电",
+    "光伏",
+    "风力"
+  ],
+  "should": [
+    "电力商品生产销售",
+    "热力商品生产销售",
+    "水电",
+    "煤电清洁高效利用",
+    "三改联动",
+    "新型储能",
+    "CCUS技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤电+新能源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风力",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:03:54"
+}

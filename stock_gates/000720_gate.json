@@ -1,0 +1,36 @@
+{
+  "stock_id": "000720",
+  "stock_name": "新能泰山",
+  "concept": "电力电缆",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力",
+    "电线电缆"
+  ],
+  "should": [
+    "电力电缆",
+    "生产",
+    "经营",
+    "科研",
+    "土地要素市场化配置",
+    "盘活存量建设用地",
+    "城市更新",
+    "保交楼",
+    "房地产平稳发展",
+    "宏观经济好转"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电线电缆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:02:02"
+}

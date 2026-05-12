@@ -1,0 +1,23 @@
+{
+  "stock_id": "301539",
+  "stock_name": "宏鑫科技",
+  "concept": "锻造铝合金车轮",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锻造铝合金车轮"
+  ],
+  "should": [
+    "锻造工艺",
+    "轻量化材料应用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锻造铝合金车轮",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:06:19"
+}

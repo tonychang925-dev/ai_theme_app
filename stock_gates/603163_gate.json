@@ -1,0 +1,36 @@
+{
+  "stock_id": "603163",
+  "stock_name": "圣晖集成",
+  "concept": "洁净室工程",
+  "strategy_type": "industry_chain",
+  "must": [
+    "洁净室工程",
+    "洁净室系统集成工程"
+  ],
+  "should": [
+    "Class 1级别洁净室工程",
+    "规划",
+    "设计",
+    "施工",
+    "维护",
+    "IC半导体",
+    "光电面板",
+    "医药生物",
+    "食品",
+    "市占率排名第四"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "洁净室工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "洁净室系统集成工程",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:45:08"
+}

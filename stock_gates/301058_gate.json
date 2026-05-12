@@ -1,0 +1,36 @@
+{
+  "stock_id": "301058",
+  "stock_name": "中粮科工",
+  "concept": "粮油冷链工程服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "粮油冷链工程服务",
+    "粮油设备制造"
+  ],
+  "should": [
+    "综合性设计咨询服务",
+    "工程承包服务",
+    "粮油加工技术",
+    "粮食贮藏及物流技术",
+    "国家级创新研发机构",
+    "小麦加工",
+    "稻米加工",
+    "油脂加工",
+    "粮食物流",
+    "农产品储藏"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "粮油冷链工程服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "粮油设备制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:55:01"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "002324",
+  "stock_name": "普利特",
+  "concept": "新材料+新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车改性塑料",
+    "锂离子电池"
+  ],
+  "should": [
+    "LCP材料",
+    "LCP树脂合成",
+    "LCP改性",
+    "LCP吹膜",
+    "LCP纺丝",
+    "新材料+新能源",
+    "填充改性",
+    "共混改性",
+    "增强改性",
+    "汽车内外饰材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车改性塑料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂离子电池",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:35:37"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "002439",
+  "stock_name": "启明星辰",
+  "concept": "网络安全运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "城市安全运营中心",
+    "安全运营中心(SOC)",
+    "城市安全运营"
+  ],
+  "should": [
+    "入侵检测(IDS)",
+    "安全网关(UTM)",
+    "入侵防御(IPS)",
+    "VPN",
+    "Web应用防火墙(WAF)",
+    "安全审计与防护",
+    "漏洞扫描",
+    "态势感知",
+    "工业互联网安全",
+    "云安全"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "城市安全运营中心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "安全运营中心(SOC)",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市安全运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:41:47"
+}

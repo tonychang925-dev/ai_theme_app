@@ -1,0 +1,41 @@
+{
+  "stock_id": "002800",
+  "stock_name": "天顺股份",
+  "concept": "一带一路物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "供应链管理",
+    "多式联运",
+    "国际航空货运",
+    "国际铁路业务"
+  ],
+  "should": [
+    "中欧（亚）班列",
+    "航空货运",
+    "一带一路物流",
+    "第三方物流",
+    "物流园区经营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "供应链管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多式联运",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国际航空货运",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国际铁路业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:58:00"
+}

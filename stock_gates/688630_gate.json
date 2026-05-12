@@ -1,0 +1,44 @@
+{
+  "stock_id": "688630",
+  "stock_name": "芯碁微装",
+  "concept": "直写光刻设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "直写光刻设备",
+    "PCB直接成像设备",
+    "泛半导体直写光刻设备",
+    "微纳直写光刻"
+  ],
+  "should": [
+    "自动线系统",
+    "PCB制造",
+    "IC掩膜版制版",
+    "IC制造",
+    "先进封装",
+    "引线框架",
+    "mini/microLED",
+    "国内市占率约13.1%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "直写光刻设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PCB直接成像设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "泛半导体直写光刻设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "微纳直写光刻",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:22:40"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "002887",
+  "stock_name": "绿茵生态",
+  "concept": "生态修复",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生态修复",
+    "绿地养护"
+  ],
+  "should": [
+    "文旅策划",
+    "林业碳汇监测",
+    "天-空-地一体化碳汇量测算",
+    "抗性苗木培育",
+    "城市公园运营",
+    "市政公用工程施工总承包一级",
+    "水利水电工程施工总承包二级",
+    "环保工程专业承包一级",
+    "风景园林设计专项甲级",
+    "乡村振兴"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生态修复",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "绿地养护",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:01:54"
+}

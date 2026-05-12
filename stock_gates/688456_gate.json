@@ -1,0 +1,45 @@
+{
+  "stock_id": "688456",
+  "stock_name": "有研粉材",
+  "concept": "有色金属粉体材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "有色金属粉体材料",
+    "铜基金属粉体材料",
+    "微电子锡基焊粉材料",
+    "3D打印粉体材料"
+  ],
+  "should": [
+    "球形金属粉体材料制备技术",
+    "高品质电解铜粉绿色制备技术",
+    "扩散/复合粉体材料均匀化制备技术",
+    "超细金属粉体材料制备技术",
+    "3D打印粉体材料制备技术",
+    "高性能粉末冶金中空凸轮轴制备技术",
+    "粉末冶金",
+    "超硬工具",
+    "微电子互连封装"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "有色金属粉体材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铜基金属粉体材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "微电子锡基焊粉材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "3D打印粉体材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:18:39"
+}

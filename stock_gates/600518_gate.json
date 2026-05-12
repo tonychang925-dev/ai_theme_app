@@ -1,0 +1,46 @@
+{
+  "stock_id": "600518",
+  "stock_name": "康美药业",
+  "concept": "中医药全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中医药全产业链",
+    "中药饮片",
+    "中药材种植",
+    "中药材交易"
+  ],
+  "should": [
+    "智慧药房",
+    "中药材全产业链链长",
+    "广东省保留中药材交易中心",
+    "种质资源",
+    "规范化种植",
+    "产地加工",
+    "战略仓储",
+    "大宗交易",
+    "物流仓储",
+    "质量管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中医药全产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中药饮片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中药材种植",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中药材交易",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:20:01"
+}

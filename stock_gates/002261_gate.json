@@ -1,0 +1,51 @@
+{
+  "stock_id": "002261",
+  "stock_name": "拓维信息",
+  "concept": "软硬一体解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "软硬一体解决方案",
+    "AI",
+    "开源鸿蒙",
+    "鲲鹏",
+    "昇腾"
+  ],
+  "should": [
+    "鸿蒙",
+    "软件云服务",
+    "华为云",
+    "大数据",
+    "云计算",
+    "物联网",
+    "工业",
+    "交通",
+    "教育",
+    "考试"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "软硬一体解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AI",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "开源鸿蒙",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "鲲鹏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "昇腾",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:32:14"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "603926",
+  "stock_name": "铁流股份",
+  "concept": "汽车精密零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "离合器",
+    "电机轴"
+  ],
+  "should": [
+    "氢燃料电池泵壳",
+    "燃料电池堆栈",
+    "冷却套筒",
+    "传感器块",
+    "汽车精密零部件",
+    "高精密金属成型",
+    "自动化生产技术",
+    "仿真模拟",
+    "精密检测",
+    "5G+工业互联网"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "离合器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电机轴",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:59:07"
+}

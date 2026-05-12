@@ -1,0 +1,46 @@
+{
+  "stock_id": "601166",
+  "stock_name": "兴业银行",
+  "concept": "商行+投行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商行+投行",
+    "绿色银行",
+    "财富银行",
+    "投资银行"
+  ],
+  "should": [
+    "投贷联动",
+    "绿色金融",
+    "理财业务",
+    "投行业务",
+    "绿色供应链",
+    "新能源",
+    "半导体",
+    "生物医药",
+    "碳捕集",
+    "资产托管"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商行+投行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "绿色银行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "财富银行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资银行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:35:04"
+}

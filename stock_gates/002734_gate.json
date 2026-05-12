@@ -1,0 +1,51 @@
+{
+  "stock_id": "002734",
+  "stock_name": "利民股份",
+  "concept": "农兽药现代化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "代森锰锌",
+    "霜脲氰",
+    "三乙膦酸铝",
+    "嘧霉胺",
+    "威百亩"
+  ],
+  "should": [
+    "阿维菌素",
+    "甲氨基阿维菌素苯甲酸盐",
+    "草铵膦",
+    "硝磺草酮",
+    "伊维菌素",
+    "乙酰氨基阿维菌素",
+    "泰妙菌素",
+    "沃尼妙林",
+    "络合态代森锰锌生产技术",
+    "农兽药现代化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "代森锰锌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "霜脲氰",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三乙膦酸铝",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "嘧霉胺",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "威百亩",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:55:21"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300226",
+  "stock_name": "上海钢联",
+  "concept": "大宗商品B2B",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大宗商品B2B",
+    "资讯+产业大数据",
+    "交易+供应链服务"
+  ],
+  "should": [
+    "工业SaaS",
+    "预付款订阅",
+    "电话通讯",
+    "平台实时对接",
+    "钢铁行业",
+    "大宗商品领域",
+    "能化领域",
+    "金属领域",
+    "定价权争夺",
+    "国际影响力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大宗商品B2B",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "资讯+产业大数据",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "交易+供应链服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:18:08"
+}

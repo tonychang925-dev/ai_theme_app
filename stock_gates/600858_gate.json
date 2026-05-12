@@ -1,0 +1,36 @@
+{
+  "stock_id": "600858",
+  "stock_name": "银座股份",
+  "concept": "零售连锁",
+  "strategy_type": "industry_chain",
+  "must": [
+    "超市",
+    "百货"
+  ],
+  "should": [
+    "购物中心",
+    "线上多元化业务",
+    "全渠道布局",
+    "数字化转型",
+    "生鲜自营",
+    "供应链改革",
+    "标准化运营",
+    "预制菜引进",
+    "门店117家",
+    "受托管理门店46家"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "超市",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "百货",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:29:39"
+}

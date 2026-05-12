@@ -1,0 +1,36 @@
+{
+  "stock_id": "300310",
+  "stock_name": "宜通世纪",
+  "concept": "通信技术服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "通信网络技术服务",
+    "通信技术服务"
+  ],
+  "should": [
+    "物联网平台及解决方案",
+    "ICT业务",
+    "系统解决方案",
+    "通信设备生产销售",
+    "通信运营商",
+    "智能制造",
+    "智慧医疗",
+    "智慧教育",
+    "数字政务",
+    "车联网"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "通信网络技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通信技术服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:22:03"
+}

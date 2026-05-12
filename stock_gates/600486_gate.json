@@ -1,0 +1,36 @@
+{
+  "stock_id": "600486",
+  "stock_name": "扬农化工",
+  "concept": "农药菊酯龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农药菊酯龙头",
+    "拟除虫菊酯原药"
+  ],
+  "should": [
+    "杀虫剂",
+    "除草剂",
+    "杀菌剂",
+    "植物生长调节剂",
+    "草甘膦",
+    "麦草畏",
+    "氟啶胺",
+    "吡唑嘧菌酯",
+    "中间体自给",
+    "农业杀虫"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农药菊酯龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "拟除虫菊酯原药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:19:04"
+}

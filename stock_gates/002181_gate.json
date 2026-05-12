@@ -1,0 +1,51 @@
+{
+  "stock_id": "002181",
+  "stock_name": "粤传媒",
+  "concept": "报业传媒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "整合营销传播",
+    "融媒体整合营销",
+    "平面媒体广告",
+    "数字媒体广告",
+    "视频服务"
+  ],
+  "should": [
+    "展览展陈",
+    "印刷业务",
+    "户外广告",
+    "活动执行",
+    "报纸印刷",
+    "商业印刷",
+    "报刊经营",
+    "新媒体经营",
+    "广告发布",
+    "品牌推广"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "整合营销传播",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "融媒体整合营销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "平面媒体广告",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字媒体广告",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "视频服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:27:52"
+}

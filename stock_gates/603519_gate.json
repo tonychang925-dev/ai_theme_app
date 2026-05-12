@@ -1,0 +1,28 @@
+{
+  "stock_id": "603519",
+  "stock_name": "立霸股份",
+  "concept": "家电复合材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "家电复合材料"
+  ],
+  "should": [
+    "覆膜板(VCM)",
+    "有机涂层板(PCM)",
+    "冰箱",
+    "洗衣机",
+    "高档热水器",
+    "建筑门板",
+    "微波炉"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "家电复合材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:51:47"
+}

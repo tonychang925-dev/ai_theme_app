@@ -1,0 +1,46 @@
+{
+  "stock_id": "002623",
+  "stock_name": "亚玛顿",
+  "concept": "光伏玻璃深加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏镀膜玻璃",
+    "超薄物理钢化玻璃",
+    "双玻组件",
+    "电子玻璃"
+  ],
+  "should": [
+    "太阳能瓦片玻璃",
+    "超薄玻璃物理钢化技术",
+    "多功能镀膜技术",
+    "玻璃精密加工技术",
+    "纳米材料减反膜技术",
+    "光伏建筑一体化(BIPV)",
+    "光伏玻璃深加工",
+    "电子显示",
+    "光伏玻璃优质企业",
+    "平台型商业模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏镀膜玻璃",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超薄物理钢化玻璃",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "双玻组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子玻璃",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:50:16"
+}

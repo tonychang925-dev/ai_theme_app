@@ -1,0 +1,33 @@
+{
+  "stock_id": "002258",
+  "stock_name": "利尔化学",
+  "concept": "氯代吡啶除草剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "氯代吡啶类除草剂",
+    "草铵膦原药"
+  ],
+  "should": [
+    "精草铵膦",
+    "氰基吡啶氯化工业化技术",
+    "氯代吡啶除草剂",
+    "农林牧业",
+    "卫生领域",
+    "国内最大氯代吡啶类除草剂生产基地",
+    "国内最大规模草铵膦原药生产企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "氯代吡啶类除草剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "草铵膦原药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:32:00"
+}

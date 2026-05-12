@@ -1,0 +1,37 @@
+{
+  "stock_id": "603797",
+  "stock_name": "联泰环保",
+  "concept": "城镇污水处理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "城镇污水处理",
+    "城乡污水处理设施的投资",
+    "城乡污水处理设施的建设"
+  ],
+  "should": [
+    "污水收集",
+    "污水输送",
+    "终端污水处理",
+    "城镇生活污水处理设施补短板强弱项",
+    "污水收集管网建设",
+    "污泥处理处置设施建设"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "城镇污水处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城乡污水处理设施的投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城乡污水处理设施的建设",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:56:37"
+}

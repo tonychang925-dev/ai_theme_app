@@ -1,0 +1,51 @@
+{
+  "stock_id": "000505",
+  "stock_name": "京粮控股",
+  "concept": "植物油加工与食品制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "植物油加工与食品制造",
+    "植物油加工",
+    "食品制造",
+    "古币",
+    "古船"
+  ],
+  "should": [
+    "休闲食品",
+    "大豆油",
+    "菜籽油",
+    "棕榈油",
+    "花生油",
+    "葵花籽油",
+    "芝麻油",
+    "玉米胚芽油",
+    "橄榄油",
+    "亚麻籽油"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "植物油加工与食品制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "植物油加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "食品制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "古币",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "古船",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:53:14"
+}

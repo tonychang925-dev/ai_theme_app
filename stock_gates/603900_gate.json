@@ -1,0 +1,46 @@
+{
+  "stock_id": "603900",
+  "stock_name": "莱绅通灵",
+  "concept": "珠宝零售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "蓝火真心钻",
+    "钻石镶嵌饰品",
+    "蓝火真心钻专利",
+    "真心式切割工艺"
+  ],
+  "should": [
+    "蓝精灵联名珠宝系列",
+    "王室庄园系列",
+    "皇家博物馆系列",
+    "王后鸢尾系列",
+    "女王系列",
+    "FINE系列",
+    "传世金金镶钻系列",
+    "珠宝零售",
+    "珠宝首饰消费",
+    "婚恋场景"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "蓝火真心钻",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钻石镶嵌饰品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蓝火真心钻专利",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "真心式切割工艺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:58:34"
+}

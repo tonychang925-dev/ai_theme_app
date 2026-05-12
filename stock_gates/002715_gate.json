@@ -1,0 +1,40 @@
+{
+  "stock_id": "002715",
+  "stock_name": "登云股份",
+  "concept": "汽车发动机气门",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车发动机进排气门",
+    "汽车发动机气门",
+    "汽车"
+  ],
+  "should": [
+    "内燃机发电机组",
+    "摩托车",
+    "农业机械",
+    "国家汽车零部件出口基地企业",
+    "国家高新技术企业",
+    "中国内燃机零部件行业排头兵企业",
+    "广东省专精特新企业",
+    "核心供应商",
+    "年度优秀（最佳）供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车发动机进排气门",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车发动机气门",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:54:37"
+}

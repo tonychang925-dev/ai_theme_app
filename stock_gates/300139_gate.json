@@ -1,0 +1,44 @@
+{
+  "stock_id": "300139",
+  "stock_name": "晓程科技",
+  "concept": "电力载波芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力线载波芯片",
+    "电力载波芯片",
+    "智能电表",
+    "载波通信"
+  ],
+  "should": [
+    "黄金勘探与采掘",
+    "主控芯片设计",
+    "数码电子雷管芯片",
+    "计量功能",
+    "电网市场",
+    "光伏发电",
+    "集成电路设计",
+    "光伏系统软件平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力线载波芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力载波芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能电表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "载波通信",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:14:46"
+}

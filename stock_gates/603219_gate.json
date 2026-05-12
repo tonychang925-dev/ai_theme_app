@@ -1,0 +1,41 @@
+{
+  "stock_id": "603219",
+  "stock_name": "富佳股份",
+  "concept": "清洁小家电ODM",
+  "strategy_type": "industry_chain",
+  "must": [
+    "清洁小家电ODM",
+    "吸尘器",
+    "洗地机"
+  ],
+  "should": [
+    "扫地机器人",
+    "商用美容仪",
+    "无刷电机",
+    "无线锂电技术",
+    "戴森指定电机供应商",
+    "家用储能产品",
+    "固件开发",
+    "ODM供应商",
+    "Shark最大供应商",
+    "方太合作研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "清洁小家电ODM",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "吸尘器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "洗地机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:46:49"
+}

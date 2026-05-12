@@ -1,0 +1,29 @@
+{
+  "stock_id": "002681",
+  "stock_name": "奋达科技",
+  "concept": "智能硬件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能可穿戴"
+  ],
+  "should": [
+    "智能门锁",
+    "电声产品",
+    "健康电器",
+    "无线音频",
+    "语音交互",
+    "个护美健",
+    "垂直一体化解决方案提供商",
+    "主流供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能可穿戴",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:53:06"
+}

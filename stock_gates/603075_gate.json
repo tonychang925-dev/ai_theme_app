@@ -1,0 +1,46 @@
+{
+  "stock_id": "603075",
+  "stock_name": "热威股份",
+  "concept": "电热元件制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电热元件制造",
+    "民用电热元件",
+    "新能源汽车电热元件",
+    "工业领域加热元件"
+  ],
+  "should": [
+    "厚膜电热元件",
+    "管状电热元件",
+    "铝铸件电热元件",
+    "水胀管加热器",
+    "小型铝铸件加热器",
+    "混动车节温器用电热元件",
+    "家电",
+    "新能源汽车热管理系统",
+    "工业装备",
+    "电热元件产量全球前三"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电热元件制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "民用电热元件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车电热元件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业领域加热元件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:42:57"
+}

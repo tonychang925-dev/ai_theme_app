@@ -1,0 +1,51 @@
+{
+  "stock_id": "600827",
+  "stock_name": "百联股份",
+  "concept": "零售百货",
+  "strategy_type": "industry_chain",
+  "must": [
+    "百货商店",
+    "连锁超市",
+    "购物中心",
+    "奥特莱斯",
+    "联华"
+  ],
+  "should": [
+    "第一八佰伴",
+    "东方商厦",
+    "永安百货",
+    "百联奥特莱斯",
+    "零售百货",
+    "联营联销",
+    "经销",
+    "租赁",
+    "品牌库建设",
+    "自营品牌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "百货商店",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "连锁超市",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "购物中心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "奥特莱斯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "联华",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:28:55"
+}

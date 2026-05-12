@@ -1,0 +1,31 @@
+{
+  "stock_id": "000833",
+  "stock_name": "粤桂股份",
+  "concept": "综合产业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "机制糖"
+  ],
+  "should": [
+    "机制浆",
+    "机制纸",
+    "硫铁矿",
+    "桂花牌白砂糖",
+    "国内优质硫铁矿领先地位",
+    "环保自主知识产权",
+    "工艺创新",
+    "管理创新",
+    "食品加工",
+    "造纸"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "机制糖",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:06:33"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "688049",
+  "stock_name": "炬芯科技",
+  "concept": "智能音频SoC",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能音频SoC",
+    "蓝牙音频SoC芯片系列"
+  ],
+  "should": [
+    "高性能音频ADC/DAC",
+    "蓝牙射频、基带和协议栈技术",
+    "蓝牙音箱",
+    "蓝牙耳机",
+    "蓝牙语音遥控器",
+    "蓝牙收发一体器",
+    "电竞耳机",
+    "无线麦克风",
+    "辅听设备",
+    "低功耗技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能音频SoC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蓝牙音频SoC芯片系列",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:06:32"
+}

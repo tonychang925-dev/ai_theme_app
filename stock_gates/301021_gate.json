@@ -1,0 +1,36 @@
+{
+  "stock_id": "301021",
+  "stock_name": "英诺激光",
+  "concept": "激光器及方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "激光器",
+    "整体解决方案"
+  ],
+  "should": [
+    "激光器及方案",
+    "全固态（DPSS）",
+    "MOPA光纤（偏振）",
+    "固体-光纤混合模式",
+    "纳秒到飞秒脉宽",
+    "红外到深紫外波段",
+    "工业微加工",
+    "生物医学",
+    "消费电子",
+    "印制电路板（PCB/FPC）"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "激光器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "整体解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:53:28"
+}

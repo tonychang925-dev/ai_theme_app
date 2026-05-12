@@ -1,0 +1,41 @@
+{
+  "stock_id": "603086",
+  "stock_name": "先达股份",
+  "concept": "选择性除草剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "选择性除草剂",
+    "选择性除草剂细分行业龙头",
+    "烯草酮"
+  ],
+  "should": [
+    "咪草烟",
+    "异噁草松",
+    "烯酰吗啉",
+    "喹草酮",
+    "吡唑喹草酯",
+    "苯丙草酮",
+    "2,4-滴丁酸",
+    "氟吡酰草胺",
+    "吡草醚",
+    "创制化合物"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "选择性除草剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "选择性除草剂细分行业龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "烯草酮",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:43:17"
+}

@@ -1,0 +1,30 @@
+{
+  "stock_id": "601901",
+  "stock_name": "方正证券",
+  "concept": "证券经纪服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "证券经纪服务",
+    "财富管理转型"
+  ],
+  "should": [
+    "营业部数量行业第二",
+    "线下服务能力较强",
+    "小方月活536万",
+    "平安证券月活约650万"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "证券经纪服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "财富管理转型",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:39:38"
+}

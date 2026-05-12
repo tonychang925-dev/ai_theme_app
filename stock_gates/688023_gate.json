@@ -1,0 +1,15 @@
+{
+  "stock_id": "688023",
+  "stock_name": "安恒信息",
+  "concept": "云安全标杆",
+  "strategy_type": "industry_chain",
+  "must": [],
+  "should": [
+    "云安全标杆"
+  ],
+  "not": [],
+  "evidence_refs": [],
+  "quality": "weak",
+  "must_count": 0,
+  "generated_at": "2026-05-11T20:05:37"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "688152",
+  "stock_name": "麒麟信安",
+  "concept": "国产操作系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "麒麟信安操作系统"
+  ],
+  "should": [
+    "麒麟信安云桌面系统",
+    "麒麟信安安全存储系统",
+    "麒麟信安电子文档安全管理系统",
+    "超融合一体机",
+    "轻量级云平台",
+    "增强密码模块驱动程序",
+    "国产操作系统",
+    "操作系统",
+    "信息安全",
+    "云计算"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "麒麟信安操作系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:09:59"
+}

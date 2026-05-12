@@ -1,0 +1,29 @@
+{
+  "stock_id": "688365",
+  "stock_name": "光云科技",
+  "concept": "电商SaaS",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电商SaaS"
+  ],
+  "should": [
+    "SaaS产品",
+    "配套硬件",
+    "运营服务",
+    "CRM短信",
+    "云计算",
+    "私域电商",
+    "直播电商",
+    "跨境电商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电商SaaS",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:16:36"
+}

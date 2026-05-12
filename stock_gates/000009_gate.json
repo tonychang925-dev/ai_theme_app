@@ -1,0 +1,40 @@
+{
+  "stock_id": "000009",
+  "stock_name": "中国宝安",
+  "concept": "投资控股型企业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高新技术产业",
+    "新能源材料",
+    "新能源汽车产业链"
+  ],
+  "should": [
+    "生物医药产业",
+    "精密制造",
+    "军工",
+    "房地产及其他产业",
+    "功能性大健康产品",
+    "技术创新",
+    "商业模式升级",
+    "去库存",
+    "促销售"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高新技术产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车产业链",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:36:08"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "603888",
+  "stock_name": "新华网",
+  "concept": "网络传媒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "网络广告",
+    "信息服务",
+    "移动互联网",
+    "网络技术服务",
+    "数字内容"
+  ],
+  "should": [
+    "大数据智能分析",
+    "学习进行时",
+    "数据新闻",
+    "思客",
+    "新华网评",
+    "新华访谈",
+    "网络传媒",
+    "人工智能",
+    "虚拟现实",
+    "增强现实"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "网络广告",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信息服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动互联网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "网络技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字内容",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:58:23"
+}

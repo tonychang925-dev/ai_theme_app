@@ -1,0 +1,45 @@
+{
+  "stock_id": "300854",
+  "stock_name": "中兰环保",
+  "concept": "固废综合治理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "污染隔离系统",
+    "生态环境修复",
+    "填埋场综合运营",
+    "生态型填埋集成技术体系"
+  ],
+  "should": [
+    "污染隔离技术",
+    "渗滤液导排技术",
+    "填埋气导排技术",
+    "固废综合治理",
+    "可再生资源利用",
+    "市政公用领域生活垃圾填埋场处置",
+    "一般工业固体废弃物处置",
+    "危险废物处置",
+    "突发公共卫生事件应急污染隔离防治"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "污染隔离系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生态环境修复",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "填埋场综合运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生态型填埋集成技术体系",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:46:06"
+}

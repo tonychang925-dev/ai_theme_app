@@ -1,0 +1,36 @@
+{
+  "stock_id": "300127",
+  "stock_name": "银河磁体",
+  "concept": "稀土永磁体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "粘结钕铁硼磁体",
+    "制造业单项冠军示范企业"
+  ],
+  "should": [
+    "热压钕铁硼磁体",
+    "钐钴磁体",
+    "自主研发",
+    "自主创新",
+    "航空航天",
+    "自动化控制",
+    "通讯",
+    "传感器",
+    "石油工业",
+    "仪器仪表"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "粘结钕铁硼磁体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "制造业单项冠军示范企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:14:18"
+}

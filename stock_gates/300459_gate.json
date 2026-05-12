@@ -1,0 +1,41 @@
+{
+  "stock_id": "300459",
+  "stock_name": "汤姆猫",
+  "concept": "全栖IP运营商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全栖IP运营商",
+    "会说话的汤姆猫家族",
+    "衍生品与IP授权"
+  ],
+  "should": [
+    "移动互联网应用",
+    "动漫影视",
+    "主题乐园",
+    "儿童教育",
+    "《会说话的汤姆猫》",
+    "《我的汤姆猫》",
+    "《我的安吉拉》",
+    "《汤姆猫跑酷》",
+    "《汤姆猫英雄跑酷》",
+    "《汤姆猫大冒险》"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全栖IP运营商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "会说话的汤姆猫家族",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "衍生品与IP授权",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:28:17"
+}

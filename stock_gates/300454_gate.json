@@ -1,0 +1,31 @@
+{
+  "stock_id": "300454",
+  "stock_name": "深信服",
+  "concept": "网络安全与云计算",
+  "strategy_type": "industry_chain",
+  "must": [
+    "虚拟专用网(VPN)"
+  ],
+  "should": [
+    "安全硬件",
+    "安全软件",
+    "安全服务",
+    "云计算",
+    "大数据",
+    "物联网",
+    "人工智能",
+    "分布式计算",
+    "虚拟资源管理",
+    "政务信息化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "虚拟专用网(VPN)",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:27:59"
+}

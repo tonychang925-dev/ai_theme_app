@@ -1,0 +1,41 @@
+{
+  "stock_id": "300403",
+  "stock_name": "汉宇集团",
+  "concept": "家电排水泵",
+  "strategy_type": "industry_chain",
+  "must": [
+    "家电排水泵",
+    "高效节能家用电器排水泵",
+    "电机核心技术"
+  ],
+  "should": [
+    "标准排水泵",
+    "冷凝泵",
+    "洗涤循环泵",
+    "新型进水阀",
+    "地尔水疗马桶",
+    "米诺斯轻水疗马桶",
+    "汽车电子水泵",
+    "交/直流充电桩",
+    "微充系列产品",
+    "谐波减速器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "家电排水泵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高效节能家用电器排水泵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电机核心技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:25:53"
+}

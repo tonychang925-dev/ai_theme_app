@@ -1,0 +1,41 @@
+{
+  "stock_id": "002438",
+  "stock_name": "江苏神通",
+  "concept": "特种阀门制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "蝶阀",
+    "球阀",
+    "核级阀门技术"
+  ],
+  "should": [
+    "高压氢阀",
+    "氢能阀门关键技术",
+    "闸阀",
+    "截止阀",
+    "止回阀",
+    "调节阀",
+    "金属膜",
+    "阀门管家物联网系统",
+    "特种阀门制造",
+    "EMC模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "蝶阀",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "球阀",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核级阀门技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:41:38"
+}

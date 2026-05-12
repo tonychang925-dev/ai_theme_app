@@ -1,0 +1,36 @@
+{
+  "stock_id": "300740",
+  "stock_name": "水羊股份",
+  "concept": "美妆品牌运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "美妆品牌运营",
+    "自有品牌",
+    "代理品牌"
+  ],
+  "should": [
+    "贴式面膜",
+    "非贴式面膜",
+    "水乳膏霜",
+    "电商平台",
+    "线下门店"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "美妆品牌运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自有品牌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "代理品牌",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:41:06"
+}

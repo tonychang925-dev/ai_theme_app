@@ -1,0 +1,46 @@
+{
+  "stock_id": "300261",
+  "stock_name": "雅本化学",
+  "concept": "农药医药中间体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "创新农药中间体",
+    "医药中间体",
+    "CDMO业务模式"
+  ],
+  "should": [
+    "卡龙酸酐",
+    "非天然氨基酸系列",
+    "抗病毒药物中间体",
+    "心血管药物中间体",
+    "NMN",
+    "AKG-Ca",
+    "农药医药中间体",
+    "生物制造",
+    "生物制品",
+    "大健康"
+  ],
+  "not": [
+    "新冠药物",
+    "上游石化行业",
+    "下游农林牧渔行业",
+    "下游医药、生物制品行业"
+  ],
+  "evidence_refs": [
+    {
+      "term": "创新农药中间体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药中间体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CDMO业务模式",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:20:06"
+}

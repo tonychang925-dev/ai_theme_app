@@ -1,0 +1,31 @@
+{
+  "stock_id": "300080",
+  "stock_name": "易成新能",
+  "concept": "光伏与新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "晶硅片切割刃料"
+  ],
+  "should": [
+    "超高功率石墨电极",
+    "针状焦",
+    "锂电负极材料",
+    "光伏制造",
+    "电弧炉炼钢",
+    "锂离子电池",
+    "国内晶硅片切割刃料领域龙头企业",
+    "光伏产业蓬勃发展",
+    "电炉炼钢发展",
+    "锂电负极材料需求旺盛"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "晶硅片切割刃料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:12:28"
+}

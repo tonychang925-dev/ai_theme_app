@@ -1,0 +1,41 @@
+{
+  "stock_id": "002916",
+  "stock_name": "深南电路",
+  "concept": "电子电路集成",
+  "strategy_type": "industry_chain",
+  "must": [
+    "印制电路板",
+    "封装基板",
+    "电子装联"
+  ],
+  "should": [
+    "背板技术",
+    "多层板技术",
+    "HDI技术",
+    "封装基板技术",
+    "电子电路集成",
+    "通信",
+    "航空航天",
+    "汽车电子",
+    "AI服务器",
+    "高速网络通信"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "印制电路板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "封装基板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子装联",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:03:02"
+}

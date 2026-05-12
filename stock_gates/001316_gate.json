@@ -1,0 +1,40 @@
+{
+  "stock_id": "001316",
+  "stock_name": "润贝航科",
+  "concept": "航材国产化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航材国产化",
+    "自研自产航材",
+    "航材分销"
+  ],
+  "should": [
+    "中国商飞",
+    "中航工业",
+    "零部件制造人批准书",
+    "技术标准规定项目批准书",
+    "重要改装设计批准书",
+    "航空消毒剂",
+    "预润擦拭纸",
+    "航空清洗剂",
+    "飞行员耳机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航材国产化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自研自产航材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航材分销",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:16:17"
+}

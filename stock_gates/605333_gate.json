@@ -1,0 +1,44 @@
+{
+  "stock_id": "605333",
+  "stock_name": "沪光股份",
+  "concept": "汽车线束龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车线束龙头",
+    "成套线束",
+    "新能源汽车高压线束",
+    "智能制造系统"
+  ],
+  "should": [
+    "发动机线束",
+    "仪表板线束",
+    "高压线束工艺",
+    "其他线束",
+    "全流程智能制造",
+    "国产替代",
+    "国内外知名整车厂供应商",
+    "上汽大众第一大客户"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车线束龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "成套线束",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车高压线束",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能制造系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:03:45"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "688429",
+  "stock_name": "时创能源",
+  "concept": "光伏电池与设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏电池与设备",
+    "光伏湿制程辅助品",
+    "光伏设备",
+    "光伏电池"
+  ],
+  "should": [
+    "链式退火设备",
+    "体缺陷钝化设备",
+    "光伏电池制造行业",
+    "光伏湿制程辅助品市占率较高"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏电池与设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏湿制程辅助品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏电池",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:18:08"
+}

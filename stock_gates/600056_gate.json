@@ -1,0 +1,41 @@
+{
+  "stock_id": "600056",
+  "stock_name": "中国医药",
+  "concept": "医药全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国际贸易",
+    "医药工业",
+    "医药商业"
+  ],
+  "should": [
+    "化学制剂",
+    "化学原料药",
+    "生物制品",
+    "中成药",
+    "中药饮片",
+    "诊断药品及试剂",
+    "医用耗材",
+    "医疗器械",
+    "医药全产业链",
+    "抗感染类"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国际贸易",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药工业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药商业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:08:14"
+}

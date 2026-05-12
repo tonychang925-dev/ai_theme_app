@@ -1,0 +1,41 @@
+{
+  "stock_id": "300321",
+  "stock_name": "同大股份",
+  "concept": "超纤革龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "超纤革龙头",
+    "超细纤维合成革",
+    "国内最大超纤研发生产企业"
+  ],
+  "should": [
+    "生态超纤革",
+    "水性聚氨酯超纤革",
+    "水减量超纤革",
+    "超纤绒面革",
+    "超纤光面革",
+    "超纤基布",
+    "海岛法超细纤维",
+    "中国超纤产业基地",
+    "鞋材",
+    "沙发家居"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "超纤革龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超细纤维合成革",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内最大超纤研发生产企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:22:33"
+}

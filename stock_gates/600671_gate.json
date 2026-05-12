@@ -1,0 +1,31 @@
+{
+  "stock_id": "600671",
+  "stock_name": "天目药业",
+  "concept": "薄荷素油",
+  "strategy_type": "industry_chain",
+  "must": [
+    "薄荷素油"
+  ],
+  "should": [
+    "复方鲜竹沥",
+    "百合固金",
+    "河车大造",
+    "安眠补脑颗粒",
+    "爆珠口罩",
+    "电子雾化产品",
+    "车载雾化器",
+    "纯本草电子雾化器",
+    "超声雾化器",
+    "雾化机器人"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "薄荷素油",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:24:35"
+}

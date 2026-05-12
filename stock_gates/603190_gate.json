@@ -1,0 +1,36 @@
+{
+  "stock_id": "603190",
+  "stock_name": "亚通精工",
+  "concept": "汽车冲压焊接零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车冲压焊接零部件",
+    "汽车冲压及焊接零部件"
+  ],
+  "should": [
+    "矿用辅助运输设备",
+    "中国重汽",
+    "北汽福田",
+    "吉利控股",
+    "上汽通用",
+    "上汽集团",
+    "理想汽车",
+    "国家能源集团",
+    "晋能控股",
+    "商用车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车冲压焊接零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车冲压及焊接零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:45:56"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300415",
+  "stock_name": "伊之密",
+  "concept": "模压成型设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "模压成型设备",
+    "注塑机",
+    "压铸机"
+  ],
+  "should": [
+    "橡胶注射成型机",
+    "高速包装系统",
+    "机器人应用及智能制造系统",
+    "家用电器",
+    "汽车",
+    "3C产品",
+    "医疗器械",
+    "包装",
+    "航空航天",
+    "注塑机市占率10%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "模压成型设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "注塑机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "压铸机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:26:19"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "688095",
+  "stock_name": "福昕软件",
+  "concept": "PDF软件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PDF编辑器与阅读器"
+  ],
+  "should": [
+    "PDF开发平台及工具",
+    "企业文档处理解决方案",
+    "PDF工具及在线服务产品",
+    "互联PDF",
+    "PDF文档无障碍阅读",
+    "OCR文字识别",
+    "电子签名",
+    "PDF软件",
+    "自主研发核心技术体系",
+    "国内第一梯队"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PDF编辑器与阅读器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:08:21"
+}

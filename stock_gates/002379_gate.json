@@ -1,0 +1,35 @@
+{
+  "stock_id": "002379",
+  "stock_name": "宏桥控股",
+  "concept": "铝加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "药用箔",
+    "家用箔"
+  ],
+  "should": [
+    "铝板带",
+    "容器箔",
+    "装饰箔",
+    "铝加工",
+    "食品包装",
+    "医药包装",
+    "建筑装饰",
+    "铝水不落地直接生产铝板带箔",
+    "再生铝生产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "药用箔",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "家用箔",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:38:37"
+}

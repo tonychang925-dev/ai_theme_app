@@ -1,0 +1,36 @@
+{
+  "stock_id": "603421",
+  "stock_name": "鼎信通讯",
+  "concept": "智能电网通信",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力线载波通信芯片",
+    "智能电网设备"
+  ],
+  "should": [
+    "智慧消防产品",
+    "新能源系列产品",
+    "窄带载波",
+    "宽带载波(HPLC)",
+    "微功率无线",
+    "载波&微功率无线双模",
+    "电力电子柔性直流技术",
+    "智能电网通信",
+    "国家智能电网用电信息采集系统",
+    "电能计量"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力线载波通信芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能电网设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:51:00"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "601798",
+  "stock_name": "蓝科高新",
+  "concept": "石油石化设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "换热器",
+    "空冷器",
+    "原油生产分离处理设备",
+    "石油钻采技术设备",
+    "检验检测服务"
+  ],
+  "should": [
+    "纤维液膜分离技术及成套设置",
+    "膜分离技术及产品",
+    "球罐",
+    "塔器",
+    "容器",
+    "煤间接液化成套技术",
+    "板式空冷器",
+    "大型板壳式换热器",
+    "煤制油循环换热分离器",
+    "大型光热发电熔盐储能系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "换热器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空冷器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原油生产分离处理设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "石油钻采技术设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "检验检测服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:38:44"
+}

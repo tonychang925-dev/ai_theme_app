@@ -1,0 +1,44 @@
+{
+  "stock_id": "600540",
+  "stock_name": "新赛股份",
+  "concept": "棉花加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "棉花加工",
+    "籽棉",
+    "皮棉",
+    "棉籽",
+    "棉花加工技术"
+  ],
+  "should": [
+    "脱酚棉蛋白高效制备",
+    "生物蛋白",
+    "副产品高值转化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "棉花加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "籽棉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "皮棉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "棉籽",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "棉花加工技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:20:39"
+}

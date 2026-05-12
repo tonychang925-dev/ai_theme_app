@@ -1,0 +1,46 @@
+{
+  "stock_id": "300813",
+  "stock_name": "泰林生物",
+  "concept": "微生物检测装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "微生物检测系统",
+    "环境生物污染控制装备",
+    "总有机碳分析仪器",
+    "微生物检测装备"
+  ],
+  "should": [
+    "隔离器技术",
+    "NC膜技术",
+    "过氧化氢消毒技术",
+    "细胞和基因治疗药物生产集成化装备",
+    "药品质量控制",
+    "医疗卫生",
+    "生物安全",
+    "精准医疗",
+    "食品安全",
+    "检验检疫"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "微生物检测系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环境生物污染控制装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "总有机碳分析仪器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "微生物检测装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:44:14"
+}

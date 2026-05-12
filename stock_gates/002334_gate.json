@@ -1,0 +1,46 @@
+{
+  "stock_id": "002334",
+  "stock_name": "英威腾",
+  "concept": "自动化解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "变频器",
+    "伺服系统",
+    "PLC",
+    "控制器"
+  ],
+  "should": [
+    "自动化解决方案",
+    "智能UPS",
+    "电驱系统",
+    "电源系统",
+    "工业物联网",
+    "人机界面",
+    "电机",
+    "传感器",
+    "电梯控制系统",
+    "智能温控"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "变频器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "伺服系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PLC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "控制器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:36:19"
+}

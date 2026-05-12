@@ -1,0 +1,41 @@
+{
+  "stock_id": "300859",
+  "stock_name": "西域旅游",
+  "concept": "新疆旅游龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新疆旅游龙头",
+    "旅游资源开发",
+    "天池景区"
+  ],
+  "should": [
+    "五彩湾温泉景区",
+    "旅游客运",
+    "游船观光",
+    "索道观光",
+    "演艺",
+    "温泉娱乐",
+    "旅游服务",
+    "酒店",
+    "会议",
+    "季节性经营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新疆旅游龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "旅游资源开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天池景区",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:46:19"
+}

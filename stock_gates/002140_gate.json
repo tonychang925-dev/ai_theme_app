@@ -1,0 +1,46 @@
+{
+  "stock_id": "002140",
+  "stock_name": "东华科技",
+  "concept": "化工工程总包",
+  "strategy_type": "industry_chain",
+  "must": [
+    "化工工程总包",
+    "工程业务",
+    "煤化工",
+    "乙二醇"
+  ],
+  "should": [
+    "实业业务",
+    "新材料",
+    "新能源",
+    "环境保护",
+    "基础设施",
+    "可降解材料",
+    "碳酸锂",
+    "磷酸铁",
+    "钛白",
+    "磷化工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "化工工程总包",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤化工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乙二醇",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:25:32"
+}

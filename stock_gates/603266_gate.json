@@ -1,0 +1,51 @@
+{
+  "stock_id": "603266",
+  "stock_name": "天龙股份",
+  "concept": "精密制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密模具",
+    "注塑",
+    "装配",
+    "汽车电子",
+    "新能源汽车"
+  ],
+  "should": [
+    "电子水泵组件",
+    "传感器配套组件",
+    "轻量化车门功能门板",
+    "IGBT功能承载模块",
+    "车灯部件",
+    "精密模具开发设计",
+    "高复杂度多嵌件精密注塑成型工艺",
+    "精密制造",
+    "轻量化",
+    "电子集成化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密模具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "注塑",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "装配",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车电子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:47:39"
+}

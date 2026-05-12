@@ -1,0 +1,46 @@
+{
+  "stock_id": "301042",
+  "stock_name": "安联锐视",
+  "concept": "安防视频监控",
+  "strategy_type": "industry_chain",
+  "must": [
+    "安防视频监控",
+    "前端摄像机",
+    "后端硬盘录像机",
+    "套装产品"
+  ],
+  "should": [
+    "人工智能",
+    "物联网",
+    "AIOT",
+    "智慧城市",
+    "平安城市",
+    "智慧交通",
+    "智慧校园",
+    "智慧楼宇",
+    "视频分析",
+    "人像识别"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "安防视频监控",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "前端摄像机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "后端硬盘录像机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "套装产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:54:23"
+}

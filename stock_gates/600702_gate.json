@@ -1,0 +1,51 @@
+{
+  "stock_id": "600702",
+  "stock_name": "舍得酒业",
+  "concept": "川酒老酒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "舍得",
+    "沱牌",
+    "品味舍得",
+    "智慧舍得",
+    "沱牌曲酒"
+  ],
+  "should": [
+    "川酒六朵金花",
+    "天子呼",
+    "吞之乎",
+    "尚书坊",
+    "陶醉",
+    "六老酿造工艺",
+    "动态酒龄",
+    "坛储年份+出厂时间双年份",
+    "川酒老酒",
+    "次高端白酒"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "舍得",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "沱牌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "品味舍得",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧舍得",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "沱牌曲酒",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:25:19"
+}

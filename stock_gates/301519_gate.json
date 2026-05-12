@@ -1,0 +1,36 @@
+{
+  "stock_id": "301519",
+  "stock_name": "舜禹股份",
+  "concept": "水务综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "二次供水",
+    "污水处理"
+  ],
+  "should": [
+    "节能水泵",
+    "控制柜",
+    "分散式智能污水处理设备",
+    "水务综合服务",
+    "设备销售",
+    "综合运维",
+    "解决方案",
+    "老旧小区改造",
+    "农村污水处理",
+    "智慧水务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "二次供水",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "污水处理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:05:56"
+}

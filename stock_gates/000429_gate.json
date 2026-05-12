@@ -1,0 +1,41 @@
+{
+  "stock_id": "000429",
+  "stock_name": "粤高速A",
+  "concept": "高速公路运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "收费高速公路投资",
+    "收费管理",
+    "养护管理"
+  ],
+  "should": [
+    "桥梁建设",
+    "广佛高速公路",
+    "佛开高速公路",
+    "京珠高速公路广珠段",
+    "广惠高速公路",
+    "高速公路运营",
+    "改扩建工程",
+    "新能源投资",
+    "降本增效",
+    "保稳促收"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "收费高速公路投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "收费管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "养护管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:52:43"
+}

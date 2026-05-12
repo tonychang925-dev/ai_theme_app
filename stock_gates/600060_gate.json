@@ -1,0 +1,41 @@
+{
+  "stock_id": "600060",
+  "stock_name": "海信视像",
+  "concept": "视像解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧显示终端业务",
+    "激光显示板块",
+    "云服务板块"
+  ],
+  "should": [
+    "芯片业务板块",
+    "商用显示板块",
+    "视像解决方案",
+    "激光显示技术",
+    "画质芯片",
+    "智能SOC芯片",
+    "8K技术",
+    "家庭场景",
+    "教育场景",
+    "办公场景"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧显示终端业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "激光显示板块",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云服务板块",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:08:15"
+}

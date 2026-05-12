@@ -1,0 +1,36 @@
+{
+  "stock_id": "300870",
+  "stock_name": "欧陆通",
+  "concept": "高功率服务器电源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高功率服务器电源",
+    "服务器电源",
+    "数据中心电源"
+  ],
+  "should": [
+    "电源适配器",
+    "便携式储能设备",
+    "动力电池充电器",
+    "浸没式液冷服务器电源",
+    "机架式电源解决方案"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高功率服务器电源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "服务器电源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据中心电源",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:47:02"
+}

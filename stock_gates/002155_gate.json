@@ -1,0 +1,40 @@
+{
+  "stock_id": "002155",
+  "stock_name": "湖南黄金",
+  "concept": "黄金锑钨开采",
+  "strategy_type": "industry_chain",
+  "must": [
+    "黄金锑钨开采",
+    "锑金属开采",
+    "黄金开采"
+  ],
+  "should": [
+    "钨金属开采",
+    "选矿",
+    "冶炼加工",
+    "锑金属储量占国内60%",
+    "阻燃剂",
+    "蓄电池",
+    "金属合金",
+    "化学制品",
+    "光伏领域"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "黄金锑钨开采",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锑金属开采",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "黄金开采",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:26:09"
+}

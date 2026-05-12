@@ -1,0 +1,41 @@
+{
+  "stock_id": "601778",
+  "stock_name": "晶科科技",
+  "concept": "民营光伏电站运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电站运营",
+    "光伏EPC",
+    "民营光伏电站运营"
+  ],
+  "should": [
+    "集中式光伏电站",
+    "分布式光伏电站",
+    "光伏电站运维",
+    "自建+并购双轮驱动",
+    "整县推进分布式光伏开发",
+    "与央企合作开发",
+    "装机规模2882MW",
+    "在建/代建规模3.5GW",
+    "运维电站规模近6GW",
+    "整县屋顶分布式光伏"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电站运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏EPC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "民营光伏电站运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:38:27"
+}

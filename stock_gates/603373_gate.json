@@ -1,0 +1,31 @@
+{
+  "stock_id": "603373",
+  "stock_name": "安邦护卫",
+  "concept": "安全服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "武装押运"
+  ],
+  "should": [
+    "金融外包服务",
+    "安全服务",
+    "安全应急服务",
+    "海外安保服务",
+    "金融押运",
+    "保安服务",
+    "安全应急",
+    "海外安保",
+    "专用安检设备",
+    "视频监控"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "武装押运",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:50:16"
+}

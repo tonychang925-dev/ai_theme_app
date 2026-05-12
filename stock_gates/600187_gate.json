@@ -1,0 +1,35 @@
+{
+  "stock_id": "600187",
+  "stock_name": "国中水务",
+  "concept": "水务环保服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "污水处理",
+    "自来水供应"
+  ],
+  "should": [
+    "环保工程技术服务",
+    "水务环保服务",
+    "污水处理工艺",
+    "提标改造经验",
+    "市政水务",
+    "工业污水",
+    "农村供排水",
+    "乡镇供排水一体化",
+    "清洁能源供暖"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "污水处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自来水供应",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:11:15"
+}

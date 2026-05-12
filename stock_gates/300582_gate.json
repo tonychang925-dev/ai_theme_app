@@ -1,0 +1,31 @@
+{
+  "stock_id": "300582",
+  "stock_name": "英飞特",
+  "concept": "LED驱动电源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LED驱动电源"
+  ],
+  "should": [
+    "智慧照明",
+    "植物照明",
+    "健康照明",
+    "防爆照明",
+    "医疗照明",
+    "渔业照明",
+    "UV LED",
+    "隧道照明",
+    "智慧城市照明",
+    "LED照明产业生产基地"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED驱动电源",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:33:42"
+}

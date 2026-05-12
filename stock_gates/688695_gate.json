@@ -1,0 +1,41 @@
+{
+  "stock_id": "688695",
+  "stock_name": "中创股份",
+  "concept": "基础软件中间件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "基础软件中间件",
+    "应用服务器中间件",
+    "消息中间件"
+  ],
+  "should": [
+    "物联网监管平台软件",
+    "公文交换平台软件",
+    "工作流中间件",
+    "PaaS平台软件",
+    "防篡改软件",
+    "企业服务总线",
+    "中间件技术",
+    "定制化开发技术",
+    "物联网监管平台核心技术",
+    "大数据"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "基础软件中间件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "应用服务器中间件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "消息中间件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:24:13"
+}

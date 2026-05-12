@@ -1,0 +1,36 @@
+{
+  "stock_id": "301591",
+  "stock_name": "肯特股份",
+  "concept": "高性能工程塑料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高性能工程塑料",
+    "高性能工程塑料制品"
+  ],
+  "should": [
+    "组配件",
+    "通用机械制造",
+    "通信设备制造",
+    "高铁及轨道交通设备制造",
+    "汽车制造",
+    "仪器仪表制造",
+    "医疗器械",
+    "半导体设备",
+    "环保设备",
+    "风电设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高性能工程塑料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高性能工程塑料制品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:06:47"
+}

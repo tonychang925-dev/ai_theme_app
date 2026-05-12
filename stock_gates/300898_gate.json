@@ -1,0 +1,31 @@
+{
+  "stock_id": "300898",
+  "stock_name": "熊猫乳品",
+  "concept": "浓缩乳制品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "浓缩乳制品"
+  ],
+  "should": [
+    "调制甜炼乳",
+    "全脂甜炼乳",
+    "调制淡炼乳",
+    "全脂淡炼乳",
+    "甜奶酱",
+    "马苏里拉奶酪",
+    "儿童奶酪",
+    "奶酪零食",
+    "稀奶油",
+    "研发投入"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "浓缩乳制品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:48:20"
+}

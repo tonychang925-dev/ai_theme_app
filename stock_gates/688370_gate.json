@@ -1,0 +1,38 @@
+{
+  "stock_id": "688370",
+  "stock_name": "丛麟科技",
+  "concept": "危废处理龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "危废处理龙头",
+    "危险废物处理",
+    "上海地区危废处理龙头企业"
+  ],
+  "should": [
+    "深度资源化利用技术",
+    "资源化利用",
+    "焚烧",
+    "填埋",
+    "有机溶剂处理",
+    "酸、碱、矿物油、重金属处理",
+    "城市配套基础设施"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "危废处理龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "危险废物处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "上海地区危废处理龙头企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:16:49"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "300750",
+  "stock_name": "宁德时代",
+  "concept": "锂电池龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "动力电池",
+    "储能电池",
+    "电芯",
+    "电池包"
+  ],
+  "should": [
+    "模组/电箱",
+    "储能集装箱",
+    "天恒储能系统",
+    "神行电池",
+    "麒麟电池",
+    "骁遥电池",
+    "天行电池",
+    "凝聚态电池",
+    "M3P电池",
+    "钠离子电池"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "动力电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电芯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电池包",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:41:44"
+}

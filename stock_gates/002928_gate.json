@@ -1,0 +1,31 @@
+{
+  "stock_id": "002928",
+  "stock_name": "华夏航空",
+  "concept": "支线航空",
+  "strategy_type": "industry_chain",
+  "must": [
+    "支线航空",
+    "独飞航线"
+  ],
+  "should": [
+    "支线航点",
+    "基地机场",
+    "先发优势",
+    "运营优势",
+    "运营成本优势"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "支线航空",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "独飞航线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:03:35"
+}

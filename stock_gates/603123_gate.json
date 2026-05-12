@@ -1,0 +1,38 @@
+{
+  "stock_id": "603123",
+  "stock_name": "翠微股份",
+  "concept": "商业+支付",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商业+支付",
+    "第三方支付",
+    "数字人民币支付"
+  ],
+  "should": [
+    "融数平台",
+    "数字化运营",
+    "支付与商业融合",
+    "交易打通",
+    "积分打通",
+    "卡券打通",
+    "人流共享"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商业+支付",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "第三方支付",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字人民币支付",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:44:18"
+}

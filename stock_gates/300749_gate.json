@@ -1,0 +1,35 @@
+{
+  "stock_id": "300749",
+  "stock_name": "顶固集创",
+  "concept": "定制家居",
+  "strategy_type": "industry_chain",
+  "must": [
+    "定制家居",
+    "全屋家具"
+  ],
+  "should": [
+    "智能制造",
+    "定制衣柜",
+    "定制橱柜",
+    "两化深度融合",
+    "绿色生产",
+    "新建住宅装修",
+    "存量住宅装修",
+    "全房装修",
+    "国内领先的定制家居品牌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "定制家居",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全屋家具",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:41:25"
+}

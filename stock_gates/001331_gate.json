@@ -1,0 +1,36 @@
+{
+  "stock_id": "001331",
+  "stock_name": "胜通能源",
+  "concept": "天然气运贸一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "天然气运贸一体化",
+    "LNG销售服务"
+  ],
+  "should": [
+    "运输服务",
+    "LNG槽车运输",
+    "三大石油公司LNG沿海接收站",
+    "LNG液厂",
+    "贸易商",
+    "运力规模",
+    "槽车调度",
+    "工业用气",
+    "城市燃气",
+    "交通用气"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "天然气运贸一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LNG销售服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:16:38"
+}

@@ -1,0 +1,34 @@
+{
+  "stock_id": "000061",
+  "stock_name": "农产品",
+  "concept": "农产品流通",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农产品流通",
+    "农产品批发市场"
+  ],
+  "should": [
+    "冷链物流",
+    "产地市场",
+    "销地市场",
+    "集散地市场",
+    "数字化改造",
+    "智慧化升级",
+    "全产业链监测预警",
+    "质量安全追溯体系"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农产品流通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "农产品批发市场",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:49:06"
+}

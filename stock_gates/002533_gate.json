@@ -1,0 +1,36 @@
+{
+  "stock_id": "002533",
+  "stock_name": "金杯电工",
+  "concept": "扁电磁线全球龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "扁电磁线",
+    "电线电缆"
+  ],
+  "should": [
+    "漆包",
+    "换位",
+    "绕包",
+    "线圈加工",
+    "超导线缆绝缘研发制造",
+    "扁电磁线全球龙头",
+    "新能源汽车",
+    "特高压",
+    "智能电网",
+    "智能装备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "扁电磁线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电线电缆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:46:02"
+}

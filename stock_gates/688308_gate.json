@@ -1,0 +1,38 @@
+{
+  "stock_id": "688308",
+  "stock_name": "欧科亿",
+  "concept": "硬质合金刀具",
+  "strategy_type": "industry_chain",
+  "must": [
+    "硬质合金刀具",
+    "锯齿刀片",
+    "数控刀片"
+  ],
+  "should": [
+    "圆片",
+    "硬质合金圆棒",
+    "超细纳米硬质合金材质",
+    "特殊制备工艺",
+    "CVD涂层技术",
+    "国内第一大锯齿刀片生产商",
+    "国内头部数控刀具制造商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "硬质合金刀具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锯齿刀片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数控刀片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:14:55"
+}

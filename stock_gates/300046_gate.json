@@ -1,0 +1,46 @@
+{
+  "stock_id": "300046",
+  "stock_name": "台基股份",
+  "concept": "功率半导体器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "功率半导体器件",
+    "大功率晶闸管",
+    "IGBT",
+    "电力半导体模块"
+  ],
+  "should": [
+    "整流管",
+    "脉冲功率开关",
+    "芯片设计",
+    "制程",
+    "封装",
+    "测试",
+    "SiC",
+    "GaN",
+    "脉冲开关技术",
+    "电气控制系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "功率半导体器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大功率晶闸管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IGBT",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力半导体模块",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:10:51"
+}

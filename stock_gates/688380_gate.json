@@ -1,0 +1,51 @@
+{
+  "stock_id": "688380",
+  "stock_name": "中微半导",
+  "concept": "MCU芯片设计",
+  "strategy_type": "industry_chain",
+  "must": [
+    "MCU芯片设计",
+    "MCU",
+    "平台型芯片设计企业",
+    "芯片级一站式整体解决方案",
+    "8位和32位MCU"
+  ],
+  "should": [
+    "SoC",
+    "模拟芯片",
+    "功率器件",
+    "高精度模拟",
+    "功率驱动",
+    "无线射频",
+    "底层核心算法",
+    "智能家电",
+    "消费电子",
+    "工业控制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "MCU芯片设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MCU",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "平台型芯片设计企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "芯片级一站式整体解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "8位和32位MCU",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:17:09"
+}

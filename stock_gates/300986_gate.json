@@ -1,0 +1,36 @@
+{
+  "stock_id": "300986",
+  "stock_name": "志特新材",
+  "concept": "建筑铝模系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑铝模系统",
+    "铝模系统"
+  ],
+  "should": [
+    "爬架",
+    "装配式PC构件",
+    "铝合金模板",
+    "支撑件",
+    "加固件",
+    "辅件",
+    "架体系统",
+    "附着支撑系统",
+    "升降系统",
+    "智能控制系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑铝模系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铝模系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:51:57"
+}

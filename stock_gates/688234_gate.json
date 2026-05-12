@@ -1,0 +1,41 @@
+{
+  "stock_id": "688234",
+  "stock_name": "天岳先进",
+  "concept": "碳化硅衬底",
+  "strategy_type": "industry_chain",
+  "must": [
+    "碳化硅衬底",
+    "半绝缘型碳化硅衬底",
+    "导电型碳化硅衬底"
+  ],
+  "should": [
+    "碳化硅衬底制备",
+    "大尺寸衬底研发",
+    "信息通讯",
+    "无线电探测",
+    "新能源汽车",
+    "轨道交通",
+    "大功率输电变电",
+    "5G通信",
+    "新能源",
+    "全球半绝缘型碳化硅衬底市占率第三"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "碳化硅衬底",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半绝缘型碳化硅衬底",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "导电型碳化硅衬底",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:12:40"
+}

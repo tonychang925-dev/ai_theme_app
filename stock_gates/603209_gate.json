@@ -1,0 +1,41 @@
+{
+  "stock_id": "603209",
+  "stock_name": "兴通股份",
+  "concept": "化学品航运龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "化学品航运龙头",
+    "内贸化学品船运力第一",
+    "化学品运输"
+  ],
+  "should": [
+    "成品油运输",
+    "液化石油气运输",
+    "浙江石化",
+    "中国石化",
+    "中国海油",
+    "中海壳牌",
+    "福建联合石化",
+    "恒力石化",
+    "中国航油",
+    "荣盛控股"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "化学品航运龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "内贸化学品船运力第一",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化学品运输",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:46:31"
+}

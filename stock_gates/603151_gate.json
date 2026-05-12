@@ -1,0 +1,30 @@
+{
+  "stock_id": "603151",
+  "stock_name": "邦基科技",
+  "concept": "猪饲料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "猪饲料"
+  ],
+  "should": [
+    "猪预混料",
+    "猪浓缩料",
+    "猪配合料",
+    "山东",
+    "吉林",
+    "云南",
+    "山西",
+    "河北",
+    "辽宁"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "猪饲料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:44:51"
+}

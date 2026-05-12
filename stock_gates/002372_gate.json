@@ -1,0 +1,35 @@
+{
+  "stock_id": "002372",
+  "stock_name": "伟星新材",
+  "concept": "家装塑料管材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "家装塑料管材",
+    "高端零售管材龙头"
+  ],
+  "should": [
+    "PPR系列管材",
+    "PE系列管材",
+    "PVC系列管材",
+    "家装防水",
+    "净水业务",
+    "欧洲进口绿色环保原料",
+    "德国先进工艺制造",
+    "建筑内冷热给水",
+    "市政供水"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "家装塑料管材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端零售管材龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:38:22"
+}

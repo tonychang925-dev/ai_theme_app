@@ -1,0 +1,48 @@
+{
+  "stock_id": "600996",
+  "stock_name": "贵广网络",
+  "concept": "贵州广电龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "广播电视传输",
+    "广电5G",
+    "智慧广电",
+    "数据中心服务"
+  ],
+  "should": [
+    "广播电视节目传送业务经营许可证",
+    "互联网视听业务经营许可证",
+    "增值电信业务经营许可证",
+    "广电5G192移动号段运营授权",
+    "雪亮工程",
+    "应急广播",
+    "贵州广电龙头",
+    "发明专利5项",
+    "累计专利46项",
+    "软件著作权75项"
+  ],
+  "not": [
+    "贵州文化产业唯一上市平台"
+  ],
+  "evidence_refs": [
+    {
+      "term": "广播电视传输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "广电5G",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧广电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据中心服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:32:56"
+}

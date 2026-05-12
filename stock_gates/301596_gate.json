@@ -1,0 +1,35 @@
+{
+  "stock_id": "301596",
+  "stock_name": "瑞迪智驱",
+  "concept": "精密传动制动",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电磁制动器",
+    "谐波减速机"
+  ],
+  "should": [
+    "精密传动件",
+    "定制化应用开发技术",
+    "产品设计、制造与测试验证一体化",
+    "数控机床",
+    "机器人",
+    "自动化产线",
+    "高空作业平台车",
+    "风电",
+    "电梯"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电磁制动器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "谐波减速机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:06:42"
+}

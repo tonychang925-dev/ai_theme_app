@@ -1,0 +1,32 @@
+{
+  "stock_id": "002177",
+  "stock_name": "御银股份",
+  "concept": "金融设备与园区运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能金融设备运营服务",
+    "金融设备与园区运营"
+  ],
+  "should": [
+    "产业园运营",
+    "智能化金融设备提供商",
+    "御银产业园",
+    "御银科技园",
+    "小炬人创芯园",
+    "银行业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能金融设备运营服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融设备与园区运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:27:30"
+}

@@ -1,0 +1,38 @@
+{
+  "stock_id": "603201",
+  "stock_name": "常润股份",
+  "concept": "千斤顶制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "千斤顶制造",
+    "千斤顶",
+    "中国最大的千斤顶制造企业"
+  ],
+  "should": [
+    "商用汽车维修保养设备与工具",
+    "专业汽保维修设备",
+    "工具箱柜",
+    "存储箱柜",
+    "智能自动化仓储模式",
+    "远程操控系统",
+    "供应链优化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "千斤顶制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "千斤顶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中国最大的千斤顶制造企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:46:21"
+}

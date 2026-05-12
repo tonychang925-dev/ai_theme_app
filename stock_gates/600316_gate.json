@@ -1,0 +1,24 @@
+{
+  "stock_id": "600316",
+  "stock_name": "洪都航空",
+  "concept": "教练机+导弹",
+  "strategy_type": "industry_chain",
+  "must": [],
+  "should": [
+    "初教6",
+    "教8",
+    "教10",
+    "空面导弹",
+    "全谱系教练机研制",
+    "空面导弹研制",
+    "飞行员培训",
+    "外贸出口",
+    "唯一能研制初、中、高级教练机企业",
+    "唯一空面导弹研制基地"
+  ],
+  "not": [],
+  "evidence_refs": [],
+  "quality": "weak",
+  "must_count": 0,
+  "generated_at": "2026-05-11T19:14:42"
+}

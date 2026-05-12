@@ -1,0 +1,30 @@
+{
+  "stock_id": "603881",
+  "stock_name": "数据港",
+  "concept": "数据中心运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "第三方数据中心运营",
+    "云计算数据中心技术"
+  ],
+  "should": [
+    "清洁能源数据中心",
+    "数据中心运营",
+    "云计算产业巨头",
+    "综合规模TOP3"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "第三方数据中心运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云计算数据中心技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:57:58"
+}

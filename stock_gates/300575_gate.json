@@ -1,0 +1,48 @@
+{
+  "stock_id": "300575",
+  "stock_name": "中旗股份",
+  "concept": "农药原药供应商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农药原药供应商",
+    "科迪华战略供应商",
+    "拜耳战略供应商",
+    "先正达战略供应商",
+    "巴斯夫农化战略供应商"
+  ],
+  "should": [
+    "除草剂",
+    "杀虫剂",
+    "杀菌剂",
+    "氟化",
+    "不对称合成和手性技术",
+    "相转移催化",
+    "氨化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农药原药供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "科迪华战略供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "拜耳战略供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "先正达战略供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "巴斯夫农化战略供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:33:22"
+}

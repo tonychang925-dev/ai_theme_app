@@ -1,0 +1,41 @@
+{
+  "stock_id": "002996",
+  "stock_name": "顺博合金",
+  "concept": "再生铝循环利用",
+  "strategy_type": "industry_chain",
+  "must": [
+    "再生铝合金锭",
+    "再生铝合金液",
+    "再生铝循环利用"
+  ],
+  "should": [
+    "铝液直供",
+    "变形铝合金原料",
+    "铝灰危废无害化利用",
+    "预处理",
+    "精细化配料",
+    "熔炼",
+    "合金化",
+    "精炼",
+    "检验",
+    "铸锭"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "再生铝合金锭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "再生铝合金液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "再生铝循环利用",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:06:47"
+}

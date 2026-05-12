@@ -1,0 +1,41 @@
+{
+  "stock_id": "000892",
+  "stock_name": "欢瑞世纪",
+  "concept": "影视文化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "影视剧制作发行",
+    "艺人经纪",
+    "影视剧"
+  ],
+  "should": [
+    "游戏及影视周边衍生业务",
+    "艺人经纪服务",
+    "《十州三境》",
+    "《捕星司》",
+    "《枭臣》",
+    "《千香引》",
+    "《佳偶天成》",
+    "《凤倾天阑》",
+    "《谪仙》",
+    "《周瑜传》"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "影视剧制作发行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "艺人经纪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "影视剧",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:08:30"
+}

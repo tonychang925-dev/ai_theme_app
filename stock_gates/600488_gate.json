@@ -1,0 +1,41 @@
+{
+  "stock_id": "600488",
+  "stock_name": "津药药业",
+  "concept": "甾体激素原料药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "甾体皮质激素类药物",
+    "甾体激素原料药",
+    "甾体激素"
+  ],
+  "should": [
+    "氨基酸",
+    "甲泼尼龙片",
+    "注射用甲泼尼龙琥珀酸钠",
+    "法莫替丁注射液",
+    "丁酸氢化可的松乳膏",
+    "重酒石酸去甲肾上腺素注射液",
+    "小儿复方氨基酸注射液",
+    "盐酸利多卡因注射液",
+    "氨基酸类药物",
+    "智能制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "甾体皮质激素类药物",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "甾体激素原料药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "甾体激素",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:19:07"
+}

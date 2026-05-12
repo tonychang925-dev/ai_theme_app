@@ -1,0 +1,46 @@
+{
+  "stock_id": "601360",
+  "stock_name": "三六零",
+  "concept": "数字安全",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球最大数字安全公司",
+    "PC安全产品市场排名第一",
+    "360安全卫士",
+    "云查杀技术"
+  ],
+  "should": [
+    "360浏览器",
+    "AI安全监测平台",
+    "360新搜索",
+    "数字助理",
+    "苏打办公",
+    "中国搜索引擎Top2",
+    "数字安全",
+    "网络安全",
+    "人工智能",
+    "智能硬件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球最大数字安全公司",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PC安全产品市场排名第一",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "360安全卫士",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云查杀技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:36:22"
+}

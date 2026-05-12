@@ -1,0 +1,41 @@
+{
+  "stock_id": "002876",
+  "stock_name": "三利谱",
+  "concept": "偏光片制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "TFT系列偏光片",
+    "车载LCD",
+    "VR头显"
+  ],
+  "should": [
+    "黑白系列偏光片",
+    "宽视角偏光片",
+    "增亮偏光片",
+    "IPS零补偿偏光片",
+    "偏光片制造",
+    "PVA膜拉伸",
+    "碘分子有序排列",
+    "二向吸收性能",
+    "Pancake折叠光学方案",
+    "防眩目镜"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "TFT系列偏光片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载LCD",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "VR头显",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:01:21"
+}

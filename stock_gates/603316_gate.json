@@ -1,0 +1,51 @@
+{
+  "stock_id": "603316",
+  "stock_name": "诚邦股份",
+  "concept": "生态环境建设",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生态环境建设",
+    "规划设计",
+    "环境建设",
+    "环保",
+    "生态综合治理"
+  ],
+  "should": [
+    "市政公用工程施工总承包壹级",
+    "古建筑工程专业承包壹级",
+    "环保工程专业承包壹级",
+    "风景园林工程设计专项甲级",
+    "建筑设计甲级",
+    "城乡规划甲级",
+    "旅游规划设计甲级",
+    "新基建",
+    "EPC项目",
+    "PPP项目"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生态环境建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "规划设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环境建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环保",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生态综合治理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:48:56"
+}

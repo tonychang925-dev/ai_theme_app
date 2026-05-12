@@ -1,0 +1,49 @@
+{
+  "stock_id": "600095",
+  "stock_name": "湘财股份",
+  "concept": "综合证券服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "证券经纪",
+    "证券自营",
+    "信用交易",
+    "投资银行",
+    "资产管理"
+  ],
+  "should": [
+    "公募基金",
+    "综合证券服务",
+    "参股大智慧",
+    "合资成立上海益同投科技有限公司"
+  ],
+  "not": [
+    "防水卷材",
+    "食品加工",
+    "贸易业务"
+  ],
+  "evidence_refs": [
+    {
+      "term": "证券经纪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "证券自营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信用交易",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资银行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "资产管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:08:51"
+}

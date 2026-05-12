@@ -1,0 +1,35 @@
+{
+  "stock_id": "601006",
+  "stock_name": "大秦铁路",
+  "concept": "铁路煤炭运输",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铁路煤炭运输",
+    "大秦线"
+  ],
+  "should": [
+    "北同蒲线",
+    "丰沙大线",
+    "口泉线",
+    "宁岢线",
+    "煤炭发运",
+    "货运业务",
+    "东南沿海地区",
+    "日韩等东亚地区",
+    "天津、辽宁、河北"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铁路煤炭运输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大秦线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:33:10"
+}

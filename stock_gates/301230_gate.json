@@ -1,0 +1,51 @@
+{
+  "stock_id": "301230",
+  "stock_name": "泓博医药",
+  "concept": "小分子药物研发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "小分子药物研发",
+    "药物发现",
+    "工艺研究与开发",
+    "商业化生产",
+    "CRO"
+  ],
+  "should": [
+    "计算机辅助药物设计",
+    "人工智能辅助药物设计",
+    "高立体选择性催化氢化",
+    "酶催化反应",
+    "高活性原料药研发",
+    "连续流化学",
+    "替格瑞洛系列中间体",
+    "左卡尼汀原料药",
+    "奥拉西坦原料药",
+    "新药临床前研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "小分子药物研发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "药物发现",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工艺研究与开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商业化生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CRO",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:59:53"
+}

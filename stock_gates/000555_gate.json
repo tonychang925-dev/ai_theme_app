@@ -1,0 +1,46 @@
+{
+  "stock_id": "000555",
+  "stock_name": "神州信息",
+  "concept": "金融科技服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "分布式技术平台",
+    "核心应用系统",
+    "金融数据资产",
+    "数字人民币业务"
+  ],
+  "should": [
+    "智能自助交易平台全栈解决方案",
+    "智能综合前端应用系统解决方案",
+    "企业级微服务平台解决方案",
+    "企业级服务总线解决方案",
+    "农业大数据",
+    "数字农业",
+    "数字乡村",
+    "金融科技服务",
+    "软件开发及技术服务",
+    "金融行业软服"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "分布式技术平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核心应用系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融数据资产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字人民币业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:56:22"
+}

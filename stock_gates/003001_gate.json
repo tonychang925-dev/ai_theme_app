@@ -1,0 +1,31 @@
+{
+  "stock_id": "003001",
+  "stock_name": "中岩大地",
+  "concept": "岩土工程与环境修复",
+  "strategy_type": "industry_chain",
+  "must": [
+    "岩土工程"
+  ],
+  "should": [
+    "岩土工程与环境修复",
+    "环境修复",
+    "城市更新",
+    "乡村振兴",
+    "新型基础设施建设",
+    "地下空间开发",
+    "土壤污染治理",
+    "闭环化",
+    "智能化",
+    "系统化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "岩土工程",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:06:58"
+}

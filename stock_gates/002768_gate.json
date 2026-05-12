@@ -1,0 +1,46 @@
+{
+  "stock_id": "002768",
+  "stock_name": "国恩股份",
+  "concept": "新材料一体化平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新材料一体化平台",
+    "高分子改性材料",
+    "高分子复合材料",
+    "可降解材料"
+  ],
+  "should": [
+    "医用防护材料",
+    "体育草坪",
+    "光学（膜、片）材料",
+    "专用车及模块化房",
+    "明胶及空心胶囊",
+    "胶原蛋白肽",
+    "代血浆明胶",
+    "双蛋白人造肉",
+    "高分子材料合成能力",
+    "高分子复合材料改性能力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新材料一体化平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高分子改性材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高分子复合材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "可降解材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:56:50"
+}

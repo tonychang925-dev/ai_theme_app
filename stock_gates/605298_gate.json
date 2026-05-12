@@ -1,0 +1,46 @@
+{
+  "stock_id": "605298",
+  "stock_name": "必得科技",
+  "concept": "轨道交通配件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "紧急疏散门",
+    "电气故障诊断设备",
+    "列车电气故障智能监测",
+    "标准地铁紧急疏散门"
+  ],
+  "should": [
+    "车辆通风系统",
+    "电缆保护系统",
+    "智能控制撒砂系统",
+    "障碍物与脱轨检测系统",
+    "中车长春",
+    "中车唐山",
+    "北京地铁",
+    "四方庞巴迪",
+    "轨道交通配件",
+    "主控芯片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "紧急疏散门",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电气故障诊断设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "列车电气故障智能监测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "标准地铁紧急疏散门",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:03:36"
+}

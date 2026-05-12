@@ -1,0 +1,41 @@
+{
+  "stock_id": "688231",
+  "stock_name": "隆达股份",
+  "concept": "高温合金",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高温合金",
+    "变形高温合金",
+    "铸造高温合金"
+  ],
+  "should": [
+    "单晶母合金",
+    "正三联冶炼工艺",
+    "真空感应熔炼",
+    "真空自耗重熔",
+    "电渣重熔",
+    "单晶合金铸造技术",
+    "航空发动机",
+    "燃气轮机",
+    "石油化工",
+    "电力设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高温合金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "变形高温合金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铸造高温合金",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:12:35"
+}

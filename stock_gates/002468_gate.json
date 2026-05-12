@@ -1,0 +1,36 @@
+{
+  "stock_id": "002468",
+  "stock_name": "申通快递",
+  "concept": "快递物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "快递业务",
+    "老牌快递龙头"
+  ],
+  "should": [
+    "国际业务",
+    "仓储业务",
+    "冷链业务",
+    "标准快递业务产品",
+    "增值服务产品",
+    "快递辅料产品",
+    "自动化设备",
+    "高运力甩挂车",
+    "路由线路优化",
+    "自动分拣设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "快递业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "老牌快递龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:43:12"
+}

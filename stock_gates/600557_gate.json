@@ -1,0 +1,38 @@
+{
+  "stock_id": "600557",
+  "stock_name": "康缘药业",
+  "concept": "中药现代化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "热毒宁注射液",
+    "银杏二萜内酯葡胺注射液",
+    "金振口服液"
+  ],
+  "should": [
+    "桂枝茯苓胶囊",
+    "中药现代化",
+    "国家重点实验室",
+    "创新药研发",
+    "独家创新品种最多",
+    "独家医保品种最多",
+    "独家基药品种最多"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "热毒宁注射液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "银杏二萜内酯葡胺注射液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金振口服液",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:21:03"
+}

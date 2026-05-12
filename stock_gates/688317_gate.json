@@ -1,0 +1,37 @@
+{
+  "stock_id": "688317",
+  "stock_name": "之江生物",
+  "concept": "分子诊断试剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "分子诊断试剂",
+    "核酸检测试剂",
+    "分子诊断仪器"
+  ],
+  "should": [
+    "新型冠状病毒抗原检测试剂盒",
+    "仪器设备",
+    "柔性机械臂",
+    "自动化样本前处理",
+    "自动化核酸提取",
+    "自动化核酸检测"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "分子诊断试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核酸检测试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分子诊断仪器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:15:15"
+}

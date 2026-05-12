@@ -1,0 +1,39 @@
+{
+  "stock_id": "601615",
+  "stock_name": "明阳智能",
+  "concept": "海上风电龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "抗台风型海上风机",
+    "漂浮式风机",
+    "抗台风技术"
+  ],
+  "should": [
+    "半直驱风机",
+    "半直驱技术",
+    "漂浮式基础",
+    "海上风电龙头",
+    "海上风电",
+    "陆上风电",
+    "深远海漂浮式风电",
+    "2023年海上风电新增装机第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "抗台风型海上风机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "漂浮式风机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "抗台风技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:37:29"
+}

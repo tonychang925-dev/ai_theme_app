@@ -1,0 +1,36 @@
+{
+  "stock_id": "688215",
+  "stock_name": "瑞晟智能",
+  "concept": "智能物流系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能物流系统",
+    "智能工厂解决方案供应商"
+  ],
+  "should": [
+    "智能消防排烟及通风系统",
+    "悬挂生产系统",
+    "智能悬挂式仓储分拣系统",
+    "SaaS平台",
+    "智能交互终端",
+    "数据大脑",
+    "物联网",
+    "服装",
+    "家纺",
+    "家居"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能物流系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能工厂解决方案供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:12:04"
+}

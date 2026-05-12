@@ -1,0 +1,44 @@
+{
+  "stock_id": "002714",
+  "stock_name": "牧原股份",
+  "concept": "生猪养殖",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生猪养殖",
+    "商品猪饲养",
+    "生猪育种",
+    "商品猪"
+  ],
+  "should": [
+    "饲料加工",
+    "种猪扩繁",
+    "仔猪",
+    "种猪",
+    "全自养一体化养殖模式",
+    "生物安全管控",
+    "饲料成本控制",
+    "出栏量行业第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生猪养殖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商品猪饲养",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生猪育种",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商品猪",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:54:28"
+}

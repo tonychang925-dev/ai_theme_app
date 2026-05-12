@@ -1,0 +1,31 @@
+{
+  "stock_id": "301300",
+  "stock_name": "远翔新材",
+  "concept": "硅橡胶二氧化硅",
+  "strategy_type": "industry_chain",
+  "must": [
+    "硅橡胶二氧化硅"
+  ],
+  "should": [
+    "沉淀法二氧化硅",
+    "硅酸钠去杂质",
+    "合成反应的比例搭配与时效",
+    "压滤水洗",
+    "干燥粉碎",
+    "高温硫化硅橡胶(HTV)",
+    "轮胎",
+    "鞋类",
+    "硅橡胶",
+    "医药"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "硅橡胶二氧化硅",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:02:13"
+}

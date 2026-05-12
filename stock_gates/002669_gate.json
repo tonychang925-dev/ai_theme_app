@@ -1,0 +1,41 @@
+{
+  "stock_id": "002669",
+  "stock_name": "康达新材",
+  "concept": "胶粘剂新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "胶粘剂新材料",
+    "胶粘剂",
+    "国内胶粘剂行业领先公司"
+  ],
+  "should": [
+    "复合材料",
+    "电子信息材料",
+    "液晶显示材料",
+    "医药中间体",
+    "电子化学品",
+    "电磁兼容",
+    "电源模块",
+    "电容",
+    "特种显示材料",
+    "新能源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "胶粘剂新材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "胶粘剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内胶粘剂行业领先公司",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:52:36"
+}

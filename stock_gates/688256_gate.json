@@ -1,0 +1,46 @@
+{
+  "stock_id": "688256",
+  "stock_name": "寒武纪",
+  "concept": "AI芯片设计",
+  "strategy_type": "industry_chain",
+  "must": [
+    "AI芯片设计公司",
+    "思元290",
+    "思元370",
+    "玄思1000智能加速器"
+  ],
+  "should": [
+    "思元100",
+    "思元220",
+    "思元270",
+    "终端智能处理器IP 1A",
+    "终端智能处理器IP 1H",
+    "终端智能处理器IP 1M",
+    "AI芯片设计",
+    "云端智能芯片",
+    "边缘智能芯片",
+    "训练整机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "AI芯片设计公司",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "思元290",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "思元370",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "玄思1000智能加速器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:13:18"
+}

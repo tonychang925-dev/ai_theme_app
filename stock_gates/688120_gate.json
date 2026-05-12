@@ -1,0 +1,37 @@
+{
+  "stock_id": "688120",
+  "stock_name": "华海清科",
+  "concept": "CMP设备龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "CMP设备龙头",
+    "CMP设备",
+    "化学机械抛光"
+  ],
+  "should": [
+    "晶圆再生",
+    "减薄抛光一体机",
+    "减薄",
+    "清洗",
+    "国产CMP设备龙头",
+    "国内CMP设备中标份额28%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "CMP设备龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CMP设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化学机械抛光",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:08:58"
+}

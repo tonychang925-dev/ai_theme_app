@@ -1,0 +1,35 @@
+{
+  "stock_id": "600162",
+  "stock_name": "香江控股",
+  "concept": "商贸物流地产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商贸物流地产",
+    "房地产",
+    "物业管理"
+  ],
+  "should": [
+    "商贸物流",
+    "销售去化",
+    "招商运营",
+    "信息应用服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商贸物流地产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "房地产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物业管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:10:37"
+}

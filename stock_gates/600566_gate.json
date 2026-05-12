@@ -1,0 +1,29 @@
+{
+  "stock_id": "600566",
+  "stock_name": "济川药业",
+  "concept": "儿科中药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "小儿豉翘清热颗粒"
+  ],
+  "should": [
+    "蒲地蓝消炎口服液",
+    "雷贝拉唑钠肠溶胶囊",
+    "蛋白琥珀酸铁口服液",
+    "健胃消食口服液",
+    "黄龙咳喘颗粒",
+    "三拗片",
+    "妇炎舒胶囊",
+    "儿科中药"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "小儿豉翘清热颗粒",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:21:21"
+}

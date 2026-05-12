@@ -1,0 +1,36 @@
+{
+  "stock_id": "603206",
+  "stock_name": "嘉环科技",
+  "concept": "通信技术服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "通信技术服务",
+    "政企行业智能化业务"
+  ],
+  "should": [
+    "云网融合",
+    "大数据",
+    "物联网",
+    "人工智能",
+    "数据中台",
+    "BI平台",
+    "智能制造",
+    "智慧医疗",
+    "数字政务",
+    "全国31个省份"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "通信技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "政企行业智能化业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:46:25"
+}

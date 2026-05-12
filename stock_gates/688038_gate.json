@@ -1,0 +1,46 @@
+{
+  "stock_id": "688038",
+  "stock_name": "中科通达",
+  "concept": "公安数字化服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "公安数字化服务",
+    "数字公安",
+    "智能交通",
+    "智慧社区"
+  ],
+  "should": [
+    "大数据",
+    "人工智能",
+    "视频监控平台",
+    "精细化交通治理平台",
+    "情指勤舆一体化平台",
+    "智慧社区综合服务平台",
+    "物联感知",
+    "云计算",
+    "数字孪生",
+    "视频图像处理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "公安数字化服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字公安",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能交通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧社区",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:06:15"
+}

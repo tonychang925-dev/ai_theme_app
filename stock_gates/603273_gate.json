@@ -1,0 +1,36 @@
+{
+  "stock_id": "603273",
+  "stock_name": "天元智能",
+  "concept": "加气混凝土装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "蒸压加气混凝土成套装备",
+    "加气混凝土装备"
+  ],
+  "should": [
+    "机械装备配套产品",
+    "湿分掰系统",
+    "生产线数字化工厂平台",
+    "伺服驱动系统",
+    "精益生产管理系统",
+    "绿色建筑/建材",
+    "装配式建筑",
+    "工程机械",
+    "港口机械",
+    "安检装备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "蒸压加气混凝土成套装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "加气混凝土装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:47:49"
+}

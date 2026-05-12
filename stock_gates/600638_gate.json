@@ -1,0 +1,46 @@
+{
+  "stock_id": "600638",
+  "stock_name": "新黄浦",
+  "concept": "地产开发+园区运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "科技京城",
+    "园区建设开发",
+    "一园多基地",
+    "科技园区"
+  ],
+  "should": [
+    "房地产开发与销售",
+    "商业办公地产开发",
+    "住宅地产开发",
+    "长租公寓开发经营",
+    "高端办公楼",
+    "普通商品房",
+    "保障性住宅",
+    "长租房",
+    "多层洋房",
+    "别墅"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "科技京城",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "园区建设开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一园多基地",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "科技园区",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:23:36"
+}

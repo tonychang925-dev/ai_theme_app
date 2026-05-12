@@ -1,0 +1,36 @@
+{
+  "stock_id": "601577",
+  "stock_name": "长沙银行",
+  "concept": "区域零售银行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "区域零售银行",
+    "零售信贷"
+  ],
+  "should": [
+    "快乐秒贷",
+    "消费贷",
+    "信用卡",
+    "弗兰社",
+    "呼啦支付",
+    "呼啦快贷",
+    "线上信用类信贷产品",
+    "长沙GDP总量1.33万亿元",
+    "常住人口超1000万",
+    "人均可支配收入6.21万元"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "区域零售银行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "零售信贷",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:37:05"
+}

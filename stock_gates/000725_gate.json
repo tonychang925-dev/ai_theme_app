@@ -1,0 +1,51 @@
+{
+  "stock_id": "000725",
+  "stock_name": "京东方A",
+  "concept": "显示面板龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体显示",
+    "LCD",
+    "OLED",
+    "电视面板",
+    "智能手机屏"
+  ],
+  "should": [
+    "柔性AMOLED",
+    "平板电脑显示屏",
+    "笔记本电脑显示屏",
+    "智慧物联",
+    "智慧医工",
+    "智慧车联",
+    "智慧零售",
+    "智慧金融",
+    "工业互联网",
+    "显示面板龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体显示",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LCD",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "OLED",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电视面板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能手机屏",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:02:32"
+}

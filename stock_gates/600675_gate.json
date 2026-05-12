@@ -1,0 +1,40 @@
+{
+  "stock_id": "600675",
+  "stock_name": "中华企业",
+  "concept": "房地产开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "房地产开发",
+    "不动产经营",
+    "城市生活服务"
+  ],
+  "should": [
+    "物业管理",
+    "城市更新项目",
+    "农业餐食服务",
+    "住宅开发",
+    "资产商办",
+    "住宅项目",
+    "商办项目",
+    "快开发管理模式",
+    "弱矩阵管控模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房地产开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "不动产经营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市生活服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:24:36"
+}

@@ -1,0 +1,37 @@
+{
+  "stock_id": "603056",
+  "stock_name": "德邦股份",
+  "concept": "大件快运",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大件快运",
+    "快运",
+    "大件快递"
+  ],
+  "should": [
+    "直营制",
+    "语音识别",
+    "语义理解",
+    "意图识别",
+    "语音合成",
+    "智能语音应答"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大件快运",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "快运",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大件快递",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:42:17"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "600416",
+  "stock_name": "湘电股份",
+  "concept": "电磁发射系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电磁发射系统",
+    "特种发射系统",
+    "船舶综合电力系统",
+    "电磁发射技术",
+    "综合电力技术"
+  ],
+  "should": [
+    "发电机",
+    "交直流电动机",
+    "特种电机",
+    "船用推进系统",
+    "电气控制设备",
+    "机电一体化系统",
+    "风力发电机",
+    "地铁车辆牵引系统",
+    "混合动力汽车驱动系统",
+    "电磁发射系统成套设备龙头制造商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电磁发射系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种发射系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "船舶综合电力系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电磁发射技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合电力技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:17:30"
+}

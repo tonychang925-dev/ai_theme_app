@@ -1,0 +1,41 @@
+{
+  "stock_id": "000960",
+  "stock_name": "锡业股份",
+  "concept": "全球锡铟龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球锡铟龙头",
+    "锡",
+    "铟"
+  ],
+  "should": [
+    "锡矿采选",
+    "锡深加工",
+    "锡材",
+    "锡化工",
+    "锌锭",
+    "铜",
+    "铅锌铟",
+    "铟回收",
+    "冶炼",
+    "半导体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球锡铟龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锡",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铟",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:11:13"
+}

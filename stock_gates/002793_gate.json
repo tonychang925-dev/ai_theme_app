@@ -1,0 +1,30 @@
+{
+  "stock_id": "002793",
+  "stock_name": "罗欣药业",
+  "concept": "消化领域创新药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "创新药研发",
+    "消化领域创新药"
+  ],
+  "should": [
+    "消化系统疾病药物",
+    "仿制药一致性评价",
+    "公立医疗机构",
+    "临床用药"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "创新药研发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "消化领域创新药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:57:39"
+}

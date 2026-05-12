@@ -1,0 +1,36 @@
+{
+  "stock_id": "688584",
+  "stock_name": "上海合晶",
+  "concept": "半导体硅外延片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体硅外延片",
+    "半导体硅外延片一体化制造"
+  ],
+  "should": [
+    "晶体成长",
+    "衬底成型",
+    "外延生长",
+    "8英寸外延片",
+    "12英寸外延片",
+    "台积电",
+    "华虹集团",
+    "安森美",
+    "达尔",
+    "功率器件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体硅外延片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体硅外延片一体化制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:21:16"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "002773",
+  "stock_name": "康弘药业",
+  "concept": "特色医药创新",
+  "strategy_type": "industry_chain",
+  "must": [
+    "眼科",
+    "中枢神经系统",
+    "消化系统",
+    "脑科"
+  ],
+  "should": [
+    "高血压",
+    "糖尿病",
+    "生物医药产业化技术",
+    "合成生物产业化技术",
+    "中成药全产业链标准化质量控制技术",
+    "固体口服药物新型制剂技术",
+    "化学原料药绿色合成技术",
+    "特色医药创新",
+    "慢病防治",
+    "多发常见病治疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "眼科",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中枢神经系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "消化系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "脑科",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:56:53"
+}

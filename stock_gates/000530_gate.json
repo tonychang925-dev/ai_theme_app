@@ -1,0 +1,46 @@
+{
+  "stock_id": "000530",
+  "stock_name": "冰山冷热",
+  "concept": "冷热产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业制冷制热事业领域",
+    "冷热平衡技术",
+    "氨制冷技术",
+    "螺杆式制冷压缩机"
+  ],
+  "should": [
+    "活塞式制冷压缩机",
+    "压力容器",
+    "组合库",
+    "气调保鲜库",
+    "速冻机",
+    "块冰机",
+    "片冰机",
+    "颗粒机",
+    "二氧化碳制冷技术",
+    "节能环保技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业制冷制热事业领域",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冷热平衡技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氨制冷技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "螺杆式制冷压缩机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:54:52"
+}

@@ -1,0 +1,38 @@
+{
+  "stock_id": "603238",
+  "stock_name": "诺邦股份",
+  "concept": "水刺非织造材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水刺非织造材料",
+    "水刺非织造布",
+    "可冲散材料技术"
+  ],
+  "should": [
+    "可冲散型卫生巾",
+    "湿巾",
+    "卫生巾",
+    "厕纸",
+    "国内水刺非织造材料行业领先",
+    "我国湿巾出口量排名第一名",
+    "全球最大的可冲散超级工厂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水刺非织造材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水刺非织造布",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "可冲散材料技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:47:23"
+}

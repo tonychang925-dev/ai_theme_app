@@ -1,0 +1,28 @@
+{
+  "stock_id": "600795",
+  "stock_name": "国电电力",
+  "concept": "综合能源服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高效火电",
+    "清洁能源项目开发"
+  ],
+  "should": [
+    "长协煤占比",
+    "入炉标煤单价"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高效火电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "清洁能源项目开发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:27:54"
+}

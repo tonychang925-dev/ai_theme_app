@@ -1,0 +1,36 @@
+{
+  "stock_id": "002449",
+  "stock_name": "国星光电",
+  "concept": "LED封装龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LED中游封装",
+    "第三代半导体封测"
+  ],
+  "should": [
+    "Mini背光模组",
+    "显示屏用器件",
+    "白光器件",
+    "显示模块与背光源",
+    "LED外延片及芯片",
+    "MOS/Si/IC产品",
+    "碳化硅分立器件/功率模块",
+    "氮化镓系列器件",
+    "LED封装龙头",
+    "通讯"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED中游封装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "第三代半导体封测",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:42:20"
+}

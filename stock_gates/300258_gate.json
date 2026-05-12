@@ -1,0 +1,46 @@
+{
+  "stock_id": "300258",
+  "stock_name": "精锻科技",
+  "concept": "精密齿轮制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "差速器总成",
+    "锥齿轮类",
+    "主减齿轮",
+    "电机轴"
+  ],
+  "should": [
+    "结合齿类",
+    "VVT类",
+    "控制臂",
+    "转向节",
+    "博格华纳",
+    "大众",
+    "奔驰",
+    "宝马",
+    "丰田",
+    "日产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "差速器总成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锥齿轮类",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "主减齿轮",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电机轴",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:19:53"
+}

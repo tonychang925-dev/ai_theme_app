@@ -1,0 +1,36 @@
+{
+  "stock_id": "600734",
+  "stock_name": "实达集团",
+  "concept": "大数据+物联网安防",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大数据业务",
+    "物联网周界安防业务"
+  ],
+  "should": [
+    "数字政府",
+    "大数据+物联网安防",
+    "智能化设备",
+    "系统集成",
+    "防入侵系统",
+    "视频监控",
+    "物联网安防应用",
+    "智慧政务",
+    "智慧交通",
+    "智慧医疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大数据业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物联网周界安防业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:26:13"
+}

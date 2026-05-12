@@ -1,0 +1,33 @@
+{
+  "stock_id": "300867",
+  "stock_name": "圣元环保",
+  "concept": "固废处理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "垃圾焚烧发电",
+    "生活垃圾焚烧发电"
+  ],
+  "should": [
+    "生活污水处理",
+    "垃圾焚烧发电平台",
+    "风光氢新能源平台",
+    "固废处理",
+    "城镇固液废处理",
+    "生物质能多元化利用",
+    "生物质发电向热电联产转型升级"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "垃圾焚烧发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生活垃圾焚烧发电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:46:45"
+}

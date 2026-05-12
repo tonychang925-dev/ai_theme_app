@@ -1,0 +1,45 @@
+{
+  "stock_id": "300556",
+  "stock_name": "丝路视觉",
+  "concept": "数字视觉综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字视觉综合服务",
+    "CG创意和技术",
+    "数字化展览展示综合业务",
+    "数字内容应用业务"
+  ],
+  "should": [
+    "数字孪生",
+    "智慧城市、数字孪生业务",
+    "云渲染业务",
+    "数字创意设计",
+    "数字内容开发",
+    "视觉呈现服务",
+    "城市规划馆",
+    "主题展示馆",
+    "博物馆"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字视觉综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CG创意和技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字化展览展示综合业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字内容应用业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:32:36"
+}

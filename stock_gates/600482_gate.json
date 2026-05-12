@@ -1,0 +1,31 @@
+{
+  "stock_id": "600482",
+  "stock_name": "中国动力",
+  "concept": "舰船动力装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "舰船动力装备"
+  ],
+  "should": [
+    "低速柴油机",
+    "中高速柴油机",
+    "综合电力系统",
+    "双燃料主机",
+    "机电装备",
+    "SCR催化剂国产化",
+    "混合动力",
+    "电力推进",
+    "海军舰船",
+    "工程船"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "舰船动力装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:18:52"
+}

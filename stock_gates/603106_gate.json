@@ -1,0 +1,35 @@
+{
+  "stock_id": "603106",
+  "stock_name": "恒银科技",
+  "concept": "智慧银行解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧银行解决方案",
+    "金融智能终端"
+  ],
+  "should": [
+    "智慧柜员机",
+    "社保卡制卡机",
+    "国产芯片自主机芯",
+    "驱动程序",
+    "测试工具",
+    "模块适配",
+    "LFS和PISA标准SP",
+    "中间件",
+    "应用软件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧银行解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融智能终端",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:43:54"
+}

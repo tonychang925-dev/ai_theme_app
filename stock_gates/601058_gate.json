@@ -1,0 +1,36 @@
+{
+  "stock_id": "601058",
+  "stock_name": "赛轮轮胎",
+  "concept": "轮胎制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "液体黄金轮胎",
+    "液体黄金技术"
+  ],
+  "should": [
+    "全钢子午线轮胎",
+    "半钢子午线轮胎",
+    "非公路轮胎",
+    "巨型非公路轮胎",
+    "乘用车",
+    "卡客车",
+    "电动汽车",
+    "高端运动",
+    "全球化产能布局",
+    "线上线下协同"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "液体黄金轮胎",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液体黄金技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:33:44"
+}

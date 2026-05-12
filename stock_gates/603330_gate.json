@@ -1,0 +1,35 @@
+{
+  "stock_id": "603330",
+  "stock_name": "天洋新材",
+  "concept": "热熔胶与光伏胶膜",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏胶膜",
+    "热熔胶"
+  ],
+  "should": [
+    "电子胶",
+    "热熔墙布",
+    "热熔胶与光伏胶膜",
+    "热塑性环保粘接材料",
+    "反应型环保粘接材料",
+    "服装",
+    "汽车",
+    "光伏新能源",
+    "室内装饰"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏胶膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热熔胶",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:49:21"
+}

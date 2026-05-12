@@ -1,0 +1,41 @@
+{
+  "stock_id": "600415",
+  "stock_name": "小商品城",
+  "concept": "小商品批发市场",
+  "strategy_type": "industry_chain",
+  "must": [
+    "小商品批发市场",
+    "市场经营",
+    "线上交易平台"
+  ],
+  "should": [
+    "Chinagoods平台",
+    "国际商贸城一至五区",
+    "进口市场",
+    "篁园市场",
+    "国际生产资料市场",
+    "商位出租模式",
+    "7.5万家实体商铺",
+    "210万家中小微企业",
+    "全球小商品供应链关键节点",
+    "国际贸易综合服务商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "小商品批发市场",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "市场经营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "线上交易平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:17:18"
+}

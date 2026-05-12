@@ -1,0 +1,33 @@
+{
+  "stock_id": "301081",
+  "stock_name": "严牌股份",
+  "concept": "环保过滤材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "过滤布",
+    "过滤袋"
+  ],
+  "should": [
+    "环保过滤材料",
+    "袋式除尘器",
+    "压滤机",
+    "离心机",
+    "工业除尘",
+    "废水处理",
+    "生产过滤纯化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "过滤布",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "过滤袋",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:55:46"
+}

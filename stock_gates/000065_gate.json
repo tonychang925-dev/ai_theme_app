@@ -1,0 +1,36 @@
+{
+  "stock_id": "000065",
+  "stock_name": "北方国际",
+  "concept": "国际工程承包商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国际工程承包商",
+    "国际工程承包"
+  ],
+  "should": [
+    "太阳能产品贸易及新能源项目开发",
+    "建筑工程施工总承包一级资质",
+    "市政公用工程施工总承包一级资质",
+    "建筑幕墙工程专业承包一级资质",
+    "国内建筑工程",
+    "重型装备出口贸易",
+    "物流服务",
+    "物流自动化设备系统集成服务",
+    "大宗商品贸易",
+    "房建"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国际工程承包商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国际工程承包",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:49:29"
+}

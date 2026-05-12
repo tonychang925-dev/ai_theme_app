@@ -1,0 +1,46 @@
+{
+  "stock_id": "300695",
+  "stock_name": "兆丰股份",
+  "concept": "汽车轴承单元",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车轮毂轴承单元",
+    "全系列轮毂轴承单元制造商",
+    "第四代轮毂轴承单元",
+    "电控轮毂轴承单元"
+  ],
+  "should": [
+    "商用车免维护轮毂轴承单元",
+    "正向设计开发体系",
+    "脂润滑技术",
+    "油润滑技术",
+    "新能源电动车桥",
+    "车载充电机",
+    "分离轴承",
+    "汽车轴承单元",
+    "国内少数具备自主研发能力的企业",
+    "主机+售后双轮驱动"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车轮毂轴承单元",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全系列轮毂轴承单元制造商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "第四代轮毂轴承单元",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电控轮毂轴承单元",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:39:23"
+}

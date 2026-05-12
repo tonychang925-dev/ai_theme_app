@@ -1,0 +1,41 @@
+{
+  "stock_id": "301083",
+  "stock_name": "百胜智能",
+  "concept": "出入口控制与管理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "出入口控制与管理",
+    "道闸",
+    "车牌识别管理设备"
+  ],
+  "should": [
+    "开门机",
+    "升降地柱",
+    "通道门",
+    "数字图像处理",
+    "模式识别",
+    "云计算",
+    "大数据",
+    "物联网",
+    "GPS定位",
+    "党政机关"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "出入口控制与管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "道闸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车牌识别管理设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:56:00"
+}

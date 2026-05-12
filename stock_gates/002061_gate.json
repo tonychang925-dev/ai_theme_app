@@ -1,0 +1,41 @@
+{
+  "stock_id": "002061",
+  "stock_name": "浙江交科",
+  "concept": "交通工程施工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "交通工程施工",
+    "省属基建施工龙头企业",
+    "交通基础设施建设"
+  ],
+  "should": [
+    "公路工程施工总承包特级资质",
+    "公路行业设计甲级资质",
+    "市政工程施工总承包一级资质",
+    "建筑工程施工总承包一级资质",
+    "港航工程施工总承包资质",
+    "省部级工法",
+    "专利授权",
+    "软件著作权",
+    "科学技术奖",
+    "地方标准"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "交通工程施工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "省属基建施工龙头企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "交通基础设施建设",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:21:05"
+}

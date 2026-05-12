@@ -1,0 +1,31 @@
+{
+  "stock_id": "688575",
+  "stock_name": "亚辉龙",
+  "concept": "自身免疫诊断",
+  "strategy_type": "industry_chain",
+  "must": [
+    "化学发光诊断试剂"
+  ],
+  "should": [
+    "自身免疫诊断",
+    "全自动生化分析平台",
+    "微流控平台",
+    "基因测序平台",
+    "全自动多重流式荧光发光免疫分析仪",
+    "微流控",
+    "基因测序",
+    "生化诊断",
+    "流式荧光",
+    "抗原抗体原材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "化学发光诊断试剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:21:03"
+}

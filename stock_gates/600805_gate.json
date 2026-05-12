@@ -1,0 +1,41 @@
+{
+  "stock_id": "600805",
+  "stock_name": "悦达投资",
+  "concept": "综合投资控股",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源",
+    "新材料",
+    "智能制造"
+  ],
+  "should": [
+    "光伏",
+    "风电",
+    "磷酸锰铁锂正极材料",
+    "钠离子电池正极材料",
+    "拖拉机",
+    "专用车",
+    "纱线",
+    "机床",
+    "大规模储能",
+    "农业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:28:22"
+}

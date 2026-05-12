@@ -1,0 +1,46 @@
+{
+  "stock_id": "000823",
+  "stock_name": "超声电子",
+  "concept": "电子元器件制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "印制线路板",
+    "液晶显示器及触摸屏",
+    "覆铜板及半固化片",
+    "超声电子仪器"
+  ],
+  "should": [
+    "高频高速印制线路板技术",
+    "任意层互连印制板技术",
+    "汽车微波雷达印制板技术",
+    "电子元器件制造",
+    "通讯",
+    "汽车电子",
+    "雷达",
+    "工业自动化",
+    "医疗器械",
+    "车载显示"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "印制线路板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液晶显示器及触摸屏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "覆铜板及半固化片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超声电子仪器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:06:16"
+}

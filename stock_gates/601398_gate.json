@@ -1,0 +1,40 @@
+{
+  "stock_id": "601398",
+  "stock_name": "工商银行",
+  "concept": "商业银行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商业银行",
+    "系统重要性银行监管",
+    "小微企业金融服务"
+  ],
+  "should": [
+    "公司信贷业务",
+    "个人信贷业务",
+    "信用风险管理",
+    "银行保险机构关联交易管理办法",
+    "银行保险机构公司治理监管评估办法",
+    "个人养老金制度",
+    "资金业务",
+    "表外信用业务",
+    "贷款质量五级分类管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商业银行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "系统重要性银行监管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小微企业金融服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:36:38"
+}

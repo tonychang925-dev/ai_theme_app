@@ -1,0 +1,31 @@
+{
+  "stock_id": "600022",
+  "stock_name": "山东钢铁",
+  "concept": "钢铁制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钢铁制造"
+  ],
+  "should": [
+    "中厚板",
+    "热轧板卷",
+    "冷轧板卷",
+    "H型钢",
+    "优特钢",
+    "热轧带肋钢筋",
+    "汽车",
+    "石油",
+    "铁路",
+    "桥梁"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钢铁制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:07:19"
+}

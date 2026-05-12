@@ -1,0 +1,46 @@
+{
+  "stock_id": "600582",
+  "stock_name": "天地科技",
+  "concept": "煤炭全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤炭全产业链",
+    "煤机装备",
+    "煤矿智能化",
+    "无烟煤"
+  ],
+  "should": [
+    "煤炭生产",
+    "采煤机",
+    "掘进机",
+    "刮板输送机",
+    "液压支架电液控制系统",
+    "智能集成供液系统",
+    "综采自动化控制系统",
+    "发热量高",
+    "机械强度高",
+    "含碳量高"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤炭全产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤机装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤矿智能化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无烟煤",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:21:48"
+}

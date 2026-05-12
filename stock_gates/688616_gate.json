@@ -1,0 +1,36 @@
+{
+  "stock_id": "688616",
+  "stock_name": "西力科技",
+  "concept": "电能计量",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能电表",
+    "用电信息采集终端"
+  ],
+  "should": [
+    "电能计量箱",
+    "电能计量",
+    "高精度计量",
+    "软件模块化",
+    "数据库",
+    "控制电路设计",
+    "通信",
+    "数据安全",
+    "电网公司用户端用电数据采集",
+    "区域用户电表数据采集与交互"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能电表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "用电信息采集终端",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:22:13"
+}

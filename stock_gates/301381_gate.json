@@ -1,0 +1,35 @@
+{
+  "stock_id": "301381",
+  "stock_name": "赛维时代",
+  "concept": "跨境品牌电商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "跨境品牌电商",
+    "跨境电商平台商品销售收入"
+  ],
+  "should": [
+    "物流服务收入",
+    "小前端+大中台",
+    "全球一体化供应链",
+    "欧洲北美海外仓",
+    "第三方电商平台",
+    "自营网站",
+    "全面数据驱动",
+    "品牌矩阵支撑的多品类延伸",
+    "供应商管理体系"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "跨境品牌电商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "跨境电商平台商品销售收入",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:04:24"
+}

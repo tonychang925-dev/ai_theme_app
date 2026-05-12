@@ -1,0 +1,46 @@
+{
+  "stock_id": "002971",
+  "stock_name": "和远气体",
+  "concept": "综合气体服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合气体服务",
+    "综合性气体应用服务商",
+    "特种气体",
+    "电子特气"
+  ],
+  "should": [
+    "尾气回收",
+    "大宗气体",
+    "空分设备",
+    "提纯设备",
+    "钢铁",
+    "化工",
+    "电子",
+    "食品",
+    "医药",
+    "新能源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合气体服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合性气体应用服务商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种气体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子特气",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:05:34"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "301568",
+  "stock_name": "思泰克",
+  "concept": "机器视觉检测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "机器视觉检测",
+    "机器视觉技术"
+  ],
+  "should": [
+    "3D AOI",
+    "3D机器视觉技术",
+    "AI+人工智能深度学习算法",
+    "多模态AI辅助人工复判系统",
+    "AI辅助锡膏识别系统",
+    "核心光源方案",
+    "底层及应用层算法",
+    "消费电子",
+    "汽车电子",
+    "半导体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "机器视觉检测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机器视觉技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:06:28"
+}

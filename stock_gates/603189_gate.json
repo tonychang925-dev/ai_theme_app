@@ -1,0 +1,46 @@
+{
+  "stock_id": "603189",
+  "stock_name": "网达软件",
+  "concept": "大视频AI平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "融合媒体生态系统",
+    "高新视频技术平台",
+    "AI视频大数据平台",
+    "AIGC"
+  ],
+  "should": [
+    "VR视频应用平台",
+    "超高清解编码",
+    "VR视频能力引擎",
+    "虚拟数智化运行管理平台",
+    "实时转码",
+    "精准翻译",
+    "自适应画质增强",
+    "远程交互",
+    "人机交互",
+    "数字孪生"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "融合媒体生态系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高新视频技术平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AI视频大数据平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AIGC",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:45:56"
+}

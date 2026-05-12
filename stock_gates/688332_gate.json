@@ -1,0 +1,41 @@
+{
+  "stock_id": "688332",
+  "stock_name": "中科蓝讯",
+  "concept": "无线音频SoC芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "无线音频SoC芯片",
+    "蓝牙音箱芯片",
+    "蓝牙耳机芯片"
+  ],
+  "should": [
+    "智能可穿戴SoC芯片",
+    "Wi-Fi芯片",
+    "TYPEC音频处理SoC芯片",
+    "语音控制SoC芯片",
+    "蓝牙控制SoC芯片",
+    "智能物联网SoC芯片",
+    "UWB技术",
+    "22nm工艺",
+    "蓝牙音箱",
+    "蓝牙耳机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "无线音频SoC芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蓝牙音箱芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蓝牙耳机芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:15:47"
+}

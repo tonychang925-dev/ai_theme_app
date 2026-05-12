@@ -1,0 +1,51 @@
+{
+  "stock_id": "600017",
+  "stock_name": "日照港",
+  "concept": "干散货港口",
+  "strategy_type": "industry_chain",
+  "must": [
+    "干散货港口",
+    "铁矿石",
+    "煤炭",
+    "干散货装卸",
+    "货物中转"
+  ],
+  "should": [
+    "木片",
+    "大豆",
+    "石油焦",
+    "原木",
+    "石臼港区",
+    "岚山港区",
+    "水运",
+    "铁路+水路联运",
+    "北方沿海",
+    "公转铁"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "干散货港口",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铁矿石",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "干散货装卸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "货物中转",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:07:12"
+}

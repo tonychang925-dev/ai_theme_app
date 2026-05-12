@@ -1,0 +1,36 @@
+{
+  "stock_id": "301248",
+  "stock_name": "杰创智能",
+  "concept": "智慧城市安全",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧城市综合解决方案",
+    "智慧安全综合解决方案"
+  ],
+  "should": [
+    "物联网",
+    "云计算",
+    "大数据",
+    "人工智能",
+    "专用高性能计算技术",
+    "信号及协议分析技术",
+    "智慧民生",
+    "城市管理与服务",
+    "数据中心",
+    "社会安全管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧城市综合解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧安全综合解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:00:45"
+}

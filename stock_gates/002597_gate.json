@@ -1,0 +1,41 @@
+{
+  "stock_id": "002597",
+  "stock_name": "金禾实业",
+  "concept": "甜味剂龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "安赛蜜",
+    "三氯蔗糖",
+    "国内三氯蔗糖行业绝对龙头"
+  ],
+  "should": [
+    "甲基麦芽酚",
+    "乙基麦芽酚",
+    "阿洛酮糖",
+    "佳乐麝香溶液",
+    "季戊四醇",
+    "呋喃铵盐",
+    "合成氨",
+    "甜味剂龙头",
+    "无糖饮料",
+    "原料自给"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "安赛蜜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三氯蔗糖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内三氯蔗糖行业绝对龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:49:17"
+}

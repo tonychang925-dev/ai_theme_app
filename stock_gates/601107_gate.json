@@ -1,0 +1,31 @@
+{
+  "stock_id": "601107",
+  "stock_name": "四川成渝",
+  "concept": "高速公路运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高速公路运营"
+  ],
+  "should": [
+    "沿线路衍经济",
+    "充电",
+    "电池银行+换电",
+    "氢能源",
+    "车辆通行费收入",
+    "建造服务收入",
+    "能源销售收入",
+    "服务区经营、沿线广告收入",
+    "BT/PPP工程项目收入",
+    "融资租赁收入"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高速公路运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:34:14"
+}

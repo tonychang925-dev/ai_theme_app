@@ -1,0 +1,46 @@
+{
+  "stock_id": "300365",
+  "stock_name": "恒华科技",
+  "concept": "电力BIM服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力BIM服务",
+    "自主可控BIM核心技术",
+    "基于BIM的三维设计",
+    "电网信息化三维协同设计"
+  ],
+  "should": [
+    "BIM技术的数字化交付",
+    "BIM技术的工程建设过程管控",
+    "资产运行维护的可视化管理",
+    "软件服务",
+    "技术服务",
+    "软件销售",
+    "硬件销售",
+    "建造合同(EPC)",
+    "数据中心",
+    "新能源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力BIM服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自主可控BIM核心技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "基于BIM的三维设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电网信息化三维协同设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:24:12"
+}

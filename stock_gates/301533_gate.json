@@ -1,0 +1,41 @@
+{
+  "stock_id": "301533",
+  "stock_name": "威马农机",
+  "concept": "山地丘陵农机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "山地丘陵农机",
+    "微耕机",
+    "田园管理机"
+  ],
+  "should": [
+    "履带旋耕机",
+    "联合收割机",
+    "田间搬运机",
+    "排灌机械",
+    "内燃机",
+    "新能源电动农业机械",
+    "扫雪机",
+    "骑乘式割草机",
+    "智能化作业",
+    "山地丘陵"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "山地丘陵农机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "微耕机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "田园管理机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:06:14"
+}

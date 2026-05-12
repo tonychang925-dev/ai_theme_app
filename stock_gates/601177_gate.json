@@ -1,0 +1,46 @@
+{
+  "stock_id": "601177",
+  "stock_name": "杭齿前进",
+  "concept": "齿轮传动装置",
+  "strategy_type": "industry_chain",
+  "must": [
+    "船用齿轮箱",
+    "齿轮传动装置",
+    "风电齿轮箱",
+    "船用齿轮箱细分领域龙头"
+  ],
+  "should": [
+    "工程机械变速箱",
+    "粉末冶金产品",
+    "高功率密度齿轮箱设计",
+    "电推齿轮箱",
+    "混动齿轮箱",
+    "液力变速箱",
+    "电驱变速箱",
+    "智能控制小倾角船用齿轮箱",
+    "船舶",
+    "工程机械"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "船用齿轮箱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "齿轮传动装置",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电齿轮箱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "船用齿轮箱细分领域龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:35:08"
+}

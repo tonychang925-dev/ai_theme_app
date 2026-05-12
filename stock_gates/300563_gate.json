@@ -1,0 +1,36 @@
+{
+  "stock_id": "300563",
+  "stock_name": "神宇股份",
+  "concept": "射频同轴电缆",
+  "strategy_type": "industry_chain",
+  "must": [
+    "射频同轴电缆",
+    "射频连接器和组件"
+  ],
+  "should": [
+    "细微射频同轴电缆",
+    "极细射频同轴电缆",
+    "半柔、半刚射频同轴电缆",
+    "稳相微波射频同轴电缆",
+    "军标系列射频同轴电缆",
+    "高屏蔽",
+    "低损耗",
+    "定制化需求",
+    "通信基站",
+    "航空航天航海"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "射频同轴电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "射频连接器和组件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:32:56"
+}

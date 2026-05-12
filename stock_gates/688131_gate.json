@@ -1,0 +1,50 @@
+{
+  "stock_id": "688131",
+  "stock_name": "皓元医药",
+  "concept": "小分子药物一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "小分子药物一体化",
+    "分子砌块",
+    "工具化合物",
+    "原料药和中间体",
+    "CDMO"
+  ],
+  "should": [
+    "高活性原料药开发平台",
+    "多手性复杂药物技术平台",
+    "维生素D衍生物药物原料药研发平台",
+    "特色靶向药物开发平台",
+    "药物固态化学研究技术平台",
+    "抗肿瘤",
+    "抗病毒",
+    "糖尿病",
+    "心脑血管疾病治疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "小分子药物一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分子砌块",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工具化合物",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原料药和中间体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CDMO",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:09:23"
+}

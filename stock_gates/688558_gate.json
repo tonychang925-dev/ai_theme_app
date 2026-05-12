@@ -1,0 +1,36 @@
+{
+  "stock_id": "688558",
+  "stock_name": "国盛智科",
+  "concept": "数控机床",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数控机床",
+    "中高档数控机床"
+  ],
+  "should": [
+    "V系列高速立加",
+    "DHM-X系列五轴卧式加工中心",
+    "桥式三轴、五轴龙门",
+    "工作台固定式卧式镗铣床",
+    "高速动柱龙门加工中心",
+    "精密模具行业",
+    "新能源汽车",
+    "风电",
+    "航天航空",
+    "核心功能部件自制力提升"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数控机床",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中高档数控机床",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:20:42"
+}

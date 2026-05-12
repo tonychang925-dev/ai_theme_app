@@ -1,0 +1,46 @@
+{
+  "stock_id": "688208",
+  "stock_name": "道通科技",
+  "concept": "汽车后市场",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车智能综合诊断产品",
+    "TPMS产品",
+    "ADAS标定工具",
+    "软件云服务"
+  ],
+  "should": [
+    "新能源充电桩",
+    "汽车后市场",
+    "激光测量技术",
+    "分布式SOA架构",
+    "Docker容器",
+    "K8S服务编排",
+    "车桩兼容技术",
+    "安全充电技术",
+    "智慧电池检测技术",
+    "高级辅助驾驶标定"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车智能综合诊断产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "TPMS产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ADAS标定工具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "软件云服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:11:52"
+}

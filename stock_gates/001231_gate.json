@@ -1,0 +1,40 @@
+{
+  "stock_id": "001231",
+  "stock_name": "农心科技",
+  "concept": "农药制剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农药制剂",
+    "农药制剂产品创新研发",
+    "农药登记证"
+  ],
+  "should": [
+    "杀虫剂",
+    "杀菌剂",
+    "除草剂",
+    "发明专利",
+    "专有技术",
+    "农药生产许可证",
+    "农药经营许可证",
+    "生产工艺改进",
+    "原药制剂一体化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农药制剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "农药制剂产品创新研发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "农药登记证",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:14:23"
+}

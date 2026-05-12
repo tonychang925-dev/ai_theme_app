@@ -1,0 +1,40 @@
+{
+  "stock_id": "300696",
+  "stock_name": "爱乐达",
+  "concept": "航空零部件制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航空零部件制造",
+    "航空零部件数控精密加工",
+    "军用飞机"
+  ],
+  "should": [
+    "特种工艺处理",
+    "部组件装配",
+    "数控精密加工",
+    "酸洗",
+    "热处理",
+    "喷漆",
+    "理化试验",
+    "军用飞机主机厂供应商",
+    "民用客机分承制厂供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航空零部件制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航空零部件数控精密加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "军用飞机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:39:29"
+}

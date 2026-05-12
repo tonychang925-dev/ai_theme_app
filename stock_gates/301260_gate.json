@@ -1,0 +1,46 @@
+{
+  "stock_id": "301260",
+  "stock_name": "格力博",
+  "concept": "新能源园林机械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源园林机械",
+    "智能割草机器人",
+    "智能坐骑式割草车",
+    "割草机"
+  ],
+  "should": [
+    "电池包",
+    "锂电池",
+    "电机控制及系统控制",
+    "智能及IoT",
+    "打草机",
+    "吹风机",
+    "修枝机",
+    "链锯",
+    "清洗机",
+    "电池充电器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源园林机械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能割草机器人",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能坐骑式割草车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "割草机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:01:12"
+}

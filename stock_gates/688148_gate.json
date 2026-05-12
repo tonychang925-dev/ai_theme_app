@@ -1,0 +1,29 @@
+{
+  "stock_id": "688148",
+  "stock_name": "芳源股份",
+  "concept": "NCA前驱体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "NCA前驱体"
+  ],
+  "should": [
+    "NCM前驱体",
+    "球形氢氧化镍",
+    "三元正极材料前驱体研发",
+    "电池回收技术",
+    "新能源汽车电池",
+    "镍电池",
+    "国内NCA前驱体龙头",
+    "国内NCA前驱体出口主要份额"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "NCA前驱体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:09:47"
+}

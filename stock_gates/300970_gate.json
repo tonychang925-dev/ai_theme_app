@@ -1,0 +1,30 @@
+{
+  "stock_id": "300970",
+  "stock_name": "华绿生物",
+  "concept": "食用菌工厂化种植",
+  "strategy_type": "industry_chain",
+  "must": [
+    "食用菌工厂化种植"
+  ],
+  "should": [
+    "金针菇",
+    "真姬菇",
+    "白玉菇",
+    "蟹味菇",
+    "舞茸",
+    "液体菌种技术",
+    "生物转化率",
+    "杂菌污染率控制",
+    "国内领先的食用菌工厂化生产企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "食用菌工厂化种植",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:51:17"
+}

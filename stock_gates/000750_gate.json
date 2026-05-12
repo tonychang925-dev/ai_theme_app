@@ -1,0 +1,28 @@
+{
+  "stock_id": "000750",
+  "stock_name": "国海证券",
+  "concept": "综合金融服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "零售财富管理"
+  ],
+  "should": [
+    "综合金融服务",
+    "企业金融服务",
+    "销售交易与投资",
+    "广西市场占有率第一",
+    "营业网点覆盖21个省级区域",
+    "区域和品牌优势明显",
+    "全国性上市综合金融服务企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "零售财富管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:03:06"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "000815",
+  "stock_name": "美利云",
+  "concept": "央企转型锂电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数据中心",
+    "造纸"
+  ],
+  "should": [
+    "光伏发电",
+    "文化用纸",
+    "彩色纸",
+    "机柜出租",
+    "网络接入",
+    "机柜运行维护",
+    "数据中心定制",
+    "分模块定制",
+    "批量机柜服务",
+    "电动工具"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数据中心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "造纸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:05:56"
+}

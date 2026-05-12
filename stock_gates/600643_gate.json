@@ -1,0 +1,41 @@
+{
+  "stock_id": "600643",
+  "stock_name": "爱建集团",
+  "concept": "综合金融服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "信托业务",
+    "融资租赁",
+    "资产管理"
+  ],
+  "should": [
+    "证券业务",
+    "家族信托",
+    "慈善信托",
+    "综合金融服务",
+    "产业租赁",
+    "标品业务",
+    "经营性租赁",
+    "融资性租赁",
+    "飞机租赁",
+    "不动产运营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "信托业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "融资租赁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "资产管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:23:43"
+}

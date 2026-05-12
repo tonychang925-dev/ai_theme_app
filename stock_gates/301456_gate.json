@@ -1,0 +1,31 @@
+{
+  "stock_id": "301456",
+  "stock_name": "盘古智能",
+  "concept": "集中润滑系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "集中润滑系统"
+  ],
+  "should": [
+    "递进式润滑系统",
+    "单线系统",
+    "润滑配件",
+    "液压系统及配件",
+    "精密加工件",
+    "产品结构设计",
+    "精密加工制造",
+    "产品检测",
+    "定制化生产",
+    "快速交付"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "集中润滑系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:05:17"
+}

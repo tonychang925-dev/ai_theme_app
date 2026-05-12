@@ -1,0 +1,46 @@
+{
+  "stock_id": "301259",
+  "stock_name": "艾布鲁",
+  "concept": "农村环境治理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农村环境治理",
+    "农村生活环境治理",
+    "农村生态环境治理",
+    "农村生产环境治理"
+  ],
+  "should": [
+    "农村环境治理工程服务",
+    "污水处理一体化设备",
+    "接触氧化法",
+    "MBR法",
+    "生物膜法",
+    "活性污泥法",
+    "生态湿地工艺",
+    "智能化一体式污水处理设备",
+    "运营服务",
+    "咨询服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农村环境治理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "农村生活环境治理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "农村生态环境治理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "农村生产环境治理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:01:10"
+}

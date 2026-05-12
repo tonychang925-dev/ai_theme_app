@@ -1,0 +1,41 @@
+{
+  "stock_id": "002121",
+  "stock_name": "科陆电子",
+  "concept": "能源综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能电网",
+    "新能源业务",
+    "综合能源服务"
+  ],
+  "should": [
+    "储能双向变流器PCS",
+    "BMS电池管理系统",
+    "EMS能量管理系统",
+    "充电设施",
+    "标准仪器仪表",
+    "智能电表",
+    "智能配电网一二次产品",
+    "能量型储能系统",
+    "功率型储能系统",
+    "高精度量测技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能电网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合能源服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:24:32"
+}

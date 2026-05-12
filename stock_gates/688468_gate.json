@@ -1,0 +1,45 @@
+{
+  "stock_id": "688468",
+  "stock_name": "科美诊断",
+  "concept": "发光诊断试剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "发光诊断试剂",
+    "LiCA系列诊断试剂",
+    "进口替代",
+    "光激化学发光LiCA平台"
+  ],
+  "should": [
+    "CC系列诊断试剂及仪器",
+    "酶促化学发光",
+    "纳米级微球",
+    "均相检测",
+    "小分子检测",
+    "传染病检测",
+    "检测精度高",
+    "灵敏度高",
+    "特异性强"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "发光诊断试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LiCA系列诊断试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "进口替代",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光激化学发光LiCA平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:18:38"
+}

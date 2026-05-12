@@ -1,0 +1,36 @@
+{
+  "stock_id": "603105",
+  "stock_name": "芯能科技",
+  "concept": "工商业分布式光伏",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工商业分布式光伏",
+    "光伏发电"
+  ],
+  "should": [
+    "充电桩",
+    "工商业分布式储能",
+    "离网储能逆变器",
+    "并离网储能逆变器",
+    "便携式移动电源",
+    "虚拟电厂",
+    "自发自用、余电上网",
+    "电费折扣合作",
+    "能源管理合同",
+    "工商业用户"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工商业分布式光伏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏发电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:43:49"
+}

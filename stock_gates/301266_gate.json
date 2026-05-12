@@ -1,0 +1,46 @@
+{
+  "stock_id": "301266",
+  "stock_name": "宇邦新材",
+  "concept": "光伏焊带龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏焊带行业龙头",
+    "涂锡铜带",
+    "互连焊带",
+    "汇流焊带"
+  ],
+  "should": [
+    "MBB焊带",
+    "低温焊带",
+    "低电阻焊带",
+    "冲孔焊带",
+    "黑色焊带",
+    "折弯焊带",
+    "光伏焊带龙头",
+    "专利技术",
+    "屈服强度",
+    "工艺水平"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏焊带行业龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涂锡铜带",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "互连焊带",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汇流焊带",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:01:22"
+}

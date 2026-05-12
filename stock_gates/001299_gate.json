@@ -1,0 +1,38 @@
+{
+  "stock_id": "001299",
+  "stock_name": "美能能源",
+  "concept": "城市燃气运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "城市燃气运营",
+    "城镇燃气输配与运营",
+    "天然气终端销售和服务"
+  ],
+  "should": [
+    "天然气用户设施设备安装",
+    "居民生活",
+    "工业燃料",
+    "城市燃气",
+    "特许经营",
+    "区域排他性",
+    "自然垄断"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "城市燃气运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城镇燃气输配与运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天然气终端销售和服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:15:30"
+}

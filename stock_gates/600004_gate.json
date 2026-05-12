@@ -1,0 +1,43 @@
+{
+  "stock_id": "600004",
+  "stock_name": "白云机场",
+  "concept": "航空枢纽",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航空性业务",
+    "非航业务",
+    "特许经营收入",
+    "免税"
+  ],
+  "should": [
+    "基础非航性收入",
+    "广告",
+    "有税",
+    "航空枢纽",
+    "政府定价",
+    "市场调节价",
+    "产能利用率爬升期"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航空性业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "非航业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特许经营收入",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "免税",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:06:54"
+}

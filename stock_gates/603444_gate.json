@@ -1,0 +1,46 @@
+{
+  "stock_id": "603444",
+  "stock_name": "吉比特",
+  "concept": "网络游戏研发运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "《问道》",
+    "《问道手游》",
+    "《一念逍遥》",
+    "《问道手游》经典IP"
+  ],
+  "should": [
+    "《奥比岛：梦想国度》",
+    "《问剑长生》",
+    "《封神幻想世界》",
+    "《奇葩战斗家》",
+    "《不思议迷宫》",
+    "MMORPG",
+    "Roguelike",
+    "放置挂机",
+    "社区养成",
+    "衍生IP动画《在下是逍遥》"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "《问道》",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "《问道手游》",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "《一念逍遥》",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "《问道手游》经典IP",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:51:06"
+}

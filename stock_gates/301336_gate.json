@@ -1,0 +1,46 @@
+{
+  "stock_id": "301336",
+  "stock_name": "趣睡科技",
+  "concept": "互联网家居零售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "互联网家居零售",
+    "高品质易安装家具",
+    "智能家居",
+    "睡眠科技与寝具"
+  ],
+  "should": [
+    "智能电动床",
+    "智能电动沙发",
+    "床垫",
+    "沙发",
+    "软床",
+    "实木床",
+    "枕头",
+    "被子",
+    "四件套",
+    "小米生态链企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "互联网家居零售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高品质易安装家具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能家居",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "睡眠科技与寝具",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:03:21"
+}

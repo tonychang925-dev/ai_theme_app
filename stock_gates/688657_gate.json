@@ -1,0 +1,36 @@
+{
+  "stock_id": "688657",
+  "stock_name": "浩辰软件",
+  "concept": "国产CAD软件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "浩辰CAD看图王移动版",
+    "CAD领域国内第一"
+  ],
+  "should": [
+    "2D CAD平台软件",
+    "3D CAD软件",
+    "协同设计",
+    "国产CAD软件",
+    "性能优化",
+    "数据处理",
+    "服务器数据处理能力",
+    "安全性",
+    "图形功能",
+    "制造业三维模型"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "浩辰CAD看图王移动版",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CAD领域国内第一",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:23:11"
+}

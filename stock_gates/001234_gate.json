@@ -1,0 +1,41 @@
+{
+  "stock_id": "001234",
+  "stock_name": "泰慕士",
+  "concept": "针织服装产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "针织服装产业链",
+    "针织面料研发、生产和销售",
+    "针织服装研发、生产和销售"
+  ],
+  "should": [
+    "迪卡侬",
+    "森马服饰",
+    "Quiksilver",
+    "Kappa",
+    "佐丹奴",
+    "全棉时代",
+    "曼妮芬",
+    "安踏",
+    "特步",
+    "面料开发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "针织服装产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "针织面料研发、生产和销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "针织服装研发、生产和销售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:14:29"
+}

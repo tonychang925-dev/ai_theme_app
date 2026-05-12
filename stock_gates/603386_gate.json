@@ -1,0 +1,41 @@
+{
+  "stock_id": "603386",
+  "stock_name": "骏亚科技",
+  "concept": "一站式PCB服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PCB",
+    "PCBA(SMT)",
+    "整机装配"
+  ],
+  "should": [
+    "一站式PCB服务",
+    "刚性线路板",
+    "挠性线路板",
+    "刚挠结合线路板",
+    "样板",
+    "小批量板",
+    "中批量板",
+    "大批量板",
+    "高频高速多层板",
+    "医疗器械"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PCB",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PCBA(SMT)",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "整机装配",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:50:36"
+}

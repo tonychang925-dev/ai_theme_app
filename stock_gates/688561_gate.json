@@ -1,0 +1,51 @@
+{
+  "stock_id": "688561",
+  "stock_name": "奇安信",
+  "concept": "网络安全龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "终端安全",
+    "边界安全",
+    "数据安全",
+    "实战型态势感知",
+    "安全大数据"
+  ],
+  "should": [
+    "安全运营技术",
+    "零信任基础架构",
+    "订阅式威胁情报",
+    "网络安全龙头",
+    "人工智能",
+    "研发能力平台化",
+    "安全咨询与规划",
+    "分析与响应",
+    "远程托管式安全运营",
+    "国内领先"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "终端安全",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "边界安全",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据安全",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "实战型态势感知",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "安全大数据",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:20:35"
+}

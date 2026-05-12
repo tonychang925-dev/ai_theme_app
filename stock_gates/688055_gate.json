@@ -1,0 +1,31 @@
+{
+  "stock_id": "688055",
+  "stock_name": "龙腾光电",
+  "concept": "液晶显示面板",
+  "strategy_type": "industry_chain",
+  "must": [
+    "液晶显示面板"
+  ],
+  "should": [
+    "动态隐私防窥技术",
+    "触控一体化技术",
+    "反射式技术",
+    "氧化物技术",
+    "MiniLED技术",
+    "笔记本电脑",
+    "车载",
+    "工控",
+    "手机",
+    "材料供应商多元化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "液晶显示面板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:06:37"
+}

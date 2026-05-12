@@ -1,0 +1,41 @@
+{
+  "stock_id": "600839",
+  "stock_name": "四川长虹",
+  "concept": "综合家电与ICT",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电视",
+    "冰箱/冰柜",
+    "AI大模型"
+  ],
+  "should": [
+    "MiniLED背光",
+    "5G+工业互联网",
+    "空调",
+    "洗衣机",
+    "综合家电与ICT",
+    "ICT综合服务",
+    "数字智能综合服务平台",
+    "智算中心",
+    "智能化技术",
+    "人工智能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电视",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冰箱/冰柜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AI大模型",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:29:11"
+}

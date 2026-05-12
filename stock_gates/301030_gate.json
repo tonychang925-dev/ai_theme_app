@@ -1,0 +1,36 @@
+{
+  "stock_id": "301030",
+  "stock_name": "仕净科技",
+  "concept": "光伏污染治理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LCR脱硝技术",
+    "制程污染防控设备"
+  ],
+  "should": [
+    "末端污染治理设备",
+    "定制化液态脱硝催化剂",
+    "环保增值服务",
+    "光伏污染治理",
+    "光伏制造",
+    "钢铁冶金",
+    "水泥建材",
+    "光电行业",
+    "汽车制造",
+    "光伏电池片新增产能配套"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LCR脱硝技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "制程污染防控设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:53:50"
+}

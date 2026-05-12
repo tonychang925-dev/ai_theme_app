@@ -1,0 +1,32 @@
+{
+  "stock_id": "603338",
+  "stock_name": "浙江鼎力",
+  "concept": "高空作业平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高空作业平台",
+    "臂式高空作业平台"
+  ],
+  "should": [
+    "剪叉式高空作业平台",
+    "高端剪叉式产品",
+    "智能高空作业平台研发",
+    "高空作业",
+    "全球高空作业平台前三制造商",
+    "国内行业龙头企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高空作业平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "臂式高空作业平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:49:32"
+}

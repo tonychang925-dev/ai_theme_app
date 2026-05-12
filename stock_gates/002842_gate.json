@@ -1,0 +1,51 @@
+{
+  "stock_id": "002842",
+  "stock_name": "翔鹭钨业",
+  "concept": "钨制品全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "仲钨酸铵(APT)",
+    "氧化钨",
+    "钨粉",
+    "碳化钨粉",
+    "硬质合金"
+  ],
+  "should": [
+    "PLC智能化控制",
+    "AI人工智能调节",
+    "氮气气流磨系统",
+    "钨制品全产业链",
+    "超细钨丝研发",
+    "3C",
+    "模具加工",
+    "汽车零部件加工",
+    "航空航天",
+    "光伏硅片切割"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "仲钨酸铵(APT)",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氧化钨",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钨粉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳化钨粉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硬质合金",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:59:53"
+}

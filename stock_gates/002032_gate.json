@@ -1,0 +1,51 @@
+{
+  "stock_id": "002032",
+  "stock_name": "苏泊尔",
+  "concept": "炊具小家电龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "炊具小家电龙头",
+    "炊具市场第一",
+    "小家电市场第二",
+    "炊具",
+    "厨房小家电"
+  ],
+  "should": [
+    "压力锅",
+    "电饭煲",
+    "环境家居电器",
+    "厨卫电器",
+    "清洁电器",
+    "除螨机",
+    "桶式吸尘器",
+    "推杆式吸尘器",
+    "卧式吸尘器",
+    "拖把"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "炊具小家电龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "炊具市场第一",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小家电市场第二",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "炊具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "厨房小家电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:19:21"
+}

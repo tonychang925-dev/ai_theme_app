@@ -1,0 +1,51 @@
+{
+  "stock_id": "002667",
+  "stock_name": "威领股份",
+  "concept": "锂资源+工程机械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程机械制造业务",
+    "锂资源业务",
+    "振动筛",
+    "碳酸锂",
+    "锂云母"
+  ],
+  "should": [
+    "给料机",
+    "破碎机",
+    "混凝土预制构件自动化成套设备",
+    "垃圾分选成套设备",
+    "砂石破碎筛分成套设备",
+    "沥青混凝土物料破碎筛分成套设备",
+    "稳定土拌合站",
+    "氢氧化锂",
+    "大型、高效、弹性圆振动筛",
+    "高效自清分级筛"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程机械制造业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂资源业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "振动筛",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳酸锂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂云母",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:52:28"
+}

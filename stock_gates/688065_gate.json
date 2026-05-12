@@ -1,0 +1,41 @@
+{
+  "stock_id": "688065",
+  "stock_name": "凯赛生物",
+  "concept": "合成生物材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生物法长链二元酸",
+    "生物基戊二胺",
+    "生物基聚酰胺"
+  ],
+  "should": [
+    "合成生物学",
+    "基因工程",
+    "生物制造",
+    "聚酰胺610",
+    "癸二胺",
+    "聚酰胺1010",
+    "增塑剂",
+    "润滑油",
+    "医药",
+    "电容器电解液"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生物法长链二元酸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物基戊二胺",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物基聚酰胺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:06:58"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "301323",
+  "stock_name": "新莱福",
+  "concept": "功能材料与电子陶瓷",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环形压敏电阻",
+    "磁胶材料"
+  ],
+  "should": [
+    "国内最大环形压敏电阻生产商之一",
+    "热敏电阻",
+    "高比重合金",
+    "高能射线防护材料",
+    "磁胶工艺配方",
+    "生产装备创新",
+    "半导体生产工艺",
+    "高能射线防护材料制备",
+    "直流有刷马达",
+    "电动玩具"
+  ],
+  "not": [
+    "广告海报",
+    "可擦写白板",
+    "文具教具"
+  ],
+  "evidence_refs": [
+    {
+      "term": "环形压敏电阻",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磁胶材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:02:58"
+}

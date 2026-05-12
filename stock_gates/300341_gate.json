@@ -1,0 +1,45 @@
+{
+  "stock_id": "300341",
+  "stock_name": "麦克奥迪",
+  "concept": "环氧绝缘件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环氧绝缘件",
+    "GIS用绝缘件",
+    "中压开关绝缘件",
+    "固封极柱"
+  ],
+  "should": [
+    "固体绝缘开关",
+    "电缆接头",
+    "输配电设备",
+    "高压开关",
+    "智能电网",
+    "新能源",
+    "绝缘技术",
+    "自主研发能力",
+    "先进工艺技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环氧绝缘件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "GIS用绝缘件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中压开关绝缘件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "固封极柱",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:23:06"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "688306",
+  "stock_name": "均普智能",
+  "concept": "智能制造装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能制造装备",
+    "工业机器人",
+    "新能源智能汽车智能装备"
+  ],
+  "should": [
+    "工业数字化智能软件",
+    "piaAMR机器人",
+    "机器视觉智能检测技术",
+    "激光导航",
+    "视觉系统",
+    "新能源智能汽车",
+    "医疗健康",
+    "消费品",
+    "工业机电",
+    "电驱系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能制造装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业机器人",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源智能汽车智能装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:14:53"
+}

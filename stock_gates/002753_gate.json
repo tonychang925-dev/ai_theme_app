@@ -1,0 +1,46 @@
+{
+  "stock_id": "002753",
+  "stock_name": "永东股份",
+  "concept": "煤焦油深加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高品质炭黑",
+    "煤焦油精细加工产品",
+    "煤焦油深加工",
+    "循环经济产业链技术"
+  ],
+  "should": [
+    "煤焦油基导电炭黑生产技术",
+    "煤焦油加工",
+    "炭黑生产",
+    "尾气发电",
+    "新材料产品",
+    "轮胎用橡胶",
+    "染料",
+    "农药",
+    "医药",
+    "精细化工新材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高品质炭黑",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤焦油精细加工产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤焦油深加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "循环经济产业链技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:56:01"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "002283",
+  "stock_name": "天润工业",
+  "concept": "发动机核心部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "曲轴",
+    "连杆",
+    "胀断连杆技术"
+  ],
+  "should": [
+    "铸锻件",
+    "空气悬架",
+    "发动机核心部件",
+    "精密铸造",
+    "自动化装备",
+    "商用车发动机",
+    "工程机械",
+    "乘用车",
+    "国内最大曲轴专业生产商",
+    "重卡曲轴龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "曲轴",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "连杆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "胀断连杆技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:33:21"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "603010",
+  "stock_name": "万盛股份",
+  "concept": "磷系阻燃剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "磷系阻燃剂"
+  ],
+  "should": [
+    "胺助剂及催化剂",
+    "涂料助剂",
+    "双酚A双（二苯基磷酸酯）",
+    "五氯化磷",
+    "三氯氧磷",
+    "绿色低碳",
+    "高性能与高效率",
+    "多功能整体解决方案",
+    "低毒高效阻燃剂研发",
+    "塑料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "磷系阻燃剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:40:58"
+}

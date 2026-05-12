@@ -1,0 +1,36 @@
+{
+  "stock_id": "300514",
+  "stock_name": "友讯达",
+  "concept": "电力物联网",
+  "strategy_type": "industry_chain",
+  "must": [
+    "无线传感网络综合解决方案",
+    "低压用电业务"
+  ],
+  "should": [
+    "公用计量业务",
+    "低压配电智慧物联业务",
+    "中压配电智慧物联业务",
+    "输变电智慧物联业务",
+    "CFDA技术",
+    "L-CFDA技术",
+    "MuCoFAN场域网通信技术",
+    "电力物联网",
+    "物联网解决方案",
+    "电力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "无线传感网络综合解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "低压用电业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:30:45"
+}

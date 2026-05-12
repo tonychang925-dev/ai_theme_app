@@ -1,0 +1,30 @@
+{
+  "stock_id": "002931",
+  "stock_name": "锋龙股份",
+  "concept": "内燃机零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "内燃机零部件"
+  ],
+  "should": [
+    "点火器",
+    "飞轮",
+    "汽缸",
+    "精密铝合金压铸件",
+    "精密铁制汽车零件及组件",
+    "园林机械",
+    "汽车制造",
+    "园林机械零部件主力提供方",
+    "汽车轻量化核心部件供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "内燃机零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:03:49"
+}

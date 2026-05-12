@@ -1,0 +1,30 @@
+{
+  "stock_id": "002755",
+  "stock_name": "奥赛康",
+  "concept": "质子泵抑制剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "质子泵抑制剂"
+  ],
+  "should": [
+    "抗肿瘤药",
+    "国家企业技术中心",
+    "国家博士后科研工作站",
+    "江苏省企业重点实验室",
+    "消化",
+    "抗肿瘤",
+    "抗感染",
+    "慢性病",
+    "中国医药工业百强"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "质子泵抑制剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:56:14"
+}

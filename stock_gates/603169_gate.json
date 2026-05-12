@@ -1,0 +1,51 @@
+{
+  "stock_id": "603169",
+  "stock_name": "兰石重装",
+  "concept": "高端装备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端装备制造",
+    "连续重整技术",
+    "核能",
+    "氢能",
+    "光伏光热"
+  ],
+  "should": [
+    "甲醇综合利用项目乙醇装置反应器",
+    "沸腾床加氢反应器",
+    "BDO装置反应器",
+    "淤浆法UHMWPE装置聚合反应器",
+    "钛板BLOC1200换热器",
+    "冷氢化反应器",
+    "钛板板式热交换器",
+    "纳米磷酸铁锂正极材料",
+    "工业智能装备",
+    "连续重整技术国产化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端装备制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "连续重整技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氢能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏光热",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:45:25"
+}

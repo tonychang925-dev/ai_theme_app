@@ -1,0 +1,51 @@
+{
+  "stock_id": "002150",
+  "stock_name": "正泰电源",
+  "concept": "金属箱柜与输配电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金属工具箱",
+    "工具柜",
+    "工具车",
+    "工作台",
+    "墙立柜"
+  ],
+  "should": [
+    "高压成套开关设备",
+    "中低压成套开关设备",
+    "高低压开关元件",
+    "控制电器",
+    "钣金结构件",
+    "精密钣金制品",
+    "钣金制造工艺",
+    "机器人换人",
+    "数字化生产",
+    "智能化生产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金属工具箱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工具柜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工具车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工作台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "墙立柜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:26:01"
+}

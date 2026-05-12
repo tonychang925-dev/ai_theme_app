@@ -1,0 +1,46 @@
+{
+  "stock_id": "301086",
+  "stock_name": "鸿富瀚",
+  "concept": "消费电子功能器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "消费电子功能性器件",
+    "自动化设备",
+    "苹果认证合格供应商",
+    "亚马逊认证合格供应商"
+  ],
+  "should": [
+    "消费电子功能器件",
+    "VR/AR设备",
+    "智能家居",
+    "车载类智能终端",
+    "5G",
+    "工业互联网",
+    "光伏产品",
+    "新能源汽车",
+    "夹治具",
+    "载具"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "消费电子功能性器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自动化设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "苹果认证合格供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "亚马逊认证合格供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:56:06"
+}

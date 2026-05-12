@@ -1,0 +1,41 @@
+{
+  "stock_id": "601098",
+  "stock_name": "中南传媒",
+  "concept": "出版传媒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "出版传媒",
+    "图书出版",
+    "发行"
+  ],
+  "should": [
+    "印刷",
+    "媒体服务",
+    "网上书店",
+    "主题出版物",
+    "教育类产品",
+    "富媒体项目",
+    "数字教育产品",
+    "直播",
+    "短视频",
+    "社群"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "出版传媒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "图书出版",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:34:05"
+}

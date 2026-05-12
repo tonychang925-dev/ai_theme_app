@@ -1,0 +1,42 @@
+{
+  "stock_id": "600859",
+  "stock_name": "王府井",
+  "concept": "零售集团",
+  "strategy_type": "industry_chain",
+  "must": [
+    "免税",
+    "百货",
+    "购物中心",
+    "奥特莱斯"
+  ],
+  "should": [
+    "超市",
+    "海南奥特莱斯旅业",
+    "王府井悦舞小镇",
+    "海垦集团",
+    "海南橡胶",
+    "有税+免税双轮驱动"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "免税",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "百货",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "购物中心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "奥特莱斯",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:29:42"
+}

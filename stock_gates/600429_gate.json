@@ -1,0 +1,46 @@
+{
+  "stock_id": "600429",
+  "stock_name": "三元股份",
+  "concept": "乳制品全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "乳制品及冰淇淋业务",
+    "72℃鲜奶",
+    "极致系列产品",
+    "三元母品牌"
+  ],
+  "should": [
+    "奶牛育种",
+    "饲养",
+    "加工",
+    "运输配送",
+    "极致1+1原生双蛋白牛奶",
+    "双低G益糖平牛奶",
+    "简卡0蔗糖酸奶",
+    "三元宫廷酪乳风味酸乳",
+    "海盐椰子及北海道牛乳风味奶浆",
+    "八喜轻卡系列冰淇淋"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "乳制品及冰淇淋业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "72℃鲜奶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "极致系列产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三元母品牌",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:17:54"
+}

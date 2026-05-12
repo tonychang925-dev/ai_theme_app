@@ -1,0 +1,51 @@
+{
+  "stock_id": "300037",
+  "stock_name": "新宙邦",
+  "concept": "电解液与氟化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电解液与氟化工",
+    "电池化学品",
+    "有机氟化学品",
+    "锂电池电解液",
+    "精细氟化学品"
+  ],
+  "should": [
+    "电容化学品",
+    "半导体化学品",
+    "冷却液",
+    "七氟烷中间体",
+    "波兰电解液产能",
+    "荷兰电解液项目",
+    "海斯福二期项目",
+    "锂电池",
+    "半导体液冷",
+    "医药中间体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电解液与氟化工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电池化学品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有机氟化学品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂电池电解液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精细氟化学品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:10:29"
+}

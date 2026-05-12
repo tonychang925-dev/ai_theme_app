@@ -1,0 +1,41 @@
+{
+  "stock_id": "002148",
+  "stock_name": "北纬科技",
+  "concept": "物联网连接服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "物联网连接服务",
+    "物联网应用业务",
+    "蜂巢智连云服务平台"
+  ],
+  "should": [
+    "松果车联",
+    "松果Cam",
+    "手机游戏",
+    "北纬移动互联网产业园",
+    "车联网",
+    "安防监控",
+    "个人家庭",
+    "农场",
+    "鱼塘",
+    "工地"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "物联网连接服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物联网应用业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蜂巢智连云服务平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:25:47"
+}

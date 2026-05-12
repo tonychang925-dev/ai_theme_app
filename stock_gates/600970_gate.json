@@ -1,0 +1,36 @@
+{
+  "stock_id": "600970",
+  "stock_name": "中材国际",
+  "concept": "水泥工程系统集成",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水泥工程系统集成",
+    "新型干法水泥生产线技术"
+  ],
+  "should": [
+    "工程技术服务",
+    "运维服务",
+    "装备制造",
+    "环保业务",
+    "自主知识产权",
+    "智能制造",
+    "数字设计",
+    "智慧运维",
+    "水泥生产线新建",
+    "存量改造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水泥工程系统集成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新型干法水泥生产线技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:32:06"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "603085",
+  "stock_name": "天成自控",
+  "concept": "座椅制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程机械座椅"
+  ],
+  "should": [
+    "乘用车座椅",
+    "航空座椅",
+    "商用车座椅",
+    "空客供应商",
+    "波音供应商",
+    "巴西航空工业公司合作",
+    "德国多尼尔飞机制造公司合作",
+    "碳纤维原材料国产化",
+    "铝合金结构件国产化",
+    "航空"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程机械座椅",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:43:14"
+}

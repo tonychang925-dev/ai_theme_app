@@ -1,0 +1,36 @@
+{
+  "stock_id": "301009",
+  "stock_name": "可靠股份",
+  "concept": "成人失禁用品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "成人失禁用品",
+    "可靠"
+  ],
+  "should": [
+    "婴儿护理用品",
+    "宠物卫生用品",
+    "吸收宝",
+    "安护士",
+    "康普适",
+    "线上渠道",
+    "线下渠道",
+    "特通渠道",
+    "养老院",
+    "医院"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "成人失禁用品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "可靠",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:52:57"
+}

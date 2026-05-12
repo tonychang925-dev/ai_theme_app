@@ -1,0 +1,34 @@
+{
+  "stock_id": "300016",
+  "stock_name": "北陆药业",
+  "concept": "医药对比剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药对比剂",
+    "对比剂制剂及原料药"
+  ],
+  "should": [
+    "中枢神经类产品",
+    "降糖类产品",
+    "仿制药质量和疗效一致性评价",
+    "原料药+制剂一体化",
+    "CT影像诊断",
+    "MRI影像诊断",
+    "碘对比剂原料药供应商",
+    "集采中标企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医药对比剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "对比剂制剂及原料药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:09:42"
+}

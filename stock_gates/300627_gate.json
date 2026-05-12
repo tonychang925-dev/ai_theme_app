@@ -1,0 +1,51 @@
+{
+  "stock_id": "300627",
+  "stock_name": "华测导航",
+  "concept": "高精度导航定位",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高精度GNSS芯片",
+    "高精度定位终端接收机设备",
+    "系统解决方案",
+    "SWAS广域增强系统",
+    "高精度RTK"
+  ],
+  "should": [
+    "板卡",
+    "模组",
+    "天线",
+    "组合导航定位",
+    "璇玑基带芯片",
+    "PPP",
+    "静态解算",
+    "网络RTK",
+    "精密定轨技术",
+    "多源融合定位技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高精度GNSS芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高精度定位终端接收机设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "系统解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SWAS广域增强系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高精度RTK",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:36:07"
+}

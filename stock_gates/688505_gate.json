@@ -1,0 +1,46 @@
+{
+  "stock_id": "688505",
+  "stock_name": "复旦张江",
+  "concept": "生物医药创新",
+  "strategy_type": "industry_chain",
+  "must": [
+    "艾拉",
+    "里葆多",
+    "复美达",
+    "光动力技术"
+  ],
+  "should": [
+    "纳米技术",
+    "基因工程技术",
+    "口服固体制剂技术",
+    "生物医药创新",
+    "皮肤HPV感染性疾病",
+    "肿瘤",
+    "鲜红斑痣",
+    "皮肤疾病",
+    "癌前病变",
+    "帕金森病"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "艾拉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "里葆多",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复美达",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光动力技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:19:15"
+}

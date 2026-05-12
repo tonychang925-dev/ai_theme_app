@@ -1,0 +1,28 @@
+{
+  "stock_id": "601288",
+  "stock_name": "农业银行",
+  "concept": "大型国有银行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大型国有银行",
+    "乡村振兴金融服务"
+  ],
+  "should": [
+    "制造业中长期贷款",
+    "消费民生金融服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大型国有银行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乡村振兴金融服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:35:51"
+}

@@ -1,0 +1,32 @@
+{
+  "stock_id": "002631",
+  "stock_name": "德尔未来",
+  "concept": "家居与石墨烯",
+  "strategy_type": "industry_chain",
+  "must": [
+    "地板",
+    "定制家居"
+  ],
+  "should": [
+    "石墨烯生长系统",
+    "地板原料加工",
+    "外观处理",
+    "水漆",
+    "板材",
+    "家居装饰"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "地板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "定制家居",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:50:37"
+}

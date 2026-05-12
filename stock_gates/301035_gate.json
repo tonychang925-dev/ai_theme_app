@@ -1,0 +1,31 @@
+{
+  "stock_id": "301035",
+  "stock_name": "润丰股份",
+  "concept": "作物保护",
+  "strategy_type": "industry_chain",
+  "must": [
+    "作物保护"
+  ],
+  "should": [
+    "除草剂",
+    "杀虫剂",
+    "杀菌剂",
+    "植物生长调节剂",
+    "种子处理剂",
+    "原药合成",
+    "制剂加工",
+    "自主登记",
+    "全球营销网络",
+    "原药外购"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "作物保护",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:54:02"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "600212",
+  "stock_name": "绿能慧充",
+  "concept": "新能源充电桩",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源充电桩",
+    "充电桩",
+    "储能产品",
+    "光储充一体化系统"
+  ],
+  "should": [
+    "充电机",
+    "充电堆",
+    "功率分配技术",
+    "能盾四层充电安全防护技术",
+    "Chaoji充电大功率液冷系统",
+    "新能源汽车充电",
+    "分布式储能",
+    "集中式储能",
+    "光储充综合能源管理",
+    "充电设施行业领先者"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源充电桩",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "充电桩",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光储充一体化系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:11:55"
+}

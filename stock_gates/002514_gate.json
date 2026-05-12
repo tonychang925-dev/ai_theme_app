@@ -1,0 +1,51 @@
+{
+  "stock_id": "002514",
+  "stock_name": "宝馨科技",
+  "concept": "新能源智能制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高效异质结光伏电池及组件",
+    "新能源汽车充/换电设备",
+    "光伏制程设备",
+    "重卡换电设备",
+    "新能源汽车充/换电"
+  ],
+  "should": [
+    "精密数控钣金产品",
+    "火电灵活性调峰系统",
+    "湿化学制程技术",
+    "铜电镀技术",
+    "HJT电池技术",
+    "TOPCon电池技术",
+    "光伏电站",
+    "储能",
+    "新能源智能制造",
+    "云计算控制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高效异质结光伏电池及组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车充/换电设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏制程设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重卡换电设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车充/换电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:45:10"
+}

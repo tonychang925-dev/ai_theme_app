@@ -1,0 +1,41 @@
+{
+  "stock_id": "600233",
+  "stock_name": "圆通速递",
+  "concept": "快递数字化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "快递数字化",
+    "加盟商网络",
+    "客户管家"
+  ],
+  "should": [
+    "网点管家",
+    "管理驾驶舱",
+    "金刚系统",
+    "行者系统",
+    "自动化分拣系统",
+    "CR7接近90%",
+    "头部化趋势",
+    "龙头竞争",
+    "从追求数量向追求质量转变",
+    "品质驱动"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "快递数字化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "加盟商网络",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "客户管家",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:12:35"
+}

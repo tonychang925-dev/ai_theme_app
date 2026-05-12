@@ -1,0 +1,36 @@
+{
+  "stock_id": "300551",
+  "stock_name": "古鳌科技",
+  "concept": "金融科技服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金融机具",
+    "金融软件信息化系统"
+  ],
+  "should": [
+    "分体式柜员出纳机",
+    "NFC数字硬钱包",
+    "数字硬钱包智能贩卖机",
+    "懂牛股票",
+    "东方股票APP",
+    "东方股票PC版",
+    "投研中台",
+    "QWIN场外期权管理系统",
+    "QWIN期权策略交易系统",
+    "知识图谱"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金融机具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融软件信息化系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:32:32"
+}

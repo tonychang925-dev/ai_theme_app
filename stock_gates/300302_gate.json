@@ -1,0 +1,46 @@
+{
+  "stock_id": "300302",
+  "stock_name": "同有科技",
+  "concept": "企业级存储",
+  "strategy_type": "industry_chain",
+  "must": [
+    "企业级存储系统",
+    "军工及工业级固态存储产品",
+    "分布式存储",
+    "全闪存存储"
+  ],
+  "should": [
+    "企业级存储",
+    "集中式存储",
+    "加固存储",
+    "应用定制存储",
+    "存储架构",
+    "存储管理软件",
+    "存储核心算法",
+    "固态硬盘架构设计",
+    "固件算法开发",
+    "自主可控生态"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "企业级存储系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "军工及工业级固态存储产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分布式存储",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全闪存存储",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:21:53"
+}

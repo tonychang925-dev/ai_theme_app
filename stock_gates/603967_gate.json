@@ -1,0 +1,40 @@
+{
+  "stock_id": "603967",
+  "stock_name": "中创物流",
+  "concept": "跨境综合物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "跨境综合物流",
+    "智慧冷链物流",
+    "新能源工程物流"
+  ],
+  "should": [
+    "货运代理",
+    "场站业务",
+    "智能冷库技术",
+    "数字化管理",
+    "可视化操作",
+    "无人化流程",
+    "冻品进口",
+    "风电运输",
+    "大件物流"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "跨境综合物流",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧冷链物流",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源工程物流",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:59:49"
+}

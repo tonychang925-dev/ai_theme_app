@@ -1,0 +1,31 @@
+{
+  "stock_id": "688385",
+  "stock_name": "复旦微电",
+  "concept": "FPGA与芯片设计",
+  "strategy_type": "industry_chain",
+  "must": [
+    "FPGA芯片"
+  ],
+  "should": [
+    "安全与识别芯片",
+    "非挥发存储器",
+    "智能电表芯片",
+    "集成电路测试服务",
+    "FPGA与芯片设计",
+    "射频芯片设计技术",
+    "安全技术",
+    "主控芯片",
+    "固件开发",
+    "蓝牙模块"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "FPGA芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:17:20"
+}

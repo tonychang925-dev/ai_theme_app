@@ -1,0 +1,25 @@
+{
+  "stock_id": "688507",
+  "stock_name": "索辰科技",
+  "concept": "CAE软件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "CAE软件"
+  ],
+  "should": [
+    "工程仿真软件",
+    "仿真产品开发",
+    "自主知识产权",
+    "多学科仿真"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "CAE软件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:19:14"
+}

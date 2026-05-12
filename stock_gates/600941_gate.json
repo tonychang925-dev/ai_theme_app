@@ -1,0 +1,46 @@
+{
+  "stock_id": "600941",
+  "stock_name": "中国移动",
+  "concept": "通信信息服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "通信信息服务",
+    "政企业务",
+    "5G网络",
+    "云计算"
+  ],
+  "should": [
+    "个人业务",
+    "家庭业务",
+    "新兴业务",
+    "IDC",
+    "AI算力",
+    "DICT",
+    "物联网",
+    "智慧家庭",
+    "千兆宽带",
+    "FTTR全光组网"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "通信信息服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "政企业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "5G网络",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云计算",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:31:39"
+}

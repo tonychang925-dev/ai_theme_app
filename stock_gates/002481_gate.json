@@ -1,0 +1,36 @@
+{
+  "stock_id": "002481",
+  "stock_name": "双塔食品",
+  "concept": "豌豆蛋白加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "豌豆蛋白",
+    "植物肉"
+  ],
+  "should": [
+    "膳食纤维",
+    "粉丝",
+    "行业内规模最大的粉丝生产企业",
+    "龙口粉丝龙头企业",
+    "豌豆蛋白加工",
+    "生物发酵工艺",
+    "干法工艺",
+    "新干法工艺",
+    "超微粉碎工艺",
+    "固体饮料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "豌豆蛋白",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "植物肉",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:43:51"
+}

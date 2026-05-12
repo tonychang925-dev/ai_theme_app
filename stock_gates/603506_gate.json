@@ -1,0 +1,46 @@
+{
+  "stock_id": "603506",
+  "stock_name": "南都物业",
+  "concept": "物业服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "住宅",
+    "商写",
+    "城市服务",
+    "长三角区域"
+  ],
+  "should": [
+    "交通枢纽",
+    "园区",
+    "学校",
+    "医院",
+    "文旅",
+    "公建",
+    "市政环卫",
+    "江浙沪皖",
+    "社区零售",
+    "到家服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "住宅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商写",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "长三角区域",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:51:33"
+}

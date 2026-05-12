@@ -1,0 +1,33 @@
+{
+  "stock_id": "002328",
+  "stock_name": "新朋股份",
+  "concept": "机电零部件制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "机电零部件制造",
+    "汽车零部件"
+  ],
+  "should": [
+    "储能配套产品",
+    "数据中心机柜",
+    "汽车制造",
+    "储能",
+    "数据中心",
+    "汽车零部件供应商",
+    "储能配套产品供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "机电零部件制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:35:34"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "301584",
+  "stock_name": "建发致新",
+  "concept": "医疗器械流通",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医疗器械直销",
+    "医疗器械分销",
+    "血管介入器械"
+  ],
+  "should": [
+    "外科器械",
+    "IVD",
+    "医疗设备",
+    "心血管介入器械",
+    "神经介入器械",
+    "外周血管介入器械",
+    "医疗器械流通",
+    "平台化架构设计",
+    "条码解析算法"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医疗器械直销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗器械分销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "血管介入器械",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:06:37"
+}

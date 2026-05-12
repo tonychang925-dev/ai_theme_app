@@ -1,0 +1,33 @@
+{
+  "stock_id": "688510",
+  "stock_name": "航亚科技",
+  "concept": "航空医疗零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "压气机叶片",
+    "医疗骨科关节"
+  ],
+  "should": [
+    "整体叶盘",
+    "环形件",
+    "胫骨托",
+    "精密机加工",
+    "分层复合铣",
+    "叶型双面喷丸强化",
+    "惯性摩擦焊接"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "压气机叶片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗骨科关节",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:19:23"
+}

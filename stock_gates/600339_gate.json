@@ -1,0 +1,48 @@
+{
+  "stock_id": "600339",
+  "stock_name": "中油工程",
+  "concept": "石油工程建设",
+  "strategy_type": "industry_chain",
+  "must": [
+    "石油工程建设",
+    "油气田地面工程",
+    "管道与储运工程",
+    "炼油与化工工程",
+    "石油天然气基础设施"
+  ],
+  "should": [
+    "环境工程",
+    "化工新材料项目",
+    "清洁能源项目",
+    "项目管理",
+    "模块化安装",
+    "数字化建设",
+    "设计咨询"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "石油工程建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "油气田地面工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "管道与储运工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "炼油与化工工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "石油天然气基础设施",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:15:38"
+}

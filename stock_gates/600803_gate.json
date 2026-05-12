@@ -1,0 +1,46 @@
+{
+  "stock_id": "600803",
+  "stock_name": "新奥股份",
+  "concept": "天然气一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "天然气一体化",
+    "天然气零售",
+    "天然气批发",
+    "城市燃气"
+  ],
+  "should": [
+    "综合能源业务",
+    "工程安装业务",
+    "燃气具销售",
+    "海外天然气开发",
+    "煤基清洁能源",
+    "舟山LNG接收站",
+    "工业用气",
+    "电厂用气",
+    "交通能源",
+    "煤炭业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "天然气一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天然气零售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天然气批发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市燃气",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:28:14"
+}

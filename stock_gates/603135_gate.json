@@ -1,0 +1,34 @@
+{
+  "stock_id": "603135",
+  "stock_name": "中重科技",
+  "concept": "型钢带钢智能装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "型钢带钢智能装备",
+    "热轧型钢智能装备及生产线",
+    "带钢智能装备及生产线"
+  ],
+  "should": [
+    "备品备件",
+    "金属轧制环节",
+    "钢铁行业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "型钢带钢智能装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热轧型钢智能装备及生产线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "带钢智能装备及生产线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:44:43"
+}

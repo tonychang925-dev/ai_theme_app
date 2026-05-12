@@ -1,0 +1,41 @@
+{
+  "stock_id": "603280",
+  "stock_name": "南方路机",
+  "concept": "绿色循环建材装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程搅拌设备",
+    "原生骨料加工处理设备",
+    "骨料资源化再生处理设备"
+  ],
+  "should": [
+    "泥处理产品线",
+    "绿色循环建材装备",
+    "移动破碎设备",
+    "数字化智控系统",
+    "汇聚沥青混合料生产经营管理系统",
+    "智能票据打印分拣系统",
+    "物联网+仓储智能远程监测系统",
+    "物联网+设备远程智能体检中心",
+    "建筑垃圾资源化",
+    "建筑废弃物资源化利用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程搅拌设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原生骨料加工处理设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "骨料资源化再生处理设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:47:59"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "300897",
+  "stock_name": "山科智能",
+  "concept": "智慧水务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能水表"
+  ],
+  "should": [
+    "自动抄表系统",
+    "传感技术",
+    "通信技术",
+    "边缘计算技术",
+    "电磁超声技术",
+    "智慧水务",
+    "智慧水利",
+    "城镇供水",
+    "农村供水",
+    "智能水表计量领先"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能水表",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:48:15"
+}

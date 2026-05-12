@@ -1,0 +1,46 @@
+{
+  "stock_id": "002659",
+  "stock_name": "凯文教育",
+  "concept": "K12教育服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "K12学校运营及托管",
+    "职业教育",
+    "海淀凯文学校",
+    "朝阳凯文学校"
+  ],
+  "should": [
+    "西山滑雪场",
+    "AP课程",
+    "IGCSE和A-Level课程",
+    "IBDP项目",
+    "海科职教",
+    "上海奉贤区博华双语学校",
+    "K12教育服务",
+    "培训服务",
+    "素质教育课程",
+    "教育咨询服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "K12学校运营及托管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "职业教育",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海淀凯文学校",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "朝阳凯文学校",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:51:57"
+}

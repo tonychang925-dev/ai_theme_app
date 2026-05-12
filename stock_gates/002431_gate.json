@@ -1,0 +1,35 @@
+{
+  "stock_id": "002431",
+  "stock_name": "棕榈股份",
+  "concept": "园林工程",
+  "strategy_type": "industry_chain",
+  "must": [
+    "园林绿化工程",
+    "景观设计"
+  ],
+  "should": [
+    "花卉苗木种植",
+    "园林工程",
+    "公园",
+    "道路绿化",
+    "绿色建筑",
+    "城市基础设施",
+    "智能建筑",
+    "数字化技术",
+    "新型基础设施建设"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "园林绿化工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "景观设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:41:18"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "002090",
+  "stock_name": "金智科技",
+  "concept": "电气自动化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧能源",
+    "电厂快切",
+    "保护及ECMS系统",
+    "新能源风电",
+    "光伏"
+  ],
+  "should": [
+    "继电保护",
+    "5G故障自愈",
+    "分布式能源协同控制",
+    "电气自动化",
+    "智能监控",
+    "智能运维",
+    "电力自动化技术",
+    "5G",
+    "物联网",
+    "大数据"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧能源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电厂快切",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "保护及ECMS系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源风电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:22:34"
+}

@@ -1,0 +1,39 @@
+{
+  "stock_id": "300174",
+  "stock_name": "元力股份",
+  "concept": "木质活性炭龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "木质活性炭龙头",
+    "国内产能最大的木质炭龙头",
+    "木质活性炭"
+  ],
+  "should": [
+    "硅酸钠",
+    "白炭黑",
+    "硅胶",
+    "超级电容炭",
+    "碱活化法",
+    "干法生产",
+    "自行研发技术",
+    "大气污染净化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "木质活性炭龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内产能最大的木质炭龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "木质活性炭",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:16:12"
+}

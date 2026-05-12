@@ -1,0 +1,36 @@
+{
+  "stock_id": "002722",
+  "stock_name": "物产金轮",
+  "concept": "纺织梳理器材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "纺织梳理器材",
+    "金属针布"
+  ],
+  "should": [
+    "弹性盖板针布",
+    "带条针布",
+    "固定盖板针布",
+    "分梳辊",
+    "整体锡林",
+    "不锈钢装饰板",
+    "特种钢丝",
+    "纺织纤维梳理",
+    "电梯",
+    "家电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "纺织梳理器材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金属针布",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:54:48"
+}

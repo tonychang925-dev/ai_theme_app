@@ -1,0 +1,45 @@
+{
+  "stock_id": "300953",
+  "stock_name": "震裕科技",
+  "concept": "精密模具综合方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密模具综合方案",
+    "精密级进冲压模具",
+    "电机铁芯",
+    "锂电池精密机构件"
+  ],
+  "should": [
+    "异步电机高压压铸工艺",
+    "离心压铸工艺",
+    "模内喷胶常温固化工艺",
+    "铁芯叠片轻薄化技术",
+    "汽车",
+    "家电",
+    "工业工控",
+    "动力电池",
+    "新能源汽车驱动电机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密模具综合方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密级进冲压模具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电机铁芯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂电池精密机构件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:50:37"
+}

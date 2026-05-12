@@ -1,0 +1,40 @@
+{
+  "stock_id": "300095",
+  "stock_name": "华伍股份",
+  "concept": "工业制动系统龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国内工业制动器行业龙头",
+    "风电制动系统领域行业龙头",
+    "工业制动系统龙头"
+  ],
+  "should": [
+    "主轴制动器",
+    "偏航制动器",
+    "液压锁定销",
+    "自主知识产权",
+    "固件开发",
+    "风电设备",
+    "重型起重运输设备",
+    "工程机械",
+    "轨道交通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国内工业制动器行业龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电制动系统领域行业龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业制动系统龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:13:07"
+}

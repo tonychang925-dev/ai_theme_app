@@ -1,0 +1,36 @@
+{
+  "stock_id": "300968",
+  "stock_name": "格林精密",
+  "concept": "智能终端精密结构件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能终端精密结构件",
+    "精密结构件"
+  ],
+  "should": [
+    "精密模具",
+    "智能家居",
+    "智能手机",
+    "平板电脑",
+    "可穿戴设备",
+    "模具设计制造",
+    "注塑成型",
+    "CNC成型",
+    "冲压成型",
+    "表面处理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能终端精密结构件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密结构件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:51:13"
+}

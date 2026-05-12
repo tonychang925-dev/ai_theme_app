@@ -1,0 +1,46 @@
+{
+  "stock_id": "688580",
+  "stock_name": "伟思医疗",
+  "concept": "康复医疗器械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "康复医疗器械",
+    "电刺激类",
+    "磁刺激类",
+    "康复机器人"
+  ],
+  "should": [
+    "电生理类",
+    "医美能量源产品",
+    "脉冲磁",
+    "皮秒激光",
+    "射频",
+    "塑形磁",
+    "妇产科",
+    "盆底康复中心",
+    "康复科",
+    "精神科"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "康复医疗器械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电刺激类",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磁刺激类",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "康复机器人",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:21:18"
+}

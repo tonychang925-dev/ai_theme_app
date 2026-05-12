@@ -1,0 +1,30 @@
+{
+  "stock_id": "002945",
+  "stock_name": "华林证券",
+  "concept": "投资银行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "投资银行"
+  ],
+  "should": [
+    "财富管理",
+    "资产管理",
+    "自营业务",
+    "股权业务",
+    "IPO",
+    "再融资",
+    "并购重组",
+    "债券",
+    "新三板"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "投资银行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:04:26"
+}

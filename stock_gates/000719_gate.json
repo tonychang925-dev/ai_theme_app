@@ -1,0 +1,45 @@
+{
+  "stock_id": "000719",
+  "stock_name": "中原传媒",
+  "concept": "教育出版龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "教材教辅出版",
+    "教育服务",
+    "数字教育",
+    "数字出版"
+  ],
+  "should": [
+    "大众出版",
+    "专业出版",
+    "新兴媒体",
+    "云书网",
+    "中国手工创意产业数字服务平台",
+    "大象考试与教学测评服务系统",
+    "中教通智慧课堂",
+    "数字出版应用智能部署重点实验室",
+    "数字印刷全线系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "教材教辅出版",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "教育服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字教育",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字出版",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:02:06"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "605128",
+  "stock_name": "上海沿浦",
+  "concept": "汽车座椅骨架",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车座椅骨架",
+    "滑轨",
+    "东风李尔系核心供应商"
+  ],
+  "should": [
+    "汽车门模",
+    "塑料电子模块",
+    "铜排",
+    "汽车天窗导轨",
+    "新能源电池包",
+    "安全系统",
+    "冲压工艺",
+    "焊接工艺",
+    "模具开发技术",
+    "激光焊接设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车座椅骨架",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "滑轨",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "东风李尔系核心供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:02:07"
+}

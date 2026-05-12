@@ -1,0 +1,38 @@
+{
+  "stock_id": "002885",
+  "stock_name": "京泉华",
+  "concept": "磁性元器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "磁性元器件",
+    "电源",
+    "特种变压器"
+  ],
+  "should": [
+    "新能源汽车车规级电磁元件设计平台",
+    "5G通信网能机械+智能管理",
+    "低成本导热绝缘材料",
+    "光伏及储能",
+    "新能源汽车电子",
+    "消费类电子",
+    "专业供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "磁性元器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种变压器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:01:42"
+}

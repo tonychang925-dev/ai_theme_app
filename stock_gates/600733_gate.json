@@ -1,0 +1,51 @@
+{
+  "stock_id": "600733",
+  "stock_name": "北汽蓝谷",
+  "concept": "新能源汽车",
+  "strategy_type": "industry_chain",
+  "must": [
+    "极狐",
+    "BEIJING",
+    "华为",
+    "三电核心技术",
+    "达尔文系统"
+  ],
+  "should": [
+    "麦格纳",
+    "阿尔法S华为HI版",
+    "SK",
+    "西门子",
+    "滴滴",
+    "EC系列",
+    "EU系列",
+    "EX系列",
+    "阿尔法T",
+    "阿尔法S"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "极狐",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "BEIJING",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "华为",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三电核心技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "达尔文系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:26:14"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300922",
+  "stock_name": "天秦装备",
+  "concept": "军品防护核心供应商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "军品防护核心供应商",
+    "装备防护领域的核心供应商",
+    "专用防护装置"
+  ],
+  "should": [
+    "弹药防护箱（筒）",
+    "助推器防护箱",
+    "集装托盘",
+    "枪、弹用零部件",
+    "高分子复合材料加工应用技术",
+    "金属材料制品加工应用技术",
+    "工程塑料材料替代传统防护材料技术",
+    "装备零部件",
+    "陆、海、空多用途防务装备防护",
+    "弹药贮运防护"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "军品防护核心供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "装备防护领域的核心供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "专用防护装置",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:49:20"
+}

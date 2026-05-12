@@ -1,0 +1,51 @@
+{
+  "stock_id": "000963",
+  "stock_name": "华东医药",
+  "concept": "医药工业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药工业",
+    "慢性肾病",
+    "移植免疫",
+    "内分泌",
+    "消化系统"
+  ],
+  "should": [
+    "ADC",
+    "单抗开发",
+    "多抗开发",
+    "PEG修饰药物",
+    "GLP-1日制剂",
+    "GLP-1周制剂",
+    "GLP-1口服制剂",
+    "SGLT2",
+    "DPP4",
+    "胰岛素及类似物"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医药工业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "慢性肾病",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移植免疫",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "内分泌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "消化系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:11:25"
+}

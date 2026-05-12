@@ -1,0 +1,36 @@
+{
+  "stock_id": "301319",
+  "stock_name": "唯特偶",
+  "concept": "微电子焊接材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "微电子焊接材料",
+    "锡膏"
+  ],
+  "should": [
+    "焊锡丝",
+    "焊锡条",
+    "助焊剂",
+    "清洗剂",
+    "超细粒度锡膏焊接材料",
+    "低温合金材料设计",
+    "锡膏出货量全球前三强",
+    "助焊剂产销量国内排名第二",
+    "消费电子",
+    "LED"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "微电子焊接材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锡膏",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:02:48"
+}

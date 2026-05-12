@@ -1,0 +1,33 @@
+{
+  "stock_id": "001300",
+  "stock_name": "三柏硕",
+  "concept": "蹦床制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "蹦床制造",
+    "蹦床"
+  ],
+  "should": [
+    "健身器材",
+    "休闲运动器材",
+    "户外个人运动",
+    "室内锻炼",
+    "全国最大的蹦床生产企业",
+    "外销为主",
+    "全球最大健身器材出口国"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "蹦床制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蹦床",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:15:37"
+}

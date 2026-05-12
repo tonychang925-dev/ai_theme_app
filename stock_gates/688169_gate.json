@@ -1,0 +1,36 @@
+{
+  "stock_id": "688169",
+  "stock_name": "石头科技",
+  "concept": "智能清洁机器人",
+  "strategy_type": "industry_chain",
+  "must": [
+    "石头智能扫地机器人",
+    "智能洗地机"
+  ],
+  "should": [
+    "手持吸尘器",
+    "商用清洁机器人",
+    "小米智能扫地机器人",
+    "小米手持无线吸尘器",
+    "LDS SLAM激光雷达技术",
+    "SLAM算法",
+    "聚合物锂电池",
+    "多传感器融合技术",
+    "委托加工",
+    "轻资产运营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "石头智能扫地机器人",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能洗地机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:10:30"
+}

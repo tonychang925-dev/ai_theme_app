@@ -1,0 +1,41 @@
+{
+  "stock_id": "301380",
+  "stock_name": "挖金客",
+  "concept": "移动互联网信息服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "增值电信服务",
+    "移动信息化服务",
+    "移动营销服务"
+  ],
+  "should": [
+    "大数据处理分析",
+    "机器智能运算",
+    "中国移动",
+    "卓望信息",
+    "腾讯云",
+    "携程",
+    "国家电网",
+    "酷狗",
+    "去哪儿网",
+    "百度网讯"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "增值电信服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动信息化服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动营销服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:04:23"
+}

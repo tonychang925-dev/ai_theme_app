@@ -1,0 +1,31 @@
+{
+  "stock_id": "000407",
+  "stock_name": "胜利股份",
+  "concept": "清洁能源服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "城市燃气"
+  ],
+  "should": [
+    "CNG母站",
+    "LNG加工厂",
+    "CNG加气站",
+    "清洁能源服务",
+    "工业燃料",
+    "化工原料",
+    "发电",
+    "工业锅炉",
+    "调峰电厂",
+    "热电联产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "城市燃气",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T16:51:40"
+}

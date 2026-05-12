@@ -1,0 +1,39 @@
+{
+  "stock_id": "002846",
+  "stock_name": "英联股份",
+  "concept": "金属易开盖",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金属易开盖",
+    "金属易拉盖",
+    "金属易撕盖"
+  ],
+  "should": [
+    "低耗材高强度二层白瓷涂料结构",
+    "易开盖涂层技术",
+    "食品（含干粉）",
+    "饮料",
+    "日化用品",
+    "A股首家易开盖企业",
+    "国家级专精特新小巨人企业",
+    "行业国际标准制定主导单位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金属易开盖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金属易拉盖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金属易撕盖",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:59:52"
+}

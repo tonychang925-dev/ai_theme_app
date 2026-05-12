@@ -1,0 +1,51 @@
+{
+  "stock_id": "003012",
+  "stock_name": "东鹏控股",
+  "concept": "陶瓷十强企业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "瓷砖",
+    "中国陶瓷十强企业",
+    "岩板",
+    "大板",
+    "抛釉砖"
+  ],
+  "should": [
+    "卫生陶瓷",
+    "中板",
+    "地铺石",
+    "智能马桶",
+    "智能浴室柜",
+    "绿色低碳技术",
+    "数字化智能化技术",
+    "清洁能源应用",
+    "房地产",
+    "建筑装饰"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "瓷砖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中国陶瓷十强企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "岩板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "抛釉砖",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:07:30"
+}

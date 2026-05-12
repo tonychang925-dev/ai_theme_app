@@ -1,0 +1,36 @@
+{
+  "stock_id": "600126",
+  "stock_name": "杭钢股份",
+  "concept": "钢铁+数字经济",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钢铁生产",
+    "贸易流通"
+  ],
+  "should": [
+    "数字经济产业",
+    "热卷",
+    "焦炭",
+    "优特钢",
+    "汽车钢",
+    "深冲钢",
+    "电池壳钢",
+    "高碳铬轴承钢",
+    "超高强复相钢",
+    "超纯净工业纯铁"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钢铁生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "贸易流通",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:09:59"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "600693",
+  "stock_name": "东百集团",
+  "concept": "商业零售+仓储物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商业零售+仓储物流",
+    "商业零售",
+    "仓储物流"
+  ],
+  "should": [
+    "东百中心",
+    "兰州中心",
+    "自营",
+    "联营",
+    "租赁",
+    "投-建-招-退-管",
+    "轻资产运营",
+    "闭环运作",
+    "电商",
+    "快递快运"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商业零售+仓储物流",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商业零售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "仓储物流",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:25:05"
+}

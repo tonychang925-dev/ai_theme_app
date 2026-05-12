@@ -1,0 +1,40 @@
+{
+  "stock_id": "300723",
+  "stock_name": "一品红",
+  "concept": "儿童药与慢病药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特色儿童药",
+    "创新慢病药",
+    "AR882"
+  ],
+  "should": [
+    "生物基因疫苗",
+    "盐酸克林霉素棕榈酸酯分散片",
+    "国家级企业博士（后）科研工作站",
+    "创新药技术产业转化中心",
+    "URAT1抑制剂",
+    "降尿酸药物研发",
+    "高尿酸血症",
+    "痛风",
+    "痛风石"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特色儿童药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "创新慢病药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AR882",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:40:17"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "003031",
+  "stock_name": "中瓷电子",
+  "concept": "电子陶瓷龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子陶瓷龙头",
+    "电子陶瓷系列产品",
+    "电子陶瓷外壳制造工艺",
+    "精密陶瓷零部件制造工艺"
+  ],
+  "should": [
+    "氮化镓通信基站射频芯片与器件",
+    "碳化硅功率模块及其应用",
+    "氮化镓射频微波器件技术",
+    "碳化硅功率芯片技术",
+    "5G通信基站",
+    "新能源汽车",
+    "工业电源",
+    "新能源逆变器",
+    "智能电网",
+    "轨道交通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子陶瓷龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子陶瓷系列产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子陶瓷外壳制造工艺",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密陶瓷零部件制造工艺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:08:24"
+}

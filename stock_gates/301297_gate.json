@@ -1,0 +1,36 @@
+{
+  "stock_id": "301297",
+  "stock_name": "富乐德",
+  "concept": "泛半导体精密洗净",
+  "strategy_type": "industry_chain",
+  "must": [
+    "泛半导体精密洗净",
+    "半导体设备洗净服务",
+    "显示面板设备清洗服务"
+  ],
+  "should": [
+    "半导体设备维修服务",
+    "陶瓷熔射再生",
+    "阳极氧化再生",
+    "物理清洗",
+    "化学清洗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "泛半导体精密洗净",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体设备洗净服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "显示面板设备清洗服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:02:03"
+}

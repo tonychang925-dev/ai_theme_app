@@ -1,0 +1,36 @@
+{
+  "stock_id": "605180",
+  "stock_name": "华生科技",
+  "concept": "塑胶复合材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "拉丝气垫材料",
+    "充气游艇材料"
+  ],
+  "should": [
+    "五层一体贴合技术",
+    "超宽幅大隔距经编间隔织物",
+    "高耐磨易去污经编水池布",
+    "塑胶复合材料",
+    "柔性材料",
+    "篷盖材料",
+    "灯箱广告材料",
+    "划水板",
+    "体操垫",
+    "充气游艇"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "拉丝气垫材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "充气游艇材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:02:40"
+}

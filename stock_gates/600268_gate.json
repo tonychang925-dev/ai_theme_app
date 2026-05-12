@@ -1,0 +1,50 @@
+{
+  "stock_id": "600268",
+  "stock_name": "国电南自",
+  "concept": "电力自动化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力自动化",
+    "电网自动化",
+    "电厂及工业自动化",
+    "轨道交通自动化",
+    "信息与安全技术"
+  ],
+  "should": [
+    "电力电子",
+    "电网自动化产品",
+    "电厂自动化产品",
+    "水电自动化产品",
+    "轨道交通自动化产品",
+    "信息与安全技术产品服务",
+    "新能源和输变电系统集成业务",
+    "电力工控全国产化替代",
+    "电力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力自动化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电网自动化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电厂及工业自动化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轨道交通自动化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信息与安全技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:13:34"
+}

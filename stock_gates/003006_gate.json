@@ -1,0 +1,29 @@
+{
+  "stock_id": "003006",
+  "stock_name": "百亚股份",
+  "concept": "一次性卫生用品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "卫生巾"
+  ],
+  "should": [
+    "婴儿纸尿裤",
+    "成人失禁用品",
+    "一次性卫生用品",
+    "深度分销模式",
+    "超声波工艺",
+    "女性经期护理",
+    "婴儿护理",
+    "成人失禁护理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "卫生巾",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:07:07"
+}

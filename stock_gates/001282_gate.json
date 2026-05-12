@@ -1,0 +1,41 @@
+{
+  "stock_id": "001282",
+  "stock_name": "三联锻造",
+  "concept": "汽车锻造零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车锻造零部件",
+    "轮毂轴承类锻造件",
+    "高压共轨类锻造件",
+    "球头拉杆类锻造件"
+  ],
+  "should": [
+    "转向节类锻造件",
+    "节叉类锻造件",
+    "轴类锻造件",
+    "锻件产品销售收入",
+    "受托加工服务收入"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车锻造零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轮毂轴承类锻造件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高压共轨类锻造件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "球头拉杆类锻造件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:15:08"
+}

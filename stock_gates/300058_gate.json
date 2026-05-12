@@ -1,0 +1,39 @@
+{
+  "stock_id": "300058",
+  "stock_name": "蓝色光标",
+  "concept": "营销传播",
+  "strategy_type": "industry_chain",
+  "must": [
+    "蓝色宇宙数字科技有限公司",
+    "虚拟人苏小妹",
+    "虚拟音乐人K"
+  ],
+  "should": [
+    "全案推广服务",
+    "全案广告代理",
+    "Google",
+    "Meta",
+    "Snapchat",
+    "Instagram",
+    "YouTube",
+    "营销传播"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "蓝色宇宙数字科技有限公司",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "虚拟人苏小妹",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "虚拟音乐人K",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:11:20"
+}

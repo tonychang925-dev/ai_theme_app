@@ -1,0 +1,46 @@
+{
+  "stock_id": "301489",
+  "stock_name": "思泉新材",
+  "concept": "散热解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "散热解决方案",
+    "石墨散热片",
+    "热管",
+    "均温板"
+  ],
+  "should": [
+    "导热垫片",
+    "导热凝胶",
+    "导热脂",
+    "阻燃垫片",
+    "气凝胶",
+    "云母",
+    "手机",
+    "笔记本电脑",
+    "平板电脑",
+    "可穿戴设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "散热解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "石墨散热片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "均温板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:05:35"
+}

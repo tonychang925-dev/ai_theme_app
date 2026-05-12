@@ -1,0 +1,46 @@
+{
+  "stock_id": "000950",
+  "stock_name": "重药控股",
+  "concept": "医药商业批发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全国性批发企业",
+    "医药商业批发",
+    "医药批发",
+    "药品"
+  ],
+  "should": [
+    "医疗器械",
+    "医药零售",
+    "中药饮片",
+    "医药商业",
+    "医药工业",
+    "仓储物流",
+    "研发",
+    "保健产品",
+    "供应链综合服务商",
+    "全国31个省（市、自治区）"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全国性批发企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药商业批发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药批发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "药品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:10:37"
+}

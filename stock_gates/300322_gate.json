@@ -1,0 +1,44 @@
+{
+  "stock_id": "300322",
+  "stock_name": "硕贝德",
+  "concept": "5G射频散热",
+  "strategy_type": "industry_chain",
+  "must": [
+    "射频技术",
+    "移动终端天线",
+    "基站天线",
+    "车载智能天线"
+  ],
+  "should": [
+    "散热组件",
+    "指纹识别模组",
+    "无线充电技术",
+    "5G射频散热",
+    "热管理技术",
+    "全球前五手机厂商供应商",
+    "国内主流基站设备商供应商",
+    "知名车企合格供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "射频技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动终端天线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "基站天线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载智能天线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:22:36"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "002831",
+  "stock_name": "裕同科技",
+  "concept": "包装整体解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "包装整体解决方案",
+    "消费电子包装",
+    "全球最大精品盒生产商"
+  ],
+  "should": [
+    "烟酒包装",
+    "环保纸塑包装",
+    "化妆品包装",
+    "苹果",
+    "小米",
+    "Meta",
+    "OPPO",
+    "VIVO",
+    "亚马逊",
+    "谷歌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "包装整体解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "消费电子包装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球最大精品盒生产商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:59:25"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "002111",
+  "stock_name": "威海广泰",
+  "concept": "高端智能装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "空港装备产业",
+    "应急救援装备产业",
+    "军工装备业务"
+  ],
+  "should": [
+    "消防救援装备",
+    "消防报警装备",
+    "移动医疗装备",
+    "民用无人机装备",
+    "空港装备",
+    "军用无人机装备",
+    "高端智能装备",
+    "客舱服务",
+    "机务服务",
+    "货运装卸"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "空港装备产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "应急救援装备产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "军工装备业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:23:57"
+}

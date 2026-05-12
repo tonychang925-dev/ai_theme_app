@@ -1,0 +1,34 @@
+{
+  "stock_id": "300694",
+  "stock_name": "蠡湖股份",
+  "concept": "涡轮增压器零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "涡轮增压器",
+    "压气机壳",
+    "涡轮壳"
+  ],
+  "should": [
+    "涡轮增压器零部件",
+    "汽车内燃机",
+    "涡轮增压器关键零部件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "涡轮增压器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "压气机壳",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涡轮壳",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:39:13"
+}

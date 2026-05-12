@@ -1,0 +1,41 @@
+{
+  "stock_id": "002840",
+  "stock_name": "华统股份",
+  "concept": "生猪一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生猪一体化",
+    "畜禽屠宰",
+    "屠宰加工"
+  ],
+  "should": [
+    "畜禽养殖",
+    "饲料加工",
+    "肉制品加工",
+    "饲料",
+    "生鲜猪肉",
+    "生鲜禽肉",
+    "金华火腿",
+    "区域经销",
+    "直销",
+    "长三角地区"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生猪一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "畜禽屠宰",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "屠宰加工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:59:38"
+}

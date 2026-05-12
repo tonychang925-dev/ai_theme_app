@@ -1,0 +1,32 @@
+{
+  "stock_id": "300511",
+  "stock_name": "雪榕生物",
+  "concept": "食用菌龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国内金针菇龙头",
+    "食用菌龙头"
+  ],
+  "should": [
+    "金针菇",
+    "真姬菇",
+    "现代生物技术",
+    "工业化生产方式",
+    "鲜品食用菌市场",
+    "日产能1140吨排名第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国内金针菇龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "食用菌龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:30:29"
+}

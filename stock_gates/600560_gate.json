@@ -1,0 +1,40 @@
+{
+  "stock_id": "600560",
+  "stock_name": "金自天正",
+  "concept": "工业自动化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业自动化",
+    "人工神经元网络",
+    "智能控制技术"
+  ],
+  "should": [
+    "工业自动化专用设备系统集成",
+    "工业机理模型库",
+    "轧钢过程动态控制",
+    "工业控制器",
+    "运动执行器",
+    "辅助电器",
+    "自动化软件",
+    "冶金",
+    "电力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业自动化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人工神经元网络",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能控制技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:21:10"
+}

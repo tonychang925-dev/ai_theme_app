@@ -1,0 +1,39 @@
+{
+  "stock_id": "605339",
+  "stock_name": "南侨食品",
+  "concept": "烘焙油脂领导者",
+  "strategy_type": "industry_chain",
+  "must": [
+    "烘焙油脂",
+    "冷冻面团"
+  ],
+  "should": [
+    "淡奶油",
+    "预烤焙产品",
+    "乳制品",
+    "馅料",
+    "烘焙油脂领导者",
+    "烘焙店",
+    "商超",
+    "餐饮",
+    "茶饮",
+    "咖啡"
+  ],
+  "not": [
+    "成立商超销售团队",
+    "成立餐饮茶饮销售团队"
+  ],
+  "evidence_refs": [
+    {
+      "term": "烘焙油脂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冷冻面团",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:03:55"
+}

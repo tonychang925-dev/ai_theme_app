@@ -1,0 +1,39 @@
+{
+  "stock_id": "688237",
+  "stock_name": "超卓航科",
+  "concept": "冷喷涂增材制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "冷喷涂增材制造",
+    "航空器维修再制造",
+    "定制化增材制造"
+  ],
+  "should": [
+    "冷喷涂固态增材制造技术",
+    "增减材一体化设备",
+    "机载设备维修",
+    "PBI冷喷涂用枪管国产化",
+    "武器制造",
+    "新能源汽车零部件",
+    "工业母机核心零部件",
+    "特种建筑行业上游产品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "冷喷涂增材制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航空器维修再制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "定制化增材制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:12:45"
+}

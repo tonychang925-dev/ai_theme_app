@@ -1,0 +1,39 @@
+{
+  "stock_id": "300657",
+  "stock_name": "弘信电子",
+  "concept": "柔性电路板制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "FPC",
+    "挠性印制电路板"
+  ],
+  "should": [
+    "柔性电路板制造",
+    "自主研发",
+    "产学研合作",
+    "智能手机",
+    "新能源汽车",
+    "汽车电子",
+    "医疗电子",
+    "工控设备",
+    "军工产品",
+    "mini LED"
+  ],
+  "not": [
+    "低轨卫星",
+    "内资PCB企业排名第15名"
+  ],
+  "evidence_refs": [
+    {
+      "term": "FPC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "挠性印制电路板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:37:21"
+}

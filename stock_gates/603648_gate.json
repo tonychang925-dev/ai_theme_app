@@ -1,0 +1,36 @@
+{
+  "stock_id": "603648",
+  "stock_name": "畅联股份",
+  "concept": "精益供应链管理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精益供应链管理",
+    "精益供应链管理服务"
+  ],
+  "should": [
+    "高科技电子",
+    "医疗器械和试剂",
+    "机械装备部件",
+    "进口食品和服饰等高端消费品",
+    "精益制造",
+    "信息技术",
+    "智慧物流",
+    "管家式服务",
+    "定制化服务",
+    "一体化综合物流服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精益供应链管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精益供应链管理服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:53:51"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "688680",
+  "stock_name": "海优新材",
+  "concept": "光伏胶膜",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏胶膜",
+    "EVA胶膜",
+    "POE胶膜"
+  ],
+  "should": [
+    "白色增效EVA胶膜",
+    "多层共挤POE胶膜",
+    "抗PID型EVA胶膜",
+    "光伏组件",
+    "薄片化技术",
+    "多层共挤技术",
+    "建筑领域",
+    "汽车领域",
+    "光伏非硅产业链中下游",
+    "与斯尔邦稳定合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏胶膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "EVA胶膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "POE胶膜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:23:49"
+}

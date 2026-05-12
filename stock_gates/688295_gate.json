@@ -1,0 +1,38 @@
+{
+  "stock_id": "688295",
+  "stock_name": "中复神鹰",
+  "concept": "高性能碳纤维",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高性能碳纤维",
+    "T700级碳纤维",
+    "T800级碳纤维",
+    "小丝束碳纤维"
+  ],
+  "should": [
+    "干喷湿纺技术",
+    "高性能小丝束领域市占率超50%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高性能碳纤维",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "T700级碳纤维",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "T800级碳纤维",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小丝束碳纤维",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:14:31"
+}

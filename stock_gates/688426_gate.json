@@ -1,0 +1,46 @@
+{
+  "stock_id": "688426",
+  "stock_name": "康为世纪",
+  "concept": "分子检测一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "分子检测酶原料",
+    "核酸保存试剂",
+    "核酸提取纯化试剂",
+    "分子诊断试剂盒"
+  ],
+  "should": [
+    "荧光定量PCR",
+    "基因测序",
+    "核酸质谱",
+    "酶原料结构改造",
+    "蛋白发酵纯化",
+    "克隆表达",
+    "活性检测",
+    "核酸保存技术",
+    "核酸提取纯化技术",
+    "分子检测一体化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "分子检测酶原料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核酸保存试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核酸提取纯化试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分子诊断试剂盒",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:18:13"
+}

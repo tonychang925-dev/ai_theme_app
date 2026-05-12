@@ -1,0 +1,31 @@
+{
+  "stock_id": "002067",
+  "stock_name": "景兴纸业",
+  "concept": "工业包装原纸",
+  "strategy_type": "industry_chain",
+  "must": [
+    "牛皮箱板纸"
+  ],
+  "should": [
+    "瓦楞原纸",
+    "白面牛卡纸",
+    "工业包装原纸",
+    "纸箱纸板",
+    "运输包装",
+    "电商包装",
+    "消费包装",
+    "环保政策趋严",
+    "优质原料短缺",
+    "海外产能布局"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "牛皮箱板纸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:21:18"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "001223",
+  "stock_name": "欧克科技",
+  "concept": "智能纸业装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能纸业装备",
+    "全自动抽取式纸巾生产线",
+    "一站式交钥匙服务提供商"
+  ],
+  "should": [
+    "口罩机",
+    "全自动折叠机",
+    "大回旋切纸机",
+    "小包机",
+    "中包机",
+    "储纸架",
+    "装箱机",
+    "输送控制系统",
+    "设备调试技术",
+    "自动化控制技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能纸业装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全自动抽取式纸巾生产线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一站式交钥匙服务提供商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:14:12"
+}

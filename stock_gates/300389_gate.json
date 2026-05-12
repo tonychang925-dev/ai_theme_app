@@ -1,0 +1,38 @@
+{
+  "stock_id": "300389",
+  "stock_name": "艾比森",
+  "concept": "LED显示与储能",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球LED显示领先服务商",
+    "LED大屏显示产品",
+    "专业视听解决方案"
+  ],
+  "should": [
+    "储能产品",
+    "倒装COB封装技术",
+    "HDR 10核心算法",
+    "LED显示与储能",
+    "工商业储能",
+    "海外出口榜首",
+    "渠道商约4000多家"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球LED显示领先服务商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LED大屏显示产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "专业视听解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:25:14"
+}

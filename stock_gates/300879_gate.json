@@ -1,0 +1,32 @@
+{
+  "stock_id": "300879",
+  "stock_name": "大叶股份",
+  "concept": "割草机龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "割草机龙头",
+    "割草机"
+  ],
+  "should": [
+    "打草机/割灌机",
+    "高电压技术",
+    "其他动力机械及配件",
+    "全球电动工具及OPE制造商",
+    "国内割草机头部企业",
+    "与沃尔玛、家得宝等大型零售商合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "割草机龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "割草机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:47:19"
+}

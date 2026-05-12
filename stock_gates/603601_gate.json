@@ -1,0 +1,36 @@
+{
+  "stock_id": "603601",
+  "stock_name": "再升科技",
+  "concept": "微纤维玻璃棉龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "微纤维玻璃棉",
+    "玻璃纤维滤纸"
+  ],
+  "should": [
+    "VIP芯材",
+    "AGM隔板",
+    "熔喷材料",
+    "PTFE膜",
+    "真空绝热板",
+    "空气净化设备",
+    "微纤维玻璃棉龙头",
+    "汽车",
+    "航天",
+    "核电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "微纤维玻璃棉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "玻璃纤维滤纸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:53:00"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "300427",
+  "stock_name": "红相股份",
+  "concept": "电力设备与新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力设备状态检测监测设备",
+    "电力变压器",
+    "铁路牵引变压器",
+    "电力一二次融合开关"
+  ],
+  "should": [
+    "标准电测装置",
+    "射频/微波器件",
+    "混合集成电路",
+    "组件",
+    "子系统",
+    "发电厂",
+    "输变配电网",
+    "铁路与轨道交通供电系统",
+    "太阳能发电站",
+    "风力发电站"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力设备状态检测监测设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力变压器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铁路牵引变压器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力一二次融合开关",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:27:01"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "600189",
+  "stock_name": "泉阳泉",
+  "concept": "矿泉水与绿化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "矿泉水主业",
+    "高端天然含气矿泉水",
+    "婴幼儿专用水",
+    "高端天然含气矿泉水项目"
+  ],
+  "should": [
+    "园林绿化",
+    "木门家居",
+    "人参元液",
+    "野生蓝莓汁",
+    "柔性生产线项目",
+    "桶装水生产线项目",
+    "稳固吉林",
+    "两翼齐飞",
+    "辐射全国",
+    "分销渠道"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "矿泉水主业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端天然含气矿泉水",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "婴幼儿专用水",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端天然含气矿泉水项目",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:11:22"
+}

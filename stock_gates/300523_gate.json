@@ -1,0 +1,46 @@
+{
+  "stock_id": "300523",
+  "stock_name": "辰安科技",
+  "concept": "公共安全科技",
+  "strategy_type": "industry_chain",
+  "must": [
+    "公共安全软件",
+    "公共安全装备",
+    "公共安全服务",
+    "突发事件预测预警"
+  ],
+  "should": [
+    "数字预案",
+    "灾害模拟仿真",
+    "城市生命线风险评估",
+    "公共安全应急平台业务开创者",
+    "城市生命线概念提出者",
+    "‘清华方案-合肥模式’推广者",
+    "辅助决策",
+    "模拟演练",
+    "多方协同应急",
+    "应急决策指挥可视化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "公共安全软件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公共安全装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公共安全服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "突发事件预测预警",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:31:18"
+}

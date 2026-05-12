@@ -1,0 +1,41 @@
+{
+  "stock_id": "002299",
+  "stock_name": "圣农发展",
+  "concept": "白羽肉鸡龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "肉鸡饲养",
+    "肉鸡屠宰加工",
+    "鸡肉销售"
+  ],
+  "should": [
+    "饲料加工",
+    "种鸡养殖",
+    "种蛋孵化",
+    "深加工",
+    "冰鲜/冷冻鸡肉",
+    "深加工肉制品",
+    "圣泽901白羽肉鸡配套系",
+    "白羽肉鸡龙头",
+    "自养自宰一体化",
+    "自研种源、自繁、自养、自宰"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "肉鸡饲养",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "肉鸡屠宰加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "鸡肉销售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:34:12"
+}

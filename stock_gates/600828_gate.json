@@ -1,0 +1,36 @@
+{
+  "stock_id": "600828",
+  "stock_name": "茂业商业",
+  "concept": "商业零售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商业零售",
+    "酒店业务"
+  ],
+  "should": [
+    "物业租赁",
+    "茂业天地",
+    "茂业百货",
+    "仁和春天",
+    "人民商场",
+    "维多利",
+    "茂乐惠APP",
+    "微信小程序",
+    "成都茂业JW万豪酒店",
+    "直播"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商业零售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "酒店业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:28:59"
+}

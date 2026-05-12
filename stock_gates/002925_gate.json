@@ -1,0 +1,41 @@
+{
+  "stock_id": "002925",
+  "stock_name": "盈趣科技",
+  "concept": "智能制造平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "UDM模式",
+    "ODM智能制造模式",
+    "创新消费电子"
+  ],
+  "should": [
+    "智能控制部件",
+    "电子烟精密塑胶部件",
+    "家用雕刻机",
+    "游戏控制器",
+    "车载显示器",
+    "植物种植器",
+    "UMS联合管理平台",
+    "ITTS测试系统",
+    "TDE测试方案",
+    "盈趣云架构"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "UDM模式",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ODM智能制造模式",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "创新消费电子",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:03:42"
+}

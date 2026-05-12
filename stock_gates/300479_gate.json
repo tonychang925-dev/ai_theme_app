@@ -1,0 +1,47 @@
+{
+  "stock_id": "300479",
+  "stock_name": "神思电子",
+  "concept": "身份认证与AI",
+  "strategy_type": "industry_chain",
+  "must": [
+    "身份认证与AI",
+    "人工智能云服务",
+    "神思云脑认知计算服务平台"
+  ],
+  "should": [
+    "身份证验证终端",
+    "接口软件",
+    "行业应用软件",
+    "银医自助设备",
+    "便捷支付终端",
+    "智能聚合认证支付终端",
+    "边缘计算模组",
+    "边缘计算服务器",
+    "护幼检测机器人",
+    "行业服务机器人"
+  ],
+  "not": [
+    "中国银行",
+    "建设银行",
+    "邮储银行",
+    "中国联通",
+    "中国电信"
+  ],
+  "evidence_refs": [
+    {
+      "term": "身份认证与AI",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人工智能云服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "神思云脑认知计算服务平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:29:18"
+}

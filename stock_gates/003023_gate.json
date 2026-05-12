@@ -1,0 +1,46 @@
+{
+  "stock_id": "003023",
+  "stock_name": "彩虹集团",
+  "concept": "柔性取暖龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电热毯",
+    "电热毯行业龙头",
+    "电热暖手器",
+    "暖身贴"
+  ],
+  "should": [
+    "电热蚊香液",
+    "电热蚊香片",
+    "盘式蚊香",
+    "杀虫气雾剂",
+    "驱蚊贴",
+    "驱蚊液",
+    "双层螺旋发热线",
+    "发热线高性能熔融材料",
+    "卫生杀虫用品知名企业",
+    "柔性取暖龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电热毯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电热毯行业龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电热暖手器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "暖身贴",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:08:04"
+}

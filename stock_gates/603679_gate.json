@@ -1,0 +1,46 @@
+{
+  "stock_id": "603679",
+  "stock_name": "华体科技",
+  "concept": "智慧路灯运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧路灯运营",
+    "道路照明",
+    "智慧路灯",
+    "新基建运营"
+  ],
+  "should": [
+    "5G微基站",
+    "物联网",
+    "人工智能",
+    "LED研发",
+    "智能控制",
+    "停车管理",
+    "充电桩",
+    "文旅项目",
+    "与地方政府合营",
+    "与腾讯、联想合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧路灯运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "道路照明",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧路灯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新基建运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:54:35"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "600936",
+  "stock_name": "北投科技",
+  "concept": "智慧广电运营商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧广电运营商",
+    "数字电视业务",
+    "5G网络服务"
+  ],
+  "should": [
+    "数据专网业务",
+    "宽带业务",
+    "大数据",
+    "云计算",
+    "5G",
+    "高新视频",
+    "智慧政务",
+    "智慧医疗",
+    "智慧教育",
+    "智慧社区"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧广电运营商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字电视业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "5G网络服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:31:26"
+}

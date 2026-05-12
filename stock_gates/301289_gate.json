@@ -1,0 +1,35 @@
+{
+  "stock_id": "301289",
+  "stock_name": "国缆检测",
+  "concept": "线缆检测服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "线缆检测服务",
+    "电线电缆检测"
+  ],
+  "should": [
+    "光纤光缆检测",
+    "检验检测",
+    "设备计量",
+    "能力验证",
+    "专业培训",
+    "检查监造",
+    "标准制定",
+    "工厂审查",
+    "应用评估"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "线缆检测服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电线电缆检测",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:01:55"
+}

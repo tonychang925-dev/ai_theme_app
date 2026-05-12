@@ -1,0 +1,36 @@
+{
+  "stock_id": "301353",
+  "stock_name": "普莱得",
+  "concept": "电动工具ODM",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电动工具ODM",
+    "ODM供应商"
+  ],
+  "should": [
+    "电热类",
+    "喷涂类",
+    "钉枪类",
+    "吹吸类",
+    "研发设计",
+    "专利技术",
+    "固件开发",
+    "拆焊电子元件",
+    "清除油渍",
+    "溶解黏胶"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电动工具ODM",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ODM供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:03:31"
+}

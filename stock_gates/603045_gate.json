@@ -1,0 +1,40 @@
+{
+  "stock_id": "603045",
+  "stock_name": "福达合金",
+  "concept": "电接触材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密冷锻",
+    "电接触材料",
+    "触头材料"
+  ],
+  "should": [
+    "触头组件",
+    "复层触头",
+    "贵金属回收工艺",
+    "电接触系统整体解决方案领先者",
+    "自动化设备研发",
+    "风光储",
+    "新能源汽车",
+    "5G",
+    "智慧交通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密冷锻",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电接触材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "触头材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:42:05"
+}

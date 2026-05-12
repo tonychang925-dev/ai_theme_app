@@ -1,0 +1,54 @@
+{
+  "stock_id": "601985",
+  "stock_name": "中国核电",
+  "concept": "核电运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "核电运营",
+    "核电开发",
+    "核电投资",
+    "核电建设",
+    "核电运营管理"
+  ],
+  "should": [
+    "风能项目开发",
+    "太阳能项目开发",
+    "秦山核电公司",
+    "中核核电有限公司",
+    "安全稳定",
+    "低碳排放",
+    "高能量密度",
+    "低发电成本",
+    "高利用小时数",
+    "基荷能源"
+  ],
+  "not": [
+    "中国核电上市",
+    "收购中核汇能"
+  ],
+  "evidence_refs": [
+    {
+      "term": "核电运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核电开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核电投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核电建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核电运营管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:40:26"
+}

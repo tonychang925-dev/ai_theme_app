@@ -1,0 +1,39 @@
+{
+  "stock_id": "601886",
+  "stock_name": "江河集团",
+  "concept": "建筑医疗双主业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "幕墙",
+    "建筑装饰",
+    "BIPV幕墙"
+  ],
+  "should": [
+    "医疗健康",
+    "内装",
+    "眼科服务",
+    "薄膜电池",
+    "内装装配式技术",
+    "建筑幕墙",
+    "光伏建筑一体化",
+    "眼科医疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "幕墙",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑装饰",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "BIPV幕墙",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:39:29"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "688199",
+  "stock_name": "久日新材",
+  "concept": "光引发剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光引发剂"
+  ],
+  "should": [
+    "光刻胶专用光敏剂",
+    "自主研发创新",
+    "专利技术",
+    "UV涂料",
+    "UV油墨",
+    "UV胶粘剂",
+    "3D打印",
+    "电子胶",
+    "全国产量最大",
+    "品种最全的光引发剂生产供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光引发剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:11:32"
+}

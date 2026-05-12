@@ -1,0 +1,27 @@
+{
+  "stock_id": "600053",
+  "stock_name": "九鼎投资",
+  "concept": "私募股权投资",
+  "strategy_type": "industry_chain",
+  "must": [
+    "私募股权投资"
+  ],
+  "should": [
+    "确定性+成长性",
+    "行研驱动+按图索骥+属地开发",
+    "一定规模的收入和利润",
+    "商业模式可行性",
+    "同行业竞争优势",
+    "合理治理结构和高效团队"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "私募股权投资",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:07:58"
+}

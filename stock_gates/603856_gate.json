@@ -1,0 +1,29 @@
+{
+  "stock_id": "603856",
+  "stock_name": "东宏股份",
+  "concept": "工程管道总包商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程管道总包商"
+  ],
+  "should": [
+    "高分子塑料管道",
+    "改性塑料复合管道",
+    "重防腐金属管道",
+    "节能型热力管道",
+    "连接管件",
+    "数字化",
+    "信息化",
+    "智能化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程管道总包商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:57:32"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "301330",
+  "stock_name": "熵基科技",
+  "concept": "生物识别技术",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生物识别技术",
+    "多模态生物识别技术",
+    "计算机视觉",
+    "智慧出入口管理设备",
+    "智慧身份核验设备"
+  ],
+  "should": [
+    "指纹识别",
+    "掌静脉识别",
+    "面部识别",
+    "静脉识别",
+    "虹膜识别",
+    "声纹识别",
+    "射频",
+    "物联网",
+    "智能终端",
+    "行业应用软件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生物识别技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多模态生物识别技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "计算机视觉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧出入口管理设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧身份核验设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:03:14"
+}

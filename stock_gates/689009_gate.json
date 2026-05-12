@@ -1,0 +1,46 @@
+{
+  "stock_id": "689009",
+  "stock_name": "九号公司",
+  "concept": "智能短交通",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能短交通",
+    "电动平衡车",
+    "电动滑板车",
+    "两轮电动车"
+  ],
+  "should": [
+    "全地形车",
+    "配送机器人",
+    "割草机器人",
+    "电动卡丁车",
+    "机甲战车",
+    "智能共享滑板车",
+    "移动机器人",
+    "智能化技术",
+    "传感器",
+    "电池管理系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能短交通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电动平衡车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电动滑板车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "两轮电动车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:25:27"
+}

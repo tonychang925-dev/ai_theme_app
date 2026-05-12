@@ -1,0 +1,41 @@
+{
+  "stock_id": "000710",
+  "stock_name": "贝瑞基因",
+  "concept": "基因检测服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "基因检测服务",
+    "设备试剂销售",
+    "高通量测序技术"
+  ],
+  "should": [
+    "第三代测序技术",
+    "游离DNA多维度全基因组测序技术",
+    "贝比安",
+    "贝比安Plus",
+    "科诺安",
+    "贝全安",
+    "贝新安",
+    "莱思宁",
+    "全思宁",
+    "和全安"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "基因检测服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "设备试剂销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高通量测序技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:01:34"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "603861",
+  "stock_name": "白云电器",
+  "concept": "高低压成套设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高低压成套开关设备",
+    "高低压成套设备",
+    "中压柜",
+    "环网柜",
+    "GIS产品"
+  ],
+  "should": [
+    "电力电容器",
+    "互感器",
+    "干式非晶合金配电变压器",
+    "直流快速断路器",
+    "分布式配电终端DTU",
+    "电力指纹智能断路器",
+    "126kV及252kV GIS",
+    "直流支撑电容器",
+    "电网市场",
+    "轨道交通市场"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高低压成套开关设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高低压成套设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中压柜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环网柜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "GIS产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:57:45"
+}

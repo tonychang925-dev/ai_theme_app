@@ -1,0 +1,32 @@
+{
+  "stock_id": "300305",
+  "stock_name": "裕兴股份",
+  "concept": "功能聚酯薄膜",
+  "strategy_type": "industry_chain",
+  "must": [
+    "功能聚酯薄膜",
+    "特种功能聚酯薄膜"
+  ],
+  "should": [
+    "精密涂布加工产品",
+    "尺寸稳定性能",
+    "绝缘性能",
+    "耐热性能",
+    "耐候性能",
+    "光学性能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "功能聚酯薄膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种功能聚酯薄膜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:21:54"
+}

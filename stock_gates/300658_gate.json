@@ -1,0 +1,27 @@
+{
+  "stock_id": "300658",
+  "stock_name": "延江股份",
+  "concept": "卫生用品面层材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "卫生用品面层材料"
+  ],
+  "should": [
+    "PE膜",
+    "打孔热风无纺布",
+    "婴儿纸尿裤",
+    "女性卫生用品",
+    "成人失禁用品",
+    "擦拭巾"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "卫生用品面层材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:37:23"
+}

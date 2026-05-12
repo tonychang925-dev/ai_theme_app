@@ -1,0 +1,39 @@
+{
+  "stock_id": "000735",
+  "stock_name": "罗牛山",
+  "concept": "海南农业龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "海南农业龙头",
+    "生猪养殖",
+    "屠宰加工"
+  ],
+  "should": [
+    "冷链物流",
+    "房地产",
+    "教育服务",
+    "规模化养殖",
+    "集约化养殖",
+    "上游饲料采购",
+    "中游屠宰加工",
+    "下游批发零售"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "海南农业龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生猪养殖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "屠宰加工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:02:52"
+}

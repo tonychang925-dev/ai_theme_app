@@ -1,0 +1,45 @@
+{
+  "stock_id": "601888",
+  "stock_name": "中国中免",
+  "concept": "免税零售龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "免税零售龙头",
+    "离岛免税",
+    "海南自贸港政策",
+    "旅游零售"
+  ],
+  "should": [
+    "免税品销售",
+    "口岸免税",
+    "机场免税",
+    "港口免税",
+    "国内免税市场份额86%",
+    "全球旅游零售市场份额24.6%",
+    "品牌组合齐全",
+    "规模优势",
+    "综合服务能力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "免税零售龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "离岛免税",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海南自贸港政策",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "旅游零售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:39:33"
+}

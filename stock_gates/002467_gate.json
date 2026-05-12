@@ -1,0 +1,46 @@
+{
+  "stock_id": "002467",
+  "stock_name": "二六三",
+  "concept": "云服务提供商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "云企互通",
+    "云网互联",
+    "云端互动",
+    "云计算"
+  ],
+  "should": [
+    "云视频",
+    "云办公",
+    "企业直播",
+    "视频会议",
+    "电话会议",
+    "企业邮箱",
+    "IDC业务",
+    "3D虚拟直播企业直播3.0",
+    "国产信创解决方案",
+    "自建数据中心"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "云企互通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云网互联",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云端互动",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云计算",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:43:22"
+}

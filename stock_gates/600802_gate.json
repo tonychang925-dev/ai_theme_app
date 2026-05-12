@@ -1,0 +1,40 @@
+{
+  "stock_id": "600802",
+  "stock_name": "福建水泥",
+  "concept": "福建水泥龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "福建省最大的水泥生产企业",
+    "水泥",
+    "福建水泥龙头"
+  ],
+  "should": [
+    "熟料",
+    "核电水泥",
+    "海工水泥",
+    "装修水泥",
+    "散免蒸压特种水泥",
+    "新型干法熟料水泥生产线",
+    "智能物流系统",
+    "节能降碳技术",
+    "新材料、新技术、新装备创新应用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "福建省最大的水泥生产企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水泥",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "福建水泥龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:28:15"
+}

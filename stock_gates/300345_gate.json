@@ -1,0 +1,43 @@
+{
+  "stock_id": "300345",
+  "stock_name": "华民股份",
+  "concept": "光伏硅片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏硅片",
+    "多晶提纯硅锭",
+    "单晶硅棒",
+    "单晶硅片"
+  ],
+  "should": [
+    "光伏电池",
+    "光伏组件",
+    "集中式光伏电站",
+    "分布式发电系统",
+    "高效N型",
+    "大尺寸",
+    "薄片化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏硅片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多晶提纯硅锭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "单晶硅棒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "单晶硅片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:23:17"
+}

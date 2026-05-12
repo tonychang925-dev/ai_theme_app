@@ -1,0 +1,36 @@
+{
+  "stock_id": "601608",
+  "stock_name": "中信重工",
+  "concept": "重型机械制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "重型机械制造",
+    "矿山及重型装备"
+  ],
+  "should": [
+    "机器人及智能装备",
+    "新能源装备",
+    "特种材料",
+    "超大规格立磨核心技术",
+    "盘式过滤机技术",
+    "液压打桩锤技术",
+    "城市竖井掘进装备技术",
+    "智慧矿山赋能技术",
+    "5G+工业互联网技术",
+    "海上风电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "重型机械制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "矿山及重型装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:37:31"
+}

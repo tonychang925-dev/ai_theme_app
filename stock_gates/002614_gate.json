@@ -1,0 +1,33 @@
+{
+  "stock_id": "002614",
+  "stock_name": "奥佳华",
+  "concept": "健康产业集团",
+  "strategy_type": "industry_chain",
+  "must": [
+    "保健按摩产品",
+    "健康环境产品"
+  ],
+  "should": [
+    "家用医疗产品",
+    "按摩机芯核心技术",
+    "第五代4D无刷变频温感机芯",
+    "AI智能化",
+    "IOT物联化",
+    "全球最大按摩器ODM企业",
+    "连续十六年ODM龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "保健按摩产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "健康环境产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:49:59"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "002648",
+  "stock_name": "卫星化学",
+  "concept": "轻烃新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轻烃新材料",
+    "轻烃产业链一体化"
+  ],
+  "should": [
+    "丙烯酸",
+    "丙烯酸酯",
+    "乙烷裂解制乙烯",
+    "丙烷脱氢制丙烯",
+    "电池级碳酸脂",
+    "α-烯烃",
+    "POE",
+    "高分子乳液",
+    "SAP",
+    "聚丙烯"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轻烃新材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轻烃产业链一体化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:51:30"
+}

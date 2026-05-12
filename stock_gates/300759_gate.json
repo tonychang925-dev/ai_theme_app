@@ -1,0 +1,46 @@
+{
+  "stock_id": "300759",
+  "stock_name": "康龙化成",
+  "concept": "创新药研发服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "创新药研发服务",
+    "药物发现",
+    "临床前研究",
+    "早期临床研究"
+  ],
+  "should": [
+    "实验室服务",
+    "CMC（小分子CDMO）服务",
+    "临床研究服务",
+    "大分子＆CGT",
+    "实验室化学",
+    "生物科学服务",
+    "药物代谢及药代动力学",
+    "体外生物学",
+    "体内药理学",
+    "药物安全性评价"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "创新药研发服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "药物发现",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "临床前研究",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "早期临床研究",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:42:01"
+}

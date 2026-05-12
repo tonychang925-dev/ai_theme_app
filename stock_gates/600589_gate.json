@@ -1,0 +1,39 @@
+{
+  "stock_id": "600589",
+  "stock_name": "大位科技",
+  "concept": "数据中心服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "互联网数据中心",
+    "算力服务",
+    "森华易腾"
+  ],
+  "should": [
+    "金云公司",
+    "张北榕泰",
+    "张北榕泰云计算数据中心项目",
+    "数据中心服务",
+    "电信运营商",
+    "互联网客户",
+    "东数西算",
+    "算力资本开支"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "互联网数据中心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "算力服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "森华易腾",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:22:01"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "603327",
+  "stock_name": "福蓉科技",
+  "concept": "消费电子铝结构件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "消费电子铝结构件",
+    "铝制结构件"
+  ],
+  "should": [
+    "7系高强度铝合金中框",
+    "6系、7系高强度合金材料研发",
+    "铸造、挤压、热处理工艺技术",
+    "智能手机",
+    "平板电脑",
+    "笔记本电脑",
+    "折叠屏手机",
+    "G客户全球指定铝材供应商",
+    "三星品牌S系列手机供应商",
+    "苹果中高端笔记本电脑供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "消费电子铝结构件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铝制结构件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:49:16"
+}

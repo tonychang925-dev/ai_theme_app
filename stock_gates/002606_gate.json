@@ -1,0 +1,31 @@
+{
+  "stock_id": "002606",
+  "stock_name": "大连电瓷",
+  "concept": "线路瓷绝缘子",
+  "strategy_type": "industry_chain",
+  "must": [
+    "线路瓷绝缘子"
+  ],
+  "should": [
+    "悬式绝缘子",
+    "支柱绝缘子",
+    "瓷质材料化学性能稳定",
+    "抗老化性能强",
+    "机械和电气性能稳定",
+    "瓷釉覆盖防水浸润",
+    "电力系统",
+    "架空输电线路",
+    "发电厂",
+    "变电站"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "线路瓷绝缘子",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:49:42"
+}

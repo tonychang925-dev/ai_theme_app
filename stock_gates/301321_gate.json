@@ -1,0 +1,41 @@
+{
+  "stock_id": "301321",
+  "stock_name": "翰博高新",
+  "concept": "背光显示模组",
+  "strategy_type": "industry_chain",
+  "must": [
+    "背光显示模组",
+    "导光板",
+    "Open Mask"
+  ],
+  "should": [
+    "精密结构件",
+    "光学材料",
+    "Mini-LED灯板生产工艺",
+    "Mini-LED灯板驱动设计",
+    "Mini-LED背光光学设计",
+    "Open Mask设计制造",
+    "FMM设计制造",
+    "OLED Mask精密再生",
+    "笔记本电脑",
+    "平板电脑"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "背光显示模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "导光板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "Open Mask",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:02:56"
+}

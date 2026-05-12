@@ -1,0 +1,46 @@
+{
+  "stock_id": "600676",
+  "stock_name": "交运股份",
+  "concept": "综合交通物流服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "道路货运与物流服务",
+    "汽车零部件制造与销售服务",
+    "乘用车销售与汽车后服务",
+    "道路客运与旅游服务"
+  ],
+  "should": [
+    "享运共配城市物流服务平台",
+    "新能源零部件制造",
+    "新能源汽车商超店",
+    "上海通用",
+    "上海大众",
+    "一汽大众",
+    "奥迪",
+    "沃尔沃",
+    "广汽丰田",
+    "新能源车充电场站"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "道路货运与物流服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车零部件制造与销售服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乘用车销售与汽车后服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "道路客运与旅游服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:24:48"
+}

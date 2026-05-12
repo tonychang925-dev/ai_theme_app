@@ -1,0 +1,46 @@
+{
+  "stock_id": "600642",
+  "stock_name": "申能股份",
+  "concept": "综合能源供应商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "石油天然气",
+    "电力",
+    "天然气高压主干管网",
+    "东海平湖油气田勘探开采"
+  ],
+  "should": [
+    "综合能源供应商",
+    "煤电",
+    "气电",
+    "核电",
+    "风电",
+    "光伏发电",
+    "高参数低能耗机组",
+    "上海市",
+    "长三角地区",
+    "安徽"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "石油天然气",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天然气高压主干管网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "东海平湖油气田勘探开采",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:23:45"
+}

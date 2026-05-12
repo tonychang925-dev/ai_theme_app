@@ -1,0 +1,44 @@
+{
+  "stock_id": "600760",
+  "stock_name": "中航沈飞",
+  "concept": "歼击机龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "歼击机龙头",
+    "歼-15",
+    "歼-16",
+    "FC-31"
+  ],
+  "should": [
+    "歼-35",
+    "歼-11",
+    "均衡生产",
+    "规模效应",
+    "航空防务装备",
+    "航母舰载机",
+    "多用途战斗机",
+    "外贸型四代战机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "歼击机龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "歼-15",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "歼-16",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "FC-31",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:26:58"
+}

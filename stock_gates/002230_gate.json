@@ -1,0 +1,49 @@
+{
+  "stock_id": "002230",
+  "stock_name": "科大讯飞",
+  "concept": "人工智能语音",
+  "strategy_type": "industry_chain",
+  "must": [
+    "人工智能语音",
+    "智能语音",
+    "自然语言理解",
+    "机器学习推理",
+    "讯飞开放平台"
+  ],
+  "should": [
+    "智慧教育产品",
+    "人工智能学习机",
+    "个性化学习手册",
+    "双师课堂",
+    "智慧医疗",
+    "运营商",
+    "自主学习",
+    "国家级骨干软件企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "人工智能语音",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能语音",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自然语言理解",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机器学习推理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "讯飞开放平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:30:29"
+}

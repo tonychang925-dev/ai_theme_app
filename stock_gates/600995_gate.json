@@ -1,0 +1,31 @@
+{
+  "stock_id": "600995",
+  "stock_name": "南网储能",
+  "concept": "抽水蓄能",
+  "strategy_type": "industry_chain",
+  "must": [
+    "抽水蓄能"
+  ],
+  "should": [
+    "调峰水电",
+    "电网侧独立储能",
+    "开发",
+    "投资",
+    "建设",
+    "运营",
+    "在运抽水蓄能788万千瓦",
+    "在建抽水蓄能240万千瓦",
+    "筹建抽水蓄能120万千瓦",
+    "在运调峰水电192万千瓦"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "抽水蓄能",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:32:52"
+}

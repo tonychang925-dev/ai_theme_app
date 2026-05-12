@@ -1,0 +1,41 @@
+{
+  "stock_id": "002640",
+  "stock_name": "跨境通",
+  "concept": "跨境电商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "跨境出口",
+    "跨境进口",
+    "环球易购"
+  ],
+  "should": [
+    "帕拓逊",
+    "优壹电商",
+    "服装",
+    "3C电子产品",
+    "自有跨境电商零售渠道",
+    "第三方跨境电商渠道",
+    "线上渠道",
+    "线下渠道",
+    "18-35岁海外中低收入人群",
+    "母婴用品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "跨境出口",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "跨境进口",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环球易购",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:51:06"
+}

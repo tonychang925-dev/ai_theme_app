@@ -1,0 +1,34 @@
+{
+  "stock_id": "688553",
+  "stock_name": "汇宇制药",
+  "concept": "抗肿瘤注射剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "注射用阿扎胞苷",
+    "注射用培美曲塞二钠"
+  ],
+  "should": [
+    "奥沙利铂注射液",
+    "抗体偶联药物（ADC）",
+    "mRNA肿瘤疫苗",
+    "抗肿瘤注射剂",
+    "肿瘤治疗",
+    "首仿企业",
+    "欧盟标准生产",
+    "美国FDA认证"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "注射用阿扎胞苷",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "注射用培美曲塞二钠",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:20:21"
+}

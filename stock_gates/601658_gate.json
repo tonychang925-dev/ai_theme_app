@@ -1,0 +1,41 @@
+{
+  "stock_id": "601658",
+  "stock_name": "邮储银行",
+  "concept": "零售大行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "零售大行",
+    "自营+代理",
+    "差异化零售银行"
+  ],
+  "should": [
+    "零售银行",
+    "净息差",
+    "服务三农",
+    "服务城乡居民",
+    "服务中小企业",
+    "四万网点",
+    "代理网点占比八成",
+    "下沉市场",
+    "庞大客户群体",
+    "农村居民"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "零售大行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自营+代理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "差异化零售银行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:37:48"
+}

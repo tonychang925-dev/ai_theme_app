@@ -1,0 +1,41 @@
+{
+  "stock_id": "600171",
+  "stock_name": "上海贝岭",
+  "concept": "模拟集成电路",
+  "strategy_type": "industry_chain",
+  "must": [
+    "模拟集成电路",
+    "电源管理芯片",
+    "功率器件"
+  ],
+  "should": [
+    "数据转换器",
+    "电力专用芯片",
+    "非挥发存储器",
+    "标准信号产品",
+    "电机驱动产品",
+    "沟槽栅场截止IGBT",
+    "屏蔽栅功率MOSFET",
+    "超级结功率MOSFET",
+    "高速高精度ADC/DAC",
+    "高压栅极驱动"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "模拟集成电路",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电源管理芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功率器件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:10:58"
+}

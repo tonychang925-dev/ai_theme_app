@@ -1,0 +1,33 @@
+{
+  "stock_id": "002250",
+  "stock_name": "联化科技",
+  "concept": "医药农药中间体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药中间体",
+    "农药中间体"
+  ],
+  "should": [
+    "医药农药中间体",
+    "植保行业",
+    "医药行业",
+    "定制研发和生产（CDMO）",
+    "头部供应商",
+    "清洁生产工艺",
+    "一体化端到端服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医药中间体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "农药中间体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:31:41"
+}

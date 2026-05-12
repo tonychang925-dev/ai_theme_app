@@ -1,0 +1,46 @@
+{
+  "stock_id": "688183",
+  "stock_name": "生益电子",
+  "concept": "高端印制电路板",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端印制电路板",
+    "汽车电子板",
+    "通信设备板",
+    "计算机/服务器板"
+  ],
+  "should": [
+    "高频材料",
+    "高速材料",
+    "1500V以上耐高压材料",
+    "HDI+封装材料",
+    "混压材料",
+    "埋入技术",
+    "Z向互连技术",
+    "0-STUB技术",
+    "槽侧壁差分线制作技术",
+    "高密压接孔单面压接技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端印制电路板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车电子板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通信设备板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "计算机/服务器板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:11:03"
+}

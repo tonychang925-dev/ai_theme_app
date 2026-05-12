@@ -1,0 +1,51 @@
+{
+  "stock_id": "002475",
+  "stock_name": "立讯精密",
+  "concept": "精密智造解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密智造解决方案",
+    "消费电子",
+    "汽车",
+    "通信",
+    "AI算力"
+  ],
+  "should": [
+    "核心零部件",
+    "模组",
+    "系统组装",
+    "电连接",
+    "光模块",
+    "电源",
+    "热管理",
+    "高压线束",
+    "高速线束",
+    "汽车连接器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密智造解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "消费电子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通信",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AI算力",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:43:38"
+}

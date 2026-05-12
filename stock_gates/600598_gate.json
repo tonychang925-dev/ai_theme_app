@@ -1,0 +1,51 @@
+{
+  "stock_id": "600598",
+  "stock_name": "北大荒",
+  "concept": "大型农业集团",
+  "strategy_type": "industry_chain",
+  "must": [
+    "耕地发包经营",
+    "谷物种植",
+    "豆类种植",
+    "水稻",
+    "玉米"
+  ],
+  "should": [
+    "农业技术开发",
+    "食品生产经营",
+    "油料种植",
+    "水田插秧自动驾驶",
+    "本田轨道运输",
+    "智能化农机",
+    "大型农业集团",
+    "技术咨询",
+    "技术服务",
+    "技术转让"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "耕地发包经营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "谷物种植",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "豆类种植",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水稻",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "玉米",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:22:27"
+}

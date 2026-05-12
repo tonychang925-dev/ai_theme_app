@@ -1,0 +1,51 @@
+{
+  "stock_id": "600635",
+  "stock_name": "大众公用",
+  "concept": "公用事业与创投",
+  "strategy_type": "industry_chain",
+  "must": [
+    "城市燃气",
+    "污水处理",
+    "城市交通",
+    "创投业务",
+    "自营金融"
+  ],
+  "should": [
+    "物流运输",
+    "深圳市创新投资集团",
+    "上海华璨股权投资基金",
+    "上海兴烨创业投资",
+    "大成汇彩实业合伙企业",
+    "燃气销售",
+    "管道施工",
+    "出租车运营",
+    "汽车租赁",
+    "融资租赁"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "城市燃气",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "污水处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市交通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "创投业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自营金融",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:23:30"
+}

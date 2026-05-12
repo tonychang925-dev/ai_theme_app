@@ -1,0 +1,41 @@
+{
+  "stock_id": "600606",
+  "stock_name": "绿地控股",
+  "concept": "房地产多元发展",
+  "strategy_type": "industry_chain",
+  "must": [
+    "房地产业",
+    "基建产业",
+    "房地产龙头企业"
+  ],
+  "should": [
+    "金融产业",
+    "住宅",
+    "基建项目",
+    "金融产品",
+    "能源产业",
+    "商贸产业",
+    "酒店旅游产业",
+    "煤炭",
+    "贸易商品",
+    "酒店服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房地产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "基建产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "房地产龙头企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:22:46"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "600847",
+  "stock_name": "万里股份",
+  "concept": "铅酸蓄电池",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铅酸蓄电池",
+    "起动启停电池"
+  ],
+  "should": [
+    "储能电池",
+    "清洁生产技术",
+    "污染处理设施",
+    "汽车起动领域",
+    "轻型电动车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铅酸蓄电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "起动启停电池",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:29:21"
+}

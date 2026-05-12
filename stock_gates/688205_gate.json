@@ -1,0 +1,46 @@
+{
+  "stock_id": "688205",
+  "stock_name": "德科立",
+  "concept": "长距离光传输",
+  "strategy_type": "industry_chain",
+  "must": [
+    "长距离光传输",
+    "光收发模块",
+    "光放大器",
+    "光传输子系统"
+  ],
+  "should": [
+    "模块制造",
+    "子系统设计",
+    "芯片设计",
+    "芯片封测",
+    "器件封装",
+    "高速率",
+    "长距离",
+    "模块化",
+    "5G前传/中回传",
+    "数据中心互联"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "长距离光传输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光收发模块",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光放大器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光传输子系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:11:45"
+}

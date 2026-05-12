@@ -1,0 +1,41 @@
+{
+  "stock_id": "688350",
+  "stock_name": "富淼科技",
+  "concept": "亲水性功能高分子",
+  "strategy_type": "industry_chain",
+  "must": [
+    "亲水性功能高分子",
+    "亲水性功能高分子产品",
+    "水处理膜"
+  ],
+  "should": [
+    "卷式膜",
+    "功能性单体制造技术",
+    "水溶性高分子制造与应用技术",
+    "水处理膜制造技术",
+    "连续化生产工艺",
+    "制浆造纸",
+    "水处理",
+    "矿物加工",
+    "油气开采",
+    "纺织印染"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "亲水性功能高分子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "亲水性功能高分子产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水处理膜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:16:11"
+}

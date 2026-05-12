@@ -1,0 +1,41 @@
+{
+  "stock_id": "603337",
+  "stock_name": "杰克科技",
+  "concept": "缝制机械制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "缝制机械制造",
+    "工业缝纫机",
+    "物联网缝纫机"
+  ],
+  "should": [
+    "裁床",
+    "铺布机",
+    "验布机",
+    "衬衫及牛仔自动缝制设备",
+    "电机",
+    "电控",
+    "机架台板",
+    "机电融合",
+    "CPS物理信息融通",
+    "缝纫效率提升"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "缝制机械制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业缝纫机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物联网缝纫机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:49:35"
+}

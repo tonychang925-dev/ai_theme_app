@@ -1,0 +1,51 @@
+{
+  "stock_id": "002038",
+  "stock_name": "双鹭药业",
+  "concept": "基因工程药物",
+  "strategy_type": "industry_chain",
+  "must": [
+    "基因工程药物",
+    "肿瘤",
+    "心脑血管",
+    "肝病",
+    "肾病"
+  ],
+  "should": [
+    "治疗用生物制品",
+    "长效蛋白质制剂技术",
+    "原核表达系统",
+    "酵母表达系统",
+    "哺乳动物细胞表达系统",
+    "内分泌",
+    "片剂",
+    "硬胶囊剂",
+    "小容量注射剂",
+    "冻干粉针剂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "基因工程药物",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "肿瘤",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "心脑血管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "肝病",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "肾病",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:19:43"
+}

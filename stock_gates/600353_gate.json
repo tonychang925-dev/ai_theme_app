@@ -1,0 +1,41 @@
+{
+  "stock_id": "600353",
+  "stock_name": "旭光电子",
+  "concept": "军工电子陶瓷",
+  "strategy_type": "industry_chain",
+  "must": [
+    "军工电子陶瓷",
+    "电子陶瓷业务",
+    "军品承制单位"
+  ],
+  "should": [
+    "电真空业务",
+    "军工军品业务",
+    "真空开关设备",
+    "电真空器件",
+    "电子陶瓷材料",
+    "智能控制快速开关",
+    "金属零件精密铸造",
+    "嵌入式计算机",
+    "精密陶瓷制造",
+    "金属零件加工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "军工电子陶瓷",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子陶瓷业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "军品承制单位",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:15:58"
+}

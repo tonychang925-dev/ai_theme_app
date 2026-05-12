@@ -1,0 +1,36 @@
+{
+  "stock_id": "688700",
+  "stock_name": "东威科技",
+  "concept": "PCB电镀设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PCB电镀设备",
+    "卷式水平膜材电镀设备"
+  ],
+  "should": [
+    "水平式表面处理设备",
+    "水平镀设备",
+    "龙门式电镀设备",
+    "滚镀类设备",
+    "磁控溅射设备",
+    "光伏镀铜设备",
+    "VCP设备技术",
+    "水平连续电镀技术",
+    "环保节能技术",
+    "PCB电镀设备优质企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PCB电镀设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "卷式水平膜材电镀设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:24:24"
+}

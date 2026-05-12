@@ -1,0 +1,51 @@
+{
+  "stock_id": "300047",
+  "stock_name": "天源迪科",
+  "concept": "ICT综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "ICT产品分销",
+    "华为",
+    "超聚变",
+    "大疆",
+    "人工智能技术基座"
+  ],
+  "should": [
+    "产业云",
+    "大数据综合解决方案",
+    "AIGC平台",
+    "数据要素",
+    "昇腾Atlas人工智能计算平台",
+    "海光DCU深度学习加速器",
+    "ICT综合服务",
+    "软件开发",
+    "智能运营服务",
+    "微调部署"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "ICT产品分销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "华为",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超聚变",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大疆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人工智能技术基座",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:11:00"
+}

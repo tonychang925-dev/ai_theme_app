@@ -1,0 +1,51 @@
+{
+  "stock_id": "603688",
+  "stock_name": "石英股份",
+  "concept": "石英材料龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高纯石英砂",
+    "电子级石英产品",
+    "国内石英制品行业龙头企业",
+    "石英材料龙头",
+    "高纯石英材料核心技术"
+  ],
+  "should": [
+    "第八代连熔生产技术",
+    "石英精密加工技术",
+    "特种光源石英材料",
+    "光学石英材料",
+    "特种功能型石英材料",
+    "光伏",
+    "半导体",
+    "特种电光源",
+    "激光光电",
+    "光通讯"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高纯石英砂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子级石英产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内石英制品行业龙头企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "石英材料龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高纯石英材料核心技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:54:48"
+}

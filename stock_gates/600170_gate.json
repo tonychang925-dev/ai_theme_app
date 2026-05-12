@@ -1,0 +1,51 @@
+{
+  "stock_id": "600170",
+  "stock_name": "上海建工",
+  "concept": "建筑服务商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑施工",
+    "建材工业",
+    "设计咨询",
+    "城市建设投资",
+    "房产开发"
+  ],
+  "should": [
+    "城市更新",
+    "生态环境",
+    "水利水务",
+    "工业化建造",
+    "建筑服务业",
+    "新基建",
+    "数字化建造技术",
+    "BIM应用",
+    "鲁班奖",
+    "国优奖"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑施工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建材工业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "设计咨询",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市建设投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "房产开发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:10:51"
+}

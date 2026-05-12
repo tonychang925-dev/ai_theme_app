@@ -1,0 +1,46 @@
+{
+  "stock_id": "300021",
+  "stock_name": "大禹节水",
+  "concept": "数字水利综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字水利综合服务",
+    "节水灌溉材料与工程",
+    "高标准农田建设",
+    "数字孪生"
+  ],
+  "should": [
+    "物联网",
+    "云计算",
+    "遥感",
+    "区块链",
+    "大数据",
+    "人工智能",
+    "现代化灌区",
+    "城市智慧水务",
+    "水库预警",
+    "山洪预警"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字水利综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "节水灌溉材料与工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高标准农田建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字孪生",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:10:00"
+}

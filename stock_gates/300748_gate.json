@@ -1,0 +1,27 @@
+{
+  "stock_id": "300748",
+  "stock_name": "金力永磁",
+  "concept": "高性能钕铁硼永磁材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高性能钕铁硼永磁材料"
+  ],
+  "should": [
+    "钕铁硼永磁体",
+    "新能源汽车驱动电机",
+    "节能变频空调压缩机",
+    "风力发电永磁电机",
+    "工业节能电机",
+    "稀土永磁材料核心供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高性能钕铁硼永磁材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:41:19"
+}

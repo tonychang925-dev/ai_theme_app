@@ -1,0 +1,36 @@
+{
+  "stock_id": "688162",
+  "stock_name": "巨一科技",
+  "concept": "智能装备与电驱",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能装备整体解决方案",
+    "新能源汽车电驱动系统"
+  ],
+  "should": [
+    "白车身智能连接生产线",
+    "动力电池智能装测生产线",
+    "动力总成智能装测生产线",
+    "三合一集成化电驱动系统",
+    "扁线电机装备",
+    "智能装备与电驱",
+    "汽车白车身制造",
+    "动力总成生产",
+    "动力电池生产",
+    "主流供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能装备整体解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车电驱动系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:10:17"
+}

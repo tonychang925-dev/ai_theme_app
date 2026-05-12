@@ -1,0 +1,38 @@
+{
+  "stock_id": "600235",
+  "stock_name": "民丰特纸",
+  "concept": "特种纸",
+  "strategy_type": "industry_chain",
+  "must": [
+    "卷烟纸",
+    "描图纸",
+    "电容器纸"
+  ],
+  "should": [
+    "特种纸",
+    "烟草行业",
+    "卷烟新品",
+    "国产化替代",
+    "市场占有率全国第一",
+    "新品研发",
+    "节能设备改造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "卷烟纸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "描图纸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电容器纸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:12:36"
+}

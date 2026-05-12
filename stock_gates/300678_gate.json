@@ -1,0 +1,46 @@
+{
+  "stock_id": "300678",
+  "stock_name": "中科信息",
+  "concept": "智能识别与信息化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能识别及分析技术",
+    "现场会议",
+    "烟草",
+    "印钞检测"
+  ],
+  "should": [
+    "高速机器视觉",
+    "数据智能分析",
+    "数字会议系列产品",
+    "烟草信息化产品",
+    "印钞检测产品",
+    "油气",
+    "政府",
+    "选举系统",
+    "数字油气田产品",
+    "智慧政务产品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能识别及分析技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "现场会议",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "烟草",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "印钞检测",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:38:33"
+}

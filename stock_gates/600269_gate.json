@@ -1,0 +1,40 @@
+{
+  "stock_id": "600269",
+  "stock_name": "赣粤高速",
+  "concept": "高速公路管养",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高速公路管养",
+    "通行服务",
+    "智慧交通"
+  ],
+  "should": [
+    "智慧收费",
+    "智慧隧道",
+    "物联网",
+    "北斗",
+    "实业投资",
+    "金融投资",
+    "收费稽核",
+    "隧道巡检",
+    "智能设备控制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高速公路管养",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通行服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧交通",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:13:30"
+}

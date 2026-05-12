@@ -1,0 +1,40 @@
+{
+  "stock_id": "000099",
+  "stock_name": "中信海直",
+  "concept": "通用航空服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "海上石油飞行",
+    "应急救援",
+    "海上石油"
+  ],
+  "should": [
+    "通航维修",
+    "海上风电",
+    "港口引航",
+    "陆上通航",
+    "通用航空服务",
+    "86架航空器",
+    "亚洲最大民用直升机队",
+    "国内通用航空领军企业",
+    "行业标杆"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "海上石油飞行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "应急救援",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海上石油",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:50:24"
+}

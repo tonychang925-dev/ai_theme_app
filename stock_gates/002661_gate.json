@@ -1,0 +1,40 @@
+{
+  "stock_id": "002661",
+  "stock_name": "克明食品",
+  "concept": "挂面全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "挂面全产业链",
+    "挂面",
+    "方便食品"
+  ],
+  "should": [
+    "五谷道场",
+    "非油炸技术",
+    "健康化",
+    "营养化",
+    "功能化",
+    "轻烹饪",
+    "便捷化",
+    "挂面第一品牌",
+    "非油炸方便面领导品牌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "挂面全产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "挂面",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "方便食品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:52:03"
+}

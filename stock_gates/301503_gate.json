@@ -1,0 +1,36 @@
+{
+  "stock_id": "301503",
+  "stock_name": "智迪科技",
+  "concept": "外销键鼠",
+  "strategy_type": "industry_chain",
+  "must": [
+    "外销键鼠",
+    "键盘",
+    "鼠标"
+  ],
+  "should": [
+    "键鼠套装",
+    "商务办公",
+    "电竞游戏",
+    "外销为主",
+    "国际知名计算机外设品牌商订单"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "外销键鼠",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "键盘",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "鼠标",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:05:34"
+}

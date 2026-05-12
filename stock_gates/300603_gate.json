@@ -1,0 +1,31 @@
+{
+  "stock_id": "300603",
+  "stock_name": "立昂技术",
+  "concept": "数字城市服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字城市服务"
+  ],
+  "should": [
+    "数字城市视频监控系统",
+    "智慧边防系统",
+    "综合信息平台",
+    "智能监控系统",
+    "智能灌溉系统",
+    "水文监测系统",
+    "AI赋能视频解析",
+    "图像识别",
+    "边缘计算",
+    "无人机技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字城市服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:35:01"
+}

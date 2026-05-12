@@ -1,0 +1,41 @@
+{
+  "stock_id": "300068",
+  "stock_name": "南都电源",
+  "concept": "储能系统服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂离子电池及系统",
+    "铅蓄电池及系统",
+    "资源再生产品"
+  ],
+  "should": [
+    "氢能关键设备",
+    "电池材料",
+    "电池系统",
+    "电池回收",
+    "储能系统服务",
+    "全产业链闭环一体化",
+    "新型电力储能",
+    "通信与数据中心储能",
+    "民用储能",
+    "电力调频"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂离子电池及系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铅蓄电池及系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "资源再生产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:11:51"
+}

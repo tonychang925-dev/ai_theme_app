@@ -1,0 +1,36 @@
+{
+  "stock_id": "600149",
+  "stock_name": "廊坊发展",
+  "concept": "供热服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "供热服务",
+    "供热"
+  ],
+  "should": [
+    "城区",
+    "园区",
+    "小区居民",
+    "商业用户",
+    "工业用户",
+    "供暖",
+    "蒸汽",
+    "供热系统规划",
+    "供热系统设计",
+    "供热系统建设"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "供热服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "供热",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:10:15"
+}

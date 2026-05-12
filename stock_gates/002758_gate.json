@@ -1,0 +1,31 @@
+{
+  "stock_id": "002758",
+  "stock_name": "浙农股份",
+  "concept": "城乡商贸服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农业综合服务"
+  ],
+  "should": [
+    "汽车商贸服务",
+    "医药生产销售",
+    "中药材基地",
+    "城乡商贸服务",
+    "集成化服务分销网络",
+    "全程化综合服务",
+    "四位一体汽车销售",
+    "全生命周期服务",
+    "国内外化肥农药厂商资源",
+    "中高端汽车品牌厂商资源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农业综合服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:56:13"
+}

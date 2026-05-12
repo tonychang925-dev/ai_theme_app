@@ -1,0 +1,31 @@
+{
+  "stock_id": "000878",
+  "stock_name": "云南铜业",
+  "concept": "铜业生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "阴极铜"
+  ],
+  "should": [
+    "黄金",
+    "白银",
+    "工业硫酸",
+    "铂",
+    "钯",
+    "硒",
+    "碲",
+    "铼",
+    "铜业生产",
+    "电气"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "阴极铜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:07:50"
+}

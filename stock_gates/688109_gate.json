@@ -1,0 +1,36 @@
+{
+  "stock_id": "688109",
+  "stock_name": "品茗科技",
+  "concept": "建筑数字化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧工地",
+    "建筑信息化软件"
+  ],
+  "should": [
+    "BIM",
+    "AI",
+    "IoT",
+    "GIS",
+    "数智施工平台",
+    "HiBIM机电一体化平台",
+    "施工方案管理云平台",
+    "品茗云资料管理平台",
+    "APaaS平台",
+    "低代码平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧工地",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑信息化软件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:08:40"
+}

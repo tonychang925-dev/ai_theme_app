@@ -1,0 +1,28 @@
+{
+  "stock_id": "002956",
+  "stock_name": "西麦食品",
+  "concept": "燕麦食品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "燕麦食品"
+  ],
+  "should": [
+    "热食燕麦",
+    "冷食燕麦",
+    "市场占有率前列",
+    "发展早期",
+    "潜力巨大",
+    "健康意识增强",
+    "人均消费量有望增长"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "燕麦食品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:04:49"
+}

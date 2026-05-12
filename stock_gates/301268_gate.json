@@ -1,0 +1,45 @@
+{
+  "stock_id": "301268",
+  "stock_name": "铭利达",
+  "concept": "精密结构件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密结构件",
+    "精密压铸",
+    "精密注塑",
+    "型材加工"
+  ],
+  "should": [
+    "光伏",
+    "储能",
+    "新能源汽车",
+    "金属材料",
+    "塑胶材料",
+    "模具",
+    "生产设备",
+    "安防",
+    "消费电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密结构件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密压铸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密注塑",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "型材加工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:01:22"
+}

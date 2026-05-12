@@ -1,0 +1,46 @@
+{
+  "stock_id": "603619",
+  "stock_name": "中曼石油",
+  "concept": "石油能源服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钻井工程",
+    "装备制造",
+    "勘探开发",
+    "一体化运作模式"
+  ],
+  "should": [
+    "斯伦贝谢",
+    "ENI",
+    "BP",
+    "哈里伯顿",
+    "马石油",
+    "伊拉克国家钻井公司",
+    "数据远传系统",
+    "数字化智能化远传系统",
+    "离线钻机",
+    "智能机械臂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钻井工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "装备制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "勘探开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一体化运作模式",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:53:41"
+}

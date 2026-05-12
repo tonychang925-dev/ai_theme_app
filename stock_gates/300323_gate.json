@@ -1,0 +1,46 @@
+{
+  "stock_id": "300323",
+  "stock_name": "华灿光电",
+  "concept": "LED外延芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LED外延芯片",
+    "LED外延片",
+    "LED芯片",
+    "上游外延芯片"
+  ],
+  "should": [
+    "外延生长",
+    "芯片制造",
+    "蓝宝石衬底",
+    "蓝宝石长晶及加工",
+    "GaN功率器件",
+    "GaN功率器件技术",
+    "通用照明",
+    "背光",
+    "显示屏",
+    "Mini/Micro微显示"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED外延芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LED外延片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LED芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "上游外延芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:22:44"
+}

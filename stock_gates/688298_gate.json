@@ -1,0 +1,36 @@
+{
+  "stock_id": "688298",
+  "stock_name": "东方生物",
+  "concept": "POCT体外诊断",
+  "strategy_type": "industry_chain",
+  "must": [
+    "POCT即时诊断试剂",
+    "新冠检测试剂"
+  ],
+  "should": [
+    "POCT体外诊断",
+    "分子诊断",
+    "生物原料",
+    "诊断仪器",
+    "液态生物芯片",
+    "抗原抗体等生物原料",
+    "毒品检测",
+    "传染病检测",
+    "优生优育检测",
+    "肿瘤标志物检测"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "POCT即时诊断试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新冠检测试剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:14:43"
+}

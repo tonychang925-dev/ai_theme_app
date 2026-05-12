@@ -1,0 +1,51 @@
+{
+  "stock_id": "002223",
+  "stock_name": "鱼跃医疗",
+  "concept": "家用医疗器械龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "家用医疗器械龙头",
+    "制氧机",
+    "呼吸机",
+    "血糖仪",
+    "院内外消毒感控"
+  ],
+  "should": [
+    "雾化器",
+    "持续监测系统",
+    "高流量呼吸湿化治疗",
+    "手术与眼科器械",
+    "中医器械",
+    "隐形眼镜",
+    "裂隙灯显微镜",
+    "柔性传感器",
+    "4电极设计",
+    "蓝牙无线传输"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "家用医疗器械龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "制氧机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "呼吸机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "血糖仪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "院内外消毒感控",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:30:16"
+}

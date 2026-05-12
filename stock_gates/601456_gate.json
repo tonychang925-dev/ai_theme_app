@@ -1,0 +1,36 @@
+{
+  "stock_id": "601456",
+  "stock_name": "国联民生",
+  "concept": "基金投顾",
+  "strategy_type": "industry_chain",
+  "must": [
+    "基金投顾",
+    "财富管理"
+  ],
+  "should": [
+    "投资银行",
+    "资产管理",
+    "资本中介",
+    "泛财富管理转型",
+    "资本中介战略",
+    "投行+投资战略",
+    "科技金融战略",
+    "基金投顾先发优势",
+    "代销金融产品收入提升",
+    "投行业务高速发展"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "基金投顾",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "财富管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:36:38"
+}

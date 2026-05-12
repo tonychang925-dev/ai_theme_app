@@ -1,0 +1,46 @@
+{
+  "stock_id": "300668",
+  "stock_name": "杰恩设计",
+  "concept": "建筑室内设计",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑室内设计",
+    "商业综合体室内设计",
+    "医疗养老综合体室内设计",
+    "文教综合体室内设计"
+  ],
+  "should": [
+    "导向标识设计",
+    "建筑装饰工程设计专项甲级资质",
+    "ISO9001质量管理体系认证",
+    "高新技术企业",
+    "JATO",
+    "J&A",
+    "BPS",
+    "总体规划",
+    "建筑设计",
+    "动线设计"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑室内设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商业综合体室内设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗养老综合体室内设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "文教综合体室内设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:38:12"
+}

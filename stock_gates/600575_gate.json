@@ -1,0 +1,42 @@
+{
+  "stock_id": "600575",
+  "stock_name": "淮河能源",
+  "concept": "物流贸易煤炭",
+  "strategy_type": "industry_chain",
+  "must": [
+    "物流贸易",
+    "煤炭销售",
+    "铁路运输",
+    "港口作业"
+  ],
+  "should": [
+    "铁路运输业务",
+    "煤炭贸易业务",
+    "实体煤炭购销",
+    "电企长协发运",
+    "北方港口销售",
+    "传统水运地销"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "物流贸易",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铁路运输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "港口作业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:21:34"
+}

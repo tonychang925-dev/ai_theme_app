@@ -1,0 +1,36 @@
+{
+  "stock_id": "600444",
+  "stock_name": "国机通用",
+  "concept": "流体机械与管材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "流体机械",
+    "新型塑料管材"
+  ],
+  "should": [
+    "制冷空调产品",
+    "过滤分离机械",
+    "压缩机",
+    "核电站",
+    "海洋石油",
+    "氢能产业",
+    "科技馆",
+    "国内首家上市公司",
+    "市场份额较高",
+    "替代进口产品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "流体机械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新型塑料管材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:18:10"
+}

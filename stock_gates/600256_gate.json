@@ -1,0 +1,51 @@
+{
+  "stock_id": "600256",
+  "stock_name": "广汇能源",
+  "concept": "综合能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合能源",
+    "气",
+    "煤",
+    "油",
+    "天然气销售"
+  ],
+  "should": [
+    "煤炭开采",
+    "煤化工",
+    "鲁奇碎煤加压气化",
+    "鲁奇低温甲醇洗",
+    "丹麦托普索湿法硫酸硫回收",
+    "氨法烟气脱硫",
+    "工业燃料",
+    "城镇燃气",
+    "发电",
+    "化工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合能源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "气",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "油",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天然气销售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:13:10"
+}

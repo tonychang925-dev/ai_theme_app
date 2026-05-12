@@ -1,0 +1,29 @@
+{
+  "stock_id": "600538",
+  "stock_name": "国发股份",
+  "concept": "体外诊断与医药制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "珍珠明目滴眼液"
+  ],
+  "should": [
+    "胃肠宁颗粒",
+    "超微量DNA自动提取检测工作站",
+    "硅磁一体DNA自动提取检测技术",
+    "主控芯片",
+    "固件开发",
+    "司法鉴定",
+    "医院销售",
+    "连锁加盟快批"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "珍珠明目滴眼液",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:20:33"
+}

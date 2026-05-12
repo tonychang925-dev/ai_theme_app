@@ -1,0 +1,51 @@
+{
+  "stock_id": "002144",
+  "stock_name": "宏达高科",
+  "concept": "面料织造与医疗器械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "面料织造与医疗器械",
+    "面料织造",
+    "医疗器械",
+    "汽车内饰面料",
+    "小型化超声诊断设备"
+  ],
+  "should": [
+    "服饰面料",
+    "超声治疗设备",
+    "超声诊断技术",
+    "超声治疗技术",
+    "宝马",
+    "奔驰",
+    "大众",
+    "通用",
+    "长城",
+    "吉利"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "面料织造与医疗器械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "面料织造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗器械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车内饰面料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小型化超声诊断设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:25:33"
+}

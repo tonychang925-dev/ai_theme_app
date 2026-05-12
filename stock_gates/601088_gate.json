@@ -1,0 +1,46 @@
+{
+  "stock_id": "601088",
+  "stock_name": "中国神华",
+  "concept": "综合能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤炭生产销售",
+    "发电",
+    "运输",
+    "煤化工"
+  ],
+  "should": [
+    "神东矿区",
+    "准格尔矿区",
+    "胜利矿区",
+    "宝日希勒矿区",
+    "包头矿区",
+    "新街矿区",
+    "神朔铁路",
+    "朔黄铁路",
+    "包神铁路",
+    "大准铁路"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤炭生产销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "运输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤化工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:34:04"
+}

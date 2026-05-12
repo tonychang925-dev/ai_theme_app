@@ -1,0 +1,35 @@
+{
+  "stock_id": "601033",
+  "stock_name": "永兴股份",
+  "concept": "垃圾焚烧发电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "垃圾焚烧发电",
+    "生物质处理"
+  ],
+  "should": [
+    "双脱硫双脱硝工艺",
+    "PNCR高分子脱硝",
+    "凹凸棒替代活性炭",
+    "垃圾吊自动化",
+    "烟气预警防控",
+    "生产指标预警系统",
+    "垃圾处理服务",
+    "发电上网",
+    "供热服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "垃圾焚烧发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物质处理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:33:38"
+}

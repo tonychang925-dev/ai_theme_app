@@ -1,0 +1,41 @@
+{
+  "stock_id": "603515",
+  "stock_name": "欧普照明",
+  "concept": "综合照明",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合照明",
+    "家居照明",
+    "商用照明"
+  ],
+  "should": [
+    "乡镇网点",
+    "电商渠道",
+    "海外经销",
+    "智能化照明",
+    "照明控制",
+    "光源",
+    "家居照明灯具",
+    "商用照明灯具",
+    "智能互联",
+    "智能语音控制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合照明",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "家居照明",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商用照明",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:51:42"
+}

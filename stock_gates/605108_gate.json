@@ -1,0 +1,41 @@
+{
+  "stock_id": "605108",
+  "stock_name": "同庆楼",
+  "concept": "老字号餐饮",
+  "strategy_type": "industry_chain",
+  "must": [
+    "同庆楼酒楼",
+    "婚礼会馆",
+    "富茂酒店"
+  ],
+  "should": [
+    "速冻面点",
+    "自热饭",
+    "臭鳜鱼",
+    "腊味",
+    "品牌背书",
+    "供应链建设",
+    "产品力",
+    "集中采购",
+    "中央厨房",
+    "冷链物流配送"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "同庆楼酒楼",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "婚礼会馆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "富茂酒店",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:01:52"
+}

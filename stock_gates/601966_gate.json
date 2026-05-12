@@ -1,0 +1,46 @@
+{
+  "stock_id": "601966",
+  "stock_name": "玲珑轮胎",
+  "concept": "轮胎制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全钢子午线轮胎",
+    "半钢子午线轮胎",
+    "新零售2.0",
+    "新零售3.0"
+  ],
+  "should": [
+    "玲珑养车驿站",
+    "玲珑卡友之家",
+    "一汽解放",
+    "中国重汽",
+    "陕西重汽",
+    "福田汽车",
+    "东风柳汽",
+    "中集车辆",
+    "比亚迪",
+    "吉利"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全钢子午线轮胎",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半钢子午线轮胎",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新零售2.0",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新零售3.0",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:40:22"
+}

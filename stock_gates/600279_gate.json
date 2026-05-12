@@ -1,0 +1,37 @@
+{
+  "stock_id": "600279",
+  "stock_name": "重庆港",
+  "concept": "港口综合物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "港口中转运输",
+    "综合物流",
+    "港口码头"
+  ],
+  "should": [
+    "仓储设施",
+    "铁路专用线",
+    "港口综合物流",
+    "集装箱吞吐",
+    "铁水联运",
+    "货物装卸"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "港口中转运输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合物流",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "港口码头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:13:45"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "000032",
+  "stock_name": "深桑达A",
+  "concept": "数字信息服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字与信息服务",
+    "产业服务",
+    "中国电子云"
+  ],
+  "should": [
+    "PKS自主计算体系",
+    "数据安全与数据要素化工程方案",
+    "自研可信计算技术架构",
+    "分布式云原生云操作系统",
+    "数字信息服务",
+    "中国电子旗下重要二级企业",
+    "CeaStor分布式全闪存储",
+    "党政",
+    "公共服务",
+    "央国企"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字与信息服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "产业服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中国电子云",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:48:06"
+}

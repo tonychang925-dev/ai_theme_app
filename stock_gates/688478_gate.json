@@ -1,0 +1,33 @@
+{
+  "stock_id": "688478",
+  "stock_name": "晶升股份",
+  "concept": "半导体晶体生长设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体级单晶硅炉",
+    "半导体晶体生长设备"
+  ],
+  "should": [
+    "碳化硅单晶炉",
+    "蓝宝石单晶炉",
+    "高温高真空晶体生长设备技术",
+    "配套产品及技术服务",
+    "主控芯片",
+    "固件开发",
+    "上游设备及材料端国产化率不断提升"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体级单晶硅炉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体晶体生长设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:18:49"
+}

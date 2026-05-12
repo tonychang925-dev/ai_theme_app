@@ -1,0 +1,31 @@
+{
+  "stock_id": "001308",
+  "stock_name": "康冠科技",
+  "concept": "智能显示龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能交互显示产品",
+    "智能电视"
+  ],
+  "should": [
+    "Mini-Led显示器",
+    "智能显示龙头",
+    "全流程软硬件定制化研发设计",
+    "小批量多型号柔性化制造",
+    "全球智能显示产业链中心"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能交互显示产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能电视",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:15:45"
+}

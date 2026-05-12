@@ -1,0 +1,51 @@
+{
+  "stock_id": "600637",
+  "stock_name": "东方明珠",
+  "concept": "综合传媒娱乐",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧广电业务",
+    "文化消费业务",
+    "视频集成与分发",
+    "广电5G",
+    "影视内容制作与发行"
+  ],
+  "should": [
+    "有线电视",
+    "IPTV",
+    "OTT",
+    "移动互联网终端",
+    "游戏业务",
+    "东方明珠广播电视塔",
+    "上海国际会议中心",
+    "奔驰文化中心",
+    "东方绿舟",
+    "综合传媒娱乐"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧广电业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "文化消费业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "视频集成与分发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "广电5G",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "影视内容制作与发行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:23:34"
+}

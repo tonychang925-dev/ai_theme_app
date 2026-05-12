@@ -1,0 +1,36 @@
+{
+  "stock_id": "605399",
+  "stock_name": "晨光新材",
+  "concept": "功能性硅烷",
+  "strategy_type": "industry_chain",
+  "must": [
+    "功能性硅烷",
+    "功能性硅烷全产业链"
+  ],
+  "should": [
+    "气凝胶",
+    "六甲基二硅氮烷",
+    "苯基产品",
+    "氨基硅烷",
+    "环氧基硅烷",
+    "氯丙基硅烷",
+    "含硫硅烷",
+    "原硅酸酯",
+    "甲基丙烯酰氧基硅烷",
+    "乙烯基硅烷"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "功能性硅烷",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功能性硅烷全产业链",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:04:29"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "688566",
+  "stock_name": "吉贝尔",
+  "concept": "药物研发生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "利可君片",
+    "尼群洛尔片",
+    "尼群洛尔片复方制剂技术"
+  ],
+  "should": [
+    "醋氯芬酸肠溶片",
+    "细辛脑片",
+    "玉屏风胶囊",
+    "益肝灵胶囊",
+    "加替沙星滴眼液",
+    "盐酸洛美沙星滴眼液",
+    "药物研发生产",
+    "提升白细胞",
+    "抗高血压",
+    "增强免疫力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "利可君片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "尼群洛尔片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "尼群洛尔片复方制剂技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:20:50"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "603328",
+  "stock_name": "依顿电子",
+  "concept": "印制电路板",
+  "strategy_type": "industry_chain",
+  "must": [
+    "印制电路板",
+    "汽车PCB",
+    "新能源PCB",
+    "汽车电子",
+    "新能源及电源"
+  ],
+  "should": [
+    "光伏PCB",
+    "高多层PCB",
+    "HDI",
+    "MiniLED",
+    "逆变器",
+    "高频天线",
+    "BBU小基站",
+    "光模块",
+    "服务器",
+    "主控芯片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "印制电路板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车PCB",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源PCB",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车电子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源及电源",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:49:23"
+}

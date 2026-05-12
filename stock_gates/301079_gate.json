@@ -1,0 +1,46 @@
+{
+  "stock_id": "301079",
+  "stock_name": "邵阳液压",
+  "concept": "液压元件制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "液压柱塞泵",
+    "液压缸",
+    "液压系统",
+    "高压油泵研发",
+    "高压油泵研发鼻祖"
+  ],
+  "should": [
+    "国内三大液压产品配套基地之一",
+    "自主知识产权",
+    "液压传动整体解决方案",
+    "船舶",
+    "新能源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "液压柱塞泵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液压缸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液压系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高压油泵研发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高压油泵研发鼻祖",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:55:47"
+}

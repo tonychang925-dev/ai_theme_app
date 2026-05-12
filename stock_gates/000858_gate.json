@@ -1,0 +1,32 @@
+{
+  "stock_id": "000858",
+  "stock_name": "五粮液",
+  "concept": "浓香型白酒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "五粮液普五",
+    "第八代五粮液"
+  ],
+  "should": [
+    "浓香型白酒",
+    "五种谷物酿造",
+    "千年传承工艺",
+    "高端白酒消费",
+    "大商制渠道管理",
+    "多层经销模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "五粮液普五",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "第八代五粮液",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:06:54"
+}

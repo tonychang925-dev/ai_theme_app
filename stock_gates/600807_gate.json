@@ -1,0 +1,44 @@
+{
+  "stock_id": "600807",
+  "stock_name": "济高发展",
+  "concept": "生命健康与生物科技",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生命健康与生物科技",
+    "体外诊断",
+    "生命健康",
+    "生物科技"
+  ],
+  "should": [
+    "核酸检测",
+    "猴痘病毒核酸检测试剂盒",
+    "多重肠道病毒核酸检测试剂盒",
+    "多重呼吸道病毒核酸检测试剂盒",
+    "实时荧光定量PCR仪",
+    "荧光PCR法",
+    "医疗检测",
+    "公共卫生"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生命健康与生物科技",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "体外诊断",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生命健康",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物科技",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:28:16"
+}

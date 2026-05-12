@@ -1,0 +1,45 @@
+{
+  "stock_id": "601568",
+  "stock_name": "北元集团",
+  "concept": "氯碱化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "氯碱化工",
+    "聚氯乙烯",
+    "烧碱",
+    "电石"
+  ],
+  "should": [
+    "水泥",
+    "离子膜烧碱",
+    "新型干法工业废渣水泥",
+    "自备电厂",
+    "循环流化床锅炉改造",
+    "工业互联网+危化安全生产"
+  ],
+  "not": [
+    "石油工业",
+    "食品工业"
+  ],
+  "evidence_refs": [
+    {
+      "term": "氯碱化工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚氯乙烯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "烧碱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电石",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:37:01"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "000400",
+  "stock_name": "许继电气",
+  "concept": "特高压电力设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特高压电力设备",
+    "直流输电系统",
+    "智能变配电系统",
+    "特高压直流输电"
+  ],
+  "should": [
+    "换流阀",
+    "换流变",
+    "柔直输电技术",
+    "海风柔直输电",
+    "智能中压供用电设备",
+    "智能电表",
+    "电动汽车智能充换电系统",
+    "EMS加工服务",
+    "老旧直流改造",
+    "直流换流阀市占率第二"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特高压电力设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "直流输电系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能变配电系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特高压直流输电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:51:26"
+}

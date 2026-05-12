@@ -1,0 +1,40 @@
+{
+  "stock_id": "688536",
+  "stock_name": "思瑞浦",
+  "concept": "模拟芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "模拟芯片",
+    "信号链模拟芯片",
+    "电源管理模拟芯片",
+    "国内信号链龙头"
+  ],
+  "should": [
+    "BCD工艺的静电保护技术",
+    "低噪声低温漂参考电压技术",
+    "低失调CMOS放大器技术",
+    "线性产品市占率位居前列"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "模拟芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信号链模拟芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电源管理模拟芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内信号链龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:20:05"
+}

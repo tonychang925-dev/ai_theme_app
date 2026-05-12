@@ -1,0 +1,44 @@
+{
+  "stock_id": "688202",
+  "stock_name": "美迪西",
+  "concept": "临床前CRO",
+  "strategy_type": "industry_chain",
+  "must": [
+    "临床前CRO",
+    "药物发现",
+    "临床前研究",
+    "药学研究"
+  ],
+  "should": [
+    "PROTAC",
+    "ADC",
+    "溶瘤病毒",
+    "寡核苷酸RNA",
+    "细胞治疗",
+    "抗体药物一站式研发外包产业化平台",
+    "同位素代谢研究专业服务平台",
+    "一站式生物医药临床前研发服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "临床前CRO",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "药物发现",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "临床前研究",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "药学研究",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:11:42"
+}

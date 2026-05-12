@@ -1,0 +1,26 @@
+{
+  "stock_id": "601339",
+  "stock_name": "百隆东方",
+  "concept": "色纺纱",
+  "strategy_type": "industry_chain",
+  "must": [
+    "色纺纱"
+  ],
+  "should": [
+    "坯纱",
+    "先散纤维染色、后混色纺纱",
+    "小批量、多品种、快速反应",
+    "中高档面料",
+    "国内领先的色纺纱生产企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "色纺纱",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:36:16"
+}

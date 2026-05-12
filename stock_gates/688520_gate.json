@@ -1,0 +1,29 @@
+{
+  "stock_id": "688520",
+  "stock_name": "神州细胞",
+  "concept": "创新型生物药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "重组蛋白技术"
+  ],
+  "should": [
+    "SCT630",
+    "SCT510",
+    "新型水包油佐剂",
+    "重组S三聚体蛋白抗原设计",
+    "创新型生物药",
+    "甲型血友病",
+    "非霍奇金淋巴瘤",
+    "新冠病毒预防"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "重组蛋白技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:19:47"
+}

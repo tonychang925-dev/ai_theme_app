@@ -1,0 +1,46 @@
+{
+  "stock_id": "600547",
+  "stock_name": "山东黄金",
+  "concept": "黄金矿企",
+  "strategy_type": "industry_chain",
+  "must": [
+    "黄金矿企",
+    "黄金勘探",
+    "采选",
+    "冶炼"
+  ],
+  "should": [
+    "深加工",
+    "矿山设备物资生产销售",
+    "产业链金融平台",
+    "销售",
+    "黄金资源量1479.26吨",
+    "黄金储量592.41吨",
+    "13座国内矿山",
+    "2座海外矿山",
+    "完整产业链条",
+    "避险属性"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "黄金矿企",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "黄金勘探",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "采选",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冶炼",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:20:51"
+}

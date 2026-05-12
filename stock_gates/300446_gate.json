@@ -1,0 +1,42 @@
+{
+  "stock_id": "300446",
+  "stock_name": "航天智造",
+  "concept": "磁记录与热敏材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "磁记录与热敏材料",
+    "信息防伪材料技术",
+    "热敏磁票",
+    "磁条产品"
+  ],
+  "should": [
+    "INS工艺汽车内饰膜",
+    "电子功能材料技术",
+    "FPC用电磁波屏蔽膜",
+    "压力测试膜",
+    "国内最大磁条生产商",
+    "国内最大热敏磁票生产商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "磁记录与热敏材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信息防伪材料技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热敏磁票",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磁条产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:27:45"
+}

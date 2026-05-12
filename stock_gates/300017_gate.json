@@ -1,0 +1,43 @@
+{
+  "stock_id": "300017",
+  "stock_name": "网宿科技",
+  "concept": "边缘计算",
+  "strategy_type": "industry_chain",
+  "must": [
+    "边缘计算",
+    "CDN服务",
+    "边缘计算平台ECP",
+    "调度"
+  ],
+  "should": [
+    "安全及企业网络连接服务",
+    "算力云、IDC和液冷节能解决方案",
+    "负载均衡",
+    "内容分发",
+    "液冷技术",
+    "全球领先的IT基础平台服务提供商",
+    "边缘计算、边缘算力调度龙头企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "边缘计算",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CDN服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "边缘计算平台ECP",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "调度",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:09:49"
+}

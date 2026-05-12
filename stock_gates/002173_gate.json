@@ -1,0 +1,39 @@
+{
+  "stock_id": "002173",
+  "stock_name": "创新医疗",
+  "concept": "综合医疗服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建华医院",
+    "康华医院",
+    "福恬医院",
+    "明珠医院"
+  ],
+  "should": [
+    "综合医疗服务",
+    "大专科，小综合",
+    "精细化管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建华医院",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "康华医院",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "福恬医院",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "明珠医院",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:27:13"
+}

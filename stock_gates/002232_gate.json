@@ -1,0 +1,36 @@
+{
+  "stock_id": "002232",
+  "stock_name": "启明信息",
+  "concept": "汽车IT服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "企业数字运营",
+    "智慧营销及智慧汽车"
+  ],
+  "should": [
+    "客户生态平台(CEP)",
+    "财务一体化平台(EIP)",
+    "OTD智能制造解决方案(SMP)",
+    "数据化展厅",
+    "广宣系统",
+    "统一报告系统",
+    "舆情监控系统",
+    "启明星云FusionCloud",
+    "自主化云原生平台",
+    "汽车IT服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "企业数字运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧营销及智慧汽车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:30:32"
+}

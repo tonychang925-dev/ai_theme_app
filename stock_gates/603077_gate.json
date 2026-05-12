@@ -1,0 +1,51 @@
+{
+  "stock_id": "603077",
+  "stock_name": "和邦生物",
+  "concept": "化工制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "纯碱",
+    "氯化铵",
+    "草甘膦",
+    "双甘膦",
+    "磷矿石"
+  ],
+  "should": [
+    "蛋氨酸",
+    "光伏玻璃",
+    "单晶硅片",
+    "IDA法工艺",
+    "化工制造",
+    "双甘膦工艺优化",
+    "农业除草",
+    "光伏封装",
+    "太阳能硅片",
+    "双甘膦全球最大供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "纯碱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氯化铵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "草甘膦",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "双甘膦",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磷矿石",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:42:59"
+}

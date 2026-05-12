@@ -1,0 +1,41 @@
+{
+  "stock_id": "002233",
+  "stock_name": "塔牌集团",
+  "concept": "水泥制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水泥制造",
+    "水泥",
+    "熟料"
+  ],
+  "should": [
+    "预拌混凝土",
+    "水泥窑协同处置固废",
+    "铝灰渣处置",
+    "分布式光伏发电",
+    "工业建筑",
+    "民用建筑",
+    "交通工程",
+    "水利工程",
+    "海港工程",
+    "国防建设"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水泥制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水泥",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "熟料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:30:35"
+}

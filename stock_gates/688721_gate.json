@@ -1,0 +1,37 @@
+{
+  "stock_id": "688721",
+  "stock_name": "龙图光罩",
+  "concept": "半导体掩模版",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体掩模版",
+    "石英掩模版",
+    "130nm及以上节点技术"
+  ],
+  "should": [
+    "电子束光刻技术",
+    "PSM相移掩膜版技术",
+    "苏打掩模版",
+    "第三代掩模版PSM",
+    "特色工艺半导体",
+    "芯片制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体掩模版",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "石英掩模版",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "130nm及以上节点技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:24:34"
+}

@@ -1,0 +1,39 @@
+{
+  "stock_id": "002901",
+  "stock_name": "大博医疗",
+  "concept": "骨科植入耗材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "骨科植入耗材",
+    "骨科创伤类植入耗材",
+    "脊柱类植入耗材"
+  ],
+  "should": [
+    "神经外科类植入耗材",
+    "微创外科耗材",
+    "人工关节",
+    "运动医学",
+    "颅颌面外科耗材",
+    "普外科耗材",
+    "齿科耗材",
+    "纳米生物活性玻璃新型骨重建材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "骨科植入耗材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "骨科创伤类植入耗材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "脊柱类植入耗材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:02:31"
+}

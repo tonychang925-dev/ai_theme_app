@@ -1,0 +1,36 @@
+{
+  "stock_id": "002410",
+  "stock_name": "广联达",
+  "concept": "建筑信息化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "造价软件",
+    "数字新成本平台"
+  ],
+  "should": [
+    "数字项目集成管理平台",
+    "建筑信息化",
+    "云平台",
+    "人工智能",
+    "数据中台",
+    "技术中台",
+    "业务中台",
+    "造价",
+    "施工",
+    "设计"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "造价软件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字新成本平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:40:18"
+}

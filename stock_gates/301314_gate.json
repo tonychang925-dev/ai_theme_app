@@ -1,0 +1,36 @@
+{
+  "stock_id": "301314",
+  "stock_name": "科瑞思",
+  "concept": "磁环线圈绕线服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "小型磁环线圈绕线服务",
+    "全自动绕线设备销售或租赁"
+  ],
+  "should": [
+    "小型磁环线圈",
+    "全自动绕线设备",
+    "全自动电子元器件装配线销售",
+    "磁环线圈绕线服务",
+    "网络通讯",
+    "消费电子",
+    "汽车电子",
+    "安防电子",
+    "智能家居",
+    "智能仪表"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "小型磁环线圈绕线服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全自动绕线设备销售或租赁",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:02:36"
+}

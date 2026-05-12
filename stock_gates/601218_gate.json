@@ -1,0 +1,24 @@
+{
+  "stock_id": "601218",
+  "stock_name": "吉鑫科技",
+  "concept": "风电铸件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风电铸件"
+  ],
+  "should": [
+    "Si强化铁素体球墨铸铁",
+    "风电整机",
+    "全球规模最大的风电铸件生产企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风电铸件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:35:28"
+}

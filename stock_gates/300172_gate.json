@@ -1,0 +1,41 @@
+{
+  "stock_id": "300172",
+  "stock_name": "中电环保",
+  "concept": "生态环境治理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水务",
+    "固危废",
+    "烟气治理"
+  ],
+  "should": [
+    "废水处理零排放及纳滤膜分离",
+    "全膜法水处理",
+    "分布式智慧水体/水质净化",
+    "污泥干化耦合处理",
+    "生态环境治理",
+    "新能源",
+    "核电",
+    "石化",
+    "冶金",
+    "煤化工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "固危废",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "烟气治理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:16:05"
+}

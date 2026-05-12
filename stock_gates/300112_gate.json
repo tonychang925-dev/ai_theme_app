@@ -1,0 +1,51 @@
+{
+  "stock_id": "300112",
+  "stock_name": "万讯自控",
+  "concept": "工业自动化仪表",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业自动化仪表",
+    "智能自动化仪表",
+    "执行机构",
+    "阀门定位器",
+    "流量仪表"
+  ],
+  "should": [
+    "气体探测器",
+    "燃气截止阀",
+    "MEMS传感器",
+    "MEMS技术",
+    "传感器技术",
+    "中高端数控系统",
+    "化工",
+    "电力",
+    "冶金",
+    "石油"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业自动化仪表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能自动化仪表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "执行机构",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "阀门定位器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "流量仪表",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:13:47"
+}

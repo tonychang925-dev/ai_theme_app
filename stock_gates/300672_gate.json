@@ -1,0 +1,37 @@
+{
+  "stock_id": "300672",
+  "stock_name": "国科微",
+  "concept": "广播电视与智能监控芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "广播电视与智能监控芯片",
+    "广播电视系列芯片",
+    "智能监控系列芯片"
+  ],
+  "should": [
+    "集成电路设计",
+    "芯片开发设计",
+    "广播电视",
+    "智能监控",
+    "集成电路设计企业",
+    "主流供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "广播电视与智能监控芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "广播电视系列芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能监控系列芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:38:08"
+}

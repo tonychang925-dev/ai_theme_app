@@ -1,0 +1,46 @@
+{
+  "stock_id": "300413",
+  "stock_name": "芒果超媒",
+  "concept": "长视频平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "长视频平台",
+    "互联网视频平台",
+    "综艺节目",
+    "影视剧制作"
+  ],
+  "should": [
+    "小芒电商",
+    "线下实景娱乐",
+    "会员",
+    "广告",
+    "运营商",
+    "48个综艺制作团队",
+    "29个影视制作团队",
+    "34个新芒计划战略工作室",
+    "工作室制度",
+    "双平台共创共享机制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "长视频平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "互联网视频平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综艺节目",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "影视剧制作",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:26:19"
+}

@@ -1,0 +1,33 @@
+{
+  "stock_id": "601328",
+  "stock_name": "交通银行",
+  "concept": "财富管理银行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "财富管理银行",
+    "财富管理"
+  ],
+  "should": [
+    "公司金融",
+    "个人金融",
+    "实体经济",
+    "科技创新",
+    "绿色低碳",
+    "普惠小微",
+    "基础设施"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "财富管理银行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "财富管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:36:09"
+}

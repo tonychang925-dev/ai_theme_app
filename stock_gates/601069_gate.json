@@ -1,0 +1,31 @@
+{
+  "stock_id": "601069",
+  "stock_name": "西部黄金",
+  "concept": "黄金+锰业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "黄金"
+  ],
+  "should": [
+    "铬矿石",
+    "铁精粉",
+    "电解金属锰",
+    "机械连续采矿技术",
+    "尾矿资源综合利用",
+    "工艺改造及浸出尾渣无害化综合利用",
+    "黄金饰品",
+    "工业用金",
+    "锰合金",
+    "西部地区现代化黄金采选冶企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "黄金",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:33:51"
+}

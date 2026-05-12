@@ -1,0 +1,41 @@
+{
+  "stock_id": "688389",
+  "stock_name": "普门科技",
+  "concept": "体外诊断与康复设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "体外诊断与康复设备",
+    "电化学发光",
+    "家用医疗"
+  ],
+  "should": [
+    "免疫比浊",
+    "液相色谱",
+    "免疫荧光",
+    "血凝力学测试",
+    "分子诊断",
+    "负压敷料工艺",
+    "高流量湿化混合气体控制",
+    "围术期患者温度控制技术",
+    "红外复合光谱治疗技术",
+    "气压弹道冲击和电磁弹道冲击技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "体外诊断与康复设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电化学发光",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "家用医疗",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:17:35"
+}

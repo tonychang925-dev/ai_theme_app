@@ -1,0 +1,36 @@
+{
+  "stock_id": "603667",
+  "stock_name": "五洲新春",
+  "concept": "精密轴承制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轴承及配件",
+    "风电滚子"
+  ],
+  "should": [
+    "汽车配件",
+    "热管理系统零部件",
+    "精密轴承制造",
+    "材料控制",
+    "滚子探伤",
+    "滚子热处理",
+    "大凸度滚子磨削加工",
+    "民营轴承领军企业",
+    "风电滚子龙头",
+    "国内少数全产业链企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轴承及配件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电滚子",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:54:19"
+}

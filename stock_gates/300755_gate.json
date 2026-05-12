@@ -1,0 +1,36 @@
+{
+  "stock_id": "300755",
+  "stock_name": "华致酒行",
+  "concept": "酒类流通",
+  "strategy_type": "industry_chain",
+  "must": [
+    "酒类流通龙头",
+    "全渠道营销网络体系"
+  ],
+  "should": [
+    "连锁酒行",
+    "华致酒库",
+    "华致名酒库",
+    "酒类流通",
+    "零售网点",
+    "KA卖场",
+    "团购",
+    "电商",
+    "终端供应商",
+    "与贵州茅台、五粮液长期稳定合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "酒类流通龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全渠道营销网络体系",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:41:41"
+}

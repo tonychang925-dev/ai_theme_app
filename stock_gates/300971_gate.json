@@ -1,0 +1,45 @@
+{
+  "stock_id": "300971",
+  "stock_name": "博亚精工",
+  "concept": "精密装备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "板带成形加工精密装备",
+    "关键零部件",
+    "特种装备配套零部件",
+    "高端装备制造商"
+  ],
+  "should": [
+    "电解海水制氯装置",
+    "电解盐水制氯装置",
+    "卫生型制氯装置",
+    "自动反冲洗过滤器",
+    "关键零部件制造技术",
+    "系统集成技术",
+    "精密装备制造",
+    "自主知识产权",
+    "替代德国、日本、意大利同类产品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "板带成形加工精密装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "关键零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种装备配套零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端装备制造商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:51:27"
+}

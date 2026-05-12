@@ -1,0 +1,28 @@
+{
+  "stock_id": "002039",
+  "stock_name": "黔源电力",
+  "concept": "水电清洁能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水电站"
+  ],
+  "should": [
+    "北盘江",
+    "芙蓉江",
+    "三岔河",
+    "光伏电站",
+    "水电清洁能源",
+    "远程集控",
+    "流域梯级优化调度"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水电站",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:19:39"
+}

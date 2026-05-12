@@ -1,0 +1,51 @@
+{
+  "stock_id": "603311",
+  "stock_name": "金海高科",
+  "concept": "空调过滤龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "空调过滤龙头",
+    "高性能过滤材料",
+    "功能性过滤材料",
+    "功能性过滤网",
+    "空调过滤器"
+  ],
+  "should": [
+    "汽车过滤器",
+    "过滤网",
+    "纳米银抗毒空气过滤器",
+    "抗病毒材料",
+    "纳米银空气过滤网",
+    "过滤器",
+    "空气净化机",
+    "汽车空调过滤系统",
+    "新能源车",
+    "空调过滤行业龙头企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "空调过滤龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高性能过滤材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功能性过滤材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功能性过滤网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空调过滤器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:48:46"
+}

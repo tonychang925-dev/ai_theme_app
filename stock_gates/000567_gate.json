@@ -1,0 +1,26 @@
+{
+  "stock_id": "000567",
+  "stock_name": "海德股份",
+  "concept": "不良资产管理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "不良资产管理"
+  ],
+  "should": [
+    "困境资产管理",
+    "储能产业投资",
+    "房地产不良资产处置",
+    "A股唯一AMC企业",
+    "地方AMC行业前列"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "不良资产管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T16:56:49"
+}

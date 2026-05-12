@@ -1,0 +1,39 @@
+{
+  "stock_id": "603867",
+  "stock_name": "新化股份",
+  "concept": "精细化工提锂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "脂肪胺",
+    "香精香料",
+    "有机溶剂"
+  ],
+  "should": [
+    "双氧水",
+    "精细化工提锂",
+    "萃取工艺",
+    "盐湖提锂",
+    "锂电池回收",
+    "电解液添加剂",
+    "全球前列脂肪胺生产企业",
+    "与奇华顿合资"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "脂肪胺",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "香精香料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有机溶剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:57:47"
+}

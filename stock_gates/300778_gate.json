@@ -1,0 +1,36 @@
+{
+  "stock_id": "300778",
+  "stock_name": "新城市",
+  "concept": "国土空间规划",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国土空间规划",
+    "城乡规划"
+  ],
+  "should": [
+    "工程设计",
+    "工程咨询",
+    "智慧停车",
+    "城乡规划甲级",
+    "建筑工程甲级",
+    "市政道路甲级",
+    "风景园林甲级",
+    "工程咨询资信甲级",
+    "给排水乙级",
+    "桥梁乙级"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国土空间规划",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城乡规划",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:42:46"
+}

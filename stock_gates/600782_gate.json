@@ -1,0 +1,41 @@
+{
+  "stock_id": "600782",
+  "stock_name": "新钢股份",
+  "concept": "钢铁制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国内中厚板骨干企业",
+    "中厚板",
+    "硅钢"
+  ],
+  "should": [
+    "长材",
+    "卷板",
+    "热处理板",
+    "热轧品种卷",
+    "优钢卷",
+    "高品质稀土钢制造关键技术",
+    "高性能高牌号电工钢",
+    "高炉低碳富氧",
+    "厚板线集中操控改造",
+    "大型LNG项目"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国内中厚板骨干企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中厚板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硅钢",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:27:37"
+}

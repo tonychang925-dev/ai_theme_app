@@ -1,0 +1,28 @@
+{
+  "stock_id": "688270",
+  "stock_name": "臻镭科技",
+  "concept": "特种射频芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种行业芯片领先厂商"
+  ],
+  "should": [
+    "特种射频芯片",
+    "终端射频前端芯片",
+    "电源管理芯片",
+    "微系统及模组",
+    "超宽带、高线性、高效率、低噪声",
+    "大带宽、高采样率、高精度、低功耗",
+    "多芯片组装和先进3D封装技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种行业芯片领先厂商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:13:47"
+}

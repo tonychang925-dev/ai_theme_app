@@ -1,0 +1,51 @@
+{
+  "stock_id": "603758",
+  "stock_name": "秦安股份",
+  "concept": "汽车发动机零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车发动机零部件",
+    "发动机缸盖",
+    "发动机缸体",
+    "变速器箱体",
+    "变速器壳体"
+  ],
+  "should": [
+    "电机壳体",
+    "NVH实验室",
+    "试验台架",
+    "长安福特",
+    "一汽轿车",
+    "吉利汽车",
+    "理想新晨",
+    "长安汽车",
+    "东安动力",
+    "柳州五菱"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车发动机零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发动机缸盖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发动机缸体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "变速器箱体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "变速器壳体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:56:10"
+}

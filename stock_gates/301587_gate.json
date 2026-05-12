@@ -1,0 +1,41 @@
+{
+  "stock_id": "301587",
+  "stock_name": "中瑞股份",
+  "concept": "锂电池安全结构件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "动力型组合盖帽",
+    "锂电池安全结构件",
+    "21#组合盖帽"
+  ],
+  "should": [
+    "容量型组合盖帽",
+    "锂电池安全结构件设计",
+    "大圆柱电池结构件研发",
+    "18#组合盖帽",
+    "新能源汽车",
+    "电动自行车",
+    "电动工具",
+    "智能家居",
+    "消费电子",
+    "数码消费电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "动力型组合盖帽",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂电池安全结构件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "21#组合盖帽",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:06:35"
+}

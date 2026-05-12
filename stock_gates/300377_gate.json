@@ -1,0 +1,36 @@
+{
+  "stock_id": "300377",
+  "stock_name": "赢时胜",
+  "concept": "金融IT服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "资产托管",
+    "资产管理"
+  ],
+  "should": [
+    "金融IT服务",
+    "金融机构中后台信息化系统",
+    "托管机构",
+    "基金",
+    "券商",
+    "保险资管",
+    "银行理财子公司",
+    "净值核算",
+    "资金清算",
+    "投资监督"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "资产托管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "资产管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:24:32"
+}

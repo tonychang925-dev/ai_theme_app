@@ -1,0 +1,41 @@
+{
+  "stock_id": "600215",
+  "stock_name": "派斯林",
+  "concept": "工业自动化系统集成",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业自动化系统集成",
+    "工业自动化设备",
+    "工业机器人系统集成"
+  ],
+  "should": [
+    "特斯拉",
+    "瑞维安",
+    "通用",
+    "福特",
+    "克莱斯勒",
+    "麦格纳",
+    "玛汀瑞亚",
+    "一汽",
+    "汽车白车身",
+    "电池托盘"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业自动化系统集成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业自动化设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业机器人系统集成",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:12:02"
+}

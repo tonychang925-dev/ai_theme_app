@@ -1,0 +1,35 @@
+{
+  "stock_id": "603195",
+  "stock_name": "公牛集团",
+  "concept": "电工电料龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "转换器",
+    "墙壁开关插座"
+  ],
+  "should": [
+    "LED照明",
+    "数码配件",
+    "按压式开关",
+    "新能源电连接",
+    "电工电料龙头",
+    "防频闪",
+    "防蓝光",
+    "B端渠道",
+    "海外渠道"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "转换器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "墙壁开关插座",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:46:05"
+}

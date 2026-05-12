@@ -1,0 +1,34 @@
+{
+  "stock_id": "600821",
+  "stock_name": "金开新能",
+  "concept": "新能源运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏开发",
+    "风电开发"
+  ],
+  "should": [
+    "绿电交易",
+    "准皖直流特高压通道",
+    "新能源运营",
+    "投资",
+    "建设",
+    "运营",
+    "电力交易",
+    "碳交易"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电开发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:28:41"
+}

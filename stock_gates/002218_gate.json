@@ -1,0 +1,51 @@
+{
+  "stock_id": "002218",
+  "stock_name": "拓日新能",
+  "concept": "光伏新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高效太阳能电池",
+    "高效光伏组件",
+    "光伏玻璃",
+    "光伏胶膜",
+    "分布式光伏电站"
+  ],
+  "should": [
+    "光伏支架",
+    "光伏接线盒",
+    "便携型太阳能电源",
+    "太阳能照明系统",
+    "智能机器人研发与应用",
+    "全自动智能太阳电池组件生产线",
+    "装备自制化",
+    "工艺自主化",
+    "光伏建筑一体化(BIPV)",
+    "整县分布式光伏电站"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高效太阳能电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高效光伏组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏玻璃",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏胶膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分布式光伏电站",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:29:53"
+}

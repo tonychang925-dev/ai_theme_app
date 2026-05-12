@@ -1,0 +1,36 @@
+{
+  "stock_id": "603039",
+  "stock_name": "泛微网络",
+  "concept": "协同管理软件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "协同管理软件",
+    "e-coogy"
+  ],
+  "should": [
+    "e-office",
+    "eteams",
+    "微服务架构",
+    "低代码平台e-buider",
+    "智能门户",
+    "信创全栈适配",
+    "营销管理",
+    "项目管理",
+    "客服管理",
+    "合同管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "协同管理软件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "e-coogy",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:42:02"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "600585",
+  "stock_name": "海螺水泥",
+  "concept": "水泥建材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "T型战略",
+    "长江黄金水道",
+    "自有码头",
+    "石灰石矿山"
+  ],
+  "should": [
+    "熟料基地",
+    "粉磨站",
+    "骨料业务",
+    "水运",
+    "东部市场",
+    "砂石骨料",
+    "成本优势",
+    "规模优势",
+    "资金优势",
+    "渠道优势"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "T型战略",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "长江黄金水道",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自有码头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "石灰石矿山",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:21:55"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "000830",
+  "stock_name": "鲁西化工",
+  "concept": "智慧化工园区",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧化工园区"
+  ],
+  "should": [
+    "化工新材料",
+    "基础化工",
+    "化肥产品",
+    "煤炭",
+    "原盐",
+    "电力",
+    "丙烯",
+    "纯苯",
+    "苯酚丙酮",
+    "绝缘材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧化工园区",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:06:31"
+}

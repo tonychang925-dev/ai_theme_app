@@ -1,0 +1,36 @@
+{
+  "stock_id": "300769",
+  "stock_name": "德方纳米",
+  "concept": "磷酸铁锂正极材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "磷酸铁锂正极材料",
+    "纳米磷酸铁锂"
+  ],
+  "should": [
+    "补锂剂",
+    "自热蒸发液相合成法",
+    "液相法",
+    "新能源汽车动力电池",
+    "储能电池系统",
+    "国内唯一液相法生产企业",
+    "市场份额前2位",
+    "宁德时代供应商",
+    "比亚迪供应商",
+    "亿纬锂能供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "磷酸铁锂正极材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纳米磷酸铁锂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:42:20"
+}

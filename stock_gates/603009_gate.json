@@ -1,0 +1,36 @@
+{
+  "stock_id": "603009",
+  "stock_name": "北特科技",
+  "concept": "汽车零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "转向器类零部件",
+    "减振器类零部件"
+  ],
+  "should": [
+    "铝合金轻量化零部件",
+    "空调压缩机",
+    "高精密类零部件",
+    "汽车零部件",
+    "双齿齿条批量供货",
+    "可变速比齿条开发",
+    "交叉孔减震杆开发",
+    "主动减震活塞杆开发",
+    "整车集成式热管理系统开发",
+    "比亚迪供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "转向器类零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "减振器类零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:40:55"
+}

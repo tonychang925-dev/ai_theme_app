@@ -1,0 +1,28 @@
+{
+  "stock_id": "600023",
+  "stock_name": "浙能电力",
+  "concept": "火力发电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "火力发电"
+  ],
+  "should": [
+    "供热",
+    "浙江区域能源龙头企业",
+    "省内统调电厂发电量占比56.6%",
+    "清洁低碳转型",
+    "新能源高端装备制造业",
+    "电力安全保供压舱石",
+    "稳定器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "火力发电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:07:18"
+}

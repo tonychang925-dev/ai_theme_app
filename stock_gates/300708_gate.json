@@ -1,0 +1,29 @@
+{
+  "stock_id": "300708",
+  "stock_name": "聚灿光电",
+  "concept": "LED芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LED芯片"
+  ],
+  "should": [
+    "高亮度蓝光LED",
+    "倒装芯片",
+    "高压芯片",
+    "Mini LED芯片",
+    "车用倒装LED",
+    "低缺陷密度高可靠性的外延技术",
+    "高取光效率的芯片工艺技术",
+    "DBR反射镜倒装芯片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:39:53"
+}

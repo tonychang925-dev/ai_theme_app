@@ -1,0 +1,36 @@
+{
+  "stock_id": "600783",
+  "stock_name": "鲁信创投",
+  "concept": "创业投资",
+  "strategy_type": "industry_chain",
+  "must": [
+    "创业投资",
+    "股权投资"
+  ],
+  "should": [
+    "基金投资",
+    "项目退出",
+    "生物医药",
+    "半导体",
+    "装备制造",
+    "新材料",
+    "早期投资",
+    "成长期投资",
+    "IPO项目",
+    "一级市场股权转让"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "创业投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "股权投资",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:27:34"
+}

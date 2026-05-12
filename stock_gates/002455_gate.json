@@ -1,0 +1,36 @@
+{
+  "stock_id": "002455",
+  "stock_name": "百川股份",
+  "concept": "精细化工与新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "醋酸丁酯",
+    "偏苯三酸酐"
+  ],
+  "should": [
+    "针状焦",
+    "石墨负极材料",
+    "磷酸铁",
+    "锂电池",
+    "储能模组",
+    "涂料",
+    "油墨",
+    "树脂",
+    "增塑剂",
+    "光固化材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "醋酸丁酯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "偏苯三酸酐",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:42:38"
+}

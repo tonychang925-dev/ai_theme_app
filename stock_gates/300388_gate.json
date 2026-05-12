@@ -1,0 +1,41 @@
+{
+  "stock_id": "300388",
+  "stock_name": "节能国祯",
+  "concept": "水务综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水务综合服务",
+    "城市水环境综合治理",
+    "污水处理厂"
+  ],
+  "should": [
+    "工业废水治理",
+    "村镇水环境综合治理",
+    "污水管网",
+    "再生水设施",
+    "项目投资",
+    "科技研发",
+    "设计建造",
+    "设备制造与集成",
+    "项目运营服务",
+    "水环境综合治理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水务综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市水环境综合治理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "污水处理厂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:25:12"
+}

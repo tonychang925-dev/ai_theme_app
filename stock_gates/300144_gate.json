@@ -1,0 +1,36 @@
+{
+  "stock_id": "300144",
+  "stock_name": "宋城演艺",
+  "concept": "旅游演艺龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "千古情景区",
+    "公园加演艺"
+  ],
+  "should": [
+    "重资产项目",
+    "轻资产项目",
+    "旅游演艺龙头",
+    "全产业链闭环",
+    "项目选址",
+    "导演编创",
+    "舞台呈现",
+    "景区运营",
+    "营销推广",
+    "提升改造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "千古情景区",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公园加演艺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:15:05"
+}

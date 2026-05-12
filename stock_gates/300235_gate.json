@@ -1,0 +1,36 @@
+{
+  "stock_id": "300235",
+  "stock_name": "方直科技",
+  "concept": "智能教育服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中小学教育产品",
+    "人工智能+教育数字化产品"
+  ],
+  "should": [
+    "智慧教学平台",
+    "智能教育服务",
+    "教学评测系统",
+    "数字出版发行解决方案",
+    "互联网",
+    "人工智能",
+    "虚拟数字人",
+    "云计算",
+    "大数据",
+    "深度学习"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中小学教育产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人工智能+教育数字化产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:18:45"
+}

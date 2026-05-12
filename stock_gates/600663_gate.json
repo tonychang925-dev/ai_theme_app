@@ -1,0 +1,50 @@
+{
+  "stock_id": "600663",
+  "stock_name": "陆家嘴",
+  "concept": "商业地产运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商业地产",
+    "商业运营",
+    "金融服务",
+    "陆家嘴金融城",
+    "前滩国际商务区"
+  ],
+  "should": [
+    "甲级写字楼",
+    "高品质研发楼",
+    "商业物业",
+    "酒店物业",
+    "张江科学城",
+    "川沙新市镇",
+    "商业地产运营",
+    "长期持有核心区域优质物业",
+    "短期出售或转让住宅及商办物业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商业地产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商业运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "陆家嘴金融城",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "前滩国际商务区",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:24:17"
+}

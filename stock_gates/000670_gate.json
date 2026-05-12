@@ -1,0 +1,36 @@
+{
+  "stock_id": "000670",
+  "stock_name": "盈方微",
+  "concept": "芯片设计分销",
+  "strategy_type": "industry_chain",
+  "must": [
+    "集成电路芯片设计销售",
+    "电子元器件分销"
+  ],
+  "should": [
+    "智能影像处理器",
+    "嵌入式软件",
+    "指纹/触控芯片",
+    "射频芯片",
+    "电感",
+    "电容",
+    "连接器/开关",
+    "二三极管",
+    "晶体振荡器",
+    "滤波器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "集成电路芯片设计销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子元器件分销",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:00:11"
+}

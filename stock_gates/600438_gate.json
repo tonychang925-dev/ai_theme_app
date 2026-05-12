@@ -1,0 +1,41 @@
+{
+  "stock_id": "600438",
+  "stock_name": "通威股份",
+  "concept": "硅料电池片龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "多晶硅",
+    "硅料电池片龙头",
+    "电池片"
+  ],
+  "should": [
+    "永祥法第七代",
+    "组件",
+    "TOPCon",
+    "HJT",
+    "全背接触电池",
+    "钙钛矿/硅叠层电池",
+    "光伏发电",
+    "多晶硅产能国内第一全球第一",
+    "连续5年全球电池片出货量第一",
+    "提前锁定下游客户"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "多晶硅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硅料电池片龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电池片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:17:59"
+}

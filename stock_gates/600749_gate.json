@@ -1,0 +1,46 @@
+{
+  "stock_id": "600749",
+  "stock_name": "西藏旅游",
+  "concept": "西藏旅游",
+  "strategy_type": "industry_chain",
+  "must": [
+    "西藏旅游",
+    "景区运营",
+    "旅游服务",
+    "九垂核心吸引体验产品"
+  ],
+  "should": [
+    "南峰大本营品质线路产品",
+    "玉松岛",
+    "巴松措轻奢徒步",
+    "研学产品",
+    "亲子产品",
+    "抖音",
+    "携程",
+    "公众号",
+    "巴松措蓝",
+    "西藏风情直播间"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "西藏旅游",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "景区运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "旅游服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "九垂核心吸引体验产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:26:40"
+}

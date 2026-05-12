@@ -1,0 +1,41 @@
+{
+  "stock_id": "000959",
+  "stock_name": "首钢股份",
+  "concept": "高端钢铁材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车板",
+    "电工钢",
+    "镀锡板"
+  ],
+  "should": [
+    "金属软磁材料",
+    "取向电工钢",
+    "无取向电工钢",
+    "热轧酸洗板",
+    "耐候钢",
+    "汽车结构钢",
+    "高强工程机械用钢",
+    "管线钢",
+    "桥梁钢",
+    "能源用钢"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电工钢",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "镀锡板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:11:16"
+}

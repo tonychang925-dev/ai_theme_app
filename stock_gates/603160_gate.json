@@ -1,0 +1,36 @@
+{
+  "stock_id": "603160",
+  "stock_name": "汇顶科技",
+  "concept": "指纹芯片龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "指纹芯片龙头",
+    "指纹芯片"
+  ],
+  "should": [
+    "触控产品",
+    "IC设计",
+    "新型生物识别产品",
+    "安全产品",
+    "中大功率音频放大器",
+    "第二代光线传感器",
+    "主控芯片",
+    "固件开发",
+    "智能终端",
+    "汽车电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "指纹芯片龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "指纹芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:45:05"
+}

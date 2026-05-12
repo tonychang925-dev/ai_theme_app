@@ -1,0 +1,41 @@
+{
+  "stock_id": "301365",
+  "stock_name": "矩阵股份",
+  "concept": "空间设计软装",
+  "strategy_type": "industry_chain",
+  "must": [
+    "空间设计软装",
+    "空间设计",
+    "软装陈设"
+  ],
+  "should": [
+    "全球百大设计巨头排行榜第17位",
+    "住宅领域第1位",
+    "中国十强室内设计机构",
+    "华润置地",
+    "旭辉控股",
+    "金地集团",
+    "绿城中国",
+    "万科",
+    "住宅地产售楼处",
+    "住宅地产样板间"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "空间设计软装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空间设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "软装陈设",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:03:56"
+}

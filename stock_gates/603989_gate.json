@@ -1,0 +1,41 @@
+{
+  "stock_id": "603989",
+  "stock_name": "艾华集团",
+  "concept": "铝电解电容器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铝电解电容器",
+    "节能照明类铝电解电容器",
+    "消费类铝电解电容器"
+  ],
+  "should": [
+    "工业类铝电解电容器",
+    "引线式电子消费类铝电解电容器",
+    "牛角式铝电解电容器",
+    "腐蚀箔",
+    "化成箔",
+    "电解液",
+    "电网智慧电表",
+    "数据中心",
+    "节能照明",
+    "消费电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铝电解电容器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "节能照明类铝电解电容器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "消费类铝电解电容器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:00:29"
+}

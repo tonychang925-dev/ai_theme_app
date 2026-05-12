@@ -1,0 +1,36 @@
+{
+  "stock_id": "688375",
+  "stock_name": "国博电子",
+  "concept": "军用T/R组件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "军用T/R组件",
+    "有源相控阵T/R组件"
+  ],
+  "should": [
+    "砷化镓基站射频集成电路",
+    "大功率控制模块",
+    "大功率放大模块",
+    "国基南方唯一上市平台",
+    "高频低损耗传输互连设计",
+    "三维立体叠层组件设计",
+    "多温度梯度钎焊工艺",
+    "可靠性试验分析测试",
+    "异构集成技术",
+    "陆基防空雷达"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "军用T/R组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有源相控阵T/R组件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:17:00"
+}

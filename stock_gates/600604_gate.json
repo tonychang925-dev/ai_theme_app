@@ -1,0 +1,46 @@
+{
+  "stock_id": "600604",
+  "stock_name": "市北高新",
+  "concept": "园区产业运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "园区产业载体开发经营",
+    "企业服务集成",
+    "产业投资",
+    "数据智能产业"
+  ],
+  "should": [
+    "区块链产业",
+    "可信数据经济",
+    "国家区块链创新应用综合性试点",
+    "上海城市数字化转型市级示范区",
+    "聚能湾国家级孵化器",
+    "静安国际科创社区",
+    "跨国公司地区总部",
+    "园区产业运营",
+    "双创孵化",
+    "投资助力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "园区产业载体开发经营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "企业服务集成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "产业投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据智能产业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:22:41"
+}

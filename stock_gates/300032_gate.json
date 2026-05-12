@@ -1,0 +1,31 @@
+{
+  "stock_id": "300032",
+  "stock_name": "金龙机电",
+  "concept": "消费电子零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "马达"
+  ],
+  "should": [
+    "电子雾化器",
+    "电子烟咪头",
+    "电子烟结构件",
+    "硅胶塑胶结构件",
+    "触控显示产品",
+    "马达研发",
+    "结构件制造",
+    "电子雾化器生产",
+    "可穿戴设备",
+    "智能手机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "马达",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:10:16"
+}

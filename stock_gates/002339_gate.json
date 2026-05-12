@@ -1,0 +1,40 @@
+{
+  "stock_id": "002339",
+  "stock_name": "积成电子",
+  "concept": "智能电网自动化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能电网自动化",
+    "电网自动化",
+    "公用事业自动化"
+  ],
+  "should": [
+    "配用电自动化",
+    "发电厂自动化",
+    "信息安全服务",
+    "安全可控变电站",
+    "新一代高可靠变电站",
+    "电磁暂态仿真技术",
+    "源网荷储自动功率控制",
+    "精准切负荷功能",
+    "超声波流量仪表"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能电网自动化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电网自动化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公用事业自动化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:36:28"
+}

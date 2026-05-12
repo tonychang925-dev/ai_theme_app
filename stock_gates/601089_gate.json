@@ -1,0 +1,29 @@
+{
+  "stock_id": "601089",
+  "stock_name": "福元医药",
+  "concept": "创新型仿制药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "复方α-酮酸片"
+  ],
+  "should": [
+    "沙格列汀片",
+    "磷酸特地唑胺片",
+    "盐酸帕罗西汀肠溶缓释片",
+    "黄体酮软胶囊",
+    "创新型仿制药",
+    "仿制药研发",
+    "国内首个通过一致性评价",
+    "市场份额国内厂商第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "复方α-酮酸片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:33:59"
+}

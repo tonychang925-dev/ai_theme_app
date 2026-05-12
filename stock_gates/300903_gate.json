@@ -1,0 +1,46 @@
+{
+  "stock_id": "300903",
+  "stock_name": "科翔股份",
+  "concept": "印制电路板",
+  "strategy_type": "industry_chain",
+  "must": [
+    "印制电路板",
+    "高密度互连（HDI）板",
+    "IC载板",
+    "高密度印制电路板研发"
+  ],
+  "should": [
+    "多层板",
+    "双层板",
+    "厚铜板",
+    "高频/高速板",
+    "金属基板",
+    "陶瓷基板",
+    "软硬结合板",
+    "通讯设备",
+    "工业控制",
+    "汽车电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "印制电路板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高密度互连（HDI）板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IC载板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高密度印制电路板研发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:48:30"
+}

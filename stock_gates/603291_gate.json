@@ -1,0 +1,36 @@
+{
+  "stock_id": "603291",
+  "stock_name": "联合水务",
+  "concept": "水务运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "供水业务",
+    "污水处理业务"
+  ],
+  "should": [
+    "工程业务",
+    "水务运营",
+    "特许经营权",
+    "BOT",
+    "TOT",
+    "ROT",
+    "BOO",
+    "委托运营",
+    "二次供水运行维护",
+    "水质检测"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "供水业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "污水处理业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:48:19"
+}

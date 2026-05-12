@@ -1,0 +1,51 @@
+{
+  "stock_id": "002686",
+  "stock_name": "亿利达",
+  "concept": "中央空调风机龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国内中央空调风机行业龙头",
+    "中央空调风机",
+    "建筑通风机",
+    "中央空调风机龙头",
+    "高效低噪智能风机技术"
+  ],
+  "should": [
+    "商用建筑",
+    "公共建筑",
+    "地铁隧道",
+    "铁路隧道",
+    "公路隧道",
+    "工厂",
+    "住宅",
+    "电动汽车",
+    "插电式混合动力车",
+    "增程式电动车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国内中央空调风机行业龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中央空调风机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑通风机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中央空调风机龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高效低噪智能风机技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:53:34"
+}

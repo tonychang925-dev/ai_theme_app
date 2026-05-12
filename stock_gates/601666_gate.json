@@ -1,0 +1,41 @@
+{
+  "stock_id": "601666",
+  "stock_name": "平煤股份",
+  "concept": "煤炭开采加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤炭开采加工",
+    "冶炼精煤",
+    "煤炭洗选深加工"
+  ],
+  "should": [
+    "混煤",
+    "主焦精",
+    "1/3焦精",
+    "肥精",
+    "矿井瓦斯治理",
+    "智能化矿山建设",
+    "局部制冷设备",
+    "炼焦配煤",
+    "钢铁企业",
+    "优质低硫主焦煤龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤炭开采加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冶炼精煤",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭洗选深加工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:37:51"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "300155",
+  "stock_name": "安居宝",
+  "concept": "社区安防",
+  "strategy_type": "industry_chain",
+  "must": [
+    "楼宇对讲系统",
+    "智能家居系统"
+  ],
+  "should": [
+    "停车场系统",
+    "监控系统",
+    "AI智慧社区系统",
+    "社区安防",
+    "车牌识别",
+    "微信支付",
+    "新建住宅小区",
+    "城市智慧停车",
+    "国内社区安防行业的领导品牌",
+    "全国最大的道闸广告运营平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "楼宇对讲系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能家居系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:15:21"
+}

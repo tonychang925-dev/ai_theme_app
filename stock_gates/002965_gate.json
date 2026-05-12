@@ -1,0 +1,51 @@
+{
+  "stock_id": "002965",
+  "stock_name": "祥鑫科技",
+  "concept": "金属模具与结构件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金属模具与结构件",
+    "汽车精密冲压模具",
+    "金属结构件",
+    "动力电池箱体",
+    "轻量化车身结构件"
+  ],
+  "should": [
+    "精密冲压技术",
+    "热交换系统精密部件",
+    "底盘系统部件",
+    "通信设备精密冲压模具",
+    "光伏逆变器",
+    "储能机柜",
+    "充电桩机箱",
+    "户外基站金属结构件",
+    "IDC机箱",
+    "新能源汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金属模具与结构件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车精密冲压模具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金属结构件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动力电池箱体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轻量化车身结构件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:05:23"
+}

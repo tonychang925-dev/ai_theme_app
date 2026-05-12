@@ -1,0 +1,41 @@
+{
+  "stock_id": "000756",
+  "stock_name": "新华制药",
+  "concept": "解热镇痛原料药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "解热镇痛原料药",
+    "原料药",
+    "制剂"
+  ],
+  "should": [
+    "医药中间体",
+    "布洛芬",
+    "安乃近",
+    "咖啡因",
+    "阿司匹林",
+    "左旋多巴",
+    "舒泰得",
+    "库欣",
+    "介宁",
+    "保畅"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "解热镇痛原料药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原料药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "制剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:03:38"
+}

@@ -1,0 +1,44 @@
+{
+  "stock_id": "688253",
+  "stock_name": "英诺特",
+  "concept": "POCT快速诊断",
+  "strategy_type": "industry_chain",
+  "must": [
+    "POCT快速诊断",
+    "呼吸道病原体联合检测产品",
+    "流感抗原三联检测试剂盒",
+    "国内独家品种"
+  ],
+  "should": [
+    "全血呼吸五联检测试剂盒",
+    "流感抗体三联检测试剂盒",
+    "血清呼吸五联检测试剂盒",
+    "免疫层析平台",
+    "间接免疫荧光平台",
+    "核酸分子（PCR）检测平台",
+    "呼吸道病原体检测",
+    "儿童急门诊"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "POCT快速诊断",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "呼吸道病原体联合检测产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "流感抗原三联检测试剂盒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内独家品种",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:13:16"
+}

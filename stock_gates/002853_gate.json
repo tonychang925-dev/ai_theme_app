@@ -1,0 +1,33 @@
+{
+  "stock_id": "002853",
+  "stock_name": "皮阿诺",
+  "concept": "定制家居",
+  "strategy_type": "industry_chain",
+  "must": [
+    "整体橱柜",
+    "全屋定制"
+  ],
+  "should": [
+    "门墙",
+    "定制家居",
+    "精装修市场",
+    "旧房二次装修",
+    "二手房重装修",
+    "国内首家定制橱柜上市企业",
+    "国内领先的定制家居产品企业之一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "整体橱柜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全屋定制",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:00:17"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "002398",
+  "stock_name": "垒知集团",
+  "concept": "外加剂检测双轮驱动",
+  "strategy_type": "industry_chain",
+  "must": [
+    "外加剂",
+    "检测业务",
+    "光伏产业"
+  ],
+  "should": [
+    "高性能减水剂",
+    "聚羧酸减水剂",
+    "微型逆变器",
+    "关断器",
+    "5G-NR检测",
+    "WiFi6检测",
+    "5G-SAR检测",
+    "混凝土工程",
+    "建设工程",
+    "分布式光伏"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "外加剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "检测业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏产业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:39:45"
+}

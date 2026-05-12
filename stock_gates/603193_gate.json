@@ -1,0 +1,41 @@
+{
+  "stock_id": "603193",
+  "stock_name": "润本股份",
+  "concept": "婴童驱蚊护理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "婴童驱蚊护理",
+    "驱蚊产品",
+    "天猫"
+  ],
+  "should": [
+    "京东",
+    "抖音",
+    "研产销一体化",
+    "精油产品",
+    "拼多多",
+    "快手",
+    "大润发",
+    "沃尔玛/山姆会员店",
+    "7-11",
+    "名创优品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "婴童驱蚊护理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "驱蚊产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天猫",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:46:20"
+}

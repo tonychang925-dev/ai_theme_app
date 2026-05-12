@@ -1,0 +1,51 @@
+{
+  "stock_id": "600963",
+  "stock_name": "岳阳林纸",
+  "concept": "林浆纸一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "林浆纸一体化",
+    "浆纸",
+    "生态",
+    "林业碳汇项目",
+    "碳汇交易"
+  ],
+  "should": [
+    "文化用纸",
+    "工业用纸",
+    "包装纸",
+    "森林碳资产管理",
+    "国家储备林",
+    "国家碳汇林",
+    "碳汇合同",
+    "林业勘查设计",
+    "景观设计",
+    "园林工程施工养护"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "林浆纸一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "浆纸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生态",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "林业碳汇项目",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳汇交易",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:31:54"
+}

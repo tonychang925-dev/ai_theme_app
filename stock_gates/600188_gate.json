@@ -1,0 +1,41 @@
+{
+  "stock_id": "600188",
+  "stock_name": "兖矿能源",
+  "concept": "煤炭开采",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤炭开采",
+    "动力煤",
+    "兖煤澳大利亚"
+  ],
+  "should": [
+    "煤化工",
+    "精煤",
+    "甲醇",
+    "火力发电",
+    "铁路运输",
+    "本部",
+    "陕蒙",
+    "澳洲",
+    "发电",
+    "化工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤炭开采",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动力煤",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "兖煤澳大利亚",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:11:16"
+}

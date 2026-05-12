@@ -1,0 +1,46 @@
+{
+  "stock_id": "300074",
+  "stock_name": "华平股份",
+  "concept": "视讯产品与应用",
+  "strategy_type": "industry_chain",
+  "must": [
+    "视讯产品与应用",
+    "云视频会议",
+    "融合通信",
+    "应急指挥"
+  ],
+  "should": [
+    "智慧城市",
+    "智慧社区",
+    "视音频处理",
+    "视音频编解码",
+    "多媒体通信",
+    "音视频通讯行业AVCON品牌",
+    "网络适应性",
+    "公安",
+    "应急",
+    "医疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "视讯产品与应用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云视频会议",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "融合通信",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "应急指挥",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:12:15"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "300655",
+  "stock_name": "晶瑞电材",
+  "concept": "电子材料平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光刻胶",
+    "高纯化学品"
+  ],
+  "should": [
+    "锂电池材料",
+    "工业化学品",
+    "电子材料平台",
+    "能源",
+    "半导体",
+    "锂电池",
+    "显示面板",
+    "光伏太阳能电池",
+    "光刻",
+    "显影"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光刻胶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高纯化学品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:37:14"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "300676",
+  "stock_name": "华大基因",
+  "concept": "基因全产业链龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "基因检测",
+    "精准医学检测综合解决方案",
+    "高通量测序（NGS）",
+    "多组学大数据技术"
+  ],
+  "should": [
+    "质谱检测",
+    "生物信息分析",
+    "自主产权测序仪",
+    "基因全产业链龙头",
+    "生育健康",
+    "遗传病检测",
+    "肿瘤早筛",
+    "伴随诊断",
+    "传染病诊断",
+    "辅助生殖"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "基因检测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精准医学检测综合解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高通量测序（NGS）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多组学大数据技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:38:27"
+}

@@ -1,0 +1,38 @@
+{
+  "stock_id": "300207",
+  "stock_name": "欣旺达",
+  "concept": "消费电子电池龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "消费电子电池龙头",
+    "锂离子电池模组",
+    "电芯"
+  ],
+  "should": [
+    "HEV产品",
+    "BEV产品",
+    "快充技术",
+    "电芯技术",
+    "电芯自供",
+    "模组业务",
+    "主流客户导入"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "消费电子电池龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂离子电池模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电芯",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:17:26"
+}

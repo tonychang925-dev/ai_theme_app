@@ -1,0 +1,36 @@
+{
+  "stock_id": "002454",
+  "stock_name": "松芝股份",
+  "concept": "汽车热管理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大中型客车空调",
+    "新能源客车电池热管理系统"
+  ],
+  "should": [
+    "二氧化碳热泵空调系统",
+    "液冷技术",
+    "轨道车辆空调",
+    "电动压缩机",
+    "汽车热管理",
+    "大中型客车",
+    "乘用车",
+    "专用车",
+    "货车",
+    "轻型客车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大中型客车空调",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源客车电池热管理系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:42:27"
+}

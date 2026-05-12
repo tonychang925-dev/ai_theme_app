@@ -1,0 +1,50 @@
+{
+  "stock_id": "600120",
+  "stock_name": "浙江东方",
+  "concept": "国有金控平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国有金控平台",
+    "信托",
+    "期货",
+    "融资租赁",
+    "寿险"
+  ],
+  "should": [
+    "家族信托",
+    "慈善信托",
+    "保险+信托",
+    "期货+模式",
+    "定增发行",
+    "引战增资",
+    "实体经济",
+    "民生保障",
+    "低碳"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国有金控平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信托",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "期货",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "融资租赁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "寿险",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:09:39"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "001211",
+  "stock_name": "双枪科技",
+  "concept": "日用餐厨具",
+  "strategy_type": "industry_chain",
+  "must": [
+    "筷子",
+    "砧板"
+  ],
+  "should": [
+    "勺铲",
+    "签类",
+    "竹材加工技术",
+    "商超",
+    "经销商",
+    "电商",
+    "外贸",
+    "餐饮渠道",
+    "竹产业资源整合",
+    "全竹利用体系"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "筷子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "砧板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:13:34"
+}

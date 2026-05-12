@@ -1,0 +1,36 @@
+{
+  "stock_id": "300387",
+  "stock_name": "富邦科技",
+  "concept": "肥料助剂与数字农业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "肥料助剂业务",
+    "数字农业业务"
+  ],
+  "should": [
+    "选矿和矿渣利用技术",
+    "缓/控释技术",
+    "土壤快速检测及大数据",
+    "生物固氮",
+    "增值肥料",
+    "化肥防结剂",
+    "化肥用多功能包裹剂",
+    "化肥造粒改良剂",
+    "磷矿石浮选剂",
+    "缓释材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "肥料助剂业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字农业业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:25:06"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "605369",
+  "stock_name": "拱东医疗",
+  "concept": "医用低值耗材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医用低值耗材",
+    "IVD定制耗材",
+    "医用高分子材料类耗材"
+  ],
+  "should": [
+    "真空采血系统",
+    "实验检测类耗材",
+    "体液采集类耗材",
+    "医用护理类耗材",
+    "药品包装材料",
+    "模具研发设计",
+    "塑料材料成型加工工艺",
+    "模具设计制造技术",
+    "药品包材",
+    "临床诊断"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医用低值耗材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IVD定制耗材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医用高分子材料类耗材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:04:26"
+}

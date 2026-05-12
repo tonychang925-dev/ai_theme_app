@@ -1,0 +1,31 @@
+{
+  "stock_id": "301256",
+  "stock_name": "华融化学",
+  "concept": "氢氧化钾龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "氢氧化钾"
+  ],
+  "should": [
+    "氢氧化钾龙头",
+    "液体肥料",
+    "合成橡胶",
+    "ABS树脂",
+    "天然橡胶乳液",
+    "纸张分量剂",
+    "生物柴油",
+    "橡胶助剂",
+    "石油精炼除硫",
+    "水处理及消毒"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "氢氧化钾",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:01:04"
+}

@@ -1,0 +1,38 @@
+{
+  "stock_id": "300843",
+  "stock_name": "胜蓝股份",
+  "concept": "电子连接器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子连接器",
+    "电子连接器及精密零组件",
+    "新能源汽车连接器及其组件"
+  ],
+  "should": [
+    "光学透镜产品",
+    "智能手机",
+    "电脑",
+    "电视",
+    "新能源汽车",
+    "通信设备",
+    "工业设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子连接器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子连接器及精密零组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车连接器及其组件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:45:39"
+}

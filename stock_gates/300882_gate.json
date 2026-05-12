@@ -1,0 +1,51 @@
+{
+  "stock_id": "300882",
+  "stock_name": "万胜智能",
+  "concept": "智慧计量",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能电能表",
+    "用电信息采集终端",
+    "数字电网",
+    "能源互联网",
+    "配用电边缘数字智能设备"
+  ],
+  "should": [
+    "智能融合终端",
+    "智能网关",
+    "智能传感器",
+    "综合能源管理系统",
+    "产业链预警监测系统",
+    "低压线路监测终端",
+    "智慧用电终端",
+    "配网数字化AI辅助监测系统",
+    "智慧计量",
+    "传感技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能电能表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "用电信息采集终端",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字电网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "能源互联网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "配用电边缘数字智能设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:47:38"
+}

@@ -299,13 +299,11 @@ class CollectionCommandPlanner:
                         key="recap_data",
                         runner_key="recap.snapshot",
                         label="盘后复盘数据生成",
-                        success_percent=70,
                     ),
                     CollectionTaskStep(
                         key="recap_report",
                         runner_key="recap.report",
                         label="盘后复盘 LLM 报告生成",
-                        success_percent=100,
                     ),
                 ],
             )

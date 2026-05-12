@@ -1,0 +1,46 @@
+{
+  "stock_id": "688172",
+  "stock_name": "燕东微",
+  "concept": "特种集成电路IDM",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种集成电路IDM",
+    "晶圆制造",
+    "芯片设计",
+    "特种集成电路及器件"
+  ],
+  "should": [
+    "封装测试",
+    "分立器件",
+    "模拟集成电路",
+    "数字三极管",
+    "ECM前置放大器",
+    "浪涌保护器件",
+    "射频LDMOS器件",
+    "芯片制造专有技术",
+    "SiC MOSFET工艺平台",
+    "6英寸产线"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种集成电路IDM",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "晶圆制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "芯片设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种集成电路及器件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:10:41"
+}

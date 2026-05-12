@@ -1,0 +1,33 @@
+{
+  "stock_id": "300600",
+  "stock_name": "国瑞科技",
+  "concept": "船舶电气自动化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "船舶配电系统",
+    "船舶机舱自动化系统"
+  ],
+  "should": [
+    "船舶中压配电板",
+    "舰船用断路器",
+    "船舶电气自动化",
+    "造船业",
+    "航运业",
+    "海洋石油勘探业",
+    "海军"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "船舶配电系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "船舶机舱自动化系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:34:41"
+}

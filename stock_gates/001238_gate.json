@@ -1,0 +1,36 @@
+{
+  "stock_id": "001238",
+  "stock_name": "浙江正特",
+  "concept": "户外休闲家具",
+  "strategy_type": "industry_chain",
+  "must": [
+    "户外休闲家具",
+    "遮阳制品"
+  ],
+  "should": [
+    "产品研发设计",
+    "自动化智能化数字化",
+    "家庭庭院",
+    "露台",
+    "餐馆",
+    "酒吧",
+    "海滩",
+    "公园",
+    "酒店",
+    "OEM/ODM"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "户外休闲家具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "遮阳制品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:14:33"
+}

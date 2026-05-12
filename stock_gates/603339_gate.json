@@ -1,0 +1,41 @@
+{
+  "stock_id": "603339",
+  "stock_name": "四方科技",
+  "concept": "冷链装备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "冷链装备制造",
+    "冷冻设备",
+    "罐式集装箱"
+  ],
+  "should": [
+    "换热器",
+    "节能板材",
+    "制冷压缩冷凝机组",
+    "大型低能耗智能立体冻结装置",
+    "直线隧道油炸机",
+    "整体撬块式S4堆积式螺旋",
+    "铝合金管高效换热的蒸发冷",
+    "V型风冷冷凝器",
+    "冷风机",
+    "PIR聚氨酯金属面夹芯板材"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "冷链装备制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冷冻设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "罐式集装箱",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:49:46"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "600862",
+  "stock_name": "中航高科",
+  "concept": "航空复合材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航空复合材料",
+    "预浸料",
+    "蜂窝"
+  ],
+  "should": [
+    "碳刹车盘副",
+    "高铁制动闸片",
+    "碳材料技术",
+    "复合材料底孔隙率快速制造技术",
+    "C919飞机",
+    "CR929飞机",
+    "AG600水陆两栖飞机",
+    "商用航空发动机",
+    "民航飞机",
+    "高速列车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航空复合材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "预浸料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蜂窝",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:29:51"
+}

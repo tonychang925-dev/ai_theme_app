@@ -1,0 +1,41 @@
+{
+  "stock_id": "605016",
+  "stock_name": "百龙创园",
+  "concept": "功能糖生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "益生元系列",
+    "膳食纤维系列",
+    "健康甜味剂系列"
+  ],
+  "should": [
+    "低聚木糖",
+    "低聚半乳糖",
+    "阿洛酮糖",
+    "异麦芽酮糖",
+    "水苏糖",
+    "抗性糊精",
+    "聚葡萄糖",
+    "低聚果糖",
+    "低聚异麦芽糖",
+    "功能糖生产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "益生元系列",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "膳食纤维系列",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "健康甜味剂系列",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:01:10"
+}

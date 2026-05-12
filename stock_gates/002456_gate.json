@@ -1,0 +1,51 @@
+{
+  "stock_id": "002456",
+  "stock_name": "欧菲光",
+  "concept": "光学光电龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "摄像头模组",
+    "光学镜头",
+    "指纹识别模组",
+    "3D SENSING模组",
+    "车载摄像头"
+  ],
+  "should": [
+    "智能座舱产品",
+    "智能门锁",
+    "VR/AR设备",
+    "机器视觉系统",
+    "AA对焦工艺",
+    "高像素超级解像算法",
+    "超级EIS防抖算法",
+    "MGL高画质模组",
+    "CMP/GMP小型化模组",
+    "浮动对焦微距模组"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "摄像头模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光学镜头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "指纹识别模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "3D SENSING模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载摄像头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:42:49"
+}

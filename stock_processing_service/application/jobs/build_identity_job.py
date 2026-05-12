@@ -238,13 +238,12 @@ class BuildIdentityJob:
                 subject_keys, trade_date
             )
             for pr in (raw_prior or []):
-                sk = str(pr.get("subject_key") or "").strip()
+                sk = str(pr.subject_key if hasattr(pr, "subject_key") else pr.get("subject_key", "")).strip()
                 if sk:
-                    prior_identity_map[sk] = bool(pr.get("is_main_theme"))
-                    prior_confirmed_map[sk] = (
-                        bool(pr.get("is_main_theme"))
-                        and str(pr.get("identity_status") or "") == "confirmed"
-                    )
+                    is_main = bool(pr.is_main_theme if hasattr(pr, "is_main_theme") else pr.get("is_main_theme"))
+                    status = str(pr.identity_status if hasattr(pr, "identity_status") else pr.get("identity_status", ""))
+                    prior_identity_map[sk] = is_main
+                    prior_confirmed_map[sk] = is_main and status == "confirmed"
         cycle_alive_map: dict[str, bool] = {}
         cycle_fade_map: dict[str, bool] = {}
         if subject_keys:
@@ -252,10 +251,12 @@ class BuildIdentityJob:
                 subject_keys, trade_date
             )
             for cy in (raw_cycles or []):
-                sk = str(cy.get("subject_key") or "").strip()
+                sk = str(cy.subject_key if hasattr(cy, "subject_key") else cy.get("subject_key", "")).strip()
                 if sk:
-                    cycle_alive_map[sk] = bool(cy.get("final_mainline_alive"))
-                    cycle_fade_map[sk] = bool(cy.get("fade_confirmed"))
+                    alive = bool(cy.final_mainline_alive if hasattr(cy, "final_mainline_alive") else cy.get("final_mainline_alive"))
+                    fade = bool(cy.fade_confirmed if hasattr(cy, "fade_confirmed") else cy.get("fade_confirmed"))
+                    cycle_alive_map[sk] = alive
+                    cycle_fade_map[sk] = fade
 
         # ── 预取 upgrade_trigger 所需的 prev_candidate 状态（等价旧链 DB 查询）──
         prev_candidate_map: dict[str, bool] = {}

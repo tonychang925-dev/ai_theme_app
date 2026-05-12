@@ -1,0 +1,41 @@
+{
+  "stock_id": "002185",
+  "stock_name": "华天科技",
+  "concept": "集成电路封测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "引线框架类产品",
+    "基板类产品",
+    "晶圆级产品"
+  ],
+  "should": [
+    "TSV",
+    "Bumping",
+    "WLCSP",
+    "Fan-Out",
+    "SiP",
+    "天水基地",
+    "西安基地",
+    "昆山基地",
+    "南京基地",
+    "UNISEM"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "引线框架类产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "基板类产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "晶圆级产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:28:10"
+}

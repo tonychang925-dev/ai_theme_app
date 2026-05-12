@@ -1,0 +1,41 @@
+{
+  "stock_id": "688623",
+  "stock_name": "双元科技",
+  "concept": "质量检测方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "在线自动化测控系统",
+    "机器视觉智能检测系统",
+    "锂电池"
+  ],
+  "should": [
+    "薄膜",
+    "无纺布及卫材",
+    "造纸",
+    "比亚迪",
+    "蜂巢能源",
+    "欣旺达",
+    "亿纬锂能",
+    "青山控股",
+    "赢合科技",
+    "科恒股份"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "在线自动化测控系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机器视觉智能检测系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂电池",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:22:30"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "688576",
+  "stock_name": "西山科技",
+  "concept": "手术动力装置",
+  "strategy_type": "industry_chain",
+  "must": [
+    "手术动力装置"
+  ],
+  "should": [
+    "手术动力装置整机",
+    "手术动力装置耗材",
+    "手术动力装置配件",
+    "自主研发创新",
+    "电动骨组织手术设备标准制定",
+    "神经外科",
+    "耳鼻喉科",
+    "骨科",
+    "乳腺外科",
+    "打破进口垄断"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "手术动力装置",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:21:01"
+}

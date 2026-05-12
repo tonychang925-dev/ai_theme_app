@@ -1,0 +1,42 @@
+{
+  "stock_id": "000541",
+  "stock_name": "佛山照明",
+  "concept": "汽车照明",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车照明",
+    "照明",
+    "LED照明",
+    "车灯"
+  ],
+  "should": [
+    "电工",
+    "南宁燎旺",
+    "国星光电",
+    "新能源汽车",
+    "电子化",
+    "智能化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车照明",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "照明",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LED照明",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车灯",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:55:22"
+}

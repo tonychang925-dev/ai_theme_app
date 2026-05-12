@@ -1,0 +1,32 @@
+{
+  "stock_id": "301060",
+  "stock_name": "兰卫医学",
+  "concept": "医学诊断服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "独立医学实验室(ICL)",
+    "医学诊断服务"
+  ],
+  "should": [
+    "体外诊断产品销售",
+    "各级医疗机构",
+    "医院检验科/病理科",
+    "病理医生缺乏",
+    "区域发展不均衡",
+    "诊断需求集中"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "独立医学实验室(ICL)",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医学诊断服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:54:56"
+}

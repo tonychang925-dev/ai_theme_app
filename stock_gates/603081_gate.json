@@ -1,0 +1,41 @@
+{
+  "stock_id": "603081",
+  "stock_name": "大丰实业",
+  "concept": "智能舞台龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国内智能舞台龙头",
+    "智能舞台龙头",
+    "文化体育装备"
+  ],
+  "should": [
+    "文旅融合",
+    "剧院运营",
+    "数字艺术科技",
+    "轨道交通装备",
+    "PPP项目管理",
+    "研发设计",
+    "系统集成",
+    "文体场馆",
+    "旅游演艺",
+    "轨道交通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国内智能舞台龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能舞台龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "文化体育装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:43:07"
+}

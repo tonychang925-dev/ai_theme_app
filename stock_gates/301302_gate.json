@@ -1,0 +1,36 @@
+{
+  "stock_id": "301302",
+  "stock_name": "华如科技",
+  "concept": "军事仿真",
+  "strategy_type": "industry_chain",
+  "must": [
+    "军事仿真",
+    "计算机仿真"
+  ],
+  "should": [
+    "仿真应用系统服务",
+    "建模仿真",
+    "工具软件",
+    "硬件系统",
+    "计算机",
+    "计算机软件",
+    "电子元器件制造业",
+    "体制内单位",
+    "民营企业",
+    "虚拟现实"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "军事仿真",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "计算机仿真",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:02:16"
+}

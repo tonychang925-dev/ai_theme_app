@@ -1,0 +1,41 @@
+{
+  "stock_id": "300604",
+  "stock_name": "长川科技",
+  "concept": "集成电路测试设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "集成电路测试设备",
+    "测试机",
+    "分选机"
+  ],
+  "should": [
+    "探针台",
+    "AOI光学检测设备",
+    "自动化设备",
+    "主控芯片",
+    "固件开发",
+    "封装测试",
+    "晶圆制造",
+    "芯片设计",
+    "国内封测龙头企业供应链",
+    "国际巨头供应链"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "集成电路测试设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "测试机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分选机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:34:53"
+}

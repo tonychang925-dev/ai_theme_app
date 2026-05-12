@@ -1,0 +1,41 @@
+{
+  "stock_id": "601698",
+  "stock_name": "中国卫通",
+  "concept": "卫星通信运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "卫星通信运营",
+    "卫星空间段运营服务",
+    "卫星通信广播"
+  ],
+  "should": [
+    "通信频率资源",
+    "卫星轨道资源",
+    "地面站网资源",
+    "广播电视",
+    "通信传输",
+    "海洋通信服务",
+    "国内卫星通信运营龙头",
+    "亚洲第二大固定通信卫星运营商",
+    "世界第六大固定通信卫星运营商",
+    "国内市场占有率80%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "卫星通信运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "卫星空间段运营服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "卫星通信广播",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:38:06"
+}

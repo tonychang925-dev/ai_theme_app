@@ -1,0 +1,41 @@
+{
+  "stock_id": "688197",
+  "stock_name": "首药控股",
+  "concept": "小分子创新药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "小分子创新药",
+    "SY-707",
+    "SY-3505",
+    "SY-5007"
+  ],
+  "should": [
+    "自主知识产权",
+    "药物分子结构",
+    "制备工艺及配方",
+    "非小细胞肺癌",
+    "胰腺癌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "小分子创新药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SY-707",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SY-3505",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SY-5007",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:11:28"
+}

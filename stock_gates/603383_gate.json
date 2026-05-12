@@ -1,0 +1,41 @@
+{
+  "stock_id": "603383",
+  "stock_name": "顶点软件",
+  "concept": "金融IT服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "定制软件",
+    "产品化软件",
+    "软件运维服务"
+  ],
+  "should": [
+    "灵动业务架构平台LiveBOS",
+    "交易技术平台LiveDTP",
+    "灵动数据平台LiveData",
+    "飞驰内存数据库",
+    "分布式交易中间件",
+    "系统集成",
+    "金融IT服务",
+    "证券",
+    "期货",
+    "银行"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "定制软件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "产品化软件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "软件运维服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:50:31"
+}

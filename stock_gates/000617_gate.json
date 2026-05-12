@@ -1,0 +1,24 @@
+{
+  "stock_id": "000617",
+  "stock_name": "中油资本",
+  "concept": "油气产业链金融",
+  "strategy_type": "industry_chain",
+  "must": [],
+  "should": [
+    "财务公司",
+    "商业银行",
+    "金融租赁",
+    "信托业务",
+    "银行",
+    "信托",
+    "保险",
+    "保险经纪",
+    "证券",
+    "信用增进"
+  ],
+  "not": [],
+  "evidence_refs": [],
+  "quality": "weak",
+  "must_count": 0,
+  "generated_at": "2026-05-11T16:58:28"
+}

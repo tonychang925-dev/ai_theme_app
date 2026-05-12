@@ -1,0 +1,46 @@
+{
+  "stock_id": "300447",
+  "stock_name": "全信股份",
+  "concept": "航空航天线缆",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航空航天线缆",
+    "军用线缆",
+    "光电系统",
+    "FC光纤"
+  ],
+  "should": [
+    "组件",
+    "高性能传输线缆",
+    "FC光纤总线",
+    "航空",
+    "航天",
+    "军工电子",
+    "舰船",
+    "兵器",
+    "轨道交通",
+    "商飞"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航空航天线缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "军用线缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光电系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "FC光纤",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:27:43"
+}

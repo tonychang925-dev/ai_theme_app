@@ -1,0 +1,29 @@
+{
+  "stock_id": "001332",
+  "stock_name": "锡装股份",
+  "concept": "金属压力容器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金属压力容器"
+  ],
+  "should": [
+    "热交换器",
+    "炼油及石油化工",
+    "基础化工",
+    "核电",
+    "天然气",
+    "太阳能",
+    "海洋工程",
+    "航空航天"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金属压力容器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:16:40"
+}

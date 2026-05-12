@@ -1,0 +1,37 @@
+{
+  "stock_id": "002984",
+  "stock_name": "森麒麟",
+  "concept": "高端轮胎制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半钢子午线轮胎",
+    "航空轮胎",
+    "泰国工厂"
+  ],
+  "should": [
+    "数字化智能制造",
+    "西班牙工厂",
+    "航空胎技术",
+    "高端轮胎制造",
+    "汽车轮胎",
+    "全球布局"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半钢子午线轮胎",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航空轮胎",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "泰国工厂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:06:07"
+}

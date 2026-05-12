@@ -1,0 +1,29 @@
+{
+  "stock_id": "000906",
+  "stock_name": "浙商中拓",
+  "concept": "大宗商品供应链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大宗商品供应链"
+  ],
+  "should": [
+    "黑色供应链",
+    "有色供应链",
+    "再生资源供应链",
+    "能源化工供应链",
+    "新能源供应链",
+    "供应链集成服务",
+    "数字化赋能",
+    "风控体系"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大宗商品供应链",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:08:59"
+}

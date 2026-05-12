@@ -1,0 +1,36 @@
+{
+  "stock_id": "300578",
+  "stock_name": "会畅科技",
+  "concept": "云视频服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "云视频服务",
+    "视频编解码技术"
+  ],
+  "should": [
+    "5G",
+    "边缘计算",
+    "H.265",
+    "H.264",
+    "SVC",
+    "人工智能",
+    "深度学习",
+    "生成式人工智能",
+    "图形图像处理",
+    "大型企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "云视频服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "视频编解码技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:33:38"
+}

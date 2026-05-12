@@ -1,0 +1,25 @@
+{
+  "stock_id": "300143",
+  "stock_name": "盈康生命",
+  "concept": "大型放疗设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大型放疗设备"
+  ],
+  "should": [
+    "肿瘤治疗",
+    "肾病学科",
+    "心外科",
+    "临床营养科"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大型放疗设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:14:55"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "301446",
+  "stock_name": "福事特",
+  "concept": "液压管路系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "液压管路系统",
+    "硬管总成",
+    "软管总成"
+  ],
+  "should": [
+    "管接头",
+    "油箱",
+    "三一集团",
+    "中联重科",
+    "徐工集团",
+    "中煤集团",
+    "国能集团",
+    "江铜集团",
+    "山河智能",
+    "矿用工具"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "液压管路系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硬管总成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "软管总成",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:05:16"
+}

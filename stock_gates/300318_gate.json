@@ -1,0 +1,35 @@
+{
+  "stock_id": "300318",
+  "stock_name": "博晖创新",
+  "concept": "生命科学检测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "微流控芯片分子诊断平台",
+    "微流控核酸芯片技术"
+  ],
+  "should": [
+    "HPV检测产品",
+    "人体微量元素检测系统",
+    "血液制品",
+    "疫苗产品",
+    "生命科学检测",
+    "检验检测",
+    "生物制品",
+    "非医疗用户检测",
+    "微量元素检测市场主要领导者"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "微流控芯片分子诊断平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "微流控核酸芯片技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:22:22"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "603968",
+  "stock_name": "醋化股份",
+  "concept": "精细化工龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "醋酸衍生物",
+    "吡啶衍生物",
+    "双乙烯酮"
+  ],
+  "should": [
+    "山梨酸钾",
+    "安赛蜜",
+    "双乙烯酮-三氧化硫连续化生产技术",
+    "精细化工龙头",
+    "连续工艺",
+    "食品和饲料防腐",
+    "医药及农药生产",
+    "颜（染）料生产",
+    "山梨酸钾市场份额国内第二"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "醋酸衍生物",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "吡啶衍生物",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "双乙烯酮",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:59:52"
+}

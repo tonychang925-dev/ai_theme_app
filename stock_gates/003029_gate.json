@@ -1,0 +1,44 @@
+{
+  "stock_id": "003029",
+  "stock_name": "吉大正元",
+  "concept": "网络安全",
+  "strategy_type": "industry_chain",
+  "must": [
+    "网络安全",
+    "密码安全",
+    "身份和信任",
+    "数据安全"
+  ],
+  "should": [
+    "数字证书",
+    "电子认证",
+    "云服务",
+    "5G",
+    "云计算",
+    "边缘计算",
+    "工业互联网",
+    "物联网"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "网络安全",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "密码安全",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "身份和信任",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据安全",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:08:18"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "603013",
+  "stock_name": "亚普股份",
+  "concept": "汽车燃油系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车燃油系统",
+    "加油管"
+  ],
+  "should": [
+    "电池包上盖",
+    "创新风道",
+    "车用氢气减压阀",
+    "主控芯片",
+    "固件开发",
+    "修边工序自动化",
+    "水冷工序自动化",
+    "焊接工序自动化",
+    "检测工序自动化",
+    "仓储物流自动化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车燃油系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "加油管",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:41:00"
+}

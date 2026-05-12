@@ -1,0 +1,46 @@
+{
+  "stock_id": "002698",
+  "stock_name": "博实股份",
+  "concept": "智能装备龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能制造装备",
+    "工业机器人",
+    "高温炉前作业机器人",
+    "工业服务"
+  ],
+  "should": [
+    "自动化包装码垛成套装备",
+    "橡胶后处理智能制造装备",
+    "机器人及成套系统装备",
+    "智能物流与仓储系统",
+    "电石捣炉机器人系统",
+    "炉门自动开关系统",
+    "多晶硅全自动包装机",
+    "工业废酸再生工艺及装备",
+    "工业机器人技术",
+    "环保工艺装备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能制造装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业机器人",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高温炉前作业机器人",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:54:00"
+}

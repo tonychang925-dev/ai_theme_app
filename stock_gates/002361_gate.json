@@ -1,0 +1,31 @@
+{
+  "stock_id": "002361",
+  "stock_name": "神剑股份",
+  "concept": "聚酯树脂与高端装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "聚酯树脂"
+  ],
+  "should": [
+    "粉末涂料",
+    "粉末涂料主要原材料",
+    "家电",
+    "建材",
+    "家居",
+    "农机",
+    "工程机械",
+    "5G基站",
+    "新能源汽车",
+    "光伏发电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "聚酯树脂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:37:39"
+}

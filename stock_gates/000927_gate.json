@@ -1,0 +1,32 @@
+{
+  "stock_id": "000927",
+  "stock_name": "中国铁物",
+  "concept": "铁路物资供应链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铁路产业综合服务",
+    "铁路物资供应链"
+  ],
+  "should": [
+    "铁路柴油",
+    "润滑油",
+    "国铁市场",
+    "地方铁路",
+    "城市轨道交通",
+    "全国乃至全球第一的铁路物资供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铁路产业综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铁路物资供应链",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:09:51"
+}

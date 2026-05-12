@@ -1,0 +1,36 @@
+{
+  "stock_id": "600333",
+  "stock_name": "长春燃气",
+  "concept": "城市燃气",
+  "strategy_type": "industry_chain",
+  "must": [
+    "城市燃气",
+    "燃气销售"
+  ],
+  "should": [
+    "燃气工程",
+    "综合能源",
+    "设计",
+    "监理",
+    "居民生活用气",
+    "商服用气",
+    "交通用气",
+    "工业用气",
+    "特许经营区域",
+    "市场占有率第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "城市燃气",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "燃气销售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:15:16"
+}

@@ -1,0 +1,38 @@
+{
+  "stock_id": "600226",
+  "stock_name": "亨通股份",
+  "concept": "生物科技与新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "能源产业",
+    "金属箔",
+    "复合箔材料"
+  ],
+  "should": [
+    "生物农药",
+    "兽药",
+    "薄膜",
+    "复合膜材料",
+    "饲料行业",
+    "畜牧养殖业",
+    "新能源产业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "能源产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金属箔",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复合箔材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:12:10"
+}

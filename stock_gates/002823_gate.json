@@ -1,0 +1,46 @@
+{
+  "stock_id": "002823",
+  "stock_name": "凯中精密",
+  "concept": "精密零组件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "换向器",
+    "集电环",
+    "多层绝缘线",
+    "驱动电机零组件"
+  ],
+  "should": [
+    "汽车轻量化零组件",
+    "智能驾驶化零组件",
+    "航空航天关键核心零部件",
+    "精密冲压技术",
+    "精密塑料成型技术",
+    "光纤激光焊接技术",
+    "材料表面处理技术",
+    "精密零组件",
+    "智能装备",
+    "自动检测和验证"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "换向器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集电环",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多层绝缘线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "驱动电机零组件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:58:58"
+}

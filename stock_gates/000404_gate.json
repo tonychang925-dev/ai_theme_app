@@ -1,0 +1,36 @@
+{
+  "stock_id": "000404",
+  "stock_name": "长虹华意",
+  "concept": "冰箱压缩机龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "冰箱压缩机",
+    "商用压缩机"
+  ],
+  "should": [
+    "新能源汽车空调压缩机",
+    "智能扫地机",
+    "变频技术",
+    "智能控制技术",
+    "冰箱压缩机龙头",
+    "家用冰箱",
+    "冰柜",
+    "超市冷冻陈列柜",
+    "保鲜柜",
+    "自动量贩机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "冰箱压缩机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商用压缩机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:51:40"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "000507",
+  "stock_name": "珠海港",
+  "concept": "港口物流与新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "港航物流",
+    "高栏母港",
+    "西江流域码头",
+    "长江流域码头"
+  ],
+  "should": [
+    "新能源",
+    "冷链物流",
+    "跨境电商",
+    "风力发电",
+    "光伏发电",
+    "管道燃气",
+    "天然气发电",
+    "内河驳船",
+    "沿海散货运输",
+    "江海联运"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "港航物流",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高栏母港",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "西江流域码头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "长江流域码头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:53:36"
+}

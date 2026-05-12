@@ -1,0 +1,46 @@
+{
+  "stock_id": "003019",
+  "stock_name": "宸展光电",
+  "concept": "商用智能交互显示",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商用智能交互显示",
+    "智能交互产业电脑",
+    "智能交互显示器",
+    "触控一体机"
+  ],
+  "should": [
+    "触控显示器",
+    "大型数字广告牌",
+    "智能自助终端机",
+    "嵌入式模组",
+    "触控技术",
+    "软硬件及固件开发",
+    "模具设计",
+    "产品生产与检测",
+    "智慧医疗",
+    "智能健身"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商用智能交互显示",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能交互产业电脑",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能交互显示器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "触控一体机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:07:50"
+}

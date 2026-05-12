@@ -1,0 +1,40 @@
+{
+  "stock_id": "603988",
+  "stock_name": "中电电机",
+  "concept": "大中型电机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大中型电机",
+    "发电机",
+    "中高压交流电动机"
+  ],
+  "should": [
+    "大中型直流电动机",
+    "电机试验站电源系统",
+    "开关试验站电源系统",
+    "工艺控制手段",
+    "技术诀窍",
+    "自主创新技术",
+    "订单式生产",
+    "属地经销",
+    "网络推广营销"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大中型电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中高压交流电动机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:00:24"
+}

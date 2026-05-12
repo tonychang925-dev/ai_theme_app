@@ -1,0 +1,41 @@
+{
+  "stock_id": "600529",
+  "stock_name": "山东药玻",
+  "concept": "药用玻璃",
+  "strategy_type": "industry_chain",
+  "must": [
+    "药用玻璃",
+    "模制瓶",
+    "中硼硅模制瓶研发"
+  ],
+  "should": [
+    "预灌封",
+    "管制瓶",
+    "丁基胶塞",
+    "药包材研究",
+    "注射剂包装",
+    "疫苗包装",
+    "高附加值注射剂",
+    "国内药用玻璃龙头企业",
+    "渠道壁垒高",
+    "规模优势明显"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "药用玻璃",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "模制瓶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中硼硅模制瓶研发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:20:22"
+}

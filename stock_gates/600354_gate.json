@@ -1,0 +1,36 @@
+{
+  "stock_id": "600354",
+  "stock_name": "敦煌种业",
+  "concept": "种业与食品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "种子产业",
+    "玉米种子"
+  ],
+  "should": [
+    "食品与贸易产业",
+    "脱水菜",
+    "番茄粉",
+    "高原夏菜",
+    "粤港澳大湾区",
+    "长三角地区",
+    "自有品种经营",
+    "代繁制种",
+    "出口为主",
+    "国内交易"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "种子产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "玉米种子",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:15:57"
+}

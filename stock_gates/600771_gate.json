@@ -1,0 +1,51 @@
+{
+  "stock_id": "600771",
+  "stock_name": "广誉远",
+  "concept": "高品质中药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高品质中药",
+    "定坤丹",
+    "龟龄集",
+    "精品中药",
+    "经典国药"
+  ],
+  "should": [
+    "养生酒",
+    "传统炮制技艺",
+    "立足山西、辐射全国的中药产业链",
+    "高品质中医药大健康生态圈",
+    "质量标准提升",
+    "特征图谱",
+    "指纹图谱",
+    "质量标志物研究",
+    "男科",
+    "养生保健"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高品质中药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "定坤丹",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "龟龄集",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精品中药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "经典国药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:27:17"
+}

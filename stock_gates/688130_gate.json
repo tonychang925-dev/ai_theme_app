@@ -1,0 +1,33 @@
+{
+  "stock_id": "688130",
+  "stock_name": "晶华微",
+  "concept": "模拟混合信号芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高精度ADC",
+    "信号处理SoC芯片技术"
+  ],
+  "should": [
+    "红外测温数字传感器",
+    "八电极体脂秤专用SoC芯片",
+    "血压计、血氧仪、血糖仪芯片",
+    "增强型万用表SoC芯片",
+    "带触摸按键的家电控制SoC芯片",
+    "数字PIR传感器专用ADC芯片",
+    "低噪声高输入阻抗前置放大器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高精度ADC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信号处理SoC芯片技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:09:34"
+}

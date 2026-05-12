@@ -1,0 +1,46 @@
+{
+  "stock_id": "688718",
+  "stock_name": "唯赛勃",
+  "concept": "膜法分离技术",
+  "strategy_type": "industry_chain",
+  "must": [
+    "膜法分离技术",
+    "盐湖提锂",
+    "反渗透膜及膜元件",
+    "纳滤膜及膜元件"
+  ],
+  "should": [
+    "复合材料压力罐",
+    "膜元件压力容器",
+    "生命科学",
+    "食品",
+    "氢能源",
+    "半导体超纯水制备",
+    "中水回用",
+    "零排放",
+    "海水/苦咸水淡化",
+    "自来水提标"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "膜法分离技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "盐湖提锂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "反渗透膜及膜元件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纳滤膜及膜元件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:24:33"
+}

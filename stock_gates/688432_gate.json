@@ -1,0 +1,37 @@
+{
+  "stock_id": "688432",
+  "stock_name": "有研硅",
+  "concept": "半导体硅材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体硅材料",
+    "半导体硅抛光片",
+    "刻蚀设备用硅材料"
+  ],
+  "should": [
+    "半导体区熔硅单晶",
+    "6英寸、8英寸硅片的产业化",
+    "12英寸硅片的技术突破",
+    "集成电路刻蚀设备用硅材料产业化",
+    "国内半导体材料龙头企业",
+    "中国半导体材料十强企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体硅材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体硅抛光片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "刻蚀设备用硅材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:18:18"
+}

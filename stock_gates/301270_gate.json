@@ -1,0 +1,46 @@
+{
+  "stock_id": "301270",
+  "stock_name": "汉仪股份",
+  "concept": "字库软件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "字库软件",
+    "字库软件授权",
+    "互联网平台授权",
+    "字体设计"
+  ],
+  "should": [
+    "字库类技术服务",
+    "汉字信息技术",
+    "互联网平台",
+    "手机厂商",
+    "鸿蒙操作系统",
+    "报社",
+    "出版社",
+    "广告公司",
+    "视觉设计服务",
+    "IP产品化业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "字库软件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "字库软件授权",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "互联网平台授权",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "字体设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:01:29"
+}

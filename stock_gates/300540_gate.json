@@ -1,0 +1,51 @@
+{
+  "stock_id": "300540",
+  "stock_name": "蜀道装备",
+  "concept": "天然气液化装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "天然气液化装备",
+    "天然气液化装置",
+    "焦炉气液化装置",
+    "煤层气液化装置",
+    "气体低温液化与分离技术"
+  ],
+  "should": [
+    "空气分离装置",
+    "化工尾气和轻烃回收装置",
+    "氧氮液化装置",
+    "HYCO分离装置",
+    "LNG/L-CNG加气站",
+    "氢加注站",
+    "大型低温液体储槽",
+    "增压透平膨胀机组",
+    "液体空分",
+    "氢能制储运加"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "天然气液化装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天然气液化装置",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "焦炉气液化装置",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤层气液化装置",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "气体低温液化与分离技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:32:00"
+}

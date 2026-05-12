@@ -1,0 +1,32 @@
+{
+  "stock_id": "001387",
+  "stock_name": "雪祺电气",
+  "concept": "大冰箱ODM",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大冰箱ODM",
+    "ODM供应商"
+  ],
+  "should": [
+    "大冰箱",
+    "商用展示柜",
+    "自主研发",
+    "产品设计开发",
+    "质量控制",
+    "国内外品牌商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大冰箱ODM",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ODM供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:17:28"
+}

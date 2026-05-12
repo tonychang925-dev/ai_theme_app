@@ -1,0 +1,41 @@
+{
+  "stock_id": "601686",
+  "stock_name": "友发集团",
+  "concept": "焊接钢管龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "焊接钢管龙头",
+    "连续17年产销量全国第一",
+    "焊接钢管"
+  ],
+  "should": [
+    "螺旋焊管",
+    "方矩管",
+    "圆管",
+    "承插型盘扣式钢管脚手架",
+    "不锈钢水管",
+    "不锈钢工业用管",
+    "油气管",
+    "塔基管",
+    "现代农业标准化大棚用管",
+    "高钢级管线用管"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "焊接钢管龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "连续17年产销量全国第一",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "焊接钢管",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:38:04"
+}

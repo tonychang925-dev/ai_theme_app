@@ -1,0 +1,41 @@
+{
+  "stock_id": "002004",
+  "stock_name": "华邦健康",
+  "concept": "皮肤健康龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "皮肤病用药",
+    "抗结核药物",
+    "医药"
+  ],
+  "should": [
+    "医疗",
+    "功能性护肤品",
+    "新材料",
+    "芳纶聚合单体",
+    "高分子新材料",
+    "氯化亚砜",
+    "聚醚酮酮(PEKK)",
+    "皮肤健康龙头",
+    "皮肤健康管理",
+    "医疗服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "皮肤病用药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "抗结核药物",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:18:01"
+}

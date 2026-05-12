@@ -1,0 +1,46 @@
+{
+  "stock_id": "301588",
+  "stock_name": "美新科技",
+  "concept": "环保塑木型材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环保塑木型材",
+    "户外地板",
+    "墙板",
+    "组合地板"
+  ],
+  "should": [
+    "360度全包覆技术",
+    "在线压花工艺",
+    "后处理工艺",
+    "颜色调配技术",
+    "配方设计",
+    "共挤成型",
+    "安装技术",
+    "家庭院落阳台",
+    "公用建筑设施",
+    "园林景观建设"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环保塑木型材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "户外地板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "墙板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "组合地板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:06:39"
+}

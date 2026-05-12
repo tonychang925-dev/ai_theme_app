@@ -1,0 +1,41 @@
+{
+  "stock_id": "002530",
+  "stock_name": "金财互联",
+  "concept": "热处理+互联网财税",
+  "strategy_type": "industry_chain",
+  "must": [
+    "热处理+互联网财税",
+    "互联网财税",
+    "智慧电子税务局"
+  ],
+  "should": [
+    "热处理设备制造",
+    "专业热处理加工服务",
+    "热处理设备售后服务",
+    "热处理工艺技术咨询服务",
+    "可控气氛热处理设备",
+    "非气氛加热热处理设备",
+    "财税数字化解决方案",
+    "云计算",
+    "大数据",
+    "人工智能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "热处理+互联网财税",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "互联网财税",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧电子税务局",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:45:50"
+}

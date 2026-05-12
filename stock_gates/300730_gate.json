@@ -1,0 +1,46 @@
+{
+  "stock_id": "300730",
+  "stock_name": "科创信息",
+  "concept": "智慧政务与智慧企业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧政务与智慧企业",
+    "数字政府",
+    "智慧企业",
+    "浮法玻璃检测"
+  ],
+  "should": [
+    "机器视觉",
+    "大数据",
+    "云计算",
+    "人工智能",
+    "移动互联网",
+    "中国移动",
+    "中国联通",
+    "中国电信",
+    "中联重科",
+    "云南冶金"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧政务与智慧企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字政府",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "浮法玻璃检测",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:40:47"
+}

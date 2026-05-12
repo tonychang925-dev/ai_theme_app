@@ -1,0 +1,38 @@
+{
+  "stock_id": "000620",
+  "stock_name": "盈新发展",
+  "concept": "文旅地产综合开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "文旅景区开发与运营",
+    "房地产项目开发建设",
+    "文旅+金融+地产"
+  ],
+  "should": [
+    "文旅地产综合开发",
+    "旅游服务",
+    "景点",
+    "酒店",
+    "儿童乐园",
+    "文化演艺",
+    "旅行社"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "文旅景区开发与运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "房地产项目开发建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "文旅+金融+地产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:58:37"
+}

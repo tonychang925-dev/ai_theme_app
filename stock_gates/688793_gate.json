@@ -1,0 +1,51 @@
+{
+  "stock_id": "688793",
+  "stock_name": "倍轻松",
+  "concept": "高端按摩器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "眼部按摩器",
+    "颈部按摩器",
+    "头部按摩器",
+    "头皮按摩器",
+    "智能艾灸盒"
+  ],
+  "should": [
+    "肩部按摩器",
+    "足部按摩器",
+    "腰部按摩器",
+    "经络枪",
+    "智能艾灸拖鞋",
+    "明火灸+无艾烟",
+    "高端按摩器",
+    "智能控制",
+    "语音交互",
+    "云端社交"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "眼部按摩器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "颈部按摩器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "头部按摩器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "头皮按摩器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能艾灸盒",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:25:15"
+}

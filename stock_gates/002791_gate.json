@@ -1,0 +1,36 @@
+{
+  "stock_id": "002791",
+  "stock_name": "坚朗五金",
+  "concept": "建筑五金集成",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑五金集成",
+    "门窗五金"
+  ],
+  "should": [
+    "门控五金",
+    "点支承玻璃幕墙构配件",
+    "不锈钢护栏构配件",
+    "家居类产品",
+    "其他建筑五金产品",
+    "民用建筑",
+    "商业建筑",
+    "中高端定位",
+    "直销模式",
+    "品牌首选率第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑五金集成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "门窗五金",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:57:39"
+}

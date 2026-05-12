@@ -1,0 +1,46 @@
+{
+  "stock_id": "600163",
+  "stock_name": "中闽能源",
+  "concept": "风电开发运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风电开发运营",
+    "风电项目前期工作",
+    "风电项目开发建设",
+    "清洁能源运营"
+  ],
+  "should": [
+    "福建省",
+    "黑龙江孙吴县",
+    "黑龙江富锦市",
+    "云南",
+    "西藏昌都市",
+    "电力供应",
+    "可再生能源发电",
+    "智慧运维",
+    "数字化转型",
+    "数字中闽APP"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风电开发运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电项目前期工作",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电项目开发建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "清洁能源运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:10:41"
+}

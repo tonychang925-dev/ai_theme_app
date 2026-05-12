@@ -1,0 +1,45 @@
+{
+  "stock_id": "600221",
+  "stock_name": "海航控股",
+  "concept": "航空运输服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航空运输服务",
+    "航空客运",
+    "航空货运",
+    "包机业务"
+  ],
+  "should": [
+    "差异化增值服务",
+    "机票+X系列产品",
+    "预约套票",
+    "撤侨航班",
+    "一带一路航线",
+    "航班正常率",
+    "飞行班次",
+    "运输旅客",
+    "绿色低碳发展"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航空运输服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航空客运",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航空货运",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "包机业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:12:10"
+}

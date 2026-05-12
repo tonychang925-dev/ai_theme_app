@@ -1,0 +1,36 @@
+{
+  "stock_id": "300224",
+  "stock_name": "正海磁材",
+  "concept": "稀土永磁材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高性能钕铁硼永磁材料",
+    "稀土永磁材料"
+  ],
+  "should": [
+    "新能源汽车电机驱动系统",
+    "烧结钕铁硼",
+    "高磁晶各向异性",
+    "高饱和磁化强度",
+    "新能源汽车",
+    "风力发电",
+    "工业永磁电机",
+    "EPS",
+    "变频空调",
+    "消费电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高性能钕铁硼永磁材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "稀土永磁材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:18:10"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "300963",
+  "stock_name": "中洲特材",
+  "concept": "高温耐蚀合金",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高温耐蚀合金",
+    "铸造高温合金",
+    "变形高温合金",
+    "特种合金焊材"
+  ],
+  "should": [
+    "3D打印合金粉末",
+    "表面堆焊服务",
+    "耐腐蚀",
+    "耐高温",
+    "耐磨损",
+    "抗冲击",
+    "海工",
+    "船舶",
+    "环保",
+    "医用新材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高温耐蚀合金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铸造高温合金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "变形高温合金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种合金焊材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:51:04"
+}

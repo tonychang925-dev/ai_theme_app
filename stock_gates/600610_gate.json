@@ -1,0 +1,31 @@
+{
+  "stock_id": "600610",
+  "stock_name": "中毅达",
+  "concept": "精细化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "季戊四醇系列产品"
+  ],
+  "should": [
+    "三羟甲基丙烷系列产品",
+    "食用酒精",
+    "DDGS饲料",
+    "精细化工",
+    "季戊四醇年产能4.3万吨",
+    "国内产能仅次于湖北宜化",
+    "磷矿采选",
+    "磷肥",
+    "磷化工",
+    "磷矿伴生资源综合利用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "季戊四醇系列产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:22:45"
+}

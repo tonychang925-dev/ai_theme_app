@@ -1,0 +1,45 @@
+{
+  "stock_id": "688030",
+  "stock_name": "山石网科",
+  "concept": "网络安全",
+  "strategy_type": "industry_chain",
+  "must": [
+    "下一代防火墙",
+    "云安全产品",
+    "终端安全产品",
+    "工业安全防火墙"
+  ],
+  "should": [
+    "数据中心防火墙",
+    "安全芯片硬件加速技术",
+    "FPGA芯片技术",
+    "ASIC芯片技术",
+    "高端分布式软硬件技术",
+    "网络安全",
+    "信创解决方案",
+    "零信任解决方案",
+    "综合实训平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "下一代防火墙",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云安全产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "终端安全产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业安全防火墙",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:05:57"
+}

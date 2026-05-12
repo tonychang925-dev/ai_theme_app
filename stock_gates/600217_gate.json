@@ -1,0 +1,31 @@
+{
+  "stock_id": "600217",
+  "stock_name": "中再资环",
+  "concept": "废弃资源循环利用",
+  "strategy_type": "industry_chain",
+  "must": [
+    "废电回收与拆解处理"
+  ],
+  "should": [
+    "产业园区固体废弃物一体化处置",
+    "废弃资源循环利用",
+    "废电大宗拆解物需求",
+    "工业固废",
+    "生物质颗粒RDF",
+    "废电采购网络体系",
+    "废电收储模式",
+    "废电处理基金补贴",
+    "生产线升级改造",
+    "产品深加工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "废电回收与拆解处理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:12:01"
+}

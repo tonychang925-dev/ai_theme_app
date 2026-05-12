@@ -1,0 +1,40 @@
+{
+  "stock_id": "301077",
+  "stock_name": "星华新材",
+  "concept": "反光材料龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "反光材料龙头",
+    "反光布",
+    "反光布销量A股第一"
+  ],
+  "should": [
+    "反光服饰",
+    "植株工艺",
+    "涂胶工艺",
+    "胶粘剂",
+    "职业安全防护",
+    "个人安全防护",
+    "休闲服饰",
+    "功能性面料",
+    "运动用品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "反光材料龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "反光布",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "反光布销量A股第一",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:55:35"
+}

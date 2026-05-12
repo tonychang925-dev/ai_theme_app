@@ -1,0 +1,46 @@
+{
+  "stock_id": "002695",
+  "stock_name": "煌上煌",
+  "concept": "酱卤食品龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "鲜货产品",
+    "米制品",
+    "肉制品深加工",
+    "连锁销售"
+  ],
+  "should": [
+    "包装产品",
+    "气调装产品",
+    "肉鸭养殖",
+    "屠宰加工",
+    "科研开发",
+    "酱卤食品龙头",
+    "家庭消费",
+    "酒店餐饮",
+    "休闲消费",
+    "酱卤肉制品行业第一个上市公司"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "鲜货产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "米制品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "肉制品深加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "连锁销售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:53:46"
+}

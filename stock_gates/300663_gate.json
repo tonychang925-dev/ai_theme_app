@@ -1,0 +1,36 @@
+{
+  "stock_id": "300663",
+  "stock_name": "科蓝软件",
+  "concept": "银行IT解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "银行IT解决方案",
+    "分布式金融核心系统"
+  ],
+  "should": [
+    "原生分布式交易型数据库根技术",
+    "自主知识产权数据库技术",
+    "电子银行系统",
+    "互联网金融类系统",
+    "大中台产品",
+    "银行网点智能设备",
+    "网络安全系统",
+    "移动金融",
+    "互联网银行",
+    "银行渠道类解决方案"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "银行IT解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分布式金融核心系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:37:48"
+}

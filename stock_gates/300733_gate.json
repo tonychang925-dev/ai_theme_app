@@ -1,0 +1,51 @@
+{
+  "stock_id": "300733",
+  "stock_name": "西菱动力",
+  "concept": "发动机零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "发动机零部件",
+    "凸轮轴总成",
+    "曲轴扭转减振器",
+    "连杆总成",
+    "涡壳及涡轮增压器"
+  ],
+  "should": [
+    "高温合金铸造",
+    "快速主动充型工艺",
+    "汽车发动机",
+    "混合动力汽车",
+    "工程机械",
+    "发电机组",
+    "航空、航天、航海、军工",
+    "克服难流动金属的成型障碍",
+    "改善铸态金属结晶状态",
+    "提高材料性能和收得率"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "发动机零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "凸轮轴总成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "曲轴扭转减振器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "连杆总成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涡壳及涡轮增压器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:40:48"
+}

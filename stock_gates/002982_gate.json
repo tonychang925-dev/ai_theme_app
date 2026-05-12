@@ -1,0 +1,28 @@
+{
+  "stock_id": "002982",
+  "stock_name": "湘佳股份",
+  "concept": "黄羽肉鸡全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "黄羽肉鸡全产业链"
+  ],
+  "should": [
+    "种禽繁育",
+    "家禽饲养",
+    "禽类屠宰加工",
+    "饲料生产",
+    "生物肥生产",
+    "鸡鸭肉冰鲜产品",
+    "黄羽肉鸡"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "黄羽肉鸡全产业链",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:06:03"
+}

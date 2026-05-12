@@ -1,0 +1,36 @@
+{
+  "stock_id": "300412",
+  "stock_name": "迦南科技",
+  "concept": "制药装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "固体制剂设备",
+    "智能物流系统"
+  ],
+  "should": [
+    "粉体工艺设备",
+    "中药提取设备",
+    "流体工艺设备",
+    "医药研发一致性评价及检测服务",
+    "智能机器人",
+    "制药装备",
+    "工艺设计能力",
+    "核心设备的研发、制造能力",
+    "制药行业",
+    "保健品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "固体制剂设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能物流系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:26:18"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "002189",
+  "stock_name": "中光学",
+  "concept": "光学元件与光电系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密光学元组件",
+    "投影整机及核心部件",
+    "光学元件与光电系统",
+    "光学薄膜技术"
+  ],
+  "should": [
+    "光电防务产品",
+    "要地监控产品",
+    "数字投影机",
+    "数码相机",
+    "智能手机",
+    "安防监控产品",
+    "微光成像技术",
+    "红外成像技术",
+    "激光探测技术",
+    "多光融合技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密光学元组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投影整机及核心部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光学元件与光电系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光学薄膜技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:28:34"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "688685",
+  "stock_name": "迈信林",
+  "concept": "航空航天零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航空航天零部件",
+    "机体零部件",
+    "发动机零部件",
+    "机载设备零部件"
+  ],
+  "should": [
+    "飞机悬挂系统零部件",
+    "整体结构件",
+    "高精度壳体",
+    "管路系统连接件",
+    "专用标准件及组件",
+    "飞机装配工装",
+    "复杂结构件数控加工技术",
+    "荧光无损检测",
+    "X光无损检测",
+    "精密制造技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航空航天零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机体零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发动机零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机载设备零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:24:04"
+}

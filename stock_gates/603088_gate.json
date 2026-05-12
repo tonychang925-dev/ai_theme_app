@@ -1,0 +1,46 @@
+{
+  "stock_id": "603088",
+  "stock_name": "宁波精达",
+  "concept": "新能源装备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "压力机产品",
+    "换热器智能化装备",
+    "MCP系列压力机",
+    "电池盖板压力机"
+  ],
+  "should": [
+    "翅片存取机",
+    "无屑小U、套环、烘干一体机",
+    "智能全自动穿翅片机",
+    "新能源汽车电池圆柱壳体",
+    "汽车微通道换热器",
+    "电池板栅模具",
+    "凸轮传动拉伸压力机",
+    "双动制杯压力机",
+    "新能源装备制造",
+    "新能源汽车驱动电机铁芯"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "压力机产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "换热器智能化装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MCP系列压力机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电池盖板压力机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:43:27"
+}

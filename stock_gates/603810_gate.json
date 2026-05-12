@@ -1,0 +1,46 @@
+{
+  "stock_id": "603810",
+  "stock_name": "丰山集团",
+  "concept": "农药一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "氟乐灵",
+    "精喹禾灵",
+    "烟嘧磺隆",
+    "毒死蜱"
+  ],
+  "should": [
+    "三氯吡氧乙酸丁氧基乙酯",
+    "氰氟草酯",
+    "炔草酯",
+    "三废处理技术",
+    "手性农药工程技术",
+    "农药一体化",
+    "工艺升级",
+    "农业除草",
+    "杀虫",
+    "杀菌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "氟乐灵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精喹禾灵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "烟嘧磺隆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "毒死蜱",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:56:57"
+}

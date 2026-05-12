@@ -1,0 +1,45 @@
+{
+  "stock_id": "300852",
+  "stock_name": "四会富仕",
+  "concept": "小批量PCB",
+  "strategy_type": "industry_chain",
+  "must": [
+    "小批量PCB",
+    "多层板",
+    "HDI板",
+    "高频高速板"
+  ],
+  "should": [
+    "厚铜板",
+    "软硬结合板",
+    "陶瓷基板",
+    "单/双面板",
+    "工业控制",
+    "汽车电子",
+    "消费电子",
+    "通信设备",
+    "医疗器械"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "小批量PCB",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多层板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "HDI板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高频高速板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:45:58"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "000831",
+  "stock_name": "中国稀土",
+  "concept": "稀土资源开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "稀土氧化物生产销售",
+    "稀土冶炼分离"
+  ],
+  "should": [
+    "稀土技术研发",
+    "江华稀土矿",
+    "圣功寨稀土矿",
+    "肥田稀土矿",
+    "定南大华冶炼厂",
+    "广州建丰冶炼厂",
+    "中重稀土",
+    "稀土资源开发",
+    "永磁材料",
+    "新能源汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "稀土氧化物生产销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "稀土冶炼分离",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:06:33"
+}

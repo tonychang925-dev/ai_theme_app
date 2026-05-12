@@ -1,0 +1,46 @@
+{
+  "stock_id": "688500",
+  "stock_name": "慧辰股份",
+  "concept": "数据分析应用",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数据分析应用",
+    "慧辰数云",
+    "慧辰数客",
+    "慧辰数联"
+  ],
+  "should": [
+    "数据科学技术",
+    "机器学习",
+    "人工智能",
+    "自然语言处理",
+    "知识图谱",
+    "数据融合技术",
+    "商业消费体验",
+    "CRM与营销",
+    "烟草行业",
+    "农业数字化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数据分析应用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "慧辰数云",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "慧辰数客",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "慧辰数联",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:19:11"
+}

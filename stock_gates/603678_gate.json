@@ -1,0 +1,46 @@
+{
+  "stock_id": "603678",
+  "stock_name": "火炬电子",
+  "concept": "特种陶瓷电容",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种陶瓷电容",
+    "片式多层陶瓷电容器",
+    "引线式多层陶瓷电容器",
+    "多芯组陶瓷电容器"
+  ],
+  "should": [
+    "钽电容器",
+    "超级电容器",
+    "脉冲功率陶瓷电容器",
+    "微波芯片电容器",
+    "薄膜电路",
+    "特种贴片电阻器",
+    "温补衰减器",
+    "陶瓷电容器制造核心技术",
+    "陶瓷材料制备",
+    "微波无源元器件生产全过程"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种陶瓷电容",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "片式多层陶瓷电容器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "引线式多层陶瓷电容器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多芯组陶瓷电容器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:54:36"
+}

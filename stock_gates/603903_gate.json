@@ -1,0 +1,38 @@
+{
+  "stock_id": "603903",
+  "stock_name": "中持股份",
+  "concept": "水环境服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水环境服务",
+    "运营项目",
+    "工程类项目"
+  ],
+  "should": [
+    "污水处理",
+    "农村生活污水治理",
+    "湿地生态修复",
+    "技术支撑创新平台",
+    "项目实施协助平台",
+    "长江环保集团技术支撑平台",
+    "区域中台组织"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水环境服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "运营项目",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程类项目",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:58:33"
+}

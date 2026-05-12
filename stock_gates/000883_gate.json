@@ -1,0 +1,41 @@
+{
+  "stock_id": "000883",
+  "stock_name": "湖北能源",
+  "concept": "综合能源服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力",
+    "煤炭",
+    "天然气"
+  ],
+  "should": [
+    "水电",
+    "火电",
+    "核电",
+    "天然气输配",
+    "煤炭贸易",
+    "综合能源服务",
+    "风光水火储一体化",
+    "煤炭天然气协同发展",
+    "鄂西水电基地",
+    "鄂东火电基地"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天然气",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:07:54"
+}

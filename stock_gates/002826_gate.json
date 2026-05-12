@@ -1,0 +1,46 @@
+{
+  "stock_id": "002826",
+  "stock_name": "易明医药",
+  "concept": "特色药研发生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "醋氯芬酸肠溶片",
+    "米格列醇片",
+    "蒙脱石散",
+    "多潘立酮片"
+  ],
+  "should": [
+    "红金消结片",
+    "阿奇霉素胶囊",
+    "氯雷他定片",
+    "瓜蒌皮注射液",
+    "盐酸纳美芬注射液",
+    "卡贝缩宫素注射液",
+    "地高辛注射液",
+    "注射用多种维生素(12)",
+    "醋酸钠林格注射液",
+    "大株红景天注射液"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "醋氯芬酸肠溶片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "米格列醇片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蒙脱石散",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多潘立酮片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:59:09"
+}

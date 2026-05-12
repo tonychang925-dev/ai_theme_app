@@ -1,0 +1,36 @@
+{
+  "stock_id": "688225",
+  "stock_name": "亚信安全",
+  "concept": "网络安全软件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "网络安全软件",
+    "数字信任及身份安全产品"
+  ],
+  "should": [
+    "端点安全产品",
+    "云网边安全产品",
+    "云网虚拟化基础软件",
+    "网络安全服务",
+    "身份识别与访问控制",
+    "数据安全",
+    "终端安全",
+    "云安全",
+    "高级威胁治理",
+    "威胁情报"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "网络安全软件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字信任及身份安全产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:12:24"
+}

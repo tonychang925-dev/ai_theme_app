@@ -1,0 +1,40 @@
+{
+  "stock_id": "002578",
+  "stock_name": "闽发铝业",
+  "concept": "铝型材制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑铝型材",
+    "工业铝型材",
+    "海西铝型材行业龙头企业"
+  ],
+  "should": [
+    "建筑铝模板",
+    "铝型材制造",
+    "房地产开发",
+    "建筑工程",
+    "民用建筑",
+    "厂房",
+    "大型门窗",
+    "幕墙装饰",
+    "电子电器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑铝型材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业铝型材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海西铝型材行业龙头企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:48:21"
+}

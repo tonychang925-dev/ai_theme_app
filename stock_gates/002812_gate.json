@@ -1,0 +1,36 @@
+{
+  "stock_id": "002812",
+  "stock_name": "恩捷股份",
+  "concept": "湿法隔膜龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "湿法隔膜龙头",
+    "湿法隔膜"
+  ],
+  "should": [
+    "干法隔膜",
+    "铝塑膜",
+    "BOPP薄膜",
+    "基膜+涂覆",
+    "动力电池",
+    "消费电池",
+    "储能领域",
+    "半固态及固态电池",
+    "全球隔膜市场份额约31%",
+    "中国隔膜市场份额约38.60%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "湿法隔膜龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "湿法隔膜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:58:34"
+}

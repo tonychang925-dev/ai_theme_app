@@ -1,0 +1,46 @@
+{
+  "stock_id": "301656",
+  "stock_name": "联合动力",
+  "concept": "新能源汽车动力系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源汽车动力系统",
+    "电驱系统",
+    "电控",
+    "电机"
+  ],
+  "should": [
+    "电源系统",
+    "车载充电机",
+    "DC/DC转换器",
+    "二合一/三合一电源总成",
+    "电路设计",
+    "材料应用",
+    "制造工艺",
+    "软件算法",
+    "功率半导体硬件及软件设计",
+    "产业链核心环节"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源汽车动力系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电驱系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电控",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:06:49"
+}

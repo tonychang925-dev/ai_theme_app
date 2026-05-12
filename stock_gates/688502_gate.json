@@ -1,0 +1,40 @@
+{
+  "stock_id": "688502",
+  "stock_name": "茂莱光学",
+  "concept": "精密光学",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光学器件",
+    "光学镜头",
+    "光学系统"
+  ],
+  "should": [
+    "精密光学",
+    "生命科学",
+    "航空航天",
+    "半导体检测",
+    "机器视觉",
+    "牙科扫描",
+    "定制化非标产品",
+    "精密光学设计",
+    "镀膜技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光学器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光学镜头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光学系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:19:07"
+}

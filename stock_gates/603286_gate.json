@@ -1,0 +1,51 @@
+{
+  "stock_id": "603286",
+  "stock_name": "日盈电子",
+  "concept": "汽车传感器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车传感器",
+    "传感器",
+    "电子皮肤",
+    "柔性触觉传感",
+    "人形机器人"
+  ],
+  "should": [
+    "车用线束",
+    "天窗控制器",
+    "洗涤系统",
+    "精密注塑产品",
+    "汽车",
+    "摩托车",
+    "滑板车",
+    "一汽大众",
+    "上汽大众",
+    "上汽通用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车传感器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "传感器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子皮肤",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "柔性触觉传感",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人形机器人",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:48:18"
+}

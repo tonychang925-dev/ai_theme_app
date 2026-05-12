@@ -1,0 +1,32 @@
+{
+  "stock_id": "600619",
+  "stock_name": "海立股份",
+  "concept": "压缩机领军企业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "转子式压缩机",
+    "新能源车用电动压缩机"
+  ],
+  "should": [
+    "热泵专用压缩机",
+    "旋叶式汽车压缩机",
+    "热泵系统",
+    "压缩机领军企业",
+    "全国压缩机行业质量领军企业",
+    "行业地位稳固"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "转子式压缩机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源车用电动压缩机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:23:06"
+}

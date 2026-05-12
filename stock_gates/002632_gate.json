@@ -1,0 +1,41 @@
+{
+  "stock_id": "002632",
+  "stock_name": "道明光学",
+  "concept": "反光材料与薄膜",
+  "strategy_type": "industry_chain",
+  "must": [
+    "反光膜",
+    "微棱镜型反光膜",
+    "全棱镜结构反光膜"
+  ],
+  "should": [
+    "反光布",
+    "反光制品",
+    "铝塑膜",
+    "石墨烯导热膜",
+    "玻璃微珠型技术",
+    "微棱镜型技术",
+    "全棱镜结构技术",
+    "精密涂布技术",
+    "复合技术",
+    "微纳米复制技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "反光膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "微棱镜型反光膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全棱镜结构反光膜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:50:44"
+}

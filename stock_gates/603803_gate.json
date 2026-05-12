@@ -1,0 +1,51 @@
+{
+  "stock_id": "603803",
+  "stock_name": "瑞斯康达",
+  "concept": "光纤通信接入",
+  "strategy_type": "industry_chain",
+  "must": [
+    "4G/5G前传波分设备",
+    "WDM波分设备",
+    "OLT",
+    "ONU",
+    "SD-WAN系统"
+  ],
+  "should": [
+    "DCI-BOX",
+    "政企融合网关",
+    "安全网关",
+    "智能家庭网关",
+    "Wifi5/6组网终端",
+    "SD-WAN终端",
+    "小基站",
+    "虚拟化基站网关",
+    "核心网单元",
+    "光纤通信接入"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "4G/5G前传波分设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "WDM波分设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "OLT",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ONU",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SD-WAN系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:56:58"
+}

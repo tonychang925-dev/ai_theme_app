@@ -1,0 +1,40 @@
+{
+  "stock_id": "002065",
+  "stock_name": "东华软件",
+  "concept": "行业信息化服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "计算机信息系统集成",
+    "信息技术服务",
+    "应用软件开发"
+  ],
+  "should": [
+    "iMedical HO/R9.2",
+    "区块链跨境支付平台",
+    "智能信贷审批系统",
+    "神农新论AI大模型",
+    "辽宁省水库运管矩阵平台",
+    "自然语言处理",
+    "行业信息化服务",
+    "AI大模型",
+    "大数据处理技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "计算机信息系统集成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信息技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "应用软件开发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:21:30"
+}

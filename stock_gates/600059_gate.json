@@ -1,0 +1,41 @@
+{
+  "stock_id": "600059",
+  "stock_name": "古越龙山",
+  "concept": "绍兴黄酒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "绍兴黄酒",
+    "只此青玉",
+    "国酿1959"
+  ],
+  "should": [
+    "青梅酒",
+    "金奖女儿红",
+    "仟挂",
+    "1952绍兴酒",
+    "一物一码",
+    "GM2D多码合一",
+    "浙食链追溯体系",
+    "温渡酒馆",
+    "微醺舍",
+    "高端餐饮"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "绍兴黄酒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "只此青玉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国酿1959",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:08:11"
+}

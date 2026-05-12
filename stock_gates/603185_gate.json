@@ -1,0 +1,42 @@
+{
+  "stock_id": "603185",
+  "stock_name": "弘元绿能",
+  "concept": "光伏硅片龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏硅片龙头",
+    "单晶硅片",
+    "金刚线切片机",
+    "硅片长单协议"
+  ],
+  "should": [
+    "N型电池",
+    "硅料采购长单",
+    "颗粒硅技术",
+    "光伏发电",
+    "分布式光伏",
+    "二供地位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏硅片龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "单晶硅片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金刚线切片机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硅片长单协议",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:45:44"
+}

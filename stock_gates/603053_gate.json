@@ -1,0 +1,36 @@
+{
+  "stock_id": "603053",
+  "stock_name": "成都燃气",
+  "concept": "燃气运营服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "燃气运营服务",
+    "城市燃气"
+  ],
+  "should": [
+    "车用燃气供应",
+    "燃气接驳",
+    "燃气工程规划",
+    "施工安装",
+    "综合服务",
+    "综合能源",
+    "售电",
+    "碳中和",
+    "输配",
+    "设计"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "燃气运营服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市燃气",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:42:17"
+}

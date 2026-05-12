@@ -1,0 +1,41 @@
+{
+  "stock_id": "688248",
+  "stock_name": "南网科技",
+  "concept": "储能技术服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大型储能",
+    "储能系统技术服务",
+    "储能技术服务"
+  ],
+  "should": [
+    "智能配用电设备",
+    "智能监测设备",
+    "机器人及无人机",
+    "试验检测及调试服务",
+    "储能热管理及消防",
+    "电力电子系统高精度建模及测试",
+    "能量管理及优化控制",
+    "上游EMS",
+    "中游系统集成",
+    "EPC业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大型储能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能系统技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能技术服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:13:01"
+}

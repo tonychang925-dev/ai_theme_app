@@ -1,0 +1,36 @@
+{
+  "stock_id": "300650",
+  "stock_name": "太龙股份",
+  "concept": "半导体分销+商业照明",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体分销",
+    "商业照明"
+  ],
+  "should": [
+    "射频前端芯片",
+    "照明器具",
+    "LED显示屏",
+    "光电标识",
+    "十大优秀供应商",
+    "无线通讯",
+    "消费电子",
+    "工业物联网",
+    "手机",
+    "品牌零售终端"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体分销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商业照明",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:37:03"
+}

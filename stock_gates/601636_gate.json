@@ -1,0 +1,41 @@
+{
+  "stock_id": "601636",
+  "stock_name": "旗滨集团",
+  "concept": "玻璃制造龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "浮法玻璃",
+    "节能建筑玻璃",
+    "光伏光电玻璃"
+  ],
+  "should": [
+    "电子玻璃",
+    "药用玻璃",
+    "低铁超白玻璃",
+    "大型窑炉技术",
+    "自动化率提升",
+    "良品率优化",
+    "原料自给",
+    "规模优势",
+    "成本优势",
+    "产能布局优势"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "浮法玻璃",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "节能建筑玻璃",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏光电玻璃",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:37:45"
+}

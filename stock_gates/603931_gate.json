@@ -1,0 +1,36 @@
+{
+  "stock_id": "603931",
+  "stock_name": "格林达",
+  "concept": "TMAH显影液龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "TMAH显影液龙头",
+    "TMAH显影液"
+  ],
+  "should": [
+    "BOE蚀刻液",
+    "N-甲基呲咯烷酮",
+    "氢氟酸",
+    "CF显影液",
+    "铝蚀刻液",
+    "ITO蚀刻液",
+    "铜蚀刻液",
+    "清洗液",
+    "稀释液",
+    "显示面板"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "TMAH显影液龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "TMAH显影液",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:59:18"
+}

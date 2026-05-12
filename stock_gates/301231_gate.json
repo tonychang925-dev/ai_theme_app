@@ -1,0 +1,46 @@
+{
+  "stock_id": "301231",
+  "stock_name": "荣信文化",
+  "concept": "少儿图书策划发行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "少儿图书策划发行",
+    "少儿图书",
+    "少儿科普百科",
+    "低幼启蒙"
+  ],
+  "should": [
+    "少儿文化产品",
+    "互动类图书工艺设计技术",
+    "翻翻书",
+    "触摸书",
+    "立体书",
+    "推拉书",
+    "纸艺技术",
+    "少儿文学",
+    "少儿图书零售市场图书公司排名第二",
+    "实洋占有率2.59%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "少儿图书策划发行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "少儿图书",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "少儿科普百科",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "低幼启蒙",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:59:58"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "603551",
+  "stock_name": "奥普科技",
+  "concept": "浴霸吊顶",
+  "strategy_type": "industry_chain",
+  "must": [
+    "浴霸",
+    "集成吊顶",
+    "国家标准制定组长单位"
+  ],
+  "should": [
+    "晾衣机",
+    "光源照明",
+    "通风扇",
+    "集成墙面",
+    "全功能阳台",
+    "NBSS+铂金水氧科技",
+    "无雾水净化技术",
+    "卫浴空间",
+    "家居空间",
+    "浴霸吊顶"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "浴霸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集成吊顶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国家标准制定组长单位",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:52:17"
+}

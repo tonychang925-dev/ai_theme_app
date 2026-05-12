@@ -1,0 +1,36 @@
+{
+  "stock_id": "300735",
+  "stock_name": "光弘科技",
+  "concept": "电子制造服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子制造服务",
+    "汽车电子"
+  ],
+  "should": [
+    "小米",
+    "荣耀",
+    "华为",
+    "三星",
+    "Oppo",
+    "闻泰通讯",
+    "华勤技术",
+    "龙旗科技",
+    "法雷奥",
+    "大陆"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子制造服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车电子",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:40:55"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "002917",
+  "stock_name": "金奥博",
+  "concept": "民爆智能装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "民爆智能装备",
+    "民爆一体化",
+    "民爆智能装备龙头"
+  ],
+  "should": [
+    "工业炸药生产智能装备",
+    "现场混装设备",
+    "机器人智能装备",
+    "金奥博智慧云",
+    "工业炸药关键原辅材料",
+    "民爆器材生产",
+    "矿山爆破",
+    "隧道爆破",
+    "军工装备",
+    "智能视觉定位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "民爆智能装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "民爆一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "民爆智能装备龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:03:12"
+}

@@ -1,0 +1,26 @@
+{
+  "stock_id": "603871",
+  "stock_name": "嘉友国际",
+  "concept": "跨境物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "跨境多式联运综合物流服务"
+  ],
+  "should": [
+    "供应链贸易服务",
+    "道路",
+    "保税仓库",
+    "海关监管场所",
+    "主焦煤"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "跨境多式联运综合物流服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:57:48"
+}

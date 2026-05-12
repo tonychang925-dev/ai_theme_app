@@ -1,0 +1,46 @@
+{
+  "stock_id": "300001",
+  "stock_name": "特锐德",
+  "concept": "充电网运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "充电网运营",
+    "户外箱式电力设备",
+    "预制舱式模块化变电站",
+    "系统集成"
+  ],
+  "should": [
+    "充电设备",
+    "充电网技术",
+    "工业互联网控制单元",
+    "能源调度系统",
+    "大数据云平台",
+    "新能源发电",
+    "电动汽车充电",
+    "电网建设",
+    "数据中心",
+    "工信部制造业单项冠军"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "充电网运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "户外箱式电力设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "预制舱式模块化变电站",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "系统集成",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:08:59"
+}

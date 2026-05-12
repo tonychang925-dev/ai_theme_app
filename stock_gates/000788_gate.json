@@ -1,0 +1,36 @@
+{
+  "stock_id": "000788",
+  "stock_name": "北大医药",
+  "concept": "化学药品制剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "化学药品制剂",
+    "医药流通"
+  ],
+  "should": [
+    "抗感染类",
+    "镇痛类",
+    "精神类",
+    "消化系统类",
+    "心血管类",
+    "自主知识产权",
+    "仿创技术",
+    "技术创新",
+    "药品销售",
+    "医院集采"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "化学药品制剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药流通",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:04:47"
+}

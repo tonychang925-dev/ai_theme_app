@@ -1,0 +1,36 @@
+{
+  "stock_id": "600367",
+  "stock_name": "红星发展",
+  "concept": "钡锶盐化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "碳酸钡",
+    "碳酸锶"
+  ],
+  "should": [
+    "高纯碳酸钡",
+    "高纯氯化钡",
+    "高纯硝酸钡",
+    "氢氧化钡",
+    "硝酸钡",
+    "硝酸锶",
+    "氯化锶",
+    "氢氧化锶",
+    "高纯碳酸锶",
+    "电解二氧化锰"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "碳酸钡",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳酸锶",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:16:23"
+}

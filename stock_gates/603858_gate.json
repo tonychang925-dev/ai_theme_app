@@ -1,0 +1,46 @@
+{
+  "stock_id": "603858",
+  "stock_name": "步长制药",
+  "concept": "心脑血管中成药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "心脑血管中成药",
+    "脑心通胶囊",
+    "稳心颗粒",
+    "丹红注射液"
+  ],
+  "should": [
+    "谷红注射液",
+    "复方脑肽节苷脂注射液",
+    "复方曲肽注射液",
+    "银杏蜜环口服溶液",
+    "宣肺败毒颗粒",
+    "参芎葡萄糖注射液",
+    "通脉降糖胶囊",
+    "养正合剂口服液",
+    "参仙升脉口服液",
+    "冠心舒通胶囊"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "心脑血管中成药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "脑心通胶囊",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "稳心颗粒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "丹红注射液",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:57:41"
+}

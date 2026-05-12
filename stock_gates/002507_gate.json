@@ -1,0 +1,35 @@
+{
+  "stock_id": "002507",
+  "stock_name": "涪陵榨菜",
+  "concept": "酱腌菜龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "榨菜",
+    "青菜头"
+  ],
+  "should": [
+    "萝卜",
+    "泡菜",
+    "酱腌菜龙头",
+    "小包装榨菜",
+    "散装或toB大包装产品",
+    "原料优势与产业配套构筑天然护城河",
+    "强提价力",
+    "市占率全面领先",
+    "管理层稳定"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "榨菜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "青菜头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:44:49"
+}

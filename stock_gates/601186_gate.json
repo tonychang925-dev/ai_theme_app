@@ -1,0 +1,36 @@
+{
+  "stock_id": "601186",
+  "stock_name": "中国铁建",
+  "concept": "建筑全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程承包",
+    "勘察设计与咨询"
+  ],
+  "should": [
+    "房地产",
+    "工业制造",
+    "物流与物资贸易",
+    "涉铁勘察设计",
+    "大铁轨道交通勘察设计",
+    "建筑全产业链",
+    "铁路公路",
+    "城市轨道",
+    "水利水电",
+    "桥梁"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程承包",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "勘察设计与咨询",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:35:11"
+}

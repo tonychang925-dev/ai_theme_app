@@ -1,0 +1,41 @@
+{
+  "stock_id": "000890",
+  "stock_name": "法尔胜",
+  "concept": "金属制品与环保",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钢丝",
+    "钢丝绳",
+    "国内知名的金属制品供应商"
+  ],
+  "should": [
+    "垃圾渗滤液处理设备",
+    "V-MVR无垢机械式蒸发设备",
+    "V-MVR+VP技术",
+    "零污染液体排放处理工艺",
+    "能源",
+    "交通",
+    "军工",
+    "农林",
+    "海洋",
+    "冶金"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钢丝",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钢丝绳",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内知名的金属制品供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:08:25"
+}

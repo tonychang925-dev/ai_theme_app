@@ -1,0 +1,36 @@
+{
+  "stock_id": "002335",
+  "stock_name": "科华数据",
+  "concept": "数据中心与智慧电能",
+  "strategy_type": "industry_chain",
+  "must": [
+    "UPS",
+    "数据中心"
+  ],
+  "should": [
+    "HVDC",
+    "液冷模块",
+    "光伏逆变器",
+    "储能PCS",
+    "配电柜",
+    "模块化数据中心",
+    "电力电子变换技术",
+    "国内第三方算力中心服务商第8位",
+    "液冷技术",
+    "AI+智慧能源专家系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "UPS",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据中心",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:36:11"
+}

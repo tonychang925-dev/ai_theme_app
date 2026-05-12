@@ -1,0 +1,41 @@
+{
+  "stock_id": "600223",
+  "stock_name": "福瑞达",
+  "concept": "大健康产业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大健康产业",
+    "生物医药",
+    "生态健康产业"
+  ],
+  "should": [
+    "化妆品",
+    "药品",
+    "透明质酸",
+    "玻尿酸",
+    "颐莲",
+    "瑷尔博士",
+    "伊帕尔汗",
+    "明仁",
+    "润洁",
+    "原料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大健康产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物医药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生态健康产业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:12:14"
+}

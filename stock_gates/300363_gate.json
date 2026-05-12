@@ -1,0 +1,36 @@
+{
+  "stock_id": "300363",
+  "stock_name": "博腾股份",
+  "concept": "医药CDMO",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药CDMO",
+    "CDMO"
+  ],
+  "should": [
+    "CMO",
+    "化学原料药CDMO",
+    "制剂CDMO",
+    "生物药CDMO",
+    "结晶技术",
+    "化学合成",
+    "工艺分析",
+    "晶型预测",
+    "筛选",
+    "细胞基因治疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医药CDMO",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CDMO",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:24:06"
+}

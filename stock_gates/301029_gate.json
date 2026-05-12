@@ -1,0 +1,36 @@
+{
+  "stock_id": "301029",
+  "stock_name": "怡合达",
+  "concept": "自动化零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "自动化零部件",
+    "一站式采购"
+  ],
+  "should": [
+    "工业自动化设备",
+    "直线运动零件",
+    "传动零部件",
+    "气动元件",
+    "铝型材及配件",
+    "工业框体结构部件",
+    "机械加工件",
+    "机械小零件",
+    "电子电气类",
+    "3C电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "自动化零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一站式采购",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:53:53"
+}

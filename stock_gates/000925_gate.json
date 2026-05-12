@@ -1,0 +1,41 @@
+{
+  "stock_id": "000925",
+  "stock_name": "众合科技",
+  "concept": "智慧交通与半导体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧交通",
+    "泛半导体",
+    "产业数智化"
+  ],
+  "should": [
+    "信号系统",
+    "自动售检票系统/清分系统",
+    "半导体硅棒",
+    "半导体硅片",
+    "研磨片",
+    "抛光片",
+    "列车自主运行系统",
+    "分布式智能化联锁系统",
+    "红外热成像芯片/探测器",
+    "陶瓷薄膜混合集成电路"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧交通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "泛半导体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "产业数智化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:09:50"
+}

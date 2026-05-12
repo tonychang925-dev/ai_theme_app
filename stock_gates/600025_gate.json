@@ -1,0 +1,41 @@
+{
+  "stock_id": "600025",
+  "stock_name": "华能水电",
+  "concept": "水电开发运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水电开发运营",
+    "水电开发",
+    "电力保供"
+  ],
+  "should": [
+    "新能源开发",
+    "多能互补基地",
+    "水电全国产化调速器",
+    "励磁系统",
+    "监控系统国产化",
+    "水电智能建造平台",
+    "大坝智能碾压",
+    "智能温控",
+    "电力供应",
+    "云南第一发电量"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水电开发运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水电开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力保供",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:07:26"
+}

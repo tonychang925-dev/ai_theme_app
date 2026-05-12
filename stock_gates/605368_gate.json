@@ -1,0 +1,36 @@
+{
+  "stock_id": "605368",
+  "stock_name": "蓝天燃气",
+  "concept": "燃气综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "管道天然气",
+    "城市燃气"
+  ],
+  "should": [
+    "中石油",
+    "中石化",
+    "安彩能源",
+    "中联煤层气",
+    "中裕能源",
+    "五洲能源",
+    "新奥能源",
+    "燃气综合服务",
+    "居民用气",
+    "工业用气"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "管道天然气",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市燃气",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:04:04"
+}

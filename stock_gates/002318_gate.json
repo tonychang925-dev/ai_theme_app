@@ -1,0 +1,41 @@
+{
+  "stock_id": "002318",
+  "stock_name": "久立特材",
+  "concept": "高端不锈钢管",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端不锈钢管",
+    "无缝管",
+    "焊接管"
+  ],
+  "should": [
+    "复合管",
+    "管件、法兰",
+    "热挤压工艺",
+    "穿孔工艺",
+    "FFX成型",
+    "JCO成型",
+    "3500吨钢挤压机",
+    "石油",
+    "化工",
+    "天然气"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端不锈钢管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无缝管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "焊接管",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:35:23"
+}

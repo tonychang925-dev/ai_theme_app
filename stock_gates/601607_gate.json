@@ -1,0 +1,46 @@
+{
+  "stock_id": "601607",
+  "stock_name": "上海医药",
+  "concept": "医药流通与创新药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药流通",
+    "进口药平台",
+    "全国第二大医药流通企业",
+    "最大进口药平台"
+  ],
+  "should": [
+    "麝香保心丸",
+    "八宝丹",
+    "六神丸",
+    "胃复春",
+    "疫苗代理",
+    "最大进口疫苗代理商",
+    "疫苗超级工厂",
+    "上药云健康",
+    "益药品牌",
+    "中药保密配方"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医药流通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "进口药平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全国第二大医药流通企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "最大进口药平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:37:29"
+}

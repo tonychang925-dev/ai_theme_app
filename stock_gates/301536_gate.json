@@ -1,0 +1,45 @@
+{
+  "stock_id": "301536",
+  "stock_name": "星宸科技",
+  "concept": "视频安防芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "视频安防芯片",
+    "IPC SoC",
+    "NVR SoC",
+    "行车记录仪芯片"
+  ],
+  "should": [
+    "AI算法",
+    "ISP技术",
+    "视频编解码技术",
+    "智能安防",
+    "视频对讲",
+    "智能车载",
+    "视频会议",
+    "车载摄像",
+    "中国第二大行车记录仪芯片厂商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "视频安防芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IPC SoC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "NVR SoC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "行车记录仪芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:06:08"
+}

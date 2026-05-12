@@ -1,0 +1,40 @@
+{
+  "stock_id": "300009",
+  "stock_name": "安科生物",
+  "concept": "生物制药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生物制药",
+    "基因工程",
+    "细胞工程"
+  ],
+  "should": [
+    "人干扰素α2b",
+    "人生长激素",
+    "法医DNA检测",
+    "多肽原料药",
+    "注射用曲妥珠单抗",
+    "透皮吸收给药技术",
+    "国内获批适应症多的生长激素",
+    "法医DNA检测领军型企业",
+    "多肽原料药批件较多企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生物制药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "基因工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "细胞工程",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:09:26"
+}

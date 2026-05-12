@@ -1,0 +1,46 @@
+{
+  "stock_id": "600918",
+  "stock_name": "中泰证券",
+  "concept": "综合券商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合券商",
+    "投资银行业务",
+    "股票保荐承销",
+    "债券发行承销"
+  ],
+  "should": [
+    "并购重组",
+    "财富管理业务",
+    "新三板推荐",
+    "山东市场",
+    "北京",
+    "长三角",
+    "珠三角",
+    "生物医药",
+    "新能源",
+    "信息技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合券商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资银行业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "股票保荐承销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "债券发行承销",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:31:07"
+}

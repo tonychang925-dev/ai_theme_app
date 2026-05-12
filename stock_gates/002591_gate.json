@@ -1,0 +1,51 @@
+{
+  "stock_id": "002591",
+  "stock_name": "恒大高新",
+  "concept": "节能环保+互联网营销",
+  "strategy_type": "industry_chain",
+  "must": [
+    "节能环保+互联网营销",
+    "节能环保",
+    "互联网营销",
+    "防磨抗蚀业务",
+    "垃圾焚烧炉防护业务"
+  ],
+  "should": [
+    "声学降噪业务",
+    "互联网软件分发",
+    "互联网广告精准营销服务",
+    "短信通信服务",
+    "HCMT冷焊技术",
+    "垃圾焚烧炉",
+    "余热发电业务",
+    "锂离子电池",
+    "钠离子电池",
+    "国内领先的工业设备防护服务商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "节能环保+互联网营销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "节能环保",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "互联网营销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "防磨抗蚀业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "垃圾焚烧炉防护业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:49:02"
+}

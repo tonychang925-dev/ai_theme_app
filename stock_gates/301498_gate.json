@@ -1,0 +1,26 @@
+{
+  "stock_id": "301498",
+  "stock_name": "乖宝宠物",
+  "concept": "宠物食品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "宠物食品"
+  ],
+  "should": [
+    "宠物主粮",
+    "宠物零食",
+    "宠物保健品",
+    "宠物饲养",
+    "宠物行业最大细分市场"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "宠物食品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:05:28"
+}

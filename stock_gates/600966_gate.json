@@ -1,0 +1,41 @@
+{
+  "stock_id": "600966",
+  "stock_name": "博汇纸业",
+  "concept": "白卡纸龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "白卡纸龙头",
+    "白卡纸产能行业第二",
+    "白卡纸"
+  ],
+  "should": [
+    "APP（中国）旗下",
+    "文化纸",
+    "白板纸",
+    "箱板纸",
+    "瓦楞纸",
+    "石膏护面纸",
+    "木浆系白板纸创新研发",
+    "以白代灰",
+    "以纸代塑",
+    "药品包装"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "白卡纸龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "白卡纸产能行业第二",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "白卡纸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:31:55"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "688327",
+  "stock_name": "云从科技",
+  "concept": "人机协同AI",
+  "strategy_type": "industry_chain",
+  "must": [
+    "人机协同操作系统",
+    "人工智能解决方案",
+    "智慧治理",
+    "智慧金融"
+  ],
+  "should": [
+    "轻舟平台",
+    "跨镜追踪",
+    "3D结构光人脸识别",
+    "双层异构深度神经网络",
+    "对抗性神经网络",
+    "语音识别",
+    "动作识别",
+    "OCR",
+    "自然语言处理",
+    "知识图谱"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "人机协同操作系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人工智能解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧治理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧金融",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:15:39"
+}

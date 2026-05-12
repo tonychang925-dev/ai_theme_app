@@ -1,0 +1,46 @@
+{
+  "stock_id": "301376",
+  "stock_name": "致欧科技",
+  "concept": "自有家居品牌",
+  "strategy_type": "industry_chain",
+  "must": [
+    "自有家居品牌",
+    "亚马逊平台",
+    "海外自营仓",
+    "跨境仓储物流体系"
+  ],
+  "should": [
+    "家具系列",
+    "家居系列",
+    "庭院系列",
+    "宠物系列",
+    "法国",
+    "德国",
+    "西班牙",
+    "意大利",
+    "美国",
+    "英国"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "自有家居品牌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "亚马逊平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海外自营仓",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "跨境仓储物流体系",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:04:10"
+}

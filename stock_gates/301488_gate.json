@@ -1,0 +1,44 @@
+{
+  "stock_id": "301488",
+  "stock_name": "豪恩汽电",
+  "concept": "汽车智能感知",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车智能感知",
+    "车载摄像系统",
+    "车载视频行驶记录系统",
+    "超声波雷达系统"
+  ],
+  "should": [
+    "长城汽车",
+    "北京现代",
+    "起亚",
+    "印度马恒达",
+    "东风日产",
+    "Nippon集团",
+    "乘用车市场",
+    "定向开发项目量产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车智能感知",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载摄像系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载视频行驶记录系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超声波雷达系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:05:25"
+}

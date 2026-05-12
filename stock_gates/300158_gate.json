@@ -1,0 +1,41 @@
+{
+  "stock_id": "300158",
+  "stock_name": "振东制药",
+  "concept": "医药全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "达霏欣米诺地尔搽剂",
+    "毛发",
+    "中药材全产业链"
+  ],
+  "should": [
+    "肿瘤",
+    "消化",
+    "泌尿",
+    "心脑",
+    "复方苦参注射液",
+    "西黄丸",
+    "胶体果胶铋胶囊",
+    "比卡鲁胺胶囊",
+    "舒血宁注射液",
+    "芪蛭通络胶囊"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "达霏欣米诺地尔搽剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "毛发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中药材全产业链",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:15:39"
+}

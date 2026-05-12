@@ -1,0 +1,34 @@
+{
+  "stock_id": "603708",
+  "stock_name": "家家悦",
+  "concept": "区域超市龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "区域超市龙头",
+    "生鲜"
+  ],
+  "should": [
+    "综合超市",
+    "社区生鲜食品超市",
+    "乡村超市",
+    "一体化物流管理体系",
+    "自有冷链系统",
+    "全程冷链控制",
+    "直营门店969家",
+    "加盟店37家"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "区域超市龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生鲜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:55:18"
+}

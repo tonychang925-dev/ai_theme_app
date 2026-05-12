@@ -1,0 +1,30 @@
+{
+  "stock_id": "002862",
+  "stock_name": "实丰文化",
+  "concept": "智能玩具",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能玩具"
+  ],
+  "should": [
+    "电动遥控玩具",
+    "婴幼玩具",
+    "车模玩具",
+    "动漫游戏衍生品玩具",
+    "宝可梦正版授权",
+    "研发设计",
+    "绿色环保玩具材料研发",
+    "原创IP打造",
+    "数字藏品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能玩具",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:00:49"
+}

@@ -1,0 +1,30 @@
+{
+  "stock_id": "300024",
+  "stock_name": "机器人",
+  "concept": "工业机器人",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业机器人"
+  ],
+  "should": [
+    "汽车",
+    "3C",
+    "半导体",
+    "新能源汽车",
+    "锂电",
+    "光伏",
+    "医疗健康",
+    "国产化进程加速",
+    "自主可控"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业机器人",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:09:57"
+}

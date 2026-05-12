@@ -1,0 +1,41 @@
+{
+  "stock_id": "000980",
+  "stock_name": "众泰汽车",
+  "concept": "民族汽车品牌",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车整车研发",
+    "制造",
+    "销售"
+  ],
+  "should": [
+    "整车平台规划",
+    "新能源设计开发",
+    "发动机开发",
+    "变速箱开发",
+    "底盘系统开发",
+    "造型设计",
+    "数据设计",
+    "性能开发",
+    "工艺工程",
+    "造老百姓用得起的好车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车整车研发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "销售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:12:07"
+}

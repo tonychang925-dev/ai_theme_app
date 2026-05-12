@@ -1,0 +1,41 @@
+{
+  "stock_id": "603227",
+  "stock_name": "雪峰科技",
+  "concept": "民爆能源双驱",
+  "strategy_type": "industry_chain",
+  "must": [
+    "民爆能源双驱",
+    "民爆",
+    "能源"
+  ],
+  "should": [
+    "LNG",
+    "工业炸药",
+    "雷管",
+    "索类",
+    "民用爆破器材工程技术研究中心",
+    "国家级工业技术中心",
+    "数码电子雷管芯片研发公司",
+    "新材料研发实验室",
+    "爆破方案设计",
+    "爆破工程监理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "民爆能源双驱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "民爆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "能源",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:47:06"
+}

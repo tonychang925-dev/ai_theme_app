@@ -1,0 +1,46 @@
+{
+  "stock_id": "600592",
+  "stock_name": "龙溪股份",
+  "concept": "关节轴承龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "关节轴承龙头",
+    "国内最大关节轴承供应商",
+    "最大出口商",
+    "关节轴承"
+  ],
+  "should": [
+    "关节轴承设计",
+    "圆锥滚子轴承",
+    "齿轮/变速箱",
+    "行业标准主起草单位",
+    "制造工艺",
+    "工艺装备",
+    "工程机械",
+    "载重汽车",
+    "冶金矿山",
+    "水利工程"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "关节轴承龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内最大关节轴承供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "最大出口商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "关节轴承",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:22:08"
+}

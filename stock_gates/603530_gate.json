@@ -1,0 +1,41 @@
+{
+  "stock_id": "603530",
+  "stock_name": "神马电力",
+  "concept": "电力复合外绝缘",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力复合外绝缘",
+    "变电站复合绝缘子",
+    "线路复合绝缘子"
+  ],
+  "should": [
+    "输电塔复合横担",
+    "复合套管",
+    "橡胶密封件",
+    "材料配方技术",
+    "工艺技术创新",
+    "长寿命产品技术",
+    "特高压工程",
+    "高压变电设备",
+    "输配电线路",
+    "隐形龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力复合外绝缘",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "变电站复合绝缘子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "线路复合绝缘子",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:52:01"
+}

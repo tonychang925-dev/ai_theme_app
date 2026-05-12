@@ -1,0 +1,41 @@
+{
+  "stock_id": "300435",
+  "stock_name": "中泰股份",
+  "concept": "深冷技术装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "深冷技术装备",
+    "深冷技术装置",
+    "换热器核心技术"
+  ],
+  "should": [
+    "空分设备",
+    "板翅式换热器",
+    "氢液化核心设备",
+    "深冷技术段国产替代",
+    "天然气",
+    "煤化工",
+    "工业气体",
+    "氢能",
+    "国内少数掌握换热器核心技术的厂商",
+    "总包生产国内第二大LNG液化装置"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "深冷技术装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "深冷技术装置",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "换热器核心技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:27:15"
+}

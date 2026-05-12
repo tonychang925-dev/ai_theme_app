@@ -1,0 +1,41 @@
+{
+  "stock_id": "688696",
+  "stock_name": "极米科技",
+  "concept": "智能投影龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能投影龙头",
+    "智能投影产品",
+    "自研光机"
+  ],
+  "should": [
+    "投影相关配件",
+    "互联网增值服务",
+    "主控芯片",
+    "固件开发",
+    "影视内容服务",
+    "家用投影",
+    "大屏观看",
+    "自主生产",
+    "外协加工",
+    "OEM"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能投影龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能投影产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自研光机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:24:12"
+}

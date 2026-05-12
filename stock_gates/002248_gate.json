@@ -1,0 +1,41 @@
+{
+  "stock_id": "002248",
+  "stock_name": "华东数控",
+  "concept": "数控机床",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数控机床",
+    "数控龙门磨床",
+    "动静压主轴技术"
+  ],
+  "should": [
+    "数控系统",
+    "刀库",
+    "主轴",
+    "电机",
+    "数控龙门铣床",
+    "数控外圆磨床",
+    "万能摇臂铣床",
+    "平面磨床",
+    "动静压主轴",
+    "航空航天"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数控机床",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数控龙门磨床",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动静压主轴技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:31:38"
+}

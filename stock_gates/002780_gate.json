@@ -1,0 +1,24 @@
+{
+  "stock_id": "002780",
+  "stock_name": "三夫户外",
+  "concept": "户外运动连锁",
+  "strategy_type": "industry_chain",
+  "must": [
+    "户外运动连锁"
+  ],
+  "should": [
+    "组织户外活动赛事团建",
+    "设计建设运营松鼠部落亲子户外乐园",
+    "设计建设运营鹰极安全教育培训"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "户外运动连锁",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:57:17"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "603588",
+  "stock_name": "高能环境",
+  "concept": "环境治理服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环境修复",
+    "危废处置",
+    "垃圾焚烧"
+  ],
+  "should": [
+    "土壤修复",
+    "环境治理服务",
+    "橡胶",
+    "塑料",
+    "玻璃",
+    "医用废塑料",
+    "冰铜",
+    "粗铅",
+    "冰镍",
+    "定制化修复技术集成"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环境修复",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "危废处置",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "垃圾焚烧",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:52:42"
+}

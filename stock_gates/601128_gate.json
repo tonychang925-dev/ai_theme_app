@@ -1,0 +1,45 @@
+{
+  "stock_id": "601128",
+  "stock_name": "常熟银行",
+  "concept": "小微金融",
+  "strategy_type": "industry_chain",
+  "must": [
+    "小微金融",
+    "三农两小",
+    "小微客户",
+    "村镇银行"
+  ],
+  "should": [
+    "自由星FreeStar",
+    "个人经营贷款",
+    "IPC技术",
+    "信贷工厂模式",
+    "手机银行APP",
+    "微信银行",
+    "经营类客户",
+    "工薪类客户",
+    "分支机构"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "小微金融",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三农两小",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小微客户",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "村镇银行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:34:33"
+}

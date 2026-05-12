@@ -1,0 +1,30 @@
+{
+  "stock_id": "300375",
+  "stock_name": "鹏翎股份",
+  "concept": "汽车胶管",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车胶管",
+    "汽车流体管路"
+  ],
+  "should": [
+    "汽车密封部件",
+    "汽车制造业",
+    "汽车零部件及配件制造业",
+    "国产替代"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车胶管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车流体管路",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:24:22"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "603329",
+  "stock_name": "上海雅仕",
+  "concept": "供应链物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "供应链物流",
+    "供应链执行贸易",
+    "仓储物流设施"
+  ],
+  "should": [
+    "硫磺",
+    "氧化铝",
+    "铁路线",
+    "危化品仓储项目",
+    "液体化工品罐区项目",
+    "一带一路供应链基地",
+    "供应链总包业务",
+    "供应链平台业务",
+    "供应链基地业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "供应链物流",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "供应链执行贸易",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "仓储物流设施",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:49:19"
+}

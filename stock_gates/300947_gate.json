@@ -1,0 +1,30 @@
+{
+  "stock_id": "300947",
+  "stock_name": "德必集团",
+  "concept": "创意产业园区",
+  "strategy_type": "industry_chain",
+  "must": [
+    "创意产业园区",
+    "创意产业园区运营"
+  ],
+  "should": [
+    "文化创意企业",
+    "科技创新企业",
+    "城市更新",
+    "存量空间改造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "创意产业园区",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "创意产业园区运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:50:22"
+}

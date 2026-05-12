@@ -1,0 +1,36 @@
+{
+  "stock_id": "000520",
+  "stock_name": "凤凰航运",
+  "concept": "干散货航运",
+  "strategy_type": "industry_chain",
+  "must": [
+    "干散货航运",
+    "干散货运输"
+  ],
+  "should": [
+    "船舶代理",
+    "货运代理",
+    "特种大件运输",
+    "船舶租赁",
+    "船员劳务",
+    "优质大客户",
+    "川渝市场客户",
+    "远洋外贸客户",
+    "综合物流",
+    "自营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "干散货航运",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "干散货运输",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:53:53"
+}

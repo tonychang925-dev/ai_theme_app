@@ -1,0 +1,36 @@
+{
+  "stock_id": "300434",
+  "stock_name": "金石亚药",
+  "concept": "医药健康与新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "快克复方氨酚烷胺胶囊",
+    "小快克小儿氨酚黄那敏颗粒"
+  ],
+  "should": [
+    "稀有人参皂苷产品",
+    "维生素补益类产品",
+    "盐酸金刚烷胺",
+    "原料药碳酸钙",
+    "食品添加剂碳酸钙",
+    "复配食品添加剂碳酸钙颗粒",
+    "钙制剂产品",
+    "药用辅料",
+    "药品研发",
+    "生产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "快克复方氨酚烷胺胶囊",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小快克小儿氨酚黄那敏颗粒",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:27:18"
+}

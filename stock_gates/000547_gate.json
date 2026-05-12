@@ -1,0 +1,46 @@
+{
+  "stock_id": "000547",
+  "stock_name": "航天发展",
+  "concept": "电子信息科技",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字蓝军与蓝军装备",
+    "新一代通信与指控装备",
+    "网络空间安全",
+    "微系统"
+  ],
+  "should": [
+    "嵌入式半实物仿真系统",
+    "射频(复合)仿真系统",
+    "作战效能评估系统",
+    "电磁环境侦察模拟设备",
+    "雷达回波模拟设备",
+    "雷达/通信信号模拟设备",
+    "雷达/通信干扰模拟设备",
+    "陆海靶标平台",
+    "空中靶标平台",
+    "交换机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字蓝军与蓝军装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新一代通信与指控装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "网络空间安全",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "微系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:56:13"
+}

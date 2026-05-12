@@ -1,0 +1,41 @@
+{
+  "stock_id": "688200",
+  "stock_name": "华峰测控",
+  "concept": "半导体测试系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体测试系统",
+    "半导体自动化测试系统",
+    "STS8600"
+  ],
+  "should": [
+    "STS8300",
+    "STS8200",
+    "功率模块测试产品",
+    "SoC芯片",
+    "主控芯片",
+    "固件开发",
+    "模拟芯片",
+    "ASIC",
+    "GPU芯片",
+    "国内领先"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体测试系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体自动化测试系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "STS8600",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:11:36"
+}

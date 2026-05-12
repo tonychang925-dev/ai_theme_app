@@ -1,0 +1,48 @@
+{
+  "stock_id": "300190",
+  "stock_name": "维尔利",
+  "concept": "垃圾渗滤液处理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "垃圾渗滤液处理",
+    "MBR",
+    "厌氧",
+    "超滤",
+    "纳滤"
+  ],
+  "should": [
+    "城乡有机物废弃物资源化",
+    "工业节能环保",
+    "湿垃圾处理",
+    "沼气及生物天然气",
+    "工业节能",
+    "油气回收及VOCs治理",
+    "工业废水"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "垃圾渗滤液处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MBR",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "厌氧",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超滤",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纳滤",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:16:48"
+}

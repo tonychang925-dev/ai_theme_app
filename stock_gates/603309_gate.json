@@ -1,0 +1,41 @@
+{
+  "stock_id": "603309",
+  "stock_name": "维力医疗",
+  "concept": "医用导管",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医用导管",
+    "麻醉导管",
+    "泌尿导管"
+  ],
+  "should": [
+    "呼吸导管",
+    "血液透析导管",
+    "医疗器械注册证",
+    "产品性能升级",
+    "功能扩充",
+    "手术",
+    "治疗",
+    "急救",
+    "护理",
+    "全球医用导管主要供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医用导管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "麻醉导管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "泌尿导管",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:48:41"
+}

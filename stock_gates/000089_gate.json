@@ -1,0 +1,41 @@
+{
+  "stock_id": "000089",
+  "stock_name": "深圳机场",
+  "concept": "空港枢纽运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "空港枢纽运营",
+    "航空主业",
+    "非航空业务"
+  ],
+  "should": [
+    "航站楼",
+    "卫星厅",
+    "飞行区",
+    "货运区",
+    "地面交通中心",
+    "粤港澳大湾区",
+    "前海合作区",
+    "航线网络",
+    "航权时刻",
+    "跑道容量"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "空港枢纽运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航空主业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "非航空业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:50:10"
+}

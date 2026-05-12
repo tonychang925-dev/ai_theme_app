@@ -1,0 +1,36 @@
+{
+  "stock_id": "688526",
+  "stock_name": "科前生物",
+  "concept": "兽用生物制品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "兽用生物制品",
+    "猪用疫苗"
+  ],
+  "should": [
+    "猪伪狂犬病疫苗",
+    "猪胃肠炎腹泻二联疫苗",
+    "禽用疫苗",
+    "猪支原体肺炎疫苗",
+    "细菌高密度发酵技术",
+    "基因重组技术",
+    "分离纯化技术",
+    "悬浮培养技术",
+    "超滤浓缩技术",
+    "耐热冻干保护剂技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "兽用生物制品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "猪用疫苗",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:19:56"
+}

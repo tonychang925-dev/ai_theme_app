@@ -1,0 +1,41 @@
+{
+  "stock_id": "300822",
+  "stock_name": "贝仕达克",
+  "concept": "智能控制",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能控制",
+    "智能控制器",
+    "智能家居控制器"
+  ],
+  "should": [
+    "电机控制器",
+    "锂电池控制器",
+    "汽车电机控制器",
+    "智能照明",
+    "智能安防",
+    "自动控制技术",
+    "传感技术",
+    "蓝牙技术",
+    "智能家居",
+    "汽车电机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能控制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能控制器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能家居控制器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:44:44"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "688093",
+  "stock_name": "世华科技",
+  "concept": "功能性材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "功能性材料",
+    "电子复合功能材料"
+  ],
+  "should": [
+    "光电显示模组材料",
+    "精密制程应用材料",
+    "粘接特性",
+    "物理特性",
+    "化学特性",
+    "耐候性",
+    "光学性能",
+    "电磁屏蔽",
+    "导热",
+    "导电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "功能性材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子复合功能材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:08:08"
+}

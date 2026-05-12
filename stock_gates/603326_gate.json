@@ -1,0 +1,40 @@
+{
+  "stock_id": "603326",
+  "stock_name": "我乐家居",
+  "concept": "定制家居",
+  "strategy_type": "industry_chain",
+  "must": [
+    "定制家居",
+    "整体橱柜制造",
+    "全屋定制"
+  ],
+  "should": [
+    "整体厨柜",
+    "全屋定制家具",
+    "高端门墙系统",
+    "时尚家居品牌集团",
+    "配套家居",
+    "软装商品",
+    "原创设计",
+    "差异化设计",
+    "中高端"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "定制家居",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "整体橱柜制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全屋定制",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:49:15"
+}

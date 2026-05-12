@@ -1,0 +1,46 @@
+{
+  "stock_id": "603466",
+  "stock_name": "风语筑",
+  "concept": "数字化体验服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字化体验服务",
+    "城市数字化体验空间",
+    "文化及品牌数字化体验空间",
+    "大数据可视化"
+  ],
+  "should": [
+    "VR/AR/MR",
+    "全息影像",
+    "裸眼3D",
+    "AI人机交互",
+    "AIGC",
+    "云渲染",
+    "数字展示",
+    "城市文化体验",
+    "数字文旅",
+    "商业展览"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字化体验服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市数字化体验空间",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "文化及品牌数字化体验空间",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大数据可视化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:51:12"
+}

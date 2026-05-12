@@ -1,0 +1,38 @@
+{
+  "stock_id": "003000",
+  "stock_name": "劲仔食品",
+  "concept": "鱼类零食",
+  "strategy_type": "industry_chain",
+  "must": [
+    "鱼类零食",
+    "休闲鱼制品",
+    "劲仔"
+  ],
+  "should": [
+    "豆制品",
+    "禽肉制品",
+    "博味园",
+    "长寿",
+    "大包装",
+    "鱼类零食第一股",
+    "全球销量领先的卤味零食"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "鱼类零食",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "休闲鱼制品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "劲仔",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:06:55"
+}

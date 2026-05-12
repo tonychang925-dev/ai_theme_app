@@ -1,0 +1,36 @@
+{
+  "stock_id": "603916",
+  "stock_name": "苏博特",
+  "concept": "混凝土外加剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "混凝土外加剂",
+    "功能性材料"
+  ],
+  "should": [
+    "高性能减水剂",
+    "抗裂混凝土材料技术",
+    "聚羧酸系高性能减水剂技术",
+    "核电",
+    "桥梁",
+    "高铁",
+    "隧道",
+    "高层建筑",
+    "水电",
+    "市政"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "混凝土外加剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功能性材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:58:55"
+}

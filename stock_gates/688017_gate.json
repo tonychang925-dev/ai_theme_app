@@ -1,0 +1,35 @@
+{
+  "stock_id": "688017",
+  "stock_name": "绿的谐波",
+  "concept": "谐波减速器龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "谐波减速器龙头",
+    "谐波减速器"
+  ],
+  "should": [
+    "机电一体化执行器",
+    "三次谐波技术",
+    "精密零部件",
+    "齿形设计",
+    "材料与热处理工艺",
+    "交叉滚子轴承自产",
+    "全球第二谐波减速器厂商",
+    "国内自主品牌机器人首选",
+    "国产替代龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "谐波减速器龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "谐波减速器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:05:29"
+}

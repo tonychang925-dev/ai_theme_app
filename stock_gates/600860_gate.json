@@ -1,0 +1,35 @@
+{
+  "stock_id": "600860",
+  "stock_name": "京城股份",
+  "concept": "气体储运装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "气体储运装备",
+    "碳纤维全缠绕复合气瓶"
+  ],
+  "should": [
+    "钢质无缝气瓶",
+    "焊接绝热气瓶",
+    "ISO罐式集装箱",
+    "低温储罐",
+    "LNG加气站设备",
+    "气体储运产品制造技术",
+    "真空多层缠绕绝热技术",
+    "铝内胆碳纤维全缠绕技术",
+    "压力容器设计、制造资格"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "气体储运装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳纤维全缠绕复合气瓶",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:29:49"
+}

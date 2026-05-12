@@ -1,0 +1,36 @@
+{
+  "stock_id": "600061",
+  "stock_name": "国投资本",
+  "concept": "金融控股平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金融控股平台",
+    "证券"
+  ],
+  "should": [
+    "信托",
+    "期货",
+    "基金",
+    "租赁",
+    "担保",
+    "金融服务实体经济",
+    "服务国家战略",
+    "服务制造业",
+    "小微企业",
+    "绿色发展"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金融控股平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "证券",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:08:15"
+}

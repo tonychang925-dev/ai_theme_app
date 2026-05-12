@@ -1,0 +1,46 @@
+{
+  "stock_id": "688005",
+  "stock_name": "容百科技",
+  "concept": "高镍三元正极材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高镍三元正极材料",
+    "NCM811",
+    "三元正极材料",
+    "Ni90超高镍系列产品"
+  ],
+  "should": [
+    "前驱体",
+    "NCM523",
+    "NCM622",
+    "NCA",
+    "高镍三元正极材料关键工艺技术",
+    "固态电池材料",
+    "钠离子电池材料",
+    "富锂锰基",
+    "高电压镍锰系材料",
+    "新能源汽车动力电池"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高镍三元正极材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "NCM811",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三元正极材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "Ni90超高镍系列产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:05:06"
+}

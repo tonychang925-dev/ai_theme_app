@@ -1,0 +1,46 @@
+{
+  "stock_id": "688662",
+  "stock_name": "富信科技",
+  "concept": "半导体热电技术",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体热电技术",
+    "半导体热电器件",
+    "半导体热电系统",
+    "半导体热电整机应用产品"
+  ],
+  "should": [
+    "热电材料",
+    "制程工艺",
+    "热仿真",
+    "机械结构",
+    "流体力学",
+    "电气",
+    "通信",
+    "自动化",
+    "汽车激光雷达",
+    "红外探测"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体热电技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体热电器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体热电系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体热电整机应用产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:23:25"
+}

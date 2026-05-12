@@ -1,0 +1,41 @@
+{
+  "stock_id": "300738",
+  "stock_name": "奥飞数据",
+  "concept": "智算IDC服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "自建自营数据中心",
+    "IDC服务",
+    "智算IDC服务"
+  ],
+  "should": [
+    "算力租赁",
+    "互联网综合服务",
+    "算力设备销售",
+    "智算中心",
+    "运营机柜",
+    "自研管理平台",
+    "运维团队",
+    "算力集群搭建",
+    "广州",
+    "深圳"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "自建自营数据中心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IDC服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智算IDC服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:41:02"
+}

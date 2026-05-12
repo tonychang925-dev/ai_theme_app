@@ -1,0 +1,41 @@
+{
+  "stock_id": "601163",
+  "stock_name": "三角轮胎",
+  "concept": "轮胎制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商用车胎",
+    "工程胎",
+    "航空轮胎"
+  ],
+  "should": [
+    "乘用车胎",
+    "特种轮胎",
+    "超低滚阻技术",
+    "静音舒适技术",
+    "轻量化技术",
+    "直压硫化技术",
+    "仿真分析技术",
+    "聚氨酯轮胎技术",
+    "汽车制造",
+    "工程机械"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商用车胎",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程胎",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航空轮胎",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:35:00"
+}

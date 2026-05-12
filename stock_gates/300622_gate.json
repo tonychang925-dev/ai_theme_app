@@ -1,0 +1,36 @@
+{
+  "stock_id": "300622",
+  "stock_name": "博士眼镜",
+  "concept": "眼镜零售连锁",
+  "strategy_type": "industry_chain",
+  "must": [
+    "眼镜零售连锁",
+    "眼镜零售"
+  ],
+  "should": [
+    "验光配镜",
+    "四大品牌",
+    "半医半商",
+    "个性化定制",
+    "视力矫正",
+    "近视防控",
+    "老花眼矫正",
+    "防蓝光",
+    "缓解视觉疲劳",
+    "一人多镜"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "眼镜零售连锁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "眼镜零售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:35:43"
+}

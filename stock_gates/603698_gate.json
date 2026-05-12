@@ -1,0 +1,41 @@
+{
+  "stock_id": "603698",
+  "stock_name": "航天工程",
+  "concept": "煤化工工程",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤化工工程研发设计",
+    "工程承包",
+    "设备供应"
+  ],
+  "should": [
+    "煤化工工程",
+    "全热回收气化技术",
+    "煤气化智能控制技术",
+    "碱性电解制氢系统",
+    "PEM电解制氢系统",
+    "绿氢工程",
+    "合成氨生产",
+    "煤炭清洁高效利用",
+    "环保运营",
+    "煤化工阀门市场"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤化工工程研发设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程承包",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "设备供应",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:55:07"
+}

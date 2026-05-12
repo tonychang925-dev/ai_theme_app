@@ -1,0 +1,41 @@
+{
+  "stock_id": "002048",
+  "stock_name": "宁波华翔",
+  "concept": "汽车内饰件龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车内饰件龙头",
+    "内外饰件",
+    "智能座舱"
+  ],
+  "should": [
+    "金属件",
+    "汽车电子",
+    "电子电器件",
+    "CMS电子后视镜",
+    "传统汽车",
+    "新能源汽车",
+    "一级供应商",
+    "OEM工厂",
+    "轻量化",
+    "智能化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车内饰件龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "内外饰件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能座舱",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:20:11"
+}

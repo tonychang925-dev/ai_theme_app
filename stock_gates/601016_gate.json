@@ -1,0 +1,33 @@
+{
+  "stock_id": "601016",
+  "stock_name": "节能风电",
+  "concept": "风电运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风电运营",
+    "风电项目开发",
+    "风电项目建设"
+  ],
+  "should": [
+    "专业化风电项目开发",
+    "建设及运营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风电运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电项目开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电项目建设",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:33:25"
+}

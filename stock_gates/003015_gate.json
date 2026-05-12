@@ -1,0 +1,36 @@
+{
+  "stock_id": "003015",
+  "stock_name": "日久光电",
+  "concept": "光学导电薄膜",
+  "strategy_type": "industry_chain",
+  "must": [
+    "ITO导电膜",
+    "光学导电薄膜"
+  ],
+  "should": [
+    "光学膜",
+    "光学胶",
+    "湿法精密涂布",
+    "精密贴合",
+    "真空磁控溅射镀膜",
+    "调光膜",
+    "防反射膜",
+    "智能手机",
+    "平板电脑",
+    "可穿戴电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "ITO导电膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光学导电薄膜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:07:36"
+}

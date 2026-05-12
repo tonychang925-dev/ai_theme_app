@@ -1,0 +1,35 @@
+{
+  "stock_id": "002625",
+  "stock_name": "光启技术",
+  "concept": "超材料军品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "超材料军品",
+    "超材料产品"
+  ],
+  "should": [
+    "高性能建模",
+    "高并发计算",
+    "精细制造",
+    "大范围光电感知覆盖",
+    "高效率测试",
+    "先进飞机",
+    "电子通信系统",
+    "全球专利申请量第一",
+    "超材料国家标准起草者"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "超材料军品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超材料产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:50:19"
+}

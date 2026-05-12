@@ -1,0 +1,34 @@
+{
+  "stock_id": "001260",
+  "stock_name": "坤泰股份",
+  "concept": "汽车内饰件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车内饰件",
+    "汽车地毯",
+    "汽车脚垫"
+  ],
+  "should": [
+    "BCF纱线",
+    "簇绒地毯",
+    "针刺地毯"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车内饰件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车地毯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车脚垫",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:14:50"
+}

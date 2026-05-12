@@ -1,0 +1,38 @@
+{
+  "stock_id": "688728",
+  "stock_name": "格科微",
+  "concept": "图像传感器与显示驱动",
+  "strategy_type": "industry_chain",
+  "must": [
+    "CMOS图像传感器",
+    "显示驱动芯片",
+    "高像素单芯片集成技术"
+  ],
+  "should": [
+    "0.7μm像素技术",
+    "65nm+CIS平台",
+    "BSI产线",
+    "图像传感器与显示驱动",
+    "无外部元器件设计",
+    "图像压缩算法",
+    "晶圆供应自主可控"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "CMOS图像传感器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "显示驱动芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高像素单芯片集成技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:24:42"
+}

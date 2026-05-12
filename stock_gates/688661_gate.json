@@ -1,0 +1,32 @@
+{
+  "stock_id": "688661",
+  "stock_name": "和林微纳",
+  "concept": "微型精密制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "MEMS精微电子零部件",
+    "半导体芯片测试探针"
+  ],
+  "should": [
+    "微型精密制造",
+    "精微制造技术",
+    "意法半导体供应商",
+    "歌尔股份供应商",
+    "楼氏电子供应商",
+    "英伟达供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "MEMS精微电子零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体芯片测试探针",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:23:15"
+}

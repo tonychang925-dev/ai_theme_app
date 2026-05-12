@@ -1,0 +1,38 @@
+{
+  "stock_id": "002978",
+  "stock_name": "安宁股份",
+  "concept": "钒钛磁铁矿采选",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钒钛磁铁矿采选",
+    "钛精矿",
+    "钒钛铁精矿"
+  ],
+  "should": [
+    "钒钛磁铁矿资源综合利用关键技术",
+    "钛白粉",
+    "海绵钛",
+    "钒液流电池",
+    "航空航天",
+    "钢铁冶炼",
+    "攀西地区钒钛磁铁矿核心资源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钒钛磁铁矿采选",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钛精矿",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钒钛铁精矿",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:05:49"
+}

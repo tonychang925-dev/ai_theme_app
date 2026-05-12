@@ -1,0 +1,29 @@
+{
+  "stock_id": "603119",
+  "stock_name": "浙江荣泰",
+  "concept": "耐高温绝缘云母",
+  "strategy_type": "industry_chain",
+  "must": [
+    "耐高温绝缘云母"
+  ],
+  "should": [
+    "小家电阻燃绝缘件",
+    "特斯拉",
+    "宁德时代",
+    "新能源汽车",
+    "家用电器",
+    "电缆",
+    "工业领域",
+    "轨道交通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "耐高温绝缘云母",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:44:17"
+}

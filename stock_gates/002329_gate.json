@@ -1,0 +1,45 @@
+{
+  "stock_id": "002329",
+  "stock_name": "皇氏集团",
+  "concept": "水牛奶龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水牛奶鲜奶",
+    "水牛奶系列产品",
+    "巴氏鲜奶",
+    "奶水牛种源芯片"
+  ],
+  "should": [
+    "低温奶",
+    "常温奶",
+    "发酵乳",
+    "含乳饮料",
+    "植物蛋白饮料",
+    "面包类产品",
+    "水牛胚胎繁育",
+    "0.09秒巴氏杀菌工艺",
+    "全基因组深度测序"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水牛奶鲜奶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水牛奶系列产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "巴氏鲜奶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "奶水牛种源芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:35:54"
+}

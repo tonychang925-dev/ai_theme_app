@@ -1,0 +1,31 @@
+{
+  "stock_id": "301326",
+  "stock_name": "捷邦科技",
+  "concept": "精密功能件与碳纳米管",
+  "strategy_type": "industry_chain",
+  "must": [
+    "碳纳米管产品"
+  ],
+  "should": [
+    "精密功能件及结构件研发生产",
+    "碳纳米管导电剂",
+    "精密功能件与碳纳米管",
+    "平板电脑",
+    "笔记本电脑",
+    "一体机电脑",
+    "智能家居",
+    "3D打印",
+    "无人机",
+    "锂电池"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "碳纳米管产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:02:57"
+}

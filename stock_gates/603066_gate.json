@@ -1,0 +1,51 @@
+{
+  "stock_id": "603066",
+  "stock_name": "音飞储存",
+  "concept": "智能物流系统集成",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能物流系统集成",
+    "穿梭车",
+    "堆垛机",
+    "AGV",
+    "高精密货架"
+  ],
+  "should": [
+    "复杂阁楼货架",
+    "普通货架",
+    "穿梭车技术",
+    "堆垛机技术",
+    "WMS",
+    "WCS",
+    "iC+ECC",
+    "iN+EQM",
+    "库系列管理系统iM+",
+    "仓系列控制系统iC+"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能物流系统集成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "穿梭车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "堆垛机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AGV",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高精密货架",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:42:45"
+}

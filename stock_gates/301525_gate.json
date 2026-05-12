@@ -1,0 +1,41 @@
+{
+  "stock_id": "301525",
+  "stock_name": "儒竞科技",
+  "concept": "变频节能与智能控制",
+  "strategy_type": "industry_chain",
+  "must": [
+    "变频节能与智能控制",
+    "暖通空调及冷冻冷藏设备",
+    "新能源汽车热管理系统"
+  ],
+  "should": [
+    "变频控制器",
+    "系统控制器",
+    "变频驱动器",
+    "伺服控制器",
+    "伺服电机",
+    "变频节能技术",
+    "智能控制技术",
+    "电力电子技术",
+    "电机控制技术",
+    "工业伺服驱动及控制系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "变频节能与智能控制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "暖通空调及冷冻冷藏设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车热管理系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:06:02"
+}

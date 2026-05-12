@@ -1,0 +1,41 @@
+{
+  "stock_id": "300129",
+  "stock_name": "泰胜风能",
+  "concept": "风电塔架制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风电塔架制造",
+    "塔架及基础段",
+    "海上风电装备"
+  ],
+  "should": [
+    "风电场开发",
+    "风电运维服务",
+    "风机塔架结构",
+    "柔性塔",
+    "海上风电管桩",
+    "导管架",
+    "陆上风电",
+    "海上风电",
+    "全球最具规模",
+    "产能超50万吨"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风电塔架制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "塔架及基础段",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海上风电装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:14:17"
+}

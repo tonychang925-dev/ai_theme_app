@@ -1,0 +1,41 @@
+{
+  "stock_id": "300837",
+  "stock_name": "浙矿股份",
+  "concept": "矿山破碎筛分",
+  "strategy_type": "industry_chain",
+  "must": [
+    "矿山破碎筛分",
+    "破碎筛选设备",
+    "砂石生产线"
+  ],
+  "should": [
+    "金属矿山生产线",
+    "资源回收利用生产线",
+    "砂石骨料加工",
+    "金属矿山开采",
+    "建筑垃圾处理",
+    "废旧动力电池回收",
+    "废铅酸蓄电池回收",
+    "破碎技术",
+    "筛分技术",
+    "洗选技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "矿山破碎筛分",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "破碎筛选设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "砂石生产线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:45:23"
+}

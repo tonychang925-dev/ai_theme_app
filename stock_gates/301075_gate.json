@@ -1,0 +1,33 @@
+{
+  "stock_id": "301075",
+  "stock_name": "多瑞医药",
+  "concept": "血浆代用品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "醋酸钠林格注射液",
+    "晶胶体输液技术平台"
+  ],
+  "should": [
+    "注射用头孢噻肟钠",
+    "手性药物技术平台",
+    "口服缓控释制剂技术平台",
+    "血浆代用品",
+    "儿童用药",
+    "国内首仿药品",
+    "市占率接近90%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "醋酸钠林格注射液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "晶胶体输液技术平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:55:34"
+}

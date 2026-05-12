@@ -1,0 +1,51 @@
+{
+  "stock_id": "002670",
+  "stock_name": "国盛证券",
+  "concept": "综合证券服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "证券业务",
+    "经纪与财富管理",
+    "投资银行",
+    "投资与交易",
+    "资产管理"
+  ],
+  "should": [
+    "综合证券服务",
+    "投资业务",
+    "金融科技业务",
+    "资本中介",
+    "新一代信息技术",
+    "智能制造",
+    "新能源",
+    "医疗健康",
+    "消费升级",
+    "机构客户"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "证券业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "经纪与财富管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资银行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资与交易",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "资产管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:52:32"
+}

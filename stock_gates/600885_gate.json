@@ -1,0 +1,31 @@
+{
+  "stock_id": "600885",
+  "stock_name": "宏发股份",
+  "concept": "继电器龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "继电器龙头"
+  ],
+  "should": [
+    "继电器",
+    "电气产品",
+    "模具设计制造",
+    "精密零件制造",
+    "自动化设备设计制造",
+    "继电器检测",
+    "电力保护",
+    "自动化",
+    "运动",
+    "遥控"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "继电器龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:30:33"
+}

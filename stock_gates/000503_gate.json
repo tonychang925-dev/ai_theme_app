@@ -1,0 +1,46 @@
+{
+  "stock_id": "000503",
+  "stock_name": "国新健康",
+  "concept": "数字医保",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字医保",
+    "数字医疗",
+    "数字医药",
+    "医保基金综合管理服务"
+  ],
+  "should": [
+    "医保精准支付第三方服务",
+    "医保大数据智能监控服务",
+    "DRG分组预测预警系统",
+    "DRG医院智能管理系统",
+    "智能病案校验系统",
+    "诊间辅助服务系统",
+    "药械智慧监管服务",
+    "互联网+企业服务",
+    "互联网+药店服务",
+    "DRG分组器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字医保",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字医疗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字医药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医保基金综合管理服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:53:06"
+}

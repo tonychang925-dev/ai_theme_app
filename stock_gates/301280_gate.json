@@ -1,0 +1,41 @@
+{
+  "stock_id": "301280",
+  "stock_name": "珠城科技",
+  "concept": "电子连接器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子连接器",
+    "快插端子设计与制造技术",
+    "精密模/治具零件加工技术"
+  ],
+  "should": [
+    "端子组件",
+    "线束连接器",
+    "LG",
+    "Panasonic",
+    "博西华",
+    "比亚迪",
+    "消费类家电",
+    "智能终端",
+    "汽车领域",
+    "美的"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子连接器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "快插端子设计与制造技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密模/治具零件加工技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:01:42"
+}

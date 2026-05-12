@@ -1,0 +1,46 @@
+{
+  "stock_id": "000998",
+  "stock_name": "隆平高科",
+  "concept": "现代种业龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "杂交水稻种子",
+    "玉米种子",
+    "转基因商业化",
+    "商业化育种体系"
+  ],
+  "should": [
+    "3+X战略",
+    "蔬菜种子",
+    "杂谷种子",
+    "向日葵种子",
+    "小麦种子",
+    "水稻育种站",
+    "玉米育种站",
+    "蔬菜育种站",
+    "谷子育种站",
+    "食葵育种站"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "杂交水稻种子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "玉米种子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "转基因商业化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商业化育种体系",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:12:52"
+}

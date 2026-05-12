@@ -1,0 +1,46 @@
+{
+  "stock_id": "600058",
+  "stock_name": "五矿发展",
+  "concept": "金属矿业流通服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金属矿业流通服务",
+    "原材料业务",
+    "钢铁业务",
+    "供应链综合业务"
+  ],
+  "should": [
+    "铁矿长协",
+    "铬矿长协",
+    "锰矿长协",
+    "煤炭长协",
+    "工程终端配供",
+    "制造业终端配送",
+    "数码仓系统",
+    "船舶",
+    "汽车",
+    "家电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金属矿业流通服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原材料业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钢铁业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "供应链综合业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:08:08"
+}

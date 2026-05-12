@@ -1,0 +1,36 @@
+{
+  "stock_id": "002696",
+  "stock_name": "百洋股份",
+  "concept": "水产饲料加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "饲料及饲料原料业务",
+    "水产品加工及生物制品业务"
+  ],
+  "should": [
+    "远洋捕捞加工业务",
+    "普通水产饲料",
+    "虾饲料",
+    "特种水产饲料",
+    "冻罗非鱼片",
+    "条冻罗非鱼",
+    "胶原蛋白",
+    "明胶",
+    "水产饲料加工",
+    "水产养殖"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "饲料及饲料原料业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水产品加工及生物制品业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:53:49"
+}

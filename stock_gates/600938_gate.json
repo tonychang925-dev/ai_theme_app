@@ -1,0 +1,31 @@
+{
+  "stock_id": "600938",
+  "stock_name": "中国海油",
+  "concept": "海上油气勘探",
+  "strategy_type": "industry_chain",
+  "must": [
+    "海上油气勘探"
+  ],
+  "should": [
+    "海上风电",
+    "渤海",
+    "南海西部",
+    "南海东部",
+    "东海",
+    "印度尼西亚",
+    "澳大利亚",
+    "尼日利亚",
+    "低成本",
+    "桶油主要成本"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "海上油气勘探",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:31:28"
+}

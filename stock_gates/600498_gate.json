@@ -1,0 +1,51 @@
+{
+  "stock_id": "600498",
+  "stock_name": "烽火通信",
+  "concept": "光通信全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光通信系统",
+    "光纤光缆",
+    "光电子器件",
+    "通信系统设备",
+    "光纤及线缆"
+  ],
+  "should": [
+    "空芯光纤",
+    "服务器",
+    "FTTR",
+    "数据网络产品",
+    "多芯光纤",
+    "海光缆",
+    "单桥结构空芯光纤",
+    "多桥型嵌套光纤设计",
+    "G.654.E纤芯4芯光纤",
+    "自研8006相干光收发集成器件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光通信系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光纤光缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光电子器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通信系统设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光纤及线缆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:19:32"
+}

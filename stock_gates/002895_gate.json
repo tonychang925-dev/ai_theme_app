@@ -1,0 +1,36 @@
+{
+  "stock_id": "002895",
+  "stock_name": "川恒股份",
+  "concept": "磷化工龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "饲料级磷酸二氢钙",
+    "消防用磷酸一铵"
+  ],
+  "should": [
+    "磷酸二氢钙",
+    "磷酸一铵",
+    "磷酸铁",
+    "半水湿法磷酸生产工艺技术",
+    "湿法磷酸净化技术",
+    "化学净化",
+    "溶剂萃取法",
+    "矿井填充技术",
+    "新能源汽车动力电池",
+    "磷矿石开采"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "饲料级磷酸二氢钙",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "消防用磷酸一铵",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:02:10"
+}

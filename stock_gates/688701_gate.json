@@ -1,0 +1,44 @@
+{
+  "stock_id": "688701",
+  "stock_name": "卓锦股份",
+  "concept": "环保综合治理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环境修复",
+    "工业污染源治理",
+    "土壤及地下水修复技术",
+    "水体修复技术"
+  ],
+  "should": [
+    "环保产品销售与服务",
+    "智能河道活水系统",
+    "水环境智慧管理技术",
+    "环保综合治理",
+    "土壤修复",
+    "地下水修复",
+    "水体修复",
+    "环境修复领域综合实力前列"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环境修复",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业污染源治理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "土壤及地下水修复技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水体修复技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:24:24"
+}

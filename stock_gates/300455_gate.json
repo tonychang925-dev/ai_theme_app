@@ -1,0 +1,29 @@
+{
+  "stock_id": "300455",
+  "stock_name": "航天智装",
+  "concept": "航天智装",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航天智装"
+  ],
+  "should": [
+    "核工业及特殊环境自动化装备",
+    "轨道交通",
+    "航空航天",
+    "核工业",
+    "控制技术",
+    "智能测试仿真",
+    "微系统与控制部组件",
+    "铁路运营安全服务提供商第一梯队"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航天智装",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:28:10"
+}

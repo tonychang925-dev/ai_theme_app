@@ -1,0 +1,46 @@
+{
+  "stock_id": "300590",
+  "stock_name": "移为通信",
+  "concept": "M2M终端龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "M2M终端龙头",
+    "车载信息智能终端",
+    "资产管理信息智能终端",
+    "个人安全智能终端"
+  ],
+  "should": [
+    "动物溯源管理产品",
+    "车载视频产品",
+    "OBD产品",
+    "智能电动自行车网联设备",
+    "工业无线路由器",
+    "RFID技术",
+    "主控芯片",
+    "固件开发",
+    "蜂窝连接技术",
+    "工业标准接口"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "M2M终端龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载信息智能终端",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "资产管理信息智能终端",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "个人安全智能终端",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:34:21"
+}

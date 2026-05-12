@@ -1,0 +1,51 @@
+{
+  "stock_id": "300355",
+  "stock_name": "蒙草生态",
+  "concept": "生态修复",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生态修复",
+    "草原生态修复",
+    "草种业",
+    "特色种业",
+    "数字技术"
+  ],
+  "should": [
+    "矿山修复",
+    "盐碱地改良",
+    "荒漠化治理",
+    "现代草业",
+    "生态牧场",
+    "节水园林",
+    "草原碳汇开发利用",
+    "环境治理工程",
+    "生态修复工程",
+    "乡土种质资源科研成果"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生态修复",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "草原生态修复",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "草种业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特色种业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:23:55"
+}

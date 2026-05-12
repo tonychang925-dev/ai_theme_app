@@ -1,0 +1,36 @@
+{
+  "stock_id": "600928",
+  "stock_name": "西安银行",
+  "concept": "区域银行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "西北首家A股上市银行",
+    "西安市人民政府"
+  ],
+  "should": [
+    "公司银行业务",
+    "个人银行业务",
+    "资金业务",
+    "投行业务",
+    "信用卡业务",
+    "场景消费贷款",
+    "区域银行",
+    "区域性股份制商业银行",
+    "国有资本",
+    "西安"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "西北首家A股上市银行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "西安市人民政府",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:31:17"
+}

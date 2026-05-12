@@ -1,0 +1,50 @@
+{
+  "stock_id": "002418",
+  "stock_name": "康盛股份",
+  "concept": "家电制冷配件+新能源商用车",
+  "strategy_type": "industry_chain",
+  "must": [
+    "制冷管路",
+    "蒸发器",
+    "冷凝器",
+    "换热器",
+    "汽车空调管路"
+  ],
+  "should": [
+    "新能源商用车整车",
+    "家用制冷电器",
+    "汽车空调器",
+    "新能源商用车",
+    "核心供应商",
+    "全品类模块化供应",
+    "浙江千岛湖",
+    "江苏睢宁",
+    "山东青岛"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "制冷管路",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蒸发器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冷凝器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "换热器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车空调管路",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:40:43"
+}

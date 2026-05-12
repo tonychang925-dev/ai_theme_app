@@ -1,0 +1,36 @@
+{
+  "stock_id": "603121",
+  "stock_name": "华培动力",
+  "concept": "汽车传感器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车传感器",
+    "涡轮增压器"
+  ],
+  "should": [
+    "压力传感器",
+    "速度传感器",
+    "位置传感器",
+    "温度传感器",
+    "尿素品质传感器",
+    "新能源车用传感器及执行器",
+    "PTC水加热系统",
+    "微熔技术",
+    "MEMS压力传感器芯片",
+    "磁传感芯片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车传感器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涡轮增压器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:44:26"
+}

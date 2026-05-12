@@ -1,0 +1,41 @@
+{
+  "stock_id": "600035",
+  "stock_name": "楚天高速",
+  "concept": "高速公路运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "路桥运营",
+    "智能科技",
+    "资本运作"
+  ],
+  "should": [
+    "汉宜高速",
+    "大广北高速",
+    "黄咸高速",
+    "大随高速",
+    "豫南高速",
+    "动态超限监测系统",
+    "智慧隧道管控平台",
+    "收费机器人",
+    "智能PLC",
+    "WIFI6路由器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "路桥运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能科技",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "资本运作",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:07:41"
+}

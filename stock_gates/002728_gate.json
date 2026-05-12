@@ -1,0 +1,30 @@
+{
+  "stock_id": "002728",
+  "stock_name": "特一药业",
+  "concept": "综合医药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "止咳宝片"
+  ],
+  "should": [
+    "蒲地蓝消炎片",
+    "感冒灵颗粒",
+    "皮肤病血毒丸",
+    "降糖舒丸",
+    "综合医药",
+    "现代工艺技术",
+    "薄膜衣片",
+    "铝塑膜包装",
+    "独家产品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "止咳宝片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:55:03"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "002919",
+  "stock_name": "名臣健康",
+  "concept": "日化+游戏双主业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "日化+游戏双主业",
+    "海南华多",
+    "杭州雷焰",
+    "喀什奥术",
+    "海南星炫"
+  ],
+  "should": [
+    "王者国度",
+    "百龙霸业",
+    "갓삼국(乱世逐鹿)",
+    "约战沙城",
+    "代号CQ",
+    "迷雾公式",
+    "镇魂街：天生为王",
+    "SS15项目",
+    "我的战盟",
+    "日化用品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "日化+游戏双主业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海南华多",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "杭州雷焰",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "喀什奥术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海南星炫",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:03:22"
+}

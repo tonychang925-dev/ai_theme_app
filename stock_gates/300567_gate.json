@@ -1,0 +1,46 @@
+{
+  "stock_id": "300567",
+  "stock_name": "精测电子",
+  "concept": "检测设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "检测设备",
+    "存储芯片测试设备",
+    "驱动芯片测试设备",
+    "膜厚量测类设备"
+  ],
+  "should": [
+    "信号检测系统",
+    "OLED调测系统",
+    "AOI光学检测系统",
+    "平板显示自动化设备",
+    "锂电池和燃料电池检测设备",
+    "光、机、电、算、软一体化",
+    "机器视觉光学检测",
+    "自动化控制",
+    "电讯技术信号检测",
+    "半导体设备国产化主力军"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "检测设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "存储芯片测试设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "驱动芯片测试设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "膜厚量测类设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:33:11"
+}

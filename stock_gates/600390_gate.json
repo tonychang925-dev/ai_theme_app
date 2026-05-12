@@ -1,0 +1,50 @@
+{
+  "stock_id": "600390",
+  "stock_name": "五矿资本",
+  "concept": "央企金控",
+  "strategy_type": "industry_chain",
+  "must": [
+    "央企金控",
+    "信托",
+    "金融租赁",
+    "证券",
+    "期货"
+  ],
+  "should": [
+    "五矿信托",
+    "外贸租赁",
+    "五矿证券",
+    "五矿期货",
+    "千亿内部市场",
+    "F+EPC",
+    "投建融营",
+    "大投行",
+    "产融工具"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "央企金控",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信托",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融租赁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "证券",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "期货",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:16:56"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "002292",
+  "stock_name": "奥飞娱乐",
+  "concept": "IP泛娱乐",
+  "strategy_type": "industry_chain",
+  "must": [
+    "超级飞侠",
+    "萌鸡小队",
+    "巴啦啦小魔仙",
+    "铠甲勇士",
+    "喜羊羊与灰太狼"
+  ],
+  "should": [
+    "贝肯熊",
+    "十万个冷笑话",
+    "镇魂街",
+    "动画制作",
+    "电影制作",
+    "游戏开发",
+    "主题乐园运营",
+    "澳贝",
+    "Baby Trend",
+    "奥飞动漫明星嘉年华"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "超级飞侠",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "萌鸡小队",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "巴啦啦小魔仙",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铠甲勇士",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "喜羊羊与灰太狼",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:33:54"
+}

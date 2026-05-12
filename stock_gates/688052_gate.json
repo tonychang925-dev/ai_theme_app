@@ -1,0 +1,39 @@
+{
+  "stock_id": "688052",
+  "stock_name": "纳芯微",
+  "concept": "模拟芯片龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "隔离与接口芯片",
+    "驱动与采样芯片",
+    "信号感知芯片"
+  ],
+  "should": [
+    "信号调理ASIC芯片",
+    "Mixed-Signal工艺",
+    "BCD工艺",
+    "模拟芯片龙头",
+    "Fabless模式",
+    "Dongbu HiTek代工",
+    "中芯国际代工",
+    "台积电代工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "隔离与接口芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "驱动与采样芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信号感知芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:06:36"
+}

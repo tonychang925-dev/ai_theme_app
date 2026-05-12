@@ -1,0 +1,32 @@
+{
+  "stock_id": "600106",
+  "stock_name": "重庆路桥",
+  "concept": "市政建设与投资",
+  "strategy_type": "industry_chain",
+  "must": [
+    "路桥收费",
+    "嘉华嘉陵江大桥"
+  ],
+  "should": [
+    "石门嘉陵江大桥",
+    "重庆渝涪高速公路有限公司",
+    "重庆城投金卡交通信息产业有限公司",
+    "市政建设与投资",
+    "工程总承包",
+    "高科技产业投资"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "路桥收费",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "嘉华嘉陵江大桥",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:09:10"
+}

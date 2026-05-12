@@ -1,0 +1,46 @@
+{
+  "stock_id": "600939",
+  "stock_name": "重庆建工",
+  "concept": "西部建筑龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "西部建筑龙头",
+    "房屋建筑",
+    "公路工程施工",
+    "双特级资质"
+  ],
+  "should": [
+    "公鱼智慧云平台",
+    "机电E管家平台",
+    "成渝地区双城经济圈",
+    "粤港澳大湾区",
+    "长三角一体化",
+    "投融建项目",
+    "基建工程",
+    "大型工程",
+    "装配式",
+    "海绵城市"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "西部建筑龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "房屋建筑",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公路工程施工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "双特级资质",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:31:34"
+}

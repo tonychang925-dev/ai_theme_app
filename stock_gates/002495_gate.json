@@ -1,0 +1,41 @@
+{
+  "stock_id": "002495",
+  "stock_name": "佳隆股份",
+  "concept": "调味品制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "鸡粉",
+    "鸡精",
+    "食品制造企业"
+  ],
+  "should": [
+    "佳隆",
+    "鸡汁",
+    "青芥辣酱",
+    "玉米粳",
+    "福味",
+    "港厨",
+    "太太厨",
+    "家丰",
+    "狮球牌",
+    "EAS"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "鸡粉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "鸡精",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "食品制造企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:44:30"
+}

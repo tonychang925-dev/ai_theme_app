@@ -1,0 +1,46 @@
+{
+  "stock_id": "600151",
+  "stock_name": "航天机电",
+  "concept": "光伏与汽车热系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏电池组件",
+    "光伏硅片",
+    "汽车空调",
+    "发动机冷却系统"
+  ],
+  "should": [
+    "高性能冷凝器技术",
+    "低成本热泵系统",
+    "210超高功率组件",
+    "多主栅技术",
+    "高密度组件封装技术",
+    "半片组件结构设计",
+    "新能源车",
+    "传统燃油车",
+    "海外光伏市场",
+    "土耳其"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏电池组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏硅片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车空调",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发动机冷却系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:10:21"
+}

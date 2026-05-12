@@ -1,0 +1,41 @@
+{
+  "stock_id": "001216",
+  "stock_name": "华瓷股份",
+  "concept": "日用陶瓷制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "日用陶瓷制造",
+    "色釉陶瓷",
+    "釉下五彩瓷"
+  ],
+  "should": [
+    "陶瓷新材料",
+    "电瓷",
+    "等静压干粉成型技术",
+    "快速烧成技术",
+    "节能环保改造技术",
+    "智能制造技术",
+    "生物陶瓷块",
+    "耐磨氧化锆球",
+    "刚玉莫来石支柱",
+    "陶瓷支柱绝缘子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "日用陶瓷制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "色釉陶瓷",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "釉下五彩瓷",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:13:47"
+}

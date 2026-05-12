@@ -1,0 +1,36 @@
+{
+  "stock_id": "603379",
+  "stock_name": "三美股份",
+  "concept": "氟化工龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "氟制冷剂",
+    "无水氟化氢"
+  ],
+  "should": [
+    "氟发泡剂",
+    "PVDF",
+    "六氟磷酸锂",
+    "双氟磺酰亚胺锂",
+    "氟化工龙头",
+    "无水氟化氢自产",
+    "R142b原料自给",
+    "R134a全国第一",
+    "R125全国第二",
+    "R32全国第四"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "氟制冷剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无水氟化氢",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:50:26"
+}

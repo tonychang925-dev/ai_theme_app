@@ -1,0 +1,48 @@
+{
+  "stock_id": "002534",
+  "stock_name": "西子洁能",
+  "concept": "清洁能源装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "余热锅炉",
+    "清洁能源装备",
+    "熔盐储能设备",
+    "熔盐储能技术",
+    "光热发电"
+  ],
+  "should": [
+    "火电灵活性改造",
+    "生物质锅炉",
+    "循环流化床锅炉",
+    "燃气锅炉",
+    "显热储热技术",
+    "电网削峰填谷",
+    "供暖"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "余热锅炉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "清洁能源装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "熔盐储能设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "熔盐储能技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光热发电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:46:04"
+}

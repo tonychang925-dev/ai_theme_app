@@ -1,0 +1,51 @@
+{
+  "stock_id": "600030",
+  "stock_name": "中信证券",
+  "concept": "综合券商龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合券商龙头",
+    "经纪业务",
+    "投资银行",
+    "资产管理",
+    "融资融券"
+  ],
+  "should": [
+    "财富管理",
+    "中信集团",
+    "中信金控",
+    "财富管理账户体系",
+    "1+1+N客户服务体系",
+    "规模性指标长期位列行业首位",
+    "杠杆率及手续费收入占比高于行业",
+    "机构经纪业务比例高于行业",
+    "公募基金分仓收入第一",
+    "代销收入行业第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合券商龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "经纪业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资银行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "资产管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "融资融券",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:07:36"
+}

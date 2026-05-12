@@ -1,0 +1,32 @@
+{
+  "stock_id": "601187",
+  "stock_name": "厦门银行",
+  "concept": "台资银行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "台商业务部",
+    "台资银行"
+  ],
+  "should": [
+    "城商行",
+    "台资背景",
+    "结构调整优先于规模增长",
+    "经营转型变革",
+    "不良贷款率0.86%",
+    "拨备覆盖率373.27%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "台商业务部",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "台资银行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:35:08"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "001330",
+  "stock_name": "博纳影业",
+  "concept": "主旋律电影",
+  "strategy_type": "industry_chain",
+  "must": [
+    "主旋律电影",
+    "电影投资",
+    "电影发行",
+    "系列电影"
+  ],
+  "should": [
+    "院线管理",
+    "影院运营",
+    "主投",
+    "参投",
+    "代理发行",
+    "续作电影",
+    "主旋律商业化",
+    "全产业链布局",
+    "IP系列化",
+    "国庆档"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "主旋律电影",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电影投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电影发行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "系列电影",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:16:42"
+}

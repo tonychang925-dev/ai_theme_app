@@ -1,0 +1,41 @@
+{
+  "stock_id": "000409",
+  "stock_name": "云鼎科技",
+  "concept": "能源数字化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧矿山",
+    "智慧电力新能源",
+    "智慧化工"
+  ],
+  "should": [
+    "鼎云工业互联网平台",
+    "AI服务平台",
+    "安全生产技术综合管控平台",
+    "智慧洗选",
+    "能源数字化",
+    "云计算",
+    "大数据",
+    "物联网",
+    "人工智能",
+    "5G通信"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧矿山",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧电力新能源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧化工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:51:50"
+}

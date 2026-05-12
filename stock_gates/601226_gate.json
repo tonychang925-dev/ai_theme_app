@@ -1,0 +1,46 @@
+{
+  "stock_id": "601226",
+  "stock_name": "华电科工",
+  "concept": "工程整体解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "物料输送系统工程",
+    "热能工程",
+    "高端钢结构工程",
+    "氢能工程"
+  ],
+  "should": [
+    "海洋与环境工程",
+    "四大管道系统设计",
+    "超超临界机组管道用钢焊接技术",
+    "空冷系统总包",
+    "柔性支架技术",
+    "复合材料支架技术",
+    "漂浮式光伏",
+    "BIPV",
+    "工程整体解决方案",
+    "华电集团核心业务板块"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "物料输送系统工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热能工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端钢结构工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氢能工程",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:35:40"
+}

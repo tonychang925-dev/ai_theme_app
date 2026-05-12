@@ -1,0 +1,37 @@
+{
+  "stock_id": "001221",
+  "stock_name": "悍高集团",
+  "concept": "家居五金",
+  "strategy_type": "industry_chain",
+  "must": [
+    "家居五金",
+    "全屋高端五金解决方案",
+    "功能五金"
+  ],
+  "should": [
+    "户外家具",
+    "基础五金",
+    "厨卫五金",
+    "研发能力",
+    "超1100项专利",
+    "规模化智能制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "家居五金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全屋高端五金解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功能五金",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:13:59"
+}

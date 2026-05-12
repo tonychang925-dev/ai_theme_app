@@ -1,0 +1,31 @@
+{
+  "stock_id": "600184",
+  "stock_name": "光电股份",
+  "concept": "光电材料与器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光电材料与器件"
+  ],
+  "should": [
+    "光学材料",
+    "光电材料",
+    "环保玻璃",
+    "镧系玻璃",
+    "低软化点玻璃",
+    "元器件",
+    "特种材料",
+    "光学辅料",
+    "光学器材",
+    "红外成像"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光电材料与器件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:11:11"
+}

@@ -1,0 +1,32 @@
+{
+  "stock_id": "600732",
+  "stock_name": "爱旭股份",
+  "concept": "光伏电池片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏电池片",
+    "ABC电池"
+  ],
+  "should": [
+    "ABC技术",
+    "IBC技术",
+    "晶硅组件",
+    "全球光伏电池片龙头",
+    "电池片出货量全球第二",
+    "光伏虚拟一体化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏电池片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ABC电池",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:26:08"
+}

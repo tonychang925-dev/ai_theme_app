@@ -1,0 +1,36 @@
+{
+  "stock_id": "300003",
+  "stock_name": "乐普医疗",
+  "concept": "心血管平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "心血管平台",
+    "冠脉植介入医疗器械"
+  ],
+  "should": [
+    "结构性心脏病",
+    "心脏节律管理",
+    "电生理",
+    "体外诊断",
+    "外科",
+    "麻醉",
+    "冠脉血流储备分数测量导管/系统",
+    "脉冲声波球囊",
+    "冠脉小血管药物球囊",
+    "PTCA药物球囊"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "心血管平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冠脉植介入医疗器械",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:09:19"
+}

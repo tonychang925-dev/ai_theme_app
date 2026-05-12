@@ -1,0 +1,35 @@
+{
+  "stock_id": "002785",
+  "stock_name": "万里石",
+  "concept": "石材+盐湖提锂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑装饰石材",
+    "石材+盐湖提锂"
+  ],
+  "should": [
+    "景观石材",
+    "吸附法提锂技术",
+    "TMS-M系列锰系吸附剂",
+    "TMS-T系列钛系吸附剂",
+    "房地产行业",
+    "建筑装饰行业",
+    "新能源锂资源",
+    "一体化综合服务商",
+    "盐湖提锂矿权资源整合"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑装饰石材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "石材+盐湖提锂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:57:21"
+}

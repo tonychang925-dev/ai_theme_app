@@ -1,0 +1,37 @@
+{
+  "stock_id": "000531",
+  "stock_name": "穗恒运A",
+  "concept": "电力热力生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力热力生产",
+    "电力生产",
+    "集中供热"
+  ],
+  "should": [
+    "煤电",
+    "气电",
+    "光伏发电",
+    "氢能",
+    "区域电力供应",
+    "工业用户供热"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力热力生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集中供热",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:54:35"
+}

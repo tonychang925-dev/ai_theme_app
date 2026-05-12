@@ -1,0 +1,51 @@
+{
+  "stock_id": "603333",
+  "stock_name": "尚纬股份",
+  "concept": "特种电缆",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种电缆",
+    "核电站用电缆",
+    "轨道交通用电缆",
+    "太阳能光伏发电用电缆",
+    "风力发电用电缆"
+  ],
+  "should": [
+    "中压交联电缆",
+    "高压电力电缆",
+    "矿用电缆",
+    "船用电缆",
+    "军工航天航空用电缆",
+    "海上石油平台用电缆",
+    "核电",
+    "轨道交通",
+    "国网电力",
+    "光电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核电站用电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轨道交通用电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "太阳能光伏发电用电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风力发电用电缆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:49:30"
+}

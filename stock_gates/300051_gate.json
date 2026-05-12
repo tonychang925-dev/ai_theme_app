@@ -1,0 +1,43 @@
+{
+  "stock_id": "300051",
+  "stock_name": "琏升科技",
+  "concept": "SaaS云办公",
+  "strategy_type": "industry_chain",
+  "must": [
+    "SaaS云办公",
+    "企业邮箱",
+    "网站建设",
+    "网络域名"
+  ],
+  "should": [
+    "办公自动化系统",
+    "移动通信转售业务",
+    "云计算模式",
+    "自主研发的应用软件系统",
+    "企业用户",
+    "商务人士",
+    "中小企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "SaaS云办公",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "企业邮箱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "网站建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "网络域名",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:11:05"
+}

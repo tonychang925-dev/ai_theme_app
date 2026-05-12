@@ -1,0 +1,41 @@
+{
+  "stock_id": "688486",
+  "stock_name": "龙迅股份",
+  "concept": "高速混合信号芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高速混合信号芯片",
+    "高清视频桥接及处理芯片",
+    "高速信号传输芯片"
+  ],
+  "should": [
+    "视源股份",
+    "亿联网络",
+    "脸书",
+    "宝利通",
+    "思科",
+    "佳明",
+    "高通",
+    "英特尔",
+    "三星",
+    "安霸"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高速混合信号芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高清视频桥接及处理芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高速信号传输芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:18:58"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "300290",
+  "stock_name": "荣科科技",
+  "concept": "智慧医疗IT服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧医疗IT服务",
+    "智慧医疗",
+    "健康数据",
+    "电子病历",
+    "智慧医院"
+  ],
+  "should": [
+    "中国方案商500强",
+    "十佳医疗行业ISV",
+    "云计算",
+    "运维服务",
+    "人工智能",
+    "大数据",
+    "物联网",
+    "5G",
+    "远程医疗",
+    "在线诊疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧医疗IT服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧医疗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "健康数据",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子病历",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧医院",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:21:21"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "603222",
+  "stock_name": "济民健康",
+  "concept": "医疗健康服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医疗服务",
+    "医疗器械",
+    "化学制药"
+  ],
+  "should": [
+    "博鳌国际医院",
+    "鄂州二院",
+    "安全注射器",
+    "安全注射针",
+    "无菌注射器",
+    "输液器",
+    "预充式导管冲洗器",
+    "FOB粪便潜血自动免疫监测",
+    "幽门螺旋杆菌检测试剂盒",
+    "细胞存储"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医疗服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗器械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化学制药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:46:57"
+}

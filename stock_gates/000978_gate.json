@@ -1,0 +1,50 @@
+{
+  "stock_id": "000978",
+  "stock_name": "桂林旅游",
+  "concept": "桂林旅游",
+  "strategy_type": "industry_chain",
+  "must": [
+    "两江四湖景区",
+    "银子岩景区",
+    "龙胜温泉景区",
+    "漓江大瀑布饭店",
+    "漓江星级游船"
+  ],
+  "should": [
+    "银子岩景区66年经营权",
+    "丰鱼岩景区",
+    "资江天门山景区",
+    "七星景区",
+    "象山景区",
+    "桂林旅游",
+    "出租汽车",
+    "大中型旅游客车",
+    "资源垄断优势"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "两江四湖景区",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "银子岩景区",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "龙胜温泉景区",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "漓江大瀑布饭店",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "漓江星级游船",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:12:16"
+}

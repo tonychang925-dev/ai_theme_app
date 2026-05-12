@@ -1,0 +1,29 @@
+{
+  "stock_id": "000913",
+  "stock_name": "钱江摩托",
+  "concept": "大排量摩托车",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大排量摩托车"
+  ],
+  "should": [
+    "两轮摩托车",
+    "高性能摩托核心技术",
+    "Benelli",
+    "QJMOTOR",
+    "QJIANG",
+    "正向研发",
+    "严谨制造",
+    "严苛品控"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大排量摩托车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:09:18"
+}

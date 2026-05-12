@@ -1,0 +1,36 @@
+{
+  "stock_id": "002440",
+  "stock_name": "闰土股份",
+  "concept": "染料制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国内染料市场份额第二位",
+    "分散染料"
+  ],
+  "should": [
+    "活性染料",
+    "直接染料",
+    "不溶性偶氮染料",
+    "还原染料",
+    "硫化染料",
+    "酸性染料",
+    "阳离子染料",
+    "染料制造",
+    "棉",
+    "麻"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国内染料市场份额第二位",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分散染料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:41:42"
+}

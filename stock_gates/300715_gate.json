@@ -1,0 +1,36 @@
+{
+  "stock_id": "300715",
+  "stock_name": "凯伦股份",
+  "concept": "高分子防水材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高分子防水材料",
+    "防水卷材"
+  ],
+  "should": [
+    "防水涂料",
+    "高分子防水材料研发",
+    "高分子产业园",
+    "房地产",
+    "建筑防水工程",
+    "直销",
+    "经销",
+    "欧盟",
+    "英国",
+    "美国"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高分子防水材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "防水卷材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:40:02"
+}

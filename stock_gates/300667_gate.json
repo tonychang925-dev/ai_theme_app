@@ -1,0 +1,45 @@
+{
+  "stock_id": "300667",
+  "stock_name": "必创科技",
+  "concept": "智能传感器与光电仪器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能传感器与光电仪器",
+    "工业监测系统",
+    "检测分析系统",
+    "MEMS传感器芯片"
+  ],
+  "should": [
+    "MEMS压力传感器芯片",
+    "通用光栅光谱仪",
+    "荧光光谱仪",
+    "拉曼光谱仪",
+    "精密位移控制单元",
+    "光敏感知技术",
+    "力敏感知技术",
+    "无线传感器网络",
+    "金属化光纤"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能传感器与光电仪器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业监测系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "检测分析系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MEMS传感器芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:38:08"
+}

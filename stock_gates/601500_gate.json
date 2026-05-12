@@ -1,0 +1,36 @@
+{
+  "stock_id": "601500",
+  "stock_name": "通用股份",
+  "concept": "轮胎制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "千里马",
+    "5X战略计划"
+  ],
+  "should": [
+    "全钢子午胎",
+    "半钢子午胎",
+    "斜交轮胎",
+    "赤兔马",
+    "骐马",
+    "通运",
+    "喜达通",
+    "配套市场",
+    "替换市场",
+    "5大生产基地"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "千里马",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "5X战略计划",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:36:39"
+}

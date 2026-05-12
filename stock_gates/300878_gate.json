@@ -1,0 +1,31 @@
+{
+  "stock_id": "300878",
+  "stock_name": "维康药业",
+  "concept": "现代中药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "原料药+制剂一体化"
+  ],
+  "should": [
+    "银黄滴丸",
+    "益母草软胶囊",
+    "益母草分散片",
+    "七叶神安分散片",
+    "枫蓼肠胃康分散片",
+    "人参健脾片",
+    "罗红霉素软胶囊",
+    "现代中药",
+    "省级高新技术企业研究开发中心",
+    "省级企业技术中心"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "原料药+制剂一体化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:47:21"
+}

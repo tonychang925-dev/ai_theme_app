@@ -1,0 +1,51 @@
+{
+  "stock_id": "600609",
+  "stock_name": "金杯汽车",
+  "concept": "汽车零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车内饰件",
+    "座椅",
+    "门内饰板",
+    "仪表板",
+    "汽车整椅"
+  ],
+  "should": [
+    "华晨宝马X5",
+    "华晨宝马3系",
+    "华晨宝马X2",
+    "华晨宝马1系",
+    "华晨宝马X1",
+    "华晨宝马2系",
+    "CHyM工艺",
+    "视觉智能系统",
+    "照相防错系统",
+    "水溶性胶自动喷涂线"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车内饰件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "座椅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "门内饰板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "仪表板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车整椅",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:22:48"
+}

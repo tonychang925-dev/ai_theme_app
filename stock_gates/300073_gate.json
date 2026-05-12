@@ -1,0 +1,48 @@
+{
+  "stock_id": "300073",
+  "stock_name": "当升科技",
+  "concept": "锂电正极材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电正极材料",
+    "多元材料",
+    "钴酸锂",
+    "多元前驱体",
+    "高镍单晶型材料"
+  ],
+  "should": [
+    "电动汽车",
+    "储能",
+    "动力电池",
+    "储能电池",
+    "高端数码电池",
+    "全球锂电正极材料的龙头企业",
+    "国内率先出口锂电正极材料的供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电正极材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多元材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钴酸锂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多元前驱体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高镍单晶型材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:12:24"
+}

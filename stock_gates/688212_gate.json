@@ -1,0 +1,49 @@
+{
+  "stock_id": "688212",
+  "stock_name": "澳华内镜",
+  "concept": "软性内窥镜",
+  "strategy_type": "industry_chain",
+  "must": [
+    "软性内窥镜",
+    "电子内窥镜设备",
+    "内窥镜诊疗手术耗材",
+    "电子消化内镜",
+    "消化内镜"
+  ],
+  "should": [
+    "呼吸内镜",
+    "支气管镜",
+    "耳鼻喉镜",
+    "内窥镜图像处理技术",
+    "内窥镜镜体设计与集成技术",
+    "安全隔离技术",
+    "国内软镜领先企业",
+    "国产替代"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "软性内窥镜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子内窥镜设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "内窥镜诊疗手术耗材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子消化内镜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "消化内镜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:11:56"
+}

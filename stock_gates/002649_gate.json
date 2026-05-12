@@ -1,0 +1,46 @@
+{
+  "stock_id": "002649",
+  "stock_name": "博彦科技",
+  "concept": "IT咨询与服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "IT咨询与服务",
+    "解决方案与服务",
+    "产品",
+    "IT咨询"
+  ],
+  "should": [
+    "人工智能",
+    "云计算",
+    "大数据",
+    "物联网",
+    "区块链",
+    "5G",
+    "信息安全",
+    "金融",
+    "互联网",
+    "高科技"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "IT咨询与服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "解决方案与服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IT咨询",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:51:35"
+}

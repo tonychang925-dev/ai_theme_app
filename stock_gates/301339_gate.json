@@ -1,0 +1,36 @@
+{
+  "stock_id": "301339",
+  "stock_name": "通行宝",
+  "concept": "智慧交通ETC",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧交通ETC",
+    "智慧交通电子收费"
+  ],
+  "should": [
+    "智慧交通运营管理系统",
+    "智慧交通衍生业务",
+    "ETC生态圈",
+    "计算机网络技术",
+    "软件技术",
+    "系统集成",
+    "高速公路电子收费",
+    "智慧停车",
+    "智能充电桩",
+    "ETC市场份额国内居前"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧交通ETC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧交通电子收费",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:03:20"
+}

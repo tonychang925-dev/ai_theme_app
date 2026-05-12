@@ -1,0 +1,46 @@
+{
+  "stock_id": "688110",
+  "stock_name": "东芯股份",
+  "concept": "存储芯片设计",
+  "strategy_type": "industry_chain",
+  "must": [
+    "存储芯片设计",
+    "NAND Flash",
+    "NOR Flash",
+    "DRAM"
+  ],
+  "should": [
+    "高通认证",
+    "博通认证",
+    "联发科认证",
+    "三星供应链",
+    "海康威视供应链",
+    "歌尔股份供应链",
+    "MCP",
+    "国内整车厂白名单",
+    "海内外Tier1供应商资质认证",
+    "Fabless模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "存储芯片设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "NAND Flash",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "NOR Flash",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "DRAM",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:08:43"
+}

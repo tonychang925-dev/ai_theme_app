@@ -1,0 +1,41 @@
+{
+  "stock_id": "603068",
+  "stock_name": "博通集成",
+  "concept": "无线通信芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "无线通信芯片",
+    "Wi-Fi芯片",
+    "蓝牙芯片"
+  ],
+  "should": [
+    "ETC芯片",
+    "5.8GHz芯片",
+    "射频CMOS集成电路设计",
+    "低功耗无线连接技术",
+    "智能家居",
+    "智能交通",
+    "可穿戴设备",
+    "汽车电子",
+    "Fabless企业",
+    "蓝牙SOC芯片市占率第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "无线通信芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "Wi-Fi芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蓝牙芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:42:41"
+}

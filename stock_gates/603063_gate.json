@@ -1,0 +1,51 @@
+{
+  "stock_id": "603063",
+  "stock_name": "禾望电气",
+  "concept": "新能源电控",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源电控",
+    "风力发电产品",
+    "光伏发电产品",
+    "储能产品",
+    "SVG"
+  ],
+  "should": [
+    "监控系统",
+    "功率模块",
+    "滤波器",
+    "电抗器",
+    "变压器",
+    "风电",
+    "光伏",
+    "储能",
+    "冶金",
+    "矿业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源电控",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风力发电产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏发电产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SVG",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:42:42"
+}

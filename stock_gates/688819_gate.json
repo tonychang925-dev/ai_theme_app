@@ -1,0 +1,46 @@
+{
+  "stock_id": "688819",
+  "stock_name": "天能股份",
+  "concept": "新能源动力电池",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源动力电池",
+    "铅蓄电池",
+    "锂电",
+    "储能"
+  ],
+  "should": [
+    "电动轻型车",
+    "电芯技术",
+    "模组及系统开发",
+    "氢燃料电池",
+    "钠电",
+    "氢燃料电堆",
+    "膜电极",
+    "催化剂",
+    "钠电电芯",
+    "物流车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源动力电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铅蓄电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:25:24"
+}

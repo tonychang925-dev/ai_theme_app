@@ -1,0 +1,51 @@
+{
+  "stock_id": "605005",
+  "stock_name": "合兴股份",
+  "concept": "汽车电子零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车电子连接器",
+    "新能源汽车电驱管理系统",
+    "电池管理系统",
+    "智能驾驶系统",
+    "智能座舱控制系统"
+  ],
+  "should": [
+    "消费电子连接器",
+    "多层复杂嵌件注塑模具",
+    "厚材冲压标准模组",
+    "高压直流逆变系统",
+    "转向系统",
+    "滤波器",
+    "汽车电子零部件",
+    "新能源汽车零部件",
+    "机器人技术",
+    "自动化控制技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车电子连接器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车电驱管理系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电池管理系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能驾驶系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能座舱控制系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:00:58"
+}

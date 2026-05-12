@@ -1,0 +1,30 @@
+{
+  "stock_id": "603110",
+  "stock_name": "东方材料",
+  "concept": "环保油墨",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环保油墨"
+  ],
+  "should": [
+    "无溶剂胶粘剂",
+    "聚氨酯胶粘剂",
+    "无溶剂胶粘剂技术",
+    "自动化生产线",
+    "数字化平台",
+    "食品包装",
+    "医药包装",
+    "出版物印刷",
+    "建筑装饰材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环保油墨",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:43:57"
+}

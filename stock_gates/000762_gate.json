@@ -1,0 +1,46 @@
+{
+  "stock_id": "000762",
+  "stock_name": "西藏矿业",
+  "concept": "锂铬资源开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电池级碳酸锂",
+    "锂精矿",
+    "锂盐",
+    "独家开采权"
+  ],
+  "should": [
+    "铬矿石",
+    "氢氧化锂",
+    "磷酸铁锂",
+    "控股股东宝武集团",
+    "实控人国务院国资委",
+    "盐湖提锂法",
+    "高碳铬铁",
+    "太阳池工艺",
+    "新采矿工艺",
+    "采矿权"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电池级碳酸锂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂精矿",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂盐",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "独家开采权",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:03:56"
+}

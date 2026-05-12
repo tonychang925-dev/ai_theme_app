@@ -1,0 +1,41 @@
+{
+  "stock_id": "688425",
+  "stock_name": "铁建重工",
+  "concept": "隧道工程装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "隧道工程装备",
+    "隧道掘进机",
+    "轨道交通设备"
+  ],
+  "should": [
+    "掘进机控制系统",
+    "主轴承关键核心技术",
+    "双模式刀盘出渣",
+    "环形开挖刀盘",
+    "倒置式主梁设计",
+    "大直径TBM多支护",
+    "装备施工地质环境预测技术",
+    "整机机电液一体化",
+    "地下工程装备模型库构建",
+    "主驱动密封件制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "隧道工程装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "隧道掘进机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轨道交通设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:18:16"
+}

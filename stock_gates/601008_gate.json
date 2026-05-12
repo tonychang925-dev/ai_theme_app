@@ -1,0 +1,46 @@
+{
+  "stock_id": "601008",
+  "stock_name": "连云港",
+  "concept": "港口物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "海港码头货物装卸",
+    "堆存",
+    "港务管理",
+    "一带一路交汇点核心区"
+  ],
+  "should": [
+    "国际枢纽海港",
+    "港口物流",
+    "铁矿石",
+    "煤炭",
+    "有色矿",
+    "红土镍矿",
+    "钢铁",
+    "胶合板",
+    "机械设备",
+    "粮食"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "海港码头货物装卸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "堆存",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "港务管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一带一路交汇点核心区",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:33:19"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "600935",
+  "stock_name": "华塑股份",
+  "concept": "氯碱化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "氯碱化工",
+    "PVC",
+    "烧碱",
+    "氯碱化工一体化循环经济"
+  ],
+  "should": [
+    "灰岩",
+    "电石渣水泥",
+    "石灰",
+    "农业",
+    "石油化工",
+    "轻工",
+    "纺织",
+    "建材",
+    "电力",
+    "冶金"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "氯碱化工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PVC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "烧碱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氯碱化工一体化循环经济",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:31:26"
+}

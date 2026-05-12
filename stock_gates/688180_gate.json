@@ -1,0 +1,35 @@
+{
+  "stock_id": "688180",
+  "stock_name": "君实生物",
+  "concept": "创新生物制药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "VV116",
+    "新冠中和抗体"
+  ],
+  "should": [
+    "JS016",
+    "新型寨卡病毒疫苗",
+    "创新生物制药",
+    "肿瘤免疫疗法",
+    "自身免疫性疾病",
+    "代谢类疾病",
+    "感染性疾病",
+    "COVID-19治疗",
+    "创新药物发现"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "VV116",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新冠中和抗体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:10:51"
+}

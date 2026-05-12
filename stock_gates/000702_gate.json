@@ -1,0 +1,35 @@
+{
+  "stock_id": "000702",
+  "stock_name": "正虹科技",
+  "concept": "饲料生产销售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "饲料生产销售",
+    "饲料产品"
+  ],
+  "should": [
+    "生猪养殖",
+    "饲料原料贸易",
+    "经销商渠道模式",
+    "猪场直销模式",
+    "自繁自养模式",
+    "公司+农户代养模式",
+    "猪肉消费市场",
+    "饲料行业龙头企业",
+    "中国饲料行业第一家上市公司"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "饲料生产销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "饲料产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:01:08"
+}

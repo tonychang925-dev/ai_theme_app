@@ -1,0 +1,36 @@
+{
+  "stock_id": "603079",
+  "stock_name": "圣达生物",
+  "concept": "维生素与生物保鲜剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生物素",
+    "乳酸链球菌素"
+  ],
+  "should": [
+    "叶酸",
+    "清洁标签产品",
+    "TG酶",
+    "丙酸系列产品",
+    "绿色催化技术",
+    "合成生物学技术",
+    "高端医药市场",
+    "食品",
+    "医药",
+    "市场占有率行业前列"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生物素",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乳酸链球菌素",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:43:04"
+}

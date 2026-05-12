@@ -1,0 +1,29 @@
+{
+  "stock_id": "301012",
+  "stock_name": "扬电科技",
+  "concept": "节能变压器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "节能电力变压器"
+  ],
+  "should": [
+    "铁心",
+    "节能变压器",
+    "城市用电",
+    "农村用电",
+    "工业用电",
+    "家用电器",
+    "新能源汽车",
+    "充电桩"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "节能电力变压器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:53:02"
+}

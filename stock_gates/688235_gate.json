@@ -1,0 +1,37 @@
+{
+  "stock_id": "688235",
+  "stock_name": "百济神州",
+  "concept": "抗肿瘤创新药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "百悦泽",
+    "百泽安",
+    "百汇泽"
+  ],
+  "should": [
+    "BTK小分子抑制剂",
+    "抗PD1抗体免疫疗法",
+    "抗肿瘤创新药",
+    "血液肿瘤",
+    "实体瘤",
+    "全方位一体化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "百悦泽",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "百泽安",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "百汇泽",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:12:42"
+}

@@ -1,0 +1,35 @@
+{
+  "stock_id": "600506",
+  "stock_name": "统一股份",
+  "concept": "双主业运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "润滑油脂研发、生产、销售",
+    "果品种植、加工、销售"
+  ],
+  "should": [
+    "库尔勒香梨",
+    "统一润滑油",
+    "汽车用油",
+    "工业用油",
+    "工程机械用油",
+    "润滑脂",
+    "防冻液",
+    "双主业运营",
+    "ISO14067产品碳足迹认证"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "润滑油脂研发、生产、销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "果品种植、加工、销售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:19:46"
+}

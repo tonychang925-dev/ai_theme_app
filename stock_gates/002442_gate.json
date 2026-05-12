@@ -1,0 +1,36 @@
+{
+  "stock_id": "002442",
+  "stock_name": "龙星科技",
+  "concept": "炭黑材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "炭黑",
+    "炭黑单线生产技术"
+  ],
+  "should": [
+    "自主研发设计的反应炉",
+    "高温空气预热器",
+    "高效的反应炉燃烧器",
+    "湿法造粒和间接干燥组合技术",
+    "DCS系统",
+    "SQC生产设备电子点巡检系统",
+    "安全联锁控制系统",
+    "空气换热技术",
+    "炭黑材料",
+    "轮胎"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "炭黑",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "炭黑单线生产技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:41:54"
+}

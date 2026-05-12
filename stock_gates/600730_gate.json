@@ -1,0 +1,46 @@
+{
+  "stock_id": "600730",
+  "stock_name": "中国高科",
+  "concept": "教育服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "教育业务",
+    "医学在线教育",
+    "高等教育产教融合",
+    "国际教育"
+  ],
+  "should": [
+    "不动产运营业务",
+    "考试宝典",
+    "卫生人才教育培训云平台",
+    "AI急救科普教育云平台",
+    "教育服务",
+    "AI技术",
+    "大数据",
+    "云计算",
+    "医学职业考试培训",
+    "医院智慧教育"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "教育业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医学在线教育",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高等教育产教融合",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国际教育",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:26:08"
+}

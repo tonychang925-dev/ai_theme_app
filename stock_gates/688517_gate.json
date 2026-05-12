@@ -1,0 +1,38 @@
+{
+  "stock_id": "688517",
+  "stock_name": "金冠电气",
+  "concept": "电力设备新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特高压避雷器",
+    "充电桩",
+    "储能产品"
+  ],
+  "should": [
+    "金属氧化物避雷器",
+    "电阻片",
+    "大功率电子应用",
+    "电力电子变流设备",
+    "特高压输电",
+    "新能源汽车充电",
+    "储能系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特高压避雷器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "充电桩",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:19:33"
+}

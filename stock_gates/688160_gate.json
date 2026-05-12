@@ -1,0 +1,51 @@
+{
+  "stock_id": "688160",
+  "stock_name": "步科股份",
+  "concept": "工业自动化控制",
+  "strategy_type": "industry_chain",
+  "must": [
+    "驱动系统",
+    "伺服系统",
+    "人机界面",
+    "低压伺服系统",
+    "控制系统"
+  ],
+  "should": [
+    "变频器",
+    "步进系统",
+    "可编程逻辑控制器",
+    "数字化工厂",
+    "工业自动化控制",
+    "深度定制化",
+    "医疗设备",
+    "移动机器人",
+    "医疗影像设备",
+    "国内排名第八"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "驱动系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "伺服系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人机界面",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "低压伺服系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "控制系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:10:11"
+}

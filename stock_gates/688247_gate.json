@@ -1,0 +1,51 @@
+{
+  "stock_id": "688247",
+  "stock_name": "宣泰医药",
+  "concept": "高端仿制药+CRO",
+  "strategy_type": "industry_chain",
+  "must": [
+    "泊沙康唑肠溶片",
+    "盐酸安非他酮缓释片",
+    "难溶药物增溶技术平台",
+    "缓控释药物制剂研发平台",
+    "CRO服务"
+  ],
+  "should": [
+    "盐酸普罗帕酮缓释胶囊",
+    "盐酸帕罗西汀肠溶缓释片",
+    "熊去氧胆酸胶囊",
+    "固定剂量药物复方制剂研发平台",
+    "NMPA药品批件",
+    "抗真菌治疗",
+    "抗抑郁治疗",
+    "抗心律失常治疗",
+    "首仿药",
+    "ANDA药品批件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "泊沙康唑肠溶片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "盐酸安非他酮缓释片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "难溶药物增溶技术平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "缓控释药物制剂研发平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CRO服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:13:02"
+}

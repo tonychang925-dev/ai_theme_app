@@ -1,0 +1,51 @@
+{
+  "stock_id": "002174",
+  "stock_name": "游族网络",
+  "concept": "全球化游戏研运",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球化卡牌+",
+    "少年三国志",
+    "少年三国志2",
+    "少年三国志：零",
+    "少年西游记"
+  ],
+  "should": [
+    "战火与永恒",
+    "权力的游戏凛冬将至",
+    "三十六计",
+    "大皇帝",
+    "华武战国",
+    "圣斗士星矢觉醒：十二宫骑士",
+    "荒野乱斗",
+    "塞尔之光",
+    "绯红神约",
+    "新盗墓笔记"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球化卡牌+",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "少年三国志",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "少年三国志2",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "少年三国志：零",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "少年西游记",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:27:39"
+}

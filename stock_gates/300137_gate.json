@@ -1,0 +1,51 @@
+{
+  "stock_id": "300137",
+  "stock_name": "先河环保",
+  "concept": "环境监测综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环境监测综合服务",
+    "空气质量连续自动监测系统",
+    "地表水水质自动监测系统",
+    "污染源监测",
+    "大气（水）网格化监控系统"
+  ],
+  "should": [
+    "建筑扬尘在线监测系统",
+    "大气颗粒物组分分析及源解析系统",
+    "工业园区在线监测系统",
+    "机动车尾气遥感监测系统",
+    "OBD远程监控系统",
+    "地下水水质自动监测系统",
+    "环境污染事故应急监测指挥决策系统",
+    "颗粒物粒径谱精细溯源系统",
+    "水生态监测系统",
+    "物联网环境监测"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环境监测综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空气质量连续自动监测系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "地表水水质自动监测系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "污染源监测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大气（水）网格化监控系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:14:52"
+}

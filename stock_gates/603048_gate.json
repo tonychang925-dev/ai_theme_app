@@ -1,0 +1,41 @@
+{
+  "stock_id": "603048",
+  "stock_name": "浙江黎明",
+  "concept": "汽车精密零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "气门桥",
+    "气门锁片",
+    "气门弹簧上座"
+  ],
+  "should": [
+    "活塞冷却喷嘴",
+    "曲轴传感器信号盘",
+    "电磁阀",
+    "一级供应商",
+    "汽车精密零部件",
+    "精锻件",
+    "装配件",
+    "冲压件",
+    "精密成型",
+    "精密冲裁"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "气门桥",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "气门锁片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "气门弹簧上座",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:42:06"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "603179",
+  "stock_name": "新泉股份",
+  "concept": "汽车内外饰",
+  "strategy_type": "industry_chain",
+  "must": [
+    "仪表板总成",
+    "门内护板总成"
+  ],
+  "should": [
+    "顶置文件柜总成",
+    "立柱护板总成",
+    "保险杠总成",
+    "落水槽",
+    "吉利汽车",
+    "奇瑞汽车",
+    "比亚迪",
+    "长城汽车",
+    "国际知名品牌电动车企业",
+    "蔚来汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "仪表板总成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "门内护板总成",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:45:36"
+}

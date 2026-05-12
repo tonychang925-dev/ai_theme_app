@@ -1,0 +1,26 @@
+{
+  "stock_id": "002940",
+  "stock_name": "昂利康",
+  "concept": "化学制药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "化学制药"
+  ],
+  "should": [
+    "口服头孢类抗生素原料药",
+    "alpha酮酸原料药",
+    "苯磺酸左氨氯地平片",
+    "酶法发酵技术",
+    "费森尤斯卡比核心原料药供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "化学制药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:04:11"
+}

@@ -1,0 +1,29 @@
+{
+  "stock_id": "002392",
+  "stock_name": "北京利尔",
+  "concept": "耐火材料服务商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "耐火材料服务商",
+    "高温材料"
+  ],
+  "should": [
+    "冶金炉料辅料",
+    "全产业链布局",
+    "整体承包模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "耐火材料服务商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高温材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:39:18"
+}

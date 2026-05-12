@@ -1,0 +1,50 @@
+{
+  "stock_id": "002245",
+  "stock_name": "蔚蓝锂芯",
+  "concept": "动力锂电池龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "动力锂电池龙头",
+    "锂电池",
+    "高倍率圆柱电芯",
+    "电动工具",
+    "数据中心BBU"
+  ],
+  "should": [
+    "LED产品",
+    "金属物流配送",
+    "AI服务器",
+    "NCM",
+    "NCA",
+    "IFP锂电池技术",
+    "钠电池",
+    "半固态/固态电池",
+    "备用电源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "动力锂电池龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高倍率圆柱电芯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电动工具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据中心BBU",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:31:30"
+}

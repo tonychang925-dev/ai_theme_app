@@ -1,0 +1,41 @@
+{
+  "stock_id": "000155",
+  "stock_name": "川能动力",
+  "concept": "新能源发电+锂电储能",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源发电+锂电储能",
+    "新能源发电",
+    "锂电储能"
+  ],
+  "should": [
+    "锂矿采选",
+    "锂盐加工",
+    "电池材料",
+    "锂电池",
+    "电池级碳酸锂",
+    "电池级氢氧化锂",
+    "锂精矿",
+    "风电运维",
+    "主动故障监测系统",
+    "风功率预测系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源发电+锂电储能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂电储能",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:50:57"
+}

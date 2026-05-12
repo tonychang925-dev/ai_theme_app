@@ -1,0 +1,37 @@
+{
+  "stock_id": "688009",
+  "stock_name": "中国通号",
+  "concept": "轨道交通控制",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轨道交通控制",
+    "列控系统",
+    "设计集成"
+  ],
+  "should": [
+    "设备制造",
+    "工程服务",
+    "ETCS-400T车载系统",
+    "BIM应用",
+    "全产业链一体化服务",
+    "轨道交通现代产业链链长"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轨道交通控制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "列控系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "设计集成",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:05:15"
+}

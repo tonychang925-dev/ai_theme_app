@@ -1,0 +1,28 @@
+{
+  "stock_id": "600338",
+  "stock_name": "西藏珠峰",
+  "concept": "盐湖锂矿+铅锌",
+  "strategy_type": "industry_chain",
+  "must": [
+    "SDLA盐湖",
+    "塔中矿业铅锌矿"
+  ],
+  "should": [
+    "Arizaro盐湖",
+    "盐湖锂矿+铅锌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "SDLA盐湖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "塔中矿业铅锌矿",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:15:31"
+}

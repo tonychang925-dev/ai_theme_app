@@ -1,0 +1,45 @@
+{
+  "stock_id": "300770",
+  "stock_name": "新媒股份",
+  "concept": "新媒体运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新媒体运营",
+    "IPTV基础业务",
+    "互联网视听业务",
+    "IPTV",
+    "互联网电视"
+  ],
+  "should": [
+    "内容版权业务",
+    "商务运营业务",
+    "有线电视",
+    "智慧家庭"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新媒体运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IPTV基础业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "互联网视听业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IPTV",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "互联网电视",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:42:22"
+}

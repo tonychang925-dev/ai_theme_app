@@ -1,0 +1,51 @@
+{
+  "stock_id": "300768",
+  "stock_name": "迪普科技",
+  "concept": "网络安全产品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "网络安全产品",
+    "应用防火墙",
+    "入侵防御系统",
+    "抗DDOS",
+    "Web应用防火墙"
+  ],
+  "should": [
+    "异常流量清洗系统",
+    "DPI流量分析设备",
+    "漏洞扫描系统",
+    "上网行为管理及流控",
+    "统一管理中心",
+    "深度业务路由交换网关",
+    "盒式交换机",
+    "WLAN产品",
+    "路由器产品",
+    "安全服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "网络安全产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "应用防火墙",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "入侵防御系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "抗DDOS",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "Web应用防火墙",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:42:21"
+}

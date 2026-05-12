@@ -1,0 +1,36 @@
+{
+  "stock_id": "300785",
+  "stock_name": "值得买",
+  "concept": "电商导购",
+  "strategy_type": "industry_chain",
+  "must": [
+    "内容类导购平台",
+    "什么值得买"
+  ],
+  "should": [
+    "商品数据库",
+    "品牌数据库",
+    "星罗",
+    "有助",
+    "人货匹配业务",
+    "电商导购",
+    "佣金",
+    "广告",
+    "UGC占比高",
+    "用户粘性强"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "内容类导购平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "什么值得买",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:43:02"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "600623",
+  "stock_name": "华谊集团",
+  "concept": "化工材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "甲醇",
+    "醋酸",
+    "丙烯酸及酯",
+    "全钢胎"
+  ],
+  "should": [
+    "化工新材料",
+    "醋酸乙酯",
+    "合成气",
+    "载重胎",
+    "乘用胎",
+    "工程胎",
+    "丙烯酸催化剂",
+    "高吸水性树脂",
+    "工业涂料",
+    "颜料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "甲醇",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "醋酸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "丙烯酸及酯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全钢胎",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:23:23"
+}

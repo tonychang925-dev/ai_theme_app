@@ -1,0 +1,51 @@
+{
+  "stock_id": "300014",
+  "stock_name": "亿纬锂能",
+  "concept": "全场景锂电池",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全场景锂电池",
+    "动力电池",
+    "储能电池",
+    "锂原电池",
+    "小型锂离子电池"
+  ],
+  "should": [
+    "BMS",
+    "全极耳技术",
+    "凝胶态固态方案",
+    "飞行器",
+    "新能源乘用车",
+    "商用车",
+    "工程机械",
+    "电力储能",
+    "工商业储能",
+    "户用储能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全场景锂电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动力电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂原电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小型锂离子电池",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:09:42"
+}

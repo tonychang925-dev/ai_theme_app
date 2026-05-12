@@ -1,0 +1,36 @@
+{
+  "stock_id": "601061",
+  "stock_name": "中信金属",
+  "concept": "金属矿产贸易",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铌产品",
+    "铁矿石产品"
+  ],
+  "should": [
+    "钢材产品",
+    "铜产品",
+    "铝产品",
+    "镍产品",
+    "煤炭产品",
+    "液化天然气产品",
+    "长期协议",
+    "以销定采",
+    "集中采购",
+    "指数定价"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铌产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铁矿石产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:33:45"
+}

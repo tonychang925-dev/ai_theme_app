@@ -1,0 +1,38 @@
+{
+  "stock_id": "600866",
+  "stock_name": "星湖科技",
+  "concept": "生物发酵原料药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "肌苷原料药",
+    "核苷酸系列产品",
+    "动物营养氨基酸"
+  ],
+  "should": [
+    "全球最大肌苷原料药生产规模",
+    "填补国内空白核苷酸系列产品",
+    "动物营养氨基酸销量世界前列",
+    "生物发酵原料药",
+    "味精",
+    "有机肥料",
+    "生物基新材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "肌苷原料药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核苷酸系列产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动物营养氨基酸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:30:00"
+}

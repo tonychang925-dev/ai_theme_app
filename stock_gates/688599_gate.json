@@ -1,0 +1,45 @@
+{
+  "stock_id": "688599",
+  "stock_name": "天合光能",
+  "concept": "光伏智慧能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏智慧能源",
+    "单晶P型组件",
+    "单晶N型组件",
+    "光伏系统"
+  ],
+  "should": [
+    "储能产品",
+    "磷酸铁锂电池",
+    "液冷技术",
+    "能源云平台",
+    "光伏电站",
+    "电源侧储能",
+    "电网侧储能",
+    "用户侧储能",
+    "组件出货全球第二位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏智慧能源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "单晶P型组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "单晶N型组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:21:48"
+}

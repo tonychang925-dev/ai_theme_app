@@ -1,0 +1,31 @@
+{
+  "stock_id": "600500",
+  "stock_name": "中化国际",
+  "concept": "精细化工新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精细化工新材料"
+  ],
+  "should": [
+    "环氧氯丙烷",
+    "烧碱",
+    "二氯苯系列",
+    "硝基氯苯",
+    "氯化苯",
+    "环氧树脂",
+    "ABS",
+    "防老剂6PPD",
+    "中间体RT培司",
+    "不溶性硫磺"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精细化工新材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:19:34"
+}

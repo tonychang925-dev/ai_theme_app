@@ -1,0 +1,41 @@
+{
+  "stock_id": "002548",
+  "stock_name": "金新农",
+  "concept": "猪饲料与生猪养殖",
+  "strategy_type": "industry_chain",
+  "must": [
+    "猪饲料与生猪养殖",
+    "饲料生产销售",
+    "猪用饲料"
+  ],
+  "should": [
+    "生猪养殖",
+    "种猪",
+    "仔猪",
+    "商品猪",
+    "教槽料",
+    "乳猪料",
+    "小猪料",
+    "中猪料",
+    "大猪料",
+    "种猪料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "猪饲料与生猪养殖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "饲料生产销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "猪用饲料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:46:42"
+}

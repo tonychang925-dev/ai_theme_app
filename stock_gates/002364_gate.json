@@ -1,0 +1,46 @@
+{
+  "stock_id": "002364",
+  "stock_name": "中恒电气",
+  "concept": "数字能源综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "HVDC电源",
+    "预制化巴拿马电力模组",
+    "高频开关电源",
+    "高压直流供电技术"
+  ],
+  "should": [
+    "精密配电",
+    "模块化电源",
+    "一体化能源柜",
+    "极简杆站",
+    "智慧储能",
+    "直流快充/超充桩",
+    "液冷超充",
+    "交流有序充电",
+    "电动自行车换电柜",
+    "低压成套设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "HVDC电源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "预制化巴拿马电力模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高频开关电源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高压直流供电技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:38:13"
+}

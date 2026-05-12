@@ -1,0 +1,46 @@
+{
+  "stock_id": "002892",
+  "stock_name": "科力尔",
+  "concept": "微特电机龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "罩极电机",
+    "直流无刷电机",
+    "伺服系统",
+    "步进电机"
+  ],
+  "should": [
+    "串激电机",
+    "精密泵",
+    "智能驱控系统",
+    "全数字开环和闭环驱动器",
+    "微特电机龙头",
+    "电机研发",
+    "智能家居",
+    "智能手机",
+    "无人机",
+    "医疗器械"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "罩极电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "直流无刷电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "伺服系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "步进电机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:02:13"
+}

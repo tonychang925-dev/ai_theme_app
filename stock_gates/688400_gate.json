@@ -1,0 +1,46 @@
+{
+  "stock_id": "688400",
+  "stock_name": "凌云光",
+  "concept": "机器视觉",
+  "strategy_type": "industry_chain",
+  "must": [
+    "机器视觉",
+    "可配置视觉系统",
+    "智能视觉装备",
+    "视觉器件"
+  ],
+  "should": [
+    "光纤器件与仪器",
+    "光接入网设备",
+    "苹果公司",
+    "华为",
+    "小米",
+    "鸿海精密",
+    "瑞声科技",
+    "歌尔股份",
+    "京东方",
+    "华星光电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "机器视觉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "可配置视觉系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能视觉装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "视觉器件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:17:51"
+}

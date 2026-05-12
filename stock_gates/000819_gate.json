@@ -1,0 +1,29 @@
+{
+  "stock_id": "000819",
+  "stock_name": "岳阳兴长",
+  "concept": "石油化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "MTBE"
+  ],
+  "should": [
+    "丙烯",
+    "液化石油气",
+    "石油化工",
+    "石油化工产品开发",
+    "生产",
+    "成品油零售",
+    "能源化工",
+    "中南地区最大的MTBE生产企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "MTBE",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:05:58"
+}

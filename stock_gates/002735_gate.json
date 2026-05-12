@@ -1,0 +1,41 @@
+{
+  "stock_id": "002735",
+  "stock_name": "王子新材",
+  "concept": "军工电磁新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "军工科技",
+    "电磁发射技术",
+    "薄膜电容"
+  ],
+  "should": [
+    "绿色包装",
+    "消费电子",
+    "电磁弹射装置",
+    "电磁轨道炮",
+    "电磁推射装置",
+    "高能量密度储能技术",
+    "大容量功率变换技术",
+    "大功率直线电机技术",
+    "新型网络控制技术",
+    "光伏"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "军工科技",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电磁发射技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "薄膜电容",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:55:23"
+}

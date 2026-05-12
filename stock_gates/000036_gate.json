@@ -1,0 +1,27 @@
+{
+  "stock_id": "000036",
+  "stock_name": "华联控股",
+  "concept": "房地产开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "房地产开发"
+  ],
+  "should": [
+    "物业经营与服务管理",
+    "华联城市全景",
+    "华联城市商务中心",
+    "钱塘公馆",
+    "全景天地",
+    "华联南山A区"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房地产开发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T16:48:04"
+}

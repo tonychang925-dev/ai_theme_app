@@ -1,0 +1,45 @@
+{
+  "stock_id": "301315",
+  "stock_name": "威士顿",
+  "concept": "烟草金融信息化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "软件开发",
+    "运维服务",
+    "系统集成",
+    "软件产品销售及服务"
+  ],
+  "should": [
+    "大数据平台",
+    "数据库",
+    "烟草金融信息化",
+    "烟草行业",
+    "商业银行",
+    "数据处理",
+    "数据备份",
+    "大型央企",
+    "国企"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "软件开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "运维服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "系统集成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "软件产品销售及服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:02:38"
+}

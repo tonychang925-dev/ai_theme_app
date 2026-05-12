@@ -1,0 +1,34 @@
+{
+  "stock_id": "600572",
+  "stock_name": "康恩贝",
+  "concept": "中医药健康产业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "现代中药",
+    "植物药"
+  ],
+  "should": [
+    "特色化学药",
+    "功能型健康产品",
+    "中药创新药研发",
+    "中药大品种二次开发",
+    "院内制剂转化",
+    "品牌OTC营销",
+    "处方药学术推广",
+    "全国性销售渠道"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "现代中药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "植物药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:21:30"
+}

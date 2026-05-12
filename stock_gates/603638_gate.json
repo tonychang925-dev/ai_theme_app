@@ -1,0 +1,36 @@
+{
+  "stock_id": "603638",
+  "stock_name": "艾迪精密",
+  "concept": "高端液压系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端液压系统",
+    "高端液压件"
+  ],
+  "should": [
+    "液压破碎锤",
+    "固件开发",
+    "液压件全系列研发",
+    "自动化改造",
+    "工装夹具改进",
+    "挖掘机配套",
+    "高空作业平台",
+    "旋挖钻机",
+    "装载机",
+    "国产液压件逐步崛起"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端液压系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端液压件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:53:44"
+}

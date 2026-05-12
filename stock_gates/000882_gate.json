@@ -1,0 +1,34 @@
+{
+  "stock_id": "000882",
+  "stock_name": "华联股份",
+  "concept": "社区购物中心运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "购物中心运营管理",
+    "社区购物中心运营"
+  ],
+  "should": [
+    "影院运营管理",
+    "轻资产运营",
+    "租赁",
+    "受托管理",
+    "零售行业背景",
+    "购物中心运营经验",
+    "品牌影响力",
+    "内容创新"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "购物中心运营管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "社区购物中心运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:07:52"
+}

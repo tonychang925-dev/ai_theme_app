@@ -1,0 +1,41 @@
+{
+  "stock_id": "001311",
+  "stock_name": "多利科技",
+  "concept": "汽车冲压零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车冲压零部件",
+    "冲压模具",
+    "模具设计开发"
+  ],
+  "should": [
+    "冲压工艺模拟分析",
+    "前纵梁",
+    "水箱板总成",
+    "后纵梁",
+    "天窗框",
+    "轮罩",
+    "门窗框",
+    "顶盖梁",
+    "A柱内板",
+    "B柱加强板"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车冲压零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冲压模具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "模具设计开发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:15:57"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "688269",
+  "stock_name": "凯立新材",
+  "concept": "贵金属催化剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "贵金属催化剂",
+    "催化应用技术",
+    "PVC金基无汞催化剂技术"
+  ],
+  "should": [
+    "贵金属减量化技术",
+    "废旧贵金属催化剂回收再加工",
+    "多相催化剂",
+    "均相催化剂",
+    "精细化工",
+    "环保",
+    "新能源",
+    "氯碱行业",
+    "贵金属催化剂生产",
+    "催化应用技术研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "贵金属催化剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "催化应用技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PVC金基无汞催化剂技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:13:35"
+}

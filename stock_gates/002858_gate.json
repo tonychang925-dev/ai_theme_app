@@ -1,0 +1,51 @@
+{
+  "stock_id": "002858",
+  "stock_name": "力盛体育",
+  "concept": "数字体育服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "体育赛事经营",
+    "体育场馆经营",
+    "体育俱乐部经营",
+    "数字体育平台",
+    "自创赛事IP"
+  ],
+  "should": [
+    "体育装备制造与销售",
+    "市场营销服务",
+    "运动APP",
+    "AI体育课",
+    "线上赛",
+    "上汽大众333车队",
+    "MGXPOWER车队",
+    "专业级赛车场",
+    "赛车运动及驾驶体验中心",
+    "卡丁车场馆"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "体育赛事经营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "体育场馆经营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "体育俱乐部经营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字体育平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自创赛事IP",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:00:36"
+}

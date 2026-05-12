@@ -1,0 +1,41 @@
+{
+  "stock_id": "301311",
+  "stock_name": "昆船智能",
+  "concept": "智能物流装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能物流系统及装备",
+    "智能产线系统及装备",
+    "智能物流装备"
+  ],
+  "should": [
+    "机器视觉识别",
+    "激光导引",
+    "主控芯片",
+    "运营维护及备品备件",
+    "专项产品及相关服务",
+    "自动化",
+    "信息化",
+    "智能化",
+    "固件开发",
+    "物联网技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能物流系统及装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能产线系统及装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能物流装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:02:35"
+}

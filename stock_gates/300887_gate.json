@@ -1,0 +1,24 @@
+{
+  "stock_id": "300887",
+  "stock_name": "谱尼测试",
+  "concept": "检验检测服务",
+  "strategy_type": "industry_chain",
+  "must": [],
+  "should": [
+    "CMA",
+    "CNAS",
+    "食品复检机构",
+    "CATL",
+    "CCC",
+    "DILAC",
+    "医疗机构执业许可证",
+    "医疗器械生产许可证",
+    "医疗器械",
+    "检验检测服务"
+  ],
+  "not": [],
+  "evidence_refs": [],
+  "quality": "weak",
+  "must_count": 0,
+  "generated_at": "2026-05-11T18:47:52"
+}

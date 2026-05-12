@@ -1,0 +1,50 @@
+{
+  "stock_id": "603317",
+  "stock_name": "天味食品",
+  "concept": "川味复合调味品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "川味复合调味品",
+    "火锅调料",
+    "川菜调料",
+    "好人家",
+    "大红袍"
+  ],
+  "should": [
+    "小龙虾调料",
+    "原材料溯源",
+    "质量控制体系",
+    "鲜牛脂肪炼制技术",
+    "天车",
+    "家庭烹饪",
+    "餐饮连锁",
+    "川式复合调料头部企业",
+    "首家A股上市川式复合调味品企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "川味复合调味品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "火锅调料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "川菜调料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "好人家",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大红袍",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:48:54"
+}

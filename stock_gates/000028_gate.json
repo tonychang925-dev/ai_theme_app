@@ -1,0 +1,35 @@
+{
+  "stock_id": "000028",
+  "stock_name": "国药一致",
+  "concept": "医药商业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药商业",
+    "医药分销",
+    "医药零售"
+  ],
+  "should": [
+    "两广地区",
+    "二三级医疗机构",
+    "基层医疗客户",
+    "零售终端客户"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医药商业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药分销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药零售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:47:22"
+}

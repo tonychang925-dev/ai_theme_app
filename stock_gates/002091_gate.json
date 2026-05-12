@@ -1,0 +1,27 @@
+{
+  "stock_id": "002091",
+  "stock_name": "江苏国泰",
+  "concept": "锂离子电池电解液",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂离子电池电解液"
+  ],
+  "should": [
+    "锂离子电池电解液添加剂",
+    "动力电池",
+    "储能电池",
+    "消费电池",
+    "国内锂离子电池电解液行业龙头企业",
+    "第一梯队"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂离子电池电解液",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:22:36"
+}

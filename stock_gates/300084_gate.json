@@ -1,0 +1,41 @@
+{
+  "stock_id": "300084",
+  "stock_name": "海默科技",
+  "concept": "油气田多相计量",
+  "strategy_type": "industry_chain",
+  "must": [
+    "油气田多相计量",
+    "多相计量产品",
+    "水下多相流量计"
+  ],
+  "should": [
+    "油田数字化系统",
+    "井下测/试井仪器",
+    "增产仪器和工具",
+    "湿气流量计",
+    "智能分层注水",
+    "抽油机功图智能识别",
+    "虚拟计量模型",
+    "边缘智能算法",
+    "陆地油田",
+    "海上钻井平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "油气田多相计量",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多相计量产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水下多相流量计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:12:53"
+}

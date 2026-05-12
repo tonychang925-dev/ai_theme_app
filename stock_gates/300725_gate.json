@@ -1,0 +1,39 @@
+{
+  "stock_id": "300725",
+  "stock_name": "药石科技",
+  "concept": "创新药分子砌块",
+  "strategy_type": "industry_chain",
+  "must": [
+    "创新药分子砌块",
+    "药物分子砌块",
+    "药物分子砌块设计"
+  ],
+  "should": [
+    "关键中间体",
+    "原料药",
+    "制剂",
+    "DNA编码化合物库(DEL)",
+    "合成",
+    "工艺开发",
+    "新药研发",
+    "临床候选化合物筛选"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "创新药分子砌块",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "药物分子砌块",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "药物分子砌块设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:40:29"
+}

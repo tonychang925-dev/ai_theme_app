@@ -1,0 +1,43 @@
+{
+  "stock_id": "600583",
+  "stock_name": "海油工程",
+  "concept": "海洋油气工程总包",
+  "strategy_type": "industry_chain",
+  "must": [
+    "海洋油气工程总包",
+    "海洋石油、天然气开发工程",
+    "液化天然气工程",
+    "工程总承包"
+  ],
+  "should": [
+    "LNG项目",
+    "FPSO项目",
+    "深水领域导管架平台制造安装",
+    "水下生产装备技术",
+    "中国海洋石油集团有限公司",
+    "开发环节",
+    "国内唯一海洋油气工程总包"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "海洋油气工程总包",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海洋石油、天然气开发工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液化天然气工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程总承包",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:21:49"
+}

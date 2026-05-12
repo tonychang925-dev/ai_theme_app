@@ -1,0 +1,28 @@
+{
+  "stock_id": "002480",
+  "stock_name": "新筑股份",
+  "concept": "桥梁功能部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "桥梁功能部件"
+  ],
+  "should": [
+    "桥梁支座",
+    "桥梁伸缩装置",
+    "预应力锚具",
+    "内嵌式中低速磁悬浮系统",
+    "铁路",
+    "公路",
+    "城轨"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "桥梁功能部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:43:40"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "603335",
+  "stock_name": "迪生力",
+  "concept": "铝合金车轮及锂电池回收",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铝合金大车轮",
+    "汽车轮毂",
+    "废旧锂电池回收",
+    "废旧锂电池回收业务"
+  ],
+  "should": [
+    "轮胎",
+    "汽车轮毂改装市场",
+    "新能源汽车",
+    "国内少有的铝合金大车轮生产企业",
+    "同行业最完善的海外销售渠道"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铝合金大车轮",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车轮毂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "废旧锂电池回收",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "废旧锂电池回收业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:49:30"
+}

@@ -1,0 +1,37 @@
+{
+  "stock_id": "300404",
+  "stock_name": "博济医药",
+  "concept": "CRO服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "CRO服务",
+    "临床研究服务",
+    "临床前研究服务"
+  ],
+  "should": [
+    "CDMO服务",
+    "临床前自主研发",
+    "其他咨询服务",
+    "技术成果转化服务",
+    "新药品",
+    "医疗器械"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "CRO服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "临床研究服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "临床前研究服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:25:49"
+}

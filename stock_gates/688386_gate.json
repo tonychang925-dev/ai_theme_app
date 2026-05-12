@@ -1,0 +1,36 @@
+{
+  "stock_id": "688386",
+  "stock_name": "泛亚微透",
+  "concept": "ePTFE膜材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "ePTFE膜材料",
+    "ePTFE微透产品"
+  ],
+  "should": [
+    "CMD",
+    "气体管理产品",
+    "吸隔声产品",
+    "密封件",
+    "挡水膜",
+    "机械设备",
+    "微观多孔材料改性",
+    "复合技术",
+    "ECU",
+    "航空航天"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "ePTFE膜材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ePTFE微透产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:17:23"
+}

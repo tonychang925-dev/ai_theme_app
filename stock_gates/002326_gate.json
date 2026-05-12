@@ -1,0 +1,36 @@
+{
+  "stock_id": "002326",
+  "stock_name": "永太科技",
+  "concept": "氟精细化学品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "氟精细化学品",
+    "六氟磷酸锂"
+  ],
+  "should": [
+    "含氟医药中间体",
+    "含氟植保中间体",
+    "含氟液晶中间体",
+    "含氟技术",
+    "氟化",
+    "硝化",
+    "氯化",
+    "溴化",
+    "氟苯精细化学品行业龙头",
+    "垂直一体化产业链"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "氟精细化学品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "六氟磷酸锂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:35:38"
+}

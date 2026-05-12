@@ -86,7 +86,7 @@ async def _proxy_stock_processing_json(path: str, params: dict[str, str]) -> dic
 
 async def _proxy_stock_processing_post_json(path: str, payload: dict) -> dict:
     url = f"{STOCK_PROCESSING_BASE_URL}{path}"
-    async with httpx.AsyncClient(timeout=30.0) as http:
+    async with httpx.AsyncClient(timeout=120.0) as http:
         resp = await http.post(url, json=payload)
         resp.raise_for_status()
         data = resp.json()
@@ -99,7 +99,7 @@ async def _proxy_stock_processing_request_json(
     *,
     params: dict | None = None,
     payload: dict | None = None,
-    timeout: float = 30.0,
+    timeout: float = 120.0,
 ) -> dict | list:
     url = f"{STOCK_PROCESSING_BASE_URL}{path}"
     try:

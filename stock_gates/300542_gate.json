@@ -1,0 +1,51 @@
+{
+  "stock_id": "300542",
+  "stock_name": "新晨科技",
+  "concept": "金融信息化服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金融信息化服务",
+    "电子渠道及渠道整合",
+    "支付结算",
+    "新一代中间业务",
+    "交易银行"
+  ],
+  "should": [
+    "软件开发",
+    "系统集成",
+    "云平台应用",
+    "数据交换",
+    "大数据平台",
+    "区块链平台",
+    "贸易融资",
+    "债券综合业务",
+    "家族信托管理",
+    "专业技术服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金融信息化服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子渠道及渠道整合",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "支付结算",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新一代中间业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "交易银行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:32:04"
+}

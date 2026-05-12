@@ -1,0 +1,46 @@
+{
+  "stock_id": "300296",
+  "stock_name": "利亚德",
+  "concept": "LED显示应用",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LED显示应用",
+    "智能显示",
+    "Micro LED",
+    "小间距"
+  ],
+  "should": [
+    "VR体验",
+    "夜游经济",
+    "文旅新业态",
+    "LED通用显示",
+    "LED专业显示",
+    "LED创意显示",
+    "微间距",
+    "夜景照明",
+    "文化旅游",
+    "VR娱乐"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED显示应用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能显示",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "Micro LED",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小间距",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:21:35"
+}

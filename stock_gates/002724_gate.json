@@ -1,0 +1,41 @@
+{
+  "stock_id": "002724",
+  "stock_name": "海洋王",
+  "concept": "专业照明解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "专业照明解决方案",
+    "照明设备",
+    "服务产品"
+  ],
+  "should": [
+    "LED",
+    "照明+智能控制",
+    "照明+数据传输技术",
+    "便携式产品",
+    "移动式产品",
+    "固定式产品",
+    "激光",
+    "专业照明市场",
+    "不同行业细分市场",
+    "行业子公司/行业事业部"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "专业照明解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "照明设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "服务产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:54:52"
+}

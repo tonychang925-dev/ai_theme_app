@@ -1,0 +1,36 @@
+{
+  "stock_id": "301516",
+  "stock_name": "中远通",
+  "concept": "定制电源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "通信电源",
+    "新能源电源"
+  ],
+  "should": [
+    "工控电源",
+    "定制电源",
+    "基站通信设备",
+    "光通信设备",
+    "宽带通信设备",
+    "服务器",
+    "新能源汽车",
+    "充电桩",
+    "工业自动化控制",
+    "定制化研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "通信电源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源电源",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:05:53"
+}

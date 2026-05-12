@@ -1,0 +1,45 @@
+{
+  "stock_id": "003040",
+  "stock_name": "楚天龙",
+  "concept": "智能卡与数字人民币",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能卡与数字人民币",
+    "金融IC卡",
+    "智能终端",
+    "软件及服务"
+  ],
+  "should": [
+    "非金融IC卡",
+    "数字人民币硬钱包",
+    "双离线交易功能",
+    "可视卡硬钱包",
+    "eSIM卡",
+    "NFC国密卡",
+    "亚洲最大制卡工业基地之一",
+    "全球最具规模智能卡生产企业之一",
+    "头部厂商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能卡与数字人民币",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融IC卡",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能终端",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "软件及服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:08:44"
+}

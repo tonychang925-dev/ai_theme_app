@@ -1,0 +1,36 @@
+{
+  "stock_id": "300340",
+  "stock_name": "科恒股份",
+  "concept": "锂电材料设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂离子电池正极材料",
+    "锂离子电池自动化生产设备"
+  ],
+  "should": [
+    "高精度双层挤压涂布机",
+    "双腔式挤压模头",
+    "气动及电动高速间歇控制阀",
+    "高速挤压涂布系统",
+    "预弯辊装置",
+    "自动测厚系统",
+    "闭环伺服系统",
+    "锂电材料设备",
+    "电动汽车",
+    "手机替换电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂离子电池正极材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂离子电池自动化生产设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:23:11"
+}

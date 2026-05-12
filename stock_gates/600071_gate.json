@@ -1,0 +1,41 @@
+{
+  "stock_id": "600071",
+  "stock_name": "凤凰光学",
+  "concept": "光电智能控制",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光学组件",
+    "光电智能控制",
+    "智能控制器"
+  ],
+  "should": [
+    "安防视频监控",
+    "车载",
+    "红外及机器视觉",
+    "嵌入式软件",
+    "光学仪器",
+    "照相机",
+    "投影机",
+    "精密加工",
+    "光学垂直一体化整合",
+    "全制程工艺"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光学组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光电智能控制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能控制器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:08:32"
+}

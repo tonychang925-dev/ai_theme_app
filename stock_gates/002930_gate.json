@@ -1,0 +1,31 @@
+{
+  "stock_id": "002930",
+  "stock_name": "宏川智慧",
+  "concept": "石化仓储服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "码头储罐综合服务"
+  ],
+  "should": [
+    "化工仓库综合服务",
+    "港丰石化仓储项目二期",
+    "福建港能项目",
+    "常熟宏智项目",
+    "石化仓储服务",
+    "中转及其他服务",
+    "物流链管理服务",
+    "增值服务",
+    "并购",
+    "自建"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "码头储罐综合服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:03:49"
+}

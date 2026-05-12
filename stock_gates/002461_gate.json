@@ -1,0 +1,41 @@
+{
+  "stock_id": "002461",
+  "stock_name": "珠江啤酒",
+  "concept": "啤酒酿造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "啤酒酿造",
+    "啤酒文化产业",
+    "中国最大的啤酒酿造中心"
+  ],
+  "should": [
+    "纯生啤酒",
+    "97纯生产品",
+    "7鲜生原浆",
+    "珠江识叹",
+    "275mL雪堡白啤",
+    "475mL珠江雪堡白啤",
+    "270mL 97纯生纤体罐",
+    "雪堡咖啡世涛",
+    "雪堡桂花乌龙啤酒",
+    "雪堡柚香冷萃啤酒"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "啤酒酿造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "啤酒文化产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中国最大的啤酒酿造中心",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:42:57"
+}

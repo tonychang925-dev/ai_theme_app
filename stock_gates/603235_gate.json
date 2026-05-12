@@ -1,0 +1,39 @@
+{
+  "stock_id": "603235",
+  "stock_name": "天新药业",
+  "concept": "单体维生素",
+  "strategy_type": "industry_chain",
+  "must": [
+    "单体维生素",
+    "维生素B6",
+    "维生素B1"
+  ],
+  "should": [
+    "生物素",
+    "叶酸",
+    "维生素D3",
+    "抗坏血酸棕榈酸酯",
+    "维生素E粉",
+    "综合回收利用技术",
+    "生产工艺流程优化",
+    "全球B族维生素市场重要供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "单体维生素",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "维生素B6",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "维生素B1",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:47:17"
+}

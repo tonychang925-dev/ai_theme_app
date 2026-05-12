@@ -1,0 +1,31 @@
+{
+  "stock_id": "000973",
+  "stock_name": "佛塑科技",
+  "concept": "高分子新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "双向拉伸薄膜技术"
+  ],
+  "should": [
+    "偏光膜",
+    "粗化电工膜",
+    "超薄型电容膜",
+    "安全型电容器用金属化膜",
+    "透气膜",
+    "无孔透湿膜",
+    "复合塑料编织材料",
+    "渗析材料技术",
+    "光电材料技术",
+    "阻隔材料技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "双向拉伸薄膜技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:11:53"
+}

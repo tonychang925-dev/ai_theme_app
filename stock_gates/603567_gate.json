@@ -1,0 +1,41 @@
+{
+  "stock_id": "603567",
+  "stock_name": "珍宝岛",
+  "concept": "高端中药制剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端中药制剂",
+    "中药制剂",
+    "中药制剂研发"
+  ],
+  "should": [
+    "中药材交易平台",
+    "亳州中药材商品交易中心",
+    "哈尔滨中药材商品交易中心",
+    "化学制剂",
+    "生物制剂",
+    "中药材贸易",
+    "化学仿制药研发",
+    "化学创新药研发",
+    "生物药研发",
+    "心血管"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端中药制剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中药制剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中药制剂研发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:52:27"
+}

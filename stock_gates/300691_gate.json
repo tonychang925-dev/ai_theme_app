@@ -1,0 +1,46 @@
+{
+  "stock_id": "300691",
+  "stock_name": "联合光电",
+  "concept": "光学镜头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光学镜头",
+    "安防摄像头",
+    "毫米波雷达",
+    "AR/VR一体机"
+  ],
+  "should": [
+    "手机镜头",
+    "汽车摄像头",
+    "数码相机摄像头",
+    "激光雷达",
+    "毫米波雷达整机+算法",
+    "光学变焦",
+    "光学防抖",
+    "激光雷达研发",
+    "车载HUD",
+    "Tier1厂商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光学镜头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "安防摄像头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "毫米波雷达",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AR/VR一体机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:39:09"
+}

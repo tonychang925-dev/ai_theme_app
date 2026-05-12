@@ -1,0 +1,41 @@
+{
+  "stock_id": "000501",
+  "stock_name": "武商集团",
+  "concept": "商业零售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商业零售",
+    "购物中心",
+    "超市"
+  ],
+  "should": [
+    "武商优选",
+    "武商优味",
+    "武商优家",
+    "武商优宝",
+    "武商优贝",
+    "武商优鲜",
+    "武商1959",
+    "联营",
+    "自营",
+    "代销"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商业零售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "购物中心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超市",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:53:08"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300298",
+  "stock_name": "三诺生物",
+  "concept": "糖尿病慢病管理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "糖尿病慢病管理",
+    "血糖仪",
+    "血糖试条"
+  ],
+  "should": [
+    "血脂检测系统",
+    "糖化血红蛋白检测系统",
+    "连续血糖监测系统",
+    "生物传感技术",
+    "第三代电化学传感器技术",
+    "智能决策支持系统",
+    "零售市场",
+    "医院端市场",
+    "慢病管理",
+    "国内血糖仪零售市场第一龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "糖尿病慢病管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "血糖仪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "血糖试条",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:21:36"
+}

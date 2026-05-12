@@ -1,0 +1,51 @@
+{
+  "stock_id": "002933",
+  "stock_name": "新兴装备",
+  "concept": "航空装备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航空装备制造",
+    "伺服控制技术",
+    "机载悬挂/发射装置",
+    "挂架随动系统",
+    "炮塔随动系统"
+  ],
+  "should": [
+    "智能控制技术",
+    "精密传动技术",
+    "综合外挂梁系统",
+    "飞机信息管理与记录系统",
+    "折叠系统",
+    "电动吊声绞车",
+    "浮标投放装置",
+    "雷达天线收放装置",
+    "机载用视频处理系统",
+    "视频记录仪"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航空装备制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "伺服控制技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机载悬挂/发射装置",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "挂架随动系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "炮塔随动系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:04:00"
+}

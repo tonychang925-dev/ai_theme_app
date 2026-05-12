@@ -1,0 +1,46 @@
+{
+  "stock_id": "600988",
+  "stock_name": "赤峰黄金",
+  "concept": "黄金矿业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国内黄金矿山",
+    "海外资源扩张",
+    "黄金"
+  ],
+  "should": [
+    "铜金矿开发",
+    "Wassa金矿",
+    "Sepon铜金矿",
+    "金星资源62%股权",
+    "万象矿业",
+    "黄金矿业",
+    "生产成本优势巨大",
+    "金品位14.57克/吨",
+    "金品位7.31克/吨",
+    "金品位8.00克/吨"
+  ],
+  "not": [
+    "黄金价格超预期走低",
+    "项目进度不及预期",
+    "疫情反复",
+    "生产安全检查超预期"
+  ],
+  "evidence_refs": [
+    {
+      "term": "国内黄金矿山",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海外资源扩张",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "黄金",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:32:47"
+}

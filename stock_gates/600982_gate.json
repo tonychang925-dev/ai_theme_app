@@ -1,0 +1,41 @@
+{
+  "stock_id": "600982",
+  "stock_name": "宁波能源",
+  "concept": "综合能源服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "热电联产",
+    "综合能源转型",
+    "综合能源服务"
+  ],
+  "should": [
+    "电化学储能",
+    "抽水蓄能",
+    "生物质能",
+    "风力发电",
+    "设备改造",
+    "运营优化",
+    "煤热联动",
+    "数字化提升",
+    "工业园区供热",
+    "电网侧储能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "热电联产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合能源转型",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合能源服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:32:26"
+}

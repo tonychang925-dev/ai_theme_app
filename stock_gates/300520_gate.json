@@ -1,0 +1,36 @@
+{
+  "stock_id": "300520",
+  "stock_name": "科大国创",
+  "concept": "智慧能源BMS",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧能源BMS",
+    "BMS"
+  ],
+  "should": [
+    "PACK",
+    "BEMS",
+    "直流级联电力电子技术",
+    "采集模块",
+    "主控模块",
+    "通信模块",
+    "显示模块",
+    "热管理",
+    "均衡管理",
+    "SOC估算"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧能源BMS",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "BMS",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:31:00"
+}

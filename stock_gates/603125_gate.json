@@ -1,0 +1,51 @@
+{
+  "stock_id": "603125",
+  "stock_name": "常青科技",
+  "concept": "高分子新材料助剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "二乙烯苯",
+    "甲基苯乙烯",
+    "α-甲基苯乙烯",
+    "中间体二乙苯系列",
+    "亚磷酸酯系列"
+  ],
+  "should": [
+    "烷基化",
+    "同分异构体择型",
+    "酯化",
+    "酯交换",
+    "一步法合成",
+    "高分子新材料助剂",
+    "分离技术",
+    "提纯技术",
+    "离子交换树脂",
+    "改性丙烯酸树脂涂料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "二乙烯苯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "甲基苯乙烯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "α-甲基苯乙烯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中间体二乙苯系列",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "亚磷酸酯系列",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:44:28"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "688697",
+  "stock_name": "纽威数控",
+  "concept": "数控机床",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数控机床",
+    "大型加工中心",
+    "立式数控机床",
+    "卧式数控机床"
+  ],
+  "should": [
+    "其他机床及附件",
+    "五轴联动",
+    "电主轴",
+    "通用设备",
+    "汽车",
+    "阀门",
+    "工程机械",
+    "自动化装备",
+    "模具",
+    "航空航天"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数控机床",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大型加工中心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "立式数控机床",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "卧式数控机床",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:24:18"
+}

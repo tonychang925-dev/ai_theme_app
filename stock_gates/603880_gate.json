@@ -1,0 +1,46 @@
+{
+  "stock_id": "603880",
+  "stock_name": "南卫股份",
+  "concept": "医用敷料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "创可贴",
+    "胶布胶带",
+    "绷带",
+    "敷贴"
+  ],
+  "should": [
+    "透皮给药技术",
+    "透皮渗透技术",
+    "新型外用制剂",
+    "医用胶布胶带生产",
+    "绷带生产",
+    "创口贴生产",
+    "敷贴生产",
+    "急救包",
+    "医用口罩",
+    "防护手套"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "创可贴",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "胶布胶带",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "绷带",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "敷贴",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:58:06"
+}

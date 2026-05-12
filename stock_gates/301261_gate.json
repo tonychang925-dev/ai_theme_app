@@ -1,0 +1,30 @@
+{
+  "stock_id": "301261",
+  "stock_name": "恒工精密",
+  "concept": "精密机加工件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密机加工件",
+    "连续铸铁件"
+  ],
+  "should": [
+    "空压机",
+    "液压系统",
+    "工程机械",
+    "传动装备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密机加工件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "连续铸铁件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:01:07"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "601366",
+  "stock_name": "利群股份",
+  "concept": "商业零售物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商业物流",
+    "商业零售",
+    "零售连锁",
+    "城市配送",
+    "仓储物流配送"
+  ],
+  "should": [
+    "品牌代理",
+    "品牌代理运营",
+    "线上O2O",
+    "B2B",
+    "外贸出口",
+    "跨境电商",
+    "生鲜社区店",
+    "品类集合店",
+    "食品生产加工",
+    "商业零售物流"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商业物流",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商业零售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "零售连锁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市配送",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "仓储物流配送",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:36:26"
+}

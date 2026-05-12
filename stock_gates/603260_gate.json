@@ -1,0 +1,34 @@
+{
+  "stock_id": "603260",
+  "stock_name": "合盛硅业",
+  "concept": "硅基材料龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业硅",
+    "有机硅单体"
+  ],
+  "should": [
+    "多晶硅",
+    "自备电厂",
+    "石墨电极",
+    "硅基材料龙头",
+    "一体化布局",
+    "工业硅产能全球第一",
+    "有机硅产能国内第一",
+    "上下游一体化布局最完善"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业硅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有机硅单体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:47:36"
+}

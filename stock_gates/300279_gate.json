@@ -1,0 +1,36 @@
+{
+  "stock_id": "300279",
+  "stock_name": "和晶科技",
+  "concept": "智能控制器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能控制器",
+    "单片机(MCU)应用"
+  ],
+  "should": [
+    "BMS(电池管理系统)",
+    "智能信息化解决方案",
+    "控制技术",
+    "软件算法",
+    "家用电器",
+    "汽车电子",
+    "通讯",
+    "工业控制",
+    "新兴消费电子",
+    "智慧城市"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能控制器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "单片机(MCU)应用",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:20:52"
+}

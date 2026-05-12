@@ -1,0 +1,30 @@
+{
+  "stock_id": "688260",
+  "stock_name": "昀冢科技",
+  "concept": "精密电子零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密电子零部件"
+  ],
+  "should": [
+    "音圈马达VCM精密电子零部件",
+    "汽车电子零部件",
+    "陶瓷基板",
+    "引线框架",
+    "DPC技术",
+    "芯片封装测试",
+    "自主工艺设计",
+    "模具自主开发",
+    "精密加工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密电子零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:13:24"
+}

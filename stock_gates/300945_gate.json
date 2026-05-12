@@ -1,0 +1,31 @@
+{
+  "stock_id": "300945",
+  "stock_name": "曼卡龙",
+  "concept": "珠宝零售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "黄金饰品"
+  ],
+  "should": [
+    "钻石镶嵌饰品",
+    "培育钻石",
+    "珠宝零售",
+    "日常穿搭",
+    "悦己消费",
+    "婚庆",
+    "年轻消费者",
+    "千禧一代",
+    "Z世代",
+    "线下门店"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "黄金饰品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:50:14"
+}

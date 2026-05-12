@@ -1,0 +1,36 @@
+{
+  "stock_id": "600578",
+  "stock_name": "京能电力",
+  "concept": "火力发电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "火力发电",
+    "光伏发电"
+  ],
+  "should": [
+    "售电业务",
+    "绿电交易",
+    "省间现货交易",
+    "燃煤发电装机容量1780万千瓦",
+    "光伏发电装机容量25万千瓦",
+    "供热改造",
+    "灵活性改造",
+    "节能降耗技术改造",
+    "煤场全封闭改造",
+    "粉煤灰综合利用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "火力发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏发电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:21:39"
+}

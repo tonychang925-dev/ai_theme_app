@@ -1,0 +1,46 @@
+{
+  "stock_id": "688655",
+  "stock_name": "迅捷兴",
+  "concept": "印制电路板",
+  "strategy_type": "industry_chain",
+  "must": [
+    "HDI板",
+    "高频板",
+    "高速板",
+    "厚铜板"
+  ],
+  "should": [
+    "刚挠结合板",
+    "金属基板",
+    "挠性板",
+    "超薄HDI刚挠结合电路板",
+    "高频高速汽车激光电路板",
+    "消费性电子产品类载板",
+    "印制电路板",
+    "HDI及高频高速技术",
+    "厚铜产品技术",
+    "光模块产品技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "HDI板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高频板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高速板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "厚铜板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:23:08"
+}

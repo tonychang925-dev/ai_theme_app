@@ -1,0 +1,46 @@
+{
+  "stock_id": "600128",
+  "stock_name": "苏豪弘业",
+  "concept": "外贸文化综合",
+  "strategy_type": "industry_chain",
+  "must": [
+    "出口业务",
+    "进口业务",
+    "大宗商品内贸业务",
+    "跨境电商"
+  ],
+  "should": [
+    "玩具",
+    "宠物用品",
+    "医疗设备",
+    "招标代理业务",
+    "健康环保业务",
+    "煤炭",
+    "液氨",
+    "尿素",
+    "农机",
+    "薄膜生产线设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "出口业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "进口业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大宗商品内贸业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "跨境电商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:10:00"
+}

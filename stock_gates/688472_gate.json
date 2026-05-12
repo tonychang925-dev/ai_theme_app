@@ -1,0 +1,36 @@
+{
+  "stock_id": "688472",
+  "stock_name": "阿特斯",
+  "concept": "光伏组件与储能",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏组件",
+    "光伏应用解决方案"
+  ],
+  "should": [
+    "大型储能系统",
+    "单晶组件",
+    "多晶组件",
+    "光伏电站",
+    "分布式光伏系统",
+    "光伏组件与储能",
+    "系统集成",
+    "电网侧储能",
+    "电源侧储能",
+    "全球领先光伏组件制造商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏应用解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:18:43"
+}

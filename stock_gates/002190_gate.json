@@ -1,0 +1,23 @@
+{
+  "stock_id": "002190",
+  "stock_name": "成飞集成",
+  "concept": "汽车模具与航空零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车模具与航空零部件"
+  ],
+  "should": [
+    "航空制造技术",
+    "冲压成型经验"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车模具与航空零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:28:21"
+}

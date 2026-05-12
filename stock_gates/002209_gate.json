@@ -1,0 +1,36 @@
+{
+  "stock_id": "002209",
+  "stock_name": "达意隆",
+  "concept": "液态包装设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "灌装生产线",
+    "无菌灌装工艺和装备"
+  ],
+  "should": [
+    "水处理/前处理设备",
+    "纸箱包装机",
+    "薄膜包装机",
+    "贴标机",
+    "码垛机",
+    "机器人理瓶机",
+    "机器人装箱机",
+    "机器人码垛机",
+    "机器人贴标系统",
+    "机器人压盖系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "灌装生产线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无菌灌装工艺和装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:29:27"
+}

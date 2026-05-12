@@ -1,0 +1,41 @@
+{
+  "stock_id": "001215",
+  "stock_name": "千味央厨",
+  "concept": "速冻米面制品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "速冻米面制品",
+    "油条",
+    "预制菜"
+  ],
+  "should": [
+    "油炸类",
+    "蒸煎饺",
+    "菜肴类",
+    "烘焙类",
+    "蒸煮类",
+    "餐饮店",
+    "酒店",
+    "团餐",
+    "乡厨",
+    "产能饱和"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "速冻米面制品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "油条",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "预制菜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:13:40"
+}

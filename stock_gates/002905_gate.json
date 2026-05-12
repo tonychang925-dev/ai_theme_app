@@ -1,0 +1,38 @@
+{
+  "stock_id": "002905",
+  "stock_name": "金逸影视",
+  "concept": "影视传媒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "院线发行",
+    "电影放映",
+    "影视制作投资"
+  ],
+  "should": [
+    "卖品销售",
+    "广告服务",
+    "影视传媒",
+    "影投公司前五",
+    "院线公司前七",
+    "票房全国第6位",
+    "影投公司第5位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "院线发行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电影放映",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "影视制作投资",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:02:30"
+}

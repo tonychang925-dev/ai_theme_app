@@ -1,0 +1,36 @@
+{
+  "stock_id": "300042",
+  "stock_name": "朗科科技",
+  "concept": "半导体存储",
+  "strategy_type": "industry_chain",
+  "must": [
+    "固态存储",
+    "移动存储"
+  ],
+  "should": [
+    "动态存储",
+    "嵌入式存储",
+    "主控芯片",
+    "半导体存储",
+    "固件开发",
+    "智能手机",
+    "个人电脑",
+    "服务器",
+    "数据中心",
+    "存储晶圆原厂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "固态存储",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动存储",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:10:38"
+}

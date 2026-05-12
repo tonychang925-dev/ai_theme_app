@@ -1,0 +1,35 @@
+{
+  "stock_id": "600456",
+  "stock_name": "宝钛股份",
+  "concept": "钛合金龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钛合金龙头"
+  ],
+  "should": [
+    "钛及钛合金加工材",
+    "金属复合材",
+    "航空航天",
+    "船舶",
+    "化工",
+    "冶金",
+    "海洋工程",
+    "医疗",
+    "国内最大的钛及钛合金生产科研基地",
+    "军用钛合金主要供应商"
+  ],
+  "not": [
+    "军用飞机新增列装",
+    "民用飞机放量",
+    "航空发动机"
+  ],
+  "evidence_refs": [
+    {
+      "term": "钛合金龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:18:14"
+}

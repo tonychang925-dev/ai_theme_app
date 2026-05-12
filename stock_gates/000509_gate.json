@@ -1,0 +1,40 @@
+{
+  "stock_id": "000509",
+  "stock_name": "华塑控股",
+  "concept": "电子信息显示终端",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子信息显示终端",
+    "显示器产品",
+    "IoT智能显示终端"
+  ],
+  "should": [
+    "工控显示系统",
+    "交互式白板一体机",
+    "DID拼接墙",
+    "电子课桌",
+    "数字标牌",
+    "曲面显示设备设计",
+    "ADboard驱动主板自主设计",
+    "低功耗高能效背光设计",
+    "智能家居"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子信息显示终端",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "显示器产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IoT智能显示终端",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:53:18"
+}

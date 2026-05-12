@@ -1,0 +1,41 @@
+{
+  "stock_id": "603633",
+  "stock_name": "徕木股份",
+  "concept": "汽车连接器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车连接器",
+    "精密连接器",
+    "屏蔽罩"
+  ],
+  "should": [
+    "模具开发技术",
+    "精密冲压",
+    "注塑制造",
+    "高精密冲压模具设计",
+    "高精密注塑成型模具设计",
+    "CDU",
+    "结构件",
+    "车身总线系统",
+    "电池组",
+    "三电系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车连接器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密连接器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "屏蔽罩",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:53:49"
+}

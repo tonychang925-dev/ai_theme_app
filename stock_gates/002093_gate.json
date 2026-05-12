@@ -1,0 +1,41 @@
+{
+  "stock_id": "002093",
+  "stock_name": "国脉科技",
+  "concept": "物联网技术服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "物联网技术服务",
+    "物联网咨询与设计服务",
+    "教育服务"
+  ],
+  "should": [
+    "5G",
+    "物联网",
+    "云计算",
+    "大数据",
+    "区块链",
+    "人工智能",
+    "政府",
+    "金融",
+    "医疗",
+    "交通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "物联网技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物联网咨询与设计服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "教育服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:22:44"
+}

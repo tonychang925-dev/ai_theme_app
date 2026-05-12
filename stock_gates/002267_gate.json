@@ -1,0 +1,33 @@
+{
+  "stock_id": "002267",
+  "stock_name": "陕天然气",
+  "concept": "天然气管道运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "天然气管道运营",
+    "长输管道"
+  ],
+  "should": [
+    "城市燃气",
+    "3833公里管道",
+    "165亿立方米年输气能力",
+    "中石油长庆气田",
+    "延长石油集团",
+    "城市燃气供应",
+    "CNG加气母站"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "天然气管道运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "长输管道",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:32:26"
+}

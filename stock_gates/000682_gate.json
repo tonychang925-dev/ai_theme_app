@@ -1,0 +1,46 @@
+{
+  "stock_id": "000682",
+  "stock_name": "东方电子",
+  "concept": "电力自动化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力自动化",
+    "虚拟电厂",
+    "调度自动化",
+    "配电自动化"
+  ],
+  "should": [
+    "综合能源",
+    "变电站保护及综合自动化",
+    "集控站",
+    "电能表及计量",
+    "边缘计算",
+    "AI",
+    "数字化技术",
+    "信息化手段",
+    "发电侧数字化",
+    "输变电数字化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力自动化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "虚拟电厂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "调度自动化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "配电自动化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:00:40"
+}

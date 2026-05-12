@@ -1,0 +1,36 @@
+{
+  "stock_id": "301363",
+  "stock_name": "美好医疗",
+  "concept": "呼吸机组件制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "家用呼吸机组件",
+    "人工植入耳蜗组件"
+  ],
+  "should": [
+    "呼吸机主机组件",
+    "呼吸面罩组件",
+    "家用呼吸机",
+    "人工植入耳蜗",
+    "外置声音处理器组件",
+    "植入体组件",
+    "肺功能仪",
+    "呼吸机组件制造",
+    "呼吸机主机组件组装测试及追溯技术",
+    "呼吸机湿化器水箱防渗漏技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "家用呼吸机组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人工植入耳蜗组件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:03:50"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "688166",
+  "stock_name": "博瑞医药",
+  "concept": "肿瘤代谢药物",
+  "strategy_type": "industry_chain",
+  "must": [
+    "肿瘤代谢药物"
+  ],
+  "should": [
+    "原料药",
+    "制剂",
+    "偶联药物平台",
+    "药械组合平台",
+    "肿瘤靶向治疗",
+    "免疫治疗",
+    "脂肪肝治疗",
+    "糖尿病治疗",
+    "减重",
+    "非酒精性脂肪性肝炎（NASH）"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "肿瘤代谢药物",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:10:24"
+}

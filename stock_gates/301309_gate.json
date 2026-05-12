@@ -1,0 +1,36 @@
+{
+  "stock_id": "301309",
+  "stock_name": "万得凯",
+  "concept": "铜制水暖阀门",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铜制水暖阀门",
+    "管件"
+  ],
+  "should": [
+    "无铅铜工艺技术",
+    "建筑金属配件",
+    "水暖系统",
+    "供热采暖系统",
+    "智能家居",
+    "ODM",
+    "OEM",
+    "自有品牌内销",
+    "研发能力",
+    "专利技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铜制水暖阀门",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "管件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:02:25"
+}

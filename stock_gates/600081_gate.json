@@ -1,0 +1,46 @@
+{
+  "stock_id": "600081",
+  "stock_name": "东风科技",
+  "concept": "汽车零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车零部件",
+    "座舱与车身系统",
+    "制动及智能驾驶系统",
+    "电驱动系统",
+    "热管理系统"
+  ],
+  "should": [
+    "电子电控软硬件",
+    "电驱动",
+    "空调",
+    "电控阀控制器",
+    "下游整车厂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "座舱与车身系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "制动及智能驾驶系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电驱动系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热管理系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:08:42"
+}

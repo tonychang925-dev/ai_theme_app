@@ -1,0 +1,36 @@
+{
+  "stock_id": "603008",
+  "stock_name": "喜临门",
+  "concept": "床垫龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "床垫龙头",
+    "床垫"
+  ],
+  "should": [
+    "软床",
+    "沙发",
+    "双核抗菌除螨科技",
+    "零甲醛技术",
+    "SMARTWave护脊深睡系统",
+    "健康睡眠",
+    "智能家居",
+    "酒店场景",
+    "国内八大生产基地",
+    "泰国海外生产基地"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "床垫龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "床垫",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:40:49"
+}

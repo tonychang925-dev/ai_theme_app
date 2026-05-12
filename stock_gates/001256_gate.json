@@ -1,0 +1,36 @@
+{
+  "stock_id": "001256",
+  "stock_name": "炜冈科技",
+  "concept": "标签印刷设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "标签印刷设备",
+    "机组式柔性版印刷机"
+  ],
+  "should": [
+    "模切机",
+    "智能控制纠偏系统",
+    "智能张力控制",
+    "印刷品质量智能检测系统",
+    "送料装置",
+    "传动结构",
+    "供墨技术",
+    "家用电器",
+    "防伪",
+    "票务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "标签印刷设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机组式柔性版印刷机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:14:49"
+}

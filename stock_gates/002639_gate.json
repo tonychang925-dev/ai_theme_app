@@ -1,0 +1,46 @@
+{
+  "stock_id": "002639",
+  "stock_name": "雪人集团",
+  "concept": "制冷制冰装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "制冷制冰装备",
+    "制冰设备",
+    "压缩机（组）",
+    "氢能源装备"
+  ],
+  "should": [
+    "油气服务设备",
+    "中央空调",
+    "活塞压缩机",
+    "螺杆压缩机",
+    "离心压缩机",
+    "制冰系统",
+    "桶泵技术",
+    "食品加工",
+    "商超物流",
+    "远洋捕捞"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "制冷制冰装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "制冰设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "压缩机（组）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氢能源装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:51:08"
+}

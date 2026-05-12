@@ -1,0 +1,51 @@
+{
+  "stock_id": "603113",
+  "stock_name": "金能科技",
+  "concept": "综合化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "焦炭",
+    "炭黑",
+    "白炭黑",
+    "山梨酸及山梨酸钾",
+    "对甲基苯酚"
+  ],
+  "should": [
+    "丙烯",
+    "聚丙烯",
+    "国家级企业技术中心",
+    "国家级实验室",
+    "PDH装置",
+    "北方地区丙烯外放量最大的企业",
+    "全国最大的对甲基苯酚生产商",
+    "世界单体产能最大的PDH装置",
+    "汽车工业",
+    "家用电器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "焦炭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "炭黑",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "白炭黑",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "山梨酸及山梨酸钾",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "对甲基苯酚",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:44:09"
+}

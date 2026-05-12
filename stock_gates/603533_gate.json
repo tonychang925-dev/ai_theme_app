@@ -1,0 +1,31 @@
+{
+  "stock_id": "603533",
+  "stock_name": "掌阅科技",
+  "concept": "数字阅读平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字阅读平台",
+    "互联网数字阅读服务"
+  ],
+  "should": [
+    "增值服务",
+    "付费+免费融合发展",
+    "免费阅读",
+    "个性化推荐",
+    "智能审核"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字阅读平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "互联网数字阅读服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:51:59"
+}

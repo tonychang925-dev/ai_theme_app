@@ -1,0 +1,41 @@
+{
+  "stock_id": "688229",
+  "stock_name": "博睿数据",
+  "concept": "APM应用性能监测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "APM应用性能监测",
+    "探针",
+    "SDK"
+  ],
+  "should": [
+    "DEM(数字体验管理工具)",
+    "ITIM(IT基础设施管理工具)",
+    "NPM(网络性能监测)",
+    "大数据智能分析管理",
+    "被动式监测",
+    "主动式监测",
+    "数据存储和分析",
+    "AI智能分析",
+    "微服务架构",
+    "云原生"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "APM应用性能监测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "探针",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SDK",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:12:32"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300324",
+  "stock_name": "旋极信息",
+  "concept": "智慧防务税务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧防务",
+    "智慧税务",
+    "智慧城市"
+  ],
+  "should": [
+    "嵌入式系统测试",
+    "故障注入测试系统",
+    "高速航空总线验证平台",
+    "装备健康管理(PHM)",
+    "软件无线电平台",
+    "零代码服务平台",
+    "嵌入式系统开发测试",
+    "装备健康管理",
+    "数字城市综合解决方案",
+    "智能诊断算法"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧防务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧税务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧城市",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:22:43"
+}

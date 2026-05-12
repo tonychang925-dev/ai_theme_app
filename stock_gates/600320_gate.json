@@ -1,0 +1,36 @@
+{
+  "stock_id": "600320",
+  "stock_name": "振华重工",
+  "concept": "重型装备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "港口机械",
+    "全球港口起重机行业引领者"
+  ],
+  "should": [
+    "海洋重工",
+    "大重特型钢结构",
+    "海上运输安装",
+    "双40英尺集装箱岸桥",
+    "全自动化双小车岸桥",
+    "双向防摇系统",
+    "AGV智能感知无轨导航技术",
+    "装卸设备远程控制与调度系统",
+    "自动化码头装卸综合控制与管理系统",
+    "重型装备制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "港口机械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球港口起重机行业引领者",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:14:56"
+}

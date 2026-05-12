@@ -1,0 +1,41 @@
+{
+  "stock_id": "300466",
+  "stock_name": "赛摩智能",
+  "concept": "工厂智能化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能装备",
+    "自动化",
+    "信息技术"
+  ],
+  "should": [
+    "高精度皮带秤",
+    "机器人全自动制样系统",
+    "包装码垛产品",
+    "AGV移动搬运机器人",
+    "喷涂机器人",
+    "搬运机器人",
+    "云联智能计量设备",
+    "工厂智能化",
+    "能源矿产",
+    "冶金建材"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自动化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信息技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:28:34"
+}

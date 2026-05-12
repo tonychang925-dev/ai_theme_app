@@ -1,0 +1,41 @@
+{
+  "stock_id": "603613",
+  "stock_name": "国联股份",
+  "concept": "工业电商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "涂多多",
+    "卫多多",
+    "玻多多"
+  ],
+  "should": [
+    "国联资源网",
+    "PTDCloud工业互联网平台",
+    "工业电商",
+    "集采模式",
+    "B2B电商交易平台",
+    "涂料化工",
+    "造纸和卫生用品",
+    "玻璃",
+    "化肥",
+    "粮油"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "涂多多",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "卫多多",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "玻多多",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:53:18"
+}

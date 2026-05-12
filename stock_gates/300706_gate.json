@@ -1,0 +1,46 @@
+{
+  "stock_id": "300706",
+  "stock_name": "阿石创",
+  "concept": "PVD镀膜材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PVD镀膜材料",
+    "ITO靶材",
+    "PET铜箔",
+    "溅射靶材制造"
+  ],
+  "should": [
+    "钼靶材",
+    "铜靶材",
+    "铝靶材",
+    "硅靶材",
+    "钛靶材",
+    "钽靶材",
+    "合金靶材",
+    "稀有金属靶材",
+    "蒸镀材料",
+    "PVD镀膜技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PVD镀膜材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ITO靶材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PET铜箔",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "溅射靶材制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:39:45"
+}

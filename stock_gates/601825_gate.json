@@ -1,0 +1,41 @@
+{
+  "stock_id": "601825",
+  "stock_name": "沪农商行",
+  "concept": "上海农商行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "上海首家A股上市农商行",
+    "上海农商行",
+    "鑫动能"
+  ],
+  "should": [
+    "鑫科贷",
+    "临港园区科创贷2.0",
+    "专精特新中小企业贷",
+    "鑫惠贷",
+    "积数贷",
+    "循环贷",
+    "银税贷",
+    "个人创业担保贷款",
+    "知识产权质押融资",
+    "上海地区营业网点最多的银行之一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "上海首家A股上市农商行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "上海农商行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "鑫动能",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:39:04"
+}

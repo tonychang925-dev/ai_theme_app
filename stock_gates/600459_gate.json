@@ -1,0 +1,46 @@
+{
+  "stock_id": "600459",
+  "stock_name": "贵研铂业",
+  "concept": "贵金属新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "贵金属新材料",
+    "贵金属新材料制造",
+    "贵金属资源循环利用",
+    "贵金属供给服务"
+  ],
+  "should": [
+    "贵金属合金材料",
+    "电子浆料",
+    "汽车催化剂",
+    "工业催化剂",
+    "金银及铂族金属二次资源",
+    "贵金属催化材料",
+    "信息功能材料",
+    "特种功能材料",
+    "化学品",
+    "回收专利技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "贵金属新材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "贵金属新材料制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "贵金属资源循环利用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "贵金属供给服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:18:21"
+}

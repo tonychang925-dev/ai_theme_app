@@ -1,0 +1,33 @@
+{
+  "stock_id": "600283",
+  "stock_name": "钱江水利",
+  "concept": "水务运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "自来水的生产和供应",
+    "污水处理"
+  ],
+  "should": [
+    "市政自来水管道安装",
+    "原水",
+    "制水",
+    "污水污泥处置",
+    "海水淡化",
+    "供水服务全产业链",
+    "终端客户服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "自来水的生产和供应",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "污水处理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:13:54"
+}

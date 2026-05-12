@@ -1,0 +1,44 @@
+{
+  "stock_id": "000625",
+  "stock_name": "长安汽车",
+  "concept": "智能汽车制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "自主乘用车",
+    "高端品牌阿维塔",
+    "华为",
+    "宁德时代"
+  ],
+  "should": [
+    "电动品牌深蓝",
+    "EPA1全电数字平台",
+    "CHN电动平台",
+    "域控架构",
+    "百度",
+    "智能驾驶",
+    "品牌向上",
+    "新能源转型"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "自主乘用车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端品牌阿维塔",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "华为",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "宁德时代",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:58:42"
+}

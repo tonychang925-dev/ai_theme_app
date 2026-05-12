@@ -1,0 +1,36 @@
+{
+  "stock_id": "002444",
+  "stock_name": "巨星科技",
+  "concept": "手工具龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "手工具",
+    "动力工具"
+  ],
+  "should": [
+    "激光测量仪器",
+    "存储箱柜",
+    "手工具龙头",
+    "移动储能",
+    "家用储能",
+    "中国设计",
+    "东南亚制造",
+    "全球化供应链",
+    "户用储能",
+    "亚洲最大手工具企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "手工具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动力工具",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:41:55"
+}

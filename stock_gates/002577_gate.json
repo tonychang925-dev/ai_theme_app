@@ -1,0 +1,46 @@
+{
+  "stock_id": "002577",
+  "stock_name": "雷柏科技",
+  "concept": "智能硬件品牌商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "游戏V系列",
+    "无线系列",
+    "Ralemo",
+    "品牌商"
+  ],
+  "should": [
+    "自动化集成设备",
+    "无线2.4GHz技术",
+    "QI无线充电",
+    "OLED显示屏",
+    "IP68级防水防尘",
+    "板载内存",
+    "云端存储",
+    "自主轴体",
+    "自主微动",
+    "专属芯片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "游戏V系列",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无线系列",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "Ralemo",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "品牌商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:48:16"
+}

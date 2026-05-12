@@ -1,0 +1,44 @@
+{
+  "stock_id": "605088",
+  "stock_name": "冠盛股份",
+  "concept": "汽车底盘零部件出口",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车底盘零部件出口",
+    "等速万向节",
+    "轮毂轴承单元",
+    "传动轴总成"
+  ],
+  "should": [
+    "墨西哥分销中心",
+    "欧洲流通加工中心",
+    "宁波仓",
+    "减振器",
+    "橡胶减振",
+    "悬架转向",
+    "汽车售后维修市场",
+    "整车配套"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车底盘零部件出口",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "等速万向节",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轮毂轴承单元",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "传动轴总成",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:01:40"
+}

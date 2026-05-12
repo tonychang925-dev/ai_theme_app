@@ -1,0 +1,51 @@
+{
+  "stock_id": "300689",
+  "stock_name": "澄天伟业",
+  "concept": "智能卡芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能卡芯片",
+    "智能卡专用芯片",
+    "芯片研发",
+    "芯片设计",
+    "芯片生产"
+  ],
+  "should": [
+    "安全芯片研发",
+    "电信SIM卡",
+    "金融IC卡",
+    "证照ID卡",
+    "集成电路布图设计",
+    "软件著作权",
+    "移动通信",
+    "金融支付",
+    "公共事业",
+    "一站式服务供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能卡芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能卡专用芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "芯片研发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "芯片设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "芯片生产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:39:04"
+}

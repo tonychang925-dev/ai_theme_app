@@ -1,0 +1,41 @@
+{
+  "stock_id": "002265",
+  "stock_name": "建设工业",
+  "concept": "发动机连杆龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国内发动机连杆专业化龙头",
+    "发动机连杆龙头",
+    "汽车发动机连杆"
+  ],
+  "should": [
+    "胀断连杆技术",
+    "胀断连杆行业标准制订者之一",
+    "柔性化连杆机加生产线",
+    "其他工业产品",
+    "机床关键零部件",
+    "省级技术中心",
+    "汽车动力系统",
+    "轿车",
+    "微车",
+    "轻型车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国内发动机连杆专业化龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发动机连杆龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车发动机连杆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:32:20"
+}

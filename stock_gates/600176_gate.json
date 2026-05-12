@@ -1,0 +1,41 @@
+{
+  "stock_id": "600176",
+  "stock_name": "中国巨石",
+  "concept": "玻璃纤维龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "玻璃纤维龙头",
+    "无碱玻璃纤维纱",
+    "玻璃纤维制品"
+  ],
+  "should": [
+    "电子纱",
+    "电子布",
+    "大型无碱池窑设计建造",
+    "环保池窑设计建造",
+    "纯氧燃烧技术",
+    "桐乡基地",
+    "九江基地",
+    "成都基地",
+    "埃及基地",
+    "美国基地"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "玻璃纤维龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无碱玻璃纤维纱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "玻璃纤维制品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:10:58"
+}

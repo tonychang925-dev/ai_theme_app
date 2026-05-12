@@ -1,0 +1,30 @@
+{
+  "stock_id": "000151",
+  "stock_name": "中成股份",
+  "concept": "环保工程与复合材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环境科技"
+  ],
+  "should": [
+    "成套设备出口和工程承包",
+    "复合材料生产",
+    "环保工程与复合材料",
+    "市政固废处置技术",
+    "工业危废处置技术",
+    "能源和资源回收技术",
+    "水和废水处理技术",
+    "细分市场行业领先地位",
+    "参与起草中国国家标准"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环境科技",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T16:50:30"
+}

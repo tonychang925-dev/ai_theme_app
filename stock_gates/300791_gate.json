@@ -1,0 +1,36 @@
+{
+  "stock_id": "300791",
+  "stock_name": "仙乐健康",
+  "concept": "营养保健食品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "软胶囊",
+    "营养软糖"
+  ],
+  "should": [
+    "片剂",
+    "粉剂",
+    "功能饮品",
+    "益生菌",
+    "产品配方",
+    "剂型体系",
+    "保健食品注册批准证书",
+    "保健食品备案凭证",
+    "合同代工生产",
+    "OEM"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "软胶囊",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "营养软糖",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:43:18"
+}

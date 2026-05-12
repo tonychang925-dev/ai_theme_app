@@ -1,0 +1,41 @@
+{
+  "stock_id": "601007",
+  "stock_name": "金陵饭店",
+  "concept": "高端酒店运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端酒店运营",
+    "酒店运营管理",
+    "酒店管理输出"
+  ],
+  "should": [
+    "金陵嘉珑",
+    "金陵文璟",
+    "酒店物资采购与贸易",
+    "名酒经销",
+    "商品贸易",
+    "物业管理",
+    "房屋租赁",
+    "食品制造",
+    "旅游资源开发",
+    "品牌底蕴"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端酒店运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "酒店运营管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "酒店管理输出",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:33:10"
+}

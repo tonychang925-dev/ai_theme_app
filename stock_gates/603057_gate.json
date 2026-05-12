@@ -1,0 +1,32 @@
+{
+  "stock_id": "603057",
+  "stock_name": "紫燕食品",
+  "concept": "佐餐卤制品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "夫妻肺片",
+    "紫燕百味鸡"
+  ],
+  "should": [
+    "卤江南",
+    "廖记棒棒鸡",
+    "留夫鸭",
+    "九多肉多",
+    "经销模式",
+    "两级销售网络"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "夫妻肺片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "紫燕百味鸡",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:42:22"
+}

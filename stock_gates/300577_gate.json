@@ -1,0 +1,41 @@
+{
+  "stock_id": "300577",
+  "stock_name": "开润股份",
+  "concept": "出行消费品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "休闲包袋",
+    "旅行箱",
+    "商务包袋"
+  ],
+  "should": [
+    "服装",
+    "配件",
+    "出行消费品",
+    "商务出行",
+    "户外休闲",
+    "代工制造",
+    "品牌经营",
+    "研发设计",
+    "自动化工艺",
+    "智能化生产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "休闲包袋",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "旅行箱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商务包袋",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:33:30"
+}

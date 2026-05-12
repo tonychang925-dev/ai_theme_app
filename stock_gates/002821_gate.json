@@ -1,0 +1,41 @@
+{
+  "stock_id": "002821",
+  "stock_name": "凯莱英",
+  "concept": "CDMO服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "CDMO服务",
+    "CDMO一站式综合服务",
+    "CMC服务"
+  ],
+  "should": [
+    "MAH业务",
+    "制剂研发生产",
+    "仿制药一致性评价",
+    "临床试验服务",
+    "生物样本检测",
+    "药品注册申报",
+    "绿色制药技术",
+    "工艺优化",
+    "cGMP标准生产",
+    "全球制药巨头深度嵌入式合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "CDMO服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CDMO一站式综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CMC服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:58:49"
+}

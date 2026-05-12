@@ -1,0 +1,45 @@
+{
+  "stock_id": "603886",
+  "stock_name": "元祖股份",
+  "concept": "烘焙食品龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "蛋糕",
+    "中西式糕点礼盒",
+    "月饼",
+    "粽子"
+  ],
+  "should": [
+    "线下实体店",
+    "线上门店",
+    "电子商务平台",
+    "外卖平台",
+    "烘焙食品龙头",
+    "亲朋聚会",
+    "一人食",
+    "企业茶歇",
+    "社交往来"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "蛋糕",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中西式糕点礼盒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "月饼",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "粽子",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:58:13"
+}

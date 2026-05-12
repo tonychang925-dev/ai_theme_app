@@ -1,0 +1,41 @@
+{
+  "stock_id": "688312",
+  "stock_name": "燕麦科技",
+  "concept": "智能测试设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能测试设备",
+    "自动化测试设备",
+    "消费电子FPC测试"
+  ],
+  "should": [
+    "半导体封测",
+    "车载FPC测试",
+    "测试治具",
+    "配件及其他",
+    "精密机械",
+    "测试测量",
+    "运动控制",
+    "机器视觉",
+    "人工智能",
+    "智能装备软件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能测试设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自动化测试设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "消费电子FPC测试",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:15:04"
+}

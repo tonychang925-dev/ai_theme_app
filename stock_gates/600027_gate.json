@@ -1,0 +1,29 @@
+{
+  "stock_id": "600027",
+  "stock_name": "华电国际",
+  "concept": "综合能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "发电"
+  ],
+  "should": [
+    "售煤",
+    "供热",
+    "综合能源",
+    "火电装机占比88.5%",
+    "电煤长协履约率",
+    "煤价合理区间",
+    "市场化交易电价上浮",
+    "华电新能31%股权"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "发电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:07:24"
+}

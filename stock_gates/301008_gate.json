@@ -1,0 +1,32 @@
+{
+  "stock_id": "301008",
+  "stock_name": "宏昌科技",
+  "concept": "流体电磁阀",
+  "strategy_type": "industry_chain",
+  "must": [
+    "流体电磁阀",
+    "传感器"
+  ],
+  "should": [
+    "模块化组件",
+    "水位传感器",
+    "洗衣机",
+    "智能坐便器",
+    "国内洗衣机阀主要生产商",
+    "与下游龙头企业长期合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "流体电磁阀",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "传感器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:52:53"
+}

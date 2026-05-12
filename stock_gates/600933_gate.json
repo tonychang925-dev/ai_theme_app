@@ -1,0 +1,46 @@
+{
+  "stock_id": "600933",
+  "stock_name": "爱柯迪",
+  "concept": "铝压铸龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球小件压铸龙头",
+    "新能源汽车",
+    "智能驾驶",
+    "新能源三电系统"
+  ],
+  "should": [
+    "中小件",
+    "汽车结构件",
+    "铝压铸龙头",
+    "转向系统",
+    "雨刮系统",
+    "动力系统",
+    "制动系统",
+    "模具开发",
+    "全产业链生产",
+    "半固态技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球小件压铸龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能驾驶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源三电系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:31:24"
+}

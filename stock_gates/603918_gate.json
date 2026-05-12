@@ -1,0 +1,41 @@
+{
+  "stock_id": "603918",
+  "stock_name": "金桥信息",
+  "concept": "多媒体信息系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "多媒体信息系统",
+    "智慧场景解决方案",
+    "IT+AV+软件融合"
+  ],
+  "should": [
+    "云服务",
+    "大数据",
+    "区块链",
+    "人工智能",
+    "物联网",
+    "云计算",
+    "智慧政务",
+    "智慧法治",
+    "智慧教育",
+    "系统集成"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "多媒体信息系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧场景解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IT+AV+软件融合",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:58:56"
+}

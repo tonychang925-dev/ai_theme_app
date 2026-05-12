@@ -1,0 +1,41 @@
+{
+  "stock_id": "000729",
+  "stock_name": "燕京啤酒",
+  "concept": "啤酒制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中高档产品",
+    "战略大单品",
+    "燕京U8"
+  ],
+  "should": [
+    "纯生啤酒",
+    "燕京白啤",
+    "狮王世涛",
+    "燕京八景",
+    "清爽啤酒",
+    "鲜啤",
+    "华北市场",
+    "华南市场",
+    "北京市场",
+    "内蒙市场"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中高档产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "战略大单品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "燕京U8",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:02:48"
+}

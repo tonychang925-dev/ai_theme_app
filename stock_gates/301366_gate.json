@@ -1,0 +1,35 @@
+{
+  "stock_id": "301366",
+  "stock_name": "一博科技",
+  "concept": "PCB设计与制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PCB设计与制造",
+    "PCB设计服务",
+    "PCBA制造服务"
+  ],
+  "should": [
+    "产业链分工深化",
+    "PCB设计外包趋势",
+    "高速电路普及",
+    "仿真与验证结合"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PCB设计与制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PCB设计服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PCBA制造服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:03:51"
+}

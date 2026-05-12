@@ -1,0 +1,36 @@
+{
+  "stock_id": "000068",
+  "stock_name": "华控赛格",
+  "concept": "海绵城市综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "海绵城市建设",
+    "海绵城市综合服务"
+  ],
+  "should": [
+    "水务工程",
+    "智慧水务建设运营",
+    "工程咨询设计",
+    "水污染防治规划设计",
+    "智慧水务综合解决方案",
+    "系统化环境综合治理服务",
+    "工程建设",
+    "海绵城市PPP项目",
+    "城市排水防涝预警系统",
+    "综合监测预警"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "海绵城市建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海绵城市综合服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:50:03"
+}

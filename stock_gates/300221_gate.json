@@ -1,0 +1,36 @@
+{
+  "stock_id": "300221",
+  "stock_name": "银禧科技",
+  "concept": "高分子改性塑料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高分子改性塑料",
+    "改性塑料"
+  ],
+  "should": [
+    "PCR技术",
+    "无机材料纳米化",
+    "化学助剂高效化",
+    "改性塑料环保化",
+    "汽车",
+    "家用电器",
+    "电线电缆",
+    "现代农业",
+    "轨道交通",
+    "航空航天"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高分子改性塑料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "改性塑料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:18:08"
+}

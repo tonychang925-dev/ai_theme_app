@@ -1,0 +1,41 @@
+{
+  "stock_id": "688010",
+  "stock_name": "福光股份",
+  "concept": "光学镜头制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "安防镜头",
+    "特种光学镜头",
+    "车载镜头"
+  ],
+  "should": [
+    "光学元组件",
+    "红外镜头",
+    "机器视觉镜头",
+    "光电系统",
+    "投影光机",
+    "光学镜头制造",
+    "精密和超精密加工技术",
+    "高温玻璃复眼玻璃双面模压技术",
+    "共口径双光谱连续变焦镜头技术",
+    "4移动组变焦技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "安防镜头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种光学镜头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载镜头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:05:20"
+}

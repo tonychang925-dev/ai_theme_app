@@ -1,0 +1,31 @@
+{
+  "stock_id": "002103",
+  "stock_name": "广博股份",
+  "concept": "文教办公用品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "文教办公用品"
+  ],
+  "should": [
+    "时尚办公文具",
+    "文创生活",
+    "办公直销",
+    "纸品本册",
+    "文件管理",
+    "书写工具",
+    "学生文具",
+    "办公生活",
+    "创意文具",
+    "自动化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "文教办公用品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:23:28"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "301509",
+  "stock_name": "金凯生科",
+  "concept": "小分子CDMO",
+  "strategy_type": "industry_chain",
+  "must": [
+    "小分子CDMO",
+    "小分子CDMO服务",
+    "小分子药物中间体",
+    "原料药"
+  ],
+  "should": [
+    "含氟类产品",
+    "非含氟类产品",
+    "氟化反应",
+    "氯化反应",
+    "光气化反应",
+    "硼酸化反应",
+    "低温反应",
+    "手性合成",
+    "定制研发生产服务",
+    "全球化布局"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "小分子CDMO",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小分子CDMO服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小分子药物中间体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原料药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:05:48"
+}

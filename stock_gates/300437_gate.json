@@ -1,0 +1,28 @@
+{
+  "stock_id": "300437",
+  "stock_name": "清水源",
+  "concept": "水处理剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水处理剂"
+  ],
+  "should": [
+    "三氯化磷",
+    "水处理剂研发",
+    "工业水处理",
+    "市政水处理",
+    "环保工程建设",
+    "三氯化磷设计产能16万吨",
+    "年产27万吨水处理剂产能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水处理剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:27:15"
+}

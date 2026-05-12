@@ -1,0 +1,35 @@
+{
+  "stock_id": "002540",
+  "stock_name": "亚太科技",
+  "concept": "汽车铝材供应商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车热管理系统",
+    "汽车轻量化系统"
+  ],
+  "should": [
+    "汽车铝材供应商",
+    "高性能空调管",
+    "电池液冷管",
+    "车身结构型材",
+    "防撞系统型材",
+    "底盘悬架系统棒材料",
+    "制动系统材料",
+    "电池箱体型材",
+    "电机壳体型材"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车热管理系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车轻量化系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:46:25"
+}

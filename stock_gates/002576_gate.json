@@ -1,0 +1,36 @@
+{
+  "stock_id": "002576",
+  "stock_name": "通达动力",
+  "concept": "电机铁芯制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "定转子冲片",
+    "定转子铁芯"
+  ],
+  "should": [
+    "成品定转子",
+    "冲压",
+    "叠装",
+    "铸铝",
+    "绕嵌线",
+    "级进冲机边自动线",
+    "电机铁芯制造",
+    "无取向硅钢应用",
+    "新能源汽车",
+    "风力发电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "定转子冲片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "定转子铁芯",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:48:10"
+}

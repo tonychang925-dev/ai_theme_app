@@ -1,0 +1,31 @@
+{
+  "stock_id": "688633",
+  "stock_name": "星球石墨",
+  "concept": "石墨设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "石墨设备"
+  ],
+  "should": [
+    "石墨合成炉",
+    "石墨换热器",
+    "石墨反应塔器",
+    "特种石墨原材料生产技术",
+    "高性能石墨列管式换热器制备技术",
+    "复合材料增强工艺",
+    "烟气处理石墨急冷工艺",
+    "石墨盐酸精制塔器工艺",
+    "石墨筒体防渗透技术",
+    "全自动控制浸渍釜"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "石墨设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:22:49"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "603363",
+  "stock_name": "傲农生物",
+  "concept": "饲料+养猪双主业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "饲料+养猪双主业",
+    "养猪",
+    "生猪养殖"
+  ],
+  "should": [
+    "饲料",
+    "生猪屠宰",
+    "饲料生产",
+    "食品加工",
+    "自繁自养",
+    "公司+农户",
+    "猪料",
+    "水产料",
+    "反刍料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "饲料+养猪双主业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "养猪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生猪养殖",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:50:04"
+}

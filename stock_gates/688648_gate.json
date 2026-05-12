@@ -1,0 +1,40 @@
+{
+  "stock_id": "688648",
+  "stock_name": "中邮科技",
+  "concept": "智能物流系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能物流系统",
+    "智能分拣系统",
+    "智能传输系统"
+  ],
+  "should": [
+    "智能专用车",
+    "机器视觉",
+    "嵌入式技术",
+    "轻量化复合材料与结构优化技术",
+    "液压系统技术",
+    "控制自动化技术",
+    "系统信息综合技术",
+    "车厢扩展变形技术",
+    "车厢与专用设备融合技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能物流系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能分拣系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能传输系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:22:56"
+}

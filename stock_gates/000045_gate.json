@@ -1,0 +1,41 @@
+{
+  "stock_id": "000045",
+  "stock_name": "深纺织A",
+  "concept": "偏光片制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "TFT型偏光片",
+    "OLED型偏光片",
+    "偏光片成套专有技术"
+  ],
+  "should": [
+    "TN型偏光片",
+    "STN型偏光片",
+    "3D偏光片",
+    "染料片",
+    "触摸屏用光学膜",
+    "OLED电视用偏光片产品量产技术",
+    "OLED用偏光片新产品开发技术",
+    "偏光片生产用原材料国产化技术",
+    "偏光片制造",
+    "车载"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "TFT型偏光片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "OLED型偏光片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "偏光片成套专有技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:48:40"
+}

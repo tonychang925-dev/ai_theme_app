@@ -1,0 +1,36 @@
+{
+  "stock_id": "002666",
+  "stock_name": "德联集团",
+  "concept": "汽车精细化学品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车精细化学品",
+    "胶粘剂"
+  ],
+  "should": [
+    "冷却液",
+    "制动液",
+    "发动机润滑油",
+    "动力转向油",
+    "自动变速箱油",
+    "燃油添加剂",
+    "玻璃清洗液",
+    "催化剂",
+    "汽车整车厂配套",
+    "汽车售后市场"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车精细化学品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "胶粘剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:52:14"
+}

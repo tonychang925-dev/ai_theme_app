@@ -1,0 +1,41 @@
+{
+  "stock_id": "603393",
+  "stock_name": "新天然气",
+  "concept": "天然气全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "城市天然气输配",
+    "城市天然气销售",
+    "煤层气开采"
+  ],
+  "should": [
+    "入户安装",
+    "中石油",
+    "中石化",
+    "新业能源煤制气",
+    "国盛汇东煤层气",
+    "天然气全产业链",
+    "工业用户",
+    "居民用户",
+    "煤层气储层地质研究",
+    "薄煤层试验井开发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "城市天然气输配",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市天然气销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤层气开采",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:50:44"
+}

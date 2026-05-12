@@ -1,0 +1,35 @@
+{
+  "stock_id": "601512",
+  "stock_name": "中新集团",
+  "concept": "园区开发运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "园区开发运营",
+    "股权投资",
+    "苏州工业园区"
+  ],
+  "should": [
+    "配套服务",
+    "产城融合",
+    "异地复制",
+    "投招联动"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "园区开发运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "股权投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "苏州工业园区",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:36:52"
+}

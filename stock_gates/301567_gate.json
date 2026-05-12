@@ -1,0 +1,51 @@
+{
+  "stock_id": "301567",
+  "stock_name": "贝隆精密",
+  "concept": "精密结构件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密结构件",
+    "镜头组件",
+    "摄像模组组件",
+    "马达部件",
+    "摄像模组精密结构件"
+  ],
+  "should": [
+    "智能手表天线",
+    "耳机内壳",
+    "VR眼镜镜筒",
+    "VR眼镜支架",
+    "安防摄像头光学透明件",
+    "智能手机",
+    "可穿戴设备",
+    "智慧安居",
+    "汽车电子",
+    "供货舜宇光学"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密结构件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "镜头组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "摄像模组组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "马达部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "摄像模组精密结构件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:06:26"
+}

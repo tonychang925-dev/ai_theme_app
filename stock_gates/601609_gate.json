@@ -1,0 +1,31 @@
+{
+  "stock_id": "601609",
+  "stock_name": "金田股份",
+  "concept": "铜加工与稀土永磁",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铜加工与稀土永磁"
+  ],
+  "should": [
+    "铜产品",
+    "烧结钕铁硼永磁材料",
+    "IGBT散热用无氧铜排",
+    "800V高压扁线",
+    "电力",
+    "家电",
+    "建筑",
+    "机械",
+    "电子",
+    "汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铜加工与稀土永磁",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:37:28"
+}

@@ -1,0 +1,35 @@
+{
+  "stock_id": "300832",
+  "stock_name": "新产业",
+  "concept": "化学发光免疫诊断",
+  "strategy_type": "industry_chain",
+  "must": [
+    "化学发光免疫诊断",
+    "全自动化学发光仪",
+    "化学发光检测试剂"
+  ],
+  "should": [
+    "免疫磁性微球",
+    "异鲁米诺（ABEI）发光标记物",
+    "免疫诊断",
+    "体外诊断（IVD）"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "化学发光免疫诊断",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全自动化学发光仪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化学发光检测试剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:45:03"
+}

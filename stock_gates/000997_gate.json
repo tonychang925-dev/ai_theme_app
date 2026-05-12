@@ -1,0 +1,40 @@
+{
+  "stock_id": "000997",
+  "stock_name": "新大陆",
+  "concept": "数字货币基建",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字货币基建",
+    "商户运营服务",
+    "DCEP系统服务"
+  ],
+  "should": [
+    "硬件钱包",
+    "智能POS",
+    "物联网设备",
+    "行业信息化",
+    "银行IT软件端",
+    "银行IT硬件端",
+    "支付侧",
+    "收单机构",
+    "第三方支付龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字货币基建",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商户运营服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "DCEP系统服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:12:44"
+}

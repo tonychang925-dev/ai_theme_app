@@ -1,0 +1,46 @@
+{
+  "stock_id": "603997",
+  "stock_name": "继峰股份",
+  "concept": "座舱内饰件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "座舱内饰件",
+    "头枕",
+    "扶手",
+    "座椅"
+  ],
+  "should": [
+    "中控系统",
+    "商用车座椅",
+    "电动出风口",
+    "功能性塑料件",
+    "支杆",
+    "音响头枕",
+    "睡眠头枕",
+    "隐蔽式出风口",
+    "移动中控系统",
+    "全球乘用车市场头枕绝对龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "座舱内饰件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "头枕",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "扶手",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "座椅",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:00:48"
+}

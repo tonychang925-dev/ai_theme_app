@@ -1,0 +1,41 @@
+{
+  "stock_id": "300687",
+  "stock_name": "赛意信息",
+  "concept": "泛ERP与智能制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "泛ERP与智能制造",
+    "智能制造（S-MOM）",
+    "泛ERP（管理软件）"
+  ],
+  "should": [
+    "MES/MOM",
+    "数字化中台",
+    "工业软件自研",
+    "通讯",
+    "电子",
+    "机械装备",
+    "PCB印刷电路板",
+    "家电",
+    "光伏",
+    "美的集团"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "泛ERP与智能制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能制造（S-MOM）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "泛ERP（管理软件）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:39:01"
+}

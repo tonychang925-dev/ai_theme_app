@@ -1,0 +1,41 @@
+{
+  "stock_id": "000701",
+  "stock_name": "厦门信达",
+  "concept": "综合产业服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "物联网",
+    "RFID电子标签",
+    "读写设备"
+  ],
+  "should": [
+    "汽车经销",
+    "光电",
+    "LED封装",
+    "照明产品",
+    "供应链",
+    "鞋服零售",
+    "智慧城市",
+    "交通工程照明",
+    "有色金属贸易",
+    "黑色金属贸易"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "物联网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "RFID电子标签",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "读写设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:01:07"
+}

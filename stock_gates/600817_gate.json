@@ -1,0 +1,49 @@
+{
+  "stock_id": "600817",
+  "stock_name": "宇通重工",
+  "concept": "环卫设备与矿用装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "强夯设备国内第一品牌",
+    "环卫设备",
+    "矿用装备",
+    "基础工程机械",
+    "新能源技术"
+  ],
+  "should": [
+    "无人驾驶",
+    "氢燃料",
+    "智慧环卫",
+    "线控底盘",
+    "桥梁检测车行业第一梯队",
+    "环卫服务",
+    "矿山运营",
+    "基础工程施工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "强夯设备国内第一品牌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环卫设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "矿用装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "基础工程机械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:28:39"
+}

@@ -1,0 +1,32 @@
+{
+  "stock_id": "603192",
+  "stock_name": "汇得科技",
+  "concept": "聚氨酯新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "聚氨酯弹性体原液",
+    "聚酯多元醇"
+  ],
+  "should": [
+    "无溶剂系列聚氨酯树脂",
+    "水性聚氨酯",
+    "功能型聚氨酯树脂",
+    "生物基改性聚酯多元醇",
+    "环保型增塑剂",
+    "聚氨酯新材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "聚氨酯弹性体原液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚酯多元醇",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:46:02"
+}

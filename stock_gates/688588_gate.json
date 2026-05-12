@@ -1,0 +1,35 @@
+{
+  "stock_id": "688588",
+  "stock_name": "凌志软件",
+  "concept": "金融软件服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "对日软件开发业务",
+    "国内应用软件解决方案业务"
+  ],
+  "should": [
+    "金融软件服务",
+    "大数据",
+    "云计算",
+    "互联网应用",
+    "移动端开发",
+    "财富管理解决方案",
+    "资产管理解决方案",
+    "数据中台",
+    "微服务云管理解决方案"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "对日软件开发业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内应用软件解决方案业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:21:27"
+}

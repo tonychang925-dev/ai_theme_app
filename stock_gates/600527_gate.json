@@ -1,0 +1,38 @@
+{
+  "stock_id": "600527",
+  "stock_name": "江南高纤",
+  "concept": "涤纶毛条龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "涤纶毛条龙头",
+    "涤纶毛条",
+    "复合短纤维"
+  ],
+  "should": [
+    "ES复合短纤维",
+    "差别化聚酯改性技术",
+    "纺丝物理改性技术",
+    "毛纺行业",
+    "无纺布",
+    "纸尿裤",
+    "卫生巾"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "涤纶毛条龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涤纶毛条",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复合短纤维",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:20:20"
+}

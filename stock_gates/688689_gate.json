@@ -1,0 +1,51 @@
+{
+  "stock_id": "688689",
+  "stock_name": "银河微电",
+  "concept": "半导体分立器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体分立器件",
+    "IDM模式",
+    "芯片设计",
+    "芯片制造",
+    "封装测试"
+  ],
+  "should": [
+    "功率器件",
+    "小信号器件",
+    "车用LED灯珠",
+    "光电耦合器",
+    "三端稳压电路",
+    "线性恒流IC",
+    "计算机及周边设备",
+    "家用电器",
+    "适配器及电源",
+    "网络通信"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体分立器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IDM模式",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "芯片设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "芯片制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "封装测试",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:24:03"
+}

@@ -1,0 +1,23 @@
+{
+  "stock_id": "003008",
+  "stock_name": "开普检测",
+  "concept": "电力设备检测",
+  "strategy_type": "industry_chain",
+  "must": [],
+  "should": [
+    "电力设备检测",
+    "其他技术服务",
+    "检测设备销售",
+    "电力工业",
+    "电力系统",
+    "新能源",
+    "充换电网络",
+    "智能电网",
+    "新型电力系统"
+  ],
+  "not": [],
+  "evidence_refs": [],
+  "quality": "weak",
+  "must_count": 0,
+  "generated_at": "2026-05-11T18:07:17"
+}

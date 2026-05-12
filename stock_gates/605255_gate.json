@@ -1,0 +1,36 @@
+{
+  "stock_id": "605255",
+  "stock_name": "天普股份",
+  "concept": "汽车高分子管路",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车高分子管路",
+    "密封系统零件"
+  ],
+  "should": [
+    "发动机附件系统软管",
+    "燃油系统胶管",
+    "空调系统软管",
+    "高分子材料研发",
+    "CNAS实验室认可",
+    "64项专利",
+    "日产全球供应商",
+    "日本马自达供应商",
+    "福特供应商",
+    "吉利供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车高分子管路",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "密封系统零件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:03:05"
+}

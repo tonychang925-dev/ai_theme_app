@@ -1,0 +1,46 @@
+{
+  "stock_id": "688435",
+  "stock_name": "英方软件",
+  "concept": "数据复制",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数据复制",
+    "容灾",
+    "备份",
+    "云灾备"
+  ],
+  "should": [
+    "动态文件字节级数据复制技术",
+    "数据库语义级数据复制技术",
+    "卷层块级数据复制技术",
+    "数据库同步",
+    "数据迁移",
+    "智能灾备管理",
+    "数据副本管理",
+    "数据流管理",
+    "大数据收集分发",
+    "数据跟随"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数据复制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "容灾",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "备份",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云灾备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:18:23"
+}

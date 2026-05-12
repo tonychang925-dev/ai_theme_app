@@ -1,0 +1,41 @@
+{
+  "stock_id": "300835",
+  "stock_name": "龙磁科技",
+  "concept": "永磁铁氧体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "永磁铁氧体",
+    "湿压磁瓦",
+    "汽车电机"
+  ],
+  "should": [
+    "永磁材料",
+    "铁氧体技术",
+    "金属磁粉芯",
+    "软磁铁氧体",
+    "电感",
+    "产品升级",
+    "光伏",
+    "车载",
+    "产能技术世界领先",
+    "行业集中度提升"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "永磁铁氧体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "湿压磁瓦",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车电机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:45:25"
+}

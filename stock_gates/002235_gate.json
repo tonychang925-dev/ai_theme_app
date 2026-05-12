@@ -1,0 +1,45 @@
+{
+  "stock_id": "002235",
+  "stock_name": "安妮股份",
+  "concept": "版权综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "版权综合服务",
+    "商务信息用纸业务",
+    "彩票营销服务业务",
+    "版权家"
+  ],
+  "should": [
+    "区块链",
+    "中国福利彩票",
+    "取证宝",
+    "图盾",
+    "大数据",
+    "人工智能",
+    "爬虫技术",
+    "AI自动比对",
+    "出版"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "版权综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商务信息用纸业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "彩票营销服务业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "版权家",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:31:00"
+}

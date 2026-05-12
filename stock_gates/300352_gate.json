@@ -1,0 +1,36 @@
+{
+  "stock_id": "300352",
+  "stock_name": "北信源",
+  "concept": "信息安全",
+  "strategy_type": "industry_chain",
+  "must": [
+    "信息安全",
+    "信息安全及信创"
+  ],
+  "should": [
+    "移动办公及安全通讯应用",
+    "政府",
+    "军队",
+    "军工",
+    "能源",
+    "金融",
+    "医疗",
+    "5G",
+    "云计算",
+    "大数据"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "信息安全",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信息安全及信创",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:23:43"
+}

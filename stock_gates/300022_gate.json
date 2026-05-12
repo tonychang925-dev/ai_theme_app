@@ -1,0 +1,41 @@
+{
+  "stock_id": "300022",
+  "stock_name": "吉峰科技",
+  "concept": "农机连锁销售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农机连锁销售",
+    "农机连锁销售服务",
+    "高端特色农机研发制造"
+  ],
+  "should": [
+    "免耕指夹式精量施肥播种机",
+    "免耕气吸式精量施肥播种机",
+    "多功能精密播种机",
+    "深松整地机",
+    "圆盘耙地机",
+    "高标准农田建设",
+    "规模化农业",
+    "保护性耕作",
+    "直营店销售",
+    "二级经销商销售"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农机连锁销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "农机连锁销售服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端特色农机研发制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:09:54"
+}

@@ -1,0 +1,44 @@
+{
+  "stock_id": "300033",
+  "stock_name": "同花顺",
+  "concept": "金融信息服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金融信息服务",
+    "增值电信业务",
+    "基金销售业务",
+    "人工智能"
+  ],
+  "should": [
+    "语音和NLP",
+    "全栈AI研发",
+    "C端增值信息服务",
+    "B端软件产品及系统维护",
+    "基金代销",
+    "免费平台积累用户",
+    "APP增值服务推广",
+    "用户运营提升空间"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金融信息服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "增值电信业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "基金销售业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人工智能",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:10:25"
+}

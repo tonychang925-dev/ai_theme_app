@@ -1,0 +1,35 @@
+{
+  "stock_id": "600241",
+  "stock_name": "时代万恒",
+  "concept": "新能源电池",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源电池",
+    "锂离子电池"
+  ],
+  "should": [
+    "镍氢电池",
+    "自动化产线",
+    "工艺生产经验",
+    "设备自主研发",
+    "高端电动工具",
+    "个人护理",
+    "民用消费品",
+    "上游原材料价格波动影响",
+    "稳定供应链"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂离子电池",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:12:43"
+}

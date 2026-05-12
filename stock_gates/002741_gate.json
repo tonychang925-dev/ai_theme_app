@@ -1,0 +1,40 @@
+{
+  "stock_id": "002741",
+  "stock_name": "光华科技",
+  "concept": "PCB化学品龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PCB化学品龙头",
+    "PCB化学品",
+    "化学试剂"
+  ],
+  "should": [
+    "锂电池材料",
+    "退役动力电池梯次利用及再生利用",
+    "梯次利用技术",
+    "湿法冶金技术",
+    "分离提纯技术",
+    "精细拆解工艺",
+    "低温固相控制性自还原技术",
+    "碳酸化水浸有限提锂技术",
+    "PCB制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PCB化学品龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PCB化学品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化学试剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:55:41"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "002703",
+  "stock_name": "浙江世宝",
+  "concept": "汽车转向系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车转向系统",
+    "液压助力转向系统",
+    "电动助力转向系统",
+    "智能转向系统"
+  ],
+  "should": [
+    "线控转向",
+    "转向器",
+    "转向节",
+    "转向管柱",
+    "一级配套商",
+    "智能驾驶技术",
+    "自动驾驶技术",
+    "精益生产模式",
+    "智能汽车",
+    "无人驾驶汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车转向系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液压助力转向系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电动助力转向系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能转向系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:54:02"
+}

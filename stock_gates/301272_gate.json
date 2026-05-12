@@ -1,0 +1,39 @@
+{
+  "stock_id": "301272",
+  "stock_name": "英华特",
+  "concept": "涡旋压缩机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "涡旋压缩机",
+    "热泵应用涡旋压缩机",
+    "冷冻冷藏应用涡旋压缩机"
+  ],
+  "should": [
+    "商用空调应用涡旋压缩机",
+    "电驱动车用涡旋压缩机",
+    "热泵采暖",
+    "热水热泵",
+    "烘干热泵",
+    "商用空调",
+    "冷冻冷藏",
+    "电驱动车用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "涡旋压缩机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热泵应用涡旋压缩机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冷冻冷藏应用涡旋压缩机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:01:29"
+}

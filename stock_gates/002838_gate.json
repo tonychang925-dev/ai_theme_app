@@ -1,0 +1,41 @@
+{
+  "stock_id": "002838",
+  "stock_name": "道恩股份",
+  "concept": "热塑性弹性体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "热塑性弹性体",
+    "热塑性硫化胶(TPV)",
+    "国内热塑性弹性体龙头企业"
+  ],
+  "should": [
+    "动态硫化技术",
+    "改性塑料",
+    "色母粒",
+    "配方设计",
+    "硫化工艺参数",
+    "汽车零部件",
+    "建筑",
+    "电子电气",
+    "医疗",
+    "日用品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "热塑性弹性体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热塑性硫化胶(TPV)",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内热塑性弹性体龙头企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:59:40"
+}

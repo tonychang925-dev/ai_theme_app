@@ -1,0 +1,46 @@
+{
+  "stock_id": "301262",
+  "stock_name": "海看股份",
+  "concept": "IPTV运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "IPTV运营",
+    "IPTV业务",
+    "独家运营",
+    "海看TV"
+  ],
+  "should": [
+    "移动媒体平台服务业务",
+    "IPTV智能运营平台",
+    "直播频道",
+    "点播内容",
+    "基础业务",
+    "增值业务",
+    "回看功能",
+    "终端用户",
+    "电信运营商",
+    "区域内独占经营优势"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "IPTV运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IPTV业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "独家运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海看TV",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:01:14"
+}

@@ -1,0 +1,35 @@
+{
+  "stock_id": "300337",
+  "stock_name": "银邦股份",
+  "concept": "铝热传输材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铝热传输材料",
+    "宁德时代供应商"
+  ],
+  "should": [
+    "钎焊铝合金复合材料",
+    "多金属复合材料",
+    "铝钢复合材料",
+    "铝合金复合防护材料",
+    "法雷奥集团供应商",
+    "电装集团供应商",
+    "马勒集团供应商",
+    "摩丁集团供应商",
+    "比亚迪供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铝热传输材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "宁德时代供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:23:07"
+}

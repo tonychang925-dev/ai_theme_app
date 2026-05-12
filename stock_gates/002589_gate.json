@@ -1,0 +1,41 @@
+{
+  "stock_id": "002589",
+  "stock_name": "瑞康医药",
+  "concept": "医药器械配送",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药器械配送",
+    "药品配送",
+    "器械配送"
+  ],
+  "should": [
+    "综合医疗服务",
+    "多仓协同",
+    "SAP业务系统",
+    "API服务平台",
+    "云服务平台",
+    "山东配送实时报价系统",
+    "带量采购",
+    "医保谈判",
+    "双通道政策",
+    "医保个账改革"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医药器械配送",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "药品配送",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "器械配送",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:48:52"
+}

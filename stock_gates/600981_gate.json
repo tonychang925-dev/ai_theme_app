@@ -1,0 +1,31 @@
+{
+  "stock_id": "600981",
+  "stock_name": "苏豪汇鸿",
+  "concept": "纺织服装供应链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "纺织服装供应链"
+  ],
+  "should": [
+    "大宗业务",
+    "面料",
+    "食品生鲜",
+    "木制品",
+    "浆纸",
+    "机电设备",
+    "数字化应用",
+    "3D虚拟设计",
+    "大数据采集与分析",
+    "产学研合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "纺织服装供应链",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:32:25"
+}

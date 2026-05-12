@@ -1,0 +1,36 @@
+{
+  "stock_id": "300015",
+  "stock_name": "爱尔眼科",
+  "concept": "眼科医疗服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "眼科医疗服务",
+    "视光服务"
+  ],
+  "should": [
+    "屈光手术",
+    "白内障手术",
+    "眼前段手术",
+    "眼后段手术",
+    "医学验光配镜",
+    "中心城市医院",
+    "省会城市医院",
+    "地级市医院",
+    "县级医院",
+    "眼科医院"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "眼科医疗服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "视光服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:09:42"
+}

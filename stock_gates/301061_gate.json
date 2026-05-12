@@ -1,0 +1,37 @@
+{
+  "stock_id": "301061",
+  "stock_name": "匠心家居",
+  "concept": "智能家居ODM",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能电动沙发",
+    "智能电动床",
+    "ODM供应商"
+  ],
+  "should": [
+    "核心配件",
+    "智能家居ODM",
+    "自主设计",
+    "专利技术",
+    "研发投入占比6.66%",
+    "美国零售商核心客户群"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能电动沙发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能电动床",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ODM供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:55:01"
+}

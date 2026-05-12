@@ -1,0 +1,43 @@
+{
+  "stock_id": "688328",
+  "stock_name": "深科达",
+  "concept": "智能装备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "平板显示模组类设备",
+    "半导体类设备",
+    "检测技术",
+    "贴合技术"
+  ],
+  "should": [
+    "摄像模组类设备",
+    "半导体封测技术",
+    "智能装备制造",
+    "智能装备关键零部件",
+    "半导体封测",
+    "平板显示器件自动化组装和检测",
+    "摄像头微组装"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "平板显示模组类设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体类设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "检测技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "贴合技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:15:34"
+}

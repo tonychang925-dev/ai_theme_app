@@ -1,0 +1,31 @@
+{
+  "stock_id": "300384",
+  "stock_name": "三联虹普",
+  "concept": "合成纤维工程技术",
+  "strategy_type": "industry_chain",
+  "must": [
+    "合成纤维工程技术"
+  ],
+  "should": [
+    "化纤工业智能体解决方案V1.0",
+    "功能性聚酯（vPET）",
+    "聚碳酸酯（PC）",
+    "聚对苯二甲酸丁二醇酯（PBT）",
+    "再生聚酯（rPET）",
+    "再生聚酰胺（rPA）",
+    "国家先进功能纤维创新中心发起单位",
+    "国家合成纤维新材料技术服务基地",
+    "自主基础共性技术",
+    "工程化成果转化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "合成纤维工程技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:25:09"
+}

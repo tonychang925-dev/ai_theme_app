@@ -1,0 +1,41 @@
+{
+  "stock_id": "688305",
+  "stock_name": "科德数控",
+  "concept": "五轴机床",
+  "strategy_type": "industry_chain",
+  "must": [
+    "五轴机床",
+    "五轴联动机床",
+    "数控系统"
+  ],
+  "should": [
+    "电机",
+    "反馈装置",
+    "直驱功能部件",
+    "主控芯片",
+    "动态误差控制",
+    "固件开发",
+    "功能部件自制率85%",
+    "电主轴自制",
+    "摆头自制",
+    "转台自制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "五轴机床",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "五轴联动机床",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数控系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:14:49"
+}

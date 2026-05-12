@@ -1,0 +1,41 @@
+{
+  "stock_id": "002691",
+  "stock_name": "冀凯股份",
+  "concept": "矿山装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "支护机具",
+    "安全钻机",
+    "掘进设备"
+  ],
+  "should": [
+    "运输机械",
+    "矿山装备",
+    "自动装卸钻杆",
+    "智能钻杆库",
+    "远程操作",
+    "自动输送锚索",
+    "精确定位",
+    "一键启动自动钻进",
+    "自动上下杆技术",
+    "远程操作技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "支护机具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "安全钻机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "掘进设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:53:37"
+}

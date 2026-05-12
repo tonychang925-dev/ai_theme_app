@@ -1,0 +1,43 @@
+{
+  "stock_id": "300008",
+  "stock_name": "天海防务",
+  "concept": "船舶海工防务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "民用船舶",
+    "海洋工程",
+    "船舶设计",
+    "船海工程设计"
+  ],
+  "should": [
+    "防务装备",
+    "智能无人船艇",
+    "船舶海工防务",
+    "新能源",
+    "能源运输",
+    "天然气利用技术",
+    "新能源应用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "民用船舶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海洋工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "船舶设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "船海工程设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:09:18"
+}

@@ -1,0 +1,28 @@
+{
+  "stock_id": "600123",
+  "stock_name": "兰花科创",
+  "concept": "优质无烟煤",
+  "strategy_type": "industry_chain",
+  "must": [
+    "无烟煤"
+  ],
+  "should": [
+    "二甲醚",
+    "己内酰胺",
+    "尿素",
+    "优质无烟煤",
+    "产业一体化",
+    "煤化工原料",
+    "煤炭业务供给煤化工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "无烟煤",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:09:44"
+}

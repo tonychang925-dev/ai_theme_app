@@ -1,0 +1,43 @@
+{
+  "stock_id": "688315",
+  "stock_name": "诺禾致源",
+  "concept": "基因测序服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "基因测序服务",
+    "高通量测序技术",
+    "生物信息分析技术",
+    "生命科学基础科研服务"
+  ],
+  "should": [
+    "医学研究与技术服务",
+    "建库测序平台服务",
+    "多组学研究技术",
+    "基础研究",
+    "转化研究",
+    "临床应用",
+    "基因测序服务提供商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "基因测序服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高通量测序技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物信息分析技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生命科学基础科研服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:15:13"
+}

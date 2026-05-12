@@ -1,0 +1,41 @@
+{
+  "stock_id": "002331",
+  "stock_name": "皖通科技",
+  "concept": "大交通智慧化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高速公路信息化",
+    "港口航运信息化",
+    "智慧城市"
+  ],
+  "should": [
+    "高速公路联网收费平台",
+    "高速公路指挥调度中心",
+    "路网联合监控平台",
+    "交通信用信息服务平台",
+    "军工电子信息化",
+    "CMMI5",
+    "CS4",
+    "公路交通工程专业一级",
+    "安防一级",
+    "ITSS二级"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高速公路信息化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "港口航运信息化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧城市",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:36:00"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "600909",
+  "stock_name": "华安证券",
+  "concept": "综合证券服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合证券服务",
+    "资产管理",
+    "保荐承销",
+    "债券承销"
+  ],
+  "should": [
+    "投资顾问",
+    "融资融券",
+    "股票期货经纪",
+    "金融产品销售",
+    "衍生品交易",
+    "新三板挂牌",
+    "企业重组改制",
+    "兼并收购财务顾问",
+    "零售客户业务",
+    "产业客户业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合证券服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "资产管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "保荐承销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "债券承销",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:31:09"
+}

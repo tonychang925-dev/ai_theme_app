@@ -1,0 +1,46 @@
+{
+  "stock_id": "300383",
+  "stock_name": "光环新网",
+  "concept": "云计算数据中心",
+  "strategy_type": "industry_chain",
+  "must": [
+    "IDC及增值业务",
+    "云计算数据中心",
+    "智算服务",
+    "高性能算力"
+  ],
+  "should": [
+    "云计算业务",
+    "多元异构算力调度平台",
+    "大模型训练",
+    "深度学习",
+    "高性能计算",
+    "推理场景",
+    "长沙",
+    "内蒙古",
+    "海南",
+    "马来西亚"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "IDC及增值业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云计算数据中心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智算服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高性能算力",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:24:47"
+}

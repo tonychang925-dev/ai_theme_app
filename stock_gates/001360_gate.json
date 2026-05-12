@@ -1,0 +1,30 @@
+{
+  "stock_id": "001360",
+  "stock_name": "南矿集团",
+  "concept": "破碎筛分设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "破碎筛分设备"
+  ],
+  "should": [
+    "破碎设备",
+    "筛分设备",
+    "砂石骨料",
+    "金属矿山",
+    "配件更换",
+    "整机保养与维修",
+    "生产线运营管理",
+    "国内品牌第一梯队",
+    "国产替代"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "破碎筛分设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:17:07"
+}

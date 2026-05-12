@@ -1,0 +1,31 @@
+{
+  "stock_id": "300801",
+  "stock_name": "泰和科技",
+  "concept": "水处理药剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水处理药剂"
+  ],
+  "should": [
+    "阻垢剂",
+    "缓蚀剂",
+    "杀菌灭藻剂",
+    "螯合剂",
+    "分散剂",
+    "反渗透药剂",
+    "助洗剂",
+    "连续化工艺",
+    "信息化生产",
+    "自动化生产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水处理药剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:43:45"
+}

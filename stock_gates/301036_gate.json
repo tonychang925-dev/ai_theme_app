@@ -1,0 +1,31 @@
+{
+  "stock_id": "301036",
+  "stock_name": "双乐股份",
+  "concept": "酞菁铬系颜料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "酞菁铬系颜料"
+  ],
+  "should": [
+    "酞菁蓝",
+    "酞菁绿",
+    "铬黄",
+    "钼红",
+    "铜酞菁",
+    "溶剂法铜酞菁生产工艺",
+    "表面包膜技术",
+    "颜料自动化智能生产技术",
+    "表面处理工艺",
+    "分散性提升工艺"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "酞菁铬系颜料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:54:10"
+}

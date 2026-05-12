@@ -1,0 +1,29 @@
+{
+  "stock_id": "300115",
+  "stock_name": "长盈精密",
+  "concept": "精密制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "机器人及智能装备"
+  ],
+  "should": [
+    "电子连接器及智能电子产品精密小件",
+    "新能源产品零组件及连接器",
+    "消费类电子精密结构件及模组",
+    "精密制造",
+    "全球领先精密制造公司",
+    "特斯拉新能源汽车零组件重要供应商",
+    "苹果大客户",
+    "多家国内外人形机器人客户定点"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "机器人及智能装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:13:45"
+}

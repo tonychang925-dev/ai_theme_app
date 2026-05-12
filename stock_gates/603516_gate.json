@@ -1,0 +1,41 @@
+{
+  "stock_id": "603516",
+  "stock_name": "淳中科技",
+  "concept": "液冷测试与显控方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "液冷测试设备",
+    "自研ASIC芯片",
+    "英伟达合格供应商"
+  ],
+  "should": [
+    "液冷测试与显控方案",
+    "液冷测试平台供货商",
+    "AI检测平台供货商",
+    "测试板卡供货商",
+    "图像处理",
+    "音视频编解码",
+    "传输技术",
+    "系统集成",
+    "数据中心",
+    "AI硬件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "液冷测试设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自研ASIC芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "英伟达合格供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:51:45"
+}

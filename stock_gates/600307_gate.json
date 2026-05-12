@@ -1,0 +1,46 @@
+{
+  "stock_id": "600307",
+  "stock_name": "酒钢宏兴",
+  "concept": "钢铁制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钢铁制造",
+    "铁",
+    "钢",
+    "材"
+  ],
+  "should": [
+    "不锈钢",
+    "锌铝镁产品",
+    "钒钛矿长流程含钡冶炼及提钒工艺",
+    "第四代核电反应堆主容器构件用钢",
+    "二氧化碳绿色洁净炼钢技术",
+    "新型超耐蚀合金镀层板带产品",
+    "光热电站熔盐储罐用不锈钢",
+    "第四代核电快堆用不锈钢316H",
+    "光伏",
+    "畜牧"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钢铁制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钢",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:14:31"
+}

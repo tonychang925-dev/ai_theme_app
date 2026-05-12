@@ -1,0 +1,27 @@
+{
+  "stock_id": "000838",
+  "stock_name": "财信发展",
+  "concept": "房地产全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "房地产全产业链"
+  ],
+  "should": [
+    "房地产",
+    "供销双降",
+    "成交均价维稳",
+    "改善型产品主导",
+    "刚需、刚改产品主导",
+    "去化压力严峻"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房地产全产业链",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:06:37"
+}

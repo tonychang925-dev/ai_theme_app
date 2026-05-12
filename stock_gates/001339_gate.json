@@ -1,0 +1,46 @@
+{
+  "stock_id": "001339",
+  "stock_name": "智微智能",
+  "concept": "智联网硬件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智联网硬件",
+    "行业终端",
+    "ICT基础设施",
+    "工业物联网"
+  ],
+  "should": [
+    "智算业务",
+    "智算中心",
+    "OPS标准制定者",
+    "场景化产品定义",
+    "多形态产品研发",
+    "X86/ARM/国产芯片架构",
+    "嵌入式系统开发",
+    "底层软件优化",
+    "驱动开发",
+    "系统适配"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智联网硬件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "行业终端",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ICT基础设施",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业物联网",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:17:09"
+}

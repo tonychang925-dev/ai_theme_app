@@ -1,0 +1,41 @@
+{
+  "stock_id": "300776",
+  "stock_name": "帝尔激光",
+  "concept": "光伏激光设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏激光设备",
+    "PERC激光消融设备",
+    "SE激光掺杂设备"
+  ],
+  "should": [
+    "TOPCon激光掺杂设备",
+    "HJT激光修复设备",
+    "HJT激光转印设备",
+    "PIBC激光开槽设备",
+    "激光消融",
+    "激光掺杂",
+    "激光修复",
+    "激光转印",
+    "激光开槽",
+    "PERC高效太阳能电池"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏激光设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PERC激光消融设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SE激光掺杂设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:42:40"
+}

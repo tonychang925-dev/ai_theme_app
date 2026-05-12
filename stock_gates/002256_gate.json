@@ -1,0 +1,35 @@
+{
+  "stock_id": "002256",
+  "stock_name": "兆新股份",
+  "concept": "光储充一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光储充一体化",
+    "新能源光伏发电",
+    "光伏发电"
+  ],
+  "should": [
+    "气雾漆",
+    "混凝土减水剂",
+    "分散剂NNO",
+    "萘磺酸"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光储充一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源光伏发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏发电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:31:57"
+}

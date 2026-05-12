@@ -1,0 +1,46 @@
+{
+  "stock_id": "002117",
+  "stock_name": "东港股份",
+  "concept": "综合信息服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商业票证印刷",
+    "智能卡",
+    "电子票证",
+    "区块链技术"
+  ],
+  "should": [
+    "档案存储与电子化",
+    "RFID智能标签",
+    "彩票销售终端",
+    "RFID技术",
+    "电子发票区块链",
+    "电子票据区块链",
+    "电子证照区块链",
+    "BaaS平台",
+    "综合信息服务",
+    "国内领先的商用票证印刷企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商业票证印刷",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能卡",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子票证",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "区块链技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:24:17"
+}

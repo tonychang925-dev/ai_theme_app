@@ -1,0 +1,51 @@
+{
+  "stock_id": "688351",
+  "stock_name": "微电生理",
+  "concept": "心脏电生理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "心脏电生理",
+    "三维心脏电生理标测系统",
+    "射频消融导管",
+    "冷冻消融导管",
+    "磁电双定位"
+  ],
+  "should": [
+    "肾动脉射频消融导管",
+    "压力感知",
+    "高密度标测",
+    "射频+冷冻消融",
+    "心脏电生理手术",
+    "房颤消融",
+    "高血压治疗",
+    "国产首个磁电双定位系统",
+    "国产唯一磁定位标测导管产品线",
+    "全球少数完整布局厂商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "心脏电生理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三维心脏电生理标测系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "射频消融导管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冷冻消融导管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磁电双定位",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:16:12"
+}

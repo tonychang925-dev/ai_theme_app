@@ -1,0 +1,41 @@
+{
+  "stock_id": "002228",
+  "stock_name": "合兴包装",
+  "concept": "综合包装服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合包装服务",
+    "中高档瓦楞纸箱",
+    "综合包装企业"
+  ],
+  "should": [
+    "纸板",
+    "缓冲包装材料",
+    "研发与设计",
+    "工业设计",
+    "标准化工厂",
+    "食品",
+    "饮料",
+    "医疗卫生",
+    "化工",
+    "合格供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合包装服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中高档瓦楞纸箱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合包装企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:30:22"
+}

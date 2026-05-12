@@ -1,0 +1,33 @@
+{
+  "stock_id": "600727",
+  "stock_name": "鲁北化工",
+  "concept": "石膏制酸联产水泥",
+  "strategy_type": "industry_chain",
+  "must": [
+    "石膏制硫酸联产水泥技术",
+    "石膏制酸联产水泥"
+  ],
+  "should": [
+    "钛白粉",
+    "钛白粉产能超26万吨/年",
+    "原材料战略采购",
+    "长单锁定",
+    "涂料",
+    "建材",
+    "化工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "石膏制硫酸联产水泥技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "石膏制酸联产水泥",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:26:01"
+}

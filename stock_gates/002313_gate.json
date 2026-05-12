@@ -1,0 +1,36 @@
+{
+  "stock_id": "002313",
+  "stock_name": "日海智能",
+  "concept": "人工智能物联网服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "无线通信模组",
+    "通信设备"
+  ],
+  "should": [
+    "通信工程服务",
+    "人工智能物联网服务",
+    "主控芯片",
+    "固件开发",
+    "信号处理",
+    "功耗优化",
+    "网联汽车",
+    "移动支付",
+    "安防监控",
+    "无线网关"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "无线通信模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通信设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:34:55"
+}

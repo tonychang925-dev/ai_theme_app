@@ -1,0 +1,36 @@
+{
+  "stock_id": "002094",
+  "stock_name": "青岛金王",
+  "concept": "化妆品与蜡烛",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新材料工艺蜡烛与香薰",
+    "化妆品产业链"
+  ],
+  "should": [
+    "蜡烛制品",
+    "香薰制品",
+    "蓝秀",
+    "LC",
+    "LANCHEN依露",
+    "LE COLOR",
+    "自主创新",
+    "研发设计",
+    "品牌差异化",
+    "家庭装饰"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新材料工艺蜡烛与香薰",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化妆品产业链",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:22:51"
+}

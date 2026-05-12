@@ -1,0 +1,46 @@
+{
+  "stock_id": "603365",
+  "stock_name": "水星家纺",
+  "concept": "家纺龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "套件",
+    "被芯",
+    "枕芯",
+    "水星"
+  ],
+  "should": [
+    "品牌壁垒",
+    "渠道壁垒",
+    "设计能力壁垒",
+    "百丽丝",
+    "水星KIDS",
+    "水星家纺婚庆馆",
+    "家纺龙头",
+    "长期战略合作",
+    "提前锁定价格",
+    "集中采购"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "套件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "被芯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "枕芯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水星",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:50:06"
+}

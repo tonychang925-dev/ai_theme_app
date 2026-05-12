@@ -1,0 +1,45 @@
+{
+  "stock_id": "600611",
+  "stock_name": "大众交通",
+  "concept": "城市综合交通服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "城市综合交通服务",
+    "出租汽车",
+    "公交运营",
+    "汽车租赁"
+  ],
+  "should": [
+    "交通汽服产业",
+    "大数据产业",
+    "房产酒店产业",
+    "金融投资产业",
+    "移动支付",
+    "计程计价云同步",
+    "智慧化派单",
+    "上海最大公交集团之一",
+    "AAA级信用等级"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "城市综合交通服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "出租汽车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公交运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车租赁",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:22:50"
+}

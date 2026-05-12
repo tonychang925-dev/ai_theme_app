@@ -1,0 +1,46 @@
+{
+  "stock_id": "300741",
+  "stock_name": "华宝股份",
+  "concept": "香精香料龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "香精香料龙头",
+    "食品用香精",
+    "日用香精",
+    "烟用香精"
+  ],
+  "should": [
+    "天然产物有效成份的分离提取技术",
+    "国家级企业技术中心",
+    "技术创新",
+    "食品行业",
+    "日用化工业",
+    "制药业",
+    "烟业",
+    "纺织业",
+    "皮革业",
+    "上游原材料提取中心"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "香精香料龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "食品用香精",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "日用香精",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "烟用香精",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:41:10"
+}

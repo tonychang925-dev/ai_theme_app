@@ -1,0 +1,46 @@
+{
+  "stock_id": "688063",
+  "stock_name": "派能科技",
+  "concept": "家用储能系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "家用储能系统",
+    "储能电池系统",
+    "全球家用储能领先供应商",
+    "家用储能"
+  ],
+  "should": [
+    "电芯",
+    "磷酸铁锂",
+    "通讯储能",
+    "软包磷酸铁锂电芯",
+    "圆柱磷酸铁锂电芯",
+    "软包磷酸铁锂",
+    "高安全",
+    "长寿命",
+    "低成本",
+    "通信备电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "家用储能系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能电池系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球家用储能领先供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "家用储能",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:06:56"
+}

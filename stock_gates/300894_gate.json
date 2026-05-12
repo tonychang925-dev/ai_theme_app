@@ -1,0 +1,36 @@
+{
+  "stock_id": "300894",
+  "stock_name": "火星人",
+  "concept": "集成灶龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "集成灶龙头",
+    "集成灶"
+  ],
+  "should": [
+    "水洗类产品",
+    "燃气灶",
+    "吸油烟机",
+    "消毒柜",
+    "蒸箱",
+    "烘干柜",
+    "烤箱",
+    "厨房电器",
+    "高端市场线上排名第一",
+    "线上销售额份额超过26%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "集成灶龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集成灶",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:48:08"
+}

@@ -1,0 +1,32 @@
+{
+  "stock_id": "603565",
+  "stock_name": "中谷物流",
+  "concept": "内贸集装箱航运",
+  "strategy_type": "industry_chain",
+  "must": [
+    "内贸集装箱航运",
+    "集装箱物流服务"
+  ],
+  "should": [
+    "多式联运综合物流体系",
+    "加强型小高箱",
+    "大宗货物运输",
+    "散改集货物",
+    "运力储备",
+    "物流基地建设"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "内贸集装箱航运",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集装箱物流服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:52:15"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "601000",
+  "stock_name": "唐山港",
+  "concept": "散杂货港口",
+  "strategy_type": "industry_chain",
+  "must": [
+    "散杂货港口",
+    "港口装卸堆存",
+    "矿石",
+    "煤炭",
+    "钢材"
+  ],
+  "should": [
+    "砂石料",
+    "运输物流",
+    "港口综合服务",
+    "水渣",
+    "保税仓储",
+    "钢铁企业",
+    "煤炭企业",
+    "电力企业",
+    "船舶代理",
+    "货运代理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "散杂货港口",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "港口装卸堆存",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "矿石",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钢材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:33:00"
+}

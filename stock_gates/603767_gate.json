@@ -1,0 +1,41 @@
+{
+  "stock_id": "603767",
+  "stock_name": "中马传动",
+  "concept": "汽车变速器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车变速器",
+    "新能源汽车减速器",
+    "汽车齿轮"
+  ],
+  "should": [
+    "电控分动器",
+    "摩托车齿轮",
+    "农机齿轮",
+    "车辆齿轮工艺设计能力",
+    "生产管理能力",
+    "品质管理能力",
+    "变速器总成同步开发能力",
+    "齿轮加工技术",
+    "轻型物流车",
+    "A0及A00级乘用车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车变速器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车减速器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车齿轮",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:56:16"
+}

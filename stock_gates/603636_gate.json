@@ -1,0 +1,51 @@
+{
+  "stock_id": "603636",
+  "stock_name": "南威软件",
+  "concept": "数字政府服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字政府服务",
+    "政务服务",
+    "公共安全",
+    "城市管理",
+    "政务中台"
+  ],
+  "should": [
+    "社会运营服务",
+    "区块链证照通",
+    "基石技术中台",
+    "数据治理平台",
+    "码上办、马上就办",
+    "数字身份空间系统",
+    "一件事一次办",
+    "社区警务防管控一体化平台",
+    "智能感知大数据平台",
+    "智慧石狮指挥管控平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字政府服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "政务服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公共安全",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "政务中台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:53:44"
+}

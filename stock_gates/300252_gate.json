@@ -1,0 +1,41 @@
+{
+  "stock_id": "300252",
+  "stock_name": "金信诺",
+  "concept": "信号互联技术",
+  "strategy_type": "industry_chain",
+  "must": [
+    "信号互联技术",
+    "射频线缆",
+    "高速线缆与连接器"
+  ],
+  "should": [
+    "射频天线",
+    "数据通信产品",
+    "卫星通信终端",
+    "电磁与信号系统",
+    "主控芯片",
+    "固件开发",
+    "相控阵技术",
+    "5G技术",
+    "国家级高新技术企业",
+    "制造业单项冠军"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "信号互联技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "射频线缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高速线缆与连接器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:19:32"
+}

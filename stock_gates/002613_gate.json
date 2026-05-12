@@ -1,0 +1,36 @@
+{
+  "stock_id": "002613",
+  "stock_name": "北玻股份",
+  "concept": "玻璃深加工设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "玻璃钢化设备",
+    "高端深加工玻璃"
+  ],
+  "should": [
+    "玻璃深加工设备",
+    "低辐射Low-E镀膜设备",
+    "玻璃深加工自动化连线",
+    "玻璃切割设备",
+    "三元流风机",
+    "水平辊道式玻璃平弯钢化电机组",
+    "高产能超长连续式玻璃钢化生产设备",
+    "钢化云服务平台",
+    "仓储系统",
+    "智能温控系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "玻璃钢化设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端深加工玻璃",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:50:04"
+}

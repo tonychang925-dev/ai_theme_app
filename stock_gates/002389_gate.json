@@ -1,0 +1,31 @@
+{
+  "stock_id": "002389",
+  "stock_name": "航天彩虹",
+  "concept": "无人机系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "彩虹系列无人机"
+  ],
+  "should": [
+    "射手系列空地导弹",
+    "无人机系统",
+    "机载武器",
+    "气动核心技术",
+    "导航飞控",
+    "综合航电",
+    "指挥控制",
+    "载荷应用",
+    "试验试飞",
+    "国内中高端无人机产业主导力量"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "彩虹系列无人机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:39:08"
+}

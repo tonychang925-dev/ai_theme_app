@@ -1,0 +1,36 @@
+{
+  "stock_id": "002309",
+  "stock_name": "中利集团",
+  "concept": "光伏新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏新能源",
+    "光伏电站"
+  ],
+  "should": [
+    "光伏制造",
+    "特种线缆",
+    "单晶高效电池",
+    "大尺寸光伏组件",
+    "阻燃耐火软电缆",
+    "舰船用电缆",
+    "高铁用电缆",
+    "光伏/风电新能源线缆",
+    "电力储能系统用电池连接电缆",
+    "光纤预制棒及光纤"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏新能源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏电站",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:34:43"
+}

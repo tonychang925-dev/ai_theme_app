@@ -1,0 +1,41 @@
+{
+  "stock_id": "002819",
+  "stock_name": "东方中科",
+  "concept": "先进测试技术服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "仪器销售",
+    "仪器租赁",
+    "系统集成"
+  ],
+  "should": [
+    "先进测试技术服务",
+    "电子测量仪器",
+    "商业保理",
+    "招标代理",
+    "内网安全管理平台",
+    "存储介质信息消除工具",
+    "虹膜采集设备",
+    "虹膜识别设备",
+    "信息安全保密",
+    "政务集成"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "仪器销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "仪器租赁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "系统集成",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:58:51"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "000582",
+  "stock_name": "北部湾港",
+  "concept": "港口运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "港口运营",
+    "集装箱装卸",
+    "散杂货装卸",
+    "堆存",
+    "港口装卸堆存业务"
+  ],
+  "should": [
+    "港口增值服务",
+    "港口配套服务",
+    "拖轮及港务管理",
+    "理货业务",
+    "代理业务",
+    "北港网",
+    "OCC数字化运营平台",
+    "散改集",
+    "海铁联运",
+    "冷链服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "港口运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集装箱装卸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "散杂货装卸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "堆存",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "港口装卸堆存业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:57:33"
+}

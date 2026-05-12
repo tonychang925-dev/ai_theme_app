@@ -1,0 +1,41 @@
+{
+  "stock_id": "301052",
+  "stock_name": "果麦文化",
+  "concept": "互联网出版",
+  "strategy_type": "industry_chain",
+  "must": [
+    "出版+互联网",
+    "图书出版发行",
+    "互联网业务"
+  ],
+  "should": [
+    "短视频电商",
+    "电商平台",
+    "互联网出版",
+    "CBC销售模式",
+    "微信",
+    "微博",
+    "抖音",
+    "小红书",
+    "其他衍生业务",
+    "实体店"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "出版+互联网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "图书出版发行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "互联网业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:54:46"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "002470",
+  "stock_name": "金正大",
+  "concept": "农用肥料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农用肥料",
+    "复合肥"
+  ],
+  "should": [
+    "缓控释肥",
+    "硝基肥",
+    "水溶肥",
+    "生物肥",
+    "磷肥",
+    "土壤调理剂",
+    "粮食生产",
+    "经济作物种植",
+    "土壤健康",
+    "生物防治用肥"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农用肥料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复合肥",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:43:14"
+}

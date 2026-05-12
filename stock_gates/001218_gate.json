@@ -1,0 +1,35 @@
+{
+  "stock_id": "001218",
+  "stock_name": "丽臣实业",
+  "concept": "表面活性剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "表面活性剂",
+    "洗涤用品"
+  ],
+  "should": [
+    "二噁烷控制技术",
+    "色泽控制技术",
+    "个人护理",
+    "家居清洁",
+    "工业清洗",
+    "纺织印染",
+    "涂料农药",
+    "国内排名前二",
+    "专精特新小巨人企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "表面活性剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "洗涤用品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:13:49"
+}

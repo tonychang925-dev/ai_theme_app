@@ -1,0 +1,41 @@
+{
+  "stock_id": "300829",
+  "stock_name": "金丹科技",
+  "concept": "乳酸行业龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "乳酸行业龙头",
+    "乳酸",
+    "聚乳酸(PLA)"
+  ],
+  "should": [
+    "乳酸盐",
+    "乳酸酯",
+    "玉米",
+    "淀粉糖",
+    "3D打印",
+    "消费电子产品",
+    "汽车",
+    "农业/园艺",
+    "玩具",
+    "食品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "乳酸行业龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乳酸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚乳酸(PLA)",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:45:03"
+}

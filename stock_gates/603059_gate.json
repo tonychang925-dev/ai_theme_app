@@ -1,0 +1,51 @@
+{
+  "stock_id": "603059",
+  "stock_name": "倍加洁",
+  "concept": "口腔护理用品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "口腔护理用品",
+    "牙刷",
+    "牙线签",
+    "漱口水",
+    "一次性卫生用品"
+  ],
+  "should": [
+    "牙膏",
+    "电动牙刷",
+    "冲牙器",
+    "湿巾",
+    "检测能力",
+    "自动化减员",
+    "标准化体系建设",
+    "口腔清洁护理",
+    "个人清洁",
+    "家居清洁"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "口腔护理用品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "牙刷",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "牙线签",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "漱口水",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一次性卫生用品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:42:25"
+}

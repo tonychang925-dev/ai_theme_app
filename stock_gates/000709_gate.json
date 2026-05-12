@@ -1,0 +1,57 @@
+{
+  "stock_id": "000709",
+  "stock_name": "河钢股份",
+  "concept": "精品钢材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精品钢材",
+    "板材",
+    "棒材",
+    "冷轧薄板",
+    "高强螺纹钢筋"
+  ],
+  "should": [
+    "线材",
+    "型材",
+    "汽车板",
+    "家电板",
+    "核电用钢",
+    "高强抗震建材",
+    "汽车",
+    "石油",
+    "铁路",
+    "桥梁"
+  ],
+  "not": [
+    "钒",
+    "钛",
+    "钢铁冶炼",
+    "工艺技术装备",
+    "年产能"
+  ],
+  "evidence_refs": [
+    {
+      "term": "精品钢材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "板材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "棒材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冷轧薄板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高强螺纹钢筋",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:01:39"
+}

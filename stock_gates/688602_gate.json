@@ -1,0 +1,46 @@
+{
+  "stock_id": "688602",
+  "stock_name": "康鹏科技",
+  "concept": "含氟精细化学品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "含氟单晶合成",
+    "LiFSI合成工艺",
+    "液晶单晶",
+    "K0019（LiFSI）"
+  ],
+  "should": [
+    "液晶中间体",
+    "OLED产品",
+    "K0119（有机硅材料）",
+    "含氟精细化学品",
+    "显示面板",
+    "新能源电池",
+    "电子化学品",
+    "有机硅材料",
+    "含氟单晶全球市场份额约50%",
+    "规模最大的专业LiFSI厂商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "含氟单晶合成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LiFSI合成工艺",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液晶单晶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "K0019（LiFSI）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:22:02"
+}

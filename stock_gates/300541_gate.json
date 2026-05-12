@@ -1,0 +1,20 @@
+{
+  "stock_id": "300541",
+  "stock_name": "先进数通",
+  "concept": "金融IT服务",
+  "strategy_type": "industry_chain",
+  "must": [],
+  "should": [
+    "Starring",
+    "iMOIA",
+    "SharkData",
+    "金融IT服务",
+    "AI算力解决方案",
+    "大模型一体机"
+  ],
+  "not": [],
+  "evidence_refs": [],
+  "quality": "weak",
+  "must_count": 0,
+  "generated_at": "2026-05-11T18:31:55"
+}

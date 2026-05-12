@@ -1,0 +1,41 @@
+{
+  "stock_id": "600711",
+  "stock_name": "盛屯矿业",
+  "concept": "有色金属矿业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "有色金属矿山采掘",
+    "矿产品贸易",
+    "金属金融服务"
+  ],
+  "should": [
+    "镍",
+    "铜",
+    "钴",
+    "正极材料",
+    "前驱体",
+    "卡隆威铜钴矿山",
+    "盛迈镍业高冰镍项目",
+    "贵州新材料项目",
+    "三元前驱体合作项目",
+    "有色金属矿业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "有色金属矿山采掘",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "矿产品贸易",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金属金融服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:25:34"
+}

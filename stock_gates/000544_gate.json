@@ -1,0 +1,36 @@
+{
+  "stock_id": "000544",
+  "stock_name": "中原环保",
+  "concept": "生态环境综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "污水处理",
+    "集中供热"
+  ],
+  "should": [
+    "供水",
+    "农村污水治理",
+    "污泥处置",
+    "中水利用",
+    "建筑垃圾资源化处置利用",
+    "环保设备制造",
+    "光伏发电",
+    "水环境综合治理",
+    "污水深度处理",
+    "污泥资源化利用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "污水处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集中供热",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:55:38"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "002141",
+  "stock_name": "贤丰控股",
+  "concept": "兽用疫苗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "兽用疫苗"
+  ],
+  "should": [
+    "猪蓝耳疫苗",
+    "圆环疫苗",
+    "腹泻疫苗",
+    "支原体疫苗",
+    "伪狂犬疫苗",
+    "猪瘟疫苗",
+    "活疫苗耐热保护剂",
+    "灭活疫苗冻干剂型",
+    "灭活疫苗",
+    "活疫苗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "兽用疫苗",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:25:36"
+}

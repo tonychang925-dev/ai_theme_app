@@ -1,0 +1,41 @@
+{
+  "stock_id": "300184",
+  "stock_name": "力源信息",
+  "concept": "电子元器件分销",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子元器件分销",
+    "代理分销商",
+    "增值分销商"
+  ],
+  "should": [
+    "智能电网产品研发、生产及销售",
+    "芯片解决方案（电能表）",
+    "电力线通信模块",
+    "微控制器（MCU）",
+    "EEPROM",
+    "SJ-MOSFET芯片",
+    "汽车电子",
+    "工业及新能源",
+    "物联网",
+    "智能电网"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子元器件分销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "代理分销商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "增值分销商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:16:33"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "002756",
+  "stock_name": "永兴材料",
+  "concept": "不锈钢长材龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "不锈钢长材龙头",
+    "不锈钢长材龙头企业",
+    "锂电新能源业务",
+    "特钢新材料业务"
+  ],
+  "should": [
+    "电池级碳酸锂",
+    "不锈钢棒线材",
+    "特殊合金材料",
+    "复合盐低温焙烧技术",
+    "固氟技术",
+    "先成型后隧道窑焙烧工艺",
+    "MVR节能蒸发浓缩装置",
+    "分段磨矿技术",
+    "21Ah方形铝壳电池",
+    "新能源汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "不锈钢长材龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "不锈钢长材龙头企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂电新能源业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特钢新材料业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:56:12"
+}

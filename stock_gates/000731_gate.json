@@ -1,0 +1,51 @@
+{
+  "stock_id": "000731",
+  "stock_name": "四川美丰",
+  "concept": "化肥化工一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "尿素",
+    "复合肥",
+    "车用尿素",
+    "三聚氰胺",
+    "硝铵"
+  ],
+  "should": [
+    "天然气",
+    "合成氨",
+    "液化天然气",
+    "包装塑料制品",
+    "农用尿素",
+    "高分子材料产业园",
+    "全PE结构镀氧化物膜材",
+    "重载膜",
+    "聚丙烯流延功能膜材",
+    "电池隔膜"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "尿素",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复合肥",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车用尿素",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三聚氰胺",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硝铵",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:02:51"
+}

@@ -1,0 +1,33 @@
+{
+  "stock_id": "603196",
+  "stock_name": "日播时尚",
+  "concept": "中高端女装",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中高端女装",
+    "女装"
+  ],
+  "should": [
+    "童装",
+    "设计创新",
+    "材料及工艺技术研发",
+    "都市成长型女性",
+    "3-8岁儿童",
+    "自制生产与外协生产相结合",
+    "按需采购模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中高端女装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "女装",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:46:03"
+}

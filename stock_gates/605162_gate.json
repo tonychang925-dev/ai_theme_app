@@ -1,0 +1,41 @@
+{
+  "stock_id": "605162",
+  "stock_name": "新中港",
+  "concept": "区域热电联产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "蒸汽",
+    "电力",
+    "高参数全背压技术"
+  ],
+  "should": [
+    "压缩空气",
+    "亚临界（一次再热）参数机组",
+    "区域热电联产",
+    "燃烧自动控制",
+    "耦合生物质、固废改造",
+    "造纸",
+    "印染",
+    "医药",
+    "化工",
+    "食品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "蒸汽",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高参数全背压技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:02:23"
+}

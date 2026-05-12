@@ -1,0 +1,31 @@
+{
+  "stock_id": "000590",
+  "stock_name": "古汉医药",
+  "concept": "中西药制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "古汉养生精"
+  ],
+  "should": [
+    "养心定悸颗粒",
+    "健肾壮腰丸",
+    "大容量注射剂",
+    "原料药",
+    "五维赖氨酸口服溶液",
+    "中西药制造",
+    "中药传统秘方",
+    "验方",
+    "西药制剂",
+    "国家秘密技术项目"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "古汉养生精",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T16:57:26"
+}

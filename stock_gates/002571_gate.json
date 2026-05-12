@@ -1,0 +1,39 @@
+{
+  "stock_id": "002571",
+  "stock_name": "德力股份",
+  "concept": "日用玻璃器皿",
+  "strategy_type": "industry_chain",
+  "must": [
+    "日用玻璃器皿",
+    "日用玻璃制品",
+    "行业龙头"
+  ],
+  "should": [
+    "化妆品包装容器",
+    "吹制",
+    "压制",
+    "压吹",
+    "钠钙玻璃",
+    "水晶玻璃",
+    "硼硅玻璃",
+    "全产业链"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "日用玻璃器皿",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "日用玻璃制品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "行业龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:47:53"
+}

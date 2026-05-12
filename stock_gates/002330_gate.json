@@ -1,0 +1,36 @@
+{
+  "stock_id": "002330",
+  "stock_name": "得利斯",
+  "concept": "肉制品预制菜",
+  "strategy_type": "industry_chain",
+  "must": [
+    "预制菜",
+    "肉制品预制菜"
+  ],
+  "should": [
+    "冷却肉及冷冻肉",
+    "低温肉制品",
+    "速冻调理产品",
+    "牛肉系列产品",
+    "低温肉制品加工工艺",
+    "脱酸排毒冷却肉技术",
+    "生猪可追溯安全体系",
+    "生猪屠宰",
+    "肉制品深加工",
+    "牛肉精细加工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "预制菜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "肉制品预制菜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:35:49"
+}

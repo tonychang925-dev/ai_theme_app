@@ -1,0 +1,33 @@
+{
+  "stock_id": "301332",
+  "stock_name": "德尔玛",
+  "concept": "创新家电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "创新家电",
+    "吸尘清洁类产品"
+  ],
+  "should": [
+    "水健康类产品",
+    "生活卫浴类产品",
+    "个护健康类产品",
+    "自主研发",
+    "原创设计",
+    "自有生产",
+    "国家级专精特新'小巨人'"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "创新家电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "吸尘清洁类产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:03:11"
+}

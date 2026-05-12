@@ -1,0 +1,36 @@
+{
+  "stock_id": "603665",
+  "stock_name": "康隆达",
+  "concept": "锂资源开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂资源开发",
+    "劳动防护手套",
+    "锂云母提锂"
+  ],
+  "should": [
+    "硫酸盐焙烧法提锂",
+    "隧道窑技术",
+    "碳酸锂生产",
+    "锂辉石矿包销",
+    "锂电产业链"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂资源开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "劳动防护手套",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂云母提锂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:54:13"
+}

@@ -1,0 +1,30 @@
+{
+  "stock_id": "300988",
+  "stock_name": "津荣天宇",
+  "concept": "精密金属制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密金属制造"
+  ],
+  "should": [
+    "能源管理及输配电",
+    "工业自动化及智能制造",
+    "风光及分布式能源",
+    "云计算数据中心",
+    "轨道交通",
+    "节能汽车",
+    "新能源汽车",
+    "5G基站",
+    "大数据中心"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密金属制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:52:02"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300013",
+  "stock_name": "新宁物流",
+  "concept": "电子信息物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "一体化供应链物流服务",
+    "电子信息产业供应链",
+    "电子信息物流"
+  ],
+  "should": [
+    "电子元器件保税仓储",
+    "3C电子制造",
+    "联想",
+    "仁宝",
+    "华硕",
+    "海尔",
+    "保税仓库",
+    "通关服务",
+    "运输服务",
+    "仓储服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "一体化供应链物流服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子信息产业供应链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子信息物流",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:09:31"
+}

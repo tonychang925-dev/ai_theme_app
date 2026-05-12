@@ -1,0 +1,36 @@
+{
+  "stock_id": "603725",
+  "stock_name": "天安新材",
+  "concept": "泛家居材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高分子复合饰面材料",
+    "建筑陶瓷"
+  ],
+  "should": [
+    "防火板材",
+    "汽车内饰饰面材料",
+    "家居装饰饰面材料",
+    "薄膜",
+    "人造革",
+    "专精特新",
+    "国家火炬计划",
+    "国家知识产权优势企业",
+    "国家绿色工厂",
+    "国产替代"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高分子复合饰面材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑陶瓷",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:55:38"
+}

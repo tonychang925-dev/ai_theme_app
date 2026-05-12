@@ -1,0 +1,36 @@
+{
+  "stock_id": "300948",
+  "stock_name": "冠中生态",
+  "concept": "生态修复",
+  "strategy_type": "industry_chain",
+  "must": [
+    "植被恢复",
+    "生态修复"
+  ],
+  "should": [
+    "水土保持",
+    "防沙治沙",
+    "土壤修复",
+    "水环境治理",
+    "景观园林",
+    "市政工程",
+    "环卫保洁",
+    "综合型生态修复治理",
+    "行业集中度提升",
+    "资金驱动特点"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "植被恢复",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生态修复",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:50:25"
+}

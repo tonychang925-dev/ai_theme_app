@@ -1,0 +1,51 @@
+{
+  "stock_id": "002833",
+  "stock_name": "弘亚数控",
+  "concept": "板式家具机械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "板式家具机械",
+    "封边机",
+    "数控钻",
+    "加工中心",
+    "裁板锯"
+  ],
+  "should": [
+    "智能包装设备",
+    "木门生产设备",
+    "激光封边技术",
+    "高精度定位系统",
+    "自动调刀技术",
+    "自主研发控制系统",
+    "多轴联动控制",
+    "CAD/CAM软件技术",
+    "套房家具",
+    "办公家具"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "板式家具机械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "封边机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数控钻",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "加工中心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "裁板锯",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:59:26"
+}

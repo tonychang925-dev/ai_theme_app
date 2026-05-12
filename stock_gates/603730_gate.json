@@ -1,0 +1,31 @@
+{
+  "stock_id": "603730",
+  "stock_name": "岱美股份",
+  "concept": "乘用车内饰件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "遮阳板"
+  ],
+  "should": [
+    "头枕",
+    "顶棚",
+    "顶棚中央控制器",
+    "扶手",
+    "通用",
+    "福特",
+    "克莱斯勒",
+    "大众",
+    "丰田",
+    "本田"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "遮阳板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:55:52"
+}

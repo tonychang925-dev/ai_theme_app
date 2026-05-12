@@ -1,0 +1,35 @@
+{
+  "stock_id": "603129",
+  "stock_name": "春风动力",
+  "concept": "动力运动装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "四轮全地形车",
+    "大排量摩托车"
+  ],
+  "should": [
+    "电动摩托车",
+    "儿童ATV",
+    "智能化平台C-LINK",
+    "三电领域技术",
+    "智能网联",
+    "智能座舱",
+    "智能驾驶",
+    "美国市场与一线品牌比肩",
+    "欧洲市场市占率行业第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "四轮全地形车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大排量摩托车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:44:38"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "603270",
+  "stock_name": "金帝股份",
+  "concept": "精密轴承零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轴承保持架",
+    "汽车精密零部件"
+  ],
+  "should": [
+    "精密冲压技术",
+    "数控精密机加工",
+    "精密铸造",
+    "精密轴承零部件",
+    "轴承配件",
+    "模具设计能力",
+    "复合工艺制造技术",
+    "门锁系统",
+    "安全系统",
+    "座椅系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轴承保持架",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车精密零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:47:44"
+}

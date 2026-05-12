@@ -1,0 +1,31 @@
+{
+  "stock_id": "603323",
+  "stock_name": "苏农银行",
+  "concept": "农村商业银行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农村商业银行"
+  ],
+  "should": [
+    "苏农E贷",
+    "首惠贷",
+    "苏碳融",
+    "金融数字人",
+    "远程视频银行",
+    "中小企业金融服务管家",
+    "制造业贷款占比第一行",
+    "三进区域战略",
+    "长三角一体化",
+    "数字化转型"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农村商业银行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:49:05"
+}

@@ -1,0 +1,35 @@
+{
+  "stock_id": "688343",
+  "stock_name": "云天励飞",
+  "concept": "视觉AI芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "视觉AI芯片",
+    "神经网络处理器芯片"
+  ],
+  "should": [
+    "Chipet技术",
+    "算法仓",
+    "多源异构机器人调度平台",
+    "智慧巡检产品",
+    "深度学习推理计算算力",
+    "城市治理",
+    "智慧道路巡检",
+    "物流园区",
+    "商业服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "视觉AI芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "神经网络处理器芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:15:58"
+}

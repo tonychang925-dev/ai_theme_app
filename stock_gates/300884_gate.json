@@ -1,0 +1,41 @@
+{
+  "stock_id": "300884",
+  "stock_name": "狄耐克",
+  "concept": "智慧社区与医疗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "楼宇对讲",
+    "医护对讲",
+    "智能家居"
+  ],
+  "should": [
+    "新风系统",
+    "智慧通行",
+    "智能门锁",
+    "Linux操作系统",
+    "Android操作系统",
+    "物联网",
+    "大数据",
+    "人工智能",
+    "云计算",
+    "鸿蒙OS"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "楼宇对讲",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医护对讲",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能家居",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:47:41"
+}

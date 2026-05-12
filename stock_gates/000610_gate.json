@@ -1,0 +1,41 @@
+{
+  "stock_id": "000610",
+  "stock_name": "西安旅游",
+  "concept": "文旅综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "旅行社",
+    "酒店",
+    "酒店民宿"
+  ],
+  "should": [
+    "商贸",
+    "西旅万澳",
+    "西旅生态",
+    "西旅课堂",
+    "文旅综合服务",
+    "周边游",
+    "亲子游",
+    "研学",
+    "商务会展",
+    "品牌管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "旅行社",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "酒店",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "酒店民宿",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:58:16"
+}

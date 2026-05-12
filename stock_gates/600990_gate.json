@@ -1,0 +1,46 @@
+{
+  "stock_id": "600990",
+  "stock_name": "四创电子",
+  "concept": "电磁感知产业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电磁感知产业",
+    "气象雷达",
+    "空管雷达",
+    "场监雷达"
+  ],
+  "should": [
+    "精密电路",
+    "微波产品",
+    "电源产品",
+    "北斗终端",
+    "电磁感知",
+    "视频感知",
+    "气象监测",
+    "民航交通",
+    "气象局核心供应商",
+    "民航空管局代表产品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电磁感知产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "气象雷达",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空管雷达",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "场监雷达",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:32:45"
+}

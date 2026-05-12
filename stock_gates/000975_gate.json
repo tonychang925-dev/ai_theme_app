@@ -1,0 +1,35 @@
+{
+  "stock_id": "000975",
+  "stock_name": "山金国际",
+  "concept": "黄金矿业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "黄金矿业",
+    "有色金属采选",
+    "合质金"
+  ],
+  "should": [
+    "铅锌铜精矿含银",
+    "金属商品贸易",
+    "黄金单位成本低于同业公司",
+    "黄金矿山中毛利率较高的矿企"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "黄金矿业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有色金属采选",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "合质金",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:11:50"
+}

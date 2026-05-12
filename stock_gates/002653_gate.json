@@ -1,0 +1,51 @@
+{
+  "stock_id": "002653",
+  "stock_name": "海思科",
+  "concept": "综合型药企",
+  "strategy_type": "industry_chain",
+  "must": [
+    "肠外营养液",
+    "首仿药",
+    "环泊酚",
+    "HSK3486",
+    "HSK29116"
+  ],
+  "should": [
+    "PROTAC技术",
+    "肠外营养",
+    "3.1类新药",
+    "抗生素",
+    "肝胆消化仿制药",
+    "HSK7653",
+    "HSK21542",
+    "HSK16149",
+    "综合型药企",
+    "麻醉镇痛"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "肠外营养液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "首仿药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环泊酚",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "HSK3486",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "HSK29116",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:51:40"
+}

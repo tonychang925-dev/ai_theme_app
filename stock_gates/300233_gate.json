@@ -1,0 +1,31 @@
+{
+  "stock_id": "300233",
+  "stock_name": "金城医药",
+  "concept": "头孢抗生素中间体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "头孢抗生素中间体"
+  ],
+  "should": [
+    "AE活性酯",
+    "头孢他啶活性酯",
+    "呋喃铵盐",
+    "头孢克肟活性酯",
+    "头孢地尼活性酯",
+    "三嗪环",
+    "谷胱甘肽",
+    "腺苷蛋氨酸",
+    "头孢唑林钠",
+    "头孢曲松钠"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "头孢抗生素中间体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:18:49"
+}

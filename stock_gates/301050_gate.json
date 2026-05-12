@@ -1,0 +1,36 @@
+{
+  "stock_id": "301050",
+  "stock_name": "雷电微力",
+  "concept": "毫米波微系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "毫米波微系统",
+    "毫米波微系统技术"
+  ],
+  "should": [
+    "高频段毫米波前端",
+    "星载毫米波微系统",
+    "T/R组件",
+    "芯片设计",
+    "EDA软件设计",
+    "集成电路布图设计",
+    "雷达",
+    "通信",
+    "自动驾驶",
+    "5G通信"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "毫米波微系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "毫米波微系统技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:54:42"
+}

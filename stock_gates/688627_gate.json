@@ -1,0 +1,33 @@
+{
+  "stock_id": "688627",
+  "stock_name": "精智达",
+  "concept": "显示检测设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "显示检测设备",
+    "光学检测及校正修复系统"
+  ],
+  "should": [
+    "老化系统",
+    "触控检测系统",
+    "信号发生器",
+    "光学检测",
+    "校正修复",
+    "老化测试",
+    "触控检测"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "显示检测设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光学检测及校正修复系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:22:35"
+}

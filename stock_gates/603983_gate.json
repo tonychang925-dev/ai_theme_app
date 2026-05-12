@@ -1,0 +1,31 @@
+{
+  "stock_id": "603983",
+  "stock_name": "丸美生物",
+  "concept": "眼部护肤龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "眼部护肤龙头"
+  ],
+  "should": [
+    "眼部护肤产品",
+    "眼部护理技术",
+    "膏霜乳液",
+    "彩妆产品",
+    "天然食材养肤",
+    "百货商场",
+    "商业超市",
+    "美容院",
+    "电商平台",
+    "中高端定位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "眼部护肤龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:00:09"
+}

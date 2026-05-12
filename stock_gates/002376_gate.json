@@ -1,0 +1,31 @@
+{
+  "stock_id": "002376",
+  "stock_name": "新北洋",
+  "concept": "智能设备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能设备/装备"
+  ],
+  "should": [
+    "专用打印扫描产品",
+    "智能自助终端",
+    "智慧金融设备",
+    "智能物流装备",
+    "关键基础零部件",
+    "智慧金融",
+    "智能物流",
+    "智能设备制造",
+    "系统集成",
+    "无人零售"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能设备/装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:38:39"
+}

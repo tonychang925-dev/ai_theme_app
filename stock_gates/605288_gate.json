@@ -1,0 +1,46 @@
+{
+  "stock_id": "605288",
+  "stock_name": "凯迪股份",
+  "concept": "线性驱动系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "线性驱动系统",
+    "智能家居驱动系统",
+    "智慧办公驱动系统",
+    "医疗康护驱动系统"
+  ],
+  "should": [
+    "电动尾门驱动系统",
+    "主控芯片",
+    "固件开发",
+    "功能沙发",
+    "电动升降办公桌",
+    "电动医疗床",
+    "汽车电动尾门",
+    "光伏跟踪系统",
+    "核心动力来源",
+    "核心动力部件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "线性驱动系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能家居驱动系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧办公驱动系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗康护驱动系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:03:24"
+}

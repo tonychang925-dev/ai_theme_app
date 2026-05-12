@@ -1,0 +1,36 @@
+{
+  "stock_id": "002638",
+  "stock_name": "勤上股份",
+  "concept": "半导体照明",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体照明",
+    "智慧照明"
+  ],
+  "should": [
+    "户外照明",
+    "景观照明",
+    "户外庭院产品",
+    "散热技术",
+    "驱动技术",
+    "光学技术",
+    "结构技术",
+    "控制技术",
+    "智慧城市平台研发",
+    "光通讯技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体照明",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧照明",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:51:01"
+}

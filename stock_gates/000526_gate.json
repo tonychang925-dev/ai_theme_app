@@ -1,0 +1,41 @@
+{
+  "stock_id": "000526",
+  "stock_name": "学大教育",
+  "concept": "个性化教育",
+  "strategy_type": "industry_chain",
+  "must": [
+    "个性化教育",
+    "个性化教育培训",
+    "个性化一对一辅导"
+  ],
+  "should": [
+    "职业学校教育",
+    "职业培训",
+    "素质教育",
+    "文化服务",
+    "教育信息化",
+    "全日制培训",
+    "智能绘本馆",
+    "教育信息化智能平台",
+    "中等职业学校",
+    "校园"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "个性化教育",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "个性化教育培训",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "个性化一对一辅导",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:54:33"
+}

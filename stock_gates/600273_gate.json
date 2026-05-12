@@ -1,0 +1,46 @@
+{
+  "stock_id": "600273",
+  "stock_name": "嘉化能源",
+  "concept": "化工循环经济",
+  "strategy_type": "industry_chain",
+  "must": [
+    "蒸汽",
+    "氯碱",
+    "邻对位",
+    "脂肪醇（酸）",
+    "硫酸"
+  ],
+  "should": [
+    "化工循环经济",
+    "循环经济",
+    "规模优势",
+    "技术领先优势",
+    "多品种优势"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "蒸汽",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氯碱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "邻对位",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "脂肪醇（酸）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硫酸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:13:37"
+}

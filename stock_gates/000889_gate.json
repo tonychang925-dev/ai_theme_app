@@ -1,0 +1,36 @@
+{
+  "stock_id": "000889",
+  "stock_name": "中嘉博创",
+  "concept": "信息智能传输",
+  "strategy_type": "industry_chain",
+  "must": [
+    "信息智能传输",
+    "通信网络维护"
+  ],
+  "should": [
+    "金融服务外包",
+    "5G消息",
+    "智能短信",
+    "RCS技术",
+    "电子商务",
+    "互联网",
+    "金融",
+    "物流快递",
+    "第三方支付",
+    "国内第一梯队"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "信息智能传输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通信网络维护",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:08:07"
+}

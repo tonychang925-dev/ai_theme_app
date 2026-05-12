@@ -1,0 +1,46 @@
+{
+  "stock_id": "000681",
+  "stock_name": "视觉中国",
+  "concept": "版权内容平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "版权内容平台",
+    "版权内容交易",
+    "数字资产管理",
+    "图片素材"
+  ],
+  "should": [
+    "视频素材",
+    "音频素材",
+    "Corbis图库",
+    "元视觉平台",
+    "数字版照片",
+    "数字艺术画",
+    "数字藏书票",
+    "机构供应商",
+    "独立供稿人",
+    "签约创作者"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "版权内容平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "版权内容交易",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字资产管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "图片素材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:00:30"
+}

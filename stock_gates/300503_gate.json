@@ -1,0 +1,41 @@
+{
+  "stock_id": "300503",
+  "stock_name": "昊志机电",
+  "concept": "高端装备核心功能部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高速精密电主轴",
+    "主轴",
+    "数控系统"
+  ],
+  "should": [
+    "转台",
+    "直线电机",
+    "谐波减速器",
+    "伺服电机",
+    "驱动器",
+    "传感器",
+    "氢能源汽车燃料电池压缩机",
+    "曝气鼓风机",
+    "直驱类高速风机",
+    "主控芯片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高速精密电主轴",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "主轴",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数控系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:30:17"
+}

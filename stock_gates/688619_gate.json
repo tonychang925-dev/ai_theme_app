@@ -1,0 +1,46 @@
+{
+  "stock_id": "688619",
+  "stock_name": "罗普特",
+  "concept": "计算机视觉AI",
+  "strategy_type": "industry_chain",
+  "must": [
+    "计算机视觉AI",
+    "计算机视觉",
+    "人工智能",
+    "计算机视觉领域龙头企业"
+  ],
+  "should": [
+    "大数据算法",
+    "语义分析",
+    "元素感知",
+    "边缘计算",
+    "数据挖掘",
+    "计算机深度学习",
+    "逻辑推理",
+    "AI+城市",
+    "AI+安全",
+    "AI+交通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "计算机视觉AI",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "计算机视觉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人工智能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "计算机视觉领域龙头企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:22:25"
+}

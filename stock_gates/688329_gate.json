@@ -1,0 +1,36 @@
+{
+  "stock_id": "688329",
+  "stock_name": "艾隆科技",
+  "concept": "医疗物资智能管理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医疗物资智能管理",
+    "自动化药房"
+  ],
+  "should": [
+    "自动化病区",
+    "自动化物流",
+    "维保及技术服务",
+    "物联网",
+    "大数据分析",
+    "自动化机器人",
+    "智能传感",
+    "门诊药房",
+    "静配中心",
+    "院外自动化药房"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医疗物资智能管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自动化药房",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:15:36"
+}

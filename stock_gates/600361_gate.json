@@ -1,0 +1,36 @@
+{
+  "stock_id": "600361",
+  "stock_name": "创新新材",
+  "concept": "铝合金材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铝合金材料",
+    "棒材"
+  ],
+  "should": [
+    "板带箔",
+    "铝杆线缆",
+    "型材",
+    "结构件",
+    "合金铝材料生产技术",
+    "3C电子",
+    "汽车轻量化",
+    "建筑",
+    "新能源",
+    "苹果核心供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铝合金材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "棒材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:16:01"
+}

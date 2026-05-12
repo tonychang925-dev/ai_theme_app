@@ -1,0 +1,51 @@
+{
+  "stock_id": "600746",
+  "stock_name": "江苏索普",
+  "concept": "醋酸及衍生品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "醋酸及衍生品",
+    "冰醋酸",
+    "ADC发泡剂",
+    "漂粉精",
+    "橡胶硫化促进剂"
+  ],
+  "should": [
+    "氯碱",
+    "醋酸造气工艺技术提升",
+    "醋酸一期装置技改",
+    "20万吨/年碳酸二甲酯项目",
+    "染料",
+    "印染",
+    "胶卷",
+    "溶剂",
+    "医药",
+    "农药"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "醋酸及衍生品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冰醋酸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ADC发泡剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "漂粉精",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "橡胶硫化促进剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:26:35"
+}

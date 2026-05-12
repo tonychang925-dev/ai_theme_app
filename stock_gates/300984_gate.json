@@ -1,0 +1,36 @@
+{
+  "stock_id": "300984",
+  "stock_name": "金沃股份",
+  "concept": "轴承套圈制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轴承套圈制造",
+    "轴承套圈"
+  ],
+  "should": [
+    "舍弗勒",
+    "恩斯克",
+    "斯凯孚",
+    "捷太格特",
+    "瓦房店轴承集团",
+    "球类产品",
+    "滚针类产品",
+    "滚子类产品",
+    "产业链中游",
+    "国际大型轴承制造公司供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轴承套圈制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轴承套圈",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:51:55"
+}

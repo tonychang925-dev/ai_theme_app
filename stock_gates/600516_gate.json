@@ -1,0 +1,41 @@
+{
+  "stock_id": "600516",
+  "stock_name": "方大炭素",
+  "concept": "石墨电极龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "石墨电极龙头",
+    "石墨电极",
+    "炭素新材料"
+  ],
+  "should": [
+    "针状焦产能",
+    "特种石墨制品",
+    "核电用炭材料",
+    "锂离子电池用负极材料",
+    "煅后焦产能",
+    "生物炭制品",
+    "石墨烯口罩",
+    "炭/炭复合材料",
+    "石油焦",
+    "石墨烯制备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "石墨电极龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "石墨电极",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "炭素新材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:19:59"
+}

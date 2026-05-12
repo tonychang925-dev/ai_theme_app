@@ -1,0 +1,41 @@
+{
+  "stock_id": "300533",
+  "stock_name": "冰川网络",
+  "concept": "网络游戏研发运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "客户端网络游戏",
+    "移动类游戏",
+    "圣魂纷争"
+  ],
+  "should": [
+    "远征OL",
+    "龙武",
+    "X-HERO",
+    "天境传说",
+    "大世界",
+    "代号H",
+    "代号G",
+    "代号Q",
+    "代号F",
+    "代号苍穹"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "客户端网络游戏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动类游戏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "圣魂纷争",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:31:37"
+}

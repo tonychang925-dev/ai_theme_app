@@ -1,0 +1,51 @@
+{
+  "stock_id": "600513",
+  "stock_name": "联环药业",
+  "concept": "泌尿抗组胺心血管药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "爱普列特片",
+    "特非那定片（敏迪）",
+    "盐酸屈他维林注射液",
+    "地奥司明",
+    "依巴斯汀片（苏迪）"
+  ],
+  "should": [
+    "泌尿系统",
+    "抗组胺",
+    "心血管",
+    "泌尿抗组胺心血管药",
+    "创新药研发",
+    "药品一致性评价",
+    "全国首家通过一致性评价",
+    "国家集中采购中标",
+    "省级联盟带量采购中标",
+    "前列腺诊疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "爱普列特片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特非那定片（敏迪）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "盐酸屈他维林注射液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "地奥司明",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "依巴斯汀片（苏迪）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:20:02"
+}

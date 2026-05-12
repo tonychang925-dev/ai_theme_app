@@ -1,0 +1,31 @@
+{
+  "stock_id": "002634",
+  "stock_name": "棒杰股份",
+  "concept": "无缝服装",
+  "strategy_type": "industry_chain",
+  "must": [
+    "无缝服装"
+  ],
+  "should": [
+    "内衣系列产品",
+    "套装系列产品",
+    "休闲服饰产品",
+    "运动服饰产品",
+    "一次成型无缝针织",
+    "基础内衣",
+    "运动户外装",
+    "休闲装",
+    "时装",
+    "ODM/OEM模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "无缝服装",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:50:46"
+}

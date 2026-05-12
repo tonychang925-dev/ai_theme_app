@@ -1,0 +1,46 @@
+{
+  "stock_id": "300308",
+  "stock_name": "中际旭创",
+  "concept": "高速光模块",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高速光模块",
+    "800G光模块",
+    "1.6T光模块",
+    "全球最佳交付者"
+  ],
+  "should": [
+    "100G光模块",
+    "200G光模块",
+    "400G光模块",
+    "5G前传光模块",
+    "5G中传光模块",
+    "5G回传光模块",
+    "骨干网传输光模块",
+    "核心网传输光模块",
+    "硅光技术",
+    "LPO技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高速光模块",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "800G光模块",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "1.6T光模块",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球最佳交付者",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:22:09"
+}

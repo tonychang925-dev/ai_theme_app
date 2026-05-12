@@ -1,0 +1,51 @@
+{
+  "stock_id": "605196",
+  "stock_name": "华通线缆",
+  "concept": "线缆油服双主业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电线电缆",
+    "潜油泵电缆",
+    "矿用电缆",
+    "连续油管",
+    "智能管缆"
+  ],
+  "should": [
+    "世界三大油服公司核心供应商",
+    "国网电工装备供应商",
+    "主控芯片",
+    "工业互联网平台",
+    "EIP平台",
+    "固件开发",
+    "电力系统",
+    "轨道交通",
+    "新能源",
+    "建筑工程"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电线电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "潜油泵电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "矿用电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "连续油管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能管缆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:02:53"
+}

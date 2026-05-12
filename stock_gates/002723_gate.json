@@ -1,0 +1,36 @@
+{
+  "stock_id": "002723",
+  "stock_name": "小崧股份",
+  "concept": "小家电制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "可充电备用照明产品",
+    "可充电交直流两用风扇"
+  ],
+  "should": [
+    "小家电制造",
+    "环境电器",
+    "消杀电器",
+    "个护电器",
+    "厨房电器",
+    "全产业链制造能力",
+    "自主研发",
+    "应急",
+    "无绳",
+    "柔性化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "可充电备用照明产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "可充电交直流两用风扇",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:54:46"
+}

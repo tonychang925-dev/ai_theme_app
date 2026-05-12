@@ -1,0 +1,46 @@
+{
+  "stock_id": "688551",
+  "stock_name": "科威尔",
+  "concept": "测试电源设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "测试电源设备",
+    "大功率测试电源",
+    "小功率测试电源",
+    "测试系统（ATE）"
+  ],
+  "should": [
+    "燃料电池电堆测试系统",
+    "燃料电池发动机测试系统",
+    "PEM电解槽测试系统",
+    "IGBT动态测试系统",
+    "IGBT静态测试系统",
+    "功率器件热特性测试系统",
+    "产线自动化测试工作站",
+    "主控芯片",
+    "光伏",
+    "储能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "测试电源设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大功率测试电源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小功率测试电源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "测试系统（ATE）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:20:24"
+}

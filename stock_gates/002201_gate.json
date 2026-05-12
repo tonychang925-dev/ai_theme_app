@@ -1,0 +1,36 @@
+{
+  "stock_id": "002201",
+  "stock_name": "九鼎新材",
+  "concept": "玻纤制品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "玻纤制品",
+    "玻璃纤维深加工制品"
+  ],
+  "should": [
+    "玻璃纤维复合材料",
+    "高性能玻璃纤维",
+    "高性能玻璃纤维增强基材",
+    "交通运输",
+    "电子电器",
+    "新能源",
+    "建材",
+    "环保",
+    "管道",
+    "储罐"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "玻纤制品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "玻璃纤维深加工制品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:28:56"
+}

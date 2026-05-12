@@ -1,0 +1,33 @@
+{
+  "stock_id": "300086",
+  "stock_name": "康芝药业",
+  "concept": "儿童大健康",
+  "strategy_type": "industry_chain",
+  "must": [
+    "儿童药",
+    "母婴健康用品"
+  ],
+  "should": [
+    "医用口罩",
+    "口腔速溶膜剂",
+    "药物超细微粒制备",
+    "药粉微观形态结构检测",
+    "儿童用药",
+    "母婴护理",
+    "医疗防护"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "儿童药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "母婴健康用品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:12:46"
+}

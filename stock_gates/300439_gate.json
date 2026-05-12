@@ -1,0 +1,31 @@
+{
+  "stock_id": "300439",
+  "stock_name": "美康生物",
+  "concept": "体外诊断",
+  "strategy_type": "industry_chain",
+  "must": [
+    "诊断试剂",
+    "诊断仪器"
+  ],
+  "should": [
+    "疾病筛查",
+    "诊断",
+    "治疗监测",
+    "预后评估",
+    "少数供应商之一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "诊断试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "诊断仪器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:27:25"
+}

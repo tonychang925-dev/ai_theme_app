@@ -1,0 +1,36 @@
+{
+  "stock_id": "603356",
+  "stock_name": "华菱精工",
+  "concept": "电梯配件制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "对重块",
+    "钣金产品"
+  ],
+  "should": [
+    "新型补偿缆",
+    "钢丝绳",
+    "车库钣金件",
+    "施工升降机配件",
+    "风电制动器",
+    "偏航器",
+    "光伏支架",
+    "电梯配件制造",
+    "大规模定制化生产",
+    "柔性化制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "对重块",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钣金产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:49:55"
+}

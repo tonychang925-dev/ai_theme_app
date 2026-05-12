@@ -1,0 +1,32 @@
+{
+  "stock_id": "301316",
+  "stock_name": "慧博云通",
+  "concept": "软件技术服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "软件技术外包服务",
+    "移动智能终端测试服务"
+  ],
+  "should": [
+    "云计算",
+    "大数据",
+    "人工智能",
+    "物联网",
+    "软件技术服务",
+    "移动智能终端全产业链"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "软件技术外包服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动智能终端测试服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:02:41"
+}

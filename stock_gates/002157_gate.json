@@ -1,0 +1,43 @@
+{
+  "stock_id": "002157",
+  "stock_name": "正邦科技",
+  "concept": "一体化农牧",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生猪养殖与销售",
+    "饲料生产与销售",
+    "种猪繁育",
+    "商品猪养殖"
+  ],
+  "should": [
+    "兽药生产与销售",
+    "饲料",
+    "兽药",
+    "一体化农牧",
+    "养殖户饲喂",
+    "屠宰及深加工",
+    "养殖单位育肥"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生猪养殖与销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "饲料生产与销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "种猪繁育",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商品猪养殖",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:26:13"
+}

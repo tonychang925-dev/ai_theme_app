@@ -1,0 +1,36 @@
+{
+  "stock_id": "002536",
+  "stock_name": "飞龙股份",
+  "concept": "汽车热管理部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "机械水泵",
+    "电子水泵"
+  ],
+  "should": [
+    "排气歧管",
+    "涡轮增压器壳体",
+    "热管理多通阀",
+    "热管理控制阀",
+    "电子执行器",
+    "域控制器",
+    "电子集成系统控制",
+    "压电材料动力装置",
+    "汽车热管理部件",
+    "氢燃料电池"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "机械水泵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子水泵",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:46:11"
+}

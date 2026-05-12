@@ -1,0 +1,41 @@
+{
+  "stock_id": "300303",
+  "stock_name": "聚飞光电",
+  "concept": "LED封装龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国内背光LED龙头企业",
+    "LED封装龙头",
+    "背光LED"
+  ],
+  "should": [
+    "Mini LED",
+    "车用LED",
+    "固件开发",
+    "智能手机",
+    "平板电脑",
+    "笔记本电脑",
+    "电视",
+    "车载显示",
+    "AR/VR",
+    "安防监控"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国内背光LED龙头企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LED封装龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "背光LED",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:21:50"
+}

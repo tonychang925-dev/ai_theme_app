@@ -1,0 +1,41 @@
+{
+  "stock_id": "000050",
+  "stock_name": "深天马A",
+  "concept": "中小尺寸显示",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中小尺寸显示",
+    "手机显示",
+    "车载显示"
+  ],
+  "should": [
+    "a-Si",
+    "LTPS",
+    "AMOLED",
+    "Micro-LED",
+    "HTD",
+    "CFOT",
+    "MLP",
+    "屏下摄像头",
+    "虚拟现实(VR)",
+    "专业显示"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中小尺寸显示",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "手机显示",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载显示",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:48:53"
+}

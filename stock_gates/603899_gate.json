@@ -1,0 +1,41 @@
+{
+  "stock_id": "603899",
+  "stock_name": "晨光股份",
+  "concept": "文具文创",
+  "strategy_type": "industry_chain",
+  "must": [
+    "传统零售",
+    "零售大店",
+    "办公直销"
+  ],
+  "should": [
+    "书写文具",
+    "学生文具",
+    "办公文具",
+    "校边店",
+    "连锁加盟",
+    "晨光伙伴金字塔",
+    "零售终端",
+    "直营零售大店",
+    "线上分销",
+    "文具文创"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "传统零售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "零售大店",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "办公直销",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:58:35"
+}

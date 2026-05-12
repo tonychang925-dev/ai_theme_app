@@ -1,0 +1,51 @@
+{
+  "stock_id": "688060",
+  "stock_name": "云涌科技",
+  "concept": "电力信息安全",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力信息安全细分龙头",
+    "工业安全通信网关设备",
+    "工业安全态势感知设备",
+    "纵向加密认证网关",
+    "配网加密终端"
+  ],
+  "should": [
+    "安全充电计费控制单元",
+    "电动汽车充电桩",
+    "物理隔离装置",
+    "内网安全监测装置",
+    "高速加密隔离网关",
+    "嵌入式采集控制单元",
+    "安全认证",
+    "数据加解密",
+    "电力中心调度",
+    "电力配电接入"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力信息安全细分龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业安全通信网关设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业安全态势感知设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纵向加密认证网关",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "配网加密终端",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:06:55"
+}

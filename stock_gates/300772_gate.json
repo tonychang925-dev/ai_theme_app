@@ -1,0 +1,36 @@
+{
+  "stock_id": "300772",
+  "stock_name": "运达股份",
+  "concept": "风力发电机组",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风力发电机组",
+    "海风系列海上风电机组"
+  ],
+  "should": [
+    "陆上2.XMW系列风电机组",
+    "2.5MW系列风电机组",
+    "3.XMW系列风电机组",
+    "4.XMW系列风电机组",
+    "5.XMW系列风电机组",
+    "6.XMW系列风电机组",
+    "主控芯片",
+    "抗台型技术",
+    "新能源电站投资运营",
+    "后市场智慧服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风力发电机组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海风系列海上风电机组",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:42:35"
+}

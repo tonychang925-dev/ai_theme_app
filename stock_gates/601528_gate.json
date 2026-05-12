@@ -1,0 +1,46 @@
+{
+  "stock_id": "601528",
+  "stock_name": "瑞丰银行",
+  "concept": "普惠金融",
+  "strategy_type": "industry_chain",
+  "must": [
+    "普惠金融践行者",
+    "区域小微领军行",
+    "大零售战略",
+    "数字化转型"
+  ],
+  "should": [
+    "小微企业",
+    "个体工商户",
+    "财富业务",
+    "国际业务",
+    "数字金融",
+    "银政联盟",
+    "百园工程",
+    "金融支持强村共富联合体",
+    "普惠金融",
+    "制造实体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "普惠金融践行者",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "区域小微领军行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大零售战略",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字化转型",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:36:50"
+}

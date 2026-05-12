@@ -1,0 +1,35 @@
+{
+  "stock_id": "002249",
+  "stock_name": "大洋电机",
+  "concept": "电机电控氢能",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑通风及家居电器电机",
+    "新能源汽车动力总成系统"
+  ],
+  "should": [
+    "车辆旋转电器",
+    "IPM多级转子电机",
+    "氢燃料电池发动机及控制系统",
+    "轴向磁通电机",
+    "固体氧化物燃料电池(SOFC)",
+    "电机电控氢能",
+    "高效智能电机",
+    "人形机器人",
+    "数据中心"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑通风及家居电器电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车动力总成系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:31:48"
+}

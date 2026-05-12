@@ -1,0 +1,31 @@
+{
+  "stock_id": "605588",
+  "stock_name": "冠石科技",
+  "concept": "显示材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "偏光片"
+  ],
+  "should": [
+    "液晶面板",
+    "功能性器件",
+    "特种胶粘材料",
+    "显示材料",
+    "全自动生产线",
+    "高精度导向定位调整检测",
+    "显示行业",
+    "LCD电视",
+    "智能手机",
+    "汽车电动化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "偏光片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:04:45"
+}

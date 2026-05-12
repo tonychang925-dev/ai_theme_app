@@ -1,0 +1,41 @@
+{
+  "stock_id": "603073",
+  "stock_name": "彩蝶实业",
+  "concept": "涤纶面料成衣",
+  "strategy_type": "industry_chain",
+  "must": [
+    "涤纶面料",
+    "无缝成衣",
+    "涤纶面料成衣"
+  ],
+  "should": [
+    "涤纶长丝",
+    "染整受托加工",
+    "服装生产企业",
+    "家纺",
+    "产业用纺织品",
+    "服装销售业",
+    "面料生产企业",
+    "自主生产涤纶DTY",
+    "外购涤纶DTY、涤纶FDY",
+    "外购氨纶、锦纶、纱类"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "涤纶面料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无缝成衣",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涤纶面料成衣",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:42:50"
+}

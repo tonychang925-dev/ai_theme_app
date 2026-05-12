@@ -1,0 +1,41 @@
+{
+  "stock_id": "688293",
+  "stock_name": "奥浦迈",
+  "concept": "国产高端培养基",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国产高端培养基",
+    "细胞培养基",
+    "CDMO"
+  ],
+  "should": [
+    "干粉培养基",
+    "液体培养基",
+    "动物细胞培养",
+    "无血清/化学成分限定培养基工艺",
+    "高表达细胞株构建与筛选",
+    "蛋白/抗体生产",
+    "疫苗生产",
+    "细胞治疗",
+    "基因治疗",
+    "进口替代"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国产高端培养基",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "细胞培养基",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CDMO",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:14:26"
+}

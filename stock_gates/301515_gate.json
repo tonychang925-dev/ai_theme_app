@@ -1,0 +1,36 @@
+{
+  "stock_id": "301515",
+  "stock_name": "港通医疗",
+  "concept": "医用气体与洁净系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医用气体装备及系统",
+    "医用洁净装备及系统"
+  ],
+  "should": [
+    "医疗设备及部件",
+    "医用二氧化碳药用辅料",
+    "医用气体与洁净系统",
+    "手术室",
+    "ICU",
+    "DSA",
+    "消毒供应中心",
+    "血液病房",
+    "静脉配置中心",
+    "检验科"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医用气体装备及系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医用洁净装备及系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:05:56"
+}

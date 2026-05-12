@@ -1,0 +1,41 @@
+{
+  "stock_id": "002402",
+  "stock_name": "和而泰",
+  "concept": "智能控制器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能控制器",
+    "家电控制器",
+    "汽车电子控制器"
+  ],
+  "should": [
+    "电动工具控制器",
+    "数智能源产品",
+    "智能化产品",
+    "智能控制算法",
+    "变频技术",
+    "人机交互技术及算法",
+    "视觉识别技术及算法",
+    "AloT平台技术",
+    "锂电充放控制系统",
+    "大功率高电压类工具控制技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能控制器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "家电控制器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车电子控制器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:39:56"
+}

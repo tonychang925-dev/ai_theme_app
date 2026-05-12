@@ -1,0 +1,31 @@
+{
+  "stock_id": "601018",
+  "stock_name": "宁波港",
+  "concept": "港口运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "集装箱"
+  ],
+  "should": [
+    "铁矿石",
+    "原油",
+    "煤炭",
+    "液化油品",
+    "粮食",
+    "矿建材料",
+    "港口运营",
+    "港口装卸",
+    "综合物流",
+    "贸易销售"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "集装箱",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:33:31"
+}

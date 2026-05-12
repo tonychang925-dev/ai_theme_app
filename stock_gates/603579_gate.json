@@ -1,0 +1,30 @@
+{
+  "stock_id": "603579",
+  "stock_name": "荣泰健康",
+  "concept": "高端按摩椅",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端按摩椅"
+  ],
+  "should": [
+    "按摩椅",
+    "研发",
+    "制造",
+    "康养保健",
+    "代工厂商",
+    "头部品牌",
+    "经销模式",
+    "电商渠道",
+    "临街专卖店"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端按摩椅",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:52:31"
+}

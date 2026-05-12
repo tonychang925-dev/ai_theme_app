@@ -1,0 +1,41 @@
+{
+  "stock_id": "300786",
+  "stock_name": "国林科技",
+  "concept": "臭氧发生器龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "臭氧发生器龙头",
+    "国内臭氧发生器领军企业",
+    "大型臭氧发生器"
+  ],
+  "should": [
+    "高品质乙醛酸",
+    "国内唯一一家高品质乙醛酸生产企业",
+    "大型VPSA制氧设备",
+    "中小型臭氧发生器",
+    "高浓度臭氧水设备",
+    "臭氧产生机理",
+    "高浓度臭氧发生技术",
+    "液位控制技术",
+    "高浓度臭氧水的制取技术",
+    "臭氧水溶浓度检测技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "臭氧发生器龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内臭氧发生器领军企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大型臭氧发生器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:43:05"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "000801",
+  "stock_name": "四川九洲",
+  "concept": "智能终端与空管系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能终端",
+    "空管"
+  ],
+  "should": [
+    "微波射频",
+    "音视频信号编解码",
+    "调制",
+    "传输",
+    "二次雷达",
+    "空中防相撞",
+    "空管应答",
+    "广播式自动相关监视",
+    "地空数据链通信",
+    "雷达"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能终端",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空管",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:05:23"
+}

@@ -1,0 +1,39 @@
+{
+  "stock_id": "603585",
+  "stock_name": "苏利股份",
+  "concept": "农药杀菌剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农药杀菌剂",
+    "嘧菌酯原药",
+    "百菌清原药"
+  ],
+  "should": [
+    "十溴二苯乙烷",
+    "氢溴酸",
+    "溴化聚苯乙烯",
+    "研发中心",
+    "产学研合作",
+    "农药中间体",
+    "原药生产",
+    "制剂出口"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农药杀菌剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "嘧菌酯原药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "百菌清原药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:52:34"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "002184",
+  "stock_name": "海得控制",
+  "concept": "智能制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业电气自动化业务",
+    "工业信息化业务",
+    "新能源业务"
+  ],
+  "should": [
+    "工业自动化控制技术",
+    "工业信息化技术",
+    "自动化与信息化融合技术",
+    "大功率电力电子技术",
+    "工业以太网交换机",
+    "NetSCADA组态软件",
+    "超融合工业企业数据中心",
+    "IndusCloud工业私有云",
+    "风电风机变流器",
+    "新能源混合动力系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业电气自动化业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业信息化业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:28:04"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "603659",
+  "stock_name": "璞泰来",
+  "concept": "锂电材料龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "负极材料"
+  ],
+  "should": [
+    "涂覆隔膜",
+    "锂电设备",
+    "石墨化加工",
+    "涂覆加工",
+    "涂布机技术",
+    "锂电材料龙头",
+    "电动汽车",
+    "数码消费",
+    "储能",
+    "负极材料出货量行业第三"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "负极材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:53:58"
+}

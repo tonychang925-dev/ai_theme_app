@@ -1,0 +1,30 @@
+{
+  "stock_id": "300819",
+  "stock_name": "聚杰微纤",
+  "concept": "超细纤维面料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "超细纤维面料"
+  ],
+  "should": [
+    "超细纤维制成品",
+    "超细纤维仿皮面料",
+    "超细纤维功能面料",
+    "超细纤维无尘洁净制品",
+    "开纤工艺",
+    "染色工艺",
+    "起绒工艺",
+    "家纺系列",
+    "运动系列"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "超细纤维面料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:44:25"
+}

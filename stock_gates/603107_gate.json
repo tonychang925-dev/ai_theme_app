@@ -1,0 +1,36 @@
+{
+  "stock_id": "603107",
+  "stock_name": "上海汽配",
+  "concept": "汽车热管理零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车空调管路",
+    "燃油分配管"
+  ],
+  "should": [
+    "阀总成",
+    "CO2新冷媒技术",
+    "大众汽车",
+    "通用汽车",
+    "丰田汽车",
+    "联合电子",
+    "客户1",
+    "汽车热管理零部件",
+    "自动化生产",
+    "自动化检测"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车空调管路",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "燃油分配管",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:43:54"
+}

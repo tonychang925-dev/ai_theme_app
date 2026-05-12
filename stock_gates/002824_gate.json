@@ -1,0 +1,32 @@
+{
+  "stock_id": "002824",
+  "stock_name": "和胜股份",
+  "concept": "电池结构件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电池托盘",
+    "储能结构件"
+  ],
+  "should": [
+    "电池结构件",
+    "挤压成型技术",
+    "焊接技术",
+    "一体化生产能力",
+    "宁德时代供应商",
+    "电池托盘先发企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电池托盘",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能结构件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:58:45"
+}

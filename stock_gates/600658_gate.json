@@ -1,0 +1,49 @@
+{
+  "stock_id": "600658",
+  "stock_name": "电子城",
+  "concept": "科技服务运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "科技研发服务",
+    "科技孵化服务",
+    "数字科技服务",
+    "科技金融服务",
+    "科技生态运营服务"
+  ],
+  "should": [
+    "集成电路",
+    "光子",
+    "大数据与云计算",
+    "人工智能",
+    "科技企业",
+    "高精尖产业",
+    "园区建设",
+    "孵化器运营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "科技研发服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "科技孵化服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字科技服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "科技金融服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "科技生态运营服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:24:05"
+}

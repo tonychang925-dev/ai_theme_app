@@ -1,0 +1,36 @@
+{
+  "stock_id": "000570",
+  "stock_name": "苏常柴A",
+  "concept": "柴油机制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "柴油机",
+    "汽油机"
+  ],
+  "should": [
+    "收割机",
+    "拖拉机",
+    "植保机械",
+    "小型工程机械",
+    "船机",
+    "轻型商用车",
+    "发电机组",
+    "电控燃油喷射系统",
+    "高效增压器",
+    "高效后处理装置"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "柴油机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽油机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:56:57"
+}

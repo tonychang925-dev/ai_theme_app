@@ -1,0 +1,41 @@
+{
+  "stock_id": "300315",
+  "stock_name": "掌趣科技",
+  "concept": "移动游戏研运",
+  "strategy_type": "industry_chain",
+  "must": [
+    "移动游戏研运",
+    "移动游戏开发",
+    "发行",
+    "运营"
+  ],
+  "should": [
+    "SLG",
+    "小游戏",
+    "全民奇迹",
+    "拳皇98",
+    "一拳超人"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "移动游戏研运",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动游戏开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:22:14"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "300718",
+  "stock_name": "长盛轴承",
+  "concept": "自润滑轴承",
+  "strategy_type": "industry_chain",
+  "must": [
+    "自润滑轴承",
+    "风电"
+  ],
+  "should": [
+    "金属塑料聚合物自润滑卷制轴承",
+    "双金属边界润滑卷制轴承",
+    "金属基自润滑轴承",
+    "铜基边界润滑卷制轴承",
+    "非金属自润滑轴承",
+    "关节轴承",
+    "自润滑材料",
+    "固体润滑",
+    "流体润滑",
+    "无铅技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "自润滑轴承",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:40:11"
+}

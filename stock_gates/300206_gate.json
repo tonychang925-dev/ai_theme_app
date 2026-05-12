@@ -1,0 +1,46 @@
+{
+  "stock_id": "300206",
+  "stock_name": "理邦仪器",
+  "concept": "医疗设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "病人监护",
+    "妇幼健康",
+    "心电诊断",
+    "国产医疗设备领军企业"
+  ],
+  "should": [
+    "超声影像",
+    "体外诊断",
+    "智慧医疗",
+    "干式血气分析仪i15",
+    "干式血气分析仪i20",
+    "湿式血气分析仪",
+    "m16磁敏免疫分析仪",
+    "全自动血细胞分析仪",
+    "ClariLight分子诊断平台",
+    "电化学微流控"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "病人监护",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "妇幼健康",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "心电诊断",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国产医疗设备领军企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:17:27"
+}

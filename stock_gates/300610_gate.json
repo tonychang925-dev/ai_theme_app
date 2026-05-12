@@ -1,0 +1,36 @@
+{
+  "stock_id": "300610",
+  "stock_name": "晨化股份",
+  "concept": "风电聚醚胺",
+  "strategy_type": "industry_chain",
+  "must": [
+    "聚醚胺",
+    "风电聚醚胺"
+  ],
+  "should": [
+    "阻燃剂",
+    "烷基糖苷",
+    "硅橡胶",
+    "APG一步法工艺",
+    "风电叶片",
+    "建筑",
+    "胶粘剂",
+    "油气开采",
+    "纺织品处理",
+    "农药"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "聚醚胺",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电聚醚胺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:35:12"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "300923",
+  "stock_name": "研奥股份",
+  "concept": "城轨电气设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "城轨电气设备",
+    "城轨车辆"
+  ],
+  "should": [
+    "动车及高铁车辆",
+    "司机操控台",
+    "司机室电气控制柜",
+    "客室电气控制柜",
+    "照明控制系统",
+    "逻辑控制单元",
+    "蓄电池管理系统",
+    "低压电器监测系统",
+    "紧急通风逆变器箱",
+    "高低压接线箱"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "城轨电气设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城轨车辆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:49:24"
+}

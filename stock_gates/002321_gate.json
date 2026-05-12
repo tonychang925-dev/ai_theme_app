@@ -1,0 +1,51 @@
+{
+  "stock_id": "002321",
+  "stock_name": "华英农业",
+  "concept": "鸭产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "鸭产业链",
+    "种鸭养殖",
+    "商品鸭屠宰加工",
+    "冻品销售",
+    "熟食"
+  ],
+  "should": [
+    "羽绒",
+    "预制菜",
+    "禽苗销售",
+    "饲料生产",
+    "羽绒及羽绒制品生产和销售",
+    "鸭肉生鲜冻品",
+    "鸭制熟食",
+    "羽绒服装",
+    "羽绒寝具",
+    "孵化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "鸭产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "种鸭养殖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商品鸭屠宰加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冻品销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "熟食",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:35:23"
+}

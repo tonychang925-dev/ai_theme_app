@@ -1,0 +1,41 @@
+{
+  "stock_id": "300509",
+  "stock_name": "新美星",
+  "concept": "液态食品包装机械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "液态食品包装机械",
+    "总集成总承包服务",
+    "PET瓶无菌冷灌装技术"
+  ],
+  "should": [
+    "吹灌旋一体机",
+    "前处理系统",
+    "吹瓶系统",
+    "灌装系统",
+    "二次包装系列设备",
+    "饮料",
+    "乳品",
+    "酒类",
+    "调味品",
+    "日化品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "液态食品包装机械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "总集成总承包服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PET瓶无菌冷灌装技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:30:33"
+}

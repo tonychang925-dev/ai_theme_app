@@ -1,0 +1,36 @@
+{
+  "stock_id": "603970",
+  "stock_name": "中农立华",
+  "concept": "农资流通服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农药流通服务",
+    "植保技术服务"
+  ],
+  "should": [
+    "原药价格指数服务",
+    "原药价格指数分析平台",
+    "植保机械供应",
+    "农资流通服务",
+    "分装加工配套服务",
+    "国内农药自销+联销",
+    "分装复配设备与分析仪器",
+    "种植户",
+    "农药厂商",
+    "跨国农药企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农药流通服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "植保技术服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:59:55"
+}

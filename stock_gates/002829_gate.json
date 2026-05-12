@@ -1,0 +1,46 @@
+{
+  "stock_id": "002829",
+  "stock_name": "星网宇达",
+  "concept": "军事训练器材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "军事训练器材",
+    "无人机",
+    "无人车",
+    "无人船"
+  ],
+  "should": [
+    "惯性导航",
+    "光电吊舱",
+    "安防雷达",
+    "卫星通信",
+    "光电探测",
+    "电子对抗",
+    "指挥控制",
+    "相控阵雷达",
+    "部队作战训练",
+    "实兵实弹演训"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "军事训练器材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无人机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无人车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无人船",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:59:15"
+}

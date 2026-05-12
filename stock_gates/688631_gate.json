@@ -1,0 +1,46 @@
+{
+  "stock_id": "688631",
+  "stock_name": "莱斯信息",
+  "concept": "空管信息化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "空管自动化系统",
+    "空管场面管理系统",
+    "空管模拟机系统",
+    "空管流量管理系统"
+  ],
+  "should": [
+    "空中交通管理指挥控制技术",
+    "城市道路交通信号控制系统",
+    "道路交通信号控制设备",
+    "城市综合指挥平台",
+    "公共信用信息服务平台",
+    "人防应急指挥信息系统",
+    "城市道路交通管理指挥控制技术",
+    "城市级综合治理指挥控制技术",
+    "空管信息化",
+    "民航空中交通管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "空管自动化系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空管场面管理系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空管模拟机系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空管流量管理系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:22:45"
+}

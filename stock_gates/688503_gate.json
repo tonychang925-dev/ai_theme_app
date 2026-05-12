@@ -1,0 +1,36 @@
+{
+  "stock_id": "688503",
+  "stock_name": "聚和材料",
+  "concept": "光伏银浆龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏银浆龙头",
+    "正面银浆"
+  ],
+  "should": [
+    "背面银浆",
+    "5G滤波器用导电银浆",
+    "压敏电阻导电银浆",
+    "电致变色玻璃用银浆",
+    "导热结构胶",
+    "IBC电池",
+    "5G射频器件",
+    "柔性电路",
+    "电致变色玻璃",
+    "新型电子浆料研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏银浆龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "正面银浆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:19:16"
+}

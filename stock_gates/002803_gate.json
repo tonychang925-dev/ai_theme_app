@@ -1,0 +1,35 @@
+{
+  "stock_id": "002803",
+  "stock_name": "吉宏股份",
+  "concept": "跨境社交电商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "跨境社交电商",
+    "跨境社交电商业务"
+  ],
+  "should": [
+    "Giikin系统",
+    "AI算法",
+    "包装业务",
+    "货找人",
+    "AI技术",
+    "家居",
+    "服饰",
+    "A股第二",
+    "中国B2C出口电商公司排名第二"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "跨境社交电商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "跨境社交电商业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:58:07"
+}

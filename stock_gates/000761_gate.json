@@ -1,0 +1,54 @@
+{
+  "stock_id": "000761",
+  "stock_name": "本钢板材",
+  "concept": "精品钢材基地",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精品钢材基地",
+    "汽车表面板",
+    "家电板",
+    "石油管线钢",
+    "集装箱板"
+  ],
+  "should": [
+    "汽车",
+    "家电",
+    "石油化工",
+    "航空航天",
+    "机械制造",
+    "能源交通",
+    "建筑装潢",
+    "金属制品",
+    "取向硅钢热轧基料",
+    "工程机械用钢"
+  ],
+  "not": [
+    "主控芯片",
+    "固件开发"
+  ],
+  "evidence_refs": [
+    {
+      "term": "精品钢材基地",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车表面板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "家电板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "石油管线钢",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集装箱板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:03:56"
+}

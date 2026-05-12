@@ -1,0 +1,46 @@
+{
+  "stock_id": "000659",
+  "stock_name": "珠海中富",
+  "concept": "饮料包装",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PET瓶",
+    "PET瓶胚",
+    "国内大型饮料包装企业",
+    "饮料代加工（OEM）企业"
+  ],
+  "should": [
+    "标签",
+    "外包装薄膜",
+    "胶罐",
+    "PET包装技术",
+    "无菌灌装技术",
+    "热灌装技术",
+    "饮料包装",
+    "碳酸饮料",
+    "热灌装饮料",
+    "饮用水"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PET瓶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PET瓶胚",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内大型饮料包装企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "饮料代加工（OEM）企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:59:44"
+}

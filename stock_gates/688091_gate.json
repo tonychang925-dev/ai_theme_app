@@ -1,0 +1,31 @@
+{
+  "stock_id": "688091",
+  "stock_name": "上海谊众",
+  "concept": "改良型新药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "注射用紫杉醇聚合物胶束"
+  ],
+  "should": [
+    "卡巴他赛胶束",
+    "靶向纳米紫杉醇聚合物胶束",
+    "共聚物药用辅料",
+    "界面经高密度二硫键交联技术",
+    "靶向多肽偶联纳米胶束",
+    "小分子偶联纳米紫杉醇聚合物胶束",
+    "改良型新药",
+    "肺癌",
+    "乳腺癌",
+    "胰腺癌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "注射用紫杉醇聚合物胶束",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:08:03"
+}

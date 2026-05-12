@@ -1,0 +1,36 @@
+{
+  "stock_id": "601199",
+  "stock_name": "江南水务",
+  "concept": "水务运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "自来水制售",
+    "污水处理"
+  ],
+  "should": [
+    "智慧水务2.0",
+    "智慧排水系统",
+    "GIS系统",
+    "物联监测",
+    "管道完整性管理",
+    "水务运营",
+    "工程业务",
+    "城乡供水",
+    "排水管网维护",
+    "水环境治理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "自来水制售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "污水处理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:35:18"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "603062",
+  "stock_name": "麦加芯彩",
+  "concept": "工业涂料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风电涂料",
+    "集装箱涂料"
+  ],
+  "should": [
+    "无溶剂涂料",
+    "高固体分涂料",
+    "粉末涂料",
+    "水性风电叶片涂料",
+    "工业涂料",
+    "风电领域",
+    "集装箱领域",
+    "桥梁",
+    "钢结构",
+    "船舶"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风电涂料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集装箱涂料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:42:33"
+}

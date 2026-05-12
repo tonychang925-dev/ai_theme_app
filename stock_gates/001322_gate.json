@@ -1,0 +1,36 @@
+{
+  "stock_id": "001322",
+  "stock_name": "箭牌家居",
+  "concept": "智慧家居卫浴",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧家居卫浴",
+    "卫生陶瓷"
+  ],
+  "should": [
+    "龙头五金",
+    "浴室家具",
+    "瓷砖",
+    "浴缸浴房",
+    "定制橱衣柜",
+    "国内陶瓷卫浴行业头部企业",
+    "十大生产制造基地",
+    "经销商1854家",
+    "分销商6609家",
+    "终端门店网点1.21万家"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧家居卫浴",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "卫生陶瓷",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:16:22"
+}

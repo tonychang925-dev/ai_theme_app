@@ -1,0 +1,45 @@
+{
+  "stock_id": "601998",
+  "stock_name": "中信银行",
+  "concept": "综合金融服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "公司银行业务",
+    "零售银行",
+    "金融市场业务",
+    "综合金融服务"
+  ],
+  "should": [
+    "财富管理",
+    "投资银行业务",
+    "国际业务",
+    "金融科技",
+    "企业客户",
+    "个人客户",
+    "综合协同",
+    "风险防控",
+    "人才队伍"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "公司银行业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "零售银行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融市场业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合金融服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:40:40"
+}

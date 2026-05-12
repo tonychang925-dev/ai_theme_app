@@ -1,0 +1,34 @@
+{
+  "stock_id": "600325",
+  "stock_name": "华发股份",
+  "concept": "房地产综合开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "住宅开发",
+    "优+产品体系"
+  ],
+  "should": [
+    "商业运营",
+    "华发商都",
+    "阅潮",
+    "华商百货",
+    "华发奥特美康体中心",
+    "房地产综合开发",
+    "上下游产业链",
+    "房地产业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "住宅开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "优+产品体系",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:14:58"
+}

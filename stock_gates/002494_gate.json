@@ -1,0 +1,51 @@
+{
+  "stock_id": "002494",
+  "stock_name": "华斯股份",
+  "concept": "裘皮产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "裘皮制品设计、研发和制造",
+    "毛皮交易市场",
+    "裘皮精深加工",
+    "服饰设计生产",
+    "服饰交易市场"
+  ],
+  "should": [
+    "整皮服装",
+    "裘布服装",
+    "编织服装",
+    "时装",
+    "裘皮饰品",
+    "裘皮皮张",
+    "裘皮面料",
+    "华斯",
+    "怡嘉琦",
+    "伊尚迪"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "裘皮制品设计、研发和制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "毛皮交易市场",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "裘皮精深加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "服饰设计生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "服饰交易市场",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:44:30"
+}

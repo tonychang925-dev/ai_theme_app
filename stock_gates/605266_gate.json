@@ -1,0 +1,41 @@
+{
+  "stock_id": "605266",
+  "stock_name": "健之佳",
+  "concept": "连锁药店",
+  "strategy_type": "industry_chain",
+  "must": [
+    "连锁药店",
+    "中西成药",
+    "专业药房"
+  ],
+  "should": [
+    "便利店",
+    "中药材",
+    "保健食品",
+    "医疗器械",
+    "个人护理品",
+    "体检服务",
+    "生活便利品",
+    "药妆店",
+    "健康广场",
+    "中医诊所"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "连锁药店",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中西成药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "专业药房",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:03:19"
+}

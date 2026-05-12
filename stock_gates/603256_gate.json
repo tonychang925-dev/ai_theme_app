@@ -1,0 +1,30 @@
+{
+  "stock_id": "603256",
+  "stock_name": "宏和科技",
+  "concept": "高端电子布",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端电子布",
+    "高端电子布全套生产工艺"
+  ],
+  "should": [
+    "超薄布",
+    "极薄布",
+    "CCL（覆铜板）",
+    "全球头部CCL制造商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端电子布",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端电子布全套生产工艺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:47:28"
+}

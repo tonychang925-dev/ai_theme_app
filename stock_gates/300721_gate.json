@@ -1,0 +1,36 @@
+{
+  "stock_id": "300721",
+  "stock_name": "怡达股份",
+  "concept": "醇醚化工龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "醇醚系列产品",
+    "醇醚酯系列产品"
+  ],
+  "should": [
+    "汽车制动液",
+    "三乙二醇单甲醚",
+    "丙二醇甲醚",
+    "丙二醇甲醚醋酸酯",
+    "乙二醇丁醚醋酸酯",
+    "电子级丙二醇甲醚",
+    "电子级丙二醇甲醚醋酸酯",
+    "连续管式工艺",
+    "连续化固定床反应工艺",
+    "连续催化精馏塔塔式工艺"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "醇醚系列产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "醇醚酯系列产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:40:22"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "002360",
+  "stock_name": "同德化工",
+  "concept": "民爆及新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "民爆业务",
+    "PBAT",
+    "BDO"
+  ],
+  "should": [
+    "白炭黑业务",
+    "光伏级多晶硅原料",
+    "胶状乳化炸药",
+    "粉状乳化炸药",
+    "多孔粒状铵油现场混装炸药",
+    "乳化铵油炸药",
+    "煤炭开采",
+    "铝土矿开发",
+    "铁矿开发",
+    "贸易"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "民爆业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PBAT",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "BDO",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:37:37"
+}

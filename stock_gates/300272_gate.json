@@ -1,0 +1,51 @@
+{
+  "stock_id": "300272",
+  "stock_name": "开能健康",
+  "concept": "全屋水处理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全屋净水机",
+    "全屋软水机",
+    "RO膜反渗透净水机",
+    "多路控制阀",
+    "复合材料压力容器"
+  ],
+  "should": [
+    "膜元件",
+    "全屋型水处理设备（POE净水器）",
+    "分体式终端净水机（POU净水器）",
+    "商用净化饮水机",
+    "水效国标的起草单位之一",
+    "国家高新技术企业",
+    "全屋水处理",
+    "居家用水解决方案",
+    "商务用水解决方案",
+    "公共设施用水解决方案"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全屋净水机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全屋软水机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "RO膜反渗透净水机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多路控制阀",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复合材料压力容器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:20:35"
+}

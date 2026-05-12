@@ -1,0 +1,36 @@
+{
+  "stock_id": "600612",
+  "stock_name": "老凤祥",
+  "concept": "黄金珠宝龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "黄金珠宝龙头",
+    "黄金珠宝首饰"
+  ],
+  "should": [
+    "工艺美术品",
+    "笔类文具用品",
+    "3D硬金",
+    "5D硬金",
+    "5G黄金",
+    "古法黄金",
+    "婚庆用途",
+    "贵金属投资",
+    "装饰悦己",
+    "社交炫耀"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "黄金珠宝龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "黄金珠宝首饰",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:22:54"
+}

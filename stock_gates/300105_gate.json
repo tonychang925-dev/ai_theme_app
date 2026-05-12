@@ -1,0 +1,30 @@
+{
+  "stock_id": "300105",
+  "stock_name": "龙源技术",
+  "concept": "燃煤电站节能环保",
+  "strategy_type": "industry_chain",
+  "must": [
+    "等离子体点火系统"
+  ],
+  "should": [
+    "低氮燃烧技术",
+    "混氨燃烧技术",
+    "超高水分褐煤点火技术",
+    "CFB锅炉超低排放技术",
+    "燃烧优化控制技术",
+    "低氮燃烧系统",
+    "燃煤锅炉数值模拟与仿真技术",
+    "燃煤电站节能环保",
+    "燃煤电站"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "等离子体点火系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:13:30"
+}

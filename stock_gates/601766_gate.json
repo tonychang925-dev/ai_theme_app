@@ -1,0 +1,45 @@
+{
+  "stock_id": "601766",
+  "stock_name": "中国中车",
+  "concept": "轨道交通装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轨道交通装备",
+    "动车组",
+    "铁路机车车辆",
+    "城市轨道交通车辆"
+  ],
+  "should": [
+    "全寿命周期系统解决方案",
+    "系列化、模块化、标准化产品平台",
+    "机电设备",
+    "电子设备及零部件",
+    "电子电器及环保设备产品",
+    "工程机械",
+    "数字化",
+    "智能化",
+    "铁路运输"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轨道交通装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动车组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铁路机车车辆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市轨道交通车辆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:38:22"
+}

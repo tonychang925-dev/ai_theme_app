@@ -1,0 +1,38 @@
+{
+  "stock_id": "300239",
+  "stock_name": "东宝生物",
+  "concept": "生物制品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "明胶",
+    "胶原蛋白",
+    "空心胶囊"
+  ],
+  "should": [
+    "超低内毒素明胶开发",
+    "保健品",
+    "营养健康食品",
+    "美妆",
+    "工业应用",
+    "医疗(药)领域",
+    "行业头部企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "明胶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "胶原蛋白",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空心胶囊",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:18:49"
+}

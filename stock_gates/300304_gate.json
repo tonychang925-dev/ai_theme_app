@@ -1,0 +1,46 @@
+{
+  "stock_id": "300304",
+  "stock_name": "云意电气",
+  "concept": "汽车智能电子",
+  "strategy_type": "industry_chain",
+  "must": [
+    "车用整流器",
+    "调节器",
+    "车用智能电源控制器",
+    "车用大功率二极管"
+  ],
+  "should": [
+    "新能源汽车电子",
+    "传感器类产品",
+    "智能雨刮系统产品",
+    "车用精密注塑类产品",
+    "陶瓷芯",
+    "汽车发动机系统",
+    "发电机系统",
+    "尾气后处理系统",
+    "汽车智能电子",
+    "半导体技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "车用整流器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "调节器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车用智能电源控制器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车用大功率二极管",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:21:53"
+}

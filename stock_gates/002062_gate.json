@@ -1,0 +1,51 @@
+{
+  "stock_id": "002062",
+  "stock_name": "宏润建设",
+  "concept": "区域轨交基建",
+  "strategy_type": "industry_chain",
+  "must": [
+    "区域轨交基建",
+    "建筑施工",
+    "市政基础设施投资",
+    "轨道交通",
+    "地下空间及综合管廊"
+  ],
+  "should": [
+    "房地产业务",
+    "光伏发电业务",
+    "公路桥梁",
+    "市政高架",
+    "房屋建筑",
+    "生态环保",
+    "光伏建筑一体化",
+    "光伏整县",
+    "分布式电站",
+    "储能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "区域轨交基建",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑施工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "市政基础设施投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轨道交通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "地下空间及综合管廊",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:21:06"
+}

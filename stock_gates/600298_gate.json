@@ -1,0 +1,36 @@
+{
+  "stock_id": "600298",
+  "stock_name": "安琪酵母",
+  "concept": "酵母龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "酵母龙头",
+    "酵母系列"
+  ],
+  "should": [
+    "健康食品配料",
+    "营养保健食品",
+    "生物新技术",
+    "新型健康包材",
+    "中式面点",
+    "酒类市场",
+    "国内市场份额近60%",
+    "全球第二",
+    "糖蜜成本",
+    "海运费用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "酵母龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "酵母系列",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:14:10"
+}

@@ -1,0 +1,39 @@
+{
+  "stock_id": "002166",
+  "stock_name": "莱茵生物",
+  "concept": "植物提取龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "植物提取龙头",
+    "天然甜味剂",
+    "工业大麻提取物"
+  ],
+  "should": [
+    "茶叶提取物",
+    "核心提取技术",
+    "工艺优化",
+    "品控能力",
+    "全产业链布局",
+    "产销一体化",
+    "全球三大生产基地",
+    "四大营销中心"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "植物提取龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天然甜味剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业大麻提取物",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:26:48"
+}

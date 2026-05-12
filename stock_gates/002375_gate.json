@@ -1,0 +1,35 @@
+{
+  "stock_id": "002375",
+  "stock_name": "亚厦股份",
+  "concept": "建筑装饰龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑装饰龙头",
+    "建筑装饰装修工程"
+  ],
+  "should": [
+    "建筑幕墙工程",
+    "智能化系统集成",
+    "大型公共建筑装修",
+    "高端星级酒店",
+    "高档住宅精装修",
+    "工业化装配式装修",
+    "装配式建筑",
+    "绿色建筑",
+    "智能建造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑装饰龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑装饰装修工程",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:38:25"
+}

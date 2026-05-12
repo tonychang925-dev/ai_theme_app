@@ -1,0 +1,43 @@
+{
+  "stock_id": "601669",
+  "stock_name": "中国电建",
+  "concept": "清洁能源建设",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程承包与勘察设计",
+    "水利水电建设",
+    "风电",
+    "光伏"
+  ],
+  "should": [
+    "电力投资运营",
+    "抽水蓄能",
+    "清洁能源建设",
+    "全产业链一体化技术服务体系",
+    "水电行业龙头",
+    "新能源行业领军企业",
+    "承担65%以上建设任务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程承包与勘察设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水利水电建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:37:55"
+}

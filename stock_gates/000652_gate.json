@@ -1,0 +1,41 @@
+{
+  "stock_id": "000652",
+  "stock_name": "泰达股份",
+  "concept": "生态环保综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生态环保",
+    "固废处理",
+    "生物质能利用"
+  ],
+  "should": [
+    "区域开发",
+    "能源贸易",
+    "股权投资",
+    "生态环保综合服务",
+    "生活垃圾焚烧发电",
+    "秸秆焚烧发电",
+    "焚烧发电",
+    "热电联产",
+    "碳资产管理",
+    "城镇生活垃圾处理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生态环保",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "固废处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物质能利用",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:59:33"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "600819",
+  "stock_name": "耀皮玻璃",
+  "concept": "特种玻璃制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "浮法玻璃",
+    "建筑加工玻璃",
+    "汽车加工玻璃"
+  ],
+  "should": [
+    "特种玻璃",
+    "特种玻璃制造",
+    "镀膜技术",
+    "在线镀膜LOW-E技术",
+    "超薄在线镀膜玻璃",
+    "太阳能光伏TCO玻璃",
+    "新能源汽车",
+    "太阳能发电",
+    "建筑节能",
+    "高品质浮法玻璃原片供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "浮法玻璃",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑加工玻璃",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车加工玻璃",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:28:38"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "688557",
+  "stock_name": "兰剑智能",
+  "concept": "智慧物流系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能仓储物流自动化系统"
+  ],
+  "should": [
+    "托盘级密集仓储拣选一体化系统",
+    "特定商品全自动化拣选系统",
+    "智慧物流系统",
+    "方案仿真设计",
+    "软件产品开发",
+    "硬件产品设计",
+    "系统集成",
+    "传感器技术",
+    "人工智能",
+    "大数据"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能仓储物流自动化系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:20:30"
+}

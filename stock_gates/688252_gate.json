@@ -1,0 +1,51 @@
+{
+  "stock_id": "688252",
+  "stock_name": "天德钰",
+  "concept": "显示驱动芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "显示驱动芯片",
+    "智能移动终端显示驱动芯片",
+    "电子价签驱动芯片",
+    "TDDI技术",
+    "AMOLED显示驱动技术"
+  ],
+  "should": [
+    "快充协议芯片",
+    "摄像头音圈马达驱动芯片",
+    "RF波能源采集技术",
+    "Demura外部补偿技术",
+    "SPR子像素渲染技术",
+    "移动手机",
+    "平板",
+    "智能音箱",
+    "智能穿戴",
+    "快充/移动电源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "显示驱动芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能移动终端显示驱动芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子价签驱动芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "TDDI技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AMOLED显示驱动技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:13:12"
+}

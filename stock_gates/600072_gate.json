@@ -1,0 +1,46 @@
+{
+  "stock_id": "600072",
+  "stock_name": "中船科技",
+  "concept": "船舶工程与风电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风电新能源",
+    "船舶工程与风电",
+    "工程总承包",
+    "工程设计"
+  ],
+  "should": [
+    "智能制造",
+    "数字化平台建设",
+    "海洋工程",
+    "船用设备",
+    "勘察",
+    "咨询",
+    "监理",
+    "土地整理服务",
+    "BIM技术",
+    "船舶工业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风电新能源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "船舶工程与风电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程总承包",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:08:34"
+}

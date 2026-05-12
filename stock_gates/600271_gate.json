@@ -1,0 +1,44 @@
+{
+  "stock_id": "600271",
+  "stock_name": "航天信息",
+  "concept": "电子政务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子政务",
+    "国家大型信息化工程",
+    "数字政府",
+    "企业数字化"
+  ],
+  "should": [
+    "区块链",
+    "区块链工业产品溯源平台",
+    "金税四期信息安全与基础设施",
+    "数字海南",
+    "数字新疆",
+    "安全底座",
+    "数字技术",
+    "政企数字化转型"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子政务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国家大型信息化工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字政府",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "企业数字化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:13:38"
+}

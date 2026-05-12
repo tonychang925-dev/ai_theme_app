@@ -1,0 +1,31 @@
+{
+  "stock_id": "001207",
+  "stock_name": "联科科技",
+  "concept": "轮胎助剂龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轮胎助剂龙头"
+  ],
+  "should": [
+    "二氧化硅",
+    "炭黑",
+    "低滚动阻力炭黑",
+    "导电炭黑",
+    "回收炭黑",
+    "绿色炭黑",
+    "绿色轮胎",
+    "新能源汽车",
+    "橡胶产品",
+    "高分散二氧化硅"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轮胎助剂龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:13:20"
+}

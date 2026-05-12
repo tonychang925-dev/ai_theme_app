@@ -1,0 +1,41 @@
+{
+  "stock_id": "301378",
+  "stock_name": "通达海",
+  "concept": "智慧法院信息化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧法院信息化",
+    "智慧审判",
+    "智慧执行"
+  ],
+  "should": [
+    "智慧服务",
+    "智慧管理",
+    "智慧政务",
+    "人工智能",
+    "大数据",
+    "法院",
+    "银行",
+    "邮政",
+    "破产管理人",
+    "纪委监委"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧法院信息化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧审判",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧执行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:04:14"
+}

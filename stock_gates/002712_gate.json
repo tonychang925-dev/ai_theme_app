@@ -1,0 +1,51 @@
+{
+  "stock_id": "002712",
+  "stock_name": "思美传媒",
+  "concept": "文化传媒整合",
+  "strategy_type": "industry_chain",
+  "must": [
+    "品牌管理",
+    "全国媒体策划及代理",
+    "广告创意设计",
+    "娱乐内容营销",
+    "数字营销"
+  ],
+  "should": [
+    "户外媒体运营",
+    "影视内容制作与发行",
+    "短视频",
+    "信息流",
+    "社交电商",
+    "IP源头",
+    "内容制作",
+    "营销宣发",
+    "数字阅读及版权运营",
+    "文化传媒整合"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "品牌管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全国媒体策划及代理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "广告创意设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "娱乐内容营销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字营销",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:54:33"
+}

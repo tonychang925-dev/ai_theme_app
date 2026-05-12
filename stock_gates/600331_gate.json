@@ -1,0 +1,31 @@
+{
+  "stock_id": "600331",
+  "stock_name": "宏达股份",
+  "concept": "磷化工与锌冶炼",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业级磷酸一铵"
+  ],
+  "should": [
+    "磷酸盐系列产品",
+    "复合肥",
+    "合成氨",
+    "锌锭",
+    "锌合金",
+    "冶化结合循环经济",
+    "锌浸出率提升",
+    "磷酸盐产品多元化",
+    "工业级磷酸一铵产量国内前列",
+    "锌合金区域市场占有率领先"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业级磷酸一铵",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:15:14"
+}

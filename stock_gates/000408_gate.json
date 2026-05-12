@@ -1,0 +1,35 @@
+{
+  "stock_id": "000408",
+  "stock_name": "藏格矿业",
+  "concept": "钾锂双主业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "氯化钾",
+    "碳酸锂"
+  ],
+  "should": [
+    "电池级碳酸锂",
+    "钾锂双主业",
+    "吸附法",
+    "膜法",
+    "模拟连续床技术",
+    "一步法合成",
+    "钾肥",
+    "国内氯化钾行业第二大生产企业",
+    "产能占全国总量23%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "氯化钾",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳酸锂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:51:46"
+}

@@ -1,0 +1,35 @@
+{
+  "stock_id": "300473",
+  "stock_name": "德尔股份",
+  "concept": "汽车零部件与固态电池",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电泵、电机及机械泵类产品",
+    "电控、汽车电子类产品"
+  ],
+  "should": [
+    "电池阻燃、电磁兼容屏蔽类产品",
+    "无刷直流电机",
+    "智能电控系统",
+    "机械液压",
+    "汽车转向系统",
+    "传动系统",
+    "制动系统",
+    "热管理系统",
+    "车身系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电泵、电机及机械泵类产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电控、汽车电子类产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:28:50"
+}

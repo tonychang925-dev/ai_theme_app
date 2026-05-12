@@ -1,0 +1,41 @@
+{
+  "stock_id": "002989",
+  "stock_name": "中天精装",
+  "concept": "批量精装修",
+  "strategy_type": "industry_chain",
+  "must": [
+    "批量精装修",
+    "万科",
+    "保利"
+  ],
+  "should": [
+    "建筑装饰工程施工",
+    "设计业务",
+    "雅居乐",
+    "旭辉",
+    "美的置业",
+    "融创中国",
+    "建筑装修装饰工程专业承包壹级",
+    "设计",
+    "年交付4.5万套",
+    "累计完成22万套"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "批量精装修",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "万科",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "保利",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:06:21"
+}

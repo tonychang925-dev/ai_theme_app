@@ -1,0 +1,46 @@
+{
+  "stock_id": "300358",
+  "stock_name": "楚天科技",
+  "concept": "制药装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "制药装备",
+    "国内领先制药装备制造商",
+    "无菌制剂",
+    "检测包装"
+  ],
+  "should": [
+    "生物工程",
+    "固体制剂",
+    "制药用水装备",
+    "无菌分装",
+    "冻干机进出料",
+    "智能灯检",
+    "生物反应器",
+    "超滤层析纯化",
+    "生物药",
+    "原料药"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "制药装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内领先制药装备制造商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无菌制剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "检测包装",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:23:58"
+}

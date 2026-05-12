@@ -1,0 +1,36 @@
+{
+  "stock_id": "000035",
+  "stock_name": "中国天楹",
+  "concept": "环保储能",
+  "strategy_type": "industry_chain",
+  "must": [
+    "垃圾焚烧发电",
+    "重力储能"
+  ],
+  "should": [
+    "等离子体固废处置",
+    "等离子体发生器",
+    "等离子体炉",
+    "重力储能技术",
+    "环保储能",
+    "城市环境服务",
+    "环保设备",
+    "生活垃圾处理",
+    "城市固废管理",
+    "储能发电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "垃圾焚烧发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重力储能",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:47:59"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "688600",
+  "stock_name": "皖仪科技",
+  "concept": "精密科学仪器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环保在线监测仪器",
+    "检漏仪器"
+  ],
+  "should": [
+    "实验室分析仪器",
+    "电子测量仪器",
+    "光谱技术",
+    "质谱技术",
+    "色谱技术",
+    "频谱技术",
+    "氦质谱检漏技术",
+    "多真空箱联动系统与控制技术",
+    "科研",
+    "汽车制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环保在线监测仪器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "检漏仪器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:21:55"
+}

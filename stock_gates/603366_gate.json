@@ -1,0 +1,51 @@
+{
+  "stock_id": "603366",
+  "stock_name": "日出东方",
+  "concept": "清洁能源综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "太阳能热水器",
+    "空气能热水器",
+    "空气能采暖",
+    "分布式光储一体化",
+    "空气源热泵技术"
+  ],
+  "should": [
+    "吸油烟机",
+    "集成灶",
+    "净水机",
+    "太阳雨",
+    "四季沐歌",
+    "帅康",
+    "清洁能源综合服务",
+    "热水供应",
+    "供热采暖",
+    "农业干燥"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "太阳能热水器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空气能热水器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空气能采暖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分布式光储一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空气源热泵技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:50:19"
+}

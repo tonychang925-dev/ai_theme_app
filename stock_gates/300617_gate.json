@@ -1,0 +1,39 @@
+{
+  "stock_id": "300617",
+  "stock_name": "安靠智电",
+  "concept": "地下输变电系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "地下输变电系统",
+    "GIL系统",
+    "智慧模块化变电站系统"
+  ],
+  "should": [
+    "电缆连接件系统",
+    "智慧海绵光储充一体化系统",
+    "三相共箱GIL",
+    "开变一体机",
+    "模块化",
+    "小型化",
+    "全绝缘",
+    "可入地"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "地下输变电系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "GIL系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧模块化变电站系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:35:32"
+}

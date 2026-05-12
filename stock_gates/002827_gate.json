@@ -1,0 +1,46 @@
+{
+  "stock_id": "002827",
+  "stock_name": "高争民爆",
+  "concept": "西藏民爆龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业炸药",
+    "工业雷管",
+    "工业导火索",
+    "工业导爆索"
+  ],
+  "should": [
+    "电子雷管芯片",
+    "西藏民爆龙头",
+    "矿山开采",
+    "水利水电",
+    "交通建设",
+    "城市改造",
+    "地质勘探",
+    "爆炸加工",
+    "国防建设",
+    "西藏自治区唯一一家民爆企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业炸药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业雷管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业导火索",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业导爆索",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:59:03"
+}

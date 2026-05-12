@@ -1,0 +1,35 @@
+{
+  "stock_id": "600405",
+  "stock_name": "动力源",
+  "concept": "电能转换与能源利用",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数据通信",
+    "绿色出行",
+    "新能源业务"
+  ],
+  "should": [
+    "节能业务",
+    "电能转换与能源利用",
+    "整体解决方案",
+    "全生命周期服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数据通信",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "绿色出行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:17:09"
+}

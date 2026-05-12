@@ -1,0 +1,31 @@
+{
+  "stock_id": "300999",
+  "stock_name": "金龙鱼",
+  "concept": "粮油巨头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金龙鱼"
+  ],
+  "should": [
+    "胡姬花",
+    "欧丽薇兰",
+    "香满园",
+    "口福",
+    "粮油巨头",
+    "全国性经销网络",
+    "终端销售网点",
+    "渠道下沉",
+    "全球化采购",
+    "ADM供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金龙鱼",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:52:35"
+}

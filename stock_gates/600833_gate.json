@@ -1,0 +1,41 @@
+{
+  "stock_id": "600833",
+  "stock_name": "第一医药",
+  "concept": "医药流通",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药流通",
+    "药品零售",
+    "药品批发"
+  ],
+  "should": [
+    "DTP药房",
+    "双通道药房",
+    "中医诊疗",
+    "中药养身",
+    "健康自助检测",
+    "云医院",
+    "零售业务",
+    "批发业务",
+    "终端消费者",
+    "终端医疗机构"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医药流通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "药品零售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "药品批发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:29:04"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "002271",
+  "stock_name": "东方雨虹",
+  "concept": "建筑防水服务商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑防水服务商"
+  ],
+  "should": [
+    "防水卷材",
+    "防水涂料",
+    "工程施工",
+    "材料销售",
+    "民用建材",
+    "节能保温",
+    "建筑涂料",
+    "非织造布",
+    "建筑修缮",
+    "特种砂浆"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑防水服务商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:32:44"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "002727",
+  "stock_name": "一心堂",
+  "concept": "连锁药店龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "连锁药店龙头",
+    "零售药店"
+  ],
+  "should": [
+    "中西成药",
+    "中药",
+    "医疗器械及计生、消毒用品",
+    "少区域高密度网点",
+    "高度标准化统一管理",
+    "诊所",
+    "互联网新零售",
+    "医保门店覆盖率",
+    "院边店布局",
+    "双通道门店资质"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "连锁药店龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "零售药店",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:55:01"
+}

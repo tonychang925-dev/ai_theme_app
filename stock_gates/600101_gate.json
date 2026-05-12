@@ -1,0 +1,36 @@
+{
+  "stock_id": "600101",
+  "stock_name": "明星电力",
+  "concept": "地方电力水务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "供电",
+    "供水"
+  ],
+  "should": [
+    "电水建安",
+    "智能运维",
+    "遂宁市船山区",
+    "安居区",
+    "供电市场占有率100%",
+    "锂电产业",
+    "工业强市",
+    "招商引资",
+    "输配电价模式",
+    "购销差模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "供电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "供水",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:09:06"
+}

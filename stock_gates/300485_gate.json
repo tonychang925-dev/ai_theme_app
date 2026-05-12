@@ -1,0 +1,27 @@
+{
+  "stock_id": "300485",
+  "stock_name": "赛升药业",
+  "concept": "生物生化制药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生物生化制药"
+  ],
+  "should": [
+    "纤溶酶注射液",
+    "注射用纤溶酶",
+    "薄芝糖肽注射液",
+    "脱氧核苷酸钠注射液",
+    "国家药品标准原研起草单位",
+    "全国首家生产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生物生化制药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:29:23"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "688289",
+  "stock_name": "圣湘生物",
+  "concept": "体外诊断整体方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "HIV-1型核酸测定试剂",
+    "全自动核酸检测分析系统"
+  ],
+  "should": [
+    "百日咳杆菌核酸检测试剂",
+    "腺病毒核酸检测试剂",
+    "乙肝和丙肝检测产品",
+    "血液筛查系统",
+    "HPV13+2检测试剂",
+    "HPV15分型检测试剂",
+    "HPV6/11检测试剂",
+    "HPV16/18检测试剂",
+    "全自动分杯处理系统",
+    "全自动液体处理工作站"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "HIV-1型核酸测定试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全自动核酸检测分析系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:14:27"
+}

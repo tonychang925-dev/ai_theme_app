@@ -1,0 +1,46 @@
+{
+  "stock_id": "300583",
+  "stock_name": "赛托生物",
+  "concept": "甾体药物原料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "甾体药物原料",
+    "基础中间体",
+    "高端中间体",
+    "高端呼吸类特色原料药"
+  ],
+  "should": [
+    "制剂",
+    "雄烯二酮（AD）",
+    "雄二烯二酮（ADD）",
+    "9-羟基雄烯二酮（9OH-AD）",
+    "17α羟基黄体酮衍生物（A环）",
+    "双降醇（BA）系列",
+    "甲羟环氧孕酮(8DM)",
+    "倍他米松环氧水解物（DB11）",
+    "四烯物（3TR）",
+    "醋酸阿奈可他（H6）"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "甾体药物原料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "基础中间体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端中间体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端呼吸类特色原料药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:34:08"
+}

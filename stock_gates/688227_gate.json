@@ -1,0 +1,43 @@
+{
+  "stock_id": "688227",
+  "stock_name": "品高股份",
+  "concept": "云计算服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "BingoCloudOS",
+    "BingoFuse",
+    "BingoInsight",
+    "BingoLink"
+  ],
+  "should": [
+    "云计算服务",
+    "私有云底层代码自研",
+    "硬件中立性",
+    "高兼容性",
+    "支持国产芯片和操作系统",
+    "私有云和混合云服务提供商",
+    "与中国电信联合运营政务云平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "BingoCloudOS",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "BingoFuse",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "BingoInsight",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "BingoLink",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:12:27"
+}

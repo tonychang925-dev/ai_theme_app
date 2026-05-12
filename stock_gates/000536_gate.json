@@ -1,0 +1,36 @@
+{
+  "stock_id": "000536",
+  "stock_name": "华映科技",
+  "concept": "新型显示",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LCD显示面板",
+    "液晶模组(LCM)"
+  ],
+  "should": [
+    "盖板玻璃",
+    "高分辨率",
+    "高帧率",
+    "窄边框",
+    "低功耗",
+    "高触控灵敏度",
+    "液晶电视",
+    "电脑显示器",
+    "笔记本电脑",
+    "平板电脑"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LCD显示面板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液晶模组(LCM)",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:55:15"
+}

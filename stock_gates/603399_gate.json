@@ -1,0 +1,36 @@
+{
+  "stock_id": "603399",
+  "stock_name": "永杉锂业",
+  "concept": "锂钼双主业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电池级碳酸锂",
+    "氢氧化锂"
+  ],
+  "should": [
+    "工业级碳酸锂",
+    "钼炉料",
+    "钼化工",
+    "钼金属",
+    "动力电池",
+    "储能电池",
+    "锂电池正极材料",
+    "不锈钢",
+    "特种钢",
+    "合金钢"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电池级碳酸锂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氢氧化锂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:50:50"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "002737",
+  "stock_name": "葵花药业",
+  "concept": "儿童药领军",
+  "strategy_type": "industry_chain",
+  "must": [
+    "小儿肺热咳喘口服液/颗粒",
+    "小儿柴桂退热颗粒"
+  ],
+  "should": [
+    "护肝片",
+    "川贝雪系列药品",
+    "康妇消炎栓",
+    "胃康灵",
+    "儿童药领军",
+    "药品研发",
+    "制造",
+    "营销",
+    "品牌OTC领先企业",
+    "中成药业务营收占比超70%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "小儿肺热咳喘口服液/颗粒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小儿柴桂退热颗粒",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:55:30"
+}

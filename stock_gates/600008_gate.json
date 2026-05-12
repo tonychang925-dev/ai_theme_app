@@ -1,0 +1,36 @@
+{
+  "stock_id": "600008",
+  "stock_name": "首创环保",
+  "concept": "水务环保",
+  "strategy_type": "industry_chain",
+  "must": [
+    "供水水处理",
+    "污水水处理"
+  ],
+  "should": [
+    "固废处理",
+    "大气综合治理",
+    "EPC+O",
+    "水务环保",
+    "资源能源",
+    "轻资产业务",
+    "委托运营",
+    "焚烧运营",
+    "城市公司",
+    "城乡供水一体化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "供水水处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "污水水处理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:06:59"
+}

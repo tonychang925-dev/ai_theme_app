@@ -1,0 +1,46 @@
+{
+  "stock_id": "600222",
+  "stock_name": "太龙药业",
+  "concept": "中药制造与研发服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中药制造与研发服务",
+    "药品制剂",
+    "中药饮片",
+    "药品研发服务"
+  ],
+  "should": [
+    "药品药材流通",
+    "双黄连口服液",
+    "发酵饮片",
+    "太龙TAILONG",
+    "桐君传统中药文化",
+    "药祖桐君",
+    "临床CRO服务",
+    "国家火炬计划重点高新技术企业",
+    "国家高技术产业化示范工程",
+    "博士后工作站"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中药制造与研发服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "药品制剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中药饮片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "药品研发服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:13:46"
+}

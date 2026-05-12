@@ -1,0 +1,46 @@
+{
+  "stock_id": "000910",
+  "stock_name": "大亚圣象",
+  "concept": "人造板地板",
+  "strategy_type": "industry_chain",
+  "must": [
+    "人造板地板",
+    "强化木地板",
+    "三层实木地板",
+    "多层实木地板"
+  ],
+  "should": [
+    "SPC地板",
+    "WPC地板",
+    "中高密度纤维板",
+    "刨花板",
+    "无醛添加认证",
+    "住宅装修",
+    "酒店装修",
+    "办公楼装修",
+    "运动场馆装修",
+    "家具板"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "人造板地板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "强化木地板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三层实木地板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多层实木地板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:09:07"
+}

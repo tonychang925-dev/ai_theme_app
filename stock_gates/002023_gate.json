@@ -1,0 +1,41 @@
+{
+  "stock_id": "002023",
+  "stock_name": "海特高新",
+  "concept": "航空维修与半导体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航空装备",
+    "D级飞行模拟机",
+    "高端装备研制"
+  ],
+  "should": [
+    "第二/三代化合物半导体芯片",
+    "飞机退租检业务",
+    "机体维修",
+    "飞行员培训",
+    "乘务员培训",
+    "碳化硅(SiC)",
+    "氮化镓(GaN)",
+    "MMIC",
+    "SIP",
+    "航空维修与半导体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航空装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "D级飞行模拟机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端装备研制",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:18:51"
+}

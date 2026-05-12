@@ -1,0 +1,41 @@
+{
+  "stock_id": "301307",
+  "stock_name": "美利信",
+  "concept": "铝合金精密压铸",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铝合金精密压铸",
+    "通信类结构件",
+    "汽车类零部件"
+  ],
+  "should": [
+    "华为",
+    "爱立信",
+    "比亚迪",
+    "特斯拉",
+    "一汽红旗",
+    "奇瑞",
+    "东风雪铁龙",
+    "爱信精机",
+    "神龙汽车",
+    "捷普"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铝合金精密压铸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通信类结构件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车类零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:02:29"
+}

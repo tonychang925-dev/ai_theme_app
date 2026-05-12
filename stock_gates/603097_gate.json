@@ -1,0 +1,35 @@
+{
+  "stock_id": "603097",
+  "stock_name": "江苏华辰",
+  "concept": "输配电设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "输配电及控制设备",
+    "输配电设备"
+  ],
+  "should": [
+    "变电设备",
+    "智能电网",
+    "电力电网",
+    "新能源（风、光、储）",
+    "轨道交通",
+    "电动汽车充电桩",
+    "工业制造",
+    "基础建设",
+    "房产建筑"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "输配电及控制设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "输配电设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:43:35"
+}

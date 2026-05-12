@@ -1,0 +1,41 @@
+{
+  "stock_id": "300515",
+  "stock_name": "三德科技",
+  "concept": "煤质分析仪器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤质分析仪器",
+    "分析仪器",
+    "智能装备"
+  ],
+  "should": [
+    "固/危废实验室分析仪器",
+    "实验室信息管理系统",
+    "固危废检测",
+    "火电",
+    "煤炭",
+    "水泥",
+    "固危废",
+    "化工",
+    "冶金",
+    "检测"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤质分析仪器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分析仪器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:30:45"
+}

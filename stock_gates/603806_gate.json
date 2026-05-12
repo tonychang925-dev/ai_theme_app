@@ -1,0 +1,36 @@
+{
+  "stock_id": "603806",
+  "stock_name": "福斯特",
+  "concept": "光伏胶膜王者",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏胶膜",
+    "EVA胶膜"
+  ],
+  "should": [
+    "光伏背板",
+    "感光干膜",
+    "FCCL",
+    "功能膜",
+    "光伏组件",
+    "电子电路",
+    "锂电",
+    "全球市占率超50%",
+    "CR3超80%",
+    "客户全覆盖"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏胶膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "EVA胶膜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:56:50"
+}

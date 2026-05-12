@@ -1,0 +1,46 @@
+{
+  "stock_id": "600967",
+  "stock_name": "内蒙一机",
+  "concept": "主战坦克研制",
+  "strategy_type": "industry_chain",
+  "must": [
+    "主战坦克研制",
+    "主战坦克",
+    "中重型轮式装甲车",
+    "VT4坦克"
+  ],
+  "should": [
+    "铁路车辆",
+    "外贸货车",
+    "无人驾驶与智能探测感知",
+    "联勤保障与应急救援装备",
+    "数智工程",
+    "人机隔离机器换人黑灯工厂",
+    "国防装备",
+    "军贸出口",
+    "应急救援",
+    "铁路运输"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "主战坦克研制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "主战坦克",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中重型轮式装甲车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "VT4坦克",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:31:59"
+}

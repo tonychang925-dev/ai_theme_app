@@ -1,0 +1,28 @@
+{
+  "stock_id": "300651",
+  "stock_name": "金陵体育",
+  "concept": "体育器材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "体育器材",
+    "场馆设施"
+  ],
+  "should": [
+    "产品生产工艺",
+    "自动化控制技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "体育器材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "场馆设施",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:36:58"
+}

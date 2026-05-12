@@ -1,0 +1,33 @@
+{
+  "stock_id": "000419",
+  "stock_name": "通程控股",
+  "concept": "商业零售与酒店",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商业零售",
+    "酒店管理与服务",
+    "商业零售与酒店"
+  ],
+  "should": [
+    "综合投资",
+    "湖南地区营收占比100%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商业零售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "酒店管理与服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商业零售与酒店",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:52:02"
+}

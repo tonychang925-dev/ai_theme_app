@@ -1,0 +1,36 @@
+{
+  "stock_id": "300067",
+  "stock_name": "安诺其",
+  "concept": "高端染料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端染料",
+    "中高端差异化染料"
+  ],
+  "should": [
+    "超细纤维用分散染料",
+    "高水洗分散染料",
+    "环保型分散染料",
+    "活性印花染料",
+    "低温活性染料",
+    "超微环保液体分散染料",
+    "数码墨水专用染料",
+    "多纤维混纺用染料",
+    "染料中间体",
+    "数码墨水"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端染料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中高端差异化染料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:11:53"
+}

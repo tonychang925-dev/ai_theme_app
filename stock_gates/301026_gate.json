@@ -1,0 +1,36 @@
+{
+  "stock_id": "301026",
+  "stock_name": "浩通科技",
+  "concept": "贵金属回收",
+  "strategy_type": "industry_chain",
+  "must": [
+    "贵金属回收",
+    "贵金属二次资源综合利用"
+  ],
+  "should": [
+    "新材料",
+    "贸易业务",
+    "石化",
+    "精细化工",
+    "汽车工业",
+    "汽车尾气催化剂",
+    "石化催化剂",
+    "精细化工催化剂",
+    "医疗医药",
+    "电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "贵金属回收",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "贵金属二次资源综合利用",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:53:40"
+}

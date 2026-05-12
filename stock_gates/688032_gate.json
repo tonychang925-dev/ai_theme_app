@@ -1,0 +1,38 @@
+{
+  "stock_id": "688032",
+  "stock_name": "禾迈股份",
+  "concept": "微逆龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "微逆龙头",
+    "微型逆变器",
+    "国内微逆龙头"
+  ],
+  "should": [
+    "模块化逆变器",
+    "电气成套设备",
+    "组件级最大功率点跟踪（MPPT）",
+    "组件级监控管理",
+    "模块化、数字化理念",
+    "分布式发电系统（户用、工商业）",
+    "光伏地面电站"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "微逆龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "微型逆变器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内微逆龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:05:55"
+}

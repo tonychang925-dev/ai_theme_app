@@ -1,0 +1,38 @@
+{
+  "stock_id": "002801",
+  "stock_name": "微光股份",
+  "concept": "微电机龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "冷柜电机",
+    "外转子风机",
+    "ECM电机"
+  ],
+  "should": [
+    "伺服电机",
+    "PANASONIC",
+    "FRIGOGLASS",
+    "微电机龙头",
+    "冷柜电机市占率全球第一",
+    "外转子风机销量国内第一",
+    "ECM电机销量国内第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "冷柜电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "外转子风机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ECM电机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:58:04"
+}

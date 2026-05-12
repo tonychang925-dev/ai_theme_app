@@ -1,0 +1,36 @@
+{
+  "stock_id": "601225",
+  "stock_name": "陕西煤业",
+  "concept": "动力煤龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "动力煤龙头",
+    "煤炭采掘"
+  ],
+  "should": [
+    "陕北矿区",
+    "彬黄矿区",
+    "渭北矿区",
+    "铁路运输",
+    "特低灰煤",
+    "特低磷煤",
+    "特低硫煤",
+    "中高发热量煤",
+    "供给紧缺",
+    "需求刚性"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "动力煤龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭采掘",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:35:36"
+}

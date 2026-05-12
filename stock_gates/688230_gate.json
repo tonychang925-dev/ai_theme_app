@@ -1,0 +1,46 @@
+{
+  "stock_id": "688230",
+  "stock_name": "芯导科技",
+  "concept": "功率半导体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "功率器件",
+    "功率IC",
+    "TVS",
+    "电源管理IC"
+  ],
+  "should": [
+    "MOSFET",
+    "SBD",
+    "专精特新小巨人",
+    "平面工艺普通容值TVS技术平台",
+    "平面工艺低容值TVS技术平台",
+    "改进型台面工艺TVS技术平台",
+    "深槽隔离工艺TVS技术平台",
+    "GaN HEMT",
+    "硅基氮化镓高电子迁移率功率器件",
+    "功率半导体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "功率器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功率IC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "TVS",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电源管理IC",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:12:37"
+}

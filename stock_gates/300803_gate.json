@@ -1,0 +1,37 @@
+{
+  "stock_id": "300803",
+  "stock_name": "指南针",
+  "concept": "证券信息服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "证券信息服务",
+    "财富掌门系列",
+    "全赢博弈系列"
+  ],
+  "should": [
+    "证券分析",
+    "鬼域平台",
+    "博弈平台",
+    "季风平台",
+    "广告服务",
+    "保险经纪"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "证券信息服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "财富掌门系列",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全赢博弈系列",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:43:47"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "002463",
+  "stock_name": "沪电股份",
+  "concept": "高端PCB制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "企业通讯市场板",
+    "汽车板"
+  ],
+  "should": [
+    "办公及工业设备板",
+    "高端PCB制造",
+    "通讯设备",
+    "数据中心",
+    "汽车电子",
+    "工业设备",
+    "医疗设备",
+    "微波射频",
+    "半导体芯片测试",
+    "高速材料测试评估"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "企业通讯市场板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:42:57"
+}

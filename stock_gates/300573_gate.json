@@ -1,0 +1,31 @@
+{
+  "stock_id": "300573",
+  "stock_name": "兴齐眼药",
+  "concept": "眼科药物",
+  "strategy_type": "industry_chain",
+  "must": [
+    "眼科药物"
+  ],
+  "should": [
+    "眼用抗感染药",
+    "眼用抗炎/抗感染药",
+    "散瞳药和睫状肌麻痹药",
+    "眼用非类固醇消炎药",
+    "缩瞳药和抗青光眼用药",
+    "凝胶制剂",
+    "缓释制剂",
+    "纳米制剂",
+    "眼科处方药市场",
+    "医疗机构"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "眼科药物",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:33:22"
+}

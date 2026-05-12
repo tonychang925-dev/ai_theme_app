@@ -1,0 +1,51 @@
+{
+  "stock_id": "603928",
+  "stock_name": "兴业股份",
+  "concept": "铸造造型材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铸造造型材料",
+    "铸造用自硬呋喃树脂",
+    "冷芯盒树脂",
+    "碱性酚醛树脂",
+    "覆膜砂用酚醛树脂"
+  ],
+  "should": [
+    "涂料",
+    "冒口",
+    "过滤器",
+    "球化剂",
+    "孕育剂",
+    "蠕化剂",
+    "丙烯酸",
+    "浸渍树脂",
+    "特种酚醛树脂",
+    "生物基材料开发技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铸造造型材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铸造用自硬呋喃树脂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冷芯盒树脂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碱性酚醛树脂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "覆膜砂用酚醛树脂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:59:12"
+}

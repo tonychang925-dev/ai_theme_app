@@ -1,0 +1,31 @@
+{
+  "stock_id": "688303",
+  "stock_name": "大全能源",
+  "concept": "多晶硅生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "多晶硅"
+  ],
+  "should": [
+    "多晶硅生产",
+    "太阳能光伏产品",
+    "硅锭",
+    "硅片",
+    "电池片",
+    "电池组件",
+    "高纯多晶硅制造",
+    "N型硅料技术",
+    "半导体级硅料技术",
+    "国内领先的多晶硅专业生产商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "多晶硅",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:14:46"
+}

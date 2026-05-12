@@ -1,0 +1,46 @@
+{
+  "stock_id": "600894",
+  "stock_name": "广日股份",
+  "concept": "电梯产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电梯整机零部件",
+    "(新能源)汽车零部件",
+    "智慧楼宇",
+    "数字化领先企业"
+  ],
+  "should": [
+    "工业机器人及互联网",
+    "智能车库",
+    "智慧照明",
+    "轨道交通",
+    "智能交互车灯技术",
+    "智慧园区",
+    "智慧轨交",
+    "电梯产业链",
+    "生产性服务业",
+    "数字化战略"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电梯整机零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "(新能源)汽车零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧楼宇",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字化领先企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:30:45"
+}

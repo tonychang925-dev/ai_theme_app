@@ -1,0 +1,41 @@
+{
+  "stock_id": "601377",
+  "stock_name": "兴业证券",
+  "concept": "综合金融服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "财富管理业务",
+    "机构综合服务",
+    "自营业务"
+  ],
+  "should": [
+    "代销金融产品",
+    "公募基金",
+    "家族财富管理",
+    "资产托管外包",
+    "场外衍生品",
+    "数智化转型",
+    "金融科技赋能",
+    "买方投顾模式",
+    "居民财富管理",
+    "机构客户服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "财富管理业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机构综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自营业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:36:31"
+}

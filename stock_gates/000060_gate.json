@@ -1,0 +1,51 @@
+{
+  "stock_id": "000060",
+  "stock_name": "中金岭南",
+  "concept": "铅锌铜金矿业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铅锌铜金矿业",
+    "铅锭",
+    "锌锭及锌合金",
+    "黄金",
+    "粗铜"
+  ],
+  "should": [
+    "白银",
+    "铟锭",
+    "工业硫酸",
+    "铝型材",
+    "电池锌粉",
+    "铅酸蓄电池",
+    "铅材和铅合金",
+    "压铸合金",
+    "氧化锌",
+    "镀锌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铅锌铜金矿业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铅锭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锌锭及锌合金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "黄金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "粗铜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:49:35"
+}

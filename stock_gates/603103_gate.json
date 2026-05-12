@@ -1,0 +1,31 @@
+{
+  "stock_id": "603103",
+  "stock_name": "横店影视",
+  "concept": "院线影院投资",
+  "strategy_type": "industry_chain",
+  "must": [
+    "院线影院投资"
+  ],
+  "should": [
+    "《流浪地球2》",
+    "《熊出没伴我“熊芯”》",
+    "《断网》",
+    "《保你平安》",
+    "《地心危机》",
+    "《红色特工》",
+    "《七叔归来》",
+    "直营影院",
+    "加盟影院",
+    "银幕数"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "院线影院投资",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:43:50"
+}

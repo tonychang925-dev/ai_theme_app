@@ -1,0 +1,51 @@
+{
+  "stock_id": "300081",
+  "stock_name": "恒信东方",
+  "concept": "数字创意产业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字创意产业",
+    "国家文化数字化战略",
+    "虚拟现实与行业应用融合",
+    "艺术创意",
+    "视觉技术"
+  ],
+  "should": [
+    "数字文化创意",
+    "内容生产",
+    "技术服务",
+    "LBE城市新娱乐",
+    "VR/CG内容",
+    "AI合家欢平台",
+    "视频算法",
+    "人工智能",
+    "物联网",
+    "云计算"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字创意产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国家文化数字化战略",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "虚拟现实与行业应用融合",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "艺术创意",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "视觉技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:12:35"
+}

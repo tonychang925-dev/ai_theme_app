@@ -1,0 +1,51 @@
+{
+  "stock_id": "000338",
+  "stock_name": "潍柴动力",
+  "concept": "重卡产业链龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "潍柴动力发动机",
+    "法士特变速器",
+    "汉德车桥",
+    "陕西重汽",
+    "重卡发动机"
+  ],
+  "should": [
+    "重卡变速箱",
+    "商用车车桥",
+    "重卡整车",
+    "凯傲",
+    "德马泰克",
+    "林德液压",
+    "叉车",
+    "仓储物流解决方案",
+    "液压系统",
+    "新能源动力系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "潍柴动力发动机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "法士特变速器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汉德车桥",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "陕西重汽",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重卡发动机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:51:35"
+}

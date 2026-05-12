@@ -1,0 +1,41 @@
+{
+  "stock_id": "300317",
+  "stock_name": "珈伟新能",
+  "concept": "光伏清洁能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏消费类产品",
+    "光伏工业化应用",
+    "光伏电站EPC工程总承包"
+  ],
+  "should": [
+    "斜单轴自适应跟踪系统",
+    "平单轴自适应跟踪系统",
+    "光伏SP小板",
+    "光伏清洁能源",
+    "庭院照明",
+    "LED照明",
+    "智能家居",
+    "大型地面光伏电站",
+    "分布式光伏电站",
+    "电站运营综合服务解决方案"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏消费类产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏工业化应用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏电站EPC工程总承包",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:22:16"
+}

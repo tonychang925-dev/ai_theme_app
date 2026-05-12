@@ -1,0 +1,40 @@
+{
+  "stock_id": "601038",
+  "stock_name": "一拖股份",
+  "concept": "农机装备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农业机械",
+    "动力换挡拖拉机",
+    "智能作业控制系统"
+  ],
+  "should": [
+    "动力机械",
+    "柴油机",
+    "非道路柴油机技术",
+    "收获机械",
+    "工程机械",
+    "农机装备制造",
+    "农业机械化",
+    "国内领先拖拉机产品技术",
+    "行业位势和市场份额持续巩固"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农业机械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动力换挡拖拉机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能作业控制系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:33:39"
+}

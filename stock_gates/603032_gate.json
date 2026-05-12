@@ -1,0 +1,24 @@
+{
+  "stock_id": "603032",
+  "stock_name": "德新科技",
+  "concept": "锂电池裁切模具",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电池裁切模具"
+  ],
+  "should": [
+    "叠片电池",
+    "五金模具冲切技术",
+    "国内领先的锂电池裁切模具供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电池裁切模具",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:41:34"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "002487",
+  "stock_name": "大金重工",
+  "concept": "风电塔筒龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风电塔筒龙头",
+    "风电塔筒环节龙头",
+    "海塔",
+    "自有码头"
+  ],
+  "should": [
+    "常规陆塔",
+    "大直径分片式陆塔",
+    "低风速柔性高塔",
+    "单桩",
+    "群桩",
+    "导管架",
+    "海上升压站",
+    "山东蓬莱",
+    "辽宁阜新",
+    "内蒙古兴安盟"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风电塔筒龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电塔筒环节龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海塔",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自有码头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:44:14"
+}

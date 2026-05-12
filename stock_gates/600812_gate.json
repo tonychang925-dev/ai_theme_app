@@ -1,0 +1,36 @@
+{
+  "stock_id": "600812",
+  "stock_name": "华北制药",
+  "concept": "抗体生物药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "抗体生物药",
+    "奥木替韦单抗注射液",
+    "抗体药物"
+  ],
+  "should": [
+    "达托霉素注射剂",
+    "合成生物学",
+    "生物合成技术",
+    "狂犬病防治",
+    "抗感染治疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "抗体生物药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "奥木替韦单抗注射液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "抗体药物",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:28:23"
+}

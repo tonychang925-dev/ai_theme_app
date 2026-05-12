@@ -1,0 +1,40 @@
+{
+  "stock_id": "688777",
+  "stock_name": "中控技术",
+  "concept": "流程工业自动化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国产流程工业龙头",
+    "集散控制系统(DCS)",
+    "工业软件"
+  ],
+  "should": [
+    "安全仪表系统(SIS)",
+    "网络化混合控制系统",
+    "自动化仪表",
+    "主控芯片",
+    "流程工业自动化",
+    "DCS核心部件100%国产化",
+    "固件开发",
+    "DCS连续11年市占率第一",
+    "中石化最大供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国产流程工业龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集散控制系统(DCS)",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业软件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:25:03"
+}

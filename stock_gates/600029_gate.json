@@ -1,0 +1,30 @@
+{
+  "stock_id": "600029",
+  "stock_name": "南方航空",
+  "concept": "航空运输",
+  "strategy_type": "industry_chain",
+  "must": [
+    "旅客运输"
+  ],
+  "should": [
+    "货邮运输",
+    "北京枢纽",
+    "大湾区市场",
+    "Skytrax中国最佳航司",
+    "CAPSE最佳航空公司奖",
+    "航空运输",
+    "中国运输飞机最多",
+    "安全飞行155.7万小时",
+    "航班正常率行业领先"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "旅客运输",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:07:29"
+}

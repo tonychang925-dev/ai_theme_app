@@ -1,0 +1,41 @@
+{
+  "stock_id": "300530",
+  "stock_name": "领湃科技",
+  "concept": "新能源电池",
+  "strategy_type": "industry_chain",
+  "must": [
+    "涂镀添加剂",
+    "涂镀中间体",
+    "新能源电池"
+  ],
+  "should": [
+    "储能",
+    "新能源汽车",
+    "电芯",
+    "模组",
+    "系统集成",
+    "主控芯片",
+    "材料研发",
+    "电芯开发",
+    "模组及PACK独立开发测试",
+    "固件开发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "涂镀添加剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涂镀中间体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源电池",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:31:26"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300913",
+  "stock_name": "兆龙互连",
+  "concept": "高速互连电缆",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高速互连电缆",
+    "高速有源铜缆",
+    "高速DAC/AEC产品"
+  ],
+  "should": [
+    "专用电缆",
+    "连接产品",
+    "数据电缆",
+    "信号仿真",
+    "结构设计",
+    "模具设计",
+    "PCBA设计",
+    "线端连接器设计",
+    "车联网",
+    "智能家居"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高速互连电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高速有源铜缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高速DAC/AEC产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:49:00"
+}

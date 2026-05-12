@@ -1,0 +1,51 @@
+{
+  "stock_id": "300360",
+  "stock_name": "炬华科技",
+  "concept": "能源物联网设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "能源物联网设备",
+    "智慧计量与采集系统",
+    "智能电力终端及系统",
+    "国家电网",
+    "南方电网"
+  ],
+  "should": [
+    "物联网智能水表",
+    "智能配用电产品及系统",
+    "智能充电设备",
+    "物联网传感器及配件",
+    "各省网公司",
+    "模组化设计",
+    "IR46标准",
+    "双向计量",
+    "阶梯电价",
+    "分时电价"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "能源物联网设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧计量与采集系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能电力终端及系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国家电网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "南方电网",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:24:01"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "600773",
+  "stock_name": "西藏城投",
+  "concept": "房地产+盐湖提锂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "房地产开发与销售",
+    "房地产+盐湖提锂",
+    "碳酸锂储量390万吨",
+    "盐湖提锂技术"
+  ],
+  "should": [
+    "氯化钾2800万吨",
+    "三氧化二硼330万吨",
+    "保障房",
+    "普通住宅",
+    "商办楼",
+    "商业综合体",
+    "原卤萃取研究",
+    "石墨烯杂化物吨级工业化试验线",
+    "18项发明专利",
+    "中试项目通过科技成果评价会"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房地产开发与销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "房地产+盐湖提锂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳酸锂储量390万吨",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "盐湖提锂技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:27:17"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "300433",
+  "stock_name": "蓝思科技",
+  "concept": "玻璃金属一体化平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "玻璃金属一体化平台",
+    "苹果玻璃盖板首家供应商",
+    "特斯拉全球核心一级供应商",
+    "视窗防护玻璃技术"
+  ],
+  "should": [
+    "中小尺寸防护玻璃",
+    "大尺寸防护玻璃",
+    "蓝宝石",
+    "精密陶瓷",
+    "金属结构件",
+    "智能终端组装",
+    "光伏玻璃",
+    "蓝宝石长晶技术",
+    "精密陶瓷材料应用",
+    "金属加工技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "玻璃金属一体化平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "苹果玻璃盖板首家供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特斯拉全球核心一级供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "视窗防护玻璃技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:27:19"
+}

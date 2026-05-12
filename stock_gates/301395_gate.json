@@ -1,0 +1,36 @@
+{
+  "stock_id": "301395",
+  "stock_name": "仁信新材",
+  "concept": "聚苯乙烯材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "聚苯乙烯树脂",
+    "聚苯乙烯材料"
+  ],
+  "should": [
+    "HIPS产品",
+    "GPPS专用料",
+    "GPPS普通料",
+    "GPPS扩散板专用料",
+    "GPPS导光板专用料",
+    "连续本体法生产",
+    "日用塑料制品",
+    "玩具塑料制品",
+    "光学板材",
+    "包装"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "聚苯乙烯树脂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚苯乙烯材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:04:42"
+}

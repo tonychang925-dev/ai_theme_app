@@ -1,0 +1,46 @@
+{
+  "stock_id": "600784",
+  "stock_name": "鲁银投资",
+  "concept": "粉末冶金领先者",
+  "strategy_type": "industry_chain",
+  "must": [
+    "还原系列钢铁粉末",
+    "水雾化系列钢铁粉末",
+    "高性能合金特种粉末材料",
+    "山东省粉末冶金产业领先者"
+  ],
+  "should": [
+    "食盐",
+    "工业盐",
+    "溴素",
+    "还原制粉",
+    "水雾化制粉",
+    "高性能合金特种粉末材料生产线",
+    "生活用盐",
+    "食用和食品加工",
+    "两碱工业用盐",
+    "印染"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "还原系列钢铁粉末",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水雾化系列钢铁粉末",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高性能合金特种粉末材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "山东省粉末冶金产业领先者",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:27:42"
+}

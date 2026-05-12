@@ -1,0 +1,41 @@
+{
+  "stock_id": "688099",
+  "stock_name": "晶晨股份",
+  "concept": "智能终端SoC芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国内智能机顶盒芯片龙头",
+    "智能机顶盒SoC芯片",
+    "智能终端SoC芯片"
+  ],
+  "should": [
+    "Wi-Fi芯片",
+    "智能电视SoC芯片",
+    "AI音视频SoC芯片",
+    "汽车电子芯片",
+    "超高清音视频编解码",
+    "AI算力集成",
+    "低功耗设计",
+    "边缘AI能力",
+    "ARM V9架构",
+    "6nm商用芯片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国内智能机顶盒芯片龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能机顶盒SoC芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能终端SoC芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:08:18"
+}

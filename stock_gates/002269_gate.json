@@ -1,0 +1,36 @@
+{
+  "stock_id": "002269",
+  "stock_name": "美邦服饰",
+  "concept": "休闲服装零售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "Metersbonwe",
+    "MECITY"
+  ],
+  "should": [
+    "Moomoo",
+    "MECITY KIDS",
+    "男装",
+    "女装",
+    "直营店",
+    "加盟店",
+    "敏捷型供应链",
+    "商务流、信息流、物流和资金流同步",
+    "国际化与本土化结合",
+    "自主培养设计师"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "Metersbonwe",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MECITY",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:32:34"
+}

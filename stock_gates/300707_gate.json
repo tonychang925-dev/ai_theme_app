@@ -1,0 +1,36 @@
+{
+  "stock_id": "300707",
+  "stock_name": "威唐工业",
+  "concept": "汽车模具冲压",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车冲压模具",
+    "冲压零部件"
+  ],
+  "should": [
+    "锂电池箱体",
+    "锂离子电池模组",
+    "车身轻量化技术",
+    "冲压自动化技术",
+    "美国得州生产基地",
+    "德国柏林生产基地",
+    "汽车模具冲压",
+    "汽车车身结构件",
+    "新能源汽车零部件",
+    "电池箱体及电池包"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车冲压模具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冲压零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:39:51"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "301236",
+  "stock_name": "软通动力",
+  "concept": "软件与信息技术服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "软件与信息技术服务",
+    "数字化创新业务服务",
+    "云计算",
+    "大数据",
+    "物联网"
+  ],
+  "should": [
+    "通用技术服务",
+    "数字化运营服务",
+    "开源欧拉",
+    "开源高斯",
+    "SwanLinkOS",
+    "工业元宇宙平台",
+    "工业物联网平台",
+    "工业大数据平台",
+    "生产制造执行平台",
+    "工业云平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "软件与信息技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字化创新业务服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云计算",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大数据",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物联网",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:00:22"
+}

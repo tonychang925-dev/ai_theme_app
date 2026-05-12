@@ -1,0 +1,28 @@
+{
+  "stock_id": "300960",
+  "stock_name": "通业科技",
+  "concept": "轨道交通电气装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轨道交通电气装备"
+  ],
+  "should": [
+    "电源产品",
+    "智能控制产品",
+    "电机及风机产品",
+    "铁路机车",
+    "城市轨道交通",
+    "动车",
+    "新能源市场"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轨道交通电气装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:50:48"
+}

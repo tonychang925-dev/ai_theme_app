@@ -1,0 +1,30 @@
+{
+  "stock_id": "603733",
+  "stock_name": "仙鹤股份",
+  "concept": "特种纸龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种纸龙头"
+  ],
+  "should": [
+    "日用消费系列",
+    "食品与医疗包装材料系列",
+    "商务交流与出版印刷材料系列",
+    "烟草行业配套系列",
+    "电气及工业用纸系列",
+    "家居装饰材料系列",
+    "日用消费",
+    "食品医疗包装",
+    "商务出版印刷"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种纸龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:55:52"
+}

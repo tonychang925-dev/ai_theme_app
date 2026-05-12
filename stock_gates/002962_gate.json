@@ -1,0 +1,34 @@
+{
+  "stock_id": "002962",
+  "stock_name": "五方光电",
+  "concept": "精密光电薄膜元器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密光电薄膜元器件",
+    "红外截止滤光片"
+  ],
+  "should": [
+    "生物识别滤光片",
+    "精密光学镀膜技术",
+    "清洗技术",
+    "丝印技术",
+    "激光切割技术",
+    "组立技术",
+    "精密光电薄膜元器件供应商",
+    "国内红外截止滤光片第二"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密光电薄膜元器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "红外截止滤光片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:05:08"
+}

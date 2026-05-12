@@ -1,0 +1,46 @@
+{
+  "stock_id": "300722",
+  "stock_name": "新余国科",
+  "concept": "军用火工品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "军用火工品",
+    "火工元件",
+    "火工装置",
+    "火工系统"
+  ],
+  "should": [
+    "人工影响天气火箭弹",
+    "人工影响天气火箭发射架",
+    "人工影响天气火箭发射控制器",
+    "地面碘化银催化系统",
+    "火工品设计",
+    "火工系统集成",
+    "催化剂播撒技术",
+    "气象环境监测技术",
+    "陆军",
+    "空军"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "军用火工品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "火工元件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "火工装置",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "火工系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:40:20"
+}

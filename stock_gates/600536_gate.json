@@ -1,0 +1,51 @@
+{
+  "stock_id": "600536",
+  "stock_name": "中国软件",
+  "concept": "国产操作系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国产操作系统",
+    "麒麟操作系统",
+    "达梦数据库",
+    "技术产品提供商",
+    "总承包商"
+  ],
+  "should": [
+    "中间件",
+    "安全产品",
+    "应用系统",
+    "云计算",
+    "物联网",
+    "移动互联网",
+    "大数据",
+    "PKS计算平台系统商",
+    "关键行业核心应用提供商",
+    "国家重大工程总包商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国产操作系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "麒麟操作系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "达梦数据库",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "技术产品提供商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "总承包商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:20:35"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "300088",
+  "stock_name": "长信科技",
+  "concept": "触控显示模组",
+  "strategy_type": "industry_chain",
+  "must": [
+    "触控显示模组",
+    "汽车电子",
+    "消费电子",
+    "减薄",
+    "UTG"
+  ],
+  "should": [
+    "触控玻璃",
+    "触控Sensor",
+    "触控模组",
+    "2D/3D盖板",
+    "仪表盘模组",
+    "后视镜模组",
+    "中控屏模组",
+    "VR显示模组",
+    "可穿戴显示模组",
+    "手机触控显示模组"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "触控显示模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车电子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "消费电子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "减薄",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "UTG",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:13:08"
+}

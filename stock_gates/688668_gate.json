@@ -1,0 +1,36 @@
+{
+  "stock_id": "688668",
+  "stock_name": "鼎通科技",
+  "concept": "连接器模组",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高速通讯连接器及其组件",
+    "汽车连接器及其组件"
+  ],
+  "should": [
+    "比亚迪",
+    "安费诺",
+    "莫仕",
+    "泰科电子",
+    "中航光电",
+    "哈尔巴克",
+    "连接器模组",
+    "精密模具设计",
+    "产品制造",
+    "服务器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高速通讯连接器及其组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车连接器及其组件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:23:29"
+}

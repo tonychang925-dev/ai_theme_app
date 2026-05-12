@@ -1,0 +1,28 @@
+{
+  "stock_id": "688323",
+  "stock_name": "瑞华泰",
+  "concept": "高性能PI薄膜",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高性能PI薄膜"
+  ],
+  "should": [
+    "热控PI薄膜",
+    "电子PI薄膜",
+    "电工PI薄膜",
+    "配方",
+    "工艺",
+    "装备",
+    "柔性线路板"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高性能PI薄膜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:15:23"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "600831",
+  "stock_name": "广电网络",
+  "concept": "智慧广电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "有线电视网络运营",
+    "秦岭云平台",
+    "媒体融合统一平台"
+  ],
+  "should": [
+    "雪亮工程",
+    "应急广播",
+    "数字家庭产品",
+    "专网专线",
+    "智慧城市",
+    "数字乡村",
+    "5G TOB",
+    "政务云网服务",
+    "电视+宽带+应用",
+    "新时代文明实践中心"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "有线电视网络运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "秦岭云平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "媒体融合统一平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:28:56"
+}

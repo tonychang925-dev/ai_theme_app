@@ -1,0 +1,41 @@
+{
+  "stock_id": "002627",
+  "stock_name": "三峡旅游",
+  "concept": "三峡旅游综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "三峡旅游综合服务",
+    "旅游综合服务",
+    "两坝一峡"
+  ],
+  "should": [
+    "综合交通服务",
+    "观光游轮",
+    "三峡旅游新区",
+    "一江两山",
+    "长江夜游",
+    "三峡大坝升降机",
+    "旅客出行服务",
+    "商贸物流服务",
+    "乘用车4S服务",
+    "车辆延伸服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "三峡旅游综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "旅游综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "两坝一峡",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:50:27"
+}

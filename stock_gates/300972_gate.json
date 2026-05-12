@@ -1,0 +1,36 @@
+{
+  "stock_id": "300972",
+  "stock_name": "万辰集团",
+  "concept": "食用菌工厂化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金针菇",
+    "真姬菇"
+  ],
+  "should": [
+    "蟹味菇",
+    "白玉菇",
+    "海鲜菇",
+    "鹿茸菇",
+    "液体菌种技术",
+    "自动化生产设备",
+    "食用菌工厂化",
+    "杂菌污染控制",
+    "凉拌菜",
+    "火锅"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金针菇",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "真姬菇",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:51:19"
+}

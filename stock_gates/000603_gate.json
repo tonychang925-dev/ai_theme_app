@@ -1,0 +1,46 @@
+{
+  "stock_id": "000603",
+  "stock_name": "盛达资源",
+  "concept": "白银龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "白银龙头",
+    "国内白银龙头企业",
+    "原生矿产资源",
+    "城市矿山资源"
+  ],
+  "should": [
+    "银锭",
+    "黄金",
+    "含银铅精粉",
+    "锌精粉",
+    "冰镍",
+    "冰铜",
+    "粗铜",
+    "铬铁合金",
+    "岩棉",
+    "矿山精细化管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "白银龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内白银龙头企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原生矿产资源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市矿山资源",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:58:08"
+}

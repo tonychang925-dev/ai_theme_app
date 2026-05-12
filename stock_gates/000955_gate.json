@@ -1,0 +1,51 @@
+{
+  "stock_id": "000955",
+  "stock_name": "欣龙控股",
+  "concept": "无纺新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "无纺新材料",
+    "水刺无纺布",
+    "熔纺无纺布",
+    "熔喷无纺布",
+    "水刺非织造材料制造技术"
+  ],
+  "should": [
+    "SMS无纺布",
+    "SSS无纺布",
+    "复合水刺技术",
+    "熔喷技术",
+    "医疗卫生",
+    "个人护理",
+    "防护",
+    "家居清洁",
+    "美容化妆",
+    "工业擦拭"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "无纺新材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水刺无纺布",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "熔纺无纺布",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "熔喷无纺布",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水刺非织造材料制造技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:10:55"
+}

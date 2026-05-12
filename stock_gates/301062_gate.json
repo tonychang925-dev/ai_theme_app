@@ -1,0 +1,43 @@
+{
+  "stock_id": "301062",
+  "stock_name": "上海艾录",
+  "concept": "工业纸袋与奶酪包装",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业纸袋与奶酪包装",
+    "工业用纸袋",
+    "复合塑料包装",
+    "奶酪棒包装"
+  ],
+  "should": [
+    "PS膜自主研发",
+    "复合塑料包装配方",
+    "吸塑成型技术",
+    "工业用纸袋包装",
+    "工业纸袋包装龙头",
+    "奶酪棒包装龙头",
+    "妙可蓝多核心供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业纸袋与奶酪包装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业用纸袋",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复合塑料包装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "奶酪棒包装",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:55:03"
+}

@@ -1,0 +1,43 @@
+{
+  "stock_id": "688193",
+  "stock_name": "仁度生物",
+  "concept": "RNA分子诊断",
+  "strategy_type": "industry_chain",
+  "must": [
+    "RNA分子诊断",
+    "生殖道核酸检测试剂",
+    "呼吸道核酸检测试剂",
+    "乙肝检测试剂"
+  ],
+  "should": [
+    "核心原料酶自产",
+    "生殖道感染检测",
+    "呼吸道感染检测",
+    "乙肝检测",
+    "第三方检测服务",
+    "上游酶自主可控",
+    "一体化经营模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "RNA分子诊断",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生殖道核酸检测试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "呼吸道核酸检测试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乙肝检测试剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:11:23"
+}

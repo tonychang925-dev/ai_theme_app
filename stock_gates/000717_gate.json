@@ -1,0 +1,41 @@
+{
+  "stock_id": "000717",
+  "stock_name": "中南股份",
+  "concept": "钢铁制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "广东省最大的钢铁企业",
+    "钢铁制造",
+    "特钢"
+  ],
+  "should": [
+    "建筑用材",
+    "中厚板",
+    "工业线材",
+    "电商销售（欧冶云商）",
+    "网络钢厂商业模式",
+    "基建房建",
+    "汽车",
+    "石油化工",
+    "机械制造",
+    "能源交通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "广东省最大的钢铁企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钢铁制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特钢",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:01:53"
+}

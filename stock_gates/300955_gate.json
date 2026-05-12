@@ -1,0 +1,46 @@
+{
+  "stock_id": "300955",
+  "stock_name": "嘉亨家化",
+  "concept": "日化一体化服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "日化一体化服务",
+    "日化产品OEM/ODM",
+    "塑料包装容器研发设计生产",
+    "包材+内容物一站式服务"
+  ],
+  "should": [
+    "强生",
+    "上海家化",
+    "郁美净",
+    "贝泰妮",
+    "百雀羚",
+    "壳牌",
+    "益海嘉里",
+    "PE",
+    "PP",
+    "与知名日化品牌长久合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "日化一体化服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "日化产品OEM/ODM",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "塑料包装容器研发设计生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "包材+内容物一站式服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:50:41"
+}

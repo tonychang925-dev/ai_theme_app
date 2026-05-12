@@ -1,0 +1,31 @@
+{
+  "stock_id": "688238",
+  "stock_name": "和元生物",
+  "concept": "基因治疗CRO/CDMO",
+  "strategy_type": "industry_chain",
+  "must": [
+    "基因治疗CRO/CDMO"
+  ],
+  "should": [
+    "基因治疗CRO服务",
+    "基因治疗CDMO服务",
+    "基因治疗载体研制",
+    "基因功能研究",
+    "工艺开发及测试",
+    "IND-CMC药学研究",
+    "临床样品GMP生产",
+    "重组病毒载体药物",
+    "溶瘤病毒",
+    "CAR-T细胞治疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "基因治疗CRO/CDMO",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:12:49"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "600300",
+  "stock_name": "维维股份",
+  "concept": "豆奶行业开创者",
+  "strategy_type": "industry_chain",
+  "must": [
+    "豆奶行业开创者",
+    "固体冲调饮料"
+  ],
+  "should": [
+    "动植物蛋白饮料",
+    "粮食初加工产品",
+    "植物基研发",
+    "产品升级",
+    "数字化转型",
+    "餐饮渠道",
+    "便利渠道",
+    "传统渠道",
+    "特殊渠道",
+    "全产业链"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "豆奶行业开创者",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "固体冲调饮料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:14:14"
+}

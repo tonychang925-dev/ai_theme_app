@@ -1,0 +1,36 @@
+{
+  "stock_id": "603259",
+  "stock_name": "药明康德",
+  "concept": "新药研发服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "CRO",
+    "CDMO"
+  ],
+  "should": [
+    "小分子化药",
+    "生物大分子",
+    "细胞与基因治疗",
+    "临床前研究",
+    "临床CRO",
+    "商业化生产",
+    "新药研发服务",
+    "一体化外包服务平台",
+    "化学外包服务",
+    "分析测试"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "CRO",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CDMO",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:47:35"
+}

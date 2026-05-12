@@ -1,0 +1,41 @@
+{
+  "stock_id": "003042",
+  "stock_name": "中农联合",
+  "concept": "农药原药制剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农药原药制剂",
+    "原药制剂一体化",
+    "新烟碱类杀虫剂技术"
+  ],
+  "should": [
+    "吡虫啉",
+    "啶虫脒",
+    "烯啶虫胺",
+    "哒螨灵",
+    "吡蚜酮",
+    "麦草畏",
+    "苄草丹",
+    "氟醚菌酰胺",
+    "三氟杀线酯",
+    "苯醚唑酰胺"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农药原药制剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原药制剂一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新烟碱类杀虫剂技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:08:50"
+}

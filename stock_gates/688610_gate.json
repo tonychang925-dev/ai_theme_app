@@ -1,0 +1,31 @@
+{
+  "stock_id": "688610",
+  "stock_name": "埃科光电",
+  "concept": "机器视觉核心部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业相机"
+  ],
+  "should": [
+    "图像采集卡",
+    "机器视觉核心部件",
+    "自主研发创新",
+    "关键基础核心技术",
+    "PCB",
+    "新型显示",
+    "3C",
+    "锂电",
+    "光伏",
+    "半导体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业相机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:22:05"
+}

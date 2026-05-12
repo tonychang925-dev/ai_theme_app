@@ -1,0 +1,35 @@
+{
+  "stock_id": "300983",
+  "stock_name": "尤安设计",
+  "concept": "建筑设计服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑设计服务",
+    "创意创新技术服务"
+  ],
+  "should": [
+    "前期设计",
+    "咨询",
+    "房地产开发商",
+    "政府",
+    "企事业单位",
+    "建筑业",
+    "房地产行业",
+    "市场占有率第一梯队",
+    "民营建筑设计企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑设计服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "创意创新技术服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:51:52"
+}

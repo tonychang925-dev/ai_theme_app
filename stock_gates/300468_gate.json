@@ -1,0 +1,41 @@
+{
+  "stock_id": "300468",
+  "stock_name": "四方精创",
+  "concept": "金融科技服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商业银行",
+    "金融科技服务",
+    "数字人民币"
+  ],
+  "should": [
+    "产品及解决方案",
+    "云交付运营",
+    "中央银行",
+    "金融服务机构",
+    "顾问咨询",
+    "软件开发",
+    "系统集成",
+    "技术维护",
+    "数字化转型",
+    "跨境金融"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商业银行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融科技服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字人民币",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:28:36"
+}

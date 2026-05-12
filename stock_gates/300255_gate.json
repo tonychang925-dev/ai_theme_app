@@ -1,0 +1,31 @@
+{
+  "stock_id": "300255",
+  "stock_name": "常山药业",
+  "concept": "肝素全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "肝素专有技术"
+  ],
+  "should": [
+    "低分子量肝素钙注射液",
+    "肝素钠原料药",
+    "肝素钠注射液",
+    "依诺肝素钠原料药",
+    "那屈肝素钙原料药",
+    "达肝素钠原料药",
+    "肝素全产业链",
+    "抗凝血",
+    "抗血栓",
+    "血液透析"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "肝素专有技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:19:51"
+}

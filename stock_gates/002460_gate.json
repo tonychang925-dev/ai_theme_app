@@ -1,0 +1,46 @@
+{
+  "stock_id": "002460",
+  "stock_name": "赣锋锂业",
+  "concept": "锂全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂全产业链",
+    "碳酸锂",
+    "氢氧化锂",
+    "金属锂"
+  ],
+  "should": [
+    "动力电池",
+    "退役锂电池拆解",
+    "锂辉石项目",
+    "盐湖项目",
+    "锂云母项目",
+    "锂黏土项目",
+    "氯化锂",
+    "储能电池",
+    "消费电子",
+    "金属综合回收"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂全产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳酸锂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氢氧化锂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金属锂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:42:50"
+}

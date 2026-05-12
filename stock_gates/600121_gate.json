@@ -1,0 +1,45 @@
+{
+  "stock_id": "600121",
+  "stock_name": "郑州煤电",
+  "concept": "煤炭开采",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤炭开采",
+    "无烟煤",
+    "贫煤",
+    "贫瘦煤"
+  ],
+  "should": [
+    "三软不稳定煤层安全高效开采技术",
+    "瓦斯治理技术",
+    "矿井水害防治技术",
+    "难选构造煤洗选加工技术",
+    "综合机械化放顶煤开采技术",
+    "优质环保动力煤",
+    "火力发电",
+    "直销方式",
+    "煤炭销售"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤炭开采",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无烟煤",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "贫煤",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "贫瘦煤",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:09:42"
+}

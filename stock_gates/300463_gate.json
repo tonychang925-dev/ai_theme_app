@@ -1,0 +1,38 @@
+{
+  "stock_id": "300463",
+  "stock_name": "迈克生物",
+  "concept": "体外诊断",
+  "strategy_type": "industry_chain",
+  "must": [
+    "体外诊断",
+    "体外诊断设备",
+    "试剂"
+  ],
+  "should": [
+    "校准品",
+    "质控品",
+    "医疗机构",
+    "第三方检测中心",
+    "生物原材料",
+    "医学实验室产品",
+    "专业化服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "体外诊断",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "体外诊断设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "试剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:28:25"
+}

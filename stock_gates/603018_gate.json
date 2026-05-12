@@ -1,0 +1,35 @@
+{
+  "stock_id": "603018",
+  "stock_name": "华设集团",
+  "concept": "工程咨询设计",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程咨询设计",
+    "设计咨询业务"
+  ],
+  "should": [
+    "工程总承包",
+    "特大跨径复杂桥梁设计成套关键技术",
+    "数字设计软件平台",
+    "车路协同主动安全应用场景",
+    "机器视觉和人工智能技术",
+    "高速公路",
+    "水运航道",
+    "智慧交通",
+    "绿色低碳新能源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程咨询设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "设计咨询业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:41:09"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "688299",
+  "stock_name": "长阳科技",
+  "concept": "高分子功能膜",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高分子功能膜",
+    "反射膜",
+    "光学基膜"
+  ],
+  "should": [
+    "背板基膜",
+    "锂电池隔膜",
+    "CPI薄膜",
+    "配方与工艺",
+    "IPD流程",
+    "主控芯片",
+    "固件开发",
+    "反射膜出货面积全球第一",
+    "与三星、LG、京东方等稳定供应"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高分子功能膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "反射膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光学基膜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:14:40"
+}

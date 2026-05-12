@@ -1,0 +1,41 @@
+{
+  "stock_id": "002716",
+  "stock_name": "湖南白银",
+  "concept": "白银综合回收",
+  "strategy_type": "industry_chain",
+  "must": [
+    "白银",
+    "高纯银",
+    "高纯硝酸银"
+  ],
+  "should": [
+    "电铅",
+    "黄金",
+    "氧化锌",
+    "硫酸",
+    "粗铋",
+    "白银综合回收",
+    "清洁无砷炼银技术",
+    "高效分离/提纯",
+    "节能环保清洁生产",
+    "多金属复杂伴生资源综合利用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "白银",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高纯银",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高纯硝酸银",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:54:33"
+}

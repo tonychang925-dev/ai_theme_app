@@ -1,0 +1,39 @@
+{
+  "stock_id": "603637",
+  "stock_name": "镇海股份",
+  "concept": "石油化工工程服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "石油化工工程服务",
+    "工程设计",
+    "工程总承包"
+  ],
+  "should": [
+    "丁二烯抽提成套工艺包",
+    "硫磺回收焚烧烟气余热回收工艺",
+    "乙烯半冷冻储存工艺",
+    "石油化工",
+    "炼化一体化",
+    "硫磺回收装置",
+    "乙烯项目",
+    "芳烃抽提"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "石油化工工程服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程总承包",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:53:40"
+}

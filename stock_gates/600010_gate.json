@@ -1,0 +1,32 @@
+{
+  "stock_id": "600010",
+  "stock_name": "包钢股份",
+  "concept": "钢铁稀土氟化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钢铁产品",
+    "稀土钢产品"
+  ],
+  "should": [
+    "稀土精矿",
+    "萤石精矿",
+    "稀土耐候无缝管",
+    "锌铝镁镀层钢板",
+    "高强耐候抗震热轧H型钢",
+    "钢铁稀土氟化工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钢铁产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "稀土钢产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:07:03"
+}

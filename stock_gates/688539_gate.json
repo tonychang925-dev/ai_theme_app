@@ -1,0 +1,36 @@
+{
+  "stock_id": "688539",
+  "stock_name": "高华科技",
+  "concept": "高可靠性传感器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高可靠性传感器",
+    "传感器网络系统"
+  ],
+  "should": [
+    "压力传感器",
+    "温湿度传感器",
+    "加速度传感器",
+    "位移传感器",
+    "航天",
+    "航空",
+    "兵器",
+    "轨道交通",
+    "工程机械",
+    "冶金"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高可靠性传感器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "传感器网络系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:20:09"
+}

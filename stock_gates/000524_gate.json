@@ -1,0 +1,51 @@
+{
+  "stock_id": "000524",
+  "stock_name": "岭南控股",
+  "concept": "综合文旅服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商旅出行",
+    "住宿",
+    "会展",
+    "景区",
+    "旅行社"
+  ],
+  "should": [
+    "酒店管理",
+    "酒店经营",
+    "汽车服务",
+    "会展运营",
+    "景区运营",
+    "综合文旅服务",
+    "线下营业网点",
+    "餐饮",
+    "旅游交通",
+    "旅游手信"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商旅出行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "住宿",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "会展",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "景区",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "旅行社",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:54:12"
+}

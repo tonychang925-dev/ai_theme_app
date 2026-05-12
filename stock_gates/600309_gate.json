@@ -1,0 +1,46 @@
+{
+  "stock_id": "600309",
+  "stock_name": "万华化学",
+  "concept": "聚氨酯龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "聚氨酯龙头",
+    "异氰酸酯业务",
+    "纯MDI",
+    "聚合MDI"
+  ],
+  "should": [
+    "精细化工及新材料业务",
+    "石化业务",
+    "TDI",
+    "聚醚多元醇",
+    "生活家居",
+    "运动休闲",
+    "汽车交通",
+    "建筑工业",
+    "电子电器",
+    "全球MDI市占率有望提升至33%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "聚氨酯龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "异氰酸酯业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纯MDI",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚合MDI",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:14:34"
+}

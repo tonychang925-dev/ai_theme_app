@@ -1,0 +1,31 @@
+{
+  "stock_id": "000029",
+  "stock_name": "深深房A",
+  "concept": "深圳房地产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "住宅地产开发"
+  ],
+  "should": [
+    "建筑安装维修",
+    "物业管理",
+    "深圳传麒东湖名苑",
+    "深圳翠林苑",
+    "汕头天悦湾",
+    "惠州林馨苑",
+    "深圳光明项目",
+    "深圳房地产",
+    "先行者地位",
+    "多个行业第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "住宅地产开发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T16:47:37"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "300422",
+  "stock_name": "博世科",
+  "concept": "水污染治理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水污染治理",
+    "水污染治理整体解决方案",
+    "工业污水处理",
+    "高浓度有机废水处理"
+  ],
+  "should": [
+    "高性能膜材料",
+    "高效催化剂",
+    "智能监测与优化控制",
+    "城镇污水处理",
+    "城市污泥处置",
+    "再生水利用",
+    "高端装备",
+    "绿色药剂",
+    "黑臭水体治理",
+    "工业水效提升"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水污染治理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水污染治理整体解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业污水处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高浓度有机废水处理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:26:45"
+}

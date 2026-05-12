@@ -1,0 +1,31 @@
+{
+  "stock_id": "002732",
+  "stock_name": "燕塘乳业",
+  "concept": "区域乳业龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "区域乳业龙头"
+  ],
+  "should": [
+    "智能工厂生产技术",
+    "巴氏杀菌奶",
+    "酸奶",
+    "乳酸菌乳饮料",
+    "直销",
+    "经销",
+    "商超",
+    "买断型分销",
+    "超高温灭菌奶",
+    "花式奶"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "区域乳业龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:55:14"
+}

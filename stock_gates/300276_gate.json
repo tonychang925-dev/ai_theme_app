@@ -1,0 +1,40 @@
+{
+  "stock_id": "300276",
+  "stock_name": "三丰智能",
+  "concept": "智慧工厂方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧工厂方案",
+    "智能输送系统集成",
+    "汽车智能焊装系统集成"
+  ],
+  "should": [
+    "高低压成套及电控设备",
+    "汽车数字化车间工艺规划与仿真技术",
+    "乘用车底部柔性合装系统",
+    "汽车底盘分装线柔性磁浮拧紧系统",
+    "新能源电池模组装配焊接生产线",
+    "全自动超声波焊点质量检查系统",
+    "汽车整车制造",
+    "工程机械",
+    "项目总包能力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧工厂方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能输送系统集成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车智能焊装系统集成",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:20:46"
+}

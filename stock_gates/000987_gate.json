@@ -1,0 +1,42 @@
+{
+  "stock_id": "000987",
+  "stock_name": "越秀资本",
+  "concept": "多元金融",
+  "strategy_type": "industry_chain",
+  "must": [
+    "不良资产管理",
+    "融资租赁",
+    "投资管理",
+    "战略投资中信证券"
+  ],
+  "should": [
+    "金融机构不良资产批量收购处置",
+    "单户对公不良贷款受让",
+    "个人不良贷款批量转让试点",
+    "绿色金融",
+    "普惠金融",
+    "科技创新"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "不良资产管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "融资租赁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "战略投资中信证券",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:12:21"
+}

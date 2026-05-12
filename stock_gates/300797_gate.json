@@ -1,0 +1,36 @@
+{
+  "stock_id": "300797",
+  "stock_name": "钢研纳克",
+  "concept": "金属检测仪器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "扫描电子显微镜",
+    "场发射扫描电子显微镜"
+  ],
+  "should": [
+    "第三方检测服务",
+    "检测分析仪器",
+    "标准物质/标准样品",
+    "能力验证服务",
+    "腐蚀防护工程与产品",
+    "金属检测仪器",
+    "光谱仪",
+    "气体元素分析仪",
+    "光电直读光谱仪",
+    "X射线荧光光谱仪"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "扫描电子显微镜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "场发射扫描电子显微镜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:43:33"
+}

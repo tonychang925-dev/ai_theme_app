@@ -1,0 +1,41 @@
+{
+  "stock_id": "000785",
+  "stock_name": "居然智家",
+  "concept": "家居卖场连锁",
+  "strategy_type": "industry_chain",
+  "must": [
+    "家居卖场连锁",
+    "家居零售",
+    "家居卖场"
+  ],
+  "should": [
+    "家居建材超市",
+    "装修业务",
+    "大数据平台",
+    "3D关联场景",
+    "同城站",
+    "淘宝直播",
+    "直营模式",
+    "加盟模式",
+    "轻资产模式",
+    "自营+委管"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "家居卖场连锁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "家居零售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "家居卖场",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:04:39"
+}

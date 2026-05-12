@@ -1,0 +1,41 @@
+{
+  "stock_id": "002104",
+  "stock_name": "恒宝股份",
+  "concept": "数字安全与金融科技",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能卡",
+    "数字人民币硬件钱包",
+    "数字人民币安全应用系统"
+  ],
+  "should": [
+    "智能终端",
+    "安全模块",
+    "主控芯片",
+    "国密算法",
+    "区块链技术",
+    "eSIM",
+    "国家金卡工程金蚂蚁奖",
+    "江苏省智能卡工程技术研究中心",
+    "车规级智能卡设计和制造企业",
+    "数字安全与金融科技"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能卡",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字人民币硬件钱包",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字人民币安全应用系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:23:37"
+}

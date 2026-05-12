@@ -1,0 +1,46 @@
+{
+  "stock_id": "600172",
+  "stock_name": "黄河旋风",
+  "concept": "金刚石材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金刚石材料",
+    "工业金刚石",
+    "培育钻石",
+    "超硬材料合成技术"
+  ],
+  "should": [
+    "砂轮",
+    "刀具",
+    "钻头",
+    "锯片",
+    "培育钻石合成技术",
+    "金刚石线锯切割技术",
+    "金刚石工具制造",
+    "珠宝首饰",
+    "陶瓷加工",
+    "勘探开采"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金刚石材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业金刚石",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "培育钻石",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超硬材料合成技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:10:54"
+}

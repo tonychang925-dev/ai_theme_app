@@ -1,0 +1,31 @@
+{
+  "stock_id": "603030",
+  "stock_name": "全筑股份",
+  "concept": "住宅全装修",
+  "strategy_type": "industry_chain",
+  "must": [
+    "住宅全装修"
+  ],
+  "should": [
+    "公共建筑设计",
+    "家装设计及施工",
+    "配套家具生产",
+    "澳锘设计集团",
+    "思恺迪(CKD)",
+    "地东设计(DC)",
+    "创羿(EFC)",
+    "简斯（JCA）",
+    "米兰设计中心",
+    "同济大学"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "住宅全装修",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:41:38"
+}

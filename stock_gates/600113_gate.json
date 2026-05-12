@@ -1,0 +1,36 @@
+{
+  "stock_id": "600113",
+  "stock_name": "浙江东日",
+  "concept": "智慧农批服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧农批服务",
+    "农副产品批发交易市场业务"
+  ],
+  "should": [
+    "生鲜食材配送业务",
+    "豆制品生产加工业务",
+    "区位优势",
+    "规模优势",
+    "管理优势",
+    "信息化优势",
+    "平台优势",
+    "单位食堂",
+    "机关食堂",
+    "酒店"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧农批服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "农副产品批发交易市场业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:09:28"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "603325",
+  "stock_name": "博隆技术",
+  "concept": "气力输送系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "气力输送系统"
+  ],
+  "should": [
+    "粉粒体物料处理系统",
+    "气力输送系统技术",
+    "核心设备自主研发",
+    "关键核心技术",
+    "合成树脂",
+    "石化",
+    "化工",
+    "新材料",
+    "食品",
+    "可降解塑料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "气力输送系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:49:10"
+}

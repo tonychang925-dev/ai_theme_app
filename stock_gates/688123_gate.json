@@ -1,0 +1,41 @@
+{
+  "stock_id": "688123",
+  "stock_name": "聚辰股份",
+  "concept": "EEPROM芯片设计",
+  "strategy_type": "industry_chain",
+  "must": [
+    "EEPROM芯片设计",
+    "非易失性存储芯片",
+    "EEPROM"
+  ],
+  "should": [
+    "音圈马达驱动芯片",
+    "智能卡芯片",
+    "NOR Flash",
+    "SPD EEPROM",
+    "非易失性存储技术",
+    "EEPROM技术",
+    "音圈马达驱动技术",
+    "智能卡芯片技术",
+    "智能手机摄像头模组",
+    "液晶面板"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "EEPROM芯片设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "非易失性存储芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "EEPROM",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:09:10"
+}

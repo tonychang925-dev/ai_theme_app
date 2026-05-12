@@ -1,0 +1,38 @@
+{
+  "stock_id": "002882",
+  "stock_name": "金龙羽",
+  "concept": "电线电缆",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电线电缆",
+    "电力电缆",
+    "特种电线电缆"
+  ],
+  "should": [
+    "电线",
+    "电缆",
+    "阻燃耐火技术",
+    "大截面电力电缆生产能力",
+    "华南地区规模最大",
+    "产品最齐全",
+    "技术最先进"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电线电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种电线电缆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:01:35"
+}

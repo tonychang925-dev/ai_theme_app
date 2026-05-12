@@ -1,0 +1,46 @@
+{
+  "stock_id": "301002",
+  "stock_name": "崧盛股份",
+  "concept": "LED驱动电源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LED驱动电源",
+    "中大功率LED驱动电源",
+    "植物照明驱动电源",
+    "恒功率驱动技术"
+  ],
+  "should": [
+    "植物照明",
+    "户外LED驱动电源",
+    "工业LED驱动电源",
+    "工业照明",
+    "景观亮化",
+    "智慧照明",
+    "户外照明",
+    "多功能的调光技术",
+    "雷击浪涌抑制技术",
+    "可编程技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED驱动电源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中大功率LED驱动电源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "植物照明驱动电源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "恒功率驱动技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:52:41"
+}

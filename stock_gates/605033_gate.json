@@ -1,0 +1,31 @@
+{
+  "stock_id": "605033",
+  "stock_name": "美邦股份",
+  "concept": "农药制剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农药制剂"
+  ],
+  "should": [
+    "杀虫剂",
+    "杀菌剂",
+    "水溶肥料",
+    "农药原药",
+    "中间体",
+    "原药工艺",
+    "清洁生产技术",
+    "三废处理",
+    "农业生产",
+    "粮食安全"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农药制剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:01:16"
+}

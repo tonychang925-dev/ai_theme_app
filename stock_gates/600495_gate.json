@@ -1,0 +1,46 @@
+{
+  "stock_id": "600495",
+  "stock_name": "晋西车轴",
+  "concept": "铁路车轴制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铁路车轴制造",
+    "铁路车轴",
+    "高速动车组车轴",
+    "铁路产品专业化制造企业"
+  ],
+  "should": [
+    "摇枕侧架",
+    "铁路货车车辆",
+    "防务装备",
+    "智慧消防",
+    "环保设备",
+    "精密锻造",
+    "精密铸造",
+    "自主研发设计",
+    "铁路货运",
+    "铁路客运"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铁路车轴制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铁路车轴",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高速动车组车轴",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铁路产品专业化制造企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:19:16"
+}

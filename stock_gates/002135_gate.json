@@ -1,0 +1,32 @@
+{
+  "stock_id": "002135",
+  "stock_name": "东南网架",
+  "concept": "装配式集成建筑",
+  "strategy_type": "industry_chain",
+  "must": [
+    "装配式集成建筑",
+    "钢结构建筑"
+  ],
+  "should": [
+    "装配式建筑",
+    "钢结构住宅",
+    "基础设施",
+    "公共建筑",
+    "绿色低碳",
+    "智能建造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "装配式集成建筑",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钢结构建筑",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:25:04"
+}

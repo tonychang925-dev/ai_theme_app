@@ -1,0 +1,36 @@
+{
+  "stock_id": "688702",
+  "stock_name": "盛科通信",
+  "concept": "以太网交换芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "以太网交换芯片",
+    "路由交换融合网络芯片"
+  ],
+  "should": [
+    "配套产品",
+    "主控芯片设计",
+    "固件开发",
+    "企业网络",
+    "运营商网络",
+    "数据中心网络",
+    "工业网络",
+    "云计算核心",
+    "边缘计算",
+    "国内领先的以太网交换芯片设计企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "以太网交换芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "路由交换融合网络芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:24:25"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "002535",
+  "stock_name": "林州重机",
+  "concept": "煤炭综采设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤炭综采设备",
+    "液压支架",
+    "采煤机"
+  ],
+  "should": [
+    "掘进机",
+    "刮板机",
+    "转载机",
+    "破碎机",
+    "装备制造+煤矿综合服务",
+    "订单式生产",
+    "按产量收费",
+    "煤炭开采",
+    "煤矿智能化改造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤炭综采设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液压支架",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "采煤机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:46:02"
+}

@@ -1,0 +1,28 @@
+{
+  "stock_id": "001896",
+  "stock_name": "豫能控股",
+  "concept": "综合能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "火力发电"
+  ],
+  "should": [
+    "新能源",
+    "抽水蓄能",
+    "煤炭贸易物流",
+    "综合能源",
+    "综合能源服务",
+    "控股火电总装机7,660MW",
+    "火电装机容量位居河南省第二位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "火力发电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:17:37"
+}

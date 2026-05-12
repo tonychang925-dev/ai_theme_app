@@ -1,0 +1,41 @@
+{
+  "stock_id": "000425",
+  "stock_name": "徐工机械",
+  "concept": "工程机械龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "起重机械",
+    "挖掘机械",
+    "大吨位技术"
+  ],
+  "should": [
+    "高空作业平台",
+    "混凝土机械",
+    "矿机",
+    "塔式起重机",
+    "港口机械",
+    "农业机械",
+    "主控芯片",
+    "固件开发",
+    "工程机械龙头",
+    "液压挖掘机研发制造能力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "起重机械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "挖掘机械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大吨位技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:52:28"
+}

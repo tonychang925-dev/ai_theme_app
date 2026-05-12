@@ -1,0 +1,34 @@
+{
+  "stock_id": "002314",
+  "stock_name": "南山控股",
+  "concept": "物流地产开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "现代高端物流地产",
+    "物流地产开发"
+  ],
+  "should": [
+    "房地产开发",
+    "产城综合开发",
+    "制造业",
+    "公募REITs",
+    "仓储物流类REITs",
+    "税收优惠政策",
+    "累计土储建面约260万方",
+    "剩余可开发面积约88万方"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "现代高端物流地产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物流地产开发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:34:51"
+}

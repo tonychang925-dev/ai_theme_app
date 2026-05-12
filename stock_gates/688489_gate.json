@@ -1,0 +1,51 @@
+{
+  "stock_id": "688489",
+  "stock_name": "三未信安",
+  "concept": "商用密码产品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商用密码产品",
+    "密码板卡",
+    "密码整机",
+    "密码系统",
+    "密码芯片"
+  ],
+  "should": [
+    "密钥管理",
+    "身份认证",
+    "云密码服务",
+    "金融",
+    "证券",
+    "电力",
+    "电信",
+    "石油",
+    "铁路",
+    "交通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商用密码产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "密码板卡",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "密码整机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "密码系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "密码芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:18:59"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "001380",
+  "stock_name": "华纬科技",
+  "concept": "汽车弹簧",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车弹簧",
+    "悬架弹簧"
+  ],
+  "should": [
+    "制动弹簧",
+    "阀类及异形弹簧",
+    "稳定杆",
+    "自主品牌汽车",
+    "新能源汽车",
+    "乘用车",
+    "国内弹簧行业前三",
+    "国家级专精特新小巨人",
+    "与主机厂同步研发",
+    "进入比亚迪、长城汽车等供应商体系"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车弹簧",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "悬架弹簧",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:17:24"
+}

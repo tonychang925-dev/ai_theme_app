@@ -1,0 +1,41 @@
+{
+  "stock_id": "600897",
+  "stock_name": "厦门空港",
+  "concept": "航空地面服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航空地面服务",
+    "旅客服务费",
+    "起降费"
+  ],
+  "should": [
+    "货站",
+    "商业租赁",
+    "候机楼",
+    "安检费",
+    "停场费",
+    "客桥费",
+    "国内外航空运输企业",
+    "旅客",
+    "办公场所",
+    "商业场所"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航空地面服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "旅客服务费",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "起降费",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:30:47"
+}

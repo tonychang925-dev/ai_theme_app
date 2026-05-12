@@ -1,0 +1,39 @@
+{
+  "stock_id": "300666",
+  "stock_name": "江丰电子",
+  "concept": "半导体靶材龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体靶材龙头",
+    "高纯溅射靶材",
+    "半导体精密零部件"
+  ],
+  "should": [
+    "台积电核心供应商",
+    "中芯国际核心供应商",
+    "SK海力士核心供应商",
+    "联华电子核心供应商",
+    "超高纯金属材料提纯",
+    "精密机械制造",
+    "表面处理",
+    "焊接"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体靶材龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高纯溅射靶材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体精密零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:37:54"
+}

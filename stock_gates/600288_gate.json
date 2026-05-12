@@ -1,0 +1,51 @@
+{
+  "stock_id": "600288",
+  "stock_name": "大恒科技",
+  "concept": "机器视觉",
+  "strategy_type": "industry_chain",
+  "must": [
+    "机器视觉",
+    "工业数字摄像机",
+    "图像采集卡",
+    "图像处理软件",
+    "智能摄像机"
+  ],
+  "should": [
+    "3D算法",
+    "深度学习",
+    "超快激光器",
+    "太赫兹技术",
+    "印刷包装",
+    "空瓶检测",
+    "纺织",
+    "医药包装",
+    "标签",
+    "印钞造币"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "机器视觉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业数字摄像机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "图像采集卡",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "图像处理软件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能摄像机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:14:06"
+}

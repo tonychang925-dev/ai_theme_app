@@ -1,0 +1,46 @@
+{
+  "stock_id": "603126",
+  "stock_name": "中材节能",
+  "concept": "节能环保",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水泥余热发电",
+    "节能环保工程",
+    "装备制造",
+    "建筑节能材料"
+  ],
+  "should": [
+    "余热锅炉",
+    "硅酸钙板",
+    "垃圾锅炉",
+    "生物质锅炉",
+    "余热发电技术",
+    "节能环保装备研发",
+    "新材料装备研发",
+    "节能环保",
+    "全球市场占有率第一",
+    "细分领域市场占有率前列"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水泥余热发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "节能环保工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "装备制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑节能材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:44:27"
+}

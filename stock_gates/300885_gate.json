@@ -1,0 +1,31 @@
+{
+  "stock_id": "300885",
+  "stock_name": "海昌新材",
+  "concept": "粉末冶金零件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电动工具用粉末冶金零件"
+  ],
+  "should": [
+    "粉末冶金零件",
+    "粉末冶金技术",
+    "电动工具",
+    "汽车",
+    "家电",
+    "机械工具",
+    "新能源",
+    "医疗",
+    "成形",
+    "烧结"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电动工具用粉末冶金零件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:47:43"
+}

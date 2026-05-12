@@ -1,0 +1,41 @@
+{
+  "stock_id": "600927",
+  "stock_name": "永安期货",
+  "concept": "期货综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "期货经纪业务",
+    "风险管理业务",
+    "资产管理业务"
+  ],
+  "should": [
+    "基金销售业务",
+    "永安期货APP",
+    "源点资讯APP",
+    "永安管家APP",
+    "期货综合服务",
+    "期货+现货",
+    "期货+工程配送",
+    "期货+仓储物流",
+    "保险+期货",
+    "CRM系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "期货经纪业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风险管理业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "资产管理业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:31:17"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "688158",
+  "stock_name": "优刻得",
+  "concept": "中立第三方云计算",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中立第三方云计算",
+    "AI算力平台",
+    "自建数据中心",
+    "东数西算"
+  ],
+  "should": [
+    "IaaS",
+    "公有云",
+    "私有云",
+    "混合云",
+    "高性能计算EPC",
+    "信创私有云",
+    "工业互联网",
+    "数字农业",
+    "数据安全流通平台",
+    "智算云"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中立第三方云计算",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AI算力平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自建数据中心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "东数西算",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:00:00"
+}

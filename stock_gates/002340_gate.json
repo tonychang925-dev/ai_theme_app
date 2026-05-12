@@ -1,0 +1,31 @@
+{
+  "stock_id": "002340",
+  "stock_name": "格林美",
+  "concept": "三元前驱体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "三元前驱体"
+  ],
+  "should": [
+    "四氧化三钴",
+    "钴钨综合利用与硬质合金",
+    "无钴高镍材料改性处理技术",
+    "富镍三元正极主流表界面改性技术",
+    "体相掺杂改性技术",
+    "新能源汽车电池",
+    "智能手机",
+    "平板电脑",
+    "智能可穿戴设备",
+    "硬质合金切削刀具"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "三元前驱体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:36:29"
+}

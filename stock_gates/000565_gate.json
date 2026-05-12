@@ -1,0 +1,36 @@
+{
+  "stock_id": "000565",
+  "stock_name": "渝三峡A",
+  "concept": "油漆涂料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "油漆涂料",
+    "国家高新技术企业"
+  ],
+  "should": [
+    "防腐漆",
+    "汽车漆",
+    "建筑漆",
+    "家具漆",
+    "中国核工业集团合格供应商",
+    "中国石油天然气集团公司合格供应商",
+    "中铁工业合格供应商",
+    "中国船舶集团有限公司金牌供应商",
+    "桥梁隧道",
+    "石油化工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "油漆涂料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国家高新技术企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:56:47"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "601727",
+  "stock_name": "上海电气",
+  "concept": "绿色智能装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "核岛设备",
+    "核电",
+    "发电设备"
+  ],
+  "should": [
+    "风电设备",
+    "储能设备",
+    "氢能",
+    "输配电",
+    "工业机器人",
+    "绿色智能装备",
+    "流程贯通工艺技术",
+    "极限制造能力",
+    "集成创新技术",
+    "自主知识产权创新技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "核岛设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发电设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:38:25"
+}

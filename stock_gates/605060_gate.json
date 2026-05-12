@@ -1,0 +1,41 @@
+{
+  "stock_id": "605060",
+  "stock_name": "联德股份",
+  "concept": "精密零部件供应商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密零部件供应商",
+    "压缩机精密零部件",
+    "商用空调"
+  ],
+  "should": [
+    "工程机械精密零部件",
+    "工业用空压机",
+    "注塑机精密零部件",
+    "食品机械精密零部件",
+    "工程机械",
+    "食品机械",
+    "注塑机",
+    "铸造工艺",
+    "机加工工艺",
+    "模具设计"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密零部件供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "压缩机精密零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商用空调",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:01:30"
+}

@@ -1,0 +1,37 @@
+{
+  "stock_id": "000672",
+  "stock_name": "上峰水泥",
+  "concept": "水泥生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水泥生产",
+    "水泥",
+    "熟料"
+  ],
+  "should": [
+    "砂石骨料",
+    "超低排放技改",
+    "提质增效技改",
+    "水泥窑协同处置",
+    "房地产",
+    "基建"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水泥生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水泥",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "熟料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:00:04"
+}

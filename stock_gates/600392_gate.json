@@ -1,0 +1,31 @@
+{
+  "stock_id": "600392",
+  "stock_name": "盛和资源",
+  "concept": "稀土全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "稀土开采",
+    "稀土冶炼分离"
+  ],
+  "should": [
+    "稀土加工应用",
+    "稀土全产业链",
+    "四川省最大",
+    "国内领先",
+    "全产业链整合"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "稀土开采",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "稀土冶炼分离",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:16:53"
+}

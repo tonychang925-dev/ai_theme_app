@@ -1,0 +1,31 @@
+{
+  "stock_id": "002820",
+  "stock_name": "桂发祥",
+  "concept": "中华老字号休闲食品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "十八街麻花"
+  ],
+  "should": [
+    "糕点",
+    "天津风味方便食品",
+    "甘栗",
+    "自动化麻花生产线",
+    "电脑程控系统",
+    "全自动油脂过滤系统",
+    "螺旋冷却系统",
+    "CIP清洗系统",
+    "食品在线检测系统",
+    "经销商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "十八街麻花",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:58:49"
+}

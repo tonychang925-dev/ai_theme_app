@@ -1,0 +1,28 @@
+{
+  "stock_id": "002588",
+  "stock_name": "史丹利",
+  "concept": "复合肥生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "复合肥"
+  ],
+  "should": [
+    "新型复合肥料",
+    "测土配方施肥",
+    "肥料高效施用技术",
+    "复合肥生产",
+    "农业种植",
+    "粮食生产",
+    "复合肥行业领先企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "复合肥",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:48:40"
+}

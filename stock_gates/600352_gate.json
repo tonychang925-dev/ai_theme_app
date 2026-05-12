@@ -1,0 +1,39 @@
+{
+  "stock_id": "600352",
+  "stock_name": "浙江龙盛",
+  "concept": "纺织化学品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "染料",
+    "中间体",
+    "纺织化学品"
+  ],
+  "should": [
+    "助剂",
+    "产品开发",
+    "工艺开发",
+    "颜色应用服务",
+    "可持续发展解决方案",
+    "纺织物印染",
+    "橡胶粘合剂",
+    "合成树脂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "染料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中间体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纺织化学品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:15:49"
+}

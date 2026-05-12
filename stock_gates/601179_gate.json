@@ -1,0 +1,46 @@
+{
+  "stock_id": "601179",
+  "stock_name": "中国西电",
+  "concept": "特高压输配电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特高压输配电",
+    "高压开关",
+    "变压器",
+    "GIS"
+  ],
+  "should": [
+    "发电机断路器",
+    "柔直换流变压器",
+    "低频变压器",
+    "套管",
+    "操动机构",
+    "避雷器",
+    "电力电子变压器",
+    "高压级联储能装置",
+    "IGCT换流阀",
+    "数字化智能化升级"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特高压输配电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高压开关",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "变压器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "GIS",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:35:14"
+}

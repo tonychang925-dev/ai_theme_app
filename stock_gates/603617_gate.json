@@ -1,0 +1,31 @@
+{
+  "stock_id": "603617",
+  "stock_name": "君禾股份",
+  "concept": "家用水泵",
+  "strategy_type": "industry_chain",
+  "must": [
+    "家用水泵"
+  ],
+  "should": [
+    "商用泵",
+    "锂电系列",
+    "高效率喷射增压花园泵",
+    "高功率过砂泵",
+    "低扬程高流量技术",
+    "主控芯片",
+    "固件开发",
+    "家庭供排水",
+    "农林灌溉",
+    "全产业链布局"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "家用水泵",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:53:25"
+}

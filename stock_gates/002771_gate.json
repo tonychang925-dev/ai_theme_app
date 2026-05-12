@@ -1,0 +1,41 @@
+{
+  "stock_id": "002771",
+  "stock_name": "真视通",
+  "concept": "多媒体视讯解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "多媒体视讯解决方案",
+    "多媒体视讯系统建设与服务",
+    "多媒体信息系统"
+  ],
+  "should": [
+    "生产监控与应急指挥系统",
+    "音视频技术",
+    "数据中心业务",
+    "云计算",
+    "移动互联网",
+    "能源",
+    "政府",
+    "金融",
+    "交通",
+    "教育"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "多媒体视讯解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多媒体视讯系统建设与服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多媒体信息系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:56:45"
+}

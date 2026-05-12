@@ -1,0 +1,39 @@
+{
+  "stock_id": "603177",
+  "stock_name": "德创环保",
+  "concept": "烟气治理综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "烟气治理综合服务",
+    "烟气治理",
+    "危废资源化"
+  ],
+  "should": [
+    "钠电池正极材料",
+    "废盐资源化再利用",
+    "废催化剂资源化再生利用",
+    "火电厂烟气治理",
+    "非电超低排放改造",
+    "火电厂烟气治理完整产业链",
+    "危废全产业链一体化服务",
+    "催化剂循环产业链"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "烟气治理综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "烟气治理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "危废资源化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:45:29"
+}

@@ -1,0 +1,49 @@
+{
+  "stock_id": "300684",
+  "stock_name": "中石科技",
+  "concept": "热管理解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高导热石墨产品",
+    "导热界面材料",
+    "热管",
+    "均热板",
+    "热模组"
+  ],
+  "should": [
+    "EMI屏蔽材料",
+    "密封材料",
+    "人工合成石墨技术",
+    "导热界面材料技术",
+    "热管技术",
+    "均热板技术",
+    "热模组技术",
+    "热管理解决方案"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高导热石墨产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "导热界面材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "均热板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热模组",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:38:50"
+}

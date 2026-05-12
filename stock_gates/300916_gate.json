@@ -1,0 +1,31 @@
+{
+  "stock_id": "300916",
+  "stock_name": "朗特智能",
+  "concept": "智能控制器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能控制器"
+  ],
+  "should": [
+    "智能产品",
+    "智能家居",
+    "家电",
+    "汽车电子",
+    "离网照明",
+    "消费电子",
+    "医疗电子",
+    "比亚迪核心供应商",
+    "SunKing一供",
+    "代工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能控制器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:48:59"
+}

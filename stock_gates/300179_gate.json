@@ -1,0 +1,46 @@
+{
+  "stock_id": "300179",
+  "stock_name": "四方达",
+  "concept": "复合超硬材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "复合超硬材料",
+    "聚晶金刚石（PCD）",
+    "油气钻探用金刚石复合片",
+    "CVD培育钻石"
+  ],
+  "should": [
+    "PCD刀片",
+    "金刚石刀具",
+    "煤田矿山复合片",
+    "PCBN刀片",
+    "CBN刀具",
+    "PCD微钻钻头",
+    "金刚石锯片",
+    "拉丝模坯",
+    "石油及天然气钻探",
+    "汽车零部件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "复合超硬材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚晶金刚石（PCD）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "油气钻探用金刚石复合片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CVD培育钻石",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:16:28"
+}

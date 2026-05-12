@@ -1,0 +1,34 @@
+{
+  "stock_id": "002274",
+  "stock_name": "华昌化工",
+  "concept": "煤气化化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤气化",
+    "煤气化化工"
+  ],
+  "should": [
+    "纯碱",
+    "化学肥料",
+    "多元醇",
+    "光伏玻璃",
+    "碳酸锂",
+    "新能源汽车",
+    "氢燃料电池",
+    "产业链源头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤气化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤气化化工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:32:48"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "603089",
+  "stock_name": "正裕工业",
+  "concept": "汽车减震器龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车减震器龙头",
+    "悬架系统减震器",
+    "高端电控智能悬架系统",
+    "新能源汽车减震器"
+  ],
+  "should": [
+    "空气悬架系统总成",
+    "空气弹簧气囊",
+    "空气悬架减震器",
+    "阻尼可调式减震器",
+    "空气弹簧气囊生产线",
+    "汽车密封件",
+    "橡胶减震器",
+    "CNAS实验检测资质",
+    "汽车售后市场",
+    "整车配套市场"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车减震器龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "悬架系统减震器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端电控智能悬架系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车减震器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:43:29"
+}

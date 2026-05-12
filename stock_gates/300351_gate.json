@@ -1,0 +1,51 @@
+{
+  "stock_id": "300351",
+  "stock_name": "永贵电器",
+  "concept": "轨交连接器龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轨交连接器龙头",
+    "连接器",
+    "高压连接器及线束组件",
+    "交/直流充电枪",
+    "大电流液冷直流充电枪"
+  ],
+  "should": [
+    "门系统",
+    "减振器",
+    "贯通道",
+    "计轴信号系统",
+    "受电弓",
+    "蓄电池箱",
+    "PDU/BDU",
+    "充/换电接口及线束",
+    "防水连接器",
+    "电源/信号/储能/充电连接器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轨交连接器龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "连接器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高压连接器及线束组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "交/直流充电枪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大电流液冷直流充电枪",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:23:56"
+}

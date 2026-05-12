@@ -1,0 +1,41 @@
+{
+  "stock_id": "002532",
+  "stock_name": "天山铝业",
+  "concept": "电解铝一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电解铝",
+    "高纯铝",
+    "电池箔"
+  ],
+  "should": [
+    "偏析法提纯技术",
+    "自备电厂",
+    "自备预焙阳极",
+    "电解铝一体化",
+    "新能源汽车",
+    "储能",
+    "电子铝箔",
+    "电解铝产能全国单体第二",
+    "原材料自给率接近100%",
+    "国内规模领先的高纯铝供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电解铝",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高纯铝",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电池箔",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:45:53"
+}

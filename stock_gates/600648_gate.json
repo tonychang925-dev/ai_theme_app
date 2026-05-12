@@ -1,0 +1,46 @@
+{
+  "stock_id": "600648",
+  "stock_name": "外高桥",
+  "concept": "保税区开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "保税区开发建设",
+    "保税区开发",
+    "招商引资",
+    "项目投资"
+  ],
+  "should": [
+    "全球营运商计划",
+    "融资租赁SPV项目",
+    "大宗商品业务",
+    "跨境电商功能",
+    "保税展示交易平台",
+    "生物医药产业",
+    "森兰区域",
+    "高东工业区",
+    "功能创新",
+    "智能制造服务产业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "保税区开发建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "保税区开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "招商引资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "项目投资",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:23:56"
+}

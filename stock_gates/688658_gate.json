@@ -1,0 +1,41 @@
+{
+  "stock_id": "688658",
+  "stock_name": "悦康药业",
+  "concept": "医药全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "银杏叶提取物注射液",
+    "枸橼酸爱地那非",
+    "注射剂精细化制备技术平台"
+  ],
+  "should": [
+    "奥美拉唑肠溶胶囊",
+    "盐酸二甲双胍缓释片",
+    "注射用头孢呋辛钠",
+    "注射用头孢曲松钠",
+    "高通量筛选平台",
+    "工艺开发及规模化制备平台",
+    "分析质控平台",
+    "多肽药物开发平台",
+    "药物晶型研究技术平台",
+    "缓控释制剂技术平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "银杏叶提取物注射液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "枸橼酸爱地那非",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "注射剂精细化制备技术平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:23:17"
+}

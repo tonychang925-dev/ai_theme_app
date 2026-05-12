@@ -1,0 +1,41 @@
+{
+  "stock_id": "600551",
+  "stock_name": "时代出版",
+  "concept": "出版传媒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "教材出版",
+    "主题出版",
+    "精品图书出版"
+  ],
+  "should": [
+    "教育在线平台",
+    "智慧作业融合出版平台",
+    "AI智能陪练钢琴书",
+    "沉浸式有声书",
+    "有声书",
+    "数据库",
+    "教材培训",
+    "教师培训",
+    "课后服务",
+    "大阅读工程"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "教材出版",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "主题出版",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精品图书出版",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:20:55"
+}

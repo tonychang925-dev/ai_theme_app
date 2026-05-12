@@ -1,0 +1,31 @@
+{
+  "stock_id": "000715",
+  "stock_name": "中兴商业",
+  "concept": "商业零售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中兴商号"
+  ],
+  "should": [
+    "商业零售",
+    "百货",
+    "超市",
+    "便利店",
+    "网络购物平台",
+    "CRM系统",
+    "ERP系统",
+    "大数据平台",
+    "会员管理体系",
+    "金领结服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中兴商号",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:01:47"
+}

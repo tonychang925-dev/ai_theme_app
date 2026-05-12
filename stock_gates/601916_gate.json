@@ -1,0 +1,30 @@
+{
+  "stock_id": "601916",
+  "stock_name": "浙商银行",
+  "concept": "股份制商业银行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "股份制商业银行"
+  ],
+  "should": [
+    "大零售",
+    "大跨境",
+    "大资管",
+    "财富管理",
+    "深耕浙江",
+    "立足长三角",
+    "布局全国",
+    "数字化改革",
+    "五大板块协同发展"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "股份制商业银行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:39:48"
+}

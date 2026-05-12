@@ -1,0 +1,41 @@
+{
+  "stock_id": "001268",
+  "stock_name": "联合精密",
+  "concept": "精密机械零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密机械零部件",
+    "空调压缩机",
+    "冰箱压缩机"
+  ],
+  "should": [
+    "活塞",
+    "轴承",
+    "气缸",
+    "曲轴",
+    "主壳体",
+    "汽车零部件",
+    "工程机械",
+    "食品机械",
+    "农用机械",
+    "高度依赖于美的集团"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密机械零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空调压缩机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冰箱压缩机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:14:59"
+}

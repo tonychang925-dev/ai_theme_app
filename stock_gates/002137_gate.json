@@ -1,0 +1,41 @@
+{
+  "stock_id": "002137",
+  "stock_name": "实益达",
+  "concept": "智能硬件与智慧营销",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能硬件与智慧营销",
+    "智能硬件",
+    "智慧营销"
+  ],
+  "should": [
+    "LED智能照明产品",
+    "半导体封装测试设备部件",
+    "新能源领域相关产品",
+    "物联网相关硬件产品",
+    "5G电源",
+    "物联网",
+    "人工智能",
+    "大数据",
+    "智能控制",
+    "工业控制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能硬件与智慧营销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能硬件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧营销",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:25:10"
+}

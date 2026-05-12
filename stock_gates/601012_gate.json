@@ -1,0 +1,44 @@
+{
+  "stock_id": "601012",
+  "stock_name": "隆基绿能",
+  "concept": "单晶光伏制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "单晶光伏制造",
+    "单晶硅片",
+    "单晶组件",
+    "单晶电池"
+  ],
+  "should": [
+    "拉晶切片技术",
+    "硅异质结电池",
+    "HPBC新型电池技术",
+    "高效单晶双面电池组件",
+    "光伏绿氢示范项目",
+    "全球分布式应用场景",
+    "全球最大单晶光伏制造商",
+    "单晶硅片和组件出货量全球第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "单晶光伏制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "单晶硅片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "单晶组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "单晶电池",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:33:20"
+}

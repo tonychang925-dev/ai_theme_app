@@ -1,0 +1,35 @@
+{
+  "stock_id": "688058",
+  "stock_name": "宝兰德",
+  "concept": "国产中间件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国产中间件",
+    "中间件"
+  ],
+  "should": [
+    "智能运维",
+    "大数据",
+    "云计算",
+    "JavaEE认证",
+    "电信",
+    "政府",
+    "金融",
+    "国产替代",
+    "信创改革"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国产中间件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中间件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:06:40"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "300888",
+  "stock_name": "稳健医疗",
+  "concept": "医疗+消费大健康",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医疗+消费大健康",
+    "医用耗材",
+    "健康生活消费品",
+    "医用敷料"
+  ],
+  "should": [
+    "伤口护理产品",
+    "感染防护产品",
+    "消毒清洁产品",
+    "无纺消费品",
+    "纺织消费品",
+    "棉柔巾",
+    "卫生巾",
+    "湿巾",
+    "婴童用品",
+    "婴童服饰"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医疗+消费大健康",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医用耗材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "健康生活消费品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医用敷料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:47:56"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "603929",
+  "stock_name": "亚翔集成",
+  "concept": "洁净室系统集成",
+  "strategy_type": "industry_chain",
+  "must": [
+    "洁净室系统集成",
+    "洁净室工程"
+  ],
+  "should": [
+    "机电工程",
+    "建筑工程",
+    "计算流体力学分析应用技术",
+    "空气采样与分析技术",
+    "IC半导体",
+    "光电",
+    "食品医药",
+    "云计算中心",
+    "鲁班奖",
+    "360.8万平方米洁净室工程经验"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "洁净室系统集成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "洁净室工程",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:59:08"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "603948",
+  "stock_name": "建业股份",
+  "concept": "精细化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "低碳脂肪胺",
+    "增塑剂",
+    "超纯氨",
+    "全国增塑剂行业十强企业"
+  ],
+  "should": [
+    "乙酸酯",
+    "电子级氨水",
+    "电子级异丙醇",
+    "APC先进控制技术",
+    "智慧安监平台",
+    "7N超纯氨",
+    "农药",
+    "医药",
+    "涂料",
+    "染料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "低碳脂肪胺",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "增塑剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超纯氨",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全国增塑剂行业十强企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:59:31"
+}

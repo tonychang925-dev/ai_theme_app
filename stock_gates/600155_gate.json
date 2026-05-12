@@ -1,0 +1,36 @@
+{
+  "stock_id": "600155",
+  "stock_name": "华创云信",
+  "concept": "投资型控股平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "华创证券",
+    "证券业务"
+  ],
+  "should": [
+    "投资银行",
+    "财富管理",
+    "资产管理",
+    "研究与机构服务",
+    "证券经纪",
+    "自营投资",
+    "信用交易",
+    "期货交易",
+    "私募投融资",
+    "另类投资"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "华创证券",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "证券业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:10:24"
+}

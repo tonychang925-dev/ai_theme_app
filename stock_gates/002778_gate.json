@@ -1,0 +1,31 @@
+{
+  "stock_id": "002778",
+  "stock_name": "中晟高科",
+  "concept": "润滑油与环保",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生产过程全自动化"
+  ],
+  "should": [
+    "防析氢变压器油",
+    "防滴漏液力传动油",
+    "环保主轴油",
+    "环保型全合成制管液",
+    "润滑油与环保",
+    "定制研发",
+    "合作研发",
+    "技术改革",
+    "技术创新",
+    "钢铁"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生产过程全自动化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:57:14"
+}

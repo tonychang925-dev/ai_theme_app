@@ -1,0 +1,51 @@
+{
+  "stock_id": "603819",
+  "stock_name": "神力股份",
+  "concept": "电机配件制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "专业化电机配件生产服务商",
+    "电机配件制造",
+    "电机定子冲片",
+    "电机转子冲片",
+    "电机铁芯"
+  ],
+  "should": [
+    "模具研发",
+    "安检仪器设备",
+    "智能安防系统集成",
+    "军工装备",
+    "荧光检测技术",
+    "原材料选择",
+    "技术工艺",
+    "电机整机厂商配套",
+    "货场",
+    "码头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "专业化电机配件生产服务商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电机配件制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电机定子冲片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电机转子冲片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电机铁芯",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:57:11"
+}

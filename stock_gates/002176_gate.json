@@ -1,0 +1,36 @@
+{
+  "stock_id": "002176",
+  "stock_name": "江特电机",
+  "concept": "锂电新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电新能源",
+    "碳酸锂产品",
+    "云母提锂"
+  ],
+  "should": [
+    "电动机产品",
+    "电池",
+    "航天航空",
+    "锂矿资源量1亿吨以上",
+    "锂盐产量规划2万吨至4.1万吨"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电新能源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳酸锂产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云母提锂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:27:26"
+}

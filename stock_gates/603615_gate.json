@@ -1,0 +1,31 @@
+{
+  "stock_id": "603615",
+  "stock_name": "茶花股份",
+  "concept": "家居塑料用品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "家居塑料用品"
+  ],
+  "should": [
+    "水具类",
+    "清洁类",
+    "膜袋类",
+    "可降解塑料制品",
+    "模具自主研发",
+    "液态硅胶模具自制",
+    "商超",
+    "批发",
+    "团购",
+    "线上电商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "家居塑料用品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:53:21"
+}

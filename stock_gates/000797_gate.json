@@ -1,0 +1,31 @@
+{
+  "stock_id": "000797",
+  "stock_name": "中国武夷",
+  "concept": "外经工程与地产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "房地产开发",
+    "国际工程承包"
+  ],
+  "should": [
+    "外经工程与地产",
+    "施工总承包",
+    "EPC模式",
+    "外经龙头",
+    "践行一带一路的先锋力量"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房地产开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国际工程承包",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:05:07"
+}

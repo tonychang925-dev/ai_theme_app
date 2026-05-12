@@ -1,0 +1,51 @@
+{
+  "stock_id": "300122",
+  "stock_name": "智飞生物",
+  "concept": "疫苗龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "疫苗",
+    "HPV四价疫苗",
+    "HPV九价疫苗",
+    "AC-Hib联合疫苗",
+    "母牛分枝杆菌疫苗（微卡）"
+  ],
+  "should": [
+    "五价轮状病毒疫苗",
+    "23价肺炎球菌多糖疫苗",
+    "甲型肝炎纯化灭活疫苗",
+    "多糖和多糖蛋白结合疫苗技术平台",
+    "组分技术平台",
+    "灭活疫苗技术平台",
+    "基因重组技术平台",
+    "mRNA疫苗技术平台",
+    "腺病毒载体疫苗技术平台",
+    "人二倍体细胞株技术平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "疫苗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "HPV四价疫苗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "HPV九价疫苗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AC-Hib联合疫苗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "母牛分枝杆菌疫苗（微卡）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:14:09"
+}

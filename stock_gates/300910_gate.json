@@ -1,0 +1,31 @@
+{
+  "stock_id": "300910",
+  "stock_name": "瑞丰新材",
+  "concept": "润滑油添加剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "润滑油添加剂"
+  ],
+  "should": [
+    "无碳纸显色剂",
+    "全球综合型润滑油添加剂企业",
+    "清净剂",
+    "分散剂",
+    "抗氧抗腐剂",
+    "高温抗氧剂",
+    "减摩抗磨剂",
+    "汽机油复合剂",
+    "柴机油复合剂",
+    "船用油复合剂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "润滑油添加剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:48:45"
+}

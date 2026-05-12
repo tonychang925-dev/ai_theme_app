@@ -1,0 +1,50 @@
+{
+  "stock_id": "000868",
+  "stock_name": "安凯客车",
+  "concept": "客车制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "客车制造",
+    "整车",
+    "纯电动公交客车",
+    "纯电动旅游和通勤客车",
+    "增程式电动公交客车"
+  ],
+  "should": [
+    "全承载技术",
+    "底盘全桁架技术",
+    "电动客车整车系统集成",
+    "弗迪电池",
+    "浙储能源",
+    "新能源客车研发",
+    "U型生产线",
+    "TPS生产管理体系",
+    "动力电池合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "客车制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "整车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纯电动公交客车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纯电动旅游和通勤客车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "增程式电动公交客车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:07:30"
+}

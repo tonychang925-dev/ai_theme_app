@@ -1,0 +1,46 @@
+{
+  "stock_id": "300969",
+  "stock_name": "恒帅股份",
+  "concept": "微电机隐形冠军",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球清洗泵隐形冠军",
+    "清洗泵",
+    "微电机",
+    "清洗系统"
+  ],
+  "should": [
+    "ADAS传感器主动感知清洗系统",
+    "隐形门把手驱动机构",
+    "充电小门执行器",
+    "后备箱电机",
+    "侧开门电机",
+    "冷却岐管",
+    "电子循环泵",
+    "微电机隐形冠军",
+    "流体技术",
+    "电机技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球清洗泵隐形冠军",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "清洗泵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "微电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "清洗系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:51:21"
+}

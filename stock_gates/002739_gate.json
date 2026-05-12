@@ -1,0 +1,41 @@
+{
+  "stock_id": "002739",
+  "stock_name": "万达电影",
+  "concept": "影院运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "影院运营",
+    "影院投资",
+    "放映业务"
+  ],
+  "should": [
+    "影视剧投资",
+    "影视剧制作",
+    "影视剧发行",
+    "异业合作",
+    "品牌联动",
+    "差异化营销",
+    "预约放映",
+    "私域社群",
+    "票房",
+    "观影人次"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "影院运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "影院投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "放映业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:55:31"
+}

@@ -1,0 +1,30 @@
+{
+  "stock_id": "002579",
+  "stock_name": "中京电子",
+  "concept": "PCB全品类制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PCB全品类制造"
+  ],
+  "should": [
+    "刚性电路板",
+    "高密度互联板",
+    "柔性电路板",
+    "刚柔结合板",
+    "柔性电路板组件",
+    "5G产品技术",
+    "国家级火炬计划重点高新技术企业",
+    "CPCA副理事长单位",
+    "CPCA行业标准制定单位之一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PCB全品类制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:48:22"
+}

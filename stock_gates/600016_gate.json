@@ -1,0 +1,31 @@
+{
+  "stock_id": "600016",
+  "stock_name": "民生银行",
+  "concept": "股份制商业银行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "股份制商业银行"
+  ],
+  "should": [
+    "公司银行业务",
+    "零售银行业务",
+    "金融市场业务",
+    "绿色信贷",
+    "制造业贷款",
+    "普惠型小微企业贷款",
+    "全面风险管理",
+    "不良资产清收处置",
+    "资产质量管控",
+    "民营企业的银行"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "股份制商业银行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:07:08"
+}

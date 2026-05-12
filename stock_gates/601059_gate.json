@@ -1,0 +1,41 @@
+{
+  "stock_id": "601059",
+  "stock_name": "信达证券",
+  "concept": "综合证券服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "证券经纪业务",
+    "证券自营业务",
+    "投资银行业务"
+  ],
+  "should": [
+    "资产管理业务",
+    "期货业务",
+    "私募投资基金业务",
+    "另类投资业务",
+    "基金管理业务",
+    "境外业务",
+    "代理买卖证券业务",
+    "信用交易业务",
+    "股权融资",
+    "债券融资"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "证券经纪业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "证券自营业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资银行业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:33:44"
+}

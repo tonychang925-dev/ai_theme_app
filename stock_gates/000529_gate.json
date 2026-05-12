@@ -1,0 +1,31 @@
+{
+  "stock_id": "000529",
+  "stock_name": "广弘控股",
+  "concept": "肉类食品供应",
+  "strategy_type": "industry_chain",
+  "must": [
+    "肉类食品供应",
+    "冷冻食品储藏供应"
+  ],
+  "should": [
+    "畜禽养殖",
+    "冷库+市场",
+    "自繁自育",
+    "冷冻肉类食用",
+    "华南地区领先"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "肉类食品供应",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冷冻食品储藏供应",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:54:26"
+}

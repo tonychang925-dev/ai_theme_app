@@ -1,0 +1,39 @@
+{
+  "stock_id": "300498",
+  "stock_name": "温氏股份",
+  "concept": "农业产业化龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农业产业化龙头",
+    "生猪养殖",
+    "猪周期"
+  ],
+  "should": [
+    "冰鲜肉",
+    "预制菜",
+    "龙头企业",
+    "市占率提升",
+    "集中屠宰",
+    "品牌经营",
+    "冷链流通",
+    "冷鲜上市"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农业产业化龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生猪养殖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "猪周期",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:30:01"
+}

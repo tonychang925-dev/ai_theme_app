@@ -1,0 +1,32 @@
+{
+  "stock_id": "002908",
+  "stock_name": "德生科技",
+  "concept": "社保民生运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "社保卡发行服务",
+    "居民运营服务"
+  ],
+  "should": [
+    "社保民生运营",
+    "公共交通",
+    "政府资金发放",
+    "公共场景服务",
+    "社保卡供应商",
+    "人社部门战略合作伙伴"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "社保卡发行服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "居民运营服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:02:38"
+}

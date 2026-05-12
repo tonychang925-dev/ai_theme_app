@@ -1,0 +1,35 @@
+{
+  "stock_id": "002377",
+  "stock_name": "国创高新",
+  "concept": "沥青与房产中介",
+  "strategy_type": "industry_chain",
+  "must": [
+    "沥青业务",
+    "房地产中介服务"
+  ],
+  "should": [
+    "高速公路",
+    "国省道公路",
+    "城市主干道",
+    "机场跑道",
+    "市政专用道路",
+    "O2O模式",
+    "新房代理业务",
+    "房屋经纪业务",
+    "头部企业供应链配套解决方案"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "沥青业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "房地产中介服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:38:34"
+}

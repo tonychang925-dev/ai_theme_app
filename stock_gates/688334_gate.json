@@ -1,0 +1,37 @@
+{
+  "stock_id": "688334",
+  "stock_name": "西高院",
+  "concept": "电力检验检测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力检验检测",
+    "检测服务",
+    "高压开关设备"
+  ],
+  "should": [
+    "技术研究与技术咨询",
+    "计量服务",
+    "认证服务",
+    "国家级检验检测中心",
+    "电力系统",
+    "技术创新引领者"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力检验检测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "检测服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高压开关设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:15:45"
+}

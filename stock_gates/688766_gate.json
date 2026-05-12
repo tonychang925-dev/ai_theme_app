@@ -1,0 +1,41 @@
+{
+  "stock_id": "688766",
+  "stock_name": "普冉股份",
+  "concept": "存储芯片与MCU",
+  "strategy_type": "industry_chain",
+  "must": [
+    "NOR Flash",
+    "EEPROM",
+    "微控制器芯片"
+  ],
+  "should": [
+    "模拟产品",
+    "SONOS工艺",
+    "ETOX工艺",
+    "ARM M0内核",
+    "ARM M4内核",
+    "DDR5内存条",
+    "存储芯片与MCU",
+    "40nm工艺",
+    "55nm工艺",
+    "130nm工艺"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "NOR Flash",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "EEPROM",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "微控制器芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:24:54"
+}

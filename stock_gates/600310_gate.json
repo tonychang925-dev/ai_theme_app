@@ -1,0 +1,41 @@
+{
+  "stock_id": "600310",
+  "stock_name": "广西能源",
+  "concept": "厂网合一电力",
+  "strategy_type": "industry_chain",
+  "must": [
+    "厂网合一电力",
+    "发电",
+    "供电"
+  ],
+  "should": [
+    "售电",
+    "水电",
+    "火电",
+    "光伏发电",
+    "风电",
+    "抽水蓄能",
+    "输变电工程",
+    "配电网络",
+    "调控一体化",
+    "工业园区供电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "厂网合一电力",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "供电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:14:32"
+}

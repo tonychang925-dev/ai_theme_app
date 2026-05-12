@@ -1,0 +1,46 @@
+{
+  "stock_id": "002130",
+  "stock_name": "沃尔核材",
+  "concept": "高速通信线缆",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高速通信线缆",
+    "高速通信线",
+    "英伟达高速铜缆供应商",
+    "乐庭智联"
+  ],
+  "should": [
+    "汽车线",
+    "工业线",
+    "消费电子线",
+    "高分子核辐射改性",
+    "主控芯片",
+    "67GHz网络分析仪",
+    "固件开发",
+    "大型数据中心",
+    "工业机器人",
+    "汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高速通信线缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高速通信线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "英伟达高速铜缆供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乐庭智联",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:24:53"
+}

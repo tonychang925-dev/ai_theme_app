@@ -1,0 +1,36 @@
+{
+  "stock_id": "001267",
+  "stock_name": "汇绿生态",
+  "concept": "园林绿化全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "园林工程施工",
+    "风景园林工程设计专项甲级"
+  ],
+  "should": [
+    "苗木种植",
+    "园林景观设计",
+    "城市及道路照明工程专业承包壹级",
+    "古建筑工程专业承包壹级",
+    "环保工程专业承包壹级",
+    "园林绿化全产业链",
+    "施工总承包",
+    "工程专业承包",
+    "EPC模式",
+    "市政园林工程"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "园林工程施工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风景园林工程设计专项甲级",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:15:01"
+}

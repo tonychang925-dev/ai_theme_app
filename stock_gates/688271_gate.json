@@ -1,0 +1,44 @@
+{
+  "stock_id": "688271",
+  "stock_name": "联影医疗",
+  "concept": "高端医学影像",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端医学影像",
+    "磁共振成像系统（MR）",
+    "X 射线成像系统（XR）",
+    "分子影像系统（MI）"
+  ],
+  "should": [
+    "一体化 PET/MR",
+    "320 排超高端 CT",
+    "超大孔径 3.0T 磁共振",
+    "全身超高场 5.0T MR",
+    "儿科 MR",
+    "低剂量 DSA",
+    "数字光导 PET/CT",
+    "低剂量数字乳腺机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端医学影像",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磁共振成像系统（MR）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "X 射线成像系统（XR）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分子影像系统（MI）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:13:52"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "300921",
+  "stock_name": "南凌科技",
+  "concept": "云智网安服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "云智网安服务",
+    "凌网服务",
+    "凌云服务",
+    "数字化工程"
+  ],
+  "should": [
+    "MPLS骨干网",
+    "SD-WAN",
+    "SASE",
+    "云原生",
+    "云架构",
+    "边缘计算",
+    "MDR",
+    "MSS",
+    "AI大模型",
+    "中国SASE市场第四位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "云智网安服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "凌网服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "凌云服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字化工程",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:49:15"
+}

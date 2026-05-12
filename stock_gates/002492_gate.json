@@ -1,0 +1,46 @@
+{
+  "stock_id": "002492",
+  "stock_name": "恒基达鑫",
+  "concept": "石化仓储物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "石化仓储物流",
+    "装卸业务",
+    "仓储业务",
+    "自有码头"
+  ],
+  "should": [
+    "储罐",
+    "珠三角地区",
+    "长三角地区",
+    "华中地区",
+    "碳钢常压罐",
+    "碳钢压力球罐",
+    "不锈钢罐",
+    "甲类仓库",
+    "乙类仓库",
+    "丙类仓库"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "石化仓储物流",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "装卸业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "仓储业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自有码头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:44:17"
+}

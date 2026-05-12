@@ -1,0 +1,51 @@
+{
+  "stock_id": "600590",
+  "stock_name": "泰豪科技",
+  "concept": "军工应急电源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "军工应急电源",
+    "车载通信指挥系统",
+    "军用导航装备",
+    "军用电源装备",
+    "智能应急电源"
+  ],
+  "should": [
+    "应急特种车辆",
+    "柴油发电机组",
+    "卫星导航基带芯片",
+    "数据中心",
+    "电磁兼容",
+    "多频段通信指挥系统集成",
+    "轻量化设计",
+    "系统集中管控",
+    "柴发+储能混合技术",
+    "应急救援"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "军工应急电源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载通信指挥系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "军用导航装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "军用电源装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能应急电源",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:22:12"
+}

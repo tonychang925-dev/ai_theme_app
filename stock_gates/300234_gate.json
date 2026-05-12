@@ -1,0 +1,32 @@
+{
+  "stock_id": "300234",
+  "stock_name": "开尔新材",
+  "concept": "搪瓷材料应用",
+  "strategy_type": "industry_chain",
+  "must": [
+    "内立面装饰搪瓷材料",
+    "珐琅板绿色建筑幕墙材料"
+  ],
+  "should": [
+    "工业保护搪瓷材料",
+    "搪瓷材料应用",
+    "地铁隧道内立面装饰",
+    "高端建筑外立面装饰",
+    "节能环保设施建设",
+    "燃煤锅炉烟气深度治理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "内立面装饰搪瓷材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "珐琅板绿色建筑幕墙材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:18:36"
+}

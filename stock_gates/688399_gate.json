@@ -1,0 +1,41 @@
+{
+  "stock_id": "688399",
+  "stock_name": "硕世生物",
+  "concept": "体外诊断",
+  "strategy_type": "industry_chain",
+  "must": [
+    "体外诊断试剂",
+    "配套检测仪器",
+    "核酸分子检测试剂"
+  ],
+  "should": [
+    "多重荧光定量PCR",
+    "干化学",
+    "POCT",
+    "分子生物学",
+    "免疫学",
+    "药理学",
+    "病理学",
+    "传染病防控",
+    "临床检测",
+    "大规模人口筛查"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "体外诊断试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "配套检测仪器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核酸分子检测试剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:17:45"
+}

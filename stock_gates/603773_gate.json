@@ -1,0 +1,36 @@
+{
+  "stock_id": "603773",
+  "stock_name": "沃格光电",
+  "concept": "光电玻璃精加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光电玻璃精加工",
+    "LCD光电玻璃精加工"
+  ],
+  "should": [
+    "UTG玻璃薄化",
+    "折叠手机盖板",
+    "AG/AR/AF技术叠加",
+    "玻璃金属化厚铜镀膜",
+    "光刻技术",
+    "巨量微米级玻璃通孔",
+    "CPI/PI膜材研发",
+    "镀铜技术",
+    "MiniLED背光",
+    "复合集流体研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光电玻璃精加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LCD光电玻璃精加工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:56:20"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "300188",
+  "stock_name": "国投智能",
+  "concept": "电子数据取证与网络安全",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子数据取证与网络安全",
+    "网络安全产品"
+  ],
+  "should": [
+    "电子数据取证装备",
+    "大数据操作系统(QKOS)",
+    "安全大脑",
+    "人工智能",
+    "大数据",
+    "零信任安全",
+    "公共安全",
+    "智慧城市",
+    "网络安全",
+    "企业数字化转型"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子数据取证与网络安全",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "网络安全产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:16:42"
+}

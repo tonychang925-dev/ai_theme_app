@@ -1,0 +1,36 @@
+{
+  "stock_id": "002031",
+  "stock_name": "巨轮智能",
+  "concept": "轮胎模具与智能装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轮胎模具",
+    "液压式硫化机"
+  ],
+  "should": [
+    "机器人及智能装备",
+    "子午线活络模具",
+    "精铸铝合金模具",
+    "免排气孔轮胎模具",
+    "汽车轮胎制造",
+    "农业/工业机械装备",
+    "汽车制造",
+    "柔性生产",
+    "焊接涂装",
+    "民用爆破"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轮胎模具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液压式硫化机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:19:13"
+}

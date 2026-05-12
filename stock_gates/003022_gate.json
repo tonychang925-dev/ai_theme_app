@@ -1,0 +1,34 @@
+{
+  "stock_id": "003022",
+  "stock_name": "联泓新科",
+  "concept": "高性能EVA",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高性能EVA",
+    "高性能EVA生产技术"
+  ],
+  "should": [
+    "聚丙烯专用料（PP）",
+    "环氧乙烷（EO）",
+    "环氧乙烷衍生物（EOD）",
+    "甲醇制烯烃（DMTO）",
+    "光伏",
+    "电线电缆",
+    "发泡",
+    "热熔胶"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高性能EVA",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高性能EVA生产技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:07:59"
+}

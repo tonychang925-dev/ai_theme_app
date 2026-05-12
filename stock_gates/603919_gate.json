@@ -1,0 +1,35 @@
+{
+  "stock_id": "603919",
+  "stock_name": "金徽酒",
+  "concept": "浓香白酒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "浓香型白酒",
+    "陇南春"
+  ],
+  "should": [
+    "康庆坊",
+    "万盛魁",
+    "甘肃陇南春酒厂",
+    "浓香白酒",
+    "西北",
+    "华东",
+    "全国",
+    "酱香型",
+    "高端酒"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "浓香型白酒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "陇南春",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:58:56"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "600285",
+  "stock_name": "羚锐制药",
+  "concept": "中药贴膏龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "通络祛痛膏",
+    "壮骨麝香止痛膏",
+    "骨科"
+  ],
+  "should": [
+    "活血消痛酊",
+    "伤湿止痛膏",
+    "关节止痛膏",
+    "联苯乙酸凝胶",
+    "吲哚美辛贴片",
+    "丹鹿通督片",
+    "培元通脑胶囊",
+    "参芪降糖胶囊",
+    "丹玉通脉颗粒",
+    "锐枢安®芬太尼透皮贴剂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "通络祛痛膏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "壮骨麝香止痛膏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "骨科",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:14:03"
+}

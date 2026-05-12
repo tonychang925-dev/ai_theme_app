@@ -1,0 +1,46 @@
+{
+  "stock_id": "300920",
+  "stock_name": "润阳科技",
+  "concept": "辐照交联聚烯烃",
+  "strategy_type": "industry_chain",
+  "must": [
+    "辐照交联聚烯烃",
+    "IXPE",
+    "辐照交联",
+    "国内领先IXPE生产企业"
+  ],
+  "should": [
+    "GFOAM（固特棉）",
+    "IXEVA",
+    "气柱袋",
+    "RY-2400高速发泡炉",
+    "新能源缓冲泡棉",
+    "发泡工艺",
+    "智能化生产",
+    "家居建筑装饰",
+    "汽车内饰",
+    "婴童用品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "辐照交联聚烯烃",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IXPE",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "辐照交联",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内领先IXPE生产企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:49:17"
+}

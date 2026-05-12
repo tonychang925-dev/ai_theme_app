@@ -1,0 +1,36 @@
+{
+  "stock_id": "002169",
+  "stock_name": "智光电气",
+  "concept": "数字能源技术",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字能源技术",
+    "储能系列产品"
+  ],
+  "should": [
+    "配网中性点接地成套装置",
+    "高压变频调速系统",
+    "港口岸电系列产品",
+    "新能源并网测试设备",
+    "UPS电源系列产品",
+    "电力传输装备",
+    "电力信息化产品",
+    "消弧并小电阻接地成套装置",
+    "大容量并网移动测试装备",
+    "工业互联网边缘网关"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字能源技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能系列产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:27:15"
+}

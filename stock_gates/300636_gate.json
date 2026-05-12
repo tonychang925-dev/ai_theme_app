@@ -1,0 +1,36 @@
+{
+  "stock_id": "300636",
+  "stock_name": "同和药业",
+  "concept": "特色原料药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "瑞巴派特",
+    "塞来昔布"
+  ],
+  "should": [
+    "特色原料药",
+    "全球瑞巴派特重要供应商",
+    "瑞巴派特国际市场占有率超50%",
+    "塞来昔布国内市场占有率70%",
+    "加巴喷丁",
+    "醋氯芬酸",
+    "替格瑞洛",
+    "利伐沙班",
+    "米拉贝隆",
+    "盐酸文拉法辛"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "瑞巴派特",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "塞来昔布",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:36:34"
+}

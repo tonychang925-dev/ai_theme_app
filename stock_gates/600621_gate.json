@@ -1,0 +1,41 @@
+{
+  "stock_id": "600621",
+  "stock_name": "华鑫股份",
+  "concept": "证券期货服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "证券期货服务",
+    "期货业务",
+    "经纪业务"
+  ],
+  "should": [
+    "自营业务",
+    "资管业务",
+    "投行业务",
+    "信用业务",
+    "另类投资业务",
+    "研究所业务",
+    "金融科技引领",
+    "金融科技赋能",
+    "金融科技专业服务",
+    "收益稳、波动低"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "证券期货服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "期货业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "经纪业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:23:11"
+}

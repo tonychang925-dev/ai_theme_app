@@ -1,0 +1,36 @@
+{
+  "stock_id": "300546",
+  "stock_name": "雄帝科技",
+  "concept": "安全证照龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "安全证照龙头",
+    "身份识别"
+  ],
+  "should": [
+    "智能IC卡",
+    "生物识别",
+    "智慧交通",
+    "数据安全",
+    "区块链",
+    "出入境管理",
+    "户政",
+    "社保",
+    "公共交通",
+    "国内唯一入选ICAO标准"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "安全证照龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "身份识别",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:32:05"
+}

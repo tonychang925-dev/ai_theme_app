@@ -1,0 +1,41 @@
+{
+  "stock_id": "600562",
+  "stock_name": "国睿科技",
+  "concept": "雷达装备与工业软件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "雷达装备及相关系统",
+    "工业软件与数字化解决方案",
+    "中国电科十四所上市平台"
+  ],
+  "should": [
+    "机载火控雷达",
+    "机载预警雷达",
+    "武器定位雷达",
+    "武器制导雷达",
+    "靶场测控雷达",
+    "反隐身情报雷达",
+    "空管雷达",
+    "气象雷达",
+    "工业软件",
+    "相控阵天线"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "雷达装备及相关系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业软件与数字化解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中国电科十四所上市平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:21:25"
+}

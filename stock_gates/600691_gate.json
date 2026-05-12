@@ -1,0 +1,46 @@
+{
+  "stock_id": "600691",
+  "stock_name": "潞化科技",
+  "concept": "煤化工综合",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤化工综合",
+    "煤化工",
+    "精细化工",
+    "化工装备"
+  ],
+  "should": [
+    "尿素",
+    "聚氯乙烯",
+    "丙烯",
+    "离子膜烧碱",
+    "三氯化磷",
+    "双氧水",
+    "盐化工",
+    "热电联产",
+    "农业",
+    "化工行业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤化工综合",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤化工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精细化工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化工装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:25:06"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "600406",
+  "stock_name": "国电南瑞",
+  "concept": "电力智能化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新一代调度系统",
+    "新一代用采系统",
+    "新一代集控系统",
+    "新型负荷管理系统",
+    "自主可控继电保护设备"
+  ],
+  "should": [
+    "电力现货市场系统",
+    "励磁系统",
+    "调速系统",
+    "保护系统",
+    "监控系统",
+    "特高压换流变有载分接开关",
+    "变速抽蓄全功率变流器",
+    "电网资源业务中台",
+    "企业级实时量测中心",
+    "PMS3.0"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新一代调度系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新一代用采系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新一代集控系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新型负荷管理系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自主可控继电保护设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:17:33"
+}

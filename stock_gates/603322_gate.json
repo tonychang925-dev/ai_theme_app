@@ -1,0 +1,46 @@
+{
+  "stock_id": "603322",
+  "stock_name": "超讯通信",
+  "concept": "智算信通服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智算",
+    "算力",
+    "信通",
+    "AI"
+  ],
+  "should": [
+    "物联网",
+    "ICT",
+    "新能源",
+    "充电桩",
+    "光伏",
+    "数据中心规划设计",
+    "机房建设",
+    "智算信通服务",
+    "数据",
+    "算力建设与租赁"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智算",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "算力",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AI",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:49:07"
+}

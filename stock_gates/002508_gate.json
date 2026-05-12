@@ -1,0 +1,41 @@
+{
+  "stock_id": "002508",
+  "stock_name": "老板电器",
+  "concept": "厨电龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "烟机",
+    "灶具",
+    "消毒柜"
+  ],
+  "should": [
+    "一体机",
+    "洗碗机",
+    "集成灶",
+    "KA合作",
+    "代理制",
+    "专卖店",
+    "终端门店",
+    "厨电龙头",
+    "大吸力",
+    "双腔"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "烟机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "灶具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "消毒柜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:44:55"
+}

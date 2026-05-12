@@ -1,0 +1,41 @@
+{
+  "stock_id": "002891",
+  "stock_name": "中宠股份",
+  "concept": "宠物食品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "宠物食品",
+    "Wanpy顽皮",
+    "Zeal真致"
+  ],
+  "should": [
+    "宠物零食",
+    "宠物罐头",
+    "宠物干粮",
+    "宠物用品",
+    "Toptrees领先",
+    "线下渠道",
+    "线上渠道",
+    "专业渠道",
+    "商超渠道",
+    "犬用宠物食品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "宠物食品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "Wanpy顽皮",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "Zeal真致",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:02:06"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "688177",
+  "stock_name": "百奥泰",
+  "concept": "创新生物药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "施瑞立",
+    "ADC技术平台",
+    "BAT8006",
+    "注射用BAT2022"
+  ],
+  "should": [
+    "格乐立",
+    "普贝希",
+    "BAT1806托珠单抗",
+    "BAT1706贝伐珠单抗",
+    "BAT2206",
+    "BAT2506",
+    "BAT5906",
+    "BAT2306",
+    "BAT8007",
+    "BAT8008"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "施瑞立",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ADC技术平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "BAT8006",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "注射用BAT2022",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:10:55"
+}

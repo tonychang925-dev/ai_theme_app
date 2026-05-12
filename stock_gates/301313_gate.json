@@ -1,0 +1,36 @@
+{
+  "stock_id": "301313",
+  "stock_name": "凡拓数创",
+  "concept": "数字创意与AI3D",
+  "strategy_type": "industry_chain",
+  "must": [
+    "3D可视化产品及服务",
+    "数字一体化综合服务"
+  ],
+  "should": [
+    "数字孪生技术",
+    "3D可视化技术",
+    "数字多媒体集成技术",
+    "AI技术",
+    "实景渲染技术",
+    "感知交互技术",
+    "海量数据承载技术",
+    "行业AI小模型搭建技术",
+    "水利水务",
+    "电力能源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "3D可视化产品及服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字一体化综合服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:02:45"
+}

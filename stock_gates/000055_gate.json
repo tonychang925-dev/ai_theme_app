@@ -1,0 +1,46 @@
+{
+  "stock_id": "000055",
+  "stock_name": "方大集团",
+  "concept": "智慧幕墙系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧幕墙系统",
+    "智慧幕墙",
+    "PVDF铝单板",
+    "轨道交通屏蔽门系统"
+  ],
+  "should": [
+    "主控芯片",
+    "制造业单项冠军产品",
+    "固件开发",
+    "高端写字楼",
+    "企业总部",
+    "城市综合体",
+    "高档住宅及酒店",
+    "城市公共建筑",
+    "轨道交通",
+    "行业前三"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧幕墙系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧幕墙",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PVDF铝单板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轨道交通屏蔽门系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:48:46"
+}

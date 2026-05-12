@@ -1,0 +1,46 @@
+{
+  "stock_id": "600522",
+  "stock_name": "中天科技",
+  "concept": "海底电缆综合解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "海底电缆综合解决方案",
+    "海底电缆",
+    "储能系统",
+    "光伏电站"
+  ],
+  "should": [
+    "光纤复合海底电缆",
+    "海底光缆",
+    "特种海缆",
+    "锂离子电池",
+    "海上风电",
+    "光伏一站式解决方案提供商",
+    "储能系统集成供应体系",
+    "光缆",
+    "电力电缆",
+    "BMS"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "海底电缆综合解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海底电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏电站",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:20:19"
+}

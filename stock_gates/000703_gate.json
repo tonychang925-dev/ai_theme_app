@@ -1,0 +1,46 @@
+{
+  "stock_id": "000703",
+  "stock_name": "恒逸石化",
+  "concept": "石化化纤一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PTA—涤纶",
+    "CPL—锦纶",
+    "精对苯二甲酸",
+    "己内酰胺"
+  ],
+  "should": [
+    "汽油",
+    "柴油",
+    "航空煤油",
+    "对二甲苯",
+    "聚酯瓶片",
+    "涤纶预取向丝",
+    "涤纶牵伸丝",
+    "涤纶加弹丝",
+    "涤纶短纤",
+    "聚酯切片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PTA—涤纶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CPL—锦纶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精对苯二甲酸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "己内酰胺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:01:29"
+}

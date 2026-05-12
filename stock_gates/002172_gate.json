@@ -1,0 +1,41 @@
+{
+  "stock_id": "002172",
+  "stock_name": "澳洋健康",
+  "concept": "大健康服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医疗服务业务",
+    "医药流通业务",
+    "澳洋医院"
+  ],
+  "should": [
+    "大健康服务",
+    "医、康、养护联动发展模式",
+    "B2B模式",
+    "华东区域",
+    "江苏省",
+    "三级综合医院",
+    "JCI认证",
+    "现代化医药物流网络",
+    "肿瘤专科特色",
+    "港城康复医院"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医疗服务业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药流通业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "澳洋医院",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:27:18"
+}

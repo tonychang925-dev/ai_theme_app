@@ -1,0 +1,41 @@
+{
+  "stock_id": "300612",
+  "stock_name": "宣亚国际",
+  "concept": "整合营销服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "整合营销服务",
+    "数智营销",
+    "一站式整合营销服务"
+  ],
+  "should": [
+    "数字广告",
+    "数据技术产品",
+    "AIGC技术",
+    "人工智能算法",
+    "虚拟现实",
+    "区块链",
+    "SaaS产品服务",
+    "智能图像素材设计",
+    "智能视频素材生成",
+    "智能广告文案制作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "整合营销服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数智营销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一站式整合营销服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:35:25"
+}

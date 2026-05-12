@@ -1,0 +1,42 @@
+{
+  "stock_id": "600183",
+  "stock_name": "生益科技",
+  "concept": "高端覆铜板",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端覆铜板",
+    "高频覆铜板",
+    "高速覆铜板",
+    "封装基板用覆铜板"
+  ],
+  "should": [
+    "特种材料",
+    "高速覆铜板材料",
+    "汽车毫米波/激光雷达",
+    "服务器升级",
+    "新能源车智能化",
+    "第二大覆铜板厂商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端覆铜板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高频覆铜板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高速覆铜板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "封装基板用覆铜板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:11:08"
+}

@@ -1,0 +1,29 @@
+{
+  "stock_id": "603577",
+  "stock_name": "汇金通",
+  "concept": "输电铁塔",
+  "strategy_type": "industry_chain",
+  "must": [
+    "输电铁塔"
+  ],
+  "should": [
+    "角钢塔",
+    "钢管塔",
+    "其他钢结构及接触网支架",
+    "电网建设",
+    "新能源钢结构",
+    "轨道交通",
+    "5G通讯",
+    "光伏"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "输电铁塔",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:52:26"
+}

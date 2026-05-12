@@ -1,0 +1,30 @@
+{
+  "stock_id": "301053",
+  "stock_name": "远信工业",
+  "concept": "拉幅定形机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "拉幅定形机"
+  ],
+  "should": [
+    "定形机改造",
+    "自动缝头机",
+    "除尘除油热能回收设备",
+    "节能环保技术",
+    "智能化控制",
+    "远程诊断与管理",
+    "废气余热利用",
+    "纺织染整工序",
+    "纺织物拉幅定形处理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "拉幅定形机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:54:45"
+}

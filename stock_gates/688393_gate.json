@@ -1,0 +1,41 @@
+{
+  "stock_id": "688393",
+  "stock_name": "安必平",
+  "concept": "病理诊断",
+  "strategy_type": "industry_chain",
+  "must": [
+    "病理诊断",
+    "病理人工智能",
+    "数字病理"
+  ],
+  "should": [
+    "液基细胞学（LBP）",
+    "免疫组织化学（IHC）",
+    "荧光原位杂交（FISH）",
+    "常规病理",
+    "聚合酶链式反应（PCR）",
+    "病理医学图像分析处理软件",
+    "全自动数字切片扫描系统",
+    "肿瘤筛查",
+    "精准诊断",
+    "宫颈癌筛查"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "病理诊断",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "病理人工智能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字病理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:17:38"
+}

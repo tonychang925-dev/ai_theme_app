@@ -1,0 +1,39 @@
+{
+  "stock_id": "002310",
+  "stock_name": "东方新能",
+  "concept": "生态环保综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水环境治理",
+    "市政园林",
+    "全域旅游"
+  ],
+  "should": [
+    "生态环保综合服务",
+    "生态治理",
+    "环保危废",
+    "循环经济",
+    "水环境保护",
+    "水生态治理",
+    "资源循环利用",
+    "EOD试点模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水环境治理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "市政园林",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全域旅游",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:34:37"
+}

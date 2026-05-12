@@ -1,0 +1,41 @@
+{
+  "stock_id": "603933",
+  "stock_name": "睿能科技",
+  "concept": "工业自动化与IC分销",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国内知名的IC授权分销商",
+    "IC产品分销",
+    "工业自动化控制产品"
+  ],
+  "should": [
+    "针织横机电控系统",
+    "伺服系统",
+    "变频器",
+    "可编程逻辑控制器",
+    "人机界面",
+    "微控制器芯片",
+    "功率器件及模组",
+    "电源管理及驱动芯片",
+    "模拟及混合信号芯片",
+    "自动控制技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国内知名的IC授权分销商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IC产品分销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业自动化控制产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:59:29"
+}

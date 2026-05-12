@@ -1,0 +1,39 @@
+{
+  "stock_id": "002544",
+  "stock_name": "普天科技",
+  "concept": "通信ICT服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "通信ICT服务",
+    "智能制造",
+    "特种印制电路板(PCB)"
+  ],
+  "should": [
+    "公网通信",
+    "专网通信",
+    "智慧应用",
+    "高端恒温时频器件",
+    "国内最大的特种印制电路板制造商",
+    "地铁通信集成商前三甲",
+    "能源电力调度通信市场前三甲",
+    "人防信息化市场前三甲"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "通信ICT服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种印制电路板(PCB)",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:46:42"
+}

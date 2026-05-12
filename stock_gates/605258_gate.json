@@ -1,0 +1,36 @@
+{
+  "stock_id": "605258",
+  "stock_name": "协和电子",
+  "concept": "高频通讯电路板",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高频通讯电路板",
+    "高频通讯板生产技术"
+  ],
+  "should": [
+    "刚性印制电路板",
+    "挠性印制电路板",
+    "SMT贴装",
+    "柔性线路板技术",
+    "汽车电子",
+    "高频通讯",
+    "新能源动力电池",
+    "工业储能",
+    "东风科技",
+    "星宇股份"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高频通讯电路板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高频通讯板生产技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:03:08"
+}

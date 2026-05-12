@@ -1,0 +1,30 @@
+{
+  "stock_id": "000676",
+  "stock_name": "智度股份",
+  "concept": "移动互联网流量聚合",
+  "strategy_type": "industry_chain",
+  "must": [
+    "移动互联网流量聚合"
+  ],
+  "should": [
+    "海外互联网媒体",
+    "互联网数字营销",
+    "数字广告",
+    "搜索广告",
+    "视频广告",
+    "社媒营销",
+    "KOL营销",
+    "广告主",
+    "品牌方"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "移动互联网流量聚合",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:00:07"
+}

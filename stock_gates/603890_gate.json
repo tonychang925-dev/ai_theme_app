@@ -1,0 +1,35 @@
+{
+  "stock_id": "603890",
+  "stock_name": "春秋电子",
+  "concept": "精密结构件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密结构件",
+    "笔记本电脑结构件模组",
+    "汽车电子镁铝结构件"
+  ],
+  "should": [
+    "精密模具",
+    "精密模具设计制造",
+    "镁铝合金材料应用",
+    "一体化服务能力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密结构件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "笔记本电脑结构件模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车电子镁铝结构件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:58:17"
+}

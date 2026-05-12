@@ -1,0 +1,30 @@
+{
+  "stock_id": "600480",
+  "stock_name": "凌云股份",
+  "concept": "汽车零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车零部件"
+  ],
+  "should": [
+    "塑料管道系统",
+    "激光拼焊",
+    "超高强钢在线变曲率成形",
+    "冲压钎焊液冷板",
+    "高强钢辊压",
+    "异形结构电池包喷淋管",
+    "高强度轻量化",
+    "密封连接",
+    "汽车零部件配套"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:18:52"
+}

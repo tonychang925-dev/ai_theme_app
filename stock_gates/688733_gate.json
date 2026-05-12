@@ -1,0 +1,41 @@
+{
+  "stock_id": "688733",
+  "stock_name": "壹石通",
+  "concept": "勃姆石龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "勃姆石龙头",
+    "宁德时代核心供应商",
+    "锂电池涂覆材料"
+  ],
+  "should": [
+    "新能源科技供应商",
+    "三星SDI供应商",
+    "电子通信功能填充材料",
+    "低烟无卤阻燃材料",
+    "Low-α金属氧化物粉体制备技术",
+    "流化床气流粉碎技术",
+    "新能源汽车",
+    "消费电子",
+    "芯片",
+    "覆铜板"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "勃姆石龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "宁德时代核心供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂电池涂覆材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:24:45"
+}

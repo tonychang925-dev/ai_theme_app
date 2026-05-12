@@ -1,0 +1,41 @@
+{
+  "stock_id": "300637",
+  "stock_name": "扬帆新材",
+  "concept": "光引发剂及巯基化合物",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光引发剂及巯基化合物",
+    "光引发剂",
+    "巯基化合物及其衍生物"
+  ],
+  "should": [
+    "巯基化合物平台技术",
+    "上下游协同的全产业链",
+    "UV油墨",
+    "UV涂料",
+    "UV胶粘剂",
+    "光刻胶",
+    "PCB电路板",
+    "微电子加工",
+    "造纸",
+    "显示"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光引发剂及巯基化合物",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光引发剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "巯基化合物及其衍生物",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:36:34"
+}

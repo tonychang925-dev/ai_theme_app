@@ -1,0 +1,31 @@
+{
+  "stock_id": "600469",
+  "stock_name": "风神股份",
+  "concept": "工程机械轮胎",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程机械轮胎"
+  ],
+  "should": [
+    "子午载重胎",
+    "工程胎",
+    "巨胎",
+    "特种轮胎",
+    "风智汇智能轮胎",
+    "车队服务系统",
+    "智能轮胎矿山管理系统",
+    "智能轮胎市场测试系统",
+    "巨胎生产管控系统",
+    "PTG4.0PRO数字化项目"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程机械轮胎",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:18:36"
+}

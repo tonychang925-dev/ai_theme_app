@@ -1,0 +1,33 @@
+{
+  "stock_id": "688512",
+  "stock_name": "慧智微",
+  "concept": "射频前端模组",
+  "strategy_type": "industry_chain",
+  "must": [
+    "射频前端模组",
+    "5G模组"
+  ],
+  "should": [
+    "4G模组",
+    "可重构射频前端平台",
+    "绝缘硅+砷化镓混合架构",
+    "AgiPAM平台",
+    "智能手机",
+    "物联网移动终端",
+    "蜂窝物联网"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "射频前端模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "5G模组",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:19:25"
+}

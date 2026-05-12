@@ -1,0 +1,33 @@
+{
+  "stock_id": "600724",
+  "stock_name": "宁波富达",
+  "concept": "区域商业地产运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "区域商业地产运营",
+    "天一广场"
+  ],
+  "should": [
+    "水泥及其制品的生产、销售",
+    "燃料油业务",
+    "和义大道购物中心",
+    "月湖盛园",
+    "32.5级水泥",
+    "42.5级水泥",
+    "海工水泥"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "区域商业地产运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天一广场",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:25:55"
+}

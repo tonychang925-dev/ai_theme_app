@@ -1,0 +1,41 @@
+{
+  "stock_id": "603778",
+  "stock_name": "国晟科技",
+  "concept": "异质结电池",
+  "strategy_type": "industry_chain",
+  "must": [
+    "异质结电池",
+    "光伏组件",
+    "异质结电池技术"
+  ],
+  "should": [
+    "硅片",
+    "清洗制绒",
+    "非晶硅沉积",
+    "TCO膜制备",
+    "电极制备",
+    "光伏电站",
+    "牧渔风光一体化项目",
+    "异质结电池领先厂商",
+    "产能规划30GW电池",
+    "30GW组件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "异质结电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "异质结电池技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:56:23"
+}

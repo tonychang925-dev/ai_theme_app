@@ -1,0 +1,36 @@
+{
+  "stock_id": "600328",
+  "stock_name": "中盐化工",
+  "concept": "盐化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "纯碱",
+    "金属钠"
+  ],
+  "should": [
+    "聚氯乙烯",
+    "烧碱",
+    "糊树脂",
+    "高纯钠",
+    "氯酸钠",
+    "复方甘草片",
+    "苁蓉益肾颗粒",
+    "浮法玻璃行业",
+    "世界最大的金属钠生产基地",
+    "技术领先的纯碱生产企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "纯碱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金属钠",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:15:06"
+}

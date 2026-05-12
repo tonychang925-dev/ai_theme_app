@@ -1,0 +1,35 @@
+{
+  "stock_id": "002922",
+  "stock_name": "伊戈尔",
+  "concept": "光伏逆变器核心部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高频磁性器件（电感）",
+    "光伏升压变压器"
+  ],
+  "should": [
+    "移相变压器",
+    "数据中心供电系统（巴拿马电源）",
+    "光伏逆变器核心部件",
+    "噪音小",
+    "稳定性高",
+    "转换效率高",
+    "对恶劣环境适应力强",
+    "华为系客户占比约47%",
+    "阳光电源占比约46%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高频磁性器件（电感）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏升压变压器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:03:22"
+}

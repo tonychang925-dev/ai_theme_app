@@ -1,0 +1,41 @@
+{
+  "stock_id": "603528",
+  "stock_name": "多伦科技",
+  "concept": "驾考车检龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全国驾考系统龙头",
+    "驾考车检龙头",
+    "智慧车检品牌连锁龙头"
+  ],
+  "should": [
+    "智能驾考系统",
+    "智慧驾培",
+    "智能交通",
+    "智慧车检",
+    "驾考系统标准制定者",
+    "大数据",
+    "云计算",
+    "深度学习",
+    "三维虚拟仿真",
+    "物联网感知"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全国驾考系统龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "驾考车检龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧车检品牌连锁龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:51:55"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "002572",
+  "stock_name": "索菲亚",
+  "concept": "定制家居龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "定制衣柜",
+    "全屋定制"
+  ],
+  "should": [
+    "橱柜",
+    "木门",
+    "地板",
+    "整厨定制",
+    "整屋木门",
+    "整屋墙板",
+    "整屋家具",
+    "整屋地板",
+    "整屋电器",
+    "定制家居龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "定制衣柜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全屋定制",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:48:02"
+}

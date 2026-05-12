@@ -1,0 +1,38 @@
+{
+  "stock_id": "000601",
+  "stock_name": "韶能股份",
+  "concept": "清洁能源综合",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水电",
+    "生物质能发电",
+    "生态纸餐具"
+  ],
+  "should": [
+    "新能源重卡变速箱",
+    "双电机轴",
+    "综合利用发电",
+    "本色消费类用纸",
+    "限塑令推广",
+    "纸餐具产能亚洲第一",
+    "进入比亚迪供应体系"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物质能发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生态纸餐具",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:57:59"
+}

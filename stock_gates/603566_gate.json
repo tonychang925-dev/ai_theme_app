@@ -1,0 +1,36 @@
+{
+  "stock_id": "603566",
+  "stock_name": "普莱柯",
+  "concept": "兽用生物制品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "兽用生物制品",
+    "猪圆支二联灭活疫苗"
+  ],
+  "should": [
+    "双葛止泻颗粒",
+    "头孢泊肟酯片",
+    "卡洛芬咀嚼片",
+    "犬四联疫苗",
+    "猫三联疫苗",
+    "鸡新流腺鼻四联灭活疫苗",
+    "非泼罗尼喷剂",
+    "复方制霉菌素软膏",
+    "动物疫病流调分析技术平台",
+    "生物安全三级实验室"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "兽用生物制品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "猪圆支二联灭活疫苗",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:52:25"
+}

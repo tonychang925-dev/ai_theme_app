@@ -1,0 +1,46 @@
+{
+  "stock_id": "600546",
+  "stock_name": "山煤国际",
+  "concept": "煤炭供应链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤炭供应链",
+    "煤炭生产",
+    "煤炭销售",
+    "煤炭物流"
+  ],
+  "should": [
+    "洗精煤",
+    "动力煤",
+    "炼焦煤",
+    "无烟煤",
+    "原煤",
+    "电力行业",
+    "冶金行业",
+    "煤炭主产区货源组织",
+    "港口中转",
+    "自有船队运输"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤炭供应链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭物流",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:20:44"
+}

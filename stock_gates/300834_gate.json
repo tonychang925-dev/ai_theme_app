@@ -1,0 +1,36 @@
+{
+  "stock_id": "300834",
+  "stock_name": "星辉环材",
+  "concept": "聚苯乙烯新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高抗冲聚苯乙烯",
+    "聚苯乙烯新材料"
+  ],
+  "should": [
+    "聚苯乙烯系列产品",
+    "自主研发",
+    "工艺优化",
+    "电子电器",
+    "玩具",
+    "日用塑料制品",
+    "塑料包装",
+    "建材",
+    "医疗器械",
+    "新能源汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高抗冲聚苯乙烯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚苯乙烯新材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:45:16"
+}

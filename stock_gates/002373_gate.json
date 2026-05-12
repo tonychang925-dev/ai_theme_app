@@ -1,0 +1,36 @@
+{
+  "stock_id": "002373",
+  "stock_name": "千方科技",
+  "concept": "智慧交通与智能物联",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧交通",
+    "智能物联"
+  ],
+  "should": [
+    "C-V2X",
+    "数字交通神经中枢",
+    "云-边-端一体化解决方案",
+    "大数据",
+    "人工智能",
+    "5G",
+    "物联网",
+    "边缘计算",
+    "智慧交通基础设施建设",
+    "智能驾驶"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧交通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能物联",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:38:25"
+}

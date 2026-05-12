@@ -1,0 +1,31 @@
+{
+  "stock_id": "300683",
+  "stock_name": "海特生物",
+  "concept": "生物医药研发制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "注射用鼠神经生长因子"
+  ],
+  "should": [
+    "注射用抗乙型肝炎转移因子",
+    "利托那韦中间体",
+    "洛匹那韦中间体",
+    "CRO服务",
+    "CMO服务",
+    "CDMO服务",
+    "生物医药研发制造",
+    "生物制品研发",
+    "化学药品研发",
+    "核苷类及蛋白酶抑制剂技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "注射用鼠神经生长因子",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:38:43"
+}

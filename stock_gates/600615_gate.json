@@ -1,0 +1,41 @@
+{
+  "stock_id": "600615",
+  "stock_name": "鑫源智造",
+  "concept": "镁铝合金制品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "镁合金制品",
+    "铝合金制品",
+    "镁铝合金制品"
+  ],
+  "should": [
+    "汽车方向盘骨架",
+    "镁合金加工",
+    "铝合金加工",
+    "全铝复合门",
+    "全铝隔音门",
+    "铝木门",
+    "吸音墙板",
+    "镁合金采购",
+    "汽车零部件",
+    "装修装潢"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "镁合金制品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铝合金制品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "镁铝合金制品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:23:00"
+}

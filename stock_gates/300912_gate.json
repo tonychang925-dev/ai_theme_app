@@ -1,0 +1,31 @@
+{
+  "stock_id": "300912",
+  "stock_name": "凯龙高科",
+  "concept": "尾气治理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "SCR系统"
+  ],
+  "should": [
+    "柴油机颗粒捕集系统",
+    "气体机尾气后处理系统",
+    "SCR系统集成",
+    "催化消声器",
+    "尿素泵",
+    "尿素喷射控制器",
+    "尿素喷嘴",
+    "催化剂及载体",
+    "尾气治理",
+    "国产SCR系统市占率第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "SCR系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:48:56"
+}

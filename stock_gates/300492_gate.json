@@ -1,0 +1,31 @@
+{
+  "stock_id": "300492",
+  "stock_name": "华图山鼎",
+  "concept": "建筑设计服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑工程设计"
+  ],
+  "should": [
+    "建筑设计服务",
+    "相关咨询服务",
+    "概念设计",
+    "方案设计",
+    "初步设计",
+    "施工图设计",
+    "施工配合",
+    "绿建设计",
+    "装配式设计",
+    "幕墙设计"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑工程设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:29:49"
+}

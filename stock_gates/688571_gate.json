@@ -1,0 +1,41 @@
+{
+  "stock_id": "688571",
+  "stock_name": "杭华股份",
+  "concept": "环保油墨",
+  "strategy_type": "industry_chain",
+  "must": [
+    "胶印油墨",
+    "UV油墨",
+    "液体油墨"
+  ],
+  "should": [
+    "数码喷墨",
+    "环保油墨",
+    "无VOCs",
+    "无矿物油",
+    "LED-UV",
+    "高生物基",
+    "大分子量光引发剂",
+    "书刊印刷",
+    "食品饮料包装",
+    "复合包装"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "胶印油墨",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "UV油墨",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液体油墨",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:20:57"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "300579",
+  "stock_name": "数字认证",
+  "concept": "数字认证",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字认证",
+    "电子认证服务及产品",
+    "数字证书",
+    "国内领先CA机构",
+    "电子签名服务"
+  ],
+  "should": [
+    "安全集成",
+    "安全咨询及运维服务",
+    "密码技术",
+    "云密码",
+    "云信任",
+    "云安全",
+    "云签名",
+    "信创产品",
+    "电子合同",
+    "商用密码应用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字认证",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子认证服务及产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字证书",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内领先CA机构",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子签名服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:33:39"
+}

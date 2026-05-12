@@ -1,0 +1,32 @@
+{
+  "stock_id": "603590",
+  "stock_name": "康辰药业",
+  "concept": "创新药研发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "苏灵",
+    "密盖息"
+  ],
+  "should": [
+    "KC1036",
+    "金草片",
+    "创新药研发",
+    "血凝酶制剂",
+    "多靶点受体酪氨酸激酶抑制剂",
+    "中药有效部位提取"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "苏灵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "密盖息",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:52:42"
+}

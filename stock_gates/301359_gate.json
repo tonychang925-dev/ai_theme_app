@@ -1,0 +1,31 @@
+{
+  "stock_id": "301359",
+  "stock_name": "东南电子",
+  "concept": "微动开关",
+  "strategy_type": "industry_chain",
+  "must": [
+    "微动开关"
+  ],
+  "should": [
+    "旋转开关",
+    "压力开关",
+    "耐高温",
+    "防水",
+    "防爆",
+    "防尘",
+    "耐振动",
+    "微电流",
+    "超声波焊接",
+    "固封"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "微动开关",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:03:44"
+}

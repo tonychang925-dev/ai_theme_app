@@ -1,0 +1,46 @@
+{
+  "stock_id": "600103",
+  "stock_name": "青山纸业",
+  "concept": "制浆造纸",
+  "strategy_type": "industry_chain",
+  "must": [
+    "纸袋纸",
+    "浆粕(溶解浆)",
+    "竹木浆",
+    "长纤制浆"
+  ],
+  "should": [
+    "碱回收",
+    "热电联产",
+    "制浆造纸",
+    "纸制品",
+    "林木产品",
+    "工业包装用浆纸产品",
+    "纺织用竹木溶解浆粘胶纤维产品",
+    "天然纤维竹浆产品",
+    "牛皮箱板纸重点生产企业",
+    "高强瓦楞纸重点生产企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "纸袋纸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "浆粕(溶解浆)",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "竹木浆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "长纤制浆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:09:12"
+}

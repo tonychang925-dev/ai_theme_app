@@ -1,0 +1,36 @@
+{
+  "stock_id": "600097",
+  "stock_name": "开创国际",
+  "concept": "远洋捕捞",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金枪鱼围网船队",
+    "大型拖网船队"
+  ],
+  "should": [
+    "磷虾",
+    "黄鳍金枪鱼",
+    "金枪鱼罐头",
+    "沙丁鱼罐头",
+    "冷藏运输船队",
+    "鲣鱼",
+    "鳕鱼",
+    "鲐鱼",
+    "远洋捕捞",
+    "远洋渔业捕捞"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金枪鱼围网船队",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大型拖网船队",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:09:01"
+}

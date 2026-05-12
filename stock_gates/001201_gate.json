@@ -1,0 +1,31 @@
+{
+  "stock_id": "001201",
+  "stock_name": "东瑞股份",
+  "concept": "生猪养殖",
+  "strategy_type": "industry_chain",
+  "must": [
+    "供港活大猪"
+  ],
+  "should": [
+    "商品猪",
+    "自育自繁自养一体化生态养殖",
+    "仔猪",
+    "种猪",
+    "高床发酵型养猪系统",
+    "生猪养殖",
+    "饲料",
+    "饲料配方",
+    "粤港澳大湾区菜篮子供应",
+    "内地生猪销售"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "供港活大猪",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:12:52"
+}

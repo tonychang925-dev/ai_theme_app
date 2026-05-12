@@ -1,0 +1,29 @@
+{
+  "stock_id": "603095",
+  "stock_name": "越剑智能",
+  "concept": "纺织机械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "加弹机"
+  ],
+  "should": [
+    "空气包覆丝机",
+    "经编机",
+    "省级重点企业研究院",
+    "纺织机械",
+    "自主知识产权",
+    "发明专利",
+    "化纤机械",
+    "针织机械"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "加弹机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:43:34"
+}

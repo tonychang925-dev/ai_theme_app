@@ -1,0 +1,49 @@
+{
+  "stock_id": "002432",
+  "stock_name": "九安医疗",
+  "concept": "家用医疗+互联网医疗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "血压计",
+    "血糖仪",
+    "体温计",
+    "iHealth试剂盒",
+    "FDA EUA认证"
+  ],
+  "should": [
+    "抗原自测技术",
+    "糖尿病诊疗照护O+O模式",
+    "家用医疗+互联网医疗",
+    "互联网医疗",
+    "糖尿病全病程综合照护",
+    "自主品牌",
+    "外协工厂合作",
+    "美国子公司地缘优势"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "血压计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "血糖仪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "体温计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "iHealth试剂盒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "FDA EUA认证",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:41:25"
+}

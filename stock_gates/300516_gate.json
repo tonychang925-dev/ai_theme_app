@@ -1,0 +1,46 @@
+{
+  "stock_id": "300516",
+  "stock_name": "久之洋",
+  "concept": "红外激光光学",
+  "strategy_type": "industry_chain",
+  "must": [
+    "红外热像仪",
+    "激光传感器",
+    "光学镜头及光学元件",
+    "星体跟踪器"
+  ],
+  "should": [
+    "高分辨率短波红外成像技术",
+    "超高分辨率红外成像技术",
+    "制冷红外热像仪实时场景校正技术",
+    "全景红外目标检测识别技术",
+    "铒玻璃激光器",
+    "光纤激光器",
+    "固体激光器",
+    "先进光学系统设计与制造技术",
+    "红外激光光学",
+    "军用红外侦察与监视"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "红外热像仪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "激光传感器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光学镜头及光学元件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "星体跟踪器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:31:02"
+}

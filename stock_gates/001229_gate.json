@@ -1,0 +1,41 @@
+{
+  "stock_id": "001229",
+  "stock_name": "魅视科技",
+  "concept": "分布式视听",
+  "strategy_type": "industry_chain",
+  "must": [
+    "分布式视听",
+    "分布式系统",
+    "ASE计算机屏幕编码技术"
+  ],
+  "should": [
+    "矩阵拼接产品",
+    "中控系统",
+    "图像处理方法",
+    "指挥中心",
+    "调度控制中心",
+    "会议室集群",
+    "监控中心",
+    "会商中心",
+    "应急管理",
+    "智慧城市"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "分布式视听",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分布式系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ASE计算机屏幕编码技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:14:21"
+}

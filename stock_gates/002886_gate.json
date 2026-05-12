@@ -1,0 +1,51 @@
+{
+  "stock_id": "002886",
+  "stock_name": "沃特股份",
+  "concept": "特种高分子材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "改性塑料",
+    "LCP",
+    "PPA",
+    "国内LCP龙头",
+    "国内PPA主要供应商"
+  ],
+  "should": [
+    "PAEK",
+    "聚砜",
+    "PPS",
+    "PTFE",
+    "碳纳米管",
+    "碳纤维",
+    "配方",
+    "工艺",
+    "装备",
+    "研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "改性塑料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LCP",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PPA",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内LCP龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内PPA主要供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:01:52"
+}

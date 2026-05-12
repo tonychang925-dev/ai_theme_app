@@ -1,0 +1,46 @@
+{
+  "stock_id": "000539",
+  "stock_name": "粤电力A",
+  "concept": "广东电力龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力生产",
+    "电力销售",
+    "电力投资",
+    "电力建设"
+  ],
+  "should": [
+    "广东",
+    "光伏发电",
+    "生物质发电",
+    "新疆",
+    "青海",
+    "贵州",
+    "广东电力龙头",
+    "电网供电",
+    "调峰调频",
+    "备用服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力建设",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:55:28"
+}

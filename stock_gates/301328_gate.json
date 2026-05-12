@@ -1,0 +1,31 @@
+{
+  "stock_id": "301328",
+  "stock_name": "维峰电子",
+  "concept": "工控连接器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工控连接器"
+  ],
+  "should": [
+    "排针",
+    "排母",
+    "牛角",
+    "简牛",
+    "Wafer系列",
+    "I/O系列",
+    "太阳能逆变器",
+    "风能逆变系统",
+    "自主创新",
+    "工业控制连接器国产化代表性企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工控连接器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:03:05"
+}

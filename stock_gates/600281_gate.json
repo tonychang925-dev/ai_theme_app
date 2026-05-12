@@ -1,0 +1,32 @@
+{
+  "stock_id": "600281",
+  "stock_name": "华阳新材",
+  "concept": "贵金属回收与生物降解材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铂族金属催化网生产销售",
+    "含贵金属废催化剂回收处置"
+  ],
+  "should": [
+    "生物降解新材料生产",
+    "含钯催化剂回收技术",
+    "贵金属回收与生物降解材料",
+    "贵金属提炼加工",
+    "化工生产（硝酸制备）",
+    "塑料制品（生物降解材料）"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铂族金属催化网生产销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "含贵金属废催化剂回收处置",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:13:50"
+}

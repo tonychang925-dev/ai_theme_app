@@ -1,0 +1,41 @@
+{
+  "stock_id": "688007",
+  "stock_name": "光峰科技",
+  "concept": "激光显示科技",
+  "strategy_type": "industry_chain",
+  "must": [
+    "激光显示科技",
+    "ALPD®技术",
+    "核心器件光源与光机"
+  ],
+  "should": [
+    "激光电影放映设备",
+    "激光商教投影机",
+    "激光工程投影机",
+    "激光电视",
+    "智能微投",
+    "蓝激光+荧光架构",
+    "主控芯片",
+    "固件开发",
+    "家用显示",
+    "影院放映"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "激光显示科技",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ALPD®技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核心器件光源与光机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:05:10"
+}

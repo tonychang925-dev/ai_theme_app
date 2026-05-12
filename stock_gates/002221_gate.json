@@ -1,0 +1,51 @@
+{
+  "stock_id": "002221",
+  "stock_name": "东华能源",
+  "concept": "烷烃资源综合利用",
+  "strategy_type": "industry_chain",
+  "must": [
+    "烷烃资源综合利用",
+    "丙烯",
+    "聚丙烯",
+    "氢气",
+    "LPG资源"
+  ],
+  "should": [
+    "PDH装置",
+    "PP装置",
+    "合成氨",
+    "丙烯腈",
+    "碳纤维",
+    "合成氨装置",
+    "高温气冷堆",
+    "聚烯烃产业",
+    "新材料生产基地",
+    "零碳产业园"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "烷烃资源综合利用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "丙烯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚丙烯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氢气",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LPG资源",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:29:58"
+}

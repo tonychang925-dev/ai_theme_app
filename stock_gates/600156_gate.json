@@ -1,0 +1,51 @@
+{
+  "stock_id": "600156",
+  "stock_name": "华升股份",
+  "concept": "麻纺面料供应商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "麻纺面料供应商",
+    "苎麻纱",
+    "亚麻纱",
+    "面料",
+    "含麻职业服装"
+  ],
+  "should": [
+    "大麻纱",
+    "服装",
+    "家纺",
+    "产业用纺织品",
+    "苎麻纺纱",
+    "织布",
+    "印染",
+    "服装加工",
+    "服装服饰",
+    "全产业链工艺技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "麻纺面料供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "苎麻纱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "亚麻纱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "面料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "含麻职业服装",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:10:28"
+}

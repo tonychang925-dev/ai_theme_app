@@ -1,0 +1,31 @@
+{
+  "stock_id": "300133",
+  "stock_name": "华策影视",
+  "concept": "影视内容制作",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全网剧"
+  ],
+  "should": [
+    "短剧",
+    "电影",
+    "影视内容制作",
+    "内容评估",
+    "IP开发",
+    "版权运营",
+    "长视频平台",
+    "海外市场",
+    "新媒体",
+    "产能规模全行业第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全网剧",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:14:27"
+}

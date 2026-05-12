@@ -1,0 +1,36 @@
+{
+  "stock_id": "002600",
+  "stock_name": "领益智造",
+  "concept": "精密智造平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密功能件及结构件",
+    "一站式智能智造平台"
+  ],
+  "should": [
+    "充电器",
+    "动力电池结构件",
+    "微型光伏逆变器",
+    "TWS整机",
+    "精密注塑结构件",
+    "模切",
+    "冲压",
+    "CNC",
+    "精密智造平台",
+    "注塑"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密功能件及结构件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一站式智能智造平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:49:28"
+}

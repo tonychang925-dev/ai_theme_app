@@ -1,0 +1,41 @@
+{
+  "stock_id": "300103",
+  "stock_name": "达刚控股",
+  "concept": "路面机械与运维服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端路面装备研制",
+    "公共设施智慧运维管理",
+    "路面机械与运维服务"
+  ],
+  "should": [
+    "行业标准起草者",
+    "制定者",
+    "病媒防制与乡村振兴",
+    "大数据监测",
+    "物联感知",
+    "5G",
+    "GIS",
+    "BIM",
+    "CIM",
+    "低温裂解高温焚化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端路面装备研制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公共设施智慧运维管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "路面机械与运维服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:13:22"
+}

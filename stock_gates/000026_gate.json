@@ -1,0 +1,41 @@
+{
+  "stock_id": "000026",
+  "stock_name": "飞亚达",
+  "concept": "钟表制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钟表制造",
+    "自有品牌",
+    "名表零售"
+  ],
+  "should": [
+    "航空精密科技",
+    "自有机心",
+    "航天表研制",
+    "精密科技",
+    "材料技术",
+    "关键零部件制造",
+    "高端制表技艺",
+    "全产业链运营管理",
+    "研发",
+    "设计"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钟表制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自有品牌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "名表零售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:47:31"
+}

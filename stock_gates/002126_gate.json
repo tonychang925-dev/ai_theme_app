@@ -1,0 +1,35 @@
+{
+  "stock_id": "002126",
+  "stock_name": "银轮股份",
+  "concept": "汽车热管理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车热管理",
+    "热泵空调系统"
+  ],
+  "should": [
+    "PTC加热器",
+    "电子水泵",
+    "水冷冷凝器",
+    "电池冷却总成",
+    "水冷板",
+    "芯片液冷产品",
+    "传统车热管理",
+    "新能源汽车热管理",
+    "车载芯片热管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车热管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热泵空调系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:24:35"
+}

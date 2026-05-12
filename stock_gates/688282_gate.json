@@ -1,0 +1,35 @@
+{
+  "stock_id": "688282",
+  "stock_name": "理工导航",
+  "concept": "惯性导航系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "惯性导航系统",
+    "惯性导航系统核心部件"
+  ],
+  "should": [
+    "光纤陀螺惯性导航系统温度标定",
+    "系统误差精确建模与补偿",
+    "光纤陀螺惯性导航系统参数稳定性",
+    "动态传递对准",
+    "方位装订对准",
+    "高动态载体导航控制技术",
+    "远程制导弹药",
+    "无人机",
+    "无人船"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "惯性导航系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "惯性导航系统核心部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:14:09"
+}

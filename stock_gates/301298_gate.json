@@ -1,0 +1,41 @@
+{
+  "stock_id": "301298",
+  "stock_name": "东利机械",
+  "concept": "汽车减振器零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车减振器零部件",
+    "汽车发动机减振器",
+    "高精度机加工"
+  ],
+  "should": [
+    "锻造",
+    "热处理",
+    "铸造",
+    "皮带轮",
+    "轮毂",
+    "惯性轮",
+    "飞轮环",
+    "平衡轴",
+    "差速器组件",
+    "质量块"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车减振器零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车发动机减振器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高精度机加工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:02:09"
+}

@@ -1,0 +1,38 @@
+{
+  "stock_id": "301517",
+  "stock_name": "陕西华达",
+  "concept": "军用连接器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "军用连接器",
+    "射频同轴连接器",
+    "射频同轴电缆组件"
+  ],
+  "should": [
+    "弹性绞线插针",
+    "低频连接器",
+    "高可靠电连接器",
+    "精密制造",
+    "航空航天",
+    "武器装备",
+    "通讯"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "军用连接器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "射频同轴连接器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "射频同轴电缆组件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:05:56"
+}

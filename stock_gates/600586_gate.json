@@ -1,0 +1,41 @@
+{
+  "stock_id": "600586",
+  "stock_name": "金晶科技",
+  "concept": "玻璃产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "TCO玻璃",
+    "光伏玻璃",
+    "超白玻璃"
+  ],
+  "should": [
+    "浮法玻璃",
+    "节能玻璃",
+    "超白浮法玻璃技术",
+    "TCO玻璃生产工艺",
+    "BIPV",
+    "玻璃产业链",
+    "太阳能面板核心技术",
+    "砂矿资源",
+    "纯碱产能",
+    "建筑玻璃"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "TCO玻璃",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏玻璃",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超白玻璃",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:21:58"
+}

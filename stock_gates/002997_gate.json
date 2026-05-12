@@ -1,0 +1,41 @@
+{
+  "stock_id": "002997",
+  "stock_name": "瑞鹄模具",
+  "concept": "汽车模具轻量化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "冲压模具",
+    "轻量化零部件",
+    "焊装自动化生产线"
+  ],
+  "should": [
+    "检具",
+    "智能机器人",
+    "铝合金精密压铸",
+    "一体式压铸",
+    "机器人系统集成",
+    "捷豹路虎",
+    "保时捷",
+    "奥迪",
+    "奔驰",
+    "宝马"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "冲压模具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轻量化零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "焊装自动化生产线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:06:55"
+}

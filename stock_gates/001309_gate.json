@@ -1,0 +1,45 @@
+{
+  "stock_id": "001309",
+  "stock_name": "德明利",
+  "concept": "存储芯片一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "主控芯片设计",
+    "固件开发",
+    "模组封装",
+    "制造测试"
+  ],
+  "should": [
+    "AI终端",
+    "工业控制",
+    "车规应用",
+    "存储芯片一体化",
+    "个人电脑",
+    "数据中心",
+    "AI服务器",
+    "智能终端",
+    "智能驾驶"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "主控芯片设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "固件开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "模组封装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "制造测试",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:16:00"
+}

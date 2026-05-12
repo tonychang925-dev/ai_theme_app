@@ -1,0 +1,46 @@
+{
+  "stock_id": "002983",
+  "stock_name": "芯瑞达",
+  "concept": "新型显示",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新型显示光源",
+    "显示光电系统或模组",
+    "新型高清显示终端",
+    "MiniLED背光技术"
+  ],
+  "should": [
+    "MicroLED显示技术",
+    "量子点显示技术",
+    "COB封装技术",
+    "POB封装技术",
+    "AR/XR/MR",
+    "智能家居",
+    "教育会议",
+    "车载显示",
+    "商业显示",
+    "安防监控"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新型显示光源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "显示光电系统或模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新型高清显示终端",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MiniLED背光技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:06:06"
+}

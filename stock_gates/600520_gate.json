@@ -1,0 +1,46 @@
+{
+  "stock_id": "600520",
+  "stock_name": "三佳科技",
+  "concept": "半导体封测设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体封测设备",
+    "半导体集成电路塑封模具",
+    "自动封装系统",
+    "扇出型晶圆级模封压机"
+  ],
+  "should": [
+    "自动切筋成型系统",
+    "塑封压机",
+    "双注塑封装系统",
+    "MARS系统",
+    "半导体精密备件",
+    "分选机",
+    "芯片封装机器人集成系统",
+    "WLP晶圆级封装模具",
+    "半导体器件",
+    "集成电路"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体封测设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体集成电路塑封模具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自动封装系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "扇出型晶圆级模封压机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:20:11"
+}

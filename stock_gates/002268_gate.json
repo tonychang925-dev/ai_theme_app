@@ -1,0 +1,50 @@
+{
+  "stock_id": "002268",
+  "stock_name": "电科网安",
+  "concept": "密码安全",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商用密码",
+    "安全芯片",
+    "密码芯片",
+    "密码系统",
+    "中国网安唯一上市平台"
+  ],
+  "should": [
+    "安全服务",
+    "网络安全产品",
+    "密码模块",
+    "密码整机",
+    "单机与系统产品",
+    "国内密码机第一",
+    "信息加密/身份认证市场份额第三",
+    "主控芯片",
+    "密码安全"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商用密码",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "安全芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "密码芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "密码系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中国网安唯一上市平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:32:37"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "688006",
+  "stock_name": "杭可科技",
+  "concept": "锂电后处理系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电后处理系统",
+    "充放电设备",
+    "充放电机"
+  ],
+  "should": [
+    "内阻测试仪",
+    "圆柱电池充放电设备",
+    "软包/聚合物电池充放电设备",
+    "方形电池充放电设备",
+    "物流设备",
+    "配套软件系统",
+    "主控芯片",
+    "固件开发",
+    "智能制造",
+    "消费电池"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电后处理系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "充放电设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "充放电机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:05:08"
+}

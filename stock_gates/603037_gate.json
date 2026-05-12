@@ -1,0 +1,31 @@
+{
+  "stock_id": "603037",
+  "stock_name": "凯众股份",
+  "concept": "底盘减震元件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "底盘减震元件",
+    "聚氨酯减震元件"
+  ],
+  "should": [
+    "轻量化踏板",
+    "电子加速踏板",
+    "线控制动踏板技术",
+    "静音设计",
+    "新材料研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "底盘减震元件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚氨酯减震元件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:41:45"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "000962",
+  "stock_name": "东方钽业",
+  "concept": "钽铌材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钽铌材料",
+    "钽粉",
+    "钽丝"
+  ],
+  "should": [
+    "射频超导腔",
+    "高温红外辐射涂层材料",
+    "3D打印粉末材料",
+    "多孔钽系列产品",
+    "钠还原高比容钽粉",
+    "中压片状钽粉",
+    "电子轰击高压钽粉",
+    "高纯冶金级钽粉",
+    "3D打印技术",
+    "超导腔制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钽铌材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钽粉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钽丝",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:11:15"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "688210",
+  "stock_name": "统联精密",
+  "concept": "MIM精密金属零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "MIM精密金属零部件",
+    "精密金属结构件",
+    "外观件"
+  ],
+  "should": [
+    "富士康供应商",
+    "立讯供应商",
+    "歌尔供应商",
+    "电源支撑件",
+    "音量支撑件",
+    "摄像头支架",
+    "穿线套筒",
+    "插头",
+    "电源接口件",
+    "智能手表表壳"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "MIM精密金属零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密金属结构件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "外观件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:12:04"
+}

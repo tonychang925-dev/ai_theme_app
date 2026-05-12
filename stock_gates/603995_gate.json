@@ -1,0 +1,41 @@
+{
+  "stock_id": "603995",
+  "stock_name": "甬金股份",
+  "concept": "精密不锈钢冷轧",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密不锈钢冷轧板",
+    "宽幅板",
+    "二十辊可逆式精密冷轧机组"
+  ],
+  "should": [
+    "不锈钢管",
+    "金属层状复合材料",
+    "连续退火酸洗机组",
+    "不锈钢水管及管件",
+    "精密不锈钢冷轧",
+    "自主设计研发设备",
+    "高性能复合材料",
+    "精密冷轧板加工行业唯一上市公司",
+    "与上游供应商深度绑定",
+    "收取相对固定加工费用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密不锈钢冷轧板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "宽幅板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "二十辊可逆式精密冷轧机组",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:00:40"
+}

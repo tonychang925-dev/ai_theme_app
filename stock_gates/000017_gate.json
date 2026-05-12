@@ -1,0 +1,41 @@
+{
+  "stock_id": "000017",
+  "stock_name": "深中华A",
+  "concept": "自行车珠宝双主业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "自行车及电动自行车",
+    "锂电池材料",
+    "珠宝黄金"
+  ],
+  "should": [
+    "供应商准入标准",
+    "客户评估体系",
+    "全流程订单跟踪系统",
+    "采购比价体系",
+    "自行车珠宝双主业",
+    "钻石供应商",
+    "黄金采购",
+    "加工商",
+    "黄金珠宝品牌商",
+    "批发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "自行车及电动自行车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂电池材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "珠宝黄金",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:45:16"
+}

@@ -1,0 +1,35 @@
+{
+  "stock_id": "301073",
+  "stock_name": "君亭酒店",
+  "concept": "中高端酒店运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "君亭",
+    "君澜"
+  ],
+  "should": [
+    "景澜",
+    "寓君亭",
+    "夜泊君亭",
+    "Pagoda君亭",
+    "中高端酒店运营",
+    "酒店管理业务",
+    "BAS精选服务模式",
+    "东方艺术风格",
+    "东西方美学融合"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "君亭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "君澜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:55:30"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "603033",
+  "stock_name": "三维股份",
+  "concept": "橡胶制品与轨交",
+  "strategy_type": "industry_chain",
+  "must": [
+    "输送带",
+    "V带"
+  ],
+  "should": [
+    "BDO",
+    "轨道板",
+    "电石",
+    "产品配方结构",
+    "自动化预应力轨道板生产线",
+    "主控芯片",
+    "固件开发",
+    "橡胶制品与轨交",
+    "生产工艺",
+    "性能指标"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "输送带",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "V带",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:41:41"
+}

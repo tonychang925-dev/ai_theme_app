@@ -1,0 +1,46 @@
+{
+  "stock_id": "688036",
+  "stock_name": "传音控股",
+  "concept": "智能终端与移动互联",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能终端与移动互联",
+    "手机",
+    "非洲市场",
+    "南亚市场"
+  ],
+  "should": [
+    "移动互联网服务",
+    "供应链战略联盟",
+    "关键器件供应商协同",
+    "端到端目标成本管理",
+    "中高端器件规划",
+    "供应链敏捷交付",
+    "深肤色人像拍照",
+    "多语种AI语音助手",
+    "芯片定制",
+    "折叠转轴技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能终端与移动互联",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "手机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "非洲市场",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "南亚市场",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:06:12"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "300066",
+  "stock_name": "三川智慧",
+  "concept": "智慧水务与稀土回收",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能水表",
+    "节水型机械表",
+    "智慧水务数据云平台建设",
+    "水计量"
+  ],
+  "should": [
+    "水运营",
+    "健康水生活",
+    "大数据增值服务",
+    "供水设备",
+    "二次供水设备",
+    "智慧水厂设备",
+    "物联网",
+    "云计算",
+    "大数据",
+    "智能感知"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能水表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "节水型机械表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧水务数据云平台建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水计量",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:11:56"
+}

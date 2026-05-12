@@ -1,0 +1,45 @@
+{
+  "stock_id": "601728",
+  "stock_name": "中国电信",
+  "concept": "综合通信服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合通信服务",
+    "移动通信服务",
+    "固网及智慧家庭服务",
+    "产业数字化服务"
+  ],
+  "should": [
+    "5G-A",
+    "卫星移动通信",
+    "量子通信",
+    "天翼物联网平台",
+    "算力",
+    "手机直连卫星",
+    "量子+",
+    "产业数字化",
+    "5G中高频基站"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合通信服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动通信服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "固网及智慧家庭服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "产业数字化服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:38:19"
+}

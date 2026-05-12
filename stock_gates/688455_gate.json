@@ -1,0 +1,44 @@
+{
+  "stock_id": "688455",
+  "stock_name": "科捷智能",
+  "concept": "智能物流方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能输送系统",
+    "智能分拣系统",
+    "智能仓储系统",
+    "智能工厂系统"
+  ],
+  "should": [
+    "智能物流方案",
+    "软件设计",
+    "控制",
+    "研发",
+    "快递物流",
+    "电商新零售",
+    "家电家居",
+    "汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能输送系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能分拣系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能仓储系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能工厂系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:18:29"
+}

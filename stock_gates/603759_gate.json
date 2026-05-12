@@ -1,0 +1,41 @@
+{
+  "stock_id": "603759",
+  "stock_name": "海天股份",
+  "concept": "环保水务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "供水业务",
+    "污水处理业务",
+    "环保水务"
+  ],
+  "should": [
+    "智慧水务平台",
+    "储能领域",
+    "垃圾焚烧发电",
+    "固废危废处置",
+    "大数据",
+    "物联网",
+    "移动互联网",
+    "人工智能",
+    "排水厂网一体化",
+    "污水处理设施全覆盖"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "供水业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "污水处理业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环保水务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:56:06"
+}

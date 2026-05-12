@@ -1,0 +1,35 @@
+{
+  "stock_id": "600579",
+  "stock_name": "中化装备",
+  "concept": "化工装备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "化工装备制造",
+    "橡塑加工设备"
+  ],
+  "should": [
+    "新能源汽车",
+    "新型包装",
+    "干燥设备",
+    "大型造粒设备",
+    "乙烯裂解炉急冷系统",
+    "聚丙烯反应器",
+    "深度脱VOC系统",
+    "燃烧系统",
+    "精制单元"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "化工装备制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "橡塑加工设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:21:52"
+}

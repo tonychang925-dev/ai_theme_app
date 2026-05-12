@@ -1,0 +1,33 @@
+{
+  "stock_id": "002030",
+  "stock_name": "达安基因",
+  "concept": "分子诊断龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "分子诊断技术",
+    "国内分子诊断行业龙头企业"
+  ],
+  "should": [
+    "免疫诊断技术",
+    "POCT",
+    "临床检验试剂",
+    "仪器",
+    "配套耗材",
+    "生化诊断技术",
+    "分子诊断龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "分子诊断技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内分子诊断行业龙头企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:19:09"
+}

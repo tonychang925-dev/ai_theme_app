@@ -1,0 +1,46 @@
+{
+  "stock_id": "603699",
+  "stock_name": "纽威股份",
+  "concept": "工业阀门龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "核电阀",
+    "LNG",
+    "FPSO海工船",
+    "多晶硅产线"
+  ],
+  "should": [
+    "核电",
+    "水下阀",
+    "安全阀",
+    "调节阀",
+    "球阀",
+    "蝶阀",
+    "闸阀",
+    "截止阀",
+    "止回阀",
+    "API6A阀"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "核电阀",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LNG",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "FPSO海工船",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多晶硅产线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:55:08"
+}

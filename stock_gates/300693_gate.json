@@ -1,0 +1,35 @@
+{
+  "stock_id": "300693",
+  "stock_name": "盛弘股份",
+  "concept": "储能逆变器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "储能逆变器",
+    "新能源电能变换设备"
+  ],
+  "should": [
+    "电动汽车充电设备",
+    "工业配套电源",
+    "电池化成与检测设备",
+    "电力电子技术",
+    "储能",
+    "充电桩",
+    "工业电源",
+    "电源检测",
+    "国内储能PCS市场份额7%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "储能逆变器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源电能变换设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:39:11"
+}

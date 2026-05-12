@@ -1,0 +1,36 @@
+{
+  "stock_id": "600478",
+  "stock_name": "科力远",
+  "concept": "混合动力电池材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "HEV专用电池材料",
+    "HEV车载动力电池"
+  ],
+  "should": [
+    "全球最大的泡沫镍制造商",
+    "消费类镍电市场行业领导地位",
+    "消费类电池材料",
+    "消费类电池",
+    "泡沫镍",
+    "正负极板",
+    "钢带",
+    "合金粉",
+    "铁路客车圆柱形密封式镍氢蓄电池",
+    "镍氢+锂电混储数智能源系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "HEV专用电池材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "HEV车载动力电池",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:18:54"
+}

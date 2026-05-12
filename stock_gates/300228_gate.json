@@ -1,0 +1,46 @@
+{
+  "stock_id": "300228",
+  "stock_name": "富瑞特装",
+  "concept": "LNG全产业链装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LNG全产业链装备",
+    "LNG车用供气系统",
+    "LNG储罐",
+    "LNG陆用装卸臂"
+  ],
+  "should": [
+    "低温阀门",
+    "液化工厂装置",
+    "低温液体运输设备",
+    "加气站成套设备",
+    "速必达",
+    "陆用石油气储罐",
+    "船用液货罐",
+    "船用燃料罐",
+    "陆用低温卧式/立式储罐",
+    "LNG海用装卸臂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LNG全产业链装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LNG车用供气系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LNG储罐",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LNG陆用装卸臂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:18:30"
+}

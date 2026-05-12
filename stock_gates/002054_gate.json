@@ -1,0 +1,46 @@
+{
+  "stock_id": "002054",
+  "stock_name": "德美化工",
+  "concept": "精细化学品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精细化学品",
+    "纺织化学品",
+    "皮革化学品及塔拉产品",
+    "石油精细化学品"
+  ],
+  "should": [
+    "防水平台",
+    "抗菌平台",
+    "生物基平台",
+    "基础研究及应用技术平台",
+    "纺织印染",
+    "皮革加工",
+    "食品",
+    "饲料",
+    "化妆品",
+    "药品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精细化学品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纺织化学品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "皮革化学品及塔拉产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "石油精细化学品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:20:46"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "688388",
+  "stock_name": "嘉元科技",
+  "concept": "锂电铜箔龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电铜箔",
+    "极薄铜箔",
+    "4.5μm铜箔生产技术"
+  ],
+  "should": [
+    "超薄铜箔",
+    "6微米极薄锂电铜箔核心技术",
+    "8微米超薄电解铜箔生产技术",
+    "标准铜箔",
+    "锂电铜箔龙头",
+    "新能源汽车",
+    "动力电池",
+    "储能设备",
+    "宁德时代核心供应商",
+    "比亚迪核心供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电铜箔",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "极薄铜箔",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "4.5μm铜箔生产技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:17:27"
+}

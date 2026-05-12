@@ -1,0 +1,31 @@
+{
+  "stock_id": "300553",
+  "stock_name": "集智股份",
+  "concept": "全自动平衡机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全自动平衡机"
+  ],
+  "should": [
+    "测试机",
+    "自动化设备",
+    "电机",
+    "汽车",
+    "家用电器",
+    "电动工具",
+    "泵",
+    "风机",
+    "汽轮机",
+    "燃气轮机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全自动平衡机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:32:25"
+}

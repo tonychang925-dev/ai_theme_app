@@ -1,0 +1,37 @@
+{
+  "stock_id": "002510",
+  "stock_name": "天汽模",
+  "concept": "汽车覆盖件模具",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车覆盖件模具",
+    "汽车车身覆盖件模具",
+    "特斯拉一级供应商"
+  ],
+  "should": [
+    "汽车车身冲压件",
+    "检具",
+    "装焊夹具",
+    "轿车",
+    "MPV",
+    "新能源车型"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车覆盖件模具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车车身覆盖件模具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特斯拉一级供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:44:55"
+}

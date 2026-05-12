@@ -1,0 +1,32 @@
+{
+  "stock_id": "000004",
+  "stock_name": "*ST国华",
+  "concept": "移动安全服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "移动安全服务",
+    "移动应用安全"
+  ],
+  "should": [
+    "数据安全防护",
+    "白盒密钥解决方案",
+    "移动端数据安全防护技术",
+    "信息安全",
+    "应急安全",
+    "国内移动应用安全领域的先行者和领导者"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "移动安全服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动应用安全",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:34:28"
+}

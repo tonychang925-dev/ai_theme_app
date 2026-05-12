@@ -1,0 +1,51 @@
+{
+  "stock_id": "300949",
+  "stock_name": "奥雅股份",
+  "concept": "景观设计综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "景观设计综合服务",
+    "景观设计",
+    "城市更新",
+    "乡村振兴",
+    "元宇宙"
+  ],
+  "should": [
+    "数字科技",
+    "元宇宙体验空间",
+    "社区景观",
+    "公共空间与城市更新",
+    "儿童友好城市与亲子空间",
+    "乡村振兴及职业教育",
+    "VR",
+    "AR",
+    "AI算法",
+    "数字人"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "景观设计综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "景观设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市更新",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乡村振兴",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "元宇宙",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:50:30"
+}

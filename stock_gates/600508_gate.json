@@ -1,0 +1,43 @@
+{
+  "stock_id": "600508",
+  "stock_name": "上海能源",
+  "concept": "煤电铝一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤炭",
+    "电力",
+    "铝锭",
+    "煤电铝一体化"
+  ],
+  "should": [
+    "煤电铝运一体化产业链",
+    "井工开采",
+    "火力发电",
+    "铝加工技术",
+    "炼焦煤",
+    "动力煤",
+    "铝材加工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤炭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铝锭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤电铝一体化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:19:44"
+}

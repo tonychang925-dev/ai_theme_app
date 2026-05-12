@@ -1,0 +1,51 @@
+{
+  "stock_id": "600845",
+  "stock_name": "宝信软件",
+  "concept": "钢铁智造数字基建",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业软件",
+    "自动化",
+    "机器人",
+    "中大型PLC",
+    "工业互联网"
+  ],
+  "should": [
+    "智慧交通",
+    "新一代信息基础设施",
+    "工业机器人",
+    "IDC",
+    "AI",
+    "大数据",
+    "宝罗云平台",
+    "宝联登工业互联网平台",
+    "钢铁智造数字基建",
+    "钢铁"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业软件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自动化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机器人",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中大型PLC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业互联网",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:29:23"
+}

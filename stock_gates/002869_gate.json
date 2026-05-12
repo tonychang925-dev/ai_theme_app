@@ -1,0 +1,46 @@
+{
+  "stock_id": "002869",
+  "stock_name": "金溢科技",
+  "concept": "智慧交通",
+  "strategy_type": "industry_chain",
+  "must": [
+    "ETC",
+    "车路协同",
+    "V2X",
+    "ETC产品"
+  ],
+  "should": [
+    "OBU",
+    "RSU",
+    "5G-V2X OBU",
+    "RFID",
+    "C-V2X",
+    "北斗",
+    "DSRC",
+    "LTE",
+    "T-BOX",
+    "车车通信模块"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "ETC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车路协同",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "V2X",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ETC产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:01:09"
+}

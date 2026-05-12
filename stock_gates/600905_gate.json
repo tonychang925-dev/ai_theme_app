@@ -1,0 +1,48 @@
+{
+  "stock_id": "600905",
+  "stock_name": "三峡能源",
+  "concept": "新能源运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源运营",
+    "风能开发",
+    "太阳能开发",
+    "新能源投资",
+    "海上风电"
+  ],
+  "should": [
+    "陆上风电",
+    "光伏发电",
+    "海风制氢",
+    "海上能源岛",
+    "海风牧场",
+    "自主开发",
+    "合作并购"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风能开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "太阳能开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海上风电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:30:56"
+}

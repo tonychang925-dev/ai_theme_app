@@ -1,0 +1,51 @@
+{
+  "stock_id": "002860",
+  "stock_name": "星帅尔",
+  "concept": "压缩机零部件龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "压缩机零部件龙头",
+    "热保护器",
+    "起动器",
+    "密封接线柱",
+    "光伏组件"
+  ],
+  "should": [
+    "温度控制器",
+    "中小型及微型电机",
+    "玻璃封装技术",
+    "光通信",
+    "小家电",
+    "冰箱",
+    "冷柜",
+    "空调",
+    "制冷饮水机",
+    "带烘干功能的洗衣机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "压缩机零部件龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热保护器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "起动器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "密封接线柱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏组件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:00:40"
+}

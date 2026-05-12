@@ -1,0 +1,36 @@
+{
+  "stock_id": "002156",
+  "stock_name": "通富微电",
+  "concept": "集成电路封测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "集成电路封测",
+    "集成电路封装测试"
+  ],
+  "should": [
+    "SIP",
+    "框架类封装",
+    "基板类封装",
+    "圆片类封装",
+    "COG",
+    "COF",
+    "设计仿真",
+    "一站式服务",
+    "高性能计算",
+    "SiP器件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "集成电路封测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集成电路封装测试",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:26:21"
+}

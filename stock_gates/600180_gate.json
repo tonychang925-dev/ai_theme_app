@@ -1,0 +1,43 @@
+{
+  "stock_id": "600180",
+  "stock_name": "瑞茂通",
+  "concept": "煤炭供应链管理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤炭供应链管理",
+    "动力煤",
+    "焦煤",
+    "焦炭"
+  ],
+  "should": [
+    "做市商体系",
+    "石油化工",
+    "生物柴油",
+    "产业互联网平台",
+    "全球化经营",
+    "多品类发展",
+    "能源供应"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤炭供应链管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动力煤",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "焦煤",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "焦炭",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:11:06"
+}

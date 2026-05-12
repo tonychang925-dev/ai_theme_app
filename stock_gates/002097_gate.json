@@ -1,0 +1,41 @@
+{
+  "stock_id": "002097",
+  "stock_name": "山河智能",
+  "concept": "装备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "装备制造",
+    "桩工机械",
+    "凿岩机械"
+  ],
+  "should": [
+    "挖掘机械",
+    "高空机械",
+    "起重机械",
+    "矿山设备",
+    "油气管道设备",
+    "飞机租赁",
+    "飞机销售",
+    "飞机零配件销售",
+    "飞机维修维护服务",
+    "先导式创新"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "装备制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "桩工机械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "凿岩机械",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:23:07"
+}

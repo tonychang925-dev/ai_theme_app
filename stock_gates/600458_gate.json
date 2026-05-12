@@ -1,0 +1,41 @@
+{
+  "stock_id": "600458",
+  "stock_name": "时代新材",
+  "concept": "高分子材料应用",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轨道交通车辆减振",
+    "风电叶片",
+    "减振产品"
+  ],
+  "should": [
+    "复合材料制品",
+    "橡胶制品",
+    "塑料制品",
+    "功能材料制品",
+    "联轴器",
+    "聚氨酯缓冲块",
+    "芳纶绝缘纸",
+    "高性能聚氨酯制品",
+    "聚氨酯组合料",
+    "先进有机硅材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轨道交通车辆减振",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电叶片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "减振产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:18:24"
+}

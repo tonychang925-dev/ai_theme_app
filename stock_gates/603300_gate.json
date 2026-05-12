@@ -1,0 +1,46 @@
+{
+  "stock_id": "603300",
+  "stock_name": "海南华铁",
+  "concept": "综合性租赁服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑支护设备租赁",
+    "高空作业平台租赁",
+    "钢支撑",
+    "高空作业平台"
+  ],
+  "should": [
+    "地下维修维护工程",
+    "铝模板",
+    "爬架",
+    "综合性租赁服务",
+    "渠道+运营+服务",
+    "集采模式",
+    "轻资产运营",
+    "数字化管理",
+    "平台化运营",
+    "钢支撑龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑支护设备租赁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高空作业平台租赁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钢支撑",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高空作业平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:48:31"
+}

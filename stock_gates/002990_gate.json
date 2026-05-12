@@ -1,0 +1,51 @@
+{
+  "stock_id": "002990",
+  "stock_name": "盛视科技",
+  "concept": "智慧口岸",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧口岸",
+    "旅客自助查验通道",
+    "车辆快捷通系统",
+    "车辆一站式验放系统",
+    "海关智慧旅检人脸识别系统"
+  ],
+  "should": [
+    "智能检疫台",
+    "AI视觉终端",
+    "智能机器人",
+    "车联网产品",
+    "身份认证终端产品",
+    "AI摄像机",
+    "智能管理/分析/预警终端",
+    "占用公交/应急专用车道抓拍机",
+    "智能交通综合管控平台",
+    "视频结构化分析平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧口岸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "旅客自助查验通道",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车辆快捷通系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车辆一站式验放系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海关智慧旅检人脸识别系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:06:37"
+}

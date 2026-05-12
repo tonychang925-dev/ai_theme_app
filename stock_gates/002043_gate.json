@@ -1,0 +1,41 @@
+{
+  "stock_id": "002043",
+  "stock_name": "兔宝宝",
+  "concept": "环保板材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环保板材",
+    "全屋定制",
+    "定制家居"
+  ],
+  "should": [
+    "家具厂",
+    "家装公司",
+    "胶合板",
+    "贴面板",
+    "木工板",
+    "顺芯板",
+    "易装",
+    "MDI胶",
+    "E1环保标准",
+    "E0环保标准"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环保板材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全屋定制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "定制家居",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:20:03"
+}

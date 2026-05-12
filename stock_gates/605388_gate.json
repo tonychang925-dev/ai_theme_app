@@ -1,0 +1,31 @@
+{
+  "stock_id": "605388",
+  "stock_name": "均瑶健康",
+  "concept": "益生菌健康",
+  "strategy_type": "industry_chain",
+  "must": [
+    "味动力"
+  ],
+  "should": [
+    "青幽君",
+    "畅饮君",
+    "餐后轻体",
+    "后生元",
+    "益生菌健康",
+    "专利益生菌",
+    "菌株产业化",
+    "常温乳酸菌饮品",
+    "益生菌菌粉",
+    "咀嚼片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "味动力",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:04:16"
+}

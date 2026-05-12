@@ -1,0 +1,41 @@
+{
+  "stock_id": "603586",
+  "stock_name": "金麒麟",
+  "concept": "制动摩擦材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "制动摩擦材料",
+    "汽车刹车片",
+    "汽车刹车盘"
+  ],
+  "should": [
+    "轨道交通制动片",
+    "工业制动产品",
+    "制动摩擦材料配方",
+    "高速铁路用制动闸片技术",
+    "粉末冶金闸片",
+    "汽车售后维修市场",
+    "汽车原装配套市场",
+    "轨道交通",
+    "国内细分行业龙头企业",
+    "出口市场较高份额"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "制动摩擦材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车刹车片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车刹车盘",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:52:36"
+}

@@ -1,0 +1,50 @@
+{
+  "stock_id": "002350",
+  "stock_name": "北京科锐",
+  "concept": "配电自动化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "配电自动化",
+    "配电及控制设备",
+    "中低压开关产品",
+    "箱式变电站",
+    "中压电力变压器"
+  ],
+  "should": [
+    "风电/光伏华式箱变",
+    "风电/光伏美式箱变",
+    "模块化变电站",
+    "分布式户外储能一体柜",
+    "堆叠式家庭储能",
+    "新能源场站稳定协调控制装置",
+    "燃料电池系统",
+    "空压机",
+    "控制器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "配电自动化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "配电及控制设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中低压开关产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "箱式变电站",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中压电力变压器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:37:12"
+}

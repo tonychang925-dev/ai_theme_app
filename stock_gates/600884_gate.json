@@ -1,0 +1,41 @@
+{
+  "stock_id": "600884",
+  "stock_name": "杉杉股份",
+  "concept": "锂电池材料与偏光片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电池材料与偏光片",
+    "负极材料",
+    "偏光片"
+  ],
+  "should": [
+    "液相包覆技术",
+    "石墨化工艺",
+    "硅基负极",
+    "硬碳负极",
+    "新能源汽车",
+    "储能市场",
+    "消费电子",
+    "动力电池",
+    "大屏显示",
+    "人造石墨全球出货量第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电池材料与偏光片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "负极材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "偏光片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:30:27"
+}

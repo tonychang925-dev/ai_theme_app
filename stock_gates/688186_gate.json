@@ -1,0 +1,43 @@
+{
+  "stock_id": "688186",
+  "stock_name": "广大特材",
+  "concept": "风电零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风电零部件",
+    "风电铸件",
+    "风电主轴",
+    "风电精密机械部件"
+  ],
+  "should": [
+    "齿轮钢",
+    "模具钢",
+    "特殊合金",
+    "特种不锈钢",
+    "铸钢件",
+    "差异化竞争",
+    "国产替代"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风电零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电铸件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电主轴",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电精密机械部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:11:05"
+}

@@ -1,0 +1,38 @@
+{
+  "stock_id": "688629",
+  "stock_name": "华丰科技",
+  "concept": "高速连接器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高速连接器",
+    "防务类连接产品",
+    "通讯类连接产品"
+  ],
+  "should": [
+    "工业类连接产品",
+    "连接器前端制造工艺",
+    "多品类连接系统设计",
+    "零部件加工",
+    "中国中车供应商",
+    "上汽通用五菱供应商",
+    "比亚迪供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高速连接器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "防务类连接产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通讯类连接产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:22:40"
+}

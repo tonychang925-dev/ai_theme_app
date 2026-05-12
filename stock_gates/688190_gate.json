@@ -1,0 +1,44 @@
+{
+  "stock_id": "688190",
+  "stock_name": "云路股份",
+  "concept": "磁性金属材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "非晶合金薄带",
+    "非晶铁心",
+    "纳米晶超薄带",
+    "磁性粉末"
+  ],
+  "should": [
+    "磁粉芯",
+    "小流量熔体精密连铸技术",
+    "极端冷凝控制技术",
+    "非晶立体卷铁心产业化技术",
+    "磁性金属材料",
+    "配电变压器",
+    "全球非晶合金薄带市场占有率第一",
+    "国内非晶合金薄带市场占有率第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "非晶合金薄带",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "非晶铁心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纳米晶超薄带",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磁性粉末",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:11:13"
+}

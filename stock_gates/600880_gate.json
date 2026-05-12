@@ -1,0 +1,41 @@
+{
+  "stock_id": "600880",
+  "stock_name": "博瑞传播",
+  "concept": "数字文化教育",
+  "strategy_type": "industry_chain",
+  "must": [
+    "教育业务",
+    "智慧教育",
+    "成都文化产权交易所"
+  ],
+  "should": [
+    "游戏业务",
+    "户外广告业务",
+    "数字文化产权交易平台",
+    "数字文化教育",
+    "学校教育",
+    "课外培训",
+    "自研游戏产品",
+    "联合运营游戏项目",
+    "区块链",
+    "数字孪生虚拟人"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "教育业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧教育",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "成都文化产权交易所",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:30:18"
+}

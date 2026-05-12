@@ -1,0 +1,46 @@
+{
+  "stock_id": "002973",
+  "stock_name": "侨银股份",
+  "concept": "城乡环卫服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "城乡环卫服务",
+    "城乡环卫保洁",
+    "人居环境综合提升",
+    "城市大管家"
+  ],
+  "should": [
+    "城市全域综合治理服务",
+    "城乡环境一体化服务",
+    "垃圾分类",
+    "水域管护",
+    "市政管养",
+    "园林绿化养护",
+    "建筑废弃物及污染物处理",
+    "公共物业管理",
+    "全生命周期管理",
+    "城市微改造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "城乡环卫服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城乡环卫保洁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人居环境综合提升",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市大管家",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:05:44"
+}

@@ -1,0 +1,30 @@
+{
+  "stock_id": "300713",
+  "stock_name": "英可瑞",
+  "concept": "智能高频开关电源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能高频开关电源"
+  ],
+  "should": [
+    "电力操作电源模块及系统",
+    "智能高频开关电源技术",
+    "主控芯片技术",
+    "固件开发技术",
+    "其他电源产品",
+    "轨道交通",
+    "储能",
+    "工业4.0",
+    "同行业前列"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能高频开关电源",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:40:05"
+}

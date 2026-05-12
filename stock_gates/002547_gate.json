@@ -1,0 +1,41 @@
+{
+  "stock_id": "002547",
+  "stock_name": "春兴精工",
+  "concept": "精密结构件制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "射频器件",
+    "通信结构件",
+    "精密铝合金结构件"
+  ],
+  "should": [
+    "钣金件",
+    "精密结构件制造",
+    "移动通信基站",
+    "传统燃油车",
+    "新能源汽车",
+    "移动通信产业链上游企业",
+    "汽车产业链上游",
+    "射频技术",
+    "精密制造能力",
+    "制程控制能力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "射频器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通信结构件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密铝合金结构件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:46:37"
+}

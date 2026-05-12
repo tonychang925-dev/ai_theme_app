@@ -1,0 +1,51 @@
+{
+  "stock_id": "002560",
+  "stock_name": "通达股份",
+  "concept": "电线电缆与航空精密加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钢芯铝绞线",
+    "铝合金绞线",
+    "铝包钢绞线",
+    "特高压线路",
+    "超高压线路"
+  ],
+  "should": [
+    "接触线",
+    "承力索",
+    "电力电缆",
+    "光伏电缆",
+    "铝合金电缆",
+    "控制电缆",
+    "高速铁路",
+    "城市轨道交通",
+    "配电网",
+    "航空航天"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钢芯铝绞线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铝合金绞线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铝包钢绞线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特高压线路",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超高压线路",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:47:30"
+}

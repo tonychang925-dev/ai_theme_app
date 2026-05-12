@@ -1,0 +1,36 @@
+{
+  "stock_id": "002850",
+  "stock_name": "科达利",
+  "concept": "锂电池结构件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电池结构件",
+    "动力锂电池精密结构件"
+  ],
+  "should": [
+    "消费类电池精密结构件",
+    "汽车零部件",
+    "新能源汽车",
+    "动力电池",
+    "便携式通讯电子产品",
+    "电动工具",
+    "储能电站",
+    "龙头企业",
+    "大客户销售占比高",
+    "海外产能扩张"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电池结构件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动力锂电池精密结构件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:00:06"
+}

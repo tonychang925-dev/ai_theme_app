@@ -1,0 +1,35 @@
+{
+  "stock_id": "605069",
+  "stock_name": "正和生态",
+  "concept": "生态修复",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生态修复",
+    "河湖生态修复",
+    "海洋生态修复"
+  ],
+  "should": [
+    "DBIFO全产业链服务",
+    "生态管家及公园+",
+    "生态保护",
+    "环境治理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生态修复",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "河湖生态修复",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海洋生态修复",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:01:31"
+}

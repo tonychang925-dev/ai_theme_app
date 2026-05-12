@@ -1,0 +1,36 @@
+{
+  "stock_id": "000995",
+  "stock_name": "皇台酒业",
+  "concept": "白酒葡萄酒双主业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "区域性白酒强牌",
+    "中国白酒文化名牌"
+  ],
+  "should": [
+    "窖底原浆12",
+    "窖底原浆18",
+    "金六鼎",
+    "银六鼎",
+    "皇台-迎宾酒",
+    "凉州生态手选黑比诺干红",
+    "凉州生态手选梅尔诺干红",
+    "凉州生态手选赤霞珠干红",
+    "凉州生态手选贵人香干白",
+    "凉州生态手选梅特林干红"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "区域性白酒强牌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中国白酒文化名牌",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:12:42"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "002963",
+  "stock_name": "豪尔赛",
+  "concept": "智慧照明",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧光艺",
+    "智慧文旅",
+    "智慧城域",
+    "豪能汇新能源"
+  ],
+  "should": [
+    "人工智能",
+    "数字文化",
+    "新材料",
+    "可再生能源",
+    "VR",
+    "AR",
+    "5G",
+    "AI",
+    "物联网",
+    "边缘计算"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧光艺",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧文旅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧城域",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "豪能汇新能源",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:05:14"
+}

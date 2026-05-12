@@ -1,0 +1,31 @@
+{
+  "stock_id": "603722",
+  "stock_name": "阿科力",
+  "concept": "化工新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "聚醚胺"
+  ],
+  "should": [
+    "光学级聚合物材料",
+    "高透光材料",
+    "化工新材料",
+    "自主创新",
+    "专利技术",
+    "生产工艺流程控制",
+    "风电叶片",
+    "新能源汽车表面涂层",
+    "光学元件",
+    "医学材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "聚醚胺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:55:30"
+}

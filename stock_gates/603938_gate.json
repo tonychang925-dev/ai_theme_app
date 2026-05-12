@@ -1,0 +1,36 @@
+{
+  "stock_id": "603938",
+  "stock_name": "三孚股份",
+  "concept": "硅化合物龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "硅化合物龙头",
+    "三氯氢硅"
+  ],
+  "should": [
+    "氢氧化钾",
+    "高纯四氯化硅",
+    "硫酸钾",
+    "循环经济",
+    "协同联动生产",
+    "光伏",
+    "光纤",
+    "精细化工",
+    "肥料",
+    "电子芯片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "硅化合物龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三氯氢硅",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:59:19"
+}

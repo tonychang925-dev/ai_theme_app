@@ -1,0 +1,51 @@
+{
+  "stock_id": "300760",
+  "stock_name": "迈瑞医疗",
+  "concept": "医疗器械龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生命信息与支持",
+    "体外诊断",
+    "医学影像",
+    "监护仪",
+    "呼吸机"
+  ],
+  "should": [
+    "除颤仪",
+    "麻醉机",
+    "输注泵",
+    "灯床塔",
+    "血球分析仪",
+    "化学发光仪",
+    "生化分析仪",
+    "凝血分析仪",
+    "彩超",
+    "数字X射线成像系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生命信息与支持",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "体外诊断",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医学影像",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "监护仪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "呼吸机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:42:03"
+}

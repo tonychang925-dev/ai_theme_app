@@ -1,0 +1,51 @@
+{
+  "stock_id": "688135",
+  "stock_name": "利扬芯片",
+  "concept": "独立测试服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "集成电路测试方案开发",
+    "晶圆测试服务",
+    "芯片成品测试服务",
+    "测试方案开发",
+    "独立第三方测试"
+  ],
+  "should": [
+    "探针台设计",
+    "3D高频分类机械手",
+    "汽车电子",
+    "生物识别",
+    "MCU",
+    "AIoT",
+    "独立测试服务",
+    "配套服务",
+    "软硬件开发",
+    "5G通讯"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "集成电路测试方案开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "晶圆测试服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "芯片成品测试服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "测试方案开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "独立第三方测试",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:09:27"
+}

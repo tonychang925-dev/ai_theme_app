@@ -1,0 +1,39 @@
+{
+  "stock_id": "002566",
+  "stock_name": "益盛药业",
+  "concept": "人参全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药",
+    "中药饮片",
+    "保健食品"
+  ],
+  "should": [
+    "化妆品",
+    "药品",
+    "振源胶囊",
+    "健康食品",
+    "人参全产业链",
+    "人参全株开发",
+    "非林地人参种植",
+    "有机认证"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中药饮片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "保健食品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:47:41"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "000800",
+  "stock_name": "一汽解放",
+  "concept": "商用车制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "重型卡车",
+    "中型卡车",
+    "轻型卡车"
+  ],
+  "should": [
+    "发动机",
+    "变速箱",
+    "车桥",
+    "缸内直喷氢气发动机",
+    "高速油冷电机",
+    "第二代商用车E/E架构",
+    "客车",
+    "商用车制造",
+    "牵引",
+    "载货"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "重型卡车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中型卡车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轻型卡车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:05:22"
+}

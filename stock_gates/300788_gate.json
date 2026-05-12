@@ -1,0 +1,46 @@
+{
+  "stock_id": "300788",
+  "stock_name": "中信出版",
+  "concept": "经济管理出版",
+  "strategy_type": "industry_chain",
+  "must": [
+    "经济管理类图书",
+    "图书出版与发行",
+    "经济管理出版",
+    "知识服务"
+  ],
+  "should": [
+    "文化消费",
+    "数字化生产",
+    "内容电商",
+    "少儿图书",
+    "文学图书",
+    "数据驱动技术",
+    "实体书店",
+    "短视频电商",
+    "知识付费平台",
+    "市场占有率第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "经济管理类图书",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "图书出版与发行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "经济管理出版",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "知识服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:43:14"
+}

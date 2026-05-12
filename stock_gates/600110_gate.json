@@ -1,0 +1,36 @@
+{
+  "stock_id": "600110",
+  "stock_name": "诺德股份",
+  "concept": "锂电铜箔",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电铜箔",
+    "极薄锂电铜箔"
+  ],
+  "should": [
+    "4.5μm铜箔",
+    "4μm铜箔",
+    "3.5μm锂电铜箔",
+    "18μm镀锌电子材料",
+    "宁德时代",
+    "比亚迪",
+    "中创新航",
+    "国轩高科",
+    "亿纬锂能",
+    "孚能科技"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电铜箔",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "极薄锂电铜箔",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:09:22"
+}

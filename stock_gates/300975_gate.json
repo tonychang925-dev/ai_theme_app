@@ -1,0 +1,41 @@
+{
+  "stock_id": "300975",
+  "stock_name": "商络电子",
+  "concept": "电子元器件分销",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子元器件分销",
+    "IC",
+    "功率器件"
+  ],
+  "should": [
+    "电容",
+    "电感",
+    "电阻",
+    "射频器件",
+    "分立器件",
+    "存储器件",
+    "连接器",
+    "网络通信",
+    "汽车电子",
+    "工业控制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子元器件分销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功率器件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:51:31"
+}

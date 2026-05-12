@@ -1,0 +1,37 @@
+{
+  "stock_id": "603108",
+  "stock_name": "润达医疗",
+  "concept": "IVD集约化服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "IVD集约化服务",
+    "体外诊断产品综合服务",
+    "区域检验中心"
+  ],
+  "should": [
+    "实验室运营管理",
+    "第三方实验室检测",
+    "体外诊断产品",
+    "自研质谱仪",
+    "各级实验室",
+    "医疗机构"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "IVD集约化服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "体外诊断产品综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "区域检验中心",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:43:54"
+}

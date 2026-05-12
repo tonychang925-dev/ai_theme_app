@@ -1,0 +1,46 @@
+{
+  "stock_id": "000581",
+  "stock_name": "威孚高科",
+  "concept": "汽车尾气净化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车尾气净化",
+    "尾气后处理系统",
+    "柴油燃油喷射系统",
+    "燃料电池核心零部件"
+  ],
+  "should": [
+    "进气系统",
+    "膜电极",
+    "石墨双极板",
+    "金属双极板",
+    "BOP关键零部件",
+    "乘用车",
+    "商用车",
+    "非道路机械",
+    "工程机械",
+    "农业机械"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车尾气净化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "尾气后处理系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "柴油燃油喷射系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "燃料电池核心零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:57:14"
+}

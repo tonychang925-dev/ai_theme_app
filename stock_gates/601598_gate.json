@@ -1,0 +1,36 @@
+{
+  "stock_id": "601598",
+  "stock_name": "中国外运",
+  "concept": "综合物流服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合物流服务",
+    "合同物流"
+  ],
+  "should": [
+    "水运",
+    "空运",
+    "陆运",
+    "汽运",
+    "多式联运",
+    "东南亚水运通道",
+    "中欧精品班列",
+    "中老泰冷链班列",
+    "汽车行业",
+    "医疗健康"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合物流服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "合同物流",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:37:17"
+}

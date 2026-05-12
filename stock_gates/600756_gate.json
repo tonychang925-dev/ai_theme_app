@@ -1,0 +1,49 @@
+{
+  "stock_id": "600756",
+  "stock_name": "浪潮软件",
+  "concept": "智慧政府服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧政府服务",
+    "电子政务",
+    "数字政府",
+    "一体化政务服务平台",
+    "一网通办"
+  ],
+  "should": [
+    "云计算",
+    "大数据",
+    "烟草信息化",
+    "工业互联网",
+    "营商环境",
+    "19.4%市场份额",
+    "参股数据交易所",
+    "中原大数据交易中心35%股份"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧政府服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子政务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字政府",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一体化政务服务平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一网通办",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:26:52"
+}

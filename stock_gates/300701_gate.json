@@ -1,0 +1,36 @@
+{
+  "stock_id": "300701",
+  "stock_name": "森霸传感",
+  "concept": "光电传感器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "热释电红外传感器",
+    "智能传感器研发"
+  ],
+  "should": [
+    "可见光传感器",
+    "红外滤光片配方",
+    "红外敏感陶瓷配方",
+    "微电子封装测试",
+    "嵌入式算法",
+    "光电传感器",
+    "安防",
+    "智能家居",
+    "可穿戴设备",
+    "智能交通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "热释电红外传感器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能传感器研发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:39:39"
+}

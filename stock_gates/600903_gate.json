@@ -1,0 +1,33 @@
+{
+  "stock_id": "600903",
+  "stock_name": "贵州燃气",
+  "concept": "贵州燃气运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "燃气销售",
+    "天然气入户安装"
+  ],
+  "should": [
+    "液化天然气接收储备供应站",
+    "管道天然气",
+    "液化天然气",
+    "页岩气",
+    "生物质气",
+    "天然气支线管道",
+    "城市燃气输配系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "燃气销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天然气入户安装",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:30:55"
+}

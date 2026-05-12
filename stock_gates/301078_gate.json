@@ -1,0 +1,35 @@
+{
+  "stock_id": "301078",
+  "stock_name": "孩子王",
+  "concept": "母婴连锁龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "母婴连锁龙头",
+    "数字化实体门店"
+  ],
+  "should": [
+    "移动端APP",
+    "微信公众号",
+    "小程序",
+    "微商城",
+    "母婴商品销售",
+    "母婴服务消费",
+    "线上线下全渠道",
+    "全国母婴行业龙头",
+    "单客经济深耕"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "母婴连锁龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字化实体门店",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:55:48"
+}

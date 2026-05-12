@@ -1,0 +1,35 @@
+{
+  "stock_id": "002358",
+  "stock_name": "森源电气",
+  "concept": "输变电设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高中压开关设备",
+    "电力电子装置"
+  ],
+  "should": [
+    "输变电设备",
+    "智能电网",
+    "光伏发电",
+    "风力发电",
+    "核电",
+    "充电桩",
+    "储能",
+    "轨道交通",
+    "数据中心"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高中压开关设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力电子装置",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:37:26"
+}

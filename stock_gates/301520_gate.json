@@ -1,0 +1,41 @@
+{
+  "stock_id": "301520",
+  "stock_name": "万邦医药",
+  "concept": "医药研发外包",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生物等效性研究",
+    "综合型CRO企业",
+    "医药研发外包"
+  ],
+  "should": [
+    "临床研究服务",
+    "药学研发服务",
+    "仿制药开发",
+    "一致性评价",
+    "合同形式",
+    "医药企业",
+    "医药研发机构",
+    "缩短药物研发周期",
+    "控制研发成本",
+    "降低研发风险"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生物等效性研究",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合型CRO企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药研发外包",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:05:59"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "002357",
+  "stock_name": "富临运业",
+  "concept": "道路客运服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "道路客运服务",
+    "汽车客运服务",
+    "汽车客运站经营"
+  ],
+  "should": [
+    "定制客运",
+    "汽车后服",
+    "汽车租赁",
+    "网约车",
+    "商贸物流",
+    "旅游",
+    "行业内领先的服务水平和管理能力",
+    "特许经营领先优势",
+    "智慧出行客运平台优势"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "道路客运服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车客运服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车客运站经营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:37:25"
+}

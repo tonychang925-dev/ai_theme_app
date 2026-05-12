@@ -1,0 +1,31 @@
+{
+  "stock_id": "301348",
+  "stock_name": "蓝箭电子",
+  "concept": "半导体封测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体封测"
+  ],
+  "should": [
+    "通孔插装技术",
+    "贴片式封装技术",
+    "倒装焊封装技术",
+    "系统级封装技术",
+    "SIP系统级封装",
+    "宽禁带半导体封测技术",
+    "超薄芯片封装技术",
+    "铝带焊接工艺",
+    "铜桥工艺",
+    "芯片倒装技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体封测",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:03:36"
+}

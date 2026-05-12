@@ -1,0 +1,41 @@
+{
+  "stock_id": "603232",
+  "stock_name": "格尔软件",
+  "concept": "PKI信息安全",
+  "strategy_type": "industry_chain",
+  "must": [
+    "公钥基础设施PKI",
+    "PKI基础设施产品",
+    "密码技术"
+  ],
+  "should": [
+    "PKI安全应用产品",
+    "数字证书认证系统",
+    "密钥管理系统",
+    "PKI信息安全",
+    "通用安全产品",
+    "云计算平台",
+    "虚拟化",
+    "移动互联网",
+    "智慧城市",
+    "身份和数字信任软件市场份额第四"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "公钥基础设施PKI",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PKI基础设施产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "密码技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:47:16"
+}

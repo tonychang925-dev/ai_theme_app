@@ -1,0 +1,36 @@
+{
+  "stock_id": "002786",
+  "stock_name": "银宝山新",
+  "concept": "模具+服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "模具+服务",
+    "模具"
+  ],
+  "should": [
+    "塑胶",
+    "五金制品",
+    "电子产品",
+    "宝马BMW",
+    "日产NISSAN",
+    "本田HONDA",
+    "丰田TOYOTA",
+    "大众VW",
+    "福特FORD",
+    "广汽GAC"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "模具+服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "模具",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:57:35"
+}

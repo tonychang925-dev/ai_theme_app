@@ -1,0 +1,41 @@
+{
+  "stock_id": "600843",
+  "stock_name": "上工申贝",
+  "concept": "缝制设备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "缝制设备制造",
+    "工业缝纫机",
+    "特种用途工业定制机器"
+  ],
+  "should": [
+    "安全气囊自动生产线",
+    "汽车内饰件加工",
+    "家用缝纫机",
+    "智能制造",
+    "数字化生产",
+    "精准研发",
+    "汽车行业",
+    "环保产业",
+    "鞋服",
+    "箱包"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "缝制设备制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业缝纫机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种用途工业定制机器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:29:14"
+}

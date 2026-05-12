@@ -1,0 +1,46 @@
+{
+  "stock_id": "688265",
+  "stock_name": "南模生物",
+  "concept": "实验动物培育",
+  "strategy_type": "industry_chain",
+  "must": [
+    "实验动物培育",
+    "基因修饰小鼠模型",
+    "人源化模型",
+    "基因编辑"
+  ],
+  "should": [
+    "免疫缺陷小鼠模型",
+    "CDX肿瘤模型",
+    "CRISPR/Cas打靶技术",
+    "ES细胞打靶技术",
+    "疾病模型",
+    "模型验证",
+    "生命科学基础研究",
+    "药物创制",
+    "分子靶向治疗",
+    "肿瘤免疫治疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "实验动物培育",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "基因修饰小鼠模型",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人源化模型",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "基因编辑",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:13:35"
+}

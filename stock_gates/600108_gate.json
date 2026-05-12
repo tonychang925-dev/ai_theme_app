@@ -1,0 +1,36 @@
+{
+  "stock_id": "600108",
+  "stock_name": "亚盛集团",
+  "concept": "农艺种植基地",
+  "strategy_type": "industry_chain",
+  "must": [
+    "最大规模的农艺种植基地",
+    "农艺种植基地"
+  ],
+  "should": [
+    "优质牧草",
+    "马铃薯",
+    "制种玉米",
+    "啤酒花",
+    "果品",
+    "食葵",
+    "辣椒",
+    "香辛料",
+    "农业滴灌设备",
+    "农业机械化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "最大规模的农艺种植基地",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "农艺种植基地",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:09:18"
+}

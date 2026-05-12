@@ -1,0 +1,36 @@
+{
+  "stock_id": "600409",
+  "stock_name": "三友化工",
+  "concept": "纯碱粘胶双龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "纯碱",
+    "粘胶短纤"
+  ],
+  "should": [
+    "氯碱",
+    "有机硅",
+    "莫代尔纤维",
+    "竹代尔纤维",
+    "莱赛尔纤维",
+    "三链一群",
+    "纯碱粘胶双龙头",
+    "热力供应",
+    "纯碱340万吨",
+    "粘胶短纤78万吨"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "纯碱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "粘胶短纤",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:17:17"
+}

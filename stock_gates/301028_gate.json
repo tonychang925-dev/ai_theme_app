@@ -1,0 +1,41 @@
+{
+  "stock_id": "301028",
+  "stock_name": "鼎熔岩",
+  "concept": "螺杆空压机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "螺杆空压机",
+    "螺杆主机设计制造",
+    "永磁变频技术"
+  ],
+  "should": [
+    "专精特新小巨人",
+    "国家级绿色工厂",
+    "螺杆式压缩机",
+    "无油式压缩机",
+    "离心式压缩机",
+    "真空泵",
+    "活塞式压缩机",
+    "干燥机",
+    "新材料应用",
+    "装备制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "螺杆空压机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "螺杆主机设计制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "永磁变频技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:53:51"
+}

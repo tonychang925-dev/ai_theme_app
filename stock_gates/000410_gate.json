@@ -1,0 +1,41 @@
+{
+  "stock_id": "000410",
+  "stock_name": "沈阳机床",
+  "concept": "机床制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "机床制造",
+    "数控机床技术",
+    "国内机床行业龙头"
+  ],
+  "should": [
+    "卧式车床",
+    "立式车床",
+    "卧式加工中心",
+    "立式加工中心",
+    "行业专机",
+    "自动线",
+    "摩擦焊专机",
+    "副车架五轴立加",
+    "球笼倒立车",
+    "扭力梁双面铣"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "机床制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数控机床技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内机床行业龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:52:08"
+}

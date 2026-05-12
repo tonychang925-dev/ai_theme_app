@@ -1,0 +1,36 @@
+{
+  "stock_id": "000803",
+  "stock_name": "山高环能",
+  "concept": "生物柴油全链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "餐厨垃圾BOT项目",
+    "生物柴油生产",
+    "生物航煤（SAF）"
+  ],
+  "should": [
+    "异构化技术",
+    "生物柴油全链",
+    "环保增塑剂",
+    "醇酸树脂",
+    "废弃油脂资源化上市公司"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "餐厨垃圾BOT项目",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物柴油生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物航煤（SAF）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:05:25"
+}

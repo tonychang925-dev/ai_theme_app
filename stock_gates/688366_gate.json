@@ -1,0 +1,41 @@
+{
+  "stock_id": "688366",
+  "stock_name": "昊海生科",
+  "concept": "眼科医美耗材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国内眼科耗材龙头",
+    "人工晶状体",
+    "眼科医美耗材"
+  ],
+  "should": [
+    "玻尿酸",
+    "角膜塑形镜",
+    "医用几丁糖",
+    "医用透明质酸钠凝胶",
+    "全球最大独立视光材料生产商之一",
+    "白内障手术",
+    "近视防控",
+    "医疗美容",
+    "骨科关节腔注射",
+    "防粘连及止血"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国内眼科耗材龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人工晶状体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "眼科医美耗材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:16:43"
+}

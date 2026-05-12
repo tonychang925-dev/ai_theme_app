@@ -1,0 +1,41 @@
+{
+  "stock_id": "603288",
+  "stock_name": "海天味业",
+  "concept": "调味品龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "调味品龙头",
+    "酱油",
+    "蚝油"
+  ],
+  "should": [
+    "酱",
+    "醋",
+    "料酒",
+    "调味汁",
+    "鸡精",
+    "鸡粉",
+    "腐乳",
+    "火锅底料",
+    "食用油",
+    "餐饮"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "调味品龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "酱油",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蚝油",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:48:13"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "603315",
+  "stock_name": "福鞍股份",
+  "concept": "水电机组铸钢件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水电机组铸钢件",
+    "整铸转轮",
+    "半整铸转轮"
+  ],
+  "should": [
+    "火电铸钢件",
+    "汽轮机静子部件",
+    "3D打印砂型",
+    "三维空间扫描",
+    "多轴数控加工",
+    "工艺设计优化",
+    "水电",
+    "火电",
+    "环保工程"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水电机组铸钢件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "整铸转轮",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半整铸转轮",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:48:51"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "603909",
+  "stock_name": "建发合诚",
+  "concept": "工程全生命周期服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程全生命周期服务",
+    "设计与工程管理服务",
+    "检测服务"
+  ],
+  "should": [
+    "建筑施工",
+    "运维服务",
+    "工程全生命周期技术服务",
+    "工程基础设施健康检测",
+    "智慧工程管理平台",
+    "公路",
+    "桥梁",
+    "隧道",
+    "市政",
+    "房建"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程全生命周期服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "设计与工程管理服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "检测服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:58:46"
+}

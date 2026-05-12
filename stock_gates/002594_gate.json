@@ -1,0 +1,51 @@
+{
+  "stock_id": "002594",
+  "stock_name": "比亚迪",
+  "concept": "新能源汽车",
+  "strategy_type": "industry_chain",
+  "must": [
+    "腾势",
+    "方程豹",
+    "仰望",
+    "腾势D9",
+    "腾势N9"
+  ],
+  "should": [
+    "王朝",
+    "海洋",
+    "Z9GT",
+    "SealU DM-i",
+    "云辇",
+    "天神之眼辅助驾驶系统",
+    "DiLink智能座舱",
+    "三电机独立驱动",
+    "后轮双电机独立转向",
+    "VMC整车运动控制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "腾势",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "方程豹",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "仰望",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "腾势D9",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "腾势N9",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:49:03"
+}

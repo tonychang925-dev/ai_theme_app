@@ -1,0 +1,29 @@
+{
+  "stock_id": "603610",
+  "stock_name": "麒盛科技",
+  "concept": "智能电动床",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能电动床"
+  ],
+  "should": [
+    "床垫",
+    "传感器",
+    "智能模块",
+    "主控芯片",
+    "睡眠健康监测",
+    "健康预警",
+    "ODM代工",
+    "自有品牌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能电动床",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:53:12"
+}

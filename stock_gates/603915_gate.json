@@ -1,0 +1,46 @@
+{
+  "stock_id": "603915",
+  "stock_name": "国茂股份",
+  "concept": "减速机行业领先",
+  "strategy_type": "industry_chain",
+  "must": [
+    "模块化减速机",
+    "工业齿轮箱",
+    "GNORD减速机",
+    "光伏回转减速机"
+  ],
+  "should": [
+    "光伏跟踪支架",
+    "摆线针轮减速机",
+    "硬齿面减速机",
+    "橡塑行业配套减速机",
+    "减速机行业领先",
+    "新能源锂电行业",
+    "橡胶塑料行业",
+    "建材砂石骨料行业",
+    "化工医药",
+    "港口起重"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "模块化减速机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业齿轮箱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "GNORD减速机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏回转减速机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:58:50"
+}

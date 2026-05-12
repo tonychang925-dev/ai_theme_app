@@ -1,0 +1,51 @@
+{
+  "stock_id": "300875",
+  "stock_name": "捷强装备",
+  "concept": "核生化检测防护",
+  "strategy_type": "industry_chain",
+  "must": [
+    "核生化检测防护",
+    "辐射防护仪器",
+    "辐射环境检测仪器",
+    "核化侦检无人机系统",
+    "核化侦采检一体机器人系统"
+  ],
+  "should": [
+    "便携式放射性检测仪",
+    "通道门式放射性检测系统",
+    "环境及区域放射性监测系统",
+    "智能检测仪",
+    "实验室分析系统",
+    "辐射防护设备",
+    "免疫层析胶体金检测仪",
+    "便携生物战剂快速检测箱",
+    "免疫检测技术",
+    "核酸检测技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "核生化检测防护",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "辐射防护仪器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "辐射环境检测仪器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核化侦检无人机系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核化侦采检一体机器人系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:47:26"
+}

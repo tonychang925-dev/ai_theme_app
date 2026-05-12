@@ -1,0 +1,31 @@
+{
+  "stock_id": "000543",
+  "stock_name": "皖能电力",
+  "concept": "火力发电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "火力发电"
+  ],
+  "should": [
+    "售电业务",
+    "新能源发电",
+    "高参数",
+    "大容量",
+    "低能耗",
+    "高效率",
+    "环保指标先进",
+    "长三角特高压电力枢纽",
+    "准东—皖南特高压输电通道",
+    "整合电力资产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "火力发电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T16:55:30"
+}

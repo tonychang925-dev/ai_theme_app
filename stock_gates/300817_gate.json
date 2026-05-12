@@ -1,0 +1,31 @@
+{
+  "stock_id": "300817",
+  "stock_name": "双飞集团",
+  "concept": "自润滑轴承",
+  "strategy_type": "industry_chain",
+  "must": [
+    "自润滑轴承"
+  ],
+  "should": [
+    "自润滑轴承用复合材料",
+    "铜粉",
+    "铜粉技术",
+    "滑动材料研发",
+    "汽车制造",
+    "工程机械",
+    "液压设备",
+    "模具制造",
+    "家用办公自动化设备",
+    "建筑"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "自润滑轴承",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:44:25"
+}

@@ -1,0 +1,39 @@
+{
+  "stock_id": "603200",
+  "stock_name": "上海洗霸",
+  "concept": "水处理运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水处理运营",
+    "化学水处理运营",
+    "水处理系统运行管理"
+  ],
+  "should": [
+    "化学品销售与服务",
+    "石油化工",
+    "汽车制造",
+    "钢铁冶金",
+    "制浆造纸",
+    "民用领域",
+    "工业水竞争格局分散",
+    "在钢铁领域工业水治理具备竞争力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水处理运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化学水处理运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水处理系统运行管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:46:13"
+}

@@ -1,0 +1,44 @@
+{
+  "stock_id": "688127",
+  "stock_name": "蓝特光学",
+  "concept": "精密光学元件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密光学元件",
+    "光学棱镜",
+    "玻璃非球面透镜",
+    "玻璃晶圆"
+  ],
+  "should": [
+    "玻璃光学元件冷加工",
+    "玻璃非球面透镜热模压",
+    "高精密模具设计制造",
+    "中大尺寸超薄玻璃晶圆精密加工",
+    "消费电子",
+    "半导体加工",
+    "光学仪器",
+    "车载镜头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密光学元件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光学棱镜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "玻璃非球面透镜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "玻璃晶圆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:09:07"
+}

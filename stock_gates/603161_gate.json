@@ -1,0 +1,41 @@
+{
+  "stock_id": "603161",
+  "stock_name": "科华控股",
+  "concept": "涡轮增压器零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "涡轮增压器零部件",
+    "涡轮增压器涡轮壳",
+    "中间壳"
+  ],
+  "should": [
+    "差速器壳体",
+    "金属熔炼过程控制",
+    "机械加工生产线优化",
+    "防误操作系统设计",
+    "真空吸铸",
+    "盖瑞特",
+    "博格华纳",
+    "长城汽车",
+    "上海菱重",
+    "纬湃汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "涡轮增压器零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涡轮增压器涡轮壳",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中间壳",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:45:09"
+}

@@ -1,0 +1,27 @@
+{
+  "stock_id": "601611",
+  "stock_name": "中国核建",
+  "concept": "核电工程建设",
+  "strategy_type": "industry_chain",
+  "must": [
+    "核电工程建设"
+  ],
+  "should": [
+    "工业与民用工程",
+    "核电建设市场绝对主导地位",
+    "新建核电机组审核加速",
+    "核电建设按每年6~8台推进",
+    "核安全长期保持良好记录",
+    "核电安全运营指标位居世界前列"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "核电工程建设",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:37:26"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "600820",
+  "stock_name": "隧道股份",
+  "concept": "地下工程综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "地下工程综合服务",
+    "大隧道",
+    "轨道交通",
+    "道路工程"
+  ],
+  "should": [
+    "施工",
+    "设计",
+    "运营",
+    "投资",
+    "燃气管线",
+    "公路施工",
+    "城市市政公用基础设施",
+    "越江隧道",
+    "水利水电隧道",
+    "公路建设"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "地下工程综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大隧道",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轨道交通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "道路工程",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:28:45"
+}

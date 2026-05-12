@@ -1,0 +1,46 @@
+{
+  "stock_id": "603558",
+  "stock_name": "健盛集团",
+  "concept": "针织运动服饰制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "棉袜",
+    "无缝内衣",
+    "ODM",
+    "OEM"
+  ],
+  "should": [
+    "氨纶包覆纱",
+    "UNIQLO",
+    "PUMA",
+    "DECATHLON",
+    "UNDERARMOUR",
+    "BOMBAS",
+    "GAP",
+    "BONDS",
+    "ADIDAS",
+    "李宁"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "棉袜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无缝内衣",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ODM",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "OEM",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:52:19"
+}

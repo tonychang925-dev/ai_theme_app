@@ -1,0 +1,41 @@
+{
+  "stock_id": "605289",
+  "stock_name": "罗曼股份",
+  "concept": "城市景观照明",
+  "strategy_type": "industry_chain",
+  "must": [
+    "城市景观照明",
+    "景观照明整体规划",
+    "景观照明工程施工"
+  ],
+  "should": [
+    "远程集控管理",
+    "LED+智能控制系统",
+    "深化设计",
+    "AR/VR",
+    "3D全息投影",
+    "3D裸眼",
+    "夜游经济",
+    "智慧城市",
+    "双碳目标",
+    "双智规划"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "城市景观照明",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "景观照明整体规划",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "景观照明工程施工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:03:29"
+}

@@ -1,0 +1,38 @@
+{
+  "stock_id": "002866",
+  "stock_name": "传艺科技",
+  "concept": "笔电零组件+钠电池",
+  "strategy_type": "industry_chain",
+  "must": [
+    "笔记本电脑零组件隐形冠军",
+    "国内键盘龙头",
+    "笔电零组件+钠电池"
+  ],
+  "should": [
+    "钠离子电池",
+    "柔性印刷线路板（FPC）",
+    "钠离子电池及正负极材料技术",
+    "锂离子电池",
+    "正负极材料",
+    "电解液",
+    "5G天线技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "笔记本电脑零组件隐形冠军",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内键盘龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "笔电零组件+钠电池",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:01:04"
+}

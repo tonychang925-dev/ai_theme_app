@@ -1,0 +1,41 @@
+{
+  "stock_id": "001203",
+  "stock_name": "大中矿业",
+  "concept": "铁矿石采选加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铁矿石采选加工",
+    "铁精粉",
+    "球团"
+  ],
+  "should": [
+    "机制砂石",
+    "破碎",
+    "磨碎",
+    "磁选",
+    "浮选",
+    "重选",
+    "高温焙烧固结",
+    "高炉炼铁",
+    "钢铁生产",
+    "铁矿石储量优势"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铁矿石采选加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铁精粉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "球团",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:13:01"
+}

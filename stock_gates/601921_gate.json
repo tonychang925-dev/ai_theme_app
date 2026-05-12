@@ -1,0 +1,41 @@
+{
+  "stock_id": "601921",
+  "stock_name": "浙版传媒",
+  "concept": "图书出版发行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "出版业务",
+    "发行业务",
+    "图书零售网络"
+  ],
+  "should": [
+    "网络发行",
+    "图书出版发行",
+    "主题出版图书",
+    "重点出版图书",
+    "专业出版图书",
+    "教育出版教材教辅",
+    "数字产品",
+    "全国性分销",
+    "直播电商",
+    "海外发行渠道"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "出版业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发行业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "图书零售网络",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:39:49"
+}

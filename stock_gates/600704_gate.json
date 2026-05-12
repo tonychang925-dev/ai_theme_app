@@ -1,0 +1,31 @@
+{
+  "stock_id": "600704",
+  "stock_name": "物产中大",
+  "concept": "智慧供应链集成服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧供应链集成服务"
+  ],
+  "should": [
+    "金融服务",
+    "高端制造",
+    "智慧供应链协同集成平台",
+    "钢材",
+    "铁矿砂",
+    "煤炭",
+    "化工",
+    "农产品",
+    "油品",
+    "新车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧供应链集成服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:25:20"
+}

@@ -1,0 +1,13 @@
+{
+  "stock_id": "002259",
+  "stock_name": "升达林业",
+  "concept": "天然气产业链",
+  "strategy_type": "industry_chain",
+  "must": [],
+  "should": [],
+  "not": [],
+  "evidence_refs": [],
+  "quality": "weak",
+  "must_count": 0,
+  "generated_at": "2026-05-11T17:32:05"
+}

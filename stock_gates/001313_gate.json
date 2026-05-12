@@ -1,0 +1,32 @@
+{
+  "stock_id": "001313",
+  "stock_name": "粤海饲料",
+  "concept": "水产饲料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水产饲料",
+    "特种水产饲料"
+  ],
+  "should": [
+    "虾料",
+    "海水鱼料",
+    "普通水产饲料",
+    "水产养殖",
+    "水产品预制菜",
+    "行业头部"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水产饲料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种水产饲料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:15:55"
+}

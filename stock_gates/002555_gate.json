@@ -1,0 +1,51 @@
+{
+  "stock_id": "002555",
+  "stock_name": "三七互娱",
+  "concept": "游戏研运一体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "游戏研运一体",
+    "研运一体化",
+    "双核+多元",
+    "MMORPG",
+    "SLG"
+  ],
+  "should": [
+    "37手游",
+    "37GAMES",
+    "卡牌",
+    "模拟经营",
+    "《永恒纪元》",
+    "《叫我大掌柜》",
+    "量子-天机系统",
+    "AI算法",
+    "大数据分析",
+    "三大数据研运系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "游戏研运一体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "研运一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "双核+多元",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MMORPG",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SLG",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:47:23"
+}

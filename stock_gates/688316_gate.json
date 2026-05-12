@@ -1,0 +1,51 @@
+{
+  "stock_id": "688316",
+  "stock_name": "青云科技",
+  "concept": "企业级云服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "企业级云服务",
+    "云产品",
+    "云服务",
+    "云网一体技术架构",
+    "全栈云架构"
+  ],
+  "should": [
+    "计算平台",
+    "存储平台",
+    "网络与安全平台",
+    "数据平台",
+    "IoT与边缘计算",
+    "统一架构",
+    "全域智能数据互联",
+    "超融合系统市场份额3.4%",
+    "块存储市场份额4.2%",
+    "对象存储市场份额2.3%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "企业级云服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云网一体技术架构",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全栈云架构",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:15:11"
+}

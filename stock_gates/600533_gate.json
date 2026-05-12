@@ -1,0 +1,38 @@
+{
+  "stock_id": "600533",
+  "stock_name": "栖霞建设",
+  "concept": "区域地产开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "房地产开发",
+    "南京",
+    "无锡",
+    "苏州"
+  ],
+  "should": [
+    "区域地产开发",
+    "逆周期拿地"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房地产开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "南京",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无锡",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "苏州",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:20:25"
+}

@@ -1,0 +1,43 @@
+{
+  "stock_id": "603187",
+  "stock_name": "海容冷链",
+  "concept": "商用冷链设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商用冷链设备",
+    "商用冷冻展示柜",
+    "商用冷藏展示柜",
+    "商超展示柜"
+  ],
+  "should": [
+    "商用智能售货柜",
+    "智能算法",
+    "识别技术",
+    "软硬件一体化",
+    "行业领先地位",
+    "市场占有率领先",
+    "品牌影响力领先"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商用冷链设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商用冷冻展示柜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商用冷藏展示柜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商超展示柜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:45:52"
+}

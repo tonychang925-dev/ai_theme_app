@@ -1,0 +1,41 @@
+{
+  "stock_id": "600992",
+  "stock_name": "贵绳股份",
+  "concept": "钢丝绳制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钢丝绳",
+    "钢丝",
+    "预应力钢绞线"
+  ],
+  "should": [
+    "全国制造业单项冠军示范企业",
+    "贵州省高新技术企业",
+    "模拉法密封绳技术",
+    "钢丝绳制造",
+    "大直径钢丝绳制造",
+    "超长钢丝绳制造",
+    "高强度钢丝绳制造",
+    "特殊结构钢丝绳制造",
+    "矿山",
+    "石油天然气钻采"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钢丝绳",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钢丝",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "预应力钢绞线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:32:45"
+}

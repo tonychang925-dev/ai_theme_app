@@ -1,0 +1,36 @@
+{
+  "stock_id": "000778",
+  "stock_name": "新兴铸管",
+  "concept": "球墨铸管龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "离心球墨铸铁管",
+    "配套管件"
+  ],
+  "should": [
+    "铸造制品",
+    "钢塑复合管",
+    "钢格板",
+    "特种钢管",
+    "螺纹钢",
+    "棒线材",
+    "优特钢",
+    "离心铸造",
+    "球化孕育",
+    "热处理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "离心球墨铸铁管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "配套管件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:04:22"
+}

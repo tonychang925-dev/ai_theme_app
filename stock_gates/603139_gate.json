@@ -1,0 +1,31 @@
+{
+  "stock_id": "603139",
+  "stock_name": "康惠股份",
+  "concept": "中成药制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "消银颗粒"
+  ],
+  "should": [
+    "化药中间体",
+    "原料药",
+    "中成药制造",
+    "国家医保目录产品",
+    "国家基药目录产品",
+    "药品生产批准文号",
+    "GMP规范",
+    "药物警戒体系",
+    "医疗终端",
+    "基层医疗终端"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "消银颗粒",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:44:47"
+}

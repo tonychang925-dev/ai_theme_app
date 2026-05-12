@@ -1,0 +1,41 @@
+{
+  "stock_id": "688191",
+  "stock_name": "智洋创新",
+  "concept": "电力智能运维",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力智能运维",
+    "一站式人工智能平台",
+    "大数据及数字孪生平台",
+    "无人机智能巡检系统"
+  ],
+  "should": [
+    "智能可视化终端",
+    "计算机视觉",
+    "数字孪生机理仿真",
+    "无人机巡检技术",
+    "云边端协同技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力智能运维",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一站式人工智能平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大数据及数字孪生平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无人机智能巡检系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:11:18"
+}

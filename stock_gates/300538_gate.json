@@ -1,0 +1,36 @@
+{
+  "stock_id": "300538",
+  "stock_name": "同益股份",
+  "concept": "化工电子材料服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "化工电子材料服务",
+    "中高端工程塑料"
+  ],
+  "should": [
+    "电子材料",
+    "复合材料板棒材",
+    "材料应用解决方案",
+    "供应链一体化综合服务",
+    "复合材料挤出成型",
+    "手机及移动终端",
+    "新能源",
+    "智能家电",
+    "消费类电子",
+    "芯片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "化工电子材料服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中高端工程塑料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:31:53"
+}

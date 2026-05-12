@@ -1,0 +1,51 @@
+{
+  "stock_id": "688579",
+  "stock_name": "山大地纬",
+  "concept": "AI+区块链科技服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "AI+区块链科技服务",
+    "智慧政务",
+    "智慧医保医疗",
+    "智能用电",
+    "大纬链"
+  ],
+  "should": [
+    "Smart系列解决方案",
+    "智慧人社系统",
+    "一体化政务系统",
+    "智慧医保系统",
+    "DiWise产品",
+    "DRG/DIP综合管理平台",
+    "AI",
+    "区块链",
+    "大数据",
+    "人工智能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "AI+区块链科技服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧政务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧医保医疗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能用电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大纬链",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:21:14"
+}

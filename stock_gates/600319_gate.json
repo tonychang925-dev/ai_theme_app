@@ -1,0 +1,35 @@
+{
+  "stock_id": "600319",
+  "stock_name": "亚星化学",
+  "concept": "氯化聚乙烯",
+  "strategy_type": "industry_chain",
+  "must": [
+    "氯化聚乙烯(CPE)",
+    "氯化聚乙烯"
+  ],
+  "should": [
+    "离子膜烧碱",
+    "双氧水",
+    "水合肼",
+    "老卤制镁化学品",
+    "国内最先进的生产工艺",
+    "先进工艺",
+    "自动化装备",
+    "产能恢复低位",
+    "高附加值产品领域"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "氯化聚乙烯(CPE)",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氯化聚乙烯",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:14:52"
+}

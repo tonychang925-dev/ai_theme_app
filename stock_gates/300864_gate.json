@@ -1,0 +1,45 @@
+{
+  "stock_id": "300864",
+  "stock_name": "南大环境",
+  "concept": "环境技术服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环境技术服务",
+    "环境咨询",
+    "环境治理与修复",
+    "生态环境治理"
+  ],
+  "should": [
+    "环境调查与鉴定",
+    "水环境治理",
+    "大气环境治理",
+    "土壤与固废治理",
+    "高分辨率高精度排放清单技术",
+    "区域流域复合污染监控与预测技术",
+    "含毒害性离子废水处理技术",
+    "生物多样性调查与修复技术",
+    "政府客户"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环境技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环境咨询",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环境治理与修复",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生态环境治理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:46:37"
+}

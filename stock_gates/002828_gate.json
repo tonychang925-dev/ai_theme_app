@@ -1,0 +1,35 @@
+{
+  "stock_id": "002828",
+  "stock_name": "贝肯能源",
+  "concept": "油气开发服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钻井工程一体化",
+    "压裂、试油、排采工程"
+  ],
+  "should": [
+    "化工产品",
+    "检测、维修与租赁",
+    "射孔、电缆泵送坐桥塞分簇射孔联作",
+    "钻井助剂和固井添加剂生产销售",
+    "井控设备、钻具、顶驱检测维修",
+    "油气开发服务",
+    "常规油气开发",
+    "页岩气开发",
+    "煤层气、致密气开发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钻井工程一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "压裂、试油、排采工程",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:59:09"
+}

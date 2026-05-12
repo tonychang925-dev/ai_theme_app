@@ -1,0 +1,40 @@
+{
+  "stock_id": "301277",
+  "stock_name": "新天地",
+  "concept": "手性医药中间体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "手性医药中间体",
+    "左旋对羟基苯甘氨酸",
+    "D酸"
+  ],
+  "should": [
+    "对甲苯磺酸",
+    "手性拆分技术",
+    "左旋对羟基苯甘氨酸制备",
+    "对甲苯磺酸制备",
+    "阿莫西林原料药",
+    "制剂生产",
+    "D酸产量全球第二",
+    "牵头起草行业标准",
+    "参与编制行业标准"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "手性医药中间体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "左旋对羟基苯甘氨酸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "D酸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:01:46"
+}

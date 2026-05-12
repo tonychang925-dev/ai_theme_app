@@ -1,0 +1,36 @@
+{
+  "stock_id": "601211",
+  "stock_name": "国泰海通",
+  "concept": "大型券商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "财富管理业务",
+    "投资银行业务"
+  ],
+  "should": [
+    "机构与交易业务",
+    "投资管理业务",
+    "国际业务",
+    "大型券商",
+    "投顾驱动",
+    "科技赋能",
+    "数字化转型",
+    "跨境协作",
+    "前海",
+    "标普BBB+"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "财富管理业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资银行业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:35:23"
+}

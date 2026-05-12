@@ -1,0 +1,46 @@
+{
+  "stock_id": "603345",
+  "stock_name": "安井食品",
+  "concept": "速冻预制菜",
+  "strategy_type": "industry_chain",
+  "must": [
+    "速冻预制菜",
+    "速冻火锅料制品",
+    "速冻菜肴制品",
+    "预制菜肴类产品"
+  ],
+  "should": [
+    "速冻鱼糜制品",
+    "速冻肉制品",
+    "速冻面米制品",
+    "速冻调味小龙虾菜肴制品",
+    "自产",
+    "贴牌",
+    "并购",
+    "餐饮",
+    "零售",
+    "上游原料淡水鱼糜产业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "速冻预制菜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "速冻火锅料制品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "速冻菜肴制品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "预制菜肴类产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:49:42"
+}

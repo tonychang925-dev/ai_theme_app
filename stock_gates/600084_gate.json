@@ -1,0 +1,46 @@
+{
+  "stock_id": "600084",
+  "stock_name": "中信尼雅",
+  "concept": "葡萄酒全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "葡萄酒全产业链",
+    "葡萄种植",
+    "生产加工",
+    "贸易"
+  ],
+  "should": [
+    "数智化酿造技术",
+    "定向酿造技术体系",
+    "尼雅",
+    "西域",
+    "新天",
+    "天方夜谭",
+    "科研",
+    "精准调控",
+    "葡萄酒消费市场",
+    "小产区生态葡园建设"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "葡萄酒全产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "葡萄种植",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生产加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "贸易",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:08:43"
+}

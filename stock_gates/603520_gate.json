@@ -1,0 +1,36 @@
+{
+  "stock_id": "603520",
+  "stock_name": "司太立",
+  "concept": "碘造影剂龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "碘造影剂龙头",
+    "原料药制剂一体化"
+  ],
+  "should": [
+    "碘美普尔注射液",
+    "碘佛醇注射液",
+    "碘帕醇注射液",
+    "超声造影剂",
+    "核磁造影剂",
+    "原料药CMO/CDMO业务",
+    "技术攻关",
+    "工艺优化",
+    "降本增效",
+    "四个产业基地"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "碘造影剂龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原料药制剂一体化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:51:51"
+}

@@ -1,0 +1,44 @@
+{
+  "stock_id": "002425",
+  "stock_name": "凯撒文化",
+  "concept": "精品IP泛娱乐",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精品游戏",
+    "网络游戏研发与运营",
+    "版权运营",
+    "手游"
+  ],
+  "should": [
+    "移动端网络游戏",
+    "影视剧",
+    "动漫",
+    "畅销文学作品版权",
+    "影视版权",
+    "动漫版权",
+    "联合运营",
+    "IP授权"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精品游戏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "网络游戏研发与运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "版权运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "手游",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:41:00"
+}

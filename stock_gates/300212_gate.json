@@ -1,0 +1,41 @@
+{
+  "stock_id": "300212",
+  "stock_name": "易华录",
+  "concept": "数据湖服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数据湖",
+    "蓝光存储",
+    "数据湖服务"
+  ],
+  "should": [
+    "蓝光光盘技术",
+    "D-BOX光磁一体机",
+    "光磁混合技术",
+    "光磁智能转换技术",
+    "分布式存储技术",
+    "存储资源虚拟化",
+    "数字永生APP",
+    "智慧交通",
+    "智慧城市",
+    "国内冷存储领域龙头企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数据湖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蓝光存储",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据湖服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:17:44"
+}

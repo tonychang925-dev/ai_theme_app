@@ -1,0 +1,41 @@
+{
+  "stock_id": "002229",
+  "stock_name": "鸿博股份",
+  "concept": "彩票印刷服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "体彩即开型彩票",
+    "热敏票",
+    "商业票据印刷"
+  ],
+  "should": [
+    "书刊印刷",
+    "高端包装印刷",
+    "区块链彩票",
+    "热敏纸票证技术",
+    "即开票技术",
+    "高档商业票据技术",
+    "高端包装印刷技术",
+    "普通税务发票",
+    "证书证件",
+    "高档酒盒"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "体彩即开型彩票",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热敏票",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商业票据印刷",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:30:31"
+}

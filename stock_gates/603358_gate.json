@@ -1,0 +1,36 @@
+{
+  "stock_id": "603358",
+  "stock_name": "华达科技",
+  "concept": "汽车零部件制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源汽车电池箱托盘",
+    "乘用车车身零部件"
+  ],
+  "should": [
+    "燃油车冲压焊接零部件",
+    "新能源汽车车身零部件",
+    "电机轴",
+    "电机壳",
+    "储能箱箱体",
+    "相关模具",
+    "新能源电池箱托盘配套",
+    "汽车零部件制造",
+    "高强铝合金系统研发",
+    "整车轻量化技术开发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源汽车电池箱托盘",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乘用车车身零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:50:05"
+}

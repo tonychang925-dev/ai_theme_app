@@ -1,0 +1,35 @@
+{
+  "stock_id": "600026",
+  "stock_name": "中远海能",
+  "concept": "全球能源海运",
+  "strategy_type": "industry_chain",
+  "must": [
+    "油品运输",
+    "LNG运输"
+  ],
+  "should": [
+    "外贸油运",
+    "内贸油运",
+    "LNG业务",
+    "全球能源海运",
+    "全球最大油运船东",
+    "全球船型最齐全的油轮船队",
+    "沿海原油运输龙头",
+    "沿海成品油运输龙头",
+    "中国LNG运输引领者"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "油品运输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LNG运输",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:07:25"
+}

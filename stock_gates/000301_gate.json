@@ -1,0 +1,36 @@
+{
+  "stock_id": "000301",
+  "stock_name": "东方盛虹",
+  "concept": "炼化一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "炼化一体化",
+    "炼化+聚酯+新材料"
+  ],
+  "should": [
+    "PTA",
+    "丙烯腈",
+    "EVA",
+    "聚酯纤维",
+    "差别化纤维",
+    "光伏级EVA",
+    "MMA",
+    "EO",
+    "高化工品比例",
+    "单线规模国内最大"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "炼化一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "炼化+聚酯+新材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:51:18"
+}

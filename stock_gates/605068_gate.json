@@ -1,0 +1,39 @@
+{
+  "stock_id": "605068",
+  "stock_name": "明新旭腾",
+  "concept": "汽车内饰材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车内饰材料",
+    "汽车真皮",
+    "水性超纤"
+  ],
+  "should": [
+    "水性工艺",
+    "绒面超纤技术",
+    "汽车座椅",
+    "扶手",
+    "头枕",
+    "方向盘",
+    "仪表盘",
+    "门板"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车内饰材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车真皮",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水性超纤",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:01:29"
+}

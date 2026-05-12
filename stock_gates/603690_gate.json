@@ -1,0 +1,46 @@
+{
+  "stock_id": "603690",
+  "stock_name": "至纯科技",
+  "concept": "半导体清洗设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体清洗设备",
+    "半导体清洗设备龙头",
+    "湿法槽式清洗设备",
+    "单片式清洗设备"
+  ],
+  "should": [
+    "高纯工艺系统",
+    "高纯气体供应设备",
+    "高纯化学品输送设备",
+    "湿法工艺",
+    "槽式技术",
+    "单片式技术",
+    "核心零部件研发",
+    "薄片工艺",
+    "化合物半导体",
+    "金属剥离制程"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体清洗设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体清洗设备龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "湿法槽式清洗设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "单片式清洗设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:55:00"
+}

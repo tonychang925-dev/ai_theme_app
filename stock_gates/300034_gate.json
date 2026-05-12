@@ -1,0 +1,39 @@
+{
+  "stock_id": "300034",
+  "stock_name": "钢研高纳",
+  "concept": "高温合金龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铸造合金制品",
+    "变形合金制品",
+    "新型合金制品"
+  ],
+  "should": [
+    "高温合金龙头",
+    "熔炼工艺",
+    "双联工艺",
+    "三联工艺",
+    "单晶叶片技术",
+    "大型复杂机匣技术",
+    "国内规模最大的高温合金企业",
+    "航天发动机用精铸件能力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铸造合金制品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "变形合金制品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新型合金制品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:10:21"
+}

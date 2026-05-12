@@ -1,0 +1,36 @@
+{
+  "stock_id": "002046",
+  "stock_name": "国机精工",
+  "concept": "航天特种轴承",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航天特种轴承",
+    "航天轴承"
+  ],
+  "should": [
+    "精密机床轴承",
+    "重型机械用大型轴承",
+    "机床用电主轴",
+    "超硬材料制品",
+    "金刚石复合片",
+    "MPCVD法",
+    "陶瓷结合剂",
+    "树脂结合剂",
+    "金属结合剂",
+    "电镀金属结合剂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航天特种轴承",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航天轴承",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:20:14"
+}

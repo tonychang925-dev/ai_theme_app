@@ -1,0 +1,41 @@
+{
+  "stock_id": "000546",
+  "stock_name": "金圆股份",
+  "concept": "盐湖提锂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "盐湖提锂",
+    "锂资源产业链",
+    "捌千错盐湖"
+  ],
+  "should": [
+    "Laguna Caro项目",
+    "电化学脱嵌装置",
+    "2000吨碳酸锂产线",
+    "盐湖提锂技术",
+    "新能源材料",
+    "锂电池",
+    "8000-10000吨产能",
+    "盐湖资源获取",
+    "锂加工设备",
+    "锂电池回收"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "盐湖提锂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂资源产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "捌千错盐湖",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:55:47"
+}

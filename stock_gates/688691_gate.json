@@ -1,0 +1,36 @@
+{
+  "stock_id": "688691",
+  "stock_name": "灿芯股份",
+  "concept": "芯片定制服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "一站式芯片定制业务",
+    "芯片定制服务"
+  ],
+  "should": [
+    "芯片设计业务",
+    "芯片量产业务",
+    "芯片全定制服务",
+    "芯片工程定制服务",
+    "大规模SoC快速设计能力",
+    "逻辑工艺节点",
+    "特色工艺节点",
+    "高性能半导体IP",
+    "云端及边缘计算",
+    "与中芯国际战略合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "一站式芯片定制业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "芯片定制服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:24:10"
+}

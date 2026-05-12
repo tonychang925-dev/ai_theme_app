@@ -1,0 +1,43 @@
+{
+  "stock_id": "600639",
+  "stock_name": "浦东金桥",
+  "concept": "产业园区开发运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "产业园区开发运营",
+    "招商引资",
+    "开发建设",
+    "服务运营"
+  ],
+  "should": [
+    "5G",
+    "智能网联汽车",
+    "生物医药",
+    "半导体材料与设备",
+    "租售并举",
+    "招商招投联动",
+    "数字化转型"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "产业园区开发运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "招商引资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "开发建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "服务运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:23:32"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "300092",
+  "stock_name": "科新机电",
+  "concept": "高端压力容器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端压力容器",
+    "重型压力容器",
+    "核电核化工及军工设备",
+    "新能源新材料高端装置",
+    "高端重型过程装备供应商"
+  ],
+  "should": [
+    "常规电站辅机设备",
+    "多层夹紧式整体包扎",
+    "大型薄壁复杂构件式成型技术",
+    "大型球罐瓣片压制",
+    "数控弯管",
+    "先进焊接技术",
+    "炼油",
+    "化工",
+    "电力",
+    "冶金"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端压力容器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重型压力容器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核电核化工及军工设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源新材料高端装置",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端重型过程装备供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:13:01"
+}

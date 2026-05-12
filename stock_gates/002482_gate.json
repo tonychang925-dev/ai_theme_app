@@ -1,0 +1,36 @@
+{
+  "stock_id": "002482",
+  "stock_name": "广田集团",
+  "concept": "建筑装饰",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑装饰",
+    "建筑装饰全产业链公司"
+  ],
+  "should": [
+    "公共建筑装饰",
+    "建筑装饰设计与施工",
+    "住宅装饰",
+    "建筑幕墙装饰",
+    "建筑装修装饰工程专业承包壹级",
+    "建筑幕墙工程专业承包壹级",
+    "机电设备安装工程专业承包壹级",
+    "电子与智能化工程专业承包壹级",
+    "消防设施工程专业承包壹级",
+    "建筑装饰工程设计专项甲级"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑装饰",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑装饰全产业链公司",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:43:53"
+}

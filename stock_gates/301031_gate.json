@@ -1,0 +1,36 @@
+{
+  "stock_id": "301031",
+  "stock_name": "中熔电气",
+  "concept": "电力熔断器龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力熔断器龙头",
+    "电力熔断器"
+  ],
+  "should": [
+    "电子类熔断器",
+    "激励熔断器",
+    "宁德时代",
+    "阳光电源",
+    "特斯拉",
+    "新能源汽车",
+    "光伏风力发电及储能",
+    "通信",
+    "工业电源",
+    "轨交"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力熔断器龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力熔断器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:53:54"
+}

@@ -1,0 +1,49 @@
+{
+  "stock_id": "300194",
+  "stock_name": "福安药业",
+  "concept": "化学制药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "化学药品研发",
+    "化学药品生产",
+    "化学药品销售",
+    "医药中间体",
+    "原料药"
+  ],
+  "should": [
+    "愈美胶囊",
+    "枸橼酸托瑞米芬片",
+    "盐酸吉西他滨",
+    "盐酸昂丹司琼",
+    "盐酸格拉司琼",
+    "艾司奥美拉唑",
+    "牛磺熊去氧胆酸胶囊",
+    "盐酸乐卡地平片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "化学药品研发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化学药品生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化学药品销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药中间体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原料药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:16:59"
+}

@@ -1,0 +1,24 @@
+{
+  "stock_id": "601133",
+  "stock_name": "柏诚股份",
+  "concept": "洁净室系统集成",
+  "strategy_type": "industry_chain",
+  "must": [],
+  "should": [
+    "洁净室系统集成",
+    "半导体及泛半导体",
+    "新型显示",
+    "生命科学",
+    "食品药品大健康",
+    "京东方",
+    "华星光电",
+    "维信诺",
+    "天马微电子",
+    "超视界"
+  ],
+  "not": [],
+  "evidence_refs": [],
+  "quality": "weak",
+  "must_count": 0,
+  "generated_at": "2026-05-11T19:34:39"
+}

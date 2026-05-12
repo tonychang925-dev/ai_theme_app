@@ -1,0 +1,36 @@
+{
+  "stock_id": "301386",
+  "stock_name": "未来电器",
+  "concept": "低压断路器附件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "塑壳断路器附件",
+    "低压断路器附件"
+  ],
+  "should": [
+    "框架断路器附件",
+    "智能终端电器",
+    "智能化",
+    "信息化",
+    "模块化",
+    "小型化",
+    "智能电网",
+    "新能源",
+    "5G",
+    "IDC"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "塑壳断路器附件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "低压断路器附件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:04:27"
+}

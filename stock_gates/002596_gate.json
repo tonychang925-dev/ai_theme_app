@@ -1,0 +1,41 @@
+{
+  "stock_id": "002596",
+  "stock_name": "海南瑞泽",
+  "concept": "商品混凝土集团",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商品混凝土集团",
+    "商品混凝土生产与配送",
+    "商品混凝土"
+  ],
+  "should": [
+    "新型干法水泥生产与配送",
+    "园林绿化设计及施工",
+    "市政环卫服务",
+    "市政环卫工程",
+    "新型干法水泥",
+    "园林绿化",
+    "智能混凝土",
+    "海工混凝土",
+    "彩色景观混凝土",
+    "透水混凝土"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商品混凝土集团",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商品混凝土生产与配送",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商品混凝土",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:49:14"
+}

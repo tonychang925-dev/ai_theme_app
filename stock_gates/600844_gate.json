@@ -1,0 +1,41 @@
+{
+  "stock_id": "600844",
+  "stock_name": "金煤科技",
+  "concept": "煤制乙二醇",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤制乙二醇",
+    "乙二醇",
+    "煤制乙二醇生产技术"
+  ],
+  "should": [
+    "草酸",
+    "催化剂",
+    "可降解材料",
+    "煤气化",
+    "合成气净化分离",
+    "钯系催化剂",
+    "铜系催化剂",
+    "聚酯",
+    "防冻液",
+    "不饱和树脂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤制乙二醇",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乙二醇",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤制乙二醇生产技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:29:17"
+}

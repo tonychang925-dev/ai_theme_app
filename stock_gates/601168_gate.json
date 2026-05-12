@@ -1,0 +1,51 @@
+{
+  "stock_id": "601168",
+  "stock_name": "西部矿业",
+  "concept": "有色金属矿业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铜精矿",
+    "锌精矿",
+    "铅精矿",
+    "电解铜",
+    "锌锭"
+  ],
+  "should": [
+    "黄金",
+    "白银",
+    "采选",
+    "冶炼",
+    "铁精粉",
+    "球团",
+    "高纯氢氧化镁",
+    "高纯氧化镁",
+    "无水氢氟酸",
+    "镍"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铜精矿",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锌精矿",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铅精矿",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电解铜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锌锭",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:35:02"
+}

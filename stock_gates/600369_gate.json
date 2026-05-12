@@ -1,0 +1,46 @@
+{
+  "stock_id": "600369",
+  "stock_name": "西南证券",
+  "concept": "综合券商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "证券及期货经纪业务",
+    "投资银行业务",
+    "自营业务",
+    "资产管理业务"
+  ],
+  "should": [
+    "新三板业务",
+    "场外市场业务",
+    "西证股权",
+    "西证创新",
+    "西南期货",
+    "西证国际",
+    "银华基金",
+    "重庆股权服务集团",
+    "综合券商",
+    "全牌照经营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "证券及期货经纪业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资银行业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自营业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "资产管理业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:16:17"
+}

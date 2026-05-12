@@ -1,0 +1,41 @@
+{
+  "stock_id": "603660",
+  "stock_name": "苏州科达",
+  "concept": "视频应用服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "视频会议系统",
+    "视频监控系统",
+    "融合通信系统"
+  ],
+  "should": [
+    "5G移动视频设备",
+    "行业应用软件",
+    "AI超微光技术",
+    "云原生应用",
+    "中台战略",
+    "一基座三中台架构",
+    "智能深度学习技术",
+    "视频应用服务",
+    "新型智慧城市建设",
+    "政企客户数字化转型"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "视频会议系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "视频监控系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "融合通信系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:54:06"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "603155",
+  "stock_name": "新亚强",
+  "concept": "有机硅精细化学品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "有机硅精细化学品",
+    "六甲基二硅氮烷",
+    "苯基氯硅烷"
+  ],
+  "should": [
+    "乙烯基双封头",
+    "苯基氧硅烷",
+    "无溶剂法专利技术",
+    "直接法生产苯基氯硅烷",
+    "乙烯基新型特种单体专利技术",
+    "有机硅新材料",
+    "医药",
+    "电子化学品",
+    "新能源",
+    "半导体工业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "有机硅精细化学品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "六甲基二硅氮烷",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "苯基氯硅烷",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:44:55"
+}

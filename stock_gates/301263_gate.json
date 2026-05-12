@@ -1,0 +1,44 @@
+{
+  "stock_id": "301263",
+  "stock_name": "泰恩康",
+  "concept": "综合性医药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "自产医药产品",
+    "代理运营医药产品",
+    "爱廷玖",
+    "CKBA"
+  ],
+  "should": [
+    "仿制药开发及一致性评价技术平台",
+    "功能性辅料和纳米给药关键技术平台",
+    "爱廷威",
+    "和胃整肠丸",
+    "沃丽汀",
+    "注射用多西他赛聚合物胶束",
+    "注射用顺铂聚合物胶束",
+    "注射用紫杉醇聚合物胶束"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "自产医药产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "代理运营医药产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "爱廷玖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CKBA",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:01:16"
+}

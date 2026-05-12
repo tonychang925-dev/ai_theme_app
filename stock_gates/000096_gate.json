@@ -1,0 +1,43 @@
+{
+  "stock_id": "000096",
+  "stock_name": "广聚能源",
+  "concept": "成品油经销",
+  "strategy_type": "industry_chain",
+  "must": [
+    "成品油经销",
+    "成品油批发零售",
+    "成品油仓储",
+    "液化石油气经销"
+  ],
+  "should": [
+    "成品油特许经营资质",
+    "危险化学品特许经营资质",
+    "石油石化产业链下游",
+    "深圳市",
+    "珠江三角洲",
+    "12座加油站",
+    "储罐设施"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "成品油经销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "成品油批发零售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "成品油仓储",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液化石油气经销",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:50:14"
+}

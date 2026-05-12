@@ -1,0 +1,40 @@
+{
+  "stock_id": "001914",
+  "stock_name": "招商积余",
+  "concept": "央企物管",
+  "strategy_type": "industry_chain",
+  "must": [
+    "央企物管",
+    "物业管理",
+    "资产管理"
+  ],
+  "should": [
+    "沃土云林",
+    "物业基础管理服务",
+    "平台增值服务",
+    "专业增值服务",
+    "开发商服务及房产经纪",
+    "设施管理",
+    "建筑科技服务",
+    "商业运营",
+    "持有物业出租及经营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "央企物管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物业管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "资产管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:17:40"
+}

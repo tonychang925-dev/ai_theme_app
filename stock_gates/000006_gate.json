@@ -1,0 +1,36 @@
+{
+  "stock_id": "000006",
+  "stock_name": "深振业A",
+  "concept": "房地产综合开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "房地产开发经营",
+    "一体两翼"
+  ],
+  "should": [
+    "住房租赁",
+    "房地产产业链延伸",
+    "河源",
+    "房地产综合开发",
+    "普通居民住宅",
+    "商用物业",
+    "别墅",
+    "业务外包",
+    "投资决策体系",
+    "成本控制体系"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房地产开发经营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一体两翼",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:34:51"
+}

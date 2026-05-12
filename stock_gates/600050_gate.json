@@ -1,0 +1,46 @@
+{
+  "stock_id": "600050",
+  "stock_name": "中国联通",
+  "concept": "电信运营商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "移动通信",
+    "固网宽带",
+    "云计算",
+    "大数据"
+  ],
+  "should": [
+    "物联网",
+    "人工智能",
+    "IDC数据中心",
+    "腾讯",
+    "百度",
+    "京东",
+    "阿里巴巴",
+    "电信运营商",
+    "5G用户",
+    "千兆用户"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "移动通信",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "固网宽带",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云计算",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大数据",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:07:53"
+}

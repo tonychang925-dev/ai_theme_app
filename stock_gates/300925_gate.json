@@ -1,0 +1,36 @@
+{
+  "stock_id": "300925",
+  "stock_name": "法本信息",
+  "concept": "数字化技术服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金融IT",
+    "智能汽车",
+    "实时智能计算"
+  ],
+  "should": [
+    "AI",
+    "大数据",
+    "低代码",
+    "容器云",
+    "数字化技术服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金融IT",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能汽车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "实时智能计算",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:49:29"
+}

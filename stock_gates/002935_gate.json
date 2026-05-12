@@ -1,0 +1,46 @@
+{
+  "stock_id": "002935",
+  "stock_name": "天奥电子",
+  "concept": "军用时频核心器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "军用时频核心器件",
+    "铷原子钟",
+    "晶体器件",
+    "时间同步设备"
+  ],
+  "should": [
+    "军用时间同步产品主要供应商",
+    "北斗卫星手表",
+    "电科10所唯一上市平台",
+    "原子钟制造",
+    "量子力学与电子学结合",
+    "通信",
+    "导航",
+    "雷达",
+    "侦察",
+    "测控"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "军用时频核心器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铷原子钟",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "晶体器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "时间同步设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:04:00"
+}

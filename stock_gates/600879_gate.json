@@ -1,0 +1,41 @@
+{
+  "stock_id": "600879",
+  "stock_name": "航天电子",
+  "concept": "航天电子",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航天电子",
+    "航天电子产品",
+    "无人系统及高端智能装备"
+  ],
+  "should": [
+    "电线电缆",
+    "测控通信",
+    "惯性导航",
+    "机电组件",
+    "集成电路",
+    "军事领域",
+    "民用领域",
+    "军贸市场",
+    "航天电子行业领军企业",
+    "全军无人机型谱项目研制总体单位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航天电子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航天电子产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无人系统及高端智能装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:30:19"
+}

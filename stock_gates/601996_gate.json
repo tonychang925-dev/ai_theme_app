@@ -1,0 +1,36 @@
+{
+  "stock_id": "601996",
+  "stock_name": "丰林集团",
+  "concept": "人造板制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "纤维板",
+    "刨花板"
+  ],
+  "should": [
+    "超强刨花板",
+    "人造板制造",
+    "家具制造",
+    "室内装饰",
+    "建筑装潢",
+    "车船装修",
+    "工艺制品",
+    "高级音响",
+    "乐器",
+    "电子行业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "纤维板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "刨花板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:40:34"
+}

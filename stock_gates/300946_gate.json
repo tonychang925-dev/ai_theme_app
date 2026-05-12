@@ -1,0 +1,31 @@
+{
+  "stock_id": "300946",
+  "stock_name": "恒而达",
+  "concept": "金属切削工具",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金属切削工具"
+  ],
+  "should": [
+    "模切工具",
+    "锯切工具",
+    "CNC全自动圆锯机",
+    "高速数控带锯床",
+    "柔性材料智能裁切机",
+    "直线导轨副",
+    "金属材料",
+    "热处理",
+    "精密加工制造",
+    "自动化控制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金属切削工具",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:50:18"
+}

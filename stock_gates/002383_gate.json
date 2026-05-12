@@ -1,0 +1,41 @@
+{
+  "stock_id": "002383",
+  "stock_name": "合众思壮",
+  "concept": "时空信息产业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "时空信息产业",
+    "卫星导航应用",
+    "通导一体化技术"
+  ],
+  "should": [
+    "军用自组网业务",
+    "自组网技术",
+    "高精度技术",
+    "测量测绘",
+    "精准农业",
+    "公共安全",
+    "航空调度",
+    "军工领域",
+    "全产业链布局",
+    "云+端创新模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "时空信息产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "卫星导航应用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通导一体化技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:38:52"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300390",
+  "stock_name": "天华新能",
+  "concept": "锂电材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电材料",
+    "锂盐业务",
+    "电池级氢氧化锂"
+  ],
+  "should": [
+    "防静电超净技术",
+    "医疗器械",
+    "碳酸锂",
+    "防静电无尘服",
+    "安全式注射器",
+    "锂辉石精矿",
+    "锂矿项目",
+    "新能源产业链",
+    "精密电子制造",
+    "与宁德时代合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂盐业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电池级氢氧化锂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:25:18"
+}

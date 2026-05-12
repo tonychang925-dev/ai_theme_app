@@ -1,0 +1,46 @@
+{
+  "stock_id": "603818",
+  "stock_name": "曲美家居",
+  "concept": "中高端家居",
+  "strategy_type": "industry_chain",
+  "must": [
+    "成品家具",
+    "全屋定制",
+    "定制家居",
+    "成品家居"
+  ],
+  "should": [
+    "Stressless",
+    "IMG",
+    "Svane",
+    "Ekornes Contract",
+    "橱柜",
+    "木门",
+    "软装配套",
+    "中高端家居",
+    "B2B工程业务",
+    "家装渠道业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "成品家具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全屋定制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "定制家居",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "成品家居",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:57:10"
+}

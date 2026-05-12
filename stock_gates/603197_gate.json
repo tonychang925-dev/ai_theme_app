@@ -1,0 +1,46 @@
+{
+  "stock_id": "603197",
+  "stock_name": "保隆科技",
+  "concept": "汽车智能传感",
+  "strategy_type": "industry_chain",
+  "must": [
+    "TPMS",
+    "空气悬架",
+    "传感器",
+    "ADAS"
+  ],
+  "should": [
+    "轻量化结构件",
+    "空气弹簧",
+    "储气罐",
+    "压力传感器",
+    "光学传感器",
+    "轮速传感器",
+    "位置传感器",
+    "加速度传感器",
+    "电流传感器",
+    "摄像头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "TPMS",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空气悬架",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "传感器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ADAS",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:46:14"
+}

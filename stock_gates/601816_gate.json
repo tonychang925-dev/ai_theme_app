@@ -1,0 +1,31 @@
+{
+  "stock_id": "601816",
+  "stock_name": "京沪高铁",
+  "concept": "高铁客运",
+  "strategy_type": "industry_chain",
+  "must": [
+    "京沪高速铁路"
+  ],
+  "should": [
+    "合蚌客运专线",
+    "合福铁路安徽段",
+    "郑阜铁路安徽段",
+    "商合杭铁路安徽段",
+    "本线列车旅客运输服务",
+    "跨线列车路网服务",
+    "线路使用",
+    "接触网使用",
+    "委托运输管理",
+    "租赁动车组"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "京沪高速铁路",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:38:47"
+}

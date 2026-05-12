@@ -1,0 +1,31 @@
+{
+  "stock_id": "000403",
+  "stock_name": "派林生物",
+  "concept": "血液制品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "血液制品"
+  ],
+  "should": [
+    "人血白蛋白",
+    "免疫球蛋白",
+    "凝血因子类",
+    "生物学工艺",
+    "分离纯化技术",
+    "层析法",
+    "医疗抢救",
+    "特定疾病预防和治疗",
+    "重大疾病急救",
+    "原料血浆稀缺且不可替代"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "血液制品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T16:51:39"
+}

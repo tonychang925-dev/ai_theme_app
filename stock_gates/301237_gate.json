@@ -1,0 +1,45 @@
+{
+  "stock_id": "301237",
+  "stock_name": "和顺科技",
+  "concept": "功能性聚酯薄膜",
+  "strategy_type": "industry_chain",
+  "must": [
+    "功能性聚酯薄膜",
+    "有色光电基膜",
+    "透明膜",
+    "其他功能膜"
+  ],
+  "should": [
+    "先进工艺和独特配方",
+    "食品、药品包装",
+    "VCM面板（冰箱、洗衣机、橱柜）",
+    "电缆屏蔽、空调管道包装、防水材料",
+    "太阳能背板",
+    "电子、电气产品绝缘",
+    "软包锂电池包装",
+    "阻燃胶带",
+    "差异化、功能性产品专业提供商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "功能性聚酯薄膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有色光电基膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "透明膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "其他功能膜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:00:28"
+}

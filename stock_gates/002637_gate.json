@@ -1,0 +1,36 @@
+{
+  "stock_id": "002637",
+  "stock_name": "赞宇科技",
+  "concept": "表面活性剂龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "表面活性剂龙头",
+    "表面活性剂"
+  ],
+  "should": [
+    "油脂化学品",
+    "洗护用品OEM/ODM",
+    "绿色化可持续发展",
+    "差异化、功能化、高端化、精细化",
+    "洗涤剂",
+    "化妆品",
+    "食品加工",
+    "纺织印染",
+    "塑料",
+    "橡胶"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "表面活性剂龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "表面活性剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:50:58"
+}

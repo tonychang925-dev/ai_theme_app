@@ -1,0 +1,41 @@
+{
+  "stock_id": "301015",
+  "stock_name": "百洋医药",
+  "concept": "医药品牌运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药品牌运营",
+    "医药产品品牌运营",
+    "品牌运营"
+  ],
+  "should": [
+    "迪巧",
+    "泌特",
+    "全数据平台客户管理",
+    "长期运营",
+    "希舒美",
+    "适加坦",
+    "卫喜康",
+    "贝坦利",
+    "安博美",
+    "希罗达"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医药品牌运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药产品品牌运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "品牌运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:53:13"
+}

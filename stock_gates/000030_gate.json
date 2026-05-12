@@ -1,0 +1,31 @@
+{
+  "stock_id": "000030",
+  "stock_name": "富奥股份",
+  "concept": "汽车零部件制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车零部件制造"
+  ],
+  "should": [
+    "底盘系统",
+    "热系统",
+    "发动机附件系统",
+    "转向及安全系统",
+    "制动和传动系统",
+    "紧固件",
+    "新能源",
+    "智能网联",
+    "国内整车/整机企业配套",
+    "远销海外"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车零部件制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T16:47:48"
+}

@@ -1,0 +1,35 @@
+{
+  "stock_id": "300483",
+  "stock_name": "首华燃气",
+  "concept": "天然气+园艺用品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "园艺用品业务",
+    "园林工具",
+    "园林机械"
+  ],
+  "should": [
+    "天然气业务",
+    "天然气",
+    "能源消费",
+    "园艺用品零售"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "园艺用品业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "园林工具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "园林机械",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:29:12"
+}

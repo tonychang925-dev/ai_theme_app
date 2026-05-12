@@ -1,0 +1,51 @@
+{
+  "stock_id": "688167",
+  "stock_name": "炬光科技",
+  "concept": "激光上游元器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体激光",
+    "激光光学",
+    "汽车应用（激光雷达）",
+    "光学系统",
+    "上游核心元器件"
+  ],
+  "should": [
+    "中游光子技术应用解决方案",
+    "共晶键合技术",
+    "热管理技术",
+    "线光斑整形技术",
+    "光束转换技术",
+    "光场匀化技术",
+    "激光上游元器件",
+    "固体/光纤激光器",
+    "医疗美容设备",
+    "工业制造设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体激光",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "激光光学",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车应用（激光雷达）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光学系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "上游核心元器件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:10:30"
+}

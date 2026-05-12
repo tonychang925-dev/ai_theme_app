@@ -1,0 +1,45 @@
+{
+  "stock_id": "300633",
+  "stock_name": "开立医疗",
+  "concept": "超声内镜平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "超声内镜平台",
+    "超声医学影像",
+    "内镜诊疗",
+    "高端彩超"
+  ],
+  "should": [
+    "软镜",
+    "硬镜",
+    "腹腔镜超声系统",
+    "微创外科",
+    "体外诊断",
+    "聚谱成像技术(SFI)",
+    "VIST技术",
+    "国产医用内窥镜领先企业",
+    "全球超过200家经销商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "超声内镜平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超声医学影像",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "内镜诊疗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端彩超",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:36:20"
+}

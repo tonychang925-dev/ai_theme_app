@@ -1,0 +1,36 @@
+{
+  "stock_id": "300932",
+  "stock_name": "三友联众",
+  "concept": "继电器制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "继电器制造",
+    "继电器"
+  ],
+  "should": [
+    "互感器",
+    "小型化",
+    "低功耗",
+    "智能化",
+    "数字化",
+    "网络化",
+    "军事装备",
+    "通讯",
+    "汽车",
+    "工业控制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "继电器制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "继电器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:49:45"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "603507",
+  "stock_name": "振江股份",
+  "concept": "新能源零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "机舱罩",
+    "转子房",
+    "定子段",
+    "固定/可调式光伏支架",
+    "追踪式光伏支架"
+  ],
+  "should": [
+    "焊接并行控制",
+    "机加工精度控制",
+    "表面处理质量控制",
+    "热浸锌工艺",
+    "新能源零部件",
+    "陆上风电",
+    "海上风电",
+    "地面光伏发电系统",
+    "大型追踪式地面光伏发电系统",
+    "西门子集团合格供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "机舱罩",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "转子房",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "定子段",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "固定/可调式光伏支架",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "追踪式光伏支架",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:51:33"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "000776",
+  "stock_name": "广发证券",
+  "concept": "综合券商服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "财富管理",
+    "易方达基金",
+    "广发基金"
+  ],
+  "should": [
+    "证券经纪",
+    "投资银行",
+    "金融产品代销",
+    "综合券商服务",
+    "高净值人群集中",
+    "广东地区营业部128家",
+    "一参一控",
+    "老牌券商",
+    "客户粘性强",
+    "投顾团队经验丰富"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "财富管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "易方达基金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "广发基金",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:04:13"
+}

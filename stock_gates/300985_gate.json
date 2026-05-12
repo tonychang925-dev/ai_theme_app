@@ -1,0 +1,30 @@
+{
+  "stock_id": "300985",
+  "stock_name": "致远新能",
+  "concept": "车载LNG供气系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "车载LNG供气系统"
+  ],
+  "should": [
+    "船用LNG燃料供气系统",
+    "结构设计",
+    "真空度",
+    "产品轻量化",
+    "智能化",
+    "大容积及超大容积",
+    "重型卡车",
+    "工程车",
+    "内河运输船舶"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "车载LNG供气系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:51:58"
+}

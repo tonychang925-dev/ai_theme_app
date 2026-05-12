@@ -1,0 +1,30 @@
+{
+  "stock_id": "603630",
+  "stock_name": "拉芳家化",
+  "concept": "日用化学产品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "拉芳",
+    "雨洁"
+  ],
+  "should": [
+    "美多丝",
+    "瑞铂希",
+    "T8",
+    "VNK"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "拉芳",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "雨洁",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:53:34"
+}

@@ -1,0 +1,33 @@
+{
+  "stock_id": "300082",
+  "stock_name": "奥克股份",
+  "concept": "环氧乙烷精细化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环氧乙烷精细化工",
+    "减水剂聚醚单体",
+    "碳酸乙烯酯"
+  ],
+  "should": [
+    "高纯度聚乙二醇",
+    "锂电池电解液溶剂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环氧乙烷精细化工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "减水剂聚醚单体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳酸乙烯酯",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:12:35"
+}

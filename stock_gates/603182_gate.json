@@ -1,0 +1,31 @@
+{
+  "stock_id": "603182",
+  "stock_name": "嘉华股份",
+  "concept": "大豆深加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大豆蛋白"
+  ],
+  "should": [
+    "大豆油",
+    "大豆膳食纤维",
+    "低温食用豆粕",
+    "大豆深加工",
+    "大豆深加工研发",
+    "浸出法提取",
+    "水化脱胶",
+    "真空脱溶",
+    "超微粉碎",
+    "食品加工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大豆蛋白",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:45:37"
+}

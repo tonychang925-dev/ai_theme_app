@@ -1,0 +1,36 @@
+{
+  "stock_id": "600057",
+  "stock_name": "厦门象屿",
+  "concept": "大宗商品供应链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大宗商品供应链",
+    "物流仓储网络"
+  ],
+  "should": [
+    "金属矿产",
+    "能源化工",
+    "农产品",
+    "新能源",
+    "铁路物流",
+    "采购分销",
+    "全程物流",
+    "库存管理",
+    "供应链金融",
+    "粗加工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大宗商品供应链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物流仓储网络",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:08:05"
+}

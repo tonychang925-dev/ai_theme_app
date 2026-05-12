@@ -1,0 +1,41 @@
+{
+  "stock_id": "002119",
+  "stock_name": "康强电子",
+  "concept": "半导体封装材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国内第二大的金丝生产企业",
+    "引线框架",
+    "键合丝"
+  ],
+  "should": [
+    "半导体封装材料",
+    "全球引线框架产销规模第七",
+    "电极丝",
+    "模具",
+    "冲制法",
+    "蚀刻法",
+    "微电子",
+    "半导体封装",
+    "航空航天",
+    "通信"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国内第二大的金丝生产企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "引线框架",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "键合丝",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:24:23"
+}

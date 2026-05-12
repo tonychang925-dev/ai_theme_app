@@ -1,0 +1,36 @@
+{
+  "stock_id": "001226",
+  "stock_name": "拓山重工",
+  "concept": "工程机械零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程机械零部件",
+    "链轨节"
+  ],
+  "should": [
+    "销套",
+    "支重轮",
+    "销轴",
+    "制动装置系列",
+    "锻造",
+    "机加工",
+    "热处理",
+    "探伤检测",
+    "挖掘机",
+    "推土机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程机械零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "链轨节",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:14:08"
+}

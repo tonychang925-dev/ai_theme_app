@@ -1,0 +1,43 @@
+{
+  "stock_id": "688382",
+  "stock_name": "益方生物",
+  "concept": "创新药研发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "D-1553",
+    "D-0502",
+    "D-0120",
+    "D-2570"
+  ],
+  "should": [
+    "KRASG12C抑制剂",
+    "创新药研发",
+    "非小细胞肺癌",
+    "结直肠癌",
+    "乳腺癌",
+    "高尿酸血症及痛风",
+    "银屑病等自身免疫性疾病"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "D-1553",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "D-0502",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "D-0120",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "D-2570",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:17:12"
+}

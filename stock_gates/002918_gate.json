@@ -1,0 +1,41 @@
+{
+  "stock_id": "002918",
+  "stock_name": "蒙娜丽莎",
+  "concept": "建筑陶瓷",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑陶瓷",
+    "瓷质有釉砖",
+    "陶瓷薄板/薄砖"
+  ],
+  "should": [
+    "瓷质无釉砖",
+    "非瓷质有釉砖",
+    "干压陶瓷薄板",
+    "绿色化生产工艺",
+    "智能化生产工艺",
+    "住宅装修装饰",
+    "建筑幕墙工程",
+    "户外陶瓷艺术壁画",
+    "室内陶瓷艺术壁画",
+    "装配式建筑"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑陶瓷",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "瓷质有釉砖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "陶瓷薄板/薄砖",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:03:11"
+}

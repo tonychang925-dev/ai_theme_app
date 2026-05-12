@@ -1,0 +1,39 @@
+{
+  "stock_id": "000791",
+  "stock_name": "甘肃能源",
+  "concept": "清洁能源发电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "清洁能源发电",
+    "水力发电",
+    "风力发电",
+    "光伏发电"
+  ],
+  "should": [
+    "电力",
+    "甘肃省河西地区",
+    "光伏权益装机容量18.6万千瓦"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "清洁能源发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水力发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风力发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏发电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:04:52"
+}

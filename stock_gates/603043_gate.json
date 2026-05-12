@@ -1,0 +1,46 @@
+{
+  "stock_id": "603043",
+  "stock_name": "广州酒家",
+  "concept": "广式月饼龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "广式月饼龙头",
+    "广式月饼",
+    "利口福",
+    "广州酒家"
+  ],
+  "should": [
+    "速冻点心",
+    "莲蓉馅料",
+    "西饼面包",
+    "陶陶居",
+    "广东食品生产基地",
+    "湘潭食品生产基地",
+    "梅州食品生产基地",
+    "茂名粮丰园",
+    "月饼消费",
+    "速冻食品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "广式月饼龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "广式月饼",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "利口福",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "广州酒家",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:41:59"
+}

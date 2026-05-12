@@ -1,0 +1,46 @@
+{
+  "stock_id": "002212",
+  "stock_name": "天融信",
+  "concept": "网络安全",
+  "strategy_type": "industry_chain",
+  "must": [
+    "防火墙",
+    "态势感知",
+    "云计算",
+    "云安全"
+  ],
+  "should": [
+    "VPN",
+    "大数据",
+    "工控防火墙",
+    "工业互联网态势感知",
+    "工控漏洞扫描",
+    "主控芯片",
+    "协议分析",
+    "红蓝对抗",
+    "固件开发",
+    "攻防研究"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "防火墙",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "态势感知",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云计算",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云安全",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:29:32"
+}

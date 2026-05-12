@@ -1,0 +1,39 @@
+{
+  "stock_id": "600526",
+  "stock_name": "菲达环保",
+  "concept": "环保装备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环保装备制造",
+    "大气板块",
+    "水务板块"
+  ],
+  "should": [
+    "电除尘设备",
+    "污水处理系统",
+    "污泥处置设备",
+    "固板块",
+    "尖兵领雁计划项目",
+    "大气污染防治",
+    "水环境治理",
+    "固废处理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环保装备制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大气板块",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水务板块",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:20:14"
+}

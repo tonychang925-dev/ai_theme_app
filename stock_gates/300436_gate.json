@@ -1,0 +1,36 @@
+{
+  "stock_id": "300436",
+  "stock_name": "广生堂",
+  "concept": "肝脏健康药物",
+  "strategy_type": "industry_chain",
+  "must": [
+    "肝脏健康药物",
+    "保肝护肝药物"
+  ],
+  "should": [
+    "男性健康药物",
+    "心血管药物",
+    "抗新冠病毒药物",
+    "自主研发",
+    "合作开发",
+    "产业并购",
+    "仿创结合",
+    "乙肝",
+    "丙肝",
+    "脂肪肝"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "肝脏健康药物",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "保肝护肝药物",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:27:21"
+}

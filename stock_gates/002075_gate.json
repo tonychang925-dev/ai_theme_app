@@ -1,0 +1,31 @@
+{
+  "stock_id": "002075",
+  "stock_name": "沙钢股份",
+  "concept": "优特钢生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "优特钢生产"
+  ],
+  "should": [
+    "弹簧钢",
+    "齿轮钢",
+    "轴承钢",
+    "车轮钢",
+    "车轴钢",
+    "锚链钢",
+    "非调质钢",
+    "高压锅炉管用钢",
+    "优质碳素钢",
+    "合金结构钢"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "优特钢生产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:21:54"
+}

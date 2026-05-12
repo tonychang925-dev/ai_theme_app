@@ -1,0 +1,36 @@
+{
+  "stock_id": "688249",
+  "stock_name": "晶合集成",
+  "concept": "晶圆代工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "晶圆代工",
+    "12英寸晶圆代工"
+  ],
+  "should": [
+    "DDIC",
+    "CIS",
+    "PMIC",
+    "MCU",
+    "Logic",
+    "150nm至55nm制程",
+    "40nm高压OLED",
+    "28nm逻辑芯片",
+    "110nm Micro OLED",
+    "55nm车载显示驱动"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "晶圆代工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "12英寸晶圆代工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:13:00"
+}

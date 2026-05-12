@@ -1,0 +1,41 @@
+{
+  "stock_id": "300505",
+  "stock_name": "川金诺",
+  "concept": "磷化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "磷化工",
+    "湿法磷酸工艺",
+    "湿法净化磷酸"
+  ],
+  "should": [
+    "磷酸氢钙",
+    "磷酸一二钙",
+    "磷酸二氢钙",
+    "重过磷酸钙",
+    "磷酸净化提纯",
+    "农业",
+    "工业",
+    "新能源",
+    "医药",
+    "食品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "磷化工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "湿法磷酸工艺",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "湿法净化磷酸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:30:21"
+}

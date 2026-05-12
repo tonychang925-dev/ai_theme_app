@@ -1,0 +1,51 @@
+{
+  "stock_id": "601399",
+  "stock_name": "国机重装",
+  "concept": "重型装备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "重型装备制造",
+    "重型机械",
+    "重大技术装备",
+    "国内最大重型机械制造基地",
+    "重大技术装备国产化基地"
+  ],
+  "should": [
+    "铸锻件",
+    "压力容器",
+    "冶金设备",
+    "核电装备",
+    "关键核心技术",
+    "国产化替代",
+    "卡脖子技术",
+    "精益化管理",
+    "数字化技术",
+    "清洁能源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "重型装备制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重型机械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重大技术装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内最大重型机械制造基地",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重大技术装备国产化基地",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:36:39"
+}

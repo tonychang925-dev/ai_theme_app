@@ -1,0 +1,41 @@
+{
+  "stock_id": "300145",
+  "stock_name": "南方泵业",
+  "concept": "不锈钢离心泵龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "不锈钢离心泵龙头",
+    "不锈钢冲压焊接离心泵",
+    "国内不锈钢离心泵领域龙头"
+  ],
+  "should": [
+    "CDM系列立式不锈钢离心泵",
+    "冲压焊接工艺",
+    "高效节能技术",
+    "管道增压",
+    "工业用水",
+    "楼宇供水",
+    "暖通系统",
+    "消防系统",
+    "净水处理",
+    "医药及电子清洗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "不锈钢离心泵龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "不锈钢冲压焊接离心泵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内不锈钢离心泵领域龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:15:11"
+}

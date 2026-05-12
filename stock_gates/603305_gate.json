@@ -1,0 +1,50 @@
+{
+  "stock_id": "603305",
+  "stock_name": "旭升集团",
+  "concept": "铝合金轻量化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "压铸",
+    "锻造",
+    "挤压",
+    "铝制壳体",
+    "结构件"
+  ],
+  "should": [
+    "户用储能铝部件",
+    "铝瓶",
+    "高压无缝铝合金气瓶",
+    "铝合金轻量化",
+    "传动系统",
+    "控制系统",
+    "悬挂系统",
+    "电池系统",
+    "储能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "压铸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锻造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "挤压",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铝制壳体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "结构件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:48:33"
+}

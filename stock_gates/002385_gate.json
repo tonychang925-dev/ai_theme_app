@@ -1,0 +1,51 @@
+{
+  "stock_id": "002385",
+  "stock_name": "大北农",
+  "concept": "现代农业科技",
+  "strategy_type": "industry_chain",
+  "must": [
+    "转基因技术",
+    "生物育种技术",
+    "转基因玉米性状",
+    "转基因大豆性状",
+    "种业服务"
+  ],
+  "should": [
+    "饲料科技产业",
+    "养猪科技产业",
+    "作物科技产业",
+    "动保疫苗科技产业",
+    "农业互联网产业",
+    "前端料",
+    "母猪料",
+    "杂交水稻",
+    "常规玉米",
+    "生猪养殖"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "转基因技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物育种技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "转基因玉米性状",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "转基因大豆性状",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "种业服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:39:07"
+}

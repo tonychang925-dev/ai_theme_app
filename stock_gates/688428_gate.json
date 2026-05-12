@@ -1,0 +1,36 @@
+{
+  "stock_id": "688428",
+  "stock_name": "诺诚健华",
+  "concept": "创新生物医药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "奥布替尼",
+    "Tafasitamab"
+  ],
+  "should": [
+    "ICP-490",
+    "ICP-332",
+    "ICP-488",
+    "ICP-192",
+    "ICP-723",
+    "ICP-189",
+    "化合物优化平台",
+    "药物晶型研究平台",
+    "基于生物标志物的转化医学研究平台",
+    "GMP标准生产基地"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "奥布替尼",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "Tafasitamab",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:18:12"
+}

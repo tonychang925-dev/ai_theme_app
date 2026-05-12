@@ -1,0 +1,40 @@
+{
+  "stock_id": "600303",
+  "stock_name": "曙光股份",
+  "concept": "汽车集团",
+  "strategy_type": "industry_chain",
+  "must": [
+    "乘用车、皮卡等轻型车业务",
+    "客车及特种车等商用车业务",
+    "车桥等汽车零配件业务"
+  ],
+  "should": [
+    "黄海N系列皮卡",
+    "纯电动城市客车",
+    "氢能源客车",
+    "车桥",
+    "底盘技术",
+    "新能源客车技术",
+    "氢能源技术",
+    "汽车集团",
+    "电动化、智能化、乘用化转型技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "乘用车、皮卡等轻型车业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "客车及特种车等商用车业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车桥等汽车零配件业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:14:26"
+}

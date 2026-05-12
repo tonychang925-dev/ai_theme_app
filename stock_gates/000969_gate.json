@@ -1,0 +1,41 @@
+{
+  "stock_id": "000969",
+  "stock_name": "安泰科技",
+  "concept": "稀土永磁新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "稀土永磁新材料",
+    "难熔钨钼",
+    "稀土永磁材料钕铁硼"
+  ],
+  "should": [
+    "高速工具钢",
+    "超硬材料",
+    "环境材料",
+    "全球领先的金刚石工具制造商",
+    "国内高速工具钢的行业领导者",
+    "水气雾化制粉的国内首创者",
+    "国内领先的工业过滤材料供应商",
+    "国内非晶/纳米晶材料的先行者",
+    "难熔金属制备工艺",
+    "钨渗铜技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "稀土永磁新材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "难熔钨钼",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "稀土永磁材料钕铁硼",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:12:01"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "002927",
+  "stock_name": "泰永长征",
+  "concept": "智慧电气",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧电气",
+    "数字化智能变配电",
+    "新能源充电桩",
+    "固态断路器"
+  ],
+  "should": [
+    "双电源自动转换开关电器",
+    "断路器",
+    "工业控制电器",
+    "配网成套设备",
+    "TYTFUTURE智能云管理平台",
+    "大功率快充",
+    "柔性充电",
+    "边缘计算",
+    "物联网",
+    "轨道交通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧电气",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字化智能变配电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源充电桩",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "固态断路器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:03:39"
+}

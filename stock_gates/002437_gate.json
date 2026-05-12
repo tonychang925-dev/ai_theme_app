@@ -1,0 +1,40 @@
+{
+  "stock_id": "002437",
+  "stock_name": "誉衡药业",
+  "concept": "产品领先医药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "氯化钾缓释片",
+    "CMO平台",
+    "CSO销售体系"
+  ],
+  "should": [
+    "安脑丸/片",
+    "鹿瓜多肽注射液",
+    "赛帕利单抗注射液",
+    "一致性评价",
+    "产品工艺提升",
+    "联合用药研发",
+    "骨科治疗",
+    "心脑血管治疗",
+    "抗肿瘤治疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "氯化钾缓释片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CMO平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CSO销售体系",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:41:33"
+}

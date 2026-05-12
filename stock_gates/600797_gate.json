@@ -1,0 +1,51 @@
+{
+  "stock_id": "600797",
+  "stock_name": "浙大网新",
+  "concept": "数智化服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智算云服务",
+    "政府数字化",
+    "基建数智化",
+    "产业数智化",
+    "人工智能"
+  ],
+  "should": [
+    "智算云",
+    "大数据",
+    "隐私计算",
+    "区块链",
+    "物联网",
+    "数字孪生",
+    "智慧人社",
+    "智能交通",
+    "金融科技",
+    "云计算服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智算云服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "政府数字化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "基建数智化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "产业数智化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人工智能",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:28:08"
+}

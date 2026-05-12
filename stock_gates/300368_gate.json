@@ -1,0 +1,46 @@
+{
+  "stock_id": "300368",
+  "stock_name": "汇金股份",
+  "concept": "金融科技全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金融科技全产业链",
+    "金融机具",
+    "金融科技",
+    "金融服务"
+  ],
+  "should": [
+    "智慧银行",
+    "智能化金融自助设备",
+    "自助服务终端",
+    "钣金产品",
+    "新零售",
+    "政企自助服务",
+    "人工智能",
+    "区块链技术",
+    "大数据",
+    "云计算"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金融科技全产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融机具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融科技",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:24:14"
+}

@@ -1,0 +1,43 @@
+{
+  "stock_id": "002242",
+  "stock_name": "九阳股份",
+  "concept": "厨房小家电龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "豆浆机",
+    "电磁炉",
+    "电饭煲",
+    "清洁电器"
+  ],
+  "should": [
+    "破壁机",
+    "空气炸锅",
+    "主控芯片",
+    "固件开发",
+    "厨房小家电龙头",
+    "行业前三",
+    "美苏九稳居前三"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "豆浆机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电磁炉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电饭煲",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "清洁电器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:31:13"
+}

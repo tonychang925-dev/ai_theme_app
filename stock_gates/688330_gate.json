@@ -1,0 +1,46 @@
+{
+  "stock_id": "688330",
+  "stock_name": "宏力达",
+  "concept": "智能配电网设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能配电网设备",
+    "智能柱上开关",
+    "智能环网柜",
+    "专精特新小巨人"
+  ],
+  "should": [
+    "配电终端FTU",
+    "接地短路故障指示器",
+    "5G通信",
+    "量子加密",
+    "北斗通信",
+    "电力专网通信",
+    "高精度电子传感器",
+    "外置电容取电装置",
+    "软件平台核心共用组件及算法",
+    "配电网"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能配电网设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能柱上开关",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能环网柜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "专精特新小巨人",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:15:43"
+}

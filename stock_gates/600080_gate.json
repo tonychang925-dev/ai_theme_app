@@ -1,0 +1,36 @@
+{
+  "stock_id": "600080",
+  "stock_name": "金花股份",
+  "concept": "骨科中药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金天格胶囊",
+    "人工虎骨粉"
+  ],
+  "should": [
+    "骨科中药",
+    "人工虎骨粉产业化",
+    "专利技术",
+    "自主知识产权",
+    "骨科临床中药一线用药",
+    "骨质疏松治疗",
+    "免疫调节",
+    "转移因子系列药",
+    "儿童系列药",
+    "全球独家人工虎骨产业化生产基地"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金天格胶囊",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人工虎骨粉",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:08:40"
+}

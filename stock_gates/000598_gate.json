@@ -1,0 +1,44 @@
+{
+  "stock_id": "000598",
+  "stock_name": "兴蓉环境",
+  "concept": "水务环保综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水务环保综合服务",
+    "自来水业务",
+    "污水处理及中水利用业务",
+    "环保业务"
+  ],
+  "should": [
+    "工程业务",
+    "市政工程总承包二级资质",
+    "BOO",
+    "BOT",
+    "TOT",
+    "委托运营",
+    "供排水项目规模逾880万吨/日",
+    "中水利用项目规模122万吨/日"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水务环保综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自来水业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "污水处理及中水利用业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环保业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:57:48"
+}

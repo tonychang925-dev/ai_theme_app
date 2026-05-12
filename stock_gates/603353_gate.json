@@ -1,0 +1,51 @@
+{
+  "stock_id": "603353",
+  "stock_name": "和顺石油",
+  "concept": "成品油流通",
+  "strategy_type": "industry_chain",
+  "must": [
+    "加油站零售连锁经营",
+    "成品油仓储",
+    "批发",
+    "自营加油站64座",
+    "自建油库"
+  ],
+  "should": [
+    "铁路专用线",
+    "水路码头",
+    "铜官交易中心",
+    "壳牌",
+    "中海油",
+    "省高速",
+    "充电",
+    "换电",
+    "综合能源补给站",
+    "成品油流通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "加油站零售连锁经营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "成品油仓储",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "批发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自营加油站64座",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自建油库",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:49:53"
+}

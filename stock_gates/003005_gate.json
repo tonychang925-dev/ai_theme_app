@@ -1,0 +1,41 @@
+{
+  "stock_id": "003005",
+  "stock_name": "竞业达",
+  "concept": "教育信息化龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "标准化考点",
+    "智慧教室",
+    "标准化考点龙头企业"
+  ],
+  "should": [
+    "视频监控与综合安防解决方案",
+    "AI算法",
+    "大数据技术",
+    "窄带物联网技术",
+    "城市交通设施监测",
+    "市政管线检测",
+    "互动教学网关",
+    "轻新课堂移动应用APP",
+    "一体化应用云平台",
+    "教育信息化龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "标准化考点",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧教室",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "标准化考点龙头企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:07:11"
+}

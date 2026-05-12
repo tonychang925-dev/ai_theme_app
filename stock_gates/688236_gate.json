@@ -1,0 +1,36 @@
+{
+  "stock_id": "688236",
+  "stock_name": "春立医疗",
+  "concept": "骨科医疗器械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "关节假体产品",
+    "脊柱类植入产品"
+  ],
+  "should": [
+    "PRP",
+    "运动医学",
+    "口腔产品",
+    "低摩擦关节界面技术",
+    "个性化生物型股骨技术",
+    "压配式生物髋臼技术",
+    "髋关节翻修假体填充技术",
+    "高抛光解剖胫骨平台技术",
+    "优化的股骨髁前髁及髌骨滑车技术",
+    "半开放式股骨髁髁间窝技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "关节假体产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "脊柱类植入产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:12:50"
+}

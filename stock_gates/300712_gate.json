@@ -1,0 +1,46 @@
+{
+  "stock_id": "300712",
+  "stock_name": "永福股份",
+  "concept": "电力能源服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程设计甲级",
+    "工程勘察综合甲级",
+    "电力资信甲级",
+    "EPC"
+  ],
+  "should": [
+    "电力能源综合集成解决方案",
+    "户用光伏电站系统集成产品及服务",
+    "数字能源产品及服务",
+    "电力能源服务",
+    "风电",
+    "光伏",
+    "储能",
+    "输变电",
+    "核电",
+    "燃气发电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程设计甲级",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程勘察综合甲级",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力资信甲级",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "EPC",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:40:03"
+}

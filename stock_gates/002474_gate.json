@@ -1,0 +1,46 @@
+{
+  "stock_id": "002474",
+  "stock_name": "榕基软件",
+  "concept": "电子政务软件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子政务",
+    "电子政务软件",
+    "协同管理",
+    "信创政务办公平台"
+  ],
+  "should": [
+    "系统集成",
+    "运维服务",
+    "金关工程",
+    "金环工程",
+    "天平工程",
+    "司法行政",
+    "智能电网",
+    "大数据",
+    "区块链",
+    "人工智能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子政务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子政务软件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "协同管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信创政务办公平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:43:36"
+}

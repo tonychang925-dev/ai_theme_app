@@ -1,0 +1,33 @@
+{
+  "stock_id": "601881",
+  "stock_name": "中国银河",
+  "concept": "综合证券服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "财富管理业务",
+    "零售经纪及财富管理"
+  ],
+  "should": [
+    "投资银行业务",
+    "机构业务",
+    "国际业务",
+    "投资交易业务",
+    "综合证券服务",
+    "金融产品销售",
+    "信用业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "财富管理业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "零售经纪及财富管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:39:28"
+}

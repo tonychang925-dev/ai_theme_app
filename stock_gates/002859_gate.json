@@ -1,0 +1,41 @@
+{
+  "stock_id": "002859",
+  "stock_name": "洁美科技",
+  "concept": "电子封装载带",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球纸质载带龙头",
+    "纸质载带",
+    "塑料载带"
+  ],
+  "should": [
+    "转移胶带（离型膜）",
+    "胶带",
+    "流延膜",
+    "电子封装载带",
+    "电子专用原纸制造",
+    "塑料载带粒子一体化高速成型",
+    "光学级PET基膜成型",
+    "精密模具",
+    "黑色塑料粒子及片材自主生产",
+    "集成电路"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球纸质载带龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纸质载带",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "塑料载带",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:00:34"
+}

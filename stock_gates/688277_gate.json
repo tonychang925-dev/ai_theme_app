@@ -1,0 +1,30 @@
+{
+  "stock_id": "688277",
+  "stock_name": "天智航",
+  "concept": "骨科手术机器人",
+  "strategy_type": "industry_chain",
+  "must": [
+    "骨科手术机器人"
+  ],
+  "should": [
+    "配套设备与耗材",
+    "技术服务",
+    "天玑1.0",
+    "天玑2.0",
+    "TKA（全膝关节置换机器人）",
+    "THA（全髋关节置换机器人）",
+    "手术工具可视化",
+    "骨科手术",
+    "医疗机构"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "骨科手术机器人",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:13:55"
+}

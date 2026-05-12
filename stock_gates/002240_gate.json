@@ -1,0 +1,38 @@
+{
+  "stock_id": "002240",
+  "stock_name": "盛新锂能",
+  "concept": "锂电新能源材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电新能源材料",
+    "锂盐生产",
+    "锂辉石矿"
+  ],
+  "should": [
+    "金属锂生产",
+    "盐湖提锂",
+    "致远锂业",
+    "遂宁盛新",
+    "印尼盛拓",
+    "盛威锂业",
+    "包销协议"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电新能源材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂盐生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂辉石矿",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:31:16"
+}

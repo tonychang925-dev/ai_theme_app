@@ -1,0 +1,28 @@
+{
+  "stock_id": "688562",
+  "stock_name": "航天软件",
+  "concept": "国防军工软件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "自主软件产品"
+  ],
+  "should": [
+    "神通数据库",
+    "资产管理系统",
+    "金审信息化服务",
+    "商密网运营中心",
+    "国防军工软件",
+    "中国航天科技集团旗下",
+    "国防军工工业软件领域排名第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "自主软件产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:20:37"
+}

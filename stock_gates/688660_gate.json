@@ -1,0 +1,31 @@
+{
+  "stock_id": "688660",
+  "stock_name": "电气风电",
+  "concept": "风电整机制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风电整机制造"
+  ],
+  "should": [
+    "卓刻平台风机",
+    "海神平台风机",
+    "海燕平台风机",
+    "WH6.25N-172风机",
+    "叶片技术",
+    "驱动链技术",
+    "混塔技术",
+    "半直驱驱动链技术",
+    "陆上风电",
+    "海上风电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风电整机制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:23:21"
+}

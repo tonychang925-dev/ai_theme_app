@@ -1,0 +1,43 @@
+{
+  "stock_id": "603226",
+  "stock_name": "菲林格尔",
+  "concept": "木地板与定制家居",
+  "strategy_type": "industry_chain",
+  "must": [
+    "木地板与定制家居",
+    "强化地板",
+    "实木复合地板",
+    "全屋定制家居"
+  ],
+  "should": [
+    "德国豪迈生产线",
+    "激光双边雷射封边机",
+    "住宅装修",
+    "城镇化建设",
+    "中高端消费市场",
+    "全球优质供应链",
+    "高端品牌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "木地板与定制家居",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "强化地板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "实木复合地板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全屋定制家居",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:46:59"
+}

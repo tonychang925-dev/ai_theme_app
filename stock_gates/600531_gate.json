@@ -1,0 +1,44 @@
+{
+  "stock_id": "600531",
+  "stock_name": "豫光金铅",
+  "concept": "有色金属冶炼",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电解铅",
+    "白银",
+    "黄金",
+    "阴极铜"
+  ],
+  "should": [
+    "硫酸",
+    "CX集成系统",
+    "有色金属冶炼",
+    "综合回收",
+    "再生铅与原生铅共生产",
+    "有色金属冶炼及经营",
+    "贵金属冶炼",
+    "金银制品销售"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电解铅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "白银",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "黄金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "阴极铜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:20:27"
+}

@@ -1,0 +1,28 @@
+{
+  "stock_id": "603116",
+  "stock_name": "红蜻蜓",
+  "concept": "时尚鞋服",
+  "strategy_type": "industry_chain",
+  "must": [
+    "时尚鞋服"
+  ],
+  "should": [
+    "联邦注塑工艺",
+    "好货通数字化平台",
+    "回弹黑科技",
+    "职业装团购",
+    "DTC零售运营",
+    "线上批发",
+    "端对端服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "时尚鞋服",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:44:11"
+}

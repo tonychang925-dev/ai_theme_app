@@ -1,0 +1,41 @@
+{
+  "stock_id": "688182",
+  "stock_name": "灿勤科技",
+  "concept": "电子陶瓷元器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子陶瓷元器件",
+    "介质波导滤波器",
+    "滤波器"
+  ],
+  "should": [
+    "HTCC相关产品",
+    "陶瓷粉体配方",
+    "谐振器",
+    "天线",
+    "低互调无源组件",
+    "金属陶瓷结构与功能器件",
+    "射频模块与系统",
+    "产品制备工艺",
+    "复杂陶瓷体一次成型",
+    "盲孔陶瓷体金属化及银焊"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子陶瓷元器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "介质波导滤波器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "滤波器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:11:02"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "603887",
+  "stock_name": "城地香江",
+  "concept": "算力基础设施服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "IDC投资及运营",
+    "智算中心",
+    "IDC综合解决方案"
+  ],
+  "should": [
+    "数据中心托管",
+    "微模块",
+    "高低压柜",
+    "精密配电柜",
+    "智能数据母线",
+    "算力基础设施服务",
+    "集成规划整合能力",
+    "云动力研发",
+    "全产业链服务",
+    "投建营一体化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "IDC投资及运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智算中心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IDC综合解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:58:10"
+}

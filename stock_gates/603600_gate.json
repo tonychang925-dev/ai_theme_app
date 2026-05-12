@@ -1,0 +1,46 @@
+{
+  "stock_id": "603600",
+  "stock_name": "永艺股份",
+  "concept": "座椅制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "座椅制造",
+    "办公椅",
+    "沙发",
+    "升降桌"
+  ],
+  "should": [
+    "智能办公椅",
+    "智能升降桌",
+    "智能学习桌椅",
+    "智能沙发",
+    "电竞椅",
+    "人体工学高端电竞椅",
+    "智能传感",
+    "智能交互",
+    "智能连接",
+    "办公"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "座椅制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "办公椅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "沙发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "升降桌",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:52:55"
+}

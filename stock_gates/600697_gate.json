@@ -1,0 +1,41 @@
+{
+  "stock_id": "600697",
+  "stock_name": "欧亚集团",
+  "concept": "商业零售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "现代百货",
+    "商业综合体",
+    "商超连锁"
+  ],
+  "should": [
+    "任务管理平台",
+    "财务共享平台",
+    "商业零售",
+    "自营",
+    "联营",
+    "租赁",
+    "业财一体化",
+    "集团统采",
+    "系列分采",
+    "门店自采"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "现代百货",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商业综合体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商超连锁",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:25:12"
+}

@@ -1,0 +1,45 @@
+{
+  "stock_id": "002277",
+  "stock_name": "友阿股份",
+  "concept": "百货零售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "百货零售",
+    "百货商场",
+    "奥特莱斯",
+    "购物中心"
+  ],
+  "should": [
+    "便利店",
+    "专业店",
+    "网络购物平台",
+    "友阿海外购",
+    "友阿微店",
+    "友阿购",
+    "联销",
+    "经销",
+    "物业出租"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "百货零售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "百货商场",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "奥特莱斯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "购物中心",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:33:02"
+}

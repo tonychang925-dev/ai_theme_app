@@ -1,0 +1,51 @@
+{
+  "stock_id": "603019",
+  "stock_name": "中科曙光",
+  "concept": "国产AI服务器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国产AI服务器",
+    "AI服务器",
+    "高性能计算机",
+    "高端计算",
+    "超算"
+  ],
+  "should": [
+    "主控芯片",
+    "HPC",
+    "上游CPU芯片",
+    "服务器硬件",
+    "IO存储",
+    "中游云计算平台",
+    "大数据平台",
+    "算力交易平台",
+    "下游云服务提供商",
+    "存储"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国产AI服务器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AI服务器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高性能计算机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端计算",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超算",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:41:14"
+}

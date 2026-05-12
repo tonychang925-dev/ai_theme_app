@@ -1,0 +1,36 @@
+{
+  "stock_id": "300285",
+  "stock_name": "国瓷材料",
+  "concept": "高端陶瓷材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端陶瓷材料",
+    "MLCC介质材料"
+  ],
+  "should": [
+    "蜂窝陶瓷",
+    "铈锆固溶体",
+    "氧化锆瓷块",
+    "玻璃陶瓷瓷块",
+    "复合树脂陶瓷",
+    "高纯超细氧化铝",
+    "勃姆石材料",
+    "陶瓷轴承球",
+    "陶瓷套筒",
+    "陶瓷插芯"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端陶瓷材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MLCC介质材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:21:15"
+}

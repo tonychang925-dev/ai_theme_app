@@ -1,0 +1,36 @@
+{
+  "stock_id": "300940",
+  "stock_name": "南极光",
+  "concept": "手机背光模组",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LED背光显示模组",
+    "手机背光模组"
+  ],
+  "should": [
+    "导光板光学设计",
+    "精密模具设计",
+    "精密装配",
+    "智能手机",
+    "车载显示器",
+    "医疗显示仪",
+    "工控设备显示器",
+    "家电显示器",
+    "其他消费电子显示器",
+    "京东方合格供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED背光显示模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "手机背光模组",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:50:04"
+}

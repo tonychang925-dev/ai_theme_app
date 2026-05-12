@@ -1,0 +1,45 @@
+{
+  "stock_id": "000852",
+  "stock_name": "石化机械",
+  "concept": "油气装备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "油气勘探开发",
+    "钻头钻具",
+    "压裂装备",
+    "固井装备"
+  ],
+  "should": [
+    "钻井装备",
+    "修井装备",
+    "油气钢管",
+    "天然气压缩机",
+    "氢能压缩机",
+    "加氢机",
+    "制氢装备",
+    "国家油气钻采设备质量监督检验中心",
+    "钻头国家制造业单项冠军示范企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "油气勘探开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钻头钻具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "压裂装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "固井装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:07:07"
+}

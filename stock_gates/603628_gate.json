@@ -1,0 +1,36 @@
+{
+  "stock_id": "603628",
+  "stock_name": "清源股份",
+  "concept": "光伏支架龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏支架龙头",
+    "屋顶支架"
+  ],
+  "should": [
+    "固定支架",
+    "跟踪支架",
+    "户用储能系统",
+    "便携式储能产品",
+    "磷酸铁锂电池",
+    "模块化设计",
+    "PCS一体化设计",
+    "BMS集成",
+    "EMS功能",
+    "澳洲屋顶光伏市场占有率第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏支架龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "屋顶支架",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:53:31"
+}

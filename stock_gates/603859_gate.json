@@ -1,0 +1,32 @@
+{
+  "stock_id": "603859",
+  "stock_name": "能科科技",
+  "concept": "智能制造服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能制造",
+    "智能电气"
+  ],
+  "should": [
+    "数字孪生",
+    "生产力中台",
+    "数据治理平台",
+    "乐仓生产力中台",
+    "后厂造",
+    "智能制造服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能电气",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:57:33"
+}

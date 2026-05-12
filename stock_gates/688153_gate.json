@@ -1,0 +1,32 @@
+{
+  "stock_id": "688153",
+  "stock_name": "唯捷创芯",
+  "concept": "射频前端芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "射频功率放大器模组",
+    "射频前端芯片"
+  ],
+  "should": [
+    "射频开关芯片",
+    "Wi-Fi射频前端模组",
+    "接收端模组产品",
+    "国内PA第一梯队龙头厂商",
+    "国内出货量第一",
+    "改善射频功率放大器线性度技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "射频功率放大器模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "射频前端芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:10:01"
+}

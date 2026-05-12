@@ -1,0 +1,45 @@
+{
+  "stock_id": "688122",
+  "stock_name": "西部超导",
+  "concept": "钛合金超导材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钛合金棒材",
+    "钛合金丝材",
+    "钛合金锻坯",
+    "高温合金"
+  ],
+  "should": [
+    "超导线材",
+    "超导磁体",
+    "低温超导电线生产技术",
+    "国内唯一低温超导线材生产企业",
+    "钛合金超导材料",
+    "铌钛锭棒全流程生产",
+    "超导磁体全流程生产",
+    "变形高温合金工艺",
+    "半导体设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钛合金棒材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钛合金丝材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钛合金锻坯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高温合金",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:09:06"
+}

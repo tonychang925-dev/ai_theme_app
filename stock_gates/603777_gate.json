@@ -1,0 +1,40 @@
+{
+  "stock_id": "603777",
+  "stock_name": "来伊份",
+  "concept": "休闲食品全渠道",
+  "strategy_type": "industry_chain",
+  "must": [
+    "休闲食品全渠道",
+    "自有品牌休闲食品",
+    "直营门店"
+  ],
+  "should": [
+    "加盟批发",
+    "线上业务",
+    "团购业务",
+    "醉爱酱香型白酒",
+    "直营门店收入占比76%",
+    "加盟批发收入占比5%",
+    "线上业务收入占比15%",
+    "团购业务占比约3%",
+    "毛利率42.37%高于同行"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "休闲食品全渠道",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自有品牌休闲食品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "直营门店",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:56:24"
+}

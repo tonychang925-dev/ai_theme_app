@@ -1,0 +1,41 @@
+{
+  "stock_id": "600775",
+  "stock_name": "南京熊猫",
+  "concept": "智慧交通与智能制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧交通与平安城市",
+    "工业互联网与智能制造",
+    "绿色服务型电子制造"
+  ],
+  "should": [
+    "爱立信全球供应中心",
+    "AFC/ACC系统国内第一梯队",
+    "轨道交通通信系统总承包全国前列",
+    "智慧交通与智能制造",
+    "大数据",
+    "云计算",
+    "物联网",
+    "5G",
+    "人工智能",
+    "边缘计算"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧交通与平安城市",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业互联网与智能制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "绿色服务型电子制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:27:26"
+}

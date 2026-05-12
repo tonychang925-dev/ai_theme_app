@@ -1,0 +1,46 @@
+{
+  "stock_id": "600570",
+  "stock_name": "恒生电子",
+  "concept": "金融科技",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金融科技",
+    "大零售IT",
+    "大资管IT",
+    "证券"
+  ],
+  "should": [
+    "云原生",
+    "大数据",
+    "人工智能",
+    "区块链",
+    "企金保险核心与基础设施IT",
+    "数据风险和平台技术IT",
+    "互联网创新",
+    "期货",
+    "公募",
+    "生物识别"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金融科技",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大零售IT",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大资管IT",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "证券",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:21:24"
+}

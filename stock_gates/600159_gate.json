@@ -1,0 +1,29 @@
+{
+  "stock_id": "600159",
+  "stock_name": "大龙地产",
+  "concept": "房地产与建筑施工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "房地产业务"
+  ],
+  "should": [
+    "建筑施工业务",
+    "建筑施工总承包一级资质",
+    "住宅",
+    "商业",
+    "房屋建设",
+    "年施工100万平方米能力",
+    "顺义区属国有控股",
+    "深耕顺义市场"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房地产业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:10:32"
+}

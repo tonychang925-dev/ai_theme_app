@@ -1,0 +1,51 @@
+{
+  "stock_id": "300857",
+  "stock_name": "协创数据",
+  "concept": "物联网智能终端",
+  "strategy_type": "industry_chain",
+  "must": [
+    "物联网智能终端",
+    "智能摄像机",
+    "数据存储",
+    "边缘计算",
+    "视觉处理"
+  ],
+  "should": [
+    "智能门铃",
+    "太阳能电池摄像机",
+    "宠物摄像机",
+    "小孩看护摄像机",
+    "智能音箱",
+    "智能后视镜",
+    "行车记录仪",
+    "智能手表",
+    "智能手环",
+    "扫地机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "物联网智能终端",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能摄像机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据存储",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "边缘计算",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "视觉处理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:46:24"
+}

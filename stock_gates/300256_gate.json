@@ -1,0 +1,41 @@
+{
+  "stock_id": "300256",
+  "stock_name": "星星科技",
+  "concept": "消费电子结构件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "视窗防护屏",
+    "触控屏模组",
+    "高精密结构件"
+  ],
+  "should": [
+    "电动两轮车",
+    "透明电路蚀刻技术",
+    "银浆印刷技术",
+    "抗拉高可靠性FPC排线压合技术",
+    "可做异形曲面的贴合技术",
+    "银浆过孔（Via Hole）技术",
+    "超低电阻超高精细金属网格触控技术",
+    "工业4.0智能模具制造",
+    "消费电子结构件",
+    "2D/2.5D/3D盖板玻璃技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "视窗防护屏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "触控屏模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高精密结构件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:19:59"
+}

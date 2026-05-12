@@ -1,0 +1,31 @@
+{
+  "stock_id": "688278",
+  "stock_name": "特宝生物",
+  "concept": "重组蛋白药物",
+  "strategy_type": "industry_chain",
+  "must": [
+    "派格宾"
+  ],
+  "should": [
+    "特尔立",
+    "特尔津",
+    "特尔康",
+    "聚乙二醇重组人生长激素",
+    "聚乙二醇重组人粒细胞刺激因子",
+    "聚乙二醇重组人促红素",
+    "重组蛋白质",
+    "长效修饰药物",
+    "聚乙二醇化",
+    "慢性乙型肝炎"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "派格宾",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:13:57"
+}

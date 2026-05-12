@@ -1,0 +1,34 @@
+{
+  "stock_id": "002557",
+  "stock_name": "洽洽食品",
+  "concept": "坚果炒货",
+  "strategy_type": "industry_chain",
+  "must": [
+    "瓜子",
+    "坚果"
+  ],
+  "should": [
+    "每日坚果",
+    "豆类零食",
+    "薯片",
+    "果冻",
+    "水煮自制",
+    "产品升级",
+    "包装瓜子龙头",
+    "坚果炒货行业龙头企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "瓜子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "坚果",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:47:07"
+}

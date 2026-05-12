@@ -1,0 +1,43 @@
+{
+  "stock_id": "300251",
+  "stock_name": "光线传媒",
+  "concept": "影视内容制作",
+  "strategy_type": "industry_chain",
+  "must": [
+    "影视内容制作",
+    "电影",
+    "电视剧（网剧）",
+    "动漫"
+  ],
+  "should": [
+    "艺人经纪",
+    "音乐",
+    "文学",
+    "实景娱乐",
+    "产业投资",
+    "内容覆盖领域最全面",
+    "产业链纵向延伸最完整"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "影视内容制作",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电影",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电视剧（网剧）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动漫",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:19:28"
+}

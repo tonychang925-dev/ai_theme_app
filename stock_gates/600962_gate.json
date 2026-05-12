@@ -1,0 +1,36 @@
+{
+  "stock_id": "600962",
+  "stock_name": "国投中鲁",
+  "concept": "浓缩苹果汁",
+  "strategy_type": "industry_chain",
+  "must": [
+    "浓缩苹果汁",
+    "浓缩果蔬汁（浆）"
+  ],
+  "should": [
+    "桃汁",
+    "梨汁",
+    "FSSC22000认证",
+    "Kosher认证",
+    "HALAL认证",
+    "混合果汁",
+    "蔬菜汁",
+    "果酒酿制",
+    "化妆品添加剂",
+    "药品添加剂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "浓缩苹果汁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "浓缩果蔬汁（浆）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:31:48"
+}

@@ -1,0 +1,44 @@
+{
+  "stock_id": "600550",
+  "stock_name": "保变电气",
+  "concept": "输变电装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "输变电装备",
+    "变压器",
+    "特高压交、直流变压器制造",
+    "高电压、大容量变压器制造"
+  ],
+  "should": [
+    "电抗器",
+    "互感器",
+    "特高压建设",
+    "新型电力系统",
+    "城网改造",
+    "农网改造",
+    "一带一路",
+    "兵装集团控股企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "输变电装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "变压器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特高压交、直流变压器制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高电压、大容量变压器制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:20:51"
+}

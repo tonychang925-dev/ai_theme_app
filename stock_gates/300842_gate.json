@@ -1,0 +1,33 @@
+{
+  "stock_id": "300842",
+  "stock_name": "帝科股份",
+  "concept": "光伏银浆龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏银浆龙头",
+    "光伏导电银浆"
+  ],
+  "should": [
+    "半导体电子导电粘合剂",
+    "P型BSF电池",
+    "P型PERC电池",
+    "N型TOPCon电池",
+    "N型HJT电池",
+    "N型IBC电池",
+    "全球光伏导电银浆供应链第一梯队"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏银浆龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏导电银浆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:45:37"
+}

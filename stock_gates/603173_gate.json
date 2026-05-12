@@ -1,0 +1,41 @@
+{
+  "stock_id": "603173",
+  "stock_name": "福斯达",
+  "concept": "深冷装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "深冷装备",
+    "空气分离设备",
+    "液化天然气装置"
+  ],
+  "should": [
+    "绕管式换热器",
+    "化工冷箱",
+    "液体贮槽",
+    "深冷技术工艺",
+    "天然气",
+    "煤化工",
+    "石油化工",
+    "冶金",
+    "核电",
+    "航空航天"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "深冷装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空气分离设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液化天然气装置",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:45:28"
+}

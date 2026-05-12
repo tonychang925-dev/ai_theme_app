@@ -1,0 +1,46 @@
+{
+  "stock_id": "002701",
+  "stock_name": "奥瑞金",
+  "concept": "金属包装龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金属包装龙头",
+    "三片罐",
+    "二片罐",
+    "红牛"
+  ],
+  "should": [
+    "底盖",
+    "易拉盖",
+    "青岛啤酒",
+    "加多宝",
+    "可口可乐",
+    "百事可乐",
+    "飞鹤",
+    "君乐宝",
+    "金属包装行业龙头",
+    "三片罐全国产能规模最大"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金属包装龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三片罐",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "二片罐",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "红牛",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:54:02"
+}

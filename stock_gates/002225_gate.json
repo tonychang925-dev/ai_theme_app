@@ -1,0 +1,36 @@
+{
+  "stock_id": "002225",
+  "stock_name": "濮耐股份",
+  "concept": "耐火材料系统方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "耐火材料系统方案",
+    "耐火材料制品"
+  ],
+  "should": [
+    "镁质原料",
+    "镁碳砖",
+    "全自动液压机",
+    "高温隧道窑",
+    "自主知识产权",
+    "钢铁",
+    "水泥",
+    "有色金属冶炼",
+    "自有矿山开采",
+    "全产业链布局"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "耐火材料系统方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "耐火材料制品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:30:09"
+}

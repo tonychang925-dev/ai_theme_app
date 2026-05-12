@@ -1,0 +1,41 @@
+{
+  "stock_id": "300594",
+  "stock_name": "朗进科技",
+  "concept": "轨道交通空调",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轨道交通车辆空调",
+    "轨道交通空调",
+    "新能源汽车空调"
+  ],
+  "should": [
+    "智能热管理产品",
+    "空气能热泵烘干设备",
+    "数字能源智能环控产品",
+    "变频节能核心技术",
+    "控制系统",
+    "轨道交通",
+    "新能源汽车",
+    "空气能热泵烘干",
+    "数字能源",
+    "轨道交通车辆空调细分市场行业前列"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轨道交通车辆空调",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轨道交通空调",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车空调",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:34:25"
+}

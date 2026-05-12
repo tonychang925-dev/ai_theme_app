@@ -1,0 +1,41 @@
+{
+  "stock_id": "002595",
+  "stock_name": "豪迈科技",
+  "concept": "轮胎模具龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轮胎模具龙头",
+    "轮胎模具",
+    "大型机械零部件"
+  ],
+  "should": [
+    "橡胶机械",
+    "马牌",
+    "卡特彼勒",
+    "普利司通",
+    "玲珑轮胎",
+    "倍耐力",
+    "大型龙门加工中心",
+    "数控电极铣机群",
+    "电火花机群",
+    "五轴打孔机群"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轮胎模具龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轮胎模具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大型机械零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:49:11"
+}

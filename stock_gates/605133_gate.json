@@ -1,0 +1,31 @@
+{
+  "stock_id": "605133",
+  "stock_name": "嵘泰股份",
+  "concept": "汽车铝合金压铸",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车转向压铸件"
+  ],
+  "should": [
+    "传动系统压铸件",
+    "制动系统压铸件",
+    "电机壳体",
+    "变速箱壳体",
+    "车载充电机壳体",
+    "逆变器",
+    "电驱轴承",
+    "汽车铝合金压铸",
+    "新能源三电系统",
+    "博世"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车转向压铸件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:02:11"
+}

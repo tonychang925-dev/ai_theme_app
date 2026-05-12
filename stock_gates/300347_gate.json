@@ -1,0 +1,35 @@
+{
+  "stock_id": "300347",
+  "stock_name": "泰格医药",
+  "concept": "临床CRO服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "临床CRO服务",
+    "全流程一体化服务平台"
+  ],
+  "should": [
+    "临床试验技术服务",
+    "临床试验相关服务",
+    "实验室服务",
+    "从临床前到上市后全流程服务",
+    "创新药",
+    "医疗器械",
+    "疫苗",
+    "中国临床CRO行业龙头",
+    "全球化研发平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "临床CRO服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全流程一体化服务平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:23:20"
+}

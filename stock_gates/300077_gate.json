@@ -1,0 +1,27 @@
+{
+  "stock_id": "300077",
+  "stock_name": "国民技术",
+  "concept": "可信计算芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "可信计算芯片"
+  ],
+  "should": [
+    "MCU芯片",
+    "锂电池负极材料",
+    "主控芯片",
+    "固件开发",
+    "石墨化加工",
+    "国内最大的可信计算芯片厂商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "可信计算芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:12:17"
+}

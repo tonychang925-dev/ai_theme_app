@@ -1,0 +1,46 @@
+{
+  "stock_id": "600389",
+  "stock_name": "江山股份",
+  "concept": "酰胺类除草剂龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "酰胺类除草剂龙头",
+    "草甘膦",
+    "酰胺类除草剂",
+    "全球酰胺类龙头"
+  ],
+  "should": [
+    "敌敌畏",
+    "敌百虫",
+    "咪鲜胺",
+    "氯噻啉",
+    "烯啶虫胺",
+    "毒死蜱",
+    "甘氨酸法",
+    "IDA法",
+    "连续催化精馏技术",
+    "农药制剂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "酰胺类除草剂龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "草甘膦",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "酰胺类除草剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球酰胺类龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:16:49"
+}

@@ -1,0 +1,35 @@
+{
+  "stock_id": "300560",
+  "stock_name": "中富通",
+  "concept": "通信网络服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "第三方通信网络管理服务",
+    "通信网络服务"
+  ],
+  "should": [
+    "中国移动",
+    "中国电信",
+    "中国联通",
+    "中国铁塔",
+    "数字经济",
+    "集中采购",
+    "5G网络",
+    "数据中心",
+    "东数西算"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "第三方通信网络管理服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通信网络服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:32:43"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300109",
+  "stock_name": "新开源",
+  "concept": "精细化工与精准医疗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "肿瘤早期诊断",
+    "分子诊断",
+    "基因检测"
+  ],
+  "should": [
+    "PVP",
+    "PVME/MA系列产品",
+    "基因组学",
+    "蛋白质组学",
+    "转录组学",
+    "代谢组学",
+    "基因测序",
+    "质谱",
+    "流式细胞技术",
+    "精准检测服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "肿瘤早期诊断",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分子诊断",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "基因检测",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:13:33"
+}

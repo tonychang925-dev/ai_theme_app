@@ -1,0 +1,44 @@
+{
+  "stock_id": "301018",
+  "stock_name": "申菱环境",
+  "concept": "工业特种空调",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业特种空调",
+    "数据中心",
+    "液冷散热技术",
+    "风液同源大液冷系统"
+  ],
+  "should": [
+    "机房精密空调",
+    "液冷散热设备",
+    "智能变频技术",
+    "BIM精细化施工",
+    "工厂预制方案",
+    "专用性空调",
+    "工业特种空调领域龙头",
+    "整体垂直解决方案商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业特种空调",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据中心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液冷散热技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风液同源大液冷系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:53:18"
+}

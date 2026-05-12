@@ -1,0 +1,30 @@
+{
+  "stock_id": "301232",
+  "stock_name": "飞沃科技",
+  "concept": "风电紧固件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "预埋螺套"
+  ],
+  "should": [
+    "锚栓组件",
+    "整机螺栓",
+    "风电紧固件",
+    "风电叶片",
+    "风电整机制造",
+    "风电场建设",
+    "全球市占率约七成",
+    "市场占有率较高",
+    "市场开拓阶段"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "预埋螺套",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:59:59"
+}

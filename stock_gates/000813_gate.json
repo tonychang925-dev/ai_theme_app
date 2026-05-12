@@ -1,0 +1,51 @@
+{
+  "stock_id": "000813",
+  "stock_name": "德展健康",
+  "concept": "心脑血管药物",
+  "strategy_type": "industry_chain",
+  "must": [
+    "阿乐（10mg）",
+    "阿乐（20mg）",
+    "氨氯地平阿托伐他汀钙片",
+    "阿托伐他汀钙原料药"
+  ],
+  "should": [
+    "盐酸曲美他嗪胶囊",
+    "凡乐片一型",
+    "凡乐片二型",
+    "硫唑嘌呤片",
+    "盐酸胺碘酮片",
+    "羟基脲片",
+    "秋水仙碱片",
+    "心脑血管药物",
+    "调/降血脂药物市场",
+    "国内首仿药"
+  ],
+  "not": [
+    "生物多肽产品",
+    "食品饮料",
+    "化妆品",
+    "台湾国光流感疫苗代理"
+  ],
+  "evidence_refs": [
+    {
+      "term": "阿乐（10mg）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "阿乐（20mg）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氨氯地平阿托伐他汀钙片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "阿托伐他汀钙原料药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:05:50"
+}
