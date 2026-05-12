@@ -6011,6 +6011,194 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             )
         return dict(row) if row else None
 
+    async def get_new_chain_intel_recap(self, trade_date) -> List[Dict[str, Any]]:
+        """新链情报台适配器：盘后复盘快照 → recap 类情报项。"""
+        sql = """
+        SELECT
+            trade_date,
+            payload,
+            snapshot_version,
+            batch_id,
+            trace_id,
+            created_at
+        FROM post_market_recap_snapshot
+        WHERE trade_date = $1::date
+        LIMIT 1
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+        return [dict(r) for r in rows]
+
+    async def get_new_chain_intel_identity(self, trade_date) -> List[Dict[str, Any]]:
+        """新链情报台适配器：主线身份注册 → theme_identity 类情报项。"""
+        sql = """
+        SELECT
+            subject_key,
+            theme_name,
+            identity_status,
+            is_main_theme,
+            first_seen_date,
+            first_confirmed_date,
+            last_review_date,
+            source_trade_date,
+            logic_score,
+            market_score,
+            composite_score,
+            rule_is_main_theme,
+            llm_applied,
+            llm_is_main_theme,
+            llm_confidence,
+            llm_reasons,
+            evidence_json,
+            rule_version
+        FROM theme_mainline_identity_registry
+        WHERE source_trade_date = $1::date
+          AND is_main_theme = TRUE
+        ORDER BY composite_score DESC NULLS LAST
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+        return [dict(r) for r in rows]
+
+    async def get_new_chain_intel_cycle(self, trade_date) -> List[Dict[str, Any]]:
+        """新链情报台适配器：题材周期研判 → theme_cycle 类情报项。"""
+        sql = """
+        SELECT
+            trade_date,
+            subject_key,
+            theme_name,
+            cycle_state_rule,
+            mainline_alive_rule,
+            cycle_state_llm,
+            mainline_alive_llm,
+            final_cycle_state,
+            final_mainline_alive,
+            fade_watch,
+            fade_confirmed,
+            mainline_strength_score,
+            fade_risk_score,
+            fade_watch_score,
+            fade_confirmed_score,
+            divergence_score,
+            repair_score,
+            confidence_score,
+            previous_cycle_state,
+            state_transition_reason,
+            rule_reasons,
+            llm_reasons,
+            risk_flags,
+            evidence_refs,
+            snapshot_version,
+            batch_id,
+            trace_id,
+            rule_version
+        FROM theme_cycle_judgement_v2
+        WHERE trade_date = $1::date
+        ORDER BY mainline_strength_score DESC NULLS LAST
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+        return [dict(r) for r in rows]
+
+    async def get_new_chain_intel_strong_watch(
+        self, trade_date, limit_per_source: int = 20
+    ) -> List[Dict[str, Any]]:
+        """新链情报台适配器：强势追踪池 → stock_signal 类情报项（限量 top N）。"""
+        sql = """
+        WITH pool_ranked AS (
+            SELECT
+                swp.stock_id,
+                swp.stock_name,
+                swp.subject_key,
+                swp.theme_name,
+                swp.last_trade_date,
+                swp.watch_start_date,
+                swp.watch_status,
+                swp.watch_score,
+                swp.watch_priority,
+                swp.pool_entry_type,
+                swp.source_tag,
+                swp.relay_role,
+                swp.candidate_promoted,
+                swp.cycle_state,
+                swp.mainline_strength_score,
+                swp.fade_watch,
+                swp.fade_confirmed,
+                swp.support_type,
+                swp.support_level,
+                swp.support_score,
+                swp.labels_json,
+                swp.evidence_json,
+                swp.created_at,
+                mir.identity_status,
+                mir.is_main_theme,
+                v2.final_cycle_state AS linked_cycle_state,
+                v2.final_mainline_alive AS linked_mainline_alive,
+                ROW_NUMBER() OVER (
+                    ORDER BY
+                        CASE swp.pool_entry_type WHEN 'formal' THEN 0 ELSE 1 END,
+                        COALESCE(swp.watch_score, 0) DESC,
+                        COALESCE(swp.watch_priority, 0) DESC,
+                        swp.stock_id
+                ) AS rn
+            FROM strong_stock_watch_pool swp
+            LEFT JOIN theme_mainline_identity_registry mir
+              ON mir.subject_key = swp.subject_key
+             AND mir.source_trade_date = $1::date
+            LEFT JOIN theme_cycle_judgement_v2 v2
+              ON v2.subject_key = swp.subject_key
+             AND v2.trade_date = $1::date
+            WHERE swp.last_trade_date = $1::date
+        )
+        SELECT * FROM pool_ranked
+        WHERE rn <= $2::int
+        ORDER BY rn
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date, limit_per_source)
+        return [dict(r) for r in rows]
+
+    async def get_new_chain_intel_w2s(self, trade_date) -> List[Dict[str, Any]]:
+        """新链情报台适配器：弱转强候选池 → weak_to_strong 类情报项。"""
+        sql = """
+        SELECT
+            w2s.trade_date,
+            w2s.next_trade_date,
+            w2s.stock_id,
+            w2s.stock_name,
+            w2s.subject_key,
+            w2s.theme_name,
+            w2s.candidate_score,
+            w2s.candidate_type,
+            w2s.weak_type,
+            w2s.weak_intensity,
+            w2s.is_dragon_head,
+            w2s.dragon_head_level,
+            w2s.prev_limit_up_count,
+            w2s.max_consecutive_limit_up_days,
+            w2s.support_type,
+            w2s.support_level,
+            w2s.support_strength,
+            w2s.expected_open_low,
+            w2s.expected_open_high,
+            w2s.expected_auction_pattern,
+            w2s.need_last_minute_grab,
+            w2s.need_plate_follow,
+            w2s.evidence_json,
+            w2s.cycle_state,
+            w2s.mainline_strength_score,
+            w2s.fade_watch,
+            w2s.fade_confirmed,
+            w2s.pool_entry_type,
+            w2s.rule_version
+        FROM weak_to_strong_candidate_pool w2s
+        WHERE w2s.trade_date = $1::date
+        ORDER BY w2s.candidate_score DESC NULLS LAST
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+        return [dict(r) for r in rows]
+
     async def upsert_replay_snapshot_manifest(self, row: Dict[str, Any]) -> int:
         """写入分层回放 manifest。"""
         sql = """

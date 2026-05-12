@@ -687,6 +687,67 @@ class DatabaseGateway:
             logger.error(f"读取 strong_stock_watch_history 最新日期失败: {e}")
             raise
 
+    # ── NewChainIntelFeedAdapter 读口 ──────────────────────────────────
+
+    async def get_new_chain_intel_recap(self, trade_date) -> List[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            result = await self._client.get_new_chain_intel_recap(trade_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 post_market_recap_snapshot intel 失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def get_new_chain_intel_identity(self, trade_date) -> List[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            result = await self._client.get_new_chain_intel_identity(trade_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 theme_mainline_identity_registry intel 失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def get_new_chain_intel_cycle(self, trade_date) -> List[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            result = await self._client.get_new_chain_intel_cycle(trade_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 theme_cycle_judgement_v2 intel 失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def get_new_chain_intel_strong_watch(
+        self, trade_date, limit_per_source: int = 20
+    ) -> List[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            result = await self._client.get_new_chain_intel_strong_watch(
+                trade_date, limit_per_source=limit_per_source
+            )
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 strong_stock_watch_pool intel 失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def get_new_chain_intel_w2s(self, trade_date) -> List[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            result = await self._client.get_new_chain_intel_w2s(trade_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 weak_to_strong_candidate_pool intel 失败 trade_date={trade_date}: {e}")
+            raise
+
     async def get_trade_dates_before_or_on(self, end_date, limit: int = 7) -> List:
         try:
             start_time = time.time()

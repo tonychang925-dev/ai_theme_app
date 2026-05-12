@@ -27,6 +27,7 @@ from stock_processing_service.infrastructure.gateway_adapters.stock_read_gateway
 from stock_processing_service.tests.replay._post_market_replay_runner import _ReplayDatabaseStockFacade
 from stock_processing_service.application.orchestrators.bootstrap import build_container
 from theme_service.repositories.phase1_read_repository import Phase1ReadRepository
+from stock_processing_service.application.services.intel_new_chain_adapter import NewChainIntelFeedAdapter
 from stock_processing_service.application.jobs.collection_job_manager import CollectionJobManager
 from stock_processing_service.domain.services.w2s_candidate_service import W2SCandidate
 from stock_processing_service.domain.services.w2s_confirm_service import W2SConfirmService
@@ -61,6 +62,7 @@ async def lifespan(app: FastAPI):
     app.state.gateway = gw
     app.state.container = build_container(facade)
     app.state.phase1_repo = Phase1ReadRepository()
+    app.state.intel_adapter = NewChainIntelFeedAdapter(gw)
     from stock_processing_service.application.services.collection_task_registry import get_default_registry
     app.state.collection_job_manager = CollectionJobManager(
         container=app.state.container,
@@ -1293,10 +1295,34 @@ async def get_intel_feed(
     limit: int = Query(20, ge=1, le=200),
 ) -> dict[str, Any]:
     try:
-        date.fromisoformat(feed_date)
+        target_date = date.fromisoformat(feed_date)
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=f"invalid feed_date: {feed_date}") from exc
-    items = await app.state.phase1_repo.fetch_intel_feed(
+
+    # ── 新链数据（优先） ──
+    new_chain_items: list[dict[str, Any]] = []
+    if item_type == "all":
+        # subject_key / stock_id 过滤暂不在新链 adapter 中实现
+        # 若指定了 subject_key 或 stock_id，仍然从 adapter 拉全量再做后过滤
+        new_chain_items = await app.state.intel_adapter.get_intel_feed(
+            feed_date=target_date,
+            session=session,
+            item_type=item_type,
+            limit=limit,
+        )
+        if subject_key:
+            new_chain_items = [
+                it for it in new_chain_items
+                if subject_key in (it.get("theme_subject_keys") or [])
+            ]
+        if stock_id:
+            new_chain_items = [
+                it for it in new_chain_items
+                if stock_id in (it.get("stock_ids") or [])
+            ]
+
+    # ── 旧链数据（保留，确保旧源不丢失） ──
+    legacy_items = await app.state.phase1_repo.fetch_intel_feed(
         feed_date=feed_date,
         session=session,
         item_type=item_type,
@@ -1304,17 +1330,54 @@ async def get_intel_feed(
         stock_id=stock_id,
         limit=limit,
     )
-    return {"items": items, "count": len(items), "date": feed_date, "session": session, "type": item_type}
+
+    # ── 合并、去重、排序 ──
+    merged: list[dict[str, Any]] = list(new_chain_items)
+    seen_ids = {it.get("item_id") for it in merged if it.get("item_id")}
+    for it in legacy_items:
+        if it.get("item_id") not in seen_ids:
+            merged.append(it)
+            seen_ids.add(it.get("item_id"))
+
+    # 按新链优先级重新排序（旧链 item 优先级较低，interleaving 跟随新链规则）
+    priority = {
+        "recap": 100, "weak_to_strong": 90, "theme_cycle": 85, "theme_identity": 80,
+        "stock_signal": 70, "event": 60, "theme_history": 50,
+        "new_theme": 40, "event_review": 35, "theme_move": 30, "stock_move": 25,
+    }
+
+    def _sort_key(it: dict[str, Any]) -> tuple[int, float, str]:
+        pri = priority.get(str(it.get("item_type") or ""), 0)
+        score = float(it.get("impact_score") or 0)
+        occurred = str(it.get("occurred_at") or "")
+        return (-pri, -score, occurred)
+
+    merged.sort(key=_sort_key)
+    final = merged[:limit]
+
+    return {
+        "items": final,
+        "count": len(final),
+        "date": feed_date,
+        "session": session,
+        "type": item_type,
+    }
 
 
 @app.get("/api/v1/intel_feed/defaults")
 async def get_intel_feed_defaults() -> dict[str, Any]:
-    """返回情报台最近有数据的日期，供前端默认选中。"""
+    """返回情报台最近有数据的日期，优先新链源。"""
+    # 新链 adapter 优先
     try:
-        latest_event = await app.state.phase1_repo.fetch_latest_intel_event_date()
+        new_chain_latest = await app.state.intel_adapter.get_latest_date()
     except Exception:
-        latest_event = None
-    # 同时取 vw_theme_history_candidate 的最大 rank_date
+        new_chain_latest = None
+
+    # 旧链 fallback
+    try:
+        legacy_latest = await app.state.phase1_repo.fetch_latest_intel_event_date()
+    except Exception:
+        legacy_latest = None
     try:
         await app.state.phase1_repo.initialize()
         async with app.state.phase1_repo._pool.acquire() as conn:
@@ -1325,12 +1388,36 @@ async def get_intel_feed_defaults() -> dict[str, Any]:
             latest_theme = row[0] if row else None
     except Exception:
         latest_theme = None
-    latest_date = latest_event or latest_theme
+
+    latest_date = new_chain_latest or legacy_latest or latest_theme
     if latest_theme and (not latest_date or latest_theme > latest_date):
         latest_date = latest_theme
+    if legacy_latest and (not latest_date or legacy_latest > latest_date):
+        latest_date = legacy_latest
+
     return {
         "latest_intel_date": latest_date,
-        "source": "vw_theme_history_candidate + news_event",
+        "source": "new_chain_intel_feed_adapter + legacy(news_event, vw_theme_history_candidate)",
+    }
+
+
+@app.get("/api/v1/intel_feed/debug_counts")
+async def get_intel_feed_debug_counts(feed_date: str = Query(...)) -> dict[str, Any]:
+    """返回各数据源当前日期的行数（调试用）。"""
+    try:
+        target_date = date.fromisoformat(feed_date)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=f"invalid feed_date: {feed_date}") from exc
+    try:
+        new_chain_counts = await app.state.intel_adapter.get_source_counts(target_date)
+    except Exception as e:
+        new_chain_counts = {"error": str(e)}
+    return {
+        "feed_date": feed_date,
+        "sources": {
+            **new_chain_counts,
+            # 旧源计数通过 phase1 已有读口近似
+        },
     }
 
 

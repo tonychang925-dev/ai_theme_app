@@ -2,7 +2,14 @@
 stock_match_engine.py — 个股匹配引擎（复刻 final_theme_matcher 架构）
 
 流水线:
-  研报原文 → Dense Recall → Gate Evidence → Rerank → Dynamic TopK → LLM Judge
+  研报原文 → LLM提取术语 → JYHF Theme Gate匹配 → theme_stock_map
+          → Dense Recall → Stock Gate Evidence → Rerank → Dynamic TopK → LLM Judge
+
+两步互补:
+  Step 1 — JYHF Theme Gate: LLM提取可检索术语 → Gate-match theme_gate_profile
+          → 命中subject_key → theme_stock_map → JYHF候选
+  Step 2 — Stock Gate: embedding召回 + stock_gate_profile Gate Evidence
+          → 覆盖JYHF未收录的题材
 
 不修改已有组件。
 """
@@ -35,6 +42,16 @@ class StockCandidate:
     dense_score: float
     rerank_score: float = 0.0
     evidence: Dict[str, Any] = field(default_factory=dict)
+
+@dataclass
+class ThemeGateMatch:
+    """JYHF主题Gate匹配结果。"""
+    subject_key: str
+    concept: str
+    must_hits: List[str]
+    strong_hits: List[str]
+    should_hits: List[str]
+    score: int
 
 @dataclass
 class MatchResult:
@@ -72,6 +89,29 @@ def _ensure_list(v: Any) -> List[str]:
         try: return [str(x) for x in json.loads(v) if x]
         except: return [v] if v else []
     return []
+
+async def load_theme_gates() -> List[Dict]:
+    """加载 theme_gate_profile 到内存（635条），用于术语Gate匹配。"""
+    conn = await asyncpg.connect(user="postgres", password="postgres", host="localhost", port=5432, database="stock_data_test")
+    try:
+        rows = await conn.fetch("""
+            SELECT subject_key, concept, must_terms, strong_terms, should_terms, quality
+            FROM theme_gate_profile
+            WHERE must_terms IS NOT NULL
+        """)
+        gates = []
+        for r in rows:
+            gates.append({
+                'subject_key': r['subject_key'],
+                'concept': r['concept'] or '',
+                'must_terms': _ensure_list(r['must_terms']),
+                'strong_terms': _ensure_list(r['strong_terms']),
+                'should_terms': _ensure_list(r['should_terms']),
+                'quality': r['quality'] or 'weak',
+            })
+        return gates
+    finally:
+        await conn.close()
 
 # ==================== Dense Recall ====================
 class DenseRecall:
@@ -218,116 +258,92 @@ async def llm_judge(llm_client, event_text: str, candidates: List[StockCandidate
             c.llm_confidence = float(v.get("confidence", 0))
             c.llm_reason = v.get("reason", "")
 
-# ==================== Theme Lookup (兜底) ====================
-async def theme_lookup(event_text: str) -> Dict[str, Dict]:
-    """匹配 JYHF 主题 → 查 theme_stock_map → 兜底候选。"""
-    stocks: Dict[str, Dict] = {}
-    conn = await asyncpg.connect(user="postgres", password="postgres", host="localhost", port=5432, database="stock_data_test")
-    try:
-        # 用原文直接匹配主题名
-        # 滑动窗口 2-4 字，确保短词不被长词吞掉
-        raw_terms = set()
-        for w in (2, 3, 4):
-            for i in range(len(event_text) - w + 1):
-                seg = event_text[i:i+w]
-                if re.match(r'^[\u4e00-\u9fff\w]+$', seg):
-                    raw_terms.add(seg)
-        terms = sorted(raw_terms, key=lambda t: -len(t))[:40]
-        conds, params = [], []
-        for t in set(terms):
-            conds.append(f"concept ILIKE ${len(params)+1}")
-            params.append(f"%{t}%")
-        if not conds: return stocks
-
-        rows = await conn.fetch(f"""
-            SELECT subject_key, concept FROM theme_gate_profile
-            WHERE char_length(coalesce(concept,'')) >= 2 AND ({' OR '.join(conds)}) LIMIT 5
-        """, *params)
-        sks = [r['subject_key'] for r in rows]
-        if sks:
-            tsm = await conn.fetch("""
-                SELECT DISTINCT tsm.stock_id, tsm.stock_name, tsm.relation_type, spe.profile_text
-                FROM theme_stock_map tsm
-                LEFT JOIN stock_profile_ext spe ON tsm.stock_id = spe.stock_id
-                WHERE tsm.subject_key = ANY($1::varchar[])
-            """, sks)
-            for r in tsm:
-                sid = r['stock_id']
-                if sid not in stocks:
-                    stocks[sid] = {"stock_id": sid, "stock_name": r['stock_name'],
-                                   "dense_score": 0.5, "profile_text": r.get('profile_text','') or ''}
-    finally:
-        await conn.close()
-    return stocks
-
 # ==================== Engine ====================
 class StockMatchEngine:
-    """个股匹配引擎。"""
+    """个股匹配引擎 — 两步互补：JYHF Theme Gate + Stock Gate。"""
 
     def __init__(self, llm_client=None):
         self.llm = llm_client
         self.model = SentenceModel()
         self.recall = DenseRecall(self.model)
         self._gates: Dict[str, StockGate] = {}
+        self._theme_gates: List[Dict] = []
 
     async def initialize(self):
         self._gates = await load_gates()
-        logger.info(f"StockMatchEngine: {len(self._gates)} gates loaded")
+        self._theme_gates = await load_theme_gates()
+        logger.info(f"StockMatchEngine: {len(self._gates)} stock gates + {len(self._theme_gates)} theme gates loaded")
 
-    async def _llm_extract_themes(self, text: str) -> List[str]:
-        """LLM 结构化提取：读事件 → 输出 JYHF 主题名列表。"""
+    async def _llm_extract_search_terms(self, text: str) -> List[str]:
+        """LLM 结构化提取：读事件 → 输出可检索术语列表（用于 Gate 匹配 theme_gate_profile）。"""
         if not self.llm:
             raise RuntimeError("LLM required")
-        system = """你是新闻事件主题提取器。读完新闻后，列出该事件涉及的JYHF题材库主题名。
+        system = """你是新闻事件术语提取器。读完新闻后，提取可用于题材Gate匹配的检索术语。
 
 规则：
-1. 输出主题的简洁名称（2-6字），如"绿电""算力租赁""存储芯片""AI光互连"
-2. 从产业链角度推理：政策利好→哪些环节受益→对应什么主题
-3. 输出JSON: {"themes": ["绿电","新能源发电","碳排放交易"]}
-4. 3-6个主题，不输出解释"""
+1. 提取新闻原文中的核心概念词（2-6字优先），如"绿证""算力租赁""碳排放"
+2. ★ 关键：将原文具体术语映射为题材库的分类词：
+   - 原文"嵌入式存储""企业级存储" → 补充"存储芯片"
+   - 原文"算力中心建设""算力基础设施" → 补充"算力""智算中心"
+   - 原文"绿证价格机制""碳排放双控" → 补充"碳交易""绿电"
+3. 适当补充产业链分类词，但避免"数据中心""服务器""AI"等匹配面过广的词
+4. 输出JSON: {"search_terms": ["绿证","碳交易","绿电","碳排放双控","新能源发电","绿色电力消费","碳核算"]}
+5. 8-12个术语，质量优先于数量"""
         resp = await self.llm.chat_completion(
             messages=[{"role": "system", "content": system},
                       {"role": "user", "content": f"新闻:\n{text[:3000]}"}],
-            temperature=0.1, max_tokens=300,
+            temperature=0.1, max_tokens=350,
         )
         m = re.search(r'\{[\s\S]*\}', resp.get("content", ""))
         if not m: return []
-        return json.loads(m.group()).get("themes", [])
+        return json.loads(m.group()).get("search_terms", [])
 
-    async def _theme_to_stocks(self, theme_names: List[str]) -> Dict[str, Dict]:
-        """JYHF 主题名 → subject_key → theme_stock_map → 股票列表。"""
+    async def _match_theme_gates(self, search_terms: List[str]) -> List[ThemeGateMatch]:
+        """术语 Gate-match theme_gate_profile（must/strong/should terms 命中计分）。"""
+        if not self._theme_gates:
+            self._theme_gates = await load_theme_gates()
+            logger.info(f"Theme gates loaded: {len(self._theme_gates)}")
+
+        matches = []
+        for tg in self._theme_gates:
+            must_hits = [t for t in tg['must_terms'] if t in search_terms]
+            strong_hits = [t for t in tg['strong_terms'] if t in search_terms]
+            should_hits = [t for t in tg['should_terms'] if t in search_terms]
+            if not must_hits and not strong_hits:
+                continue
+            score = len(must_hits) * 5 + len(strong_hits) * 3 + len(should_hits) * 1
+            matches.append(ThemeGateMatch(
+                subject_key=tg['subject_key'],
+                concept=tg['concept'],
+                must_hits=must_hits,
+                strong_hits=strong_hits,
+                should_hits=should_hits[:5],
+                score=score,
+            ))
+        matches.sort(key=lambda m: (-m.score, -len(m.must_hits), -len(m.strong_hits)))
+        return matches[:10]
+
+    async def _theme_to_stocks(self, subject_keys: List[str]) -> Dict[str, Dict]:
+        """subject_key → theme_stock_map → 股票列表（精确查表，无 ILIKE）。"""
         stocks: Dict[str, Dict] = {}
-        if not theme_names: return stocks
+        if not subject_keys: return stocks
         conn = await asyncpg.connect(user="postgres", password="postgres", host="localhost", port=5432, database="stock_data_test")
         try:
-            conds, params = [], []
-            for t in theme_names:
-                if len(t) < 2: continue
-                conds.append(f"concept ILIKE ${len(params)+1}")
-                params.append(f"%{t}%")
-            if not conds: return stocks
-            rows = await conn.fetch(f"""
-                SELECT subject_key, concept FROM theme_gate_profile
-                WHERE char_length(coalesce(concept,'')) >= 2 AND ({' OR '.join(conds)})
-                LIMIT 10
-            """, *params)
-            sks = [r['subject_key'] for r in rows]
-            if sks:
-                tsm = await conn.fetch("""
-                    SELECT DISTINCT tsm.stock_id, tsm.stock_name, tsm.relation_type, spe.profile_text
-                    FROM theme_stock_map tsm
-                    LEFT JOIN stock_profile_ext spe ON tsm.stock_id = spe.stock_id
-                    WHERE tsm.subject_key = ANY($1::varchar[])
-                """, sks)
-                score = {'leader': 0.85, 'core': 0.75, 'member': 0.65}
-                for r in tsm:
-                    sid = r['stock_id']
-                    if sid not in stocks or r['relation_type'] == 'leader':
-                        stocks[sid] = {
-                            "stock_id": sid, "stock_name": r['stock_name'],
-                            "dense_score": score.get(r['relation_type'], 0.65),
-                            "profile_text": r.get('profile_text','') or '',
-                        }
+            tsm = await conn.fetch("""
+                SELECT DISTINCT tsm.stock_id, tsm.stock_name, tsm.relation_type, spe.profile_text
+                FROM theme_stock_map tsm
+                LEFT JOIN stock_profile_ext spe ON tsm.stock_id = spe.stock_id
+                WHERE tsm.subject_key = ANY($1::varchar[])
+            """, subject_keys)
+            score = {'leader': 0.85, 'core': 0.75, 'member': 0.65}
+            for r in tsm:
+                sid = r['stock_id']
+                if sid not in stocks or r['relation_type'] == 'leader':
+                    stocks[sid] = {
+                        "stock_id": sid, "stock_name": r['stock_name'],
+                        "dense_score": score.get(r['relation_type'], 0.65),
+                        "profile_text": r.get('profile_text','') or '',
+                    }
         finally:
             await conn.close()
         return stocks
@@ -335,36 +351,40 @@ class StockMatchEngine:
     async def match(self, research_text: str, max_candidates: int = 5) -> MatchResult:
         if not self._gates: await self.initialize()
 
-        # 1. LLM 结构化提取：事件语义 → JYHF 主题名
-        theme_names = await self._llm_extract_themes(research_text)
+        # ===== Step 1: LLM 提取可检索术语 + JYHF Theme Gate 匹配 =====
+        search_terms = await self._llm_extract_search_terms(research_text)
 
-        # 2. 主题名 → JYHF subject_key → theme_stock_map 查表
-        theme_stocks = await self._theme_to_stocks(theme_names)
+        # 术语 → Gate-match theme_gate_profile → subject_keys
+        theme_matches = await self._match_theme_gates(search_terms)
+        subject_keys = [m.subject_key for m in theme_matches]
 
-        # 3. Dense Recall 补充
+        # subject_keys → theme_stock_map → JYHF候选股票
+        jyhf_stocks = await self._theme_to_stocks(subject_keys)
+
+        # ===== Step 2: Dense Recall（补充 JYHF 未覆盖的股票）=====
         dense_rows = await self.recall.recall(research_text, top_k=100)
 
-        # 4. 合并（JYHF curated 映射为核心路径）
+        # ===== Step 3: 合并（JYHF主题股优先）=====
         existing = {r['stock_id'] for r in dense_rows}
-        for sid, s in theme_stocks.items():
+        for sid, s in jyhf_stocks.items():
             if sid not in existing:
                 dense_rows.append(s)
 
-        # 3. Gate Evidence + Rerank
+        # ===== Step 4: Stock Gate Evidence + Rerank =====
         candidates = rerank(dense_rows, self._gates, research_text)
 
-        # 4. Dynamic TopK + JYHF主题股优先 + Direct-Hit Reserve
+        # ===== Step 5: Dynamic TopK — JYHF主题股优先 + Gate direct-hit保留 =====
         topk = compute_dynamic_topk(candidates, min_k=8, max_k=18)
-        theme_hits = [c for c in candidates if c.stock_id in theme_stocks]
-        gate_hits = [c for c in candidates if c not in theme_hits and c.evidence.get('must_hits')]
-        others = [c for c in candidates if c not in theme_hits and c not in gate_hits]
-        llm_pool = (theme_hits + gate_hits + others)[:topk]
+        jyhf_hits = [c for c in candidates if c.stock_id in jyhf_stocks]
+        gate_hits = [c for c in candidates if c not in jyhf_hits and c.evidence.get('must_hits')]
+        others = [c for c in candidates if c not in jyhf_hits and c not in gate_hits]
+        llm_pool = (jyhf_hits + gate_hits + others)[:topk]
 
-        # 5. LLM Judge
+        # ===== Step 6: LLM Judge =====
         if self.llm:
             await llm_judge(self.llm, research_text, llm_pool, self._gates)
 
-        # 6. Select
+        # ===== Step 7: Select =====
         matched = [c for c in llm_pool if getattr(c, 'llm_verdict', '') == 'MATCH']
         partial = [c for c in llm_pool if getattr(c, 'llm_verdict', '') == 'PARTIAL']
         matched.sort(key=lambda c: getattr(c, 'llm_confidence', 0), reverse=True)
@@ -381,7 +401,16 @@ class StockMatchEngine:
                 "llm_reason": getattr(c, 'llm_reason', ''),
                 "evidence": c.evidence,
             } for c in picks],
-            audit={"dense_count": len(dense_rows), "topk": topk, "llm_calls": 1},
+            audit={
+                "search_terms": search_terms,
+                "theme_matches": [{"subject_key": m.subject_key, "concept": m.concept,
+                                   "score": m.score, "must_hits": m.must_hits}
+                                  for m in theme_matches],
+                "jyhf_stocks": len(jyhf_stocks),
+                "dense_count": len(dense_rows),
+                "topk": topk,
+                "llm_calls": 2,
+            },
         )
 
 # ==================== Test ====================
@@ -420,7 +449,12 @@ async def quick_test():
     for label, text in tests:
         result = await engine.match(text, max_candidates=5)
         print(f"\n{'='*60}\n📰 {label}\n{'='*60}")
+        print(f"search_terms={result.audit.get('search_terms',[])}")
+        print(f"theme_matches={len(result.audit.get('theme_matches',[]))} jyhf_stocks={result.audit.get('jyhf_stocks',0)}")
         print(f"dense={result.audit['dense_count']} topk={result.audit['topk']} → {len(result.candidates)}")
+        if result.audit.get('theme_matches'):
+            for tm in result.audit['theme_matches'][:5]:
+                print(f"  🏷 JYHF: {tm['concept']}({tm['subject_key']}) score={tm['score']} must={tm['must_hits']}")
         targets = targets_by_label.get(label, set())
         found = set()
         for s in result.candidates:
