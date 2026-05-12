@@ -1,0 +1,41 @@
+{
+  "stock_id": "300863",
+  "stock_name": "卡倍亿",
+  "concept": "汽车线缆龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车线缆龙头",
+    "常规线缆",
+    "新能源线缆"
+  ],
+  "should": [
+    "充电线缆",
+    "铝线缆",
+    "对绞线缆",
+    "屏蔽线缆",
+    "多芯护套线缆",
+    "硅橡胶线缆",
+    "同轴线缆",
+    "数据传输线缆",
+    "配方和技术",
+    "电子辐照工序"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车线缆龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "常规线缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源线缆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:46:34"
+}

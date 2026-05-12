@@ -1,0 +1,41 @@
+{
+  "stock_id": "600363",
+  "stock_name": "联创光电",
+  "concept": "光电+激光+超导",
+  "strategy_type": "industry_chain",
+  "must": [
+    "激光产品",
+    "高温超导",
+    "智能控制器"
+  ],
+  "should": [
+    "激光武器",
+    "泵浦源",
+    "光纤激光器",
+    "高功率半导体激光器",
+    "高端家电",
+    "新能源汽车",
+    "工业控制",
+    "科研军事",
+    "反无人机",
+    "全球唯一高温超导感应设备供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "激光产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高温超导",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能控制器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:16:06"
+}

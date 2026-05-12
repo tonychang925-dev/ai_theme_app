@@ -1,0 +1,51 @@
+{
+  "stock_id": "601136",
+  "stock_name": "首创证券",
+  "concept": "券商资管",
+  "strategy_type": "industry_chain",
+  "must": [
+    "资产管理类业务",
+    "券商资管",
+    "零售与财富管理类业务",
+    "投资银行类业务",
+    "固定收益投资交易"
+  ],
+  "should": [
+    "投资类业务",
+    "固定收益产品",
+    "公募基金",
+    "私募投资基金",
+    "新三板做市",
+    "主动管理",
+    "银行",
+    "信托",
+    "财务公司",
+    "上市公司"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "资产管理类业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "券商资管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "零售与财富管理类业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资银行类业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "固定收益投资交易",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:34:46"
+}

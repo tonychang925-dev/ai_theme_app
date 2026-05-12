@@ -1,0 +1,45 @@
+{
+  "stock_id": "688617",
+  "stock_name": "惠泰医疗",
+  "concept": "电生理与介入器械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电生理电极导管",
+    "射频消融导管",
+    "冠脉通路产品",
+    "三维电生理标测设备"
+  ],
+  "should": [
+    "外周血管介入产品",
+    "神经介入产品",
+    "多道电生理记录仪",
+    "电生理与介入器械",
+    "电生理手术",
+    "冠脉介入手术",
+    "外周血管介入手术",
+    "神经介入手术",
+    "整体电生理市场排名第四"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电生理电极导管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "射频消融导管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冠脉通路产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三维电生理标测设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:22:19"
+}

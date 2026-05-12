@@ -1,0 +1,46 @@
+{
+  "stock_id": "603912",
+  "stock_name": "佳力图",
+  "concept": "精密环境控制",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密环境控制",
+    "数据中心",
+    "精密环境温控产品",
+    "微模块产品"
+  ],
+  "should": [
+    "冷源产品",
+    "特种精密环境产品",
+    "集成产品",
+    "智能AIOT产品",
+    "RDS群集控产品",
+    "高精密温控设备",
+    "制冷主机",
+    "智能控制系统",
+    "可视化监测",
+    "一体化运维"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密环境控制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据中心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密环境温控产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "微模块产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:58:50"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "301448",
+  "stock_name": "开创电气",
+  "concept": "家用级电动工具",
+  "strategy_type": "industry_chain",
+  "must": [
+    "家用级电动工具",
+    "切割工具",
+    "打磨工具",
+    "钻孔紧固工具"
+  ],
+  "should": [
+    "DIY型家用级",
+    "外销为主",
+    "国家专精特新小巨人",
+    "配件及其他工具"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "家用级电动工具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "切割工具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "打磨工具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钻孔紧固工具",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:05:12"
+}

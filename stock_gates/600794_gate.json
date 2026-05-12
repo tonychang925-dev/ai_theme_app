@@ -1,0 +1,51 @@
+{
+  "stock_id": "600794",
+  "stock_name": "保税科技",
+  "concept": "液体化工仓储",
+  "strategy_type": "industry_chain",
+  "must": [
+    "液体化工仓储",
+    "码头仓储服务",
+    "智慧物流服务",
+    "供应链金融服务",
+    "乙二醇"
+  ],
+  "should": [
+    "长江国际网上仓储智慧物流服务平台",
+    "苏交网电商平台",
+    "PTA",
+    "易交割",
+    "链交割",
+    "全国最大PTA期货交割库",
+    "郑州商品交易所甲醇期货指定交割库",
+    "棉花",
+    "聚酯涤纶",
+    "聚酯树脂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "液体化工仓储",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "码头仓储服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧物流服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "供应链金融服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乙二醇",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:28:01"
+}

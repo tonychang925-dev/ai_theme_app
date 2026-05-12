@@ -1,0 +1,51 @@
+{
+  "stock_id": "300753",
+  "stock_name": "爱朋医疗",
+  "concept": "舒适化医疗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "微电脑注药泵",
+    "无线镇痛管理系统",
+    "麻醉深度监测仪",
+    "生理性海水鼻腔护理喷雾器",
+    "一次性生理性鼻腔冲洗液"
+  ],
+  "should": [
+    "急性疼痛管理",
+    "慢性疼痛管理",
+    "鼻腔护理",
+    "上气道管理",
+    "内热针治疗仪",
+    "低频治疗仪",
+    "冲击波治疗仪",
+    "敏伴复合益生菌粉固体饮料",
+    "便携多导睡眠记录系统",
+    "舒适化医疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "微电脑注药泵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无线镇痛管理系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "麻醉深度监测仪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生理性海水鼻腔护理喷雾器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一次性生理性鼻腔冲洗液",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:41:44"
+}

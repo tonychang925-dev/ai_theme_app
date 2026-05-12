@@ -1,0 +1,29 @@
+{
+  "stock_id": "600229",
+  "stock_name": "城市传媒",
+  "concept": "图书出版发行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "图书出版发行"
+  ],
+  "should": [
+    "新兴媒体开发运营",
+    "VR/AR教育培训",
+    "虚拟现实内容开发",
+    "内容创作策划",
+    "实体书店",
+    "线上零售",
+    "新媒体渠道",
+    "VR/AR"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "图书出版发行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:12:19"
+}

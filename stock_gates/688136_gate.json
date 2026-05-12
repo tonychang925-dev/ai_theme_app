@@ -1,0 +1,41 @@
+{
+  "stock_id": "688136",
+  "stock_name": "科兴制药",
+  "concept": "生物药研发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "赛若金",
+    "依普定",
+    "SHEN26"
+  ],
+  "should": [
+    "白特喜",
+    "常乐康",
+    "英夫利昔单抗",
+    "白蛋白紫杉醇",
+    "贝伐珠单抗",
+    "生物药研发",
+    "重组蛋白药物",
+    "微生态制剂",
+    "新型蛋白",
+    "新型抗体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "赛若金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "依普定",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SHEN26",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:09:33"
+}

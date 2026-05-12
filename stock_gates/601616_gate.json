@@ -1,0 +1,46 @@
+{
+  "stock_id": "601616",
+  "stock_name": "广电电气",
+  "concept": "输配电设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "输配电设备",
+    "输配电成套设备",
+    "电力电子",
+    "元器件"
+  ],
+  "should": [
+    "智能型开关柜",
+    "节能环保干式变压器",
+    "静止无功补偿装置(SVG)",
+    "永磁同步电机驱动高压变频器",
+    "环保气体柜",
+    "ALPSUS5.0环网柜",
+    "AEGPoros系列充电桩",
+    "电力电网",
+    "轨道交通",
+    "平板显示"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "输配电设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "输配电成套设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力电子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "元器件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:37:38"
+}

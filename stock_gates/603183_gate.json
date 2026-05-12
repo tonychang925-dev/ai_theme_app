@@ -1,0 +1,46 @@
+{
+  "stock_id": "603183",
+  "stock_name": "建研院",
+  "concept": "建筑科技服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程检测",
+    "绿色建筑技术",
+    "建筑节能",
+    "全过程咨询"
+  ],
+  "should": [
+    "工程设计",
+    "工程设计与咨询",
+    "工程监理",
+    "项目管理",
+    "BIM技术",
+    "EPC",
+    "特种施工",
+    "建筑科技服务",
+    "碳中和",
+    "城市更新"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程检测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "绿色建筑技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑节能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全过程咨询",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:45:57"
+}

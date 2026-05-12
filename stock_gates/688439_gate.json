@@ -1,0 +1,42 @@
+{
+  "stock_id": "688439",
+  "stock_name": "振华风光",
+  "concept": "军用模拟IC",
+  "strategy_type": "industry_chain",
+  "must": [
+    "信号链产品",
+    "电源管理器产品"
+  ],
+  "should": [
+    "模拟集成电路芯片设计平台",
+    "系统封装设计平台",
+    "军用模拟IC",
+    "陶瓷封装",
+    "金属封装",
+    "塑料封装",
+    "电性能测试",
+    "机械试验",
+    "环境试验",
+    "失效分析"
+  ],
+  "not": [
+    "兵器",
+    "船舶",
+    "电子",
+    "核工业",
+    "机载"
+  ],
+  "evidence_refs": [
+    {
+      "term": "信号链产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电源管理器产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:18:25"
+}

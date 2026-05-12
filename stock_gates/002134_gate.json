@@ -1,0 +1,51 @@
+{
+  "stock_id": "002134",
+  "stock_name": "天津普林",
+  "concept": "印制电路板",
+  "strategy_type": "industry_chain",
+  "must": [
+    "印制电路板",
+    "多层板",
+    "HDI",
+    "高频高速板",
+    "厚铜板"
+  ],
+  "should": [
+    "单双面板",
+    "高多层板",
+    "ISO9001",
+    "ISO14001",
+    "IATF16949",
+    "ISO45001",
+    "工控医疗",
+    "汽车电子",
+    "航空航天",
+    "消费电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "印制电路板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多层板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "HDI",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高频高速板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "厚铜板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:25:11"
+}

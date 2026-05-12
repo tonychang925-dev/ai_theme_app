@@ -1,0 +1,36 @@
+{
+  "stock_id": "002110",
+  "stock_name": "三钢闽光",
+  "concept": "钢铁生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钢铁生产",
+    "建筑用材"
+  ],
+  "should": [
+    "金属制品用材",
+    "中厚板材",
+    "优质圆钢",
+    "合金带钢",
+    "H型钢",
+    "煤化工产品",
+    "钢筋混凝土工程",
+    "金属制品",
+    "工程机械",
+    "船舶制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钢铁生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑用材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:23:49"
+}

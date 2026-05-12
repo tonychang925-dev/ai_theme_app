@@ -1,0 +1,41 @@
+{
+  "stock_id": "600377",
+  "stock_name": "宁沪高速",
+  "concept": "交通基建运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "交通基建运营",
+    "收费路桥投资",
+    "沪宁高速江苏段"
+  ],
+  "should": [
+    "宁常高速",
+    "镇溧高速",
+    "广靖高速",
+    "锡澄高速",
+    "锡宜高速",
+    "镇丹高速",
+    "沿江高速",
+    "江阴大桥",
+    "苏嘉杭高速",
+    "常宜高速"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "交通基建运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "收费路桥投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "沪宁高速江苏段",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:16:36"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "301070",
+  "stock_name": "开勒股份",
+  "concept": "HVLS风扇",
+  "strategy_type": "industry_chain",
+  "must": [
+    "HVLS风扇"
+  ],
+  "should": [
+    "异步电机HVLS风扇",
+    "永磁同步电机HVLS风扇",
+    "驱动总成",
+    "扇叶组件",
+    "控制系统",
+    "异步电机技术",
+    "永磁同步电机技术",
+    "厂房车间",
+    "仓储物流",
+    "公共场所"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "HVLS风扇",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:55:23"
+}

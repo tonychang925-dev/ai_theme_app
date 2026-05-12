@@ -1,0 +1,36 @@
+{
+  "stock_id": "688155",
+  "stock_name": "先惠技术",
+  "concept": "汽车智能装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车智能装备",
+    "智能制造装备"
+  ],
+  "should": [
+    "新能源电池零部件",
+    "动力电池精密结构件",
+    "机器人技术",
+    "激光技术",
+    "视觉识别和智能补偿技术",
+    "自动拧紧技术",
+    "密封测试技术",
+    "柔性化技术",
+    "新能源汽车",
+    "动力电池制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车智能装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能制造装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:09:58"
+}

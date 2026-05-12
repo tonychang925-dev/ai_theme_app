@@ -1,0 +1,41 @@
+{
+  "stock_id": "000100",
+  "stock_name": "TCL科技",
+  "concept": "半导体显示与材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体显示与材料",
+    "半导体显示",
+    "新能源光伏及半导体材料"
+  ],
+  "should": [
+    "新能源光伏",
+    "印刷显示",
+    "Micro-LED",
+    "TV面板",
+    "商用显示",
+    "单晶硅",
+    "全球大尺寸面板领先",
+    "TV面板市场份额全球第二",
+    "55吋和75吋产品份额全球第一",
+    "交互白板市场份额全球第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体显示与材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体显示",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源光伏及半导体材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:50:21"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "688257",
+  "stock_name": "新锐股份",
+  "concept": "硬质合金工具",
+  "strategy_type": "industry_chain",
+  "must": [
+    "硬质合金",
+    "硬质合金工具",
+    "凿岩工具"
+  ],
+  "should": [
+    "切削工具",
+    "矿山耗材综合解决方案提供商",
+    "牙轮钻头",
+    "潜孔钻具",
+    "顶锤式冲击钎具",
+    "数控刀片",
+    "矿用硬质合金核心技术",
+    "切削硬质合金核心技术",
+    "耐磨硬质合金核心技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "硬质合金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硬质合金工具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "凿岩工具",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:13:15"
+}

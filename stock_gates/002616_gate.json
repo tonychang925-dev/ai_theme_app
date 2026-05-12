@@ -1,0 +1,36 @@
+{
+  "stock_id": "002616",
+  "stock_name": "长青集团",
+  "concept": "生物质热电联产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生物质热电联产",
+    "热电联产"
+  ],
+  "should": [
+    "垃圾处置",
+    "户外及取暖用品",
+    "满城项目",
+    "鄄城生物质发电项目",
+    "中山市中心组团垃圾焚烧扩容项目",
+    "沂水项目",
+    "鱼台项目",
+    "宁安项目",
+    "明水项目",
+    "茂名项目"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生物质热电联产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热电联产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:50:12"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "002409",
+  "stock_name": "雅克科技",
+  "concept": "半导体材料龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "前驱体",
+    "SOD",
+    "电子特气",
+    "彩色光刻胶"
+  ],
+  "should": [
+    "球形硅微粉",
+    "TFT光刻胶",
+    "半导体材料龙头",
+    "原料配方技术",
+    "无污染研磨技术",
+    "混合复配技术",
+    "高温球形化技术",
+    "精密分级技术",
+    "表面处理技术",
+    "SOD工艺改进"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "前驱体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SOD",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子特气",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "彩色光刻胶",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:40:22"
+}

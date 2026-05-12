@@ -1,0 +1,36 @@
+{
+  "stock_id": "300036",
+  "stock_name": "超图软件",
+  "concept": "地理信息软件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "地理信息软件",
+    "GIS基础软件"
+  ],
+  "should": [
+    "行业应用软件",
+    "跨平台GIS技术",
+    "遥感GIS一体化",
+    "地理空间AI",
+    "自然资源",
+    "智慧城市",
+    "水利",
+    "气象",
+    "环保",
+    "应急"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "地理信息软件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "GIS基础软件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:10:28"
+}

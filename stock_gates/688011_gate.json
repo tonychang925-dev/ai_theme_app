@@ -1,0 +1,51 @@
+{
+  "stock_id": "688011",
+  "stock_name": "新光光电",
+  "concept": "光电制导",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光学制导",
+    "光电测试",
+    "模拟仿真",
+    "激光对抗",
+    "光电制导"
+  ],
+  "should": [
+    "像方扫描成像制导技术",
+    "多光学波段合成技术",
+    "直接稳像技术",
+    "非恒温场光学无热化和无压化设计",
+    "高速扫描稳像",
+    "低成本成像导引",
+    "电力检测",
+    "森林防火",
+    "系统",
+    "解决方案"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光学制导",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光电测试",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "模拟仿真",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "激光对抗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光电制导",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:05:22"
+}

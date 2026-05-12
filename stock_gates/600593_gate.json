@@ -1,0 +1,46 @@
+{
+  "stock_id": "600593",
+  "stock_name": "大连圣亚",
+  "concept": "海洋文旅",
+  "strategy_type": "industry_chain",
+  "must": [
+    "海洋馆",
+    "极地公园",
+    "飞鸟乐园",
+    "萌宠乐园"
+  ],
+  "should": [
+    "海洋花灯节",
+    "企福神店",
+    "新春AR烟花秀",
+    "白鲸秀",
+    "四鲸秀",
+    "海洋之心",
+    "探班斑海豹产房",
+    "圣亚夜宿营",
+    "海洋杂物社",
+    "淘学企鹅"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "海洋馆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "极地公园",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "飞鸟乐园",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "萌宠乐园",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:22:13"
+}

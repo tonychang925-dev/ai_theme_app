@@ -263,6 +263,7 @@ class StrongStockTrackingService:
             cond_gene = int(row.get("cond_gene") or 0)
             cond_volume = int(row.get("cond_volume") or 0)
             cond_structure = int(row.get("cond_structure") or 0)
+            has_two_board = bool(row.get("has_two_board") or False)
 
             source_tag = self._assign_source_tag(recent_limit_up_count, is_leader)
             relay_role = self._assign_relay_role(is_leader, best_rank)
@@ -270,6 +271,7 @@ class StrongStockTrackingService:
             labels = {
                 "has_recent_limit_up": recent_limit_up_count > 0,
                 "recent_limit_up_count": recent_limit_up_count,
+                "has_two_board": has_two_board,
                 "current_flag_today": current_flag_today,
                 "is_dragon_head": is_leader,
                 "is_front_row_core": best_rank <= 3,
@@ -342,6 +344,7 @@ class StrongStockTrackingService:
         breakout_status: str,
         position_label: str,
         trend_strength_score: float,
+        has_two_board: bool = False,
     ) -> dict[str, Any]:
         """4选3 硬门禁 — 等价于旧链 _evaluate_strong_pool_hard_gate。"""
         # Rule A：涨停基因（必须成立）
@@ -367,14 +370,14 @@ class StrongStockTrackingService:
         # 硬门禁判定：
         #   - 常规路径：4选3（pass_count >= 3）
         #   - 主线承接豁免：(rule_b_theme AND recent_limit_up_count >= 2)
-        #   - 独立龙头豁免：(recent_limit_up_count >= 2 AND pass_count >= 2)
-        #     两连板个股不依赖主线身份确认，基因+结构/量价至少2条件即可入池
+        #   - 独立龙头豁免：has_two_board=True 直接通过，不依赖主线/量价/结构
+        #     入池后受监控约束（支撑破位、7日到期剔除）
         passed = bool(
             rule_a_gene
             and (
                 pass_count >= 3
                 or (rule_b_theme and recent_limit_up_count >= 2)
-                or (recent_limit_up_count >= 2 and pass_count >= 2)
+                or has_two_board
             )
         )
         return {
@@ -558,6 +561,7 @@ class StrongStockTrackingService:
             breakout_status=breakout_status,
             position_label=position_label,
             trend_strength_score=trend_strength_score,
+            has_two_board=bool(row.labels.get("has_two_board") or False),
         )
 
         if not bool(hard_gate.get("passed")):
@@ -603,7 +607,9 @@ class StrongStockTrackingService:
             gene_score + theme_score + dragon_score + volume_price_score + structure_score,
             2,
         )
-        if broken_board and not final_mainline_alive:
+        has_two_board = bool(labels.get("has_two_board") or False)
+
+        if broken_board and not final_mainline_alive and not has_two_board:
             watch_score = max(0.0, round(watch_score - 8.0, 2))
 
         watch_priority = round(
@@ -629,7 +635,8 @@ class StrongStockTrackingService:
         if fade_confirmed or cycle_state == CYCLE_STATE_FADE_CONFIRMED:
             watch_status = "removed"
         elif broken_board:
-            if not final_mainline_alive:
+            # 独立龙头不因主线死亡被剔除，只受支撑破位/7日到期约束
+            if not final_mainline_alive and not has_two_board:
                 watch_status = "removed"
             elif support_broken:
                 watch_status = "removed"
@@ -655,7 +662,7 @@ class StrongStockTrackingService:
         # ── pool_entry_type ──
         if fade_confirmed or cycle_state == CYCLE_STATE_FADE_CONFIRMED:
             pool_entry_type = "reject"
-        elif broken_board and final_mainline_alive and not support_broken:
+        elif broken_board and (final_mainline_alive or has_two_board) and not support_broken:
             pool_entry_type = "observe_only"
         elif (
             strong_grade in {"S", "A"}
@@ -675,7 +682,7 @@ class StrongStockTrackingService:
                 removed_reason = "fade_confirmed"
             elif broken_board and support_broken:
                 removed_reason = "support_broken"
-            elif broken_board and not final_mainline_alive:
+            elif broken_board and not final_mainline_alive and not has_two_board:
                 removed_reason = "broken_board_non_mainline"
             elif watch_score < self.WEAKENING_MIN_SCORE:
                 removed_reason = "watch_score_below_threshold"

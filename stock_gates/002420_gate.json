@@ -1,0 +1,36 @@
+{
+  "stock_id": "002420",
+  "stock_name": "毅昌科技",
+  "concept": "工业设计制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业设计",
+    "国家级工业设计中心"
+  ],
+  "should": [
+    "家电结构件",
+    "汽车内外饰",
+    "新能源汽车结构件",
+    "动力电池热管理系统部件",
+    "储能电池及结构件",
+    "医疗设备结构件",
+    "IVD耗材",
+    "精密模具",
+    "注塑零部件",
+    "模具研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国家级工业设计中心",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:40:54"
+}

@@ -1,0 +1,42 @@
+{
+  "stock_id": "301668",
+  "stock_name": "昊创瑞通",
+  "concept": "智能配电设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能配电设备",
+    "智能环网柜",
+    "智能柱上开关",
+    "箱式变电站"
+  ],
+  "should": [
+    "配电网故障定位与自愈技术",
+    "新型高精度电力传感器技术",
+    "常压密封空气绝缘技术",
+    "配电网电缆线路",
+    "配电网架空线路",
+    "高压系统向低压系统输送电能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能配电设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能环网柜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能柱上开关",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "箱式变电站",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:06:48"
+}

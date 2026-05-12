@@ -1,0 +1,28 @@
+{
+  "stock_id": "002082",
+  "stock_name": "万邦德",
+  "concept": "制药器械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "石杉碱甲注射液",
+    "银杏叶滴丸"
+  ],
+  "should": [
+    "间苯三酚注射剂",
+    "制药器械"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "石杉碱甲注射液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "银杏叶滴丸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:22:08"
+}

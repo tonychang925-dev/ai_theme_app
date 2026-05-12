@@ -1,0 +1,31 @@
+{
+  "stock_id": "300933",
+  "stock_name": "中辰股份",
+  "concept": "电线电缆",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电线电缆"
+  ],
+  "should": [
+    "110kV及以下电力电缆",
+    "750kV及以下裸导线",
+    "电气装备用电线电缆",
+    "电缆附件",
+    "电网建设",
+    "火力发电",
+    "新能源发电",
+    "电气化铁路",
+    "城市轨道交通",
+    "建筑工程"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电线电缆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:49:49"
+}

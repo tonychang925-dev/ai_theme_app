@@ -1,0 +1,41 @@
+{
+  "stock_id": "300661",
+  "stock_name": "圣邦股份",
+  "concept": "模拟芯片龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "模拟芯片龙头",
+    "电源管理芯片",
+    "信号链芯片"
+  ],
+  "should": [
+    "运算放大器",
+    "稳压电源",
+    "比较器",
+    "线路驱动器",
+    "模拟开关",
+    "ADC/DAC",
+    "音频功率放大器",
+    "电平转换",
+    "小逻辑芯片",
+    "LDO"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "模拟芯片龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电源管理芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信号链芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:37:42"
+}

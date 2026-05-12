@@ -1,0 +1,36 @@
+{
+  "stock_id": "600916",
+  "stock_name": "中国黄金",
+  "concept": "黄金珠宝",
+  "strategy_type": "industry_chain",
+  "must": [
+    "黄金产品",
+    "培育钻石"
+  ],
+  "should": [
+    "K金珠宝类产品",
+    "金条",
+    "黄金珠宝",
+    "研发设计",
+    "生产加工",
+    "品牌运营",
+    "投资收藏",
+    "消费零售",
+    "黄金回收",
+    "上下游产业链体系"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "黄金产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "培育钻石",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:31:05"
+}

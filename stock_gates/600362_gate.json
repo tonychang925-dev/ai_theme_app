@@ -1,0 +1,46 @@
+{
+  "stock_id": "600362",
+  "stock_name": "江西铜业",
+  "concept": "铜业综合",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铜",
+    "金",
+    "银",
+    "硫化工"
+  ],
+  "should": [
+    "4/4.5微米锂电铜箔",
+    "电机扁线无氧铜杆",
+    "B1级阻燃防火电缆技术",
+    "空间堆用低偏析钼铼合金制备技术",
+    "酸性土壤微生物土壤修复专利技术",
+    "铜冶炼物质流智能优化技术",
+    "新能源",
+    "电线电缆",
+    "电子材料",
+    "环保设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "银",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硫化工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:16:08"
+}

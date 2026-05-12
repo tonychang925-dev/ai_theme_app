@@ -1,0 +1,46 @@
+{
+  "stock_id": "600210",
+  "stock_name": "紫江企业",
+  "concept": "包装材料龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "饮料包装",
+    "容器包装",
+    "瓶盖标签",
+    "软包与新材料"
+  ],
+  "should": [
+    "纸包装",
+    "铝塑膜",
+    "紫江彩印",
+    "紫江喷铝",
+    "紫东尼龙",
+    "紫燕合金",
+    "可降解包装材料",
+    "PET瓶减量化",
+    "塑料防盗盖减量化",
+    "PETG代替PVC"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "饮料包装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "容器包装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "瓶盖标签",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "软包与新材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:12:04"
+}

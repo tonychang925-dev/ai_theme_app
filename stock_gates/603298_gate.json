@@ -1,0 +1,35 @@
+{
+  "stock_id": "603298",
+  "stock_name": "杭叉集团",
+  "concept": "叉车制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "内燃叉车",
+    "电动叉车"
+  ],
+  "should": [
+    "AGV智能工业车辆",
+    "叉车制造",
+    "新能源叉车",
+    "锂电池应用技术",
+    "锂电专用架构平台技术",
+    "高电压永磁同步技术",
+    "快速充电技术",
+    "智能物流",
+    "工业车辆后市场"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "内燃叉车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电动叉车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:48:21"
+}

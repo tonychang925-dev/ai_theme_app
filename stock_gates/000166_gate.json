@@ -1,0 +1,41 @@
+{
+  "stock_id": "000166",
+  "stock_name": "申万宏源",
+  "concept": "投资银行集团",
+  "strategy_type": "industry_chain",
+  "must": [
+    "投资银行集团",
+    "投资银行业务",
+    "财富管理"
+  ],
+  "should": [
+    "企业金融",
+    "个人金融",
+    "机构服务及交易",
+    "投资管理",
+    "本金投资业务",
+    "金融衍生品",
+    "企业客户",
+    "个人客户",
+    "机构客户",
+    "头部券商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "投资银行集团",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资银行业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "财富管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:51:05"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "003016",
+  "stock_name": "欣贺股份",
+  "concept": "高端女装运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "JORYA",
+    "自营",
+    "电商"
+  ],
+  "should": [
+    "JORYA weekend",
+    "ANMANI",
+    "GIVHSHYH",
+    "CAROLINE",
+    "AIVEI",
+    "QDA",
+    "经销",
+    "高端女装运营",
+    "设计",
+    "采购"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "JORYA",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:07:37"
+}

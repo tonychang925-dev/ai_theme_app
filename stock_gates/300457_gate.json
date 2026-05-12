@@ -1,0 +1,32 @@
+{
+  "stock_id": "300457",
+  "stock_name": "赢合科技",
+  "concept": "锂电设备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电设备制造",
+    "锂电池专用生产设备"
+  ],
+  "should": [
+    "自主研发",
+    "工艺革新",
+    "动力锂电池",
+    "储能锂电池",
+    "3C数码锂电池",
+    "头部锂电设备企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电设备制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂电池专用生产设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:28:13"
+}

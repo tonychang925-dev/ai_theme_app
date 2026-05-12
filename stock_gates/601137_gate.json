@@ -1,0 +1,41 @@
+{
+  "stock_id": "601137",
+  "stock_name": "博威合金",
+  "concept": "高性能有色合金",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高性能有色合金",
+    "特殊合金电子材料带材",
+    "特殊合金电子材料线材"
+  ],
+  "should": [
+    "精密细丝",
+    "铝焊丝",
+    "氧化铝弥散铜",
+    "智能终端镜头专用材料",
+    "数字化研发",
+    "主控芯片",
+    "固件开发",
+    "新能源汽车",
+    "未来高速通讯",
+    "新一代芯片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高性能有色合金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特殊合金电子材料带材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特殊合金电子材料线材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:34:45"
+}

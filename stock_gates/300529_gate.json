@@ -1,0 +1,35 @@
+{
+  "stock_id": "300529",
+  "stock_name": "健帆生物",
+  "concept": "血液净化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "血液净化",
+    "一次性使用血液灌流器"
+  ],
+  "should": [
+    "一次性使用血浆胆红素吸附器",
+    "DNA免疫吸附柱",
+    "细胞因子吸附柱",
+    "血液透析粉液",
+    "血液净化设备",
+    "血液灌流技术",
+    "尿毒症",
+    "中毒",
+    "重型肝病"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "血液净化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一次性使用血液灌流器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:31:22"
+}

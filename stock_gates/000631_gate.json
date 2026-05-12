@@ -1,0 +1,37 @@
+{
+  "stock_id": "000631",
+  "stock_name": "顺发恒能",
+  "concept": "长三角房地产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "长三角房地产",
+    "房地产业",
+    "住宅地产"
+  ],
+  "should": [
+    "物业服务",
+    "自持物业运营",
+    "风电业务",
+    "电力",
+    "自主开发与销售",
+    "风能开发转换为电力后销售"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "长三角房地产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "房地产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "住宅地产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:59:03"
+}

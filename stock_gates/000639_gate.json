@@ -1,0 +1,24 @@
+{
+  "stock_id": "000639",
+  "stock_name": "西王食品",
+  "concept": "玉米油+运动营养",
+  "strategy_type": "industry_chain",
+  "must": [
+    "食用植物油"
+  ],
+  "should": [
+    "运动营养品",
+    "食用油零售",
+    "运动营养品市场"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "食用植物油",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T16:59:17"
+}

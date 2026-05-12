@@ -1,0 +1,36 @@
+{
+  "stock_id": "600250",
+  "stock_name": "南京商旅",
+  "concept": "旅游商贸",
+  "strategy_type": "industry_chain",
+  "must": [
+    "进出口贸易",
+    "旅游商贸"
+  ],
+  "should": [
+    "零售业务",
+    "旅游业务",
+    "沉浸式光影科技游船",
+    "游船+演艺新业态",
+    "进口业务",
+    "内贸砂石",
+    "棉花业务",
+    "跨境电商业务",
+    "经销业务",
+    "分销业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "进出口贸易",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "旅游商贸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:12:54"
+}

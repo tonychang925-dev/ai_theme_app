@@ -1,0 +1,36 @@
+{
+  "stock_id": "601065",
+  "stock_name": "江盐集团",
+  "concept": "盐业化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "食盐",
+    "纯碱"
+  ],
+  "should": [
+    "工业盐",
+    "小苏打",
+    "高强度硫酸钙",
+    "盐穴储能",
+    "碳钙循环联合研究",
+    "产业数字化转型",
+    "智能制造",
+    "工业互联网平台",
+    "江西省内食盐市场主渠道",
+    "香港食盐市场主要供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "食盐",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纯碱",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:33:49"
+}

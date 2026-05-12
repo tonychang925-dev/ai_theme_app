@@ -1,0 +1,50 @@
+{
+  "stock_id": "002238",
+  "stock_name": "天威视讯",
+  "concept": "深圳有线电视",
+  "strategy_type": "industry_chain",
+  "must": [
+    "深圳有线电视",
+    "有线数字业务",
+    "互联网宽带接入服务",
+    "政企项目服务",
+    "有线电视基本收视业务"
+  ],
+  "should": [
+    "视频购物服务",
+    "节目传输业务",
+    "千兆光网",
+    "数据中心",
+    "MEC边缘云",
+    "增值业务",
+    "深圳地区最主要的电视服务提供商",
+    "数字电视服务市场占有率第一",
+    "宽带接入服务居于市场前列"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "深圳有线电视",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有线数字业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "互联网宽带接入服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "政企项目服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有线电视基本收视业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:30:52"
+}

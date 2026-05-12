@@ -1,0 +1,30 @@
+{
+  "stock_id": "300518",
+  "stock_name": "新迅达",
+  "concept": "游戏与电商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "游戏业务"
+  ],
+  "should": [
+    "直播电商业务",
+    "互联网广告代理业务",
+    "互联网直销业务",
+    "第三方平台联合运营",
+    "游戏推广运营",
+    "直播带货",
+    "互联网直销",
+    "游戏用户",
+    "电商消费者"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "游戏业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:30:50"
+}

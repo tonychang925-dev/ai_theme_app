@@ -1,0 +1,51 @@
+{
+  "stock_id": "600378",
+  "stock_name": "昊华科技",
+  "concept": "高端氟材料综合供应商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端氟材料综合供应商",
+    "高端氟材料",
+    "电子化学品",
+    "航空化工材料",
+    "碳减排产品"
+  ],
+  "should": [
+    "变压吸附气体分离技术",
+    "催化剂产品",
+    "碳一化学",
+    "PTFE分散树脂技术",
+    "PVDF技术",
+    "有机氟材料研发",
+    "5G线缆",
+    "半导体",
+    "高频通信",
+    "锂电池"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端氟材料综合供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端氟材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子化学品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航空化工材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳减排产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:16:36"
+}

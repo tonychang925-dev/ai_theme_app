@@ -1,0 +1,41 @@
+{
+  "stock_id": "000888",
+  "stock_name": "峨眉山A",
+  "concept": "综合性文旅",
+  "strategy_type": "industry_chain",
+  "must": [
+    "景区门票",
+    "索道",
+    "宾馆饭店"
+  ],
+  "should": [
+    "茶业",
+    "演艺",
+    "旅行社",
+    "旅游商品",
+    "广告传媒",
+    "旅游大数据信息技术和软件开发",
+    "综合性文旅",
+    "世界自然与文化双遗产",
+    "国家级风景名胜区",
+    "5A级旅游景区"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "景区门票",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "索道",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "宾馆饭店",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:08:11"
+}

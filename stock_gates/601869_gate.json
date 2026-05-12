@@ -1,0 +1,51 @@
+{
+  "stock_id": "601869",
+  "stock_name": "长飞光纤",
+  "concept": "光纤光缆",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光纤光缆",
+    "光纤预制棒",
+    "光纤",
+    "光缆",
+    "数据通信相关产品"
+  ],
+  "should": [
+    "光器件及模块",
+    "综合布线",
+    "通信网络工程",
+    "多模光纤",
+    "空芯光纤",
+    "MPO跳线",
+    "AOC",
+    "光模块",
+    "有源光缆",
+    "高速铜缆"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光纤光缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光纤预制棒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光纤",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据通信相关产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:39:23"
+}

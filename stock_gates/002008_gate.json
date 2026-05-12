@@ -1,0 +1,41 @@
+{
+  "stock_id": "002008",
+  "stock_name": "大族激光",
+  "concept": "智能制造装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能制造装备",
+    "关键器件",
+    "通用工业激光加工设备"
+  ],
+  "should": [
+    "信息产业设备",
+    "新能源设备",
+    "半导体设备",
+    "垂直一体化",
+    "工艺解决方案",
+    "消费电子",
+    "PCB",
+    "锂电",
+    "光伏",
+    "半导体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能制造装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "关键器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通用工业激光加工设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:18:06"
+}

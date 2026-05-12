@@ -1,0 +1,35 @@
+{
+  "stock_id": "603682",
+  "stock_name": "锦和商管",
+  "concept": "城市更新运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "城市更新运营",
+    "承租运营"
+  ],
+  "should": [
+    "折摊息税前利润(EBITDA)",
+    "装修改造",
+    "专业化运营管理",
+    "老旧厂房",
+    "文化体育场馆",
+    "闲置土地",
+    "老旧小区",
+    "老旧厂区",
+    "老旧街区"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "城市更新运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "承租运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:54:37"
+}

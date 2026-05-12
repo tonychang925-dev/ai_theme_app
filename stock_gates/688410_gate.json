@@ -1,0 +1,37 @@
+{
+  "stock_id": "688410",
+  "stock_name": "山外山",
+  "concept": "血液净化龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "血液净化设备",
+    "血液净化耗材",
+    "血液净化核心关键技术"
+  ],
+  "should": [
+    "透析医疗服务",
+    "信息化管理系统",
+    "血液净化龙头",
+    "自主创新能力",
+    "慢性肾病患者透析治疗",
+    "国产替代空间大"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "血液净化设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "血液净化耗材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "血液净化核心关键技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:17:56"
+}

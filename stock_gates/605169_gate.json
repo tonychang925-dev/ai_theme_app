@@ -1,0 +1,46 @@
+{
+  "stock_id": "605169",
+  "stock_name": "洪通燃气",
+  "concept": "清洁交通能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "天然气专业运营商",
+    "加气站",
+    "LNG调峰厂",
+    "LNG储罐"
+  ],
+  "should": [
+    "加气站生态圈",
+    "洪通智慧云",
+    "CNG/LNG采购销平台",
+    "城市燃气销售服务平台",
+    "统一能源调度平台",
+    "生产应急指挥中心",
+    "清洁交通能源",
+    "中石油",
+    "中石化",
+    "煤化工制气"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "天然气专业运营商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "加气站",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LNG调峰厂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LNG储罐",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:02:34"
+}

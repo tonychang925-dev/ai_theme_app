@@ -1,0 +1,36 @@
+{
+  "stock_id": "301055",
+  "stock_name": "张小泉",
+  "concept": "刀剪五金",
+  "strategy_type": "industry_chain",
+  "must": [
+    "刀剪五金",
+    "刀剪具"
+  ],
+  "should": [
+    "厨房五金",
+    "家居五金",
+    "设计",
+    "研发",
+    "生产",
+    "销售和服务",
+    "厨房场景",
+    "家居场景",
+    "OEM供应商",
+    "经销商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "刀剪五金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "刀剪具",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:54:45"
+}

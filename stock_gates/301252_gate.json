@@ -1,0 +1,41 @@
+{
+  "stock_id": "301252",
+  "stock_name": "同星科技",
+  "concept": "轻商制冷换热器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轻商制冷换热器",
+    "换热器",
+    "制冷系统管组件"
+  ],
+  "should": [
+    "汽车空调管路",
+    "制冷单元模块",
+    "海尔集团",
+    "海信集团",
+    "美的集团",
+    "乐金电子",
+    "长安汽车集团",
+    "轻商制冷设备",
+    "家用制冷设备",
+    "汽车空调"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轻商制冷换热器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "换热器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "制冷系统管组件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:00:53"
+}

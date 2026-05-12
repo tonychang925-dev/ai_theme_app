@@ -1,0 +1,36 @@
+{
+  "stock_id": "000799",
+  "stock_name": "酒鬼酒",
+  "concept": "馥郁香型白酒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "馥郁香型白酒",
+    "内参（高端）",
+    "酒鬼（次高端）"
+  ],
+  "should": [
+    "湘泉",
+    "馥郁香型酿造工艺",
+    "前浓、中清、后酱的一口三香工艺",
+    "湖南省龙头企业",
+    "湘西州最大工业企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "馥郁香型白酒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "内参（高端）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "酒鬼（次高端）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:05:14"
+}

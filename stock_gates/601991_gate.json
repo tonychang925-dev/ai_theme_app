@@ -1,0 +1,38 @@
+{
+  "stock_id": "601991",
+  "stock_name": "大唐发电",
+  "concept": "综合能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "火电",
+    "水电",
+    "风电"
+  ],
+  "should": [
+    "光伏",
+    "低碳转型",
+    "新能源发电",
+    "西南水电",
+    "风光发电",
+    "海上风电",
+    "渔光互补"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "火电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:40:23"
+}

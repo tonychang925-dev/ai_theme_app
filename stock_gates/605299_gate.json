@@ -1,0 +1,27 @@
+{
+  "stock_id": "605299",
+  "stock_name": "舒华体育",
+  "concept": "健身器材制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "健身器材"
+  ],
+  "should": [
+    "展示架",
+    "健身器材制造",
+    "室内健身器材",
+    "室外健身器材",
+    "中端市场领先品牌",
+    "国产排名第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "健身器材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:03:37"
+}

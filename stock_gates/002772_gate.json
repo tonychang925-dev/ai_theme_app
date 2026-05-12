@@ -1,0 +1,36 @@
+{
+  "stock_id": "002772",
+  "stock_name": "众兴菌业",
+  "concept": "食用菌工厂化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金针菇",
+    "双孢菇"
+  ],
+  "should": [
+    "羲皇牌金针菇绿色食品A级产品",
+    "羲皇商标驰名商标",
+    "甘肃天水",
+    "甘肃武威",
+    "陕西杨凌",
+    "山东德州",
+    "河南新乡",
+    "河南安阳",
+    "四川眉山",
+    "江苏徐州"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金针菇",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "双孢菇",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:56:56"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "301358",
+  "stock_name": "湖南裕能",
+  "concept": "锂电正极材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "磷酸铁锂",
+    "锂电正极材料"
+  ],
+  "should": [
+    "三元材料",
+    "磷酸铁",
+    "动力电池",
+    "储能电池",
+    "新能源汽车",
+    "储能",
+    "国内磷酸铁锂出货量排名第一",
+    "宁德时代供应商",
+    "比亚迪供应商",
+    "高能量密度"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "磷酸铁锂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂电正极材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:03:38"
+}

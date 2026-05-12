@@ -1,0 +1,45 @@
+{
+  "stock_id": "001206",
+  "stock_name": "依依股份",
+  "concept": "宠物护理用品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "宠物护理用品",
+    "宠物垫",
+    "宠物尿裤"
+  ],
+  "should": [
+    "宠物清洁袋",
+    "宠物湿巾",
+    "宠物垃圾袋",
+    "护理垫",
+    "纸尿裤",
+    "无纺布",
+    "PetSmart",
+    "沃尔玛",
+    "亚马逊",
+    "Chewy"
+  ],
+  "not": [
+    "卫生巾",
+    "口罩",
+    "电商"
+  ],
+  "evidence_refs": [
+    {
+      "term": "宠物护理用品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "宠物垫",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "宠物尿裤",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:13:11"
+}

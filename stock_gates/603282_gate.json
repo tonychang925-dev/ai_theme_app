@@ -1,0 +1,41 @@
+{
+  "stock_id": "603282",
+  "stock_name": "亚光股份",
+  "concept": "制药与节能环保设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "制药与节能环保设备",
+    "制药装备",
+    "节能环保设备"
+  ],
+  "should": [
+    "MVR系统",
+    "强制循环板片",
+    "密封胶条",
+    "蒸发",
+    "结晶",
+    "过滤",
+    "清洗",
+    "干燥",
+    "有机溶媒精馏",
+    "国内排名居前"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "制药与节能环保设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "制药装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "节能环保设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:48:06"
+}

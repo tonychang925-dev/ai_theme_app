@@ -1,0 +1,46 @@
+{
+  "stock_id": "300690",
+  "stock_name": "双一科技",
+  "concept": "树脂基复合材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "树脂基复合材料",
+    "风电机舱罩",
+    "大型非金属模具",
+    "车辆碳纤维复合材料制品"
+  ],
+  "should": [
+    "工程及农用机械设备覆盖件",
+    "游钓艇",
+    "Vestas",
+    "金风科技",
+    "明阳智能",
+    "SiemensGamesa",
+    "南车株洲时代",
+    "三一重能",
+    "Caterpillar",
+    "比亚迪"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "树脂基复合材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电机舱罩",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大型非金属模具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车辆碳纤维复合材料制品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:39:09"
+}

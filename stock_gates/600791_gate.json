@@ -1,0 +1,46 @@
+{
+  "stock_id": "600791",
+  "stock_name": "京能置业",
+  "concept": "国资地产开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国资地产开发",
+    "商品住宅开发",
+    "共有产权房建设",
+    "保障房建设"
+  ],
+  "should": [
+    "国资背景",
+    "京能·西山印",
+    "京能·天下川",
+    "京能丨电建·洺悦湾",
+    "京能·丽墅",
+    "京能·雍清丽苑",
+    "京能·海语城",
+    "京能丨龙湖·熙上",
+    "金泰丽富嘉园",
+    "二十余年房地产开发经验"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国资地产开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商品住宅开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "共有产权房建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "保障房建设",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:27:51"
+}

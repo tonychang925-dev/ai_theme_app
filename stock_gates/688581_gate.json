@@ -1,0 +1,39 @@
+{
+  "stock_id": "688581",
+  "stock_name": "安杰思",
+  "concept": "内镜微创器械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "内镜微创器械",
+    "止血闭合类",
+    "可拆卸止血夹技术"
+  ],
+  "should": [
+    "EMR/ESD类",
+    "活检类",
+    "ERCP类",
+    "诊疗仪器类",
+    "消化内镜手术",
+    "内镜下黏膜切除术",
+    "内镜下黏膜剥离术",
+    "内镜逆行胰胆造影术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "内镜微创器械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "止血闭合类",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "可拆卸止血夹技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:21:12"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "603225",
+  "stock_name": "新凤鸣",
+  "concept": "涤纶长丝",
+  "strategy_type": "industry_chain",
+  "must": [
+    "涤纶长丝",
+    "涤纶长丝产能630万吨",
+    "PTA-涤纶长丝产业链",
+    "PTA产能1000万吨"
+  ],
+  "should": [
+    "POY",
+    "FDY",
+    "DTY",
+    "涤纶短纤",
+    "BP公司最新一代工艺技术",
+    "吸湿排汗纤维",
+    "高特丝纤维",
+    "环保抗皱纤维",
+    "中空保暖纤维",
+    "超柔纤维"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "涤纶长丝",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涤纶长丝产能630万吨",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PTA-涤纶长丝产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PTA产能1000万吨",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:47:01"
+}

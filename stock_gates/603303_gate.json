@@ -1,0 +1,36 @@
+{
+  "stock_id": "603303",
+  "stock_name": "得邦照明",
+  "concept": "专业照明服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "通用照明产品",
+    "车载产品"
+  ],
+  "should": [
+    "车载照明",
+    "车载控制器",
+    "LED灯具",
+    "LED灯泡",
+    "车载前大灯控制器(LDM)",
+    "车灯塑胶系列制品",
+    "主控芯片",
+    "专业照明服务",
+    "固件开发",
+    "电路设计"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "通用照明产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:48:35"
+}

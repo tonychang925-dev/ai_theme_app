@@ -1,0 +1,39 @@
+{
+  "stock_id": "601918",
+  "stock_name": "新集能源",
+  "concept": "煤炭电力综合能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤炭开采",
+    "火力发电",
+    "煤炭洗选"
+  ],
+  "should": [
+    "煤炭电力综合能源",
+    "煤炭",
+    "电力",
+    "化工",
+    "安徽省内中等规模煤炭生产",
+    "发电效率居于安徽省前列",
+    "安徽省中部",
+    "紧邻长江三角洲地区"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤炭开采",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "火力发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭洗选",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:39:47"
+}

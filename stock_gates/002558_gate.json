@@ -1,0 +1,30 @@
+{
+  "stock_id": "002558",
+  "stock_name": "巨人网络",
+  "concept": "网络游戏研发运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "网络游戏研发运营"
+  ],
+  "should": [
+    "征途系列",
+    "球球大作战",
+    "自研自发",
+    "道具付费模式",
+    "MMORPG",
+    "多人休闲竞技",
+    "自主运营",
+    "授权运营",
+    "联合运营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "网络游戏研发运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:47:14"
+}

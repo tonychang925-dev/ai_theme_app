@@ -1,0 +1,30 @@
+{
+  "stock_id": "605058",
+  "stock_name": "澳弘电子",
+  "concept": "印制电路板",
+  "strategy_type": "industry_chain",
+  "must": [
+    "印制电路板"
+  ],
+  "should": [
+    "单面板",
+    "双面板",
+    "多层板",
+    "家电",
+    "消费电子",
+    "电源能源",
+    "工控EMS",
+    "通讯安防",
+    "汽车电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "印制电路板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:01:21"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "002152",
+  "stock_name": "广电运通",
+  "concept": "金融科技与城市智能",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金融机具龙头",
+    "金融信创解决方案",
+    "智能金融设备",
+    "数字人民币产品"
+  ],
+  "should": [
+    "国产操作系统",
+    "OpenHarmony",
+    "城市治理解决方案",
+    "算力服务器",
+    "银行",
+    "政务",
+    "智慧城市",
+    "医保",
+    "教育",
+    "信创工作委员会会员"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金融机具龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融信创解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能金融设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字人民币产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:25:59"
+}

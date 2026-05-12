@@ -1,0 +1,33 @@
+{
+  "stock_id": "002736",
+  "stock_name": "国信证券",
+  "concept": "综合证券服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "财富管理与机构业务",
+    "投资银行业务"
+  ],
+  "should": [
+    "投资与交易业务",
+    "资产管理业务",
+    "综合证券服务",
+    "股权融资",
+    "债券融资",
+    "并购重组",
+    "私募股权基金"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "财富管理与机构业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资银行业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:55:20"
+}

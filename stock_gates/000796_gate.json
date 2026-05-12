@@ -1,0 +1,41 @@
+{
+  "stock_id": "000796",
+  "stock_name": "凯撒旅业",
+  "concept": "旅游生活服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "旅游生活服务",
+    "中国领先的旅游综合服务商",
+    "航食、铁路配餐业务"
+  ],
+  "should": [
+    "旅游业务",
+    "目的地业务",
+    "国内游",
+    "航空配餐",
+    "铁路餐饮",
+    "中国卓越的高铁配餐服务供应商之一",
+    "海南环岛线路独家铁路配餐服务商",
+    "出境游",
+    "入境游",
+    "邮轮船供"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "旅游生活服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中国领先的旅游综合服务商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航食、铁路配餐业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:05:11"
+}

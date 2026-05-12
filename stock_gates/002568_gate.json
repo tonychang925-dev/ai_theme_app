@@ -1,0 +1,41 @@
+{
+  "stock_id": "002568",
+  "stock_name": "百润股份",
+  "concept": "预调酒龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "预调酒龙头",
+    "预调鸡尾酒",
+    "威士忌烈酒"
+  ],
+  "should": [
+    "微醺",
+    "RIO清爽",
+    "威士忌",
+    "强爽",
+    "本榨",
+    "夜狮",
+    "HEYPOP",
+    "梅酒产品",
+    "伏特加",
+    "经典"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "预调酒龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "预调鸡尾酒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "威士忌烈酒",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:47:48"
+}

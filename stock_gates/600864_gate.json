@@ -1,0 +1,36 @@
+{
+  "stock_id": "600864",
+  "stock_name": "哈投股份",
+  "concept": "热电证券双主业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "热电业务",
+    "证券业务"
+  ],
+  "should": [
+    "集中供热",
+    "电力",
+    "蒸汽",
+    "证券经纪",
+    "证券承销与保荐",
+    "证券投资咨询",
+    "证券自营",
+    "证券资产管理",
+    "融资融券",
+    "证券投资基金代销"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "热电业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "证券业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:29:52"
+}

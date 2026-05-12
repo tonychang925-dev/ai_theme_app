@@ -1,0 +1,51 @@
+{
+  "stock_id": "300408",
+  "stock_name": "三环集团",
+  "concept": "电子陶瓷",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子陶瓷",
+    "MLCC",
+    "光纤连接器陶瓷插芯",
+    "氧化铝陶瓷基板",
+    "电阻器用陶瓷基体"
+  ],
+  "should": [
+    "粉体制备技术",
+    "陶瓷封装基座",
+    "陶瓷燃料电池部件",
+    "坯体成型",
+    "坯体烧结",
+    "精密加工",
+    "光通信",
+    "消费电子",
+    "汽车电子",
+    "工业控制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子陶瓷",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MLCC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光纤连接器陶瓷插芯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氧化铝陶瓷基板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电阻器用陶瓷基体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:26:04"
+}

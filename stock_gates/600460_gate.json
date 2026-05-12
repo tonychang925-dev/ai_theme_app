@@ -1,0 +1,46 @@
+{
+  "stock_id": "600460",
+  "stock_name": "士兰微",
+  "concept": "半导体IDM",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体IDM",
+    "IPM模块",
+    "功率模块",
+    "IGBT"
+  ],
+  "should": [
+    "MEMS传感器",
+    "分立器件",
+    "FRD",
+    "超结MOSFET",
+    "高压集成电路",
+    "M0内核控制器",
+    "月产10万只汽车级功率模块",
+    "8吋线",
+    "12吋线",
+    "新能源汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体IDM",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IPM模块",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功率模块",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IGBT",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:18:24"
+}

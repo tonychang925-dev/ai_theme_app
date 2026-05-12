@@ -1,0 +1,41 @@
+{
+  "stock_id": "300595",
+  "stock_name": "欧普康视",
+  "concept": "角膜塑形镜",
+  "strategy_type": "industry_chain",
+  "must": [
+    "角膜塑形镜",
+    "硬性角膜接触镜",
+    "超高透氧角膜塑形镜"
+  ],
+  "should": [
+    "巩膜镜",
+    "低浓度阿托品滴眼剂",
+    "离焦镜",
+    "308纳米准分子激光器",
+    "护理产品",
+    "硅水凝胶材料",
+    "近视防控",
+    "视力矫正",
+    "屈光不正矫正",
+    "国内角膜塑形镜领军企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "角膜塑形镜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硬性角膜接触镜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超高透氧角膜塑形镜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:34:30"
+}

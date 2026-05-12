@@ -1,0 +1,36 @@
+{
+  "stock_id": "002861",
+  "stock_name": "瀛通通讯",
+  "concept": "电声元器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电声元器件",
+    "声学产品及精密零组件"
+  ],
+  "should": [
+    "智能手机",
+    "平板电脑",
+    "个人电脑",
+    "个人数码产品",
+    "虚拟现实",
+    "智能音箱",
+    "智能汽车",
+    "医疗助听",
+    "智能机器人",
+    "低延时"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电声元器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "声学产品及精密零组件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:00:50"
+}

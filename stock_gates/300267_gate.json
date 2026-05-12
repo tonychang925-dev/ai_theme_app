@@ -1,0 +1,31 @@
+{
+  "stock_id": "300267",
+  "stock_name": "尔康制药",
+  "concept": "药用辅料龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "药用辅料龙头"
+  ],
+  "should": [
+    "蔗糖",
+    "药用乙醇",
+    "药用甘油",
+    "柠檬酸系列产品",
+    "复合辅料",
+    "磺胺嘧啶",
+    "间苯二酚",
+    "对氨基苯酚",
+    "酚磺乙胺注射液",
+    "磺胺嘧啶钠注射液"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "药用辅料龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:20:23"
+}

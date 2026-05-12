@@ -1,0 +1,51 @@
+{
+  "stock_id": "000619",
+  "stock_name": "海螺新材",
+  "concept": "新型绿色建材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中高档塑料型材",
+    "门窗",
+    "SCR蜂窝式催化剂",
+    "SCR平板式催化剂",
+    "系统门窗"
+  ],
+  "should": [
+    "生态地板",
+    "家装管材",
+    "家具板材",
+    "生态门",
+    "新型铝型材",
+    "光伏边框",
+    "光伏支架",
+    "耐火窗",
+    "模具开发",
+    "无铅绿色环保型材"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中高档塑料型材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "门窗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SCR蜂窝式催化剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SCR平板式催化剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "系统门窗",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:59:00"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "300993",
+  "stock_name": "玉马科技",
+  "concept": "功能性遮阳材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "功能性遮阳材料"
+  ],
+  "should": [
+    "商务办公",
+    "酒店",
+    "商场超市",
+    "体育场",
+    "住宅性房地产",
+    "特殊遮阳领域",
+    "龙头企业",
+    "高新技术企业",
+    "行业国标主编单位",
+    "中国驰名商标"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "功能性遮阳材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:52:12"
+}

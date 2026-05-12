@@ -1,0 +1,41 @@
+{
+  "stock_id": "600191",
+  "stock_name": "华资实业",
+  "concept": "食糖面粉加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "食糖委托加工",
+    "面粉委托加工",
+    "粮食贸易"
+  ],
+  "should": [
+    "绵白糖",
+    "小麦蛋白",
+    "食用酒精",
+    "赤藓糖醇",
+    "食糖面粉加工",
+    "华北地区销售",
+    "企事业单位食堂",
+    "学校食堂",
+    "粮食深加工",
+    "团餐经营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "食糖委托加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "面粉委托加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "粮食贸易",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:11:23"
+}

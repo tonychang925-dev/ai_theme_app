@@ -1,0 +1,36 @@
+{
+  "stock_id": "688403",
+  "stock_name": "汇成股份",
+  "concept": "显示驱动芯片封测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "显示驱动芯片封测",
+    "显示驱动芯片封测服务"
+  ],
+  "should": [
+    "金凸块制造",
+    "倒装封装技术",
+    "Fan-out",
+    "2.5D/3D",
+    "SiP",
+    "智能手机",
+    "智能穿戴",
+    "高清电视",
+    "笔记本电脑",
+    "平板电脑"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "显示驱动芯片封测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "显示驱动芯片封测服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:17:49"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "605218",
+  "stock_name": "伟时电子",
+  "concept": "车载背光显示模组",
+  "strategy_type": "industry_chain",
+  "must": [
+    "车载背光显示模组",
+    "背光显示模组",
+    "VR"
+  ],
+  "should": [
+    "液晶显示模组",
+    "触控装饰面板",
+    "显示组件",
+    "高亮度导光板开发",
+    "薄型导光板开发",
+    "直下型背光源开发",
+    "超窄边框背光源开发",
+    "大尺寸背光源开发",
+    "模组贴合"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "车载背光显示模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "背光显示模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "VR",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:03:05"
+}

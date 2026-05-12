@@ -1,0 +1,38 @@
+{
+  "stock_id": "603529",
+  "stock_name": "爱玛科技",
+  "concept": "电动两轮车",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电动两轮车",
+    "电动自行车",
+    "电动两轮摩托车"
+  ],
+  "should": [
+    "电动三轮车",
+    "自行车及配件",
+    "即时物流配送",
+    "共享出行",
+    "个人通勤",
+    "新国标替换需求",
+    "份额向头部集中"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电动两轮车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电动自行车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电动两轮摩托车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:51:51"
+}

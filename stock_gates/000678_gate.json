@@ -1,0 +1,36 @@
+{
+  "stock_id": "000678",
+  "stock_name": "襄阳轴承",
+  "concept": "汽车轴承",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车轴承",
+    "等速万向节"
+  ],
+  "should": [
+    "商用车轮毂单元",
+    "长寿命及低摩擦商用车轴承",
+    "新能源汽车高速轴承",
+    "高效轴承",
+    "陶瓷球绝缘轴承",
+    "双列串联角接触球轴承",
+    "电驱系统用绝缘轴承",
+    "重型车",
+    "中型车",
+    "轻型车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车轴承",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "等速万向节",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:00:23"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300601",
+  "stock_name": "康泰生物",
+  "concept": "人用疫苗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "人用疫苗",
+    "多联多价疫苗",
+    "新型基因工程疫苗"
+  ],
+  "should": [
+    "灭活疫苗",
+    "减毒活疫苗",
+    "蛋白亚单位疫苗",
+    "病毒样颗粒疫苗",
+    "核酸疫苗",
+    "治疗性疫苗",
+    "基因重组技术",
+    "病毒载体技术",
+    "新型佐剂",
+    "mRNA技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "人用疫苗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多联多价疫苗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新型基因工程疫苗",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:34:48"
+}

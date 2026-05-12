@@ -1,0 +1,36 @@
+{
+  "stock_id": "000957",
+  "stock_name": "中通客车",
+  "concept": "新能源客车",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源客车",
+    "氢燃料客车"
+  ],
+  "should": [
+    "公路客车",
+    "公交",
+    "高端商务",
+    "校车",
+    "物流车",
+    "特种车",
+    "旅游",
+    "团体",
+    "公共交通",
+    "旅游客运"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源客车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氢燃料客车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:10:57"
+}

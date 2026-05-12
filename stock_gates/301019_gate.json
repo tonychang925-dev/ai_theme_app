@@ -1,0 +1,36 @@
+{
+  "stock_id": "301019",
+  "stock_name": "宁波色母",
+  "concept": "色母粒定制",
+  "strategy_type": "industry_chain",
+  "must": [
+    "色母粒定制",
+    "色母粒"
+  ],
+  "should": [
+    "塑料彩色母粒",
+    "黑色母粒",
+    "白色母粒",
+    "精准化定制",
+    "配方改进",
+    "生产工艺优化",
+    "技术创新",
+    "国内领先的塑料色母粒供应商",
+    "专精特新小巨人企业",
+    "国家第六批单项冠军"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "色母粒定制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "色母粒",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:53:27"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "688267",
+  "stock_name": "中触媒",
+  "concept": "分子筛催化剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "分子筛催化剂",
+    "特种分子筛及催化剂",
+    "移动源脱硝分子筛"
+  ],
+  "should": [
+    "非分子筛催化剂",
+    "催化应用工艺及化工技术服务",
+    "烯烃异构化催化剂",
+    "己内酰胺催化剂",
+    "环氧丙烷催化剂",
+    "吸附分离分子筛",
+    "固定源脱硝分子筛",
+    "光触媒VOCs净化催化剂",
+    "乙二醇催化剂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "分子筛催化剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种分子筛及催化剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动源脱硝分子筛",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:13:36"
+}

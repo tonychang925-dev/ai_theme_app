@@ -1,0 +1,36 @@
+{
+  "stock_id": "002399",
+  "stock_name": "海普瑞",
+  "concept": "肝素产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "肝素钠原料药",
+    "依诺肝素钠原料药"
+  ],
+  "should": [
+    "依诺肝素钠制剂",
+    "肝素钠注射液",
+    "哺乳动物细胞培养",
+    "微生物发酵",
+    "细胞和基因治疗",
+    "mRNA生物制品",
+    "肝素产业链",
+    "预防静脉内血栓栓塞性疾病",
+    "治疗深静脉栓塞",
+    "治疗急性冠脉综合征"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "肝素钠原料药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "依诺肝素钠原料药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:39:47"
+}

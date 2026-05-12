@@ -1,0 +1,31 @@
+{
+  "stock_id": "601688",
+  "stock_name": "华泰证券",
+  "concept": "财富管理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "涨乐财富通"
+  ],
+  "should": [
+    "涨乐全球通",
+    "聊TA",
+    "财富管理",
+    "证券期货期权经纪业务",
+    "财富管理服务",
+    "投资顾问服务",
+    "智能交互",
+    "算法引擎",
+    "数字化决策",
+    "金融科技"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "涨乐财富通",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:38:01"
+}

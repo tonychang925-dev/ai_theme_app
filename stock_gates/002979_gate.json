@@ -1,0 +1,46 @@
+{
+  "stock_id": "002979",
+  "stock_name": "雷赛智能",
+  "concept": "运动控制龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "运动控制龙头",
+    "国内步进系统份额第一",
+    "步进电机及驱动器",
+    "运动控制器"
+  ],
+  "should": [
+    "伺服电机及驱动器",
+    "运动控制卡",
+    "一体式电机",
+    "运动控制技术",
+    "PLC与运动控制技术",
+    "电子制造",
+    "特种机床",
+    "喷绘印刷",
+    "5G",
+    "半导体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "运动控制龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内步进系统份额第一",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "步进电机及驱动器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "运动控制器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:05:56"
+}

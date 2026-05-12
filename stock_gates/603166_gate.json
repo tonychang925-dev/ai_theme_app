@@ -1,0 +1,41 @@
+{
+  "stock_id": "603166",
+  "stock_name": "福达股份",
+  "concept": "混动曲轴龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "混动曲轴龙头",
+    "发动机曲轴",
+    "电驱动减速器齿轮"
+  ],
+  "should": [
+    "汽车离合器",
+    "螺旋锥齿轮",
+    "精密锻件",
+    "高强度螺栓",
+    "中频淬火工艺",
+    "圆角淬火热处理",
+    "汽车",
+    "工程机械",
+    "农机",
+    "船舶"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "混动曲轴龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发动机曲轴",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电驱动减速器齿轮",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:45:16"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "002951",
+  "stock_name": "金时科技",
+  "concept": "烟标包装印刷",
+  "strategy_type": "industry_chain",
+  "must": [
+    "烟标",
+    "镭射包装材料"
+  ],
+  "should": [
+    "镭射膜",
+    "镭射纸",
+    "超高精度生产设备",
+    "高稳定性自动化设备",
+    "烟标包装印刷",
+    "新产品开发能力",
+    "全产业链研发",
+    "卷烟包装",
+    "卷烟品牌建设",
+    "卷烟文化传播"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "烟标",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "镭射包装材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:04:39"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "603868",
+  "stock_name": "飞科电器",
+  "concept": "个护电器龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电动剃须刀",
+    "电吹风",
+    "智能感应技术"
+  ],
+  "should": [
+    "电动牙刷",
+    "电动理发器",
+    "毛球修剪器",
+    "自由精准控温",
+    "LED智能显示",
+    "薄韧刀片",
+    "个护电器龙头",
+    "技术研发",
+    "品牌运营",
+    "制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电动剃须刀",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电吹风",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能感应技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:57:51"
+}

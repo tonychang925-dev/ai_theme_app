@@ -1,0 +1,36 @@
+{
+  "stock_id": "600305",
+  "stock_name": "恒顺醋业",
+  "concept": "镇江香醋",
+  "strategy_type": "industry_chain",
+  "must": [
+    "镇江香醋",
+    "醋"
+  ],
+  "should": [
+    "酒",
+    "酱",
+    "复合调味料",
+    "红烧肉料包",
+    "酸汤肥牛料包",
+    "调味品",
+    "食品加工",
+    "餐饮",
+    "唯一A股上市老字号醋业公司",
+    "四大名醋之首"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "镇江香醋",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "醋",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:14:23"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "300846",
+  "stock_name": "首都在线",
+  "concept": "全球云网服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "IDC服务",
+    "智算云",
+    "全球云网一体化"
+  ],
+  "should": [
+    "云主机及相关服务",
+    "计算云",
+    "全球云网服务",
+    "轻资产运营",
+    "资源统筹",
+    "AI应用",
+    "大模型推理",
+    "企业云服务",
+    "IP采购费"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "IDC服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智算云",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球云网一体化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:45:47"
+}

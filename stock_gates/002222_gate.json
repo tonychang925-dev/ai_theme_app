@@ -1,0 +1,41 @@
+{
+  "stock_id": "002222",
+  "stock_name": "福晶科技",
+  "concept": "非线性光学晶体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "非线性光学晶体",
+    "激光晶体",
+    "精密光学元件"
+  ],
+  "should": [
+    "激光器件",
+    "EB镀膜工艺",
+    "熔盐法",
+    "提拉法",
+    "水溶液法",
+    "坩埚下降法",
+    "全息光栅",
+    "非球面数控研磨抛光",
+    "离子束抛光",
+    "磁流变抛光"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "非线性光学晶体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "激光晶体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密光学元件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:30:05"
+}

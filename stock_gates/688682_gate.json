@@ -1,0 +1,41 @@
+{
+  "stock_id": "688682",
+  "stock_name": "霍莱沃",
+  "concept": "电磁仿真测量",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电磁测量系统",
+    "电磁场仿真分析验证",
+    "电磁仿真测量"
+  ],
+  "should": [
+    "相控阵产品",
+    "相控阵校准测试",
+    "通用测试",
+    "改进型矩量法",
+    "快速算法",
+    "高精度多通道相控阵测量系统",
+    "相控阵整机产品",
+    "雷达",
+    "无线通信",
+    "航空航天"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电磁测量系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电磁场仿真分析验证",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电磁仿真测量",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:23:52"
+}

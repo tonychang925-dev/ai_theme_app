@@ -1,0 +1,36 @@
+{
+  "stock_id": "000712",
+  "stock_name": "锦龙股份",
+  "concept": "证券控股",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中山证券",
+    "东莞证券"
+  ],
+  "should": [
+    "证券控股",
+    "经纪",
+    "投资咨询",
+    "财务顾问",
+    "承销与保荐",
+    "证券自营",
+    "资产管理",
+    "基金代销",
+    "期货IB",
+    "直接投资"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中山证券",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "东莞证券",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:01:34"
+}

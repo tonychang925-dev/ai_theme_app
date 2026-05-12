@@ -1,0 +1,31 @@
+{
+  "stock_id": "688261",
+  "stock_name": "东微半导",
+  "concept": "超级结MOSFET",
+  "strategy_type": "industry_chain",
+  "must": [
+    "超级结MOSFET"
+  ],
+  "should": [
+    "中低压屏蔽栅MOSFET",
+    "超级硅MOSFET",
+    "TGBT",
+    "新能源汽车直流充电桩",
+    "新能源汽车车载充电机",
+    "数据中心及通讯电源",
+    "光伏逆变",
+    "储能",
+    "PC电源",
+    "适配器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "超级结MOSFET",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:13:25"
+}

@@ -1,0 +1,38 @@
+{
+  "stock_id": "601188",
+  "stock_name": "龙江交通",
+  "concept": "高速公路运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "经营管理收费公路",
+    "公路养护",
+    "服务区运营"
+  ],
+  "should": [
+    "智慧云收费",
+    "收费机器人车道",
+    "ETC车道",
+    "哈大高速收费经营权",
+    "高速公路运营",
+    "交通运输",
+    "出行服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "经营管理收费公路",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公路养护",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "服务区运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:35:12"
+}

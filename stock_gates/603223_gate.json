@@ -1,0 +1,31 @@
+{
+  "stock_id": "603223",
+  "stock_name": "恒通股份",
+  "concept": "LNG贸易物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LNG贸易物流"
+  ],
+  "should": [
+    "LNG贸易",
+    "物流运输",
+    "以销定采",
+    "分销配送",
+    "城市燃气公司",
+    "工业企业",
+    "加气站",
+    "其他贸易商",
+    "LNG沿海接收站",
+    "LNG液厂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LNG贸易物流",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:46:54"
+}

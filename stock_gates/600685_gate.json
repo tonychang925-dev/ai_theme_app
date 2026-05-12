@@ -1,0 +1,41 @@
+{
+  "stock_id": "600685",
+  "stock_name": "中船防务",
+  "concept": "海洋防务装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "海洋防务装备",
+    "军用舰船",
+    "海警装备"
+  ],
+  "should": [
+    "公务船",
+    "支线集装箱船",
+    "挖泥船",
+    "海洋工程平台",
+    "风电安装平台",
+    "智能型无人系统母船",
+    "深中通道钢壳管节",
+    "自主知识产权",
+    "绿色节能环保技术",
+    "高技术高附加值船型研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "海洋防务装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "军用舰船",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海警装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:24:57"
+}

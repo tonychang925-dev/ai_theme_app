@@ -1,0 +1,41 @@
+{
+  "stock_id": "603387",
+  "stock_name": "基蛋生物",
+  "concept": "体外诊断POCT",
+  "strategy_type": "industry_chain",
+  "must": [
+    "体外诊断POCT",
+    "POCT产品",
+    "化学发光产品"
+  ],
+  "should": [
+    "凝血产品",
+    "桌面流水线",
+    "Metis800灵动系列流水线",
+    "核酸POCT",
+    "Metis600急诊血球流水线",
+    "MAGICL6000全血小发光",
+    "荧光染料",
+    "纳米微球",
+    "抗体研发",
+    "磁珠合成"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "体外诊断POCT",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "POCT产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化学发光产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:50:45"
+}

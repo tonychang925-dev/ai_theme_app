@@ -1,0 +1,31 @@
+{
+  "stock_id": "605179",
+  "stock_name": "一鸣食品",
+  "concept": "乳品烘焙连锁",
+  "strategy_type": "industry_chain",
+  "must": [
+    "乳品烘焙连锁"
+  ],
+  "should": [
+    "调制乳系列",
+    "堡系列",
+    "冷冻面团",
+    "罐子蛋糕",
+    "冷冻面团技术",
+    "预成型冷冻面团",
+    "预烘烤冷冻面团",
+    "营养早餐",
+    "社交场所",
+    "学生配餐"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "乳品烘焙连锁",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:02:37"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "688313",
+  "stock_name": "仕佳光子",
+  "concept": "光通信芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PLC分路器芯片",
+    "光通信芯片",
+    "AWG芯片",
+    "DFB激光器芯片"
+  ],
+  "should": [
+    "100G EML激光器",
+    "MPO连接器",
+    "IDM模式",
+    "芯片设计",
+    "晶圆制造",
+    "加工封装",
+    "测试",
+    "CPO",
+    "激光雷达",
+    "国产化替代"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PLC分路器芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光通信芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AWG芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "DFB激光器芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:15:06"
+}

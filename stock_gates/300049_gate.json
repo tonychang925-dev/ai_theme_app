@@ -1,0 +1,27 @@
+{
+  "stock_id": "300049",
+  "stock_name": "福瑞医科",
+  "concept": "肝病诊疗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "复方鳖甲软肝片"
+  ],
+  "should": [
+    "肝病诊疗",
+    "无创定量检测肝脏硬度及脂肪变",
+    "肝纤维化及早期肝硬化治疗",
+    "NASH药物研发检测",
+    "肝病慢病管理",
+    "全球首创肝纤维化诊断设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "复方鳖甲软肝片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:10:54"
+}

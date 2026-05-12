@@ -1,0 +1,39 @@
+{
+  "stock_id": "002025",
+  "stock_name": "航天电器",
+  "concept": "高端电子元器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端连接器",
+    "微特电机",
+    "高端继电器"
+  ],
+  "should": [
+    "光通信器件（光电模块）",
+    "可靠性设计",
+    "试验与验证技术",
+    "微型化技术",
+    "薄型化技术",
+    "组合化技术",
+    "模块化技术",
+    "智能化技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端连接器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "微特电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端继电器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:18:55"
+}

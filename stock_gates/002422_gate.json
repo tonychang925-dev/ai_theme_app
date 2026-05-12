@@ -1,0 +1,38 @@
+{
+  "stock_id": "002422",
+  "stock_name": "科伦药业",
+  "concept": "大输液龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大输液龙头",
+    "大输液",
+    "大输液领域龙头企业"
+  ],
+  "should": [
+    "非输液药品",
+    "抗生素中间体原料药",
+    "创新药",
+    "可立袋",
+    "医药研发",
+    "药品制造",
+    "集采头部中标供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大输液龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大输液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大输液领域龙头企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:40:54"
+}

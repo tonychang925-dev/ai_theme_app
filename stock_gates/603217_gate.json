@@ -1,0 +1,41 @@
+{
+  "stock_id": "603217",
+  "stock_name": "元利科技",
+  "concept": "精细化工新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "二元酸二甲酯",
+    "二元醇",
+    "特种增塑剂"
+  ],
+  "should": [
+    "受阻胺类光稳定剂",
+    "银粉",
+    "精细化工新材料",
+    "己二酸二甲酯加氢法",
+    "分离制取",
+    "光伏产业",
+    "环保型化工原料",
+    "混合二元酸二甲酯全球龙头",
+    "二元醇系列国内领先",
+    "邻苯二甲酸二仲辛酯国内领先"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "二元酸二甲酯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "二元醇",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种增塑剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:46:43"
+}

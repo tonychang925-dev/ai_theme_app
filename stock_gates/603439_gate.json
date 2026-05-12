@@ -1,0 +1,29 @@
+{
+  "stock_id": "603439",
+  "stock_name": "三力制药",
+  "concept": "儿科咽喉用药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "开喉剑喷雾剂（儿童型）"
+  ],
+  "should": [
+    "开喉剑喷雾剂",
+    "儿科咽喉用药",
+    "苗医验方",
+    "现代科学技术",
+    "儿童咽喉疾病",
+    "呼吸系统疾病",
+    "儿科咽喉用药龙头企业",
+    "中华老字号"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "开喉剑喷雾剂（儿童型）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:50:56"
+}

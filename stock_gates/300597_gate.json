@@ -1,0 +1,31 @@
+{
+  "stock_id": "300597",
+  "stock_name": "吉大通信",
+  "concept": "通信网络技术服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "通信网络技术服务"
+  ],
+  "should": [
+    "信息技术服务",
+    "5G",
+    "千兆光网",
+    "物联网",
+    "大数据",
+    "云计算",
+    "政务信息化",
+    "企业信息化",
+    "金融",
+    "体育"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "通信网络技术服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:34:31"
+}

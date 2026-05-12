@@ -1,0 +1,27 @@
+{
+  "stock_id": "600662",
+  "stock_name": "外服控股",
+  "concept": "人力资源服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "业务外包"
+  ],
+  "should": [
+    "人事管理",
+    "人才派遣",
+    "薪酬福利",
+    "招聘及灵活用工",
+    "人力资源服务",
+    "咨询+技术+外包"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "业务外包",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:24:14"
+}

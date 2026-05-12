@@ -1,0 +1,46 @@
+{
+  "stock_id": "603726",
+  "stock_name": "朗迪集团",
+  "concept": "风叶风机制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风叶风机制造",
+    "家用空调风叶",
+    "机械风机",
+    "复合材料"
+  ],
+  "should": [
+    "格力",
+    "美的",
+    "海尔",
+    "海信",
+    "长虹",
+    "TCL",
+    "奥克斯",
+    "LG",
+    "三菱",
+    "专业空调风叶设计软件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风叶风机制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "家用空调风叶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机械风机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复合材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:55:47"
+}

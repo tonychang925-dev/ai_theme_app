@@ -1,0 +1,33 @@
+{
+  "stock_id": "603122",
+  "stock_name": "合富中国",
+  "concept": "医疗流通渠道商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医疗流通渠道商",
+    "体外诊断产品集约化业务"
+  ],
+  "should": [
+    "医疗产品流通",
+    "集约化采购服务",
+    "供应链管理服务",
+    "驻场协助服务",
+    "多品牌合作",
+    "供应商",
+    "其它增值服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医疗流通渠道商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "体外诊断产品集约化业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:44:20"
+}

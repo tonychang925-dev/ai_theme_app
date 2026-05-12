@@ -1,0 +1,41 @@
+{
+  "stock_id": "603527",
+  "stock_name": "众源新材",
+  "concept": "铜带箔及均热板",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铜带箔及均热板",
+    "紫铜带箔",
+    "压延铜箔"
+  ],
+  "should": [
+    "超薄均温板",
+    "宽幅压延铜箔",
+    "FPC",
+    "3C散热",
+    "屏蔽材料",
+    "石墨烯薄膜制备",
+    "5G终端",
+    "基站",
+    "服务器",
+    "数据中心"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铜带箔及均热板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "紫铜带箔",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "压延铜箔",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:51:57"
+}

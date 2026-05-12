@@ -1,0 +1,36 @@
+{
+  "stock_id": "605011",
+  "stock_name": "杭州热电",
+  "concept": "热电联产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "热电联产",
+    "集中供热"
+  ],
+  "should": [
+    "蒸汽",
+    "电力",
+    "煤炭经营",
+    "煤炭贸易",
+    "煤炭采购",
+    "天然气采购",
+    "蒸汽采购",
+    "电力销售",
+    "蒸汽销售",
+    "煤炭贸易销售"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "热电联产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集中供热",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:01:04"
+}

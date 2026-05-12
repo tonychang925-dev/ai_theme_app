@@ -1,0 +1,36 @@
+{
+  "stock_id": "688105",
+  "stock_name": "诺唯赞",
+  "concept": "生命科学服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "分子类生物试剂",
+    "高分子有机材料技术"
+  ],
+  "should": [
+    "POCT诊断试剂",
+    "新冠检测产品",
+    "量子点免疫荧光技术",
+    "胶乳增强免疫比浊技术",
+    "胶体金免疫层析技术",
+    "生命科学服务",
+    "科研市场",
+    "工业客户",
+    "体外诊断",
+    "核酸检测"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "分子类生物试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高分子有机材料技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:08:26"
+}

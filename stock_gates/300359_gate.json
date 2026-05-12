@@ -1,0 +1,51 @@
+{
+  "stock_id": "300359",
+  "stock_name": "全通教育",
+  "concept": "教育信息化服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "家校互动升级业务",
+    "动力加·智能校园",
+    "成长帮手",
+    "课后共管服务平台",
+    "继续教育业务"
+  ],
+  "should": [
+    "智慧家校平台",
+    "教学管理平台",
+    "教育管理平台",
+    "教育资源平台",
+    "智慧幼教",
+    "互动学生卡",
+    "智慧安全平台",
+    "教育办公平台",
+    "教育信息化服务",
+    "教育信息化业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "家校互动升级业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动力加·智能校园",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "成长帮手",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "课后共管服务平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "继续教育业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:24:03"
+}

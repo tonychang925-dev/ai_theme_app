@@ -1,0 +1,35 @@
+{
+  "stock_id": "688608",
+  "stock_name": "恒玄科技",
+  "concept": "智能音频SoC芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能音频SoC芯片",
+    "低功耗无线计算SoC芯片"
+  ],
+  "should": [
+    "TWS耳机",
+    "智能手表/手环",
+    "智能音箱",
+    "智能眼镜",
+    "主动降噪",
+    "低功耗设计",
+    "AI语音交互",
+    "全球智能音频SoC芯片龙头",
+    "深度绑定品牌客户"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能音频SoC芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "低功耗无线计算SoC芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:22:02"
+}

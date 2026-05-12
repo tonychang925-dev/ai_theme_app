@@ -1,0 +1,40 @@
+{
+  "stock_id": "301333",
+  "stock_name": "诺思格",
+  "concept": "临床CRO服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "临床试验外包服务提供商",
+    "临床CRO服务",
+    "临床试验运营服务"
+  ],
+  "should": [
+    "临床试验咨询服务",
+    "数据管理与统计分析服务",
+    "临床试验现场管理服务",
+    "生物样本检测服务",
+    "临床药理学服务",
+    "临床CRO企业",
+    "I至IV期临床试验",
+    "医药企业",
+    "科研机构"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "临床试验外包服务提供商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "临床CRO服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "临床试验运营服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:03:13"
+}

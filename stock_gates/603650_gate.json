@@ -1,0 +1,39 @@
+{
+  "stock_id": "603650",
+  "stock_name": "彤程新材",
+  "concept": "光刻胶龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光刻胶龙头",
+    "G/I线光刻胶",
+    "KrF光刻胶"
+  ],
+  "should": [
+    "液晶正性光刻胶",
+    "电子级酚醛树脂",
+    "橡胶用酚醛树脂",
+    "PBAT可降解材料",
+    "主控芯片光刻胶工艺",
+    "PBAT聚合技术",
+    "国内加工型橡胶助剂企业第一名",
+    "国内最大液晶正性光刻胶本土供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光刻胶龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "G/I线光刻胶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "KrF光刻胶",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:53:54"
+}

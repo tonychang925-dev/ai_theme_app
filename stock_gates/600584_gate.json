@@ -1,0 +1,51 @@
+{
+  "stock_id": "600584",
+  "stock_name": "长电科技",
+  "concept": "半导体封测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体微系统集成",
+    "系统级封装",
+    "晶圆中道封装",
+    "芯片成品测试",
+    "中国第一大封测企业"
+  ],
+  "should": [
+    "eWLB",
+    "SiP",
+    "FC",
+    "WLCSP",
+    "BP",
+    "半导体封测",
+    "封装测试",
+    "大数据存储",
+    "人工智能与物联网",
+    "工业智造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体微系统集成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "系统级封装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "晶圆中道封装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "芯片成品测试",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中国第一大封测企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:21:52"
+}

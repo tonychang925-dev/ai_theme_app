@@ -1,0 +1,40 @@
+{
+  "stock_id": "301301",
+  "stock_name": "川宁生物",
+  "concept": "抗生素中间体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "抗生素中间体",
+    "合成生物学",
+    "发酵技术"
+  ],
+  "should": [
+    "硫氰酸红霉素",
+    "青霉素类中间体",
+    "头孢类中间体",
+    "生物发酵技术产业化",
+    "熊去氧胆酸（粗品）",
+    "辅酶Q10菌丝体",
+    "抗生素制剂",
+    "原料药生产",
+    "兽药"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "抗生素中间体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "合成生物学",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发酵技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:02:14"
+}

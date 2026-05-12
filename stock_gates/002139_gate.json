@@ -1,0 +1,41 @@
+{
+  "stock_id": "002139",
+  "stock_name": "拓邦股份",
+  "concept": "智能控制器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能控制器",
+    "电控技术",
+    "四电一网"
+  ],
+  "should": [
+    "电机",
+    "电池",
+    "电机技术",
+    "电池技术",
+    "工业控制",
+    "电子电控融合技术",
+    "家电",
+    "工具",
+    "新能源",
+    "工业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能控制器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电控技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "四电一网",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:25:19"
+}

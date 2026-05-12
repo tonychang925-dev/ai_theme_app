@@ -1,0 +1,51 @@
+{
+  "stock_id": "688125",
+  "stock_name": "安达智能",
+  "concept": "流体控制设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "流体控制设备",
+    "点胶机",
+    "涂覆机",
+    "核心零部件研发",
+    "运动算法"
+  ],
+  "should": [
+    "喷墨机",
+    "灌胶机",
+    "等离子设备",
+    "固化设备",
+    "智能组装设备",
+    "点胶阀",
+    "涂覆阀",
+    "直线电机",
+    "驱动器",
+    "SCARA机械臂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "流体控制设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "点胶机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涂覆机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核心零部件研发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "运动算法",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:09:12"
+}

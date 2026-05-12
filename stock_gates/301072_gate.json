@@ -1,0 +1,51 @@
+{
+  "stock_id": "301072",
+  "stock_name": "中捷精工",
+  "concept": "汽车减震部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车减震部件",
+    "冲压零部件",
+    "压铸零部件",
+    "注塑零部件",
+    "金工零部件"
+  ],
+  "should": [
+    "天纳克",
+    "博戈",
+    "威巴克",
+    "住友理工",
+    "哈金森",
+    "帝倜阿尔",
+    "普利司通",
+    "底盘系统",
+    "发动机系统",
+    "车身系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车减震部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冲压零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "压铸零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "注塑零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金工零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:55:34"
+}

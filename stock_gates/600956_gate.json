@@ -1,0 +1,41 @@
+{
+  "stock_id": "600956",
+  "stock_name": "新天绿能",
+  "concept": "天然气与新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "天然气分销",
+    "天然气管道",
+    "LNG储气设施"
+  ],
+  "should": [
+    "天然气与新能源",
+    "风电",
+    "光伏",
+    "分输站",
+    "门站",
+    "居民用气",
+    "工业用气",
+    "车船燃料",
+    "发电",
+    "中国石油华北地区第三大分销商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "天然气分销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天然气管道",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LNG储气设施",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:31:34"
+}

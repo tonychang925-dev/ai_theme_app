@@ -1,0 +1,51 @@
+{
+  "stock_id": "605365",
+  "stock_name": "立达信",
+  "concept": "智慧物联照明",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧物联照明",
+    "代工业务",
+    "品牌业务",
+    "照明产品",
+    "教育照明"
+  ],
+  "should": [
+    "控制与安防类产品",
+    "家电品类",
+    "智能灯具",
+    "专业物联网平台(IMP)",
+    "智慧教育管理平台",
+    "智能家居硬件",
+    "物联技术",
+    "Arnoo平台",
+    "无线感知系统",
+    "可见光通信"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧物联照明",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "代工业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "品牌业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "照明产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "教育照明",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:04:04"
+}

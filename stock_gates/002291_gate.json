@@ -1,0 +1,41 @@
+{
+  "stock_id": "002291",
+  "stock_name": "遥望科技",
+  "concept": "直播电商MCN",
+  "strategy_type": "industry_chain",
+  "must": [
+    "直播电商MCN",
+    "社交电商服务",
+    "互联网广告投放"
+  ],
+  "should": [
+    "抖音",
+    "快手",
+    "明星-达人直播矩阵",
+    "一站式电商解决方案",
+    "基于微信的社交营销",
+    "淘宝",
+    "选品",
+    "直播",
+    "物流",
+    "仓储"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "直播电商MCN",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "社交电商服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "互联网广告投放",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:33:43"
+}

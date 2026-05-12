@@ -1,0 +1,46 @@
+{
+  "stock_id": "002478",
+  "stock_name": "常宝股份",
+  "concept": "特种专用管材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种专用管材",
+    "油气开采用管",
+    "电站锅炉用管",
+    "PQF特种专用管材生产线"
+  ],
+  "should": [
+    "工程机械用管",
+    "石化换热器用管",
+    "锅炉管",
+    "特殊扣油套管",
+    "管线管",
+    "U型管",
+    "钢管专业技术",
+    "自主研发",
+    "数字化、智能化改造",
+    "油气开采"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种专用管材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "油气开采用管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电站锅炉用管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PQF特种专用管材生产线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:43:38"
+}

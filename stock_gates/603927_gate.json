@@ -1,0 +1,39 @@
+{
+  "stock_id": "603927",
+  "stock_name": "中科软",
+  "concept": "保险IT龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "保险IT龙头",
+    "保险核心业务系统",
+    "保险+战略"
+  ],
+  "should": [
+    "互联网保险运营平台",
+    "健康管理运营平台",
+    "全域数字化营销平台",
+    "保险公司",
+    "保险中介",
+    "保险科技公司",
+    "保险IT解决方案市场份额第一",
+    "海外市场拓展"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "保险IT龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "保险核心业务系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "保险+战略",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:59:05"
+}

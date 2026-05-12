@@ -1,0 +1,36 @@
+{
+  "stock_id": "000576",
+  "stock_name": "甘化科工",
+  "concept": "军工电源材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电源及相关产品",
+    "高性能特种合金材料制品"
+  ],
+  "should": [
+    "模块电源系统",
+    "定制电源系统",
+    "钨合金预制破片",
+    "非晶合金复合体",
+    "军工电源材料",
+    "炮弹",
+    "火箭弹",
+    "导弹",
+    "航空航天",
+    "国内领先的特种电源供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电源及相关产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高性能特种合金材料制品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:57:14"
+}

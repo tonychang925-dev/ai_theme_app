@@ -1,0 +1,29 @@
+{
+  "stock_id": "688601",
+  "stock_name": "力芯微",
+  "concept": "电源管理芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电源管理芯片"
+  ],
+  "should": [
+    "智能组网延时管理单元",
+    "信号链芯片",
+    "高性能电源管理方案",
+    "延时芯片模块",
+    "通讯技术",
+    "Fabess模式",
+    "晶圆制造及封装测试外部供应商",
+    "大客户战略"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电源管理芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:21:53"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "688309",
+  "stock_name": "恒誉环保",
+  "concept": "有机废弃物裂解",
+  "strategy_type": "industry_chain",
+  "must": [
+    "热解技术",
+    "有机废弃物裂解技术",
+    "有机废弃物裂解"
+  ],
+  "should": [
+    "工业连续化废轮胎裂解生产线",
+    "工业连续化废塑料裂解生产线",
+    "工业连续化污油泥裂解生产线",
+    "工业连续化/间歇式危废裂解生产线",
+    "污油泥处理",
+    "废轮胎处理",
+    "废塑料处理",
+    "医疗废弃物处理",
+    "金属矿还原",
+    "焦油渣处理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "热解技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有机废弃物裂解技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有机废弃物裂解",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:14:59"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "000521",
+  "stock_name": "长虹美菱",
+  "concept": "综合白电制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "冰箱柜",
+    "洗衣机",
+    "空调",
+    "厨卫",
+    "小家电"
+  ],
+  "should": [
+    "生物医疗产品",
+    "生物医疗样本存储",
+    "零冲击保鲜技术",
+    "微微冻保鲜技术",
+    "LINF光谱等离子技术",
+    "磁悬浮超薄DD电机",
+    "分段燃烧器",
+    "双擎变频M-Twindrive",
+    "远投近柔舒适风技术",
+    "综合白电制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "冰箱柜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "洗衣机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空调",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "厨卫",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小家电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:54:13"
+}

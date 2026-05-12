@@ -1,0 +1,37 @@
+{
+  "stock_id": "300467",
+  "stock_name": "迅游科技",
+  "concept": "游戏云加速",
+  "strategy_type": "industry_chain",
+  "must": [
+    "游戏云加速",
+    "迅游网游加速器",
+    "迅游手游加速器"
+  ],
+  "should": [
+    "迅游加速插件",
+    "互联网智能路由导航",
+    "加速节点部署",
+    "智能加速算法",
+    "移动互联网广告展示",
+    "付费订阅业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "游戏云加速",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "迅游网游加速器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "迅游手游加速器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:28:33"
+}

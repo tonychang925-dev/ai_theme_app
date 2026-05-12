@@ -1,0 +1,41 @@
+{
+  "stock_id": "688207",
+  "stock_name": "格灵深瞳",
+  "concept": "人工智能视觉",
+  "strategy_type": "industry_chain",
+  "must": [
+    "计算机视觉技术",
+    "大数据分析技术",
+    "人脸识别"
+  ],
+  "should": [
+    "智源智能前端产品",
+    "灵犀数据智能平台",
+    "深瞳行业应用平台",
+    "皓目行为分析仪",
+    "边缘计算设备",
+    "视图大数据平台",
+    "人脸活体检测",
+    "行人重识别",
+    "以图搜图",
+    "人工智能视觉"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "计算机视觉技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大数据分析技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人脸识别",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:11:46"
+}

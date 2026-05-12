@@ -1,0 +1,36 @@
+{
+  "stock_id": "603611",
+  "stock_name": "诺力股份",
+  "concept": "智能物流系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能物流系统",
+    "物料搬运装备"
+  ],
+  "should": [
+    "智能仓储系统",
+    "智能输送分拣系统",
+    "无人搬运机器人及系统",
+    "自动化物流软件系统",
+    "电动化",
+    "锂电化",
+    "新能源",
+    "烟草",
+    "医药",
+    "电子商务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能物流系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物料搬运装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:53:16"
+}

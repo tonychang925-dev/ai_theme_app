@@ -1,0 +1,41 @@
+{
+  "stock_id": "301528",
+  "stock_name": "多浦乐",
+  "concept": "超声无损检测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "超声换能器",
+    "超声无损检测",
+    "超声相控阵检测仪"
+  ],
+  "should": [
+    "超声相控阵技术",
+    "全聚焦技术",
+    "声束合成技术",
+    "自动化检测设备",
+    "压电效应",
+    "数字底片",
+    "锅炉",
+    "压力容器",
+    "在役监测",
+    "检测大数据分析"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "超声换能器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超声无损检测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超声相控阵检测仪",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:06:07"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "002847",
+  "stock_name": "盐津铺子",
+  "concept": "休闲食品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "休闲食品",
+    "休闲辣卤制品"
+  ],
+  "should": [
+    "炒货坚果",
+    "糖果蜜饯",
+    "面包糕点",
+    "膨化食品",
+    "饼干",
+    "线上电商平台",
+    "本地生活服务平台",
+    "直播电商",
+    "零食专营连锁",
+    "会员连锁"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "休闲食品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "休闲辣卤制品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:00:09"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "600986",
+  "stock_name": "浙文互联",
+  "concept": "数字营销",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字营销",
+    "精准营销",
+    "汽车营销"
+  ],
+  "should": [
+    "AI智能营销系统",
+    "SPS智能营销中台",
+    "虚拟数字人技术",
+    "面部捕捉",
+    "动作捕捉",
+    "网络服务",
+    "汽车",
+    "电商",
+    "游戏",
+    "金融"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字营销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精准营销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车营销",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:32:35"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "300802",
+  "stock_name": "矩子科技",
+  "concept": "机器视觉设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "机器视觉设备",
+    "3D自动光学检测"
+  ],
+  "should": [
+    "控制线缆组件",
+    "控制单元及设备",
+    "图像处理算法",
+    "光电成像系统",
+    "电子信息制造",
+    "工业控制",
+    "金融电子",
+    "新能源",
+    "食品与包装",
+    "汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "机器视觉设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "3D自动光学检测",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:43:45"
+}

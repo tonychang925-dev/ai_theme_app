@@ -1,0 +1,36 @@
+{
+  "stock_id": "300072",
+  "stock_name": "海新能科",
+  "concept": "生物能源净化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生物能源",
+    "烃基生物柴油(HVO)"
+  ],
+  "should": [
+    "新型煤化工",
+    "催化净化",
+    "加氢脱氧",
+    "悬浮床",
+    "固定床",
+    "膨胀床",
+    "焦炭",
+    "焦炉煤气",
+    "催化剂",
+    "净化剂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生物能源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "烃基生物柴油(HVO)",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:12:09"
+}

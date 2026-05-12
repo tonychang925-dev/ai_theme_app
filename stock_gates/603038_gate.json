@@ -1,0 +1,36 @@
+{
+  "stock_id": "603038",
+  "stock_name": "华立股份",
+  "concept": "装饰复合材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "饰边条",
+    "饰面板"
+  ],
+  "should": [
+    "装饰复合材料",
+    "自主创新研发",
+    "产品实验室",
+    "设计研发团队",
+    "板式家具",
+    "室内装潢",
+    "橱柜",
+    "衣柜",
+    "墙板",
+    "踢脚线"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "饰边条",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "饰面板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:41:48"
+}

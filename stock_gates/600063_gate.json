@@ -1,0 +1,46 @@
+{
+  "stock_id": "600063",
+  "stock_name": "皖维高新",
+  "concept": "聚乙烯醇龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "聚乙烯醇龙头",
+    "PVA",
+    "高强高模PVA纤维",
+    "PVA光学薄膜"
+  ],
+  "should": [
+    "PVB树脂",
+    "PVB胶片",
+    "PVA水溶纤维",
+    "醋酸乙烯",
+    "VAE乳液",
+    "可再分散性胶粉",
+    "聚酯切片",
+    "醋酸甲酯",
+    "水泥熟料",
+    "环保水泥"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "聚乙烯醇龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PVA",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高强高模PVA纤维",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PVA光学薄膜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:08:24"
+}

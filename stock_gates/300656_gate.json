@@ -1,0 +1,36 @@
+{
+  "stock_id": "300656",
+  "stock_name": "民德电子",
+  "concept": "条码识别与半导体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "激光扫描技术",
+    "影像扫描技术"
+  ],
+  "should": [
+    "手持式条码扫描器",
+    "固定式POS扫描器",
+    "固定式工业类扫描器",
+    "解码能力",
+    "识读景深",
+    "扫描速度",
+    "零售",
+    "物流",
+    "仓储",
+    "医疗健康"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "激光扫描技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "影像扫描技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:37:24"
+}

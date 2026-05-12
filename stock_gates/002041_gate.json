@@ -1,0 +1,36 @@
+{
+  "stock_id": "002041",
+  "stock_name": "登海种业",
+  "concept": "玉米种子繁育",
+  "strategy_type": "industry_chain",
+  "must": [
+    "玉米种子繁育",
+    "玉米种子"
+  ],
+  "should": [
+    "小麦种子",
+    "分子育种",
+    "基因编辑",
+    "全基因组选择",
+    "人工智能设计",
+    "生物育种技术",
+    "农业产业化国家重点龙头企业",
+    "国家农作物种业企业阵型补短板阵型",
+    "中国种业信用明星企业",
+    "玉米饲用消费"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "玉米种子繁育",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "玉米种子",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:19:53"
+}

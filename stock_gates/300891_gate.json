@@ -1,0 +1,36 @@
+{
+  "stock_id": "300891",
+  "stock_name": "惠云钛业",
+  "concept": "钛白粉",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钛白粉",
+    "金红石型钛白粉"
+  ],
+  "should": [
+    "锐钛型钛白粉",
+    "硫酸法钛白粉清洁生产",
+    "循环经济产业链",
+    "塑料",
+    "涂料",
+    "橡胶",
+    "化纤",
+    "陶瓷",
+    "食品医药化妆品",
+    "建筑新材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钛白粉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金红石型钛白粉",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:48:04"
+}

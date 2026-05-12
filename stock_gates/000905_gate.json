@@ -1,0 +1,51 @@
+{
+  "stock_id": "000905",
+  "stock_name": "厦门港务",
+  "concept": "港口综合物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "港口综合物流",
+    "散杂货码头装卸与堆存",
+    "临港综合物流服务",
+    "多式联运",
+    "港口贸易"
+  ],
+  "should": [
+    "拖轮助离泊",
+    "船舶代理",
+    "理货检疫",
+    "报关空运",
+    "拖车运输",
+    "集拼分拨",
+    "仓储配送",
+    "集装箱堆存",
+    "海运快运",
+    "跨境电商物流"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "港口综合物流",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "散杂货码头装卸与堆存",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "临港综合物流服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多式联运",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "港口贸易",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:09:08"
+}

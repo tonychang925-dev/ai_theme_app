@@ -1,0 +1,51 @@
+{
+  "stock_id": "002777",
+  "stock_name": "久远银海",
+  "concept": "医保信息化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医保信息化",
+    "医疗医保",
+    "DRGs付费管理",
+    "医保核心业务经办系统",
+    "一站式结算服务"
+  ],
+  "should": [
+    "数字政务",
+    "智慧城市",
+    "军民融合",
+    "医保治理",
+    "人社服务",
+    "大数据应用",
+    "云服务",
+    "惠民惠农一卡通监管系统",
+    "政务信息资源共享交换平台",
+    "住房公积金"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医保信息化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗医保",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "DRGs付费管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医保核心业务经办系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一站式结算服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:57:07"
+}

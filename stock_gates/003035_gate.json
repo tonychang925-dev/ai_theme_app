@@ -1,0 +1,51 @@
+{
+  "stock_id": "003035",
+  "stock_name": "南网能源",
+  "concept": "综合节能服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合节能服务",
+    "合同能源管理",
+    "工业节能",
+    "建筑节能",
+    "城市照明节能"
+  ],
+  "should": [
+    "分布式光伏",
+    "工业高效能源站",
+    "余热余压综合利用",
+    "煤矿瓦斯综合利用",
+    "综合资源利用",
+    "节能咨询技术服务",
+    "节能工程服务",
+    "医院",
+    "学校",
+    "通信"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合节能服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "合同能源管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业节能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑节能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市照明节能",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:08:29"
+}

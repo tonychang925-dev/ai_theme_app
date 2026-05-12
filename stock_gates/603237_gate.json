@@ -1,0 +1,41 @@
+{
+  "stock_id": "603237",
+  "stock_name": "五芳斋",
+  "concept": "粽子大王",
+  "strategy_type": "industry_chain",
+  "must": [
+    "粽子大王",
+    "粽子",
+    "粽子制作技艺"
+  ],
+  "should": [
+    "月饼",
+    "汤圆",
+    "糕点",
+    "蛋制品",
+    "其他米制品",
+    "嘉湖细点制作工艺",
+    "嘉兴生产基地",
+    "成都生产基地",
+    "全国商贸渠道",
+    "连锁门店"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "粽子大王",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "粽子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "粽子制作技艺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:47:22"
+}

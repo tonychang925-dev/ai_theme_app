@@ -1,0 +1,46 @@
+{
+  "stock_id": "600111",
+  "stock_name": "北方稀土",
+  "concept": "稀土全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "冶炼分离",
+    "磁性材料",
+    "稀土金属",
+    "稀土氧化物"
+  ],
+  "should": [
+    "抛光材料",
+    "贮氢材料",
+    "催化材料",
+    "发光材料",
+    "稀土盐类",
+    "磁体",
+    "抛光粉（液）",
+    "镍氢电池",
+    "荧光粉",
+    "催化剂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "冶炼分离",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磁性材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "稀土金属",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "稀土氧化物",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:09:26"
+}

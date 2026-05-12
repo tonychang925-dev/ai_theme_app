@@ -1,0 +1,36 @@
+{
+  "stock_id": "605303",
+  "stock_name": "园林股份",
+  "concept": "园林生态服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "园林工程施工",
+    "园林景观设计"
+  ],
+  "should": [
+    "养护运维",
+    "园林生态服务",
+    "市政园林",
+    "地产园林",
+    "生态修复",
+    "智慧园林",
+    "农文旅",
+    "智慧监测",
+    "智慧养护",
+    "植物资源开发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "园林工程施工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "园林景观设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:03:38"
+}

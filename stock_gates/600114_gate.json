@@ -1,0 +1,41 @@
+{
+  "stock_id": "600114",
+  "stock_name": "东睦股份",
+  "concept": "粉末冶金新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "粉末冶金新材料",
+    "软磁复合材料(SMC)",
+    "金属磁粉芯技术"
+  ],
+  "should": [
+    "粉末冶金压制成形制品",
+    "金属注射成形(MIM)零件",
+    "粉末冶金致密化技术",
+    "近净成形工艺",
+    "新能源光伏逆变器",
+    "新能源汽车",
+    "充电桩",
+    "储能",
+    "氢燃料电池",
+    "汽车发动机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "粉末冶金新材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "软磁复合材料(SMC)",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金属磁粉芯技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:09:30"
+}

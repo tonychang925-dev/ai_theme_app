@@ -1,0 +1,41 @@
+{
+  "stock_id": "600851",
+  "stock_name": "海欣股份",
+  "concept": "多元化投资集团",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药制造和销售",
+    "园区物业出租经营",
+    "金融投资"
+  ],
+  "should": [
+    "转移因子口服液",
+    "维生素D2注射液",
+    "美诺芬",
+    "口腔溃疡含片",
+    "阿奇霉素干混悬剂",
+    "氨甲环酸注射液",
+    "盐酸右美托咪定原料及制剂",
+    "注射用乳糖酸红霉素",
+    "多元化投资集团",
+    "仿制药一致性评价"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医药制造和销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "园区物业出租经营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融投资",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:29:34"
+}

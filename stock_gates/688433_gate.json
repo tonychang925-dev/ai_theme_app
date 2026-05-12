@@ -1,0 +1,35 @@
+{
+  "stock_id": "688433",
+  "stock_name": "华曙高科",
+  "concept": "增材制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "3D打印设备及辅机配件",
+    "3D打印粉末材料"
+  ],
+  "should": [
+    "选区激光熔融（SLM）",
+    "选区激光烧结（SLS）",
+    "增材制造",
+    "航空航天",
+    "汽车",
+    "医疗",
+    "模具及加工服务",
+    "销售规模全球前列",
+    "装机量超700台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "3D打印设备及辅机配件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "3D打印粉末材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:18:20"
+}

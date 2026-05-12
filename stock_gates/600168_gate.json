@@ -1,0 +1,36 @@
+{
+  "stock_id": "600168",
+  "stock_name": "武汉控股",
+  "concept": "水务环保综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "自来水生产",
+    "污水处理",
+    "水务环保综合服务"
+  ],
+  "should": [
+    "水务工程建设",
+    "隧道运营",
+    "投、建、管、运一体化",
+    "自来水生产设计能力130万吨/日",
+    "污水处理服务特许经营权30年"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "自来水生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "污水处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水务环保综合服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:10:43"
+}

@@ -1,0 +1,38 @@
+{
+  "stock_id": "003011",
+  "stock_name": "海象新材",
+  "concept": "PVC地板出口",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PVC地板出口",
+    "PVC地板",
+    "越南生产基地"
+  ],
+  "should": [
+    "国际知名地板品牌商",
+    "压延工艺",
+    "挤出工艺",
+    "OEM",
+    "ODM",
+    "OBM",
+    "销售商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PVC地板出口",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PVC地板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "越南生产基地",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:07:25"
+}

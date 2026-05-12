@@ -1,0 +1,36 @@
+{
+  "stock_id": "300790",
+  "stock_name": "宇瞳光学",
+  "concept": "光学镜头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "安防镜头行业领军企业",
+    "光学镜头"
+  ],
+  "should": [
+    "车载镜头",
+    "定焦镜头",
+    "变焦镜头",
+    "机器视觉镜头",
+    "鱼眼镜头",
+    "自主研发创新",
+    "机器视觉技术",
+    "变焦镜头技术",
+    "车载镜头技术",
+    "鱼眼镜头技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "安防镜头行业领军企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光学镜头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:43:17"
+}

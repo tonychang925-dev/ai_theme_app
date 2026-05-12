@@ -1,0 +1,36 @@
+{
+  "stock_id": "002852",
+  "stock_name": "道道全",
+  "concept": "菜籽油龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "包装菜籽油",
+    "纯菜籽油"
+  ],
+  "should": [
+    "菜籽调和油",
+    "散装油",
+    "高油酸菜籽油",
+    "茶籽油",
+    "菜籽油龙头",
+    "其他油品",
+    "压榨",
+    "精炼",
+    "罐装",
+    "套期保值"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "包装菜籽油",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纯菜籽油",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:00:17"
+}

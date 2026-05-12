@@ -1,0 +1,36 @@
+{
+  "stock_id": "603607",
+  "stock_name": "京华激光",
+  "concept": "激光防伪包装",
+  "strategy_type": "industry_chain",
+  "must": [
+    "烟标",
+    "铂金浮雕系列产品"
+  ],
+  "should": [
+    "激光全息防伪纸",
+    "激光全息防伪膜",
+    "铂金浮雕技术",
+    "激光全息技术",
+    "精准定位技术",
+    "光学制版技术",
+    "酒标",
+    "激光防伪包装",
+    "文创",
+    "日用消费品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "烟标",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铂金浮雕系列产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:53:06"
+}

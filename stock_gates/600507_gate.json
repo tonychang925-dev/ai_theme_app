@@ -1,0 +1,31 @@
+{
+  "stock_id": "600507",
+  "stock_name": "方大特钢",
+  "concept": "特种钢材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种钢材",
+    "弹簧扁钢"
+  ],
+  "should": [
+    "高强钢筋",
+    "高强度弹簧钢全过程的控制技术",
+    "汽车",
+    "房地产",
+    "链主企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种钢材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "弹簧扁钢",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:19:39"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "300795",
+  "stock_name": "米奥会展",
+  "concept": "会展服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "境外会展策划发起",
+    "组织承办",
+    "推广及运营服务"
+  ],
+  "should": [
+    "网展贸Max",
+    "网展贸Meta",
+    "会展服务",
+    "纯在线数字展览",
+    "双线双展"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "境外会展策划发起",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "组织承办",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "推广及运营服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:43:26"
+}

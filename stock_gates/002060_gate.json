@@ -1,0 +1,46 @@
+{
+  "stock_id": "002060",
+  "stock_name": "广东建工",
+  "concept": "水利水电投建营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水利水电投建营",
+    "清洁能源投资",
+    "清洁能源发电",
+    "清洁能源发电项目"
+  ],
+  "should": [
+    "工程施工",
+    "水利建设",
+    "抽水蓄能",
+    "轨道交通",
+    "勘测设计与咨询",
+    "发电",
+    "产品销售",
+    "工程建设",
+    "投、融、建、管、营全产业链",
+    "框架协议"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水利水电投建营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "清洁能源投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "清洁能源发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "清洁能源发电项目",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:20:45"
+}

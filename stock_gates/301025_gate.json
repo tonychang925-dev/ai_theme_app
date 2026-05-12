@@ -1,0 +1,35 @@
+{
+  "stock_id": "301025",
+  "stock_name": "读客文化",
+  "concept": "图书策划发行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "图书策划发行",
+    "纸质图书业务"
+  ],
+  "should": [
+    "数字内容业务",
+    "版权运营业务",
+    "新媒体业务",
+    "短视频电商",
+    "平台电商",
+    "实体店",
+    "创意工业化",
+    "创意流水线",
+    "全版权运营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "图书策划发行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纸质图书业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:53:43"
+}

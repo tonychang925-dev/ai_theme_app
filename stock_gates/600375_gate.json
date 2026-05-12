@@ -1,0 +1,51 @@
+{
+  "stock_id": "600375",
+  "stock_name": "汉马科技",
+  "concept": "重卡专用车",
+  "strategy_type": "industry_chain",
+  "must": [
+    "重卡专用车",
+    "重型汽车底盘及整车",
+    "新能源商用车",
+    "重卡底盘",
+    "重卡整车"
+  ],
+  "should": [
+    "动力总成",
+    "车桥",
+    "重型专用车",
+    "客车",
+    "混凝土搅拌车",
+    "散装水泥车",
+    "混凝土泵车",
+    "半挂牵引车",
+    "工程自卸车",
+    "发动机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "重卡专用车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重型汽车底盘及整车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源商用车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重卡底盘",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重卡整车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:16:29"
+}

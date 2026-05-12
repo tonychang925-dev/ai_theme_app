@@ -1,0 +1,36 @@
+{
+  "stock_id": "605090",
+  "stock_name": "九丰能源",
+  "concept": "氢能+清洁能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "氢能业务",
+    "车用高纯氢"
+  ],
+  "should": [
+    "副产氢提纯",
+    "天然气重整制氢",
+    "谷电电解制氢",
+    "LNG/LPG进口贸易",
+    "LNG全产业链",
+    "工业用户",
+    "燃气销售企业",
+    "华南地区LNG重要供应商",
+    "我国第四大LPG进口商",
+    "华南区第一大LPG进口商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "氢能业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车用高纯氢",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:01:43"
+}

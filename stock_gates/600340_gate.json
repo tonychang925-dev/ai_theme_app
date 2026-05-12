@@ -1,0 +1,35 @@
+{
+  "stock_id": "600340",
+  "stock_name": "华夏幸福",
+  "concept": "产业新城服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "产业新城服务",
+    "产业新城"
+  ],
+  "should": [
+    "住宅开发",
+    "资产管理",
+    "政府服务",
+    "住宅服务",
+    "企业服务",
+    "片区综合开发",
+    "产业招商落地",
+    "代建服务",
+    "营销服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "产业新城服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "产业新城",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:15:39"
+}

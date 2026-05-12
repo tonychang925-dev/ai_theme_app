@@ -1,0 +1,36 @@
+{
+  "stock_id": "003013",
+  "stock_name": "地铁设计",
+  "concept": "轨道交通设计",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轨道交通设计",
+    "轨道交通勘察设计"
+  ],
+  "should": [
+    "市政勘察设计",
+    "建筑勘察设计",
+    "规划咨询",
+    "工程总承包",
+    "现代有轨电车",
+    "自动导轨系统",
+    "中低速磁悬浮",
+    "综合管廊",
+    "交通枢纽",
+    "地铁"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轨道交通设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轨道交通勘察设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:07:34"
+}

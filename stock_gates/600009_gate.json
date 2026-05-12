@@ -1,0 +1,41 @@
+{
+  "stock_id": "600009",
+  "stock_name": "上海机场",
+  "concept": "核心空港运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航空性业务",
+    "非航空性业务",
+    "国际航线"
+  ],
+  "should": [
+    "浦东机场",
+    "虹桥机场",
+    "核心空港运营",
+    "核心枢纽空港",
+    "国际旅客吞吐量",
+    "客单价",
+    "扣点率",
+    "低风险",
+    "高毛利",
+    "高壁垒"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航空性业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "非航空性业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国际航线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:06:59"
+}

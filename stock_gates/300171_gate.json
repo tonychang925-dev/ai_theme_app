@@ -1,0 +1,46 @@
+{
+  "stock_id": "300171",
+  "stock_name": "东富龙",
+  "concept": "制药装备耗材一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "制药装备耗材一体化",
+    "冻干机",
+    "生物工程设备",
+    "复杂制剂配液系统"
+  ],
+  "should": [
+    "CGT装备及耗材",
+    "培养基",
+    "层析介质",
+    "冻干机系统",
+    "生物反应器",
+    "配液系统",
+    "层析超滤系统",
+    "无菌灌封",
+    "细胞培养基",
+    "细胞治疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "制药装备耗材一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冻干机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物工程设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复杂制剂配液系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:16:06"
+}

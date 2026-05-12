@@ -1,0 +1,33 @@
+{
+  "stock_id": "600054",
+  "stock_name": "黄山旅游",
+  "concept": "景区旅游",
+  "strategy_type": "industry_chain",
+  "must": [
+    "景区",
+    "索道"
+  ],
+  "should": [
+    "酒店",
+    "徽菜",
+    "景区旅游",
+    "新零售",
+    "旅游管理",
+    "旅游服务",
+    "旅游营销"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "景区",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "索道",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:07:59"
+}

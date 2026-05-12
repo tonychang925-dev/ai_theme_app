@@ -1,0 +1,51 @@
+{
+  "stock_id": "600720",
+  "stock_name": "中交设计",
+  "concept": "工程设计",
+  "strategy_type": "industry_chain",
+  "must": [
+    "公路设计",
+    "市政设计",
+    "大跨径桥梁",
+    "超长高速公路",
+    "特长隧道"
+  ],
+  "should": [
+    "给排水",
+    "热力工程",
+    "城市燃气",
+    "清洁供热",
+    "股东背景",
+    "项目经验",
+    "市场布局",
+    "品牌荣誉",
+    "技术储备",
+    "智慧供热"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "公路设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "市政设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大跨径桥梁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超长高速公路",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特长隧道",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:25:47"
+}

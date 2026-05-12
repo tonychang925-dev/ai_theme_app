@@ -1,0 +1,46 @@
+{
+  "stock_id": "300283",
+  "stock_name": "温州宏丰",
+  "concept": "电接触功能复合材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电接触功能复合材料",
+    "电接触材料",
+    "金属基功能复合材料",
+    "新型合金功能复合材料"
+  ],
+  "should": [
+    "硬质合金材料",
+    "高性能极薄锂电铜箔",
+    "半导体蚀刻引线框架材料",
+    "超细晶粒硬质合金",
+    "极薄锂电铜箔",
+    "蚀刻引线框架",
+    "工业电器",
+    "消费电子",
+    "家用电器",
+    "汽车工程"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电接触功能复合材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电接触材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金属基功能复合材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新型合金功能复合材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:21:01"
+}

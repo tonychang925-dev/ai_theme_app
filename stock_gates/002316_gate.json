@@ -1,0 +1,30 @@
+{
+  "stock_id": "002316",
+  "stock_name": "亚联发展",
+  "concept": "第三方支付",
+  "strategy_type": "industry_chain",
+  "must": [
+    "第三方支付",
+    "第三方支付业务"
+  ],
+  "should": [
+    "商户经营服务业务",
+    "智慧电网",
+    "智慧交通",
+    "农牧领域"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "第三方支付",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "第三方支付业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:35:01"
+}

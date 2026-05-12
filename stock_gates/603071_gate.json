@@ -1,0 +1,41 @@
+{
+  "stock_id": "603071",
+  "stock_name": "物产环能",
+  "concept": "煤炭流通与热电联产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤炭流通与热电联产",
+    "煤炭流通",
+    "热电联产"
+  ],
+  "should": [
+    "新能源业务",
+    "背压机组",
+    "智慧电厂",
+    "EAM系统",
+    "混合储能",
+    "熔盐储热",
+    "水系化学储能",
+    "污泥耦合热电气高效联供",
+    "分布式光伏",
+    "储能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤炭流通与热电联产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭流通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热电联产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:42:54"
+}

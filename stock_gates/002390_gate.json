@@ -1,0 +1,34 @@
+{
+  "stock_id": "002390",
+  "stock_name": "信邦制药",
+  "concept": "中药研发生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "纯天然植物类中成药的研发",
+    "纯天然植物类中成药的生产",
+    "纯天然植物类中成药的销售"
+  ],
+  "should": [
+    "中药研发生产",
+    "医药行业",
+    "医疗服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "纯天然植物类中成药的研发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纯天然植物类中成药的生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纯天然植物类中成药的销售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:39:09"
+}

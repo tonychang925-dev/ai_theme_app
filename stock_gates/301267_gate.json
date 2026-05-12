@@ -1,0 +1,36 @@
+{
+  "stock_id": "301267",
+  "stock_name": "华厦眼科",
+  "concept": "眼科医疗连锁",
+  "strategy_type": "industry_chain",
+  "must": [
+    "眼科医疗连锁",
+    "眼科专科医疗服务"
+  ],
+  "should": [
+    "配镜业务",
+    "白内障",
+    "屈光",
+    "眼底",
+    "斜弱视与小儿眼科",
+    "眼表",
+    "青光眼",
+    "眼眶与眼肿瘤",
+    "眼外伤",
+    "眼视光"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "眼科医疗连锁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "眼科专科医疗服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:01:24"
+}

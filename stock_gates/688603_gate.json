@@ -1,0 +1,31 @@
+{
+  "stock_id": "688603",
+  "stock_name": "天承科技",
+  "concept": "PCB专用电子化学品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PCB专用电子化学品"
+  ],
+  "should": [
+    "水平沉铜专用化学品",
+    "电镀专用化学品",
+    "垂直沉铜专用化学品",
+    "铜面处理专用化学品",
+    "化学配方",
+    "工艺改变",
+    "PCB制造",
+    "电子终端产品",
+    "国产化替代",
+    "本土化快速响应服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PCB专用电子化学品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:21:57"
+}

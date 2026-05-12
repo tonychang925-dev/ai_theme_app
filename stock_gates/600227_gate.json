@@ -1,0 +1,31 @@
+{
+  "stock_id": "600227",
+  "stock_name": "赤天化",
+  "concept": "糖尿病药物",
+  "strategy_type": "industry_chain",
+  "must": [
+    "糖尿病药物"
+  ],
+  "should": [
+    "尿素",
+    "甲醇",
+    "复合肥",
+    "聚肽螯合锌尿素",
+    "褐藻寡糖尿素",
+    "褐藻寡糖复合肥",
+    "合成氨及尿素升级技术改造",
+    "聚肽螯合锌技术",
+    "褐藻寡糖技术",
+    "化肥保价稳供"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "糖尿病药物",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:12:21"
+}

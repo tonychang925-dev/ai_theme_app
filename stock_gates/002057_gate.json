@@ -1,0 +1,45 @@
+{
+  "stock_id": "002057",
+  "stock_name": "中钢天源",
+  "concept": "磁材与检测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国内前列的永磁器件生产商",
+    "大基建权威检测机构",
+    "永磁器件",
+    "四氧化三锰"
+  ],
+  "should": [
+    "软磁材料",
+    "钢丝产品",
+    "有机产品",
+    "四氧化三锰制备技术",
+    "四氧化三锰全球主要生产商",
+    "新能源电器",
+    "电力通讯设备",
+    "军用航天",
+    "数控机床"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国内前列的永磁器件生产商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大基建权威检测机构",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "永磁器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "四氧化三锰",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:20:48"
+}

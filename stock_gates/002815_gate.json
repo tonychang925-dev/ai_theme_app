@@ -1,0 +1,31 @@
+{
+  "stock_id": "002815",
+  "stock_name": "崇达技术",
+  "concept": "印制线路板制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "印制线路板制造"
+  ],
+  "should": [
+    "高多层板",
+    "HDI板",
+    "高频高速板",
+    "厚铜板",
+    "背板",
+    "软硬结合板",
+    "埋容板",
+    "立体板",
+    "铝基板",
+    "FPC"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "印制线路板制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:58:35"
+}

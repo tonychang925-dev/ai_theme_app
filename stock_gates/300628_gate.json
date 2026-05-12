@@ -1,0 +1,46 @@
+{
+  "stock_id": "300628",
+  "stock_name": "亿联网络",
+  "concept": "统一通信终端",
+  "strategy_type": "industry_chain",
+  "must": [
+    "SIP话机",
+    "DECT话机",
+    "TEAMS话机",
+    "亿联会议",
+    "云视频平台"
+  ],
+  "should": [
+    "商务耳麦",
+    "便携会议电话",
+    "统一通信终端",
+    "音视频技术",
+    "全球SIP话机龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "SIP话机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "DECT话机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "TEAMS话机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "亿联会议",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云视频平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:36:03"
+}

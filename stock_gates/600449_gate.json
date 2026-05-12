@@ -1,0 +1,38 @@
+{
+  "stock_id": "600449",
+  "stock_name": "宁夏建材",
+  "concept": "水泥建材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水泥",
+    "商品混凝土",
+    "骨料"
+  ],
+  "should": [
+    "数据中心",
+    "华鲲振宇天宫服务器全国总经销商",
+    "产能减量置换",
+    "新二代生产线",
+    "高端水泥市场",
+    "宁夏地区最大水泥生产企业",
+    "区域市场占有率近50%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水泥",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商品混凝土",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "骨料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:18:07"
+}

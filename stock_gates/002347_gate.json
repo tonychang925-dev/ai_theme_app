@@ -1,0 +1,36 @@
+{
+  "stock_id": "002347",
+  "stock_name": "泰尔股份",
+  "concept": "冶金装备服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "联轴器",
+    "万向轴"
+  ],
+  "should": [
+    "核心备件",
+    "智慧运维服务",
+    "激光再制造服务",
+    "包装机器人",
+    "焊牌机器人",
+    "挂牌机器人",
+    "激光熔覆技术",
+    "热喷涂技术",
+    "堆焊技术",
+    "总包服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "联轴器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "万向轴",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:37:01"
+}

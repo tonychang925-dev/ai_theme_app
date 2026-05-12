@@ -1,0 +1,31 @@
+{
+  "stock_id": "600323",
+  "stock_name": "瀚蓝环境",
+  "concept": "环境服务商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "固废处理"
+  ],
+  "should": [
+    "供水服务",
+    "排水服务",
+    "能源服务",
+    "环境服务商",
+    "固废处理为拓展核心",
+    "水务能源协同发展",
+    "碳管理技术",
+    "数字化建设",
+    "信息化建设",
+    "无废城市建设"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "固废处理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:14:55"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "002391",
+  "stock_name": "长青股份",
+  "concept": "化学农药生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "化学农药生产",
+    "原药",
+    "制剂"
+  ],
+  "should": [
+    "除草剂",
+    "杀虫剂",
+    "杀菌剂",
+    "高效、低毒、低残留农药研发",
+    "博士后科研工作站",
+    "省级企业技术中心",
+    "A类质检机构",
+    "原药生产基地",
+    "中间体延伸",
+    "制剂业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "化学农药生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "制剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:39:19"
+}

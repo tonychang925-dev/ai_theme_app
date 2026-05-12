@@ -1,0 +1,45 @@
+{
+  "stock_id": "688336",
+  "stock_name": "三生国健",
+  "concept": "抗体药物",
+  "strategy_type": "industry_chain",
+  "must": [
+    "抗体药物",
+    "益赛普",
+    "赛普汀",
+    "抗体药物研发",
+    "生物药研发和生产"
+  ],
+  "should": [
+    "健尼哌",
+    "自身免疫性疾病",
+    "肿瘤免疫",
+    "CDMO业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "抗体药物",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "益赛普",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "赛普汀",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "抗体药物研发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物药研发和生产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:15:50"
+}

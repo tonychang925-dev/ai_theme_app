@@ -1,0 +1,50 @@
+{
+  "stock_id": "000560",
+  "stock_name": "我爱我家",
+  "concept": "居住服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "二手住宅经纪",
+    "新房销售",
+    "房屋资产管理",
+    "我爱我家",
+    "相寓"
+  ],
+  "should": [
+    "昆百大外",
+    "CBS系统",
+    "线上楼盘字典",
+    "居住服务",
+    "居住交易",
+    "租住服务",
+    "社区养老",
+    "AI与大数据分析",
+    "VR/AR"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "二手住宅经纪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新房销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "房屋资产管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "我爱我家",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "相寓",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:56:27"
+}

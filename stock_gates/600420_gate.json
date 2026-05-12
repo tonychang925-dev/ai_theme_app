@@ -1,0 +1,51 @@
+{
+  "stock_id": "600420",
+  "stock_name": "国药现代",
+  "concept": "缓释药技术",
+  "strategy_type": "industry_chain",
+  "must": [
+    "缓释药技术",
+    "缓控释制剂",
+    "膜剂",
+    "透皮贴剂",
+    "缓控释技术"
+  ],
+  "should": [
+    "头孢制剂",
+    "抗抑郁药盐酸米那普仑片",
+    "抗肿瘤药注射用阿糖胞苷",
+    "欧洲法规市场",
+    "非法规市场",
+    "印度、东南亚、中东市场",
+    "医药中间体",
+    "原料药",
+    "制剂生产",
+    "药品委托或受托生产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "缓释药技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "缓控释制剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "膜剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "透皮贴剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "缓控释技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:17:33"
+}

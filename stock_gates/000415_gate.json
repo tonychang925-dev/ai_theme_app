@@ -1,0 +1,34 @@
+{
+  "stock_id": "000415",
+  "stock_name": "渤海租赁",
+  "concept": "飞机集装箱租赁",
+  "strategy_type": "industry_chain",
+  "must": [
+    "飞机租赁",
+    "集装箱租赁"
+  ],
+  "should": [
+    "境内融资租赁",
+    "经营租赁",
+    "融资租赁",
+    "售后回租",
+    "直接租赁",
+    "航空公司",
+    "船运公司",
+    "有资金需求的客户"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "飞机租赁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集装箱租赁",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:52:03"
+}

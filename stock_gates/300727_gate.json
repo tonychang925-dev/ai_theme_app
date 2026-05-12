@@ -1,0 +1,41 @@
+{
+  "stock_id": "300727",
+  "stock_name": "润禾材料",
+  "concept": "有机硅深加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "有机硅深加工",
+    "纺织印染助剂",
+    "嵌段硅油"
+  ],
+  "should": [
+    "硅橡胶",
+    "硅树脂",
+    "含氢硅油",
+    "苯基硅油",
+    "乙烯基硅油",
+    "嵌段硅油乳液",
+    "有机硅中间体DMC",
+    "二次加工",
+    "硅油生产",
+    "七甲基三硅氧烷"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "有机硅深加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纺织印染助剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "嵌段硅油",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:40:35"
+}

@@ -1,0 +1,48 @@
+{
+  "stock_id": "000088",
+  "stock_name": "盐田港",
+  "concept": "港口综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "港口综合服务",
+    "港口投资开发与经营",
+    "惠州荃湾煤炭港",
+    "黄石新港",
+    "深汕小漠港"
+  ],
+  "should": [
+    "收费高速公路经营管理",
+    "海关监管仓和其他港口配套仓储经营",
+    "常德港",
+    "津市港",
+    "全球枢纽港地位稳固",
+    "国际一流港口品牌",
+    "丰富的内河码头运营经验"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "港口综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "港口投资开发与经营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "惠州荃湾煤炭港",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "黄石新港",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "深汕小漠港",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:50:05"
+}

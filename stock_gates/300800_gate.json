@@ -1,0 +1,38 @@
+{
+  "stock_id": "300800",
+  "stock_name": "力合科技",
+  "concept": "环境监测系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环境监测系统",
+    "水质监测系统",
+    "空气/烟气监测系统"
+  ],
+  "should": [
+    "环境监测信息管理系统",
+    "环境监测核心仪器开发与制造",
+    "环境监测系统自动化控制与集成",
+    "环境监测管理软件开发",
+    "环境监测系统运营服务",
+    "第三方检测",
+    "监测咨询服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环境监测系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水质监测系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空气/烟气监测系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:43:36"
+}

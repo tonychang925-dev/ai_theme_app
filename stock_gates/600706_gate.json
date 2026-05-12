@@ -1,0 +1,36 @@
+{
+  "stock_id": "600706",
+  "stock_name": "曲江文旅",
+  "concept": "文化旅游运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "文化旅游运营",
+    "旅游景区运营管理"
+  ],
+  "should": [
+    "餐饮酒店",
+    "旅行社",
+    "旅游商品销售",
+    "体育项目",
+    "数字藏品",
+    "数字文化科技公司",
+    "策划",
+    "前期文化研究",
+    "策划规划",
+    "后期运营管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "文化旅游运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "旅游景区运营管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:25:23"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "600496",
+  "stock_name": "精工钢构",
+  "concept": "钢结构工程一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钢结构工程一体化",
+    "钢结构工程",
+    "EPC工程总承包",
+    "BIPV光伏建筑一体化",
+    "钢结构龙头"
+  ],
+  "should": [
+    "大型铸钢节点成套应用技术",
+    "钢结构装配式绿色集成建筑体系",
+    "BLS金属屋面防水体系",
+    "BIM可视化技术",
+    "首批国家装配式建筑产业基地",
+    "鸟巢",
+    "卡塔尔卢赛尔体育场",
+    "杭州亚运会棒垒球体育文化中心",
+    "与东方日升、天合光能合作",
+    "与国电投、国核等央企合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钢结构工程一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钢结构工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "EPC工程总承包",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "BIPV光伏建筑一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钢结构龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:19:19"
+}

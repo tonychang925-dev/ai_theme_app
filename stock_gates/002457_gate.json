@@ -1,0 +1,22 @@
+{
+  "stock_id": "002457",
+  "stock_name": "青龙管业",
+  "concept": "输水管道龙头",
+  "strategy_type": "industry_chain",
+  "must": [],
+  "should": [
+    "输水管道龙头",
+    "钢筋混凝土排水管道(RCP)",
+    "TPEP钢管",
+    "聚氯乙烯(PVC)输水管道",
+    "聚乙烯(PE)输水管道",
+    "跨流域调水",
+    "城市及工业园区供排水",
+    "农田水利灌溉"
+  ],
+  "not": [],
+  "evidence_refs": [],
+  "quality": "weak",
+  "must_count": 0,
+  "generated_at": "2026-05-11T17:42:42"
+}

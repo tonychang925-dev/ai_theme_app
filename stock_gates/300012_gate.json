@@ -1,0 +1,41 @@
+{
+  "stock_id": "300012",
+  "stock_name": "华测检测",
+  "concept": "第三方检测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "第三方检测",
+    "检测",
+    "检验"
+  ],
+  "should": [
+    "认证",
+    "校准",
+    "技术服务",
+    "环境服务",
+    "食品及农产品",
+    "化妆品及宠物食品",
+    "医药及医学",
+    "计量校准",
+    "新能源汽车",
+    "轨道交通和航空材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "第三方检测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "检测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "检验",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:09:32"
+}

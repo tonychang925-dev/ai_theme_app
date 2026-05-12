@@ -1,0 +1,41 @@
+{
+  "stock_id": "688029",
+  "stock_name": "南微医学",
+  "concept": "内镜诊疗器械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "内镜诊疗器械",
+    "止血闭合类",
+    "EMR/ESD类"
+  ],
+  "should": [
+    "活检类",
+    "扩张类",
+    "ERCP类",
+    "EUS/EBUS类",
+    "凸轮设计",
+    "可携带125I放射粒子支架技术",
+    "Y形气管支架设计",
+    "黄金电极涂层",
+    "钛电极涂层",
+    "双注液通道"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "内镜诊疗器械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "止血闭合类",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "EMR/ESD类",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:05:51"
+}

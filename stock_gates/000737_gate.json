@@ -1,0 +1,46 @@
+{
+  "stock_id": "000737",
+  "stock_name": "北方铜业",
+  "concept": "铜金属开采冶炼",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铜金属开采冶炼",
+    "阴极铜",
+    "冶炼",
+    "铜金属的开采"
+  ],
+  "should": [
+    "选矿",
+    "金锭",
+    "银锭",
+    "硫酸",
+    "海绵金",
+    "海绵钯",
+    "冶炼厂",
+    "销售",
+    "自有矿山",
+    "铜精矿加工费(TC/RC)"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铜金属开采冶炼",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "阴极铜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冶炼",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铜金属的开采",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:03:05"
+}

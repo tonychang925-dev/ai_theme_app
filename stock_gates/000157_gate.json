@@ -1,0 +1,51 @@
+{
+  "stock_id": "000157",
+  "stock_name": "中联重科",
+  "concept": "工程机械装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程机械装备",
+    "混凝土机械",
+    "起重机械",
+    "农业机械",
+    "高空作业机械"
+  ],
+  "should": [
+    "土方施工机械",
+    "桩工机械",
+    "应急救援装备",
+    "矿山机械",
+    "叉车",
+    "主控芯片",
+    "固件开发",
+    "液压阀",
+    "工程桥",
+    "减速机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程机械装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "混凝土机械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "起重机械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "农业机械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高空作业机械",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:50:53"
+}

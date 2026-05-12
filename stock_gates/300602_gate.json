@@ -1,0 +1,29 @@
+{
+  "stock_id": "300602",
+  "stock_name": "飞荣达",
+  "concept": "电磁屏蔽与热管理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电磁屏蔽材料及器件",
+    "热管理材料及器件"
+  ],
+  "should": [
+    "基站天线及相关器件",
+    "防护功能器件",
+    "电磁屏蔽与热管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电磁屏蔽材料及器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热管理材料及器件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:34:44"
+}

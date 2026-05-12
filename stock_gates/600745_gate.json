@@ -1,0 +1,51 @@
+{
+  "stock_id": "600745",
+  "stock_name": "闻泰科技",
+  "concept": "ODM+IDM双龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "ODM+IDM双龙头",
+    "全球ODM龙头",
+    "全球IDM龙头",
+    "半导体",
+    "产品集成"
+  ],
+  "should": [
+    "光学模组",
+    "半导体设计",
+    "晶圆制造",
+    "封装测试",
+    "系统级封装(SiP)",
+    "宽带隙半导体",
+    "智能座舱",
+    "服务器",
+    "手机",
+    "智能家居"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "ODM+IDM双龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球ODM龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球IDM龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "产品集成",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:26:39"
+}

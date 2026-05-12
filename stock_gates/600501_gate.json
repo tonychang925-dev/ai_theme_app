@@ -1,0 +1,41 @@
+{
+  "stock_id": "600501",
+  "stock_name": "航天晨光",
+  "concept": "军工智能制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能制造",
+    "核工装备",
+    "航天科工集团重要上市平台"
+  ],
+  "should": [
+    "后勤保障装备",
+    "压力容器",
+    "柔性管件",
+    "环保装备",
+    "艺术工程",
+    "核级工业基础件",
+    "核废料减容处理技术",
+    "核安全级膨胀节、金属软管供应商",
+    "军工智能制造",
+    "RTP管自主开发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核工装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航天科工集团重要上市平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:19:32"
+}

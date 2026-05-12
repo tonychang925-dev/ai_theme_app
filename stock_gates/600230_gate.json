@@ -1,0 +1,41 @@
+{
+  "stock_id": "600230",
+  "stock_name": "沧州大化",
+  "concept": "TDI产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "首家规模生产TDI",
+    "TDI产业链",
+    "TDI"
+  ],
+  "should": [
+    "离子膜烧碱",
+    "聚碳酸酯",
+    "连续生产法生产共聚硅PC",
+    "高分子量溴化PC",
+    "汽车零部件",
+    "消费电子",
+    "电子工程",
+    "家用电器",
+    "发光二极管",
+    "建筑板材"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "首家规模生产TDI",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "TDI产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "TDI",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:12:26"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "688116",
+  "stock_name": "天奈科技",
+  "concept": "碳纳米管导电剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "碳纳米管导电剂",
+    "碳纳米管",
+    "碳纳米管导电浆料"
+  ],
+  "should": [
+    "碳纳米管制备",
+    "导电浆料分散技术",
+    "比亚迪",
+    "ATL",
+    "宁德时代",
+    "天津力神",
+    "孚能科技",
+    "欣旺达",
+    "珠海光宇",
+    "亿纬锂能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "碳纳米管导电剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳纳米管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳纳米管导电浆料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:08:53"
+}

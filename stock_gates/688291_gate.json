@@ -1,0 +1,36 @@
+{
+  "stock_id": "688291",
+  "stock_name": "金橙子",
+  "concept": "激光加工控制",
+  "strategy_type": "industry_chain",
+  "must": [
+    "激光加工控制系统",
+    "核心控制大脑"
+  ],
+  "should": [
+    "激光系统集成硬件",
+    "激光精密加工设备",
+    "高精密振镜控制",
+    "伺服电机控制",
+    "运动控制软件",
+    "运动控制卡",
+    "激光加工控制",
+    "激光标刻",
+    "激光切割",
+    "激光焊接"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "激光加工控制系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核心控制大脑",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:14:26"
+}

@@ -1,0 +1,33 @@
+{
+  "stock_id": "002128",
+  "stock_name": "电投能源",
+  "concept": "煤炭销售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤炭销售",
+    "电煤供应"
+  ],
+  "should": [
+    "电煤中长期合同",
+    "西部大开发企业所得税优惠",
+    "无人驾驶",
+    "换电矿卡",
+    "东北褐煤企业优势地位",
+    "保供稳价",
+    "智能化建设"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤炭销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电煤供应",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:24:39"
+}

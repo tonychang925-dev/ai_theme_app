@@ -1,0 +1,46 @@
+{
+  "stock_id": "002129",
+  "stock_name": "TCL中环",
+  "concept": "硅晶材料双龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏硅片",
+    "半导体硅片",
+    "单晶硅材料",
+    "G12大尺寸硅片"
+  ],
+  "should": [
+    "光伏业务",
+    "半导体业务",
+    "高效叠瓦组件",
+    "抛光片",
+    "外延片",
+    "功率器件",
+    "区熔设备制造",
+    "光伏电站",
+    "IGBT",
+    "硅晶材料双龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏硅片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体硅片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "单晶硅材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "G12大尺寸硅片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:24:53"
+}

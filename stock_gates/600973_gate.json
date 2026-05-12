@@ -1,0 +1,46 @@
+{
+  "stock_id": "600973",
+  "stock_name": "宝胜股份",
+  "concept": "线缆制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "海上风电电缆",
+    "海缆行业第一阵营",
+    "高压及特高压电力电缆",
+    "国内单体最大海缆码头"
+  ],
+  "should": [
+    "电线电缆",
+    "线缆制造",
+    "海上风电",
+    "航空线缆",
+    "通信光纤光缆",
+    "航空线缆EWIS技术",
+    "系统集成能力",
+    "超导",
+    "特高压电网",
+    "5G及光纤网络"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "海上风电电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海缆行业第一阵营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高压及特高压电力电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内单体最大海缆码头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:32:11"
+}

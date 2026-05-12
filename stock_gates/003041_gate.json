@@ -1,0 +1,31 @@
+{
+  "stock_id": "003041",
+  "stock_name": "真爱美家",
+  "concept": "毛毯制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "毛毯"
+  ],
+  "should": [
+    "床上用品（套件、被芯、枕芯）",
+    "毛巾",
+    "家居服",
+    "地毯",
+    "省级技术研发中心",
+    "浙江省真爱功能性毛毯研究院",
+    "浙江省企业博士后工作站",
+    "物联网在线监测系统",
+    "MES与ERP集成",
+    "毛毯制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "毛毯",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:08:47"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "300821",
+  "stock_name": "东岳硅材",
+  "concept": "有机硅材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "有机硅材料",
+    "有机硅单体生产",
+    "年产60万吨有机硅单体"
+  ],
+  "should": [
+    "有机硅中间体",
+    "硅橡胶",
+    "硅油",
+    "气相白炭黑",
+    "下游深加工",
+    "副产物综合利用",
+    "新能源",
+    "超高压和特高压电网建设",
+    "智能穿戴材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "有机硅材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有机硅单体生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "年产60万吨有机硅单体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:44:40"
+}

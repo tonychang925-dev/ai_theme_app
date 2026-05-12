@@ -1,0 +1,41 @@
+{
+  "stock_id": "002295",
+  "stock_name": "精艺股份",
+  "concept": "铜加工制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密铜管",
+    "铜管深加工",
+    "铜加工制造"
+  ],
+  "should": [
+    "铜杆",
+    "自主创新",
+    "绿色制造",
+    "循环经济",
+    "空调制冷",
+    "家用空调",
+    "中央空调",
+    "工业和商业制冷机",
+    "国内重要的有色金属加工制造基地",
+    "中国铜管材十强企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密铜管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铜管深加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铜加工制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:33:52"
+}

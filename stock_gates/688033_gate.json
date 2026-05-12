@@ -1,0 +1,36 @@
+{
+  "stock_id": "688033",
+  "stock_name": "天宜新材",
+  "concept": "绿能新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高铁动车组用粉末冶金闸片",
+    "工信部制造业单项冠军企业"
+  ],
+  "should": [
+    "合成闸瓦/闸片",
+    "碳碳复合材料",
+    "石英坩埚",
+    "碳陶制动盘",
+    "树脂基碳纤维复合材料",
+    "碳基复合材料",
+    "粉末冶金技术",
+    "碳碳复合材料制备技术",
+    "预制体智能针刺技术",
+    "近净成形全新结构预制体技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高铁动车组用粉末冶金闸片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工信部制造业单项冠军企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:06:02"
+}

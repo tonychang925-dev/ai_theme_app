@@ -1,0 +1,37 @@
+{
+  "stock_id": "603006",
+  "stock_name": "联明股份",
+  "concept": "汽车零部件与供应链服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "循环物流器具",
+    "供应链管理服务",
+    "汽车零部件与供应链服务"
+  ],
+  "should": [
+    "车身零部件",
+    "冲压及焊接总成",
+    "乘用车配套",
+    "工业品物流",
+    "通用一级供应商",
+    "整车制造商配套"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "循环物流器具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "供应链管理服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车零部件与供应链服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:40:47"
+}

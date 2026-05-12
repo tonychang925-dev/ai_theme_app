@@ -1,0 +1,26 @@
+{
+  "stock_id": "002932",
+  "stock_name": "明德生物",
+  "concept": "体外诊断试剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "体外诊断试剂"
+  ],
+  "should": [
+    "医用仪器",
+    "血源筛查",
+    "致病性病原体检测",
+    "基因检测",
+    "肿瘤标志物检测"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "体外诊断试剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:03:49"
+}

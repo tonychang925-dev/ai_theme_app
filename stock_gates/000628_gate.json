@@ -1,0 +1,36 @@
+{
+  "stock_id": "000628",
+  "stock_name": "高新发展",
+  "concept": "建筑与功率半导体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑业",
+    "科技业务"
+  ],
+  "should": [
+    "华鲲振宇",
+    "IGBT器件",
+    "IGBT检测方案",
+    "IGBT应用方案",
+    "超薄晶圆工艺",
+    "高能注入工艺",
+    "新能源车",
+    "新能源发电(光伏/风力)",
+    "工控领域",
+    "功率半导体产业链中上游"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "科技业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:58:53"
+}

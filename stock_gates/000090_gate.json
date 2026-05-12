@@ -1,0 +1,51 @@
+{
+  "stock_id": "000090",
+  "stock_name": "天健集团",
+  "concept": "城市建设服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "城市建设服务",
+    "城市建设",
+    "城市服务",
+    "工程总承包（EPC）",
+    "施工总承包"
+  ],
+  "should": [
+    "城市基础设施",
+    "市政公用工程施工总承包特级资质",
+    "国家高新技术企业",
+    "国家优质工程金奖",
+    "市政道路",
+    "市政管网",
+    "桥梁隧道",
+    "水环境",
+    "园林绿化",
+    "路灯"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "城市建设服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程总承包（EPC）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "施工总承包",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:50:23"
+}

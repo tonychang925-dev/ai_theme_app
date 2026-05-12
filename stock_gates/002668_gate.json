@@ -1,0 +1,41 @@
+{
+  "stock_id": "002668",
+  "stock_name": "TCL智家",
+  "concept": "冰箱制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "冰箱制造",
+    "冰箱",
+    "冷柜"
+  ],
+  "should": [
+    "六区功能分储",
+    "-25度深冷技术",
+    "AI语音控制",
+    "LT蓝晶净味",
+    "智控零度超保鲜",
+    "智控保湿技术",
+    "宽幅变温技术",
+    "智控双变频科技",
+    "第五代风冷无霜技术",
+    "风冷技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "冰箱制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冰箱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冷柜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:52:26"
+}

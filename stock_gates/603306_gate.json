@@ -1,0 +1,42 @@
+{
+  "stock_id": "603306",
+  "stock_name": "华懋科技",
+  "concept": "汽车安全与光刻材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "安全气囊",
+    "气囊布",
+    "安全带",
+    "OPW"
+  ],
+  "should": [
+    "半导体光刻胶",
+    "光刻胶单体",
+    "光刻胶树脂",
+    "主控芯片",
+    "固件开发",
+    "汽车被动安全行业龙头企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "安全气囊",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "气囊布",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "安全带",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "OPW",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:48:33"
+}

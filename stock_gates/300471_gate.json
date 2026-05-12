@@ -1,0 +1,41 @@
+{
+  "stock_id": "300471",
+  "stock_name": "厚普股份",
+  "concept": "清洁能源加注设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "清洁能源加注设备",
+    "天然气加注成套设备",
+    "氢能成套设备"
+  ],
+  "should": [
+    "船用加注设备",
+    "航空零部件",
+    "智慧物联网信息化集成监管平台",
+    "清洁能源装备制造",
+    "天然气加气站",
+    "氢能加注站",
+    "船舶LNG加注",
+    "航空零部件制造",
+    "国内加气设备龙头",
+    "覆盖全产业链服务能力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "清洁能源加注设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天然气加注成套设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氢能成套设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:28:45"
+}

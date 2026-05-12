@@ -1,0 +1,36 @@
+{
+  "stock_id": "002303",
+  "stock_name": "美盈森",
+  "concept": "瓦楞包装一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "瓦楞包装一体化",
+    "瓦楞包装"
+  ],
+  "should": [
+    "纸质包装",
+    "消费电子",
+    "白酒",
+    "家具家居",
+    "家用电器",
+    "食品饮料",
+    "新能源汽车产业链",
+    "集团化布局",
+    "跨区域服务能力",
+    "智慧工厂投入"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "瓦楞包装一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "瓦楞包装",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:34:25"
+}

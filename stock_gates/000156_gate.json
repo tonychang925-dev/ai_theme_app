@@ -1,0 +1,51 @@
+{
+  "stock_id": "000156",
+  "stock_name": "华数传媒",
+  "concept": "新媒体与有线电视",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全国新媒体业务",
+    "有线电视网络业务",
+    "互动电视",
+    "互联网电视",
+    "手机电视"
+  ],
+  "should": [
+    "宽带网络业务",
+    "宽带网络服务",
+    "智慧城市数字化业务",
+    "数字政务",
+    "数字社会",
+    "数字法治",
+    "数字文化",
+    "版权买断",
+    "运营分成",
+    "保底价加运营分成"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全国新媒体业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有线电视网络业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "互动电视",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "互联网电视",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "手机电视",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:50:46"
+}

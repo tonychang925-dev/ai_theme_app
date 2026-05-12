@@ -1,0 +1,30 @@
+{
+  "stock_id": "000020",
+  "stock_name": "深华发A",
+  "concept": "电子制造与物业经营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "液晶显示器整机"
+  ],
+  "should": [
+    "注塑件",
+    "高端电竞型号",
+    "关停保丽龙业务",
+    "产品结构重大调整",
+    "自动化优势",
+    "盈利型客户重点推广",
+    "品牌客户服务小组",
+    "城市更新单元规划",
+    "自有土地开发与经营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "液晶显示器整机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T16:46:31"
+}

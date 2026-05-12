@@ -1,0 +1,40 @@
+{
+  "stock_id": "000545",
+  "stock_name": "金浦钛业",
+  "concept": "钛白粉生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钛白粉生产",
+    "硫酸法工艺"
+  ],
+  "should": [
+    "金红石型钛白粉",
+    "锐钛型钛白粉",
+    "DCS控制系统",
+    "涂料",
+    "塑料管型材",
+    "色母",
+    "造纸",
+    "化纤",
+    "油墨",
+    "薄膜"
+  ],
+  "not": [
+    "脱硝催化剂",
+    "钛酸锂电池",
+    "行业骨干企业"
+  ],
+  "evidence_refs": [
+    {
+      "term": "钛白粉生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硫酸法工艺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:55:42"
+}

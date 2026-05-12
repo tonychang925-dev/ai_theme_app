@@ -1,0 +1,31 @@
+{
+  "stock_id": "603058",
+  "stock_name": "永吉股份",
+  "concept": "包装印刷",
+  "strategy_type": "industry_chain",
+  "must": [
+    "烟标"
+  ],
+  "should": [
+    "酒标",
+    "药标",
+    "包装印刷",
+    "社会印刷品",
+    "设计创新",
+    "研发投入",
+    "工艺优化",
+    "技术升级",
+    "包装印刷供应商",
+    "烟用物资供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "烟标",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:42:28"
+}

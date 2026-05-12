@@ -1,0 +1,36 @@
+{
+  "stock_id": "000554",
+  "stock_name": "泰山石油",
+  "concept": "成品油销售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "成品油销售",
+    "成品油批发零售"
+  ],
+  "should": [
+    "车用天然气加气",
+    "非油品业务",
+    "汽车用油",
+    "农业用油",
+    "建筑施工用油",
+    "渔业用油",
+    "电力工矿企业商业民用",
+    "航煤",
+    "山东省泰安市最大经销商",
+    "市场占有率33%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "成品油销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "成品油批发零售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:56:08"
+}

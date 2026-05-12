@@ -1,0 +1,41 @@
+{
+  "stock_id": "002871",
+  "stock_name": "伟隆股份",
+  "concept": "给排水阀门",
+  "strategy_type": "industry_chain",
+  "must": [
+    "给排水阀门",
+    "消防减压阀",
+    "不停水加装闸门技术"
+  ],
+  "should": [
+    "闸阀",
+    "蝶阀",
+    "止回阀",
+    "调节阀",
+    "球阀",
+    "偏心阀",
+    "截止阀",
+    "排气阀",
+    "城镇给排水系统",
+    "消防给水系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "给排水阀门",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "消防减压阀",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "不停水加装闸门技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:01:09"
+}

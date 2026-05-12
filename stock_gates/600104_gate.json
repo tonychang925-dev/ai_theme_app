@@ -1,0 +1,51 @@
+{
+  "stock_id": "600104",
+  "stock_name": "上汽集团",
+  "concept": "汽车制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "整车",
+    "新能源汽车",
+    "自主品牌",
+    "海外市场",
+    "新能源车"
+  ],
+  "should": [
+    "中高端车型",
+    "芯片国产化",
+    "外贸滚装船队",
+    "固态电池",
+    "燃料电池系统",
+    "智能网联技术",
+    "自动驾驶算法",
+    "智能底盘",
+    "一体式铸造",
+    "一体化热管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "整车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自主品牌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海外市场",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:09:14"
+}

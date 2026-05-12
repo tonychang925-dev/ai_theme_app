@@ -1,0 +1,36 @@
+{
+  "stock_id": "688012",
+  "stock_name": "中微公司",
+  "concept": "半导体设备龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体设备龙头",
+    "等离子体刻蚀设备"
+  ],
+  "should": [
+    "LPCVD薄膜设备",
+    "ALD薄膜设备",
+    "CCP刻蚀技术",
+    "ICP刻蚀技术",
+    "双台机钨系列设备技术",
+    "多区辅助加热调节系统",
+    "集成电路制造",
+    "先进封装",
+    "LED外延片生产",
+    "功率器件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体设备龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "等离子体刻蚀设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:05:21"
+}

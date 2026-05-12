@@ -1,0 +1,47 @@
+{
+  "stock_id": "600985",
+  "stock_name": "淮北矿业",
+  "concept": "焦煤开采",
+  "strategy_type": "industry_chain",
+  "must": [
+    "焦煤开采",
+    "煤炭采掘",
+    "焦化产品生产销售",
+    "煤炭采选",
+    "焦煤"
+  ],
+  "should": [
+    "洗选加工",
+    "商品贸易",
+    "肥煤",
+    "瘦煤",
+    "稀缺煤种",
+    "煤炭智能化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "焦煤开采",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭采掘",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "焦化产品生产销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭采选",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "焦煤",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:32:30"
+}

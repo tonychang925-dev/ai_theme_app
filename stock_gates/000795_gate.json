@@ -1,0 +1,36 @@
+{
+  "stock_id": "000795",
+  "stock_name": "英洛华",
+  "concept": "稀土永磁材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "稀土永磁材料",
+    "钕铁硼永磁材料"
+  ],
+  "should": [
+    "微特电机",
+    "康复器材",
+    "烧结工艺",
+    "粘结工艺",
+    "表面处理",
+    "电机技术",
+    "新能源汽车",
+    "风力发电",
+    "节能家电",
+    "工业机器人"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "稀土永磁材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钕铁硼永磁材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:05:02"
+}

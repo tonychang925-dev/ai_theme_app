@@ -1,0 +1,35 @@
+{
+  "stock_id": "600906",
+  "stock_name": "财达证券",
+  "concept": "河北证券龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "证券经纪",
+    "证券自营"
+  ],
+  "should": [
+    "证券承销保荐",
+    "证券投资咨询",
+    "河北证券龙头",
+    "河北省内唯一法人证券公司",
+    "省内营业部市场份额36.76%",
+    "覆盖11个地级市",
+    "自营业务占比40.2%",
+    "经纪业务占比39.11%",
+    "投行业务占比14.5%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "证券经纪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "证券自营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:30:56"
+}

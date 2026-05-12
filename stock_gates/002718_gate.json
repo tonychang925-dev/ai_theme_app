@@ -1,0 +1,40 @@
+{
+  "stock_id": "002718",
+  "stock_name": "友邦吊顶",
+  "concept": "集成吊顶龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "集成吊顶龙头",
+    "集成吊顶",
+    "MSO模块化技术"
+  ],
+  "should": [
+    "集成阳台",
+    "集成车库",
+    "背景墙",
+    "装配式内装技术",
+    "行业开创者",
+    "技术发明者",
+    "会长单位",
+    "行业标准主编单位",
+    "中国房地产500强首选品牌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "集成吊顶龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集成吊顶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MSO模块化技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:54:35"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "605300",
+  "stock_name": "佳禾食品",
+  "concept": "植脂末龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "植脂末"
+  ],
+  "should": [
+    "咖啡",
+    "其他固体饮料",
+    "燕麦奶",
+    "植脂末龙头",
+    "定制化配方",
+    "酶解技术",
+    "提取技术",
+    "现制茶饮",
+    "烘焙",
+    "麦片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "植脂末",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:03:36"
+}

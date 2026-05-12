@@ -1,0 +1,51 @@
+{
+  "stock_id": "603922",
+  "stock_name": "金鸿顺",
+  "concept": "汽车冲压零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车冲压零部件",
+    "汽车车身冲压零部件",
+    "模具",
+    "冲压模具设计开发",
+    "高精度模具"
+  ],
+  "should": [
+    "底盘冲压零部件",
+    "模具成型",
+    "高强度/超高强度零件模具",
+    "多工位模",
+    "级进模",
+    "工件校检",
+    "模具修复",
+    "中国模具工业协会重点骨干企业",
+    "上汽大众供应商",
+    "上汽通用供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车冲压零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车车身冲压零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "模具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冲压模具设计开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高精度模具",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:59:08"
+}

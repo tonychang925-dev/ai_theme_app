@@ -1,0 +1,41 @@
+{
+  "stock_id": "603896",
+  "stock_name": "寿仙谷",
+  "concept": "有机国药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "灵芝孢子粉类产品",
+    "铁皮石斛类产品",
+    "有机国药种植基地"
+  ],
+  "should": [
+    "去壁技术",
+    "超音速低温气流破壁技术",
+    "航天育种",
+    "组培快繁技术",
+    "西红花系列产品",
+    "免疫力低下人群",
+    "放化疗人群",
+    "保健食品",
+    "全产业链优势",
+    "四重有机认证"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "灵芝孢子粉类产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铁皮石斛类产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有机国药种植基地",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:58:25"
+}

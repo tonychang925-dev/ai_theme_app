@@ -1,0 +1,35 @@
+{
+  "stock_id": "601999",
+  "stock_name": "出版传媒",
+  "concept": "出版传媒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "教材教辅",
+    "一般图书"
+  ],
+  "should": [
+    "电子音像产品",
+    "AI实时动画与影像生产平台",
+    "精品有声书",
+    "电子书",
+    "图书出版",
+    "图书发行",
+    "印刷业务",
+    "物资供应",
+    "数字化平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "教材教辅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一般图书",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:40:38"
+}

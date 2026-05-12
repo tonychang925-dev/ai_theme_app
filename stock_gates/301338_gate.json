@@ -1,0 +1,31 @@
+{
+  "stock_id": "301338",
+  "stock_name": "凯格精机",
+  "concept": "精密装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锡膏印刷技术",
+    "锡膏印刷设备"
+  ],
+  "should": [
+    "点胶设备",
+    "精密装备",
+    "富士康供应链",
+    "华为供应链",
+    "自动化精密装备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锡膏印刷技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锡膏印刷设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:03:18"
+}

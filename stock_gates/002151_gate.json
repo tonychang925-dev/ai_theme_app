@@ -1,0 +1,46 @@
+{
+  "stock_id": "002151",
+  "stock_name": "北斗星通",
+  "concept": "北斗导航芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "北斗导航芯片",
+    "导航定位芯片",
+    "板卡",
+    "天线"
+  ],
+  "should": [
+    "模块",
+    "高精度芯片",
+    "主控芯片",
+    "22nm制程",
+    "固件开发",
+    "定位解算",
+    "模型开发",
+    "数据分析",
+    "设计仿真",
+    "车载导航"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "北斗导航芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "导航定位芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "板卡",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:25:56"
+}

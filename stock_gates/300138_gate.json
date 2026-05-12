@@ -1,0 +1,51 @@
+{
+  "stock_id": "300138",
+  "stock_name": "晨光生物",
+  "concept": "植物提取龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "植物提取龙头",
+    "天然色素",
+    "辣椒红",
+    "辣椒精",
+    "叶黄素"
+  ],
+  "should": [
+    "天然香辛料提取物",
+    "天然营养及药用提取物",
+    "天然甜味剂",
+    "油脂",
+    "蛋白",
+    "花椒提取物",
+    "甜菊糖",
+    "番茄红素",
+    "姜黄素",
+    "葡萄籽提取物"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "植物提取龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天然色素",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "辣椒红",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "辣椒精",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "叶黄素",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:14:46"
+}

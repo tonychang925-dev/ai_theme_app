@@ -1,0 +1,51 @@
+{
+  "stock_id": "600272",
+  "stock_name": "开开实业",
+  "concept": "中医药流通服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中医药流通服务",
+    "中医药流通",
+    "中医药学服务",
+    "中医问诊服务",
+    "服装批发"
+  ],
+  "should": [
+    "雷允上",
+    "开开",
+    "上雷",
+    "允上生活",
+    "雷允上药城",
+    "南京西路店",
+    "中成药",
+    "西成药",
+    "高档滋补品",
+    "衬衫"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中医药流通服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中医药流通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中医药学服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中医问诊服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "服装批发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:13:40"
+}

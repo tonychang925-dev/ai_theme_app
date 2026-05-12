@@ -1,0 +1,46 @@
+{
+  "stock_id": "003028",
+  "stock_name": "振邦智能",
+  "concept": "高端智能控制器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端智能控制器",
+    "智能控制器",
+    "变频控制技术",
+    "变频驱动器"
+  ],
+  "should": [
+    "逆变器和储能",
+    "逆变器",
+    "储能",
+    "数字电源",
+    "数字高压电源技术",
+    "智能物联",
+    "智能物联技术",
+    "制冷系统控制技术",
+    "大型家用及商用电器",
+    "小型家电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端智能控制器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能控制器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "变频控制技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "变频驱动器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:08:13"
+}

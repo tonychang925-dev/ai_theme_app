@@ -1,0 +1,39 @@
+{
+  "stock_id": "688596",
+  "stock_name": "正帆科技",
+  "concept": "工艺介质解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工艺介质供应系统",
+    "工艺介质解决方案",
+    "高纯特种气体"
+  ],
+  "should": [
+    "系统综合解决方案",
+    "MRO业务",
+    "SK海力士",
+    "德州仪器",
+    "微污染控制",
+    "流体系统设计与模拟仿真",
+    "高纯材料合成与分离提纯",
+    "设备、材料、服务三位一体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工艺介质供应系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工艺介质解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高纯特种气体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:21:44"
+}

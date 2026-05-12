@@ -1,0 +1,36 @@
+{
+  "stock_id": "300654",
+  "stock_name": "世纪天鸿",
+  "concept": "教育AI服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "教辅图书策划发行",
+    "教育AI服务"
+  ],
+  "should": [
+    "教育AI产品",
+    "《优化设计》",
+    "《高考蓝皮书》",
+    "《十年高考》",
+    "《优秀教案》",
+    "《智慧背囊》",
+    "《时文选粹》",
+    "大数据",
+    "人工智能",
+    "精准教学"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "教辅图书策划发行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "教育AI服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:37:15"
+}

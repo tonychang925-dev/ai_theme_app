@@ -1,0 +1,36 @@
+{
+  "stock_id": "603199",
+  "stock_name": "九华旅游",
+  "concept": "九华山旅游综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "酒店",
+    "九华山风景区"
+  ],
+  "should": [
+    "索道缆车",
+    "客运",
+    "旅行社",
+    "九华山旅游综合服务",
+    "客运专营权",
+    "中高档酒店主导地位",
+    "在线旅游平台",
+    "预订中心平台",
+    "旅行社营销网络",
+    "长三角客源地"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "酒店",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "九华山风景区",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:46:11"
+}

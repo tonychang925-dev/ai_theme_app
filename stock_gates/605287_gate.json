@@ -1,0 +1,43 @@
+{
+  "stock_id": "605287",
+  "stock_name": "德才股份",
+  "concept": "建筑全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑全产业链",
+    "高档门窗",
+    "装饰装修",
+    "工程建设"
+  ],
+  "should": [
+    "规划设计",
+    "新材料研发生产",
+    "古建筑BIM技术",
+    "系统门窗技术",
+    "壹级（甲级）资质",
+    "老旧小区改造",
+    "历史建筑修缮"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑全产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高档门窗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "装饰装修",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程建设",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:03:31"
+}

@@ -1,0 +1,42 @@
+{
+  "stock_id": "000566",
+  "stock_name": "海南海药",
+  "concept": "医药全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药全产业链",
+    "中间体",
+    "原料药",
+    "化学制剂"
+  ],
+  "should": [
+    "仿制药",
+    "创新药",
+    "一致性评价",
+    "国家一类创新药研发",
+    "医药制造",
+    "国际出口"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医药全产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中间体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原料药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化学制剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:56:43"
+}

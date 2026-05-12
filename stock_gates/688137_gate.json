@@ -1,0 +1,35 @@
+{
+  "stock_id": "688137",
+  "stock_name": "近岸蛋白",
+  "concept": "重组蛋白解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "重组蛋白解决方案",
+    "靶点及因子类蛋白"
+  ],
+  "should": [
+    "重组抗体",
+    "酶及试剂",
+    "规模化生产与质控平台",
+    "生物药",
+    "体外诊断",
+    "mRNA疫苗药物",
+    "生命科学基础研究",
+    "基因细胞治疗",
+    "类器官"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "重组蛋白解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "靶点及因子类蛋白",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:09:32"
+}

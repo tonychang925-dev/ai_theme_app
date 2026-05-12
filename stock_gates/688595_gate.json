@@ -1,0 +1,46 @@
+{
+  "stock_id": "688595",
+  "stock_name": "芯海科技",
+  "concept": "全信号链集成电路",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全信号链集成电路",
+    "高精度ADC",
+    "高可靠性MCU",
+    "全信号链集成电路设计"
+  ],
+  "should": [
+    "测量算法",
+    "AIoT一站式解决方案",
+    "高精度ADC技术",
+    "高可靠性MCU技术",
+    "BMS核心技术",
+    "PPG模拟前端芯片",
+    "BIA模拟前端芯片",
+    "工业测量",
+    "工业控制",
+    "通信与计算机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全信号链集成电路",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高精度ADC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高可靠性MCU",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全信号链集成电路设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:21:49"
+}

@@ -1,0 +1,42 @@
+{
+  "stock_id": "300420",
+  "stock_name": "五洋自控",
+  "concept": "智慧停车设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "机械式停车设备",
+    "智慧停车设备"
+  ],
+  "should": [
+    "散物料搬运核心装置",
+    "自动化生产线设备",
+    "智能物流及仓储系统",
+    "两站及机制砂设备",
+    "主控芯片",
+    "固件开发",
+    "城市停车资源获取",
+    "停车场运营管理",
+    "制造",
+    "物流仓储"
+  ],
+  "not": [
+    "钢铁",
+    "家用电器",
+    "医疗卫生",
+    "智能家居",
+    "IT"
+  ],
+  "evidence_refs": [
+    {
+      "term": "机械式停车设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧停车设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:26:37"
+}

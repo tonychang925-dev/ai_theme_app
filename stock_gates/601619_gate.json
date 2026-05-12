@@ -1,0 +1,42 @@
+{
+  "stock_id": "601619",
+  "stock_name": "嘉泽新能",
+  "concept": "新能源综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源发电",
+    "风电",
+    "光伏发电",
+    "屋顶分布式光伏"
+  ],
+  "should": [
+    "资产管理",
+    "基金业务",
+    "储能",
+    "自主开发",
+    "产业投资与项目开发一体化",
+    "渠道合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "屋顶分布式光伏",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:37:37"
+}

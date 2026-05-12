@@ -1,0 +1,42 @@
+{
+  "stock_id": "601919",
+  "stock_name": "中远海控",
+  "concept": "集装箱航运",
+  "strategy_type": "industry_chain",
+  "must": [
+    "集装箱航运",
+    "集装箱码头"
+  ],
+  "should": [
+    "海洋联盟航线",
+    "GSBN区块链平台",
+    "SynConHub电商平台",
+    "电子提单服务",
+    "泰鸿供应链组合产品",
+    "甲醇双燃料动力集装箱船",
+    "电动集装箱船",
+    "数字化供应链",
+    "生物燃料",
+    "岸电使用"
+  ],
+  "not": [
+    "参股中远海运物流供应链",
+    "引入上汽总公司战略投资者",
+    "增持上港集团",
+    "增持广州港",
+    "增持中远海运港口"
+  ],
+  "evidence_refs": [
+    {
+      "term": "集装箱航运",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集装箱码头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:39:52"
+}

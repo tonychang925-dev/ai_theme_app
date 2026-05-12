@@ -1,0 +1,36 @@
+{
+  "stock_id": "300994",
+  "stock_name": "久祺股份",
+  "concept": "自行车ODM出口",
+  "strategy_type": "industry_chain",
+  "must": [
+    "自行车ODM出口",
+    "ODM模式"
+  ],
+  "should": [
+    "OBM模式",
+    "OEM模式",
+    "儿童自行车",
+    "成人自行车",
+    "助力电动自行车",
+    "ODM直销",
+    "贸易商",
+    "跨境电商",
+    "欧美地区",
+    "全球80多个国家和地区"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "自行车ODM出口",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ODM模式",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:52:22"
+}

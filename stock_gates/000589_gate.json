@@ -1,0 +1,26 @@
+{
+  "stock_id": "000589",
+  "stock_name": "贵州轮胎",
+  "concept": "商用轮胎",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商用轮胎"
+  ],
+  "should": [
+    "5G全连接工厂",
+    "GTPS（精益管理）体系",
+    "替换市场",
+    "配套市场",
+    "集团客户"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商用轮胎",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T16:57:25"
+}

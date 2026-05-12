@@ -1,0 +1,40 @@
+{
+  "stock_id": "002943",
+  "stock_name": "宇晶股份",
+  "concept": "硬脆材料加工设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "硬脆材料加工设备",
+    "多线切割机",
+    "研磨抛光机"
+  ],
+  "should": [
+    "金刚石切割线",
+    "热场系统系列产品",
+    "中国大陆第一台多线切割机研发者",
+    "市场公认最佳210硅片切片机",
+    "偏心轴承箱兼容技术",
+    "三辊独立驱动切割",
+    "整体铸造结构",
+    "张力控制稳定性",
+    "同轴度误差≤0.03mm"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "硬脆材料加工设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多线切割机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "研磨抛光机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:04:26"
+}

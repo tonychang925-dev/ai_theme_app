@@ -1,0 +1,41 @@
+{
+  "stock_id": "600559",
+  "stock_name": "老白干酒",
+  "concept": "白酒酿造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "老白干香型白酒",
+    "十八酒坊",
+    "老白干香型工艺"
+  ],
+  "should": [
+    "文王贡酒",
+    "板城烧锅酒",
+    "武陵酒",
+    "孔府家酒",
+    "白酒酿造",
+    "多香型酿造技术",
+    "高端宴请",
+    "大众消费",
+    "礼品市场",
+    "河北酿酒行业唯一上市企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "老白干香型白酒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "十八酒坊",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "老白干香型工艺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:21:06"
+}

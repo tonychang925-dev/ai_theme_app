@@ -1,0 +1,36 @@
+{
+  "stock_id": "002182",
+  "stock_name": "宝武镁业",
+  "concept": "镁合金龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "镁合金",
+    "镁合金深加工产品"
+  ],
+  "should": [
+    "铝合金",
+    "铝合金深加工产品",
+    "白云石开采",
+    "原镁冶炼",
+    "镁合金熔炼",
+    "镁合金加工",
+    "镁合金回收",
+    "镁合金精密铸造",
+    "镁合金龙头",
+    "汽车轻量化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "镁合金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "镁合金深加工产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:27:50"
+}

@@ -1,0 +1,29 @@
+{
+  "stock_id": "603811",
+  "stock_name": "诚意药业",
+  "concept": "保健药品产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "鱼油保健品"
+  ],
+  "should": [
+    "托拉塞米注射液及胶囊",
+    "天麻素原料药",
+    "高纯度EPA原料",
+    "原料制剂一体化",
+    "骨关节炎治疗",
+    "利尿药物",
+    "维生素K缺乏出血",
+    "国内盐酸氨基葡萄糖主要原料药厂商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "鱼油保健品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:56:57"
+}

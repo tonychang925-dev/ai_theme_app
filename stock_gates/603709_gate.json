@@ -1,0 +1,26 @@
+{
+  "stock_id": "603709",
+  "stock_name": "中源家居",
+  "concept": "软体家具制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "沙发"
+  ],
+  "should": [
+    "软体家具制造",
+    "智能制造",
+    "绿色生产",
+    "全球化供应",
+    "集中采购"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "沙发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:55:16"
+}

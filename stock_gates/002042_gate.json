@@ -1,0 +1,41 @@
+{
+  "stock_id": "002042",
+  "stock_name": "华孚时尚",
+  "concept": "色纺纱数智化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "色纺纱",
+    "新型纱线",
+    "网链业务"
+  ],
+  "should": [
+    "IOT（工业互联网）",
+    "智能化MES（执行制造系统）",
+    "工业采集网关",
+    "数字化管理系统",
+    "色纺纱数智化",
+    "袜业制造与销售",
+    "袜子品牌运营",
+    "贴牌加工",
+    "纱线贸易",
+    "全球最大色纺纱制造商和供应商之一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "色纺纱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新型纱线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "网链业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:19:58"
+}

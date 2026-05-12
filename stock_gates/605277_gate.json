@@ -1,0 +1,46 @@
+{
+  "stock_id": "605277",
+  "stock_name": "新亚电子",
+  "concept": "消费电子线材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "消费电子线材",
+    "消费电子及工业控制线材",
+    "中国消费电子线材龙头企业",
+    "制造业单项冠军产品"
+  ],
+  "should": [
+    "通信线缆及数据线材",
+    "汽车线缆",
+    "新能源系列线缆及组件",
+    "阻燃耐火电缆",
+    "5G光电混合缆",
+    "高频数据线材",
+    "中国电子元件百强企业",
+    "华为技术供应商",
+    "智能家用电器",
+    "新能源汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "消费电子线材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "消费电子及工业控制线材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中国消费电子线材龙头企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "制造业单项冠军产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:03:22"
+}

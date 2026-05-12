@@ -1,0 +1,36 @@
+{
+  "stock_id": "600397",
+  "stock_name": "江钨装备",
+  "concept": "煤炭采选经营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤炭采选经营",
+    "煤炭集中采购平台"
+  ],
+  "should": [
+    "冶炼精煤",
+    "洗动力煤",
+    "混煤",
+    "筛混煤",
+    "洗末煤",
+    "块煤",
+    "主焦煤",
+    "1/3焦煤",
+    "无烟煤",
+    "贫瘦煤"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤炭采选经营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭集中采购平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:17:05"
+}

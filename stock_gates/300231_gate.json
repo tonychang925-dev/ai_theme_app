@@ -1,0 +1,46 @@
+{
+  "stock_id": "300231",
+  "stock_name": "银信科技",
+  "concept": "金融科技运维",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金融科技运维",
+    "IT基础设施运维服务",
+    "智能运维(AIOps)",
+    "一站式IT整体解决方案"
+  ],
+  "should": [
+    "IT基础设施第三方服务商",
+    "系统集成服务",
+    "软件开发与销售",
+    "大数据分析",
+    "人工智能",
+    "云计算",
+    "自动化技术",
+    "数据中心基础设施管理(DCIM)",
+    "金融行业",
+    "电信行业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金融科技运维",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IT基础设施运维服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能运维(AIOps)",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一站式IT整体解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:18:31"
+}

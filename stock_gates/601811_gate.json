@@ -1,0 +1,31 @@
+{
+  "stock_id": "601811",
+  "stock_name": "新华文轩",
+  "concept": "区域出版发行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "教材教辅",
+    "图书发行"
+  ],
+  "should": [
+    "图书出版",
+    "一般图书",
+    "区域出版发行",
+    "四川省唯一教材发行资质",
+    "西南地区出版发行龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "教材教辅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "图书发行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:38:44"
+}

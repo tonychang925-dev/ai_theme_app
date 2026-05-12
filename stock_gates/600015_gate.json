@@ -1,0 +1,22 @@
+{
+  "stock_id": "600015",
+  "stock_name": "华夏银行",
+  "concept": "全国性银行",
+  "strategy_type": "industry_chain",
+  "must": [],
+  "should": [
+    "公司银行业务",
+    "个人银行业务",
+    "金融市场业务",
+    "全国性银行",
+    "资产总额40,291.17亿元",
+    "贷款总额23,529.88亿元",
+    "不良贷款率1.73%",
+    "拨备覆盖率162.21%"
+  ],
+  "not": [],
+  "evidence_refs": [],
+  "quality": "weak",
+  "must_count": 0,
+  "generated_at": "2026-05-11T19:07:05"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "000755",
+  "stock_name": "山西高速",
+  "concept": "高速公路运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高速公路收费管理",
+    "通行费收入",
+    "高速公路特许经营权"
+  ],
+  "should": [
+    "平遥到和顺段高速公路",
+    "榆和高速",
+    "平榆高速",
+    "高速公路运营",
+    "东营-吕梁高速公路山西段",
+    "并购策略",
+    "资本运营",
+    "上市公司+战略",
+    "分布式光伏发电装置"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高速公路收费管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通行费收入",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高速公路特许经营权",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:03:21"
+}

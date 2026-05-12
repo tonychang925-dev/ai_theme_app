@@ -1,0 +1,52 @@
+{
+  "stock_id": "301388",
+  "stock_name": "欣灵电气",
+  "concept": "低压电器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "低压电器",
+    "继电器",
+    "配电控制",
+    "电气传动与控制",
+    "传感器"
+  ],
+  "should": [
+    "仪器仪表",
+    "低压电器核心技术",
+    "主控芯片",
+    "固件开发",
+    "机械制造",
+    "家电",
+    "消防",
+    "电力",
+    "开关"
+  ],
+  "not": [
+    "地产"
+  ],
+  "evidence_refs": [
+    {
+      "term": "低压电器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "继电器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "配电控制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电气传动与控制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "传感器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:04:38"
+}

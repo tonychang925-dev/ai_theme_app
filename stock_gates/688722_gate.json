@@ -1,0 +1,40 @@
+{
+  "stock_id": "688722",
+  "stock_name": "同益中",
+  "concept": "超高分子量聚乙烯",
+  "strategy_type": "industry_chain",
+  "must": [
+    "超高分子量聚乙烯纤维",
+    "复合材料",
+    "防弹制品"
+  ],
+  "should": [
+    "超高分子量聚乙烯",
+    "无纬布",
+    "超高强型超高分子量聚乙烯纤维",
+    "军事装备",
+    "海洋产业",
+    "安全防护",
+    "体育器械",
+    "国内第一梯队",
+    "产能利用率完全或接近完全释放"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "超高分子量聚乙烯纤维",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复合材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "防弹制品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:24:36"
+}

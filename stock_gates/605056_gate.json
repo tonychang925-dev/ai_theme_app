@@ -1,0 +1,41 @@
+{
+  "stock_id": "605056",
+  "stock_name": "咸亨国际",
+  "concept": "电网MRO集约化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电网MRO集约化",
+    "工器具",
+    "仪器仪表类产品的MRO"
+  ],
+  "should": [
+    "不停电作业整体解决方案",
+    "配网机械化",
+    "高端液压技术",
+    "应急破拆",
+    "电气检测",
+    "电缆故障检测",
+    "声音信号和声源定位技术",
+    "边缘计算物联应用",
+    "电缆故障定位与状态检测",
+    "架空线故障定位系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电网MRO集约化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工器具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "仪器仪表类产品的MRO",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:01:27"
+}

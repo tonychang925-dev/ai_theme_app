@@ -1,0 +1,41 @@
+{
+  "stock_id": "300670",
+  "stock_name": "大烨智能",
+  "concept": "智能配电网设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能配电网设备",
+    "配电自动化终端",
+    "智能中压开关设备",
+    "标准化馈线终端（FTU）"
+  ],
+  "should": [
+    "变电站自动化系统",
+    "低压电气成套设备",
+    "线缆保护管",
+    "智能配电网建设",
+    "分布式储能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能配电网设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "配电自动化终端",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能中压开关设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "标准化馈线终端（FTU）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:38:17"
+}

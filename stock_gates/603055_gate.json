@@ -1,0 +1,36 @@
+{
+  "stock_id": "603055",
+  "stock_name": "台华新材",
+  "concept": "锦纶一体化龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锦纶一体化龙头",
+    "一体化生产龙头"
+  ],
+  "should": [
+    "锦纶长丝",
+    "锦纶坯布",
+    "功能性成品面料",
+    "锦纶研发",
+    "纺丝",
+    "织造",
+    "染整",
+    "户外运动服饰",
+    "服装面料",
+    "全产业链布局"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锦纶一体化龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一体化生产龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:42:16"
+}

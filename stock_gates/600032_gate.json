@@ -1,0 +1,38 @@
+{
+  "stock_id": "600032",
+  "stock_name": "浙江新能",
+  "concept": "清洁能源发电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏发电",
+    "水力发电",
+    "风力发电"
+  ],
+  "should": [
+    "海上风电项目群",
+    "西北风光电项目群",
+    "清洁能源发电",
+    "风光水三大产业协同发展",
+    "水能风能季节互补",
+    "光能水能地域互补",
+    "省内省外并重"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水力发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风力发电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:07:34"
+}

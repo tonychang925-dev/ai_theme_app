@@ -1,0 +1,55 @@
+{
+  "stock_id": "000586",
+  "stock_name": "汇源通信",
+  "concept": "电力光缆",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力光缆",
+    "ADSS",
+    "OPGW",
+    "预制光缆",
+    "气吹微缆"
+  ],
+  "should": [
+    "中心管式异型铠装光缆专利",
+    "带状光缆专利",
+    "在线监测产品",
+    "塑料光纤",
+    "通信工程及系统集成",
+    "电缆光纤单元",
+    "国家电网",
+    "南方电网",
+    "气吹微缆技术",
+    "耐火光缆技术"
+  ],
+  "not": [
+    "智能电网",
+    "数字化电网",
+    "特高压工程"
+  ],
+  "evidence_refs": [
+    {
+      "term": "电力光缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ADSS",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "OPGW",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "预制光缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "气吹微缆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:57:28"
+}

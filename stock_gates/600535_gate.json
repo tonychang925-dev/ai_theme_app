@@ -1,0 +1,46 @@
+{
+  "stock_id": "600535",
+  "stock_name": "天士力",
+  "concept": "中药现代化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "现代中药",
+    "化药",
+    "生物药",
+    "复方丹参滴丸"
+  ],
+  "should": [
+    "养血清脑丸/颗粒",
+    "芪参益气滴丸",
+    "水飞蓟宾胶囊（水林佳）",
+    "他达拉非",
+    "与美国Arbor公司合作",
+    "中药现代化",
+    "自主研发",
+    "产品引进",
+    "合作研发",
+    "投资市场许可优先权"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "现代中药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复方丹参滴丸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:20:31"
+}

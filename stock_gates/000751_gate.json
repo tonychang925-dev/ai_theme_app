@@ -1,0 +1,46 @@
+{
+  "stock_id": "000751",
+  "stock_name": "锌业股份",
+  "concept": "有色金属冶炼",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锌",
+    "锌合金",
+    "铜",
+    "国内铅锌冶炼行业重要地位"
+  ],
+  "should": [
+    "铅",
+    "硫酸",
+    "铟",
+    "黄金",
+    "白银",
+    "镉",
+    "铋",
+    "硫酸锌",
+    "硫酸铜",
+    "有色金属冶炼"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锌合金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内铅锌冶炼行业重要地位",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:03:27"
+}

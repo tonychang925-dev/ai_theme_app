@@ -1,0 +1,36 @@
+{
+  "stock_id": "601229",
+  "stock_name": "上海银行",
+  "concept": "养老金融",
+  "strategy_type": "industry_chain",
+  "must": [
+    "养老金融",
+    "养老服务"
+  ],
+  "should": [
+    "普惠金融",
+    "绿色金融",
+    "科创金融",
+    "供应链金融",
+    "制造业贷款",
+    "公司金融",
+    "零售金融",
+    "公司贷款",
+    "个人贷款",
+    "存款"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "养老金融",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "养老服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:35:44"
+}

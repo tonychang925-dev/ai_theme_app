@@ -1,0 +1,41 @@
+{
+  "stock_id": "603275",
+  "stock_name": "众辰科技",
+  "concept": "工业自动化变频器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "变频器",
+    "伺服系统",
+    "工业自动化变频器"
+  ],
+  "should": [
+    "AWS系列风电变桨集成式控制器",
+    "US880系列高性能伺服系统",
+    "T200高性能变频器",
+    "高压变频器",
+    "立式注塑机控制系统",
+    "注塑机可编程显控一体控制器",
+    "可编辑组态人机界面（HMI）",
+    "PLC",
+    "总线技术",
+    "物联网功能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "变频器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "伺服系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业自动化变频器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:47:54"
+}

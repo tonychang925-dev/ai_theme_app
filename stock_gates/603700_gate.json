@@ -1,0 +1,40 @@
+{
+  "stock_id": "603700",
+  "stock_name": "宁水集团",
+  "concept": "智慧水务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能水表",
+    "国家级制造业单项冠军",
+    "NB-IoT智能水表"
+  ],
+  "should": [
+    "高精度多声道超声水表",
+    "水务终端数据监控仪",
+    "带压检测设备",
+    "探漏相关仪",
+    "多参数水表",
+    "智能2.0水表",
+    "智慧水务",
+    "NB-IoT技术",
+    "漏损控制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能水表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国家级制造业单项冠军",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "NB-IoT智能水表",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:55:13"
+}

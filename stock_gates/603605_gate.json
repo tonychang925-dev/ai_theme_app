@@ -1,0 +1,31 @@
+{
+  "stock_id": "603605",
+  "stock_name": "珀莱雅",
+  "concept": "国货美妆",
+  "strategy_type": "industry_chain",
+  "must": [
+    "珀莱雅"
+  ],
+  "should": [
+    "悦芙媞",
+    "CORRECTORS",
+    "彩棠",
+    "INSBAHA",
+    "双抗精华",
+    "红宝石精华",
+    "保龄球蓝瓶",
+    "源力精华",
+    "中科院微生物研究所",
+    "浙江工业大学"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "珀莱雅",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:53:09"
+}

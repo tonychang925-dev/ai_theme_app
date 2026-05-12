@@ -1,0 +1,43 @@
+{
+  "stock_id": "002556",
+  "stock_name": "辉隆股份",
+  "concept": "农资与精细化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农资流通",
+    "化肥",
+    "农药",
+    "种子"
+  ],
+  "should": [
+    "复合肥",
+    "磷酸一铵",
+    "农药制剂",
+    "精细化工",
+    "甲苯—氯化甲苯—间甲酚—L薄荷醇",
+    "配送中心+加盟店",
+    "农事服务中心"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农资流通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化肥",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "农药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "种子",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:47:12"
+}

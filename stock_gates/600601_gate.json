@@ -1,0 +1,30 @@
+{
+  "stock_id": "600601",
+  "stock_name": "方正科技",
+  "concept": "PCB制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PCB制造",
+    "PCB（印制电路板）"
+  ],
+  "should": [
+    "无线通信",
+    "服务器和数据存储",
+    "新能源和智能驾驶",
+    "消费电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PCB制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PCB（印制电路板）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:22:28"
+}

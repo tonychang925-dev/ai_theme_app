@@ -1,0 +1,51 @@
+{
+  "stock_id": "688475",
+  "stock_name": "萤石网络",
+  "concept": "智能家居服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能家居摄像机",
+    "智能门锁",
+    "智能猫眼",
+    "智能门铃",
+    "儿童陪护机器人"
+  ],
+  "should": [
+    "智能洗地机器人",
+    "儿童可视手表",
+    "智能宠物喂食器",
+    "智能手环",
+    "智能家居服务",
+    "视频技术",
+    "视觉技术",
+    "智能视觉算法",
+    "物联接入服务",
+    "多媒体服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能家居摄像机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能门锁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能猫眼",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能门铃",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "儿童陪护机器人",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:18:51"
+}

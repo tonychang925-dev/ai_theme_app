@@ -1,0 +1,36 @@
+{
+  "stock_id": "002034",
+  "stock_name": "旺能环境",
+  "concept": "固废资源化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "垃圾焚烧发电",
+    "动力电池回收"
+  ],
+  "should": [
+    "餐厨垃圾处置",
+    "市政污泥处置",
+    "报废汽车拆解",
+    "电子废弃物回收",
+    "废轮胎循环利用",
+    "固废资源化",
+    "再生资源利用",
+    "锂元素回收率85%",
+    "镍钴锰回收率98%",
+    "材料回收率90%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "垃圾焚烧发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动力电池回收",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:19:26"
+}

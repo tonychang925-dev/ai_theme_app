@@ -1,0 +1,46 @@
+{
+  "stock_id": "600688",
+  "stock_name": "上海石化",
+  "concept": "石油化工一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "石油化工一体化",
+    "原油加工",
+    "成品油",
+    "乙烯装置"
+  ],
+  "should": [
+    "合成纤维",
+    "树脂及塑料",
+    "主要中间石化产品",
+    "石油产品",
+    "碳纤维复合材料",
+    "氢燃料电池供氢",
+    "生物质耦合发电",
+    "光伏发电",
+    "轨道交通",
+    "建筑桥梁"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "石油化工一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原油加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "成品油",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乙烯装置",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:24:59"
+}

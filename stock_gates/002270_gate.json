@@ -1,0 +1,38 @@
+{
+  "stock_id": "002270",
+  "stock_name": "华明装备",
+  "concept": "分接开关龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "分接开关龙头",
+    "变压器有载分接开关",
+    "特高压分接开关核心技术"
+  ],
+  "should": [
+    "无励磁分接开关",
+    "成套数控设备",
+    "电力变压器",
+    "新能源电站",
+    "特高压输变电线路",
+    "国内第一、全球第二的细分市场地位",
+    "IEEE专项委员会正式委员"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "分接开关龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "变压器有载分接开关",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特高压分接开关核心技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:32:41"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "002074",
+  "stock_name": "国轩高科",
+  "concept": "铁锂电池先驱",
+  "strategy_type": "industry_chain",
+  "must": [
+    "磷酸铁锂电池",
+    "储能电池",
+    "大众标准电芯定点供应商"
+  ],
+  "should": [
+    "铁锂电池先驱",
+    "高镍三元电池302Wh/kg",
+    "纯电动公交",
+    "电动轿车",
+    "储能电站",
+    "通讯基站",
+    "船舶动力电池",
+    "风光互补",
+    "移动电源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "磷酸铁锂电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大众标准电芯定点供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:21:50"
+}

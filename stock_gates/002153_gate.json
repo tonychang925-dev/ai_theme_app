@@ -1,0 +1,40 @@
+{
+  "stock_id": "002153",
+  "stock_name": "石基信息",
+  "concept": "酒店信息系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "酒店信息管理系统",
+    "自主酒店软件",
+    "酒店信息系统"
+  ],
+  "should": [
+    "餐饮信息管理系统",
+    "零售信息系统",
+    "休闲娱乐信息系统",
+    "云架构酒店信息管理系统(SEP)",
+    "五星级酒店",
+    "高星级酒店",
+    "经济型连锁酒店",
+    "中高端及连锁餐饮",
+    "标准化餐饮"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "酒店信息管理系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自主酒店软件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "酒店信息系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:26:08"
+}

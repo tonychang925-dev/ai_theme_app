@@ -1,0 +1,46 @@
+{
+  "stock_id": "300525",
+  "stock_name": "博思软件",
+  "concept": "财政信息化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "政府智慧财政财务",
+    "公共采购",
+    "财政预算管理一体化系统",
+    "财政电子票据管理系统",
+    "非税收入收缴管理系统"
+  ],
+  "should": [
+    "智慧城市+数字乡村",
+    "公共服务电子缴费平台",
+    "电子会计档案平台",
+    "财政信息化",
+    "社区管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "政府智慧财政财务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公共采购",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "财政预算管理一体化系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "财政电子票据管理系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "非税收入收缴管理系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:31:13"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "000428",
+  "stock_name": "华天酒店",
+  "concept": "酒店生活服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "酒店服务业",
+    "自营+托管",
+    "生活服务业"
+  ],
+  "should": [
+    "华天大酒店",
+    "华天假日酒店",
+    "华天精选酒店",
+    "洗衣",
+    "家政",
+    "物业管理",
+    "安保服务",
+    "团餐业务",
+    "酒店生活服务",
+    "轻资产模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "酒店服务业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自营+托管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生活服务业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:52:52"
+}

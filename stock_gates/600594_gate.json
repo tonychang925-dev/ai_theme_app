@@ -1,0 +1,51 @@
+{
+  "stock_id": "600594",
+  "stock_name": "益佰制药",
+  "concept": "肿瘤心脑血管药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "注射用洛铂",
+    "艾迪注射液",
+    "康赛迪胶囊",
+    "艾愈胶囊",
+    "银杏达莫注射液"
+  ],
+  "should": [
+    "金骨莲胶囊",
+    "心胃止痛胶囊",
+    "妇炎消胶囊",
+    "葆宫止血颗粒",
+    "金莲清热泡腾片",
+    "泌淋胶囊（颗粒）",
+    "疏肝益阳胶囊",
+    "克咳家族系列",
+    "肿瘤心脑血管药",
+    "自主研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "注射用洛铂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "艾迪注射液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "康赛迪胶囊",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "艾愈胶囊",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "银杏达莫注射液",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:22:20"
+}

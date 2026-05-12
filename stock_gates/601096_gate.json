@@ -1,0 +1,35 @@
+{
+  "stock_id": "601096",
+  "stock_name": "宏盛华源",
+  "concept": "输电铁塔",
+  "strategy_type": "industry_chain",
+  "must": [
+    "输电线路铁塔",
+    "输电铁塔"
+  ],
+  "should": [
+    "智能制造",
+    "数字化和智能化加工技术",
+    "计算机辅助设计",
+    "计算机辅助制造",
+    "物联网技术",
+    "人工智能",
+    "电网建设",
+    "特高压线路",
+    "清洁能源基地输电通道"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "输电线路铁塔",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "输电铁塔",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:33:59"
+}

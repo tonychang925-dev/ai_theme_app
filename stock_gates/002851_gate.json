@@ -1,0 +1,36 @@
+{
+  "stock_id": "002851",
+  "stock_name": "麦格米特",
+  "concept": "AI电源供货商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "AI电源供货商",
+    "电源产品"
+  ],
+  "should": [
+    "工业自动化",
+    "新能源&轨道交通",
+    "智能装备",
+    "智能家电电控",
+    "精密连接",
+    "自动化控制技术平台",
+    "信息化技术平台",
+    "能源与环境技术平台",
+    "AI服务器",
+    "智能制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "AI电源供货商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电源产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:00:17"
+}

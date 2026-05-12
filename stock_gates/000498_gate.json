@@ -1,0 +1,28 @@
+{
+  "stock_id": "000498",
+  "stock_name": "山东路桥",
+  "concept": "路桥工程施工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "路桥工程施工"
+  ],
+  "should": [
+    "公路养护",
+    "科研",
+    "设计",
+    "施工",
+    "养护",
+    "投融资",
+    "全领域、全产业链的工程建设服务商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "路桥工程施工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T16:52:39"
+}

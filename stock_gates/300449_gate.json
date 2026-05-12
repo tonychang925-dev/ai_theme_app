@@ -1,0 +1,41 @@
+{
+  "stock_id": "300449",
+  "stock_name": "汉邦高科",
+  "concept": "智能安防",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能安防",
+    "音视频监测",
+    "数字水印技术"
+  ],
+  "should": [
+    "智慧金融",
+    "智慧公安",
+    "智慧社区",
+    "广电监测",
+    "数字水印算法",
+    "高清监控技术",
+    "智能分析技术",
+    "监测云系统平台",
+    "广电领域龙头企业",
+    "数字水印核心技术企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能安防",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "音视频监测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字水印技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:27:46"
+}

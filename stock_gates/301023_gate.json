@@ -1,0 +1,41 @@
+{
+  "stock_id": "301023",
+  "stock_name": "奕帆传动",
+  "concept": "微特减速电机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "微特减速电机",
+    "输配电行业储能减速电机"
+  ],
+  "should": [
+    "房车减速电机",
+    "太阳能回转驱动电机",
+    "永磁直流电动机",
+    "交直流两用电动机",
+    "三相异步电动机",
+    "单相电容电动机",
+    "输配电高压开关领域",
+    "房车配件领域",
+    "新能源光伏领域",
+    "思源电气"
+  ],
+  "not": [
+    "诺克工业",
+    "西门子",
+    "伊顿",
+    "施耐德电气"
+  ],
+  "evidence_refs": [
+    {
+      "term": "微特减速电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "输配电行业储能减速电机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:53:39"
+}

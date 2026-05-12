@@ -1,0 +1,36 @@
+{
+  "stock_id": "002393",
+  "stock_name": "力生制药",
+  "concept": "医药健康",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国家医保目录",
+    "国家基本药物目录"
+  ],
+  "should": [
+    "寿比山吲达帕胺片",
+    "三鱼正痛片",
+    "希福尼头孢地尼分散片",
+    "友好麻仁软胶囊",
+    "生化那屈肝素钙注射液",
+    "生化氢化可的松琥铂酸钠冻干粉针",
+    "碳酸氢钠片",
+    "盖胃平片",
+    "维生素片剂系列",
+    "口服固体制剂技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国家医保目录",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国家基本药物目录",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:39:29"
+}

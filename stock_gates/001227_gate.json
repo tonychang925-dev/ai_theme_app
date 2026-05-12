@@ -1,0 +1,33 @@
+{
+  "stock_id": "001227",
+  "stock_name": "兰州银行",
+  "concept": "城市商业银行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "存款业务",
+    "贷款业务"
+  ],
+  "should": [
+    "碳排放权配额质押贷款",
+    "零售化转型",
+    "轻型化发展",
+    "数字化转型",
+    "绿色信贷",
+    "普惠金融",
+    "中间业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "存款业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "贷款业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:14:10"
+}

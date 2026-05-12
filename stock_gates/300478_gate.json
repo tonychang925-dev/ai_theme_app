@@ -1,0 +1,30 @@
+{
+  "stock_id": "300478",
+  "stock_name": "杭州高新",
+  "concept": "线缆高分子材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "线缆用高分子材料"
+  ],
+  "should": [
+    "线缆高分子材料",
+    "石油化工衍生品",
+    "电线电缆",
+    "海上风电",
+    "新能源",
+    "智能电网",
+    "5G通讯",
+    "铁路",
+    "船舶"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "线缆用高分子材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:28:59"
+}

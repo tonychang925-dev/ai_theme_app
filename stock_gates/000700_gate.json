@@ -1,0 +1,46 @@
+{
+  "stock_id": "000700",
+  "stock_name": "模塑科技",
+  "concept": "汽车外饰件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车保险杠",
+    "防擦条",
+    "电镀饰条",
+    "汽车外饰件"
+  ],
+  "should": [
+    "宝马定点厂商",
+    "北京奔驰定点厂商",
+    "特斯拉定点厂商",
+    "上汽通用定点厂商",
+    "上汽大众定点厂商",
+    "奇瑞捷豹路虎定点厂商",
+    "沃尔沃定点厂商",
+    "北京现代定点厂商",
+    "神龙汽车定点厂商",
+    "蔚来定点厂商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车保险杠",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "防擦条",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电镀饰条",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车外饰件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:01:05"
+}

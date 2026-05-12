@@ -1,0 +1,40 @@
+{
+  "stock_id": "688582",
+  "stock_name": "芯动联科",
+  "concept": "MEMS惯性传感器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "MEMS惯性传感器",
+    "MEMS陀螺仪",
+    "MEMS加速度计"
+  ],
+  "should": [
+    "MEMS惯性传感器芯片设计",
+    "MEMS工艺方案开发",
+    "惯性系统",
+    "封装与测试",
+    "导航定位",
+    "姿态感知",
+    "状态监测",
+    "平台稳定",
+    "核心性能指标达到国际先进水平"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "MEMS惯性传感器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MEMS陀螺仪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MEMS加速度计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:21:14"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "605009",
+  "stock_name": "豪悦护理",
+  "concept": "个人卫生护理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "婴儿卫生用品",
+    "女性卫生用品",
+    "成人失禁用品"
+  ],
+  "should": [
+    "希望宝宝",
+    "天生明星",
+    "Mamamia",
+    "Sunny Girl",
+    "答菲",
+    "康福瑞",
+    "汇泉",
+    "好年",
+    "白+字",
+    "个人卫生护理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "婴儿卫生用品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "女性卫生用品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "成人失禁用品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:01:06"
+}

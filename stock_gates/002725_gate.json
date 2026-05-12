@@ -1,0 +1,29 @@
+{
+  "stock_id": "002725",
+  "stock_name": "跃岭股份",
+  "concept": "铝合金车轮",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铝合金车轮"
+  ],
+  "should": [
+    "铝合金车轮轻量化技术",
+    "铝车轮表面多色涂装技术",
+    "重力铸造双边浇技术",
+    "旋压制造技术",
+    "国际售后改装市场（AM市场）",
+    "国内外整车配套市场（OEM市场）",
+    "国内领先的铝合金车轮企业",
+    "国家汽车零部件出口基地企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铝合金车轮",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:54:51"
+}

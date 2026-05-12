@@ -1,0 +1,51 @@
+{
+  "stock_id": "300373",
+  "stock_name": "扬杰科技",
+  "concept": "功率半导体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "IGBT",
+    "MOSFET",
+    "碳化硅SBD",
+    "碳化硅JBS",
+    "功率二极管"
+  ],
+  "should": [
+    "电力电子器件芯片",
+    "大功率模块",
+    "小信号二三极管",
+    "整流桥",
+    "SGTNMOS",
+    "SGTPMOS",
+    "第三代半导体高温封装",
+    "SiC晶圆",
+    "GaN晶圆",
+    "功率半导体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "IGBT",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MOSFET",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳化硅SBD",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳化硅JBS",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功率二极管",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:24:34"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "603027",
+  "stock_name": "千禾味业",
+  "concept": "零添加调味品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "零添加酱油",
+    "头道原香系列",
+    "零添加品类开创者",
+    "中高端调味品头部品牌"
+  ],
+  "should": [
+    "零添加8克鲜减盐酱油",
+    "零添加有机酱油",
+    "窖醋",
+    "纯酿红烧酱油",
+    "功能料酒",
+    "年份料酒",
+    "零添加调味品",
+    "零添加酿造工艺",
+    "窖式工艺",
+    "自然发酵"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "零添加酱油",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "头道原香系列",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "零添加品类开创者",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中高端调味品头部品牌",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:41:25"
+}

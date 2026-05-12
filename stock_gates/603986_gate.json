@@ -1,0 +1,36 @@
+{
+  "stock_id": "603986",
+  "stock_name": "兆易创新",
+  "concept": "存储+MCU+传感器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "NOR Flash",
+    "32位通用MCU"
+  ],
+  "should": [
+    "利基型DRAM",
+    "传感器",
+    "SPI NOR Flash",
+    "RISC-V内核",
+    "M7内核",
+    "存储+MCU+传感器",
+    "3D堆叠技术",
+    "AI眼镜",
+    "新能源汽车",
+    "国内存储芯片领域龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "NOR Flash",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "32位通用MCU",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:00:23"
+}

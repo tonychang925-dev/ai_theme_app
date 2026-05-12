@@ -1,0 +1,39 @@
+{
+  "stock_id": "300591",
+  "stock_name": "万里马",
+  "concept": "皮具民族品牌",
+  "strategy_type": "industry_chain",
+  "must": [
+    "皮具民族品牌",
+    "皮具",
+    "民族品牌"
+  ],
+  "should": [
+    "箱包",
+    "皮鞋",
+    "研发设计",
+    "供应链管理",
+    "军队武警",
+    "国有企事业单位",
+    "中高端消费市场",
+    "中高端品牌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "皮具民族品牌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "皮具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "民族品牌",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:34:17"
+}

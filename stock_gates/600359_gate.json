@@ -1,0 +1,40 @@
+{
+  "stock_id": "600359",
+  "stock_name": "新农开发",
+  "concept": "农业产业化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "液态奶",
+    "种子",
+    "皮棉"
+  ],
+  "should": [
+    "甘草浸膏",
+    "甘草酸单铵盐",
+    "农业产业化",
+    "自有牧场原奶生产",
+    "种子繁育技术",
+    "甘草深加工技术",
+    "乳制品消费市场",
+    "自有扩繁基地",
+    "自有加工能力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "液态奶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "种子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "皮棉",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:16:00"
+}

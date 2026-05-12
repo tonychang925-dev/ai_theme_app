@@ -1,0 +1,40 @@
+{
+  "stock_id": "600543",
+  "stock_name": "莫高股份",
+  "concept": "葡萄酒生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "葡萄酒生产",
+    "葡萄酒",
+    "葡萄种植"
+  ],
+  "should": [
+    "自主研发",
+    "生产一代，研究一代，构思一代",
+    "葡萄酒消费",
+    "销售的一体化庄园式"
+  ],
+  "not": [
+    "药品",
+    "降解材料及制品",
+    "药品消费",
+    "降解材料终端需求"
+  ],
+  "evidence_refs": [
+    {
+      "term": "葡萄酒生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "葡萄酒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "葡萄种植",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:20:42"
+}

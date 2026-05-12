@@ -1,0 +1,35 @@
+{
+  "stock_id": "000822",
+  "stock_name": "山东海化",
+  "concept": "海洋化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "纯碱",
+    "海洋化工"
+  ],
+  "should": [
+    "烧碱",
+    "原盐",
+    "溴素",
+    "氯化钙",
+    "浮法玻璃",
+    "光伏玻璃",
+    "无机盐",
+    "日用玻璃",
+    "国内主要纯碱生产企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "纯碱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海洋化工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:06:06"
+}

@@ -1,0 +1,33 @@
+{
+  "stock_id": "601969",
+  "stock_name": "海南矿业",
+  "concept": "铁矿石+油气",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铁矿石采选",
+    "油气勘探开发"
+  ],
+  "should": [
+    "成品矿",
+    "电池级氢氧化锂",
+    "油气当量",
+    "悬浮磁化焙烧",
+    "脱烃增压",
+    "混配矿",
+    "砂石料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铁矿石采选",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "油气勘探开发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:40:18"
+}

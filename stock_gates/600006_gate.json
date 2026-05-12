@@ -1,0 +1,46 @@
+{
+  "stock_id": "600006",
+  "stock_name": "东风股份",
+  "concept": "轻型商用车",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轻型商用车",
+    "轻型卡车",
+    "轻型客车",
+    "新能源物流车"
+  ],
+  "should": [
+    "客车底盘",
+    "东风康明斯系列柴油发动机",
+    "日产轻型柴油发动机",
+    "整车调校技术",
+    "自动驾驶车辆",
+    "智能网联自主开发能力",
+    "智慧物流",
+    "智慧环卫",
+    "智能通勤",
+    "封闭园区点对点载运"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轻型商用车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轻型卡车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轻型客车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源物流车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:06:58"
+}

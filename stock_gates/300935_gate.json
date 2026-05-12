@@ -1,0 +1,30 @@
+{
+  "stock_id": "300935",
+  "stock_name": "盈建科",
+  "concept": "建筑设计软件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑设计软件"
+  ],
+  "should": [
+    "桥梁设计软件",
+    "自研2D、3D图形平台",
+    "有限元分析",
+    "高校实训系统",
+    "施工设计系统",
+    "高水平的迭代计算方法",
+    "全协调的网格划分技术",
+    "结构设计软件市占率逐步攀升",
+    "YJK与PKPM两强争霸"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑设计软件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:49:49"
+}

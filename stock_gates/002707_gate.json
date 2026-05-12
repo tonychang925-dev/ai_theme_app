@@ -1,0 +1,41 @@
+{
+  "stock_id": "002707",
+  "stock_name": "众信旅游",
+  "concept": "出境旅游运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "出境旅游运营",
+    "出境游批发",
+    "出境游零售"
+  ],
+  "should": [
+    "阿里巴巴",
+    "中国中免集团",
+    "旅游零售门店",
+    "旅游+购物",
+    "科技",
+    "互联网",
+    "大数据技术",
+    "品牌",
+    "系统管理",
+    "产品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "出境旅游运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "出境游批发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "出境游零售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:54:14"
+}

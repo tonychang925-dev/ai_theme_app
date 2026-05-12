@@ -1,0 +1,41 @@
+{
+  "stock_id": "688211",
+  "stock_name": "中科微至",
+  "concept": "智能物流系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能物流系统",
+    "交叉带分拣系统",
+    "总集成式分拣系统"
+  ],
+  "should": [
+    "大件分拣系统",
+    "智能仓储分拣系统",
+    "单件分离",
+    "动态称重设备",
+    "输送设备",
+    "分拣控制系统软件",
+    "8K线阵自适应调焦图像读码系统",
+    "图像识别技术",
+    "自动控制技术",
+    "仓储配送一体化技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能物流系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "交叉带分拣系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "总集成式分拣系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:11:59"
+}

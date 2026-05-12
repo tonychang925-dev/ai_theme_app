@@ -1,0 +1,36 @@
+{
+  "stock_id": "000860",
+  "stock_name": "顺鑫农业",
+  "concept": "白酒猪肉双主业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "白酒酿造与销售",
+    "牛栏山"
+  ],
+  "should": [
+    "种猪繁育",
+    "生猪养殖",
+    "屠宰及肉制品加工",
+    "宁诚",
+    "经典二锅头",
+    "传统二锅头",
+    "百年牛栏山",
+    "珍品牛栏山",
+    "陈酿牛栏山",
+    "魁盛号"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "白酒酿造与销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "牛栏山",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:07:13"
+}

@@ -1,0 +1,37 @@
+{
+  "stock_id": "002202",
+  "stock_name": "金风科技",
+  "concept": "风电整机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风电整机",
+    "直驱永磁机组",
+    "中速永磁机组"
+  ],
+  "should": [
+    "直驱永磁技术",
+    "中速永磁技术",
+    "国内第一",
+    "全球前二",
+    "陆上风电",
+    "海上风电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风电整机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "直驱永磁机组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中速永磁机组",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:28:55"
+}

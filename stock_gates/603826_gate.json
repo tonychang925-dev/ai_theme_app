@@ -1,0 +1,41 @@
+{
+  "stock_id": "603826",
+  "stock_name": "坤彩科技",
+  "concept": "珠光材料龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "珠光颜料",
+    "萃取法钛白粉工艺",
+    "合成云母"
+  ],
+  "should": [
+    "表面处理技术",
+    "钛白粉",
+    "合成云母技术",
+    "包覆技术",
+    "二氯氧钛制备技术",
+    "珠光材料龙头",
+    "汽车涂料",
+    "化妆品",
+    "塑料",
+    "涂料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "珠光颜料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "萃取法钛白粉工艺",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "合成云母",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:57:20"
+}

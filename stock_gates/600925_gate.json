@@ -1,0 +1,40 @@
+{
+  "stock_id": "600925",
+  "stock_name": "苏能股份",
+  "concept": "煤炭电力",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤炭电力",
+    "煤炭",
+    "电力"
+  ],
+  "should": [
+    "热力",
+    "发电厂",
+    "钢铁",
+    "水泥",
+    "国家电网",
+    "自产煤炭",
+    "贸易煤炭",
+    "煤矿托管",
+    "售电业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤炭电力",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:31:12"
+}

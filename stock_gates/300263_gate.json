@@ -1,0 +1,31 @@
+{
+  "stock_id": "300263",
+  "stock_name": "隆华科技",
+  "concept": "新材料与节能环保",
+  "strategy_type": "industry_chain",
+  "must": [
+    "溅射靶材"
+  ],
+  "should": [
+    "高纯钼及钼合金靶材",
+    "银合金靶材",
+    "ITO靶材",
+    "PVC硬质芯材",
+    "PMI硬质泡沫芯材",
+    "轨道交通用高性能减振系统",
+    "合成轨枕",
+    "溅射靶材研发",
+    "高分子复合材料技术",
+    "工业换热节能技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "溅射靶材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:20:11"
+}

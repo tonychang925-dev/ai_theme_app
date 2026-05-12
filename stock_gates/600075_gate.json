@@ -1,0 +1,46 @@
+{
+  "stock_id": "600075",
+  "stock_name": "新疆天业",
+  "concept": "氯碱化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PVC树脂",
+    "特种树脂",
+    "糊树脂",
+    "烧碱",
+    "电石"
+  ],
+  "should": [
+    "水泥",
+    "氯碱化工",
+    "自备电力",
+    "电石渣制水泥",
+    "农业节水"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PVC树脂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种树脂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "糊树脂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "烧碱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电石",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:08:32"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "688521",
+  "stock_name": "芯原股份",
+  "concept": "芯片设计IP授权",
+  "strategy_type": "industry_chain",
+  "must": [
+    "RISC-V",
+    "芯片设计IP授权"
+  ],
+  "should": [
+    "芯片量产业务",
+    "芯片设计业务",
+    "IP授权业务",
+    "Chiplet",
+    "一站式芯片定制",
+    "可穿戴智能设备",
+    "智能家居",
+    "自动驾驶",
+    "UCIe联盟",
+    "Fabless模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "RISC-V",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "芯片设计IP授权",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:19:48"
+}

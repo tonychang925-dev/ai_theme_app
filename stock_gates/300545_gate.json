@@ -1,0 +1,46 @@
+{
+  "stock_id": "300545",
+  "stock_name": "联得装备",
+  "concept": "平板显示模组设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "平板显示模组设备",
+    "全贴合技术",
+    "大尺寸TV模组智能装备",
+    "汽车电子显示智能装备"
+  ],
+  "should": [
+    "清洗机",
+    "偏光片贴附机",
+    "ACF粘贴机",
+    "FOG邦定机",
+    "COG邦定机",
+    "PCB组装机",
+    "背光叠片机",
+    "背光-模组组装机",
+    "3D曲面贴合设备",
+    "自动预压工艺"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "平板显示模组设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全贴合技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大尺寸TV模组智能装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车电子显示智能装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:32:10"
+}

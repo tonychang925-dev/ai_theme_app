@@ -1,0 +1,46 @@
+{
+  "stock_id": "603236",
+  "stock_name": "移远通信",
+  "concept": "物联网模组龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "无线通信模组",
+    "蜂窝模组",
+    "车载前装模组",
+    "物联网解决方案"
+  ],
+  "should": [
+    "天线",
+    "物联网软件平台服务",
+    "智能模组",
+    "5G模组",
+    "LTE模组",
+    "短距离模组",
+    "Wi-Fi7模组",
+    "边缘计算",
+    "卫星通信",
+    "GNSS模组"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "无线通信模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蜂窝模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载前装模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物联网解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:47:30"
+}

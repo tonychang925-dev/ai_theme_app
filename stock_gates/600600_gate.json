@@ -1,0 +1,41 @@
+{
+  "stock_id": "600600",
+  "stock_name": "青岛啤酒",
+  "concept": "啤酒制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "青岛啤酒",
+    "百年之旅",
+    "一世传奇"
+  ],
+  "should": [
+    "琥珀拉格",
+    "奥古特",
+    "鸿运当头",
+    "经典1903",
+    "原浆啤酒",
+    "皮尔森",
+    "青岛啤酒IPA",
+    "青岛啤酒冬奥冰雪罐",
+    "青岛啤酒1903炫彩加油罐",
+    "青岛纯生球迷狂欢罐"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "青岛啤酒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "百年之旅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一世传奇",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:22:37"
+}

@@ -1,0 +1,32 @@
+{
+  "stock_id": "603855",
+  "stock_name": "华荣股份",
+  "concept": "防爆电器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "防爆电器",
+    "专业照明设备"
+  ],
+  "should": [
+    "SCS安工智能管控系统",
+    "主控芯片",
+    "固件开发",
+    "智能照明系统",
+    "国内领先",
+    "全球前五"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "防爆电器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "专业照明设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:57:32"
+}

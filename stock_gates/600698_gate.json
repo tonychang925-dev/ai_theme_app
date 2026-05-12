@@ -1,0 +1,33 @@
+{
+  "stock_id": "600698",
+  "stock_name": "湖南天雁",
+  "concept": "发动机零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "废气涡轮增压器",
+    "发动机进排气门"
+  ],
+  "should": [
+    "冷却风扇",
+    "国六排放汽油机和柴油机涡轮增压器",
+    "发动机零部件",
+    "涡轮增压关键技术",
+    "国内最早生产车用涡轮增压器的企业",
+    "国家企业技术中心",
+    "涡轮增压器工作组组长单位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "废气涡轮增压器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发动机进排气门",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:25:12"
+}

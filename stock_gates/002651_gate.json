@@ -1,0 +1,41 @@
+{
+  "stock_id": "002651",
+  "stock_name": "利君股份",
+  "concept": "粉磨与航空制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "辊压机（高压辊磨机）",
+    "粉磨工艺系统装备研发",
+    "航空航天零部件"
+  ],
+  "should": [
+    "航空钣金零件开发制造",
+    "航空精密零件数控加工",
+    "工装/模具设计制造",
+    "航空部件装配",
+    "水泥建材",
+    "矿山",
+    "冶金",
+    "化工",
+    "军用飞机",
+    "大型运输机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "辊压机（高压辊磨机）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "粉磨工艺系统装备研发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航空航天零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:51:38"
+}

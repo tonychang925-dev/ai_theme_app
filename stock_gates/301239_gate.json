@@ -1,0 +1,35 @@
+{
+  "stock_id": "301239",
+  "stock_name": "普瑞眼科",
+  "concept": "眼科连锁医疗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "眼科连锁医疗",
+    "屈光手术"
+  ],
+  "should": [
+    "白内障",
+    "医学视光",
+    "综合眼病",
+    "全飞秒",
+    "ICL",
+    "直营连锁",
+    "19个直辖市及省会城市",
+    "23家专业眼科医院",
+    "3家眼科门诊部"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "眼科连锁医疗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "屈光手术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:00:36"
+}

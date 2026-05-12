@@ -1,0 +1,41 @@
+{
+  "stock_id": "605183",
+  "stock_name": "确成股份",
+  "concept": "二氧化硅龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "二氧化硅龙头",
+    "沉淀法二氧化硅",
+    "高分散二氧化硅"
+  ],
+  "should": [
+    "高分散产品",
+    "全球前列",
+    "亚洲最大",
+    "33万吨产能",
+    "绿色轮胎",
+    "动物饲料载体",
+    "硅橡胶",
+    "牙膏",
+    "国际轮胎巨头",
+    "维生素巨头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "二氧化硅龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "沉淀法二氧化硅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高分散二氧化硅",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:02:43"
+}

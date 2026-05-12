@@ -1,0 +1,46 @@
+{
+  "stock_id": "600487",
+  "stock_name": "亨通光电",
+  "concept": "海洋通信与智能电网",
+  "strategy_type": "industry_chain",
+  "must": [
+    "海洋能源与通信",
+    "海底电缆",
+    "光纤光缆",
+    "智能电网"
+  ],
+  "should": [
+    "光通信",
+    "海洋通信",
+    "超高压交流海缆",
+    "柔性直流海缆",
+    "海缆软接头技术",
+    "光模块",
+    "工业智能",
+    "铜导体",
+    "智慧城市",
+    "海上风电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "海洋能源与通信",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海底电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光纤光缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能电网",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:19:03"
+}

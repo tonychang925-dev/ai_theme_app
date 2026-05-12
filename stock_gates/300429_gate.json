@@ -1,0 +1,40 @@
+{
+  "stock_id": "300429",
+  "stock_name": "强力新材",
+  "concept": "光刻胶专用化学品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光刻胶专用化学品",
+    "光刻胶光引发剂"
+  ],
+  "should": [
+    "光刻胶树脂",
+    "单体（活性稀释剂）",
+    "OLED有机材料",
+    "绿色光固化材料",
+    "UV涂料",
+    "其他助剂",
+    "PCB制造",
+    "LCD制造",
+    "半导体制造",
+    "OLED制造"
+  ],
+  "not": [
+    "油墨",
+    "胶黏剂",
+    "3D打印"
+  ],
+  "evidence_refs": [
+    {
+      "term": "光刻胶专用化学品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光刻胶光引发剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:27:01"
+}

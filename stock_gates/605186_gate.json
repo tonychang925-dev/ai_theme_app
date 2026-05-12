@@ -1,0 +1,41 @@
+{
+  "stock_id": "605186",
+  "stock_name": "健麾信息",
+  "concept": "智慧药房自动化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧药房",
+    "智能化静配中心",
+    "智能化药品耗材管理项目"
+  ],
+  "should": [
+    "自动发药技术",
+    "自动补药技术",
+    "机器人应用技术",
+    "配液机器人技术",
+    "智慧药房自动化",
+    "物联网技术",
+    "门急诊药房",
+    "住院药房",
+    "药库",
+    "静配中心"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧药房",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能化静配中心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能化药品耗材管理项目",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:02:47"
+}

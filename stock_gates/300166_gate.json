@@ -1,0 +1,36 @@
+{
+  "stock_id": "300166",
+  "stock_name": "东方国信",
+  "concept": "企业商业智能",
+  "strategy_type": "industry_chain",
+  "must": [
+    "企业商业智能",
+    "企业商业智能系统解决方案"
+  ],
+  "should": [
+    "电信运营商",
+    "金融",
+    "工业",
+    "政府",
+    "大数据综合治理能力",
+    "海量数据处理能力",
+    "可靠处理效率",
+    "跨行业跨领域数据治理",
+    "PB级数据应对",
+    "打破数据孤岛"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "企业商业智能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "企业商业智能系统解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:15:50"
+}

@@ -1,0 +1,33 @@
+{
+  "stock_id": "603776",
+  "stock_name": "永安行",
+  "concept": "公共自行车运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "系统运营",
+    "共享出行"
+  ],
+  "should": [
+    "系统销售",
+    "智慧生活",
+    "公共自行车运营",
+    "有桩自行车",
+    "全国覆盖",
+    "政企合作",
+    "规模优势"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "系统运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "共享出行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:56:22"
+}

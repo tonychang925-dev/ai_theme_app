@@ -1,0 +1,41 @@
+{
+  "stock_id": "000768",
+  "stock_name": "中航西飞",
+  "concept": "航空装备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大中型运输机",
+    "轰炸机",
+    "特种飞机"
+  ],
+  "should": [
+    "飞机零部件",
+    "航空装备制造",
+    "飞机数字化设计",
+    "数字化制造",
+    "数字化总装集成",
+    "大型机翼制造",
+    "零件精密制造",
+    "数控喷丸成形及强化",
+    "大尺寸复合材料构件制造",
+    "我国最大的运输机研制生产基地"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大中型运输机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轰炸机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种飞机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:04:11"
+}

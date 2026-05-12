@@ -1,0 +1,38 @@
+{
+  "stock_id": "605168",
+  "stock_name": "三人行",
+  "concept": "数字营销",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字营销",
+    "数字营销服务",
+    "数字藏品",
+    "虚拟人"
+  ],
+  "should": [
+    "场景活动服务",
+    "校园媒体营销服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字营销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字营销服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字藏品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "虚拟人",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:02:28"
+}

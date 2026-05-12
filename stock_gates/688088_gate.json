@@ -1,0 +1,46 @@
+{
+  "stock_id": "688088",
+  "stock_name": "虹软科技",
+  "concept": "视觉人工智能",
+  "strategy_type": "industry_chain",
+  "must": [
+    "视觉人工智能",
+    "计算机视觉",
+    "移动智能终端视觉解决方案",
+    "智能驾驶视觉解决方案"
+  ],
+  "should": [
+    "人脸识别",
+    "SLAM",
+    "视频透视",
+    "渲染插帧",
+    "虚拟数字人",
+    "Tahoe舱内视觉解决方案",
+    "Westake舱外视觉解决方案",
+    "智能手机",
+    "平板电脑",
+    "笔记本电脑"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "视觉人工智能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "计算机视觉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动智能终端视觉解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能驾驶视觉解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:07:56"
+}

@@ -1,0 +1,39 @@
+{
+  "stock_id": "001205",
+  "stock_name": "盛航股份",
+  "concept": "内贸化学品航运",
+  "strategy_type": "industry_chain",
+  "must": [
+    "内贸化学品航运",
+    "化学品运输"
+  ],
+  "should": [
+    "油品运输",
+    "危化品运输安全管理",
+    "液氨物流供应链",
+    "销售商品",
+    "石化产业",
+    "清洁能源液氨",
+    "内贸化学品航运龙头",
+    "市占率9.5%",
+    "中石化供应体系",
+    "布局液氨市场"
+  ],
+  "not": [
+    "并购船舶",
+    "获批新增运力指标"
+  ],
+  "evidence_refs": [
+    {
+      "term": "内贸化学品航运",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化学品运输",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:13:29"
+}

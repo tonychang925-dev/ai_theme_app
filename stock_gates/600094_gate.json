@@ -1,0 +1,38 @@
+{
+  "stock_id": "600094",
+  "stock_name": "大名城",
+  "concept": "区域地产开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "区域地产开发",
+    "地产开发商",
+    "上海"
+  ],
+  "should": [
+    "福州",
+    "厦门",
+    "紫金系",
+    "映系",
+    "安全稳健",
+    "精细化运营",
+    "品质交付"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "区域地产开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "地产开发商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "上海",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:08:49"
+}

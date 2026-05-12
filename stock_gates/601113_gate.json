@@ -1,0 +1,34 @@
+{
+  "stock_id": "601113",
+  "stock_name": "华鼎股份",
+  "concept": "差别化锦纶与跨境电商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "差别化锦纶6长丝",
+    "跨境电商"
+  ],
+  "should": [
+    "差别化锦纶与跨境电商",
+    "多孔细旦产品",
+    "环吹技术",
+    "废丝造粒",
+    "纺织服装",
+    "婴幼儿产品",
+    "己内酰胺原材料",
+    "石油价格影响"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "差别化锦纶6长丝",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "跨境电商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:34:21"
+}

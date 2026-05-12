@@ -1,0 +1,41 @@
+{
+  "stock_id": "002462",
+  "stock_name": "嘉事堂",
+  "concept": "医药流通",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药销售",
+    "医疗器械",
+    "药械物流"
+  ],
+  "should": [
+    "连锁零售",
+    "康复医院",
+    "电商业务",
+    "O2O业务",
+    "医药流通",
+    "药品配送",
+    "高值耗材配送",
+    "新冠疫苗储运",
+    "抗疫物资保障",
+    "三方物流"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医药销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗器械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "药械物流",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:42:58"
+}

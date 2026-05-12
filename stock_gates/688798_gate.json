@@ -1,0 +1,51 @@
+{
+  "stock_id": "688798",
+  "stock_name": "艾为电子",
+  "concept": "模拟芯片设计",
+  "strategy_type": "industry_chain",
+  "must": [
+    "模拟芯片设计",
+    "电源管理芯片",
+    "音频功放芯片",
+    "射频前端芯片",
+    "马达驱动芯片"
+  ],
+  "should": [
+    "LED驱动芯片",
+    "过压保护OVP",
+    "背光灯驱动",
+    "闪光灯驱动",
+    "线性充电",
+    "LCD Bias",
+    "OLED Power",
+    "TOF LDD Driver",
+    "Switch",
+    "Tuner"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "模拟芯片设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电源管理芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "音频功放芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "射频前端芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "马达驱动芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:25:19"
+}

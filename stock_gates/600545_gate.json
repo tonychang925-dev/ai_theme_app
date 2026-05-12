@@ -1,0 +1,36 @@
+{
+  "stock_id": "600545",
+  "stock_name": "卓郎智能",
+  "concept": "智能纺纱设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能纺纱设备",
+    "整体解决方案"
+  ],
+  "should": [
+    "梳棉机",
+    "粗纱机",
+    "细纱机",
+    "加捻机",
+    "倍捻机",
+    "转杯纺纱机",
+    "开清棉组",
+    "技术沉淀",
+    "全球领先",
+    "整体解决方案提供商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能纺纱设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "整体解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:20:42"
+}

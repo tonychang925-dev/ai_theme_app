@@ -1,0 +1,46 @@
+{
+  "stock_id": "002344",
+  "stock_name": "海宁皮城",
+  "concept": "皮革专业市场",
+  "strategy_type": "industry_chain",
+  "must": [
+    "皮革专业市场",
+    "电子商务",
+    "设计研发",
+    "时装批发"
+  ],
+  "should": [
+    "面辅料供应",
+    "时尚发布",
+    "会展外贸",
+    "皮城云批",
+    "皮城严选",
+    "皮城物流",
+    "潮来平台",
+    "时尚创业园",
+    "总部商务",
+    "融资担保"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "皮革专业市场",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子商务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "设计研发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "时装批发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:36:42"
+}

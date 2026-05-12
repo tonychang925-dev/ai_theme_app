@@ -1,0 +1,37 @@
+{
+  "stock_id": "300111",
+  "stock_name": "向日葵",
+  "concept": "医药制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "克拉霉素原料药",
+    "克拉霉素片",
+    "拉西地平分散片"
+  ],
+  "should": [
+    "医药中间体",
+    "原料药",
+    "制剂",
+    "抗感染药物",
+    "心血管药物",
+    "消化系统药物"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "克拉霉素原料药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "克拉霉素片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "拉西地平分散片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:13:35"
+}

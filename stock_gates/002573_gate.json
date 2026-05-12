@@ -1,0 +1,40 @@
+{
+  "stock_id": "002573",
+  "stock_name": "清新环境",
+  "concept": "综合环境服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "烟气治理龙头",
+    "综合环境服务",
+    "工业烟气治理"
+  ],
+  "should": [
+    "水务",
+    "资源化",
+    "火电烟气治理",
+    "非电烟气治理",
+    "低碳节能服务",
+    "城市环境服务",
+    "土壤生态修复",
+    "资源再生利用",
+    "节能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "烟气治理龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合环境服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业烟气治理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:48:08"
+}

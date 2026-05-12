@@ -1,0 +1,27 @@
+{
+  "stock_id": "600382",
+  "stock_name": "广东明珠",
+  "concept": "铁矿采选",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铁矿采选",
+    "铁精粉生产销售"
+  ],
+  "should": [
+    "钢铁冶炼"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铁矿采选",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铁精粉生产销售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:16:36"
+}

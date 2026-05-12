@@ -1,0 +1,46 @@
+{
+  "stock_id": "000568",
+  "stock_name": "泸州老窖",
+  "concept": "浓香白酒泰斗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国窖1573",
+    "泸州老窖特曲",
+    "1573国宝窖池群",
+    "泸州老窖酒传统酿制技艺"
+  ],
+  "should": [
+    "1619口明清老窖池",
+    "头曲",
+    "二曲",
+    "甘醇曲",
+    "浓香白酒泰斗",
+    "泥窖生香",
+    "续糟配料",
+    "窖藏酿制",
+    "连续使用超400年窖池",
+    "蝉联五届中国名酒"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国窖1573",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "泸州老窖特曲",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "1573国宝窖池群",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "泸州老窖酒传统酿制技艺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:57:03"
+}

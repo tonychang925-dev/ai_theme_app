@@ -1,0 +1,36 @@
+{
+  "stock_id": "603167",
+  "stock_name": "渤海轮渡",
+  "concept": "客滚运输服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "客滚运输服务",
+    "客滚运输"
+  ],
+  "should": [
+    "融资租赁",
+    "自营售票处",
+    "大件车",
+    "甩挂车",
+    "轿车",
+    "季节性车辆",
+    "快递车",
+    "商会旅客",
+    "直通车团体",
+    "运力布局丰富"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "客滚运输服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "客滚运输",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:45:15"
+}

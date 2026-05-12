@@ -1,0 +1,46 @@
+{
+  "stock_id": "000056",
+  "stock_name": "皇庭国际",
+  "concept": "功率半导体+商业管理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商业不动产运营管理",
+    "商业不动产资产管理",
+    "商业不动产配套服务",
+    "物业管理"
+  ],
+  "should": [
+    "功率半导体芯片的设计、制造及销售",
+    "功率半导体+商业管理",
+    "工控",
+    "通信",
+    "变频家电",
+    "光伏/风力发电",
+    "充电桩",
+    "电动汽车",
+    "产品设计",
+    "工艺开发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商业不动产运营管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商业不动产资产管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商业不动产配套服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物业管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:49:02"
+}

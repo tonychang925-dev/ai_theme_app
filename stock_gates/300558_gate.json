@@ -1,0 +1,44 @@
+{
+  "stock_id": "300558",
+  "stock_name": "贝达药业",
+  "concept": "肺癌创新药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "凯美纳",
+    "恩沙替尼",
+    "EGFR-TKI",
+    "ALK-TKI"
+  ],
+  "should": [
+    "贝安汀",
+    "伏罗尼布",
+    "第四代EGFR-TKI",
+    "肺癌创新药",
+    "多靶点酪氨酸激酶抑制剂",
+    "国内领先的新药研发体系",
+    "战略合作",
+    "自主研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "凯美纳",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "恩沙替尼",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "EGFR-TKI",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ALK-TKI",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:32:39"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300873",
+  "stock_name": "海晨股份",
+  "concept": "供应链解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "供应链解决方案",
+    "一体化技术服务",
+    "生产性物流服务"
+  ],
+  "should": [
+    "可信数据平台",
+    "数字孪生系统",
+    "精准",
+    "柔性",
+    "集约",
+    "数字化",
+    "物联网",
+    "人工智能",
+    "区块链",
+    "云计算"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "供应链解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一体化技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生产性物流服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:47:08"
+}

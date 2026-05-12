@@ -1,0 +1,36 @@
+{
+  "stock_id": "002564",
+  "stock_name": "天沃科技",
+  "concept": "能源装备EPC",
+  "strategy_type": "industry_chain",
+  "must": [
+    "压力容器设备制造",
+    "电力工程EPC业务"
+  ],
+  "should": [
+    "冷氢化反应器",
+    "还原炉",
+    "换热器",
+    "塔器",
+    "多晶硅核心设备",
+    "能源装备EPC",
+    "新能源工程",
+    "传统火电工程",
+    "煤化工",
+    "石油炼化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "压力容器设备制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力工程EPC业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:47:39"
+}

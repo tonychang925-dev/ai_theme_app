@@ -1,0 +1,33 @@
+{
+  "stock_id": "002101",
+  "stock_name": "广东鸿图",
+  "concept": "汽车轻量化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "一体化压铸成型",
+    "精密铝合金压铸件"
+  ],
+  "should": [
+    "汽车内外饰件",
+    "高真空压铸",
+    "免热处理材料",
+    "高强高韧铝合金材料",
+    "可透光透波新型高分子材料",
+    "汽车轻量化",
+    "模具仿真模拟分析"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "一体化压铸成型",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密铝合金压铸件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:23:10"
+}

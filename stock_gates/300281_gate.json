@@ -1,0 +1,36 @@
+{
+  "stock_id": "300281",
+  "stock_name": "金明精机",
+  "concept": "塑料机械装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "塑料机械装备",
+    "薄膜装备"
+  ],
+  "should": [
+    "双向拉伸薄膜设备",
+    "特种多功能膜",
+    "智能制造",
+    "绿色制造",
+    "单材化包装解决方案",
+    "食品包装",
+    "消费品包装",
+    "光学电子",
+    "新能源",
+    "面板显示"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "塑料机械装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "薄膜装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:20:53"
+}

@@ -1,0 +1,32 @@
+{
+  "stock_id": "300977",
+  "stock_name": "深圳瑞捷",
+  "concept": "工程评估咨询",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程评估咨询",
+    "建设工程第三方评估"
+  ],
+  "should": [
+    "TIS",
+    "驻场管理",
+    "咨询服务",
+    "基建",
+    "存量房",
+    "绿色建筑"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程评估咨询",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建设工程第三方评估",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:51:31"
+}

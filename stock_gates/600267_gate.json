@@ -1,0 +1,46 @@
+{
+  "stock_id": "600267",
+  "stock_name": "海正药业",
+  "concept": "原料药制剂一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "原料药",
+    "抗生素",
+    "抗肿瘤药物",
+    "原料药生产商"
+  ],
+  "should": [
+    "制剂",
+    "兽药",
+    "制剂生产商",
+    "原料药制剂一体化",
+    "仿制药一致性评价",
+    "创新药研发",
+    "生物药研发",
+    "专利技术",
+    "医药制造",
+    "动物保健"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "原料药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "抗生素",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "抗肿瘤药物",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原料药生产商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:13:29"
+}

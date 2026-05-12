@@ -1,0 +1,36 @@
+{
+  "stock_id": "688416",
+  "stock_name": "恒烁股份",
+  "concept": "存储芯片设计",
+  "strategy_type": "industry_chain",
+  "must": [
+    "NOR Flash",
+    "MCU芯片"
+  ],
+  "should": [
+    "AI SoC芯片",
+    "高速串行外设接口(SPI)技术",
+    "55nm超低功耗嵌入式闪存技术",
+    "RISC内核",
+    "存储芯片设计",
+    "物联网",
+    "消费电子",
+    "智能家居",
+    "AI",
+    "数据中心"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "NOR Flash",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MCU芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:18:01"
+}

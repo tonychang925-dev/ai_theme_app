@@ -1,0 +1,37 @@
+{
+  "stock_id": "002275",
+  "stock_name": "桂林三金",
+  "concept": "中成药制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "西瓜霜",
+    "西瓜霜润喉片",
+    "三金片"
+  ],
+  "should": [
+    "中成药制造",
+    "中成药研发",
+    "口腔咽喉用药",
+    "泌尿系统用药",
+    "中国中药50强",
+    "中国医药制造业百强"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "西瓜霜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "西瓜霜润喉片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三金片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:32:52"
+}

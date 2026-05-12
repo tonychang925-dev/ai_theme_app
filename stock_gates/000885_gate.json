@@ -1,0 +1,41 @@
+{
+  "stock_id": "000885",
+  "stock_name": "城发环境",
+  "concept": "环保科技服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高速公路",
+    "垃圾发电",
+    "固体废弃物处理及环卫"
+  ],
+  "should": [
+    "环保方案集成服务",
+    "水务",
+    "市政供水",
+    "污水综合处理",
+    "热力生产和供应",
+    "资源综合利用",
+    "生态工程",
+    "生态修复",
+    "吨垃圾上网电量",
+    "上网电量"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高速公路",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "垃圾发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "固体废弃物处理及环卫",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:08:07"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "688300",
+  "stock_name": "联瑞新材",
+  "concept": "硅微粉龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "硅微粉龙头",
+    "国内硅微粉龙头",
+    "球形硅微粉"
+  ],
+  "should": [
+    "结晶硅微粉",
+    "熔融硅微粉",
+    "球形氧化铝粉",
+    "火焰法制备电子级球形硅微粉",
+    "物理法制备球形硅微粉",
+    "球形生产工艺",
+    "电子电路用覆铜板",
+    "芯片封装用环氧塑封料",
+    "电工绝缘材料",
+    "胶粘剂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "硅微粉龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内硅微粉龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "球形硅微粉",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:14:41"
+}

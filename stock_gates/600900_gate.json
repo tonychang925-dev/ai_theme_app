@@ -1,0 +1,51 @@
+{
+  "stock_id": "600900",
+  "stock_name": "长江电力",
+  "concept": "全球水电领导者",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球水电领导者",
+    "大型水电运营",
+    "水风光一体化",
+    "乌东德",
+    "白鹤滩"
+  ],
+  "should": [
+    "配售电",
+    "新能源开发",
+    "三峡",
+    "葛洲坝",
+    "溪洛渡",
+    "向家坝",
+    "金沙江水风光一体化基地",
+    "发-配-售",
+    "增量配网",
+    "国际业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球水电领导者",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大型水电运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水风光一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乌东德",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "白鹤滩",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:30:48"
+}

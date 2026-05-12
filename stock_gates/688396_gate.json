@@ -1,0 +1,46 @@
+{
+  "stock_id": "688396",
+  "stock_name": "华润微",
+  "concept": "功率半导体IDM",
+  "strategy_type": "industry_chain",
+  "must": [
+    "功率半导体IDM",
+    "功率半导体",
+    "智能传感器",
+    "智能控制"
+  ],
+  "should": [
+    "IGBT",
+    "第三代宽禁带半导体",
+    "芯片设计",
+    "晶圆制造",
+    "封装测试",
+    "主控芯片",
+    "特色工艺",
+    "汽车电子",
+    "通信设备",
+    "工业设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "功率半导体IDM",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功率半导体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能传感器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能控制",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:17:40"
+}

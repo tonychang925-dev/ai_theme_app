@@ -1,0 +1,36 @@
+{
+  "stock_id": "300939",
+  "stock_name": "秋田微",
+  "concept": "液晶显示与触控",
+  "strategy_type": "industry_chain",
+  "must": [
+    "彩色液晶显示模组",
+    "电容式触摸屏"
+  ],
+  "should": [
+    "单色液晶显示器",
+    "单色液晶显示模组",
+    "电子纸模组",
+    "液晶光阀",
+    "主控芯片",
+    "快速响应液晶光阀",
+    "车载防眩光液晶光阀",
+    "汽车自动调光遮阳板液晶光阀",
+    "激光雷达液晶光阀",
+    "液晶显示与触控"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "彩色液晶显示模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电容式触摸屏",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:50:06"
+}

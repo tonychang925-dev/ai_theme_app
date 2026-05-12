@@ -1,0 +1,40 @@
+{
+  "stock_id": "688031",
+  "stock_name": "星环科技",
+  "concept": "大数据基础软件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大数据基础软件",
+    "大数据与云基础平台TDH",
+    "数据云平台TDC"
+  ],
+  "should": [
+    "分布式分析型数据库ArgoDB",
+    "分布式交易型数据库KunDB",
+    "大数据开发工具TDS",
+    "智能分析工具Sophon",
+    "自研大数据存储与分析",
+    "分布式闪存数据库",
+    "分布式交易型数据库",
+    "数据集成与治理",
+    "机器学习建模"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大数据基础软件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大数据与云基础平台TDH",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据云平台TDC",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:06:05"
+}

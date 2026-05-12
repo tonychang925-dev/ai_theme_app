@@ -1,0 +1,31 @@
+{
+  "stock_id": "600826",
+  "stock_name": "兰生股份",
+  "concept": "会展全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "会展全产业链"
+  ],
+  "should": [
+    "展览组织",
+    "展馆运营",
+    "会议活动赛事",
+    "会展服务",
+    "展",
+    "馆",
+    "赛",
+    "会",
+    "广告",
+    "搭建"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "会展全产业链",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:28:49"
+}

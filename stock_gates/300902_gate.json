@@ -1,0 +1,46 @@
+{
+  "stock_id": "300902",
+  "stock_name": "国安达",
+  "concept": "特种消防",
+  "strategy_type": "industry_chain",
+  "must": [
+    "超细干粉自动灭火装置",
+    "电池箱专用自动灭火装置",
+    "变压器固定自动灭火系统",
+    "锂电池火灾防控技术"
+  ],
+  "should": [
+    "乘客舱固定灭火系统",
+    "超细干粉灭火技术",
+    "混合气体水基介质灭火技术",
+    "压缩空气泡沫灭火技术",
+    "惰化抑爆技术",
+    "特种消防",
+    "新能源汽车",
+    "电力电网",
+    "储能电站",
+    "风力发电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "超细干粉自动灭火装置",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电池箱专用自动灭火装置",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "变压器固定自动灭火系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂电池火灾防控技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:48:31"
+}

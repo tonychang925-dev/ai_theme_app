@@ -1,0 +1,51 @@
+{
+  "stock_id": "603716",
+  "stock_name": "塞力医疗",
+  "concept": "医疗集约化运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医疗集约化运营",
+    "SPD智慧精益管理",
+    "IVD集约化运营服务",
+    "区域医学检验中心共建",
+    "智慧医院建设"
+  ],
+  "should": [
+    "医疗智慧供应链服务",
+    "独立医学检验中心",
+    "医疗器械及耗材全生命周期管理",
+    "互联网",
+    "大数据",
+    "人工智能",
+    "区块链",
+    "5G",
+    "智能物联网",
+    "县域医疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医疗集约化运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SPD智慧精益管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IVD集约化运营服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "区域医学检验中心共建",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧医院建设",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:55:32"
+}

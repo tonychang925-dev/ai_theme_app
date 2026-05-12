@@ -1,0 +1,36 @@
+{
+  "stock_id": "301024",
+  "stock_name": "霍普股份",
+  "concept": "建筑设计服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑设计服务",
+    "建筑设计"
+  ],
+  "should": [
+    "建筑设计事务所甲级资质",
+    "建筑行业（建筑工程）甲级资质",
+    "居住社区",
+    "商业办公",
+    "产城规划",
+    "城市更新",
+    "医疗康养",
+    "教育文化",
+    "绿色建筑",
+    "建筑节能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑设计服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:53:36"
+}

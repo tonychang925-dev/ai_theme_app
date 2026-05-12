@@ -1,0 +1,51 @@
+{
+  "stock_id": "601100",
+  "stock_name": "恒立液压",
+  "concept": "液压件龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国内综合性液压件龙头",
+    "高压油缸",
+    "高压柱塞泵",
+    "液压多路阀",
+    "液压系统"
+  ],
+  "should": [
+    "工业阀",
+    "液压测试台",
+    "高精密液压铸件",
+    "马达",
+    "线性驱动器",
+    "电动缸",
+    "滚珠丝杠",
+    "液压件龙头",
+    "挖机油缸市占率行业第一",
+    "配套三一、卡特、徐工、柳工等"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国内综合性液压件龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高压油缸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高压柱塞泵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液压多路阀",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液压系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:34:13"
+}

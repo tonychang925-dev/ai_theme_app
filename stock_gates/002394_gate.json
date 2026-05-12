@@ -1,0 +1,46 @@
+{
+  "stock_id": "002394",
+  "stock_name": "联发股份",
+  "concept": "棉纺织全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "色织布",
+    "家纺面料",
+    "服装面料印染",
+    "制衣"
+  ],
+  "should": [
+    "色织布整理",
+    "轧花",
+    "纺纱",
+    "纱线染色",
+    "织造",
+    "针织染色",
+    "家纺布",
+    "印染布",
+    "服装",
+    "针织纱"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "色织布",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "家纺面料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "服装面料印染",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "制衣",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:39:34"
+}

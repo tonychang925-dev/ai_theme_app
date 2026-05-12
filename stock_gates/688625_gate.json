@@ -1,0 +1,35 @@
+{
+  "stock_id": "688625",
+  "stock_name": "呈和科技",
+  "concept": "高分子材料助剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "合成水滑石",
+    "复合助剂"
+  ],
+  "should": [
+    "成核剂",
+    "高分子材料助剂",
+    "食品包装接触材料",
+    "医疗器械",
+    "医药包装",
+    "婴幼儿用品",
+    "汽车部件",
+    "家电家居用品",
+    "建筑材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "合成水滑石",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复合助剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:22:32"
+}

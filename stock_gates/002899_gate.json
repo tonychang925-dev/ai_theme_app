@@ -1,0 +1,51 @@
+{
+  "stock_id": "002899",
+  "stock_name": "英派斯",
+  "concept": "健身器材制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "健身器材制造",
+    "自主品牌",
+    "商用产品",
+    "家用产品",
+    "户外产品"
+  ],
+  "should": [
+    "OEM/ODM",
+    "健身俱乐部",
+    "学校",
+    "社区",
+    "酒店",
+    "公安消防",
+    "武警军队",
+    "科研院所",
+    "企业",
+    "数字化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "健身器材制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自主品牌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商用产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "家用产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "户外产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:02:20"
+}

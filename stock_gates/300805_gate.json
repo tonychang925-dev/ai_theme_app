@@ -1,0 +1,38 @@
+{
+  "stock_id": "300805",
+  "stock_name": "电声股份",
+  "concept": "体验营销服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "体验营销服务",
+    "新场景体验营销综合服务",
+    "体验营销"
+  ],
+  "should": [
+    "多渠道整合营销",
+    "线下数智零售",
+    "元宇宙营销",
+    "数字化系统",
+    "虚拟现实",
+    "AR技术",
+    "数字人技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "体验营销服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新场景体验营销综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "体验营销",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:43:47"
+}

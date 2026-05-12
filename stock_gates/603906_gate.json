@@ -1,0 +1,46 @@
+{
+  "stock_id": "603906",
+  "stock_name": "龙蟠科技",
+  "concept": "新能源锂电材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "车用环保精细化学品",
+    "磷酸铁锂正极材料",
+    "车用环保精细化学品制造商",
+    "磷酸铁锂正极材料制造商"
+  ],
+  "should": [
+    "柴油发动机尾气处理液",
+    "发动机冷却液",
+    "车用养护品",
+    "润滑油",
+    "能量球技术",
+    "新型球状磷酸铁锂",
+    "新能源锂电材料",
+    "新能源汽车动力电池",
+    "储能电池",
+    "汽车发动机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "车用环保精细化学品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磷酸铁锂正极材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车用环保精细化学品制造商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磷酸铁锂正极材料制造商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:58:43"
+}

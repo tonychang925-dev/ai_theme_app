@@ -1,0 +1,40 @@
+{
+  "stock_id": "002787",
+  "stock_name": "华源控股",
+  "concept": "包装技术服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "包装技术服务",
+    "包装产品研发、生产及销售",
+    "化工罐"
+  ],
+  "should": [
+    "金属盖",
+    "食品罐",
+    "食品包装印涂铁",
+    "全产业链生产、技术与服务能力",
+    "注塑和吹塑量化生产能力",
+    "自主创新",
+    "技术开发",
+    "国内较具规模和盈利能力的企业之一",
+    "完整业务链的技术服务型企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "包装技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "包装产品研发、生产及销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化工罐",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:57:27"
+}

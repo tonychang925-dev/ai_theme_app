@@ -1,0 +1,41 @@
+{
+  "stock_id": "688597",
+  "stock_name": "煜邦电力",
+  "concept": "电能计量与智能巡检",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能电力产品",
+    "智能巡检产品",
+    "电能计量与智能巡检"
+  ],
+  "should": [
+    "智能电能表",
+    "空天智能感知",
+    "终端设备",
+    "人工智能",
+    "图像识别",
+    "空天数据融合",
+    "空天大数据挖掘",
+    "电网输电线路巡检",
+    "电力设备运维",
+    "数字化班组建设"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能电力产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能巡检产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电能计量与智能巡检",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:21:44"
+}

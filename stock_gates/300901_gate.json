@@ -1,0 +1,36 @@
+{
+  "stock_id": "300901",
+  "stock_name": "中胤时尚",
+  "concept": "量贩式时尚设计",
+  "strategy_type": "industry_chain",
+  "must": [
+    "量贩式独立设计市场",
+    "量贩式时尚设计"
+  ],
+  "should": [
+    "鞋履设计服务",
+    "图案设计",
+    "供应链整合服务",
+    "先发领先地位",
+    "中端品牌",
+    "大众品牌",
+    "女鞋市场",
+    "童鞋市场",
+    "快时尚",
+    "设计赋能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "量贩式独立设计市场",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "量贩式时尚设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:48:20"
+}

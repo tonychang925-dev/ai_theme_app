@@ -1,0 +1,36 @@
+{
+  "stock_id": "000919",
+  "stock_name": "金陵药业",
+  "concept": "医药医康养",
+  "strategy_type": "industry_chain",
+  "must": [
+    "脉络宁注射液",
+    "琥珀酸亚铁片"
+  ],
+  "should": [
+    "香菇多注射液",
+    "吸收性明胶海绵",
+    "省级企业技术中心",
+    "校企联合实验室",
+    "企业博士后科研工作站",
+    "脉络宁注射液相关发明专利",
+    "血栓闭塞性脉管炎",
+    "动脉硬化性闭塞症",
+    "脑血栓形成及后遗症",
+    "缺铁性贫血"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "脉络宁注射液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "琥珀酸亚铁片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:09:29"
+}

@@ -1,0 +1,44 @@
+{
+  "stock_id": "688008",
+  "stock_name": "澜起科技",
+  "concept": "互连计算芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "内存接口芯片",
+    "内存模组配套芯片",
+    "津逮服务器平台",
+    "DDR5内存接口技术"
+  ],
+  "should": [
+    "CXL技术",
+    "SerDes技术",
+    "PCIe Retimer技术",
+    "互连计算芯片",
+    "服务器内存模组",
+    "AI服务器",
+    "存储服务器",
+    "全球内存接口芯片前二"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "内存接口芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "内存模组配套芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "津逮服务器平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "DDR5内存接口技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:05:14"
+}

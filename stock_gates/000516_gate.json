@@ -1,0 +1,46 @@
+{
+  "stock_id": "000516",
+  "stock_name": "国际医学",
+  "concept": "医疗服务综合体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医疗服务综合体",
+    "医疗服务",
+    "西安国际医学中心医院",
+    "西安国际医学高新医院"
+  ],
+  "should": [
+    "西安国际康复医学中心医院",
+    "神经内科",
+    "心血管外科",
+    "急诊医学科",
+    "妇产科",
+    "医学影像科",
+    "康复医学",
+    "现代医学技术转化应用",
+    "生命孕育",
+    "健康管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医疗服务综合体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "西安国际医学中心医院",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "西安国际医学高新医院",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:53:40"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "002662",
+  "stock_name": "峰璟股份",
+  "concept": "汽车内外饰件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车内外饰件",
+    "车用铝型材挤出技术"
+  ],
+  "should": [
+    "铝合金熔铸",
+    "铝型材挤出",
+    "橡胶混炼",
+    "橡胶复合挤出",
+    "金属/塑料辊压复合挤出",
+    "复合注塑",
+    "铝合金氧化",
+    "金属喷漆",
+    "金属喷粉",
+    "塑料喷漆"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车内外饰件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车用铝型材挤出技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:52:25"
+}

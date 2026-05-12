@@ -1,0 +1,31 @@
+{
+  "stock_id": "600617",
+  "stock_name": "国新能源",
+  "concept": "天然气管网运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "天然气管网运营"
+  ],
+  "should": [
+    "大管网",
+    "长输管网建设",
+    "管道气采购",
+    "煤层气采购",
+    "新用户开口开户",
+    "工业煤改气项目",
+    "城燃公司合作",
+    "互联互通",
+    "股权合作",
+    "契约合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "天然气管网运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:23:01"
+}

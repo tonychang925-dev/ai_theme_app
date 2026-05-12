@@ -1,0 +1,46 @@
+{
+  "stock_id": "301368",
+  "stock_name": "丰立智能",
+  "concept": "精密齿轮制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钢齿轮",
+    "精密减速器及零部件",
+    "精密机械件",
+    "小模数螺旋锥齿轮工程研究"
+  ],
+  "should": [
+    "粉末冶金制品",
+    "气动工具",
+    "德国博世全球供应商奖",
+    "牧田优良供应商",
+    "史丹利百得优秀供应商",
+    "工机控股优秀供应商奖",
+    "精密齿轮制造",
+    "精密加工",
+    "刀具/模具设计",
+    "全球一流企业供应链体系"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钢齿轮",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密减速器及零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密机械件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小模数螺旋锥齿轮工程研究",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:04:01"
+}

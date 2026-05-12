@@ -1,0 +1,42 @@
+{
+  "stock_id": "600133",
+  "stock_name": "东湖高新",
+  "concept": "高新技术产业投资",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高新技术产业投资",
+    "园区运营",
+    "环保科技",
+    "工程建设"
+  ],
+  "should": [
+    "烟气综合治理",
+    "水务治理",
+    "风光水多能互补发电",
+    "燃煤发电烟气治理",
+    "垃圾焚烧烟气净化",
+    "科技园区运营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高新技术产业投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "园区运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环保科技",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程建设",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:10:02"
+}

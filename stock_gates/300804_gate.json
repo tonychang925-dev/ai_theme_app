@@ -1,0 +1,41 @@
+{
+  "stock_id": "300804",
+  "stock_name": "广康生化",
+  "concept": "农药原药制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农药原药",
+    "杀虫剂",
+    "杀菌剂"
+  ],
+  "should": [
+    "中间体",
+    "制剂",
+    "除草剂",
+    "联苯肼酯",
+    "高效氯氟氰菊酯",
+    "高效氯氰菊酯苯油",
+    "噻呋酰胺",
+    "农药原药制造",
+    "柑橘树等高附加值经济作物",
+    "甜菜种植"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农药原药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "杀虫剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "杀菌剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:43:50"
+}

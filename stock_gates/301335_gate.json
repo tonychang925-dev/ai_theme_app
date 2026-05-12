@@ -1,0 +1,31 @@
+{
+  "stock_id": "301335",
+  "stock_name": "天元宠物",
+  "concept": "宠物用品全品类",
+  "strategy_type": "industry_chain",
+  "must": [
+    "宠物食品"
+  ],
+  "should": [
+    "宠物窝垫",
+    "猫爬架",
+    "宠物玩具",
+    "电子智能宠物用品",
+    "宠物服饰",
+    "宠物牵引用具",
+    "渴望",
+    "爱肯拿",
+    "比利玛格",
+    "宠物用品全品类"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "宠物食品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:03:16"
+}

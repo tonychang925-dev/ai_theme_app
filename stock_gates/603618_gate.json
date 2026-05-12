@@ -1,0 +1,36 @@
+{
+  "stock_id": "603618",
+  "stock_name": "杭电股份",
+  "concept": "电线电缆",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电线电缆",
+    "电力电缆"
+  ],
+  "should": [
+    "铝合金导线",
+    "特种电缆",
+    "通信电缆",
+    "光缆",
+    "超薄锂电铜箔",
+    "高性能线路板铜箔",
+    "国家电网",
+    "南方电网",
+    "特高压电网",
+    "光伏"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电线电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力电缆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:53:27"
+}

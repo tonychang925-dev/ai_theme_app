@@ -1,0 +1,51 @@
+{
+  "stock_id": "300745",
+  "stock_name": "欣锐科技",
+  "concept": "车载电源系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "车载电源系统",
+    "车载充电机（OBC）",
+    "直流变压器（DC/DC）",
+    "高压配电箱（PDU）",
+    "车载电源集成产品"
+  ],
+  "should": [
+    "燃料电池产品",
+    "主控芯片",
+    "比亚迪",
+    "小鹏",
+    "极氪",
+    "吉利",
+    "长城",
+    "本田",
+    "现代",
+    "车载电源原创性核心技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "车载电源系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载充电机（OBC）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "直流变压器（DC/DC）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高压配电箱（PDU）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载电源集成产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:41:18"
+}

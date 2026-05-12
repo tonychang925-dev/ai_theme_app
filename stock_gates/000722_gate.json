@@ -1,0 +1,46 @@
+{
+  "stock_id": "000722",
+  "stock_name": "湖南发展",
+  "concept": "清洁能源综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "清洁能源综合服务",
+    "清洁能源",
+    "水力发电",
+    "医养健康"
+  ],
+  "should": [
+    "光伏发电",
+    "社区居家养老服务",
+    "智慧养老信息平台",
+    "自然资源开发",
+    "河砂",
+    "河卵石",
+    "碎石",
+    "股权投资",
+    "自发自用、余电上网",
+    "政府购买居家养老服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "清洁能源综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "清洁能源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水力发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医养健康",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:02:12"
+}

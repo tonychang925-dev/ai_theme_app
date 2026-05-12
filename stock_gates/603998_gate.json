@@ -1,0 +1,51 @@
+{
+  "stock_id": "603998",
+  "stock_name": "方盛制药",
+  "concept": "医药健康",
+  "strategy_type": "industry_chain",
+  "must": [
+    "小儿荆杏止咳颗粒",
+    "藤黄健骨片",
+    "玄七健骨片",
+    "金英胶囊",
+    "强力枇杷膏（蜜炼）"
+  ],
+  "should": [
+    "中国医药工业百强第71位",
+    "独家蜜炼专利工艺",
+    "中药创新药研发",
+    "心脑血管疾病",
+    "骨骼肌肉系统",
+    "儿童用药",
+    "妇科疾病",
+    "呼吸系统",
+    "抗感染用药",
+    "血塞通分散片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "小儿荆杏止咳颗粒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "藤黄健骨片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "玄七健骨片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金英胶囊",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "强力枇杷膏（蜜炼）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:00:51"
+}

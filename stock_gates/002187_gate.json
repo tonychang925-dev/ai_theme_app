@@ -1,0 +1,31 @@
+{
+  "stock_id": "002187",
+  "stock_name": "广百股份",
+  "concept": "百货零售连锁",
+  "strategy_type": "industry_chain",
+  "must": [
+    "百货零售连锁"
+  ],
+  "should": [
+    "联销",
+    "购销",
+    "物业出租",
+    "综合百货店",
+    "购物中心",
+    "超市专业店",
+    "钟表专业店",
+    "广州市",
+    "广东省其他城市",
+    "广东省百货连锁龙头企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "百货零售连锁",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:28:13"
+}

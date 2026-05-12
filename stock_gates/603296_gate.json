@@ -1,0 +1,45 @@
+{
+  "stock_id": "603296",
+  "stock_name": "华勤技术",
+  "concept": "智能硬件ODM",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能硬件ODM",
+    "智能手机",
+    "笔记本电脑",
+    "平板电脑"
+  ],
+  "should": [
+    "数据服务器",
+    "汽车电子产品",
+    "智能穿戴",
+    "笔记本电脑ODM全球前四",
+    "ARM架构研发设计",
+    "X86架构设计研发",
+    "硬件生态协同",
+    "全球供应链布局",
+    "全球ODM渗透率提升"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能硬件ODM",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能手机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "笔记本电脑",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "平板电脑",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:48:22"
+}

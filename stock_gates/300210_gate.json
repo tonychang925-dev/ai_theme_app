@@ -1,0 +1,41 @@
+{
+  "stock_id": "300210",
+  "stock_name": "森远股份",
+  "concept": "公路养护设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "公路养护设备",
+    "沥青路面再生设备",
+    "沥青路面再生技术"
+  ],
+  "should": [
+    "拌合设备",
+    "除雪设备",
+    "市政环卫设备",
+    "五层结构技术开发和创新体系",
+    "省级企业技术中心",
+    "省级工程技术研究中心",
+    "辽宁省工程研究中心",
+    "沥青路面再生技术研究院",
+    "博士后科研基地",
+    "国家863计划项目"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "公路养护设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "沥青路面再生设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "沥青路面再生技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:17:41"
+}

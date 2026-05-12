@@ -1,0 +1,36 @@
+{
+  "stock_id": "605158",
+  "stock_name": "华达新材",
+  "concept": "金属新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "彩色涂层板",
+    "热镀锌板"
+  ],
+  "should": [
+    "热镀锌铝镁产品",
+    "智能物流监控系统",
+    "在线性能监控系统",
+    "乳化液系统",
+    "镀后冷却装置",
+    "极薄规格热镀锌板全流程工艺",
+    "金属新材料",
+    "建筑用钢",
+    "绿色建材",
+    "装配式建筑"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "彩色涂层板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热镀锌板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:02:20"
+}

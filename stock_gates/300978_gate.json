@@ -1,0 +1,36 @@
+{
+  "stock_id": "300978",
+  "stock_name": "东箭科技",
+  "concept": "汽车智能改装",
+  "strategy_type": "industry_chain",
+  "must": [
+    "车载智能座舱控制系统产品",
+    "车侧承载装饰系统产品"
+  ],
+  "should": [
+    "车辆前后防护系统产品",
+    "车顶装载系统产品",
+    "车辆其他系统产品",
+    "汽车智能改装",
+    "机械制造",
+    "模具",
+    "制造工艺",
+    "材料学",
+    "工业设计",
+    "电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "车载智能座舱控制系统产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车侧承载装饰系统产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:51:40"
+}

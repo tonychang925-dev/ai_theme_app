@@ -1,0 +1,46 @@
+{
+  "stock_id": "002276",
+  "stock_name": "万马股份",
+  "concept": "电线电缆高分子",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电线电缆",
+    "高分子材料",
+    "超高压绝缘料",
+    "机器人线缆"
+  ],
+  "should": [
+    "汽车充电设备",
+    "充电桩",
+    "屏蔽料",
+    "抗水树电缆用绝缘料",
+    "硅烷交联乙丙橡胶绝缘材料",
+    "低烟无卤高阻燃聚烯烃电缆料",
+    "新一代环保型中高压聚丙烯绝缘材料",
+    "工业机器人",
+    "人形机器人",
+    "机器狗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电线电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高分子材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超高压绝缘料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机器人线缆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:33:06"
+}

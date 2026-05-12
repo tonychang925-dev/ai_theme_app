@@ -1,0 +1,31 @@
+{
+  "stock_id": "300652",
+  "stock_name": "雷迪克",
+  "concept": "汽车轴承供应商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车轴承供应商"
+  ],
+  "should": [
+    "轮毂轴承",
+    "轮毂轴承单元",
+    "圆锥轴承",
+    "离合器分离轴承",
+    "涨紧轮",
+    "新能源汽车",
+    "商用车整车厂",
+    "售后市场",
+    "OEM代工",
+    "国产替代"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车轴承供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:36:59"
+}

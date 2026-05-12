@@ -1,0 +1,36 @@
+{
+  "stock_id": "002052",
+  "stock_name": "同洲电子",
+  "concept": "数字视讯与新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字机顶盒业务",
+    "新能源锂离子电池业务"
+  ],
+  "should": [
+    "智能数字终端",
+    "智能网关",
+    "数字电视前端设备",
+    "消费类锂离子电池",
+    "广电全业务融合云平台",
+    "数字电视中间件",
+    "智能电视操作系统TVOS",
+    "广电运营商",
+    "电信运营商",
+    "全球海外运营商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字机顶盒业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源锂离子电池业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:20:28"
+}

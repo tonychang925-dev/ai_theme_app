@@ -1,0 +1,41 @@
+{
+  "stock_id": "000417",
+  "stock_name": "合百集团",
+  "concept": "安徽商业龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "安徽商业龙头",
+    "零售业",
+    "农产品交易市场"
+  ],
+  "should": [
+    "安徽省规模最大的农产品集散中心",
+    "百货",
+    "家电",
+    "超市连锁",
+    "电子商务",
+    "联销",
+    "经销",
+    "物业出租",
+    "摊位出租",
+    "交易佣金"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "安徽商业龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "零售业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "农产品交易市场",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:51:59"
+}

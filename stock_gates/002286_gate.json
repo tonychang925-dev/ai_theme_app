@@ -1,0 +1,55 @@
+{
+  "stock_id": "002286",
+  "stock_name": "保龄宝",
+  "concept": "功能糖",
+  "strategy_type": "industry_chain",
+  "must": [
+    "功能糖",
+    "功能糖系列",
+    "糖醇系列",
+    "膳食纤维系列",
+    "益生元终端"
+  ],
+  "should": [
+    "酶工程",
+    "发酵工程",
+    "淀粉及淀粉糖系列",
+    "医药原辅料系列",
+    "健康食品",
+    "功能饮品",
+    "保健医药",
+    "无抗饲料",
+    "日化",
+    "玉米"
+  ],
+  "not": [
+    "玉米淀粉",
+    "蔗糖",
+    "葡萄糖"
+  ],
+  "evidence_refs": [
+    {
+      "term": "功能糖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功能糖系列",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "糖醇系列",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "膳食纤维系列",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "益生元终端",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:33:28"
+}

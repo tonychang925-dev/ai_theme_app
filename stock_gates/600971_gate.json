@@ -1,0 +1,24 @@
+{
+  "stock_id": "600971",
+  "stock_name": "恒源煤电",
+  "concept": "煤炭开采",
+  "strategy_type": "industry_chain",
+  "must": [
+    "动力煤"
+  ],
+  "should": [
+    "精煤",
+    "煤炭开采",
+    "发电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "动力煤",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:32:05"
+}

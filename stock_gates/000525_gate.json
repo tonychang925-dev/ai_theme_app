@@ -1,0 +1,44 @@
+{
+  "stock_id": "000525",
+  "stock_name": "红太阳",
+  "concept": "农药制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农药制造",
+    "化学农药制造",
+    "农药原药",
+    "农药制剂"
+  ],
+  "should": [
+    "除草剂",
+    "杀虫剂",
+    "杀菌剂",
+    "生物农药制造",
+    "农业生产",
+    "粮食安全",
+    "中间体供应商",
+    "原料药供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农药制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化学农药制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "农药原药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "农药制剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:54:20"
+}

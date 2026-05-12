@@ -1,0 +1,38 @@
+{
+  "stock_id": "603505",
+  "stock_name": "金石资源",
+  "concept": "萤石资源龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "萤石资源龙头",
+    "酸级萤石精粉",
+    "高品位萤石块矿"
+  ],
+  "should": [
+    "冶金级萤石精粉",
+    "普通萤石原矿",
+    "氢氟酸",
+    "新能源含氟锂电材料",
+    "萤石行业资源储量最大",
+    "在产矿山8座",
+    "大型矿山6座"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "萤石资源龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "酸级萤石精粉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高品位萤石块矿",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:51:26"
+}

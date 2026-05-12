@@ -1,0 +1,39 @@
+{
+  "stock_id": "000421",
+  "stock_name": "南京公用",
+  "concept": "南京公用事业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "燃气销售",
+    "天然气销售",
+    "特许经营权"
+  ],
+  "should": [
+    "房地产开发",
+    "客运产业",
+    "工程建造及安装",
+    "综合能源",
+    "智慧燃气",
+    "出租汽车运营",
+    "存量开发+土地储备",
+    "区域自建+联合开发+基金投资"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "燃气销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天然气销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特许经营权",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:52:16"
+}

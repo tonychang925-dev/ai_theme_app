@@ -1,0 +1,35 @@
+{
+  "stock_id": "002346",
+  "stock_name": "柘中股份",
+  "concept": "成套开关设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "成套开关设备",
+    "35KV以下各类配电柜"
+  ],
+  "should": [
+    "KYN37-12系列智能化高压柜",
+    "OKKEN智能化低压柜",
+    "PPS系列智能化低压柜",
+    "半导体",
+    "数据中心",
+    "国家电网",
+    "轨道交通",
+    "机场",
+    "大型基建项目"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "成套开关设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "35KV以下各类配电柜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:36:52"
+}

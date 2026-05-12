@@ -1,0 +1,51 @@
+{
+  "stock_id": "300645",
+  "stock_name": "正元智慧",
+  "concept": "智慧校园服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧校园服务",
+    "融合智能服务平台",
+    "智能硬件",
+    "应用系统",
+    "云服务"
+  ],
+  "should": [
+    "AIoT",
+    "系统建设",
+    "运营和服务",
+    "智能管控",
+    "人工智能",
+    "大数据",
+    "区块链",
+    "云计算",
+    "物联网",
+    "校园"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧校园服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "融合智能服务平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能硬件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "应用系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:36:49"
+}

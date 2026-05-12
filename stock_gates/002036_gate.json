@@ -1,0 +1,41 @@
+{
+  "stock_id": "002036",
+  "stock_name": "联创电子",
+  "concept": "光学镜头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光学镜头",
+    "摄像模组",
+    "英伟达认证镜头"
+  ],
+  "should": [
+    "触控显示",
+    "特斯拉产业链",
+    "GoPro高端运动相机独供",
+    "运动相机镜头市场份额约70%",
+    "智能终端产品",
+    "超精密光学元件制造工艺",
+    "近眼显示",
+    "感知交互",
+    "VR目镜设计",
+    "VR调焦"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光学镜头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "摄像模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "英伟达认证镜头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:19:36"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "300469",
+  "stock_name": "信息发展",
+  "concept": "数字交通平台运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字交通平台运营",
+    "北斗",
+    "车联网",
+    "大数据",
+    "智慧交通"
+  ],
+  "should": [
+    "区块链",
+    "智慧政务",
+    "北斗自由流里程费",
+    "行业专有云服务",
+    "平台运营商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字交通平台运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "北斗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车联网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大数据",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧交通",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:28:35"
+}

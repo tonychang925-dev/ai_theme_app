@@ -1,0 +1,29 @@
+{
+  "stock_id": "002798",
+  "stock_name": "帝欧水华",
+  "concept": "高端卫浴陶瓷",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端卫生洁具",
+    "建筑陶瓷"
+  ],
+  "should": [
+    "高端卫浴陶瓷",
+    "公共建筑装修装饰",
+    "住宅装修装饰"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端卫生洁具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑陶瓷",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:57:48"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "301004",
+  "stock_name": "嘉益股份",
+  "concept": "保温杯壶制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "保温杯壶制造",
+    "不锈钢真空保温器皿",
+    "OEM/ODM代工"
+  ],
+  "should": [
+    "保温杯",
+    "保温瓶",
+    "焖烧罐",
+    "保温壶",
+    "智能杯",
+    "不锈钢器皿",
+    "户外运动",
+    "露营",
+    "居家",
+    "国内领先生产制造商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "保温杯壶制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "不锈钢真空保温器皿",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "OEM/ODM代工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:52:48"
+}

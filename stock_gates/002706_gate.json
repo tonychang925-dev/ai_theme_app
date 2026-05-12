@@ -1,0 +1,31 @@
+{
+  "stock_id": "002706",
+  "stock_name": "良信股份",
+  "concept": "低压电器高端市场",
+  "strategy_type": "industry_chain",
+  "must": [
+    "低压电器高端市场"
+  ],
+  "should": [
+    "终端电器",
+    "配电电器",
+    "控制电器",
+    "智能家居电器",
+    "智能家居",
+    "新能源汽车",
+    "电力物联网",
+    "信息通信",
+    "智能楼宇",
+    "新能源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "低压电器高端市场",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:54:18"
+}

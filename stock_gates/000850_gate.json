@@ -1,0 +1,51 @@
+{
+  "stock_id": "000850",
+  "stock_name": "华茂股份",
+  "concept": "纺织智能制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "混纺纱线",
+    "面料",
+    "产业用纺织品",
+    "纱线",
+    "坯布"
+  ],
+  "should": [
+    "色织面料",
+    "无纺布",
+    "纺织智能制造",
+    "智能制造",
+    "绿色制造",
+    "碳中和",
+    "服装",
+    "面料生产",
+    "医疗",
+    "卫生"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "混纺纱线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "面料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "产业用纺织品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纱线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "坯布",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:06:49"
+}

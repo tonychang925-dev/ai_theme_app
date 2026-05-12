@@ -1,0 +1,41 @@
+{
+  "stock_id": "603901",
+  "stock_name": "永创智能",
+  "concept": "智能包装系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能包装系统",
+    "智能包装生产线",
+    "永创智能DMC平台"
+  ],
+  "should": [
+    "标准单机设备",
+    "PP捆扎带",
+    "PET捆扎带",
+    "PE拉伸膜",
+    "液态食品",
+    "固态食品",
+    "医药",
+    "化工",
+    "家用电器",
+    "3C"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能包装系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能包装生产线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "永创智能DMC平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:58:37"
+}

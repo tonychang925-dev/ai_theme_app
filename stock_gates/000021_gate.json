@@ -1,0 +1,41 @@
+{
+  "stock_id": "000021",
+  "stock_name": "深科技",
+  "concept": "存储封测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球第二大硬盘磁头制造商",
+    "存储封测",
+    "DRAM芯片封测"
+  ],
+  "should": [
+    "存储半导体",
+    "高端制造",
+    "计量智能终端",
+    "NAND Flash芯片封测",
+    "SSD",
+    "指纹芯片",
+    "FlipChip封装",
+    "HSBI高速老化测试",
+    "8层堆叠技术",
+    "SiP闪存芯片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球第二大硬盘磁头制造商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "存储封测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "DRAM芯片封测",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:47:42"
+}

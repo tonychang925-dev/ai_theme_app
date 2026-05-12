@@ -1,0 +1,39 @@
+{
+  "stock_id": "601155",
+  "stock_name": "新城控股",
+  "concept": "商业地产运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "住宅+商业双轮发展",
+    "开发+持有闭环经营模式",
+    "吾悦广场"
+  ],
+  "should": [
+    "轻重并举模式",
+    "商业地产运营",
+    "开业比例",
+    "出租率",
+    "商业运营收入",
+    "客流量",
+    "会员数",
+    "商家销售额"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "住宅+商业双轮发展",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "开发+持有闭环经营模式",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "吾悦广场",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:34:49"
+}

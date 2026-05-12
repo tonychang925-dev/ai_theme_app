@@ -1,0 +1,46 @@
+{
+  "stock_id": "605286",
+  "stock_name": "同力天启",
+  "concept": "电梯零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电梯零部件",
+    "扶梯部件",
+    "直梯部件",
+    "电梯金属材料"
+  ],
+  "should": [
+    "奥的斯",
+    "迅达",
+    "通力",
+    "蒂升",
+    "日立",
+    "西奥",
+    "康力",
+    "广日",
+    "地铁",
+    "高铁"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电梯零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "扶梯部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "直梯部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电梯金属材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:03:29"
+}

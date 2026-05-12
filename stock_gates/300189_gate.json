@@ -1,0 +1,40 @@
+{
+  "stock_id": "300189",
+  "stock_name": "神农种业",
+  "concept": "杂交水稻种业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "杂交水稻种业",
+    "杂交水稻种子",
+    "南繁育制种"
+  ],
+  "should": [
+    "生物育种技术",
+    "油菜种子",
+    "玉米种子",
+    "蔬菜瓜果种子",
+    "自主知识产权",
+    "水稻主产区",
+    "育繁推一体化企业",
+    "国家农作物种业阵型企业",
+    "农业产业化国家重点龙头企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "杂交水稻种业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "杂交水稻种子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "南繁育制种",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:16:44"
+}

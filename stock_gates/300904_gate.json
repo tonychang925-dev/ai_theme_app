@@ -1,0 +1,31 @@
+{
+  "stock_id": "300904",
+  "stock_name": "威力传动",
+  "concept": "风电减速器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风电减速器"
+  ],
+  "should": [
+    "风电偏航减速器",
+    "风电变桨减速器",
+    "精密传动",
+    "结构设计",
+    "传动效率",
+    "工艺精度",
+    "疲劳寿命",
+    "噪声抑制",
+    "陆上风电机组",
+    "海上风电机组"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风电减速器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:48:32"
+}

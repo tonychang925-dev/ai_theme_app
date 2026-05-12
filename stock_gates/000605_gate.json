@@ -1,0 +1,36 @@
+{
+  "stock_id": "000605",
+  "stock_name": "渤海股份",
+  "concept": "水务环保综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "原水开发供应",
+    "自来水生产及输送"
+  ],
+  "should": [
+    "污水处理",
+    "水环境治理",
+    "固废危废处置",
+    "清洁能源供暖",
+    "热电联产",
+    "相变储能",
+    "城镇供水",
+    "市政及园区污水处理",
+    "固废危废资源化利用",
+    "市政清洁能源供暖"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "原水开发供应",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自来水生产及输送",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:58:11"
+}

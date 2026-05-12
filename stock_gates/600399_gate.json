@@ -1,0 +1,41 @@
+{
+  "stock_id": "600399",
+  "stock_name": "抚顺特钢",
+  "concept": "高温合金龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高温合金龙头",
+    "高温合金",
+    "变形高温合金龙头"
+  ],
+  "should": [
+    "合金结构钢",
+    "工模具钢",
+    "不锈钢",
+    "高温合金和耐蚀合金核心生产技术",
+    "军工",
+    "航空航天",
+    "机械",
+    "船舶",
+    "新兴产业",
+    "航空航天领域市占率80%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高温合金龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高温合金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "变形高温合金龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:17:04"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "688538",
+  "stock_name": "和辉光电",
+  "concept": "AMOLED显示面板",
+  "strategy_type": "industry_chain",
+  "must": [
+    "AMOLED显示面板"
+  ],
+  "should": [
+    "智能手机AMOLED面板",
+    "平板电脑AMOLED面板",
+    "车载AMOLED面板",
+    "桌面显示器AMOLED面板",
+    "高亮度技术",
+    "叠层OLED发光技术",
+    "窄边框技术",
+    "智能穿戴",
+    "国产化替代",
+    "与主要供应商建立策略关系"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "AMOLED显示面板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:20:08"
+}

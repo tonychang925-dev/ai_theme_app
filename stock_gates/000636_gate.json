@@ -1,0 +1,41 @@
+{
+  "stock_id": "000636",
+  "stock_name": "风华高科",
+  "concept": "被动电子元件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "被动电子元件",
+    "MLCC",
+    "片式电阻器"
+  ],
+  "should": [
+    "片式电感器",
+    "陶瓷滤波器",
+    "半导体器件",
+    "压敏电阻",
+    "热敏电阻",
+    "铝电解电容器",
+    "圆片电容器",
+    "集成电路封装",
+    "电子浆料",
+    "瓷粉"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "被动电子元件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MLCC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "片式电阻器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:59:19"
+}

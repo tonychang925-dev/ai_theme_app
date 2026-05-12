@@ -1,0 +1,39 @@
+{
+  "stock_id": "688223",
+  "stock_name": "晶科能源",
+  "concept": "光伏一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏一体化",
+    "组件制造",
+    "垂直一体化"
+  ],
+  "should": [
+    "N型TOPCcon电池",
+    "单晶硅片",
+    "光伏电站",
+    "分布式光伏系统",
+    "硅片生产",
+    "电池片生产",
+    "组件生产",
+    "硅料长协锁定"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "组件制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "垂直一体化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:12:20"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "002993",
+  "stock_name": "奥海科技",
+  "concept": "智能充储电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能充储电",
+    "手机充电器",
+    "电源适配器",
+    "IoT智能终端充电器",
+    "PC电源充电器"
+  ],
+  "should": [
+    "快充技术",
+    "GaN氮化镓技术",
+    "动力工具充电器",
+    "数据电源充电器",
+    "无线充电器",
+    "车载充电机",
+    "直流/交流充电桩",
+    "小型光伏逆变器",
+    "动力域控系统",
+    "BMS"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能充储电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "手机充电器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电源适配器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IoT智能终端充电器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PC电源充电器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:06:43"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "000663",
+  "stock_name": "永安林业",
+  "concept": "森林资源开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "森林资源开发",
+    "森林资源培育",
+    "人造板经营",
+    "纤维板自动化生产",
+    "人造板生产"
+  ],
+  "should": [
+    "生物质能源开发",
+    "林木采伐经营",
+    "森林经营服务",
+    "地板经营",
+    "德国迪芬巴赫连续压机生产线",
+    "微生物厌氧发酵",
+    "建筑",
+    "家具",
+    "装饰",
+    "门板"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "森林资源开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "森林资源培育",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人造板经营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纤维板自动化生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人造板生产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:59:58"
+}

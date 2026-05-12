@@ -1,0 +1,39 @@
+{
+  "stock_id": "300619",
+  "stock_name": "金银河",
+  "concept": "锂电前段设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电前段设备",
+    "正负极浆料混合设备",
+    "涂布设备",
+    "辊压设备"
+  ],
+  "should": [
+    "动力锂电池生产",
+    "电极（极片）制备",
+    "锂电池生产最前端"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电前段设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "正负极浆料混合设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涂布设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "辊压设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:35:32"
+}

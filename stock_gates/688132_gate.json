@@ -1,0 +1,51 @@
+{
+  "stock_id": "688132",
+  "stock_name": "邦彦技术",
+  "concept": "军工通信系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "军工通信系统",
+    "融合通信",
+    "舰船通信",
+    "信息安全",
+    "重大项目总体"
+  ],
+  "should": [
+    "技术总体",
+    "分系统技术总体",
+    "智能导控系统",
+    "富媒体指挥调度系统",
+    "融合调度服务器",
+    "网元及配套终端",
+    "异构网络互通",
+    "统一通信业务服务",
+    "IP化音视频及信息数据",
+    "各级指挥所"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "军工通信系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "融合通信",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "舰船通信",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信息安全",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重大项目总体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:09:29"
+}

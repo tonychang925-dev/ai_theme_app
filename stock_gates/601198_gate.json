@@ -1,0 +1,51 @@
+{
+  "stock_id": "601198",
+  "stock_name": "东兴证券",
+  "concept": "AMC系券商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "AMC系券商",
+    "证券业务",
+    "中国东方资管",
+    "证监会证券公司白名单",
+    "AAA级主体信用"
+  ],
+  "should": [
+    "公募证券投资基金销售",
+    "资产管理",
+    "投资管理",
+    "投资顾问",
+    "财务顾问服务",
+    "公开募集证券投资基金管理",
+    "A类债券业务执业能力",
+    "A类财务顾问业务执业质量",
+    "商品期货经纪",
+    "金融期货经纪"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "AMC系券商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "证券业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中国东方资管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "证监会证券公司白名单",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AAA级主体信用",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:35:32"
+}

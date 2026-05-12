@@ -1,0 +1,30 @@
+{
+  "stock_id": "000571",
+  "stock_name": "新大洲A",
+  "concept": "长焰煤生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "长焰煤"
+  ],
+  "should": [
+    "牛肉食品",
+    "长焰煤生产",
+    "产销量较小的企业",
+    "区域内具有一定市场和价格优势",
+    "蒙东地区有较强的市场竞争力",
+    "发热值高于周边褐煤生产企业",
+    "安全高效特级矿井",
+    "安全高效一级矿井",
+    "AAA-"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "长焰煤",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T16:56:57"
+}

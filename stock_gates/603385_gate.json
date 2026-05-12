@@ -1,0 +1,36 @@
+{
+  "stock_id": "603385",
+  "stock_name": "惠达卫浴",
+  "concept": "卫浴解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "卫浴解决方案",
+    "智能卫浴"
+  ],
+  "should": [
+    "智能坐便器",
+    "浴室柜",
+    "浴室五金",
+    "阳台柜",
+    "LED紫外线杀菌",
+    "免触感应",
+    "自动消毒",
+    "便捷操控",
+    "监测健康",
+    "康养适老"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "卫浴解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能卫浴",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:50:33"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "301003",
+  "stock_name": "江苏博云",
+  "concept": "改性塑料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "改性塑料"
+  ],
+  "should": [
+    "高性能改性尼龙",
+    "高性能改性聚酯",
+    "工程化聚烯烃",
+    "色母粒和功能性母粒",
+    "电动工具",
+    "汽车零部件",
+    "家用电器",
+    "电子电气",
+    "办公家具类制品",
+    "定制化服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "改性塑料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:52:43"
+}

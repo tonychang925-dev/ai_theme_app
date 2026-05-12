@@ -1,0 +1,31 @@
+{
+  "stock_id": "300782",
+  "stock_name": "卓胜微",
+  "concept": "射频前端龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "射频前端龙头"
+  ],
+  "should": [
+    "射频开关",
+    "射频低噪声放大器",
+    "射频滤波器",
+    "射频功率放大器",
+    "射频模组",
+    "低功耗蓝牙微控制器芯片",
+    "RF CMOS工艺",
+    "拼版式射频开关方法",
+    "国产替代龙头",
+    "完整产业链覆盖"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "射频前端龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:43:02"
+}

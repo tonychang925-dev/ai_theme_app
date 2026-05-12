@@ -1,0 +1,31 @@
+{
+  "stock_id": "605358",
+  "stock_name": "立昂微",
+  "concept": "半导体硅片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体硅片"
+  ],
+  "should": [
+    "6-12英寸半导体硅抛光片",
+    "硅外延片",
+    "6英寸SBD芯片",
+    "6英寸FRD芯片",
+    "6英寸MOSFET芯片",
+    "6英寸TVS芯片",
+    "6英寸IGBT芯片",
+    "6英寸GaAs射频芯片",
+    "6英寸VCSEL芯片",
+    "重掺技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体硅片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:04:00"
+}

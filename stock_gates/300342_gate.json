@@ -1,0 +1,35 @@
+{
+  "stock_id": "300342",
+  "stock_name": "天银机电",
+  "concept": "冰箱零部件+雷达航天",
+  "strategy_type": "industry_chain",
+  "must": [
+    "起动器",
+    "吸气消音器",
+    "变频控制器"
+  ],
+  "should": [
+    "无功耗电子式起动器",
+    "变频控制程序",
+    "冰箱压缩机",
+    "国内各大冰箱压缩机厂的主流供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "起动器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "吸气消音器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "变频控制器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:23:11"
+}

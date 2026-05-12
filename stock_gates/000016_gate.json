@@ -1,0 +1,41 @@
+{
+  "stock_id": "000016",
+  "stock_name": "深康佳A",
+  "concept": "消费电子与半导体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "消费类电子",
+    "彩电",
+    "半导体"
+  ],
+  "should": [
+    "工贸",
+    "环保",
+    "冰箱",
+    "洗衣机",
+    "空调",
+    "冷柜",
+    "IC芯片存储",
+    "液晶屏",
+    "Micro LED",
+    "智能家电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "消费类电子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "彩电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:47:11"
+}

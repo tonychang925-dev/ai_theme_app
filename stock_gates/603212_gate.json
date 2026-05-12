@@ -1,0 +1,51 @@
+{
+  "stock_id": "603212",
+  "stock_name": "赛伍技术",
+  "concept": "膜类技术平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "膜类技术平台",
+    "光伏背板",
+    "POE电池封装胶膜",
+    "涂覆型背板",
+    "POE胶膜"
+  ],
+  "should": [
+    "全球背板龙头",
+    "背板修补胶带",
+    "电芯蓝膜",
+    "侧板膜",
+    "CCS热压膜",
+    "锂电池FFC绝缘膜",
+    "电池热管理导热材料",
+    "热失控防火材料",
+    "功能胶水类",
+    "水冷板冷贴膜"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "膜类技术平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏背板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "POE电池封装胶膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涂覆型背板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "POE胶膜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:46:37"
+}

@@ -1,0 +1,30 @@
+{
+  "stock_id": "300599",
+  "stock_name": "雄塑科技",
+  "concept": "塑料管材管件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "塑料管材管件"
+  ],
+  "should": [
+    "建筑用给排水管材管件",
+    "市政给排水（排污）管材管件",
+    "地下通信用塑料管材管件",
+    "高压电力电缆用护套管",
+    "工业与民用建筑",
+    "市政工程",
+    "农村饮水安全",
+    "雨污分流",
+    "智能电网建设"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "塑料管材管件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:34:42"
+}

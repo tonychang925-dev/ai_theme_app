@@ -1,0 +1,35 @@
+{
+  "stock_id": "000739",
+  "stock_name": "普洛药业",
+  "concept": "医药制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "CDMO",
+    "特色原料药",
+    "API+制剂一体化"
+  ],
+  "should": [
+    "制剂",
+    "医药制造",
+    "起始原料药+注册中间体",
+    "注册中间体+API"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "CDMO",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特色原料药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "API+制剂一体化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:03:06"
+}

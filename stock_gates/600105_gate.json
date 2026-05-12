@@ -1,0 +1,41 @@
+{
+  "stock_id": "600105",
+  "stock_name": "永鼎股份",
+  "concept": "光电超导",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光芯片",
+    "IDM激光器芯片",
+    "100GEML"
+  ],
+  "should": [
+    "高温超导带材",
+    "MOCVD",
+    "离子束辅助沉积(IBAD)",
+    "可控核聚变",
+    "医疗MRI",
+    "光伏磁拉单晶炉",
+    "磁悬浮列车",
+    "舰船消磁电缆",
+    "国内稀缺IDM激光器芯片工厂",
+    "国内领先第二代高温超导带材"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IDM激光器芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "100GEML",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:09:10"
+}

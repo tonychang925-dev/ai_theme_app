@@ -1,0 +1,41 @@
+{
+  "stock_id": "600262",
+  "stock_name": "北方股份",
+  "concept": "矿用车制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "TR系列机械传动矿用车",
+    "NTE系列电动轮矿用车",
+    "无人驾驶智慧矿车"
+  ],
+  "should": [
+    "TR65E纯电动矿用车",
+    "TR100E纯电动矿用车",
+    "NTH150氢燃料矿车",
+    "矿用洒水车",
+    "矿用车制造",
+    "电驱动系统集成设计",
+    "焊接机器人主导的智能制造",
+    "激光复合焊技术",
+    "无人驾驶硬件在环仿真平台",
+    "国内矿用车行业龙头企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "TR系列机械传动矿用车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "NTE系列电动轮矿用车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无人驾驶智慧矿车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:13:23"
+}

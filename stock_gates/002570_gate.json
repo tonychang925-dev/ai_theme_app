@@ -1,0 +1,41 @@
+{
+  "stock_id": "002570",
+  "stock_name": "贝因美",
+  "concept": "母婴奶粉",
+  "strategy_type": "industry_chain",
+  "must": [
+    "婴幼儿配方乳粉",
+    "爱加",
+    "冠军宝贝"
+  ],
+  "should": [
+    "婴幼儿零辅食",
+    "成人配方乳粉",
+    "奶基营养品",
+    "可睿欣",
+    "生命伴侣",
+    "含乳饮料",
+    "菁爱",
+    "红爱",
+    "母婴奶粉",
+    "线下母婴店"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "婴幼儿配方乳粉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "爱加",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冠军宝贝",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:47:54"
+}

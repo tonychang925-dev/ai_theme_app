@@ -1,0 +1,33 @@
+{
+  "stock_id": "600742",
+  "stock_name": "富维股份",
+  "concept": "汽车零部件制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车零部件制造",
+    "汽车零部件"
+  ],
+  "should": [
+    "座舱系统",
+    "智能表面",
+    "汽车轮毂",
+    "陶瓷传感器",
+    "系统集成",
+    "一汽集团供应商",
+    "外部市场开拓"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车零部件制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:26:31"
+}

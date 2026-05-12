@@ -1,0 +1,41 @@
+{
+  "stock_id": "600764",
+  "stock_name": "中国海防",
+  "concept": "水下信息化装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水下信息化装备",
+    "电子防务装备",
+    "水声电子防务产品"
+  ],
+  "should": [
+    "特装电子产品",
+    "电子信息产品",
+    "水声换能器",
+    "水下攻防产品",
+    "卫星通导产品",
+    "专用计算机",
+    "特种电源",
+    "水声探测技术",
+    "水声信息传输技术",
+    "卫星导航技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水下信息化装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子防务装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水声电子防务产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:27:15"
+}

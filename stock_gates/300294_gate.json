@@ -1,0 +1,41 @@
+{
+  "stock_id": "300294",
+  "stock_name": "博雅生物",
+  "concept": "血液制品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "血液制品",
+    "单采血浆站",
+    "人纤维蛋白原"
+  ],
+  "should": [
+    "白蛋白",
+    "免疫球蛋白",
+    "凝血因子",
+    "二步沉淀法",
+    "二步层析法",
+    "低温乙醇法",
+    "糖尿病",
+    "生化类药业",
+    "医药经销",
+    "采浆量"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "血液制品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "单采血浆站",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人纤维蛋白原",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:21:31"
+}

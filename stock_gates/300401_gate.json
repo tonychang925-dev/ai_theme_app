@@ -1,0 +1,46 @@
+{
+  "stock_id": "300401",
+  "stock_name": "花园生物",
+  "concept": "维生素D3产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "维生素D3产业链",
+    "羊毛脂胆固醇",
+    "维生素D3",
+    "维生素D3全产业链"
+  ],
+  "should": [
+    "25-羟基维生素D3",
+    "缬沙坦氨氯地平片（I）",
+    "多索茶碱注射液",
+    "左氧氟沙星片",
+    "硫辛酸注射液",
+    "草酸艾司西酞普兰片",
+    "全活性VD3产业化",
+    "饲料添加剂",
+    "食品添加剂",
+    "营养保健品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "维生素D3产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "羊毛脂胆固醇",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "维生素D3",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "维生素D3全产业链",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:25:50"
+}

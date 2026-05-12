@@ -1,0 +1,45 @@
+{
+  "stock_id": "601375",
+  "stock_name": "中原证券",
+  "concept": "证券综合金融",
+  "strategy_type": "industry_chain",
+  "must": [
+    "证券综合金融",
+    "证券经纪业务",
+    "投资银行业务",
+    "资产管理业务"
+  ],
+  "should": [
+    "债券自营投资",
+    "投顾服务",
+    "机构经纪",
+    "财升宝APP",
+    "智能投行系统",
+    "财富管理转型",
+    "数字化转型",
+    "智能客户运营场景",
+    "数字化营销网络"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "证券综合金融",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "证券经纪业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资银行业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "资产管理业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:36:28"
+}

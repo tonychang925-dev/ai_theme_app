@@ -1,0 +1,36 @@
+{
+  "stock_id": "300191",
+  "stock_name": "潜能恒信",
+  "concept": "油气勘探服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "油气勘探服务",
+    "地震数据处理解释服务"
+  ],
+  "should": [
+    "高精度全息三维地震技术",
+    "采集处理解释一体化技术",
+    "地震地质工程一体化",
+    "高保真WEFOX地震资料",
+    "智能成像技术",
+    "油气勘探开发",
+    "渤海合同区块勘探",
+    "南海合同区块勘探",
+    "新疆合作区开发",
+    "蒙古区块勘探"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "油气勘探服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "地震数据处理解释服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:16:49"
+}

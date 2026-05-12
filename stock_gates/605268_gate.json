@@ -1,0 +1,40 @@
+{
+  "stock_id": "605268",
+  "stock_name": "王力安防",
+  "concept": "安防门锁",
+  "strategy_type": "industry_chain",
+  "must": [
+    "安防门锁",
+    "钢质安全门",
+    "安全锁"
+  ],
+  "should": [
+    "智能门窗锁",
+    "爱岗智能家居系统",
+    "多向自动锁",
+    "其他门",
+    "全屋定制",
+    "自主研发安全锁",
+    "国内首家安全门上市公司",
+    "行业CR5约15%",
+    "智能锁传统五金阵营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "安防门锁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钢质安全门",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "安全锁",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:03:15"
+}

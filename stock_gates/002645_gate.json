@@ -1,0 +1,41 @@
+{
+  "stock_id": "002645",
+  "stock_name": "华宏科技",
+  "concept": "稀土回收龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "稀土回收龙头",
+    "稀土回收",
+    "废钢加工"
+  ],
+  "should": [
+    "电梯零部件",
+    "汽车拆解",
+    "废料收集-稀土回收-磁材加工",
+    "废钢加工设备及运营",
+    "废钢加工设备市占率约30%",
+    "稀土废料处理能力20000吨",
+    "镨钕氧化物产能超5000吨",
+    "市场占有率超25%",
+    "废钢板块产业链完善",
+    "东海、迁安盈利能力强"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "稀土回收龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "稀土回收",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "废钢加工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:51:22"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "002180",
+  "stock_name": "纳思达",
+  "concept": "打印与芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "激光打印机整机",
+    "激光打印机原装耗材",
+    "打印机主控SoC芯片",
+    "耗材芯片",
+    "打印机通用耗材"
+  ],
+  "should": [
+    "打印影像芯片",
+    "工控安全芯片",
+    "消费级产品芯片",
+    "新能源芯片",
+    "汽车电子芯片",
+    "打印机各级源代码",
+    "软固件核心技术",
+    "打印机引擎",
+    "CPU设计技术",
+    "多核SoC专用芯片设计技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "激光打印机整机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "激光打印机原装耗材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "打印机主控SoC芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "耗材芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "打印机通用耗材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:27:53"
+}

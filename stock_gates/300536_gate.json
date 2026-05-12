@@ -1,0 +1,36 @@
+{
+  "stock_id": "300536",
+  "stock_name": "农尚环境",
+  "concept": "园林绿化服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "园林绿化工程施工",
+    "园林景观设计"
+  ],
+  "should": [
+    "园林养护",
+    "苗木培育",
+    "园林绿化服务",
+    "市政公共园林",
+    "地产景观园林",
+    "公开投标",
+    "邀请投标",
+    "一体化服务",
+    "品牌形象",
+    "技术研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "园林绿化工程施工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "园林景观设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:31:39"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "688720",
+  "stock_name": "艾森股份",
+  "concept": "电子化学品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电镀液及配套试剂"
+  ],
+  "should": [
+    "光刻胶及配套试剂",
+    "电子化学品",
+    "电镀液配方",
+    "光刻胶配方",
+    "整体方案能力",
+    "集成电路封装",
+    "新型电子元件",
+    "显示面板",
+    "航空航天",
+    "军工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电镀液及配套试剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:24:34"
+}

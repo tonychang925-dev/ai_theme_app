@@ -1,0 +1,43 @@
+{
+  "stock_id": "688173",
+  "stock_name": "希荻微",
+  "concept": "模拟芯片设计",
+  "strategy_type": "industry_chain",
+  "must": [
+    "模拟芯片设计",
+    "DC/DC芯片",
+    "充电管理芯片",
+    "端口保护和信号切换芯片"
+  ],
+  "should": [
+    "高压电荷泵",
+    "车规级AEC-Q100",
+    "主控芯片集成",
+    "高通平台参考设计",
+    "MTK平台参考设计",
+    "三星供应商",
+    "奥迪/现代/起亚供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "模拟芯片设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "DC/DC芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "充电管理芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "端口保护和信号切换芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:10:40"
+}

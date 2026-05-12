@@ -1,0 +1,36 @@
+{
+  "stock_id": "688359",
+  "stock_name": "三孚新科",
+  "concept": "表面工程化学品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "表面工程化学品",
+    "电子化学品"
+  ],
+  "should": [
+    "通用电镀专用化学品",
+    "PCB水平沉铜专用化学品",
+    "化学镍金专用化学品",
+    "高耐蚀化学镍专用化学品",
+    "除油专用化学品",
+    "装饰性电镀添加剂",
+    "PCB孔金属化",
+    "PCB表面处理",
+    "通讯设备",
+    "装饰性/防护性电镀"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "表面工程化学品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子化学品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:16:31"
+}

@@ -1,0 +1,27 @@
+{
+  "stock_id": "688613",
+  "stock_name": "奥精医疗",
+  "concept": "再生医学材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "再生医学材料"
+  ],
+  "should": [
+    "胶原蛋白海绵",
+    "矿化胶原技术",
+    "仿生材料",
+    "骨修复",
+    "不规则骨缺损治疗",
+    "骨盆髋臼骨折治疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "再生医学材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:22:10"
+}

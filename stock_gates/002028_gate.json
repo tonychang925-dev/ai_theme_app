@@ -1,0 +1,51 @@
+{
+  "stock_id": "002028",
+  "stock_name": "思源电气",
+  "concept": "电力设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "变压器",
+    "电网智能化技术",
+    "海外EPC",
+    "储能",
+    "汽车电子"
+  ],
+  "should": [
+    "高压一次设备技术",
+    "电网一次设备",
+    "电网二次设备",
+    "储能技术",
+    "汽车电子技术",
+    "智能变电站",
+    "继电保护",
+    "高压开关",
+    "电抗器",
+    "无功补偿器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "变压器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电网智能化技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海外EPC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车电子",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:19:09"
+}

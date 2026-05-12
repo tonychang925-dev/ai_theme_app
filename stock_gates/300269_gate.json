@@ -1,0 +1,36 @@
+{
+  "stock_id": "300269",
+  "stock_name": "联建光电",
+  "concept": "LED显示设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LED小间距显示产品",
+    "倒装COB封装技术"
+  ],
+  "should": [
+    "Mini-LED",
+    "Micro-LED",
+    "LED显示设备",
+    "裸眼3D大屏",
+    "会议一体机",
+    "裸眼3D技术",
+    "指挥监控调度",
+    "大数据中心",
+    "公共交通及信息发布",
+    "企业展示及会议"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED小间距显示产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "倒装COB封装技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:20:28"
+}

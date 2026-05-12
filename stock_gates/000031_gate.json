@@ -1,0 +1,36 @@
+{
+  "stock_id": "000031",
+  "stock_name": "大悦城",
+  "concept": "城市综合体商业地产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大悦城",
+    "城市综合体商业地产"
+  ],
+  "should": [
+    "商业地产",
+    "房地产开发",
+    "经营",
+    "销售",
+    "出租",
+    "管理住宅",
+    "商用物业",
+    "住宅",
+    "产业地产",
+    "写字楼"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大悦城",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市综合体商业地产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:47:48"
+}

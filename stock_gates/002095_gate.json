@@ -1,0 +1,51 @@
+{
+  "stock_id": "002095",
+  "stock_name": "生意宝",
+  "concept": "B2B电商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "B2B电商",
+    "电子商务",
+    "产业互联网",
+    "供应链金融",
+    "产业大数据"
+  ],
+  "should": [
+    "互联网信息服务",
+    "专业搜索引擎",
+    "企业应用软件开发",
+    "中国化工网",
+    "全球化工网",
+    "中国纺织网",
+    "医药网",
+    "原材料价格大数据",
+    "化工行业",
+    "纺织行业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "B2B电商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子商务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "产业互联网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "供应链金融",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "产业大数据",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:22:55"
+}

@@ -1,0 +1,27 @@
+{
+  "stock_id": "301459",
+  "stock_name": "丰茂股份",
+  "concept": "精密橡胶零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密橡胶零部件"
+  ],
+  "should": [
+    "传动系统部件",
+    "流体管路系统部件",
+    "密封系统部件",
+    "同步开发能力",
+    "自主开发能力",
+    "CNAS实验室认可"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密橡胶零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:05:14"
+}

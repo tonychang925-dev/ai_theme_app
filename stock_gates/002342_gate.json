@@ -1,0 +1,31 @@
+{
+  "stock_id": "002342",
+  "stock_name": "巨力索具",
+  "concept": "索具制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "索具制造"
+  ],
+  "should": [
+    "吊带缆绳系列",
+    "链条系列",
+    "钢丝绳索具系列",
+    "钢丝绳系列",
+    "夹具吊梁滑车系列",
+    "连接件设备系列",
+    "缆索系列",
+    "钢拉杆系列",
+    "起重机结构件系列",
+    "国内最大的索具生产基地"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "索具制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:36:38"
+}

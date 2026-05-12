@@ -1,0 +1,33 @@
+{
+  "stock_id": "001259",
+  "stock_name": "利仁科技",
+  "concept": "厨房小家电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "厨房小家电",
+    "电饼铛类"
+  ],
+  "should": [
+    "空气炸锅类",
+    "多功能锅类",
+    "电烧烤类",
+    "线上渠道",
+    "境内市场",
+    "电饼铛先驱者和领导者",
+    "品牌知名度高"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "厨房小家电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电饼铛类",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:14:45"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "603999",
+  "stock_name": "读者传媒",
+  "concept": "文化传媒出版",
+  "strategy_type": "industry_chain",
+  "must": [
+    "读者品牌"
+  ],
+  "should": [
+    "期刊出版",
+    "教材教辅出版",
+    "图书出版",
+    "微信公众号",
+    "学习强国号",
+    "喜马拉雅订阅号",
+    "抖音号",
+    "期刊发行",
+    "教材教辅发行",
+    "电商直播"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "读者品牌",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:00:46"
+}

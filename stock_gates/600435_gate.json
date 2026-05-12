@@ -1,0 +1,51 @@
+{
+  "stock_id": "600435",
+  "stock_name": "北方导航",
+  "concept": "导弹制导控制",
+  "strategy_type": "industry_chain",
+  "must": [
+    "导弹制导控制",
+    "制导控制",
+    "导航控制",
+    "超短波地空通信",
+    "惯性导航"
+  ],
+  "should": [
+    "超短波通信设备",
+    "卫星通信设备",
+    "弹载数据链",
+    "探测控制",
+    "稳定控制",
+    "电台及卫星通信",
+    "电连接器",
+    "无线电通信",
+    "卫星通信",
+    "弹载数据链技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "导弹制导控制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "制导控制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "导航控制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超短波地空通信",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "惯性导航",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:17:58"
+}

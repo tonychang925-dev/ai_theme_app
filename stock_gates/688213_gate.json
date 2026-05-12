@@ -1,0 +1,36 @@
+{
+  "stock_id": "688213",
+  "stock_name": "思特威",
+  "concept": "图像传感器芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "图像传感器芯片",
+    "智慧安防CIS"
+  ],
+  "should": [
+    "消费电子CIS",
+    "汽车电子CIS",
+    "高端工业线阵CIS",
+    "国产自研高端BSI工艺平台",
+    "主控芯片",
+    "固件开发",
+    "智能视频监控系统",
+    "门禁系统",
+    "停车场管理系统",
+    "人脸识别系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "图像传感器芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧安防CIS",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:12:04"
+}

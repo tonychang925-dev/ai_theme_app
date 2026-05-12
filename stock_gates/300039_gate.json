@@ -1,0 +1,30 @@
+{
+  "stock_id": "300039",
+  "stock_name": "上海凯宝",
+  "concept": "中药现代化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "痰热清注射液"
+  ],
+  "should": [
+    "痰热清胶囊",
+    "体外培育熊胆粉",
+    "指纹图谱检测技术",
+    "中药现代化",
+    "呼吸系统疾病",
+    "重大疫情防控",
+    "流感防治",
+    "新冠肺炎诊疗",
+    "国家战略储备药品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "痰热清注射液",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:10:33"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "603816",
+  "stock_name": "顾家家居",
+  "concept": "大家居平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "沙发",
+    "床垫",
+    "定制",
+    "全屋定制"
+  ],
+  "should": [
+    "顾家工艺",
+    "顾家布艺",
+    "顾家床垫",
+    "顾家功能",
+    "睡眠中心",
+    "天禧派",
+    "东方荟",
+    "LAZBOY",
+    "ROLF BENZ",
+    "Natuzzi"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "沙发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "床垫",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "定制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全屋定制",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:57:10"
+}

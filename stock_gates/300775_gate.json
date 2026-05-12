@@ -1,0 +1,36 @@
+{
+  "stock_id": "300775",
+  "stock_name": "三角防务",
+  "concept": "航空锻造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钛合金锻造及热处理技术",
+    "超高强度钢细晶化锻造技术"
+  ],
+  "should": [
+    "大型客机机身结构件",
+    "战斗机机身结构件",
+    "直升机机身结构件",
+    "起落架系统结构件",
+    "航空发动机盘类件",
+    "燃气轮机盘类件",
+    "航空锻造",
+    "航空航天大型模锻件核心供应商",
+    "中游锻造环节",
+    "类晶圆代工模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钛合金锻造及热处理技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超高强度钢细晶化锻造技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:42:37"
+}

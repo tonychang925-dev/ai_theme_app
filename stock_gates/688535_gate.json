@@ -1,0 +1,46 @@
+{
+  "stock_id": "688535",
+  "stock_name": "华海诚科",
+  "concept": "半导体封装材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体封装材料",
+    "环氧塑封料(EMC)",
+    "内资半导体封装材料厂商",
+    "国内环氧塑封料主要供应商"
+  ],
+  "should": [
+    "FC底填胶",
+    "液态塑封料",
+    "电子胶黏剂",
+    "GMC",
+    "LMC",
+    "环氧塑封料技术",
+    "电子胶黏剂技术",
+    "流动长度控制",
+    "热膨胀系数平衡",
+    "玻璃化转变温度控制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体封装材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环氧塑封料(EMC)",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "内资半导体封装材料厂商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内环氧塑封料主要供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:20:08"
+}

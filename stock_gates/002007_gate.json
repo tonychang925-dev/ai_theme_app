@@ -1,0 +1,35 @@
+{
+  "stock_id": "002007",
+  "stock_name": "华兰生物",
+  "concept": "血液制品与疫苗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国内血液制品行业龙头",
+    "最大流感疫苗生产基地"
+  ],
+  "should": [
+    "人血白蛋白",
+    "免疫球蛋白",
+    "凝血因子类",
+    "流感病毒裂解疫苗",
+    "四价流感病毒裂解疫苗",
+    "甲型H1N1流感病毒裂解疫苗",
+    "重组乙型肝炎疫苗",
+    "冻干人用狂犬病疫苗",
+    "吸附破伤风疫苗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国内血液制品行业龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "最大流感疫苗生产基地",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:18:10"
+}

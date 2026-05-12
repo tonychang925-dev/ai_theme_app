@@ -1,0 +1,41 @@
+{
+  "stock_id": "603359",
+  "stock_name": "东珠生态",
+  "concept": "生态修复",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生态修复",
+    "市政景观",
+    "林业碳汇"
+  ],
+  "should": [
+    "生态修复核心技术",
+    "生态湿地保护",
+    "水环境治理",
+    "森林公园",
+    "矿山修复",
+    "美丽乡村建设",
+    "国储林",
+    "沙漠治理",
+    "城市园林绿化一级资质",
+    "风景园林工程设计专项甲级资质"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生态修复",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "市政景观",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "林业碳汇",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:50:03"
+}

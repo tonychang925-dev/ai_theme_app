@@ -1,0 +1,43 @@
+{
+  "stock_id": "688251",
+  "stock_name": "井松智能",
+  "concept": "智能仓储物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能仓储物流系统",
+    "智能仓储物流设备",
+    "AGV小车"
+  ],
+  "should": [
+    "窄巷道AGV",
+    "平衡重AGV",
+    "无人搬运—小精灵AGV",
+    "重载穿梭车",
+    "重载叉车式AGV",
+    "仓储管理系统(WMS)",
+    "仓储控制系统(WCS)",
+    "制造执行系统(MES)",
+    "AGV调度系统",
+    "智能仓储物流"
+  ],
+  "not": [
+    "主控芯片"
+  ],
+  "evidence_refs": [
+    {
+      "term": "智能仓储物流系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能仓储物流设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AGV小车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:13:03"
+}

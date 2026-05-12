@@ -1,0 +1,36 @@
+{
+  "stock_id": "002975",
+  "stock_name": "博杰股份",
+  "concept": "智能制造设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业自动化设备",
+    "电子测试设备",
+    "智能制造设备"
+  ],
+  "should": [
+    "自动化测试设备",
+    "自动化组装设备",
+    "平台化技术",
+    "模块化技术",
+    "积木式搭建"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业自动化设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子测试设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能制造设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:05:39"
+}

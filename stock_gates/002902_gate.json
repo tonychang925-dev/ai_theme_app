@@ -1,0 +1,27 @@
+{
+  "stock_id": "002902",
+  "stock_name": "铭普光磁",
+  "concept": "磁性光通信",
+  "strategy_type": "industry_chain",
+  "must": [
+    "磁性元器件",
+    "光通信产品"
+  ],
+  "should": [
+    "电源产品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "磁性元器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光通信产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:02:23"
+}

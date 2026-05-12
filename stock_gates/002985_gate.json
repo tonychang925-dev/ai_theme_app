@@ -1,0 +1,46 @@
+{
+  "stock_id": "002985",
+  "stock_name": "北摩高科",
+  "concept": "航空制动龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "刹车盘（副）",
+    "飞机刹车系统供应商",
+    "刹车机轮",
+    "刹车控制系统"
+  ],
+  "should": [
+    "粉末冶金烧结技术",
+    "防滑控制算法技术",
+    "伺服阀控制技术",
+    "传感器控制技术",
+    "航空制动龙头",
+    "歼击机",
+    "轰炸机",
+    "运输机",
+    "教练机",
+    "军贸机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "刹车盘（副）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "飞机刹车系统供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "刹车机轮",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "刹车控制系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:06:14"
+}

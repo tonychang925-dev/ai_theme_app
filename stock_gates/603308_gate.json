@@ -1,0 +1,46 @@
+{
+  "stock_id": "603308",
+  "stock_name": "应流股份",
+  "concept": "高端装备零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航空发动机和燃气轮机叶片",
+    "核级铸造零部件",
+    "泵及阀门零件",
+    "机械装备构件"
+  ],
+  "should": [
+    "主泵泵壳",
+    "核级阀门阀体",
+    "中子吸收材料",
+    "金属保温层",
+    "机匣",
+    "喷嘴环",
+    "导向器",
+    "大型高效采矿设备零部件",
+    "特大型重载机械零部件",
+    "工程机械零部件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航空发动机和燃气轮机叶片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核级铸造零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "泵及阀门零件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机械装备构件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:48:45"
+}

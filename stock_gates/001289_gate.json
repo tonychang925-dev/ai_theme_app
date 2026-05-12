@@ -1,0 +1,37 @@
+{
+  "stock_id": "001289",
+  "stock_name": "龙源电力",
+  "concept": "风电运营龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风电运营龙头",
+    "风电设计开发与运营"
+  ],
+  "should": [
+    "火电",
+    "光伏",
+    "生物质",
+    "地热",
+    "数字化共享平台",
+    "新增资源储备56.46吉瓦",
+    "多能互补项目8.00吉瓦",
+    "国家能源集团全产业链优势"
+  ],
+  "not": [
+    "风电11.76吉瓦",
+    "光伏36.70吉瓦"
+  ],
+  "evidence_refs": [
+    {
+      "term": "风电运营龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电设计开发与运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:15:26"
+}

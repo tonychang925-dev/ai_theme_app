@@ -1,0 +1,30 @@
+{
+  "stock_id": "603991",
+  "stock_name": "至正股份",
+  "concept": "半导体封装材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体引线框架",
+    "半导体封装材料"
+  ],
+  "should": [
+    "半导体专用设备",
+    "后道先进封装"
+  ],
+  "not": [
+    "线缆用高分子材料"
+  ],
+  "evidence_refs": [
+    {
+      "term": "半导体引线框架",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体封装材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:00:29"
+}

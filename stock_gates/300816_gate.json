@@ -1,0 +1,41 @@
+{
+  "stock_id": "300816",
+  "stock_name": "艾可蓝",
+  "concept": "发动机尾气后处理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "发动机尾气后处理",
+    "柴油机尾气净化产品",
+    "船舶尾气净化产品"
+  ],
+  "should": [
+    "尾气后处理催化剂配方及涂覆技术",
+    "匹配及标定技术",
+    "系统集成技术",
+    "汽油机尾气净化产品",
+    "VOCs废气治理设备",
+    "电控技术",
+    "道路机动车",
+    "非道路移动机械",
+    "船舶",
+    "混合动力汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "发动机尾气后处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "柴油机尾气净化产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "船舶尾气净化产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:44:22"
+}

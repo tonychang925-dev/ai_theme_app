@@ -1,0 +1,46 @@
+{
+  "stock_id": "603956",
+  "stock_name": "威派格",
+  "concept": "智慧水务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧水务",
+    "智慧水务综合解决方案",
+    "工业互联网",
+    "数字化运营"
+  ],
+  "should": [
+    "供排净治全场景解决方案",
+    "智慧水厂运营管控平台",
+    "智能一体化水厂",
+    "数字孪生",
+    "BIM",
+    "人工智能",
+    "水源地",
+    "智慧化水厂",
+    "城市管网调度",
+    "漏损产销差管控"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧水务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧水务综合解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业互联网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字化运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:59:41"
+}

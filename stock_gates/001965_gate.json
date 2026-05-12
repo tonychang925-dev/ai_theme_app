@@ -1,0 +1,32 @@
+{
+  "stock_id": "001965",
+  "stock_name": "招商公路",
+  "concept": "公路投资运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "公路投资运营",
+    "投资运营"
+  ],
+  "should": [
+    "智能交通",
+    "智慧高速",
+    "交通科技",
+    "基建逆周期调节",
+    "基础设施数字化",
+    "车路交通管理一体化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "公路投资运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:17:48"
+}

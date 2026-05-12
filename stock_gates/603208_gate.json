@@ -1,0 +1,36 @@
+{
+  "stock_id": "603208",
+  "stock_name": "江山欧派",
+  "concept": "木门制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "实木复合门",
+    "夹板模压门"
+  ],
+  "should": [
+    "防火门",
+    "入户门",
+    "柜类",
+    "木门制造",
+    "研发",
+    "生产",
+    "精装修",
+    "经销商渠道",
+    "行业第一",
+    "市场份额1.82%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "实木复合门",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "夹板模压门",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:46:21"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "600969",
+  "stock_name": "郴电国际",
+  "concept": "地方综合能源服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "供电",
+    "供水"
+  ],
+  "should": [
+    "供气",
+    "污水处理",
+    "水电开发",
+    "新能源开发",
+    "地方综合能源服务",
+    "综合能源服务",
+    "居民生活用电",
+    "工业用电",
+    "城市供水",
+    "钢铁企业供气"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "供电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "供水",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:32:04"
+}

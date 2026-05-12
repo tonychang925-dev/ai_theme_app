@@ -1,0 +1,34 @@
+{
+  "stock_id": "300107",
+  "stock_name": "建新股份",
+  "concept": "精细化工中间体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "二五酸",
+    "间羟基"
+  ],
+  "should": [
+    "精细化工中间体",
+    "异构体控制",
+    "产品提纯",
+    "加氢还原工艺",
+    "市场占有率全球第一",
+    "技术创新",
+    "区位优势",
+    "环保技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "二五酸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "间羟基",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:13:31"
+}

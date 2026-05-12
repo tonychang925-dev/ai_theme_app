@@ -1,0 +1,46 @@
+{
+  "stock_id": "002332",
+  "stock_name": "仙琚制药",
+  "concept": "甾体激素龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "甾体激素龙头",
+    "原料制剂一体化",
+    "甾体原料药",
+    "甾体制剂"
+  ],
+  "should": [
+    "皮质激素类药物",
+    "性激素类药物",
+    "麻醉与肌松类药物",
+    "工艺切换",
+    "GMP认证",
+    "抗感染",
+    "抗过敏",
+    "抗病毒",
+    "抗休克",
+    "风湿性关节炎"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "甾体激素龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原料制剂一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "甾体原料药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "甾体制剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:35:54"
+}

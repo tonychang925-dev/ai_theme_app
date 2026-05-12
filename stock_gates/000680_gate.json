@@ -1,0 +1,41 @@
+{
+  "stock_id": "000680",
+  "stock_name": "山推股份",
+  "concept": "工程机械制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "推土机",
+    "工程机械制造",
+    "推土机行业领军企业"
+  ],
+  "should": [
+    "履带底盘总成",
+    "传动部件",
+    "装载机",
+    "压路机",
+    "平地机",
+    "摊铺机",
+    "铣刨机",
+    "混凝土机械",
+    "5G",
+    "数字化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "推土机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程机械制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "推土机行业领军企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:00:29"
+}

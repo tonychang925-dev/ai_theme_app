@@ -1,0 +1,31 @@
+{
+  "stock_id": "300470",
+  "stock_name": "中密控股",
+  "concept": "机械密封",
+  "strategy_type": "industry_chain",
+  "must": [
+    "机械密封"
+  ],
+  "should": [
+    "机械密封辅助系统",
+    "橡塑密封",
+    "特种阀门",
+    "旋转喷射泵",
+    "石油化工",
+    "煤化工",
+    "油气输送",
+    "核电",
+    "精细化工",
+    "制药"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "机械密封",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:28:48"
+}

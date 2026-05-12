@@ -1,0 +1,36 @@
+{
+  "stock_id": "603318",
+  "stock_name": "水发燃气",
+  "concept": "天然气综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LNG业务",
+    "城镇燃气运营"
+  ],
+  "should": [
+    "燃气设备制造",
+    "分布式能源综合服务",
+    "LNG生产",
+    "LNG贸易",
+    "城镇燃气销售",
+    "城镇燃气安装",
+    "城镇燃气供应",
+    "管网建设",
+    "天然气发电",
+    "分布式能源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LNG业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城镇燃气运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:48:56"
+}

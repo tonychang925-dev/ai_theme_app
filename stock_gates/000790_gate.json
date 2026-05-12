@@ -1,0 +1,31 @@
+{
+  "stock_id": "000790",
+  "stock_name": "华神科技",
+  "concept": "中药创新药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "三七通舒胶囊"
+  ],
+  "should": [
+    "鼻渊舒口服液",
+    "活力苏口服液",
+    "中药创新药",
+    "国家863计划",
+    "国家火炬计划",
+    "国家重大新药创制计划",
+    "心脑血管",
+    "耳鼻喉",
+    "内分泌",
+    "国家级高新技术企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "三七通舒胶囊",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:04:52"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "300855",
+  "stock_name": "图南股份",
+  "concept": "高温合金",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高温合金",
+    "铸造高温合金母合金",
+    "精密铸件",
+    "变形高温合金",
+    "航空发动机"
+  ],
+  "should": [
+    "国内航发领域主要供应商",
+    "超纯净高温合金熔炼",
+    "近净型熔模精密铸造",
+    "高精度无缝管材制造",
+    "航天器",
+    "火箭发动机",
+    "舰船燃气轮机",
+    "工业燃气轮机",
+    "核反应堆",
+    "化工设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高温合金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铸造高温合金母合金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密铸件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "变形高温合金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航空发动机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:46:11"
+}

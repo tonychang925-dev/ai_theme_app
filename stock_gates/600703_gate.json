@@ -1,0 +1,41 @@
+{
+  "stock_id": "600703",
+  "stock_name": "三安光电",
+  "concept": "化合物半导体龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LED芯片",
+    "化合物半导体龙头",
+    "MiniLED"
+  ],
+  "should": [
+    "化合物半导体器件",
+    "射频产品",
+    "碳化硅MOSFET",
+    "碳化硅二极管",
+    "化合物半导体材料",
+    "外延片",
+    "芯片",
+    "微波射频",
+    "电力电子",
+    "光通讯"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化合物半导体龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MiniLED",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:25:26"
+}

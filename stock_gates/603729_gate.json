@@ -1,0 +1,36 @@
+{
+  "stock_id": "603729",
+  "stock_name": "龙韵股份",
+  "concept": "数字化营销",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字化营销全案服务",
+    "广告媒介代理"
+  ],
+  "should": [
+    "酒类销售",
+    "数字化营销",
+    "大数据技术",
+    "内容营销",
+    "短视频制作",
+    "直播带货",
+    "品牌管理",
+    "创意设计",
+    "视频制作",
+    "广告策略"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字化营销全案服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "广告媒介代理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:55:45"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "600618",
+  "stock_name": "氯碱化工",
+  "concept": "氯碱化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "氯碱化工",
+    "烧碱",
+    "聚氯乙烯"
+  ],
+  "should": [
+    "环氧丙烷",
+    "聚醚多元醇",
+    "催化氧化法HC回收循环利用",
+    "危化生产",
+    "全国氯碱行业之首",
+    "智能制造",
+    "数字化建设",
+    "绿色低碳",
+    "产业链优化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "氯碱化工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "烧碱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚氯乙烯",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:23:03"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "002999",
+  "stock_name": "天禾股份",
+  "concept": "农资流通服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农资流通",
+    "农技服务"
+  ],
+  "should": [
+    "配送中心",
+    "县域农服公司",
+    "农资服务站",
+    "种植大户",
+    "复混肥",
+    "农药",
+    "氮肥",
+    "钾肥",
+    "农资流通服务",
+    "直达终端的网络配送体系"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农资流通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "农技服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:06:58"
+}

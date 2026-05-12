@@ -1,0 +1,49 @@
+{
+  "stock_id": "600497",
+  "stock_name": "驰宏锌锗",
+  "concept": "铅锌锗采冶",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铅锌锗采冶",
+    "锌",
+    "铅",
+    "锗",
+    "铅锌冶炼一体化"
+  ],
+  "should": [
+    "银",
+    "硫酸",
+    "火法冶炼",
+    "湿法冶炼",
+    "资源综合回收",
+    "国防尖端工业",
+    "锗金属产量占全球25%",
+    "铅锌出矿品位行业领先"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铅锌锗采冶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铅锌冶炼一体化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:19:17"
+}

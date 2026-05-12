@@ -1,0 +1,31 @@
+{
+  "stock_id": "300751",
+  "stock_name": "迈为股份",
+  "concept": "HJT电池设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "HJT电池设备"
+  ],
+  "should": [
+    "全自动太阳能电池丝网印刷机",
+    "自动上片机",
+    "红外线干燥炉",
+    "光伏激光设备",
+    "印刷技术",
+    "激光技术",
+    "真空技术",
+    "光伏产业链太阳能电池生产",
+    "HJT电池片生产",
+    "OLED设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "HJT电池设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:41:31"
+}

@@ -1,0 +1,35 @@
+{
+  "stock_id": "300048",
+  "stock_name": "合康新能",
+  "concept": "变频器与新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高压变频器",
+    "低压变频器"
+  ],
+  "should": [
+    "动态无功补偿装置",
+    "户用储能",
+    "工商业侧储能",
+    "发电侧储能",
+    "高低压变频器驱动技术",
+    "高效节能技术",
+    "先进环保技术",
+    "资源循环再利用技术",
+    "电力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高压变频器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "低压变频器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:10:59"
+}

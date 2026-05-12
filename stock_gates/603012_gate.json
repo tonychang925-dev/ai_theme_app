@@ -1,0 +1,44 @@
+{
+  "stock_id": "603012",
+  "stock_name": "创力集团",
+  "concept": "煤炭机械制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤炭机械制造",
+    "采煤机",
+    "掘进机",
+    "智能连续开采成套装备"
+  ],
+  "should": [
+    "煤矿用锚杆转载机组",
+    "掘锚机",
+    "永磁同步牵引电机变频驱动控制",
+    "全数字化采煤机",
+    "煤矿智能化建设",
+    "露天煤矿端帮压煤开采",
+    "全国煤炭机械工业优秀企业",
+    "产量连续三年稳居全国前六位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤炭机械制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "采煤机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "掘进机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能连续开采成套装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:40:58"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "002825",
+  "stock_name": "纳尔股份",
+  "concept": "精密涂布材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数码喷印材料",
+    "汽车保护膜"
+  ],
+  "should": [
+    "氢能源产品",
+    "手机保护膜",
+    "精密涂布材料",
+    "膜电极",
+    "高性能燃料电池膜电极技术",
+    "精密涂布技术",
+    "光学及电子功能膜材料",
+    "户外广告",
+    "汽车前装及汽车后市场",
+    "手机等3C产品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数码喷印材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车保护膜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:59:00"
+}

@@ -1,0 +1,30 @@
+{
+  "stock_id": "601330",
+  "stock_name": "绿色动力",
+  "concept": "垃圾焚烧发电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "垃圾焚烧发电"
+  ],
+  "should": [
+    "供汽业务",
+    "多驱动逆推式焚烧炉",
+    "二噁英在线预警控制技术",
+    "二噁英低温合成阻滞剂试验",
+    "焚烧炉炉内高分子脱硝系统",
+    "供汽",
+    "垃圾处理量",
+    "上网电量",
+    "对外供汽量"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "垃圾焚烧发电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:36:12"
+}

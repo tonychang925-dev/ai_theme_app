@@ -1,0 +1,41 @@
+{
+  "stock_id": "603331",
+  "stock_name": "百达精工",
+  "concept": "精密零部件制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金属成形",
+    "精密加工",
+    "热处理工艺"
+  ],
+  "should": [
+    "汽车零部件",
+    "压缩机零部件",
+    "精密铸造",
+    "锻造加工",
+    "冷挤加工",
+    "精密零部件制造",
+    "家用空调",
+    "热泵热水器",
+    "除湿机",
+    "热泵干衣机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金属成形",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热处理工艺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:49:24"
+}

@@ -1,0 +1,32 @@
+{
+  "stock_id": "301005",
+  "stock_name": "超捷股份",
+  "concept": "汽车紧固件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车紧固件",
+    "紧固件"
+  ],
+  "should": [
+    "连接件",
+    "汽车零部件",
+    "新能源汽车",
+    "航空航天精密零部件",
+    "汽车紧固件行业重要供应商",
+    "高精密零件制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车紧固件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "紧固件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:52:44"
+}

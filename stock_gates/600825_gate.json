@@ -1,0 +1,44 @@
+{
+  "stock_id": "600825",
+  "stock_name": "新华传媒",
+  "concept": "文化传媒发行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "图书发行",
+    "报刊经营",
+    "新华书店",
+    "中小学教材发行权"
+  ],
+  "should": [
+    "广告代理",
+    "传媒投资",
+    "上海书城",
+    "《上海学生英文报》",
+    "文化传媒发行",
+    "直营网点",
+    "主题图书",
+    "广告营销"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "图书发行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "报刊经营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新华书店",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中小学教材发行权",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:28:49"
+}

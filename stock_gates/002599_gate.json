@@ -1,0 +1,35 @@
+{
+  "stock_id": "002599",
+  "stock_name": "盛通股份",
+  "concept": "印刷教育服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全彩出版物综合印刷服务",
+    "出版物印刷"
+  ],
+  "should": [
+    "包装装潢印刷",
+    "印刷教育服务",
+    "科技教育服务",
+    "少儿编程教育",
+    "绿色化",
+    "数字化",
+    "智能化",
+    "融合化",
+    "行业集中度加速集中"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全彩出版物综合印刷服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "出版物印刷",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:49:20"
+}

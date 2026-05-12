@@ -1,0 +1,36 @@
+{
+  "stock_id": "300648",
+  "stock_name": "星云股份",
+  "concept": "锂电池检测系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电池检测系统",
+    "电池仿真及过程测试"
+  ],
+  "should": [
+    "储能智能变流器",
+    "一体式车载直流充电机",
+    "锂电池保护板检测系统",
+    "锂电池成品检测系统",
+    "锂电池组BMS检测系统",
+    "锂电池组充放电检测系统",
+    "锂电池组工况模拟检测系统",
+    "锂电池组自动化组装系统",
+    "消费及小动力锂电池检测",
+    "动力锂电池检测"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电池检测系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电池仿真及过程测试",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:37:06"
+}

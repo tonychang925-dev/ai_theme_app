@@ -1,0 +1,46 @@
+{
+  "stock_id": "000591",
+  "stock_name": "太阳能",
+  "concept": "光伏绿电运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏绿电运营",
+    "太阳能光伏电站投资运营",
+    "光伏电站"
+  ],
+  "should": [
+    "太阳能电池及组件生产销售",
+    "电力",
+    "太阳能电池及组件",
+    "国家电网",
+    "地面电站",
+    "分布式电站",
+    "光伏农业电站",
+    "项目开发能力",
+    "融资能力",
+    "技术创新"
+  ],
+  "not": [
+    "电价政策影响",
+    "补贴发放延迟",
+    "电力改革进度",
+    "光伏项目不达预期"
+  ],
+  "evidence_refs": [
+    {
+      "term": "光伏绿电运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "太阳能光伏电站投资运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏电站",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:57:30"
+}

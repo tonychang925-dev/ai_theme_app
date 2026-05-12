@@ -1,0 +1,31 @@
+{
+  "stock_id": "300828",
+  "stock_name": "锐新科技",
+  "concept": "铝合金精密部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力电子散热器"
+  ],
+  "should": [
+    "铝合金精密部件",
+    "工业节能变频器",
+    "轨道交通",
+    "通讯",
+    "自动化设备",
+    "医疗设备",
+    "新能源汽车",
+    "光伏及储能逆变器",
+    "风电设备",
+    "汽车轻量化精密部品及部件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力电子散热器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:44:58"
+}

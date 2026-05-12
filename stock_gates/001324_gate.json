@@ -1,0 +1,35 @@
+{
+  "stock_id": "001324",
+  "stock_name": "长青科技",
+  "concept": "三明治复合材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "三明治复合材料",
+    "轨交车辆内饰产品"
+  ],
+  "should": [
+    "建筑装饰产品",
+    "城轨地铁车辆配套产品",
+    "动车组车辆配套产品",
+    "城轨地铁",
+    "动车组",
+    "境外轨交车辆",
+    "中国中车客户",
+    "阿尔斯通客户",
+    "庞巴迪客户"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "三明治复合材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轨交车辆内饰产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:16:24"
+}

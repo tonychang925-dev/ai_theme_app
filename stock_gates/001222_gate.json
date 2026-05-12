@@ -1,0 +1,31 @@
+{
+  "stock_id": "001222",
+  "stock_name": "源飞宠物",
+  "concept": "宠物牵引用具",
+  "strategy_type": "industry_chain",
+  "must": [
+    "宠物牵引用具"
+  ],
+  "should": [
+    "宠物零食",
+    "柬埔寨生产基地",
+    "平阳生产基地",
+    "产品设计",
+    "产业化能力",
+    "宠物出行",
+    "户外活动",
+    "户外防护",
+    "宠物口腔清洁",
+    "全球化研产销布局"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "宠物牵引用具",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:14:02"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "603111",
+  "stock_name": "康尼机电",
+  "concept": "智慧交通装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轨道车辆门系统",
+    "全球市场占有率第一"
+  ],
+  "should": [
+    "站台安全门",
+    "新能源汽车零部件",
+    "高压连接器",
+    "站台安全门市占率重回首位",
+    "欧标插座",
+    "欧标模式二",
+    "重卡换电连接器",
+    "智能轮椅",
+    "医用电动移位车",
+    "故障检测与运维软件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轨道车辆门系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球市场占有率第一",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:44:08"
+}

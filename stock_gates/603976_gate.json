@@ -1,0 +1,45 @@
+{
+  "stock_id": "603976",
+  "stock_name": "正川股份",
+  "concept": "药用玻璃包装",
+  "strategy_type": "industry_chain",
+  "must": [
+    "药用玻璃包装",
+    "硼硅玻璃管制瓶",
+    "钠钙玻璃管制瓶",
+    "中硼窑炉技术",
+    "制瓶工艺技术"
+  ],
+  "should": [
+    "铝盖",
+    "铝塑组合盖",
+    "设备自动化升级改造",
+    "药用玻璃管制瓶细分行业龙头企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "药用玻璃包装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硼硅玻璃管制瓶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钠钙玻璃管制瓶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中硼窑炉技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "制瓶工艺技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:59:56"
+}

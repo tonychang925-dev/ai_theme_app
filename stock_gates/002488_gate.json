@@ -1,0 +1,36 @@
+{
+  "stock_id": "002488",
+  "stock_name": "金固股份",
+  "concept": "汽车零部件制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钢制滚型车轮制造",
+    "汽车后服务业务"
+  ],
+  "should": [
+    "钢制车轮制造技术专利",
+    "高强度轻量化技术",
+    "塑粉涂装技术",
+    "EPS金属表面处理技术",
+    "汽车零部件制造",
+    "高端制造业务",
+    "汽车零部件企业",
+    "国内特钢企业",
+    "钢材加工中心",
+    "中国较大钢制滚型车轮制造企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钢制滚型车轮制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车后服务业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:44:05"
+}

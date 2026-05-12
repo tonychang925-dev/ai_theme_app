@@ -1,0 +1,33 @@
+{
+  "stock_id": "000062",
+  "stock_name": "深圳华强",
+  "concept": "电子信息服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子元器件授权分销",
+    "电子元器件产业互联网"
+  ],
+  "should": [
+    "电子信息服务",
+    "线上线下交易服务",
+    "产品服务",
+    "技术服务",
+    "信息服务",
+    "数据服务",
+    "创新创业配套服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子元器件授权分销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子元器件产业互联网",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:49:28"
+}

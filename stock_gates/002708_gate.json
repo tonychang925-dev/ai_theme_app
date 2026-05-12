@@ -1,0 +1,51 @@
+{
+  "stock_id": "002708",
+  "stock_name": "光洋股份",
+  "concept": "轴承龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轴承龙头",
+    "新能源汽车电机",
+    "轮毂轴承单元",
+    "空心轴",
+    "混动变速器"
+  ],
+  "should": [
+    "滚针轴承",
+    "滚子轴承",
+    "离合器分离轴承",
+    "同步器",
+    "汽车变速器",
+    "离合器",
+    "重卡车桥",
+    "轮毂",
+    "高精密轴承技术",
+    "轻量化技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轴承龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轮毂轴承单元",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空心轴",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "混动变速器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:54:18"
+}

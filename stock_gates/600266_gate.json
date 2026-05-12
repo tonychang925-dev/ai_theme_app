@@ -1,0 +1,31 @@
+{
+  "stock_id": "600266",
+  "stock_name": "城建发展",
+  "concept": "房地产开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "房地产开发"
+  ],
+  "should": [
+    "对外股权投资",
+    "商业地产经营",
+    "北京",
+    "住宅",
+    "公寓",
+    "别墅",
+    "商业",
+    "酒店",
+    "写字楼",
+    "文旅"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房地产开发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:13:29"
+}

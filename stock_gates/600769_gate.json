@@ -1,0 +1,27 @@
+{
+  "stock_id": "600769",
+  "stock_name": "祥龙电业",
+  "concept": "供水与建筑",
+  "strategy_type": "industry_chain",
+  "must": [
+    "供水业务"
+  ],
+  "should": [
+    "建筑业务",
+    "半导体企业",
+    "液晶显示屏企业",
+    "武汉新城中心片区",
+    "区域垄断",
+    "弱周期性"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "供水业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:27:07"
+}

@@ -1,0 +1,30 @@
+{
+  "stock_id": "688480",
+  "stock_name": "赛恩斯",
+  "concept": "重金属污染防治",
+  "strategy_type": "industry_chain",
+  "must": [
+    "药剂产品"
+  ],
+  "should": [
+    "运营服务",
+    "污酸资源化治理系列技术",
+    "重金属废水深度处理与回用系列技术",
+    "含砷危废矿化解毒系列技术",
+    "重金属污染环境修复系列技术",
+    "重金属污染防治",
+    "有色金属采选冶企业",
+    "政府环境修复项目",
+    "重金属污染应急处理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "药剂产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:18:49"
+}

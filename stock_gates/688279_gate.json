@@ -1,0 +1,27 @@
+{
+  "stock_id": "688279",
+  "stock_name": "峰岹科技",
+  "concept": "电机驱动控制芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电机驱动控制芯片"
+  ],
+  "should": [
+    "电机驱动芯片HVIC",
+    "电机专用功率器件MOSFET",
+    "电机控制专用IP内核",
+    "算法硬件化",
+    "电机控制器件集成化",
+    "国内BLDC电机驱动控制芯片龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电机驱动控制芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:14:02"
+}

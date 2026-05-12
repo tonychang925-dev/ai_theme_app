@@ -1,0 +1,36 @@
+{
+  "stock_id": "688789",
+  "stock_name": "宏华数科",
+  "concept": "数码喷印设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数码喷印设备",
+    "数码喷印技术"
+  ],
+  "should": [
+    "高速纸转印数码印花设备",
+    "高速导带式数码印花设备",
+    "超高速数码印花机",
+    "主控芯片",
+    "固件开发",
+    "纺织印花",
+    "包装印刷",
+    "标牌标识",
+    "建筑装潢",
+    "电子电路"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数码喷印设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数码喷印技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:25:12"
+}

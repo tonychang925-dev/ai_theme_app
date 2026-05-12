@@ -1,0 +1,51 @@
+{
+  "stock_id": "002171",
+  "stock_name": "楚江新材",
+  "concept": "先进铜基材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "先进铜基材料",
+    "精密铜带",
+    "碳纤维预制体",
+    "碳刹车预制件",
+    "高端热工装备技术"
+  ],
+  "should": [
+    "铜板带",
+    "铜合金",
+    "铜线材",
+    "铜导体",
+    "碳纤维异形预制件",
+    "碳刹车预制件技术",
+    "碳/碳复合材料制备技术",
+    "飞机碳刹车盘",
+    "火箭喉衬",
+    "航天器防热材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "先进铜基材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密铜带",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳纤维预制体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳刹车预制件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端热工装备技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:27:16"
+}

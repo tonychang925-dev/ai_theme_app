@@ -1,0 +1,33 @@
+{
+  "stock_id": "300458",
+  "stock_name": "全志科技",
+  "concept": "音视频SoC芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "音视频SoC芯片",
+    "智能应用处理器SoC"
+  ],
+  "should": [
+    "高性能模拟器件",
+    "无线互联芯片",
+    "超高清视频编解码",
+    "低功耗系统设计",
+    "AI多核整合",
+    "RISC-V架构",
+    "石头科技战略合作伙伴"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "音视频SoC芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能应用处理器SoC",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:28:14"
+}

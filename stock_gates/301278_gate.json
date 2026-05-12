@@ -1,0 +1,36 @@
+{
+  "stock_id": "301278",
+  "stock_name": "快可电子",
+  "concept": "光伏接线盒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏接线盒",
+    "连接器"
+  ],
+  "should": [
+    "智能型接线盒",
+    "大电流光伏接线盒",
+    "电动汽车高压连接器",
+    "EV直流充电插头",
+    "光伏电站",
+    "光伏组件",
+    "逆变器",
+    "汇流箱",
+    "储能",
+    "新能源汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏接线盒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "连接器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:01:38"
+}

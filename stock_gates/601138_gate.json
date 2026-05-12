@@ -1,0 +1,42 @@
+{
+  "stock_id": "601138",
+  "stock_name": "工业富联",
+  "concept": "AI服务器代工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "AI服务器代工",
+    "AI服务器",
+    "高速交换机",
+    "GPU模块与算力板"
+  ],
+  "should": [
+    "AI芯片融合",
+    "液冷散热",
+    "精密结构件",
+    "模型训练",
+    "推理场景",
+    "数据中心高速互联"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "AI服务器代工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AI服务器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高速交换机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "GPU模块与算力板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:34:42"
+}

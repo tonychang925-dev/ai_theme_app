@@ -1,0 +1,47 @@
+{
+  "stock_id": "603626",
+  "stock_name": "科森科技",
+  "concept": "精密金属结构件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密金属结构件",
+    "铰链",
+    "医疗器械",
+    "新能源汽车",
+    "储能"
+  ],
+  "should": [
+    "塑胶结构件",
+    "集成母排（CCS）",
+    "储能箱集成",
+    "笔记本电脑",
+    "苹果",
+    "智能手机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密金属结构件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铰链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗器械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:53:30"
+}

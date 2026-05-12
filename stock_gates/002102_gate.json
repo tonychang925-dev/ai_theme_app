@@ -1,0 +1,42 @@
+{
+  "stock_id": "002102",
+  "stock_name": "能特科技",
+  "concept": "医药中间体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药中间体",
+    "孟鲁司特钠中间体",
+    "瑞舒伐他汀系列中间体"
+  ],
+  "should": [
+    "维生素E",
+    "卡龙酸酐",
+    "生物基法尼烯合成异植物醇创新工艺",
+    "合成工艺开发能力",
+    "大规模生产精细化管理能力",
+    "维生素E中间体领军企业",
+    "与荷兰DSM组建合资公司益曼特"
+  ],
+  "not": [
+    "日用陶瓷",
+    "中国瓷都",
+    "德化"
+  ],
+  "evidence_refs": [
+    {
+      "term": "医药中间体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "孟鲁司特钠中间体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "瑞舒伐他汀系列中间体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:23:24"
+}

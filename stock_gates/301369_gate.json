@@ -1,0 +1,39 @@
+{
+  "stock_id": "301369",
+  "stock_name": "联动科技",
+  "concept": "半导体测试设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体自动化测试系统",
+    "功率半导体测试系统",
+    "集成电路测试系统"
+  ],
+  "should": [
+    "半导体激光打标设备",
+    "QT-8400系列测试平台",
+    "半导体测试设备",
+    "其他机电一体化设备",
+    "激光打标设备及机电一体化设备",
+    "半导体后道封装测试",
+    "晶圆检测（CP）",
+    "成品测试（FT）"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体自动化测试系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功率半导体测试系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集成电路测试系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:04:02"
+}

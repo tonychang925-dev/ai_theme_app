@@ -1,0 +1,51 @@
+{
+  "stock_id": "688459",
+  "stock_name": "哈铁科技",
+  "concept": "轨道交通装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轨道交通装备",
+    "THDS设备",
+    "TPDS设备",
+    "红外轴温探测",
+    "声学诊断"
+  ],
+  "should": [
+    "超声波自动探伤",
+    "机务检测棚",
+    "洗车机",
+    "车辆轴承故障轨旁声学诊断系统",
+    "动车机车车号自动识别系统",
+    "移动式空心轴超声波自动探伤机",
+    "主控芯片",
+    "固件开发",
+    "铁路安全监测检测",
+    "智能运维"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轨道交通装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "THDS设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "TPDS设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "红外轴温探测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "声学诊断",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:18:40"
+}

@@ -1,0 +1,38 @@
+{
+  "stock_id": "002810",
+  "stock_name": "山东赫达",
+  "concept": "纤维素醚龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "纤维素醚龙头",
+    "亚洲纤维素醚龙头",
+    "纤维素醚"
+  ],
+  "should": [
+    "植物胶囊",
+    "人造肉",
+    "羟丙基甲基纤维素（HPMC）",
+    "羟乙基甲基纤维素(HEMC)",
+    "建材/涂料",
+    "医药",
+    "食品添加剂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "纤维素醚龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "亚洲纤维素醚龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纤维素醚",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:58:19"
+}

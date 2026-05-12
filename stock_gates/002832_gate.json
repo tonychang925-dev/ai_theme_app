@@ -1,0 +1,36 @@
+{
+  "stock_id": "002832",
+  "stock_name": "比音勒芬",
+  "concept": "高端运动休闲",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高尔夫服装",
+    "T恤"
+  ],
+  "should": [
+    "高端运动休闲",
+    "功能性面料",
+    "抗菌",
+    "透气",
+    "抗紫外线",
+    "防晒",
+    "冰肤",
+    "高尔夫爱好者",
+    "高净值人群",
+    "中产阶层度假旅游"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高尔夫服装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "T恤",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:59:24"
+}

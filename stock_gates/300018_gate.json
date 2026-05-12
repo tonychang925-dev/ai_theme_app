@@ -1,0 +1,36 @@
+{
+  "stock_id": "300018",
+  "stock_name": "中元股份",
+  "concept": "智能电网设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力故障录波装置",
+    "时间同步装置"
+  ],
+  "should": [
+    "变电站综合自动化装置",
+    "智能配网设备",
+    "智能电网测试仪器仪表",
+    "电能质量监测装置",
+    "智能电网设备",
+    "主控芯片",
+    "固件开发",
+    "微服务架构",
+    "电网建设",
+    "电源建设"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力故障录波装置",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "时间同步装置",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:09:48"
+}

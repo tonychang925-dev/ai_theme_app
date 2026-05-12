@@ -1,0 +1,41 @@
+{
+  "stock_id": "300181",
+  "stock_name": "佐力药业",
+  "concept": "药用真菌制药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "乌灵胶囊",
+    "百令片",
+    "中药配方颗粒"
+  ],
+  "should": [
+    "灵莲花颗粒",
+    "灵泽片",
+    "中药饮片",
+    "药用真菌发酵技术",
+    "真菌生物发酵技术",
+    "药用真菌制药",
+    "精神科",
+    "神经内科",
+    "中医科",
+    "耳鼻喉科"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "乌灵胶囊",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "百令片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中药配方颗粒",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:16:22"
+}

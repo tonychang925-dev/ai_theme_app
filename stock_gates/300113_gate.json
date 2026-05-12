@@ -1,0 +1,41 @@
+{
+  "stock_id": "300113",
+  "stock_name": "顺网科技",
+  "concept": "网吧管理软件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "网维大师",
+    "网吧管理",
+    "云服务"
+  ],
+  "should": [
+    "顺网云电脑",
+    "云网咖",
+    "云玩",
+    "云无盘",
+    "游戏业务",
+    "顺网游戏",
+    "91Y",
+    "Gamelife",
+    "网络安全",
+    "云计算"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "网维大师",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "网吧管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:13:52"
+}

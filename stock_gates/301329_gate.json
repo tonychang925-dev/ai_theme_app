@@ -1,0 +1,29 @@
+{
+  "stock_id": "301329",
+  "stock_name": "信音电子",
+  "concept": "连接器制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "笔记本电脑连接器"
+  ],
+  "should": [
+    "消费电子连接器",
+    "汽车及其他连接器",
+    "笔记本电脑",
+    "电源适配器",
+    "传输连接器",
+    "电源连接器",
+    "影音连接器",
+    "其他连接器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "笔记本电脑连接器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:03:04"
+}

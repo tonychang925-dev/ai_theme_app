@@ -1,0 +1,39 @@
+{
+  "stock_id": "603712",
+  "stock_name": "七一二",
+  "concept": "军用无线通信",
+  "strategy_type": "industry_chain",
+  "must": [
+    "无线通信终端",
+    "系统产品",
+    "超短波通信"
+  ],
+  "should": [
+    "数据链产品",
+    "5G-R",
+    "军用无线通信",
+    "综合布线",
+    "网络技术",
+    "机载通信",
+    "地面通信",
+    "铁路轨交通信"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "无线通信终端",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "系统产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超短波通信",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:55:22"
+}

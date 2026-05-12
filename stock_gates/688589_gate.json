@@ -1,0 +1,36 @@
+{
+  "stock_id": "688589",
+  "stock_name": "力合微",
+  "concept": "电力线通信芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力线通信芯片",
+    "高速电力线通信芯片"
+  ],
+  "should": [
+    "窄带电力线载波通信芯片",
+    "电力线通信模块",
+    "集中器终端",
+    "能源控制器",
+    "融合终端",
+    "信号处理算法技术",
+    "接收机架构",
+    "低功耗芯片设计",
+    "Mesh网络",
+    "智能电网用电信息采集"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力线通信芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高速电力线通信芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:21:30"
+}

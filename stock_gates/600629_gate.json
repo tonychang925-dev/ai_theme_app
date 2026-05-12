@@ -1,0 +1,33 @@
+{
+  "stock_id": "600629",
+  "stock_name": "华建集团",
+  "concept": "工程设计咨询",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程设计咨询",
+    "设计咨询"
+  ],
+  "should": [
+    "工程承包",
+    "北外滩核心区",
+    "世博文化公园",
+    "三林滨江楔形绿地",
+    "绿色低碳",
+    "数字化转型",
+    "原创设计"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程设计咨询",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "设计咨询",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:23:20"
+}

@@ -1,0 +1,43 @@
+{
+  "stock_id": "300118",
+  "stock_name": "东方日升",
+  "concept": "光伏储能",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏+储能",
+    "异质结电池",
+    "HJT电池组件",
+    "储能系统"
+  ],
+  "should": [
+    "银包铜技术",
+    "低N高效清洗技术",
+    "无主栅技术",
+    "光伏储能",
+    "光伏发电",
+    "储能调频服务",
+    "最早进军美国市场的储能企业之一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏+储能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "异质结电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "HJT电池组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:13:44"
+}

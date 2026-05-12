@@ -1,0 +1,40 @@
+{
+  "stock_id": "300537",
+  "stock_name": "广信材料",
+  "concept": "电子感光材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PCB光刻胶",
+    "UV涂料",
+    "国内PCB光刻胶龙头企业"
+  ],
+  "should": [
+    "平板显示光刻胶",
+    "集成电路光刻胶",
+    "自制树脂",
+    "感光成像原理",
+    "紫外光固化技术",
+    "PCB制造",
+    "消费电子外观结构件",
+    "汽车车灯及内外饰",
+    "平板显示"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PCB光刻胶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "UV涂料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内PCB光刻胶龙头企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:31:47"
+}

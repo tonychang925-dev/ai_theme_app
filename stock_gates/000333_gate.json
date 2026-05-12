@@ -1,0 +1,36 @@
+{
+  "stock_id": "000333",
+  "stock_name": "美的集团",
+  "concept": "全球白电巨头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球白电巨头",
+    "国内领先家电企业"
+  ],
+  "should": [
+    "空调",
+    "冰箱",
+    "洗衣机",
+    "厨电",
+    "小家电",
+    "机器人",
+    "暖通空调",
+    "数字化",
+    "智能化",
+    "家用空调内销出货量份额第二"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球白电巨头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内领先家电企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:51:21"
+}

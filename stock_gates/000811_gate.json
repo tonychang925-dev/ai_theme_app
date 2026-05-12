@@ -1,0 +1,30 @@
+{
+  "stock_id": "000811",
+  "stock_name": "冰轮环境",
+  "concept": "制冷压缩机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "制冷压缩机"
+  ],
+  "should": [
+    "烟气余热深度回收技术",
+    "工业余热回收技术",
+    "MVR机械式蒸汽再压缩技术",
+    "氢气液化的大型氦气压缩机关键技术",
+    "大温差换热设备",
+    "余热回收设备",
+    "余热锅炉",
+    "余热发电设备",
+    "热泵产品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "制冷压缩机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:05:47"
+}

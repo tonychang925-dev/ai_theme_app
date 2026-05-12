@@ -1,0 +1,36 @@
+{
+  "stock_id": "688767",
+  "stock_name": "博拓生物",
+  "concept": "POCT诊断服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "POCT诊断服务",
+    "快速免疫诊断产品技术平台"
+  ],
+  "should": [
+    "生殖健康检测系列",
+    "药物滥用（毒品）检测系列",
+    "传染病检测系列",
+    "肿瘤标志物检测系列",
+    "心肌标志物检测系列",
+    "生物核心原料技术平台",
+    "自动化生产工艺技术平台",
+    "基因重组蛋白表达技术",
+    "各级医疗机构",
+    "司法检测系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "POCT诊断服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "快速免疫诊断产品技术平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:24:52"
+}

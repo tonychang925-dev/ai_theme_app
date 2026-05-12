@@ -1,0 +1,46 @@
+{
+  "stock_id": "601015",
+  "stock_name": "陕西黑猫",
+  "concept": "煤焦化循环经济",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤焦化循环经济",
+    "循环经济产业链",
+    "焦炭",
+    "焦、气、化联产"
+  ],
+  "should": [
+    "精煤",
+    "甲醇",
+    "合成氨",
+    "LNG",
+    "BDO",
+    "钢铁厂",
+    "化工产品",
+    "煤矿直供",
+    "贸易商供应",
+    "长协战略合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤焦化循环经济",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "循环经济产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "焦炭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "焦、气、化联产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:33:26"
+}

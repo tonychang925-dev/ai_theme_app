@@ -1,0 +1,41 @@
+{
+  "stock_id": "603798",
+  "stock_name": "康普顿",
+  "concept": "润滑油及新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "润滑油",
+    "车用尿素",
+    "纳米润滑材料"
+  ],
+  "should": [
+    "氢能设备",
+    "防结晶车用尿素",
+    "汽车养护品",
+    "发动机冷却液",
+    "膜电极",
+    "氢燃料电池电堆",
+    "主控芯片（氢能）",
+    "润滑油及新能源",
+    "催化剂",
+    "柴油发动机尾气处理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "润滑油",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车用尿素",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纳米润滑材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:56:41"
+}

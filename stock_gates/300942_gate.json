@@ -1,0 +1,31 @@
+{
+  "stock_id": "300942",
+  "stock_name": "易瑞生物",
+  "concept": "食品安全快检",
+  "strategy_type": "industry_chain",
+  "must": [
+    "食品安全快速检测",
+    "食品安全快检"
+  ],
+  "should": [
+    "动物诊断",
+    "POCT常规业务",
+    "国内发明专利",
+    "外观设计专利",
+    "实用新型专利"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "食品安全快速检测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "食品安全快检",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:50:04"
+}

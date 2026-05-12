@@ -1,0 +1,45 @@
+{
+  "stock_id": "688118",
+  "stock_name": "普元信息",
+  "concept": "软件基础平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "软件基础平台",
+    "中间件产品",
+    "智能数据中台产品",
+    "数字化应用解决方案"
+  ],
+  "should": [
+    "应用支撑",
+    "应用集成",
+    "云原生",
+    "数据治理",
+    "低代码开发",
+    "iPALM模式",
+    "软件产品+技术服务",
+    "产品交付",
+    "技术服务交付"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "软件基础平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中间件产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能数据中台产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字化应用解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:08:53"
+}

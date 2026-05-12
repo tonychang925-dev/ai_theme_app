@@ -1,0 +1,46 @@
+{
+  "stock_id": "002542",
+  "stock_name": "中化岩土",
+  "concept": "工程服务与通用航空",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程服务与通用航空",
+    "工程服务",
+    "通用航空",
+    "文化旅游"
+  ],
+  "should": [
+    "岩土工程",
+    "机场工程",
+    "市政工程",
+    "地下工程",
+    "工程咨询",
+    "工程监理",
+    "民航工程咨询",
+    "规划设计",
+    "项目投资及管理",
+    "工程建设"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程服务与通用航空",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通用航空",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "文化旅游",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:46:24"
+}

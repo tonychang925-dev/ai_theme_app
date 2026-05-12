@@ -1,0 +1,36 @@
+{
+  "stock_id": "600257",
+  "stock_name": "大湖股份",
+  "concept": "大健康产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "健康产品的生产与销售",
+    "健康医疗服务"
+  ],
+  "should": [
+    "鲜活系列",
+    "冰鲜系列",
+    "冰冻系列",
+    "白酒系列",
+    "药品、保健品、医疗器械",
+    "湖泊生物治理与富营养化控制技术",
+    "大水面净水渔业水环境治理技术",
+    "德山酒古法酿造技艺",
+    "康复护理医疗服务",
+    "大健康产业链"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "健康产品的生产与销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "健康医疗服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:13:12"
+}

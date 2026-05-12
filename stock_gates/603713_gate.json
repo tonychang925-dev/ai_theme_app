@@ -1,0 +1,39 @@
+{
+  "stock_id": "603713",
+  "stock_name": "密尔克卫",
+  "concept": "化工供应链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "化工供应链",
+    "化工供应链服务",
+    "第三方化工物流"
+  ],
+  "should": [
+    "危化品仓储",
+    "危化品运输",
+    "化工品物流",
+    "区域仓配一体化",
+    "民营化工供应链主板上市第一股",
+    "第三方化工物流渗透率提升",
+    "行业进入壁垒抬高",
+    "化工品产销区域分布不均衡"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "化工供应链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化工供应链服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "第三方化工物流",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:55:25"
+}

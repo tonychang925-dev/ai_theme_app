@@ -1,0 +1,27 @@
+{
+  "stock_id": "301357",
+  "stock_name": "北方长龙",
+  "concept": "军用车辆内饰",
+  "strategy_type": "industry_chain",
+  "must": [
+    "人机环系统内饰"
+  ],
+  "should": [
+    "军用车辆内饰",
+    "军用车辆",
+    "保密资格",
+    "国军标质量认证体系",
+    "武器装备承制资格",
+    "武器装备科研生产许可证"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "人机环系统内饰",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:03:37"
+}

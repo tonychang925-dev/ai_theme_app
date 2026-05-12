@@ -1,0 +1,41 @@
+{
+  "stock_id": "300035",
+  "stock_name": "中科电气",
+  "concept": "锂电负极材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电负极材料",
+    "负极材料",
+    "人造石墨负极材料"
+  ],
+  "should": [
+    "石墨粉体加工技术",
+    "热处理工艺",
+    "石墨复合技术",
+    "新型艾奇逊石墨化炉",
+    "动力类电池",
+    "消费类电池",
+    "电化学储能",
+    "石墨化委外加工",
+    "石墨化产能自供",
+    "负极一体化产能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电负极材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "负极材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人造石墨负极材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:10:22"
+}

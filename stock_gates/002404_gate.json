@@ -1,0 +1,36 @@
+{
+  "stock_id": "002404",
+  "stock_name": "嘉欣丝绸",
+  "concept": "丝绸全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "丝绸产品生产",
+    "供应链管理"
+  ],
+  "should": [
+    "金融服务",
+    "服装",
+    "生丝",
+    "精密五金部件",
+    "丝绸全产业链",
+    "销售",
+    "外贸",
+    "品牌",
+    "资产经营",
+    "蚕茧收烘"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "丝绸产品生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "供应链管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:40:06"
+}

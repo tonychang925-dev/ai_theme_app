@@ -1,0 +1,50 @@
+{
+  "stock_id": "601633",
+  "stock_name": "长城汽车",
+  "concept": "SUV皮卡制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "哈弗",
+    "魏牌",
+    "欧拉",
+    "坦克",
+    "长城皮卡"
+  ],
+  "should": [
+    "SUV",
+    "皮卡",
+    "轿车",
+    "柠檬混动DHT",
+    "长续航DHT",
+    "咖啡智能",
+    "SUV皮卡制造",
+    "高效燃油动力(ICE)",
+    "纯电动(BEV)"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "哈弗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "魏牌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "欧拉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "坦克",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "长城皮卡",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:37:43"
+}

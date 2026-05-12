@@ -1,0 +1,41 @@
+{
+  "stock_id": "603255",
+  "stock_name": "鼎际得",
+  "concept": "聚烯烃催化剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "聚烯烃催化剂",
+    "抗氧剂单剂",
+    "复合助剂"
+  ],
+  "should": [
+    "齐格勒-纳塔催化剂",
+    "茂金属催化剂",
+    "非茂金属催化剂",
+    "双功能催化剂",
+    "给电子体产品",
+    "聚乙烯(PE)",
+    "聚丙烯(PP)",
+    "乙烯-醋酸乙烯共聚物(EVA)",
+    "聚烯烃弹性体(POE)",
+    "环烯烃共聚物(COC)"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "聚烯烃催化剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "抗氧剂单剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复合助剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:47:28"
+}

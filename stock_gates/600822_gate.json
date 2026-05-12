@@ -1,0 +1,41 @@
+{
+  "stock_id": "600822",
+  "stock_name": "上海物贸",
+  "concept": "生产资料流通",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新车销售",
+    "二手车交易",
+    "售后维修"
+  ],
+  "should": [
+    "有色金属贸易",
+    "物流服务",
+    "化学品交易",
+    "生产资料流通",
+    "新能源车网点布局",
+    "策展业务",
+    "社群营销",
+    "云看车",
+    "租费分离",
+    "一房一价"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新车销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "二手车交易",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "售后维修",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:28:48"
+}

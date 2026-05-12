@@ -1,0 +1,46 @@
+{
+  "stock_id": "603799",
+  "stock_name": "华友钴业",
+  "concept": "锂电材料一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电材料一体化",
+    "镍",
+    "钴",
+    "锂"
+  ],
+  "should": [
+    "红土镍矿",
+    "湿法冶炼",
+    "三元前驱体",
+    "三元正极",
+    "火法冶炼",
+    "粗制氢氧化钴",
+    "电积铜",
+    "硫酸镍",
+    "自有矿山",
+    "镍精炼"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电材料一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "镍",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钴",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:56:40"
+}

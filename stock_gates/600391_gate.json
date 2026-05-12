@@ -1,0 +1,32 @@
+{
+  "stock_id": "600391",
+  "stock_name": "航发科技",
+  "concept": "航空发动机制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航空发动机制造",
+    "航空发动机零部件"
+  ],
+  "should": [
+    "燃气轮机零部件",
+    "航空发动机整机生产经验",
+    "外贸航空技术产品成果",
+    "国内同行业中产品品种最多",
+    "规格系类最全的生产厂家之一",
+    "控股股东成发集团核心配套商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航空发动机制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航空发动机零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:16:53"
+}

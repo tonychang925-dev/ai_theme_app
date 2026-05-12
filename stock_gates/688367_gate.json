@@ -1,0 +1,36 @@
+{
+  "stock_id": "688367",
+  "stock_name": "工大高科",
+  "concept": "铁路信号控制",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铁路信号控制",
+    "智能调度"
+  ],
+  "should": [
+    "智能化矿山系列产品",
+    "信号控制",
+    "地面工业铁路系列产品",
+    "人工智能",
+    "大数据",
+    "物联网",
+    "5G",
+    "WIFI6",
+    "高精度实时定位",
+    "高速无线通信"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铁路信号控制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能调度",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:16:41"
+}

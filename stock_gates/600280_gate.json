@@ -1,0 +1,31 @@
+{
+  "stock_id": "600280",
+  "stock_name": "中央商场",
+  "concept": "百货零售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "百货零售"
+  ],
+  "should": [
+    "罗森便利",
+    "罗森",
+    "迪奥",
+    "华伦天奴",
+    "Cartier",
+    "沛纳海",
+    "联营",
+    "自营",
+    "代销",
+    "租赁"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "百货零售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:13:50"
+}

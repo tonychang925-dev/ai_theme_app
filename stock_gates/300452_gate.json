@@ -1,0 +1,31 @@
+{
+  "stock_id": "300452",
+  "stock_name": "山河药辅",
+  "concept": "口服固体制剂辅料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "口服固体制剂辅料"
+  ],
+  "should": [
+    "微晶纤维素",
+    "羟丙甲纤维素",
+    "低取代羟丙纤维素",
+    "羧甲淀粉钠",
+    "硬脂酸镁",
+    "关联审评审批",
+    "口服固体制剂",
+    "保健品",
+    "植物胶囊",
+    "注射用辅料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "口服固体制剂辅料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:28:00"
+}

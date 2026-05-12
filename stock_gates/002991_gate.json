@@ -1,0 +1,36 @@
+{
+  "stock_id": "002991",
+  "stock_name": "甘源食品",
+  "concept": "籽类坚果龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "籽类口味坚果行业龙头",
+    "籽类坚果龙头"
+  ],
+  "should": [
+    "瓜子仁",
+    "青豌豆",
+    "蚕豆",
+    "综合果仁",
+    "腰果",
+    "夏威夷果",
+    "核桃",
+    "米酥类",
+    "雪饼",
+    "薄脆饼干类"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "籽类口味坚果行业龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "籽类坚果龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:06:34"
+}

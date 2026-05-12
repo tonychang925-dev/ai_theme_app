@@ -1,0 +1,36 @@
+{
+  "stock_id": "300692",
+  "stock_name": "中赋科技",
+  "concept": "水环境治理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "城市污水处理",
+    "工业废水治理"
+  ],
+  "should": [
+    "农村污水治理",
+    "河湖生态修复",
+    "流域治理",
+    "黑臭水体治理",
+    "城镇污水处理",
+    "工业废水处理",
+    "提标改造",
+    "污水处理设施新建",
+    "工业园区建设",
+    "农村污水处理设施建设"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "城市污水处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业废水治理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:39:08"
+}

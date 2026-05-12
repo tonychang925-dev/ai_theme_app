@@ -1,0 +1,51 @@
+{
+  "stock_id": "002428",
+  "stock_name": "云南锗业",
+  "concept": "锗产业链龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锗产业链龙头",
+    "锗矿开采",
+    "区熔锗锭",
+    "二氧化锗",
+    "太阳能锗晶片"
+  ],
+  "should": [
+    "火法富集",
+    "湿法提纯",
+    "区熔精炼",
+    "精深加工",
+    "锗镜片",
+    "红外热像仪",
+    "砷化镓晶片",
+    "磷化铟晶片",
+    "研究开发",
+    "镜头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锗产业链龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锗矿开采",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "区熔锗锭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "二氧化锗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "太阳能锗晶片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:41:19"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "002430",
+  "stock_name": "杭氧股份",
+  "concept": "工业气体龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业气体龙头",
+    "空分设备",
+    "气体分离设备",
+    "气体销售"
+  ],
+  "should": [
+    "工业气体产品",
+    "石化设备",
+    "空气压缩机",
+    "国内空分设备龙头",
+    "工业气体市占率A股第一",
+    "大宗气体市占率A股第一",
+    "外包气体供应市占率A股第一",
+    "氧气压缩机",
+    "氮气压缩机",
+    "离心压缩机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业气体龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空分设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "气体分离设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "气体销售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:41:14"
+}

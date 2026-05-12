@@ -1,0 +1,41 @@
+{
+  "stock_id": "600295",
+  "stock_name": "鄂尔多斯",
+  "concept": "硅合金生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "硅合金生产",
+    "硅系铁合金",
+    "智能化硅基合金创新工厂"
+  ],
+  "should": [
+    "氯碱化工",
+    "多晶硅",
+    "合成氨",
+    "尿素",
+    "无汞催化剂",
+    "循环经济产业链",
+    "钢铁冶炼",
+    "化工新材料",
+    "精细化工",
+    "煤电冶化一体化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "硅合金生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硅系铁合金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能化硅基合金创新工厂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:14:14"
+}

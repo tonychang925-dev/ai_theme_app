@@ -1,0 +1,46 @@
+{
+  "stock_id": "603955",
+  "stock_name": "大千生态",
+  "concept": "生态综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生态综合服务",
+    "城市更新",
+    "乡村振兴",
+    "生态修复"
+  ],
+  "should": [
+    "文旅运营",
+    "生态景观规划与设计",
+    "生态环境建设与治理",
+    "景观养护",
+    "建设工程总承包(EPC)",
+    "建设工程独立承包",
+    "PPP",
+    "风景园林工程设计甲级",
+    "市政公用工程施工总承包二级",
+    "建筑行业建筑工程乙级"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生态综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市更新",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乡村振兴",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生态修复",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:59:36"
+}

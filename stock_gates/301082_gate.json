@@ -1,0 +1,41 @@
+{
+  "stock_id": "301082",
+  "stock_name": "久盛电气",
+  "concept": "防火特种电缆",
+  "strategy_type": "industry_chain",
+  "must": [
+    "防火类特种电缆",
+    "矿物绝缘电缆",
+    "防火特种电缆"
+  ],
+  "should": [
+    "防火类特种电缆研发",
+    "电力电缆",
+    "油井加热电缆",
+    "矿物绝缘电缆技术",
+    "电力",
+    "轨道交通",
+    "建筑",
+    "能源",
+    "石化",
+    "通信"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "防火类特种电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "矿物绝缘电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "防火特种电缆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:55:48"
+}

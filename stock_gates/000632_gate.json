@@ -1,0 +1,41 @@
+{
+  "stock_id": "000632",
+  "stock_name": "三木集团",
+  "concept": "综合性企业集团",
+  "strategy_type": "industry_chain",
+  "must": [
+    "进出口贸易",
+    "房地产开发",
+    "经营性物业运营管理"
+  ],
+  "should": [
+    "创业投资",
+    "建筑材料",
+    "金属材料",
+    "化工产品",
+    "纸制品",
+    "科技创新",
+    "新能源",
+    "医药领域",
+    "出售型房地产",
+    "出租型物业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "进出口贸易",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "房地产开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "经营性物业运营管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:59:06"
+}

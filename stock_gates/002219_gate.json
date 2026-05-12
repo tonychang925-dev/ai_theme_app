@@ -1,0 +1,36 @@
+{
+  "stock_id": "002219",
+  "stock_name": "新里程",
+  "concept": "医疗+制药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医疗服务",
+    "药品制造"
+  ],
+  "should": [
+    "独一味胶囊",
+    "参芪五味子片",
+    "脉平片",
+    "前列安通片",
+    "宫瘤宁胶囊",
+    "三级医院",
+    "二级以上综合医院",
+    "专科医院",
+    "区域医疗中心",
+    "神经内科"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医疗服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "药品制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:29:56"
+}

@@ -1,0 +1,33 @@
+{
+  "stock_id": "603065",
+  "stock_name": "宿迁联盛",
+  "concept": "光稳定剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "受阻胺光稳定剂",
+    "光稳定剂"
+  ],
+  "should": [
+    "紫外线吸收剂",
+    "阻聚剂",
+    "癸二酸二甲酯",
+    "中间体产业化工艺",
+    "下游应用研发能力",
+    "全球市占率居前",
+    "产业链中间环节"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "受阻胺光稳定剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光稳定剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:42:35"
+}

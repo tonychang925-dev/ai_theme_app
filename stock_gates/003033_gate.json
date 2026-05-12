@@ -1,0 +1,36 @@
+{
+  "stock_id": "003033",
+  "stock_name": "征和工业",
+  "concept": "链传动系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "链传动系统",
+    "全球高品质链系统供应商"
+  ],
+  "should": [
+    "正时链",
+    "传动链",
+    "链轮",
+    "输送链",
+    "倍速链",
+    "侧弯链",
+    "曳引链",
+    "哈瓦齿形链",
+    "耐磨性能",
+    "热处理工序"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "链传动系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球高品质链系统供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:08:26"
+}

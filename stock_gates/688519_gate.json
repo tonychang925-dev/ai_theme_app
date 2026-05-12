@@ -1,0 +1,41 @@
+{
+  "stock_id": "688519",
+  "stock_name": "南亚新材",
+  "concept": "覆铜板制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "覆铜板制造",
+    "覆铜板",
+    "高频高速技术"
+  ],
+  "should": [
+    "粘结片",
+    "树脂配方体系",
+    "IC载板材料",
+    "消费电子",
+    "计算机",
+    "通讯",
+    "汽车电子",
+    "航空航天",
+    "工业控制",
+    "印制电路板核心材料供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "覆铜板制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "覆铜板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高频高速技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:19:40"
+}

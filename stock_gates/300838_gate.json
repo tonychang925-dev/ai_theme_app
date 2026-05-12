@@ -1,0 +1,31 @@
+{
+  "stock_id": "300838",
+  "stock_name": "浙江力诺",
+  "concept": "工业控制阀",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业控制阀"
+  ],
+  "should": [
+    "球阀",
+    "调节阀",
+    "蝶阀",
+    "闸阀",
+    "特种专用阀",
+    "衬氟衬胶阀",
+    "定制化设计",
+    "制造技术",
+    "流体动力学",
+    "机械"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业控制阀",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:45:29"
+}

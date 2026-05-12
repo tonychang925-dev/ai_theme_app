@@ -1,0 +1,46 @@
+{
+  "stock_id": "601106",
+  "stock_name": "中国一重",
+  "concept": "重型装备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "核岛设备",
+    "大型铸锻件",
+    "重型容器",
+    "冶金设备"
+  ],
+  "should": [
+    "重型锻压设备",
+    "大型铸锻件原创技术",
+    "正反向焊接",
+    "全位置分区焊接",
+    "炼钢炉渣多组分快速定量分析",
+    "中国核岛装备领导者",
+    "国际先进核岛设备供应商和服务商",
+    "世界炼油用加氢反应器最大供货商",
+    "冶金企业全流程设备供应商",
+    "重型装备制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "核岛设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大型铸锻件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重型容器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冶金设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:34:17"
+}

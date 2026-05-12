@@ -1,0 +1,46 @@
+{
+  "stock_id": "000635",
+  "stock_name": "英力特",
+  "concept": "氯碱化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电石",
+    "聚氯乙烯(PVC)",
+    "烧碱",
+    "E-PVC"
+  ],
+  "should": [
+    "离子膜烧碱技术",
+    "高电流密度自然循环电解槽",
+    "杜邦全氟离子交换膜",
+    "煤熔盐降膜蒸发技术",
+    "108立方米反应釜",
+    "热水入料工艺技术",
+    "超滤反渗透技术",
+    "电石渣制取脱硫剂",
+    "一氧化碳烧制白灰及制取蒸汽",
+    "管材管件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电石",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚氯乙烯(PVC)",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "烧碱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "E-PVC",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:59:24"
+}

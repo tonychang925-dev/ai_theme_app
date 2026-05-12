@@ -1,0 +1,34 @@
+{
+  "stock_id": "600408",
+  "stock_name": "安泰集团",
+  "concept": "煤焦钢一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "焦炭及其副产品",
+    "型钢产品"
+  ],
+  "should": [
+    "JN60-6型焦炉",
+    "干熄焦工艺",
+    "H型钢生产线",
+    "煤焦钢一体化",
+    "钢铁企业",
+    "焦炭贸易商",
+    "循环经济产业链",
+    "链主"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "焦炭及其副产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "型钢产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:17:13"
+}

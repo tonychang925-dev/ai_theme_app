@@ -1,0 +1,31 @@
+{
+  "stock_id": "300665",
+  "stock_name": "飞鹿股份",
+  "concept": "工业防护涂料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业防护涂料",
+    "涂料"
+  ],
+  "should": [
+    "防水防护材料",
+    "轨道交通装备防腐",
+    "轨道建设工程防水",
+    "民用建筑防水",
+    "清洁能源（风电、核电、太阳能）"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业防护涂料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涂料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:37:47"
+}

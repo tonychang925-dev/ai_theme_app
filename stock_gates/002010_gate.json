@@ -1,0 +1,48 @@
+{
+  "stock_id": "002010",
+  "stock_name": "传化智联",
+  "concept": "智能物流平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能物流平台",
+    "智能物流服务平台",
+    "网络货运服务",
+    "公路港城市物流中心",
+    "智能公路港"
+  ],
+  "should": [
+    "陆运通",
+    "融易运",
+    "大票零担数字化服务平台",
+    "整车",
+    "零担",
+    "云仓",
+    "仓配服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能物流平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能物流服务平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "网络货运服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公路港城市物流中心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能公路港",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:18:15"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "300992",
+  "stock_name": "泰福泵业",
+  "concept": "民用水泵",
+  "strategy_type": "industry_chain",
+  "must": [
+    "民用水泵"
+  ],
+  "should": [
+    "陆上泵",
+    "小型潜水泵",
+    "井用潜水泵",
+    "循环泵",
+    "节能泵",
+    "农业灌溉",
+    "生活用水",
+    "深井提水",
+    "畜牧用水",
+    "热水循环"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "民用水泵",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:52:13"
+}

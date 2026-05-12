@@ -1,0 +1,46 @@
+{
+  "stock_id": "603535",
+  "stock_name": "嘉诚国际",
+  "concept": "物流综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "物流综合服务",
+    "定制化物流解决方案",
+    "全球物流解决方案",
+    "全链路物流服务"
+  ],
+  "should": [
+    "嘉诚国际港（二期）",
+    "天运国际（海南）数智加工流通中心",
+    "嘉诚国际（三亚）超级云智世界港",
+    "大湾区嘉诚国际超级世界港",
+    "松下冰箱",
+    "松下美健",
+    "日立电梯",
+    "希音公司（shein）",
+    "北汽福田",
+    "菜鸟"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "物流综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "定制化物流解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球物流解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全链路物流服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:52:07"
+}

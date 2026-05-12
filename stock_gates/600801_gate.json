@@ -1,0 +1,51 @@
+{
+  "stock_id": "600801",
+  "stock_name": "华新建材",
+  "concept": "绿色建材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水泥",
+    "骨料",
+    "水泥行业龙头企业",
+    "华中地区",
+    "西南地区"
+  ],
+  "should": [
+    "混凝土",
+    "UHPC",
+    "助磨剂",
+    "低碳减氮超大规模水泥生产技术",
+    "HIAC系统",
+    "智能行车",
+    "智能巡检",
+    "智能质控",
+    "绿色建材",
+    "替代燃料使用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水泥",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "骨料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水泥行业龙头企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "华中地区",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "西南地区",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:28:11"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "600202",
+  "stock_name": "哈空调",
+  "concept": "空冷设备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电站空冷器",
+    "石化空冷器",
+    "电站空气处理机组"
+  ],
+  "should": [
+    "核电站空气处理机组",
+    "工业空调产品",
+    "单排管空冷凝汽器",
+    "空冷设备制造",
+    "智能制造",
+    "绿色环保",
+    "强链补链",
+    "信息化建设",
+    "产学研合作",
+    "空冷器在烟气提水系统中的应用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电站空冷器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "石化空冷器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电站空气处理机组",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:11:46"
+}

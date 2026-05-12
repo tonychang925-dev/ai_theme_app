@@ -1,0 +1,36 @@
+{
+  "stock_id": "300528",
+  "stock_name": "幸福蓝海",
+  "concept": "影视全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电视剧制作发行",
+    "电影全产业链"
+  ],
+  "should": [
+    "电视剧制作",
+    "电影制作",
+    "院线发行",
+    "影城放映",
+    "电视台",
+    "新媒体公司",
+    "各大院线",
+    "全国十佳电视剧制作单位",
+    "全国文化企业30强提名",
+    "院线全国排名第七"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电视剧制作发行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电影全产业链",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:31:13"
+}

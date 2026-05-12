@@ -1,0 +1,51 @@
+{
+  "stock_id": "301396",
+  "stock_name": "宏景科技",
+  "concept": "智慧城市服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧城市解决方案",
+    "智慧城市服务",
+    "智慧民生",
+    "城市综合管理",
+    "智慧园区"
+  ],
+  "should": [
+    "智能传感节点与终端开发",
+    "物联网平台",
+    "基于GIS的数据可视化和分析",
+    "BIM可视化",
+    "视频监控图像识别",
+    "智能人机交互",
+    "室内高精度位置服务",
+    "智慧社区",
+    "智慧楼宇",
+    "智慧政务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧城市解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧城市服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧民生",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市综合管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧园区",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:04:49"
+}

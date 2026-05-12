@@ -1,0 +1,35 @@
+{
+  "stock_id": "301238",
+  "stock_name": "瑞泰新材",
+  "concept": "锂离子电解液龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂离子电解液龙头",
+    "锂离子电池电解液"
+  ],
+  "should": [
+    "锂离子电池电解液添加剂",
+    "超级电容器电解液",
+    "新型锂盐添加剂二氟磷酸锂",
+    "动力电池",
+    "储能电池",
+    "消费电池",
+    "固态锂离子电池",
+    "第一梯队",
+    "中国超级电容器产业十佳企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂离子电解液龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂离子电池电解液",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:00:31"
+}

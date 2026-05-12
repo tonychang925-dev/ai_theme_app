@@ -1,0 +1,36 @@
+{
+  "stock_id": "600798",
+  "stock_name": "宁波海运",
+  "concept": "电煤运输",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电煤运输",
+    "北方至沿海电厂电煤运输"
+  ],
+  "should": [
+    "国际船舶普通货物运输",
+    "成品油船运输",
+    "高速公路运营",
+    "澳大利亚至国内矿砂运输",
+    "北方至长江、华东、华南成品油运输",
+    "煤炭",
+    "矿砂",
+    "成品油",
+    "5万吨级散货船",
+    "8.5万吨级散货船"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电煤运输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "北方至沿海电厂电煤运输",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:28:07"
+}

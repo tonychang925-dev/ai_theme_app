@@ -1,0 +1,38 @@
+{
+  "stock_id": "688001",
+  "stock_name": "华兴源创",
+  "concept": "检测设备与系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "检测设备与系统",
+    "整线检测系统解决方案",
+    "标准半导体测试设备"
+  ],
+  "should": [
+    "工业自动化测试设备",
+    "测试机",
+    "分选机",
+    "AOI缺陷检测设备",
+    "信号和图像算法",
+    "高速、高频、高精度信号板卡",
+    "机器视觉图像算法"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "检测设备与系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "整线检测系统解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "标准半导体测试设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:04:53"
+}

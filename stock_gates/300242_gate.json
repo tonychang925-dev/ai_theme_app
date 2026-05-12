@@ -1,0 +1,51 @@
+{
+  "stock_id": "300242",
+  "stock_name": "佳云科技",
+  "concept": "移动营销服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "移动营销服务",
+    "应用分发",
+    "信息流广告营销",
+    "OPPO",
+    "vivo"
+  ],
+  "should": [
+    "搜索引擎营销",
+    "超级APP品牌营销",
+    "三星",
+    "百度",
+    "巨量引擎",
+    "广告智能测试系统",
+    "广告投放智能优化系统",
+    "广告创意作品发布系统",
+    "下沉社交",
+    "小说阅读"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "移动营销服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "应用分发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信息流广告营销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "OPPO",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "vivo",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:19:06"
+}

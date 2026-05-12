@@ -1,0 +1,33 @@
+{
+  "stock_id": "300997",
+  "stock_name": "欢乐家",
+  "concept": "罐藏食品领先品牌",
+  "strategy_type": "industry_chain",
+  "must": [
+    "椰子汁",
+    "水果罐头"
+  ],
+  "should": [
+    "乳酸菌饮料",
+    "生产工艺",
+    "植物蛋白饮料",
+    "罐头食品",
+    "生产基地",
+    "大宗包材集中采购",
+    "库存管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "椰子汁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水果罐头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:52:23"
+}

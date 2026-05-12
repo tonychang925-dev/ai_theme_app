@@ -1,0 +1,36 @@
+{
+  "stock_id": "600893",
+  "stock_name": "航发动力",
+  "concept": "航空发动机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航空发动机",
+    "国内唯一供应商"
+  ],
+  "should": [
+    "涡扇10",
+    "涡轴8",
+    "涡喷14",
+    "涡桨6",
+    "涡扇-20",
+    "涡扇-18",
+    "涡扇-11",
+    "涡扇-13",
+    "战斗机",
+    "运输机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航空发动机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内唯一供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:30:44"
+}

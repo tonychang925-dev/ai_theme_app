@@ -1,0 +1,45 @@
+{
+  "stock_id": "600039",
+  "stock_name": "四川路桥",
+  "concept": "基建+新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "交通基础工程建设",
+    "工程施工业务",
+    "清洁能源开发",
+    "蜀道集团"
+  ],
+  "should": [
+    "水力发电",
+    "矿产新材料",
+    "交通运输服务",
+    "风电项目",
+    "光伏项目",
+    "锂电正极材料",
+    "磷酸铁锂新材料",
+    "退役动力电池回收",
+    "蜀道集团内部订单"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "交通基础工程建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程施工业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "清洁能源开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蜀道集团",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:07:54"
+}

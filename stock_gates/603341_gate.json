@@ -1,0 +1,35 @@
+{
+  "stock_id": "603341",
+  "stock_name": "龙旗科技",
+  "concept": "智能终端ODM",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能手机ODM",
+    "智能终端ODM"
+  ],
+  "should": [
+    "平板电脑ODM",
+    "AIoT产品",
+    "智能手机",
+    "平板电脑",
+    "智能手表/手环",
+    "TWS耳机",
+    "XR",
+    "汽车电子",
+    "AI PC"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能手机ODM",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能终端ODM",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:49:37"
+}

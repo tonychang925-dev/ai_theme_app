@@ -1,0 +1,41 @@
+{
+  "stock_id": "002959",
+  "stock_name": "小熊电器",
+  "concept": "创意小家电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "创意小家电",
+    "厨房小家电",
+    "生活小家电"
+  ],
+  "should": [
+    "其他小家电",
+    "酸奶机",
+    "煮蛋器",
+    "电热饭盒",
+    "电烤炉",
+    "打蛋器",
+    "吐司机",
+    "养生壶",
+    "电蒸锅",
+    "电煮锅"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "创意小家电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "厨房小家电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生活小家电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:05:04"
+}

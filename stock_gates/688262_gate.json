@@ -1,0 +1,46 @@
+{
+  "stock_id": "688262",
+  "stock_name": "国芯科技",
+  "concept": "国产嵌入式CPU",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国产嵌入式CPU",
+    "嵌入式CPU内核",
+    "安全芯片",
+    "汽车电子芯片"
+  ],
+  "should": [
+    "RAID控制芯片",
+    "M Core指令集",
+    "PowerPC指令集",
+    "RISC-V指令集",
+    "量子安全技术",
+    "主控芯片设计",
+    "固件开发",
+    "国产化替代",
+    "批量供货",
+    "国内领先"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国产嵌入式CPU",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "嵌入式CPU内核",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "安全芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车电子芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:13:27"
+}

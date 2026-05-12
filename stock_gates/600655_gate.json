@@ -1,0 +1,41 @@
+{
+  "stock_id": "600655",
+  "stock_name": "豫园股份",
+  "concept": "多元消费产业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "黄金珠宝",
+    "老庙黄金",
+    "亚一珠宝"
+  ],
+  "should": [
+    "地产",
+    "餐饮食品",
+    "医药护肤",
+    "高端手表",
+    "DJULA",
+    "Damiani",
+    "Salvini",
+    "露璨LUSANT",
+    "多元消费产业",
+    "开采"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "黄金珠宝",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "老庙黄金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "亚一珠宝",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:24:06"
+}

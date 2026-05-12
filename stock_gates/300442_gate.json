@@ -1,0 +1,36 @@
+{
+  "stock_id": "300442",
+  "stock_name": "润泽科技",
+  "concept": "数据中心运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "超大规模数据中心运营",
+    "园区型数据中心集群服务"
+  ],
+  "should": [
+    "中国电信",
+    "中国联通",
+    "华为云",
+    "数据中心运营",
+    "区位优势",
+    "规模优势",
+    "客户优势",
+    "运维优势",
+    "自投、自建、自持、自运维",
+    "头部互联网企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "超大规模数据中心运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "园区型数据中心集群服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:27:32"
+}

@@ -1,0 +1,45 @@
+{
+  "stock_id": "301305",
+  "stock_name": "朗坤科技",
+  "concept": "有机固废处理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "有机固废处理",
+    "餐厨垃圾",
+    "厨余垃圾",
+    "动物固废"
+  ],
+  "should": [
+    "生活垃圾处理",
+    "环境工程",
+    "生物柴油",
+    "沼气发电",
+    "粪污",
+    "肉骨渣",
+    "BOT",
+    "BOO",
+    "特许经营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "有机固废处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "餐厨垃圾",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "厨余垃圾",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动物固废",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:02:17"
+}

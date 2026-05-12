@@ -1,0 +1,46 @@
+{
+  "stock_id": "688363",
+  "stock_name": "华熙生物",
+  "concept": "玻尿酸全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "玻尿酸全产业链",
+    "透明质酸原料",
+    "功能性护肤品",
+    "医疗终端产品"
+  ],
+  "should": [
+    "功能性食品",
+    "微生物发酵法",
+    "酶切法",
+    "梯度3D交联技术",
+    "HEC高效微交联技术",
+    "利多卡因缓释技术",
+    "医药级",
+    "化妆品级",
+    "食品级",
+    "医美填充"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "玻尿酸全产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "透明质酸原料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功能性护肤品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗终端产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:16:42"
+}

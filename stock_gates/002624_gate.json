@@ -1,0 +1,51 @@
+{
+  "stock_id": "002624",
+  "stock_name": "完美世界",
+  "concept": "影游综合体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "完美世界游戏",
+    "完美世界影视",
+    "《幻塔》",
+    "《诛仙》",
+    "《完美世界》"
+  ],
+  "should": [
+    "《新笑傲江湖》",
+    "《武林外传》",
+    "自研引擎",
+    "影游综合体",
+    "云游戏",
+    "游戏引擎",
+    "研发投入",
+    "研发人员",
+    "电竞产业",
+    "多平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "完美世界游戏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "完美世界影视",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "《幻塔》",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "《诛仙》",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "《完美世界》",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:50:30"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "000981",
+  "stock_name": "山子高科",
+  "concept": "高端制造与整车",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源城市物流车"
+  ],
+  "should": [
+    "汽车安全气囊气体发生器",
+    "无级变速器(CVT)",
+    "双离合变速器(DCT)",
+    "混合动力总成系统",
+    "纯电动动力总成系统",
+    "混合式安全气囊发生器行业领导者",
+    "乘用车",
+    "正向研发",
+    "汽车自动变速器",
+    "汽车安全气囊"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源城市物流车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:12:18"
+}

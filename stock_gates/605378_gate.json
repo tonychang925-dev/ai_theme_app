@@ -1,0 +1,36 @@
+{
+  "stock_id": "605378",
+  "stock_name": "野马电池",
+  "concept": "碱性电池制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "碱性电池制造",
+    "碱性电池"
+  ],
+  "should": [
+    "锌锰电池",
+    "设备革新",
+    "柔性生产",
+    "数字化运营管理",
+    "电动玩具",
+    "智能家居用品",
+    "家用医疗健康电子仪器",
+    "无线安防设备",
+    "户外电子设备",
+    "无线通讯设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "碱性电池制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碱性电池",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:04:12"
+}

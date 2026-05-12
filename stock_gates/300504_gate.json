@@ -1,0 +1,42 @@
+{
+  "stock_id": "300504",
+  "stock_name": "天邑股份",
+  "concept": "光通信设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光通信设备",
+    "宽带网络终端设备",
+    "1G、10G政企网关",
+    "智能组网系统"
+  ],
+  "should": [
+    "通信网络物理连接与保护设备",
+    "热缩制品",
+    "10G无频",
+    "10G WIFI6",
+    "接入网",
+    "国内通信运营商主要供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光通信设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "宽带网络终端设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "1G、10G政企网关",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能组网系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:30:20"
+}

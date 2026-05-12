@@ -1,0 +1,31 @@
+{
+  "stock_id": "002671",
+  "stock_name": "龙泉股份",
+  "concept": "管道管件制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金属管件"
+  ],
+  "should": [
+    "3PE防腐钢管",
+    "地下管网全生命周期管理服务",
+    "预应力控制技术",
+    "高压临氢管件制造技术",
+    "核级管件制造技术",
+    "管道管件制造",
+    "大型输水工程",
+    "供配水管网",
+    "电厂循环水管道",
+    "市政压力排污主管道"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金属管件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:52:42"
+}

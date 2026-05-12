@@ -1,0 +1,41 @@
+{
+  "stock_id": "688676",
+  "stock_name": "金盘科技",
+  "concept": "干式变压器龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "干式变压器",
+    "储能系列产品",
+    "高压级联储能技术"
+  ],
+  "should": [
+    "数字化工厂整体解决方案",
+    "SVG",
+    "一体化逆变并网装置",
+    "箱式变电站",
+    "干式电抗器",
+    "中低压成套开关设备",
+    "全液冷技术",
+    "能量裂解技术",
+    "干式变压器龙头",
+    "全球干式变压器龙头企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "干式变压器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能系列产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高压级联储能技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:23:40"
+}

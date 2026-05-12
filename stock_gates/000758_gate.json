@@ -1,0 +1,39 @@
+{
+  "stock_id": "000758",
+  "stock_name": "中色股份",
+  "concept": "有色金属采选冶",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铅锌冶炼",
+    "稀土分离",
+    "有色金属采选与冶炼"
+  ],
+  "should": [
+    "锌产品",
+    "铅锌矿",
+    "有色金属采选冶",
+    "汽车",
+    "家电",
+    "基础设施",
+    "产业链全覆盖",
+    "精矿自给率较高"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铅锌冶炼",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "稀土分离",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有色金属采选与冶炼",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:03:40"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "300928",
+  "stock_name": "华安鑫创",
+  "concept": "智能座舱电子",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全液晶仪表系统",
+    "智能座舱电子",
+    "车用显示屏及触摸屏",
+    "集成化座舱显示系统"
+  ],
+  "should": [
+    "现实增强抬头显示（AR-HUD）",
+    "高级驾驶辅助（ADAS）技术",
+    "座舱域控制器",
+    "汽车中控",
+    "液晶仪表",
+    "座舱电子",
+    "人机交互（HMI）设计",
+    "用户交互界面（UI/UE）设计",
+    "一芯多屏",
+    "屏机分离"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全液晶仪表系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能座舱电子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车用显示屏及触摸屏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集成化座舱显示系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:49:37"
+}

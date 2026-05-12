@@ -1,0 +1,34 @@
+{
+  "stock_id": "002448",
+  "stock_name": "中原内配",
+  "concept": "气缸套制造商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "气缸套制造商",
+    "气缸套"
+  ],
+  "should": [
+    "活塞",
+    "活塞环",
+    "活塞销",
+    "轴瓦",
+    "氢燃料电池系统零部件",
+    "氢燃料电池系统零部件产业化",
+    "全球最大的内燃机气缸套制造商",
+    "行业龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "气缸套制造商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "气缸套",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:42:08"
+}

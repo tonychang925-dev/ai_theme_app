@@ -1,0 +1,51 @@
+{
+  "stock_id": "600318",
+  "stock_name": "新力金融",
+  "concept": "类金融服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "小额贷款",
+    "融资租赁",
+    "融资担保",
+    "典当",
+    "P2P网贷"
+  ],
+  "should": [
+    "互联网银行云服务",
+    "CMMI3级",
+    "ISO27001",
+    "电子投标保函",
+    "票据质押典当",
+    "中小微企业",
+    "民生",
+    "教育",
+    "医疗",
+    "专精特新"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "小额贷款",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "融资租赁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "融资担保",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "典当",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "P2P网贷",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:14:48"
+}

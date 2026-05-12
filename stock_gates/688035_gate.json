@@ -1,0 +1,41 @@
+{
+  "stock_id": "688035",
+  "stock_name": "德邦科技",
+  "concept": "电子封装材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子封装材料",
+    "集成电路封装材料",
+    "晶圆UV膜"
+  ],
+  "should": [
+    "智能终端封装材料",
+    "新能源应用材料",
+    "芯片固晶材料",
+    "导热界面材料",
+    "高端装备应用材料",
+    "晶圆固定",
+    "导电",
+    "导热",
+    "保护",
+    "提高芯片使用可靠性"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子封装材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集成电路封装材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "晶圆UV膜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:06:05"
+}

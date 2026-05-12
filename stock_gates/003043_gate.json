@@ -1,0 +1,46 @@
+{
+  "stock_id": "003043",
+  "stock_name": "华亚智能",
+  "concept": "精密金属结构件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密金属结构件",
+    "半导体设备",
+    "设备装配",
+    "维修服务"
+  ],
+  "should": [
+    "新能源及电力设备",
+    "超科林",
+    "ICHOR",
+    "中微半导体",
+    "捷普",
+    "天弘",
+    "依工电子",
+    "SMA",
+    "通用电气",
+    "施耐德"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密金属结构件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "设备装配",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "维修服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:08:52"
+}

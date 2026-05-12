@@ -1,0 +1,46 @@
+{
+  "stock_id": "603127",
+  "stock_name": "昭衍新药",
+  "concept": "药物安评CRO",
+  "strategy_type": "industry_chain",
+  "must": [
+    "药物安评CRO",
+    "非临床安全性评价",
+    "国内最大非临床安评CRO",
+    "药物非临床研究"
+  ],
+  "should": [
+    "药代动力学",
+    "药理和药效学研究",
+    "CDMO",
+    "临床试验",
+    "首家通过美国FDA GLP检查",
+    "AAALAC认证",
+    "国家药监局GLP认证",
+    "OECD GLP认证",
+    "日本PMDA检查",
+    "质量检测"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "药物安评CRO",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "非临床安全性评价",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内最大非临床安评CRO",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "药物非临床研究",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:44:30"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "300376",
+  "stock_name": "易事特",
+  "concept": "智慧能源系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧能源系统",
+    "电力电子技术",
+    "能效管理技术",
+    "UPS电源",
+    "数据中心"
+  ],
+  "should": [
+    "储能",
+    "光伏新能源",
+    "充电桩",
+    "逆变器",
+    "变流器",
+    "汽车充电桩",
+    "高端电源设备",
+    "数据中心基础设施",
+    "高压直流电源集中供电",
+    "5G基站"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧能源系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力电子技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "能效管理技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "UPS电源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据中心",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:24:31"
+}

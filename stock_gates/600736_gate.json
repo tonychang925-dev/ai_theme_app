@@ -1,0 +1,45 @@
+{
+  "stock_id": "600736",
+  "stock_name": "苏州高新",
+  "concept": "园区开发运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "园区开发运营",
+    "产业投资",
+    "产城综合开发",
+    "空间运营"
+  ],
+  "should": [
+    "医疗器械",
+    "生命健康小镇",
+    "医疗器械产业园",
+    "基金投资",
+    "直投",
+    "融资租赁",
+    "住宅开发",
+    "商业地产",
+    "绿色低碳"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "园区开发运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "产业投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "产城综合开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空间运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:26:19"
+}

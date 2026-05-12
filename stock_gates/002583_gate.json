@@ -1,0 +1,46 @@
+{
+  "stock_id": "002583",
+  "stock_name": "海能达",
+  "concept": "专用通信",
+  "strategy_type": "industry_chain",
+  "must": [
+    "专用通信",
+    "窄带专网",
+    "公专融合",
+    "PDT"
+  ],
+  "should": [
+    "TETRA",
+    "DMR",
+    "宽带集群",
+    "融合通信平台",
+    "卫星通信",
+    "PDT自主标准",
+    "智能终端",
+    "应急通信",
+    "底层协议",
+    "系统网络"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "专用通信",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "窄带专网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公专融合",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PDT",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:48:36"
+}

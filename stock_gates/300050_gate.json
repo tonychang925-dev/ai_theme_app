@@ -1,0 +1,41 @@
+{
+  "stock_id": "300050",
+  "stock_name": "世纪鼎利",
+  "concept": "通信物联网教育",
+  "strategy_type": "industry_chain",
+  "must": [
+    "通信及物联网业务",
+    "职业教育业务",
+    "鼎利学院"
+  ],
+  "should": [
+    "网络测试",
+    "大数据存储",
+    "分布式计算",
+    "数据挖掘",
+    "RFID产品",
+    "工业自动化装备",
+    "物联网行业解决方案",
+    "RFID电子标签",
+    "智能机械臂",
+    "AGV小车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "通信及物联网业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "职业教育业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "鼎利学院",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:11:10"
+}

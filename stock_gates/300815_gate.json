@@ -1,0 +1,40 @@
+{
+  "stock_id": "300815",
+  "stock_name": "玉禾田",
+  "concept": "综合环境服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合环境服务",
+    "市政环卫",
+    "物业清洁"
+  ],
+  "should": [
+    "环卫作业清洁服务甲级等级证书",
+    "公共设施维护能力甲级等级证书",
+    "道路运输经营许可证",
+    "AAA级企业信用等级认证",
+    "PPP",
+    "特许经营",
+    "政府托管",
+    "道路清扫保洁",
+    "垃圾收转运"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合环境服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "市政环卫",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物业清洁",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:44:24"
+}

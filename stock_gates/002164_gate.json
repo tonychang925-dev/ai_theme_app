@@ -1,0 +1,41 @@
+{
+  "stock_id": "002164",
+  "stock_name": "宁波东力",
+  "concept": "齿轮传动设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "齿轮传动设备",
+    "电驱动传动设备",
+    "国家级制造业单项冠军"
+  ],
+  "should": [
+    "门控系统",
+    "硬齿面齿轮制造技术",
+    "高效特种电机制造技术",
+    "医用门智能控制技术",
+    "浙江省专精特新小巨人企业",
+    "冶金",
+    "矿山",
+    "环保",
+    "建筑",
+    "电力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "齿轮传动设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电驱动传动设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国家级制造业单项冠军",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:26:46"
+}

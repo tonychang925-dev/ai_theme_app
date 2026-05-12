@@ -1,0 +1,37 @@
+{
+  "stock_id": "002524",
+  "stock_name": "光正眼科",
+  "concept": "眼科连锁医疗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "眼科连锁医疗",
+    "眼科医院投资",
+    "眼科医院管理"
+  ],
+  "should": [
+    "蔡司",
+    "爱尔康",
+    "美尔目",
+    "13家专业眼科医院",
+    "1家眼视光诊所",
+    "眼科全病种诊疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "眼科连锁医疗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "眼科医院投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "眼科医院管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:45:35"
+}

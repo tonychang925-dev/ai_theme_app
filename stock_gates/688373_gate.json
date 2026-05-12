@@ -1,0 +1,35 @@
+{
+  "stock_id": "688373",
+  "stock_name": "盟科药业",
+  "concept": "抗感染创新药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "康替唑胺",
+    "MRX-4"
+  ],
+  "should": [
+    "MRX-8",
+    "抗感染创新药",
+    "噁唑烷酮类抗菌药",
+    "多黏菌素类抗菌药物",
+    "软药设计",
+    "皮肤及软组织感染",
+    "糖尿病足感染",
+    "革兰氏阳性多重耐药细菌感染",
+    "革兰氏阴性多重耐药细菌感染"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "康替唑胺",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MRX-4",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:16:53"
+}

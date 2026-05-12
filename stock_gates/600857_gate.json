@@ -1,0 +1,49 @@
+{
+  "stock_id": "600857",
+  "stock_name": "宁波中百",
+  "concept": "商业零售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商业零售",
+    "黄金珠宝",
+    "床上用品",
+    "滋补品",
+    "宁波二百"
+  ],
+  "should": [
+    "房地产业",
+    "旅游饮食服务",
+    "团购业务",
+    "银联云闪付优惠活动",
+    "二百惠直播",
+    "联合营销",
+    "浙江老字号",
+    "全国五一劳动奖状"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商业零售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "黄金珠宝",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "床上用品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "滋补品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "宁波二百",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:29:38"
+}

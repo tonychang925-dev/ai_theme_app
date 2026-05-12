@@ -1,0 +1,41 @@
+{
+  "stock_id": "002311",
+  "stock_name": "海大集团",
+  "concept": "全产业链农牧集团",
+  "strategy_type": "industry_chain",
+  "must": [
+    "饲料",
+    "水产饲料",
+    "畜禽饲料"
+  ],
+  "should": [
+    "养殖",
+    "种苗育种",
+    "动保",
+    "屠宰加工",
+    "预混料",
+    "浓缩料",
+    "功能型饲料",
+    "种苗",
+    "药品",
+    "疫苗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "饲料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水产饲料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "畜禽饲料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:34:56"
+}

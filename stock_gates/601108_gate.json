@@ -1,0 +1,46 @@
+{
+  "stock_id": "601108",
+  "stock_name": "财通证券",
+  "concept": "综合券商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合券商",
+    "财富管理业务",
+    "投资银行业务",
+    "永安期货"
+  ],
+  "should": [
+    "证券资产管理业务",
+    "证券投资业务",
+    "证券信用业务",
+    "期货业务",
+    "境外证券业务",
+    "基金业务",
+    "私募股权投资基金业务",
+    "另类投资业务",
+    "线下线上结合",
+    "综合金融产品和服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合券商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "财富管理业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资银行业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "永安期货",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:34:14"
+}

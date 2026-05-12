@@ -1,0 +1,38 @@
+{
+  "stock_id": "600774",
+  "stock_name": "汉商集团",
+  "concept": "大健康+大商业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大健康+大商业",
+    "医药业务",
+    "辅助生殖业务"
+  ],
+  "should": [
+    "商业会展业务",
+    "中药",
+    "生物医用材料",
+    "零售+医院销售网络",
+    "OTC渠道",
+    "药品零售市场",
+    "自有物业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大健康+大商业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "辅助生殖业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:27:21"
+}

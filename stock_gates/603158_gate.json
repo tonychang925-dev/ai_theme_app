@@ -1,0 +1,46 @@
+{
+  "stock_id": "603158",
+  "stock_name": "腾龙股份",
+  "concept": "汽车热管理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车热管理",
+    "汽车热管理系统",
+    "汽车空调管路",
+    "EGR系统"
+  ],
+  "should": [
+    "气液分离器",
+    "热泵系统阀组集成模块",
+    "电子水泵",
+    "汽车胶管",
+    "汽车制动系统零部件",
+    "车载无线充电",
+    "热泵阀组集成",
+    "二氧化碳热泵阀组集成模块",
+    "硬管及附件",
+    "传感器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车热管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车热管理系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车空调管路",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "EGR系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:45:03"
+}

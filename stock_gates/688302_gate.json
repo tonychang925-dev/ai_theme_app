@@ -1,0 +1,34 @@
+{
+  "stock_id": "688302",
+  "stock_name": "海创药业",
+  "concept": "氘代PROTAC创新药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "氘代PROTAC创新药",
+    "氘代药物研发平台"
+  ],
+  "should": [
+    "德恩鲁胺(HC-1119)",
+    "HP501",
+    "HP518",
+    "肿瘤",
+    "代谢性疾病",
+    "III期临床试验",
+    "NDA申请准备",
+    "I期临床试验"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "氘代PROTAC创新药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氘代药物研发平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:14:46"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "300719",
+  "stock_name": "安达维尔",
+  "concept": "航空航天防务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航空座椅",
+    "航空维修",
+    "测试设备",
+    "地面保障设备"
+  ],
+  "should": [
+    "航空导航设备",
+    "厨卫系统设备",
+    "飞机内饰",
+    "客舱照明",
+    "防护装甲",
+    "模拟训练装备",
+    "智能工具管理系统",
+    "航空机载设备研制",
+    "测控及地面保障设备研制",
+    "复材制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航空座椅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航空维修",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "测试设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "地面保障设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:40:18"
+}

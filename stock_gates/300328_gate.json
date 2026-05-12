@@ -1,0 +1,41 @@
+{
+  "stock_id": "300328",
+  "stock_name": "宜安科技",
+  "concept": "新材料综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "液态金属",
+    "镁铝合金",
+    "医用镁材"
+  ],
+  "should": [
+    "折叠屏手机铰链",
+    "新能源汽车零部件",
+    "生物可降解医用镁合金",
+    "大型镁铝合金压铸",
+    "液态金属压铸",
+    "消费电子结构件",
+    "医疗器械结构件",
+    "骨科植入物",
+    "全球最早布局大型镁铝合金压铸设备",
+    "全球唯一将液态金属应用在汽车行业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "液态金属",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "镁铝合金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医用镁材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:22:45"
+}

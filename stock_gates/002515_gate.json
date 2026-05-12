@@ -1,0 +1,40 @@
+{
+  "stock_id": "002515",
+  "stock_name": "金字火腿",
+  "concept": "肉制品加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "火腿",
+    "特色肉制品",
+    "进口品牌肉"
+  ],
+  "should": [
+    "植物肉",
+    "牛肉味植物肉饼",
+    "猪肉味植物肉饼",
+    "植物肉狮子头",
+    "肉掌门交易平台",
+    "肉制品加工",
+    "大豆蛋白等植物蛋白为原材料",
+    "6万吨自建冷库",
+    "5万平方米的物流配送中心"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "火腿",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特色肉制品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "进口品牌肉",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:45:13"
+}

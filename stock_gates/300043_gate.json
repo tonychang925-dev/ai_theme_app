@@ -1,0 +1,38 @@
+{
+  "stock_id": "300043",
+  "stock_name": "星辉娱乐",
+  "concept": "综合娱乐运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "游戏业务",
+    "足球俱乐部业务",
+    "玩具业务"
+  ],
+  "should": [
+    "《三国群英传-霸王之业》",
+    "《苍之纪元》",
+    "动态车模",
+    "青训机制",
+    "综合娱乐运营",
+    "古风策略类",
+    "二次元类"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "游戏业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "足球俱乐部业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "玩具业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:10:44"
+}

@@ -1,0 +1,35 @@
+{
+  "stock_id": "002051",
+  "stock_name": "中工国际",
+  "concept": "国际工程总承包",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国外工程总承包（EPC）",
+    "国际工程总承包"
+  ],
+  "should": [
+    "国内工程总承包",
+    "设计咨询",
+    "装备制造",
+    "医疗健康",
+    "医疗专项",
+    "现代物流",
+    "能源工程",
+    "数字化技术",
+    "生态环保"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国外工程总承包（EPC）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国际工程总承包",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:20:28"
+}

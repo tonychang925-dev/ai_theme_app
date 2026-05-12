@@ -1,0 +1,36 @@
+{
+  "stock_id": "603378",
+  "stock_name": "亚士创能",
+  "concept": "建筑涂料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑涂料",
+    "功能性建筑涂料"
+  ],
+  "should": [
+    "保温装饰板",
+    "真金防火保温板",
+    "防水材料",
+    "工程涂料",
+    "家装涂料",
+    "龙头企业",
+    "全国性产能布局",
+    "乳液",
+    "钛白粉",
+    "沥青"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑涂料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功能性建筑涂料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:50:23"
+}

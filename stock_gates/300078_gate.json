@@ -1,0 +1,46 @@
+{
+  "stock_id": "300078",
+  "stock_name": "思创智联",
+  "concept": "智慧医疗物联网",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧医疗物联网",
+    "物联网",
+    "人工智能",
+    "智慧医疗"
+  ],
+  "should": [
+    "平台大数据交互",
+    "区块链",
+    "云计算",
+    "5G",
+    "移动护理",
+    "电子病历",
+    "智慧临床医生工作站",
+    "微小化 HIS",
+    "数据中心",
+    "专病科研平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧医疗物联网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物联网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人工智能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧医疗",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:12:35"
+}

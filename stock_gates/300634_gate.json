@@ -1,0 +1,41 @@
+{
+  "stock_id": "300634",
+  "stock_name": "彩讯股份",
+  "concept": "企业数字化服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "协同办公",
+    "智慧渠道",
+    "云和大数据"
+  ],
+  "should": [
+    "IT中台",
+    "运营中台",
+    "Richmail邮件系统",
+    "5G新消息平台",
+    "企业数字化服务",
+    "电信",
+    "金融",
+    "能源",
+    "交通",
+    "政府部门"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "协同办公",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧渠道",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云和大数据",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:36:19"
+}

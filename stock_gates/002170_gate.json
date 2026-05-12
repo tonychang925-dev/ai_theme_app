@@ -1,0 +1,38 @@
+{
+  "stock_id": "002170",
+  "stock_name": "芭田股份",
+  "concept": "磷化工一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "复合肥",
+    "硝酸磷肥",
+    "磷矿资源"
+  ],
+  "should": [
+    "磷酸铁",
+    "磷酸铁锂",
+    "高塔造粒技术",
+    "冷冻法硝酸磷肥工艺",
+    "干法选矿工艺",
+    "健康农业用肥",
+    "新能源材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "复合肥",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硝酸磷肥",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磷矿资源",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:27:02"
+}

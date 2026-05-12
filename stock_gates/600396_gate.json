@@ -1,0 +1,42 @@
+{
+  "stock_id": "600396",
+  "stock_name": "华电辽能",
+  "concept": "区域综合能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力",
+    "热力",
+    "火力发电",
+    "风力发电"
+  ],
+  "should": [
+    "供热",
+    "供汽",
+    "煤炭购销",
+    "煤炭",
+    "电网",
+    "居民或单位用户"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热力",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "火力发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风力发电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:16:56"
+}

@@ -1,0 +1,35 @@
+{
+  "stock_id": "002936",
+  "stock_name": "郑州银行",
+  "concept": "商贸物流银行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商贸物流银行",
+    "政策性科创金融特色银行"
+  ],
+  "should": [
+    "市民金融",
+    "乡村金融",
+    "小微企业园",
+    "研发贷",
+    "专属理财产品",
+    "金融债券",
+    "财富管理平台",
+    "新一代票据系统",
+    "数字化转型"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商贸物流银行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "政策性科创金融特色银行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:03:59"
+}

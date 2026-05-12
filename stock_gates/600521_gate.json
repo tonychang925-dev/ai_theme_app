@@ -1,0 +1,44 @@
+{
+  "stock_id": "600521",
+  "stock_name": "华海药业",
+  "concept": "特色原料药制剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特色原料药",
+    "国内制剂",
+    "制剂出口"
+  ],
+  "should": [
+    "特色原料药制剂",
+    "沙坦类",
+    "精神神经系统",
+    "缓/控释制剂",
+    "首仿/挑战专利",
+    "价格汇率向好",
+    "慢病用药",
+    "半固体高技术壁垒",
+    "全球最大原料药供应商之一",
+    "美国市占率超50%"
+  ],
+  "not": [
+    "美国禁令解除",
+    "集采推行"
+  ],
+  "evidence_refs": [
+    {
+      "term": "特色原料药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内制剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "制剂出口",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:20:11"
+}

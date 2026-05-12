@@ -1,0 +1,36 @@
+{
+  "stock_id": "002337",
+  "stock_name": "赛象科技",
+  "concept": "轮胎智能装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轮胎智能装备",
+    "全钢卡车胎一次法成型机"
+  ],
+  "should": [
+    "智能物流",
+    "物联网",
+    "AGV移动机器人及其系统集成",
+    "汽车动力总成智能装备",
+    "飞机大部件运输夹具",
+    "农用子午线轮胎成型机",
+    "90度钢丝帘布裁断机",
+    "小角度钢丝帘布裁断机",
+    "钢丝圈生产线",
+    "复合挤出生产线"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轮胎智能装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全钢卡车胎一次法成型机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:36:18"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "600089",
+  "stock_name": "特变电工",
+  "concept": "新能源系统集成",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源系统集成",
+    "变压器",
+    "多晶硅"
+  ],
+  "should": [
+    "电极箔",
+    "高压铝箔",
+    "超纯铝产品",
+    "电缆",
+    "导线",
+    "源网荷储仿真规划与调控技术",
+    "低频输电技术",
+    "高压电缆同向并联",
+    "变压器故障机理研究",
+    "输变电工程"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源系统集成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "变压器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多晶硅",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:08:59"
+}

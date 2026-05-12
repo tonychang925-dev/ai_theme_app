@@ -1,0 +1,40 @@
+{
+  "stock_id": "002939",
+  "stock_name": "长城证券",
+  "concept": "综合金融服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合金融服务",
+    "财富管理业务",
+    "投资银行业务"
+  ],
+  "should": [
+    "资产管理业务",
+    "证券投资及交易业务",
+    "华能资本",
+    "华能集团",
+    "深圳新江南",
+    "深圳能源",
+    "全牌照",
+    "债券承销业务领先",
+    "产业金融"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合金融服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "财富管理业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资银行业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:04:16"
+}

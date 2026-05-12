@@ -1,0 +1,46 @@
+{
+  "stock_id": "002497",
+  "stock_name": "雅化集团",
+  "concept": "民爆锂盐双主业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "民爆锂盐双主业",
+    "电池级氢氧化锂",
+    "电池级碳酸锂",
+    "爆破工程一体化方案"
+  ],
+  "should": [
+    "工业炸药",
+    "工业雷管",
+    "电子雷管",
+    "电子雷管技术",
+    "李家沟锂辉石矿优先供应权",
+    "澳洲银河资源长期供货协议",
+    "Core公司包销协议",
+    "ABY公司包销协议",
+    "矿山开采",
+    "水利水电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "民爆锂盐双主业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电池级氢氧化锂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电池级碳酸锂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "爆破工程一体化方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:44:37"
+}

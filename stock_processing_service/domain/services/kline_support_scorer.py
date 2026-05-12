@@ -196,6 +196,30 @@ class KlineSupportScorer:
         return None
 
     @staticmethod
+    def _safe_atr_pct(atr_value, close_price: float) -> float:
+        atr = float(atr_value or 0.0)
+        if atr <= 0 or close_price <= 0:
+            return 0.0
+        return atr / close_price * 100.0
+
+    @staticmethod
+    def _score_level_candidate(
+        *, candidate_type: str, level: Decimal, anchor_price: Decimal,
+        atr_pct: float, base_weight: float,
+    ) -> dict:
+        """旧链 _score_level_candidate 距离公式：proximity = 1 - distance / tolerance"""
+        lv = float(level)
+        ap = float(anchor_price)
+        if lv <= 0 or ap <= 0:
+            return {"type": candidate_type, "level": level, "strength": Decimal("0")}
+        distance_pct = abs(ap - lv) / lv * 100.0
+        tolerance_pct = min(8.0, max(1.5, atr_pct * 2.2 if atr_pct > 0 else 2.8))
+        proximity = max(0.0, 1.0 - distance_pct / tolerance_pct)
+        directional = 1.0 if lv <= ap * 1.02 else 0.80
+        strength = min(1.0, max(0.0, base_weight * proximity * directional))
+        return {"type": candidate_type, "level": level, "strength": Decimal(str(round(strength, 4)))}
+
+    @staticmethod
     def _detect_prior_breakout_level(df: pd.DataFrame) -> Decimal:
         """旧链 _detect_prior_breakout_level 复刻：前15日（排除最近3日）最高价作为突破回踩支撑位。"""
         try:
@@ -307,6 +331,23 @@ class KlineSupportScorer:
         current_low = self._d(current_bar.low_price)
         current_close = self._d(current_bar.close_price)
 
+        # ── ATR（距离容差计算基础）──
+        atr14 = Decimal("0")
+        try:
+            high_s = pd.to_numeric(df["high_price"], errors="coerce")
+            low_s = pd.to_numeric(df["low_price"], errors="coerce")
+            close_s = pd.to_numeric(df["close_price"], errors="coerce")
+            if len(high_s) >= 15:
+                tr = pd.DataFrame({
+                    "h_l": high_s - low_s,
+                    "h_pc": abs(high_s - close_s.shift(1)),
+                    "l_pc": abs(low_s - close_s.shift(1)),
+                }).max(axis=1)
+                atr14 = self._d(tr.rolling(14).mean().iloc[-1])
+        except Exception:
+            pass
+        atr_pct = self._safe_atr_pct(atr14, float(current_close))
+
         ma_structures = self._build_ma_structures(df, current_low)
         prev_low_structure = self._build_prev_low_structure(df, current_low)
         bb_lower_structure = self._build_bb_lower_structure(df, current_low)
@@ -341,119 +382,83 @@ class KlineSupportScorer:
                 f"resonance={g.resonance_score} source=gap_structure"
             )
 
+        anchor = current_low if current_low > 0 else current_close
         support_types: list[SupportTypeScore] = []
+
+        # ── 旧链距离评分公式：_score_level_candidate(type, level, anchor, atr_pct, base_weight) ──
+        _sc = lambda t, lv, bw: self._score_level_candidate(
+            candidate_type=t, level=lv, anchor_price=anchor, atr_pct=atr_pct, base_weight=bw)
+
         for g in gap_structures:
             hit_mode = "strict" if g.strict_hit else "soft" if g.soft_hit else "miss"
-            strength = Decimal("0.90") if g.strict_hit else Decimal("0.80") if g.soft_hit else Decimal("0.55")
-            support_types.append(
-                SupportTypeScore(
-                    support_type="gap_support",
-                    support_level=g.gap_lower,
-                    strength=strength,
-                    source="gap_structure",
-                    distance_pct=g.current_distance_pct,
-                    zone_lower=g.gap_lower,
-                    zone_upper=g.gap_upper,
-                    hit_mode=hit_mode,
-                )
-            )
+            bw = 0.95 if g.strict_hit else 0.80 if g.soft_hit else 0.55
+            scored = _sc("gap_support", g.gap_lower, bw)
+            support_types.append(SupportTypeScore(
+                support_type="gap_support", support_level=g.gap_lower,
+                strength=scored["strength"], source="gap_structure",
+                distance_pct=g.current_distance_pct,
+                zone_lower=g.gap_lower, zone_upper=g.gap_upper, hit_mode=hit_mode))
 
         if prev_low_structure and prev_low_structure.is_valid:
-            support_types.append(
-                SupportTypeScore(
-                    support_type="previous_low",
-                    support_level=prev_low_structure.level,
-                    strength=Decimal("0.80"),
-                    source="previous_low",
-                    distance_pct=prev_low_structure.distance_pct,
-                )
-            )
+            scored = _sc("previous_low", prev_low_structure.level, 0.80)
+            support_types.append(SupportTypeScore(
+                support_type="previous_low", support_level=prev_low_structure.level,
+                strength=scored["strength"], source="previous_low",
+                distance_pct=prev_low_structure.distance_pct))
+
         if bb_lower_structure and bb_lower_structure.is_valid:
-            support_types.append(
-                SupportTypeScore(
-                    support_type="bb_lower_support",
-                    support_level=bb_lower_structure.level,
-                    strength=Decimal("0.86"),
-                    source="bb_lower",
-                    distance_pct=bb_lower_structure.distance_pct,
-                )
-            )
-        # ── MA 支撑：独立类型，复刻旧链权重（设计文档 27.1）──
-        _ma_weight: dict[str, str] = {"sma5": "0.65", "sma10": "0.74", "ema20": "0.82"}
+            scored = _sc("bb_lower_support", bb_lower_structure.level, 0.86)
+            support_types.append(SupportTypeScore(
+                support_type="bb_lower_support", support_level=bb_lower_structure.level,
+                strength=scored["strength"], source="bb_lower",
+                distance_pct=bb_lower_structure.distance_pct))
+
+        _ma_w = {"sma5": 0.65, "sma10": 0.74, "ema20": 0.82}
         for ma in ma_structures:
             if ma.is_valid:
-                support_types.append(
-                    SupportTypeScore(
-                        support_type=f"{ma.ma_type}_support",
-                        support_level=ma.level,
-                        strength=Decimal(_ma_weight.get(ma.ma_type, "0.70")),
-                        source=ma.ma_type,
-                        distance_pct=ma.distance_pct,
-                    )
-                )
+                scored = _sc(f"{ma.ma_type}_support", ma.level, _ma_w.get(ma.ma_type, 0.70))
+                support_types.append(SupportTypeScore(
+                    support_type=f"{ma.ma_type}_support", support_level=ma.level,
+                    strength=scored["strength"], source=ma.ma_type,
+                    distance_pct=ma.distance_pct))
 
-        # ── previous_close 支撑（旧链权重 0.72）──
         if len(df) >= 2:
             prev_close = self._d(df["close_price"].iloc[-2])
             if prev_close > 0:
-                prev_close_dist = self._distance_pct(current_low, prev_close)
-                support_types.append(
-                    SupportTypeScore(
-                        support_type="previous_close",
-                        support_level=prev_close,
-                        strength=Decimal("0.72"),
-                        source="previous_close",
-                        distance_pct=prev_close_dist,
-                    )
-                )
+                scored = _sc("previous_close", prev_close, 0.72)
+                support_types.append(SupportTypeScore(
+                    support_type="previous_close", support_level=prev_close,
+                    strength=scored["strength"], source="previous_close",
+                    distance_pct=self._distance_pct(current_low, prev_close)))
 
-        # ── prior_breakout_retest：前15日最高价回踩（旧链权重 0.92）──
         breakout_level = self._detect_prior_breakout_level(df)
         if breakout_level > Decimal("0"):
-            breakout_dist = self._distance_pct(current_low, breakout_level)
-            breakout_strength = Decimal("0.92")
+            scored = _sc("prior_breakout_retest", breakout_level, 0.92)
             if current_close >= breakout_level:
-                breakout_strength = min(Decimal("1.0"), breakout_strength * Decimal("1.08"))
-            support_types.append(
-                SupportTypeScore(
-                    support_type="prior_breakout_retest",
-                    support_level=breakout_level,
-                    strength=breakout_strength,
-                    source="prior_breakout_retest",
-                    distance_pct=breakout_dist,
-                )
-            )
+                scored["strength"] = min(Decimal("1.0"), scored["strength"] * Decimal("1.08"))
+            support_types.append(SupportTypeScore(
+                support_type="prior_breakout_retest", support_level=breakout_level,
+                strength=scored["strength"], source="prior_breakout_retest",
+                distance_pct=self._distance_pct(current_low, breakout_level)))
 
-        # ── pivot 支撑（旧链权重 0.75）──
         pivot_points = self._compute_pivot_points(df)
         for pk, pv in pivot_points.items():
             if pv > Decimal("0"):
-                dist = self._distance_pct(current_low, pv)
-                support_types.append(
-                    SupportTypeScore(
-                        support_type=f"pivot_{pk}",
-                        support_level=pv,
-                        strength=Decimal("0.75"),
-                        source="daily_pivot",
-                        distance_pct=dist,
-                    )
-                )
+                scored = _sc(f"pivot_{pk}", pv, 0.75)
+                support_types.append(SupportTypeScore(
+                    support_type=f"pivot_{pk}", support_level=pv,
+                    strength=scored["strength"], source="daily_pivot",
+                    distance_pct=self._distance_pct(current_low, pv)))
 
-        # ── fibonacci 回撤支撑（旧链权重 0.68，nearest_support below current_price）──
         fib_support = self._compute_fibonacci_support(df, current_close)
         if fib_support > Decimal("0"):
-            fib_dist = self._distance_pct(current_low, fib_support)
-            support_types.append(
-                SupportTypeScore(
-                    support_type="fibonacci_support",
-                    support_level=fib_support,
-                    strength=Decimal("0.68"),
-                    source="fibonacci_retracement",
-                    distance_pct=fib_dist,
-                )
-            )
+            scored = _sc("fibonacci_support", fib_support, 0.68)
+            support_types.append(SupportTypeScore(
+                support_type="fibonacci_support", support_level=fib_support,
+                strength=scored["strength"], source="fibonacci_retracement",
+                distance_pct=self._distance_pct(current_low, fib_support)))
 
-        # ── O2: RSI 超卖加分 ──
+        # ── O2: RSI 超卖加分（旧链 §27.2）──
         rsi_bonus = Decimal("0")
         if rsi14 is not None:
             if Decimal("0") < rsi14 <= Decimal("35"):
@@ -467,8 +472,22 @@ class KlineSupportScorer:
             unique_types.add(st.support_type)
         resonance_bonus = min(Decimal(str(len(unique_types) - 1)) * Decimal("0.03"), Decimal("0.12"))
 
-        combined = (resolved.support_score / Decimal("100")) + rsi_bonus + resonance_bonus
-        combined = min(max(combined, Decimal("0")), Decimal("1"))
+        # ── 旧链复合评分：primary * 0.65 + avg_top3 * 0.35 + resonance + oversold ──
+        if support_types:
+            sorted_types = sorted(support_types, key=lambda x: x.strength, reverse=True)
+            primary = sorted_types[0]
+            top3 = sorted_types[:3]
+            avg_top3 = sum(s.strength for s in top3) / Decimal(str(len(top3)))
+            combined = primary.strength * Decimal("0.65") + avg_top3 * Decimal("0.35") + resonance_bonus + rsi_bonus
+            combined = min(max(combined, Decimal("0")), Decimal("1"))
+            support_score = round(combined * Decimal("100"), 2)
+            support_type = primary.support_type
+            support_level = primary.support_level
+        else:
+            combined = Decimal("0")
+            support_score = Decimal("0")
+            support_type = "none"
+            support_level = Decimal("0")
 
         refs.append(f"rsi14={rsi14}")
         refs.append(f"rsi_bonus={rsi_bonus}")
@@ -476,9 +495,9 @@ class KlineSupportScorer:
         refs.append(f"unique_support_types={len(unique_types)}")
 
         return SupportScoreResult(
-            support_type=resolved.support_type,
-            support_level=resolved.support_level,
-            support_score=resolved.support_score,
+            support_type=support_type,
+            support_level=support_level,
+            support_score=support_score,
             support_count=len(support_types),
             combined_strength=combined.quantize(Decimal("0.0001")),
             gap_hit=resolved.gap_hit,

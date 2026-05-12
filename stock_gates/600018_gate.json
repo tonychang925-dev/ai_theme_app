@@ -1,0 +1,29 @@
+{
+  "stock_id": "600018",
+  "stock_name": "上港集团",
+  "concept": "港口运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "集装箱业务"
+  ],
+  "should": [
+    "港口物流",
+    "港口服务",
+    "杂散货业务",
+    "港口运营",
+    "全球第一大集装箱港口运营商",
+    "中国最大港口上市公司",
+    "上海市国资委控股",
+    "国资背景股东多样性"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "集装箱业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:07:11"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "688092",
+  "stock_name": "爱科科技",
+  "concept": "智能切割设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能切割设备",
+    "智能切割数控工业软件系统",
+    "国家级专精特新小巨人企业",
+    "高新技术企业"
+  ],
+  "should": [
+    "精密运动控制系统",
+    "机器视觉技术",
+    "激光模切机",
+    "柔性刀片模切机",
+    "单层智能切割设备",
+    "多层智能切割设备",
+    "工业应用软件",
+    "线阵相机扫描与拼接",
+    "轨迹自动生成",
+    "图像匹配与矫正"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能切割设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能切割数控工业软件系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国家级专精特新小巨人企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高新技术企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:08:05"
+}

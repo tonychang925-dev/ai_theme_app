@@ -1,0 +1,41 @@
+{
+  "stock_id": "603456",
+  "stock_name": "九洲药业",
+  "concept": "原料药CDMO",
+  "strategy_type": "industry_chain",
+  "must": [
+    "原料药CDMO",
+    "CDMO",
+    "特色原料药"
+  ],
+  "should": [
+    "卡马西平",
+    "奥卡西平",
+    "酮洛芬",
+    "格列齐特",
+    "瑞博（苏州）工厂",
+    "中枢神经类药物",
+    "非甾体抗炎药物",
+    "抗感染类药物",
+    "降糖类药物",
+    "全球主要生产商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "原料药CDMO",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CDMO",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特色原料药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:51:04"
+}

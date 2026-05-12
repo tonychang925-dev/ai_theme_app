@@ -1,0 +1,41 @@
+{
+  "stock_id": "300907",
+  "stock_name": "康平科技",
+  "concept": "电动工具电机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电动工具电机",
+    "电机",
+    "电动工具整机"
+  ],
+  "should": [
+    "精密五金件",
+    "塑料件",
+    "铜铝焊接工艺",
+    "串励电机转子动平衡处理工艺",
+    "绕线",
+    "点焊",
+    "滴漆",
+    "动平衡",
+    "精车",
+    "自动检测"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电动工具电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电动工具整机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:48:47"
+}

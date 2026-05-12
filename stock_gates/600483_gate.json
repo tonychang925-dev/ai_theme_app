@@ -1,0 +1,35 @@
+{
+  "stock_id": "600483",
+  "stock_name": "福能股份",
+  "concept": "清洁能源运营商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风力发电",
+    "供电"
+  ],
+  "should": [
+    "热电联产",
+    "天然气发电",
+    "光伏发电",
+    "核电",
+    "供热",
+    "三峡集团",
+    "清洁能源运营商",
+    "海上风电技术",
+    "煤热联动"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风力发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "供电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:18:56"
+}

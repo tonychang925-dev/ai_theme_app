@@ -1,0 +1,36 @@
+{
+  "stock_id": "300440",
+  "stock_name": "运达科技",
+  "concept": "轨道交通智能系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轨道交通智能系统",
+    "智能运维解决方案"
+  ],
+  "should": [
+    "智慧培训解决方案",
+    "智慧车辆段解决方案",
+    "智能牵引供电解决方案",
+    "智能货运解决方案",
+    "维保服务",
+    "干线铁路",
+    "城市轨道交通",
+    "城际铁路",
+    "市域（郊）铁路",
+    "铁路货运"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轨道交通智能系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能运维解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:27:30"
+}

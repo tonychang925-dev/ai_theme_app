@@ -1,0 +1,45 @@
+{
+  "stock_id": "002679",
+  "stock_name": "福建金森",
+  "concept": "森林资源培育",
+  "strategy_type": "industry_chain",
+  "must": [
+    "森林资源培育",
+    "森林培育营造",
+    "木材生产销售",
+    "林草碳汇项目服务"
+  ],
+  "should": [
+    "森林保有管护",
+    "FSC国际森林认证",
+    "木材",
+    "杉木",
+    "马尾松",
+    "建筑",
+    "造纸",
+    "造船",
+    "家具制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "森林资源培育",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "森林培育营造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "木材生产销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "林草碳汇项目服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:53:07"
+}

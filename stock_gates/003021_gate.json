@@ -1,0 +1,31 @@
+{
+  "stock_id": "003021",
+  "stock_name": "兆威机电",
+  "concept": "微型传动系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "微型传动系统"
+  ],
+  "should": [
+    "精密注塑件",
+    "精密模具",
+    "模具成型工艺",
+    "以塑代钢",
+    "移动通信",
+    "汽车电子",
+    "智能家居",
+    "服务机器人",
+    "VR",
+    "医疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "微型传动系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:07:49"
+}

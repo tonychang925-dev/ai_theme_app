@@ -1,0 +1,36 @@
+{
+  "stock_id": "603041",
+  "stock_name": "美思德",
+  "concept": "有机硅表面活性剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "有机硅表面活性剂",
+    "聚氨酯泡沫稳定剂",
+    "匀泡剂"
+  ],
+  "should": [
+    "低挥发性匀泡剂",
+    "D4含量匀泡剂",
+    "催化剂",
+    "聚氨酯泡沫",
+    "中国最大的有机硅表面活性剂生产商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "有机硅表面活性剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚氨酯泡沫稳定剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "匀泡剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:41:55"
+}

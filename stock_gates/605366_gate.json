@@ -1,0 +1,40 @@
+{
+  "stock_id": "605366",
+  "stock_name": "宏柏新材",
+  "concept": "硅烷偶联剂龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "含硫硅烷",
+    "硅烷偶联剂龙头",
+    "全球最大含硫硅烷生产线"
+  ],
+  "should": [
+    "三氯氢硅",
+    "氨基硅烷",
+    "气相白炭黑",
+    "高温硅橡胶",
+    "气凝胶",
+    "乙烯基硅烷",
+    "环氧基硅烷",
+    "酰氧基硅烷",
+    "苯基硅烷"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "含硫硅烷",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硅烷偶联剂龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球最大含硫硅烷生产线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:04:07"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "603099",
+  "stock_name": "长白山",
+  "concept": "长白山旅游",
+  "strategy_type": "industry_chain",
+  "must": [
+    "长白山5A级景区",
+    "景区内环保车经营许可",
+    "倒站车经营许可",
+    "旅游客运",
+    "温泉水独家开采资质"
+  ],
+  "should": [
+    "长白山旅游",
+    "酒店管理",
+    "旅行社服务",
+    "温泉水开发",
+    "农产品种植",
+    "企业管理咨询",
+    "国有控股",
+    "景区资源垄断",
+    "旅游客运为核心",
+    "酒店+温泉度假区"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "长白山5A级景区",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "景区内环保车经营许可",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "倒站车经营许可",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "旅游客运",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "温泉水独家开采资质",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:43:44"
+}

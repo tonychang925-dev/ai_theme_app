@@ -1,0 +1,46 @@
+{
+  "stock_id": "603609",
+  "stock_name": "禾丰股份",
+  "concept": "饲料养殖全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "饲料养殖全产业链",
+    "饲料及饲料原料贸易",
+    "肉禽业务",
+    "生猪业务"
+  ],
+  "should": [
+    "食品加工",
+    "肯德基",
+    "吉野家",
+    "华莱士",
+    "地利生鲜",
+    "永辉超市",
+    "大润发超市",
+    "肉种鸡养殖",
+    "孵化",
+    "饲料生产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "饲料养殖全产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "饲料及饲料原料贸易",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "肉禽业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生猪业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:53:11"
+}

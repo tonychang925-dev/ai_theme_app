@@ -1,0 +1,30 @@
+{
+  "stock_id": "300569",
+  "stock_name": "天能重工",
+  "concept": "风机塔架制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风机塔架制造",
+    "风机塔架"
+  ],
+  "should": [
+    "海上风机塔架",
+    "单桩",
+    "风力发电行业",
+    "国内风机塔架生产的龙头企业之一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风机塔架制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风机塔架",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:33:07"
+}

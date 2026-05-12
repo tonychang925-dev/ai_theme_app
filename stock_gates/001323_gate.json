@@ -1,0 +1,47 @@
+{
+  "stock_id": "001323",
+  "stock_name": "慕思股份",
+  "concept": "健康睡眠",
+  "strategy_type": "industry_chain",
+  "must": [
+    "床垫",
+    "慕思",
+    "床架"
+  ],
+  "should": [
+    "枕头",
+    "被芯",
+    "四件套",
+    "按摩椅",
+    "沙发",
+    "桌椅",
+    "V6家居",
+    "健康睡眠",
+    "经销",
+    "电商"
+  ],
+  "not": [
+    "3.21世界睡眠日",
+    "6.18世界除螨日",
+    "7.29超级品牌日",
+    "8.18全球慕思睡眠文化之旅",
+    "双十一慕思告白日"
+  ],
+  "evidence_refs": [
+    {
+      "term": "床垫",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "慕思",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "床架",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:16:29"
+}

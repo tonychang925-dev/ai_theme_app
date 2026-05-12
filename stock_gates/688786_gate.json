@@ -1,0 +1,41 @@
+{
+  "stock_id": "688786",
+  "stock_name": "悦安新材",
+  "concept": "微纳金属粉体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "微纳金属粉体",
+    "羰基铁粉",
+    "雾化合金粉"
+  ],
+  "should": [
+    "软磁粉",
+    "金属注射成型喂料",
+    "吸波材料",
+    "羰基铁粉生产工艺",
+    "雾化合金粉生产工艺",
+    "制粉工艺",
+    "生物医疗",
+    "3D金属打印",
+    "电子",
+    "工业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "微纳金属粉体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "羰基铁粉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "雾化合金粉",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:25:03"
+}

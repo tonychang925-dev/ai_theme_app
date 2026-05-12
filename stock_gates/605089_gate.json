@@ -1,0 +1,46 @@
+{
+  "stock_id": "605089",
+  "stock_name": "味知香",
+  "concept": "预制菜龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "牛肉类",
+    "家禽类",
+    "经销",
+    "加盟"
+  ],
+  "should": [
+    "鱼类",
+    "虾类",
+    "猪肉类",
+    "汤煲类",
+    "素菜类",
+    "火锅类",
+    "批发",
+    "线上自营",
+    "自建冷链物流",
+    "柔性化生产线"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "牛肉类",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "家禽类",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "经销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "加盟",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:01:42"
+}

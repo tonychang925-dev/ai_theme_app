@@ -1,0 +1,46 @@
+{
+  "stock_id": "300087",
+  "stock_name": "荃银高科",
+  "concept": "农作物种子",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农作物种子",
+    "杂交水稻",
+    "生物技术",
+    "分子育种"
+  ],
+  "should": [
+    "杂交玉米",
+    "小麦",
+    "棉花",
+    "瓜菜",
+    "油菜",
+    "信息化",
+    "常规育种",
+    "粮食生产",
+    "育繁推一体化",
+    "龙头企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农作物种子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "杂交水稻",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分子育种",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:12:50"
+}

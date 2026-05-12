@@ -1,0 +1,46 @@
+{
+  "stock_id": "600959",
+  "stock_name": "江苏有线",
+  "concept": "广电网络服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "有线电视",
+    "广电5G",
+    "智慧广电",
+    "宽带"
+  ],
+  "should": [
+    "广电网络服务",
+    "智慧广电乡镇",
+    "数字乡村",
+    "智慧城市",
+    "广电5G核心网",
+    "5G无线网络质量监测系统",
+    "苏广云测APP",
+    "5G一体化小基站",
+    "5G无人机",
+    "智慧灯杆"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "有线电视",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "广电5G",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧广电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "宽带",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:31:47"
+}

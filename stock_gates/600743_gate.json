@@ -1,0 +1,33 @@
+{
+  "stock_id": "600743",
+  "stock_name": "华远控股",
+  "concept": "房地产综合开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "房地产综合开发",
+    "房地产开发"
+  ],
+  "should": [
+    "房地产+",
+    "强回款",
+    "降成本",
+    "提品质",
+    "保交楼",
+    "保民生",
+    "保稳定"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房地产综合开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "房地产开发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:26:27"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "300307",
+  "stock_name": "慈星股份",
+  "concept": "针织机械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能针织机械设备",
+    "电脑横机"
+  ],
+  "should": [
+    "一线成型电脑横机",
+    "起底装置",
+    "沉降片技术",
+    "沉降片三角控制技术",
+    "机头快速回转",
+    "无拉力编织",
+    "针织机械",
+    "毛衫生产",
+    "鞋面生产",
+    "围巾、帽子、飞织鞋等针织类产品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能针织机械设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电脑横机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:22:02"
+}

@@ -1,0 +1,45 @@
+{
+  "stock_id": "300241",
+  "stock_name": "瑞丰光电",
+  "concept": "LED封装",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LED封装",
+    "LED光源整体解决方案",
+    "显示类器件及组件",
+    "照明用LED器件及组件"
+  ],
+  "should": [
+    "Mini/Micro LED",
+    "UV-LED",
+    "车用LIDAR封测",
+    "VCSEL",
+    "红外",
+    "液晶电视",
+    "电脑及手机",
+    "日用电子产品",
+    "黑白家电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED封装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LED光源整体解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "显示类器件及组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "照明用LED器件及组件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:19:06"
+}

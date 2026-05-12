@@ -1,0 +1,41 @@
+{
+  "stock_id": "688653",
+  "stock_name": "康希通信",
+  "concept": "射频前端芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "射频前端芯片",
+    "Wi-Fi FEM",
+    "射频前端模组(FEM)"
+  ],
+  "should": [
+    "手机Wi-Fi FEM",
+    "功率放大器芯片(PA)",
+    "低噪声放大器芯片(LNA)",
+    "射频开关芯片(Switch)",
+    "滤波器芯片(Filter)",
+    "泛IoT产品",
+    "Wi-Fi通信",
+    "手机蜂窝通信",
+    "蓝牙通信",
+    "ZigBee通信"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "射频前端芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "Wi-Fi FEM",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "射频前端模组(FEM)",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:23:04"
+}

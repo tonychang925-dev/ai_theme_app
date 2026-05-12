@@ -1,0 +1,35 @@
+{
+  "stock_id": "300868",
+  "stock_name": "杰美特",
+  "concept": "移动智能终端配件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "移动智能终端配件",
+    "ODM/OEM供应商"
+  ],
+  "should": [
+    "手机保护壳",
+    "平板保护壳",
+    "穿戴设备保护壳",
+    "表带",
+    "自有品牌商",
+    "高精度模具开发",
+    "注塑生产自动化",
+    "质量体系标准化",
+    "移动智能终端保护"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "移动智能终端配件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ODM/OEM供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:46:50"
+}

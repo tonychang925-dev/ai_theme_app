@@ -1,0 +1,24 @@
+{
+  "stock_id": "301371",
+  "stock_name": "敷尔佳",
+  "concept": "皮肤护理产品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "皮肤护理产品"
+  ],
+  "should": [
+    "医疗器械类产品",
+    "化妆品类产品",
+    "Z世代"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "皮肤护理产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:04:02"
+}

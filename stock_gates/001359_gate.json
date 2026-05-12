@@ -1,0 +1,36 @@
+{
+  "stock_id": "001359",
+  "stock_name": "平安电工",
+  "concept": "云母绝缘材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "云母绝缘材料",
+    "新能源绝缘材料"
+  ],
+  "should": [
+    "人工合成云母",
+    "玻纤布",
+    "云母制品制造",
+    "新能源汽车",
+    "电线电缆",
+    "家用电器",
+    "电子通信",
+    "风力发电",
+    "储能系统",
+    "轨道交通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "云母绝缘材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源绝缘材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:17:06"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "301550",
+  "stock_name": "斯菱智驱",
+  "concept": "汽车轴承制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轮毂轴承单元",
+    "汽车轴承制造",
+    "轮毂轴承"
+  ],
+  "should": [
+    "圆锥轴承",
+    "离合器轴承",
+    "涨紧轮及惰轮轴承",
+    "单项皮带轮",
+    "重卡轴承",
+    "驱动电机轴承",
+    "制动系统",
+    "动力系统",
+    "传动系统",
+    "售后市场"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轮毂轴承单元",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车轴承制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轮毂轴承",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:06:17"
+}

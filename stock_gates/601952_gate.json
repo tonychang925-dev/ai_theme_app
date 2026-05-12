@@ -1,0 +1,46 @@
+{
+  "stock_id": "601952",
+  "stock_name": "苏垦农发",
+  "concept": "农垦种植加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农垦种植加工",
+    "稻麦种植",
+    "耕地资源",
+    "农垦集团土地"
+  ],
+  "should": [
+    "原粮销售",
+    "种子加工",
+    "大米加工",
+    "麦芽加工",
+    "农资贸易",
+    "土地面积",
+    "统一经营",
+    "发包经营",
+    "民用米",
+    "工业米"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农垦种植加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "稻麦种植",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "耕地资源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "农垦集团土地",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:40:05"
+}

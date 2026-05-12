@@ -1,0 +1,39 @@
+{
+  "stock_id": "000034",
+  "stock_name": "神州数码",
+  "concept": "数云融合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "神州鲲泰服务器",
+    "鲲鹏领先级合作伙伴",
+    "昇腾优选级合作伙伴"
+  ],
+  "should": [
+    "鲲鹏920处理器",
+    "昇腾AI芯片",
+    "PC",
+    "路由器",
+    "数云融合服务",
+    "云原生",
+    "数字原生",
+    "AI原生"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "神州鲲泰服务器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "鲲鹏领先级合作伙伴",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "昇腾优选级合作伙伴",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:48:01"
+}

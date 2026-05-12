@@ -1,0 +1,30 @@
+{
+  "stock_id": "688039",
+  "stock_name": "当虹科技",
+  "concept": "超高清视频编码",
+  "strategy_type": "industry_chain",
+  "must": [
+    "视频编转码产品"
+  ],
+  "should": [
+    "5G边缘智能终端",
+    "超高清视频编码",
+    "高质量视频编转码",
+    "智能人像识别",
+    "低延时视频通讯",
+    "视频结构化",
+    "5G边缘计算",
+    "视觉AI",
+    "AVS2/AVS3/VVC编码"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "视频编转码产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:06:16"
+}

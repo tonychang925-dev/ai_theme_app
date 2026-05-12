@@ -1,0 +1,46 @@
+{
+  "stock_id": "600537",
+  "stock_name": "亿晶光电",
+  "concept": "光伏组件制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏组件制造",
+    "电池制备",
+    "TOPCon技术",
+    "高效晶硅电池片"
+  ],
+  "should": [
+    "组件封装",
+    "晶棒/硅锭生长",
+    "硅片切割",
+    "光伏发电",
+    "PERC技术",
+    "多主栅技术",
+    "双面技术",
+    "半片技术",
+    "N型双面双玻组件",
+    "无损切割技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏组件制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电池制备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "TOPCon技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高效晶硅电池片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:20:41"
+}

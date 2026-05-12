@@ -1,0 +1,44 @@
+{
+  "stock_id": "002626",
+  "stock_name": "金达威",
+  "concept": "保健品原料龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "辅酶Q10",
+    "全球辅酶Q10最大生产商",
+    "维生素D3",
+    "维生素A"
+  ],
+  "should": [
+    "NMN",
+    "K2",
+    "微藻DHA",
+    "植物性ARA",
+    "保健品原料龙头",
+    "高纯度高品质原料",
+    "科研创新能力",
+    "全产业链布局"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "辅酶Q10",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球辅酶Q10最大生产商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "维生素D3",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "维生素A",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:50:27"
+}

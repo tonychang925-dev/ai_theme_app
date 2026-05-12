@@ -1,0 +1,51 @@
+{
+  "stock_id": "300079",
+  "stock_name": "数码视讯",
+  "concept": "视频安全技术",
+  "strategy_type": "industry_chain",
+  "must": [
+    "视频安全技术",
+    "视频技术",
+    "安全技术",
+    "超高清视频处理技术",
+    "应急广播端到端解决方案"
+  ],
+  "should": [
+    "5G技术",
+    "AI技术",
+    "8K AVS3编码技术",
+    "全媒体平台解决方案",
+    "智能收视终端操作系统解决方案",
+    "系统底层安全架构方案",
+    "SRT视频传输协议",
+    "云直播SaaS服务",
+    "云转码SaaS服务",
+    "云导播SaaS服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "视频安全技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "视频技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "安全技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超高清视频处理技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "应急广播端到端解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:12:37"
+}

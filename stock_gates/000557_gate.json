@@ -1,0 +1,31 @@
+{
+  "stock_id": "000557",
+  "stock_name": "西部创业",
+  "concept": "铁路物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铁路运输"
+  ],
+  "should": [
+    "供应链贸易服务",
+    "葡萄酒销售",
+    "铁路物流",
+    "大型煤矿",
+    "化工企业",
+    "电力企业",
+    "煤炭",
+    "油品",
+    "化工物资",
+    "宁东能源化工基地"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铁路运输",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T16:56:20"
+}

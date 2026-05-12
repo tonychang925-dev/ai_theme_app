@@ -1,0 +1,31 @@
+{
+  "stock_id": "002759",
+  "stock_name": "天际股份",
+  "concept": "六氟磷酸锂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "六氟磷酸锂"
+  ],
+  "should": [
+    "双氟代磺酰亚胺锂",
+    "二氟磷酸锂",
+    "草酸二氟硼酸锂",
+    "双草酸硼酸锂",
+    "氟化盐系列产品",
+    "储能电池",
+    "动力电池",
+    "数码、照明系列锂电池",
+    "电解液核心原材料",
+    "国泰华荣"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "六氟磷酸锂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:56:13"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "003039",
+  "stock_name": "顺控发展",
+  "concept": "公用事业运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "自来水制售",
+    "垃圾焚烧发电",
+    "顺德区供水特许经营权"
+  ],
+  "should": [
+    "垃圾焚烧发电特许经营合同",
+    "公用事业运营",
+    "供排水管网工程服务",
+    "区域支配地位",
+    "全产业链覆盖"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "自来水制售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "垃圾焚烧发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "顺德区供水特许经营权",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:08:36"
+}

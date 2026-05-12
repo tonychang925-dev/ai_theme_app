@@ -1,0 +1,36 @@
+{
+  "stock_id": "300830",
+  "stock_name": "金现代",
+  "concept": "行业数字化服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "行业数字化解决方案",
+    "轻骑兵低代码开发平台"
+  ],
+  "should": [
+    "国家电网",
+    "南方电网",
+    "五大发电集团",
+    "国铁集团",
+    "中国中铁",
+    "中国铁建",
+    "中国物流",
+    "北京地铁",
+    "中石化",
+    "中石油"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "行业数字化解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轻骑兵低代码开发平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:45:14"
+}

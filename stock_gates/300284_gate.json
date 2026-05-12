@@ -1,0 +1,36 @@
+{
+  "stock_id": "300284",
+  "stock_name": "苏交科",
+  "concept": "工程咨询",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程设计综合甲级资质",
+    "勘察设计"
+  ],
+  "should": [
+    "工程承包",
+    "工程咨询",
+    "规划咨询",
+    "环境业务",
+    "综合检测",
+    "项目管理",
+    "投融资",
+    "项目投资分析",
+    "施工监理",
+    "工程检测"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程设计综合甲级资质",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "勘察设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:21:00"
+}

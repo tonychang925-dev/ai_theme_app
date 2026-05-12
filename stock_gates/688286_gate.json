@@ -1,0 +1,46 @@
+{
+  "stock_id": "688286",
+  "stock_name": "敏芯股份",
+  "concept": "MEMS传感器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "MEMS传感器",
+    "MEMS声学传感器",
+    "MEMS压力传感器",
+    "MEMS惯性传感器"
+  ],
+  "should": [
+    "骨传导传感器",
+    "晶圆级芯片尺寸封装惯性传感器技术",
+    "压力传感器封装技术",
+    "OCLGA封装技术",
+    "麦克风批量测试技术",
+    "压力传感器批量测试技术",
+    "智能手机",
+    "可穿戴设备",
+    "智能家居",
+    "汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "MEMS传感器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MEMS声学传感器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MEMS压力传感器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MEMS惯性传感器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:14:15"
+}

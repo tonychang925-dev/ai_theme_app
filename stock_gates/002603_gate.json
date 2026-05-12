@@ -1,0 +1,51 @@
+{
+  "stock_id": "002603",
+  "stock_name": "以岭药业",
+  "concept": "中药创新",
+  "strategy_type": "industry_chain",
+  "must": [
+    "连花清瘟胶囊/颗粒",
+    "通心络胶囊",
+    "参松养心胶囊",
+    "芪苈强心胶囊",
+    "络病理论"
+  ],
+  "should": [
+    "连花清咳片",
+    "津力达颗粒",
+    "养正消积胶囊",
+    "枣椹安神口服液",
+    "益肾养心安神片",
+    "解郁除烦胶囊",
+    "八子补肾胶囊",
+    "夏荔芪胶囊",
+    "中药创新",
+    "专利新药研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "连花清瘟胶囊/颗粒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通心络胶囊",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "参松养心胶囊",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "芪苈强心胶囊",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "络病理论",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:49:42"
+}

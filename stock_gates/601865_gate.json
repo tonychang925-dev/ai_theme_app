@@ -1,0 +1,36 @@
+{
+  "stock_id": "601865",
+  "stock_name": "福莱特",
+  "concept": "光伏玻璃龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏玻璃龙头",
+    "光伏玻璃"
+  ],
+  "should": [
+    "超白压花玻璃",
+    "浮法玻璃",
+    "工程玻璃",
+    "家居玻璃",
+    "大窑炉设计",
+    "超薄超高透技术",
+    "减薄工艺",
+    "晶硅电池封装面板",
+    "光伏组件",
+    "中国最大光伏玻璃原片制造商之一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏玻璃龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏玻璃",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:39:11"
+}

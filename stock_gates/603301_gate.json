@@ -1,0 +1,36 @@
+{
+  "stock_id": "603301",
+  "stock_name": "振德医疗",
+  "concept": "医用敷料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医用敷料",
+    "手术感控产品"
+  ],
+  "should": [
+    "隔离防护用品",
+    "现代伤口护理产品",
+    "造口产品",
+    "环保材料研发",
+    "高吸水性材料研发",
+    "新技术开发",
+    "高效自动化设备",
+    "生产规模行业领先",
+    "百强连锁药店覆盖率98%",
+    "覆盖医院7000多家"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医用敷料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "手术感控产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:48:30"
+}

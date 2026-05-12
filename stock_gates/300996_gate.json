@@ -1,0 +1,46 @@
+{
+  "stock_id": "300996",
+  "stock_name": "普联软件",
+  "concept": "央企数字化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "集团财务管理系统",
+    "集团资金管理系统",
+    "集团共享系统",
+    "集团资产管理系统"
+  ],
+  "should": [
+    "数字建造",
+    "平台软件",
+    "XBRL应用",
+    "OSP云开发平台",
+    "央企数字化",
+    "可视化开发模式",
+    "组件复用",
+    "模型复用",
+    "自主知识产权",
+    "系统自主可控"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "集团财务管理系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集团资金管理系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集团共享系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集团资产管理系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:52:29"
+}

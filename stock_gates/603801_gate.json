@@ -1,0 +1,49 @@
+{
+  "stock_id": "603801",
+  "stock_name": "志邦家居",
+  "concept": "全屋定制家居",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全屋定制家居",
+    "整体厨柜",
+    "定制衣柜",
+    "厨柜业务",
+    "定制衣柜业务"
+  ],
+  "should": [
+    "经销渠道",
+    "大宗业务",
+    "木门",
+    "木门业务",
+    "软体配套成品",
+    "直营",
+    "出口",
+    "全屋定制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全屋定制家居",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "整体厨柜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "定制衣柜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "厨柜业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "定制衣柜业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:56:46"
+}

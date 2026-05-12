@@ -1,0 +1,51 @@
+{
+  "stock_id": "603598",
+  "stock_name": "引力传媒",
+  "concept": "整合营销传播",
+  "strategy_type": "industry_chain",
+  "must": [
+    "整合营销传播",
+    "品牌营销",
+    "效果营销",
+    "社交营销",
+    "电商营销与运营"
+  ],
+  "should": [
+    "数据营销咨询",
+    "阿里生态",
+    "抖音生态",
+    "快手生态",
+    "小红书",
+    "微博",
+    "B站",
+    "核力智投系统",
+    "核力智选系统",
+    "全域六星合作伙伴"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "整合营销传播",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "品牌营销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "效果营销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "社交营销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电商营销与运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:52:58"
+}

@@ -1,0 +1,28 @@
+{
+  "stock_id": "300265",
+  "stock_name": "通光线缆",
+  "concept": "特种线缆",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航空航天用耐高温电缆"
+  ],
+  "should": [
+    "电力特种光缆",
+    "光纤光缆",
+    "特种线缆",
+    "导线",
+    "中国光纤光缆最具竞争力十强企业",
+    "中国通信光电缆行业核心企业",
+    "中国线缆行业百强企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航空航天用耐高温电缆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:20:15"
+}

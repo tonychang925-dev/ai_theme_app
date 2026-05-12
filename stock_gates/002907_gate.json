@@ -1,0 +1,33 @@
+{
+  "stock_id": "002907",
+  "stock_name": "华森制药",
+  "concept": "综合制药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "甘桔冰梅片",
+    "痛泻宁颗粒",
+    "都梁软胶囊"
+  ],
+  "should": [
+    "综合制药",
+    "特医食品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "甘桔冰梅片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "痛泻宁颗粒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "都梁软胶囊",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:02:37"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "688113",
+  "stock_name": "联测科技",
+  "concept": "动力系统测试",
+  "strategy_type": "industry_chain",
+  "must": [
+    "动力系统智能测试装备"
+  ],
+  "should": [
+    "动力系统测试验证服务",
+    "动力系统测试",
+    "模块化设计",
+    "个性化定制",
+    "模拟仿真",
+    "自主开发软件系统",
+    "全透明程序架构",
+    "全图形界面",
+    "自动测试功能",
+    "内存映射技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "动力系统智能测试装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:08:42"
+}

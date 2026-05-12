@@ -1,0 +1,36 @@
+{
+  "stock_id": "688550",
+  "stock_name": "瑞联新材",
+  "concept": "OLED材料领军",
+  "strategy_type": "industry_chain",
+  "must": [
+    "OLED材料领军",
+    "OLED材料"
+  ],
+  "should": [
+    "液晶材料",
+    "半导体光刻胶单体",
+    "PI单体",
+    "TFT平坦层光刻胶",
+    "电子化学品",
+    "医药CDMO",
+    "智能手机",
+    "显示面板",
+    "显示材料板块收入占比84.43%",
+    "OLED业务营收占比接近40%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "OLED材料领军",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "OLED材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:20:20"
+}

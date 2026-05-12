@@ -1,0 +1,36 @@
+{
+  "stock_id": "600854",
+  "stock_name": "春兰股份",
+  "concept": "空调与房地产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "家用房间空气调节器",
+    "商品住宅"
+  ],
+  "should": [
+    "沿街商铺",
+    "制冷系统",
+    "空气循环和净化装置",
+    "家庭",
+    "办公",
+    "建材和装饰材料销售",
+    "酒店服务",
+    "委托关联方和非关联方生产",
+    "代理模式销售",
+    "自主投资开发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "家用房间空气调节器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商品住宅",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:29:31"
+}

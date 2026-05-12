@@ -1,0 +1,41 @@
+{
+  "stock_id": "603992",
+  "stock_name": "松霖科技",
+  "concept": "健康硬件IDM",
+  "strategy_type": "industry_chain",
+  "must": [
+    "健康硬件IDM",
+    "厨卫健康品类",
+    "美容健康品类"
+  ],
+  "should": [
+    "新兴智能健康品类",
+    "亿级微气泡技术",
+    "家用皮肤护理技术",
+    "口腔深度清洁和检测技术",
+    "头皮头发养护技术",
+    "光谱透视技术",
+    "微电流技术",
+    "AI智能技术",
+    "厨卫健康空间",
+    "美容护理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "健康硬件IDM",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "厨卫健康品类",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "美容健康品类",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:00:39"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "603501",
+  "stock_name": "豪威集团",
+  "concept": "平台型半导体龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "平台型龙头",
+    "图像传感器解决方案",
+    "触控与显示解决方案",
+    "模拟解决方案",
+    "CIS"
+  ],
+  "should": [
+    "TDDI",
+    "OLED DDIC",
+    "TVS",
+    "MOS",
+    "电源IC",
+    "射频及微传感",
+    "QPD（四相位检测）技术",
+    "交错式HDR定时",
+    "平台型半导体龙头",
+    "EIS（电子图像稳定）"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "平台型龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "图像传感器解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "触控与显示解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "模拟解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CIS",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:51:32"
+}

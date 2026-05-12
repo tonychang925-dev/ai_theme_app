@@ -1,0 +1,41 @@
+{
+  "stock_id": "600810",
+  "stock_name": "神马股份",
+  "concept": "尼龙66一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "尼龙66盐",
+    "己二腈",
+    "尼龙66切片"
+  ],
+  "should": [
+    "尼龙66工业丝",
+    "尼龙66帘子布",
+    "尼龙66气囊丝",
+    "己二酸",
+    "己二胺",
+    "尼龙66一体化",
+    "己二腈加氢制己二胺",
+    "精苯加氢制己二酸",
+    "国内最大尼龙66生产企业",
+    "最完整尼龙产业链布局"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "尼龙66盐",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "己二腈",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "尼龙66切片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:28:28"
+}

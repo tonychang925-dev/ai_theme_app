@@ -1,0 +1,46 @@
+{
+  "stock_id": "600055",
+  "stock_name": "万东医疗",
+  "concept": "医学影像设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "DR",
+    "CT",
+    "MRI",
+    "DSA"
+  ],
+  "should": [
+    "无液氦超导MRI",
+    "全幅DR数字摄影",
+    "移动DR",
+    "乳腺机",
+    "胃肠机",
+    "大孔径MRI",
+    "县级医院",
+    "三级医院",
+    "国家区域医疗中心",
+    "DR行业领先"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "DR",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CT",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MRI",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "DSA",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:08:05"
+}

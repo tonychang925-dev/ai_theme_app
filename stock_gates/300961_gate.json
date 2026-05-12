@@ -1,0 +1,41 @@
+{
+  "stock_id": "300961",
+  "stock_name": "深水海纳",
+  "concept": "水生态环境治理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业污水处理",
+    "优质供水",
+    "智慧水务平台"
+  ],
+  "should": [
+    "新能源领域",
+    "智能装备",
+    "新材料",
+    "水处理药剂",
+    "水生态环境治理",
+    "研发",
+    "设计",
+    "投资",
+    "建设",
+    "运营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业污水处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "优质供水",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧水务平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:50:54"
+}

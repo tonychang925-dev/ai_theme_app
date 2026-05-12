@@ -1,0 +1,46 @@
+{
+  "stock_id": "000008",
+  "stock_name": "神州高铁",
+  "concept": "轨道交通运营检修",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轨道交通运营检修装备与数据",
+    "地铁和货运专用铁路线运营",
+    "轨道交通职业人才培训",
+    "大型工业企业智能物流装备"
+  ],
+  "should": [
+    "轨道交通运营检修",
+    "车辆检修",
+    "信号系统",
+    "线路维护",
+    "供电监测",
+    "货站检测",
+    "车载电子",
+    "轨边检测",
+    "图像识别",
+    "数据服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轨道交通运营检修装备与数据",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "地铁和货运专用铁路线运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轨道交通职业人才培训",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大型工业企业智能物流装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:35:49"
+}

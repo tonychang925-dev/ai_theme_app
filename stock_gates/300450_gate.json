@@ -1,0 +1,41 @@
+{
+  "stock_id": "300450",
+  "stock_name": "先导智能",
+  "concept": "新能源智能装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源智能装备",
+    "锂电池智能装备",
+    "光伏智能装备"
+  ],
+  "should": [
+    "3C智能装备",
+    "智能物流系统",
+    "氢能装备",
+    "激光精密加工",
+    "干法电极",
+    "电解质膜",
+    "高速叠片",
+    "等静压",
+    "自研3D+AI视觉算法",
+    "精密流体技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源智能装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂电池智能装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏智能装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:27:58"
+}

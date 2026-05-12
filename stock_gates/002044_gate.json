@@ -1,0 +1,39 @@
+{
+  "stock_id": "002044",
+  "stock_name": "美年健康",
+  "concept": "健康体检服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "健康体检服务",
+    "专业健康体检",
+    "肿瘤早筛"
+  ],
+  "should": [
+    "健康咨询",
+    "健康评估",
+    "健康干预",
+    "医疗管家式服务",
+    "基因检测",
+    "专业预防",
+    "健康保障",
+    "人工智能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "健康体检服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "专业健康体检",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "肿瘤早筛",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:19:58"
+}

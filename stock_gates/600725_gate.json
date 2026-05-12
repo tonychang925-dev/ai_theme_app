@@ -1,0 +1,41 @@
+{
+  "stock_id": "600725",
+  "stock_name": "云维股份",
+  "concept": "煤焦贸易",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤焦贸易",
+    "煤炭",
+    "焦炭"
+  ],
+  "should": [
+    "钢材",
+    "硅石",
+    "木炭",
+    "组合化采购",
+    "仓储服务及掺配",
+    "水泥煤",
+    "焦煤",
+    "燃料煤",
+    "硅煤",
+    "电煤"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤焦贸易",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "焦炭",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:25:57"
+}

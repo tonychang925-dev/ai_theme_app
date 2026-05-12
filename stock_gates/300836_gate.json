@@ -1,0 +1,36 @@
+{
+  "stock_id": "300836",
+  "stock_name": "佰奥智能",
+  "concept": "智能制造方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能制造方案",
+    "信息化整体解决方案"
+  ],
+  "should": [
+    "数字化工厂",
+    "数字化系统",
+    "智能化",
+    "模块化",
+    "柔性化",
+    "消费性电子",
+    "汽车",
+    "服装",
+    "餐饮",
+    "新能源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能制造方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信息化整体解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:45:15"
+}

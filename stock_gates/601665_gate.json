@@ -1,0 +1,26 @@
+{
+  "stock_id": "601665",
+  "stock_name": "齐鲁银行",
+  "concept": "城商银行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "城商银行"
+  ],
+  "should": [
+    "公司银行业务",
+    "零售银行业务",
+    "金融市场业务",
+    "山东省",
+    "外资银行"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "城商银行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:37:43"
+}

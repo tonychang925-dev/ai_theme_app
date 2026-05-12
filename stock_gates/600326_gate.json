@@ -1,0 +1,41 @@
+{
+  "stock_id": "600326",
+  "stock_name": "西藏天路",
+  "concept": "西藏基建龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "西藏基建龙头",
+    "公路工程",
+    "桥梁工程"
+  ],
+  "should": [
+    "水泥",
+    "房屋建筑工程",
+    "沥青砼",
+    "商砼",
+    "施工资质升级",
+    "信息化管理",
+    "技术升级",
+    "科研成果转化",
+    "西藏本土市场",
+    "区外市场"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "西藏基建龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公路工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "桥梁工程",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:15:04"
+}

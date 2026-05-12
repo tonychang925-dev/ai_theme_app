@@ -1,0 +1,32 @@
+{
+  "stock_id": "000809",
+  "stock_name": "和展能源",
+  "concept": "城市综合运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "土地一级开发",
+    "城市基础设施建设"
+  ],
+  "should": [
+    "风电塔筒销售",
+    "城市综合运营",
+    "城市运营",
+    "市政配套"
+  ],
+  "not": [
+    "房地产"
+  ],
+  "evidence_refs": [
+    {
+      "term": "土地一级开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市基础设施建设",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:05:32"
+}

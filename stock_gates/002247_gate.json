@@ -1,0 +1,31 @@
+{
+  "stock_id": "002247",
+  "stock_name": "聚力文化",
+  "concept": "装饰贴面材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "装饰贴面材料"
+  ],
+  "should": [
+    "三聚氰胺装饰纸",
+    "高性能装饰板",
+    "PVC装饰材料",
+    "地板",
+    "家具",
+    "橱卫",
+    "门业",
+    "装饰装潢",
+    "装饰纸细分产业龙头企业",
+    "中高端市场定位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "装饰贴面材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:31:29"
+}

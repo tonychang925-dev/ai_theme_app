@@ -1,0 +1,41 @@
+{
+  "stock_id": "688360",
+  "stock_name": "德马科技",
+  "concept": "智能物流系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能物流系统",
+    "智能物流系统解决方案",
+    "锂电工厂"
+  ],
+  "should": [
+    "数字化DC电机",
+    "智能驱动控制卡",
+    "输送分拣技术",
+    "驱动技术",
+    "人工智能+物联网技术",
+    "数字孪生技术",
+    "天玑系统",
+    "机器人核心算法",
+    "控制技术",
+    "服务机器人"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能物流系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能物流系统解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂电工厂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:16:32"
+}

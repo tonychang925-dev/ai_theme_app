@@ -1,0 +1,48 @@
+{
+  "stock_id": "600717",
+  "stock_name": "天津港",
+  "concept": "港口综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "港口综合服务",
+    "装卸",
+    "物流",
+    "集装箱",
+    "智慧港口"
+  ],
+  "should": [
+    "港口综合配套服务",
+    "散杂货",
+    "销售",
+    "京津冀海上门户",
+    "中蒙俄经济走廊东部起点",
+    "新亚欧大陆桥重要节点",
+    "21世纪海上丝绸之路战略支点"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "港口综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "装卸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物流",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集装箱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧港口",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:25:42"
+}

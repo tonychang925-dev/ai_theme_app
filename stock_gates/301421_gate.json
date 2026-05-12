@@ -1,0 +1,41 @@
+{
+  "stock_id": "301421",
+  "stock_name": "波长光电",
+  "concept": "精密光学元件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密光学元件",
+    "激光光学产品",
+    "红外光学产品"
+  ],
+  "should": [
+    "光学元件",
+    "光学组件",
+    "光学设计",
+    "光学检测",
+    "精密光学设计",
+    "光学镀层",
+    "激光器件制造",
+    "光学系统设计",
+    "工业激光加工",
+    "红外热成像"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密光学元件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "激光光学产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "红外光学产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:05:05"
+}

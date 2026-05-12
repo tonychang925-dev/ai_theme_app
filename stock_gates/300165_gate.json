@@ -1,0 +1,51 @@
+{
+  "stock_id": "300165",
+  "stock_name": "天瑞仪器",
+  "concept": "分析检测综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "分析检测综合服务",
+    "光谱仪",
+    "质谱仪",
+    "XRF",
+    "快速诊断试剂"
+  ],
+  "should": [
+    "主控芯片",
+    "主动研发能力",
+    "二次开发能力",
+    "固件开发",
+    "心血管疾病诊断",
+    "感染性疾病诊断",
+    "呼吸道病原体检测",
+    "国内分析仪器行业领航者",
+    "产业链自主可控",
+    "国产替代"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "分析检测综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光谱仪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "质谱仪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "XRF",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "快速诊断试剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:15:54"
+}

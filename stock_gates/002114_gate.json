@@ -1,0 +1,36 @@
+{
+  "stock_id": "002114",
+  "stock_name": "罗平锌电",
+  "concept": "铅锌采冶",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锌锭",
+    "锌合金"
+  ],
+  "should": [
+    "铅精矿",
+    "锗精矿",
+    "锌精矿大型焙烧技术",
+    "液态高铅渣直接还原技术",
+    "富氧熔池熔炼技术",
+    "氨法炼锌技术",
+    "铅锌采冶",
+    "铅锌采选",
+    "铅锌冶炼",
+    "储能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锌锭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锌合金",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:24:00"
+}

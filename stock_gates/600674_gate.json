@@ -1,0 +1,36 @@
+{
+  "stock_id": "600674",
+  "stock_name": "川投能源",
+  "concept": "四川水电龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "四川水电龙头",
+    "雅砻江水电"
+  ],
+  "should": [
+    "嘉阳电力",
+    "国能大渡河",
+    "两河口",
+    "杨房沟",
+    "锦屏一级",
+    "二滩",
+    "水电清洁能源",
+    "参控股电力总装机3514万千瓦",
+    "权益装机容量1333万千瓦",
+    "雅砻江流域唯一水电开发主体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "四川水电龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "雅砻江水电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:24:39"
+}

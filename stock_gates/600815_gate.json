@@ -1,0 +1,31 @@
+{
+  "stock_id": "600815",
+  "stock_name": "厦工股份",
+  "concept": "工程机械制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "装载机"
+  ],
+  "should": [
+    "工程机械制造",
+    "节能技术",
+    "安全技术",
+    "噪声与振动技术",
+    "电控智能化产品技术",
+    "新能源技术",
+    "国四排放升级",
+    "电动化",
+    "国家重点骨干企业",
+    "国家级企业技术中心"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "装载机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:28:33"
+}

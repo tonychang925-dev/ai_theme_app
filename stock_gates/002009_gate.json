@@ -1,0 +1,44 @@
+{
+  "stock_id": "002009",
+  "stock_name": "天奇股份",
+  "concept": "智能装备与循环产业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端智能装备",
+    "循环产业",
+    "锂电池回收",
+    "智能装备与循环产业"
+  ],
+  "should": [
+    "自动化成套生产线",
+    "智能控制系统",
+    "工业机器人",
+    "锂电池回收技术",
+    "汽车制造",
+    "报废汽车回收",
+    "锂电池金属回收率行业前列",
+    "国际一流智能装备生产商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端智能装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "循环产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂电池回收",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能装备与循环产业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:18:05"
+}

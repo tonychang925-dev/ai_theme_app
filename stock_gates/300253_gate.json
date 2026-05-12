@@ -1,0 +1,41 @@
+{
+  "stock_id": "300253",
+  "stock_name": "卫宁健康",
+  "concept": "智慧医疗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧医疗",
+    "传统医疗卫生信息化",
+    "互联网+医疗健康"
+  ],
+  "should": [
+    "智慧卫生",
+    "云医",
+    "云药",
+    "云险",
+    "云康",
+    "创新服务平台",
+    "卫生行政机构",
+    "医疗机构",
+    "健康服务机构",
+    "各级医院"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧医疗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "传统医疗卫生信息化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "互联网+医疗健康",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:19:36"
+}

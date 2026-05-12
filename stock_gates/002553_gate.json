@@ -1,0 +1,31 @@
+{
+  "stock_id": "002553",
+  "stock_name": "南方精工",
+  "concept": "精密轴承制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "滚针轴承"
+  ],
+  "should": [
+    "单向离合器",
+    "单向滑轮总成",
+    "精密轴承制造",
+    "精密零部件",
+    "纵向一体化全产业链",
+    "先进制造工艺",
+    "自主研发",
+    "国内滚针轴承行业第一",
+    "国际知名汽车零部件商全球采购体系",
+    "世界500强企业客户"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "滚针轴承",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:46:58"
+}

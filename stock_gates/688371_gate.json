@@ -1,0 +1,42 @@
+{
+  "stock_id": "688371",
+  "stock_name": "菲沃泰",
+  "concept": "纳米薄膜防护",
+  "strategy_type": "industry_chain",
+  "must": [
+    "单层阻液纳米薄膜",
+    "双层防液防气纳米薄膜",
+    "多层耐腐蚀纳米薄膜",
+    "真空纳米镀膜"
+  ],
+  "should": [
+    "纳米镀膜设备",
+    "材料配方",
+    "制备工艺",
+    "纳米薄膜防护",
+    "全球纳米薄膜综合解决方案引领者",
+    "国家重点专精特新小巨人企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "单层阻液纳米薄膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "双层防液防气纳米薄膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多层耐腐蚀纳米薄膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "真空纳米镀膜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:16:51"
+}

@@ -1,0 +1,32 @@
+{
+  "stock_id": "600343",
+  "stock_name": "航天动力",
+  "concept": "航天动力技术",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航天液体动力技术",
+    "航天动力技术"
+  ],
+  "should": [
+    "泵及泵系统",
+    "液力传动系统",
+    "流体计量系统",
+    "化工生物装备",
+    "反应技术",
+    "结晶技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航天液体动力技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航天动力技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:15:39"
+}

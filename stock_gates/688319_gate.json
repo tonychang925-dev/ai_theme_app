@@ -1,0 +1,42 @@
+{
+  "stock_id": "688319",
+  "stock_name": "欧林生物",
+  "concept": "人用疫苗研发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "吸附破伤风疫苗",
+    "AC-Hib联合疫苗",
+    "重组金葡菌疫苗"
+  ],
+  "should": [
+    "Hib结合疫苗",
+    "AC结合疫苗",
+    "细菌疫苗平台",
+    "病毒疫苗平台",
+    "佐剂技术平台",
+    "A群链球菌疫苗",
+    "基因重组蛋白疫苗",
+    "核酸疫苗"
+  ],
+  "not": [
+    "临床试验Ⅲ期",
+    "临床前研究"
+  ],
+  "evidence_refs": [
+    {
+      "term": "吸附破伤风疫苗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AC-Hib联合疫苗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重组金葡菌疫苗",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:15:22"
+}

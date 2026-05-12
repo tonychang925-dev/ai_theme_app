@@ -1,0 +1,35 @@
+{
+  "stock_id": "300626",
+  "stock_name": "华瑞股份",
+  "concept": "电机换向器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电机换向器",
+    "无刷连接器"
+  ],
+  "should": [
+    "全塑型换向器",
+    "槽型换向器",
+    "钩型换向器",
+    "卷板型换向器",
+    "平面型换向器",
+    "全塑型一次成型生产工艺",
+    "全自动生产线",
+    "换向器行业龙头企业",
+    "核心零部件供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电机换向器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无刷连接器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:35:58"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "301487",
+  "stock_name": "盟固利",
+  "concept": "正极材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钴酸锂",
+    "三元正极材料"
+  ],
+  "should": [
+    "NCMA",
+    "NCA",
+    "富锂锰基",
+    "固态电解质",
+    "钠电",
+    "磷酸锰铁锂",
+    "正极材料",
+    "高容量",
+    "高压实",
+    "高倍率"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钴酸锂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三元正极材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:05:27"
+}

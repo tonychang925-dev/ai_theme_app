@@ -1,0 +1,31 @@
+{
+  "stock_id": "002910",
+  "stock_name": "庄园牧场",
+  "concept": "西北乳制品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "自有牧场"
+  ],
+  "should": [
+    "巴氏杀菌乳",
+    "灭菌乳",
+    "调制乳",
+    "发酵乳",
+    "含乳饮料",
+    "生物技术",
+    "学生饮用奶",
+    "社区新鲜奶亭",
+    "送奶到户",
+    "自助售奶机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "自有牧场",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:02:44"
+}

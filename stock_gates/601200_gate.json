@@ -1,0 +1,40 @@
+{
+  "stock_id": "601200",
+  "stock_name": "上海环境",
+  "concept": "垃圾焚烧发电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "垃圾焚烧发电",
+    "生活垃圾焚烧发电",
+    "固废资源化"
+  ],
+  "should": [
+    "污水处理",
+    "危废医废焚烧",
+    "垃圾填埋",
+    "环境修复",
+    "烟气短流程高效净化工艺",
+    "生活垃圾资源化处理",
+    "污水污泥治理",
+    "技术服务",
+    "运营生活垃圾焚烧项目27个"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "垃圾焚烧发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生活垃圾焚烧发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "固废资源化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:35:29"
+}

@@ -1,0 +1,42 @@
+{
+  "stock_id": "002837",
+  "stock_name": "英维克",
+  "concept": "精密温控液冷",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密温控液冷",
+    "机房温控节能",
+    "机柜温控节能",
+    "CDU"
+  ],
+  "should": [
+    "冷板",
+    "Manifold",
+    "快速接头(ODC)",
+    "客车空调",
+    "轨道交通列车空调及服务",
+    "液冷链条累计交付超1GW"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密温控液冷",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机房温控节能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机柜温控节能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CDU",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:59:38"
+}

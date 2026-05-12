@@ -1,0 +1,29 @@
+{
+  "stock_id": "603087",
+  "stock_name": "甘李药业",
+  "concept": "胰岛素药物",
+  "strategy_type": "industry_chain",
+  "must": [
+    "重组胰岛素类似物"
+  ],
+  "should": [
+    "第四代超长效胰岛素类似物",
+    "GLP-1受体激动剂周制剂",
+    "胰岛素复方制剂",
+    "GLP-1受体激动剂技术",
+    "胰岛素药物",
+    "自主创新研发",
+    "糖尿病治疗",
+    "肥胖/超重体重管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "重组胰岛素类似物",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:43:14"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300677",
+  "stock_name": "英科医疗",
+  "concept": "医疗护理产品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医疗护理产品",
+    "一次性丁腈手套",
+    "一次性PVC手套"
+  ],
+  "should": [
+    "轮椅",
+    "冷热敷",
+    "电极片",
+    "浸渍工艺硫化成型",
+    "浸渍工艺塑化成型",
+    "自动化生产设施",
+    "医疗护理",
+    "工业劳动",
+    "餐饮服务",
+    "日常生活"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医疗护理产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一次性丁腈手套",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一次性PVC手套",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:38:32"
+}

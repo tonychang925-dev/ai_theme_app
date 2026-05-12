@@ -1,0 +1,31 @@
+{
+  "stock_id": "002500",
+  "stock_name": "山西证券",
+  "concept": "综合金融服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "FICC业务"
+  ],
+  "should": [
+    "财富管理业务",
+    "企业金融业务",
+    "资产管理业务",
+    "权益业务",
+    "中德证券",
+    "格林大华",
+    "山证国际",
+    "山证科技",
+    "综合金融服务",
+    "期货经纪"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "FICC业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:44:44"
+}

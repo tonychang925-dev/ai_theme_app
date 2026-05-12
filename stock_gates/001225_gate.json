@@ -1,0 +1,41 @@
+{
+  "stock_id": "001225",
+  "stock_name": "和泰机电",
+  "concept": "物料输送设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "物料输送设备",
+    "板链斗式提升机",
+    "胶带斗式提升机"
+  ],
+  "should": [
+    "易损配件",
+    "其他输送机",
+    "防磨损熟料输送链条技术",
+    "防磨损矿渣输送链技术",
+    "输送链密封技术",
+    "链条链板设备自主设计技术",
+    "水泥建材",
+    "港口",
+    "钢铁",
+    "化工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "物料输送设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "板链斗式提升机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "胶带斗式提升机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:14:06"
+}

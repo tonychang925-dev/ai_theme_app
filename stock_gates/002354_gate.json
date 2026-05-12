@@ -1,0 +1,36 @@
+{
+  "stock_id": "002354",
+  "stock_name": "天娱数科",
+  "concept": "数字科技",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电竞游戏",
+    "数据流量"
+  ],
+  "should": [
+    "虚拟人",
+    "数字竞技平台",
+    "数据流量平台",
+    "数字科技",
+    "数据挖掘",
+    "多维算法",
+    "三维重建",
+    "数字竞技",
+    "数字营销",
+    "品牌运营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电竞游戏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据流量",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:37:13"
+}

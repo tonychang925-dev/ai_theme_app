@@ -1,0 +1,46 @@
+{
+  "stock_id": "688577",
+  "stock_name": "浙海德曼",
+  "concept": "高端数控车床",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端数控车床",
+    "T系列高端数控车床",
+    "自动化单元",
+    "并行复合加工机"
+  ],
+  "should": [
+    "主轴技术",
+    "伺服刀塔技术",
+    "伺服尾座技术",
+    "车铣复合技术",
+    "车床Y轴技术",
+    "大功率/大扭矩同步电主轴",
+    "大规格伺服动力刀塔",
+    "大规格伺服尾座",
+    "汽车",
+    "工程机械"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端数控车床",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "T系列高端数控车床",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自动化单元",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "并行复合加工机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:21:07"
+}

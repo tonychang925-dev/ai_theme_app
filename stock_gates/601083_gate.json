@@ -1,0 +1,43 @@
+{
+  "stock_id": "601083",
+  "stock_name": "锦江航运",
+  "concept": "集装箱航运",
+  "strategy_type": "industry_chain",
+  "must": [
+    "集装箱航运",
+    "集装箱班轮运输",
+    "上海日本航线",
+    "上海两岸间航线"
+  ],
+  "should": [
+    "HDS快速交货服务",
+    "海防丝路快航",
+    "泰越丝路快航",
+    "总运力4.51万TEU",
+    "48艘船舶",
+    "中国大陆集装箱班轮公司第7位",
+    "世界集装箱班轮公司第34位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "集装箱航运",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集装箱班轮运输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "上海日本航线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "上海两岸间航线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:33:55"
+}

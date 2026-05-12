@@ -1,0 +1,41 @@
+{
+  "stock_id": "002006",
+  "stock_name": "精工科技",
+  "concept": "碳纤维设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "碳纤维设备",
+    "千吨级碳纤维生产线",
+    "碳纤维微波石墨化生产线"
+  ],
+  "should": [
+    "碳纤维罐体双头缠绕机",
+    "集中控制系统",
+    "冗余及自诊断技术",
+    "机器人智能装备",
+    "计算机技术",
+    "网络通讯技术",
+    "超高升温速度",
+    "低系统需求",
+    "重塑碳纤维结构",
+    "国内碳纤维设备优质企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "碳纤维设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "千吨级碳纤维生产线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳纤维微波石墨化生产线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:18:06"
+}

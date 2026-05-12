@@ -1,0 +1,24 @@
+{
+  "stock_id": "002367",
+  "stock_name": "康力电梯",
+  "concept": "电梯制造与服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电梯制造与服务"
+  ],
+  "should": [
+    "新建房地产市场",
+    "电梯存量市场（维保、更新改造）",
+    "旧梯更新改造需求加速释放"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电梯制造与服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:38:02"
+}

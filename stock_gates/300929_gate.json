@@ -1,0 +1,33 @@
+{
+  "stock_id": "300929",
+  "stock_name": "华骐环保",
+  "concept": "BAF污水处理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "BAF污水处理",
+    "曝气生物滤池（BAF）"
+  ],
+  "should": [
+    "生物膜法水质净化",
+    "污染物微生物净化增强技术",
+    "前置生物膜脱氮污水处理技术",
+    "城镇污水处理",
+    "医疗废水治理",
+    "农村污水治理",
+    "工业废水处理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "BAF污水处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "曝气生物滤池（BAF）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:49:34"
+}

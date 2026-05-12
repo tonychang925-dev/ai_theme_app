@@ -1,0 +1,41 @@
+{
+  "stock_id": "601860",
+  "stock_name": "紫金银行",
+  "concept": "本土金融服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "本土金融服务",
+    "普惠金融",
+    "社区银行"
+  ],
+  "should": [
+    "存款",
+    "贷款",
+    "农村普惠服务站",
+    "场景银行",
+    "财富管理银行",
+    "交易银行",
+    "金融科技",
+    "大数据风控",
+    "服务三农",
+    "服务中小"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "本土金融服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "普惠金融",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "社区银行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:39:10"
+}

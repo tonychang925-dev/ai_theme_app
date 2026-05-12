@@ -1,0 +1,46 @@
+{
+  "stock_id": "688420",
+  "stock_name": "美腾科技",
+  "concept": "工矿智能装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工矿智能装备",
+    "TDS智能干选设备",
+    "XRT矿物智能干选设备",
+    "选煤厂智能化系统"
+  ],
+  "should": [
+    "井下TDS智能干选机",
+    "CS智能粗煤泥分选设备",
+    "TCS智能粗煤泥分选设备",
+    "智能梯流干选机(TGS)",
+    "火车无人装车系统",
+    "汽车无人装车系统",
+    "设备管理系统",
+    "能源云环保系统",
+    "智信云开放管理平台",
+    "X射线及计算机视觉识别"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工矿智能装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "TDS智能干选设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "XRT矿物智能干选设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "选煤厂智能化系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:18:22"
+}

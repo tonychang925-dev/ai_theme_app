@@ -1,0 +1,33 @@
+{
+  "stock_id": "300247",
+  "stock_name": "融捷健康",
+  "concept": "家用桑拿设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "家用桑拿设备",
+    "远红外桑拿房"
+  ],
+  "should": [
+    "空气净化器",
+    "健身器材",
+    "AI语音识别智能控制系统",
+    "健康产品产销",
+    "健康管理服务",
+    "全球供应链体系",
+    "供应商管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "家用桑拿设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "远红外桑拿房",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:19:17"
+}

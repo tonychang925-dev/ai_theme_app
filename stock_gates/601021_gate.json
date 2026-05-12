@@ -1,0 +1,31 @@
+{
+  "stock_id": "601021",
+  "stock_name": "春秋航空",
+  "concept": "低成本航空",
+  "strategy_type": "industry_chain",
+  "must": [
+    "低成本航空"
+  ],
+  "should": [
+    "航空客运",
+    "固定成本",
+    "半固定成本",
+    "飞机高利用率",
+    "单机创收",
+    "单机创利",
+    "航空网络",
+    "揽客能力",
+    "价格敏感性旅客",
+    "因私出行旅客"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "低成本航空",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:33:37"
+}

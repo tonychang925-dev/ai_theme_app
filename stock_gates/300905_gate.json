@@ -1,0 +1,36 @@
+{
+  "stock_id": "300905",
+  "stock_name": "宝丽迪",
+  "concept": "纤维母粒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "纤维母粒",
+    "原液着色技术"
+  ],
+  "should": [
+    "非纤母粒",
+    "水性色浆",
+    "材料分散技术",
+    "固相分散技术",
+    "液相分散技术",
+    "化学纤维制品",
+    "汽车工业",
+    "电子电器产品",
+    "光学材料",
+    "纤维母粒产量国内排名第1"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "纤维母粒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原液着色技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:48:32"
+}

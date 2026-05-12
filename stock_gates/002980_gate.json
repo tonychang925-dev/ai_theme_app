@@ -1,0 +1,41 @@
+{
+  "stock_id": "002980",
+  "stock_name": "华盛昌",
+  "concept": "智能测量测试",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能测量测试",
+    "电工电力类",
+    "环境检测类"
+  ],
+  "should": [
+    "医疗、建筑、汽车检测类",
+    "MEMS传感器",
+    "传感器",
+    "自主研发",
+    "德国传感器",
+    "电力工程建设和检修",
+    "电气设备维护",
+    "精密电子制造",
+    "新能源",
+    "节能环保"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能测量测试",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电工电力类",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环境检测类",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:05:59"
+}

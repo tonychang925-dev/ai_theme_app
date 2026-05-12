@@ -1,0 +1,31 @@
+{
+  "stock_id": "600332",
+  "stock_name": "白云山",
+  "concept": "医药健康",
+  "strategy_type": "industry_chain",
+  "must": [
+    "王老吉凉茶"
+  ],
+  "should": [
+    "滋肾育胎丸",
+    "头孢呋辛钠",
+    "小柴胡颗粒",
+    "华佗再造丸",
+    "阿咖酚散",
+    "舒筋健腰丸",
+    "安宫牛黄丸",
+    "蜜炼川贝枇杷膏",
+    "咳特灵",
+    "荔小吉"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "王老吉凉茶",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:15:23"
+}

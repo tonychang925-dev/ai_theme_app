@@ -1,0 +1,35 @@
+{
+  "stock_id": "000893",
+  "stock_name": "亚钾国际",
+  "concept": "钾肥龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钾肥龙头",
+    "百万吨级钾肥项目"
+  ],
+  "should": [
+    "氯化钾",
+    "东南亚市场",
+    "国内市场",
+    "开采技术持续迭代",
+    "海外找钾成功企业",
+    "钾资源储量超11亿吨",
+    "国际化融资渠道",
+    "资产国际化",
+    "市场国际化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钾肥龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "百万吨级钾肥项目",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:08:21"
+}

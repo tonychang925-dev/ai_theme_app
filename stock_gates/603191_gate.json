@@ -1,0 +1,37 @@
+{
+  "stock_id": "603191",
+  "stock_name": "望变电气",
+  "concept": "取向硅钢龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "取向硅钢龙头",
+    "取向硅钢",
+    "输配电及控制设备"
+  ],
+  "should": [
+    "电力变压器",
+    "箱式变电站",
+    "成套电气设备",
+    "取向硅钢生产工艺",
+    "高磁感取向硅钢（HiB）技术",
+    "变压器制造技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "取向硅钢龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "取向硅钢",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "输配电及控制设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:45:58"
+}

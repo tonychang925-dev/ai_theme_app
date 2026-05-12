@@ -1,0 +1,41 @@
+{
+  "stock_id": "301322",
+  "stock_name": "绿通科技",
+  "concept": "场地电动车",
+  "strategy_type": "industry_chain",
+  "must": [
+    "场地电动车",
+    "高尔夫球车",
+    "观光车"
+  ],
+  "should": [
+    "电动巡逻车",
+    "电动货车",
+    "第二代交流异步驱动技术",
+    "第三代交流永磁同步驱动技术",
+    "双摆臂悬架底盘平台",
+    "控制器国产替代",
+    "杭州G20峰会",
+    "俄罗斯莫斯科建城870周年纪念日",
+    "厦门金砖会议",
+    "金奈会晤"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "场地电动车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高尔夫球车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "观光车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:02:53"
+}

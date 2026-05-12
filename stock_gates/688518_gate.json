@@ -1,0 +1,46 @@
+{
+  "stock_id": "688518",
+  "stock_name": "联赢激光",
+  "concept": "激光焊接设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "激光焊接设备",
+    "激光焊接设备龙头",
+    "动力电池",
+    "激光焊接自动化成套设备"
+  ],
+  "should": [
+    "激光器及激光焊接机",
+    "工作台",
+    "YAG激光器",
+    "蓝光激光器",
+    "光纤激光器",
+    "复合激光器",
+    "半导体激光器",
+    "脉冲激光器",
+    "汽车",
+    "五金"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "激光焊接设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "激光焊接设备龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动力电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "激光焊接自动化成套设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:19:38"
+}

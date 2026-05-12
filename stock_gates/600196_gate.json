@@ -1,0 +1,41 @@
+{
+  "stock_id": "600196",
+  "stock_name": "复星医药",
+  "concept": "医药健康服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "制药",
+    "医疗器械",
+    "医学诊断"
+  ],
+  "should": [
+    "医疗健康服务",
+    "小分子",
+    "抗体/ADC",
+    "细胞治疗",
+    "RNA",
+    "细菌性疫苗",
+    "病毒性疫苗",
+    "分子诊断",
+    "免疫诊断",
+    "生化诊断"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "制药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗器械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医学诊断",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:11:34"
+}

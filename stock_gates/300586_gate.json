@@ -1,0 +1,41 @@
+{
+  "stock_id": "300586",
+  "stock_name": "美联新材",
+  "concept": "色母粒与三聚氯氰",
+  "strategy_type": "industry_chain",
+  "must": [
+    "色母粒与三聚氯氰",
+    "色母粒",
+    "三聚氯氰"
+  ],
+  "should": [
+    "湿法隔膜",
+    "水性芳纶涂料涂覆工艺",
+    "塑料制品",
+    "汽车",
+    "电子",
+    "个人护理",
+    "食品",
+    "医疗卫生",
+    "农药",
+    "除草剂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "色母粒与三聚氯氰",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "色母粒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三聚氯氰",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:33:56"
+}

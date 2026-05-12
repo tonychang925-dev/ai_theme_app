@@ -1,0 +1,46 @@
+{
+  "stock_id": "300522",
+  "stock_name": "世名科技",
+  "concept": "纳米着色材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "纳米着色材料",
+    "色浆",
+    "功能纳米分散体",
+    "特种添加剂"
+  ],
+  "should": [
+    "纤维色母粒",
+    "功能母粒",
+    "原液着色技术",
+    "纳米分散技术",
+    "涂料",
+    "纺织",
+    "医疗防护",
+    "光伏",
+    "电子通信",
+    "PCB"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "纳米着色材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "色浆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功能纳米分散体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种添加剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:31:09"
+}

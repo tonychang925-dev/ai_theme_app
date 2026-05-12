@@ -1,0 +1,36 @@
+{
+  "stock_id": "300512",
+  "stock_name": "中亚股份",
+  "concept": "智能包装机械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能包装机械",
+    "无菌技术"
+  ],
+  "should": [
+    "后道智能包装设备",
+    "无人零售设备",
+    "乳品",
+    "饮料",
+    "医疗健康",
+    "食用油脂",
+    "日化",
+    "调味品",
+    "电子商务",
+    "国内领先的智能包装机械制造企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能包装机械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无菌技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:30:37"
+}

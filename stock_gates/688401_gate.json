@@ -1,0 +1,39 @@
+{
+  "stock_id": "688401",
+  "stock_name": "路维光电",
+  "concept": "掩膜版制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "平板显示掩膜版",
+    "半导体掩膜版",
+    "国内领先的掩膜版生产企业"
+  ],
+  "should": [
+    "石英掩膜版",
+    "苏打掩膜版",
+    "触控掩膜版",
+    "电路板掩膜版",
+    "半色调掩膜版制造技术",
+    "灰阶掩膜版制造技术",
+    "掩膜版光阻涂布技术",
+    "掩膜版制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "平板显示掩膜版",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体掩膜版",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内领先的掩膜版生产企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:17:51"
+}

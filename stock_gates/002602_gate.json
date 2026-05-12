@@ -1,0 +1,36 @@
+{
+  "stock_id": "002602",
+  "stock_name": "世纪华通",
+  "concept": "数字科技双主业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "互联网游戏",
+    "汽车零部件制造"
+  ],
+  "should": [
+    "云数据",
+    "智慧城市",
+    "文旅文保",
+    "医疗健康",
+    "工业生产",
+    "5G",
+    "芯片",
+    "人工智能",
+    "AR/VR/MR",
+    "防沉迷实名认证系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "互联网游戏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车零部件制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:49:27"
+}

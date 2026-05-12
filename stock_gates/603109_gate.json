@@ -1,0 +1,41 @@
+{
+  "stock_id": "603109",
+  "stock_name": "神驰机电",
+  "concept": "通用发电机组",
+  "strategy_type": "industry_chain",
+  "must": [
+    "通用汽油发电机组",
+    "通用发电机组",
+    "小型发电机"
+  ],
+  "should": [
+    "通用汽油机",
+    "数码变频发电机组",
+    "高压清洗机",
+    "园林机械",
+    "24V驻车发电机",
+    "自主研发",
+    "自主生产",
+    "全产业链布局",
+    "应急发电",
+    "移动电源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "通用汽油发电机组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通用发电机组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小型发电机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:44:01"
+}

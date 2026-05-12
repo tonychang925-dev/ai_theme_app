@@ -1,0 +1,46 @@
+{
+  "stock_id": "002300",
+  "stock_name": "太阳电缆",
+  "concept": "电线电缆",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电线电缆",
+    "电力电缆",
+    "特种电缆",
+    "建筑用线"
+  ],
+  "should": [
+    "装备用线",
+    "数据电缆",
+    "架空线",
+    "海底电缆",
+    "省级企业技术中心",
+    "国家认可实验室",
+    "5G网络数字化追溯",
+    "电力",
+    "能源",
+    "建筑"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电线电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑用线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:34:20"
+}

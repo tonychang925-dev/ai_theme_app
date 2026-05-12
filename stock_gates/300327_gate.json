@@ -1,0 +1,35 @@
+{
+  "stock_id": "300327",
+  "stock_name": "中颖电子",
+  "concept": "小家电MCU",
+  "strategy_type": "industry_chain",
+  "must": [
+    "小家电MCU",
+    "微控制器(MCU)",
+    "锂电池管理芯片"
+  ],
+  "should": [
+    "主控芯片",
+    "变频技术",
+    "国内小家电MCU前三",
+    "国产替代主要选择"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "小家电MCU",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "微控制器(MCU)",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂电池管理芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:22:38"
+}

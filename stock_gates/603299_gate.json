@@ -1,0 +1,36 @@
+{
+  "stock_id": "603299",
+  "stock_name": "苏盐井神",
+  "concept": "盐化产品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "盐化产品",
+    "食盐"
+  ],
+  "should": [
+    "两碱工业盐",
+    "小工业盐",
+    "纯碱",
+    "两碱行业",
+    "印染",
+    "光伏玻璃",
+    "平板玻璃",
+    "日用玻璃",
+    "合成洗涤剂",
+    "氧化铝"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "盐化产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "食盐",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:48:25"
+}

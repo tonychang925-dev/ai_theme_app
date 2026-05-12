@@ -1,0 +1,41 @@
+{
+  "stock_id": "001296",
+  "stock_name": "长江材料",
+  "concept": "铸造材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "覆膜砂",
+    "铸造用硅砂",
+    "再生砂"
+  ],
+  "should": [
+    "压裂支撑剂",
+    "砂芯",
+    "铸造再生设备CZS系列",
+    "自动化覆膜砂生产线",
+    "汽车发动机",
+    "柴油机",
+    "液压件",
+    "油气开采",
+    "行业领导者",
+    "国内领先地位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "覆膜砂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铸造用硅砂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "再生砂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:15:24"
+}

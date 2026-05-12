@@ -1,0 +1,41 @@
+{
+  "stock_id": "601369",
+  "stock_name": "陕鼓动力",
+  "concept": "分布式能源服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轴流压缩机",
+    "能量回收装置",
+    "透平压缩机组"
+  ],
+  "should": [
+    "工业流程能量回收装置",
+    "透平鼓风机组",
+    "鼓风-节能一体化机组",
+    "SHRT机组",
+    "STRT机组",
+    "BPRT机组",
+    "分布式能源服务",
+    "冶金",
+    "化工",
+    "钢铁"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轴流压缩机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "能量回收装置",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "透平压缩机组",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:36:31"
+}

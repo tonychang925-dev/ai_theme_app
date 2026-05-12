@@ -1,0 +1,51 @@
+{
+  "stock_id": "002426",
+  "stock_name": "胜利精密",
+  "concept": "精密结构件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密结构件",
+    "精密金属结构件及结构模组",
+    "塑胶结构件及结构模组",
+    "光学玻璃盖板",
+    "复合材料显示盖板"
+  ],
+  "should": [
+    "光学膜",
+    "磁控溅镀",
+    "水电镀",
+    "真空溅镀",
+    "AG/AR/AF镀膜",
+    "3D热弯玻璃",
+    "镀膜",
+    "复合材料加工",
+    "笔记本电脑",
+    "电视"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密结构件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密金属结构件及结构模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "塑胶结构件及结构模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光学玻璃盖板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复合材料显示盖板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:41:12"
+}

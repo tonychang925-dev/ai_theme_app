@@ -1,0 +1,46 @@
+{
+  "stock_id": "603839",
+  "stock_name": "安正时尚",
+  "concept": "中高档时装",
+  "strategy_type": "industry_chain",
+  "must": [
+    "JZ玖姿",
+    "IMM尹默",
+    "MOISSAC摩萨克",
+    "ANZHENG安正"
+  ],
+  "should": [
+    "中高档时装",
+    "植物纹样设计",
+    "功能性面料研发",
+    "抗菌抗病毒技术",
+    "速干技术",
+    "自冷自发热技术",
+    "百货商场",
+    "购物中心",
+    "奥莱店",
+    "电商平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "JZ玖姿",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IMM尹默",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MOISSAC摩萨克",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ANZHENG安正",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:57:26"
+}

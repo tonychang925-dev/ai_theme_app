@@ -1,0 +1,39 @@
+{
+  "stock_id": "300918",
+  "stock_name": "南山智尚",
+  "concept": "毛纺服饰与新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精纺面料",
+    "职业装",
+    "超高分子量聚乙烯纤维"
+  ],
+  "should": [
+    "OPTIM全羊毛防水面料",
+    "运动衣",
+    "冲锋衣",
+    "休闲风衣",
+    "军用",
+    "民用",
+    "面料服装一体化",
+    "智能化工厂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精纺面料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "职业装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超高分子量聚乙烯纤维",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:49:07"
+}

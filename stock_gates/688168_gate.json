@@ -1,0 +1,46 @@
+{
+  "stock_id": "688168",
+  "stock_name": "安博通",
+  "concept": "网安上游厂商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "网安上游厂商",
+    "厂商的厂商",
+    "ABT SPOS平台",
+    "硬件无关化技术"
+  ],
+  "should": [
+    "安全网关",
+    "安全管理",
+    "安全服务",
+    "防火墙",
+    "IDS",
+    "IPS",
+    "上网行为管理",
+    "安全审计",
+    "安全管理平台",
+    "威胁管理与分析"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "网安上游厂商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "厂商的厂商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ABT SPOS平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硬件无关化技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:10:36"
+}

@@ -1,0 +1,35 @@
+{
+  "stock_id": "603136",
+  "stock_name": "天目湖",
+  "concept": "一站式旅游目的地",
+  "strategy_type": "industry_chain",
+  "must": [
+    "一站式旅游目的地",
+    "山水园景区",
+    "南山竹海景区"
+  ],
+  "should": [
+    "御水温泉",
+    "水世界主题公园",
+    "酒店",
+    "旅行社"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "一站式旅游目的地",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "山水园景区",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "南山竹海景区",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:44:44"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "603876",
+  "stock_name": "鼎胜新材",
+  "concept": "铝箔龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铝箔龙头",
+    "新能源电池箔"
+  ],
+  "should": [
+    "空调箔",
+    "双零箔",
+    "单零箔",
+    "铝板带",
+    "铝箔轧机",
+    "锂电池",
+    "国产设备",
+    "绿色包装",
+    "家用",
+    "家电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铝箔龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源电池箔",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:57:52"
+}

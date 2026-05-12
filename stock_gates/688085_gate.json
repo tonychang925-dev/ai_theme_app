@@ -1,0 +1,41 @@
+{
+  "stock_id": "688085",
+  "stock_name": "三友医疗",
+  "concept": "骨科脊柱植入",
+  "strategy_type": "industry_chain",
+  "must": [
+    "骨科脊柱植入",
+    "脊柱植入产品",
+    "骨科脊柱植入领域龙头企业"
+  ],
+  "should": [
+    "创伤产品",
+    "超声骨刀",
+    "超声止血刀",
+    "运动医学产品",
+    "高分子可透光材料",
+    "双头螺钉技术",
+    "超声骨刀刀尖振幅技术",
+    "脊柱退变",
+    "脊柱畸形",
+    "脊柱创伤"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "骨科脊柱植入",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "脊柱植入产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "骨科脊柱植入领域龙头企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:07:50"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "603348",
+  "stock_name": "文灿股份",
+  "concept": "铝合金精密压铸",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铝合金精密压铸",
+    "车身结构件",
+    "一体化压铸件",
+    "高压铸造",
+    "高真空压铸"
+  ],
+  "should": [
+    "发动机系统铸件",
+    "变速箱系统铸件",
+    "底盘系统铸件",
+    "制动系统铸件",
+    "低压铸造",
+    "重力铸造",
+    "模具自主开发",
+    "铝合金材料配比控制",
+    "与力劲集团战略合作",
+    "自主模具开发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铝合金精密压铸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车身结构件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一体化压铸件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高压铸造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高真空压铸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:49:47"
+}

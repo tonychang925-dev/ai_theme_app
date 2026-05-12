@@ -1,0 +1,46 @@
+{
+  "stock_id": "600425",
+  "stock_name": "青松建化",
+  "concept": "水泥建材化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水泥",
+    "建材",
+    "特种水泥",
+    "新型干法水泥生产线"
+  ],
+  "should": [
+    "商品混凝土",
+    "化工产品",
+    "PVC",
+    "油井水泥API认证",
+    "节能降碳改造技术",
+    "建筑项目",
+    "固定资产投资",
+    "油井工程",
+    "道路建设",
+    "大坝建设"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水泥",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种水泥",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新型干法水泥生产线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:17:42"
+}

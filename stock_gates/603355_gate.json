@@ -1,0 +1,46 @@
+{
+  "stock_id": "603355",
+  "stock_name": "莱克电气",
+  "concept": "小家电代工龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "吸尘器",
+    "除螨机",
+    "净水机",
+    "铝合金精密结构件"
+  ],
+  "should": [
+    "智能烹饪机",
+    "高速数码电机",
+    "铝合金精密压铸",
+    "CNC精密加工",
+    "精密注塑模具",
+    "锂电池组件包",
+    "小家电代工龙头",
+    "全球最大吸尘器研发制造商",
+    "ODM/OEM代工",
+    "核心零部件自主研发生产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "吸尘器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "除螨机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "净水机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铝合金精密结构件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:49:53"
+}

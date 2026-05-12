@@ -1,0 +1,50 @@
+{
+  "stock_id": "600519",
+  "stock_name": "贵州茅台",
+  "concept": "高端白酒龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "53度飞天茅台",
+    "非标茅台酒",
+    "端午制曲",
+    "重阳下沙",
+    "12987工艺"
+  ],
+  "should": [
+    "茅台1935",
+    "汉酱",
+    "茅台王子酒",
+    "i茅台电商平台",
+    "五合营销法",
+    "高端白酒龙头",
+    "茅台酒基酒产能5.6万吨",
+    "系列酒营收突破百亿",
+    "数字化全链路溯源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "53度飞天茅台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "非标茅台酒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "端午制曲",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重阳下沙",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "12987工艺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:20:04"
+}

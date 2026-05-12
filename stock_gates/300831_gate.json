@@ -1,0 +1,31 @@
+{
+  "stock_id": "300831",
+  "stock_name": "派瑞股份",
+  "concept": "特高压功率半导体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特高压功率半导体",
+    "高压大功率半导体器件"
+  ],
+  "should": [
+    "超大功率电源变换类设备",
+    "测试及非标设备",
+    "电力半导体器件研制",
+    "特高压直流输电工程",
+    "新能源并网输电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特高压功率半导体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高压大功率半导体器件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:45:03"
+}

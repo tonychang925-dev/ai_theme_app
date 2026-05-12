@@ -1,0 +1,46 @@
+{
+  "stock_id": "600650",
+  "stock_name": "锦江在线",
+  "concept": "客运物流综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "客运业",
+    "物流业",
+    "国际货代",
+    "客运业务"
+  ],
+  "should": [
+    "预制菜",
+    "铁路运输",
+    "多式联运",
+    "大件运输",
+    "冷链物流",
+    "网约车",
+    "锦江出行平台",
+    "锦大师预制菜",
+    "B2C数字化物流体系",
+    "客运物流综合服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "客运业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物流业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国际货代",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "客运业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:23:56"
+}

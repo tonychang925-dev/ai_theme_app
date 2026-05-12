@@ -1,0 +1,46 @@
+{
+  "stock_id": "002643",
+  "stock_name": "万润股份",
+  "concept": "化学新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环保材料产业",
+    "电子信息材料产业",
+    "新能源材料产业",
+    "生命科学与医药产业"
+  ],
+  "should": [
+    "沸石系列环保材料",
+    "高端液晶单体材料",
+    "OLED成品材料",
+    "升华前单体材料",
+    "聚酰亚胺材料",
+    "半导体制造材料",
+    "医药中间体",
+    "原料药",
+    "化学合成技术",
+    "有机合成"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环保材料产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子信息材料产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源材料产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生命科学与医药产业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:51:22"
+}

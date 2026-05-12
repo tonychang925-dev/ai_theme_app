@@ -1,0 +1,41 @@
+{
+  "stock_id": "000685",
+  "stock_name": "中山公用",
+  "concept": "环保水务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环保水务",
+    "污水处理",
+    "城市供水"
+  ],
+  "should": [
+    "固废处理",
+    "垃圾焚烧发电",
+    "环卫服务",
+    "智慧水务",
+    "管网漏控",
+    "水质监测",
+    "工程建设",
+    "水处理技术研发",
+    "城市供水服务",
+    "污水处理服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环保水务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "污水处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市供水",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:00:48"
+}

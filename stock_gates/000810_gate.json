@@ -1,0 +1,40 @@
+{
+  "stock_id": "000810",
+  "stock_name": "创维数字",
+  "concept": "数字机顶盒龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球数字机顶盒龙头",
+    "数字机顶盒龙头",
+    "数字机顶盒"
+  ],
+  "should": [
+    "宽带连接设备",
+    "5G/WiFi6 CPE",
+    "10GPON",
+    "VR眼镜",
+    "Pancake超短焦光学",
+    "6DOF定位",
+    "手势识别",
+    "智慧家庭娱乐",
+    "5G智能家居"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球数字机顶盒龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字机顶盒龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字机顶盒",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:05:41"
+}

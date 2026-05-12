@@ -1,0 +1,41 @@
+{
+  "stock_id": "603556",
+  "stock_name": "海兴电力",
+  "concept": "智能电表与配用电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能电表与配用电",
+    "智能电表",
+    "配用电系统"
+  ],
+  "should": [
+    "工商业储能产品",
+    "微电网",
+    "IR46标准双芯电表",
+    "管理芯",
+    "AMI系统",
+    "配网自动化调度系统",
+    "软件产品",
+    "STS认证",
+    "DLMS认证",
+    "智能电网配电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能电表与配用电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能电表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "配用电系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:52:14"
+}

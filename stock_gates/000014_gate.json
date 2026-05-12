@@ -1,0 +1,31 @@
+{
+  "stock_id": "000014",
+  "stock_name": "沙河股份",
+  "concept": "住宅开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "房地产开发与经营"
+  ],
+  "should": [
+    "长沙沙河城",
+    "新乡世纪村",
+    "新乡世纪新城",
+    "住宅开发",
+    "开发周期标准化",
+    "去化周期标准化",
+    "产品标准化",
+    "快周转",
+    "深耕长沙",
+    "深耕郑州"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房地产开发与经营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T16:46:39"
+}

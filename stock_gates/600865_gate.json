@@ -1,0 +1,32 @@
+{
+  "stock_id": "600865",
+  "stock_name": "百大集团",
+  "concept": "综合商业服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "百货业",
+    "酒店业"
+  ],
+  "should": [
+    "旅游业",
+    "物业租赁",
+    "收藏品市场",
+    "综合商业服务",
+    "委托管理",
+    "投资管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "百货业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "酒店业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:29:51"
+}

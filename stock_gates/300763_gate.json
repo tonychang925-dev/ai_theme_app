@@ -1,0 +1,35 @@
+{
+  "stock_id": "300763",
+  "stock_name": "锦浪科技",
+  "concept": "光伏逆变器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏逆变器",
+    "组串式并网逆变器"
+  ],
+  "should": [
+    "储能逆变器",
+    "功率变换及控制系统",
+    "IGBT国产替代",
+    "分布式光伏发电系统",
+    "储能系统",
+    "组串式逆变器龙头企业",
+    "全球市场份额扩张",
+    "海外子公司",
+    "第三方境外机构"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏逆变器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "组串式并网逆变器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:42:07"
+}

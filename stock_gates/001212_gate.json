@@ -1,0 +1,36 @@
+{
+  "stock_id": "001212",
+  "stock_name": "中旗新材",
+  "concept": "人造石英石",
+  "strategy_type": "industry_chain",
+  "must": [
+    "人造石英石",
+    "出口基地"
+  ],
+  "should": [
+    "人造石英石板材",
+    "人造石英石台面",
+    "真空振压工艺",
+    "自动化生产",
+    "产品性能研发",
+    "花色设计",
+    "厨房台面",
+    "洗手池台面",
+    "餐厅桌面",
+    "前台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "人造石英石",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "出口基地",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:13:35"
+}

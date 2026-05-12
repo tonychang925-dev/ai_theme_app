@@ -1,0 +1,51 @@
+{
+  "stock_id": "600315",
+  "stock_name": "上海家化",
+  "concept": "日化护肤",
+  "strategy_type": "industry_chain",
+  "must": [
+    "佰草集",
+    "玉泽",
+    "六神",
+    "抖音",
+    "小红书"
+  ],
+  "should": [
+    "高夫",
+    "美加净",
+    "启初",
+    "家安",
+    "典萃",
+    "双妹",
+    "汤美星",
+    "线下商超",
+    "百货",
+    "化妆品专营店"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "佰草集",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "玉泽",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "六神",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "抖音",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小红书",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:14:47"
+}

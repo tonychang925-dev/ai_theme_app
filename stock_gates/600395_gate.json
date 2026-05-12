@@ -1,0 +1,28 @@
+{
+  "stock_id": "600395",
+  "stock_name": "盘江股份",
+  "concept": "煤炭开采",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤电联营"
+  ],
+  "should": [
+    "精煤",
+    "混煤",
+    "原煤",
+    "煤炭开采",
+    "超超临界燃煤发电",
+    "钢铁",
+    "电力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤电联营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:16:56"
+}

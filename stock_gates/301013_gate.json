@@ -1,0 +1,41 @@
+{
+  "stock_id": "301013",
+  "stock_name": "利和兴",
+  "concept": "智能制造设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能制造设备",
+    "检测类设备",
+    "制程类设备"
+  ],
+  "should": [
+    "电子元器件",
+    "射频测试",
+    "滤波器调谐",
+    "柔性OLED屏贴覆",
+    "覆膜设备",
+    "自动化技术",
+    "智能化技术",
+    "移动智能终端",
+    "车载领域",
+    "显示器件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能制造设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "检测类设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "制程类设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:53:08"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "600692",
+  "stock_name": "亚通股份",
+  "concept": "崇明综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "房地产开发",
+    "新能源产业"
+  ],
+  "should": [
+    "通信服务",
+    "混凝土产业",
+    "商贸服务",
+    "出租车业务",
+    "文旅产业",
+    "资产经营",
+    "民生保障类住房",
+    "渔光互补光伏",
+    "分布式屋顶光伏",
+    "崇明岛唯一上市公司"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房地产开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源产业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:25:05"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300566",
+  "stock_name": "激智科技",
+  "concept": "光学膜与光伏膜",
+  "strategy_type": "industry_chain",
+  "must": [
+    "量子点薄膜",
+    "复合膜",
+    "光伏背板"
+  ],
+  "should": [
+    "扩散膜",
+    "增亮膜",
+    "COP",
+    "银反射膜",
+    "3D膜",
+    "保护膜",
+    "手机硬化膜",
+    "窗膜",
+    "光学级水氧阻隔膜",
+    "汽车窗膜"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "量子点薄膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复合膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏背板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:33:10"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "601890",
+  "stock_name": "亚星锚链",
+  "concept": "全球锚链龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球锚链龙头",
+    "船用锚链",
+    "船用锚链市占率全球第一"
+  ],
+  "should": [
+    "海洋平台系泊链",
+    "高强度矿用链",
+    "全球最大链条生产企业",
+    "锚链制造",
+    "热处理",
+    "船舶舾装",
+    "海洋石油平台",
+    "煤矿",
+    "多家国际油公司合格供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球锚链龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "船用锚链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "船用锚链市占率全球第一",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:39:33"
+}

@@ -1,0 +1,39 @@
+{
+  "stock_id": "603020",
+  "stock_name": "爱普股份",
+  "concept": "食品用香精",
+  "strategy_type": "industry_chain",
+  "must": [
+    "食品用香精",
+    "香精",
+    "香料"
+  ],
+  "should": [
+    "食品配料",
+    "调香能力",
+    "工艺改进",
+    "配方优化",
+    "乳品",
+    "饮料",
+    "国内最大的食品用香精生产企业",
+    "拥有自己的香料生产基地"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "食品用香精",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "香精",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "香料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:41:14"
+}

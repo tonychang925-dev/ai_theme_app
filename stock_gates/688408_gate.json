@@ -1,0 +1,39 @@
+{
+  "stock_id": "688408",
+  "stock_name": "中信博",
+  "concept": "光伏支架系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏跟踪支架",
+    "光伏支架系统",
+    "BIPV产品"
+  ],
+  "should": [
+    "固定支架",
+    "跟踪控制算法",
+    "机械设计",
+    "电控设计",
+    "驱动设计",
+    "光伏电站",
+    "光伏建筑一体化",
+    "光伏电站核心设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏跟踪支架",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏支架系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "BIPV产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:17:53"
+}

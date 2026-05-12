@@ -1,0 +1,46 @@
+{
+  "stock_id": "601808",
+  "stock_name": "中海油服",
+  "concept": "海上油田服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "海上油田服务",
+    "钻井服务",
+    "油田技术服务",
+    "国际知名钻井承包商"
+  ],
+  "should": [
+    "船舶服务",
+    "旋转导向及随钻测井系统",
+    "高温堵调技术",
+    "射流泵注采一体化技术",
+    "高端电缆测井技术",
+    "水基钻井液高温降滤失剂",
+    "深水固井温压测量短节",
+    "海上油气勘探开发",
+    "深海油气资源开发",
+    "陆地油田技术服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "海上油田服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钻井服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "油田技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国际知名钻井承包商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:38:50"
+}

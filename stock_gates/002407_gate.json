@@ -1,0 +1,41 @@
+{
+  "stock_id": "002407",
+  "stock_name": "多氟多",
+  "concept": "六氟磷酸锂龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "六氟磷酸锂龙头",
+    "六氟磷酸锂",
+    "晶体六氟磷酸锂生产技术"
+  ],
+  "should": [
+    "双氟磺酰亚胺锂",
+    "电子级氢氟酸",
+    "电子级硅烷",
+    "UPSSS级氢氟酸生产技术",
+    "新型锂盐制备技术",
+    "锂电池电解液",
+    "半导体集成电路",
+    "显示面板",
+    "光伏行业",
+    "六氟磷酸锂出货量行业第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "六氟磷酸锂龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "六氟磷酸锂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "晶体六氟磷酸锂生产技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:40:08"
+}

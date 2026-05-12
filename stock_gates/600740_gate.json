@@ -1,0 +1,51 @@
+{
+  "stock_id": "600740",
+  "stock_name": "山西焦化",
+  "concept": "煤焦化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "冶金焦炭",
+    "煤焦化",
+    "焦炉煤气综合利用",
+    "煤焦油深加工",
+    "粗苯深加工"
+  ],
+  "should": [
+    "甲醇",
+    "炭黑",
+    "硫铵",
+    "工业萘",
+    "改质沥青",
+    "纯苯",
+    "钢铁冶炼",
+    "化工生产",
+    "炼焦煤资源优势",
+    "铁路通道优势"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "冶金焦炭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤焦化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "焦炉煤气综合利用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤焦油深加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "粗苯深加工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:26:24"
+}

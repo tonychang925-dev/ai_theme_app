@@ -1,0 +1,32 @@
+{
+  "stock_id": "603863",
+  "stock_name": "松炀资源",
+  "concept": "环保再生纸",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环保再生纸",
+    "再生环保纸"
+  ],
+  "should": [
+    "高强瓦楞原纸",
+    "废纸回收",
+    "涂布成型",
+    "环保造纸",
+    "包装纸",
+    "功能用纸"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环保再生纸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "再生环保纸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:57:39"
+}

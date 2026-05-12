@@ -1,0 +1,40 @@
+{
+  "stock_id": "603489",
+  "stock_name": "八方股份",
+  "concept": "电踏车电机龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电踏车电机龙头",
+    "中置电机",
+    "电机龙头厂商"
+  ],
+  "should": [
+    "内三速自动变速花鼓",
+    "IOT系统",
+    "主控芯片",
+    "CAN通信",
+    "EMC实验室",
+    "固件开发",
+    "电踏车",
+    "电助力自行车",
+    "国内业务制造基地"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电踏车电机龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中置电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电机龙头厂商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:51:16"
+}

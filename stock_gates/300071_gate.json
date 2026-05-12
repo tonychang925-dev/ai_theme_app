@@ -1,0 +1,46 @@
+{
+  "stock_id": "300071",
+  "stock_name": "福石控股",
+  "concept": "数字整合营销",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字整合营销",
+    "线上线下全域营销",
+    "品牌咨询",
+    "全链路营销"
+  ],
+  "should": [
+    "体验营销",
+    "公关广告",
+    "数字营销",
+    "元宇宙营销",
+    "大数据营销",
+    "内容营销",
+    "大数据算法",
+    "AI人工智能技术",
+    "AR/VR",
+    "全息影像"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字整合营销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "线上线下全域营销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "品牌咨询",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全链路营销",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:12:07"
+}

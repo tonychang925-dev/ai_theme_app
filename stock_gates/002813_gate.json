@@ -1,0 +1,51 @@
+{
+  "stock_id": "002813",
+  "stock_name": "路畅科技",
+  "concept": "汽车智能化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能座舱",
+    "智能辅助驾驶",
+    "车联网技术",
+    "无人驾驶解决方案",
+    "智能化出行解决方案"
+  ],
+  "should": [
+    "ADAS",
+    "AR-HUD",
+    "T-BOX",
+    "360全景环视系统",
+    "智能车机",
+    "数字化仪表",
+    "流媒体后视镜",
+    "行车记录仪",
+    "无线充",
+    "汽车智能化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能座舱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能辅助驾驶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车联网技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无人驾驶解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能化出行解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:58:35"
+}

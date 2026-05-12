@@ -1,0 +1,45 @@
+{
+  "stock_id": "688203",
+  "stock_name": "海正生材",
+  "concept": "聚乳酸研产销",
+  "strategy_type": "industry_chain",
+  "must": [
+    "聚乳酸研产销",
+    "纯聚乳酸",
+    "复合改性聚乳酸",
+    "两步法工艺"
+  ],
+  "should": [
+    "初级制品",
+    "多效连续蒸发技术",
+    "自制高效环化催化技术",
+    "耦合分离提纯技术",
+    "新型聚合技术",
+    "餐饮食品领域包装和用具",
+    "3D打印增材",
+    "家居及日用品",
+    "《聚乳酸》国标第一起草单位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "聚乳酸研产销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纯聚乳酸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复合改性聚乳酸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "两步法工艺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:11:43"
+}

@@ -2203,6 +2203,21 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             WHERE trade_date = $1::date
             GROUP BY subject_key
         ),
+        consecutive_boards AS (
+            -- 独立龙头检测：7日窗口内存在连续两个交易日涨停（先按日去重）
+            SELECT DISTINCT stock_id, TRUE AS has_two_board
+            FROM (
+                SELECT stock_id, trade_date,
+                       COALESCE(MAX(limit_up::int)::bool, FALSE) AS limit_up,
+                       LAG(COALESCE(MAX(limit_up::int)::bool, FALSE)) OVER (
+                           PARTITION BY stock_id ORDER BY trade_date
+                       ) AS prev_limit_up
+                FROM subject_stock_daily_snapshot
+                WHERE trade_date IN (SELECT trade_date FROM recent_trade_days)
+                GROUP BY stock_id, trade_date
+            ) t
+            WHERE limit_up = TRUE AND prev_limit_up = TRUE
+        ),
         eligible AS (
             SELECT
                 r.*,
@@ -2217,7 +2232,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 ) AS final_mainline_alive,
                 COALESCE(msd.mainline_strength_score, v2.mainline_strength_score, 0) AS mainline_strength_score,
                 COALESCE(ss.subject_limit_up_count, 0) AS subject_limit_up_count,
-                COALESCE(ss.subject_strong_count, 0) AS subject_strong_count
+                COALESCE(ss.subject_strong_count, 0) AS subject_strong_count,
+                COALESCE(cb.has_two_board, FALSE) AS has_two_board
             FROM recent r
             LEFT JOIN theme_mainline_identity_registry mr
               ON mr.subject_key = r.subject_key
@@ -2229,6 +2245,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
              AND v2.subject_key = r.subject_key
             LEFT JOIN subject_strength ss
               ON ss.subject_key = r.subject_key
+            LEFT JOIN consecutive_boards cb
+              ON split_part(cb.stock_id, '.', 1) = split_part(r.stock_id, '.', 1)
             WHERE (
                 (
                     COALESCE(mr.is_main_theme, FALSE) = TRUE
@@ -2240,7 +2258,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                         OR COALESCE(ss.subject_strong_count, 0) >= 3
                     )
                 )
-                OR COALESCE(r.recent_limit_up_count, 0) >= 2
+                OR COALESCE(cb.has_two_board, FALSE) = TRUE
             )
         ),
         ranked AS (
@@ -2723,7 +2741,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
               AND w.last_trade_date <= $1::date
         ),
         recent_stats AS (
-            SELECT stock_id, COUNT(*) FILTER (WHERE COALESCE(limit_up, FALSE) = TRUE) AS recent_limit_up_count
+            SELECT stock_id, COUNT(DISTINCT trade_date) FILTER (WHERE COALESCE(limit_up, FALSE) = TRUE) AS recent_limit_up_count
             FROM subject_stock_daily_snapshot
             WHERE trade_date <= $1::date AND trade_date > ($1::date - INTERVAL '30 days')
             GROUP BY stock_id
@@ -2938,17 +2956,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             FROM stock_daily_snapshot
             WHERE trade_date <= $1::date
             ORDER BY trade_date DESC
-            LIMIT $2
-        ),
-        daily_snapshot_dedup AS (
-            SELECT
-                s.trade_date,
-                split_part(s.stock_id, '.', 1) AS stock_code,
-                MAX(s.pct_chg) AS pct_chg,
-                MAX(COALESCE(NULLIF(s.raw_json->>20, ''), '0')::integer) AS current_flag
-            FROM subject_stock_daily_snapshot s
-            WHERE s.trade_date IN (SELECT trade_date FROM selected_trade_dates)
-            GROUP BY s.trade_date, split_part(s.stock_id, '.', 1)
+            LIMIT $2 + 1
         ),
         base AS (
             SELECT
@@ -2973,15 +2981,16 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 p.labels_json,
                 p.evidence_json,
                 s.pct_chg,
-                COALESCE(s.current_flag, 0) AS current_flag,
+                COALESCE(NULLIF(s.raw_json->>20, ''), '0')::integer AS current_flag,
                 ROW_NUMBER() OVER (
                     PARTITION BY split_part(p.stock_id, '.', 1)
                     ORDER BY p.watch_start_date DESC, p.watch_score DESC, p.watch_priority DESC
                 ) AS rn
             FROM strong_stock_watch_pool p
-            LEFT JOIN daily_snapshot_dedup s
+            LEFT JOIN subject_stock_daily_snapshot s
               ON s.trade_date = p.last_trade_date
-             AND s.stock_code = split_part(p.stock_id, '.', 1)
+             AND split_part(s.stock_id, '.', 1) = split_part(p.stock_id, '.', 1)
+             AND s.subject_key = p.subject_key
             WHERE p.watch_start_date IN (SELECT trade_date FROM selected_trade_dates)
               AND ($3::boolean OR p.watch_status IN ('active', 'weakening'))
               AND ($4::text IS NULL OR split_part(p.stock_id, '.', 1) = split_part($4::text, '.', 1))
@@ -4005,13 +4014,13 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             subject_key = EXCLUDED.subject_key,
             theme_name = EXCLUDED.theme_name,
             watch_start_date = CASE
-                -- 旧链续命规则：已移除→重新入池重置起始日
+                -- 已移除→重新入池重置起始日
                 WHEN strong_stock_watch_pool.watch_status = 'removed' THEN EXCLUDED.watch_start_date
-                -- 二连板及以上新一轮强势信号→重置起始日
-                WHEN COALESCE(NULLIF(EXCLUDED.labels_json->>'recent_limit_up_count', ''), '0')::int >= 2
-                     AND COALESCE(NULLIF(strong_stock_watch_pool.labels_json->>'recent_limit_up_count', ''), '0')::int < 2
+                -- 续命：7日窗口内涨停计数增加（新涨停出现），重置起始日
+                WHEN COALESCE(NULLIF(EXCLUDED.labels_json->>'recent_limit_up_count', ''), '0')::int >
+                     COALESCE(NULLIF(strong_stock_watch_pool.labels_json->>'recent_limit_up_count', ''), '0')::int
                      THEN EXCLUDED.watch_start_date
-                -- 其余场景保留最早起始日，维持连续观察窗口
+                -- 其余场景保留最早起始日
                 ELSE LEAST(strong_stock_watch_pool.watch_start_date, EXCLUDED.watch_start_date)
             END,
             last_trade_date = GREATEST(strong_stock_watch_pool.last_trade_date, EXCLUDED.last_trade_date),

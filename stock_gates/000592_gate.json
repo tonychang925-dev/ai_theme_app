@@ -1,0 +1,36 @@
+{
+  "stock_id": "000592",
+  "stock_name": "平潭发展",
+  "concept": "林业综合开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "造林营林",
+    "林木产品加工与销售"
+  ],
+  "should": [
+    "烟草化肥贸易",
+    "木材贸易",
+    "中高密度纤维板",
+    "超薄板",
+    "中纤板",
+    "连续压机技术",
+    "迪芬巴赫连续压机技术",
+    "菌草技术",
+    "林业综合开发",
+    "家具制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "造林营林",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "林木产品加工与销售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:57:51"
+}

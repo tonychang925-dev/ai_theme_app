@@ -1,0 +1,46 @@
+{
+  "stock_id": "002304",
+  "stock_name": "洋河股份",
+  "concept": "苏酒龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "梦之蓝M9",
+    "梦之蓝手工班",
+    "苏酒头排酒",
+    "梦之蓝m6+"
+  ],
+  "should": [
+    "梦之蓝水晶版",
+    "绵柔苏酒",
+    "天之蓝",
+    "海之蓝",
+    "珍宝坊",
+    "洋河大曲",
+    "敦煌大曲",
+    "双沟大区系列产品",
+    "贵酒",
+    "苏酒龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "梦之蓝M9",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "梦之蓝手工班",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "苏酒头排酒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "梦之蓝m6+",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:34:38"
+}

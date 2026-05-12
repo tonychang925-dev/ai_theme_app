@@ -1,0 +1,30 @@
+{
+  "stock_id": "300568",
+  "stock_name": "星源材质",
+  "concept": "锂电隔膜龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电隔膜龙头"
+  ],
+  "should": [
+    "干法隔膜",
+    "湿法隔膜",
+    "涂覆隔膜",
+    "原材料配方",
+    "生产工艺",
+    "设备整合调试",
+    "隔膜应用",
+    "锂电产业链上游",
+    "锂电池四大核心材料之一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电隔膜龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:33:10"
+}

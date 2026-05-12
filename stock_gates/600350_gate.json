@@ -1,0 +1,31 @@
+{
+  "stock_id": "600350",
+  "stock_name": "山东高速",
+  "concept": "高速公路运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "路桥运营"
+  ],
+  "should": [
+    "高速公路运营",
+    "铁路运输",
+    "投资运营",
+    "济青高速",
+    "京台高速",
+    "济泰高速",
+    "济菏高速",
+    "京台高速齐济段",
+    "畅和通综合服务平台",
+    "崮山智慧收费站"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "路桥运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:15:53"
+}

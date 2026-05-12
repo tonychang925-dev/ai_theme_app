@@ -1,0 +1,41 @@
+{
+  "stock_id": "300756",
+  "stock_name": "金马游乐",
+  "concept": "游乐设施龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国内游乐设施龙头",
+    "游乐设施",
+    "游乐设施龙头"
+  ],
+  "should": [
+    "虚拟沉浸式游乐项目",
+    "过山车技术",
+    "LSM电磁弹射技术",
+    "双断轨过山车",
+    "垂直速降过山车",
+    "游乐园",
+    "主题公园",
+    "旅游景区",
+    "商业综合体",
+    "地标建筑"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国内游乐设施龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "游乐设施",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "游乐设施龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:41:44"
+}

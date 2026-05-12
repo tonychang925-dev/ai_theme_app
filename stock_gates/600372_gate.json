@@ -1,0 +1,31 @@
+{
+  "stock_id": "600372",
+  "stock_name": "中航机载",
+  "concept": "航空电子系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航空电子系统"
+  ],
+  "should": [
+    "飞行控制系统",
+    "座舱显控系统",
+    "机载计算机与网络系统",
+    "惯性导航系统",
+    "大气数据系统",
+    "综合数据系统",
+    "雷达系统",
+    "光电探测系统",
+    "火力控制系统",
+    "控制板与调光控制系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航空电子系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:16:22"
+}

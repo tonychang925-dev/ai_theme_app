@@ -1,0 +1,41 @@
+{
+  "stock_id": "688496",
+  "stock_name": "清越科技",
+  "concept": "新型显示面板",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PMOLED",
+    "电子纸",
+    "硅基OLED"
+  ],
+  "should": [
+    "透明OLED显示屏",
+    "柔性背板技术",
+    "电子价签",
+    "虚拟显示",
+    "增强现实",
+    "高效率白光OLED器件结构",
+    "高可靠性PMOLED器件",
+    "电子纸彩色化驱动技术",
+    "智能调参技术",
+    "高色域彩色化技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PMOLED",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子纸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硅基OLED",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:19:06"
+}

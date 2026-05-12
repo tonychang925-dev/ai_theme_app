@@ -1,0 +1,36 @@
+{
+  "stock_id": "600776",
+  "stock_name": "东方通信",
+  "concept": "通信金融电子",
+  "strategy_type": "industry_chain",
+  "must": [
+    "信息通信产业",
+    "金融科技产业"
+  ],
+  "should": [
+    "专网通信设备",
+    "公网通信产品",
+    "金融自助终端",
+    "无线集群通信",
+    "安全能力开放平台",
+    "金融信息化软件",
+    "通信金融电子",
+    "政府及公共安全",
+    "交通",
+    "能源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "信息通信产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融科技产业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:27:26"
+}

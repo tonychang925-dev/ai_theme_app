@@ -1,0 +1,41 @@
+{
+  "stock_id": "603711",
+  "stock_name": "香飘飘",
+  "concept": "杯装奶茶",
+  "strategy_type": "industry_chain",
+  "must": [
+    "杯装奶茶",
+    "固体杯装奶茶",
+    "液体奶茶"
+  ],
+  "should": [
+    "Meco果汁茶",
+    "兰芳园瓶装冻柠茶",
+    "瓶装牛乳茶",
+    "先进萃取技术",
+    "差异化配方",
+    "低糖配方",
+    "生牛乳原料",
+    "居家消费",
+    "校园推广",
+    "蓝领工厂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "杯装奶茶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "固体杯装奶茶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液体奶茶",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:55:24"
+}

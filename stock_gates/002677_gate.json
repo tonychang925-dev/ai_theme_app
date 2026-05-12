@@ -1,0 +1,31 @@
+{
+  "stock_id": "002677",
+  "stock_name": "浙江美大",
+  "concept": "集成灶龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "集成灶"
+  ],
+  "should": [
+    "集成水槽",
+    "集成水槽洗碗机",
+    "全屋定制",
+    "下排油烟技术",
+    "集成灶龙头",
+    "厨房油烟治理",
+    "健康环保厨房",
+    "开放式厨房",
+    "智能厨房",
+    "集成灶行业开创者"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "集成灶",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:53:03"
+}

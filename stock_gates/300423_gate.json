@@ -1,0 +1,46 @@
+{
+  "stock_id": "300423",
+  "stock_name": "昇辉科技",
+  "concept": "电气成套设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电气成套设备",
+    "高低压电气成套设备",
+    "智能化预装式变电站",
+    "LED照明产品"
+  ],
+  "should": [
+    "绝缘母线槽",
+    "电缆桥架",
+    "智慧灯杆",
+    "智慧社区",
+    "计算机技术",
+    "现代传感技术",
+    "自我诊断",
+    "自动控制",
+    "无人值守",
+    "住宅小区"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电气成套设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高低压电气成套设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能化预装式变电站",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LED照明产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:26:44"
+}

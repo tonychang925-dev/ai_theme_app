@@ -1,0 +1,39 @@
+{
+  "stock_id": "600744",
+  "stock_name": "华银电力",
+  "concept": "火电运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "火电机组",
+    "发电",
+    "电力"
+  ],
+  "should": [
+    "上网电量",
+    "煤机三改联动",
+    "火电运营",
+    "供电煤耗控制",
+    "工业用电",
+    "居民用电",
+    "湖南火电领先",
+    "长协煤覆盖率83.8%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "火电机组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:26:28"
+}

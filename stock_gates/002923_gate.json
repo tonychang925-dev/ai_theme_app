@@ -1,0 +1,26 @@
+{
+  "stock_id": "002923",
+  "stock_name": "润都股份",
+  "concept": "医药制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "盐酸去甲乌药碱"
+  ],
+  "should": [
+    "伊泰青厄贝沙坦氢氯噻嗪片",
+    "抗高血压沙坦类药物",
+    "原料药到制剂纵向一体化",
+    "心脏负荷试验",
+    "高血压治疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "盐酸去甲乌药碱",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:03:22"
+}

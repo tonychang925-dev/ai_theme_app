@@ -1,0 +1,51 @@
+{
+  "stock_id": "300588",
+  "stock_name": "熙菱信息",
+  "concept": "大数据智能应用",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大数据智能应用",
+    "视频",
+    "大数据智能",
+    "数据创新",
+    "网络安全"
+  ],
+  "should": [
+    "易联数据接入网关",
+    "视图资源库管理系统",
+    "时空大数据多维融合分析平台",
+    "鹰眼识踪禁毒大数据智能分析平台",
+    "视频图像+大数据深度融合",
+    "视频图像处理",
+    "城市大脑",
+    "市域社会治理现代化",
+    "政企数字化转型",
+    "智慧公安"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大数据智能应用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "视频",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大数据智能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据创新",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "网络安全",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:34:12"
+}

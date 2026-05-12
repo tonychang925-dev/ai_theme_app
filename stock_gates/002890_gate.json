@@ -1,0 +1,41 @@
+{
+  "stock_id": "002890",
+  "stock_name": "弘宇股份",
+  "concept": "拖拉机液压提升器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "拖拉机液压提升器",
+    "大、中马力提升器及其配件",
+    "电液悬挂控制系统"
+  ],
+  "should": [
+    "负荷传感技术",
+    "铸造静压生产线",
+    "光谱仪检测",
+    "电脑自动配料熔炼系统",
+    "爱协林热处理多用炉",
+    "隧道式热处理生产线",
+    "农用拖拉机",
+    "国内拖拉机液压提升器龙头企业",
+    "专精特新小巨人企业",
+    "行业标准起草单位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "拖拉机液压提升器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大、中马力提升器及其配件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电液悬挂控制系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:01:55"
+}

@@ -1,0 +1,26 @@
+{
+  "stock_id": "000899",
+  "stock_name": "赣能股份",
+  "concept": "电力生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "火力发电"
+  ],
+  "should": [
+    "水力发电",
+    "新能源发电",
+    "电力生产",
+    "电力销售",
+    "综合能源服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "火力发电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:08:34"
+}

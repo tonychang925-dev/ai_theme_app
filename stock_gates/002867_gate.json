@@ -1,0 +1,35 @@
+{
+  "stock_id": "002867",
+  "stock_name": "周大生",
+  "concept": "珠宝品牌运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "珠宝品牌运营",
+    "黄金类产品",
+    "加盟业务"
+  ],
+  "should": [
+    "镶嵌类产品",
+    "素金类产品",
+    "线上（电商）业务",
+    "自营线下业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "珠宝品牌运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "黄金类产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "加盟业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:00:56"
+}

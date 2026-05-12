@@ -1,0 +1,41 @@
+{
+  "stock_id": "002654",
+  "stock_name": "万润科技",
+  "concept": "半导体电子+广告传媒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LED封装",
+    "照明应用",
+    "亮化照明工程"
+  ],
+  "should": [
+    "电视广告内容营销",
+    "互联网数字营销",
+    "贴片式LED",
+    "直插式LED",
+    "红外线接收头",
+    "背光灯条模组",
+    "路灯",
+    "三防灯",
+    "工矿灯",
+    "标识模组"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED封装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "照明应用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "亮化照明工程",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:51:54"
+}

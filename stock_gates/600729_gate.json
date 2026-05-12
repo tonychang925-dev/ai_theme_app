@@ -1,0 +1,30 @@
+{
+  "stock_id": "600729",
+  "stock_name": "重庆百货",
+  "concept": "区域零售龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "百货",
+    "超市"
+  ],
+  "should": [
+    "电器",
+    "汽贸",
+    "马上消费金融",
+    "区域零售龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "百货",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超市",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:26:01"
+}

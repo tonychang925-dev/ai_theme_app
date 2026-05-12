@@ -1,0 +1,41 @@
+{
+  "stock_id": "601988",
+  "stock_name": "中国银行",
+  "concept": "国有商业银行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国有商业银行",
+    "商业银行",
+    "金融科技"
+  ],
+  "should": [
+    "资产管理",
+    "投资银行",
+    "证券",
+    "保险",
+    "基金",
+    "金融租赁",
+    "飞机租赁",
+    "直接投资",
+    "科技创新",
+    "扩大内需"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国有商业银行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商业银行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融科技",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:40:29"
+}

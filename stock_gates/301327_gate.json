@@ -1,0 +1,31 @@
+{
+  "stock_id": "301327",
+  "stock_name": "华宝新能",
+  "concept": "便携储能龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "便携储能产品"
+  ],
+  "should": [
+    "太阳能板",
+    "家庭储能产品",
+    "锂电池便携储能技术",
+    "户外旅行",
+    "应急备灾",
+    "ODM业务",
+    "自主品牌",
+    "全球化品牌战略",
+    "亚马逊",
+    "日本乐天"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "便携储能产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:03:05"
+}

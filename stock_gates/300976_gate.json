@@ -1,0 +1,35 @@
+{
+  "stock_id": "300976",
+  "stock_name": "达瑞电子",
+  "concept": "消费电子与新能源组件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "功能性器件",
+    "结构性器件"
+  ],
+  "should": [
+    "3C装配自动化设备",
+    "新能源结构与功能性组件",
+    "光伏逆变器",
+    "智能手机",
+    "平板电脑",
+    "智能耳机",
+    "可穿戴设备",
+    "智能家居",
+    "新能源汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "功能性器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "结构性器件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:51:35"
+}

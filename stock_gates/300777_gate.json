@@ -1,0 +1,33 @@
+{
+  "stock_id": "300777",
+  "stock_name": "中简科技",
+  "concept": "高性能碳纤维",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高性能碳纤维",
+    "ZT7系列"
+  ],
+  "should": [
+    "ZT8系列",
+    "ZT9系列",
+    "ZM40J石墨纤维",
+    "T1100制备技术",
+    "M55J制备技术",
+    "M60J制备技术",
+    "高性能碳纤维产业化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高性能碳纤维",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ZT7系列",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:42:45"
+}

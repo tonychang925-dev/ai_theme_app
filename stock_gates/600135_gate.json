@@ -1,0 +1,41 @@
+{
+  "stock_id": "600135",
+  "stock_name": "乐凯胶片",
+  "concept": "新材料系统服务商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新材料系统服务商",
+    "医用干式片",
+    "影像材料"
+  ],
+  "should": [
+    "太阳能电池背板",
+    "铝塑膜",
+    "工业探伤胶片",
+    "彩色相纸",
+    "锂离子电池隔膜",
+    "原材料替代",
+    "配方优化",
+    "工艺调整",
+    "材料与工艺装备基础研究",
+    "全球90%以上光伏背板产自中国"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新材料系统服务商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医用干式片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "影像材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:10:08"
+}

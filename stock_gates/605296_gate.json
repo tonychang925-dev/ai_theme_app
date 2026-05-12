@@ -1,0 +1,43 @@
+{
+  "stock_id": "605296",
+  "stock_name": "神农集团",
+  "concept": "生猪全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生猪全产业链",
+    "养殖业务",
+    "饲料业务",
+    "屠宰及食品深加工业务"
+  ],
+  "should": [
+    "生物安全管理体系",
+    "遗传育种",
+    "空气过滤种猪场",
+    "生猪养殖",
+    "生鲜猪肉食品",
+    "食品深加工",
+    "非瘟防控"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生猪全产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "养殖业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "饲料业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "屠宰及食品深加工业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:03:31"
+}

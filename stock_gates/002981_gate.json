@@ -1,0 +1,46 @@
+{
+  "stock_id": "002981",
+  "stock_name": "朝阳科技",
+  "concept": "电声产品制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "耳机",
+    "音响",
+    "精密零组件",
+    "OEM代工产品"
+  ],
+  "should": [
+    "苹果",
+    "Beats",
+    "安克",
+    "三星",
+    "哈曼",
+    "OPPO",
+    "小米",
+    "华硕",
+    "JLAB",
+    "骷髅头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "耳机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "音响",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密零组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "OEM代工产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:06:05"
+}

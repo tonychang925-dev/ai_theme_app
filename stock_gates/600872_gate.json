@@ -1,0 +1,41 @@
+{
+  "stock_id": "600872",
+  "stock_name": "中炬高新",
+  "concept": "调味品龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "酱油",
+    "鸡精鸡粉",
+    "蚝油"
+  ],
+  "should": [
+    "食用油",
+    "料酒",
+    "米醋",
+    "酱类",
+    "传统酿造技艺",
+    "现代工艺科技",
+    "全流程食品安全保证体系",
+    "调味品龙头",
+    "家庭消费",
+    "餐饮渠道"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "酱油",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "鸡精鸡粉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蚝油",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:30:10"
+}

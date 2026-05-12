@@ -1,0 +1,41 @@
+{
+  "stock_id": "002294",
+  "stock_name": "信立泰",
+  "concept": "心血管慢病用药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "信立坦",
+    "泰嘉",
+    "特立帕肽注射液"
+  ],
+  "should": [
+    "恩那司他片",
+    "S086",
+    "SAL0107",
+    "SAL0108",
+    "JK07",
+    "苯甲酸复格列汀片",
+    "SAL0112",
+    "JK08",
+    "CADD平台",
+    "siRNA技术平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "信立坦",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "泰嘉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特立帕肽注射液",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:34:00"
+}

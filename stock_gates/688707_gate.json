@@ -1,0 +1,43 @@
+{
+  "stock_id": "688707",
+  "stock_name": "振华新材",
+  "concept": "三元正极龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "三元正极龙头",
+    "单晶三元正极材料",
+    "NCM三元正极材料",
+    "大单晶技术"
+  ],
+  "should": [
+    "钴酸锂",
+    "复合三元正极材料",
+    "三次烧结工艺",
+    "表面改性技术",
+    "正极材料掺杂技术",
+    "国内单晶市占率第一",
+    "正极材料出货量国内前5"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "三元正极龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "单晶三元正极材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "NCM三元正极材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大单晶技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:24:30"
+}

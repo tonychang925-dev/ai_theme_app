@@ -1,0 +1,36 @@
+{
+  "stock_id": "600161",
+  "stock_name": "天坛生物",
+  "concept": "血液制品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "血液制品",
+    "血浆采集"
+  ],
+  "should": [
+    "白蛋白",
+    "静丙",
+    "特免",
+    "因子类产品",
+    "基因重组技术",
+    "医疗用药",
+    "战略物资",
+    "采浆量国内第一",
+    "浆站数量行业第一",
+    "行业前八名采浆量超全国80%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "血液制品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "血浆采集",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:10:36"
+}

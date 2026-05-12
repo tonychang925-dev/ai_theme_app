@@ -1,0 +1,33 @@
+{
+  "stock_id": "300168",
+  "stock_name": "万达信息",
+  "concept": "城市信息化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "城市信息化",
+    "智慧医卫"
+  ],
+  "should": [
+    "智慧政务",
+    "卫生健康",
+    "医疗保障",
+    "政务服务",
+    "城市安全",
+    "民生服务",
+    "教育文创"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "城市信息化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧医卫",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:15:52"
+}

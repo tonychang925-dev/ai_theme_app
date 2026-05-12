@@ -1,0 +1,41 @@
+{
+  "stock_id": "300941",
+  "stock_name": "创识科技",
+  "concept": "电子支付IT方案商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子支付IT方案商",
+    "支付应用软件",
+    "数字人民币受理"
+  ],
+  "should": [
+    "POS终端",
+    "智能收银机（含刷脸）设备",
+    "扫码设备",
+    "云音箱",
+    "行业特色应用软件",
+    "自助终端",
+    "支付IT服务商",
+    "商超",
+    "医院",
+    "景区"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子支付IT方案商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "支付应用软件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字人民币受理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:50:12"
+}

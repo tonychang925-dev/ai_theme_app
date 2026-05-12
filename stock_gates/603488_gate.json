@@ -1,0 +1,34 @@
+{
+  "stock_id": "603488",
+  "stock_name": "展鹏科技",
+  "concept": "电梯门系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电梯门系统",
+    "自主变频控制技术"
+  ],
+  "should": [
+    "低压永磁驱动控制技术",
+    "基于ARM平台的门控系统",
+    "电梯一体化控制系统",
+    "电梯轿厢及门系统配套部件",
+    "载客电梯",
+    "载货电梯",
+    "特种电梯",
+    "电梯后市场"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电梯门系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自主变频控制技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:51:13"
+}

@@ -1,0 +1,38 @@
+{
+  "stock_id": "300662",
+  "stock_name": "科锐国际",
+  "concept": "人力资源服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "灵活用工",
+    "中高端人才访寻",
+    "招聘流程外包"
+  ],
+  "should": [
+    "人力资源服务",
+    "技术+平台+服务",
+    "解决方案+线下服务+线上平台",
+    "医脉同道",
+    "科锐才到云",
+    "禾蛙",
+    "区域人才大脑平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "灵活用工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中高端人才访寻",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "招聘流程外包",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:37:37"
+}

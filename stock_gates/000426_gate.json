@@ -1,0 +1,51 @@
+{
+  "stock_id": "000426",
+  "stock_name": "兴业银锡",
+  "concept": "有色金属采选",
+  "strategy_type": "industry_chain",
+  "must": [
+    "有色金属采选",
+    "银",
+    "锡",
+    "锌",
+    "铅"
+  ],
+  "should": [
+    "铁",
+    "国内最大的白银生产矿山之一",
+    "电子",
+    "可再生能源",
+    "医疗卫生",
+    "冶金",
+    "包装",
+    "电器",
+    "化工",
+    "建材"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "有色金属采选",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "银",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锡",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铅",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:52:32"
+}

@@ -1,0 +1,25 @@
+{
+  "stock_id": "001278",
+  "stock_name": "一彬科技",
+  "concept": "汽车零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车零部件"
+  ],
+  "should": [
+    "塑料件",
+    "金属件",
+    "传统燃油车",
+    "新能源汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:14:59"
+}

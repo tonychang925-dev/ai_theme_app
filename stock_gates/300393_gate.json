@@ -1,0 +1,44 @@
+{
+  "stock_id": "300393",
+  "stock_name": "中来股份",
+  "concept": "光伏背板与电池",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏背板与电池",
+    "背板",
+    "TOPCON组件",
+    "N型TOPCon电池"
+  ],
+  "should": [
+    "组件",
+    "光伏应用系统",
+    "太阳能电池背板",
+    "高效组件",
+    "N型双面技术",
+    "户用分布式光伏",
+    "背板市占率第一",
+    "国产率最高辅材环节"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏背板与电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "背板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "TOPCON组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "N型TOPCon电池",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:25:20"
+}

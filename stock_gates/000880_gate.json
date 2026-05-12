@@ -1,0 +1,33 @@
+{
+  "stock_id": "000880",
+  "stock_name": "潍柴重机",
+  "concept": "柴油发电机组",
+  "strategy_type": "industry_chain",
+  "must": [
+    "柴油发电机组",
+    "中速柴油机龙头"
+  ],
+  "should": [
+    "船用发动机",
+    "发电机组",
+    "船用中速柴油机",
+    "高效脉冲增压技术",
+    "蠕墨铸造技术",
+    "集成化设计技术",
+    "渔船"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "柴油发电机组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中速柴油机龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:07:50"
+}

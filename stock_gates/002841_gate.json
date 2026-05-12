@@ -1,0 +1,46 @@
+{
+  "stock_id": "002841",
+  "stock_name": "视源股份",
+  "concept": "智能交互显示",
+  "strategy_type": "industry_chain",
+  "must": [
+    "液晶显示主控板卡",
+    "智能交互平板",
+    "显示控制技术",
+    "智能交互技术"
+  ],
+  "should": [
+    "全球液晶显示主控板卡龙头",
+    "国内智能交互平板龙头",
+    "多点触摸交互技术",
+    "主控芯片",
+    "Mini-LED驱动",
+    "8K技术",
+    "智能交互显示",
+    "新部件产品",
+    "数字信号处理技术",
+    "固件开发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "液晶显示主控板卡",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能交互平板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "显示控制技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能交互技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:59:52"
+}

@@ -1,0 +1,32 @@
+{
+  "stock_id": "301007",
+  "stock_name": "德迈仕",
+  "concept": "精密轴件制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密轴",
+    "精密切削件"
+  ],
+  "should": [
+    "精密轴件制造",
+    "汽车视窗系统",
+    "汽车动力系统",
+    "车身及底盘系统",
+    "工业精密零部件",
+    "汽车零部件供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密轴",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密切削件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:52:51"
+}

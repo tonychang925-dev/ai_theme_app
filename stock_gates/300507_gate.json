@@ -1,0 +1,40 @@
+{
+  "stock_id": "300507",
+  "stock_name": "苏奥传感",
+  "concept": "汽车传感器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车传感器",
+    "传感器及配件",
+    "传感器技术"
+  ],
+  "should": [
+    "新能源部件",
+    "燃油系统附件",
+    "汽车内饰件",
+    "塑料零部件轻量化技术",
+    "动力总成系统",
+    "车身控制系统",
+    "底盘系统",
+    "新能源汽车",
+    "国产化替代"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车传感器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "传感器及配件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "传感器技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:30:24"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "605118",
+  "stock_name": "力鼎光电",
+  "concept": "光学镜头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光学镜头"
+  ],
+  "should": [
+    "车载镜头",
+    "计算视觉类镜头",
+    "全玻光学解决方案",
+    "玻塑镜头研发",
+    "玻璃非球面镜片自制",
+    "塑料非球面镜片自制",
+    "机器视觉",
+    "车载领域",
+    "专业消费",
+    "虚拟现实"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光学镜头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:02:02"
+}

@@ -1,0 +1,28 @@
+{
+  "stock_id": "688593",
+  "stock_name": "新相微",
+  "concept": "显示芯片设计",
+  "strategy_type": "industry_chain",
+  "must": [
+    "整合型显示芯片"
+  ],
+  "should": [
+    "分离型显示驱动芯片",
+    "显示屏电源管理芯片",
+    "TFT-LCD显示技术",
+    "AMOLED显示技术",
+    "显示芯片设计",
+    "主控芯片设计",
+    "固件开发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "整合型显示芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:21:34"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "688003",
+  "stock_name": "天准科技",
+  "concept": "工业视觉与产业智能",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业视觉与产业智能",
+    "机器视觉算法",
+    "视觉测量装备",
+    "视觉检测装备",
+    "视觉制程装备"
+  ],
+  "should": [
+    "智能网联产品",
+    "工业软件平台",
+    "先进视觉传感器",
+    "精密驱控技术",
+    "苹果公司视觉检测核心供应商",
+    "英伟达Jetson芯片合作方",
+    "消费电子",
+    "半导体",
+    "PCB",
+    "新能源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业视觉与产业智能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机器视觉算法",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "视觉测量装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "视觉检测装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "视觉制程装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:04:58"
+}

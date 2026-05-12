@@ -1,0 +1,36 @@
+{
+  "stock_id": "603703",
+  "stock_name": "盛洋科技",
+  "concept": "射频电缆制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "射频电缆制造",
+    "射频电缆"
+  ],
+  "should": [
+    "高频头",
+    "5G通讯塔类业务",
+    "内导体加工",
+    "编织生产",
+    "护套生产",
+    "成圈",
+    "包装",
+    "电视（有线电视、卫星电视）",
+    "固定网络",
+    "5G铁塔通讯"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "射频电缆制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "射频电缆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:55:10"
+}

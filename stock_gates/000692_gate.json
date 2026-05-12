@@ -1,0 +1,29 @@
+{
+  "stock_id": "000692",
+  "stock_name": "惠天热电",
+  "concept": "城市供热服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "供热"
+  ],
+  "should": [
+    "城市供热服务",
+    "工程服务",
+    "燃煤锅炉供热",
+    "热电联产供热",
+    "城市居民供热",
+    "非居民用户供热",
+    "热网智能化调控运行技术",
+    "供热设计施工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "供热",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:00:55"
+}

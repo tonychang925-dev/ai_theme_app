@@ -1,0 +1,36 @@
+{
+  "stock_id": "300085",
+  "stock_name": "银之杰",
+  "concept": "金融科技服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金融科技服务",
+    "金融信息化"
+  ],
+  "should": [
+    "移动信息服务",
+    "电子商务",
+    "银行",
+    "证券",
+    "保险",
+    "人工智能",
+    "大数据",
+    "云计算",
+    "物联网",
+    "5G消息"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金融科技服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融信息化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:12:45"
+}

@@ -1,0 +1,32 @@
+{
+  "stock_id": "603629",
+  "stock_name": "利通电子",
+  "concept": "精密金属结构件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密金属结构件",
+    "精密金属冲压结构件"
+  ],
+  "should": [
+    "底座",
+    "电子元器件",
+    "大尺寸高精密产品路线",
+    "液晶电视",
+    "全球头部电视品牌供应商",
+    "海外生产基地（墨西哥、越南）"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密金属结构件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密金属冲压结构件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:53:32"
+}

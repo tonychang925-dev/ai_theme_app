@@ -1,0 +1,33 @@
+{
+  "stock_id": "688548",
+  "stock_name": "广钢气体",
+  "concept": "电子大宗气体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子大宗气体",
+    "氦气"
+  ],
+  "should": [
+    "氮气",
+    "Super-N系列超高纯制氮装置",
+    "氧气",
+    "氢气",
+    "氩气",
+    "二氧化碳",
+    "亚超临界二氧化碳输送技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子大宗气体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氦气",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:20:13"
+}

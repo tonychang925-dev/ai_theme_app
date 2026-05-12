@@ -1,0 +1,46 @@
+{
+  "stock_id": "300641",
+  "stock_name": "正丹股份",
+  "concept": "特种精细化学品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种精细化学品",
+    "偏苯三酸酐",
+    "环保型增塑剂技术",
+    "高性能环保新材料技术"
+  ],
+  "should": [
+    "偏苯三酸三辛酯",
+    "对苯二甲酸二辛酯",
+    "乙烯基甲苯",
+    "均四甲苯",
+    "高端绝缘材料技术",
+    "增塑剂",
+    "粉末涂料",
+    "高级绝缘材料",
+    "高温固化剂",
+    "高级润滑油"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种精细化学品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "偏苯三酸酐",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环保型增塑剂技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高性能环保新材料技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:36:48"
+}

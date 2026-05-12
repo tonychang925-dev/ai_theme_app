@@ -1,0 +1,51 @@
+{
+  "stock_id": "002086",
+  "stock_name": "东方海洋",
+  "concept": "海洋健康双主业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "海水苗种繁育",
+    "养殖",
+    "水产品加工",
+    "海参",
+    "水产鱼类"
+  ],
+  "should": [
+    "烧烤产品",
+    "裹粉产品",
+    "蒸煮产品",
+    "冷冻食品",
+    "生食产品",
+    "调理产品",
+    "冷风干燥产品",
+    "保税仓储物流",
+    "检测服务",
+    "日本"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "海水苗种繁育",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "养殖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水产品加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海参",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水产鱼类",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:22:35"
+}

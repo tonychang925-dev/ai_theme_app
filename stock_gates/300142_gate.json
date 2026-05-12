@@ -1,0 +1,35 @@
+{
+  "stock_id": "300142",
+  "stock_name": "沃森生物",
+  "concept": "人用疫苗研发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "13价肺炎结合疫苗",
+    "双价HPV疫苗"
+  ],
+  "should": [
+    "九价HPV疫苗",
+    "新型冠状病毒变异株mRNA疫苗",
+    "A群C群脑膜炎球菌多糖疫苗",
+    "mRNA疫苗技术",
+    "人用疫苗研发",
+    "本地化生产技术",
+    "国际市场销售",
+    "市场领先份额",
+    "国际业务拓展"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "13价肺炎结合疫苗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "双价HPV疫苗",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:14:57"
+}

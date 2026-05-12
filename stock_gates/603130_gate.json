@@ -1,0 +1,40 @@
+{
+  "stock_id": "603130",
+  "stock_name": "云中马",
+  "concept": "革基布制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "革基布制造",
+    "经编革基布",
+    "纬编革基布"
+  ],
+  "should": [
+    "湿拉毛革基布生产工艺",
+    "纬编色丝直拉毛技术",
+    "50D纬编平板无毛丝、少毛丝技术",
+    "鞋",
+    "箱包",
+    "家具",
+    "装饰材料",
+    "针织革基布行业龙头企业",
+    "市场占有率第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "革基布制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "经编革基布",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纬编革基布",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:44:37"
+}

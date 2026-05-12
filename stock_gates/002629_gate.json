@@ -1,0 +1,46 @@
+{
+  "stock_id": "002629",
+  "stock_name": "仁智股份",
+  "concept": "油田环保技术服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "油田环保技术服务",
+    "油田环保治理",
+    "井下作业技术服务",
+    "管具检维修服务"
+  ],
+  "should": [
+    "石化产品生产与销售",
+    "新材料研发生产与销售",
+    "钻井技术服务",
+    "防腐工程技术服务",
+    "家装",
+    "可移动穿戴设备",
+    "新能源汽车",
+    "塑料管道",
+    "一体化一站式服务",
+    "以销定产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "油田环保技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "油田环保治理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "井下作业技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "管具检维修服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:50:31"
+}

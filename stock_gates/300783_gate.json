@@ -1,0 +1,31 @@
+{
+  "stock_id": "300783",
+  "stock_name": "三只松鼠",
+  "concept": "休闲零食",
+  "strategy_type": "industry_chain",
+  "must": [
+    "坚果"
+  ],
+  "should": [
+    "烘焙",
+    "肉制品",
+    "果干",
+    "休闲零食",
+    "全品类运营",
+    "核心大单品",
+    "新品快速迭代",
+    "IP化",
+    "人格化",
+    "OEM代工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "坚果",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:42:59"
+}

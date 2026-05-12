@@ -1,0 +1,42 @@
+{
+  "stock_id": "300779",
+  "stock_name": "惠城环保",
+  "concept": "石化资源化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "FCC催化剂",
+    "复活催化剂",
+    "分子筛",
+    "废催化剂复活及再造技术"
+  ],
+  "should": [
+    "硫酸铝",
+    "稀土",
+    "工业烟气非氨基还原除酸脱硝技术",
+    "石化资源化",
+    "炼油企业催化裂化装置",
+    "烟气脱硝"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "FCC催化剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复活催化剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分子筛",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "废催化剂复活及再造技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:42:50"
+}

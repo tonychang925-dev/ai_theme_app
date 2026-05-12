@@ -1,0 +1,40 @@
+{
+  "stock_id": "605305",
+  "stock_name": "中际联合",
+  "concept": "风电高空安全设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风电高空安全设备",
+    "高空安全升降设备",
+    "高空安全防护设备"
+  ],
+  "should": [
+    "塔筒升降机",
+    "免爬器",
+    "助爬器",
+    "防坠落系统",
+    "救生缓降器",
+    "爬梯",
+    "滑轨",
+    "风力发电",
+    "风力发电行业细分市场占有率第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风电高空安全设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高空安全升降设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高空安全防护设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:03:43"
+}

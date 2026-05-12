@@ -1,0 +1,36 @@
+{
+  "stock_id": "688050",
+  "stock_name": "爱博医疗",
+  "concept": "眼科医疗器械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "普诺明系列人工晶状体",
+    "普诺瞳系列角膜塑形镜"
+  ],
+  "should": [
+    "利尔美系列手术配套产品",
+    "镜片护理液",
+    "冲洗液",
+    "护理仪",
+    "彩色软性接触镜",
+    "离焦镜",
+    "非球面衍射型多焦人工晶状体",
+    "大景深EDOF人工晶状体",
+    "非球面三焦散光矫正人工晶状体",
+    "自制氟硅丙烯酸酯材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "普诺明系列人工晶状体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "普诺瞳系列角膜塑形镜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:06:32"
+}

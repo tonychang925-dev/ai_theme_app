@@ -1,0 +1,41 @@
+{
+  "stock_id": "300572",
+  "stock_name": "安车检测",
+  "concept": "车辆检测服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "车辆检测服务",
+    "在用机动车检测解决方案",
+    "检测运营服务"
+  ],
+  "should": [
+    "行业监管信息化解决方案",
+    "环境监测解决方案",
+    "治超非现场执法解决方案",
+    "机动车驾驶人考试解决方案",
+    "整车厂新车下线检测解决方案",
+    "智能网联汽车安全检测解决方案",
+    "检测机构运营管理",
+    "充电桩工程",
+    "机动车检验机构",
+    "汽车制造企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "车辆检测服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "在用机动车检测解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "检测运营服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:33:25"
+}

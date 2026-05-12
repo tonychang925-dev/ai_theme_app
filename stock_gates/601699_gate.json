@@ -1,0 +1,31 @@
+{
+  "stock_id": "601699",
+  "stock_name": "潞安环能",
+  "concept": "喷吹煤龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "喷吹煤龙头",
+    "喷吹煤"
+  ],
+  "should": [
+    "混煤",
+    "焦炭",
+    "喷吹煤自主研发",
+    "高炉喷吹技术",
+    "高炉冶炼"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "喷吹煤龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "喷吹煤",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:38:07"
+}

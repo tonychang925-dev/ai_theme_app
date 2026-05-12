@@ -1,0 +1,38 @@
+{
+  "stock_id": "603518",
+  "stock_name": "锦泓集团",
+  "concept": "中高端服装品牌运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "VGRASS",
+    "元先",
+    "立体化的多品牌金字塔矩阵"
+  ],
+  "should": [
+    "卡通形象",
+    "家族故事",
+    "品牌LOGO",
+    "商标使用权",
+    "中高端服装品牌运营",
+    "品牌定位布局",
+    "消费客群覆盖"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "VGRASS",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "元先",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "立体化的多品牌金字塔矩阵",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:51:44"
+}

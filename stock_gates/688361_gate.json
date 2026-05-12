@@ -1,0 +1,41 @@
+{
+  "stock_id": "688361",
+  "stock_name": "中科飞测",
+  "concept": "半导体质量控制设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体质量控制设备",
+    "检测设备",
+    "量测设备"
+  ],
+  "should": [
+    "无图形晶圆缺陷检测设备",
+    "图形晶圆缺陷检测设备",
+    "三维形貌量测设备",
+    "薄膜膜厚量测设备",
+    "光学检测技术",
+    "大数据检测算法",
+    "自动化软件",
+    "集成电路前道制程",
+    "先进封装",
+    "高端半导体质量控制设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体质量控制设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "检测设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "量测设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:16:30"
+}

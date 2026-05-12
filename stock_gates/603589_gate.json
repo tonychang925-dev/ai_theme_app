@@ -1,0 +1,41 @@
+{
+  "stock_id": "603589",
+  "stock_name": "口子窖",
+  "concept": "兼香型白酒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "口子窖5年型",
+    "口子窖10年型",
+    "口子窖20年型"
+  ],
+  "should": [
+    "口子窖6年型",
+    "口子窖30年型",
+    "兼香518",
+    "三多一高一长酿造工艺",
+    "菊花红心曲",
+    "超高温曲",
+    "高温曲",
+    "高温润料堆积",
+    "三步循环贮存",
+    "兼香型白酒"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "口子窖5年型",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "口子窖10年型",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "口子窖20年型",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:52:48"
+}

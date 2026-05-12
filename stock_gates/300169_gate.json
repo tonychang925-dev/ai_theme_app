@@ -1,0 +1,46 @@
+{
+  "stock_id": "300169",
+  "stock_name": "天晟新材",
+  "concept": "高分子发泡材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高分子发泡材料",
+    "软质泡沫材料",
+    "结构泡沫材料",
+    "高分子发泡技术"
+  ],
+  "should": [
+    "后加工产品",
+    "交通配套类产品",
+    "物理发泡",
+    "交联发泡",
+    "电子产品",
+    "家电",
+    "汽车",
+    "体育运动休闲",
+    "风力发电",
+    "轨道交通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高分子发泡材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "软质泡沫材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "结构泡沫材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高分子发泡技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:15:57"
+}

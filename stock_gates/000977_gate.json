@@ -1,0 +1,44 @@
+{
+  "stock_id": "000977",
+  "stock_name": "浪潮信息",
+  "concept": "IT基础架构",
+  "strategy_type": "industry_chain",
+  "must": [
+    "人工智能服务器",
+    "AI计算",
+    "通用服务器",
+    "存储"
+  ],
+  "should": [
+    "边缘服务器",
+    "开放计算",
+    "绿色计算",
+    "云操作系统",
+    "信息安全技术",
+    "服务器出货量全球第二",
+    "存储装机容量全球第三",
+    "人工智能服务器销售额全球第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "人工智能服务器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AI计算",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通用服务器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "存储",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:12:06"
+}

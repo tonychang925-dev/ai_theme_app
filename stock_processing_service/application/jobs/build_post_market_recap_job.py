@@ -264,7 +264,7 @@ class BuildPostMarketRecapJob:
         snapshot_version: str,
         batch_id: str,
         trace_id: str,
-        lookback_days: int = 7,
+        lookback_days: int = 8,
     ) -> BuildResult:
         job_key = f"build_post_market_recap:{trade_date.isoformat()}:{snapshot_version}"
         acquired = await self._idempotency_port.acquire_job_idempotency(job_key=job_key, ttl_seconds=6 * 3600)
@@ -526,6 +526,13 @@ class BuildPostMarketRecapJob:
         # Step 7: 构建 D1 候选 — 等价旧链 _fetch_watch_candidate_inputs + _to_candidate + _apply_watch_context
         d1_input_rows = await self._read_port.get_w2s_candidate_inputs(trade_date)
         d1_candidates_for_pool: list[dict[str, Any]] = []
+        _d1_total_in = len(d1_input_rows)
+        _d1_pass = 0
+        _d1_fail_pct = 0
+        _d1_fail_history = 0
+        _d1_fail_gene = 0
+        _d1_fail_strong = 0
+        _d1_fail_support = 0
 
         for row in d1_input_rows:
             # ── 旧链 _to_candidate 硬约束（使用旧链同名字段）──
@@ -552,23 +559,24 @@ class BuildPostMarketRecapJob:
 
             # 1) pct_chg >= 0 或 limit_up → 必须弱势日
             if pct_chg >= 0.0 or limit_up:
-                continue
+                _d1_fail_pct += 1; continue
             # 2) 跌幅不足 -1.0%
             if pct_chg > -1.0:
-                continue
+                _d1_fail_pct += 1; continue
             # 3) strong_history
             strong_history = (is_leader or prev_day_limit_up or recent_limit_up_count >= 1 or rank_order <= 5)
             if not strong_history:
-                continue
+                _d1_fail_history += 1; continue
             # 4) has_limitup_gene
             if prior7_limitup_days < 1:
-                continue
+                _d1_fail_gene += 1; continue
             # 5) recent_strong_history
             if prior7_strong_days < 1:
-                continue
+                _d1_fail_strong += 1; continue
             # 6) support_available
             if support_type in {"", "none"} or support_strength < 45.0:
-                continue
+                _d1_fail_support += 1; continue
+            _d1_pass += 1
 
             # ── 旧链 _classify_weak_type ──
             if prev_day_limit_up and pct_chg < 0:
@@ -612,11 +620,17 @@ class BuildPostMarketRecapJob:
                 if mainline_strength_score >= 75.0: candidate_score -= 4.0
                 elif mainline_strength_score >= 60.0: candidate_score -= 8.0
                 else: candidate_score -= 12.0
-            candidate_score = max(0.0, min(candidate_score, 100.0))
+            # ── 旧链 classify_pool_entry（严格复刻，含 prev_day_weak>=2）──
+            strong_background = (is_leader or recent_limit_up_count >= 2 or rank_order <= 3)
+            d1_pool_entry = "reject"
+            if support_strength >= 45 and strong_background and day_weak_score >= 4 and prev_day_weak_score >= 2:
+                d1_pool_entry = "formal"
+            elif support_strength >= 60 and day_weak_score >= 3 and prev_day_weak_score >= 2:
+                d1_pool_entry = "observe_only"
+            if d1_pool_entry == "reject":
+                continue
 
-            # ── observe_only 上限 ──
-            if watch_pool_entry_type == "observe_only":
-                candidate_score = min(candidate_score, 69.0)
+            candidate_score = max(0.0, min(candidate_score, 100.0))
 
             # ── _classify_candidate_type ──
             if is_leader and recent_limit_up_count >= 3:
@@ -632,7 +646,12 @@ class BuildPostMarketRecapJob:
             else:
                 candidate_type = "generic_repair"
 
-            # ── _apply_watch_context ──
+            # ── 用 D 层 classify_pool_entry 结果（非 C 层 pool_entry_type）──
+            watch_pool_entry_type = d1_pool_entry
+
+            # ── _apply_watch_context（旧链精确复刻）──
+            if watch_pool_entry_type == "observe_only":
+                candidate_score = min(candidate_score, 69.0)
             if watch_pool_entry_type == "formal":
                 candidate_score = min(100.0, max(candidate_score, 70.0))
             if strong_grade == "B":
@@ -783,7 +802,13 @@ class BuildPostMarketRecapJob:
         layer_b_cycle_hit_count = len(cycles_by_subject)
         input_fingerprint = "v2_seed_query"
         # ── 旧链等价 D1 候选：排序 + top 10 + 写入 weak_to_strong_candidate_pool ──
-        d1_candidates_for_pool.sort(key=lambda x: float(x.get("candidate_score") or 0), reverse=True)
+        # ── 去重：同一 stock_id 只保留最高分 ──
+        _dedup: dict[str, dict[str, Any]] = {}
+        for c in d1_candidates_for_pool:
+            sid = str(c.get("stock_id") or "")
+            if sid not in _dedup or float(c.get("candidate_score") or 0) > float(_dedup[sid].get("candidate_score") or 0):
+                _dedup[sid] = c
+        d1_candidates_for_pool = sorted(_dedup.values(), key=lambda x: float(x.get("candidate_score") or 0), reverse=True)
         d1_candidates_for_pool = d1_candidates_for_pool[:10]  # HARD_MAX_CANDIDATES = 10
         d1_written = await self._write_port.upsert_weak_to_strong_candidate_pool_rows(d1_candidates_for_pool) if d1_candidates_for_pool else 0
 
@@ -911,22 +936,14 @@ class BuildPostMarketRecapJob:
             ],
             "strong_watch_input_7d_preview": [
                 {
-                    "stock_id": r.stock_id,
-                    "stock_name": r.stock_name,
-                    "subject_key": r.subject_key,
-                    "subject_name": r.subject_name,
-                    "candidate_source": str((r.metadata or {}).get("candidate_source", "")),
-                    "watch_score": str((r.metadata or {}).get("watch_score", "")),
-                    "strong_grade": str((r.metadata or {}).get("strong_grade", "")),
-                    "support_type": str((r.metadata or {}).get("support_type", "")),
-                    "seed_gate_pass": bool((r.metadata or {}).get("seed_gate_pass") or False),
-                    "seed_gate_reason": str((r.metadata or {}).get("seed_gate_reason", "")),
-                    "strong_gene_seed": bool((r.metadata or {}).get("strong_gene_seed") or False),
-                    "strong_gene_seed_reason": str((r.metadata or {}).get("strong_gene_seed_reason", "")),
-                    "two_board_entry": bool((r.metadata or {}).get("two_board_entry") or False),
-                    "final_cycle_state": str((r.metadata or {}).get("final_cycle_state", "")),
-                    "transition_type": str((r.metadata or {}).get("transition_type", "")),
-                    "transition_confidence": str((r.metadata or {}).get("transition_confidence", "0")),
+                    "stock_id": str(r.get("stock_id", "")),
+                    "stock_name": str(r.get("stock_name", "")),
+                    "subject_key": str(r.get("subject_key", "")),
+                    "subject_name": str(r.get("theme_name", "")),
+                    "watch_score": str(r.get("watch_score", "")),
+                    "watch_status": str(r.get("watch_status", "")),
+                    "pool_entry_type": str(r.get("watch_pool_entry_type", "")),
+                    "support_type": "",
                 }
                 for r in d1_input_rows[:100]
             ],
@@ -939,32 +956,21 @@ class BuildPostMarketRecapJob:
                 else "strong_watch_pool_history_single_source"
             ),
             "promoted_pool_stock_ids": sorted(
-                {str(getattr(r, "stock_id", "") or "") for r in promoted_pool_rows if str(getattr(r, "stock_id", "") or "")}
+                {str(r.get("stock_id", "")) for r in promoted_pool_rows if str(r.get("stock_id", "") or "")}
             ),
             "promoted_pool_preview": [
                 {
-                    "stock_id": r.stock_id,
-                    "stock_name": r.stock_name,
-                    "subject_key": r.subject_key,
-                    "subject_name": r.subject_name,
-                    "pool_rank": r.pool_rank,
-                    "watch_status": str((getattr(r, "metadata", {}) or {}).get("watch_status", "")),
-                    "strong_grade": str((getattr(r, "metadata", {}) or {}).get("strong_grade", "")),
-                    "watch_score": str((getattr(r, "metadata", {}) or {}).get("watch_score", "")),
-                    "support_score": str((getattr(r, "metadata", {}) or {}).get("support_score", "")),
-                    "support_type": str((getattr(r, "metadata", {}) or {}).get("support_type", "")),
-                    "gap_hit": bool((getattr(r, "metadata", {}) or {}).get("gap_hit") or False),
-                    "seed_gate_pass": bool((getattr(r, "metadata", {}) or {}).get("seed_gate_pass") or False),
-                    "seed_gate_reason": str((getattr(r, "metadata", {}) or {}).get("seed_gate_reason", "")),
-                    "strong_gene_seed": bool((getattr(r, "metadata", {}) or {}).get("strong_gene_seed") or False),
-                    "strong_gene_seed_reason": str((getattr(r, "metadata", {}) or {}).get("strong_gene_seed_reason", "")),
-                    "two_board_entry": bool((getattr(r, "metadata", {}) or {}).get("two_board_entry") or False),
-                    "admission_status": str((getattr(r, "metadata", {}) or {}).get("admission_status", "")),
-                    "promote_bucket": str((getattr(r, "metadata", {}) or {}).get("promote_bucket", "")),
-                    "promote_reason": str((getattr(r, "metadata", {}) or {}).get("promote_reason", "")),
-                    "prior7_limitup_days": int((getattr(r, "metadata", {}) or {}).get("prior7_limitup_days") or 0),
-                    "recent_limit_up_count": int(((getattr(r, "metadata", {}) or {}).get("role_tags", {}) or {}).get("recent_limit_up_count") or 0),
-                    "final_cycle_state": str(((getattr(r, "metadata", {}) or {}).get("role_tags", {}) or {}).get("final_cycle_state", "")),
+                    "stock_id": str(r.get("stock_id", "")),
+                    "stock_name": str(r.get("stock_name", "")),
+                    "subject_key": str(r.get("subject_key", "")),
+                    "subject_name": str(r.get("theme_name", "")),
+                    "pool_rank": None,
+                    "watch_status": str(r.get("watch_status", "")),
+                    "watch_score": str(r.get("watch_score", "")),
+                    "support_type": "",
+                    "prior7_limitup_days": int(r.get("prior7_limitup_days") or 0),
+                    "recent_limit_up_count": int(r.get("recent_limit_up_count") or 0),
+                    "final_cycle_state": str(r.get("final_cycle_state") or ""),
                 }
                 for r in promoted_pool_rows[:200]
             ],

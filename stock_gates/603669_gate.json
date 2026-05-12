@@ -1,0 +1,39 @@
+{
+  "stock_id": "603669",
+  "stock_name": "灵康药业",
+  "concept": "医药制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "肠外营养药",
+    "抗感染药",
+    "消化系统药"
+  ],
+  "should": [
+    "仿制药质量和疗效一致性评价",
+    "质量控制优化",
+    "工艺技术提升",
+    "药效物质基础和作用机理研究",
+    "临床再评价",
+    "原料采购成本控制",
+    "生产成本考核",
+    "MAH管理队伍"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "肠外营养药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "抗感染药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "消化系统药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:54:23"
+}

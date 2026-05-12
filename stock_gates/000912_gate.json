@@ -1,0 +1,41 @@
+{
+  "stock_id": "000912",
+  "stock_name": "泸天化",
+  "concept": "化肥甲醇化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "合成氨",
+    "尿素",
+    "天然气制合成氨"
+  ],
+  "should": [
+    "复合肥",
+    "甲醇",
+    "硝酸",
+    "液体硝铵",
+    "尿素生产技术",
+    "农业种植",
+    "工业原料",
+    "医药农药",
+    "国防工业",
+    "能源燃料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "合成氨",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "尿素",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天然气制合成氨",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:09:10"
+}

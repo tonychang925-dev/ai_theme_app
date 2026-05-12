@@ -1,0 +1,46 @@
+{
+  "stock_id": "688667",
+  "stock_name": "菱电电控",
+  "concept": "汽车电控系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "发动机管理系统",
+    "国产汽车动力电控系统龙头",
+    "发动机EMS控制技术",
+    "国内该领域头部自主品牌"
+  ],
+  "should": [
+    "纯电动汽车动力电子控制系统",
+    "T-BOX",
+    "电机控制技术",
+    "油电耦合技术",
+    "BSG电机控制技术",
+    "混合动力OBD诊断策略",
+    "阿特金森发动机EMS控制技术",
+    "自动启停控制策略",
+    "增程式关键控制技术",
+    "汽车电控系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "发动机管理系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国产汽车动力电控系统龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发动机EMS控制技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内该领域头部自主品牌",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:23:30"
+}

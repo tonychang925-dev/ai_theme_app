@@ -1,0 +1,35 @@
+{
+  "stock_id": "000159",
+  "stock_name": "国际实业",
+  "concept": "石油石化批发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "油品及化工产品批发",
+    "成品油经营资质",
+    "危化品经营许可证"
+  ],
+  "should": [
+    "油品储运",
+    "房地产",
+    "石油石化批发",
+    "石油石化产业中下游"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "油品及化工产品批发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "成品油经营资质",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "危化品经营许可证",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:51:00"
+}

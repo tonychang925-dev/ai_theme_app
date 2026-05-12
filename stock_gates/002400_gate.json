@@ -1,0 +1,40 @@
+{
+  "stock_id": "002400",
+  "stock_name": "省广集团",
+  "concept": "整合营销",
+  "strategy_type": "industry_chain",
+  "must": [
+    "广告营销",
+    "全产业链全营销平台",
+    "大数据技术"
+  ],
+  "should": [
+    "出海营销",
+    "智慧营销生态平台",
+    "智慧营销生态平台运营商",
+    "云技术",
+    "整合营销",
+    "社会化营销",
+    "新能源汽车",
+    "移动互联网",
+    "国际品牌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "广告营销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全产业链全营销平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大数据技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:39:42"
+}

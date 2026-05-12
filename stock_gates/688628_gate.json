@@ -1,0 +1,51 @@
+{
+  "stock_id": "688628",
+  "stock_name": "优利德",
+  "concept": "测试测量仪器仪表",
+  "strategy_type": "industry_chain",
+  "must": [
+    "测试测量仪器仪表",
+    "电子电工测试仪表",
+    "温度及环境测试仪表",
+    "电力及高压测试仪表",
+    "测绘测量仪表"
+  ],
+  "should": [
+    "主控芯片",
+    "固件开发",
+    "电子",
+    "家用电器",
+    "机电设备",
+    "节能环保",
+    "轨道交通",
+    "汽车制造",
+    "冷暖通",
+    "建筑工程"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "测试测量仪器仪表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子电工测试仪表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "温度及环境测试仪表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力及高压测试仪表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "测绘测量仪表",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:22:42"
+}

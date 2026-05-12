@@ -1,0 +1,31 @@
+{
+  "stock_id": "688552",
+  "stock_name": "航天南湖",
+  "concept": "防空预警雷达",
+  "strategy_type": "industry_chain",
+  "must": [
+    "防空预警雷达",
+    "雷达及配套装备"
+  ],
+  "should": [
+    "雷达零部件",
+    "防空预警",
+    "空管",
+    "军方客户",
+    "军工集团"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "防空预警雷达",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "雷达及配套装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:20:17"
+}

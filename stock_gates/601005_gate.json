@@ -1,0 +1,31 @@
+{
+  "stock_id": "601005",
+  "stock_name": "重庆钢铁",
+  "concept": "钢铁联合企业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钢铁联合企业"
+  ],
+  "should": [
+    "热轧薄板",
+    "中厚板",
+    "螺纹钢",
+    "线材",
+    "钢坯",
+    "智慧产线",
+    "5G+工业互联网",
+    "冶炼机理模型应用",
+    "机器人上岗",
+    "钢铁副产品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钢铁联合企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:33:12"
+}

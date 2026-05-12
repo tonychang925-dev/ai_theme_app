@@ -1,0 +1,39 @@
+{
+  "stock_id": "603078",
+  "stock_name": "江化微",
+  "concept": "湿电子化学品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "湿电子化学品",
+    "超净高纯湿电子化学品",
+    "光刻胶配套湿电子化学品"
+  ],
+  "should": [
+    "G5等级技术",
+    "半导体芯片",
+    "平板显示",
+    "太阳能电池",
+    "国内首家上市专业湿电子化学品企业",
+    "国内专业湿电子化学品龙头企业之一",
+    "专精特新小巨人企业",
+    "二剂型铜酸自主研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "湿电子化学品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超净高纯湿电子化学品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光刻胶配套湿电子化学品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:43:04"
+}

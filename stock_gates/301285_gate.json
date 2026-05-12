@@ -1,0 +1,36 @@
+{
+  "stock_id": "301285",
+  "stock_name": "鸿日达",
+  "concept": "精密连接器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密连接器",
+    "精密机构件"
+  ],
+  "should": [
+    "卡类连接器",
+    "I/O连接器",
+    "耳机连接器",
+    "电池连接器",
+    "手机",
+    "笔记本电脑",
+    "平板电脑",
+    "智能穿戴设备",
+    "电脑",
+    "工业连接器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密连接器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密机构件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:01:51"
+}

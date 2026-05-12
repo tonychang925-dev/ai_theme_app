@@ -1,0 +1,27 @@
+{
+  "stock_id": "600868",
+  "stock_name": "梅雁吉祥",
+  "concept": "水力发电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水力发电"
+  ],
+  "should": [
+    "地理测绘信息",
+    "广州国测规划信息技术有限公司",
+    "甲级测绘资质",
+    "测绘技术",
+    "地理信息+软件研发",
+    "智慧城市"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水力发电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:29:58"
+}

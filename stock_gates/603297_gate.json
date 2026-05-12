@@ -1,0 +1,45 @@
+{
+  "stock_id": "603297",
+  "stock_name": "永新光学",
+  "concept": "光学精密仪器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光学显微镜",
+    "光学元组件",
+    "激光雷达",
+    "机器视觉"
+  ],
+  "should": [
+    "条码扫描仪镜头",
+    "平面光学元件",
+    "专业成像光学镜片及镜头",
+    "超分辨显微系统的大数值孔径物镜",
+    "高性能荧光滤光片",
+    "FSED超分辨显微系统制造",
+    "液体镜头量产",
+    "全球第一批实现液体镜头量产企业",
+    "光学精密仪器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光学显微镜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光学元组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "激光雷达",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机器视觉",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:48:24"
+}

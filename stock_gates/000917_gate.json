@@ -1,0 +1,31 @@
+{
+  "stock_id": "000917",
+  "stock_name": "电广传媒",
+  "concept": "传媒文旅创投",
+  "strategy_type": "industry_chain",
+  "must": [
+    "传媒+文旅+创投",
+    "传媒文旅创投"
+  ],
+  "should": [
+    "传媒",
+    "文旅",
+    "创投",
+    "圣爵菲斯酒店",
+    "世界之窗主题乐园"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "传媒+文旅+创投",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "传媒文旅创投",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:09:23"
+}

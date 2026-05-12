@@ -1,0 +1,37 @@
+{
+  "stock_id": "603790",
+  "stock_name": "雅运股份",
+  "concept": "纺织化学品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "染料",
+    "纺织助剂",
+    "染助一体化"
+  ],
+  "should": [
+    "色彩数字化",
+    "纺织化学品",
+    "印染",
+    "纺织服装",
+    "中高端细分市场领先",
+    "染整整体解决方案提供商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "染料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纺织助剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "染助一体化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:56:29"
+}

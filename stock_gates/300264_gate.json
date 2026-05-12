@@ -1,0 +1,46 @@
+{
+  "stock_id": "300264",
+  "stock_name": "佳创视讯",
+  "concept": "广电视频方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全网CDN系统",
+    "5G应用开发与合作运营",
+    "VR内容生产与合作拍摄",
+    "游戏产品"
+  ],
+  "should": [
+    "IP视频直播平台",
+    "百毫秒级电视频道切换系统",
+    "VR虚实交互直播平台",
+    "AI虚拟场景引擎",
+    "VR内容运营",
+    "广电视频方案",
+    "PaaS云平台设计",
+    "5G音视频应用",
+    "IPTV",
+    "OTT视频平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全网CDN系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "5G应用开发与合作运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "VR内容生产与合作拍摄",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "游戏产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:20:17"
+}

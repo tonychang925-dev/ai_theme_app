@@ -1,0 +1,30 @@
+{
+  "stock_id": "300640",
+  "stock_name": "德艺文创",
+  "concept": "文化创意家居",
+  "strategy_type": "industry_chain",
+  "must": [
+    "文化创意家居",
+    "文化创意家居用品出口"
+  ],
+  "should": [
+    "实用性",
+    "文化创意内容",
+    "高附加值",
+    "出口商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "文化创意家居",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "文化创意家居用品出口",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:36:33"
+}

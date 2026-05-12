@@ -1,0 +1,35 @@
+{
+  "stock_id": "002749",
+  "stock_name": "国光股份",
+  "concept": "植物生长调节剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "植物生长调节剂",
+    "植物生长调节剂原药及制剂"
+  ],
+  "should": [
+    "生物农药",
+    "杀菌剂",
+    "水溶性肥料",
+    "园林养护品",
+    "农业",
+    "林业",
+    "卫生",
+    "园林绿化",
+    "家庭园艺"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "植物生长调节剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "植物生长调节剂原药及制剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:55:52"
+}

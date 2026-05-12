@@ -1,0 +1,41 @@
+{
+  "stock_id": "000923",
+  "stock_name": "河钢资源",
+  "concept": "全球化资源平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球化资源平台",
+    "磁铁矿",
+    "铜矿开采"
+  ],
+  "should": [
+    "铜精矿",
+    "阴极铜",
+    "铜线",
+    "蛭石",
+    "冶炼加工",
+    "磁铁矿分离",
+    "南非最大铜产品生产商",
+    "蛭石产量占全球30%",
+    "磁铁矿堆存量1.5亿吨",
+    "新能源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球化资源平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磁铁矿",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铜矿开采",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:09:40"
+}

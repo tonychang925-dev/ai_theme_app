@@ -1,0 +1,38 @@
+{
+  "stock_id": "688258",
+  "stock_name": "卓易信息",
+  "concept": "固件领军",
+  "strategy_type": "industry_chain",
+  "must": [
+    "BIOS",
+    "BMC固件"
+  ],
+  "should": [
+    "UEFI BIOS",
+    "固件领军",
+    "固件定制开发",
+    "主控芯片适配",
+    "PC",
+    "服务器",
+    "云计算设备",
+    "政企云",
+    "物联网云",
+    "大陆唯一"
+  ],
+  "not": [
+    "云服务"
+  ],
+  "evidence_refs": [
+    {
+      "term": "BIOS",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "BMC固件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:13:20"
+}

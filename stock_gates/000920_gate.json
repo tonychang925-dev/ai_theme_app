@@ -1,0 +1,41 @@
+{
+  "stock_id": "000920",
+  "stock_name": "沃顿科技",
+  "concept": "分离膜材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "反渗透膜",
+    "纳滤膜",
+    "膜分离技术"
+  ],
+  "should": [
+    "超滤膜",
+    "复合反渗透膜片制备",
+    "超滤膜制备",
+    "分离膜材料",
+    "饮用纯水制备",
+    "食品饮料",
+    "医疗制药",
+    "市政供水处理",
+    "工业用高纯水",
+    "电子行业超纯水"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "反渗透膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纳滤膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "膜分离技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:09:35"
+}

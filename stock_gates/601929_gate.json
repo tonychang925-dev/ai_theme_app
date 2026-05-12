@@ -1,0 +1,41 @@
+{
+  "stock_id": "601929",
+  "stock_name": "吉视传媒",
+  "concept": "广电网络服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "广播电视传输",
+    "数字电视增值",
+    "宽带双向交互"
+  ],
+  "should": [
+    "广电网络服务",
+    "5G产品套餐",
+    "单移网",
+    "智慧广电固边",
+    "林业信息化",
+    "畜牧信息化",
+    "公安信息化",
+    "数字乡村",
+    "应急通信",
+    "智慧媒体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "广播电视传输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字电视增值",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "宽带双向交互",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:39:57"
+}

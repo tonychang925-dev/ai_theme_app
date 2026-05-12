@@ -1,0 +1,46 @@
+{
+  "stock_id": "301370",
+  "stock_name": "国科恒泰",
+  "concept": "医疗器械流通",
+  "strategy_type": "industry_chain",
+  "must": [
+    "分销",
+    "直销",
+    "血管介入治疗类材料",
+    "骨科材料"
+  ],
+  "should": [
+    "波士顿科学",
+    "美敦力",
+    "贝朗医疗",
+    "捷迈邦美",
+    "雅培",
+    "施乐辉",
+    "天津瑞奇",
+    "广州维力",
+    "安臻达",
+    "南通华尔康"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "分销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "直销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "血管介入治疗类材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "骨科材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:04:05"
+}

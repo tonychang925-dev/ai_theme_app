@@ -1,0 +1,33 @@
+{
+  "stock_id": "605077",
+  "stock_name": "华康股份",
+  "concept": "功能性糖醇",
+  "strategy_type": "industry_chain",
+  "must": [
+    "木糖醇",
+    "山梨糖醇"
+  ],
+  "should": [
+    "麦芽糖醇",
+    "赤藓糖醇",
+    "果葡糖浆",
+    "合成生物学绿色制造",
+    "功能性糖醇技术研发",
+    "全球主要生产企业",
+    "玉米精深加工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "木糖醇",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "山梨糖醇",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:01:35"
+}

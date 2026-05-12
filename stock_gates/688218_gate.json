@@ -1,0 +1,41 @@
+{
+  "stock_id": "688218",
+  "stock_name": "江苏北人",
+  "concept": "机器人系统集成",
+  "strategy_type": "industry_chain",
+  "must": [
+    "机器人系统集成",
+    "新能源汽车焊接产线",
+    "新能源电池相关产线"
+  ],
+  "should": [
+    "新能源电机装配产线",
+    "电池托盘产线",
+    "轻量化材料连接技术",
+    "焊接工艺",
+    "智能装配工艺",
+    "机器视觉",
+    "工业互联网",
+    "MES系统",
+    "底盘产线",
+    "底板产线"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "机器人系统集成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车焊接产线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源电池相关产线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:12:17"
+}

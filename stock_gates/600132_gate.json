@@ -1,0 +1,36 @@
+{
+  "stock_id": "600132",
+  "stock_name": "重庆啤酒",
+  "concept": "啤酒制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "重庆",
+    "嘉士伯"
+  ],
+  "should": [
+    "乐堡",
+    "凯旋1664",
+    "山城",
+    "四川",
+    "湖南",
+    "啤酒制造",
+    "高端化",
+    "去产能",
+    "产品结构升级",
+    "吨价提升"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "重庆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "嘉士伯",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:09:59"
+}

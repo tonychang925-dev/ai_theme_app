@@ -1,0 +1,46 @@
+{
+  "stock_id": "603214",
+  "stock_name": "爱婴室",
+  "concept": "母婴连锁零售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "母婴连锁零售",
+    "爱婴室",
+    "线下门店",
+    "贝贝熊"
+  ],
+  "should": [
+    "婴幼儿乳制品",
+    "纸制品",
+    "喂哺用品",
+    "洗护用品",
+    "棉纺品",
+    "玩具",
+    "车床",
+    "自营APP",
+    "微信小程序",
+    "天猫旗舰店"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "母婴连锁零售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "爱婴室",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "线下门店",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "贝贝熊",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:46:45"
+}

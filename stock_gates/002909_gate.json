@@ -1,0 +1,41 @@
+{
+  "stock_id": "002909",
+  "stock_name": "集泰股份",
+  "concept": "有机硅密封胶",
+  "strategy_type": "industry_chain",
+  "must": [
+    "有机硅密封胶",
+    "密封胶",
+    "涂料"
+  ],
+  "should": [
+    "电子胶",
+    "高性能有机硅材料",
+    "建筑幕墙",
+    "中空玻璃",
+    "节能门窗",
+    "装配式建筑",
+    "装饰装修",
+    "新能源汽车",
+    "动力电池",
+    "光伏"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "有机硅密封胶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "密封胶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涂料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:02:42"
+}

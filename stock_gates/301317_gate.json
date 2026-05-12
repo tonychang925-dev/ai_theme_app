@@ -1,0 +1,36 @@
+{
+  "stock_id": "301317",
+  "stock_name": "鑫磊股份",
+  "concept": "空气动力设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "空气压缩机",
+    "鼓风机"
+  ],
+  "should": [
+    "螺杆主机自主设计制造",
+    "电机自主设计制造",
+    "转子型线开发",
+    "空气动力设备",
+    "石化",
+    "机械",
+    "钢铁",
+    "电力",
+    "冶金",
+    "污水处理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "空气压缩机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "鼓风机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:02:43"
+}

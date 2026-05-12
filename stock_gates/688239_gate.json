@@ -1,0 +1,31 @@
+{
+  "stock_id": "688239",
+  "stock_name": "航宇科技",
+  "concept": "航空环锻件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航空环锻件",
+    "航空发动机环形锻件"
+  ],
+  "should": [
+    "航天火箭发动机锻件",
+    "舰载燃机锻件",
+    "核电装备锻件",
+    "难变形金属材料环锻件研制",
+    "辗轧技术成形"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航空环锻件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航空发动机环形锻件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:12:49"
+}

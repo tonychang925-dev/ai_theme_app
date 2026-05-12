@@ -1,0 +1,41 @@
+{
+  "stock_id": "688078",
+  "stock_name": "龙软科技",
+  "concept": "智慧矿山",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能矿山",
+    "智慧安监",
+    "龙软智图"
+  ],
+  "should": [
+    "智慧园区",
+    "应急救援",
+    "零碳机场",
+    "透明化地测保障系统",
+    "智能化管控平台",
+    "LongRuanGIS云平台",
+    "LongRuan4D-GIS平台",
+    "LongRuan移动GIS平台",
+    "智能化综采",
+    "智能化掘进"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能矿山",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧安监",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "龙软智图",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:07:40"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "002802",
+  "stock_name": "洪汇新材",
+  "concept": "特种氯乙烯共聚物",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种氯乙烯共聚物",
+    "氯乙烯-醋酸乙烯共聚树脂",
+    "水性乳液（树脂）"
+  ],
+  "should": [
+    "氯乙烯共聚乳液",
+    "氯醋树脂水性化",
+    "无苯产品研发",
+    "氯乙烯单体（VCM）",
+    "醋酸乙烯（VAc）",
+    "油墨",
+    "涂料和油漆",
+    "胶黏剂",
+    "水性工业涂料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种氯乙烯共聚物",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氯乙烯-醋酸乙烯共聚树脂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水性乳液（树脂）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:58:10"
+}

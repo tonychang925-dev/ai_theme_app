@@ -1,0 +1,46 @@
+{
+  "stock_id": "603687",
+  "stock_name": "大胜达",
+  "concept": "纸包装龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "瓦楞纸箱",
+    "纸板",
+    "精品酒盒",
+    "卷烟商标"
+  ],
+  "should": [
+    "纸包装生产线物联网系统",
+    "纸包装龙头",
+    "啤酒",
+    "饮料",
+    "烟草",
+    "电子",
+    "家电",
+    "家具",
+    "机械",
+    "快递物流"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "瓦楞纸箱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纸板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精品酒盒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "卷烟商标",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:54:48"
+}

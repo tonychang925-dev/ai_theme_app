@@ -1,0 +1,31 @@
+{
+  "stock_id": "002900",
+  "stock_name": "哈三联",
+  "concept": "医药制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "基础输液及营养性输液"
+  ],
+  "should": [
+    "神经系统药物",
+    "心血管系统药物",
+    "肌肉-骨骼系统药物",
+    "全身用抗感染药",
+    "抗肿瘤药及免疫调节剂",
+    "消化道和代谢药物",
+    "医药制造",
+    "仿制药一致性评价",
+    "新化药分类仿制药研发",
+    "原料药平台建设"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "基础输液及营养性输液",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:02:28"
+}

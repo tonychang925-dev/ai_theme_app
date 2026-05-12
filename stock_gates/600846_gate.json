@@ -1,0 +1,46 @@
+{
+  "stock_id": "600846",
+  "stock_name": "同济科技",
+  "concept": "城市建设服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "城市建设服务",
+    "工程咨询",
+    "建设施工",
+    "环保业务"
+  ],
+  "should": [
+    "房产业务",
+    "基坑智能检测管理平台",
+    "区块链电梯运维管理平台",
+    "钢筋螺纹加工质量检测智能识别系统",
+    "碳源精确投加系统",
+    "高速铁路建设管理标准体系",
+    "BIM+物联网技术",
+    "基建",
+    "房建",
+    "环境工程"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "城市建设服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程咨询",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建设施工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环保业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:29:25"
+}

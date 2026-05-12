@@ -1,0 +1,37 @@
+{
+  "stock_id": "601718",
+  "stock_name": "际华集团",
+  "concept": "军需品供应商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "军需品供应商",
+    "职业装",
+    "职业鞋靴"
+  ],
+  "should": [
+    "防护装具",
+    "纺织印染",
+    "研发创新体系",
+    "关键材料和技术攻关",
+    "核心供应商",
+    "重要供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "军需品供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "职业装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "职业鞋靴",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:38:13"
+}

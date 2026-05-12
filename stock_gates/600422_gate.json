@@ -1,0 +1,36 @@
+{
+  "stock_id": "600422",
+  "stock_name": "昆药集团",
+  "concept": "精品国药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "昆中药六百四十年老字号",
+    "华润三九控股"
+  ],
+  "should": [
+    "参苓健脾胃颗粒",
+    "舒肝颗粒",
+    "血塞通软胶囊",
+    "精品国药",
+    "口服制剂",
+    "心脑血管",
+    "免疫",
+    "骨科",
+    "脾胃消化",
+    "妇科（身心）"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "昆中药六百四十年老字号",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "华润三九控股",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:17:37"
+}

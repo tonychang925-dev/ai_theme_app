@@ -1,0 +1,26 @@
+{
+  "stock_id": "603608",
+  "stock_name": "天创时尚",
+  "concept": "时尚女鞋",
+  "strategy_type": "industry_chain",
+  "must": [
+    "时尚女鞋"
+  ],
+  "should": [
+    "自动智能化制造管理系统",
+    "外部数据系统",
+    "VR技术虚拟衣帽间",
+    "多品牌",
+    "全产业链纵向一体化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "时尚女鞋",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:53:06"
+}

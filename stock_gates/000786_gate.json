@@ -1,0 +1,31 @@
+{
+  "stock_id": "000786",
+  "stock_name": "北新建材",
+  "concept": "新型建材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "石膏板"
+  ],
+  "should": [
+    "龙骨",
+    "万能板",
+    "矿棉板",
+    "金邦板",
+    "防水材料",
+    "涂料",
+    "粉料砂浆",
+    "全屋装配室内系统",
+    "新型建材",
+    "绿色建筑产业链"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "石膏板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:04:45"
+}

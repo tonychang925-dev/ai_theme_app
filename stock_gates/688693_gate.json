@@ -1,0 +1,35 @@
+{
+  "stock_id": "688693",
+  "stock_name": "锴威特",
+  "concept": "功率半导体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "FRMOS",
+    "SiC MOSFET"
+  ],
+  "should": [
+    "平面MOSFET",
+    "功率IC",
+    "SiC MOSFET工艺平台",
+    "功率半导体",
+    "主控芯片设计",
+    "高可靠性检测",
+    "晶圆制造厂商",
+    "封测厂商",
+    "外协供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "FRMOS",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SiC MOSFET",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:24:09"
+}

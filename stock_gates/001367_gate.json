@@ -1,0 +1,32 @@
+{
+  "stock_id": "001367",
+  "stock_name": "海森药业",
+  "concept": "原料药生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "硫糖铝",
+    "阿托伐他汀钙"
+  ],
+  "should": [
+    "安乃近",
+    "PHBA",
+    "草酸艾司西酞普兰片",
+    "原料药生产",
+    "原料药",
+    "中间体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "硫糖铝",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "阿托伐他汀钙",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:17:17"
+}

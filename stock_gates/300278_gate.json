@@ -1,0 +1,41 @@
+{
+  "stock_id": "300278",
+  "stock_name": "华昌达",
+  "concept": "智能自动化装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "机器人应用",
+    "智能仓储",
+    "工业互联"
+  ],
+  "should": [
+    "自动化立体库",
+    "自动分拣系统",
+    "穿梭车",
+    "AGV/AMR",
+    "输送机",
+    "自动识别和数据采集",
+    "码垛和卸垛",
+    "龙门机器人",
+    "WMS/WCS",
+    "智能自动化装备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "机器人应用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能仓储",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业互联",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:20:53"
+}

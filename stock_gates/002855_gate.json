@@ -1,0 +1,51 @@
+{
+  "stock_id": "002855",
+  "stock_name": "捷荣技术",
+  "concept": "精密结构件制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密模具",
+    "精密结构件",
+    "智能手机",
+    "智能手表",
+    "VR/AR"
+  ],
+  "should": [
+    "TWS耳机",
+    "平板/PC",
+    "智能音箱",
+    "智能家居",
+    "新能源",
+    "电子烟",
+    "高精密连接器",
+    "摄像头精密零组件",
+    "注塑",
+    "精密结构件制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密模具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密结构件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能手机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能手表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "VR/AR",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:00:32"
+}

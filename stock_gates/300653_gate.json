@@ -1,0 +1,36 @@
+{
+  "stock_id": "300653",
+  "stock_name": "正海生物",
+  "concept": "生物再生材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生物再生材料",
+    "口腔修复膜"
+  ],
+  "should": [
+    "可吸收硬脑（脊）膜补片",
+    "骨修复材料",
+    "皮肤修复膜",
+    "外科用填塞海绵",
+    "自酸蚀粘接剂",
+    "组织工程学技术",
+    "脱细胞工艺",
+    "口腔修复",
+    "神经外科硬脑膜修复",
+    "牙颌骨缺损填充"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生物再生材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "口腔修复膜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:37:15"
+}

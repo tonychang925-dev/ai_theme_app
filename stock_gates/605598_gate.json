@@ -1,0 +1,36 @@
+{
+  "stock_id": "605598",
+  "stock_name": "上海港湾",
+  "concept": "岩土工程服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "岩土工程服务",
+    "地基处理"
+  ],
+  "should": [
+    "桩基工程",
+    "勘察",
+    "设计",
+    "施工",
+    "监测",
+    "机场",
+    "港口",
+    "公路",
+    "铁路",
+    "电厂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "岩土工程服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "地基处理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:04:46"
+}

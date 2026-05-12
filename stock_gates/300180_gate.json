@@ -1,0 +1,40 @@
+{
+  "stock_id": "300180",
+  "stock_name": "华峰超纤",
+  "concept": "超纤合成革",
+  "strategy_type": "industry_chain",
+  "must": [
+    "超纤合成革",
+    "超纤材料",
+    "超纤革"
+  ],
+  "should": [
+    "束状超细纤维",
+    "聚氨酯微孔弹性体",
+    "制鞋",
+    "箱包",
+    "沙发",
+    "汽车内饰",
+    "服装用革",
+    "行业龙头",
+    "制造业单项冠军示范企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "超纤合成革",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超纤材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超纤革",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:16:16"
+}

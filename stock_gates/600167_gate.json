@@ -1,0 +1,46 @@
+{
+  "stock_id": "600167",
+  "stock_name": "联美控股",
+  "concept": "清洁供热+高铁传媒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "清洁供热+高铁传媒",
+    "清洁供热",
+    "高铁传媒",
+    "兆讯传媒"
+  ],
+  "should": [
+    "中水源热泵",
+    "沈阳浑南热力",
+    "沈阳新北热电",
+    "国惠环保新能源",
+    "生物质热电联产",
+    "天然气分布式冷热电联产",
+    "高铁媒体",
+    "运营类现金牛资产",
+    "一次性投资陆续收回成本收益",
+    "褐煤供热"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "清洁供热+高铁传媒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "清洁供热",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高铁传媒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "兆讯传媒",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:10:50"
+}

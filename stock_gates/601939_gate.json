@@ -1,0 +1,32 @@
+{
+  "stock_id": "601939",
+  "stock_name": "建设银行",
+  "concept": "综合金融服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "吸收存款",
+    "发放贷款"
+  ],
+  "should": [
+    "综合金融服务",
+    "金融投资",
+    "普惠金融",
+    "乡村振兴",
+    "民生保障",
+    "绿色金融"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "吸收存款",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发放贷款",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:39:55"
+}

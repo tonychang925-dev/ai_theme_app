@@ -1,0 +1,39 @@
+{
+  "stock_id": "002239",
+  "stock_name": "奥特佳",
+  "concept": "汽车热管理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车空调压缩机",
+    "汽车空调系统",
+    "涡旋式压缩机技术"
+  ],
+  "should": [
+    "储能电池热管理产品",
+    "热泵空调系统",
+    "汽车热管理",
+    "燃油汽车",
+    "新能源汽车",
+    "储能电站",
+    "重型电动汽车",
+    "电动工程机械设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车空调压缩机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车空调系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涡旋式压缩机技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:31:06"
+}

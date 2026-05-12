@@ -1,0 +1,31 @@
+{
+  "stock_id": "301296",
+  "stock_name": "新巨丰",
+  "concept": "无菌包装龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "无菌包装龙头"
+  ],
+  "should": [
+    "枕包",
+    "砖包",
+    "钻石包",
+    "椰树集团",
+    "加多宝",
+    "三元乳业",
+    "黑龙江完达山",
+    "海河乳业",
+    "乳制品",
+    "非碳酸软饮料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "无菌包装龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:02:00"
+}

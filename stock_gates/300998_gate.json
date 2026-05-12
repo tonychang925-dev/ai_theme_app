@@ -1,0 +1,40 @@
+{
+  "stock_id": "300998",
+  "stock_name": "宁波方正",
+  "concept": "汽车模具制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大型注塑模具",
+    "精密注塑模具",
+    "吹塑模具"
+  ],
+  "should": [
+    "塑料件及配件",
+    "智能装备",
+    "锂电池结构件",
+    "汽车内饰系统",
+    "汽车外饰系统",
+    "汽车空调空滤系统",
+    "汽车油箱系统",
+    "模具出口重点企业",
+    "中国注塑、吹塑模具重点骨干企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大型注塑模具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密注塑模具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "吹塑模具",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:52:24"
+}

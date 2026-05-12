@@ -1,0 +1,41 @@
+{
+  "stock_id": "300065",
+  "stock_name": "海兰信",
+  "concept": "智慧海洋+智能航海",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧海洋+智能航海",
+    "海底数据中心",
+    "智能航海"
+  ],
+  "should": [
+    "近海雷达观测网",
+    "海洋重大装备",
+    "海兰云船舶远程信息服务系统",
+    "船舶智能导航",
+    "海底云计算",
+    "智能雷达",
+    "海洋移动监测",
+    "海洋调查系统",
+    "机舱自动化",
+    "海域管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧海洋+智能航海",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海底数据中心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能航海",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:11:37"
+}

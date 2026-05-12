@@ -1,0 +1,28 @@
+{
+  "stock_id": "002266",
+  "stock_name": "浙富控股",
+  "concept": "危废资源化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "危废资源化"
+  ],
+  "should": [
+    "清洁能源装备",
+    "有价危废资源化利用",
+    "无价危废无害化处置",
+    "金属资源化技术水平提高",
+    "金属富集度提升",
+    "提纯品类提升",
+    "深度资源化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "危废资源化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:32:27"
+}

@@ -1,0 +1,45 @@
+{
+  "stock_id": "002655",
+  "stock_name": "共达电声",
+  "concept": "电声元器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电声元器件",
+    "MEMS声学传感器",
+    "驻极体声学传感器",
+    "车载语音模组"
+  ],
+  "should": [
+    "电声技术解决方案提供商",
+    "RNC振动传感器模组",
+    "微型驻极体麦克风技术",
+    "硅微麦克风技术",
+    "声学相位调制技术",
+    "全自动封装技术",
+    "智能手机",
+    "智能穿戴",
+    "汽车电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电声元器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MEMS声学传感器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "驻极体声学传感器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载语音模组",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:51:53"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "000596",
+  "stock_name": "古井贡酒",
+  "concept": "徽酒龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "年份原浆系列",
+    "次高端战略",
+    "古8",
+    "古16",
+    "古20"
+  ],
+  "should": [
+    "三品四香",
+    "古26",
+    "年30",
+    "献礼版",
+    "古5",
+    "142产品组合",
+    "徽酒龙头",
+    "控货提价",
+    "品鉴会",
+    "回厂游"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "年份原浆系列",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "次高端战略",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "古8",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "古16",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "古20",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:57:47"
+}

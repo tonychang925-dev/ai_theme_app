@@ -1,0 +1,45 @@
+{
+  "stock_id": "002370",
+  "stock_name": "亚太药业",
+  "concept": "医药研发制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "透皮控释系统",
+    "抗感染药物",
+    "心血管药物",
+    "降糖类药物",
+    "肝炎类药物"
+  ],
+  "should": [
+    "透皮控释技术",
+    "医药研发制造",
+    "全民健康",
+    "公共卫生"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "透皮控释系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "抗感染药物",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "心血管药物",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "降糖类药物",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "肝炎类药物",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:38:08"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "300990",
+  "stock_name": "同飞股份",
+  "concept": "工业温控",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业温控"
+  ],
+  "should": [
+    "液体恒温设备",
+    "电气箱恒温装置",
+    "纯水冷却单元",
+    "特种换热器",
+    "数控机床",
+    "激光",
+    "半导体",
+    "电力电子",
+    "储能",
+    "氢能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业温控",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:52:10"
+}

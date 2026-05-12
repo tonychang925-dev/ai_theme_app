@@ -1,0 +1,41 @@
+{
+  "stock_id": "600686",
+  "stock_name": "金龙汽车",
+  "concept": "客车制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "客车制造",
+    "大、中、轻型客车",
+    "新能源汽车"
+  ],
+  "should": [
+    "燃料电池车",
+    "专用车",
+    "氢燃料电池系统",
+    "自动驾驶编队协同规划与控制技术",
+    "高压部件与动力电池六合一集成技术",
+    "MTV整车电池一体化技术",
+    "智能线控底盘",
+    "专用客车",
+    "旅游客运",
+    "公路客运"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "客车制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大、中、轻型客车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:24:56"
+}

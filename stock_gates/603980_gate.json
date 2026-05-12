@@ -1,0 +1,41 @@
+{
+  "stock_id": "603980",
+  "stock_name": "吉华集团",
+  "concept": "染料生产基地",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球三大染料生产基地之一",
+    "行业龙头",
+    "染料生产基地"
+  ],
+  "should": [
+    "分散染料",
+    "活性染料",
+    "染料中间体",
+    "H酸",
+    "硫酸",
+    "涂料",
+    "聚氨酯海绵",
+    "专利",
+    "全产业链优势",
+    "大化工优势"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球三大染料生产基地之一",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "行业龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "染料生产基地",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:00:08"
+}

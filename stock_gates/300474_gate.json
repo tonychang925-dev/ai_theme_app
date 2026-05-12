@@ -1,0 +1,41 @@
+{
+  "stock_id": "300474",
+  "stock_name": "景嘉微",
+  "concept": "国产GPU龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国产GPU龙头",
+    "图形显控模块",
+    "景宏系列智算模块"
+  ],
+  "should": [
+    "JM11系列图形处理芯片",
+    "小型化雷达",
+    "无线通信系统",
+    "GPU芯片自主研发",
+    "主控芯片",
+    "固件开发",
+    "INT8/FP16混合精度运算",
+    "虚拟化技术",
+    "机载航电系统图形显控",
+    "图形工作站"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国产GPU龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "图形显控模块",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "景宏系列智算模块",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:28:51"
+}

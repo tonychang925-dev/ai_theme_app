@@ -1,0 +1,31 @@
+{
+  "stock_id": "301566",
+  "stock_name": "达利凯普",
+  "concept": "射频微波MLCC",
+  "strategy_type": "industry_chain",
+  "must": [
+    "射频微波MLCC"
+  ],
+  "should": [
+    "高Q值",
+    "低ESR",
+    "高自谐振频率",
+    "高耐压",
+    "高可靠性",
+    "移动通讯基站设备",
+    "医疗影像设备",
+    "军用设备",
+    "轨道交通信号设备",
+    "半导体射频电源及激光设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "射频微波MLCC",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:06:30"
+}

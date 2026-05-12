@@ -1,0 +1,41 @@
+{
+  "stock_id": "600259",
+  "stock_name": "中稀有色",
+  "concept": "中重稀土龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中重稀土龙头",
+    "广东稀土集团唯一上市公司",
+    "省内唯一合法稀土开采主体"
+  ],
+  "should": [
+    "稀土精矿",
+    "混合稀土",
+    "稀土氧化物",
+    "稀土金属",
+    "稀土磁性材料",
+    "技术创新",
+    "绿色矿山建设",
+    "全自动机械化",
+    "新能源汽车",
+    "风能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中重稀土龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "广东稀土集团唯一上市公司",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "省内唯一合法稀土开采主体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:13:17"
+}

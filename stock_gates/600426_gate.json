@@ -1,0 +1,51 @@
+{
+  "stock_id": "600426",
+  "stock_name": "华鲁恒升",
+  "concept": "煤化工新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "尼龙66",
+    "碳酸二甲酯",
+    "NMP",
+    "BDO",
+    "电解液溶剂"
+  ],
+  "should": [
+    "尿素",
+    "醋酸",
+    "DMF",
+    "混甲胺",
+    "己二酸",
+    "己二胺",
+    "碳酸甲乙酯",
+    "PBTA",
+    "醋酐",
+    "乙二醇"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "尼龙66",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳酸二甲酯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "NMP",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "BDO",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电解液溶剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:17:50"
+}

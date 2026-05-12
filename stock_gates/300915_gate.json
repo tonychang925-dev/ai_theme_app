@@ -1,0 +1,31 @@
+{
+  "stock_id": "300915",
+  "stock_name": "海融科技",
+  "concept": "烘焙原料供应商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "植脂奶油"
+  ],
+  "should": [
+    "混合脂奶油",
+    "稀奶油",
+    "植物基坚果奶油",
+    "植物基饮品",
+    "果酱",
+    "巧克力",
+    "烘焙油脂",
+    "香精香料",
+    "冷冻甜点",
+    "烘焙原料供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "植脂奶油",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:49:02"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "002835",
+  "stock_name": "同为股份",
+  "concept": "视频监控解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "视频监控解决方案",
+    "人工智能技术",
+    "视频监控综合管理平台软件"
+  ],
+  "should": [
+    "前端网络摄像机",
+    "后端网络高清录像机",
+    "人脸抓拍摄像机",
+    "车牌识别摄像机",
+    "智能应用服务器",
+    "前端模拟高清摄像机",
+    "网络高清高速球",
+    "网络拼接摄像机",
+    "后端模拟高清录像机",
+    "配套服务器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "视频监控解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人工智能技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "视频监控综合管理平台软件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:59:40"
+}

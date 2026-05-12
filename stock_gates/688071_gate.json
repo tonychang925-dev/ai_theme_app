@@ -1,0 +1,51 @@
+{
+  "stock_id": "688071",
+  "stock_name": "华依科技",
+  "concept": "汽车动力测试",
+  "strategy_type": "industry_chain",
+  "must": [
+    "发动机冷试设备",
+    "汽车动力总成智能测试设备",
+    "新能源总成测试设备",
+    "汽车动力总成测试服务",
+    "新能源动力总成测试服务"
+  ],
+  "should": [
+    "惯性导航系统核心部件IMU",
+    "发动机冷试技术",
+    "惯性导航技术",
+    "燃料电池测试平台关键技术",
+    "汽车动力测试",
+    "智能驾驶核心部件测试",
+    "无人驾驶环境测试",
+    "新能源检测服务获国家强检牌照"
+  ],
+  "not": [
+    "与上汽集团签署技术合作开发备忘录"
+  ],
+  "evidence_refs": [
+    {
+      "term": "发动机冷试设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车动力总成智能测试设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源总成测试设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车动力总成测试服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源动力总成测试服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:07:19"
+}

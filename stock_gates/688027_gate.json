@@ -1,0 +1,40 @@
+{
+  "stock_id": "688027",
+  "stock_name": "国盾量子",
+  "concept": "量子通信",
+  "strategy_type": "industry_chain",
+  "must": [
+    "量子通信",
+    "量子保密通信产品",
+    "QKD产品"
+  ],
+  "should": [
+    "量子密钥分发",
+    "量子计算仪器设备",
+    "政务",
+    "金融",
+    "电力",
+    "国防",
+    "量子保密通信网络设计",
+    "供货",
+    "部署"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "量子通信",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "量子保密通信产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "QKD产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:05:46"
+}

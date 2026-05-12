@@ -1,0 +1,41 @@
+{
+  "stock_id": "000869",
+  "stock_name": "张裕A",
+  "concept": "葡萄酒白兰地",
+  "strategy_type": "industry_chain",
+  "must": [
+    "葡萄酒",
+    "白兰地",
+    "张裕"
+  ],
+  "should": [
+    "解百纳",
+    "爱斐堡",
+    "龙谕",
+    "黄金冰谷",
+    "醉诗仙",
+    "味美思",
+    "瑞那",
+    "巴保男爵",
+    "多名利",
+    "爱欧"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "葡萄酒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "白兰地",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "张裕",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:07:32"
+}

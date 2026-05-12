@@ -1,0 +1,41 @@
+{
+  "stock_id": "002501",
+  "stock_name": "利源股份",
+  "concept": "铝型材综合供应商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铝型材综合供应商",
+    "工业铝型材",
+    "建筑铝型材"
+  ],
+  "should": [
+    "铝合金深加工产品",
+    "汽车轻量化产品",
+    "新能源产品",
+    "轨道交通装备部件",
+    "建筑门窗框",
+    "幕墙系统",
+    "汽车零部件",
+    "新能源电动汽车电池壳体",
+    "5G基站",
+    "轨道交通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铝型材综合供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业铝型材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑铝型材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:44:49"
+}

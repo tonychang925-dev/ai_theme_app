@@ -1,0 +1,41 @@
+{
+  "stock_id": "002554",
+  "stock_name": "惠博普",
+  "concept": "油气田地面系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "油气田地面系统",
+    "油气资源开发及利用",
+    "油气工程及运营服务"
+  ],
+  "should": [
+    "环境工程及服务",
+    "碳捕集利用和封存(CCUS)",
+    "含油废弃物减量化技术",
+    "含油废弃物深度处理及无害化技术",
+    "储油罐机械清洗技术",
+    "石油炼化老化油回收处理技术",
+    "油气回收处理装备",
+    "污染场地修复技术",
+    "油气田开发",
+    "石油石化环保"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "油气田地面系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "油气资源开发及利用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "油气工程及运营服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:47:03"
+}

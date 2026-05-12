@@ -1,0 +1,51 @@
+{
+  "stock_id": "600410",
+  "stock_name": "华胜天成",
+  "concept": "数字化创新服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "企业级云服务",
+    "企业IT系统解决方案",
+    "数字化创新服务",
+    "新基建",
+    "信创"
+  ],
+  "should": [
+    "混合云管",
+    "大数据",
+    "云计算",
+    "人工智能",
+    "大数据中心一体化建设",
+    "智慧应急",
+    "数字能源",
+    "数字民生",
+    "物联网",
+    "智慧城市"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "企业级云服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "企业IT系统解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字化创新服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新基建",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信创",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:17:21"
+}

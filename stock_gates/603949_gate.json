@@ -1,0 +1,41 @@
+{
+  "stock_id": "603949",
+  "stock_name": "雪龙集团",
+  "concept": "商用车冷却风扇",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商用车冷却风扇",
+    "内燃机冷却系统产品",
+    "电控硅油离合器"
+  ],
+  "should": [
+    "塑料液位传感器",
+    "电控硅油离合器故障诊断仪",
+    "调制型温控硅油离合器",
+    "膨胀水箱总成",
+    "新能源膨胀水箱总成",
+    "一汽解放",
+    "一汽青岛",
+    "柳汽",
+    "重汽",
+    "卡特彼勒"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商用车冷却风扇",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "内燃机冷却系统产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电控硅油离合器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:59:35"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "002315",
+  "stock_name": "焦点科技",
+  "concept": "外贸服务综合平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "外贸服务综合平台",
+    "中国制造网"
+  ],
+  "should": [
+    "Doba.com",
+    "新一站保险代理",
+    "全链路外贸服务",
+    "跨境B2B电子商务",
+    "互联网保险代理",
+    "线上撮合服务",
+    "私域建站",
+    "CRM和ERP服务",
+    "移动私域流量",
+    "国内出口型中小企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "外贸服务综合平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中国制造网",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:35:02"
+}

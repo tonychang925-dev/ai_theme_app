@@ -1,0 +1,46 @@
+{
+  "stock_id": "600645",
+  "stock_name": "中源协和",
+  "concept": "干细胞产业化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "我国唯一干细胞产业化基地",
+    "干细胞产业化",
+    "脐带血造血干细胞",
+    "干细胞存储"
+  ],
+  "should": [
+    "免疫细胞",
+    "VUM02注射液",
+    "赫基仑赛注射液",
+    "基因检测",
+    "蛋白组学",
+    "病理诊断",
+    "精准预防",
+    "精准诊断",
+    "细胞治疗",
+    "细胞药物研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "我国唯一干细胞产业化基地",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "干细胞产业化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "脐带血造血干细胞",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "干细胞存储",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:23:53"
+}

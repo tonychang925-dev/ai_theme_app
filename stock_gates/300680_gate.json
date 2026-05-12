@@ -1,0 +1,41 @@
+{
+  "stock_id": "300680",
+  "stock_name": "隆盛科技",
+  "concept": "汽车EGR与电机铁芯",
+  "strategy_type": "industry_chain",
+  "must": [
+    "EGR系统",
+    "驱动电机铁芯",
+    "汽车EGR与电机铁芯"
+  ],
+  "should": [
+    "天然气喷射气轨总成",
+    "精密模具技术",
+    "黑田粘胶技术",
+    "商用车",
+    "乘用车",
+    "新能源车",
+    "天然气重卡",
+    "国内EGR龙头",
+    "市场份额近60%",
+    "博世定点供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "EGR系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "驱动电机铁芯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车EGR与电机铁芯",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:38:35"
+}

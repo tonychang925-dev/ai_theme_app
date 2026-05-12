@@ -1,0 +1,36 @@
+{
+  "stock_id": "002161",
+  "stock_name": "远望谷",
+  "concept": "RFID物联网",
+  "strategy_type": "industry_chain",
+  "must": [
+    "RFID物联网",
+    "RFID技术"
+  ],
+  "should": [
+    "电子标签",
+    "读写器",
+    "手持设备",
+    "芯片",
+    "天线",
+    "系统集成软件",
+    "多感知融合技术",
+    "大数据中台采集与应用",
+    "铁路",
+    "图书"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "RFID物联网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "RFID技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:26:33"
+}

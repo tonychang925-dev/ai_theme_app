@@ -1,0 +1,32 @@
+{
+  "stock_id": "605006",
+  "stock_name": "山东玻纤",
+  "concept": "玻纤制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "无碱纱",
+    "C-CR特种纱"
+  ],
+  "should": [
+    "玻纤制品",
+    "玻纤制造",
+    "41万吨/年",
+    "6条产线",
+    "国内市占率第四",
+    "耐碱性要求较高的市场"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "无碱纱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "C-CR特种纱",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:00:54"
+}

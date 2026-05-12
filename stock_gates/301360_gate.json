@@ -1,0 +1,36 @@
+{
+  "stock_id": "301360",
+  "stock_name": "荣旗科技",
+  "concept": "智能检测装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能检测装备",
+    "视觉检测",
+    "功能检测"
+  ],
+  "should": [
+    "智能组装装备",
+    "治具及配件",
+    "全流程自动化检测",
+    "苹果产业链核心供应商",
+    "全供应链订单"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能检测装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "视觉检测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功能检测",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:03:42"
+}

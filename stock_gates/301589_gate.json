@@ -1,0 +1,41 @@
+{
+  "stock_id": "301589",
+  "stock_name": "诺瓦星云",
+  "concept": "LED显示控制",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LED显示控制系统",
+    "视频处理系统",
+    "视频和显示控制核心算法"
+  ],
+  "should": [
+    "基于云的信息发布与管理系统",
+    "超高清视频编解码",
+    "低延迟处理和传输",
+    "LED显示控制",
+    "演艺舞台",
+    "监控调度",
+    "竞技赛事",
+    "展览展示",
+    "商业广告",
+    "虚拟拍摄"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED显示控制系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "视频处理系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "视频和显示控制核心算法",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:06:39"
+}

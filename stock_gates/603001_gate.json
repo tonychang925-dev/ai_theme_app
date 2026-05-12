@@ -1,0 +1,36 @@
+{
+  "stock_id": "603001",
+  "stock_name": "奥康国际",
+  "concept": "男士皮鞋",
+  "strategy_type": "industry_chain",
+  "must": [
+    "男士皮鞋",
+    "男鞋"
+  ],
+  "should": [
+    "女鞋",
+    "皮具",
+    "脚型测量仪",
+    "EPR轻质发泡鞋底",
+    "乌拉草抗菌科技",
+    "舒适透双循环无限透气系统",
+    "商务正装",
+    "休闲",
+    "皮具配套",
+    "中国最大的民营制鞋企业之一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "男士皮鞋",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "男鞋",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:40:41"
+}

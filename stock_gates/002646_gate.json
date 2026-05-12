@@ -1,0 +1,41 @@
+{
+  "stock_id": "002646",
+  "stock_name": "天佑德酒",
+  "concept": "青稞白酒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "天佑德",
+    "互助",
+    "八大作坊"
+  ],
+  "should": [
+    "世义德",
+    "永庆和",
+    "马克斯威葡萄酒",
+    "清蒸清烧四次清酿造工艺",
+    "美国加州葡萄酒庄",
+    "青稞白酒",
+    "智能化酿造",
+    "年份酒管理体系",
+    "新零售门店",
+    "青稞原料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "天佑德",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "互助",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "八大作坊",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:51:22"
+}

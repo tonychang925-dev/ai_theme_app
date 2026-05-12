@@ -1,0 +1,36 @@
+{
+  "stock_id": "300430",
+  "stock_name": "诚益通",
+  "concept": "智能制造与康复医疗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药智能制造",
+    "康复医疗设备"
+  ],
+  "should": [
+    "自动化控制系统",
+    "工业软件",
+    "智能装备",
+    "自动化控制",
+    "工业软件信息化",
+    "智能装备制造",
+    "制药企业",
+    "生物制品生产企业",
+    "康复医疗领域",
+    "智能制造整体解决方案提供商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医药智能制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "康复医疗设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:27:07"
+}

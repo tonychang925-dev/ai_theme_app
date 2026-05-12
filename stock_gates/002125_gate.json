@@ -1,0 +1,36 @@
+{
+  "stock_id": "002125",
+  "stock_name": "湘潭电化",
+  "concept": "电解二氧化锰",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电解二氧化锰",
+    "锰酸锂正极材料"
+  ],
+  "should": [
+    "P型EMD",
+    "碱锰型EMD",
+    "高性能型EMD",
+    "一次锂锰型EMD",
+    "尖晶石型锰酸锂",
+    "高纯硫酸镍",
+    "锰系电池材料生产运营经验",
+    "对不同锰矿资源的开发利用适应能力",
+    "精准研发",
+    "产品一致性和稳定性"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电解二氧化锰",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锰酸锂正极材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:24:37"
+}

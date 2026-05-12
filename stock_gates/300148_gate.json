@@ -1,0 +1,30 @@
+{
+  "stock_id": "300148",
+  "stock_name": "天舟文化",
+  "concept": "图书出版与游戏",
+  "strategy_type": "industry_chain",
+  "must": [
+    "图书出版与发行"
+  ],
+  "should": [
+    "教育服务",
+    "图书零售市场码洋规模下降",
+    "游戏行业进入存量竞争",
+    "图书著作权299项",
+    "软件著作权812项",
+    "游戏版号56项",
+    "巩固教育出版基本盘",
+    "布局移动网络游戏",
+    "培育文化娱乐新业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "图书出版与发行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:15:08"
+}

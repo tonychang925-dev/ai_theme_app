@@ -1,0 +1,36 @@
+{
+  "stock_id": "002149",
+  "stock_name": "西部材料",
+  "concept": "钛材新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钛材新材料",
+    "钛制品"
+  ],
+  "should": [
+    "层状复合材料",
+    "金属复合材料",
+    "金属纤维及其制品",
+    "核电银合金控制棒",
+    "稀有活性金属大型铸锭生产技术",
+    "优质锻件生产控制技术",
+    "板带材生产控制技术",
+    "管材生产控制技术",
+    "金属纤维研发及批量生产技术",
+    "核电控制棒国产化技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钛材新材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钛制品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:25:53"
+}

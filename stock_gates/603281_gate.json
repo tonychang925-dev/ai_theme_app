@@ -1,0 +1,36 @@
+{
+  "stock_id": "603281",
+  "stock_name": "江瀚新材",
+  "concept": "硅烷偶联剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "硅烷偶联剂",
+    "功能性硅烷"
+  ],
+  "should": [
+    "硅烷交联剂",
+    "复合材料",
+    "橡胶加工",
+    "塑料",
+    "粘合剂",
+    "涂料",
+    "表面处理",
+    "国内规模最大",
+    "国内市场占有率第一",
+    "全球市场占有率第三"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "硅烷偶联剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功能性硅烷",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:48:02"
+}

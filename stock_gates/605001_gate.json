@@ -1,0 +1,51 @@
+{
+  "stock_id": "605001",
+  "stock_name": "威奥股份",
+  "concept": "轨交车辆配套",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轨道车辆内装产品",
+    "真空集便系统",
+    "金属结构件",
+    "模块化产品",
+    "车外结构件"
+  ],
+  "should": [
+    "中国中车核心供应商",
+    "德国西门子核心供应商",
+    "法国阿尔斯通核心供应商",
+    "西班牙CAF核心供应商",
+    "西班牙Talgo核心供应商",
+    "轨交车辆配套",
+    "高速列车",
+    "城轨",
+    "地铁",
+    "动车组"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轨道车辆内装产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "真空集便系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金属结构件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "模块化产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车外结构件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:00:53"
+}

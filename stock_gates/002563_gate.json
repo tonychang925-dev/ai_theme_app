@@ -1,0 +1,41 @@
+{
+  "stock_id": "002563",
+  "stock_name": "森马服饰",
+  "concept": "休闲与童装品牌",
+  "strategy_type": "industry_chain",
+  "must": [
+    "休闲与童装品牌",
+    "森马",
+    "巴拉巴拉"
+  ],
+  "should": [
+    "虚拟经营",
+    "外包生产",
+    "休闲服饰",
+    "儿童服饰",
+    "专卖店",
+    "商超百货",
+    "购物中心",
+    "奥特莱斯",
+    "电商",
+    "小程序"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "休闲与童装品牌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "森马",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "巴拉巴拉",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:47:29"
+}

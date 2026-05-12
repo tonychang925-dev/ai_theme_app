@@ -1,0 +1,34 @@
+{
+  "stock_id": "000533",
+  "stock_name": "顺钠股份",
+  "concept": "输配电设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "输配电设备",
+    "干式变压器"
+  ],
+  "should": [
+    "预装式变电站",
+    "组合式变压器",
+    "中、低压开关成套设备",
+    "干式电抗器",
+    "接地成套产品",
+    "新能源行业（风能、太阳能、储能）",
+    "电网公司",
+    "核电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "输配电设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "干式变压器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:55:19"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "300991",
+  "stock_name": "创益通",
+  "concept": "高速互连产品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高速互连产品",
+    "精密连接器",
+    "数据存储互连产品及组件",
+    "新能源精密结构件"
+  ],
+  "should": [
+    "连接线",
+    "精密结构件",
+    "消费电子互连产品及组件",
+    "通讯互连产品及组件",
+    "晟碟半导体",
+    "莫仕",
+    "小米",
+    "沃客非凡",
+    "安克创新",
+    "星科金朋"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高速互连产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密连接器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据存储互连产品及组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源精密结构件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:52:13"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "000931",
+  "stock_name": "中关村",
+  "concept": "医药健康",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生物医药",
+    "国家战备药定点生产企业",
+    "国家麻醉药品定点生产企业"
+  ],
+  "should": [
+    "华素片",
+    "富马酸比索洛尔片",
+    "飞赛乐",
+    "博苏",
+    "五加生化胶囊",
+    "乳酸菌素片",
+    "曲马多制剂",
+    "盐酸贝尼地平片",
+    "西地碘含片",
+    "盐酸苯环壬酯片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生物医药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国家战备药定点生产企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国家麻醉药品定点生产企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:10:22"
+}

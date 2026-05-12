@@ -1,0 +1,46 @@
+{
+  "stock_id": "600098",
+  "stock_name": "广州发展",
+  "concept": "综合能源服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合能源服务",
+    "新能源",
+    "电力",
+    "燃气"
+  ],
+  "should": [
+    "煤炭",
+    "能源金融",
+    "城市燃气",
+    "燃气电厂",
+    "充电桩",
+    "综合智慧能源示范项目",
+    "上游气源",
+    "LNG码头",
+    "接收站",
+    "高压管线"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合能源服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "燃气",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:09:02"
+}

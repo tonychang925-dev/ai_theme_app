@@ -1,0 +1,36 @@
+{
+  "stock_id": "688296",
+  "stock_name": "和达科技",
+  "concept": "智慧水务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国内智慧水务建设龙头",
+    "智慧水务"
+  ],
+  "should": [
+    "水务物联网平台",
+    "分区控漏系统",
+    "智能遥测终端",
+    "渗漏预警仪",
+    "生产调度系统",
+    "计量管理系统",
+    "渗漏预警云平台",
+    "在线水力模型",
+    "网格化管理平台",
+    "物联户表远程采集传输模块"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国内智慧水务建设龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧水务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:14:39"
+}

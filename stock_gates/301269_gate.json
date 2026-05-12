@@ -1,0 +1,29 @@
+{
+  "stock_id": "301269",
+  "stock_name": "华大九天",
+  "concept": "EDA软件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "模拟电路全流程EDA工具"
+  ],
+  "should": [
+    "数字电路EDA点工具",
+    "异构仿真系统",
+    "EDA软件",
+    "时序功耗优化",
+    "电路仿真",
+    "晶体管级电源完整性分析",
+    "国内EDA市场营收占有率超50%",
+    "国内EDA企业龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "模拟电路全流程EDA工具",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:01:28"
+}

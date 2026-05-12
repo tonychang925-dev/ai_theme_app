@@ -1,0 +1,27 @@
+{
+  "stock_id": "002406",
+  "stock_name": "远东传动",
+  "concept": "传动轴制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "非等速传动轴"
+  ],
+  "should": [
+    "等速驱动轴",
+    "防水传动轴总成关键技术",
+    "传动轴制造",
+    "差速器及中间突缘等出口零部件研发",
+    "GAZ传动轴研发",
+    "轻型高端传动轴研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "非等速传动轴",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:40:12"
+}

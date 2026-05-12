@@ -1,0 +1,46 @@
+{
+  "stock_id": "605055",
+  "stock_name": "迎丰股份",
+  "concept": "纺织品印染",
+  "strategy_type": "industry_chain",
+  "must": [
+    "纺织品印染",
+    "针织面料印染",
+    "梭织面料印染",
+    "印染加工服务"
+  ],
+  "should": [
+    "发明专利",
+    "实用新型专利",
+    "ERP系统",
+    "MES系统",
+    "数字供应链",
+    "智能排产",
+    "生产监控",
+    "云配方",
+    "休闲服装",
+    "运动服装"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "纺织品印染",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "针织面料印染",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "梭织面料印染",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "印染加工服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:01:19"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "002363",
+  "stock_name": "隆基机械",
+  "concept": "汽车制动部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "制动盘"
+  ],
+  "should": [
+    "制动毂",
+    "轮毂",
+    "制动钳",
+    "汽车制动部件",
+    "OEM配套供应商",
+    "AM售后服务",
+    "比亚迪配套",
+    "广汽新能源配套",
+    "小鹏批量供货",
+    "特斯拉配套供应链计划"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "制动盘",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:37:58"
+}

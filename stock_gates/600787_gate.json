@@ -1,0 +1,46 @@
+{
+  "stock_id": "600787",
+  "stock_name": "中储股份",
+  "concept": "仓储物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "期现货交割物流",
+    "大宗商品供应链",
+    "互联网+物流",
+    "中储智运"
+  ],
+  "should": [
+    "中储钢超",
+    "货兑宝",
+    "物联网",
+    "多式联运",
+    "消费品物流",
+    "工程物流",
+    "国际货代",
+    "中储恒科物联网系统",
+    "仓储物流",
+    "宝马"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "期现货交割物流",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大宗商品供应链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "互联网+物流",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中储智运",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:27:44"
+}

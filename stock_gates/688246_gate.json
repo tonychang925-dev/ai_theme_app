@@ -1,0 +1,46 @@
+{
+  "stock_id": "688246",
+  "stock_name": "嘉和美康",
+  "concept": "医疗信息化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子病历",
+    "医院数据中心",
+    "专科电子病历",
+    "智慧医院整体解决方案"
+  ],
+  "should": [
+    "国家电子病历标准制定参与方",
+    "中国电子病历市场排名第一",
+    "移动护理",
+    "手麻",
+    "ICU",
+    "急诊",
+    "口腔专科电子病历",
+    "产科专科电子病历",
+    "肿瘤专科电子病历",
+    "院前急救信息系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子病历",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医院数据中心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "专科电子病历",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧医院整体解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:13:04"
+}

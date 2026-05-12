@@ -1,0 +1,50 @@
+{
+  "stock_id": "688015",
+  "stock_name": "交控科技",
+  "concept": "城轨信号系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "城轨信号系统",
+    "城市轨道交通信号系统",
+    "CBTC系统",
+    "信号系统项目承包",
+    "CBTC技术"
+  ],
+  "should": [
+    "FAO系统",
+    "I-CBTC系统",
+    "VBTC系统",
+    "AVCOS系统",
+    "PB-TACS信号系统",
+    "全电子联锁系统",
+    "ATS系统",
+    "车车通信列控系统（VBTC）",
+    "灵活编组的FAO系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "城轨信号系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市轨道交通信号系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CBTC系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信号系统项目承包",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CBTC技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:05:30"
+}

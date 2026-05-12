@@ -1,0 +1,36 @@
+{
+  "stock_id": "688690",
+  "stock_name": "纳微科技",
+  "concept": "纳米微球材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "纳米微球材料",
+    "色谱填料/层析介质"
+  ],
+  "should": [
+    "聚合物间隔物微球",
+    "磁珠",
+    "乳胶微球",
+    "荧光微球",
+    "微球合成技术平台",
+    "微球功能化技术平台",
+    "微球应用技术平台",
+    "纯化系统技术平台",
+    "生物医药",
+    "平板显示"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "纳米微球材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "色谱填料/层析介质",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:24:16"
+}

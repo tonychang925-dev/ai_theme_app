@@ -1,0 +1,36 @@
+{
+  "stock_id": "000707",
+  "stock_name": "双环科技",
+  "concept": "联碱化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "纯碱",
+    "氯化铵"
+  ],
+  "should": [
+    "联碱法",
+    "水采矿区",
+    "联碱化工",
+    "平板玻璃",
+    "光伏玻璃",
+    "汽车玻璃",
+    "储能电池",
+    "复合肥",
+    "印染",
+    "电镀"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "纯碱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氯化铵",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:01:21"
+}

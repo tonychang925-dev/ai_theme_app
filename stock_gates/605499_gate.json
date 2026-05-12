@@ -1,0 +1,32 @@
+{
+  "stock_id": "605499",
+  "stock_name": "东鹏饮料",
+  "concept": "功能饮料龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "500ml金瓶",
+    "东鹏特饮"
+  ],
+  "should": [
+    "功能饮料龙头",
+    "能量饮料销售量全国第一",
+    "市占率16.7%",
+    "高性价比",
+    "大容量",
+    "蓝领务工消费群体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "500ml金瓶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "东鹏特饮",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:04:25"
+}

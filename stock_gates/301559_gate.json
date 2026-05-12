@@ -1,0 +1,36 @@
+{
+  "stock_id": "301559",
+  "stock_name": "中集环科",
+  "concept": "罐式集装箱龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "罐式集装箱龙头",
+    "全生命周期服务"
+  ],
+  "should": [
+    "标准不锈钢液体罐箱",
+    "特种不锈钢液体罐箱",
+    "碳钢气体罐箱",
+    "碳钢粉末罐箱",
+    "医疗设备部件",
+    "设计研发",
+    "制造",
+    "物联网技术",
+    "化工物流多式联运",
+    "全球市占率第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "罐式集装箱龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全生命周期服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:06:22"
+}

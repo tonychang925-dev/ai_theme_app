@@ -1,0 +1,36 @@
+{
+  "stock_id": "001288",
+  "stock_name": "运机集团",
+  "concept": "输送机械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "输送机械",
+    "带式输送机",
+    "输送机械设备"
+  ],
+  "should": [
+    "数字孪生技术",
+    "自动化",
+    "智能化",
+    "人机交互",
+    "食品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "输送机械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "带式输送机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "输送机械设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:15:17"
+}

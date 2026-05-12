@@ -1,0 +1,38 @@
+{
+  "stock_id": "002100",
+  "stock_name": "天康生物",
+  "concept": "饲料兽药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "饲料",
+    "兽药",
+    "饲料兽药"
+  ],
+  "should": [
+    "动物疫苗",
+    "畜禽良种繁育",
+    "饲料与饲养管理",
+    "动物药品及畜禽病害防治",
+    "生猪养殖",
+    "屠宰加工及肉制品销售",
+    "新疆地区饲料生产规模最大的企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "饲料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "兽药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "饲料兽药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:23:05"
+}

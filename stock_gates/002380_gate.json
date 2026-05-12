@@ -1,0 +1,41 @@
+{
+  "stock_id": "002380",
+  "stock_name": "科远智慧",
+  "concept": "工业自动化与信息化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业自动化与信息化",
+    "分散控制系统（DCS）",
+    "厂级信息化管控一体化平台"
+  ],
+  "should": [
+    "可编程逻辑控制器（PLC）",
+    "实时数据库",
+    "工业操作系统",
+    "机器人",
+    "非标自动化",
+    "电动执行机构",
+    "传感器",
+    "边缘计算",
+    "工业PaaS",
+    "工业微服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业自动化与信息化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分散控制系统（DCS）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "厂级信息化管控一体化平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:38:46"
+}

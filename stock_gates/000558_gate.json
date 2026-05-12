@@ -1,0 +1,33 @@
+{
+  "stock_id": "000558",
+  "stock_name": "天府文旅",
+  "concept": "文旅体融合",
+  "strategy_type": "industry_chain",
+  "must": [
+    "体育业务",
+    "体育赛事运营"
+  ],
+  "should": [
+    "场馆运营",
+    "房地产销售及租赁业务",
+    "成都文旅集团",
+    "场馆建设管理",
+    "体育市场营销",
+    "文旅体融合",
+    "存量商铺和写字楼销售及租赁"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "体育业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "体育赛事运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:56:26"
+}

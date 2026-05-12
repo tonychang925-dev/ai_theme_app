@@ -1,0 +1,36 @@
+{
+  "stock_id": "605086",
+  "stock_name": "龙高股份",
+  "concept": "高岭土精矿",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高岭土精矿",
+    "高岭土原矿"
+  ],
+  "should": [
+    "325目高岭土精矿",
+    "超级龙岩高岭土",
+    "改性高岭土",
+    "综合利用产品",
+    "配采配矿技术",
+    "超导除铁",
+    "超高压压滤",
+    "磨剥加工",
+    "系统除铁增白产业化技术",
+    "高岭土超导磁选除铁产业化技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高岭土精矿",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高岭土原矿",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:01:41"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "600239",
+  "stock_name": "云南城投",
+  "concept": "城市综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "住宅综合体",
+    "旅游地产",
+    "养老地产"
+  ],
+  "should": [
+    "房地产开发",
+    "物业管理",
+    "商业运营管理",
+    "酒店运营管理",
+    "城市综合服务",
+    "轻资产运营",
+    "商业运营",
+    "酒店管理",
+    "社区增值服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "住宅综合体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "旅游地产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "养老地产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:12:42"
+}

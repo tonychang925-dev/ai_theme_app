@@ -1,0 +1,50 @@
+{
+  "stock_id": "002472",
+  "stock_name": "双环传动",
+  "concept": "齿轮及减速器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "齿轮及减速器",
+    "乘用车齿轮",
+    "RV减速器",
+    "高精度齿轮",
+    "机器人减速器"
+  ],
+  "should": [
+    "商用车齿轮",
+    "工程机械齿轮",
+    "摩托车齿轮",
+    "商用车",
+    "工程机械",
+    "摩托车",
+    "工业机器人",
+    "国内第三方齿轮供应商规模最大",
+    "国内RV减速器销量市场份额第二"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "齿轮及减速器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乘用车齿轮",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "RV减速器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高精度齿轮",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机器人减速器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:43:25"
+}

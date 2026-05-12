@@ -1,0 +1,41 @@
+{
+  "stock_id": "603656",
+  "stock_name": "泰禾智能",
+  "concept": "智能分选装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能分选装备",
+    "智能检测与分级专用设备",
+    "智能煤炭干式选煤机"
+  ],
+  "should": [
+    "AI视觉识别",
+    "第六代红外技术",
+    "高光谱技术",
+    "国产化芯片平台",
+    "农副产品分选",
+    "果蔬分选",
+    "矿石分选",
+    "再生资源分选",
+    "煤炭干选",
+    "行业第一梯队"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能分选装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能检测与分级专用设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能煤炭干式选煤机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:54:07"
+}

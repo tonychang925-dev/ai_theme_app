@@ -1,0 +1,40 @@
+{
+  "stock_id": "600177",
+  "stock_name": "雅戈尔",
+  "concept": "男装领军企业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "品牌服装",
+    "地产开发",
+    "投资业务"
+  ],
+  "should": [
+    "YOUNGOR",
+    "衬衫",
+    "西服",
+    "MAYOR",
+    "HANP",
+    "Helly Hansen",
+    "S+G",
+    "Undefeated",
+    "男装领军企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "品牌服装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "地产开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:11:04"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "300611",
+  "stock_name": "美力科技",
+  "concept": "高端弹簧制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端弹簧制造",
+    "汽车弹簧"
+  ],
+  "should": [
+    "弹簧",
+    "自主创新",
+    "集成创新",
+    "引进消化吸收再创新",
+    "汽车行业",
+    "航空航天",
+    "电力及核电装备",
+    "高速铁路",
+    "医疗器械",
+    "日用五金"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端弹簧制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车弹簧",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:35:12"
+}

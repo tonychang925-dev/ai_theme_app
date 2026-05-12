@@ -1,0 +1,35 @@
+{
+  "stock_id": "600779",
+  "stock_name": "水井坊",
+  "concept": "高端白酒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "典藏",
+    "井台",
+    "臻酿八号"
+  ],
+  "should": [
+    "高端白酒",
+    "水井坊传统酿造技艺",
+    "宴席",
+    "团购"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "典藏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "井台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "臻酿八号",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:27:23"
+}

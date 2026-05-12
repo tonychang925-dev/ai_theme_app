@@ -1,0 +1,38 @@
+{
+  "stock_id": "000933",
+  "stock_name": "神火股份",
+  "concept": "煤铝一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤铝一体化",
+    "电解铝",
+    "煤炭"
+  ],
+  "should": [
+    "阳极炭块",
+    "建筑",
+    "交通",
+    "电力电子",
+    "发电",
+    "氧化铝采购",
+    "铝箔深加工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤铝一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电解铝",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:10:03"
+}

@@ -1,0 +1,29 @@
+{
+  "stock_id": "600651",
+  "stock_name": "飞乐音响",
+  "concept": "LED车灯模组",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LED车灯模组"
+  ],
+  "should": [
+    "激光前大灯模组",
+    "智能LED前大灯模组",
+    "汽车空调控制器",
+    "主控芯片",
+    "固件开发",
+    "模块封测",
+    "独立第三方LED车灯模组提供商",
+    "细分市场龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED车灯模组",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:23:54"
+}

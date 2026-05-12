@@ -1,0 +1,41 @@
+{
+  "stock_id": "600207",
+  "stock_name": "安彩高科",
+  "concept": "光伏玻璃",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏玻璃",
+    "光热玻璃",
+    "光热玻璃批量化生产"
+  ],
+  "should": [
+    "浮法玻璃",
+    "药用玻璃",
+    "电子玻璃",
+    "中性硼硅药用玻璃制造",
+    "超薄电子玻璃制造",
+    "光伏电站",
+    "光热电站",
+    "药用包装",
+    "电子显示",
+    "超白浮法玻璃"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏玻璃",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光热玻璃",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光热玻璃批量化生产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:11:53"
+}

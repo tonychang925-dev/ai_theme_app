@@ -1,0 +1,40 @@
+{
+  "stock_id": "300702",
+  "stock_name": "天宇股份",
+  "concept": "沙坦类原料药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "沙坦类原料药",
+    "中间体",
+    "原料药"
+  ],
+  "should": [
+    "制剂",
+    "研发",
+    "生产",
+    "降血压",
+    "降血糖",
+    "抗病毒",
+    "抗哮喘",
+    "抗凝血",
+    "全球规模最大"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "沙坦类原料药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中间体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原料药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:39:36"
+}

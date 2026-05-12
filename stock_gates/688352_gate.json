@@ -1,0 +1,36 @@
+{
+  "stock_id": "688352",
+  "stock_name": "颀中科技",
+  "concept": "显示驱动封测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "显示驱动芯片封测",
+    "显示驱动封测"
+  ],
+  "should": [
+    "非显示类芯片封测",
+    "金凸块制造",
+    "覆晶封装",
+    "晶圆测试",
+    "玻璃覆晶封装",
+    "薄膜覆晶封装",
+    "显示面板",
+    "5G通讯",
+    "电源管理",
+    "射频前端"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "显示驱动芯片封测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "显示驱动封测",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:16:10"
+}

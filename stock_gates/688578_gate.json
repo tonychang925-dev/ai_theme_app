@@ -1,0 +1,31 @@
+{
+  "stock_id": "688578",
+  "stock_name": "艾力斯",
+  "concept": "非小细胞肺癌靶向药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "伏美替尼"
+  ],
+  "should": [
+    "非小细胞肺癌靶向药",
+    "非小细胞肺癌一线治疗",
+    "非小细胞肺癌二线治疗",
+    "非小细胞肺癌术后辅助治疗",
+    "20外显子插入突变治疗",
+    "KRAS G12C抑制剂",
+    "KRAS G12D抑制剂",
+    "第四代EGFR-TKI",
+    "RET抑制剂",
+    "SOS1抑制剂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "伏美替尼",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:21:06"
+}

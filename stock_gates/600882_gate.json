@@ -1,0 +1,26 @@
+{
+  "stock_id": "600882",
+  "stock_name": "妙可蓝多",
+  "concept": "奶酪龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "奶酪棒"
+  ],
+  "should": [
+    "手撕成人奶酪",
+    "杯装奶酪",
+    "奶酪龙头",
+    "中国奶酪市占率第一",
+    "蒙牛第一大股东"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "奶酪棒",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:30:23"
+}

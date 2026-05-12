@@ -1,0 +1,40 @@
+{
+  "stock_id": "000938",
+  "stock_name": "紫光股份",
+  "concept": "ICT基础设施",
+  "strategy_type": "industry_chain",
+  "must": [
+    "以太网交换机",
+    "服务器",
+    "AI服务器"
+  ],
+  "should": [
+    "云计算",
+    "存储",
+    "智能终端",
+    "ICT基础设施",
+    "国产AI芯片适配",
+    "主控芯片",
+    "固件开发",
+    "政企客户",
+    "信创"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "以太网交换机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "服务器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AI服务器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:10:19"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "688100",
+  "stock_name": "威胜信息",
+  "concept": "电网物联网",
+  "strategy_type": "industry_chain",
+  "must": [
+    "通信网关",
+    "通信模块",
+    "电监测终端"
+  ],
+  "should": [
+    "水气热传感终端",
+    "智慧公用事业管理系统",
+    "电网物联网",
+    "自主研发能力",
+    "高品质生产能力",
+    "稳定供应体系",
+    "智能电网",
+    "智慧能源",
+    "智慧路灯",
+    "智慧安防/人防"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "通信网关",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通信模块",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电监测终端",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:08:21"
+}

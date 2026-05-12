@@ -1,0 +1,41 @@
+{
+  "stock_id": "003038",
+  "stock_name": "鑫铂股份",
+  "concept": "光伏铝边框龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏铝边框龙头",
+    "光伏铝边框",
+    "工业铝部件"
+  ],
+  "should": [
+    "工业铝型材",
+    "高精级或超高精级铝型材",
+    "组件厂客户认证",
+    "建筑铝型材",
+    "电池托盘",
+    "前后保险杠",
+    "光伏组件",
+    "新能源汽车",
+    "轨道交通",
+    "晶科能源供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏铝边框龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏铝边框",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业铝部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:08:37"
+}

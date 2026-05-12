@@ -1,0 +1,46 @@
+{
+  "stock_id": "300789",
+  "stock_name": "唐源电气",
+  "concept": "轨道交通运维",
+  "strategy_type": "industry_chain",
+  "must": [
+    "牵引供电检测监测系统",
+    "工务工程检测监测系统",
+    "车辆工程检测监测系统",
+    "智能运维信息化管理系统"
+  ],
+  "should": [
+    "高速动态检测",
+    "高速移动精确定位",
+    "高精度测量",
+    "图像识别",
+    "云存储",
+    "云计算",
+    "分布式系统",
+    "大数据分析",
+    "地理信息",
+    "移动终端"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "牵引供电检测监测系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工务工程检测监测系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车辆工程检测监测系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能运维信息化管理系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:43:15"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "603090",
+  "stock_name": "宏盛股份",
+  "concept": "热交换解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大型风洞实验系统",
+    "热交换解决方案",
+    "铝制板翅式换热器",
+    "风电行业热管理系统"
+  ],
+  "should": [
+    "深冷设备",
+    "锂电池PACK",
+    "工业储能",
+    "动力储能",
+    "家用储能",
+    "疲劳实验",
+    "热疲劳实验",
+    "振动试验",
+    "材料测试",
+    "盐雾试验"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大型风洞实验系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热交换解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铝制板翅式换热器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电行业热管理系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:43:30"
+}

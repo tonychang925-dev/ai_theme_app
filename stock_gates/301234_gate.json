@@ -1,0 +1,31 @@
+{
+  "stock_id": "301234",
+  "stock_name": "五洲医疗",
+  "concept": "无菌输注器械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "无菌输注器械"
+  ],
+  "should": [
+    "注射器",
+    "输液输血器",
+    "医用穿刺针",
+    "技术研发",
+    "质量控制",
+    "制造过程自动化",
+    "国外医疗器械品牌商",
+    "医院及其他医疗机构",
+    "ODM+集成供应",
+    "一站式采购"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "无菌输注器械",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:00:06"
+}

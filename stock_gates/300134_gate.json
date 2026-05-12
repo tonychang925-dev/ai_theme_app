@@ -1,0 +1,41 @@
+{
+  "stock_id": "300134",
+  "stock_name": "大富科技",
+  "concept": "射频器件与精密制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "射频器件",
+    "射频结构件",
+    "移动通信基站"
+  ],
+  "should": [
+    "高端精密结构件",
+    "智能移动终端",
+    "穿戴装置",
+    "传统汽车",
+    "新能源汽车",
+    "航天航空",
+    "金属部件",
+    "散热模块",
+    "智能制造",
+    "通信产业链上游"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "射频器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "射频结构件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动通信基站",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:14:35"
+}

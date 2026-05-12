@@ -1,0 +1,41 @@
+{
+  "stock_id": "600433",
+  "stock_name": "冠豪高新",
+  "concept": "涂布新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种纸",
+    "涂布白卡纸",
+    "央企控股"
+  ],
+  "should": [
+    "涂布技术",
+    "中国纸业南方平台公司",
+    "涂布新材料",
+    "精细化工品",
+    "彩色印刷品",
+    "POS收银",
+    "ATM收据",
+    "烟草包装",
+    "食品包装",
+    "功能性社会产品包装"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种纸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涂布白卡纸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "央企控股",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:17:54"
+}

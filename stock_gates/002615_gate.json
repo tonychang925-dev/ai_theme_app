@@ -1,0 +1,41 @@
+{
+  "stock_id": "002615",
+  "stock_name": "哈尔斯",
+  "concept": "保温杯制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "保温杯制造",
+    "真空保温器皿",
+    "保温杯"
+  ],
+  "should": [
+    "非真空器皿",
+    "钛杯",
+    "铝瓶",
+    "玻璃杯",
+    "研发设计",
+    "制造工艺",
+    "中高端饮具市场",
+    "国内最大保温杯制造商",
+    "全球产值份额第二",
+    "代工服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "保温杯制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "真空保温器皿",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "保温杯",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:50:06"
+}

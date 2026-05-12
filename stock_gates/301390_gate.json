@@ -1,0 +1,51 @@
+{
+  "stock_id": "301390",
+  "stock_name": "经纬股份",
+  "concept": "综合能源服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力工程咨询与设计",
+    "送变电设计甲级",
+    "新能源发电设计乙级",
+    "电力一体化服务",
+    "综合能源服务"
+  ],
+  "should": [
+    "输变电",
+    "配网配电",
+    "新能源",
+    "储能",
+    "综合能源",
+    "智慧电力",
+    "智慧能源",
+    "地理信息数据服务",
+    "数字孪生平台",
+    "甲级测绘资质"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力工程咨询与设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "送变电设计甲级",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源发电设计乙级",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力一体化服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合能源服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:04:38"
+}

@@ -1,0 +1,39 @@
+{
+  "stock_id": "301258",
+  "stock_name": "富士莱",
+  "concept": "特色原料药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "硫辛酸系列",
+    "磷脂酰胆碱系列",
+    "肌肽系列"
+  ],
+  "should": [
+    "艾瑞昔布原料药",
+    "甲磺酸阿帕替尼原料药",
+    "特色原料药",
+    "特色原料药研发",
+    "CMO/CDMO",
+    "全球硫辛酸生产规模最大",
+    "产品品种最全",
+    "与恒瑞医药深度合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "硫辛酸系列",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磷脂酰胆碱系列",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "肌肽系列",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:01:02"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "002730",
+  "stock_name": "电光科技",
+  "concept": "矿用防爆电器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "矿用防爆电器",
+    "矿用防爆电器设备"
+  ],
+  "should": [
+    "矿用防爆监测监控设备",
+    "智能传动设备",
+    "永磁电机",
+    "永磁滚筒",
+    "永磁变频一体机",
+    "智能计量设备",
+    "电表箱",
+    "低压配电柜",
+    "矿用防爆电器技术",
+    "矿用应急救援产品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "矿用防爆电器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "矿用防爆电器设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:55:09"
+}

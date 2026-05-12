@@ -1,0 +1,51 @@
+{
+  "stock_id": "601298",
+  "stock_name": "青岛港",
+  "concept": "港口综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "集装箱装卸",
+    "金属矿石装卸",
+    "煤炭装卸",
+    "原油装卸",
+    "东北亚国际航运枢纽中心"
+  ],
+  "should": [
+    "全自动化集装箱码头",
+    "大型深水码头",
+    "输油管道网络",
+    "集装箱",
+    "金属矿石",
+    "煤炭",
+    "石油",
+    "粮食",
+    "钢铁",
+    "汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "集装箱装卸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金属矿石装卸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭装卸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原油装卸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "东北亚国际航运枢纽中心",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:36:01"
+}

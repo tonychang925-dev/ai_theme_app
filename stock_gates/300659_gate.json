@@ -1,0 +1,31 @@
+{
+  "stock_id": "300659",
+  "stock_name": "中孚信息",
+  "concept": "数字安全",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字安全"
+  ],
+  "should": [
+    "主机与网络安全产品",
+    "数据安全产品",
+    "安全监管平台",
+    "检查检测产品",
+    "密码应用产品",
+    "信息安全服务",
+    "终端安全能力",
+    "国产平台安全能力",
+    "移动安全能力",
+    "网络安全能力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字安全",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:37:35"
+}

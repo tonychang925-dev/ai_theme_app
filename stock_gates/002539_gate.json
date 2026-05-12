@@ -1,0 +1,41 @@
+{
+  "stock_id": "002539",
+  "stock_name": "云图控股",
+  "concept": "复合肥全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "复合肥",
+    "增效肥",
+    "新型复合肥"
+  ],
+  "should": [
+    "纯碱",
+    "氯化铵",
+    "磷酸一铵",
+    "黄磷",
+    "磷酸铁",
+    "尿素",
+    "氯化钾",
+    "硫酸钾",
+    "复合肥全产业链",
+    "一体化产业链优势"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "复合肥",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "增效肥",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新型复合肥",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:46:21"
+}

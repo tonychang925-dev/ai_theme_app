@@ -1,0 +1,42 @@
+{
+  "stock_id": "002297",
+  "stock_name": "博云新材",
+  "concept": "航空刹车材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "碳/碳复合材料",
+    "航空刹车材料",
+    "航空机轮刹车系统",
+    "粉末冶金摩擦材料技术"
+  ],
+  "should": [
+    "高性能硬质合金",
+    "稀有金属粉体材料",
+    "粉末冶金刹车副",
+    "碳/碳复合材料制备技术",
+    "高性能特粗晶硬质合金制备技术",
+    "精密加工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "碳/碳复合材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航空刹车材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航空机轮刹车系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "粉末冶金摩擦材料技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:34:12"
+}

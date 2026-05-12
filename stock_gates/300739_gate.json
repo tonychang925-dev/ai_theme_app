@@ -1,0 +1,41 @@
+{
+  "stock_id": "300739",
+  "stock_name": "明阳电路",
+  "concept": "PCB小批量板",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PCB全制程",
+    "印制电路板（PCB）",
+    "PCB小批量板"
+  ],
+  "should": [
+    "HDI板",
+    "厚铜板",
+    "软硬结合板/光模块",
+    "高频高速板",
+    "载板",
+    "半导体封测",
+    "小批量多品种",
+    "柔性化生产管理",
+    "智能电网",
+    "通讯设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PCB全制程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "印制电路板（PCB）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PCB小批量板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:41:09"
+}

@@ -1,0 +1,35 @@
+{
+  "stock_id": "603153",
+  "stock_name": "上海建科",
+  "concept": "工程监理与检测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程咨询服务",
+    "工程监理与检测"
+  ],
+  "should": [
+    "检测与技术服务",
+    "环境低碳技术服务",
+    "特种工程与产品销售",
+    "工程监理综合资质",
+    "房屋建筑工程监理甲级",
+    "公路工程监理甲级",
+    "市政公用工程监理甲级",
+    "建设工程质量检测机构资质",
+    "安全评价机构资质证书"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程咨询服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程监理与检测",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:44:54"
+}

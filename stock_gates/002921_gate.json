@@ -1,0 +1,51 @@
+{
+  "stock_id": "002921",
+  "stock_name": "联诚精密",
+  "concept": "精密零部件制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "液压行走马达壳体",
+    "减速器壳体",
+    "液压阀座",
+    "曲轴箱体",
+    "轴承座"
+  ],
+  "should": [
+    "后端盖",
+    "曲轴瓦盖",
+    "减震轮/环",
+    "减震器配件壳体",
+    "精密零部件制造",
+    "商用车",
+    "工程机械",
+    "农业机械",
+    "乘用车",
+    "新能源汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "液压行走马达壳体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "减速器壳体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液压阀座",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "曲轴箱体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轴承座",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:03:24"
+}

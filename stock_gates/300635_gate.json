@@ -1,0 +1,35 @@
+{
+  "stock_id": "300635",
+  "stock_name": "中达安",
+  "concept": "工程监理服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程监理服务",
+    "工程监理"
+  ],
+  "should": [
+    "通信监理",
+    "电力监理",
+    "房建监理",
+    "水利监理",
+    "全过程工程咨询",
+    "项目管理服务",
+    "通信工程",
+    "房屋建筑",
+    "市政工程"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程监理服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程监理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:36:24"
+}

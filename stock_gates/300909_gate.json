@@ -1,0 +1,46 @@
+{
+  "stock_id": "300909",
+  "stock_name": "汇创达",
+  "concept": "电子结构件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "导光膜",
+    "背光模组",
+    "金属薄膜开关",
+    "超小型防水轻触开关"
+  ],
+  "should": [
+    "扫地机器人",
+    "新能源汽车",
+    "储能",
+    "传音",
+    "华为",
+    "荣耀",
+    "OPPO",
+    "TCL",
+    "闻泰",
+    "华勤"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "导光膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "背光模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金属薄膜开关",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超小型防水轻触开关",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:48:49"
+}

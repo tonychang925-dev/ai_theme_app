@@ -1,0 +1,36 @@
+{
+  "stock_id": "002465",
+  "stock_name": "海格通信",
+  "concept": "国防信息化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "无线通信",
+    "北斗导航"
+  ],
+  "should": [
+    "航空航天",
+    "软件与信息服务",
+    "国防信息化",
+    "卫星导航系统核心技术",
+    "无线通信射频收发",
+    "高性能数模混合",
+    "军事现代化建设",
+    "新基建",
+    "数字化场景",
+    "卫星通信"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "无线通信",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "北斗导航",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:43:02"
+}

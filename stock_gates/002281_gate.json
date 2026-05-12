@@ -1,0 +1,41 @@
+{
+  "stock_id": "002281",
+  "stock_name": "光迅科技",
+  "concept": "光电子器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光电子器件",
+    "光通信模块",
+    "光芯片"
+  ],
+  "should": [
+    "无源光器件",
+    "光波导集成器件",
+    "光纤放大器",
+    "探测器芯片（PD、APD）",
+    "SiP芯片平台",
+    "COC封装",
+    "混合集成",
+    "平面光波导",
+    "MEMS器件",
+    "器件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光电子器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光通信模块",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:33:12"
+}

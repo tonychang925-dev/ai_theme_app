@@ -1,0 +1,41 @@
+{
+  "stock_id": "002792",
+  "stock_name": "通宇通讯",
+  "concept": "通信天线及射频器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "通信天线及射频器件",
+    "基站天线",
+    "射频器件"
+  ],
+  "should": [
+    "微波天线",
+    "光模块",
+    "智能换电柜",
+    "主控芯片",
+    "固件开发",
+    "移动通信网络无线覆盖",
+    "数字微波中继通信",
+    "光纤到户",
+    "无线网络",
+    "城市短途配送"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "通信天线及射频器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "基站天线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "射频器件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:57:42"
+}

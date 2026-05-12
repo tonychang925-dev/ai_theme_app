@@ -1,0 +1,46 @@
+{
+  "stock_id": "600293",
+  "stock_name": "三峡新材",
+  "concept": "玻璃制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "玻璃制造",
+    "平板玻璃",
+    "浮法玻璃生产技术",
+    "Low-E镀膜玻璃"
+  ],
+  "should": [
+    "玻璃深加工产品",
+    "玻璃深加工技术",
+    "余热发电技术",
+    "环保升级改造技术",
+    "钢化玻璃",
+    "中空玻璃",
+    "建筑玻璃加工",
+    "建材及非金属矿产品销售",
+    "硅砂自给率50%以上",
+    "中部最大玻璃企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "玻璃制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "平板玻璃",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "浮法玻璃生产技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "Low-E镀膜玻璃",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:14:09"
+}

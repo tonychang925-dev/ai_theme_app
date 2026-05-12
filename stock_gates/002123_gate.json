@@ -1,0 +1,38 @@
+{
+  "stock_id": "002123",
+  "stock_name": "梦网科技",
+  "concept": "云通信服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "云通信服务",
+    "消息云",
+    "5G富媒体消息"
+  ],
+  "should": [
+    "云短信",
+    "AIM消息",
+    "终端云",
+    "视讯云",
+    "物联云",
+    "企业云通信",
+    "运营商合作伙伴"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "云通信服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "消息云",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "5G富媒体消息",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:24:27"
+}

@@ -1,0 +1,44 @@
+{
+  "stock_id": "300639",
+  "stock_name": "凯普生物",
+  "concept": "分子诊断一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "分子诊断一体化",
+    "核酸检测产品",
+    "分子诊断技术",
+    "医学检验服务"
+  ],
+  "should": [
+    "HPV检测产品",
+    "独立医学实验室",
+    "传染性疾病检测",
+    "重大疾病早期筛查",
+    "遗传性疾病检测",
+    "肿瘤伴随诊断",
+    "宫颈癌筛查",
+    "出生缺陷防治"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "分子诊断一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核酸检测产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分子诊断技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医学检验服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:36:32"
+}

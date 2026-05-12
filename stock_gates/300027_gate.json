@@ -1,0 +1,37 @@
+{
+  "stock_id": "300027",
+  "stock_name": "华谊兄弟",
+  "concept": "影视制作+IP运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "影视制作+IP运营",
+    "影视制作",
+    "IP运营"
+  ],
+  "should": [
+    "电影",
+    "剧集",
+    "院线放映",
+    "文旅融合",
+    "产业链最完善",
+    "娱乐资源最丰富"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "影视制作+IP运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "影视制作",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IP运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:10:07"
+}

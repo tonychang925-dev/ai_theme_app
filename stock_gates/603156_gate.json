@@ -1,0 +1,36 @@
+{
+  "stock_id": "603156",
+  "stock_name": "养元饮品",
+  "concept": "核桃饮品龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "核桃饮品龙头",
+    "六个核桃",
+    "核桃蛋白饮品品类领军者"
+  ],
+  "should": [
+    "植物奶系列新品",
+    "低糖、无糖、营养研发升级",
+    "植物蛋白饮料市场",
+    "健康消费场景",
+    "国内一线品牌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "核桃饮品龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "六个核桃",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核桃蛋白饮品品类领军者",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:44:53"
+}

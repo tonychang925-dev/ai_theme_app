@@ -1,0 +1,31 @@
+{
+  "stock_id": "603897",
+  "stock_name": "长城科技",
+  "concept": "电磁线制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电磁线"
+  ],
+  "should": [
+    "扁线",
+    "圆线",
+    "电磁线制造",
+    "电磁线研发",
+    "生产工艺",
+    "工业电机",
+    "家用电器",
+    "汽车电机",
+    "电动工具",
+    "仪器仪表"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电磁线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:58:25"
+}

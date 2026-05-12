@@ -1,0 +1,50 @@
+{
+  "stock_id": "300952",
+  "stock_name": "恒辉安防",
+  "concept": "安防手套龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球安防手套龙头",
+    "安防手套龙头",
+    "国内安防手套领军企业",
+    "功能性安防手套",
+    "超高分子量聚乙烯纤维"
+  ],
+  "should": [
+    "纱线包覆工艺",
+    "浸渍工艺",
+    "涂层配方",
+    "MES智慧化生产管理系统",
+    "手部防护",
+    "接触化学腐蚀",
+    "电辐射",
+    "机械设备操作",
+    "产业链向上游延伸"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球安防手套龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "安防手套龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内安防手套领军企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功能性安防手套",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超高分子量聚乙烯纤维",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:50:33"
+}

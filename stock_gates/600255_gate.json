@@ -1,0 +1,31 @@
+{
+  "stock_id": "600255",
+  "stock_name": "鑫科材料",
+  "concept": "高端铜板带",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新型镀锡铜带"
+  ],
+  "should": [
+    "热浸镀锡",
+    "环保回流镀锡",
+    "锡磷青铜带材",
+    "C19400引线框架材",
+    "高精密度黄铜",
+    "高铜",
+    "青铜",
+    "白铜裸带",
+    "回流镀锡带材",
+    "热浸镀锡带材"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新型镀锡铜带",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:13:09"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "603538",
+  "stock_name": "美诺华",
+  "concept": "特色原料药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特色原料药"
+  ],
+  "should": [
+    "缬沙坦",
+    "瑞舒伐他汀",
+    "阿托伐他汀",
+    "氯吡格雷",
+    "培哚普利",
+    "埃索美拉唑",
+    "普瑞巴林",
+    "原料药研发",
+    "制剂研发",
+    "一致性评价"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特色原料药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:52:06"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "300249",
+  "stock_name": "依米康",
+  "concept": "数字基础设施绿色方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字基础设施绿色方案",
+    "温控系统",
+    "液冷技术",
+    "智能工程"
+  ],
+  "should": [
+    "间接蒸发冷却",
+    "精密空调",
+    "液冷集装箱",
+    "预制化间接蒸发冷却",
+    "智能运维机器人",
+    "数字孪生",
+    "BIM技术",
+    "AIOT平台",
+    "iADU机柜资产监测单元",
+    "EdgeLink管理系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字基础设施绿色方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "温控系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液冷技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能工程",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:19:36"
+}

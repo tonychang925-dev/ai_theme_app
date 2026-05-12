@@ -1,0 +1,46 @@
+{
+  "stock_id": "603990",
+  "stock_name": "麦迪科技",
+  "concept": "医疗信息化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "CIS系列应用软件",
+    "临床信息化整体解决方案",
+    "数字化手术室",
+    "围术期医学知识库系统"
+  ],
+  "should": [
+    "手术室全场景音视频通讯",
+    "远程会诊",
+    "手术示教",
+    "医疗直播培训",
+    "围术期风险预测",
+    "重症监护",
+    "急危重症信息集成平台",
+    "智能化中央监护系统",
+    "院前急救",
+    "航空医疗救援"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "CIS系列应用软件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "临床信息化整体解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字化手术室",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "围术期医学知识库系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:00:33"
+}

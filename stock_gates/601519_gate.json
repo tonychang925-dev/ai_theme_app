@@ -1,0 +1,41 @@
+{
+  "stock_id": "601519",
+  "stock_name": "大智慧",
+  "concept": "金融信息服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金融信息服务",
+    "证券信息服务",
+    "大数据及数据工程服务"
+  ],
+  "should": [
+    "大数据",
+    "金融数据中心",
+    "境外业务",
+    "移动APP",
+    "PC版软件",
+    "云服务",
+    "互动直播",
+    "TV终端",
+    "银行",
+    "保险公司"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金融信息服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "证券信息服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大数据及数据工程服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:36:47"
+}

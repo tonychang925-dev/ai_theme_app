@@ -1,0 +1,41 @@
+{
+  "stock_id": "300736",
+  "stock_name": "百邦科技",
+  "concept": "手机售后服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "手机维修",
+    "百邦",
+    "苹果"
+  ],
+  "should": [
+    "二手手机回收与销售",
+    "手机周边产品",
+    "闪电蜂",
+    "华为",
+    "三星",
+    "手机售后服务",
+    "原厂配件供应",
+    "互联网直供",
+    "数字化管理",
+    "原厂配件比重提升"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "手机维修",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "百邦",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "苹果",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:40:59"
+}

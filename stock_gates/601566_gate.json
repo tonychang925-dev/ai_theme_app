@@ -1,0 +1,41 @@
+{
+  "stock_id": "601566",
+  "stock_name": "九牧王",
+  "concept": "男裤专家",
+  "strategy_type": "industry_chain",
+  "must": [
+    "男裤",
+    "九牧王",
+    "男裤专家"
+  ],
+  "should": [
+    "茄克",
+    "衬衫",
+    "T恤",
+    "西服",
+    "ZIOZIA",
+    "FUN",
+    "1200万人体数据",
+    "6大主推裤版型",
+    "裤领域实用新型专利",
+    "精英白领男士"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "男裤",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "九牧王",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "男裤专家",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:36:55"
+}

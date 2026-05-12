@@ -1,0 +1,49 @@
+{
+  "stock_id": "600292",
+  "stock_name": "电投水电",
+  "concept": "电力环保",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力环保",
+    "烟气治理",
+    "水处理",
+    "碳捕集",
+    "新能源EPC"
+  ],
+  "should": [
+    "垃圾焚烧发电烟气净化",
+    "光伏+沙漠生态治理",
+    "废旧锂电池回收",
+    "湿式氧化镁法多污染物协同控制",
+    "废水零排放",
+    "火电环保岛",
+    "特许经营",
+    "CCUS示范项目"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力环保",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "烟气治理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳捕集",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源EPC",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:14:08"
+}

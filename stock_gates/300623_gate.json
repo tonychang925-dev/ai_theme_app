@@ -1,0 +1,36 @@
+{
+  "stock_id": "300623",
+  "stock_name": "捷捷微电",
+  "concept": "功率半导体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国产晶闸管龙头企业",
+    "晶闸管器件和芯片"
+  ],
+  "should": [
+    "MOSFET器件和芯片",
+    "IGBT器件及组件",
+    "碳化硅器件",
+    "功率半导体",
+    "芯片技术",
+    "封装设计",
+    "制程及测试",
+    "消费电子",
+    "汽车电子",
+    "电子仪器仪表"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国产晶闸管龙头企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "晶闸管器件和芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:35:46"
+}

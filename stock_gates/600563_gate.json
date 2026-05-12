@@ -1,0 +1,31 @@
+{
+  "stock_id": "600563",
+  "stock_name": "法拉电子",
+  "concept": "薄膜电容龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "薄膜电容器"
+  ],
+  "should": [
+    "金属化膜生产",
+    "薄膜电容龙头",
+    "光伏",
+    "风电",
+    "新能源汽车",
+    "储能",
+    "工控",
+    "全球第三",
+    "全国第一",
+    "客户认证壁垒高"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "薄膜电容器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:21:12"
+}

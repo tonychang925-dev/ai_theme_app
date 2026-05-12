@@ -1,0 +1,41 @@
+{
+  "stock_id": "600630",
+  "stock_name": "龙头股份",
+  "concept": "纺织品牌运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "纺织品牌运营",
+    "品牌经营",
+    "服装家纺"
+  ],
+  "should": [
+    "职业服业务",
+    "TB业务",
+    "秋冬针织保暖产品",
+    "发明专利",
+    "实用新型专利",
+    "线下自营门店",
+    "抖音直播",
+    "品牌出海",
+    "五五购物节",
+    "上海国资委控股"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "纺织品牌运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "品牌经营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "服装家纺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:23:23"
+}

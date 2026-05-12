@@ -1,0 +1,36 @@
+{
+  "stock_id": "300306",
+  "stock_name": "远方信息",
+  "concept": "智能检测识别",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能光电检测",
+    "光电检测设备"
+  ],
+  "should": [
+    "智能生物识别",
+    "指纹识别产品",
+    "人脸识别产品",
+    "指纹识别技术",
+    "人脸识别技术",
+    "测量解决方案",
+    "照明检测",
+    "显示检测",
+    "汽车检测",
+    "医疗设备检测"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能光电检测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光电检测设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:22:04"
+}

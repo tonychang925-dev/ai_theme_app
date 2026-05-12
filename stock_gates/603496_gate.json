@@ -1,0 +1,41 @@
+{
+  "stock_id": "603496",
+  "stock_name": "恒为科技",
+  "concept": "网络可视化与智能系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "网络可视化业务",
+    "智能系统平台业务",
+    "网络可视化与智能系统"
+  ],
+  "should": [
+    "信息安全",
+    "运营商网络",
+    "流量采集",
+    "深度检测分析",
+    "大数据分析与挖掘",
+    "多维度数据关联分析",
+    "智能计算",
+    "预处理",
+    "网络优化与运维",
+    "大数据运营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "网络可视化业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能系统平台业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "网络可视化与智能系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:51:23"
+}

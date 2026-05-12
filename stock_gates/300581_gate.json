@@ -1,0 +1,41 @@
+{
+  "stock_id": "300581",
+  "stock_name": "晨曦航空",
+  "concept": "航空军机配套",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航空惯性导航",
+    "航空发动机电子",
+    "无人机"
+  ],
+  "should": [
+    "惯性导航技术",
+    "激光捷联惯性导航系统",
+    "航空发动机参数采集技术",
+    "飞控计算机",
+    "航空发动机电子控制系统",
+    "航空军机配套",
+    "直升机",
+    "运输机",
+    "持股上游公司",
+    "核心部件货源稳定"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航空惯性导航",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航空发动机电子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无人机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:33:42"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "600088",
+  "stock_name": "中视传媒",
+  "concept": "央视传媒旗舰",
+  "strategy_type": "industry_chain",
+  "must": [
+    "影视业务",
+    "广告业务",
+    "旅游业务"
+  ],
+  "should": [
+    "融媒体传播",
+    "节目制作",
+    "技术服务",
+    "总台综合频道",
+    "电视剧频道",
+    "农业农村频道",
+    "CGTN",
+    "文创产品",
+    "电视剧播出版包装",
+    "纪录片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "影视业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "广告业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "旅游业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:08:52"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "688523",
+  "stock_name": "航天环宇",
+  "concept": "航空航天装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "宇航产品",
+    "航空航天工艺装备"
+  ],
+  "should": [
+    "航空产品",
+    "卫星通信及测控测试设备",
+    "航空航天装备",
+    "国家重大航天工程项目",
+    "民用航空",
+    "航天科技下属单位",
+    "中航工业下属单位",
+    "中国航发下属单位",
+    "中国电科下属单位",
+    "中国商飞下属单位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "宇航产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航空航天工艺装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:19:44"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "688395",
+  "stock_name": "正弦电气",
+  "concept": "工业自动化驱动",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业自动化驱动",
+    "通用变频器",
+    "伺服系统"
+  ],
+  "should": [
+    "一体化专机",
+    "高性能变频矢量控制",
+    "高精度伺服驱动",
+    "微型计算机控制",
+    "电力电子应用",
+    "通讯接口",
+    "起重机械",
+    "物流设备",
+    "石油化工",
+    "电线电缆"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业自动化驱动",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通用变频器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "伺服系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:17:39"
+}

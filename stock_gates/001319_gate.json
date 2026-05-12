@@ -1,0 +1,29 @@
+{
+  "stock_id": "001319",
+  "stock_name": "铭科精技",
+  "concept": "精密冲压模具",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密冲压模具",
+    "金属结构件"
+  ],
+  "should": [
+    "模具设计开发能力",
+    "模具制造技术",
+    "精密冲压技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密冲压模具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金属结构件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:16:11"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "002471",
+  "stock_name": "中超控股",
+  "concept": "电线电缆",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电线电缆",
+    "电力电缆",
+    "特种电缆"
+  ],
+  "should": [
+    "电气装备用电线电缆",
+    "裸电线",
+    "电缆材料",
+    "电缆附件",
+    "交联聚乙烯绝缘",
+    "石墨烯电缆材料",
+    "二次局放试验",
+    "电力传输",
+    "设备供电",
+    "仪器控制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电线电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种电缆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:43:17"
+}

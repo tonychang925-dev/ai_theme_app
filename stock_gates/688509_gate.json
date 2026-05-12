@@ -1,0 +1,41 @@
+{
+  "stock_id": "688509",
+  "stock_name": "正元地信",
+  "concept": "地理信息服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "地理信息服务",
+    "地下管网安全运维服务",
+    "智慧城市建设运营"
+  ],
+  "should": [
+    "中低空航测遥感",
+    "全空间智能化测绘",
+    "正元三维地理信息系统",
+    "正元智慧城市时空信息云平台",
+    "正元物联统一接入管理平台",
+    "智慧管网",
+    "智慧市政",
+    "智慧城管",
+    "智慧园区",
+    "数字孪生城市"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "地理信息服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "地下管网安全运维服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧城市建设运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:19:27"
+}

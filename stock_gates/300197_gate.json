@@ -1,0 +1,41 @@
+{
+  "stock_id": "300197",
+  "stock_name": "节能铁汉",
+  "concept": "生态环境建设",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生态环境建设",
+    "生态环保",
+    "生态修复"
+  ],
+  "should": [
+    "生态景观",
+    "乡村振兴",
+    "战略股东深投控",
+    "粤港澳大湾区生态文明建设",
+    "长江经济带治理",
+    "黄河流域治理",
+    "城市园林绿化",
+    "农村环境整治",
+    "设计",
+    "研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生态环境建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生态环保",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生态修复",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:17:02"
+}

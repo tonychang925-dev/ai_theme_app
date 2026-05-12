@@ -1,0 +1,38 @@
+{
+  "stock_id": "600628",
+  "stock_name": "新世界",
+  "concept": "百货商业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "百货",
+    "物业",
+    "餐饮"
+  ],
+  "should": [
+    "酒店",
+    "药业",
+    "百货商业",
+    "品牌调整",
+    "精准营销",
+    "大健康产业",
+    "酒店营销"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "百货",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "餐饮",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:23:14"
+}

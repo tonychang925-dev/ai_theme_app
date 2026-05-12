@@ -1,0 +1,29 @@
+{
+  "stock_id": "002434",
+  "stock_name": "万里扬",
+  "concept": "车辆变速器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "车辆变速器",
+    "变速器"
+  ],
+  "should": [
+    "乘用车",
+    "商用车",
+    "新能源汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "车辆变速器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "变速器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:41:25"
+}

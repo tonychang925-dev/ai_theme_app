@@ -1,0 +1,43 @@
+{
+  "stock_id": "002178",
+  "stock_name": "延华智能",
+  "concept": "智慧城市服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧医疗",
+    "智慧城市",
+    "智慧康养",
+    "智慧医院信息平台"
+  ],
+  "should": [
+    "智慧城市服务",
+    "智慧区域平台",
+    "智慧康养平台",
+    "医疗信息化",
+    "人工智能",
+    "大数据",
+    "通信"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧医疗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧城市",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧康养",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧医院信息平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:27:33"
+}

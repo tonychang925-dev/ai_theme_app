@@ -1,0 +1,38 @@
+{
+  "stock_id": "603216",
+  "stock_name": "梦天家居",
+  "concept": "木门品牌龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "木门品牌龙头",
+    "国内木门品牌龙头",
+    "木门"
+  ],
+  "should": [
+    "水性漆",
+    "油改水技术",
+    "墙板",
+    "柜类",
+    "精装修工程市场",
+    "全屋定制",
+    "生产规模前三"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "木门品牌龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内木门品牌龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "木门",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:46:40"
+}

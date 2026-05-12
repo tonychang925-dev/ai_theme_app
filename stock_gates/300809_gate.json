@@ -1,0 +1,32 @@
+{
+  "stock_id": "300809",
+  "stock_name": "华辰装备",
+  "concept": "轧辊磨床",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轧辊磨床",
+    "全自动高精度数控轧辊磨床"
+  ],
+  "should": [
+    "数控系统",
+    "磨削精度",
+    "磨削效率",
+    "全球领先的解决方案服务商",
+    "国内知名企业供应商",
+    "出口国际市场"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轧辊磨床",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全自动高精度数控轧辊磨床",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:44:01"
+}

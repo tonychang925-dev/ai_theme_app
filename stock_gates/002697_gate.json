@@ -1,0 +1,33 @@
+{
+  "stock_id": "002697",
+  "stock_name": "红旗连锁",
+  "concept": "便利超市连锁",
+  "strategy_type": "industry_chain",
+  "must": [
+    "便利超市的连锁经营",
+    "便利超市连锁"
+  ],
+  "should": [
+    "红旗云大数据平台",
+    "方便、实惠、放心",
+    "云平台大数据",
+    "商品+服务",
+    "多功能便民服务平台",
+    "一刻钟便民生活圈",
+    "配送中心24小时待命"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "便利超市的连锁经营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "便利超市连锁",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:53:46"
+}

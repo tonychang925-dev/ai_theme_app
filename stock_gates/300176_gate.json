@@ -1,0 +1,33 @@
+{
+  "stock_id": "300176",
+  "stock_name": "鸿特科技",
+  "concept": "铝合金压铸",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铝合金精密压铸件",
+    "新能源汽车零部件"
+  ],
+  "should": [
+    "铝合金精密压铸",
+    "铝合金压铸",
+    "结构件",
+    "中高档汽车发动机",
+    "变速箱",
+    "底盘",
+    "新能源汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铝合金精密压铸件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:16:08"
+}

@@ -1,0 +1,30 @@
+{
+  "stock_id": "300643",
+  "stock_name": "万通智控",
+  "concept": "轮胎智能安全",
+  "strategy_type": "industry_chain",
+  "must": [
+    "TPMS",
+    "轮胎气门嘴"
+  ],
+  "should": [
+    "可编程TPMS传感器",
+    "工具及配件",
+    "轮胎智能安全",
+    "低功耗射频技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "TPMS",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轮胎气门嘴",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:36:46"
+}

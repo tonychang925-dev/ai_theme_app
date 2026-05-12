@@ -1,0 +1,46 @@
+{
+  "stock_id": "300480",
+  "stock_name": "光力科技",
+  "concept": "半导体封测装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "划片机",
+    "核心零部件空气主轴",
+    "空气主轴技术",
+    "精密控制系统"
+  ],
+  "should": [
+    "切割周边设备",
+    "切割耗材",
+    "瓦斯抽采监控设备及系统",
+    "粉尘监测设备",
+    "粉尘监测及治理系统",
+    "矿井火情监控系统",
+    "激光氨逃逸",
+    "激光氨检漏",
+    "透地通信人员精确定位系统",
+    "采空区火源定位系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "划片机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核心零部件空气主轴",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空气主轴技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密控制系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:29:16"
+}

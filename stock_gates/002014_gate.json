@@ -1,0 +1,33 @@
+{
+  "stock_id": "002014",
+  "stock_name": "永新股份",
+  "concept": "塑料软包装",
+  "strategy_type": "industry_chain",
+  "must": [
+    "塑料软包装",
+    "彩印复合软包装材料"
+  ],
+  "should": [
+    "塑料软包装薄膜",
+    "镀铝包装材料",
+    "油墨产品",
+    "国家级企业技术中心",
+    "授权专利350项",
+    "主持参与13项国家标准",
+    "国内塑料软包装龙头企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "塑料软包装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "彩印复合软包装材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:18:22"
+}

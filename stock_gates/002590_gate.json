@@ -1,0 +1,51 @@
+{
+  "stock_id": "002590",
+  "stock_name": "万安科技",
+  "concept": "汽车制动系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车制动系统",
+    "底盘前后悬架系统",
+    "汽车电子控制系统",
+    "气压制动系统",
+    "液压制动系统"
+  ],
+  "should": [
+    "离合器操纵系统",
+    "底盘副车架",
+    "气压盘式制动器",
+    "组合踏板",
+    "变速操纵器",
+    "气阀类产品",
+    "制动气室",
+    "离合器助力器",
+    "自动调整臂",
+    "气压ABS"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车制动系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "底盘前后悬架系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车电子控制系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "气压制动系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液压制动系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:49:09"
+}

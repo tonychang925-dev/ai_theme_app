@@ -1,0 +1,41 @@
+{
+  "stock_id": "600021",
+  "stock_name": "上海电力",
+  "concept": "地方电力龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国家电力投资集团",
+    "风电",
+    "光伏"
+  ],
+  "should": [
+    "火电",
+    "土耳其胡努特鲁火电项目",
+    "气电",
+    "中国电力",
+    "地方电力龙头",
+    "煤电44.76%",
+    "气电15.04%",
+    "风电19.94%",
+    "光伏20.26%",
+    "55.24%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国家电力投资集团",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:07:18"
+}

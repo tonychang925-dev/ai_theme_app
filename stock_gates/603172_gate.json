@@ -1,0 +1,31 @@
+{
+  "stock_id": "603172",
+  "stock_name": "万丰股份",
+  "concept": "中高端分散染料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中高端分散染料",
+    "分散染料"
+  ],
+  "should": [
+    "滤饼",
+    "纺织印染",
+    "织物染色加工",
+    "分散染料行业国内前十",
+    "中高端分散染料市场"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中高端分散染料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分散染料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:45:21"
+}

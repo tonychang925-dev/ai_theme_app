@@ -1,0 +1,51 @@
+{
+  "stock_id": "603118",
+  "stock_name": "共进股份",
+  "concept": "通信终端设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "通信终端设备",
+    "PON系列",
+    "AP系列",
+    "交换机",
+    "4G/5G小基站"
+  ],
+  "should": [
+    "DSL系列",
+    "固定无线接入设备(FWA)",
+    "Wi-Fi7路由器",
+    "激光雷达",
+    "毫米波雷达",
+    "VCU(功放、域控)",
+    "服务器",
+    "扫地机器人整机代工",
+    "PCBA制造",
+    "5G毫米波一体化小基站"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "通信终端设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PON系列",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AP系列",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "交换机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "4G/5G小基站",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:44:26"
+}

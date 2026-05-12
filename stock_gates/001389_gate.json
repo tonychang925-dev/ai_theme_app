@@ -1,0 +1,41 @@
+{
+  "stock_id": "001389",
+  "stock_name": "广合科技",
+  "concept": "服务器PCB",
+  "strategy_type": "industry_chain",
+  "must": [
+    "服务器PCB",
+    "多高层印制电路板",
+    "高速PCB技术"
+  ],
+  "should": [
+    "服务器",
+    "服务器用PCB",
+    "高性能计算服务器",
+    "AI运算服务器",
+    "存储服务器",
+    "交换机",
+    "高精度制造工艺",
+    "材料应用与研究",
+    "产品研发",
+    "创新工艺研究"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "服务器PCB",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多高层印制电路板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高速PCB技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:17:36"
+}

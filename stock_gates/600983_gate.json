@@ -1,0 +1,31 @@
+{
+  "stock_id": "600983",
+  "stock_name": "惠而浦",
+  "concept": "变频洗衣机领军品牌",
+  "strategy_type": "industry_chain",
+  "must": [
+    "变频洗衣机领军品牌"
+  ],
+  "should": [
+    "洗烘套装",
+    "洗烘一体机",
+    "嵌入式微蒸烤",
+    "嵌入式冰箱",
+    "洗碗机",
+    "十字四门冰箱",
+    "变频技术",
+    "智能烹饪",
+    "制冰机功能",
+    "南岗物流园"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "变频洗衣机领军品牌",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:32:31"
+}

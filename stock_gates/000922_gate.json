@@ -1,0 +1,45 @@
+{
+  "stock_id": "000922",
+  "stock_name": "佳电股份",
+  "concept": "特种电机研制",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种电机研制",
+    "防爆电机",
+    "核用电机",
+    "主氦风机"
+  ],
+  "should": [
+    "普通电机",
+    "起重冶金电机",
+    "电磁轴承支撑",
+    "变频调速",
+    "高温气冷堆核电",
+    "自有技术",
+    "总承包单位",
+    "创始厂",
+    "主导厂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种电机研制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "防爆电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核用电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "主氦风机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:09:37"
+}

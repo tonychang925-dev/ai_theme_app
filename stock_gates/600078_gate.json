@@ -1,0 +1,44 @@
+{
+  "stock_id": "600078",
+  "stock_name": "澄星股份",
+  "concept": "精细磷化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精细磷化工",
+    "黄磷",
+    "磷酸",
+    "磷酸盐"
+  ],
+  "should": [
+    "磷矿石",
+    "新能源汽车",
+    "农业",
+    "日化",
+    "电子",
+    "尖端科学",
+    "国防工业",
+    "全产业链协同"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精细磷化工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "黄磷",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磷酸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磷酸盐",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:08:39"
+}

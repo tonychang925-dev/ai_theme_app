@@ -1,0 +1,33 @@
+{
+  "stock_id": "688362",
+  "stock_name": "甬矽电子",
+  "concept": "先进封装",
+  "strategy_type": "industry_chain",
+  "must": [
+    "先进封装",
+    "系统级封装产品（SiP）"
+  ],
+  "should": [
+    "微机电系统传感器（MEMS）",
+    "MEMS&光学传感器封装技术",
+    "多应用领域先进IC测试技术",
+    "高密度SiP射频模块封测项目",
+    "2G-5G全系列射频前端芯片",
+    "AP类SoC芯片",
+    "触控IC芯片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "先进封装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "系统级封装产品（SiP）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:16:40"
+}

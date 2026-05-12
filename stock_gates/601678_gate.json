@@ -1,0 +1,30 @@
+{
+  "stock_id": "601678",
+  "stock_name": "滨化股份",
+  "concept": "烧碱环氧丙烷",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环氧丙烷",
+    "烧碱"
+  ],
+  "should": [
+    "PO/TBA工艺",
+    "共氧化法",
+    "烧碱产能A股第三",
+    "环氧丙烷产能A股第二"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环氧丙烷",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "烧碱",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:37:53"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300062",
+  "stock_name": "中能电气",
+  "concept": "智能电网设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "预制式电缆附件",
+    "智能电网设备制造",
+    "新能源产业运营"
+  ],
+  "should": [
+    "中压配电柜",
+    "高低压成套设备",
+    "箱式变电站",
+    "一二次融合成套柱上开关",
+    "一二次融合成套环网箱",
+    "智能电网设备",
+    "电网",
+    "铁路",
+    "城市轨道交通",
+    "工矿企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "预制式电缆附件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能电网设备制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源产业运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:11:45"
+}

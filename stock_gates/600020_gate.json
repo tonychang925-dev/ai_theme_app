@@ -1,0 +1,41 @@
+{
+  "stock_id": "600020",
+  "stock_name": "中原高速",
+  "concept": "高速公路运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高速公路运营",
+    "经营性收费公路的投资",
+    "建设"
+  ],
+  "should": [
+    "郑州至洛阳高速公路",
+    "运营管理",
+    "收费稽核",
+    "机电运维",
+    "降本增效",
+    "道路保通",
+    "养护管理",
+    "房地产营销",
+    "多元股权项目",
+    "永续中票发行"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高速公路运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "经营性收费公路的投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建设",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:07:18"
+}

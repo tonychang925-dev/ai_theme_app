@@ -1,0 +1,34 @@
+{
+  "stock_id": "600368",
+  "stock_name": "五洲交通",
+  "concept": "交通物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "收费公路运营",
+    "高速公路资源"
+  ],
+  "should": [
+    "物流园区经营",
+    "东兴口岸物流公司",
+    "智慧园区",
+    "数智化转型",
+    "低碳绿色",
+    "通行费收入",
+    "报关物流一体化",
+    "全程物流"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "收费公路运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高速公路资源",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:16:08"
+}

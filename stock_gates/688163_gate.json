@@ -1,0 +1,40 @@
+{
+  "stock_id": "688163",
+  "stock_name": "赛伦生物",
+  "concept": "抗血清抗毒素",
+  "strategy_type": "industry_chain",
+  "must": [
+    "抗血清抗毒素",
+    "抗蛇毒血清系列",
+    "马破伤风免疫球蛋白"
+  ],
+  "should": [
+    "抗狂犬病血清",
+    "抗血清抗毒素药物研发",
+    "马匹免疫和血浆生产管理",
+    "GMP认证",
+    "蛇伤治疗",
+    "破伤风预防和治疗",
+    "狂犬病预防",
+    "国内唯一抗蛇毒血清生产制造商",
+    "国内独家生产马破伤风免疫球蛋白"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "抗血清抗毒素",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "抗蛇毒血清系列",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "马破伤风免疫球蛋白",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:10:20"
+}

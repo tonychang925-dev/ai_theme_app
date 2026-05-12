@@ -1,0 +1,38 @@
+{
+  "stock_id": "688056",
+  "stock_name": "莱伯泰科",
+  "concept": "实验分析仪器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "样品前处理仪器",
+    "电感耦合等离子体质谱仪",
+    "LabTech"
+  ],
+  "should": [
+    "CDS",
+    "Empore",
+    "Empore锶分离富集膜片",
+    "放射性锶固相萃取技术",
+    "水循环产品",
+    "食品",
+    "疾病控制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "样品前处理仪器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电感耦合等离子体质谱仪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LabTech",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:06:41"
+}

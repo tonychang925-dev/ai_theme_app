@@ -1,0 +1,40 @@
+{
+  "stock_id": "300587",
+  "stock_name": "天铁科技",
+  "concept": "轨交减振与盐湖提锂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "隔离式橡胶减振垫",
+    "钢轨波导吸振器",
+    "建筑隔振橡胶支座"
+  ],
+  "should": [
+    "电驱动液相离子束缚技术工艺",
+    "吸附提锂工艺",
+    "材料模量",
+    "内部结构",
+    "外形尺寸",
+    "参数性能",
+    "轨交减振降噪",
+    "建筑减隔震",
+    "盐湖提锂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "隔离式橡胶减振垫",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钢轨波导吸振器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑隔振橡胶支座",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:34:08"
+}

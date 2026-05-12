@@ -1,0 +1,36 @@
+{
+  "stock_id": "300876",
+  "stock_name": "蒙泰高新",
+  "concept": "丙纶长丝",
+  "strategy_type": "industry_chain",
+  "must": [
+    "丙纶长丝",
+    "高强丙纶长丝"
+  ],
+  "should": [
+    "细旦丙纶",
+    "阻燃丙纶",
+    "抗菌丙纶",
+    "抗静电丙纶",
+    "抗紫外线丙纶",
+    "膨体连续长丝(BCF)",
+    "细旦加弹丝(DTY)",
+    "高强丙纶滤布",
+    "功能性纤维研发",
+    "差异化纤维研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "丙纶长丝",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高强丙纶长丝",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:47:21"
+}

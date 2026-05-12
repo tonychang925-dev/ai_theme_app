@@ -1,0 +1,37 @@
+{
+  "stock_id": "002017",
+  "stock_name": "东信和平",
+  "concept": "数字安全产品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字安全产品",
+    "智能卡",
+    "数字身份安全产品"
+  ],
+  "should": [
+    "数字安全管理平台",
+    "卡片操作系统（COS）",
+    "数字身份识别",
+    "数据安全管理",
+    "国有控股",
+    "实际控制人中国电科"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字安全产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能卡",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字身份安全产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:18:34"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "600007",
+  "stock_name": "中国国贸",
+  "concept": "地标商业运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国贸中心商业综合体",
+    "国贸三期"
+  ],
+  "should": [
+    "写字楼",
+    "购物中心",
+    "酒店",
+    "公寓",
+    "地标商业运营",
+    "CBD组团",
+    "北京商务中心区",
+    "开发建设",
+    "商业运营",
+    "物业管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国贸中心商业综合体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国贸三期",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:06:55"
+}

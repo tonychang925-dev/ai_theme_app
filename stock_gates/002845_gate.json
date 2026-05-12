@@ -1,0 +1,41 @@
+{
+  "stock_id": "002845",
+  "stock_name": "同兴达",
+  "concept": "液晶显示模组",
+  "strategy_type": "industry_chain",
+  "must": [
+    "液晶显示模组",
+    "中小尺寸液晶显示模组",
+    "摄像头模组"
+  ],
+  "should": [
+    "触控一体化",
+    "TCL",
+    "三星",
+    "亚马逊",
+    "MOTO",
+    "海康威视",
+    "伟易达",
+    "闻泰",
+    "华勤",
+    "传音"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "液晶显示模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中小尺寸液晶显示模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "摄像头模组",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:00:01"
+}

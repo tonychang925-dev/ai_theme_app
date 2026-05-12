@@ -1,0 +1,41 @@
+{
+  "stock_id": "688126",
+  "stock_name": "沪硅产业",
+  "concept": "半导体硅片龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国内半导体硅片龙头",
+    "300mm硅片",
+    "SOI硅片"
+  ],
+  "should": [
+    "抛光片",
+    "外延片",
+    "高端模拟芯片",
+    "先进传感器",
+    "射频芯片",
+    "功率器件",
+    "存储芯片",
+    "图像处理芯片",
+    "半导体硅片龙头",
+    "300mm半导体硅片规模化生产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国内半导体硅片龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "300mm硅片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SOI硅片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:09:12"
+}

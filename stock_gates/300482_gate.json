@@ -1,0 +1,46 @@
+{
+  "stock_id": "300482",
+  "stock_name": "万孚生物",
+  "concept": "快速诊断试剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "POCT产品",
+    "快速诊断试剂",
+    "传染病检测试剂",
+    "慢病检测试剂"
+  ],
+  "should": [
+    "免疫胶体金技术",
+    "免疫荧光技术",
+    "毒品检测试剂",
+    "妊娠检测试剂",
+    "新冠抗原检测试剂",
+    "急诊门诊",
+    "基层医疗",
+    "二三级医院",
+    "公共卫生采购",
+    "国内POCT龙头企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "POCT产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "快速诊断试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "传染病检测试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "慢病检测试剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:29:21"
+}

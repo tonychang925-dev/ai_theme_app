@@ -1,0 +1,36 @@
+{
+  "stock_id": "002116",
+  "stock_name": "中国海诚",
+  "concept": "轻工工程服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程总承包",
+    "工程设计"
+  ],
+  "should": [
+    "工程监理",
+    "工程咨询",
+    "轻工工程服务",
+    "制浆造纸",
+    "食品发酵",
+    "日用化工",
+    "节能环保",
+    "休闲健康",
+    "现代物流",
+    "新材料新能源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程总承包",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:24:06"
+}

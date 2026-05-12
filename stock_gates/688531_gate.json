@@ -1,0 +1,33 @@
+{
+  "stock_id": "688531",
+  "stock_name": "日联科技",
+  "concept": "X射线智能检测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "微焦点X射线源",
+    "X射线智能检测装备"
+  ],
+  "should": [
+    "X射线影像软件系统",
+    "X射线智能检测",
+    "整机开发",
+    "影像处理",
+    "核心部件研发",
+    "打破国外垄断",
+    "核心部件自主可控"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "微焦点X射线源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "X射线智能检测装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:20:00"
+}

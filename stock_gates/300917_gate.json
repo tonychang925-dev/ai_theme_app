@@ -1,0 +1,46 @@
+{
+  "stock_id": "300917",
+  "stock_name": "特发服务",
+  "concept": "多元高端物业服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合物业管理服务",
+    "园区物业",
+    "政务服务",
+    "增值服务"
+  ],
+  "should": [
+    "多元高端物业服务",
+    "华为",
+    "阿里巴巴",
+    "中国移动",
+    "国家电网",
+    "腾讯",
+    "华为总部项目",
+    "住宅物业",
+    "华为全国云数据中心运维项目",
+    "吉利汽车研发总部项目"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合物业管理服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "园区物业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "政务服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "增值服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:49:05"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "600388",
+  "stock_name": "龙净环保",
+  "concept": "大气治理龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大气治理龙头",
+    "环保设备"
+  ],
+  "should": [
+    "储能",
+    "新能源装备",
+    "大气污染治理",
+    "水污染治理",
+    "固危废处置",
+    "生态修复及保护",
+    "土壤修复",
+    "清洁能源",
+    "冶炼厂烟气治理",
+    "矿山尾矿资源化综合利用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大气治理龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环保设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:16:49"
+}

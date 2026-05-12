@@ -1,0 +1,31 @@
+{
+  "stock_id": "603895",
+  "stock_name": "天永智能",
+  "concept": "智能装备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电池设备"
+  ],
+  "should": [
+    "动力总成自动化",
+    "白车身焊装自动化",
+    "智能装备制造",
+    "自动化",
+    "柔性化",
+    "智能化",
+    "信息化",
+    "新能源汽车",
+    "锂电池",
+    "发动机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电池设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:58:22"
+}

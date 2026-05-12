@@ -1,0 +1,33 @@
+{
+  "stock_id": "002972",
+  "stock_name": "科安达",
+  "concept": "轨道交通信号防护",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轨道交通信号计轴系统",
+    "铁路站场综合防雷系统"
+  ],
+  "should": [
+    "信号监测防雷分线柜",
+    "道岔融雪系统",
+    "轨道交通信号防护",
+    "雷电防护技术",
+    "信号控制技术",
+    "轨道交通领域的隐形冠军",
+    "主要起草单位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轨道交通信号计轴系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铁路站场综合防雷系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:05:34"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "603693",
+  "stock_name": "江苏新能",
+  "concept": "新能源发电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风能发电",
+    "光伏发电",
+    "生物质能发电供热",
+    "海上风电",
+    "陆上风电"
+  ],
+  "should": [
+    "分布式光伏",
+    "集中式光伏",
+    "渔光互补",
+    "屋顶分布式光伏",
+    "新能源发电",
+    "海上风电制氢",
+    "综合能源服务",
+    "柔性光伏",
+    "智能运维",
+    "数字孪生"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风能发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物质能发电供热",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海上风电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "陆上风电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:54:59"
+}

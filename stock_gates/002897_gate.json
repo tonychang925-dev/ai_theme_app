@@ -1,0 +1,34 @@
+{
+  "stock_id": "002897",
+  "stock_name": "意华股份",
+  "concept": "连接器与光伏支架",
+  "strategy_type": "industry_chain",
+  "must": [
+    "通讯连接器",
+    "汽车电子连接器",
+    "太阳能支架"
+  ],
+  "should": [
+    "消费电子连接器",
+    "智能跟踪算法",
+    "光伏跟踪支架控制器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "通讯连接器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车电子连接器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "太阳能支架",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:02:14"
+}

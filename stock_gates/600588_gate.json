@@ -1,0 +1,36 @@
+{
+  "stock_id": "600588",
+  "stock_name": "用友网络",
+  "concept": "企业数智化服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "YonBIP",
+    "NC Cloud"
+  ],
+  "should": [
+    "用友PLM",
+    "用友CRM",
+    "U8+",
+    "畅捷通T系列",
+    "YonSuite",
+    "U9 Cloud",
+    "U8 Cloud",
+    "畅捷通好会计",
+    "好生意",
+    "智+"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "YonBIP",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "NC Cloud",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:22:09"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "301276",
+  "stock_name": "嘉曼服饰",
+  "concept": "中高端童装运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中高端童装运营"
+  ],
+  "should": [
+    "水孩儿",
+    "菲丝路汀",
+    "暇步士",
+    "哈吉斯",
+    "EMPORIO ARMANI",
+    "HUGO BOSS",
+    "KENZO KIDS",
+    "研发设计",
+    "品牌运营与推广",
+    "直营与加盟销售"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中高端童装运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:01:33"
+}

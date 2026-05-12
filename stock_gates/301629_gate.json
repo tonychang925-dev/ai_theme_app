@@ -1,0 +1,41 @@
+{
+  "stock_id": "301629",
+  "stock_name": "矽电股份",
+  "concept": "探针台龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "探针台龙头",
+    "晶圆探针台",
+    "晶粒探针台"
+  ],
+  "should": [
+    "分选机",
+    "AOI检测机",
+    "步进精度±1.3um",
+    "自动上下片",
+    "自动换卡",
+    "自动对针",
+    "无损清针",
+    "滤光片自动切换",
+    "光学成像",
+    "图像处理算法"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "探针台龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "晶圆探针台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "晶粒探针台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:06:50"
+}

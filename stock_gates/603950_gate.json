@@ -1,0 +1,41 @@
+{
+  "stock_id": "603950",
+  "stock_name": "长源东谷",
+  "concept": "发动机零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "发动机零部件",
+    "柴油发动机缸体",
+    "柴油发动机缸盖"
+  ],
+  "should": [
+    "连杆",
+    "商用车",
+    "重卡",
+    "新能源汽车混动车型",
+    "福田康明斯供应商",
+    "东风康明斯供应商",
+    "东风商用车供应商",
+    "广西玉柴供应商",
+    "精益生产",
+    "工艺创新"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "发动机零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "柴油发动机缸体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "柴油发动机缸盖",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:59:29"
+}

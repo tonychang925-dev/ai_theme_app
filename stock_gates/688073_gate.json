@@ -1,0 +1,31 @@
+{
+  "stock_id": "688073",
+  "stock_name": "毕得医药",
+  "concept": "药物分子砌块",
+  "strategy_type": "industry_chain",
+  "must": [
+    "药物分子砌块"
+  ],
+  "should": [
+    "科学试剂",
+    "毕得",
+    "BLD",
+    "AmBeed",
+    "苯环类",
+    "杂环类",
+    "脂肪族类",
+    "催化剂",
+    "配体",
+    "活性小分子化合物"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "药物分子砌块",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:07:21"
+}

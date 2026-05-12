@@ -1,0 +1,25 @@
+{
+  "stock_id": "002998",
+  "stock_name": "优彩资源",
+  "concept": "废旧PET循环利用",
+  "strategy_type": "industry_chain",
+  "must": [
+    "再生有色涤纶短纤维"
+  ],
+  "should": [
+    "低熔点涤纶短纤维",
+    "涤纶非织造布",
+    "废旧PET循环利用",
+    "上游废旧PET原料回收利用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "再生有色涤纶短纤维",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:06:49"
+}

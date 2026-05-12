@@ -1,0 +1,41 @@
+{
+  "stock_id": "002760",
+  "stock_name": "凤形股份",
+  "concept": "耐磨材料与特种电机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "耐磨材料与特种电机",
+    "高铬合金铸球",
+    "特种电机"
+  ],
+  "should": [
+    "衬板",
+    "锤头",
+    "高铬合金铸段",
+    "低铬合金铸球",
+    "低铬合金铸球段",
+    "多元合金铸球",
+    "多元合金铸球段",
+    "冶金矿山",
+    "建材水泥",
+    "火力发电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "耐磨材料与特种电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高铬合金铸球",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种电机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:56:27"
+}

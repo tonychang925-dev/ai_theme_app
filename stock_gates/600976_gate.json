@@ -1,0 +1,46 @@
+{
+  "stock_id": "600976",
+  "stock_name": "健民集团",
+  "concept": "中药儿童药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "龙牡壮骨颗粒",
+    "儿童用药",
+    "儿童大健康",
+    "体培牛黄"
+  ],
+  "should": [
+    "小儿宝泰康颗粒",
+    "小儿宣肺止咳颗粒",
+    "小儿解感颗粒",
+    "健脾生血颗粒",
+    "健脾生血片",
+    "小金胶囊",
+    "便通胶囊",
+    "健胃消食片",
+    "健民咽喉片",
+    "拔毒生肌散"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "龙牡壮骨颗粒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "儿童用药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "儿童大健康",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "体培牛黄",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:32:19"
+}

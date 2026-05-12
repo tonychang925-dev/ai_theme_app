@@ -1,0 +1,36 @@
+{
+  "stock_id": "688622",
+  "stock_name": "禾信仪器",
+  "concept": "质谱仪国产化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "质谱仪国产化",
+    "质谱仪"
+  ],
+  "should": [
+    "PM2.5在线源解析质谱监测系统",
+    "飞行时间质谱仪",
+    "四极杆质谱仪",
+    "离子阱质谱仪",
+    "离子回旋共振质谱仪",
+    "磁质谱仪",
+    "环境监测",
+    "医疗领域",
+    "食品安全",
+    "国产替代"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "质谱仪国产化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "质谱仪",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:22:26"
+}

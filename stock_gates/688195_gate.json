@@ -1,0 +1,44 @@
+{
+  "stock_id": "688195",
+  "stock_name": "腾景科技",
+  "concept": "精密光学元件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密光学元组件",
+    "CWDM滤光片",
+    "WSS模块光学元件",
+    "高功率镀膜光纤线"
+  ],
+  "should": [
+    "光纤器件",
+    "精密光学元件",
+    "光学冷加工",
+    "高功率光学元件",
+    "键合技术",
+    "光学薄膜窄带滤光片制备",
+    "光通信产业链上游",
+    "光纤激光产业链上游"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密光学元组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CWDM滤光片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "WSS模块光学元件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高功率镀膜光纤线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:11:26"
+}

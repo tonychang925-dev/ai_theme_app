@@ -1,0 +1,41 @@
+{
+  "stock_id": "600185",
+  "stock_name": "珠免集团",
+  "concept": "免税+地产+大健康",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大消费（免税）",
+    "大健康",
+    "房地产业"
+  ],
+  "should": [
+    "珠海免税MALL",
+    "珠免国际",
+    "鲜生洪湾",
+    "高格健康大药房",
+    "免税+地产+大健康",
+    "拱北口岸",
+    "九洲港口岸",
+    "横琴口岸",
+    "湾仔口岸",
+    "港珠澳大桥口岸"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大消费（免税）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大健康",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "房地产业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:11:17"
+}

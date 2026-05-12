@@ -1,0 +1,36 @@
+{
+  "stock_id": "003027",
+  "stock_name": "同兴科技",
+  "concept": "烟气治理与降碳",
+  "strategy_type": "industry_chain",
+  "must": [
+    "烟气治理工程服务",
+    "低温SCR脱硝催化剂"
+  ],
+  "should": [
+    "烟气治理产品",
+    "干法/半干法/湿法脱硫",
+    "除尘脱硝一体化",
+    "脱硝设备",
+    "除尘设备",
+    "烟气治理与降碳",
+    "降碳业务",
+    "焦化",
+    "钢铁",
+    "建材"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "烟气治理工程服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "低温SCR脱硝催化剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:08:10"
+}

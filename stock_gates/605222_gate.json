@@ -1,0 +1,46 @@
+{
+  "stock_id": "605222",
+  "stock_name": "起帆电缆",
+  "concept": "电线电缆",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电线电缆",
+    "电力电缆",
+    "特种电缆"
+  ],
+  "should": [
+    "橡套电缆",
+    "中频充电电缆",
+    "高水压橡套水密电缆",
+    "潜艇舷侧声呐电缆",
+    "机器人线缆专用机械疲劳试验",
+    "Z型线铜导体开发",
+    "特种电缆材料",
+    "城市电网建设",
+    "光伏发电",
+    "海上风电"
+  ],
+  "not": [
+    "主控芯片",
+    "固件开发",
+    "飞机充电",
+    "潜艇声呐"
+  ],
+  "evidence_refs": [
+    {
+      "term": "电线电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种电缆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:03:01"
+}

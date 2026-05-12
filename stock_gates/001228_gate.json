@@ -1,0 +1,36 @@
+{
+  "stock_id": "001228",
+  "stock_name": "永泰运",
+  "concept": "危化品跨境物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "危化品跨境物流",
+    "跨境化工物流供应链服务"
+  ],
+  "should": [
+    "仓储堆存",
+    "道路运输",
+    "马士基航运",
+    "中国远洋运输",
+    "宁波港",
+    "上海港",
+    "青岛港",
+    "天津港",
+    "询价",
+    "订舱"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "危化品跨境物流",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "跨境化工物流供应链服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:14:22"
+}

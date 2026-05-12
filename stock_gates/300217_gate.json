@@ -1,0 +1,50 @@
+{
+  "stock_id": "300217",
+  "stock_name": "东方电热",
+  "concept": "电加热器龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电加热器龙头",
+    "多晶硅冷氢化用电加热器",
+    "多晶硅还原炉",
+    "锂电池钢壳材料",
+    "新能源汽车用电加热器"
+  ],
+  "should": [
+    "空调用电加热器",
+    "小家电用电加热器",
+    "光缆专用钢（铝）塑复合材料",
+    "铲片式PTC电加热器",
+    "预镀镍钢壳",
+    "铲片式PTC电加热器专利技术",
+    "预镀镍技术",
+    "多晶硅上游重要企业",
+    "国内预镀镍技术龙头之一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电加热器龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多晶硅冷氢化用电加热器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多晶硅还原炉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂电池钢壳材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车用电加热器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:17:54"
+}

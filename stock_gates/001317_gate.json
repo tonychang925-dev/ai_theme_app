@@ -1,0 +1,29 @@
+{
+  "stock_id": "001317",
+  "stock_name": "三羊马",
+  "concept": "公铁联运物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车整车综合物流服务"
+  ],
+  "should": [
+    "非汽车商品综合物流服务",
+    "仓储服务",
+    "公铁联运物流",
+    "全程公铁联运",
+    "全程公路运输",
+    "两端作业服务",
+    "中铁特货最大两端作业服务商",
+    "AAAA级物流企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车整车综合物流服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:16:09"
+}

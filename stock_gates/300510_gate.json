@@ -1,0 +1,46 @@
+{
+  "stock_id": "300510",
+  "stock_name": "金冠股份",
+  "concept": "智慧电力+新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧电力+新能源",
+    "智能电气成套开关设备",
+    "充电桩",
+    "储能系统"
+  ],
+  "should": [
+    "大功率快充技术",
+    "V2X充换电技术",
+    "柔性智能充电技术",
+    "互联网+智能充电技术",
+    "有序充电技术",
+    "立式液冷技术",
+    "智能电网",
+    "轨道交通",
+    "城市基础设施",
+    "公共交通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧电力+新能源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能电气成套开关设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "充电桩",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:30:33"
+}

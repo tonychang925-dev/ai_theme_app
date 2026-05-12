@@ -1,0 +1,36 @@
+{
+  "stock_id": "603360",
+  "stock_name": "百傲化学",
+  "concept": "工业杀菌剂原药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业杀菌剂原药",
+    "异噻唑啉酮合成"
+  ],
+  "should": [
+    "CIT/MIT",
+    "MIT",
+    "OIT",
+    "DCOIT",
+    "BIT",
+    "生产线通用调节",
+    "油田注水",
+    "工业循环水",
+    "造纸",
+    "日化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业杀菌剂原药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "异噻唑啉酮合成",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:50:06"
+}

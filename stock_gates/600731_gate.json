@@ -1,0 +1,41 @@
+{
+  "stock_id": "600731",
+  "stock_name": "湖南海利",
+  "concept": "农药化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农化业务",
+    "化工新材料(新能源)",
+    "种业"
+  ],
+  "should": [
+    "丁硫克百威",
+    "甲嘧",
+    "水杨腈",
+    "生物降解材料",
+    "热缩气囊",
+    "宁夏基地",
+    "贵溪基地",
+    "永兴基地",
+    "农药化工",
+    "连续化工艺"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农化业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化工新材料(新能源)",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "种业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:26:09"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "300943",
+  "stock_name": "春晖智控",
+  "concept": "流体智控阀",
+  "strategy_type": "industry_chain",
+  "must": [
+    "流体智控阀"
+  ],
+  "should": [
+    "双流量电磁阀",
+    "电磁比例阀",
+    "油气回收部件",
+    "燃气调压器",
+    "调压箱/柜",
+    "供热水路控制阀",
+    "汽车空调热力膨胀阀",
+    "电子膨胀阀",
+    "电动压缩机",
+    "凸轮轴"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "流体智控阀",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:50:20"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "000798",
+  "stock_name": "中水渔业",
+  "concept": "远洋渔业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金枪鱼"
+  ],
+  "should": [
+    "鱿鱼",
+    "金枪鱼渔业渔情预报系统",
+    "远洋渔业",
+    "海洋食品",
+    "科技探鱼",
+    "远洋捕捞",
+    "水产品贸易",
+    "金枪鱼捕捞业务龙头企业",
+    "国内船数最多",
+    "作业范围最广"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金枪鱼",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:05:03"
+}

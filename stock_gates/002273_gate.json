@@ -1,0 +1,41 @@
+{
+  "stock_id": "002273",
+  "stock_name": "水晶光电",
+  "concept": "光学解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光学元器件",
+    "薄膜光学面板",
+    "车载光学整机模组"
+  ],
+  "should": [
+    "半导体光学",
+    "3D模组",
+    "车载光学元膜",
+    "反光织物",
+    "光学解决方案",
+    "精密光电镀膜技术",
+    "吸收反射复合型滤光片量产",
+    "阵列、衍射和体全息等光波导技术",
+    "全球玻璃IRCF主要供应商",
+    "IRCF领军企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光学元器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "薄膜光学面板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载光学整机模组",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:32:50"
+}

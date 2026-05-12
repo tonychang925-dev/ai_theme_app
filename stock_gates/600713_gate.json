@@ -1,0 +1,51 @@
+{
+  "stock_id": "600713",
+  "stock_name": "南京医药",
+  "concept": "医药流通",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药流通",
+    "药品批发",
+    "零售药房",
+    "新药引进",
+    "医疗器械"
+  ],
+  "should": [
+    "医美类产品",
+    "特医食品",
+    "血液制品",
+    "中药药事服务",
+    "智慧供应链平台",
+    "数字化业务管控平台",
+    "物流管理系统",
+    "患者服务云平台",
+    "远程问诊系统",
+    "国内首家医药流通类上市公司"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医药流通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "药品批发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "零售药房",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新药引进",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗器械",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:25:37"
+}

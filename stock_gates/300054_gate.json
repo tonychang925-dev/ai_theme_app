@@ -1,0 +1,57 @@
+{
+  "stock_id": "300054",
+  "stock_name": "鼎龙股份",
+  "concept": "半导体材料平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "CMP抛光垫",
+    "CMP抛光液",
+    "CMP后清洗液",
+    "钻石碟",
+    "临时键合胶"
+  ],
+  "should": [
+    "封装光刻胶PSPI",
+    "底部填充剂",
+    "黄色聚酰亚胺浆料YPI",
+    "光敏聚酰亚胺PSPI",
+    "面板封装材料INK",
+    "彩色聚合碳粉",
+    "耗材芯片",
+    "显影辊",
+    "硒鼓",
+    "墨盒"
+  ],
+  "not": [
+    "CMP抛光垫国产化突破",
+    "打破陶氏化学寡头垄断",
+    "12寸产品出货主流",
+    "海外客户验证通过",
+    "七大材料技术平台"
+  ],
+  "evidence_refs": [
+    {
+      "term": "CMP抛光垫",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CMP抛光液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CMP后清洗液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钻石碟",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "临时键合胶",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:11:22"
+}

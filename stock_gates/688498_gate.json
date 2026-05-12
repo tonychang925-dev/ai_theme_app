@@ -1,0 +1,34 @@
+{
+  "stock_id": "688498",
+  "stock_name": "源杰科技",
+  "concept": "光芯片IDM",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光芯片IDM",
+    "IDM经营模式"
+  ],
+  "should": [
+    "CW光源",
+    "100G EML",
+    "三大技术平台",
+    "硅光技术",
+    "光纤到户",
+    "5G移动通信网络",
+    "数据中心",
+    "国内光芯片行业领先"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光芯片IDM",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IDM经营模式",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:19:00"
+}

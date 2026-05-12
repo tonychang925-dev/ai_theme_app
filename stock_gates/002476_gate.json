@@ -1,0 +1,36 @@
+{
+  "stock_id": "002476",
+  "stock_name": "宝莫股份",
+  "concept": "精细化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "聚丙烯酰胺",
+    "丙烯酰胺"
+  ],
+  "should": [
+    "表面活性剂",
+    "稠油降粘剂",
+    "微生物法丙烯酰胺",
+    "阴离子聚丙烯酰胺",
+    "阳离子聚丙烯酰胺",
+    "高难度稠油采出水资源化工艺",
+    "油气开发",
+    "废水处理",
+    "选矿",
+    "造纸"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "聚丙烯酰胺",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "丙烯酰胺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:43:30"
+}

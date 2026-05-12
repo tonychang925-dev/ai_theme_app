@@ -1,0 +1,46 @@
+{
+  "stock_id": "001287",
+  "stock_name": "中电港",
+  "concept": "电子元器件分销",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子元器件分销",
+    "设计链服务",
+    "供应链协同配套",
+    "产业数据服务"
+  ],
+  "should": [
+    "高通",
+    "英伟达",
+    "兆易创新",
+    "ADI",
+    "AMD",
+    "Micron",
+    "NXP",
+    "Onsemi",
+    "Renesas",
+    "豪威科技"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子元器件分销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "设计链服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "供应链协同配套",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "产业数据服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:15:31"
+}

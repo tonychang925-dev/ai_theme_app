@@ -1,0 +1,49 @@
+{
+  "stock_id": "600201",
+  "stock_name": "生物股份",
+  "concept": "动物疫苗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "动物疫苗",
+    "口蹄疫疫苗",
+    "口蹄疫疫苗市场龙头",
+    "悬浮培养技术",
+    "智能化生产"
+  ],
+  "should": [
+    "高致病性禽流感疫苗",
+    "布鲁氏菌疫苗",
+    "反刍类疫苗",
+    "猪圆环疫苗",
+    "猪伪狂疫苗",
+    "基因缺失活疫苗",
+    "牛BVD-IBR二联苗",
+    "猪类疾病防控"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "动物疫苗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "口蹄疫疫苗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "口蹄疫疫苗市场龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "悬浮培养技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能化生产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:11:45"
+}

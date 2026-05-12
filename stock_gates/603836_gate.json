@@ -1,0 +1,46 @@
+{
+  "stock_id": "603836",
+  "stock_name": "海程邦达",
+  "concept": "跨境物流服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "基础分段式物流服务",
+    "一站式合同物流服务",
+    "精益供应链物流服务",
+    "海运产品"
+  ],
+  "should": [
+    "供应链贸易",
+    "空运产品",
+    "铁运产品",
+    "仓配物流",
+    "跨境物流服务",
+    "泛半导体产业",
+    "新能源汽车",
+    "一级国际货运代理资质",
+    "中美NVOCC业务全球第16名",
+    "三星集团全球业务供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "基础分段式物流服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一站式合同物流服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精益供应链物流服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海运产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:57:22"
+}

@@ -1,0 +1,45 @@
+{
+  "stock_id": "002774",
+  "stock_name": "快意电梯",
+  "concept": "电梯综合方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电梯综合方案",
+    "电梯整梯",
+    "扶梯",
+    "零部件"
+  ],
+  "should": [
+    "智能化技术",
+    "云计算",
+    "物联网",
+    "大数据",
+    "房地产",
+    "保障性住房",
+    "公共交通",
+    "旧楼加装",
+    "更新改造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电梯综合方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电梯整梯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "扶梯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:56:55"
+}

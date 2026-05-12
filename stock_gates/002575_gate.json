@@ -1,0 +1,36 @@
+{
+  "stock_id": "002575",
+  "stock_name": "群兴玩具",
+  "concept": "酒类销售与园区运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "酒类销售与园区运营",
+    "酒类销售"
+  ],
+  "should": [
+    "自有物业租赁",
+    "创业园区运营",
+    "物业管理服务",
+    "国内知名酒类供应商",
+    "企事业单位",
+    "社会团体",
+    "个人团购客户",
+    "终端供应商",
+    "高端物业管理",
+    "商业物业管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "酒类销售与园区运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "酒类销售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:48:06"
+}

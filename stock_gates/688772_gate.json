@@ -1,0 +1,31 @@
+{
+  "stock_id": "688772",
+  "stock_name": "珠海冠宇",
+  "concept": "消费电池龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "消费电池"
+  ],
+  "should": [
+    "动力电池",
+    "储能电池",
+    "软包电池",
+    "消费电池龙头",
+    "笔记本电脑",
+    "手机",
+    "可穿戴设备",
+    "蓝牙耳机",
+    "AR/VR",
+    "电子烟"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "消费电池",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:24:52"
+}

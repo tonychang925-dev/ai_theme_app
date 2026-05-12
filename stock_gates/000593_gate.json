@@ -1,0 +1,51 @@
+{
+  "stock_id": "000593",
+  "stock_name": "德龙汇能",
+  "concept": "清洁能源供应",
+  "strategy_type": "industry_chain",
+  "must": [
+    "天然气运输",
+    "燃气管网建设与管理",
+    "城市燃气经营与销售",
+    "车用加气站投资与运营",
+    "CNG/LNG供应"
+  ],
+  "should": [
+    "高中压管线",
+    "城市管网",
+    "LNG专业运输车",
+    "多功能调度中心",
+    "配套服务网点",
+    "锂浆料电池",
+    "清洁能源供应",
+    "城市居民",
+    "商业用户",
+    "工业用户"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "天然气运输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "燃气管网建设与管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市燃气经营与销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车用加气站投资与运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CNG/LNG供应",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:57:47"
+}

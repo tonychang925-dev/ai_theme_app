@@ -1,0 +1,46 @@
+{
+  "stock_id": "301362",
+  "stock_name": "民爆光电",
+  "concept": "LED灯具出口",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国家级专精特新小巨人",
+    "LED灯具",
+    "商业照明",
+    "工业照明"
+  ],
+  "should": [
+    "植物照明",
+    "美容照明",
+    "防爆照明",
+    "应急照明",
+    "LED灯具出口",
+    "电光转换效率",
+    "光谱可调",
+    "光合效率",
+    "节能环保",
+    "长寿命"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国家级专精特新小巨人",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LED灯具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商业照明",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业照明",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:03:50"
+}

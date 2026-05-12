@@ -1,0 +1,45 @@
+{
+  "stock_id": "300141",
+  "stock_name": "和顺电气",
+  "concept": "电力新能源设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源汽车充电桩",
+    "大功率快充",
+    "光伏发电项目",
+    "智能电网一二次融合"
+  ],
+  "should": [
+    "电力储能装置",
+    "高低压电器及成套设备",
+    "动态功率分配",
+    "电力滤波装置",
+    "无功补偿装置",
+    "充电桩大功率快充应用",
+    "新能源大型发电项目",
+    "智能电网建设",
+    "配网产业链延伸"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源汽车充电桩",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大功率快充",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏发电项目",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能电网一二次融合",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:14:58"
+}

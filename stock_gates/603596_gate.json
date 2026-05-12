@@ -1,0 +1,35 @@
+{
+  "stock_id": "603596",
+  "stock_name": "伯特利",
+  "concept": "汽车制动系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "线控制动系统（WCBS）",
+    "轻量化制动零部件"
+  ],
+  "should": [
+    "电子稳定控制系统（ESC）",
+    "制动防抱死系统（ABS）",
+    "盘式制动器",
+    "电动尾门开闭系统（ELGS）",
+    "真空助力器及主缸",
+    "线控制动",
+    "电控辅助制动",
+    "动能回收",
+    "自主紧急制动"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "线控制动系统（WCBS）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轻量化制动零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:52:49"
+}

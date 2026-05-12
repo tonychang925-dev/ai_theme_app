@@ -1,0 +1,46 @@
+{
+  "stock_id": "603993",
+  "stock_name": "洛阳钼业",
+  "concept": "全球铜钴龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球铜钴龙头",
+    "铜",
+    "钴",
+    "铜钴矿"
+  ],
+  "should": [
+    "全球领先的钴生产商",
+    "重要的铜生产商",
+    "钼",
+    "钨",
+    "钼钨业务",
+    "铌",
+    "磷肥",
+    "铌磷矿",
+    "采选冶",
+    "尾矿库"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球铜钴龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钴",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铜钴矿",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:00:39"
+}

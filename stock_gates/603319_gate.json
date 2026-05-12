@@ -1,0 +1,48 @@
+{
+  "stock_id": "603319",
+  "stock_name": "美湖股份",
+  "concept": "汽车泵类制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "变排量泵技术",
+    "电子水泵",
+    "变速箱电子泵",
+    "发动机电子预供油泵",
+    "电子真空泵"
+  ],
+  "should": [
+    "柴油机油泵",
+    "汽油机油泵",
+    "冷却水泵",
+    "变速箱泵",
+    "真空泵",
+    "铝合金压铸件",
+    "激光雷达电机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "变排量泵技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子水泵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "变速箱电子泵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发动机电子预供油泵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子真空泵",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:49:02"
+}

@@ -1,0 +1,45 @@
+{
+  "stock_id": "000514",
+  "stock_name": "渝开发",
+  "concept": "房地产开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "房地产开发",
+    "房地产开发与销售",
+    "市政资产经营",
+    "会展经营",
+    "物业管理"
+  ],
+  "should": [
+    "西永项目（渝开发格莱美四期）",
+    "山与城项目",
+    "星河one二期项目",
+    "华岩项目（渝开发贯金和府）一期"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房地产开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "房地产开发与销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "市政资产经营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "会展经营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物业管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:53:28"
+}

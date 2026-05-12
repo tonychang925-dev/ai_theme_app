@@ -1,0 +1,46 @@
+{
+  "stock_id": "002584",
+  "stock_name": "西陇科学",
+  "concept": "化学试剂集成商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "化学试剂集成商",
+    "通用化学试剂",
+    "PCB用化学试剂",
+    "超净高纯化学试剂"
+  ],
+  "should": [
+    "湿电子化学品",
+    "电子化学品高纯丙酮",
+    "电子化学品高纯甲醇",
+    "电子化学品高纯硝酸银",
+    "体外诊断试剂",
+    "磷酸铁锂正极材料",
+    "化工原料",
+    "铜酸蚀刻液研发",
+    "锂离子电池内外层胶黏剂开发",
+    "铝酸蚀刻液开发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "化学试剂集成商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通用化学试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PCB用化学试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超净高纯化学试剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:48:45"
+}

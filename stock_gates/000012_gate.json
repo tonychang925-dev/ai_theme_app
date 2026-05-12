@@ -1,0 +1,51 @@
+{
+  "stock_id": "000012",
+  "stock_name": "南玻A",
+  "concept": "节能玻璃与光伏",
+  "strategy_type": "industry_chain",
+  "must": [
+    "节能玻璃",
+    "太阳能光伏产品",
+    "电子玻璃",
+    "光伏玻璃",
+    "工程玻璃"
+  ],
+  "should": [
+    "浮法玻璃",
+    "超白玻璃",
+    "超薄电子玻璃",
+    "LOW-E镀膜技术",
+    "增透耐候镀膜液",
+    "高铝二代电子玻璃",
+    "高铝三代电子玻璃",
+    "超薄浮法玻璃",
+    "光伏组件",
+    "节能玻璃与光伏"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "节能玻璃",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "太阳能光伏产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子玻璃",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏玻璃",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程玻璃",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:37:53"
+}

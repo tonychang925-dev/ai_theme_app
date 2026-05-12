@@ -1,0 +1,41 @@
+{
+  "stock_id": "688377",
+  "stock_name": "迪威尔",
+  "concept": "深海油气设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "深海油气设备",
+    "深海油气水下开采设备",
+    "深海设备专用件"
+  ],
+  "should": [
+    "页岩气压裂设备",
+    "陆地油气开采设备",
+    "井口及采油树专用件",
+    "压裂设备专用件",
+    "钻采设备专用件",
+    "堆焊工艺",
+    "多向模锻工艺",
+    "CNAS国家实验室",
+    "深海钻采",
+    "页岩气压裂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "深海油气设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "深海油气水下开采设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "深海设备专用件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:17:03"
+}

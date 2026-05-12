@@ -1,0 +1,31 @@
+{
+  "stock_id": "603233",
+  "stock_name": "大参林",
+  "concept": "连锁药店龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "连锁药店龙头"
+  ],
+  "should": [
+    "中西成药",
+    "非药品",
+    "参茸滋补药材",
+    "行业集中度提升",
+    "处方药外流",
+    "中参特色",
+    "自主品牌",
+    "租店效率",
+    "人力效率",
+    "加盟模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "连锁药店龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:47:13"
+}

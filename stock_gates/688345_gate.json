@@ -1,0 +1,36 @@
+{
+  "stock_id": "688345",
+  "stock_name": "博力威",
+  "concept": "轻型锂电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轻型车用锂离子电池",
+    "轻型锂电"
+  ],
+  "should": [
+    "储能电池",
+    "锂离子电芯",
+    "消费电子类电池",
+    "锂离子电池研发",
+    "锂离子电池制造",
+    "电芯生产工艺",
+    "电动自行车",
+    "电动摩托车",
+    "便携储能",
+    "电动工具"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轻型车用锂离子电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轻型锂电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:16:01"
+}

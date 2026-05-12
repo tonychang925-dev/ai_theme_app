@@ -1,0 +1,41 @@
+{
+  "stock_id": "603882",
+  "stock_name": "金域医学",
+  "concept": "第三方医学检验",
+  "strategy_type": "industry_chain",
+  "must": [
+    "第三方医学检验",
+    "医学检验",
+    "病理诊断"
+  ],
+  "should": [
+    "体外诊断",
+    "人工智能诊断",
+    "43家医学实验室",
+    "远程病理协作网",
+    "覆盖全国90%以上人口",
+    "超过3,200项检测项目",
+    "年检测标本量超1.5亿例",
+    "超过23,000家医疗机构",
+    "美国CAP",
+    "ISO15189"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "第三方医学检验",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医学检验",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "病理诊断",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:58:02"
+}

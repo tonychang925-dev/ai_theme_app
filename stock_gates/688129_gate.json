@@ -1,0 +1,43 @@
+{
+  "stock_id": "688129",
+  "stock_name": "东来技术",
+  "concept": "高性能涂料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高性能涂料",
+    "汽车售后修补涂料",
+    "新车内外饰件及车身涂料",
+    "水性环保汽车涂料"
+  ],
+  "should": [
+    "3C消费电子领域涂料",
+    "紧凑型涂装工艺",
+    "颜色调配技术",
+    "高性能涂料研发",
+    "汽车主机厂原厂认证",
+    "供应商准入资格",
+    "一级供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高性能涂料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车售后修补涂料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新车内外饰件及车身涂料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水性环保汽车涂料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:09:16"
+}

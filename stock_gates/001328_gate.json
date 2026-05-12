@@ -1,0 +1,36 @@
+{
+  "stock_id": "001328",
+  "stock_name": "登康口腔",
+  "concept": "口腔护理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "成人牙膏",
+    "抗敏感牙膏技术"
+  ],
+  "should": [
+    "儿童牙膏",
+    "儿童牙刷",
+    "电动口腔护理产品",
+    "口腔医疗与美容护理产品",
+    "成人牙刷",
+    "口腔护理",
+    "产品结构升级",
+    "品牌整合营销",
+    "线下零售",
+    "B2B"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "成人牙膏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "抗敏感牙膏技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:16:37"
+}

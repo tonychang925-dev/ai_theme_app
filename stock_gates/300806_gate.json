@@ -1,0 +1,46 @@
+{
+  "stock_id": "300806",
+  "stock_name": "斯迪克",
+  "concept": "功能性涂层复合材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "功能性涂层复合材料",
+    "功能性薄膜材料",
+    "电子级胶粘材料",
+    "OCA光学胶"
+  ],
+  "should": [
+    "热管理复合材料",
+    "薄膜包装材料",
+    "高分子聚合材料",
+    "涂层材料",
+    "导电材料",
+    "胶水自制",
+    "PET膜自供",
+    "平板电脑",
+    "笔记本电脑",
+    "可穿戴设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "功能性涂层复合材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功能性薄膜材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子级胶粘材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "OCA光学胶",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:44:00"
+}

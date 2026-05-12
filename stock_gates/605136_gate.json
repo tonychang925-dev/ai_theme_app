@@ -1,0 +1,46 @@
+{
+  "stock_id": "605136",
+  "stock_name": "丽人丽妆",
+  "concept": "美妆电商运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "美妆电商运营",
+    "电商服务",
+    "营销推广",
+    "店铺运营"
+  ],
+  "should": [
+    "仓储物流",
+    "天猫",
+    "抖音",
+    "雪花秀",
+    "雅漾",
+    "后",
+    "施华蔻",
+    "芙丽芳丝",
+    "奥伦纳素",
+    "馥绿德雅"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "美妆电商运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电商服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "营销推广",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "店铺运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:02:16"
+}

@@ -1,0 +1,27 @@
+{
+  "stock_id": "603069",
+  "stock_name": "海汽集团",
+  "concept": "综合旅游",
+  "strategy_type": "industry_chain",
+  "must": [
+    "海旅免税"
+  ],
+  "should": [
+    "汽车客运",
+    "汽车场站商业开发与经营",
+    "汽车综合服务",
+    "综合旅游",
+    "收入爆发式增长",
+    "海旅免税城开业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "海旅免税",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:42:41"
+}

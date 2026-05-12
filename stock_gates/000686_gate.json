@@ -1,0 +1,41 @@
+{
+  "stock_id": "000686",
+  "stock_name": "东北证券",
+  "concept": "综合证券服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合证券服务",
+    "财富管理业务",
+    "投资银行业务"
+  ],
+  "should": [
+    "投资与销售交易业务",
+    "资产管理业务",
+    "中小创新企业投行",
+    "财富管理",
+    "全能型券商",
+    "财富客户",
+    "机构客户",
+    "企业客户",
+    "商业银行",
+    "上市公司"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合证券服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "财富管理业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资银行业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:00:46"
+}

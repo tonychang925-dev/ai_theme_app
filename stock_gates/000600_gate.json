@@ -1,0 +1,35 @@
+{
+  "stock_id": "000600",
+  "stock_name": "建投能源",
+  "concept": "河北火电龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "河北省最大独立发电公司",
+    "河北火电龙头",
+    "热电联产"
+  ],
+  "should": [
+    "独立发电",
+    "电力供应",
+    "民生供暖",
+    "煤电兜底保供"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "河北省最大独立发电公司",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "河北火电龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热电联产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:58:01"
+}

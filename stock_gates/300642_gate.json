@@ -1,0 +1,34 @@
+{
+  "stock_id": "300642",
+  "stock_name": "透景生命",
+  "concept": "体外诊断",
+  "strategy_type": "industry_chain",
+  "must": [
+    "免疫诊断",
+    "分子诊断"
+  ],
+  "should": [
+    "肿瘤标志物系列产品",
+    "HPV核酸分型检测系列产品",
+    "自身免疫检测产品",
+    "肿瘤甲基化检测",
+    "体外诊断",
+    "肿瘤诊断",
+    "传染病检测",
+    "高端临床诊断"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "免疫诊断",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分子诊断",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:36:44"
+}

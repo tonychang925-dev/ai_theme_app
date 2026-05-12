@@ -1,0 +1,24 @@
+{
+  "stock_id": "000708",
+  "stock_name": "中信特钢",
+  "concept": "高端特钢",
+  "strategy_type": "industry_chain",
+  "must": [],
+  "should": [
+    "合金钢棒材",
+    "特种中厚板材",
+    "特种无缝钢管",
+    "特冶锻造",
+    "合金钢线材",
+    "合金钢大圆坯",
+    "高端特钢",
+    "汽车零部件",
+    "机械工业",
+    "航空航天"
+  ],
+  "not": [],
+  "evidence_refs": [],
+  "quality": "weak",
+  "must_count": 0,
+  "generated_at": "2026-05-11T17:01:22"
+}

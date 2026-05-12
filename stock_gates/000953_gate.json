@@ -1,0 +1,36 @@
+{
+  "stock_id": "000953",
+  "stock_name": "河化股份",
+  "concept": "医药中间体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "氯喹侧链",
+    "羟基氯喹侧链"
+  ],
+  "should": [
+    "医药中间体",
+    "抗疟疾类中间体",
+    "孕激素类中间体",
+    "营养剂类中间体",
+    "合成路线",
+    "反应技术",
+    "工艺控制",
+    "磷酸氯喹生产",
+    "全球主要供应商",
+    "国内外知名药企合格供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "氯喹侧链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "羟基氯喹侧链",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:10:48"
+}

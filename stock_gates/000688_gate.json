@@ -1,0 +1,46 @@
+{
+  "stock_id": "000688",
+  "stock_name": "国城矿业",
+  "concept": "有色金属采选",
+  "strategy_type": "industry_chain",
+  "must": [
+    "有色金属采选",
+    "锌精矿",
+    "铅精矿",
+    "铜精矿"
+  ],
+  "should": [
+    "银精矿",
+    "硫精矿",
+    "硫铁粉",
+    "工业硫酸",
+    "次铁精矿",
+    "锂辉石矿",
+    "有色金属冶炼",
+    "铅蓄电池",
+    "电子",
+    "新能源汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "有色金属采选",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锌精矿",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铅精矿",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铜精矿",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:01:01"
+}

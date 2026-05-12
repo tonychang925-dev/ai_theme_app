@@ -1,0 +1,45 @@
+{
+  "stock_id": "600491",
+  "stock_name": "龙元建设",
+  "concept": "建筑总承包",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑总承包",
+    "建筑总包",
+    "基建投资",
+    "绿色建筑"
+  ],
+  "should": [
+    "钢结构装配式建筑",
+    "光伏建筑一体化(BIPV)",
+    "II代外墙板光伏一体化方案",
+    "房建",
+    "水利",
+    "市政",
+    "文旅项目",
+    "长租公寓",
+    "保障性住房"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑总承包",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑总包",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "基建投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "绿色建筑",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:19:13"
+}

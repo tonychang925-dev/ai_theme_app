@@ -1,0 +1,36 @@
+{
+  "stock_id": "688409",
+  "stock_name": "富创精密",
+  "concept": "半导体零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体零部件",
+    "工艺零部件"
+  ],
+  "should": [
+    "结构零部件",
+    "模组产品",
+    "气体管路",
+    "精密机械制造技术",
+    "表面处理特种工艺技术",
+    "焊接核心技术",
+    "刻蚀",
+    "薄膜沉积",
+    "涂胶显影",
+    "CMP"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工艺零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:17:56"
+}

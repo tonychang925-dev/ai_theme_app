@@ -1,0 +1,29 @@
+{
+  "stock_id": "002192",
+  "stock_name": "融捷股份",
+  "concept": "锂矿采选",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂矿采选"
+  ],
+  "should": [
+    "锂盐加工及冶炼",
+    "锂电设备制造",
+    "高品质锂矿资源",
+    "新能源汽车动力电池",
+    "储能电池",
+    "3C消费电子",
+    "国内在产产能最大的锂矿企业",
+    "比亚迪最大客户"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂矿采选",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:28:26"
+}

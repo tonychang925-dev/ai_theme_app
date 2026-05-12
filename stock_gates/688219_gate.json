@@ -1,0 +1,31 @@
+{
+  "stock_id": "688219",
+  "stock_name": "会通股份",
+  "concept": "高分子改性材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高分子改性材料"
+  ],
+  "should": [
+    "锂电池湿法隔离膜",
+    "高性能塑料及树脂制造",
+    "电池膜制造",
+    "汽车",
+    "光伏",
+    "家电",
+    "储能",
+    "通讯",
+    "电子电气",
+    "医疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高分子改性材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:12:13"
+}

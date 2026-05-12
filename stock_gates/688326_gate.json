@@ -1,0 +1,43 @@
+{
+  "stock_id": "688326",
+  "stock_name": "经纬恒润",
+  "concept": "智能网联汽车",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能网联汽车",
+    "智能驾驶",
+    "ADAS",
+    "智能网联"
+  ],
+  "should": [
+    "车身域控制器",
+    "T-BOX",
+    "网关",
+    "车身舒适",
+    "底盘控制",
+    "国内供应商第一梯队",
+    "打破国外垄断"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能网联汽车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能驾驶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ADAS",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能网联",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:15:31"
+}

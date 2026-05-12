@@ -1,0 +1,46 @@
+{
+  "stock_id": "600261",
+  "stock_name": "阳光照明",
+  "concept": "照明产品制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LED照明",
+    "节能灯",
+    "智能照明",
+    "自主品牌"
+  ],
+  "should": [
+    "太阳能灯具",
+    "工程灯具",
+    "智能技术",
+    "SAP系统",
+    "OEM产品",
+    "照明产品制造",
+    "自动化生产",
+    "精益化生产",
+    "商业照明",
+    "居家装饰"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED照明",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "节能灯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能照明",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自主品牌",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:13:20"
+}

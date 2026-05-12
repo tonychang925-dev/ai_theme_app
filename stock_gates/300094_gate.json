@@ -1,0 +1,36 @@
+{
+  "stock_id": "300094",
+  "stock_name": "国联水产",
+  "concept": "水产预制菜",
+  "strategy_type": "industry_chain",
+  "must": [
+    "预制菜",
+    "水产预制菜",
+    "食品加工"
+  ],
+  "should": [
+    "精深加工及预制菜品",
+    "水产初加工类",
+    "全球海产精选类",
+    "产业链优势",
+    "供应链完善"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "预制菜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水产预制菜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "食品加工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:12:57"
+}

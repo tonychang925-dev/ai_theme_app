@@ -1,0 +1,41 @@
+{
+  "stock_id": "600829",
+  "stock_name": "人民同泰",
+  "concept": "医药流通龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "葡萄糖酸钙",
+    "酸锌",
+    "双黄连口服液"
+  ],
+  "should": [
+    "医药批发",
+    "医药零售",
+    "物流配送",
+    "DTP专业药房",
+    "医药流通龙头",
+    "医疗分销",
+    "商业调拨",
+    "双通道资格门店",
+    "国家大型制药公司",
+    "行业龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "葡萄糖酸钙",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "酸锌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "双黄连口服液",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:28:57"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "001376",
+  "stock_name": "百通能源",
+  "concept": "工业园区集中供热",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业园区集中供热",
+    "热电联产"
+  ],
+  "should": [
+    "集中供热",
+    "热电联产装置",
+    "工业园区",
+    "化工",
+    "冶金",
+    "造纸",
+    "印染",
+    "食品",
+    "医药",
+    "节能减排"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业园区集中供热",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热电联产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:17:24"
+}

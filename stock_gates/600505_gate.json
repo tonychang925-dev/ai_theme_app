@@ -1,0 +1,36 @@
+{
+  "stock_id": "600505",
+  "stock_name": "西昌电力",
+  "concept": "小水电企业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "小水电企业",
+    "水力发电",
+    "发电"
+  ],
+  "should": [
+    "售电",
+    "输配电",
+    "光伏发电",
+    "凉山州",
+    "清洁能源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "小水电企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水力发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:19:36"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "605228",
+  "stock_name": "神通科技",
+  "concept": "汽车非金属部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车非金属部件",
+    "动力系统零部件",
+    "饰件系统零部件",
+    "模具类产品",
+    "光学镜片"
+  ],
+  "should": [
+    "注塑成型",
+    "双色注塑",
+    "低压注塑",
+    "气辅注塑",
+    "高光注塑",
+    "热板焊接",
+    "热铆焊接",
+    "超声波焊接",
+    "激光焊接",
+    "PC表面硬质光学级涂层技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车非金属部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动力系统零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "饰件系统零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "模具类产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光学镜片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:03:06"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "300862",
+  "stock_name": "蓝盾光电",
+  "concept": "高端分析测量仪器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端分析测量仪器",
+    "测速系列产品"
+  ],
+  "should": [
+    "空气质量监测系列产品",
+    "烟气污染源监测系列产品",
+    "颗粒物监测系列产品",
+    "激光雷达系列产品",
+    "FTIR系列产品",
+    "TDLAS系列产品",
+    "水质在线监测系列产品",
+    "大气环境综合立体走航监测系统",
+    "智能摄像机",
+    "信息发布设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端分析测量仪器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "测速系列产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:46:38"
+}

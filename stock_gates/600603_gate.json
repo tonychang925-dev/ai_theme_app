@@ -1,0 +1,40 @@
+{
+  "stock_id": "600603",
+  "stock_name": "广汇物流",
+  "concept": "供应链物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "现代物流",
+    "供应链物流",
+    "能源物流"
+  ],
+  "should": [
+    "商贸物流",
+    "冷链物流",
+    "红淖铁路",
+    "将淖铁路",
+    "新疆",
+    "一带一路",
+    "丝绸之路核心经济腹地",
+    "煤炭外运",
+    "煤化工产业链运输"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "现代物流",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "供应链物流",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "能源物流",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:22:34"
+}

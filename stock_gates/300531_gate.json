@@ -1,0 +1,41 @@
+{
+  "stock_id": "300531",
+  "stock_name": "优博讯",
+  "concept": "移动智能终端",
+  "strategy_type": "industry_chain",
+  "must": [
+    "物联网(IoT)",
+    "智能数据终端(PDA)",
+    "全球领先的AIDC厂商"
+  ],
+  "should": [
+    "移动智能终端",
+    "专用打印机",
+    "智能自动化装备",
+    "IoT解决方案提供商",
+    "机器视觉",
+    "5G",
+    "云计算",
+    "物流快递",
+    "电子商务",
+    "零售和服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "物联网(IoT)",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能数据终端(PDA)",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球领先的AIDC厂商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:31:32"
+}

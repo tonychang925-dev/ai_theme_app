@@ -1,0 +1,31 @@
+{
+  "stock_id": "600919",
+  "stock_name": "江苏银行",
+  "concept": "区域银行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "税e融"
+  ],
+  "should": [
+    "G60科创贷",
+    "冠军贷",
+    "先进制造贷",
+    "昆链贷",
+    "对公业务",
+    "零售业务",
+    "财富管理",
+    "智慧化",
+    "数智化转型",
+    "大数据"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "税e融",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:31:13"
+}

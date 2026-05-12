@@ -1,0 +1,45 @@
+{
+  "stock_id": "603082",
+  "stock_name": "北自科技",
+  "concept": "智能物流系统集成",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能物流系统集成",
+    "智能仓储物流系统",
+    "智能生产物流系统",
+    "智能物流装备"
+  ],
+  "should": [
+    "智能物流软件",
+    "仓储物流系统集成",
+    "中国机械总院旗下",
+    "中国物流仓储系统集成商竞争力前三",
+    "制造业单项冠军示范企业",
+    "控制、软件系统开发",
+    "机器人",
+    "机器视觉",
+    "智能控制算法"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能物流系统集成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能仓储物流系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能生产物流系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能物流装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:43:12"
+}

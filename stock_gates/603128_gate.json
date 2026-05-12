@@ -1,0 +1,41 @@
+{
+  "stock_id": "603128",
+  "stock_name": "华贸物流",
+  "concept": "跨境综合物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "跨境综合物流",
+    "国际空海综合物流",
+    "跨境电商物流"
+  ],
+  "should": [
+    "特种物流",
+    "仓储物流",
+    "工程物流",
+    "前端揽收",
+    "关务",
+    "海外段尾程服务",
+    "地面收集",
+    "安全检测",
+    "分拨",
+    "包装"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "跨境综合物流",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国际空海综合物流",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "跨境电商物流",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:44:43"
+}

@@ -1,0 +1,43 @@
+{
+  "stock_id": "002105",
+  "stock_name": "信隆健康",
+  "concept": "自行车零配件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "自行车零配件",
+    "自行车车把",
+    "立管",
+    "避震前叉"
+  ],
+  "should": [
+    "共享单车",
+    "中高阶运动自行车",
+    "电动助力自行车",
+    "货运自行车",
+    "青少年车",
+    "电动助力自行车需求增长",
+    "中低阶传统自行车市场饱和"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "自行车零配件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自行车车把",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "立管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "避震前叉",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:23:26"
+}

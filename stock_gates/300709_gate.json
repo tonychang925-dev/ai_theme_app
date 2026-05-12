@@ -1,0 +1,25 @@
+{
+  "stock_id": "300709",
+  "stock_name": "精研科技",
+  "concept": "精密制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "MIM零部件及组件"
+  ],
+  "should": [
+    "精密塑胶零部件及组件",
+    "传动组件",
+    "散热部品",
+    "上游"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "MIM零部件及组件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:39:49"
+}

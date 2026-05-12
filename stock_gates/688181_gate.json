@@ -1,0 +1,46 @@
+{
+  "stock_id": "688181",
+  "stock_name": "八亿时空",
+  "concept": "电子材料平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "液晶材料",
+    "显示材料",
+    "半导体材料",
+    "新能源材料"
+  ],
+  "should": [
+    "高级医药中间体及原料药",
+    "KrF光刻胶用PHS树脂",
+    "光敏聚酰亚胺（PSPI）",
+    "六氟磷酸锂",
+    "PHS树脂量产技术",
+    "液晶面板",
+    "半导体光刻胶",
+    "新能源电池",
+    "电子材料平台",
+    "国际先进水平"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "液晶材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "显示材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:11:01"
+}

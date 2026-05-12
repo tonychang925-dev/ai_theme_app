@@ -1,0 +1,31 @@
+{
+  "stock_id": "300856",
+  "stock_name": "科思股份",
+  "concept": "防晒品原料制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "防晒品原料制造"
+  ],
+  "should": [
+    "阿伏苯宗",
+    "奥克立林",
+    "甲氧基苯乙酮",
+    "铃兰醛",
+    "对叔丁基苯甲醛",
+    "维生素C磷酸酯钠",
+    "全球主要化学防晒剂制造商",
+    "合成香料主要生产商",
+    "通过美国FDA审核",
+    "通过欧盟化妆品原料规范认证"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "防晒品原料制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:46:12"
+}

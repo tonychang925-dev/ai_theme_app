@@ -1,0 +1,37 @@
+{
+  "stock_id": "002085",
+  "stock_name": "万丰奥威",
+  "concept": "轻量化部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "镁合金深加工",
+    "铝合金轮毂",
+    "镁合金深加工产品"
+  ],
+  "should": [
+    "通航飞机",
+    "轻量化部件",
+    "轻量化技术",
+    "铝合金车轮制造",
+    "全球最大生产基地",
+    "细分行业龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "镁合金深加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铝合金轮毂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "镁合金深加工产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:22:23"
+}

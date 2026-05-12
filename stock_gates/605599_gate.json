@@ -1,0 +1,51 @@
+{
+  "stock_id": "605599",
+  "stock_name": "菜百股份",
+  "concept": "黄金珠宝零售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "黄金饰品",
+    "贵金属投资产品",
+    "贵金属文化产品",
+    "钻翠珠宝饰品",
+    "线下直营门店"
+  ],
+  "should": [
+    "银行渠道",
+    "直播与私域运营",
+    "菜百传世",
+    "菜百悦时光",
+    "珠宝博物馆",
+    "非遗体验基地",
+    "黄金珠宝零售",
+    "自主设计研发",
+    "平台化研发体系",
+    "系列产品线"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "黄金饰品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "贵金属投资产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "贵金属文化产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钻翠珠宝饰品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "线下直营门店",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:04:52"
+}

@@ -1,0 +1,45 @@
+{
+  "stock_id": "600926",
+  "stock_name": "杭州银行",
+  "concept": "科技文创金融",
+  "strategy_type": "industry_chain",
+  "must": [
+    "科技文创金融",
+    "绿色金融",
+    "新型智慧银行"
+  ],
+  "should": [
+    "二二五五战略",
+    "营业收入",
+    "净利润",
+    "利息净收入",
+    "净资产收益率",
+    "基本每股收益",
+    "资产总额",
+    "贷款总额",
+    "存款总额",
+    "理财产品余额"
+  ],
+  "not": [
+    "不良贷款率",
+    "逾期贷款与不良贷款比例",
+    "拨备覆盖率"
+  ],
+  "evidence_refs": [
+    {
+      "term": "科技文创金融",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "绿色金融",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新型智慧银行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:31:16"
+}

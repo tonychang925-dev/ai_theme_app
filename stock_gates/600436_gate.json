@@ -1,0 +1,31 @@
+{
+  "stock_id": "600436",
+  "stock_name": "片仔癀",
+  "concept": "国宝名药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "片仔癀"
+  ],
+  "should": [
+    "阿哌沙班片",
+    "地氯雷他定口服溶液",
+    "温胆片",
+    "国宝名药",
+    "中药现代化",
+    "中药国际化",
+    "新药研发",
+    "肝病",
+    "肿瘤",
+    "炎症"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "片仔癀",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:17:52"
+}

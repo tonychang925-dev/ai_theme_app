@@ -1,0 +1,41 @@
+{
+  "stock_id": "605080",
+  "stock_name": "浙江自然",
+  "concept": "户外用品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "充气床垫",
+    "户外箱包",
+    "聚氨酯软泡发泡技术"
+  ],
+  "should": [
+    "头枕坐垫",
+    "高周波熔接技术",
+    "热压熔接技术",
+    "户外用品",
+    "户外露营",
+    "医疗器材",
+    "健身器材",
+    "箱包",
+    "充气产品",
+    "垂直一体化产业链"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "充气床垫",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "户外箱包",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚氨酯软泡发泡技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:01:37"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "600665",
+  "stock_name": "天地源",
+  "concept": "西安高新区房企",
+  "strategy_type": "industry_chain",
+  "must": [
+    "西安高新区下属国有房企",
+    "战略聚焦西安高新区",
+    "西安高新区房企"
+  ],
+  "should": [
+    "高新区中央创新区地块",
+    "西安",
+    "西安土储占比55%",
+    "长三角",
+    "珠三角",
+    "京津冀",
+    "高新区GDP占西安28.24%",
+    "高新区新房成交均价2.3万元/㎡",
+    "高新区新房成交额占比26%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "西安高新区下属国有房企",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "战略聚焦西安高新区",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "西安高新区房企",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:24:21"
+}

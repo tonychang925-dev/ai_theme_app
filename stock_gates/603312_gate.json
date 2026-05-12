@@ -1,0 +1,36 @@
+{
+  "stock_id": "603312",
+  "stock_name": "西典新能",
+  "concept": "电池连接系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电池连接系统",
+    "电控母排"
+  ],
+  "should": [
+    "工业电气母排",
+    "FFC热压技术",
+    "FPC直焊技术",
+    "自研动力电池连接系统柔性生产线",
+    "新能源汽车",
+    "电化学储能",
+    "轨道交通",
+    "工业变频",
+    "新能源发电",
+    "配套宜宾宁德时代基地"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电池连接系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电控母排",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:48:43"
+}

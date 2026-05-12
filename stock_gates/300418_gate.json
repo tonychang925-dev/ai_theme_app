@@ -1,0 +1,51 @@
+{
+  "stock_id": "300418",
+  "stock_name": "昆仑万维",
+  "concept": "人工智能应用",
+  "strategy_type": "industry_chain",
+  "must": [
+    "AI大模型",
+    "天工系列大模型",
+    "AI搜索",
+    "AI短剧",
+    "AI音乐"
+  ],
+  "should": [
+    "AI游戏",
+    "混合专家模型(MoE)架构",
+    "SkyReels视频大模型",
+    "天工AI搜索",
+    "天工AI智能助手",
+    "人工智能应用",
+    "实时语音交互系统",
+    "多模态技术",
+    "复杂任务处理",
+    "多模态交互"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "AI大模型",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天工系列大模型",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AI搜索",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AI短剧",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AI音乐",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:26:35"
+}

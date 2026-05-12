@@ -1,0 +1,35 @@
+{
+  "stock_id": "603477",
+  "stock_name": "巨星农牧",
+  "concept": "生猪养殖",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生猪养殖",
+    "种猪"
+  ],
+  "should": [
+    "肥猪",
+    "仔猪",
+    "饲料生产",
+    "皮革制造与销售",
+    "肉鸡养殖",
+    "公司+农户",
+    "自繁自育",
+    "川渝地区种猪龙头",
+    "Pipestone合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生猪养殖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "种猪",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:51:09"
+}

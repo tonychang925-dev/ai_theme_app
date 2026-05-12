@@ -1,0 +1,42 @@
+{
+  "stock_id": "002127",
+  "stock_name": "南极电商",
+  "concept": "品牌授权服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "品牌授权服务",
+    "品牌授权",
+    "电商生态综合服务",
+    "品牌综合服务"
+  ],
+  "should": [
+    "阿里平台",
+    "拼多多平台",
+    "抖音&快手平台",
+    "京东平台",
+    "唯品会平台",
+    "移动互联网媒体投放平台业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "品牌授权服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "品牌授权",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电商生态综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "品牌综合服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:24:38"
+}

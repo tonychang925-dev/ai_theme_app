@@ -1,0 +1,40 @@
+{
+  "stock_id": "002948",
+  "stock_name": "青岛银行",
+  "concept": "区域银行服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "信贷投放",
+    "青岛",
+    "山东"
+  ],
+  "should": [
+    "财富管理",
+    "零售贷款",
+    "个人消费贷款",
+    "信用卡",
+    "零售AUM",
+    "青银理财",
+    "区域银行服务",
+    "净息差",
+    "资产质量"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "信贷投放",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "青岛",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "山东",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:04:28"
+}

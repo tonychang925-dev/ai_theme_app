@@ -1,0 +1,36 @@
+{
+  "stock_id": "688114",
+  "stock_name": "华大智造",
+  "concept": "基因测序仪",
+  "strategy_type": "industry_chain",
+  "must": [
+    "基因测序仪",
+    "高通量测序技术"
+  ],
+  "should": [
+    "基因测序仪及配套设备",
+    "测序配套试剂",
+    "数据处理系统",
+    "自动化样本处理系统",
+    "实验室自动化流水线",
+    "样本处理试剂耗材",
+    "单细胞文库制备技术",
+    "远程超声机器人技术",
+    "基因测序",
+    "新冠病毒核酸检测"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "基因测序仪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高通量测序技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:08:55"
+}

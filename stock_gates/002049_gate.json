@@ -1,0 +1,51 @@
+{
+  "stock_id": "002049",
+  "stock_name": "紫光国微",
+  "concept": "特种集成电路",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种集成电路",
+    "智能安全芯片",
+    "FPGA技术",
+    "特种集成电路领域领军企业",
+    "国产高端MCU标杆产品"
+  ],
+  "should": [
+    "高性能微处理器",
+    "高性能可编程器件",
+    "存储类器件",
+    "总线器件",
+    "网络总线及接口",
+    "模拟器件",
+    "SoPC系统器件",
+    "定制芯片",
+    "石英晶体频率器件",
+    "主控芯片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种集成电路",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能安全芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "FPGA技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种集成电路领域领军企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国产高端MCU标杆产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:20:26"
+}

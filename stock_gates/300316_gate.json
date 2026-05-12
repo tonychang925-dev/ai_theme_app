@@ -1,0 +1,51 @@
+{
+  "stock_id": "300316",
+  "stock_name": "晶盛机电",
+  "concept": "光伏半导体设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "长晶炉",
+    "光伏半导体设备",
+    "光伏硅片",
+    "半导体晶圆",
+    "碳化硅功率器件"
+  ],
+  "should": [
+    "切磨复合加工一体机",
+    "晶棒单线截断/开方机",
+    "切片机",
+    "叠瓦自动化生产线",
+    "智慧物流车间",
+    "石英坩埚",
+    "金刚线",
+    "半导体阀门",
+    "磁流体",
+    "碳化硅外延设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "长晶炉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏半导体设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏硅片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体晶圆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳化硅功率器件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:22:25"
+}

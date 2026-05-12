@@ -1,0 +1,31 @@
+{
+  "stock_id": "603102",
+  "stock_name": "百合股份",
+  "concept": "营养保健食品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "营养保健食品"
+  ],
+  "should": [
+    "软胶囊",
+    "硬胶囊",
+    "片剂",
+    "粉剂",
+    "口服液",
+    "滴剂",
+    "瓶装饮品",
+    "袋装饮品",
+    "自主创新",
+    "保健食品备案凭证"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "营养保健食品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:43:46"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "688671",
+  "stock_name": "碧兴物联",
+  "concept": "智慧监测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧监测",
+    "水质监测仪器及系统",
+    "智能感知设备",
+    "重金属水质自动在线监测仪"
+  ],
+  "should": [
+    "数据采集与传输设备",
+    "数据融合设备",
+    "数据分析与应用平台",
+    "环境噪声自动监测仪",
+    "数字农业监测产品",
+    "公安大数据产品",
+    "智能图像识别",
+    "声纹识别",
+    "公共安全大数据",
+    "数字水利"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧监测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水质监测仪器及系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能感知设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重金属水质自动在线监测仪",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:23:45"
+}

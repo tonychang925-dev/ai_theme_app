@@ -1,0 +1,36 @@
+{
+  "stock_id": "002072",
+  "stock_name": "凯瑞德",
+  "concept": "煤炭贸易",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤炭贸易",
+    "自营模式"
+  ],
+  "should": [
+    "代理模式",
+    "焦炭",
+    "焦沫",
+    "煤炭制品",
+    "高硫煤",
+    "中硫煤",
+    "低硫煤",
+    "大型国企",
+    "上市公司下属企业",
+    "焦煤厂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤炭贸易",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自营模式",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:21:34"
+}

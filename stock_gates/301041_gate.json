@@ -1,0 +1,40 @@
+{
+  "stock_id": "301041",
+  "stock_name": "金百泽",
+  "concept": "电子硬件创新服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "印制电路板（PCB）",
+    "电子制造服务（EMS）",
+    "国家专精特新小巨人企业"
+  ],
+  "should": [
+    "电子互联技术",
+    "工业互联网平台",
+    "电子硬件创新服务",
+    "可靠性检测服务",
+    "柔性化制造体系",
+    "一站式产品集成服务",
+    "5G应用",
+    "物联网",
+    "内资PCB企业第54位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "印制电路板（PCB）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子制造服务（EMS）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国家专精特新小巨人企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:54:23"
+}

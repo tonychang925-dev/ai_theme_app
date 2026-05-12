@@ -1,0 +1,36 @@
+{
+  "stock_id": "300374",
+  "stock_name": "中铁装配",
+  "concept": "装配式建筑",
+  "strategy_type": "industry_chain",
+  "must": [
+    "装配式建筑部品部件",
+    "集成房屋"
+  ],
+  "should": [
+    "集成产品",
+    "新型墙体材料",
+    "建筑结构材料",
+    "室内外装饰材料",
+    "园林景观材料",
+    "自主研发的材料配方",
+    "模数化设计",
+    "工厂化标准化生产",
+    "装配式建筑",
+    "公寓住宅"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "装配式建筑部品部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集成房屋",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:24:29"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "301413",
+  "stock_name": "安培龙",
+  "concept": "热敏电阻与传感器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "热敏电阻与传感器",
+    "热敏电阻",
+    "温度传感器",
+    "压力传感器",
+    "国家级专精特新小巨人"
+  ],
+  "should": [
+    "氧传感器",
+    "敏感元件制造",
+    "比亚迪供应商",
+    "美的供应商",
+    "陶瓷热敏电阻工艺",
+    "玻璃封装工艺",
+    "转换电路设计",
+    "嵌入式软件算法",
+    "物联网",
+    "人工智能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "热敏电阻与传感器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热敏电阻",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "温度传感器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "压力传感器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国家级专精特新小巨人",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:05:01"
+}

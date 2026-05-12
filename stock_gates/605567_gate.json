@@ -1,0 +1,33 @@
+{
+  "stock_id": "605567",
+  "stock_name": "春雪食品",
+  "concept": "鸡肉深加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "鸡肉调理品（预制菜）",
+    "鸡肉深加工"
+  ],
+  "should": [
+    "生鲜品",
+    "电商",
+    "商超",
+    "便利店",
+    "餐饮",
+    "流通",
+    "产业链集约化系统管控"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "鸡肉调理品（预制菜）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "鸡肉深加工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:04:33"
+}

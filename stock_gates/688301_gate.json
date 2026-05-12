@@ -1,0 +1,46 @@
+{
+  "stock_id": "688301",
+  "stock_name": "奕瑞科技",
+  "concept": "X线探测器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "X线探测器",
+    "数字化X线探测器",
+    "平板探测器",
+    "影像链核心部件"
+  ],
+  "should": [
+    "非晶硅",
+    "IGZO",
+    "CMOS",
+    "柔性基板",
+    "线阵探测器",
+    "CT探测器",
+    "主控芯片",
+    "稀土陶瓷晶体闪烁材料",
+    "固件开发",
+    "齿科"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "X线探测器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字化X线探测器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "平板探测器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "影像链核心部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:14:46"
+}

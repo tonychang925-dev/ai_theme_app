@@ -1,0 +1,40 @@
+{
+  "stock_id": "000802",
+  "stock_name": "北京文化",
+  "concept": "影视娱乐传媒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "影视娱乐传媒",
+    "电影",
+    "电视剧网剧"
+  ],
+  "should": [
+    "艺人经纪",
+    "文化旅游",
+    "投资",
+    "制作",
+    "营销",
+    "发行",
+    "销售",
+    "完整产业链",
+    "管理流程体系"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "影视娱乐传媒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电影",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电视剧网剧",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:05:23"
+}

@@ -1,0 +1,39 @@
+{
+  "stock_id": "600961",
+  "stock_name": "株冶集团",
+  "concept": "锌冶炼龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锌冶炼龙头",
+    "锌锭",
+    "锌合金"
+  ],
+  "should": [
+    "锌铝镁合金",
+    "湿法炼锌",
+    "锌冶炼智能工厂",
+    "工业废水零排放",
+    "汽车板",
+    "国内锌冶炼产能首位",
+    "全球第九大锌冶炼生产企业",
+    "火炬牌锌合金市场占有率第一梯队"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锌冶炼龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锌锭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锌合金",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:31:44"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "688663",
+  "stock_name": "新风光",
+  "concept": "电力电子节能控制",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高压动态无功补偿装置",
+    "高中低压变频器",
+    "智慧储能系统装置"
+  ],
+  "should": [
+    "轨道交通能量回馈装置",
+    "煤矿防爆和智能控制装备",
+    "高压级联PCS技术",
+    "电磁轴承控制系统",
+    "超导储能逆变器技术",
+    "电力电子节能控制",
+    "新能源发电",
+    "城市轨道交通",
+    "冶金",
+    "电力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高压动态无功补偿装置",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高中低压变频器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧储能系统装置",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:23:26"
+}

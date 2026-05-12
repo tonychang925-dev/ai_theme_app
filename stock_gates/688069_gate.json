@@ -1,0 +1,49 @@
+{
+  "stock_id": "688069",
+  "stock_name": "德林海",
+  "concept": "湖库蓝藻治理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "湖库蓝藻治理",
+    "蓝藻治理技术装备集成",
+    "蓝藻治理运行维护",
+    "深潜式高压灭藻成套装备",
+    "富营养化湖库内源治理"
+  ],
+  "should": [
+    "干泥法清淤整装成套技术",
+    "生物质资源化利用",
+    "底泥治理",
+    "治理服务",
+    "水源地水质安全保障",
+    "调查诊断",
+    "水质提升",
+    "生态修复"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "湖库蓝藻治理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蓝藻治理技术装备集成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蓝藻治理运行维护",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "深潜式高压灭藻成套装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "富营养化湖库内源治理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:07:09"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "300585",
+  "stock_name": "奥联电子",
+  "concept": "汽车电子控制",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子油门踏板总成",
+    "动力电子控制",
+    "新能源系统控制",
+    "钙钛矿太阳能电池生产线",
+    "车身电子控制"
+  ],
+  "should": [
+    "换挡控制器",
+    "整车控制器",
+    "电池管理系统",
+    "多合一控制器",
+    "电子节气门",
+    "低温启动装置",
+    "电磁螺线管",
+    "尿素加热管",
+    "车用空调控制器",
+    "汽车内后视镜"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子油门踏板总成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动力电子控制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源系统控制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钙钛矿太阳能电池生产线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车身电子控制",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:33:58"
+}

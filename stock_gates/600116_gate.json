@@ -1,0 +1,41 @@
+{
+  "stock_id": "600116",
+  "stock_name": "三峡水利",
+  "concept": "综合能源服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "配售电",
+    "综合能源服务",
+    "综合能源"
+  ],
+  "should": [
+    "储能",
+    "市场化售电",
+    "电动重卡",
+    "燃气发电",
+    "风力发电",
+    "热电联产",
+    "园区综合能源",
+    "用户侧储能",
+    "独立储能电站",
+    "电动重卡充换储用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "配售电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合能源服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合能源",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:09:34"
+}

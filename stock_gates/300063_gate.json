@@ -1,0 +1,47 @@
+{
+  "stock_id": "300063",
+  "stock_name": "天龙集团",
+  "concept": "互联网营销与精细化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "互联网营销",
+    "林产化工",
+    "油墨化工"
+  ],
+  "should": [
+    "媒介代理服务",
+    "品牌营销服务",
+    "信息流广告",
+    "搜索引擎广告",
+    "手机厂商广告",
+    "松节油深加工产品",
+    "松香深加工产品",
+    "水性油墨",
+    "环保型溶剂油墨",
+    "水性固体丙烯酸树脂"
+  ],
+  "not": [
+    "清洗剂",
+    "消毒剂",
+    "汽车轮胎",
+    "游戏",
+    "网络服务"
+  ],
+  "evidence_refs": [
+    {
+      "term": "互联网营销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "林产化工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "油墨化工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:11:48"
+}

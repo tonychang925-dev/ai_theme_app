@@ -1,0 +1,46 @@
+{
+  "stock_id": "000733",
+  "stock_name": "振华科技",
+  "concept": "军用电子元器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "军用电子元器件",
+    "IGBT芯片",
+    "军用钽电容核心供应商",
+    "国内军用片式电阻器龙头"
+  ],
+  "should": [
+    "片式钽电容器",
+    "片式电阻器",
+    "片式电感器",
+    "片式二极管",
+    "片式三极管",
+    "厚膜混合集成电路",
+    "高压真空开关管",
+    "国内军用片式电感器主力生产厂家",
+    "军用IGBT主要供应商",
+    "第6代IGBT国产化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "军用电子元器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IGBT芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "军用钽电容核心供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内军用片式电阻器龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:02:54"
+}

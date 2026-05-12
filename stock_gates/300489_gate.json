@@ -1,0 +1,45 @@
+{
+  "stock_id": "300489",
+  "stock_name": "光智科技",
+  "concept": "红外光学与激光",
+  "strategy_type": "industry_chain",
+  "must": [
+    "红外光学与激光",
+    "锗产品",
+    "硒化锌产品",
+    "红外镜头"
+  ],
+  "should": [
+    "高性能铝合金材料",
+    "晶体生长技术",
+    "硒化锌生产技术",
+    "镀膜技术",
+    "光机电学设计优化和分析技术",
+    "探测器生产技术",
+    "规模化生产镜片模压技术",
+    "红外锗镜头",
+    "热成像仪与夜视仪"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "红外光学与激光",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锗产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硒化锌产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "红外镜头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:29:40"
+}

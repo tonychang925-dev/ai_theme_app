@@ -1,0 +1,31 @@
+{
+  "stock_id": "002246",
+  "stock_name": "北化股份",
+  "concept": "硝化棉及防护装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "硝化棉系列产品"
+  ],
+  "should": [
+    "活性炭系列产品",
+    "渣浆泵系列产品",
+    "高效催化反应技术",
+    "催化新材料及催化剂制备共性技术",
+    "核心材料铸造技术",
+    "国防武器装备",
+    "涂料",
+    "油墨",
+    "赛璐璐制品",
+    "烟气脱硫"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "硝化棉系列产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:31:35"
+}

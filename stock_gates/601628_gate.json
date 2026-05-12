@@ -1,0 +1,41 @@
+{
+  "stock_id": "601628",
+  "stock_name": "中国人寿",
+  "concept": "寿险龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "寿险龙头",
+    "人身险",
+    "寿险"
+  ],
+  "should": [
+    "重振国寿",
+    "鼎新工程",
+    "一体多元",
+    "众鑫计划",
+    "保险+服务",
+    "大健康",
+    "大养老",
+    "权益类投资",
+    "债权类投资",
+    "市占率第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "寿险龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人身险",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "寿险",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:37:39"
+}

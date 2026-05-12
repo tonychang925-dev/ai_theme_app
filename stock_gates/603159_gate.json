@@ -1,0 +1,40 @@
+{
+  "stock_id": "603159",
+  "stock_name": "上海亚虹",
+  "concept": "精密模具制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密模具制造",
+    "精密注塑模具",
+    "注塑件"
+  ],
+  "should": [
+    "汽车电子产品SMT产品",
+    "精密塑料模具研发",
+    "模具设计",
+    "汽车零部件",
+    "家用电器",
+    "制造技术",
+    "质量管理体系",
+    "汽车产业链一环",
+    "一级供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密模具制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密注塑模具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "注塑件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:45:01"
+}

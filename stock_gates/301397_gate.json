@@ -1,0 +1,46 @@
+{
+  "stock_id": "301397",
+  "stock_name": "溯联股份",
+  "concept": "汽车流体管路",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车流体管路",
+    "新能源热管理系统管路总成",
+    "汽车燃油管路总成",
+    "汽车蒸发排放管路总成"
+  ],
+  "should": [
+    "汽车真空制动管路总成",
+    "汽车流体控制件及紧固件",
+    "宁德时代",
+    "上汽通用五菱",
+    "上汽通用",
+    "长安福特",
+    "快速接头",
+    "控制阀",
+    "管卡",
+    "管夹"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车流体管路",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源热管理系统管路总成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车燃油管路总成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车蒸发排放管路总成",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:04:51"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "002084",
+  "stock_name": "海鸥住工",
+  "concept": "装配式整装厨卫",
+  "strategy_type": "industry_chain",
+  "must": [
+    "装配式整装厨卫",
+    "五金龙头类产品",
+    "装配式整装业务"
+  ],
+  "should": [
+    "高档卫生洁具",
+    "智能家居类产品",
+    "新型高科技材料",
+    "工厂标准化生产",
+    "节水",
+    "系统集成",
+    "物联网科技",
+    "越南制造优势",
+    "一地设计多地制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "装配式整装厨卫",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "五金龙头类产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "装配式整装业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:22:26"
+}

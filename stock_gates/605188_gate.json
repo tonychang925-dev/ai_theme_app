@@ -1,0 +1,41 @@
+{
+  "stock_id": "605188",
+  "stock_name": "国光连锁",
+  "concept": "连锁超市百货",
+  "strategy_type": "industry_chain",
+  "must": [
+    "连锁超市运营",
+    "百货商场运营",
+    "生鲜"
+  ],
+  "should": [
+    "食品",
+    "连锁超市百货",
+    "普通仓储",
+    "生鲜商品仓储",
+    "低温冷链商品仓储",
+    "加工存储",
+    "门店配送",
+    "区域密集布局",
+    "品牌美誉度",
+    "高比例自有物业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "连锁超市运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "百货商场运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生鲜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:02:47"
+}

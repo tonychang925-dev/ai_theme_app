@@ -1,0 +1,41 @@
+{
+  "stock_id": "600889",
+  "stock_name": "南京化纤",
+  "concept": "粘胶纤维生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "粘胶纤维生产",
+    "粘胶短纤",
+    "莱赛尔纤维",
+    "莱赛尔项目"
+  ],
+  "should": [
+    "PET发泡材料",
+    "新材料研究院",
+    "刮膜蒸发器",
+    "管道反应器",
+    "综合实力居于同行前列"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "粘胶纤维生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "粘胶短纤",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "莱赛尔纤维",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "莱赛尔项目",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:30:38"
+}

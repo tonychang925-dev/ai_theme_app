@@ -1,0 +1,51 @@
+{
+  "stock_id": "002167",
+  "stock_name": "东方锆业",
+  "concept": "锆系列制品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锆系列制品",
+    "氯氧化锆",
+    "二氧化锆",
+    "复合氧化锆",
+    "氧化锆陶瓷结构件"
+  ],
+  "should": [
+    "硅酸锆",
+    "钛精矿",
+    "独居石",
+    "高纯超细二氧化锆",
+    "宝石级二氧化锆",
+    "高纯氯氧化锆",
+    "超微细硅酸锆",
+    "高性能复合氧化锆",
+    "纳米氧化锆",
+    "氧化锆结构件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锆系列制品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氯氧化锆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "二氧化锆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复合氧化锆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氧化锆陶瓷结构件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:27:20"
+}

@@ -1,0 +1,34 @@
+{
+  "stock_id": "301048",
+  "stock_name": "金鹰重工",
+  "concept": "轨道工程装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轨道工程装备",
+    "大型养路机械"
+  ],
+  "should": [
+    "接触网作业车",
+    "轨道车辆",
+    "主控芯片",
+    "技术引进-消化吸收-国产化再创新",
+    "固件开发",
+    "铁路线路维护",
+    "高速铁路养护",
+    "电气化铁路接触网施工与维修"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轨道工程装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大型养路机械",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:54:34"
+}

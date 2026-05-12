@@ -1,0 +1,31 @@
+{
+  "stock_id": "002541",
+  "stock_name": "鸿路钢构",
+  "concept": "钢结构龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钢结构龙头"
+  ],
+  "should": [
+    "重钢",
+    "轻钢",
+    "市政类基建",
+    "大型制造业",
+    "新能源产业链",
+    "国家重点基建",
+    "规模效应",
+    "高附加值项目",
+    "大额订单占比提升",
+    "融资成本下降"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钢结构龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:46:16"
+}

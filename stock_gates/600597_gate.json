@@ -1,0 +1,46 @@
+{
+  "stock_id": "600597",
+  "stock_name": "光明乳业",
+  "concept": "新鲜乳品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新鲜乳品",
+    "新鲜牛奶",
+    "新鲜酸奶",
+    "冷链物流配送"
+  ],
+  "should": [
+    "常温白奶",
+    "常温酸奶",
+    "乳酸菌饮品",
+    "冷饮",
+    "婴幼儿及中老年奶粉",
+    "奶酪",
+    "黄油",
+    "巴氏杀菌热处理",
+    "陶瓷膜过滤除菌技术",
+    "双膜过滤低温巴氏杀菌工艺"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新鲜乳品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新鲜牛奶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新鲜酸奶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冷链物流配送",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:22:26"
+}

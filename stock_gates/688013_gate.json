@@ -1,0 +1,46 @@
+{
+  "stock_id": "688013",
+  "stock_name": "天臣医疗",
+  "concept": "高端吻合器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端吻合器",
+    "电动智能吻合器",
+    "自动保险管型吻合器",
+    "阶梯型直线切割吻合器"
+  ],
+  "should": [
+    "腔镜切割吻/缝合器及钉仓",
+    "补片增强吻合器",
+    "儿童版包皮吻合器",
+    "主控芯片",
+    "固件开发",
+    "电动智能吻合技术",
+    "自动保险管型技术",
+    "阶梯型直线切割技术",
+    "补片增强技术",
+    "外科手术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端吻合器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电动智能吻合器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自动保险管型吻合器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "阶梯型直线切割吻合器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:05:28"
+}

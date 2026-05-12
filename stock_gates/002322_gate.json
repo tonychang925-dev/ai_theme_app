@@ -1,0 +1,51 @@
+{
+  "stock_id": "002322",
+  "stock_name": "理工能科",
+  "concept": "智慧环保综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧环保综合服务",
+    "电力行业",
+    "物联网在线监测技术",
+    "大数据分析",
+    "数字孪生"
+  ],
+  "should": [
+    "云计算",
+    "图像识别",
+    "无人机技术",
+    "工程造价产品",
+    "设计产品",
+    "经济评价产品",
+    "工程招投标辅助工具产品",
+    "财务转资工具产品",
+    "数字工地建设解决方案",
+    "变电站治安反恐电子防范系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧环保综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力行业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物联网在线监测技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大数据分析",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字孪生",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:35:33"
+}

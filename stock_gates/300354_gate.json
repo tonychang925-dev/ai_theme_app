@@ -1,0 +1,31 @@
+{
+  "stock_id": "300354",
+  "stock_name": "东华测试",
+  "concept": "电化学工作站",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电化学工作站"
+  ],
+  "should": [
+    "单通道工作站",
+    "多通道工作站",
+    "微电流放大器",
+    "快速数字信号发生器",
+    "高速数据采集系统",
+    "电位电流信号滤波器",
+    "多级信号增益",
+    "IR降补偿电路",
+    "恒电位仪",
+    "恒电流仪"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电化学工作站",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:23:44"
+}

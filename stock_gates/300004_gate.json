@@ -1,0 +1,28 @@
+{
+  "stock_id": "300004",
+  "stock_name": "南风股份",
+  "concept": "核电通风系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "核电通风系统"
+  ],
+  "should": [
+    "通风与空气处理系统",
+    "核电通风与空气处理领域领跑者",
+    "核电",
+    "地铁",
+    "隧道",
+    "大型民用建筑",
+    "重型金属3D打印技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "核电通风系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:09:00"
+}

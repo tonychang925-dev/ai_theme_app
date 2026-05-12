@@ -1,0 +1,51 @@
+{
+  "stock_id": "688609",
+  "stock_name": "九联科技",
+  "concept": "数字电视终端",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字电视终端",
+    "智能机顶盒",
+    "ONU智能家庭网关",
+    "鸿蒙操作系统",
+    "鸿蒙终端"
+  ],
+  "should": [
+    "智能路由器",
+    "融合型智能家庭网关",
+    "智能门磁",
+    "智能摄像头",
+    "通信模块",
+    "光模块",
+    "OpenHarmonyOS",
+    "WIFI7",
+    "5G车规模组",
+    "星闪"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字电视终端",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能机顶盒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ONU智能家庭网关",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "鸿蒙操作系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "鸿蒙终端",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:22:16"
+}

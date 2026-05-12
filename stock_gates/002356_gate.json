@@ -1,0 +1,35 @@
+{
+  "stock_id": "002356",
+  "stock_name": "赫美集团",
+  "concept": "国际品牌零售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国际品牌零售"
+  ],
+  "should": [
+    "品牌专营店铺",
+    "MCM",
+    "Fular",
+    "Pinko",
+    "Radley",
+    "Oblu",
+    "品牌专营店",
+    "奥莱店",
+    "购物中心",
+    "城市综合体"
+  ],
+  "not": [
+    "电子式电能计量仪表",
+    "研发",
+    "制造"
+  ],
+  "evidence_refs": [
+    {
+      "term": "国际品牌零售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:37:31"
+}

@@ -1,0 +1,35 @@
+{
+  "stock_id": "688028",
+  "stock_name": "沃尔德",
+  "concept": "高端刀具",
+  "strategy_type": "industry_chain",
+  "must": [
+    "超硬刀具",
+    "硬质合金刀具"
+  ],
+  "should": [
+    "高端刀具",
+    "培育钻石及CVD金刚石功能材料",
+    "CVD法三大制备工艺",
+    "MPCVD法制备工艺",
+    "主控芯片",
+    "固件开发",
+    "上游产业链延伸",
+    "PCD复合片规模化生产",
+    "硬质合金数控刀片项目"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "超硬刀具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硬质合金刀具",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:05:48"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "603320",
+  "stock_name": "迪贝电气",
+  "concept": "压缩机电机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "压缩机电机"
+  ],
+  "should": [
+    "压缩机密封电机",
+    "直流变频电机驱动控制器",
+    "冰箱",
+    "冷柜",
+    "空调",
+    "制冰机",
+    "除湿机",
+    "空气能热水器",
+    "海尔",
+    "海信"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "压缩机电机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:48:58"
+}

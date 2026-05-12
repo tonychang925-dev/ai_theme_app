@@ -1,0 +1,51 @@
+{
+  "stock_id": "601857",
+  "stock_name": "中国石油",
+  "concept": "油气一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "勘探与生产",
+    "炼油与化工",
+    "成品油销售",
+    "天然气与管道",
+    "油气储量"
+  ],
+  "should": [
+    "大型油气区",
+    "石油证实储量",
+    "天然气探明储量",
+    "炼油产能",
+    "运输管道",
+    "炼化产能",
+    "油气输送管网",
+    "LNG接收站",
+    "地下储气库",
+    "油气一体化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "勘探与生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "炼油与化工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "成品油销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天然气与管道",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "油气储量",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:39:02"
+}

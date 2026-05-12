@@ -1,0 +1,31 @@
+{
+  "stock_id": "300417",
+  "stock_name": "南华仪器",
+  "concept": "环境与机动车检测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "机动车检测设备及系统",
+    "环境监测设备及系统"
+  ],
+  "should": [
+    "环境与机动车检测",
+    "在用机动车检测",
+    "新车下线检测",
+    "机动车后市场",
+    "整车厂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "机动车检测设备及系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环境监测设备及系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:26:28"
+}

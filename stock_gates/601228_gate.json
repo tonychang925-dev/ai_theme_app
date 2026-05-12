@@ -1,0 +1,51 @@
+{
+  "stock_id": "601228",
+  "stock_name": "广州港",
+  "concept": "港口综合物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "货物吞吐",
+    "集装箱吞吐",
+    "外贸航线",
+    "海铁联运",
+    "港口综合物流"
+  ],
+  "should": [
+    "江海联运",
+    "粮食接卸",
+    "煤炭接卸",
+    "商品汽车",
+    "冷链物流",
+    "跨境电商",
+    "全自动化码头",
+    "北斗导航",
+    "无人驾驶",
+    "5G通讯"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "货物吞吐",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集装箱吞吐",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "外贸航线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海铁联运",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "港口综合物流",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:35:44"
+}

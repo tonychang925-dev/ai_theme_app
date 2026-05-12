@@ -1,0 +1,36 @@
+{
+  "stock_id": "002938",
+  "stock_name": "鹏鼎控股",
+  "concept": "PCB制造龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球第一大PCB生产企业",
+    "PCB制造龙头"
+  ],
+  "should": [
+    "FPC",
+    "HDI",
+    "SLP",
+    "庆鼎精密（淮安）项目",
+    "中国台湾高雄项目",
+    "淮安超薄线路板投资计划",
+    "淮安第一园区项目",
+    "淮安第三园区项目",
+    "通讯用板",
+    "消费电子及计算机用板"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球第一大PCB生产企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PCB制造龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:04:02"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "002197",
+  "stock_name": "证通电子",
+  "concept": "IDC及云计算",
+  "strategy_type": "industry_chain",
+  "must": [
+    "IDC及云计算",
+    "金融科技"
+  ],
+  "should": [
+    "民生云",
+    "工业云",
+    "惠农云",
+    "旅游云",
+    "云喇叭",
+    "智能POS",
+    "人脸识别支付终端",
+    "收银机",
+    "移动支付扫码终端",
+    "桌面智能终端"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "IDC及云计算",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融科技",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:29:00"
+}

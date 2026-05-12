@@ -1,0 +1,46 @@
+{
+  "stock_id": "000523",
+  "stock_name": "红棉股份",
+  "concept": "日化食品双主业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "浪奇",
+    "红棉",
+    "广氏",
+    "东方寓言"
+  ],
+  "should": [
+    "高富力",
+    "万丽",
+    "肤安",
+    "洗衣粉",
+    "洗衣液",
+    "洗洁精",
+    "洗手液",
+    "洗衣凝珠",
+    "精制糖",
+    "菠萝啤饮料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "浪奇",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "红棉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "广氏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "东方寓言",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:54:20"
+}

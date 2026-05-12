@@ -1,0 +1,28 @@
+{
+  "stock_id": "300951",
+  "stock_name": "博硕科技",
+  "concept": "精密功能件与智能装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密功能件",
+    "精密功能件与智能装备"
+  ],
+  "should": [
+    "智能自动化装备",
+    "多次套位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密功能件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密功能件与智能装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:50:28"
+}

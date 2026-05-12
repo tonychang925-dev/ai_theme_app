@@ -1,0 +1,38 @@
+{
+  "stock_id": "603351",
+  "stock_name": "威尔药业",
+  "concept": "药用辅料与合成润滑基础油",
+  "strategy_type": "industry_chain",
+  "must": [
+    "药用辅料",
+    "合成润滑基础油",
+    "注射用药用辅料"
+  ],
+  "should": [
+    "药用辅料与合成润滑基础油",
+    "冷冻压缩机油",
+    "单晶硅切削液",
+    "工商业制冷用油",
+    "高端生物制品用药用辅料",
+    "进口替代",
+    "客户定制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "药用辅料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "合成润滑基础油",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "注射用药用辅料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:49:45"
+}

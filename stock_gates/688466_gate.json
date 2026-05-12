@@ -1,0 +1,37 @@
+{
+  "stock_id": "688466",
+  "stock_name": "金科环境",
+  "concept": "膜技术水处理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "膜技术水深度处理",
+    "污废水资源化",
+    "膜系统运营技术"
+  ],
+  "should": [
+    "膜通用平台装备技术",
+    "膜系统应用技术",
+    "膜技术水处理",
+    "市政饮用水深度处理",
+    "市政污水深度处理",
+    "工业废水深度处理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "膜技术水深度处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "污废水资源化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "膜系统运营技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:18:35"
+}

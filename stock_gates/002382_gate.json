@@ -1,0 +1,41 @@
+{
+  "stock_id": "002382",
+  "stock_name": "蓝帆医疗",
+  "concept": "医疗器械平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PVC手套全球第一",
+    "健康防护手套",
+    "健康防护业务"
+  ],
+  "should": [
+    "心脑血管业务",
+    "冠脉支架",
+    "心脏瓣膜",
+    "急救包",
+    "护理业务",
+    "丁腈手套全国第二",
+    "全球第四大心脏支架企业",
+    "无聚合物药物涂层",
+    "莫司类药物涂层球囊",
+    "瓣膜系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PVC手套全球第一",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "健康防护手套",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "健康防护业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:38:55"
+}

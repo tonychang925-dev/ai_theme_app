@@ -1,0 +1,46 @@
+{
+  "stock_id": "300146",
+  "stock_name": "汤臣倍健",
+  "concept": "膳食营养补充剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "膳食营养补充剂",
+    "维生素与膳食补充剂",
+    "自有专利原料和配方研发",
+    "全球第一家透明工厂"
+  ],
+  "should": [
+    "运动营养品",
+    "体重管理产品",
+    "传统滋补品",
+    "抗衰老及精准营养前瞻性基础研究",
+    "国家绿色工厂",
+    "国家AAAA级旅游区",
+    "提高机体健康水平",
+    "降低疾病风险",
+    "平衡营养摄取",
+    "调节人体机体功能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "膳食营养补充剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "维生素与膳食补充剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自有专利原料和配方研发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球第一家透明工厂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:15:12"
+}

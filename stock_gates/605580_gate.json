@@ -1,0 +1,36 @@
+{
+  "stock_id": "605580",
+  "stock_name": "恒盛能源",
+  "concept": "环保热电联产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环保热电联产",
+    "热电联产"
+  ],
+  "should": [
+    "生物质热电联产",
+    "智慧电厂平台",
+    "远程故障诊断与修复",
+    "园区用热客户",
+    "工业用汽",
+    "煤炭",
+    "农林废弃物等生物质资源",
+    "节约能源",
+    "改善环境",
+    "超低排放"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环保热电联产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热电联产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:04:41"
+}

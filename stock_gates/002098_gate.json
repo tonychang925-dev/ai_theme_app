@@ -1,0 +1,31 @@
+{
+  "stock_id": "002098",
+  "stock_name": "浔兴股份",
+  "concept": "拉链制造与跨境电商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "拉链制造与跨境电商"
+  ],
+  "should": [
+    "金属拉链",
+    "尼龙拉链",
+    "塑钢拉链",
+    "拉头",
+    "拉链配件",
+    "精密模具",
+    "亚马逊",
+    "服装",
+    "箱包",
+    "体育用品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "拉链制造与跨境电商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:23:13"
+}

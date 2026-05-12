@@ -1,0 +1,36 @@
+{
+  "stock_id": "688779",
+  "stock_name": "五矿新能",
+  "concept": "电池正极材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "三元正极材料",
+    "电池正极材料"
+  ],
+  "should": [
+    "磷酸铁锂正极材料",
+    "钴酸锂正极材料",
+    "球镍",
+    "高安全性",
+    "高能量密度",
+    "高循环次数",
+    "新能源汽车",
+    "数码及电动工具",
+    "国内三元正极材料出货量前列",
+    "与上游头部企业签订战略采购协议"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "三元正极材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电池正极材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:25:02"
+}

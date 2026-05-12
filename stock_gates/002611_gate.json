@@ -1,0 +1,41 @@
+{
+  "stock_id": "002611",
+  "stock_name": "东方精工",
+  "concept": "智能包装装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能瓦楞纸包装装备",
+    "智能包装装备",
+    "数码印刷设备"
+  ],
+  "should": [
+    "瓦楞纸包装",
+    "食品饮料",
+    "日化",
+    "电子",
+    "家电",
+    "电商快递",
+    "全球瓦楞纸包装智能装备龙头",
+    "国内数码印刷设备领军者",
+    "智慧工厂整体解决方案服务商",
+    "工业互联网行业解决方案"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能瓦楞纸包装装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能包装装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数码印刷设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:49:54"
+}

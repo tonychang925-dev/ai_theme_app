@@ -1,0 +1,41 @@
+{
+  "stock_id": "688061",
+  "stock_name": "灿瑞科技",
+  "concept": "智能传感器+电源管理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能传感器+电源管理",
+    "智能传感器芯片",
+    "电源管理芯片"
+  ],
+  "should": [
+    "封装测试服务",
+    "磁传感器芯片",
+    "光传感器芯片",
+    "屏幕偏压驱动芯片",
+    "闪光背光驱动芯片",
+    "LED照明驱动芯片",
+    "功率驱动芯片",
+    "智能家居",
+    "智能手机",
+    "计算机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能传感器+电源管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能传感器芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电源管理芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:06:51"
+}

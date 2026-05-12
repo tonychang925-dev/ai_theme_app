@@ -1,0 +1,36 @@
+{
+  "stock_id": "300218",
+  "stock_name": "安利股份",
+  "concept": "PU合成革龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PU合成革行业龙头",
+    "PU合成革龙头"
+  ],
+  "should": [
+    "生态功能性聚氨酯合成革",
+    "水性聚氨酯合成革",
+    "无溶剂聚氨酯合成革",
+    "复合材料",
+    "功能鞋材",
+    "沙发家居",
+    "电子产品",
+    "汽车内饰",
+    "体育装备",
+    "工程装饰"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PU合成革行业龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PU合成革龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:17:55"
+}

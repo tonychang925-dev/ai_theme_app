@@ -1,0 +1,41 @@
+{
+  "stock_id": "002674",
+  "stock_name": "兴业科技",
+  "concept": "天然皮革龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "鞋面用皮革",
+    "汽车内饰用皮革",
+    "包袋用皮革"
+  ],
+  "should": [
+    "家具用皮革",
+    "特殊功能性皮革",
+    "二层皮革",
+    "二层皮胶原产品原料",
+    "天然皮革龙头",
+    "管理+研发+设备",
+    "双研发体系",
+    "数字化、智能化设备改造",
+    "汽车内饰",
+    "制革工业龙头企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "鞋面用皮革",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车内饰用皮革",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "包袋用皮革",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:52:47"
+}

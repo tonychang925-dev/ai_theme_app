@@ -1,0 +1,40 @@
+{
+  "stock_id": "600883",
+  "stock_name": "博闻科技",
+  "concept": "食用菌加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "食用菌业务",
+    "食用菌加工",
+    "农副食品加工"
+  ],
+  "should": [
+    "新鲜松茸",
+    "松茸速冻品",
+    "冷冻美味牛肝菌",
+    "其他食用菌产品",
+    "原料收购",
+    "初级加工",
+    "中转储运",
+    "销售运营",
+    "香格里拉核心主产区"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "食用菌业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "食用菌加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "农副食品加工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:30:25"
+}

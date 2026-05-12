@@ -1,0 +1,46 @@
+{
+  "stock_id": "600871",
+  "stock_name": "石化油服",
+  "concept": "石油工程技术服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "石油工程技术服务",
+    "油田综合服务",
+    "钻井服务",
+    "物探服务"
+  ],
+  "should": [
+    "测录井服务",
+    "井下特种作业服务",
+    "工程建设服务",
+    "单点高密度采集",
+    "全节点采集",
+    "井震联合激发",
+    "宽频可控震源高效采集技术",
+    "电驱工厂化压裂",
+    "定测录导一体化",
+    "油气勘探开发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "石油工程技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "油田综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钻井服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物探服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:30:08"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "000626",
+  "stock_name": "远大控股",
+  "concept": "贸产一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "贸产一体化",
+    "生物农药原药",
+    "生物农药制剂"
+  ],
+  "should": [
+    "中生菌素",
+    "中生菌素原药独家生产",
+    "上游原产地油料资源",
+    "中游贸易加工和仓储",
+    "下游特种油脂产品",
+    "绿色作物健康方案",
+    "细菌性病害防治",
+    "真菌孢子萌发抑制",
+    "作物促生增产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "贸产一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物农药原药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物农药制剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:58:50"
+}

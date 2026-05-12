@@ -1,0 +1,41 @@
+{
+  "stock_id": "300765",
+  "stock_name": "新诺威",
+  "concept": "功能食品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "功能食品",
+    "咖啡因",
+    "保健食品"
+  ],
+  "should": [
+    "维生素C含片",
+    "茶碱",
+    "氨茶碱",
+    "可可碱",
+    "维生素C饮料",
+    "双酶法生产无水葡萄糖",
+    "阿卡波糖规模化生产",
+    "功能饮料",
+    "食品添加剂",
+    "百事可乐全球供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "功能食品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "咖啡因",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "保健食品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:42:12"
+}

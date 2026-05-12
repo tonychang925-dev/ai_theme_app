@@ -1,0 +1,26 @@
+{
+  "stock_id": "002124",
+  "stock_name": "天邦食品",
+  "concept": "全猪产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全猪产业链"
+  ],
+  "should": [
+    "出栏数量持续增长",
+    "22年出栏500万头",
+    "一期工程基本完成建设",
+    "2022年1月试投产运营",
+    "食品团队积极扩张"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全猪产业链",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:24:25"
+}

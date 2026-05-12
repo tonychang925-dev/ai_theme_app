@@ -1,0 +1,46 @@
+{
+  "stock_id": "002953",
+  "stock_name": "日丰股份",
+  "concept": "橡套电缆",
+  "strategy_type": "industry_chain",
+  "must": [
+    "橡套电缆",
+    "空调连接线组件",
+    "小家电配线组件",
+    "特种装备电缆"
+  ],
+  "should": [
+    "美的集团",
+    "格力电器",
+    "TCL集团",
+    "奥克斯空调",
+    "苏泊尔家电",
+    "家用电器",
+    "机器人",
+    "风力发电",
+    "海洋工程",
+    "通信设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "橡套电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空调连接线组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小家电配线组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种装备电缆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:04:47"
+}

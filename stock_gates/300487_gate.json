@@ -1,0 +1,51 @@
+{
+  "stock_id": "300487",
+  "stock_name": "蓝晓科技",
+  "concept": "吸附分离材料龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "吸附分离材料龙头",
+    "国产吸附分离材料龙头",
+    "吸附分离材料",
+    "盐湖提锂",
+    "吸附+膜提锂工艺"
+  ],
+  "should": [
+    "系统装置",
+    "吸附法",
+    "膜法",
+    "镍吸附剂专用树脂",
+    "镓提取专用树脂",
+    "红土镍矿提镍",
+    "母液提镓",
+    "色谱填料",
+    "层析介质",
+    "固相合成载体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "吸附分离材料龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国产吸附分离材料龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "吸附分离材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "盐湖提锂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "吸附+膜提锂工艺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:29:43"
+}

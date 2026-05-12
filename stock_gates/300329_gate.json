@@ -1,0 +1,31 @@
+{
+  "stock_id": "300329",
+  "stock_name": "海伦钢琴",
+  "concept": "钢琴制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钢琴国家标准起草者"
+  ],
+  "should": [
+    "智能钢琴",
+    "智能钢琴研发",
+    "钢琴制造",
+    "传统钢琴",
+    "乐器配件",
+    "APP软件",
+    "人工智能技术",
+    "艺术教育培训",
+    "音乐教育",
+    "线上教学"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钢琴国家标准起草者",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:22:46"
+}

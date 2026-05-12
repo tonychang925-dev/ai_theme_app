@@ -1,0 +1,46 @@
+{
+  "stock_id": "601279",
+  "stock_name": "英利汽车",
+  "concept": "车身轻量化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "仪表板骨架",
+    "前端框架",
+    "防撞梁",
+    "护板"
+  ],
+  "should": [
+    "大型焊接总成",
+    "前端框架模块",
+    "前围侧围焊接总成",
+    "备胎仓焊接总成",
+    "车身轻量化",
+    "模块化产品",
+    "轻量化产品组合",
+    "集成化零件开发",
+    "产品设计研发创新",
+    "柔性化制造工艺单元"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "仪表板骨架",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "前端框架",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "防撞梁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "护板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:35:59"
+}

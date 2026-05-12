@@ -1,0 +1,41 @@
+{
+  "stock_id": "003002",
+  "stock_name": "壶化股份",
+  "concept": "民爆产业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数码电子雷管",
+    "雷管",
+    "民爆"
+  ],
+  "should": [
+    "炸药",
+    "爆破",
+    "起爆具",
+    "高强度导爆管生产线",
+    "高精度延期体生产线",
+    "胶状乳化炸药生产线",
+    "数码电子雷管自动化智能化生产线",
+    "矿山开采",
+    "基建工程",
+    "水利水电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数码电子雷管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "雷管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "民爆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:07:06"
+}

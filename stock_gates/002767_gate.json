@@ -1,0 +1,31 @@
+{
+  "stock_id": "002767",
+  "stock_name": "先锋电子",
+  "concept": "智能燃气表",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能燃气表",
+    "NB-IoT物联网"
+  ],
+  "should": [
+    "机械膜式燃气表",
+    "机械流量计",
+    "超声波产品",
+    "云化设计",
+    "数字化车间"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能燃气表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "NB-IoT物联网",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:56:36"
+}

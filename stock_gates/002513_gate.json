@@ -1,0 +1,32 @@
+{
+  "stock_id": "002513",
+  "stock_name": "蓝丰生化",
+  "concept": "农化光气",
+  "strategy_type": "industry_chain",
+  "must": [
+    "甲基硫菌灵",
+    "环嗪酮"
+  ],
+  "should": [
+    "光气化产品",
+    "光气合成",
+    "连续化生产工艺",
+    "DCS自动控制",
+    "国内最大甲基硫菌灵生产企业之一",
+    "国内环嗪酮攻关单位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "甲基硫菌灵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环嗪酮",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:44:59"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "601618",
+  "stock_name": "中国中冶",
+  "concept": "冶金工程承包商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "冶金工程承包商",
+    "冶金工程"
+  ],
+  "should": [
+    "高端房建",
+    "中高端地产",
+    "交通市政基础设施",
+    "矿山建设与矿产开发",
+    "核心技术装备与钢构",
+    "环境工程与新能源",
+    "特色主题工程",
+    "采矿",
+    "选矿",
+    "烧结"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "冶金工程承包商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冶金工程",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:37:42"
+}

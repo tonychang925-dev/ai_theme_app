@@ -1,0 +1,41 @@
+{
+  "stock_id": "002194",
+  "stock_name": "武汉凡谷",
+  "concept": "射频滤波器龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "射频滤波器龙头",
+    "滤波器",
+    "射频器件制造业"
+  ],
+  "should": [
+    "双工器",
+    "射频子系统",
+    "宽频技术",
+    "多T多R技术",
+    "可调滤波器技术",
+    "钣金滤波器技术",
+    "微波可调滤波器技术",
+    "E-band系列产品技术",
+    "5G通信网络",
+    "移动基站"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "射频滤波器龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "滤波器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "射频器件制造业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:28:40"
+}

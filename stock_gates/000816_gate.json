@@ -1,0 +1,43 @@
+{
+  "stock_id": "000816",
+  "stock_name": "智慧农业",
+  "concept": "动力设备及智慧农业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "动力设备及智慧农业",
+    "动力及终端设备",
+    "智慧农业数字化解决方案"
+  ],
+  "should": [
+    "物联网",
+    "遥感",
+    "北斗",
+    "大数据",
+    "人工智能",
+    "农业机械化",
+    "机械制造",
+    "动力及终端设备综合服务商",
+    "智慧农业数字化解决方案提供商"
+  ],
+  "not": [
+    "有色金属矿采选产品",
+    "多品种金属精矿供应商"
+  ],
+  "evidence_refs": [
+    {
+      "term": "动力设备及智慧农业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动力及终端设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧农业数字化解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:05:59"
+}

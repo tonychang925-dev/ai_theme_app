@@ -1,0 +1,46 @@
+{
+  "stock_id": "688016",
+  "stock_name": "心脉医疗",
+  "concept": "主动脉介入",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国产主动脉介入龙头",
+    "主动脉介入",
+    "胸主动脉支架",
+    "腹主动脉支架"
+  ],
+  "should": [
+    "外周药物球囊",
+    "高压球囊",
+    "髂静脉支架",
+    "腔静脉滤器",
+    "静脉取栓系统",
+    "TIPS覆膜支架",
+    "分体式设计",
+    "一体化设计",
+    "外径14F",
+    "主动脉弓病变"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国产主动脉介入龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "主动脉介入",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "胸主动脉支架",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "腹主动脉支架",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:05:31"
+}

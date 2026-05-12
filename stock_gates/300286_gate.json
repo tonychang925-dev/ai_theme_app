@@ -1,0 +1,41 @@
+{
+  "stock_id": "300286",
+  "stock_name": "安科瑞",
+  "concept": "微电网能效管理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "企业微电网能效管理系统",
+    "微电网能效管理",
+    "能效管理系统"
+  ],
+  "should": [
+    "电气安全",
+    "电气消防及用电安全系统",
+    "边缘计算网关",
+    "用户端智能电力仪表",
+    "电量传感器",
+    "变电站综合自动化系统",
+    "中压测控装置",
+    "电力监控与保护",
+    "电能计量",
+    "智能网关"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "企业微电网能效管理系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "微电网能效管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "能效管理系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:21:12"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "000759",
+  "stock_name": "中百集团",
+  "concept": "湖北商超龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "湖北商超龙头",
+    "免税品经营资质（申报中）"
+  ],
+  "should": [
+    "中百大厨房",
+    "综合超市",
+    "社区超市",
+    "24H便利店",
+    "购物中心",
+    "电器专卖",
+    "数智科技",
+    "物流配送",
+    "食品加工",
+    "环保包装"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "湖北商超龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "免税品经营资质（申报中）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:03:42"
+}

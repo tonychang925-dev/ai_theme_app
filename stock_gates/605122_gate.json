@@ -1,0 +1,31 @@
+{
+  "stock_id": "605122",
+  "stock_name": "四方新材",
+  "concept": "商品混凝土",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商品混凝土"
+  ],
+  "should": [
+    "普通商品混凝土",
+    "高强度商品混凝土",
+    "特种商品混凝土",
+    "建筑用砂石骨料",
+    "房地产开发",
+    "道路建设",
+    "桥梁建设",
+    "隧道建设",
+    "水利建设",
+    "重庆市主城区全覆盖"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商品混凝土",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:02:02"
+}

@@ -1,0 +1,37 @@
+{
+  "stock_id": "001872",
+  "stock_name": "招商港口",
+  "concept": "港口运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "港口业务",
+    "全球港口网络",
+    "智慧港口解决方案"
+  ],
+  "should": [
+    "码头作业系统",
+    "港口配套业务",
+    "保税物流业务",
+    "港口运营",
+    "集装箱",
+    "散杂货"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "港口业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球港口网络",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧港口解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:17:36"
+}

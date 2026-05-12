@@ -1,0 +1,51 @@
+{
+  "stock_id": "000967",
+  "stock_name": "盈峰环境",
+  "concept": "智慧环卫",
+  "strategy_type": "industry_chain",
+  "must": [
+    "5G环卫机器人",
+    "无人驾驶环卫车",
+    "智能小型环卫机器人",
+    "新能源环保装备",
+    "智慧环卫云平台"
+  ],
+  "should": [
+    "城市服务投资及运营商",
+    "物联网集成应用技术",
+    "大数据应用技术",
+    "掌上环卫APP",
+    "垃圾收转运设备",
+    "分体站装备",
+    "环卫清洁装备",
+    "智慧环卫",
+    "城乡保洁消毒",
+    "生活垃圾分类"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "5G环卫机器人",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无人驾驶环卫车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能小型环卫机器人",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源环保装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧环卫云平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:11:35"
+}

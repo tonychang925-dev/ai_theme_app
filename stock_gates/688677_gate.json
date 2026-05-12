@@ -1,0 +1,41 @@
+{
+  "stock_id": "688677",
+  "stock_name": "海泰新光",
+  "concept": "硬性内窥镜",
+  "strategy_type": "industry_chain",
+  "must": [
+    "硬性内窥镜",
+    "高清荧光/白光腹腔镜",
+    "史赛克独家供应商"
+  ],
+  "should": [
+    "牙科内视镜模组",
+    "荧光滤光片",
+    "美容机滤光片",
+    "准直/聚焦镜",
+    "扫描镜",
+    "PBS",
+    "NPBS",
+    "4K超高清分辨率",
+    "微创手术",
+    "胆管手术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "硬性内窥镜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高清荧光/白光腹腔镜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "史赛克独家供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:23:43"
+}

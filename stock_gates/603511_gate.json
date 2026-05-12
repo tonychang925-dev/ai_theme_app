@@ -1,0 +1,41 @@
+{
+  "stock_id": "603511",
+  "stock_name": "爱慕股份",
+  "concept": "中高端内衣龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "爱慕",
+    "女性内衣",
+    "男性内衣"
+  ],
+  "should": [
+    "爱慕先生",
+    "爱慕儿童",
+    "爱美丽",
+    "兰卡文",
+    "儿童内衣",
+    "功能性服饰",
+    "乎兮",
+    "彳亍",
+    "皇锦",
+    "无尺码内衣"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "爱慕",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "女性内衣",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "男性内衣",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:51:40"
+}

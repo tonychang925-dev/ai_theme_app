@@ -1,0 +1,24 @@
+{
+  "stock_id": "002421",
+  "stock_name": "达实智能",
+  "concept": "物联网解决方案",
+  "strategy_type": "industry_chain",
+  "must": [],
+  "should": [
+    "边缘控制器",
+    "空间场景控制器",
+    "物联网门禁控制器",
+    "AI人脸识别终端",
+    "空间场景交互屏",
+    "人行通道闸",
+    "物联网解决方案",
+    "主控芯片",
+    "固件开发",
+    "数据中心"
+  ],
+  "not": [],
+  "evidence_refs": [],
+  "quality": "weak",
+  "must_count": 0,
+  "generated_at": "2026-05-11T17:40:55"
+}

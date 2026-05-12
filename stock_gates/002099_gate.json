@@ -1,0 +1,46 @@
+{
+  "stock_id": "002099",
+  "stock_name": "海翔药业",
+  "concept": "医药染料双主业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特色原料药",
+    "医药中间体",
+    "培南类系列产品",
+    "克林霉素系列产品"
+  ],
+  "should": [
+    "仿制药",
+    "环保型活性染料",
+    "染颜料中间体",
+    "氟苯尼考",
+    "辉瑞供应商",
+    "国内头部培南企业深度合作",
+    "规模优势",
+    "技术优势",
+    "全球最完整的培南产业链",
+    "供应链稳定、安全"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特色原料药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药中间体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "培南类系列产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "克林霉素系列产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:23:20"
+}

@@ -1,0 +1,33 @@
+{
+  "stock_id": "600814",
+  "stock_name": "杭州解百",
+  "concept": "百货零售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "百货零售",
+    "零售+"
+  ],
+  "should": [
+    "珠宝",
+    "医美",
+    "体检",
+    "会员体系",
+    "数字化转型",
+    "消费场景",
+    "夜间经济"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "百货零售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "零售+",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:28:28"
+}

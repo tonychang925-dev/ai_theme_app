@@ -1,0 +1,46 @@
+{
+  "stock_id": "002949",
+  "stock_name": "华阳国际",
+  "concept": "建筑设计科技",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑设计科技",
+    "建筑设计与咨询",
+    "装配式建筑",
+    "BIM技术"
+  ],
+  "should": [
+    "建筑行业甲级资质",
+    "工程造价咨询甲级资质",
+    "建筑科技创新",
+    "房屋建筑工程监理甲级资质",
+    "产业链延伸业务",
+    "人工智能",
+    "居住建筑",
+    "公共建筑",
+    "办公及产业园",
+    "TOD及商业综合体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑设计科技",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑设计与咨询",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "装配式建筑",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "BIM技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:04:41"
+}

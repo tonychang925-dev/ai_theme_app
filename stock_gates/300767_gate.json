@@ -1,0 +1,36 @@
+{
+  "stock_id": "300767",
+  "stock_name": "震安科技",
+  "concept": "建筑减隔震",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑减隔震",
+    "减隔震龙头企业"
+  ],
+  "should": [
+    "建筑隔震支座",
+    "隔震技术",
+    "减震技术",
+    "弹性滑板支座",
+    "公路桥梁支座",
+    "消能阻尼器",
+    "柔性抗震",
+    "市占率30%",
+    "学校",
+    "医院"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑减隔震",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "减隔震龙头企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:42:16"
+}

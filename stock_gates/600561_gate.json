@@ -1,0 +1,36 @@
+{
+  "stock_id": "600561",
+  "stock_name": "江西长运",
+  "concept": "道路运输",
+  "strategy_type": "industry_chain",
+  "must": [
+    "道路运输",
+    "道路客运"
+  ],
+  "should": [
+    "城际公交",
+    "定制客运",
+    "农村客运",
+    "赣悦行数字平台",
+    "ERP系统",
+    "客运驿站+场景",
+    "客货邮融合",
+    "运游融合",
+    "资产轻型化",
+    "低效资产盘活"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "道路运输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "道路客运",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:21:10"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "002491",
+  "stock_name": "通鼎互联",
+  "concept": "光通信产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光通信产业链",
+    "光纤",
+    "光缆",
+    "光纤预制棒"
+  ],
+  "should": [
+    "通信电缆",
+    "电力电缆",
+    "通信设备",
+    "5G无线设备",
+    "ODN设备",
+    "SDN设备",
+    "GPON/EPON",
+    "铁路信号缆",
+    "无线专网设备",
+    "存储及服务器设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光通信产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光纤",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光纤预制棒",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:44:29"
+}

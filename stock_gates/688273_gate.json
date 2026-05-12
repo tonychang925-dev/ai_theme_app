@@ -1,0 +1,41 @@
+{
+  "stock_id": "688273",
+  "stock_name": "麦澜德",
+  "concept": "盆底康复",
+  "strategy_type": "industry_chain",
+  "must": [
+    "盆底及产后康复设备",
+    "耗材及配件",
+    "磁刺激类盆底康复设备"
+  ],
+  "should": [
+    "信息化产品",
+    "电刺激设备",
+    "家用盆底系列产品",
+    "主控芯片",
+    "盆底康复",
+    "自主研发",
+    "固件开发",
+    "院内盆底诊疗",
+    "院外产后恢复",
+    "家用康复"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "盆底及产后康复设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "耗材及配件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磁刺激类盆底康复设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:13:47"
+}

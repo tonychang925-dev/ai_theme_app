@@ -1,0 +1,41 @@
+{
+  "stock_id": "002484",
+  "stock_name": "江海股份",
+  "concept": "电容器综合服务商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铝电解电容",
+    "超级电容",
+    "薄膜电容"
+  ],
+  "should": [
+    "固态高分子铝电解电容器",
+    "EDLC",
+    "LIC",
+    "光伏逆变器",
+    "xEV",
+    "混合动力工程机械",
+    "港口机械",
+    "纯电动公交车",
+    "涂炭箔国产化",
+    "电容器综合服务商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铝电解电容",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超级电容",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "薄膜电容",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:44:00"
+}

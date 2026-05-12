@@ -1,0 +1,32 @@
+{
+  "stock_id": "600467",
+  "stock_name": "好当家",
+  "concept": "海参养殖",
+  "strategy_type": "industry_chain",
+  "must": [
+    "海参养殖",
+    "海参"
+  ],
+  "should": [
+    "刺参良种培育",
+    "有机全产业链建设",
+    "冷冻食品",
+    "餐桌",
+    "大健康养生产业",
+    "育苗-养殖-加工-销售"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "海参养殖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海参",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:18:28"
+}

@@ -1,0 +1,45 @@
+{
+  "stock_id": "600726",
+  "stock_name": "华电能源",
+  "concept": "热电联产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "热电联产",
+    "电力销售",
+    "热力销售",
+    "煤炭生产销售"
+  ],
+  "should": [
+    "电力",
+    "热力",
+    "煤炭",
+    "煤电联营",
+    "四位一体",
+    "黑龙江省最大发电及集中供热运营商",
+    "居民供热",
+    "单位供热",
+    "电网销售"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "热电联产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热力销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭生产销售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:25:57"
+}

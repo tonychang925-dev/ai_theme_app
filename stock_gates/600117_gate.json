@@ -1,0 +1,36 @@
+{
+  "stock_id": "600117",
+  "stock_name": "西宁特钢",
+  "concept": "特殊钢生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特殊钢生产",
+    "国家军工产品配套企业"
+  ],
+  "should": [
+    "国家级创新型企业",
+    "轴承钢",
+    "模具钢",
+    "不锈钢",
+    "弹簧钢",
+    "热轧棒材φ16mm～φ280mm",
+    "冷拉银亮材φ12mm～φ80mm",
+    "异形电渣熔铸件",
+    "碳结钢",
+    "碳工钢"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特殊钢生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国家军工产品配套企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:09:38"
+}

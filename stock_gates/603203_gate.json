@@ -1,0 +1,36 @@
+{
+  "stock_id": "603203",
+  "stock_name": "快克智能",
+  "concept": "精密焊接设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密焊接设备",
+    "锡焊智能设备"
+  ],
+  "should": [
+    "激光焊接设备",
+    "选择性波峰焊设备",
+    "热压焊接设备",
+    "高速点胶机",
+    "机器视觉焊点检测设备",
+    "纳米银烧结设备",
+    "真空共晶焊设备",
+    "运动控制",
+    "机器视觉算法",
+    "焊接工艺专家系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密焊接设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锡焊智能设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:46:30"
+}

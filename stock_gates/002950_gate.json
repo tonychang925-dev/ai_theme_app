@@ -1,0 +1,36 @@
+{
+  "stock_id": "002950",
+  "stock_name": "奥美医疗",
+  "concept": "医用敷料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医用敷料",
+    "一次性医用耗材"
+  ],
+  "should": [
+    "高级敷料",
+    "高端伤口敷料",
+    "感染防护产品",
+    "定制化手术组合包",
+    "湿性伤口护理技术",
+    "高端敷料研发及生产技术",
+    "伤口护理",
+    "手术室感染防护",
+    "院内感染防护",
+    "个人感染防护"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医用敷料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一次性医用耗材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:04:40"
+}

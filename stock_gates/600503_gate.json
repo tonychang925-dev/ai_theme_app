@@ -1,0 +1,35 @@
+{
+  "stock_id": "600503",
+  "stock_name": "华丽家族",
+  "concept": "多元地产开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "房地产开发",
+    "苏州太湖上景花园"
+  ],
+  "should": [
+    "石墨烯",
+    "石墨烯微片",
+    "石墨烯薄膜",
+    "临近空间飞行器",
+    "机器人",
+    "乙肝疫苗",
+    "厦门国际银行",
+    "瑞力文化",
+    "多元地产开发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房地产开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "苏州太湖上景花园",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:19:33"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "688272",
+  "stock_name": "富吉瑞",
+  "concept": "红外热成像",
+  "strategy_type": "industry_chain",
+  "must": [
+    "红外热成像",
+    "红外热成像产品",
+    "非制冷红外探测器",
+    "红外热成像技术"
+  ],
+  "should": [
+    "系统解决方案",
+    "图像处理",
+    "非制冷红外探测器研发",
+    "产业链上游整合",
+    "非制冷红外探测器规模化量产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "红外热成像",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "红外热成像产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "非制冷红外探测器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "红外热成像技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:13:46"
+}

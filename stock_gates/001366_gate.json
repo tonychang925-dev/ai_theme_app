@@ -1,0 +1,46 @@
+{
+  "stock_id": "001366",
+  "stock_name": "播恩集团",
+  "concept": "猪饲料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "猪饲料",
+    "教槽料",
+    "乳猪料",
+    "生物发酵饲料"
+  ],
+  "should": [
+    "预混料",
+    "浓缩料",
+    "配合料",
+    "核心配方技术",
+    "生物发酵工程",
+    "低蛋白日粮",
+    "饲料精准配方",
+    "生产工艺",
+    "精细加工",
+    "猪养殖"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "猪饲料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "教槽料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乳猪料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物发酵饲料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:17:11"
+}

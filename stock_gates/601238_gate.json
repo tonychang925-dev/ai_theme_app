@@ -1,0 +1,51 @@
+{
+  "stock_id": "601238",
+  "stock_name": "广汽集团",
+  "concept": "汽车制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车产销",
+    "自主品牌",
+    "新能源乘用车",
+    "广汽埃安",
+    "广汽乘用车"
+  ],
+  "should": [
+    "节能汽车",
+    "SUV",
+    "MPV",
+    "轿车",
+    "XEV+ICV",
+    "合资品牌",
+    "广汽丰田",
+    "广汽本田",
+    "广汽三菱",
+    "EV+ICV"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车产销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自主品牌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源乘用车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "广汽埃安",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "广汽乘用车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:36:08"
+}

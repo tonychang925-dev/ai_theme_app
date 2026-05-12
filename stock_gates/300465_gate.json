@@ -1,0 +1,39 @@
+{
+  "stock_id": "300465",
+  "stock_name": "高伟达",
+  "concept": "金融信息化服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金融信息化服务",
+    "IT解决方案",
+    "系统集成及服务"
+  ],
+  "should": [
+    "软件外包服务",
+    "软件运维服务",
+    "移动广告营销业务",
+    "大数据分析",
+    "移动互联网络技术",
+    "银行",
+    "保险",
+    "证券"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金融信息化服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IT解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "系统集成及服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:28:34"
+}

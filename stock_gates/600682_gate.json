@@ -1,0 +1,36 @@
+{
+  "stock_id": "600682",
+  "stock_name": "南京新百",
+  "concept": "现代商业与健康养老",
+  "strategy_type": "industry_chain",
+  "must": [
+    "零售百货",
+    "健康养老服务"
+  ],
+  "should": [
+    "物业租赁",
+    "脐带血造血干细胞存储",
+    "远程医疗",
+    "肿瘤细胞免疫治疗产品",
+    "细胞免疫治疗",
+    "养老系统研发",
+    "养老大数据系统",
+    "居家养老",
+    "社区养老",
+    "机构养老"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "零售百货",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "健康养老服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:24:51"
+}

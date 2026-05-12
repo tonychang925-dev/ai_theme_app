@@ -1,0 +1,39 @@
+{
+  "stock_id": "600461",
+  "stock_name": "洪城环境",
+  "concept": "城市环境综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "自来水供应",
+    "污水处理",
+    "燃气供应"
+  ],
+  "should": [
+    "固废处理",
+    "南昌供水市场",
+    "江西省燃气运营商",
+    "日供水设计能力194万立方米",
+    "燃气供气量4.79亿立方米",
+    "污水提标改造",
+    "气化率提升",
+    "垃圾焚烧处理能力缺口"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "自来水供应",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "污水处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "燃气供应",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:18:21"
+}

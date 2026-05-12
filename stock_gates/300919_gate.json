@@ -1,0 +1,41 @@
+{
+  "stock_id": "300919",
+  "stock_name": "中伟新材",
+  "concept": "三元前驱体龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "三元前驱体龙头",
+    "三元前驱体",
+    "高镍低钴三元前驱体"
+  ],
+  "should": [
+    "四氧化三钴",
+    "镍火法冶炼",
+    "高冰镍项目",
+    "共沉淀法",
+    "掺杂技术",
+    "全球正极前驱体市场双料第一",
+    "LG化学供应商",
+    "特斯拉供应商",
+    "当升科技供应商",
+    "厦门钨业供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "三元前驱体龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三元前驱体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高镍低钴三元前驱体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:49:20"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "603004",
+  "stock_name": "鼎龙科技",
+  "concept": "染发剂原料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "染发剂原料"
+  ],
+  "should": [
+    "特种工程材料单体",
+    "植保材料",
+    "精细化学品研发",
+    "生产合成技术",
+    "工艺自动化",
+    "染发剂",
+    "特种工程材料",
+    "全球主要染发剂原料生产商",
+    "与欧莱雅、威娜、汉高合作",
+    "与组合化学、先正达合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "染发剂原料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:40:44"
+}

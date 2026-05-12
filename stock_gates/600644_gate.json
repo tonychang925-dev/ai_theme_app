@@ -1,0 +1,51 @@
+{
+  "stock_id": "600644",
+  "stock_name": "乐山电力",
+  "concept": "电力综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力开发",
+    "电力销售",
+    "电力工程施工",
+    "电力调度",
+    "综合能源服务"
+  ],
+  "should": [
+    "能源互联网",
+    "泛在电力物联网",
+    "光伏发电运维",
+    "储能",
+    "天然气供应",
+    "自来水供应",
+    "电力设施承装承修承试",
+    "电能计量装置检定校准",
+    "电力工程勘察设计",
+    "电力综合服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力工程施工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力调度",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合能源服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:23:47"
+}

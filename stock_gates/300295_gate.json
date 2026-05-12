@@ -1,0 +1,36 @@
+{
+  "stock_id": "300295",
+  "stock_name": "三六五网",
+  "concept": "房地产网络服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "房地产网络服务",
+    "365淘房"
+  ],
+  "should": [
+    "365金服",
+    "金融服务",
+    "新房",
+    "二手房",
+    "租赁",
+    "家居",
+    "生活服务",
+    "数据驱动",
+    "技术驱动",
+    "运营驱动"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房地产网络服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "365淘房",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:21:26"
+}

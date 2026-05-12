@@ -1,0 +1,41 @@
+{
+  "stock_id": "605111",
+  "stock_name": "新洁能",
+  "concept": "功率半导体器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "IGBT",
+    "SGT-MOSFET",
+    "SJ-MOSFET"
+  ],
+  "should": [
+    "Trench-MOSFET",
+    "FRD芯片",
+    "IGBT模块",
+    "第七代微沟槽场截止技术",
+    "载流子存储设计理论",
+    "多梯度背面缓冲层技术",
+    "正温度系数设计",
+    "功率半导体器件",
+    "消费电子",
+    "国产IGBT单管龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "IGBT",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SGT-MOSFET",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SJ-MOSFET",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:01:56"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "605116",
+  "stock_name": "奥锐特",
+  "concept": "特色原料药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特色原料药",
+    "原料药中间体",
+    "特色复杂原料药"
+  ],
+  "should": [
+    "地屈孕酮",
+    "普瑞巴林",
+    "丙酸氟替卡松",
+    "依普利酮",
+    "替诺福韦",
+    "醋酸阿比特龙",
+    "合成生物学",
+    "光化学技术",
+    "手性合成",
+    "发酵"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特色原料药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原料药中间体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特色复杂原料药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:01:58"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "002489",
+  "stock_name": "浙江永强",
+  "concept": "户外家具制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "户外休闲家具"
+  ],
+  "should": [
+    "遮阳伞",
+    "帐篷",
+    "火炉桌",
+    "烤炉",
+    "户外厨房",
+    "户外家具制造",
+    "金属制品",
+    "设计研发",
+    "产品开发",
+    "家庭庭院和露台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "户外休闲家具",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:44:07"
+}

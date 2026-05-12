@@ -1,0 +1,41 @@
+{
+  "stock_id": "002026",
+  "stock_name": "山东威达",
+  "concept": "钻夹头制造商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钻夹头制造商",
+    "钻夹头",
+    "电动工具开关"
+  ],
+  "should": [
+    "新能源储能锂电池包",
+    "PCBA板",
+    "粉末冶金件",
+    "精密铸造件",
+    "锯片",
+    "电动工具",
+    "园林工具",
+    "智能家电",
+    "便捷交通工具",
+    "世界钻夹头行业龙头企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钻夹头制造商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钻夹头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电动工具开关",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:18:52"
+}

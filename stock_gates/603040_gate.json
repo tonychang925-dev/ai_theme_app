@@ -1,0 +1,36 @@
+{
+  "stock_id": "603040",
+  "stock_name": "新坐标",
+  "concept": "冷锻工艺",
+  "strategy_type": "industry_chain",
+  "must": [
+    "冷锻工艺",
+    "气门传动组精密冷锻件"
+  ],
+  "should": [
+    "气门组精密冷锻件",
+    "汽车自动变速箱精密部件",
+    "电动汽车二氧化碳热泵系统精密部件",
+    "底盘系统精密部件",
+    "电驱动系统空心电机轴",
+    "模具设计",
+    "冷锻模拟软件",
+    "大众集团核心供应商",
+    "汽车发动机配气机构",
+    "汽车传动系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "冷锻工艺",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "气门传动组精密冷锻件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:41:56"
+}

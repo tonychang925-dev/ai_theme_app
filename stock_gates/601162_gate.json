@@ -1,0 +1,36 @@
+{
+  "stock_id": "601162",
+  "stock_name": "天风证券",
+  "concept": "证券服务商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "研究业务",
+    "证券服务商"
+  ],
+  "should": [
+    "证券经纪业务",
+    "投资银行业务",
+    "资产管理业务",
+    "自营业务",
+    "私募基金管理业务",
+    "海外业务",
+    "期货经纪业务",
+    "全产业链深度研究",
+    "金融生态联盟",
+    "产业服务联盟"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "研究业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "证券服务商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:34:55"
+}

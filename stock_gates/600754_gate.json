@@ -1,0 +1,48 @@
+{
+  "stock_id": "600754",
+  "stock_name": "锦江酒店",
+  "concept": "酒店连锁运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "维也纳",
+    "7天",
+    "锦江之星",
+    "麗枫",
+    "卢浮酒店集团"
+  ],
+  "should": [
+    "WeHotel平台",
+    "GDR发行",
+    "酒店连锁运营",
+    "酒店运营",
+    "加盟管理",
+    "有效会员1.82亿",
+    "全球战略"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "维也纳",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "7天",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锦江之星",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "麗枫",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "卢浮酒店集团",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:26:46"
+}

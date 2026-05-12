@@ -1,0 +1,40 @@
+{
+  "stock_id": "603583",
+  "stock_name": "捷昌驱动",
+  "concept": "线性驱动系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "线性驱动系统",
+    "智慧办公驱动系统",
+    "医疗康护驱动系统"
+  ],
+  "should": [
+    "智能家居控制系统",
+    "工业自动化控制系统",
+    "线性驱动原理",
+    "控制系统",
+    "机械结构",
+    "电动机圆周运动转换为推杆直线运动",
+    "ODM模式",
+    "以销定产",
+    "定制化生产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "线性驱动系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧办公驱动系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗康护驱动系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:52:34"
+}

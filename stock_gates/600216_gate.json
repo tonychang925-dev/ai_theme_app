@@ -1,0 +1,37 @@
+{
+  "stock_id": "600216",
+  "stock_name": "浙江医药",
+  "concept": "维生素与抗生素",
+  "strategy_type": "industry_chain",
+  "must": [
+    "维生素E",
+    "抗耐药菌抗生素",
+    "喹诺酮产品"
+  ],
+  "should": [
+    "维生素与抗生素",
+    "饲料",
+    "食品",
+    "化妆品",
+    "保健品",
+    "医药"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "维生素E",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "抗耐药菌抗生素",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "喹诺酮产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:11:59"
+}

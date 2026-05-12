@@ -1,0 +1,29 @@
+{
+  "stock_id": "301548",
+  "stock_name": "崇德科技",
+  "concept": "动压油膜滑动轴承",
+  "strategy_type": "industry_chain",
+  "must": [
+    "动压油膜滑动轴承"
+  ],
+  "should": [
+    "能源发电",
+    "工业驱动",
+    "石油化工",
+    "船舶",
+    "轴承高温重载下的可靠性运行",
+    "全球市占率前六",
+    "国内领先企业",
+    "进口替代"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "动压油膜滑动轴承",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:06:13"
+}

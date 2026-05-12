@@ -1,0 +1,41 @@
+{
+  "stock_id": "688347",
+  "stock_name": "华虹公司",
+  "concept": "特色工艺晶圆代工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "嵌入式非易失性存储器",
+    "功率器件",
+    "智能卡芯片"
+  ],
+  "should": [
+    "独立式非易失性存储器",
+    "模拟与电源管理",
+    "逻辑与射频",
+    "嵌入式闪存技术",
+    "微控制器",
+    "NORD技术",
+    "ETOX技术",
+    "超精细沟槽栅IGBT",
+    "超结MOSFET技术",
+    "BCD+组合工艺"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "嵌入式非易失性存储器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功率器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能卡芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:16:07"
+}

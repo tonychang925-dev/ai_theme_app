@@ -1,0 +1,46 @@
+{
+  "stock_id": "601019",
+  "stock_name": "山东出版",
+  "concept": "出版发行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "出版",
+    "发行",
+    "印刷",
+    "印刷物资贸易",
+    "图书"
+  ],
+  "should": [
+    "教材教辅",
+    "音像电子出版物",
+    "期刊",
+    "内容出版",
+    "印刷物资供应"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "出版",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "印刷",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "印刷物资贸易",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "图书",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:33:28"
+}

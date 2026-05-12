@@ -1,0 +1,41 @@
+{
+  "stock_id": "002552",
+  "stock_name": "宝鼎科技",
+  "concept": "电子铜箔覆铜板",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子铜箔覆铜板",
+    "电子铜箔",
+    "覆铜板"
+  ],
+  "should": [
+    "高频高速电路用铜箔",
+    "挠性覆铜板用铜箔",
+    "IC封装载板极薄铜箔",
+    "大功率及大电流电路用厚铜箔",
+    "无卤板",
+    "高Tg板",
+    "5G通讯",
+    "人工智能",
+    "大数据",
+    "汽车电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子铜箔覆铜板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子铜箔",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "覆铜板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:46:56"
+}

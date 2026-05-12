@@ -1,0 +1,35 @@
+{
+  "stock_id": "300497",
+  "stock_name": "富祥药业",
+  "concept": "原料药及CDMO",
+  "strategy_type": "industry_chain",
+  "must": [
+    "原料药及CDMO",
+    "CDMO"
+  ],
+  "should": [
+    "他唑巴坦原料药/中间体",
+    "舒巴坦原料药/中间体",
+    "洛韦类药物中间体",
+    "碳酸亚乙烯酯（VC）",
+    "氟代碳酸乙烯酯（FEC）",
+    "抗生素",
+    "抗病毒",
+    "锂电池电解液添加剂",
+    "全球主要供应商之一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "原料药及CDMO",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CDMO",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:30:01"
+}

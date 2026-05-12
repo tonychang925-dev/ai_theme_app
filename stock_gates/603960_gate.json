@@ -1,0 +1,51 @@
+{
+  "stock_id": "603960",
+  "stock_name": "克来机电",
+  "concept": "智能装备与CO2热管理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能装备与CO2热管理",
+    "柔性自动化装备",
+    "工业机器人系统集成",
+    "非标智能装备",
+    "CO2高压管路"
+  ],
+  "should": [
+    "高压电子膨胀阀",
+    "燃油分配器",
+    "CO2高压管路防泄漏技术",
+    "MCU芯片研发",
+    "汽车零部件",
+    "汽车电子",
+    "新能源汽车热管理",
+    "CO2热管理稀缺供应商",
+    "大众MEB平台供应商",
+    "联合汽车电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能装备与CO2热管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "柔性自动化装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业机器人系统集成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "非标智能装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CO2高压管路",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:59:47"
+}

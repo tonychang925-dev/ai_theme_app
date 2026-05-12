@@ -1,0 +1,46 @@
+{
+  "stock_id": "300724",
+  "stock_name": "捷佳伟创",
+  "concept": "光伏电池设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PECVD",
+    "扩散炉",
+    "PERC电池",
+    "TOPCon电池"
+  ],
+  "should": [
+    "清洗设备",
+    "制绒设备",
+    "刻蚀设备",
+    "全自动丝网印刷设备",
+    "PVD",
+    "RPD",
+    "狭缝涂布",
+    "蒸镀设备",
+    "光伏电池设备",
+    "自动化设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PECVD",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "扩散炉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PERC电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "TOPCon电池",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:40:29"
+}

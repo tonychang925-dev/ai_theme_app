@@ -1,0 +1,46 @@
+{
+  "stock_id": "300931",
+  "stock_name": "通用电梯",
+  "concept": "电梯全流程服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电梯全流程服务",
+    "安装维保服务",
+    "整机制造",
+    "既有建筑加装电梯"
+  ],
+  "should": [
+    "乘客电梯",
+    "载货电梯",
+    "自动扶梯",
+    "自动人行道",
+    "电梯制造工艺技术",
+    "零部件供应",
+    "观光电梯",
+    "医用电梯",
+    "家用电梯",
+    "汽车电梯"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电梯全流程服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "安装维保服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "整机制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "既有建筑加装电梯",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:49:48"
+}

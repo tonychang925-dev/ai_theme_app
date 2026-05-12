@@ -1,0 +1,36 @@
+{
+  "stock_id": "300243",
+  "stock_name": "瑞丰高材",
+  "concept": "塑料助剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "MBS抗冲改性剂",
+    "MC抗冲改性剂"
+  ],
+  "should": [
+    "PC/ABS增韧改性剂",
+    "ABS高胶粉",
+    "ASA高胶粉",
+    "PBAT",
+    "PLA",
+    "ACR加工助剂技术",
+    "MBS抗冲改性技术",
+    "MC抗冲改性技术",
+    "PC/ABS增韧改性技术",
+    "ABS高胶粉技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "MBS抗冲改性剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MC抗冲改性剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:19:14"
+}

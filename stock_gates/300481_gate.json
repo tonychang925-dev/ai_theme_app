@@ -1,0 +1,31 @@
+{
+  "stock_id": "300481",
+  "stock_name": "濮阳惠成",
+  "concept": "顺酐酸酐衍生物",
+  "strategy_type": "industry_chain",
+  "must": [
+    "顺酐酸酐衍生物"
+  ],
+  "should": [
+    "四氢苯酐",
+    "六氢苯酐",
+    "甲基四氢苯酐",
+    "甲基六氢苯酐",
+    "纳迪克酸酐",
+    "甲基纳迪克酸酐",
+    "芴类",
+    "咔唑类",
+    "有机膦类",
+    "电子元器件封装材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "顺酐酸酐衍生物",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:29:08"
+}

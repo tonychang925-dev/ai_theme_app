@@ -1,0 +1,36 @@
+{
+  "stock_id": "603829",
+  "stock_name": "洛凯股份",
+  "concept": "断路器关键部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "断路器关键部件",
+    "断路器关键部附件"
+  ],
+  "should": [
+    "智能环网柜关键部附件",
+    "CKW65系列断路器",
+    "CKM68智能型塑料外壳式断路器",
+    "故障电弧探测器",
+    "RSF-12SF6气体绝缘环网柜",
+    "固件开发",
+    "低碳节能环保技术",
+    "传感和测量技术",
+    "智能制造技术",
+    "配网自动化建设"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "断路器关键部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "断路器关键部附件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:57:25"
+}

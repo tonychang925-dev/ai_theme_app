@@ -1,0 +1,40 @@
+{
+  "stock_id": "600477",
+  "stock_name": "杭萧钢构",
+  "concept": "钢结构建筑",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钢结构建筑",
+    "钢结构",
+    "钢结构产业聚能平台"
+  ],
+  "should": [
+    "万郡绿建平台",
+    "BIPV新型建材",
+    "自动焊接控制系统",
+    "机器人系统",
+    "视觉系统",
+    "活性炭吸附脱附催化燃烧工艺",
+    "装配式建筑",
+    "绿色建筑",
+    "光伏建筑一体化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钢结构建筑",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钢结构",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钢结构产业聚能平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:18:43"
+}

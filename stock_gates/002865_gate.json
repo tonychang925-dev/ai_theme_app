@@ -1,0 +1,36 @@
+{
+  "stock_id": "002865",
+  "stock_name": "钧达股份",
+  "concept": "光伏电池",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏电池",
+    "N型TOPCon电池",
+    "TOPCon电池技术"
+  ],
+  "should": [
+    "大尺寸单晶PERC太阳能电池",
+    "PERC电池技术",
+    "大尺寸电池产能",
+    "国内领先的光伏电池片生产商",
+    "出货量位居行业前列"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "N型TOPCon电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "TOPCon电池技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:00:50"
+}

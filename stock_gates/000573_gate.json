@@ -1,0 +1,39 @@
+{
+  "stock_id": "000573",
+  "stock_name": "粤宏远Ａ",
+  "concept": "地产+再生铅+煤炭",
+  "strategy_type": "industry_chain",
+  "must": [
+    "房地产业务",
+    "再生铅业务",
+    "煤炭业务"
+  ],
+  "should": [
+    "粗铅",
+    "精铅",
+    "废铅酸蓄电池回收",
+    "自主开发",
+    "合作开发",
+    "煤炭储量巨大",
+    "核桃坪煤矿45万吨/年扩建",
+    "煤炭沟煤矿45万吨/年扩建"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房地产业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "再生铅业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:57:00"
+}

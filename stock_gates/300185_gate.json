@@ -1,0 +1,51 @@
+{
+  "stock_id": "300185",
+  "stock_name": "通裕重工",
+  "concept": "能源装备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "MW级风力发电机主轴",
+    "球墨铸铁管管模",
+    "风电锻件",
+    "风电铸件",
+    "风电"
+  ],
+  "should": [
+    "风电结构件",
+    "管模",
+    "水电锻件",
+    "船用轴系锻件",
+    "压力容器锻件",
+    "硬质合金",
+    "能源装备制造",
+    "铸造",
+    "锻造",
+    "热处理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "MW级风力发电机主轴",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "球墨铸铁管管模",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电锻件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电铸件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:16:48"
+}

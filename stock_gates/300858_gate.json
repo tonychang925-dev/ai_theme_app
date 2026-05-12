@@ -1,0 +1,31 @@
+{
+  "stock_id": "300858",
+  "stock_name": "科拓生物",
+  "concept": "益生菌研发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "益生菌菌株开发",
+    "自主知识产权菌株"
+  ],
+  "should": [
+    "益生菌原料供应",
+    "益生菌产品技术解决方案",
+    "益生菌研发",
+    "菌株竞争",
+    "科研水平"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "益生菌菌株开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自主知识产权菌株",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:46:14"
+}

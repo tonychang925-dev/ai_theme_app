@@ -1,0 +1,46 @@
+{
+  "stock_id": "688189",
+  "stock_name": "南新制药",
+  "concept": "抗流感制药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "帕拉米韦氯化钠注射液",
+    "帕拉米韦吸入溶液",
+    "磷酸奥司他韦干混悬剂",
+    "NX-2016"
+  ],
+  "should": [
+    "贝那普利氢氯噻嗪片",
+    "复方布洛芬片",
+    "NX2466",
+    "NX2278",
+    "NX2362",
+    "盐酸美氟尼酮",
+    "抗流感制药",
+    "药物先导物的分子设计和发现技术",
+    "先导化合物优化技术",
+    "手性药物合成与质量控制技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "帕拉米韦氯化钠注射液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "帕拉米韦吸入溶液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磷酸奥司他韦干混悬剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "NX-2016",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:11:16"
+}

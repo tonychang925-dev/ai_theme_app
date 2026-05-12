@@ -1,0 +1,36 @@
+{
+  "stock_id": "301022",
+  "stock_name": "海泰科",
+  "concept": "汽车注塑模具",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车注塑模具",
+    "注塑模具"
+  ],
+  "should": [
+    "塑料零部件",
+    "数字化模具技术",
+    "激光快速成型技术",
+    "CAD/CAE/CAM一体化技术",
+    "三维设计技术",
+    "高速加工",
+    "快速成型",
+    "虚拟仿真",
+    "机器人技术",
+    "智能制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车注塑模具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "注塑模具",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:53:32"
+}

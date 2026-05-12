@@ -1,0 +1,26 @@
+{
+  "stock_id": "300780",
+  "stock_name": "德恩精工",
+  "concept": "机械传动零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "机械传动与传动联结件"
+  ],
+  "should": [
+    "机械非标定制件",
+    "工业机器人",
+    "数控机床",
+    "产业互联网平台服务",
+    "机械传动零部件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "机械传动与传动联结件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:42:49"
+}

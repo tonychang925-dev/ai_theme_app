@@ -1,0 +1,41 @@
+{
+  "stock_id": "300300",
+  "stock_name": "海峡创新",
+  "concept": "新型智慧城市服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新型智慧城市服务",
+    "智慧城市",
+    "智慧医疗"
+  ],
+  "should": [
+    "IDC数据中心",
+    "城市大脑",
+    "智慧文旅",
+    "智慧交通",
+    "智慧园区",
+    "智慧社区",
+    "数据中心",
+    "互联网医院",
+    "医疗美容",
+    "物联网"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新型智慧城市服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧城市",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧医疗",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:21:47"
+}

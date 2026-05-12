@@ -1,0 +1,36 @@
+{
+  "stock_id": "600679",
+  "stock_name": "上海凤凰",
+  "concept": "自行车制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "自行车",
+    "电动助力车"
+  ],
+  "should": [
+    "童车",
+    "天津生产基地",
+    "助动车",
+    "两轮摩托车",
+    "自行车制造",
+    "健身器材",
+    "材料加工",
+    "制造工艺",
+    "传动技术",
+    "城市出行"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "自行车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电动助力车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:24:45"
+}

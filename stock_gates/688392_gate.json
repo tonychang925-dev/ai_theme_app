@@ -1,0 +1,41 @@
+{
+  "stock_id": "688392",
+  "stock_name": "骄成超声",
+  "concept": "超声波设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "超声波焊接设备",
+    "动力电池制造自动化系统",
+    "超声波设备"
+  ],
+  "should": [
+    "超声波裁切系统",
+    "集成实时质量检测技术",
+    "楔杆式超声波焊接技术",
+    "超声波滚动焊接技术",
+    "新能源动力电池",
+    "橡胶轮胎",
+    "无纺布",
+    "汽车线束",
+    "功率半导体",
+    "宁德时代供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "超声波焊接设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动力电池制造自动化系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超声波设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:17:33"
+}

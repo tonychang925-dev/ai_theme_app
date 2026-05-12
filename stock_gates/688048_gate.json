@@ -1,0 +1,41 @@
+{
+  "stock_id": "688048",
+  "stock_name": "长光华芯",
+  "concept": "半导体激光芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体激光芯片",
+    "高功率单管系列",
+    "高功率巴条系列"
+  ],
+  "should": [
+    "高效率VCSEL系列",
+    "光通信芯片系列",
+    "芯片设计",
+    "晶圆制造",
+    "芯片加工",
+    "封装测试",
+    "外延生长",
+    "光栅制作",
+    "条形刻蚀",
+    "端面镀膜"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体激光芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高功率单管系列",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高功率巴条系列",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:06:30"
+}

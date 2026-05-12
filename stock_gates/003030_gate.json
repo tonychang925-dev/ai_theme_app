@@ -1,0 +1,32 @@
+{
+  "stock_id": "003030",
+  "stock_name": "祖名股份",
+  "concept": "豆制品领导品牌",
+  "strategy_type": "industry_chain",
+  "must": [
+    "豆制品领导品牌",
+    "江浙沪地区领导品牌"
+  ],
+  "should": [
+    "生鲜豆制品",
+    "植物蛋白饮品",
+    "休闲豆制品",
+    "保鲜技术",
+    "专豆专用技术",
+    "农业产业化国家重点龙头企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "豆制品领导品牌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "江浙沪地区领导品牌",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:08:16"
+}

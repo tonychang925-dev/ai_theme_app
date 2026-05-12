@@ -1,0 +1,44 @@
+{
+  "stock_id": "600873",
+  "stock_name": "梅花生物",
+  "concept": "玉米深加工龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "玉米深加工龙头",
+    "味精",
+    "赖氨酸",
+    "苏氨酸"
+  ],
+  "should": [
+    "黄原胶",
+    "生物发酵技术",
+    "食品调味品",
+    "饲料添加剂",
+    "石油开采",
+    "味精寡头之一",
+    "全球赖氨酸龙头",
+    "全球苏氨酸龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "玉米深加工龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "味精",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "赖氨酸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "苏氨酸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:30:09"
+}

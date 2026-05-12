@@ -1,0 +1,40 @@
+{
+  "stock_id": "002580",
+  "stock_name": "圣阳股份",
+  "concept": "新能源储能电池",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源储能电池",
+    "锂离子电池及电源系统",
+    "铅蓄电池及系统"
+  ],
+  "should": [
+    "新能源系统集成产品及服务",
+    "长寿命高安全锂离子电池",
+    "5G通信一体化锂电池电源系统",
+    "通信高压直流锂电池电源系统",
+    "电力直流锂电池电源系统",
+    "UPS高压直流锂电池电源系统",
+    "深循环铅炭电池",
+    "长寿命纯铅电池",
+    "高温铅蓄电池"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源储能电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂离子电池及电源系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铅蓄电池及系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:48:28"
+}

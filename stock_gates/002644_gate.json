@@ -1,0 +1,41 @@
+{
+  "stock_id": "002644",
+  "stock_name": "佛慈制药",
+  "concept": "中药制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "浓缩丸工艺",
+    "中药质量控制技术",
+    "现代中药制剂工程技术"
+  ],
+  "should": [
+    "六味地黄丸",
+    "逍遥丸",
+    "香砂养胃丸",
+    "参茸固本还少丸",
+    "阿胶",
+    "中药饮片",
+    "大健康产品",
+    "中药材种植",
+    "中药饮片加工",
+    "中成药生产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "浓缩丸工艺",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中药质量控制技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "现代中药制剂工程技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:51:20"
+}

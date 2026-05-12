@@ -1,0 +1,39 @@
+{
+  "stock_id": "600236",
+  "stock_name": "桂冠电力",
+  "concept": "清洁能源发电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "清洁能源发电",
+    "水力发电",
+    "水电站生产管理"
+  ],
+  "should": [
+    "风力发电",
+    "光伏发电",
+    "火力发电",
+    "售电",
+    "电力销售",
+    "清洁能源",
+    "发电技术",
+    "检修管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "清洁能源发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水力发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水电站生产管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:12:41"
+}

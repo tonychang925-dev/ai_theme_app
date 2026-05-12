@@ -1,0 +1,51 @@
+{
+  "stock_id": "000999",
+  "stock_name": "华润三九",
+  "concept": "OTC品牌龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "OTC品牌龙头",
+    "自我诊疗CHC",
+    "999",
+    "999感冒灵",
+    "三九胃泰"
+  ],
+  "should": [
+    "999皮炎平",
+    "999小儿感冒",
+    "999抗病毒口服液",
+    "好娃娃",
+    "好娃娃产品",
+    "天和",
+    "天和骨通贴膏",
+    "顺峰",
+    "易善复",
+    "康妇特"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "OTC品牌龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自我诊疗CHC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "999",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "999感冒灵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三九胃泰",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:13:00"
+}

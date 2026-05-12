@@ -1,0 +1,32 @@
+{
+  "stock_id": "600158",
+  "stock_name": "中体产业",
+  "concept": "体育本体产业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "体育本体产业",
+    "大型赛事运营"
+  ],
+  "should": [
+    "国家队运动员经纪",
+    "体育空间运营",
+    "体育总局控股",
+    "国际体育组织合作",
+    "体育培训消费",
+    "体育公共服务数字化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "体育本体产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大型赛事运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:10:32"
+}

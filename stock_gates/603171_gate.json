@@ -1,0 +1,39 @@
+{
+  "stock_id": "603171",
+  "stock_name": "税友股份",
+  "concept": "财税数字化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "财税数字化",
+    "税务系统开发与运维",
+    "企业财税综合服务"
+  ],
+  "should": [
+    "亿企助手",
+    "亿企代账",
+    "大数据",
+    "云计算",
+    "人工智能",
+    "税务机关",
+    "纳税企业",
+    "财税中介"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "财税数字化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "税务系统开发与运维",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "企业财税综合服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:45:22"
+}

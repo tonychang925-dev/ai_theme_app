@@ -1,0 +1,43 @@
+{
+  "stock_id": "600757",
+  "stock_name": "长江传媒",
+  "concept": "文化出版",
+  "strategy_type": "industry_chain",
+  "must": [
+    "图书出版",
+    "图书发行",
+    "教材教辅",
+    "文化出版"
+  ],
+  "should": [
+    "实体书店",
+    "新华书店",
+    "期刊",
+    "一般图书",
+    "教育服务平台",
+    "线上直播",
+    "课后服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "图书出版",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "图书发行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "教材教辅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "文化出版",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:26:49"
+}

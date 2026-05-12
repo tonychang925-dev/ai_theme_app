@@ -1,0 +1,36 @@
+{
+  "stock_id": "300773",
+  "stock_name": "拉卡拉",
+  "concept": "第三方支付",
+  "strategy_type": "industry_chain",
+  "must": [
+    "第三方支付",
+    "数字支付业务"
+  ],
+  "should": [
+    "科技服务业务",
+    "跨境支付",
+    "金融科技服务",
+    "支付+行业数字解决方案",
+    "虹技术",
+    "B2C支付",
+    "B2B支付",
+    "扫码支付",
+    "数字人民币支付",
+    "门店数字化经营服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "第三方支付",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字支付业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:42:33"
+}

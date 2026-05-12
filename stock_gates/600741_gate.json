@@ -1,0 +1,36 @@
+{
+  "stock_id": "600741",
+  "stock_name": "华域汽车",
+  "concept": "汽车零部件龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国内汽车综合零部件龙头",
+    "汽车零部件龙头"
+  ],
+  "should": [
+    "汽车内外饰件",
+    "新能源",
+    "功能件",
+    "电子电器件",
+    "金属成型和模具",
+    "热加工件",
+    "自主研发体系",
+    "本土化同步开发能力",
+    "精益管理体系",
+    "乘用车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国内汽车综合零部件龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车零部件龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:26:24"
+}

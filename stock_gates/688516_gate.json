@@ -1,0 +1,51 @@
+{
+  "stock_id": "688516",
+  "stock_name": "奥特维",
+  "concept": "光伏串焊设备龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏串焊设备龙头",
+    "串焊机",
+    "组件核心设备龙头",
+    "全球领先的光伏设备制造商",
+    "串焊设备龙头"
+  ],
+  "should": [
+    "划片机",
+    "划焊一体机",
+    "单晶炉",
+    "硅片分选机",
+    "光注入退火炉",
+    "丝网印刷机",
+    "锂电模组PACK产线",
+    "半导体键合机",
+    "精密位置控制（自动化）",
+    "精密检测（光学/电子）"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏串焊设备龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "串焊机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "组件核心设备龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球领先的光伏设备制造商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "串焊设备龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:19:38"
+}

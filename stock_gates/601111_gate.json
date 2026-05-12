@@ -1,0 +1,49 @@
+{
+  "stock_id": "601111",
+  "stock_name": "中国国航",
+  "concept": "载旗航空",
+  "strategy_type": "industry_chain",
+  "must": [
+    "载旗航空",
+    "中国唯一载旗航司",
+    "欧美远程航线市占率第一",
+    "稀缺国际航权",
+    "北京首都机场份额约70%"
+  ],
+  "should": [
+    "深圳宝安机场市占率37%",
+    "成都双流机场市占率31%",
+    "常旅客收入占比56.8%",
+    "客公里收益0.53元",
+    "座公里收益0.43元",
+    "座公里成本0.39元",
+    "航网时刻优质",
+    "公商务旅客需求刚性"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "载旗航空",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中国唯一载旗航司",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "欧美远程航线市占率第一",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "稀缺国际航权",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "北京首都机场份额约70%",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:34:15"
+}

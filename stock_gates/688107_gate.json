@@ -1,0 +1,28 @@
+{
+  "stock_id": "688107",
+  "stock_name": "安路科技",
+  "concept": "国产FPGA龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国产FPGA龙头"
+  ],
+  "should": [
+    "PHOENIX高性能产品系列",
+    "EAGLE高性价比产品系列",
+    "ELF低功耗产品系列",
+    "TangDynasty软件",
+    "新型FPGA专用EDA软件架构",
+    "与多方晶圆代工厂合作",
+    "通过灿芯半导体进行晶圆采购"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国产FPGA龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:08:30"
+}

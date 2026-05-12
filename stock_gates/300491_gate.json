@@ -1,0 +1,35 @@
+{
+  "stock_id": "300491",
+  "stock_name": "通合科技",
+  "concept": "电力电子设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力操作电源",
+    "充电模块"
+  ],
+  "should": [
+    "充电桩解决方案",
+    "车载电源",
+    "双向充放电模块",
+    "电力用UPS/逆变电源",
+    "配网自动化电源",
+    "充电模块八代更迭",
+    "液冷方案",
+    "高防护方案",
+    "自动化制造技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力操作电源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "充电模块",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:29:51"
+}

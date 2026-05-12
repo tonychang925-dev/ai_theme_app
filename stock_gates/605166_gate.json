@@ -1,0 +1,36 @@
+{
+  "stock_id": "605166",
+  "stock_name": "聚合顺",
+  "concept": "尼龙新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "聚酰胺6切片",
+    "尼龙66"
+  ],
+  "should": [
+    "尼龙66与尼龙6共聚产品",
+    "尼龙新材料",
+    "特种尼龙",
+    "自主研发",
+    "产学研合作",
+    "信息化系统",
+    "智能化设备",
+    "尼龙纤维",
+    "工程塑料",
+    "薄膜"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "聚酰胺6切片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "尼龙66",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:02:23"
+}

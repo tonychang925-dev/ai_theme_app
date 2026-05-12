@@ -1,0 +1,31 @@
+{
+  "stock_id": "002968",
+  "stock_name": "新大正",
+  "concept": "公建物业服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "办公物业"
+  ],
+  "should": [
+    "公建物业服务",
+    "公共物业",
+    "学校物业",
+    "航空物业",
+    "商住物业",
+    "党政军机关",
+    "企业总部",
+    "产业园区",
+    "高等院校",
+    "医养机构"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "办公物业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:05:21"
+}

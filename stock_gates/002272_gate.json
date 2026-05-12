@@ -1,0 +1,46 @@
+{
+  "stock_id": "002272",
+  "stock_name": "川润股份",
+  "concept": "润滑液压设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "润滑液压设备",
+    "润滑系统",
+    "液压系统",
+    "液压润滑流体控制"
+  ],
+  "should": [
+    "冷却系统",
+    "储能系统集成",
+    "储热系统",
+    "换热系统",
+    "储能温控",
+    "液冷产品",
+    "储能集成",
+    "液冷温控",
+    "风电",
+    "光热"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "润滑液压设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "润滑系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液压系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液压润滑流体控制",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:32:45"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "603587",
+  "stock_name": "地素时尚",
+  "concept": "中高端女装",
+  "strategy_type": "industry_chain",
+  "must": [
+    "DAZZLE",
+    "d'zzit"
+  ],
+  "should": [
+    "RAZZLE",
+    "天猫",
+    "唯品会",
+    "网易考拉",
+    "抖音",
+    "微商城",
+    "中高端女装",
+    "直播",
+    "社群运营",
+    "企业微信"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "DAZZLE",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "d'zzit",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:52:42"
+}

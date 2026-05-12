@@ -1,0 +1,46 @@
+{
+  "stock_id": "688515",
+  "stock_name": "裕太微",
+  "concept": "以太网芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "以太网物理层芯片",
+    "以太网芯片",
+    "千兆PHY",
+    "车载千兆以太网物理层芯片"
+  ],
+  "should": [
+    "以太网交换芯片",
+    "2.5GPHY",
+    "车载百兆以太网物理层芯片",
+    "百兆PHY",
+    "网卡芯片",
+    "车载网关",
+    "数字设计",
+    "硬件设计",
+    "自主知识产权",
+    "数模混合芯片系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "以太网物理层芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "以太网芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "千兆PHY",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载千兆以太网物理层芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:19:35"
+}

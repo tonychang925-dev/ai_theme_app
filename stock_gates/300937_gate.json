@@ -1,0 +1,37 @@
+{
+  "stock_id": "300937",
+  "stock_name": "药易购",
+  "concept": "院外医药流通",
+  "strategy_type": "industry_chain",
+  "must": [
+    "院外医药流通",
+    "医药流通综合服务",
+    "院外市场"
+  ],
+  "should": [
+    "零售药店",
+    "基层医疗机构",
+    "单体药店",
+    "数字化",
+    "智能化",
+    "信息化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "院外医药流通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药流通综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "院外市场",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:49:56"
+}

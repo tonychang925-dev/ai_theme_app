@@ -1,0 +1,36 @@
+{
+  "stock_id": "300153",
+  "stock_name": "科泰电源",
+  "concept": "数据中心备用电源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数据中心备用电源",
+    "柴油发电机组"
+  ],
+  "should": [
+    "输配电产品",
+    "专用车产品",
+    "国家电网",
+    "南方电网",
+    "混合能源",
+    "分布式电站",
+    "智能化",
+    "环保性",
+    "港口",
+    "船舶"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数据中心备用电源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "柴油发电机组",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:15:27"
+}

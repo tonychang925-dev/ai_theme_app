@@ -1,0 +1,36 @@
+{
+  "stock_id": "600419",
+  "stock_name": "天润乳业",
+  "concept": "新疆乳业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "低温酸奶",
+    "UHT奶",
+    "奶啤"
+  ],
+  "should": [
+    "牛奶二次发酵",
+    "马克斯克鲁维酵母菌发酵",
+    "自有牧场",
+    "疆内领导地位",
+    "疆外扩张"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "低温酸奶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "UHT奶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "奶啤",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:17:24"
+}

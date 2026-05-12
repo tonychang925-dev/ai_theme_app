@@ -1,0 +1,41 @@
+{
+  "stock_id": "002903",
+  "stock_name": "宇环数控",
+  "concept": "数控磨削设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数控磨削设备",
+    "数控磨床",
+    "数控研磨抛光机"
+  ],
+  "should": [
+    "智能装备系列",
+    "精密磨削技术",
+    "抛光技术",
+    "智能制造技术",
+    "消费电子",
+    "汽车工业",
+    "机器人",
+    "输变电行业",
+    "能源冶金行业",
+    "数控磨削设备供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数控磨削设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数控磨床",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数控研磨抛光机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:02:25"
+}

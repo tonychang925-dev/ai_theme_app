@@ -1,0 +1,39 @@
+{
+  "stock_id": "688338",
+  "stock_name": "赛科希德",
+  "concept": "凝血检测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全自动凝血测试仪",
+    "凝血检测试剂",
+    "高速凝血分析技术"
+  ],
+  "should": [
+    "血流变检测仪器",
+    "全自动凝血测试技术",
+    "凝血检测",
+    "术前检查",
+    "围手术期检测",
+    "常规诊疗",
+    "国产替代",
+    "行业标准制定"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全自动凝血测试仪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "凝血检测试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高速凝血分析技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:15:53"
+}

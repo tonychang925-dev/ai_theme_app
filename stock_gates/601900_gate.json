@@ -1,0 +1,46 @@
+{
+  "stock_id": "601900",
+  "stock_name": "南方传媒",
+  "concept": "教育出版",
+  "strategy_type": "industry_chain",
+  "must": [
+    "教材",
+    "教育出版",
+    "教辅",
+    "教育服务"
+  ],
+  "should": [
+    "数字教育平台",
+    "粤教翔云数字教材平台",
+    "南方智慧作业系统",
+    "一般图书",
+    "音像制品",
+    "电子出版物",
+    "大众出版",
+    "主题出版",
+    "岭南文化出版",
+    "大湾区文化传播"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "教材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "教育出版",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "教辅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "教育服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:39:39"
+}

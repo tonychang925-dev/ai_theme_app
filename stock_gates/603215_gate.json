@@ -1,0 +1,46 @@
+{
+  "stock_id": "603215",
+  "stock_name": "比依股份",
+  "concept": "厨房电器代工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "空气炸锅",
+    "空气烤箱",
+    "油炸锅",
+    "咖啡机"
+  ],
+  "should": [
+    "飞利浦",
+    "尚科宁家",
+    "SharkNinja",
+    "小熊电器",
+    "苏泊尔",
+    "泰国厂区",
+    "中意厂区",
+    "净水机",
+    "AI扫地机器人",
+    "AR眼镜"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "空气炸锅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空气烤箱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "油炸锅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "咖啡机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:46:42"
+}

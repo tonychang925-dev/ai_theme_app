@@ -1,0 +1,46 @@
+{
+  "stock_id": "603228",
+  "stock_name": "景旺电子",
+  "concept": "印制电路板",
+  "strategy_type": "industry_chain",
+  "must": [
+    "印制电路板",
+    "RPCB",
+    "FPC",
+    "MPCB"
+  ],
+  "should": [
+    "高密度互连板",
+    "高速多层板",
+    "高频板",
+    "高散热板",
+    "多层软板",
+    "软硬结合板",
+    "HDI板",
+    "SLP板",
+    "服务器whitey平台高速板",
+    "低轨卫星空腔板"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "印制电路板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "RPCB",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "FPC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MPCB",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:47:16"
+}

@@ -1,0 +1,21 @@
+{
+  "stock_id": "301507",
+  "stock_name": "民生健康",
+  "concept": "维生素矿物质补充剂",
+  "strategy_type": "industry_chain",
+  "must": [],
+  "should": [
+    "维生素矿物质补充剂",
+    "研发创新",
+    "产品矩阵丰富",
+    "非处方药市场",
+    "膳食营养补充剂市场",
+    "零售药店",
+    "连锁药店"
+  ],
+  "not": [],
+  "evidence_refs": [],
+  "quality": "weak",
+  "must_count": 0,
+  "generated_at": "2026-05-11T19:05:40"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "002608",
+  "stock_name": "江苏国信",
+  "concept": "能源金融双轮驱动",
+  "strategy_type": "industry_chain",
+  "must": [
+    "能源金融双轮驱动",
+    "信托业务"
+  ],
+  "should": [
+    "高效低能耗煤电机组",
+    "9F和6F燃气机组",
+    "家族信托",
+    "股权投资",
+    "证券投资",
+    "资产证券化",
+    "江苏电网",
+    "山西电网",
+    "江苏银行第一大股东",
+    "利安人寿第一大股东"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "能源金融双轮驱动",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信托业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:49:47"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "600109",
+  "stock_name": "国金证券",
+  "concept": "综合类券商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合类券商",
+    "投资银行业务",
+    "股权融资",
+    "债券融资"
+  ],
+  "should": [
+    "财富业务",
+    "机构业务",
+    "资管业务",
+    "自营业务",
+    "私募基金业务",
+    "期货业务",
+    "境外业务",
+    "并购重组",
+    "新三板业务",
+    "ABS业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合类券商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资银行业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "股权融资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "债券融资",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:09:26"
+}

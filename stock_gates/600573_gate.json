@@ -1,0 +1,41 @@
+{
+  "stock_id": "600573",
+  "stock_name": "惠泉啤酒",
+  "concept": "啤酒酿造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "惠泉一麦",
+    "惠泉鲜啤系列产品",
+    "精酿白啤系列产品"
+  ],
+  "should": [
+    "惠泉纯生",
+    "惠泉欧骑士",
+    "啤酒酿造",
+    "卓越管理建设",
+    "SOP升级执行",
+    "品质提升计划",
+    "绿色生产",
+    "智能制造",
+    "数字化转型",
+    "餐饮渠道"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "惠泉一麦",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "惠泉鲜啤系列产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精酿白啤系列产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:21:32"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "003007",
+  "stock_name": "直真科技",
+  "concept": "ICT运营管理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "ICT运营管理",
+    "网络管理支撑系统",
+    "服务运营支撑系统",
+    "电信运营商网络管理"
+  ],
+  "should": [
+    "企业经营管理支撑系统",
+    "SaaS运营服务",
+    "VideoPro云视频服务",
+    "多式联运信息化系统",
+    "DevOps",
+    "微服务管控",
+    "流程管理PaaS",
+    "统一采集和数据服务平台",
+    "低代码开发平台",
+    "中台化架构"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "ICT运营管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "网络管理支撑系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "服务运营支撑系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电信运营商网络管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:07:16"
+}

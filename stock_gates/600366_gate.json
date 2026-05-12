@@ -1,0 +1,41 @@
+{
+  "stock_id": "600366",
+  "stock_name": "宁波韵升",
+  "concept": "稀土永磁材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "稀土永磁材料",
+    "钕铁硼永磁材料",
+    "高性能钕铁硼磁性材料"
+  ],
+  "should": [
+    "稀土永磁材料全套装备制造",
+    "柔性生产线",
+    "新能源汽车",
+    "消费电子",
+    "城市轨道交通",
+    "工业机器人",
+    "节能家电",
+    "风力发电",
+    "工业应用",
+    "比亚迪"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "稀土永磁材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钕铁硼永磁材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高性能钕铁硼磁性材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:16:11"
+}

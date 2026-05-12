@@ -1,0 +1,44 @@
+{
+  "stock_id": "603728",
+  "stock_name": "鸣志电器",
+  "concept": "运动控制解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "混合式步进电机",
+    "全球第四",
+    "运动控制解决方案"
+  ],
+  "should": [
+    "驱动控制系统",
+    "无刷电机",
+    "精密直线传动系统",
+    "单芯片多轴驱动",
+    "多圈绝对值编码器",
+    "二自由度伺服控制",
+    "伺服控制技术架构",
+    "移动服务机器人",
+    "高端医疗仪器",
+    "生化分析仪器"
+  ],
+  "not": [
+    "打破日企垄断",
+    "全球化供应链"
+  ],
+  "evidence_refs": [
+    {
+      "term": "混合式步进电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球第四",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "运动控制解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:55:47"
+}

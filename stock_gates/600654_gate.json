@@ -1,0 +1,41 @@
+{
+  "stock_id": "600654",
+  "stock_name": "中安科",
+  "concept": "安防消防系统集成",
+  "strategy_type": "industry_chain",
+  "must": [
+    "安防消防系统集成",
+    "安保综合运营",
+    "智能化系统集成"
+  ],
+  "should": [
+    "智能制造",
+    "物联网传感产品",
+    "智慧家居产品",
+    "专业安防设备",
+    "智能门禁设备",
+    "智慧楼宇",
+    "金融机构",
+    "商业零售客户",
+    "航空公司",
+    "公共服务部门"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "安防消防系统集成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "安保综合运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能化系统集成",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:24:09"
+}

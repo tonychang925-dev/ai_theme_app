@@ -1,0 +1,31 @@
+{
+  "stock_id": "688138",
+  "stock_name": "清溢光电",
+  "concept": "掩膜版制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "掩膜版"
+  ],
+  "should": [
+    "石英掩膜版",
+    "掩膜版制造",
+    "自主研发",
+    "制程节点",
+    "平板显示",
+    "半导体芯片",
+    "触控",
+    "线路板",
+    "国内掩膜版龙头",
+    "全球第5位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "掩膜版",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:09:34"
+}

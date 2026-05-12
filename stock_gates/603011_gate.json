@@ -1,0 +1,41 @@
+{
+  "stock_id": "603011",
+  "stock_name": "合锻智能",
+  "concept": "高端成形机床",
+  "strategy_type": "industry_chain",
+  "must": [
+    "液压机",
+    "色选机",
+    "机压机"
+  ],
+  "should": [
+    "全自动汽车冲压生产线",
+    "直接热成形生产线",
+    "间接热成形生产线",
+    "精密温锻造液压机",
+    "双动充液拉深液压机",
+    "快锻及自由锻液压机",
+    "精密等温锻造压机",
+    "比亚迪",
+    "长城",
+    "吉利"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "液压机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "色选机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机压机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:41:03"
+}

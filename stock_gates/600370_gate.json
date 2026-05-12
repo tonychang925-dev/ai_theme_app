@@ -1,0 +1,31 @@
+{
+  "stock_id": "600370",
+  "stock_name": "三房巷",
+  "concept": "瓶级聚酯切片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "瓶级聚酯切片"
+  ],
+  "should": [
+    "PTA",
+    "软饮料",
+    "乳制品",
+    "食用油",
+    "调味品",
+    "酒类",
+    "日化",
+    "电子产品",
+    "医疗医药",
+    "PX进口替代"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "瓶级聚酯切片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:16:15"
+}

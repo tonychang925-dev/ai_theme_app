@@ -1,0 +1,48 @@
+{
+  "stock_id": "002369",
+  "stock_name": "卓翼科技",
+  "concept": "3C与IoT方案商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "3C与IoT方案商",
+    "网络通讯类",
+    "消费电子类",
+    "IoT",
+    "5G"
+  ],
+  "should": [
+    "智能制造",
+    "智能穿戴",
+    "智能家居",
+    "智能车载",
+    "自动化",
+    "信息化",
+    "方案提供商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "3C与IoT方案商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "网络通讯类",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "消费电子类",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IoT",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "5G",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:38:12"
+}

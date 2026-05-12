@@ -1,0 +1,46 @@
+{
+  "stock_id": "600082",
+  "stock_name": "海泰发展",
+  "concept": "创业孵化工业地产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "创业孵化工业地产",
+    "工业园区运营",
+    "高新技术产业投资",
+    "孵化服务"
+  ],
+  "should": [
+    "贸易",
+    "绿色产业基地",
+    "创新基地",
+    "国家软件服务外包基地",
+    "融资咨询",
+    "专利服务",
+    "创业导师培训服务"
+  ],
+  "not": [
+    "棉花",
+    "电解铜"
+  ],
+  "evidence_refs": [
+    {
+      "term": "创业孵化工业地产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业园区运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高新技术产业投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "孵化服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:08:41"
+}

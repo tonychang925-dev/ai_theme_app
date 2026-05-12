@@ -1,0 +1,30 @@
+{
+  "stock_id": "300671",
+  "stock_name": "富满微",
+  "concept": "模拟集成电路设计",
+  "strategy_type": "industry_chain",
+  "must": [
+    "模拟集成电路设计",
+    "集成电路综合方案服务商"
+  ],
+  "should": [
+    "LED屏控制及驱动",
+    "电源管理芯片",
+    "封装",
+    "测试"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "模拟集成电路设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集成电路综合方案服务商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:38:08"
+}

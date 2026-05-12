@@ -1,0 +1,41 @@
+{
+  "stock_id": "000930",
+  "stock_name": "中粮科技",
+  "concept": "玉米深加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "燃料乙醇",
+    "淀粉",
+    "柠檬酸"
+  ],
+  "should": [
+    "变性淀粉",
+    "淀粉糖",
+    "酒精",
+    "酶制剂",
+    "有机酸",
+    "氨基酸",
+    "饲料",
+    "玉米油",
+    "生物可降解材料",
+    "生物质能技术研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "燃料乙醇",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "淀粉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "柠檬酸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:10:06"
+}

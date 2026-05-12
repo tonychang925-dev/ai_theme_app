@@ -1,0 +1,36 @@
+{
+  "stock_id": "601555",
+  "stock_name": "东吴证券",
+  "concept": "综合金融服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "财富管理业务",
+    "研究服务"
+  ],
+  "should": [
+    "投资银行业务",
+    "投资交易业务",
+    "新三板业务",
+    "期货经纪",
+    "长三角",
+    "苏州根据地",
+    "同花顺",
+    "京东金融",
+    "苏州交通投资集团",
+    "北交所行业第3名"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "财富管理业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "研究服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:36:54"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "002709",
+  "stock_name": "天赐材料",
+  "concept": "电解液龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂离子电池电解液",
+    "六氟磷酸锂",
+    "新型锂盐LiFSI",
+    "正极材料磷酸铁锂"
+  ],
+  "should": [
+    "电解液龙头",
+    "添加剂",
+    "新能源汽车",
+    "储能领域",
+    "新型电解质",
+    "磷酸铁",
+    "表面活性剂",
+    "硅油",
+    "个人护理品",
+    "全球电解液龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂离子电池电解液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "六氟磷酸锂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新型锂盐LiFSI",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "正极材料磷酸铁锂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:54:22"
+}

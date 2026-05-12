@@ -1,0 +1,34 @@
+{
+  "stock_id": "301057",
+  "stock_name": "汇隆新材",
+  "concept": "差别化有色涤纶长丝",
+  "strategy_type": "industry_chain",
+  "must": [
+    "差别化有色涤纶长丝",
+    "原液着色技术"
+  ],
+  "should": [
+    "差别化有色涤纶长丝DTY",
+    "差别化有色涤纶长丝FDY",
+    "差别化有色涤纶长丝POY",
+    "绿色纤维制造技术",
+    "运动服饰",
+    "户外用品",
+    "服装",
+    "家纺"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "差别化有色涤纶长丝",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原液着色技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:54:52"
+}

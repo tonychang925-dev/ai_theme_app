@@ -1,0 +1,36 @@
+{
+  "stock_id": "301361",
+  "stock_name": "众智科技",
+  "concept": "发电机组控制器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "发电机组控制器",
+    "双电源自动切换控制器"
+  ],
+  "should": [
+    "工程机械类用控制器",
+    "船用控制器",
+    "通机控制器",
+    "电气控制柜",
+    "蓄电池充电器",
+    "发动机加热器",
+    "云监控模块",
+    "通信模块",
+    "电力保护模块",
+    "输入输出扩展模块"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "发电机组控制器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "双电源自动切换控制器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:03:53"
+}

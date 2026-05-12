@@ -1,0 +1,34 @@
+{
+  "stock_id": "002664",
+  "stock_name": "信质集团",
+  "concept": "电机核心零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车发电机定子及总成",
+    "汽车微特电机转子"
+  ],
+  "should": [
+    "电动自行车定子及总成",
+    "电梯曳引机定子",
+    "电动工具电机转子",
+    "VVT(汽车可变气门正时系统)",
+    "家电电机转子",
+    "电机核心零部件",
+    "主控芯片",
+    "固件开发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车发电机定子及总成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车微特电机转子",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:52:09"
+}

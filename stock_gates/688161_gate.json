@@ -1,0 +1,46 @@
+{
+  "stock_id": "688161",
+  "stock_name": "威高骨科",
+  "concept": "骨科植入器械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "骨科植入器械",
+    "脊柱",
+    "创伤",
+    "关节"
+  ],
+  "should": [
+    "运动医学",
+    "骨科材料",
+    "骨科植入耗材",
+    "数字化",
+    "智能化",
+    "微创化",
+    "骨科手术",
+    "国产龙头",
+    "国产厂商第1位",
+    "全行业第5位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "骨科植入器械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "脊柱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "创伤",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "关节",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:10:12"
+}

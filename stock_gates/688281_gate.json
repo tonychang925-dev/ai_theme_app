@@ -1,0 +1,41 @@
+{
+  "stock_id": "688281",
+  "stock_name": "华秦科技",
+  "concept": "军用隐身材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "军用隐身材料",
+    "隐身材料",
+    "中高温隐身材料设计"
+  ],
+  "should": [
+    "伪装材料",
+    "防护材料",
+    "多频谱兼容高仿真伪装",
+    "热防护技术",
+    "重防腐技术",
+    "飞机",
+    "主战坦克",
+    "舰船",
+    "导弹",
+    "地面军事目标伪装"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "军用隐身材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "隐身材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中高温隐身材料设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:14:06"
+}

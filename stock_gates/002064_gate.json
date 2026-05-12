@@ -1,0 +1,35 @@
+{
+  "stock_id": "002064",
+  "stock_name": "华峰化学",
+  "concept": "氨纶龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "氨纶龙头",
+    "氨纶纤维"
+  ],
+  "should": [
+    "聚氨酯原液",
+    "己二酸",
+    "一体化生产体系",
+    "产业链集成优势",
+    "规模优势",
+    "降低单位期间费用",
+    "降低单位固定成本",
+    "提升议价能力",
+    "降低采购成本"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "氨纶龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氨纶纤维",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:21:03"
+}

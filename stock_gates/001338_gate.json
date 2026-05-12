@@ -1,0 +1,31 @@
+{
+  "stock_id": "001338",
+  "stock_name": "永顺泰",
+  "concept": "麦芽制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "基础大麦麦芽"
+  ],
+  "should": [
+    "特种麦芽",
+    "小麦麦芽",
+    "麦芽技术研究院",
+    "CNAS认证实验室",
+    "麦芽制造",
+    "啤酒酿造",
+    "高端啤酒",
+    "产能规模中国第一、世界第五",
+    "国内规模最大的麦芽制造商",
+    "客户资源优质且稳定"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "基础大麦麦芽",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:16:55"
+}

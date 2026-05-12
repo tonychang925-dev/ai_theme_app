@@ -1,0 +1,35 @@
+{
+  "stock_id": "688626",
+  "stock_name": "翔宇医疗",
+  "concept": "康复医疗器械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "康复医疗器械",
+    "国家企业技术中心"
+  ],
+  "should": [
+    "平衡评估训练系统",
+    "四肢联动康复系统",
+    "认知障碍康复评估训练系统",
+    "平衡功能评估及训练关键技术",
+    "主控芯片",
+    "固件开发",
+    "医疗机构",
+    "康复科",
+    "失能老人智能照护"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "康复医疗器械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国家企业技术中心",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:22:35"
+}

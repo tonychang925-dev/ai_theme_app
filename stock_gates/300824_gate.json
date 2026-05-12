@@ -1,0 +1,51 @@
+{
+  "stock_id": "300824",
+  "stock_name": "北鼎股份",
+  "concept": "改善型饮食品牌",
+  "strategy_type": "industry_chain",
+  "must": [
+    "养生壶",
+    "饮水机",
+    "烤箱",
+    "蒸炖锅",
+    "珐琅铸铁锅"
+  ],
+  "should": [
+    "OEM/ODM业务",
+    "餐具",
+    "饮具",
+    "汤包茶饮",
+    "改善型饮食品牌",
+    "美食社群",
+    "名师指导",
+    "体验课程",
+    "以旧换新",
+    "玻璃保障"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "养生壶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "饮水机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "烤箱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蒸炖锅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "珐琅铸铁锅",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:44:45"
+}

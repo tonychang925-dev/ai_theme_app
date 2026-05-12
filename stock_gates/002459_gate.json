@@ -1,0 +1,41 @@
+{
+  "stock_id": "002459",
+  "stock_name": "晶澳科技",
+  "concept": "光伏组件一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏电池组件",
+    "太阳能电池组件",
+    "N型TOPCON技术"
+  ],
+  "should": [
+    "集中式光伏电站",
+    "分布式光伏电站",
+    "Percium+电池",
+    "宁晋5GW切片项目",
+    "宁晋6GW高效电池项目",
+    "光伏组件一体化",
+    "半片技术",
+    "多主栅技术",
+    "硅片自供",
+    "电池片自供"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏电池组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "太阳能电池组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "N型TOPCON技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:42:43"
+}

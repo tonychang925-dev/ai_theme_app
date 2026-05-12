@@ -1,0 +1,31 @@
+{
+  "stock_id": "001219",
+  "stock_name": "青岛食品",
+  "concept": "区域饼干龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钙奶饼干",
+    "休闲饼干"
+  ],
+  "should": [
+    "花生酱",
+    "区域饼干龙头",
+    "区域性饼干龙头企业",
+    "山东地区品牌知名度",
+    "以销定产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钙奶饼干",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "休闲饼干",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:13:53"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300200",
+  "stock_name": "高盟新材",
+  "concept": "高性能复合聚氨酯胶粘剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高性能复合聚氨酯胶粘剂",
+    "软包装胶粘剂",
+    "新能源动力电池"
+  ],
+  "should": [
+    "聚氨酯结构胶",
+    "聚氨酯导热结构胶",
+    "聚氨酯导热灌封胶",
+    "汽车密封胶",
+    "高铁用胶",
+    "无溶剂聚氨酯结构胶",
+    "木工聚氨酯热熔胶",
+    "聚氨酯建筑密封胶",
+    "环保涂料树脂",
+    "粉末涂料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高性能复合聚氨酯胶粘剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "软包装胶粘剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源动力电池",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:17:24"
+}

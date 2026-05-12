@@ -1,0 +1,36 @@
+{
+  "stock_id": "002883",
+  "stock_name": "中设股份",
+  "concept": "工程设计咨询",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程设计咨询",
+    "工程咨询"
+  ],
+  "should": [
+    "工程总承包",
+    "工程监理",
+    "岩土工程",
+    "高等级公路",
+    "特大桥梁",
+    "特长隧道",
+    "港口航道",
+    "城市道路",
+    "桥梁隧道",
+    "公共交通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程设计咨询",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程咨询",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:01:42"
+}

@@ -1,0 +1,35 @@
+{
+  "stock_id": "301273",
+  "stock_name": "瑞晨环保",
+  "concept": "节能设备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高效节能离心风机",
+    "高效节能离心水泵"
+  ],
+  "should": [
+    "节能燃烧类产品",
+    "高速低氮燃烧技术",
+    "高效板式换热技术",
+    "精确燃烧控制技术",
+    "节能设备制造",
+    "流体力学理论",
+    "模型开发",
+    "国内知名的节能设备制造商",
+    "上海市高新技术企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高效节能离心风机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高效节能离心水泵",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:01:31"
+}

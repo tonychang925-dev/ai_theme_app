@@ -1,0 +1,51 @@
+{
+  "stock_id": "688075",
+  "stock_name": "安旭生物",
+  "concept": "POCT体外诊断",
+  "strategy_type": "industry_chain",
+  "must": [
+    "POCT体外诊断",
+    "POCT试剂",
+    "POCT仪器",
+    "生物原材料",
+    "一体化产业链平台"
+  ],
+  "should": [
+    "抗原抗体自主研发生产",
+    "传染病检测",
+    "毒品检测",
+    "慢性病检测",
+    "妊娠检测",
+    "肿瘤检测",
+    "心肌检测",
+    "免疫层析",
+    "干式生化",
+    "化学发光"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "POCT体外诊断",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "POCT试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "POCT仪器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物原材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一体化产业链平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:07:24"
+}

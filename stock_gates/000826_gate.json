@@ -1,0 +1,36 @@
+{
+  "stock_id": "000826",
+  "stock_name": "启迪环境",
+  "concept": "环境综合治理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "固废处置",
+    "无人智能环卫装备"
+  ],
+  "should": [
+    "水务生态综合治理",
+    "数字环卫云平台",
+    "高效能炉排炉",
+    "生活垃圾焚烧发电",
+    "有机固废资源化利用",
+    "医疗废弃物处理",
+    "智慧公厕",
+    "水域保洁",
+    "园林绿化养护",
+    "全产业链服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "固废处置",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无人智能环卫装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:06:16"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "002992",
+  "stock_name": "宝明科技",
+  "concept": "光电显示材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LED背光源",
+    "电容式触摸屏",
+    "锂电复合铜箔"
+  ],
+  "should": [
+    "京东方",
+    "天马",
+    "信利",
+    "比亚迪",
+    "华为",
+    "三星",
+    "车载显示器",
+    "VR显示设备",
+    "智能座舱",
+    "工控显示器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED背光源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电容式触摸屏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂电复合铜箔",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:06:33"
+}

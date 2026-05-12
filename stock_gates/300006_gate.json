@@ -1,0 +1,41 @@
+{
+  "stock_id": "300006",
+  "stock_name": "莱美药业",
+  "concept": "纳米药物技术",
+  "strategy_type": "industry_chain",
+  "must": [
+    "纳米药物技术",
+    "药物制备技术",
+    "纳米炭铁技术"
+  ],
+  "should": [
+    "细胞免疫疗法",
+    "国家技术创新示范企业",
+    "国家知识产权示范企业",
+    "盐酸克林霉素注射液",
+    "氨甲环酸注射液",
+    "氨甲环酸氯化钠注射液",
+    "注射用盐酸纳洛酮",
+    "丙氨酰谷氨酰胺注射液",
+    "甲状腺癌手术",
+    "乳腺癌手术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "纳米药物技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "药物制备技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纳米炭铁技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:09:17"
+}

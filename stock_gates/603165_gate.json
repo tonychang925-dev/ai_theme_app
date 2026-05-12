@@ -1,0 +1,44 @@
+{
+  "stock_id": "603165",
+  "stock_name": "荣晟环保",
+  "concept": "再生纸龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "废纸回收",
+    "再生环保纸生产",
+    "纸板制造",
+    "三废一新"
+  ],
+  "should": [
+    "热电联产",
+    "平湖基地",
+    "全椒基地",
+    "分布式光伏",
+    "再生纸龙头",
+    "循环经济",
+    "资源-产品-资源",
+    "包装产业链"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "废纸回收",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "再生环保纸生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纸板制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三废一新",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:45:10"
+}

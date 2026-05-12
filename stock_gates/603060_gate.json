@@ -1,0 +1,41 @@
+{
+  "stock_id": "603060",
+  "stock_name": "国检集团",
+  "concept": "综合性检验检测",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合性检验检测",
+    "检验检测",
+    "建工建材检测"
+  ],
+  "should": [
+    "环境检测",
+    "认证评价",
+    "仪器设备研发销售",
+    "新材料检测",
+    "食农产品检测",
+    "国家级检验中心",
+    "行业级检验中心",
+    "延伸服务",
+    "综合业务平台",
+    "枣庄模式"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合性检验检测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "检验检测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建工建材检测",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:42:28"
+}

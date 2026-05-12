@@ -1,0 +1,45 @@
+{
+  "stock_id": "600036",
+  "stock_name": "招商银行",
+  "concept": "大财富管理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大财富管理",
+    "大客群",
+    "大平台",
+    "大生态"
+  ],
+  "should": [
+    "MAU",
+    "朝朝宝",
+    "金融科技",
+    "一网通",
+    "两个APP",
+    "招商银行TREE资产配置体系",
+    "家族办公室",
+    "家族信托",
+    "招赢通平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大财富管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大客群",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大生态",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:07:42"
+}

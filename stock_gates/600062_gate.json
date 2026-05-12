@@ -1,0 +1,31 @@
+{
+  "stock_id": "600062",
+  "stock_name": "华润双鹤",
+  "concept": "医药制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全国最大的输液供应基地"
+  ],
+  "should": [
+    "0号",
+    "糖适平",
+    "诺百益",
+    "复穗悦",
+    "珂立苏",
+    "腹膜透析液",
+    "丙戊酸镁缓释片",
+    "普瑞巴林",
+    "利复星",
+    "阿兹夫定"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全国最大的输液供应基地",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:08:26"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "002912",
+  "stock_name": "中新赛克",
+  "concept": "网络可视化安全",
+  "strategy_type": "industry_chain",
+  "must": [
+    "网络可视化安全",
+    "宽带网产品",
+    "移动网产品",
+    "网络内容安全产品",
+    "大数据运营产品"
+  ],
+  "should": [
+    "工业互联网安全产品",
+    "数据提取",
+    "数据存储和计算",
+    "数据分析和挖掘",
+    "数据应用及展示",
+    "电磁空间信号分析",
+    "大数据技术",
+    "边缘计算",
+    "零信任",
+    "政企部门"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "网络可视化安全",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "宽带网产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动网产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "网络内容安全产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大数据运营产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:02:56"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "002298",
+  "stock_name": "中电鑫龙",
+  "concept": "智慧城市安全",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧城市",
+    "反恐与公共安全",
+    "智能型输配电设备",
+    "智能型元器件"
+  ],
+  "should": [
+    "智慧城市安全",
+    "光伏电站",
+    "储能电站",
+    "充电桩",
+    "能碳管理软件平台",
+    "智慧配电系统平台",
+    "智慧能源管控系统",
+    "能源大数据",
+    "新能源",
+    "自动化产品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧城市",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "反恐与公共安全",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能型输配电设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能型元器件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:34:12"
+}

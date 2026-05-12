@@ -1,0 +1,51 @@
+{
+  "stock_id": "600613",
+  "stock_name": "神奇制药",
+  "concept": "中药制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "斑蝥酸钠维生素B6注射液",
+    "斑蝥酸钠注射液",
+    "枇杷止咳颗粒",
+    "强力枇杷露",
+    "枇杷止咳胶囊"
+  ],
+  "should": [
+    "金乌骨通胶囊",
+    "珊瑚癣净",
+    "精乌胶囊",
+    "全天麻胶囊",
+    "银丹心泰滴丸",
+    "神奇娃娃",
+    "神奇速可停",
+    "神奇速宁达",
+    "神奇奇宁达",
+    "中药制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "斑蝥酸钠维生素B6注射液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "斑蝥酸钠注射液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "枇杷止咳颗粒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "强力枇杷露",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "枇杷止咳胶囊",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:23:01"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "688659",
+  "stock_name": "元琛科技",
+  "concept": "高温过滤材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高温过滤材料",
+    "除尘过滤材料",
+    "烟气脱硝催化剂"
+  ],
+  "should": [
+    "环境、土壤及新材料第三方检测",
+    "低碳、环保科技领域技术开发",
+    "氢能、锂电热失控安全监测",
+    "传感器气敏薄膜材料",
+    "复合集流体材料",
+    "电芯制作及测试",
+    "主控芯片",
+    "电力",
+    "钢铁及焦化",
+    "垃圾焚烧"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高温过滤材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "除尘过滤材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "烟气脱硝催化剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:23:14"
+}

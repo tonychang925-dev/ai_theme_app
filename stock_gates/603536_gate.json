@@ -1,0 +1,46 @@
+{
+  "stock_id": "603536",
+  "stock_name": "惠发食品",
+  "concept": "速冻预制菜",
+  "strategy_type": "industry_chain",
+  "must": [
+    "预制菜",
+    "速冻预制菜",
+    "菜肴制品",
+    "中央厨房+智慧餐饮"
+  ],
+  "should": [
+    "丸类制品",
+    "肠类制品",
+    "油炸类制品",
+    "串类制品",
+    "SAAS架构的惠发云供应链系统",
+    "大国味道预制菜商城",
+    "大国味道供应链平台",
+    "质量追溯平台",
+    "一袋一码追溯项目",
+    "TMS易流云物流配送系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "预制菜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "速冻预制菜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "菜肴制品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中央厨房+智慧餐饮",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:52:11"
+}

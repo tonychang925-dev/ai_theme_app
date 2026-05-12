@@ -1,0 +1,46 @@
+{
+  "stock_id": "600975",
+  "stock_name": "新五丰",
+  "concept": "生猪养殖出口",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生猪养殖出口",
+    "生猪养殖",
+    "生猪出口",
+    "供港澳活畜出口"
+  ],
+  "should": [
+    "饲料生产",
+    "生猪屠宰",
+    "母猪场",
+    "肥猪场",
+    "饲料厂",
+    "屠宰场",
+    "港澳市场价格行情",
+    "批次化生产",
+    "全基因组选育",
+    "饲料替代原料技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生猪养殖出口",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生猪养殖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生猪出口",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "供港澳活畜出口",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:32:11"
+}

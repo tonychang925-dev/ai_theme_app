@@ -1,0 +1,40 @@
+{
+  "stock_id": "603917",
+  "stock_name": "合力科技",
+  "concept": "大型精密模具",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大型精密模具",
+    "大型精密铸造工艺设计",
+    "铸造模具复杂结构设计技术"
+  ],
+  "should": [
+    "制动产品",
+    "免热处理材料",
+    "高导热性能材料",
+    "热冲压成型工艺设计",
+    "汽车",
+    "轨道交通",
+    "机械工程",
+    "新能源汽车",
+    "机器人"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大型精密模具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大型精密铸造工艺设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铸造模具复杂结构设计技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:58:56"
+}

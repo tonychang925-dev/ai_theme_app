@@ -1,0 +1,41 @@
+{
+  "stock_id": "002050",
+  "stock_name": "三花智控",
+  "concept": "制冷控制元器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "制冷控制元器件",
+    "电子膨胀阀",
+    "四通换向阀"
+  ],
+  "should": [
+    "电磁阀",
+    "Omega泵",
+    "热力膨胀阀",
+    "电子水泵",
+    "热管理技术",
+    "精密制造",
+    "冷链物流",
+    "新能源汽车",
+    "储能热管理",
+    "仿生机器人"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "制冷控制元器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子膨胀阀",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "四通换向阀",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:20:28"
+}

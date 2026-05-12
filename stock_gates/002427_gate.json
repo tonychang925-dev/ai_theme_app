@@ -1,0 +1,41 @@
+{
+  "stock_id": "002427",
+  "stock_name": "尤夫股份",
+  "concept": "涤纶工业丝",
+  "strategy_type": "industry_chain",
+  "must": [
+    "涤纶工业丝",
+    "涤纶工业长丝",
+    "差别化工业丝"
+  ],
+  "should": [
+    "普通工业丝",
+    "高模低收缩丝",
+    "低收缩丝",
+    "超低收缩丝",
+    "耐磨丝",
+    "抗芯吸丝",
+    "活化丝",
+    "有色丝",
+    "安全带丝",
+    "安全气囊丝"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "涤纶工业丝",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涤纶工业长丝",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "差别化工业丝",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:41:20"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "002452",
+  "stock_name": "长高电新",
+  "concept": "高压隔离开关",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高压隔离开关"
+  ],
+  "should": [
+    "组合电器",
+    "断路器",
+    "成套开关柜",
+    "环网柜",
+    "柱上断路器",
+    "配电自动化终端",
+    "产品自主研发",
+    "技术创新",
+    "电网",
+    "电力工程"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高压隔离开关",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:42:17"
+}

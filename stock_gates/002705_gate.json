@@ -1,0 +1,36 @@
+{
+  "stock_id": "002705",
+  "stock_name": "新宝股份",
+  "concept": "小家电制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "西式小家电出口",
+    "国内品牌业务"
+  ],
+  "should": [
+    "Donlim（东菱）",
+    "鸣盏",
+    "Barsetto（百胜图）",
+    "GEVILAN(歌岚)",
+    "电热咖啡壶",
+    "吸尘器",
+    "暖奶器",
+    "电动牙刷",
+    "制冰机",
+    "小家电制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "西式小家电出口",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内品牌业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:54:17"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "301059",
+  "stock_name": "金三江",
+  "concept": "牙膏用二氧化硅",
+  "strategy_type": "industry_chain",
+  "must": [
+    "牙膏用二氧化硅"
+  ],
+  "should": [
+    "沉淀法二氧化硅",
+    "食药妆用二氧化硅",
+    "牙膏行业",
+    "食品领域",
+    "药品领域",
+    "国内龙头企业",
+    "全球细分行业龙头",
+    "技术和客户认证壁垒",
+    "定制化研发服务",
+    "快速响应服务体系"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "牙膏用二氧化硅",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:54:55"
+}

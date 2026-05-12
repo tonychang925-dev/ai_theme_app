@@ -1,0 +1,41 @@
+{
+  "stock_id": "002518",
+  "stock_name": "科士达",
+  "concept": "数据中心与新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "不间断电源(UPS)",
+    "电子电力转换技术",
+    "一站式数据中心解决方案"
+  ],
+  "should": [
+    "精密空调",
+    "微模块",
+    "电力模块",
+    "铅酸/锂电池",
+    "动力环境监控",
+    "集中式光伏逆变器",
+    "组串式光伏逆变器",
+    "储能变流器",
+    "工商业储能系统",
+    "户用储能系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "不间断电源(UPS)",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子电力转换技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一站式数据中心解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:45:23"
+}

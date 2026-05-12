@@ -1,0 +1,40 @@
+{
+  "stock_id": "301500",
+  "stock_name": "飞南资源",
+  "concept": "危废处置利用",
+  "strategy_type": "industry_chain",
+  "must": [
+    "有色金属类危废处置利用",
+    "江西巴顿",
+    "广西飞南"
+  ],
+  "should": [
+    "锌锭",
+    "焊锡锭",
+    "金锭",
+    "银锭",
+    "钯粉",
+    "镍精粉",
+    "铜精粉",
+    "危废处置利用",
+    "期货合约价格风险管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "有色金属类危废处置利用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "江西巴顿",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "广西飞南",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:05:33"
+}

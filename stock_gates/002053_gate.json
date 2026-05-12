@@ -1,0 +1,38 @@
+{
+  "stock_id": "002053",
+  "stock_name": "云南能投",
+  "concept": "新能源+盐+天然气",
+  "strategy_type": "industry_chain",
+  "must": [
+    "食盐生产",
+    "工业盐生产",
+    "氯碱生产"
+  ],
+  "should": [
+    "天然气供应",
+    "新能源发电",
+    "绿色低碳转型",
+    "风电光伏增长",
+    "食盐高端化",
+    "两碱需求拉动",
+    "天然气储气能力提升"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "食盐生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业盐生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氯碱生产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:20:31"
+}

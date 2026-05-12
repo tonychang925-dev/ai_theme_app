@@ -1,0 +1,41 @@
+{
+  "stock_id": "300502",
+  "stock_name": "新易盛",
+  "concept": "光模块",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光模块",
+    "800G光模块",
+    "1.6T光模块"
+  ],
+  "should": [
+    "自研硅光芯片",
+    "海外以太网客户核心供应商",
+    "100G光模块",
+    "200G光模块",
+    "400G光模块",
+    "固件开发",
+    "工艺优化",
+    "AI/ML集群",
+    "云数据中心",
+    "数据通信"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光模块",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "800G光模块",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "1.6T光模块",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:30:15"
+}

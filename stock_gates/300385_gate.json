@@ -1,0 +1,39 @@
+{
+  "stock_id": "300385",
+  "stock_name": "雪浪环境",
+  "concept": "烟气净化与灰渣处理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "烟气净化与灰渣处理",
+    "垃圾焚烧发电",
+    "钢铁冶金"
+  ],
+  "should": [
+    "烟气净化系统设备",
+    "灰渣处理系统设备",
+    "余热利用",
+    "气力输送",
+    "危废处置运营",
+    "化工",
+    "新能源",
+    "资源化利用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "烟气净化与灰渣处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "垃圾焚烧发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钢铁冶金",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:24:58"
+}

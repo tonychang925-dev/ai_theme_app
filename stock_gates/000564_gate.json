@@ -1,0 +1,41 @@
+{
+  "stock_id": "000564",
+  "stock_name": "供销大集",
+  "concept": "商品流通服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "百货购物中心",
+    "商超连锁",
+    "供应链创新业务"
+  ],
+  "should": [
+    "商贸地产",
+    "超集好",
+    "顺客隆优选",
+    "望海到家",
+    "民生百货线上商城",
+    "直采基地",
+    "配送仓",
+    "生鲜公社",
+    "海南自贸港",
+    "粤港澳大湾区"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "百货购物中心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商超连锁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "供应链创新业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:56:41"
+}

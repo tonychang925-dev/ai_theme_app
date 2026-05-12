@@ -1,0 +1,36 @@
+{
+  "stock_id": "002317",
+  "stock_name": "众生药业",
+  "concept": "中药创新药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中药创新药",
+    "复方血栓通胶囊",
+    "脑栓通胶囊"
+  ],
+  "should": [
+    "众生丸",
+    "清热祛湿颗粒",
+    "原研独家剂型",
+    "循证医学研究",
+    "真实世界研究"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中药创新药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复方血栓通胶囊",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "脑栓通胶囊",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:35:10"
+}

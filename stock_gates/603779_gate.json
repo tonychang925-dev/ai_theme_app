@@ -1,0 +1,35 @@
+{
+  "stock_id": "603779",
+  "stock_name": "威龙股份",
+  "concept": "有机葡萄酒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "有机葡萄酒",
+    "有机酿酒葡萄栽培技术"
+  ],
+  "should": [
+    "自有酿酒葡萄种植基地",
+    "白兰地",
+    "合作模式种植基地",
+    "包装材料子公司供应",
+    "传统葡萄酒",
+    "葡萄蒸馏酒",
+    "干红葡萄酒出渣技术",
+    "有机土壤技术",
+    "有机苗木繁育技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "有机葡萄酒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有机酿酒葡萄栽培技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:56:33"
+}

@@ -1,0 +1,43 @@
+{
+  "stock_id": "600861",
+  "stock_name": "北京人力",
+  "concept": "人力资源服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "人事管理服务",
+    "薪酬福利服务",
+    "业务外包服务",
+    "招聘及灵活用工服务"
+  ],
+  "should": [
+    "人力资源服务",
+    "中大型客户",
+    "优质客户专业品牌",
+    "在线招聘",
+    "RPO",
+    "猎头",
+    "灵活用工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "人事管理服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "薪酬福利服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "业务外包服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "招聘及灵活用工服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:29:45"
+}

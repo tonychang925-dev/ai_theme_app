@@ -1,0 +1,46 @@
+{
+  "stock_id": "603051",
+  "stock_name": "鹿山新材",
+  "concept": "热熔粘接材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "太阳能电池封装胶膜",
+    "功能性胶膜",
+    "功能性聚烯烃热熔胶粒",
+    "热熔粘接材料"
+  ],
+  "should": [
+    "绿色环保高性能高分子热熔粘接材料",
+    "热塑性光学透明胶膜",
+    "复合建材热熔胶",
+    "油气管道防腐热熔胶",
+    "高阻隔包装热熔胶",
+    "晶科",
+    "比亚迪",
+    "天合",
+    "阿特斯",
+    "复合建材"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "太阳能电池封装胶膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功能性胶膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功能性聚烯烃热熔胶粒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热熔粘接材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:42:11"
+}

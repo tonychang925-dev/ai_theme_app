@@ -1,0 +1,36 @@
+{
+  "stock_id": "002522",
+  "stock_name": "浙江众成",
+  "concept": "POF热收缩膜",
+  "strategy_type": "industry_chain",
+  "must": [
+    "POF热收缩膜",
+    "辐射交联技术"
+  ],
+  "should": [
+    "POF交联膜",
+    "POF普通型膜",
+    "环保型SBS",
+    "SEBS",
+    "SEPS",
+    "SEP",
+    "加氢技术",
+    "SEPS生产技术",
+    "快速消费品包装",
+    "标签"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "POF热收缩膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "辐射交联技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:45:30"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300494",
+  "stock_name": "盛天网络",
+  "concept": "场景化互联网运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "IP运营",
+    "云游戏",
+    "随乐游云游戏"
+  ],
+  "should": [
+    "易乐游网娱",
+    "易乐玩游戏",
+    "易乐途数字营销",
+    "《三国志2017》",
+    "《三国志·战略版》",
+    "《真·三国无双 霸》",
+    "《大航海时代：海上霸主》",
+    "场景化互联网运营",
+    "互联网营销",
+    "游戏运营与发行"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "IP运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云游戏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "随乐游云游戏",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:29:57"
+}

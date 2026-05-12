@@ -1,0 +1,46 @@
+{
+  "stock_id": "301066",
+  "stock_name": "万事利",
+  "concept": "丝绸文创",
+  "strategy_type": "industry_chain",
+  "must": [
+    "自有品牌",
+    "丝巾",
+    "组合套装",
+    "丝绸工艺品"
+  ],
+  "should": [
+    "丝绸面料",
+    "数码印花加工",
+    "数码印花产能",
+    "家纺",
+    "品牌服装",
+    "围巾",
+    "贴牌服装",
+    "数码印花生产工艺",
+    "环保印染技术GBart",
+    "色彩管理软件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "自有品牌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "丝巾",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "组合套装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "丝绸工艺品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:55:22"
+}

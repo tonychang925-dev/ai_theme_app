@@ -1,0 +1,50 @@
+{
+  "stock_id": "000519",
+  "stock_name": "中兵红箭",
+  "concept": "超硬材料龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "人造金刚石",
+    "培育钻石",
+    "立方氮化硼",
+    "爆破器材运输车",
+    "超硬材料产品全流程技术"
+  ],
+  "should": [
+    "冷藏保温车",
+    "发动机活塞缸套",
+    "厢式挂车零部件",
+    "大颗粒钻石单晶科研",
+    "高温高压法制备",
+    "超硬材料龙头",
+    "自主知识产权",
+    "爆破器材运输车市场占有率全国第一",
+    "超硬材料行业龙头企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "人造金刚石",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "培育钻石",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "立方氮化硼",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "爆破器材运输车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超硬材料产品全流程技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:53:59"
+}

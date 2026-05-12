@@ -1,0 +1,41 @@
+{
+  "stock_id": "601236",
+  "stock_name": "红塔证券",
+  "concept": "云南区域券商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "云南区域券商",
+    "自营投资业务",
+    "烟草产业链"
+  ],
+  "should": [
+    "财富管理业务",
+    "双碳新能源及新能源汽车产业链",
+    "硬科技",
+    "智能制造",
+    "半导体",
+    "新材料",
+    "医疗健康",
+    "医学美容",
+    "重资本",
+    "强协同"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "云南区域券商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自营投资业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "烟草产业链",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:35:49"
+}

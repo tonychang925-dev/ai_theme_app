@@ -1,0 +1,41 @@
+{
+  "stock_id": "000059",
+  "stock_name": "华锦股份",
+  "concept": "石化综合平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "石油化工",
+    "海外石油勘探开采",
+    "原油加工及石油制品"
+  ],
+  "should": [
+    "化学肥料",
+    "沥青/润滑油",
+    "尿素",
+    "道路沥青",
+    "润滑油基础油",
+    "聚烯烃",
+    "芳烃类产品",
+    "ABS工程塑料制品",
+    "丁二烯",
+    "石化综合平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "石油化工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海外石油勘探开采",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原油加工及石油制品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:49:14"
+}

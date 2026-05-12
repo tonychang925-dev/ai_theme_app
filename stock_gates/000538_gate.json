@@ -1,0 +1,44 @@
+{
+  "stock_id": "000538",
+  "stock_name": "云南白药",
+  "concept": "中药大健康",
+  "strategy_type": "industry_chain",
+  "must": [
+    "云南白药牙膏",
+    "云南白药气雾剂",
+    "云南白药膏",
+    "云南白药创可贴"
+  ],
+  "should": [
+    "养元青防脱育发液",
+    "云南白药活性成分",
+    "防脱育发发明专利",
+    "止血镇痛",
+    "消肿化瘀",
+    "口腔护理",
+    "防脱洗护",
+    "云南省药品流通企业市场份额领先"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "云南白药牙膏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云南白药气雾剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云南白药膏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云南白药创可贴",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:55:27"
+}

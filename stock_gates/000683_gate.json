@@ -1,0 +1,46 @@
+{
+  "stock_id": "000683",
+  "stock_name": "博源化工",
+  "concept": "天然碱化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "天然碱化工",
+    "纯碱",
+    "小苏打",
+    "天然碱法"
+  ],
+  "should": [
+    "尿素",
+    "碱田日晒工艺",
+    "平板玻璃",
+    "玻璃制品",
+    "陶瓷釉",
+    "生活洗涤",
+    "食品加工",
+    "小苏打出口份额占全国50%以上",
+    "纯碱产能全国第四",
+    "小苏打产能全国第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "天然碱化工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纯碱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小苏打",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天然碱法",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:00:39"
+}

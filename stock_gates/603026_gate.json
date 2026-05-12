@@ -1,0 +1,36 @@
+{
+  "stock_id": "603026",
+  "stock_name": "石大胜华",
+  "concept": "电解液溶剂龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电解液溶剂龙头",
+    "电解液"
+  ],
+  "should": [
+    "碳酸二甲酯",
+    "碳酸甲乙酯",
+    "碳酸乙烯酯",
+    "固态六氟磷酸锂",
+    "液态六氟磷酸锂",
+    "硅基负极材料",
+    "动力电池添加剂",
+    "新型导电剂",
+    "碳酸二乙酯",
+    "湿电子化学品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电解液溶剂龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电解液",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:41:26"
+}

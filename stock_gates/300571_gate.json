@@ -1,0 +1,36 @@
+{
+  "stock_id": "300571",
+  "stock_name": "平治信息",
+  "concept": "通信硬件设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "通信硬件设备",
+    "宽带网络终端设备"
+  ],
+  "should": [
+    "移动阅读",
+    "IoT泛智能终端设备",
+    "智能网络机顶盒",
+    "家庭智能网关",
+    "智能路由器",
+    "5G CPE",
+    "云视频终端",
+    "摄像头",
+    "家庭VR/AR设备",
+    "智能音箱"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "通信硬件设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "宽带网络终端设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:33:20"
+}

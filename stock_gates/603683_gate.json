@@ -1,0 +1,46 @@
+{
+  "stock_id": "603683",
+  "stock_name": "晶华新材",
+  "concept": "胶粘材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "胶粘材料",
+    "美纹纸胶粘材料",
+    "和纸胶粘材料",
+    "OCA光学膜胶带"
+  ],
+  "should": [
+    "硅胶保护膜",
+    "离型膜",
+    "AB胶",
+    "PU保护膜",
+    "TPU车衣膜",
+    "压敏胶粘剂",
+    "建筑装饰",
+    "汽车",
+    "新能源电池",
+    "3C产品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "胶粘材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "美纹纸胶粘材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "和纸胶粘材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "OCA光学膜胶带",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:54:47"
+}

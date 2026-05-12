@@ -1,0 +1,46 @@
+{
+  "stock_id": "600346",
+  "stock_name": "恒力石化",
+  "concept": "PTA-聚酯新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PTA-聚酯新材料",
+    "PTA",
+    "聚酯",
+    "芳烃"
+  ],
+  "should": [
+    "原油",
+    "天然气",
+    "烯烃化工",
+    "新能源材料",
+    "高端聚烯烃",
+    "锂电池材料",
+    "工程塑料",
+    "石油基可降解塑料",
+    "PBS/PBAT可降解材料",
+    "绿色环保"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PTA-聚酯新材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PTA",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚酯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "芳烃",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:15:45"
+}

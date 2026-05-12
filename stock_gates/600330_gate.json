@@ -1,0 +1,36 @@
+{
+  "stock_id": "600330",
+  "stock_name": "天通股份",
+  "concept": "电子材料与装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "软磁材料及磁心",
+    "蓝宝石晶体材料"
+  ],
+  "should": [
+    "压电晶体材料",
+    "高端专用装备",
+    "软磁材料研发与制造",
+    "压电晶体材料技术",
+    "粉体专用装备技术",
+    "新能源汽车",
+    "AI服务器",
+    "光伏产业",
+    "储能行业",
+    "消费电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "软磁材料及磁心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蓝宝石晶体材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:15:29"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "688170",
+  "stock_name": "德龙激光",
+  "concept": "激光精密加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密激光加工设备",
+    "激光器"
+  ],
+  "should": [
+    "激光加工服务",
+    "激光设备租赁",
+    "纳秒绿光激光器",
+    "纳秒紫外激光器",
+    "皮飞秒红外激光器",
+    "皮飞秒绿光激光器",
+    "皮飞秒紫外激光器",
+    "激光精密加工",
+    "激光精细加工全产业链",
+    "自产激光器比例高"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密激光加工设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "激光器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:10:38"
+}

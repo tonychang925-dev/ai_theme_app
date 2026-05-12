@@ -1,0 +1,49 @@
+{
+  "stock_id": "600793",
+  "stock_name": "宜宾纸业",
+  "concept": "竹浆纸业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "竹浆纸业",
+    "食品包装原纸",
+    "生活用纸原纸",
+    "食品纸",
+    "生活纸"
+  ],
+  "should": [
+    "生活用纸成品纸",
+    "竹浆技改",
+    "竹基浆精深加工技术",
+    "战略投资者厦门建发纸业",
+    "竹纤维深度应用",
+    "纺织生产线",
+    "竹浆纸一体化",
+    "原材料供应优势"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "竹浆纸业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "食品包装原纸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生活用纸原纸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "食品纸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生活纸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:27:54"
+}

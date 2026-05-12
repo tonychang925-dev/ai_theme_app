@@ -1,0 +1,35 @@
+{
+  "stock_id": "688018",
+  "stock_name": "乐鑫科技",
+  "concept": "物联网Wi-Fi MCU",
+  "strategy_type": "industry_chain",
+  "must": [
+    "物联网Wi-Fi MCU",
+    "大Wi-Fi市场全球第五"
+  ],
+  "should": [
+    "ESP32系列",
+    "ESP32-P4处理器",
+    "Wi-Fi 7",
+    "RISC-V架构",
+    "端侧AI芯片",
+    "模组",
+    "高集成、低功耗的无线SoC芯片",
+    "边缘计算",
+    "多媒体市场"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "物联网Wi-Fi MCU",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大Wi-Fi市场全球第五",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:05:33"
+}

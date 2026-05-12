@@ -1,0 +1,41 @@
+{
+  "stock_id": "688533",
+  "stock_name": "上声电子",
+  "concept": "车载声学系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "车载扬声器",
+    "车载声学系统",
+    "整车声学系统"
+  ],
+  "should": [
+    "独立功放",
+    "行人警示器(AVAS)",
+    "声学信号处理算法",
+    "材料工艺",
+    "结构设计",
+    "软件系统设计",
+    "零件集成硬件系统",
+    "国内车载扬声器制造龙头",
+    "全球市场份额约13%",
+    "国内份额第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "车载扬声器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载声学系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "整车声学系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:20:03"
+}

@@ -1,0 +1,37 @@
+{
+  "stock_id": "300679",
+  "stock_name": "电连技术",
+  "concept": "射频连接器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "射频连接器",
+    "汽车连接器",
+    "射频连接技术"
+  ],
+  "should": [
+    "电磁兼容件",
+    "软板",
+    "LCP技术",
+    "自动化生产",
+    "国内领先的射频连接器厂商",
+    "汽车连接器业务成为新增长点"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "射频连接器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车连接器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "射频连接技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:38:30"
+}

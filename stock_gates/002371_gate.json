@@ -1,0 +1,41 @@
+{
+  "stock_id": "002371",
+  "stock_name": "北方华创",
+  "concept": "半导体设备龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "刻蚀机",
+    "物理气相沉积（PVD）",
+    "化学气相沉积（CVD）"
+  ],
+  "should": [
+    "真空装备",
+    "新能源锂电装备",
+    "精密电子元器件",
+    "高介电常数原子层沉积",
+    "国内高端半导体工艺装备龙头企业",
+    "4G-CAE第四代阴极电弧技术",
+    "泰坦涂层工艺技术",
+    "半导体设备龙头",
+    "逻辑芯片",
+    "存储芯片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "刻蚀机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物理气相沉积（PVD）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化学气相沉积（CVD）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:38:24"
+}

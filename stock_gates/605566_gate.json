@@ -1,0 +1,31 @@
+{
+  "stock_id": "605566",
+  "stock_name": "福莱蒽特",
+  "concept": "中高端分散染料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中高端分散染料"
+  ],
+  "should": [
+    "分散染料",
+    "滤饼",
+    "高水洗牢度分散染料",
+    "高日晒牢度分散染料",
+    "环保型分散染料",
+    "高水洗牢度",
+    "高日晒牢度",
+    "环保标准",
+    "色谱齐全",
+    "涤纶面料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中高端分散染料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:04:36"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "603508",
+  "stock_name": "思维列控",
+  "concept": "铁路行车安全",
+  "strategy_type": "industry_chain",
+  "must": [
+    "列控系统",
+    "机务安防产品",
+    "高铁综合监测产品",
+    "LKJ系统"
+  ],
+  "should": [
+    "调车安全防护系统",
+    "LKJ-15S列控系统",
+    "LKJ远程无线换装系统",
+    "高铁移动视频",
+    "动车组传输平台",
+    "有源应答器",
+    "机车制动屏",
+    "自助出退勤一体机系统",
+    "智慧派班室",
+    "司机健康管理系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "列控系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机务安防产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高铁综合监测产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LKJ系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:51:44"
+}

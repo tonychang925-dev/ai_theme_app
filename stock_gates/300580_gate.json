@@ -1,0 +1,51 @@
+{
+  "stock_id": "300580",
+  "stock_name": "贝斯特",
+  "concept": "涡轮增压器零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "涡轮增压器零部件",
+    "涡轮增压器精密轴承件",
+    "涡轮增压器叶轮",
+    "涡轮增压器中间壳",
+    "涡轮增压器压气机壳"
+  ],
+  "should": [
+    "纯电动汽车车载充电机组件",
+    "直流变换器组件",
+    "转向节",
+    "氢燃料电池汽车空压机叶轮",
+    "空压机压力回收和整流器",
+    "电机壳",
+    "轴承盖",
+    "座椅构件",
+    "连接件",
+    "工装夹具"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "涡轮增压器零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涡轮增压器精密轴承件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涡轮增压器叶轮",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涡轮增压器中间壳",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涡轮增压器压气机壳",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:33:53"
+}

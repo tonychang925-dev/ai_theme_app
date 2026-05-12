@@ -1,0 +1,30 @@
+{
+  "stock_id": "300613",
+  "stock_name": "富瀚微",
+  "concept": "视频监控芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "视频监控芯片"
+  ],
+  "should": [
+    "视频编解码SoC",
+    "图像信号处理器芯片",
+    "图像信号处理",
+    "视频编解码",
+    "智能分析",
+    "低功耗设计",
+    "视频监控",
+    "车载影像",
+    "智能物联网"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "视频监控芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:35:22"
+}

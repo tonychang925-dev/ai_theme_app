@@ -1,0 +1,33 @@
+{
+  "stock_id": "600605",
+  "stock_name": "汇通能源",
+  "concept": "房屋租赁与物业服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "房屋租赁与物业服务",
+    "房屋租赁",
+    "物业服务"
+  ],
+  "should": [
+    "商业物业服务",
+    "美居物业服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房屋租赁与物业服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "房屋租赁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物业服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:22:34"
+}

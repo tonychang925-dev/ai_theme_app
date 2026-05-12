@@ -1,0 +1,51 @@
+{
+  "stock_id": "002920",
+  "stock_name": "德赛西威",
+  "concept": "智能网联汽车电子",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能座舱",
+    "智能驾驶",
+    "网联服务",
+    "座舱域控制器",
+    "大算力域控制器"
+  ],
+  "should": [
+    "智能网联汽车电子",
+    "智能座舱系统",
+    "信息娱乐系统",
+    "显示模组及系统",
+    "液晶仪表",
+    "传感器",
+    "智能泊车系统",
+    "环视系统",
+    "驾驶员监控系统",
+    "整车级OTA"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能座舱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能驾驶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "网联服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "座舱域控制器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大算力域控制器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:03:24"
+}

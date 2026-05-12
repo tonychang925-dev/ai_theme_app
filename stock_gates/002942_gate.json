@@ -1,0 +1,51 @@
+{
+  "stock_id": "002942",
+  "stock_name": "新农股份",
+  "concept": "化学农药制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "化学农药制造",
+    "杀菌剂",
+    "杀虫剂",
+    "农药原药",
+    "农药制剂"
+  ],
+  "should": [
+    "精细化工中间体",
+    "自主创新化合物噻唑锌",
+    "低毒高效创制杀菌剂",
+    "水稻",
+    "柑橘",
+    "桃李",
+    "瓜类",
+    "叶菜",
+    "茄果",
+    "粮食"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "化学农药制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "杀菌剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "杀虫剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "农药原药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "农药制剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:04:17"
+}

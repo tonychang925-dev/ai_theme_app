@@ -1,0 +1,33 @@
+{
+  "stock_id": "300598",
+  "stock_name": "诚迈科技",
+  "concept": "智能互联软件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "移动智能终端软件技术服务",
+    "智能互联软件"
+  ],
+  "should": [
+    "智能驾驶舱整体解决方案",
+    "域控制器及SOA软件平台",
+    "智能驾驶视觉软件平台",
+    "电池管理系统解决方案（BMS）",
+    "汽车基础软件工具链平台",
+    "软件技术服务及解决方案研发与销售",
+    "中间件定制及系统性能调优"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "移动智能终端软件技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能互联软件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:34:40"
+}

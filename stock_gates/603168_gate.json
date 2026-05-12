@@ -1,0 +1,31 @@
+{
+  "stock_id": "603168",
+  "stock_name": "莎普爱思",
+  "concept": "白内障滴眼液龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "苄达赖氨酸滴眼液"
+  ],
+  "should": [
+    "白内障滴眼液龙头",
+    "白内障治疗",
+    "头孢克肟产品",
+    "葡萄糖注射液",
+    "氯化钠注射液",
+    "乳酸左氧氟沙星注射液",
+    "甲磺酸帕珠沙星注射液",
+    "抗微生物治疗",
+    "妇产医疗服务",
+    "国内大型医药流通企业合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "苄达赖氨酸滴眼液",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:45:17"
+}

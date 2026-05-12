@@ -1,0 +1,41 @@
+{
+  "stock_id": "300793",
+  "stock_name": "佳禾智能",
+  "concept": "电声产品制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电声产品制造",
+    "耳机",
+    "音箱"
+  ],
+  "should": [
+    "骨传导",
+    "5G",
+    "人工智能",
+    "物联网",
+    "AR/VR",
+    "电磁感应",
+    "静电感应",
+    "压电效应",
+    "语音交互",
+    "主动降噪"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电声产品制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "耳机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "音箱",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:43:31"
+}

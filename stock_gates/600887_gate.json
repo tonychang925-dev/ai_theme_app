@@ -1,0 +1,46 @@
+{
+  "stock_id": "600887",
+  "stock_name": "伊利股份",
+  "concept": "乳业龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "常温白奶",
+    "常温酸奶",
+    "奶粉",
+    "深度分销渠道"
+  ],
+  "should": [
+    "低温酸奶",
+    "低温鲜奶",
+    "冷饮",
+    "婴幼儿配方奶粉",
+    "成人奶粉",
+    "植物基饮品",
+    "功能性饮料",
+    "瓶装水",
+    "乳业龙头",
+    "产品创新升级"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "常温白奶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "常温酸奶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "奶粉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "深度分销渠道",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:30:38"
+}

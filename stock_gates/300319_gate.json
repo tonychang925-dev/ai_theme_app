@@ -1,0 +1,55 @@
+{
+  "stock_id": "300319",
+  "stock_name": "麦捷科技",
+  "concept": "电感与射频元器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电感与射频元器件",
+    "片式功率电感",
+    "滤波器",
+    "片式LTCC射频元器件",
+    "SAW滤波器"
+  ],
+  "should": [
+    "一体化成型电感",
+    "双工器",
+    "WLP封装核心工艺",
+    "主控芯片",
+    "固件开发",
+    "磁性材料研发",
+    "通讯",
+    "消费电子",
+    "汽车电子",
+    "工业设备"
+  ],
+  "not": [
+    "5G基站",
+    "5G手机",
+    "汽车"
+  ],
+  "evidence_refs": [
+    {
+      "term": "电感与射频元器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "片式功率电感",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "滤波器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "片式LTCC射频元器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SAW滤波器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:22:27"
+}

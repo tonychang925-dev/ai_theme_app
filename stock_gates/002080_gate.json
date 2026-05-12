@@ -1,0 +1,41 @@
+{
+  "stock_id": "002080",
+  "stock_name": "中材科技",
+  "concept": "风电叶片龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风电叶片龙头",
+    "风电叶片",
+    "国内最大的风电叶片供应商"
+  ],
+  "should": [
+    "玻璃纤维及制品",
+    "锂膜",
+    "研发",
+    "材料技术",
+    "新能源汽车动力电池",
+    "3C消费电池",
+    "储能电池",
+    "建筑",
+    "交通",
+    "环保"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风电叶片龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电叶片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内最大的风电叶片供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:22:04"
+}

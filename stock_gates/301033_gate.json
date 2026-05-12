@@ -1,0 +1,36 @@
+{
+  "stock_id": "301033",
+  "stock_name": "迈普医学",
+  "concept": "神经外科植入器械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "人工硬脑（脊）膜补片",
+    "生物增材制造技术"
+  ],
+  "should": [
+    "颅颌面修补系统",
+    "可吸收再生氧化纤维素",
+    "硬脑膜医用胶",
+    "数字化设计与精密加工",
+    "选择性氧化及微纤维网成型",
+    "多组分交联及雾化成胶",
+    "神经外科手术",
+    "颅颌面缺损修补",
+    "脑脊液防漏",
+    "打破进口垄断"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "人工硬脑（脊）膜补片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物增材制造技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:54:03"
+}

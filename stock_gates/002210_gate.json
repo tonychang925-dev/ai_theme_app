@@ -1,0 +1,36 @@
+{
+  "stock_id": "002210",
+  "stock_name": "飞马国际",
+  "concept": "供应链管理+环保新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "供应链管理服务",
+    "环保新能源业务"
+  ],
+  "should": [
+    "循环经济示范产业园",
+    "静脉产业园区",
+    "垃圾焚烧发电项目",
+    "垃圾焚烧发电",
+    "大同富乔",
+    "上海合冠",
+    "贸易执行服务",
+    "综合物流服务",
+    "BOT模式",
+    "固废资源化处理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "供应链管理服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环保新能源业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:29:30"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "300069",
+  "stock_name": "金利华电",
+  "concept": "玻璃绝缘子",
+  "strategy_type": "industry_chain",
+  "must": [
+    "玻璃绝缘子",
+    "高压线路玻璃绝缘子",
+    "超高压玻璃绝缘子",
+    "特高压玻璃绝缘子"
+  ],
+  "should": [
+    "国家电网",
+    "南方电网",
+    "交流玻璃绝缘子",
+    "直流玻璃绝缘子",
+    "标准型玻璃绝缘子",
+    "耐污型玻璃绝缘子",
+    "空气动力型玻璃绝缘子",
+    "地线型玻璃绝缘子",
+    "外伞型玻璃绝缘子",
+    "高压输电线路"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "玻璃绝缘子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高压线路玻璃绝缘子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超高压玻璃绝缘子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特高压玻璃绝缘子",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:12:04"
+}

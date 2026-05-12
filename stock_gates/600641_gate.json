@@ -1,0 +1,36 @@
+{
+  "stock_id": "600641",
+  "stock_name": "先导基电",
+  "concept": "离子注入设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "离子注入设备",
+    "离子注入机"
+  ],
+  "should": [
+    "刻蚀设备",
+    "薄膜沉积设备",
+    "快速热处理及退火设备",
+    "清洗设备",
+    "铋金属制品",
+    "低能大束流离子注入",
+    "高能离子注入",
+    "超低温离子注入",
+    "光伏",
+    "AMOLED"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "离子注入设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "离子注入机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:23:45"
+}

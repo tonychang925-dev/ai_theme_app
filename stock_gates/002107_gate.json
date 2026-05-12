@@ -1,0 +1,26 @@
+{
+  "stock_id": "002107",
+  "stock_name": "沃华医药",
+  "concept": "心脑血管中成药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "心脑血管中成药"
+  ],
+  "should": [
+    "骨骼慢性病用药",
+    "心脑血管疾病",
+    "慢性病",
+    "纯天然植物类",
+    "百年历史"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "心脑血管中成药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:23:34"
+}

@@ -1,0 +1,35 @@
+{
+  "stock_id": "601068",
+  "stock_name": "中铝国际",
+  "concept": "有色金属工程服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "有色金属工程服务",
+    "工程设计与咨询",
+    "工程施工及承包"
+  ],
+  "should": [
+    "装备制造",
+    "盐湖提锂技术",
+    "全产业链技术支持",
+    "碳酸锂项目"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "有色金属工程服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程设计与咨询",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程施工及承包",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:33:52"
+}

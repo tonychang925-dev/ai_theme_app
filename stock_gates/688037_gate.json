@@ -1,0 +1,31 @@
+{
+  "stock_id": "688037",
+  "stock_name": "芯源微",
+  "concept": "涂胶显影设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "涂胶显影设备"
+  ],
+  "should": [
+    "单片式湿法设备",
+    "光刻工序涂胶显影技术",
+    "单片式清洗技术",
+    "逻辑芯片制造",
+    "存储芯片制造",
+    "功率器件制造",
+    "先进封装",
+    "化合物芯片制造",
+    "MEMS芯片制造",
+    "LED芯片制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "涂胶显影设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:06:05"
+}

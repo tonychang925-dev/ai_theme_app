@@ -1,0 +1,40 @@
+{
+  "stock_id": "600064",
+  "stock_name": "南京高科",
+  "concept": "城市运营与投资",
+  "strategy_type": "industry_chain",
+  "must": [
+    "房地产开发销售",
+    "市政基础设施承建",
+    "股权投资",
+    "南京高科"
+  ],
+  "should": [
+    "高科新创",
+    "高科科贷",
+    "高科新浚",
+    "城市运营与投资"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房地产开发销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "市政基础设施承建",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "股权投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "南京高科",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:08:21"
+}

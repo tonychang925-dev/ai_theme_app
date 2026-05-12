@@ -1,0 +1,51 @@
+{
+  "stock_id": "300394",
+  "stock_name": "天孚通信",
+  "concept": "光器件垂直整合",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高速光引擎技术",
+    "AWG（阵列波导光栅）",
+    "CPO封装技术",
+    "BOX/TO封装OSA",
+    "光引擎"
+  ],
+  "should": [
+    "连接器",
+    "隔离器",
+    "光收发组件",
+    "FA（光纤阵列）",
+    "PM保偏器件",
+    "光纤透镜阵列",
+    "透镜&棱镜",
+    "激光雷达滤光片",
+    "荧光滤光片",
+    "有源模组"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高速光引擎技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AWG（阵列波导光栅）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CPO封装技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "BOX/TO封装OSA",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光引擎",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:25:38"
+}

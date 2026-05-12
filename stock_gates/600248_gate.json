@@ -1,0 +1,37 @@
+{
+  "stock_id": "600248",
+  "stock_name": "陕建股份",
+  "concept": "石油化工建设",
+  "strategy_type": "industry_chain",
+  "must": [
+    "石油化工建设",
+    "煤基乙醇工程建设",
+    "煤基乙醇"
+  ],
+  "should": [
+    "榆神乙醇项目",
+    "BDO项目",
+    "1,4-丁二醇",
+    "内蒙古乌海东景生物BDO项目",
+    "新能源",
+    "城市运营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "石油化工建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤基乙醇工程建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤基乙醇",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:12:52"
+}

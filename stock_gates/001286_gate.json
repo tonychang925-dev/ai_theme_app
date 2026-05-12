@@ -1,0 +1,28 @@
+{
+  "stock_id": "001286",
+  "stock_name": "陕西能源",
+  "concept": "煤电一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力业务",
+    "煤炭业务"
+  ],
+  "should": [
+    "热力供应",
+    "煤电一体化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:15:11"
+}

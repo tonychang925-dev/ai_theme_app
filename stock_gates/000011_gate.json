@@ -1,0 +1,46 @@
+{
+  "stock_id": "000011",
+  "stock_name": "深物业A",
+  "concept": "产城空间运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "产城空间开发",
+    "物业管理服务",
+    "产业生态运营",
+    "主业生态投资"
+  ],
+  "should": [
+    "国贸精神",
+    "深圳速度",
+    "产城空间运营",
+    "住宅",
+    "高档公寓",
+    "写字楼",
+    "产业园区",
+    "全产业链优势",
+    "存量资产运营增值",
+    "轻资产运营输出"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "产城空间开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物业管理服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "产业生态运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "主业生态投资",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:37:18"
+}

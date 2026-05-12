@@ -1,0 +1,36 @@
+{
+  "stock_id": "300959",
+  "stock_name": "线上线下",
+  "concept": "移动互联网运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "移动信息服务",
+    "移动互联网运营"
+  ],
+  "should": [
+    "5G消息",
+    "数字营销业务",
+    "Chatbot对话机器人",
+    "金融",
+    "零售",
+    "互联网及电子商务",
+    "快递物流",
+    "公共服务",
+    "文旅",
+    "医疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "移动信息服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动互联网运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:50:51"
+}

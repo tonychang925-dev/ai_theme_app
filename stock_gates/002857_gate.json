@@ -1,0 +1,46 @@
+{
+  "stock_id": "002857",
+  "stock_name": "三晖电气",
+  "concept": "电能表检定",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电能表检定",
+    "标准检测设备",
+    "自动化流水线型检定系统",
+    "高精度标准功率电能表"
+  ],
+  "should": [
+    "智能化仓储系统",
+    "用电信息采集系统",
+    "互感器",
+    "高稳定数字电源",
+    "高稳定程控电源",
+    "检定技术",
+    "自动化控制技术",
+    "通讯技术",
+    "信息技术",
+    "物联网技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电能表检定",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "标准检测设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自动化流水线型检定系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高精度标准功率电能表",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:00:33"
+}

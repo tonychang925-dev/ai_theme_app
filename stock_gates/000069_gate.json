@@ -1,0 +1,50 @@
+{
+  "stock_id": "000069",
+  "stock_name": "华侨城A",
+  "concept": "文旅地产综合",
+  "strategy_type": "industry_chain",
+  "must": [
+    "文化旅游",
+    "房地产",
+    "旅游+地产",
+    "主题公园",
+    "地产开发"
+  ],
+  "should": [
+    "酒店",
+    "文商旅综合体",
+    "自然人文景区",
+    "旅行服务",
+    "综合性社区",
+    "单体住宅社区",
+    "公园式商业街区",
+    "写字楼",
+    "文旅地产综合"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "文化旅游",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "房地产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "旅游+地产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "主题公园",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "地产开发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:49:49"
+}

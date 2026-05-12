@@ -1,0 +1,41 @@
+{
+  "stock_id": "002237",
+  "stock_name": "恒邦股份",
+  "concept": "贵金属冶炼",
+  "strategy_type": "industry_chain",
+  "must": [
+    "贵金属冶炼",
+    "黄金矿产资源开发",
+    "黄金"
+  ],
+  "should": [
+    "白银",
+    "电解铜",
+    "铅",
+    "锌锭",
+    "硫酸",
+    "稀散金属（铋、锑、碲、砷、硒）",
+    "造锍捕金",
+    "高铅提金",
+    "富氧底吹熔炼",
+    "骤冷干法收砷技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "贵金属冶炼",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "黄金矿产资源开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "黄金",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:31:01"
+}

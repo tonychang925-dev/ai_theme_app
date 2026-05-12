@@ -1,0 +1,46 @@
+{
+  "stock_id": "300386",
+  "stock_name": "飞天诚信",
+  "concept": "数字安全",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字安全",
+    "身份认证",
+    "智能卡操作系统",
+    "商用密码技术"
+  ],
+  "should": [
+    "USB Key",
+    "动态令牌",
+    "物联网安全芯片",
+    "零信任技术",
+    "智能POS终端",
+    "云喇叭",
+    "云打印机",
+    "专用算法芯片",
+    "SOC安全芯片",
+    "物理噪声源芯片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字安全",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "身份认证",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能卡操作系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商用密码技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:25:09"
+}

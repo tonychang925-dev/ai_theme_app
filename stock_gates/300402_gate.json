@@ -1,0 +1,36 @@
+{
+  "stock_id": "300402",
+  "stock_name": "宝色股份",
+  "concept": "特材装备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特材装备制造",
+    "压力容器"
+  ],
+  "should": [
+    "管道管件",
+    "换热器",
+    "塔器",
+    "反应器",
+    "特种材料焊接",
+    "高压反应釜制造",
+    "冷氢化系统反应器",
+    "石油化工",
+    "新能源",
+    "冶金"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特材装备制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "压力容器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:25:50"
+}

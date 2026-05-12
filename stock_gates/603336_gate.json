@@ -1,0 +1,36 @@
+{
+  "stock_id": "603336",
+  "stock_name": "宏辉果蔬",
+  "concept": "果蔬一体化服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "果蔬一体化服务",
+    "果蔬服务业"
+  ],
+  "should": [
+    "速冻食品生产销售",
+    "食用油调和灌装",
+    "冷冻肉贸易",
+    "丰收哥",
+    "香家门",
+    "国内外大型超市",
+    "电商",
+    "果蔬流通企业",
+    "地区性连锁超市",
+    "社区团购平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "果蔬一体化服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "果蔬服务业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:49:33"
+}

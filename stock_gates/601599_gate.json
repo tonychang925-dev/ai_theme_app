@@ -1,0 +1,37 @@
+{
+  "stock_id": "601599",
+  "stock_name": "浙文影业",
+  "concept": "影视纺织双主业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "影视纺织双主业",
+    "影视",
+    "纺织"
+  ],
+  "should": [
+    "电视剧",
+    "电影",
+    "影视发行",
+    "纺织品牌",
+    "纺织压舱石",
+    "影视精品创制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "影视纺织双主业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "影视",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纺织",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:37:12"
+}

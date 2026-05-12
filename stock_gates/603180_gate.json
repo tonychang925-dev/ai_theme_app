@@ -1,0 +1,36 @@
+{
+  "stock_id": "603180",
+  "stock_name": "金牌家居",
+  "concept": "高端定制家居",
+  "strategy_type": "industry_chain",
+  "must": [
+    "整体厨柜",
+    "衣柜"
+  ],
+  "should": [
+    "木门",
+    "配套设备",
+    "高端定制家居",
+    "量体裁柜",
+    "抗菌厨房产品",
+    "自主发明创新",
+    "一站式家居生态圈",
+    "智能家居",
+    "整装领域",
+    "经销为主"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "整体厨柜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "衣柜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:45:37"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "603696",
+  "stock_name": "安记食品",
+  "concept": "复合调味品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "复合调味品",
+    "复合调味粉"
+  ],
+  "should": [
+    "天然提取物调味料",
+    "香辛料",
+    "酱类",
+    "风味清汤",
+    "大健康食品",
+    "自主研发设计的生产设备",
+    "餐饮业",
+    "家庭消费",
+    "食品加工",
+    "行业领先企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "复合调味品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复合调味粉",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:54:56"
+}

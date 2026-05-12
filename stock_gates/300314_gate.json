@@ -1,0 +1,36 @@
+{
+  "stock_id": "300314",
+  "stock_name": "戴维医疗",
+  "concept": "电动吻合器龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电动吻合器龙头",
+    "电动腔镜吻合器"
+  ],
+  "should": [
+    "婴儿保育设备",
+    "腔镜吻合器",
+    "开放式吻合器",
+    "主控芯片",
+    "固件开发",
+    "直流电机",
+    "电路板",
+    "机械传统组建",
+    "专利技术",
+    "关键零部件自行设计"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电动吻合器龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电动腔镜吻合器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:22:09"
+}

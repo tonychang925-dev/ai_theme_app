@@ -1,0 +1,35 @@
+{
+  "stock_id": "300257",
+  "stock_name": "开山股份",
+  "concept": "压缩机与地热发电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "地热发电",
+    "离心压缩机",
+    "无油螺杆压缩机"
+  ],
+  "should": [
+    "磁悬浮技术",
+    "磁悬浮鼓风机",
+    "真空泵",
+    "地热电站运营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "地热发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "离心压缩机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无油螺杆压缩机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:19:49"
+}

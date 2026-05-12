@@ -1,0 +1,41 @@
+{
+  "stock_id": "000789",
+  "stock_name": "万年青",
+  "concept": "江西水泥龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "江西水泥龙头",
+    "水泥",
+    "水泥产能江西省前三"
+  ],
+  "should": [
+    "商品混凝土",
+    "骨料",
+    "骨料产能1500万吨/年",
+    "地产",
+    "基建",
+    "农村建设",
+    "商砼企业近30家",
+    "节能降碳",
+    "超低排放改造",
+    "光伏发电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "江西水泥龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水泥",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水泥产能江西省前三",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:04:50"
+}

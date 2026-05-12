@@ -1,0 +1,32 @@
+{
+  "stock_id": "300357",
+  "stock_name": "我武生物",
+  "concept": "脱敏治疗龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "粉尘螨滴剂",
+    "黄花蒿花粉变应原舌下滴剂"
+  ],
+  "should": [
+    "脱敏治疗龙头",
+    "舌下脱敏治疗",
+    "国内唯一舌下脱敏治疗产品",
+    "粉尘螨皮肤点刺诊断试剂盒",
+    "屋尘螨皮肤点刺诊断试剂盒",
+    "皮下注射脱敏治疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "粉尘螨滴剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "黄花蒿花粉变应原舌下滴剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:23:46"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "300761",
+  "stock_name": "立华股份",
+  "concept": "黄羽鸡养殖龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "黄羽鸡养殖龙头",
+    "国内第二大黄羽鸡养殖企业",
+    "黄羽肉鸡养殖",
+    "商品代黄羽肉鸡养殖"
+  ],
+  "should": [
+    "屠宰加工",
+    "曾祖代种鸡繁育",
+    "祖代种鸡繁育",
+    "父母代种鸡繁育",
+    "饲料生产",
+    "商品肉猪养殖",
+    "肉鹅养殖",
+    "销售",
+    "公司+合作社+农户",
+    "全产业链一体化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "黄羽鸡养殖龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内第二大黄羽鸡养殖企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "黄羽肉鸡养殖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商品代黄羽肉鸡养殖",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:42:01"
+}

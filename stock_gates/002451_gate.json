@@ -1,0 +1,41 @@
+{
+  "stock_id": "002451",
+  "stock_name": "摩恩电气",
+  "concept": "特种电缆",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种电缆",
+    "电磁线",
+    "扁型电磁线"
+  ],
+  "should": [
+    "轨道交通牵引电机",
+    "上海市院士专家工作站",
+    "新能源汽车",
+    "高铁电机",
+    "核电站电机",
+    "风电电机",
+    "大型油浸变压器",
+    "干式变压器",
+    "电抗器",
+    "研发实力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电磁线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "扁型电磁线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:42:20"
+}

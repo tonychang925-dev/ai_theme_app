@@ -1,0 +1,28 @@
+{
+  "stock_id": "002673",
+  "stock_name": "西部证券",
+  "concept": "区域券商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "区域券商"
+  ],
+  "should": [
+    "全国性综合上市券商",
+    "深耕西部地区",
+    "陕西省内领先",
+    "连续盈利21年",
+    "直接融资",
+    "财富管理",
+    "金融风险防控"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "区域券商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:52:38"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "300535",
+  "stock_name": "达威股份",
+  "concept": "化学品新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "化学品新材料",
+    "皮革化学品"
+  ],
+  "should": [
+    "清洁制革材料",
+    "皮革功能助剂",
+    "涂饰材料",
+    "着色剂",
+    "聚氨酯功能涂层材料",
+    "制革生产",
+    "定制家具",
+    "成品家具",
+    "建筑装饰",
+    "汽车部件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "化学品新材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "皮革化学品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:31:45"
+}

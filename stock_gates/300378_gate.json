@@ -1,0 +1,51 @@
+{
+  "stock_id": "300378",
+  "stock_name": "鼎捷数智",
+  "concept": "企业管理软件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "企业管理软件",
+    "ERP软件",
+    "T100",
+    "E10",
+    "易飞"
+  ],
+  "should": [
+    "PLM",
+    "MOM",
+    "MES",
+    "APS",
+    "WMS",
+    "QMS",
+    "MMP",
+    "鼎捷雅典娜",
+    "ChatFile",
+    "数据模型驱动架构MDA"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "企业管理软件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ERP软件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "T100",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "E10",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "易飞",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:24:45"
+}

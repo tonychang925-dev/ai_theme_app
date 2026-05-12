@@ -1,0 +1,36 @@
+{
+  "stock_id": "601877",
+  "stock_name": "正泰电器",
+  "concept": "智慧电器与绿色能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧电器",
+    "绿色能源"
+  ],
+  "should": [
+    "主控芯片",
+    "固件开发",
+    "新能源",
+    "电气成套",
+    "流程工业",
+    "电力电网",
+    "5G通信",
+    "轨道交通",
+    "发电集团",
+    "智能制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧电器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "绿色能源",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:39:22"
+}

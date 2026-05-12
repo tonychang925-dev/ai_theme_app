@@ -1,0 +1,51 @@
+{
+  "stock_id": "000528",
+  "stock_name": "柳工",
+  "concept": "工程机械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "装载机",
+    "挖掘机",
+    "起重机",
+    "混凝土机械",
+    "建筑机械"
+  ],
+  "should": [
+    "农业机械",
+    "工业车辆",
+    "矿山机械",
+    "高空作业机械",
+    "桩工机械",
+    "压路机",
+    "平地机",
+    "推土机",
+    "铣刨机",
+    "摊铺机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "装载机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "挖掘机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "起重机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "混凝土机械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑机械",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:54:35"
+}

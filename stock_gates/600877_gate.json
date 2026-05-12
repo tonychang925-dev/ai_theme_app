@@ -1,0 +1,38 @@
+{
+  "stock_id": "600877",
+  "stock_name": "电科芯片",
+  "concept": "硅基模拟芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "硅基模拟半导体芯片",
+    "北斗短报文通信SoC芯片",
+    "卫星导航SoC芯片"
+  ],
+  "should": [
+    "大电流光伏旁路开关电路",
+    "电机驱动芯片",
+    "车规级电机驱动芯片",
+    "5G通信基站",
+    "卫星导航",
+    "卫星通信",
+    "卫星互联网"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "硅基模拟半导体芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "北斗短报文通信SoC芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "卫星导航SoC芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:30:27"
+}

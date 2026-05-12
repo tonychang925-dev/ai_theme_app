@@ -1,0 +1,31 @@
+{
+  "stock_id": "002381",
+  "stock_name": "双箭股份",
+  "concept": "橡胶输送带龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "橡胶输送带龙头"
+  ],
+  "should": [
+    "棉帆布芯输送带",
+    "尼龙帆布芯输送带",
+    "聚酯帆布芯输送带",
+    "整芯输送带",
+    "钢丝绳芯输送带",
+    "芳纶输送带",
+    "陶瓷输送带",
+    "耐高温",
+    "耐磨",
+    "耐酸碱"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "橡胶输送带龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:38:51"
+}

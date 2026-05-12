@@ -1,0 +1,35 @@
+{
+  "stock_id": "603392",
+  "stock_name": "万泰生物",
+  "concept": "体外诊断与疫苗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "体外诊断试剂",
+    "疫苗"
+  ],
+  "should": [
+    "酶联免疫检测技术",
+    "化学发光检测技术",
+    "胶体金快速检测技术",
+    "酶联免疫层析技术",
+    "免疫荧光层析技术",
+    "生化检测技术",
+    "荧光定量PCR检测技术",
+    "核酸POCT诊断技术",
+    "核酸提取技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "体外诊断试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "疫苗",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:50:42"
+}

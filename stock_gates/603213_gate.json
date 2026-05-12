@@ -1,0 +1,49 @@
+{
+  "stock_id": "603213",
+  "stock_name": "镇洋发展",
+  "concept": "氯碱化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "烧碱",
+    "氯化石蜡",
+    "次氯酸钠",
+    "MIBK",
+    "ECH"
+  ],
+  "should": [
+    "氢气",
+    "零极距离子膜法盐水电解工艺",
+    "光氯化连续生产工艺",
+    "DCS系统控制",
+    "化工原料销售",
+    "园区下游客户",
+    "江浙地区主要氯碱产品供应商",
+    "园区内唯一烧碱、液氯供应企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "烧碱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氯化石蜡",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "次氯酸钠",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MIBK",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ECH",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:46:33"
+}

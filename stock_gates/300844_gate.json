@@ -1,0 +1,31 @@
+{
+  "stock_id": "300844",
+  "stock_name": "山水比德",
+  "concept": "景观设计",
+  "strategy_type": "industry_chain",
+  "must": [
+    "景观设计"
+  ],
+  "should": [
+    "地产",
+    "市政",
+    "旅游度假",
+    "设计+工程",
+    "纯设计",
+    "全过程设计咨询",
+    "工程总承包",
+    "总设计师负责制",
+    "数字技术",
+    "绿色化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "景观设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:45:43"
+}

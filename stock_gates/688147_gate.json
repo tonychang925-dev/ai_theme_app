@@ -1,0 +1,41 @@
+{
+  "stock_id": "688147",
+  "stock_name": "微导纳米",
+  "concept": "薄膜沉积设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "ALD设备",
+    "光伏ALD设备龙头企业",
+    "原子层沉积技术(ALD)"
+  ],
+  "should": [
+    "PECVD设备",
+    "PEALD+PECVD二合一设备",
+    "扩散炉",
+    "凤凰系列",
+    "麒麟系列",
+    "龙系列",
+    "PEALD技术",
+    "PECVD技术",
+    "Highk原子层沉积技术",
+    "薄膜沉积设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "ALD设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏ALD设备龙头企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原子层沉积技术(ALD)",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:09:45"
+}

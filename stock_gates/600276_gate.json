@@ -1,0 +1,32 @@
+{
+  "stock_id": "600276",
+  "stock_name": "恒瑞医药",
+  "concept": "创新药研发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "创新药研发",
+    "创新药"
+  ],
+  "should": [
+    "抗肿瘤药",
+    "手术用药",
+    "影像介入产品",
+    "头部地位",
+    "研发能力行业领先",
+    "销售网络全面深入"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "创新药研发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "创新药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:13:42"
+}

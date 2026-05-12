@@ -1,0 +1,41 @@
+{
+  "stock_id": "688080",
+  "stock_name": "映翰通",
+  "concept": "工业物联网",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业物联网通信产品",
+    "智能售货控制系统产品",
+    "边缘计算网关"
+  ],
+  "should": [
+    "工业路由器",
+    "工业以太网交换机",
+    "故障指示器",
+    "AI智能冰柜",
+    "车载网关",
+    "边缘路由器",
+    "主控芯片",
+    "工业与楼宇IoT",
+    "数字能源",
+    "智慧商业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业物联网通信产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能售货控制系统产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "边缘计算网关",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:07:38"
+}

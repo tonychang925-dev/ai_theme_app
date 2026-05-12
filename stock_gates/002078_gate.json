@@ -1,0 +1,51 @@
+{
+  "stock_id": "002078",
+  "stock_name": "太阳纸业",
+  "concept": "造纸龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高档涂布包装纸板",
+    "高级美术铜版纸",
+    "高级文化办公用纸",
+    "特种纤维溶解浆",
+    "高档工业包装用纸"
+  ],
+  "should": [
+    "生活用纸",
+    "金太阳",
+    "华夏太阳",
+    "天阳",
+    "威尔",
+    "幸福阳光",
+    "山东基地",
+    "老挝基地",
+    "广西基地",
+    "漂白木浆自给率60%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高档涂布包装纸板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高级美术铜版纸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高级文化办公用纸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种纤维溶解浆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高档工业包装用纸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:21:57"
+}

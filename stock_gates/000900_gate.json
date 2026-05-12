@@ -1,0 +1,41 @@
+{
+  "stock_id": "000900",
+  "stock_name": "现代投资",
+  "concept": "高速公路运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高速公路运营",
+    "养护维修",
+    "收费经营"
+  ],
+  "should": [
+    "智慧高速",
+    "光伏发电",
+    "充电桩",
+    "资产经营管理",
+    "ETC服务平台",
+    "数字化赋能",
+    "长沙至永安高速",
+    "长沙至湘潭高速",
+    "衡阳至耒阳高速",
+    "溆浦至怀化高速"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高速公路运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "养护维修",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "收费经营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:08:49"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "603787",
+  "stock_name": "新日股份",
+  "concept": "电动自行车",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电动自行车"
+  ],
+  "should": [
+    "电动轻便摩托车",
+    "电动摩托车",
+    "双芯双动力",
+    "四合一智能集成系统",
+    "钠离子电池",
+    "日常代步",
+    "通勤",
+    "快递",
+    "送餐",
+    "休闲"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电动自行车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:56:29"
+}

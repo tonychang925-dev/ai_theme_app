@@ -1,0 +1,50 @@
+{
+  "stock_id": "300596",
+  "stock_name": "利安隆",
+  "concept": "高分子抗老化剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高分子抗老化剂",
+    "抗氧化剂",
+    "光稳定剂",
+    "润滑油添加剂",
+    "高分子材料抗老化技术"
+  ],
+  "should": [
+    "U-pack",
+    "利安隆天津",
+    "利安隆中卫",
+    "利安隆凯亚",
+    "利安隆科润",
+    "利安隆珠海",
+    "利安隆赤峰",
+    "高分子材料",
+    "润滑油"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高分子抗老化剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "抗氧化剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光稳定剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "润滑油添加剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高分子材料抗老化技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:34:34"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "601828",
+  "stock_name": "美凯龙",
+  "concept": "连锁家居商场",
+  "strategy_type": "industry_chain",
+  "must": [
+    "连锁家居商场",
+    "自营商场",
+    "委管商场"
+  ],
+  "should": [
+    "家装及商品销售",
+    "建造施工及设计",
+    "天猫同城站",
+    "委托管理",
+    "特许经营",
+    "线上线下同城零售",
+    "数字化卖场",
+    "行业龙头",
+    "连锁家具商场份额第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "连锁家居商场",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自营商场",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "委管商场",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:38:55"
+}

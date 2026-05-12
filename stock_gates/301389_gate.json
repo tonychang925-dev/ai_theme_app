@@ -1,0 +1,36 @@
+{
+  "stock_id": "301389",
+  "stock_name": "隆扬电子",
+  "concept": "电磁屏蔽材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电磁屏蔽材料",
+    "苹果供应商"
+  ],
+  "should": [
+    "导电布胶带",
+    "导电泡棉",
+    "绝缘材料",
+    "卷绕式真空磁控溅射",
+    "复合镀膜技术",
+    "材料前体加工",
+    "笔记本电脑",
+    "平板电脑",
+    "5G通信",
+    "物联网"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电磁屏蔽材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "苹果供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:04:35"
+}

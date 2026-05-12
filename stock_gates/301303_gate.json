@@ -1,0 +1,40 @@
+{
+  "stock_id": "301303",
+  "stock_name": "真兰仪表",
+  "concept": "燃气计量仪表",
+  "strategy_type": "industry_chain",
+  "must": [
+    "燃气计量仪表",
+    "膜式燃气表",
+    "智能膜式燃气表"
+  ],
+  "should": [
+    "气体流量计",
+    "iGasLink智慧燃气云平台",
+    "高精度宽量程计量技术",
+    "无损压封技术",
+    "阀系冗余设计技术",
+    "耐腐蚀性技术",
+    "安全性物联网技术",
+    "国内五大燃气集团供应商",
+    "国内燃气表主要出口商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "燃气计量仪表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "膜式燃气表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能膜式燃气表",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:02:24"
+}

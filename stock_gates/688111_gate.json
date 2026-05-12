@@ -1,0 +1,21 @@
+{
+  "stock_id": "688111",
+  "stock_name": "金山办公",
+  "concept": "办公软件",
+  "strategy_type": "industry_chain",
+  "must": [],
+  "should": [
+    "金山文档",
+    "金山词霸",
+    "办公软件",
+    "桌面版",
+    "移动版",
+    "跨平台应用",
+    "国产办公软件龙头"
+  ],
+  "not": [],
+  "evidence_refs": [],
+  "quality": "weak",
+  "must_count": 0,
+  "generated_at": "2026-05-11T20:08:38"
+}

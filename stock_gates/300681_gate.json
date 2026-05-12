@@ -1,0 +1,45 @@
+{
+  "stock_id": "300681",
+  "stock_name": "英搏尔",
+  "concept": "新能源电驱动系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源电驱动系统",
+    "动力总成",
+    "电源总成",
+    "电机控制器"
+  ],
+  "should": [
+    "驱动电机",
+    "车载充电机",
+    "DC-DC转换器",
+    "电子油门踏板",
+    "集成化技术",
+    "碳化硅技术",
+    "转矩控制",
+    "转速控制",
+    "国内新能源车电驱动系统龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源电驱动系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动力总成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电源总成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电机控制器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:38:42"
+}

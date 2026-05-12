@@ -1,0 +1,41 @@
+{
+  "stock_id": "600125",
+  "stock_name": "铁龙物流",
+  "concept": "铁路特种物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铁路特种集装箱运输",
+    "铁路客货运输",
+    "特种箱"
+  ],
+  "should": [
+    "敞顶箱",
+    "卷钢箱",
+    "氧化铝箱",
+    "海铁联运",
+    "铁路特种物流",
+    "大宗商品运输",
+    "进口煤炭运输",
+    "冷链物流",
+    "特箱物流市场领先地位",
+    "区域海铁联运市场领先地位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铁路特种集装箱运输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铁路客货运输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种箱",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:09:46"
+}

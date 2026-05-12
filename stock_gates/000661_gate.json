@@ -1,0 +1,46 @@
+{
+  "stock_id": "000661",
+  "stock_name": "长春高新",
+  "concept": "生长激素龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生长激素龙头",
+    "国内生长激素龙头",
+    "水痘疫苗",
+    "冻干鼻喷流感疫苗"
+  ],
+  "should": [
+    "生长激素粉针剂型",
+    "生长激素水针剂型",
+    "PEG长效重组人生长激素水针剂",
+    "狂犬疫苗",
+    "重组人生长激素技术",
+    "长效重组人生长激素技术",
+    "隐针电子注射笔技术",
+    "儿童生长发育",
+    "辅助生殖",
+    "妇女健康"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生长激素龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内生长激素龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水痘疫苗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冻干鼻喷流感疫苗",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:59:54"
+}

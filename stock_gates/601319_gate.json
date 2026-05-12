@@ -1,0 +1,45 @@
+{
+  "stock_id": "601319",
+  "stock_name": "中国人保",
+  "concept": "综合保险服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "综合保险服务",
+    "财产保险",
+    "人寿保险",
+    "健康保险"
+  ],
+  "should": [
+    "资产管理",
+    "债券投资",
+    "权益投资",
+    "非标资产投资",
+    "国家战略方针",
+    "实体经济发展",
+    "民生福祉改善",
+    "信息技术",
+    "数字经济"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "综合保险服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "财产保险",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人寿保险",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "健康保险",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:36:08"
+}

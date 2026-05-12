@@ -1,0 +1,41 @@
+{
+  "stock_id": "603680",
+  "stock_name": "今创集团",
+  "concept": "轨道交通内饰装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轨道交通内饰装备",
+    "轨道交通",
+    "智慧交通"
+  ],
+  "should": [
+    "智能厨房",
+    "车辆自动售货装备",
+    "快速维护照明系统",
+    "新型环保轻量化内装系统",
+    "高隔音性能铝蜂窝板",
+    "集成化多功能电磁锁",
+    "城际列车双开塞拉门",
+    "新型智能避障系统",
+    "储能产品",
+    "充电桩"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轨道交通内饰装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轨道交通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧交通",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:54:36"
+}

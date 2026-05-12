@@ -1,0 +1,41 @@
+{
+  "stock_id": "300100",
+  "stock_name": "双林股份",
+  "concept": "汽车零部件系统供应商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车零部件系统供应商",
+    "轮毂轴承",
+    "新能源汽车电驱动"
+  ],
+  "should": [
+    "汽车内外饰系统零部件",
+    "精密注塑零部件",
+    "座椅系统零部件",
+    "变速器",
+    "自主创新",
+    "产品研发",
+    "乘用车",
+    "新能源汽车",
+    "OEM厂商就近配套",
+    "整车厂商与整车厂一级供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车零部件系统供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轮毂轴承",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车电驱动",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:13:12"
+}

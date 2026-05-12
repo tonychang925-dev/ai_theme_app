@@ -1,0 +1,46 @@
+{
+  "stock_id": "000723",
+  "stock_name": "美锦能源",
+  "concept": "煤焦氢一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤焦氢一体化",
+    "氢能产业",
+    "煤焦气化产业",
+    "氢燃料电池汽车"
+  ],
+  "should": [
+    "焦化",
+    "煤炭",
+    "天然气",
+    "高纯氢气",
+    "焦炉煤气制氢",
+    "干熄焦技术",
+    "标准一级焦炭",
+    "7.65米顶装焦炉",
+    "6.78米捣固焦炉",
+    "国内最大的独立商品焦生产商之一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤焦氢一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氢能产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤焦气化产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氢燃料电池汽车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:04:01"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "300818",
+  "stock_name": "耐普矿机",
+  "concept": "选矿设备及耐磨备件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "选矿设备及耐磨备件",
+    "选矿设备制造",
+    "耐磨备件制造",
+    "高性能橡胶耐磨材料"
+  ],
+  "should": [
+    "磨机橡胶复合衬板",
+    "渣浆泵",
+    "旋流器",
+    "圆筒筛",
+    "振动筛橡胶筛网",
+    "浮选机叶轮",
+    "浮选机定子",
+    "耐磨管道",
+    "高分子复合耐磨材料",
+    "橡胶复合材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "选矿设备及耐磨备件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "选矿设备制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "耐磨备件制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高性能橡胶耐磨材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:44:30"
+}

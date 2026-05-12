@@ -1,0 +1,43 @@
+{
+  "stock_id": "300980",
+  "stock_name": "祥源新材",
+  "concept": "聚烯烃发泡材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "聚烯烃发泡材料",
+    "环保交联聚烯烃泡棉",
+    "IXPE",
+    "IXPP"
+  ],
+  "should": [
+    "XPE",
+    "聚氨酯泡棉",
+    "有机硅发泡材料",
+    "电子交联技术",
+    "超薄IXPE材料生产",
+    "批量化生产IXPP",
+    "国内聚烯烃发泡材料生产企业领跑者"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "聚烯烃发泡材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环保交联聚烯烃泡棉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IXPE",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IXPP",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:51:44"
+}

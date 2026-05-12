@@ -1,0 +1,41 @@
+{
+  "stock_id": "688612",
+  "stock_name": "威迈斯",
+  "concept": "车载电源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "车载电源",
+    "车载电源集成产品",
+    "车载充电机"
+  ],
+  "should": [
+    "电驱系统产品",
+    "车载DC/DC变换器",
+    "小鹏汽车",
+    "理想汽车",
+    "合众新能源",
+    "零跑汽车",
+    "上汽集团",
+    "上汽通用",
+    "吉利汽车",
+    "奇瑞汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "车载电源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载电源集成产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载充电机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:22:12"
+}

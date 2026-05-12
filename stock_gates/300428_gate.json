@@ -1,0 +1,36 @@
+{
+  "stock_id": "300428",
+  "stock_name": "立中集团",
+  "concept": "免热合金龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "免热合金龙头",
+    "免热处理合金"
+  ],
+  "should": [
+    "再生铸造铝合金",
+    "功能中间合金",
+    "铝合金车轮",
+    "低Mo变质技术",
+    "熔炼设备研发制造",
+    "铸造铝合金研发制造",
+    "功能中间合金研发制造",
+    "车轮模具研发制造",
+    "汽车轻量化零部件",
+    "新能源汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "免热合金龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "免热处理合金",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:27:00"
+}

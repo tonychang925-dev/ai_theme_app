@@ -1,0 +1,39 @@
+{
+  "stock_id": "601156",
+  "stock_name": "东航物流",
+  "concept": "航空物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "航空速运",
+    "综合物流解决方案",
+    "地面综合服务"
+  ],
+  "should": [
+    "全货机机队",
+    "上海两场货站",
+    "跨境随心翼",
+    "产地直达解决方案",
+    "航空物流",
+    "航司",
+    "货运代理人",
+    "高科技企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "航空速运",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合物流解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "地面综合服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:34:50"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "600148",
+  "stock_name": "长春一东",
+  "concept": "汽车离合器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车离合器",
+    "驾驶室液压举升系统",
+    "AMT离合器"
+  ],
+  "should": [
+    "智能离合器控制系统",
+    "液压尾板",
+    "换电锁止机构",
+    "新能源重卡扭转减振器",
+    "氧传感器",
+    "商用车",
+    "重卡",
+    "中卡",
+    "矿卡",
+    "乘用车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车离合器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "驾驶室液压举升系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AMT离合器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:10:14"
+}

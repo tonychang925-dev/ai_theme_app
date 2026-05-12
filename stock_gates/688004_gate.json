@@ -1,0 +1,46 @@
+{
+  "stock_id": "688004",
+  "stock_name": "博汇科技",
+  "concept": "视听大数据",
+  "strategy_type": "industry_chain",
+  "must": [
+    "视听大数据",
+    "传媒安全",
+    "智慧教育",
+    "智能显控"
+  ],
+  "should": [
+    "视音频异态监测",
+    "视听内容指纹提取及识别",
+    "视听内容人工智能分析",
+    "超高清分布式大屏显控",
+    "超高清视频能力平台",
+    "云转播",
+    "全媒体智慧监管",
+    "高校智慧教育",
+    "智慧校园指挥中心",
+    "网络同步"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "视听大数据",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "传媒安全",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧教育",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能显控",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:05:03"
+}

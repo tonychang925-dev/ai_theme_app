@@ -1,0 +1,35 @@
+{
+  "stock_id": "002429",
+  "stock_name": "兆驰股份",
+  "concept": "智慧显示与LED",
+  "strategy_type": "industry_chain",
+  "must": [
+    "液晶电视",
+    "电视ODM"
+  ],
+  "should": [
+    "电脑显示器",
+    "Mini LED显示屏",
+    "COB技术",
+    "主控芯片",
+    "家庭视听",
+    "商业显示",
+    "教育显示",
+    "会议显示",
+    "垂直一体化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "液晶电视",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电视ODM",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:41:08"
+}

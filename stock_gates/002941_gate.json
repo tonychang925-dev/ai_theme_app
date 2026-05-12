@@ -1,0 +1,40 @@
+{
+  "stock_id": "002941",
+  "stock_name": "新疆交建",
+  "concept": "路桥施工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "路桥施工",
+    "公路施工",
+    "公路工程施工总承包特级"
+  ],
+  "should": [
+    "市政公用工程",
+    "市政公用工程总承包一级",
+    "新疆自治区路桥施工领军企业",
+    "第二梯队",
+    "区域性优势",
+    "品牌影响力",
+    "资质涵盖范围广",
+    "融资渠道单一",
+    "研发局限"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "路桥施工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公路施工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公路工程施工总承包特级",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:04:12"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "603920",
+  "stock_name": "世运电路",
+  "concept": "汽车PCB",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车PCB",
+    "特斯拉最大汽车PCB客户"
+  ],
+  "should": [
+    "三电用PCB",
+    "主机板（中央处理主板）",
+    "软板",
+    "刚挠结合板",
+    "汽车电子",
+    "新能源汽车",
+    "储能",
+    "大陆排名第8名PCB供应商",
+    "全球汽车PCB排名第14名",
+    "储能产品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车PCB",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特斯拉最大汽车PCB客户",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:58:58"
+}

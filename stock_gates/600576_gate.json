@@ -1,0 +1,51 @@
+{
+  "stock_id": "600576",
+  "stock_name": "祥源文旅",
+  "concept": "文旅融合创新",
+  "strategy_type": "industry_chain",
+  "must": [
+    "旅游资产",
+    "动漫衍生",
+    "动画影视",
+    "数字科技",
+    "稀缺文旅资源"
+  ],
+  "should": [
+    "抖音",
+    "小红书",
+    "微博",
+    "文旅融合创新",
+    "创意能力",
+    "线上文化产品+线下旅游场景",
+    "文化IP+旅游+科技",
+    "联票政策",
+    "沉浸式艺术游船",
+    "智能化无障碍设施"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "旅游资产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动漫衍生",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动画影视",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字科技",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "稀缺文旅资源",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:21:35"
+}

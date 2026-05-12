@@ -1,0 +1,51 @@
+{
+  "stock_id": "300629",
+  "stock_name": "新劲刚",
+  "concept": "射频微波与特种材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "射频微波功率放大器",
+    "射频微波滤波器及组件",
+    "收发（T/R）组件",
+    "大功率发射/对抗装备",
+    "电磁吸波材料"
+  ],
+  "should": [
+    "跳频滤波器及组件",
+    "定向耦合器",
+    "射频微波功率开关",
+    "射频微波发射组件",
+    "射频前端组件",
+    "功率附加设备",
+    "结构吸波功能材料制品",
+    "宽带高可靠射频微波功率放大技术",
+    "合成技术",
+    "耦合技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "射频微波功率放大器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "射频微波滤波器及组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "收发（T/R）组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大功率发射/对抗装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电磁吸波材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:36:12"
+}

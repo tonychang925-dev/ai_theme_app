@@ -1,0 +1,36 @@
+{
+  "stock_id": "600869",
+  "stock_name": "远东股份",
+  "concept": "智能缆网龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能缆网龙头",
+    "智能缆网"
+  ],
+  "should": [
+    "圆柱锂电池",
+    "软包锂电池",
+    "锂电铜箔",
+    "4.5微米超薄锂电铜箔",
+    "4.0微米超薄铜箔",
+    "高抗拉高延展铜箔",
+    "绿色建筑",
+    "智能制造",
+    "智能电网",
+    "清洁能源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能缆网龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能缆网",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:30:04"
+}

@@ -1,0 +1,39 @@
+{
+  "stock_id": "002022",
+  "stock_name": "科华生物",
+  "concept": "体外诊断",
+  "strategy_type": "industry_chain",
+  "must": [
+    "体外诊断",
+    "体外诊断试剂",
+    "医疗检验仪器"
+  ],
+  "should": [
+    "生化诊断",
+    "免疫诊断",
+    "分子诊断",
+    "血液和体液学诊断",
+    "疾病风险预测",
+    "健康管理",
+    "慢病管理",
+    "癌症早筛早诊"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "体外诊断",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "体外诊断试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗检验仪器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:18:39"
+}

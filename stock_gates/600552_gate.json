@@ -1,0 +1,31 @@
+{
+  "stock_id": "600552",
+  "stock_name": "凯盛科技",
+  "concept": "显示材料与应用材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "UTG"
+  ],
+  "should": [
+    "ITO导电膜玻璃",
+    "柔性触控",
+    "TFT-LCD玻璃面板减薄",
+    "保护盖板",
+    "显示触控一体化模组",
+    "电熔氧化锆",
+    "硅酸锆",
+    "纳米复合氧化锆",
+    "球形硅微粉",
+    "纳米钛酸钡"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "UTG",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:21:10"
+}

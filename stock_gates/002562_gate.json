@@ -1,0 +1,36 @@
+{
+  "stock_id": "002562",
+  "stock_name": "兄弟科技",
+  "concept": "维生素与皮革化学品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "维生素K3",
+    "皮革化学品"
+  ],
+  "should": [
+    "香精香料",
+    "原料药",
+    "铬盐",
+    "维生素与皮革化学品",
+    "饲料",
+    "食品",
+    "日化",
+    "医药",
+    "全球最大维生素K3供应商",
+    "全球皮革化学品主流供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "维生素K3",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "皮革化学品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:47:29"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300624",
+  "stock_name": "万兴科技",
+  "concept": "数字创意赋能",
+  "strategy_type": "industry_chain",
+  "must": [
+    "视频创意软件",
+    "人工智能",
+    "虚拟人"
+  ],
+  "should": [
+    "绘图创意软件",
+    "文档创意软件",
+    "实用工具软件",
+    "AR引擎",
+    "AI抠图",
+    "数字创意赋能",
+    "视频创作",
+    "图像编辑",
+    "文档办公",
+    "数据管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "视频创意软件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人工智能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "虚拟人",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:35:50"
+}

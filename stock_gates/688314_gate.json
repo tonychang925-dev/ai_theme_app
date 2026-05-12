@@ -1,0 +1,36 @@
+{
+  "stock_id": "688314",
+  "stock_name": "康拓医疗",
+  "concept": "PEEK神经外科植入物",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PEEK颅骨修补固定产品",
+    "PEEK神经外科植入物"
+  ],
+  "should": [
+    "PEEK胸骨固定带",
+    "钛材料神经外科产品",
+    "口腔种植体系统",
+    "钛网",
+    "数字化导板",
+    "3D打印PEEK颅颌骨系统",
+    "微创外科工具",
+    "PEEK材料应用",
+    "种植体材料研究",
+    "钛网个性化应用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PEEK颅骨修补固定产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PEEK神经外科植入物",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:15:11"
+}

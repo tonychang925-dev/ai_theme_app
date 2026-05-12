@@ -1,0 +1,48 @@
+{
+  "stock_id": "300382",
+  "stock_name": "斯莱克",
+  "concept": "金属包装设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金属包装设备",
+    "高速易拉盖生产设备",
+    "易拉罐生产设备",
+    "高端装备供应商",
+    "整体解决方案提供商"
+  ],
+  "should": [
+    "精密模具",
+    "智能检测设备",
+    "新能源电池壳智能生产线",
+    "电池壳结构件",
+    "零备件",
+    "研发成果",
+    "生产经验"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金属包装设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高速易拉盖生产设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "易拉罐生产设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端装备供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "整体解决方案提供商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:24:46"
+}

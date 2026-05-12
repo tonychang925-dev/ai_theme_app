@@ -1,0 +1,51 @@
+{
+  "stock_id": "600595",
+  "stock_name": "中孚实业",
+  "concept": "铝精深加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铝精深加工",
+    "易拉罐罐体料",
+    "罐盖料",
+    "拉环料",
+    "绿色水电铝"
+  ],
+  "should": [
+    "新能源电池铝塑膜用铝箔",
+    "新能源电池集流体用铝箔",
+    "新能源电池极耳铝箔",
+    "高档双零铝箔毛料",
+    "3C电子产品用高表面阳极氧化料",
+    "汽车板用料",
+    "油罐车用高性能板材",
+    "铝合金车轮",
+    "高纯铝锭",
+    "新能源电池铝箔技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铝精深加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "易拉罐罐体料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "罐盖料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "拉环料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "绿色水电铝",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:22:26"
+}

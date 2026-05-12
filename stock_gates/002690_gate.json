@@ -1,0 +1,41 @@
+{
+  "stock_id": "002690",
+  "stock_name": "美亚光电",
+  "concept": "光电识别装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "色选机",
+    "口腔X射线CT诊断机",
+    "光电识别技术"
+  ],
+  "should": [
+    "光电识别装备",
+    "口腔数字印模仪",
+    "耳鼻部CT",
+    "X射线包装食品异物检测机",
+    "X射线安全检测设备",
+    "子午线轮胎X射线检测设备",
+    "多光谱识别技术",
+    "深度学习技术",
+    "高端医疗影像",
+    "工业检测"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "色选机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "口腔X射线CT诊断机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光电识别技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:53:34"
+}

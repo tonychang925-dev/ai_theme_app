@@ -1,0 +1,36 @@
+{
+  "stock_id": "688150",
+  "stock_name": "莱特光电",
+  "concept": "OLED有机材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "OLED有机材料",
+    "Red Prime材料"
+  ],
+  "should": [
+    "空穴传输层材料",
+    "OLED中间体",
+    "OLED终端材料合成",
+    "升华提纯",
+    "一体化生产能力",
+    "智能手机",
+    "智能电视",
+    "VR/AR",
+    "可穿戴电子设备",
+    "车载显示"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "OLED有机材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "Red Prime材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:09:51"
+}

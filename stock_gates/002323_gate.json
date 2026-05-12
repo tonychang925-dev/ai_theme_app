@@ -1,0 +1,32 @@
+{
+  "stock_id": "002323",
+  "stock_name": "雅博股份",
+  "concept": "金属屋面围护系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金属屋面围护系统",
+    "光伏围护系统一体化"
+  ],
+  "should": [
+    "节能绿色低碳",
+    "集成装配",
+    "建筑智能化",
+    "公共建筑",
+    "工业园区",
+    "新建厂房"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金属屋面围护系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏围护系统一体化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:35:23"
+}

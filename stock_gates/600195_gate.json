@@ -1,0 +1,51 @@
+{
+  "stock_id": "600195",
+  "stock_name": "中牧股份",
+  "concept": "动保兽药龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "动保兽药龙头",
+    "高致病性禽流感疫苗",
+    "口蹄疫疫苗",
+    "禽用疫苗",
+    "畜用疫苗"
+  ],
+  "should": [
+    "兽药制剂",
+    "兽药原料药",
+    "宠物用疫苗",
+    "复合维生素",
+    "复合预混料",
+    "泰妙菌素",
+    "泰万菌素",
+    "氟苯尼考",
+    "动物保健品",
+    "动物营养品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "动保兽药龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高致病性禽流感疫苗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "口蹄疫疫苗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "禽用疫苗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "畜用疫苗",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:11:31"
+}

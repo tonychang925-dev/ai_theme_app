@@ -1,0 +1,41 @@
+{
+  "stock_id": "300787",
+  "stock_name": "海能实业",
+  "concept": "消费电子零配件ODM",
+  "strategy_type": "industry_chain",
+  "must": [
+    "消费电子零配件ODM",
+    "电源适配器产品",
+    "信号适配器产品"
+  ],
+  "should": [
+    "信号线束产品",
+    "Type-C技术",
+    "主控芯片",
+    "固件开发",
+    "智能手机",
+    "平板",
+    "笔记本",
+    "IoT设备",
+    "零售品牌客户",
+    "亚马逊"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "消费电子零配件ODM",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电源适配器产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信号适配器产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:43:07"
+}

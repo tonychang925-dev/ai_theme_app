@@ -1,0 +1,41 @@
+{
+  "stock_id": "001255",
+  "stock_name": "博菲电气",
+  "concept": "电气绝缘材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电气绝缘材料",
+    "VPI浸渍绝缘漆",
+    "高强槽楔"
+  ],
+  "should": [
+    "有机硅浸渍漆",
+    "聚酰亚胺薄膜补强云母带",
+    "磁性槽楔",
+    "耐高压",
+    "耐高温",
+    "耐腐蚀",
+    "耐辐照",
+    "耐冲击",
+    "阻燃",
+    "无卤阻燃型"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电气绝缘材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "VPI浸渍绝缘漆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高强槽楔",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:14:40"
+}

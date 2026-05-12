@@ -1,0 +1,39 @@
+{
+  "stock_id": "600556",
+  "stock_name": "天下秀",
+  "concept": "红人营销",
+  "strategy_type": "industry_chain",
+  "must": [
+    "红人营销",
+    "红人营销平台WEIQ",
+    "红人"
+  ],
+  "should": [
+    "社交大数据监测系统",
+    "新媒体商业创新数据产品",
+    "新媒体商业创新服务",
+    "大数据技术",
+    "红人数据挖掘与分析",
+    "国内首个社交大数据监测系统",
+    "国内首个行业及社会化电商系统",
+    "A股首家红人新经济公司"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "红人营销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "红人营销平台WEIQ",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "红人",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:21:00"
+}

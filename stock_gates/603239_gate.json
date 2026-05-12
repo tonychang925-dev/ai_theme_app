@@ -1,0 +1,31 @@
+{
+  "stock_id": "603239",
+  "stock_name": "浙江仙通",
+  "concept": "汽车密封条",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车密封条"
+  ],
+  "should": [
+    "车门玻璃升降系统",
+    "车门密封系统",
+    "非车门密封条",
+    "装饰条及总成件",
+    "工装模具自制",
+    "专用设备开发",
+    "产品整体配套方案设计",
+    "同步开发能力",
+    "混炼胶自制配方",
+    "本土汽车密封条行业龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车密封条",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:47:24"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "600984",
+  "stock_name": "建设机械",
+  "concept": "工程机械租赁制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程机械租赁",
+    "工程机械制造",
+    "塔式起重机"
+  ],
+  "should": [
+    "沥青混凝土摊铺机",
+    "庞源在线",
+    "压路机",
+    "铣刨机",
+    "稳定土拌合机",
+    "沥青搅拌站",
+    "旋挖钻机",
+    "非标钢结构产品",
+    "制造+租赁服务+再制造",
+    "全国性大型施工企业战略合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程机械租赁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程机械制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "塔式起重机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:32:33"
+}

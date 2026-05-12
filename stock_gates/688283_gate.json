@@ -1,0 +1,40 @@
+{
+  "stock_id": "688283",
+  "stock_name": "坤恒顺维",
+  "concept": "无线电测试仿真",
+  "strategy_type": "industry_chain",
+  "must": [
+    "无线信道仿真仪",
+    "射频微波信号发生器",
+    "HBI平台"
+  ],
+  "should": [
+    "遥测遥控接收机",
+    "无线电测试仿真",
+    "模块化仪表",
+    "高端射频微波技术",
+    "数字电路技术",
+    "非实时信号处理技术",
+    "移动通信",
+    "无线组网",
+    "导航"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "无线信道仿真仪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "射频微波信号发生器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "HBI平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:14:07"
+}

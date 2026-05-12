@@ -1,0 +1,35 @@
+{
+  "stock_id": "002688",
+  "stock_name": "金河生物",
+  "concept": "动物保健品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金霉素",
+    "兽用金霉素行业龙头企业"
+  ],
+  "should": [
+    "兽药GMP",
+    "美国FDA质量管理规范",
+    "微囊技术",
+    "动物保健品",
+    "动物营养品",
+    "兽用化药",
+    "兽用疫苗",
+    "动物营养",
+    "宠物用药"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金霉素",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "兽用金霉素行业龙头企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:53:26"
+}

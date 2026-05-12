@@ -1,0 +1,41 @@
+{
+  "stock_id": "000825",
+  "stock_name": "太钢不锈",
+  "concept": "不锈钢龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "不锈钢龙头",
+    "不锈钢",
+    "不锈钢材料国家重点实验室"
+  ],
+  "should": [
+    "冷轧硅钢",
+    "碳钢热轧卷板",
+    "火车轮轴钢",
+    "合金模具钢",
+    "军工钢",
+    "国家理化实验室",
+    "石油",
+    "化工",
+    "造船",
+    "集装箱"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "不锈钢龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "不锈钢",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "不锈钢材料国家重点实验室",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:06:23"
+}

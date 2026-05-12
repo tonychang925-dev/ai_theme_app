@@ -1,0 +1,41 @@
+{
+  "stock_id": "600989",
+  "stock_name": "宝丰能源",
+  "concept": "煤制烯烃龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤制烯烃龙头",
+    "全球最大煤制烯烃供应商",
+    "绿氢耦合煤制烯烃"
+  ],
+  "should": [
+    "聚丙烯",
+    "聚乙烯",
+    "EVA",
+    "焦炭",
+    "粗苯加氢精制产品",
+    "炼焦油深加工产品",
+    "碳四深加工产品",
+    "电解水制氢",
+    "风光制氢一体化",
+    "碳减排"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤制烯烃龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球最大煤制烯烃供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "绿氢耦合煤制烯烃",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:32:43"
+}

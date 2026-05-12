@@ -1,0 +1,51 @@
+{
+  "stock_id": "688768",
+  "stock_name": "容知日新",
+  "concept": "智能运维服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能运维服务",
+    "故障诊断",
+    "远程监测",
+    "智能算法",
+    "完整方案提供商"
+  ],
+  "should": [
+    "传感器",
+    "云诊断中心",
+    "大数据平台",
+    "有线系统",
+    "无线系统",
+    "低功耗通信技术",
+    "激光密封焊接",
+    "风电",
+    "冶金",
+    "化工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能运维服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "故障诊断",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "远程监测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能算法",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "完整方案提供商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:24:54"
+}

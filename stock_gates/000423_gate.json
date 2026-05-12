@@ -1,0 +1,35 @@
+{
+  "stock_id": "000423",
+  "stock_name": "东阿阿胶",
+  "concept": "阿胶滋补",
+  "strategy_type": "industry_chain",
+  "must": [
+    "阿胶",
+    "复方阿胶浆"
+  ],
+  "should": [
+    "桃花姬阿胶糕",
+    "东阿阿胶牌阿胶粉",
+    "龟鹿二仙口服液",
+    "海龙胶口服液",
+    "国家胶类中药工程技术研究中心",
+    "博士后科研工作站",
+    "山东省胶类中药技术创新中心",
+    "阿胶滋补",
+    "滋补养生"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "阿胶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复方阿胶浆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:52:28"
+}

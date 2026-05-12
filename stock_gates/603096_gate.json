@@ -1,0 +1,36 @@
+{
+  "stock_id": "603096",
+  "stock_name": "新经典",
+  "concept": "图书出版发行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "图书策划与发行",
+    "图书分销"
+  ],
+  "should": [
+    "影视投资",
+    "图书出版发行",
+    "文学",
+    "非虚构类作品",
+    "童书",
+    "抖音",
+    "b站",
+    "小红书",
+    "海外出版",
+    "版权输出"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "图书策划与发行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "图书分销",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:43:34"
+}

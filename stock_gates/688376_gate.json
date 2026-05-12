@@ -1,0 +1,40 @@
+{
+  "stock_id": "688376",
+  "stock_name": "美埃科技",
+  "concept": "空气净化设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "空气净化设备",
+    "过滤器产品",
+    "风机过滤单元"
+  ],
+  "should": [
+    "半导体芯片",
+    "生物医药",
+    "液晶显示",
+    "国内空气净化行业龙头之一",
+    "供应国内外知名半导体芯片厂商",
+    "浸渍型化纤滤材改性技术",
+    "一种分子筛生产装置",
+    "离子交换纤维技术",
+    "一种高效率风机过滤器机组"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "空气净化设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "过滤器产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风机过滤单元",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:16:58"
+}

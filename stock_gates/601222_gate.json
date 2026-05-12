@@ -1,0 +1,41 @@
+{
+  "stock_id": "601222",
+  "stock_name": "林洋能源",
+  "concept": "智慧能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能电表",
+    "采集终端",
+    "储能系统"
+  ],
+  "should": [
+    "通信模块",
+    "配网自动化",
+    "主控芯片",
+    "智能用电信息管理系统",
+    "智能配电系统",
+    "固件开发",
+    "电网计量",
+    "用电信息采集",
+    "光伏电站运维",
+    "国网招标第一梯队"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能电表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "采集终端",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "储能系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:35:38"
+}

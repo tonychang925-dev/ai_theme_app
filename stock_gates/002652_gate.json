@@ -1,0 +1,31 @@
+{
+  "stock_id": "002652",
+  "stock_name": "扬子新材",
+  "concept": "有机涂层板",
+  "strategy_type": "industry_chain",
+  "must": [
+    "有机涂层板"
+  ],
+  "should": [
+    "高洁净板",
+    "抗静电板",
+    "高韧耐污板",
+    "抗菌板",
+    "抗VHP氧化彩涂板",
+    "HAS恒耐板",
+    "抗（导）静电彩涂板",
+    "绿色家电PCM彩涂板",
+    "自主研发技术",
+    "先进生产工艺"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "有机涂层板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:51:39"
+}

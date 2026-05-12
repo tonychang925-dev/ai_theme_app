@@ -1,0 +1,51 @@
+{
+  "stock_id": "603131",
+  "stock_name": "上海沪工",
+  "concept": "焊接切割与航天军工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "弧焊设备",
+    "数控切割设备",
+    "机器人系统",
+    "激光切割设备",
+    "航天飞行器结构件"
+  ],
+  "should": [
+    "射频组件",
+    "焊接与切割技术",
+    "机器人集成",
+    "卫星电子装联",
+    "热控实施",
+    "卫星地面测控",
+    "汽车制造",
+    "石油化工",
+    "能源环保",
+    "水利建设"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "弧焊设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数控切割设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机器人系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "激光切割设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航天飞行器结构件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:44:40"
+}

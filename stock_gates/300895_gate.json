@@ -1,0 +1,40 @@
+{
+  "stock_id": "300895",
+  "stock_name": "铜牛信息",
+  "concept": "国资云服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国资云服务",
+    "数据中心",
+    "云计算服务"
+  ],
+  "should": [
+    "数字政府",
+    "工业互联网",
+    "企业数字化转型",
+    "工业大数据",
+    "5G",
+    "人工智能",
+    "大数据",
+    "区块链",
+    "战略性基础设施"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国资云服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据中心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云计算服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:48:06"
+}

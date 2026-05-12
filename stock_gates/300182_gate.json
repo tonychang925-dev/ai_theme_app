@@ -1,0 +1,33 @@
+{
+  "stock_id": "300182",
+  "stock_name": "捷成股份",
+  "concept": "新媒体版权运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新媒体版权运营",
+    "新媒体版权运营及发行"
+  ],
+  "should": [
+    "影视内容制作与发行",
+    "音视频技术解决方案",
+    "虚拟技术解决方案",
+    "4K/8K超高清",
+    "AR/VR/AI",
+    "数字人元宇宙",
+    "融媒体平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新媒体版权运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新媒体版权运营及发行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:16:25"
+}

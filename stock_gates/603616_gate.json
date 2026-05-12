@@ -1,0 +1,26 @@
+{
+  "stock_id": "603616",
+  "stock_name": "韩建河山",
+  "concept": "大口径PCCP管材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "大口径PCCP管材"
+  ],
+  "should": [
+    "钢筋混凝土排水管（RCP）",
+    "跨流域引水",
+    "输配水重点工程",
+    "市政给排水",
+    "大口径PCCP领域传统优势地位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "大口径PCCP管材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:53:18"
+}

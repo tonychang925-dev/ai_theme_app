@@ -1,0 +1,51 @@
+{
+  "stock_id": "603898",
+  "stock_name": "好莱客",
+  "concept": "整体衣柜领跑者",
+  "strategy_type": "industry_chain",
+  "must": [
+    "衣柜及全屋产品",
+    "橱柜",
+    "木门",
+    "护墙",
+    "成品配套"
+  ],
+  "should": [
+    "不锈钢橱柜",
+    "圆弧护墙",
+    "隐框门墙一体化",
+    "原态板",
+    "原态净醛竹板",
+    "原态G6",
+    "悬浮结构五金",
+    "零售业务",
+    "整装业务",
+    "大宗业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "衣柜及全屋产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "橱柜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "木门",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "护墙",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "成品配套",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:58:39"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "000876",
+  "stock_name": "新希望",
+  "concept": "农牧全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "饲料业务",
+    "生猪养殖业务",
+    "禽链一体化业务",
+    "食品业务"
+  ],
+  "should": [
+    "禽饲料",
+    "猪饲料",
+    "水产料",
+    "种猪繁育",
+    "商品代育肥",
+    "种禽繁育",
+    "商品代禽养殖",
+    "禽屠宰",
+    "猪肉白条",
+    "分割品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "饲料业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生猪养殖业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "禽链一体化业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "食品业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:07:38"
+}

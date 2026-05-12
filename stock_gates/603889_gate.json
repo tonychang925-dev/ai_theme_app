@@ -1,0 +1,45 @@
+{
+  "stock_id": "603889",
+  "stock_name": "新澳股份",
+  "concept": "毛纺纱线龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球毛精纺细分行业龙头",
+    "毛纺纱线龙头",
+    "羊毛纱线",
+    "羊绒纱线"
+  ],
+  "should": [
+    "羊毛毛条",
+    "毛条制条",
+    "改性处理",
+    "纺纱",
+    "染整",
+    "纺织服装",
+    "高端服饰",
+    "运动",
+    "家纺"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球毛精纺细分行业龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "毛纺纱线龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "羊毛纱线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "羊绒纱线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:58:15"
+}

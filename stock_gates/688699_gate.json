@@ -1,0 +1,36 @@
+{
+  "stock_id": "688699",
+  "stock_name": "明微电子",
+  "concept": "LED驱动芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LED驱动芯片",
+    "显示驱动类"
+  ],
+  "should": [
+    "电源管理芯片",
+    "智能景观驱动芯片",
+    "线性电源驱动芯片",
+    "MiniLED背光",
+    "LED直显",
+    "智能照明",
+    "智慧节能技术",
+    "PWM动态开关时间补偿技术",
+    "显示参数自动配置算法技术",
+    "显示插黑技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED驱动芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "显示驱动类",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:24:25"
+}

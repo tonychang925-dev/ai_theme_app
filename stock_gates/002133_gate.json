@@ -1,0 +1,36 @@
+{
+  "stock_id": "002133",
+  "stock_name": "广宇集团",
+  "concept": "中小户型住宅开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中小户型住宅开发",
+    "住宅开发",
+    "中小户型住宅"
+  ],
+  "should": [
+    "广宇健康家",
+    "安诺长者生活馆",
+    "安诺新程国际颐养中心",
+    "养老服务",
+    "健康住宅"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中小户型住宅开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "住宅开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中小户型住宅",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:24:53"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "600895",
+  "stock_name": "张江高科",
+  "concept": "科技园区投资运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "科技园区投资运营",
+    "产业投资",
+    "集成电路",
+    "生物医药"
+  ],
+  "should": [
+    "房地产园区开发",
+    "人工智能",
+    "直投",
+    "基金",
+    "孵化",
+    "5G",
+    "数据中心",
+    "张江药谷",
+    "浦东软件园",
+    "张江集电港"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "科技园区投资运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "产业投资",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集成电路",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物医药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:30:52"
+}

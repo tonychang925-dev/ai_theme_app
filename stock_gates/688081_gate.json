@@ -1,0 +1,36 @@
+{
+  "stock_id": "688081",
+  "stock_name": "兴图新科",
+  "concept": "军队视频指挥",
+  "strategy_type": "industry_chain",
+  "must": [
+    "军队视频指挥",
+    "视频指挥控制系统"
+  ],
+  "should": [
+    "云视频融合平台",
+    "云指挥产品",
+    "无人机巡查系统",
+    "便携式音视频指挥控制保障箱",
+    "视频高压缩系列技术",
+    "openVone音视频融合平台",
+    "云计算",
+    "大数据",
+    "视频监控",
+    "数字孪生"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "军队视频指挥",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "视频指挥控制系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:07:37"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "002888",
+  "stock_name": "惠威科技",
+  "concept": "高级音响制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "多媒体音响",
+    "家庭影院音响",
+    "专业音响",
+    "汽车音响"
+  ],
+  "should": [
+    "公共广播",
+    "喇叭",
+    "耳机",
+    "扬声器设计及制造技术",
+    "扬声器单元供应",
+    "高级音响制造",
+    "音质技术研发",
+    "原创设计",
+    "智能手机",
+    "体育场馆"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "多媒体音响",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "家庭影院音响",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "专业音响",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车音响",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:01:59"
+}

@@ -1,0 +1,50 @@
+{
+  "stock_id": "301087",
+  "stock_name": "可孚医疗",
+  "concept": "家用医疗器械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "家用医疗器械",
+    "血压计",
+    "护理床",
+    "红外体温计",
+    "雾化器"
+  ],
+  "should": [
+    "助听器",
+    "自研自产",
+    "迭代升级",
+    "个人健康管理",
+    "自主品牌经营",
+    "代理销售",
+    "线上零售",
+    "线下仓储大卖场",
+    "线下大客户销售"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "家用医疗器械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "血压计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "护理床",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "红外体温计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "雾化器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:56:05"
+}

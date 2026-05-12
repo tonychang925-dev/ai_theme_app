@@ -1,0 +1,35 @@
+{
+  "stock_id": "002642",
+  "stock_name": "荣联科技",
+  "concept": "数字化服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字化服务",
+    "数字政府",
+    "大数据"
+  ],
+  "should": [
+    "云计算",
+    "工业互联网",
+    "生物医疗",
+    "制造业数字化转型"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字化服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字政府",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大数据",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:51:08"
+}

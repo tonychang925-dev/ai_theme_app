@@ -1,0 +1,41 @@
+{
+  "stock_id": "600780",
+  "stock_name": "通宝能源",
+  "concept": "综合能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力主业",
+    "综合能源",
+    "发电"
+  ],
+  "should": [
+    "配电",
+    "电网智能化",
+    "清洁能源",
+    "电量",
+    "电价",
+    "煤价",
+    "信息化",
+    "自动化",
+    "市场化交易",
+    "现货交易"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力主业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合能源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:27:29"
+}

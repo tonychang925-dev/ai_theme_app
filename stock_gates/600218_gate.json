@@ -1,0 +1,28 @@
+{
+  "stock_id": "600218",
+  "stock_name": "全柴动力",
+  "concept": "中小功率柴油机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中小功率柴油机"
+  ],
+  "should": [
+    "多缸柴油机",
+    "发动机",
+    "商用车",
+    "工程机械",
+    "农业装备",
+    "工业车辆",
+    "固定机组"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中小功率柴油机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:12:01"
+}

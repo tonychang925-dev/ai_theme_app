@@ -1,0 +1,40 @@
+{
+  "stock_id": "000063",
+  "stock_name": "中兴通讯",
+  "concept": "连接+算力",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全系列服务器",
+    "智算服务器",
+    "AiCube训推一体机"
+  ],
+  "should": [
+    "5G-A",
+    "星云大模型",
+    "行业智能体",
+    "自研定海ASIC芯片",
+    "DPU产品",
+    "电信市场服务器份额第一",
+    "全球专利申请约9.4万件",
+    "芯片专利超过4000件",
+    "自主研发并商用芯片100多种"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全系列服务器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智算服务器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AiCube训推一体机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:49:34"
+}

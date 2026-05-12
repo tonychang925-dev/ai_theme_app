@@ -1,0 +1,35 @@
+{
+  "stock_id": "002807",
+  "stock_name": "江阴银行",
+  "concept": "本土农商行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "本土农商行",
+    "江阴本土"
+  ],
+  "should": [
+    "苏锡常",
+    "对公业务",
+    "涉农贷款",
+    "小微企业贷款",
+    "民营经济",
+    "中小微企业",
+    "存贷市场份额首位",
+    "网点数量第一",
+    "独立法人资格"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "本土农商行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "江阴本土",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:58:15"
+}

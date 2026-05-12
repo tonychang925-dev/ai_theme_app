@@ -1,0 +1,41 @@
+{
+  "stock_id": "300981",
+  "stock_name": "中红医疗",
+  "concept": "高端医用手套",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端医用手套",
+    "一次性健康防护手套",
+    "安全输注器械"
+  ],
+  "should": [
+    "丁腈手套",
+    "PVC手套",
+    "注射器",
+    "输液器",
+    "留置针",
+    "精密输液器",
+    "医疗检查",
+    "医疗护理",
+    "食品加工",
+    "电子化工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端医用手套",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一次性健康防护手套",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "安全输注器械",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:51:44"
+}

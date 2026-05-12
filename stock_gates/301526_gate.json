@@ -1,0 +1,36 @@
+{
+  "stock_id": "301526",
+  "stock_name": "国际复材",
+  "concept": "玻璃纤维制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风电纱",
+    "织物"
+  ],
+  "should": [
+    "玻璃纤维纱",
+    "玻璃纤维制品",
+    "机织物",
+    "机械毡",
+    "化学毡",
+    "预浸料",
+    "池窑拉丝",
+    "有机被覆处理技术",
+    "玻璃纤维制造",
+    "商品纱"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风电纱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "织物",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:06:09"
+}

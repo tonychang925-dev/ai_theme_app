@@ -1,0 +1,36 @@
+{
+  "stock_id": "001337",
+  "stock_name": "四川黄金",
+  "concept": "黄金采选",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金精矿",
+    "合质金"
+  ],
+  "should": [
+    "上向水平分层充填采矿法",
+    "阶段空场嗣后充填采矿法",
+    "浅孔溜矿嗣后充填采矿法",
+    "黄金采选",
+    "破碎",
+    "磨矿",
+    "浮选",
+    "脱水",
+    "喷淋浸出",
+    "解吸电解"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金精矿",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "合质金",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:16:56"
+}

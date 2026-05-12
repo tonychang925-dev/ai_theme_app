@@ -1,0 +1,41 @@
+{
+  "stock_id": "002843",
+  "stock_name": "泰嘉股份",
+  "concept": "锯切+电源双主业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "双金属带锯条",
+    "消费电子电源",
+    "新能源智能光伏/储能电源"
+  ],
+  "should": [
+    "高速钢带锯条",
+    "硬质合金带锯条",
+    "数据中心电源",
+    "站点能源电源",
+    "光伏优化器",
+    "光伏逆变器",
+    "储能变流器",
+    "服务器电源模块",
+    "户用直流充电桩",
+    "快充充电电源模块"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "双金属带锯条",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "消费电子电源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源智能光伏/储能电源",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:00:01"
+}

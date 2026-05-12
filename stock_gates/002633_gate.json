@@ -1,0 +1,30 @@
+{
+  "stock_id": "002633",
+  "stock_name": "申科股份",
+  "concept": "厚壁滑动轴承",
+  "strategy_type": "industry_chain",
+  "must": [
+    "厚壁滑动轴承"
+  ],
+  "should": [
+    "DQY端盖式滑动轴承系列",
+    "ZQ/ZQKT座式滑动轴承系列",
+    "ZH动静压座式滑动轴承系列",
+    "VTBS立式推力轴承系列",
+    "轴承部套件",
+    "大中型交、直流电动机",
+    "轧钢机",
+    "矿井提升机",
+    "水轮发电机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "厚壁滑动轴承",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:50:48"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300230",
+  "stock_name": "永利股份",
+  "concept": "轻型输送带与精密模塑",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轻型输送带",
+    "精密模塑",
+    "国内轻型输送带龙头"
+  ],
+  "should": [
+    "轻型输送带与精密模塑",
+    "模具设计与制造技术",
+    "气辅注射成型技术",
+    "模内装饰注塑成型技术",
+    "长玻纤PP替代金属冲压件技术",
+    "织物覆盖低压注塑技术",
+    "教育玩具",
+    "医疗器械",
+    "通信设备",
+    "特斯拉供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轻型输送带",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密模塑",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内轻型输送带龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:18:24"
+}

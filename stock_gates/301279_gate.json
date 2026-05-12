@@ -1,0 +1,25 @@
+{
+  "stock_id": "301279",
+  "stock_name": "金道科技",
+  "concept": "叉车变速箱",
+  "strategy_type": "industry_chain",
+  "must": [
+    "叉车变速箱"
+  ],
+  "should": [
+    "叉车",
+    "工业车辆",
+    "自主研发",
+    "引进消化吸收创新"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "叉车变速箱",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:01:40"
+}

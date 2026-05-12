@@ -1,0 +1,46 @@
+{
+  "stock_id": "000552",
+  "stock_name": "甘肃能化",
+  "concept": "煤电一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤炭采掘",
+    "火力发电",
+    "煤电一体化",
+    "动力煤"
+  ],
+  "should": [
+    "配焦煤",
+    "热力供应",
+    "供汽",
+    "油页岩炼油",
+    "合成氨",
+    "尿素",
+    "液体二氧化碳",
+    "硫磺",
+    "电力",
+    "化工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤炭采掘",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "火力发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤电一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动力煤",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:56:05"
+}

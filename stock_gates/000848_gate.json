@@ -1,0 +1,30 @@
+{
+  "stock_id": "000848",
+  "stock_name": "承德露露",
+  "concept": "植物蛋白饮料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "杏仁露"
+  ],
+  "should": [
+    "核桃露",
+    "果仁核桃露",
+    "植物蛋白饮料",
+    "研磨工艺",
+    "专利技术",
+    "植物蛋白饮品市场",
+    "健康饮品消费",
+    "全国最大的杏仁露生产企业",
+    "国家农业产业化重点龙头企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "杏仁露",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:06:44"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "603290",
+  "stock_name": "斯达半导",
+  "concept": "功率半导体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "IGBT模块",
+    "SiC模块"
+  ],
+  "should": [
+    "MOSFET",
+    "IPM",
+    "FRD",
+    "第七代微沟槽栅技术",
+    "功率半导体",
+    "工业控制",
+    "新能源市场",
+    "机车牵引辅助供电系统",
+    "新能源汽车行业控制器",
+    "光伏行业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "IGBT模块",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SiC模块",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:48:14"
+}

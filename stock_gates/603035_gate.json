@@ -1,0 +1,41 @@
+{
+  "stock_id": "603035",
+  "stock_name": "常熟汽饰",
+  "concept": "汽车内饰件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车内饰件",
+    "智能座舱",
+    "乘用车内饰件"
+  ],
+  "should": [
+    "门板",
+    "仪表板总成",
+    "立柱",
+    "衣帽架",
+    "智能座舱设计开发",
+    "HarmonyOS健康管理系统",
+    "星闪沉浸式氛围灯",
+    "模检具",
+    "数字化软件开发",
+    "虚拟现实方案"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车内饰件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能座舱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乘用车内饰件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:41:46"
+}

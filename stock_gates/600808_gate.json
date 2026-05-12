@@ -1,0 +1,41 @@
+{
+  "stock_id": "600808",
+  "stock_name": "马钢股份",
+  "concept": "钢铁制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "车轮",
+    "优特钢",
+    "高铁车轮国产化"
+  ],
+  "should": [
+    "彩涂板",
+    "镀锌汽车外板",
+    "H型钢",
+    "长材",
+    "板材",
+    "B型地铁低噪音车轮",
+    "钢铁制造",
+    "轨道交通",
+    "汽车制造",
+    "全球轮轴产业领军企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "车轮",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "优特钢",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高铁车轮国产化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:28:23"
+}

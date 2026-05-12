@@ -1,0 +1,35 @@
+{
+  "stock_id": "603093",
+  "stock_name": "南华期货",
+  "concept": "期货综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "期货经纪",
+    "风险管理"
+  ],
+  "should": [
+    "财富管理",
+    "境外金融业务",
+    "基差贸易",
+    "场外衍生品",
+    "做市业务",
+    "期货综合服务",
+    "上期所、郑商所、大商所全权会员",
+    "上交所和深交所交易参与人",
+    "代理场内股票期权经纪商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "期货经纪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风险管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:43:28"
+}

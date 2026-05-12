@@ -1,0 +1,51 @@
+{
+  "stock_id": "301486",
+  "stock_name": "致尚科技",
+  "concept": "游戏机精密零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "游戏机精密零部件",
+    "滑轨",
+    "Tact Switch",
+    "卡槽",
+    "精准定位控制器"
+  ],
+  "should": [
+    "游戏机连接器",
+    "光纤连接器",
+    "自动化设备",
+    "游戏机",
+    "VR/AR设备",
+    "5G网络",
+    "数据中心",
+    "日本知名企业N公司供应商",
+    "索尼供应商",
+    "Facebook供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "游戏机精密零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "滑轨",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "Tact Switch",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "卡槽",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精准定位控制器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:05:23"
+}

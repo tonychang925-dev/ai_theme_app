@@ -1,0 +1,50 @@
+{
+  "stock_id": "000713",
+  "stock_name": "国投丰乐",
+  "concept": "种业农化香料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "杂交玉米种子",
+    "青贮玉米种子",
+    "杂交水稻种子",
+    "常规水稻种子",
+    "小麦种子"
+  ],
+  "should": [
+    "农药",
+    "肥料",
+    "天然薄荷系列",
+    "合成凉味剂",
+    "国家农药骨干企业",
+    "工厂化的商业化研发体系",
+    "育繁推一体化",
+    "日用化学品行业",
+    "食品制造业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "杂交玉米种子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "青贮玉米种子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "杂交水稻种子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "常规水稻种子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小麦种子",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:01:45"
+}

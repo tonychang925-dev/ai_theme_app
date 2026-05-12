@@ -1,0 +1,46 @@
+{
+  "stock_id": "002738",
+  "stock_name": "中矿资源",
+  "concept": "铯铷锂业龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铯铷锂业龙头",
+    "锂盐",
+    "铯盐",
+    "铷盐"
+  ],
+  "should": [
+    "甲酸铯",
+    "硫酸铯",
+    "氟化锂",
+    "碳酸锂",
+    "氢氧化锂",
+    "甲酸铯生态运营系统",
+    "全球甲酸铯唯一生产商和供应商",
+    "新能源汽车",
+    "储能",
+    "消费电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铯铷锂业龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锂盐",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铯盐",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铷盐",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:55:36"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "000695",
+  "stock_name": "滨海能源",
+  "concept": "印刷综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "包装印刷",
+    "出版物印刷"
+  ],
+  "should": [
+    "教材教辅",
+    "书刊印刷",
+    "食品包装",
+    "药品包装",
+    "环保提袋",
+    "精装礼品包盒",
+    "艺术品复制",
+    "防伪印刷",
+    "印刷综合服务",
+    "色彩管理系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "包装印刷",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "出版物印刷",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:01:03"
+}

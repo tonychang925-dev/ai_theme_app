@@ -1,0 +1,43 @@
+{
+  "stock_id": "002226",
+  "stock_name": "江南化工",
+  "concept": "民爆新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业炸药",
+    "工业雷管",
+    "风电",
+    "光伏"
+  ],
+  "should": [
+    "工业索类",
+    "主控芯片",
+    "民爆新能源",
+    "固件开发",
+    "矿山开采",
+    "基础建设",
+    "爆破服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业炸药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业雷管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:30:09"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "603258",
+  "stock_name": "电魂网络",
+  "concept": "精品游戏研发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精品游戏研发",
+    "端游研发与运营",
+    "手游研发与运营"
+  ],
+  "should": [
+    "《梦三国》",
+    "《梦三国手游》",
+    "《梦塔防》",
+    "《我的侠客》",
+    "《解神者》",
+    "《野蛮人大作战》",
+    "H5游戏",
+    "VR游戏",
+    "主机游戏",
+    "单机游戏"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精品游戏研发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "端游研发与运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "手游研发与运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:47:34"
+}

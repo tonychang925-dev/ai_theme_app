@@ -1,0 +1,45 @@
+{
+  "stock_id": "002830",
+  "stock_name": "名雕股份",
+  "concept": "住宅装饰服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "住宅装饰服务",
+    "住宅原创设计及工程施工",
+    "金钻工程质量管理体系",
+    "工程智能现场管理系统"
+  ],
+  "should": [
+    "木制产品定制",
+    "主材软装配套服务",
+    "名雕TQM质量管理体系",
+    "云家装体验式服务",
+    "新建毛坯房",
+    "改造性住房",
+    "精装后成品房",
+    "一体化家装及家居综合服务提供商",
+    "产业链最完整"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "住宅装饰服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "住宅原创设计及工程施工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金钻工程质量管理体系",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程智能现场管理系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:59:13"
+}

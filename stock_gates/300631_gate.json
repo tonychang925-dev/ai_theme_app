@@ -1,0 +1,51 @@
+{
+  "stock_id": "300631",
+  "stock_name": "久吾高科",
+  "concept": "膜集成技术",
+  "strategy_type": "industry_chain",
+  "must": [
+    "膜集成技术",
+    "陶瓷膜",
+    "膜分离技术",
+    "盐湖提锂",
+    "膜系统集成"
+  ],
+  "should": [
+    "有机膜",
+    "膜成套设备",
+    "锂吸附剂",
+    "盐湖提锂解决方案供应商",
+    "陶瓷膜制备",
+    "有机膜制备",
+    "锂吸附剂制备",
+    "膜组件开发",
+    "陶瓷膜领域龙头企业",
+    "国内少数系列化膜材料自主研发企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "膜集成技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "陶瓷膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "膜分离技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "盐湖提锂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "膜系统集成",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:36:14"
+}

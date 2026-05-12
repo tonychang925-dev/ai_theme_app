@@ -1,0 +1,40 @@
+{
+  "stock_id": "603278",
+  "stock_name": "大业股份",
+  "concept": "橡胶骨架材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "橡胶骨架材料",
+    "胎圈钢丝",
+    "钢帘线"
+  ],
+  "should": [
+    "胶管钢丝",
+    "缆型胎圈钢丝",
+    "工程胎帘线",
+    "钢帘线数字化制造关键技术",
+    "大业",
+    "胜通",
+    "特高强度系列产品",
+    "轮胎制造",
+    "橡胶工业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "橡胶骨架材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "胎圈钢丝",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钢帘线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:48:04"
+}

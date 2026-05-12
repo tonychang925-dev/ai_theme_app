@@ -1,0 +1,36 @@
+{
+  "stock_id": "601956",
+  "stock_name": "东贝集团",
+  "concept": "冰压行业领头羊",
+  "strategy_type": "industry_chain",
+  "must": [
+    "压缩机",
+    "超高效压缩机"
+  ],
+  "should": [
+    "制冷器具",
+    "电机",
+    "铸件",
+    "变频技术",
+    "智能互联系统",
+    "冰压行业领头羊",
+    "家用生活电器",
+    "轻型商用领域",
+    "新零售领域",
+    "乘用车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "压缩机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超高效压缩机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:40:06"
+}

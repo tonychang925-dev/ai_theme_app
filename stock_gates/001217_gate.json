@@ -1,0 +1,51 @@
+{
+  "stock_id": "001217",
+  "stock_name": "华尔泰",
+  "concept": "煤化工产品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "合成氨",
+    "硝酸",
+    "硫酸",
+    "双氧水",
+    "碳酸氢铵"
+  ],
+  "should": [
+    "甲醛",
+    "密胺树脂",
+    "吗啉",
+    "煤化工产品",
+    "工艺技术创新",
+    "节能降耗",
+    "产品链条延伸",
+    "差异化竞争策略",
+    "出口日本",
+    "出口韩国"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "合成氨",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硝酸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硫酸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "双氧水",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳酸氢铵",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:13:55"
+}

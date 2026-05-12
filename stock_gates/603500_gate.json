@@ -1,0 +1,28 @@
+{
+  "stock_id": "603500",
+  "stock_name": "祥和实业",
+  "concept": "轨道扣件非金属部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轨道扣件非金属部件"
+  ],
+  "should": [
+    "电子元器件配件",
+    "高分子新材料",
+    "弹性垫层及尼龙塑料件技术",
+    "主控芯片",
+    "固件开发",
+    "铁路现代化建设",
+    "城市轨道交通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轨道扣件非金属部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:51:21"
+}

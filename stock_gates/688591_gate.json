@@ -1,0 +1,36 @@
+{
+  "stock_id": "688591",
+  "stock_name": "泰凌微",
+  "concept": "低功耗蓝牙芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "低功耗蓝牙芯片",
+    "低功耗无线物联网芯片设计"
+  ],
+  "should": [
+    "Zigbee芯片",
+    "Matter芯片",
+    "私有2.4G芯片",
+    "蓝牙音频芯片",
+    "主控芯片研发",
+    "协议栈开发",
+    "Matter协议栈",
+    "LEAudio协议栈",
+    "蓝牙高精度定位",
+    "蓝牙低功耗ESL"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "低功耗蓝牙芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "低功耗无线物联网芯片设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:21:38"
+}

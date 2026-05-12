@@ -1,0 +1,36 @@
+{
+  "stock_id": "688788",
+  "stock_name": "科思科技",
+  "concept": "军工电子信息装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "军工电子信息装备",
+    "指挥控制信息处理设备"
+  ],
+  "should": [
+    "全加固指挥控制信息处理设备",
+    "便携式全加固指挥控制信息处理设备",
+    "存储备份终端",
+    "多单元信息处理设备",
+    "显控信息处理设备",
+    "智能无线电基带处理芯片",
+    "宽带自组网终端",
+    "智能化地面站信息处理设备",
+    "显控设备",
+    "智能化作战演示系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "军工电子信息装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "指挥控制信息处理设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:25:12"
+}

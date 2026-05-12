@@ -1,0 +1,51 @@
+{
+  "stock_id": "300130",
+  "stock_name": "新国都",
+  "concept": "金融支付服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金融POS机",
+    "智能POS",
+    "移动POS",
+    "扫码POS终端",
+    "支付结算服务"
+  ],
+  "should": [
+    "刷脸支付终端",
+    "密码键盘",
+    "人脸识别算法",
+    "指纹识别算法",
+    "居民身份证阅读及核验产品",
+    "人证核验系统",
+    "金融支付服务",
+    "电子支付产品",
+    "生物识别产品",
+    "审核服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金融POS机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能POS",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动POS",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "扫码POS终端",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "支付结算服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:14:28"
+}

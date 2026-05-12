@@ -1,0 +1,41 @@
+{
+  "stock_id": "002293",
+  "stock_name": "罗莱生活",
+  "concept": "家纺龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "罗莱",
+    "市占率第一",
+    "行业龙头"
+  ],
+  "should": [
+    "家纺龙头",
+    "加盟模式",
+    "电商渠道",
+    "新零售",
+    "私域小程序",
+    "云店",
+    "开店战略",
+    "产能支撑",
+    "罗莱儿童",
+    "乐蜗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "罗莱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "市占率第一",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "行业龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:33:50"
+}

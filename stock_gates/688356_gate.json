@@ -1,0 +1,41 @@
+{
+  "stock_id": "688356",
+  "stock_name": "键凯科技",
+  "concept": "PEG衍生物",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PEG衍生物",
+    "标准PEG衍生物",
+    "多臂聚乙二醇衍生物"
+  ],
+  "should": [
+    "客户黏性",
+    "研发能力&管线",
+    "偶联设计",
+    "蛋白药物长效化修饰",
+    "小分子药物修饰",
+    "抗体药物修饰",
+    "核酸药物递送",
+    "聚乙二醇医疗器械",
+    "ADC Linker",
+    "mRNA递送系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PEG衍生物",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "标准PEG衍生物",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多臂聚乙二醇衍生物",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:16:21"
+}

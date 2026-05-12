@@ -1,0 +1,41 @@
+{
+  "stock_id": "688560",
+  "stock_name": "明冠新材",
+  "concept": "新型复合膜材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "太阳能电池背板",
+    "铝塑膜",
+    "EVA胶膜"
+  ],
+  "should": [
+    "POE胶膜",
+    "特种防护膜",
+    "干法复合技术",
+    "热法制膜技术",
+    "干热法生产铝塑膜技术",
+    "胶黏剂技术",
+    "材料界面处理技术",
+    "精密涂布技术",
+    "功能材料分散技术",
+    "光伏组件封装"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "太阳能电池背板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铝塑膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "EVA胶膜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:20:33"
+}

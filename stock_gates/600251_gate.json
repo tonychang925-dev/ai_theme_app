@@ -1,0 +1,46 @@
+{
+  "stock_id": "600251",
+  "stock_name": "冠农股份",
+  "concept": "农产品加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "番茄丁",
+    "棉花",
+    "甜菜糖",
+    "农产品加工"
+  ],
+  "should": [
+    "番茄精深加工",
+    "棉籽加工产品",
+    "生物发酵饲料",
+    "甜菜制糖技术",
+    "棉籽加工技术",
+    "生物发酵技术",
+    "纺织工业",
+    "食品加工",
+    "饲料行业",
+    "番茄丁国内市场占有率突破60%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "番茄丁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "棉花",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "甜菜糖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "农产品加工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:12:59"
+}

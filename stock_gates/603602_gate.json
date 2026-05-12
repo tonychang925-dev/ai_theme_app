@@ -1,0 +1,44 @@
+{
+  "stock_id": "603602",
+  "stock_name": "纵横通信",
+  "concept": "综合通信服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "5G新基建业务",
+    "政企行业数智化服务",
+    "全域数字营销服务",
+    "综合通信服务"
+  ],
+  "should": [
+    "物联网技术",
+    "云计算平台",
+    "5G智慧园区",
+    "智慧灯杆",
+    "智慧水务",
+    "智慧消防",
+    "智慧餐饮",
+    "数字化智能化技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "5G新基建业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "政企行业数智化服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全域数字营销服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合通信服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:52:57"
+}

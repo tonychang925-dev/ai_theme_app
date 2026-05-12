@@ -1,0 +1,40 @@
+{
+  "stock_id": "300757",
+  "stock_name": "罗博特科",
+  "concept": "光伏自动化装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏电池自动化设备",
+    "高效太阳能电池",
+    "铜互联整体解决方案"
+  ],
+  "should": [
+    "单晶圆清洗刻蚀系统",
+    "高速晶圆测试系统",
+    "高速芯片测试系统",
+    "高速硅光模组测试系统",
+    "Bond自动化超高精度贴片设备",
+    "光纤预制设备",
+    "光伏自动化装备",
+    "智能制造系统",
+    "工业互联网技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏电池自动化设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高效太阳能电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铜互联整体解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:41:49"
+}

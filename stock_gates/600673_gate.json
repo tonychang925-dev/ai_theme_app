@@ -1,0 +1,36 @@
+{
+  "stock_id": "600673",
+  "stock_name": "东阳光",
+  "concept": "铝箔医药双主业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铝箔产业链",
+    "医药制造"
+  ],
+  "should": [
+    "电池铝箔",
+    "磷酸铁锂",
+    "电极箔",
+    "铝电解电容器",
+    "超级电容器",
+    "光伏储能",
+    "新能源汽车",
+    "数据中心电源",
+    "工控变频",
+    "消费电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铝箔产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:24:31"
+}

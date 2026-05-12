@@ -1,0 +1,41 @@
+{
+  "stock_id": "301382",
+  "stock_name": "蜂助手",
+  "concept": "数字化虚拟商品服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字化虚拟商品服务",
+    "聚合运营服务",
+    "融合运营服务"
+  ],
+  "should": [
+    "通用流量",
+    "视频会员",
+    "蜂助手物联网流量管理系统平台",
+    "话费",
+    "短信",
+    "电商购物卡",
+    "分发运营服务",
+    "聚合支付",
+    "智慧停车场",
+    "移动视频"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字化虚拟商品服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚合运营服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "融合运营服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:04:30"
+}

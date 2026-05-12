@@ -1,0 +1,24 @@
+{
+  "stock_id": "600179",
+  "stock_name": "安通控股",
+  "concept": "集装箱多式联运",
+  "strategy_type": "industry_chain",
+  "must": [
+    "集装箱多式联运"
+  ],
+  "should": [
+    "海运",
+    "铁路",
+    "公路"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "集装箱多式联运",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:10:59"
+}

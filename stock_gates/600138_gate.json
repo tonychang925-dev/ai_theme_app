@@ -1,0 +1,40 @@
+{
+  "stock_id": "600138",
+  "stock_name": "中青旅",
+  "concept": "综合旅游服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "景区",
+    "乌镇",
+    "古北水镇"
+  ],
+  "should": [
+    "酒店",
+    "整合营销",
+    "综合旅游服务",
+    "文化体验+休闲度假+商务会议",
+    "长城观光，北方水乡",
+    "旅游观光",
+    "度假休闲",
+    "商务会议",
+    "夜间经济"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "景区",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乌镇",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "古北水镇",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:10:07"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "300223",
+  "stock_name": "北京君正",
+  "concept": "计算存储模拟",
+  "strategy_type": "industry_chain",
+  "must": [
+    "存储芯片",
+    "模拟与互联芯片",
+    "微处理器芯片",
+    "智能视频芯片"
+  ],
+  "should": [
+    "CPU设计技术",
+    "RISC-V架构CPU核",
+    "主控芯片",
+    "计算存储模拟",
+    "固件开发",
+    "智能视频监控",
+    "AIoT",
+    "工业和消费",
+    "生物识别",
+    "教育电子"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "存储芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "模拟与互联芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "微处理器芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能视频芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:18:10"
+}

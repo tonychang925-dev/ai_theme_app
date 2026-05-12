@@ -1,0 +1,46 @@
+{
+  "stock_id": "002191",
+  "stock_name": "劲嘉股份",
+  "concept": "烟标龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "烟标龙头",
+    "烟标",
+    "加热不燃烧器具",
+    "电子雾化设备"
+  ],
+  "should": [
+    "彩盒",
+    "镭射包装材料",
+    "精品酒盒",
+    "3C电子包装",
+    "日化包装",
+    "美妆包装",
+    "高技术",
+    "高附加值",
+    "个性化",
+    "差异化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "烟标龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "烟标",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "加热不燃烧器具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子雾化设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:28:26"
+}

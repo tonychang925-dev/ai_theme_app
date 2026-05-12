@@ -1,0 +1,30 @@
+{
+  "stock_id": "605337",
+  "stock_name": "李子园",
+  "concept": "甜牛奶乳饮料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "甜牛奶乳饮料"
+  ],
+  "should": [
+    "果蔬酸奶饮料",
+    "AD钙奶",
+    "电解质水",
+    "产品开发生产",
+    "营销体系建设",
+    "品牌打造",
+    "经销渠道",
+    "全国化扩张",
+    "产能提升"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "甜牛奶乳饮料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:03:50"
+}

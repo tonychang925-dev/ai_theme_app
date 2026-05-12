@@ -1,0 +1,46 @@
+{
+  "stock_id": "600048",
+  "stock_name": "保利发展",
+  "concept": "品牌龙头房企",
+  "strategy_type": "industry_chain",
+  "must": [
+    "住宅开发",
+    "不动产投资开发",
+    "核心城市群",
+    "市占率提升"
+  ],
+  "should": [
+    "综合服务",
+    "不动产金融",
+    "物业",
+    "建筑",
+    "商业",
+    "酒店",
+    "品牌龙头房企",
+    "高能级城市",
+    "央企背景",
+    "政府资源丰富"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "住宅开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "不动产投资开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核心城市群",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "市占率提升",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:07:50"
+}

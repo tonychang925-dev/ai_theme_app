@@ -1,0 +1,30 @@
+{
+  "stock_id": "600722",
+  "stock_name": "金牛化工",
+  "concept": "甲醇生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "甲醇生产",
+    "甲醇"
+  ],
+  "should": [
+    "焦炉气制甲醇",
+    "烯烃",
+    "醋酸",
+    "DMF"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "甲醇生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "甲醇",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:25:51"
+}

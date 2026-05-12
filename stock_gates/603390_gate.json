@@ -1,0 +1,36 @@
+{
+  "stock_id": "603390",
+  "stock_name": "通达电气",
+  "concept": "车载智能终端",
+  "strategy_type": "industry_chain",
+  "must": [
+    "车载智能系统系列产品",
+    "车载部件系列产品"
+  ],
+  "should": [
+    "车载智能终端",
+    "5G路由器",
+    "无刷直流屏蔽水泵",
+    "调度屏C20",
+    "电子站牌控制器",
+    "客车车身顶部装饰件",
+    "电子路牌",
+    "乘客信息系统",
+    "热管理系统",
+    "驾驶员数据采集"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "车载智能系统系列产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载部件系列产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:50:52"
+}

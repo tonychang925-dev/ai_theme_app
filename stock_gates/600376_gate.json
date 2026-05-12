@@ -1,0 +1,31 @@
+{
+  "stock_id": "600376",
+  "stock_name": "首开股份",
+  "concept": "国资地产开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "房地产开发"
+  ],
+  "should": [
+    "物业经营与物业服务",
+    "旧城区更新改造业务",
+    "房地产金融业务",
+    "国资地产开发",
+    "长租公寓",
+    "写字楼",
+    "棚改",
+    "集体租赁住房",
+    "人才公寓",
+    "创客空间"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房地产开发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:16:26"
+}

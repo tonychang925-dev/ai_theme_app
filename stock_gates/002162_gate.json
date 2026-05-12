@@ -1,0 +1,41 @@
+{
+  "stock_id": "002162",
+  "stock_name": "悦心健康",
+  "concept": "建材康养服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中高端康养服务",
+    "医疗美容",
+    "斯米克瓷砖"
+  ],
+  "should": [
+    "悦心·漫活欣成",
+    "悦心·安颐别业",
+    "悦心照护培训中心",
+    "医疗美容连锁专科",
+    "玻化石",
+    "大理石",
+    "百丽晶",
+    "云石代",
+    "釉面砖",
+    "艺术瓷"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中高端康养服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗美容",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "斯米克瓷砖",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:26:45"
+}

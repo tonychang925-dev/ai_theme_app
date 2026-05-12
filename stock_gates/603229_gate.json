@@ -1,0 +1,45 @@
+{
+  "stock_id": "603229",
+  "stock_name": "奥翔药业",
+  "concept": "特色原料药及中间体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特色原料药及中间体",
+    "CRO",
+    "CDMO",
+    "CMO"
+  ],
+  "should": [
+    "特色原料药",
+    "医药中间体",
+    "高难度药物化学反应路线设计",
+    "多中心手性合成反应",
+    "连续流体化学反应技术",
+    "生物酶催化技术",
+    "固体分散体技术",
+    "仿制药",
+    "创新药"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特色原料药及中间体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CRO",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CDMO",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CMO",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:47:06"
+}

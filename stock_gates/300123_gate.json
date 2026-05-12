@@ -1,0 +1,41 @@
+{
+  "stock_id": "300123",
+  "stock_name": "亚光科技",
+  "concept": "微波电路",
+  "strategy_type": "industry_chain",
+  "must": [
+    "微波电路",
+    "两所一厂",
+    "微波电路及组件"
+  ],
+  "should": [
+    "半导体分立器件",
+    "微波多功能组件",
+    "LTCC",
+    "MCM",
+    "SIP",
+    "SOC",
+    "MEMS",
+    "GaN功率放大器",
+    "GaAs功放芯片",
+    "矩阵开关"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "微波电路",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "两所一厂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "微波电路及组件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:14:05"
+}

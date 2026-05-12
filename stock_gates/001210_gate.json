@@ -1,0 +1,36 @@
+{
+  "stock_id": "001210",
+  "stock_name": "金房能源",
+  "concept": "智慧供热运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "热力供应",
+    "智慧供热运营"
+  ],
+  "should": [
+    "节能技术服务",
+    "智慧化能源管理系统",
+    "人工智能",
+    "大数据",
+    "物联网",
+    "边缘计算",
+    "集中供热",
+    "分户供热",
+    "居民采暖",
+    "工业用热"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "热力供应",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧供热运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:13:26"
+}

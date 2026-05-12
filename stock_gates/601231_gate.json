@@ -1,0 +1,36 @@
+{
+  "stock_id": "601231",
+  "stock_name": "环旭电子",
+  "concept": "电子制造服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子制造服务",
+    "EMS/ODM"
+  ],
+  "should": [
+    "SiP微小化技术",
+    "无线通讯产品",
+    "3C产品",
+    "汽车电子",
+    "储能",
+    "医疗",
+    "交通",
+    "能源",
+    "航空航天",
+    "全球知名厂商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子制造服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "EMS/ODM",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:35:44"
+}

@@ -1,0 +1,34 @@
+{
+  "stock_id": "688450",
+  "stock_name": "光格科技",
+  "concept": "海缆监控运维",
+  "strategy_type": "industry_chain",
+  "must": [
+    "海缆资产监控运维管理系统",
+    "海缆监控运维"
+  ],
+  "should": [
+    "海上风电",
+    "智能电网",
+    "城市综合管廊",
+    "先进传感",
+    "物联网",
+    "大数据",
+    "电力设施资产监控运维管理系统",
+    "综合管廊资产监控运维管理系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "海缆资产监控运维管理系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海缆监控运维",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:18:27"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "603662",
+  "stock_name": "柯力传感",
+  "concept": "传感器物联网",
+  "strategy_type": "industry_chain",
+  "must": [
+    "应变式传感器",
+    "称重物联网",
+    "工业物联网"
+  ],
+  "should": [
+    "仪表",
+    "数字传感器",
+    "数字仪表",
+    "数字模块",
+    "传感器物联网",
+    "物联网化改造",
+    "通信与交互功能",
+    "非现场执法应用解决方案",
+    "建筑物联网应用",
+    "智能物流/仓储"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "应变式传感器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "称重物联网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业物联网",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:54:10"
+}

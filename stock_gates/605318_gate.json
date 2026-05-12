@@ -1,0 +1,44 @@
+{
+  "stock_id": "605318",
+  "stock_name": "法狮龙",
+  "concept": "集成吊顶",
+  "strategy_type": "industry_chain",
+  "must": [
+    "集成吊顶",
+    "集成墙面",
+    "工装装配式顶墙产品",
+    "家装装配式顶墙产品"
+  ],
+  "should": [
+    "厨卫及隐形电器产品",
+    "自动化",
+    "智能化",
+    "数字化管理",
+    "建筑室内装修",
+    "装饰",
+    "住宅装修",
+    "装配式内装"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "集成吊顶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集成墙面",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工装装配式顶墙产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "家装装配式顶墙产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:03:44"
+}

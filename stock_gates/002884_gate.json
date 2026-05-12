@@ -1,0 +1,26 @@
+{
+  "stock_id": "002884",
+  "stock_name": "凌霄泵业",
+  "concept": "民用离心泵",
+  "strategy_type": "industry_chain",
+  "must": [
+    "塑料卫浴泵"
+  ],
+  "should": [
+    "不锈钢泵",
+    "民用离心泵",
+    "电机及整泵研发",
+    "国内塑料卫浴泵行业龙头",
+    "国内不锈钢泵第一梯队"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "塑料卫浴泵",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:01:40"
+}

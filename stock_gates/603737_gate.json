@@ -1,0 +1,41 @@
+{
+  "stock_id": "603737",
+  "stock_name": "三棵树",
+  "concept": "建筑化工综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "涂料",
+    "防水",
+    "保温"
+  ],
+  "should": [
+    "地坪",
+    "基材",
+    "施工",
+    "建筑开工端防水",
+    "竣工端装饰装修",
+    "家装",
+    "小型商业装修",
+    "工程市场",
+    "产品与服务双轮驱动",
+    "全国产能布局"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "涂料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "防水",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "保温",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:55:55"
+}

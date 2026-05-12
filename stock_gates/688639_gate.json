@@ -1,0 +1,46 @@
+{
+  "stock_id": "688639",
+  "stock_name": "华恒生物",
+  "concept": "生物基氨基酸",
+  "strategy_type": "industry_chain",
+  "must": [
+    "L-丙氨酸",
+    "DL-丙氨酸",
+    "β-丙氨酸",
+    "合成生物技术"
+  ],
+  "should": [
+    "L-缬氨酸",
+    "D-泛酸钙",
+    "D-泛醇",
+    "微生物细胞工厂发酵法",
+    "酶催化法",
+    "厌氧发酵工艺",
+    "发酵法生产D-泛解酸内酯技术",
+    "生物基氨基酸",
+    "功能食品与营养",
+    "植物营养"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "L-丙氨酸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "DL-丙氨酸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "β-丙氨酸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "合成生物技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:22:53"
+}

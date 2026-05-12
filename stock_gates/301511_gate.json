@@ -1,0 +1,36 @@
+{
+  "stock_id": "301511",
+  "stock_name": "德福科技",
+  "concept": "高性能电解铜箔",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电铜箔",
+    "高性能电解铜箔"
+  ],
+  "should": [
+    "电子电路铜箔",
+    "高抗拉、高模量、高延伸",
+    "轻薄化",
+    "多孔铜箔",
+    "双面毛铜箔",
+    "新能源汽车",
+    "3C数码",
+    "储能系统",
+    "覆铜板",
+    "印制电路板"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电铜箔",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高性能电解铜箔",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:05:45"
+}

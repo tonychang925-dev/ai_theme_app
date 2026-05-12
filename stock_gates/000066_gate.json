@@ -1,0 +1,46 @@
+{
+  "stock_id": "000066",
+  "stock_name": "中国长城",
+  "concept": "国产计算硬件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "信创整机",
+    "服务器",
+    "AI产品",
+    "系统装备"
+  ],
+  "should": [
+    "终端产品",
+    "文印产品",
+    "飞腾5000C",
+    "飞腾D3000",
+    "鲲鹏",
+    "海光",
+    "兆芯",
+    "龙芯",
+    "云计算",
+    "大数据"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "信创整机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "服务器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AI产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "系统装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:49:44"
+}

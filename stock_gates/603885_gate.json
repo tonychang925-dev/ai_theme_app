@@ -1,0 +1,45 @@
+{
+  "stock_id": "603885",
+  "stock_name": "吉祥航空",
+  "concept": "民营航空",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全服务航空",
+    "低成本航空",
+    "上海虹桥",
+    "上海浦东"
+  ],
+  "should": [
+    "南京",
+    "广州白云",
+    "B787宽体机",
+    "民营航空",
+    "年轻化",
+    "B737单一机队",
+    "精细化管理",
+    "最优成本结构",
+    "下沉市场航线"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全服务航空",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "低成本航空",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "上海虹桥",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "上海浦东",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:58:09"
+}

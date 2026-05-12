@@ -1,0 +1,46 @@
+{
+  "stock_id": "002746",
+  "stock_name": "仙坛股份",
+  "concept": "肉鸡全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "肉鸡全产业链",
+    "鸡肉产品加工与深加工",
+    "预制菜加工",
+    "商品代肉鸡养殖与屠宰"
+  ],
+  "should": [
+    "饲料生产",
+    "父母代肉种鸡养殖",
+    "雏鸡孵化",
+    "分割冻鸡肉产品",
+    "冰鲜鸡肉产品",
+    "预制菜品",
+    "终端零售家庭预制菜品",
+    "快餐连锁定制菜品",
+    "大型食品加工厂",
+    "快餐企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "肉鸡全产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "鸡肉产品加工与深加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "预制菜加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商品代肉鸡养殖与屠宰",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:55:47"
+}

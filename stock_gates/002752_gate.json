@@ -1,0 +1,36 @@
+{
+  "stock_id": "002752",
+  "stock_name": "昇兴股份",
+  "concept": "金属包装",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金属包装",
+    "三片罐"
+  ],
+  "should": [
+    "两片罐",
+    "铝瓶",
+    "食品饮料包装",
+    "功能饮料",
+    "啤酒",
+    "凉茶",
+    "金属包装领军企业",
+    "泰国天丝红牛一供",
+    "养元二供",
+    "海外柬埔寨产能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金属包装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三片罐",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:55:56"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "002415",
+  "stock_name": "海康威视",
+  "concept": "智能物联",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能物联",
+    "智能物联战略",
+    "物联感知",
+    "人工智能",
+    "大数据技术"
+  ],
+  "should": [
+    "物联感知技术",
+    "人工智能技术",
+    "物联感知产品",
+    "IT基础产品",
+    "平台服务产品",
+    "数据服务产品",
+    "应用服务产品",
+    "系统设计开发",
+    "系统工程实施",
+    "系统运维管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能物联",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能物联战略",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物联感知",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人工智能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大数据技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:40:41"
+}

@@ -1,0 +1,30 @@
+{
+  "stock_id": "000513",
+  "stock_name": "丽珠集团",
+  "concept": "医药创新",
+  "strategy_type": "industry_chain",
+  "must": [
+    "参芪扶正注射液"
+  ],
+  "should": [
+    "丽倍乐（雷贝拉唑钠肠溶胶囊）",
+    "乐宝得（注射用尿促性素）",
+    "丽福康（注射用伏立康唑）",
+    "瑞必乐（马来酸氟伏沙明片）",
+    "康尔汀（盐酸哌罗匹隆片）",
+    "抗病毒颗粒",
+    "医药创新",
+    "消化道",
+    "辅助生殖"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "参芪扶正注射液",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T16:53:47"
+}

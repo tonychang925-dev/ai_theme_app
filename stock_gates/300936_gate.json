@@ -1,0 +1,31 @@
+{
+  "stock_id": "300936",
+  "stock_name": "中英科技",
+  "concept": "高频通信材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高频覆铜板"
+  ],
+  "should": [
+    "VC散热片",
+    "引线框架",
+    "高频覆铜板加工工艺",
+    "蚀刻工艺",
+    "碳氢聚合物研发",
+    "5G基站",
+    "手机散热",
+    "半导体封装",
+    "汽车雷达",
+    "印制电路板核心材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高频覆铜板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:49:55"
+}

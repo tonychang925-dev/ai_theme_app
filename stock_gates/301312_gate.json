@@ -1,0 +1,41 @@
+{
+  "stock_id": "301312",
+  "stock_name": "智立方",
+  "concept": "自动化检测设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光学识别测试设备",
+    "光学感应测试设备",
+    "自动化检测设备"
+  ],
+  "should": [
+    "苹果公司供应商",
+    "自动化测试设备",
+    "自动化组装设备",
+    "光学技术",
+    "电学技术",
+    "力学技术",
+    "射频技术",
+    "声学技术",
+    "传感技术",
+    "防水技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光学识别测试设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光学感应测试设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自动化检测设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:02:34"
+}

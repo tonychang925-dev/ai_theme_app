@@ -1,0 +1,40 @@
+{
+  "stock_id": "300292",
+  "stock_name": "吴通控股",
+  "concept": "通信射频连接系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "通信射频连接系统",
+    "移动信息服务",
+    "5G消息"
+  ],
+  "should": [
+    "短彩信",
+    "连接器",
+    "5G消息服务平台",
+    "企业移动云服务平台",
+    "数字营销服务",
+    "通信智能制造",
+    "金融行业客户",
+    "知名互联网企业",
+    "银行客户"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "通信射频连接系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动信息服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "5G消息",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:21:24"
+}

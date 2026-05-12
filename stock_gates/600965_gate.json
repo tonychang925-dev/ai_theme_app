@@ -1,0 +1,51 @@
+{
+  "stock_id": "600965",
+  "stock_name": "福成股份",
+  "concept": "农牧食品一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "农牧食品加工餐饮一体化",
+    "肉牛养殖屠宰",
+    "食品加工",
+    "餐饮服务",
+    "速食（预制菜）"
+  ],
+  "should": [
+    "生鲜肉",
+    "肉制品",
+    "乳制品",
+    "面食",
+    "烘焙食品",
+    "中餐",
+    "福成",
+    "鲜到家",
+    "福成肥牛",
+    "农牧食品一体化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "农牧食品加工餐饮一体化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "肉牛养殖屠宰",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "食品加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "餐饮服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "速食（预制菜）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:31:58"
+}

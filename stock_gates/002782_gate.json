@@ -1,0 +1,41 @@
+{
+  "stock_id": "002782",
+  "stock_name": "可立克",
+  "concept": "汽车磁性元件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车磁性元件",
+    "电子变压器",
+    "电感"
+  ],
+  "should": [
+    "电源适配器",
+    "动力电池充电器",
+    "定制电源",
+    "车规级认证",
+    "主控芯片",
+    "固件开发",
+    "大功率产品研发",
+    "水冷技术",
+    "大众MEB供应链",
+    "KOSTAL供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车磁性元件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子变压器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电感",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:57:12"
+}

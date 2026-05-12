@@ -1,0 +1,38 @@
+{
+  "stock_id": "600115",
+  "stock_name": "中国东航",
+  "concept": "航空运输",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全服务航空",
+    "创新经济型航空",
+    "支线航空"
+  ],
+  "should": [
+    "四梁八柱",
+    "京沪双主基地",
+    "空铁联运",
+    "空地互联",
+    "东亚航线",
+    "A320",
+    "B737"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全服务航空",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "创新经济型航空",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "支线航空",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:09:30"
+}

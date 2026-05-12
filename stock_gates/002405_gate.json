@@ -1,0 +1,51 @@
+{
+  "stock_id": "002405",
+  "stock_name": "四维图新",
+  "concept": "智能汽车解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "导航地图数据",
+    "高精度地图",
+    "车载导航",
+    "导航软件",
+    "数据编译"
+  ],
+  "should": [
+    "车联网",
+    "位置大数据",
+    "车载芯片",
+    "高级辅助驾驶",
+    "自动驾驶",
+    "地图数据产品",
+    "数据编译服务",
+    "车规级MCU芯片",
+    "TPMS胎压监测芯片",
+    "车载信息娱乐芯片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "导航地图数据",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高精度地图",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载导航",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "导航软件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据编译",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:40:07"
+}

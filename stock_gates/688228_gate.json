@@ -1,0 +1,46 @@
+{
+  "stock_id": "688228",
+  "stock_name": "开普云",
+  "concept": "智慧政务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧政务",
+    "数智政务",
+    "数智内容",
+    "数智安全"
+  ],
+  "should": [
+    "数智能源",
+    "数智营销",
+    "数字人",
+    "人工智能",
+    "自然语言处理",
+    "深度学习",
+    "大数据",
+    "党政机关",
+    "大中型企业",
+    "媒体单位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧政务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数智政务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数智内容",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数智安全",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:12:32"
+}

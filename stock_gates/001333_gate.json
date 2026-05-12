@@ -1,0 +1,36 @@
+{
+  "stock_id": "001333",
+  "stock_name": "光华股份",
+  "concept": "聚酯树脂供应商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "户外型聚酯树脂",
+    "户内型聚酯树脂"
+  ],
+  "should": [
+    "超级耐候聚酯树脂",
+    "耐高温聚酯树脂",
+    "低温固化聚酯树脂",
+    "木纹转印专用聚酯树脂",
+    "不含锡聚酯树脂",
+    "易喷涂聚酯树脂",
+    "聚酯树脂供应商",
+    "家电",
+    "工程机械",
+    "汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "户外型聚酯树脂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "户内型聚酯树脂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:16:54"
+}

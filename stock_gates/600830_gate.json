@@ -1,0 +1,41 @@
+{
+  "stock_id": "600830",
+  "stock_name": "香溢融通",
+  "concept": "多元金融",
+  "strategy_type": "industry_chain",
+  "must": [
+    "典当",
+    "担保",
+    "融资租赁"
+  ],
+  "should": [
+    "特殊资产",
+    "乐享云端白酒",
+    "丽水山泉水",
+    "贸易",
+    "类金融存量业务",
+    "非政信类业务",
+    "消费端贸易",
+    "除险保安专项行动",
+    "飞行检查",
+    "贷后管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "典当",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "担保",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "融资租赁",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:28:57"
+}

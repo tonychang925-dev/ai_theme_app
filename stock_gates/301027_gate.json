@@ -1,0 +1,43 @@
+{
+  "stock_id": "301027",
+  "stock_name": "华蓝集团",
+  "concept": "工程设计服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程设计服务",
+    "工程设计",
+    "工程总承包管理",
+    "工程咨询"
+  ],
+  "should": [
+    "国土空间规划",
+    "数字化转型",
+    "数字孪生城市",
+    "BIM审图",
+    "城乡规划建设",
+    "建筑材料",
+    "建筑施工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程设计服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程总承包管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程咨询",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:53:46"
+}

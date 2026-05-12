@@ -1,0 +1,46 @@
+{
+  "stock_id": "002378",
+  "stock_name": "章源钨业",
+  "concept": "钨业全链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钨业全链",
+    "钨精矿采选",
+    "仲钨酸铵生产",
+    "硬质合金生产"
+  ],
+  "should": [
+    "整体硬质合金刀具",
+    "可转位硬质合金涂层刀片",
+    "碳化钨粉生产",
+    "钨粉生产",
+    "氧化钨生产",
+    "热喷涂粉生产",
+    "球齿",
+    "传统刀片",
+    "异型件",
+    "冷镦模"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钨业全链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钨精矿采选",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "仲钨酸铵生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硬质合金生产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:38:49"
+}

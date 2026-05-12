@@ -1,0 +1,36 @@
+{
+  "stock_id": "603939",
+  "stock_name": "益丰药房",
+  "concept": "连锁药店龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "连锁药店龙头",
+    "连锁药店经营"
+  ],
+  "should": [
+    "并购扩张",
+    "加盟模式",
+    "OtoO直营门店",
+    "中药",
+    "中西成药",
+    "非药品",
+    "集中度提升",
+    "处方药外流",
+    "新零售模式",
+    "网上药店"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "连锁药店龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "连锁药店经营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:59:26"
+}

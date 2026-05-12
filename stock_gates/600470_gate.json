@@ -1,0 +1,45 @@
+{
+  "stock_id": "600470",
+  "stock_name": "六国化工",
+  "concept": "磷复肥生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "磷复肥生产",
+    "复合肥",
+    "化学肥料",
+    "国家化肥商业储备承储企业"
+  ],
+  "should": [
+    "磷酸一铵",
+    "水溶肥",
+    "电池级精制磷酸",
+    "高档阻燃剂",
+    "电子级双氧水",
+    "磷石膏资源化利用技术",
+    "农业生产",
+    "春耕保供",
+    "新能源新材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "磷复肥生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复合肥",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化学肥料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国家化肥商业储备承储企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:18:38"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "002527",
+  "stock_name": "新时达",
+  "concept": "智能制造装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业机器人",
+    "伺服驱动",
+    "运动控制技术",
+    "控制系统"
+  ],
+  "should": [
+    "变频调速",
+    "工业控制器",
+    "SCARA机器人",
+    "弧焊机器人",
+    "码垛机器人",
+    "智能制造装备",
+    "锂电池行业",
+    "橡胶轮胎行业",
+    "焊接行业",
+    "汽车白车身领域"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业机器人",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "伺服驱动",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "运动控制技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "控制系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:45:55"
+}

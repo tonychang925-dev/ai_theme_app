@@ -1,0 +1,46 @@
+{
+  "stock_id": "002241",
+  "stock_name": "歌尔股份",
+  "concept": "智能硬件方案商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "声学组件",
+    "光学模组",
+    "VR/AR",
+    "TWS耳机"
+  ],
+  "should": [
+    "传感器",
+    "耳机",
+    "智能手表",
+    "主控芯片",
+    "智能硬件方案商",
+    "声学技术",
+    "光学技术",
+    "精密制造",
+    "ODM",
+    "垂直整合"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "声学组件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光学模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "VR/AR",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "TWS耳机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:31:16"
+}

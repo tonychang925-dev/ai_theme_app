@@ -1,0 +1,51 @@
+{
+  "stock_id": "000837",
+  "stock_name": "秦川机床",
+  "concept": "精密机床与核心部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密机床与核心部件",
+    "机床",
+    "核心零部件",
+    "精密数控机床",
+    "工业机器人减速器"
+  ],
+  "should": [
+    "复杂工具",
+    "五轴加工中心",
+    "磨齿机",
+    "螺纹磨床",
+    "外圆磨床",
+    "RV减速器",
+    "AGV专用减速器",
+    "高端制造",
+    "汽车商用车",
+    "新能源汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密机床与核心部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机床",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核心零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密数控机床",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业机器人减速器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:06:42"
+}

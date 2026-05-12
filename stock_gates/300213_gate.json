@@ -1,0 +1,36 @@
+{
+  "stock_id": "300213",
+  "stock_name": "佳讯飞鸿",
+  "concept": "智慧指挥调度",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧指挥调度",
+    "智慧指挥调度系统"
+  ],
+  "should": [
+    "全面解决方案",
+    "铁路",
+    "城际铁路",
+    "市域（郊）铁路",
+    "城市轨道交通",
+    "大型企业自有铁路",
+    "地方铁路",
+    "5G通信网络",
+    "大数据",
+    "区块链"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧指挥调度",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧指挥调度系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:17:38"
+}

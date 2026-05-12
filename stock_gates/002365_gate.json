@@ -1,0 +1,29 @@
+{
+  "stock_id": "002365",
+  "stock_name": "永安药业",
+  "concept": "牛磺酸生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "牛磺酸"
+  ],
+  "should": [
+    "环氧乙烷",
+    "聚羧酸系减水剂单体",
+    "减水剂",
+    "牛磺酸生产",
+    "保健食品",
+    "牛磺酸生产工艺",
+    "全球最大牛磺酸生产基地",
+    "红牛、雀巢、可口可乐重要供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "牛磺酸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:37:49"
+}

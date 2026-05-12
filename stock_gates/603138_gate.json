@@ -1,0 +1,46 @@
+{
+  "stock_id": "603138",
+  "stock_name": "海量数据",
+  "concept": "数据管理产品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数据管理产品",
+    "国产数据库先锋",
+    "企业级关系型数据库",
+    "国内领先的数据技术提供商"
+  ],
+  "should": [
+    "事务型数据库",
+    "大数据服务平台",
+    "数据分析产品",
+    "PostgreSQL积极推动者",
+    "中央机关采购名录入围",
+    "分布式支持",
+    "可拓展性",
+    "容错性",
+    "高性能",
+    "高兼容"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数据管理产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国产数据库先锋",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "企业级关系型数据库",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内领先的数据技术提供商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:44:52"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "600528",
+  "stock_name": "中铁工业",
+  "concept": "高端装备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "隧道施工装备",
+    "铁路施工设备",
+    "道岔",
+    "钢结构制造"
+  ],
+  "should": [
+    "智能化",
+    "信息化",
+    "BIM技术应用",
+    "水电",
+    "抽水蓄能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "隧道施工装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铁路施工设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "道岔",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钢结构制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:20:21"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "601010",
+  "stock_name": "文峰股份",
+  "concept": "区域零售连锁",
+  "strategy_type": "industry_chain",
+  "must": [
+    "百货",
+    "超市",
+    "电器销售专业店",
+    "购物中心"
+  ],
+  "should": [
+    "云购数字化中心",
+    "线上购物微信小程序",
+    "零售管理系统",
+    "线上销售系统",
+    "业务数据中台",
+    "文峰云购小程序",
+    "直播通",
+    "会员积分通",
+    "购物卡通用",
+    "区域零售连锁"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "百货",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超市",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电器销售专业店",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "购物中心",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:33:24"
+}

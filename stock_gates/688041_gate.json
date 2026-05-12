@@ -1,0 +1,36 @@
+{
+  "stock_id": "688041",
+  "stock_name": "海光信息",
+  "concept": "国产高端处理器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "海光通用处理器(CPU)",
+    "海光协处理器(DCU)"
+  ],
+  "should": [
+    "x86指令集",
+    "DTK(DCU Toolkit)",
+    "海光7000系列",
+    "海光5000系列",
+    "海光3000系列",
+    "海光8000系列",
+    "国产高端处理器",
+    "GPGPU架构",
+    "类CUDA环境",
+    "ROCm GPU计算生态"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "海光通用处理器(CPU)",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海光协处理器(DCU)",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:06:18"
+}

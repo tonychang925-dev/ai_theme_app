@@ -1,0 +1,41 @@
+{
+  "stock_id": "000952",
+  "stock_name": "广济药业",
+  "concept": "维生素B2供应商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球主要维生素B2供应商",
+    "维生素B2供应商",
+    "维生素B2"
+  ],
+  "should": [
+    "维生素B6",
+    "生物发酵技术",
+    "工业菌种定向选育",
+    "生物分离纯化",
+    "医药制剂",
+    "药物制剂开发",
+    "医药原料",
+    "食品添加剂",
+    "饲料添加剂",
+    "膳食补充剂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球主要维生素B2供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "维生素B2供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "维生素B2",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:10:39"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300550",
+  "stock_name": "和仁科技",
+  "concept": "医疗IT整体方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医疗IT整体方案",
+    "整体解决方案提供商",
+    "医院核心业务一体化系统"
+  ],
+  "should": [
+    "电子病历系统",
+    "区域卫生云平台",
+    "临床数据中心",
+    "信息集成平台",
+    "B/S",
+    "SOA",
+    "H5",
+    "结构化电子病历",
+    "大型综合医院",
+    "医联体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医疗IT整体方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "整体解决方案提供商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医院核心业务一体化系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:32:19"
+}

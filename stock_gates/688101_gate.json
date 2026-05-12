@@ -1,0 +1,51 @@
+{
+  "stock_id": "688101",
+  "stock_name": "三达膜",
+  "concept": "膜技术全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "膜技术应用",
+    "国内膜技术应用先驱者",
+    "膜全产业链布局",
+    "工业料液分离膜设备",
+    "膜法水处理设备"
+  ],
+  "should": [
+    "水务投资运营",
+    "环境工程项目",
+    "净水设备",
+    "纳滤芯",
+    "陶瓷膜",
+    "纳滤膜",
+    "中空纤维膜",
+    "iMBR",
+    "管式膜",
+    "卷式膜"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "膜技术应用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内膜技术应用先驱者",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "膜全产业链布局",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业料液分离膜设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "膜法水处理设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:08:32"
+}

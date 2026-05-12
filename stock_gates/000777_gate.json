@@ -1,0 +1,41 @@
+{
+  "stock_id": "000777",
+  "stock_name": "中核科技",
+  "concept": "工业阀门龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业阀门龙头",
+    "核工程",
+    "石油石化"
+  ],
+  "should": [
+    "闸阀",
+    "截止阀",
+    "止回阀",
+    "球阀",
+    "蝶阀",
+    "调节阀",
+    "隔膜阀",
+    "核一级稳压器快速卸压阀",
+    "核二级主蒸汽隔离阀",
+    "CAP1400系列关键阀门"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业阀门龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "石油石化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:04:23"
+}

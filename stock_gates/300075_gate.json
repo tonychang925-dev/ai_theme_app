@@ -1,0 +1,51 @@
+{
+  "stock_id": "300075",
+  "stock_name": "数字政通",
+  "concept": "智慧城市应用",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字城管",
+    "数字化城市管理信息系统",
+    "地下管线",
+    "市域社会治理",
+    "城市运营"
+  ],
+  "should": [
+    "智信",
+    "智云平台",
+    "网格化+服务",
+    "统一时空信息管理技术",
+    "空间网格技术",
+    "地理编码技术",
+    "嵌入式地理信息引擎技术",
+    "WebGIS技术",
+    "区块链技术",
+    "智慧城市应用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字城管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字化城市管理信息系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "地下管线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "市域社会治理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:12:19"
+}

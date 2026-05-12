@@ -1,0 +1,31 @@
+{
+  "stock_id": "300848",
+  "stock_name": "美瑞新材",
+  "concept": "热塑性聚氨酯弹性体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "热塑性聚氨酯弹性体"
+  ],
+  "should": [
+    "通用聚酯型TPU",
+    "特殊聚酯型TPU",
+    "聚醚型TPU",
+    "发泡型TPU",
+    "膨胀TPU",
+    "手机护套",
+    "电缆电线",
+    "消防水带",
+    "汽车内饰",
+    "鞋材"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "热塑性聚氨酯弹性体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:45:55"
+}

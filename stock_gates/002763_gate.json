@@ -1,0 +1,46 @@
+{
+  "stock_id": "002763",
+  "stock_name": "汇洁股份",
+  "concept": "内衣品牌运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "内衣人体工学研究",
+    "产品设计",
+    "曼妮芬",
+    "桑扶兰"
+  ],
+  "should": [
+    "伊维斯",
+    "兰卓丽",
+    "加一尚品",
+    "秘密武器",
+    "UNDERSTANCE",
+    "内衣品牌运营",
+    "生产制造",
+    "市场营销",
+    "品牌推广",
+    "文胸"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "内衣人体工学研究",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "产品设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "曼妮芬",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "桑扶兰",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:56:29"
+}

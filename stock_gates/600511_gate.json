@@ -1,0 +1,46 @@
+{
+  "stock_id": "600511",
+  "stock_name": "国药股份",
+  "concept": "药械流通",
+  "strategy_type": "industry_chain",
+  "must": [
+    "麻醉药品",
+    "一类精神药品",
+    "麻精药品分销",
+    "北京区域医疗直销"
+  ],
+  "should": [
+    "药械流通",
+    "全国医药分销",
+    "医药零售",
+    "医药工业",
+    "口腔学术服务",
+    "医药物流",
+    "口腔产品",
+    "特医食品",
+    "SPD项目",
+    "DTP药房"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "麻醉药品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一类精神药品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "麻精药品分销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "北京区域医疗直销",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:19:52"
+}

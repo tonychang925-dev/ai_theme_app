@@ -1,0 +1,51 @@
+{
+  "stock_id": "300987",
+  "stock_name": "川网传媒",
+  "concept": "新媒体文化传媒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新媒体整合营销",
+    "移动信息服务",
+    "四川新闻网",
+    "四川发布",
+    "四川手机报"
+  ],
+  "should": [
+    "互动电视业务",
+    "中国西部网",
+    "麻辣社区",
+    "可乐影视",
+    "新媒体文化传媒",
+    "5G",
+    "人工智能",
+    "云计算",
+    "政务新媒体",
+    "网络问政"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新媒体整合营销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动信息服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "四川新闻网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "四川发布",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "四川手机报",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:52:03"
+}

@@ -1,0 +1,29 @@
+{
+  "stock_id": "600211",
+  "stock_name": "西藏药业",
+  "concept": "心血管药物",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新活素"
+  ],
+  "should": [
+    "诺迪康胶囊",
+    "依姆多",
+    "心血管药物",
+    "生物制剂",
+    "心衰治疗",
+    "心血管疾病",
+    "委托推广",
+    "康哲药业销售渠道"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新活素",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:11:53"
+}

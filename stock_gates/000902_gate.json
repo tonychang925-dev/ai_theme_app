@@ -1,0 +1,44 @@
+{
+  "stock_id": "000902",
+  "stock_name": "新洋丰",
+  "concept": "磷复肥龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "磷复肥龙头",
+    "复合肥",
+    "磷酸一铵",
+    "新型肥料"
+  ],
+  "should": [
+    "缓控释肥",
+    "水溶肥",
+    "药肥",
+    "功能性小肥种",
+    "大田作物",
+    "经济作物",
+    "产业链一体化",
+    "资源整合"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "磷复肥龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复合肥",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磷酸一铵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新型肥料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:08:47"
+}

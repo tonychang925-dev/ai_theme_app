@@ -1,0 +1,40 @@
+{
+  "stock_id": "300729",
+  "stock_name": "乐歌股份",
+  "concept": "智能家居健康办公",
+  "strategy_type": "industry_chain",
+  "must": [
+    "线性驱动智慧办公升降桌",
+    "智慧升降工作站",
+    "智能升降儿童学习桌"
+  ],
+  "should": [
+    "线性驱动技术",
+    "物联网技术",
+    "传感技术",
+    "健身办公椅",
+    "智能电动床",
+    "智能家居场景",
+    "健康智慧办公场景",
+    "全球领先的线性驱动产能规模",
+    "国家制造业单项冠军示范企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "线性驱动智慧办公升降桌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧升降工作站",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能升降儿童学习桌",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:40:32"
+}

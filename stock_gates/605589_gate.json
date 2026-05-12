@@ -1,0 +1,41 @@
+{
+  "stock_id": "605589",
+  "stock_name": "圣泉集团",
+  "concept": "合成树脂龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "合成树脂龙头",
+    "国内酚醛树脂行业龙头",
+    "酚醛树脂"
+  ],
+  "should": [
+    "呋喃树脂",
+    "电子级酚醛树脂",
+    "电子级环氧树脂",
+    "硬碳负极材料",
+    "分子结构设计",
+    "树脂纯化技术",
+    "电子级酚醛树脂技术体系",
+    "航空航天",
+    "电子材料",
+    "集成电路"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "合成树脂龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内酚醛树脂行业龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "酚醛树脂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:04:47"
+}

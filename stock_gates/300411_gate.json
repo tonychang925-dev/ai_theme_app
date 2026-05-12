@@ -1,0 +1,40 @@
+{
+  "stock_id": "300411",
+  "stock_name": "金盾股份",
+  "concept": "高端通风装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端通风装备",
+    "地铁隧道智能通风系统",
+    "隧道空气净化装置系统"
+  ],
+  "should": [
+    "数字风机",
+    "智能通风技术",
+    "空气处理技术",
+    "物联网系统",
+    "人工智能技术",
+    "远程检测和调控",
+    "早期预警和故障诊断",
+    "行业标杆",
+    "市场占有率第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端通风装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "地铁隧道智能通风系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "隧道空气净化装置系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:26:11"
+}

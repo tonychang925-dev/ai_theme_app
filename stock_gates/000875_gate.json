@@ -1,0 +1,50 @@
+{
+  "stock_id": "000875",
+  "stock_name": "电投绿能",
+  "concept": "综合能源服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源",
+    "综合智慧能源",
+    "氢能",
+    "先进储能",
+    "火电"
+  ],
+  "should": [
+    "供热",
+    "生物质能",
+    "电站服务",
+    "新能源制氢",
+    "储能技术",
+    "储能",
+    "综合能源服务",
+    "清洁供暖",
+    "绿色交通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合智慧能源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氢能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "先进储能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "火电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:07:31"
+}

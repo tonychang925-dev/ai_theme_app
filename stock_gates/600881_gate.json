@@ -1,0 +1,46 @@
+{
+  "stock_id": "600881",
+  "stock_name": "亚泰集团",
+  "concept": "综合类企业集团",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建材",
+    "地产",
+    "医药",
+    "金融投资"
+  ],
+  "should": [
+    "电子商务",
+    "熟料生产",
+    "水泥生产",
+    "房地产开发",
+    "建筑施工",
+    "医药研发",
+    "药品制造",
+    "药品流通",
+    "金融投资管理",
+    "电子商务平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "地产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融投资",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:30:27"
+}

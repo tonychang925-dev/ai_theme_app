@@ -1,0 +1,51 @@
+{
+  "stock_id": "300061",
+  "stock_name": "旗天科技",
+  "concept": "数字生活科技",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字生活科技",
+    "数字生活营销服务",
+    "银行卡生活服务",
+    "数字人民币",
+    "数字政务"
+  ],
+  "should": [
+    "权益解决方案SaaS平台",
+    "数字化营销服务中台",
+    "数字人民币券一站式解决方案",
+    "中国银联",
+    "中国工商银行",
+    "平安银行",
+    "腾讯车生活",
+    "微信支付",
+    "浦发银行",
+    "创新业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字生活科技",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字生活营销服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "银行卡生活服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字人民币",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字政务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:11:35"
+}

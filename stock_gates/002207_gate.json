@@ -1,0 +1,46 @@
+{
+  "stock_id": "002207",
+  "stock_name": "准油股份",
+  "concept": "油气技术服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业业务",
+    "动态监测",
+    "油气井测试",
+    "井下作业"
+  ],
+  "should": [
+    "施工业务",
+    "运输业务",
+    "连续油管作业",
+    "制氮注氮",
+    "油气技术服务",
+    "测试资料解释",
+    "油田工程施工",
+    "运输服务",
+    "连续油管运营规模较大",
+    "塔里木油田市场份额居首"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动态监测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "油气井测试",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "井下作业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:29:14"
+}

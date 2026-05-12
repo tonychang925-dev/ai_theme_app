@@ -1,0 +1,36 @@
+{
+  "stock_id": "301051",
+  "stock_name": "信濠光电",
+  "concept": "玻璃防护屏",
+  "strategy_type": "industry_chain",
+  "must": [
+    "玻璃防护屏",
+    "智能手机"
+  ],
+  "should": [
+    "前盖防护屏",
+    "玻璃后盖",
+    "玻璃基板",
+    "平板电脑",
+    "智能穿戴",
+    "油墨",
+    "镀膜材料",
+    "车载设备",
+    "数码相机",
+    "智能医疗设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "玻璃防护屏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能手机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:54:36"
+}

@@ -1,0 +1,33 @@
+{
+  "stock_id": "601908",
+  "stock_name": "京运通",
+  "concept": "光伏设备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏设备制造",
+    "单晶炉"
+  ],
+  "should": [
+    "硅片",
+    "区熔单晶硅棒",
+    "区熔单晶硅片",
+    "全自动软轴单晶炉",
+    "拉棒",
+    "切片",
+    "光伏电站"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏设备制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "单晶炉",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:39:41"
+}

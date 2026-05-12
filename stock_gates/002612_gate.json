@@ -1,0 +1,46 @@
+{
+  "stock_id": "002612",
+  "stock_name": "朗姿股份",
+  "concept": "医美+女装双轮驱动",
+  "strategy_type": "industry_chain",
+  "must": [
+    "时尚女装",
+    "医疗美容",
+    "绿色婴童",
+    "中高端女装"
+  ],
+  "should": [
+    "米兰柏羽",
+    "晶肤医美",
+    "高一生",
+    "LɅNCY",
+    "LIME FLARE",
+    "MOJO S.PHINE",
+    "Agabang",
+    "ETTOI",
+    "医美+女装双轮驱动",
+    "轻医美多店连锁"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "时尚女装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗美容",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "绿色婴童",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中高端女装",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:50:00"
+}

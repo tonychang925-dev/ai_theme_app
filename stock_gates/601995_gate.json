@@ -1,0 +1,38 @@
+{
+  "stock_id": "601995",
+  "stock_name": "中金公司",
+  "concept": "投资银行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "投资银行",
+    "中外合资投资银行",
+    "资本市场服务"
+  ],
+  "should": [
+    "财富管理",
+    "资产管理",
+    "实体经济支持",
+    "居民资产配置",
+    "国际化",
+    "机构化",
+    "数字化转型"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "投资银行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中外合资投资银行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "资本市场服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:40:30"
+}

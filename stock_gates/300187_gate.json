@@ -1,0 +1,32 @@
+{
+  "stock_id": "300187",
+  "stock_name": "永清环保",
+  "concept": "烟气治理环保",
+  "strategy_type": "industry_chain",
+  "must": [
+    "烟气排放综合解决方案",
+    "环保工程"
+  ],
+  "should": [
+    "烟气治理环保",
+    "光伏新能源",
+    "储能",
+    "土壤修复",
+    "垃圾焚烧发电",
+    "危废处置"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "烟气排放综合解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环保工程",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:16:36"
+}

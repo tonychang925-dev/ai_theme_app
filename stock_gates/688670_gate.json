@@ -1,0 +1,35 @@
+{
+  "stock_id": "688670",
+  "stock_name": "金迪克",
+  "concept": "四价流感疫苗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "四价流感疫苗",
+    "四价流感病毒裂解疫苗"
+  ],
+  "should": [
+    "裂解疫苗技术",
+    "自研技术平台",
+    "四价流感病毒裂解疫苗（儿童）",
+    "带状疱疹疫苗",
+    "水痘疫苗",
+    "23价肺炎球菌疫苗",
+    "13价肺炎球菌疫苗",
+    "流感防控",
+    "狂犬病预防"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "四价流感疫苗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "四价流感病毒裂解疫苗",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:23:35"
+}

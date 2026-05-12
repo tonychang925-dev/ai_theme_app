@@ -1,0 +1,36 @@
+{
+  "stock_id": "603686",
+  "stock_name": "福龙马",
+  "concept": "环卫装备服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环卫装备",
+    "国内环卫装备主要供应商"
+  ],
+  "should": [
+    "新型城市服务机器人",
+    "垃圾处理",
+    "5G",
+    "GIS",
+    "物联网",
+    "大数据",
+    "云计算",
+    "人工智能",
+    "城乡保洁",
+    "市政维护"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环卫装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内环卫装备主要供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:54:46"
+}

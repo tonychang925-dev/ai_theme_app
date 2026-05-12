@@ -1,0 +1,50 @@
+{
+  "stock_id": "601872",
+  "stock_name": "招商轮船",
+  "concept": "综合航运",
+  "strategy_type": "industry_chain",
+  "must": [
+    "原油运输",
+    "干散货运输",
+    "LNG运输",
+    "VLCC",
+    "VLOC"
+  ],
+  "should": [
+    "综合航运",
+    "VLCC和VLOC规模世界第一",
+    "长租合约",
+    "项目船模式",
+    "国际原油运输",
+    "国际干散货运输",
+    "内贸运输",
+    "LNG进口运输",
+    "滚装运输"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "原油运输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "干散货运输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LNG运输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "VLCC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "VLOC",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:39:21"
+}

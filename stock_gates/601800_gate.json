@@ -1,0 +1,39 @@
+{
+  "stock_id": "601800",
+  "stock_name": "中国交建",
+  "concept": "基础设施综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "基建建设",
+    "基建设计"
+  ],
+  "should": [
+    "疏浚业务",
+    "港口建设",
+    "道路与桥梁",
+    "铁路建设",
+    "城市建设",
+    "海外工程",
+    "基础设施综合服务",
+    "世界最大港口设计建设公司",
+    "世界最大公路与桥梁设计建设公司",
+    "世界最大疏浚公司"
+  ],
+  "not": [
+    "分拆设计板块上市",
+    "祁连山重组"
+  ],
+  "evidence_refs": [
+    {
+      "term": "基建建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "基建设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:38:38"
+}

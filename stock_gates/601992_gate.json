@@ -1,0 +1,39 @@
+{
+  "stock_id": "601992",
+  "stock_name": "金隅集团",
+  "concept": "水泥地产双主业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水泥业务",
+    "地产业务"
+  ],
+  "should": [
+    "区域市场整合者",
+    "领导者",
+    "华北市场最具影响力企业",
+    "市场整合经验",
+    "精益管理",
+    "生产线优化升级",
+    "工业用地转换经验",
+    "高能级城市土地储备",
+    "一线和二线城市",
+    "待开发工业用地"
+  ],
+  "not": [
+    "水泥行业竞合生态弱于预期",
+    "房地产销售企稳缓于预期"
+  ],
+  "evidence_refs": [
+    {
+      "term": "水泥业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "地产业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:40:32"
+}

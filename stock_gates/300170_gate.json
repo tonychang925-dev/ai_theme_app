@@ -1,0 +1,41 @@
+{
+  "stock_id": "300170",
+  "stock_name": "汉得信息",
+  "concept": "企业数字化服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "产业数字化",
+    "财务数字化",
+    "泛ERP"
+  ],
+  "should": [
+    "ITO",
+    "汉得协同制造(HCM)",
+    "一步制造云",
+    "甄采云SRM",
+    "EI-SCM",
+    "CRM实施",
+    "HRMS实施",
+    "全球ERP交付",
+    "企业数字化服务",
+    "生产制造管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "产业数字化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "财务数字化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "泛ERP",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:16:01"
+}

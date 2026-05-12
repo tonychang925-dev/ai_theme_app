@@ -1,0 +1,51 @@
+{
+  "stock_id": "002154",
+  "stock_name": "报喜鸟",
+  "concept": "中高端男装",
+  "strategy_type": "industry_chain",
+  "must": [
+    "报喜鸟",
+    "哈吉斯",
+    "商务正装",
+    "商务休闲",
+    "高端运动休闲"
+  ],
+  "should": [
+    "宝鸟",
+    "所罗",
+    "亨利格兰",
+    "云翼智能",
+    "东博里尼",
+    "伊丽特",
+    "恺米切",
+    "乐飞叶",
+    "中高端男装",
+    "英伦风"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "报喜鸟",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "哈吉斯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商务正装",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商务休闲",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端运动休闲",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:26:15"
+}

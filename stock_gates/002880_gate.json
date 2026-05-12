@@ -1,0 +1,30 @@
+{
+  "stock_id": "002880",
+  "stock_name": "卫光生物",
+  "concept": "血液制品先锋",
+  "strategy_type": "industry_chain",
+  "must": [
+    "血液制品先锋"
+  ],
+  "should": [
+    "人血白蛋白",
+    "免疫球蛋白",
+    "凝血因子",
+    "分离纯化技术",
+    "血浆综合利用率",
+    "医疗抢救",
+    "特定疾病治疗",
+    "单站平均采浆量领先",
+    "平果浆站采浆量全国第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "血液制品先锋",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:01:24"
+}

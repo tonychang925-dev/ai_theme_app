@@ -1,0 +1,41 @@
+{
+  "stock_id": "002700",
+  "stock_name": "万憬能源",
+  "concept": "城市燃气运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "城市管道燃气特许经营权",
+    "天然气输配",
+    "天然气销售"
+  ],
+  "should": [
+    "入户安装",
+    "阿克苏纺织工业城",
+    "阿克苏经济技术开发区",
+    "阿合奇县",
+    "巴楚县",
+    "甘肃省部分区域",
+    "城市燃气运营",
+    "中石油",
+    "长输管道",
+    "CNG管束车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "城市管道燃气特许经营权",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天然气输配",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天然气销售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:54:00"
+}

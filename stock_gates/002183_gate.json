@@ -1,0 +1,41 @@
+{
+  "stock_id": "002183",
+  "stock_name": "怡亚通",
+  "concept": "供应链服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "供应链服务",
+    "消费品供应链",
+    "渠道分销"
+  ],
+  "should": [
+    "全域运营服务",
+    "物流服务",
+    "风控服务",
+    "金融服务",
+    "产业链供应链",
+    "全品类延展",
+    "全渠道分销",
+    "全链路服务",
+    "数字化能力",
+    "品牌运营能力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "供应链服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "消费品供应链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "渠道分销",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:27:58"
+}

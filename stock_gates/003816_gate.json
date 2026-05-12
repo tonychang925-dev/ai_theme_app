@@ -1,0 +1,37 @@
+{
+  "stock_id": "003816",
+  "stock_name": "中国广核",
+  "concept": "核能发电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "核能发电",
+    "建设、运营及管理核电站",
+    "销售核电站所发电力"
+  ],
+  "should": [
+    "组织开发核电站的设计及科研工作",
+    "电力",
+    "在运核电机组26台",
+    "在建核电机组7台",
+    "减排二氧化硫约2.00万吨",
+    "减排氮氧化物约3.02万吨"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "核能发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建设、运营及管理核电站",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "销售核电站所发电力",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:08:50"
+}

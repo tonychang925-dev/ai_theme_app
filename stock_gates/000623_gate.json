@@ -1,0 +1,36 @@
+{
+  "stock_id": "000623",
+  "stock_name": "吉林敖东",
+  "concept": "医药+金融",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药+金融",
+    "产业+金融",
+    "医药制造业"
+  ],
+  "should": [
+    "金融投资",
+    "医药+金融+大健康",
+    "中药材种植加工业",
+    "原料药制造业",
+    "药品流通行业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医药+金融",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "产业+金融",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药制造业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:58:33"
+}

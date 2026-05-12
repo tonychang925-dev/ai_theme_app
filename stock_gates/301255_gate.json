@@ -1,0 +1,41 @@
+{
+  "stock_id": "301255",
+  "stock_name": "通力科技",
+  "concept": "减速机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "减速机",
+    "通用减速机",
+    "工业齿轮箱"
+  ],
+  "should": [
+    "全系列齿轮减速机设计技术",
+    "以车代磨精加工技术",
+    "大模数齿轮高效磨齿加工技术",
+    "高能光整复合加工技术",
+    "大型轧机",
+    "大型球磨机",
+    "大型辊压机",
+    "海工装备",
+    "全工序加工",
+    "国家级专精特新‘小巨人’企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "减速机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通用减速机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业齿轮箱",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:01:00"
+}

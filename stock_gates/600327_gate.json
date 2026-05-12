@@ -1,0 +1,36 @@
+{
+  "stock_id": "600327",
+  "stock_name": "大东方",
+  "concept": "商业零售+医疗健康",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商业零售+医疗健康双主业",
+    "医疗健康（均瑶医疗板块）"
+  ],
+  "should": [
+    "三凤桥食品",
+    "三凤桥餐饮",
+    "“年夜饭”预制礼盒",
+    "三凤桥旗舰店（主流平台）",
+    "百业超市",
+    "湖北7-11便利店",
+    "百货零售",
+    "医疗健康服务",
+    "真空及保鲜包装卤味熟食制品",
+    "礼盒套装"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商业零售+医疗健康双主业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗健康（均瑶医疗板块）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:15:09"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "000158",
+  "stock_name": "常山北明",
+  "concept": "新型智慧城市",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新型智慧城市",
+    "软件和信息技术服务"
+  ],
+  "should": [
+    "人工智能",
+    "区块链",
+    "大数据分析",
+    "物联网",
+    "智慧城市",
+    "智慧政务",
+    "智慧园区",
+    "智慧交通",
+    "智慧教育",
+    "智慧医疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新型智慧城市",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "软件和信息技术服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:51:01"
+}

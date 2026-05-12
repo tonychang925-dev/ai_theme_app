@@ -1,0 +1,44 @@
+{
+  "stock_id": "300101",
+  "stock_name": "振芯科技",
+  "concept": "北斗导航产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "北斗导航产业链",
+    "集成电路设计",
+    "卫星导航应用",
+    "北斗芯片"
+  ],
+  "should": [
+    "智能安防",
+    "模块",
+    "板卡",
+    "天线",
+    "系统运营",
+    "智能手机",
+    "智能穿戴",
+    "公共安全"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "北斗导航产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集成电路设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "卫星导航应用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "北斗芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:13:17"
+}

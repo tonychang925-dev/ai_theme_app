@@ -1,0 +1,39 @@
+{
+  "stock_id": "603718",
+  "stock_name": "海利生物",
+  "concept": "动物疫苗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "动物疫苗",
+    "猪用疫苗",
+    "口蹄疫疫苗"
+  ],
+  "should": [
+    "禽流感DNA疫苗",
+    "悬浮培养工艺",
+    "浓缩纯化技术",
+    "基因工程疫苗研究",
+    "诊断试剂研究",
+    "连续流悬浮培养和纯化技术",
+    "动物疫病预防与治疗",
+    "改善动物福利"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "动物疫苗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "猪用疫苗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "口蹄疫疫苗",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:55:35"
+}

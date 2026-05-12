@@ -1,0 +1,36 @@
+{
+  "stock_id": "301088",
+  "stock_name": "戎美股份",
+  "concept": "高端女装电商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端女装电商",
+    "互联网零售"
+  ],
+  "should": [
+    "服装及配饰的企划设计",
+    "供应链管理",
+    "淘宝平台",
+    "天猫平台",
+    "直播业务",
+    "品牌形象",
+    "粉丝数量",
+    "客户口碑",
+    "库存周转率",
+    "顾客复购率"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端女装电商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "互联网零售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:56:03"
+}

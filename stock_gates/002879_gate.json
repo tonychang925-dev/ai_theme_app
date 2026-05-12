@@ -1,0 +1,46 @@
+{
+  "stock_id": "002879",
+  "stock_name": "长缆科技",
+  "concept": "电力电缆附件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力电缆附件",
+    "超高压电缆附件",
+    "高压电缆附件",
+    "中低压电缆附件"
+  ],
+  "should": [
+    "输电线路用附件",
+    "电缆接续金具",
+    "电力金具",
+    "电缆敷设成套机械",
+    "绝缘材料及制品",
+    "通讯电缆用附件",
+    "电工器材",
+    "自主研发",
+    "电网改造",
+    "核电工程"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力电缆附件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超高压电缆附件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高压电缆附件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中低压电缆附件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:01:30"
+}

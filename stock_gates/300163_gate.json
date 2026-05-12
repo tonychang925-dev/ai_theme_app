@@ -1,0 +1,24 @@
+{
+  "stock_id": "300163",
+  "stock_name": "先锋新材",
+  "concept": "建筑节能遮阳",
+  "strategy_type": "industry_chain",
+  "must": [],
+  "should": [
+    "遮阳成品",
+    "一体化节能窗",
+    "高分子复合材料包覆",
+    "建筑节能遮阳",
+    "织造",
+    "定型工艺",
+    "化工",
+    "单丝复合",
+    "材料热处理技术",
+    "国内阳光面料生产先行者"
+  ],
+  "not": [],
+  "evidence_refs": [],
+  "quality": "weak",
+  "must_count": 0,
+  "generated_at": "2026-05-11T18:15:43"
+}

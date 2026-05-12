@@ -1,0 +1,51 @@
+{
+  "stock_id": "002362",
+  "stock_name": "汉王科技",
+  "concept": "人工智能识别",
+  "strategy_type": "industry_chain",
+  "must": [
+    "手写识别技术",
+    "OCR技术",
+    "笔触控与轨迹识别技术",
+    "人脸识别终端",
+    "自然语言理解"
+  ],
+  "should": [
+    "无线无源电磁触控技术",
+    "电容触控技术",
+    "e典笔",
+    "汉王电纸书",
+    "汉王笔",
+    "文本王",
+    "名片通",
+    "绘图板",
+    "绘画板",
+    "绘画屏"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "手写识别技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "OCR技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "笔触控与轨迹识别技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人脸识别终端",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自然语言理解",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:37:52"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "601858",
+  "stock_name": "中国科传",
+  "concept": "科技出版",
+  "strategy_type": "industry_chain",
+  "must": [
+    "科技出版",
+    "图书出版业务",
+    "期刊业务",
+    "知识服务业务"
+  ],
+  "should": [
+    "出版物进出口业务",
+    "科学文库",
+    "科学智库",
+    "中国生物志库",
+    "中科云教育平台",
+    "中科医库",
+    "SciEngine平台",
+    "科研立项",
+    "文献检索分析",
+    "实验模拟"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "科技出版",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "图书出版业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "期刊业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "知识服务业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:39:05"
+}

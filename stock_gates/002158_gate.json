@@ -1,0 +1,36 @@
+{
+  "stock_id": "002158",
+  "stock_name": "汉钟精机",
+  "concept": "螺杆压缩机龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "螺杆压缩机龙头",
+    "真空泵"
+  ],
+  "should": [
+    "制冷压缩机",
+    "空气压缩机",
+    "螺杆泵",
+    "商用中央空调",
+    "冷链物流",
+    "空气源热泵",
+    "光伏拉晶",
+    "光伏电池片",
+    "半导体",
+    "拉晶真空泵市占率70%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "螺杆压缩机龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "真空泵",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:26:23"
+}

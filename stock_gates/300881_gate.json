@@ -1,0 +1,42 @@
+{
+  "stock_id": "300881",
+  "stock_name": "盛德鑫泰",
+  "concept": "小口径锅炉管龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "小口径锅炉管龙头",
+    "小口径高压锅炉用无缝管",
+    "合金钢钢管",
+    "不锈钢钢管"
+  ],
+  "should": [
+    "Super304H",
+    "HR3C",
+    "碳钢钢管",
+    "钢格板",
+    "电站锅炉制造",
+    "石油炼化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "小口径锅炉管龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小口径高压锅炉用无缝管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "合金钢钢管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "不锈钢钢管",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:47:33"
+}

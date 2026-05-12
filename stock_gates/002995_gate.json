@@ -1,0 +1,46 @@
+{
+  "stock_id": "002995",
+  "stock_name": "天地在线",
+  "concept": "全域数字化服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全域数字化服务",
+    "数字化营销服务",
+    "数智化综合服务",
+    "SaaS营销"
+  ],
+  "should": [
+    "腾讯",
+    "360",
+    "爱奇艺",
+    "今日头条",
+    "百度",
+    "快手",
+    "搜狐",
+    "企业QQ",
+    "营销QQ",
+    "腾讯企点"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全域数字化服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字化营销服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数智化综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SaaS营销",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:06:43"
+}

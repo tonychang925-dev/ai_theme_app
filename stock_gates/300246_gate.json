@@ -1,0 +1,41 @@
+{
+  "stock_id": "300246",
+  "stock_name": "宝莱特",
+  "concept": "医疗设备与耗材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "监护仪设备",
+    "血液透析设备（机）",
+    "血液透析器"
+  ],
+  "should": [
+    "中央监护系统",
+    "心电图机",
+    "脉搏血氧仪",
+    "可穿戴医疗产品",
+    "透析液过滤器",
+    "血液透析粉/透析液",
+    "透析管路",
+    "穿刺针",
+    "消毒液",
+    "透析用制水设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "监护仪设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "血液透析设备（机）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "血液透析器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:19:25"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "300335",
+  "stock_name": "迪森股份",
+  "concept": "清洁能源装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "清洁能源装备",
+    "新能源装备"
+  ],
+  "should": [
+    "光伏长晶炉",
+    "不锈钢腔体组件",
+    "锂电池压力容器",
+    "壁挂炉",
+    "住建领域节能减排",
+    "工业互联网+",
+    "国家特种设备设计与制造最高资质",
+    "A级锅炉制造许可证",
+    "A2级压力容器设计许可证",
+    "光伏硅棒生产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "清洁能源装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:22:59"
+}

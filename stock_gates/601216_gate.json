@@ -1,0 +1,34 @@
+{
+  "stock_id": "601216",
+  "stock_name": "君正集团",
+  "concept": "氯碱化工龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "聚氯乙烯",
+    "烧碱"
+  ],
+  "should": [
+    "可降解塑料",
+    "丹纳赫经营体系",
+    "硅铁",
+    "水泥熟料",
+    "氯碱化工龙头",
+    "化工物流",
+    "内蒙古地区氯碱化工行业龙头",
+    "循环经济产业链基地"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "聚氯乙烯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "烧碱",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:35:28"
+}

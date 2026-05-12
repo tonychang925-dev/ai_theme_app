@@ -1,0 +1,36 @@
+{
+  "stock_id": "002893",
+  "stock_name": "京能热力",
+  "concept": "热力供应服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "热力供应服务",
+    "热力供应"
+  ],
+  "should": [
+    "节能技术服务",
+    "集中供热",
+    "分户供热",
+    "燃气锅炉",
+    "燃煤锅炉",
+    "热电联产",
+    "低品位工业余热",
+    "居民供暖",
+    "生活热水",
+    "节能技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "热力供应服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热力供应",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:02:04"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "000993",
+  "stock_name": "闽东电力",
+  "concept": "清洁能源电力",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力生产与开发",
+    "水力发电",
+    "风力发电"
+  ],
+  "should": [
+    "风电场",
+    "清洁能源电力",
+    "趸售上网电量",
+    "水库",
+    "海上风电场开发资源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力生产与开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水力发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风力发电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:12:33"
+}

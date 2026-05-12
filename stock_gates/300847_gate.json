@@ -1,0 +1,40 @@
+{
+  "stock_id": "300847",
+  "stock_name": "中船汉光",
+  "concept": "打印复印耗材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "静电成像设备及耗材",
+    "墨粉",
+    "OPC鼓"
+  ],
+  "should": [
+    "安全增强复印机",
+    "信息化安全复合机",
+    "打印复印耗材",
+    "鼓基加工",
+    "涂层配方",
+    "电子产生材料合成",
+    "电子传输材料合成",
+    "自动化涂布生产线系统集成",
+    "安全信息管理系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "静电成像设备及耗材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "墨粉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "OPC鼓",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:45:50"
+}

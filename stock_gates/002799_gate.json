@@ -1,0 +1,46 @@
+{
+  "stock_id": "002799",
+  "stock_name": "环球印务",
+  "concept": "医药包装龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药包装龙头",
+    "医药包装业务",
+    "互联网数字营销业务",
+    "国内医药包装龙头企业"
+  ],
+  "should": [
+    "印刷包装供应链业务",
+    "核心供应商",
+    "医药折叠纸盒",
+    "中高端铝管",
+    "药品说明书",
+    "标签",
+    "配套材料",
+    "专精特新小巨人企业",
+    "精准营销",
+    "区块链药品溯源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医药包装龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药包装业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "互联网数字营销业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内医药包装龙头企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:57:55"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "600127",
+  "stock_name": "金健米业",
+  "concept": "优质粮油食品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "优质粮油食品",
+    "大米",
+    "面粉",
+    "面条",
+    "植物油"
+  ],
+  "should": [
+    "牛奶",
+    "休闲食品",
+    "粮油板块",
+    "乳业板块",
+    "农产品贸易",
+    "线下渠道",
+    "社区团购",
+    "抖音直播",
+    "团购",
+    "特渠"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "优质粮油食品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大米",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "面粉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "面条",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "植物油",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:09:52"
+}

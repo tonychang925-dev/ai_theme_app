@@ -1,0 +1,36 @@
+{
+  "stock_id": "300177",
+  "stock_name": "中海达",
+  "concept": "高精度定位",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高精度定位",
+    "高精度定位技术"
+  ],
+  "should": [
+    "北斗卫星导航系统",
+    "卫星导航定位技术",
+    "服务",
+    "地理信息",
+    "交通运输",
+    "自动驾驶",
+    "城市治理",
+    "公共安全",
+    "物流配送",
+    "农林牧渔"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高精度定位",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高精度定位技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:16:15"
+}

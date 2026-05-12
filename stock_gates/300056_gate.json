@@ -1,0 +1,36 @@
+{
+  "stock_id": "300056",
+  "stock_name": "中创环保",
+  "concept": "环保与新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "过滤材料",
+    "危废资源化利用"
+  ],
+  "should": [
+    "烟气治理工程",
+    "危废处置",
+    "城乡环卫一体化服务",
+    "有色金属回收",
+    "电力",
+    "垃圾焚烧",
+    "水泥",
+    "钢铁",
+    "煤化工",
+    "新能源汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "过滤材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "危废资源化利用",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:11:19"
+}

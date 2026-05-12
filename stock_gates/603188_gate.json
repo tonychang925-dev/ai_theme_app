@@ -1,0 +1,31 @@
+{
+  "stock_id": "603188",
+  "stock_name": "亚邦股份",
+  "concept": "染料农药中间体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "染料农药中间体",
+    "染料"
+  ],
+  "should": [
+    "农药",
+    "连续硝化反应",
+    "废酸资源化再利用",
+    "纺织印染",
+    "农业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "染料农药中间体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "染料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:45:48"
+}

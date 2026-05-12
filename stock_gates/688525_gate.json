@@ -1,0 +1,31 @@
+{
+  "stock_id": "688525",
+  "stock_name": "佰维存储",
+  "concept": "半导体存储器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "嵌入式存储"
+  ],
+  "should": [
+    "消费级存储",
+    "工业级存储",
+    "先进封测服务",
+    "自研主控芯片",
+    "半导体存储器",
+    "固件算法",
+    "16层叠Die",
+    "30～40μm超薄Die",
+    "多芯片异构集成",
+    "Bumping"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "嵌入式存储",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:19:54"
+}

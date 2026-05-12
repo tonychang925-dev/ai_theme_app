@@ -1,0 +1,41 @@
+{
+  "stock_id": "300982",
+  "stock_name": "苏文电能",
+  "concept": "EPCO电能服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "EPCO电能服务",
+    "EPCO一站式闭环",
+    "电力运维服务"
+  ],
+  "should": [
+    "电力安装集成",
+    "电力咨询设计",
+    "电力设备供应",
+    "富兰克林云",
+    "建筑机电安装专业承包二级",
+    "电子与智能化专业承包二级",
+    "机电工程总承包三级",
+    "工商业客户",
+    "新能源发电",
+    "智能电网"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "EPCO电能服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "EPCO一站式闭环",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力运维服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:51:49"
+}

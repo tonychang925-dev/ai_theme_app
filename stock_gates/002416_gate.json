@@ -1,0 +1,45 @@
+{
+  "stock_id": "002416",
+  "stock_name": "爱施德",
+  "concept": "渠道服务商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国内手机渠道商龙头",
+    "渠道服务商",
+    "数字化分销",
+    "数字化零售"
+  ],
+  "should": [
+    "苹果授权优质经销商",
+    "手机分销",
+    "3C数码",
+    "快消品",
+    "新能源汽车",
+    "苹果零售",
+    "电子雾化器零售",
+    "电商+本地化",
+    "通信+增值服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国内手机渠道商龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "渠道服务商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字化分销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字化零售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:40:35"
+}

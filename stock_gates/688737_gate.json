@@ -1,0 +1,45 @@
+{
+  "stock_id": "688737",
+  "stock_name": "中自科技",
+  "concept": "尾气处理催化剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "尾气处理催化剂",
+    "天然气车尾气处理催化剂",
+    "柴油车尾气处理催化剂",
+    "汽油车尾气处理催化剂"
+  ],
+  "should": [
+    "摩托车尾气处理催化剂",
+    "氢燃料电池电催化剂",
+    "储能与动力电池",
+    "天然气重卡",
+    "柴油车",
+    "汽油车",
+    "摩托车",
+    "国内领先环保催化剂厂商",
+    "天然气车催化剂市场占有率国内前列"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "尾气处理催化剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天然气车尾气处理催化剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "柴油车尾气处理催化剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽油车尾气处理催化剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:24:43"
+}

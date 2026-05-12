@@ -1,0 +1,36 @@
+{
+  "stock_id": "300752",
+  "stock_name": "隆利科技",
+  "concept": "背光显示模组",
+  "strategy_type": "industry_chain",
+  "must": [
+    "背光显示模组",
+    "Mini LED背光模组"
+  ],
+  "should": [
+    "中大尺寸背光模组",
+    "Mini LED背光模组设计方案",
+    "智能手机",
+    "平板",
+    "笔记本电脑",
+    "车载显示屏",
+    "VR",
+    "工控",
+    "医疗",
+    "背光模组龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "背光显示模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "Mini LED背光模组",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:41:29"
+}

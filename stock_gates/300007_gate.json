@@ -1,0 +1,41 @@
+{
+  "stock_id": "300007",
+  "stock_name": "汉威科技",
+  "concept": "传感器物联网",
+  "strategy_type": "industry_chain",
+  "must": [
+    "传感器",
+    "物联网综合服务",
+    "气体传感器"
+  ],
+  "should": [
+    "仪器仪表",
+    "MEMS传感器",
+    "柔性传感器",
+    "智慧工业",
+    "智能家居",
+    "环境监测",
+    "汽车电子",
+    "消费电子",
+    "可穿戴设备",
+    "医疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "传感器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物联网综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "气体传感器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:09:15"
+}

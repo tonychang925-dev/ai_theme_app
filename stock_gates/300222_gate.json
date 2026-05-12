@@ -1,0 +1,51 @@
+{
+  "stock_id": "300222",
+  "stock_name": "科大智能",
+  "concept": "智能工业能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字能源",
+    "智能配电网",
+    "机器人先进控制",
+    "智能机器人",
+    "智能装备"
+  ],
+  "should": [
+    "主动配电网",
+    "智能电网终端设备",
+    "工业机器人系统化集成",
+    "新能源充换电设备",
+    "人工智能",
+    "5G",
+    "AI",
+    "物联网",
+    "大数据",
+    "边缘计算"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字能源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能配电网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机器人先进控制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能机器人",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:18:10"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "603098",
+  "stock_name": "森特股份",
+  "concept": "金属围护与BIPV",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金属围护与BIPV",
+    "建筑金属围护系统"
+  ],
+  "should": [
+    "生态治理",
+    "声屏障技术",
+    "高铁声屏障",
+    "土壤与地下水治理",
+    "噪声治理",
+    "金属屋面施工工艺",
+    "现场生产技术",
+    "高铁站",
+    "在建机场",
+    "汽车企业厂房"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金属围护与BIPV",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑金属围护系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:43:39"
+}

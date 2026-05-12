@@ -1,0 +1,40 @@
+{
+  "stock_id": "688679",
+  "stock_name": "通源环境",
+  "concept": "固废污染治理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "固废污染阻隔修复系统构建",
+    "污泥高干脱水炭化处理处置",
+    "河湖底泥一体化处理处置"
+  ],
+  "should": [
+    "填埋场建设",
+    "危废、医废处理处置",
+    "河湖底泥处理处置",
+    "固废污染治理",
+    "固废污染综合整治",
+    "污泥污水及水环境综合整治",
+    "环境修复",
+    "生活垃圾减量与资源化利用",
+    "市政污泥处理处置及资源化利用"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "固废污染阻隔修复系统构建",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "污泥高干脱水炭化处理处置",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "河湖底泥一体化处理处置",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:23:48"
+}

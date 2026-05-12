@@ -1,0 +1,41 @@
+{
+  "stock_id": "300839",
+  "stock_name": "博汇股份",
+  "concept": "特种油品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种油品",
+    "环保芳烃油",
+    "白油"
+  ],
+  "should": [
+    "重芳烃",
+    "轻质燃料油",
+    "连续重芳烃抽提工艺技术",
+    "间歇式重芳烃抽提工艺技术",
+    "道路基础设施",
+    "建筑防水",
+    "汽车轮胎",
+    "机械工业",
+    "交通运输",
+    "化妆品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种油品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环保芳烃油",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "白油",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:45:29"
+}

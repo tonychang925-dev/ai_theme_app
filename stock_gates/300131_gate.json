@@ -1,0 +1,41 @@
+{
+  "stock_id": "300131",
+  "stock_name": "英唐智控",
+  "concept": "元器件分销+半导体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子元器件分销",
+    "元器件分销+半导体",
+    "半导体设计"
+  ],
+  "should": [
+    "功率半导体",
+    "光电集成电路",
+    "光学传感器",
+    "显示屏驱动IC",
+    "车载IC",
+    "MEMS镜",
+    "模拟IC",
+    "数字IC",
+    "MEMS微振镜",
+    "Si和SiC基功率器件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子元器件分销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "元器件分销+半导体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:14:29"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "600137",
+  "stock_name": "浪莎股份",
+  "concept": "内衣品牌",
+  "strategy_type": "industry_chain",
+  "must": [
+    "内衣品牌",
+    "内衣"
+  ],
+  "should": [
+    "新材料",
+    "新面料",
+    "国潮服饰",
+    "健康舒适内衣",
+    "高性价比产品供应链"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "内衣品牌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "内衣",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:10:04"
+}

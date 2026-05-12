@@ -1,0 +1,46 @@
+{
+  "stock_id": "000039",
+  "stock_name": "中集集团",
+  "concept": "物流能源装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国际标准干货集装箱",
+    "冷藏集装箱",
+    "特种集装箱",
+    "罐式集装箱"
+  ],
+  "should": [
+    "道路运输车辆",
+    "循环载具",
+    "旅客登机桥",
+    "自升式钻井平台",
+    "半潜式钻井平台",
+    "消防及救援车辆设备",
+    "自动化物流系统",
+    "智能停车系统",
+    "集装箱木地板",
+    "公路罐式运输车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国际标准干货集装箱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冷藏集装箱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种集装箱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "罐式集装箱",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:48:36"
+}

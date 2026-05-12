@@ -1,0 +1,41 @@
+{
+  "stock_id": "688391",
+  "stock_name": "钜泉科技",
+  "concept": "智能电表芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能电表芯片",
+    "电能计量芯片",
+    "智能电表MCU芯片"
+  ],
+  "should": [
+    "载波通信芯片",
+    "高精度",
+    "高可靠性",
+    "低功耗",
+    "主控芯片设计",
+    "载波通信技术",
+    "国内领先",
+    "出货量第一",
+    "出货量第二",
+    "市场占有率领先"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能电表芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电能计量芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能电表MCU芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:17:29"
+}

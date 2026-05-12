@@ -1,0 +1,25 @@
+{
+  "stock_id": "000078",
+  "stock_name": "海王生物",
+  "concept": "医药流通",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药商业业务网络体系"
+  ],
+  "should": [
+    "医药流通",
+    "全国20多个省份",
+    "医药流通企业",
+    "数字化转型"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医药商业业务网络体系",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T16:49:49"
+}

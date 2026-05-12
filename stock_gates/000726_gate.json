@@ -1,0 +1,41 @@
+{
+  "stock_id": "000726",
+  "stock_name": "鲁泰A",
+  "concept": "高档色织面料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高档色织面料",
+    "色织面料",
+    "成衣"
+  ],
+  "should": [
+    "印染面料",
+    "针织面料",
+    "棉花育种与种植",
+    "纺织",
+    "染整",
+    "制衣",
+    "LTPS（鲁泰生产方式）",
+    "中高档衬衫",
+    "男士衬衫",
+    "品牌服装"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高档色织面料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "色织面料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "成衣",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:02:32"
+}

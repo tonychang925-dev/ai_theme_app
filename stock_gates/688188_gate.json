@@ -1,0 +1,31 @@
+{
+  "stock_id": "688188",
+  "stock_name": "柏楚电子",
+  "concept": "激光切割运控系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "激光切割运控系统"
+  ],
+  "should": [
+    "随动控制系统",
+    "板卡控制系统",
+    "总线控制系统",
+    "智能切割头",
+    "智能焊接机器人",
+    "CAD",
+    "CAM",
+    "NC",
+    "传感器",
+    "硬件设计技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "激光切割运控系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:11:12"
+}

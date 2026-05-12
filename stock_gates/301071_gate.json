@@ -1,0 +1,40 @@
+{
+  "stock_id": "301071",
+  "stock_name": "力量钻石",
+  "concept": "人造金刚石",
+  "strategy_type": "industry_chain",
+  "must": [
+    "培育钻石",
+    "金刚石单晶",
+    "金刚石微粉"
+  ],
+  "should": [
+    "人造金刚石",
+    "大腔体合成设备",
+    "研发投入和技术升级",
+    "建材石材",
+    "勘探采掘",
+    "机械加工",
+    "清洁能源",
+    "钻石珠宝首饰",
+    "光伏硅片切割"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "培育钻石",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金刚石单晶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金刚石微粉",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:55:24"
+}

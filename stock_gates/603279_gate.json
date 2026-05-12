@@ -1,0 +1,31 @@
+{
+  "stock_id": "603279",
+  "stock_name": "景津装备",
+  "concept": "压滤机龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "压滤机龙头"
+  ],
+  "should": [
+    "厢式压滤机",
+    "隔膜压滤机",
+    "滤板",
+    "滤布",
+    "搅拌机",
+    "加药机",
+    "输送机",
+    "破碎机",
+    "环保污泥处理",
+    "新能源锂电池"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "压滤机龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:47:57"
+}

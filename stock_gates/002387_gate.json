@@ -1,0 +1,35 @@
+{
+  "stock_id": "002387",
+  "stock_name": "维信诺",
+  "concept": "OLED显示",
+  "strategy_type": "industry_chain",
+  "must": [
+    "OLED显示",
+    "AMOLED显示器件"
+  ],
+  "should": [
+    "屏下摄像",
+    "柔性穿戴",
+    "鼎型像素排列",
+    "昆山G5.5生产线",
+    "固安G6生产线",
+    "合肥G6生产线",
+    "高刷新率",
+    "动态刷新率",
+    "全球第四"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "OLED显示",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AMOLED显示器件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:39:06"
+}

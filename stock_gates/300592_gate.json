@@ -1,0 +1,37 @@
+{
+  "stock_id": "300592",
+  "stock_name": "华凯易佰",
+  "concept": "跨境出口电商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "跨境出口电商",
+    "泛品业务",
+    "精品业务"
+  ],
+  "should": [
+    "服务平台",
+    "第三方平台",
+    "独立站",
+    "需求端线上消费增长",
+    "政策端多重利好",
+    "供给端技术进步"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "跨境出口电商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "泛品业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精品业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:34:18"
+}

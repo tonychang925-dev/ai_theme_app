@@ -1,0 +1,41 @@
+{
+  "stock_id": "603657",
+  "stock_name": "春光科技",
+  "concept": "清洁电器配件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "清洁电器软管",
+    "整机ODM/OEM产品",
+    "吸尘器"
+  ],
+  "should": [
+    "洗地机",
+    "扫地机器人",
+    "布衣清洗机",
+    "挂烫机",
+    "洗碗机",
+    "户外清扫工业除尘系统",
+    "清洁电器配件",
+    "配件产品",
+    "原料开发",
+    "结构方案设计"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "清洁电器软管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "整机ODM/OEM产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "吸尘器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:53:58"
+}

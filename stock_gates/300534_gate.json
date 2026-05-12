@@ -1,0 +1,31 @@
+{
+  "stock_id": "300534",
+  "stock_name": "陇神戎发",
+  "concept": "止痛类滴丸剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "止痛类滴丸剂"
+  ],
+  "should": [
+    "元胡止痛滴丸",
+    "宣肺止嗽合剂",
+    "酸枣仁油滴丸",
+    "鞣酸小檗碱膜",
+    "七味温阳胶囊",
+    "滴丸剂",
+    "片剂",
+    "硬胶囊剂",
+    "膜剂",
+    "合剂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "止痛类滴丸剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:31:37"
+}

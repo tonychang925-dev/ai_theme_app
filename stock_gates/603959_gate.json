@@ -1,0 +1,41 @@
+{
+  "stock_id": "603959",
+  "stock_name": "百利科技",
+  "concept": "锂电智能产线",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电智能产线",
+    "EPC总承包服务",
+    "专有设备制造"
+  ],
+  "should": [
+    "电芯粉料智能化系统",
+    "高镍三元第三代智能化产线",
+    "多层多列辊道窑",
+    "当升科技",
+    "贝特瑞",
+    "安徽海创",
+    "国轩高科",
+    "新锂想",
+    "巴斯夫杉杉",
+    "成都巴莫"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电智能产线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "EPC总承包服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "专有设备制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:59:47"
+}

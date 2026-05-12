@@ -1,0 +1,36 @@
+{
+  "stock_id": "300820",
+  "stock_name": "英杰电气",
+  "concept": "工业电源龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业电源龙头",
+    "光伏电源"
+  ],
+  "should": [
+    "PD系列可编程直流电源",
+    "充电桩",
+    "全数字单晶炉加热直流电源",
+    "大功率密度",
+    "高稳定度",
+    "高控制精度",
+    "快速响应",
+    "光伏硅料",
+    "硅片",
+    "半导体MOCVD"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业电源龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏电源",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:44:34"
+}

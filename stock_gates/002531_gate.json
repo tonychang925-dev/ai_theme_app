@@ -1,0 +1,37 @@
+{
+  "stock_id": "002531",
+  "stock_name": "天顺风能",
+  "concept": "风电装备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风塔",
+    "叶片",
+    "兆瓦级大功率风力发电塔架"
+  ],
+  "should": [
+    "海工",
+    "水下支撑结构",
+    "风电装备制造",
+    "陆上风电",
+    "海上风电",
+    "头部企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风塔",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "叶片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "兆瓦级大功率风力发电塔架",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:45:46"
+}

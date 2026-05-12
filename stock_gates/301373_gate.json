@@ -1,0 +1,46 @@
+{
+  "stock_id": "301373",
+  "stock_name": "凌玮科技",
+  "concept": "纳米二氧化硅",
+  "strategy_type": "industry_chain",
+  "must": [
+    "纳米二氧化硅",
+    "消光剂",
+    "涂层助剂",
+    "纳米二氧化硅新材料研发"
+  ],
+  "should": [
+    "吸附剂",
+    "开口剂",
+    "防锈颜料",
+    "涂料",
+    "油墨",
+    "塑料",
+    "石化",
+    "木器",
+    "家具",
+    "皮革"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "纳米二氧化硅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "消光剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涂层助剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纳米二氧化硅新材料研发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:04:14"
+}

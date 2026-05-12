@@ -1,0 +1,36 @@
+{
+  "stock_id": "688501",
+  "stock_name": "青达环保",
+  "concept": "节能环保设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "清洁能源消纳系统",
+    "全负荷脱硝系统"
+  ],
+  "should": [
+    "炉渣节能环保处理系统",
+    "烟气节能环保处理系统",
+    "脱硫废水环保处理系统",
+    "电极锅炉系统",
+    "蓄热器系统",
+    "锅炉省煤器水侧调节技术",
+    "水旁路技术",
+    "节能环保设备",
+    "火电灵活性改造",
+    "清洁能源消纳"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "清洁能源消纳系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全负荷脱硝系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:19:09"
+}

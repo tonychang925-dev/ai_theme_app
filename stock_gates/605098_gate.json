@@ -1,0 +1,40 @@
+{
+  "stock_id": "605098",
+  "stock_name": "行动教育",
+  "concept": "管理教育",
+  "strategy_type": "industry_chain",
+  "must": [
+    "《赢利模式》",
+    "《浓缩EMBA》",
+    "校长EMBA"
+  ],
+  "should": [
+    "行动在线商学院",
+    "管理教育",
+    "管理培训",
+    "管理咨询",
+    "预付费模式",
+    "中小企业",
+    "管理层成员",
+    "中国管理教育首家主板上市公司",
+    "管理教育第一股"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "《赢利模式》",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "《浓缩EMBA》",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "校长EMBA",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:01:45"
+}

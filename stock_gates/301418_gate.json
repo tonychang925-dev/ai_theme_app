@@ -1,0 +1,31 @@
+{
+  "stock_id": "301418",
+  "stock_name": "协昌科技",
+  "concept": "电力电子产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "运动控制产品"
+  ],
+  "should": [
+    "功率芯片",
+    "电力电子产业链",
+    "矢量变频控制方案",
+    "有感及无感多模一体的控制算法",
+    "大电流电子线路布线",
+    "MOSFET并联均流",
+    "沟槽型MOSFET",
+    "屏蔽栅沟槽型MOSFET",
+    "超结MOSFET",
+    "电动自行车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "运动控制产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:05:06"
+}

@@ -1,0 +1,33 @@
+{
+  "stock_id": "000420",
+  "stock_name": "吉林化纤",
+  "concept": "粘胶纤维与碳纤维",
+  "strategy_type": "industry_chain",
+  "must": [
+    "粘胶长丝",
+    "碳纤维"
+  ],
+  "should": [
+    "粘胶短纤",
+    "小丝束碳纤维",
+    "大丝束碳纤维",
+    "纺织",
+    "复合材料",
+    "粘胶长丝龙头",
+    "碳纤维拓展"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "粘胶长丝",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳纤维",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:52:13"
+}

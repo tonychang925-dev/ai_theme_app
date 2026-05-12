@@ -1,0 +1,41 @@
+{
+  "stock_id": "002757",
+  "stock_name": "南兴股份",
+  "concept": "家居智能制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "家居智能制造装备",
+    "智能生产线",
+    "南兴"
+  ],
+  "should": [
+    "开料",
+    "封边",
+    "钻孔",
+    "分拣",
+    "包装",
+    "菲达",
+    "云计算",
+    "智算",
+    "AI业务",
+    "数据中心"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "家居智能制造装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能生产线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "南兴",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:56:10"
+}

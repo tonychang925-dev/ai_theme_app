@@ -1,0 +1,41 @@
+{
+  "stock_id": "002203",
+  "stock_name": "海亮股份",
+  "concept": "铜加工巨匠",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铜加工巨匠",
+    "铜管",
+    "铜棒"
+  ],
+  "should": [
+    "铜箔",
+    "铜管接件",
+    "铜管铜棒生产技术",
+    "铜箔关键制造技术",
+    "导体材料",
+    "空调和冰箱制冷",
+    "传统及新能源汽车",
+    "建筑水管",
+    "海水淡化",
+    "舰船制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铜加工巨匠",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铜管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铜棒",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:29:04"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "600763",
+  "stock_name": "通策医疗",
+  "concept": "口腔医疗服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "口腔医疗服务",
+    "总院+分院",
+    "核心医生持股",
+    "蒲公英计划",
+    "CM团队接诊模式"
+  ],
+  "should": [
+    "体外存济基金",
+    "通策牙学院",
+    "种植倍增计划",
+    "特色分院计划",
+    "正畸",
+    "种植",
+    "三级医生合伙人体系",
+    "杭州口腔医院平海院区",
+    "城西院区",
+    "宁波口腔医院"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "口腔医疗服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "总院+分院",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核心医生持股",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蒲公英计划",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CM团队接诊模式",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:27:05"
+}

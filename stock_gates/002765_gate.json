@@ -1,0 +1,41 @@
+{
+  "stock_id": "002765",
+  "stock_name": "蓝黛科技",
+  "concept": "动力传动与触控显示",
+  "strategy_type": "industry_chain",
+  "must": [
+    "机器人一体化关节模组",
+    "电驱系统零部件",
+    "变速器总成"
+  ],
+  "should": [
+    "车载触摸屏",
+    "显示模组",
+    "双联屏",
+    "三联屏",
+    "曲面屏",
+    "触控显示一体化",
+    "传统汽车",
+    "新能源汽车",
+    "汽车电子",
+    "人形机器人"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "机器人一体化关节模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电驱系统零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "变速器总成",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:56:32"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "600329",
+  "stock_name": "达仁堂",
+  "concept": "绿色中药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "速效救心丸",
+    "三核九翼"
+  ],
+  "should": [
+    "通脉养心丸",
+    "清咽滴丸",
+    "胃肠安丸",
+    "癃清片",
+    "痹祺胶囊",
+    "清肺消炎丸",
+    "川贝枇杷滴丸",
+    "固体分散技术",
+    "提取、分离与精制",
+    "绿色中药"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "速效救心丸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三核九翼",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:15:07"
+}

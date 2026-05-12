@@ -1,0 +1,45 @@
+{
+  "stock_id": "301085",
+  "stock_name": "亚康股份",
+  "concept": "算力基础设施服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "算力基础设施综合服务",
+    "算力设备集成销售",
+    "云和数字化解决方案",
+    "C+4S"
+  ],
+  "should": [
+    "算力基础设施服务",
+    "阿里巴巴",
+    "腾讯",
+    "百度",
+    "字节跳动",
+    "金山云",
+    "大中华地区",
+    "东南亚",
+    "北美"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "算力基础设施综合服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "算力设备集成销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云和数字化解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "C+4S",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:55:58"
+}

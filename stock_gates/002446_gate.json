@@ -1,0 +1,41 @@
+{
+  "stock_id": "002446",
+  "stock_name": "盛路通信",
+  "concept": "军工通信",
+  "strategy_type": "industry_chain",
+  "must": [
+    "超宽带上下变频系统",
+    "超宽带上下变频技术",
+    "移动通信天线"
+  ],
+  "should": [
+    "基站天线",
+    "微波/毫米波天线",
+    "室内网络覆盖产品",
+    "智能终端天线",
+    "汽车天线",
+    "军工通信",
+    "微波电路专业化设计",
+    "遥感",
+    "遥测",
+    "雷达"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "超宽带上下变频系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超宽带上下变频技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动通信天线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:42:08"
+}

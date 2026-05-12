@@ -1,0 +1,36 @@
+{
+  "stock_id": "000690",
+  "stock_name": "宝新能源",
+  "concept": "民营火电龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "民营火电龙头",
+    "火电"
+  ],
+  "should": [
+    "风电",
+    "海上风电",
+    "汕尾后湖海风项目",
+    "长期股权投资",
+    "证券投资",
+    "在运3.52GW",
+    "在建2GW",
+    "规划6GW",
+    "广东梅州",
+    "广东陆丰"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "民营火电龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "火电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:00:53"
+}

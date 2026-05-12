@@ -1,0 +1,40 @@
+{
+  "stock_id": "688196",
+  "stock_name": "卓越新能",
+  "concept": "再生生物柴油",
+  "strategy_type": "industry_chain",
+  "must": [
+    "再生生物柴油",
+    "生物柴油",
+    "废弃油脂再生生物柴油技术"
+  ],
+  "should": [
+    "生物基材料",
+    "生物酯增塑剂",
+    "环保型醇酸树脂",
+    "工业甘油",
+    "欧洲等海外市场",
+    "国内增塑剂市场",
+    "燃料市场",
+    "国内产销规模最大",
+    "出口量最大"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "再生生物柴油",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物柴油",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "废弃油脂再生生物柴油技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:11:26"
+}

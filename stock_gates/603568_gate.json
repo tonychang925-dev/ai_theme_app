@@ -1,0 +1,44 @@
+{
+  "stock_id": "603568",
+  "stock_name": "伟明环保",
+  "concept": "垃圾焚烧发电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "垃圾焚烧发电",
+    "城市生活垃圾焚烧发电",
+    "设备销售及技术服务",
+    "自主知识产权焚烧设备"
+  ],
+  "should": [
+    "餐厨垃圾处置",
+    "渗透液处理",
+    "垃圾清运",
+    "二段往复式炉排",
+    "新能源材料（高镍三元正极）",
+    "全产业链优势",
+    "成本控制能力出众",
+    "单位投资成本低于行业平均值"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "垃圾焚烧发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市生活垃圾焚烧发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "设备销售及技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自主知识产权焚烧设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:52:23"
+}

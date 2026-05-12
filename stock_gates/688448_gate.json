@@ -1,0 +1,40 @@
+{
+  "stock_id": "688448",
+  "stock_name": "磁谷科技",
+  "concept": "磁悬浮流体机械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "磁悬浮离心式鼓风机",
+    "磁悬浮空气压缩机",
+    "磁悬浮流体机械"
+  ],
+  "should": [
+    "磁悬浮冷水机组",
+    "磁悬浮真空泵",
+    "磁悬浮轴承技术",
+    "主控芯片",
+    "固件开发",
+    "流体部件性能优化",
+    "降噪优化",
+    "自主研发",
+    "全系列开发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "磁悬浮离心式鼓风机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磁悬浮空气压缩机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磁悬浮流体机械",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:18:26"
+}

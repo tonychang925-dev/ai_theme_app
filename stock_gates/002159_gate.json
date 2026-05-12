@@ -1,0 +1,41 @@
+{
+  "stock_id": "002159",
+  "stock_name": "三特索道",
+  "concept": "索道景区运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "索道",
+    "景区",
+    "生态主题乐园"
+  ],
+  "should": [
+    "主题乐园",
+    "陕西华山索道",
+    "浙江千岛湖索道",
+    "贵州梵净山景区",
+    "海南猴岛景区",
+    "智慧索道管理系统",
+    "索道景区运营",
+    "景区交通接驳体系",
+    "景区综合运营体系",
+    "非标住宿产品体系"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "索道",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "景区",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生态主题乐园",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:26:29"
+}

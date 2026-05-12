@@ -1,0 +1,36 @@
+{
+  "stock_id": "688320",
+  "stock_name": "禾川科技",
+  "concept": "工业自动化控制",
+  "strategy_type": "industry_chain",
+  "must": [
+    "伺服系统",
+    "PLC"
+  ],
+  "should": [
+    "工控芯片",
+    "HMI",
+    "智能相机",
+    "传动模组",
+    "磁编码器",
+    "光编码器",
+    "驱动控制一体化SIP芯片",
+    "工业实时以太网技术",
+    "运动控制算法",
+    "工业自动化控制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "伺服系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PLC",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:15:26"
+}

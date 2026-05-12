@@ -1,0 +1,41 @@
+{
+  "stock_id": "000958",
+  "stock_name": "电投产融",
+  "concept": "能源产业金融",
+  "strategy_type": "industry_chain",
+  "must": [
+    "热电及新能源",
+    "金融业务",
+    "电力"
+  ],
+  "should": [
+    "保险经纪",
+    "信托",
+    "期货",
+    "能源产业金融",
+    "河北",
+    "山西",
+    "河南",
+    "天津",
+    "央企能源产业金融平台",
+    "区域垄断性"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "热电及新能源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:10:55"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "002345",
+  "stock_name": "潮宏基",
+  "concept": "时尚珠宝女包",
+  "strategy_type": "industry_chain",
+  "must": [
+    "时尚珠宝",
+    "女包",
+    "潮宏基"
+  ],
+  "should": [
+    "Venti梵迪",
+    "FION菲安妮",
+    "时尚珠宝女包",
+    "抖音电商",
+    "年轻消费者",
+    "差异化定位",
+    "产品设计时尚",
+    "工艺创新",
+    "研发投入"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "时尚珠宝",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "女包",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "潮宏基",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:36:43"
+}

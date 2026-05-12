@@ -1,0 +1,36 @@
+{
+  "stock_id": "688569",
+  "stock_name": "铁科轨道",
+  "concept": "轨道扣件龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轨道扣件龙头",
+    "高铁扣件"
+  ],
+  "should": [
+    "重载扣件",
+    "高铁特殊调整扣件",
+    "普铁扣件",
+    "地铁高弹性减振扣件",
+    "城轨扣件",
+    "预应力钢丝及锚固板",
+    "铁路桥梁支座",
+    "高弹性垫板",
+    "高振幅弹条",
+    "工程材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轨道扣件龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高铁扣件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:20:55"
+}

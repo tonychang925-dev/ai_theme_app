@@ -1,0 +1,41 @@
+{
+  "stock_id": "300685",
+  "stock_name": "艾德生物",
+  "concept": "肿瘤精准诊断",
+  "strategy_type": "industry_chain",
+  "must": [
+    "肿瘤精准诊断",
+    "伴随诊断试剂",
+    "检测试剂"
+  ],
+  "should": [
+    "药物临床研究服务",
+    "生物信息算法",
+    "PCR",
+    "NGS",
+    "免疫组化",
+    "原位荧光杂交",
+    "软件",
+    "配套仪器",
+    "肺癌",
+    "结直肠癌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "肿瘤精准诊断",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "伴随诊断试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "检测试剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:38:52"
+}

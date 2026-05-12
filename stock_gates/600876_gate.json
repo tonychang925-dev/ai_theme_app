@@ -1,0 +1,25 @@
+{
+  "stock_id": "600876",
+  "stock_name": "凯盛新能",
+  "concept": "光伏玻璃",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光伏玻璃"
+  ],
+  "should": [
+    "玻璃熔窑二氧化碳捕集与提纯技术",
+    "双玻组件玻璃",
+    "央企控股",
+    "中国建材集团产业平台支持"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光伏玻璃",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:30:16"
+}

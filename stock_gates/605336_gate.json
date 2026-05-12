@@ -1,0 +1,41 @@
+{
+  "stock_id": "605336",
+  "stock_name": "帅丰电器",
+  "concept": "集成灶",
+  "strategy_type": "industry_chain",
+  "must": [
+    "集成灶",
+    "蒸烤一体集成灶",
+    "一站式集成智慧厨房"
+  ],
+  "should": [
+    "集成水槽",
+    "侧吸下排技术",
+    "高负压风道系统",
+    "油脂分离系统",
+    "可拆卸导烟板技术",
+    "全智能控制吸烟导流板",
+    "烟道防火装置",
+    "KOMS系统",
+    "语音控制功能",
+    "APP远程控制功能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "集成灶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蒸烤一体集成灶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一站式集成智慧厨房",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:03:53"
+}

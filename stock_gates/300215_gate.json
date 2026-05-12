@@ -1,0 +1,36 @@
+{
+  "stock_id": "300215",
+  "stock_name": "电科院",
+  "concept": "电器检测服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "独立第三方综合电器检测",
+    "电器检测服务"
+  ],
+  "should": [
+    "国家电器产品质量检验检测中心",
+    "国家汽车电气产品质量检验检测中心",
+    "发电设备",
+    "输变电设备",
+    "机电设备",
+    "电器元件",
+    "成套配电装置",
+    "日用电器",
+    "机床电器",
+    "船用电器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "独立第三方综合电器检测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电器检测服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:17:56"
+}

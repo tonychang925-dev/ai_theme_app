@@ -1,0 +1,36 @@
+{
+  "stock_id": "600710",
+  "stock_name": "苏美达",
+  "concept": "双链驱动服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "供应链运营",
+    "清洁能源"
+  ],
+  "should": [
+    "光伏组件",
+    "EPC工程",
+    "柴油发电机组",
+    "OPE",
+    "纺织服装",
+    "家纺",
+    "品牌服装",
+    "双链驱动服务",
+    "产业链拓展",
+    "大宗商品运营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "供应链运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "清洁能源",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:25:31"
+}

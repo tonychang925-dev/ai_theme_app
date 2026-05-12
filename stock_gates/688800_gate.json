@@ -1,0 +1,45 @@
+{
+  "stock_id": "688800",
+  "stock_name": "瑞可达",
+  "concept": "国产连接器龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国产连接器龙头",
+    "连接器",
+    "高压大电流连接技术",
+    "车载高速核心技术"
+  ],
+  "should": [
+    "连接器组件",
+    "换电连接技术",
+    "智能网联连接技术",
+    "新能源汽车",
+    "通信",
+    "储能与新能源",
+    "工业机器人",
+    "轨道交通",
+    "医疗器械"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国产连接器龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "连接器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高压大电流连接技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载高速核心技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:25:24"
+}

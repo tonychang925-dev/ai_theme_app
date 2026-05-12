@@ -1,0 +1,41 @@
+{
+  "stock_id": "300334",
+  "stock_name": "津膜科技",
+  "concept": "膜技术引领者",
+  "strategy_type": "industry_chain",
+  "must": [
+    "超滤膜",
+    "微滤膜",
+    "膜组件"
+  ],
+  "should": [
+    "膜技术引领者",
+    "膜材料研发",
+    "膜应用技术",
+    "市政污水处理",
+    "印染废水处理",
+    "石化废水处理",
+    "煤化工废水处理",
+    "海水淡化",
+    "膜产品销售",
+    "换膜服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "超滤膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "微滤膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "膜组件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:22:56"
+}

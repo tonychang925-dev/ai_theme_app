@@ -1,0 +1,43 @@
+{
+  "stock_id": "688201",
+  "stock_name": "信安世纪",
+  "concept": "信息安全",
+  "strategy_type": "industry_chain",
+  "must": [
+    "身份安全产品",
+    "数据安全产品",
+    "通信安全产品",
+    "密码技术"
+  ],
+  "should": [
+    "移动安全产品",
+    "云安全产品",
+    "平台安全产品",
+    "金融",
+    "政府",
+    "企业",
+    "商用密码领域领先企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "身份安全产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数据安全产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通信安全产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "密码技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:11:34"
+}

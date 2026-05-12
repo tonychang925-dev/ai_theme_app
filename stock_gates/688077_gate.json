@@ -1,0 +1,45 @@
+{
+  "stock_id": "688077",
+  "stock_name": "大地熊",
+  "concept": "烧结钕铁硼永磁材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "烧结钕铁硼永磁材料",
+    "高性能烧结钕铁硼永磁材料",
+    "新能源汽车驱动电机",
+    "节能电机"
+  ],
+  "should": [
+    "5G和3C产品",
+    "材料配方设计",
+    "橡胶磁",
+    "其他磁性制品",
+    "生产设备改进",
+    "系统流程优化",
+    "工艺过程监控",
+    "关键功能材料",
+    "关键基础材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "烧结钕铁硼永磁材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高性能烧结钕铁硼永磁材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车驱动电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "节能电机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:07:30"
+}

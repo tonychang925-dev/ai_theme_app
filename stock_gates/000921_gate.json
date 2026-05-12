@@ -1,0 +1,51 @@
+{
+  "stock_id": "000921",
+  "stock_name": "海信家电",
+  "concept": "白电龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "海信",
+    "中央空调",
+    "家用空调",
+    "冰箱",
+    "洗衣机"
+  ],
+  "should": [
+    "科龙",
+    "容声",
+    "日立",
+    "约克（中国区多联机）",
+    "古洛尼",
+    "ASKO",
+    "三电",
+    "厨房电器",
+    "商用冷链",
+    "模具"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "海信",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中央空调",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "家用空调",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冰箱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "洗衣机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:09:40"
+}

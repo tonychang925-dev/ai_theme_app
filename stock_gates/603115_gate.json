@@ -1,0 +1,51 @@
+{
+  "stock_id": "603115",
+  "stock_name": "海星股份",
+  "concept": "电极箔龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电极箔龙头",
+    "全系列电极箔",
+    "FT超高比容低压电极箔",
+    "HD强耐水性高压电极箔",
+    "HG长寿命电极箔"
+  ],
+  "should": [
+    "电化学扩面腐蚀技术",
+    "化成技术",
+    "电解液配方",
+    "工艺参数控制",
+    "生产设备研制",
+    "控制系统研发",
+    "工业机电",
+    "航空航天",
+    "新能源汽车",
+    "新能源发电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电极箔龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全系列电极箔",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "FT超高比容低压电极箔",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "HD强耐水性高压电极箔",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "HG长寿命电极箔",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:44:10"
+}

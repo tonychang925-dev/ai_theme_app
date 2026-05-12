@@ -1,0 +1,36 @@
+{
+  "stock_id": "000949",
+  "stock_name": "新乡化纤",
+  "concept": "化学纤维制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生物质纤维素长丝",
+    "氨纶纤维"
+  ],
+  "should": [
+    "连续纺长丝工艺",
+    "半连续纺长丝工艺",
+    "湿法纺丝",
+    "服装面料",
+    "里料",
+    "金丝绒",
+    "装饰布",
+    "电脑绣花线",
+    "医用领域",
+    "工业领域"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生物质纤维素长丝",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氨纶纤维",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:10:35"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "603186",
+  "stock_name": "华正新材",
+  "concept": "覆铜板龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "覆铜板龙头",
+    "覆铜板",
+    "铝塑膜"
+  ],
+  "should": [
+    "高频高速材料",
+    "复合材料",
+    "覆铜板老牌企业",
+    "低介电常数",
+    "低介电损耗",
+    "5G通讯",
+    "数据交换",
+    "新能源汽车",
+    "智慧家电",
+    "医疗设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "覆铜板龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "覆铜板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铝塑膜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:45:46"
+}

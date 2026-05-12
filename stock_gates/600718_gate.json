@@ -1,0 +1,45 @@
+{
+  "stock_id": "600718",
+  "stock_name": "东软集团",
+  "concept": "IT解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "IT解决方案",
+    "智慧城市",
+    "医疗健康",
+    "智能汽车互联"
+  ],
+  "should": [
+    "云计算",
+    "大数据",
+    "物联网",
+    "人工智能",
+    "区块链",
+    "智能数字座舱",
+    "智慧医保",
+    "企业数字化转型",
+    "全民健康信息化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "IT解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧城市",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗健康",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能汽车互联",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:25:45"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "600661",
+  "stock_name": "昂立教育",
+  "concept": "综合教育服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "职业教育",
+    "青少儿素质教育",
+    "国际与基础教育",
+    "大学生教育"
+  ],
+  "should": [
+    "实践创造营",
+    "科创",
+    "研学",
+    "生涯规划",
+    "课题班",
+    "竞赛营",
+    "小凯编程",
+    "美术",
+    "国学",
+    "考研"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "职业教育",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "青少儿素质教育",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国际与基础教育",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大学生教育",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:24:17"
+}

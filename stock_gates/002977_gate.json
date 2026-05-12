@@ -1,0 +1,45 @@
+{
+  "stock_id": "002977",
+  "stock_name": "天箭科技",
+  "concept": "固态微波前端",
+  "strategy_type": "industry_chain",
+  "must": [
+    "固态微波前端",
+    "弹载固态发射机",
+    "新型相控阵产品",
+    "固态微波前端技术"
+  ],
+  "should": [
+    "其他固态发射机产品",
+    "第三代半导体材料应用",
+    "弹载雷达系统",
+    "机载雷达系统",
+    "星载雷达系统",
+    "车载雷达系统",
+    "电子对抗",
+    "军事卫星通信",
+    "测控"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "固态微波前端",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "弹载固态发射机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新型相控阵产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "固态微波前端技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:05:51"
+}

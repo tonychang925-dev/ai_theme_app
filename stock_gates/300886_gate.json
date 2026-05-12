@@ -1,0 +1,41 @@
+{
+  "stock_id": "300886",
+  "stock_name": "华业香料",
+  "concept": "内酯香料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "内酯香料",
+    "丙位内酯系列香料",
+    "丁位内酯系列香料"
+  ],
+  "should": [
+    "香气控制技术",
+    "加氢技术",
+    "新型氧化剂氧化技术",
+    "膜分离技术",
+    "固体催化剂自动过滤技术",
+    "副产物回收资源综合利用技术",
+    "食品饮料",
+    "日化",
+    "烟草",
+    "饲料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "内酯香料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "丙位内酯系列香料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "丁位内酯系列香料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:47:48"
+}

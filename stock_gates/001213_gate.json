@@ -1,0 +1,41 @@
+{
+  "stock_id": "001213",
+  "stock_name": "中铁特货",
+  "concept": "铁路特货物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铁路特货物流",
+    "商品汽车物流",
+    "冷链物流"
+  ],
+  "should": [
+    "大件货物物流",
+    "一汽集团",
+    "东风汽车集团",
+    "上汽集团",
+    "兵装集团",
+    "北汽集团",
+    "广汽集团",
+    "长城汽车",
+    "吉利汽车",
+    "比亚迪"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铁路特货物流",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商品汽车物流",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冷链物流",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:13:46"
+}

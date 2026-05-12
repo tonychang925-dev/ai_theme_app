@@ -1,0 +1,46 @@
+{
+  "stock_id": "600373",
+  "stock_name": "中文传媒",
+  "concept": "出版传媒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "出版传媒",
+    "新媒体",
+    "数字出版",
+    "互联网游戏"
+  ],
+  "should": [
+    "印刷发行",
+    "数字教育",
+    "文化综合体",
+    "国内外贸易和供应链业务",
+    "现代物流和物联网技术应用",
+    "艺术品经营",
+    "印刷包装",
+    "物资贸易业务",
+    "新媒体新业态",
+    "投资业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "出版传媒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新媒体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字出版",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "互联网游戏",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:16:32"
+}

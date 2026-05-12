@@ -1,0 +1,46 @@
+{
+  "stock_id": "300814",
+  "stock_name": "中富电路",
+  "concept": "印制电路板",
+  "strategy_type": "industry_chain",
+  "must": [
+    "印制电路板",
+    "多层板",
+    "高频高速板",
+    "刚挠结合板"
+  ],
+  "should": [
+    "单面板",
+    "双面板",
+    "厚铜板",
+    "埋容埋阻产品",
+    "通信",
+    "工业控制",
+    "消费电子",
+    "汽车电子",
+    "医疗电子",
+    "高密度"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "印制电路板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多层板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高频高速板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "刚挠结合板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:44:12"
+}

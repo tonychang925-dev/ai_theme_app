@@ -1,0 +1,41 @@
+{
+  "stock_id": "300005",
+  "stock_name": "探路者",
+  "concept": "户外+芯片双主业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "户外+芯片双主业",
+    "户外用品业务",
+    "芯片业务"
+  ],
+  "should": [
+    "户外服装",
+    "鞋",
+    "背包",
+    "帐篷",
+    "睡袋",
+    "登山装备",
+    "极地仿生科技平台",
+    "户外用品行业",
+    "半导体行业",
+    "户外运动"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "户外+芯片双主业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "户外用品业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "芯片业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:09:06"
+}

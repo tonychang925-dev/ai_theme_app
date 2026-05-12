@@ -1,0 +1,41 @@
+{
+  "stock_id": "000402",
+  "stock_name": "金融街",
+  "concept": "地产开发+产业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "地产开发+产业",
+    "住宅产品",
+    "商务产品"
+  ],
+  "should": [
+    "写字楼板块",
+    "商业板块",
+    "酒店和文旅板块",
+    "北京",
+    "上海",
+    "长三角",
+    "大湾区",
+    "京津冀",
+    "成渝",
+    "长江中游"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "地产开发+产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "住宅产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商务产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:51:32"
+}

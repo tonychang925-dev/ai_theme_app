@@ -1,0 +1,39 @@
+{
+  "stock_id": "300405",
+  "stock_name": "科隆股份",
+  "concept": "精细化学品制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环氧乙烷衍生物产品研发",
+    "聚羧酸减水剂浓缩液",
+    "水性环保型涂料中间体"
+  ],
+  "should": [
+    "聚羧酸泵送剂",
+    "粉体减水剂",
+    "脱硝催化剂",
+    "聚羧酸减水剂浓缩液供应商",
+    "精细化学品制造",
+    "合成工艺产品系列化研究",
+    "复配技术研究",
+    "差异化经营策略"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环氧乙烷衍生物产品研发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚羧酸减水剂浓缩液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水性环保型涂料中间体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:25:57"
+}

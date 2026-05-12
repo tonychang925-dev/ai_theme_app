@@ -1,0 +1,32 @@
+{
+  "stock_id": "688311",
+  "stock_name": "盟升电子",
+  "concept": "卫星通信导航",
+  "strategy_type": "industry_chain",
+  "must": [
+    "卫星导航终端设备",
+    "卫星通信天线及组件"
+  ],
+  "should": [
+    "导航天线",
+    "微波变频",
+    "信号与信息处理",
+    "全国产化设计",
+    "国内主要供应商",
+    "配套层级不断提升"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "卫星导航终端设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "卫星通信天线及组件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:14:59"
+}

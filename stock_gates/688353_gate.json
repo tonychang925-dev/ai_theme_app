@@ -1,0 +1,41 @@
+{
+  "stock_id": "688353",
+  "stock_name": "华盛锂电",
+  "concept": "电解液添加剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电解液添加剂",
+    "碳酸亚乙烯酯（VC）",
+    "氟代碳酸乙烯酯（FEC）"
+  ],
+  "should": [
+    "锂电池电解液",
+    "3C产品电池",
+    "锂动力电池",
+    "储能电池",
+    "消费电池",
+    "龙头企业",
+    "市场领先供应商",
+    "双草酸硼酸锂（BOB）",
+    "特殊有机硅",
+    "非光气法生产异氰酸酯硅烷"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电解液添加剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳酸亚乙烯酯（VC）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氟代碳酸乙烯酯（FEC）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:16:17"
+}

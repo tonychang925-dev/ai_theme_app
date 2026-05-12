@@ -1,0 +1,22 @@
+{
+  "stock_id": "301257",
+  "stock_name": "普蕊斯",
+  "concept": "临床试验现场管理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "临床试验现场管理"
+  ],
+  "should": [
+    "上市阶段临床试验（Ⅳ期）"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "临床试验现场管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:00:58"
+}

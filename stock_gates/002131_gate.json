@@ -1,0 +1,36 @@
+{
+  "stock_id": "002131",
+  "stock_name": "利欧股份",
+  "concept": "数字营销与泵业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "一站式整合数字营销服务",
+    "水泵"
+  ],
+  "should": [
+    "工业泵",
+    "民用及商用泵",
+    "农业灌溉",
+    "生活用水",
+    "深井提水",
+    "畜牧用水",
+    "热水循环",
+    "水利",
+    "水务",
+    "石化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "一站式整合数字营销服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水泵",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:24:53"
+}

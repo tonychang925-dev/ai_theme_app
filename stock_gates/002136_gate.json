@@ -1,0 +1,28 @@
+{
+  "stock_id": "002136",
+  "stock_name": "安纳达",
+  "concept": "钛白粉与磷酸铁",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钛白粉"
+  ],
+  "should": [
+    "磷酸铁",
+    "涂料",
+    "塑料",
+    "造纸",
+    "磷酸铁锂电池正极材料",
+    "国内较早的钛白粉生产企业之一",
+    "磷酸铁市场占有率约14.5%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钛白粉",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:25:04"
+}

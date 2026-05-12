@@ -1,0 +1,51 @@
+{
+  "stock_id": "002092",
+  "stock_name": "中泰化学",
+  "concept": "氯碱化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "氯碱化工",
+    "纺织工业",
+    "供应链贸易",
+    "PVC",
+    "烧碱"
+  ],
+  "should": [
+    "粘胶短纤",
+    "新疆国资控股企业",
+    "离子膜电解槽国产化",
+    "PVC分散剂国产化",
+    "现代煤化工及催化技术",
+    "高性能纤维产品和技术转化",
+    "建材",
+    "家电",
+    "服装",
+    "日用品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "氯碱化工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "纺织工业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "供应链贸易",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PVC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "烧碱",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:22:47"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "603599",
+  "stock_name": "广信股份",
+  "concept": "光气化农药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "多菌灵",
+    "甲基硫菌灵",
+    "敌草隆",
+    "草甘膦",
+    "光气"
+  ],
+  "should": [
+    "光气合成技术",
+    "DAP/HAP杂质控制技术",
+    "硫氰化反应技术",
+    "敌草隆合成技术",
+    "氨基甲酸甲酯合成技术",
+    "异氰酸酯合成技术",
+    "邻苯二胺",
+    "3-4二氯苯胺",
+    "氯气",
+    "光气化农药"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "多菌灵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "甲基硫菌灵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "敌草隆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "草甘膦",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光气",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:52:54"
+}

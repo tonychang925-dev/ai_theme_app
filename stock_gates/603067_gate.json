@@ -1,0 +1,51 @@
+{
+  "stock_id": "603067",
+  "stock_name": "振华股份",
+  "concept": "全球铬盐龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球铬盐龙头",
+    "重铬酸钠",
+    "铬酸酐",
+    "氧化铬绿",
+    "碱式硫酸铬"
+  ],
+  "should": [
+    "重铬酸钾",
+    "精制元明粉",
+    "铬黄",
+    "金属铬",
+    "超细氢氧化铝",
+    "维生素K3",
+    "铝热法",
+    "清洁生产工艺",
+    "酸、汽、电联产",
+    "表面处理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球铬盐龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重铬酸钠",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铬酸酐",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氧化铬绿",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碱式硫酸铬",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:42:46"
+}

@@ -1,0 +1,45 @@
+{
+  "stock_id": "002955",
+  "stock_name": "鸿合科技",
+  "concept": "教育信息化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "IFPD",
+    "IWB",
+    "智能交互平板",
+    "智慧黑板"
+  ],
+  "should": [
+    "互联黑板",
+    "鸿合π6交互教学软件",
+    "鸿U UI系统",
+    "红鹤笔记",
+    "鸿合集中控制管理平台",
+    "鸿合智慧教室",
+    "鸿合双师课堂",
+    "专递课堂",
+    "鸿合常态化录播"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "IFPD",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IWB",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能交互平板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧黑板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:04:58"
+}

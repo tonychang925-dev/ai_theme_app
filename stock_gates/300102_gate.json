@@ -1,0 +1,31 @@
+{
+  "stock_id": "300102",
+  "stock_name": "乾照光电",
+  "concept": "LED芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LED芯片",
+    "全色系LED外延片和芯片"
+  ],
+  "should": [
+    "砷化镓太阳能电池外延片和芯片",
+    "LED显示屏",
+    "LED产业链上游企业",
+    "中国内地红黄光芯片最大供应商之一",
+    "国内第一梯队"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全色系LED外延片和芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:13:18"
+}

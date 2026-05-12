@@ -1,0 +1,36 @@
+{
+  "stock_id": "688059",
+  "stock_name": "华锐精密",
+  "concept": "硬质合金刀具",
+  "strategy_type": "industry_chain",
+  "must": [
+    "硬质合金数控刀片",
+    "国内刀具领先企业"
+  ],
+  "should": [
+    "硬质合金刀具",
+    "车削系列产品",
+    "铣削系列产品",
+    "钻削系列产品",
+    "硬质合金切削刀具制造",
+    "研发投入",
+    "个性化切削加工解决方案",
+    "石油化工",
+    "进口替代",
+    "国产刀具向高端市场延伸"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "硬质合金数控刀片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内刀具领先企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:06:45"
+}

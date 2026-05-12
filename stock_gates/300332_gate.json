@@ -1,0 +1,35 @@
+{
+  "stock_id": "300332",
+  "stock_name": "天壕能源",
+  "concept": "燃气供应",
+  "strategy_type": "industry_chain",
+  "must": [
+    "燃气供应",
+    "神安线管道",
+    "燃气销售"
+  ],
+  "should": [
+    "燃气供应及安装",
+    "煤层气",
+    "合同能源管理",
+    "水处理工程服务及膜产品销售收入"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "燃气供应",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "神安线管道",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "燃气销售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:22:52"
+}

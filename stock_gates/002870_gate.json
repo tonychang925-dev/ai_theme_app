@@ -1,0 +1,35 @@
+{
+  "stock_id": "002870",
+  "stock_name": "香山股份",
+  "concept": "智能座舱与充电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能座舱内饰件",
+    "新能源充配电系统"
+  ],
+  "should": [
+    "充电桩",
+    "智能座舱与充电",
+    "车规级制造",
+    "4G通信",
+    "即插即充",
+    "预约充电",
+    "在线升级",
+    "大众MEB平台独家供应商",
+    "高端整车厂商合作"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能座舱内饰件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源充配电系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:01:01"
+}

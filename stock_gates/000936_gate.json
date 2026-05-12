@@ -1,0 +1,41 @@
+{
+  "stock_id": "000936",
+  "stock_name": "华西股份",
+  "concept": "涤纶化纤+石化仓储",
+  "strategy_type": "industry_chain",
+  "must": [
+    "涤纶短纤维",
+    "国内涤纶短纤维龙头企业",
+    "涤纶化纤+石化仓储"
+  ],
+  "should": [
+    "水刺专用涤纶短纤维",
+    "半消光涤纶短纤维",
+    "有光涤纶短纤维",
+    "荧光增白涤纶短纤维",
+    "聚酯生产装置",
+    "纺线联合机",
+    "后牵伸联合机",
+    "JCS集散型控制系统",
+    "DCS集散型电脑控制",
+    "卫材"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "涤纶短纤维",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内涤纶短纤维龙头企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "涤纶化纤+石化仓储",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:10:23"
+}

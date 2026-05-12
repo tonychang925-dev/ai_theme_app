@@ -1,0 +1,44 @@
+{
+  "stock_id": "300203",
+  "stock_name": "聚光科技",
+  "concept": "高端分析仪器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端分析仪器",
+    "质谱",
+    "ICP-MS",
+    "GC-MS",
+    "LC-MS"
+  ],
+  "should": [
+    "光谱",
+    "气相色谱",
+    "样品前处理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端分析仪器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "质谱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ICP-MS",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "GC-MS",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LC-MS",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:17:15"
+}

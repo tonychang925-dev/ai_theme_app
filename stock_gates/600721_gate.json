@@ -1,0 +1,41 @@
+{
+  "stock_id": "600721",
+  "stock_name": "百花医药",
+  "concept": "医药研发服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "多肽药物开发",
+    "缓控释制剂技术平台",
+    "综合性CRO公司"
+  ],
+  "should": [
+    "局部外用和经皮给药技术平台",
+    "吸入制剂技术平台",
+    "复杂注射剂及液体制剂技术平台",
+    "医药研发服务",
+    "临床试验",
+    "生物等效试验",
+    "医学科学服务",
+    "研发立项咨询服务",
+    "数据管理及统计服务",
+    "第三方检测"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "多肽药物开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "缓控释制剂技术平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合性CRO公司",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:25:53"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "603170",
+  "stock_name": "宝立食品",
+  "concept": "西式复合调味品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "西式复合调味品"
+  ],
+  "should": [
+    "粉体类复合调味料",
+    "酱汁类复合调味料",
+    "轻烹料理酱包",
+    "轻烹料理汤包",
+    "饮品甜点配料",
+    "肯德基",
+    "必胜客",
+    "麦当劳",
+    "德克士",
+    "汉堡王"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "西式复合调味品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:45:24"
+}

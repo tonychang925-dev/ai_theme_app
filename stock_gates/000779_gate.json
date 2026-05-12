@@ -1,0 +1,51 @@
+{
+  "stock_id": "000779",
+  "stock_name": "甘咨询",
+  "concept": "工程咨询",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程咨询",
+    "勘察设计",
+    "技术服务",
+    "工程施工",
+    "工程监理"
+  ],
+  "should": [
+    "规划咨询",
+    "高烈度地区抗震设计",
+    "大跨度大空间结构抗震设计",
+    "建筑节能技术推广应用",
+    "寒冷地区绿色建筑能耗综合处理",
+    "高扬程大流量提灌工程",
+    "大型跨流域调水工程",
+    "大型灌区及移民综合开发工程",
+    "长距离穿越沙漠调水工程",
+    "流域水资源综合利用及生态治理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程咨询",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "勘察设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程施工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程监理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:04:40"
+}

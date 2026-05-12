@@ -1,0 +1,46 @@
+{
+  "stock_id": "002806",
+  "stock_name": "华锋股份",
+  "concept": "新能源汽车电控",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源汽车电控",
+    "整车电控及驱动系统技术",
+    "低压腐蚀箔",
+    "低压化成箔"
+  ],
+  "should": [
+    "智能整车控制器",
+    "电驱动与传动系统",
+    "高压集成控制器",
+    "电动商用车电控及驱动系统平台",
+    "主控芯片",
+    "固件开发",
+    "新能源客车",
+    "新能源轻卡",
+    "燃料电池公路客车",
+    "铝电解电容器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源汽车电控",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "整车电控及驱动系统技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "低压腐蚀箔",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "低压化成箔",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:58:16"
+}

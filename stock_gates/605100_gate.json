@@ -1,0 +1,35 @@
+{
+  "stock_id": "605100",
+  "stock_name": "华丰股份",
+  "concept": "柴油发动机及零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "柴油发动机及零部件",
+    "柴油发动机"
+  ],
+  "should": [
+    "智能化发电机组",
+    "轻量化发动机核心零部件智能制造",
+    "通信基站运维",
+    "新型储能电池技术",
+    "锂金属固态电池",
+    "商用车",
+    "工程机械",
+    "数据中心",
+    "通信基站"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "柴油发动机及零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "柴油发动机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:01:49"
+}

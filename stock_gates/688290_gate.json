@@ -1,0 +1,41 @@
+{
+  "stock_id": "688290",
+  "stock_name": "景业智能",
+  "concept": "核工业机器人",
+  "strategy_type": "industry_chain",
+  "must": [
+    "核工业系列机器人",
+    "核工业智能装备",
+    "核工业机器人"
+  ],
+  "should": [
+    "全齿轮耦合传动及运动控制技术",
+    "核环境装备耐辐照设计技术",
+    "无传感力反馈和力补偿智能算法",
+    "组件遥操作快换技术",
+    "功能单元模块化设计",
+    "结构多目标优化设计",
+    "乏燃料后处理",
+    "燃料元件制造",
+    "放射性废物处理处置",
+    "核化工过程"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "核工业系列机器人",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核工业智能装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核工业机器人",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:14:18"
+}

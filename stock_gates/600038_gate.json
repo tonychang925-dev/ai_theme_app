@@ -1,0 +1,45 @@
+{
+  "stock_id": "600038",
+  "stock_name": "中直股份",
+  "concept": "直升机制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "直升机制造",
+    "直升机零部件",
+    "民用直升机整机",
+    "整机生产"
+  ],
+  "should": [
+    "AC系列民用直升机",
+    "运12系列通用飞机",
+    "直升机零部件制造",
+    "航空转包生产",
+    "客户化服务",
+    "改型改装",
+    "系统集成",
+    "农林作业",
+    "地质勘探"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "直升机制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "直升机零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "民用直升机整机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "整机生产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:07:47"
+}

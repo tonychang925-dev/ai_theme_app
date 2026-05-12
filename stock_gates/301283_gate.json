@@ -1,0 +1,31 @@
+{
+  "stock_id": "301283",
+  "stock_name": "聚胶股份",
+  "concept": "卫材热熔胶",
+  "strategy_type": "industry_chain",
+  "must": [
+    "卫材热熔胶"
+  ],
+  "should": [
+    "结构胶",
+    "橡筋胶",
+    "背胶",
+    "特种胶",
+    "Ekostar",
+    "宝洁",
+    "日本大王",
+    "维达",
+    "尤妮佳",
+    "纸尿裤"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "卫材热熔胶",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:01:51"
+}

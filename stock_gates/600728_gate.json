@@ -1,0 +1,46 @@
+{
+  "stock_id": "600728",
+  "stock_name": "佳都科技",
+  "concept": "智慧城市AI",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能轨道交通产品线",
+    "智能城市交通产品线",
+    "行业大模型",
+    "企业数字化升级"
+  ],
+  "should": [
+    "人脸识别",
+    "视频结构化",
+    "知识图谱",
+    "大数据",
+    "ICT产品与服务解决方案",
+    "智慧城市AI",
+    "数字孪生",
+    "大模型产品与服务",
+    "智能化轨道交通",
+    "城市智能交通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能轨道交通产品线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能城市交通产品线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "行业大模型",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "企业数字化升级",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:26:04"
+}

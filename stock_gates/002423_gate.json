@@ -1,0 +1,40 @@
+{
+  "stock_id": "002423",
+  "stock_name": "中粮资本",
+  "concept": "农粮金融",
+  "strategy_type": "industry_chain",
+  "must": [
+    "寿险",
+    "期货",
+    "信托"
+  ],
+  "should": [
+    "农粮金融",
+    "银行",
+    "产业投资",
+    "商业保理",
+    "产融结合",
+    "综合协同",
+    "产业金融服务",
+    "跨牌照协作",
+    "粮油食品产业链"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "寿险",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "期货",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信托",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:40:55"
+}

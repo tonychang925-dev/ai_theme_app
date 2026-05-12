@@ -1,0 +1,41 @@
+{
+  "stock_id": "300229",
+  "stock_name": "拓尔思",
+  "concept": "政府NLP应用",
+  "strategy_type": "industry_chain",
+  "must": [
+    "政府NLP应用",
+    "NLP",
+    "公共安全"
+  ],
+  "should": [
+    "金融",
+    "政府",
+    "语义智能",
+    "知识图谱",
+    "公安情报研判",
+    "金融智能风控",
+    "政府门户智能问答",
+    "互联网",
+    "传媒",
+    "制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "政府NLP应用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "NLP",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公共安全",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:18:27"
+}

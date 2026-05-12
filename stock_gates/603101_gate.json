@@ -1,0 +1,28 @@
+{
+  "stock_id": "603101",
+  "stock_name": "汇嘉时代",
+  "concept": "商超连锁",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商超连锁"
+  ],
+  "should": [
+    "百货",
+    "商超",
+    "错位经营",
+    "精细化运营",
+    "差异化营销",
+    "自营品牌",
+    "直营品牌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商超连锁",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:43:41"
+}

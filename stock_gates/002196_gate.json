@@ -1,0 +1,41 @@
+{
+  "stock_id": "002196",
+  "stock_name": "方正电机",
+  "concept": "驱动电机龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源汽车驱动电机",
+    "扁线电机",
+    "国内驱动电机龙头"
+  ],
+  "should": [
+    "微特电机",
+    "汽车电子",
+    "家电智能控制器",
+    "800V高压电机",
+    "油冷电机",
+    "多层扁线绕组技术",
+    "8层扁线绕组技术",
+    "国内电机行业龙头",
+    "驱动电机龙头",
+    "市场份额提升"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源汽车驱动电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "扁线电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内驱动电机龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:28:43"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "300562",
+  "stock_name": "乐心医疗",
+  "concept": "健康IoT+数字健康",
+  "strategy_type": "industry_chain",
+  "must": [
+    "健康IoT+数字健康",
+    "健康IoT",
+    "大数据",
+    "物联网"
+  ],
+  "should": [
+    "数字疗法3D模型",
+    "乐心AI健康大脑",
+    "大数据平台",
+    "智能诊断平台",
+    "解决方案研发平台",
+    "智能干预平台",
+    "智能电子血压计",
+    "电子健康秤",
+    "脂肪测量仪",
+    "心贴"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "健康IoT+数字健康",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "健康IoT",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大数据",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物联网",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:32:59"
+}

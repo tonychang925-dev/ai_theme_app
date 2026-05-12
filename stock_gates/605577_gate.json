@@ -1,0 +1,46 @@
+{
+  "stock_id": "605577",
+  "stock_name": "龙版传媒",
+  "concept": "东北出版发行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "出版",
+    "发行",
+    "教材教辅",
+    "《格言》期刊"
+  ],
+  "should": [
+    "数字出版",
+    "主题图书",
+    "印刷",
+    "东北出版发行",
+    "教育服务",
+    "全民阅读",
+    "文化消费",
+    "数字化转型",
+    "融合发展",
+    "线上线下协同"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "出版",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "发行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "教材教辅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "《格言》期刊",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:04:37"
+}

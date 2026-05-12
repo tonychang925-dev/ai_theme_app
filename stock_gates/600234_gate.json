@@ -1,0 +1,31 @@
+{
+  "stock_id": "600234",
+  "stock_name": "科新发展",
+  "concept": "建筑装修装饰",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑装修装饰工程"
+  ],
+  "should": [
+    "写字楼出租",
+    "建筑装修装饰工程专业承包一级资质",
+    "安全生产许可证",
+    "建筑装饰工程设计专项乙级资质",
+    "建筑装修装饰",
+    "单一施工合同模式",
+    "招投标",
+    "项目经理责任制度",
+    "公共建筑装饰",
+    "住宅精装修"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑装修装饰工程",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:12:33"
+}

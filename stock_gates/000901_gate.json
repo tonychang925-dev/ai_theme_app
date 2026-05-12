@@ -1,0 +1,41 @@
+{
+  "stock_id": "000901",
+  "stock_name": "航天科技",
+  "concept": "航天汽车电子",
+  "strategy_type": "industry_chain",
+  "must": [
+    "军工产业",
+    "汽车电子配套产业",
+    "航天汽车电子"
+  ],
+  "should": [
+    "汽车电子控制装置",
+    "电子控制单元(ECU)",
+    "惯性导航系统",
+    "惯性导航加速度传感器",
+    "石英挠性加速度计",
+    "光纤陀螺核心组件",
+    "光纤环",
+    "测试测控设备",
+    "专用电源",
+    "精密制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "军工产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车电子配套产业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航天汽车电子",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:08:53"
+}

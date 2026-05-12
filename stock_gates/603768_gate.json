@@ -1,0 +1,44 @@
+{
+  "stock_id": "603768",
+  "stock_name": "常青股份",
+  "concept": "汽车轻量化冲焊",
+  "strategy_type": "industry_chain",
+  "must": [
+    "车身冲压及焊接零部件",
+    "底盘冲压及焊接零部件",
+    "一体化压铸件",
+    "轻量化底盘"
+  ],
+  "should": [
+    "一体化压铸工艺",
+    "轻量化材料",
+    "冲压工艺",
+    "焊接工艺",
+    "汽车轻量化冲焊",
+    "汽车零部件供应商",
+    "区域优势明显",
+    "大规模生产能力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "车身冲压及焊接零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "底盘冲压及焊接零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一体化压铸件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轻量化底盘",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:56:15"
+}

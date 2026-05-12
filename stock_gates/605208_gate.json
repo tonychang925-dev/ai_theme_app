@@ -1,0 +1,51 @@
+{
+  "stock_id": "605208",
+  "stock_name": "永茂泰",
+  "concept": "铝合金铸造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铝合金铸造",
+    "铝合金锭",
+    "铝合金液",
+    "铝合金零部件",
+    "免热铝合金材料"
+  ],
+  "should": [
+    "压铸",
+    "浇铸",
+    "汽车发动机缸体",
+    "汽车发动机缸盖",
+    "汽车发动机活塞",
+    "汽车空调压缩机缸体",
+    "汽车空调压缩机缸盖",
+    "车身结构件",
+    "新能源汽车模组支架",
+    "电池包前端板"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铝合金铸造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铝合金锭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铝合金液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铝合金零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "免热铝合金材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:02:57"
+}

@@ -1,0 +1,37 @@
+{
+  "stock_id": "603289",
+  "stock_name": "泰瑞机器",
+  "concept": "高端注塑机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全电动注塑机",
+    "多物料注塑机",
+    "大型二板注塑机"
+  ],
+  "should": [
+    "高端注塑机",
+    "新能源汽车车灯",
+    "内外饰",
+    "储能电池外壳",
+    "替代欧洲日本产品",
+    "进入比亚迪供应链"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全电动注塑机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多物料注塑机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大型二板注塑机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:48:11"
+}

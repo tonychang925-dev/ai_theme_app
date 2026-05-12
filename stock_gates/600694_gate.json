@@ -1,0 +1,36 @@
+{
+  "stock_id": "600694",
+  "stock_name": "大商股份",
+  "concept": "综合性百货零售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "四自经营",
+    "集进分销"
+  ],
+  "should": [
+    "天狗网",
+    "家电",
+    "综合性百货零售",
+    "百货连锁",
+    "超市连锁",
+    "电器连锁",
+    "联销承包",
+    "合伙创业",
+    "实体店铺",
+    "微信小程序"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "四自经营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集进分销",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:25:12"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "688368",
+  "stock_name": "晶丰明源",
+  "concept": "电源管理芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电源管理芯片",
+    "LED照明驱动芯片",
+    "AC/DC电源芯片",
+    "DC/DC电源芯片"
+  ],
+  "should": [
+    "电机驱动芯片",
+    "恒流驱动技术",
+    "去VCC电容电路设计",
+    "700V-BCD工艺",
+    "数模混合SoC",
+    "电机控制算法",
+    "成本优化技术",
+    "电动车辆",
+    "电动工具",
+    "家用电器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电源管理芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LED照明驱动芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AC/DC电源芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "DC/DC电源芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:16:46"
+}

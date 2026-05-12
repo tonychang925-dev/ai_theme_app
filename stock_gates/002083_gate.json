@@ -1,0 +1,36 @@
+{
+  "stock_id": "002083",
+  "stock_name": "孚日股份",
+  "concept": "家纺及新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "毛巾系列产品",
+    "床品系列产品"
+  ],
+  "should": [
+    "热电",
+    "化工产品",
+    "电机产品",
+    "新型纤维应用",
+    "功能整理技术",
+    "组织结构设计",
+    "国内外贸易",
+    "新能源材料",
+    "全球家纺行业第一位",
+    "完整生产链条"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "毛巾系列产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "床品系列产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:22:12"
+}

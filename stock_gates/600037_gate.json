@@ -1,0 +1,43 @@
+{
+  "stock_id": "600037",
+  "stock_name": "歌华有线",
+  "concept": "有线电视网络运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "有线电视网络运营",
+    "北京市有线电视网络经营权",
+    "广电5G",
+    "电视服务"
+  ],
+  "should": [
+    "教育服务",
+    "宽带业务",
+    "终端操作系统",
+    "政企业务",
+    "广电5G核心网北方大区机房运维",
+    "中国广电一级客服中心建设运营",
+    "IP化演进"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "有线电视网络运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "北京市有线电视网络经营权",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "广电5G",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电视服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:07:51"
+}

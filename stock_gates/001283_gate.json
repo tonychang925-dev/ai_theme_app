@@ -1,0 +1,36 @@
+{
+  "stock_id": "001283",
+  "stock_name": "豪鹏科技",
+  "concept": "电池双引擎",
+  "strategy_type": "industry_chain",
+  "must": [
+    "镍氢电池",
+    "聚合物软包锂离子电池"
+  ],
+  "should": [
+    "圆柱锂离子电池",
+    "高容量",
+    "低自放电",
+    "宽温",
+    "笔记本电脑及周边",
+    "智能家居",
+    "安防设备",
+    "平板电脑",
+    "智能手机",
+    "可穿戴设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "镍氢电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚合物软包锂离子电池",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:15:17"
+}

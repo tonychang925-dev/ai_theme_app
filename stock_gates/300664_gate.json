@@ -1,0 +1,41 @@
+{
+  "stock_id": "300664",
+  "stock_name": "鹏鹞环保",
+  "concept": "环保水处理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环保水处理",
+    "高端环境技术与装备制造",
+    "WSZ成套化污水处理设备"
+  ],
+  "should": [
+    "水务投资及运营",
+    "固废资源化处理",
+    "PPMI装配式水厂",
+    "PSIW一体化污水处理设备",
+    "WSZ-F污水处理设备",
+    "CASS法活性污泥处理系统",
+    "生物接触氧化技术",
+    "市政供水",
+    "市政污水处理",
+    "乡镇及新农村污水处理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环保水处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高端环境技术与装备制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "WSZ成套化污水处理设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:37:51"
+}

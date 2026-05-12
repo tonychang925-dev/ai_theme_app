@@ -1,0 +1,51 @@
+{
+  "stock_id": "000753",
+  "stock_name": "漳州发展",
+  "concept": "城市综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "城市基础设施建设",
+    "汽车销售",
+    "光伏发电",
+    "分布式光伏",
+    "充电网建设"
+  ],
+  "should": [
+    "污水处理",
+    "水环境综合治理",
+    "光伏组件制造",
+    "海底电缆",
+    "供水",
+    "燃油车销售",
+    "新能源车销售",
+    "二手车交易",
+    "厂-网-河一体化运营",
+    "污染整治"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "城市基础设施建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分布式光伏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "充电网建设",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:03:27"
+}

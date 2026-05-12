@@ -1,0 +1,30 @@
+{
+  "stock_id": "002198",
+  "stock_name": "嘉应制药",
+  "concept": "中药制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "双料喉风散",
+    "重感灵片"
+  ],
+  "should": [
+    "中成药",
+    "丸剂",
+    "散剂",
+    "片剂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "双料喉风散",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重感灵片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:28:44"
+}

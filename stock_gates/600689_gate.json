@@ -1,0 +1,36 @@
+{
+  "stock_id": "600689",
+  "stock_name": "上海三毛",
+  "concept": "商业综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "进出口贸易",
+    "安防服务"
+  ],
+  "should": [
+    "物业园区租赁管理",
+    "自营贸易转型",
+    "存量业务延伸",
+    "品牌建设",
+    "高等院校",
+    "商业银行",
+    "大型游乐园区",
+    "存量资源盘活",
+    "资产出租",
+    "资金收益"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "进出口贸易",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "安防服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:24:57"
+}

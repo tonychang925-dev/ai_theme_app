@@ -1,0 +1,31 @@
+{
+  "stock_id": "300758",
+  "stock_name": "七彩化学",
+  "concept": "高性能有机着色剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高性能有机着色剂"
+  ],
+  "should": [
+    "苯并咪唑酮系列",
+    "偶氮缩合系列",
+    "异吲哚啉系列",
+    "溶剂染料",
+    "中间体",
+    "有机合成能力",
+    "核心中间体生产技术",
+    "塑料（色母粒）",
+    "高档环保油墨",
+    "环保型涂料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高性能有机着色剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:41:57"
+}

@@ -1,0 +1,35 @@
+{
+  "stock_id": "002726",
+  "stock_name": "龙大美食",
+  "concept": "肉食品加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "预制菜",
+    "屠宰精加工",
+    "肉制品"
+  ],
+  "should": [
+    "生猪养殖",
+    "鲜冻肉",
+    "熟食制品",
+    "肉食品加工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "预制菜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "屠宰精加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "肉制品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:54:56"
+}

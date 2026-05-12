@@ -1,0 +1,36 @@
+{
+  "stock_id": "002216",
+  "stock_name": "三全食品",
+  "concept": "速冻食品龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "速冻食品龙头",
+    "速冻面米制品",
+    "三全"
+  ],
+  "should": [
+    "速冻调制食品",
+    "龙凤",
+    "三全私厨",
+    "三全状元",
+    "冷藏及短保类"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "速冻食品龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "速冻面米制品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三全",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:29:40"
+}

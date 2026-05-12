@@ -1,0 +1,32 @@
+{
+  "stock_id": "601606",
+  "stock_name": "长城军工",
+  "concept": "迫击炮弹",
+  "strategy_type": "industry_chain",
+  "must": [
+    "迫击炮弹",
+    "迫击炮弹核心技术"
+  ],
+  "should": [
+    "授权国防和发明专利",
+    "国防科学技术进步奖一等奖",
+    "国防技术发明奖二等奖",
+    "国防技术发明奖三等奖",
+    "国内迫击炮弹行业领先地位",
+    "军民品科研项目"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "迫击炮弹",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "迫击炮弹核心技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:37:21"
+}

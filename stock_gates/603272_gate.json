@@ -1,0 +1,41 @@
+{
+  "stock_id": "603272",
+  "stock_name": "联翔股份",
+  "concept": "墙布制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "刺绣墙布",
+    "非刺绣墙布",
+    "刺绣工艺"
+  ],
+  "should": [
+    "窗帘",
+    "提花工艺",
+    "印花工艺",
+    "精压工艺",
+    "水刺无纺工艺",
+    "墙布制造",
+    "室内墙面装饰",
+    "室内家居装饰",
+    "墙布行业领导企业",
+    "专精特新小巨人企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "刺绣墙布",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "非刺绣墙布",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "刺绣工艺",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:47:43"
+}

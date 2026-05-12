@@ -1,0 +1,32 @@
+{
+  "stock_id": "000551",
+  "stock_name": "创元科技",
+  "concept": "环保设备与精密制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "洁净环保设备及工程",
+    "输变电高压瓷绝缘子",
+    "精密轴承"
+  ],
+  "should": [
+    "城市轨道交通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "洁净环保设备及工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "输变电高压瓷绝缘子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密轴承",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:56:10"
+}

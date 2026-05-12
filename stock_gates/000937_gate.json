@@ -1,0 +1,41 @@
+{
+  "stock_id": "000937",
+  "stock_name": "冀中能源",
+  "concept": "煤炭采掘",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤炭采掘",
+    "炼焦煤",
+    "动力煤"
+  ],
+  "should": [
+    "大采高综采",
+    "薄煤层综采",
+    "厚煤层一次采全高",
+    "放顶煤开采工艺",
+    "煤巷锚杆支护成套技术",
+    "下组煤承压水上开采技术",
+    "建下充填开采技术",
+    "钢铁行业",
+    "发电",
+    "建材"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤炭采掘",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "炼焦煤",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动力煤",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:10:22"
+}

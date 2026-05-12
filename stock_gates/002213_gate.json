@@ -1,0 +1,46 @@
+{
+  "stock_id": "002213",
+  "stock_name": "大为股份",
+  "concept": "双主业科技",
+  "strategy_type": "industry_chain",
+  "must": [
+    "嵌入式存储",
+    "固态硬盘",
+    "内存条",
+    "移动存储"
+  ],
+  "should": [
+    "智能接待服务机器人",
+    "手持终端",
+    "功能机",
+    "智能机",
+    "显卡",
+    "集成电路布图设计",
+    "智能手机",
+    "平板电脑",
+    "计算机",
+    "网络通信设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "嵌入式存储",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "固态硬盘",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "内存条",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动存储",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:29:46"
+}

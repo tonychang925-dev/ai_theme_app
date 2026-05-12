@@ -1,0 +1,33 @@
+{
+  "stock_id": "002678",
+  "stock_name": "珠江钢琴",
+  "concept": "钢琴制造龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钢琴",
+    "数码乐器"
+  ],
+  "should": [
+    "音乐教育系统",
+    "自主技术主板",
+    "自主键盘",
+    "PR2.0高端弦槌",
+    "钢琴制造龙头",
+    "艺术教育",
+    "钢琴后服务市场"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钢琴",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数码乐器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:52:56"
+}

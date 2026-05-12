@@ -1,0 +1,46 @@
+{
+  "stock_id": "003017",
+  "stock_name": "大洋生物",
+  "concept": "钾盐化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "碳酸钾",
+    "碳酸氢钾",
+    "轻质碳酸钾生产技术",
+    "全球碳酸钾产能第三"
+  ],
+  "should": [
+    "氯化铵",
+    "盐酸氨丙啉",
+    "2-氯-6-氟苯甲醛",
+    "2-氯-6-氟氯苄",
+    "氟苯",
+    "侯氏制碱法",
+    "食品",
+    "医药",
+    "农药",
+    "轻工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "碳酸钾",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碳酸氢钾",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轻质碳酸钾生产技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球碳酸钾产能第三",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:07:46"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "002743",
+  "stock_name": "富煌钢构",
+  "concept": "钢结构工程",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钢结构工程",
+    "重型建筑钢结构",
+    "重型特种钢结构"
+  ],
+  "should": [
+    "轻型钢结构",
+    "钢结构设计",
+    "制造与安装一体化",
+    "大中型工业厂房",
+    "高层及超高层建筑",
+    "会展中心",
+    "市政桥梁",
+    "住宅建筑",
+    "拥有行业特级建筑资质"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钢结构工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重型建筑钢结构",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重型特种钢结构",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:55:39"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "002033",
+  "stock_name": "丽江股份",
+  "concept": "综合旅游集团",
+  "strategy_type": "industry_chain",
+  "must": [
+    "索道运输",
+    "印象演出",
+    "酒店运营",
+    "玉龙雪山",
+    "《印象·丽江》"
+  ],
+  "should": [
+    "泸沽湖",
+    "大理剑川",
+    "大香格里拉",
+    "大香格里拉生态旅游圈",
+    "甘海子",
+    "云杉坪",
+    "冰川公园",
+    "蓝月谷",
+    "牦牛坪",
+    "综合旅游集团"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "索道运输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "印象演出",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "酒店运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "玉龙雪山",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "《印象·丽江》",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:19:28"
+}

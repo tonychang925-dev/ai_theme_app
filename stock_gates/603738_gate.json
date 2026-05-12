@@ -1,0 +1,31 @@
+{
+  "stock_id": "603738",
+  "stock_name": "泰晶科技",
+  "concept": "晶振龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "晶振龙头"
+  ],
+  "should": [
+    "kHz",
+    "MHz",
+    "TSX",
+    "TCXO",
+    "SPXO",
+    "VCXO",
+    "OCXO",
+    "SMD光刻kHz",
+    "SMD高频MHz",
+    "热敏TSX"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "晶振龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:56:16"
+}

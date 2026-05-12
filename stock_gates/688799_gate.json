@@ -1,0 +1,46 @@
+{
+  "stock_id": "688799",
+  "stock_name": "华纳药厂",
+  "concept": "药品全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "化学药物制剂",
+    "中药制剂",
+    "原料药",
+    "CMO/CDMO业务"
+  ],
+  "should": [
+    "中间体",
+    "药用辅料",
+    "手性药物工程",
+    "植物提取分离",
+    "濒危动物药材人工替代品",
+    "雾化吸入制剂技术",
+    "药品全产业链",
+    "消化系统",
+    "呼吸系统",
+    "抗感染"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "化学药物制剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中药制剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原料药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "CMO/CDMO业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:25:16"
+}

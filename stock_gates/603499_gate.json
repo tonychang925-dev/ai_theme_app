@@ -1,0 +1,46 @@
+{
+  "stock_id": "603499",
+  "stock_name": "翔港科技",
+  "concept": "包装印刷服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "包装印刷服务",
+    "日化",
+    "食品",
+    "烟标"
+  ],
+  "should": [
+    "外包材",
+    "内包材",
+    "化妆品",
+    "礼盒",
+    "烟草",
+    "消费电子",
+    "新材料",
+    "新工艺",
+    "新技术",
+    "日化产品一站式供应链"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "包装印刷服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "日化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "食品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "烟标",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:51:26"
+}

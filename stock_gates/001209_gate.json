@@ -1,0 +1,41 @@
+{
+  "stock_id": "001209",
+  "stock_name": "洪兴股份",
+  "concept": "家居服饰品牌",
+  "strategy_type": "industry_chain",
+  "must": [
+    "家居服饰品牌",
+    "家居服",
+    "芬腾"
+  ],
+  "should": [
+    "内衣",
+    "居家生活类产品",
+    "玛伦萨",
+    "千线艺",
+    "芬腾可安",
+    "FAVO HOME",
+    "发明专利",
+    "外观设计专利",
+    "实用新型专利",
+    "绿色环保面料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "家居服饰品牌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "家居服",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "芬腾",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:13:22"
+}

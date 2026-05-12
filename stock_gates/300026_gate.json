@@ -1,0 +1,31 @@
+{
+  "stock_id": "300026",
+  "stock_name": "红日药业",
+  "concept": "中药配方颗粒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中药配方颗粒"
+  ],
+  "should": [
+    "医疗器械",
+    "血氧仪",
+    "成品药",
+    "原辅料",
+    "医疗健康服务",
+    "药械智慧供应链",
+    "血必净注射液",
+    "中药配方颗粒国标",
+    "省标",
+    "经典名方研究"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中药配方颗粒",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:10:10"
+}

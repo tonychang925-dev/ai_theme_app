@@ -1,0 +1,41 @@
+{
+  "stock_id": "600379",
+  "stock_name": "宝光股份",
+  "concept": "真空灭弧室",
+  "strategy_type": "industry_chain",
+  "must": [
+    "真空灭弧室",
+    "真空开关设备",
+    "真空灭弧室技术"
+  ],
+  "should": [
+    "电子陶瓷",
+    "电气配件",
+    "储能产品",
+    "氢能源产品",
+    "集热管",
+    "光热（光电）系统集成",
+    "高压开关去氟化技术",
+    "户外环氧材料国产化",
+    "电极极限开断能力研究",
+    "新型储能技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "真空灭弧室",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "真空开关设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "真空灭弧室技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:16:37"
+}

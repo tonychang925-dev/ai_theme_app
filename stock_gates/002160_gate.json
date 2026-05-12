@@ -1,0 +1,41 @@
+{
+  "stock_id": "002160",
+  "stock_name": "常铝股份",
+  "concept": "新能源铝材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "刀片电池壳",
+    "液冷板用铝材料",
+    "电池铝箔"
+  ],
+  "should": [
+    "新能源铝材",
+    "动力电池箔铝",
+    "铝制高频焊管",
+    "再生铝板带箔技术",
+    "新能源汽车",
+    "汽车散热器",
+    "电池节能化",
+    "医疗洁净系统",
+    "中国铝箔企业十强",
+    "第二大铝箔材供给商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "刀片电池壳",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液冷板用铝材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电池铝箔",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:26:31"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300438",
+  "stock_name": "鹏辉能源",
+  "concept": "电池储能",
+  "strategy_type": "industry_chain",
+  "must": [
+    "储能电池",
+    "动力电池",
+    "钠离子电池"
+  ],
+  "should": [
+    "消费电池",
+    "大客户战略",
+    "通信储能",
+    "聚阴离子路线",
+    "层状氧化物",
+    "磷酸钒钠",
+    "电池储能",
+    "户用储能",
+    "便携式储能",
+    "大型储能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "储能电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动力电池",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钠离子电池",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:27:30"
+}

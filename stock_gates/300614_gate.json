@@ -1,0 +1,33 @@
+{
+  "stock_id": "300614",
+  "stock_name": "百川畅银",
+  "concept": "填埋气发电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "填埋气发电",
+    "电力销售"
+  ],
+  "should": [
+    "碳减排交易",
+    "填埋气收集",
+    "内燃机发电",
+    "预处理",
+    "并入电网",
+    "全球规模排名第二",
+    "项目分布中东部地区"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "填埋气发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力销售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:35:22"
+}

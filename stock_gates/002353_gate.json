@@ -1,0 +1,34 @@
+{
+  "stock_id": "002353",
+  "stock_name": "杰瑞股份",
+  "concept": "油服新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "油气装备制造及技术服务",
+    "压裂设备"
+  ],
+  "should": [
+    "涡轮压裂设备",
+    "锂电负极材料",
+    "油服新能源",
+    "压裂设备技术",
+    "涡轮压裂技术",
+    "页岩气开采",
+    "新能源汽车",
+    "国内民营油气设备及服务龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "油气装备制造及技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "压裂设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:37:12"
+}

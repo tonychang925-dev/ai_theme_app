@@ -1,0 +1,38 @@
+{
+  "stock_id": "601963",
+  "stock_name": "重庆银行",
+  "concept": "城市商业银行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "公司银行业务",
+    "零售银行业务",
+    "金融市场业务"
+  ],
+  "should": [
+    "A股可转换公司债",
+    "二级资本债",
+    "无固定期限资本债",
+    "成渝地区双城经济圈",
+    "西部陆海新通道",
+    "绿色金融",
+    "乡村振兴"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "公司银行业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "零售银行业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融市场业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:40:05"
+}

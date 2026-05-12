@@ -1,0 +1,36 @@
+{
+  "stock_id": "002546",
+  "stock_name": "新联电子",
+  "concept": "用电信息采集",
+  "strategy_type": "industry_chain",
+  "must": [
+    "用电信息采集系统",
+    "用电信息采集"
+  ],
+  "should": [
+    "新型电力负荷管理系统",
+    "智能用电云服务",
+    "终端采集设备",
+    "主站系统",
+    "电力柜",
+    "通信组网",
+    "大数据分析",
+    "云计算",
+    "移动互联网技术",
+    "环保设施智能监测"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "用电信息采集系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "用电信息采集",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:46:40"
+}

@@ -1,0 +1,50 @@
+{
+  "stock_id": "300236",
+  "stock_name": "上海新阳",
+  "concept": "半导体材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电镀液及添加剂",
+    "清洗液",
+    "光刻胶",
+    "电子电镀",
+    "电子清洗"
+  ],
+  "should": [
+    "研磨液",
+    "大马士革铜互连",
+    "TSV",
+    "Bumping",
+    "半导体材料",
+    "半导体芯片制程",
+    "晶圆制造",
+    "封装",
+    "国内头部晶圆代工企业基准材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电镀液及添加剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "清洗液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光刻胶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子电镀",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子清洗",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:18:44"
+}

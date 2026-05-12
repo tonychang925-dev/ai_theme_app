@@ -1,0 +1,41 @@
+{
+  "stock_id": "605178",
+  "stock_name": "时空科技",
+  "concept": "夜间经济智慧城市",
+  "strategy_type": "industry_chain",
+  "must": [
+    "照明工程系统集成",
+    "景观照明",
+    "夜间经济"
+  ],
+  "should": [
+    "文旅夜游",
+    "智慧路灯",
+    "智慧停车",
+    "智慧路灯管理平台",
+    "智能停车管理平台",
+    "无感支付",
+    "车位共享",
+    "光艺术",
+    "智能控制",
+    "城市地标亮化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "照明工程系统集成",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "景观照明",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "夜间经济",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:02:39"
+}

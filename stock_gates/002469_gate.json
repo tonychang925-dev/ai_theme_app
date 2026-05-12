@@ -1,0 +1,46 @@
+{
+  "stock_id": "002469",
+  "stock_name": "三维化学",
+  "concept": "化工石化技术服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "化工石化技术服务",
+    "工程业务",
+    "化工业务",
+    "催化剂业务"
+  ],
+  "should": [
+    "硫磺回收",
+    "耐硫变换",
+    "光热储能",
+    "空气储能",
+    "稀土橡胶",
+    "新型加氢",
+    "烷基化",
+    "氢能",
+    "石化",
+    "化工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "化工石化技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化工业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "催化剂业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:43:15"
+}

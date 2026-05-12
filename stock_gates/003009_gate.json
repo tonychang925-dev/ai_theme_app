@@ -1,0 +1,44 @@
+{
+  "stock_id": "003009",
+  "stock_name": "中天火箭",
+  "concept": "小型固体火箭",
+  "strategy_type": "industry_chain",
+  "must": [
+    "小型固体火箭",
+    "增雨防雹火箭",
+    "探空火箭",
+    "小型制导火箭"
+  ],
+  "should": [
+    "炭/炭复合材料制品",
+    "飞机炭刹车盘",
+    "发动机耐烧蚀组件",
+    "固体火箭发动机复合材料核心技术",
+    "人工影响天气",
+    "光伏产业晶体生长热场系统",
+    "军工配套",
+    "国内市场占有率稳居行业第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "小型固体火箭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "增雨防雹火箭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "探空火箭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小型制导火箭",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:07:23"
+}

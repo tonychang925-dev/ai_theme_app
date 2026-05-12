@@ -1,0 +1,46 @@
+{
+  "stock_id": "601003",
+  "stock_name": "柳钢股份",
+  "concept": "钢铁制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "华南钢铁隐形龙头",
+    "防城港基地",
+    "型材",
+    "钢坯"
+  ],
+  "should": [
+    "中厚板",
+    "冷轧板",
+    "热轧宽带钢",
+    "高速线材",
+    "连轧中型材",
+    "小型材",
+    "热镀锌卷板",
+    "冷轧钢带",
+    "热轧钢带",
+    "镀锌钢带"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "华南钢铁隐形龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "防城港基地",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "型材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钢坯",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:33:09"
+}

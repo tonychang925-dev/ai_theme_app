@@ -1,0 +1,41 @@
+{
+  "stock_id": "600719",
+  "stock_name": "大连热电",
+  "concept": "热电联产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "热电联产",
+    "热力",
+    "供暖"
+  ],
+  "should": [
+    "电力",
+    "工业蒸汽",
+    "高温水",
+    "燃煤锅炉",
+    "高温水换热首站",
+    "汽改水改造",
+    "供热智慧平台",
+    "城市供暖",
+    "工业蒸汽供应",
+    "电力供应"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "热电联产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热力",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "供暖",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:25:48"
+}

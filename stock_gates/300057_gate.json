@@ -1,0 +1,46 @@
+{
+  "stock_id": "300057",
+  "stock_name": "万顺新材",
+  "concept": "新材料包装",
+  "strategy_type": "industry_chain",
+  "must": [
+    "纸包装材料",
+    "铝箔",
+    "功能性薄膜",
+    "电池铝箔"
+  ],
+  "should": [
+    "PET铜箔",
+    "镀膜技术",
+    "精密涂布技术",
+    "镀铜工艺",
+    "新材料包装",
+    "包装领域",
+    "动力电池",
+    "储能电池",
+    "国内领先企业",
+    "铝板带优先满足内部供应"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "纸包装材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铝箔",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功能性薄膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电池铝箔",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:11:17"
+}

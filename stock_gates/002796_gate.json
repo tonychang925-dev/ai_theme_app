@@ -1,0 +1,36 @@
+{
+  "stock_id": "002796",
+  "stock_name": "世嘉科技",
+  "concept": "移动通信射频",
+  "strategy_type": "industry_chain",
+  "must": [
+    "4G/5G基站天线",
+    "射频滤波器"
+  ],
+  "should": [
+    "精密箱体系统",
+    "移动通信射频",
+    "天线滤波器一体化设计",
+    "陶瓷介质滤波器技术",
+    "MassiveMIMO天线技术",
+    "4G/5G通信基站",
+    "移动通信系统",
+    "中兴通讯射频器件核心供应商",
+    "爱立信射频器件核心供应商",
+    "中兴通讯基站天线供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "4G/5G基站天线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "射频滤波器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:57:47"
+}

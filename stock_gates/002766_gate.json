@@ -1,0 +1,46 @@
+{
+  "stock_id": "002766",
+  "stock_name": "索菱股份",
+  "concept": "车联网智能终端",
+  "strategy_type": "industry_chain",
+  "must": [
+    "CID系统",
+    "车联网智能终端",
+    "车载信息娱乐系统",
+    "智能驾舱系统"
+  ],
+  "should": [
+    "TBOX系统",
+    "智能驾驶系统",
+    "自动驾驶",
+    "自动驾驶平台",
+    "ADAS",
+    "智能座舱",
+    "仿生智能算法",
+    "通信模块",
+    "图像识别",
+    "声音识别"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "CID系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车联网智能终端",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车载信息娱乐系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能驾舱系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:56:35"
+}

@@ -1,0 +1,39 @@
+{
+  "stock_id": "300539",
+  "stock_name": "横河精密",
+  "concept": "精密模具零部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密模具零部件",
+    "精密注塑件",
+    "精密模具研发与制造"
+  ],
+  "should": [
+    "全塑尾门",
+    "全塑引擎盖",
+    "加油小门执行机构",
+    "大扭矩传动执行模组",
+    "智能家电",
+    "汽车智能座舱",
+    "汽车工程塑料轻量化应用",
+    "下游客户华为、延锋安道拓、恺博等"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密模具零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密注塑件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密模具研发与制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:31:52"
+}

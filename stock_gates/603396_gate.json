@@ -1,0 +1,46 @@
+{
+  "stock_id": "603396",
+  "stock_name": "金辰股份",
+  "concept": "光伏设备龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "HJT设备（PECVD）",
+    "光伏自动化生产线",
+    "层压机",
+    "串焊机"
+  ],
+  "should": [
+    "双面微晶HJT",
+    "TOPCON",
+    "管式PECVD",
+    "少银化无银化组件技术",
+    "PERC设备（自动化、检测相关）",
+    "港口物流自动化",
+    "HJT+TOPCon设备新星",
+    "光伏设备龙头",
+    "光伏组件",
+    "光伏电池片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "HJT设备（PECVD）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏自动化生产线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "层压机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "串焊机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:50:48"
+}

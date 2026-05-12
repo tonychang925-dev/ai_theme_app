@@ -1,0 +1,51 @@
+{
+  "stock_id": "600418",
+  "stock_name": "江淮汽车",
+  "concept": "综合汽车制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "重、中、轻、微型卡车",
+    "多功能商用车",
+    "客车",
+    "专用底盘",
+    "蜂窝电池技术"
+  ],
+  "should": [
+    "MPV",
+    "SUV",
+    "轿车",
+    "变速箱",
+    "发动机",
+    "思皓",
+    "瑞风",
+    "星锐",
+    "格尔发",
+    "大众汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "重、中、轻、微型卡车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多功能商用车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "客车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "专用底盘",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "蜂窝电池技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:17:31"
+}

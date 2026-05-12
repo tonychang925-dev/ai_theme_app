@@ -1,0 +1,38 @@
+{
+  "stock_id": "688479",
+  "stock_name": "友车科技",
+  "concept": "汽车营销软件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车营销软件",
+    "车企营销系统",
+    "软件开发与服务"
+  ],
+  "should": [
+    "车主服务平台",
+    "汽车产业生态服务平台",
+    "系统运维服务",
+    "智能设备销售",
+    "整车厂",
+    "经销商集团",
+    "经销商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车营销软件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车企营销系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "软件开发与服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:18:47"
+}

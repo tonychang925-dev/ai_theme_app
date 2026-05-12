@@ -1,0 +1,41 @@
+{
+  "stock_id": "002498",
+  "stock_name": "汉缆股份",
+  "concept": "高压电缆",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高压电力电缆",
+    "超高压电力电缆",
+    "高压电缆"
+  ],
+  "should": [
+    "超高压挤包绝缘电力电缆及附件",
+    "海底电缆",
+    "光伏用电缆",
+    "超导电缆系统",
+    "GIL",
+    "风电",
+    "光伏发电",
+    "智能电网",
+    "特高压骨干通道",
+    "城市轨道交通"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高压电力电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超高压电力电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高压电缆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:44:40"
+}

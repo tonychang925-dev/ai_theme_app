@@ -1,0 +1,32 @@
+{
+  "stock_id": "600502",
+  "stock_name": "安徽建工",
+  "concept": "安徽基建龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "基础设施与房屋建设施工",
+    "安徽基建龙头"
+  ],
+  "should": [
+    "房地产开发",
+    "装配式建筑",
+    "水力发电",
+    "工程技术服务",
+    "投资",
+    "港航建设"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "基础设施与房屋建设施工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "安徽基建龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:19:28"
+}

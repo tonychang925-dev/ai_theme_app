@@ -1,0 +1,51 @@
+{
+  "stock_id": "600999",
+  "stock_name": "招商证券",
+  "concept": "综合券商服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "财富管理和机构业务",
+    "投资银行",
+    "投资管理",
+    "投资及交易",
+    "经纪与财富管理"
+  ],
+  "should": [
+    "资本中介",
+    "机构客户综合服务",
+    "基金投顾",
+    "个人养老金服务",
+    "金融科技",
+    "招商证券APP",
+    "企业微信",
+    "招商证券财富+小程序",
+    "科技赋能",
+    "数字化运营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "财富管理和机构业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资银行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "投资及交易",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "经纪与财富管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:33:01"
+}

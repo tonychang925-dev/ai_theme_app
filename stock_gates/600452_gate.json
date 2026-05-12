@@ -1,0 +1,36 @@
+{
+  "stock_id": "600452",
+  "stock_name": "涪陵电力",
+  "concept": "配网节能服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "配网节能服务",
+    "配电网节能"
+  ],
+  "should": [
+    "电力供应",
+    "合同能源管理(EMC)",
+    "节能诊断",
+    "节能改造",
+    "能效综合治理",
+    "电网安全",
+    "项目获取",
+    "线路优化",
+    "设备优化",
+    "计量能力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "配网节能服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "配电网节能",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:18:10"
+}

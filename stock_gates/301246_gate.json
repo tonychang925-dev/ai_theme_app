@@ -1,0 +1,46 @@
+{
+  "stock_id": "301246",
+  "stock_name": "宏源药业",
+  "concept": "医药化工双主业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "甲硝唑",
+    "2-甲基-5-硝基咪唑",
+    "乙二醛",
+    "乙醛酸"
+  ],
+  "should": [
+    "六氟磷酸锂",
+    "氟化",
+    "氢化",
+    "烷基化",
+    "硝化",
+    "氧化",
+    "高温反应",
+    "低温结晶",
+    "硝基咪唑类抗菌药物",
+    "锂电池电解液"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "甲硝唑",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "2-甲基-5-硝基咪唑",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乙二醛",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乙醛酸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:00:43"
+}

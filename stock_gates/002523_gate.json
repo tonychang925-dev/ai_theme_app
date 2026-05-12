@@ -1,0 +1,51 @@
+{
+  "stock_id": "002523",
+  "stock_name": "天桥起重",
+  "concept": "物料搬运装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "物料搬运装备",
+    "铝电解多功能机组",
+    "通用桥式起重机",
+    "港口设备",
+    "有色冶炼成套装备"
+  ],
+  "should": [
+    "立体停车设备",
+    "煤炭洗选设备",
+    "环保装备",
+    "5G",
+    "云平台",
+    "AI",
+    "工业互联网",
+    "大数据分析",
+    "远程操控",
+    "自动化无人操控"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "物料搬运装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铝电解多功能机组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通用桥式起重机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "港口设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有色冶炼成套装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:45:42"
+}

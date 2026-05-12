@@ -1,0 +1,51 @@
+{
+  "stock_id": "601326",
+  "stock_name": "秦港股份",
+  "concept": "港口运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤炭装卸服务",
+    "金属矿石装卸服务",
+    "煤炭",
+    "金属矿石",
+    "秦皇岛港"
+  ],
+  "should": [
+    "油品及液体化工装卸服务",
+    "集装箱装卸服务",
+    "杂货装卸服务",
+    "油品及液体化工",
+    "集装箱",
+    "杂货及其他货品",
+    "曹妃甸港",
+    "黄骅港",
+    "港口运营",
+    "港口配套服务及增值服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤炭装卸服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金属矿石装卸服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金属矿石",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "秦皇岛港",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:36:11"
+}

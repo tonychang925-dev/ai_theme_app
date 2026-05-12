@@ -1,0 +1,36 @@
+{
+  "stock_id": "688383",
+  "stock_name": "新益昌",
+  "concept": "LED固晶机龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LED固晶机龙头",
+    "LED固晶机"
+  ],
+  "should": [
+    "半导体固晶机",
+    "电容器老化测试设备",
+    "锂电池设备",
+    "固晶机技术",
+    "Mini LED封装",
+    "电容器生产",
+    "锂电池生产",
+    "LED固晶机全球市场份额28%",
+    "国内市占率60%",
+    "国内第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED固晶机龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LED固晶机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:17:12"
+}

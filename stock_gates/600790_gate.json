@@ -1,0 +1,44 @@
+{
+  "stock_id": "600790",
+  "stock_name": "轻纺城",
+  "concept": "轻纺城市场运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轻纺城市场运营",
+    "市场营业用房开发",
+    "租赁",
+    "物业管理"
+  ],
+  "should": [
+    "数字轻纺城",
+    "数字物流港",
+    "利可达智慧物流平台",
+    "金蚕宝宝",
+    "小哥找布",
+    "物流配套体系",
+    "会展服务支持",
+    "管理优势"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轻纺城市场运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "市场营业用房开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "租赁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物业管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:27:46"
+}

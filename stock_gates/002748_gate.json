@@ -1,0 +1,41 @@
+{
+  "stock_id": "002748",
+  "stock_name": "世龙实业",
+  "concept": "精细化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "AC发泡剂",
+    "氯化亚砜",
+    "AC发泡剂产销行业第二"
+  ],
+  "should": [
+    "氯碱",
+    "水合肼",
+    "双氧水",
+    "超微细AC发泡剂生产技术",
+    "零极距离子膜电解槽技术",
+    "固定床钯触媒蒽醌法双氧水生产技术",
+    "制鞋",
+    "制革",
+    "建材",
+    "家电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "AC发泡剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氯化亚砜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AC发泡剂产销行业第二",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:55:59"
+}

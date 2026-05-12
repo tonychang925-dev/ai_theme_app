@@ -1,0 +1,40 @@
+{
+  "stock_id": "605319",
+  "stock_name": "无锡振华",
+  "concept": "汽车冲压焊接",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车冲压焊接",
+    "冲压零部件",
+    "分拼总成加工服务"
+  ],
+  "should": [
+    "模具",
+    "冲压技术",
+    "焊接技术",
+    "自冲铆接",
+    "铝点焊",
+    "新能源汽车",
+    "传统能源汽车",
+    "汽车零部件企业",
+    "整车制造商配套"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车冲压焊接",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冲压零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "分拼总成加工服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:03:43"
+}

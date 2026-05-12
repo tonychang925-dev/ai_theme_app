@@ -1,0 +1,51 @@
+{
+  "stock_id": "600219",
+  "stock_name": "南山铝业",
+  "concept": "铝业全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车铝板",
+    "航空板材",
+    "氧化铝",
+    "冷轧产品",
+    "汽车铝板制造"
+  ],
+  "should": [
+    "铝型材",
+    "铝合金锭",
+    "热轧卷",
+    "高精度铝箔",
+    "铝板带箔",
+    "挤压型材",
+    "压延材",
+    "大型机械机加工结构件",
+    "动力电池箔",
+    "包装材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车铝板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航空板材",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氧化铝",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冷轧产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车铝板制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:12:19"
+}

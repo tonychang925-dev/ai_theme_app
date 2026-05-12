@@ -1,0 +1,41 @@
+{
+  "stock_id": "688787",
+  "stock_name": "海天瑞声",
+  "concept": "AI训练数据",
+  "strategy_type": "industry_chain",
+  "must": [
+    "AI训练数据",
+    "国内领先训练数据提供商",
+    "训练数据集"
+  ],
+  "should": [
+    "智能语音数据",
+    "计算机视觉数据",
+    "自然语言数据",
+    "智能驾驶",
+    "多语种覆盖",
+    "发音词典",
+    "算法标注",
+    "自动化工具",
+    "人机交互",
+    "机器翻译"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "AI训练数据",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内领先训练数据提供商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "训练数据集",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:25:07"
+}

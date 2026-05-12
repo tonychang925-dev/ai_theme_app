@@ -1,0 +1,36 @@
+{
+  "stock_id": "002386",
+  "stock_name": "天原股份",
+  "concept": "氯碱化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "烧碱",
+    "聚氯乙烯(PVC)"
+  ],
+  "should": [
+    "精细耗氯产品",
+    "特种树脂",
+    "电子级化学品",
+    "氟化工产品",
+    "电石法PVC",
+    "乙烯法PVC",
+    "PVC-O管技术",
+    "PVC地板加工技术",
+    "新能源电池材料技术",
+    "PVC-O管"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "烧碱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚氯乙烯(PVC)",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:39:10"
+}

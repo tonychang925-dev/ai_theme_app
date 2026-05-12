@@ -1,0 +1,55 @@
+{
+  "stock_id": "002338",
+  "stock_name": "奥普光电",
+  "concept": "国防光电测控",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光电经纬仪光机分系统",
+    "航空/航天相机光机分系统",
+    "新型雷达天线座",
+    "精密转台",
+    "光电瞄准系统"
+  ],
+  "should": [
+    "国防光电测控",
+    "靶场试验测量",
+    "航空航天遥感测绘",
+    "雷达天线控制",
+    "光栅编码器",
+    "K9光学玻璃",
+    "非球面超精密铣磨设备",
+    "高精度绝对式光栅尺",
+    "增量式反射尺",
+    "纳米级面型精度加工"
+  ],
+  "not": [
+    "数控机床",
+    "电梯",
+    "交流伺服电机"
+  ],
+  "evidence_refs": [
+    {
+      "term": "光电经纬仪光机分系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "航空/航天相机光机分系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新型雷达天线座",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密转台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光电瞄准系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:36:20"
+}

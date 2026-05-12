@@ -1,0 +1,36 @@
+{
+  "stock_id": "603277",
+  "stock_name": "银都股份",
+  "concept": "商用餐饮设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商用餐饮设备",
+    "OBM自主品牌生产"
+  ],
+  "should": [
+    "商用餐饮制冷设备",
+    "自助餐设备",
+    "西厨设备",
+    "制冰机",
+    "蛋糕柜",
+    "万能蒸烤箱",
+    "智能薯条机器人",
+    "智能化仓储系统",
+    "ODM原始设计制造",
+    "自主培养技术研发团队"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商用餐饮设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "OBM自主品牌生产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:47:56"
+}

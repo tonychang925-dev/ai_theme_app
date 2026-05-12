@@ -1,0 +1,35 @@
+{
+  "stock_id": "301393",
+  "stock_name": "昊帆生物",
+  "concept": "多肽合成试剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "多肽合成试剂",
+    "离子型缩合试剂"
+  ],
+  "should": [
+    "磷正离子型",
+    "脲正离子型",
+    "手性消旋抑制试剂",
+    "保护试剂",
+    "通用型分子砌块",
+    "碳二亚胺型缩合试剂",
+    "国内市占率第一",
+    "小分子化学药研发与商业化",
+    "多肽药物研发与商业化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "多肽合成试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "离子型缩合试剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:04:42"
+}

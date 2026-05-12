@@ -1,0 +1,36 @@
+{
+  "stock_id": "301428",
+  "stock_name": "世纪恒通",
+  "concept": "用户增值服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "用户增值和拓展服务",
+    "车主信息服务"
+  ],
+  "should": [
+    "中国移动",
+    "中国平安",
+    "中国人保",
+    "生活信息服务",
+    "商务流程服务",
+    "车后服务",
+    "洗车服务",
+    "汽车保养",
+    "代办年检",
+    "ETC权益业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "用户增值和拓展服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车主信息服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:05:06"
+}

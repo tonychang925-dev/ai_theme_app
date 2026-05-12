@@ -1,0 +1,51 @@
+{
+  "stock_id": "000657",
+  "stock_name": "中钨高新",
+  "concept": "钨产业链龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钨产业链龙头",
+    "完整钨产业链",
+    "硬质合金",
+    "数控刀片",
+    "光伏钨丝"
+  ],
+  "should": [
+    "整体刀具",
+    "IT工具",
+    "精密零件",
+    "轧辊产品",
+    "金刚石微粉",
+    "培育钻顶锤",
+    "钨钼及化合物",
+    "钽铌及化合物",
+    "钨粉末产品",
+    "矿山开采"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钨产业链龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "完整钨产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "硬质合金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数控刀片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏钨丝",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:59:52"
+}

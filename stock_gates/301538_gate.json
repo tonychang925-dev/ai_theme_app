@@ -1,0 +1,30 @@
+{
+  "stock_id": "301538",
+  "stock_name": "骏鼎达",
+  "concept": "高分子改性保护材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高分子改性保护材料"
+  ],
+  "should": [
+    "功能性保护套管",
+    "汽车",
+    "工程机械",
+    "轨道交通",
+    "通讯电子",
+    "光伏",
+    "风电",
+    "储能",
+    "医疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高分子改性保护材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:06:08"
+}

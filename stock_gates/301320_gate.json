@@ -1,0 +1,36 @@
+{
+  "stock_id": "301320",
+  "stock_name": "豪江智能",
+  "concept": "智能线性驱动",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能家居线性驱动系统",
+    "智能线性驱动"
+  ],
+  "should": [
+    "智慧医养线性驱动系统",
+    "智能办公线性驱动系统",
+    "工业传动线性驱动系统",
+    "电动床",
+    "沙发",
+    "橱柜",
+    "衣柜",
+    "遮阳产品",
+    "物联化",
+    "智能化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能家居线性驱动系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能线性驱动",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:02:48"
+}

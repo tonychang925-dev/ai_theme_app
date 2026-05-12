@@ -1,0 +1,36 @@
+{
+  "stock_id": "002368",
+  "stock_name": "太极股份",
+  "concept": "信创与政务云",
+  "strategy_type": "industry_chain",
+  "must": [
+    "信创与政务云",
+    "金仓数据库"
+  ],
+  "should": [
+    "普华操作系统",
+    "金蝶中间件",
+    "慧点办公软件",
+    "云计算",
+    "大数据",
+    "人工智能",
+    "区块链",
+    "政务",
+    "公共安全",
+    "国防"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "信创与政务云",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金仓数据库",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:38:09"
+}

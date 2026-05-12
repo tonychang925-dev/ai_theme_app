@@ -1,0 +1,46 @@
+{
+  "stock_id": "603658",
+  "stock_name": "安图生物",
+  "concept": "IVD平台型",
+  "strategy_type": "industry_chain",
+  "must": [
+    "体外诊断试剂",
+    "免疫诊断试剂",
+    "化学发光技术",
+    "化学发光仪器"
+  ],
+  "should": [
+    "微生物试剂",
+    "生化试剂",
+    "抗原抗体开发",
+    "主控芯片",
+    "固件开发",
+    "IVD平台型",
+    "核心原材料自给",
+    "医学实验室",
+    "疾病预防",
+    "诊断治疗"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "体外诊断试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "免疫诊断试剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化学发光技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化学发光仪器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:54:01"
+}

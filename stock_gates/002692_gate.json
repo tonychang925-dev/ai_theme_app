@@ -1,0 +1,45 @@
+{
+  "stock_id": "002692",
+  "stock_name": "远程股份",
+  "concept": "电线电缆",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电线电缆",
+    "特种电缆",
+    "核电站用电缆",
+    "高压电缆技术"
+  ],
+  "should": [
+    "裸导线",
+    "电气装备用电线电缆",
+    "矿物绝缘电缆",
+    "光电复合电缆",
+    "电动汽车电缆",
+    "光伏电缆",
+    "核级电缆技术",
+    "防火电缆技术",
+    "国家电网建设"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电线电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核电站用电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高压电缆技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:53:44"
+}

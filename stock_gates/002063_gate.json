@@ -1,0 +1,45 @@
+{
+  "stock_id": "002063",
+  "stock_name": "远光软件",
+  "concept": "电力财务软件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力财务软件",
+    "数字企业",
+    "智慧能源",
+    "信创平台"
+  ],
+  "should": [
+    "社会互联",
+    "云计算",
+    "大数据",
+    "人工智能",
+    "区块链",
+    "物联网",
+    "九天智能一体化云平台",
+    "远光 DAP",
+    "能源电力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力财务软件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字企业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧能源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信创平台",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:21:16"
+}

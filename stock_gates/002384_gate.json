@@ -1,0 +1,40 @@
+{
+  "stock_id": "002384",
+  "stock_name": "东山精密",
+  "concept": "PCB龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PCB龙头",
+    "电子电路",
+    "精密制造"
+  ],
+  "should": [
+    "光电显示",
+    "硬板",
+    "软板",
+    "LED",
+    "TP&LCM模组",
+    "新能源汽车",
+    "动力电池",
+    "整车厂",
+    "全球PCB营收排名第三"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PCB龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子电路",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:38:58"
+}

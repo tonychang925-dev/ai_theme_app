@@ -1,0 +1,41 @@
+{
+  "stock_id": "300632",
+  "stock_name": "光莆股份",
+  "concept": "半导体光应用",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体光应用",
+    "半导体传感器",
+    "半导体光传感技术"
+  ],
+  "should": [
+    "半导体光应用产品",
+    "新型柔性电路材料",
+    "光学设计技术",
+    "物联通讯",
+    "AIOT算法技术",
+    "3D集成封装",
+    "柔性材料技术",
+    "新能源复合集流体材料",
+    "生物识别",
+    "测距"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体光应用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体传感器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体光传感技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:36:16"
+}

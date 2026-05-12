@@ -1,0 +1,31 @@
+{
+  "stock_id": "002769",
+  "stock_name": "普路通",
+  "concept": "供应链管理服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "供应链管理服务"
+  ],
+  "should": [
+    "新能源生态业务",
+    "储能生态运营平台",
+    "智能运维平台",
+    "BMS",
+    "PCS",
+    "EMS",
+    "工商业储能",
+    "共享式独立储能",
+    "风光配套储能",
+    "微网储能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "供应链管理服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:56:40"
+}

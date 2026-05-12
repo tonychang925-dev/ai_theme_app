@@ -1,0 +1,41 @@
+{
+  "stock_id": "600955",
+  "stock_name": "维远股份",
+  "concept": "酚酮产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "酚酮产业链",
+    "双酚A",
+    "聚碳酸酯"
+  ],
+  "should": [
+    "苯酚",
+    "丙酮",
+    "异丙醇",
+    "碳酸二甲酯",
+    "非光气法聚碳酸酯",
+    "电池级DMC提纯",
+    "涂料",
+    "医药/农药中间体",
+    "电池溶剂",
+    "成本优势"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "酚酮产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "双酚A",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚碳酸酯",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:31:36"
+}

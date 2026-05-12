@@ -1,0 +1,45 @@
+{
+  "stock_id": "600759",
+  "stock_name": "洲际油气",
+  "concept": "石油勘探开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "石油勘探开发",
+    "油田勘探",
+    "原油",
+    "钻井"
+  ],
+  "should": [
+    "地面工程",
+    "注水调整",
+    "堵水堵气技术",
+    "石油销售",
+    "海外油气资产销售",
+    "开发与生产经营",
+    "生产作业",
+    "内销渠道",
+    "出口方向"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "石油勘探开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "油田勘探",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原油",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钻井",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:26:55"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "300444",
+  "stock_name": "双杰电气",
+  "concept": "智能电气与新能源服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能电气",
+    "智慧能源",
+    "输配电设备",
+    "智能电气与新能源服务"
+  ],
+  "should": [
+    "数字能创",
+    "光伏设备",
+    "充电桩",
+    "储能设备",
+    "重卡换电设备",
+    "新型电力系统",
+    "新能源发电",
+    "农网改造",
+    "充换电设施",
+    "规划勘察"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能电气",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧能源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "输配电设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能电气与新能源服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:27:40"
+}

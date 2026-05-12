@@ -1,0 +1,39 @@
+{
+  "stock_id": "600448",
+  "stock_name": "华纺股份",
+  "concept": "综合纺织印染",
+  "strategy_type": "industry_chain",
+  "must": [
+    "家纺面料",
+    "床品",
+    "花布面料"
+  ],
+  "should": [
+    "退浆工艺",
+    "短流程工艺",
+    "湿还原工艺",
+    "潮固色工艺",
+    "综合纺织印染",
+    "家纺市场",
+    "非洲蜡布市场",
+    "中国规模最大综合纺织印染企业之一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "家纺面料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "床品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "花布面料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:18:06"
+}

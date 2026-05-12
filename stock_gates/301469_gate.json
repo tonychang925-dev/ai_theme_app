@@ -1,0 +1,36 @@
+{
+  "stock_id": "301469",
+  "stock_name": "恒达新材",
+  "concept": "特种纸原纸",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医疗及食品包装原纸",
+    "特种纸原纸"
+  ],
+  "should": [
+    "工业特种纸原纸",
+    "卷烟配套原纸",
+    "特种纸工艺创新",
+    "产品配方",
+    "工艺流程控制",
+    "医疗包装",
+    "食品包装",
+    "工业应用",
+    "卷烟配套",
+    "医疗透析纸市占率国内居前"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医疗及食品包装原纸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种纸原纸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:05:21"
+}

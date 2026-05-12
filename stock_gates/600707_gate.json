@@ -1,0 +1,32 @@
+{
+  "stock_id": "600707",
+  "stock_name": "彩虹股份",
+  "concept": "面板+基板",
+  "strategy_type": "industry_chain",
+  "must": [
+    "玻璃基板",
+    "面板+基板"
+  ],
+  "should": [
+    "液晶面板",
+    "溢流熔融法",
+    "液晶电视",
+    "自主知识产权",
+    "打破国际垄断",
+    "国产替代"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "玻璃基板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "面板+基板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:25:22"
+}

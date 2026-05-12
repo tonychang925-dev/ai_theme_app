@@ -1,0 +1,46 @@
+{
+  "stock_id": "603025",
+  "stock_name": "大豪科技",
+  "concept": "缝制针织电控",
+  "strategy_type": "industry_chain",
+  "must": [
+    "缝制针织电控",
+    "刺绣机电控",
+    "特种工业缝纫机电控",
+    "针织机械电控"
+  ],
+  "should": [
+    "智能工厂云平台系统",
+    "自动换底线机器人",
+    "自动绕线机器人",
+    "六代电控平台",
+    "多核架构技术",
+    "闭环驱动技术",
+    "高速无线头锁边",
+    "双独立整打",
+    "智跑纱嘴",
+    "无线断针检测系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "缝制针织电控",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "刺绣机电控",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种工业缝纫机电控",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "针织机械电控",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:41:28"
+}

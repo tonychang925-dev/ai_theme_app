@@ -1,0 +1,36 @@
+{
+  "stock_id": "002040",
+  "stock_name": "南京港",
+  "concept": "港口物流服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "原油中转储存",
+    "液体化工中转储存",
+    "仪征港区原油中转枢纽"
+  ],
+  "should": [
+    "集装箱装卸服务",
+    "普通货物装卸仓储",
+    "龙潭港区集装箱港口",
+    "港口物流服务",
+    "扬州化工园区生产企业水路运输"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "原油中转储存",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液体化工中转储存",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "仪征港区原油中转枢纽",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:19:43"
+}

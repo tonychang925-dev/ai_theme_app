@@ -1,0 +1,41 @@
+{
+  "stock_id": "002453",
+  "stock_name": "华软科技",
+  "concept": "精细化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光气资源",
+    "光气特别生产许可证",
+    "造纸化学品AKD"
+  ],
+  "should": [
+    "医药中间体",
+    "农药中间体",
+    "保健品",
+    "连续化制备AKD方法",
+    "光气衍生产品完整产业链",
+    "有机合成技术",
+    "华泰集团",
+    "巴斯夫",
+    "联合利华",
+    "立白集团"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光气资源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光气特别生产许可证",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "造纸化学品AKD",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:42:24"
+}

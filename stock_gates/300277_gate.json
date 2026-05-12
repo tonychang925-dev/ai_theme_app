@@ -1,0 +1,36 @@
+{
+  "stock_id": "300277",
+  "stock_name": "汽轮科技",
+  "concept": "电力信息化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电力信息化",
+    "电力信息化系统集成"
+  ],
+  "should": [
+    "云计算",
+    "物联网",
+    "大数据",
+    "人工智能",
+    "发电",
+    "输电",
+    "变电",
+    "配电",
+    "用电",
+    "调度"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电力信息化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电力信息化系统集成",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:20:45"
+}

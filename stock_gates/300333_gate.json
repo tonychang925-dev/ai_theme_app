@@ -1,0 +1,29 @@
+{
+  "stock_id": "300333",
+  "stock_name": "兆日科技",
+  "concept": "纸纹防伪技术",
+  "strategy_type": "industry_chain",
+  "must": [
+    "纸纹防伪技术"
+  ],
+  "should": [
+    "电子支付密码器系统",
+    "银企通对公业务平台",
+    "现代信息技术",
+    "银行对公移动支付安全",
+    "票据防伪",
+    "银行数字化转型",
+    "电子支付密码器系统行业龙头",
+    "金融科技领域专注银行对公业务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "纸纹防伪技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:22:55"
+}

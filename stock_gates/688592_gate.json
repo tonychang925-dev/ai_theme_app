@@ -1,0 +1,40 @@
+{
+  "stock_id": "688592",
+  "stock_name": "司南导航",
+  "concept": "高精度北斗定位",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高精度定位芯片",
+    "核心板卡/模块",
+    "模块"
+  ],
+  "should": [
+    "接收机",
+    "数据采集设备终端",
+    "高精度算法",
+    "专用芯片",
+    "基带射频一体化高精度芯片",
+    "Quantum-III",
+    "Quantum-IV",
+    "高精度北斗定位",
+    "无人机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高精度定位芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核心板卡/模块",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "模块",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:21:40"
+}

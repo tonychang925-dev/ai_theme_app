@@ -1,0 +1,51 @@
+{
+  "stock_id": "000599",
+  "stock_name": "青岛双星",
+  "concept": "轮胎制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "载重全钢子午胎",
+    "乘用半钢子午胎",
+    "卡客车胎",
+    "乘用车胎",
+    "巨型矿山胎"
+  ],
+  "should": [
+    "卡客车专用轮胎",
+    "轿车安全轮胎",
+    "AAA轮胎开发技术",
+    "防火轮胎技术",
+    "巨型矿山轮胎技术",
+    "稀土金TBR轮胎低滚阻技术",
+    "PCR轮胎低滚阻技术",
+    "超强耐载全钢载重技术",
+    "宽基胎结构技术",
+    "防爆技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "载重全钢子午胎",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乘用半钢子午胎",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "卡客车胎",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乘用车胎",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "巨型矿山胎",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:58:13"
+}

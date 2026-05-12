@@ -1,0 +1,41 @@
+{
+  "stock_id": "300254",
+  "stock_name": "仟源医药",
+  "concept": "高端制药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端制药",
+    "精准医疗",
+    "保健食品"
+  ],
+  "should": [
+    "磷霉素氨丁三醇散",
+    "注射用美洛西林钠舒巴坦钠",
+    "盐酸坦索罗辛缓释胶囊",
+    "依巴斯汀片",
+    "盐酸西那卡塞片",
+    "维生素AD滴剂",
+    "盐酸氨溴索分散片",
+    "蒙脱石散剂",
+    "盐酸氟西汀胶囊",
+    "阿哌沙班片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端制药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精准医疗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "保健食品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:19:48"
+}

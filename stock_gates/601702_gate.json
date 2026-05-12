@@ -1,0 +1,39 @@
+{
+  "stock_id": "601702",
+  "stock_name": "华峰铝业",
+  "concept": "铝压延加工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铝热传输材料",
+    "电池料",
+    "新能源汽车电池壳料"
+  ],
+  "should": [
+    "高性能锂电铝箔",
+    "铝压延加工",
+    "冲压件制品",
+    "刀片电池市场",
+    "汽车水冷板市场",
+    "高强耐腐蚀原材料",
+    "镀镍无钎剂材料",
+    "绿色中高强水冷板"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铝热传输材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电池料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车电池壳料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:38:11"
+}

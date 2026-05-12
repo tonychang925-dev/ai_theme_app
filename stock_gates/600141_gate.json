@@ -1,0 +1,48 @@
+{
+  "stock_id": "600141",
+  "stock_name": "兴发集团",
+  "concept": "磷化工龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "磷化工龙头",
+    "磷矿石",
+    "草甘膦",
+    "有机硅",
+    "精细磷化工"
+  ],
+  "should": [
+    "磷酸铁锂",
+    "湿电子化学品",
+    "循环经济",
+    "磷硅盐协同",
+    "磷矿资源丰富",
+    "产业链一体化",
+    "用电自给率高"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "磷化工龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磷矿石",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "草甘膦",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有机硅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精细磷化工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:10:08"
+}

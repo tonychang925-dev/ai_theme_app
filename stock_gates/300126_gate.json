@@ -1,0 +1,41 @@
+{
+  "stock_id": "300126",
+  "stock_name": "锐奇股份",
+  "concept": "专业电动工具",
+  "strategy_type": "industry_chain",
+  "must": [
+    "专业电动工具",
+    "国内专业电动工具领先品牌",
+    "高效能专业电动工具技术"
+  ],
+  "should": [
+    "电钻",
+    "电锤",
+    "角向磨光机",
+    "电动扳手",
+    "电镐",
+    "电磨",
+    "抛光机",
+    "修边机",
+    "电圆锯",
+    "斜切锯"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "专业电动工具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内专业电动工具领先品牌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高效能专业电动工具技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:14:12"
+}

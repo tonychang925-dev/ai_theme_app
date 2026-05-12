@@ -1,0 +1,46 @@
+{
+  "stock_id": "300136",
+  "stock_name": "信维通信",
+  "concept": "泛射频方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "天线",
+    "无线充电",
+    "射频前端",
+    "滤波器"
+  ],
+  "should": [
+    "电磁屏蔽",
+    "射频传输线",
+    "射频连接器",
+    "PA功率放大器",
+    "蓝牙芯片",
+    "UWB模组",
+    "LDS天线",
+    "MIMO天线",
+    "毫米波相控阵列天线",
+    "磁性材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "天线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无线充电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "射频前端",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "滤波器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:14:43"
+}

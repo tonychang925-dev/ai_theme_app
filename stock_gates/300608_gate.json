@@ -1,0 +1,41 @@
+{
+  "stock_id": "300608",
+  "stock_name": "思特奇",
+  "concept": "云计算大数据服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "云计算大数据服务",
+    "新一代智慧中台",
+    "平台即服务（PaaS）"
+  ],
+  "should": [
+    "云管理",
+    "容器云",
+    "云网融合",
+    "智能计费",
+    "渠道支撑与运营",
+    "城市政务中台",
+    "经济中台",
+    "产业中台",
+    "企业中台",
+    "云原生"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "云计算大数据服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新一代智慧中台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "平台即服务（PaaS）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:35:12"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "600841",
+  "stock_name": "动力新科",
+  "concept": "重型卡车+柴油发动机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "重型卡车+柴油发动机",
+    "重型卡车",
+    "柴油发动机"
+  ],
+  "should": [
+    "F系列重型发动机",
+    "Y系列中重型发动机",
+    "混合动力发动机",
+    "新燃料发动机",
+    "CTP高效动力电池系统",
+    "新一代智能重卡",
+    "商用车",
+    "工程机械",
+    "船舶"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "重型卡车+柴油发动机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重型卡车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "柴油发动机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:29:15"
+}

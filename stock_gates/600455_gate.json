@@ -1,0 +1,29 @@
+{
+  "stock_id": "600455",
+  "stock_name": "博通股份",
+  "concept": "高等教育",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高等教育",
+    "西安交通大学城市学院"
+  ],
+  "should": [
+    "计算机信息技术",
+    "独立学院",
+    "民办教育"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高等教育",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "西安交通大学城市学院",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:18:12"
+}

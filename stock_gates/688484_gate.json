@@ -1,0 +1,36 @@
+{
+  "stock_id": "688484",
+  "stock_name": "南芯科技",
+  "concept": "电源管理芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "充电管理芯片",
+    "电荷泵充电管理芯片"
+  ],
+  "should": [
+    "通用充电管理芯片",
+    "无线充电管理芯片",
+    "其他电源及电池管理芯片",
+    "电荷泵技术",
+    "充电效率高",
+    "安全性能好",
+    "电池续航长",
+    "系统监控准确",
+    "智能手机",
+    "终端电子设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "充电管理芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电荷泵充电管理芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:18:51"
+}

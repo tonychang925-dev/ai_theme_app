@@ -1,0 +1,39 @@
+{
+  "stock_id": "600515",
+  "stock_name": "海南机场",
+  "concept": "机场免税运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "机场运营服务",
+    "免税商业地产",
+    "三亚凤凰机场"
+  ],
+  "should": [
+    "酒店物业服务",
+    "机场免税运营",
+    "参股投资",
+    "自持物业提供场地租赁",
+    "离岛免税运营主体"
+  ],
+  "not": [
+    "破产重整",
+    "退出房地产开发"
+  ],
+  "evidence_refs": [
+    {
+      "term": "机场运营服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "免税商业地产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三亚凤凰机场",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:19:51"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "300792",
+  "stock_name": "壹网壹创",
+  "concept": "电商服务商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电商全域服务商",
+    "新消费品牌加速器"
+  ],
+  "should": [
+    "天猫",
+    "京东",
+    "唯品会",
+    "拼多多",
+    "抖音",
+    "曼秀雷敦",
+    "瑷尔博士",
+    "冷酸灵",
+    "中街",
+    "stokke"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电商全域服务商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新消费品牌加速器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:43:22"
+}

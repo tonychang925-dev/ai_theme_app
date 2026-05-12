@@ -1,0 +1,51 @@
+{
+  "stock_id": "300380",
+  "stock_name": "安硕信息",
+  "concept": "金融IT解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金融IT解决方案",
+    "信贷管理系统",
+    "风险管理系统",
+    "金融信创",
+    "数字化转型"
+  ],
+  "should": [
+    "数据治理",
+    "数据中台",
+    "人工智能平台",
+    "征信大数据",
+    "商业智能与数据仓库",
+    "非银行金融机构系统",
+    "监管报送系统",
+    "融资租赁系统",
+    "非银行资产管理系统",
+    "分布式微服务架构"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金融IT解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信贷管理系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风险管理系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融信创",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字化转型",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:24:59"
+}

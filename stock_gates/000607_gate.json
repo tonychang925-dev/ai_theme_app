@@ -1,0 +1,41 @@
+{
+  "stock_id": "000607",
+  "stock_name": "华媒控股",
+  "concept": "区域媒体运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "广告及策划",
+    "报刊发行及印刷",
+    "教育"
+  ],
+  "should": [
+    "报纸广告",
+    "网络广告",
+    "户外广告",
+    "移动新媒体",
+    "会展活动",
+    "报刊印刷",
+    "商业包装印刷",
+    "职业教育",
+    "国际教育",
+    "IT教育"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "广告及策划",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "报刊发行及印刷",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "教育",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:58:47"
+}

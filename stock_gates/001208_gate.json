@@ -1,0 +1,46 @@
+{
+  "stock_id": "001208",
+  "stock_name": "华菱线缆",
+  "concept": "特种电缆",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种电缆",
+    "超高温电缆",
+    "军用舰船电缆",
+    "新型城市轨道交通用电缆"
+  ],
+  "should": [
+    "电力电缆",
+    "电气装备用电缆",
+    "裸导线",
+    "超低温电缆",
+    "军用特种车底盘线束",
+    "水下承力探测电缆",
+    "盐湖电缆",
+    "风力发电机专用电缆",
+    "航空航天",
+    "武器装备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超高温电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "军用舰船电缆",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新型城市轨道交通用电缆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:13:20"
+}

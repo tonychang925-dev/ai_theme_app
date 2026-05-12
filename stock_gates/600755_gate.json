@@ -1,0 +1,25 @@
+{
+  "stock_id": "600755",
+  "stock_name": "厦门国贸",
+  "concept": "供应链服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "供应链业务"
+  ],
+  "should": [
+    "供应链服务",
+    "一体化模式",
+    "合资公司模式",
+    "数字化转型"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "供应链业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:26:44"
+}

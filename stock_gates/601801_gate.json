@@ -1,0 +1,36 @@
+{
+  "stock_id": "601801",
+  "stock_name": "皖新传媒",
+  "concept": "文化教育服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "文化消费",
+    "教育服务"
+  ],
+  "should": [
+    "全供应链管理",
+    "新零售业态体系",
+    "智慧教育服务体系",
+    "智慧供应链体系",
+    "文化教育服务",
+    "垂直特色文化电商",
+    "教育服务创新业务",
+    "供应链新模式服务",
+    "全民阅读活动",
+    "教育公益活动"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "文化消费",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "教育服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:38:40"
+}

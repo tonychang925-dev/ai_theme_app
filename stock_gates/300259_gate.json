@@ -1,0 +1,41 @@
+{
+  "stock_id": "300259",
+  "stock_name": "新天科技",
+  "concept": "智能计量仪表",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能计量仪表",
+    "物联网智能水表",
+    "智慧水务"
+  ],
+  "should": [
+    "智能燃气表",
+    "智能热量表",
+    "智能电磁流量计",
+    "智慧农业节水",
+    "物联网",
+    "大数据",
+    "云计算",
+    "NB-IoT",
+    "5G",
+    "AI赋能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能计量仪表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物联网智能水表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧水务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:20:03"
+}

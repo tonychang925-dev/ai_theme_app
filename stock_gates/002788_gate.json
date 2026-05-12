@@ -1,0 +1,41 @@
+{
+  "stock_id": "002788",
+  "stock_name": "鹭燕医药",
+  "concept": "医药流通",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药流通",
+    "医药分销",
+    "医药零售连锁"
+  ],
+  "should": [
+    "纯销",
+    "调拨",
+    "代理",
+    "医院",
+    "诊所",
+    "药店",
+    "乡镇医疗机构",
+    "信息服务",
+    "第三方物流",
+    "药房托管"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医药流通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药分销",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医药零售连锁",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:57:29"
+}

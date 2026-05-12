@@ -1,0 +1,46 @@
+{
+  "stock_id": "601020",
+  "stock_name": "华钰矿业",
+  "concept": "金锑矿业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金锑矿业",
+    "锑",
+    "黄金",
+    "塔铝金业康桥奇矿山"
+  ],
+  "should": [
+    "铅",
+    "锌",
+    "铜",
+    "银",
+    "扎西康矿山",
+    "拉屋矿山",
+    "柯月矿区项目",
+    "提格雷资源项目",
+    "亚太金矿项目",
+    "锑资源量"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金锑矿业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "锑",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "黄金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "塔铝金业康桥奇矿山",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:33:36"
+}

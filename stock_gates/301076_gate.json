@@ -1,0 +1,45 @@
+{
+  "stock_id": "301076",
+  "stock_name": "新瀚新材",
+  "concept": "芳香族酮类",
+  "strategy_type": "industry_chain",
+  "must": [
+    "芳香族酮类",
+    "DFBP",
+    "特种工程塑料核心原料",
+    "傅克反应"
+  ],
+  "should": [
+    "光引发剂",
+    "化妆品原料",
+    "芳香族酮类生产工艺",
+    "光固化剂核心材料",
+    "航空航天",
+    "环保型油墨涂料",
+    "化妆品",
+    "医药",
+    "食品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "芳香族酮类",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "DFBP",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种工程塑料核心原料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "傅克反应",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:55:34"
+}

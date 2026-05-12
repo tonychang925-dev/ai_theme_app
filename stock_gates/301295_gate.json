@@ -1,0 +1,31 @@
+{
+  "stock_id": "301295",
+  "stock_name": "美硕科技",
+  "concept": "继电器制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "通用继电器"
+  ],
+  "should": [
+    "流体电磁阀",
+    "汽车继电器",
+    "磁保持继电器",
+    "通讯继电器",
+    "家用电器",
+    "汽车",
+    "电力",
+    "直饮水",
+    "美的集团核心供应商",
+    "家电类通用继电器市占率浙江第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "通用继电器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:01:58"
+}

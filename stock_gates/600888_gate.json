@@ -1,0 +1,46 @@
+{
+  "stock_id": "600888",
+  "stock_name": "新疆众和",
+  "concept": "高纯铝研发生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高纯铝研发生产",
+    "高纯铝",
+    "电子铝箔",
+    "电极箔"
+  ],
+  "should": [
+    "铝合金",
+    "三层法",
+    "偏析法",
+    "6N超高纯产品",
+    "新能源汽车",
+    "5G",
+    "氮化镓",
+    "光伏",
+    "航空航天",
+    "全产业链优势"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高纯铝研发生产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高纯铝",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子铝箔",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电极箔",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:30:36"
+}

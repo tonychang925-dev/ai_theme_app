@@ -1,0 +1,32 @@
+{
+  "stock_id": "603117",
+  "stock_name": "万林物流",
+  "concept": "木材物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "港口装卸",
+    "木材"
+  ],
+  "should": [
+    "贸易代理",
+    "煤炭",
+    "木材物流",
+    "木材进口流通",
+    "木材专业物流",
+    "重点木材码头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "港口装卸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "木材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:44:07"
+}

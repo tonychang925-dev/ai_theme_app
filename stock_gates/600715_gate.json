@@ -1,0 +1,38 @@
+{
+  "stock_id": "600715",
+  "stock_name": "文投控股",
+  "concept": "影视游戏综合",
+  "strategy_type": "industry_chain",
+  "must": [
+    "院线及影城运营管理",
+    "影视投资制作及发行",
+    "游戏研发与运营"
+  ],
+  "should": [
+    "电影投资制作",
+    "电影发行",
+    "电视剧、网剧",
+    "游戏产品",
+    "影院放映",
+    "网络平台播映",
+    "海外发行"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "院线及影城运营管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "影视投资制作及发行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "游戏研发与运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:25:39"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "603052",
+  "stock_name": "可川科技",
+  "concept": "消费电子功能性器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "消费电子功能性器件",
+    "电池类功能性器件",
+    "结构类功能性器件"
+  ],
+  "should": [
+    "新材料研发",
+    "工艺技术研究",
+    "芯片保护膜",
+    "光学类功能性器件",
+    "手机显示屏背光模组",
+    "手机玻璃背板",
+    "材料复合",
+    "模具设计",
+    "生产工艺改进",
+    "车载显示屏"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "消费电子功能性器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电池类功能性器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "结构类功能性器件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:42:12"
+}

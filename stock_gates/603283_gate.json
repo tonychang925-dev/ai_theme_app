@@ -1,0 +1,36 @@
+{
+  "stock_id": "603283",
+  "stock_name": "赛腾股份",
+  "concept": "智能装备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能组装设备",
+    "智能检测设备"
+  ],
+  "should": [
+    "治具类产品",
+    "固晶设备",
+    "分选设备",
+    "晶圆包装机",
+    "倒角轮廓机",
+    "倒角粗糙度量测",
+    "晶圆字符检测机",
+    "晶圆激光打标机",
+    "晶圆激光开槽机",
+    "光伏组件自动化单机设备及整线"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能组装设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能检测设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:48:10"
+}

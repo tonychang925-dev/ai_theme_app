@@ -1,0 +1,31 @@
+{
+  "stock_id": "600493",
+  "stock_name": "凤竹纺织",
+  "concept": "中高端针织面料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中高端针织面料"
+  ],
+  "should": [
+    "针织坯布",
+    "针织成品布",
+    "筒子色纱",
+    "吸湿速干防爆孔面料生产工艺技术",
+    "ORONA®纤维系列产品开发",
+    "凉感面料",
+    "涤棉一浴染色节能减碳创新工艺技术",
+    "童装",
+    "运动服",
+    "内衣"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中高端针织面料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:19:16"
+}

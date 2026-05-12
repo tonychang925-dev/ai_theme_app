@@ -1,0 +1,38 @@
+{
+  "stock_id": "301508",
+  "stock_name": "中机认检",
+  "concept": "车辆检测认证",
+  "strategy_type": "industry_chain",
+  "must": [
+    "车辆检测认证",
+    "检验检测",
+    "认证"
+  ],
+  "should": [
+    "汽车整车",
+    "军用装备",
+    "工程机械",
+    "特种设备",
+    "民航地面设备",
+    "零部件",
+    "技术服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "车辆检测认证",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "检验检测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "认证",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:05:52"
+}

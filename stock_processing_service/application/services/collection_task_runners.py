@@ -317,65 +317,50 @@ class PostMarketRecapReportRunner:
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
+            import json
+            from datetime import date as _date
             from stock_service.repositories.report_repository import ReportRepository
             from stock_service.config import StockServiceConfig
             from stock_service.services.recap_service import RecapService
-            import asyncpg
-            import json
-            from datetime import date as _date
+            from stock_processing_service.contracts.snapshots import PostMarketRecapSnapshot
 
             trade_date = context.trade_date
-            cfg = StockServiceConfig(postgres_database="stock_data_test")
+            cfg = StockServiceConfig()
             repo = ReportRepository(cfg)
             await repo.initialize()
             try:
                 service = RecapService(repo)
                 report = await service.build_post_market_report(trade_date)
+                report_data = {
+                    "report_type": report.report_type, "trade_date": report.trade_date,
+                    "title": report.title, "summary": report.summary,
+                    "highlights": list(report.highlights or []),
+                    "sections": [{"heading": h, "items": list(i or [])} for h, i in list(report.sections or [])],
+                    "metadata": dict(getattr(report, "metadata", {}) or {}),
+                }
 
-                conn = await asyncpg.connect(
-                    host=cfg.postgres_host, port=cfg.postgres_port,
-                    database=cfg.postgres_database, user=cfg.postgres_user,
-                    password=cfg.postgres_password,
+                # 复用 recap job 的 write_port 写 snapshot
+                recap_job = context.container.build_post_market_recap
+                write_port = recap_job._write_port
+                td = _date.fromisoformat(trade_date)
+                existing = await write_port.get_existing_post_market_recap_snapshot(td)
+                payload = json.loads(existing.get("payload", "{}")) if existing else {}
+                payload["report"] = report_data
+                await write_port.upsert_post_market_recap_snapshot(
+                    PostMarketRecapSnapshot(
+                        trade_date=td, snapshot_version="recap_report.v1",
+                        batch_id="", trace_id="", source_trace_id="",
+                        recap_doc=payload,
+                    )
                 )
-                try:
-                    trade_date_obj = _date.fromisoformat(trade_date)
-                    existing = await conn.fetchrow(
-                        "SELECT payload FROM post_market_recap_snapshot WHERE trade_date = $1",
-                        trade_date_obj,
-                    )
-                    existing_payload = json.loads(existing["payload"]) if existing else {}
-
-                    existing_payload["report"] = {
-                        "report_type": report.report_type,
-                        "trade_date": report.trade_date,
-                        "title": report.title,
-                        "summary": report.summary,
-                        "highlights": list(report.highlights or []),
-                        "sections": [
-                            {"heading": heading, "items": list(items or [])}
-                            for heading, items in list(report.sections or [])
-                        ],
-                        "metadata": dict(getattr(report, "metadata", {}) or {}),
-                    }
-
-                    await conn.execute(
-                        """UPDATE post_market_recap_snapshot
-                           SET payload = $1::jsonb, updated_at = NOW()
-                           WHERE trade_date = $2""",
-                        json.dumps(existing_payload, ensure_ascii=False, default=str),
-                        trade_date_obj,
-                    )
-                finally:
-                    await conn.close()
             finally:
                 await repo.close()
 
             section_count = len(report.sections or [])
-            highlight_count = len(report.highlights or [])
             return CollectionTaskResult(
                 status="success",
-                current_label=f"盘后复盘 LLM 报告生成完成 ({section_count} 章节, {highlight_count} 要点)",
-                logs=[f"recap_report sections={section_count} highlights={highlight_count}"],
+                current_label=f"盘后复盘 LLM 报告生成完成 ({section_count} 章节, {len(report.highlights or [])} 要点)",
+                logs=[f"recap_report sections={section_count}"],
             )
         except Exception as e:
             return CollectionTaskResult(

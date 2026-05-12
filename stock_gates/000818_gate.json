@@ -1,0 +1,47 @@
+{
+  "stock_id": "000818",
+  "stock_name": "航锦科技",
+  "concept": "化工军工电子",
+  "strategy_type": "industry_chain",
+  "must": [
+    "烧碱",
+    "环氧丙烷",
+    "聚醚",
+    "特种FPGA",
+    "图形处理芯片"
+  ],
+  "should": [
+    "存储芯片",
+    "总线接口芯片",
+    "模拟芯片",
+    "多芯片组件",
+    "航空航天",
+    "兵器装备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "烧碱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环氧丙烷",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚醚",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种FPGA",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "图形处理芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:05:56"
+}

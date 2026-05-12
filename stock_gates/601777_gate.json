@@ -1,0 +1,46 @@
+{
+  "stock_id": "601777",
+  "stock_name": "千里科技",
+  "concept": "换电新能源汽车",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源汽车",
+    "摩托车",
+    "换电新能源汽车",
+    "摩托车发动机"
+  ],
+  "should": [
+    "胶囊电池",
+    "GBRC水晶架构",
+    "EE架构",
+    "智能驾驶",
+    "智能座舱",
+    "超级热泵",
+    "轻混用盘式电机",
+    "智能中控系统",
+    "电动摩托整车轻量化",
+    "电池热管理技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源汽车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "摩托车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "换电新能源汽车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "摩托车发动机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:38:27"
+}

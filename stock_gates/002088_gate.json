@@ -1,0 +1,30 @@
+{
+  "stock_id": "002088",
+  "stock_name": "鲁阳节能",
+  "concept": "陶瓷纤维龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "陶瓷纤维龙头",
+    "陶瓷纤维"
+  ],
+  "should": [
+    "岩棉",
+    "陶瓷纤维综合性能",
+    "绝热保温材料",
+    "国内市场份额超40%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "陶瓷纤维龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "陶瓷纤维",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:22:28"
+}

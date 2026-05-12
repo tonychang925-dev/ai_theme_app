@@ -1,0 +1,41 @@
+{
+  "stock_id": "600166",
+  "stock_name": "福田汽车",
+  "concept": "商用车制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "重卡",
+    "轻卡",
+    "新能源客车"
+  ],
+  "should": [
+    "氢燃料电池客车",
+    "氢燃料电池开发",
+    "无人驾驶卡车",
+    "车联网",
+    "iTink云平台",
+    "商用车制造",
+    "物流运输",
+    "基建",
+    "公共交通",
+    "全球优质合作伙伴"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "重卡",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轻卡",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源客车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:10:41"
+}

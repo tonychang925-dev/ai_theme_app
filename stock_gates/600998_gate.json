@@ -1,0 +1,36 @@
+{
+  "stock_id": "600998",
+  "stock_name": "九州通",
+  "concept": "医药流通",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医药流通",
+    "全国物流网络"
+  ],
+  "should": [
+    "西药",
+    "中药",
+    "器械",
+    "医疗机构",
+    "批发企业",
+    "零售药店",
+    "31个省市覆盖",
+    "下游批发商",
+    "基层医疗机构",
+    "民营医院"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医药流通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全国物流网络",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:32:56"
+}

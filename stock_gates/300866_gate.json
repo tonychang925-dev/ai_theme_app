@@ -1,0 +1,51 @@
+{
+  "stock_id": "300866",
+  "stock_name": "安克创新",
+  "concept": "跨境消费电子品牌",
+  "strategy_type": "industry_chain",
+  "must": [
+    "Anker",
+    "移动电源",
+    "充电器",
+    "高功率快充",
+    "无线充电"
+  ],
+  "should": [
+    "Soundcore",
+    "eufy",
+    "蓝牙耳机",
+    "无线音箱",
+    "智能扫地机器人",
+    "无线吸尘器",
+    "智能家居安防产品",
+    "3D打印机",
+    "充电线",
+    "拓展坞"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "Anker",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动电源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "充电器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高功率快充",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无线充电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:46:53"
+}

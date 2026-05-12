@@ -1,0 +1,41 @@
+{
+  "stock_id": "603267",
+  "stock_name": "鸿远电子",
+  "concept": "特种MLCC",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种MLCC核心供应商",
+    "特种MLCC",
+    "瓷介电容器"
+  ],
+  "should": [
+    "滤波器",
+    "陶瓷粉末微细化",
+    "介层薄层化多层化技术",
+    "陶瓷粉料与金属电极共烧技术",
+    "电子元器件",
+    "航天",
+    "航空",
+    "电子信息",
+    "兵器",
+    "船舶"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种MLCC核心供应商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种MLCC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "瓷介电容器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:47:40"
+}

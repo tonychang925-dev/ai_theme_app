@@ -1,0 +1,51 @@
+{
+  "stock_id": "600313",
+  "stock_name": "农发种业",
+  "concept": "种业农资综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "小麦种子",
+    "玉米种子",
+    "水稻种子",
+    "生物育种",
+    "小麦种业全国头部企业"
+  ],
+  "should": [
+    "油菜种子",
+    "大豆种子",
+    "农药原药乙草胺",
+    "中间体MEA",
+    "中间体DEA",
+    "中间体硝基甲苯",
+    "资源性钾肥",
+    "高品质复合肥",
+    "绿色高效特种肥料",
+    "种业农资综合服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "小麦种子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "玉米种子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水稻种子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物育种",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "小麦种业全国头部企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:14:47"
+}

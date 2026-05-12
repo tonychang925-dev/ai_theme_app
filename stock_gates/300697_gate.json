@@ -1,0 +1,33 @@
+{
+  "stock_id": "300697",
+  "stock_name": "电工合金",
+  "concept": "铁路接触网材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铁路接触网材料",
+    "电气化铁路接触网系列产品"
+  ],
+  "should": [
+    "铜母线系列产品",
+    "新能源汽车高压连接件产品",
+    "电气化铁路",
+    "城市轨道交通",
+    "输配电领域",
+    "发电领域",
+    "中铁电气化局集团特许供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铁路接触网材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电气化铁路接触网系列产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:39:20"
+}

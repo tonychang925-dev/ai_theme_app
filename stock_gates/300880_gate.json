@@ -1,0 +1,39 @@
+{
+  "stock_id": "300880",
+  "stock_name": "迦南智能",
+  "concept": "智能电表",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能电表",
+    "用电信息采集终端",
+    "物联网模组"
+  ],
+  "should": [
+    "智能电网",
+    "新型电力系统",
+    "数据管理能力成熟度",
+    "软件能力成熟度",
+    "主站数据交换",
+    "新能源消纳",
+    "电网企业优质供应商",
+    "国家工信部专精特新小巨人"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能电表",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "用电信息采集终端",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物联网模组",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:47:33"
+}

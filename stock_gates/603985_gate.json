@@ -1,0 +1,32 @@
+{
+  "stock_id": "603985",
+  "stock_name": "恒润股份",
+  "concept": "风电法兰",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风电法兰",
+    "风电塔筒法兰"
+  ],
+  "should": [
+    "辗制环形锻件",
+    "锻制法兰",
+    "自由锻件",
+    "真空腔体",
+    "大兆瓦风电塔筒法兰制造",
+    "海上风电法兰配套供应"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风电法兰",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电塔筒法兰",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:00:17"
+}

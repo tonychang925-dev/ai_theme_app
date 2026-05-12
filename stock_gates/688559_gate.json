@@ -1,0 +1,41 @@
+{
+  "stock_id": "688559",
+  "stock_name": "海目星",
+  "concept": "激光自动化设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "激光自动化设备",
+    "动力电池激光及自动化设备",
+    "光伏激光及自动化设备"
+  ],
+  "should": [
+    "钣金激光切割设备",
+    "激光极耳切割",
+    "激光焊接",
+    "激光开槽",
+    "激光掺杂",
+    "激光划裂",
+    "动力电池生产",
+    "3C消费电子",
+    "钣金加工",
+    "光伏制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "激光自动化设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动力电池激光及自动化设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏激光及自动化设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:20:32"
+}

@@ -1,0 +1,51 @@
+{
+  "stock_id": "000655",
+  "stock_name": "金岭矿业",
+  "concept": "铁矿石采选",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铁矿石采选",
+    "铁精粉",
+    "国内富矿",
+    "地下开采",
+    "自熔性矿"
+  ],
+  "should": [
+    "球团矿",
+    "铜精粉",
+    "竖井开拓",
+    "斜井开拓",
+    "分段凿岩阶段矿房法",
+    "浅孔留矿法",
+    "上向分层胶结充填法",
+    "破碎",
+    "磨矿",
+    "磁选"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铁矿石采选",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铁精粉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内富矿",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "地下开采",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自熔性矿",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:59:41"
+}

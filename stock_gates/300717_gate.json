@@ -1,0 +1,26 @@
+{
+  "stock_id": "300717",
+  "stock_name": "华信新材",
+  "concept": "智能卡基材",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能卡基材"
+  ],
+  "should": [
+    "PETG装饰装潢材料",
+    "中高端智能卡",
+    "环保装饰装潢材料",
+    "第二代居民身份证材料指定生产企业",
+    "中高档智能卡基材行业龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能卡基材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:40:03"
+}

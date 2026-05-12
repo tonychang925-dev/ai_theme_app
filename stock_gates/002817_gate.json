@@ -1,0 +1,38 @@
+{
+  "stock_id": "002817",
+  "stock_name": "黄山胶囊",
+  "concept": "药用空心胶囊",
+  "strategy_type": "industry_chain",
+  "must": [
+    "药用空心胶囊",
+    "明胶空心胶囊",
+    "肠溶明胶空心胶囊"
+  ],
+  "should": [
+    "肠溶包衣新材料的制备和应用方法",
+    "特型明胶空心胶囊生产技术",
+    "肠溶明胶空心胶囊包衣配方",
+    "速溶型HPMC空心胶囊",
+    "医药生产",
+    "保健品",
+    "年产能达400亿粒以上"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "药用空心胶囊",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "明胶空心胶囊",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "肠溶明胶空心胶囊",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:58:32"
+}

@@ -1,0 +1,42 @@
+{
+  "stock_id": "000677",
+  "stock_name": "恒天海龙",
+  "concept": "纤维骨架材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高模低缩浸胶涤纶帘子布",
+    "帆布"
+  ],
+  "should": [
+    "芳纶帆布",
+    "锦纶帘子布",
+    "涤锦帆布",
+    "锦纶帆布",
+    "涤纶帆布",
+    "特种帆布",
+    "高模低缩工业长丝生产线",
+    "双浴法浸胶生产线",
+    "直捻机",
+    "倍捻机"
+  ],
+  "not": [
+    "橡胶轮胎",
+    "三角带",
+    "输送带",
+    "胶管",
+    "渔网"
+  ],
+  "evidence_refs": [
+    {
+      "term": "高模低缩浸胶涤纶帘子布",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "帆布",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:00:22"
+}

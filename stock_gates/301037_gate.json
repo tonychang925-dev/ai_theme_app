@@ -1,0 +1,41 @@
+{
+  "stock_id": "301037",
+  "stock_name": "保立佳",
+  "concept": "水性丙烯酸乳液",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水性丙烯酸乳液",
+    "建筑乳液",
+    "防水乳液"
+  ],
+  "should": [
+    "纺织乳液",
+    "包装乳液",
+    "工业漆乳液",
+    "壳结构乳胶粒子技术",
+    "助剂",
+    "建筑涂料",
+    "防水材料",
+    "纺织工艺",
+    "包装材料",
+    "木器涂料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水性丙烯酸乳液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑乳液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "防水乳液",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:54:08"
+}

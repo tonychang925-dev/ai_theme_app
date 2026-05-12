@@ -1,0 +1,36 @@
+{
+  "stock_id": "688549",
+  "stock_name": "中巨芯",
+  "concept": "电子化学材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子湿化学品",
+    "电子特种气体",
+    "前驱体材料"
+  ],
+  "should": [
+    "蚀刻液",
+    "刻蚀后清洗液",
+    "研磨后清洗液",
+    "BOE表面活性剂国产化替代",
+    "羟基类关键原材料自主可控"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子湿化学品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子特种气体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "前驱体材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:20:14"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "601838",
+  "stock_name": "成都银行",
+  "concept": "区域银行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "供应链金融"
+  ],
+  "should": [
+    "蓉易贷",
+    "天府科创贷",
+    "服保贷",
+    "总资产",
+    "营收",
+    "净利润",
+    "不良率",
+    "拨备覆盖率",
+    "不良贷款迁徙率",
+    "基建类贷款"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "供应链金融",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:39:00"
+}

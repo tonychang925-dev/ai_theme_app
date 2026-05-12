@@ -1,0 +1,51 @@
+{
+  "stock_id": "601117",
+  "stock_name": "中国化学",
+  "concept": "化学工程与新能源材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "化学工程与新能源材料",
+    "实业及新材料业务",
+    "多晶硅设计技术",
+    "光伏",
+    "风电"
+  ],
+  "should": [
+    "多晶硅",
+    "氢能",
+    "三元正极材料",
+    "电解液",
+    "负极",
+    "动力电池系统总成",
+    "乙二醇",
+    "甲醇",
+    "合成气制乙二醇技术",
+    "MTG技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "化学工程与新能源材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "实业及新材料业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多晶硅设计技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:34:33"
+}

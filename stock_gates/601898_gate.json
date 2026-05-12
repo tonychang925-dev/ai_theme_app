@@ -1,0 +1,46 @@
+{
+  "stock_id": "601898",
+  "stock_name": "中煤能源",
+  "concept": "煤炭一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤炭",
+    "煤化工",
+    "动力煤",
+    "炼焦煤"
+  ],
+  "should": [
+    "电力",
+    "煤矿装备",
+    "聚烯烃",
+    "尿素",
+    "甲醇",
+    "煤炭一体化",
+    "新型煤化工",
+    "长协用户占比80%以上",
+    "中高端煤机市场占有率国内领先",
+    "煤-电-化循环经济"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤炭",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤化工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "动力煤",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "炼焦煤",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:39:37"
+}

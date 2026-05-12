@@ -1,0 +1,36 @@
+{
+  "stock_id": "002395",
+  "stock_name": "双象股份",
+  "concept": "高端光学级PMMA材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端光学级PMMA材料",
+    "光学级PMMA材料"
+  ],
+  "should": [
+    "聚甲基丙烯酸甲酯树脂（PMMA）",
+    "人造革合成革",
+    "连续本体聚合法",
+    "超细纤维超真皮革关键技术",
+    "液晶显示屏",
+    "LED照明",
+    "汽车尾灯",
+    "仪表盘",
+    "光学玻璃",
+    "防辐射PMMA"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端光学级PMMA材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光学级PMMA材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:39:37"
+}

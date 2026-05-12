@@ -1,0 +1,31 @@
+{
+  "stock_id": "300219",
+  "stock_name": "鸿利智汇",
+  "concept": "LED封装",
+  "strategy_type": "industry_chain",
+  "must": [
+    "LED封装"
+  ],
+  "should": [
+    "LED灯珠",
+    "商用车LED智能灯具",
+    "乘用车智能灯具",
+    "VCSEL",
+    "UV LED",
+    "全球照明LED厂商营收排名第四",
+    "工程照明",
+    "植物照明",
+    "汽车照明",
+    "通用照明"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "LED封装",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:17:55"
+}

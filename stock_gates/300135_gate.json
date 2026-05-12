@@ -1,0 +1,51 @@
+{
+  "stock_id": "300135",
+  "stock_name": "宝利国际",
+  "concept": "沥青新材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "沥青新材料",
+    "道路石油沥青（重交沥青）",
+    "通用型改性沥青",
+    "高强度结构沥青料",
+    "高铁专用乳化沥青"
+  ],
+  "should": [
+    "高速公路",
+    "桥梁",
+    "市政道路",
+    "高速铁路",
+    "护林巡航",
+    "应急救援",
+    "电力吊装",
+    "海上领航",
+    "租赁",
+    "航材配套"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "沥青新材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "道路石油沥青（重交沥青）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通用型改性沥青",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高强度结构沥青料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高铁专用乳化沥青",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:14:40"
+}

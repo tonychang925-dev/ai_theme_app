@@ -1,0 +1,46 @@
+{
+  "stock_id": "688508",
+  "stock_name": "芯朋微",
+  "concept": "电源管理芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电源管理芯片",
+    "家用电器类芯片",
+    "标准电源类芯片",
+    "工控功率类芯片"
+  ],
+  "should": [
+    "高压电源控制芯片",
+    "高压半桥驱动芯片",
+    "高压隔离驱动芯片",
+    "高压辅助源芯片",
+    "智能IGBT",
+    "SiC器件",
+    "大功率数字电源控制芯片",
+    "高频GaN驱动芯片",
+    "智能GaN器件",
+    "家用电器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电源管理芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "家用电器类芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "标准电源类芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工控功率类芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:19:25"
+}

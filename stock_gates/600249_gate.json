@@ -1,0 +1,36 @@
+{
+  "stock_id": "600249",
+  "stock_name": "两面针",
+  "concept": "中药日化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中药牙膏核心技术",
+    "口腔护理产品"
+  ],
+  "should": [
+    "个人洗护品",
+    "酒店日用品",
+    "国家高新技术企业",
+    "自主知识产权",
+    "口腔清洁",
+    "个人护理",
+    "酒店用品",
+    "本地丰富的中草药自然资源",
+    "原料供应便捷",
+    "提取药材道地、安全、有效"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中药牙膏核心技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "口腔护理产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:12:56"
+}

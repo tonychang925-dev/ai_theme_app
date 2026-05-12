@@ -1,0 +1,24 @@
+{
+  "stock_id": "688652",
+  "stock_name": "京仪装备",
+  "concept": "半导体专用设备",
+  "strategy_type": "industry_chain",
+  "must": [],
+  "should": [
+    "晶圆传片设备（Sorter）",
+    "半导体专用设备",
+    "制冷控制技术",
+    "精密控温技术",
+    "节能技术",
+    "低温等离子废气处理技术",
+    "新型材料防腐及密封技术",
+    "系统设计算法",
+    "晶圆自动寻心装置技术",
+    "晶圆传控技术"
+  ],
+  "not": [],
+  "evidence_refs": [],
+  "quality": "weak",
+  "must_count": 0,
+  "generated_at": "2026-05-11T20:23:01"
+}

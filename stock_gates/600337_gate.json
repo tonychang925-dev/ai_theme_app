@@ -1,0 +1,46 @@
+{
+  "stock_id": "600337",
+  "stock_name": "美克家居",
+  "concept": "家居整装服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "美克美家",
+    "A.R.T.",
+    "智能制造",
+    "全案整家定制"
+  ],
+  "should": [
+    "直营门店",
+    "加盟商",
+    "电商渠道",
+    "恣在家",
+    "Caracoe",
+    "Rowe",
+    "RobinBruce",
+    "3D技术",
+    "VR逛店",
+    "柔性交付"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "美克美家",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "A.R.T.",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全案整家定制",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:15:31"
+}

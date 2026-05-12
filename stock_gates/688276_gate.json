@@ -1,0 +1,40 @@
+{
+  "stock_id": "688276",
+  "stock_name": "百克生物",
+  "concept": "传染病疫苗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "水痘减毒活疫苗",
+    "冻干鼻喷流感疫苗",
+    "人用狂犬病疫苗"
+  ],
+  "should": [
+    "带状疱疹减毒活疫苗",
+    "吸附无细胞百白破联合疫苗",
+    "b型流感嗜血杆菌结合疫苗",
+    "全人源抗狂犬病单克隆抗体",
+    "全人源抗破伤风毒素单克隆抗体",
+    "传染病疫苗",
+    "无明胶保护剂配方",
+    "微载体生物反应器技术",
+    "鸡胚培养工艺"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "水痘减毒活疫苗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冻干鼻喷流感疫苗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人用狂犬病疫苗",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:13:55"
+}

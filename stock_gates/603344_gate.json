@@ -1,0 +1,46 @@
+{
+  "stock_id": "603344",
+  "stock_name": "星德胜",
+  "concept": "微特电机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "微特电机",
+    "直流无刷电机",
+    "交流串激电机",
+    "三电一体系统化解决方案"
+  ],
+  "should": [
+    "电池包",
+    "电机控制器",
+    "高速电机及其控制系统",
+    "直流有刷电机",
+    "吸尘器",
+    "高速吹风机",
+    "车用电机",
+    "工业风机",
+    "全球市占率超25%",
+    "年产能超6,000万台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "微特电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "直流无刷电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "交流串激电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三电一体系统化解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:49:42"
+}

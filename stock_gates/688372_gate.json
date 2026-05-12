@@ -1,0 +1,41 @@
+{
+  "stock_id": "688372",
+  "stock_name": "伟测科技",
+  "concept": "第三方芯片测试",
+  "strategy_type": "industry_chain",
+  "must": [
+    "第三方芯片测试",
+    "晶圆测试(CP)",
+    "芯片成品测试(FT)"
+  ],
+  "should": [
+    "6nm-14nm先进制程芯片测试",
+    "5G射频芯片测试",
+    "高性能CPU芯片测试",
+    "高性能计算芯片测试",
+    "FPGA芯片测试",
+    "复杂SoC芯片测试",
+    "SoC",
+    "MCU",
+    "FPGA",
+    "5G射频"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "第三方芯片测试",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "晶圆测试(CP)",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "芯片成品测试(FT)",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:16:55"
+}

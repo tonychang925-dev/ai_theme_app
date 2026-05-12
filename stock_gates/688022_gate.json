@@ -1,0 +1,46 @@
+{
+  "stock_id": "688022",
+  "stock_name": "瀚川智能",
+  "concept": "汽车智能装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车智能装备",
+    "汽车智能制造装备",
+    "电池智能制造装备",
+    "充换电智能制造装备"
+  ],
+  "should": [
+    "工业互联软件系统",
+    "高速插针",
+    "智能分板",
+    "电芯高速装配",
+    "化成分容",
+    "工业互联网平台",
+    "工业低代码平台",
+    "传感器",
+    "线束",
+    "连接器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车智能装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车智能制造装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电池智能制造装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "充换电智能制造装备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:05:47"
+}

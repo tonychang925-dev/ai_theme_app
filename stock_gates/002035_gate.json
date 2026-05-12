@@ -1,0 +1,42 @@
+{
+  "stock_id": "002035",
+  "stock_name": "华帝股份",
+  "concept": "厨电品牌",
+  "strategy_type": "industry_chain",
+  "must": [
+    "烟机",
+    "灶具",
+    "热水器",
+    "华帝"
+  ],
+  "should": [
+    "集成灶",
+    "洗碗机",
+    "蒸烤一体机",
+    "百得",
+    "华帝家居",
+    "厨电品牌"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "烟机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "灶具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热水器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "华帝",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:19:25"
+}

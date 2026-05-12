@@ -1,0 +1,36 @@
+{
+  "stock_id": "000718",
+  "stock_name": "苏宁环球",
+  "concept": "房地产+医美",
+  "strategy_type": "industry_chain",
+  "must": [
+    "房地产开发与销售",
+    "南京市场"
+  ],
+  "should": [
+    "医疗美容服务",
+    "生物医药科技",
+    "抗衰再生医学",
+    "上海",
+    "吉林",
+    "宜兴",
+    "成本优势",
+    "品牌优势",
+    "客户优势",
+    "管理优势"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房地产开发与销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "南京市场",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:01:56"
+}

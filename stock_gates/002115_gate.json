@@ -1,0 +1,36 @@
+{
+  "stock_id": "002115",
+  "stock_name": "三维通信",
+  "concept": "通信网络与数字营销",
+  "strategy_type": "industry_chain",
+  "must": [
+    "移动通信网络建设",
+    "网络优化覆盖设备"
+  ],
+  "should": [
+    "海上卫星通信运营",
+    "通信基础设施运营",
+    "安全通信网络应用",
+    "字节跳动",
+    "快手",
+    "百度",
+    "微博",
+    "阿里",
+    "美团",
+    "唯品会"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "移动通信网络建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "网络优化覆盖设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:24:13"
+}

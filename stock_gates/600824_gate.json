@@ -1,0 +1,36 @@
+{
+  "stock_id": "600824",
+  "stock_name": "益民集团",
+  "concept": "综合性商业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商业批发零售",
+    "商业物业租赁"
+  ],
+  "should": [
+    "典当产业",
+    "餐饮旅游",
+    "古今内衣",
+    "天宝龙凤",
+    "东方典当",
+    "星光摄影",
+    "上海床品公司",
+    "养老服务",
+    "自营门店",
+    "加盟门店"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商业批发零售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商业物业租赁",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:28:49"
+}

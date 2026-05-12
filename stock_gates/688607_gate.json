@@ -1,0 +1,35 @@
+{
+  "stock_id": "688607",
+  "stock_name": "康众医疗",
+  "concept": "数字化X射线探测器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字化X射线平板探测器",
+    "数字化X射线探测器"
+  ],
+  "should": [
+    "无线高速动态板",
+    "CBCT平板探测器",
+    "口内传感器",
+    "曲面探测器",
+    "单光子计数探测器",
+    "智能束光器",
+    "医疗",
+    "口腔",
+    "工业/安检"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字化X射线平板探测器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字化X射线探测器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:22:03"
+}

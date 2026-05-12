@@ -1,0 +1,36 @@
+{
+  "stock_id": "603578",
+  "stock_name": "三星新材",
+  "concept": "低温储藏玻璃门体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "低温储藏设备玻璃门体",
+    "低温储藏玻璃门体"
+  ],
+  "should": [
+    "深加工玻璃产品",
+    "玻璃深加工技术",
+    "海信容声",
+    "松下冷链",
+    "美的集团",
+    "合肥华凌",
+    "海尔生物",
+    "星星冷链",
+    "澳柯玛",
+    "钢化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "低温储藏设备玻璃门体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "低温储藏玻璃门体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:52:35"
+}

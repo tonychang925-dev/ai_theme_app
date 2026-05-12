@@ -1,0 +1,36 @@
+{
+  "stock_id": "001236",
+  "stock_name": "弘业期货",
+  "concept": "期货综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商品期货经纪",
+    "金融期货经纪"
+  ],
+  "should": [
+    "期货投资咨询",
+    "资产管理",
+    "基金销售",
+    "弘业国际金融（境外证券期货）",
+    "弘业资本（风险管理）",
+    "风险管理",
+    "境外金融服务",
+    "金融资产投资",
+    "45家分支机构",
+    "20家位于江苏省"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商品期货经纪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融期货经纪",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:14:34"
+}

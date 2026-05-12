@@ -1,0 +1,36 @@
+{
+  "stock_id": "002120",
+  "stock_name": "韵达股份",
+  "concept": "智慧快递物流",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧快递物流",
+    "国内快递物流服务",
+    "智慧快递物流生态体系"
+  ],
+  "should": [
+    "县乡村三级物流体系",
+    "电商经济",
+    "农村物流",
+    "冷链物流",
+    "快递进村"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧快递物流",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内快递物流服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧快递物流生态体系",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:24:13"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "600476",
+  "stock_name": "湘邮科技",
+  "concept": "邮政软件服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "邮政软件服务",
+    "平台运营",
+    "软件开发",
+    "系统集成"
+  ],
+  "should": [
+    "代理产品",
+    "北斗车载终端",
+    "数据中台",
+    "研发运维一体化平台",
+    "智能安防",
+    "邮政政务",
+    "金融普惠",
+    "寄递市场",
+    "国产替代",
+    "国产信创产品销售"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "邮政软件服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "平台运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "软件开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "系统集成",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:18:39"
+}

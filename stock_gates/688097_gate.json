@@ -1,0 +1,41 @@
+{
+  "stock_id": "688097",
+  "stock_name": "博众精工",
+  "concept": "智能化生产解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能化生产解决方案",
+    "自动化设备",
+    "柔性模块化生产线"
+  ],
+  "should": [
+    "锂电池制造标准设备",
+    "智能充换电站设备",
+    "汽车电子制程设备",
+    "主控芯片",
+    "固件开发",
+    "柔性模块化设计",
+    "底盘换电技术",
+    "消费电子",
+    "新能源",
+    "半导体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能化生产解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自动化设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "柔性模块化生产线",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:08:15"
+}

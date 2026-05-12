@@ -1,0 +1,40 @@
+{
+  "stock_id": "002702",
+  "stock_name": "海欣食品",
+  "concept": "速冻食品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "速冻鱼肉制品",
+    "速冻肉制品",
+    "海欣"
+  ],
+  "should": [
+    "速冻米面制品",
+    "速冻菜肴制品",
+    "常温鱼肉制品",
+    "常温肉制品",
+    "鱼极",
+    "优必歌",
+    "百肴轩",
+    "速冻食品",
+    "行业内首家上市企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "速冻鱼肉制品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "速冻肉制品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海欣",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:54:01"
+}

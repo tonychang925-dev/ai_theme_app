@@ -1,0 +1,36 @@
+{
+  "stock_id": "000829",
+  "stock_name": "天音控股",
+  "concept": "通信产品分销",
+  "strategy_type": "industry_chain",
+  "must": [
+    "通信产品销售",
+    "通信产品分销"
+  ],
+  "should": [
+    "零售电商",
+    "苹果",
+    "华为",
+    "三星",
+    "移动互联网",
+    "彩票业务",
+    "天猫",
+    "智能手机",
+    "笔记本",
+    "平板电脑"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "通信产品销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通信产品分销",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:06:25"
+}

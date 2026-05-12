@@ -1,0 +1,43 @@
+{
+  "stock_id": "000807",
+  "stock_name": "云铝股份",
+  "concept": "水电铝一体化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铝冶炼",
+    "铝加工",
+    "原铝",
+    "绿色低碳水电铝"
+  ],
+  "should": [
+    "铝材加工",
+    "氧化铝",
+    "炭素制品",
+    "铝土矿",
+    "水电铝一体化",
+    "新能源汽车",
+    "光伏"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铝冶炼",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "铝加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原铝",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "绿色低碳水电铝",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:05:29"
+}

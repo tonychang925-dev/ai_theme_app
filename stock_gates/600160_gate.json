@@ -1,0 +1,41 @@
+{
+  "stock_id": "600160",
+  "stock_name": "巨化股份",
+  "concept": "氟化工龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "制冷剂",
+    "全球氟制冷剂龙头",
+    "氟化工龙头"
+  ],
+  "should": [
+    "含氟聚合物材料",
+    "氟化工原料",
+    "含氟精细化学品",
+    "自有技术实现第四代氟致冷剂产业化",
+    "食品包装材料",
+    "石化材料",
+    "基础化工",
+    "战略性新兴产业支撑材料",
+    "食品包装",
+    "国内氟聚合物领先"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "制冷剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球氟制冷剂龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氟化工龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:10:36"
+}

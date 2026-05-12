@@ -1,0 +1,31 @@
+{
+  "stock_id": "002262",
+  "stock_name": "恩华药业",
+  "concept": "中枢神经药物",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中枢神经药物"
+  ],
+  "should": [
+    "咪达唑仑注射液",
+    "依托咪酯乳状注射液",
+    "芬太尼",
+    "瑞芬太尼",
+    "舒芬太尼",
+    "阿芬太尼",
+    "羟考酮",
+    "地佐辛",
+    "普瑞巴林",
+    "他喷他多缓释片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中枢神经药物",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:32:26"
+}

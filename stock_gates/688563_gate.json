@@ -1,0 +1,30 @@
+{
+  "stock_id": "688563",
+  "stock_name": "航材股份",
+  "concept": "航空材料部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钛合金铸件",
+    "高温合金母合金"
+  ],
+  "should": [
+    "橡胶与密封件",
+    "透明件",
+    "航空材料部件",
+    "中国航发旗下"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钛合金铸件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高温合金母合金",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:20:39"
+}

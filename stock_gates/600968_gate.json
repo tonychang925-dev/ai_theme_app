@@ -1,0 +1,51 @@
+{
+  "stock_id": "600968",
+  "stock_name": "海油发展",
+  "concept": "海洋石油服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "海洋石油生产服务",
+    "FPSO生产技术服务",
+    "综合类采掘服务",
+    "能源技术服务",
+    "能源物流服务"
+  ],
+  "should": [
+    "低碳环保与数字化",
+    "海上油气田开采",
+    "油气外输服务",
+    "油气副产品分销",
+    "油田化学药剂",
+    "海上风电",
+    "光伏发电",
+    "电潜泵",
+    "智能注采系列产品",
+    "人工举升产品"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "海洋石油生产服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "FPSO生产技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合类采掘服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "能源技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "能源物流服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:32:04"
+}

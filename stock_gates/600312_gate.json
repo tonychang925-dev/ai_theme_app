@@ -1,0 +1,41 @@
+{
+  "stock_id": "600312",
+  "stock_name": "平高电气",
+  "concept": "高压开关设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高压开关设备",
+    "开关技术",
+    "环保真空断路器"
+  ],
+  "should": [
+    "配电网设备",
+    "充气柜",
+    "真空灭弧室",
+    "低频GIS",
+    "储能项目",
+    "数字化安装管控平台",
+    "特高压",
+    "超高压",
+    "海上风电输电",
+    "行业引领力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高压开关设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "开关技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "环保真空断路器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:14:42"
+}

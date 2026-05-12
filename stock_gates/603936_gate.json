@@ -1,0 +1,36 @@
+{
+  "stock_id": "603936",
+  "stock_name": "博敏电子",
+  "concept": "PCB一站式服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "PCB一站式服务",
+    "PCB客制化方案解决商"
+  ],
+  "should": [
+    "HDI板",
+    "高多层板",
+    "微波高频板",
+    "厚铜板",
+    "金属基/芯板",
+    "软板",
+    "软硬结合板",
+    "陶瓷衬板",
+    "微波无源器件",
+    "AMB工艺"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "PCB一站式服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PCB客制化方案解决商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:59:20"
+}

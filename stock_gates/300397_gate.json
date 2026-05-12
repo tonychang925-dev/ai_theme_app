@@ -1,0 +1,41 @@
+{
+  "stock_id": "300397",
+  "stock_name": "天和防务",
+  "concept": "军工电子信息",
+  "strategy_type": "industry_chain",
+  "must": [
+    "军工装备",
+    "通信电子",
+    "新一代综合电子信息"
+  ],
+  "should": [
+    "射频收/发前端芯片/模组",
+    "封装树脂膜",
+    "高频高速覆铜板",
+    "高导热金属基板",
+    "无溶剂型高性能胶膜材料",
+    "主控芯片",
+    "物联感知",
+    "固件开发",
+    "边缘计算",
+    "5G基站"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "军工装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通信电子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新一代综合电子信息",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:25:35"
+}

@@ -1,0 +1,44 @@
+{
+  "stock_id": "300025",
+  "stock_name": "华星创业",
+  "concept": "通信技术服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "网络优化",
+    "通信技术服务",
+    "网络维护",
+    "5G网络"
+  ],
+  "should": [
+    "通信运营商",
+    "网络建设",
+    "设备商",
+    "智慧城市",
+    "物联网",
+    "自动驾驶",
+    "网优服务时间最久",
+    "业务规模较大的第三方专业公司"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "网络优化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通信技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "网络维护",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "5G网络",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:10:02"
+}

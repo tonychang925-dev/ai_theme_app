@@ -1,0 +1,31 @@
+{
+  "stock_id": "688020",
+  "stock_name": "方邦股份",
+  "concept": "电磁屏蔽膜",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电磁屏蔽膜"
+  ],
+  "should": [
+    "极薄挠性覆铜板",
+    "薄膜电阻",
+    "超薄可剥离铜箔",
+    "锂电铜箔",
+    "精密涂布设备",
+    "真空溅射设备",
+    "卷状电沉积设备",
+    "涂布工艺",
+    "溅镀工艺",
+    "5G通讯"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电磁屏蔽膜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:05:39"
+}

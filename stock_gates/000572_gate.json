@@ -1,0 +1,41 @@
+{
+  "stock_id": "000572",
+  "stock_name": "海马汽车",
+  "concept": "新能源汽车",
+  "strategy_type": "industry_chain",
+  "must": [
+    "海马7X",
+    "海马8S",
+    "海马6P"
+  ],
+  "should": [
+    "氢燃料电池汽车",
+    "马邦出行",
+    "绿电中心",
+    "新能源汽车",
+    "模块化整车",
+    "高效混合动力总成",
+    "氢能汽车",
+    "高效三电",
+    "智能网联与自动驾驶",
+    "金融服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "海马7X",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海马8S",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海马6P",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T16:57:15"
+}

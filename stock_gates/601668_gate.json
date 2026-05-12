@@ -1,0 +1,46 @@
+{
+  "stock_id": "601668",
+  "stock_name": "中国建筑",
+  "concept": "建筑地产双龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑地产双龙头",
+    "基建",
+    "房建",
+    "地产"
+  ],
+  "should": [
+    "房屋建筑工程",
+    "基础设施建设与投资",
+    "房地产开发与投资",
+    "勘察设计",
+    "中海地产",
+    "中海宏洋",
+    "中建地产",
+    "央企背景",
+    "全产业链平台",
+    "低融资成本"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑地产双龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "基建",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "房建",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "地产",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:37:52"
+}

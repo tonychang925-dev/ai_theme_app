@@ -1,0 +1,46 @@
+{
+  "stock_id": "600997",
+  "stock_name": "开滦股份",
+  "concept": "煤炭煤化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤炭开采",
+    "原煤洗选加工",
+    "煤炭煤化工",
+    "煤炭"
+  ],
+  "should": [
+    "炼焦",
+    "煤化工产品生产销售",
+    "洗精煤",
+    "焦炭",
+    "甲醇",
+    "纯苯",
+    "己二酸",
+    "聚甲醛",
+    "钢铁冶炼",
+    "有机化工原料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤炭开采",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "原煤洗选加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭煤化工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤炭",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:32:55"
+}

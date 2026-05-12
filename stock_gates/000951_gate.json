@@ -1,0 +1,46 @@
+{
+  "stock_id": "000951",
+  "stock_name": "中国重汽",
+  "concept": "重卡龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "重卡龙头",
+    "重卡",
+    "斯太尔技术",
+    "MAN技术"
+  ],
+  "should": [
+    "中卡",
+    "轻卡",
+    "客车",
+    "特种车",
+    "载重汽车",
+    "专用车",
+    "发动机",
+    "变速箱",
+    "车桥",
+    "汽车零部件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "重卡龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "重卡",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "斯太尔技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MAN技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:10:43"
+}

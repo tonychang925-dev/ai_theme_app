@@ -1,0 +1,41 @@
+{
+  "stock_id": "002565",
+  "stock_name": "顺灏股份",
+  "concept": "工业大麻龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业大麻龙头",
+    "工业大麻种植加工",
+    "工业大麻全产业链技术"
+  ],
+  "should": [
+    "环保包装印刷",
+    "新型烟草制品",
+    "新型烟草核心技术专利",
+    "新能源钠电",
+    "钠电池技术",
+    "包装印刷",
+    "工业大麻产品",
+    "电子烟",
+    "储能",
+    "工业大麻种植加工许可证持有者"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业大麻龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业大麻种植加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业大麻全产业链技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:47:51"
+}

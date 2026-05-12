@@ -1,0 +1,50 @@
+{
+  "stock_id": "300746",
+  "stock_name": "汉嘉数智",
+  "concept": "工程勘察设计",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑设计",
+    "市政公用及环境设计",
+    "EPC总承包",
+    "全过程咨询",
+    "工程设计资质"
+  ],
+  "should": [
+    "燃气热力及能源设计",
+    "园林景观设计",
+    "装饰设计",
+    "勘察资质",
+    "新型城市基础设施建设",
+    "城市更新",
+    "完整居住社区建设",
+    "乡村建设行动",
+    "新型城镇化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "市政公用及环境设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "EPC总承包",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全过程咨询",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程设计资质",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:41:17"
+}

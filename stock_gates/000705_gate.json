@@ -1,0 +1,36 @@
+{
+  "stock_id": "000705",
+  "stock_name": "浙江震元",
+  "concept": "医药流通",
+  "strategy_type": "industry_chain",
+  "must": [
+    "注射用氯诺昔康",
+    "盐酸头孢他美酯干混剂"
+  ],
+  "should": [
+    "胶囊",
+    "国内市场占有率第一",
+    "医药流通",
+    "医药批发",
+    "零售药店",
+    "中医药",
+    "药品集中带量采购",
+    "数字化",
+    "专业化",
+    "多元化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "注射用氯诺昔康",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "盐酸头孢他美酯干混剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:01:15"
+}

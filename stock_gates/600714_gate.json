@@ -1,0 +1,36 @@
+{
+  "stock_id": "600714",
+  "stock_name": "金瑞矿业",
+  "concept": "锶盐材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "碳酸锶",
+    "液晶玻璃基板"
+  ],
+  "should": [
+    "金属锶",
+    "铝锶合金",
+    "硝酸锶",
+    "氢氧化锶",
+    "硫磺",
+    "亚硫酸钠",
+    "磁性材料",
+    "电子陶瓷",
+    "锶盐材料",
+    "高纯碳酸锶自主研发"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "碳酸锶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液晶玻璃基板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:25:37"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "688307",
+  "stock_name": "中润光学",
+  "concept": "精密光学镜头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "精密光学镜头",
+    "数字安防镜头"
+  ],
+  "should": [
+    "无人机镜头",
+    "智能巡检镜头",
+    "视讯会议镜头",
+    "激光电视镜头",
+    "智能车载镜头",
+    "智能家居镜头",
+    "智能投影镜头",
+    "电影镜头",
+    "超高清",
+    "大靶面"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "精密光学镜头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字安防镜头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:14:58"
+}

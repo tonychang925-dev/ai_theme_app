@@ -1,0 +1,32 @@
+{
+  "stock_id": "688244",
+  "stock_name": "永信至诚",
+  "concept": "网络安全测试评估",
+  "strategy_type": "industry_chain",
+  "must": [
+    "网络靶场系列产品",
+    "数字风洞产品体系"
+  ],
+  "should": [
+    "平行仿真技术",
+    "春秋云专有云平台",
+    "网络安全测试评估",
+    "网络安全赛事运营",
+    "安全测试评估",
+    "人才选拔训练评价"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "网络靶场系列产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字风洞产品体系",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:12:49"
+}

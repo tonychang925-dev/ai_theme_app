@@ -1,0 +1,41 @@
+{
+  "stock_id": "600838",
+  "stock_name": "上海九百",
+  "concept": "洗涤化工与商业",
+  "strategy_type": "industry_chain",
+  "must": [
+    "洗涤化工产品",
+    "商业地产",
+    "百货业"
+  ],
+  "should": [
+    "洗涤产品",
+    "酒类",
+    "洗衣服务",
+    "商业网点管理",
+    "上海九百城市广场有限公司",
+    "上海久光百货有限公司",
+    "海鼎",
+    "线上业务",
+    "传统电商平台",
+    "抖音"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "洗涤化工产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商业地产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "百货业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:29:08"
+}

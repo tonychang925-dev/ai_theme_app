@@ -1,0 +1,51 @@
+{
+  "stock_id": "603987",
+  "stock_name": "康德莱",
+  "concept": "医用穿刺器械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "医用穿刺器械",
+    "留置针",
+    "功能型输液器",
+    "一次性使用注射笔用针头",
+    "一次性穿刺活检针"
+  ],
+  "should": [
+    "输注泵类有源器械",
+    "滑套式安全胰岛素注射器",
+    "一次性使用无菌注射器带安全针",
+    "一次性使用安全胰岛素配套笔针",
+    "一次性使用无菌注射包",
+    "盒装注射器",
+    "一次性使用安全留置针",
+    "一次性使用泵用注射器",
+    "一次性使用引流袋",
+    "安全留置针"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "医用穿刺器械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "留置针",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功能型输液器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一次性使用注射笔用针头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "一次性穿刺活检针",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:00:40"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "300673",
+  "stock_name": "佩蒂股份",
+  "concept": "宠物食品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "宠物食品",
+    "主粮"
+  ],
+  "should": [
+    "零食",
+    "保健品",
+    "宠物饲养",
+    "宠物陪伴",
+    "宠物食品生产企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "宠物食品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "主粮",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:38:18"
+}

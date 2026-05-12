@@ -1,0 +1,31 @@
+{
+  "stock_id": "002195",
+  "stock_name": "岩山科技",
+  "concept": "互联网入口平台",
+  "strategy_type": "industry_chain",
+  "must": [
+    "2345网址导航"
+  ],
+  "should": [
+    "2345加速浏览器",
+    "2345看图王",
+    "2345好压",
+    "2345王牌输入法",
+    "2345安全卫士",
+    "2345 PDF转换器",
+    "2345天气王",
+    "2345手机助手",
+    "2345手机浏览器",
+    "手机清理王"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "2345网址导航",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:28:46"
+}

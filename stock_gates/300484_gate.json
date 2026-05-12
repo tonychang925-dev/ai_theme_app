@@ -1,0 +1,37 @@
+{
+  "stock_id": "300484",
+  "stock_name": "蓝海华腾",
+  "concept": "电机驱动控制",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电机驱动的核心控制技术",
+    "电机驱动控制",
+    "电动汽车电机控制器"
+  ],
+  "should": [
+    "转矩控制技术",
+    "自动辨识电机技术",
+    "中低压变频器",
+    "伺服驱动器",
+    "新能源汽车",
+    "工业自动化控制"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电机驱动的核心控制技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电机驱动控制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电动汽车电机控制器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:29:20"
+}

@@ -1,0 +1,46 @@
+{
+  "stock_id": "300609",
+  "stock_name": "汇纳科技",
+  "concept": "客流分析",
+  "strategy_type": "industry_chain",
+  "must": [
+    "客流分析",
+    "数字商业",
+    "人工智能",
+    "大数据"
+  ],
+  "should": [
+    "数字政务",
+    "数字政法",
+    "物联网",
+    "客流数据分析系统",
+    "远程巡店系统",
+    "智能屏管理系统",
+    "数据服务产品",
+    "增强现实（AR）",
+    "虚拟现实（VR）",
+    "5G通信"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "客流分析",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字商业",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人工智能",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大数据",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:35:13"
+}

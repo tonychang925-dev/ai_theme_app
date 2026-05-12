@@ -1,0 +1,33 @@
+{
+  "stock_id": "301032",
+  "stock_name": "新柴股份",
+  "concept": "非道路柴油机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "非道路柴油机",
+    "非道路用柴油发动机"
+  ],
+  "should": [
+    "柴油发动机相关零部件",
+    "内燃机及配件制造",
+    "工程机械",
+    "农用机械",
+    "发电机组",
+    "非道路多缸柴油机市场第一梯队",
+    "叉车用柴油机领域先发优势"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "非道路柴油机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "非道路用柴油发动机",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:53:57"
+}

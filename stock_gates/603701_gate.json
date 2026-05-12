@@ -1,0 +1,41 @@
+{
+  "stock_id": "603701",
+  "stock_name": "德宏股份",
+  "concept": "商用车发电机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商用车发电机",
+    "车用交流发电机",
+    "电子真空泵"
+  ],
+  "should": [
+    "江淮汽车",
+    "绵阳新晨",
+    "成都成发",
+    "云内动力",
+    "潍柴动力",
+    "玉柴",
+    "常柴",
+    "郑州日产",
+    "一汽四环",
+    "天津雷沃"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商用车发电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "车用交流发电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电子真空泵",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:55:16"
+}

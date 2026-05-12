@@ -1,0 +1,36 @@
+{
+  "stock_id": "603176",
+  "stock_name": "汇通集团",
+  "concept": "公路市政工程",
+  "strategy_type": "industry_chain",
+  "must": [
+    "公路工程施工总承包特级",
+    "公路工程施工"
+  ],
+  "should": [
+    "市政公用工程施工总承包壹级",
+    "市政工程施工",
+    "建筑工程施工总承包贰级",
+    "房屋建筑工程施工",
+    "高速公路",
+    "市政道路",
+    "生态治理",
+    "雨污分流管网改造",
+    "污水处理",
+    "设计、咨询、施工、运维一体化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "公路工程施工总承包特级",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公路工程施工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:45:30"
+}

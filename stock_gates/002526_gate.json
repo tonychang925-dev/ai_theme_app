@@ -1,0 +1,51 @@
+{
+  "stock_id": "002526",
+  "stock_name": "山东矿机",
+  "concept": "煤机装备制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "煤机装备制造",
+    "液压支架",
+    "刮板输送机",
+    "皮带机",
+    "煤矿"
+  ],
+  "should": [
+    "工程油缸",
+    "减速器",
+    "圆环链",
+    "链轮",
+    "大数据运维共享平台",
+    "地面矿山",
+    "冶金",
+    "港口码头",
+    "物流园",
+    "电厂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "煤机装备制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "液压支架",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "刮板输送机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "皮带机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "煤矿",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:45:51"
+}

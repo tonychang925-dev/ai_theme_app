@@ -1,0 +1,35 @@
+{
+  "stock_id": "300348",
+  "stock_name": "长亮科技",
+  "concept": "金融核心系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金融核心系统",
+    "金融核心系统解决方案"
+  ],
+  "should": [
+    "云计算",
+    "大数据",
+    "人工智能",
+    "大型商业银行",
+    "股份制商业银行",
+    "城商行",
+    "农商行",
+    "信创全替代",
+    "数据资产入表"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金融核心系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融核心系统解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:23:22"
+}

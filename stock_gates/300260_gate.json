@@ -1,0 +1,46 @@
+{
+  "stock_id": "300260",
+  "stock_name": "新莱应材",
+  "concept": "高洁净材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高洁净材料",
+    "真空室（腔体）",
+    "泵",
+    "阀"
+  ],
+  "should": [
+    "法兰",
+    "管道",
+    "管件",
+    "雀巢集团",
+    "三元乳业",
+    "完达山乳业",
+    "东富龙",
+    "楚天科技",
+    "半导体设备",
+    "食品无菌包装"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高洁净材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "真空室（腔体）",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "泵",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "阀",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:20:03"
+}

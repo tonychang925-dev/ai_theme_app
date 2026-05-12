@@ -1,0 +1,31 @@
+{
+  "stock_id": "000862",
+  "stock_name": "银星能源",
+  "concept": "新能源发电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新能源发电"
+  ],
+  "should": [
+    "新能源装备",
+    "风力发电",
+    "太阳能光伏发电",
+    "塔筒制造",
+    "风机组装",
+    "齿轮箱维修",
+    "风电及煤炭综采设备检修",
+    "电费结算",
+    "订单式",
+    "风电装机容量140.68万千瓦"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新能源发电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:07:07"
+}

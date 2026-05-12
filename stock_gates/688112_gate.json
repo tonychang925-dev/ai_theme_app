@@ -1,0 +1,46 @@
+{
+  "stock_id": "688112",
+  "stock_name": "鼎阳科技",
+  "concept": "电子测量仪器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字示波器",
+    "频谱分析仪",
+    "矢量网络分析仪",
+    "国内电测仪器龙头"
+  ],
+  "should": [
+    "电源类其他产品",
+    "频谱分析技术",
+    "宽带矢量信号技术",
+    "矢量网络分析技术",
+    "国内首家推出高端频谱分析仪",
+    "电子测量仪器",
+    "高带宽",
+    "低噪声",
+    "高刷新",
+    "教育科研"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字示波器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "频谱分析仪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "矢量网络分析仪",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内电测仪器龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:08:44"
+}

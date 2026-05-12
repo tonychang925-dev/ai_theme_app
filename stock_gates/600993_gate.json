@@ -1,0 +1,31 @@
+{
+  "stock_id": "600993",
+  "stock_name": "马应龙",
+  "concept": "肛肠健康",
+  "strategy_type": "industry_chain",
+  "must": [
+    "龙珠软膏"
+  ],
+  "should": [
+    "八宝眼膏",
+    "肛肠健康",
+    "功能型化妆品",
+    "功能型护理品",
+    "功能型食品",
+    "中药饮片",
+    "肛肠治疗",
+    "眼部健康",
+    "皮肤健康护理",
+    "大健康产业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "龙珠软膏",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:32:46"
+}

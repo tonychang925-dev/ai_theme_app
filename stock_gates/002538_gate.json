@@ -1,0 +1,36 @@
+{
+  "stock_id": "002538",
+  "stock_name": "司尔特",
+  "concept": "磷复肥生产",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高浓度磷复肥",
+    "复合肥"
+  ],
+  "should": [
+    "磷酸一铵",
+    "测土配方施肥",
+    "磷石膏综合利用",
+    "生物有机肥",
+    "海藻酸复合肥料",
+    "含黄腐酸复合肥料",
+    "腐殖酸复合肥料",
+    "含肥效保持剂肥料",
+    "硫铁矿制酸",
+    "全元生物有机肥生产工艺"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高浓度磷复肥",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复合肥",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:46:23"
+}

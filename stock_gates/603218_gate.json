@@ -1,0 +1,41 @@
+{
+  "stock_id": "603218",
+  "stock_name": "日月股份",
+  "concept": "风电铸件龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风电铸件龙头",
+    "全球风电铸件主要供货商",
+    "大型风力发电机铸件"
+  ],
+  "should": [
+    "大型注塑机铸件",
+    "大型柴油机铸件",
+    "大型加工中心铸件",
+    "大型矿山机械铸件",
+    "球墨铸铁",
+    "灰口铸铁",
+    "蠕墨铸铁",
+    "冲天炉熔炼",
+    "电炉熔炼",
+    "风电整机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风电铸件龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球风电铸件主要供货商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大型风力发电机铸件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:46:48"
+}

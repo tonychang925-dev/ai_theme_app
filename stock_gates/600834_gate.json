@@ -1,0 +1,36 @@
+{
+  "stock_id": "600834",
+  "stock_name": "申通地铁",
+  "concept": "轨道交通运维",
+  "strategy_type": "industry_chain",
+  "must": [
+    "轨道交通运维",
+    "公共交通运维管理"
+  ],
+  "should": [
+    "新能源相关业务",
+    "融资租赁及商业保理",
+    "无人驾驶地铁运维",
+    "机场捷运系统运维",
+    "有轨电车运维",
+    "固定总包价",
+    "成本加成",
+    "分布式光伏发电",
+    "充电桩",
+    "轨道交通检测认证"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "轨道交通运维",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公共交通运维管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:29:05"
+}

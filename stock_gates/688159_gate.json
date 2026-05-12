@@ -1,0 +1,36 @@
+{
+  "stock_id": "688159",
+  "stock_name": "有方科技",
+  "concept": "物联网通信模组",
+  "strategy_type": "industry_chain",
+  "must": [
+    "物联网无线通信模组",
+    "物联网无线通信终端"
+  ],
+  "should": [
+    "物联网无线通信解决方案",
+    "云平台",
+    "云基础设施",
+    "物联网通信模组",
+    "蜂窝通信技术",
+    "可靠性技术",
+    "应用层协议技术",
+    "基带和射频技术",
+    "嵌入式软件及云平台技术",
+    "智慧能源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "物联网无线通信模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物联网无线通信终端",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:10:09"
+}

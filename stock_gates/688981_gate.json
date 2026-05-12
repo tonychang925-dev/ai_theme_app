@@ -1,0 +1,36 @@
+{
+  "stock_id": "688981",
+  "stock_name": "中芯国际",
+  "concept": "晶圆代工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "晶圆代工",
+    "集成电路晶圆代工"
+  ],
+  "should": [
+    "设计服务与IP支持",
+    "光掩模制造",
+    "N+1工艺",
+    "制程技术",
+    "0.35微米至14纳米及以下",
+    "28纳米",
+    "55纳米",
+    "14纳米",
+    "人工智能",
+    "物联网"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "晶圆代工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "集成电路晶圆代工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:25:21"
+}

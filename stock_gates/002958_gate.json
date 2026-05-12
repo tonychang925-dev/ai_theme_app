@@ -1,0 +1,40 @@
+{
+  "stock_id": "002958",
+  "stock_name": "青农商行",
+  "concept": "城乡金融服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "零售金融",
+    "公司金融",
+    "资金业务"
+  ],
+  "should": [
+    "国际业务",
+    "财富管理",
+    "互联网小微云支付系统",
+    "村镇银行",
+    "城乡金融服务",
+    "服务‘三农’主力银行",
+    "城乡统筹主办银行",
+    "中小企业伙伴银行",
+    "城乡居民贴心银行"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "零售金融",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公司金融",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "资金业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:04:53"
+}

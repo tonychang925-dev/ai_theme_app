@@ -1,0 +1,46 @@
+{
+  "stock_id": "002593",
+  "stock_name": "日上集团",
+  "concept": "汽车车轮与钢结构",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑钢结构",
+    "设备钢结构",
+    "钢结构桥梁",
+    "钢构加工设备"
+  ],
+  "should": [
+    "型钢钢轮",
+    "轻量化无内胎钢轮",
+    "锻造铝合金轮毂",
+    "轻量化设计",
+    "商用车",
+    "石化/设备钢结构工程",
+    "市政/桥梁及轨道交通",
+    "大型高端工业厂房",
+    "高层钢结构建筑",
+    "国内商用车钢制车轮领先生产商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑钢结构",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "设备钢结构",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钢结构桥梁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钢构加工设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:48:59"
+}

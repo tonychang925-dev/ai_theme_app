@@ -1,0 +1,36 @@
+{
+  "stock_id": "605123",
+  "stock_name": "派克新材",
+  "concept": "环形锻件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "环形锻件",
+    "辗制环形锻件"
+  ],
+  "should": [
+    "自由锻件",
+    "精密模锻件",
+    "中国航发集团",
+    "英国罗罗",
+    "航天科技集团",
+    "航天科工集团",
+    "中船重工",
+    "上海电气",
+    "德国西门子",
+    "航空发动机机匣"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "环形锻件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "辗制环形锻件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:02:11"
+}

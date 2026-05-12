@@ -1,0 +1,36 @@
+{
+  "stock_id": "688045",
+  "stock_name": "必易微",
+  "concept": "电源管理芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电源管理芯片",
+    "全方案电源管理芯片供应商"
+  ],
+  "should": [
+    "LED照明驱动控制芯片",
+    "通用电源管理芯片",
+    "家电及IoT电源管理芯片",
+    "电机驱动控制芯片",
+    "恒流驱动",
+    "恒压驱动",
+    "SoC芯片",
+    "LED照明",
+    "交流转直流",
+    "家电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电源管理芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全方案电源管理芯片供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:06:17"
+}

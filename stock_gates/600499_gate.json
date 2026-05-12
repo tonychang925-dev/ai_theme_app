@@ -1,0 +1,41 @@
+{
+  "stock_id": "600499",
+  "stock_name": "科达制造",
+  "concept": "锂电材料装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电材料及装备",
+    "陶瓷机械",
+    "海外建材"
+  ],
+  "should": [
+    "锂电材料装备",
+    "零碳燃烧技术",
+    "节能环保装备",
+    "陶瓷数字化工厂平台",
+    "高铝纤维窑",
+    "陶瓷行业",
+    "建材行业",
+    "新能源产业",
+    "卤水提锂领军企业",
+    "海外建材本土化布局"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电材料及装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "陶瓷机械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "海外建材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:19:24"
+}

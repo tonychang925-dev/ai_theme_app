@@ -1,0 +1,39 @@
+{
+  "stock_id": "002873",
+  "stock_name": "新天药业",
+  "concept": "中成药新药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中成药新药",
+    "坤泰胶囊",
+    "苦参凝胶"
+  ],
+  "should": [
+    "宁泌泰胶囊",
+    "夏枯草口服液",
+    "发明专利36项",
+    "国家新药证书11个",
+    "中药配方颗粒研究试点",
+    "补血类",
+    "心血管疾病类",
+    "抗肿瘤类"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中成药新药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "坤泰胶囊",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "苦参凝胶",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:01:12"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "300927",
+  "stock_name": "江天化学",
+  "concept": "甲醇深加工精细化学品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "甲醇深加工精细化学品",
+    "多聚甲醛",
+    "喷雾干燥技术"
+  ],
+  "should": [
+    "甲醛",
+    "超高纯氯甲烷",
+    "清洁生产工艺",
+    "甲醇下游深加工",
+    "新材料及中间体一体化产业链"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "甲醇深加工精细化学品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "多聚甲醛",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "喷雾干燥技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:49:31"
+}

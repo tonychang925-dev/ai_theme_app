@@ -1,0 +1,51 @@
+{
+  "stock_id": "000629",
+  "stock_name": "钒钛股份",
+  "concept": "钒钛资源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "氧化钒",
+    "钒铁",
+    "钒氮合金",
+    "钛白粉",
+    "钛渣"
+  ],
+  "should": [
+    "钒电池",
+    "钠法生产工艺",
+    "钙法生产工艺",
+    "清洁钒生产工艺",
+    "氯化法工艺",
+    "高炉渣提钛技术",
+    "储能产业",
+    "世界主要钒制品供应商",
+    "中国主要钛原料供应商",
+    "全球领先产钒企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "氧化钒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钒铁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钒氮合金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钛白粉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钛渣",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:59:10"
+}

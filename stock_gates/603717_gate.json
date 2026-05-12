@@ -1,0 +1,32 @@
+{
+  "stock_id": "603717",
+  "stock_name": "天域生物",
+  "concept": "生态农牧光伏",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生态环境工程",
+    "生态农牧"
+  ],
+  "should": [
+    "光伏新能源",
+    "生猪养殖",
+    "绿色发电",
+    "海绵城市",
+    "智慧城市",
+    "分布式光伏建设"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生态环境工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生态农牧",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:55:24"
+}

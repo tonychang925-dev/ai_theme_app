@@ -1,0 +1,41 @@
+{
+  "stock_id": "688651",
+  "stock_name": "盛邦安全",
+  "concept": "网络安全",
+  "strategy_type": "industry_chain",
+  "must": [
+    "漏洞检测",
+    "网络空间地图",
+    "漏洞扫描系统"
+  ],
+  "should": [
+    "远程安全评估系统",
+    "网站监控预警平台",
+    "Web应用防护系统",
+    "网页防篡改系统",
+    "入侵检测与防御系统",
+    "异常流量清洗与抗拒绝服务系统",
+    "流量复制汇聚系统",
+    "网络安全感知分析平台",
+    "综合日志审计与管理系统",
+    "网络攻击阻断系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "漏洞检测",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "网络空间地图",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "漏洞扫描系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:23:04"
+}

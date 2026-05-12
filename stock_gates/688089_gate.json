@@ -1,0 +1,51 @@
+{
+  "stock_id": "688089",
+  "stock_name": "嘉必优",
+  "concept": "国产发酵营养素龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "国产发酵营养素龙头",
+    "ARA",
+    "DHA",
+    "SA",
+    "BC"
+  ],
+  "should": [
+    "人乳低聚糖（HMOs）",
+    "HMO（岩藻糖基乳糖）",
+    "EPA(二十碳五烯酸)",
+    "番茄红素",
+    "虾青素",
+    "DHA藻粉",
+    "工业菌种定向选育",
+    "发酵精细调控",
+    "高效分离纯化制备",
+    "应用技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "国产发酵营养素龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ARA",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "DHA",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SA",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "BC",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:08:04"
+}

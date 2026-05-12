@@ -1,0 +1,41 @@
+{
+  "stock_id": "601515",
+  "stock_name": "衢州东峰",
+  "concept": "烟标包装印刷",
+  "strategy_type": "industry_chain",
+  "must": [
+    "烟标印刷",
+    "烟标",
+    "烟标包装印刷"
+  ],
+  "should": [
+    "医药包装",
+    "基膜",
+    "新型材料",
+    "电子烟",
+    "药包",
+    "纸品",
+    "油墨",
+    "涂料",
+    "电化铝",
+    "镭射膜"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "烟标印刷",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "烟标",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "烟标包装印刷",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:36:50"
+}

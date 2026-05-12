@@ -1,0 +1,46 @@
+{
+  "stock_id": "002234",
+  "stock_name": "民和股份",
+  "concept": "白羽鸡产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "商品代肉鸡苗生产销售",
+    "父母代肉种鸡饲养",
+    "熟食深加工",
+    "鸡肉制品"
+  ],
+  "should": [
+    "白羽鸡产业链",
+    "沼气发电",
+    "有机肥生产",
+    "百胜",
+    "铭基",
+    "真功夫",
+    "华莱士",
+    "双汇",
+    "金锣",
+    "得利斯"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "商品代肉鸡苗生产销售",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "父母代肉种鸡饲养",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "熟食深加工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "鸡肉制品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:30:51"
+}

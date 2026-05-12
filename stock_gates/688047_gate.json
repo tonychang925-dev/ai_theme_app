@@ -1,0 +1,31 @@
+{
+  "stock_id": "688047",
+  "stock_name": "龙芯中科",
+  "concept": "自主CPU生态",
+  "strategy_type": "industry_chain",
+  "must": [
+    "自主指令系统龙架构"
+  ],
+  "should": [
+    "龙芯3A6000",
+    "龙芯3C6000系列",
+    "龙芯三剑客",
+    "龙芯三尖兵",
+    "自主CPU生态",
+    "CPU IP核",
+    "GPU IP核",
+    "接口IP核",
+    "操作系统和基础软件核心能力",
+    "不依赖国外技术授权"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "自主指令系统龙架构",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:06:26"
+}

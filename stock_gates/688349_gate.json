@@ -1,0 +1,35 @@
+{
+  "stock_id": "688349",
+  "stock_name": "三一重能",
+  "concept": "风电整机",
+  "strategy_type": "industry_chain",
+  "must": [
+    "风电整机",
+    "风电机组"
+  ],
+  "should": [
+    "叶片",
+    "发电机",
+    "箱变上置技术",
+    "双馈电机技术",
+    "风力发电",
+    "风电场运营",
+    "叶片自产",
+    "发电机自产",
+    "产业链上下游一体化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "风电整机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "风电机组",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:16:19"
+}

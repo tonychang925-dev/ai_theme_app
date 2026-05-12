@@ -1,0 +1,41 @@
+{
+  "stock_id": "300486",
+  "stock_name": "东杰智能",
+  "concept": "智能物流装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能物流装备",
+    "智能物流输送系统",
+    "智能物流仓储系统"
+  ],
+  "should": [
+    "智能涂装系统",
+    "智能停车系统",
+    "输送线",
+    "堆垛机",
+    "穿梭车",
+    "提升机",
+    "托盘输送机",
+    "AGV",
+    "仓储管理系统(WMS)",
+    "设备控制系统(WCS)"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能物流装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能物流输送系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能物流仓储系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:29:36"
+}

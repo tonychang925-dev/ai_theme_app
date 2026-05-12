@@ -1,0 +1,39 @@
+{
+  "stock_id": "688683",
+  "stock_name": "莱尔科技",
+  "concept": "功能性涂布胶膜",
+  "strategy_type": "industry_chain",
+  "must": [
+    "功能性涂布胶膜",
+    "FFC",
+    "LED柔性线路板"
+  ],
+  "should": [
+    "涂碳铝箔",
+    "低介电屏蔽材料技术",
+    "防爆装饰一体膜技术",
+    "消费电子",
+    "汽车电子",
+    "LED照明",
+    "锂电池",
+    "半导体"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "功能性涂布胶膜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "FFC",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "LED柔性线路板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:24:00"
+}

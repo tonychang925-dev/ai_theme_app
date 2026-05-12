@@ -1,0 +1,46 @@
+{
+  "stock_id": "600258",
+  "stock_name": "首旅酒店",
+  "concept": "酒店连锁运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "如家",
+    "轻管理",
+    "中端拓店",
+    "非标加盟"
+  ],
+  "should": [
+    "建国",
+    "和颐",
+    "逸扉",
+    "璞隐",
+    "诺金",
+    "京伦",
+    "南山",
+    "南苑",
+    "环球影城大酒店",
+    "诺金度假酒店"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "如家",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轻管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中端拓店",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "非标加盟",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:13:20"
+}

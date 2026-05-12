@@ -1,0 +1,41 @@
+{
+  "stock_id": "600398",
+  "stock_name": "海澜之家",
+  "concept": "男装品牌运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "海澜之家",
+    "男装市场占有率第一",
+    "国民品牌"
+  ],
+  "should": [
+    "圣凯诺",
+    "黑鲸",
+    "男生女生",
+    "男装品牌运营",
+    "品牌服装经营",
+    "职业服生产销售",
+    "裤子",
+    "T恤衫",
+    "羽绒服",
+    "衬衫"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "海澜之家",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "男装市场占有率第一",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国民品牌",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:17:03"
+}

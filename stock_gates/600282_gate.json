@@ -1,0 +1,29 @@
+{
+  "stock_id": "600282",
+  "stock_name": "南钢股份",
+  "concept": "中厚板卷",
+  "strategy_type": "industry_chain",
+  "must": [
+    "中厚板卷",
+    "中板"
+  ],
+  "should": [
+    "钢材产量",
+    "钢材销量",
+    "综合平均销售价格"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "中厚板卷",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:13:50"
+}

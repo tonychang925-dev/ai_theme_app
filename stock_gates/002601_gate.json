@@ -1,0 +1,36 @@
+{
+  "stock_id": "002601",
+  "stock_name": "龙佰集团",
+  "concept": "钛白粉龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钛白粉龙头",
+    "钛白粉"
+  ],
+  "should": [
+    "海绵钛",
+    "磷酸铁",
+    "磷酸铁锂",
+    "石墨负极材料",
+    "五氧化二钒",
+    "硫酸法",
+    "大型沸腾氯化法",
+    "涂料",
+    "塑料",
+    "造纸"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钛白粉龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钛白粉",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:49:30"
+}

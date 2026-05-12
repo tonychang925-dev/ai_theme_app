@@ -1,0 +1,31 @@
+{
+  "stock_id": "688513",
+  "stock_name": "苑东生物",
+  "concept": "高端化学药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端化学药"
+  ],
+  "should": [
+    "富马酸比索洛尔片",
+    "依托考昔片",
+    "达比加群酯胶囊",
+    "卡培他滨片",
+    "硫酸氢氯吡格雷片",
+    "氨己烯酸口服溶液用散",
+    "舒更葡糖钠注射液",
+    "盐酸尼卡地平注射液",
+    "盐酸纳美芬注射液",
+    "伊班膦酸钠注射液"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端化学药",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:19:33"
+}

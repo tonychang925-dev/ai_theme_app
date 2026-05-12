@@ -1,0 +1,28 @@
+{
+  "stock_id": "603269",
+  "stock_name": "海鸥股份",
+  "concept": "冷却塔龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "冷却塔龙头"
+  ],
+  "should": [
+    "工业冷却塔",
+    "民用冷却塔",
+    "节能节水技术",
+    "消雾技术",
+    "降噪技术",
+    "海水循环技术",
+    "国内冷却塔单项冠军"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "冷却塔龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:47:42"
+}

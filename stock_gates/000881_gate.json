@@ -1,0 +1,38 @@
+{
+  "stock_id": "000881",
+  "stock_name": "中广核技",
+  "concept": "核技术应用",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子加速器",
+    "改性高分子材料"
+  ],
+  "should": [
+    "电子帘加速器",
+    "微焦点X射线源",
+    "自动化数字成像检测系统",
+    "速调管国产化替代",
+    "贴片硅堆新工艺",
+    "环境治理",
+    "食品保鲜",
+    "消毒灭菌",
+    "材料改性",
+    "无损检测"
+  ],
+  "not": [
+    "解决进口零件卡脖子问题"
+  ],
+  "evidence_refs": [
+    {
+      "term": "电子加速器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "改性高分子材料",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:07:53"
+}

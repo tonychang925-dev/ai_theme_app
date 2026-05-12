@@ -1,0 +1,31 @@
+{
+  "stock_id": "002224",
+  "stock_name": "三力士",
+  "concept": "橡胶传动带",
+  "strategy_type": "industry_chain",
+  "must": [
+    "橡胶V带"
+  ],
+  "should": [
+    "橡胶传动带",
+    "自动化生产设备",
+    "智能指挥系统",
+    "智慧工厂",
+    "通用机械",
+    "重型机械",
+    "农业机械",
+    "运输机械",
+    "国内橡胶V带行业排名第一",
+    "行业集中度较高"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "橡胶V带",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:30:11"
+}

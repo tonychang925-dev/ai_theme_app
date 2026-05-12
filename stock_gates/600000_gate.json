@@ -1,0 +1,46 @@
+{
+  "stock_id": "600000",
+  "stock_name": "浦发银行",
+  "concept": "股份制商业银行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "股份制商业银行",
+    "轻型银行",
+    "绿色银行",
+    "全景银行"
+  ],
+  "should": [
+    "零售业务",
+    "对公业务",
+    "金融市场业务",
+    "科创金融",
+    "绿色金融",
+    "自贸金融",
+    "普惠金融",
+    "乡村振兴",
+    "长三角",
+    "财富管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "股份制商业银行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轻型银行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "绿色银行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全景银行",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:06:52"
+}

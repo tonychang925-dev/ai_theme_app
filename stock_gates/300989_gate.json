@@ -1,0 +1,51 @@
+{
+  "stock_id": "300989",
+  "stock_name": "蕾奥规划",
+  "concept": "建设规划解决方案",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建设规划解决方案",
+    "规划设计业务",
+    "工程设计业务",
+    "行动规划+运营咨询",
+    "城市更新"
+  ],
+  "should": [
+    "国土空间规划",
+    "战略规划",
+    "城市设计",
+    "TOD综合开发",
+    "景观规划与设计",
+    "建筑设计",
+    "城市运营业务",
+    "智慧城乡业务",
+    "政策与咨询",
+    "交通市政"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建设规划解决方案",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "规划设计业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程设计业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "行动规划+运营咨询",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市更新",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:52:14"
+}

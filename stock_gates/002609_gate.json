@@ -1,0 +1,43 @@
+{
+  "stock_id": "002609",
+  "stock_name": "捷顺科技",
+  "concept": "智慧停车",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智慧停车",
+    "智能硬件",
+    "智慧停车运营",
+    "国内智慧停车领域龙头"
+  ],
+  "should": [
+    "软件及云服务",
+    "国内领先的智慧停车运营公司",
+    "设备IP化",
+    "接口标准化",
+    "自组网技术",
+    "AI技术（智能视频识别）",
+    "城市级智慧停车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智慧停车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能硬件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧停车运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内智慧停车领域龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:49:55"
+}

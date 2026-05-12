@@ -1,0 +1,46 @@
+{
+  "stock_id": "301067",
+  "stock_name": "显盈科技",
+  "concept": "信号转换拓展",
+  "strategy_type": "industry_chain",
+  "must": [
+    "信号转换器",
+    "电源适配器",
+    "Type-C信号转换器",
+    "高速高清多功能拓展坞"
+  ],
+  "should": [
+    "模具及精密结构件",
+    "Belkin",
+    "安克创新",
+    "Hama",
+    "Targus",
+    "罗马仕",
+    "大疆创新",
+    "海能达",
+    "信号转换拓展",
+    "信号转换技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "信号转换器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电源适配器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "Type-C信号转换器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高速高清多功能拓展坞",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:55:19"
+}

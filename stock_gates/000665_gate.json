@@ -1,0 +1,51 @@
+{
+  "stock_id": "000665",
+  "stock_name": "湖北广电",
+  "concept": "有线电视综合信息服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "有线电视综合信息服务",
+    "电视收视业务",
+    "宽带业务",
+    "节目传输收入",
+    "信息化应用业务"
+  ],
+  "should": [
+    "广电5G",
+    "数字电视",
+    "高清互动电视",
+    "宽带接入",
+    "TVOS标准应用",
+    "专网服务",
+    "行业信息化应用建设",
+    "平安城市",
+    "电子政务",
+    "雪亮工程"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "有线电视综合信息服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电视收视业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "宽带业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "节目传输收入",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信息化应用业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:00:05"
+}

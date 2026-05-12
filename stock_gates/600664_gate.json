@@ -1,0 +1,51 @@
+{
+  "stock_id": "600664",
+  "stock_name": "哈药股份",
+  "concept": "医药健康",
+  "strategy_type": "industry_chain",
+  "must": [
+    "哈药",
+    "三精",
+    "世一堂",
+    "盖中盖",
+    "护彤"
+  ],
+  "should": [
+    "保健品",
+    "抗生素原料与制剂",
+    "医药工业板块",
+    "医药商业板块",
+    "七个核心制造基地",
+    "仿制药一致性评价",
+    "高技术壁垒项目",
+    "创新药管线研发",
+    "消化",
+    "呼吸"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "哈药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "三精",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "世一堂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "盖中盖",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "护彤",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:24:22"
+}

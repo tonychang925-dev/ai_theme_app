@@ -1,0 +1,31 @@
+{
+  "stock_id": "300201",
+  "stock_name": "海伦哲",
+  "concept": "高空作业车",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高空作业车"
+  ],
+  "should": [
+    "电力应急保障车辆",
+    "绝缘臂技术",
+    "消防救援装备",
+    "军用专用车辆",
+    "机器人化技术",
+    "智能化技术",
+    "轻量化技术",
+    "电力",
+    "市政",
+    "园林"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高空作业车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:17:15"
+}

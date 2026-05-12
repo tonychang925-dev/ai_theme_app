@@ -1,0 +1,36 @@
+{
+  "stock_id": "605020",
+  "stock_name": "永和股份",
+  "concept": "氟化工全产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "含氟高分子材料及单体",
+    "含氟高分子材料研发"
+  ],
+  "should": [
+    "氟碳化学品单质",
+    "混合制冷剂",
+    "氢氟酸",
+    "萤石开采",
+    "氢氟酸生产",
+    "氟化工全产业链",
+    "制冷",
+    "塑料发泡",
+    "半导体清洗",
+    "气雾剂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "含氟高分子材料及单体",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "含氟高分子材料研发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:01:12"
+}

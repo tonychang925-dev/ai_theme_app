@@ -1,0 +1,41 @@
+{
+  "stock_id": "301056",
+  "stock_name": "森赫股份",
+  "concept": "电梯系统服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电梯系统服务",
+    "自主核心电梯技术",
+    "电梯智能化技术"
+  ],
+  "should": [
+    "乘客电梯",
+    "载货电梯",
+    "自动扶梯",
+    "自动人行道",
+    "物联网技术",
+    "家用电梯",
+    "大吨位货梯",
+    "房地产",
+    "城镇化建设",
+    "旧楼加装电梯"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电梯系统服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "自主核心电梯技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电梯智能化技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:54:51"
+}

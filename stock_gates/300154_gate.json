@@ -1,0 +1,34 @@
+{
+  "stock_id": "300154",
+  "stock_name": "瑞凌股份",
+  "concept": "逆变焊割设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "逆变焊割设备",
+    "焊接自动化系列产品"
+  ],
+  "should": [
+    "焊接材料配件类产品",
+    "精密钣金型材机加类结构件产品",
+    "智能爬行弧焊机器人",
+    "多态双丝焊接装置及控制方法",
+    "IGBT驱动电路",
+    "数字化、信息化、集成化技术",
+    "自动化焊接生产线",
+    "国内焊接设备行业中处于优势地位"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "逆变焊割设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "焊接自动化系列产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:15:27"
+}

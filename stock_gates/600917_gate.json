@@ -1,0 +1,36 @@
+{
+  "stock_id": "600917",
+  "stock_name": "重庆燃气",
+  "concept": "城镇燃气综合服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "管道燃气供应",
+    "燃气设施安装"
+  ],
+  "should": [
+    "燃气保险",
+    "厨电燃热",
+    "安居业务",
+    "交通能源供应",
+    "城镇燃气综合服务",
+    "综合服务",
+    "综合能源",
+    "分布式能源服务",
+    "燃气智能产品",
+    "大数据服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "管道燃气供应",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "燃气设施安装",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:31:07"
+}

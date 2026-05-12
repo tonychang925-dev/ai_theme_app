@@ -1,0 +1,46 @@
+{
+  "stock_id": "603017",
+  "stock_name": "中衡设计",
+  "concept": "建筑设计服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工程设计",
+    "工程总承包",
+    "全国工程勘察设计大师",
+    "建筑工程施工总承包壹级"
+  ],
+  "should": [
+    "项目管理",
+    "工程监理",
+    "装配式技术",
+    "BIM技术",
+    "绿色节能技术",
+    "国家装配式建筑产业基地",
+    "全过程工程咨询试点企业",
+    "全国绿色建筑创新奖一等奖",
+    "建筑设计服务",
+    "公共建筑"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工程设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程总承包",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全国工程勘察设计大师",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑工程施工总承包壹级",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:41:12"
+}

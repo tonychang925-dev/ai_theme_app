@@ -1,0 +1,41 @@
+{
+  "stock_id": "001979",
+  "stock_name": "招商蛇口",
+  "concept": "地产开发运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "社区开发与运营",
+    "园区开发与运营",
+    "地产开发运营"
+  ],
+  "should": [
+    "双百目标",
+    "邮轮产业建设与运营",
+    "背靠招商局",
+    "低成本补充土储",
+    "获取优质资源",
+    "低成本发债",
+    "银行授信额度充足",
+    "综合融资成本4.48%",
+    "集中商业及写字楼项目100个",
+    "营收100亿"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "社区开发与运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "园区开发与运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "地产开发运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:17:50"
+}

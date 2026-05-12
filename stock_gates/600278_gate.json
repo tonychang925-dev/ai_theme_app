@@ -1,0 +1,36 @@
+{
+  "stock_id": "600278",
+  "stock_name": "东方创业",
+  "concept": "贸易物流健康",
+  "strategy_type": "industry_chain",
+  "must": [
+    "货物贸易",
+    "现代物流"
+  ],
+  "should": [
+    "纺织服装",
+    "毛衫",
+    "内衣",
+    "梭织面料",
+    "冷冻肉类",
+    "动物蛋白",
+    "快消品",
+    "医药",
+    "农化及农产品",
+    "智能化设计服装打样中心"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "货物贸易",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "现代物流",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:13:57"
+}

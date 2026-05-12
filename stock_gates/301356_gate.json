@@ -1,0 +1,45 @@
+{
+  "stock_id": "301356",
+  "stock_name": "天振股份",
+  "concept": "新型PVC地板",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新型PVC复合材料地板",
+    "新型PVC地板",
+    "WPC地板",
+    "SPC地板"
+  ],
+  "should": [
+    "MGO地板",
+    "LVT地板",
+    "复合地板静音防水工艺技术",
+    "SPC挤塑一次成型工艺技术",
+    "PVC地板在线对花技术",
+    "LVT地板在线贴合技术",
+    "自动计量石塑配混料操作系统",
+    "住宅",
+    "医院"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新型PVC复合材料地板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新型PVC地板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "WPC地板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "SPC地板",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:03:37"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "300456",
+  "stock_name": "赛微电子",
+  "concept": "MEMS代工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "MEMS代工",
+    "MEMS工艺开发",
+    "MEMS代工制造"
+  ],
+  "should": [
+    "氮化镓外延材料",
+    "功率器件",
+    "硅基麦克风",
+    "惯性传感器",
+    "微镜",
+    "微流控/芯片实验室",
+    "射频芯片",
+    "硅光子",
+    "SilVia TSV",
+    "MetVia TSV"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "MEMS代工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MEMS工艺开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MEMS代工制造",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:28:17"
+}

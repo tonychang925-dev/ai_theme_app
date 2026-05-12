@@ -1,0 +1,32 @@
+{
+  "stock_id": "002685",
+  "stock_name": "华东重机",
+  "concept": "GPU芯片设计",
+  "strategy_type": "industry_chain",
+  "must": [
+    "GPU芯片设计",
+    "GPU芯片"
+  ],
+  "should": [
+    "主控芯片",
+    "固件开发",
+    "党政",
+    "特种领域",
+    "金融",
+    "电力"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "GPU芯片设计",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "GPU芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:53:12"
+}

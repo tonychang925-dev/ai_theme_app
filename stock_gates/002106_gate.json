@@ -1,0 +1,41 @@
+{
+  "stock_id": "002106",
+  "stock_name": "莱宝高科",
+  "concept": "平板显示触控",
+  "strategy_type": "industry_chain",
+  "must": [
+    "彩色滤光片",
+    "电容式触摸屏",
+    "全贴合技术"
+  ],
+  "should": [
+    "ITO导电玻璃",
+    "TFT-LCD面板及模组",
+    "电子纸显示屏",
+    "超薄玻璃基板加工",
+    "低电阻ITO镀膜",
+    "金属镀膜",
+    "光刻",
+    "化学气相沉积",
+    "刻蚀",
+    "液晶显示模组组装"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "彩色滤光片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电容式触摸屏",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全贴合技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:23:52"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "300957",
+  "stock_name": "贝泰妮",
+  "concept": "敏感肌护肤",
+  "strategy_type": "industry_chain",
+  "must": [
+    "薇诺娜"
+  ],
+  "should": [
+    "WINONABaby",
+    "痘痘康",
+    "BeautyAnswers",
+    "资润",
+    "AOXMED",
+    "屈臣氏",
+    "敏感肌护肤",
+    "特色植物提取物有效成分制备",
+    "敏感肌肤护理研究",
+    "敏感性肌肤护理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "薇诺娜",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:50:44"
+}

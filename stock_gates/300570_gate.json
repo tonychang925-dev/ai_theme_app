@@ -1,0 +1,51 @@
+{
+  "stock_id": "300570",
+  "stock_name": "太辰光",
+  "concept": "光通信器件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "光通信器件",
+    "陶瓷插芯",
+    "MT插芯",
+    "PLC芯片",
+    "AWG芯片"
+  ],
+  "should": [
+    "常规及高密度光纤连接器",
+    "PLC分路器",
+    "波分复用器",
+    "光模块",
+    "有源光缆（AOC）",
+    "光传感器",
+    "光纤柔性板",
+    "光纤配线机箱",
+    "光缆熔接箱",
+    "光纤传感技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "光通信器件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "陶瓷插芯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MT插芯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "PLC芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "AWG芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:33:19"
+}

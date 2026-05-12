@@ -1,0 +1,38 @@
+{
+  "stock_id": "688209",
+  "stock_name": "英集芯",
+  "concept": "电源管理芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电源管理芯片",
+    "快充协议芯片",
+    "数模混合SoC集成技术"
+  ],
+  "should": [
+    "移动电源芯片",
+    "无线充电芯片",
+    "车充芯片",
+    "TWS耳机充电仓芯片",
+    "主控芯片",
+    "固件开发",
+    "前装车厂客户验证并量产出货"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电源管理芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "快充协议芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数模混合SoC集成技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:11:54"
+}

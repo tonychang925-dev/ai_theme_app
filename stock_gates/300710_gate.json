@@ -1,0 +1,41 @@
+{
+  "stock_id": "300710",
+  "stock_name": "万隆光电",
+  "concept": "广电网络设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "广电网络设备",
+    "有线电视光纤传输设备",
+    "有线电视电缆传输设备"
+  ],
+  "should": [
+    "前端系统",
+    "数据通信系统",
+    "全IP",
+    "全光化",
+    "云化",
+    "智能化",
+    "广电领域中的传输网络",
+    "双向化改造",
+    "优化升级",
+    "宽带接入"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "广电网络设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有线电视光纤传输设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "有线电视电缆传输设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:39:54"
+}

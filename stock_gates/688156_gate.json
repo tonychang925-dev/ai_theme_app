@@ -1,0 +1,46 @@
+{
+  "stock_id": "688156",
+  "stock_name": "路德科技",
+  "concept": "高含水废弃物处理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "河湖淤泥处理",
+    "工程泥浆处理",
+    "白酒糟资源化利用",
+    "生物发酵饲料（倍肽德）"
+  ],
+  "should": [
+    "通沟污泥处理",
+    "厨余垃圾处理",
+    "泥浆脱水固结一体化技术",
+    "微生物固态发酵技术",
+    "昆虫协同微生物降解技术",
+    "昆虫蛋白饲料",
+    "高含水废弃物处理",
+    "饲料加工",
+    "有机肥料",
+    "白酒糟收储"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "河湖淤泥处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程泥浆处理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "白酒糟资源化利用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生物发酵饲料（倍肽德）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:10:03"
+}

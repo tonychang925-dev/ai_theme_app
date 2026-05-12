@@ -1,0 +1,46 @@
+{
+  "stock_id": "600800",
+  "stock_name": "渤海化学",
+  "concept": "丙烯与智能卡",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数据卡",
+    "智能应用系统及配套机具",
+    "城市一卡通",
+    "数字人民币技术应用"
+  ],
+  "should": [
+    "丙烯",
+    "丙烷",
+    "氢气",
+    "印刷产品",
+    "PDH装置",
+    "Catofin工艺",
+    "丙烯与智能卡",
+    "聚丙烯",
+    "丁辛醇",
+    "环氧丙烷"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数据卡",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能应用系统及配套机具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市一卡通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字人民币技术应用",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:28:05"
+}

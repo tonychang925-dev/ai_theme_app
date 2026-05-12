@@ -1,0 +1,51 @@
+{
+  "stock_id": "603809",
+  "stock_name": "豪能股份",
+  "concept": "汽车传动部件",
+  "strategy_type": "industry_chain",
+  "must": [
+    "同步器",
+    "差速器",
+    "电机轴",
+    "DCT双离合器零件",
+    "商用车AMT行星机构零件"
+  ],
+  "should": [
+    "汽车传动部件",
+    "精密加工",
+    "生产制造",
+    "自主设计",
+    "同步开发",
+    "成套制造",
+    "模具",
+    "夹具",
+    "标准件",
+    "材料试验件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "同步器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "差速器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电机轴",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "DCT双离合器零件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商用车AMT行星机构零件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:56:58"
+}

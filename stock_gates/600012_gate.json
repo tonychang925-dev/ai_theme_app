@@ -1,0 +1,51 @@
+{
+  "stock_id": "600012",
+  "stock_name": "皖通高速",
+  "concept": "高速公路运营",
+  "strategy_type": "industry_chain",
+  "must": [
+    "合宁高速",
+    "高界高速",
+    "宣广高速",
+    "广祠高速",
+    "安庆长江公路大桥"
+  ],
+  "should": [
+    "岳武高速安徽段",
+    "宁宣杭高速",
+    "连霍公路安徽段",
+    "宁淮高速天久段",
+    "205国道天长久段新线",
+    "高速公路运营",
+    "跨省干线高速",
+    "安徽省产业发展",
+    "长三角一体化",
+    "货运流量增长"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "合宁高速",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高界高速",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "宣广高速",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "广祠高速",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "安庆长江公路大桥",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:07:09"
+}

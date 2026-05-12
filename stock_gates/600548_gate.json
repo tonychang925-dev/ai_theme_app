@@ -1,0 +1,36 @@
+{
+  "stock_id": "600548",
+  "stock_name": "深高速",
+  "concept": "收费公路+大环保",
+  "strategy_type": "industry_chain",
+  "must": [
+    "收费公路",
+    "大环保"
+  ],
+  "should": [
+    "固废资源化处理",
+    "清洁能源",
+    "基建环保公司",
+    "新能源公司",
+    "建造管理",
+    "公路营运管理",
+    "项目开发与管理",
+    "运营养护",
+    "智能交通/环保系统",
+    "工程管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "收费公路",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大环保",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:20:53"
+}

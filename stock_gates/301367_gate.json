@@ -1,0 +1,36 @@
+{
+  "stock_id": "301367",
+  "stock_name": "瑞迈特",
+  "concept": "家用呼吸健康设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "家用无创呼吸机",
+    "耗材"
+  ],
+  "should": [
+    "医用产品",
+    "家用呼吸健康设备",
+    "人体生理信号采集处理",
+    "呼吸气流分析及事件判断",
+    "湿化控制",
+    "高速风机控制",
+    "电磁兼容性设计",
+    "可用性设计",
+    "睡眠呼吸障碍",
+    "慢性呼吸系统疾病"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "家用无创呼吸机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "耗材",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:03:56"
+}

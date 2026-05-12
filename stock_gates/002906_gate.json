@@ -1,0 +1,41 @@
+{
+  "stock_id": "002906",
+  "stock_name": "华阳集团",
+  "concept": "汽车电子",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车电子",
+    "智能座舱",
+    "精密压铸件"
+  ],
+  "should": [
+    "信息娱乐系统",
+    "液晶仪表盘",
+    "抬头显示（HUD）",
+    "无线充电",
+    "数字功放",
+    "座舱域控制器",
+    "流媒体后视镜",
+    "高清摄像头",
+    "360环视系统",
+    "自动泊车系统（APA）"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车电子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能座舱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "精密压铸件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:02:48"
+}

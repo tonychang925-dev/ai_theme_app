@@ -1,0 +1,51 @@
+{
+  "stock_id": "603211",
+  "stock_name": "晋拓股份",
+  "concept": "铝合金精密压铸",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铝合金精密压铸件",
+    "汽车零部件",
+    "新能源汽车电机系统零部件",
+    "新能源汽车电控系统零部件",
+    "新能源汽车热系统零部件"
+  ],
+  "should": [
+    "汽车安全零部件",
+    "汽车动力及其他零部件",
+    "智能家居零部件",
+    "工业自动化及机器人零部件",
+    "信息传输设备零部件",
+    "压铸工艺技术",
+    "铝合金精密压铸",
+    "压铸技术",
+    "模具设计技术",
+    "机加工技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铝合金精密压铸件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车电机系统零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车电控系统零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车热系统零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:46:33"
+}

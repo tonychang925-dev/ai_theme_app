@@ -1,0 +1,30 @@
+{
+  "stock_id": "002278",
+  "stock_name": "神开股份",
+  "concept": "油气设备供应商",
+  "strategy_type": "industry_chain",
+  "must": [
+    "油气设备供应商"
+  ],
+  "should": [
+    "综合录井仪",
+    "钻井仪表",
+    "防喷器及防喷器控制装置",
+    "井口装置和采油（气）树",
+    "无线随钻测量仪",
+    "电缆测井仪器",
+    "系列油品分析仪",
+    "HH级高抗硫井口设备国产化",
+    "国内最大的录井仪器制造商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "油气设备供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:33:13"
+}

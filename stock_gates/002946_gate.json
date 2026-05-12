@@ -1,0 +1,31 @@
+{
+  "stock_id": "002946",
+  "stock_name": "新乳业",
+  "concept": "低温乳品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "低温鲜奶"
+  ],
+  "should": [
+    "高端特色低温酸奶",
+    "区域性低温酸奶",
+    "常温奶",
+    "24小时",
+    "唯品",
+    "澳特兰",
+    "今日鲜奶铺",
+    "活润",
+    "初心",
+    "超巴奶技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "低温鲜奶",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:04:30"
+}

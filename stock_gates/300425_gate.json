@@ -1,0 +1,31 @@
+{
+  "stock_id": "300425",
+  "stock_name": "中建环能",
+  "concept": "磁分离水处理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "磁分离水体净化技术",
+    "磁分离水体净化设备"
+  ],
+  "should": [
+    "磁分离水处理",
+    "水环境治理",
+    "农村生活污水治理",
+    "海绵城市建设",
+    "污泥无害化处理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "磁分离水体净化技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "磁分离水体净化设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:26:46"
+}

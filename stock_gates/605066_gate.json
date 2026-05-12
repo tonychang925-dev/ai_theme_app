@@ -1,0 +1,36 @@
+{
+  "stock_id": "605066",
+  "stock_name": "天正电气",
+  "concept": "智能配电",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能型电器产品",
+    "智能配电系统解决方案"
+  ],
+  "should": [
+    "多场耦合的交直流开断技术",
+    "配电系统三相不平衡治理",
+    "固态断路器",
+    "直流信号检测控制",
+    "智能配电",
+    "新能源",
+    "通讯",
+    "电力",
+    "高端装备制造",
+    "建筑"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能型电器产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能配电系统解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:01:28"
+}

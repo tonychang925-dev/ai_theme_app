@@ -1,0 +1,41 @@
+{
+  "stock_id": "605500",
+  "stock_name": "森林包装",
+  "concept": "包装用纸制品",
+  "strategy_type": "industry_chain",
+  "must": [
+    "绿色环保数码喷墨印刷",
+    "牛皮箱板纸",
+    "瓦楞纸箱"
+  ],
+  "should": [
+    "水印纸箱",
+    "胶印纸箱",
+    "精品礼盒",
+    "瓦楞原纸",
+    "瓦楞纸板",
+    "纸管",
+    "包装用纸制品",
+    "废纸利用",
+    "热电联产",
+    "工业品包装"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "绿色环保数码喷墨印刷",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "牛皮箱板纸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "瓦楞纸箱",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:04:37"
+}

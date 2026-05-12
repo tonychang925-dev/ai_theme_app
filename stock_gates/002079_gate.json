@@ -1,0 +1,50 @@
+{
+  "stock_id": "002079",
+  "stock_name": "苏州固锝",
+  "concept": "半导体与光伏",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体整流器件芯片",
+    "功率二极管",
+    "整流桥",
+    "IC封装测试",
+    "导电银浆"
+  ],
+  "should": [
+    "国际知名导电银浆供应商",
+    "太阳能电池银浆全面国产化先行者",
+    "二极管制造",
+    "芯片自主开发",
+    "封装技术",
+    "IATF16949标准",
+    "工业家电",
+    "大型设备电源装置",
+    "太阳能光伏电池"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体整流器件芯片",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "功率二极管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "整流桥",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "IC封装测试",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "导电银浆",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:21:58"
+}

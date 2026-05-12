@@ -1,0 +1,35 @@
+{
+  "stock_id": "000007",
+  "stock_name": "全新好",
+  "concept": "物业租赁与汽车销售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "物业租赁及管理",
+    "物业管理"
+  ],
+  "should": [
+    "汽车销售及服务",
+    "杀菌卫生产品及日常用品贸易",
+    "深圳华强北",
+    "盐城",
+    "停车场",
+    "新车销售",
+    "零配件销售",
+    "车辆售后维修",
+    "保养"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "物业租赁及管理",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物业管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T16:35:15"
+}

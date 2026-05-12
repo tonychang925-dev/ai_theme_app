@@ -1,0 +1,51 @@
+{
+  "stock_id": "000651",
+  "stock_name": "格力电器",
+  "concept": "空调行业龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "空调行业龙头",
+    "家用空调",
+    "暖通空调",
+    "变频技术",
+    "高效节能技术"
+  ],
+  "should": [
+    "智能家居",
+    "智能楼宇",
+    "高端装备",
+    "压缩机",
+    "电机",
+    "冰箱",
+    "洗衣机",
+    "热水器",
+    "厨房电器",
+    "中央空调市场规模行业第一"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "空调行业龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "家用空调",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "暖通空调",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "变频技术",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高效节能技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T16:59:41"
+}

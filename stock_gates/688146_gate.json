@@ -1,0 +1,31 @@
+{
+  "stock_id": "688146",
+  "stock_name": "中船特气",
+  "concept": "电子特种气体",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电子特种气体"
+  ],
+  "should": [
+    "三氟甲磺酸系列产品",
+    "三氟化氮",
+    "六氟化钨",
+    "台积电",
+    "集成电路",
+    "显示面板",
+    "医药",
+    "锂电新能源",
+    "新材料",
+    "中芯国际"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电子特种气体",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:09:42"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "600577",
+  "stock_name": "精达股份",
+  "concept": "特种电磁线",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种电磁线",
+    "全球前三特种电磁线制造商",
+    "国内龙头企业"
+  ],
+  "should": [
+    "铜基电磁线",
+    "铝基电磁线",
+    "特种导体",
+    "绝缘材料研发",
+    "智能制造技术",
+    "工业互联网",
+    "航空航天",
+    "家电",
+    "新能源汽车",
+    "风电太阳能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种电磁线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "全球前三特种电磁线制造商",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内龙头企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:21:41"
+}

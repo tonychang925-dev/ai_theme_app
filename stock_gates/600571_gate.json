@@ -1,0 +1,46 @@
+{
+  "stock_id": "600571",
+  "stock_name": "信雅达",
+  "concept": "金融科技服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "金融科技服务",
+    "金融软件",
+    "金融科技运营",
+    "金融设备"
+  ],
+  "should": [
+    "自然语言处理",
+    "图像识别",
+    "知识图谱",
+    "AI定制化建模",
+    "数字化运营",
+    "数字化营销",
+    "数字化风控",
+    "数字化管理",
+    "数字化产业金融",
+    "智能终端及信息安全"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "金融科技服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融软件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融科技运营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "金融设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:21:30"
+}

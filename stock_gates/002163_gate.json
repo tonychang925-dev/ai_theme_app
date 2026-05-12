@@ -1,0 +1,41 @@
+{
+  "stock_id": "002163",
+  "stock_name": "海南发展",
+  "concept": "幕墙与光伏玻璃",
+  "strategy_type": "industry_chain",
+  "must": [
+    "幕墙与内装工程",
+    "光伏玻璃",
+    "特种玻璃深加工"
+  ],
+  "should": [
+    "幕墙玻璃制品",
+    "幕墙门窗制品",
+    "家电玻璃制品",
+    "特玻材料",
+    "单绒面AR钢化光伏玻璃",
+    "双绒面AR钢化光伏玻璃",
+    "背板丝印打孔光伏玻璃",
+    "双层高透AR钢化光伏玻璃",
+    "高透美学光伏玻璃",
+    "低辐射Low-E节能玻璃"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "幕墙与内装工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏玻璃",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种玻璃深加工",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:27:01"
+}

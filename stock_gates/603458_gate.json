@@ -1,0 +1,41 @@
+{
+  "stock_id": "603458",
+  "stock_name": "勘设股份",
+  "concept": "公路工程咨询承包",
+  "strategy_type": "industry_chain",
+  "must": [
+    "公路工程咨询承包",
+    "公路行业工程咨询",
+    "工程承包"
+  ],
+  "should": [
+    "山区高速公路勘察设计",
+    "峡谷特殊结构桥梁设计",
+    "复杂地下空间勘察设计",
+    "平塘大桥",
+    "花鱼洞大桥",
+    "正习高速",
+    "绿汁江大桥",
+    "桐梓隧道",
+    "黄河大桥",
+    "百花湖特大桥"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "公路工程咨询承包",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公路行业工程咨询",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程承包",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:51:07"
+}

@@ -1,0 +1,24 @@
+{
+  "stock_id": "002839",
+  "stock_name": "张家港行",
+  "concept": "地方农商行",
+  "strategy_type": "industry_chain",
+  "must": [],
+  "should": [
+    "金智方",
+    "融智汇",
+    "复工优贷",
+    "房抵e点贷",
+    "微业贷",
+    "优享贷",
+    "惠享贷",
+    "地方农商行",
+    "存贷款业务",
+    "小微业务"
+  ],
+  "not": [],
+  "evidence_refs": [],
+  "quality": "weak",
+  "must_count": 0,
+  "generated_at": "2026-05-11T17:59:38"
+}

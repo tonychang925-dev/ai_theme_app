@@ -1,0 +1,41 @@
+{
+  "stock_id": "000828",
+  "stock_name": "东莞控股",
+  "concept": "交通基础设施与金融服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高速公路投资建设经营",
+    "城市轨道交通",
+    "新能源汽车充换电"
+  ],
+  "should": [
+    "融资租赁",
+    "商业保理",
+    "莞深高速一二期",
+    "莞深高速三期东城段",
+    "龙林高速",
+    "珠三角腹地",
+    "粤港澳大湾区",
+    "高速公路通行费收入",
+    "PPP项目建造服务收入",
+    "租赁及保理业务收入"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高速公路投资建设经营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "城市轨道交通",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车充换电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:06:15"
+}

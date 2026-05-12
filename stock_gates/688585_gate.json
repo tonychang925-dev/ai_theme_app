@@ -1,0 +1,36 @@
+{
+  "stock_id": "688585",
+  "stock_name": "上纬新材",
+  "concept": "高性能树脂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高性能树脂",
+    "乙烯基酯树脂"
+  ],
+  "should": [
+    "特种不饱和聚酯树脂",
+    "风电叶片用灌注树脂",
+    "手糊树脂",
+    "模具树脂",
+    "胶粘剂",
+    "风电叶片大梁用拉挤树脂",
+    "风电叶片及船用灌注HYVER树脂",
+    "可回收热固树脂",
+    "环境友好型树脂",
+    "新能源"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高性能树脂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "乙烯基酯树脂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:21:27"
+}

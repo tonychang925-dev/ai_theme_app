@@ -1,0 +1,51 @@
+{
+  "stock_id": "601579",
+  "stock_name": "会稽山",
+  "concept": "黄酒酿造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "传统型黄酒",
+    "年轻化新型黄酒",
+    "清爽型黄酒",
+    "国宴用酒",
+    "G20峰会指定用酒"
+  ],
+  "should": [
+    "绍兴黄酒酿制技艺",
+    "黄酒酿造工程技术",
+    "糟烧白酒",
+    "亚运会指定用酒",
+    "黄酒酿造",
+    "工艺技术创新",
+    "饮用",
+    "全国黄酒行业前二",
+    "绍兴黄酒核心产区",
+    "原酒储量行业领先"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "传统型黄酒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "年轻化新型黄酒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "清爽型黄酒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国宴用酒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "G20峰会指定用酒",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:37:14"
+}

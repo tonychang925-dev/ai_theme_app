@@ -1,0 +1,51 @@
+{
+  "stock_id": "688108",
+  "stock_name": "赛诺医疗",
+  "concept": "高端介入医疗器械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高端介入医疗器械",
+    "冠脉药物支架",
+    "冠脉球囊",
+    "颅内快速交换球囊",
+    "颅内药物洗脱支架"
+  ],
+  "should": [
+    "支架设计制造平台",
+    "球囊导管输送工艺平台",
+    "eG电子接枝涂层技术",
+    "生物组织处理改性",
+    "瓣架机械加工和表面处理",
+    "计算机模拟",
+    "国际化公司",
+    "全球市场",
+    "自主创新",
+    "全品类差异化布局"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高端介入医疗器械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冠脉药物支架",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冠脉球囊",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "颅内快速交换球囊",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "颅内药物洗脱支架",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T20:08:32"
+}

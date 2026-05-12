@@ -1,0 +1,51 @@
+{
+  "stock_id": "601827",
+  "stock_name": "三峰环境",
+  "concept": "垃圾发电领军",
+  "strategy_type": "industry_chain",
+  "must": [
+    "生活垃圾焚烧发电",
+    "垃圾焚烧发电",
+    "焚烧炉",
+    "垃圾焚烧供热",
+    "渗滤液处理设备"
+  ],
+  "should": [
+    "餐厨垃圾处理",
+    "污泥协同处理",
+    "垃圾分类收转运及环卫一体化",
+    "矿井高盐度废水零排放回收处理",
+    "飞灰及炉渣资源化利用",
+    "高参数余热锅炉",
+    "汽轮机冷端优化",
+    "工业大数据和人工智能智慧化管控",
+    "SPR高分子脱硝装备及脱硝剂",
+    "复合型DTC螯合剂"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "生活垃圾焚烧发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "垃圾焚烧发电",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "焚烧炉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "垃圾焚烧供热",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "渗滤液处理设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:39:06"
+}

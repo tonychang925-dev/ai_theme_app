@@ -1,0 +1,31 @@
+{
+  "stock_id": "600587",
+  "stock_name": "新华医疗",
+  "concept": "医疗器械综合",
+  "strategy_type": "industry_chain",
+  "must": [
+    "感染控制产品",
+    "放射治疗设备"
+  ],
+  "should": [
+    "血液透析专科医院",
+    "医疗器械综合",
+    "国内市场占有率70%以上",
+    "规模居国内第一",
+    "国内生产品种最全"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "感染控制产品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "放射治疗设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:21:56"
+}

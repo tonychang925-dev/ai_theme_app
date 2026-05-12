@@ -1,0 +1,39 @@
+{
+  "stock_id": "300853",
+  "stock_name": "申昊科技",
+  "concept": "工业智能运维",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能机器人",
+    "智能监测检测设备",
+    "人工智能"
+  ],
+  "should": [
+    "智能监测及控制设备",
+    "工业智能运维",
+    "多传感器融合",
+    "机器人技术",
+    "大数据分析",
+    "电力电网",
+    "智慧交通",
+    "油气化工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能机器人",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智能监测检测设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "人工智能",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:46:03"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "601975",
+  "stock_name": "招商南油",
+  "concept": "液货运输服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "液货运输服务",
+    "油品运输",
+    "MR成品油船"
+  ],
+  "should": [
+    "成品油",
+    "原油",
+    "化学品",
+    "气体",
+    "远东最大MR成品油船队",
+    "内贸原油运输第二",
+    "化工品运输国内前三",
+    "乙烯特种气体运输国内独家",
+    "原油船",
+    "化学品船"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "液货运输服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "油品运输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MR成品油船",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:40:18"
+}

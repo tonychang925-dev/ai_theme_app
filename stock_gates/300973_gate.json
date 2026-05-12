@@ -1,0 +1,36 @@
+{
+  "stock_id": "300973",
+  "stock_name": "立高食品",
+  "concept": "冷冻烘焙龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "冷冻烘焙龙头",
+    "冷冻烘焙产品"
+  ],
+  "should": [
+    "植脂奶油",
+    "麻薯",
+    "瑞士卷",
+    "甜甜圈",
+    "挞皮",
+    "裱花技术",
+    "生产工艺调整",
+    "原材料综合加工能力",
+    "烘焙店",
+    "商超"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "冷冻烘焙龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冷冻烘焙产品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:51:26"
+}

@@ -1,0 +1,28 @@
+{
+  "stock_id": "301331",
+  "stock_name": "恩威医药",
+  "concept": "妇科中成药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "洁尔阴洗液"
+  ],
+  "should": [
+    "九州通",
+    "国药控股",
+    "华润医药",
+    "妇科中成药",
+    "妇科产品",
+    "儿科用药",
+    "呼吸系统用药"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "洁尔阴洗液",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:03:07"
+}

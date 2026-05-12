@@ -1,0 +1,28 @@
+{
+  "stock_id": "600208",
+  "stock_name": "衢州发展",
+  "concept": "地产投资双轮驱动",
+  "strategy_type": "industry_chain",
+  "must": [
+    "地产开发"
+  ],
+  "should": [
+    "金融科技",
+    "高科技企业",
+    "地产投资双轮驱动",
+    "轻资产运营",
+    "审慎拿地",
+    "深度赋能",
+    "投资生态圈"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "地产开发",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:11:50"
+}

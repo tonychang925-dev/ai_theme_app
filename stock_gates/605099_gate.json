@@ -1,0 +1,36 @@
+{
+  "stock_id": "605099",
+  "stock_name": "共创草坪",
+  "concept": "人造草坪龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "人造草坪龙头",
+    "FIFA优选供应商"
+  ],
+  "should": [
+    "运动草",
+    "休闲草",
+    "World Rugby优选供应商",
+    "FIH优选供应商",
+    "草丝及辅料",
+    "运动草坪",
+    "休闲草坪",
+    "铺装业务",
+    "高耐磨度",
+    "高回弹性能"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "人造草坪龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "FIFA优选供应商",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:01:53"
+}

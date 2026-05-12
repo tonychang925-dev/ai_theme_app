@@ -1,0 +1,41 @@
+{
+  "stock_id": "002254",
+  "stock_name": "泰和新材",
+  "concept": "高性能纤维",
+  "strategy_type": "industry_chain",
+  "must": [
+    "氨纶",
+    "间位芳纶",
+    "对位芳纶"
+  ],
+  "should": [
+    "芳纶纸",
+    "智能发光纤维",
+    "高性能纤维",
+    "氨纶纤维产业化",
+    "间位芳纶产业化",
+    "对位芳纶产业化",
+    "纤维绿色处理化技术",
+    "芳纶涂覆锂电隔膜",
+    "纺织服装",
+    "个体防护"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "氨纶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "间位芳纶",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "对位芳纶",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:31:58"
+}

@@ -1,0 +1,36 @@
+{
+  "stock_id": "001696",
+  "stock_name": "宗申动力",
+  "concept": "小型热动力机械",
+  "strategy_type": "industry_chain",
+  "must": [
+    "摩托车发动机",
+    "通用机械"
+  ],
+  "should": [
+    "航空动力",
+    "通用汽油机",
+    "耕作机",
+    "割草机",
+    "水泵机组",
+    "汽油发电机组",
+    "摩托车",
+    "小型热动力机械",
+    "高端零部件",
+    "低速大扭矩"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "摩托车发动机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通用机械",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T17:17:37"
+}

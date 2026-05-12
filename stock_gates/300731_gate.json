@@ -1,0 +1,46 @@
+{
+  "stock_id": "300731",
+  "stock_name": "科创新源",
+  "concept": "高分子材料与热管理",
+  "strategy_type": "industry_chain",
+  "must": [
+    "液冷板",
+    "热界面材料(TIM)",
+    "高性能特种橡胶胶粘带",
+    "虹吸式特种散热模组"
+  ],
+  "should": [
+    "冷凝器",
+    "蒸发器",
+    "散热板",
+    "均温板",
+    "绝缘防水胶带",
+    "防火板/毯/胶带",
+    "电子防潮堵漏产品",
+    "汽车门窗密封条",
+    "PVC绝缘胶带",
+    "冷缩套管"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "液冷板",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "热界面材料(TIM)",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高性能特种橡胶胶粘带",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "虹吸式特种散热模组",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:40:54"
+}

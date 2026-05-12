@@ -1,0 +1,41 @@
+{
+  "stock_id": "600383",
+  "stock_name": "金地集团",
+  "concept": "房地产开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "房地产开发",
+    "商用地产",
+    "产业园镇开发运营"
+  ],
+  "should": [
+    "房地产金融",
+    "智慧服务",
+    "体育产业运营",
+    "家装产业",
+    "代建产业",
+    "教育产业",
+    "格林系",
+    "深耕深圳",
+    "全国化布局",
+    "多元化发展"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房地产开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商用地产",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "产业园镇开发运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:16:46"
+}

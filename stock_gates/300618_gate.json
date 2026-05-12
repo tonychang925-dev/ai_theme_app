@@ -1,0 +1,41 @@
+{
+  "stock_id": "300618",
+  "stock_name": "寒锐钴业",
+  "concept": "钴产业链",
+  "strategy_type": "industry_chain",
+  "must": [
+    "钴产业链",
+    "钴粉",
+    "氢氧化钴"
+  ],
+  "should": [
+    "电解铜",
+    "钴粉5000吨",
+    "氢氧化钴1万吨",
+    "电解铜4.1万吨",
+    "10000吨/年金属量钴新材料",
+    "26000吨/年三元前驱体项目",
+    "高温合金",
+    "硬质合金",
+    "金刚石工具",
+    "防腐材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "钴产业链",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "钴粉",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "氢氧化钴",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:35:38"
+}

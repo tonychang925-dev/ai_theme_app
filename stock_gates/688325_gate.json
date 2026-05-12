@@ -1,0 +1,31 @@
+{
+  "stock_id": "688325",
+  "stock_name": "赛微微电",
+  "concept": "电池管理芯片",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电池管理芯片"
+  ],
+  "should": [
+    "电池安全芯片",
+    "电池计量芯片",
+    "充电管理芯片",
+    "高精度电池计量算法",
+    "模拟芯片设计",
+    "笔记本电脑及平板电脑",
+    "智能可穿戴设备",
+    "电动工具",
+    "充电类产品",
+    "轻型电动车辆"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电池管理芯片",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:15:31"
+}

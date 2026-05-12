@@ -1,0 +1,46 @@
+{
+  "stock_id": "600386",
+  "stock_name": "北巴传媒",
+  "concept": "公交广告传媒",
+  "strategy_type": "industry_chain",
+  "must": [
+    "广告传媒",
+    "汽车服务",
+    "公交广告传媒",
+    "新能源"
+  ],
+  "should": [
+    "公交车身媒体",
+    "候车亭灯箱",
+    "车内挂板",
+    "移动电视",
+    "车辆销售",
+    "维修保养",
+    "汽车租赁",
+    "车辆报废拆解",
+    "充电桩建设",
+    "充电运营管理"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "广告传媒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公交广告传媒",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:16:46"
+}

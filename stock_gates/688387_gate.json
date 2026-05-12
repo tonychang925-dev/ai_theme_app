@@ -1,0 +1,33 @@
+{
+  "stock_id": "688387",
+  "stock_name": "信科移动",
+  "concept": "移动通信网络",
+  "strategy_type": "industry_chain",
+  "must": [
+    "移动通信网络设备",
+    "移动通信技术服务"
+  ],
+  "should": [
+    "4/5G行业专网",
+    "移动通信网络",
+    "国际标准制定",
+    "基站设备研发",
+    "接入网技术",
+    "运营商基站建设",
+    "无线网络覆盖"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "移动通信网络设备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "移动通信技术服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:17:18"
+}

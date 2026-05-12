@@ -1,0 +1,46 @@
+{
+  "stock_id": "002881",
+  "stock_name": "美格智能",
+  "concept": "智能模组",
+  "strategy_type": "industry_chain",
+  "must": [
+    "智能模组",
+    "无线通信模组",
+    "高算力模组",
+    "物联网解决方案"
+  ],
+  "should": [
+    "数传模组",
+    "4G/5G无线通信技术",
+    "智能安卓系统",
+    "端侧AI算力",
+    "生成式AI应用",
+    "天线增益技术",
+    "sub-6G和毫米波数据并发",
+    "机器人",
+    "无人机",
+    "arm架构服务器"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "智能模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无线通信模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "高算力模组",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "物联网解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:01:40"
+}

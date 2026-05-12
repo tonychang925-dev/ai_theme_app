@@ -1,0 +1,45 @@
+{
+  "stock_id": "300124",
+  "stock_name": "汇川技术",
+  "concept": "工控龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工控龙头",
+    "通用自动化",
+    "新能源汽车",
+    "工业机器人"
+  ],
+  "should": [
+    "电梯电气大配套",
+    "轨道交通",
+    "研发创新",
+    "组织变革",
+    "管理效率",
+    "成本优化",
+    "低压变频器切入",
+    "多环节份额领先",
+    "产业链完备度行业领先"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工控龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "通用自动化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业机器人",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:14:05"
+}

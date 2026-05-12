@@ -1,0 +1,41 @@
+{
+  "stock_id": "688568",
+  "stock_name": "中科星图",
+  "concept": "数字地球",
+  "strategy_type": "industry_chain",
+  "must": [
+    "数字地球",
+    "星图地球",
+    "数字地球技术"
+  ],
+  "should": [
+    "星图地球工作室",
+    "星图地球开发者平台",
+    "星图地球数据云",
+    "星图地球今日影像",
+    "空天信息技术",
+    "北斗网格引擎",
+    "大数据共性应用中台",
+    "云计算",
+    "特种领域",
+    "智慧政府"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "数字地球",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "星图地球",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "数字地球技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:20:54"
+}

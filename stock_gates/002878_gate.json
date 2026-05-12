@@ -1,0 +1,41 @@
+{
+  "stock_id": "002878",
+  "stock_name": "元隆雅图",
+  "concept": "整合营销服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "整合营销服务",
+    "礼赠品",
+    "新媒体营销"
+  ],
+  "should": [
+    "数字化营销服务",
+    "赛会特许纪念品",
+    "IP文创衍生品",
+    "元宇宙虚拟人",
+    "数字藏品",
+    "企业集采电商平台",
+    "创意设计",
+    "IP资源",
+    "供应链管理",
+    "全产业链一体化服务"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "整合营销服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "礼赠品",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新媒体营销",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:01:24"
+}

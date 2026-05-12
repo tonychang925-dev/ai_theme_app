@@ -1,0 +1,51 @@
+{
+  "stock_id": "300621",
+  "stock_name": "维业股份",
+  "concept": "建筑装饰工程",
+  "strategy_type": "industry_chain",
+  "must": [
+    "建筑装饰工程",
+    "建筑装饰工程设计与施工",
+    "公共建筑装饰和装修",
+    "住宅装饰和装修",
+    "建筑幕墙装饰和装修"
+  ],
+  "should": [
+    "国家级高新技术企业",
+    "守合同重信用企业",
+    "华为",
+    "华润置地",
+    "万达集团",
+    "华侨城",
+    "腾讯",
+    "比亚迪",
+    "迈瑞医疗",
+    "鹏瑞地产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "建筑装饰工程",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑装饰工程设计与施工",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公共建筑装饰和装修",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "住宅装饰和装修",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑幕墙装饰和装修",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:36:01"
+}

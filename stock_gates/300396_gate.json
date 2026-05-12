@@ -1,0 +1,51 @@
+{
+  "stock_id": "300396",
+  "stock_name": "迪瑞医疗",
+  "concept": "体外诊断",
+  "strategy_type": "industry_chain",
+  "must": [
+    "尿液分析",
+    "生化分析",
+    "血细胞分析",
+    "化学发光免疫分析",
+    "标准化实验室"
+  ],
+  "should": [
+    "自动追光技术",
+    "抗干扰算法",
+    "自动聚焦技术",
+    "平面流式细胞技术",
+    "精密加注机构设计",
+    "高精度激光整形",
+    "散射光收集系统",
+    "流体控制技术",
+    "平面层流技术",
+    "高速摄像技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "尿液分析",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "生化分析",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "血细胞分析",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "化学发光免疫分析",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "标准化实验室",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:25:35"
+}

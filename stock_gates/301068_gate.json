@@ -1,0 +1,41 @@
+{
+  "stock_id": "301068",
+  "stock_name": "大地海洋",
+  "concept": "无废城市服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电废拆解",
+    "危废资源化",
+    "前端垃圾回收"
+  ],
+  "should": [
+    "电子废物拆解",
+    "危险废物处理",
+    "再生资源销售",
+    "无废城市服务",
+    "大数据",
+    "物联网",
+    "互联网",
+    "数字化管理",
+    "居民垃圾回收",
+    "浙江区域龙头"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电废拆解",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "危废资源化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "前端垃圾回收",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:55:15"
+}

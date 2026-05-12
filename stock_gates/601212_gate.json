@@ -1,0 +1,51 @@
+{
+  "stock_id": "601212",
+  "stock_name": "白银有色",
+  "concept": "有色金属综合开发",
+  "strategy_type": "industry_chain",
+  "must": [
+    "阴极铜",
+    "电锌",
+    "电铅",
+    "黄金",
+    "白银"
+  ],
+  "should": [
+    "精矿铜",
+    "精矿铅",
+    "精矿锌",
+    "精矿钼",
+    "硫酸",
+    "有色金属综合开发",
+    "采选系统",
+    "冶炼系统",
+    "外购粗铜及阳极铜",
+    "外购铜物料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "阴极铜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电锌",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电铅",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "黄金",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "白银",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:35:29"
+}

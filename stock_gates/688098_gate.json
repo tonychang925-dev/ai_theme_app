@@ -1,0 +1,40 @@
+{
+  "stock_id": "688098",
+  "stock_name": "申联生物",
+  "concept": "兽用合成肽疫苗",
+  "strategy_type": "industry_chain",
+  "must": [
+    "兽用合成肽疫苗",
+    "猪口蹄疫合成肽疫苗",
+    "合成肽疫苗技术"
+  ],
+  "should": [
+    "猪口蹄疫O型、A型二价灭活疫苗",
+    "灭活疫苗技术",
+    "病毒样颗粒疫苗",
+    "核酸疫苗",
+    "生猪养殖",
+    "规模化养殖场",
+    "散养户",
+    "口蹄疫合成肽疫苗市场占有率第一",
+    "国内该领域领军者"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "兽用合成肽疫苗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "猪口蹄疫合成肽疫苗",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "合成肽疫苗技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:08:14"
+}

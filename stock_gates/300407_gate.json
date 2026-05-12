@@ -1,0 +1,46 @@
+{
+  "stock_id": "300407",
+  "stock_name": "凯发电气",
+  "concept": "轨道交通自动化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "牵引供电系统",
+    "轨道交通自动化",
+    "综合监控系统",
+    "牵引供电自动化"
+  ],
+  "should": [
+    "综合安防系统",
+    "直流供电系统",
+    "机车车辆控制零部件",
+    "接触网系统",
+    "综合监控",
+    "直流开关柜",
+    "接触网系统设计",
+    "铁路",
+    "城市轨道交通",
+    "国内较早进入企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "牵引供电系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "轨道交通自动化",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合监控系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "牵引供电自动化",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T18:26:04"
+}

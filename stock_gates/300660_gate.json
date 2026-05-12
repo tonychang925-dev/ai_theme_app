@@ -1,0 +1,51 @@
+{
+  "stock_id": "300660",
+  "stock_name": "江苏雷利",
+  "concept": "微特电机龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "微型步进电机",
+    "直流无刷电机",
+    "家用电器",
+    "医疗器械",
+    "新能源汽车"
+  ],
+  "should": [
+    "同步电机",
+    "直流有刷电机",
+    "微型水泵",
+    "汽车零部件",
+    "工业控制",
+    "储能",
+    "机器人",
+    "智能家居",
+    "驱动电机",
+    "电动涡旋压缩机"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "微型步进电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "直流无刷电机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "家用电器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "医疗器械",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新能源汽车",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T18:37:38"
+}

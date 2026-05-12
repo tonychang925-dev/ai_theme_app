@@ -1,0 +1,31 @@
+{
+  "stock_id": "300399",
+  "stock_name": "天利科技",
+  "concept": "移动信息服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "移动信息服务"
+  ],
+  "should": [
+    "保险产品服务",
+    "短消息",
+    "富媒体",
+    "5G消息",
+    "云技术",
+    "物联网",
+    "金融",
+    "互联网",
+    "电子商务",
+    "快递物流"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "移动信息服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:25:35"
+}

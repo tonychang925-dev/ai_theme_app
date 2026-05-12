@@ -1,0 +1,46 @@
+{
+  "stock_id": "000637",
+  "stock_name": "茂化实华",
+  "concept": "石油化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "液化石油气",
+    "聚丙烯",
+    "MTBE",
+    "特种工业白油"
+  ],
+  "should": [
+    "乙醇胺",
+    "聚合级异丁烷",
+    "丙烷",
+    "工业过氧化氢",
+    "双环戊二烯",
+    "加氢碳九",
+    "石油树脂",
+    "萘",
+    "重焦油",
+    "石油化工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "液化石油气",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "聚丙烯",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "MTBE",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特种工业白油",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T16:59:27"
+}

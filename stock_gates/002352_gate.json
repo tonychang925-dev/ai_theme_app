@@ -1,0 +1,46 @@
+{
+  "stock_id": "002352",
+  "stock_name": "顺丰控股",
+  "concept": "综合物流服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "鄂州机场",
+    "综合物流服务",
+    "天网",
+    "时效件"
+  ],
+  "should": [
+    "全货机",
+    "航权时刻",
+    "国际业务",
+    "快运业务",
+    "地网",
+    "信息网",
+    "散航",
+    "无人机",
+    "客机腹仓资源",
+    "经济件"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "鄂州机场",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "综合物流服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "天网",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "时效件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:37:18"
+}

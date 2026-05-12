@@ -1,0 +1,46 @@
+{
+  "stock_id": "002037",
+  "stock_name": "保利联合",
+  "concept": "民爆一体化服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "民爆一体化服务",
+    "工业炸药",
+    "工业雷管",
+    "工业导爆索（管）"
+  ],
+  "should": [
+    "数码电子雷管",
+    "电子雷管及生产工艺技术",
+    "工业炸药智能制造工艺技术",
+    "乳化炸药井下小型混装车及工艺技术",
+    "复杂环境爆破拆除技术",
+    "精确延时爆破关键技术",
+    "矿山开采",
+    "水利水电",
+    "基础设施建设",
+    "城市改造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "民爆一体化服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业炸药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业雷管",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业导爆索（管）",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:19:44"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "688669",
+  "stock_name": "聚石化学",
+  "concept": "高性能塑料及树脂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "高性能塑料及树脂",
+    "改性塑料粒子",
+    "塑料制品"
+  ],
+  "should": [
+    "阻燃剂",
+    "无卤阻燃剂",
+    "生物基可降解材料",
+    "磷化学产品",
+    "液化石油气产品",
+    "石墨烯导电导热应用",
+    "有机光伏",
+    "节日灯饰",
+    "电子电器",
+    "电线电缆"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "高性能塑料及树脂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "改性塑料粒子",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "塑料制品",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:23:33"
+}

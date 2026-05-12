@@ -1,0 +1,41 @@
+{
+  "stock_id": "002284",
+  "stock_name": "亚太股份",
+  "concept": "汽车制动系统",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车制动系统",
+    "ADAS系统",
+    "汽车防抱死制动系统ABS"
+  ],
+  "should": [
+    "盘式制动器",
+    "鼓式制动器",
+    "电子驻车制动系统EPB",
+    "77GHz毫米波雷达",
+    "视觉系统",
+    "轮毂电机",
+    "集成式汽车线控制动系统技术",
+    "乘用车",
+    "新能源汽车",
+    "专用物流车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车制动系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "ADAS系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车防抱死制动系统ABS",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T17:33:35"
+}

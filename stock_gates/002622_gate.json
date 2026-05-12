@@ -1,0 +1,29 @@
+{
+  "stock_id": "002622",
+  "stock_name": "皓宸医疗",
+  "concept": "口腔医疗+电气设备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "口腔医疗服务"
+  ],
+  "should": [
+    "软件产品开发销售与服务",
+    "永磁开关研发",
+    "高低压开关成套设备",
+    "智能断路器",
+    "大数据应用",
+    "智慧物联网",
+    "双软企业认证",
+    "CMMI认证"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "口腔医疗服务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:50:13"
+}

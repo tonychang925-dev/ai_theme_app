@@ -1,0 +1,46 @@
+{
+  "stock_id": "002445",
+  "stock_name": "中南文化",
+  "concept": "工业金属管件制造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业金属管件制造",
+    "管件",
+    "法兰",
+    "压力容器"
+  ],
+  "should": [
+    "大口径管件",
+    "新型复合材料管件",
+    "标准化管系模块",
+    "海工管件（系）",
+    "特殊材料管件",
+    "定制管件",
+    "管系",
+    "石油",
+    "化工",
+    "海洋工程"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业金属管件制造",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "管件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "法兰",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "压力容器",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:42:05"
+}

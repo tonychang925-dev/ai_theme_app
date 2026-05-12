@@ -1,0 +1,31 @@
+{
+  "stock_id": "603031",
+  "stock_name": "安孚科技",
+  "concept": "消费电池",
+  "strategy_type": "industry_chain",
+  "must": [
+    "碱性电池"
+  ],
+  "should": [
+    "聚能环4代",
+    "储能柜",
+    "户储产品",
+    "聚能环技术",
+    "高性能隔膜",
+    "正极成型工艺升级",
+    "电镀工艺和镀液配方开发",
+    "消费电池",
+    "消费电池市场",
+    "储能行业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "碱性电池",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:41:36"
+}

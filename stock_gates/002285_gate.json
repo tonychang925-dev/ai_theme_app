@@ -1,0 +1,31 @@
+{
+  "stock_id": "002285",
+  "stock_name": "世联行",
+  "concept": "新房代理销售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新房代理销售"
+  ],
+  "should": [
+    "金融服务",
+    "长租公寓",
+    "物业管理",
+    "销售权收购",
+    "REITs业务",
+    "珠海大横琴集团",
+    "电商交易",
+    "存量交易",
+    "装修装饰",
+    "社区管家"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新房代理销售",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T17:33:30"
+}

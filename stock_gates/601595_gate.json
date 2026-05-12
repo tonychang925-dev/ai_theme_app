@@ -1,0 +1,46 @@
+{
+  "stock_id": "601595",
+  "stock_name": "上海电影",
+  "concept": "电影发行放映",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电影发行放映",
+    "电影发行",
+    "院线经营",
+    "影院经营"
+  ],
+  "should": [
+    "专业化发行公司",
+    "综合型院线",
+    "高端影院经营",
+    "版权销售",
+    "影院投资",
+    "SFC上影影城",
+    "联和院线",
+    "影片放映",
+    "影院经营管理",
+    "统一供片"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电影发行放映",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电影发行",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "院线经营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "影院经营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:37:17"
+}

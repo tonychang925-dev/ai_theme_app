@@ -1,0 +1,31 @@
+{
+  "stock_id": "603162",
+  "stock_name": "海通发展",
+  "concept": "干散货航运",
+  "strategy_type": "industry_chain",
+  "must": [
+    "干散货航运"
+  ],
+  "should": [
+    "国内沿海干散货运输",
+    "国际远洋干散货运输",
+    "铁矿石",
+    "煤炭",
+    "粮食",
+    "铝矾土",
+    "磷灰石",
+    "木材",
+    "水泥",
+    "化肥"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "干散货航运",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:45:05"
+}

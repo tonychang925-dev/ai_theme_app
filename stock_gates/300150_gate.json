@@ -1,0 +1,29 @@
+{
+  "stock_id": "300150",
+  "stock_name": "世纪瑞尔",
+  "concept": "铁路安全监控",
+  "strategy_type": "industry_chain",
+  "must": [
+    "铁路行车安全监控系统"
+  ],
+  "should": [
+    "铁路综合运维服务",
+    "铁路通信系统",
+    "乘客资讯系统",
+    "铁路安全监控",
+    "嵌入式系统技术",
+    "通用监控平台",
+    "多媒体组播技术",
+    "铁路行车安全监控领域领先者"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "铁路行车安全监控系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T18:15:18"
+}

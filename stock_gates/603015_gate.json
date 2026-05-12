@@ -1,0 +1,40 @@
+{
+  "stock_id": "603015",
+  "stock_name": "弘讯科技",
+  "concept": "塑料机械自动化",
+  "strategy_type": "industry_chain",
+  "must": [
+    "塑机控制系统",
+    "伺服系统",
+    "机械手控制系统"
+  ],
+  "should": [
+    "液冷DE系列驱动器",
+    "iDM系列驱电集成式一体机",
+    "tmIoT物联网云平台",
+    "弘塑云(TPC)",
+    "EDO系列家用光储系统",
+    "MAXBESS工商业光储系统",
+    "边缘服务器系统",
+    "薄壁高速成型机",
+    "储能一体充电桩"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "塑机控制系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "伺服系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "机械手控制系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:41:13"
+}

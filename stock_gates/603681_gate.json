@@ -1,0 +1,31 @@
+{
+  "stock_id": "603681",
+  "stock_name": "永冠新材",
+  "concept": "民用胶带龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "民用胶带龙头"
+  ],
+  "should": [
+    "布基胶带",
+    "膜基胶带",
+    "纸基胶带",
+    "可降解胶带",
+    "医用敷料胶带",
+    "BOPP膜自产",
+    "PVC膜自产",
+    "德国布鲁克纳膜设备",
+    "一站式采购服务",
+    "向上延伸自产BOPP膜和PVC膜"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "民用胶带龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:54:34"
+}

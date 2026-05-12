@@ -1,0 +1,36 @@
+{
+  "stock_id": "600308",
+  "stock_name": "华泰股份",
+  "concept": "造纸与化工",
+  "strategy_type": "industry_chain",
+  "must": [
+    "新闻纸",
+    "造纸"
+  ],
+  "should": [
+    "文化纸",
+    "铜版纸",
+    "包装用纸",
+    "烧碱",
+    "液氯",
+    "双氧水",
+    "环氧丙烷",
+    "氯乙酸",
+    "苯胺",
+    "生物质基绿色造纸材料"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "新闻纸",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "造纸",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:14:36"
+}

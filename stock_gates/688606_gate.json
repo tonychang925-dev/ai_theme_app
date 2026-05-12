@@ -1,0 +1,31 @@
+{
+  "stock_id": "688606",
+  "stock_name": "奥泰生物",
+  "concept": "快速诊断试剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "快速诊断试剂"
+  ],
+  "should": [
+    "毒品及药物滥用检测",
+    "传染病检测",
+    "妇女健康检测",
+    "肿瘤标志物检测",
+    "心脏标志物检测",
+    "生化技术平台",
+    "化学发光技术平台",
+    "免疫印迹平台",
+    "电子仪器平台",
+    "生物传感电化学平台"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "快速诊断试剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:21:58"
+}

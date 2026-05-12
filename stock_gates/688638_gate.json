@@ -1,0 +1,36 @@
+{
+  "stock_id": "688638",
+  "stock_name": "誉辰智能",
+  "concept": "锂电智能装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "锂电智能装备",
+    "包膜设备"
+  ],
+  "should": [
+    "注液设备",
+    "热压整形设备",
+    "包Mylar设备",
+    "开卷炉设备",
+    "电芯制造中后段技术",
+    "宁德时代供应商",
+    "欣旺达供应商",
+    "中创新航供应商",
+    "蜂巢能源供应商",
+    "海目星供应商"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "锂电智能装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "包膜设备",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:22:49"
+}

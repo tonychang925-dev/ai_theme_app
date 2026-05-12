@@ -1,0 +1,46 @@
+{
+  "stock_id": "002068",
+  "stock_name": "黑猫股份",
+  "concept": "炭黑龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "炭黑龙头",
+    "国内炭黑龙头",
+    "产能全国第一",
+    "炭黑"
+  ],
+  "should": [
+    "特种炭黑",
+    "导电炭黑",
+    "碳纳米管",
+    "煤焦油深加工",
+    "尾气综合利用",
+    "橡胶",
+    "塑料",
+    "涂料",
+    "印刷",
+    "导电"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "炭黑龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "国内炭黑龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "产能全国第一",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "炭黑",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T17:21:23"
+}

@@ -1,0 +1,41 @@
+{
+  "stock_id": "601208",
+  "stock_name": "东材科技",
+  "concept": "绝缘材料",
+  "strategy_type": "industry_chain",
+  "must": [
+    "绝缘材料",
+    "新型绝缘材料",
+    "绝缘材料工程技术"
+  ],
+  "should": [
+    "光学膜材料",
+    "电子材料",
+    "环保阻燃材料",
+    "光学膜材料技术",
+    "电子材料技术",
+    "环保阻燃材料技术",
+    "发电设备",
+    "特高压输变电",
+    "智能电网",
+    "新能源汽车"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "绝缘材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "新型绝缘材料",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "绝缘材料工程技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:35:22"
+}

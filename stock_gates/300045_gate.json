@@ -1,0 +1,40 @@
+{
+  "stock_id": "300045",
+  "stock_name": "华力创通",
+  "concept": "计算机仿真",
+  "strategy_type": "industry_chain",
+  "must": [
+    "计算机仿真",
+    "卫星应用",
+    "仿真测试"
+  ],
+  "should": [
+    "卫星导航",
+    "卫星通信",
+    "仿真技术",
+    "国防军工",
+    "民用高科技",
+    "能源",
+    "电力",
+    "高铁",
+    "智能制造"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "计算机仿真",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "卫星应用",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "仿真测试",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:10:44"
+}

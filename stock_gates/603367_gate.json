@@ -1,0 +1,46 @@
+{
+  "stock_id": "603367",
+  "stock_name": "辰欣药业",
+  "concept": "综合医药",
+  "strategy_type": "industry_chain",
+  "must": [
+    "原料药",
+    "片剂",
+    "大容量注射剂",
+    "复杂注射剂"
+  ],
+  "should": [
+    "胶囊剂",
+    "冻干粉针剂",
+    "小容量注射剂",
+    "膏剂",
+    "滴剂",
+    "普通输液",
+    "营养型输液",
+    "抗感染类药物",
+    "心脑血管类药物",
+    "肝病用药"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "原料药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "片剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "大容量注射剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "复杂注射剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:50:18"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "600748",
+  "stock_name": "上实发展",
+  "concept": "上海国资房企",
+  "strategy_type": "industry_chain",
+  "must": [
+    "房地产开发与经营",
+    "中高端住宅开发",
+    "商业地产开发及运营"
+  ],
+  "should": [
+    "房地产销售",
+    "不动产经营",
+    "物业管理",
+    "上海国资房企",
+    "中高端住宅开发为主",
+    "兼顾商业地产",
+    "绿色建筑",
+    "装配式建筑",
+    "BIM技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "房地产开发与经营",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "中高端住宅开发",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "商业地产开发及运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:26:36"
+}

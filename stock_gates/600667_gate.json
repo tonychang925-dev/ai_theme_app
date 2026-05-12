@@ -1,0 +1,41 @@
+{
+  "stock_id": "600667",
+  "stock_name": "太极实业",
+  "concept": "半导体封测+工程服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "半导体业务",
+    "工程技术服务",
+    "光伏电站投资运营"
+  ],
+  "should": [
+    "嵌入式存储",
+    "SSD",
+    "模组DDR5",
+    "晶圆减薄研磨切割技术",
+    "晶圆超小尺寸封装",
+    "WB2DBarcode",
+    "RMS",
+    "晶圆环切",
+    "裸芯片背面激光打标",
+    "SDBG国产化技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "半导体业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工程技术服务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏电站投资运营",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:24:30"
+}

@@ -1,0 +1,31 @@
+{
+  "stock_id": "600660",
+  "stock_name": "福耀玻璃",
+  "concept": "汽车玻璃",
+  "strategy_type": "industry_chain",
+  "must": [
+    "汽车玻璃"
+  ],
+  "should": [
+    "前挡风玻璃",
+    "天窗/天幕",
+    "门玻璃",
+    "后挡风玻璃",
+    "后固定窗",
+    "夹层玻璃",
+    "钢化玻璃",
+    "包边总成类产品",
+    "隔音",
+    "隔热（Low-E 镀膜）"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "汽车玻璃",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T19:24:11"
+}

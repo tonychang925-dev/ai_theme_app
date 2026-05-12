@@ -1,0 +1,36 @@
+{
+  "stock_id": "688348",
+  "stock_name": "昱能科技",
+  "concept": "微型逆变器",
+  "strategy_type": "industry_chain",
+  "must": [
+    "微型逆变器",
+    "组件级电力电子技术"
+  ],
+  "should": [
+    "智控关断器",
+    "能量通信及监控分析系统",
+    "MLPE级户用储能系统",
+    "高集成度设计",
+    "新型直流升压电路拓扑",
+    "控制算法",
+    "固件开发",
+    "分布式光伏发电",
+    "全球第三",
+    "国内第二"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "微型逆变器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "组件级电力电子技术",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T20:16:01"
+}

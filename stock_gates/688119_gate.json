@@ -1,0 +1,31 @@
+{
+  "stock_id": "688119",
+  "stock_name": "中钢洛耐",
+  "concept": "耐火材料龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "耐火材料龙头"
+  ],
+  "should": [
+    "硅质系列制品",
+    "镁质系列制品",
+    "高铝系列制品",
+    "复合系列制品",
+    "高纯氧化物制品",
+    "功能型材料制品",
+    "不定形及预制件制品",
+    "钢铁",
+    "有色金属",
+    "石油和煤化工"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "耐火材料龙头",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "weak",
+  "must_count": 1,
+  "generated_at": "2026-05-11T20:08:58"
+}

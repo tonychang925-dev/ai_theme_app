@@ -1,0 +1,41 @@
+{
+  "stock_id": "600785",
+  "stock_name": "新华百货",
+  "concept": "商业零售",
+  "strategy_type": "industry_chain",
+  "must": [
+    "百货商场",
+    "购物中心",
+    "超市连锁",
+    "电器及通信连锁"
+  ],
+  "should": [
+    "多点平台系统",
+    "商业零售",
+    "4A级物流企业",
+    "配送半径800公里",
+    "年配送额近50亿元"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "百货商场",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "购物中心",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "超市连锁",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "电器及通信连锁",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:27:36"
+}

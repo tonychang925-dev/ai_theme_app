@@ -1,0 +1,34 @@
+{
+  "stock_id": "688419",
+  "stock_name": "耐科装备",
+  "concept": "智能制造装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "塑料挤出成型模具",
+    "挤出成型装置",
+    "半导体封装设备及模具"
+  ],
+  "should": [
+    "智能制造装备",
+    "下游设备",
+    "晶圆级封装装备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "塑料挤出成型模具",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "挤出成型装置",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "半导体封装设备及模具",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T20:18:00"
+}

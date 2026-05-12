@@ -1,0 +1,42 @@
+{
+  "stock_id": "601022",
+  "stock_name": "宁波远洋",
+  "concept": "区域物流服务",
+  "strategy_type": "industry_chain",
+  "must": [
+    "集装箱运输",
+    "近洋航线",
+    "内贸航线",
+    "支线业务"
+  ],
+  "should": [
+    "散货业务",
+    "自有船舶",
+    "区域物流服务",
+    "水水中转",
+    "个性化运输方案",
+    "绿色节能船舶"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "集装箱运输",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "近洋航线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "内贸航线",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "支线业务",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T19:33:34"
+}

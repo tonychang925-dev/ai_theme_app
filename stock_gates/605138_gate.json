@@ -1,0 +1,46 @@
+{
+  "stock_id": "605138",
+  "stock_name": "盛泰集团",
+  "concept": "全球成衣巨头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "全球成衣巨头",
+    "针织成衣",
+    "梭织成衣",
+    "水柔棉"
+  ],
+  "should": [
+    "针织面料",
+    "梭织面料",
+    "纱线",
+    "火山岩面料",
+    "超级免烫面料",
+    "四面弹面料",
+    "生物酶洗",
+    "纺纱",
+    "织造",
+    "染整"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "全球成衣巨头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "针织成衣",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "梭织成衣",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "水柔棉",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:02:16"
+}

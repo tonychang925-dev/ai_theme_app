@@ -1,0 +1,36 @@
+{
+  "stock_id": "300638",
+  "stock_name": "广和通",
+  "concept": "无线通信模块",
+  "strategy_type": "industry_chain",
+  "must": [
+    "无线通信模块",
+    "无线通信解决方案"
+  ],
+  "should": [
+    "AIoT模组",
+    "Wi-Fi模组",
+    "GNSS模组",
+    "具身智能机器人开发平台",
+    "通信技术",
+    "射频技术",
+    "数据传输技术",
+    "信号处理技术",
+    "端侧AI技术",
+    "模型轻量化"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "无线通信模块",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "无线通信解决方案",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T18:36:33"
+}

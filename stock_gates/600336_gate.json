@@ -1,0 +1,49 @@
+{
+  "stock_id": "600336",
+  "stock_name": "澳柯玛",
+  "concept": "温度科技专家",
+  "strategy_type": "industry_chain",
+  "must": [
+    "冷柜",
+    "冰箱",
+    "空调",
+    "洗衣机",
+    "智慧家电"
+  ],
+  "should": [
+    "深冷技术",
+    "零嵌技术",
+    "新风技术",
+    "智慧冷链",
+    "一站式商用制冷方案提供商",
+    "生物医疗",
+    "海外市场",
+    "制冷专家"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "冷柜",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "冰箱",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "空调",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "洗衣机",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "智慧家电",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T19:15:29"
+}

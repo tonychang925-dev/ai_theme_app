@@ -1,0 +1,35 @@
+{
+  "stock_id": "603112",
+  "stock_name": "华翔股份",
+  "concept": "金属零部件铸造",
+  "strategy_type": "industry_chain",
+  "must": [
+    "压缩机零部件",
+    "汽车零部件"
+  ],
+  "should": [
+    "工程机械零部件",
+    "金属零部件铸造",
+    "压缩机",
+    "工程机械",
+    "汽车",
+    "格力电器供货份额30%",
+    "美的集团供货份额10%",
+    "产能利用率高",
+    "跨行业批量化生产"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "压缩机零部件",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "汽车零部件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:44:01"
+}

@@ -1,0 +1,40 @@
+{
+  "stock_id": "300199",
+  "stock_name": "翰宇药业",
+  "concept": "多肽药物龙头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "多肽药物龙头",
+    "特色原料药",
+    "注射剂"
+  ],
+  "should": [
+    "客户定制肽",
+    "固体制剂",
+    "药品组合包装类产品",
+    "医疗器械产品",
+    "全自动多肽合成系统",
+    "全自动纯化系统",
+    "固相化学合成法",
+    "国内多肽药物龙头企业",
+    "国际市场认可"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "多肽药物龙头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "特色原料药",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "注射剂",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:17:06"
+}

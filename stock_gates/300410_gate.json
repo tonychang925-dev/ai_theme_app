@@ -1,0 +1,41 @@
+{
+  "stock_id": "300410",
+  "stock_name": "正业科技",
+  "concept": "工业检测+新能源",
+  "strategy_type": "industry_chain",
+  "must": [
+    "工业检测+新能源",
+    "工业检测智能装备",
+    "光伏异质结电池及组件"
+  ],
+  "should": [
+    "光学检测",
+    "自动化控制技术",
+    "X-RAY无损检测技术",
+    "光伏焊带",
+    "锂电",
+    "平板显示",
+    "PCB",
+    "半导体",
+    "光伏",
+    "工业检测龙头企业"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "工业检测+新能源",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "工业检测智能装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "光伏异质结电池及组件",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:26:09"
+}

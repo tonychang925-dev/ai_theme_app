@@ -1,0 +1,40 @@
+{
+  "stock_id": "601601",
+  "stock_name": "中国太保",
+  "concept": "综合保险",
+  "strategy_type": "industry_chain",
+  "must": [
+    "人身保险",
+    "财产保险",
+    "资产管理"
+  ],
+  "should": [
+    "健康保险",
+    "农业保险",
+    "养老金管理",
+    "综合保险",
+    "境外保险",
+    "全国布局",
+    "1.7亿客户",
+    "高分红率",
+    "股息率3.7%"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "人身保险",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "财产保险",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "资产管理",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T19:37:20"
+}

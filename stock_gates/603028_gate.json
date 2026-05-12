@@ -1,0 +1,33 @@
+{
+  "stock_id": "603028",
+  "stock_name": "赛福天",
+  "concept": "钢丝绳+设计",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种钢丝绳",
+    "建筑设计"
+  ],
+  "should": [
+    "动力电池系统集成",
+    "电梯钢丝绳",
+    "EPC业务",
+    "钢丝绳索具",
+    "起重用钢丝绳",
+    "钢丝绳+设计",
+    "股权投资"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种钢丝绳",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "建筑设计",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:41:27"
+}

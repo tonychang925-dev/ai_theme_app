@@ -1,0 +1,36 @@
+{
+  "stock_id": "601009",
+  "stock_name": "南京银行",
+  "concept": "区域银行",
+  "strategy_type": "industry_chain",
+  "must": [
+    "存贷款业务",
+    "公司金融"
+  ],
+  "should": [
+    "零售金融",
+    "出口快贷",
+    "苏贸贷",
+    "鑫e伴3.0",
+    "N Card信用卡",
+    "个人养老金",
+    "绿色金融债",
+    "科创票据",
+    "南京银行App",
+    "供应链金融"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "存贷款业务",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "公司金融",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:33:20"
+}

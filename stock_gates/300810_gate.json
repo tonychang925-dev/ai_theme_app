@@ -1,0 +1,41 @@
+{
+  "stock_id": "300810",
+  "stock_name": "中科海讯",
+  "concept": "声纳装备",
+  "strategy_type": "industry_chain",
+  "must": [
+    "声纳装备",
+    "信号处理平台",
+    "声纳系统"
+  ],
+  "should": [
+    "水声大数据与仿真系统",
+    "无人探测系统",
+    "阵形补偿技术",
+    "强目标干扰抑制技术",
+    "拖船噪声干扰抵消技术",
+    "基于信号特征的脉冲信号捕获技术",
+    "信道化潜艇线谱侦察技术",
+    "水声情报管理技术",
+    "水声仿真建模技术",
+    "系统仿真技术"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "声纳装备",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "信号处理平台",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "声纳系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 3,
+  "generated_at": "2026-05-11T18:44:06"
+}

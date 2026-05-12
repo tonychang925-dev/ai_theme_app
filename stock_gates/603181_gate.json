@@ -1,0 +1,36 @@
+{
+  "stock_id": "603181",
+  "stock_name": "皇马科技",
+  "concept": "特种表面活性剂",
+  "strategy_type": "industry_chain",
+  "must": [
+    "特种表面活性剂",
+    "龙头引领企业"
+  ],
+  "should": [
+    "聚醚单体",
+    "有机硅用聚醚",
+    "印染助剂",
+    "涂料用聚醚",
+    "乙氧基化生产装置",
+    "氯化装置",
+    "外循环喷雾式工艺技术",
+    "DCS控制",
+    "MES生产管理",
+    "SIS安全仪表系统"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "特种表面活性剂",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "龙头引领企业",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "medium",
+  "must_count": 2,
+  "generated_at": "2026-05-11T19:45:41"
+}

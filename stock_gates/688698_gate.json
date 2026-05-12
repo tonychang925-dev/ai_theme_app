@@ -1,0 +1,46 @@
+{
+  "stock_id": "688698",
+  "stock_name": "伟创电气",
+  "concept": "电气传动与工业控制",
+  "strategy_type": "industry_chain",
+  "must": [
+    "电气传动与工业控制",
+    "变频器",
+    "伺服系统",
+    "控制系统"
+  ],
+  "should": [
+    "电机自适应磁链观测技术",
+    "磁阻电机的MTPA在线搜索算法",
+    "碳化硅应用",
+    "叠层母排及短路均流设计技术",
+    "电液伺服",
+    "机器人",
+    "电磁兼容",
+    "STO安全功能认证",
+    "起重",
+    "矿用设备"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "电气传动与工业控制",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "变频器",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "伺服系统",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "控制系统",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 4,
+  "generated_at": "2026-05-11T20:24:21"
+}

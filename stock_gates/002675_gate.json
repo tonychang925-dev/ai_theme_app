@@ -1,0 +1,51 @@
+{
+  "stock_id": "002675",
+  "stock_name": "东诚药业",
+  "concept": "核药双寡头",
+  "strategy_type": "industry_chain",
+  "must": [
+    "双寡头",
+    "核药房建设",
+    "18F-FDG",
+    "云克注射液",
+    "碘[125I]密封籽源"
+  ],
+  "should": [
+    "正电子药物",
+    "靶向治疗药物",
+    "放射性核素",
+    "分子试剂",
+    "单光子药物",
+    "尿素[14C]胶囊",
+    "碘[131I]化钠口服液",
+    "锝[99mTc]标记药物",
+    "一站式CRO研发服务平台",
+    "短程放射治疗药物"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "双寡头",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "核药房建设",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "18F-FDG",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "云克注射液",
+      "source": "primary_anchor"
+    },
+    {
+      "term": "碘[125I]密封籽源",
+      "source": "primary_anchor"
+    }
+  ],
+  "quality": "strong",
+  "must_count": 5,
+  "generated_at": "2026-05-11T17:52:54"
+}
