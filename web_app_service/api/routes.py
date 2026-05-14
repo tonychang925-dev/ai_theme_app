@@ -527,54 +527,34 @@ async def collection_continue(payload: dict) -> dict:
 
 
 @router.get("/realtime/jyhf-cdp/status")
-async def jyhf_cdp_collector_status() -> dict:
-    data = await _proxy_jyhf_cdp_service_json(
-        "GET",
-        "/status",
-        timeout=10.0,
-    )
-    if isinstance(data, dict):
-        return data
-    raise HTTPException(status_code=502, detail="invalid jyhf-cdp status response")
+async def jyhf_cdp_collector_status(request: Request) -> dict:
+    manager = request.app.state.cdp_manager
+    return await manager.get_status()
 
 
 @router.post("/realtime/jyhf-cdp/start")
-async def jyhf_cdp_collector_start(payload: dict | None = None) -> dict:
-    data = await _proxy_jyhf_cdp_service_json(
-        "POST",
-        "/collector/start",
-        payload=payload or {},
-        timeout=30.0,
-    )
-    if isinstance(data, dict):
-        return data
-    raise HTTPException(status_code=502, detail="invalid jyhf-cdp start response")
+async def jyhf_cdp_collector_start(request: Request, payload: dict | None = None) -> dict:
+    manager = request.app.state.cdp_manager
+    return await manager.start_collector(payload or {})
 
 
 @router.post("/realtime/jyhf-cdp/stop")
-async def jyhf_cdp_collector_stop(payload: dict | None = None) -> dict:
-    data = await _proxy_jyhf_cdp_service_json(
-        "POST",
-        "/collector/stop",
-        payload=payload or {},
-        timeout=30.0,
-    )
-    if isinstance(data, dict):
-        return data
-    raise HTTPException(status_code=502, detail="invalid jyhf-cdp stop response")
+async def jyhf_cdp_collector_stop(request: Request, payload: dict | None = None) -> dict:
+    manager = request.app.state.cdp_manager
+    stop_service = bool((payload or {}).get("stop_service", True))
+    return await manager.stop_collector(stop_service=stop_service)
 
 
 @router.get("/realtime/jyhf-cdp/logs")
-async def jyhf_cdp_collector_logs(lines: int = Query(default=300, ge=20, le=2000)) -> dict:
-    data = await _proxy_jyhf_cdp_service_json(
-        "GET",
-        "/collector/logs",
-        params={"lines": lines},
-        timeout=10.0,
-    )
-    if isinstance(data, dict):
-        return data
-    raise HTTPException(status_code=502, detail="invalid jyhf-cdp logs response")
+async def jyhf_cdp_collector_logs(request: Request, lines: int = Query(default=300, ge=20, le=2000)) -> dict:
+    manager = request.app.state.cdp_manager
+    return await manager.get_logs(lines=lines)
+
+
+@router.post("/realtime/jyhf-cdp/service/stop")
+async def jyhf_cdp_service_stop(request: Request) -> dict:
+    manager = request.app.state.cdp_manager
+    return await manager.stop_service()
 
 
 @router.get("/intel/feed")

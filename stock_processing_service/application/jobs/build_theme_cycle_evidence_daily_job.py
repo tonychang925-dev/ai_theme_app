@@ -239,6 +239,7 @@ class BuildThemeCycleEvidenceDailyJob:
                 "front_row_strength_score": str(r.front_row_strength_score),
                 "theme_support_score": str(r.theme_support_score),
                 "break_start_pivot": r.break_start_pivot,
+                "above_ma5": r.above_ma5,
                 "above_ma10": r.above_ma10,
                 "above_ma20": r.above_ma20,
                 "previous_cycle_state": r.previous_cycle_state,

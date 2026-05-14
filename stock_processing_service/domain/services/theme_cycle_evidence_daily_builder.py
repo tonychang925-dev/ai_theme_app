@@ -42,6 +42,7 @@ class ThemeCycleEvidenceDailyRow:
     # K-line layer
     theme_support_score: Decimal
     break_start_pivot: bool
+    above_ma5: bool = False
     above_ma10: bool = False
     above_ma20: bool = False
 
@@ -173,6 +174,7 @@ class ThemeCycleEvidenceDailyBuilder:
             )
         theme_support = kline.theme_support_score
         break_start_pivot = kline.break_start_pivot
+        above_ma5 = kline.above_ma5
         above_ma10 = kline.above_ma10
         above_ma20 = kline.above_ma20
         kline_source = "theme_kline_evidence_builder"
@@ -255,6 +257,7 @@ class ThemeCycleEvidenceDailyBuilder:
             front_row_strength_score=front_row_strength,
             theme_support_score=theme_support,
             break_start_pivot=break_start_pivot,
+            above_ma5=above_ma5,
             above_ma10=above_ma10,
             above_ma20=above_ma20,
             previous_cycle_state=previous_state,

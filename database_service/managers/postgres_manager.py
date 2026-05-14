@@ -5885,7 +5885,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             board_stock_count, limit_up_count, limit_down_count,
             red_ratio, big_drop_ratio, front_row_strength_score,
             theme_support_score, break_start_pivot,
-            above_ma10, above_ma20,
+            above_ma5, above_ma10, above_ma20,
             evidence_json
         ) VALUES (
             $1, $2::date, $3,
@@ -5896,8 +5896,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             $14::int, $15::int, $16::int,
             $17::numeric, $18::numeric, $19::numeric,
             $20::numeric, $21,
-            $22, $23,
-            $24::jsonb
+            $22, $23, $24,
+            $25::jsonb
         )
         ON CONFLICT (subject_key, trade_date) DO UPDATE SET
             theme_name = EXCLUDED.theme_name,
@@ -5919,6 +5919,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             front_row_strength_score = EXCLUDED.front_row_strength_score,
             theme_support_score = EXCLUDED.theme_support_score,
             break_start_pivot = EXCLUDED.break_start_pivot,
+            above_ma5 = EXCLUDED.above_ma5,
             above_ma10 = EXCLUDED.above_ma10,
             above_ma20 = EXCLUDED.above_ma20,
             evidence_json = EXCLUDED.evidence_json
@@ -5962,6 +5963,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 str(row.get("front_row_strength_score") or "0"),
                 str(row.get("theme_support_score") or "0"),
                 self._bool(row.get("break_start_pivot")),
+                self._bool(row.get("above_ma5")),
                 self._bool(row.get("above_ma10")),
                 self._bool(row.get("above_ma20")),
                 _json.dumps(ev, default=str, ensure_ascii=False),
