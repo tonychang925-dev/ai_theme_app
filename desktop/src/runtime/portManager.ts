@@ -114,13 +114,36 @@ export function clearStalePids(): void {
   const alive: PidRecord[] = [];
   for (const rec of records) {
     try {
-      process.kill(rec.pid, 0); // Signal 0 just checks existence
-      logInfo(`PortManager: stale PID ${rec.pid} (${rec.serviceName}:${rec.port}) still alive, will clean up`);
+      process.kill(rec.pid, 0); // Signal 0 checks existence
+      logInfo(`PortManager: stale PID ${rec.pid} (${rec.serviceName}:${rec.port}) still alive, cleaning up...`);
+      // Kill the process group
+      try {
+        process.kill(-rec.pid, 'SIGTERM');
+      } catch {
+        // May fail if we don't have permission, try direct kill
+        try { process.kill(rec.pid, 'SIGTERM'); } catch {}
+      }
+      // Wait briefly
+      const start = Date.now();
+      let dead = false;
+      while (Date.now() - start < 3000) {
+        try { process.kill(rec.pid, 0); } catch { dead = true; break; }
+        // busy-wait is bad, use a sync sleep workaround
+        const end = Date.now() + 50;
+        while (Date.now() < end) { /* spin */ }
+      }
+      if (!dead) {
+        try { process.kill(-rec.pid, 'SIGKILL'); } catch {}
+        try { process.kill(rec.pid, 'SIGKILL'); } catch {}
+        logInfo(`PortManager: force-killed stale PID ${rec.pid}`);
+      } else {
+        logInfo(`PortManager: stale PID ${rec.pid} terminated gracefully`);
+      }
     } catch {
       logInfo(`PortManager: stale PID ${rec.pid} (${rec.serviceName}:${rec.port}) already dead, removing`);
       continue;
     }
-    alive.push(rec);
+    // Don't keep it in pids.json — it's been killed
   }
   savePids(alive);
 }

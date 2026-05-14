@@ -41,19 +41,34 @@ const serviceManager_1 = require("./runtime/serviceManager");
 const logManager_1 = require("./runtime/logManager");
 // Determine project root
 // V1-dev: running from desktop/ via npm start → project root is ../../
-// V1-app: running from .app → project root is app.getAppPath()/../../
+// V1-app: running from .app → uses LOCAL_PROJECT_ROOT env var or falls back to resourcesPath
+//   Note: V1-app currently requires the source project directory on disk (Scheme A).
+//   Scheme B (bundling backend source into .app) is deferred to V2.
 function getProjectRoot() {
+    // V1-app: respect explicit LOCAL_PROJECT_ROOT if set
+    const localRoot = process.env['LOCAL_PROJECT_ROOT'];
+    if (localRoot && localRoot.trim()) {
+        return localRoot.trim();
+    }
     if (electron_1.app.isPackaged) {
-        // V1-app: the .app bundle
-        // extraResources are at process.resourcesPath
         return process.resourcesPath;
     }
-    // V1-dev: assume we're in desktop/dist-electron/main.js
-    // Project root is ../../ from there
     return path.resolve(__dirname, '..', '..');
 }
 let webPort = 0;
 let appStarted = false;
+let isQuitting = false;
+async function quitSafely() {
+    if (isQuitting) {
+        (0, logManager_1.logInfo)('Main: quit already in progress, skipping');
+        return;
+    }
+    isQuitting = true;
+    (0, logManager_1.logInfo)('Main: safe quit — stopping all services');
+    await (0, serviceManager_1.stopAll)();
+    (0, logManager_1.logInfo)('Main: quit complete');
+    electron_1.app.exit(0);
+}
 electron_1.app.whenReady().then(async () => {
     const projectRoot = getProjectRoot();
     (0, logManager_1.logInfo)(`Main: project root = ${projectRoot}`);
@@ -86,28 +101,29 @@ electron_1.app.whenReady().then(async () => {
     mainWindow.loadURL(url);
     appStarted = true;
 });
-// ── Quit handling ──
-electron_1.app.on('window-all-closed', () => {
-    // On macOS it's common for apps to stay active
-    // But we want close = quit for service release
-    (0, serviceManager_1.stopAll)().then(() => {
-        (0, logManager_1.logInfo)('Main: all services stopped, quitting');
-        electron_1.app.quit();
-    });
+// ── Quit handling (unified via quitSafely guard) ──
+electron_1.app.on('window-all-closed', async () => {
+    await quitSafely();
 });
 electron_1.app.on('before-quit', async (event) => {
-    if (appStarted) {
+    if (!isQuitting && appStarted) {
         event.preventDefault();
-        await (0, serviceManager_1.stopAll)();
-        (0, logManager_1.logInfo)('Main: before-quit complete');
-        electron_1.app.exit(0);
+        await quitSafely();
     }
+});
+// Handle external signals (pkill, SIGTERM) for proper service cleanup
+process.on('SIGTERM', async () => {
+    (0, logManager_1.logInfo)('Main: received SIGTERM, cleaning up...');
+    await quitSafely();
+});
+process.on('SIGINT', async () => {
+    (0, logManager_1.logInfo)('Main: received SIGINT, cleaning up...');
+    await quitSafely();
 });
 electron_1.app.on('activate', () => {
     // macOS re-activate
-    if (appStarted) {
-        const { getMainWindow } = require('./windowManager');
-        const win = getMainWindow();
+    if (appStarted && !isQuitting) {
+        const win = (0, windowManager_1.getMainWindow)();
         if (win) {
             win.show();
         }

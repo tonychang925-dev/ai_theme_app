@@ -24,7 +24,7 @@ function userEnvLocalPath(): string {
   return path.join(userConfigDir(), '.env.local');
 }
 
-function generateJwtSecret(): string {
+export function generateJwtSecret(): string {
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-';
   let result = '';
   for (let i = 0; i < 64; i++) {

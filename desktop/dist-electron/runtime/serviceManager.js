@@ -76,8 +76,14 @@ async function startAll(projectRoot) {
     const venvPython = path.join(projectRoot, '.venv', 'bin', 'python');
     const condaPython = '/opt/miniconda3/envs/theme_matcher_env/bin/python';
     // 7. Set env vars that services will read
+    // CRITICAL: ensure JWT_SECRET is never empty — backend raises RuntimeError without it
+    const jwtSecret = env['JWT_SECRET'] || (0, envLoader_1.generateJwtSecret)();
+    if (!env['JWT_SECRET']) {
+        (0, envLoader_1.persistEnvLocal)({ JWT_SECRET: jwtSecret });
+    }
     const serviceEnv = {
         ...env,
+        'JWT_SECRET': jwtSecret,
         'WEB_PORT': String(ports.web),
         'SPS_PORT': String(ports.sps),
         'CDP_PORT': String(ports.cdp),

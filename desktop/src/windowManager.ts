@@ -44,7 +44,7 @@ export function createMainWindow(webPort: number): BrowserWindow {
     minWidth: 1024,
     minHeight: 720,
     show: false,
-    title: 'AI题材引擎',
+    title: 'AI投资助理',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: false,
@@ -72,7 +72,7 @@ export function createMainWindow(webPort: number): BrowserWindow {
   // Build app menu
   const menuTemplate: Electron.MenuItemConstructorOptions[] = [
     {
-      label: 'AI题材引擎',
+      label: 'AI投资助理',
       submenu: [
         { role: 'about' },
         { type: 'separator' },

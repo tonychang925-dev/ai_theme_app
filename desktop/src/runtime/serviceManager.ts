@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { loadEnv } from './envLoader';
+import { loadEnv, generateJwtSecret, persistEnvLocal } from './envLoader';
 import { runDoctor } from './dependencyDoctor';
 import { allocatePorts, clearStalePids, savePids } from './portManager';
 import { spawnCommand, killAllManaged } from './processTree';
@@ -62,8 +62,14 @@ export async function startAll(projectRoot: string): Promise<{
   const condaPython = '/opt/miniconda3/envs/theme_matcher_env/bin/python';
 
   // 7. Set env vars that services will read
+  // CRITICAL: ensure JWT_SECRET is never empty — backend raises RuntimeError without it
+  const jwtSecret = env['JWT_SECRET'] || generateJwtSecret();
+  if (!env['JWT_SECRET']) {
+    persistEnvLocal({ JWT_SECRET: jwtSecret });
+  }
   const serviceEnv: Record<string, string> = {
     ...env,
+    'JWT_SECRET': jwtSecret,
     'WEB_PORT': String(ports.web),
     'SPS_PORT': String(ports.sps),
     'CDP_PORT': String(ports.cdp),

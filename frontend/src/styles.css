@@ -1,7 +1,7 @@
 :root {
   font-family: "IBM Plex Sans Condensed", "Noto Sans SC", "PingFang SC", sans-serif;
-  color: #f5f5f5;
-  background: #191919;
+  color: #c9ccd6;
+  background: #0a0e1a;
   color-scheme: dark;
 }
 
@@ -2609,6 +2609,33 @@ select {
   color: #cbcbcb;
   line-height: 1.45;
 }
+
+.workspace-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 7px;
+  border-radius: 4px;
+  background: #2e86c1;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+.workspace-summary-block {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #313131;
+}
+
+.workspace-detail-html {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #b0b0b0;
+  line-height: 1.6;
+}
+.workspace-detail-html p { margin: 4px 0; }
+.workspace-detail-html ul { margin: 4px 0; padding-left: 18px; }
 
 .workspace-meta {
   display: inline-block;

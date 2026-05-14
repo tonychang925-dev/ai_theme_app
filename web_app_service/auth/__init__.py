@@ -2,12 +2,24 @@
 from __future__ import annotations
 
 import os
+import sys
 from datetime import datetime, timedelta, timezone
 from typing import Any
 
 import jwt
 
-JWT_SECRET = os.getenv("JWT_SECRET", "ai_theme_jwt_secret_change_me")
+_JWT_SECRET = os.getenv("JWT_SECRET", "").strip()
+if not _JWT_SECRET:
+    # Allow weak default in dev mode only (explicit opt-in)
+    if os.getenv("JWT_DEV_MODE", "0") == "1":
+        _JWT_SECRET = "ai_theme_jwt_secret_dev_only"
+        print("[auth] WARNING: using dev-mode JWT_SECRET — not for production", file=sys.stderr)
+    else:
+        raise RuntimeError(
+            "JWT_SECRET is required. Set it in .env.local or start through Electron desktop app."
+        )
+
+JWT_SECRET: str = _JWT_SECRET
 JWT_ALGORITHM = "HS256"
 JWT_EXPIRE_HOURS = 72
 

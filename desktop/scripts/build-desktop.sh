@@ -8,7 +8,7 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 DESKTOP_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 PROJECT_ROOT="$(cd "$DESKTOP_DIR/.." && pwd)"
 
-echo "=== Building AI题材引擎 Desktop App ==="
+echo "=== Building AI投资助理 Desktop App ==="
 echo "Desktop dir: $DESKTOP_DIR"
 echo "Project root: $PROJECT_ROOT"
 

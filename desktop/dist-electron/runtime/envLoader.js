@@ -33,6 +33,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.generateJwtSecret = generateJwtSecret;
 exports.loadEnv = loadEnv;
 exports.persistEnvLocal = persistEnvLocal;
 exports.getUserConfigDir = getUserConfigDir;

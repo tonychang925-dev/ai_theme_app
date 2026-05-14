@@ -15,7 +15,7 @@ fail() { echo -e "  ${RED}✗${NC} $1"; }
 warn() { echo -e "  ${YELLOW}⚠${NC} $1"; }
 info() { echo -e "  ${CYAN}→${NC} $1"; }
 
-echo "=== AI题材引擎 环境诊断 ==="
+echo "=== AI投资助理 环境诊断 ==="
 echo ""
 
 # 1. Node.js
