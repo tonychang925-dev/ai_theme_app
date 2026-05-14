@@ -1728,7 +1728,9 @@ async def get_theme_workspace(
             "leader_stocks": leader_stocks,
         }
     except Exception as exc:
-        logger.warning("theme_workspace analytics build failed for %s: %s", subject_key, exc)
+        import traceback
+        print(f"ANALYTICS ERROR: {exc}", flush=True)
+        traceback.print_exc()
         missing_sections.append("analytics")
 
     if include_history:

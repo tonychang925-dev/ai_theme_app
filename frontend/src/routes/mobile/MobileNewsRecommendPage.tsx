@@ -20,6 +20,7 @@ interface NewsRecommendData {
   event_summary: string;
   matched_themes: MatchedTheme[];
   recommended_stocks: RecommendedStock[];
+  source: string;
   risk_notes: string[];
 }
 
@@ -130,9 +131,22 @@ export function MobileNewsRecommendPage() {
             </section>
           )}
 
-          {/* Empty results */}
+          {/* Empty results — 根据来源给出差异化提示 */}
           {data.matched_themes.length === 0 && data.recommended_stocks.length === 0 && (
-            <div className="mobile-empty">未匹配到相关题材或股票，请尝试更具体的新闻文本。</div>
+            <div className="mobile-empty">
+              {data.source === 'keyword_fallback'
+                ? '关键词匹配未命中。当前知识库中未找到与新闻直接匹配的题材。建议尝试包含行业/政策关键词的新闻。'
+                : data.event_summary.includes('提取术语')
+                  ? '已提取术语，但未在知识库中找到匹配的题材或股票。建议尝试更聚焦产业/政策的新闻文本。'
+                  : '未能从文本中提取投资相关术语。请确认新闻内容涉及具体的A股产业链或政策方向。'}
+            </div>
+          )}
+
+          {/* Source indicator */}
+          {data.source && (
+            <div className="mobile-source-tag" style={{ textAlign: 'center', marginTop: 8, fontSize: 12, color: 'var(--color-text-muted, #888)' }}>
+              {data.source === 'stock_match_engine' ? 'AI 引擎匹配' : data.source === 'keyword_fallback' ? '关键词匹配（降级）' : ''}
+            </div>
           )}
 
           {/* Risk */}
