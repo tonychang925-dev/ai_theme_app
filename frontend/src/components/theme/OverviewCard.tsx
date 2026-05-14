@@ -54,7 +54,7 @@ export function OverviewCard({
       )}
 
       {/* 数据统计 */}
-      {(historyCount > 0 || childrenCount > 0 || stockCount > 0) && (
+      {((historyCount ?? 0) > 0 || (childrenCount ?? 0) > 0 || (stockCount ?? 0) > 0) && (
         <p className="workspace-note">
           历史记录: {historyCount ?? 0}
           <span style={{ marginLeft: 8 }}>子题材: {childrenCount ?? 0}</span>

@@ -66,7 +66,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     // 支持 returnUrl 跳转回原页面
     const params = new URLSearchParams(window.location.search);
     const returnUrl = params.get('returnUrl');
-    window.location.replace(returnUrl || '/mobile');
+    window.location.replace(returnUrl || '/');
   };
 
   const isAdmin = user?.role === 'admin';

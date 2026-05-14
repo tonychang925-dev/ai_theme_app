@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import { app } from 'electron';
 import { loadEnv, generateJwtSecret, persistEnvLocal } from './envLoader';
 import { runDoctor } from './dependencyDoctor';
 import { allocatePorts, clearStalePids, savePids } from './portManager';
@@ -25,7 +26,7 @@ export async function startAll(projectRoot: string): Promise<{
   doctorPassed: boolean;
   readyzResult: any;
 }> {
-  const userDataDir = path.dirname(getLogDir()); // ~/Library/Application Support/AI题材引擎
+  const userDataDir = path.dirname(getLogDir()); // ~/Library/Application Support/AI投资助理
   logInfo('ServiceManager: ===== Starting all services =====');
 
   // 1. Load env
@@ -79,9 +80,15 @@ export async function startAll(projectRoot: string): Promise<{
     'PYTHONPATH': projectRoot,
   };
 
-  // Set FRONTEND_DIST_DIR for web_app_service (V1-app uses extraResources path)
+  // Set FRONTEND_DIST_DIR for web_app_service
+  // V1-dev: projectRoot/frontend/dist
+  // V1-app: extraResources path inside .app bundle
   if (!serviceEnv['FRONTEND_DIST_DIR']) {
-    serviceEnv['FRONTEND_DIST_DIR'] = path.join(projectRoot, 'frontend', 'dist');
+    if (app.isPackaged) {
+      serviceEnv['FRONTEND_DIST_DIR'] = path.join(process.resourcesPath, 'frontend', 'dist');
+    } else {
+      serviceEnv['FRONTEND_DIST_DIR'] = path.join(projectRoot, 'frontend', 'dist');
+    }
   }
 
   // 8. Start SPS

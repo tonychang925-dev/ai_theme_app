@@ -46,45 +46,73 @@ export function AdminPage() {
 
   return (
     <main className="auth-shell">
-      <div className="auth-card" style={{ maxWidth: 520 }}>
-        <h1 className="auth-title">AI 投资助理</h1>
-        <p className="auth-subtitle">用户管理</p>
-        <p style={{ textAlign: 'center', color: '#6a7088', fontSize: 13, marginBottom: 20 }}>
-          当前: <strong style={{ color: '#ffd700' }}>{user?.email}</strong> ({user?.role})
-        </p>
-
-        <form onSubmit={addUser}>
-          <input className="auth-input" type="email" placeholder="新用户邮箱" value={email} onChange={e => setEmail(e.target.value)} required />
-          <input className="auth-input" type="password" placeholder="初始密码（至少6位）" value={password} onChange={e => setPassword(e.target.value)} required minLength={6} />
-          <select className="auth-input" value={role} onChange={e => setRole(e.target.value)}>
-            <option value="user">普通用户</option>
-            <option value="admin">管理员</option>
-          </select>
-          {err && <p className="auth-error">{err}</p>}
-          {msg && <p style={{ color: '#5dade2', textAlign: 'center', fontSize: 13 }}>{msg}</p>}
-          <button className="auth-btn" type="submit">添加用户</button>
-        </form>
-
-        <h2 style={{ color: '#ffd700', fontSize: 16, marginTop: 24 }}>用户列表 ({users.length})</h2>
-        <div style={{ maxHeight: 300, overflowY: 'auto', marginTop: 8 }}>
-          {users.map(u => (
-            <div key={u.id} style={{
-              display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-              padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.06)',
-              fontSize: 13, color: '#8a90a8'
-            }}>
-              <span>{u.email} <span style={{ color: u.role === 'admin' ? '#ffd700' : '#5dade2', fontSize: 11 }}>[{u.role}]</span></span>
-              <span style={{ fontSize: 11 }}>{formatTime(u.last_login)}</span>
-            </div>
-          ))}
+      {/* ── Left sidebar ── */}
+      <aside className="auth-sidebar">
+        <div className="auth-brand">
+          <div className="auth-logo">AI</div>
+          <h1 className="auth-sidebar-title"><span>AI</span> 投资助理</h1>
+          <p className="auth-sidebar-sub">Admin Panel</p>
         </div>
-
-        <p className="auth-link" style={{ display: 'flex', gap: 16, justifyContent: 'center', marginTop: 20 }}>
-          <a href="/">桌面端</a>
-          <a href="/mobile">移动端</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); logout(); }} style={{ color: '#e08080' }}>退出登录</a>
+        <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', marginTop: 32 }}>
+          <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.7)' }}>
+            当前: <strong style={{ color: '#00ddfe' }}>{user?.email}</strong>
+          </p>
+          <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)' }}>角色: {user?.role}</p>
+        </div>
+        <p className="auth-sidebar-footer">
+          <a href="/" style={{ color: '#00ddfe', textDecoration: 'none', fontWeight: 600 }}>返回桌面</a>
         </p>
-      </div>
+      </aside>
+
+      {/* ── Right panel ── */}
+      <section className="auth-form-panel">
+        <div className="auth-form-card" style={{ maxWidth: 480 }}>
+          <h2 className="auth-form-title">用户管理</h2>
+          <p className="auth-form-subtitle">创建新用户或查看现有账户</p>
+
+          <form onSubmit={addUser}>
+            <input className="auth-input" type="email" placeholder="新用户邮箱" value={email} onChange={e => setEmail(e.target.value)} required />
+            <input className="auth-input" type="password" placeholder="初始密码（至少6位）" value={password} onChange={e => setPassword(e.target.value)} required minLength={6} />
+            <select className="auth-select" value={role} onChange={e => setRole(e.target.value)}>
+              <option value="user">普通用户</option>
+              <option value="admin">管理员</option>
+            </select>
+            {err && <p className="auth-error">{err}</p>}
+            {msg && <p style={{ color: '#00c48c', fontSize: 13, marginBottom: 12, textAlign: 'center' }}>{msg}</p>}
+            <button className="auth-btn" type="submit">添加用户</button>
+          </form>
+
+          <h3 style={{ color: '#e2e8f0', fontSize: 16, marginTop: 28, marginBottom: 12 }}>
+            用户列表 ({users.length})
+          </h3>
+          <div style={{ maxHeight: 260, overflowY: 'auto' }}>
+            {users.map(u => (
+              <div key={u.id} style={{
+                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                padding: '10px 0', borderBottom: '1px solid rgba(255,255,255,0.04)',
+                fontSize: 13, color: '#7a8498'
+              }}>
+                <span>
+                  {u.email}
+                  <span style={{
+                    color: u.role === 'admin' ? '#ffd26c' : '#00ddfe',
+                    fontSize: 10,
+                    marginLeft: 8,
+                    fontWeight: 600
+                  }}>[{u.role}]</span>
+                </span>
+                <span style={{ fontSize: 11 }}>{formatTime(u.last_login)}</span>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ marginTop: 20, display: 'flex', gap: 12, justifyContent: 'center' }}>
+            <a href="/" style={{ color: '#7a8498', fontSize: 13, textDecoration: 'none' }}>桌面端</a>
+            <a href="/mobile" style={{ color: '#7a8498', fontSize: 13, textDecoration: 'none' }}>移动端</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); logout(); }} style={{ color: '#ef6a61', fontSize: 13, textDecoration: 'none', fontWeight: 600, marginLeft: 16 }}>退出登录</a>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

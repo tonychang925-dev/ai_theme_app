@@ -117,3 +117,34 @@ export function getUserConfigDir(): string {
 export function getUserEnvLocalPath(): string {
   return userEnvLocalPath();
 }
+
+// ── Desktop config (for packaged V1-app mode) ──
+
+export interface DesktopConfig {
+  PROJECT_ROOT: string;
+}
+
+const DESKTOP_CONFIG_FILENAME = 'desktop-config.json';
+
+function desktopConfigPath(): string {
+  return path.join(userConfigDir(), DESKTOP_CONFIG_FILENAME);
+}
+
+export function loadDesktopConfig(): DesktopConfig | null {
+  const cfgPath = desktopConfigPath();
+  if (!fs.existsSync(cfgPath)) return null;
+  try {
+    const raw = fs.readFileSync(cfgPath, 'utf-8');
+    return JSON.parse(raw) as DesktopConfig;
+  } catch {
+    return null;
+  }
+}
+
+export function saveDesktopConfig(config: DesktopConfig): void {
+  const dir = userConfigDir();
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
+  fs.writeFileSync(desktopConfigPath(), JSON.stringify(config, null, 2), 'utf-8');
+}

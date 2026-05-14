@@ -1,5 +1,6 @@
 import { BrowserWindow, app, Menu, shell, dialog } from 'electron';
 import * as path from 'path';
+import * as fs from 'fs';
 import { logInfo } from './runtime/logManager';
 import { exportDiagnostics, getLogDir } from './runtime/logManager';
 
@@ -7,21 +8,38 @@ let loadingWindow: BrowserWindow | null = null;
 let mainWindow: BrowserWindow | null = null;
 let diagnosticsWindow: BrowserWindow | null = null;
 
+/** Resolve a UI asset path that works both in dev (npm start) and packaged (.app). */
+function uiPath(filename: string): string {
+  // Dev mode: __dirname = dist-electron/, look in ../src/ui/
+  const devPath = path.join(__dirname, '..', 'src', 'ui', filename);
+  if (fs.existsSync(devPath)) return devPath;
+  // Packaged: try relative to app root
+  const pkgPath = path.join(app.getAppPath(), 'src', 'ui', filename);
+  if (fs.existsSync(pkgPath)) return pkgPath;
+  // Fallback: try relative to resourcesPath
+  const resPath = path.join(process.resourcesPath || '', 'src', 'ui', filename);
+  if (fs.existsSync(resPath)) return resPath;
+  // Last resort — return dev path and let Electron error
+  return devPath;
+}
+
 export function createLoadingWindow(): BrowserWindow {
   loadingWindow = new BrowserWindow({
-    width: 460,
-    height: 320,
+    width: 800,
+    height: 500,
     frame: false,
     transparent: true,
     resizable: false,
     alwaysOnTop: true,
+    center: true,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
     },
   });
 
-  const loadingPath = path.join(__dirname, '..', 'src', 'ui', 'loading.html');
+  const loadingPath = uiPath('loading.html');
+  logInfo(`WindowManager: loading window path = ${loadingPath}, exists = ${fs.existsSync(loadingPath)}`);
   loadingWindow.loadFile(loadingPath);
   return loadingWindow;
 }
@@ -41,10 +59,10 @@ export function createMainWindow(webPort: number): BrowserWindow {
   mainWindow = new BrowserWindow({
     width: 1280,
     height: 860,
-    minWidth: 1024,
-    minHeight: 720,
+    resizable: false,
     show: false,
-    title: 'AI投资助理',
+    backgroundColor: '#00050e',
+    title: 'AI 投资助理',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: false,
@@ -72,7 +90,7 @@ export function createMainWindow(webPort: number): BrowserWindow {
   // Build app menu
   const menuTemplate: Electron.MenuItemConstructorOptions[] = [
     {
-      label: 'AI投资助理',
+      label: 'AI 投资助理',
       submenu: [
         { role: 'about' },
         { type: 'separator' },
@@ -121,17 +139,14 @@ export function createMainWindow(webPort: number): BrowserWindow {
   const menu = Menu.buildFromTemplate(menuTemplate);
   Menu.setApplicationMenu(menu);
 
-  mainWindow.once('ready-to-show', () => {
-    mainWindow?.show();
-  });
-
   return mainWindow;
 }
 
 export function showErrorPage(title: string, checks: Array<{ name: string; status: string; message: string; fixHint?: string }>): void {
   closeLoadingWindow();
 
-  const errorHtmlPath = path.join(__dirname, '..', 'src', 'ui', 'error.html');
+  const errorHtmlPath = uiPath('error.html');
+  logInfo(`WindowManager: error page path = ${errorHtmlPath}, exists = ${fs.existsSync(errorHtmlPath)}`);
   diagnosticsWindow = new BrowserWindow({
     width: 700,
     height: 600,

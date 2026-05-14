@@ -4,11 +4,12 @@ import { createLoadingWindow, closeLoadingWindow, createMainWindow, showErrorPag
 import { registerIpcHandlers, setWebPort } from './ipcHandlers';
 import { startAll, stopAll } from './runtime/serviceManager';
 import { logInfo, logError } from './runtime/logManager';
+import { loadDesktopConfig } from './runtime/envLoader';
 
 // Determine project root
 // V1-dev: running from desktop/ via npm start → project root is ../../
-// V1-app: running from .app → uses LOCAL_PROJECT_ROOT env var or falls back to resourcesPath
-//   Note: V1-app currently requires the source project directory on disk (Scheme A).
+// V1-app: running from .app → reads PROJECT_ROOT from desktop-config.json
+//   Note: V1-app requires the source project directory on disk (Scheme A).
 //   Scheme B (bundling backend source into .app) is deferred to V2.
 function getProjectRoot(): string {
   // V1-app: respect explicit LOCAL_PROJECT_ROOT if set
@@ -17,7 +18,11 @@ function getProjectRoot(): string {
     return localRoot.trim();
   }
   if (app.isPackaged) {
-    return process.resourcesPath;
+    const config = loadDesktopConfig();
+    if (config && config.PROJECT_ROOT) {
+      return config.PROJECT_ROOT;
+    }
+    throw new Error('PROJECT_ROOT is required in packaged V1-app mode. Run setup to create desktop-config.json.');
   }
   return path.resolve(__dirname, '..', '..');
 }
@@ -37,6 +42,9 @@ async function quitSafely(): Promise<void> {
   logInfo('Main: quit complete');
   app.exit(0);
 }
+
+// Set app name BEFORE ready event for correct userData path
+app.setName('AI投资助理');
 
 app.whenReady().then(async () => {
   const projectRoot = getProjectRoot();
@@ -67,15 +75,37 @@ app.whenReady().then(async () => {
   webPort = result.webPort;
   setWebPort(webPort);
 
-  // Close loading, show main window
-  closeLoadingWindow();
+  // Create main window (hidden), load, then reveal
   const mainWindow = createMainWindow(webPort);
 
-  // Load the app
   const url = `http://127.0.0.1:${webPort}/login`;
   logInfo(`Main: loading ${url}`);
-  mainWindow.loadURL(url);
 
+  // Wait for page to finish loading, then reveal
+  mainWindow.webContents.once('did-finish-load', () => {
+    logInfo('Main: page loaded, showing main window');
+    closeLoadingWindow();
+    mainWindow.show();
+  });
+
+  // Enable window resize after navigating away from login page
+  mainWindow.webContents.on('did-navigate', (_event, navUrl) => {
+    if (!navUrl.endsWith('/login')) {
+      logInfo('Main: navigated away from login, enabling resize');
+      mainWindow.setResizable(true);
+      mainWindow.setMinimumSize(1024, 720);
+    }
+  });
+
+  // Safety timeout: reveal window after 15s even if did-finish-load didn't fire
+  setTimeout(() => {
+    closeLoadingWindow();
+    if (!mainWindow.isVisible()) {
+      mainWindow.show();
+    }
+  }, 15000);
+
+  mainWindow.loadURL(url);
   appStarted = true;
 });
 

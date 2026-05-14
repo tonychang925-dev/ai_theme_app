@@ -221,11 +221,13 @@ async def admin_list_users(user: dict | None = Depends(get_current_user)):
         await gw.close()
 
 
-# ── 根路径 → 登录页（服务端302，无JS依赖，100%可靠） ──
+# ── 根路径 → SPA（由 React AuthGate 处理未登录跳转） ──
 @app.get("/")
-async def root_redirect():
-    from fastapi.responses import RedirectResponse
-    return RedirectResponse(url="/login", status_code=302)
+async def root_spa():
+    """Serve SPA at root. Auth redirect is handled client-side by AuthGate."""
+    if _SERVE_STATIC:
+        return HTMLResponse(open(_os.path.join(_DIST_DIR, "index.html"), "r").read())
+    return {"status": "ok", "service": "web_app_service"}
 
 
 # ── 前端静态文件 + SPA fallback（最后注册，匹配所有未处理的路径） ──
@@ -238,13 +240,23 @@ _SERVE_STATIC = _os.path.isdir(_os.path.join(_DIST_DIR, "assets"))
 if _SERVE_STATIC:
     app.mount("/assets", StaticFiles(directory=_os.path.join(_DIST_DIR, "assets")), name="assets")
 
+    # Also serve static files from dist root (e.g. login-bg.png, favicon.ico)
+    _STATIC_EXTS = {".png", ".jpg", ".jpeg", ".gif", ".svg", ".ico", ".webp", ".woff", ".woff2", ".ttf", ".json", ".txt"}
+
     @app.get("/{full_path:path}")
     async def spa_fallback(full_path: str):
         if not full_path:
             from fastapi.responses import RedirectResponse
             return RedirectResponse(url="/login", status_code=302)
-        path = full_path
-        ext = _os.path.splitext(path)[1]
+        stripped = full_path
+        ext = _os.path.splitext(stripped)[1].lower()
+        # Serve static files from dist root
+        if ext in _STATIC_EXTS:
+            file_path = _os.path.join(_DIST_DIR, stripped)
+            if _os.path.isfile(file_path):
+                from fastapi.responses import FileResponse
+                return FileResponse(file_path)
+            raise HTTPException(status_code=404)
         if ext and ext != ".html":
             raise HTTPException(status_code=404)
         return HTMLResponse(open(_os.path.join(_DIST_DIR, "index.html"), "r").read())

@@ -40,25 +40,45 @@ exports.createMainWindow = createMainWindow;
 exports.showErrorPage = showErrorPage;
 const electron_1 = require("electron");
 const path = __importStar(require("path"));
+const fs = __importStar(require("fs"));
 const logManager_1 = require("./runtime/logManager");
 const logManager_2 = require("./runtime/logManager");
 let loadingWindow = null;
 let mainWindow = null;
 let diagnosticsWindow = null;
+/** Resolve a UI asset path that works both in dev (npm start) and packaged (.app). */
+function uiPath(filename) {
+    // Dev mode: __dirname = dist-electron/, look in ../src/ui/
+    const devPath = path.join(__dirname, '..', 'src', 'ui', filename);
+    if (fs.existsSync(devPath))
+        return devPath;
+    // Packaged: try relative to app root
+    const pkgPath = path.join(electron_1.app.getAppPath(), 'src', 'ui', filename);
+    if (fs.existsSync(pkgPath))
+        return pkgPath;
+    // Fallback: try relative to resourcesPath
+    const resPath = path.join(process.resourcesPath || '', 'src', 'ui', filename);
+    if (fs.existsSync(resPath))
+        return resPath;
+    // Last resort — return dev path and let Electron error
+    return devPath;
+}
 function createLoadingWindow() {
     loadingWindow = new electron_1.BrowserWindow({
-        width: 460,
-        height: 320,
+        width: 800,
+        height: 500,
         frame: false,
         transparent: true,
         resizable: false,
         alwaysOnTop: true,
+        center: true,
         webPreferences: {
             nodeIntegration: false,
             contextIsolation: true,
         },
     });
-    const loadingPath = path.join(__dirname, '..', 'src', 'ui', 'loading.html');
+    const loadingPath = uiPath('loading.html');
+    (0, logManager_1.logInfo)(`WindowManager: loading window path = ${loadingPath}, exists = ${fs.existsSync(loadingPath)}`);
     loadingWindow.loadFile(loadingPath);
     return loadingWindow;
 }
@@ -75,10 +95,10 @@ function createMainWindow(webPort) {
     mainWindow = new electron_1.BrowserWindow({
         width: 1280,
         height: 860,
-        minWidth: 1024,
-        minHeight: 720,
+        resizable: false,
         show: false,
-        title: 'AI投资助理',
+        backgroundColor: '#00050e',
+        title: 'AI 投资助理',
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
             nodeIntegration: false,
@@ -103,7 +123,7 @@ function createMainWindow(webPort) {
     // Build app menu
     const menuTemplate = [
         {
-            label: 'AI投资助理',
+            label: 'AI 投资助理',
             submenu: [
                 { role: 'about' },
                 { type: 'separator' },
@@ -150,14 +170,12 @@ function createMainWindow(webPort) {
     ];
     const menu = electron_1.Menu.buildFromTemplate(menuTemplate);
     electron_1.Menu.setApplicationMenu(menu);
-    mainWindow.once('ready-to-show', () => {
-        mainWindow?.show();
-    });
     return mainWindow;
 }
 function showErrorPage(title, checks) {
     closeLoadingWindow();
-    const errorHtmlPath = path.join(__dirname, '..', 'src', 'ui', 'error.html');
+    const errorHtmlPath = uiPath('error.html');
+    (0, logManager_1.logInfo)(`WindowManager: error page path = ${errorHtmlPath}, exists = ${fs.existsSync(errorHtmlPath)}`);
     diagnosticsWindow = new electron_1.BrowserWindow({
         width: 700,
         height: 600,
