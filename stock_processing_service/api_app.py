@@ -1320,6 +1320,7 @@ async def get_mobile_screener(
 
 class NewsRecommendRequest(BaseModel):
     news_text: str
+    news_type: Optional[str] = None  # industry | policy | event
 
 
 @app.post("/api/v1/mobile/news-recommend")
@@ -1337,7 +1338,7 @@ async def post_mobile_news_recommend(payload: NewsRecommendRequest) -> dict[str,
     engine = getattr(app.state, "match_engine", None)
     if engine is not None:
         try:
-            result = await engine.match(news_text, max_candidates=5)
+            result = await engine.match(news_text, max_candidates=5, news_type=payload.news_type or "industry")
             source = "stock_match_engine"
             audit = result.audit or {}
             # 提取摘要
@@ -1684,14 +1685,13 @@ async def get_theme_workspace(
                 ORDER BY tlc.candidate_rank
             """, subject_key, td)
 
-        summary = None
-        if cycle_row:
-            # 从 evidence 提取更多字段
-            ev_row = await conn.fetchrow(
-                "SELECT evidence_json FROM theme_cycle_evidence_daily "
-                "WHERE trade_date = $1::date AND subject_key = $2",
-                td, subject_key,
-            )
+            summary = None
+            if cycle_row:
+                ev_row = await conn.fetchrow(
+                    "SELECT evidence_json FROM theme_cycle_evidence_daily "
+                    "WHERE trade_date = $1::date AND subject_key = $2",
+                    td, subject_key,
+                )
             ev = (ev_row["evidence_json"] or {}) if ev_row else {}
             if isinstance(ev, str):
                 try: import json as _j; ev = _j.loads(ev)
@@ -1729,9 +1729,7 @@ async def get_theme_workspace(
         }
     except Exception as exc:
         import traceback
-        print(f"ANALYTICS ERROR: {exc}", flush=True)
-        traceback.print_exc()
-        missing_sections.append("analytics")
+        logger.error("ANALYTICS FAILED for %s: %s\n%s", subject_key, exc, traceback.format_exc())
 
     if include_history:
         try:

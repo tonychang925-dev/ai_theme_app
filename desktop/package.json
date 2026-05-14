@@ -1,0 +1,48 @@
+{
+  "name": "ai-theme-desktop",
+  "version": "1.0.0",
+  "description": "AI题材引擎 macOS 桌面应用",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "start": "tsc -p tsconfig.json && electron dist-electron/main.js",
+    "build": "bash scripts/build-frontend.sh && tsc -p tsconfig.json && electron-builder --mac",
+    "build:dir": "bash scripts/build-frontend.sh && tsc -p tsconfig.json && electron-builder --mac --dir",
+    "compile": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.13.3",
+    "typescript": "^5.6.3"
+  },
+  "build": {
+    "appId": "com.tonychang925.ai-theme-engine",
+    "productName": "AI题材引擎",
+    "directories": {
+      "output": "dist-electron",
+      "buildResources": "assets"
+    },
+    "extraResources": [
+      {
+        "from": "../frontend/dist",
+        "to": "frontend/dist"
+      }
+    ],
+    "mac": {
+      "category": "public.app-category.finance",
+      "icon": "assets/icon.icns",
+      "target": ["dmg", "zip"],
+      "entitlements": "entitlements.mac.plist",
+      "entitlementsInherit": "entitlements.mac.plist",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "extendInfo": {
+        "LSUIElement": false
+      }
+    },
+    "files": [
+      "dist-electron/**/*",
+      "package.json"
+    ],
+    "asar": true
+  }
+}

@@ -3,7 +3,7 @@ import { ErrorBoundary } from "./components/ErrorBoundary";
 import { performanceMonitor } from "./utils/performanceMonitor";
 import { resourceOptimizer } from "./utils/resourceOptimizer";
 import { PerformanceDebugPanel } from "./components/PerformanceDebugPanel";
-import { AuthProvider } from "./routes/auth/AuthProvider";
+import { AuthProvider, useAuth } from "./routes/auth/AuthProvider";
 import {
   LazyIntelPage,
   LazyStrongStockWatchPage,
@@ -39,15 +39,40 @@ export function App() {
   );
 }
 
+function AuthGate({ children }: { children: React.ReactNode }) {
+  const { user, loading, isAdmin } = useAuth();
+  const path = window.location.pathname;
+
+  // 等待 /api/v2/auth/me 校验完成
+  if (loading) {
+    return <LoadingFallback message="验证登录状态..." />;
+  }
+
+  // 已登录用户访问 /login → 重定向到 /mobile
+  if (user && path === "/login") {
+    window.location.replace("/mobile");
+    return null;
+  }
+
+  // 未登录用户 → 重定向到 /login（携带 returnUrl）
+  if (!user && path !== "/login") {
+    const returnUrl = encodeURIComponent(path + window.location.search);
+    window.location.replace(`/login?returnUrl=${returnUrl}`);
+    return null;
+  }
+
+  // /admin 路由 → 要求 role=admin
+  if (path === "/admin" && !isAdmin) {
+    window.location.replace("/mobile");
+    return null;
+  }
+
+  return <>{children}</>;
+}
+
 function AppRoutes() {
   const [path, setPath] = useState(window.location.pathname);
 
-  // 简单鉴权：无 token 且非 /login → 显示登录页
-  const hasToken = !!localStorage.getItem('auth_token');
-  if (!hasToken && path !== '/login') {
-    window.location.replace('/login');
-    return null;
-  }
   const showPerfPanel =
     process.env.NODE_ENV === 'development' &&
     new URLSearchParams(window.location.search).get('debug_perf') === '1';
@@ -88,213 +113,185 @@ function AppRoutes() {
     };
   }, [path]);
 
-
-  if (path === "/login") {
-    return (
-      <LazyLoadErrorBoundary>
-        <Suspense fallback={<LoadingFallback message="加载登录..." />}>
-          <LazyLoginPage />
-        </Suspense>
-      </LazyLoadErrorBoundary>
-    );
-  }
-  if (path === "/admin") {
-    return (
-      <LazyLoadErrorBoundary>
-        <Suspense fallback={<LoadingFallback message="加载用户管理..." />}>
-          <LazyAdminPage />
-        </Suspense>
-      </LazyLoadErrorBoundary>
-    );
-  }
-
-  if (path === "/mobile" || path.startsWith("/mobile/")) {
-    if (path === "/mobile/recap") {
-      return (
-        <LazyLoadErrorBoundary>
-          <Suspense fallback={<LoadingFallback message="加载移动端复盘..." />}>
-            <LazyMobileRecapPage />
-          </Suspense>
-        </LazyLoadErrorBoundary>
-      );
-    }
-    if (path === "/mobile/screener") {
-      return (
-        <LazyLoadErrorBoundary>
-          <Suspense fallback={<LoadingFallback message="加载AI选股..." />}>
-            <LazyMobileScreenerPage />
-          </Suspense>
-        </LazyLoadErrorBoundary>
-      );
-    }
-    if (path === "/mobile/profile") {
-      return (
-        <LazyLoadErrorBoundary>
-          <Suspense fallback={<LoadingFallback message="加载账户..." />}>
-            <LazyMobileProfilePage />
-          </Suspense>
-        </LazyLoadErrorBoundary>
-      );
-    }
-    if (path === "/mobile/intel") {
-      return (
-        <LazyLoadErrorBoundary>
-          <Suspense fallback={<LoadingFallback message="加载实时情报..." />}>
-            <LazyMobileIntelPage />
-          </Suspense>
-        </LazyLoadErrorBoundary>
-      );
-    }
-    if (path === "/mobile/news-recommend") {
-      return (
-        <LazyLoadErrorBoundary>
-          <Suspense fallback={<LoadingFallback message="加载新闻荐股..." />}>
-            <LazyMobileNewsRecommendPage />
-          </Suspense>
-        </LazyLoadErrorBoundary>
-      );
-    }
-    return (
-      <LazyLoadErrorBoundary>
-        <Suspense fallback={<LoadingFallback message="加载移动端驾驶舱..." />}>
-          <LazyMobileHomePage />
-        </Suspense>
-      </LazyLoadErrorBoundary>
-    );
-  }
-
-  if (path.startsWith("/themes/")) {
-    const subjectKey = path.replace("/themes/", "").trim();
-    return (
-      <LazyLoadErrorBoundary>
-        <Suspense fallback={<LoadingFallback message="加载主题工作区..." />}>
-          <LazyThemeWorkspacePage subjectKey={subjectKey} />
-        </Suspense>
-      </LazyLoadErrorBoundary>
-    );
-  }
-
-  if (path.startsWith("/stocks/")) {
-    const stockId = path.replace("/stocks/", "").trim();
-    return (
-      <LazyLoadErrorBoundary>
-        <Suspense fallback={<LoadingFallback message="加载股票工作区..." />}>
-          <LazyStockWorkspacePage stockId={stockId} />
-        </Suspense>
-      </LazyLoadErrorBoundary>
-    );
-  }
-
-  if (path.startsWith("/recap")) {
-    return (
-      <LazyLoadErrorBoundary>
-        <Suspense fallback={<LoadingFallback message="加载每日回顾..." />}>
-          <LazyRecapPage />
-        </Suspense>
-      </LazyLoadErrorBoundary>
-    );
-  }
-
-  if (path.startsWith("/intel/strong-stocks/watch")) {
-    return (
-      <LazyLoadErrorBoundary>
-        <Suspense fallback={<LoadingFallback message="加载强势股跟踪..." />}>
-          <LazyStrongStockWatchPage />
-        </Suspense>
-      </LazyLoadErrorBoundary>
-    );
-  }
-
-  if (path.startsWith("/intel/strong-stocks/detail")) {
-    return (
-      <LazyLoadErrorBoundary>
-        <Suspense fallback={<LoadingFallback message="加载强势股详情..." />}>
-          <LazyStrongStockWatchDetailPage />
-        </Suspense>
-      </LazyLoadErrorBoundary>
-    );
-  }
-
-  if (path.startsWith("/screener-test")) {
-    return (
-      <LazyLoadErrorBoundary>
-        <Suspense fallback={<LoadingFallback message="加载测试页面..." />}>
-          <LazyTestPage />
-        </Suspense>
-      </LazyLoadErrorBoundary>
-    );
-  }
-
-  if (path.startsWith("/screener")) {
-    return (
-      <ErrorBoundary>
-        <LazyLoadErrorBoundary>
-          <Suspense fallback={<LoadingFallback message="加载股票筛选器..." />}>
-            <LazyStockScreenerPage />
-          </Suspense>
-        </LazyLoadErrorBoundary>
-      </ErrorBoundary>
-    );
-  }
-
-  if (path.startsWith("/collection-debug")) {
-    return (
-      <LazyLoadErrorBoundary>
-        <Suspense fallback={<LoadingFallback message="加载收集调试页面..." />}>
-          <LazyCollectionDebugPage />
-        </Suspense>
-      </LazyLoadErrorBoundary>
-    );
-  }
-
-  if (path.startsWith("/realtime-collector")) {
-    return (
-      <LazyLoadErrorBoundary>
-        <Suspense fallback={<LoadingFallback message="加载实时收集器..." />}>
-          <LazyRealtimeCollectorPage />
-        </Suspense>
-      </LazyLoadErrorBoundary>
-    );
-  }
-
-  if (path.startsWith("/collection")) {
-    return (
-      <LazyLoadErrorBoundary>
-        <Suspense fallback={<LoadingFallback message="加载数据收集页面..." />}>
-          <LazyCollectionPage />
-        </Suspense>
-      </LazyLoadErrorBoundary>
-    );
-  }
-
-  if (path.startsWith("/test/sse")) {
-    return (
-      <LazyLoadErrorBoundary>
-        <Suspense fallback={<LoadingFallback message="加载SSE测试面板..." />}>
-          <LazySSETestPanel />
-        </Suspense>
-      </LazyLoadErrorBoundary>
-    );
-  }
-
-  if (path.startsWith("/test/memory-leak")) {
-    return (
-      <LazyLoadErrorBoundary>
-        <Suspense fallback={<LoadingFallback message="加载内存泄漏测试面板..." />}>
-          <LazyMemoryLeakTestPanel />
-        </Suspense>
-      </LazyLoadErrorBoundary>
-    );
-  }
-
   return (
-    <>
-      <LazyLoadErrorBoundary>
-        <Suspense fallback={<LoadingFallback message="加载智能分析页面..." />}>
-          <LazyIntelPage />
-        </Suspense>
-      </LazyLoadErrorBoundary>
-      {showPerfPanel && <PerformanceDebugPanel />}
-    </>
+    <AuthGate>
+      {path === "/login" && (
+        <LazyLoadErrorBoundary>
+          <Suspense fallback={<LoadingFallback message="加载登录..." />}>
+            <LazyLoginPage />
+          </Suspense>
+        </LazyLoadErrorBoundary>
+      )}
+      {path === "/admin" && (
+        <LazyLoadErrorBoundary>
+          <Suspense fallback={<LoadingFallback message="加载用户管理..." />}>
+            <LazyAdminPage />
+          </Suspense>
+        </LazyLoadErrorBoundary>
+      )}
+
+      {(path === "/mobile" || path.startsWith("/mobile/")) && (
+        <>
+          {path === "/mobile/recap" && (
+            <LazyLoadErrorBoundary>
+              <Suspense fallback={<LoadingFallback message="加载移动端复盘..." />}>
+                <LazyMobileRecapPage />
+              </Suspense>
+            </LazyLoadErrorBoundary>
+          )}
+          {path === "/mobile/screener" && (
+            <LazyLoadErrorBoundary>
+              <Suspense fallback={<LoadingFallback message="加载AI选股..." />}>
+                <LazyMobileScreenerPage />
+              </Suspense>
+            </LazyLoadErrorBoundary>
+          )}
+          {path === "/mobile/profile" && (
+            <LazyLoadErrorBoundary>
+              <Suspense fallback={<LoadingFallback message="加载账户..." />}>
+                <LazyMobileProfilePage />
+              </Suspense>
+            </LazyLoadErrorBoundary>
+          )}
+          {path === "/mobile/intel" && (
+            <LazyLoadErrorBoundary>
+              <Suspense fallback={<LoadingFallback message="加载实时情报..." />}>
+                <LazyMobileIntelPage />
+              </Suspense>
+            </LazyLoadErrorBoundary>
+          )}
+          {path === "/mobile/news-recommend" && (
+            <LazyLoadErrorBoundary>
+              <Suspense fallback={<LoadingFallback message="加载新闻荐股..." />}>
+                <LazyMobileNewsRecommendPage />
+              </Suspense>
+            </LazyLoadErrorBoundary>
+          )}
+          {path === "/mobile" && (
+            <LazyLoadErrorBoundary>
+              <Suspense fallback={<LoadingFallback message="加载移动端驾驶舱..." />}>
+                <LazyMobileHomePage />
+              </Suspense>
+            </LazyLoadErrorBoundary>
+          )}
+        </>
+      )}
+
+      {path.startsWith("/themes/") && (() => {
+        const subjectKey = path.replace("/themes/", "").trim();
+        return (
+          <LazyLoadErrorBoundary>
+            <Suspense fallback={<LoadingFallback message="加载主题工作区..." />}>
+              <LazyThemeWorkspacePage subjectKey={subjectKey} />
+            </Suspense>
+          </LazyLoadErrorBoundary>
+        );
+      })()}
+
+      {path.startsWith("/stocks/") && (() => {
+        const stockId = path.replace("/stocks/", "").trim();
+        return (
+          <LazyLoadErrorBoundary>
+            <Suspense fallback={<LoadingFallback message="加载股票工作区..." />}>
+              <LazyStockWorkspacePage stockId={stockId} />
+            </Suspense>
+          </LazyLoadErrorBoundary>
+        );
+      })()}
+
+      {path.startsWith("/recap") && (
+        <LazyLoadErrorBoundary>
+          <Suspense fallback={<LoadingFallback message="加载每日回顾..." />}>
+            <LazyRecapPage />
+          </Suspense>
+        </LazyLoadErrorBoundary>
+      )}
+
+      {path.startsWith("/intel/strong-stocks/watch") && (
+        <LazyLoadErrorBoundary>
+          <Suspense fallback={<LoadingFallback message="加载强势股跟踪..." />}>
+            <LazyStrongStockWatchPage />
+          </Suspense>
+        </LazyLoadErrorBoundary>
+      )}
+
+      {path.startsWith("/intel/strong-stocks/detail") && (
+        <LazyLoadErrorBoundary>
+          <Suspense fallback={<LoadingFallback message="加载强势股详情..." />}>
+            <LazyStrongStockWatchDetailPage />
+          </Suspense>
+        </LazyLoadErrorBoundary>
+      )}
+
+      {path.startsWith("/screener-test") && (
+        <LazyLoadErrorBoundary>
+          <Suspense fallback={<LoadingFallback message="加载测试页面..." />}>
+            <LazyTestPage />
+          </Suspense>
+        </LazyLoadErrorBoundary>
+      )}
+
+      {path.startsWith("/screener") && !path.startsWith("/screener-test") && (
+        <ErrorBoundary>
+          <LazyLoadErrorBoundary>
+            <Suspense fallback={<LoadingFallback message="加载股票筛选器..." />}>
+              <LazyStockScreenerPage />
+            </Suspense>
+          </LazyLoadErrorBoundary>
+        </ErrorBoundary>
+      )}
+
+      {path.startsWith("/collection-debug") && (
+        <LazyLoadErrorBoundary>
+          <Suspense fallback={<LoadingFallback message="加载收集调试页面..." />}>
+            <LazyCollectionDebugPage />
+          </Suspense>
+        </LazyLoadErrorBoundary>
+      )}
+
+      {path.startsWith("/realtime-collector") && (
+        <LazyLoadErrorBoundary>
+          <Suspense fallback={<LoadingFallback message="加载实时收集器..." />}>
+            <LazyRealtimeCollectorPage />
+          </Suspense>
+        </LazyLoadErrorBoundary>
+      )}
+
+      {path.startsWith("/collection") && !path.startsWith("/collection-debug") && (
+        <LazyLoadErrorBoundary>
+          <Suspense fallback={<LoadingFallback message="加载数据收集页面..." />}>
+            <LazyCollectionPage />
+          </Suspense>
+        </LazyLoadErrorBoundary>
+      )}
+
+      {path.startsWith("/test/sse") && (
+        <LazyLoadErrorBoundary>
+          <Suspense fallback={<LoadingFallback message="加载SSE测试面板..." />}>
+            <LazySSETestPanel />
+          </Suspense>
+        </LazyLoadErrorBoundary>
+      )}
+
+      {path.startsWith("/test/memory-leak") && (
+        <LazyLoadErrorBoundary>
+          <Suspense fallback={<LoadingFallback message="加载内存泄漏测试面板..." />}>
+            <LazyMemoryLeakTestPanel />
+          </Suspense>
+        </LazyLoadErrorBoundary>
+      )}
+
+      {/* 默认路由：Intel 首页 */}
+      {path === "/" && (
+        <>
+          <LazyLoadErrorBoundary>
+            <Suspense fallback={<LoadingFallback message="加载智能分析页面..." />}>
+              <LazyIntelPage />
+            </Suspense>
+          </LazyLoadErrorBoundary>
+          {showPerfPanel && <PerformanceDebugPanel />}
+        </>
+      )}
+    </AuthGate>
   );
 }

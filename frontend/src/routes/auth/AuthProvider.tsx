@@ -10,8 +10,8 @@ interface AuthContextType {
   user: User | null;
   token: string | null;
   loading: boolean;
+  isAdmin: boolean;
   login: (email: string, password: string) => Promise<void>;
-  register: (email: string, password: string) => Promise<void>;
   logout: () => void;
 }
 
@@ -63,24 +63,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     localStorage.setItem('auth_token', data.token);
     setToken(data.token);
     setUser(data.user);
-    window.location.replace('/mobile');
+    // 支持 returnUrl 跳转回原页面
+    const params = new URLSearchParams(window.location.search);
+    const returnUrl = params.get('returnUrl');
+    window.location.replace(returnUrl || '/mobile');
   };
 
-  const register = async (email: string, password: string) => {
-    const resp = await fetch('/api/v2/auth/register', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password }),
-    });
-    if (!resp.ok) {
-      const err = await resp.json();
-      throw new Error(err.detail || '注册失败');
-    }
-    const data = await resp.json();
-    localStorage.setItem('auth_token', data.token);
-    setToken(data.token);
-    setUser(data.user);
-  };
+  const isAdmin = user?.role === 'admin';
 
   const logout = () => {
     localStorage.removeItem('auth_token');
@@ -90,7 +79,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, token, loading, login, register, logout }}>
+    <AuthContext.Provider value={{ user, token, loading, isAdmin, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

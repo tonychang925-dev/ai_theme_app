@@ -1,9 +1,14 @@
+from __future__ import annotations
+
+import os as _os
+from pathlib import Path
+
+import httpx
+import passlib.hash as passlib_hash
 from fastapi import FastAPI, Request, HTTPException, Depends
 from fastapi.responses import JSONResponse, HTMLResponse
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi.staticfiles import StaticFiles
-import os as _os
-import passlib.hash as passlib_hash
 from pydantic import BaseModel
 
 from web_app_service.api.routes import router
@@ -42,6 +47,77 @@ async def mobile_token_middleware(request: Request, call_next):
 @app.get("/healthz")
 async def healthz() -> dict[str, str]:
     return {"status": "ok", "service": "web_app_service"}
+
+
+# ── Ready (深度就绪检查) ──
+_SPS_BASE_URL = _os.getenv("STOCK_PROCESSING_READ_BASE_URL", "http://127.0.0.1:8090").rstrip("/")
+_REDIS_URL = _os.getenv("REDIS_URL", "redis://localhost:6379/0").strip()
+
+
+@app.get("/readyz")
+async def readyz():
+    checks: dict[str, str] = {}
+    fatal: list[str] = []
+    degraded: list[str] = []
+
+    # 1. PostgreSQL
+    try:
+        gw = await _get_gw()
+        async with gw._client.pool.acquire() as conn:
+            await conn.fetchval("SELECT 1")
+        checks["postgres"] = "connected"
+        await gw.close()
+    except Exception as exc:
+        checks["postgres"] = f"unavailable: {exc}"
+        fatal.append("postgres")
+
+    # 2. Redis (degraded on failure, not fatal)
+    try:
+        import redis.asyncio as aioredis
+        r = aioredis.from_url(_REDIS_URL, socket_connect_timeout=3)
+        await r.ping()
+        await r.aclose()
+        checks["redis"] = "connected"
+    except Exception as exc:
+        checks["redis"] = f"unavailable: {exc}"
+        degraded.append("redis")
+
+    # 3. SPS upstream (fatal)
+    try:
+        async with httpx.AsyncClient(timeout=5.0) as client:
+            resp = await client.get(f"{_SPS_BASE_URL}/healthz")
+        if resp.status_code == 200:
+            checks["sps_upstream"] = "healthy"
+        else:
+            checks["sps_upstream"] = f"unhealthy (status={resp.status_code})"
+            fatal.append("sps_upstream")
+    except Exception as exc:
+        checks["sps_upstream"] = f"unreachable: {exc}"
+        fatal.append("sps_upstream")
+
+    # 4. Frontend dist (fatal)
+    if _SERVE_STATIC:
+        checks["frontend_dist"] = "mounted"
+    else:
+        checks["frontend_dist"] = f"missing (looked in {_DIST_DIR})"
+        fatal.append("frontend_dist")
+
+    # 5. Version
+    checks["version"] = "0.1.0"
+
+    if fatal:
+        status = "failed"
+    elif degraded:
+        status = "degraded"
+    else:
+        status = "ok"
+
+    return {
+        "status": status,
+        "checks": checks,
+        "fatal": fatal,
+        "degraded": degraded,
+    }
 
 
 # ── Auth API 必须在 SPA fallback 之前 ──
@@ -152,8 +228,13 @@ async def root_redirect():
 
 
 # ── 前端静态文件 + SPA fallback（最后注册，匹配所有未处理的路径） ──
-_DIST_DIR = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))), "frontend", "dist")
-if _os.path.isdir(_os.path.join(_DIST_DIR, "assets")):
+_DIST_DIR = _os.getenv("FRONTEND_DIST_DIR", "").strip()
+if not _DIST_DIR:
+    _DIST_DIR = str(Path(__file__).resolve().parents[1] / "frontend" / "dist")
+
+_SERVE_STATIC = _os.path.isdir(_os.path.join(_DIST_DIR, "assets"))
+
+if _SERVE_STATIC:
     app.mount("/assets", StaticFiles(directory=_os.path.join(_DIST_DIR, "assets")), name="assets")
 
     @app.get("/{full_path:path}")
