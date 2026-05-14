@@ -1,7 +1,8 @@
 {
-  "numStartups": 2,
+  "numStartups": 4,
+  "hasSeenTasksHint": true,
   "tipsHistory": {
-    "new-user-warmup": 1,
+    "new-user-warmup": 4,
     "plan-mode-for-complex-tasks": 1,
     "color-when-multi-clauding": 2,
     "memory-command": 2,
@@ -18,9 +19,16 @@
     "paste-images-mac": 2,
     "double-esc-code-restore": 2,
     "continue": 2,
-    "shift-tab": 2
+    "shift-tab": 2,
+    "image-paste": 2,
+    "desktop-app": 2,
+    "web-app": 2,
+    "mobile-app": 2,
+    "frontend-design-plugin": 2,
+    "shift-enter": 4
   },
-  "promptQueueUseCount": 6,
+  "promptQueueUseCount": 95,
+  "showExpandedTodos": true,
   "firstStartTime": "2026-05-12T01:22:19.055Z",
   "opusProMigrationComplete": true,
   "sonnet1m45MigrationComplete": true,
@@ -49,7 +57,63 @@
         "gateway.py",
         "w2s_candidate_service.py"
       ],
-      "exampleFilesGeneratedAt": 1778548955899
+      "exampleFilesGeneratedAt": 1778548955899,
+      "lastCost": 60.26146900000002,
+      "lastAPIDuration": 10007963,
+      "lastAPIDurationWithoutRetries": 9931772,
+      "lastToolDuration": 26577897,
+      "lastDuration": 106350185,
+      "lastLinesAdded": 2103,
+      "lastLinesRemoved": 342,
+      "lastTotalInputTokens": 726952,
+      "lastTotalOutputTokens": 236701,
+      "lastTotalCacheCreationInputTokens": 0,
+      "lastTotalCacheReadInputTokens": 101418368,
+      "lastTotalWebSearchRequests": 0,
+      "lastFpsAverage": 3.73,
+      "lastFpsLow1Pct": 19.46,
+      "lastModelUsage": {
+        "deepseek-v4-flash": {
+          "inputTokens": 22400,
+          "outputTokens": 5365,
+          "cacheReadInputTokens": 21632,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.256941
+        },
+        "deepseek-v4-pro": {
+          "inputTokens": 704552,
+          "outputTokens": 231336,
+          "cacheReadInputTokens": 101396736,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 60.004528000000036
+        }
+      },
+      "lastSessionId": "9ceda1e7-564b-4f31-86be-2a41ace59df2",
+      "lastSessionMetrics": {
+        "frame_duration_ms_count": 396935,
+        "frame_duration_ms_min": 0.08329100000264589,
+        "frame_duration_ms_max": 10096.044480994344,
+        "frame_duration_ms_avg": 4.988500032789985,
+        "frame_duration_ms_p50": 2.366345999762416,
+        "frame_duration_ms_p95": 12.245484249666331,
+        "frame_duration_ms_p99": 43.08740783870219,
+        "pre_tool_hook_duration_ms_count": 381,
+        "pre_tool_hook_duration_ms_min": 0,
+        "pre_tool_hook_duration_ms_max": 320,
+        "pre_tool_hook_duration_ms_avg": 3.7506561679790025,
+        "pre_tool_hook_duration_ms_p50": 1,
+        "pre_tool_hook_duration_ms_p95": 8,
+        "pre_tool_hook_duration_ms_p99": 81.19999999999987,
+        "hook_duration_ms_count": 140,
+        "hook_duration_ms_min": 0,
+        "hook_duration_ms_max": 63,
+        "hook_duration_ms_avg": 1.1642857142857144,
+        "hook_duration_ms_p50": 0,
+        "hook_duration_ms_p95": 3,
+        "hook_duration_ms_p99": 8
+      }
     }
   },
   "githubRepoPaths": {
@@ -57,9 +121,12 @@
       "/Users/admin/Desktop/ai_theme_app"
     ]
   },
-  "opus1mMergeNoticeSeenCount": 2,
+  "opus1mMergeNoticeSeenCount": 6,
   "lastReleaseNotesSeen": "2.1.88-source.0",
   "officialMarketplaceAutoInstallAttempted": true,
   "officialMarketplaceAutoInstalled": true,
-  "showSpinnerTree": false
+  "showSpinnerTree": false,
+  "feedbackSurveyState": {
+    "lastShownTime": 1778711809457
+  }
 }

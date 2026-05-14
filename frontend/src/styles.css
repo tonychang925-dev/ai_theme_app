@@ -2459,8 +2459,9 @@ select {
 }
 
 .pill-new_theme {
-  background: #d9ecff;
-  color: #0b57a3;
+  background: #ffd700;
+  color: #4a3800;
+  font-weight: 700;
 }
 
 .pill-stock_move {

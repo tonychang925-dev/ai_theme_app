@@ -199,5 +199,8 @@ async def main() -> int:
         await manager.disconnect()
 
 
+main_async = main  # in-process entry point alias
+
+
 if __name__ == "__main__":
     raise SystemExit(asyncio.run(main()))

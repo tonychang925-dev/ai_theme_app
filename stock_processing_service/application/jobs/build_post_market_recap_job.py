@@ -53,6 +53,7 @@ class BuildPostMarketRecapJob:
         identity_job: Any | None = None,  # BuildIdentityJob — Layer A 前置
         mainline_state_job: Any | None = None,  # BuildMainlineStateJob — Layer B 前置
         cycle_judgement_job: Any | None = None,  # BuildCycleJudgementJob — Layer B 前置
+        evidence_job: Any | None = None,  # BuildThemeCycleEvidenceDailyJob — Layer B 证据
     ) -> None:
         self._read_port = read_port
         self._write_port = write_port
@@ -65,6 +66,7 @@ class BuildPostMarketRecapJob:
         self._identity_job = identity_job
         self._mainline_state_job = mainline_state_job
         self._cycle_judgement_job = cycle_judgement_job
+        self._evidence_job = evidence_job
 
     @staticmethod
     def _d(value: Any) -> Decimal:
@@ -302,7 +304,14 @@ class BuildPostMarketRecapJob:
         )
 
         # ── Step 3.5: Layer A/B 前置（新链自闭环）──
-        # 执行顺序: Cycle → Identity → MainlineState
+        # 执行顺序: Evidence → Cycle → Identity → MainlineState
+        if self._evidence_job is not None:
+            await self._evidence_job.execute(
+                trade_date=trade_date,
+                snapshot_version=f"recap_evidence.{snapshot_version}",
+                batch_id=batch_id,
+                trace_id=trace_id,
+            )
         if self._cycle_judgement_job is not None:
             await self._cycle_judgement_job.execute(
                 trade_date=trade_date,

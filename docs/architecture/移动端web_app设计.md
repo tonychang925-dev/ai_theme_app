@@ -740,3 +740,172 @@ iPhone 打开 /mobile
 ```text
 电脑端负责算，iPhone HTML5 负责看和触发。
 ```
+
+---
+
+## 15. 用户管理模块 (Phase 6)
+
+> 状态：实施中  
+> 目标：邮箱登录 + 角色权限，替代 Tailscale 实现远程访问
+
+### 15.1 架构
+
+```
+浏览器/iPhone
+  ↓ HTTPS（ngrok / Cloudflare Tunnel）
+web_app_service:8000
+  ↓ JWT 中间件
+  ├── /api/v2/auth/*    公开（login / register）
+  └── /api/v2/*          受保护（需 Bearer JWT）
+```
+
+### 15.2 技术选型
+
+| 组件 | 选型 |
+|---|---|
+| 认证协议 | JWT (access token, 72h 过期) |
+| 密码哈希 | bcrypt (passlib) |
+| 用户存储 | PostgreSQL `user_accounts` 表 |
+| 公网访问 | ngrok（免费）或 Cloudflare Tunnel（需域名） |
+| 前端状态 | React Context + localStorage |
+
+### 15.3 数据模型
+
+```sql
+CREATE TABLE user_accounts (
+    id            SERIAL PRIMARY KEY,
+    email         VARCHAR(255) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    role          VARCHAR(20) NOT NULL DEFAULT 'user',
+    is_active     BOOLEAN NOT NULL DEFAULT TRUE,
+    created_at    TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    last_login    TIMESTAMPTZ
+);
+```
+
+### 15.4 API
+
+| 方法 | 路径 | 权限 | 说明 |
+|---|---|---|---|
+| POST | `/api/v2/auth/register` | 公开 | 首用户自动 admin |
+| POST | `/api/v2/auth/login` | 公开 | 返回 JWT |
+| GET | `/api/v2/auth/me` | 需登录 | 当前用户信息 |
+
+### 15.5 前端页面
+
+| 路由 | 组件 | 说明 |
+|---|---|---|
+| `/login` | LoginPage.tsx | 邮箱+密码登录 |
+| `/register` | RegisterPage.tsx | 注册 |
+| AuthContext | AuthProvider.tsx | 全局认证状态，路由守卫 |
+
+### 15.6 角色权限
+
+| 功能 | user | admin |
+|---|---|---|
+| 查看复盘/选股/情报 | ✅ | ✅ |
+| 新闻荐股 | ✅ | ✅ |
+| CDP 实时采集 | ✅ | ✅ |
+| 日采集启动 | ❌ | ✅ |
+| 用户管理 | ❌ | ✅ |
+
+### 15.7 远程访问
+
+| 方案 | 域名格式 | 费用 |
+|---|---|---|
+| **ngrok** | `https://xxx.ngrok-free.app` | 免费 |
+| Cloudflare Tunnel | 需自有域名 | 免费 |
+| Tailscale Funnel | `xxx.ts.net` | 免费 |
+
+---
+
+## 16. 运维操作指南
+
+### 16.1 启动服务
+
+```bash
+# 1. 启动新链服务栈（SPS + web_app + Vite）
+./scripts/start_new_chain_stack.sh --restart --with-frontend
+
+# 2. 启动 CDP 实时采集（可选）
+JYHF_CDP_PUSH_INTEL=1 JYHF_CDP_PUSH_DB=1 \
+  nohup /opt/miniconda3/envs/theme_matcher_env/bin/python \
+  -m uvicorn services.jyhf_cdp_service.app:app \
+  --host 127.0.0.1 --port 8095 > /tmp/cdp.log 2>&1 &
+
+# 3. 启动远程隧道
+nohup cloudflared tunnel --url http://localhost:8000 > /tmp/cf_stable.log 2>&1 &
+```
+
+### 16.2 获取/更新隧道 URL
+
+```bash
+# 查看当前隧道域名
+grep -o 'https://[^ ]*trycloudflare\.com' /tmp/cf_stable.log | tail -1
+
+# 如果隧道断开，重新启动（域名会变）
+pkill -f cloudflared
+nohup cloudflared tunnel --url http://localhost:8000 > /tmp/cf_stable.log 2>&1 &
+sleep 8
+grep -o 'https://[^ ]*trycloudflare\.com' /tmp/cf_stable.log | tail -1
+```
+
+### 16.3 查看服务状态
+
+```bash
+# 检查各服务健康
+curl -s http://127.0.0.1:8000/healthz    # web_app
+curl -s http://127.0.0.1:8090/healthz    # SPS
+curl -s http://127.0.0.1:8095/status     # CDP
+```
+
+### 16.4 重启单个服务
+
+```bash
+# 重启 SPS（改代码后）
+pkill -f "api_app:app"
+HF_HUB_OFFLINE=1 DEEPSEEK_API_KEY="sk-xxx" \
+  PYTHONPATH="/Users/admin/Desktop/ai_theme_app" \
+  nohup /opt/miniconda3/envs/theme_matcher_env/bin/python \
+  -m uvicorn stock_processing_service.api_app:app \
+  --host 127.0.0.1 --port 8090 > /tmp/sps.log 2>&1 &
+
+# 重启 web_app（改前端构建后）
+npx vite build
+pkill -f "uvicorn web_app_service.main"
+PYTHONPATH="/Users/admin/Desktop/ai_theme_app" \
+  nohup /opt/miniconda3/envs/theme_matcher_env/bin/python \
+  -m uvicorn web_app_service.main:app \
+  --host 0.0.0.0 --port 8000 > /tmp/webapp.log 2>&1 &
+```
+
+### 16.5 日采集操作
+
+```
+1. 打开 http://localhost:5173/collection
+2. 确认 JYHF CDP 服务已启动（实时事件采集）
+3. 勾选需要执行的任务（默认全部）
+4. 点击「启动采集」
+5. 完成后查看 http://localhost:5173/recap 复盘报告
+```
+
+### 16.6 用户管理
+
+```
+默认管理员: admin@test.com / 123456
+
+操作路径:
+1. 登录后访问 /admin（仅 admin 可见）
+2. 添加用户（邮箱 + 密码 + 角色）
+3. 用户登录后访问 /mobile/profile 自行修改密码
+```
+
+### 16.7 常见问题
+
+| 问题 | 原因 | 解决 |
+|---|---|---|
+| 隧道域名每次变 | cloudflared 进程被关 | 用 `nohup` 后台运行，不关终端 |
+| 移动端页面空白 | Vite 缓存旧代码 | `rm -rf frontend/dist && npx vite build` |
+| AI 荐股结果差 | SPS 用了 .venv（无 torch） | SPS 必须用 `theme_matcher_env` |
+| 情报台无实时事件 | CDP 服务未启动 | 执行 16.1 步骤 2 |
+| 登录后卡验证身份 | /me API 超时 | 已加 8s 超时，刷新页面 |

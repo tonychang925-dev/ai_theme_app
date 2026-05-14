@@ -748,6 +748,104 @@ class DatabaseGateway:
             logger.error(f"读取 weak_to_strong_candidate_pool intel 失败 trade_date={trade_date}: {e}")
             raise
 
+    async def get_intel_news_events(self, feed_date) -> List[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            result = await self._client.get_intel_news_events(feed_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 news_event intel 失败 feed_date={feed_date}: {e}")
+            raise
+
+    async def create_user(self, email: str, password_hash: str, role: str = "user") -> Dict[str, Any]:
+        try:
+            start_time = time.time()
+            result = await self._client.create_user(email, password_hash, role)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            raise
+
+    async def get_user_by_email(self, email: str) -> Dict[str, Any] | None:
+        try:
+            start_time = time.time()
+            result = await self._client.get_user_by_email(email)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            raise
+
+    async def update_user_last_login(self, user_id: int) -> None:
+        try:
+            start_time = time.time()
+            await self._client.update_user_last_login(user_id)
+            self._record_request(True, start_time)
+        except Exception as e:
+            self._record_request(False, start_time)
+            raise
+
+    async def resolve_subject_keys_by_names(self, names: List[str]) -> Dict[str, str]:
+        try:
+            start_time = time.time()
+            result = await self._client.resolve_subject_keys_by_names(names)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            return {}
+
+    async def get_intel_subject_history(self, feed_date) -> List[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            result = await self._client.get_intel_subject_history(feed_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 subject_history intel 失败 feed_date={feed_date}: {e}")
+            raise
+
+    async def get_subject_stock_daily_snapshot_by_trade_date(
+        self, trade_date
+    ) -> List[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            result = await self._client.get_subject_stock_daily_snapshot_by_trade_date(trade_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 subject_stock_daily_snapshot 失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def get_stock_daily_snapshot_by_stock_ids(
+        self, trade_date, stock_ids: List[str]
+    ) -> List[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            result = await self._client.get_stock_daily_snapshot_by_stock_ids(trade_date, stock_ids)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 stock_daily_snapshot 失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def upsert_stock_abnormal_signal_rows(self, rows: List[Dict[str, Any]]) -> int:
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_stock_abnormal_signal_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"写入 stock_abnormal_signal 失败: {e}")
+            raise
+
     async def get_trade_dates_before_or_on(self, end_date, limit: int = 7) -> List:
         try:
             start_time = time.time()

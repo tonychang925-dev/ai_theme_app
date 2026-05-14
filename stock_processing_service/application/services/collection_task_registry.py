@@ -94,13 +94,35 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
         AuctionSnapshotRunner,
         AuctionWatchUniverseRunner,
         BuildDragonTigerObjectRunner,
+        BuildLeaderCandidateRunner,
+        BuildLeaderLLMJudgementRunner,
+        BuildLeaderLLMQueueRunner,
         BuildStockAbnormalSignalRunner,
+        CallLeaderLLMRunner,
+        JyhfImportHistoryRunner,
+        JyhfImportStockDailyRunner,
+        JyhfLoadSubjectNodeStagingRunner,
+        JyhfSyncDetailsRunner,
+        JyhfSyncHistoryRunner,
+        JyhfSyncListsRunner,
+        JyhfSyncStockDetailsRunner,
         PostMarketRecapReportRunner,
         PostMarketRecapRunner,
         ScriptCommandRunner,
         TushareKlineRunner,
     )
     registry.register("script.default", ScriptCommandRunner())
+    registry.register("leader_llm.queue", BuildLeaderLLMQueueRunner())
+    registry.register("leader_llm.judgement", BuildLeaderLLMJudgementRunner())
+    registry.register("leader_llm.call", CallLeaderLLMRunner())
+    registry.register("leader_llm.candidate", BuildLeaderCandidateRunner())
+    registry.register("jyhf.sync_lists", JyhfSyncListsRunner())
+    registry.register("jyhf.load_staging", JyhfLoadSubjectNodeStagingRunner())
+    registry.register("jyhf.sync_details", JyhfSyncDetailsRunner())
+    registry.register("jyhf.sync_stock_details", JyhfSyncStockDetailsRunner())
+    registry.register("jyhf.import_stock_daily", JyhfImportStockDailyRunner())
+    registry.register("jyhf_history.sync", JyhfSyncHistoryRunner())
+    registry.register("jyhf_history.import", JyhfImportHistoryRunner())
     registry.register("recap.snapshot", PostMarketRecapRunner())
     registry.register("recap.report", PostMarketRecapReportRunner())
     registry.register("abnormal.signal", BuildStockAbnormalSignalRunner())

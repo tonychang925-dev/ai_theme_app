@@ -176,7 +176,7 @@ start_stock_processing_service() {
   echo "[start] stock_processing_service:8090"
   (
     cd "$ROOT_DIR"
-    nohup bash -lc "$(build_env_source_cmd) && . .venv/bin/activate && uvicorn stock_processing_service.api_app:app --host 127.0.0.1 --port 8090" \
+    nohup bash -lc "$(build_env_source_cmd) && PYTHONPATH=$ROOT_DIR HF_HUB_OFFLINE=1 /opt/miniconda3/envs/theme_matcher_env/bin/python -m uvicorn stock_processing_service.api_app:app --host 127.0.0.1 --port 8090" \
       >"$LOG_DIR/stock_processing_service_8090.log" 2>&1 &
   )
 

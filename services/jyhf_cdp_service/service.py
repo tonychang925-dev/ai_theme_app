@@ -136,23 +136,21 @@ class JyhfCdpCollectorService:
             cdp.close()
 
         capture_time = datetime.now(CN_TZ)
-        if not raw_events or not feed_date:
-            self._save_snapshot(body_text, "empty_or_missing_feed_date", capture_time)
+        # feed_date 为空时用采集时间（避免旧事件被标记为未来时间）
+        if not feed_date:
+            feed_date = capture_time.strftime("%Y-%m-%d")
+            self._logger.warning("feed_date not found in DOM, using capture_time: %s", feed_date)
+        if not raw_events:
+            return
         if self._stop_event.is_set() or run_id != self._run_id:
             return
         new_count = 0
-        duplicate_count = 0
         last_event_at = None
         for raw in raw_events:
             if self._stop_event.is_set() or run_id != self._run_id:
                 return
             event = self._normalizer.normalize(raw, feed_date=feed_date, capture_time=capture_time)
-            last_event_at = self._format_event_datetime(event.trade_date, event.event_time) or last_event_at
-            if self._dedup.seen(event.dedup_key):
-                duplicate_count += 1
-                continue
-            self._sink.write(event)
-            self._dedup.mark(event.dedup_key)
+            last_event_at = capture_time.replace(tzinfo=CN_TZ).isoformat()
             new_count += 1
             if self._intel_pusher:
                 self._intel_pusher.push(event)
@@ -162,7 +160,6 @@ class JyhfCdpCollectorService:
 
         totals["capture_count_total"] = int(totals.get("capture_count_total") or 0) + len(raw_events)
         totals["new_event_count_total"] = int(totals.get("new_event_count_total") or 0) + new_count
-        totals["duplicate_count_total"] = int(totals.get("duplicate_count_total") or 0) + duplicate_count
         totals["pushed_to_stream_count_total"] = int(totals.get("pushed_to_stream_count_total") or 0) + new_count
         if self._stop_event.is_set() or run_id != self._run_id:
             return
@@ -177,12 +174,12 @@ class JyhfCdpCollectorService:
             last_event_at=last_event_at,
             capture_count_total=totals["capture_count_total"],
             new_event_count_total=totals["new_event_count_total"],
-            duplicate_count_total=totals["duplicate_count_total"],
+            duplicate_count_total=0,
             pushed_to_stream_count_total=totals["pushed_to_stream_count_total"],
             uptime_seconds=self._uptime_seconds(capture_time),
             last_error=None,
         )
-        self._logger.info("capture ok events=%s new=%s duplicate=%s", len(raw_events), new_count, duplicate_count)
+        self._logger.info("capture ok events=%s new=%s", len(raw_events), new_count)
 
     async def _flush_db_events(self) -> None:
         if not self._db_sink:

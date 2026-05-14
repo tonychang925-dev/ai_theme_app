@@ -510,8 +510,9 @@ def collect_stocks_for_trade_date(
     return len(rows)
 
 
-def main() -> int:
-    args = parse_args()
+def main(args=None) -> int:
+    if args is None:
+        args = parse_args()
     token = resolve_token(args.token)
     if not token:
         print("[ERROR] missing token: set token via --token, env, or ensure mitmproxy capture file exists")
@@ -610,6 +611,12 @@ def main() -> int:
     print(f"[OK] batch_id={batch_id}")
     print(f"[OK] subject_count={len(subject_ids)} file_count={len(files)}")
     return 0
+
+
+async def main_async(args=None):
+    """In-process entry point for collection service runners."""
+    import asyncio
+    return await asyncio.to_thread(main, args)
 
 
 if __name__ == "__main__":

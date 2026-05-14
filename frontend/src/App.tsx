@@ -3,12 +3,20 @@ import { ErrorBoundary } from "./components/ErrorBoundary";
 import { performanceMonitor } from "./utils/performanceMonitor";
 import { resourceOptimizer } from "./utils/resourceOptimizer";
 import { PerformanceDebugPanel } from "./components/PerformanceDebugPanel";
+import { AuthProvider } from "./routes/auth/AuthProvider";
 import {
   LazyIntelPage,
   LazyStrongStockWatchPage,
   LazyStrongStockWatchDetailPage,
   LazyRecapPage,
   LazyMobileHomePage,
+  LazyMobileRecapPage,
+  LazyMobileScreenerPage,
+  LazyMobileIntelPage,
+  LazyMobileNewsRecommendPage,
+  LazyMobileProfilePage,
+  LazyLoginPage,
+  LazyAdminPage,
   LazyThemeWorkspacePage,
   LazyStockWorkspacePage,
   LazyStockScreenerPage,
@@ -24,7 +32,22 @@ import {
 } from "./utils/codeSplitting";
 
 export function App() {
+  return (
+    <AuthProvider>
+      <AppRoutes />
+    </AuthProvider>
+  );
+}
+
+function AppRoutes() {
   const [path, setPath] = useState(window.location.pathname);
+
+  // 简单鉴权：无 token 且非 /login → 显示登录页
+  const hasToken = !!localStorage.getItem('auth_token');
+  if (!hasToken && path !== '/login') {
+    window.location.replace('/login');
+    return null;
+  }
   const showPerfPanel =
     process.env.NODE_ENV === 'development' &&
     new URLSearchParams(window.location.search).get('debug_perf') === '1';
@@ -66,7 +89,71 @@ export function App() {
   }, [path]);
 
 
+  if (path === "/login") {
+    return (
+      <LazyLoadErrorBoundary>
+        <Suspense fallback={<LoadingFallback message="加载登录..." />}>
+          <LazyLoginPage />
+        </Suspense>
+      </LazyLoadErrorBoundary>
+    );
+  }
+  if (path === "/admin") {
+    return (
+      <LazyLoadErrorBoundary>
+        <Suspense fallback={<LoadingFallback message="加载用户管理..." />}>
+          <LazyAdminPage />
+        </Suspense>
+      </LazyLoadErrorBoundary>
+    );
+  }
+
   if (path === "/mobile" || path.startsWith("/mobile/")) {
+    if (path === "/mobile/recap") {
+      return (
+        <LazyLoadErrorBoundary>
+          <Suspense fallback={<LoadingFallback message="加载移动端复盘..." />}>
+            <LazyMobileRecapPage />
+          </Suspense>
+        </LazyLoadErrorBoundary>
+      );
+    }
+    if (path === "/mobile/screener") {
+      return (
+        <LazyLoadErrorBoundary>
+          <Suspense fallback={<LoadingFallback message="加载AI选股..." />}>
+            <LazyMobileScreenerPage />
+          </Suspense>
+        </LazyLoadErrorBoundary>
+      );
+    }
+    if (path === "/mobile/profile") {
+      return (
+        <LazyLoadErrorBoundary>
+          <Suspense fallback={<LoadingFallback message="加载账户..." />}>
+            <LazyMobileProfilePage />
+          </Suspense>
+        </LazyLoadErrorBoundary>
+      );
+    }
+    if (path === "/mobile/intel") {
+      return (
+        <LazyLoadErrorBoundary>
+          <Suspense fallback={<LoadingFallback message="加载实时情报..." />}>
+            <LazyMobileIntelPage />
+          </Suspense>
+        </LazyLoadErrorBoundary>
+      );
+    }
+    if (path === "/mobile/news-recommend") {
+      return (
+        <LazyLoadErrorBoundary>
+          <Suspense fallback={<LoadingFallback message="加载新闻荐股..." />}>
+            <LazyMobileNewsRecommendPage />
+          </Suspense>
+        </LazyLoadErrorBoundary>
+      );
+    }
     return (
       <LazyLoadErrorBoundary>
         <Suspense fallback={<LoadingFallback message="加载移动端驾驶舱..." />}>

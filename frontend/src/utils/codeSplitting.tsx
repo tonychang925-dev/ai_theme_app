@@ -180,6 +180,15 @@ const routeChunks = {
   },
   mobile: {
     home: () => import('../routes/mobile/MobileHomePage').then((m) => ({ default: m.MobileHomePage })),
+      recap: () => import('../routes/mobile/MobileRecapPage').then((m) => ({ default: m.MobileRecapPage })),
+      screener: () => import('../routes/mobile/MobileScreenerPage').then((m) => ({ default: m.MobileScreenerPage })),
+      newsRecommend: () => import('../routes/mobile/MobileNewsRecommendPage').then((m) => ({ default: m.MobileNewsRecommendPage })),
+      intel: () => import('../routes/mobile/MobileIntelPage').then((m) => ({ default: m.MobileIntelPage })),
+      profile: () => import('../routes/mobile/MobileProfilePage').then((m) => ({ default: m.MobileProfilePage })),
+    },
+    auth: {
+      login: () => import('../routes/auth/LoginPage').then((m) => ({ default: m.LoginPage })),
+      admin: () => import('../routes/auth/AdminPage').then((m) => ({ default: m.AdminPage })),
   },
   test: {
     sse: () => import('../components/SSETestPanel').then((m) => ({ default: m.SSETestPanel })),
@@ -221,6 +230,13 @@ export const LazyStrongStockWatchDetailPage = createLazyComponent(routeChunks.ma
 });
 export const LazyRecapPage = createLazyComponent(routeChunks.main.recap, { name: 'RecapPage', timeout: 5000 });
 export const LazyMobileHomePage = createLazyComponent(routeChunks.mobile.home, { name: 'MobileHomePage', timeout: 5000 });
+export const LazyMobileRecapPage = createLazyComponent(routeChunks.mobile.recap, { name: 'MobileRecapPage', timeout: 5000 });
+export const LazyMobileScreenerPage = createLazyComponent(routeChunks.mobile.screener, { name: 'MobileScreenerPage', timeout: 5000 });
+export const LazyMobileNewsRecommendPage = createLazyComponent(routeChunks.mobile.newsRecommend, { name: 'MobileNewsRecommendPage', timeout: 5000 });
+export const LazyMobileIntelPage = createLazyComponent(routeChunks.mobile.intel, { name: 'MobileIntelPage', timeout: 5000 });
+export const LazyMobileProfilePage = createLazyComponent(routeChunks.mobile.profile, { name: 'MobileProfilePage', timeout: 5000 });
+export const LazyLoginPage = createLazyComponent(routeChunks.auth.login, { name: 'LoginPage', timeout: 5000 });
+export const LazyAdminPage = createLazyComponent(routeChunks.auth.admin, { name: 'AdminPage', timeout: 5000 });
 export const LazyThemeWorkspacePage = createLazyComponent(routeChunks.theme.workspace, { name: 'ThemeWorkspacePage', timeout: 5000 });
 export const LazyStockWorkspacePage = createLazyComponent(routeChunks.stock.workspace, { name: 'StockWorkspacePage', timeout: 5000 });
 export const LazyStockScreenerPage = createLazyComponent(routeChunks.stock.screener, { name: 'StockScreenerPage', timeout: 5000 });

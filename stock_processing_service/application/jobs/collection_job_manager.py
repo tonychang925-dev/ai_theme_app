@@ -1,10 +1,8 @@
 from __future__ import annotations
 
 import asyncio
-import hashlib
 import os
-import re
-import signal
+import sys
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, date
 from pathlib import Path
@@ -21,42 +19,15 @@ from stock_processing_service.application.services.collection_task_registry impo
     CollectionTaskResult,
     get_default_registry,
 )
-from stock_processing_service.application.services.collection_task_runners import (
-    PostMarketRecapRunner,
-    ScriptCommandRunner,
-)
+# PostMarketRecapRunner — legacy import kept for reference; all tasks now use Runner protocol via registry
 
 
 PROJECT_ROOT = Path("/Users/admin/Desktop/ai_theme_app")
 PYTHON_BIN = str(PROJECT_ROOT / ".venv" / "bin" / "python")
 
 
-_SECRET_ARG_NAMES = {"--token", "--api-key", "--auth-token"}
-
-
 def _normalize_secret(value: Any) -> str:
     return str(value or "").strip().strip("\"'").strip()
-
-
-def _secret_fingerprint(value: str) -> str:
-    if not value:
-        return "missing"
-    digest = hashlib.sha256(value.encode("utf-8")).hexdigest()[:8]
-    return f"len={len(value)} sha8={digest}"
-
-
-def _redact_cmd(cmd: list[str]) -> str:
-    redacted: list[str] = []
-    mask_next = False
-    for part in cmd:
-        if mask_next:
-            redacted.append("<redacted>")
-            mask_next = False
-            continue
-        redacted.append(part)
-        if part in _SECRET_ARG_NAMES:
-            mask_next = True
-    return " ".join(redacted)
 
 
 @dataclass
@@ -86,7 +57,6 @@ class CollectionJob:
     last_error: Optional[dict[str, str]] = None
     cancel_requested: bool = False
     running_task: Optional[asyncio.Task] = None
-    active_process: Optional[asyncio.subprocess.Process] = None
     next_step_index: int = 0
 
     def to_dict(self) -> dict[str, Any]:
@@ -231,9 +201,6 @@ class CollectionJobManager:
         job.cancel_requested = True
         job.can_cancel = False
         self._append_log(job, "收到取消请求")
-        process = job.active_process
-        if process and process.returncode is None:
-            process.send_signal(signal.SIGTERM)
         return job
 
     async def continue_job(self, job_id: str) -> Optional[CollectionJob]:
@@ -357,86 +324,6 @@ class CollectionJobManager:
 
         self._update_overall_progress(job)
 
-    async def _run_command(
-        self,
-        job: CollectionJob,
-        task: CollectionTaskState,
-        cmd: list[str],
-        env: Optional[dict[str, str]] = None,
-        *,
-        initial_percent: int = 5,
-        success_percent: int = 100,
-    ) -> None:
-        task.status = "running"
-        task.progress_percent = max(task.progress_percent, initial_percent)
-        task.current_label = "启动中"
-        job.current_step = task.key
-        self._update_overall_progress(job)
-        self._append_log(job, f"开始 {task.title}")
-        self._append_log(job, f"[DEBUG] cmd={_redact_cmd(cmd)}")
-        if cmd:
-            self._append_log(job, f"[DEBUG] executable_exists={Path(cmd[0]).exists()} executable={cmd[0]}")
-
-        async def _consume_stream(
-            stream: asyncio.StreamReader | None,
-            *,
-            is_stderr: bool = False,
-        ) -> int:
-            if stream is None:
-                return 0
-            consumed = 0
-            while True:
-                if job.cancel_requested and process.returncode is None:
-                    process.terminate()
-                line = await stream.readline()
-                if not line:
-                    break
-                text = line.decode("utf-8", errors="ignore").rstrip()
-                if not text:
-                    continue
-                consumed += 1
-                rendered = f"[stderr] {text}" if is_stderr else text
-                self._append_log(job, rendered)
-                task.current_label = text[:120]
-                parsed_progress = self._parse_progress_percent(task.key, cmd, text)
-                if parsed_progress is not None:
-                    task.progress_percent = max(task.progress_percent, parsed_progress)
-                else:
-                    task.progress_percent = min(90, max(task.progress_percent, 10 + consumed * 3))
-                self._update_overall_progress(job)
-            return consumed
-
-        process = await asyncio.create_subprocess_exec(
-            *cmd,
-            cwd=str(PROJECT_ROOT),
-            stdin=asyncio.subprocess.DEVNULL,
-            stdout=asyncio.subprocess.PIPE,
-            stderr=asyncio.subprocess.PIPE,
-            env=env,
-        )
-        job.active_process = process
-        await asyncio.gather(
-            _consume_stream(process.stdout, is_stderr=False),
-            _consume_stream(process.stderr, is_stderr=True),
-        )
-
-        return_code = await process.wait()
-        job.active_process = None
-        if job.cancel_requested:
-            task.status = "cancelled"
-            task.current_label = "已取消"
-            task.progress_percent = 0
-            self._update_overall_progress(job)
-            raise asyncio.CancelledError()
-        if return_code != 0:
-            raise RuntimeError(f"{task.title} 执行失败，退出码 {return_code}")
-
-        task.status = "success"
-        task.current_label = "完成"
-        task.progress_percent = success_percent
-        self._update_overall_progress(job)
-        self._append_log(job, f"{task.title} 完成")
-
     def _collection_env(self, payload: dict[str, Any]) -> dict[str, str]:
         env = os.environ.copy()
         env_file_values = self._load_env_file_values()
@@ -471,54 +358,6 @@ class CollectionJobManager:
         env["PYTHONUNBUFFERED"] = "1"
         return env
 
-    def _parse_progress_percent(self, task_key: str, cmd: list[str], text: str) -> int | None:
-        if task_key == "jyhf":
-            if "sync_jyhf_to_local.py" in " ".join(cmd) and ("stock_details" in cmd or "details" in cmd):
-                match = re.search(r"\[(\d+)/(\d+)\]\s+collecting subject=", text)
-                if match:
-                    current = int(match.group(1))
-                    total = max(int(match.group(2)), 1)
-                    return min(95, 15 + round(current / total * 80))
-                match = re.search(r"\[OK\]\s+subject_count=(\d+)", text)
-                if match:
-                    return 95
-            if "sync_jyhf_to_local.py" in " ".join(cmd) and "lists" in cmd and text.startswith("[OK]"):
-                return 15
-
-        if task_key == "jyhf_history":
-            if "sync_jyhf_to_local.py" in " ".join(cmd):
-                match = re.search(r"\[(\d+)/(\d+)\]\s+collecting subject=", text)
-                if match:
-                    current = int(match.group(1))
-                    total = max(int(match.group(2)), 1)
-                    return min(90, 15 + round(current / total * 75))
-                if text.startswith("[history_global]"):
-                    return 12
-                if re.search(r"history_mode=backfill", text):
-                    return 20
-                if re.search(r"\[OK\]\s+subject_count=(\d+)", text):
-                    return 55
-            if "import_jyhf_history_incremental.py" in " ".join(cmd):
-                if text.startswith("[OK]"):
-                    return 95
-
-        if task_key == "tushare_kline":
-            match = re.search(r"\[SYNC\]\s+attempted=(\d+)/(\d+)\s+stock_id=", text)
-            if match:
-                current = int(match.group(1))
-                total = max(int(match.group(2)), 1)
-                return min(95, 10 + round(current / total * 85))
-            match = re.search(r"\[SKIP\]\s+attempted=(\d+)/(\d+)\s+stock_id=.*reason=(resume_completed|existing_file)", text)
-            if match:
-                current = int(match.group(1))
-                total = max(int(match.group(2)), 1)
-                return min(95, 10 + round(current / total * 85))
-            match = re.search(r"\[OK\]\s+processed=(\d+)", text)
-            if match:
-                return 95
-
-        return None
-
     async def _run_job(self, job: CollectionJob, start_index: int = 0) -> None:
         payload = job.payload
         env = self._collection_env(payload)
@@ -536,7 +375,8 @@ class CollectionJobManager:
                 )
                 if task.key == "tushare_kline":
                     tushare_token = _normalize_secret(env.get("TUSHARE_TOKEN", ""))
-                    self._append_log(job, f"[DEBUG] tushare_token={_secret_fingerprint(tushare_token)} source=backend_env_or_env_file")
+                    has_token = "yes" if tushare_token else "no"
+                    self._append_log(job, f"[DEBUG] tushare_token_present={has_token} source=backend_env_or_env_file")
                 for message in plan.pre_logs:
                     self._append_log(job, message)
                 if plan.terminal_status is not None:
@@ -548,7 +388,9 @@ class CollectionJobManager:
                     continue
                 # ── 多 step 模式（推荐）：逐 step 执行，支持混合 Runner + 脚本 ──
                 if plan.steps:
-                    for step in plan.steps:
+                    task.status = "running"
+                    total_steps = len(plan.steps)
+                    for i, step in enumerate(plan.steps):
                         if step.runner_key:
                             runner = self._registry.get(step.runner_key)
                             if runner is None:
@@ -556,6 +398,9 @@ class CollectionJobManager:
                                 task.error_message = f"未知 runner_key: {step.runner_key}"
                                 self._append_log(job, f"[ERROR] 未知 step runner_key: {step.runner_key}")
                                 return
+                            task.current_label = f"[{i+1}/{total_steps}] {step.label or step.runner_key}"
+                            task.progress_percent = round((i / total_steps) * 100)
+                            self._update_overall_progress(job)
                             self._append_log(job, f"[STEP-RUNNER] {step.runner_key} 开始执行")
                             step_context = CollectionTaskContext(
                                 trade_date=job.trade_date, payload=payload, env=env,
@@ -564,42 +409,61 @@ class CollectionJobManager:
                                 python_bin=self._python_bin,
                                 commands=([c.cmd for c in step.commands] if step.commands else None),
                             )
+                            # ── 实时捕获脚本 stdout 到 job logs ──
+                            class _TeeWriter:
+                                def __init__(self, real, job):
+                                    self._real = real; self._job = job; self._buf = ""
+                                def write(self, s):
+                                    if self._real: self._real.write(s)
+                                    self._buf += s
+                                    if "\n" in self._buf:
+                                        lines = self._buf.splitlines()
+                                        self._buf = lines[-1] if not s.endswith("\n") else ""
+                                        for line in lines[:-1] if not s.endswith("\n") else lines:
+                                            stripped = line.strip()
+                                            if stripped: self._job.logs.append(stripped[:200])
+                                def flush(self):
+                                    if self._real: self._real.flush()
+                                    if self._buf.strip(): self._job.logs.append(self._buf.strip()[:200]); self._buf = ""
+                            original_stdout = sys.stdout
+                            sys.stdout = _TeeWriter(original_stdout, job)
+                            result = None
                             try:
                                 result = await runner.run(step_context)
-                                if result.status == "failed":
-                                    task.status = "failed"
-                                    task.error_message = result.error_message or f"step {step.key} failed"
-                                    self._append_log(job, f"[STEP-RUNNER] {step.runner_key} 失败: {result.error_message}")
-                                    return
-                                task.current_label = result.current_label
                             except Exception as e:
                                 task.status = "failed"
                                 task.error_message = str(e)
                                 self._append_log(job, f"[STEP-RUNNER] {step.runner_key} 异常: {e}")
                                 return
-                        elif step.commands:
-                            for command in step.commands:
-                                await self._run_command(job, task, command.cmd, env=env)
+                            finally:
+                                sys.stdout.flush()
+                                sys.stdout = original_stdout
+                            if result is None:
+                                return
+                            if result.status == "failed":
+                                task.status = "failed"
+                                task.error_message = result.error_message or f"step {step.key} failed"
+                                self._append_log(job, f"[STEP-RUNNER] {step.runner_key} 失败: {result.error_message}")
+                                return
+                            self._append_log(job, f"[STEP-RUNNER] {step.runner_key} 完成: {result.current_label}")
+                            task.current_label = result.current_label
                     task.status = "success"
                     task.progress_percent = 100
                     self._update_overall_progress(job)
                     job.next_step_index = index + 1
                     continue
 
-                # ── 旧兼容：runner_key 优先 ──
+                # ── 旧兼容：runner_key 优先（无 steps） ──
                 if plan.runner_key:
                     await self._run_with_runner(job, task, plan, env, payload)
                     job.next_step_index = index + 1
                     continue
-                for command in plan.commands:
-                    await self._run_command(
-                        job,
-                        task,
-                        command.cmd,
-                        env=env,
-                        initial_percent=command.initial_percent,
-                        success_percent=command.success_percent,
-                    )
+                # 无 runner_key 且无 steps → 跳过
+                task.status = "skipped"
+                task.current_label = "无可用执行方式"
+                task.progress_percent = 100
+                self._append_log(job, f"[WARN] {task.key}: 无 runner_key 且无 steps，已跳过")
+                self._update_overall_progress(job)
                 job.next_step_index = index + 1
 
             job.status = "success"

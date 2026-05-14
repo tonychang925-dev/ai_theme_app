@@ -3,6 +3,7 @@ from __future__ import annotations
 import asyncio
 import logging
 import os
+import re
 import sys
 import time
 from contextlib import asynccontextmanager
@@ -63,6 +64,33 @@ async def lifespan(app: FastAPI):
     app.state.container = build_container(facade)
     app.state.phase1_repo = Phase1ReadRepository()
     app.state.intel_adapter = NewChainIntelFeedAdapter(gw)
+    # StockMatchEngine — 已有完整管线：LLM提取 → Gate匹配 → Rerank → Judge
+    app.state.match_engine = None
+    try:
+        from theme_service.services.stock_match_engine import StockMatchEngine
+        import aiohttp, os as _os
+
+        deepseek_key = _os.getenv("DEEPSEEK_API_KEY", "").strip()
+        if deepseek_key:
+            class DeepSeekLLM:
+                async def chat_completion(self, messages, temperature=0.1, max_tokens=512):
+                    headers = {"Authorization": f"Bearer {deepseek_key}", "Content-Type": "application/json"}
+                    payload = {"model": "deepseek-chat", "messages": messages,
+                               "temperature": temperature, "max_tokens": max_tokens, "stream": False}
+                    async with aiohttp.ClientSession() as s:
+                        async with s.post("https://api.deepseek.com/v1/chat/completions",
+                                          headers=headers, json=payload,
+                                          timeout=aiohttp.ClientTimeout(total=60)) as r:
+                            data = await r.json()
+                            return {"content": data["choices"][0]["message"]["content"]}
+            engine = StockMatchEngine(llm_client=DeepSeekLLM())
+            await engine.initialize()
+            app.state.match_engine = engine
+            logger.info("StockMatchEngine initialized (DeepSeek LLM) for mobile news-recommend")
+        else:
+            logger.warning("DEEPSEEK_API_KEY not set, StockMatchEngine not initialized")
+    except Exception as exc:
+        logger.warning("StockMatchEngine init failed: %s", exc)
     from stock_processing_service.application.services.collection_task_registry import get_default_registry
     app.state.collection_job_manager = CollectionJobManager(
         container=app.state.container,
@@ -433,28 +461,6 @@ async def _load_w2s_auctions_for_confirm(
     return [], {"channel": "db_miss", "cache_writes": 0, "persisted_rows": 0}
 
 
-async def _run_cmd(cmd: list[str], timeout_sec: int) -> dict[str, Any]:
-    proc = await asyncio.create_subprocess_exec(
-        *cmd,
-        cwd=str(_project_root()),
-        stdout=asyncio.subprocess.PIPE,
-        stderr=asyncio.subprocess.PIPE,
-        env={**os.environ, "ALLOW_REALTIME_AUTO_THEME_CREATE": "false"},
-    )
-    try:
-        stdout, stderr = await asyncio.wait_for(proc.communicate(), timeout=timeout_sec)
-    except asyncio.TimeoutError:
-        proc.kill()
-        raise HTTPException(status_code=504, detail=f"command timeout after {timeout_sec}s")
-    return {
-        "ok": proc.returncode == 0,
-        "return_code": proc.returncode,
-        "stdout": stdout.decode("utf-8", errors="replace"),
-        "stderr": stderr.decode("utf-8", errors="replace"),
-        "command": cmd,
-    }
-
-
 def _looks_like_numeric_theme_name(value: Any) -> bool:
     text = str(value or "").strip()
     return bool(text) and text.isdigit()
@@ -822,6 +828,7 @@ def _to_business_decision(decision: Any) -> str:
 
 
 async def _refresh_w2s_auction_snapshot(trade_date: date, min_required_stocks: int = 0) -> None:
+    """盘前竞价快照采集 — 通过 AuctionSnapshotRunner in-process 执行（不再 fork 子进程）。"""
     token = _resolve_tushare_token()
     base_max_stocks = max(int(os.getenv("W2S_AUCTION_MAX_STOCKS", "80") or 80), 1)
     hard_cap = max(int(os.getenv("W2S_AUCTION_MAX_STOCKS_HARD_CAP", "2000") or 2000), 1)
@@ -838,31 +845,28 @@ async def _refresh_w2s_auction_snapshot(trade_date: date, min_required_stocks: i
             status_code=400,
             detail="缺少 TUSHARE_TOKEN 且未找到该交易日缓存竞价快照，请先完成日采集或在 .env.theme/.env.local 配置 TUSHARE_TOKEN",
         )
-    cmd = [
-        sys.executable,
-        str(_project_root() / "database_service" / "scripts" / "build_pre_market_auction_snapshot.py"),
-        "--trade-date",
-        trade_date.isoformat(),
-        "--universe-source",
-        "weak_to_strong_candidates",
-        "--max-stocks",
-        str(max_stocks),
-    ]
+    # 新链：AuctionSnapshotRunner in-process 调用（不 fork 子进程）
+    from stock_processing_service.application.services.collection_task_runners import AuctionSnapshotRunner
+    env = {}
     if has_token:
-        cmd.extend(["--token", token])
-        cmd.append("--force-refresh")
-    result = await _run_cmd(cmd, timeout_sec=120)
-    if not result.get("ok"):
-        detail = (result.get("stderr") or result.get("stdout") or "竞价采集脚本执行失败").strip()
+        env["TUSHARE_TOKEN"] = token
+    context_kwargs = {
+        "trade_date": trade_date.isoformat(),
+        "payload": {
+            "auction_top_k": 40,
+            "auction_proxy_ratio": 0.08,
+        },
+        "env": env,
+        "project_root": _project_root(),
+        "python_bin": sys.executable,
+    }
+    runner = AuctionSnapshotRunner(universe_source="weak_to_strong_candidates", max_stocks=max_stocks)
+    result = await runner.run(CollectionTaskContext(**context_kwargs))
+    if result.status != "success":
         if await _has_w2s_snapshot_cache(trade_date):
-            logger.warning("盘前竞价采集失败，已回退缓存继续执行: trade_date=%s detail=%s", trade_date, detail[:300])
+            logger.warning("盘前竞价采集失败，已回退缓存继续执行: trade_date=%s status=%s", trade_date, result.status)
             return
-        if "NameResolutionError" in detail or "Failed to resolve" in detail or "ConnectionError" in detail:
-            raise HTTPException(
-                status_code=503,
-                detail="盘前竞价实时拉取失败（网络/DNS），且无可用缓存。请检查网络后重试，或先完成日采集生成缓存。",
-            )
-        raise HTTPException(status_code=500, detail=f"盘前竞价采集失败: {detail}")
+        raise HTTPException(status_code=500, detail=f"盘前竞价采集失败: {result.error_message or result.current_label}")
 
 
 def _build_w2s_result_row(candidate: Dict[str, Any], signal: Optional[Dict[str, Any]], rank: int) -> Dict[str, Any]:
@@ -1216,6 +1220,29 @@ async def healthz() -> dict[str, str]:
     return {"status": "ok", "db": _db_name()}
 
 
+@app.get("/api/v1/recap/defaults")
+async def get_recap_defaults() -> dict[str, Any]:
+    """返回最近的盘后复盘和盘前简报日期。"""
+    latest_post: str | None = None
+    latest_pre: str | None = None
+    try:
+        d = await app.state.gateway.get_latest_post_market_recap_trade_date()
+        if d:
+            latest_post = d.isoformat() if hasattr(d, "isoformat") else str(d)
+    except Exception:
+        pass
+    try:
+        d = await app.state.gateway.get_latest_pre_market_brief_trade_date()
+        if d:
+            latest_pre = d.isoformat() if hasattr(d, "isoformat") else str(d)
+    except Exception:
+        pass
+    return {
+        "latest_post_market_date": latest_post,
+        "latest_pre_market_date": latest_pre,
+    }
+
+
 @app.get("/api/v1/post_market_snapshot")
 async def get_post_market_snapshot(trade_date: str = Query(..., description="YYYY-MM-DD")) -> dict[str, Any]:
     try:
@@ -1230,6 +1257,248 @@ async def get_post_market_snapshot(trade_date: str = Query(..., description="YYY
         "trade_date": str(row.get("trade_date") or trade_date),
         "snapshot_version": str(row.get("snapshot_version") or "unknown"),
         "payload": payload,
+    }
+
+
+@app.get("/api/v1/mobile/screener/latest")
+async def get_mobile_screener(
+    trade_date: str = Query(..., description="YYYY-MM-DD"),
+    strategy: str = Query("weak_to_strong"),
+) -> dict[str, Any]:
+    """移动端 AI 选股 — 弱转强候选 + 强势股 TopN。"""
+    try:
+        d = date.fromisoformat(trade_date)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=f"invalid trade_date: {trade_date}") from exc
+
+    items: list[dict] = []
+    # 弱转强候选
+    try:
+        w2s = await app.state.gateway.get_w2s_candidates_by_trade_date(d, limit=20)
+        for row in (w2s or []):
+            items.append({
+                "stock_id": str(row.get("stock_id", "")),
+                "stock_name": str(row.get("stock_name", "")),
+                "score": float(row.get("candidate_score") or 0),
+                "theme_name": str(row.get("theme_name") or row.get("subject_key", "")),
+                "level": str(row.get("candidate_type", "C")),
+                "reason": str(row.get("weak_type", "")),
+                "risk": "跌破支撑位失效",
+                "source": "weak_to_strong",
+            })
+    except Exception:
+        pass
+    # 强势追踪池（top 10 by watch_score）
+    try:
+        strong = await app.state.gateway.get_strong_stock_watch_view_rows(
+            end_date=d, window_days=1, latest_per_stock=True, limit=10,
+        )
+        for row in (strong or []):
+            stock_id = str(row.get("stock_id", ""))
+            if any(it["stock_id"] == stock_id for it in items):
+                continue
+            items.append({
+                "stock_id": stock_id,
+                "stock_name": str(row.get("stock_name", "")),
+                "score": float(row.get("watch_score") or 0),
+                "theme_name": str(row.get("theme_name") or row.get("subject_key", "")),
+                "level": str(row.get("pool_entry_type", "B")),
+                "reason": str(row.get("support_type", "")),
+                "risk": "退潮/破位失效",
+                "source": "strong_watch",
+            })
+    except Exception:
+        pass
+    items.sort(key=lambda x: x["score"], reverse=True)
+    return {
+        "trade_date": trade_date,
+        "strategy": strategy,
+        "count": len(items),
+        "items": items[:20],
+    }
+
+
+class NewsRecommendRequest(BaseModel):
+    news_text: str
+
+
+@app.post("/api/v1/mobile/news-recommend")
+async def post_mobile_news_recommend(payload: NewsRecommendRequest) -> dict[str, Any]:
+    """移动端新闻荐股 — StockMatchEngine 主源，关键词 fallback。"""
+    news_text = (payload.news_text or "").strip()
+    if not news_text:
+        raise HTTPException(status_code=400, detail="news_text 不能为空")
+    matched_themes: list[dict] = []
+    recommended_stocks: list[dict] = []
+    event_summary = news_text[:80] + ("..." if len(news_text) > 80 else "")
+    source = "none"  # 信号来源标识: stock_match_engine | keyword_fallback | none
+
+    # 优先走 StockMatchEngine (JYHF Theme Gate + Stock Gate + Rerank)
+    engine = getattr(app.state, "match_engine", None)
+    if engine is not None:
+        try:
+            result = await engine.match(news_text, max_candidates=5)
+            source = "stock_match_engine"
+            audit = result.audit or {}
+            # 提取摘要
+            search_terms = audit.get("search_terms", [])
+            theme_names = [m.get("concept", "") for m in audit.get("theme_matches", [])]
+            if search_terms:
+                event_summary = f"提取术语: {'、'.join(search_terms[:8])}; 匹配题材: {'、'.join(theme_names[:5])}"
+                if not theme_names and not result.candidates:
+                    event_summary += " | 未在知识库中匹配到相关题材或股票，建议尝试更聚焦产业/政策的新闻"
+            # 匹配题材（仅保留score>=3的命中）
+            seen: set[str] = set()
+            for m in audit.get("theme_matches", [])[:5]:
+                if m.get("score", 0) < 3:
+                    continue
+                concept = m.get("concept", "")
+                if concept and concept not in seen:
+                    seen.add(concept)
+                    matched_themes.append({
+                        "subject_key": m.get("subject_key", ""),
+                        "theme_name": concept,
+                        "confidence": round(m.get("score", 0.5), 2),
+                        "reason": f"Gate匹配: {m.get('must_hits', [])}",
+                    })
+            # 推荐股票
+            for c in result.candidates:
+                evidence = c.get("evidence", {})
+                # 理由优先级: LLM Judge > JYHF 映射 > Gate Evidence
+                llm_reason = c.get("llm_reason", "")
+                jyhf_reason = evidence.get("jyhf_reason", "")
+                gate_reasons = evidence.get("match_reasons", []) or evidence.get("must_hits", []) or []
+                best_reason = llm_reason or jyhf_reason or "; ".join(str(r) for r in gate_reasons[:3]) or "Gate 匹配"
+                recommended_stocks.append({
+                    "stock_id": c.get("stock_id", ""),
+                    "stock_name": c.get("stock_name", ""),
+                    "score": float(c.get("rerank_score", c.get("dense_score", 0))),
+                    "theme_name": evidence.get("concept", evidence.get("matched_concept", "")),
+                    "reason": best_reason,
+                    "verdict": c.get("llm_verdict", ""),
+                })
+        except Exception as exc:
+            logger.warning("StockMatchEngine failed, falling back to keyword: %s", exc)
+            engine = None  # fall through to keyword
+
+    # Fallback: 简单关键词匹配
+    if engine is None:
+        source = "keyword_fallback"
+        try:
+            pool = getattr(app.state.gateway, "_client", None)
+            if pool is not None and hasattr(pool, "pool"):
+                async with pool.pool.acquire() as conn:
+                    theme_rows = await conn.fetch("""
+                        SELECT subject_key, theme_name FROM vw_subject_theme_binding
+                        WHERE binding_status = 'active_binding'
+                    """)
+                    for row in theme_rows:
+                        name = str(row["theme_name"] or "")
+                        if not name or len(name) < 2:
+                            continue
+                        if name in news_text:
+                            matched_themes.append({
+                                "subject_key": str(row["subject_key"]),
+                                "theme_name": name,
+                                "confidence": min(round(len(name) / 20, 2) + 0.3, 1.0),
+                                "reason": "关键词匹配",
+                            })
+                    matched_themes.sort(key=lambda x: x["confidence"], reverse=True)
+                    matched_themes = matched_themes[:5]
+                    matched_keys = [t["subject_key"] for t in matched_themes]
+                    if matched_keys:
+                        stock_rows = await conn.fetch("""
+                            SELECT DISTINCT tsm.stock_id, tsm.stock_name, tsm.subject_key
+                            FROM theme_stock_map tsm
+                            WHERE tsm.subject_key = ANY($1::varchar[])
+                              AND tsm.source_type IN ('jyhf_stock_daily','jyhf_stock_list','jyhf_children_leader')
+                            LIMIT 20
+                        """, matched_keys)
+                        for sr in stock_rows:
+                            recommended_stocks.append({
+                                "stock_id": str(sr["stock_id"]),
+                                "stock_name": str(sr["stock_name"] or ""),
+                                "score": 80.0,
+                                "theme_name": str(sr["subject_key"]),
+                                "reason": "题材关联匹配",
+                            })
+        except Exception as exc:
+            logger.warning("mobile/news-recommend fallback 失败: %s", exc)
+
+    return {
+        "event_summary": event_summary,
+        "matched_themes": matched_themes,
+        "recommended_stocks": recommended_stocks,
+        "source": source,
+        "risk_notes": [
+            "仅用于研究分析，不构成买卖建议",
+            "低置信度结果标记 review_required",
+            "不自动创建正式新题材",
+        ],
+    }
+
+
+@app.get("/api/v1/mobile/defaults")
+async def get_mobile_defaults() -> dict[str, Any]:
+    """返回移动端最新有数据的复盘日期。"""
+    latest = None
+    try:
+        d = await app.state.gateway.get_latest_post_market_recap_trade_date()
+        latest = d.isoformat() if hasattr(d, "isoformat") else str(d) if d else None
+    except Exception:
+        pass
+    return {"latest_recap_date": latest}
+
+
+@app.get("/api/v1/mobile/recap")
+async def get_mobile_recap(trade_date: str = Query(..., description="YYYY-MM-DD")) -> dict[str, Any]:
+    """移动端每日复盘 — 从 post_market_snapshot 转换轻量数据。"""
+    try:
+        d = date.fromisoformat(trade_date)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=f"invalid trade_date: {trade_date}") from exc
+    row = await app.state.gateway.get_existing_post_market_recap_snapshot(d)
+    if not row:
+        return {"trade_date": trade_date, "title": "暂无复盘数据", "summary": "", "hot_themes": [], "watch_stocks": [], "risk_notes": ["仅作复盘与研究，不构成交易建议"]}
+    payload = row.get("payload") or {}
+    if isinstance(payload, str):
+        import json as _json
+        try:
+            payload = _json.loads(payload)
+        except Exception:
+            payload = {}
+    report = payload.get("report") or {}
+    recap_doc = payload.get("recap_doc", payload)
+
+    # 题材高亮
+    hot_themes: list[dict] = []
+    sections = report.get("sections", [])
+    for sec in sections:
+        heading = sec.get("heading", "") if isinstance(sec, dict) else ""
+        items = sec.get("items", []) if isinstance(sec, dict) else []
+        if "主线" in heading or "支线" in heading:
+            for item in items[:8]:
+                hot_themes.append({"theme_name": str(item)[:80], "reason": heading, "heat": 0})
+    # 弱转强候选作为 watch_stocks
+    watch_stocks: list[dict] = []
+    top_candidates = recap_doc.get("top_candidates", []) if isinstance(recap_doc, dict) else []
+    if isinstance(top_candidates, list):
+        for c in top_candidates[:10]:
+            watch_stocks.append({
+                "stock_id": str(c.get("stock_id", "")),
+                "stock_name": str(c.get("stock_name", "")),
+                "theme_name": str(c.get("theme_name", c.get("subject_key", ""))),
+                "score": float(c.get("score", c.get("candidate_score", 0)) or 0),
+                "reason": str(c.get("reason", c.get("support_type", ""))),
+            })
+
+    return {
+        "trade_date": trade_date,
+        "title": str(report.get("title") or f"{trade_date} 盘后复盘"),
+        "summary": str(report.get("summary") or "复盘数据已生成"),
+        "hot_themes": hot_themes,
+        "watch_stocks": watch_stocks,
+        "risk_notes": ["仅作复盘与研究，不构成交易建议"],
     }
 
 
@@ -1299,65 +1568,22 @@ async def get_intel_feed(
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=f"invalid feed_date: {feed_date}") from exc
 
-    # ── 新链数据（优先） ──
-    new_chain_items: list[dict[str, Any]] = []
-    if item_type == "all":
-        # subject_key / stock_id 过滤暂不在新链 adapter 中实现
-        # 若指定了 subject_key 或 stock_id，仍然从 adapter 拉全量再做后过滤
-        new_chain_items = await app.state.intel_adapter.get_intel_feed(
-            feed_date=target_date,
-            session=session,
-            item_type=item_type,
-            limit=limit,
-        )
-        if subject_key:
-            new_chain_items = [
-                it for it in new_chain_items
-                if subject_key in (it.get("theme_subject_keys") or [])
-            ]
-        if stock_id:
-            new_chain_items = [
-                it for it in new_chain_items
-                if stock_id in (it.get("stock_ids") or [])
-            ]
-
-    # ── 旧链数据（保留，确保旧源不丢失） ──
-    legacy_items = await app.state.phase1_repo.fetch_intel_feed(
-        feed_date=feed_date,
+    # ── 新链统一源（Phase1ReadRepository 旧链 fallback 已移除） ──
+    items = await app.state.intel_adapter.get_intel_feed(
+        feed_date=target_date,
         session=session,
         item_type=item_type,
-        subject_key=subject_key,
-        stock_id=stock_id,
         limit=limit,
     )
-
-    # ── 合并、去重、排序 ──
-    merged: list[dict[str, Any]] = list(new_chain_items)
-    seen_ids = {it.get("item_id") for it in merged if it.get("item_id")}
-    for it in legacy_items:
-        if it.get("item_id") not in seen_ids:
-            merged.append(it)
-            seen_ids.add(it.get("item_id"))
-
-    # 按新链优先级重新排序（旧链 item 优先级较低，interleaving 跟随新链规则）
-    priority = {
-        "recap": 100, "weak_to_strong": 90, "theme_cycle": 85, "theme_identity": 80,
-        "stock_signal": 70, "event": 60, "theme_history": 50,
-        "new_theme": 40, "event_review": 35, "theme_move": 30, "stock_move": 25,
-    }
-
-    def _sort_key(it: dict[str, Any]) -> tuple[int, float, str]:
-        pri = priority.get(str(it.get("item_type") or ""), 0)
-        score = float(it.get("impact_score") or 0)
-        occurred = str(it.get("occurred_at") or "")
-        return (-pri, -score, occurred)
-
-    merged.sort(key=_sort_key)
-    final = merged[:limit]
+    # subject_key / stock_id 后过滤
+    if subject_key:
+        items = [it for it in items if subject_key in (it.get("theme_subject_keys") or [])]
+    if stock_id:
+        items = [it for it in items if stock_id in (it.get("stock_ids") or [])]
 
     return {
-        "items": final,
-        "count": len(final),
+        "items": items,
+        "count": len(items),
         "date": feed_date,
         "session": session,
         "type": item_type,
@@ -1366,38 +1592,14 @@ async def get_intel_feed(
 
 @app.get("/api/v1/intel_feed/defaults")
 async def get_intel_feed_defaults() -> dict[str, Any]:
-    """返回情报台最近有数据的日期，优先新链源。"""
-    # 新链 adapter 优先
+    """返回情报台最近有数据的日期（新链统一源）。"""
     try:
-        new_chain_latest = await app.state.intel_adapter.get_latest_date()
+        latest_date = await app.state.intel_adapter.get_latest_date()
     except Exception:
-        new_chain_latest = None
-
-    # 旧链 fallback
-    try:
-        legacy_latest = await app.state.phase1_repo.fetch_latest_intel_event_date()
-    except Exception:
-        legacy_latest = None
-    try:
-        await app.state.phase1_repo.initialize()
-        async with app.state.phase1_repo._pool.acquire() as conn:
-            row = await conn.fetchrow(
-                "SELECT MAX(rank_date)::text FROM vw_theme_history_candidate "
-                "WHERE source_type IN ('jyhf_history', 'jyhf_rank_daily')"
-            )
-            latest_theme = row[0] if row else None
-    except Exception:
-        latest_theme = None
-
-    latest_date = new_chain_latest or legacy_latest or latest_theme
-    if latest_theme and (not latest_date or latest_theme > latest_date):
-        latest_date = latest_theme
-    if legacy_latest and (not latest_date or legacy_latest > latest_date):
-        latest_date = legacy_latest
-
+        latest_date = None
     return {
         "latest_intel_date": latest_date,
-        "source": "new_chain_intel_feed_adapter + legacy(news_event, vw_theme_history_candidate)",
+        "source": "new_chain_intel_feed_adapter",
     }
 
 
@@ -1416,7 +1618,188 @@ async def get_intel_feed_debug_counts(feed_date: str = Query(...)) -> dict[str, 
         "feed_date": feed_date,
         "sources": {
             **new_chain_counts,
-            # 旧源计数通过 phase1 已有读口近似
+        },
+    }
+
+
+@app.get("/api/v1/theme_workspace/{subject_key}")
+async def get_theme_workspace(
+    subject_key: str,
+    trade_date: str | None = Query(default=None),
+    include_history: bool = Query(default=True),
+    include_children: bool = Query(default=True),
+    include_stocks: bool = Query(default=True),
+    include_leaders: bool = Query(default=False),
+    stock_mapping_scope: str = Query(default="all"),
+    history_limit: int = Query(default=20, ge=1, le=200),
+    children_limit: int = Query(default=50, ge=1, le=500),
+    stocks_limit: int = Query(default=50, ge=1, le=500),
+) -> dict[str, Any]:
+    """题材工作台统一端点（semi-service — 后续 P3 Gateway 化升级）。"""
+    detail = await app.state.phase1_repo.fetch_theme_detail(subject_key)
+    if not detail:
+        raise HTTPException(status_code=404, detail=f"theme workspace not found for subject_key={subject_key}")
+
+    partial = False
+    missing_sections: list[str] = []
+    history = None
+    children = None
+    stocks = None
+    analytics = None
+
+    # ── 构建 analytics（周期/排行/龙头） ──
+    td = date.fromisoformat(trade_date) if trade_date else date.today()
+    cycle_row = None
+    try:
+        # 题材周期研判
+        async with app.state.gateway._client.pool.acquire() as conn:
+            cycle_row = await conn.fetchrow(
+                "SELECT final_cycle_state, mainline_strength_score, fade_risk_score, "
+                "fade_watch, fade_confirmed, divergence_score, repair_score "
+                "FROM theme_cycle_judgement_v2 WHERE trade_date = $1::date AND subject_key = $2",
+                td, subject_key,
+            )
+            # 近5日排行
+            rank_rows = await conn.fetch(
+                "SELECT rank_date, heat, pct_chg, his_pct_chg FROM vw_theme_history_candidate "
+                "WHERE subject_key = $1 AND rank_date <= $2::date ORDER BY rank_date DESC LIMIT 5",
+                subject_key, td,
+            )
+            # 龙头股票（含资金/技术数据）
+            leader_rows = await conn.fetch("""
+                SELECT tlc.stock_id, tlc.stock_name, tlc.role_label, tlc.candidate_rank,
+                       tlc.composite_score, tlc.purity_score, tlc.leading_score,
+                       tlc.capital_score, tlc.structure_score,
+                       COALESCE(sds.pct_chg, 0) AS pct_chg,
+                       COALESCE(sds.main_net_inflow, 0) AS main_net_inflow
+                FROM theme_leader_candidate tlc
+                LEFT JOIN LATERAL (
+                    SELECT pct_chg,
+                           COALESCE(NULLIF(raw_json->>35, ''), '0')::numeric AS main_net_inflow
+                    FROM subject_stock_daily_snapshot
+                    WHERE trade_date = $2::date AND subject_key = $1 AND stock_id = tlc.stock_id
+                    LIMIT 1
+                ) sds ON TRUE
+                WHERE tlc.trade_date = $2::date AND tlc.subject_key = $1
+                ORDER BY tlc.candidate_rank
+            """, subject_key, td)
+
+        summary = None
+        if cycle_row:
+            # 从 evidence 提取更多字段
+            ev_row = await conn.fetchrow(
+                "SELECT evidence_json FROM theme_cycle_evidence_daily "
+                "WHERE trade_date = $1::date AND subject_key = $2",
+                td, subject_key,
+            )
+            ev = (ev_row["evidence_json"] or {}) if ev_row else {}
+            if isinstance(ev, str):
+                try: import json as _j; ev = _j.loads(ev)
+                except: ev = {}
+            el = ev.get("event_layer", {}) or {}
+            ll = ev.get("leader_layer", {}) or {}
+            kl = ev.get("kline_layer", {}) or {}
+            bl = ev.get("board_layer", {}) or {}
+            summary = {
+                "primary_cycle_stage": str(cycle_row["final_cycle_state"] or "unknown"),
+                "action_bias": str(cycle_row.get("state_transition_reason") or ""),
+                "conclusion": "",
+                "main_net_inflow_sum": 0,
+                "top3_main_net_inflow_sum": 0,
+                "leader_main_net_inflow": float(ll.get("leader_stock_id", 0) or 0) if ll.get("leader_stock_id") else 0,
+                "event_chain_score": float(el.get("event_strength_score", 0) or 0),
+                "market_recognition_score": float(cycle_row["mainline_strength_score"] or 0),
+                "mainline_stability_score": 0,
+                "board_health_status": str(bl.get("red_ratio", "") or "--"),
+                "board_effect_status": str(bl.get("big_drop_ratio", "") or "--"),
+                "leader_support_status": "--",
+                "follow_strength_status": "--",
+                "fade_risk_score": float(cycle_row["fade_risk_score"] or 0),
+                "fade_watch": bool(cycle_row["fade_watch"]),
+                "fade_confirmed": bool(cycle_row["fade_confirmed"]),
+            }
+        recent_rank = [dict(r) for r in rank_rows]
+        leader_stocks = [dict(r) for r in leader_rows]
+
+        analytics = {
+            "trade_date": trade_date or td.isoformat(),
+            "summary": summary,
+            "recent_rank": recent_rank,
+            "leader_stocks": leader_stocks,
+        }
+    except Exception as exc:
+        logger.warning("theme_workspace analytics build failed for %s: %s", subject_key, exc)
+        missing_sections.append("analytics")
+
+    if include_history:
+        try:
+            history = await app.state.phase1_repo.fetch_history(subject_key, history_limit)
+        except Exception:
+            partial = True
+            missing_sections.append("history")
+
+    if include_children:
+        try:
+            children = await app.state.phase1_repo.fetch_children(subject_key, limit=children_limit)
+        except Exception:
+            partial = True
+            missing_sections.append("children")
+
+    if include_stocks:
+        try:
+            stocks = await app.state.phase1_repo.fetch_stocks_by_theme(
+                subject_key, mapping_scope=stock_mapping_scope,
+                include_leaders=include_leaders, limit=stocks_limit,
+            )
+            # 用 leader_candidate + 资金流数据增强 stock 列表
+            if stocks and trade_date:
+                async with app.state.gateway._client.pool.acquire() as conn:
+                    leader_map = {}
+                    l_rows = await conn.fetch(
+                        "SELECT stock_id, composite_score, role_label, candidate_rank, "
+                        "purity_score, leading_score, capital_score "
+                        "FROM theme_leader_candidate WHERE subject_key = $1 AND trade_date = $2::date",
+                        subject_key, td,
+                    )
+                    for lr in l_rows:
+                        leader_map[str(lr["stock_id"]).strip().upper()] = dict(lr)
+                    # 资金流入
+                    inflow_rows = await conn.fetch(
+                        "SELECT stock_id, COALESCE(NULLIF(raw_json->>35, ''), '0')::numeric AS main_net_inflow, pct_chg "
+                        "FROM subject_stock_daily_snapshot WHERE subject_key = $1 AND trade_date = $2::date",
+                        subject_key, td,
+                    )
+                    inflow_map = {str(r["stock_id"]).strip().upper(): dict(r) for r in inflow_rows}
+                for s in stocks:
+                    sid = str(s.get("stock_id", "")).strip().upper()
+                    ld = leader_map.get(sid, {})
+                    inf = inflow_map.get(sid, {})
+                    s["composite_score"] = ld.get("composite_score")
+                    s["role_label"] = ld.get("role_label")
+                    s["candidate_rank"] = ld.get("candidate_rank")
+                    s["purity_score"] = ld.get("purity_score")
+                    s["leading_score"] = ld.get("leading_score")
+                    s["capital_score"] = ld.get("capital_score")
+                    s["main_net_inflow"] = float(inf.get("main_net_inflow") or 0)
+            # 附加周期阶段
+            if stocks and cycle_row:
+                for s in stocks:
+                    s["cycle_state"] = str(cycle_row.get("final_cycle_state", "") or "")
+        except Exception:
+            partial = True
+            missing_sections.append("stocks")
+
+    return {
+        "subject_key": detail.get("subject_key", subject_key),
+        "trade_date": trade_date,
+        "detail": detail,
+        "history": history,
+        "children": children,
+        "stocks": stocks,
+        "analytics": analytics,
+        "diagnostics": {
+            "partial": partial,
+            "missing_sections": missing_sections,
         },
     }
 

@@ -6199,6 +6199,226 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             rows = await conn.fetch(sql, trade_date)
         return [dict(r) for r in rows]
 
+    async def get_subject_stock_daily_snapshot_by_trade_date(
+        self, trade_date: date
+    ) -> List[Dict[str, Any]]:
+        """读取 JYHF 股票日快照（subject_stock_daily_snapshot 表）。"""
+        sql = """
+        SELECT trade_date, subject_key, stock_id, stock_name,
+               open_price, high_price, low_price, close_price, pre_close,
+               pct_chg, volume, amount, raw_json
+        FROM subject_stock_daily_snapshot
+        WHERE trade_date = $1::date
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+        return [dict(r) for r in rows]
+
+    async def get_stock_daily_snapshot_by_stock_ids(
+        self, trade_date: date, stock_ids: List[str]
+    ) -> List[Dict[str, Any]]:
+        """读取 Tushare K 线数据（stock_daily_snapshot 表）。"""
+        sql = """
+        SELECT trade_date, stock_id, stock_name, open_price, high_price,
+               low_price, close_price, pre_close, pct_chg, volume, amount
+        FROM stock_daily_snapshot
+        WHERE split_part(stock_id, '.', 1) = ANY($2::varchar[])
+          AND trade_date <= $1::date
+        ORDER BY stock_id, trade_date
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date, stock_ids)
+        return [dict(r) for r in rows]
+
+    async def get_intel_news_events(self, feed_date: date) -> List[Dict[str, Any]]:
+        """情报台旧链源：news_event + event_theme_map + theme_master + news_raw。"""
+        sql = """
+        WITH mapped AS (
+            SELECT DISTINCT ON (ne.id, COALESCE(NULLIF(tm.source_id, ''), 'theme:' || tm.id::text))
+                ne.id AS event_id,
+                COALESCE(NULLIF(tm.source_id, ''), 'theme:' || tm.id::text) AS subject_key,
+                tm.name AS theme_name,
+                COALESCE(ne.created_at, etm.created_at, nr.created_at, ne.event_time, nr.publish_date::timestamp) AS occurred_at,
+                COALESCE(NULLIF(nr.title, ''), NULLIF(ne.summary, ''), ne.event_type, ('事件#' || ne.id::text)) AS title,
+                COALESCE(ne.summary, nr.content, '') AS summary,
+                COALESCE(etm.confidence, ne.confidence) AS confidence,
+                ne.severity_score AS impact_score
+            FROM news_event ne
+            LEFT JOIN news_raw nr ON nr.id = ne.news_id
+            JOIN event_theme_map etm ON etm.event_id = ne.id
+            JOIN theme_master tm ON tm.id = etm.theme_id
+            WHERE (
+                ne.event_time::date = $1::date
+                OR ne.created_at::date = $1::date
+                OR nr.publish_date::date = $1::date
+            )
+            ORDER BY ne.id, COALESCE(NULLIF(tm.source_id, ''), 'theme:' || tm.id::text),
+                     etm.confidence DESC NULLS LAST, etm.created_at DESC NULLS LAST
+        )
+        SELECT
+            ('event:' || event_id::text || ':' || subject_key) AS item_id,
+            'event'::text AS item_type,
+            occurred_at,
+            title,
+            summary,
+            ARRAY[subject_key]::text[] AS theme_subject_keys,
+            ARRAY[theme_name]::text[] AS theme_names,
+            ARRAY[]::text[] AS stock_ids,
+            ARRAY[]::text[] AS stock_names,
+            confidence,
+            impact_score,
+            'event_theme_map'::text AS source_type,
+            'realtime_news'::text AS source_channel
+        FROM mapped
+        ORDER BY occurred_at DESC NULLS LAST, event_id DESC, subject_key
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, feed_date)
+        return [dict(r) for r in rows]
+
+    async def create_user(self, email: str, password_hash: str, role: str = "user") -> Dict[str, Any]:
+        """创建用户，首个用户自动为 admin。"""
+        async with self.pool.acquire() as conn:
+            existing = await conn.fetchval("SELECT COUNT(*) FROM user_accounts")
+            actual_role = "admin" if existing == 0 else role
+            row = await conn.fetchrow(
+                "INSERT INTO user_accounts (email, password_hash, role) VALUES ($1, $2, $3) RETURNING id, email, role, created_at",
+                email, password_hash, actual_role,
+            )
+            return dict(row)
+
+    async def get_user_by_email(self, email: str) -> Dict[str, Any] | None:
+        async with self.pool.acquire() as conn:
+            row = await conn.fetchrow(
+                "SELECT id, email, password_hash, role, is_active, created_at, last_login FROM user_accounts WHERE email = $1",
+                email,
+            )
+            return dict(row) if row else None
+
+    async def update_user_last_login(self, user_id: int) -> None:
+        async with self.pool.acquire() as conn:
+            await conn.execute("UPDATE user_accounts SET last_login = NOW() WHERE id = $1", user_id)
+
+    async def resolve_subject_keys_by_names(self, names: List[str]) -> Dict[str, str]:
+        """中文题材名 → JYHF 数字 subject_key 映射。"""
+        if not names:
+            return {}
+        sql = """
+        SELECT subject_key, theme_name FROM vw_subject_theme_binding
+        WHERE theme_name = ANY($1::varchar[])
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, names)
+        return {str(r["theme_name"]): str(r["subject_key"]) for r in rows}
+
+    async def get_intel_subject_history(self, feed_date: date) -> List[Dict[str, Any]]:
+        """情报台旧链源：subject_history_staging JYHF CDP 事件。"""
+        sql = """
+        SELECT
+            ('event:jyhf_cdp:' || id::text) AS item_id,
+            'event'::text AS item_type,
+            CASE
+                WHEN (raw_json->>'event_time')::text IS NOT NULL AND (raw_json->>'event_time')::text <> ''
+                THEN (rank_date::text || 'T' || (raw_json->>'event_time')::text || ':00')::timestamp
+                ELSE COALESCE(created_at, rank_date::timestamp)
+            END AS occurred_at,
+            COALESCE(NULLIF(subject_name, ''), subject_key) AS title,
+            COALESCE(NULLIF(description, ''), subject_name, subject_key) AS summary,
+            ARRAY[subject_key]::text[] AS theme_subject_keys,
+            ARRAY[COALESCE(NULLIF(subject_name, ''), subject_key)]::text[] AS theme_names,
+            ARRAY[]::text[] AS stock_ids,
+            ARRAY[]::text[] AS stock_names,
+            NULL::numeric AS confidence,
+            COALESCE(pct_chg, 0)::numeric AS impact_score,
+            'jyhf_cdp_dom'::text AS source_type,
+            'jyhf_cdp'::text AS source_channel
+        FROM subject_history_staging
+        WHERE source_type = 'jyhf_cdp'
+          AND rank_date = $1::date
+        ORDER BY occurred_at ASC NULLS LAST
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, feed_date)
+        return [dict(r) for r in rows]
+
+    async def upsert_stock_abnormal_signal_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """写入异动股票信号（stock_abnormal_signal 表）。"""
+        sql = """
+        INSERT INTO stock_abnormal_signal (
+            trade_date, subject_key, theme_name, stock_id, stock_name,
+            turnover_rate, turnover_rank_in_theme,
+            main_net_inflow, main_net_inflow_rank_in_theme,
+            turnover_abnormal_score, capital_focus_score,
+            is_high_turnover, is_extreme_turnover,
+            volume_ratio_to_ma50, volume_abnormal_score,
+            is_volume_breakout, is_double_volume, is_high_volume_bar,
+            tail_amount, tail_amount_ratio, tail_unmatched_buy_order,
+            tail_abnormal_score, has_tail_rush_buy, has_tail_large_unmatched_bid,
+            hot_money_buy_names, institution_net_buy, institution_seat_count,
+            has_hot_money_buy, has_institution_buy,
+            abnormal_labels, abnormal_composite_score, conclusion, evidence,
+            source_type, source_trace_id, source_trace, source_version, rule_version
+        ) VALUES (
+            $1::date, $2, $3, $4, $5,
+            $6, $7, $8, $9, $10, $11,
+            $12, $13, $14, $15, $16, $17, $18,
+            $19, $20, $21, $22, $23, $24,
+            $25, $26, $27, $28, $29,
+            $30, $31, $32, $33::jsonb,
+            $34, $35, $36, $37, $38
+        )
+        ON CONFLICT (trade_date, stock_id)
+        DO UPDATE SET
+            turnover_rate = EXCLUDED.turnover_rate,
+            abnormal_composite_score = EXCLUDED.abnormal_composite_score,
+            abnormal_labels = EXCLUDED.abnormal_labels,
+            conclusion = EXCLUDED.conclusion,
+            evidence = EXCLUDED.evidence,
+            updated_at = NOW()
+        """
+        written = 0
+        async with self.pool.acquire() as conn:
+            for row in rows:
+                await conn.execute(sql,
+                    row["trade_date"], row["subject_key"], row["theme_name"],
+                    row["stock_id"], row["stock_name"],
+                    float(row.get("turnover_rate", 0) or 0),
+                    int(row.get("turnover_rank_in_theme", 0) or 0),
+                    float(row.get("main_net_inflow", 0) or 0),
+                    int(row.get("main_net_inflow_rank_in_theme", 0) or 0),
+                    float(row.get("turnover_abnormal_score", 0) or 0),
+                    float(row.get("capital_focus_score", 0) or 0),
+                    bool(row.get("is_high_turnover", False)),
+                    bool(row.get("is_extreme_turnover", False)),
+                    float(row.get("volume_ratio_to_ma50", 0) or 0),
+                    float(row.get("volume_abnormal_score", 0) or 0),
+                    bool(row.get("is_volume_breakout", False)),
+                    bool(row.get("is_double_volume", False)),
+                    bool(row.get("is_high_volume_bar", False)),
+                    float(row.get("tail_amount", 0) or 0),
+                    float(row.get("tail_amount_ratio", 0) or 0),
+                    float(row.get("tail_unmatched_buy_order", 0) or 0),
+                    float(row.get("tail_abnormal_score", 0) or 0),
+                    bool(row.get("has_tail_rush_buy", False)),
+                    bool(row.get("has_tail_large_unmatched_bid", False)),
+                    json.dumps(row.get("hot_money_buy_names") or [], default=str),
+                    float(row.get("institution_net_buy", 0) or 0),
+                    int(row.get("institution_seat_count", 0) or 0),
+                    bool(row.get("has_hot_money_buy", False)),
+                    bool(row.get("has_institution_buy", False)),
+                    json.dumps(row.get("abnormal_labels") or [], default=str),
+                    float(row.get("abnormal_composite_score", 0) or 0),
+                    str(row.get("conclusion") or ""),
+                    json.dumps(row.get("evidence") or {}, ensure_ascii=False, default=str),
+                    str(row.get("source_type") or "new_chain_job"),
+                    str(row.get("source_trace_id") or ""),
+                    json.dumps(row.get("source_trace") or {}, default=str),
+                    str(row.get("source_version") or "v1.0"),
+                    str(row.get("rule_version") or "new_chain_gateway"),
+                )
+                written += 1
+        return written
+
     async def upsert_replay_snapshot_manifest(self, row: Dict[str, Any]) -> int:
         """写入分层回放 manifest。"""
         sql = """

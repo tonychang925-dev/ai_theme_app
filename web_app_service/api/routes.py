@@ -3,7 +3,7 @@ import os
 from typing import AsyncIterator
 
 import httpx
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, HTTPException, Query, Request
 from fastapi.responses import StreamingResponse
 
 from web_app_service.core.read_client import StockProcessingReadClient
@@ -293,10 +293,40 @@ async def recap(
 
 @router.get("/recap/defaults")
 async def recap_defaults() -> dict:
-    return {
-        "latest_post_market_date": None,
-        "latest_pre_market_date": None,
-    }
+    return await _proxy_stock_processing_json("/api/v1/recap/defaults", {})
+
+
+@router.get("/theme_workspace/{subject_key}")
+@router.get("/theme-workspace/{subject_key}")
+async def theme_workspace(subject_key: str, request: Request) -> dict:
+    params = {k: v for k, v in request.query_params.items()}
+    return await _proxy_stock_processing_json(f"/api/v1/theme_workspace/{subject_key}", params)
+
+
+@router.get("/mobile/defaults")
+async def mobile_defaults() -> dict:
+    return await _proxy_stock_processing_json("/api/v1/mobile/defaults", {})
+
+
+@router.get("/mobile/recap")
+async def mobile_recap(trade_date: str = Query(..., description="YYYY-MM-DD")) -> dict:
+    return await _proxy_stock_processing_json("/api/v1/mobile/recap", {"trade_date": trade_date})
+
+
+@router.get("/mobile/screener/latest")
+async def mobile_screener(
+    trade_date: str = Query(..., description="YYYY-MM-DD"),
+    strategy: str = Query("weak_to_strong"),
+) -> dict:
+    return await _proxy_stock_processing_json(
+        "/api/v1/mobile/screener/latest",
+        {"trade_date": trade_date, "strategy": strategy},
+    )
+
+
+@router.post("/mobile/news-recommend")
+async def mobile_news_recommend(payload: dict) -> dict:
+    return await _proxy_stock_processing_post_json("/api/v1/mobile/news-recommend", payload)
 
 
 @router.get("/stock-screener/strategies")

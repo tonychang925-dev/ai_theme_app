@@ -78,7 +78,11 @@ class DecimalEncoder(json.JSONEncoder):
 # 设置logger
 logger = logging.getLogger(__name__)
 WEB_APP_SERVICE_BASE_URL = str(os.getenv("WEB_APP_SERVICE_BASE_URL", "http://127.0.0.1:8000")).rstrip("/")
+STOCK_PROCESSING_BASE_URL = str(os.getenv("STOCK_PROCESSING_READ_BASE_URL", "http://127.0.0.1:8090")).rstrip("/")
 JYHF_CDP_SERVICE_BASE_URL = str(os.getenv("JYHF_CDP_SERVICE_BASE_URL", "http://127.0.0.1:8095")).rstrip("/")
+
+def _sps_base_url() -> str:
+    return STOCK_PROCESSING_BASE_URL
 
 # 尝试导入SSE推送服务
 try:
@@ -1511,20 +1515,39 @@ async def export_stock_screener_results(payload: ScreenerExportPayload):
 async def get_intel_feed(
     date: Optional[str] = Query(default=None),
     session: str = Query(default="all", pattern="^(all|pre|intra|post)$"),
-    type: str = Query(default="all", pattern="^(all|event|event_review|theme_move|new_theme|stock_move)$"),
+    type: str = Query(default="all"),
     subject_key: Optional[str] = Query(default=None),
     stock_id: Optional[str] = Query(default=None),
     limit: int = Query(default=100, ge=1, le=500),
 ):
     _require_gate_for_flag(DAILY_SNAPSHOT_FLAG)
-    return await bff_repo.fetch_intel_feed_view(
-        feed_date=date,
-        session=session,
-        item_type=type,
-        subject_key=subject_key,
-        stock_id=stock_id,
-        limit=limit,
-    )
+    # 代理到 SPS /api/v1/intel_feed
+    feed_date = date
+    if not feed_date:
+        try:
+            defaults_url = f"{_sps_base_url()}/api/v1/intel_feed/defaults"
+            async with httpx.AsyncClient(timeout=10.0) as client:
+                resp = await client.get(defaults_url)
+                resp.raise_for_status()
+                feed_date = resp.json().get("latest_intel_date")
+        except Exception:
+            feed_date = None
+    if not feed_date:
+        return {"items": [], "count": 0, "date": None, "session": session, "type": type,
+                "diagnostics": {"partial": True, "source": "no_date_available"}}
+
+    url = f"{_sps_base_url()}/api/v1/intel_feed"
+    params = {"feed_date": feed_date, "session": session, "item_type": type,
+              "subject_key": subject_key, "stock_id": stock_id, "limit": limit}
+    q = {k: v for k, v in params.items() if v is not None and v != ""}
+    try:
+        async with httpx.AsyncClient(timeout=30.0) as client:
+            resp = await client.get(url, params=q)
+            resp.raise_for_status()
+            return resp.json()
+    except Exception:
+        return {"items": [], "count": 0, "date": feed_date, "session": session, "type": type,
+                "diagnostics": {"partial": True, "source": "sps_unavailable"}}
 
 
 @app.get("/api/intel/strong-stocks/watch")
@@ -1556,7 +1579,7 @@ async def get_strong_stock_watch(
 async def get_intel_stream(
     date: Optional[str] = Query(default=None),
     session: str = Query(default="all", pattern="^(all|pre|intra|post)$"),
-    type: str = Query(default="all", pattern="^(all|event|event_review|theme_move|new_theme|stock_move)$"),
+    type: str = Query(default="all"),
     subject_key: Optional[str] = Query(default=None),
     stock_id: Optional[str] = Query(default=None),
     limit: int = Query(default=20, ge=1, le=100),
@@ -1567,17 +1590,20 @@ async def get_intel_stream(
         heartbeat_interval = 15
         poll_interval = 5
         elapsed = 0
+        sps_url = f"{_sps_base_url()}/api/v1/intel_feed"
+
+        async def _poll_sps():
+            params = {"feed_date": date, "session": session, "item_type": type,
+                      "subject_key": subject_key, "stock_id": stock_id, "limit": limit}
+            q = {k: v for k, v in params.items() if v is not None and v != ""}
+            async with httpx.AsyncClient(timeout=30.0) as client:
+                resp = await client.get(sps_url, params=q)
+                resp.raise_for_status()
+                return resp.json()
 
         while True:
             try:
-                payload = await bff_repo.fetch_intel_feed_view(
-                    feed_date=date,
-                    session=session,
-                    item_type=type,
-                    subject_key=subject_key,
-                    stock_id=stock_id,
-                    limit=limit,
-                )
+                payload = await _poll_sps()
                 items = payload.get("items", [])
                 fresh_items = []
                 for item in items:
@@ -1769,19 +1795,32 @@ async def get_theme_workspace(
     children_limit: int = Query(default=50, ge=1, le=500),
     stocks_limit: int = Query(default=50, ge=1, le=500),
 ):
-    payload = await bff_repo.fetch_theme_workspace_view(
-        subject_key=subject_key,
-        trade_date=trade_date,
-        include_history=include_history,
-        include_children=include_children,
-        include_stocks=include_stocks,
-        include_leaders=include_leaders,
-        stock_mapping_scope=stock_mapping_scope,
-        history_limit=history_limit,
-        children_limit=children_limit,
-        stocks_limit=stocks_limit,
-    )
-    if not payload:
+    # 新链：代理到 SPS /api/v1/theme_workspace/{subject_key}
+    url = f"{_sps_base_url()}/api/v1/theme_workspace/{subject_key}"
+    params = {
+        "trade_date": trade_date,
+        "include_history": str(include_history).lower(),
+        "include_children": str(include_children).lower(),
+        "include_stocks": str(include_stocks).lower(),
+        "include_leaders": str(include_leaders).lower(),
+        "stock_mapping_scope": stock_mapping_scope,
+        "history_limit": history_limit,
+        "children_limit": children_limit,
+        "stocks_limit": stocks_limit,
+    }
+    q = {k: v for k, v in params.items() if v is not None and v != ""}
+    try:
+        async with httpx.AsyncClient(timeout=30.0) as client:
+            resp = await client.get(url, params=q)
+            resp.raise_for_status()
+            data = resp.json()
+            return data if isinstance(data, dict) else {}
+    except httpx.ConnectError as exc:
+        raise HTTPException(status_code=503, detail=f"SPS unreachable: {exc}")
+    except httpx.HTTPStatusError as exc:
+        if exc.response.status_code == 404:
+            raise HTTPException(status_code=404, detail=f"theme workspace not found for subject_key={subject_key}")
+        raise HTTPException(status_code=502, detail=f"SPS error: {exc.response.status_code}")
         raise HTTPException(status_code=404, detail=f"theme workspace not found for subject_key={subject_key}")
     return payload
 

@@ -20,18 +20,20 @@ logger = logging.getLogger(__name__)
 
 # ── Item type → sort priority (higher = shown first) ──────────────────────
 ITEM_TYPE_PRIORITY: Dict[str, int] = {
-    "recap": 100,
-    "weak_to_strong": 90,
-    "theme_cycle": 85,
-    "theme_identity": 80,
-    "stock_signal": 70,
-    "event": 60,
-    "theme_history": 50,
-    # 旧链保留类型 (fallback)
-    "new_theme": 40,
-    "event_review": 35,
-    "theme_move": 30,
-    "stock_move": 25,
+    # 新闻事件（旧链核心内容）— 最高优先级，new_theme 与 event 同级
+    "event": 100,
+    "new_theme": 100,
+    "event_review": 95,
+    # 新链信号 — 略低但不被淹没
+    "recap": 85,
+    "weak_to_strong": 80,
+    "theme_cycle": 75,
+    "theme_identity": 70,
+    "stock_signal": 60,
+    # 旧链其他
+    "theme_move": 50,
+    "stock_move": 40,
+    "theme_history": 30,
 }
 
 # strong_stock_watch_pool 默认展示上限
@@ -273,6 +275,67 @@ class NewChainIntelFeedAdapter:
 
     # ── Main query ──────────────────────────────────────────────────────
 
+    async def load_news_event_items(self, feed_date: date) -> List[Dict[str, Any]]:
+        """旧链：news_event + event_theme_map + theme_master → event 情报项。"""
+        try:
+            rows = await self._gw.get_intel_news_events(feed_date)
+        except Exception:
+            return []
+        items: List[Dict[str, Any]] = []
+        for row in rows:
+            items.append({
+                "item_id": str(row.get("item_id", "")),
+                "item_type": "event",
+                "occurred_at": str(row.get("occurred_at") or ""),
+                "title": str(row.get("title") or ""),
+                "summary": str(row.get("summary") or ""),
+                "theme_subject_keys": list(row.get("theme_subject_keys") or []),
+                "theme_names": list(row.get("theme_names") or []),
+                "stock_ids": [],
+                "stock_names": [],
+                "confidence": float(row.get("confidence") or 0) if row.get("confidence") else None,
+                "impact_score": float(row.get("impact_score") or 0),
+                "source_type": str(row.get("source_type", "event_theme_map")),
+                "source_channel": str(row.get("source_channel", "realtime_news")),
+            })
+        return items
+
+    async def load_subject_history_items(self, feed_date: date) -> List[Dict[str, Any]]:
+        """旧链：subject_history_staging JYHF CDP → event / new_theme 情报项。"""
+        try:
+            rows = await self._gw.get_intel_subject_history(feed_date)
+        except Exception:
+            return []
+        # 中文题材名 → JYHF 数字 key 映射
+        names = list({str(row.get("title") or "") for row in rows if row.get("title")})
+        name_to_key: dict[str, str] = {}
+        if names:
+            try:
+                name_to_key = await self._gw.resolve_subject_keys_by_names(names)
+            except Exception:
+                pass
+        items: List[Dict[str, Any]] = []
+        for row in rows:
+            summary = str(row.get("summary") or "")
+            title = str(row.get("title") or "")
+            is_new_theme = ("新题材更新" in title or "新题材更新" in summary)
+            items.append({
+                "item_id": str(row.get("item_id", "")),
+                "item_type": "new_theme" if is_new_theme else "event",
+                "occurred_at": str(row.get("occurred_at") or ""),
+                "title": title,
+                "summary": summary,
+                "theme_subject_keys": [name_to_key.get(title, "")] if name_to_key.get(title) else [],
+                "theme_names": list(row.get("theme_names") or []),
+                "stock_ids": [],
+                "stock_names": [],
+                "confidence": float(row.get("confidence") or 0) if row.get("confidence") else None,
+                "impact_score": float(row.get("impact_score") or 0),
+                "source_type": "",
+                "source_channel": "",
+            })
+        return items
+
     async def get_intel_feed(
         self,
         feed_date: date,
@@ -280,10 +343,9 @@ class NewChainIntelFeedAdapter:
         item_type: str = "all",
         limit: int = 100,
     ) -> List[Dict[str, Any]]:
-        """从新链数据源聚合情报项，返回按优先级+评分排序的列表。"""
+        """聚合情报项：新链信号 + 旧链新闻事件，按优先级排序。"""
         all_items: List[Dict[str, Any]] = []
 
-        # 每项 load 失败不阻断其余源
         async def _safe_load(label: str, coro):
             try:
                 return await coro
@@ -291,26 +353,61 @@ class NewChainIntelFeedAdapter:
                 logger.warning("NewChainIntelFeedAdapter: load %s failed for %s", label, feed_date, exc_info=True)
                 return []
 
+        # 新链信号
         all_items.extend(await _safe_load("recap", self.load_recap_items(feed_date)))
         all_items.extend(await _safe_load("weak_to_strong", self.load_weak_to_strong_items(feed_date)))
         all_items.extend(await _safe_load("theme_cycle", self.load_theme_cycle_items(feed_date)))
         all_items.extend(await _safe_load("theme_identity", self.load_theme_identity_items(feed_date)))
         all_items.extend(await _safe_load("strong_stock", self.load_strong_stock_items(feed_date)))
+        # 旧链新闻事件
+        all_items.extend(await _safe_load("news_event", self.load_news_event_items(feed_date)))
+        all_items.extend(await _safe_load("subject_history", self.load_subject_history_items(feed_date)))
 
-        # session 过滤（新链数据默认 post_market，只有 all/post 可见）
-        if session not in ("all", "post", ""):
-            all_items = []
+        # session 过滤（仅 event 类 item 有实际时间，新链信号默认 post_market）
+        if session not in ("all", ""):
+            filtered: List[Dict[str, Any]] = []
+            for it in all_items:
+                if it["item_type"] not in ("event",):
+                    if session in ("all", "post", ""):
+                        filtered.append(it)
+                    continue
+                occurred = it.get("occurred_at", "")
+                if not occurred:
+                    filtered.append(it)
+                    continue
+                try:
+                    from datetime import datetime
+                    dt = datetime.fromisoformat(str(occurred).replace("Z", "+00:00"))
+                    hm = dt.hour * 60 + dt.minute
+                    if session == "pre" and hm < 9 * 60 + 30:
+                        filtered.append(it)
+                    elif session == "intra" and 9 * 60 + 30 <= hm < 15 * 60:
+                        filtered.append(it)
+                    elif session == "post" and hm >= 15 * 60:
+                        filtered.append(it)
+                except Exception:
+                    filtered.append(it)
+            all_items = filtered
 
         # item_type 过滤
         if item_type != "all":
             all_items = [it for it in all_items if it["item_type"] == item_type]
 
-        # 排序：priority desc → impact_score desc → occurred_at desc
-        def _sort_key(it: Dict[str, Any]) -> tuple[int, float, str]:
+        # 排序：priority desc → occurred_at desc（事件最新在上），score desc tiebreak
+        def _sort_key(it: Dict[str, Any]) -> tuple[int, int, float]:
             pri = ITEM_TYPE_PRIORITY.get(str(it.get("item_type") or ""), 0)
             score = float(it.get("impact_score") or 0)
             occurred = str(it.get("occurred_at") or "")
-            return (-pri, -score, occurred)
+            # 解析时间戳为 epoch 秒，失败用 0；取负实现降序
+            try:
+                from datetime import datetime
+                ts = int(datetime.fromisoformat(occurred.replace("Z", "+00:00")).timestamp())
+            except Exception:
+                ts = 0
+            # 事件类 -ts 实现时间降序（最新在上）
+            if it.get("item_type") in ("event", "new_theme"):
+                return (-pri, -ts, -score)
+            return (-pri, 0, -score)
 
         all_items.sort(key=_sort_key)
         return all_items[:limit]

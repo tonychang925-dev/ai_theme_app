@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+from typing import Any
 import json
 import os
 import sys
@@ -318,12 +319,13 @@ async def upsert_rows(manager: PostgresDatabaseManager, items):
         await conn.executemany(sql, payload)
 
 
-async def main_async(args: argparse.Namespace | None = None) -> int:
+async def main_async(args: argparse.Namespace | None = None, *, db_manager: Any = None) -> int:
     if args is None:
         args = parse_args()
     trade_date_value = _parse_trade_date(args.trade_date)
-    manager = PostgresDatabaseManager(get_postgres_config())
-    await manager.connect()
+    manager = db_manager if db_manager else PostgresDatabaseManager(get_postgres_config())
+    if not db_manager:
+        await manager.connect()
     try:
         await ensure_tables(manager)
         timeline_map = _load_timeline_map(args.timeline_json)
@@ -446,7 +448,8 @@ async def main_async(args: argparse.Namespace | None = None) -> int:
             )
         return 0
     finally:
-        await manager.disconnect()
+        if not db_manager:
+            await manager.disconnect()
 
 
 async def fetch_prev_trade_date(manager: PostgresDatabaseManager, trade_date_value: date) -> date | None:

@@ -130,6 +130,11 @@ export function formatImpactScore(impactScore: number | null | undefined): strin
  * @returns 色调名称
  */
 export function getItemTone(itemType: string): string {
+  if (itemType === 'recap') return 'spark';
+  if (itemType === 'weak_to_strong') return 'signal';
+  if (itemType === 'theme_cycle') return 'heat';
+  if (itemType === 'theme_identity') return 'spark';
+  if (itemType === 'stock_signal') return 'signal';
   if (itemType === 'event_review') return 'signal';
   if (itemType === 'new_theme') return 'spark';
   if (itemType === 'theme_move' || itemType === 'stock_move') return 'heat';
@@ -142,9 +147,15 @@ export function getItemTone(itemType: string): string {
  * @returns 中文标签
  */
 export function getItemTypeLabel(itemType: string): string | null {
+  if (itemType === 'recap') return '复盘';
+  if (itemType === 'weak_to_strong') return '弱转强';
+  if (itemType === 'theme_cycle') return '周期';
+  if (itemType === 'theme_identity') return '主线';
+  if (itemType === 'stock_signal') return '强股';
   if (itemType === 'event_review') return '待复核';
   if (itemType === 'event') return '新事件';
   if (itemType === 'new_theme') return '新题材';
+  if (itemType === 'theme_history') return '题材史';
   return null;
 }
 
@@ -155,12 +166,20 @@ export function getItemTypeLabel(itemType: string): string | null {
  */
 export function getSourceLabel(sourceType: string): string {
   const sourceMap: Record<string, string> = {
+    // 新链源
+    'post_market_recap_snapshot': '盘后复盘',
+    'theme_mainline_identity_registry': '主线身份',
+    'theme_cycle_judgement_v2': '周期研判',
+    'strong_stock_watch_pool': '强势追踪',
+    'weak_to_strong_candidate_pool': '弱转强池',
+    // 旧链源
     'event_theme_map': '题材匹配事件',
     'event_review_queue': '人工复核队列',
     'jyhf_history': '久赢驱动事件',
     'jyhf_rank_daily': '久赢榜单异动',
     'jyhf_stock_daily': '久赢股票异动',
     'jyhf_full_theme_list': '久赢题材列表',
+    'jyhf_cdp_dom': 'JYHF实时',
   };
 
   return sourceMap[sourceType] || sourceType;

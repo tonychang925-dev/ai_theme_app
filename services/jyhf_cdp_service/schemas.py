@@ -57,5 +57,6 @@ class RawJyhfCdpEvent(BaseModel):
     driver_title: str
     driver_desc: str
     news_source: str | None = None
+    event_type: str = "驱动事件"  # "驱动事件" | "新题材更新"
     raw_text: str
     parse_version: str = "jyhf_cdp_new_event_v1"
