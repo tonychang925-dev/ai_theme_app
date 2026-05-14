@@ -557,6 +557,44 @@ async def jyhf_cdp_service_stop(request: Request) -> dict:
     return await manager.stop_service()
 
 
+# ── Realtime Collector（代理到 frontend_bff:8003，不可达时友好降级）──
+
+_FRONTEND_BFF_BASE = str(os.getenv("FRONTEND_BFF_BASE_URL", "http://127.0.0.1:8003")).rstrip("/")
+
+
+async def _proxy_bff(path: str, *, method: str = "GET", params: dict | None = None, payload: dict | None = None, timeout: float = 150.0) -> dict:
+    try:
+        async with httpx.AsyncClient(timeout=timeout) as client:
+            resp = await client.request(method.upper(), f"{_FRONTEND_BFF_BASE}{path}", params=params, json=payload)
+            resp.raise_for_status()
+            data = resp.json()
+            return data if isinstance(data, dict) else {"raw": data}
+    except httpx.ConnectError:
+        return {"ok": False, "message": "frontend_bff (8003) 未运行，实时链路管理接口不可用", "command": [], "stdout": "", "stderr": "frontend_bff not running"}
+    except Exception as exc:
+        return {"ok": False, "message": str(exc), "command": [], "stdout": "", "stderr": str(exc)}
+
+
+@router.get("/realtime/collector/status")
+async def realtime_collector_status() -> dict:
+    return await _proxy_bff("/api/v2/realtime/collector/status", timeout=30.0)
+
+
+@router.post("/realtime/collector/start")
+async def realtime_collector_start(payload: dict | None = None) -> dict:
+    return await _proxy_bff("/api/v2/realtime/collector/start", method="POST", payload=payload or {}, timeout=150.0)
+
+
+@router.post("/realtime/collector/stop")
+async def realtime_collector_stop(payload: dict | None = None) -> dict:
+    return await _proxy_bff("/api/v2/realtime/collector/stop", method="POST", payload=payload or {}, timeout=60.0)
+
+
+@router.get("/realtime/collector/logs")
+async def realtime_collector_logs(lines: int = Query(default=200, ge=20, le=2000)) -> dict:
+    return await _proxy_bff("/api/v2/realtime/collector/logs", params={"lines": lines}, timeout=15.0)
+
+
 @router.get("/intel/feed")
 async def intel_feed(
     date: str | None = Query(default=None),

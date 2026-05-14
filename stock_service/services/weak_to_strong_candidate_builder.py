@@ -1191,12 +1191,10 @@ class WeakToStrongCandidateBuilder:
             support_strength >= 45.0
             and strong_background
             and day_weak_score >= 4.0
-            and prev_day_weak_score >= 2.0
         )
         observe_only_allow = (
             support_strength >= 60.0
             and day_weak_score >= 3.0
-            and prev_day_weak_score >= 2.0
         )
 
         support_norm = max(0.0, min(1.0, support_strength / 100.0))

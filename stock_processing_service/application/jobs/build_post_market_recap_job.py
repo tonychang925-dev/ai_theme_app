@@ -632,9 +632,9 @@ class BuildPostMarketRecapJob:
             # ── 旧链 classify_pool_entry（严格复刻，含 prev_day_weak>=2）──
             strong_background = (is_leader or recent_limit_up_count >= 2 or rank_order <= 3)
             d1_pool_entry = "reject"
-            if support_strength >= 45 and strong_background and day_weak_score >= 4 and prev_day_weak_score >= 2:
+            if support_strength >= 45 and strong_background and day_weak_score >= 4:
                 d1_pool_entry = "formal"
-            elif support_strength >= 60 and day_weak_score >= 3 and prev_day_weak_score >= 2:
+            elif support_strength >= 60 and day_weak_score >= 3:
                 d1_pool_entry = "observe_only"
             if d1_pool_entry == "reject":
                 continue
@@ -853,6 +853,13 @@ class BuildPostMarketRecapJob:
             "legacy_watch_input_count": legacy_watch_input_count,
             "strong_watch_input_count": len(d1_input_rows),
             "strong_watch_input_7d_count": len(d1_input_rows),
+            "d1_total_in": _d1_total_in,
+            "d1_pass": _d1_pass,
+            "d1_fail_pct_gate": _d1_fail_pct,
+            "d1_fail_history": _d1_fail_history,
+            "d1_fail_gene": _d1_fail_gene,
+            "d1_fail_strong": _d1_fail_strong,
+            "d1_fail_support": _d1_fail_support,
             "strong_watch_promoted_count": len(promoted_pool_rows),
             "strong_watch_history_count": len(strong_watch_history),
             "strong_watch_pool_written": strong_watch_pool_written,
@@ -1007,6 +1014,32 @@ class BuildPostMarketRecapJob:
             from decimal import Decimal
             if isinstance(obj, Decimal): return float(obj)
             return obj
+
+        # ── 生成结构化 report（内嵌，不依赖独立 RecapReportTask）──
+        try:
+            from stock_service.repositories.report_repository import ReportRepository
+            from stock_service.config import StockServiceConfig
+            from stock_service.services.recap_service import RecapService
+
+            report_cfg = StockServiceConfig()
+            report_repo = ReportRepository(report_cfg)
+            await report_repo.initialize()
+            try:
+                report_service = RecapService(report_repo)
+                report = await report_service.build_post_market_report(trade_date.isoformat())
+                recap_doc["report"] = {
+                    "report_type": report.report_type,
+                    "trade_date": report.trade_date,
+                    "title": report.title,
+                    "summary": report.summary,
+                    "highlights": list(report.highlights or []),
+                    "sections": [{"heading": h, "items": list(i or [])} for h, i in list(report.sections or [])],
+                    "metadata": dict(getattr(report, "metadata", {}) or {}),
+                }
+            finally:
+                await report_repo.close()
+        except Exception:
+            pass
 
         snapshot = PostMarketRecapSnapshot(
             trade_date=trade_date,

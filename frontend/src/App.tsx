@@ -275,7 +275,7 @@ function AppRoutes() {
       )}
 
       {/* 默认路由：Intel 首页 */}
-      {path === "/" && (
+      {(path === "/" || path === "/intel") && (
         <>
           <LazyLoadErrorBoundary>
             <Suspense fallback={<LoadingFallback message="加载智能分析页面..." />}>

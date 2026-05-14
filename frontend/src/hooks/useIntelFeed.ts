@@ -300,7 +300,7 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
         sseManagerRef.current = null;
       }
     };
-  }, [date, type, session, mergeIncomingItems, normalizeIntelItem, fallbackActive]);
+  }, [date, type, session]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Polling effect
   useEffect(() => {

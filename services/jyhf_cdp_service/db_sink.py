@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import json
-from datetime import date
+from datetime import date, datetime
 from logging import Logger
 
 import asyncpg
@@ -58,14 +58,21 @@ class DatabaseSink:
         """
 
         count = 0
+        errors: list[str] = []
         async with pool.acquire() as conn:
             for row in rows:
                 try:
                     await conn.execute(sql, *row)
                     count += 1
-                except Exception:
-                    pass  # duplicate — 忽略
+                except Exception as exc:
+                    errors.append(str(exc)[:200])
 
+        if errors:
+            unique_errors = list(dict.fromkeys(errors))
+            self._logger.warning(
+                "db_sink %s/%s rows failed: %s",
+                len(errors), len(rows), unique_errors[:3],
+            )
         self._logger.info("db_sink wrote %s/%s events to subject_history_staging", count, len(events))
         return count
 

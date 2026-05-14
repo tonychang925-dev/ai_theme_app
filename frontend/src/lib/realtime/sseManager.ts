@@ -371,7 +371,7 @@ export class SSEManager {
       this.updateState({
         connectionDuration: this.calculateConnectionDuration()
       });
-    }, 1000); // 每秒更新一次
+    }, 30000); // 30秒更新一次（仅用于展示连接时长）
   }
 
   /**
