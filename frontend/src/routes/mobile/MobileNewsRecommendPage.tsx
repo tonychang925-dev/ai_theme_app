@@ -1,5 +1,25 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import './mobile.css';
+
+type NewsType = 'industry' | 'policy' | 'event';
+
+const NEWS_TYPE_LABELS: Record<NewsType, string> = {
+  industry: '产业链/技术',
+  policy: '政策/法规',
+  event: '突发事件',
+};
+
+/** 关键词自动检测新闻类型 */
+function detectNewsType(text: string): NewsType {
+  if (!text) return 'industry';
+  const policyKw = ['国务院', '发改委', '工信部', '能源局', '政策', '规划',
+    '方案', '意见', '通知', '补贴', '监管', '法规', '税收', '印发', '推进实施'];
+  const eventKw = ['爆发', '地震', '火灾', '战争', '冲突', '制裁', '禁止',
+    '限制出口', '暂停', '紧急', '突发', '灾难', '袭击', '事故', '关闭'];
+  if (policyKw.some(k => text.includes(k))) return 'policy';
+  if (eventKw.some(k => text.includes(k))) return 'event';
+  return 'industry';
+}
 
 interface MatchedTheme {
   subject_key: string;
@@ -26,9 +46,23 @@ interface NewsRecommendData {
 
 export function MobileNewsRecommendPage() {
   const [newsText, setNewsText] = useState('');
+  const [newsType, setNewsType] = useState<NewsType>('industry');
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<NewsRecommendData | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const userOverride = useRef(false);
+
+  // 自动检测：文本变化时自动推断类型（除非用户手动覆盖）
+  useEffect(() => {
+    if (userOverride.current) return;
+    const detected = detectNewsType(newsText);
+    setNewsType(detected);
+  }, [newsText]);
+
+  const handleTypeChange = (t: NewsType) => {
+    setNewsType(t);
+    userOverride.current = true;
+  };
 
   const handleSubmit = useCallback(async () => {
     const text = newsText.trim();
@@ -40,7 +74,7 @@ export function MobileNewsRecommendPage() {
       const resp = await fetch('/api/v2/mobile/news-recommend', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ news_text: text }),
+        body: JSON.stringify({ news_text: text, news_type: newsType }),
       });
       if (!resp.ok) {
         const detail = await resp.text();
@@ -52,7 +86,7 @@ export function MobileNewsRecommendPage() {
     } finally {
       setLoading(false);
     }
-  }, [newsText]);
+  }, [newsText, newsType]);
 
   return (
     <main className="mobile-shell" aria-label="新闻荐股">
@@ -65,6 +99,19 @@ export function MobileNewsRecommendPage() {
 
       {/* Input */}
       <section className="mobile-card" style={{ margin: '12px 16px' }}>
+        {/* 新闻类型选择器 */}
+        <div className="mobile-news-type-toggle">
+          {(Object.keys(NEWS_TYPE_LABELS) as NewsType[]).map(t => (
+            <button
+              key={t}
+              type="button"
+              className={`mobile-news-type-btn${newsType === t ? ' active' : ''}`}
+              onClick={() => handleTypeChange(t)}
+            >
+              {NEWS_TYPE_LABELS[t]}
+            </button>
+          ))}
+        </div>
         <textarea
           className="mobile-news-input"
           placeholder="粘贴新闻、研报或公告文本...&#10;&#10;例如：工信部表示将加快推进卫星互联网规模化应用..."

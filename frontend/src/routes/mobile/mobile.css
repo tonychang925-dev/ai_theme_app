@@ -429,6 +429,32 @@ body:has(.mobile-shell) {
    Phase 4 — /mobile/news-recommend 新闻荐股页
    ══════════════════════════════════════════════════════════════════════ */
 
+/* 新闻类型选择器 */
+.mobile-news-type-toggle {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.mobile-news-type-btn {
+  flex: 1;
+  padding: 8px 4px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 8px;
+  background: transparent;
+  color: #94a3b8;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.mobile-news-type-btn.active {
+  background: rgba(56, 189, 248, 0.18);
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.6);
+}
+
 .mobile-news-input {
   width: 100%; min-height: 120px;
   background: rgba(255,255,255,0.05);

@@ -295,21 +295,47 @@ class StockMatchEngine:
         self._theme_gates = await load_theme_gates()
         logger.info(f"StockMatchEngine: {len(self._gates)} stock gates + {len(self._theme_gates)} theme gates loaded")
 
-    async def _llm_extract_search_terms(self, text: str) -> List[str]:
+    # 三分类提取Prompt
+    EXTRACTION_PROMPTS = {
+        "industry": """你是产业链术语提取器。新闻涉及技术突破、产品发布、产能变化时，直接提取相关的产业链关键词。
+
+规则：
+1. 提取核心技术名词、产品名称、产业链环节（2-6字优先）
+2. 从上下游角度补充：该技术/产品涉及哪些供应链环节
+3. 禁止提取：公司名、人名、泛词
+4. 每个术语必须是A股研报中会用到的行业/题材分类词
+5. 输出JSON: {"search_terms":["术语1","术语2",...]}
+6. 6-10个术语""",
+
+        "policy": """你是政策影响推理器。给定一项政策新闻，推理该政策会利好哪些产业链环节，并输出可检索的题材术语。
+
+规则：
+1. 先判断政策涉及的大领域（如能源、科技、农业等）
+2. 推理受政策直接利好的产业链环节（如"补贴光伏"→利好"光伏组件""逆变器""电站运营"）
+3. 提取可检索的题材术语（2-6字优先）
+4. 禁止提取：政策名称、政府部门名、公文编号
+5. 每个术语必须是A股研报中会用到的行业/题材分类词
+6. 输出JSON: {"search_terms":["术语1","术语2",...]}
+7. 8-12个术语（政策影响面广，可多提取）""",
+
+        "event": """你是事件影响分析器。给定一个突发新闻事件，分析该事件对哪些行业/产业链产生影响，并输出可检索的题材术语。
+
+规则：
+1. 先判断事件类型（地缘冲突/自然灾害/贸易制裁/公共卫生等）
+2. 推理直接受益方向（如"战争"→军工、能源、黄金）和受损方向（如出口依赖型行业）
+3. 提取可检索的题材术语（2-6字优先）
+4. 考虑二级传导效应（如"石油涨价"→"煤化工替代""新能源加速"）
+5. 禁止提取：事件地点、伤亡数字、具体公司名
+6. 每个术语必须是A股研报中会用到的行业/题材分类词
+7. 输出JSON: {"search_terms":["术语1","术语2",...]}
+8. 8-12个术语（事件影响面广）""",
+    }
+
+    async def _llm_extract_search_terms(self, text: str, news_type: str = "industry") -> List[str]:
         """LLM 结构化提取：读事件 → 输出可检索术语列表（用于 Gate 匹配 theme_gate_profile）。"""
         if not self.llm:
             raise RuntimeError("LLM required")
-        system = """你是新闻事件投资术语提取器。你的任务是提取"在A股市场中可用于检索投资题材的关键术语"。
-
-规则：
-1. 提取新闻中涉及的产业链、技术、产品、政策等可投资方向词（2-6字优先）
-2. 禁止提取：公司名、人名、地名、纯数字、股东/人事/管理等非投资概念
-3. 如果新闻是关于某个具体公司的（非行业/政策事件），从该公司所处行业提取术语
-4. 避免过于宽泛的通用词（单字词、AI/芯片等无区分度的词）
-5. 每个术语必须是A股研报中会用到的行业/题材分类词
-6. 输出JSON: {"search_terms":["术语1","术语2",...]}
-7. 如果新闻内容与A股投资完全无关（如纯公司人事、海外公司动态），返回空列表
-8. 6-10个术语"""
+        system = self.EXTRACTION_PROMPTS.get(news_type, self.EXTRACTION_PROMPTS["industry"])
         resp = await self.llm.chat_completion(
             messages=[{"role": "system", "content": system},
                       {"role": "user", "content": f"新闻:\n{text[:3000]}"}],
@@ -435,11 +461,11 @@ class StockMatchEngine:
             await conn.close()
         return stocks
 
-    async def match(self, research_text: str, max_candidates: int = 5) -> MatchResult:
+    async def match(self, research_text: str, max_candidates: int = 5, news_type: str = "industry") -> MatchResult:
         if not self._gates: await self.initialize()
 
         # ===== Step 1: LLM 提取可检索术语 + JYHF Theme Gate 匹配 =====
-        search_terms = await self._llm_extract_search_terms(research_text)
+        search_terms = await self._llm_extract_search_terms(research_text, news_type=news_type)
 
         # 术语 → Gate-match theme_gate_profile → subject_keys
         theme_matches = await self._match_theme_gates(search_terms, research_text)
