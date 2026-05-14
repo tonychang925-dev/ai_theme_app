@@ -41,19 +41,6 @@ export function IntelHeader({
           <button className="auth-logout-btn" onClick={logout}>退出</button>
         </div>
       )}
-      <div className="topbar-meta">
-        <span>来源: {sourceSummary}</span>
-        <span>条目: {payloadCount}</span>
-        <span>
-          实时: {liveStatusText}
-          {sseConnectionState && sseConnectionState.status !== 'connected' && (
-            <span className="connection-detail">
-              ({sseConnectionState.status === 'retrying' ? `重试 ${sseConnectionState.retryCount}` : sseConnectionState.status})
-            </span>
-          )}
-        </span>
-        {liveNewCount > 0 && <span>新增: {liveNewCount}</span>}
-      </div>
     </header>
   );
 }
