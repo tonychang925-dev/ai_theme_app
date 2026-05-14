@@ -1654,9 +1654,24 @@ async def get_theme_workspace(
     try:
         # 题材周期研判
         async with app.state.gateway._client.pool.acquire() as conn:
+            # 未指定 trade_date 时，自动取该 subject 最新有数据的交易日
+            if not trade_date:
+                latest_date_row = await conn.fetchrow(
+                    "SELECT trade_date FROM theme_cycle_judgement_v2 "
+                    "WHERE subject_key = $1 ORDER BY trade_date DESC LIMIT 1",
+                    subject_key,
+                )
+                if latest_date_row:
+                    td = latest_date_row["trade_date"]
+                    if isinstance(td, date):
+                        pass
+                    elif hasattr(td, "date"):
+                        td = td.date()
+                    else:
+                        td = date.fromisoformat(str(td))
             cycle_row = await conn.fetchrow(
                 "SELECT final_cycle_state, mainline_strength_score, fade_risk_score, "
-                "fade_watch, fade_confirmed, divergence_score, repair_score "
+                "fade_watch, fade_confirmed, divergence_score, repair_score, state_transition_reason "
                 "FROM theme_cycle_judgement_v2 WHERE trade_date = $1::date AND subject_key = $2",
                 td, subject_key,
             )
@@ -1684,6 +1699,12 @@ async def get_theme_workspace(
                 WHERE tlc.trade_date = $2::date AND tlc.subject_key = $1
                 ORDER BY tlc.candidate_rank
             """, subject_key, td)
+            # 全量资金流入（用于汇总/前3）
+            inflow_rows = await conn.fetch(
+                "SELECT stock_id, COALESCE(NULLIF(raw_json->>35, ''), '0')::numeric AS main_net_inflow "
+                "FROM subject_stock_daily_snapshot WHERE subject_key = $1 AND trade_date = $2::date",
+                subject_key, td,
+            )
 
             summary = None
             if cycle_row:
@@ -1700,20 +1721,70 @@ async def get_theme_workspace(
             ll = ev.get("leader_layer", {}) or {}
             kl = ev.get("kline_layer", {}) or {}
             bl = ev.get("board_layer", {}) or {}
+
+            # 资金流入汇总
+            all_inflows = [float(r["main_net_inflow"] or 0) for r in inflow_rows]
+            main_net_inflow_sum = round(sum(all_inflows), 2)
+            top3_inflows = sorted(all_inflows, reverse=True)[:3]
+            top3_main_net_inflow_sum = round(sum(top3_inflows), 2)
+            # 龙头净流入：从 leader_layer 的 leader_stock_id 匹配（使用别名容错）
+            leader_stock_id = str(ll.get("leader_stock_id", "") or "")
+            leader_aliases = _stock_id_aliases(leader_stock_id)
+            leader_inflow = 0.0
+            for lr in leader_rows:
+                lr_aliases = _stock_id_aliases(str(lr["stock_id"] or ""))
+                if lr_aliases & leader_aliases:
+                    leader_inflow = float(lr["main_net_inflow"] or 0)
+                    break
+            # 稳定性 = kline 证据层的 theme_support_score
+            mainline_stability_score = float(kl.get("theme_support_score", 0) or 0)
+            # 板块状态格式化
+            def _fmt_pct(raw: object) -> str:
+                try:
+                    v = float(str(raw))
+                    return f"{round(v * 100, 2)}%"
+                except (ValueError, TypeError):
+                    return "--"
+            board_health = _fmt_pct(bl.get("red_ratio", ""))
+            board_effect = _fmt_pct(bl.get("big_drop_ratio", ""))
+            # 龙头支撑状态
+            leader_alive = float(ll.get("leader_alive_score", 0) or 0)
+            leader_breakdown = bool(ll.get("leader_breakdown_flag", False))
+            if leader_breakdown:
+                leader_support = "龙头断板"
+            elif leader_alive >= 80:
+                leader_support = "龙头强势"
+            elif leader_alive >= 50:
+                leader_support = "龙头一般"
+            elif leader_alive > 0:
+                leader_support = "龙头走弱"
+            else:
+                leader_support = "--"
+            # 跟风强度
+            front_row = float(bl.get("front_row_strength_score", 0) or 0)
+            if front_row >= 70:
+                follow_strength = "跟风活跃"
+            elif front_row >= 40:
+                follow_strength = "跟风一般"
+            elif front_row > 0:
+                follow_strength = "跟风偏弱"
+            else:
+                follow_strength = "--"
+
             summary = {
                 "primary_cycle_stage": str(cycle_row["final_cycle_state"] or "unknown"),
                 "action_bias": str(cycle_row.get("state_transition_reason") or ""),
                 "conclusion": "",
-                "main_net_inflow_sum": 0,
-                "top3_main_net_inflow_sum": 0,
-                "leader_main_net_inflow": float(ll.get("leader_stock_id", 0) or 0) if ll.get("leader_stock_id") else 0,
+                "main_net_inflow_sum": main_net_inflow_sum,
+                "top3_main_net_inflow_sum": top3_main_net_inflow_sum,
+                "leader_main_net_inflow": leader_inflow,
                 "event_chain_score": float(el.get("event_strength_score", 0) or 0),
                 "market_recognition_score": float(cycle_row["mainline_strength_score"] or 0),
-                "mainline_stability_score": 0,
-                "board_health_status": str(bl.get("red_ratio", "") or "--"),
-                "board_effect_status": str(bl.get("big_drop_ratio", "") or "--"),
-                "leader_support_status": "--",
-                "follow_strength_status": "--",
+                "mainline_stability_score": mainline_stability_score,
+                "board_health_status": board_health,
+                "board_effect_status": board_effect,
+                "leader_support_status": leader_support,
+                "follow_strength_status": follow_strength,
                 "fade_risk_score": float(cycle_row["fade_risk_score"] or 0),
                 "fade_watch": bool(cycle_row["fade_watch"]),
                 "fade_confirmed": bool(cycle_row["fade_confirmed"]),

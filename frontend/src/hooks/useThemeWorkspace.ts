@@ -35,6 +35,14 @@ export function useThemeWorkspace(subjectKey: string, options: UseThemeWorkspace
   const diagnostics = payload?.diagnostics;
   const themeName = typeof payload?.detail?.theme_name === 'string' ? payload.detail.theme_name : subjectKey;
   const summary = typeof payload?.detail?.summary === 'string' ? payload.detail.summary : '';
+  const detailHtml = typeof payload?.detail?.detail_html === 'string' ? payload.detail.detail_html : '';
+  const reasonShort = typeof payload?.detail?.reason_short === 'string' ? payload.detail.reason_short : '';
+  const nodeLevel = typeof payload?.detail?.node_level === 'string' ? payload.detail.node_level : '';
+  const parentSubjectKey = typeof payload?.detail?.parent_subject_key === 'string' ? payload.detail.parent_subject_key : '';
+  const historyCount = typeof payload?.detail?.history_count === 'number' ? payload.detail.history_count : 0;
+  const childrenCount = typeof payload?.detail?.children_count === 'number' ? payload.detail.children_count : 0;
+  const stockCount = typeof payload?.detail?.stock_count === 'number' ? payload.detail.stock_count : 0;
+  const bindingStatus = typeof payload?.detail?.binding_status === 'string' ? payload.detail.binding_status : '--';
   const effectiveTradeDate = String(analytics?.trade_date ?? payload?.trade_date ?? tradeDate ?? '').trim();
 
   // Computed ranked leader stocks
@@ -93,6 +101,14 @@ export function useThemeWorkspace(subjectKey: string, options: UseThemeWorkspace
     diagnostics,
     themeName,
     summary,
+    detailHtml,
+    reasonShort,
+    nodeLevel,
+    parentSubjectKey,
+    historyCount,
+    childrenCount,
+    stockCount,
+    bindingStatus,
     effectiveTradeDate,
     trendStats,
 

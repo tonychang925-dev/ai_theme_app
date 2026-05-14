@@ -34,6 +34,14 @@ export function ThemeWorkspacePage({ subjectKey }: Props) {
     diagnostics,
     themeName,
     summary,
+    detailHtml,
+    reasonShort,
+    nodeLevel,
+    parentSubjectKey,
+    historyCount,
+    childrenCount,
+    stockCount,
+    bindingStatus,
     effectiveTradeDate,
     trendStats,
   } = useThemeWorkspace(subjectKey, { tradeDate: tradeDate || undefined });
@@ -55,6 +63,15 @@ export function ThemeWorkspacePage({ subjectKey }: Props) {
               payload={payload}
               effectiveTradeDate={effectiveTradeDate}
               diagnostics={diagnostics}
+              summary={summary}
+              detailHtml={detailHtml}
+              reasonShort={reasonShort}
+              nodeLevel={nodeLevel}
+              parentSubjectKey={parentSubjectKey}
+              historyCount={historyCount}
+              childrenCount={childrenCount}
+              stockCount={stockCount}
+              bindingStatus={bindingStatus}
             />
 
             <PrimaryCycleCard summaryRow={summaryRow} />

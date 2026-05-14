@@ -47,7 +47,8 @@ export function AdminPage() {
   return (
     <main className="auth-shell">
       <div className="auth-card" style={{ maxWidth: 520 }}>
-        <h1 className="auth-title">用户管理</h1>
+        <h1 className="auth-title">AI 投资助理</h1>
+        <p className="auth-subtitle">用户管理</p>
         <p style={{ textAlign: 'center', color: '#6a7088', fontSize: 13, marginBottom: 20 }}>
           当前: <strong style={{ color: '#ffd700' }}>{user?.email}</strong> ({user?.role})
         </p>

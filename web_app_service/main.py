@@ -60,13 +60,14 @@ async def readyz():
     fatal: list[str] = []
     degraded: list[str] = []
 
-    # 1. PostgreSQL
+    # 1. PostgreSQL (connect directly to avoid internal pool access)
     try:
-        gw = await _get_gw()
-        async with gw._client.pool.acquire() as conn:
-            await conn.fetchval("SELECT 1")
+        import asyncpg
+        db_url = _os.getenv("DATABASE_URL", "postgresql://localhost:5432/stock_data_test")
+        conn = await asyncpg.connect(db_url, timeout=5)
+        await conn.fetchval("SELECT 1")
+        await conn.close()
         checks["postgres"] = "connected"
-        await gw.close()
     except Exception as exc:
         checks["postgres"] = f"unavailable: {exc}"
         fatal.append("postgres")

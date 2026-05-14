@@ -43,8 +43,8 @@ export function LoginPage() {
   return (
     <main className="auth-shell">
       <div className="auth-card">
-        <h1 className="auth-title">AI 投资驾驶舱</h1>
-        <p className="auth-subtitle">邮箱登录</p>
+        <h1 className="auth-title">AI 投资助理</h1>
+        <p className="auth-subtitle">Investment Intelligence</p>
         <form onSubmit={handleSubmit}>
           <input
             className="auth-input"

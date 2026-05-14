@@ -157,7 +157,7 @@ body:has(.mobile-shell) {
 }
 
 .mobile-entry-card strong {
-  color: #ffd700;
+  color: #c9a34d;
 }
 
 .mobile-entry-card__icon {
@@ -176,7 +176,7 @@ body:has(.mobile-shell) {
 .mobile-entry-card strong {
   display: block;
   margin-bottom: 7px;
-  color: #ffd700;
+  color: #c9a34d;
   font-size: 21px;
   line-height: 1.15;
 }
@@ -266,7 +266,7 @@ body:has(.mobile-shell) {
   margin: 0;
   font-size: 20px;
   font-weight: 700;
-  color: #ffd700;
+  color: #c9a34d;
 }
 
 .mobile-date-bar {
@@ -280,7 +280,7 @@ body:has(.mobile-shell) {
 .mobile-date-arrow {
   background: rgba(255,255,255,0.1);
   border: 2px solid rgba(255,255,255,0.25);
-  color: #ffd700;
+  color: #c9a34d;
   border-radius: 50%;
   width: 44px; height: 44px;
   font-size: 20px;
@@ -324,7 +324,7 @@ body:has(.mobile-shell) {
   margin: 0 0 10px;
   font-size: 16px;
   font-weight: 700;
-  color: #ffd700;
+  color: #c9a34d;
 }
 
 .mobile-card-text {
@@ -352,7 +352,7 @@ body:has(.mobile-shell) {
   gap: 4px;
 }
 .mobile-list-item__main strong {
-  font-size: 15px; color: #ffd700;
+  font-size: 15px; color: #c9a34d;
 }
 .mobile-list-item__main small {
   font-size: 13px; color: #7e85a0;
@@ -396,7 +396,7 @@ body:has(.mobile-shell) {
   display: flex; justify-content: space-between; align-items: center;
   margin-bottom: 6px;
 }
-.mobile-screener-name { font-size: 16px; color: #ffd700; }
+.mobile-screener-name { font-size: 16px; color: #c9a34d; }
 
 .mobile-level-badge {
   display: inline-block; padding: 2px 8px; border-radius: 6px;
@@ -498,7 +498,7 @@ body:has(.mobile-shell) {
 }
 .mobile-newtheme-badge {
   display: inline-block; padding: 1px 8px; border-radius: 4px;
-  background: #ffd700; color: #4a3800; font-size: 11px; font-weight: 700;
+  background: #c9a34d; color: #4a3800; font-size: 11px; font-weight: 700;
 }
 .mobile-intel-newtheme {
   border-color: rgba(255, 215, 0, 0.3) !important;
@@ -506,7 +506,7 @@ body:has(.mobile-shell) {
 }
 
 .mobile-intel-title {
-  margin: 0 0 4px; font-size: 15px; color: #ffd700; font-weight: 600;
+  margin: 0 0 4px; font-size: 15px; color: #c9a34d; font-weight: 600;
 }
 .mobile-intel-desc {
   margin: 0 0 6px; font-size: 13px; color: #7e85a0; line-height: 1.5;

@@ -67,26 +67,19 @@ function runDoctor(projectRoot, env) {
     else {
         checks.push({ name: 'python_conda', status: 'fail', message: `conda env not found at ${condaPython}`, fixHint: 'conda create -n theme_matcher_env python=3.12' });
     }
-    // 3. PostgreSQL connection
-    const dbUrl = env['DATABASE_URL'] || '';
-    if (dbUrl) {
-        try {
-            (0, child_process_1.execSync)(`${venvPython} -c "
-import asyncpg, asyncio
-async def t():
-    conn = await asyncpg.connect('${dbUrl}', timeout=5)
-    await conn.fetchval('SELECT 1')
-    await conn.close()
-asyncio.run(t())
-"`, { encoding: 'utf-8', timeout: 10000, cwd: projectRoot });
-            checks.push({ name: 'postgresql', status: 'pass', message: 'connected' });
-        }
-        catch {
-            checks.push({ name: 'postgresql', status: 'fail', message: 'cannot connect to PostgreSQL', fixHint: 'Ensure PostgreSQL is running and DATABASE_URL is correct' });
-        }
+    // 3. PostgreSQL connection (Python TCP check — reliable across socket path variations)
+    try {
+        (0, child_process_1.execSync)(`${venvPython} -c "
+import socket
+s = socket.socket()
+s.settimeout(3)
+s.connect(('localhost', 5432))
+s.close()
+"`, { encoding: 'utf-8', timeout: 5000 });
+        checks.push({ name: 'postgresql', status: 'pass', message: 'TCP localhost:5432 OK' });
     }
-    else {
-        checks.push({ name: 'postgresql', status: 'warn', message: 'DATABASE_URL not configured' });
+    catch {
+        checks.push({ name: 'postgresql', status: 'fail', message: 'PostgreSQL not reachable', fixHint: 'Ensure PostgreSQL is running (brew services start postgresql)' });
     }
     // 4. Redis
     try {

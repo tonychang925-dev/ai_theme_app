@@ -1,254 +1,250 @@
 {
-  "session_goal": "Rebuild A/B/C layer data for 4/15-4/30 using new chain (stock_processing_service) architecture, fix Layer A mainline inheritance bug, Layer B final_mainline_alive definition mismatch, and Layer C strong stock watch pool",
-  "current_task": "Debug BFF strong_watch/watch endpoint returning empty items despite SPS and DB having valid data",
+  "session_goal": "完善AI投资分析系统：移动端web访问、用户认证、CDP实时采集、情报台优化、题材工作台数据补全",
+  "current_task": "修复题材详情页analytics数据显示不完全：主线与周期数据已通（阶段分歧/市场19.40），但资金流入总/前3/龙头净流入、稳定性仍为0.00，需核查旧链脚本迁移",
   "constraints": [
-    "ALL code must be in stock_processing_service (new chain) — stock_service (old chain) is deprecated",
-    "No fallback, downgrade, or workaround logic — must fix root causes",
-    "Must strictly follow design document (个人投资助理-项目架构设计-第三阶段.md)",
-    "LLM must use real DeepSeek API with tiered logic per design doc §24",
-    "Replay must simulate actual daily post-market recap: collect all data → run A/B/C jobs → verify"
+    "新链架构：禁止直接SQL操作数据库，必须通过StockReadPort/SnapshotWritePort/AlgorithmStateWritePort/DatabaseGateway",
+    "SPS必须用theme_matcher_env（含torch/text2vec），不可用.venv",
+    "CDP数据只入库DB（subject_history_staging），不写本地JSONL/DOM快照",
+    "JWT认证使用localStorage存储token，SPA路由不刷新页面",
+    "Cloudflared免费隧道域名不稳定但可用nohup保持",
+    "移动端默认只显示event/new_theme类型情报项",
+    "前端无token时直接渲染LoginPage，不跳转闪烁"
   ],
   "decisions": [
     {
-      "topic": "table PK structure",
-      "decision": "Changed theme_mainline_identity_registry PK from (subject_key) to (subject_key, source_trade_date) for per-date independent rows",
-      "reason": "Single-row-per-subject design caused daily overwrites that killed inherited mainline status"
+      "topic": "JWT认证方案",
+      "decision": "login/register/me三个API端点 + AuthProvider全局状态 + localStorage存储token",
+      "reason": "无状态JWT，FastAPI原生支持"
     },
     {
-      "topic": "final_mainline_alive definition",
-      "decision": "Fixed four_layer_scoring_service.py:304 from 'final_mainline_alive = is_main_theme' to 'final_mainline_alive = (final_cycle_state != \"fade_confirmed\")'",
-      "reason": "Design doc §25.3 defines it as NOT fade_confirmed, not tied to Layer A identity status"
+      "topic": "用户角色权限",
+      "decision": "user和admin两个角色，首用户自动admin，admin可管理用户",
+      "reason": "简单够用，不需要复杂RBAC"
     },
     {
-      "topic": "identity gate fix",
-      "decision": "Relaxed ThemeCycleJudgementService L335 identity gate to allow prior_alive + has_rank subjects, not just current confirmed",
-      "reason": "Gate was blocking non-confirmed subjects from entering cycle computation, preventing abnormal/new themes from ever becoming mainlines"
+      "topic": "远程访问",
+      "decision": "cloudflared tunnel (免费) + web_app:8000服务前后端",
+      "reason": "ngrok有警告页，cloudflared无广告"
     },
     {
-      "topic": "LLM tiered review",
-      "decision": "Implemented 4-tier LLM call strategy: inherited→skip, bootstrap→skip, rule_mt→LLM API, near_threshold→LLM API, cold→deterministic",
-      "reason": "Design doc §24 specifies LLM only needed for specific scenarios, not all subjects"
+      "topic": "SPA鉴权",
+      "decision": "服务端根路径302 redirect + 客户端localStorage同步检查，无token直接渲染LoginPage",
+      "reason": "避免useAuth异步loading卡住页面"
     },
     {
-      "topic": "Universe builder architecture",
-      "decision": "Created MainlineIdentityUniverseBuilder with 6 sources: confirmed, prior_alive, hot_rank, abnormal, new_theme, cluster",
-      "reason": "Old chain scanned all 661 subjects; new chain should only track ~30-50 candidates (confirmed + alive + hot + abnormal)"
+      "topic": "CDP去重",
+      "decision": "从本地DedupStore JSON改为DB级ON CONFLICT + event_id hash作为subject_rank_id",
+      "reason": "本地缓存导致重复事件无法被识别为新事件"
     },
     {
-      "topic": "UPSERT protection",
-      "decision": "Enhanced Guard 2 to protect identity_status changes for confirmed subjects (not just is_main_theme=false)",
-      "reason": "Inherited subjects could have identity_status changed from confirmed to review_pending by upgrade_trigger path"
+      "topic": "CDP feed_date",
+      "decision": "DOM日期提取优先，失败fallback到subject_name解析（如'5月12日龙虎榜'），再fail back到capture_time",
+      "reason": "久赢恒丰App DOM可能不包含标准YYYY-MM-DD日期"
     },
     {
-      "topic": "C layer rebuild approach",
-      "decision": "Use BuildPostMarketRecapJob directly (not simplified rebuild) for C layer — remove hand-rolled rebuild_c_layer function",
-      "reason": "User required no fallback/simulation — must use real new chain Job pipeline"
+      "topic": "IntelFeed旧链数据",
+      "decision": "NewChainIntelFeedAdapter同时读取旧链news_event+subject_history和新链信号，event类型优先级最高",
+      "reason": "用户需要看到新闻事件，不是系统信号"
     },
     {
-      "topic": "DB timeout",
-      "decision": "Increased command_timeout from 30s to 120s in database config",
-      "reason": "get_strong_watch_seed_rows complex CTE query with 50K+ row tables needed >30s to complete"
+      "topic": "证据层修复",
+      "decision": "BuildThemeCycleEvidenceDailyJob加入bootstrap容器，BuildPostMarketRecapJob.run先执行evidence再执行cycle",
+      "reason": "5/13 theme_cycle_evidence_daily为0行导致主线强度分全为0"
+    },
+    {
+      "topic": "移动端日期导航",
+      "decision": "使用本地getFullYear/getMonth/getDate格式化替代toISOString()避免UTC时区偏移",
+      "reason": "toISOString在UTC+8会倒退一天导致右箭头无响应、左箭头退两天"
+    },
+    {
+      "topic": "AI选股后端",
+      "decision": "移除前端top_n参数，由StockMatchEngine自主决定输出数量",
+      "reason": "Engine内部有Dynamic TopK + LLM Judge裁决机制"
     }
   ],
   "files_touched": [
     {
-      "path": "stock_processing_service/domain/services/mainline_identity_universe_builder.py",
-      "summary": "New file (204 lines) — 6-source universe builder for identity candidate selection",
+      "path": "web_app_service/main.py",
+      "summary": "添加JWT认证API(login/me/password/admin)+根路径302redirect+SPA fallback+静态文件服务",
+      "type": "modified"
+    },
+    {
+      "path": "web_app_service/auth/__init__.py",
+      "summary": "JWT创建/验证模块，支持JWT_SECRET环境变量",
       "type": "created"
     },
     {
-      "path": "stock_processing_service/domain/services/mainline_state_transition_service.py",
-      "summary": "New file (195 lines) — theme-level mainline state transition service migrated from old chain 540-line version",
+      "path": "frontend/src/routes/auth/AuthProvider.tsx",
+      "summary": "AuthProvider全局状态：login后localStorage.setItem+window.location.replace(/mobile)",
       "type": "created"
     },
     {
-      "path": "stock_processing_service/application/jobs/build_cycle_judgement_job.py",
-      "summary": "New file (180 lines) — writes theme_cycle_judgement_v2 using CycleJudgementService + UniverseBuilder",
+      "path": "frontend/src/routes/auth/LoginPage.tsx",
+      "summary": "登录页：email+password+记住密码checkbox，直接捆绑进主JS",
       "type": "created"
     },
     {
-      "path": "stock_processing_service/application/jobs/build_mainline_state_job.py",
-      "summary": "New file (233 lines) — orchestrates identity+cycle → mainline_state_daily + transition",
+      "path": "frontend/src/routes/auth/AdminPage.tsx",
+      "summary": "用户管理页：添加用户+列表+退出登录",
       "type": "created"
     },
     {
-      "path": "replay_verify_abc.py",
-      "summary": "New file (157 lines) — replay script: Cycle→Identity→State→StrongWatch per date, with verification",
+      "path": "frontend/src/routes/mobile/MobileHomePage.tsx",
+      "summary": "标题改为'AI投资助理'亮黄，用户图标右上角，移除badge栏",
+      "type": "modified"
+    },
+    {
+      "path": "frontend/src/routes/mobile/MobileIntelPage.tsx",
+      "summary": "实时情报移动端：调取/api/v2/intel/feed过滤event/new_theme类型",
       "type": "created"
     },
     {
-      "path": "rebuild_abc_new_chain.py",
-      "summary": "New file (152 lines) — standalone rebuild script (later replaced by replay_verify_abc.py)",
+      "path": "frontend/src/routes/mobile/MobileProfilePage.tsx",
+      "summary": "账户页：修改密码+退出登录",
       "type": "created"
     },
     {
-      "path": "stock_processing_service/application/jobs/build_identity_job.py",
-      "summary": "Modified — added MainlineIdentityUniverseBuilder usage, inheritance logic (prior_confirmed+alive+not_fade→confirmed), tiered LLM, llm_applied accuracy fix, per-date identity_status override for inherited subjects",
+      "path": "frontend/src/App.tsx",
+      "summary": "AuthProvider包裹+简单localStorage同步鉴权+AuthGate组件",
+      "type": "modified"
+    },
+    {
+      "path": "stock_processing_service/application/services/intel_new_chain_adapter.py",
+      "summary": "情报台适配器：新链信号+旧链新闻事件合并、event优先级最高、新题材标记为new_theme、按时间降序排列",
+      "type": "modified"
+    },
+    {
+      "path": "stock_processing_service/application/jobs/build_stock_abnormal_signal_job.py",
+      "summary": "异动信号Job：全Gateway链路读取subject_stock_daily_snapshot+stock_daily_snapshot，写入stock_abnormal_signal",
+      "type": "modified"
+    },
+    {
+      "path": "stock_processing_service/application/jobs/build_theme_cycle_evidence_daily_job.py",
+      "summary": "修复dict→SimpleNamespace转换、添加missing字段默认值、修复连接释放问题",
       "type": "modified"
     },
     {
       "path": "stock_processing_service/application/jobs/build_post_market_recap_job.py",
-      "summary": "Modified — added identity_job + mainline_state_job + cycle_judgement_job dependencies, Step 3.5 pre-processing (Cycle→Identity→State), StockBarDTO fallback fix (limit_up_price/limit_down_price), ON CONFLICT guard enhancement",
+      "summary": "添加evidence_job依赖并在cycle_judgement之前执行",
       "type": "modified"
     },
     {
       "path": "stock_processing_service/application/orchestrators/bootstrap.py",
-      "summary": "Modified — registered BuildCycleJudgementJob, BuildMainlineStateJob; wired identity_job + mainline_state_job + cycle_judgement_job into BuildPostMarketRecapJob constructor",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/domain/services/cycle_evidence_builder.py",
-      "summary": "Modified — added from_subject_evidence_row() static method for subject-level evidence construction",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/domain/services/strong_stock_tracking_service.py",
-      "summary": "Modified — reverted broken_board ordering fix (user rejected threshold changes); kept original ordering",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/domain/services/w2s_candidate_service.py",
-      "summary": "Modified — reverted strong_background support_strength bypass (user rejected threshold changes)",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/contracts/dto/mainline_context_dto.py",
-      "summary": "Modified — added theme_name, fade_watch, fade_confirmed fields to MainlineCycleDTO; added theme_name, composite_score to MainlineIdentityDTO",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/ports/read_ports.py",
-      "summary": "Modified — added get_prior_mainline_state_daily to StockReadPort",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/ports/write_ports.py",
-      "summary": "Modified — added upsert_mainline_state_daily_rows, upsert_mainline_state_transition_rows to AlgorithmStateWritePort",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/infrastructure/gateway_adapters/db_theme_data_gateway.py",
-      "summary": "Modified — added get_prior_mainline_state_daily",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/infrastructure/gateway_adapters/db_stock_object_gateway.py",
-      "summary": "Modified — added upsert_theme_cycle_judgement_v2_rows, upsert_mainline_state_daily_rows, upsert_mainline_state_transition_rows with explicit callable checks",
-      "type": "modified"
-    },
-    {
-      "path": "database_service/managers/postgres_manager.py",
-      "summary": "Modified — added get_subject_rank_daily, get_new_subject_rank_entries, get_cluster_related_subjects, get_all_confirmed_mainlines, get_all_prior_alive_cycles, get_all_cycle_judgements, get_prior_mainline_state_daily, upsert_mainline_state_daily_rows, upsert_mainline_state_transition_rows; changed ON CONFLICT from (subject_key) to (subject_key, source_trade_date); enhanced Guard 2 in identity upsert; changed upsert_theme_mainline_identity_registry_rows to accept **kwargs",
-      "type": "modified"
-    },
-    {
-      "path": "database_service/config.py",
-      "summary": "Modified — increased command_timeout from 30s to 120s",
+      "summary": "注册BuildThemeCycleEvidenceDailyJob并传递给BuildPostMarketRecapJob",
       "type": "modified"
     },
     {
       "path": "stock_processing_service/api_app.py",
-      "summary": "Modified — increased screener timeout from 30s to 120s",
+      "summary": "主题工作台analytics构建(周期/排行/龙头)+stock enrichment+indentation修复",
       "type": "modified"
     },
     {
-      "path": "stock_processing_service/application/jobs/__init__.py",
-      "summary": "Modified — added BuildCycleJudgementJob, BuildMainlineStateJob exports",
+      "path": "database_service/managers/postgres_manager.py",
+      "summary": "添加user_accounts CRUD、stock_daily_snapshot查询、upsert_stock_abnormal_signal_rows、resolve_subject_keys_by_names、get_intel_subject_history",
       "type": "modified"
     },
     {
-      "path": "stock_processing_service/domain/services/__init__.py",
-      "summary": "Modified — added MainlineStateDailyDTO, MainlineStateTransitionDTO, MainlineStateTransitionService exports",
+      "path": "database_service/gateway.py",
+      "summary": "Gateway层：用户管理、stock查询、abnormal_signal写入、subject history读取",
       "type": "modified"
     },
     {
-      "path": "stock_service/services/four_layer_scoring_service.py",
-      "summary": "Modified — fixed final_mainline_alive from is_main_theme to (final_cycle_state != \"fade_confirmed\")",
+      "path": "services/jyhf_cdp_service/service.py",
+      "summary": "CDP服务：移除本地DedupStore、feed_date fallback用capture_time、移除JSONL写入和DOM快照保存",
       "type": "modified"
     },
     {
-      "path": "stock_service/services/theme_cycle_judgement_service.py",
-      "summary": "Modified — relaxed identity gate L335 to allow prior_alive + has_rank subjects",
+      "path": "services/jyhf_cdp_service/db_sink.py",
+      "summary": "DB写入：subject_rank_id使用event_id hash去重、description使用正确事件类型前缀",
       "type": "modified"
     },
     {
-      "path": "scripts/build_post_market_recap.py",
-      "summary": "Modified — UPSERT payload merge with || to preserve existing report field",
+      "path": "services/jyhf_cdp_service/extractors.py",
+      "summary": "提取器：日期正则改为\\d{4}-\\d{1,2}-\\d{1,2}支持无前导零、新题材更新标记、遇第二日期分栏停止",
+      "type": "modified"
+    },
+    {
+      "path": "stock_service/services/recap_service.py",
+      "summary": "复盘服务：leader_lines/watchlist_lines/abnormal_lines fallback从strong_stock_watch_pool读取",
+      "type": "modified"
+    },
+    {
+      "path": "docs/architecture/移动端web_app设计.md",
+      "summary": "添加用户管理模块设计+运维操作指南(启动/隧道/状态检查/问题排查)",
       "type": "modified"
     }
   ],
   "known_failures": [
     {
-      "type": "bug",
-      "location": "four_layer_scoring_service.py:304",
-      "summary": "final_mainline_alive was set to is_main_theme instead of NOT fade_confirmed, causing mainline death when market_ok=false",
+      "type": "indentation_bug",
+      "location": "api_app.py get_theme_workspace",
+      "summary": "ev_row查询在async with conn:块外部导致'connection released'错误",
       "resolved": true
     },
     {
-      "type": "bug",
-      "location": "theme_cycle_judgement_service.py:335",
-      "summary": "Identity gate blocked non-confirmed subjects from cycle computation, preventing abnormal/new themes from entering pipeline",
+      "type": "missing_dependency",
+      "location": "web_app启动",
+      "summary": "passlib未安装在.venv导致ModuleNotFoundError，已pip install",
       "resolved": true
     },
     {
-      "type": "bug",
-      "location": "theme_mainline_identity_registry PK",
-      "summary": "ON CONFLICT (subject_key) caused daily overwrites; confirmed mainlines lost on next day when rule engine downgraded them",
+      "type": "dict_vs_dto",
+      "location": "BuildThemeCycleEvidenceDailyJob",
+      "summary": "DBThemeDataGateway返回dict但domain builder期望DTO对象，已用SimpleNamespace转换+字段映射",
       "resolved": true
     },
     {
-      "type": "timeout",
-      "location": "get_strong_watch_seed_rows SQL",
-      "summary": "Complex CTE query on subject_stock_daily_snapshot (50K+ rows) timed out at 30s command_timeout",
+      "type": "pool_acquire_pattern",
+      "location": "BuildStockAbnormalSignalJob",
+      "summary": "直接使用gw._client.pool.acquire()违反架构规则，已改为Gateway方法调用",
       "resolved": true
     },
     {
-      "type": "api",
-      "location": "BFF /strong_watch/watch endpoint",
-      "summary": "Returns count=0 items=[] despite SPS returning 5 stocks. Likely cause: BFF httpx client timeout (10s) too short for SPS query that needs >30s. Diagnostics show source=stock_processing_read_api, partial=false — upstream was reached but response parsing failed or timeout occurred before data received.",
-      "resolved": false
-    },
-    {
-      "type": "bug",
-      "location": "BuildIdentityJob",
-      "summary": "Original len(grouped) reference caused NameError after universe refactoring removed grouped variable",
+      "type": "ON_CONFLICT_mismatch",
+      "location": "auction_watch_universe upsert",
+      "summary": "ON CONFLICT (trade_date,stock_id)不匹配唯一约束(trade_date,stock_id,subject_key)，已修复",
       "resolved": true
     },
     {
-      "type": "bug",
-      "location": "UniverseBuilder._add_confirmed / _add_prior_alive",
-      "summary": "Called get_mainline_identity_by_subject_keys([], trade_date) with empty list — DB method returns [] for empty input, causing confirmed/prior_alive sources to always be empty",
+      "type": "leader_llm_pipeline",
+      "location": "collection pipeline",
+      "summary": "queued_count=0导致theme_leader_candidate为空，已手动补跑build_theme_leader_candidate.py",
       "resolved": true
     },
     {
-      "type": "bug",
-      "location": "StockBarDTO fallback in BuildPostMarketRecapJob",
-      "summary": "Missing limit_up_price and limit_down_price in fallback constructor",
+      "type": "CDP_duplicate_events",
+      "location": "jyhf_cdp_service",
+      "summary": "本地DedupStore缓存导致新事件被标记为重复，已改为DB级去重",
       "resolved": true
     },
     {
-      "type": "timeout",
-      "location": "BuildPostMarketRecapJob.execute() via API",
-      "summary": "Screener API 30s timeout kills job before completion; increased to 120s",
+      "type": "spa_auth_guard_freezing",
+      "location": "App.tsx",
+      "summary": "多次尝试auth guard导致页面空白/卡验证身份，最终采用localStorage同步检查+直接渲染LoginPage",
+      "resolved": true
+    },
+    {
+      "type": "toISOString_timezone",
+      "location": "mobile date navigation",
+      "summary": "toISOString()在UTC+8导致日期偏移(右箭头无响应/左箭头退两天)，已改为本地格式化",
       "resolved": true
     }
   ],
   "open_questions": [
-    "BFF client _timeout (10s) needs to be increased for strong_watch endpoint to match SPS 120s command_timeout",
-    "State transitions mostly flat (5-6 per day) — is this correct for the 4/15-4/30 period or indicating insufficient state change detection?",
-    "Should BuildPostMarketRecapJob pre-steps (Cycle/Identity/State) be separated from the job itself as standalone pipeline steps?",
-    "C layer seed query performance: should subject_stock_daily_snapshot have additional composite indexes for the complex CTE?",
-    "Old chain build_mainline_identity_registry.py still uses ON CONFLICT (subject_key) — needs update for consistency"
+    "资金流入(总/前3/龙头净流入)为0.00：需要theme_capital_flow脚本迁移到新链架构",
+    "稳定性0.00：evidence kline_layer缺少theme_support_score字段",
+    "大盘环境总结和资金行为增强section为空：依赖market_environment_judgement和money_flow_enhanced独立脚本",
+    "移动端AI选股与电脑端结果不同：SPS用.venv(无torch)导致StockMatchEngine失效退回关键词匹配，start_new_chain_stack.sh已改为theme_matcher_env但需验证"
   ],
   "next_actions": [
-    "Fix BFF client timeout for strong_watch endpoint (increase _timeout or add per-endpoint timeout override)",
-    "Restart web_app_service (port 8000) to pick up any cached code changes",
-    "Verify frontend strong_watch page shows data after BFF fix",
-    "Run full 4/15-4/30 replay one final time with all fixes to confirm complete A/B/C coverage",
-    "Complete remaining migration items: BuildCycleJudgementJob standalone, K-line analysis, LLM review for mainline state, upgrade trigger full implementation"
+    "核查旧链theme_capital_flow/money_flow/market_environment脚本，按新链架构(WritePort→Gateway)迁移",
+    "补充evidence kline_layer的theme_support_score计算(ThemeKlineEvidenceBuilder)",
+    "验证SPS启动脚本theme_matcher_env切换后的AI选股一致性",
+    "在start_new_chain_stack.sh中固化SPS重启命令(避免手动kill)",
+    "leader_llm pipeline的queued_count=0问题排查：ThemeLeaderLlmQueueService.evaluate()为何判定所有主题不需要LLM审查"
   ],
   "metadata": {
-    "timestamp": "2026-05-10T10:27:27.931Z",
+    "timestamp": "2026-05-14T02:13:57.554Z",
     "model": "deepseek-v4-pro",
     "level": "emergency",
     "schema_version": "1.0"

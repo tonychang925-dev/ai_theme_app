@@ -1,110 +1,162 @@
+:root {
+  --bg-primary: #0a0e1a;
+  --bg-card: rgba(255,255,255,0.04);
+  --border-card: rgba(255,255,255,0.08);
+  --gold: #c9a34d;
+  --gold-dark: #b8860b;
+  --text-primary: #c9ccd6;
+  --text-secondary: #6a7088;
+  --accent-green: #4caf91;
+  --accent-red: #e06060;
+}
+
 .auth-shell {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #050816;
+  background: var(--bg-primary);
   padding: 20px;
 }
 
 .auth-card {
   width: 100%;
   max-width: 380px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
   border-radius: 16px;
-  padding: 32px 24px;
+  padding: 36px 28px;
 }
 
 .auth-title {
   margin: 0 0 4px;
   font-size: 24px;
-  font-weight: 800;
-  color: #ffd700;
+  font-weight: 700;
+  color: var(--gold);
   text-align: center;
+  letter-spacing: 0.5px;
 }
 
 .auth-subtitle {
-  margin: 0 0 24px;
-  font-size: 13px;
-  color: #6a7088;
+  margin: 0 0 28px;
+  font-size: 12px;
+  color: var(--text-secondary);
   text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .auth-input {
   width: 100%;
   padding: 12px 14px;
   margin-bottom: 12px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border-card);
   border-radius: 10px;
-  font-size: 15px;
-  color: #dbe0ed;
+  font-size: 14px;
+  color: var(--text-primary);
   outline: none;
   box-sizing: border-box;
+  transition: border-color 0.15s ease, background 0.15s ease;
 }
+
 .auth-input:focus {
-  border-color: rgba(255,215,0,0.5);
-  background: rgba(255,255,255,0.1);
+  border-color: rgba(201,163,77,0.4);
+  background: rgba(255,255,255,0.08);
 }
+
 .auth-input::placeholder { color: #4a5070; }
 
 .auth-btn {
   width: 100%;
   padding: 12px;
   margin-top: 4px;
-  background: linear-gradient(135deg, #b8860b, #ffd700);
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
   border: none;
   border-radius: 10px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: #1a1a2e;
   cursor: pointer;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 12px rgba(201,163,77,0.12);
+  transition: opacity 0.15s ease, transform 0.1s ease;
 }
-.auth-btn:active { opacity: 0.85; }
+
+.auth-btn:active { opacity: 0.85; transform: scale(0.99); }
 .auth-btn:disabled { opacity: 0.4; cursor: default; }
 
 .auth-error {
   margin: 0 0 8px;
   font-size: 13px;
-  color: #e06060;
+  color: var(--accent-red);
   text-align: center;
 }
 
 .auth-link {
   margin: 16px 0 0;
   font-size: 13px;
-  color: #5a6078;
+  color: var(--text-secondary);
   text-align: center;
 }
-.auth-link a { color: #ffd700; text-decoration: none; }
+
+.auth-link a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
 .auth-link a:hover { text-decoration: underline; }
 
 .auth-remember {
-  display: flex; align-items: center; gap: 6px;
-  font-size: 13px; color: #8a90a8; margin-bottom: 8px; cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #8a90a8;
+  margin-bottom: 8px;
+  cursor: pointer;
 }
-.auth-remember input { accent-color: #ffd700; }
+
+.auth-remember input { accent-color: var(--gold); }
 
 .auth-user-bar {
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 6px 12px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
   border-radius: 8px;
   font-size: 13px;
   color: #8a90a8;
 }
-.auth-user-bar strong { color: #ffd700; }
+
+.auth-user-bar strong { color: var(--gold); }
+
 .auth-logout-btn {
   margin-left: 8px;
   padding: 4px 10px;
-  background: rgba(255,100,100,0.15);
-  border: 1px solid rgba(255,100,100,0.25);
+  background: rgba(224,96,96,0.12);
+  border: 1px solid rgba(224,96,96,0.2);
   border-radius: 6px;
   font-size: 12px;
   color: #e08080;
   cursor: pointer;
+}
+
+.auth-select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border-card);
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--text-primary);
+  outline: none;
+  box-sizing: border-box;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236a7088' stroke-width='1.5' fill='none' /%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
 }
