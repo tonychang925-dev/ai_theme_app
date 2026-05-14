@@ -1,3 +1,4 @@
+import { useAuth } from '../auth/AuthProvider';
 import './mobile.css';
 
 interface MobileEntryCard {
@@ -45,14 +46,15 @@ const entryCards: MobileEntryCard[] = [
 ];
 
 export function MobileHomePage() {
+  const { user, logout } = useAuth();
+
   return (
     <main className="mobile-shell" aria-labelledby="mobile-page-title">
-      <section className="mobile-hero">
-        <div className="mobile-hero__badge">iOS HTML5 投资驾驶舱</div>
-        <h1 id="mobile-page-title">AI 投资移动入口</h1>
-        <p>
-          手机端负责展示和轻量触发，电脑端继续承担复盘生成、AI 选股、新闻理解与实时情报采集。
-        </p>
+      <section className="mobile-hero" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <h1 id="mobile-page-title" style={{ color: '#ffd700', margin: 0 }}>AI 投资助理</h1>
+        {user && (
+          <a href="/mobile/profile" style={{ fontSize: 28, textDecoration: 'none', flexShrink: 0 }} title={user.email}>👤</a>
+        )}
       </section>
 
       <section className="mobile-entry-grid" aria-label="移动端功能入口">

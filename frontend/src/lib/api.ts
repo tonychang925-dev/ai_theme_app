@@ -1,4 +1,4 @@
-export type IntelItemType = "all" | "event" | "event_review" | "theme_move" | "new_theme" | "stock_move";
+export type IntelItemType = "all" | "event" | "event_review" | "theme_move" | "new_theme" | "stock_move" | "recap" | "weak_to_strong" | "theme_cycle" | "theme_identity" | "stock_signal" | "theme_history";
 export type IntelSession = "all" | "pre" | "intra" | "post";
 
 export interface IntelFeedItem {
@@ -362,7 +362,7 @@ export async function fetchWorkspaceIntelContext(params: {
   if (params.subjectKey) query.set("subject_key", params.subjectKey);
   if (params.stockId) query.set("stock_id", params.stockId);
   if (params.limit) query.set("limit", String(params.limit));
-  return fetchJsonWithTimeout<IntelContextView>(`/api/v2/workspace/intel-context?${query.toString()}`, undefined, 10000);
+  return fetchJsonWithTimeout<IntelContextView>(`/api/v2/workspace/intel-context?${query.toString()}`, undefined, 20000);
 }
 
 export async function fetchWorkspaceMarketValidation(params: {
@@ -450,7 +450,7 @@ export async function fetchThemeWorkspace(subjectKey: string, tradeDate?: string
     include_children: "true",
     include_stocks: "true",
     include_leaders: "false",
-    stock_mapping_scope: "pool",
+    stock_mapping_scope: "all",
     history_limit: "8",
     children_limit: "8",
     stocks_limit: "10"
@@ -467,7 +467,7 @@ export async function fetchStockWorkspace(stockId: string): Promise<StockWorkspa
   const query = new URLSearchParams({
     include_themes: "true",
     include_leaders: "false",
-    mapping_scope: "pool",
+    mapping_scope: "all",
     themes_limit: "10"
   });
   const response = await fetch(`/api/v2/stock_workspace/${stockId}?${query.toString()}`);

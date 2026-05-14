@@ -74,52 +74,34 @@ class ScriptCommandRunner:
 
 
 class BuildStockAbnormalSignalRunner:
-    """异动信号检测 Runner — 直接调用旧链服务，消除子进程。
-
-    后续可替换为完全 Gateway-based 的新链服务。
-    """
+    """异动信号检测 Runner — 委托到 BuildStockAbnormalSignalJob（新链 Job 架构）。"""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        if context.container is None:
+            return CollectionTaskResult(status="failed", current_label="容器未注入", error_message="container is None")
         try:
-            import argparse
-            from pathlib import Path as _Path
-
-            trade_date = context.trade_date
+            from datetime import date as _date
             payload = context.payload
-            abnormal_filters = payload.get("abnormal_filters") or {}
             options = payload.get("options") or {}
-            proj_root = context.project_root or _Path("/Users/admin/Desktop/ai_theme_app")
+            abnormal_filters = payload.get("abnormal_filters") or {}
+            token = context.env.get("TUSHARE_TOKEN", "")
+            trade_date_val = _date.fromisoformat(context.trade_date)
 
-            ns = argparse.Namespace()
-            ns.trade_date = trade_date
-            ns.min_turnover_rate = float(options.get("min_turnover_rate", 3.0))
-            ns.min_composite_score = float(options.get("min_composite_score", 40.0))
-            ns.max_main_net_rank = int(options.get("max_main_net_rank", 200))
-            ns.limit = int(options.get("limit", 0))
-            ns.require_turnover = bool(abnormal_filters.get("turnover_rate"))
-            ns.require_main_net_inflow = bool(abnormal_filters.get("main_net_inflow"))
-            ns.require_hot_money_buy = bool(abnormal_filters.get("hot_money_buy"))
-            ns.require_institution_buy = bool(abnormal_filters.get("institution_buy"))
-            ns.require_tail_rush = bool(abnormal_filters.get("tail_rush"))
-            ns.token = context.env.get("TUSHARE_TOKEN", "")
-            ns.force_refresh_tail_auction = False
-            ns.details_root = str(proj_root / "theme_data_complete" / "stock_details")
-            ns.kline_root = str(proj_root / "theme_data_complete" / "_stock_kline" / "tushare" / "daily_bar")
-
-            from database_service.scripts.build_stock_abnormal_signal import main_async
-            exit_code = await main_async(args=ns)
-
+            job = context.container.build_stock_abnormal_signal
+            result = await job.execute(
+                trade_date=trade_date_val,
+                tushare_token=token,
+                min_turnover_rate=float(options.get("min_turnover_rate", 3.0)),
+                min_composite_score=float(options.get("min_composite_score", 40.0)),
+            )
+            ok = result.status in ("ok", "ok_no_signals", "ok_no_inputs")
             return CollectionTaskResult(
-                status="success" if exit_code == 0 else "failed",
-                current_label=f"异动信号检测完成 (exit={exit_code})",
-                logs=[f"abnormal_signal exit_code={exit_code}"],
+                status="success" if ok else "failed",
+                current_label=f"异动信号检测完成 ({result.status})",
+                logs=[f"abnormal_signal status={result.status}"],
             )
         except Exception as e:
-            return CollectionTaskResult(
-                status="failed",
-                current_label="异动信号检测异常",
-                error_message=str(e),
-            )
+            return CollectionTaskResult(status="failed", current_label="异动信号检测异常", error_message=str(e))
 
 
 class BuildDragonTigerObjectRunner:
@@ -156,60 +138,247 @@ class BuildDragonTigerObjectRunner:
 
 
 class AuctionSnapshotRunner:
-    """竞价快照 Runner — 进程内调用旧链服务（semi-service 模式）。"""
+    """竞价快照 Runner — 委托到 BuildAuctionSnapshotJob（新链 Job 架构）。"""
 
     def __init__(self, universe_source: str = "auction_watch_universe", max_stocks: int = 0) -> None:
         self._universe_source = universe_source
         self._max_stocks = max_stocks
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        if context.container is None:
+            return CollectionTaskResult(status="failed", current_label="容器未注入", error_message="container is None")
         try:
-            import argparse
-
+            from datetime import date as _date
             token = context.env.get("TUSHARE_TOKEN", "")
-            if not token:
-                return CollectionTaskResult(status="failed", current_label="缺少 Tushare token", error_message="TUSHARE_TOKEN not set")
-
-            ns = argparse.Namespace()
-            ns.trade_date = context.trade_date
-            ns.token = token
-            ns.allow_online_fetch = True
-            ns.force_refresh = True
-            ns.universe_source = self._universe_source
-            ns.max_stocks = self._max_stocks
-            ns.timeline_json = str(context.payload.get("auction_timeline_json", "") or "")
-            ns.source_trade_date = ""
-            ns.top_k = int(context.payload.get("auction_top_k", 20))
-            ns.proxy_ratio = float(context.payload.get("auction_proxy_ratio", 0.08))
-
-            from database_service.scripts.build_pre_market_auction_snapshot import main_async
-            exit_code = await main_async(args=ns)
-
+            trade_date_val = _date.fromisoformat(context.trade_date)
+            job = context.container.build_auction_snapshot
+            result = await job.execute(
+                trade_date=trade_date_val,
+                tushare_token=token,
+                universe_source=self._universe_source,
+                max_stocks=self._max_stocks,
+            )
             return CollectionTaskResult(
-                status="success" if exit_code == 0 else "failed",
-                current_label=f"竞价快照完成 (source={self._universe_source}, exit={exit_code})",
-                logs=[f"auction_snapshot source={self._universe_source} exit_code={exit_code}"],
+                status="success" if result.status == "ok" else "failed",
+                current_label=f"竞价快照完成 ({result.status})",
+                logs=[f"auction_snapshot status={result.status}"],
             )
         except Exception as e:
             return CollectionTaskResult(status="failed", current_label="竞价快照异常", error_message=str(e))
 
 
-class AuctionSignalRunner:
-    """竞价信号 Runner — 进程内调用旧链服务（semi-service 模式）。"""
+class JyhfSyncListsRunner:
+    """JYHF 题材列表同步 Runner — in-process 调用 sync_jyhf_to_local（semi-service 模式）。"""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
             import argparse
             ns = argparse.Namespace()
-            ns.trade_date = context.trade_date
-            ns.top_k = 40
-            ns.source_trade_date = ""
-            from database_service.scripts.build_pre_market_auction_signal import main_async
+            ns.token = context.env.get("JYHF_AUTH_TOKEN") or context.env.get("AUTHORIZATION") or None
+            ns.batch_id = None
+            ns.subject = None
+            ns.subjects_file = None
+            ns.full = False
+            ns.use_latest_list_subjects = False
+            ns.limit = 0
+            ns.types = "lists"
+            ns.history_mode = "full"
+            ns.history_page_size = 20
+            ns.history_max_pages = 12
+            ns.history_backfill_date = None
+            ns.trade_date = None
+            ns.resume = False
+            ns.skip_existing = False
+            ns.write_cursor = False
+            from sync_jyhf_to_local import main_async
             exit_code = await main_async(args=ns)
             return CollectionTaskResult(
                 status="success" if exit_code == 0 else "failed",
-                current_label=f"竞价信号生成完成 (exit={exit_code})",
-                logs=[f"auction_signal exit_code={exit_code}"],
+                current_label=f"JYHF 题材列表同步完成 (exit={exit_code})",
+                logs=[f"jyhf_sync_lists exit_code={exit_code}"],
+            )
+        except Exception as e:
+            return CollectionTaskResult(status="failed", current_label="JYHF 题材列表同步异常", error_message=str(e))
+
+
+class JyhfLoadSubjectNodeStagingRunner:
+    """JYHF 题材节点入库 Runner — in-process 调用 load_subject_node_staging（semi-service 模式）。"""
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        try:
+            from database_service.scripts.load_subject_node_staging import main_async
+            exit_code = await main_async()
+            return CollectionTaskResult(
+                status="success" if exit_code == 0 else "failed",
+                current_label=f"JYHF 题材节点入库完成 (exit={exit_code})",
+                logs=[f"jyhf_load_staging exit_code={exit_code}"],
+            )
+        except Exception as e:
+            return CollectionTaskResult(status="failed", current_label="JYHF 题材节点入库异常", error_message=str(e))
+
+
+class JyhfSyncDetailsRunner:
+    """JYHF 题材详情同步 Runner — in-process 调用 sync_jyhf_to_local（semi-service 模式）。"""
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        try:
+            import argparse
+            ns = argparse.Namespace()
+            ns.token = context.env.get("JYHF_AUTH_TOKEN") or context.env.get("AUTHORIZATION") or None
+            ns.batch_id = None
+            ns.subject = None
+            ns.subjects_file = None
+            ns.full = False
+            ns.use_latest_list_subjects = True
+            ns.limit = 0
+            ns.types = "details"
+            ns.history_mode = "full"
+            ns.history_page_size = 20
+            ns.history_max_pages = 12
+            ns.history_backfill_date = None
+            ns.trade_date = None
+            ns.resume = False
+            ns.skip_existing = False
+            ns.write_cursor = False
+            from sync_jyhf_to_local import main_async
+            exit_code = await main_async(args=ns)
+            return CollectionTaskResult(
+                status="success" if exit_code == 0 else "failed",
+                current_label=f"JYHF 题材详情同步完成 (exit={exit_code})",
+                logs=[f"jyhf_sync_details exit_code={exit_code}"],
+            )
+        except Exception as e:
+            return CollectionTaskResult(status="failed", current_label="JYHF 题材详情同步异常", error_message=str(e))
+
+
+class JyhfSyncStockDetailsRunner:
+    """JYHF 股票详情同步 Runner — in-process 调用 sync_jyhf_to_local（semi-service 模式）。"""
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        try:
+            import argparse
+            ns = argparse.Namespace()
+            ns.token = context.env.get("JYHF_AUTH_TOKEN") or context.env.get("AUTHORIZATION") or None
+            ns.batch_id = None
+            ns.subject = None
+            ns.subjects_file = None
+            ns.full = False
+            ns.use_latest_list_subjects = True
+            ns.limit = 0
+            ns.types = "stock_details"
+            ns.history_mode = "full"
+            ns.history_page_size = 20
+            ns.history_max_pages = 12
+            ns.history_backfill_date = None
+            ns.trade_date = context.trade_date
+            ns.resume = True
+            ns.skip_existing = True
+            ns.write_cursor = False
+            from sync_jyhf_to_local import main_async
+            exit_code = await main_async(args=ns)
+            return CollectionTaskResult(
+                status="success" if exit_code == 0 else "failed",
+                current_label=f"JYHF 股票详情同步完成 (exit={exit_code})",
+                logs=[f"jyhf_sync_stock_details exit_code={exit_code}"],
+            )
+        except Exception as e:
+            return CollectionTaskResult(status="failed", current_label="JYHF 股票详情同步异常", error_message=str(e))
+
+
+class JyhfImportStockDailyRunner:
+    """JYHF 股票日快照导入 Runner — in-process 调用 import_jyhf_stock_daily_incremental（semi-service 模式）。"""
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        try:
+            import argparse
+            ns = argparse.Namespace()
+            ns.subjects_file = None
+            ns.batch_id = None
+            ns.trade_date = context.trade_date
+            ns.data_root = str(context.project_root / "theme_data_complete") if context.project_root else "/Users/admin/Desktop/ai_theme_app/theme_data_complete"
+            from database_service.scripts.import_jyhf_stock_daily_incremental import main_async
+            exit_code = await main_async(args=ns)
+            return CollectionTaskResult(
+                status="success" if exit_code == 0 else "failed",
+                current_label=f"JYHF 股票日快照导入完成 (exit={exit_code})",
+                logs=[f"jyhf_import_stock_daily exit_code={exit_code}"],
+            )
+        except Exception as e:
+            return CollectionTaskResult(status="failed", current_label="JYHF 股票日快照导入异常", error_message=str(e))
+
+
+class JyhfSyncHistoryRunner:
+    """JYHF 历史事件同步 Runner — in-process 调用 sync_jyhf_to_local（semi-service 模式）。"""
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        try:
+            import argparse
+            batch_id = f"collection_jyhf_history_{context.trade_date.replace('-', '')}"
+            ns = argparse.Namespace()
+            ns.token = context.env.get("JYHF_AUTH_TOKEN") or context.env.get("AUTHORIZATION") or None
+            ns.batch_id = batch_id
+            ns.subject = None
+            ns.subjects_file = None
+            ns.full = False
+            ns.use_latest_list_subjects = True
+            ns.limit = 0
+            ns.types = "history"
+            ns.history_mode = "incremental"
+            ns.history_page_size = 20
+            ns.history_max_pages = 12
+            ns.history_backfill_date = context.trade_date
+            ns.trade_date = None
+            ns.resume = False
+            ns.skip_existing = False
+            ns.write_cursor = False
+            from sync_jyhf_to_local import main_async
+            exit_code = await main_async(args=ns)
+            return CollectionTaskResult(
+                status="success" if exit_code == 0 else "failed",
+                current_label=f"JYHF 历史事件同步完成 (exit={exit_code})",
+                logs=[f"jyhf_sync_history exit_code={exit_code}"],
+            )
+        except Exception as e:
+            return CollectionTaskResult(status="failed", current_label="JYHF 历史事件同步异常", error_message=str(e))
+
+
+class JyhfImportHistoryRunner:
+    """JYHF 历史事件导入 Runner — in-process 调用 import_jyhf_history_incremental（semi-service 模式）。"""
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        try:
+            import argparse
+            batch_id = f"collection_jyhf_history_{context.trade_date.replace('-', '')}"
+            ns = argparse.Namespace()
+            ns.subjects_file = context.payload.get("subjects_file", "")
+            ns.batch_id = batch_id
+            ns.mode = "append"
+            from database_service.scripts.import_jyhf_history_incremental import main_async
+            exit_code = await main_async(args=ns)
+            return CollectionTaskResult(
+                status="success" if exit_code == 0 else "failed",
+                current_label=f"JYHF 历史事件导入完成 (exit={exit_code})",
+                logs=[f"jyhf_import_history exit_code={exit_code}"],
+            )
+        except Exception as e:
+            return CollectionTaskResult(status="failed", current_label="JYHF 历史事件导入异常", error_message=str(e))
+
+
+class AuctionSignalRunner:
+    """竞价信号 Runner — 委托到 BuildAuctionSignalJob（新链 Job 架构）。"""
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        if context.container is None:
+            return CollectionTaskResult(status="failed", current_label="容器未注入", error_message="container is None")
+        try:
+            from datetime import date as _date
+            trade_date_val = _date.fromisoformat(context.trade_date)
+            job = context.container.build_auction_signal
+            result = await job.execute(trade_date=trade_date_val)
+            return CollectionTaskResult(
+                status="success" if result.status == "ok" else "failed",
+                current_label=f"竞价信号生成完成 ({result.status})",
+                logs=[f"auction_signal status={result.status}"],
             )
         except Exception as e:
             return CollectionTaskResult(status="failed", current_label="竞价信号生成异常", error_message=str(e))
@@ -268,6 +437,99 @@ class TushareKlineRunner:
             return CollectionTaskResult(
                 status="failed", current_label="Tushare日线采集异常", error_message=str(e),
             )
+
+
+class BuildLeaderLLMQueueRunner:
+    """龙头候选 LLM 审查队列 Runner — 进程内调用旧链服务（semi-service 模式）。"""
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        try:
+            import sys as _sys
+            _orig = _sys.argv[:]
+            _sys.argv = ["build_theme_leader_llm_queue.py", "--trade-date", context.trade_date]
+            try:
+                from database_service.scripts.build_theme_leader_llm_queue import main_async
+                exit_code = await main_async()
+            finally:
+                _sys.argv = _orig
+            return CollectionTaskResult(
+                status="success" if (exit_code or 0) == 0 else "failed",
+                current_label=f"龙头候选 LLM 审查队列构建完成 (exit={exit_code})",
+                logs=[f"leader_llm_queue exit_code={exit_code}"],
+            )
+        except Exception as e:
+            return CollectionTaskResult(status="failed", current_label="龙头候选 LLM 审查队列异常", error_message=str(e))
+
+
+class BuildLeaderLLMJudgementRunner:
+    """龙头候选 LLM 研判 Runner — 进程内调用旧链服务（semi-service 模式）。"""
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        try:
+            import sys as _sys
+            max_themes = str(context.payload.get("leader_llm_max_themes", 5))
+            _orig = _sys.argv[:]
+            _sys.argv = ["build_theme_leader_llm_judgement.py", "--trade-date", context.trade_date,
+                         "--only-queued", "--limit-themes", max_themes]
+            try:
+                from database_service.scripts.build_theme_leader_llm_judgement import main_async
+                exit_code = await main_async()
+            finally:
+                _sys.argv = _orig
+            return CollectionTaskResult(
+                status="success" if (exit_code or 0) == 0 else "failed",
+                current_label=f"龙头候选 LLM 研判完成 (exit={exit_code})",
+                logs=[f"leader_llm_judgement exit_code={exit_code}"],
+            )
+        except Exception as e:
+            return CollectionTaskResult(status="failed", current_label="龙头候选 LLM 研判异常", error_message=str(e))
+
+
+class CallLeaderLLMRunner:
+    """龙头候选 LLM 调用 Runner — 进程内调用旧链服务（semi-service 模式）。"""
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        try:
+            import sys as _sys
+            max_themes = str(context.payload.get("leader_llm_max_themes", 5))
+            _orig = _sys.argv[:]
+            _sys.argv = ["call_theme_leader_llm.py", "--trade-date", context.trade_date,
+                         "--limit", max_themes, "--limit-themes", max_themes,
+                         "--only-queued", "--only-pending"]
+            try:
+                from database_service.scripts.call_theme_leader_llm import main_async
+                exit_code = await main_async()
+            finally:
+                _sys.argv = _orig
+            return CollectionTaskResult(
+                status="success" if (exit_code or 0) == 0 else "failed",
+                current_label=f"龙头候选 LLM 调用完成 (exit={exit_code})",
+                logs=[f"call_leader_llm exit_code={exit_code}"],
+            )
+        except Exception as e:
+            return CollectionTaskResult(status="failed", current_label="龙头候选 LLM 调用异常", error_message=str(e))
+
+
+class BuildLeaderCandidateRunner:
+    """龙头候选构建 Runner — 进程内调用旧链服务（semi-service 模式）。"""
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        try:
+            import sys as _sys
+            _orig = _sys.argv[:]
+            _sys.argv = ["build_theme_leader_candidate.py", "--trade-date", context.trade_date]
+            try:
+                from database_service.scripts.build_theme_leader_candidate import main_async
+                exit_code = await main_async()
+            finally:
+                _sys.argv = _orig
+            return CollectionTaskResult(
+                status="success" if (exit_code or 0) == 0 else "failed",
+                current_label=f"龙头候选构建完成 (exit={exit_code})",
+                logs=[f"leader_candidate exit_code={exit_code}"],
+            )
+        except Exception as e:
+            return CollectionTaskResult(status="failed", current_label="龙头候选构建异常", error_message=str(e))
 
 
 class PostMarketRecapRunner:

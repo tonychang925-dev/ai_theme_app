@@ -932,11 +932,44 @@ class RecapService:
         sections.append(("周期与动作", cycle_lines[:15]))
         if transition_lines:
             sections.append(("主线迁移监控", transition_lines[:20]))
+        # leader_lines fallback: 新链 strong_stock_watch_pool 直接生成
+        if not leader_lines:
+            try:
+                watch_rows = await self.repository.fetch_strong_stock_watch_history(trade_date, lookback_days=1, limit=80)
+                seen_stocks: set[str] = set()
+                for w in (watch_rows or []):
+                    sid = str(w.get("stock_id", ""))
+                    if sid in seen_stocks:
+                        continue
+                    seen_stocks.add(sid)
+                    leader_lines.append(
+                        f"{w.get('theme_name', '--')}：{w.get('pool_entry_type', '观察')} "
+                        f"{w.get('stock_name', '--')}({sid})；"
+                        f"评分 {float(w.get('watch_score') or 0):.2f}；"
+                        f"状态 {w.get('watch_status', '--')}；"
+                        f"支撑 {w.get('support_type') or '--'}"
+                    )
+            except Exception:
+                pass
         sections.append(("强势股分层", leader_lines[:20]))
-        if watchlist_lines:
-            sections.append(("次日观察清单", watchlist_lines[:24]))
+        # 次日观察清单：fallback from strong_stock_watch_pool observe_only
+        if not watchlist_lines:
+            try:
+                watch_rows = await self.repository.fetch_strong_stock_watch_history(trade_date, lookback_days=1, limit=60)
+                for w in (watch_rows or []):
+                    if str(w.get("pool_entry_type", "")) == "observe_only":
+                        watchlist_lines.append(
+                            f"{w.get('theme_name', '--')}：{w.get('stock_name', '--')}"
+                            f"({w.get('stock_id', '')})；评分 {float(w.get('watch_score') or 0):.2f}"
+                        )
+            except Exception:
+                pass
+        sections.append(("次日观察清单", watchlist_lines[:24]))
         if stock_capital_flow_lines:
             sections.append(("主线股票资金流入前20", stock_capital_flow_lines[:20]))
+        # 当日异动：无数据时提示
+        if not abnormal_lines:
+            abnormal_lines.append("当日异动数据未生成，请检查 abnormal.signal 步骤是否正常执行")
         sections.extend(
             [
                 ("当日异动股与资金行为", abnormal_lines[:30]),

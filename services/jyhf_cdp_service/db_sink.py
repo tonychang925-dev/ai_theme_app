@@ -55,15 +55,16 @@ class DatabaseSink:
             $1, $2, $3, $4, $5,
             $6, $7, $8, $9
         )
-        ON CONFLICT (subject_key, subject_rank_id) DO NOTHING
         """
 
         count = 0
         async with pool.acquire() as conn:
-            async with conn.transaction():
-                for row in rows:
-                    result = await conn.execute(sql, *row)
-                    count += int(result.split()[-1]) if result and "INSERT" in result else 0
+            for row in rows:
+                try:
+                    await conn.execute(sql, *row)
+                    count += 1
+                except Exception:
+                    pass  # duplicate — 忽略
 
         self._logger.info("db_sink wrote %s/%s events to subject_history_staging", count, len(events))
         return count
@@ -76,14 +77,17 @@ class DatabaseSink:
 
 def _event_to_row(event: RawJyhfCdpEvent, batch_id: str) -> tuple:
     subject_key = _derive_subject_key(event.subject_name)
-    trade_date = _parse_date(event.trade_date)
+    trade_date = _parse_date(event.trade_date, event.subject_name)
     description = _build_description(event)
     pct_chg = event.pct_chg
     raw_json = json.dumps(event.model_dump(), ensure_ascii=False)
 
+    # CDP 事件用 event_id hash 作为 subject_rank_id 用于 DB 去重
+    import hashlib
+    rank_id = int(hashlib.md5(event.event_id.encode()).hexdigest()[:12], 16) % (10 ** 9)
     return (
         subject_key,        # subject_key
-        None,                # subject_rank_id (CDP events have no ranking)
+        rank_id,             # subject_rank_id (hash of event_id for dedup)
         trade_date,          # rank_date
         event.subject_name,  # subject_name
         description,         # description
@@ -102,19 +106,30 @@ def _derive_subject_key(subject_name: str) -> str:
     return key or subject_name.strip()
 
 
-def _parse_date(trade_date: str) -> date | None:
-    if not trade_date:
-        return None
-    try:
-        return date.fromisoformat(trade_date)
-    except ValueError:
-        return None
+def _parse_date(trade_date: str, subject_name: str = "") -> date | None:
+    # 1. 优先用 DOM 提取的 trade_date
+    if trade_date:
+        try:
+            return date.fromisoformat(trade_date)
+        except ValueError:
+            pass
+    # 2. 从 subject_name 中提取日期（如 "5月12日龙虎榜" → 2026-05-12）
+    import re
+    m = re.search(r'(\d{1,2})月(\d{1,2})日', subject_name)
+    if m:
+        month, day = int(m.group(1)), int(m.group(2))
+        try:
+            return date(datetime.now().year, month, day)
+        except ValueError:
+            pass
+    return None
 
 
 def _build_description(event: RawJyhfCdpEvent) -> str:
     parts: list[str] = []
     if event.driver_title:
-        parts.append(f"【驱动事件：{event.driver_title}】")
+        prefix = "【新题材更新：" if event.event_type == "新题材更新" else "【驱动事件："
+        parts.append(f"{prefix}{event.driver_title}】")
     if event.driver_desc:
         parts.append(event.driver_desc)
     if event.news_source:

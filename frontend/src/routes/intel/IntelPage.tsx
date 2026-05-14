@@ -55,7 +55,10 @@ export function IntelPage() {
 
   const handleItemClick = (itemId: string, primaryThemeKey: string | null) => {
     setSelectedItemId(itemId);
-    if (primaryThemeKey) setSelectedTheme(primaryThemeKey);
+    if (primaryThemeKey) {
+      setSelectedTheme(primaryThemeKey);
+      navigateTo(`/themes/${encodeURIComponent(primaryThemeKey)}`);
+    }
   };
 
   useEffect(() => {

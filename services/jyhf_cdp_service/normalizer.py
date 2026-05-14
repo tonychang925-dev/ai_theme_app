@@ -41,6 +41,7 @@ class JyhfEventNormalizer:
             driver_title=driver_title,
             driver_desc=driver_desc,
             news_source=str(event.get("news_source") or "") or None,
+            event_type=str(event.get("event_type") or "驱动事件"),
             raw_text=str(event.get("raw_text") or ""),
         )
 

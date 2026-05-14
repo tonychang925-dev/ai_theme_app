@@ -20,6 +20,13 @@ from stock_processing_service.ports import (
 )
 
 
+def _get(row, key, default=None):
+    """兼容 dict 和 DTO 的属性访问。"""
+    if isinstance(row, dict):
+        return row.get(key, default)
+    return getattr(row, key, default)
+
+
 class BuildThemeCycleEvidenceDailyJob:
     """Generate theme_cycle_evidence_daily from pool + bar data.
 
@@ -64,20 +71,45 @@ class BuildThemeCycleEvidenceDailyJob:
                 trace_id=trace_id,
             )
 
-        pool_rows = await self._read_port.get_subject_stock_pool_by_trade_date(trade_date)
+        # 兼容 dict/DTO：统一转为 SimpleNamespace 用于属性访问
+        from types import SimpleNamespace
+        def _ns(obj):
+            return SimpleNamespace(**obj) if isinstance(obj, dict) else obj
+
+        pool_rows_raw = await self._read_port.get_subject_stock_pool_by_trade_date(trade_date)
+        # DB 列名 → DTO 属性名映射（DBThemeDataGateway 返回原始列名）
+        _FIELD_MAP = {
+            "rank_order_raw": "rank_order", "limit_up_raw": "limit_up",
+            "is_leader_raw": "is_leader", "pool_rank": "rank_order",
+        }
+        for r in pool_rows_raw:
+            if isinstance(r, dict):
+                for old, new in _FIELD_MAP.items():
+                    if old in r and new not in r:
+                        r[new] = r[old]
+                r.setdefault("subject_name", r.get("theme_name") or r.get("subject_key", ""))
+                r.setdefault("metadata", {})
+                r.setdefault("pool_rank", r.get("rank_order") or r.get("rank_order_raw"))
+                r.setdefault("close_price", 0); r.setdefault("pct_chg", 0)
+                r.setdefault("limit_up", False); r.setdefault("is_leader", False)
+        pool_rows = [_ns(r) for r in pool_rows_raw]
         subject_keys = sorted({r.subject_key for r in pool_rows})
-        bars = await self._read_port.get_stock_daily_bars(trade_date)
+        bars_raw = await self._read_port.get_stock_daily_bars(trade_date)
+        bars = [_ns(b) for b in bars_raw]
 
         # Heat scores: read from pool metadata.
         heat_scores: dict[str, Decimal] = {}
         for r in pool_rows:
-            md = r.metadata if isinstance(r.metadata, dict) else {}
-            hs = md.get("heat_latest") or md.get("heat") or md.get("avg_heat_5d")
+            md = getattr(r, "metadata", None) or {}
+            if isinstance(md, dict):
+                hs = md.get("heat_latest") or md.get("heat") or md.get("avg_heat_5d")
+            else:
+                hs = None
             if hs is not None:
                 heat_scores[r.subject_key] = Decimal(str(hs))
 
         # Previous cycle states: prior TRADING day (not calendar -1).
-        calendar = await self._read_port.get_trade_calendar(trade_date)
+        calendar = _ns(await self._read_port.get_trade_calendar(trade_date))
         if calendar is None or calendar.prev_trade_date is None:
             raise RuntimeError(
                 f"Evidence job: trade calendar unavailable for {trade_date}. "
@@ -88,10 +120,11 @@ class BuildThemeCycleEvidenceDailyJob:
 
         previous_states: dict[str, str] = {}
         if subject_keys:
-            cycles = await self._read_port.get_mainline_cycle_by_subject_keys(
+            cycles_raw = await self._read_port.get_mainline_cycle_by_subject_keys(
                 subject_keys=subject_keys,
                 trade_date=prev_trade_date,
             )
+            cycles = [_ns(c) for c in cycles_raw]
             for c in cycles:
                 if c.final_cycle_state:
                     previous_states[c.subject_key] = c.final_cycle_state
@@ -101,10 +134,11 @@ class BuildThemeCycleEvidenceDailyJob:
         from stock_processing_service.contracts.dto import SubjectEventStatsDTO
         event_stats_by_subject: dict[str, object] = {}
         if subject_keys:
-            event_stats_list = await self._read_port.get_subject_event_stats(
+            event_stats_raw = await self._read_port.get_subject_event_stats(
                 trade_date=trade_date,
                 subject_keys=subject_keys,
             )
+            event_stats_list = [_ns(e) for e in event_stats_raw]
             for e in event_stats_list:
                 event_stats_by_subject[str(e.subject_key)] = e
             for sk in subject_keys:

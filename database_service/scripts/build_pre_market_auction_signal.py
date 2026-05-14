@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+from typing import Any
 import json
 import os
 import sys
@@ -230,12 +231,16 @@ async def upsert_rows(manager: PostgresDatabaseManager, items):
         await conn.executemany(sql, payload)
 
 
-async def main_async(args: argparse.Namespace | None = None) -> int:
+async def main_async(args: argparse.Namespace | None = None, *, db_manager: Any = None) -> int:
     if args is None:
         args = parse_args()
     trade_date_value = _parse_trade_date(args.trade_date)
-    manager = PostgresDatabaseManager(get_postgres_config())
-    await manager.connect()
+    manager_owned = db_manager is None
+    if manager_owned:
+        manager = PostgresDatabaseManager(get_postgres_config())
+        await manager.connect()
+    else:
+        manager = db_manager
     try:
         await ensure_tables(manager)
         watch_map = await fetch_watch_universe(manager, trade_date_value)
@@ -310,7 +315,8 @@ async def main_async(args: argparse.Namespace | None = None) -> int:
             )
         return 0
     finally:
-        await manager.disconnect()
+        if manager_owned:
+            await manager.disconnect()
 
 
 if __name__ == "__main__":

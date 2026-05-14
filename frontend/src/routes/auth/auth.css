@@ -1,0 +1,110 @@
+.auth-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #050816;
+  padding: 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 32px 24px;
+}
+
+.auth-title {
+  margin: 0 0 4px;
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffd700;
+  text-align: center;
+}
+
+.auth-subtitle {
+  margin: 0 0 24px;
+  font-size: 13px;
+  color: #6a7088;
+  text-align: center;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  font-size: 15px;
+  color: #dbe0ed;
+  outline: none;
+  box-sizing: border-box;
+}
+.auth-input:focus {
+  border-color: rgba(255,215,0,0.5);
+  background: rgba(255,255,255,0.1);
+}
+.auth-input::placeholder { color: #4a5070; }
+
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 4px;
+  background: linear-gradient(135deg, #b8860b, #ffd700);
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a2e;
+  cursor: pointer;
+}
+.auth-btn:active { opacity: 0.85; }
+.auth-btn:disabled { opacity: 0.4; cursor: default; }
+
+.auth-error {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: #e06060;
+  text-align: center;
+}
+
+.auth-link {
+  margin: 16px 0 0;
+  font-size: 13px;
+  color: #5a6078;
+  text-align: center;
+}
+.auth-link a { color: #ffd700; text-decoration: none; }
+.auth-link a:hover { text-decoration: underline; }
+
+.auth-remember {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 13px; color: #8a90a8; margin-bottom: 8px; cursor: pointer;
+}
+.auth-remember input { accent-color: #ffd700; }
+
+.auth-user-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  font-size: 13px;
+  color: #8a90a8;
+}
+.auth-user-bar strong { color: #ffd700; }
+.auth-logout-btn {
+  margin-left: 8px;
+  padding: 4px 10px;
+  background: rgba(255,100,100,0.15);
+  border: 1px solid rgba(255,100,100,0.25);
+  border-radius: 6px;
+  font-size: 12px;
+  color: #e08080;
+  cursor: pointer;
+}

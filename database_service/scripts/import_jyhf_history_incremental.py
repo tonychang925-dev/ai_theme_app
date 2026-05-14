@@ -574,12 +574,13 @@ async def sync_subjects(manager: PostgresDatabaseManager, subject_keys: Sequence
     return len(history_rows), len(rank_rows)
 
 
-async def main() -> int:
+async def main(args=None) -> int:
     if not HISTORY_DIR.exists():
         print(f"[ERROR] history dir not found: {HISTORY_DIR}")
         return 1
 
-    args = parse_args()
+    if args is None:
+        args = parse_args()
     batch_id = args.batch_id or f"jyhf_history_{datetime.now().strftime('%Y%m%d%H%M%S')}"
     subject_keys = _load_subject_keys(args.subjects_file)
     if subject_keys is None:
@@ -600,6 +601,8 @@ async def main() -> int:
     finally:
         await manager.disconnect()
 
+
+main_async = main  # in-process entry point alias
 
 if __name__ == "__main__":
     raise SystemExit(asyncio.run(main()))

@@ -156,6 +156,10 @@ body:has(.mobile-shell) {
   margin-top: 22px;
 }
 
+.mobile-entry-card strong {
+  color: #ffd700;
+}
+
 .mobile-entry-card__icon {
   display: inline-grid;
   flex: 0 0 48px;
@@ -172,7 +176,7 @@ body:has(.mobile-shell) {
 .mobile-entry-card strong {
   display: block;
   margin-bottom: 7px;
-  color: #f8fafc;
+  color: #ffd700;
   font-size: 21px;
   line-height: 1.15;
 }
@@ -233,4 +237,259 @@ body:has(.mobile-shell) {
   .mobile-safety-note {
     width: min(100%, 820px);
   }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   Phase 2 — /mobile/recap 每日复盘页
+   ══════════════════════════════════════════════════════════════════════ */
+
+.mobile-page-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px 0;
+}
+
+.mobile-back-btn {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #9aa0b0;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.mobile-back-btn:active { background: rgba(255,255,255,0.15); color: #fff; }
+
+.mobile-page-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffd700;
+}
+
+.mobile-date-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 12px 16px;
+}
+
+.mobile-date-arrow {
+  background: rgba(255,255,255,0.1);
+  border: 2px solid rgba(255,255,255,0.25);
+  color: #ffd700;
+  border-radius: 50%;
+  width: 44px; height: 44px;
+  font-size: 20px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.mobile-date-arrow:active { background: rgba(255,215,0,0.3); color: #fff; }
+
+.mobile-date-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #c8cfe0;
+  min-width: 80px;
+  text-align: center;
+}
+
+.mobile-recap-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 16px 60px;
+}
+
+.mobile-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.mobile-card--warn {
+  border-color: rgba(255,180,60,0.2);
+  background: rgba(255,180,60,0.04);
+}
+
+.mobile-card-title {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffd700;
+}
+
+.mobile-card-text {
+  margin: 0;
+  font-size: 14px;
+  color: #939bb5;
+  line-height: 1.5;
+}
+
+.mobile-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mobile-list-item {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.mobile-list-item:last-child { border-bottom: none; }
+
+.mobile-list-item__main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.mobile-list-item__main strong {
+  font-size: 15px; color: #ffd700;
+}
+.mobile-list-item__main small {
+  font-size: 13px; color: #7e85a0;
+}
+
+.mobile-stock-id {
+  font-weight: 400;
+  font-size: 12px;
+  color: #5e6580;
+  margin-left: 6px;
+}
+
+.mobile-reason {
+  color: #6b95d4 !important;
+  font-style: italic;
+}
+
+.mobile-risk-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  color: #cda044;
+  line-height: 1.6;
+}
+
+.mobile-empty {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 15px;
+  color: #6a7088;
+}
+.mobile-empty.error { color: #e06060; }
+
+/* ══════════════════════════════════════════════════════════════════════
+   Phase 3 — /mobile/screener AI选股页
+   ══════════════════════════════════════════════════════════════════════ */
+
+.mobile-screener-card { padding: 14px 16px; }
+
+.mobile-screener-head {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 6px;
+}
+.mobile-screener-name { font-size: 16px; color: #ffd700; }
+
+.mobile-level-badge {
+  display: inline-block; padding: 2px 8px; border-radius: 6px;
+  font-size: 12px; font-weight: 700; color: #fff;
+}
+.mobile-level-badge.level-A { background: #2ecc71; }
+.mobile-level-badge.level-B { background: #3498db; }
+.mobile-level-badge.level-C { background: #7f8c8d; }
+
+.mobile-screener-meta {
+  display: flex; gap: 12px; align-items: center;
+  margin-bottom: 8px;
+}
+.mobile-screener-score {
+  font-size: 20px; font-weight: 800; color: #5dade2;
+}
+.mobile-screener-source {
+  font-size: 11px; color: #6a7088;
+  background: rgba(255,255,255,0.06); padding: 2px 8px; border-radius: 4px;
+}
+
+.mobile-screener-info p {
+  margin: 4px 0; font-size: 13px; color: #939bb5; line-height: 1.4;
+}
+.mobile-screener-info p small {
+  color: #6a7088; margin-right: 6px; font-size: 11px; text-transform: uppercase;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   Phase 4 — /mobile/news-recommend 新闻荐股页
+   ══════════════════════════════════════════════════════════════════════ */
+
+.mobile-news-input {
+  width: 100%; min-height: 120px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 15px; color: #dbe0ed; line-height: 1.5;
+  resize: vertical;
+  font-family: inherit;
+}
+.mobile-news-input::placeholder { color: #5a6078; }
+.mobile-news-input:focus {
+  outline: none;
+  border-color: rgba(93,173,226,0.4);
+  background: rgba(255,255,255,0.07);
+}
+
+.mobile-submit-btn {
+  width: 100%; margin-top: 10px;
+  padding: 12px;
+  background: linear-gradient(135deg, #2e86c1, #5dade2);
+  border: none; border-radius: 10px;
+  font-size: 16px; font-weight: 700; color: #fff;
+  cursor: pointer;
+}
+.mobile-submit-btn:active { opacity: 0.85; }
+.mobile-submit-btn:disabled {
+  opacity: 0.4; cursor: default;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   Phase 2+ — /mobile/intel 实时情报页
+   ══════════════════════════════════════════════════════════════════════ */
+
+.mobile-intel-head {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 4px;
+}
+.mobile-intel-time {
+  font-size: 12px; color: #5a6078;
+}
+.mobile-newtheme-badge {
+  display: inline-block; padding: 1px 8px; border-radius: 4px;
+  background: #ffd700; color: #4a3800; font-size: 11px; font-weight: 700;
+}
+.mobile-intel-newtheme {
+  border-color: rgba(255, 215, 0, 0.3) !important;
+  background: rgba(255, 215, 0, 0.04) !important;
+}
+
+.mobile-intel-title {
+  margin: 0 0 4px; font-size: 15px; color: #ffd700; font-weight: 600;
+}
+.mobile-intel-desc {
+  margin: 0 0 6px; font-size: 13px; color: #7e85a0; line-height: 1.5;
+}
+.mobile-intel-themes {
+  display: flex; gap: 6px; flex-wrap: wrap;
+}
+.mobile-theme-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 4px;
+  font-size: 11px; background: rgba(93,173,226,0.12); color: #5dade2;
+}
 }

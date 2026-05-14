@@ -449,6 +449,129 @@ def extract_driver_events(cdp: CDPClient, subject_map: dict[str, str]) -> list[d
     return enriched
 
 
+def extract_child_stock_reasons(cdp: CDPClient, subject_id: str) -> list[dict]:
+    """Extract children hierarchy with per-stock reasons from subject detail page.
+
+    Navigates to /subject/detail/:id and parses the children sections.
+    Each child (参股/合作/...) contains stocks with 入选理由 (e.g., "持股第7").
+
+    Returns list of dicts with keys:
+      subject_key, child_name, child_full_name, stock_id, stock_name, reason, sort_order
+    """
+    print(f"  [CHILD-STOCK] Subject {subject_id} ...")
+    cdp.navigate(f"/subject/detail/{subject_id}")
+
+    data = cdp.evaluate(f"""
+    (function() {{
+        var text = document.body.innerText;
+        var results = [];
+        var parentSubjectId = '{subject_id}';
+
+        // Find children sections: JYHF app displays children as sections
+        // Pattern: "child_name (N只)" then stock list with reasons
+        // Look for known child types: 参股, 合作, 供应商, 竞争对手, etc.
+        var childTypes = ['参股', '合作', '供应商', '客户', '竞争对手', '合作伙伴', '关联方', '子公司', '母公司'];
+
+        // Split text by common child section headers
+        var lines = text.split('\\n');
+        var currentChild = null;
+        var inStockSection = false;
+        var stockEntries = [];
+
+        for (var i = 0; i < lines.length; i++) {{
+            var line = lines[i].trim();
+            if (!line) continue;
+
+            // Check if this line starts a new child section
+            var foundChild = false;
+            for (var c = 0; c < childTypes.length; c++) {{
+                if (line.startsWith(childTypes[c]) && line.length < 30) {{
+                    // Save previous child's stocks
+                    if (currentChild && stockEntries.length > 0) {{
+                        for (var s = 0; s < stockEntries.length; s++) {{
+                            results.push({{
+                                subject_key: parentSubjectId,
+                                child_name: currentChild,
+                                child_full_name: parentSubjectId + '-' + currentChild,
+                                stock_id: stockEntries[s].stock_id || '',
+                                stock_name: stockEntries[s].stock_name || '',
+                                reason: stockEntries[s].reason || '',
+                                sort_order: s + 1
+                            }});
+                        }}
+                    }}
+                    // Start new child
+                    currentChild = childTypes[c];
+                    stockEntries = [];
+                    inStockSection = true;
+                    foundChild = true;
+                    break;
+                }}
+            }}
+            if (foundChild) continue;
+
+            // Parse stock entry lines: typically "stock_name stock_id reason" or "stock_name reason"
+            if (inStockSection && currentChild) {{
+                // Stock code pattern: 6 digits
+                var stockIdMatch = line.match(/(\\d{{6}})/);
+                var reasonMatch = line.match(/[（(]([^）)]+)[）)]/);
+
+                if (stockIdMatch || (line.length > 4 && line.length < 80)) {{
+                    var entry = {{
+                        stock_id: stockIdMatch ? stockIdMatch[1] : '',
+                        stock_name: '',
+                        reason: reasonMatch ? reasonMatch[1] : ''
+                    }};
+
+                    // Stock name is the part before the stock ID or the whole line if no ID
+                    if (stockIdMatch) {{
+                        var beforeId = line.substring(0, line.indexOf(stockIdMatch[1])).trim();
+                        entry.stock_name = beforeId || line.substring(0, 20).trim();
+                    }} else {{
+                        // No stock ID found - might be name only
+                        entry.stock_name = line.substring(0, 30).trim();
+                    }}
+
+                    // If no reason in parentheses, use the rest of the line
+                    if (!entry.reason && stockIdMatch) {{
+                        var afterId = line.substring(line.indexOf(stockIdMatch[1]) + 6).trim();
+                        if (afterId && afterId.length > 1 && afterId.length < 60) {{
+                            entry.reason = afterId;
+                        }}
+                    }}
+
+                    stockEntries.push(entry);
+                }}
+            }}
+        }}
+
+        // Save last child's stocks
+        if (currentChild && stockEntries.length > 0) {{
+            for (var s = 0; s < stockEntries.length; s++) {{
+                results.push({{
+                    subject_key: parentSubjectId,
+                    child_name: currentChild,
+                    child_full_name: parentSubjectId + '-' + currentChild,
+                    stock_id: stockEntries[s].stock_id || '',
+                    stock_name: stockEntries[s].stock_name || '',
+                    reason: stockEntries[s].reason || '',
+                    sort_order: s + 1
+                }});
+            }}
+        }}
+
+        return JSON.stringify({{results: results, raw_text_preview: text.substring(0, 500)}});
+    }})()
+    """)
+    result = json.loads(data) if isinstance(data, str) else (data or {})
+    items = result.get("results", []) if isinstance(result, dict) else []
+    raw_preview = result.get("raw_text_preview", "") if isinstance(result, dict) else ""
+    print(f"  -> Extracted {len(items)} child-stock reasons (preview: {raw_preview[:120]})")
+    for item in items[:5]:
+        print(f"     [{item['child_name']}] {item['stock_id']} {item['stock_name']}: {item['reason'][:80]}")
+    return items
+
+
 def extract_subject_detail(cdp: CDPClient, subject_id: str) -> dict | None:
     """Extract subject detail data including pct_chg and stock list.
 

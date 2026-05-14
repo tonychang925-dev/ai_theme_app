@@ -468,8 +468,9 @@ async def refresh_current_mapping(
     return int(map_count or 0), int(staging_count or 0), int(serving_count or 0)
 
 
-async def main() -> int:
-    args = parse_args()
+async def main(args=None) -> int:
+    if args is None:
+        args = parse_args()
     batch_id = args.batch_id or f"jyhf_stock_daily_import_{args.trade_date}"
     data_root = Path(args.data_root).resolve()
     subject_keys = _load_subject_keys(args.subjects_file)
@@ -496,6 +497,8 @@ async def main() -> int:
     finally:
         await manager.disconnect()
 
+
+main_async = main  # in-process entry point alias (already async)
 
 if __name__ == "__main__":
     raise SystemExit(asyncio.run(main()))

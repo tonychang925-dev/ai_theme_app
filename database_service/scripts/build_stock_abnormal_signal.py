@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+from typing import Any
 import json
 import os
 import sys
@@ -138,6 +139,8 @@ def load_current_inputs(trade_date: str, details_root: Path, min_turnover_rate: 
                 if limit and len(result) >= limit:
                     return result
     return result
+
+
 
 
 def apply_turnover_rank(rows: list[StockAbnormalInput]) -> list[StockAbnormalInput]:
@@ -580,7 +583,67 @@ async def upsert_rows(manager: PostgresDatabaseManager, rows):
         )
 
 
-async def main_async(args: argparse.Namespace | None = None) -> int:
+async def _load_current_inputs_from_db(trade_date: str, min_turnover_rate: float = 3.0, limit: int = 0) -> list[StockAbnormalInput]:
+    """从 subject_stock_daily_snapshot 读取输入（新链 JYHF 同步不写本地 JSONL）。"""
+    from datetime import date as _date
+    td = _date.fromisoformat(trade_date)
+    manager = PostgresDatabaseManager(get_postgres_config())
+    await manager.connect()
+    try:
+        async with manager.pool.acquire() as conn:
+            rows = await conn.fetch(
+                "SELECT trade_date, subject_key, stock_id, stock_name, "
+                "open_price, high_price, low_price, close_price, pre_close, "
+                "pct_chg, volume, amount, raw_json "
+                "FROM subject_stock_daily_snapshot WHERE trade_date = $1::date",
+                td,
+            )
+            rows = [dict(r) for r in rows]
+    finally:
+        await manager.disconnect()
+    result: list[StockAbnormalInput] = []
+    for r in rows:
+        stock_name = str(r.get("stock_name") or "").strip()
+        if _is_st_stock(stock_name):
+            continue
+        raw = r.get("raw_json") or {}
+        if isinstance(raw, str):
+            try: raw = json.loads(raw)
+            except Exception: raw = {}
+        if isinstance(raw, list):
+            turnover_rate = _to_float(raw[18] if len(raw) > 18 else None)
+            volume_ratio = _to_float(raw[17] if len(raw) > 17 else None)
+            main_net_inflow = _to_float(raw[35] if len(raw) > 35 else None)
+        else:
+            turnover_rate = _to_float(raw.get("turnover_rate"))
+            volume_ratio = _to_float(raw.get("volume_ratio"))
+            main_net_inflow = _to_float(raw.get("main_net_inflow"))
+        if turnover_rate < min_turnover_rate:
+            continue
+        result.append(StockAbnormalInput(
+            trade_date=trade_date,
+            subject_key=str(r.get("subject_key", "")),
+            theme_name="",
+            stock_id=str(r.get("stock_id", "")).strip().upper(),
+            stock_name=stock_name,
+            open_price=_to_float(r.get("open_price")),
+            high_price=_to_float(r.get("high_price")),
+            low_price=_to_float(r.get("low_price")),
+            close_price=_to_float(r.get("close_price")),
+            pre_close=_to_float(r.get("pre_close")),
+            pct_chg=_to_float(r.get("pct_chg")),
+            volume=_to_float(r.get("volume")),
+            amount=_to_float(r.get("amount")),
+            volume_ratio=volume_ratio,
+            turnover_rate=turnover_rate,
+            main_net_inflow=main_net_inflow,
+        ))
+        if limit and len(result) >= limit:
+            return result
+    return result
+
+
+async def main_async(args: argparse.Namespace | None = None, *, db_manager: Any = None) -> int:
     if args is None:
         args = parse_args()
     service = StockAbnormalSignalService()
@@ -590,9 +653,13 @@ async def main_async(args: argparse.Namespace | None = None) -> int:
         min_turnover_rate=args.min_turnover_rate,
         limit=args.limit,
     )
+    # 新链 Fallback: JYHF 同步已不走本地 JSONL，改为从 DB 读取
+    if not raw_inputs:
+        raw_inputs = await _load_current_inputs_from_db(args.trade_date, args.min_turnover_rate, args.limit)
     ranked_inputs = apply_main_net_inflow_rank(apply_turnover_rank(raw_inputs))
-    manager = PostgresDatabaseManager(get_postgres_config())
-    await manager.connect()
+    manager = db_manager if db_manager else PostgresDatabaseManager(get_postgres_config())
+    if not db_manager:
+        await manager.connect()
     try:
         await ensure_tables(manager)
         dragon_tiger_map = await fetch_dragon_tiger_fact_map(manager, args.trade_date)
@@ -651,7 +718,8 @@ async def main_async(args: argparse.Namespace | None = None) -> int:
             )
         return 0
     finally:
-        await manager.disconnect()
+        if not db_manager:
+            await manager.disconnect()
 
 
 def main() -> int:

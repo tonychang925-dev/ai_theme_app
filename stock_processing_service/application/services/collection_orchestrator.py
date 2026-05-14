@@ -72,62 +72,14 @@ class CollectionCommandPlanner:
 
         if task_key == "jyhf":
             return CollectionTaskPlan(
-                commands=[
-                    CollectionCommand(
-                        [
-                            self._python_bin,
-                            str(self._project_root / "sync_jyhf_to_local.py"),
-                            "--types",
-                            "lists",
-                        ],
-                        initial_percent=5,
-                        success_percent=15,
-                    ),
-                    CollectionCommand(
-                        [
-                            self._python_bin,
-                            str(self._project_root / "database_service" / "scripts" / "load_subject_node_staging.py"),
-                        ],
-                        initial_percent=15,
-                        success_percent=25,
-                    ),
-                    CollectionCommand(
-                        [
-                            self._python_bin,
-                            str(self._project_root / "sync_jyhf_to_local.py"),
-                            "--use-latest-list-subjects",
-                            "--types",
-                            "details",
-                        ],
-                        initial_percent=25,
-                        success_percent=45,
-                    ),
-                    CollectionCommand(
-                        [
-                            self._python_bin,
-                            str(self._project_root / "sync_jyhf_to_local.py"),
-                            "--use-latest-list-subjects",
-                            "--types",
-                            "stock_details",
-                            "--trade-date",
-                            trade_date,
-                            "--resume",
-                            "--skip-existing",
-                        ],
-                        initial_percent=45,
-                        success_percent=85,
-                    ),
-                    CollectionCommand(
-                        [
-                            self._python_bin,
-                            str(self._project_root / "database_service" / "scripts" / "import_jyhf_stock_daily_incremental.py"),
-                            "--trade-date",
-                            trade_date,
-                        ],
-                        initial_percent=85,
-                        success_percent=100,
-                    ),
-                ]
+                pre_logs=["jyhf: Step1 列表同步 + Step2 节点入库 + Step3 详情同步 + Step4 股票详情 + Step5 导入（全部 in-process）"],
+                steps=[
+                    CollectionTaskStep(key="jyhf_lists", runner_key="jyhf.sync_lists", label="JYHF 题材列表同步"),
+                    CollectionTaskStep(key="jyhf_staging", runner_key="jyhf.load_staging", label="JYHF 题材节点入库"),
+                    CollectionTaskStep(key="jyhf_details", runner_key="jyhf.sync_details", label="JYHF 题材详情同步"),
+                    CollectionTaskStep(key="jyhf_stock", runner_key="jyhf.sync_stock_details", label="JYHF 股票详情同步"),
+                    CollectionTaskStep(key="jyhf_import", runner_key="jyhf.import_stock_daily", label="JYHF 股票日快照导入"),
+                ],
             )
 
         if task_key == "jyhf_history":
@@ -135,41 +87,12 @@ class CollectionCommandPlanner:
             if not subject_keys:
                 raise RuntimeError("缺少最新题材列表：请先执行股票快照日采集，或确认 theme_data_complete/lists/full_theme_list.sync.jsonl 已生成。")
             subjects_file = self._write_subject_keys_file(trade_date, subject_keys)
-            batch_id = f"collection_jyhf_history_{trade_date.replace('-', '')}"
             return CollectionTaskPlan(
-                commands=[
-                    CollectionCommand(
-                        [
-                            self._python_bin,
-                            str(self._project_root / "sync_jyhf_to_local.py"),
-                            "--use-latest-list-subjects",
-                            "--types",
-                            "history",
-                            "--history-mode",
-                            "incremental",
-                            "--history-backfill-date",
-                            trade_date,
-                            "--batch-id",
-                            batch_id,
-                        ],
-                        initial_percent=10,
-                        success_percent=55,
-                    ),
-                    CollectionCommand(
-                        [
-                            self._python_bin,
-                            str(self._project_root / "database_service" / "scripts" / "import_jyhf_history_incremental.py"),
-                            "--subjects-file",
-                            str(subjects_file),
-                            "--batch-id",
-                            batch_id,
-                            "--mode",
-                            "append",
-                        ],
-                        initial_percent=55,
-                        success_percent=100,
-                    ),
-                ]
+                pre_logs=["jyhf_history: Step1 历史同步 + Step2 历史导入（全部 in-process）"],
+                steps=[
+                    CollectionTaskStep(key="jyhf_hist_sync", runner_key="jyhf_history.sync", label="JYHF 历史事件同步"),
+                    CollectionTaskStep(key="jyhf_hist_import", runner_key="jyhf_history.import", label="JYHF 历史事件导入"),
+                ],
             )
 
         if task_key == "tushare_kline":
@@ -227,7 +150,6 @@ class CollectionCommandPlanner:
 
         if task_key == "leader_llm":
             deepseek_api_key = env.get("DEEPSEEK_API_KEY", "").strip()
-            leader_llm_max_themes = str(payload.get("leader_llm_max_themes", 5))
             if not deepseek_api_key:
                 return CollectionTaskPlan(
                     terminal_status="skipped",
@@ -235,70 +157,48 @@ class CollectionCommandPlanner:
                     pre_logs=["未配置 DEEPSEEK_API_KEY，跳过龙头候选 LLM 裁决"],
                 )
             return CollectionTaskPlan(
-                commands=[
-                    CollectionCommand(
-                        [
-                            self._python_bin,
-                            str(self._project_root / "database_service" / "scripts" / "build_theme_leader_llm_queue.py"),
-                            "--trade-date",
-                            trade_date,
-                        ],
-                        initial_percent=10,
-                        success_percent=30,
+                pre_logs=["leader_llm: Step1 队列 + Step2 研判 + Step3 LLM调用 + Step4 候选构建（全部 in-process）"],
+                steps=[
+                    CollectionTaskStep(
+                        key="leader_llm_queue",
+                        runner_key="leader_llm.queue",
+                        label="龙头候选 LLM 审查队列构建",
                     ),
-                    CollectionCommand(
-                        [
-                            self._python_bin,
-                            str(self._project_root / "database_service" / "scripts" / "build_theme_leader_llm_judgement.py"),
-                            "--trade-date",
-                            trade_date,
-                            "--only-queued",
-                            "--limit-themes",
-                            leader_llm_max_themes,
-                        ],
-                        initial_percent=30,
-                        success_percent=55,
+                    CollectionTaskStep(
+                        key="leader_llm_judgement",
+                        runner_key="leader_llm.judgement",
+                        label="龙头候选 LLM 研判",
                     ),
-                    CollectionCommand(
-                        [
-                            self._python_bin,
-                            str(self._project_root / "database_service" / "scripts" / "call_theme_leader_llm.py"),
-                            "--trade-date",
-                            trade_date,
-                            "--limit",
-                            leader_llm_max_themes,
-                            "--limit-themes",
-                            leader_llm_max_themes,
-                            "--only-queued",
-                            "--only-pending",
-                        ],
-                        initial_percent=55,
-                        success_percent=80,
+                    CollectionTaskStep(
+                        key="leader_llm_call",
+                        runner_key="leader_llm.call",
+                        label="龙头候选 LLM 调用",
                     ),
-                    CollectionCommand(
-                        [
-                            self._python_bin,
-                            str(self._project_root / "database_service" / "scripts" / "build_theme_leader_candidate.py"),
-                            "--trade-date",
-                            trade_date,
-                        ],
-                        initial_percent=80,
-                        success_percent=100,
+                    CollectionTaskStep(
+                        key="leader_llm_candidate",
+                        runner_key="leader_llm.candidate",
+                        label="龙头候选构建",
                     ),
-                ]
+                ],
             )
 
         if task_key == "recap_snapshot":
-            # 两步：
+            # 三步（修复时序：abnormal.signal 必须在 recap.report 之前）：
             #   Step 1: recap.snapshot — 新链 W2S 数据生成 (BuildPostMarketRecapJob)
-            #   Step 2: recap.report   — 旧链 LLM 报告生成 (RecapService → upsert report 到快照)
+            #   Step 2: abnormal.signal — 异动信号检测（report 依赖此数据）
+            #   Step 3: recap.report   — LLM 报告生成 (RecapService → upsert report 到快照)
             return CollectionTaskPlan(
-                pre_logs=["recap_snapshot: Step1 新链数据生成 + Step2 LLM 报告"],
+                pre_logs=["recap_snapshot: Step1 W2S数据 + Step2 异动信号 + Step3 LLM报告"],
                 steps=[
                     CollectionTaskStep(
                         key="recap_data",
                         runner_key="recap.snapshot",
                         label="盘后复盘数据生成",
+                    ),
+                    CollectionTaskStep(
+                        key="abnormal_signal",
+                        runner_key="abnormal.signal",
+                        label="异动信号检测",
                     ),
                     CollectionTaskStep(
                         key="recap_report",

@@ -43,6 +43,11 @@ export function IntelFilters({
         <span>类型</span>
         <select value={type} onChange={(e) => setType(e.target.value as IntelItemType)}>
           <option value="all">情报</option>
+          <option value="recap">复盘</option>
+          <option value="weak_to_strong">弱转强</option>
+          <option value="theme_cycle">题材周期</option>
+          <option value="theme_identity">主线身份</option>
+          <option value="stock_signal">强势股</option>
           <option value="event_review">待复核事件</option>
           <option value="event">新事件</option>
           <option value="new_theme">新题材</option>
