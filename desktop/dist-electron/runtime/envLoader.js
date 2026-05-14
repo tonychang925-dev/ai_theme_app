@@ -38,6 +38,8 @@ exports.loadEnv = loadEnv;
 exports.persistEnvLocal = persistEnvLocal;
 exports.getUserConfigDir = getUserConfigDir;
 exports.getUserEnvLocalPath = getUserEnvLocalPath;
+exports.loadDesktopConfig = loadDesktopConfig;
+exports.saveDesktopConfig = saveDesktopConfig;
 const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
 const electron_1 = require("electron");
@@ -132,5 +134,28 @@ function getUserConfigDir() {
 }
 function getUserEnvLocalPath() {
     return userEnvLocalPath();
+}
+const DESKTOP_CONFIG_FILENAME = 'desktop-config.json';
+function desktopConfigPath() {
+    return path.join(userConfigDir(), DESKTOP_CONFIG_FILENAME);
+}
+function loadDesktopConfig() {
+    const cfgPath = desktopConfigPath();
+    if (!fs.existsSync(cfgPath))
+        return null;
+    try {
+        const raw = fs.readFileSync(cfgPath, 'utf-8');
+        return JSON.parse(raw);
+    }
+    catch {
+        return null;
+    }
+}
+function saveDesktopConfig(config) {
+    const dir = userConfigDir();
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+    }
+    fs.writeFileSync(desktopConfigPath(), JSON.stringify(config, null, 2), 'utf-8');
 }
 //# sourceMappingURL=envLoader.js.map

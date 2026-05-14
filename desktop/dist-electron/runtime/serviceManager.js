@@ -38,6 +38,7 @@ exports.stopAll = stopAll;
 exports.getServiceStatus = getServiceStatus;
 const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
+const electron_1 = require("electron");
 const envLoader_1 = require("./envLoader");
 const dependencyDoctor_1 = require("./dependencyDoctor");
 const portManager_1 = require("./portManager");
@@ -47,7 +48,7 @@ const logManager_1 = require("./logManager");
 let managedProcesses = new Map();
 let redisStartedByUs = false;
 async function startAll(projectRoot) {
-    const userDataDir = path.dirname((0, logManager_1.getLogDir)()); // ~/Library/Application Support/AI题材引擎
+    const userDataDir = path.dirname((0, logManager_1.getLogDir)()); // ~/Library/Application Support/AI投资助理
     (0, logManager_1.logInfo)('ServiceManager: ===== Starting all services =====');
     // 1. Load env
     const env = (0, envLoader_1.loadEnv)(projectRoot);
@@ -92,9 +93,16 @@ async function startAll(projectRoot) {
         'HF_HUB_OFFLINE': '1',
         'PYTHONPATH': projectRoot,
     };
-    // Set FRONTEND_DIST_DIR for web_app_service (V1-app uses extraResources path)
+    // Set FRONTEND_DIST_DIR for web_app_service
+    // V1-dev: projectRoot/frontend/dist
+    // V1-app: extraResources path inside .app bundle
     if (!serviceEnv['FRONTEND_DIST_DIR']) {
-        serviceEnv['FRONTEND_DIST_DIR'] = path.join(projectRoot, 'frontend', 'dist');
+        if (electron_1.app.isPackaged) {
+            serviceEnv['FRONTEND_DIST_DIR'] = path.join(process.resourcesPath, 'frontend', 'dist');
+        }
+        else {
+            serviceEnv['FRONTEND_DIST_DIR'] = path.join(projectRoot, 'frontend', 'dist');
+        }
     }
     // 8. Start SPS
     (0, logManager_1.logInfo)(`ServiceManager: starting stock_processing_service on port ${ports.sps}`);

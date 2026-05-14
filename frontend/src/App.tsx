@@ -43,16 +43,11 @@ function AuthGate({ children }: { children: React.ReactNode }) {
   const { user, loading, isAdmin } = useAuth();
   const path = window.location.pathname;
 
-  // 等待 /api/v2/auth/me 校验完成
   if (loading) {
     return <LoadingFallback message="验证登录状态..." />;
   }
 
-  // 已登录用户访问 /login → 重定向到 /mobile
-  if (user && path === "/login") {
-    window.location.replace("/mobile");
-    return null;
-  }
+  // 已登录用户访问 /login → 允许查看（可切换账号或直接进入）
 
   // 未登录用户 → 重定向到 /login（携带 returnUrl）
   if (!user && path !== "/login") {
@@ -63,7 +58,7 @@ function AuthGate({ children }: { children: React.ReactNode }) {
 
   // /admin 路由 → 要求 role=admin
   if (path === "/admin" && !isAdmin) {
-    window.location.replace("/mobile");
+    window.location.replace("/");
     return null;
   }
 
@@ -116,11 +111,9 @@ function AppRoutes() {
   return (
     <AuthGate>
       {path === "/login" && (
-        <LazyLoadErrorBoundary>
-          <Suspense fallback={<LoadingFallback message="加载登录..." />}>
-            <LazyLoginPage />
-          </Suspense>
-        </LazyLoadErrorBoundary>
+        <Suspense fallback={<LoadingFallback message="加载登录..." />}>
+          <LazyLoginPage />
+        </Suspense>
       )}
       {path === "/admin" && (
         <LazyLoadErrorBoundary>

@@ -3,49 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI投资助理 · 启动诊断</title>
+<title>AI 投资助理 · 启动诊断</title>
 <style>
   :root {
-    --bg-primary: #0a0e1a;
-    --bg-card: rgba(255,255,255,0.04);
-    --border-card: rgba(255,255,255,0.08);
-    --gold: #c9a34d;
-    --gold-dark: #b8860b;
-    --text-primary: #c9ccd6;
-    --text-secondary: #6a7088;
-    --accent-green: #4caf91;
-    --accent-red: #e06060;
-    --accent-warn: #d4a84b;
-    --radius: 10px;
+    --bg-deep: #00050e;
+    --bg-card: #0d1a2d;
+    --border-card: rgba(255,255,255,0.06);
+    --cyan: #00ddfe;
+    --blue: #3b95ff;
+    --gold: #ffd26c;
+    --text-primary: #e2e8f0;
+    --text-secondary: #7a8498;
+    --text-dim: #4a5568;
+    --accent-green: #00c48c;
+    --accent-red: #ef6a61;
+    --accent-warn: #ffd26c;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
-    background: var(--bg-primary);
+    background:
+      radial-gradient(ellipse 600px 300px at 50% 10%, rgba(0,221,254,0.03) 0%, transparent 70%),
+      var(--bg-deep);
     color: var(--text-primary);
-    padding: 28px 24px;
+    padding: 32px 28px;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
   }
 
-  .header {
-    margin-bottom: 24px;
-  }
+  .header { margin-bottom: 28px; }
 
   .title {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     color: var(--accent-red);
     margin-bottom: 6px;
-    letter-spacing: 0.3px;
+    letter-spacing: -0.2px;
   }
 
   .subtitle {
-    font-size: 12px;
-    color: var(--text-secondary);
-    letter-spacing: 0.3px;
+    font-size: 13px;
+    color: var(--text-dim);
   }
 
   .check-list {
@@ -58,22 +58,21 @@
   .check-item {
     display: flex;
     align-items: flex-start;
-    gap: 12px;
-    padding: 14px 16px;
+    gap: 14px;
+    padding: 15px 18px;
     background: var(--bg-card);
     border: 1px solid var(--border-card);
-    border-radius: var(--radius);
-    transition: border-color 0.15s ease;
+    border-radius: 14px;
   }
 
-  .check-item.check-pass { border-left: 3px solid var(--accent-green); }
-  .check-item.check-fail { border-left: 3px solid var(--accent-red); }
-  .check-item.check-warn { border-left: 3px solid var(--accent-warn); }
+  .check-pass { border-left: 3px solid var(--accent-green); }
+  .check-fail { border-left: 3px solid var(--accent-red); }
+  .check-warn { border-left: 3px solid var(--accent-warn); }
 
   .check-icon {
-    width: 22px;
-    height: 22px;
-    border-radius: 6px;
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -83,32 +82,20 @@
     margin-top: 1px;
   }
 
-  .check-pass .check-icon {
-    background: rgba(76,175,145,0.12);
-    color: var(--accent-green);
-  }
-
-  .check-fail .check-icon {
-    background: rgba(224,96,96,0.12);
-    color: var(--accent-red);
-  }
-
-  .check-warn .check-icon {
-    background: rgba(212,168,75,0.12);
-    color: var(--accent-warn);
-  }
+  .check-pass .check-icon { background: rgba(0,196,140,0.1); color: var(--accent-green); }
+  .check-fail .check-icon { background: rgba(239,106,97,0.1); color: var(--accent-red); }
+  .check-warn .check-icon { background: rgba(255,210,108,0.1); color: var(--accent-warn); }
 
   .check-body { flex: 1; min-width: 0; }
 
   .check-name {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     color: var(--text-primary);
-    letter-spacing: 0.2px;
   }
 
   .check-message {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-secondary);
     margin-top: 3px;
     word-break: break-word;
@@ -116,39 +103,41 @@
 
   .check-hint {
     font-size: 11px;
-    color: var(--gold);
-    margin-top: 5px;
+    color: var(--cyan);
+    margin-top: 6px;
     font-family: 'SF Mono', 'Menlo', 'Consolas', monospace;
-    background: rgba(201,163,77,0.06);
-    padding: 6px 10px;
-    border-radius: 6px;
+    background: rgba(0,221,254,0.04);
+    padding: 7px 12px;
+    border-radius: 8px;
     word-break: break-all;
     line-height: 1.5;
+    border: 1px solid rgba(0,221,254,0.08);
   }
 
   .actions {
-    margin-top: 24px;
+    margin-top: 28px;
     display: flex;
     gap: 12px;
   }
 
   .btn {
-    padding: 10px 22px;
-    border-radius: var(--radius);
-    font-size: 13px;
+    padding: 11px 24px;
+    border-radius: 12px;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     border: none;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.2px;
     transition: opacity 0.15s ease;
   }
 
-  .btn:active { opacity: 0.8; }
+  .btn:active { opacity: 0.85; }
 
   .btn-primary {
-    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
-    color: #1a1a2e;
-    box-shadow: 0 2px 12px rgba(201,163,77,0.12);
+    background: linear-gradient(135deg, #0d1a2d, #15233b);
+    border: 1px solid rgba(0,221,254,0.15);
+    color: var(--cyan);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.2);
   }
 
   .btn-secondary {
@@ -158,16 +147,15 @@
   }
 
   .footer-note {
-    margin-top: 20px;
+    margin-top: 24px;
     font-size: 11px;
-    color: var(--text-secondary);
-    letter-spacing: 0.2px;
+    color: var(--text-dim);
   }
 
   .footer-note code {
     font-family: 'SF Mono', 'Menlo', 'Consolas', monospace;
-    background: rgba(255,255,255,0.04);
-    padding: 1px 6px;
+    background: rgba(255,255,255,0.03);
+    padding: 2px 7px;
     border-radius: 4px;
     font-size: 10px;
   }
@@ -188,46 +176,40 @@
 </div>
 
 <p class="footer-note">
-  详细日志已写入 <code id="log-path">~/Library/Application Support/AI投资助理/logs/</code>
+  详细日志: <code>~/Library/Application Support/AI投资助理/logs/</code>
 </p>
 
 <script>
   const params = new URLSearchParams(window.location.search);
-  const title = params.get('title') || '启动诊断';
-  document.getElementById('diag-title').textContent = title;
+  document.getElementById('diag-title').textContent = params.get('title') || '启动诊断';
 
   try {
     const checks = JSON.parse(params.get('checks') || '[]');
     const list = document.getElementById('check-list');
     checks.forEach(function(c) {
-      const status = c.status === 'pass' ? 'check-pass'
-        : c.status === 'warn' ? 'check-warn'
-        : 'check-fail';
-      const icon = c.status === 'pass' ? '✓'
-        : c.status === 'warn' ? '!'
-        : '✗';
+      const status = c.status === 'pass' ? 'check-pass' : c.status === 'warn' ? 'check-warn' : 'check-fail';
+      const icon = c.status === 'pass' ? '✓' : c.status === 'warn' ? '!' : '✗';
       const li = document.createElement('li');
       li.className = 'check-item ' + status;
       li.innerHTML =
         '<span class="check-icon">' + icon + '</span>' +
         '<div class="check-body">' +
-          '<div class="check-name">' + escapeHtml(c.name) + '</div>' +
-          '<div class="check-message">' + escapeHtml(c.message) + '</div>' +
-          (c.fixHint ? '<div class="check-hint">' + escapeHtml(c.fixHint) + '</div>' : '') +
+          '<div class="check-name">' + esc(c.name) + '</div>' +
+          '<div class="check-message">' + esc(c.message) + '</div>' +
+          (c.fixHint ? '<div class="check-hint">修复: ' + esc(c.fixHint) + '</div>' : '') +
         '</div>';
       list.appendChild(li);
     });
   } catch(e) {
     document.getElementById('check-list').innerHTML =
-      '<li class="check-item check-fail">' +
-      '<span class="check-icon">✗</span>' +
+      '<li class="check-item check-fail"><span class="check-icon">✗</span>' +
       '<div class="check-body"><div class="check-name">诊断数据解析失败</div></div></li>';
   }
 
-  function escapeHtml(str) {
-    var div = document.createElement('div');
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
+  function esc(s) {
+    var d = document.createElement('div');
+    d.appendChild(document.createTextNode(s));
+    return d.innerHTML;
   }
 </script>
 </body>

@@ -39,10 +39,11 @@ const windowManager_1 = require("./windowManager");
 const ipcHandlers_1 = require("./ipcHandlers");
 const serviceManager_1 = require("./runtime/serviceManager");
 const logManager_1 = require("./runtime/logManager");
+const envLoader_1 = require("./runtime/envLoader");
 // Determine project root
 // V1-dev: running from desktop/ via npm start → project root is ../../
-// V1-app: running from .app → uses LOCAL_PROJECT_ROOT env var or falls back to resourcesPath
-//   Note: V1-app currently requires the source project directory on disk (Scheme A).
+// V1-app: running from .app → reads PROJECT_ROOT from desktop-config.json
+//   Note: V1-app requires the source project directory on disk (Scheme A).
 //   Scheme B (bundling backend source into .app) is deferred to V2.
 function getProjectRoot() {
     // V1-app: respect explicit LOCAL_PROJECT_ROOT if set
@@ -51,7 +52,11 @@ function getProjectRoot() {
         return localRoot.trim();
     }
     if (electron_1.app.isPackaged) {
-        return process.resourcesPath;
+        const config = (0, envLoader_1.loadDesktopConfig)();
+        if (config && config.PROJECT_ROOT) {
+            return config.PROJECT_ROOT;
+        }
+        throw new Error('PROJECT_ROOT is required in packaged V1-app mode. Run setup to create desktop-config.json.');
     }
     return path.resolve(__dirname, '..', '..');
 }
@@ -69,6 +74,8 @@ async function quitSafely() {
     (0, logManager_1.logInfo)('Main: quit complete');
     electron_1.app.exit(0);
 }
+// Set app name BEFORE ready event for correct userData path
+electron_1.app.setName('AI投资助理');
 electron_1.app.whenReady().then(async () => {
     const projectRoot = getProjectRoot();
     (0, logManager_1.logInfo)(`Main: project root = ${projectRoot}`);
@@ -92,12 +99,31 @@ electron_1.app.whenReady().then(async () => {
     }
     webPort = result.webPort;
     (0, ipcHandlers_1.setWebPort)(webPort);
-    // Close loading, show main window
-    (0, windowManager_1.closeLoadingWindow)();
+    // Create main window (hidden), load, then reveal
     const mainWindow = (0, windowManager_1.createMainWindow)(webPort);
-    // Load the app
     const url = `http://127.0.0.1:${webPort}/login`;
     (0, logManager_1.logInfo)(`Main: loading ${url}`);
+    // Wait for page to finish loading, then reveal
+    mainWindow.webContents.once('did-finish-load', () => {
+        (0, logManager_1.logInfo)('Main: page loaded, showing main window');
+        (0, windowManager_1.closeLoadingWindow)();
+        mainWindow.show();
+    });
+    // Enable window resize after navigating away from login page
+    mainWindow.webContents.on('did-navigate', (_event, navUrl) => {
+        if (!navUrl.endsWith('/login')) {
+            (0, logManager_1.logInfo)('Main: navigated away from login, enabling resize');
+            mainWindow.setResizable(true);
+            mainWindow.setMinimumSize(1024, 720);
+        }
+    });
+    // Safety timeout: reveal window after 15s even if did-finish-load didn't fire
+    setTimeout(() => {
+        (0, windowManager_1.closeLoadingWindow)();
+        if (!mainWindow.isVisible()) {
+            mainWindow.show();
+        }
+    }, 15000);
     mainWindow.loadURL(url);
     appStarted = true;
 });

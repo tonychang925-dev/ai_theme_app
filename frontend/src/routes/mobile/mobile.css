@@ -5,7 +5,7 @@
 
 body:has(.mobile-shell) {
   margin: 0;
-  background: #050816;
+  background: #00050e;
 }
 
 .mobile-shell {
@@ -16,7 +16,7 @@ body:has(.mobile-shell) {
   background:
     radial-gradient(circle at 10% 0%, rgba(56, 189, 248, 0.24), transparent 34%),
     radial-gradient(circle at 90% 12%, rgba(129, 140, 248, 0.2), transparent 28%),
-    linear-gradient(180deg, #08111f 0%, #050816 58%, #020617 100%);
+    linear-gradient(180deg, #08111f 0%, #00050e 58%, #020617 100%);
   font-family:
     Inter,
     -apple-system,

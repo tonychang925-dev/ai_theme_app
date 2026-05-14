@@ -15,9 +15,10 @@ if not _JWT_SECRET:
         _JWT_SECRET = "ai_theme_jwt_secret_dev_only"
         print("[auth] WARNING: using dev-mode JWT_SECRET — not for production", file=sys.stderr)
     else:
-        raise RuntimeError(
-            "JWT_SECRET is required. Set it in .env.local or start through Electron desktop app."
-        )
+        import secrets
+        _JWT_SECRET = secrets.token_hex(32)
+        print("[auth] JWT_SECRET not set — auto-generated ephemeral key for this session", file=sys.stderr)
+        print(f"[auth] Set JWT_SECRET in .env.local for persistent sessions.", file=sys.stderr)
 
 JWT_SECRET: str = _JWT_SECRET
 JWT_ALGORITHM = "HS256"

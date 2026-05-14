@@ -5,11 +5,12 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-FRONTEND_DIR="$PROJECT_ROOT/frontend"
+DESKTOP_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+FRONTEND_DIR="$DESKTOP_DIR/../frontend"
 
 echo "=== Building frontend for desktop ==="
-echo "Project root: $PROJECT_ROOT"
+echo "Desktop dir: $DESKTOP_DIR"
+echo "Frontend dir: $FRONTEND_DIR"
 
 if [ ! -d "$FRONTEND_DIR" ]; then
   echo "ERROR: frontend/ directory not found at $FRONTEND_DIR"

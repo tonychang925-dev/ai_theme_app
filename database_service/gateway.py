@@ -123,13 +123,18 @@ class DatabaseGateway:
         """重新连接"""
         try:
             logger.warning("🔄 尝试重新连接数据库...")
-            
+
             if self._client:
-                await self._client.close()
-            
+                try:
+                    # PostgresDatabaseManager 的 pool 有 close() 方法
+                    if hasattr(self._client, 'pool') and self._client.pool is not None:
+                        await self._client.pool.close()
+                except Exception as close_exc:
+                    logger.warning("关闭旧连接时出错: %s", close_exc)
+
             self._client = await DatabaseManagerFactory.create_client(self._config)
             self._initialized = True
-            
+
             logger.info("✅ DatabaseGateway 重新连接成功")
         except Exception as e:
             logger.error(f"❌ 重新连接失败: {e}")
