@@ -13,8 +13,25 @@ from pydantic import BaseModel
 
 from web_app_service.api.routes import router
 from web_app_service.auth import create_token, verify_token
+from web_app_service.services.jyhf_cdp_manager import JyhfCdpManager
 
 app = FastAPI(title="web_app_service", version="0.1.0")
+
+
+@app.on_event("startup")
+async def _startup_cdp_manager() -> None:
+    project_root = Path(__file__).resolve().parents[1]
+    app.state.cdp_manager = JyhfCdpManager(
+        project_root=str(project_root),
+        port=int(_os.getenv("JYHF_CDP_SERVICE_PORT", "8095")),
+    )
+
+
+@app.on_event("shutdown")
+async def _shutdown_cdp_manager() -> None:
+    manager = getattr(app.state, "cdp_manager", None)
+    if manager is not None:
+        await manager.stop_service()
 
 # ── API 路由最先注册 ──
 app.include_router(router, prefix="/api/v2")

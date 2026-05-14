@@ -282,6 +282,16 @@ export interface JyhfCdpCollectorLogs {
 function normalizeRealtimeCollectorError(err: unknown, action: string): Error {
   if (err instanceof Error) {
     const lower = err.message.toLowerCase();
+    if (lower.includes("request failed: 502") || lower.includes("request failed: 503")) {
+      if (action.includes("JYHF-CDP")) {
+        return new Error(
+          `${action}失败: JYHF CDP 服务(8095)未运行，web_app 无法连接上游。请点击"启动 JYHF DOM 采集"按钮自动拉起服务。`,
+        );
+      }
+      return new Error(
+        `${action}失败: 上游服务不可达 (502/503)，请确认依赖服务已启动`,
+      );
+    }
     if (
       lower.includes("failed to fetch") ||
       lower.includes("networkerror") ||
