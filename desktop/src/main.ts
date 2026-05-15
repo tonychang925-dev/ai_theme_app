@@ -90,7 +90,13 @@ app.whenReady().then(async () => {
   // Create main window (hidden), load, then reveal
   const mainWindow = createMainWindow(webPort);
 
-  const url = `http://127.0.0.1:${webPort}/login`;
+  // Clear all session storage and cache before loading
+  await mainWindow.webContents.session.clearCache();
+  await mainWindow.webContents.session.clearStorageData();
+  await mainWindow.webContents.session.clearAuthCache();
+
+  // Cache-busting timestamp so Chromium treats this as a fresh page load
+  const url = `http://127.0.0.1:${webPort}/login?_cb=${Date.now()}`;
   logInfo(`Main: loading ${url}`);
 
   // Wait for page to finish loading, then reveal

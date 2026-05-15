@@ -1,3 +1,4 @@
 from .build_strong_stock_tracking import BuildStrongStockTrackingUseCase
+from .build_weak_to_strong_candidate import BuildWeakToStrongCandidateUseCase
 
-__all__ = ["BuildStrongStockTrackingUseCase"]
+__all__ = ["BuildStrongStockTrackingUseCase", "BuildWeakToStrongCandidateUseCase"]

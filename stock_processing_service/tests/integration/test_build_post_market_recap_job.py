@@ -13,6 +13,9 @@ from stock_processing_service.application.use_cases.build_strong_stock_tracking 
     LAYER_C_INPUT_MODE,
     BuildStrongStockTrackingUseCase,
 )
+from stock_processing_service.application.use_cases.build_weak_to_strong_candidate import (
+    BuildWeakToStrongCandidateUseCase,
+)
 from stock_processing_service.contracts.dto import (
     MainlineCycleDTO,
     MainlineIdentityDTO,
@@ -159,6 +162,7 @@ class _FakeWritePort:
         self.recap_docs: list[Any] = []
         self.strong_watch_pool_rows: list[dict[str, Any]] = []
         self.strong_watch_history_rows: list[dict[str, Any]] = []
+        self.w2s_candidate_pool_rows: list[dict[str, Any]] = []
 
     async def upsert_stock_daily_snapshot_rows(self, rows): return len(rows)
     async def upsert_subject_stock_daily_snapshot_rows(self, rows): return len(rows)
@@ -190,7 +194,9 @@ class _FakeWritePort:
     async def upsert_theme_mainline_identity_registry_rows(self, rows): return len(rows)
     async def upsert_mainline_identity_review_queue_rows(self, rows): return len(rows)
     async def upsert_theme_cycle_evidence_daily_rows(self, rows): return len(rows)
-    async def upsert_weak_to_strong_candidate_pool_rows(self, rows): return len(rows)
+    async def upsert_weak_to_strong_candidate_pool_rows(self, rows):
+        self.w2s_candidate_pool_rows.extend(rows)
+        return len(rows)
 
 
 class _FakeEventPort:
@@ -284,6 +290,24 @@ def test_build_post_market_recap_job_strong_watch_pool_flow() -> None:
     asyncio.run(_run())
 
 
+def test_build_post_market_recap_job_no_longer_owns_layer_c_or_d_writes() -> None:
+    from pathlib import Path
+    import stock_processing_service.application.jobs.build_post_market_recap_job as module
+
+    source = Path(module.__file__).read_text(encoding="utf-8")
+    forbidden_fragments = (
+        "build_seed_candidates(",
+        "score_watch_row(",
+        "watch_pool_results",
+        "upsert_strong_watch_pool_rows(",
+        "upsert_strong_watch_history_rows(",
+        "get_w2s_candidate_inputs(",
+        "upsert_weak_to_strong_candidate_pool_rows(",
+    )
+    for fragment in forbidden_fragments:
+        assert fragment not in source
+
+
 def test_build_strong_stock_tracking_use_case_writes_layer_c_objects() -> None:
     async def _run() -> None:
         read_port = _FakeReadPort()
@@ -300,6 +324,52 @@ def test_build_strong_stock_tracking_use_case_writes_layer_c_objects() -> None:
         assert result.metrics["history_written"] == 1
         assert len(write_port.strong_watch_pool_rows) == 1
         assert len(write_port.strong_watch_history_rows) == 1
+
+    asyncio.run(_run())
+
+
+def test_build_weak_to_strong_candidate_use_case_writes_d1_pool() -> None:
+    class _D1ReadPort(_FakeReadPort):
+        async def get_w2s_candidate_inputs(self, trade_date: date):
+            return [
+                {
+                    "trade_date": trade_date,
+                    "stock_id": "002000.SZ",
+                    "stock_name": "SampleA",
+                    "subject_key": "ai_chip",
+                    "theme_name": "AI Chip",
+                    "pct_chg": -3.0,
+                    "limit_up": False,
+                    "is_leader": True,
+                    "rank_order": 1,
+                    "recent_limit_up_count": 2,
+                    "prior7_limitup_days": 2,
+                    "prior7_strong_days": 3,
+                    "prev_day_pct_chg": 5.0,
+                    "prev_day_limit_up": True,
+                    "fade_watch": False,
+                    "fade_confirmed": False,
+                    "mainline_strength_score": 72.0,
+                    "watch_score": 80.0,
+                    "watch_pool_entry_type": "formal",
+                    "watch_labels_json": {"strong_grade": "A", "support_type": "ma_support", "support_score": 66},
+                    "support_level": "12.0",
+                    "final_cycle_state": "repair",
+                }
+            ]
+
+    async def _run() -> None:
+        read_port = _D1ReadPort()
+        write_port = _FakeWritePort()
+        use_case = BuildWeakToStrongCandidateUseCase(
+            read_ports=read_port,
+            write_ports=write_port,
+        )
+
+        result = await use_case.execute(trade_date=date(2026, 4, 23))
+        assert result.status == "ok"
+        assert result.metrics["d1_total_in"] == 1
+        assert len(write_port.w2s_candidate_pool_rows) == result.affected_rows
 
     asyncio.run(_run())
 
