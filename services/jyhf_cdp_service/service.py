@@ -10,7 +10,7 @@ from services.jyhf_cdp_service.app_manager import JyhfAppManager
 from services.jyhf_cdp_service.cdp_client import CDPClient
 from services.jyhf_cdp_service.config import JyhfCdpServiceConfig
 from services.jyhf_cdp_service.db_sink import DatabaseSink
-from services.jyhf_cdp_service.extractors import NewEventExtractor
+from services.jyhf_cdp_service.extractors import NewEventExtractor, PrepareRetryError
 from services.jyhf_cdp_service.intel_pusher import IntelPusher
 from services.jyhf_cdp_service.normalizer import JyhfEventNormalizer
 from services.jyhf_cdp_service.schemas import CollectorStatus, RawJyhfCdpEvent
@@ -132,6 +132,9 @@ class JyhfCdpCollectorService:
         try:
             self._extractor.prepare(cdp)
             raw_events, feed_date, body_text = self._extractor.read(cdp)
+        except PrepareRetryError:
+            self._logger.warning("prepare not ready, will retry next cycle")
+            return
         finally:
             cdp.close()
 
@@ -160,7 +163,10 @@ class JyhfCdpCollectorService:
 
         totals["capture_count_total"] = int(totals.get("capture_count_total") or 0) + len(raw_events)
         totals["new_event_count_total"] = int(totals.get("new_event_count_total") or 0) + new_count
-        totals["pushed_to_stream_count_total"] = int(totals.get("pushed_to_stream_count_total") or 0) + new_count
+        pushed_to_stream = int(totals.get("pushed_to_stream_count_total") or 0) + new_count
+        pushed_to_intel = int(totals.get("pushed_to_intel_count_total") or 0) + (new_count if self._intel_pusher else 0)
+        totals["pushed_to_stream_count_total"] = pushed_to_stream
+        totals["pushed_to_intel_count_total"] = pushed_to_intel
         if self._stop_event.is_set() or run_id != self._run_id:
             return
         self._status.update(
@@ -176,6 +182,7 @@ class JyhfCdpCollectorService:
             new_event_count_total=totals["new_event_count_total"],
             duplicate_count_total=0,
             pushed_to_stream_count_total=totals["pushed_to_stream_count_total"],
+            pushed_to_intel_count_total=totals["pushed_to_intel_count_total"],
             uptime_seconds=self._uptime_seconds(capture_time),
             last_error=None,
         )

@@ -367,21 +367,63 @@ export function RealtimeCollectorPage() {
             </div>
           </div>
           <div className="collection-action-row">
-            <button type="button" className={`tag tag-button ${jyhfCollectorRunning ? "tag-active" : ""}`} onClick={handleStartJyhfCdp} disabled={jyhfBusy || jyhfCollectorRunning}>
-              启动 JYHF DOM 采集
+            <button
+              type="button"
+              className={`tag tag-button ${jyhfBusy && !jyhfCollectorRunning ? "tag-active" : ""}`}
+              onClick={handleStartJyhfCdp}
+              disabled={jyhfBusy || jyhfCollectorRunning}
+            >
+              {jyhfBusy ? (
+                <span className="screener-run-inline">
+                  <span className="screener-spinner" />
+                  {jyhfCollectorRunning ? "启动完成" : "启动中..."}
+                </span>
+              ) : jyhfCollectorRunning ? (
+                "采集运行中"
+              ) : (
+                "启动 JYHF DOM 采集"
+              )}
             </button>
-            <button type="button" className="tag tag-button" onClick={handleStopJyhfCdp} disabled={jyhfBusy || !jyhfCollectorRunning}>
-              停止 JYHF DOM 采集
+            <button
+              type="button"
+              className={`tag tag-button ${jyhfBusy && jyhfCollectorRunning ? "tag-active" : ""}`}
+              onClick={handleStopJyhfCdp}
+              disabled={jyhfBusy || !jyhfCollectorRunning}
+            >
+              {jyhfBusy ? (
+                <span className="screener-run-inline">
+                  <span className="screener-spinner" />
+                  停止中...
+                </span>
+              ) : (
+                "停止 JYHF DOM 采集"
+              )}
             </button>
-            <button type="button" className="tag tag-button" onClick={handleRefreshJyhfCdp} disabled={jyhfBusy}>
-              刷新 JYHF 状态
+            <button
+              type="button"
+              className="tag tag-button"
+              onClick={handleRefreshJyhfCdp}
+              disabled={jyhfBusy}
+            >
+              {jyhfBusy ? (
+                <span className="screener-run-inline">
+                  <span className="screener-spinner" />
+                  刷新中...
+                </span>
+              ) : (
+                "刷新 JYHF 状态"
+              )}
             </button>
             <span className="collection-status-indicator">
-              {jyhfError
-                ? `⚠ JYHF-CDP 服务未连接：${jyhfError}`
-                : jyhfStatus?.last_error
-                  ? `⚠ ${jyhfStatus.last_error}`
-                  : "仅控制采集器，不写入情报台"}
+              {jyhfBusy
+                ? "⏳ 正在执行操作，请稍候..."
+                : jyhfError
+                  ? `⚠ JYHF-CDP 服务未连接：${jyhfError}`
+                  : jyhfStatus?.last_error
+                    ? `⚠ ${jyhfStatus.last_error}`
+                    : jyhfCollectorRunning && jyhfStatus?.last_capture_at
+                      ? `采集运行中，数据写入 stream:event:feed`
+                      : "启动后将采集久赢恒丰 DOM 数据并写入情报台"}
             </span>
           </div>
         </section>

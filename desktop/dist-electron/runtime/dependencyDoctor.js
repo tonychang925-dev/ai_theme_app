@@ -37,13 +37,32 @@ exports.runDoctor = runDoctor;
 const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
 const child_process_1 = require("child_process");
-function runDoctor(projectRoot, env) {
+/** Run a shell command with a timeout. Returns stdout or throws. */
+function execAsync(command, timeoutMs = 5000) {
+    return new Promise((resolve, reject) => {
+        const child = (0, child_process_1.exec)(command, { encoding: 'utf-8', timeout: timeoutMs }, (err, stdout) => {
+            if (err) {
+                reject(err);
+            }
+            else {
+                resolve(stdout.trim());
+            }
+        });
+        // exec's built-in timeout sends SIGTERM; this is a safety net
+        const timer = setTimeout(() => {
+            child.kill('SIGKILL');
+            reject(new Error(`Command timed out after ${timeoutMs}ms`));
+        }, timeoutMs + 2000);
+        child.on('close', () => clearTimeout(timer));
+    });
+}
+async function runDoctor(projectRoot, env) {
     const checks = [];
     // 1. Python venv for web_app_service
     const venvPython = path.join(projectRoot, '.venv', 'bin', 'python');
     if (fs.existsSync(venvPython)) {
         try {
-            const ver = (0, child_process_1.execSync)(`"${venvPython}" --version`, { encoding: 'utf-8', timeout: 5000 }).trim();
+            const ver = await execAsync(`"${venvPython}" --version`, 5000);
             checks.push({ name: 'python_venv', status: 'pass', message: ver });
         }
         catch {
@@ -57,7 +76,7 @@ function runDoctor(projectRoot, env) {
     const condaPython = '/opt/miniconda3/envs/theme_matcher_env/bin/python';
     if (fs.existsSync(condaPython)) {
         try {
-            const ver = (0, child_process_1.execSync)(`"${condaPython}" --version`, { encoding: 'utf-8', timeout: 5000 }).trim();
+            const ver = await execAsync(`"${condaPython}" --version`, 5000);
             checks.push({ name: 'python_conda', status: 'pass', message: ver });
         }
         catch {
@@ -67,30 +86,93 @@ function runDoctor(projectRoot, env) {
     else {
         checks.push({ name: 'python_conda', status: 'fail', message: `conda env not found at ${condaPython}`, fixHint: 'conda create -n theme_matcher_env python=3.12' });
     }
-    // 3. PostgreSQL connection (Python TCP check — reliable across socket path variations)
-    try {
-        (0, child_process_1.execSync)(`${venvPython} -c "
+    // 3. PostgreSQL connection — with stale lock auto-recovery
+    const pgDataDir = '/usr/local/var/postgresql@14';
+    const pgPidFile = path.join(pgDataDir, 'postmaster.pid');
+    async function checkPostgresConnection() {
+        try {
+            await execAsync(`"${venvPython}" -c "
 import socket
 s = socket.socket()
 s.settimeout(3)
 s.connect(('localhost', 5432))
 s.close()
-"`, { encoding: 'utf-8', timeout: 5000 });
-        checks.push({ name: 'postgresql', status: 'pass', message: 'TCP localhost:5432 OK' });
+"`, 5000);
+            return { ok: true, detail: 'TCP localhost:5432 OK' };
+        }
+        catch {
+            return { ok: false, detail: 'TCP localhost:5432 not reachable' };
+        }
     }
-    catch {
-        checks.push({ name: 'postgresql', status: 'fail', message: 'PostgreSQL not reachable', fixHint: 'Ensure PostgreSQL is running (brew services start postgresql)' });
+    let pgResult = await checkPostgresConnection();
+    if (!pgResult.ok) {
+        // Check for stale postmaster.pid and auto-recover
+        if (fs.existsSync(pgPidFile)) {
+            try {
+                const pidContent = fs.readFileSync(pgPidFile, 'utf-8');
+                const recordedPid = parseInt(pidContent.split('\n')[0], 10);
+                if (recordedPid && !isNaN(recordedPid)) {
+                    try {
+                        const commOut = await execAsync(`ps -p ${recordedPid} -o comm= 2>/dev/null || true`, 3000);
+                        if (!commOut.includes('postgres')) {
+                            // PID is not postgres — stale lock, clean and retry
+                            fs.unlinkSync(pgPidFile);
+                            await execAsync('brew services start postgresql@14', 15000);
+                            // Retry connection
+                            await new Promise(r => setTimeout(r, 3000));
+                            pgResult = await checkPostgresConnection();
+                        }
+                    }
+                    catch {
+                        // ps command failed → PID likely dead, stale lock
+                        fs.unlinkSync(pgPidFile);
+                        await execAsync('brew services start postgresql@14', 15000);
+                        await new Promise(r => setTimeout(r, 3000));
+                        pgResult = await checkPostgresConnection();
+                    }
+                }
+            }
+            catch {
+                // Can't read/parse pid file — try starting anyway
+                try {
+                    await execAsync('brew services start postgresql@14', 15000);
+                }
+                catch { }
+                await new Promise(r => setTimeout(r, 3000));
+                pgResult = await checkPostgresConnection();
+            }
+        }
+        else {
+            // No lock file — PostgreSQL simply not running, try starting
+            try {
+                await execAsync('brew services start postgresql@14', 15000);
+            }
+            catch { }
+            await new Promise(r => setTimeout(r, 3000));
+            pgResult = await checkPostgresConnection();
+        }
+    }
+    if (pgResult.ok) {
+        checks.push({ name: 'postgresql', status: 'pass', message: pgResult.detail });
+    }
+    else {
+        checks.push({
+            name: 'postgresql',
+            status: 'fail',
+            message: 'PostgreSQL not reachable after recovery attempt',
+            fixHint: `Check log: tail -20 /usr/local/var/log/postgresql@14.log`,
+        });
     }
     // 4. Redis
     try {
-        (0, child_process_1.execSync)('redis-cli ping', { encoding: 'utf-8', timeout: 5000 });
+        await execAsync('redis-cli ping', 5000);
         checks.push({ name: 'redis', status: 'pass', message: 'redis-cli ping OK' });
     }
     catch {
         // Try starting via brew
         try {
-            (0, child_process_1.execSync)('brew services start redis', { timeout: 10000 });
-            (0, child_process_1.execSync)('redis-cli ping', { encoding: 'utf-8', timeout: 5000 });
+            await execAsync('brew services start redis', 10000);
+            await execAsync('redis-cli ping', 5000);
             checks.push({ name: 'redis', status: 'pass', message: 'started via brew services' });
         }
         catch {

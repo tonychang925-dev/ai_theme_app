@@ -14,13 +14,48 @@
     overflow: hidden;
     -webkit-app-region: drag;
     -webkit-font-smoothing: antialiased;
-    /* Use the actual design image as full background */
     background: #00050e url('bg.png') center/cover no-repeat;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 24px;
+  }
+
+  .status-text {
+    color: rgba(255,255,255,0.85);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+
+  .progress-track {
+    width: 200px;
+    height: 3px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0,221,254,0.4), rgba(59,149,255,0.6));
+    border-radius: 2px;
+    animation: progress-slide 1.5s ease-in-out infinite;
+  }
+
+  @keyframes progress-slide {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(350%); }
   }
 </style>
 </head>
-<body></body>
+<body>
+  <div class="status-text">AI 投资助理正在启动...</div>
+  <div class="progress-track">
+    <div class="progress-fill"></div>
+  </div>
+</body>
 </html>

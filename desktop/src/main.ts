@@ -61,13 +61,25 @@ app.whenReady().then(async () => {
   const result = await startAll(projectRoot);
 
   if (!result.success || (result.readyzResult && result.readyzResult.status === 'failed')) {
-    const checks = result.readyzResult?.checks
-      ? Object.entries(result.readyzResult.checks).map(([k, v]) => ({
-          name: k,
-          status: v === 'connected' || v === 'healthy' || v === 'mounted' ? 'pass' : 'fail',
-          message: String(v),
-        }))
-      : [{ name: 'startup', status: 'fail', message: 'Service startup failed' }];
+    let checks: Array<{ name: string; status: string; message: string; fixHint?: string }>;
+
+    if (result.readyzResult?.checks) {
+      checks = Object.entries(result.readyzResult.checks).map(([k, v]) => ({
+        name: k,
+        status: v === 'connected' || v === 'healthy' || v === 'mounted' ? 'pass' : 'fail',
+        message: String(v),
+      }));
+    } else if (result.doctorChecks) {
+      checks = result.doctorChecks.map(c => ({
+        name: c.name,
+        status: c.status,
+        message: c.message,
+        fixHint: c.fixHint,
+      }));
+    } else {
+      checks = [{ name: 'startup', status: 'fail', message: 'Service startup failed' }];
+    }
+
     showErrorPage('服务启动失败', checks);
     return;
   }
@@ -109,8 +121,6 @@ app.whenReady().then(async () => {
   appStarted = true;
 });
 
-// ── Quit handling (unified via quitSafely guard) ──
-
 app.on('window-all-closed', async () => {
   await quitSafely();
 });
@@ -133,7 +143,7 @@ process.on('SIGINT', async () => {
 });
 
 app.on('activate', () => {
-  // macOS re-activate
+  // macOS dock icon click — re-show window if app is still running
   if (appStarted && !isQuitting) {
     const win = getMainWindow();
     if (win) {
