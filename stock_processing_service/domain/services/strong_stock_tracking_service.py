@@ -292,8 +292,8 @@ class StrongStockTrackingService:
                     "entry_path": "independent_leader",
                     "identity_scope": "independent_stock_signal",
                     "strong_gene_seed": True,
-                    "mainline_identity_confirmed": False,
                 })
+                labels.pop("mainline_identity_confirmed", None)
             evidence = {
                 "schema_version": "watch_evidence.v1",
                 "rule_version": self.RULE_VERSION,
@@ -745,9 +745,16 @@ class StrongStockTrackingService:
                 "entry_path": "independent_leader",
                 "identity_scope": "independent_stock_signal",
                 "strong_gene_seed": True,
-                "mainline_identity_confirmed": False,
             })
-            labels.pop("final_mainline_alive", None)
+            for key in (
+                "mainline_identity_confirmed",
+                "final_mainline_alive",
+                "cycle_state",
+                "fade_watch",
+                "fade_confirmed",
+                "mainline_strength_score",
+            ):
+                labels.pop(key, None)
         if removed_reason:
             labels["removed_reason"] = removed_reason
 
@@ -795,7 +802,12 @@ class StrongStockTrackingService:
                 "identity_scope": "independent_stock_signal",
                 "strong_gene_seed": True,
             })
-            evidence.pop("final_mainline_alive", None)
+            for key in (
+                "final_mainline_alive",
+                "cycle_state",
+                "mainline_strength_score",
+            ):
+                evidence.pop(key, None)
         if removed_reason:
             evidence["removed_reason"] = removed_reason
 

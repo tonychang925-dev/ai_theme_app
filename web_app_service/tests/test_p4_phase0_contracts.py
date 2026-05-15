@@ -1,11 +1,44 @@
 from fastapi.testclient import TestClient
 import json
+from pathlib import Path
 
 from web_app_service.main import app
 import web_app_service.api.routes as routes
 
 
 client = TestClient(app)
+
+
+def test_realtime_collector_routes_do_not_proxy_frontend_bff():
+    source = Path(routes.__file__).read_text(encoding="utf-8")
+    forbidden_fragments = (
+        "FRONTEND_BFF_BASE",
+        "_proxy_bff",
+        "frontend_bff (8003)",
+        "/api/v2/realtime/collector/status",
+    )
+    for fragment in forbidden_fragments:
+        assert fragment not in source
+
+
+def test_realtime_collector_status_uses_web_app_manager(monkeypatch):
+    class FakeRealtimeStackManager:
+        async def status(self):
+            return {
+                "ok": True,
+                "return_code": 0,
+                "stdout": "[up]   web_app_service:8000\n[up]   stock_processing_service:8090\n",
+                "stderr": "",
+                "command": ["web_app_service:realtime_stack", "status"],
+            }
+
+    app.state.realtime_stack_manager = FakeRealtimeStackManager()
+
+    resp = client.get("/api/v2/realtime/collector/status")
+    assert resp.status_code == 200
+    data = resp.json()
+    assert data["ok"] is True
+    assert data["command"] == ["web_app_service:realtime_stack", "status"]
 
 
 def test_intel_feed_contract_shape(monkeypatch):
@@ -369,7 +402,13 @@ def test_recap_contract_shape(monkeypatch):
     assert data["source"] in ("recap_v2_report", "recap_v2_snapshot")
 
 
-def test_recap_defaults_contract_shape():
+def test_recap_defaults_contract_shape(monkeypatch):
+    async def _fake_proxy_stock_processing_json(path, params):
+        assert path == "/api/v1/recap/defaults"
+        assert params == {}
+        return {"latest_post_market_date": "2026-04-30", "latest_pre_market_date": "2026-05-01"}
+
+    monkeypatch.setattr(routes, "_proxy_stock_processing_json", _fake_proxy_stock_processing_json)
     resp = client.get("/api/v2/recap/defaults")
     assert resp.status_code == 200
     data = resp.json()

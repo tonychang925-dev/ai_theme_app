@@ -14,6 +14,7 @@ from pydantic import BaseModel
 from web_app_service.api.routes import router
 from web_app_service.auth import create_token, verify_token
 from web_app_service.services.jyhf_cdp_manager import JyhfCdpManager
+from web_app_service.services.realtime_stack_manager import RealtimeStackManager
 
 app = FastAPI(title="web_app_service", version="0.1.0")
 
@@ -24,6 +25,11 @@ async def _startup_cdp_manager() -> None:
     app.state.cdp_manager = JyhfCdpManager(
         project_root=str(project_root),
         port=int(_os.getenv("JYHF_CDP_SERVICE_PORT", "8095")),
+    )
+    app.state.realtime_stack_manager = RealtimeStackManager(
+        project_root=str(project_root),
+        web_port=int(_os.getenv("WEB_PORT", "8000")),
+        sps_port=int(_os.getenv("SPS_PORT", "8090")),
     )
 
 

@@ -69,7 +69,8 @@
    - 缺证据时必须 fail-fast 或不输出该字段，不允许静默写入默认业务值。
 
 3. Layer C 两连板独立路径必须严格按设计文档 §13.3.3 / §26.1 执行。
-   - 两连板/三天两板/近 7 日多次涨停的独立龙头路径不要求 Layer A confirmed，也不要求 Layer B `final_mainline_alive=true`。
+   - 只有连续两个交易日涨停（两连板）可以定义为独立龙头路径，并且不要求 Layer A confirmed，也不要求 Layer B `final_mainline_alive=true`。
+   - 三天两板、近 7 日多次涨停并延续强势只能定义为强势股信号，不得定义为独立龙头路径，仍必须受 Layer A/B 主线约束。
    - 该路径只能标记设计文档明确要求的 `entry_path=independent_leader`、`identity_scope=independent_stock_signal`、`strong_gene_seed=true`。
    - 该路径不得反向写入 `theme_mainline_identity_registry`，不得直接确认题材主线身份，不得伪造 Layer A/B 状态字段。
 
@@ -187,12 +188,13 @@
 - [ ] 新链生产路径不得再读本地 `json/jsonl` 作为真源。
 - [ ] 新增/修改的 A/B/C/D 业务逻辑必须能映射到设计文档章节、旧链等价函数或 ADR；无法映射即门禁失败。
 - [ ] 缺证据路径不得写入默认业务判断；必须 fail-fast 或不输出该命题字段。
-- [ ] Layer C 独立龙头路径必须覆盖合约测试：不依赖 Layer A/B，不反写 A/B，只输出设计文档规定的三个标记。
+- [ ] Layer C 两连板独立龙头路径必须覆盖合约测试：只有连续两个交易日涨停可不依赖 Layer A/B；三天两板/近 7 日多次涨停仍受 A/B 约束；独立路径不反写 A/B，只输出设计文档规定的三个标记。
 
 ---
 
 ## 6. Required Commands
 
+- `.venv/bin/python -m pytest -q stock_processing_service/tests/unit/test_layer_abcd_execution_contract.py`
 - `PYTHONPATH=. ./.venv/bin/python -m pytest -q stock_processing_service/tests/unit/test_identity_rule_engine.py`
 - `.venv/bin/python -m pytest -q stock_processing_service/tests/replay/test_replay_shenjian_2026_04_07.py stock_processing_service/tests/replay/test_replay_liande_2026_04_15.py`
 - `.venv/bin/python -m pytest -q stock_processing_service/tests/unit/test_w2s_candidate_service.py stock_processing_service/tests/unit/test_strong_watch_admission_policy.py stock_processing_service/tests/unit/test_strong_watch_pipeline.py`
