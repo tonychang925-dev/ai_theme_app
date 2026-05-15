@@ -743,7 +743,7 @@ export async function fetchRealtimeCollectorLogs(lines = 200): Promise<RealtimeC
 export async function fetchJyhfCdpCollectorStatus(): Promise<JyhfCdpCollectorStatus> {
   try {
     return await fetchJsonWithTimeout<JyhfCdpCollectorStatus>(
-      "/api/v2/realtime/jyhf-cdp/status",
+      "/api/v2/realtime/jyhf-cdp/status?_t=" + Date.now(),
       { cache: "no-store" },
       10000,
     );
