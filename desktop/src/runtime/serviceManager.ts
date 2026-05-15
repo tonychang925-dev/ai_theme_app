@@ -18,7 +18,10 @@ export interface ServiceStatus {
 
 let managedProcesses: Map<string, { pid?: number; port: number }> = new Map();
 let redisStartedByUs: boolean = false;
-let _cdProjectRoot: string | null = null;  // retained for reference, CDP lifecycle delegated to web_app BFF
+let _cdProjectRoot: string | null = null;
+let _webPort: number | null = null;
+let _spsPort: number | null = null;
+let _cdpPort: number | null = null;
 
 export async function startAll(projectRoot: string): Promise<{
   success: boolean;
@@ -62,6 +65,9 @@ export async function startAll(projectRoot: string): Promise<{
     sps: parseInt(env['SPS_PORT'] || '8090', 10),
     cdp: parseInt(env['CDP_PORT'] || '8095', 10),
   });
+  _webPort = ports.web;
+  _spsPort = ports.sps;
+  _cdpPort = ports.cdp;
 
   // 6. Determine Python paths
   const venvPython = path.join(projectRoot, '.venv', 'bin', 'python');
@@ -193,14 +199,15 @@ export async function stopAll(): Promise<void> {
   logInfo('ServiceManager: ===== Stopping all services =====');
 
   // CDP lifecycle is managed by web_app BFF (JyhfCdpManager).
-  // Delegate via the /api/v2/realtime/jyhf-cdp/service/stop endpoint.
-  // This respects owner=managed vs owner=external: only managed gets killed.
-  if (_cdProjectRoot) {
+  // Must use actual web port (from allocatePorts), not hardcoded 8000.
+  const webInfo = managedProcesses.get('web');
+  const actualWebPort = webInfo?.port || _webPort || parseInt(process.env['WEB_PORT'] || '8000', 10);
+  if (actualWebPort) {
     try {
-      await _httpPost('127.0.0.1', 8000, '/api/v2/realtime/jyhf-cdp/service/stop', 5000);
-      logInfo('ServiceManager: CDP stop delegated to web_app BFF');
+      await _httpPost('127.0.0.1', actualWebPort, '/api/v2/realtime/jyhf-cdp/service/stop', 5000);
+      logInfo(`ServiceManager: CDP stop delegated to web_app BFF on port ${actualWebPort}`);
     } catch {
-      logInfo('ServiceManager: CDP service stop request failed (web_app may be down)');
+      logInfo(`ServiceManager: CDP service stop request failed on port ${actualWebPort} (web_app may be down)`);
     }
   }
 
@@ -224,6 +231,9 @@ export async function stopAll(): Promise<void> {
   } catch {}
 
   managedProcesses.clear();
+  _webPort = null;
+  _spsPort = null;
+  _cdpPort = null;
   logInfo('ServiceManager: ===== All services stopped =====');
 }
 

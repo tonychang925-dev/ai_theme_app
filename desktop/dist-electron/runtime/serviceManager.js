@@ -51,7 +51,10 @@ const healthChecker_1 = require("./healthChecker");
 const logManager_1 = require("./logManager");
 let managedProcesses = new Map();
 let redisStartedByUs = false;
-let _cdProjectRoot = null; // retained for reference, CDP lifecycle delegated to web_app BFF
+let _cdProjectRoot = null;
+let _webPort = null;
+let _spsPort = null;
+let _cdpPort = null;
 async function startAll(projectRoot) {
     _cdProjectRoot = projectRoot;
     // (cdProjectRoot kept for reference, CDP lifecycle delegated to web_app BFF)
@@ -80,6 +83,9 @@ async function startAll(projectRoot) {
         sps: parseInt(env['SPS_PORT'] || '8090', 10),
         cdp: parseInt(env['CDP_PORT'] || '8095', 10),
     });
+    _webPort = ports.web;
+    _spsPort = ports.sps;
+    _cdpPort = ports.cdp;
     // 6. Determine Python paths
     const venvPython = path.join(projectRoot, '.venv', 'bin', 'python');
     const condaPython = '/opt/miniconda3/envs/theme_matcher_env/bin/python';
@@ -198,15 +204,16 @@ async function startAll(projectRoot) {
 async function stopAll() {
     (0, logManager_1.logInfo)('ServiceManager: ===== Stopping all services =====');
     // CDP lifecycle is managed by web_app BFF (JyhfCdpManager).
-    // Delegate via the /api/v2/realtime/jyhf-cdp/service/stop endpoint.
-    // This respects owner=managed vs owner=external: only managed gets killed.
-    if (_cdProjectRoot) {
+    // Must use actual web port (from allocatePorts), not hardcoded 8000.
+    const webInfo = managedProcesses.get('web');
+    const actualWebPort = webInfo?.port || _webPort || parseInt(process.env['WEB_PORT'] || '8000', 10);
+    if (actualWebPort) {
         try {
-            await _httpPost('127.0.0.1', 8000, '/api/v2/realtime/jyhf-cdp/service/stop', 5000);
-            (0, logManager_1.logInfo)('ServiceManager: CDP stop delegated to web_app BFF');
+            await _httpPost('127.0.0.1', actualWebPort, '/api/v2/realtime/jyhf-cdp/service/stop', 5000);
+            (0, logManager_1.logInfo)(`ServiceManager: CDP stop delegated to web_app BFF on port ${actualWebPort}`);
         }
         catch {
-            (0, logManager_1.logInfo)('ServiceManager: CDP service stop request failed (web_app may be down)');
+            (0, logManager_1.logInfo)(`ServiceManager: CDP service stop request failed on port ${actualWebPort} (web_app may be down)`);
         }
     }
     await (0, processTree_1.killAllManaged)(5000);
@@ -228,6 +235,9 @@ async function stopAll() {
     }
     catch { }
     managedProcesses.clear();
+    _webPort = null;
+    _spsPort = null;
+    _cdpPort = null;
     (0, logManager_1.logInfo)('ServiceManager: ===== All services stopped =====');
 }
 function _httpPost(host, port, pathStr, timeoutMs) {
