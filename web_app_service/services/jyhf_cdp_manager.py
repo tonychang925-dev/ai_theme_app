@@ -143,7 +143,44 @@ class JyhfCdpManager:
         msg = await self._stop_managed_process()
         return {"ok": True, "message": msg, "service_owner": "none"}
 
-    # ── internal ─────────────────────────────────────────────────
+    async def force_stop_service(self) -> dict[str, Any]:
+        """诊断接口：按端口强杀 8095 进程，不限 owner。仅用于清理旧残留。"""
+        if not await self._probe():
+            return {"ok": True, "message": "no CDP service on port", "service_owner": "none"}
+        prev_owner = self._owner
+        # 1. stop collector via HTTP
+        try:
+            await self._post("/collector/stop", payload={})
+        except Exception:
+            pass
+        # 2. kill: managed uses process group, external uses port-based kill via thread
+        if self._owner == "managed" and self._process:
+            await self._stop_managed_process()
+        else:
+            killed = await asyncio.to_thread(self._kill_port_blocking)
+            if not killed:
+                return {"ok": False, "message": "force-stop: could not kill process on port", "service_owner": prev_owner}
+            await asyncio.sleep(1)
+        self._owner = "none"
+        self._process = None
+        return {"ok": True, "message": f"force-stopped CDP service (was owner={prev_owner})", "service_owner": "none"}
+
+    def _kill_port_blocking(self) -> bool:
+        """Blocking port-based kill via lsof + kill. Runs in thread."""
+        import subprocess as sp
+        try:
+            out = sp.run(
+                ["lsof", "-t", "-i", f"TCP:{self._port}", "-s", "TCP:LISTEN"],
+                capture_output=True, text=True, timeout=10,
+            )
+            pid_str = out.stdout.strip()
+            if pid_str and pid_str.isdigit():
+                os.kill(int(pid_str), signal.SIGKILL)
+                return True
+            logger.warning("force-stop: lsof returned unexpected output: %r", out.stdout[:100])
+        except Exception as exc:
+            logger.warning("force-stop: lsof/kill failed: %s", exc)
+        return False
 
     async def _start_collector_locked(self, payload: dict, push_intel: bool, push_db: bool) -> dict[str, Any]:
         if not await self._probe():

@@ -557,6 +557,13 @@ async def jyhf_cdp_service_stop(request: Request) -> dict:
     return await manager.stop_service()
 
 
+@router.post("/realtime/jyhf-cdp/service/force-stop")
+async def jyhf_cdp_service_force_stop(request: Request) -> dict:
+    """诊断接口：强杀 8095 端口上的进程（不限 owner），用于清理旧残留。"""
+    manager = request.app.state.cdp_manager
+    return await manager.force_stop_service()
+
+
 # ── Realtime Collector（代理到 frontend_bff:8003，不可达时友好降级）──
 
 _FRONTEND_BFF_BASE = str(os.getenv("FRONTEND_BFF_BASE_URL", "http://127.0.0.1:8003")).rstrip("/")
