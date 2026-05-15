@@ -12,7 +12,7 @@ class PrepareRetryError(RuntimeError):
 
 class NewEventExtractor:
     def prepare(self, cdp: CDPClient) -> None:
-        # Step 1: 强制导航到首页
+        # Step 1: navigate to home page
         route_result = cdp.evaluate(
             """
             (function() {
@@ -29,15 +29,22 @@ class NewEventExtractor:
             """,
             timeout=8.0,
         )
-        time.sleep(5)
-        # Step 2: 点击所有可能的导航元素确保在正确的页面
+        # Poll for route change instead of blind sleep
+        for _ in range(10):
+            time.sleep(0.3)
+            try:
+                loc = cdp.evaluate("window.location.hash", timeout=2.0)
+                if str(loc) in ("", "#/", "#/ "):
+                    break
+            except Exception:
+                pass
+
+        # Step 2: find and click "新事件" tab
         result = cdp.evaluate(
             """
             (function() {
-                // 先尝试关闭可能的弹窗/详情页（点击返回按钮或遮罩）
-                var backBtn = document.querySelector('[class*=\"back\"]') || document.querySelector('[class*=\"Back\"]');
+                var backBtn = document.querySelector('[class*="back"]') || document.querySelector('[class*="Back"]');
                 if (backBtn) { backBtn.click(); }
-                // 策略1：精确匹配 '新事件' 文本节点
                 var all = document.querySelectorAll('*');
                 for (var i = 0; i < all.length; i++) {
                     var el = all[i];
@@ -47,7 +54,6 @@ class NewEventExtractor:
                         return 'clicked_exact';
                     }
                 }
-                // 策略2：遍历所有包含'新事件'的元素，点击最具体的那个
                 var best = null;
                 for (var i = 0; i < all.length; i++) {
                     var el = all[i];
@@ -64,11 +70,18 @@ class NewEventExtractor:
             """,
             timeout=8.0,
         )
-        time.sleep(3)
         if not str(result).startswith("clicked"):
             raise PrepareRetryError(f"new event tab not found: route={route_result} click={result}")
-        # Step 3: 等待页面渲染完成
-        time.sleep(2)
+
+        # Poll for page render instead of blind sleep
+        for _ in range(10):
+            time.sleep(0.3)
+            try:
+                txt = cdp.evaluate("document.body.innerText.substring(0,200)", timeout=2.0)
+                if isinstance(txt, str) and len(txt) > 20 and ('驱动事件' in txt or '新题材' in txt or '搜索' in txt):
+                    break
+            except Exception:
+                pass
 
     def read(self, cdp: CDPClient) -> tuple[list[dict], str, str]:
         raw = cdp.evaluate(

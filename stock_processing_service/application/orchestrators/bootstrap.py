@@ -32,7 +32,10 @@ from stock_processing_service.application.jobs.build_stock_abnormal_signal_job i
 from stock_processing_service.application.jobs.build_tushare_daily_bar_job import (
     BuildTushareDailyBarJob,
 )
-from stock_processing_service.application.use_cases import BuildStrongStockTrackingUseCase
+from stock_processing_service.application.use_cases import (
+    BuildStrongStockTrackingUseCase,
+    BuildWeakToStrongCandidateUseCase,
+)
 from stock_processing_service.infrastructure.gateway_adapters.db_stock_object_gateway import DBStockObjectGateway
 from stock_processing_service.infrastructure.gateway_adapters.db_theme_data_gateway import DBThemeDataGateway
 from stock_processing_service.infrastructure.gateway_adapters.redis_cache_gateway import RedisCacheGateway
@@ -48,6 +51,7 @@ from stock_processing_service.ports.database_gateway_stock_facade import Databas
 @dataclass
 class StockProcessingContainer:
     build_strong_stock_tracking: BuildStrongStockTrackingUseCase
+    build_weak_to_strong_candidate: BuildWeakToStrongCandidateUseCase
     build_daily_snapshot: BuildDailySnapshotJob
     build_cycle_judgement: Any  # BuildCycleJudgementJob
     build_mainline_state: Any  # BuildMainlineStateJob
@@ -79,9 +83,14 @@ def build_container(
         write_ports=stock_object_gateway,
         cache_ports=cache_gateway,
     )
+    build_weak_to_strong_candidate = BuildWeakToStrongCandidateUseCase(
+        read_ports=theme_data_gateway,
+        write_ports=stock_object_gateway,
+    )
 
     return StockProcessingContainer(
         build_strong_stock_tracking=build_strong_stock_tracking,
+        build_weak_to_strong_candidate=build_weak_to_strong_candidate,
         build_daily_snapshot=BuildDailySnapshotJob(
             read_port=theme_data_gateway,
             write_port=stock_object_gateway,
@@ -130,6 +139,7 @@ def build_container(
             cycle_judgement_job=_cycle_job,
             evidence_job=_evidence_job,
             strong_stock_tracking_use_case=build_strong_stock_tracking,
+            weak_to_strong_candidate_use_case=build_weak_to_strong_candidate,
         ),
         build_pre_market_brief=BuildPreMarketBriefJob(
             read_port=theme_data_gateway,

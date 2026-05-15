@@ -71,7 +71,7 @@ class JyhfCdpCollectorService:
             if task and not task.done():
                 task.cancel()
                 try:
-                    await asyncio.wait_for(task, timeout=5)
+                    await asyncio.wait_for(task, timeout=1.5)
                 except (asyncio.CancelledError, asyncio.TimeoutError, TimeoutError):
                     pass
                 except Exception:

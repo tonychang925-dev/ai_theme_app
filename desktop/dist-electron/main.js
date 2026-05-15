@@ -113,7 +113,12 @@ electron_1.app.whenReady().then(async () => {
     (0, ipcHandlers_1.setWebPort)(webPort);
     // Create main window (hidden), load, then reveal
     const mainWindow = (0, windowManager_1.createMainWindow)(webPort);
-    const url = `http://127.0.0.1:${webPort}/login`;
+    // Clear all session storage and cache before loading
+    await mainWindow.webContents.session.clearCache();
+    await mainWindow.webContents.session.clearStorageData();
+    await mainWindow.webContents.session.clearAuthCache();
+    // Cache-busting timestamp so Chromium treats this as a fresh page load
+    const url = `http://127.0.0.1:${webPort}/login?_cb=${Date.now()}`;
     (0, logManager_1.logInfo)(`Main: loading ${url}`);
     // Wait for page to finish loading, then reveal
     mainWindow.webContents.once('did-finish-load', () => {

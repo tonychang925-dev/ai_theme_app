@@ -6,10 +6,25 @@ from pathlib import Path
 import httpx
 import passlib.hash as passlib_hash
 from fastapi import FastAPI, Request, HTTPException, Depends
-from fastapi.responses import JSONResponse, HTMLResponse
+from fastapi.responses import JSONResponse, HTMLResponse, Response, FileResponse
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
+from starlette.types import Scope
+from starlette.responses import Response as StarletteResponse
+
+
+class _NoCacheStaticFiles(StaticFiles):
+    async def __call__(self, scope: Scope, receive, send):
+        async def _send(message):
+            if message["type"] == "http.response.start":
+                headers = dict(message.get("headers", []))
+                headers[b"cache-control"] = b"no-store, no-cache, must-revalidate, max-age=0"
+                headers[b"pragma"] = b"no-cache"
+                headers[b"expires"] = b"0"
+                message["headers"] = list(headers.items())
+            await send(message)
+        await super().__call__(scope, receive, _send)
 
 from web_app_service.api.routes import router
 from web_app_service.auth import create_token, verify_token
@@ -261,7 +276,13 @@ if not _DIST_DIR:
 _SERVE_STATIC = _os.path.isdir(_os.path.join(_DIST_DIR, "assets"))
 
 if _SERVE_STATIC:
-    app.mount("/assets", StaticFiles(directory=_os.path.join(_DIST_DIR, "assets")), name="assets")
+    app.mount("/assets", _NoCacheStaticFiles(directory=_os.path.join(_DIST_DIR, "assets")), name="assets")
+
+    _NO_CACHE_HEADERS = {
+        "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
+        "Pragma": "no-cache",
+        "Expires": "0",
+    }
 
     # Also serve static files from dist root (e.g. login-bg.png, favicon.ico)
     _STATIC_EXTS = {".png", ".jpg", ".jpeg", ".gif", ".svg", ".ico", ".webp", ".woff", ".woff2", ".ttf", ".json", ".txt"}
@@ -273,13 +294,14 @@ if _SERVE_STATIC:
             return RedirectResponse(url="/login", status_code=302)
         stripped = full_path
         ext = _os.path.splitext(stripped)[1].lower()
-        # Serve static files from dist root
         if ext in _STATIC_EXTS:
             file_path = _os.path.join(_DIST_DIR, stripped)
             if _os.path.isfile(file_path):
-                from fastapi.responses import FileResponse
-                return FileResponse(file_path)
+                return FileResponse(file_path, headers=_NO_CACHE_HEADERS)
             raise HTTPException(status_code=404)
         if ext and ext != ".html":
             raise HTTPException(status_code=404)
-        return HTMLResponse(open(_os.path.join(_DIST_DIR, "index.html"), "r").read())
+        return HTMLResponse(
+            open(_os.path.join(_DIST_DIR, "index.html"), "r").read(),
+            headers=_NO_CACHE_HEADERS,
+        )

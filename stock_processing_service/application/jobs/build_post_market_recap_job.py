@@ -13,6 +13,9 @@ from stock_processing_service.application.use_cases.build_strong_stock_tracking 
     LAYER_C_INPUT_MODE,
     BuildStrongStockTrackingUseCase,
 )
+from stock_processing_service.application.use_cases.build_weak_to_strong_candidate import (
+    BuildWeakToStrongCandidateUseCase,
+)
 from stock_processing_service.contracts.dto import (
     BuildResult,
     SubjectStockPoolDTO,
@@ -43,6 +46,7 @@ class BuildPostMarketRecapJob:
         candidate_service: W2SCandidateService | None = None,
         tracking_service: StrongStockTrackingService | None = None,
         strong_stock_tracking_use_case: Any | None = None,
+        weak_to_strong_candidate_use_case: Any | None = None,
         identity_job: Any | None = None,  # BuildIdentityJob — Layer A 前置
         mainline_state_job: Any | None = None,  # BuildMainlineStateJob — Layer B 前置
         cycle_judgement_job: Any | None = None,  # BuildCycleJudgementJob — Layer B 前置
@@ -61,6 +65,10 @@ class BuildPostMarketRecapJob:
             write_ports=write_port,
             cache_ports=cache_port,
             tracking_service=self._tracking_service,
+        )
+        self._weak_to_strong_candidate_use_case = weak_to_strong_candidate_use_case or BuildWeakToStrongCandidateUseCase(
+            read_ports=read_port,
+            write_ports=write_port,
         )
         self._identity_job = identity_job
         self._mainline_state_job = mainline_state_job
@@ -244,184 +252,19 @@ class BuildPostMarketRecapJob:
         )
         layer_c_metrics = dict(layer_c_result.metrics or {})
 
-        # Step 7: 构建 D1 候选 — 等价旧链 _fetch_watch_candidate_inputs + _to_candidate + _apply_watch_context
-        d1_input_rows = await self._read_port.get_w2s_candidate_inputs(trade_date)
-        d1_candidates_for_pool: list[dict[str, Any]] = []
-        _d1_total_in = len(d1_input_rows)
-        _d1_pass = 0
-        _d1_fail_pct = 0
-        _d1_fail_history = 0
-        _d1_fail_gene = 0
-        _d1_fail_strong = 0
-        _d1_fail_support = 0
-
-        for row in d1_input_rows:
-            # ── 旧链 _to_candidate 硬约束（使用旧链同名字段）──
-            pct_chg = float(row.get("pct_chg") or 0)
-            limit_up = bool(row.get("limit_up") or False)
-            is_leader = bool(row.get("is_leader") or False)
-            rank_order = int(row.get("rank_order") or 999)
-            recent_limit_up_count = int(row.get("recent_limit_up_count") or 0)
-            prior7_limitup_days = int(row.get("prior7_limitup_days") or 0)
-            prior7_strong_days = int(row.get("prior7_strong_days") or 0)
-            prev_day_pct = float(row.get("prev_day_pct_chg") or 0.0)
-            prev_day_limit_up = bool(row.get("prev_day_limit_up") or False)
-            fade_watch = bool(row.get("fade_watch") or False)
-            fade_confirmed = bool(row.get("fade_confirmed") or False)
-            mainline_strength_score = float(row.get("mainline_strength_score") or 0.0)
-            watch_score = float(row.get("watch_score") or 0.0)
-            watch_pool_entry_type = str(row.get("watch_pool_entry_type") or "observe_only")
-            watch_labels = row.get("watch_labels_json") or {}
-            if isinstance(watch_labels, str):
-                watch_labels = json.loads(watch_labels) if watch_labels else {}
-            strong_grade = str(watch_labels.get("strong_grade") or "").upper()
-            support_type = str(watch_labels.get("support_type") or "")
-            support_strength = float(watch_labels.get("support_score") or 0)
-
-            # 1) pct_chg >= 0 或 limit_up → 必须弱势日
-            if pct_chg >= 0.0 or limit_up:
-                _d1_fail_pct += 1; continue
-            # 2) 跌幅不足 -1.0%
-            if pct_chg > -1.0:
-                _d1_fail_pct += 1; continue
-            # 3) strong_history
-            strong_history = (is_leader or prev_day_limit_up or recent_limit_up_count >= 1 or rank_order <= 5)
-            if not strong_history:
-                _d1_fail_history += 1; continue
-            # 4) has_limitup_gene
-            if prior7_limitup_days < 1:
-                _d1_fail_gene += 1; continue
-            # 5) recent_strong_history
-            if prior7_strong_days < 1:
-                _d1_fail_strong += 1; continue
-            # 6) support_available
-            if support_type in {"", "none"} or support_strength < 45.0:
-                _d1_fail_support += 1; continue
-            _d1_pass += 1
-
-            # ── 旧链 _classify_weak_type ──
-            if prev_day_limit_up and pct_chg < 0:
-                weak_type = "bad_limit_up"
-                weak_intensity = min(100.0, abs(pct_chg) * 12.0 + 20.0)
-            elif pct_chg <= -5.0:
-                weak_type = "big_negative_line"
-                weak_intensity = min(100.0, abs(pct_chg) * 10.0)
-            elif -2.0 <= pct_chg <= 1.5 and prev_day_pct >= 4.0:
-                weak_type = "upper_shadow"
-                weak_intensity = 55.0
-            elif pct_chg <= -1.0:
-                weak_type = "high_open_low_close"
-                weak_intensity = min(100.0, abs(pct_chg) * 8.0 + 10.0)
-            else:
-                weak_type = "fake_break"
-                weak_intensity = 40.0
-
-            # ── 旧链 _day_weak_score / _prev_day_weak_score ──
-            if pct_chg < -4.0: day_weak_score = 20.0
-            elif pct_chg < -2.0: day_weak_score = 16.0
-            elif pct_chg < -1.0: day_weak_score = 10.0
-            else: day_weak_score = 6.0
-
-            if prev_day_pct < -3.0: prev_day_weak_score = 10.0
-            elif prev_day_pct < -1.5: prev_day_weak_score = 8.0
-            elif prev_day_pct < 0: prev_day_weak_score = 5.0
-            else: prev_day_weak_score = 0.0
-
-            # ── 旧链 _candidate_score ──
-            candidate_score = 45.0
-            if is_leader: candidate_score += 18.0
-            if limit_up: candidate_score += 10.0
-            candidate_score += min(recent_limit_up_count * 4.0, 12.0)
-            if rank_order <= 3: candidate_score += 8.0
-            candidate_score += min(weak_intensity * 0.08, 8.0)
-            candidate_score += min(support_strength * 0.1, 9.0)
-            candidate_score += day_weak_score + prev_day_weak_score
-            candidate_score += min(mainline_strength_score * 0.08, 8.0)
-            if fade_watch:
-                if mainline_strength_score >= 75.0: candidate_score -= 4.0
-                elif mainline_strength_score >= 60.0: candidate_score -= 8.0
-                else: candidate_score -= 12.0
-            # ── 旧链 classify_pool_entry（严格复刻，含 prev_day_weak>=2）──
-            strong_background = (is_leader or recent_limit_up_count >= 2 or rank_order <= 3)
-            d1_pool_entry = "reject"
-            if support_strength >= 45 and strong_background and day_weak_score >= 4:
-                d1_pool_entry = "formal"
-            elif support_strength >= 60 and day_weak_score >= 3:
-                d1_pool_entry = "observe_only"
-            if d1_pool_entry == "reject":
-                continue
-
-            candidate_score = max(0.0, min(candidate_score, 100.0))
-
-            # ── _classify_candidate_type ──
-            if is_leader and recent_limit_up_count >= 3:
-                candidate_type = "dragon_repair"
-            elif is_leader:
-                candidate_type = "subdragon_repair"
-            elif weak_type == "bad_limit_up":
-                candidate_type = "bad_limit_repair"
-            elif weak_type == "upper_shadow":
-                candidate_type = "upper_shadow_repair"
-            elif recent_limit_up_count >= 1:
-                candidate_type = "strong_trend_repair"
-            else:
-                candidate_type = "generic_repair"
-
-            # ── 用 D 层 classify_pool_entry 结果（非 C 层 pool_entry_type）──
-            watch_pool_entry_type = d1_pool_entry
-
-            # ── _apply_watch_context（旧链精确复刻）──
-            if watch_pool_entry_type == "observe_only":
-                candidate_score = min(candidate_score, 69.0)
-            if watch_pool_entry_type == "formal":
-                candidate_score = min(100.0, max(candidate_score, 70.0))
-            if strong_grade == "B":
-                candidate_score = min(69.0, candidate_score)
-            elif strong_grade in {"S", "A"}:
-                candidate_score = min(100.0, max(candidate_score, 72.0))
-            score_boost = min(max(watch_score * 0.08, 0.0), 8.0)
-            if strong_grade in {"S", "A"}:
-                score_boost = min(12.0, score_boost + 3.0)
-            candidate_score = round(min(100.0, candidate_score + score_boost), 2)
-
-            d1_candidates_for_pool.append({
-                "trade_date": trade_date,
-                "next_trade_date": trade_date,
-                "stock_id": str(row.get("stock_id") or ""),
-                "stock_name": str(row.get("stock_name") or ""),
-                "subject_key": str(row.get("subject_key") or ""),
-                "theme_name": str(row.get("theme_name") or ""),
-                "candidate_score": str(candidate_score),
-                "candidate_type": candidate_type,
-                "rule_version": "weak_to_strong_candidate.v2",
-                "weak_type": weak_type,
-                "weak_intensity": str(weak_intensity),
-                "is_dragon_head": is_leader,
-                "dragon_head_level": "dragon" if is_leader else "",
-                "prev_limit_up_count": recent_limit_up_count,
-                "max_consecutive_limit_up_days": 0,
-                "support_type": support_type,
-                "support_level": str(row.get("support_level") or "0"),
-                "support_strength": str(support_strength),
-                "expected_open_low": "0",
-                "expected_open_high": "0",
-                "expected_auction_pattern": "",
-                "need_last_minute_grab": False,
-                "need_plate_follow": False,
-                "evidence_json": json.dumps({
-                    "source": "strong_watch_pool",
-                    "pct_chg": str(pct_chg),
-                    "prev_day_pct": str(prev_day_pct),
-                    "weak_type": weak_type,
-                    "support_type": support_type,
-                    "support_strength": str(support_strength),
-                }),
-                "pool_entry_type": watch_pool_entry_type,
-                "cycle_state": str(row.get("final_cycle_state") or ""),
-                "mainline_strength_score": str(mainline_strength_score),
-                "fade_watch": fade_watch,
-                "fade_confirmed": fade_confirmed,
-            })
+        # ── Layer D1: 弱转强候选由独立 use case 负责，recap 只消费其结果 ──
+        d1_result = await self._weak_to_strong_candidate_use_case.execute(trade_date=trade_date)
+        d1_metrics = dict(d1_result.metrics or {})
+        d1_input_rows = list(d1_metrics.get("d1_input_rows") or [])
+        d1_candidates_for_pool = list(d1_metrics.get("d1_candidates_for_pool") or [])
+        _d1_total_in = int(d1_metrics.get("d1_total_in") or 0)
+        _d1_pass = int(d1_metrics.get("d1_pass") or 0)
+        _d1_fail_pct = int(d1_metrics.get("d1_fail_pct_gate") or 0)
+        _d1_fail_history = int(d1_metrics.get("d1_fail_history") or 0)
+        _d1_fail_gene = int(d1_metrics.get("d1_fail_gene") or 0)
+        _d1_fail_strong = int(d1_metrics.get("d1_fail_strong") or 0)
+        _d1_fail_support = int(d1_metrics.get("d1_fail_support") or 0)
+        d1_written = int(d1_metrics.get("d1_written") or 0)
 
         # 构建 recap_doc 所需元数据
         pool_rows: list[Any] = []  # 保留兼容性
@@ -444,17 +287,6 @@ class BuildPostMarketRecapJob:
         layer_a_identity_hit_count = int(layer_c_metrics.get("subject_key_count") or 0)
         layer_b_cycle_hit_count = int(layer_c_metrics.get("subject_key_count") or 0)
         input_fingerprint = LAYER_C_INPUT_MODE
-        # ── 旧链等价 D1 候选：排序 + top 10 + 写入 weak_to_strong_candidate_pool ──
-        # ── 去重：同一 stock_id 只保留最高分 ──
-        _dedup: dict[str, dict[str, Any]] = {}
-        for c in d1_candidates_for_pool:
-            sid = str(c.get("stock_id") or "")
-            if sid not in _dedup or float(c.get("candidate_score") or 0) > float(_dedup[sid].get("candidate_score") or 0):
-                _dedup[sid] = c
-        d1_candidates_for_pool = sorted(_dedup.values(), key=lambda x: float(x.get("candidate_score") or 0), reverse=True)
-        d1_candidates_for_pool = d1_candidates_for_pool[:10]  # HARD_MAX_CANDIDATES = 10
-        d1_written = await self._write_port.upsert_weak_to_strong_candidate_pool_rows(d1_candidates_for_pool) if d1_candidates_for_pool else 0
-
         # 构建兼容 recap_doc 的 candidates 列表
         candidates = [
             {

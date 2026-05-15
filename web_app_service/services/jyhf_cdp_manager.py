@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 
 _HEALTH_ENDPOINTS = ("/health", "/healthz", "/status")
 _READY_TIMEOUT = 30.0
-_GRACEFUL_STOP = 5.0
+_GRACEFUL_STOP = 2.0
 
 
 class JyhfCdpManager:

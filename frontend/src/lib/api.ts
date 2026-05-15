@@ -757,7 +757,7 @@ export async function stopJyhfCdpCollector(): Promise<JyhfCdpCommandResult> {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({}),
       },
-      30000,
+      10000,
     );
   } catch (err) {
     throw normalizeRealtimeCollectorError(err, "JYHF-CDP 停止");
