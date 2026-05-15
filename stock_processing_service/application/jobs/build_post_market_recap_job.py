@@ -169,12 +169,17 @@ class BuildPostMarketRecapJob:
         if isinstance(row, MainlineCycleDTO):
             return row
         p = dict(row or {})
+        if "final_mainline_alive" not in p:
+            raise RuntimeError(
+                "invalid Layer B cycle row: missing final_mainline_alive; "
+                f"subject_key={p.get('subject_key', '')}; trade_date={p.get('trade_date', default_trade_date)}"
+            )
         trigger_flags = p.get("trigger_flags")
         return MainlineCycleDTO(
             trade_date=p.get("trade_date", default_trade_date),
             subject_key=str(p.get("subject_key", "")),
             final_cycle_state=str(p.get("final_cycle_state", "")),
-            final_mainline_alive=bool(p.get("final_mainline_alive", False)),
+            final_mainline_alive=bool(p.get("final_mainline_alive")),
             transition_type=str(p.get("transition_type", "")),
             transition_confidence=BuildPostMarketRecapJob._d(p.get("transition_confidence")),
             trigger_flags=list(trigger_flags) if isinstance(trigger_flags, list) else [],
@@ -410,14 +415,22 @@ class BuildPostMarketRecapJob:
 
                 # 构建周期快照
                 cyc = cycles_by_subject.get(candidate.subject_key)
+                has_two_board = bool(candidate.labels.get("has_two_board") or False)
+                if cyc is None and not has_two_board:
+                    raise RuntimeError(
+                        "build_post_market_recap failed: missing Layer B cycle truth for Layer C scoring; "
+                        f"trade_date={trade_date.isoformat()}; subject_key={candidate.subject_key}; "
+                        f"stock_id={stock_id}"
+                    )
+                identity = identities_by_subject.get(candidate.subject_key)
                 cycle_snap = CycleSnapshot(
-                    final_cycle_state=str(getattr(cyc, "final_cycle_state", "") or ""),
+                    final_cycle_state=str(getattr(cyc, "final_cycle_state", "") or "") if cyc else "",
                     effective_mainline_alive=bool(
-                        (identities_by_subject.get(candidate.subject_key) and
-                         getattr(identities_by_subject[candidate.subject_key], "is_main_theme", False) and
-                         getattr(identities_by_subject[candidate.subject_key], "identity_status", "") == "confirmed" and
-                         getattr(cyc, "final_cycle_state", "") != "fade_confirmed")
-                        if cyc else candidate.labels.get("board_effect_confirmed", False)
+                        cyc
+                        and identity
+                        and getattr(identity, "is_main_theme", False)
+                        and getattr(identity, "identity_status", "") == "confirmed"
+                        and getattr(cyc, "final_mainline_alive", False)
                     ),
                     fade_watch=bool(getattr(cyc, "fade_watch", False)) if cyc else False,
                     fade_confirmed=bool(getattr(cyc, "fade_confirmed", False)) if cyc else False,

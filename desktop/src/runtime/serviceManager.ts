@@ -158,24 +158,9 @@ export async function startAll(projectRoot: string): Promise<{
     }
   }
 
-  // 11. Optional: CDP service (default off)
-  let cdpStarted = false;
-  const enableCdp = env['ENABLE_CDP'] === '1' || env['ENABLE_CDP'] === 'true';
-  if (enableCdp) {
-    logInfo(`ServiceManager: starting jyhf_cdp_service on port ${ports.cdp}`);
-    const cdpProc = spawnCommand(venvPython, [
-      '-m', 'uvicorn',
-      'services.jyhf_cdp_service.app:app',
-      '--host', '127.0.0.1',
-      '--port', String(ports.cdp),
-    ], {
-      cwd: projectRoot,
-      env: serviceEnv,
-      logName: 'jyhf_cdp_service.log',
-    });
-    managedProcesses.set('cdp', { pid: cdpProc.pid, port: ports.cdp });
-    cdpStarted = true;
-  }
+  // 11. CDP service: ENABLE_CDP is deprecated.
+  // JYHF CDP must be started only by web_app JyhfCdpManager via the UI console.
+  // Direct Electron spawn would create a second lifecycle manager and cause conflicts.
 
   // 12. Verify e2e
   const e2eOk = await verifyE2E(ports.web);

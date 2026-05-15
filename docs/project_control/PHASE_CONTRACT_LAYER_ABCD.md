@@ -8,6 +8,7 @@
 - Risk Level: P0
 - Scope: system
 - Source Documents:
+  - `docs/architecture/个人投资助理-项目架构设计-第三阶段.md`
   - `docs/architecture/个人投资助理项目-前端技术设计（第四阶段）.md`
   - `架构差距分析报告.md`
   - `docs/project_control/EXECUTION_GUARDRAILS.md`
@@ -22,6 +23,14 @@
   - `stock_processing_service/application/jobs/build_post_market_recap_job.py`
 
 ### Conflict Resolution
+
+0. 最高优先级硬约束：禁止编造不符合设计文档的逻辑和规则。
+   - 采用来源：`docs/architecture/个人投资助理-项目架构设计-第三阶段.md` 中已冻结的 Layer A/B/C/D 规则、勘误和补充条款。
+   - 强制要求：任何业务规则、字段语义、入池路径、状态判断、候选准入、fallback/mock 行为，必须能在设计文档或已登记 ADR 中找到明确依据。
+   - 禁止行为：不得因为实现方便、测试通过、临时兜底、口径猜测或主观推断，新增设计文档未定义的逻辑、字段语义、判断分支、默认 true/false、fallback/mock 或旁路。
+   - 缺证据处理：缺少设计文档要求的真源证据时，只允许 fail-fast 或不输出该命题判断；不得把缺失解释成 `true`、`false`、`start`、`observed`、`reject`、`observe_only` 等业务结论。
+   - 变更流程：若发现设计文档与代码实现不一致，必须先更新设计文档或登记 ADR 并完成评审，再改代码；禁止先在代码中“试探性实现”新规则。
+   - 门禁判定：任何新增/修改规则无法映射到设计文档章节或 ADR 编号时，本执行合同直接判定失败。
 
 1. 冲突项：`架构差距分析报告.md` 中对 A/B “已基本对齐”的阶段性判断，与当前回放样本 `4/7 神剑股份`、`4/15 联德股份`、`4/23 维科技术` 的实际结果不一致。
    - 采用来源：旧链代码行为 + 设计文档冻结条款
@@ -48,6 +57,21 @@
 ---
 
 ## 3. A/B/C/D 不符合项清单（必须删除或回退）
+
+### 3.0 全层通用强制合约
+
+1. 不允许编造不符合设计文档的逻辑和规则。
+   - 每一条业务判断必须标注或可追溯到设计文档章节、旧链等价函数或 ADR。
+   - 未能追溯的判断不得进入生产路径，不得作为测试期临时规则保留。
+
+2. 不允许用 fallback/mock/default 产生命题判断。
+   - `final_mainline_alive`、`identity_status`、`is_main_theme`、`pool_entry_type`、`candidate_type`、`watch_status`、`entry_path` 等字段不得由缺证据兜底生成。
+   - 缺证据时必须 fail-fast 或不输出该字段，不允许静默写入默认业务值。
+
+3. Layer C 两连板独立路径必须严格按设计文档 §13.3.3 / §26.1 执行。
+   - 两连板/三天两板/近 7 日多次涨停的独立龙头路径不要求 Layer A confirmed，也不要求 Layer B `final_mainline_alive=true`。
+   - 该路径只能标记设计文档明确要求的 `entry_path=independent_leader`、`identity_scope=independent_stock_signal`、`strong_gene_seed=true`。
+   - 该路径不得反向写入 `theme_mainline_identity_registry`，不得直接确认题材主线身份，不得伪造 Layer A/B 状态字段。
 
 ### 3.1 Layer A 不符合项
 
@@ -161,6 +185,9 @@
 - [ ] 新链 `top_candidates` 不得再出现 formal-only 收窄。
 - [ ] 新链结果详情不得再出现“列表有、详情 404”的跨源不一致。
 - [ ] 新链生产路径不得再读本地 `json/jsonl` 作为真源。
+- [ ] 新增/修改的 A/B/C/D 业务逻辑必须能映射到设计文档章节、旧链等价函数或 ADR；无法映射即门禁失败。
+- [ ] 缺证据路径不得写入默认业务判断；必须 fail-fast 或不输出该命题字段。
+- [ ] Layer C 独立龙头路径必须覆盖合约测试：不依赖 Layer A/B，不反写 A/B，只输出设计文档规定的三个标记。
 
 ---
 

@@ -168,24 +168,9 @@ async function startAll(projectRoot) {
             return { success: false, webPort: ports.web, spsPort: ports.sps, cdpPort: ports.cdp, doctorPassed: true, doctorChecks: null, readyzResult };
         }
     }
-    // 11. Optional: CDP service (default off)
-    let cdpStarted = false;
-    const enableCdp = env['ENABLE_CDP'] === '1' || env['ENABLE_CDP'] === 'true';
-    if (enableCdp) {
-        (0, logManager_1.logInfo)(`ServiceManager: starting jyhf_cdp_service on port ${ports.cdp}`);
-        const cdpProc = (0, processTree_1.spawnCommand)(venvPython, [
-            '-m', 'uvicorn',
-            'services.jyhf_cdp_service.app:app',
-            '--host', '127.0.0.1',
-            '--port', String(ports.cdp),
-        ], {
-            cwd: projectRoot,
-            env: serviceEnv,
-            logName: 'jyhf_cdp_service.log',
-        });
-        managedProcesses.set('cdp', { pid: cdpProc.pid, port: ports.cdp });
-        cdpStarted = true;
-    }
+    // 11. CDP service: ENABLE_CDP is deprecated.
+    // JYHF CDP must be started only by web_app JyhfCdpManager via the UI console.
+    // Direct Electron spawn would create a second lifecycle manager and cause conflicts.
     // 12. Verify e2e
     const e2eOk = await (0, healthChecker_1.verifyE2E)(ports.web);
     (0, logManager_1.logInfo)(`ServiceManager: e2e verification ${e2eOk ? 'OK' : 'FAILED'}`);
