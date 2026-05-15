@@ -39,6 +39,23 @@ class JyhfCdpManager:
         self._start_lock = asyncio.Lock()
         self._managed_pid: int | None = None
         self._managed_pgid: int | None = None
+        self._status_seq: int = 0
+        self._cached_status: dict[str, Any] | None = None
+
+    def _clear_state_trace(self, reason: str, clear_managed_pid: bool = False) -> None:
+        """Log every state clear with full context before clearing."""
+        import traceback as _tb
+        logging.getLogger().warning(
+            "CDP_STATE_CLEAR_TRACE reason=%s before_owner=%s before_process_pid=%s before_managed_pid=%s stack=%s",
+            reason,
+            self._owner,
+            self._process.pid if self._process else None,
+            self._managed_pid,
+            "".join(_tb.format_stack(limit=6))[-300:].replace("\n", " ← "),
+        )
+        if clear_managed_pid:
+            self._managed_pid = None
+            self._managed_pgid = None
 
     def _resolve_log_path(self) -> Path:
         desktop_log = os.getenv("DESKTOP_LOG_DIR")
@@ -50,47 +67,70 @@ class JyhfCdpManager:
 
     async def get_status(self) -> dict[str, Any]:
         import os as _manager_os
-        import json as _json
+
+        self._status_seq += 1
+        seq = self._status_seq
+
+        logger.error(
+            "CDP_STATUS_ENTER seq=%s owner=%s process_pid=%s managed_pid=%s managed_pgid=%s",
+            seq, self._owner, self._process.pid if self._process else None, self._managed_pid, self._managed_pgid,
+        )
 
         popen_pid: int | None = self._process.pid if self._process else None
         popen_alive: bool = bool(self._process and self._process.poll() is None)
 
-        # Use curl via subprocess — httpx is unreliable inside the BFF process
+        # Step 1: HTTP /status — always tried first, authoritative
         collector_status: dict | None = None
         collector_running: bool = False
         http_alive: bool = False
         http_error: str | None = None
 
-        try:
-            raw = await asyncio.to_thread(
-                subprocess.run,
-                ["curl", "-s", "--max-time", "5", f"http://127.0.0.1:{self._port}/status"],
-                capture_output=True, text=True, timeout=10,
-            )
-            if raw.returncode == 0 and raw.stdout.strip():
-                collector_status = _json.loads(raw.stdout)
-                if isinstance(collector_status, dict):
-                    collector_running = bool(collector_status.get("collector_running"))
-                    http_alive = True
-            else:
-                http_error = f"curl rc={raw.returncode} stderr={raw.stderr.strip()[:100]}"
-        except Exception as exc:
-            http_error = str(exc)[:100]
+        logging.getLogger().warning("CDP_STATUS_TRACE seq=%s step=before_http base_url=%s", seq, self._base_url)
 
-        # Owner: simple — never clear managed owner unless the Popen is truly dead AND curl fails
-        if self._owner == "managed":
-            if not popen_alive and not http_alive:
-                self._process = None
+        try:
+            collector_status = await self._get("/status")
+            collector_running = bool(collector_status.get("collector_running"))
+            http_alive = True
+            logging.getLogger().warning("CDP_STATUS_TRACE seq=%s step=http_ok collector_running=%s", seq, collector_running)
+        except Exception as exc:
+            http_error = str(exc)
+            logging.getLogger().warning("CDP_STATUS_TRACE seq=%s step=http_fail error=%s", seq, http_error)
+
+        # Step 2: lsof port_pid — fallback / diagnostic, not a gate
+        logging.getLogger().warning("CDP_STATUS_TRACE seq=%s step=before_lsof port=%s", seq, self._port)
+        port_pid: int | None = await asyncio.to_thread(self._find_pid_by_port_blocking)
+        logging.getLogger().warning("CDP_STATUS_TRACE seq=%s step=after_lsof port_pid=%s", seq, port_pid)
+
+        service_alive: bool = http_alive or (port_pid is not None)
+
+        # Step 3: owner resolution — managed_pid NEVER cleared here
+        effective_pid = port_pid or popen_pid or self._managed_pid
+
+        if service_alive:
+            if self._owner == "none":
+                if effective_pid and self._managed_pid and effective_pid == self._managed_pid:
+                    self._owner = "managed"
+                    logging.getLogger().warning("CDP_OWNER_RECOVER seq=%s none→managed effective_pid=%s managed_pid=%s", seq, effective_pid, self._managed_pid)
+                else:
+                    self._owner = "external"
+                    logging.getLogger().warning("CDP_OWNER_RECOVER seq=%s none→external effective_pid=%s managed_pid=%s", seq, effective_pid, self._managed_pid)
+            elif self._owner == "managed":
+                if port_pid and self._managed_pid and port_pid != self._managed_pid:
+                    self._owner = "external"
+        else:
+            if self._owner in ("managed", "external"):
+                logging.getLogger().warning(
+                    "CDP_STATE_CLEAR_TRACE reason=get_status_service_dead seq=%s before_owner=%s before_process_pid=%s before_managed_pid=%s popen_pid=%s popen_alive=%s port_pid=%s http_error=%s",
+                    seq, self._owner, self._process.pid if self._process else None, self._managed_pid, popen_pid, popen_alive, port_pid, http_error)
+                self._clear_state_trace("get_status_service_dead")
                 self._owner = "none"
-                self._managed_pid = None
-        elif self._owner == "none":
-            if http_alive:
-                self._owner = "external"
+                self._process = None
+                # managed_pid preserved for recovery
 
         result: dict[str, Any] = {
-            "service_running": http_alive,
+            "service_running": service_alive,
             "service_owner": self._owner,
-            "service_pid": popen_pid if popen_alive else None,
+            "service_pid": port_pid or (popen_pid if popen_alive else (self._managed_pid if service_alive else None)),
             "service_port": self._port,
             "collector_running": collector_running,
             "collector_status": collector_status,
@@ -100,11 +140,17 @@ class JyhfCdpManager:
             "manager_id": id(self),
             "popen_pid": popen_pid,
             "popen_alive": popen_alive,
+            "port_pid": port_pid,
             "managed_pid": self._managed_pid,
             "http_alive": http_alive,
         }
         if http_error:
             result["http_error"] = http_error
+
+        logging.getLogger().warning(
+            "CDP_STATUS_TRACE seq=%s step=return sr=%s owner=%s popen_pid=%s port_pid=%s managed_pid=%s http_alive=%s http_error=%s",
+            seq, service_alive, self._owner, popen_pid, port_pid, self._managed_pid, http_alive, http_error,
+        )
 
         if isinstance(collector_status, dict):
             for k in ("app_running", "cdp_connected", "cdp_port", "current_route", "current_tab",
@@ -155,6 +201,7 @@ class JyhfCdpManager:
             if await self._probe():
                 service_msg = await self._stop_managed_process()
             else:
+                self._clear_state_trace("stop_collector_already_stopped")
                 self._owner = "none"
                 self._process = None
                 service_msg = "CDP service already stopped"
@@ -167,6 +214,7 @@ class JyhfCdpManager:
     async def stop_service(self) -> dict[str, Any]:
         """Public API: only stops if managed."""
         if not await self._probe():
+            self._clear_state_trace("stop_service_already_dead")
             self._owner = "none"
             self._process = None
             return self._cmd_result(True, "already stopped", False)
@@ -191,6 +239,7 @@ class JyhfCdpManager:
             if not killed:
                 return self._cmd_result(False, "force-stop: could not kill process on port", False)
             await asyncio.sleep(1)
+        self._clear_state_trace("force_stop_done")
         self._owner = "none"
         self._process = None
         return self._cmd_result(True, f"force-stopped CDP service (was owner={prev_owner})", False)
@@ -207,9 +256,9 @@ class JyhfCdpManager:
             if pid_str and pid_str.isdigit():
                 os.kill(int(pid_str), signal.SIGKILL)
                 return True
-            logger.warning("force-stop: lsof returned unexpected output: %r", out.stdout[:100])
+            logging.getLogger().warning("force-stop: lsof returned unexpected output: %r", out.stdout[:100])
         except Exception as exc:
-            logger.warning("force-stop: lsof/kill failed: %s", exc)
+            logging.getLogger().warning("force-stop: lsof/kill failed: %s", exc)
         return False
 
     def _cmd_result(
@@ -268,7 +317,7 @@ class JyhfCdpManager:
 
         if not confirmed:
             self._last_error = "collector did not enter running state within timeout"
-            logger.warning("collector_start_confirm_timeout service_kept_alive=true")
+            logging.getLogger().warning("collector_start_confirm_timeout service_kept_alive=true")
             # Do NOT kill CDP service — it may still be initializing.
             # Return ok=true: start command was submitted successfully.
             # collector readiness is surfaced via status fields, not ok/fail.
@@ -309,7 +358,7 @@ class JyhfCdpManager:
         self._owner = "managed"
         self._managed_pid = proc.pid
         self._managed_pgid = os.getpgid(proc.pid)
-        logger.warning("CDP_MANAGED_LAUNCH pid=%s pgid=%s", proc.pid, self._managed_pgid)
+        logging.getLogger().warning("CDP_MANAGED_LAUNCH pid=%s pgid=%s", proc.pid, self._managed_pgid)
 
         deadline = time.time() + _READY_TIMEOUT
         while time.time() < deadline:
@@ -318,6 +367,7 @@ class JyhfCdpManager:
                 log_fd.close()
                 self._process = None
                 self._owner = "none"
+                self._clear_state_trace("process_exited_or_unreachable")
                 return False, f"CDP process exited with code {rc}"
             if await self._probe():
                 return True, "CDP service ready"
@@ -330,22 +380,24 @@ class JyhfCdpManager:
 
     async def _stop_managed_process(self) -> str:
         import traceback
-        logger.warning(
+        logging.getLogger().warning(
             "BFF _stop_managed_process called from:\n%s",
             "".join(traceback.format_stack(limit=8)[:-1]),
         )
         proc = self._process
         if proc is None:
+            self._clear_state_trace("stop_managed_proc_is_none")
             self._owner = "none"
             return "no managed process"
 
         pid = proc.pid
         if pid is None:
+            self._clear_state_trace("stop_managed_pid_is_none")
             self._owner = "none"
             self._process = None
             return "managed process has no PID"
 
-        logger.warning("BFF killing CDP: PID=%s PGID=%s", pid, os.getpgid(pid))
+        logging.getLogger().warning("BFF killing CDP: PID=%s PGID=%s", pid, os.getpgid(pid))
         try:
             pgid = os.getpgid(pid)
             os.killpg(pgid, signal.SIGTERM)
@@ -359,6 +411,7 @@ class JyhfCdpManager:
         except (ProcessLookupError, OSError):
             pass
 
+        self._clear_state_trace("stop_managed_process_done")
         self._owner = "none"
         self._process = None
         return f"CDP service stopped (PID={pid})"
@@ -380,7 +433,7 @@ class JyhfCdpManager:
     async def _probe(self) -> bool:
         for ep in _HEALTH_ENDPOINTS:
             try:
-                async with httpx.AsyncClient(timeout=3.0) as c:
+                async with httpx.AsyncClient(timeout=3.0, trust_env=False) as c:
                     r = await c.get(f"{self._base_url}{ep}")
                     if r.status_code == 200:
                         r.json()
@@ -390,14 +443,14 @@ class JyhfCdpManager:
         return False
 
     async def _get(self, path: str, *, params: dict | None = None, **kw) -> dict:
-        async with httpx.AsyncClient(timeout=10.0) as c:
+        async with httpx.AsyncClient(timeout=10.0, trust_env=False) as c:
             r = await c.get(f"{self._base_url}{path}", params=params, **kw)
             r.raise_for_status()
             data = r.json()
             return data if isinstance(data, dict) else {}
 
     async def _post(self, path: str, *, payload: dict | None = None, **kw) -> dict:
-        async with httpx.AsyncClient(timeout=30.0) as c:
+        async with httpx.AsyncClient(timeout=30.0, trust_env=False) as c:
             r = await c.post(f"{self._base_url}{path}", json=payload or {}, **kw)
             r.raise_for_status()
             data = r.json()

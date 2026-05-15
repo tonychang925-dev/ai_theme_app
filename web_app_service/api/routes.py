@@ -1,3 +1,4 @@
+import asyncio
 import json
 import logging
 import os
@@ -5,7 +6,7 @@ from typing import AsyncIterator
 
 import httpx
 from fastapi import APIRouter, HTTPException, Query, Request
-from fastapi.responses import StreamingResponse
+from fastapi.responses import JSONResponse, StreamingResponse
 
 from web_app_service.core.read_client import StockProcessingReadClient
 
@@ -530,7 +531,7 @@ async def collection_continue(payload: dict) -> dict:
 
 
 @router.get("/realtime/jyhf-cdp/status")
-async def jyhf_cdp_collector_status(request: Request) -> dict:
+async def jyhf_cdp_collector_status(request: Request):
     manager = request.app.state.cdp_manager
     result = await manager.get_status()
     # BFF fingerprint — shows which BFF instance served this response
@@ -544,7 +545,11 @@ async def jyhf_cdp_collector_status(request: Request) -> dict:
         result.get("collector_running"), result.get("cdp_connected"),
         str(result.get("last_capture_at", "-"))[:30] if result.get("last_capture_at") else "-",
     )
-    return result
+    return JSONResponse(content=result, headers={
+        "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
+        "Pragma": "no-cache",
+        "Expires": "0",
+    })
 
 
 @router.post("/realtime/jyhf-cdp/start")
@@ -563,6 +568,87 @@ async def jyhf_cdp_collector_start(request: Request, payload: dict | None = None
         str(result.get("last_capture_at", "-"))[:30] if result.get("last_capture_at") else "-",
     )
     return result
+
+
+@router.get("/debug/local-httpx-8095")
+async def debug_local_httpx_8095(request: Request) -> dict:
+    """临时诊断：复现 BFF→127.0.0.1:8095 的 HTTP 连通性"""
+    import socket as _socket
+    import httpx as _httpx
+
+    manager = request.app.state.cdp_manager
+    bff_pid = os.getpid()
+    manager_id = id(manager)
+    target = "http://127.0.0.1:8095/status"
+
+    # 1. port pid
+    port_pid = await asyncio.to_thread(manager._find_pid_by_port_blocking)
+
+    # 2. env vars
+    proxy_vars = {}
+    for v in ("HTTP_PROXY", "HTTPS_PROXY", "ALL_PROXY", "NO_PROXY"):
+        proxy_vars[v] = os.environ.get(v, "")
+
+    # 3. httpx trust_env=True
+    httpx_trust_true_result = {"ok": False, "error": ""}
+    try:
+        async with _httpx.AsyncClient(timeout=10.0, trust_env=True) as c:
+            r = await c.get(target)
+            d = r.json() if isinstance(r.json(), dict) else {}
+            httpx_trust_true_result = {
+                "ok": True,
+                "status_code": r.status_code,
+                "cdp_connected": d.get("cdp_connected"),
+            }
+    except Exception as exc:
+        httpx_trust_true_result = {"ok": False, "error": f"{type(exc).__name__}: {exc}"}
+
+    # 4. httpx trust_env=False
+    httpx_trust_false_result = {"ok": False, "error": ""}
+    try:
+        async with _httpx.AsyncClient(timeout=10.0, trust_env=False) as c:
+            r = await c.get(target)
+            d = r.json() if isinstance(r.json(), dict) else {}
+            httpx_trust_false_result = {
+                "ok": True,
+                "status_code": r.status_code,
+                "cdp_connected": d.get("cdp_connected"),
+            }
+    except Exception as exc:
+        httpx_trust_false_result = {"ok": False, "error": f"{type(exc).__name__}: {exc}"}
+
+    # 5. raw socket
+    socket_result = {"ok": False, "error": ""}
+    try:
+        sock = _socket.create_connection(("127.0.0.1", 8095), timeout=3)
+        socket_result = {"ok": True, "peer": sock.getpeername()}
+        sock.close()
+    except Exception as exc:
+        socket_result = {"ok": False, "error": f"{type(exc).__name__}: {exc}"}
+
+    # 6. get_status for comparison
+    status = await manager.get_status()
+
+    return {
+        "bff_pid": bff_pid,
+        "manager_id": manager_id,
+        "port_pid": port_pid,
+        "target": target,
+        "env_proxy": proxy_vars,
+        "httpx_trust_env_true": httpx_trust_true_result,
+        "httpx_trust_env_false": httpx_trust_false_result,
+        "socket_connect": socket_result,
+        "get_status": {
+            "service_running": status.get("service_running"),
+            "http_alive": status.get("http_alive"),
+            "http_error": status.get("http_error"),
+            "popen_alive": status.get("popen_alive"),
+        },
+        "verdict": "PROXY_BUG" if (not httpx_trust_true_result["ok"] and httpx_trust_false_result["ok"])
+                   else "NETWORK_BUG" if (not socket_result["ok"])
+                   else "LOGIC_BUG" if (httpx_trust_false_result["ok"] and not status.get("http_alive"))
+                   else "ALL_OK",
+    }
 
 
 @router.post("/realtime/jyhf-cdp/stop")
