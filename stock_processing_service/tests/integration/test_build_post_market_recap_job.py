@@ -9,6 +9,10 @@ from decimal import Decimal
 from typing import Any
 
 from stock_processing_service.application.jobs import BuildPostMarketRecapJob
+from stock_processing_service.application.use_cases.build_strong_stock_tracking import (
+    LAYER_C_INPUT_MODE,
+    BuildStrongStockTrackingUseCase,
+)
 from stock_processing_service.contracts.dto import (
     MainlineCycleDTO,
     MainlineIdentityDTO,
@@ -153,6 +157,7 @@ class _FakeReadPort:
 class _FakeWritePort:
     def __init__(self) -> None:
         self.recap_docs: list[Any] = []
+        self.strong_watch_pool_rows: list[dict[str, Any]] = []
         self.strong_watch_history_rows: list[dict[str, Any]] = []
 
     async def upsert_stock_daily_snapshot_rows(self, rows): return len(rows)
@@ -166,6 +171,7 @@ class _FakeWritePort:
         return 1
 
     async def upsert_strong_watch_pool_rows(self, rows, **kwargs):
+        self.strong_watch_pool_rows.extend(rows)
         return len(rows)
 
     async def promote_strong_watch_candidates(self, trade_date):
@@ -233,7 +239,7 @@ class _FakeCachePort:
 
 # ── Tests ──
 
-def test_build_post_market_recap_job_seed_query_flow() -> None:
+def test_build_post_market_recap_job_strong_watch_pool_flow() -> None:
     """Smoke test: job runs successfully with seed-query architecture."""
 
     async def _run() -> None:
@@ -262,7 +268,7 @@ def test_build_post_market_recap_job_seed_query_flow() -> None:
         assert len(write_port.recap_docs) == 1
         recap_doc = write_port.recap_docs[0].recap_doc
         assert recap_doc["candidate_source"] == "strong_watch_pool"
-        assert recap_doc["layer_c_input_mode"] == "seed_query"
+        assert recap_doc["layer_c_input_mode"] == LAYER_C_INPUT_MODE
         assert recap_doc["layer_a_identity_hit_count"] >= 1
         assert recap_doc["layer_b_cycle_hit_count"] >= 1
 
@@ -274,6 +280,26 @@ def test_build_post_market_recap_job_seed_query_flow() -> None:
             trace_id="tpm2",
         )
         assert skipped.status == "skipped_idempotent"
+
+    asyncio.run(_run())
+
+
+def test_build_strong_stock_tracking_use_case_writes_layer_c_objects() -> None:
+    async def _run() -> None:
+        read_port = _FakeReadPort()
+        write_port = _FakeWritePort()
+        use_case = BuildStrongStockTrackingUseCase(
+            read_ports=read_port,
+            write_ports=write_port,
+            cache_ports=None,
+        )
+
+        result = await use_case.execute(trade_date=date(2026, 4, 23), window_days=7)
+        assert result.status == "ok"
+        assert result.metrics["layer_c_input_mode"] == LAYER_C_INPUT_MODE
+        assert result.metrics["history_written"] == 1
+        assert len(write_port.strong_watch_pool_rows) == 1
+        assert len(write_port.strong_watch_history_rows) == 1
 
     asyncio.run(_run())
 
@@ -340,6 +366,51 @@ def test_build_post_market_recap_job_missing_layer_b_cycle_fail_fast() -> None:
     asyncio.run(_run())
 
 
+def test_layer_c_contract_multi_limitup_still_requires_layer_a_b() -> None:
+    """Contract: multi-limit-up strong signals are not independent leaders without A/B truth."""
+    class _MultiLimitupMissingCycleReadPort(_FakeReadPort):
+        async def get_strong_watch_seed_rows(self, trade_date: date, lookback_days: int = 7) -> list[dict[str, Any]]:
+            rows = await super().get_strong_watch_seed_rows(trade_date, lookback_days)
+            rows[0]["recent_limit_up_count"] = 3
+            rows[0]["has_two_board"] = False
+            rows[0]["three_days_two_boards"] = True
+            rows[0]["recent_multi_limitup"] = True
+            return rows
+
+        async def get_mainline_identity_by_subject_keys(self, subject_keys: list[str], trade_date: date):
+            return []
+
+        async def get_mainline_cycle_by_subject_keys(self, subject_keys: list[str], trade_date: date):
+            return []
+
+    async def _run() -> None:
+        read_port = _MultiLimitupMissingCycleReadPort()
+        write_port = _FakeWritePort()
+        job = BuildPostMarketRecapJob(
+            read_port=read_port,
+            write_port=write_port,
+            event_port=_FakeEventPort(),
+            idempotency_port=_FakeIdempotencyPort(),
+            cache_port=_FakeCachePort(),
+        )
+
+        try:
+            await job.execute(
+                trade_date=date(2026, 4, 23),
+                snapshot_version="pm-multi-limitup",
+                batch_id="bpm-multi-limitup",
+                trace_id="tpm-multi-limitup",
+            )
+        except RuntimeError as exc:
+            assert "missing Layer B cycle truth" in str(exc)
+        else:
+            raise AssertionError("expected multi-limit-up strong signal to require Layer A/B truth")
+        assert write_port.strong_watch_history_rows == []
+        assert write_port.recap_docs == []
+
+    asyncio.run(_run())
+
+
 def test_layer_c_contract_two_board_enters_pool_without_layer_a_b_state() -> None:
     """Contract: docs §13.3.3 requires two-board stocks to enter via independent_leader."""
     class _TwoBoardMissingCycleReadPort(_FakeReadPort):
@@ -379,12 +450,24 @@ def test_layer_c_contract_two_board_enters_pool_without_layer_a_b_state() -> Non
         assert labels["entry_path"] == "independent_leader"
         assert labels["identity_scope"] == "independent_stock_signal"
         assert labels["strong_gene_seed"] is True
-        assert labels["mainline_identity_confirmed"] is False
-        assert "final_mainline_alive" not in labels
+        for forbidden_key in (
+            "mainline_identity_confirmed",
+            "final_mainline_alive",
+            "cycle_state",
+            "fade_watch",
+            "fade_confirmed",
+            "mainline_strength_score",
+        ):
+            assert forbidden_key not in labels
         evidence = write_port.strong_watch_history_rows[0]["evidence_json"]
         assert evidence["entry_path"] == "independent_leader"
         assert evidence["identity_scope"] == "independent_stock_signal"
         assert evidence["strong_gene_seed"] is True
-        assert "final_mainline_alive" not in evidence
+        for forbidden_key in (
+            "final_mainline_alive",
+            "cycle_state",
+            "mainline_strength_score",
+        ):
+            assert forbidden_key not in evidence
 
     asyncio.run(_run())

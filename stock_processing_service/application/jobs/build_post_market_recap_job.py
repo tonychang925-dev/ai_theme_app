@@ -2,33 +2,25 @@ from __future__ import annotations
 
 import os
 from dataclasses import asdict
-from datetime import date, datetime, timedelta, timezone
+from datetime import date, datetime, timezone
 from decimal import Decimal
-import hashlib
 import json
 from typing import Any
 from uuid import uuid4
 
 from stock_processing_service.application.cache import SnapshotCacheWriter
+from stock_processing_service.application.use_cases.build_strong_stock_tracking import (
+    LAYER_C_INPUT_MODE,
+    BuildStrongStockTrackingUseCase,
+)
 from stock_processing_service.contracts.dto import (
     BuildResult,
-    MainlineCycleDTO,
-    MainlineIdentityDTO,
-    PriorSnapshotDTO,
-    StockBarDTO,
     SubjectStockPoolDTO,
 )
 from stock_processing_service.contracts.events import EventEnvelope, SnapshotBuiltPayload
 from stock_processing_service.contracts.snapshots import PostMarketRecapSnapshot
-from stock_processing_service.domain.services.kline_support_scorer import KlineSupportScorer
 from stock_processing_service.domain.services.strong_stock_tracking_service import (
-    BoardSnapshot,
-    CycleSnapshot,
-    PatternSnapshot,
-    PositionSnapshot,
     StrongStockTrackingService,
-    WatchScoreResult,
-    WatchSeedRow,
 )
 from stock_processing_service.domain.services.w2s_candidate_service import W2SCandidateService
 from stock_processing_service.ports import (
@@ -50,6 +42,7 @@ class BuildPostMarketRecapJob:
         cache_port: StockCachePort | None = None,
         candidate_service: W2SCandidateService | None = None,
         tracking_service: StrongStockTrackingService | None = None,
+        strong_stock_tracking_use_case: Any | None = None,
         identity_job: Any | None = None,  # BuildIdentityJob — Layer A 前置
         mainline_state_job: Any | None = None,  # BuildMainlineStateJob — Layer B 前置
         cycle_judgement_job: Any | None = None,  # BuildCycleJudgementJob — Layer B 前置
@@ -63,6 +56,12 @@ class BuildPostMarketRecapJob:
         self._cache_writer = SnapshotCacheWriter(cache_port)
         self._candidate_service = candidate_service or W2SCandidateService()
         self._tracking_service = tracking_service or StrongStockTrackingService()
+        self._strong_stock_tracking_use_case = strong_stock_tracking_use_case or BuildStrongStockTrackingUseCase(
+            read_ports=read_port,
+            write_ports=write_port,
+            cache_ports=cache_port,
+            tracking_service=self._tracking_service,
+        )
         self._identity_job = identity_job
         self._mainline_state_job = mainline_state_job
         self._cycle_judgement_job = cycle_judgement_job
@@ -96,27 +95,6 @@ class BuildPostMarketRecapJob:
         return stock_id
 
     @staticmethod
-    def _to_stock_bar(row: Any, default_trade_date: date) -> StockBarDTO:
-        if isinstance(row, StockBarDTO):
-            return row
-        p = dict(row or {})
-        return StockBarDTO(
-            trade_date=p.get("trade_date", default_trade_date),
-            stock_id=BuildPostMarketRecapJob._normalize_stock_id(p.get("stock_id", "")),
-            stock_name=str(p.get("stock_name", "")),
-            open_price=BuildPostMarketRecapJob._d(p.get("open_price")),
-            high_price=BuildPostMarketRecapJob._d(p.get("high_price")),
-            low_price=BuildPostMarketRecapJob._d(p.get("low_price")),
-            close_price=BuildPostMarketRecapJob._d(p.get("close_price")),
-            pre_close=BuildPostMarketRecapJob._d(p.get("pre_close")),
-            pct_chg=BuildPostMarketRecapJob._d(p.get("pct_chg")),
-            volume=BuildPostMarketRecapJob._d(p.get("volume")),
-            amount=BuildPostMarketRecapJob._d(p.get("amount")),
-            limit_up_price=BuildPostMarketRecapJob._d(p.get("limit_up_price")),
-            limit_down_price=BuildPostMarketRecapJob._d(p.get("limit_down_price")),
-        )
-
-    @staticmethod
     def _to_pool_row(row: Any, default_trade_date: date) -> SubjectStockPoolDTO:
         if isinstance(row, SubjectStockPoolDTO):
             return row
@@ -130,64 +108,6 @@ class BuildPostMarketRecapJob:
             stock_name=p.get("stock_name"),
             pool_rank=p.get("pool_rank", p.get("rank_order")),
             metadata=dict(metadata) if isinstance(metadata, dict) else {},
-        )
-
-    @staticmethod
-    def _to_prior_row(row: Any, default_trade_date: date) -> PriorSnapshotDTO:
-        if isinstance(row, PriorSnapshotDTO):
-            return row
-        p = dict(row or {})
-        payload = p.get("payload")
-        if not isinstance(payload, dict):
-            payload = {}
-            for key in ("open_price", "high_price", "low_price", "close_price", "pre_close", "pct_chg", "watch_score"):
-                if p.get(key) is not None:
-                    payload[key] = str(p.get(key))
-        return PriorSnapshotDTO(
-            trade_date=p.get("trade_date", default_trade_date),
-            stock_id=BuildPostMarketRecapJob._normalize_stock_id(p.get("stock_id", "")),
-            snapshot_version=str(p.get("snapshot_version", "")),
-            payload=payload,
-        )
-
-    @staticmethod
-    def _to_identity(row: Any) -> MainlineIdentityDTO:
-        if isinstance(row, MainlineIdentityDTO):
-            return row
-        p = dict(row or {})
-        return MainlineIdentityDTO(
-            subject_key=str(p.get("subject_key", "")),
-            identity_status=str(p.get("identity_status", "")),
-            is_main_theme=bool(p.get("is_main_theme", False)),
-            first_confirmed_date=p.get("first_confirmed_date"),
-            last_review_date=p.get("last_review_date"),
-            rule_version=str(p.get("rule_version", "")),
-        )
-
-    @staticmethod
-    def _to_cycle(row: Any, default_trade_date: date) -> MainlineCycleDTO:
-        if isinstance(row, MainlineCycleDTO):
-            return row
-        p = dict(row or {})
-        if "final_mainline_alive" not in p:
-            raise RuntimeError(
-                "invalid Layer B cycle row: missing final_mainline_alive; "
-                f"subject_key={p.get('subject_key', '')}; trade_date={p.get('trade_date', default_trade_date)}"
-            )
-        trigger_flags = p.get("trigger_flags")
-        return MainlineCycleDTO(
-            trade_date=p.get("trade_date", default_trade_date),
-            subject_key=str(p.get("subject_key", "")),
-            final_cycle_state=str(p.get("final_cycle_state", "")),
-            final_mainline_alive=bool(p.get("final_mainline_alive")),
-            transition_type=str(p.get("transition_type", "")),
-            transition_confidence=BuildPostMarketRecapJob._d(p.get("transition_confidence")),
-            trigger_flags=list(trigger_flags) if isinstance(trigger_flags, list) else [],
-            mainline_strength_score=BuildPostMarketRecapJob._d(p.get("mainline_strength_score")),
-            repair_score=BuildPostMarketRecapJob._d(p.get("repair_score")),
-            divergence_score=BuildPostMarketRecapJob._d(p.get("divergence_score")),
-            fade_watch_score=BuildPostMarketRecapJob._d(p.get("fade_watch_score")),
-            fade_confirmed_score=BuildPostMarketRecapJob._d(p.get("fade_confirmed_score")),
         )
 
     @staticmethod
@@ -287,28 +207,7 @@ class BuildPostMarketRecapJob:
                 metrics={"job_key": job_key},
             )
 
-        # ═══ Layer C: 强势股观察池 — 旧链 StrongStockTrackingService 逻辑的新架构实现 ═══
-        # Step 1: 种子查询（Gateways → 等价旧链 _fetch_seed_rows SQL）→ 30-80 只
-        seed_rows_raw = await self._read_port.get_strong_watch_seed_rows(trade_date, lookback_days=lookback_days)
-        seed_candidates = self._tracking_service.build_seed_candidates(seed_rows_raw)
-
-        # Step 2: 已有池 refresh（Gateways → 等价旧链 _fetch_refresh_watch_pool）
-        refresh_rows_raw = await self._read_port.get_strong_watch_refresh_rows(trade_date)
-
-        # Step 3: 收集所有需评分的 stock_ids 和 subject_keys
-        refresh_stock_ids: set[str] = set()
-        for row in refresh_rows_raw:
-            sid = self._normalize_stock_id(str(row.get("stock_id") or ""))
-            if sid:
-                refresh_stock_ids.add(sid)
-        seed_stock_ids = {s.stock_id for s in seed_candidates}
-        all_stock_ids = sorted(seed_stock_ids | refresh_stock_ids)
-        all_subject_keys = sorted(
-            {s.subject_key for s in seed_candidates if s.subject_key}
-            | {str(row.get("subject_key") or "") for row in refresh_rows_raw if str(row.get("subject_key") or "")}
-        )
-
-        # ── Step 3.5: Layer A/B 前置（新链自闭环）──
+        # ── Layer A/B 前置（新链自闭环）──
         # 执行顺序: Evidence → Cycle → Identity → MainlineState
         if self._evidence_job is not None:
             await self._evidence_job.execute(
@@ -337,213 +236,13 @@ class BuildPostMarketRecapJob:
                 trace_id=trace_id,
             )
 
-        # Step 4: 预取评分所需的外部数据
-        identities_raw = await self._read_port.get_mainline_identity_by_subject_keys(
-            subject_keys=all_subject_keys, trade_date=trade_date,
+        # ── Layer C: 强势股观察池由独立 use case 负责，recap 只消费其对象输出 ──
+        layer_c_result = await self._strong_stock_tracking_use_case.execute(
+            trade_date=trade_date,
+            window_days=7,
+            lookback_days=lookback_days,
         )
-        cycles_raw = await self._read_port.get_mainline_cycle_by_subject_keys(
-            subject_keys=all_subject_keys, trade_date=trade_date,
-        )
-        evidence_raw = await self._read_port.get_subject_cycle_evidence_daily(
-            trade_date, subject_keys=all_subject_keys,
-        )
-        board_stats_raw = await self._read_port.get_subject_board_stats(trade_date)
-        positions_raw = await self._read_port.get_stock_position_judgement(trade_date, all_stock_ids)
-        patterns_raw = await self._read_port.get_stock_pattern_judgement(trade_date, all_stock_ids)
-        bars_raw = await self._read_port.get_stock_daily_bars(trade_date, all_stock_ids)
-        # ── 前一交易日数据（等价旧链 prev_day_pct_chg / prev_day_limit_up 来源）──
-        prev_trade_date = trade_date
-        cal = await self._read_port.get_trade_calendar(trade_date)
-        if cal is not None:
-            prev_td = cal.prev_trade_date if hasattr(cal, "prev_trade_date") else (cal.get("prev_trade_date") if isinstance(cal, dict) else None)
-            if prev_td is not None:
-                if isinstance(prev_td, str):
-                    prev_td = date.fromisoformat(prev_td)
-                prev_trade_date = prev_td
-        prev_day_bars_raw = await self._read_port.get_stock_daily_bars(prev_trade_date, all_stock_ids)
-        prior_rows_raw = await self._read_port.get_prior_stock_daily_snapshots(
-            trade_date=trade_date, lookback_days=lookback_days, stock_ids=all_stock_ids,
-        )
-        history_start = trade_date - timedelta(days=90)
-        history_bars_raw = await self._read_port.get_stock_daily_bars_range(
-            start_date=history_start, end_date=trade_date, stock_ids=all_stock_ids,
-        )
-
-        # Step 5: 转换为 Domain DTOs
-        bars = [self._to_stock_bar(row, trade_date) for row in bars_raw]
-        prev_day_bars = [self._to_stock_bar(row, prev_trade_date) for row in prev_day_bars_raw]
-        prior_rows = [self._to_prior_row(row, trade_date) for row in prior_rows_raw]
-        history_bars = [self._to_stock_bar(row, history_start) for row in history_bars_raw]
-
-        identities = [self._to_identity(row) for row in identities_raw]
-        cycles = [self._to_cycle(row, trade_date) for row in cycles_raw]
-        identities_by_subject = {x.subject_key: x for x in identities}
-        cycles_by_subject = {x.subject_key: x for x in cycles}
-
-        evidence_by_subject: dict[str, dict[str, Any]] = {
-            str(row.get("subject_key") or ""): dict(row) for row in evidence_raw
-        }
-        board_by_subject: dict[str, dict[str, Any]] = {
-            str(row.get("subject_key") or ""): dict(row) for row in board_stats_raw
-        }
-        pos_by_stock: dict[str, dict[str, Any]] = {
-            self._normalize_stock_id(str(row.get("stock_id") or "")): dict(row)
-            for row in positions_raw
-        }
-        pattern_by_stock: dict[str, dict[str, Any]] = {
-            self._normalize_stock_id(str(row.get("stock_id") or "")): dict(row)
-            for row in patterns_raw
-        }
-
-        # Step 6: Domain 层评分（等价旧链 _score_watch_row × N）
-        support_scorer = KlineSupportScorer()
-        bars_by_stock = {b.stock_id: b for b in bars}
-        prev_day_bars_by_stock = {b.stock_id: b for b in prev_day_bars}
-        prior_by_stock: dict[str, list[PriorSnapshotDTO]] = {}
-        for pr in prior_rows:
-            prior_by_stock.setdefault(pr.stock_id, []).append(pr)
-        history_bars_by_stock: dict[str, list[StockBarDTO]] = {}
-        for hb in history_bars:
-            history_bars_by_stock.setdefault(hb.stock_id, []).append(hb)
-
-        watch_pool_results: list[WatchScoreResult] = []
-
-        def _score_all(candidates: list, current_flag_map: dict[str, int] | None = None):
-            for candidate in candidates:
-                stock_id = candidate.stock_id
-                flag_today = (current_flag_map or {}).get(stock_id, candidate.current_flag_today)
-
-                # 构建周期快照
-                cyc = cycles_by_subject.get(candidate.subject_key)
-                has_two_board = bool(candidate.labels.get("has_two_board") or False)
-                if cyc is None and not has_two_board:
-                    raise RuntimeError(
-                        "build_post_market_recap failed: missing Layer B cycle truth for Layer C scoring; "
-                        f"trade_date={trade_date.isoformat()}; subject_key={candidate.subject_key}; "
-                        f"stock_id={stock_id}"
-                    )
-                identity = identities_by_subject.get(candidate.subject_key)
-                cycle_snap = CycleSnapshot(
-                    final_cycle_state=str(getattr(cyc, "final_cycle_state", "") or "") if cyc else "",
-                    effective_mainline_alive=bool(
-                        cyc
-                        and identity
-                        and getattr(identity, "is_main_theme", False)
-                        and getattr(identity, "identity_status", "") == "confirmed"
-                        and getattr(cyc, "final_mainline_alive", False)
-                    ),
-                    fade_watch=bool(getattr(cyc, "fade_watch", False)) if cyc else False,
-                    fade_confirmed=bool(getattr(cyc, "fade_confirmed", False)) if cyc else False,
-                    mainline_strength_score=float(getattr(cyc, "mainline_strength_score", 0) or 0) if cyc else 0.0,
-                    event_continuity_score=float(
-                        (evidence_by_subject.get(candidate.subject_key, {})).get("event_continuity_score", 0) or 0
-                    ),
-                )
-
-                # 构建板块快照
-                bd = board_by_subject.get(candidate.subject_key, {})
-                board_snap = BoardSnapshot(
-                    subject_limit_up_count=int(bd.get("subject_limit_up_count") or 0),
-                    subject_strong_count=int(bd.get("subject_strong_count") or 0),
-                )
-
-                # 构建位置快照
-                pos_raw = pos_by_stock.get(stock_id, {})
-                pos_snap = PositionSnapshot(
-                    position_label=str(pos_raw.get("position_label") or ""),
-                    ma_alignment_status=str(pos_raw.get("ma_alignment_status") or ""),
-                    trend_strength_score=float(pos_raw.get("trend_strength_score") or 0.0),
-                )
-
-                # 构建形态快照
-                pat_raw = pattern_by_stock.get(stock_id, {})
-                pattern_labels_raw = pat_raw.get("pattern_labels")
-                if isinstance(pattern_labels_raw, str):
-                    try:
-                        pattern_labels_raw = json.loads(pattern_labels_raw)
-                    except Exception:
-                        pattern_labels_raw = []
-                elif not isinstance(pattern_labels_raw, list):
-                    pattern_labels_raw = []
-                pattern_snap = PatternSnapshot(
-                    pattern_labels=[str(x) for x in pattern_labels_raw],
-                    volume_pattern_status=str(pat_raw.get("volume_pattern_status") or ""),
-                    breakout_status=str(pat_raw.get("breakout_status") or ""),
-                    pullback_status=str(pat_raw.get("pullback_status") or ""),
-                    risk_pattern_status=str(pat_raw.get("risk_pattern_status") or ""),
-                )
-
-                # 计算支撑位（current_bar 可能为空，使用空 bar 兜底）
-                bar = bars_by_stock.get(stock_id) or StockBarDTO(
-                    trade_date=trade_date, stock_id=stock_id, stock_name="",
-                    open_price=Decimal("0"), high_price=Decimal("0"),
-                    low_price=Decimal("0"), close_price=Decimal("0"),
-                    pre_close=Decimal("0"), pct_chg=Decimal("0"),
-                    volume=Decimal("0"), amount=Decimal("0"),
-                    limit_up_price=Decimal("0"), limit_down_price=Decimal("0"),
-                )
-                stock_prior = prior_by_stock.get(stock_id, [])
-                stock_history = history_bars_by_stock.get(stock_id, [])
-                support_result = support_scorer.score(
-                    stock_id=stock_id,
-                    current_bar=bar,
-                    prior_rows=stock_prior,
-                    history_bars=stock_history,
-                )
-
-                result = self._tracking_service.score_watch_row(
-                    candidate,
-                    current_flag_today=flag_today,
-                    close_price=float(bar.close_price) if bar.close_price else None,
-                    cycle=cycle_snap,
-                    board=board_snap,
-                    support_result=support_result,
-                    pos=pos_snap,
-                    pattern=pattern_snap,
-                )
-                watch_pool_results.append(result)
-
-        # 评分种子 + refresh 行
-        _score_all(seed_candidates)
-        for row in refresh_rows_raw:
-            sid = self._normalize_stock_id(str(row.get("stock_id") or ""))
-            if not sid or sid in {s.stock_id for s in seed_candidates}:
-                continue
-            labels_json = row.get("labels_json")
-            if isinstance(labels_json, str):
-                try:
-                    labels_json = json.loads(labels_json)
-                except Exception:
-                    labels_json = {}
-            elif not isinstance(labels_json, dict):
-                labels_json = {}
-            # 解析 evidence_json（可能是 JSON 字符串，与 labels_json 同样的处理）
-            ev_raw = row.get("evidence_json") or {}
-            if isinstance(ev_raw, str):
-                try:
-                    ev_raw = json.loads(ev_raw)
-                except Exception:
-                    ev_raw = {}
-            elif not isinstance(ev_raw, dict):
-                ev_raw = {}
-            refresh_candidate = WatchSeedRow(
-                stock_id=sid,
-                stock_name=str(row.get("stock_name") or ""),
-                subject_key=str(row.get("subject_key") or ""),
-                theme_name=str(row.get("theme_name") or row.get("subject_key") or ""),
-                source_tag=str(row.get("source_tag") or "refresh"),
-                relay_role=str(row.get("relay_role") or "unknown"),
-                recent_limit_up_count=int(labels_json.get("recent_limit_up_count") or 0),
-                current_flag_today=int(row.get("current_flag_today") or 0),
-                is_dragon_head=bool(labels_json.get("is_dragon_head") or False),
-                is_front_row_core=bool(labels_json.get("is_front_row_core") or False),
-                board_effect_confirmed=bool(labels_json.get("board_effect_confirmed") or False),
-                subject_limit_up_count=int(labels_json.get("subject_limit_up_count") or 0),
-                subject_strong_count=int(labels_json.get("subject_strong_count") or 0),
-                labels=dict(labels_json),
-                evidence=ev_raw,
-            )
-            _score_all([refresh_candidate], {sid: int(row.get("current_flag_today") or 0)})
+        layer_c_metrics = dict(layer_c_result.metrics or {})
 
         # Step 7: 构建 D1 候选 — 等价旧链 _fetch_watch_candidate_inputs + _to_candidate + _apply_watch_context
         d1_input_rows = await self._read_port.get_w2s_candidate_inputs(trade_date)
@@ -724,105 +423,27 @@ class BuildPostMarketRecapJob:
                 "fade_confirmed": fade_confirmed,
             })
 
-        # ── Step 7b: 持久池写入（等价旧链 _upsert_watch_pool_seed + _update_watch_pool_row）──
-        pool_write_rows: list[dict[str, Any]] = []
-        for result in watch_pool_results:
-            if not result.stock_id:
-                continue
-            pool_write_rows.append({
-                "trade_date": trade_date,
-                "stock_id": result.stock_id,
-                "stock_name": result.stock_name,
-                "subject_key": result.subject_key,
-                "theme_name": result.theme_name,
-                "watch_window_days": 1,  # 初始值，后续由 recompute_strong_watch_window_days 修正
-                "source_tag": result.source_tag,
-                "relay_role": result.relay_role,
-                "watch_status": result.watch_status,
-                "watch_priority": str(result.watch_priority),
-                "watch_score": str(result.watch_score),
-                "pool_entry_type": result.pool_entry_type,
-                "cycle_state": result.cycle_state,
-                "mainline_strength_score": str(result.mainline_strength_score),
-                "fade_watch": result.fade_watch,
-                "fade_confirmed": result.fade_confirmed,
-                "support_type": result.support_type,
-                "support_level": str(result.support_level or "0"),
-                "support_score": str(result.support_score),
-                "labels": result.labels,
-                "evidence": result.evidence,
-            })
-        pool_written = await self._write_port.upsert_strong_watch_pool_rows(pool_write_rows)
-
-        # ── Step 7b.5: 重算 watch_window_days（等价旧链 _recompute_watch_window_days）──
-        all_written_ids = [str(r["stock_id"]) for r in pool_write_rows if r.get("stock_id")]
-        if all_written_ids:
-            await self._write_port.recompute_strong_watch_window_days(all_written_ids)
-
-        # ── Step 7c: 旧链等价 promote（DB UPDATE candidate_promoted=TRUE）──
-        formal_ids = {r.stock_id for r in watch_pool_results
-                      if r.watch_status in {"active", "weakening"}
-                      and r.pool_entry_type in {"formal", "observe_only"}
-                      and not r.fade_confirmed}
-        promote_count = await self._write_port.promote_strong_watch_candidates(trade_date)
-
-        # ── Step 7d: 旧链等价 prune（DB UPDATE removed/reject）──
-        prune_count = await self._write_port.prune_strong_watch_pool(trade_date)
-
-        # ── Step 7e: 旧链等价 history snapshot（写入 strong_stock_watch_history）──
-        history_rows = [
-            {
-                "trade_date": trade_date,
-                "stock_id": r.stock_id,
-                "stock_name": r.stock_name,
-                "subject_key": r.subject_key,
-                "theme_name": r.theme_name,
-                "watch_status": r.watch_status,
-                "watch_score": str(r.watch_score),
-                "watch_priority": str(r.watch_priority),
-                "pool_entry_type": r.pool_entry_type,
-                "relay_role": r.relay_role,
-                "cycle_state": r.cycle_state,
-                "mainline_strength_score": str(r.mainline_strength_score),
-                "fade_watch": r.fade_watch,
-                "fade_confirmed": r.fade_confirmed,
-                "promoted_to_candidate": r.stock_id in formal_ids,
-                "strong_grade": r.strong_grade,
-                "removed_reason": r.removed_reason or "",
-                "prune_mode": "immediate" if r.watch_status == "removed" else None,
-                "prune_reason_code": r.removed_reason or "",
-                "kept_because": None,
-                "watch_window_days": 1,  # 初始值，后续由 recompute_strong_watch_window_days 修正
-                "support_type": r.support_type,
-                "support_level": str(r.support_level or "0"),
-                "support_score": str(r.support_score),
-                "labels_json": r.labels,
-                "evidence_json": r.evidence,
-            }
-            for r in watch_pool_results if r.stock_id
-        ]
-        history_written = await self._write_port.upsert_strong_watch_history_rows(history_rows)
-
         # 构建 recap_doc 所需元数据
         pool_rows: list[Any] = []  # 保留兼容性
-        stock_ids = all_stock_ids
-        subject_keys = all_subject_keys
+        stock_ids = list(layer_c_metrics.get("stock_ids") or [])
+        subject_keys = list(layer_c_metrics.get("subject_keys") or [])
         strong_watch_rows: list[Any] = []
-        strong_watch_history: list[Any] = history_rows if history_written else []
+        history_written = int(layer_c_metrics.get("history_written") or 0)
+        strong_watch_history: list[Any] = list(layer_c_metrics.get("history_rows") or [])
         promoted_pool_rows: list[Any] = d1_input_rows
         shadow_summary: dict[str, Any] = {}
         legacy_watch_input_count = 0
-        strong_watch_pool_written = pool_written
-        strong_watch_promote_count = promote_count
-        strong_watch_prune_count = prune_count
+        strong_watch_pool_written = int(layer_c_metrics.get("pool_written") or 0)
+        strong_watch_promote_count = int(layer_c_metrics.get("promote_count") or 0)
+        strong_watch_prune_count = int(layer_c_metrics.get("prune_count") or 0)
         strong_watch_history_written = history_written
-        layer_c_input_mode = "seed_query"
+        layer_c_input_mode = LAYER_C_INPUT_MODE
         layer_c_shadow_enabled = False
         layer_a_identity_source = "theme_mainline_identity_registry"
         layer_b_cycle_source = "theme_cycle_judgement_v2"
-        layer_a_identity_hit_count = len(identities_by_subject)
-        layer_b_cycle_hit_count = len(cycles_by_subject)
-        input_fingerprint = "v2_seed_query"
+        layer_a_identity_hit_count = int(layer_c_metrics.get("subject_key_count") or 0)
+        layer_b_cycle_hit_count = int(layer_c_metrics.get("subject_key_count") or 0)
+        input_fingerprint = LAYER_C_INPUT_MODE
         # ── 旧链等价 D1 候选：排序 + top 10 + 写入 weak_to_strong_candidate_pool ──
         # ── 去重：同一 stock_id 只保留最高分 ──
         _dedup: dict[str, dict[str, Any]] = {}
@@ -1162,68 +783,6 @@ class BuildPostMarketRecapJob:
             published_events=["snapshot_built"],
             cache_writes=3 if self._cache_port is not None else 0,
         )
-
-    @staticmethod
-    def _build_input_fingerprint(
-        *,
-        trade_date: date,
-        bars: list[Any],
-        pool_rows: list[Any],
-        prior_rows: list[Any],
-        history_bars: list[Any],
-        subject_keys: list[str],
-        stock_ids: list[str],
-    ) -> dict[str, Any]:
-        payload = {
-            "trade_date": trade_date.isoformat(),
-            "bars_count": len(bars),
-            "pool_rows_count": len(pool_rows),
-            "prior_rows_count": len(prior_rows),
-            "history_bars_count": len(history_bars),
-            "subject_key_count": len(subject_keys),
-            "stock_id_count": len(stock_ids),
-            "subject_keys_sample": subject_keys[:50],
-            "stock_ids_sample": stock_ids[:100],
-        }
-        raw = json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
-        payload["fingerprint_sha256"] = hashlib.sha256(raw.encode("utf-8")).hexdigest()
-        return payload
-
-    async def _upsert_strong_watch_history(self, strong_watch_history: list[Any]) -> int:
-        fn = getattr(self._write_port, "upsert_strong_watch_history_rows", None)
-        if not callable(fn):
-            return 0
-        rows = [
-            {
-                "trade_date": row.trade_date.isoformat() if hasattr(row.trade_date, "isoformat") else row.trade_date,
-                "stock_id": row.stock_id,
-                "stock_name": row.stock_name,
-                "subject_key": row.subject_key,
-                "theme_name": row.theme_name,
-                "watch_status": row.watch_status,
-                "pool_entry_type": row.pool_entry_type,
-                "relay_role": row.relay_role,
-                "strong_grade": row.strong_grade,
-                "watch_score": str(row.watch_score),
-                "watch_priority": str(row.watch_priority),
-                "cycle_state": row.cycle_state,
-                "mainline_strength_score": str(row.mainline_strength_score),
-                "fade_watch": bool(row.fade_watch),
-                "fade_confirmed": bool(row.fade_confirmed),
-                "promoted_to_candidate": bool(row.promoted_to_candidate),
-                "support_score": str(row.support_score),
-                "support_type": row.support_type,
-                "support_level": str(row.support_level),
-                "prune_mode": row.prune_mode,
-                "prune_reason_code": row.prune_reason_code,
-                "removed_reason": row.removed_reason,
-                "kept_because": row.kept_because,
-                "labels_json": dict(row.labels_json or {}),
-                "evidence_json": dict(row.evidence_json or {}),
-            }
-            for row in strong_watch_history
-        ]
-        return int(await fn(rows) or 0)
 
     @staticmethod
     def _build_d1_input_rows(

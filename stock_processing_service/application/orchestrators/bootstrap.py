@@ -74,12 +74,14 @@ def build_container(
     event_gateway = StockEventGatewayAdapter(db_gateway=db_gateway)
     idempotency_gateway = StockIdempotencyGatewayAdapter(db_gateway=db_gateway)
 
+    build_strong_stock_tracking = BuildStrongStockTrackingUseCase(
+        read_ports=theme_data_gateway,
+        write_ports=stock_object_gateway,
+        cache_ports=cache_gateway,
+    )
+
     return StockProcessingContainer(
-        build_strong_stock_tracking=BuildStrongStockTrackingUseCase(
-            read_ports=theme_data_gateway,
-            write_ports=stock_object_gateway,
-            cache_ports=cache_gateway,
-        ),
+        build_strong_stock_tracking=build_strong_stock_tracking,
         build_daily_snapshot=BuildDailySnapshotJob(
             read_port=theme_data_gateway,
             write_port=stock_object_gateway,
@@ -127,6 +129,7 @@ def build_container(
             mainline_state_job=_mainline_state_job,
             cycle_judgement_job=_cycle_job,
             evidence_job=_evidence_job,
+            strong_stock_tracking_use_case=build_strong_stock_tracking,
         ),
         build_pre_market_brief=BuildPreMarketBriefJob(
             read_port=theme_data_gateway,

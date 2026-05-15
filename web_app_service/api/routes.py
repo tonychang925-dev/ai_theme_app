@@ -564,42 +564,35 @@ async def jyhf_cdp_service_force_stop(request: Request) -> dict:
     return await manager.force_stop_service()
 
 
-# ── Realtime Collector（代理到 frontend_bff:8003，不可达时友好降级）──
-
-_FRONTEND_BFF_BASE = str(os.getenv("FRONTEND_BFF_BASE_URL", "http://127.0.0.1:8003")).rstrip("/")
-
-
-async def _proxy_bff(path: str, *, method: str = "GET", params: dict | None = None, payload: dict | None = None, timeout: float = 150.0) -> dict:
-    try:
-        async with httpx.AsyncClient(timeout=timeout) as client:
-            resp = await client.request(method.upper(), f"{_FRONTEND_BFF_BASE}{path}", params=params, json=payload)
-            resp.raise_for_status()
-            data = resp.json()
-            return data if isinstance(data, dict) else {"raw": data}
-    except httpx.ConnectError:
-        return {"ok": False, "message": "frontend_bff (8003) 未运行，实时链路管理接口不可用", "command": [], "stdout": "", "stderr": "frontend_bff not running"}
-    except Exception as exc:
-        return {"ok": False, "message": str(exc), "command": [], "stdout": "", "stderr": str(exc)}
+# ── Realtime Collector（新链由 web_app_service 本地管理，不再代理旧 BFF）──
 
 
 @router.get("/realtime/collector/status")
-async def realtime_collector_status() -> dict:
-    return await _proxy_bff("/api/v2/realtime/collector/status", timeout=30.0)
+async def realtime_collector_status(request: Request) -> dict:
+    manager = request.app.state.realtime_stack_manager
+    return await manager.status()
 
 
 @router.post("/realtime/collector/start")
-async def realtime_collector_start(payload: dict | None = None) -> dict:
-    return await _proxy_bff("/api/v2/realtime/collector/start", method="POST", payload=payload or {}, timeout=150.0)
+async def realtime_collector_start(request: Request, payload: dict | None = None) -> dict:
+    manager = request.app.state.realtime_stack_manager
+    return await manager.start(payload or {})
 
 
 @router.post("/realtime/collector/stop")
-async def realtime_collector_stop(payload: dict | None = None) -> dict:
-    return await _proxy_bff("/api/v2/realtime/collector/stop", method="POST", payload=payload or {}, timeout=60.0)
+async def realtime_collector_stop(request: Request, payload: dict | None = None) -> dict:
+    manager = request.app.state.realtime_stack_manager
+    return await manager.stop(payload or {})
 
 
 @router.get("/realtime/collector/logs")
-async def realtime_collector_logs(lines: int = Query(default=200, ge=20, le=2000)) -> dict:
-    return await _proxy_bff("/api/v2/realtime/collector/logs", params={"lines": lines}, timeout=15.0)
+async def realtime_collector_logs(
+    request: Request,
+    lines: int = Query(default=200, ge=20, le=2000),
+    max_age_minutes: int = Query(default=180, ge=10, le=1440),
+) -> dict:
+    manager = request.app.state.realtime_stack_manager
+    return await manager.logs(lines=lines, max_age_minutes=max_age_minutes)
 
 
 @router.get("/intel/feed")

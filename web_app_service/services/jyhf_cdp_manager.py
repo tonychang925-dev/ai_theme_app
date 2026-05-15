@@ -55,6 +55,10 @@ class JyhfCdpManager:
             self._process = None
             self._owner = "none"
 
+        # Auto-detect: alive but not owned → external
+        if alive and self._owner == "none":
+            self._owner = "external"
+
         collector_status: dict | None = None
         collector_running = False
         if alive:
@@ -179,13 +183,18 @@ class JyhfCdpManager:
             logger.warning("force-stop: lsof/kill failed: %s", exc)
         return False
 
-    def _cmd_result(self, ok: bool, message: str, collector_running: bool) -> dict[str, Any]:
+    def _cmd_result(
+        self, ok: bool, message: str, collector_running: bool,
+        *, service_running: bool | None = None,
+    ) -> dict[str, Any]:
         """Build a uniform command response with all status fields."""
         pid = self._process.pid if (self._process and self._process.poll() is None) else None
+        if service_running is None:
+            service_running = bool(pid) or self._owner == "external"
         return {
             "ok": ok,
             "message": message,
-            "service_running": True if pid else False,
+            "service_running": service_running,
             "service_owner": self._owner,
             "service_pid": pid,
             "service_port": self._port,
