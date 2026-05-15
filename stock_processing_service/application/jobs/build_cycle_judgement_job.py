@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 from datetime import date, datetime, timezone
+from decimal import Decimal
 from typing import Any
 from uuid import uuid4
 
@@ -63,26 +64,21 @@ class BuildCycleJudgementJob:
             # 合并 UniverseBuilder 内部的 source_errors
             if hasattr(universe_builder, "source_errors"):
                 source_errors.update(universe_builder.source_errors)
+            critical_source_errors = {
+                k: v for k, v in source_errors.items()
+                if k in {"confirmed", "prior_alive"}
+            }
+            if critical_source_errors:
+                raise RuntimeError(
+                    "build_cycle_judgement failed: critical universe source error; "
+                    f"trade_date={trade_date.isoformat()}; source_errors={critical_source_errors}"
+                )
         except Exception as e:
             source_errors["universe_builder"] = str(e)
-            # 降级：仅 confirmed + prior alive
-            tracked_keys = set()
-            try:
-                id_rows = await self._read_port.get_mainline_identity_by_subject_keys([], trade_date)
-                for r in (id_rows or []):
-                    sk = str(r.get("subject_key") or "").strip()
-                    if sk and bool(r.get("is_main_theme")) and str(r.get("identity_status") or "") == "confirmed":
-                        tracked_keys.add(sk)
-            except Exception as e2:
-                source_errors["confirmed_fallback"] = str(e2)
-            try:
-                cyc_rows = await self._read_port.get_mainline_cycle_by_subject_keys([], trade_date)
-                for r in (cyc_rows or []):
-                    sk = str(r.get("subject_key") or "").strip()
-                    if sk and bool(r.get("final_mainline_alive")) and not bool(r.get("fade_confirmed")):
-                        tracked_keys.add(sk)
-            except Exception as e3:
-                source_errors["prior_alive_fallback"] = str(e3)
+            raise RuntimeError(
+                "build_cycle_judgement failed: universe_builder_error; "
+                f"trade_date={trade_date.isoformat()}; error={e}"
+            ) from e
 
         if not tracked_keys:
             return BuildResult(
@@ -112,39 +108,50 @@ class BuildCycleJudgementJob:
         missing_evidence: list[str] = []
         judge_errors: list[str] = []
 
-        for sk in all_subject_keys:
-            er = evidence_by_subject.get(sk)
-            if not er:
-                # P1-3: 缺 evidence 的 subject 显式标记，不静默跳过
-                missing_evidence.append(sk)
-                rows.append({
-                    "trade_date": trade_date,
-                    "subject_key": sk,
-                    "theme_name": sk,
-                    "final_cycle_state": "start",
-                    "final_mainline_alive": True,  # 新题材默认存续，后续 evidence 增强后可升级
-                    "fade_watch": False,
-                    "fade_confirmed": False,
-                    "mainline_strength_score": 0.0,
-                    "fade_risk_score": 0.0,
-                    "fade_watch_score": 0.0,
-                    "fade_confirmed_score": 0.0,
-                    "fade_confirmed_evidence_count": 0,
-                    "confidence_score": 0.3,  # 低置信度，标记为 evidence 缺失
-                    "evidence_json": {"missing_evidence": True},
-                    "rule_version": self.RULE_VERSION,
-                })
-                continue
+        missing_evidence = [sk for sk in all_subject_keys if sk not in evidence_by_subject]
+        if missing_evidence:
+            raise RuntimeError(
+                "build_cycle_judgement failed: missing subject cycle evidence; "
+                f"trade_date={trade_date.isoformat()}; count={len(missing_evidence)}; "
+                f"subjects={missing_evidence[:20]}"
+            )
 
+        for sk in all_subject_keys:
+            er = evidence_by_subject[sk]
             try:
                 evidence = builder.from_subject_evidence_row(er, trade_date)
                 judgement = self._judge_service.judge_one(evidence)
                 state = judgement.final_cycle_state
                 seen_subjects.add(sk)
+                fade_reason_codes = list(judgement.fade_reason_codes or [])
+                if not fade_reason_codes:
+                    if evidence.leader_breakdown_flag:
+                        fade_reason_codes.append("leader_breakdown")
+                    if evidence.limit_down_count >= 1:
+                        fade_reason_codes.append("limit_down")
+                    if evidence.red_ratio <= Decimal("0.45"):
+                        fade_reason_codes.append("red_ratio_weak")
+                    if evidence.big_drop_ratio >= Decimal("0.30"):
+                        fade_reason_codes.append("big_drop_ratio")
+                    if evidence.relay_score <= Decimal("35"):
+                        fade_reason_codes.append("relay_weak")
+                    if evidence.support_score <= Decimal("35"):
+                        fade_reason_codes.append("support_weak")
+                score_flags = dict(evidence.score_flags or {})
+                if judgement.score_flags:
+                    score_flags.update(judgement.score_flags)
+                decision_path = judgement.decision_path or (
+                    f"state={state}; final_mainline_alive=not_fade_confirmed; "
+                    f"fade_confirmed_score={judgement.fade_confirmed_score}; "
+                    f"evidence_count={judgement.fade_confirmed_evidence_count}; "
+                    f"support_break={judgement.support_break}"
+                )
                 rows.append({
                     "trade_date": trade_date,
                     "subject_key": sk,
                     "theme_name": judgement.subject_name or sk,
+                    "cycle_state_rule": state,
+                    "mainline_alive_rule": judgement.mainline_alive_rule,
                     "final_cycle_state": state,
                     "final_mainline_alive": judgement.final_mainline_alive,
                     "fade_watch": (state == "fade_watch"),
@@ -154,31 +161,31 @@ class BuildCycleJudgementJob:
                     "fade_watch_score": float(judgement.fade_watch_score),
                     "fade_confirmed_score": float(judgement.fade_confirmed_score),
                     "fade_confirmed_evidence_count": judgement.fade_confirmed_evidence_count,
+                    "evidence_count": judgement.fade_confirmed_evidence_count,
+                    "support_break": judgement.support_break,
+                    "decision_path": decision_path,
+                    "fade_reason_codes": fade_reason_codes,
+                    "score_flags": score_flags,
                     "confidence_score": 0.85,
-                    "evidence_json": {},
+                    "snapshot_version": snapshot_version,
+                    "batch_id": batch_id,
+                    "trace_id": trace_id,
+                    "evidence_json": {
+                        "decision_path": decision_path,
+                        "fade_reason_codes": fade_reason_codes,
+                        "score_flags": score_flags,
+                        "mainline_alive_rule": judgement.mainline_alive_rule,
+                        "support_break": judgement.support_break,
+                        "evidence_count": judgement.fade_confirmed_evidence_count,
+                    },
                     "rule_version": self.RULE_VERSION,
                 })
             except Exception as e:
-                # P1-4: 判定异常写 start + alive=false，不写假 alive
                 judge_errors.append(f"{sk}:{str(e)[:100]}")
-                seen_subjects.add(sk)
-                rows.append({
-                    "trade_date": trade_date,
-                    "subject_key": sk,
-                    "theme_name": str(er.get("theme_name") or sk),
-                    "final_cycle_state": "start",
-                    "final_mainline_alive": False,
-                    "fade_watch": False,
-                    "fade_confirmed": False,
-                    "mainline_strength_score": 0.0,
-                    "fade_risk_score": 0.0,
-                    "fade_watch_score": 0.0,
-                    "fade_confirmed_score": 0.0,
-                    "fade_confirmed_evidence_count": 0,
-                    "confidence_score": 0.2,
-                    "evidence_json": {"judge_error": str(e)[:200]},
-                    "rule_version": self.RULE_VERSION,
-                })
+                raise RuntimeError(
+                    "build_cycle_judgement failed: judge_error; "
+                    f"trade_date={trade_date.isoformat()}; subject_key={sk}; error={e}"
+                ) from e
 
         # Step 4: 写入 theme_cycle_judgement_v2
         affected = 0

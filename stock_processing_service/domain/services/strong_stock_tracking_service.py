@@ -287,6 +287,13 @@ class StrongStockTrackingService:
                 "hard_gate_cond_structure": bool(cond_structure),
                 "hard_gate_pass_count": cond_gene + cond_volume + cond_structure,
             }
+            if has_two_board:
+                labels.update({
+                    "entry_path": "independent_leader",
+                    "identity_scope": "independent_stock_signal",
+                    "strong_gene_seed": True,
+                    "mainline_identity_confirmed": False,
+                })
             evidence = {
                 "schema_version": "watch_evidence.v1",
                 "rule_version": self.RULE_VERSION,
@@ -294,6 +301,7 @@ class StrongStockTrackingService:
                     "recent_limit_up_count": recent_limit_up_count,
                     "is_leader": is_leader,
                     "best_rank": best_rank,
+                    "has_two_board": has_two_board,
                     "subject_limit_up_count": subject_limit_up,
                     "subject_strong_count": subject_strong,
                 },
@@ -732,6 +740,14 @@ class StrongStockTrackingService:
             "support_strength": support_strength,
             "support_broken": support_broken,
         })
+        if has_two_board and not cycle_state:
+            labels.update({
+                "entry_path": "independent_leader",
+                "identity_scope": "independent_stock_signal",
+                "strong_gene_seed": True,
+                "mainline_identity_confirmed": False,
+            })
+            labels.pop("final_mainline_alive", None)
         if removed_reason:
             labels["removed_reason"] = removed_reason
 
@@ -773,6 +789,13 @@ class StrongStockTrackingService:
             },
             "phase": "phase1_seed_refresh_history",
         }
+        if has_two_board and not cycle_state:
+            evidence.update({
+                "entry_path": "independent_leader",
+                "identity_scope": "independent_stock_signal",
+                "strong_gene_seed": True,
+            })
+            evidence.pop("final_mainline_alive", None)
         if removed_reason:
             evidence["removed_reason"] = removed_reason
 

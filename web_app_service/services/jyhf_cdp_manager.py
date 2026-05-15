@@ -50,6 +50,11 @@ class JyhfCdpManager:
         alive = await self._probe()
         pid = self._process.pid if (self._process and self._process.poll() is None) else None
 
+        # Auto-reclaim: if managed process died, clear ownership
+        if not alive and self._owner == "managed" and self._process and self._process.poll() is not None:
+            self._process = None
+            self._owner = "none"
+
         collector_status: dict | None = None
         collector_running = False
         if alive:
@@ -124,46 +129,38 @@ class JyhfCdpManager:
             service_msg = "external service not stopped (owner=external)"
 
         self._last_error = None
-        return {
-            "ok": True,
-            "message": f"{collector_msg}; {service_msg}".strip("; "),
-            "service_running": await self._probe(),
-            "service_owner": self._owner,
-            "collector_running": False,
-        }
+        return self._cmd_result(True, f"{collector_msg}; {service_msg}".strip("; "), False)
 
     async def stop_service(self) -> dict[str, Any]:
         """Public API: only stops if managed."""
         if not await self._probe():
             self._owner = "none"
             self._process = None
-            return {"ok": True, "message": "already stopped", "service_owner": "none"}
+            return self._cmd_result(True, "already stopped", False)
         if self._owner != "managed":
-            return {"ok": True, "message": "not managed, not stopped", "service_owner": self._owner}
+            return self._cmd_result(True, "not managed, not stopped", False)
         msg = await self._stop_managed_process()
-        return {"ok": True, "message": msg, "service_owner": "none"}
+        return self._cmd_result(True, msg, False)
 
     async def force_stop_service(self) -> dict[str, Any]:
         """诊断接口：按端口强杀 8095 进程，不限 owner。仅用于清理旧残留。"""
         if not await self._probe():
-            return {"ok": True, "message": "no CDP service on port", "service_owner": "none"}
+            return self._cmd_result(True, "no CDP service on port", False)
         prev_owner = self._owner
-        # 1. stop collector via HTTP
         try:
             await self._post("/collector/stop", payload={})
         except Exception:
             pass
-        # 2. kill: managed uses process group, external uses port-based kill via thread
         if self._owner == "managed" and self._process:
             await self._stop_managed_process()
         else:
             killed = await asyncio.to_thread(self._kill_port_blocking)
             if not killed:
-                return {"ok": False, "message": "force-stop: could not kill process on port", "service_owner": prev_owner}
+                return self._cmd_result(False, "force-stop: could not kill process on port", False)
             await asyncio.sleep(1)
         self._owner = "none"
         self._process = None
-        return {"ok": True, "message": f"force-stopped CDP service (was owner={prev_owner})", "service_owner": "none"}
+        return self._cmd_result(True, f"force-stopped CDP service (was owner={prev_owner})", False)
 
     def _kill_port_blocking(self) -> bool:
         """Blocking port-based kill via lsof + kill. Runs in thread."""
@@ -182,15 +179,27 @@ class JyhfCdpManager:
             logger.warning("force-stop: lsof/kill failed: %s", exc)
         return False
 
+    def _cmd_result(self, ok: bool, message: str, collector_running: bool) -> dict[str, Any]:
+        """Build a uniform command response with all status fields."""
+        pid = self._process.pid if (self._process and self._process.poll() is None) else None
+        return {
+            "ok": ok,
+            "message": message,
+            "service_running": True if pid else False,
+            "service_owner": self._owner,
+            "service_pid": pid,
+            "service_port": self._port,
+            "collector_running": collector_running,
+            "last_error": self._last_error,
+        }
+
     async def _start_collector_locked(self, payload: dict, push_intel: bool, push_db: bool) -> dict[str, Any]:
         if not await self._probe():
             ok, msg = await self._launch_process(push_intel=push_intel, push_db=push_db)
             if not ok:
                 self._last_error = msg
-                return {"ok": False, "message": msg, "service_owner": "none", "collector_running": False}
-            # _launch_process sets self._owner = "managed" and self._process
+                return self._cmd_result(False, msg, False)
         elif self._owner == "none":
-            # Process is alive but we didn't start it
             self._owner = "external"
 
         try:
@@ -199,23 +208,29 @@ class JyhfCdpManager:
             self._last_error = str(exc)
             if self._owner == "managed" and not payload.get("keep_service_on_error"):
                 await self._stop_managed_process()
-            return {"ok": False, "message": f"collector start failed: {exc}",
-                    "service_owner": self._owner, "collector_running": False}
+            return self._cmd_result(False, f"collector start failed: {exc}", False)
 
-        # Wait for collector to confirm running
+        # Wait for collector to confirm running (not just "start accepted")
+        confirmed = False
         for _ in range(15):
             if await self._probe():
                 try:
                     st = await self._get("/status")
                     if st.get("collector_running"):
+                        confirmed = True
                         break
                 except Exception:
                     pass
             await asyncio.sleep(0.5)
 
+        if not confirmed:
+            self._last_error = "collector did not enter running state within timeout"
+            if self._owner == "managed" and not payload.get("keep_service_on_error"):
+                await self._stop_managed_process()
+            return self._cmd_result(False, "collector did not enter running state", False)
+
         self._last_error = None
-        return {"ok": True, "message": result.get("message", "collector started"),
-                "service_owner": self._owner, "collector_running": True}
+        return self._cmd_result(True, result.get("message", "collector started"), True)
 
     async def _launch_process(self, *, push_intel: bool, push_db: bool) -> tuple[bool, str]:
         python = sys_executable()

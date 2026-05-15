@@ -49,6 +49,9 @@ class _FakeReadPort:
     async def get_legacy_strong_watch_candidate_inputs(self, trade_date: date, lookback_days: int = 7):
         return []
 
+    async def get_w2s_candidate_inputs(self, trade_date: date):
+        return []
+
     # ── New Layer C gateway methods ──
 
     async def get_strong_watch_seed_rows(self, trade_date: date, lookback_days: int = 7) -> list[dict[str, Any]]:
@@ -137,7 +140,12 @@ class _FakeReadPort:
         return []
 
     async def get_subject_cycle_evidence_daily(self, trade_date: date, subject_keys=None):
-        return []
+        return [
+            {
+                "subject_key": "ai_chip",
+                "event_continuity_score": 70,
+            }
+        ]
 
 
 # ── Fake ports ──
@@ -166,6 +174,9 @@ class _FakeWritePort:
     async def prune_strong_watch_pool(self, trade_date, weakening_min_score=62.0):
         return 0
 
+    async def recompute_strong_watch_window_days(self, stock_ids):
+        return len(stock_ids)
+
     async def upsert_strong_watch_history_rows(self, rows):
         self.strong_watch_history_rows.extend(rows)
         return len(rows)
@@ -173,6 +184,7 @@ class _FakeWritePort:
     async def upsert_theme_mainline_identity_registry_rows(self, rows): return len(rows)
     async def upsert_mainline_identity_review_queue_rows(self, rows): return len(rows)
     async def upsert_theme_cycle_evidence_daily_rows(self, rows): return len(rows)
+    async def upsert_weak_to_strong_candidate_pool_rows(self, rows): return len(rows)
 
 
 class _FakeEventPort:
@@ -292,5 +304,87 @@ def test_build_post_market_recap_job_idempotency() -> None:
                                 batch_id="bpm3", trace_id="tpm3")
         assert r2.status == "skipped_idempotent"
         assert r2.batch_id == "bpm3"
+
+    asyncio.run(_run())
+
+
+def test_build_post_market_recap_job_missing_layer_b_cycle_fail_fast() -> None:
+    class _MissingCycleReadPort(_FakeReadPort):
+        async def get_mainline_cycle_by_subject_keys(self, subject_keys: list[str], trade_date: date):
+            return []
+
+    async def _run() -> None:
+        read_port = _MissingCycleReadPort()
+        write_port = _FakeWritePort()
+        job = BuildPostMarketRecapJob(
+            read_port=read_port,
+            write_port=write_port,
+            event_port=_FakeEventPort(),
+            idempotency_port=_FakeIdempotencyPort(),
+            cache_port=_FakeCachePort(),
+        )
+
+        try:
+            await job.execute(
+                trade_date=date(2026, 4, 23),
+                snapshot_version="pm-missing-cycle",
+                batch_id="bpm-missing",
+                trace_id="tpm-missing",
+            )
+        except RuntimeError as exc:
+            assert "missing Layer B cycle truth" in str(exc)
+        else:
+            raise AssertionError("expected fail-fast when Layer B cycle truth is missing")
+        assert write_port.recap_docs == []
+
+    asyncio.run(_run())
+
+
+def test_layer_c_contract_two_board_enters_pool_without_layer_a_b_state() -> None:
+    """Contract: docs §13.3.3 requires two-board stocks to enter via independent_leader."""
+    class _TwoBoardMissingCycleReadPort(_FakeReadPort):
+        async def get_strong_watch_seed_rows(self, trade_date: date, lookback_days: int = 7) -> list[dict[str, Any]]:
+            rows = await super().get_strong_watch_seed_rows(trade_date, lookback_days)
+            rows[0]["has_two_board"] = True
+            rows[0]["is_main_theme"] = False
+            rows[0]["identity_status"] = "observed"
+            return rows
+
+        async def get_mainline_identity_by_subject_keys(self, subject_keys: list[str], trade_date: date):
+            return []
+
+        async def get_mainline_cycle_by_subject_keys(self, subject_keys: list[str], trade_date: date):
+            return []
+
+    async def _run() -> None:
+        read_port = _TwoBoardMissingCycleReadPort()
+        write_port = _FakeWritePort()
+        job = BuildPostMarketRecapJob(
+            read_port=read_port,
+            write_port=write_port,
+            event_port=_FakeEventPort(),
+            idempotency_port=_FakeIdempotencyPort(),
+            cache_port=_FakeCachePort(),
+        )
+
+        result = await job.execute(
+            trade_date=date(2026, 4, 23),
+            snapshot_version="pm-two-board",
+            batch_id="bpm-two-board",
+            trace_id="tpm-two-board",
+        )
+        assert result.status == "ok"
+        assert len(write_port.strong_watch_history_rows) == 1
+        labels = write_port.strong_watch_history_rows[0]["labels_json"]
+        assert labels["entry_path"] == "independent_leader"
+        assert labels["identity_scope"] == "independent_stock_signal"
+        assert labels["strong_gene_seed"] is True
+        assert labels["mainline_identity_confirmed"] is False
+        assert "final_mainline_alive" not in labels
+        evidence = write_port.strong_watch_history_rows[0]["evidence_json"]
+        assert evidence["entry_path"] == "independent_leader"
+        assert evidence["identity_scope"] == "independent_stock_signal"
+        assert evidence["strong_gene_seed"] is True
+        assert "final_mainline_alive" not in evidence
 
     asyncio.run(_run())
