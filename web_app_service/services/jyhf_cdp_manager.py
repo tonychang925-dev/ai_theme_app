@@ -234,9 +234,9 @@ class JyhfCdpManager:
 
         if not confirmed:
             self._last_error = "collector did not enter running state within timeout"
-            if self._owner == "managed" and not payload.get("keep_service_on_error"):
-                await self._stop_managed_process()
-            return self._cmd_result(False, "collector did not enter running state", False)
+            # Do NOT kill CDP service — it may still be initializing.
+            # Let /status polling show progress. Only explicit stop/service-stop/force-stop kills.
+            return self._cmd_result(False, "collector not confirmed yet; retry via /status or re-submit start", False)
 
         self._last_error = None
         return self._cmd_result(True, result.get("message", "collector started"), True)
@@ -286,6 +286,11 @@ class JyhfCdpManager:
         return False, f"CDP service did not start within {_READY_TIMEOUT}s"
 
     async def _stop_managed_process(self) -> str:
+        import traceback
+        logger.warning(
+            "BFF _stop_managed_process called from:\n%s",
+            "".join(traceback.format_stack(limit=8)[:-1]),
+        )
         proc = self._process
         if proc is None:
             self._owner = "none"
@@ -297,6 +302,7 @@ class JyhfCdpManager:
             self._process = None
             return "managed process has no PID"
 
+        logger.warning("BFF killing CDP: PID=%s PGID=%s", pid, os.getpgid(pid))
         try:
             pgid = os.getpgid(pid)
             os.killpg(pgid, signal.SIGTERM)

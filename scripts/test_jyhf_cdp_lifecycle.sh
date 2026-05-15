@@ -10,11 +10,15 @@ NC='\033[0m'
 PASS="${GREEN}PASS${NC}"
 FAIL="${RED}FAIL${NC}"
 
-BFF="http://127.0.0.1:8000"
+BFF="${BFF:-http://127.0.0.1:8000}"
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 cleanup() {
-  kill $(lsof -t -i TCP:8095 -s TCP:LISTEN 2>/dev/null) 2>/dev/null || true
+  PIDS=$(lsof -t -i TCP:8095 -s TCP:LISTEN 2>/dev/null || true)
+  if [ -n "$PIDS" ]; then
+    echo "[TEST_CLEANUP] killing CDP pids on 8095: $PIDS"
+    kill $PIDS 2>/dev/null || true
+  fi
 }
 trap cleanup EXIT
 

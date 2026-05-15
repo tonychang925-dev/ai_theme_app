@@ -96,8 +96,9 @@ function killProcessTree(name, timeoutMs = 5000) {
     });
 }
 async function killAllManaged(timeoutMs = 5000) {
-    // Stop in reverse order: CDP → web_app → SPS
-    const order = ['jyhf_cdp_service.log', 'web_app_service.log', 'stock_processing_service.log'];
+    // Stop in reverse order: web_app → SPS.
+    // CDP is NOT managed by Electron processTree — it is stopped via web_app BFF /service/stop.
+    const order = ['web_app_service.log', 'stock_processing_service.log'];
     for (const name of order) {
         await killProcessTree(name, timeoutMs);
     }

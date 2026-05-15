@@ -1,5 +1,9 @@
 from __future__ import annotations
 
+import os
+import signal
+import traceback
+
 from fastapi import FastAPI, Query
 
 from services.jyhf_cdp_service.config import load_config
@@ -10,6 +14,23 @@ from services.jyhf_cdp_service.service import JyhfCdpCollectorService
 
 config = load_config()
 logger = setup_logger(config.log_path)
+
+# 信号捕获：记录谁杀了 CDP
+def _on_signal(signum, frame):
+    pid = os.getpid()
+    ppid = os.getppid()
+    stack = "".join(traceback.format_stack(frame, limit=8))
+    logger.critical(
+        "CDP PID=%s PPID=%s received signal %s. Stack:\n%s",
+        pid, ppid, signum, stack,
+    )
+    # Re-raise default handler after logging
+    signal.signal(signum, signal.SIG_DFL)
+    os.kill(pid, signum)
+
+signal.signal(signal.SIGTERM, _on_signal)
+signal.signal(signal.SIGINT, _on_signal)
+
 collector = JyhfCdpCollectorService(config=config, logger=logger)
 
 app = FastAPI(title="jyhf_cdp_service", version="0.1.0")
