@@ -118,8 +118,8 @@ if [ "$F_OWNER" != "none" ] || [ "$F_SR" != "False" ] || [ "$F_CR" != "False" ];
 fi
 echo -e "$PASS"
 
-# ── 8. Dynamic webPort: /service/stop works on actual port ──
-echo -n "8. /service/stop on actual port (not hardcoded 8000) ... "
+# ── 8. BFF /service/stop releases managed CDP ──
+echo -n "8. /service/stop 可释放 managed CDP ... "
 # Start a managed CDP
 curl -s -X POST "$BFF/api/v2/realtime/jyhf-cdp/start" -H "Content-Type: application/json" -d '{}' > /dev/null
 sleep 5
@@ -129,13 +129,41 @@ if [ "$OWNER8" != "managed" ]; then
   echo -e "$FAIL (not managed: $OWNER8)"
   exit 1
 fi
-# Call /service/stop (simulates Electron quit)
-STOP8=$(curl -s -X POST "$BFF/api/v2/realtime/jyhf-cdp/service/stop" -H "Content-Type: application/json" -d '{}' | python3 -c "import json,sys; print(json.load(sys.stdin).get('ok',''))" 2>/dev/null)
+# Call /service/stop (simulates Electron quit via serviceManager.stopAll)
+curl -s -X POST "$BFF/api/v2/realtime/jyhf-cdp/service/stop" -H "Content-Type: application/json" -d '{}' > /dev/null
 sleep 2
 if lsof -t -i TCP:8095 -s TCP:LISTEN >/dev/null 2>&1; then
   echo -e "$FAIL (port still occupied after /service/stop)"
   exit 1
 fi
 echo -e "$PASS"
-echo -e " ${GREEN}ALL 7 PASSED${NC}"
+
+# ── 9. Dynamic webPort: /service/stop via non-default port works ──
+echo -n "9. 动态 webPort /service/stop (非 8000 不硬编码) ... "
+# Determine actual web port
+ACTUAL_PORT=$(echo "$BFF" | sed 's|.*:||')
+if [ "$ACTUAL_PORT" = "8000" ]; then
+  echo -e "${GREEN}SKIP${NC} (port is 8000, dynamic test requires non-8000)"
+else
+  # Start managed via actual port
+  curl -s -X POST "$BFF/api/v2/realtime/jyhf-cdp/start" -H "Content-Type: application/json" -d '{}' > /dev/null
+  sleep 5
+  # Verify managed
+  OWNER9=$(curl -s "$BFF/api/v2/realtime/jyhf-cdp/status" | python3 -c "import json,sys; print(json.load(sys.stdin).get('service_owner',''))" 2>/dev/null)
+  if [ "$OWNER9" != "managed" ]; then
+    echo -e "$FAIL (not managed on port $ACTUAL_PORT: $OWNER9)"
+    exit 1
+  fi
+  # Stop via actual port
+  curl -s -X POST "$BFF/api/v2/realtime/jyhf-cdp/service/stop" -H "Content-Type: application/json" -d '{}' > /dev/null
+  sleep 2
+  if lsof -t -i TCP:8095 -s TCP:LISTEN >/dev/null 2>&1; then
+    echo -e "$FAIL (port $ACTUAL_PORT did not release 8095)"
+    exit 1
+  fi
+  echo -e "$PASS (port=$ACTUAL_PORT)"
+fi
+
+echo "========================================"
+echo -e " ${GREEN}ALL TESTS PASSED${NC}"
 echo "========================================"
