@@ -258,6 +258,26 @@ export interface JyhfCdpCommandResult {
   service_owner: string;
   collector_running: boolean;
   service_running: boolean;
+  // Full status fields returned by _status_result (get_status() merge)
+  service_pid?: number | null;
+  service_port?: number;
+  app_running?: boolean;
+  cdp_connected?: boolean;
+  cdp_port?: number;
+  current_route?: string | null;
+  current_tab?: string | null;
+  last_capture_at?: string | null;
+  last_event_at?: string | null;
+  capture_count_total?: number;
+  new_event_count_total?: number;
+  duplicate_count_total?: number;
+  parse_error_count_total?: number;
+  pushed_to_stream_count_total?: number;
+  pushed_to_intel_count_total?: number;
+  review_queue_count_total?: number;
+  last_error?: string | null;
+  collector_status?: Record<string, unknown> | null;
+  collector_state?: string;
 }
 
 export interface JyhfCdpCollectorStatus {

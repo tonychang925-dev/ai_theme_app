@@ -3960,7 +3960,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
           snapshot_version = EXCLUDED.snapshot_version,
           batch_id = EXCLUDED.batch_id,
           trace_id = EXCLUDED.trace_id,
-          payload = EXCLUDED.payload || post_market_recap_snapshot.payload,
+          payload = post_market_recap_snapshot.payload || EXCLUDED.payload,
           source_name = EXCLUDED.source_name,
           updated_at = NOW()
         """

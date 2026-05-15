@@ -224,24 +224,47 @@ export function RealtimeCollectorPage() {
     append("启动 JYHF DOM 采集器...");
     try {
       const result = await startJyhfCdpCollector();
-      if (!result.ok) {
+      // Merge result into jyhfStatus immediately so UI reflects current state
+      setJyhfStatus(prev => ({
+        ...(prev ?? {} as JyhfCdpCollectorStatus),
+        ...(result as Record<string, unknown>),
+      } as JyhfCdpCollectorStatus));
+
+      // Only hard-fail when BOTH ok=false AND service is not running
+      if (!result.ok && !result.service_running) {
         append(`启动失败: ${result.message}`);
         setJyhfBusy(false);
         return;
       }
-      append(`CDP 服务已启动 (owner=${result.service_owner})，等待 collector 就绪...`);
-      // Poll until status confirms the target state
+
+      append(result.message || "启动请求已提交，等待状态确认...");
+
+      // Poll /status with layered readiness checks
       for (let i = 0; i < 60; i++) {
         await new Promise(r => setTimeout(r, 1000));
         try {
           const st = await fetchJyhfCdpCollectorStatus();
           setJyhfStatus(st);
-          append(`[轮询 ${i + 1}s] collector_running=${st.collector_running} cdp_connected=${st.cdp_connected} service_owner=${st.service_owner}`);
-          if (st.collector_running) {
-            append(`采集器就绪 (capture_count=${st.capture_count_total})`);
+          append(`[轮询 ${i + 1}s] sr=${st.service_running} cr=${st.collector_running} cdc=${st.cdp_connected} cap=${st.last_capture_at || '-'}`);
+
+          // Layered readiness: wait for actual data, not just collector_running
+          if (st.last_capture_at) {
+            append(`采集正常，最近采集=${st.last_capture_at} (count=${st.capture_count_total})`);
             break;
           }
-          if (i % 5 === 0) append(`等待中... (${i + 1}s)`);
+          if (st.cdp_connected) {
+            if (i % 5 === 0) append("已连接9223，等待首次DOM采集...");
+            continue;
+          }
+          if (st.collector_running) {
+            if (i % 5 === 0) append("采集任务已启动，等待连接久赢恒丰9223...");
+            continue;
+          }
+          if (st.service_running) {
+            if (i % 5 === 0) append(`等待中... CDP服务已启动，采集任务未运行 (${i + 1}s)`);
+            continue;
+          }
+          if (i % 5 === 0) append(`等待 CDP 服务启动... (${i + 1}s)`);
         } catch { append(`[轮询 ${i + 1}s] 请求失败，重试中...`); }
       }
       await refreshJyhfCdpLogs();
@@ -296,6 +319,16 @@ export function RealtimeCollectorPage() {
   }
 
   const jyhfCollectorRunning = Boolean(jyhfStatus?.collector_running);
+
+  function getJyhfStage(status: JyhfCdpCollectorStatus | null): string {
+    if (!status?.service_running) return "CDP服务未启动";
+    if (!status.collector_running) return "CDP服务已启动，采集任务未运行";
+    if (!status.cdp_connected) return "采集任务已启动，等待连接久赢恒丰9223";
+    if (!status.last_capture_at) return "已连接9223，等待首次DOM采集";
+    return "采集正常";
+  }
+
+  const jyhfStage = getJyhfStage(jyhfStatus);
 
   const mergedLogs = useMemo(() => {
     const parts: string[] = [];
@@ -393,7 +426,7 @@ export function RealtimeCollectorPage() {
           <div className="collection-debug-status">
             <div>
               <span className="metric-label">采集器</span>
-              <strong>{jyhfCollectorRunning ? "运行中" : "未运行"}</strong>
+              <strong>{jyhfStage}</strong>
             </div>
             <div>
               <span className="metric-label">JYHF App</span>
@@ -490,9 +523,11 @@ export function RealtimeCollectorPage() {
                   ? `⚠ 服务未连接：${jyhfError}`
                   : jyhfStatus?.last_error
                     ? `⚠ ${jyhfStatus.last_error}`
-                    : jyhfCollectorRunning && jyhfStatus?.last_capture_at
+                    : jyhfStatus?.last_capture_at
                       ? `采集运行中，捕获 ${jyhfStatus.capture_count_total} 条，数据写入 stream:event:feed`
-                      : "就绪，点击启动开始采集 JYHF DOM 数据"}
+                      : jyhfStatus?.service_running
+                        ? jyhfStage
+                        : "就绪，点击启动开始采集 JYHF DOM 数据"}
             </span>
           </div>
         </section>
