@@ -50,86 +50,56 @@ class JyhfCdpManager:
 
     async def get_status(self) -> dict[str, Any]:
         import os as _manager_os
+        import json as _json
 
-        # ── Phase 1: port-level liveness (most reliable) ──
-        port_pid: int | None = await asyncio.to_thread(self._find_pid_by_port_blocking)
         popen_pid: int | None = self._process.pid if self._process else None
         popen_alive: bool = bool(self._process and self._process.poll() is None)
 
-        logger.warning(
-            "CDP_STATUS_PROBE start — owner=%s popen_pid=%s popen_alive=%s managed_pid=%s port_pid=%s",
-            self._owner, popen_pid, popen_alive, self._managed_pid, port_pid,
-        )
-
-        # ── Phase 2: HTTP liveness (authoritative for service_running) ──
+        # Use curl via subprocess — httpx is unreliable inside the BFF process
         collector_status: dict | None = None
         collector_running: bool = False
         http_alive: bool = False
         http_error: str | None = None
 
-        if port_pid is not None:
-            # Port has a listener — try HTTP
-            try:
-                collector_status = await self._get("/status")
-                collector_running = bool(collector_status.get("collector_running"))
-                http_alive = True
-            except Exception as exc:
-                http_error = str(exc)
-                logger.warning("CDP_STATUS_PROBE http_get failed: %s", http_error)
+        try:
+            raw = await asyncio.to_thread(
+                subprocess.run,
+                ["curl", "-s", "--max-time", "5", f"http://127.0.0.1:{self._port}/status"],
+                capture_output=True, text=True, timeout=10,
+            )
+            if raw.returncode == 0 and raw.stdout.strip():
+                collector_status = _json.loads(raw.stdout)
+                if isinstance(collector_status, dict):
+                    collector_running = bool(collector_status.get("collector_running"))
+                    http_alive = True
+            else:
+                http_error = f"curl rc={raw.returncode} stderr={raw.stderr.strip()[:100]}"
+        except Exception as exc:
+            http_error = str(exc)[:100]
 
-        # ── Phase 3: owner resolution ──
-        service_alive: bool = http_alive or (port_pid is not None)
-
-        if service_alive:
-            if self._owner == "none":
-                # Port is alive — determine if it's our managed process
-                if port_pid and self._managed_pid and port_pid == self._managed_pid:
-                    self._owner = "managed"
-                    logger.warning("CDP_OWNER_RECOVER owner=none→managed port_pid=%s managed_pid=%s", port_pid, self._managed_pid)
-                else:
-                    self._owner = "external"
-                    logger.warning("CDP_OWNER_RECOVER owner=none→external port_pid=%s managed_pid=%s", port_pid, self._managed_pid)
-            elif self._owner == "managed":
-                # Even if Popen looks dead, if port_pid still matches managed_pid, keep it managed
-                if port_pid and self._managed_pid and port_pid == self._managed_pid and not popen_alive:
-                    pass  # Don't clear — port still alive with our PID
-                elif not port_pid or (self._managed_pid and port_pid != self._managed_pid):
-                    logger.warning(
-                        "CDP_OWNER_CLEAR reason=port_mismatch owner=managed→none popen_pid=%s popen_alive=%s managed_pid=%s port_pid=%s",
-                        popen_pid, popen_alive, self._managed_pid, port_pid,
-                    )
-                    self._process = None
-                    self._owner = "none"
-        else:
-            # Port is dead, HTTP unreachable — only THEN clear ownership
-            if self._owner == "managed":
-                logger.warning(
-                    "CDP_OWNER_CLEAR reason=service_dead owner=managed→none popen_pid=%s popen_alive=%s managed_pid=%s port_pid=%s http_error=%s",
-                    popen_pid, popen_alive, self._managed_pid, port_pid, http_error,
-                )
+        # Owner: simple — never clear managed owner unless the Popen is truly dead AND curl fails
+        if self._owner == "managed":
+            if not popen_alive and not http_alive:
                 self._process = None
                 self._owner = "none"
-            elif self._owner == "external":
-                self._owner = "none"
+                self._managed_pid = None
+        elif self._owner == "none":
+            if http_alive:
+                self._owner = "external"
 
-        # ── Phase 4: build result ──
-        service_pid: int | None = port_pid or (popen_pid if popen_alive else None)
         result: dict[str, Any] = {
-            "service_running": service_alive,
+            "service_running": http_alive,
             "service_owner": self._owner,
-            "service_pid": service_pid,
+            "service_pid": popen_pid if popen_alive else None,
             "service_port": self._port,
             "collector_running": collector_running,
             "collector_status": collector_status,
             "last_error": self._last_error,
-            # BFF fingerprint
             "bff_pid": _manager_os.getpid(),
             "bff_port": int(_manager_os.getenv("WEB_PORT", "8000")),
             "manager_id": id(self),
-            # Diagnostics: internal state visibility
             "popen_pid": popen_pid,
             "popen_alive": popen_alive,
-            "port_pid": port_pid,
             "managed_pid": self._managed_pid,
             "http_alive": http_alive,
         }
