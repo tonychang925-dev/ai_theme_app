@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 import os as _os
 from pathlib import Path
 
@@ -37,6 +38,27 @@ app = FastAPI(title="web_app_service", version="0.1.0")
 @app.on_event("startup")
 async def _startup_cdp_manager() -> None:
     project_root = Path(__file__).resolve().parents[1]
+
+    # ── 诊断：打印实际前端目录和文件 ──
+    dist_dir = _os.getenv("FRONTEND_DIST_DIR", str(project_root / "frontend" / "dist"))
+    _DIAG_LOGGER = logging.getLogger("web_app_service")
+    _DIAG_LOGGER.warning("FRONTEND_DIST_DIR=%s", dist_dir)
+    _index = Path(dist_dir) / "index.html"
+    if _index.exists():
+        _mtime = _index.stat().st_mtime
+        import datetime
+        _DIAG_LOGGER.warning("index.html size=%d mtime=%s", _index.stat().st_size, datetime.datetime.fromtimestamp(_mtime).isoformat())
+        try:
+            import re
+            _content = _index.read_text()
+            _match = re.search(r'src="/assets/(index-[A-Za-z0-9_-]+\.js)"', _content)
+            if _match:
+                _DIAG_LOGGER.warning("frontend entry asset=%s", _match.group(1))
+        except Exception:
+            pass
+    else:
+        _DIAG_LOGGER.error("index.html NOT FOUND at %s", _index)
+
     app.state.cdp_manager = JyhfCdpManager(
         project_root=str(project_root),
         port=int(_os.getenv("JYHF_CDP_SERVICE_PORT", "8095")),

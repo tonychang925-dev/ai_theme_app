@@ -4,10 +4,10 @@
   "description": "AI投资助理 macOS 桌面应用",
   "main": "dist-electron/main.js",
   "scripts": {
-    "start": "tsc -p tsconfig.json && electron dist-electron/main.js",
-    "start:debug": "tsc -p tsconfig.json && electron --remote-debugging-port=9224 dist-electron/main.js",
-    "build": "bash scripts/build-frontend.sh && tsc -p tsconfig.json && electron-builder --mac",
-    "build:dir": "bash scripts/build-frontend.sh && tsc -p tsconfig.json && electron-builder --mac --dir",
+    "start": "bash scripts/build-frontend.sh --force && tsc -p tsconfig.json && electron dist-electron/main.js",
+    "start:debug": "bash scripts/build-frontend.sh --force && tsc -p tsconfig.json && electron --remote-debugging-port=9224 dist-electron/main.js",
+    "build": "bash scripts/build-frontend.sh --force && tsc -p tsconfig.json && electron-builder --mac",
+    "build:dir": "bash scripts/build-frontend.sh --force && tsc -p tsconfig.json && electron-builder --mac --dir",
     "compile": "tsc -p tsconfig.json"
   },
   "devDependencies": {

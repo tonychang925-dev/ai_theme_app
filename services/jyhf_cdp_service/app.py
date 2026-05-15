@@ -35,6 +35,12 @@ collector = JyhfCdpCollectorService(config=config, logger=logger)
 
 app = FastAPI(title="jyhf_cdp_service", version="0.1.0")
 
+# Boot log: capture PID/PPID/PGID immediately for diagnostics
+logger.warning(
+    "CDP_SERVICE_BOOT pid=%s ppid=%s pgid=%s port=%s",
+    os.getpid(), os.getppid(), os.getpgid(os.getpid()), config.port,
+)
+
 
 @app.get("/health")
 async def health() -> dict[str, str]:

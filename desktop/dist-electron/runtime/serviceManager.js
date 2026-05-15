@@ -73,7 +73,7 @@ async function startAll(projectRoot) {
         (0, logManager_1.logError)('ServiceManager: dependency doctor failed, check diagnostics');
         return { success: false, webPort: 0, spsPort: 0, cdpPort: 0, doctorPassed: false, doctorChecks: doctor.checks, readyzResult: null };
     }
-    // 3. Clear stale PIDs from previous runs
+    // 3. Clear stale PIDs from previous runs (also handles leftover project processes on default ports)
     (0, portManager_1.clearStalePids)();
     // 4. Ensure Redis (best effort)
     // Redis is handled in dependencyDoctor already
@@ -82,7 +82,7 @@ async function startAll(projectRoot) {
         web: parseInt(env['WEB_PORT'] || '8000', 10),
         sps: parseInt(env['SPS_PORT'] || '8090', 10),
         cdp: parseInt(env['CDP_PORT'] || '8095', 10),
-    });
+    }, projectRoot);
     _webPort = ports.web;
     _spsPort = ports.sps;
     _cdpPort = ports.cdp;
@@ -229,6 +229,9 @@ async function stopAll(reason = 'unknown') {
             (0, logManager_1.logError)('ServiceManager: failed to stop Redis');
         }
     }
+    // Post-shutdown port autopsy: kill any lingering project processes
+    (0, logManager_1.logInfo)('ServiceManager: port autopsy — cleaning up any remaining project processes on default ports');
+    (0, portManager_1.killProjectProcessesOnDefaultPorts)(_cdProjectRoot || '');
     // Clear PID state (keep logs)
     const pidsPath = path.join(path.dirname((0, logManager_1.getLogDir)()), 'runtime', 'pids.json');
     try {
