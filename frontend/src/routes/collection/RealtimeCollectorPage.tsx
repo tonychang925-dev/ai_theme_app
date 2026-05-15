@@ -206,9 +206,11 @@ export function RealtimeCollectorPage() {
       const result = await startJyhfCdpCollector();
       if (result.ok) {
         append(`JYHF-CDP 启动完成: ${result.message} (owner=${result.service_owner})`);
-        if (result.collector_running) {
-          setJyhfStatus(prev => prev ? { ...prev, collector_running: true } : null);
-        }
+        setJyhfStatus(prev => ({
+          ...(prev ?? {} as JyhfCdpCollectorStatus),
+          collector_running: result.collector_running,
+          service_owner: result.service_owner,
+        }));
       } else {
         append(`JYHF-CDP 启动失败: ${result.message}`);
       }
@@ -228,11 +230,12 @@ export function RealtimeCollectorPage() {
     try {
       const result = await stopJyhfCdpCollector();
       append(`JYHF-CDP 停止完成: ${result.message}`);
-      setJyhfStatus(prev => prev ? {
-        ...prev,
+      setJyhfStatus(prev => ({
+        ...(prev ?? {} as JyhfCdpCollectorStatus),
         collector_running: result.collector_running,
         service_running: result.service_running,
-      } : null);
+        service_owner: result.service_owner,
+      }));
       await refreshJyhfCdpStatus();
       await refreshJyhfCdpLogs();
     } catch (err) {
@@ -348,7 +351,15 @@ export function RealtimeCollectorPage() {
               <strong>{jyhfStatus?.app_running ? "已启动" : "未确认"}</strong>
             </div>
             <div>
-              <span className="metric-label">CDP</span>
+              <span className="metric-label">CDP 服务</span>
+              <strong>
+                {jyhfStatus?.service_running
+                  ? `运行中（${jyhfStatus?.service_owner === "managed" ? "web_app管理" : jyhfStatus?.service_owner === "external" ? "外部启动" : jyhfStatus?.service_owner ?? "未知"}）`
+                  : "未启动"}
+              </strong>
+            </div>
+            <div>
+              <span className="metric-label">CDP 连接</span>
               <strong>{jyhfStatus?.cdp_connected ? `已连接:${jyhfStatus.cdp_port}` : `未连接:${jyhfStatus?.cdp_port ?? 9223}`}</strong>
             </div>
             <div>

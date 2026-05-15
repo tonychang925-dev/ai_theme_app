@@ -262,6 +262,10 @@ export interface JyhfCdpCommandResult {
 
 export interface JyhfCdpCollectorStatus {
   service?: string;
+  service_running?: boolean;
+  service_owner?: string;
+  service_pid?: number | null;
+  service_port?: number;
   running: boolean;
   collector_running?: boolean;
   pid?: number | null;
