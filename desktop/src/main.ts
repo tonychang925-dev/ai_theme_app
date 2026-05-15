@@ -31,14 +31,14 @@ let webPort: number = 0;
 let appStarted: boolean = false;
 let isQuitting: boolean = false;
 
-async function quitSafely(): Promise<void> {
+async function quitSafely(reason: string = 'main_quitSafely'): Promise<void> {
   if (isQuitting) {
     logInfo('Main: quit already in progress, skipping');
     return;
   }
   isQuitting = true;
-  logInfo('Main: safe quit — stopping all services');
-  await stopAll();
+  logInfo(`Main: safe quit (reason=${reason}) — stopping all services`);
+  await stopAll(reason);
   logInfo('Main: quit complete');
   app.exit(0);
 }
@@ -128,24 +128,24 @@ app.whenReady().then(async () => {
 });
 
 app.on('window-all-closed', async () => {
-  await quitSafely();
+  await quitSafely('main_window_all_closed');
 });
 
 app.on('before-quit', async (event) => {
   if (!isQuitting && appStarted) {
     event.preventDefault();
-    await quitSafely();
+    await quitSafely('main_before_quit');
   }
 });
 
 // Handle external signals (pkill, SIGTERM) for proper service cleanup
 process.on('SIGTERM', async () => {
   logInfo('Main: received SIGTERM, cleaning up...');
-  await quitSafely();
+  await quitSafely('main_signal_SIGTERM');
 });
 process.on('SIGINT', async () => {
   logInfo('Main: received SIGINT, cleaning up...');
-  await quitSafely();
+  await quitSafely('main_signal_SIGINT');
 });
 
 app.on('activate', () => {

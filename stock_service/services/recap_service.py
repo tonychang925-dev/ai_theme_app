@@ -674,24 +674,22 @@ class RecapService:
                     or _llm_final_role(row["subject_key"], candidate["stock_id"])
                     or ""
                 )
-                display_role = raw_llm_role if raw_llm_role else str(candidate.get("role_label") or "--")
+                display_role = str(candidate.get("role_label") or raw_llm_role or "--")
 
                 llm_reason = _sanitize_inline_text(
                     llm_item.get("reason")
                     or llm_row.get("reasoning_summary")
-                    or "未生成LLM个股理由，当前回退规则候选说明"
+                    or "--"
                 )
                 leader_status = _sanitize_inline_text(
                     llm_row.get("leader_status")
-                    or ("未生成LLM裁决（回退规则角色）" if not raw_llm_role else "")
                     or "--"
                 )
                 confirmation_basis = _sanitize_inline_text(
                     llm_row.get("confirmation_basis")
-                    or ("规则候选回退（当日LLM未覆盖该题材）" if not raw_llm_role else "")
                     or "--"
                 )
-                llm_role = raw_llm_role or display_role
+                llm_role = raw_llm_role or "--"
                 kline_suffix = f"；{'；'.join(kline_parts)}" if kline_parts else ""
                 leader_lines.append(
                     f"{row['theme_name']}：{display_role} {candidate['stock_name']}({candidate['stock_id']})；"

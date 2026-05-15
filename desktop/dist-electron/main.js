@@ -63,14 +63,14 @@ function getProjectRoot() {
 let webPort = 0;
 let appStarted = false;
 let isQuitting = false;
-async function quitSafely() {
+async function quitSafely(reason = 'main_quitSafely') {
     if (isQuitting) {
         (0, logManager_1.logInfo)('Main: quit already in progress, skipping');
         return;
     }
     isQuitting = true;
-    (0, logManager_1.logInfo)('Main: safe quit — stopping all services');
-    await (0, serviceManager_1.stopAll)();
+    (0, logManager_1.logInfo)(`Main: safe quit (reason=${reason}) — stopping all services`);
+    await (0, serviceManager_1.stopAll)(reason);
     (0, logManager_1.logInfo)('Main: quit complete');
     electron_1.app.exit(0);
 }
@@ -145,22 +145,22 @@ electron_1.app.whenReady().then(async () => {
     appStarted = true;
 });
 electron_1.app.on('window-all-closed', async () => {
-    await quitSafely();
+    await quitSafely('main_window_all_closed');
 });
 electron_1.app.on('before-quit', async (event) => {
     if (!isQuitting && appStarted) {
         event.preventDefault();
-        await quitSafely();
+        await quitSafely('main_before_quit');
     }
 });
 // Handle external signals (pkill, SIGTERM) for proper service cleanup
 process.on('SIGTERM', async () => {
     (0, logManager_1.logInfo)('Main: received SIGTERM, cleaning up...');
-    await quitSafely();
+    await quitSafely('main_signal_SIGTERM');
 });
 process.on('SIGINT', async () => {
     (0, logManager_1.logInfo)('Main: received SIGINT, cleaning up...');
-    await quitSafely();
+    await quitSafely('main_signal_SIGINT');
 });
 electron_1.app.on('activate', () => {
     // macOS dock icon click — re-show window if app is still running

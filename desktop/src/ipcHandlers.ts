@@ -2,8 +2,6 @@ import { ipcMain, shell } from 'electron';
 import { getServiceStatus, startAll, stopAll } from './runtime/serviceManager';
 import { getLogDir, exportDiagnostics, logInfo } from './runtime/logManager';
 import { waitForReadyz } from './runtime/healthChecker';
-import { spawnCommand, killProcessTree } from './runtime/processTree';
-import * as path from 'path';
 
 let projectRoot: string = '';
 let currentWebPort: number = 0;
@@ -26,8 +24,8 @@ export function setupIpcHandlers(): void {
   });
 
   ipcMain.handle('services:restart', async () => {
-    logInfo('IPC: restarting services...');
-    await stopAll();
+    logInfo(`IPC: restarting services... stack:\n${new Error().stack}`);
+    await stopAll('ipc_services_restart');
     const result = await startAll(projectRoot);
     if (result.success) {
       currentWebPort = result.webPort;
@@ -50,24 +48,13 @@ export function setupIpcHandlers(): void {
   });
 
   ipcMain.handle('services:startCdp', async () => {
-    logInfo('IPC: starting CDP service...');
-    const cdpPort = 8095;
-    const env = {
-      ...process.env as Record<string, string>,
-      ENABLE_CDP: '1',
-    };
-    spawnCommand(
-      path.join(projectRoot, '.venv', 'bin', 'python'),
-      ['-m', 'uvicorn', 'services.jyhf_cdp_service.app:app', '--host', '127.0.0.1', '--port', String(cdpPort)],
-      { cwd: projectRoot, env, logName: 'jyhf_cdp_service.log' },
-    );
-    return { ok: true, port: cdpPort };
+    logInfo('IPC: services:startCdp is DEPRECATED — CDP lifecycle is managed by web_app JyhfCdpManager');
+    return { ok: false, message: 'DEPRECATED: CDP must be started via web_app BFF (/api/v2/realtime/jyhf-cdp/start). Direct Electron spawn bypasses lifecycle management.' };
   });
 
   ipcMain.handle('services:stopCdp', async () => {
-    logInfo('IPC: stopping CDP service...');
-    await killProcessTree('jyhf_cdp_service.log', 5000);
-    return { ok: true };
+    logInfo('IPC: services:stopCdp is DEPRECATED — CDP lifecycle is managed by web_app JyhfCdpManager');
+    return { ok: false, message: 'DEPRECATED: CDP must be stopped via web_app BFF (/api/v2/realtime/jyhf-cdp/stop). Direct Electron kill bypasses lifecycle management.' };
   });
 }
 

@@ -227,7 +227,27 @@ export function RealtimeCollectorPage() {
       // Merge result into jyhfStatus immediately so UI reflects current state
       setJyhfStatus(prev => ({
         ...(prev ?? {} as JyhfCdpCollectorStatus),
-        ...(result as Record<string, unknown>),
+        // merge result fields (service_running, collector_running, service_owner, etc.)
+        service_running: result.service_running,
+        service_owner: result.service_owner,
+        collector_running: result.collector_running,
+        service_pid: result.service_pid,
+        service_port: result.service_port,
+        cdp_connected: result.cdp_connected,
+        cdp_port: result.cdp_port,
+        app_running: result.app_running,
+        last_capture_at: result.last_capture_at,
+        last_event_at: result.last_event_at,
+        capture_count_total: result.capture_count_total,
+        new_event_count_total: result.new_event_count_total,
+        duplicate_count_total: result.duplicate_count_total,
+        parse_error_count_total: result.parse_error_count_total,
+        pushed_to_stream_count_total: result.pushed_to_stream_count_total,
+        pushed_to_intel_count_total: result.pushed_to_intel_count_total,
+        review_queue_count_total: result.review_queue_count_total,
+        last_error: result.last_error,
+        current_tab: result.current_tab,
+        current_route: result.current_route,
       } as JyhfCdpCollectorStatus));
 
       // Only hard-fail when BOTH ok=false AND service is not running

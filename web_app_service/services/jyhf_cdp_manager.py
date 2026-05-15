@@ -249,7 +249,8 @@ class JyhfCdpManager:
             )
 
         self._last_error = None
-        return self._cmd_result(True, result.get("message", "collector started"), True)
+        # Return full status so frontend can show layered state immediately
+        return await self._status_result(True, result.get("message", "collector started"))
 
     async def _launch_process(self, *, push_intel: bool, push_db: bool) -> tuple[bool, str]:
         python = sys_executable()
