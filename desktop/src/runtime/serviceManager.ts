@@ -4,7 +4,7 @@ import http from 'http';
 import { app } from 'electron';
 import { loadEnv, generateJwtSecret, persistEnvLocal } from './envLoader';
 import { runDoctor } from './dependencyDoctor';
-import { allocatePorts, clearStalePids, savePids } from './portManager';
+import { allocatePorts, clearStalePids, savePids, killProjectProcessesOnDefaultPorts } from './portManager';
 import { spawnCommand, killAllManaged } from './processTree';
 import { waitForHealthz, waitForReadyz, verifyE2E } from './healthChecker';
 import { logInfo, logError, getLogDir } from './logManager';
@@ -53,7 +53,7 @@ export async function startAll(projectRoot: string): Promise<{
     return { success: false, webPort: 0, spsPort: 0, cdpPort: 0, doctorPassed: false, doctorChecks: doctor.checks, readyzResult: null };
   }
 
-  // 3. Clear stale PIDs from previous runs
+  // 3. Clear stale PIDs from previous runs (also handles leftover project processes on default ports)
   clearStalePids();
 
   // 4. Ensure Redis (best effort)
@@ -64,7 +64,7 @@ export async function startAll(projectRoot: string): Promise<{
     web: parseInt(env['WEB_PORT'] || '8000', 10),
     sps: parseInt(env['SPS_PORT'] || '8090', 10),
     cdp: parseInt(env['CDP_PORT'] || '8095', 10),
-  });
+  }, projectRoot);
   _webPort = ports.web;
   _spsPort = ports.sps;
   _cdpPort = ports.cdp;
@@ -224,6 +224,10 @@ export async function stopAll(reason: string = 'unknown'): Promise<void> {
       logError('ServiceManager: failed to stop Redis');
     }
   }
+
+  // Post-shutdown port autopsy: kill any lingering project processes
+  logInfo('ServiceManager: port autopsy — cleaning up any remaining project processes on default ports');
+  killProjectProcessesOnDefaultPorts(_cdProjectRoot || '');
 
   // Clear PID state (keep logs)
   const pidsPath = path.join(path.dirname(getLogDir()), 'runtime', 'pids.json');

@@ -47,6 +47,7 @@ class JyhfCdpManager:
     # ── public ───────────────────────────────────────────────────
 
     async def get_status(self) -> dict[str, Any]:
+        import os as _manager_os
         alive = await self._probe()
         pid = self._process.pid if (self._process and self._process.poll() is None) else None
 
@@ -76,6 +77,10 @@ class JyhfCdpManager:
             "collector_running": collector_running,
             "collector_status": collector_status,
             "last_error": self._last_error,
+            # BFF fingerprint — which BFF instance served this response
+            "bff_pid": _manager_os.getpid(),
+            "bff_port": int(_manager_os.getenv("WEB_PORT", "8000")),
+            "manager_id": id(self),
         }
         if isinstance(collector_status, dict):
             for k in ("app_running", "cdp_connected", "cdp_port", "current_route", "current_tab",

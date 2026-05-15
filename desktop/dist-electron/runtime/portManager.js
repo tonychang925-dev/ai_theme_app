@@ -33,6 +33,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.killProjectProcessesOnDefaultPorts = killProjectProcessesOnDefaultPorts;
 exports.loadPreviousPids = loadPreviousPids;
 exports.savePids = savePids;
 exports.savePorts = savePorts;
@@ -73,6 +74,84 @@ function isPortInUse(port) {
         return false;
     }
 }
+/** Check if a PID belongs to this project by inspecting its command line. */
+function isProjectProcess(pid) {
+    const markers = [
+        'ai_theme_app',
+        'web_app_service.main:app',
+        'stock_processing_service',
+        'services.jyhf_cdp_service.app:app',
+    ];
+    try {
+        const cmdline = (0, child_process_1.execSync)(`ps -p ${pid} -o args=`, { encoding: 'utf-8', timeout: 3000 }).trim();
+        return markers.some(m => cmdline.includes(m));
+    }
+    catch {
+        return false;
+    }
+}
+/** Get all PIDs listening on a port. */
+function getPidsOnPort(port) {
+    try {
+        const out = (0, child_process_1.execSync)(`lsof -nP -iTCP:${port} -sTCP:LISTEN -t`, { encoding: 'utf-8', timeout: 3000 }).trim();
+        return out.split('\n').filter(Boolean).map(Number);
+    }
+    catch {
+        return [];
+    }
+}
+/**
+ * Scan default ports and kill any process that belongs to this project.
+ * Returns a list of killed ports.
+ */
+function killProjectProcessesOnDefaultPorts(projectRoot) {
+    const killed = [];
+    for (const [serviceName, port] of Object.entries(DEFAULT_PORTS)) {
+        const pids = getPidsOnPort(port);
+        for (const pid of pids) {
+            if (isProjectProcess(pid)) {
+                (0, logManager_1.logInfo)(`PortManager: killing project process pid=${pid} on port ${port} (${serviceName})`);
+                try {
+                    // Kill process group
+                    try {
+                        process.kill(-pid, 'SIGTERM');
+                    }
+                    catch {
+                        process.kill(pid, 'SIGTERM');
+                    }
+                    // Wait for port release
+                    const deadline = Date.now() + 5000;
+                    while (Date.now() < deadline) {
+                        if (!isPortInUse(port))
+                            break;
+                        const end = Date.now() + 200;
+                        while (Date.now() < end) { /* spin */ }
+                    }
+                    // Force kill if still alive
+                    if (isPortInUse(port)) {
+                        (0, logManager_1.logInfo)(`PortManager: force-killing stubborn process on port ${port}`);
+                        try {
+                            process.kill(-pid, 'SIGKILL');
+                        }
+                        catch {
+                            process.kill(pid, 'SIGKILL');
+                        }
+                        const end = Date.now() + 1000;
+                        while (Date.now() < end) { /* spin */ }
+                    }
+                    killed.push(port);
+                }
+                catch (e) {
+                    (0, logManager_1.logInfo)(`PortManager: failed to kill pid=${pid}: ${e}`);
+                }
+            }
+            else {
+                (0, logManager_1.logInfo)(`PortManager: port ${port} occupied by non-project pid=${pid}, not killing`);
+            }
+        }
+    }
+    return killed;
+}
 function loadPreviousPids() {
     const f = pidsFilePath();
     if (!fs.existsSync(f))
@@ -101,7 +180,7 @@ function loadPreviousPorts() {
         return null;
     }
 }
-function allocatePorts(envPorts) {
+function allocatePorts(envPorts, projectRoot) {
     const result = { ...DEFAULT_PORTS };
     // Apply env overrides
     if (envPorts.web)
@@ -110,22 +189,39 @@ function allocatePorts(envPorts) {
         result.sps = envPorts.sps;
     if (envPorts.cdp)
         result.cdp = envPorts.cdp;
-    // Check each port, fallback if needed
+    // First pass: clean up project-owned processes on default ports
+    // This prevents new instances from using fallback ports when old ones linger
+    if (projectRoot) {
+        killProjectProcessesOnDefaultPorts(projectRoot);
+    }
+    // Check each port, fallback only for non-project processes
     for (const key of ['web', 'sps', 'cdp']) {
         if (isPortInUse(result[key])) {
-            const [start, end] = FALLBACK_RANGES[key];
-            let found = false;
-            for (let p = start; p <= end; p++) {
-                if (!isPortInUse(p)) {
-                    (0, logManager_1.logInfo)(`PortManager: ${key} port ${result[key]} in use, using fallback ${p}`);
-                    result[key] = p;
-                    found = true;
-                    break;
-                }
+            const pids = getPidsOnPort(result[key]);
+            const isProject = pids.some(p => isProjectProcess(p));
+            if (isProject) {
+                // Should not happen after cleanup, but just in case
+                (0, logManager_1.logInfo)(`PortManager: ${key} port ${result[key]} still occupied by project process after cleanup, retrying...`);
+                killProjectProcessesOnDefaultPorts(projectRoot || '');
+                // Wait
+                const end = Date.now() + 2000;
+                while (Date.now() < end) { /* spin */ }
             }
-            if (!found) {
-                (0, logManager_1.logError)(`PortManager: no available port for ${key} in range ${start}-${end}`);
-                throw new Error(`No available port for ${key}`);
+            if (isPortInUse(result[key])) {
+                const [start, end] = FALLBACK_RANGES[key];
+                let found = false;
+                for (let p = start; p <= end; p++) {
+                    if (!isPortInUse(p)) {
+                        (0, logManager_1.logInfo)(`PortManager: ${key} port ${result[key]} in use (non-project), using fallback ${p}`);
+                        result[key] = p;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) {
+                    (0, logManager_1.logError)(`PortManager: no available port for ${key} in range ${start}-${end}`);
+                    throw new Error(`No available port for ${key}`);
+                }
             }
         }
     }

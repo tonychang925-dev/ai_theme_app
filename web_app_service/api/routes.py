@@ -533,6 +533,10 @@ async def collection_continue(payload: dict) -> dict:
 async def jyhf_cdp_collector_status(request: Request) -> dict:
     manager = request.app.state.cdp_manager
     result = await manager.get_status()
+    # BFF fingerprint — shows which BFF instance served this response
+    result["bff_pid"] = os.getpid()
+    result["bff_port"] = int(os.getenv("WEB_PORT", "8000"))
+    result["manager_id"] = id(manager)
     logger.warning(
         "JYHF_STATUS_RESULT host=%s client=%s web_pid=%s manager_id=%s sr=%s owner=%s cr=%s cdc=%s cap=%s",
         request.headers.get("host"), request.client, os.getpid(), id(manager),
