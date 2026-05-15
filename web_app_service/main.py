@@ -50,6 +50,22 @@ async def _startup_cdp_manager() -> None:
 
 @app.on_event("shutdown")
 async def _shutdown_cdp_manager() -> None:
+    """CDP lifecycle on BFF shutdown.
+
+    Default: do NOT kill the CDP service. The CDP is a long-running
+    process that serves DOM capture independently of this BFF instance.
+    Killing it on every BFF restart creates a "collector start → BFF
+    shutdown → CDP killed → restart → collector start" loop that can
+    last minutes before the frontend stabilizes.
+
+    Controlled by env JYHF_CDP_STOP_ON_BFF_SHUTDOWN:
+      0 (default) — leave CDP alive; new BFF instance will detect it as external
+      1           — restore old behavior: kill managed CDP on BFF shutdown
+    """
+    stop_on_shutdown = _os.getenv("JYHF_CDP_STOP_ON_BFF_SHUTDOWN", "0").lower() in {"1", "true", "yes", "on"}
+    if not stop_on_shutdown:
+        return
+
     manager = getattr(app.state, "cdp_manager", None)
     if manager is not None:
         await manager.stop_service()

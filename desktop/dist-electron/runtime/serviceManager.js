@@ -134,7 +134,7 @@ async function startAll(projectRoot) {
     const spsHealthy = await (0, healthChecker_1.waitForHealthz)(ports.sps);
     if (!spsHealthy) {
         (0, logManager_1.logError)('ServiceManager: SPS failed to become healthy');
-        await stopAll();
+        await stopAll('startAll_sps_healthz_failed');
         return { success: false, webPort: ports.web, spsPort: ports.sps, cdpPort: ports.cdp, doctorPassed: true, doctorChecks: null, readyzResult: null };
     }
     (0, logManager_1.logInfo)('ServiceManager: SPS healthy');
@@ -159,7 +159,7 @@ async function startAll(projectRoot) {
     const webHealthy = await (0, healthChecker_1.waitForHealthz)(ports.web, '127.0.0.1');
     if (!webHealthy) {
         (0, logManager_1.logError)('ServiceManager: web_app_service failed to become healthy');
-        await stopAll();
+        await stopAll('startAll_web_healthz_failed');
         return { success: false, webPort: ports.web, spsPort: ports.sps, cdpPort: ports.cdp, doctorPassed: true, doctorChecks: null, readyzResult: null };
     }
     (0, logManager_1.logInfo)('ServiceManager: web_app healthy');
@@ -170,7 +170,7 @@ async function startAll(projectRoot) {
         (0, logManager_1.logError)(`ServiceManager: readyz failed status=${readyzResult?.status}`);
         // Don't stop — degraded still allows the app to show
         if (readyzResult?.status === 'failed') {
-            await stopAll();
+            await stopAll('startAll_readyz_failed');
             return { success: false, webPort: ports.web, spsPort: ports.sps, cdpPort: ports.cdp, doctorPassed: true, doctorChecks: null, readyzResult };
         }
     }
@@ -201,8 +201,9 @@ async function startAll(projectRoot) {
         readyzResult,
     };
 }
-async function stopAll() {
-    (0, logManager_1.logInfo)('ServiceManager: ===== Stopping all services =====');
+async function stopAll(reason = 'unknown') {
+    (0, logManager_1.logInfo)(`ServiceManager: ===== Stopping all services, reason=${reason} =====`);
+    (0, logManager_1.logInfo)(`ServiceManager: stopAll stack:\n${new Error().stack}`);
     // CDP lifecycle is managed by web_app BFF (JyhfCdpManager).
     // Must use actual web port (from allocatePorts), not hardcoded 8000.
     const webInfo = managedProcesses.get('web');

@@ -120,7 +120,7 @@ export async function startAll(projectRoot: string): Promise<{
   const spsHealthy = await waitForHealthz(ports.sps);
   if (!spsHealthy) {
     logError('ServiceManager: SPS failed to become healthy');
-    await stopAll();
+    await stopAll('startAll_sps_healthz_failed');
     return { success: false, webPort: ports.web, spsPort: ports.sps, cdpPort: ports.cdp, doctorPassed: true, doctorChecks: null, readyzResult: null };
   }
   logInfo('ServiceManager: SPS healthy');
@@ -147,7 +147,7 @@ export async function startAll(projectRoot: string): Promise<{
   const webHealthy = await waitForHealthz(ports.web, '127.0.0.1');
   if (!webHealthy) {
     logError('ServiceManager: web_app_service failed to become healthy');
-    await stopAll();
+    await stopAll('startAll_web_healthz_failed');
     return { success: false, webPort: ports.web, spsPort: ports.sps, cdpPort: ports.cdp, doctorPassed: true, doctorChecks: null, readyzResult: null };
   }
   logInfo('ServiceManager: web_app healthy');
@@ -159,7 +159,7 @@ export async function startAll(projectRoot: string): Promise<{
     logError(`ServiceManager: readyz failed status=${readyzResult?.status}`);
     // Don't stop — degraded still allows the app to show
     if (readyzResult?.status === 'failed') {
-      await stopAll();
+      await stopAll('startAll_readyz_failed');
       return { success: false, webPort: ports.web, spsPort: ports.sps, cdpPort: ports.cdp, doctorPassed: true, doctorChecks: null, readyzResult };
     }
   }
@@ -195,8 +195,9 @@ export async function startAll(projectRoot: string): Promise<{
   };
 }
 
-export async function stopAll(): Promise<void> {
-  logInfo('ServiceManager: ===== Stopping all services =====');
+export async function stopAll(reason: string = 'unknown'): Promise<void> {
+  logInfo(`ServiceManager: ===== Stopping all services, reason=${reason} =====`);
+  logInfo(`ServiceManager: stopAll stack:\n${new Error().stack}`);
 
   // CDP lifecycle is managed by web_app BFF (JyhfCdpManager).
   // Must use actual web port (from allocatePorts), not hardcoded 8000.

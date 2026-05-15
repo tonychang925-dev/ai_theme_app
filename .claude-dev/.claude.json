@@ -1,8 +1,8 @@
 {
-  "numStartups": 6,
+  "numStartups": 7,
   "hasSeenTasksHint": true,
   "tipsHistory": {
-    "new-user-warmup": 4,
+    "new-user-warmup": 7,
     "plan-mode-for-complex-tasks": 6,
     "color-when-multi-clauding": 2,
     "memory-command": 2,
@@ -26,13 +26,12 @@
     "mobile-app": 2,
     "frontend-design-plugin": 5,
     "shift-enter": 4,
-    "subagent-fanout-nudge": 4,
+    "subagent-fanout-nudge": 7,
     "custom-agents": 6,
     "agent-flag": 6,
     "feedback-command": 6
   },
-  "promptQueueUseCount": 125,
-  "showExpandedTodos": true,
+  "promptQueueUseCount": 170,
   "cachedGrowthBookFeatures": {
     "tengu_sub_nomdrep_q7k": true,
     "tengu_dunwich_bell": false,
@@ -562,6 +561,6 @@
   "officialMarketplaceAutoInstalled": true,
   "showSpinnerTree": false,
   "feedbackSurveyState": {
-    "lastShownTime": 1778711809457
+    "lastShownTime": 1778841524957
   }
 }

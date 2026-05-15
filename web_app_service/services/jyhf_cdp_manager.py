@@ -187,7 +187,7 @@ class JyhfCdpManager:
         self, ok: bool, message: str, collector_running: bool,
         *, service_running: bool | None = None,
     ) -> dict[str, Any]:
-        """Build a uniform command response with all status fields."""
+        """Build a uniform command response with core status fields."""
         pid = self._process.pid if (self._process and self._process.poll() is None) else None
         if service_running is None:
             service_running = bool(pid) or self._owner == "external"
@@ -201,6 +201,11 @@ class JyhfCdpManager:
             "collector_running": collector_running,
             "last_error": self._last_error,
         }
+
+    async def _status_result(self, ok: bool, message: str) -> dict[str, Any]:
+        """Build a command response that includes full status from get_status()."""
+        status = await self.get_status()
+        return {"ok": ok, "message": message, **status}
 
     async def _start_collector_locked(self, payload: dict, push_intel: bool, push_db: bool) -> dict[str, Any]:
         if not await self._probe():
@@ -234,12 +239,18 @@ class JyhfCdpManager:
 
         if not confirmed:
             self._last_error = "collector did not enter running state within timeout"
+            logger.warning("collector_start_confirm_timeout service_kept_alive=true")
             # Do NOT kill CDP service — it may still be initializing.
-            # Let /status polling show progress. Only explicit stop/service-stop/force-stop kills.
-            return self._cmd_result(False, "collector not confirmed yet; retry via /status or re-submit start", False)
+            # Return ok=true: start command was submitted successfully.
+            # collector readiness is surfaced via status fields, not ok/fail.
+            return await self._status_result(
+                True,
+                "collector start submitted; waiting for JYHF App/CDP/DOM"
+            )
 
         self._last_error = None
-        return self._cmd_result(True, result.get("message", "collector started"), True)
+        # Return full status so frontend can show layered state immediately
+        return await self._status_result(True, result.get("message", "collector started"))
 
     async def _launch_process(self, *, push_intel: bool, push_db: bool) -> tuple[bool, str]:
         python = sys_executable()
