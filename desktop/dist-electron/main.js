@@ -87,13 +87,25 @@ electron_1.app.whenReady().then(async () => {
     // Start all services
     const result = await (0, serviceManager_1.startAll)(projectRoot);
     if (!result.success || (result.readyzResult && result.readyzResult.status === 'failed')) {
-        const checks = result.readyzResult?.checks
-            ? Object.entries(result.readyzResult.checks).map(([k, v]) => ({
+        let checks;
+        if (result.readyzResult?.checks) {
+            checks = Object.entries(result.readyzResult.checks).map(([k, v]) => ({
                 name: k,
                 status: v === 'connected' || v === 'healthy' || v === 'mounted' ? 'pass' : 'fail',
                 message: String(v),
-            }))
-            : [{ name: 'startup', status: 'fail', message: 'Service startup failed' }];
+            }));
+        }
+        else if (result.doctorChecks) {
+            checks = result.doctorChecks.map(c => ({
+                name: c.name,
+                status: c.status,
+                message: c.message,
+                fixHint: c.fixHint,
+            }));
+        }
+        else {
+            checks = [{ name: 'startup', status: 'fail', message: 'Service startup failed' }];
+        }
         (0, windowManager_1.showErrorPage)('服务启动失败', checks);
         return;
     }
@@ -127,7 +139,6 @@ electron_1.app.whenReady().then(async () => {
     mainWindow.loadURL(url);
     appStarted = true;
 });
-// ── Quit handling (unified via quitSafely guard) ──
 electron_1.app.on('window-all-closed', async () => {
     await quitSafely();
 });
@@ -147,7 +158,7 @@ process.on('SIGINT', async () => {
     await quitSafely();
 });
 electron_1.app.on('activate', () => {
-    // macOS re-activate
+    // macOS dock icon click — re-show window if app is still running
     if (appStarted && !isQuitting) {
         const win = (0, windowManager_1.getMainWindow)();
         if (win) {

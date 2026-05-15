@@ -125,10 +125,10 @@ class JyhfCdpManager:
             collector_msg = "CDP service not running"
 
         service_msg = ""
-        if stop_service and self._managed:
+        if stop_service and await self._probe():
             service_msg = await self._stop_service()
         elif stop_service:
-            service_msg = "external service not stopped"
+            service_msg = "CDP service already stopped"
 
         self._last_error = None
         return {"ok": True, "message": f"{collector_msg}; {service_msg}".strip("; "),
@@ -136,8 +136,8 @@ class JyhfCdpManager:
                 "collector_running": False}
 
     async def stop_service(self) -> dict[str, Any]:
-        if not self._managed:
-            return {"ok": True, "message": "not managed, not stopped", "service_owner": "none"}
+        if not await self._probe():
+            return {"ok": True, "message": "already stopped", "service_owner": "none"}
         msg = await self._stop_service()
         return {"ok": True, "message": msg, "service_owner": "none"}
 
@@ -173,6 +173,8 @@ class JyhfCdpManager:
 
     async def _stop_service(self) -> str:
         pid = self._read_pid()
+        if not pid:
+            pid = self._find_pid_by_port()
         if pid:
             try:
                 os.kill(pid, signal.SIGTERM)
@@ -183,15 +185,51 @@ class JyhfCdpManager:
                 if await self._probe():
                     os.kill(pid, signal.SIGKILL)
                     await asyncio.sleep(0.5)
+                self._managed = False
+                try:
+                    self._pid_file.unlink(missing_ok=True)
+                except Exception:
+                    pass
                 return f"CDP service stopped (PID={pid})"
             except (ProcessLookupError, OSError):
                 pass
+        # If we can't find the PID, try killing by port
+        if await self._probe():
+            await self._kill_by_port()
         self._managed = False
         try:
             self._pid_file.unlink(missing_ok=True)
         except Exception:
             pass
         return "CDP service stopped"
+
+    def _find_pid_by_port(self) -> int | None:
+        """Find the PID of the process listening on the CDP service port."""
+        import subprocess
+        try:
+            out = subprocess.run(
+                ["lsof", "-nP", "-iTCP", f":{self._port}", "-sTCP:LISTEN", "-t"],
+                capture_output=True, text=True, timeout=5,
+            )
+            pid_str = out.stdout.strip().split('\n')[0]
+            if pid_str and pid_str.isdigit():
+                return int(pid_str)
+        except Exception:
+            pass
+        return None
+
+    async def _kill_by_port(self) -> None:
+        """Kill the process listening on the CDP service port using fuser or lsof."""
+        import subprocess
+        try:
+            pid = self._find_pid_by_port()
+            if pid:
+                os.kill(pid, signal.SIGTERM)
+                await asyncio.sleep(2)
+                if await self._probe():
+                    os.kill(pid, signal.SIGKILL)
+        except Exception:
+            pass
 
     async def _probe(self) -> bool:
         for ep in _HEALTH_ENDPOINTS:

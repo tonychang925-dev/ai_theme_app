@@ -6,6 +6,10 @@ import time
 from services.jyhf_cdp_service.cdp_client import CDPClient
 
 
+class PrepareRetryError(RuntimeError):
+    """DOM element not ready — caller should retry on next capture cycle."""
+
+
 class NewEventExtractor:
     def prepare(self, cdp: CDPClient) -> None:
         # Step 1: 强制导航到首页
@@ -62,7 +66,7 @@ class NewEventExtractor:
         )
         time.sleep(3)
         if not str(result).startswith("clicked"):
-            raise RuntimeError(f"new event tab not found: route={route_result} click={result}")
+            raise PrepareRetryError(f"new event tab not found: route={route_result} click={result}")
         # Step 3: 等待页面渲染完成
         time.sleep(2)
 

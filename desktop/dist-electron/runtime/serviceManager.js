@@ -32,12 +32,16 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.startAll = startAll;
 exports.stopAll = stopAll;
 exports.getServiceStatus = getServiceStatus;
 const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
+const http_1 = __importDefault(require("http"));
 const electron_1 = require("electron");
 const envLoader_1 = require("./envLoader");
 const dependencyDoctor_1 = require("./dependencyDoctor");
@@ -47,7 +51,9 @@ const healthChecker_1 = require("./healthChecker");
 const logManager_1 = require("./logManager");
 let managedProcesses = new Map();
 let redisStartedByUs = false;
+let _cdProjectRoot = null;
 async function startAll(projectRoot) {
+    _cdProjectRoot = projectRoot;
     const userDataDir = path.dirname((0, logManager_1.getLogDir)()); // ~/Library/Application Support/AI投资助理
     (0, logManager_1.logInfo)('ServiceManager: ===== Starting all services =====');
     // 1. Load env
@@ -57,11 +63,11 @@ async function startAll(projectRoot) {
     env['DESKTOP_LOG_DIR'] = logDir;
     env['DESKTOP_USER_DATA'] = userDataDir;
     // 2. Dependency doctor
-    const doctor = (0, dependencyDoctor_1.runDoctor)(projectRoot, env);
+    const doctor = await (0, dependencyDoctor_1.runDoctor)(projectRoot, env);
     (0, logManager_1.logInfo)(`ServiceManager: doctor passed=${doctor.pass}`);
     if (!doctor.pass) {
         (0, logManager_1.logError)('ServiceManager: dependency doctor failed, check diagnostics');
-        return { success: false, webPort: 0, spsPort: 0, cdpPort: 0, doctorPassed: false, readyzResult: null };
+        return { success: false, webPort: 0, spsPort: 0, cdpPort: 0, doctorPassed: false, doctorChecks: doctor.checks, readyzResult: null };
     }
     // 3. Clear stale PIDs from previous runs
     (0, portManager_1.clearStalePids)();
@@ -122,7 +128,7 @@ async function startAll(projectRoot) {
     if (!spsHealthy) {
         (0, logManager_1.logError)('ServiceManager: SPS failed to become healthy');
         await stopAll();
-        return { success: false, webPort: ports.web, spsPort: ports.sps, cdpPort: ports.cdp, doctorPassed: true, readyzResult: null };
+        return { success: false, webPort: ports.web, spsPort: ports.sps, cdpPort: ports.cdp, doctorPassed: true, doctorChecks: null, readyzResult: null };
     }
     (0, logManager_1.logInfo)('ServiceManager: SPS healthy');
     // 9. Start web_app_service
@@ -147,7 +153,7 @@ async function startAll(projectRoot) {
     if (!webHealthy) {
         (0, logManager_1.logError)('ServiceManager: web_app_service failed to become healthy');
         await stopAll();
-        return { success: false, webPort: ports.web, spsPort: ports.sps, cdpPort: ports.cdp, doctorPassed: true, readyzResult: null };
+        return { success: false, webPort: ports.web, spsPort: ports.sps, cdpPort: ports.cdp, doctorPassed: true, doctorChecks: null, readyzResult: null };
     }
     (0, logManager_1.logInfo)('ServiceManager: web_app healthy');
     // 10. Wait for readyz
@@ -158,7 +164,7 @@ async function startAll(projectRoot) {
         // Don't stop — degraded still allows the app to show
         if (readyzResult?.status === 'failed') {
             await stopAll();
-            return { success: false, webPort: ports.web, spsPort: ports.sps, cdpPort: ports.cdp, doctorPassed: true, readyzResult };
+            return { success: false, webPort: ports.web, spsPort: ports.sps, cdpPort: ports.cdp, doctorPassed: true, doctorChecks: null, readyzResult };
         }
     }
     // 11. Optional: CDP service (default off)
@@ -199,11 +205,14 @@ async function startAll(projectRoot) {
         spsPort: ports.sps,
         cdpPort: ports.cdp,
         doctorPassed: doctor.pass,
+        doctorChecks: doctor.checks,
         readyzResult,
     };
 }
 async function stopAll() {
     (0, logManager_1.logInfo)('ServiceManager: ===== Stopping all services =====');
+    // Stop CDP service (started by BFF manager, not in managed process tree)
+    await _stopCdpService();
     await (0, processTree_1.killAllManaged)(5000);
     // Only stop Redis if we started it
     if (redisStartedByUs) {
@@ -224,6 +233,127 @@ async function stopAll() {
     catch { }
     managedProcesses.clear();
     (0, logManager_1.logInfo)('ServiceManager: ===== All services stopped =====');
+}
+async function _stopCdpService() {
+    const cdpPort = 8095;
+    // 1. Try graceful HTTP stop (collector + uvicorn)
+    try {
+        await _httpPost('127.0.0.1', cdpPort, '/collector/stop', 3000);
+        (0, logManager_1.logInfo)('ServiceManager: CDP collector stop requested');
+    }
+    catch {
+        // Collector may not be running
+    }
+    // 2. Find and kill whatever is listening on the CDP port
+    let pid = null;
+    // Port-based lookup is most reliable (doesn't depend on PID file)
+    pid = _findPidByPort(cdpPort);
+    // Fallback: try PID file
+    if (!pid && _cdProjectRoot) {
+        const cdpPidFile = path.join(_cdProjectRoot, 'tmp', 'realtime', 'jyhf_cdp_service', 'service.pid');
+        try {
+            const filePid = parseInt(fs.readFileSync(cdpPidFile, 'utf-8').trim(), 10);
+            if (filePid && !isNaN(filePid)) {
+                // Verify the PID is actually the CDP service
+                try {
+                    process.kill(filePid, 0);
+                    pid = filePid;
+                }
+                catch { }
+            }
+        }
+        catch { }
+        // Clean up PID file regardless
+        try {
+            fs.unlinkSync(cdpPidFile);
+        }
+        catch { }
+    }
+    if (!pid) {
+        // Final attempt: try lsof directly via execSync
+        const { execSync } = require('child_process');
+        try {
+            const out = execSync(`lsof -nP -iTCP:${cdpPort} -sTCP:LISTEN -t`, { encoding: 'utf-8', timeout: 3000 }).trim();
+            const lines = out.split('\n').filter(Boolean);
+            for (const line of lines) {
+                const p = parseInt(line, 10);
+                if (p && !isNaN(p) && p !== process.pid) {
+                    pid = p;
+                    break;
+                }
+            }
+        }
+        catch { }
+    }
+    if (!pid) {
+        (0, logManager_1.logInfo)('ServiceManager: no CDP service found on port ' + cdpPort);
+        return;
+    }
+    // 3. Kill with SIGTERM, then SIGKILL if needed
+    (0, logManager_1.logInfo)(`ServiceManager: stopping CDP service PID=${pid}`);
+    try {
+        process.kill(pid, 'SIGTERM');
+        // Wait up to 3s for graceful exit
+        const deadline = Date.now() + 3000;
+        let alive = true;
+        while (Date.now() < deadline) {
+            try {
+                process.kill(pid, 0);
+            }
+            catch {
+                alive = false;
+                break;
+            }
+            await new Promise(r => setTimeout(r, 200));
+        }
+        if (alive) {
+            process.kill(pid, 'SIGKILL');
+            (0, logManager_1.logInfo)(`ServiceManager: force-killed CDP service PID=${pid}`);
+        }
+    }
+    catch {
+        (0, logManager_1.logInfo)(`ServiceManager: CDP service PID=${pid} already dead`);
+    }
+    // 4. Verify port is free
+    await new Promise(r => setTimeout(r, 500));
+    const stillAlive = _findPidByPort(cdpPort);
+    if (stillAlive) {
+        (0, logManager_1.logInfo)(`ServiceManager: CDP port ${cdpPort} still occupied, force killing`);
+        try {
+            process.kill(stillAlive, 'SIGKILL');
+        }
+        catch { }
+    }
+}
+function _findPidByPort(port) {
+    try {
+        const { execSync } = require('child_process');
+        const out = execSync(`lsof -nP -iTCP:${port} -sTCP:LISTEN -t`, { encoding: 'utf-8', timeout: 3000 }).trim();
+        const lines = out.split('\n').filter(Boolean);
+        if (lines.length > 0 && /^\d+$/.test(lines[0])) {
+            return parseInt(lines[0], 10);
+        }
+    }
+    catch {
+        // lsof failed or no process
+    }
+    return null;
+}
+function _httpPost(host, port, pathStr, timeoutMs) {
+    return new Promise((resolve, reject) => {
+        const req = http_1.default.request({
+            hostname: host, port, path: pathStr, method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            timeout: timeoutMs,
+        }, (res) => {
+            res.resume();
+            res.on('end', resolve);
+        });
+        req.on('error', reject);
+        req.on('timeout', () => { req.destroy(); reject(new Error('timeout')); });
+        req.write('{}');
+        req.end();
+    });
 }
 function getServiceStatus() {
     return Array.from(managedProcesses.entries()).map(([name, info]) => ({
