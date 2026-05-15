@@ -1,4 +1,5 @@
 import json
+import logging
 import os
 from typing import AsyncIterator
 
@@ -7,6 +8,8 @@ from fastapi import APIRouter, HTTPException, Query, Request
 from fastapi.responses import StreamingResponse
 
 from web_app_service.core.read_client import StockProcessingReadClient
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter()
 client = StockProcessingReadClient()
@@ -529,13 +532,33 @@ async def collection_continue(payload: dict) -> dict:
 @router.get("/realtime/jyhf-cdp/status")
 async def jyhf_cdp_collector_status(request: Request) -> dict:
     manager = request.app.state.cdp_manager
-    return await manager.get_status()
+    result = await manager.get_status()
+    logger.warning(
+        "JYHF_STATUS_RESULT host=%s client=%s web_pid=%s manager_id=%s sr=%s owner=%s cr=%s cdc=%s cap=%s",
+        request.headers.get("host"), request.client, os.getpid(), id(manager),
+        result.get("service_running"), result.get("service_owner"),
+        result.get("collector_running"), result.get("cdp_connected"),
+        str(result.get("last_capture_at", "-"))[:30] if result.get("last_capture_at") else "-",
+    )
+    return result
 
 
 @router.post("/realtime/jyhf-cdp/start")
 async def jyhf_cdp_collector_start(request: Request, payload: dict | None = None) -> dict:
     manager = request.app.state.cdp_manager
-    return await manager.start_collector(payload or {})
+    logger.warning(
+        "JYHF_START_REQUEST host=%s client=%s web_pid=%s manager_id=%s port=%s",
+        request.headers.get("host"), request.client, os.getpid(), id(manager),
+        getattr(manager, "_port", "?"),
+    )
+    result = await manager.start_collector(payload or {})
+    logger.warning(
+        "JYHF_START_RESULT ok=%s sr=%s owner=%s cr=%s cdc=%s cap=%s",
+        result.get("ok"), result.get("service_running"), result.get("service_owner"),
+        result.get("collector_running"), result.get("cdp_connected"),
+        str(result.get("last_capture_at", "-"))[:30] if result.get("last_capture_at") else "-",
+    )
+    return result
 
 
 @router.post("/realtime/jyhf-cdp/stop")

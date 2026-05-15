@@ -98,6 +98,7 @@ export function RealtimeCollectorPage() {
     if (initializedRef.current) return;
     initializedRef.current = true;
     append("实时事件采集控制台已加载");
+	    append(`[页面来源] href=${location.href} origin=${location.origin} port=${location.port}`);
 
     refreshStatus()
       .then(async (result) => {
@@ -257,6 +258,7 @@ export function RealtimeCollectorPage() {
         return;
       }
 
+      append(`[START_RESULT] ${JSON.stringify(result)}`);
       append(result.message || "启动请求已提交，等待状态确认...");
 
       // Poll /status with layered readiness checks
@@ -265,7 +267,7 @@ export function RealtimeCollectorPage() {
         try {
           const st = await fetchJyhfCdpCollectorStatus();
           setJyhfStatus(st);
-          append(`[轮询 ${i + 1}s] sr=${st.service_running} cr=${st.collector_running} cdc=${st.cdp_connected} cap=${st.last_capture_at || '-'}`);
+          append(`[STATUS_RESULT ${i + 1}s] ${JSON.stringify(st)}`);
 
           // Layered readiness: wait for actual data, not just collector_running
           if (st.last_capture_at) {
@@ -337,6 +339,16 @@ export function RealtimeCollectorPage() {
       setJyhfBusy(false);
     }
   }
+
+  const [buildInfo, setBuildInfo] = useState<string>("");
+
+  // Load build-info.json for diagnostics
+  useEffect(() => {
+    fetch("/build-info.json", { cache: "no-store" })
+      .then(r => r.json())
+      .then(d => setBuildInfo(`build: ${d.entry_asset || '?'} @ ${d.built_at || '?'}`))
+      .catch(() => setBuildInfo("build-info.json not found"));
+  }, []);
 
   const jyhfCollectorRunning = Boolean(jyhfStatus?.collector_running);
 
@@ -554,6 +566,23 @@ export function RealtimeCollectorPage() {
 
         <section className="workspace-card">
           <span className="metric-label section-title">终端调试输出</span>
+          <button type="button" className="tag tag-button" style={{marginLeft:12}} onClick={async () => {
+            const text = mergedLogs.join('\n');
+            try {
+              await navigator.clipboard.writeText(text);
+              append('✓ 终端输出已复制到剪贴板 (' + mergedLogs.length + ' 行)');
+            } catch {
+              // Fallback for non-HTTPS or clipboard permission denied
+              const ta = document.createElement('textarea');
+              ta.value = text;
+              ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+              document.body.appendChild(ta);
+              ta.select();
+              document.execCommand('copy');
+              document.body.removeChild(ta);
+              append('✓ 终端输出已复制到剪贴板 (' + mergedLogs.length + ' 行)');
+            }
+          }}>📋 复制终端输出</button>
           <div className="collection-log-panel collection-debug-terminal" ref={terminalRef}>
             {(mergedLogs.length ? mergedLogs : ["[等待中] 尚未产生调试日志。"]).map((line, idx) => (
               <div className="collection-log-line" key={`realtime-terminal-${idx}`}>
