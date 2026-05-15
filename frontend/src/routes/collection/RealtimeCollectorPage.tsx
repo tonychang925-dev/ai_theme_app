@@ -80,6 +80,12 @@ export function RealtimeCollectorPage() {
     const result = await fetchJyhfCdpCollectorStatus();
     setJyhfStatus(result);
     setJyhfError(null);
+    // DOM 直接写入——绕过 React 渲染看真实数据
+    document.title = `CDP cr=${result.collector_running} cdc=${result.cdp_connected}`;
+    let dbg = document.getElementById('__cdp_diag');
+    if (!dbg) { dbg = document.createElement('div'); dbg.id='__cdp_diag'; dbg.style.cssText='position:fixed;top:0;left:0;right:0;background:red;color:#fff;padding:4px 12px;z-index:99999;font:12px monospace'; document.body.prepend(dbg); }
+    dbg.textContent = `CDP: collector_running=${result.collector_running} cdp_connected=${result.cdp_connected} app_running=${result.app_running} owner=${result.service_owner} last_capture=${result.last_capture_at || '-'}`;
+    append(`[诊断] cr=${result.collector_running} cdc=${result.cdp_connected} app=${result.app_running} owner=${result.service_owner} sr=${result.service_running} tab=${result.current_tab || '-'} cap=${result.last_capture_at || '-'}`);
     return result;
   }
 
@@ -230,12 +236,13 @@ export function RealtimeCollectorPage() {
         try {
           const st = await fetchJyhfCdpCollectorStatus();
           setJyhfStatus(st);
+          append(`[轮询 ${i + 1}s] collector_running=${st.collector_running} cdp_connected=${st.cdp_connected} service_owner=${st.service_owner}`);
           if (st.collector_running) {
             append(`采集器就绪 (capture_count=${st.capture_count_total})`);
             break;
           }
           if (i % 5 === 0) append(`等待中... (${i + 1}s)`);
-        } catch { /* retry */ }
+        } catch { append(`[轮询 ${i + 1}s] 请求失败，重试中...`); }
       }
       await refreshJyhfCdpLogs();
       setJyhfBusy(false);
