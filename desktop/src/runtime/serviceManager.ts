@@ -18,7 +18,7 @@ export interface ServiceStatus {
 
 let managedProcesses: Map<string, { pid?: number; port: number }> = new Map();
 let redisStartedByUs: boolean = false;
-let _cdProjectRoot: string | null = null;
+let _cdProjectRoot: string | null = null;  // retained for reference, CDP lifecycle delegated to web_app BFF
 
 export async function startAll(projectRoot: string): Promise<{
   success: boolean;
@@ -30,6 +30,7 @@ export async function startAll(projectRoot: string): Promise<{
   readyzResult: any;
 }> {
   _cdProjectRoot = projectRoot;
+  // (cdProjectRoot kept for reference, CDP lifecycle delegated to web_app BFF)
   const userDataDir = path.dirname(getLogDir()); // ~/Library/Application Support/AI投资助理
   logInfo('ServiceManager: ===== Starting all services =====');
 
@@ -206,8 +207,17 @@ export async function startAll(projectRoot: string): Promise<{
 export async function stopAll(): Promise<void> {
   logInfo('ServiceManager: ===== Stopping all services =====');
 
-  // Stop CDP service (started by BFF manager, not in managed process tree)
-  await _stopCdpService();
+  // CDP lifecycle is managed by web_app BFF (JyhfCdpManager).
+  // Delegate via the /api/v2/realtime/jyhf-cdp/service/stop endpoint.
+  // This respects owner=managed vs owner=external: only managed gets killed.
+  if (_cdProjectRoot) {
+    try {
+      await _httpPost('127.0.0.1', 8000, '/api/v2/realtime/jyhf-cdp/service/stop', 5000);
+      logInfo('ServiceManager: CDP stop delegated to web_app BFF');
+    } catch {
+      logInfo('ServiceManager: CDP service stop request failed (web_app may be down)');
+    }
+  }
 
   await killAllManaged(5000);
 
@@ -230,100 +240,6 @@ export async function stopAll(): Promise<void> {
 
   managedProcesses.clear();
   logInfo('ServiceManager: ===== All services stopped =====');
-}
-
-async function _stopCdpService(): Promise<void> {
-  const cdpPort = 8095;
-
-  // 1. Try graceful HTTP stop (collector + uvicorn)
-  try {
-    await _httpPost('127.0.0.1', cdpPort, '/collector/stop', 3000);
-    logInfo('ServiceManager: CDP collector stop requested');
-  } catch {
-    // Collector may not be running
-  }
-
-  // 2. Find and kill whatever is listening on the CDP port
-  let pid: number | null = null;
-
-  // Port-based lookup is most reliable (doesn't depend on PID file)
-  pid = _findPidByPort(cdpPort);
-
-  // Fallback: try PID file
-  if (!pid && _cdProjectRoot) {
-    const cdpPidFile = path.join(_cdProjectRoot, 'tmp', 'realtime', 'jyhf_cdp_service', 'service.pid');
-    try {
-      const filePid = parseInt(fs.readFileSync(cdpPidFile, 'utf-8').trim(), 10);
-      if (filePid && !isNaN(filePid)) {
-        // Verify the PID is actually the CDP service
-        try { process.kill(filePid, 0); pid = filePid; } catch {}
-      }
-    } catch {}
-    // Clean up PID file regardless
-    try { fs.unlinkSync(cdpPidFile); } catch {}
-  }
-
-  if (!pid) {
-    // Final attempt: try lsof directly via execSync
-    const { execSync } = require('child_process');
-    try {
-      const out = execSync(`lsof -nP -iTCP:${cdpPort} -sTCP:LISTEN -t`, { encoding: 'utf-8', timeout: 3000 }).trim();
-      const lines = out.split('\n').filter(Boolean);
-      for (const line of lines) {
-        const p = parseInt(line, 10);
-        if (p && !isNaN(p) && p !== process.pid) {
-          pid = p;
-          break;
-        }
-      }
-    } catch {}
-  }
-
-  if (!pid) {
-    logInfo('ServiceManager: no CDP service found on port ' + cdpPort);
-    return;
-  }
-
-  // 3. Kill with SIGTERM, then SIGKILL if needed
-  logInfo(`ServiceManager: stopping CDP service PID=${pid}`);
-  try {
-    process.kill(pid, 'SIGTERM');
-    // Wait up to 3s for graceful exit
-    const deadline = Date.now() + 3000;
-    let alive = true;
-    while (Date.now() < deadline) {
-      try { process.kill(pid, 0); } catch { alive = false; break; }
-      await new Promise(r => setTimeout(r, 200));
-    }
-    if (alive) {
-      process.kill(pid, 'SIGKILL');
-      logInfo(`ServiceManager: force-killed CDP service PID=${pid}`);
-    }
-  } catch {
-    logInfo(`ServiceManager: CDP service PID=${pid} already dead`);
-  }
-
-  // 4. Verify port is free
-  await new Promise(r => setTimeout(r, 500));
-  const stillAlive = _findPidByPort(cdpPort);
-  if (stillAlive) {
-    logInfo(`ServiceManager: CDP port ${cdpPort} still occupied, force killing`);
-    try { process.kill(stillAlive, 'SIGKILL'); } catch {}
-  }
-}
-
-function _findPidByPort(port: number): number | null {
-  try {
-    const { execSync } = require('child_process');
-    const out = execSync(`lsof -nP -iTCP:${port} -sTCP:LISTEN -t`, { encoding: 'utf-8', timeout: 3000 }).trim();
-    const lines = out.split('\n').filter(Boolean);
-    if (lines.length > 0 && /^\d+$/.test(lines[0])) {
-      return parseInt(lines[0], 10);
-    }
-  } catch {
-    // lsof failed or no process
-  }
-  return null;
 }
 
 function _httpPost(host: string, port: number, pathStr: string, timeoutMs: number): Promise<void> {

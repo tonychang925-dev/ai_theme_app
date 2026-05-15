@@ -252,6 +252,14 @@ export interface RealtimeCollectorLogs {
   files: Record<string, string[]>;
 }
 
+export interface JyhfCdpCommandResult {
+  ok: boolean;
+  message: string;
+  service_owner: string;
+  collector_running: boolean;
+  service_running: boolean;
+}
+
 export interface JyhfCdpCollectorStatus {
   service?: string;
   running: boolean;
@@ -720,25 +728,25 @@ export async function fetchJyhfCdpCollectorStatus(): Promise<JyhfCdpCollectorSta
   }
 }
 
-export async function startJyhfCdpCollector(): Promise<RealtimeCollectorCommandResult> {
+export async function startJyhfCdpCollector(): Promise<JyhfCdpCommandResult> {
   try {
-    return await fetchJsonWithTimeout<RealtimeCollectorCommandResult>(
+    return await fetchJsonWithTimeout<JyhfCdpCommandResult>(
       "/api/v2/realtime/jyhf-cdp/start",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({}),
       },
-      30000,
+      45000,
     );
   } catch (err) {
     throw normalizeRealtimeCollectorError(err, "JYHF-CDP 启动");
   }
 }
 
-export async function stopJyhfCdpCollector(): Promise<RealtimeCollectorCommandResult> {
+export async function stopJyhfCdpCollector(): Promise<JyhfCdpCommandResult> {
   try {
-    return await fetchJsonWithTimeout<RealtimeCollectorCommandResult>(
+    return await fetchJsonWithTimeout<JyhfCdpCommandResult>(
       "/api/v2/realtime/jyhf-cdp/stop",
       {
         method: "POST",

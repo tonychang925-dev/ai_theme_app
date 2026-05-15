@@ -204,7 +204,14 @@ export function RealtimeCollectorPage() {
     append("开始启动 JYHF DOM 采集器...");
     try {
       const result = await startJyhfCdpCollector();
-      append(`JYHF-CDP 启动完成: rc=${result.return_code}`);
+      if (result.ok) {
+        append(`JYHF-CDP 启动完成: ${result.message} (owner=${result.service_owner})`);
+        if (result.collector_running) {
+          setJyhfStatus(prev => prev ? { ...prev, collector_running: true } : null);
+        }
+      } else {
+        append(`JYHF-CDP 启动失败: ${result.message}`);
+      }
       await refreshJyhfCdpStatus();
       await refreshJyhfCdpLogs();
     } catch (err) {
@@ -220,7 +227,12 @@ export function RealtimeCollectorPage() {
     append("开始停止 JYHF DOM 采集器...");
     try {
       const result = await stopJyhfCdpCollector();
-      append(`JYHF-CDP 停止完成: rc=${result.return_code}`);
+      append(`JYHF-CDP 停止完成: ${result.message}`);
+      setJyhfStatus(prev => prev ? {
+        ...prev,
+        collector_running: result.collector_running,
+        service_running: result.service_running,
+      } : null);
       await refreshJyhfCdpStatus();
       await refreshJyhfCdpLogs();
     } catch (err) {
@@ -249,7 +261,7 @@ export function RealtimeCollectorPage() {
     const jyhfBlock = jyhfLogs.length ? ["===== jyhf_cdp_service.log =====", ...jyhfLogs, ""] : [];
     return [...output, ...jyhfBlock, ...logs];
   }, [output, jyhfLogs, logs]);
-  const jyhfCollectorRunning = Boolean(jyhfStatus?.collector_running ?? jyhfStatus?.running);
+  const jyhfCollectorRunning = Boolean(jyhfStatus?.collector_running);
 
   return (
     <div className="workspace-page">
