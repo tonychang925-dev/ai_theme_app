@@ -279,7 +279,12 @@ class DatabaseGateway:
         """按交易日读取题材股票池快照。"""
         try:
             start_time = time.time()
-            result = await self._client.get_subject_stock_pool_by_trade_date(trade_date)
+            fn = getattr(self._client, "get_subject_stock_pool_by_trade_date", None)
+            if not callable(fn):
+                fn = getattr(self._client, "get_subject_stock_daily_snapshot_by_trade_date", None)
+            if not callable(fn):
+                return []
+            result = await fn(trade_date)
             self._record_request(True, start_time)
             return result
         except Exception as e:
