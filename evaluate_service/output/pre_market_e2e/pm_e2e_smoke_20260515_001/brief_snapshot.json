@@ -1,0 +1,29 @@
+{
+  "ok": true,
+  "trade_date": "2026-05-15",
+  "dry_run": false,
+  "status": "draft",
+  "payload": {
+    "version": "pre_market_brief.v1",
+    "trade_date": "2026-05-15",
+    "status": "draft",
+    "sections": {
+      "major_events": [],
+      "matched_themes": [],
+      "review_events": [],
+      "unknown_watch": [],
+      "risk_alerts": [],
+      "event_driven_opportunities": []
+    },
+    "diagnostics": {
+      "source": "db_empty",
+      "event_count": 0,
+      "matched_event_count": 0,
+      "theme_count": 0,
+      "opportunity_count": 0,
+      "review_event_count": 0,
+      "unknown_event_count": 0,
+      "last_rebuild_at": "2026-05-16T11:26:32.796448+00:00"
+    }
+  }
+}

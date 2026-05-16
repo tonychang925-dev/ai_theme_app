@@ -333,6 +333,17 @@ class NotionPostMarketRecapPublisher:
 
         existing = self._query_existing_page(report_id)
 
+        # dry_run 必须在任何写操作前判断，避免误 archive
+        if dry_run:
+            return NotionPublishResult(
+                page_id=existing["id"] if existing else "",
+                page_url=existing.get("url", "") if existing else "",
+                action=f"dry_run:{'would_recreate' if existing else 'would_create'}",
+                report_id=report_id,
+                report_type="post_market_recap",
+                trade_date=trade_date,
+            )
+
         action = "created"
         if existing:
             if self._overwrite_mode == "archive_and_recreate":
@@ -347,16 +358,6 @@ class NotionPostMarketRecapPublisher:
                     report_type="post_market_recap",
                     trade_date=trade_date,
                 )
-
-        if dry_run:
-            return NotionPublishResult(
-                page_id="",
-                page_url="",
-                action=f"dry_run:{action}",
-                report_id=report_id,
-                report_type="post_market_recap",
-                trade_date=trade_date,
-            )
 
         title = f"{trade_date} 盘后复盘"
         summary = self._build_summary(payload)

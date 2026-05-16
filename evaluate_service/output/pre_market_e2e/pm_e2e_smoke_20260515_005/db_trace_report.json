@@ -1,0 +1,98 @@
+{
+  "run_id": "pm_e2e_smoke_20260515_005",
+  "trade_date": "2026-05-15",
+  "counts": {
+    "expected_input_count": 5,
+    "news_raw_count": 5,
+    "news_event_count": 5,
+    "event_subject_map_count": 0,
+    "event_theme_map_count": 0,
+    "review_queue_count": 0,
+    "decision_count": 0,
+    "pending_count": 0,
+    "dead_letter_count": 0
+  },
+  "redis_streams": {
+    "decision_stream": "stream:events:decision",
+    "pending_stream": "stream:events:pending",
+    "dead_letter_stream": "stream:dead:letter",
+    "decision_count": 0,
+    "pending_count": 0,
+    "dead_letter_count": 0,
+    "decision_entries": [],
+    "pending_entries": [],
+    "dead_letter_entries": []
+  },
+  "rows": [
+    {
+      "case_id": "pm_case_0001",
+      "external_id": "pm_e2e_smoke_20260515_005:pm_case_0001",
+      "news_raw_id": 3067,
+      "news_event_id": 2733,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0002",
+      "external_id": "pm_e2e_smoke_20260515_005:pm_case_0002",
+      "news_raw_id": 3068,
+      "news_event_id": 2734,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0003",
+      "external_id": "pm_e2e_smoke_20260515_005:pm_case_0003",
+      "news_raw_id": 3069,
+      "news_event_id": 2735,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0004",
+      "external_id": "pm_e2e_smoke_20260515_005:pm_case_0004",
+      "news_raw_id": 3070,
+      "news_event_id": 2736,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0005",
+      "external_id": "pm_e2e_smoke_20260515_005:pm_case_0005",
+      "news_raw_id": 3071,
+      "news_event_id": 2737,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    }
+  ]
+}

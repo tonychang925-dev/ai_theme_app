@@ -11,12 +11,13 @@ if __package__ in (None, ""):
     from evaluate_service.e2e.pre_market_brief.common import (
         column_exists,
         db_connect_kwargs,
+        parse_trade_date,
         require_safe_db,
         table_exists,
         write_json,
     )
 else:
-    from .common import column_exists, db_connect_kwargs, require_safe_db, table_exists, write_json
+    from .common import column_exists, db_connect_kwargs, parse_trade_date, require_safe_db, table_exists, write_json
 
 
 async def cleanup_run(
@@ -30,6 +31,7 @@ async def cleanup_run(
 ) -> dict[str, Any]:
     import asyncpg
 
+    parsed_trade_date = parse_trade_date(trade_date)
     conn = await asyncpg.connect(**db_connect_kwargs(db_name))
     try:
         if not await table_exists(conn, "news_raw"):
@@ -106,12 +108,12 @@ async def cleanup_run(
                         WHERE trade_date = $1::date
                           AND COALESCE(status, 'draft') <> 'final'
                         """,
-                        trade_date,
+                        parsed_trade_date,
                     )
                 else:
                     result = await conn.execute(
                         "DELETE FROM pre_market_brief_snapshot WHERE trade_date = $1::date",
-                        trade_date,
+                        parsed_trade_date,
                     )
                 counts["pre_market_brief_snapshot"] = _affected(result)
         return {
@@ -134,6 +136,7 @@ def _affected(result: str) -> int:
 
 
 async def _delete_e2e_snapshot(conn: Any, trade_date: str) -> str:
+    parsed_trade_date = parse_trade_date(trade_date)
     has_source_name = await column_exists(conn, "pre_market_brief_snapshot", "source_name")
     has_source_trace_id = await column_exists(conn, "pre_market_brief_snapshot", "source_trace_id")
     has_snapshot_version = await column_exists(conn, "pre_market_brief_snapshot", "snapshot_version")
@@ -145,14 +148,14 @@ async def _delete_e2e_snapshot(conn: Any, trade_date: str) -> str:
     if has_snapshot_version:
         conditions.append("snapshot_version = 'pre_market_brief.v1'")
     if not conditions:
-        return await conn.execute("DELETE FROM pre_market_brief_snapshot WHERE trade_date = $1::date", trade_date)
+        return await conn.execute("DELETE FROM pre_market_brief_snapshot WHERE trade_date = $1::date", parsed_trade_date)
     return await conn.execute(
         f"""
         DELETE FROM pre_market_brief_snapshot
         WHERE trade_date = $1::date
           AND ({' OR '.join(conditions)})
         """,
-        trade_date,
+        parsed_trade_date,
     )
 
 

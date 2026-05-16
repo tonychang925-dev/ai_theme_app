@@ -310,6 +310,31 @@ async def recap_defaults() -> dict:
     return await _proxy_stock_processing_json("/api/v1/recap/defaults", {})
 
 
+@router.post("/recap/publish-notion")
+async def recap_publish_notion(payload: dict) -> dict:
+    trade_date = str(payload.get("trade_date") or "").strip()
+    if not trade_date:
+        raise HTTPException(status_code=400, detail="trade_date is required")
+
+    body = {
+        "trade_date": trade_date,
+        "force": bool(payload.get("force", False)),
+        "dry_run": bool(payload.get("dry_run", False)),
+    }
+
+    data = await _proxy_stock_processing_request_json(
+        "POST",
+        "/api/v1/recap/publish-notion",
+        payload=body,
+        timeout=60.0,
+    )
+
+    if isinstance(data, dict):
+        return data
+
+    raise HTTPException(status_code=502, detail="invalid notion publish response")
+
+
 @router.get("/theme_workspace/{subject_key}")
 @router.get("/theme-workspace/{subject_key}")
 async def theme_workspace(subject_key: str, request: Request) -> dict:

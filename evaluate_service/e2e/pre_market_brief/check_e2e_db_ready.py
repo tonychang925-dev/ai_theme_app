@@ -27,6 +27,15 @@ async def _count_if_table(conn: Any, table: str, sql: str, *args: Any) -> int:
     return int(await conn.fetchval(sql, *args) or 0)
 
 
+async def _max_date_if_table(conn: Any, table: str, column: str = "trade_date") -> str | None:
+    if not await table_exists(conn, table):
+        return None
+    if not await column_exists(conn, table, column):
+        return None
+    value = await conn.fetchval(f"SELECT MAX({column}) FROM {table}")
+    return value.isoformat() if value else None
+
+
 async def collect_readiness(db_name: str, trade_date: str, read_db_name: str | None = None) -> dict[str, Any]:
     import asyncpg
 
@@ -56,12 +65,14 @@ async def collect_readiness(db_name: str, trade_date: str, read_db_name: str | N
             "SELECT COUNT(*) FROM subject_stock_daily_snapshot WHERE trade_date = $1::date",
             parsed_trade_date,
         )
+        subject_stock_pool_latest_date = await _max_date_if_table(read_conn, "subject_stock_daily_snapshot")
         leaderboard_count = await _count_if_table(
             read_conn,
             "theme_stock_leaderboard",
             "SELECT COUNT(*) FROM theme_stock_leaderboard WHERE trade_date = $1::date",
             parsed_trade_date,
         )
+        leaderboard_latest_date = await _max_date_if_table(read_conn, "theme_stock_leaderboard")
         strong_watch_count = 0
         if await table_exists(read_conn, "strong_stock_watch_pool"):
             if await column_exists(read_conn, "strong_stock_watch_pool", "trade_date"):
@@ -145,11 +156,16 @@ async def collect_readiness(db_name: str, trade_date: str, read_db_name: str | N
         "db_name": db_name,
         "read_db_name": read_db_name,
         "trade_date": trade_date,
+        "requested_trade_date": trade_date,
         "theme_profiles_count": theme_profiles_count,
         "theme_gate_profile_count": theme_gate_profile_count,
         "theme_profile_ext_count": theme_profile_ext_count,
         "subject_stock_pool_count": subject_stock_pool_count,
+        "subject_stock_pool_available": subject_stock_pool_count > 0,
+        "subject_stock_pool_latest_date": subject_stock_pool_latest_date,
         "leaderboard_count": leaderboard_count,
+        "leaderboard_available": leaderboard_count > 0,
+        "leaderboard_latest_date": leaderboard_latest_date,
         "strong_watch_count": strong_watch_count,
         "w2s_count": w2s_count,
         "mainline_identity_count": mainline_identity_count,
@@ -164,6 +180,12 @@ async def collect_readiness(db_name: str, trade_date: str, read_db_name: str | N
         and event_review_queue_exists
         and pre_market_brief_snapshot_exists
     )
+    if subject_stock_pool_count <= 0:
+        checks["recommendation"] = (
+            f"use --trade-date {subject_stock_pool_latest_date} or enable stock-pool fallback"
+            if subject_stock_pool_latest_date
+            else "load subject_stock_daily_snapshot or disable opportunity assertion"
+        )
     return checks
 
 

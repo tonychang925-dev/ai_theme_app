@@ -1,0 +1,26 @@
+{
+  "total": 5,
+  "primary_hit_count": 0,
+  "related_hit_count": 0,
+  "theme_set_recall_at_3_count": 0,
+  "theme_set_recall_at_5_count": 0,
+  "primary_hit_rate": 0.0,
+  "related_hit_rate": 0.0,
+  "theme_set_recall@3": 0.0,
+  "theme_set_recall@5": 0.0,
+  "human_review_count": 0,
+  "unknown_count": 5,
+  "brief_major_event_count": 0,
+  "brief_theme_count": 0,
+  "brief_opportunity_count": 0,
+  "diagnostics": {
+    "source": "db_empty",
+    "event_count": 0,
+    "matched_event_count": 0,
+    "theme_count": 0,
+    "opportunity_count": 0,
+    "review_event_count": 0,
+    "unknown_event_count": 0,
+    "last_rebuild_at": "2026-05-16T11:34:03.576469+00:00"
+  }
+}
