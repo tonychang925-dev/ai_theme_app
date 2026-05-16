@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   cancelCollection,
   continueCollection,
@@ -86,24 +86,24 @@ export function CollectionPage() {
   const [job, setJob] = useState<CollectionJobStatus | null>(() => loadPersistedJob());
   const [errorState, setErrorState] = useState<{ step: string; message: string; detail: string } | null>(null);
   const [loading, setLoading] = useState(false);
+  const [lastPollAt, setLastPollAt] = useState<string>("--");
+  const logPanelRef = useRef<HTMLDivElement | null>(null);
 
   const [options, setOptions] = useState({
     jyhf: true,
-    jyhfHistory: false,
     tushareKline: true,
     dragonTiger: true,
     abnormalSignal: true,
     strongStockWatch: true,
     leaderLlm: true,
     recapSnapshot: true,
-    autoBuildV2IfMissing: true,
   });
   const [abnormalFilters, setAbnormalFilters] = useState({
     turnoverRate: true,
     mainNetInflow: true,
     hotMoneyBuy: true,
     institutionBuy: true,
-    tailRush: false,
+    tailRush: true,
   });
   const [minTurnoverRate, setMinTurnoverRate] = useState("3.0");
   const [minCompositeScore, setMinCompositeScore] = useState("40");
@@ -164,6 +164,7 @@ export function CollectionPage() {
       fetchCollectionStatus(job.job_id)
         .then((data) => {
           setJob(data);
+          setLastPollAt(new Date().toLocaleTimeString("zh-CN"));
           if (data.last_error) {
             setErrorState({
               step: data.last_error.step,
@@ -183,6 +184,12 @@ export function CollectionPage() {
     return () => window.clearInterval(timer);
   }, [job?.job_id, job?.status]);
 
+  useEffect(() => {
+    const panel = logPanelRef.current;
+    if (!panel) return;
+    panel.scrollTop = panel.scrollHeight;
+  }, [job?.logs]);
+
   async function handleStart() {
     if (!isHistoricalTradeDate(tradeDate) && !availability?.allowed) {
       setErrorState({
@@ -199,14 +206,14 @@ export function CollectionPage() {
         trade_date: tradeDate,
         options: {
           jyhf: options.jyhf,
-          jyhf_history: options.jyhfHistory,
+          jyhf_history: false,
           tushare_kline: options.tushareKline,
           dragon_tiger: options.dragonTiger,
           abnormal_signal: options.abnormalSignal,
           strong_stock_watch: options.strongStockWatch,
           leader_llm: options.leaderLlm,
           recap_snapshot: options.recapSnapshot,
-          auto_build_v2_if_missing: options.autoBuildV2IfMissing,
+          auto_build_v2_if_missing: false,
         },
         tushare_pause_seconds: 0.1,
         abnormal_filters: {
@@ -245,8 +252,9 @@ export function CollectionPage() {
   async function handleCancel() {
     if (!job?.job_id) return;
     try {
-      const payload = await cancelCollection(job.job_id);
-      setJob(payload);
+      await cancelCollection(job.job_id);
+      // 取消 = 完全停止 + 恢复初始状态（等同于重置）
+      handleReset();
     } catch (err) {
       const message = err instanceof Error ? err.message : "取消失败";
       setErrorState({
@@ -262,7 +270,16 @@ export function CollectionPage() {
     setErrorState(null);
     try {
       const payload = await continueCollection(job.job_id);
-      setJob(payload);
+      if (payload.status === "running") {
+        setJob(payload);
+      } else {
+        // 任务未进入运行状态（可能 can_continue=false），回退到重置
+        setErrorState({
+          step: "继续任务",
+          message: "任务无法继续，请重置后重新开始",
+          detail: "后端返回状态: " + (payload.status || "未知"),
+        });
+      }
     } catch (err) {
       const message = err instanceof Error ? err.message : "继续失败";
       setErrorState({
@@ -338,14 +355,6 @@ export function CollectionPage() {
             <label className="collection-check">
               <input
                 type="checkbox"
-                checked={options.jyhfHistory}
-                onChange={() => setOptions((s) => ({ ...s, jyhfHistory: !s.jyhfHistory }))}
-              />
-              <span>题材事件集中采集</span>
-            </label>
-            <label className="collection-check">
-              <input
-                type="checkbox"
                 checked={options.tushareKline}
                 onChange={() => setOptions((s) => ({ ...s, tushareKline: !s.tushareKline }))}
               />
@@ -390,14 +399,6 @@ export function CollectionPage() {
                 onChange={() => setOptions((s) => ({ ...s, recapSnapshot: !s.recapSnapshot }))}
               />
               <span>盘后复盘快照生成</span>
-            </label>
-            <label className="collection-check">
-              <input
-                type="checkbox"
-                checked={options.autoBuildV2IfMissing}
-                onChange={() => setOptions((s) => ({ ...s, autoBuildV2IfMissing: !s.autoBuildV2IfMissing }))}
-              />
-              <span>v2周期缺失时自动补建</span>
             </label>
           </div>
 
@@ -529,7 +530,10 @@ export function CollectionPage() {
 
           <section className="workspace-card">
             <span className="metric-label section-title">运行日志</span>
-            <div className="collection-log-panel">
+            <span style={{marginLeft:12,fontSize:11,color:lastPollAt==="--"?"#e67e22":"#27ae60"}}>
+              上次轮询: {lastPollAt}
+            </span>
+            <div className="collection-log-panel collection-debug-terminal" ref={logPanelRef}>
               {(job?.logs ?? ["[等待中] 尚未启动采集任务。"]).map((line, idx) => (
                 <div className="collection-log-line" key={`log-${idx}`}>{line}</div>
               ))}

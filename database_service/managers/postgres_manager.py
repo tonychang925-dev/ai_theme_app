@@ -3964,12 +3964,13 @@ class PostgresDatabaseManager(BaseDatabaseManager):
           source_trace_id = EXCLUDED.source_trace_id,
           payload = pre_market_brief_snapshot.payload || EXCLUDED.payload,
           source_name = EXCLUDED.source_name,
-          status = EXCLUDED.status,
+          status = COALESCE($12::varchar, pre_market_brief_snapshot.status),
           generated_at = EXCLUDED.generated_at,
           finalized_at = EXCLUDED.finalized_at,
           updated_at = NOW()
         WHERE pre_market_brief_snapshot.status <> 'final' OR $11::boolean
         """
+        status = doc.get("status") or (doc.get("payload") or {}).get("status")
         payload = (
             doc.get("trade_date"),
             doc.get("snapshot_version"),
@@ -3978,10 +3979,11 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             doc.get("source_trace_id"),
             json.dumps(doc.get("payload") or {}, ensure_ascii=False, default=str),
             str(doc.get("source_name") or "stock_processing_service"),
-            str(doc.get("status") or (doc.get("payload") or {}).get("status") or "draft"),
+            str(status or "draft"),
             doc.get("generated_at"),
             doc.get("finalized_at"),
             bool(force),
+            str(status) if status else None,
         )
         try:
             async with self.pool.acquire() as conn:

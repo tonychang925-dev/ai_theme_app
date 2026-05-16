@@ -105,6 +105,7 @@ async function startAll(projectRoot) {
         'WEB_APP_READ_MODE': 'http',
         'HF_HUB_OFFLINE': '1',
         'PYTHONPATH': projectRoot,
+        'PYTHONUNBUFFERED': '1',
     };
     // Set FRONTEND_DIST_DIR for web_app_service
     // V1-dev: projectRoot/frontend/dist

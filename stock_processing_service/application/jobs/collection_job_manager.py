@@ -8,6 +8,7 @@ from datetime import datetime, date
 from pathlib import Path
 from typing import Any, Optional
 from zoneinfo import ZoneInfo
+import concurrent.futures
 import json
 
 from stock_processing_service.application.services.collection_orchestrator import (
@@ -24,6 +25,19 @@ from stock_processing_service.application.services.collection_task_registry impo
 
 PROJECT_ROOT = Path("/Users/admin/Desktop/ai_theme_app")
 PYTHON_BIN = str(PROJECT_ROOT / ".venv" / "bin" / "python")
+
+
+def _run_async_runner_in_thread(runner, context) -> Any:
+    """在独立线程中运行 async runner，不阻塞 SPS 事件循环。
+
+    部分 runner 内部使用同步阻塞调用（如 subprocess.run、curl），
+    若在主事件循环中直接 await，会导致轮询请求无法被及时处理。
+    """
+    loop = asyncio.new_event_loop()
+    try:
+        return loop.run_until_complete(runner.run(context))
+    finally:
+        loop.close()
 
 
 def _normalize_secret(value: Any) -> str:
@@ -214,7 +228,16 @@ class CollectionJobManager:
             return None
         job.cancel_requested = True
         job.can_cancel = False
-        self._append_log(job, "收到取消请求")
+        job.can_continue = False
+        self._append_log(job, "收到取消请求，正在停止...")
+        # 取消正在运行的 asyncio Task
+        if job.running_task and not job.running_task.done():
+            job.running_task.cancel()
+        # 从注册表中移除 job，恢复初始状态
+        self.jobs.pop(job_id, None)
+        job.status = "cancelled"
+        job.running_task = None
+        self._append_log(job, "任务已取消，恢复初始状态")
         return job
 
     async def continue_job(self, job_id: str) -> Optional[CollectionJob]:
@@ -379,6 +402,10 @@ class CollectionJobManager:
 
         try:
             for index in range(start_index, len(job.tasks)):
+                # 每个步骤执行前检查取消标志
+                if job.cancel_requested:
+                    self._append_log(job, "检测到取消请求，终止执行")
+                    raise asyncio.CancelledError()
                 task = job.tasks[index]
                 job.next_step_index = index
                 plan = self._command_planner.build_task_plan(
@@ -428,24 +455,36 @@ class CollectionJobManager:
                                 def __init__(self, real, job):
                                     self._real = real; self._job = job; self._buf = ""
                                 def write(self, s):
-                                    if self._real: self._real.write(s)
+                                    if self._real:
+                                        self._real.write(s)
                                     self._buf += s
                                     if "\n" in self._buf:
                                         lines = self._buf.splitlines()
-                                        self._buf = lines[-1] if not s.endswith("\n") else ""
-                                        for line in lines[:-1] if not s.endswith("\n") else lines:
+                                        self._buf = "" if self._buf.endswith("\n") else lines.pop()
+                                        for line in lines:
                                             stripped = line.strip()
-                                            if stripped: self._job.logs.append(stripped[:200])
+                                            if stripped:
+                                                self._job.logs.append(stripped[:200])
+                                                # 防止 logs 无限增长
+                                                if len(self._job.logs) > 500:
+                                                    self._job.logs = self._job.logs[-400:]
                                 def flush(self):
-                                    if self._real: self._real.flush()
-                                    if self._buf.strip(): self._job.logs.append(self._buf.strip()[:200]); self._buf = ""
+                                    if self._real:
+                                        self._real.flush()
+                                    if self._buf.strip():
+                                        self._job.logs.append(self._buf.strip()[:200])
+                                        self._buf = ""
                             original_stdout = sys.stdout
                             original_stderr = sys.stderr
                             sys.stdout = _TeeWriter(original_stdout, job)
                             sys.stderr = _TeeWriter(original_stderr, job)
                             result = None
                             try:
-                                result = await runner.run(step_context)
+                                # 在独立线程中运行 runner，避免同步阻塞调用（如 subprocess.run、curl）
+                                # 卡住 SPS 的 asyncio 事件循环，导致前端轮询请求无法被处理。
+                                result = await asyncio.to_thread(
+                                    _run_async_runner_in_thread, runner, step_context
+                                )
                             except Exception as e:
                                 task.status = "failed"
                                 task.error_message = str(e)

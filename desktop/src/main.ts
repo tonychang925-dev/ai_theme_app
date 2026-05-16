@@ -90,9 +90,8 @@ app.whenReady().then(async () => {
   // Create main window (hidden), load, then reveal
   const mainWindow = createMainWindow(webPort);
 
-  // Clear all session storage and cache before loading
+  // Clear HTTP cache only (preserve localStorage for login persistence)
   await mainWindow.webContents.session.clearCache();
-  await mainWindow.webContents.session.clearStorageData();
   await mainWindow.webContents.session.clearAuthCache();
 
   // Cache-busting timestamp so Chromium treats this as a fresh page load

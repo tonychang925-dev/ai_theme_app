@@ -81,19 +81,29 @@ RECAP_TYPE_PRE_MARKET = "pre_market"
 
 async def _proxy_stock_processing_json(path: str, params: dict[str, str]) -> dict:
     url = f"{STOCK_PROCESSING_BASE_URL}{path}"
-    async with httpx.AsyncClient(timeout=15.0, trust_env=False) as http:
-        resp = await http.get(url, params=params)
-        resp.raise_for_status()
-        data = resp.json()
+    try:
+        async with httpx.AsyncClient(timeout=15.0, trust_env=False) as http:
+            resp = await http.get(url, params=params)
+            resp.raise_for_status()
+            data = resp.json()
+    except httpx.HTTPStatusError as exc:
+        raise HTTPException(status_code=exc.response.status_code, detail=exc.response.text) from exc
+    except httpx.RequestError as exc:
+        raise HTTPException(status_code=502, detail=f"upstream unavailable: {exc}") from exc
     return data if isinstance(data, dict) else {}
 
 
 async def _proxy_stock_processing_post_json(path: str, payload: dict) -> dict:
     url = f"{STOCK_PROCESSING_BASE_URL}{path}"
-    async with httpx.AsyncClient(timeout=120.0, trust_env=False) as http:
-        resp = await http.post(url, json=payload)
-        resp.raise_for_status()
-        data = resp.json()
+    try:
+        async with httpx.AsyncClient(timeout=120.0, trust_env=False) as http:
+            resp = await http.post(url, json=payload)
+            resp.raise_for_status()
+            data = resp.json()
+    except httpx.HTTPStatusError as exc:
+        raise HTTPException(status_code=exc.response.status_code, detail=exc.response.text) from exc
+    except httpx.RequestError as exc:
+        raise HTTPException(status_code=502, detail=f"upstream unavailable: {exc}") from exc
     return data if isinstance(data, dict) else {}
 
 

@@ -54,6 +54,7 @@ class _FakeConn:
             generated_at,
             finalized_at,
             force,
+            explicit_status,
         ) = args
         existing = self.rows.get(trade_date)
         if existing and existing.get("status") == "final" and not force:
@@ -73,7 +74,7 @@ class _FakeConn:
             "source_trace_id": source_trace_id,
             "payload": payload,
             "source_name": source_name,
-            "status": status,
+            "status": explicit_status or (existing or {}).get("status") or status,
             "generated_at": generated_at or "now",
             "finalized_at": finalized_at,
             "updated_at": "now",
@@ -147,3 +148,24 @@ async def test_force_can_overwrite_final_snapshot():
     assert affected == 1
     assert row["payload"] == {"a": 2}
     assert row["snapshot_version"] == "v2"
+    assert row["status"] == "final"
+
+
+@pytest.mark.asyncio
+async def test_explicit_status_can_change_force_overwritten_final_snapshot():
+    manager = _manager()
+    trade_date = date(2026, 5, 16)
+
+    await manager.upsert_pre_market_brief_snapshot(
+        {"trade_date": trade_date, "snapshot_version": "v1", "payload": {"a": 1}}
+    )
+    await manager.finalize_pre_market_brief_snapshot(trade_date)
+    affected = await manager.upsert_pre_market_brief_snapshot(
+        {"trade_date": trade_date, "snapshot_version": "v2", "status": "draft", "payload": {"a": 2}},
+        force=True,
+    )
+
+    row = await manager.get_pre_market_brief_snapshot(trade_date)
+    assert affected == 1
+    assert row["payload"] == {"a": 2}
+    assert row["status"] == "draft"
