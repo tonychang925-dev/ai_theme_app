@@ -161,7 +161,7 @@ async def readyz():
 
     # 3. SPS upstream (fatal)
     try:
-        async with httpx.AsyncClient(timeout=5.0) as client:
+        async with httpx.AsyncClient(timeout=5.0, trust_env=False) as client:
             resp = await client.get(f"{_SPS_BASE_URL}/healthz")
         if resp.status_code == 200:
             checks["sps_upstream"] = "healthy"

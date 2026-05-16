@@ -423,7 +423,7 @@ class CollectionJobManager:
                                 python_bin=self._python_bin,
                                 commands=([c.cmd for c in step.commands] if step.commands else None),
                             )
-                            # ── 实时捕获脚本 stdout 到 job logs ──
+                            # ── 实时捕获脚本 stdout/stderr 到 job logs ──
                             class _TeeWriter:
                                 def __init__(self, real, job):
                                     self._real = real; self._job = job; self._buf = ""
@@ -440,7 +440,9 @@ class CollectionJobManager:
                                     if self._real: self._real.flush()
                                     if self._buf.strip(): self._job.logs.append(self._buf.strip()[:200]); self._buf = ""
                             original_stdout = sys.stdout
+                            original_stderr = sys.stderr
                             sys.stdout = _TeeWriter(original_stdout, job)
+                            sys.stderr = _TeeWriter(original_stderr, job)
                             result = None
                             try:
                                 result = await runner.run(step_context)
@@ -451,9 +453,14 @@ class CollectionJobManager:
                                 return
                             finally:
                                 sys.stdout.flush()
+                                sys.stderr.flush()
                                 sys.stdout = original_stdout
+                                sys.stderr = original_stderr
                             if result is None:
                                 return
+                            # 传播 runner 自带的结构化日志到 job.logs
+                            for log_line in result.logs:
+                                self._append_log(job, log_line)
                             if result.status == "failed":
                                 task.status = "failed"
                                 task.error_message = result.error_message or f"step {step.key} failed"
