@@ -8,6 +8,7 @@ import pytest
 from stock_processing_service.application.services.pre_market_brief_auto_scheduler import (
     PreMarketBriefAutoScheduler,
     decide_pre_market_brief_schedule,
+    resolve_pre_market_brief_trade_date,
 )
 
 
@@ -31,9 +32,10 @@ def test_pre_market_brief_schedule_windows():
 
 
 class _Client:
-    def __init__(self, *, finalize_response: dict | None = None):
+    def __init__(self, *, finalize_response: dict | None = None, calendar_response: dict | None = None):
         self.calls: list[dict] = []
         self.finalize_response = finalize_response or {"ok": True, "status": "final"}
+        self.calendar_response = calendar_response or {}
 
     async def rebuild(self, *, trade_date, source, limit, force):
         self.calls.append(
@@ -50,6 +52,10 @@ class _Client:
     async def finalize(self, *, trade_date, force):
         self.calls.append({"method": "finalize", "trade_date": trade_date, "force": force})
         return self.finalize_response
+
+    async def get_trade_calendar(self, *, trade_date):
+        self.calls.append({"method": "get_trade_calendar", "trade_date": trade_date})
+        return self.calendar_response
 
 
 @pytest.mark.asyncio
@@ -95,3 +101,47 @@ async def test_pre_market_brief_scheduler_retries_finalize_when_sps_did_not_free
     assert first["action"] == "finalize"
     assert second["action"] == "finalize"
     assert [call["method"] for call in client.calls] == ["finalize", "finalize"]
+
+
+@pytest.mark.asyncio
+async def test_resolve_trade_date_uses_current_date_before_after_close_window():
+    client = _Client(calendar_response={"next_trade_date": "2026-05-18"})
+
+    resolved = await resolve_pre_market_brief_trade_date(client, now=_dt(8, 20))
+
+    assert resolved == date(2026, 5, 16)
+    assert client.calls == []
+
+
+@pytest.mark.asyncio
+async def test_resolve_trade_date_uses_next_trade_date_after_1530():
+    client = _Client(calendar_response={"next_trade_date": "2026-05-18"})
+
+    resolved = await resolve_pre_market_brief_trade_date(client, now=_dt(15, 30))
+
+    assert resolved == date(2026, 5, 18)
+    assert client.calls == [{"method": "get_trade_calendar", "trade_date": date(2026, 5, 16)}]
+
+
+@pytest.mark.asyncio
+async def test_resolve_trade_date_explicit_arg_wins_over_calendar():
+    client = _Client(calendar_response={"next_trade_date": "2026-05-18"})
+
+    resolved = await resolve_pre_market_brief_trade_date(
+        client,
+        explicit_trade_date="2026-05-19",
+        now=_dt(15, 30),
+    )
+
+    assert resolved == date(2026, 5, 19)
+    assert client.calls == []
+
+
+@pytest.mark.asyncio
+async def test_resolve_trade_date_falls_back_to_natural_date_when_calendar_missing(caplog):
+    client = _Client(calendar_response={})
+
+    resolved = await resolve_pre_market_brief_trade_date(client, now=_dt(15, 30))
+
+    assert resolved == date(2026, 5, 16)
+    assert "fallback to natural date" in caplog.text

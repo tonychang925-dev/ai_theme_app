@@ -16,6 +16,15 @@ class _Gateway:
     async def get_pre_market_brief_snapshot(self, trade_date: date):
         return self.row
 
+    async def get_trade_calendar(self, trade_date: date):
+        return {
+            "trade_date": trade_date,
+            "calendar_is_open": True,
+            "prev_trade_date": date(2026, 5, 15),
+            "next_trade_date": date(2026, 5, 18),
+            "source": "unit_test",
+        }
+
     async def get_intel_news_events(self, feed_date: date):
         return [
             {
@@ -95,6 +104,18 @@ async def test_get_pre_market_brief_missing_returns_empty_payload(monkeypatch: p
         "status": "missing",
         "payload": {},
     }
+
+
+@pytest.mark.asyncio
+async def test_get_trade_calendar_exposes_next_trade_date(monkeypatch: pytest.MonkeyPatch) -> None:
+    gateway = _Gateway()
+    monkeypatch.setattr(api_app.app, "state", SimpleNamespace(gateway=gateway), raising=False)
+
+    payload = await api_app.get_trade_calendar("2026-05-16")
+
+    assert payload["trade_date"] == date(2026, 5, 16)
+    assert payload["next_trade_date"] == date(2026, 5, 18)
+    assert payload["source"] == "unit_test"
 
 
 @pytest.mark.asyncio

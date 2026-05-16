@@ -1302,6 +1302,16 @@ async def get_pre_market_brief(trade_date: str = Query(..., description="YYYY-MM
     }
 
 
+@app.get("/api/v1/trade_calendar")
+async def get_trade_calendar(trade_date: str = Query(..., description="YYYY-MM-DD")) -> dict[str, Any]:
+    try:
+        d = date.fromisoformat(trade_date)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=f"invalid trade_date: {trade_date}") from exc
+    row = await app.state.gateway.get_trade_calendar(d)
+    return dict(row or {"trade_date": d})
+
+
 @app.post("/api/v1/pre_market_brief/rebuild")
 async def rebuild_pre_market_brief(payload: PreMarketBriefRebuildPayload) -> dict[str, Any]:
     try:

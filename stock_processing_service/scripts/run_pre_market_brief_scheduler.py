@@ -9,6 +9,7 @@ from zoneinfo import ZoneInfo
 from stock_processing_service.application.services.pre_market_brief_auto_scheduler import (
     PreMarketBriefAutoScheduler,
     PreMarketBriefSpsClient,
+    resolve_pre_market_brief_trade_date,
 )
 
 
@@ -27,12 +28,6 @@ def _parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def _trade_date_from_arg(value: str | None, now: datetime | None = None) -> date:
-    if value:
-        return date.fromisoformat(value)
-    return (now or datetime.now(CN_TZ)).date()
-
-
 async def _main() -> None:
     args = _parse_args()
     client = PreMarketBriefSpsClient(base_url=args.sps_base_url)
@@ -45,12 +40,21 @@ async def _main() -> None:
     )
 
     if args.once:
-        result = await scheduler.run_once(trade_date=_trade_date_from_arg(args.trade_date))
+        target_trade_date = await resolve_pre_market_brief_trade_date(
+            client,
+            explicit_trade_date=args.trade_date,
+            now=datetime.now(CN_TZ),
+        )
+        result = await scheduler.run_once(trade_date=target_trade_date)
         print(json.dumps(result, ensure_ascii=False, default=str))
         return
 
-    def trade_date_provider(now: datetime) -> date:
-        return _trade_date_from_arg(args.trade_date, now)
+    async def trade_date_provider(now: datetime) -> date:
+        return await resolve_pre_market_brief_trade_date(
+            client,
+            explicit_trade_date=args.trade_date,
+            now=now,
+        )
 
     await scheduler.run_forever(trade_date_provider=trade_date_provider)
 
