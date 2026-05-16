@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import asyncio
+import inspect
+import logging
 import os
 from dataclasses import dataclass
 from datetime import date, datetime, time, timedelta
@@ -12,6 +14,7 @@ import httpx
 
 ScheduleAction = Literal["rebuild", "finalize", "idle"]
 CN_TZ = ZoneInfo("Asia/Shanghai")
+logger = logging.getLogger(__name__)
 
 
 @dataclass(frozen=True)
@@ -78,6 +81,63 @@ class PreMarketBriefSpsClient:
             resp.raise_for_status()
             return resp.json()
 
+    async def get_trade_calendar(self, *, trade_date: date) -> dict[str, Any]:
+        async with httpx.AsyncClient(timeout=self._timeout_seconds) as client:
+            resp = await client.get(
+                f"{self._base_url}/api/v1/trade_calendar",
+                params={"trade_date": trade_date.isoformat()},
+            )
+            resp.raise_for_status()
+            return resp.json()
+
+
+def _parse_date_value(value: Any) -> date | None:
+    if isinstance(value, date):
+        return value
+    if value is None:
+        return None
+    try:
+        return date.fromisoformat(str(value)[:10])
+    except ValueError:
+        return None
+
+
+async def resolve_pre_market_brief_trade_date(
+    client: Any,
+    *,
+    explicit_trade_date: str | None = None,
+    now: datetime | None = None,
+) -> date:
+    """Resolve scheduler target date.
+
+    Before 15:30 it uses the current China date. From 15:30 onward it targets
+    the next trading date from SPS trade calendar. If calendar lookup fails, it
+    falls back to the current natural date and logs a warning.
+    """
+    if explicit_trade_date:
+        return date.fromisoformat(explicit_trade_date)
+
+    local_now = (now or datetime.now(CN_TZ)).astimezone(CN_TZ)
+    current_date = local_now.date()
+    if local_now.time() < time(15, 30):
+        return current_date
+
+    try:
+        fn = getattr(client, "get_trade_calendar", None)
+        if callable(fn):
+            calendar = await fn(trade_date=current_date)
+            next_trade_date = _parse_date_value((calendar or {}).get("next_trade_date"))
+            if next_trade_date:
+                return next_trade_date
+    except Exception as exc:
+        logger.warning("pre_market_brief trade calendar lookup failed, fallback to natural date: %s", exc)
+
+    logger.warning(
+        "pre_market_brief next_trade_date unavailable after 15:30, fallback to natural date=%s",
+        current_date.isoformat(),
+    )
+    return current_date
+
 
 class PreMarketBriefAutoScheduler:
     def __init__(
@@ -127,5 +187,7 @@ class PreMarketBriefAutoScheduler:
         while True:
             now = poll_now() if poll_now else datetime.now(CN_TZ)
             trade_date = trade_date_provider(now)
+            if inspect.isawaitable(trade_date):
+                trade_date = await trade_date
             result = await self.run_once(trade_date=trade_date, now=now)
             await asyncio.sleep(max(1, int(result["next_sleep_seconds"])))
