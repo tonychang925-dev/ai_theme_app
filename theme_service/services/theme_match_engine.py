@@ -37,10 +37,25 @@ GENERIC_MATCH_STOPWORDS = {
     "合作",
     "美国",
     "动力系统",
-    "商业航天",
     "应用",
-    "卫星",
     "金融",
+    "供应链",
+    "供应商",
+    "产业链",
+    "参股",
+    "制造",
+    "生产",
+    "上游",
+    "下游",
+    "上游合作",
+    "包装",
+    "包装及物流",
+    "物流",
+    "客户",
+    "订单",
+    "合作伙伴",
+    "民企",
+    "国企",
 }
 
 
@@ -105,13 +120,27 @@ def _phrase_similarity(a: str, b: str) -> float:
 
 
 def _token_hit_terms(text: str, terms: List[str]) -> List[str]:
-    text_norm = _normalize_text(text)
     hits: List[str] = []
     for term in terms:
-        norm = _normalize_text(term)
-        if norm and norm in text_norm:
+        if _term_in_text(_safe_str(term), text):
             hits.append(_safe_str(term))
     return _unique(hits)
+
+
+def _term_in_text(term: str, text: str) -> bool:
+    """词边界匹配，短词必须分词命中，长专名允许子串兜底。"""
+    term = _safe_str(term)
+    text = _safe_str(text)
+    if not term or not text or len(term) < 2:
+        return False
+    if len(term) >= 4:
+        return _normalize_text(term) in _normalize_text(text)
+    try:
+        import jieba
+
+        return term in set(jieba.lcut(text))
+    except Exception:
+        return _normalize_text(term) in _normalize_text(text)
 
 
 def _filter_generic_terms(terms: List[str]) -> List[str]:
@@ -135,7 +164,189 @@ def _extract_event_tech_terms(request: ThemeMatchRequest) -> List[str]:
     return _unique(out)
 
 
-def _build_event_query_text(request: ThemeMatchRequest) -> str:
+DOMAIN_ANCHOR_HINTS = [
+    "商业航天",
+    "民营航天",
+    "卫星互联网",
+    "星链",
+    "运载火箭",
+    "火箭",
+    "可回收火箭",
+    "低空经济",
+    "AI眼镜",
+    "AR眼镜",
+    "智能眼镜",
+    "可控核聚变",
+    "稀土永磁",
+]
+
+PRODUCT_ANCHOR_PATTERNS = [
+    r"蓝箭航天",
+    r"朱雀[一二三四五六七八九十\d]+号?",
+    r"星舰",
+    r"SpaceX",
+    r"Meta",
+    r"Oakley",
+    r"OpenAI",
+    r"Manus",
+    r"SHEIN",
+    r"希音",
+]
+
+
+def _build_event_match_profile(request: ThemeMatchRequest) -> EventMatchProfile:
+    raw_text = request.event_text()
+    evidence = request.evidence_set or {}
+    support_terms = _unique([term for term in GENERIC_MATCH_STOPWORDS if _term_in_text(term, raw_text)])
+    weak_terms = _unique([term for term in ["民企", "国企", "覆盖", "城市", "合作伙伴"] if _term_in_text(term, raw_text)])
+    entity_anchors = _filter_generic_terms(_normalize_list(request.entities))
+    domain_anchors = _filter_generic_terms([term for term in DOMAIN_ANCHOR_HINTS if _term_in_text(term, raw_text)])
+    product_anchors: List[str] = []
+    for pattern in PRODUCT_ANCHOR_PATTERNS:
+        product_anchors.extend(re.findall(pattern, raw_text, flags=re.IGNORECASE))
+    product_anchors = _filter_generic_terms(product_anchors)
+    technology_anchors = _filter_generic_terms(
+        _normalize_list(evidence.get("tech_phrases")) + _normalize_list(evidence.get("core_concepts"))
+    )
+    event_actions = _filter_generic_terms([term for term in ["发射", "首飞", "回收", "组网", "上市", "发布"] if _term_in_text(term, raw_text)])
+    search_terms = _unique(entity_anchors + domain_anchors + product_anchors + technology_anchors + event_actions)
+    query_text_for_recall = "\n".join(
+        [
+            "锚点：" + "、".join(search_terms[:16]) if search_terms else "",
+            request.title,
+            request.summary,
+        ]
+    ).strip()
+    query_text_for_judge = "\n".join(
+        [
+            raw_text,
+            "entity_anchors：" + "、".join(entity_anchors) if entity_anchors else "",
+            "domain_anchors：" + "、".join(domain_anchors) if domain_anchors else "",
+            "product_anchors：" + "、".join(product_anchors) if product_anchors else "",
+            "technology_anchors：" + "、".join(technology_anchors) if technology_anchors else "",
+            "support_terms：" + "、".join(support_terms) if support_terms else "",
+            "weak_terms：" + "、".join(weak_terms) if weak_terms else "",
+            "no_anchor_terms：" + "、".join(_unique(support_terms + weak_terms)) if support_terms or weak_terms else "",
+        ]
+    ).strip()
+    return EventMatchProfile(
+        raw_text=raw_text,
+        search_terms=search_terms,
+        entity_anchors=entity_anchors,
+        domain_anchors=domain_anchors,
+        product_anchors=product_anchors,
+        technology_anchors=technology_anchors,
+        event_actions=event_actions,
+        support_terms=support_terms,
+        weak_terms=weak_terms,
+        no_anchor_terms=_unique(support_terms + weak_terms),
+        query_text_for_recall=query_text_for_recall or raw_text,
+        query_text_for_judge=query_text_for_judge or raw_text,
+    )
+
+
+class _EventProfileLLMExtractor:
+    def __init__(self):
+        self.base_url = os.getenv("THEME_MATCH_PROFILE_BASE_URL", os.getenv("THEME_MATCH_JUDGE_BASE_URL", "https://api.deepseek.com/v1")).rstrip("/")
+        self.api_key = os.getenv("THEME_MATCH_PROFILE_API_KEY") or os.getenv("THEME_MATCH_JUDGE_API_KEY") or os.getenv("DEEPSEEK_API_KEY", "")
+        self.model = os.getenv("THEME_MATCH_PROFILE_MODEL", os.getenv("THEME_MATCH_JUDGE_MODEL", "deepseek-chat"))
+        self.session = requests.Session()
+
+    def enabled(self) -> bool:
+        enabled = os.getenv("THEME_MATCH_ENABLE_EVENT_PROFILE_LLM", "false").lower() in {"1", "true", "yes", "on"}
+        return enabled and bool(self.api_key)
+
+    def extract(self, request: ThemeMatchRequest, fallback: EventMatchProfile) -> EventMatchProfile:
+        if not self.enabled():
+            return fallback
+        prompt = f"""
+你是A股题材事件术语提取器。请从新闻中提取用于题材匹配的可检索术语。
+
+输出 JSON：
+{{
+  "entity_anchors": [],
+  "domain_anchors": [],
+  "product_anchors": [],
+  "technology_anchors": [],
+  "event_actions": [],
+  "support_terms": [],
+  "weak_terms": []
+}}
+
+规则：
+1. entity_anchors 提取事件主对象、公司、产品、机构，如蓝箭航天、SpaceX、Meta、SHEIN。
+2. domain_anchors 提取产业/题材方向，如商业航天、火箭、卫星互联网。
+3. support_terms 可包含供应链、供应商、产能、订单等，但这些不能单独作为题材匹配依据。
+4. weak_terms 包含民企、国企、覆盖城市、合作伙伴等经营描述。
+5. 禁止把“供应链、供应商、产业链、制造、合作、参股、物流、包装”等泛词放入 anchors。
+6. 只输出 JSON，不要输出额外解释。
+
+新闻：
+{request.event_text()[:3000]}
+""".strip()
+        try:
+            resp = self.session.post(
+                f"{self.base_url}/chat/completions",
+                headers={"Authorization": f"Bearer {self.api_key}", "Content-Type": "application/json"},
+                json={"model": self.model, "temperature": 0, "messages": [{"role": "user", "content": prompt}]},
+                timeout=(10, 60),
+            )
+            resp.raise_for_status()
+            text = _safe_str(resp.json()["choices"][0]["message"]["content"])
+            text = re.sub(r"^```json\s*", "", text)
+            text = re.sub(r"^```\s*", "", text)
+            text = re.sub(r"\s*```$", "", text)
+            data = json.loads(text)
+        except Exception:
+            return fallback
+
+        entity_anchors = _filter_generic_terms(_normalize_list(data.get("entity_anchors")) + fallback.entity_anchors)
+        domain_anchors = _filter_generic_terms(_normalize_list(data.get("domain_anchors")) + fallback.domain_anchors)
+        product_anchors = _filter_generic_terms(_normalize_list(data.get("product_anchors")) + fallback.product_anchors)
+        technology_anchors = _filter_generic_terms(_normalize_list(data.get("technology_anchors")) + fallback.technology_anchors)
+        event_actions = _filter_generic_terms(_normalize_list(data.get("event_actions")) + fallback.event_actions)
+        support_terms = _unique(_normalize_list(data.get("support_terms")) + fallback.support_terms)
+        weak_terms = _unique(_normalize_list(data.get("weak_terms")) + fallback.weak_terms)
+        no_anchor_terms = _unique([t for t in support_terms + weak_terms if t in GENERIC_MATCH_STOPWORDS or t in fallback.no_anchor_terms])
+        search_terms = _unique(entity_anchors + domain_anchors + product_anchors + technology_anchors + event_actions)
+        query_text_for_recall = "\n".join(
+            [
+                "锚点：" + "、".join(search_terms[:16]) if search_terms else "",
+                request.title,
+                request.summary,
+            ]
+        ).strip()
+        query_text_for_judge = "\n".join(
+            [
+                fallback.raw_text,
+                "entity_anchors：" + "、".join(entity_anchors) if entity_anchors else "",
+                "domain_anchors：" + "、".join(domain_anchors) if domain_anchors else "",
+                "product_anchors：" + "、".join(product_anchors) if product_anchors else "",
+                "technology_anchors：" + "、".join(technology_anchors) if technology_anchors else "",
+                "support_terms：" + "、".join(support_terms) if support_terms else "",
+                "weak_terms：" + "、".join(weak_terms) if weak_terms else "",
+                "no_anchor_terms：" + "、".join(no_anchor_terms) if no_anchor_terms else "",
+            ]
+        ).strip()
+        return EventMatchProfile(
+            raw_text=fallback.raw_text,
+            search_terms=search_terms,
+            entity_anchors=entity_anchors,
+            domain_anchors=domain_anchors,
+            product_anchors=product_anchors,
+            technology_anchors=technology_anchors,
+            event_actions=event_actions,
+            support_terms=support_terms,
+            weak_terms=weak_terms,
+            no_anchor_terms=no_anchor_terms,
+            query_text_for_recall=query_text_for_recall or fallback.query_text_for_recall,
+            query_text_for_judge=query_text_for_judge or fallback.query_text_for_judge,
+        )
+
+
+def _build_event_query_text(request: ThemeMatchRequest, event_profile: EventMatchProfile | None = None) -> str:
+    if event_profile is not None:
+        return event_profile.query_text_for_recall or event_profile.raw_text
     parts = [request.event_text()]
     tech_terms = _extract_event_tech_terms(request)
     if tech_terms:
@@ -243,10 +454,27 @@ class Candidate:
     evidence: Dict[str, Any] = field(default_factory=dict)
 
 
+@dataclass
+class EventMatchProfile:
+    raw_text: str
+    search_terms: List[str] = field(default_factory=list)
+    entity_anchors: List[str] = field(default_factory=list)
+    domain_anchors: List[str] = field(default_factory=list)
+    product_anchors: List[str] = field(default_factory=list)
+    technology_anchors: List[str] = field(default_factory=list)
+    event_actions: List[str] = field(default_factory=list)
+    support_terms: List[str] = field(default_factory=list)
+    weak_terms: List[str] = field(default_factory=list)
+    no_anchor_terms: List[str] = field(default_factory=list)
+    query_text_for_recall: str = ""
+    query_text_for_judge: str = ""
+
+
 def _build_llm_prompt(
     request: ThemeMatchRequest,
     candidates: List[Candidate],
     profile_map: Dict[str, ThemeProfile],
+    event_profile: EventMatchProfile | None = None,
 ) -> str:
     blocks = []
     for i, cand in enumerate(candidates, start=1):
@@ -288,7 +516,9 @@ def _build_llm_prompt(
 7. 不能因为某个候选语义更泛，就忽略事件对特定题材名/产品名/公司名的直接命中。
 8. 所有题材都使用统一逻辑判断，不针对任何特定题材使用特殊规则。
 9. 如果所有候选都不够准确，才能输出 need_new_theme。
-10. 只输出 JSON，不要输出额外解释。
+10. 供应链、供应商、产业链、制造、生产、合作、参股、包装、物流、上游、下游等泛化经营词不可作为题材主证据。
+11. 只有命中题材名、专有实体、核心产品、核心技术或产业域锚点，才能 accept_match。
+12. 只输出 JSON，不要输出额外解释。
 
 输出格式：
 {{
@@ -301,7 +531,7 @@ def _build_llm_prompt(
 }}
 
 事件：
-{request.event_text()}
+{event_profile.query_text_for_judge if event_profile else request.event_text()}
 
 候选：
 {chr(10).join(blocks)}
@@ -336,6 +566,7 @@ class _FinalLLMJudge:
         request: ThemeMatchRequest,
         candidates: List[Candidate],
         profile_map: Dict[str, ThemeProfile],
+        event_profile: EventMatchProfile | None = None,
     ) -> Dict[str, Any]:
         if not self.enabled():
             return {
@@ -350,7 +581,7 @@ class _FinalLLMJudge:
             }
 
         idx_map: Dict[str, Candidate] = {f"C{i}": c for i, c in enumerate(candidates, start=1)}
-        prompt = _build_llm_prompt(request, candidates, profile_map)
+        prompt = _build_llm_prompt(request, candidates, profile_map, event_profile=event_profile)
         url = f"{self.base_url}/chat/completions"
         headers = {
             "Authorization": f"Bearer {self.api_key}",
@@ -466,14 +697,38 @@ def _calc_rerank_feature_score(hit_features: Dict[str, Any]) -> float:
     return min(score, 0.45)
 
 
-def _build_gate_evidence(event_text: str, profile: ThemeProfile) -> Dict[str, Any]:
-    must_hits = _filter_generic_terms(_token_hit_terms(event_text, profile.must_terms))
-    strong_hits = _filter_generic_terms(_token_hit_terms(event_text, profile.strong_terms))
-    should_hits = _token_hit_terms(event_text, profile.should_terms)
+def _build_gate_evidence(
+    event_text: str,
+    profile: ThemeProfile,
+    event_profile: EventMatchProfile | None = None,
+) -> Dict[str, Any]:
+    search_terms = set(event_profile.search_terms if event_profile else [])
+    support_terms = set(event_profile.support_terms if event_profile else [])
+    no_anchor_terms = set(event_profile.no_anchor_terms if event_profile else [])
+
+    def _split_hits(terms: List[str]) -> tuple[List[str], List[str]]:
+        llm_hits = _filter_generic_terms([t for t in terms if t in search_terms])
+        text_hits = _filter_generic_terms([t for t in terms if t not in search_terms and _term_in_text(t, event_text)])
+        return llm_hits, text_hits
+
+    must_hits_llm, must_hits_text = _split_hits(profile.must_terms)
+    strong_hits_llm, strong_hits_text = _split_hits(profile.strong_terms)
+    must_hits = _unique(must_hits_llm + must_hits_text)
+    strong_hits = _unique(strong_hits_llm + strong_hits_text)
+    should_hits = _filter_generic_terms(
+        [t for t in profile.should_terms if t in search_terms or _term_in_text(t, event_text)]
+    )
     not_hits = _token_hit_terms(event_text, profile.not_terms)
     negative_hits = _token_hit_terms(event_text, profile.negative_terms)
-    object_hits = _filter_generic_terms(_token_hit_terms(event_text, profile.core_objects + profile.aliases))
-    entity_hits = _token_hit_terms(event_text, profile.entity_hints)
+    object_terms = profile.core_objects + profile.aliases
+    object_hits_llm, object_hits_text = _split_hits(object_terms)
+    object_hits = _unique(object_hits_llm + object_hits_text)
+    entity_hits = _filter_generic_terms(
+        [t for t in profile.entity_hints if t in search_terms or _term_in_text(t, event_text)]
+    )
+    support_hits = _unique(
+        [t for t in profile.must_terms + profile.strong_terms + profile.should_terms + object_terms if t in support_terms or t in no_anchor_terms]
+    )
 
     candidate_names = _unique([profile.subject_name, profile.concept] + profile.aliases)
     theme_name_hit_terms: List[str] = []
@@ -489,9 +744,12 @@ def _build_gate_evidence(event_text: str, profile: ThemeProfile) -> Dict[str, An
     theme_name_direct_hit = len(theme_name_hit_terms) > 0
     theme_name_hit_score = 50 if theme_name_direct_hit else 0
     positive_score = (
-        len(object_hits) * 3
-        + len(must_hits) * 3
-        + len(strong_hits) * 2
+        len(object_hits_llm) * 5
+        + len(object_hits_text) * 2
+        + len(must_hits_llm) * 5
+        + len(must_hits_text) * 2
+        + len(strong_hits_llm) * 3
+        + len(strong_hits_text)
         + len(should_hits)
         + len(entity_hits)
         + theme_name_hit_score
@@ -504,8 +762,16 @@ def _build_gate_evidence(event_text: str, profile: ThemeProfile) -> Dict[str, An
         "object_hits": object_hits,
         "must_hits": must_hits,
         "strong_hits": strong_hits,
+        "object_hits_llm": object_hits_llm,
+        "object_hits_text": object_hits_text,
+        "must_hits_llm": must_hits_llm,
+        "must_hits_text": must_hits_text,
+        "strong_hits_llm": strong_hits_llm,
+        "strong_hits_text": strong_hits_text,
         "should_hits": should_hits,
         "entity_hits": entity_hits,
+        "support_hits": support_hits,
+        "anchor_hits": _unique(object_hits + must_hits + strong_hits + entity_hits + theme_name_hit_terms),
         "not_hits": not_hits,
         "negative_hits": negative_hits,
         "positive_score": positive_score,
@@ -561,16 +827,36 @@ def _calc_feature_recall_score(hit_features: Dict[str, Any], gate_evidence: Dict
     return round(score, 6)
 
 
+def _anchor_terms(evidence: Dict[str, Any], fields: Tuple[str, ...] = ("object_hits", "must_hits", "strong_hits")) -> List[str]:
+    terms: List[str] = []
+    for field_name in fields:
+        value = evidence.get(field_name) or []
+        if isinstance(value, list):
+            terms.extend(_safe_str(item) for item in value)
+    return _filter_generic_terms(terms)
+
+
+def _has_primary_anchor_evidence(evidence: Dict[str, Any]) -> bool:
+    return bool(evidence.get("theme_name_direct_hit") or _anchor_terms(evidence))
+
+
+def _has_only_generic_evidence(evidence: Dict[str, Any]) -> bool:
+    if not evidence:
+        return True
+    return not _has_primary_anchor_evidence(evidence)
+
+
 def _build_feature_recall_rows(
     request: ThemeMatchRequest,
     profile_map: Dict[str, ThemeProfile],
+    event_profile: EventMatchProfile | None = None,
     top_k: int = 25,
 ) -> List[Dict[str, Any]]:
-    event_text = _build_event_query_text(request)
+    event_text = _build_event_query_text(request, event_profile)
     rows: List[Dict[str, Any]] = []
     for sk, profile in profile_map.items():
         hit_features = _collect_profile_hit_features(request, profile)
-        gate_evidence = _build_gate_evidence(event_text, profile)
+        gate_evidence = _build_gate_evidence(event_text, profile, event_profile)
         feature_recall_score = _calc_feature_recall_score(hit_features, gate_evidence)
         if feature_recall_score <= 0:
             continue
@@ -724,6 +1010,7 @@ class ThemeMatchEngine:
         self.profile_repository = profile_repository
         self._sentence_model = None
         self._judge = _FinalLLMJudge()
+        self._event_profile_extractor = _EventProfileLLMExtractor()
 
     async def match_event(self, request: ThemeMatchRequest) -> ThemeDecisionEnvelope:
         profiles = await self.profile_repository.load_active_profiles()
@@ -739,12 +1026,13 @@ class ThemeMatchEngine:
             )
 
         profile_map = {p.subject_key: p for p in profiles}
-        recalled_rows = await self._dense_recall(request)
-        sparse_rows = await self._sparse_recall(request)
+        event_profile = self._event_profile_extractor.extract(request, _build_event_match_profile(request))
+        recalled_rows = await self._dense_recall(request, event_profile)
+        sparse_rows = await self._sparse_recall(request, event_profile)
         hybrid_rows = _rrf_merge_rows(recalled_rows, sparse_rows)
-        feature_rows = _build_feature_recall_rows(request, profile_map)
+        feature_rows = _build_feature_recall_rows(request, profile_map, event_profile)
         candidate_rows = _merge_recall_rows(hybrid_rows, feature_rows)
-        reranked_rows = self._rerank(request, candidate_rows, profile_map)
+        reranked_rows = self._rerank(request, candidate_rows, profile_map, event_profile)
         dynamic_topk = _compute_dynamic_topk(reranked_rows)
         direct_hit_keys = _collect_direct_hit_subject_keys(request, profile_map)
         final_rows = _inject_direct_hit_candidates(
@@ -768,7 +1056,7 @@ class ThemeMatchEngine:
             )
 
         if self._judge.enabled():
-            llm_result = self._judge.judge(request, candidates, profile_map)
+            llm_result = self._judge.judge(request, candidates, profile_map, event_profile)
             return self._final_decide_with_llm(request, candidates, profile_map, llm_result)
         return self._final_decide_rule_only(request, candidates, direct_hit_keys, profile_map)
 
@@ -807,9 +1095,9 @@ class ThemeMatchEngine:
         bn = math.sqrt(sum(y * y for y in b))
         return dot / (an * bn + 1e-12)
 
-    async def _dense_recall(self, request: ThemeMatchRequest) -> List[Dict[str, Any]]:
+    async def _dense_recall(self, request: ThemeMatchRequest, event_profile: EventMatchProfile | None = None) -> List[Dict[str, Any]]:
         model = self._get_sentence_model()
-        query_text = _build_event_query_text(request)
+        query_text = _build_event_query_text(request, event_profile)
         query_vec = self._to_vector_list(model.encode(query_text))
         rows = await self.profile_repository.semantic_recall_candidates(query_vec, top_k=25)
         rows = _canonicalize_recall_rows(rows)
@@ -818,8 +1106,8 @@ class ThemeMatchEngine:
         )
         return rows
 
-    async def _sparse_recall(self, request: ThemeMatchRequest) -> List[Dict[str, Any]]:
-        query_text = _build_event_query_text(request)
+    async def _sparse_recall(self, request: ThemeMatchRequest, event_profile: EventMatchProfile | None = None) -> List[Dict[str, Any]]:
+        query_text = _build_event_query_text(request, event_profile)
         rows = await self.profile_repository.sparse_recall_candidates(query_text, top_k=25)
         rows = _canonicalize_recall_rows(rows)
         rows.sort(
@@ -832,12 +1120,13 @@ class ThemeMatchEngine:
         request: ThemeMatchRequest,
         candidate_rows: List[Dict[str, Any]],
         profile_map: Dict[str, ThemeProfile],
+        event_profile: EventMatchProfile | None = None,
     ) -> List[Dict[str, Any]]:
         if not candidate_rows:
             return []
 
         model = self._get_sentence_model()
-        event_text = _build_event_query_text(request)
+        event_text = _build_event_query_text(request, event_profile)
         query_vec = self._to_vector_list(model.encode(event_text))
         valid_rows: List[Dict[str, Any]] = []
         doc_texts: List[str] = []
@@ -862,7 +1151,7 @@ class ThemeMatchEngine:
             hit_features = _collect_profile_hit_features(request, profile)
             feature_score = _calc_rerank_feature_score(hit_features)
             semantic_score = self._cosine_similarity(query_vec, doc_vec)
-            gate_evidence = _build_gate_evidence(event_text, profile)
+            gate_evidence = _build_gate_evidence(event_text, profile, event_profile)
             final_score = semantic_score + feature_score
 
             row["semantic_score"] = float(semantic_score)
@@ -913,26 +1202,45 @@ class ThemeMatchEngine:
         }
         related: List[Dict[str, Any]] = []
         seen = {str(primary_subject_key)}
+        primary_profile = profile_map.get(primary_subject_key)
         for cand in candidates:
             if len(related) >= max_related:
                 break
             if cand.subject_key in seen:
                 continue
             evidence = cand.evidence or {}
-            has_evidence = bool(
-                evidence.get("theme_name_direct_hit")
-                or evidence.get("positive_score", 0) >= 3
-                or evidence.get("core_object_hits")
-                or evidence.get("must_term_hits")
-                or evidence.get("strong_term_hits")
+            profile = profile_map.get(cand.subject_key)
+            if not profile:
+                continue
+            anchor_terms = _anchor_terms(evidence)
+            entity_hits = _filter_generic_terms(evidence.get("entity_hits") or [])
+            same_domain = bool(
+                primary_profile
+                and (
+                    (
+                        primary_profile.semantic_type
+                        and profile.semantic_type
+                        and primary_profile.semantic_type == profile.semantic_type
+                    )
+                    or (
+                        primary_profile.strategy_type
+                        and profile.strategy_type
+                        and primary_profile.strategy_type == profile.strategy_type
+                    )
+                )
             )
+            strong_name_hit = bool(evidence.get("theme_name_direct_hit"))
+            has_evidence = bool(
+                strong_name_hit
+                or len(anchor_terms) >= 2
+                or (same_domain and len(entity_hits) >= 1)
+            )
+            if int(evidence.get("conflict_score") or 0) > 0 and not strong_name_hit:
+                continue
             if require_evidence and not has_evidence:
                 continue
             confidence = _squash01(0.52 + min(float(cand.rerank_score or 0.0) * 0.10, 0.25))
             if confidence < min_conf:
-                continue
-            profile = profile_map.get(cand.subject_key)
-            if not profile:
                 continue
             related.append(
                 {
@@ -1113,6 +1421,21 @@ class ThemeMatchEngine:
                     matched_theme_id=matched_theme.theme_master_id if matched_theme else None,
                     review_required=True,
                     audit=audit,
+                )
+            matched_candidate = next((c for c in candidates if c.subject_key == matched_theme.subject_key), None)
+            matched_evidence = (matched_candidate.evidence if matched_candidate else {}) or {}
+            if _has_only_generic_evidence(matched_evidence):
+                return ThemeDecisionEnvelope(
+                    decision="HUMAN_REVIEW",
+                    event_id=request.event_id,
+                    news_id=request.news_id,
+                    confidence=min(conf, _squash01(0.5)),
+                    reason_code="llm_accept_without_anchor_evidence",
+                    matched_subject_key=matched_theme.subject_key,
+                    matched_theme_name=matched_theme.subject_name,
+                    matched_theme_id=matched_theme.theme_master_id,
+                    review_required=True,
+                    audit={**audit, "best_evidence": matched_evidence},
                 )
             return ThemeDecisionEnvelope(
                 decision="MATCH",
