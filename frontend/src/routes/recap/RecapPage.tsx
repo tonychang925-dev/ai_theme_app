@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
-import type { RecapViewModelV2 } from "../../lib/api";
-import { fetchRecapSnapshot } from "../../lib/api";
+import type { NotionPublishResult, RecapViewModelV2 } from "../../lib/api";
+import { fetchRecapSnapshot, publishRecapToNotion } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
 
 const DISPLAY_REPLACEMENTS: Array<[string, string]> = [
@@ -590,6 +590,8 @@ export function RecapPage() {
   const [payload, setPayload] = useState<RecapViewModelV2 | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [publishing, setPublishing] = useState(false);
+  const [publishResult, setPublishResult] = useState<NotionPublishResult | null>(null);
   const sections = useMemo(() => sectionMap(payload), [payload]);
   const marketEnvironmentSection = sections.get("大盘环境总结") ?? [];
   const themeEnvironmentSection = sections.get("板块环境总结") ?? [];
@@ -760,6 +762,20 @@ export function RecapPage() {
     setAbnormalSortDir("desc");
   }
 
+  async function handlePublishNotion() {
+    if (!tradeDate || publishing) return;
+    setPublishing(true);
+    setPublishResult(null);
+    try {
+      const result = await publishRecapToNotion(tradeDate);
+      setPublishResult(result);
+    } catch (err) {
+      setPublishResult({ ok: false, action: `error: ${err instanceof Error ? err.message : "unknown"}` });
+    } finally {
+      setPublishing(false);
+    }
+  }
+
   return (
     <div className="workspace-page">
       <header className="workspace-topbar">
@@ -796,6 +812,34 @@ export function RecapPage() {
             </button>
           </div>
         </div>
+        {reportType === "post_market" && (
+          <div className="recap-toolbar" style={{ marginTop: 8 }}>
+            <button
+              className="tag tag-button"
+              type="button"
+              disabled={publishing || loading}
+              onClick={handlePublishNotion}
+            >
+              {publishing ? "发布中..." : "发布到 Notion"}
+            </button>
+            {publishResult?.page_url && (
+              <a
+                href={publishResult.page_url}
+                target="_blank"
+                rel="noreferrer"
+                className="tag"
+                style={{ marginLeft: 8 }}
+              >
+                打开 Notion 页面
+              </a>
+            )}
+            {publishResult && !publishResult.ok && (
+              <span className="tag" style={{ marginLeft: 8, color: "var(--color-risk)" }}>
+                发布失败：{publishResult.action}
+              </span>
+            )}
+          </div>
+        )}
       </section>
 
       {loading && <div className="empty-state">正在加载复盘视图...</div>}

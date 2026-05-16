@@ -257,6 +257,12 @@ class PreMarketBriefFinalizeProxyPayload(BaseModel):
     force: bool = False
 
 
+class PublishNotionProxyPayload(BaseModel):
+    trade_date: str
+    force: bool = False
+    dry_run: bool = False
+
+
 class ScreenerStrategyPayload(BaseModel):
     strategy_name: str
     strategy_type: str
@@ -1987,6 +1993,29 @@ async def get_recap(
 @app.get("/api/v2/recap/defaults")
 async def get_recap_defaults():
     return await bff_repo.fetch_recap_defaults()
+
+
+@app.post("/api/v2/recap/publish-notion")
+async def publish_recap_to_notion_proxy(payload: PublishNotionProxyPayload):
+    _require_gate_for_flag(POST_MARKET_FLAG)
+
+    url = f"{_sps_base_url()}/api/v1/recap/publish-notion"
+    try:
+        async with httpx.AsyncClient(timeout=45.0) as client:
+            resp = await client.post(url, json=_model_to_dict(payload))
+            resp.raise_for_status()
+            return resp.json()
+    except httpx.HTTPStatusError as exc:
+        raise HTTPException(status_code=exc.response.status_code, detail=exc.response.text)
+    except Exception as exc:
+        raise HTTPException(
+            status_code=503,
+            detail={
+                "code": "SPS_NOTION_PUBLISH_UNAVAILABLE",
+                "message": str(exc),
+                "upstream": url,
+            },
+        )
 
 
 @app.get("/api/collection/availability")
