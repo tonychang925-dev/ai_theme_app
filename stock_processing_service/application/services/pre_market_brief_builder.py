@@ -13,8 +13,8 @@ DecisionStreamReader = Callable[[date, int], Awaitable[list[dict[str, Any]]] | l
 class PreMarketBriefBuilder:
     """Build the event/theme sections of pre_market_brief_snapshot.
 
-    Phase 1 MVP only aggregates event facts into report sections. It does not
-    produce stock opportunities and must not call StockMatchEngine.
+    The stock opportunity section is optional and is delegated to a read-only
+    builder. This class must not call StockMatchEngine.
     """
 
     SNAPSHOT_VERSION = "pre_market_brief.v1"
@@ -25,10 +25,12 @@ class PreMarketBriefBuilder:
         write_gateway: Any,
         *,
         decision_stream_reader: DecisionStreamReader | None = None,
+        opportunity_builder: Any | None = None,
     ) -> None:
         self._read_gateway = read_gateway
         self._write_gateway = write_gateway
         self._decision_stream_reader = decision_stream_reader
+        self._opportunity_builder = opportunity_builder
 
     async def rebuild(
         self,
@@ -67,12 +69,18 @@ class PreMarketBriefBuilder:
             unknown_events=unknown_events,
             limit=limit,
         )
+        if self._opportunity_builder is not None:
+            sections["event_driven_opportunities"] = await self._opportunity_builder.build(
+                trade_date=trade_date,
+                matched_themes=sections["matched_themes"],
+                matched_events=matched_events,
+            )
         diagnostics = {
             "source": self._diagnostic_source(source, db_matched_count, stream_decisions),
             "event_count": len(matched_events) + len(review_events) + len(unknown_events),
             "matched_event_count": len(matched_events),
             "theme_count": len(sections["matched_themes"]),
-            "opportunity_count": 0,
+            "opportunity_count": len(sections["event_driven_opportunities"]),
             "review_event_count": len(review_events),
             "unknown_event_count": len(unknown_events),
             "last_rebuild_at": datetime.now(timezone.utc).isoformat(),

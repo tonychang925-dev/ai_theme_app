@@ -31,6 +31,31 @@ class _Gateway:
     async def get_pre_market_review_events(self, feed_date: date, limit: int = 200):
         return []
 
+    async def get_subject_stock_pool_by_trade_date(self, trade_date: date):
+        return []
+
+    async def get_theme_stock_leaderboard_by_trade_date(self, trade_date: date, subject_keys=None):
+        return []
+
+    async def get_strong_stock_watch_view_rows(
+        self,
+        end_date: date,
+        window_days: int = 7,
+        include_removed: bool = False,
+        latest_per_stock: bool = True,
+        limit: int = 1000,
+    ):
+        return []
+
+    async def get_w2s_candidates_for_confirm_date(self, confirm_trade_date: date, limit: int = 1000):
+        return []
+
+    async def get_mainline_identity_by_subject_keys(self, subject_keys: list[str], trade_date: date):
+        return []
+
+    async def get_mainline_cycle_by_subject_keys(self, subject_keys: list[str], trade_date: date):
+        return []
+
     async def upsert_pre_market_brief_snapshot(self, doc, force: bool = False):
         if self.row and self.row.get("status") == "final" and not force:
             return 0
@@ -86,6 +111,66 @@ async def test_rebuild_pre_market_brief_writes_draft_snapshot(monkeypatch: pytes
     assert payload["payload"]["sections"]["matched_themes"][0]["theme_name"] == "机器人"
     assert gateway.row is not None
     assert gateway.row["status"] == "draft"
+    assert payload["payload"]["sections"]["event_driven_opportunities"] == []
+
+
+@pytest.mark.asyncio
+async def test_rebuild_pre_market_brief_includes_read_only_opportunities(monkeypatch: pytest.MonkeyPatch) -> None:
+    class GatewayWithStocks(_Gateway):
+        async def get_subject_stock_pool_by_trade_date(self, trade_date: date):
+            return [
+                {
+                    "subject_key": "theme-a",
+                    "stock_id": "000001.SZ",
+                    "stock_name": "核心股份",
+                    "rank_order": 1,
+                    "is_leader": True,
+                }
+            ]
+
+        async def get_theme_stock_leaderboard_by_trade_date(self, trade_date: date, subject_keys=None):
+            return [
+                {
+                    "subject_key": "theme-a",
+                    "stock_id": "000001.SZ",
+                    "leaderboard_rank": 1,
+                    "leader_score": 90,
+                }
+            ]
+
+        async def get_strong_stock_watch_view_rows(
+            self,
+            end_date: date,
+            window_days: int = 7,
+            include_removed: bool = False,
+            latest_per_stock: bool = True,
+            limit: int = 1000,
+        ):
+            return [
+                {
+                    "subject_key": "theme-a",
+                    "stock_id": "000001.SZ",
+                    "watch_score": 80,
+                    "cycle_state": "acceleration",
+                }
+            ]
+
+        async def get_mainline_identity_by_subject_keys(self, subject_keys: list[str], trade_date: date):
+            return [{"subject_key": "theme-a", "identity_status": "confirmed", "is_main_theme": True}]
+
+        async def get_mainline_cycle_by_subject_keys(self, subject_keys: list[str], trade_date: date):
+            return [{"subject_key": "theme-a", "final_cycle_state": "acceleration", "final_mainline_alive": True}]
+
+    gateway = GatewayWithStocks()
+    monkeypatch.setattr(api_app.app, "state", SimpleNamespace(gateway=gateway), raising=False)
+
+    payload = await api_app.rebuild_pre_market_brief(
+        api_app.PreMarketBriefRebuildPayload(trade_date="2026-05-16")
+    )
+
+    opportunities = payload["payload"]["sections"]["event_driven_opportunities"]
+    assert opportunities[0]["subject_key"] == "theme-a"
+    assert opportunities[0]["stocks"][0]["stock_id"] == "000001.SZ"
 
 
 @pytest.mark.asyncio

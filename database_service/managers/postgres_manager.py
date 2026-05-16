@@ -2798,6 +2798,38 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             rows = await conn.fetch(sql, trade_date)
         return [dict(r) for r in rows]
 
+    async def get_theme_stock_leaderboard_by_trade_date(
+        self,
+        trade_date,
+        subject_keys: List[str] | None = None,
+    ) -> List[Dict[str, Any]]:
+        """读取题材内股票强弱榜单（只读）。"""
+        sql = """
+        SELECT
+            l.trade_date,
+            l.subject_key,
+            l.stock_id,
+            COALESCE(s.stock_name, '') AS stock_name,
+            l.leaderboard_rank,
+            l.leader_score,
+            l.score_breakdown
+        FROM theme_stock_leaderboard l
+        LEFT JOIN subject_stock_daily_snapshot s
+          ON s.trade_date = l.trade_date
+         AND s.subject_key = l.subject_key
+         AND s.stock_id = l.stock_id
+        WHERE l.trade_date = $1::date
+          AND ($2::text[] IS NULL OR l.subject_key = ANY($2::text[]))
+        ORDER BY l.subject_key, l.leaderboard_rank ASC, l.leader_score DESC NULLS LAST
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                rows = await conn.fetch(sql, trade_date, subject_keys if subject_keys else None)
+            return [dict(r) for r in rows]
+        except Exception as e:
+            logger.warning(f"读取 theme_stock_leaderboard 失败（可能尚未迁移）: {e}")
+            return []
+
     async def get_w2s_candidates_by_trade_date(self, candidate_trade_date, limit: int = 200) -> List[Dict[str, Any]]:
         """旧链 D1 候选 — 从 weak_to_strong_candidate_pool 读取（等价旧链 WeakToStrongCandidateBuilder）。"""
         sql = """

@@ -29,6 +29,9 @@ from stock_processing_service.tests.replay._post_market_replay_runner import _Re
 from stock_processing_service.application.orchestrators.bootstrap import build_container
 from theme_service.repositories.phase1_read_repository import Phase1ReadRepository
 from stock_processing_service.application.services.intel_new_chain_adapter import NewChainIntelFeedAdapter
+from stock_processing_service.application.services.event_driven_opportunity_builder import (
+    EventDrivenOpportunityBuilder,
+)
 from stock_processing_service.application.services.pre_market_brief_builder import PreMarketBriefBuilder
 from stock_processing_service.application.jobs.collection_job_manager import CollectionJobManager
 from stock_processing_service.domain.services.w2s_candidate_service import W2SCandidate
@@ -1308,6 +1311,7 @@ async def rebuild_pre_market_brief(payload: PreMarketBriefRebuildPayload) -> dic
     builder = PreMarketBriefBuilder(
         read_gateway=app.state.gateway,
         write_gateway=app.state.gateway,
+        opportunity_builder=EventDrivenOpportunityBuilder(read_gateway=app.state.gateway),
     )
     doc = await builder.rebuild(
         trade_date=d,
