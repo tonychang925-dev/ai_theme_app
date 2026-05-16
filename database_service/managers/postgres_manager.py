@@ -2524,16 +2524,25 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             status,
             generated_at,
             finalized_at,
-            created_at,
+            updated_at AS created_at,
             updated_at
         FROM pre_market_brief_snapshot
         WHERE trade_date = $1::date
+        ORDER BY snapshot_version = 'pre_market_brief.v1' DESC, updated_at DESC
         LIMIT 1
         """
         try:
             async with self.pool.acquire() as conn:
                 row = await conn.fetchrow(sql, trade_date)
-                return dict(row) if row else None
+                if not row:
+                    return None
+                result = dict(row)
+                if isinstance(result.get("payload"), str):
+                    try:
+                        result["payload"] = json.loads(result["payload"])
+                    except Exception:
+                        result["payload"] = {}
+                return result
         except Exception as e:
             logger.warning(f"读取 pre_market_brief_snapshot 失败（可能尚未迁移）: {e}")
             return None
@@ -4037,6 +4046,14 @@ class PostgresDatabaseManager(BaseDatabaseManager):
 
     async def upsert_pre_market_brief_snapshot(self, doc: Dict[str, Any], force: bool = False) -> int:
         """UPSERT pre_market_brief_snapshot 文档对象。"""
+        def _coerce_ts(value: Any) -> Any:
+            if isinstance(value, str) and value:
+                try:
+                    return datetime.fromisoformat(value.replace("Z", "+00:00"))
+                except ValueError:
+                    return value
+            return value
+
         sql = """
         INSERT INTO pre_market_brief_snapshot (
             trade_date,
@@ -4056,7 +4073,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             $10::timestamptz,
             NOW()
         )
-        ON CONFLICT (trade_date) DO UPDATE SET
+        ON CONFLICT (trade_date, snapshot_version) DO UPDATE SET
           snapshot_version = EXCLUDED.snapshot_version,
           batch_id = EXCLUDED.batch_id,
           trace_id = EXCLUDED.trace_id,
@@ -4079,8 +4096,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             json.dumps(doc.get("payload") or {}, ensure_ascii=False, default=str),
             str(doc.get("source_name") or "stock_processing_service"),
             str(status or "draft"),
-            doc.get("generated_at"),
-            doc.get("finalized_at"),
+            _coerce_ts(doc.get("generated_at")),
+            _coerce_ts(doc.get("finalized_at")),
             bool(force),
             str(status) if status else None,
         )
@@ -6638,7 +6655,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             COALESCE(ne.summary, nr.content, q.reason, '') AS summary,
             q.proposed_theme_name AS theme_name,
             q.proposed_theme_confidence AS confidence,
-            COALESCE(ne.severity_score, 0) AS impact_score,
+            0::numeric AS impact_score,
             q.reason,
             q.source_channel,
             'event_review_queue'::text AS source_type
@@ -6647,12 +6664,11 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         LEFT JOIN news_raw nr ON nr.id = ne.news_id
         WHERE q.review_status = 'waiting'
           AND (
-            ne.event_time::date = $1::date
-            OR ne.created_at::date = $1::date
+            ne.created_at::date = $1::date
             OR nr.publish_date::date = $1::date
             OR q.created_at::date = $1::date
           )
-        ORDER BY COALESCE(ne.severity_score, 0) DESC, q.created_at DESC
+        ORDER BY q.created_at DESC
         LIMIT $2
         """
         try:
