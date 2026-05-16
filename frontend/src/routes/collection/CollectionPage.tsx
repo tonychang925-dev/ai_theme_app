@@ -232,6 +232,16 @@ export function CollectionPage() {
     }
   }
 
+  function handleReset() {
+    window.localStorage.removeItem(COLLECTION_JOB_STORAGE_KEY);
+    setJob(null);
+    setErrorState(null);
+    // 重新检查采集窗口状态
+    fetchCollectionAvailability(tradeDate)
+      .then(setAvailability)
+      .catch(() => {});
+  }
+
   async function handleCancel() {
     if (!job?.job_id) return;
     try {
@@ -279,6 +289,14 @@ export function CollectionPage() {
             </button>
             <button className="tag tag-button" type="button" onClick={() => navigateTo("/collection-debug")}>
               打开终端调试页
+            </button>
+            <button
+              className="tag tag-button"
+              type="button"
+              onClick={handleReset}
+              title="清除缓存并重置页面状态，用于从异常中恢复"
+            >
+              重置页面
             </button>
           </div>
         </div>
@@ -527,15 +545,32 @@ export function CollectionPage() {
             <h3>{errorState.step}</h3>
             <p>{errorState.message}</p>
             <p className="workspace-note">{errorState.detail}</p>
+            {!job?.can_cancel && !job?.can_continue && (
+              <p className="workspace-note" style={{marginTop:8, color:"var(--color-warning, #e67e22)"}}>
+                当前任务无法取消也無法繼續，请点击 "重置页面" 清除缓存后重新开始。
+              </p>
+            )}
             <div className="collection-action-row">
-              <button type="button" className="tag tag-button" onClick={handleCancel} disabled={!job?.can_cancel}>
-                取消
-              </button>
-              <button type="button" className="tag tag-button tag-active" onClick={handleContinue} disabled={!job?.can_continue}>
-                继续
-              </button>
+              {job?.can_cancel && (
+                <button type="button" className="tag tag-button" onClick={handleCancel}>
+                  取消任务
+                </button>
+              )}
+              {job?.can_continue && (
+                <button type="button" className="tag tag-button tag-active" onClick={handleContinue}>
+                  从失败处继续
+                </button>
+              )}
               <button type="button" className="tag tag-button" onClick={() => setErrorState(null)}>
                 关闭
+              </button>
+              <button
+                type="button"
+                className="tag tag-button"
+                style={{borderColor:"var(--color-warning, #e67e22)", color:"var(--color-warning, #e67e22)"}}
+                onClick={handleReset}
+              >
+                重置页面
               </button>
             </div>
           </div>

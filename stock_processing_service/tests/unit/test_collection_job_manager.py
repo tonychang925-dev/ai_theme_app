@@ -11,6 +11,10 @@ from stock_processing_service.application.services.collection_orchestrator impor
     CollectionCommandPlanner,
     CollectionTaskPlan,
 )
+from stock_processing_service.application.services.collection_task_registry import (
+    CollectionTaskRegistry,
+    _register_default_runners,
+)
 
 
 def test_collection_env_normalizes_tushare_token_from_env_file(monkeypatch):
@@ -94,10 +98,30 @@ def test_collection_planner_recap_command_preserves_skip_flags():
         env={"TUSHARE_TOKEN": "abc123"},
     )
 
-    # recap_snapshot 已切换到服务化 Runner，不再产生脚本命令
-    assert plan.runner_key == "recap.snapshot"
+    # recap_snapshot owns report-source preparation and must not run recap.report.
     assert len(plan.commands) == 0
-    assert "PostMarketRecapRunner" in plan.pre_logs[0] or "BuildPostMarketRecapJob" in plan.pre_logs[0]
+    assert plan.runner_key == ""
+    assert [step.key for step in plan.steps] == [
+        "stock_kline_judgements",
+        "market_environment_metrics",
+        "market_environment_judgement",
+        "theme_leader_candidate",
+        "money_flow_enhanced",
+        "theme_environment_judgement",
+        "abnormal_signal",
+        "recap_data",
+    ]
+    assert "recap.report" not in [step.runner_key for step in plan.steps]
+    assert plan.steps[-1].runner_key == "recap.snapshot"
+
+
+def test_collection_registry_does_not_register_recap_report_overlay_runner():
+    registry = CollectionTaskRegistry()
+
+    _register_default_runners(registry)
+
+    assert registry.get("recap.snapshot") is not None
+    assert registry.get("recap.report") is None
 
 
 def test_collection_planner_jyhf_commands_preserve_script_order():

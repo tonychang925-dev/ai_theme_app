@@ -62,6 +62,9 @@ CREATE TABLE IF NOT EXISTS pre_market_brief_snapshot (
     source_trace_id text,
     payload jsonb NOT NULL DEFAULT '{}'::jsonb,
     source_name text NOT NULL DEFAULT 'stock_processing_service',
+    status varchar(20) NOT NULL DEFAULT 'draft',
+    generated_at timestamptz,
+    finalized_at timestamptz,
     created_at timestamptz NOT NULL DEFAULT NOW(),
     updated_at timestamptz NOT NULL DEFAULT NOW()
 );

@@ -42,6 +42,17 @@ def _sanitize_inline_text(value: str) -> str:
     ).strip() or "--"
 
 
+class ReportDependencyError(RuntimeError):
+    """Raised when a production recap report truth-source dependency is missing."""
+
+    def __init__(self, trade_date: str, missing: list[str]) -> None:
+        super().__init__(
+            f"post_market_report_dependency_missing trade_date={trade_date} missing={','.join(missing)}"
+        )
+        self.trade_date = trade_date
+        self.missing = missing
+
+
 def _summarize_in_billions(value) -> str:
     amount = _to_float(value) / 1e8
     return f"{amount:.2f}亿"
@@ -446,6 +457,21 @@ class RecapService:
             trade_date,
             [str(row["stock_id"]) for row in dragon_tigers],
         )
+        missing_dependencies: list[str] = []
+        if not market_environment:
+            missing_dependencies.append("market_environment_judgement")
+        if not theme_environments:
+            missing_dependencies.append("theme_environment_judgement")
+        if not mainlines:
+            missing_dependencies.append("mainline_judgements")
+        if not theme_capital_flows:
+            missing_dependencies.append("theme_capital_flow")
+        if not candidates:
+            missing_dependencies.append("theme_leader_candidate")
+        if not abnormal_signals:
+            missing_dependencies.append("stock_abnormal_signal")
+        if missing_dependencies:
+            raise ReportDependencyError(trade_date, missing_dependencies)
 
         theme_name_map = await self._resolve_theme_name_map(
             self._collect_subject_keys(
@@ -608,7 +634,9 @@ class RecapService:
                 theme_recent_rank_map.get(str(row["subject_key"])),
             )
             theme_capital_flow_lines.append(
-                f"{row['theme_name']}：subject_key {row['subject_key']}；状态 {row.get('final_cycle_state', '--')}；"
+                f"{row['theme_name']}：subject_key {row['subject_key']}；"
+                f"层级 {'main' if mainline_alive_map.get(str(row['subject_key']), False) else 'branch'}；"
+                f"状态 {row.get('final_cycle_state', '--')}；"
                 f"总净流入 {_summarize_in_billions(row.get('main_net_inflow_sum'))}；"
                 f"前3净流入 {_summarize_in_billions(row.get('top3_main_net_inflow_sum'))}；"
                 f"龙头净流入 {_summarize_in_billions(row.get('leader_main_net_inflow'))}；"
@@ -930,38 +958,9 @@ class RecapService:
         sections.append(("周期与动作", cycle_lines[:15]))
         if transition_lines:
             sections.append(("主线迁移监控", transition_lines[:20]))
-        # leader_lines fallback: 新链 strong_stock_watch_pool 直接生成
         if not leader_lines:
-            try:
-                watch_rows = await self.repository.fetch_strong_stock_watch_history(trade_date, lookback_days=1, limit=80)
-                seen_stocks: set[str] = set()
-                for w in (watch_rows or []):
-                    sid = str(w.get("stock_id", ""))
-                    if sid in seen_stocks:
-                        continue
-                    seen_stocks.add(sid)
-                    leader_lines.append(
-                        f"{w.get('theme_name', '--')}：{w.get('pool_entry_type', '观察')} "
-                        f"{w.get('stock_name', '--')}({sid})；"
-                        f"评分 {float(w.get('watch_score') or 0):.2f}；"
-                        f"状态 {w.get('watch_status', '--')}；"
-                        f"支撑 {w.get('support_type') or '--'}"
-                    )
-            except Exception:
-                pass
+            raise ReportDependencyError(trade_date, ["theme_leader_candidate_report_lines"])
         sections.append(("强势股分层", leader_lines[:20]))
-        # 次日观察清单：fallback from strong_stock_watch_pool observe_only
-        if not watchlist_lines:
-            try:
-                watch_rows = await self.repository.fetch_strong_stock_watch_history(trade_date, lookback_days=1, limit=60)
-                for w in (watch_rows or []):
-                    if str(w.get("pool_entry_type", "")) == "observe_only":
-                        watchlist_lines.append(
-                            f"{w.get('theme_name', '--')}：{w.get('stock_name', '--')}"
-                            f"({w.get('stock_id', '')})；评分 {float(w.get('watch_score') or 0):.2f}"
-                        )
-            except Exception:
-                pass
         sections.append(("次日观察清单", watchlist_lines[:24]))
         if stock_capital_flow_lines:
             sections.append(("主线股票资金流入前20", stock_capital_flow_lines[:20]))

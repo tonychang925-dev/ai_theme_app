@@ -2443,10 +2443,22 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             rows = await conn.fetch(sql, trade_date, lookback_days, stock_ids if stock_ids else None)
             return [dict(row) for row in rows]
 
-    async def get_existing_pre_market_brief_snapshot(self, trade_date) -> Optional[Dict[str, Any]]:
+    async def get_pre_market_brief_snapshot(self, trade_date) -> Optional[Dict[str, Any]]:
         """读取 pre_market_brief_snapshot 文档对象（存在则返回）。"""
         sql = """
-        SELECT trade_date, snapshot_version, batch_id, trace_id, payload, created_at
+        SELECT
+            trade_date,
+            snapshot_version,
+            batch_id,
+            trace_id,
+            source_trace_id,
+            payload,
+            source_name,
+            status,
+            generated_at,
+            finalized_at,
+            created_at,
+            updated_at
         FROM pre_market_brief_snapshot
         WHERE trade_date = $1::date
         LIMIT 1
@@ -2458,6 +2470,10 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         except Exception as e:
             logger.warning(f"读取 pre_market_brief_snapshot 失败（可能尚未迁移）: {e}")
             return None
+
+    async def get_existing_pre_market_brief_snapshot(self, trade_date) -> Optional[Dict[str, Any]]:
+        """兼容旧读口：读取 pre_market_brief_snapshot 文档对象。"""
+        return await self.get_pre_market_brief_snapshot(trade_date)
 
     async def get_existing_post_market_recap_snapshot(self, trade_date) -> Optional[Dict[str, Any]]:
         """读取 post_market_recap_snapshot 文档对象（存在则返回）。"""
@@ -3920,34 +3936,78 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.warning(f"写入 theme_stock_leaderboard 失败（可能尚未迁移）: {e}")
             return 0
 
-    async def upsert_pre_market_brief_snapshot(self, doc: Dict[str, Any]) -> int:
+    async def upsert_pre_market_brief_snapshot(self, doc: Dict[str, Any], force: bool = False) -> int:
         """UPSERT pre_market_brief_snapshot 文档对象。"""
         sql = """
         INSERT INTO pre_market_brief_snapshot (
-            trade_date, snapshot_version, batch_id, trace_id, payload, source_name
-        ) VALUES ($1, $2, $3, $4, $5::jsonb, $6)
+            trade_date,
+            snapshot_version,
+            batch_id,
+            trace_id,
+            source_trace_id,
+            payload,
+            source_name,
+            status,
+            generated_at,
+            finalized_at,
+            updated_at
+        ) VALUES (
+            $1, $2, $3, $4, $5, $6::jsonb, $7, $8,
+            COALESCE($9::timestamptz, NOW()),
+            $10::timestamptz,
+            NOW()
+        )
         ON CONFLICT (trade_date) DO UPDATE SET
           snapshot_version = EXCLUDED.snapshot_version,
           batch_id = EXCLUDED.batch_id,
           trace_id = EXCLUDED.trace_id,
-          payload = EXCLUDED.payload || pre_market_brief_snapshot.payload,
+          source_trace_id = EXCLUDED.source_trace_id,
+          payload = pre_market_brief_snapshot.payload || EXCLUDED.payload,
           source_name = EXCLUDED.source_name,
+          status = EXCLUDED.status,
+          generated_at = EXCLUDED.generated_at,
+          finalized_at = EXCLUDED.finalized_at,
           updated_at = NOW()
+        WHERE pre_market_brief_snapshot.status <> 'final' OR $11::boolean
         """
         payload = (
             doc.get("trade_date"),
             doc.get("snapshot_version"),
             doc.get("batch_id"),
             doc.get("trace_id"),
+            doc.get("source_trace_id"),
             json.dumps(doc.get("payload") or {}, ensure_ascii=False, default=str),
             str(doc.get("source_name") or "stock_processing_service"),
+            str(doc.get("status") or (doc.get("payload") or {}).get("status") or "draft"),
+            doc.get("generated_at"),
+            doc.get("finalized_at"),
+            bool(force),
         )
         try:
             async with self.pool.acquire() as conn:
-                await conn.execute(sql, *payload)
-            return 1
+                result = await conn.execute(sql, *payload)
+            return 0 if str(result).endswith(" 0") else 1
         except Exception as e:
             logger.warning(f"写入 pre_market_brief_snapshot 失败（可能尚未迁移）: {e}")
+            return 0
+
+    async def finalize_pre_market_brief_snapshot(self, trade_date, force: bool = False) -> int:
+        """冻结 pre_market_brief_snapshot；默认不重复覆盖 final。"""
+        sql = """
+        UPDATE pre_market_brief_snapshot
+        SET
+          status = 'final',
+          finalized_at = NOW(),
+          updated_at = NOW()
+        WHERE trade_date = $1::date
+          AND (status <> 'final' OR $2::boolean)
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                result = await conn.execute(sql, trade_date, bool(force))
+            return 0 if str(result).endswith(" 0") else 1
+        except Exception as e:
+            logger.warning(f"冻结 pre_market_brief_snapshot 失败（可能尚未迁移）: {e}")
             return 0
 
     async def upsert_post_market_recap_snapshot(self, doc: Dict[str, Any]) -> int:

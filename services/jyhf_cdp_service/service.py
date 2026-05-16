@@ -78,6 +78,11 @@ class JyhfCdpCollectorService:
                     self._logger.exception("collector task stop failed")
             self._status.update(collector_running=False, collector_state="stopped", cdp_connected=False)
             self._logger.info("collector stop requested")
+            # Kill JYHF app so next start doesn't conflict with stale instance
+            try:
+                await asyncio.to_thread(self._app.stop_app)
+            except Exception:
+                pass
 
     def logs(self, lines: int = 300) -> list[str]:
         lines = max(20, min(int(lines), 2000))

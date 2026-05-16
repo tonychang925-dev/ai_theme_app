@@ -207,7 +207,7 @@ class RealtimeStackManager:
 
     async def _is_http_healthy(self, url: str) -> bool:
         try:
-            async with httpx.AsyncClient(timeout=2.0) as http:
+            async with httpx.AsyncClient(timeout=2.0, trust_env=False) as http:
                 resp = await http.get(url)
             return resp.status_code == 200
         except Exception:

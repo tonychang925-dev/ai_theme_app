@@ -5,7 +5,9 @@ from pathlib import Path
 
 from stock_service.config import StockServiceConfig
 from stock_service.models import MarketReport
-from stock_service.services.recap_service import RecapService
+import pytest
+
+from stock_service.services.recap_service import RecapService, ReportDependencyError
 from stock_service.services.report_snapshot_service import ReportSnapshotService
 
 
@@ -129,6 +131,47 @@ class _FakeReportRepository:
             }
         ]
 
+    async def fetch_theme_recent_rank_stats(self, trade_date: str, lookback_days: int = 5):
+        return [
+            {
+                "subject_key": "9025631",
+                "recent_days": 5,
+                "positive_days": 4,
+                "red_days": 4,
+                "latest_pct_chg": 6.2,
+                "latest_his_pct_chg": 18.4,
+                "latest_heat_name": "热",
+            }
+        ]
+
+    async def fetch_theme_capital_flow_top(self, trade_date: str, limit: int = 10):
+        return [
+            {
+                "subject_key": "9025631",
+                "theme_name": "创新药",
+                "final_cycle_state": "climax",
+                "main_net_inflow_sum": 1200000000,
+                "top3_main_net_inflow_sum": 500000000,
+                "leader_main_net_inflow": 180000000,
+                "positive_inflow_stock_count": 12,
+            }
+        ]
+
+    async def fetch_stock_main_net_inflow_top(self, trade_date: str, limit: int = 20):
+        return [
+            {
+                "stock_id": "300436.SZ",
+                "stock_name": "广生堂",
+                "subject_key": "9025631",
+                "theme_name": "创新药",
+                "rank_order": 1,
+                "pct_chg": 10.0,
+                "is_leader": True,
+                "current_flag": 2,
+                "main_net_inflow": 180000000,
+            }
+        ]
+
     async def fetch_dragon_tiger_objects(self, trade_date: str, limit: int = 120):
         return [
             {
@@ -184,7 +227,25 @@ class _FakeReportRepository:
         ]
 
     async def fetch_stock_abnormal_signals(self, trade_date: str, limit: int = 120):
-        return []
+        return [
+            {
+                "subject_key": "9025631",
+                "theme_name": "创新药",
+                "stock_id": "300436.SZ",
+                "stock_name": "广生堂",
+                "abnormal_composite_score": 72.0,
+                "turnover_rate": 12.3,
+                "volume_ratio_to_ma50": 2.4,
+                "main_net_inflow": 180000000,
+                "main_net_inflow_rank_in_theme": 1,
+                "hot_money_buy_names": [],
+                "institution_net_buy": 0,
+                "institution_seat_count": 0,
+                "abnormal_labels": ["高换手"],
+                "evidence": ["量比 1.80"],
+                "conclusion": "高换手",
+            }
+        ]
 
     async def fetch_hot_money_activities(self, trade_date: str, limit: int = 300):
         return []
@@ -196,6 +257,7 @@ class _FakeReportRepository:
 async def test_build_post_market_report():
     service = RecapService(_FakeReportRepository())
     report = await service.build_post_market_report("2026-04-01")
+    sections = {heading: items for heading, items in report.sections}
 
     assert isinstance(report, MarketReport)
     assert report.report_type == "post_market"
@@ -204,20 +266,24 @@ async def test_build_post_market_report():
     assert report.sections[0][0] == "大盘环境总结"
     assert report.sections[1][0] == "板块环境总结"
     assert report.sections[2][0] == "主线与支线"
-    assert report.sections[3][0] == "周期与动作"
-    assert report.sections[4][0] == "强势股分层"
-    assert report.sections[5][0] == "当日异动股与资金行为"
-    assert report.sections[6][0] == "资金行为增强"
-    assert report.sections[7][0] == "龙虎榜"
-    assert "板块过热" in report.sections[1][1][0]
-    assert "层级 main" in report.sections[2][1][0]
-    assert "主线存活 " in report.sections[2][1][0]
-    assert "状态 " in report.sections[2][1][0]
-    assert "主线强度 " in report.sections[2][1][0]
-    assert "HIGH / 龙头/资金共振" in report.sections[4][1][0]
-    assert "LLM裁决角色 龙头" in report.sections[4][1][0]
-    assert "LLM确认状态 继续成立" in report.sections[4][1][0]
-    assert "龙头/资金共振" in report.sections[6][1][0]
+    assert "周期与动作" in sections
+    assert "主线资金流入前10" in sections
+    assert "强势股分层" in sections
+    assert "次日观察清单" in sections
+    assert "当日异动股与资金行为" in sections
+    assert "资金行为增强" in sections
+    assert "龙虎榜" in sections
+    assert "板块过热" in sections["板块环境总结"][0]
+    assert "层级 main" in sections["主线与支线"][0]
+    assert "主线存活 " in sections["主线与支线"][0]
+    assert "状态 " in sections["主线与支线"][0]
+    assert "主线强度 " in sections["主线与支线"][0]
+    assert "题材K线 " in sections["主线与支线"][0]
+    assert "题材K线 " in sections["主线资金流入前10"][0]
+    assert "HIGH / 龙头/资金共振" in sections["强势股分层"][0]
+    assert "LLM裁决角色 龙头" in sections["强势股分层"][0]
+    assert "LLM确认状态 继续成立" in sections["强势股分层"][0]
+    assert "龙头/资金共振" in sections["资金行为增强"][0]
 
 
 class _FakeReportRepositoryLargeLlm(_FakeReportRepository):
@@ -230,8 +296,23 @@ class _FakeReportRepositoryLargeLlm(_FakeReportRepository):
 async def test_build_post_market_report_fetches_enough_llm_rows():
     service = RecapService(_FakeReportRepositoryLargeLlm())
     report = await service.build_post_market_report("2026-04-01")
+    sections = {heading: items for heading, items in report.sections}
 
-    assert "LLM裁决角色 龙头" in report.sections[4][1][0]
+    assert "LLM裁决角色 龙头" in sections["强势股分层"][0]
+
+
+class _MissingLeaderCandidateRepository(_FakeReportRepository):
+    async def fetch_leader_candidates(self, trade_date: str, limit: int = 80):
+        return []
+
+
+async def test_build_post_market_report_fails_fast_without_leader_candidates():
+    service = RecapService(_MissingLeaderCandidateRepository())
+
+    with pytest.raises(ReportDependencyError) as exc:
+        await service.build_post_market_report("2026-04-01")
+
+    assert "theme_leader_candidate" in exc.value.missing
 
 
 async def test_build_pre_market_report():
