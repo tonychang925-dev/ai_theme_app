@@ -9,17 +9,34 @@ from frontend_bff.app import app
 
 
 def test_v2_intel_feed_alias_contract(monkeypatch):
-    async def _fake_fetch_intel_feed_view(**kwargs):
-        return {
-            "date": kwargs.get("feed_date") or "2026-04-29",
-            "type": kwargs.get("item_type") or "all",
-            "session": kwargs.get("session") or "all",
-            "count": 0,
-            "items": [],
-            "diagnostics": {"sources": ["unit_test"]},
-        }
+    class _Response:
+        def raise_for_status(self):
+            return None
 
-    monkeypatch.setattr(app_module.bff_repo, "fetch_intel_feed_view", _fake_fetch_intel_feed_view)
+        def json(self):
+            return {
+                "date": "2026-04-29",
+                "type": "all",
+                "session": "all",
+                "count": 0,
+                "items": [],
+                "diagnostics": {"sources": ["unit_test"]},
+            }
+
+    class _Client:
+        def __init__(self, timeout=30.0):
+            self.timeout = timeout
+
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, exc_type, exc, tb):
+            return False
+
+        async def get(self, url, params=None):
+            return _Response()
+
+    monkeypatch.setattr(app_module.httpx, "AsyncClient", _Client)
 
     with TestClient(app) as client:
         resp = client.get("/api/v2/intel/feed", params={"date": "2026-04-29", "type": "all", "session": "all", "limit": 20})
