@@ -822,6 +822,20 @@ class DatabaseGateway:
             logger.error(f"读取 subject_history intel 失败 feed_date={feed_date}: {e}")
             raise
 
+    async def get_pre_market_review_events(self, feed_date, limit: int = 200) -> List[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            fn = getattr(self._client, "get_pre_market_review_events", None)
+            if not callable(fn):
+                return []
+            result = await fn(feed_date, limit=limit)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 event_review_queue 失败 feed_date={feed_date}: {e}")
+            raise
+
     async def get_subject_stock_daily_snapshot_by_trade_date(
         self, trade_date
     ) -> List[Dict[str, Any]]:
