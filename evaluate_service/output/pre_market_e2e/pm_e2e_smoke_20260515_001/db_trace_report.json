@@ -1,0 +1,27 @@
+{
+  "run_id": "pm_e2e_smoke_20260515_001",
+  "trade_date": "2026-05-15",
+  "counts": {
+    "expected_input_count": 5,
+    "news_raw_count": 0,
+    "news_event_count": 0,
+    "event_subject_map_count": 0,
+    "event_theme_map_count": 0,
+    "review_queue_count": 0,
+    "decision_count": 0,
+    "pending_count": 0,
+    "dead_letter_count": 0
+  },
+  "redis_streams": {
+    "decision_stream": "stream:events:decision",
+    "pending_stream": "stream:events:pending",
+    "dead_letter_stream": "stream:dead:letter",
+    "decision_count": 0,
+    "pending_count": 0,
+    "dead_letter_count": 0,
+    "decision_entries": [],
+    "pending_entries": [],
+    "dead_letter_entries": []
+  },
+  "rows": []
+}

@@ -96,17 +96,31 @@ class NotionBlockBuilder:
         header_limit: int = 80,
         cell_limit: int = 400,
     ) -> list[dict[str, Any]]:
-        """构造 Notion table block + table_rows。
+        """构造 Notion table block（table_rows 作为 children）。
 
-        返回以 table block 开头，后接 table_row 的 block 列表。
-        Notion 要求 table_width 与每行 cells 数量一致。
+        Notion API 要求 table_row 是 table block 的 children，不能作为同级 block。
+        返回单个 table block（内含所有 table_row children）。
         """
         if not headers:
             headers = ["--"]
         table_width = len(headers)
 
-        # table block
-        blocks: list[dict[str, Any]] = [
+        # 收集所有 table_row 作为 children
+        children: list[dict[str, Any]] = []
+
+        # header row
+        children.append(cls._table_row(headers, limit=header_limit))
+
+        # data rows
+        for row in rows:
+            cells = list(row)
+            while len(cells) < table_width:
+                cells.append("--")
+            cells = cells[:table_width]
+            children.append(cls._table_row(cells, limit=cell_limit))
+
+        # table block（rows 作为 children）
+        return [
             {
                 "object": "block",
                 "type": "table",
@@ -114,23 +128,10 @@ class NotionBlockBuilder:
                     "table_width": table_width,
                     "has_column_header": True,
                     "has_row_header": False,
+                    "children": children,
                 },
             }
         ]
-
-        # header row
-        blocks.append(cls._table_row(headers, limit=header_limit))
-
-        # data rows
-        for row in rows:
-            # pad or truncate to match table_width
-            cells = list(row)
-            while len(cells) < table_width:
-                cells.append("--")
-            cells = cells[:table_width]
-            blocks.append(cls._table_row(cells, limit=cell_limit))
-
-        return blocks
 
     @classmethod
     def _table_row(cls, cells: list[str], limit: int = 400) -> dict[str, Any]:

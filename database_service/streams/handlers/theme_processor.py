@@ -591,6 +591,10 @@ class ThemeProcessor:
         event_id = int(event_row.get("id") or event_row.get("event_id"))
         news_id_raw = event_row.get("news_id")
         news_id = int(news_id_raw) if news_id_raw is not None else None
+        title = str(event_row.get("title") or "")
+        summary = str(event_row.get("summary") or "")
+        content = str(event_row.get("content") or "")
+        event_type = str(event_row.get("event_type") or "")
 
         return {
             "decision_id": f"decision_{int(time.time())}_{message_id}",
@@ -600,16 +604,16 @@ class ThemeProcessor:
             "event_id": event_id,
             "trace_id": match_result.get("audit", {}).get("trace_id", f"trace_{event_row.get('id')}"),
             "event_type": "structured",
-            "event_title": event_row.get("title", "")[:100],
+            "event_title": title[:100],
             "timestamp": datetime.now().isoformat(),
             "processor": self.consumer_name,
             "event_data": {
                 "event_id": event_id,
                 "news_id": news_id,
-                "title": event_row.get("title", ""),
-                "summary": event_row.get("summary", ""),
-                "content": event_row.get("content", ""),
-                "event_type": event_row.get("event_type", ""),
+                "title": title,
+                "summary": summary,
+                "content": content,
+                "event_type": event_type,
             },
             "confidence": match_result.get("confidence", 0.0),
             "reason": match_result.get("reason_code", ""),
