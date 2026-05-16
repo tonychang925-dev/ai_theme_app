@@ -849,6 +849,24 @@ class DatabaseGateway:
             logger.error(f"读取 subject_stock_daily_snapshot 失败 trade_date={trade_date}: {e}")
             raise
 
+    async def get_theme_stock_leaderboard_by_trade_date(
+        self,
+        trade_date,
+        subject_keys: List[str] | None = None,
+    ) -> List[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            fn = getattr(self._client, "get_theme_stock_leaderboard_by_trade_date", None)
+            if not callable(fn):
+                return []
+            result = await fn(trade_date, subject_keys=subject_keys)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 theme_stock_leaderboard 失败 trade_date={trade_date}: {e}")
+            raise
+
     async def get_stock_daily_snapshot_by_stock_ids(
         self, trade_date, stock_ids: List[str]
     ) -> List[Dict[str, Any]]:

@@ -28,6 +28,17 @@ class _WriteGateway:
         return 1
 
 
+class _OpportunityBuilder:
+    async def build(self, *, trade_date, matched_themes, matched_events):
+        return [
+            {
+                "subject_key": matched_themes[0]["subject_key"],
+                "theme_name": matched_themes[0]["theme_name"],
+                "stocks": [{"stock_id": "000001.SZ", "level": "A", "score": 86.5}],
+            }
+        ]
+
+
 @pytest.mark.asyncio
 async def test_pre_market_brief_builder_aggregates_db_events_and_writes_snapshot():
     read = _ReadGateway(
@@ -162,3 +173,29 @@ async def test_pre_market_brief_builder_dry_run_does_not_write():
 
     assert payload["diagnostics"]["matched_event_count"] == 1
     assert write.docs == []
+
+
+@pytest.mark.asyncio
+async def test_pre_market_brief_builder_optionally_adds_event_driven_opportunities():
+    read = _ReadGateway(
+        matched=[
+            {
+                "item_id": "event:501:theme-a",
+                "title": "机器人事件",
+                "theme_subject_keys": ["theme-a"],
+                "theme_names": ["机器人"],
+                "confidence": 0.86,
+            }
+        ]
+    )
+    write = _WriteGateway()
+    builder = PreMarketBriefBuilder(
+        read_gateway=read,
+        write_gateway=write,
+        opportunity_builder=_OpportunityBuilder(),
+    )
+
+    payload = await builder.rebuild(date(2026, 5, 16), dry_run=True)
+
+    assert payload["sections"]["event_driven_opportunities"][0]["stocks"][0]["level"] == "A"
+    assert payload["diagnostics"]["opportunity_count"] == 1
