@@ -1,0 +1,115 @@
+{
+  "run_id": "pm_e2e_smoke_20260515_006",
+  "trade_date": "2026-05-15",
+  "counts": {
+    "expected_input_count": 5,
+    "news_raw_count": 5,
+    "news_event_count": 5,
+    "event_subject_map_count": 5,
+    "event_theme_map_count": 5,
+    "review_queue_count": 0,
+    "decision_count": 1,
+    "pending_count": 0,
+    "dead_letter_count": 0
+  },
+  "redis_streams": {
+    "decision_stream": "stream:events:decision",
+    "pending_stream": "stream:events:pending",
+    "dead_letter_stream": "stream:dead:letter",
+    "decision_count": 1,
+    "pending_count": 0,
+    "dead_letter_count": 0,
+    "decision_entries": [
+      {
+        "stream_id": "1778931663128-0",
+        "case_id": null,
+        "event_id": "2738",
+        "decision": "{\"decision_id\": \"decision_1778931663_1778931648585-0\", \"decision_type\": \"phase0_match\", \"action\": \"update_theme\", \"operations\": [\"update_theme_heat\", \"create_mapping\", \"publish_update\"], \"event_id\": 2738, \"trace_id\": \"trace_2738\", \"event_type\": \"structured\", \"event_title\": \"2025年6月17日，Meta联手Oakley推出智能眼镜 ，为运动设计挑战运动相机\", \"timestamp\": \"2026-05-16T19:41:03.128289\", \"processor\": \"theme_processor_e2e_pm_e2e_smoke_20260515_006\", \"event_data\": {\"event_id\": 2738, \"news_id\": 3073, \"title\": \"2025年6月17日，Meta联手Oakley推出智能眼镜 ，为运动设计挑战运动相机\", \"summary\": \"Meta与Oakley合作推出运动智能眼镜，挑战运动相机市场。\", \"content\": \"2025年6月17日，Meta联手Oakley推出智能眼镜 ，为运动设计挑战运动相机。\", \"event_type\": \"产品发布\"}, \"confidence\": 0.92, \"reason\": \"llm_accept_match\", \"source\": \"structured_theme_match\", \"match_result\": {\"decision\": \"MATCH\", \"event_id\": 2738, \"news_id\": 3073, \"confidence\": 0.92, \"reason_code\": \"llm_accept_match\", \"matched_subject_key\": \"9030409\", \"matched_theme_name\": \"AR眼镜\", \"matched_theme_id\": null, \"related_matches\": [{\"subject_key\": \"9040603\", \"theme_name\": \"人工智能+消费\", \"confidence\": 0.5999, \"relation_type\": \"related\", \"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"智能眼镜\"], \"theme_name_hit_score\": 50, \"object_hits\": [\"智能眼镜\"], \"must_hits\": [\"智能眼镜\"], \"strong_hits\": [\"智能眼镜\"], \"should_hits\": [], \"entity_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 58, \"conflict_score\": 0, \"evidence_summary\": {\"theme_name_hits\": [\"智能眼镜\"], \"anchor_terms\": [\"智能眼镜\"], \"support_terms\": [], \"conflict_terms\": []}}}, {\"subject_key\": \"9035171\", \"theme_name\": \"AI大娱乐\", \"confidence\": 0.5996, \"relation_type\": \"related\", \"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"智能眼镜\"], \"theme_name_hit_score\": 50, \"object_hits\": [\"智能眼镜\"], \"must_hits\": [\"智能眼镜\"], \"strong_hits\": [\"智能眼镜\"], \"should_hits\": [], \"entity_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 58, \"conflict_score\": 0, \"evidence_summary\": {\"theme_name_hits\": [\"智能眼镜\"], \"anchor_terms\": [\"智能眼镜\"], \"support_terms\": [], \"conflict_terms\": []}}}, {\"subject_key\": \"9035874\", \"theme_name\": \"机器人之眼（机器视觉）\", \"confidence\": 0.5993, \"relation_type\": \"related\", \"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"相机\"], \"theme_name_hit_score\": 50, \"object_hits\": [\"相机\"], \"must_hits\": [\"相机\"], \"strong_hits\": [\"相机\"], \"should_hits\": [\"产品\"], \"entity_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 59, \"conflict_score\": 0, \"evidence_summary\": {\"theme_name_hits\": [\"相机\"], \"anchor_terms\": [\"相机\"], \"support_terms\": [\"产品\"], \"conflict_terms\": []}}}, {\"subject_key\": \"9047772\", \"theme_name\": \"影石相机\", \"confidence\": 0.5961, \"relation_type\": \"related\", \"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"相机\"], \"theme_name_hit_score\": 50, \"object_hits\": [\"相机\"], \"must_hits\": [\"相机\"], \"strong_hits\": [\"相机\"], \"should_hits\": [], \"entity_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 58, \"conflict_score\": 0, \"evidence_summary\": {\"theme_name_hits\": [\"相机\"], \"anchor_terms\": [\"相机\"], \"support_terms\": [], \"conflict_terms\": []}}}], \"review_required\": false, \"audit\": {\"top_candidates\": [{\"subject_key\": \"9030409\", \"subject_name\": \"AR眼镜\", \"dense_score\": 0.8672, \"rerank_score\": 1.028, \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"智能眼镜\"], \"theme_name_hit_score\": 50, \"object_hits\": [\"智能眼镜\"], \"must_hits\": [\"智能眼镜\"], \"strong_hits\": [\"智能眼镜\"], \"should_hits\": [], \"entity_hits\": [\"Oakley\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 59, \"conflict_score\": 0, \"evidence_summary\": {\"theme_name_hits\": [\"智能眼镜\"], \"anchor_terms\": [\"智能眼镜\"], \"support_terms\": [\"Oakley\"], \"conflict_terms\": []}}}, {\"subject_key\": \"9040603\", \"subject_name\": \"人工智能+消费\", \"dense_score\": 0.602, \"rerank_score\": 0.7988, \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"智能眼镜\"], \"theme_name_hit_score\": 50, \"object_hits\": [\"智能眼镜\"], \"must_hits\": [\"智能眼镜\"], \"strong_hits\": [\"智能眼镜\"], \"should_hits\": [], \"entity_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 58, \"conflict_score\": 0, \"evidence_summary\": {\"theme_name_hits\": [\"智能眼镜\"], \"anchor_terms\": [\"智能眼镜\"], \"support_terms\": [], \"conflict_terms\": []}}}, {\"subject_key\": \"9035171\", \"subject_name\": \"AI大娱乐\", \"dense_score\": 0.0, \"rerank_score\": 0.7964, \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"智能眼镜\"], \"theme_name_hit_score\": 50, \"object_hits\": [\"智能眼镜\"], \"must_hits\": [\"智能眼镜\"], \"strong_hits\": [\"智能眼镜\"], \"should_hits\": [], \"entity_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 58, \"conflict_score\": 0, \"evidence_summary\": {\"theme_name_hits\": [\"智能眼镜\"], \"anchor_terms\": [\"智能眼镜\"], \"support_terms\": [], \"conflict_terms\": []}}}, {\"subject_key\": \"9035874\", \"subject_name\": \"机器人之眼（机器视觉）\", \"dense_score\": 0.0, \"rerank_score\": 0.7926, \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"相机\"], \"theme_name_hit_score\": 50, \"object_hits\": [\"相机\"], \"must_hits\": [\"相机\"], \"strong_hits\": [\"相机\"], \"should_hits\": [\"产品\"], \"entity_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 59, \"conflict_score\": 0, \"evidence_summary\": {\"theme_name_hits\": [\"相机\"], \"anchor_terms\": [\"相机\"], \"support_terms\": [\"产品\"], \"conflict_terms\": []}}}, {\"subject_key\": \"9047772\", \"subject_name\": \"影石相机\", \"dense_score\": 0.0, \"rerank_score\": 0.7613, \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"相机\"], \"theme_name_hit_score\": 50, \"object_hits\": [\"相机\"], \"must_hits\": [\"相机\"], \"strong_hits\": [\"相机\"], \"should_hits\": [], \"entity_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 58, \"conflict_score\": 0, \"evidence_summary\": {\"theme_name_hits\": [\"相机\"], \"anchor_terms\": [\"相机\"], \"support_terms\": [], \"conflict_terms\": []}}}], \"llm_result\": {\"verdict\": \"accept_match\", \"best_candidate\": \"C1\", \"best_theme_key\": \"9030409\", \"best_theme_name\": \"AR眼镜\", \"confidence\": 0.92, \"reason\": \"事件主叙事是Meta与Oakley合作推出运动智能眼镜，C1（AR眼镜）直接命中题材名且摘要明确提及该合作，与事件核心实体和动作高度一致。\", \"new_theme_name\": \"\", \"new_theme_desc\": \"\"}}}, \"theme_data\": {\"subject_key\": \"9030409\", \"name\": \"AR眼镜\", \"id\": null}, \"run_id\": null, \"case_id\": null}"
+      }
+    ],
+    "pending_entries": [],
+    "dead_letter_entries": []
+  },
+  "rows": [
+    {
+      "case_id": "pm_case_0001",
+      "external_id": "pm_e2e_smoke_20260515_006:pm_case_0001",
+      "news_raw_id": 3072,
+      "news_event_id": 2741,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0002",
+      "external_id": "pm_e2e_smoke_20260515_006:pm_case_0002",
+      "news_raw_id": 3073,
+      "news_event_id": 2738,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9040603",
+        "9035171",
+        "9035874",
+        "9047772"
+      ],
+      "related_theme_names": [
+        "人工智能+消费",
+        "AI大娱乐",
+        "机器人之眼（机器视觉）",
+        "影石相机"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0003",
+      "external_id": "pm_e2e_smoke_20260515_006:pm_case_0003",
+      "news_raw_id": 3074,
+      "news_event_id": 2740,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0004",
+      "external_id": "pm_e2e_smoke_20260515_006:pm_case_0004",
+      "news_raw_id": 3075,
+      "news_event_id": 2739,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0005",
+      "external_id": "pm_e2e_smoke_20260515_006:pm_case_0005",
+      "news_raw_id": 3076,
+      "news_event_id": 2742,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    }
+  ]
+}

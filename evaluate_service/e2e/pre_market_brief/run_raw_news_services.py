@@ -31,6 +31,8 @@ async def run_services(args: argparse.Namespace) -> None:
     os.environ.setdefault("REPLAY_DB_NAME", args.db_name)
 
     redis_client = redis.Redis.from_url(args.redis_url, decode_responses=True)
+    await _ensure_group_at_tail(redis_client, "stream:news:raw", args.storage_group)
+    await _ensure_group_at_tail(redis_client, "stream:events:normal", args.processor_group)
     stream_config = SimpleNamespace(
         redis=SimpleNamespace(
             consumer_group=f"pm_e2e:{args.run_id}",
@@ -98,6 +100,16 @@ async def run_services(args: argparse.Namespace) -> None:
         )
         await gateway.close()
         await redis_client.aclose()
+
+
+async def _ensure_group_at_tail(redis_client, stream: str, group: str) -> None:
+    try:
+        await redis_client.xgroup_create(stream, group, id="$", mkstream=True)
+        logging.info("Created consumer group at tail: %s/%s", stream, group)
+    except Exception as exc:
+        if "BUSYGROUP" not in str(exc):
+            raise
+        logging.info("Consumer group already exists: %s/%s", stream, group)
 
 
 def build_parser() -> argparse.ArgumentParser:
