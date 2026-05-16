@@ -1058,16 +1058,10 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         """获取供 ThemeMatchEngine 使用的单条事件输入"""
         try:
             async with self.pool.acquire() as conn:
-                row = await conn.fetchrow("""
+                select_exprs = await self._news_event_match_select_exprs(conn)
+                row = await conn.fetchrow(f"""
                     SELECT
-                        ne.id,
-                        ne.news_id,
-                        ne.event_type,
-                        ne.summary,
-                        ne.entities,
-                        ne.causal_claim,
-                        ne.evidence_set,
-                        ne.raw_event_json,
+                        {select_exprs}
                         nr.title,
                         nr.content
                     FROM news_event ne
@@ -1081,6 +1075,36 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         except Exception as e:
             logger.error(f"获取匹配事件失败 {event_id}: {e}")
             raise
+
+    async def _news_event_match_select_exprs(self, conn: Any) -> str:
+        """构造兼容新旧 news_event 表结构的匹配事件字段。"""
+        rows = await conn.fetch(
+            """
+            SELECT column_name
+            FROM information_schema.columns
+            WHERE table_schema = 'public'
+              AND table_name = 'news_event'
+            """
+        )
+        columns = {row["column_name"] for row in rows}
+
+        def expr(column_name: str, fallback: str) -> str:
+            if column_name in columns:
+                return f"ne.{column_name}"
+            return f"{fallback} AS {column_name}"
+
+        return "\n                        ".join(
+            [
+                "ne.id,",
+                "ne.news_id,",
+                expr("event_type", "NULL::text") + ",",
+                expr("summary", "NULL::text") + ",",
+                expr("entities", "NULL::jsonb") + ",",
+                expr("causal_claim", "NULL::text") + ",",
+                expr("evidence_set", "NULL::jsonb") + ",",
+                expr("raw_event_json", "ne.theme_directive::jsonb" if "theme_directive" in columns else "'{}'::jsonb") + ",",
+            ]
+        )
 
     async def enqueue_event_review(
         self,
@@ -1137,23 +1161,19 @@ class PostgresDatabaseManager(BaseDatabaseManager):
     ) -> List[Dict[str, Any]]:
         """批量获取供 ThemeMatchEngine 使用的事件列表"""
         try:
+            async with self.pool.acquire() as conn:
+                select_exprs = await self._news_event_match_select_exprs(conn)
+
             sql = """
                 SELECT
-                    ne.id,
-                    ne.news_id,
-                    ne.event_type,
-                    ne.summary,
-                    ne.entities,
-                    ne.causal_claim,
-                    ne.evidence_set,
-                    ne.raw_event_json,
+                    {select_exprs}
                     nr.title,
                     nr.content
                 FROM news_event ne
                 LEFT JOIN news_raw nr
                   ON nr.id = ne.news_id
                 WHERE 1=1
-            """
+            """.format(select_exprs=select_exprs)
             params: List[Any] = []
             idx = 1
 
@@ -1176,7 +1196,6 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 sql += f" LIMIT ${idx}"
                 params.append(limit)
 
-            async with self.pool.acquire() as conn:
                 rows = await conn.fetch(sql, *params)
                 return [dict(row) for row in rows]
 

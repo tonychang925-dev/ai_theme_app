@@ -134,9 +134,12 @@ class ThemeService:
                 return out
             return []
 
+        event_id = int(event_row.get("event_id") or event_row.get("id"))
+        news_id_raw = event_row.get("news_id")
+
         return ThemeMatchRequest(
-            event_id=int(event_row.get("event_id") or event_row.get("id")),
-            news_id=int(event_row.get("news_id")),
+            event_id=event_id,
+            news_id=int(news_id_raw) if news_id_raw is not None else event_id,
             title=str(event_row.get("title") or ""),
             content=str(event_row.get("content") or ""),
             summary=str(event_row.get("summary") or ""),

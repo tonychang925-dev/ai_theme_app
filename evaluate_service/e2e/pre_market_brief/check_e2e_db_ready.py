@@ -11,12 +11,13 @@ if __package__ in (None, ""):
     from evaluate_service.e2e.pre_market_brief.common import (
         db_connect_kwargs,
         column_exists,
+        parse_trade_date,
         require_safe_db,
         table_exists,
         write_json,
     )
 else:
-    from .common import db_connect_kwargs, column_exists, require_safe_db, table_exists, write_json
+    from .common import db_connect_kwargs, column_exists, parse_trade_date, require_safe_db, table_exists, write_json
 
 
 async def _count_if_table(conn: Any, table: str, sql: str, *args: Any) -> int:
@@ -28,6 +29,7 @@ async def _count_if_table(conn: Any, table: str, sql: str, *args: Any) -> int:
 async def collect_readiness(db_name: str, trade_date: str) -> dict[str, Any]:
     import asyncpg
 
+    parsed_trade_date = parse_trade_date(trade_date)
     conn = await asyncpg.connect(**db_connect_kwargs(db_name))
     try:
         theme_master_count = await _count_if_table(conn, "theme_master", "SELECT COUNT(*) FROM theme_master")
@@ -36,17 +38,27 @@ async def collect_readiness(db_name: str, trade_date: str) -> dict[str, Any]:
             "theme_match_profile",
             "SELECT COUNT(*) FROM theme_match_profile",
         )
+        theme_gate_profile_count = await _count_if_table(
+            conn,
+            "theme_gate_profile",
+            "SELECT COUNT(*) FROM theme_gate_profile",
+        )
+        theme_profile_ext_count = await _count_if_table(
+            conn,
+            "theme_profile_ext",
+            "SELECT COUNT(*) FROM theme_profile_ext",
+        )
         subject_stock_pool_count = await _count_if_table(
             conn,
             "subject_stock_daily_snapshot",
             "SELECT COUNT(*) FROM subject_stock_daily_snapshot WHERE trade_date = $1::date",
-            trade_date,
+            parsed_trade_date,
         )
         leaderboard_count = await _count_if_table(
             conn,
             "theme_stock_leaderboard",
             "SELECT COUNT(*) FROM theme_stock_leaderboard WHERE trade_date = $1::date",
-            trade_date,
+            parsed_trade_date,
         )
         strong_watch_count = 0
         if await table_exists(conn, "strong_stock_watch_pool"):
@@ -55,7 +67,7 @@ async def collect_readiness(db_name: str, trade_date: str) -> dict[str, Any]:
                     conn,
                     "strong_stock_watch_pool",
                     "SELECT COUNT(*) FROM strong_stock_watch_pool WHERE trade_date = $1::date",
-                    trade_date,
+                    parsed_trade_date,
                 )
             else:
                 strong_watch_count = await _count_if_table(
@@ -81,7 +93,7 @@ async def collect_readiness(db_name: str, trade_date: str) -> dict[str, Any]:
                         FROM weak_to_strong_candidate_pool
                         WHERE trade_date = $1::date OR next_trade_date = $1::date
                         """,
-                        trade_date,
+                        parsed_trade_date,
                     )
                     or 0
                 )
@@ -90,7 +102,7 @@ async def collect_readiness(db_name: str, trade_date: str) -> dict[str, Any]:
                     conn,
                     "weak_to_strong_candidate_pool",
                     "SELECT COUNT(*) FROM weak_to_strong_candidate_pool WHERE trade_date = $1::date",
-                    trade_date,
+                    parsed_trade_date,
                 )
             else:
                 w2s_count = await _count_if_table(
@@ -109,7 +121,7 @@ async def collect_readiness(db_name: str, trade_date: str) -> dict[str, Any]:
                     conn,
                     "theme_cycle_judgement_v2",
                     "SELECT COUNT(*) FROM theme_cycle_judgement_v2 WHERE trade_date = $1::date",
-                    trade_date,
+                    parsed_trade_date,
                 )
             else:
                 cycle_count = await _count_if_table(
@@ -124,12 +136,14 @@ async def collect_readiness(db_name: str, trade_date: str) -> dict[str, Any]:
     finally:
         await conn.close()
 
-    theme_profiles_count = theme_profile_count or theme_master_count
+    theme_profiles_count = theme_gate_profile_count or theme_profile_count
     checks = {
         "db_name": db_name,
         "trade_date": trade_date,
         "theme_profiles_count": theme_profiles_count,
         "theme_master_count": theme_master_count,
+        "theme_gate_profile_count": theme_gate_profile_count,
+        "theme_profile_ext_count": theme_profile_ext_count,
         "subject_stock_pool_count": subject_stock_pool_count,
         "leaderboard_count": leaderboard_count,
         "strong_watch_count": strong_watch_count,

@@ -183,7 +183,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--redis-url", default="redis://127.0.0.1:6379/0")
     parser.add_argument("--stream", default="stream:news:raw")
     parser.add_argument("--sps-base-url", default="http://127.0.0.1:8090")
-    parser.add_argument("--bff-base-url", default="http://127.0.0.1:8000")
+    parser.add_argument("--bff-base-url", default="http://127.0.0.1:8003")
     parser.add_argument("--source", default="akshare_replay")
     parser.add_argument("--out-dir")
     parser.add_argument("--limit", type=int)

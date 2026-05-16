@@ -527,6 +527,8 @@ class ThemeProcessor:
             event_row = await self.gateway.get_news_event_for_match(int(event_id))
             if not event_row:
                 raise ValueError(f"news_event 不存在: {event_id}")
+            event_row.setdefault("run_id", payload.get("run_id"))
+            event_row.setdefault("case_id", payload.get("case_id"))
 
             result = await self.theme_service.match_event(event_row, database_gateway=self.gateway)
             decision = self._build_structured_decision(
@@ -541,7 +543,7 @@ class ThemeProcessor:
 
         except Exception as e:
             self.stats["by_outcome"]["error"] += 1
-            logger.error(f"structured路径处理失败 {message_id}: {e}")
+            logger.exception(f"structured路径处理失败 {message_id}: {e}")
             await self._move_to_dead_letter(stream_type, message_id, message_data, str(e))
 
     def _extract_structured_payload(self, message_data: Dict[str, Any]) -> Dict[str, Any]:
@@ -586,21 +588,24 @@ class ThemeProcessor:
             "publish_clustering": ["publish_to_pending"],
             "human_review": ["publish_human_review"],
         }
+        event_id = int(event_row.get("id") or event_row.get("event_id"))
+        news_id_raw = event_row.get("news_id")
+        news_id = int(news_id_raw) if news_id_raw is not None else None
 
         return {
             "decision_id": f"decision_{int(time.time())}_{message_id}",
             "decision_type": f"phase0_{decision.lower()}",
             "action": action,
             "operations": operations_map[action],
-            "event_id": int(event_row.get("id") or event_row.get("event_id")),
+            "event_id": event_id,
             "trace_id": match_result.get("audit", {}).get("trace_id", f"trace_{event_row.get('id')}"),
             "event_type": "structured",
             "event_title": event_row.get("title", "")[:100],
             "timestamp": datetime.now().isoformat(),
             "processor": self.consumer_name,
             "event_data": {
-                "event_id": int(event_row.get("id") or event_row.get("event_id")),
-                "news_id": int(event_row.get("news_id")),
+                "event_id": event_id,
+                "news_id": news_id,
                 "title": event_row.get("title", ""),
                 "summary": event_row.get("summary", ""),
                 "content": event_row.get("content", ""),
@@ -615,6 +620,8 @@ class ThemeProcessor:
                 "name": match_result.get("matched_theme_name", ""),
                 "id": match_result.get("matched_theme_id"),
             },
+            "run_id": event_row.get("run_id"),
+            "case_id": event_row.get("case_id"),
         }
 
     def _update_structured_stats(self, result: Dict[str, Any]) -> None:
