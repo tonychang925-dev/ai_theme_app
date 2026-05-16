@@ -1,0 +1,44 @@
+{
+  "run_id": "pm_e2e_20260515_001",
+  "trade_date": "2026-05-15",
+  "out_dir": "/Users/admin/Desktop/ai_theme_app/evaluate_service/output/pre_market_e2e/pm_e2e_20260515_001",
+  "sps_base_url": "http://127.0.0.1:8091",
+  "trace_counts": {
+    "expected_input_count": 100,
+    "news_raw_count": 100,
+    "news_event_count": 100,
+    "mapped_event_count": 96,
+    "event_subject_map_count": 418,
+    "event_theme_map_count": 418,
+    "review_queue_count": 0,
+    "decision_count": 0,
+    "pending_count": 0,
+    "dead_letter_count": 0
+  },
+  "evaluation": {
+    "total": 100,
+    "primary_hit_count": 69,
+    "related_hit_count": 15,
+    "theme_set_recall_at_3_count": 78,
+    "theme_set_recall_at_5_count": 78,
+    "primary_hit_rate": 0.69,
+    "related_hit_rate": 0.15,
+    "theme_set_recall@3": 0.78,
+    "theme_set_recall@5": 0.78,
+    "human_review_count": 0,
+    "unknown_count": 4,
+    "brief_major_event_count": 100,
+    "brief_theme_count": 58,
+    "brief_opportunity_count": 55,
+    "diagnostics": {
+      "source": "db",
+      "event_count": 100,
+      "theme_count": 58,
+      "last_rebuild_at": "2026-05-16T13:39:03.018340+00:00",
+      "opportunity_count": 55,
+      "review_event_count": 0,
+      "matched_event_count": 100,
+      "unknown_event_count": 0
+    }
+  }
+}

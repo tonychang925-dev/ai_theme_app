@@ -113,6 +113,7 @@ async def trace_run(
         "expected_input_count": len(expected),
         "news_raw_count": len({row["news_raw_id"] for row in rows}),
         "news_event_count": len({row["news_event_id"] for row in rows if row["news_event_id"] is not None}),
+        "mapped_event_count": len(mappings),
         "event_subject_map_count": sum(len(items) for items in mappings.values()),
         "event_theme_map_count": sum(len(items) for items in mappings.values()),
         "review_queue_count": len(reviews),

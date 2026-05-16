@@ -15,9 +15,12 @@ if __package__ in (None, ""):
     sys.path.append(str(Path(__file__).resolve().parents[3]))
     from evaluate_service.e2e.pre_market_brief.cleanup_e2e_run import cleanup_run
     from evaluate_service.e2e.pre_market_brief.common import (
+        db_connect_kwargs,
         default_output_dir,
         ensure_dir,
+        parse_trade_date,
         require_safe_db,
+        table_exists,
         write_json,
     )
     from evaluate_service.e2e.pre_market_brief.evaluate_pre_market_brief import evaluate
@@ -26,7 +29,15 @@ if __package__ in (None, ""):
     from evaluate_service.e2e.pre_market_brief.trace_pre_market_e2e_run import trace_run
 else:
     from .cleanup_e2e_run import cleanup_run
-    from .common import default_output_dir, ensure_dir, require_safe_db, write_json
+    from .common import (
+        db_connect_kwargs,
+        default_output_dir,
+        ensure_dir,
+        parse_trade_date,
+        require_safe_db,
+        table_exists,
+        write_json,
+    )
     from .evaluate_pre_market_brief import evaluate
     from .parse_test_cases import parse_test_cases_file
     from .replay_akshare_raw_news import replay_rows
@@ -101,6 +112,16 @@ async def run(args: argparse.Namespace) -> dict[str, Any]:
         )
         _append_run_metadata_to_summary(out_dir / "summary.md", args)
 
+    snapshot_copy: dict[str, Any] | None = None
+    if args.copy_snapshot_to_db:
+        snapshot_copy = await copy_pre_market_snapshot_to_db(
+            source_db=args.db_name,
+            target_db=args.copy_snapshot_to_db,
+            trade_date=args.trade_date,
+            run_id=args.run_id,
+        )
+        write_json(out_dir / "snapshot_copy_result.json", snapshot_copy)
+
     result = {
         "run_id": args.run_id,
         "trade_date": args.trade_date,
@@ -108,6 +129,7 @@ async def run(args: argparse.Namespace) -> dict[str, Any]:
         "sps_base_url": args.sps_base_url.rstrip("/"),
         "trace_counts": trace.get("counts", {}),
         "evaluation": evaluation,
+        "snapshot_copy": snapshot_copy,
     }
     write_json(out_dir / "run_result.json", result)
     return result
@@ -122,7 +144,149 @@ def _append_run_metadata_to_summary(path: Path, args: argparse.Namespace) -> Non
         "",
         f"- sps_base_url: {args.sps_base_url.rstrip('/')}",
     ]
+    if args.copy_snapshot_to_db:
+        lines.append(f"- copied_snapshot_to_db: {args.copy_snapshot_to_db}")
     path.write_text(path.read_text(encoding="utf-8").rstrip() + "\n" + "\n".join(lines) + "\n", encoding="utf-8")
+
+
+async def copy_pre_market_snapshot_to_db(
+    *,
+    source_db: str,
+    target_db: str,
+    trade_date: str,
+    run_id: str,
+) -> dict[str, Any]:
+    import asyncpg
+
+    parsed_trade_date = parse_trade_date(trade_date)
+    source_conn = await asyncpg.connect(**db_connect_kwargs(source_db))
+    target_conn = await asyncpg.connect(**db_connect_kwargs(target_db))
+    try:
+        if not await table_exists(source_conn, "pre_market_brief_snapshot"):
+            raise RuntimeError(f"source database {source_db} missing pre_market_brief_snapshot")
+        if not await table_exists(target_conn, "pre_market_brief_snapshot"):
+            raise RuntimeError(f"target database {target_db} missing pre_market_brief_snapshot")
+        await _ensure_target_snapshot_columns(target_conn)
+        conflict_target = await _snapshot_conflict_target(target_conn)
+
+        row = await source_conn.fetchrow(
+            """
+            SELECT
+              trade_date,
+              snapshot_version,
+              batch_id,
+              trace_id,
+              source_trace_id,
+              payload,
+              source_name,
+              status,
+              generated_at,
+              finalized_at,
+              updated_at
+            FROM pre_market_brief_snapshot
+            WHERE trade_date = $1::date
+              AND snapshot_version = 'pre_market_brief.v1'
+            ORDER BY updated_at DESC
+            LIMIT 1
+            """,
+            parsed_trade_date,
+        )
+        if not row:
+            raise RuntimeError(f"source snapshot missing: db={source_db}, trade_date={trade_date}")
+
+        payload = row["payload"]
+        if isinstance(payload, str):
+            payload_json = payload
+        else:
+            payload_json = json.dumps(payload or {}, ensure_ascii=False, default=str)
+        source_trace_id = f"e2e_copy:{run_id}:{row['source_trace_id'] or ''}"[:128]
+        result = await target_conn.execute(
+            f"""
+            INSERT INTO pre_market_brief_snapshot (
+              trade_date,
+              snapshot_version,
+              batch_id,
+              trace_id,
+              source_trace_id,
+              payload,
+              source_name,
+              status,
+              generated_at,
+              finalized_at,
+              updated_at
+            ) VALUES (
+              $1, $2, $3, $4, $5, $6::jsonb, $7, $8, $9, $10, NOW()
+            )
+            ON CONFLICT {conflict_target} DO UPDATE SET
+              snapshot_version = EXCLUDED.snapshot_version,
+              batch_id = EXCLUDED.batch_id,
+              trace_id = EXCLUDED.trace_id,
+              source_trace_id = EXCLUDED.source_trace_id,
+              payload = EXCLUDED.payload,
+              source_name = EXCLUDED.source_name,
+              status = EXCLUDED.status,
+              generated_at = EXCLUDED.generated_at,
+              finalized_at = EXCLUDED.finalized_at,
+              updated_at = NOW()
+            """,
+            row["trade_date"],
+            row["snapshot_version"],
+            f"e2e_copy:{run_id}",
+            f"e2e_copy:{run_id}:{row['trace_id'] or ''}",
+            source_trace_id,
+            payload_json,
+            "pre_market_brief_builder_e2e_copy",
+            row["status"] or "draft",
+            row["generated_at"],
+            row["finalized_at"],
+        )
+        copied = 0 if str(result).endswith(" 0") else 1
+        return {
+            "source_db": source_db,
+            "target_db": target_db,
+            "trade_date": trade_date,
+            "snapshot_version": row["snapshot_version"],
+            "status": row["status"] or "draft",
+            "source_trace_id": source_trace_id,
+            "copied": copied,
+        }
+    finally:
+        await source_conn.close()
+        await target_conn.close()
+
+
+async def _ensure_target_snapshot_columns(conn: Any) -> None:
+    await conn.execute(
+        """
+        ALTER TABLE pre_market_brief_snapshot
+          ADD COLUMN IF NOT EXISTS status varchar(20) NOT NULL DEFAULT 'draft',
+          ADD COLUMN IF NOT EXISTS generated_at timestamptz,
+          ADD COLUMN IF NOT EXISTS finalized_at timestamptz,
+          ADD COLUMN IF NOT EXISTS source_trace_id varchar(100),
+          ADD COLUMN IF NOT EXISTS updated_at timestamptz NOT NULL DEFAULT now()
+        """
+    )
+
+
+async def _snapshot_conflict_target(conn: Any) -> str:
+    columns = await conn.fetch(
+        """
+        SELECT a.attname
+        FROM pg_index i
+        JOIN pg_attribute a
+          ON a.attrelid = i.indrelid
+         AND a.attnum = ANY(i.indkey)
+        WHERE i.indrelid = 'pre_market_brief_snapshot'::regclass
+          AND i.indisprimary
+        ORDER BY array_position(i.indkey, a.attnum)
+        """
+    )
+    names = [str(row["attname"]) for row in columns]
+    if names == ["trade_date", "snapshot_version"]:
+        return "(trade_date, snapshot_version)"
+    if names == ["trade_date"]:
+        return "(trade_date)"
+    raise RuntimeError(f"unsupported pre_market_brief_snapshot primary key: {names}")
 
 
 async def _trace_once(args: argparse.Namespace, out_dir: Path, input_path: Path) -> dict[str, Any]:
@@ -146,9 +310,11 @@ async def _wait_for_trace(args: argparse.Namespace, out_dir: Path, input_path: P
         last_trace = await _trace_once(args, out_dir, input_path)
         counts = last_trace.get("counts", {})
         news_events = int(counts.get("news_event_count") or 0)
+        mapped_events = int(counts.get("mapped_event_count") or 0)
         mapped = int(counts.get("event_subject_map_count") or counts.get("event_theme_map_count") or 0)
         reviewed = int(counts.get("review_queue_count") or 0)
-        if expected and news_events >= max(1, int(expected * 0.95)) and (mapped + reviewed) > 0:
+        expected_ready = max(1, int(expected * 0.95))
+        if expected and news_events >= expected_ready and (mapped_events + reviewed) >= expected_ready and (mapped + reviewed) > 0:
             return last_trace
         await asyncio.sleep(args.wait_interval)
     return last_trace
@@ -204,6 +370,10 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--rebuild", action="store_true")
     parser.add_argument("--force-rebuild", action="store_true")
     parser.add_argument("--evaluate", action="store_true")
+    parser.add_argument(
+        "--copy-snapshot-to-db",
+        help="可选：将最终 pre_market_brief_snapshot 从 E2E 写库复制到指定数据库，例如 stock_data_test。",
+    )
     parser.add_argument("--allow-production", action="store_true")
     return parser
 

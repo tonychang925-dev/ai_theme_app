@@ -138,11 +138,30 @@ class PreMarketBriefBuilder:
             "source_name": "pre_market_brief_builder",
         }
         try:
-            await self._write_gateway.upsert_pre_market_brief_snapshot(doc, force=force)
+            affected = await self._write_gateway.upsert_pre_market_brief_snapshot(doc, force=force)
         except TypeError:
             if force:
                 raise
-            await self._write_gateway.upsert_pre_market_brief_snapshot(doc)
+            affected = await self._write_gateway.upsert_pre_market_brief_snapshot(doc)
+        get_snapshot = getattr(self._write_gateway, "get_pre_market_brief_snapshot", None)
+        if int(affected or 0) <= 0:
+            if not force and callable(get_snapshot):
+                existing = await get_snapshot(trade_date)
+                if str((existing or {}).get("status") or "").lower() == "final":
+                    return
+            raise RuntimeError(
+                "pre_market_brief_snapshot write skipped or failed: "
+                f"trade_date={trade_date.isoformat()}, "
+                f"snapshot_version={self.SNAPSHOT_VERSION}, force={force}"
+            )
+        if callable(get_snapshot):
+            saved = await get_snapshot(trade_date)
+            if not saved:
+                raise RuntimeError(
+                    "pre_market_brief_snapshot write verification failed: "
+                    f"trade_date={trade_date.isoformat()}, "
+                    f"snapshot_version={self.SNAPSHOT_VERSION}"
+                )
 
     def _sections_from_decisions(self, decisions: list[dict[str, Any]], limit: int) -> dict[str, list[dict[str, Any]]]:
         matched: list[dict[str, Any]] = []
