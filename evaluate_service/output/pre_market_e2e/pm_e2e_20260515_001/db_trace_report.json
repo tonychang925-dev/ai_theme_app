@@ -1,0 +1,2249 @@
+{
+  "run_id": "pm_e2e_20260515_001",
+  "trade_date": "2026-05-15",
+  "counts": {
+    "expected_input_count": 100,
+    "news_raw_count": 100,
+    "news_event_count": 100,
+    "mapped_event_count": 96,
+    "event_subject_map_count": 418,
+    "event_theme_map_count": 418,
+    "review_queue_count": 0,
+    "decision_count": 0,
+    "pending_count": 0,
+    "dead_letter_count": 0
+  },
+  "redis_streams": {
+    "decision_stream": "stream:events:decision",
+    "pending_stream": "stream:events:pending",
+    "dead_letter_stream": "stream:dead:letter",
+    "decision_count": 0,
+    "pending_count": 0,
+    "dead_letter_count": 0,
+    "decision_entries": [],
+    "pending_entries": [],
+    "dead_letter_entries": []
+  },
+  "rows": [
+    {
+      "case_id": "pm_case_0001",
+      "external_id": "pm_e2e_20260515_001:pm_case_0001",
+      "news_raw_id": 3097,
+      "news_event_id": 2763,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9040603",
+        "9035171",
+        "9054580"
+      ],
+      "related_theme_names": [
+        "人工智能+消费",
+        "AI大娱乐",
+        "ChatGPT 5"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0002",
+      "external_id": "pm_e2e_20260515_001:pm_case_0002",
+      "news_raw_id": 3098,
+      "news_event_id": 2764,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9040603",
+        "9035171",
+        "9035874",
+        "9047772"
+      ],
+      "related_theme_names": [
+        "人工智能+消费",
+        "AI大娱乐",
+        "机器人之眼（机器视觉）",
+        "影石相机"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0003",
+      "external_id": "pm_e2e_20260515_001:pm_case_0003",
+      "news_raw_id": 3099,
+      "news_event_id": 2765,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9014001",
+        "9034134"
+      ],
+      "related_theme_names": [
+        "人工智能硬件",
+        "中科院"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0004",
+      "external_id": "pm_e2e_20260515_001:pm_case_0004",
+      "news_raw_id": 3100,
+      "news_event_id": 2766,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9035171",
+        "9031543",
+        "9030805",
+        "9040603"
+      ],
+      "related_theme_names": [
+        "AI大娱乐",
+        "智能穿戴",
+        "华为三折叠屏手机",
+        "人工智能+消费"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0005",
+      "external_id": "pm_e2e_20260515_001:pm_case_0005",
+      "news_raw_id": 3101,
+      "news_event_id": 2767,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0006",
+      "external_id": "pm_e2e_20260515_001:pm_case_0006",
+      "news_raw_id": 3102,
+      "news_event_id": 2768,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9064628",
+        "9015387",
+        "9017184",
+        "9052032"
+      ],
+      "related_theme_names": [
+        "Micro LED CPO",
+        "显示面板",
+        "CXO医药外包",
+        "照明LED"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0007",
+      "external_id": "pm_e2e_20260515_001:pm_case_0007",
+      "news_raw_id": 3103,
+      "news_event_id": 2769,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9036559",
+        "9028660",
+        "9041842",
+        "9033890",
+        "9014648"
+      ],
+      "related_theme_names": [
+        "ASIC芯片",
+        "华为芯片链",
+        "央企AI+行动",
+        "科技类重组",
+        "信创"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0008",
+      "external_id": "pm_e2e_20260515_001:pm_case_0008",
+      "news_raw_id": 3104,
+      "news_event_id": 2770,
+      "decision_id": null,
+      "primary_subject_key": "9012065",
+      "primary_theme_name": "军工",
+      "related_subject_keys": [
+        "9032675"
+      ],
+      "related_theme_names": [
+        "金融IT"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0009",
+      "external_id": "pm_e2e_20260515_001:pm_case_0009",
+      "news_raw_id": 3105,
+      "news_event_id": 2771,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9040603",
+        "9035171",
+        "9034920"
+      ],
+      "related_theme_names": [
+        "人工智能+消费",
+        "AI大娱乐",
+        "东方头"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0010",
+      "external_id": "pm_e2e_20260515_001:pm_case_0010",
+      "news_raw_id": 3106,
+      "news_event_id": 2772,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9022889",
+        "9034920"
+      ],
+      "related_theme_names": [
+        "著名IP",
+        "东方头"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0011",
+      "external_id": "pm_e2e_20260515_001:pm_case_0011",
+      "news_raw_id": 3107,
+      "news_event_id": 2773,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9040603",
+        "9035171",
+        "9034920"
+      ],
+      "related_theme_names": [
+        "人工智能+消费",
+        "AI大娱乐",
+        "东方头"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0012",
+      "external_id": "pm_e2e_20260515_001:pm_case_0012",
+      "news_raw_id": 3108,
+      "news_event_id": 2774,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9055220",
+        "9035171",
+        "9040603",
+        "9056580",
+        "9028660"
+      ],
+      "related_theme_names": [
+        "华为AI推理",
+        "AI大娱乐",
+        "人工智能+消费",
+        "2025华为全联接大会",
+        "华为芯片链"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0013",
+      "external_id": "pm_e2e_20260515_001:pm_case_0013",
+      "news_raw_id": 3109,
+      "news_event_id": 2775,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9022064",
+        "9034920",
+        "9046378"
+      ],
+      "related_theme_names": [
+        "碳化硅",
+        "东方头",
+        "东盟自贸区"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0014",
+      "external_id": "pm_e2e_20260515_001:pm_case_0014",
+      "news_raw_id": 3110,
+      "news_event_id": 2776,
+      "decision_id": null,
+      "primary_subject_key": "9022942",
+      "primary_theme_name": "苹果MR",
+      "related_subject_keys": [
+        "9050371",
+        "9041906"
+      ],
+      "related_theme_names": [
+        "工业智能体",
+        "杭州七小龙"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0015",
+      "external_id": "pm_e2e_20260515_001:pm_case_0015",
+      "news_raw_id": 3111,
+      "news_event_id": 2777,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9022942"
+      ],
+      "related_theme_names": [
+        "苹果MR"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0016",
+      "external_id": "pm_e2e_20260515_001:pm_case_0016",
+      "news_raw_id": 3112,
+      "news_event_id": 2778,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9050371",
+        "9041842",
+        "9062517",
+        "9065423",
+        "9041906"
+      ],
+      "related_theme_names": [
+        "工业智能体",
+        "央企AI+行动",
+        "AI4S",
+        "Token经济（词元经济）",
+        "杭州七小龙"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0017",
+      "external_id": "pm_e2e_20260515_001:pm_case_0017",
+      "news_raw_id": 3113,
+      "news_event_id": 2779,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9030805",
+        "9011554",
+        "9022889",
+        "9034920",
+        "9056783"
+      ],
+      "related_theme_names": [
+        "华为三折叠屏手机",
+        "游戏",
+        "著名IP",
+        "东方头",
+        "甲骨文"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0018",
+      "external_id": "pm_e2e_20260515_001:pm_case_0018",
+      "news_raw_id": 3114,
+      "news_event_id": 2780,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9040603",
+        "9035171"
+      ],
+      "related_theme_names": [
+        "人工智能+消费",
+        "AI大娱乐"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0019",
+      "external_id": "pm_e2e_20260515_001:pm_case_0019",
+      "news_raw_id": 3115,
+      "news_event_id": 2781,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9040603",
+        "9058849",
+        "9035171",
+        "9012065"
+      ],
+      "related_theme_names": [
+        "人工智能+消费",
+        "高通",
+        "AI大娱乐",
+        "军工"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0020",
+      "external_id": "pm_e2e_20260515_001:pm_case_0020",
+      "news_raw_id": 3116,
+      "news_event_id": 2782,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9040603",
+        "9013587",
+        "9035171",
+        "9064086",
+        "9063443"
+      ],
+      "related_theme_names": [
+        "人工智能+消费",
+        "传媒",
+        "AI大娱乐",
+        "美伊冲突",
+        "春节五大消费"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0021",
+      "external_id": "pm_e2e_20260515_001:pm_case_0021",
+      "news_raw_id": 3117,
+      "news_event_id": 2783,
+      "decision_id": null,
+      "primary_subject_key": "9015387",
+      "primary_theme_name": "显示面板",
+      "related_subject_keys": [
+        "9030409",
+        "9052032",
+        "9064628"
+      ],
+      "related_theme_names": [
+        "AR眼镜",
+        "照明LED",
+        "Micro LED CPO"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0022",
+      "external_id": "pm_e2e_20260515_001:pm_case_0022",
+      "news_raw_id": 3118,
+      "news_event_id": 2784,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9028660",
+        "9058849",
+        "9036559",
+        "9033890",
+        "9014648"
+      ],
+      "related_theme_names": [
+        "华为芯片链",
+        "高通",
+        "ASIC芯片",
+        "科技类重组",
+        "信创"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0023",
+      "external_id": "pm_e2e_20260515_001:pm_case_0023",
+      "news_raw_id": 3119,
+      "news_event_id": 2787,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9060591",
+        "9030805",
+        "9046625",
+        "140"
+      ],
+      "related_theme_names": [
+        "2025年12月事件前瞻",
+        "华为三折叠屏手机",
+        "SHEIN/希音IPO",
+        "风电"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0024",
+      "external_id": "pm_e2e_20260515_001:pm_case_0024",
+      "news_raw_id": 3120,
+      "news_event_id": 2786,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9022889",
+        "9012065",
+        "9034920"
+      ],
+      "related_theme_names": [
+        "著名IP",
+        "军工",
+        "东方头"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0025",
+      "external_id": "pm_e2e_20260515_001:pm_case_0025",
+      "news_raw_id": 3121,
+      "news_event_id": 2788,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9035171",
+        "9011554",
+        "9040603",
+        "9022889",
+        "9065110"
+      ],
+      "related_theme_names": [
+        "AI大娱乐",
+        "游戏",
+        "人工智能+消费",
+        "著名IP",
+        "摘帽"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0026",
+      "external_id": "pm_e2e_20260515_001:pm_case_0026",
+      "news_raw_id": 3122,
+      "news_event_id": 2785,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0027",
+      "external_id": "pm_e2e_20260515_001:pm_case_0027",
+      "news_raw_id": 3123,
+      "news_event_id": 2792,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9040603",
+        "9035171",
+        "9033923"
+      ],
+      "related_theme_names": [
+        "人工智能+消费",
+        "AI大娱乐",
+        "深圳"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0028",
+      "external_id": "pm_e2e_20260515_001:pm_case_0028",
+      "news_raw_id": 3124,
+      "news_event_id": 2791,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9035171",
+        "9040603",
+        "9034920"
+      ],
+      "related_theme_names": [
+        "AI大娱乐",
+        "人工智能+消费",
+        "东方头"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0029",
+      "external_id": "pm_e2e_20260515_001:pm_case_0029",
+      "news_raw_id": 3125,
+      "news_event_id": 2790,
+      "decision_id": null,
+      "primary_subject_key": "9022942",
+      "primary_theme_name": "苹果MR",
+      "related_subject_keys": [
+        "9033923",
+        "9012065"
+      ],
+      "related_theme_names": [
+        "深圳",
+        "军工"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0030",
+      "external_id": "pm_e2e_20260515_001:pm_case_0030",
+      "news_raw_id": 3126,
+      "news_event_id": 2789,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0031",
+      "external_id": "pm_e2e_20260515_001:pm_case_0031",
+      "news_raw_id": 3127,
+      "news_event_id": 2793,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9014648",
+        "9058064",
+        "9065110"
+      ],
+      "related_theme_names": [
+        "信创",
+        "微软Win10停服",
+        "摘帽"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0032",
+      "external_id": "pm_e2e_20260515_001:pm_case_0032",
+      "news_raw_id": 3128,
+      "news_event_id": 2797,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9011782",
+        "9048607"
+      ],
+      "related_theme_names": [
+        "一带一路",
+        "中美芬太尼合作"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0033",
+      "external_id": "pm_e2e_20260515_001:pm_case_0033",
+      "news_raw_id": 3129,
+      "news_event_id": 2798,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0034",
+      "external_id": "pm_e2e_20260515_001:pm_case_0034",
+      "news_raw_id": 3130,
+      "news_event_id": 2796,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9035171",
+        "9040603",
+        "9034920"
+      ],
+      "related_theme_names": [
+        "AI大娱乐",
+        "人工智能+消费",
+        "东方头"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0035",
+      "external_id": "pm_e2e_20260515_001:pm_case_0035",
+      "news_raw_id": 3131,
+      "news_event_id": 2795,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9040800",
+        "9035171",
+        "9040603",
+        "9060591",
+        "9056167"
+      ],
+      "related_theme_names": [
+        "端侧AI",
+        "AI大娱乐",
+        "人工智能+消费",
+        "2025年12月事件前瞻",
+        "2025年9月事件前瞻"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0036",
+      "external_id": "pm_e2e_20260515_001:pm_case_0036",
+      "news_raw_id": 3132,
+      "news_event_id": 2794,
+      "decision_id": null,
+      "primary_subject_key": "9064166",
+      "primary_theme_name": "SpaceX",
+      "related_subject_keys": [
+        "9060949",
+        "9062206",
+        "9012065"
+      ],
+      "related_theme_names": [
+        "9060949",
+        "马斯克四大产业",
+        "军工"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0037",
+      "external_id": "pm_e2e_20260515_001:pm_case_0037",
+      "news_raw_id": 3133,
+      "news_event_id": 2803,
+      "decision_id": null,
+      "primary_subject_key": "9030207",
+      "primary_theme_name": "导弹",
+      "related_subject_keys": [
+        "9047612"
+      ],
+      "related_theme_names": [
+        "巴基斯坦军事"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0038",
+      "external_id": "pm_e2e_20260515_001:pm_case_0038",
+      "news_raw_id": 3134,
+      "news_event_id": 2800,
+      "decision_id": null,
+      "primary_subject_key": "9064166",
+      "primary_theme_name": "SpaceX",
+      "related_subject_keys": [
+        "9062206",
+        "9022889",
+        "9050084"
+      ],
+      "related_theme_names": [
+        "马斯克四大产业",
+        "著名IP",
+        "精酿啤酒"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0039",
+      "external_id": "pm_e2e_20260515_001:pm_case_0039",
+      "news_raw_id": 3135,
+      "news_event_id": 2799,
+      "decision_id": null,
+      "primary_subject_key": "9064166",
+      "primary_theme_name": "SpaceX",
+      "related_subject_keys": [
+        "9022889",
+        "9062206"
+      ],
+      "related_theme_names": [
+        "著名IP",
+        "马斯克四大产业"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0040",
+      "external_id": "pm_e2e_20260515_001:pm_case_0040",
+      "news_raw_id": 3136,
+      "news_event_id": 2802,
+      "decision_id": null,
+      "primary_subject_key": "9060949",
+      "primary_theme_name": "9060949",
+      "related_subject_keys": [
+        "9064166",
+        "9062206",
+        "9022889",
+        "9065110",
+        "9030805"
+      ],
+      "related_theme_names": [
+        "SpaceX",
+        "马斯克四大产业",
+        "著名IP",
+        "摘帽",
+        "华为三折叠屏手机"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0041",
+      "external_id": "pm_e2e_20260515_001:pm_case_0041",
+      "news_raw_id": 3137,
+      "news_event_id": 2801,
+      "decision_id": null,
+      "primary_subject_key": "9017950",
+      "primary_theme_name": "可控核聚变",
+      "related_subject_keys": [
+        "9011782",
+        "9065110",
+        "9048607",
+        "9059396"
+      ],
+      "related_theme_names": [
+        "一带一路",
+        "摘帽",
+        "中美芬太尼合作",
+        "美好中国"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0042",
+      "external_id": "pm_e2e_20260515_001:pm_case_0042",
+      "news_raw_id": 3138,
+      "news_event_id": 2804,
+      "decision_id": null,
+      "primary_subject_key": "9017950",
+      "primary_theme_name": "可控核聚变",
+      "related_subject_keys": [
+        "9017093"
+      ],
+      "related_theme_names": [
+        "核电"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0043",
+      "external_id": "pm_e2e_20260515_001:pm_case_0043",
+      "news_raw_id": 3139,
+      "news_event_id": 2806,
+      "decision_id": null,
+      "primary_subject_key": "9017950",
+      "primary_theme_name": "可控核聚变",
+      "related_subject_keys": [
+        "9017093",
+        "140"
+      ],
+      "related_theme_names": [
+        "核电",
+        "风电"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0044",
+      "external_id": "pm_e2e_20260515_001:pm_case_0044",
+      "news_raw_id": 3140,
+      "news_event_id": 2807,
+      "decision_id": null,
+      "primary_subject_key": "9054404",
+      "primary_theme_name": "A股全球第一",
+      "related_subject_keys": [
+        "9057205",
+        "9036888",
+        "9013587",
+        "9010818",
+        "9050371"
+      ],
+      "related_theme_names": [
+        "哪吒汽车重组",
+        "央企市值管理",
+        "传媒",
+        "国企改革",
+        "工业智能体"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0045",
+      "external_id": "pm_e2e_20260515_001:pm_case_0045",
+      "news_raw_id": 3141,
+      "news_event_id": 2805,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0046",
+      "external_id": "pm_e2e_20260515_001:pm_case_0046",
+      "news_raw_id": 3142,
+      "news_event_id": 2808,
+      "decision_id": null,
+      "primary_subject_key": "9017950",
+      "primary_theme_name": "可控核聚变",
+      "related_subject_keys": [
+        "9017093",
+        "9054404",
+        "140",
+        "9012396",
+        "9046036"
+      ],
+      "related_theme_names": [
+        "核电",
+        "A股全球第一",
+        "风电",
+        "新疆自贸区",
+        "中央汇金重仓股"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0047",
+      "external_id": "pm_e2e_20260515_001:pm_case_0047",
+      "news_raw_id": 3143,
+      "news_event_id": 2812,
+      "decision_id": null,
+      "primary_subject_key": "9017950",
+      "primary_theme_name": "可控核聚变",
+      "related_subject_keys": [
+        "9034544",
+        "9054404",
+        "9048607",
+        "9011782"
+      ],
+      "related_theme_names": [
+        "乌克兰重建",
+        "A股全球第一",
+        "中美芬太尼合作",
+        "一带一路"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0048",
+      "external_id": "pm_e2e_20260515_001:pm_case_0048",
+      "news_raw_id": 3144,
+      "news_event_id": 2813,
+      "decision_id": null,
+      "primary_subject_key": "9017950",
+      "primary_theme_name": "可控核聚变",
+      "related_subject_keys": [
+        "9017093",
+        "9058261",
+        "9054404",
+        "9043683",
+        "9034920"
+      ],
+      "related_theme_names": [
+        "核电",
+        "新凯来示波器",
+        "A股全球第一",
+        "柴油发电机组",
+        "东方头"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0049",
+      "external_id": "pm_e2e_20260515_001:pm_case_0049",
+      "news_raw_id": 3145,
+      "news_event_id": 2810,
+      "decision_id": null,
+      "primary_subject_key": "9036397",
+      "primary_theme_name": "首发经济大全",
+      "related_subject_keys": [
+        "9012584",
+        "9011782",
+        "9048607",
+        "9065110"
+      ],
+      "related_theme_names": [
+        "电力央企",
+        "一带一路",
+        "中美芬太尼合作",
+        "摘帽"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0050",
+      "external_id": "pm_e2e_20260515_001:pm_case_0050",
+      "news_raw_id": 3146,
+      "news_event_id": 2811,
+      "decision_id": null,
+      "primary_subject_key": "9017950",
+      "primary_theme_name": "可控核聚变",
+      "related_subject_keys": [
+        "9058261",
+        "9012413",
+        "9043683",
+        "9065110",
+        "9011782"
+      ],
+      "related_theme_names": [
+        "新凯来示波器",
+        "充电桩",
+        "柴油发电机组",
+        "摘帽",
+        "一带一路"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0051",
+      "external_id": "pm_e2e_20260515_001:pm_case_0051",
+      "news_raw_id": 3147,
+      "news_event_id": 2809,
+      "decision_id": null,
+      "primary_subject_key": "9059919",
+      "primary_theme_name": "对日制裁",
+      "related_subject_keys": [
+        "9035716",
+        "9048607",
+        "9011782",
+        "9053827"
+      ],
+      "related_theme_names": [
+        "出口管制",
+        "中美芬太尼合作",
+        "一带一路",
+        "雅江水电最新互动"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0052",
+      "external_id": "pm_e2e_20260515_001:pm_case_0052",
+      "news_raw_id": 3148,
+      "news_event_id": 2814,
+      "decision_id": null,
+      "primary_subject_key": "9059919",
+      "primary_theme_name": "对日制裁",
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0053",
+      "external_id": "pm_e2e_20260515_001:pm_case_0053",
+      "news_raw_id": 3149,
+      "news_event_id": 2817,
+      "decision_id": null,
+      "primary_subject_key": "9059919",
+      "primary_theme_name": "对日制裁",
+      "related_subject_keys": [
+        "9048607",
+        "9011782"
+      ],
+      "related_theme_names": [
+        "中美芬太尼合作",
+        "一带一路"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0054",
+      "external_id": "pm_e2e_20260515_001:pm_case_0054",
+      "news_raw_id": 3150,
+      "news_event_id": 2818,
+      "decision_id": null,
+      "primary_subject_key": "9059919",
+      "primary_theme_name": "对日制裁",
+      "related_subject_keys": [
+        "9011782",
+        "9048607"
+      ],
+      "related_theme_names": [
+        "一带一路",
+        "中美芬太尼合作"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0055",
+      "external_id": "pm_e2e_20260515_001:pm_case_0055",
+      "news_raw_id": 3151,
+      "news_event_id": 2815,
+      "decision_id": null,
+      "primary_subject_key": "9059919",
+      "primary_theme_name": "对日制裁",
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0056",
+      "external_id": "pm_e2e_20260515_001:pm_case_0056",
+      "news_raw_id": 3152,
+      "news_event_id": 2816,
+      "decision_id": null,
+      "primary_subject_key": "9059919",
+      "primary_theme_name": "对日制裁",
+      "related_subject_keys": [
+        "9048607",
+        "9011782"
+      ],
+      "related_theme_names": [
+        "中美芬太尼合作",
+        "一带一路"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0057",
+      "external_id": "pm_e2e_20260515_001:pm_case_0057",
+      "news_raw_id": 3153,
+      "news_event_id": 2820,
+      "decision_id": null,
+      "primary_subject_key": "9010367",
+      "primary_theme_name": "稀土永磁",
+      "related_subject_keys": [
+        "9011782",
+        "9043458",
+        "9048607"
+      ],
+      "related_theme_names": [
+        "一带一路",
+        "中国星际之门",
+        "中美芬太尼合作"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0058",
+      "external_id": "pm_e2e_20260515_001:pm_case_0058",
+      "news_raw_id": 3154,
+      "news_event_id": 2819,
+      "decision_id": null,
+      "primary_subject_key": "9035716",
+      "primary_theme_name": "出口管制",
+      "related_subject_keys": [
+        "9010367",
+        "9048607",
+        "9011782"
+      ],
+      "related_theme_names": [
+        "稀土永磁",
+        "中美芬太尼合作",
+        "一带一路"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0059",
+      "external_id": "pm_e2e_20260515_001:pm_case_0059",
+      "news_raw_id": 3155,
+      "news_event_id": 2823,
+      "decision_id": null,
+      "primary_subject_key": "9035716",
+      "primary_theme_name": "出口管制",
+      "related_subject_keys": [
+        "9010367",
+        "9011782",
+        "9022363",
+        "9048607",
+        "140"
+      ],
+      "related_theme_names": [
+        "稀土永磁",
+        "一带一路",
+        "上海自贸区",
+        "中美芬太尼合作",
+        "风电"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0060",
+      "external_id": "pm_e2e_20260515_001:pm_case_0060",
+      "news_raw_id": 3156,
+      "news_event_id": 2821,
+      "decision_id": null,
+      "primary_subject_key": "9010367",
+      "primary_theme_name": "稀土永磁",
+      "related_subject_keys": [
+        "9020631",
+        "9014270",
+        "9012065",
+        "9048752",
+        "9017397"
+      ],
+      "related_theme_names": [
+        "小米手机",
+        "新能源车",
+        "军工",
+        "麦角硫因",
+        "一体化压铸"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0061",
+      "external_id": "pm_e2e_20260515_001:pm_case_0061",
+      "news_raw_id": 3157,
+      "news_event_id": 2822,
+      "decision_id": null,
+      "primary_subject_key": "9048607",
+      "primary_theme_name": "中美芬太尼合作",
+      "related_subject_keys": [
+        "9010367",
+        "9063449",
+        "9012065",
+        "9011782",
+        "9042899"
+      ],
+      "related_theme_names": [
+        "稀土永磁",
+        "2026年2月事件前瞻",
+        "军工",
+        "一带一路",
+        "芬太尼"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0062",
+      "external_id": "pm_e2e_20260515_001:pm_case_0062",
+      "news_raw_id": 3158,
+      "news_event_id": 2825,
+      "decision_id": null,
+      "primary_subject_key": "9010367",
+      "primary_theme_name": "稀土永磁",
+      "related_subject_keys": [
+        "9032675"
+      ],
+      "related_theme_names": [
+        "金融IT"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0063",
+      "external_id": "pm_e2e_20260515_001:pm_case_0063",
+      "news_raw_id": 3159,
+      "news_event_id": 2824,
+      "decision_id": null,
+      "primary_subject_key": "9010367",
+      "primary_theme_name": "稀土永磁",
+      "related_subject_keys": [
+        "9012413",
+        "9053827",
+        "9034188",
+        "9060646"
+      ],
+      "related_theme_names": [
+        "充电桩",
+        "雅江水电最新互动",
+        "海上风电",
+        "努比亚手机"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0064",
+      "external_id": "pm_e2e_20260515_001:pm_case_0064",
+      "news_raw_id": 3160,
+      "news_event_id": 2826,
+      "decision_id": null,
+      "primary_subject_key": "9035716",
+      "primary_theme_name": "出口管制",
+      "related_subject_keys": [
+        "9043698",
+        "9010367",
+        "9059919",
+        "9012396",
+        "9054404"
+      ],
+      "related_theme_names": [
+        "深海经济",
+        "稀土永磁",
+        "对日制裁",
+        "新疆自贸区",
+        "A股全球第一"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0065",
+      "external_id": "pm_e2e_20260515_001:pm_case_0065",
+      "news_raw_id": 3161,
+      "news_event_id": 2828,
+      "decision_id": null,
+      "primary_subject_key": "9043698",
+      "primary_theme_name": "深海经济",
+      "related_subject_keys": [
+        "9044395",
+        "9012396",
+        "9034544",
+        "9011685",
+        "9054404"
+      ],
+      "related_theme_names": [
+        "海洋工程",
+        "新疆自贸区",
+        "乌克兰重建",
+        "旅游",
+        "A股全球第一"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0066",
+      "external_id": "pm_e2e_20260515_001:pm_case_0066",
+      "news_raw_id": 3162,
+      "news_event_id": 2827,
+      "decision_id": null,
+      "primary_subject_key": "9043698",
+      "primary_theme_name": "深海经济",
+      "related_subject_keys": [
+        "9032516",
+        "9026020",
+        "9065214"
+      ],
+      "related_theme_names": [
+        "中国资源循环集团",
+        "变压器",
+        "中东石油设施修复"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0067",
+      "external_id": "pm_e2e_20260515_001:pm_case_0067",
+      "news_raw_id": 3163,
+      "news_event_id": 2831,
+      "decision_id": null,
+      "primary_subject_key": "9043698",
+      "primary_theme_name": "深海经济",
+      "related_subject_keys": [
+        "9050371",
+        "9041906",
+        "9034859",
+        "9033923",
+        "9043089"
+      ],
+      "related_theme_names": [
+        "工业智能体",
+        "杭州七小龙",
+        "AI智能体",
+        "深圳",
+        "AI智能体Manus"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0068",
+      "external_id": "pm_e2e_20260515_001:pm_case_0068",
+      "news_raw_id": 3164,
+      "news_event_id": 2833,
+      "decision_id": null,
+      "primary_subject_key": "9043698",
+      "primary_theme_name": "深海经济",
+      "related_subject_keys": [
+        "9012396",
+        "9044395",
+        "9034188",
+        "140",
+        "9058770"
+      ],
+      "related_theme_names": [
+        "新疆自贸区",
+        "海洋工程",
+        "海上风电",
+        "风电",
+        "2025年11月事件前瞻"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0069",
+      "external_id": "pm_e2e_20260515_001:pm_case_0069",
+      "news_raw_id": 3165,
+      "news_event_id": 2832,
+      "decision_id": null,
+      "primary_subject_key": "9043698",
+      "primary_theme_name": "深海经济",
+      "related_subject_keys": [
+        "9044395",
+        "9012396",
+        "9034188",
+        "140",
+        "9058770"
+      ],
+      "related_theme_names": [
+        "海洋工程",
+        "新疆自贸区",
+        "海上风电",
+        "风电",
+        "2025年11月事件前瞻"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0070",
+      "external_id": "pm_e2e_20260515_001:pm_case_0070",
+      "news_raw_id": 3166,
+      "news_event_id": 2829,
+      "decision_id": null,
+      "primary_subject_key": "9018411",
+      "primary_theme_name": "光刻胶",
+      "related_subject_keys": [
+        "9045606",
+        "9018472",
+        "9048607",
+        "9011398",
+        "9011782"
+      ],
+      "related_theme_names": [
+        "泛亚洲贸易",
+        "光刻机",
+        "中美芬太尼合作",
+        "半导体设备",
+        "一带一路"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0071",
+      "external_id": "pm_e2e_20260515_001:pm_case_0071",
+      "news_raw_id": 3167,
+      "news_event_id": 2830,
+      "decision_id": null,
+      "primary_subject_key": "9018411",
+      "primary_theme_name": "光刻胶",
+      "related_subject_keys": [
+        "9011398",
+        "9017397",
+        "9014720"
+      ],
+      "related_theme_names": [
+        "半导体设备",
+        "一体化压铸",
+        "水利工程"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0072",
+      "external_id": "pm_e2e_20260515_001:pm_case_0072",
+      "news_raw_id": 3168,
+      "news_event_id": 2834,
+      "decision_id": null,
+      "primary_subject_key": "9018411",
+      "primary_theme_name": "光刻胶",
+      "related_subject_keys": [
+        "9011398",
+        "9017397",
+        "9014720"
+      ],
+      "related_theme_names": [
+        "半导体设备",
+        "一体化压铸",
+        "水利工程"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0073",
+      "external_id": "pm_e2e_20260515_001:pm_case_0073",
+      "news_raw_id": 3169,
+      "news_event_id": 2837,
+      "decision_id": null,
+      "primary_subject_key": "9018411",
+      "primary_theme_name": "光刻胶",
+      "related_subject_keys": [
+        "9011398",
+        "9034920"
+      ],
+      "related_theme_names": [
+        "半导体设备",
+        "东方头"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0074",
+      "external_id": "pm_e2e_20260515_001:pm_case_0074",
+      "news_raw_id": 3170,
+      "news_event_id": 2835,
+      "decision_id": null,
+      "primary_subject_key": "9018411",
+      "primary_theme_name": "光刻胶",
+      "related_subject_keys": [
+        "9011398",
+        "9013944",
+        "9011277",
+        "9061576",
+        "9017397"
+      ],
+      "related_theme_names": [
+        "半导体设备",
+        "半导体",
+        "芯片大全",
+        "ISO3级洁净室",
+        "一体化压铸"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0075",
+      "external_id": "pm_e2e_20260515_001:pm_case_0075",
+      "news_raw_id": 3171,
+      "news_event_id": 2838,
+      "decision_id": null,
+      "primary_subject_key": "9018144",
+      "primary_theme_name": "PCB印制电路板",
+      "related_subject_keys": [
+        "9064082",
+        "9035051",
+        "9056553",
+        "9028541",
+        "140"
+      ],
+      "related_theme_names": [
+        "电子布Low-DK",
+        "卫生巾",
+        "谷歌AI供货商",
+        "苹果手机",
+        "风电"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0076",
+      "external_id": "pm_e2e_20260515_001:pm_case_0076",
+      "news_raw_id": 3172,
+      "news_event_id": 2836,
+      "decision_id": null,
+      "primary_subject_key": "9018411",
+      "primary_theme_name": "光刻胶",
+      "related_subject_keys": [
+        "9011398",
+        "9013944",
+        "9034920"
+      ],
+      "related_theme_names": [
+        "半导体设备",
+        "半导体",
+        "东方头"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0077",
+      "external_id": "pm_e2e_20260515_001:pm_case_0077",
+      "news_raw_id": 3173,
+      "news_event_id": 2843,
+      "decision_id": null,
+      "primary_subject_key": "9018411",
+      "primary_theme_name": "光刻胶",
+      "related_subject_keys": [
+        "9011398",
+        "9013944",
+        "9018472",
+        "9034920",
+        "9011782"
+      ],
+      "related_theme_names": [
+        "半导体设备",
+        "半导体",
+        "光刻机",
+        "东方头",
+        "一带一路"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0078",
+      "external_id": "pm_e2e_20260515_001:pm_case_0078",
+      "news_raw_id": 3174,
+      "news_event_id": 2840,
+      "decision_id": null,
+      "primary_subject_key": "9016841",
+      "primary_theme_name": "证券",
+      "related_subject_keys": [
+        "9053827",
+        "9034920",
+        "9011782",
+        "9015002",
+        "9048607"
+      ],
+      "related_theme_names": [
+        "雅江水电最新互动",
+        "东方头",
+        "一带一路",
+        "出版商",
+        "中美芬太尼合作"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0079",
+      "external_id": "pm_e2e_20260515_001:pm_case_0079",
+      "news_raw_id": 3175,
+      "news_event_id": 2841,
+      "decision_id": null,
+      "primary_subject_key": "9061804",
+      "primary_theme_name": "航天发射场",
+      "related_subject_keys": [
+        "9019807",
+        "9060949",
+        "9050659"
+      ],
+      "related_theme_names": [
+        "卫星互联网",
+        "9060949",
+        "生猪"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0080",
+      "external_id": "pm_e2e_20260515_001:pm_case_0080",
+      "news_raw_id": 3176,
+      "news_event_id": 2839,
+      "decision_id": null,
+      "primary_subject_key": "9011782",
+      "primary_theme_name": "一带一路",
+      "related_subject_keys": [
+        "9048607"
+      ],
+      "related_theme_names": [
+        "中美芬太尼合作"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0081",
+      "external_id": "pm_e2e_20260515_001:pm_case_0081",
+      "news_raw_id": 3177,
+      "news_event_id": 2842,
+      "decision_id": null,
+      "primary_subject_key": "9062904",
+      "primary_theme_name": "航空发动机集团",
+      "related_subject_keys": [
+        "9046625"
+      ],
+      "related_theme_names": [
+        "SHEIN/希音IPO"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0082",
+      "external_id": "pm_e2e_20260515_001:pm_case_0082",
+      "news_raw_id": 3178,
+      "news_event_id": 2845,
+      "decision_id": null,
+      "primary_subject_key": "9064166",
+      "primary_theme_name": "SpaceX",
+      "related_subject_keys": [
+        "9019807",
+        "9012065",
+        "140"
+      ],
+      "related_theme_names": [
+        "卫星互联网",
+        "军工",
+        "风电"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0083",
+      "external_id": "pm_e2e_20260515_001:pm_case_0083",
+      "news_raw_id": 3179,
+      "news_event_id": 2848,
+      "decision_id": null,
+      "primary_subject_key": "9060949",
+      "primary_theme_name": "9060949",
+      "related_subject_keys": [
+        "9019807",
+        "9048607",
+        "9011782"
+      ],
+      "related_theme_names": [
+        "卫星互联网",
+        "中美芬太尼合作",
+        "一带一路"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0084",
+      "external_id": "pm_e2e_20260515_001:pm_case_0084",
+      "news_raw_id": 3180,
+      "news_event_id": 2846,
+      "decision_id": null,
+      "primary_subject_key": "9064166",
+      "primary_theme_name": "SpaceX",
+      "related_subject_keys": [
+        "9011782",
+        "9034920",
+        "9048607"
+      ],
+      "related_theme_names": [
+        "一带一路",
+        "东方头",
+        "中美芬太尼合作"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0085",
+      "external_id": "pm_e2e_20260515_001:pm_case_0085",
+      "news_raw_id": 3181,
+      "news_event_id": 2844,
+      "decision_id": null,
+      "primary_subject_key": "9063080",
+      "primary_theme_name": "太空旅游",
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0086",
+      "external_id": "pm_e2e_20260515_001:pm_case_0086",
+      "news_raw_id": 3182,
+      "news_event_id": 2847,
+      "decision_id": null,
+      "primary_subject_key": "9019807",
+      "primary_theme_name": "卫星互联网",
+      "related_subject_keys": [
+        "9049688",
+        "9041790",
+        "9014001",
+        "9037857",
+        "9057592"
+      ],
+      "related_theme_names": [
+        "算力排行榜",
+        "阿里云",
+        "人工智能硬件",
+        "数据中心",
+        "机器人训练场"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0087",
+      "external_id": "pm_e2e_20260515_001:pm_case_0087",
+      "news_raw_id": 3183,
+      "news_event_id": 2849,
+      "decision_id": null,
+      "primary_subject_key": "9062381",
+      "primary_theme_name": "海上火箭回收",
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0088",
+      "external_id": "pm_e2e_20260515_001:pm_case_0088",
+      "news_raw_id": 3184,
+      "news_event_id": 2853,
+      "decision_id": null,
+      "primary_subject_key": "9014001",
+      "primary_theme_name": "人工智能硬件",
+      "related_subject_keys": [
+        "9057299",
+        "9037857",
+        "9041968",
+        "9062339",
+        "9015778"
+      ],
+      "related_theme_names": [
+        "英特尔",
+        "数据中心",
+        "字节算力",
+        "2025年报预增",
+        "存储芯片"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0089",
+      "external_id": "pm_e2e_20260515_001:pm_case_0089",
+      "news_raw_id": 3185,
+      "news_event_id": 2850,
+      "decision_id": null,
+      "primary_subject_key": "9024880",
+      "primary_theme_name": "液冷数据中心",
+      "related_subject_keys": [
+        "9063938",
+        "9062339",
+        "9014001",
+        "9016139",
+        "9041790"
+      ],
+      "related_theme_names": [
+        "维谛技术",
+        "2025年报预增",
+        "人工智能硬件",
+        "服务器",
+        "阿里云"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0090",
+      "external_id": "pm_e2e_20260515_001:pm_case_0090",
+      "news_raw_id": 3186,
+      "news_event_id": 2851,
+      "decision_id": null,
+      "primary_subject_key": "9024880",
+      "primary_theme_name": "液冷数据中心",
+      "related_subject_keys": [
+        "9056553",
+        "9036559",
+        "9011609",
+        "9064082",
+        "9028660"
+      ],
+      "related_theme_names": [
+        "谷歌AI供货商",
+        "ASIC芯片",
+        "电源",
+        "电子布Low-DK",
+        "华为芯片链"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0091",
+      "external_id": "pm_e2e_20260515_001:pm_case_0091",
+      "news_raw_id": 3187,
+      "news_event_id": 2852,
+      "decision_id": null,
+      "primary_subject_key": "9024880",
+      "primary_theme_name": "液冷数据中心",
+      "related_subject_keys": [
+        "9014001",
+        "9037857",
+        "9049688",
+        "9030409",
+        "9036559"
+      ],
+      "related_theme_names": [
+        "人工智能硬件",
+        "数据中心",
+        "算力排行榜",
+        "AR眼镜",
+        "ASIC芯片"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0092",
+      "external_id": "pm_e2e_20260515_001:pm_case_0092",
+      "news_raw_id": 3188,
+      "news_event_id": 2854,
+      "decision_id": null,
+      "primary_subject_key": "9024880",
+      "primary_theme_name": "液冷数据中心",
+      "related_subject_keys": [
+        "9062339",
+        "9014001",
+        "9053147",
+        "9011277",
+        "9055826"
+      ],
+      "related_theme_names": [
+        "2025年报预增",
+        "人工智能硬件",
+        "英伟达算力",
+        "芯片大全",
+        "中昊芯英"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0093",
+      "external_id": "pm_e2e_20260515_001:pm_case_0093",
+      "news_raw_id": 3189,
+      "news_event_id": 2858,
+      "decision_id": null,
+      "primary_subject_key": "9024880",
+      "primary_theme_name": "液冷数据中心",
+      "related_subject_keys": [
+        "9034134",
+        "9014001",
+        "9016139",
+        "9063011",
+        "9021399"
+      ],
+      "related_theme_names": [
+        "中科院",
+        "人工智能硬件",
+        "服务器",
+        "CPU七大唯一",
+        "HBM存储"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0094",
+      "external_id": "pm_e2e_20260515_001:pm_case_0094",
+      "news_raw_id": 3190,
+      "news_event_id": 2855,
+      "decision_id": null,
+      "primary_subject_key": "9024880",
+      "primary_theme_name": "液冷数据中心",
+      "related_subject_keys": [
+        "9028660",
+        "9036559",
+        "9033890",
+        "9030409",
+        "9014648"
+      ],
+      "related_theme_names": [
+        "华为芯片链",
+        "ASIC芯片",
+        "科技类重组",
+        "AR眼镜",
+        "信创"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0095",
+      "external_id": "pm_e2e_20260515_001:pm_case_0095",
+      "news_raw_id": 3191,
+      "news_event_id": 2856,
+      "decision_id": null,
+      "primary_subject_key": "9057022",
+      "primary_theme_name": "英伟达MLCP",
+      "related_subject_keys": [
+        "9024880",
+        "9014001",
+        "9034134",
+        "9062904",
+        "9050084"
+      ],
+      "related_theme_names": [
+        "液冷数据中心",
+        "人工智能硬件",
+        "中科院",
+        "航空发动机集团",
+        "精酿啤酒"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0096",
+      "external_id": "pm_e2e_20260515_001:pm_case_0096",
+      "news_raw_id": 3192,
+      "news_event_id": 2857,
+      "decision_id": null,
+      "primary_subject_key": "9043089",
+      "primary_theme_name": "AI智能体Manus",
+      "related_subject_keys": [
+        "9034859",
+        "9039979",
+        "9064302",
+        "9057205",
+        "9050371"
+      ],
+      "related_theme_names": [
+        "AI智能体",
+        "DeepSeek",
+        "华为云码道",
+        "哪吒汽车重组",
+        "工业智能体"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0097",
+      "external_id": "pm_e2e_20260515_001:pm_case_0097",
+      "news_raw_id": 3193,
+      "news_event_id": 2859,
+      "decision_id": null,
+      "primary_subject_key": "9022415",
+      "primary_theme_name": "多模态大模型",
+      "related_subject_keys": [
+        "9034859",
+        "9043089",
+        "9022353",
+        "9064302",
+        "9058017"
+      ],
+      "related_theme_names": [
+        "AI智能体",
+        "AI智能体Manus",
+        "AI视频",
+        "华为云码道",
+        "关键软件"
+      ],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0098",
+      "external_id": "pm_e2e_20260515_001:pm_case_0098",
+      "news_raw_id": 3194,
+      "news_event_id": 2860,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0099",
+      "external_id": "pm_e2e_20260515_001:pm_case_0099",
+      "news_raw_id": 3195,
+      "news_event_id": 2861,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0100",
+      "external_id": "pm_e2e_20260515_001:pm_case_0100",
+      "news_raw_id": 3196,
+      "news_event_id": 2862,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "review_status": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    }
+  ]
+}

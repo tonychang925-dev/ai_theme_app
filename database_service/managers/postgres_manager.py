@@ -4106,8 +4106,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 result = await conn.execute(sql, *payload)
             return 0 if str(result).endswith(" 0") else 1
         except Exception as e:
-            logger.warning(f"写入 pre_market_brief_snapshot 失败（可能尚未迁移）: {e}")
-            return 0
+            logger.exception(f"写入 pre_market_brief_snapshot 失败: {e}")
+            raise
 
     async def finalize_pre_market_brief_snapshot(self, trade_date, force: bool = False) -> int:
         """冻结 pre_market_brief_snapshot；默认不重复覆盖 final。"""

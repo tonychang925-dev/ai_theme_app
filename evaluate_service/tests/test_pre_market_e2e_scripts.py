@@ -120,3 +120,27 @@ def test_pre_market_e2e_defaults_to_sps_without_legacy_bff():
     assert args.sps_base_url == "http://127.0.0.1:8090"
     assert not hasattr(args, "bff_base_url")
     assert not hasattr(args, "legacy_bff_base_url")
+
+
+def test_pre_market_e2e_snapshot_copy_is_explicit_opt_in():
+    default_args = build_parser().parse_args(
+        [
+            "--trade-date",
+            "2026-05-16",
+            "--run-id",
+            "pm_e2e",
+        ]
+    )
+    copy_args = build_parser().parse_args(
+        [
+            "--trade-date",
+            "2026-05-16",
+            "--run-id",
+            "pm_e2e",
+            "--copy-snapshot-to-db",
+            "stock_data_test",
+        ]
+    )
+
+    assert default_args.copy_snapshot_to_db is None
+    assert copy_args.copy_snapshot_to_db == "stock_data_test"

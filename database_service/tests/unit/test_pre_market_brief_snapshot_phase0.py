@@ -27,6 +27,11 @@ class _FakePool:
         return _FakeAcquire(self.conn)
 
 
+class _FailingPool(_FakePool):
+    def __init__(self):
+        self.conn = _FailingConn()
+
+
 class _FakeConn:
     def __init__(self):
         self.rows: dict[date, dict] = {}
@@ -85,9 +90,20 @@ class _FakeConn:
         return self.rows.get(trade_date)
 
 
+class _FailingConn:
+    async def execute(self, sql, *args):
+        raise RuntimeError("missing source_trace_id")
+
+
 def _manager() -> PostgresDatabaseManager:
     manager = object.__new__(PostgresDatabaseManager)
     manager.pool = _FakePool()
+    return manager
+
+
+def _failing_manager() -> PostgresDatabaseManager:
+    manager = object.__new__(PostgresDatabaseManager)
+    manager.pool = _FailingPool()
     return manager
 
 
@@ -107,6 +123,16 @@ async def test_draft_rebuild_overwrites_existing_payload_keys():
     assert affected == 1
     assert row["payload"] == {"status": "draft", "a": 2, "b": 3}
     assert row["snapshot_version"] == "v2"
+
+
+@pytest.mark.asyncio
+async def test_upsert_pre_market_brief_snapshot_raises_on_database_error():
+    manager = _failing_manager()
+
+    with pytest.raises(RuntimeError, match="missing source_trace_id"):
+        await manager.upsert_pre_market_brief_snapshot(
+            {"trade_date": date(2026, 5, 16), "snapshot_version": "v1", "payload": {"a": 1}}
+        )
 
 
 @pytest.mark.asyncio

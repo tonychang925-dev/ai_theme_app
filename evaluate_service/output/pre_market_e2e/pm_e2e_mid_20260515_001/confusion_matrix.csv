@@ -1,0 +1,21 @@
+case_id,gold_theme_name,primary_theme_name,related_theme_names,status
+pm_case_0001,AI/AR眼镜,AR眼镜,人工智能+消费|AI大娱乐|ChatGPT 5,exact_or_alias_primary
+pm_case_0002,AI/AR眼镜,AR眼镜,人工智能+消费|AI大娱乐|机器人之眼（机器视觉）|影石相机,exact_or_alias_primary
+pm_case_0003,AI/AR眼镜,AR眼镜,人工智能硬件|中科院,exact_or_alias_primary
+pm_case_0004,AI/AR眼镜,AR眼镜,AI大娱乐|智能穿戴|华为三折叠屏手机|人工智能+消费,exact_or_alias_primary
+pm_case_0005,AI/AR眼镜,AR眼镜,,exact_or_alias_primary
+pm_case_0006,AI/AR眼镜,AR眼镜,Micro LED CPO|显示面板|CXO医药外包|照明LED,exact_or_alias_primary
+pm_case_0007,AI/AR眼镜,AR眼镜,ASIC芯片|华为芯片链|央企AI+行动|科技类重组|信创,exact_or_alias_primary
+pm_case_0008,AI/AR眼镜,军工,金融IT,unknown
+pm_case_0009,AI/AR眼镜,AR眼镜,人工智能+消费|AI大娱乐|东方头,exact_or_alias_primary
+pm_case_0010,AI/AR眼镜,AR眼镜,著名IP|东方头,exact_or_alias_primary
+pm_case_0011,AI/AR眼镜,AR眼镜,人工智能+消费|AI大娱乐|东方头,exact_or_alias_primary
+pm_case_0012,AI/AR眼镜,AR眼镜,华为AI推理|AI大娱乐|人工智能+消费|2025华为全联接大会|华为芯片链,exact_or_alias_primary
+pm_case_0013,AI/AR眼镜,AR眼镜,碳化硅|东方头|东盟自贸区,exact_or_alias_primary
+pm_case_0014,AI/AR眼镜,苹果MR,工业智能体|杭州七小龙,unknown
+pm_case_0015,AI/AR眼镜,AR眼镜,苹果MR,exact_or_alias_primary
+pm_case_0016,AI/AR眼镜,AR眼镜,工业智能体|央企AI+行动|AI4S|Token经济（词元经济）|杭州七小龙,exact_or_alias_primary
+pm_case_0017,AI/AR眼镜,AR眼镜,华为三折叠屏手机|游戏|著名IP|东方头|甲骨文,exact_or_alias_primary
+pm_case_0018,AI/AR眼镜,AR眼镜,人工智能+消费|AI大娱乐,exact_or_alias_primary
+pm_case_0019,AI/AR眼镜,AR眼镜,人工智能+消费|高通|AI大娱乐|军工,exact_or_alias_primary
+pm_case_0020,AI/AR眼镜,,,unknown

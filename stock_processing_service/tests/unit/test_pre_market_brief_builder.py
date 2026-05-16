@@ -28,6 +28,17 @@ class _WriteGateway:
         return 1
 
 
+class _ZeroWriteGateway(_WriteGateway):
+    async def upsert_pre_market_brief_snapshot(self, doc, force=False):
+        self.docs.append({"doc": doc, "force": force})
+        return 0
+
+
+class _UnverifiedWriteGateway(_WriteGateway):
+    async def get_pre_market_brief_snapshot(self, trade_date):
+        return None
+
+
 class _SubjectReadGateway(_ReadGateway):
     def __init__(self, subject_events=None, fallback_matched=None, review=None):
         super().__init__(matched=fallback_matched, review=review)
@@ -117,6 +128,42 @@ async def test_pre_market_brief_builder_aggregates_db_events_and_writes_snapshot
     assert payload["diagnostics"]["matched_event_count"] == 2
     assert len(write.docs) == 1
     assert write.docs[0]["doc"]["payload"] == payload
+
+
+@pytest.mark.asyncio
+async def test_pre_market_brief_builder_fails_when_snapshot_write_affects_zero_rows():
+    read = _ReadGateway(
+        matched=[
+            {
+                "item_id": "event:101:theme-a",
+                "title": "卫星互联网事件",
+                "theme_subject_keys": ["theme-a"],
+                "theme_names": ["卫星互联网"],
+            }
+        ]
+    )
+    builder = PreMarketBriefBuilder(read_gateway=read, write_gateway=_ZeroWriteGateway())
+
+    with pytest.raises(RuntimeError, match="write skipped or failed"):
+        await builder.rebuild(date(2026, 5, 16), dry_run=False)
+
+
+@pytest.mark.asyncio
+async def test_pre_market_brief_builder_fails_when_snapshot_write_cannot_be_read_back():
+    read = _ReadGateway(
+        matched=[
+            {
+                "item_id": "event:101:theme-a",
+                "title": "卫星互联网事件",
+                "theme_subject_keys": ["theme-a"],
+                "theme_names": ["卫星互联网"],
+            }
+        ]
+    )
+    builder = PreMarketBriefBuilder(read_gateway=read, write_gateway=_UnverifiedWriteGateway())
+
+    with pytest.raises(RuntimeError, match="write verification failed"):
+        await builder.rebuild(date(2026, 5, 16), dry_run=False)
 
 
 @pytest.mark.asyncio
