@@ -113,6 +113,7 @@ async def trace_run(
         "expected_input_count": len(expected),
         "news_raw_count": len({row["news_raw_id"] for row in rows}),
         "news_event_count": len({row["news_event_id"] for row in rows if row["news_event_id"] is not None}),
+        "event_subject_map_count": sum(len(items) for items in mappings.values()),
         "event_theme_map_count": sum(len(items) for items in mappings.values()),
         "review_queue_count": len(reviews),
         "decision_count": redis_trace["decision_count"],
@@ -133,7 +134,36 @@ def _expected_cases(input_path: Path) -> dict[str, dict[str, Any]]:
 
 
 async def _fetch_mappings(conn: Any, event_ids: list[int]) -> dict[int, list[dict[str, Any]]]:
-    if not event_ids or not await table_exists(conn, "event_theme_map"):
+    if not event_ids:
+        return {}
+    if await table_exists(conn, "event_subject_map"):
+        has_legacy_reason = await column_exists(conn, "event_subject_map", "reason")
+        reason_expr = "COALESCE(match_reason, reason)" if has_legacy_reason else "match_reason"
+        rows = await conn.fetch(
+            f"""
+            SELECT
+              event_id,
+              subject_key,
+              COALESCE(NULLIF(subject_name, ''), subject_key) AS theme_name,
+              confidence,
+              {reason_expr} AS match_reason,
+              relation_type,
+              created_at
+            FROM event_subject_map
+            WHERE event_id = ANY($1::int[])
+            ORDER BY event_id,
+                     CASE relation_type WHEN 'primary' THEN 0 ELSE 1 END,
+                     confidence DESC NULLS LAST,
+                     created_at ASC
+            """,
+            event_ids,
+        )
+        result: dict[int, list[dict[str, Any]]] = {}
+        for row in rows:
+            result.setdefault(int(row["event_id"]), []).append(dict(row))
+        return result
+
+    if not await table_exists(conn, "event_theme_map"):
         return {}
     has_match_reason = await column_exists(conn, "event_theme_map", "match_reason")
     match_reason_expr = "etm.match_reason" if has_match_reason else "NULL::text AS match_reason"

@@ -988,6 +988,64 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         except Exception as e:
             logger.error(f"幂等写入事件-主题关联失败 event={event_id}, theme={theme_id}: {e}")
             raise
+
+    async def upsert_event_subject_relation(
+        self,
+        event_id: int,
+        subject_key: str,
+        **kwargs,
+    ) -> Dict[str, Any]:
+        """幂等写入事件-JYHF题材关联，主键使用 subject_key，不依赖 theme_master。"""
+        subject_key = str(subject_key or "").strip()
+        if not subject_key:
+            raise ValueError("subject_key 不能为空")
+        try:
+            async with self.pool.acquire() as conn:
+                row = await conn.fetchrow(
+                    """
+                    INSERT INTO event_subject_map (
+                        event_id, news_id, subject_key, subject_name, confidence,
+                        relation_type, match_reason, evidence_json, source,
+                        source_trace_id, run_id
+                    )
+                    VALUES ($1, $2, $3, $4, $5, $6, $7, $8::jsonb, $9, $10, $11)
+                    ON CONFLICT (event_id, subject_key, relation_type) DO UPDATE SET
+                        news_id = COALESCE(EXCLUDED.news_id, event_subject_map.news_id),
+                        subject_name = COALESCE(EXCLUDED.subject_name, event_subject_map.subject_name),
+                        confidence = EXCLUDED.confidence,
+                        match_reason = EXCLUDED.match_reason,
+                        evidence_json = EXCLUDED.evidence_json,
+                        source = EXCLUDED.source,
+                        source_trace_id = COALESCE(EXCLUDED.source_trace_id, event_subject_map.source_trace_id),
+                        run_id = COALESCE(EXCLUDED.run_id, event_subject_map.run_id),
+                        updated_at = now()
+                    RETURNING id, event_id, news_id, subject_key, subject_name, confidence,
+                              relation_type, match_reason, evidence_json, source,
+                              source_trace_id, run_id, created_at, updated_at
+                    """,
+                    int(event_id),
+                    kwargs.get("news_id"),
+                    subject_key,
+                    kwargs.get("subject_name") or kwargs.get("theme_name"),
+                    kwargs.get("confidence", 0.8),
+                    kwargs.get("relation_type", "primary"),
+                    kwargs.get("match_reason") or kwargs.get("reason", ""),
+                    json.dumps(kwargs.get("evidence_json") or kwargs.get("evidence") or {}, ensure_ascii=False),
+                    kwargs.get("source") or kwargs.get("source_channel", "structured_theme_match"),
+                    kwargs.get("source_trace_id"),
+                    kwargs.get("run_id"),
+                )
+                if not row:
+                    raise RuntimeError("事件-JYHF题材关联写入失败")
+                return dict(row)
+        except Exception as e:
+            logger.error(
+                "幂等写入事件-JYHF题材关联失败 event=%s subject_key=%s: %s",
+                event_id,
+                subject_key,
+                e,
+            )
+            raise
     
     # ========== 事件管理 ==========
     
@@ -1212,15 +1270,6 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                         SELECT DISTINCT source_id::text AS subject_key, category_name AS subject_name
                         FROM financial_categories
                         WHERE source_system = 'jyhf' AND source_id IS NOT NULL
-                    ),
-                    tm AS (
-                        SELECT DISTINCT ON (source_id::text)
-                            source_id::text AS subject_key,
-                            id AS theme_master_id,
-                            name AS subject_name
-                        FROM theme_master
-                        WHERE source_system = 'jyhf' AND source_id IS NOT NULL
-                        ORDER BY source_id::text, id ASC
                     )
                     , tpe AS (
                         SELECT DISTINCT ON (subject_key)
@@ -1231,8 +1280,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     )
                     SELECT
                         t.subject_key,
-                        tm.theme_master_id,
-                        COALESCE(fc.subject_name, tm.subject_name, t.concept, t.subject_key) AS subject_name,
+                        NULL::integer AS theme_master_id,
+                        COALESCE(fc.subject_name, t.concept, t.subject_key) AS subject_name,
                         t.concept,
                         t.semantic_type,
                         t.strategy_type,
@@ -1249,7 +1298,6 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                         COALESCE(tpe.rerank_text, '') AS rerank_text
                     FROM theme_gate_profile t
                     LEFT JOIN fc ON fc.subject_key = t.subject_key
-                    LEFT JOIN tm ON tm.subject_key = t.subject_key
                     LEFT JOIN tpe ON tpe.subject_key = t.subject_key
                     ORDER BY t.subject_key
                 """)
@@ -6346,29 +6394,27 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         return [dict(r) for r in rows]
 
     async def get_intel_news_events(self, feed_date: date) -> List[Dict[str, Any]]:
-        """情报台旧链源：news_event + event_theme_map + theme_master + news_raw。"""
+        """盘前必读事件源：news_event + event_subject_map + news_raw，不依赖 theme_master。"""
         sql = """
         WITH mapped AS (
-            SELECT DISTINCT ON (ne.id, COALESCE(NULLIF(tm.source_id, ''), 'theme:' || tm.id::text))
+            SELECT DISTINCT ON (ne.id, esm.subject_key)
                 ne.id AS event_id,
-                COALESCE(NULLIF(tm.source_id, ''), 'theme:' || tm.id::text) AS subject_key,
-                tm.name AS theme_name,
-                COALESCE(ne.created_at, etm.created_at, nr.created_at, ne.event_time, nr.publish_date::timestamp) AS occurred_at,
+                esm.subject_key AS subject_key,
+                COALESCE(NULLIF(esm.subject_name, ''), esm.subject_key) AS theme_name,
+                COALESCE(ne.created_at, esm.created_at, nr.created_at, nr.publish_date::timestamp) AS occurred_at,
                 COALESCE(NULLIF(nr.title, ''), NULLIF(ne.summary, ''), ne.event_type, ('事件#' || ne.id::text)) AS title,
                 COALESCE(ne.summary, nr.content, '') AS summary,
-                COALESCE(etm.confidence, ne.confidence) AS confidence,
-                ne.severity_score AS impact_score
+                COALESCE(esm.confidence, ne.confidence) AS confidence,
+                0::double precision AS impact_score
             FROM news_event ne
             LEFT JOIN news_raw nr ON nr.id = ne.news_id
-            JOIN event_theme_map etm ON etm.event_id = ne.id
-            JOIN theme_master tm ON tm.id = etm.theme_id
+            JOIN event_subject_map esm ON esm.event_id = ne.id
             WHERE (
-                ne.event_time::date = $1::date
-                OR ne.created_at::date = $1::date
+                ne.created_at::date = $1::date
                 OR nr.publish_date::date = $1::date
             )
-            ORDER BY ne.id, COALESCE(NULLIF(tm.source_id, ''), 'theme:' || tm.id::text),
-                     etm.confidence DESC NULLS LAST, etm.created_at DESC NULLS LAST
+            ORDER BY ne.id, esm.subject_key,
+                     esm.confidence DESC NULLS LAST, esm.created_at DESC NULLS LAST
         )
         SELECT
             ('event:' || event_id::text || ':' || subject_key) AS item_id,
@@ -6382,14 +6428,139 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             ARRAY[]::text[] AS stock_names,
             confidence,
             impact_score,
-            'event_theme_map'::text AS source_type,
+            'event_subject_map'::text AS source_type,
             'realtime_news'::text AS source_channel
         FROM mapped
         ORDER BY occurred_at DESC NULLS LAST, event_id DESC, subject_key
         """
         async with self.pool.acquire() as conn:
+            exists = await conn.fetchval("SELECT to_regclass('public.event_subject_map')::text")
+            if not exists:
+                return []
             rows = await conn.fetch(sql, feed_date)
         return [dict(r) for r in rows]
+
+    async def get_event_subject_mappings_by_trade_date(
+        self,
+        trade_date: date,
+        source: Optional[str] = None,
+        limit: int = 500,
+    ) -> List[Dict[str, Any]]:
+        """读取指定交易日的事件-subject_key 映射，不依赖 theme_master。"""
+        sql = """
+        SELECT
+            esm.id,
+            esm.event_id,
+            esm.news_id,
+            esm.subject_key,
+            esm.subject_name,
+            esm.confidence,
+            esm.relation_type,
+            esm.match_reason,
+            esm.evidence_json,
+            esm.source,
+            esm.source_trace_id,
+            esm.run_id,
+            esm.created_at,
+            esm.updated_at,
+            COALESCE(ne.created_at, esm.created_at, nr.created_at, nr.publish_date::timestamp) AS occurred_at,
+            COALESCE(NULLIF(nr.title, ''), NULLIF(ne.summary, ''), ne.event_type, ('事件#' || ne.id::text)) AS title,
+            COALESCE(ne.summary, nr.content, '') AS summary
+        FROM event_subject_map esm
+        JOIN news_event ne ON ne.id = esm.event_id
+        LEFT JOIN news_raw nr ON nr.id = COALESCE(esm.news_id, ne.news_id)
+        WHERE (
+            ne.created_at::date = $1::date
+            OR nr.publish_date::date = $1::date
+        )
+          AND ($2::varchar IS NULL OR esm.source = $2::varchar)
+        ORDER BY COALESCE(ne.created_at, esm.created_at, nr.created_at, nr.publish_date::timestamp) DESC NULLS LAST,
+                 esm.event_id DESC,
+                 CASE WHEN esm.relation_type = 'primary' THEN 0 ELSE 1 END,
+                 esm.confidence DESC NULLS LAST
+        LIMIT $3
+        """
+        async with self.pool.acquire() as conn:
+            exists = await conn.fetchval("SELECT to_regclass('public.event_subject_map')::text")
+            if not exists:
+                return []
+            rows = await conn.fetch(sql, trade_date, source, int(limit or 500))
+        return [dict(r) for r in rows]
+
+    async def get_event_subject_mappings_by_event_ids(self, event_ids: List[int]) -> List[Dict[str, Any]]:
+        """按事件 ID 读取事件-subject_key 映射。"""
+        if not event_ids:
+            return []
+        sql = """
+        SELECT
+            id,
+            event_id,
+            news_id,
+            subject_key,
+            subject_name,
+            confidence,
+            relation_type,
+            match_reason,
+            evidence_json,
+            source,
+            source_trace_id,
+            run_id,
+            created_at,
+            updated_at
+        FROM event_subject_map
+        WHERE event_id = ANY($1::bigint[])
+        ORDER BY event_id,
+                 CASE WHEN relation_type = 'primary' THEN 0 ELSE 1 END,
+                 confidence DESC NULLS LAST,
+                 updated_at DESC
+        """
+        ids = [int(event_id) for event_id in event_ids if event_id is not None]
+        async with self.pool.acquire() as conn:
+            exists = await conn.fetchval("SELECT to_regclass('public.event_subject_map')::text")
+            if not exists:
+                return []
+            rows = await conn.fetch(sql, ids)
+        return [dict(r) for r in rows]
+
+    async def get_pre_market_subject_events(
+        self,
+        trade_date: date,
+        source: Optional[str] = None,
+        limit: int = 500,
+    ) -> List[Dict[str, Any]]:
+        """盘前必读 subject_key 事件行，供报告层直接聚合。"""
+        mappings = await self.get_event_subject_mappings_by_trade_date(
+            trade_date=trade_date,
+            source=source,
+            limit=limit,
+        )
+        rows: List[Dict[str, Any]] = []
+        for item in mappings:
+            subject_key = str(item.get("subject_key") or "")
+            subject_name = item.get("subject_name") or subject_key
+            rows.append(
+                {
+                    "event_id": item.get("event_id"),
+                    "item_id": f"event:{item.get('event_id')}:{subject_key}",
+                    "item_type": "event",
+                    "occurred_at": item.get("occurred_at") or item.get("created_at"),
+                    "title": item.get("title") or "",
+                    "summary": item.get("summary") or "",
+                    "subject_key": subject_key,
+                    "theme_name": subject_name,
+                    "theme_subject_keys": [subject_key] if subject_key else [],
+                    "theme_names": [subject_name] if subject_name else [],
+                    "stock_ids": [],
+                    "stock_names": [],
+                    "confidence": item.get("confidence"),
+                    "impact_score": 0.0,
+                    "source_type": "event_subject_map",
+                    "source_channel": item.get("source") or "structured_theme_match",
+                    "relation_type": item.get("relation_type"),
+                    "reason": item.get("match_reason") or "",
+                }
+            )
+        return rows
 
     async def create_user(self, email: str, password_hash: str, role: str = "user") -> Dict[str, Any]:
         """创建用户，首个用户自动为 admin。"""

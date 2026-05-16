@@ -32,6 +32,7 @@
     "feedback-command": 6
   },
   "promptQueueUseCount": 231,
+  "showExpandedTodos": true,
   "cachedGrowthBookFeatures": {
     "tengu_trace_lantern": false,
     "tengu_coral_beacon": false,

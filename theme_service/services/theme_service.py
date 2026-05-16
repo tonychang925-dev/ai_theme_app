@@ -160,18 +160,6 @@ class ThemeService:
         request = self.build_theme_match_request(event_row)
         envelope = await self.theme_match_engine.match_event(request)
 
-        if (
-            envelope.decision == "MATCH"
-            and self.database_gateway is not None
-            and envelope.matched_subject_key
-            and envelope.matched_theme_id is None
-        ):
-            theme_id = await self.database_gateway.resolve_theme_master_id_by_source_key(
-                "jyhf",
-                envelope.matched_subject_key,
-            )
-            envelope.matched_theme_id = theme_id
-
         return envelope.to_dict()
     
     @property

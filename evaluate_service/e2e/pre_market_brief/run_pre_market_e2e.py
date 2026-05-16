@@ -138,7 +138,7 @@ async def _wait_for_trace(args: argparse.Namespace, out_dir: Path, input_path: P
         last_trace = await _trace_once(args, out_dir, input_path)
         counts = last_trace.get("counts", {})
         news_events = int(counts.get("news_event_count") or 0)
-        mapped = int(counts.get("event_theme_map_count") or 0)
+        mapped = int(counts.get("event_subject_map_count") or counts.get("event_theme_map_count") or 0)
         reviewed = int(counts.get("review_queue_count") or 0)
         if expected and news_events >= max(1, int(expected * 0.95)) and (mapped + reviewed) > 0:
             return last_trace

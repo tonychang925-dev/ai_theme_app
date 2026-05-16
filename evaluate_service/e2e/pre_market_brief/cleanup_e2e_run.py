@@ -63,6 +63,7 @@ async def cleanup_run(
             ]
 
         counts = {
+            "event_subject_map": 0,
             "event_theme_map": 0,
             "event_review_queue": 0,
             "news_event": len(event_ids),
@@ -80,6 +81,9 @@ async def cleanup_run(
             }
 
         async with conn.transaction():
+            if event_ids and await table_exists(conn, "event_subject_map"):
+                result = await conn.execute("DELETE FROM event_subject_map WHERE event_id = ANY($1::int[])", event_ids)
+                counts["event_subject_map"] = _affected(result)
             if event_ids and await table_exists(conn, "event_theme_map"):
                 result = await conn.execute("DELETE FROM event_theme_map WHERE event_id = ANY($1::int[])", event_ids)
                 counts["event_theme_map"] = _affected(result)

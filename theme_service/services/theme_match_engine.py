@@ -895,6 +895,58 @@ class ThemeMatchEngine:
             )
         return out
 
+    def _build_related_matches(
+        self,
+        candidates: List[Candidate],
+        profile_map: Dict[str, ThemeProfile],
+        primary_subject_key: str,
+    ) -> List[Dict[str, Any]]:
+        if os.getenv("THEME_MATCH_ENABLE_MULTI_MATCH", "false").lower() not in {"1", "true", "yes", "on"}:
+            return []
+        max_related = max(0, int(os.getenv("THEME_MATCH_RELATED_MAX", "5") or 5))
+        min_conf = float(os.getenv("THEME_MATCH_RELATED_MIN_CONF", "0.55") or 0.55)
+        require_evidence = os.getenv("THEME_MATCH_RELATED_REQUIRE_EVIDENCE", "true").lower() in {
+            "1",
+            "true",
+            "yes",
+            "on",
+        }
+        related: List[Dict[str, Any]] = []
+        seen = {str(primary_subject_key)}
+        for cand in candidates:
+            if len(related) >= max_related:
+                break
+            if cand.subject_key in seen:
+                continue
+            evidence = cand.evidence or {}
+            has_evidence = bool(
+                evidence.get("theme_name_direct_hit")
+                or evidence.get("positive_score", 0) >= 3
+                or evidence.get("core_object_hits")
+                or evidence.get("must_term_hits")
+                or evidence.get("strong_term_hits")
+            )
+            if require_evidence and not has_evidence:
+                continue
+            confidence = _squash01(0.52 + min(float(cand.rerank_score or 0.0) * 0.10, 0.25))
+            if confidence < min_conf:
+                continue
+            profile = profile_map.get(cand.subject_key)
+            if not profile:
+                continue
+            related.append(
+                {
+                    "subject_key": cand.subject_key,
+                    "theme_name": profile.subject_name,
+                    "confidence": round(confidence, 4),
+                    "relation_type": "related",
+                    "reason": "top_candidate_evidence_related",
+                    "evidence": evidence,
+                }
+            )
+            seen.add(cand.subject_key)
+        return related
+
     def _final_decide_rule_only(
         self,
         request: ThemeMatchRequest,
@@ -921,6 +973,7 @@ class ThemeMatchEngine:
         best_ev = best.evidence or {}
         best_gap = best.rerank_score - (second.rerank_score if second else 0.0)
         direct_hit_set = set(direct_hit_keys)
+        related_matches = self._build_related_matches(candidates[1:], profile_map, best.subject_key)
 
         if best.rerank_score <= 0:
             return ThemeDecisionEnvelope(
@@ -958,6 +1011,7 @@ class ThemeMatchEngine:
                 matched_subject_key=best.subject_key,
                 matched_theme_name=best_profile.subject_name,
                 matched_theme_id=best_profile.theme_master_id,
+                related_matches=related_matches,
                 review_required=False,
                 audit={"top_candidates": top_candidates, "best_evidence": best_ev},
             )
@@ -972,6 +1026,7 @@ class ThemeMatchEngine:
                 matched_subject_key=best.subject_key,
                 matched_theme_name=best_profile.subject_name,
                 matched_theme_id=best_profile.theme_master_id,
+                related_matches=related_matches,
                 review_required=False,
                 audit={"top_candidates": top_candidates, "best_evidence": best_ev},
             )
@@ -1010,6 +1065,7 @@ class ThemeMatchEngine:
             matched_subject_key=best.subject_key,
             matched_theme_name=best_profile.subject_name,
             matched_theme_id=best_profile.theme_master_id,
+            related_matches=related_matches,
             review_required=False,
             audit={"top_candidates": top_candidates, "best_evidence": best_ev},
         )
@@ -1038,6 +1094,7 @@ class ThemeMatchEngine:
         conf = _squash01(float(llm_result.get("confidence") or 0.0))
         matched_theme_key = _safe_str(llm_result.get("best_theme_key"))
         matched_theme = profile_map.get(matched_theme_key) if matched_theme_key else None
+        related_matches = self._build_related_matches(candidates, profile_map, matched_theme_key) if matched_theme_key else []
         audit = {
             "top_candidates": top_candidates,
             "llm_result": llm_result,
@@ -1066,6 +1123,7 @@ class ThemeMatchEngine:
                 matched_subject_key=matched_theme.subject_key,
                 matched_theme_name=matched_theme.subject_name,
                 matched_theme_id=matched_theme.theme_master_id,
+                related_matches=related_matches,
                 review_required=False,
                 audit=audit,
             )
