@@ -1276,14 +1276,14 @@
       "source": "db",
       "event_count": 5,
       "theme_count": 4,
-      "last_rebuild_at": "2026-05-16T11:47:03.342292+00:00",
+      "last_rebuild_at": "2026-05-16T12:27:19.829948+00:00",
       "opportunity_count": 4,
       "review_event_count": 0,
       "matched_event_count": 5,
       "unknown_event_count": 0
     }
   },
-  "generated_at": "2026-05-16 11:47:03.342292+00:00",
+  "generated_at": "2026-05-16 12:27:19.829948+00:00",
   "finalized_at": null,
-  "updated_at": "2026-05-16 11:47:03.342706+00:00"
+  "updated_at": "2026-05-16 12:27:19.830532+00:00"
 }

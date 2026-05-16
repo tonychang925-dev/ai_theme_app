@@ -725,7 +725,7 @@ export async function publishRecapToNotion(tradeDate: string): Promise<NotionPub
 export async function fetchPreMarketBrief(tradeDate: string): Promise<PreMarketBriefView> {
   const query = new URLSearchParams({ trade_date: tradeDate });
   return fetchJsonWithTimeout<PreMarketBriefView>(
-    `/api/v2/pre-market-brief?${query.toString()}`,
+    `/api/v1/pre_market_brief?${query.toString()}`,
     undefined,
     15000,
   );

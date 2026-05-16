@@ -244,19 +244,6 @@ class RealtimeCollectorActionRequest(BaseModel):
     force: bool = False
 
 
-class PreMarketBriefProxyPayload(BaseModel):
-    trade_date: str
-    source: str = "db_first"
-    limit: int = Field(default=200, ge=1, le=500)
-    dry_run: bool = False
-    force: bool = False
-
-
-class PreMarketBriefFinalizeProxyPayload(BaseModel):
-    trade_date: str
-    force: bool = False
-
-
 class PublishNotionProxyPayload(BaseModel):
     trade_date: str
     force: bool = False
@@ -1569,112 +1556,11 @@ async def get_intel_feed(
                 "diagnostics": {"partial": True, "source": "sps_unavailable"}}
 
 
-def _pre_market_brief_partial_payload(trade_date: str, *, operation: str, reason: str) -> dict[str, Any]:
-    diagnostics = {
-        "partial": True,
-        "source": "sps_unavailable",
-        "operation": operation,
-        "reason": reason,
-    }
-    payload = {
-        "version": "pre_market_brief.v1",
-        "trade_date": trade_date,
-        "status": "partial",
-        "sections": {
-            "market_overview": [],
-            "overnight_global": [],
-            "major_events": [],
-            "matched_themes": [],
-            "event_driven_opportunities": [],
-            "weak_to_strong_watch": [],
-            "review_events": [],
-            "unknown_watch": [],
-            "risk_alerts": [],
-        },
-        "diagnostics": diagnostics,
-    }
-    return {
-        "ok": False,
-        "trade_date": trade_date,
-        "snapshot_version": "pre_market_brief.v1",
-        "status": "partial",
-        "payload": payload,
-        "diagnostics": diagnostics,
-    }
-
-
-async def _proxy_pre_market_brief_to_sps(
-    method: str,
-    path: str,
-    *,
-    trade_date: str,
-    params: dict[str, Any] | None = None,
-    payload: dict[str, Any] | None = None,
-) -> dict[str, Any]:
-    url = f"{_sps_base_url()}{path}"
-    try:
-        async with httpx.AsyncClient(timeout=30.0) as client:
-            if method == "GET":
-                resp = await client.get(url, params=params or {})
-            else:
-                resp = await client.post(url, json=payload or {})
-            resp.raise_for_status()
-            return resp.json()
-    except Exception as exc:
-        logger.warning("pre_market_brief SPS proxy failed operation=%s trade_date=%s: %s", method, trade_date, exc)
-        return _pre_market_brief_partial_payload(
-            trade_date,
-            operation=f"{method} {path}",
-            reason=exc.__class__.__name__,
-        )
-
-
 def _model_to_dict(model: BaseModel) -> dict[str, Any]:
     dump = getattr(model, "model_dump", None)
     if callable(dump):
         return dump()
     return model.dict()
-
-
-@app.get("/api/v2/pre-market-brief")
-async def get_pre_market_brief_proxy(
-    trade_date: Optional[str] = Query(default=None),
-    date: Optional[str] = Query(default=None),
-) -> dict[str, Any]:
-    _require_gate_for_flag(PRE_MARKET_FLAG)
-    resolved_trade_date = trade_date or date
-    if not resolved_trade_date:
-        raise HTTPException(status_code=400, detail="trade_date is required")
-    return await _proxy_pre_market_brief_to_sps(
-        "GET",
-        "/api/v1/pre_market_brief",
-        trade_date=resolved_trade_date,
-        params={"trade_date": resolved_trade_date},
-    )
-
-
-@app.post("/api/v2/pre-market-brief/rebuild")
-async def rebuild_pre_market_brief_proxy(payload: PreMarketBriefProxyPayload) -> dict[str, Any]:
-    _require_gate_for_flag(PRE_MARKET_FLAG)
-    body = _model_to_dict(payload)
-    return await _proxy_pre_market_brief_to_sps(
-        "POST",
-        "/api/v1/pre_market_brief/rebuild",
-        trade_date=payload.trade_date,
-        payload=body,
-    )
-
-
-@app.post("/api/v2/pre-market-brief/finalize")
-async def finalize_pre_market_brief_proxy(payload: PreMarketBriefFinalizeProxyPayload) -> dict[str, Any]:
-    _require_gate_for_flag(PRE_MARKET_FLAG)
-    body = _model_to_dict(payload)
-    return await _proxy_pre_market_brief_to_sps(
-        "POST",
-        "/api/v1/pre_market_brief/finalize",
-        trade_date=payload.trade_date,
-        payload=body,
-    )
 
 
 @app.get("/api/intel/strong-stocks/watch")

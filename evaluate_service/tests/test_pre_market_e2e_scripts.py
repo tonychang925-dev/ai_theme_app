@@ -105,3 +105,18 @@ def test_rebuild_payload_includes_source_and_explicit_limit():
         "force": True,
         "dry_run": False,
     }
+
+
+def test_pre_market_e2e_defaults_to_sps_without_legacy_bff():
+    args = build_parser().parse_args(
+        [
+            "--trade-date",
+            "2026-05-16",
+            "--run-id",
+            "pm_e2e",
+        ]
+    )
+
+    assert args.sps_base_url == "http://127.0.0.1:8090"
+    assert not hasattr(args, "bff_base_url")
+    assert not hasattr(args, "legacy_bff_base_url")

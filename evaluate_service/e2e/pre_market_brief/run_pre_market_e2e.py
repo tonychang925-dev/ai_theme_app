@@ -81,40 +81,48 @@ async def run(args: argparse.Namespace) -> dict[str, Any]:
             _build_rebuild_payload(args),
         )
         write_json(out_dir / "brief_snapshot.json", snapshot_payload)
-    else:
-        snapshot_payload = _get_json(
-            f"{args.sps_base_url.rstrip('/')}/api/v1/pre_market_brief",
-            {"trade_date": args.trade_date},
-        )
-        write_json(out_dir / "brief_snapshot.json", snapshot_payload)
 
-    try:
-        bff_payload = _get_json(
-            f"{args.bff_base_url.rstrip('/')}/api/v2/pre-market-brief",
-            {"trade_date": args.trade_date},
-        )
-    except Exception as exc:
-        bff_payload = {"diagnostics": {"partial": True, "error": str(exc)}}
-    write_json(out_dir / "bff_payload.json", bff_payload)
+    sps_payload = _get_json(
+        f"{args.sps_base_url.rstrip('/')}/api/v1/pre_market_brief",
+        {"trade_date": args.trade_date},
+    )
+    write_json(out_dir / "sps_payload.json", sps_payload)
+    if not args.rebuild:
+        snapshot_payload = sps_payload
+        write_json(out_dir / "brief_snapshot.json", snapshot_payload)
 
     evaluation: dict[str, Any] = {}
     if args.evaluate:
         evaluation = evaluate(
             gold_path=gold_path,
             trace_path=out_dir / "db_trace_report.json",
-            snapshot_path=out_dir / "brief_snapshot.json",
+            snapshot_path=out_dir / "sps_payload.json",
             out_dir=out_dir,
         )
+        _append_run_metadata_to_summary(out_dir / "summary.md", args)
 
     result = {
         "run_id": args.run_id,
         "trade_date": args.trade_date,
         "out_dir": str(out_dir),
+        "sps_base_url": args.sps_base_url.rstrip("/"),
         "trace_counts": trace.get("counts", {}),
         "evaluation": evaluation,
     }
     write_json(out_dir / "run_result.json", result)
     return result
+
+
+def _append_run_metadata_to_summary(path: Path, args: argparse.Namespace) -> None:
+    if not path.exists():
+        return
+    lines = [
+        "",
+        "## Runtime",
+        "",
+        f"- sps_base_url: {args.sps_base_url.rstrip('/')}",
+    ]
+    path.write_text(path.read_text(encoding="utf-8").rstrip() + "\n" + "\n".join(lines) + "\n", encoding="utf-8")
 
 
 async def _trace_once(args: argparse.Namespace, out_dir: Path, input_path: Path) -> dict[str, Any]:
@@ -183,7 +191,6 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--redis-url", default="redis://127.0.0.1:6379/0")
     parser.add_argument("--stream", default="stream:news:raw")
     parser.add_argument("--sps-base-url", default="http://127.0.0.1:8090")
-    parser.add_argument("--bff-base-url", default="http://127.0.0.1:8003")
     parser.add_argument("--source", default="akshare_replay")
     parser.add_argument("--out-dir")
     parser.add_argument("--limit", type=int)
