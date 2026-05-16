@@ -1,12 +1,13 @@
 # 盘前必读 E2E 多题材回放评测
 
-本目录用于把 `evaluate_service/data/raw/test_cases.txt` 回放到 `stream:news:raw`，验证从原始新闻到盘前必读快照、SPS API、BFF 代理的全链路。
+本目录用于把 `evaluate_service/data/raw/test_cases.txt` 回放到 `stream:news:raw`，验证从原始新闻到盘前必读快照与 SPS API 的新链路。
 
 核心约束：
 
 - 默认数据库是 `stock_data`。
 - 脚本默认拒绝连接 `stock_data_test`，避免污染当前项目实际生产角色库。
 - `test_cases.txt` 的题材名称只写入 `gold_labels.jsonl`，不会进入 Redis Stream、`news_raw`、`news_event` 或题材匹配链路。
+- 盘前必读 E2E 不经过已废弃的 `frontend_bff`，默认只请求 `stock_processing_service` 的 `/api/v1/pre_market_brief`。
 
 常用命令：
 
@@ -28,7 +29,8 @@ python evaluate_service/e2e/pre_market_brief/run_pre_market_e2e.py \
   --wait \
   --rebuild \
   --force-rebuild \
-  --evaluate
+  --evaluate \
+  --sps-base-url http://127.0.0.1:8090
 ```
 
 如果需要清掉同一 `trade_date` 上一次 E2E 生成的 final 快照，可额外传：
@@ -51,7 +53,7 @@ evaluate_service/output/pre_market_e2e/<run_id>/
 ├── injection_result.json
 ├── db_trace_report.json
 ├── brief_snapshot.json
-├── bff_payload.json
+├── sps_payload.json
 ├── accuracy_report.json
 ├── stock_candidate_report.json
 ├── confusion_matrix.csv

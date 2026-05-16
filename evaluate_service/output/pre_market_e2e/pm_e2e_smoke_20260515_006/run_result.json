@@ -2,6 +2,7 @@
   "run_id": "pm_e2e_smoke_20260515_006",
   "trade_date": "2026-05-15",
   "out_dir": "/Users/admin/Desktop/ai_theme_app/evaluate_service/output/pre_market_e2e/pm_e2e_smoke_20260515_006",
+  "sps_base_url": "http://127.0.0.1:8091",
   "trace_counts": {
     "expected_input_count": 5,
     "news_raw_count": 5,
@@ -31,12 +32,12 @@
     "diagnostics": {
       "source": "db",
       "event_count": 5,
-      "matched_event_count": 5,
       "theme_count": 4,
+      "last_rebuild_at": "2026-05-16T12:27:19.829948+00:00",
       "opportunity_count": 4,
       "review_event_count": 0,
-      "unknown_event_count": 0,
-      "last_rebuild_at": "2026-05-16T11:47:03.342292+00:00"
+      "matched_event_count": 5,
+      "unknown_event_count": 0
     }
   }
 }
