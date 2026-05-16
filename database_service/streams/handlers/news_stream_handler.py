@@ -249,6 +249,13 @@ class NewsStreamHandler:
             stored_news_id = await self.database_gateway.create_news(enhanced_data)
 
             if stored_news_id:
+                try:
+                    stored_row = await self.database_gateway.get_news(news_id)
+                    if stored_row and stored_row.get("id") is not None:
+                        enhanced_data["news_row_id"] = int(stored_row["id"])
+                        enhanced_data["raw_news_id"] = int(stored_row["id"])
+                except Exception as e:
+                    logger.warning(f"查询新闻行ID失败，继续发布业务事件: {news_id}, err={e}")
                 result["storage_success"] = True
                 logger.debug(f"✅ 新闻存储成功: {news_id}")
 
