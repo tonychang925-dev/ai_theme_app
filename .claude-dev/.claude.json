@@ -24,15 +24,14 @@
     "desktop-app": 2,
     "web-app": 2,
     "mobile-app": 2,
-    "frontend-design-plugin": 5,
+    "frontend-design-plugin": 8,
     "shift-enter": 4,
     "subagent-fanout-nudge": 7,
     "custom-agents": 6,
     "agent-flag": 6,
     "feedback-command": 6
   },
-  "promptQueueUseCount": 216,
-  "showExpandedTodos": true,
+  "promptQueueUseCount": 230,
   "cachedGrowthBookFeatures": {
     "tengu_sub_nomdrep_q7k": true,
     "tengu_dunwich_bell": false,

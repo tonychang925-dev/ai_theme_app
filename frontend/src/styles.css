@@ -1218,6 +1218,7 @@ select {
 .collection-debug-terminal {
   min-height: 360px;
   max-height: 460px;
+  overflow-y: scroll;
 }
 
 .collection-debug-json {
@@ -1479,7 +1480,7 @@ select {
 .collection-log-panel {
   min-height: 280px;
   max-height: 360px;
-  overflow: auto;
+  overflow-y: scroll;
   border-radius: 12px;
   border: 1px solid #263241;
   background: #0d1319;
@@ -1495,6 +1496,29 @@ select {
 
 .collection-log-line {
   white-space: inherit;
+}
+
+/* 深色主题下强制显示滚动条（macOS overlay scrollbar 在 Electron 中不可见） */
+.collection-log-panel::-webkit-scrollbar,
+.collection-debug-terminal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.collection-log-panel::-webkit-scrollbar-track,
+.collection-debug-terminal::-webkit-scrollbar-track {
+  background: #0d1319;
+  border-radius: 4px;
+}
+
+.collection-log-panel::-webkit-scrollbar-thumb,
+.collection-debug-terminal::-webkit-scrollbar-thumb {
+  background: #3a5068;
+  border-radius: 4px;
+}
+
+.collection-log-panel::-webkit-scrollbar-thumb:hover,
+.collection-debug-terminal::-webkit-scrollbar-thumb:hover {
+  background: #5a7a9a;
 }
 
 .collection-modal-backdrop {
