@@ -28,6 +28,22 @@ class _WriteGateway:
         return 1
 
 
+class _SubjectReadGateway(_ReadGateway):
+    def __init__(self, subject_events=None, fallback_matched=None, review=None):
+        super().__init__(matched=fallback_matched, review=review)
+        self.subject_events = subject_events or []
+        self.used_subject_events = False
+        self.used_legacy_events = False
+
+    async def get_pre_market_subject_events(self, feed_date, source=None, limit=200):
+        self.used_subject_events = True
+        return self.subject_events[:limit]
+
+    async def get_intel_news_events(self, feed_date):
+        self.used_legacy_events = True
+        return await super().get_intel_news_events(feed_date)
+
+
 class _OpportunityBuilder:
     async def build(self, *, trade_date, matched_themes, matched_events):
         return [
@@ -101,6 +117,41 @@ async def test_pre_market_brief_builder_aggregates_db_events_and_writes_snapshot
     assert payload["diagnostics"]["matched_event_count"] == 2
     assert len(write.docs) == 1
     assert write.docs[0]["doc"]["payload"] == payload
+
+
+@pytest.mark.asyncio
+async def test_pre_market_brief_builder_prefers_event_subject_map_rows():
+    read = _SubjectReadGateway(
+        subject_events=[
+            {
+                "event_id": 501,
+                "occurred_at": "2026-05-16T07:50:00",
+                "title": "JYHF subject 事件",
+                "summary": "新链 subject 映射",
+                "subject_key": "9030409",
+                "theme_name": "AR眼镜",
+                "confidence": 0.88,
+                "source_type": "event_subject_map",
+            }
+        ],
+        fallback_matched=[
+            {
+                "item_id": "event:999:legacy",
+                "title": "旧链事件",
+                "theme_subject_keys": ["legacy"],
+                "theme_names": ["旧题材"],
+            }
+        ],
+    )
+    write = _WriteGateway()
+    builder = PreMarketBriefBuilder(read_gateway=read, write_gateway=write)
+
+    payload = await builder.rebuild(date(2026, 5, 16), dry_run=True)
+
+    assert read.used_subject_events is True
+    assert read.used_legacy_events is False
+    assert payload["sections"]["matched_themes"][0]["subject_key"] == "9030409"
+    assert payload["sections"]["matched_themes"][0]["theme_name"] == "AR眼镜"
 
 
 @pytest.mark.asyncio

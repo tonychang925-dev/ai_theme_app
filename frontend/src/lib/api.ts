@@ -700,6 +700,28 @@ export async function fetchRecapDefaults(): Promise<RecapDefaultsView> {
   return response.json();
 }
 
+export interface NotionPublishResult {
+  ok?: boolean;
+  page_id?: string;
+  page_url?: string;
+  action?: string;
+  report_id?: string;
+  report_type?: string;
+  trade_date?: string;
+}
+
+export async function publishRecapToNotion(tradeDate: string): Promise<NotionPublishResult> {
+  return fetchJsonWithTimeout<NotionPublishResult>(
+    "/api/v2/recap/publish-notion",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ trade_date: tradeDate }),
+    },
+    45000,
+  );
+}
+
 export async function fetchPreMarketBrief(tradeDate: string): Promise<PreMarketBriefView> {
   const query = new URLSearchParams({ trade_date: tradeDate });
   return fetchJsonWithTimeout<PreMarketBriefView>(

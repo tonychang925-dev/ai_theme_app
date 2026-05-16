@@ -138,7 +138,7 @@ async def _wait_for_trace(args: argparse.Namespace, out_dir: Path, input_path: P
         last_trace = await _trace_once(args, out_dir, input_path)
         counts = last_trace.get("counts", {})
         news_events = int(counts.get("news_event_count") or 0)
-        mapped = int(counts.get("event_theme_map_count") or 0)
+        mapped = int(counts.get("event_subject_map_count") or counts.get("event_theme_map_count") or 0)
         reviewed = int(counts.get("review_queue_count") or 0)
         if expected and news_events >= max(1, int(expected * 0.95)) and (mapped + reviewed) > 0:
             return last_trace
@@ -183,7 +183,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--redis-url", default="redis://127.0.0.1:6379/0")
     parser.add_argument("--stream", default="stream:news:raw")
     parser.add_argument("--sps-base-url", default="http://127.0.0.1:8090")
-    parser.add_argument("--bff-base-url", default="http://127.0.0.1:8000")
+    parser.add_argument("--bff-base-url", default="http://127.0.0.1:8003")
     parser.add_argument("--source", default="akshare_replay")
     parser.add_argument("--out-dir")
     parser.add_argument("--limit", type=int)

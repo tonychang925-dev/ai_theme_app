@@ -85,6 +85,7 @@ class ThemeDecisionEnvelope:
     matched_subject_key: str = ""
     matched_theme_name: str = ""
     matched_theme_id: Optional[int] = None
+    related_matches: List[Dict[str, Any]] = field(default_factory=list)
     review_required: bool = False
     audit: Dict[str, Any] = field(default_factory=dict)
 

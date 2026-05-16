@@ -1,0 +1,34 @@
+{
+  "run_id": "pm_e2e_smoke_20260516_001",
+  "trade_date": "2026-05-16",
+  "stream": "stream:news:raw",
+  "input_count": 5,
+  "injected_count": 5,
+  "items": [
+    {
+      "case_id": "pm_case_0001",
+      "external_id": "pm_e2e_smoke_20260516_001:pm_case_0001",
+      "stream_id": "1778913741623-0"
+    },
+    {
+      "case_id": "pm_case_0002",
+      "external_id": "pm_e2e_smoke_20260516_001:pm_case_0002",
+      "stream_id": "1778913741624-0"
+    },
+    {
+      "case_id": "pm_case_0003",
+      "external_id": "pm_e2e_smoke_20260516_001:pm_case_0003",
+      "stream_id": "1778913741624-1"
+    },
+    {
+      "case_id": "pm_case_0004",
+      "external_id": "pm_e2e_smoke_20260516_001:pm_case_0004",
+      "stream_id": "1778913741625-0"
+    },
+    {
+      "case_id": "pm_case_0005",
+      "external_id": "pm_e2e_smoke_20260516_001:pm_case_0005",
+      "stream_id": "1778913741625-1"
+    }
+  ]
+}

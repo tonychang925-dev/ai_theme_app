@@ -9,14 +9,16 @@ from typing import Any
 if __package__ in (None, ""):
     sys.path.append(str(Path(__file__).resolve().parents[3]))
     from evaluate_service.e2e.pre_market_brief.common import (
+        column_exists,
         db_connect_kwargs,
+        parse_trade_date,
         read_jsonl,
         require_safe_db,
         table_exists,
         write_json,
     )
 else:
-    from .common import db_connect_kwargs, read_jsonl, require_safe_db, table_exists, write_json
+    from .common import column_exists, db_connect_kwargs, parse_trade_date, read_jsonl, require_safe_db, table_exists, write_json
 
 
 async def trace_run(
@@ -39,7 +41,9 @@ async def trace_run(
         if not await table_exists(conn, "news_raw"):
             return {"run_id": run_id, "trade_date": trade_date, "rows": [], "counts": {"news_raw_count": 0}}
 
-        rows = await conn.fetch(
+        rows = [
+            dict(row)
+            for row in await conn.fetch(
             """
             SELECT
               nr.id AS news_raw_id,
@@ -64,7 +68,9 @@ async def trace_run(
             f"{run_id}:%",
             f"e2e://{run_id}/%",
             f"%{run_id}%",
-        )
+            )
+        ]
+        rows = await _attach_orphan_news_events(conn, rows, trade_date)
         event_ids = [int(row["news_event_id"]) for row in rows if row["news_event_id"] is not None]
         mappings = await _fetch_mappings(conn, event_ids)
         reviews = await _fetch_reviews(conn, event_ids)
@@ -107,6 +113,7 @@ async def trace_run(
         "expected_input_count": len(expected),
         "news_raw_count": len({row["news_raw_id"] for row in rows}),
         "news_event_count": len({row["news_event_id"] for row in rows if row["news_event_id"] is not None}),
+        "event_subject_map_count": sum(len(items) for items in mappings.values()),
         "event_theme_map_count": sum(len(items) for items in mappings.values()),
         "review_queue_count": len(reviews),
         "decision_count": redis_trace["decision_count"],
@@ -127,16 +134,47 @@ def _expected_cases(input_path: Path) -> dict[str, dict[str, Any]]:
 
 
 async def _fetch_mappings(conn: Any, event_ids: list[int]) -> dict[int, list[dict[str, Any]]]:
-    if not event_ids or not await table_exists(conn, "event_theme_map"):
+    if not event_ids:
         return {}
+    if await table_exists(conn, "event_subject_map"):
+        has_legacy_reason = await column_exists(conn, "event_subject_map", "reason")
+        reason_expr = "COALESCE(match_reason, reason)" if has_legacy_reason else "match_reason"
+        rows = await conn.fetch(
+            f"""
+            SELECT
+              event_id,
+              subject_key,
+              COALESCE(NULLIF(subject_name, ''), subject_key) AS theme_name,
+              confidence,
+              {reason_expr} AS match_reason,
+              relation_type,
+              created_at
+            FROM event_subject_map
+            WHERE event_id = ANY($1::int[])
+            ORDER BY event_id,
+                     CASE relation_type WHEN 'primary' THEN 0 ELSE 1 END,
+                     confidence DESC NULLS LAST,
+                     created_at ASC
+            """,
+            event_ids,
+        )
+        result: dict[int, list[dict[str, Any]]] = {}
+        for row in rows:
+            result.setdefault(int(row["event_id"]), []).append(dict(row))
+        return result
+
+    if not await table_exists(conn, "event_theme_map"):
+        return {}
+    has_match_reason = await column_exists(conn, "event_theme_map", "match_reason")
+    match_reason_expr = "etm.match_reason" if has_match_reason else "NULL::text AS match_reason"
     rows = await conn.fetch(
-        """
+        f"""
         SELECT
           etm.event_id,
           COALESCE(NULLIF(tm.source_id, ''), 'theme:' || tm.id::text) AS subject_key,
           tm.name AS theme_name,
           etm.confidence,
-          etm.match_reason,
+          {match_reason_expr},
           etm.created_at
         FROM event_theme_map etm
         LEFT JOIN theme_master tm ON tm.id = etm.theme_id
@@ -149,6 +187,54 @@ async def _fetch_mappings(conn: Any, event_ids: list[int]) -> dict[int, list[dic
     for row in rows:
         result.setdefault(int(row["event_id"]), []).append(dict(row))
     return result
+
+
+async def _attach_orphan_news_events(
+    conn: Any,
+    rows: list[dict[str, Any]],
+    trade_date: str,
+) -> list[dict[str, Any]]:
+    """兼容旧结构化链路：news_event.news_id 为空时按本轮 raw 创建窗口归因。"""
+    missing = [row for row in rows if row.get("news_event_id") is None]
+    if not rows or not missing or not await table_exists(conn, "news_event"):
+        return rows
+
+    raw_times = [row.get("raw_created_at") for row in rows if row.get("raw_created_at") is not None]
+    if not raw_times:
+        return rows
+
+    event_rows = await conn.fetch(
+        """
+        SELECT id AS news_event_id, created_at AS event_created_at
+        FROM news_event
+        WHERE news_id IS NULL
+          AND created_at >= $1::timestamptz - interval '30 seconds'
+          AND created_at <= $2::timestamptz + interval '20 minutes'
+          AND created_at::date = $3::date
+        ORDER BY created_at ASC, id ASC
+        LIMIT $4
+        """,
+        min(raw_times),
+        max(raw_times),
+        parse_trade_date(trade_date),
+        len(rows),
+    )
+    if not event_rows:
+        return rows
+
+    orphan_events = [dict(row) for row in event_rows]
+    event_iter = iter(orphan_events)
+    patched: list[dict[str, Any]] = []
+    for row in rows:
+        patched_row = dict(row)
+        if patched_row.get("news_event_id") is None:
+            event = next(event_iter, None)
+            if event:
+                patched_row["news_event_id"] = event["news_event_id"]
+                patched_row["event_created_at"] = event["event_created_at"]
+                patched_row["event_inferred_by"] = "raw_created_at_window"
+        patched.append(patched_row)
+    return patched
 
 
 async def _fetch_reviews(conn: Any, event_ids: list[int]) -> dict[int, dict[str, Any]]:

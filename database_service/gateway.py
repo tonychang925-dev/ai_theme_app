@@ -5,6 +5,7 @@
 """
 import asyncio
 import logging
+import os
 from typing import Dict, List, Any, Optional, Callable, Union
 from datetime import datetime
 from functools import wraps
@@ -44,6 +45,7 @@ class DatabaseGateway:
     
     _instance = None
     _client = None
+    _read_client = None
     _initialized = False
     _config = None
     
@@ -53,6 +55,7 @@ class DatabaseGateway:
             raise Exception("DatabaseGateway是单例，请使用get_instance()")
         
         self._client = None
+        self._read_client = None
         self._initialized = False
         self._event_handlers = {}
         self._idempotency_store: Dict[str, Dict[str, Any]] = {}
@@ -91,6 +94,32 @@ class DatabaseGateway:
             from database_service.managers.postgres_manager import PostgresDatabaseManager
             cls._instance._client = PostgresDatabaseManager(cls._instance._config)
             await cls._instance._client.connect()
+
+            read_database = (
+                os.getenv("READ_PG_DATABASE")
+                or os.getenv("READ_DB_NAME")
+                or os.getenv("JYHF_READ_DATABASE")
+                or ""
+            ).strip()
+            if read_database and read_database != cls._instance._config.postgres_database:
+                read_config = DatabaseConfig(
+                    db_type=cls._instance._config.db_type,
+                    postgres_host=cls._instance._config.postgres_host,
+                    postgres_port=cls._instance._config.postgres_port,
+                    postgres_database=read_database,
+                    postgres_username=cls._instance._config.postgres_username,
+                    postgres_password=cls._instance._config.postgres_password,
+                    postgres_schema=cls._instance._config.postgres_schema,
+                    postgres_ssl_mode=cls._instance._config.postgres_ssl_mode,
+                    postgres_pool_size=cls._instance._config.postgres_pool_size,
+                    connection_pool=cls._instance._config.connection_pool,
+                    redis=cls._instance._config.redis,
+                    cache=cls._instance._config.cache,
+                    table_names_config=cls._instance._config.table_names_config,
+                )
+                cls._instance._read_client = PostgresDatabaseManager(read_config)
+                await cls._instance._read_client.connect()
+                logger.info("   只读库: %s", read_database)
             
             cls._instance._initialized = True
             
@@ -108,6 +137,9 @@ class DatabaseGateway:
             await cls._instance._start_background_tasks()
         
         return cls._instance
+
+    def _read_source(self):
+        return self._read_client or self._client
     
     @classmethod
     async def get_instance(cls) -> 'DatabaseGateway':
@@ -279,9 +311,10 @@ class DatabaseGateway:
         """按交易日读取题材股票池快照。"""
         try:
             start_time = time.time()
-            fn = getattr(self._client, "get_subject_stock_pool_by_trade_date", None)
+            source = self._read_source()
+            fn = getattr(source, "get_subject_stock_pool_by_trade_date", None)
             if not callable(fn):
-                fn = getattr(self._client, "get_subject_stock_daily_snapshot_by_trade_date", None)
+                fn = getattr(source, "get_subject_stock_daily_snapshot_by_trade_date", None)
             if not callable(fn):
                 return []
             result = await fn(trade_date)
@@ -620,7 +653,7 @@ class DatabaseGateway:
     async def get_w2s_candidates_by_trade_date(self, candidate_trade_date, limit: int = 200) -> List[Dict[str, Any]]:
         try:
             start_time = time.time()
-            result = await self._client.get_w2s_candidates_by_trade_date(candidate_trade_date, limit=limit)
+            result = await self._read_source().get_w2s_candidates_by_trade_date(candidate_trade_date, limit=limit)
             self._record_request(True, start_time)
             return result
         except Exception as e:
@@ -642,7 +675,7 @@ class DatabaseGateway:
     async def get_w2s_candidates_for_confirm_date(self, confirm_trade_date, limit: int = 200) -> List[Dict[str, Any]]:
         try:
             start_time = time.time()
-            result = await self._client.get_w2s_candidates_for_confirm_date(confirm_trade_date, limit=limit)
+            result = await self._read_source().get_w2s_candidates_for_confirm_date(confirm_trade_date, limit=limit)
             self._record_request(True, start_time)
             return result
         except Exception as e:
@@ -777,6 +810,58 @@ class DatabaseGateway:
             logger.error(f"读取 news_event intel 失败 feed_date={feed_date}: {e}")
             raise
 
+    async def get_event_subject_mappings_by_trade_date(
+        self,
+        trade_date,
+        source: Optional[str] = None,
+        limit: int = 500,
+    ) -> List[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            fn = getattr(self._client, "get_event_subject_mappings_by_trade_date", None)
+            if not callable(fn):
+                return []
+            result = await fn(trade_date, source=source, limit=limit)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 event_subject_map 失败 trade_date={trade_date}: {e}")
+            raise
+
+    async def get_event_subject_mappings_by_event_ids(self, event_ids: List[int]) -> List[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            fn = getattr(self._client, "get_event_subject_mappings_by_event_ids", None)
+            if not callable(fn):
+                return []
+            result = await fn(event_ids)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"按事件读取 event_subject_map 失败 event_ids={event_ids}: {e}")
+            raise
+
+    async def get_pre_market_subject_events(
+        self,
+        trade_date,
+        source: Optional[str] = None,
+        limit: int = 500,
+    ) -> List[Dict[str, Any]]:
+        try:
+            start_time = time.time()
+            fn = getattr(self._client, "get_pre_market_subject_events", None)
+            if not callable(fn):
+                return []
+            result = await fn(trade_date, source=source, limit=limit)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取盘前 subject 事件失败 trade_date={trade_date}: {e}")
+            raise
+
     async def create_user(self, email: str, password_hash: str, role: str = "user") -> Dict[str, Any]:
         try:
             start_time = time.time()
@@ -846,7 +931,7 @@ class DatabaseGateway:
     ) -> List[Dict[str, Any]]:
         try:
             start_time = time.time()
-            result = await self._client.get_subject_stock_daily_snapshot_by_trade_date(trade_date)
+            result = await self._read_source().get_subject_stock_daily_snapshot_by_trade_date(trade_date)
             self._record_request(True, start_time)
             return result
         except Exception as e:
@@ -861,7 +946,7 @@ class DatabaseGateway:
     ) -> List[Dict[str, Any]]:
         try:
             start_time = time.time()
-            fn = getattr(self._client, "get_theme_stock_leaderboard_by_trade_date", None)
+            fn = getattr(self._read_source(), "get_theme_stock_leaderboard_by_trade_date", None)
             if not callable(fn):
                 return []
             result = await fn(trade_date, subject_keys=subject_keys)
@@ -918,7 +1003,7 @@ class DatabaseGateway:
     ) -> List[Dict[str, Any]]:
         try:
             start_time = time.time()
-            result = await self._client.get_strong_stock_watch_view_rows(
+            result = await self._read_source().get_strong_stock_watch_view_rows(
                 end_date=end_date,
                 window_days=window_days,
                 include_removed=include_removed,
@@ -937,7 +1022,7 @@ class DatabaseGateway:
         """股票域显式读取：Layer A 主线身份真源。"""
         try:
             start_time = time.time()
-            result = await self._client.get_mainline_identity_by_subject_keys(subject_keys, trade_date)
+            result = await self._read_source().get_mainline_identity_by_subject_keys(subject_keys, trade_date)
             self._record_request(True, start_time)
             return result
         except Exception as e:
@@ -964,7 +1049,7 @@ class DatabaseGateway:
         """股票域显式读取：Layer B 周期状态真源。"""
         try:
             start_time = time.time()
-            result = await self._client.get_mainline_cycle_by_subject_keys(subject_keys, trade_date)
+            result = await self._read_source().get_mainline_cycle_by_subject_keys(subject_keys, trade_date)
             self._record_request(True, start_time)
             return result
         except Exception as e:
@@ -1783,6 +1868,18 @@ class DatabaseGateway:
             self._record_request(False, start_time)
             logger.error(f"幂等写入关联失败 event={event_id}, theme={theme_id}: {e}")
             raise
+
+    async def upsert_event_subject_relation(self, event_id: int, subject_key: str, **kwargs) -> Dict[str, Any]:
+        """幂等写入事件-JYHF题材关联；新链主路径不依赖 theme_master/theme_id。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_event_subject_relation(event_id, subject_key, **kwargs)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"幂等写入 subject 关联失败 event={event_id}, subject_key={subject_key}: {e}")
+            raise
     
     # ========== 高级查询方法 ==========
     
@@ -1931,7 +2028,7 @@ class DatabaseGateway:
         """加载 ThemeMatchEngine 所需的题材画像原始数据"""
         try:
             start_time = time.time()
-            result = await self._client.load_theme_match_profiles()
+            result = await self._read_source().load_theme_match_profiles()
             self._record_request(True, start_time)
             return result
         except Exception as e:
@@ -1947,7 +2044,7 @@ class DatabaseGateway:
         """基于 theme_profile_ext.embedding 做语义召回"""
         try:
             start_time = time.time()
-            result = await self._client.semantic_recall_theme_candidates(query_embedding, top_k)
+            result = await self._read_source().semantic_recall_theme_candidates(query_embedding, top_k)
             self._record_request(True, start_time)
             return result
         except Exception as e:
@@ -1963,7 +2060,7 @@ class DatabaseGateway:
         """基于 theme_gate_profile.search_vector 做稀疏召回"""
         try:
             start_time = time.time()
-            result = await self._client.sparse_recall_theme_candidates(query_text, top_k)
+            result = await self._read_source().sparse_recall_theme_candidates(query_text, top_k)
             self._record_request(True, start_time)
             return result
         except Exception as e:
@@ -2490,6 +2587,11 @@ class DatabaseGateway:
                     await self._client.close()
                 elif hasattr(self._client, "disconnect"):
                     await self._client.disconnect()
+            if self._read_client and self._read_client is not self._client:
+                if hasattr(self._read_client, "close"):
+                    await self._read_client.close()
+                elif hasattr(self._read_client, "disconnect"):
+                    await self._read_client.disconnect()
             self._initialized = False
             logger.info("✅ DatabaseGateway 已关闭")
         except Exception as e:
@@ -2497,6 +2599,7 @@ class DatabaseGateway:
         finally:
             DatabaseGateway._instance = None
             DatabaseGateway._client = None
+            DatabaseGateway._read_client = None
     
     async def __aenter__(self):
         """异步上下文管理器入口"""

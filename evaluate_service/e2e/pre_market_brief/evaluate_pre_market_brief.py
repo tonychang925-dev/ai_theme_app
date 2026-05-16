@@ -149,7 +149,7 @@ def _write_summary(path: Path, report: dict[str, Any], trace_counts: dict[str, A
         f"- 注入/期望数量: {trace_counts.get('expected_input_count', 0)}",
         f"- news_raw_count: {trace_counts.get('news_raw_count', 0)}",
         f"- news_event_count: {trace_counts.get('news_event_count', 0)}",
-        f"- event_theme_map_count: {trace_counts.get('event_theme_map_count', 0)}",
+        f"- event_subject_map_count: {trace_counts.get('event_subject_map_count', trace_counts.get('event_theme_map_count', 0))}",
         f"- review_queue_count: {trace_counts.get('review_queue_count', 0)}",
         f"- primary_hit_rate: {report['primary_hit_rate']}",
         f"- related_hit_rate: {report['related_hit_rate']}",

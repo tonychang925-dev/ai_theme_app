@@ -34,6 +34,7 @@ from stock_processing_service.application.services.event_driven_opportunity_buil
 )
 from stock_processing_service.application.services.pre_market_brief_builder import PreMarketBriefBuilder
 from stock_processing_service.application.jobs.collection_job_manager import CollectionJobManager
+from stock_processing_service.publishers.notion_post_market_recap_publisher import NotionPostMarketRecapPublisher
 from stock_processing_service.domain.services.w2s_candidate_service import W2SCandidate
 from stock_processing_service.domain.services.w2s_confirm_service import W2SConfirmService
 from stock_processing_service.contracts.dto import StockAuctionDTO
@@ -126,6 +127,12 @@ class CollectionStartRequest(BaseModel):
 
 class CollectionJobActionRequest(BaseModel):
     job_id: str
+
+
+class NotionPublishPayload(BaseModel):
+    trade_date: str
+    force: bool = False
+    dry_run: bool = False
 
 
 class PreMarketBriefRebuildPayload(BaseModel):
@@ -1274,6 +1281,37 @@ async def get_post_market_snapshot(trade_date: str = Query(..., description="YYY
         "trade_date": str(row.get("trade_date") or trade_date),
         "snapshot_version": str(row.get("snapshot_version") or "unknown"),
         "payload": payload,
+    }
+
+
+@app.post("/api/v1/recap/publish-notion")
+async def publish_post_market_recap_to_notion(payload: NotionPublishPayload) -> dict[str, Any]:
+    try:
+        d = date.fromisoformat(payload.trade_date)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=f"invalid trade_date: {payload.trade_date}") from exc
+
+    row = await app.state.gateway.get_existing_post_market_recap_snapshot(d)
+    if not row:
+        raise HTTPException(status_code=404, detail="post_market_recap_snapshot not found")
+
+    normalized_payload = _normalize_recap_payload(row)
+
+    publisher = NotionPostMarketRecapPublisher.from_env()
+    result = publisher.publish_snapshot(
+        row=row,
+        payload=normalized_payload,
+        force=payload.force,
+        dry_run=payload.dry_run,
+    )
+    return {
+        "ok": True,
+        "page_id": result.page_id,
+        "page_url": result.page_url,
+        "action": result.action,
+        "report_id": result.report_id,
+        "report_type": result.report_type,
+        "trade_date": result.trade_date,
     }
 
 

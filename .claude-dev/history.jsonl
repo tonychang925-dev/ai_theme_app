@@ -1470,3 +1470,5 @@
 {"display":"现在完全卡住了！！！链取消都取消不了！！重置也没反应！！请立即回退代码，恢复之前的状态！！！不允许再瞎改代码！！！","pastedContents":{},"timestamp":1778897187260,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"1b3fbfa6-fbb7-4a93-9779-598fd675f902"}
 {"display":"/clear","pastedContents":{},"timestamp":1778905858143,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"1b3fbfa6-fbb7-4a93-9779-598fd675f902"}
 {"display":"请阅读醒目代码，我们现在希望将盘前必读和盘后复盘等报告，输出到notion展示，我们已经实现了部分核心功能框架，请给出开发建议。","pastedContents":{},"timestamp":1778907836649,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"82995665-ad1d-4f60-b677-7716cc4a37e1"}
+{"display":"需要澄清一点：现在我们项目的架构已经采用基于stock_processing_service下的新架构实现，不再采用旧链stock_service的架构，因此需要将stock_service下的publisher全部迁移到stock_processing_service上来，请重新评估方案。","pastedContents":{},"timestamp":1778927348774,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"82995665-ad1d-4f60-b677-7716cc4a37e1"}
+{"display":"[Pasted text #1 +596 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"f925d9ddd16bff12"}},"timestamp":1778928542437,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"82995665-ad1d-4f60-b677-7716cc4a37e1"}

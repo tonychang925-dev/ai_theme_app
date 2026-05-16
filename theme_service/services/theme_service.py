@@ -134,9 +134,12 @@ class ThemeService:
                 return out
             return []
 
+        event_id = int(event_row.get("event_id") or event_row.get("id"))
+        news_id_raw = event_row.get("news_id")
+
         return ThemeMatchRequest(
-            event_id=int(event_row.get("event_id") or event_row.get("id")),
-            news_id=int(event_row.get("news_id")),
+            event_id=event_id,
+            news_id=int(news_id_raw) if news_id_raw is not None else event_id,
             title=str(event_row.get("title") or ""),
             content=str(event_row.get("content") or ""),
             summary=str(event_row.get("summary") or ""),
@@ -156,18 +159,6 @@ class ThemeService:
 
         request = self.build_theme_match_request(event_row)
         envelope = await self.theme_match_engine.match_event(request)
-
-        if (
-            envelope.decision == "MATCH"
-            and self.database_gateway is not None
-            and envelope.matched_subject_key
-            and envelope.matched_theme_id is None
-        ):
-            theme_id = await self.database_gateway.resolve_theme_master_id_by_source_key(
-                "jyhf",
-                envelope.matched_subject_key,
-            )
-            envelope.matched_theme_id = theme_id
 
         return envelope.to_dict()
     

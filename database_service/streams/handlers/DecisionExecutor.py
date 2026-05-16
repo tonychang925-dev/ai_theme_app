@@ -786,10 +786,11 @@ class DecisionExecutor:
             event_id = decision.get('event_id')
             theme_data = decision.get('theme_data', {})
             theme_id = theme_data.get('id')
+            subject_key = theme_data.get('subject_key') or decision.get("matched_subject_key")
             theme_name = theme_data.get('name', '未知题材')
             
-            if not theme_id:
-                raise ValueError("更新决策缺少theme_id")
+            if not theme_id and not subject_key:
+                raise ValueError("更新决策缺少 subject_key/theme_id")
             
             operations = self._extract_operations_safe(decision)
             if not operations:
@@ -800,12 +801,18 @@ class DecisionExecutor:
             
             for operation in operations:
                 if operation == 'update_theme_heat':
-                    await self._execute_update_theme_heat_safe(theme_id, decision)
+                    if theme_id:
+                        await self._execute_update_theme_heat_safe(theme_id, decision)
                 elif operation == 'create_mapping':
                     if event_id:
-                        await self._execute_create_mapping_safe(event_id, theme_id, decision)
+                        if subject_key:
+                            await self._execute_create_subject_mapping_safe(event_id, subject_key, theme_name, decision)
+                            await self._execute_related_subject_mappings_safe(event_id, subject_key, decision)
+                        elif theme_id:
+                            await self._execute_create_mapping_safe(event_id, theme_id, decision)
                 elif operation == 'publish_update':
-                    await self._execute_publish_theme_updated_safe(theme_id, decision)
+                    if theme_id:
+                        await self._execute_publish_theme_updated_safe(theme_id, decision)
                 else:
                     logger.warning(f"   跳过未知操作: {operation}")
             
@@ -815,6 +822,82 @@ class DecisionExecutor:
         except Exception as e:
             logger.error(f"   更新题材失败: {e}")
             raise
+
+    async def _execute_create_subject_mapping_safe(
+        self,
+        event_id: str,
+        subject_key: str,
+        subject_name: str,
+        decision: Dict,
+    ):
+        """安全创建事件-JYHF题材映射，不依赖 theme_master。"""
+        if not event_id or not subject_key:
+            return
+
+        event_id_int = self._extract_event_id(event_id)
+        if event_id_int == 0:
+            logger.warning(f"   无法提取整数事件ID: {event_id}")
+            return
+
+        if not hasattr(self.db_gateway, "upsert_event_subject_relation"):
+            raise RuntimeError("数据库gateway不支持 upsert_event_subject_relation")
+
+        match_result = decision.get("match_result") if isinstance(decision.get("match_result"), dict) else {}
+        event_data = decision.get("event_data") if isinstance(decision.get("event_data"), dict) else {}
+        audit = match_result.get("audit") if isinstance(match_result.get("audit"), dict) else {}
+        result = await self.db_gateway.upsert_event_subject_relation(
+            event_id=event_id_int,
+            news_id=event_data.get("news_id"),
+            subject_key=str(subject_key),
+            subject_name=subject_name,
+            confidence=decision.get("confidence", 0.8),
+            evidence_json={
+                "reason": decision.get("reason") or match_result.get("reason_code"),
+                "audit": audit,
+            },
+            relation_type=decision.get("relation_type", "primary"),
+            source=decision.get("source", "structured_theme_match"),
+            source_trace_id=decision.get("trace_id"),
+            run_id=decision.get("run_id"),
+            match_reason=decision.get("reason") or match_result.get("reason_code") or "",
+        )
+        self.stats["mappings_created"] += 1
+        logger.info(
+            "   创建JYHF题材映射成功: event=%s, subject_key=%s, relation_id=%s",
+            event_id_int,
+            subject_key,
+            result.get("id") if isinstance(result, dict) else "",
+        )
+
+    async def _execute_related_subject_mappings_safe(self, event_id: str, primary_subject_key: str, decision: Dict):
+        """写入 related_matches 扩展题材映射。"""
+        match_result = decision.get("match_result") if isinstance(decision.get("match_result"), dict) else {}
+        related_matches = match_result.get("related_matches") or decision.get("related_matches") or []
+        if not related_matches:
+            return
+
+        event_data = decision.get("event_data") if isinstance(decision.get("event_data"), dict) else {}
+        event_id_int = self._extract_event_id(event_id)
+        for item in related_matches:
+            if not isinstance(item, dict):
+                continue
+            subject_key = str(item.get("subject_key") or "").strip()
+            if not subject_key or subject_key == str(primary_subject_key):
+                continue
+            await self.db_gateway.upsert_event_subject_relation(
+                event_id=event_id_int,
+                news_id=event_data.get("news_id"),
+                subject_key=subject_key,
+                subject_name=item.get("theme_name") or item.get("subject_name"),
+                confidence=item.get("confidence"),
+                relation_type=item.get("relation_type") or "related",
+                match_reason=item.get("reason") or decision.get("reason") or "",
+                evidence_json={"related_match": item},
+                source=decision.get("source", "structured_theme_match"),
+                source_trace_id=decision.get("trace_id"),
+                run_id=decision.get("run_id"),
+            )
+            self.stats["mappings_created"] += 1
     
     async def _execute_update_theme_heat_safe(self, theme_id: Any, decision: Dict):
         """安全更新题材热度"""
