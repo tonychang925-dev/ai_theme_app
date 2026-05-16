@@ -44,6 +44,7 @@ async def run(args: argparse.Namespace) -> dict[str, Any]:
             trade_date=args.trade_date,
             run_id=args.run_id,
             dry_run=False,
+            delete_final_snapshot=args.delete_final_snapshot,
         )
         write_json(out_dir / "cleanup_result.json", cleanup_result)
 
@@ -77,7 +78,7 @@ async def run(args: argparse.Namespace) -> dict[str, Any]:
     if args.rebuild:
         snapshot_payload = _post_json(
             f"{args.sps_base_url.rstrip('/')}/api/v1/pre_market_brief/rebuild",
-            {"trade_date": args.trade_date, "force": bool(args.force_rebuild), "dry_run": False},
+            _build_rebuild_payload(args),
         )
         write_json(out_dir / "brief_snapshot.json", snapshot_payload)
     else:
@@ -122,6 +123,8 @@ async def _trace_once(args: argparse.Namespace, out_dir: Path, input_path: Path)
         run_id=args.run_id,
         trade_date=args.trade_date,
         input_path=input_path,
+        redis_url=args.redis_url,
+        redis_scan_limit=args.redis_scan_limit,
     )
     write_json(out_dir / "db_trace_report.json", trace)
     return trace
@@ -161,6 +164,16 @@ def _get_json(url: str, params: dict[str, Any]) -> dict[str, Any]:
         raise RuntimeError(f"GET {full_url} failed: {exc.code} {body}") from exc
 
 
+def _build_rebuild_payload(args: argparse.Namespace) -> dict[str, Any]:
+    return {
+        "trade_date": args.trade_date,
+        "source": "db_first",
+        "limit": args.limit or 300,
+        "force": bool(args.force_rebuild),
+        "dry_run": False,
+    }
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="盘前必读 E2E 多题材回放评测总控脚本。")
     parser.add_argument("--test-cases", default="evaluate_service/data/raw/test_cases.txt")
@@ -175,10 +188,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--out-dir")
     parser.add_argument("--limit", type=int)
     parser.add_argument("--force-clean", action="store_true")
+    parser.add_argument("--delete-final-snapshot", action="store_true")
     parser.add_argument("--inject", action="store_true")
     parser.add_argument("--wait", action="store_true")
     parser.add_argument("--wait-timeout", type=int, default=180)
     parser.add_argument("--wait-interval", type=int, default=5)
+    parser.add_argument("--redis-scan-limit", type=int, default=1000)
     parser.add_argument("--rebuild", action="store_true")
     parser.add_argument("--force-rebuild", action="store_true")
     parser.add_argument("--evaluate", action="store_true")
@@ -194,4 +209,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

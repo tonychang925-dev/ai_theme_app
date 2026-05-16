@@ -17,7 +17,11 @@ FORBIDDEN_INPUT_KEYS = {
 
 
 def repo_root() -> Path:
-    return Path(__file__).resolve().parents[3]
+    current = Path(__file__).resolve()
+    for parent in current.parents:
+        if (parent / "evaluate_service").is_dir() and (parent / ".git").exists():
+            return parent
+    return current.parents[3]
 
 
 def default_output_dir(run_id: str) -> Path:
@@ -115,4 +119,3 @@ async def column_exists(conn: Any, table_name: str, column_name: str) -> bool:
             column_name,
         )
     )
-
