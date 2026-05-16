@@ -26,6 +26,7 @@ async def cleanup_run(
     trade_date: str,
     run_id: str,
     dry_run: bool = False,
+    delete_final_snapshot: bool = False,
 ) -> dict[str, Any]:
     import asyncpg
 
@@ -69,7 +70,14 @@ async def cleanup_run(
             "pre_market_brief_snapshot": 0,
         }
         if dry_run:
-            return {"db_name": db_name, "run_id": run_id, "trade_date": trade_date, "dry_run": True, "counts": counts}
+            return {
+                "db_name": db_name,
+                "run_id": run_id,
+                "trade_date": trade_date,
+                "dry_run": True,
+                "delete_final_snapshot": delete_final_snapshot,
+                "counts": counts,
+            }
 
         async with conn.transaction():
             if event_ids and await table_exists(conn, "event_theme_map"):
@@ -85,7 +93,9 @@ async def cleanup_run(
                 result = await conn.execute("DELETE FROM news_raw WHERE id = ANY($1::int[])", raw_ids)
                 counts["news_raw"] = _affected(result)
             if await table_exists(conn, "pre_market_brief_snapshot"):
-                if await column_exists(conn, "pre_market_brief_snapshot", "status"):
+                if delete_final_snapshot:
+                    result = await _delete_e2e_snapshot(conn, trade_date)
+                elif await column_exists(conn, "pre_market_brief_snapshot", "status"):
                     result = await conn.execute(
                         """
                         DELETE FROM pre_market_brief_snapshot
@@ -100,7 +110,14 @@ async def cleanup_run(
                         trade_date,
                     )
                 counts["pre_market_brief_snapshot"] = _affected(result)
-        return {"db_name": db_name, "run_id": run_id, "trade_date": trade_date, "dry_run": False, "counts": counts}
+        return {
+            "db_name": db_name,
+            "run_id": run_id,
+            "trade_date": trade_date,
+            "dry_run": False,
+            "delete_final_snapshot": delete_final_snapshot,
+            "counts": counts,
+        }
     finally:
         await conn.close()
 
@@ -112,6 +129,29 @@ def _affected(result: str) -> int:
         return 0
 
 
+async def _delete_e2e_snapshot(conn: Any, trade_date: str) -> str:
+    has_source_name = await column_exists(conn, "pre_market_brief_snapshot", "source_name")
+    has_source_trace_id = await column_exists(conn, "pre_market_brief_snapshot", "source_trace_id")
+    has_snapshot_version = await column_exists(conn, "pre_market_brief_snapshot", "snapshot_version")
+    conditions = []
+    if has_source_name:
+        conditions.append("source_name = 'pre_market_brief_builder'")
+    if has_source_trace_id:
+        conditions.append("source_trace_id LIKE 'e2e:%'")
+    if has_snapshot_version:
+        conditions.append("snapshot_version = 'pre_market_brief.v1'")
+    if not conditions:
+        return await conn.execute("DELETE FROM pre_market_brief_snapshot WHERE trade_date = $1::date", trade_date)
+    return await conn.execute(
+        f"""
+        DELETE FROM pre_market_brief_snapshot
+        WHERE trade_date = $1::date
+          AND ({' OR '.join(conditions)})
+        """,
+        trade_date,
+    )
+
+
 async def async_main() -> None:
     parser = argparse.ArgumentParser(description="清理盘前必读 E2E run 的数据库痕迹。")
     parser.add_argument("--db-name", default="stock_data")
@@ -120,6 +160,7 @@ async def async_main() -> None:
     parser.add_argument("--run-id", required=True)
     parser.add_argument("--allow-production", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--delete-final-snapshot", action="store_true")
     parser.add_argument("--out")
     args = parser.parse_args()
 
@@ -130,6 +171,7 @@ async def async_main() -> None:
         trade_date=args.trade_date,
         run_id=args.run_id,
         dry_run=args.dry_run,
+        delete_final_snapshot=args.delete_final_snapshot,
     )
     if args.out:
         write_json(Path(args.out), result)
@@ -142,4 +184,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

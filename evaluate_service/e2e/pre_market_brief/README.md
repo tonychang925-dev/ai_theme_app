@@ -27,7 +27,19 @@ python evaluate_service/e2e/pre_market_brief/run_pre_market_e2e.py \
   --inject \
   --wait \
   --rebuild \
+  --force-rebuild \
   --evaluate
+```
+
+如果需要清掉同一 `trade_date` 上一次 E2E 生成的 final 快照，可额外传：
+
+```bash
+python evaluate_service/e2e/pre_market_brief/cleanup_e2e_run.py \
+  --db-name stock_data \
+  --source akshare_replay \
+  --trade-date 2026-05-16 \
+  --run-id pm_e2e_smoke_20260516_001 \
+  --delete-final-snapshot
 ```
 
 输出目录：
@@ -47,4 +59,3 @@ evaluate_service/output/pre_market_e2e/<run_id>/
 ```
 
 多题材映射增强不在这些脚本中实现；这些脚本只负责回放、追踪、评估。
-

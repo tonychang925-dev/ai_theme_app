@@ -2,10 +2,21 @@ from __future__ import annotations
 
 import pytest
 
-from evaluate_service.e2e.pre_market_brief.common import ensure_no_gold_leak, require_safe_db
+from evaluate_service.e2e.pre_market_brief.common import (
+    default_output_dir,
+    ensure_no_gold_leak,
+    repo_root,
+    require_safe_db,
+)
 from evaluate_service.e2e.pre_market_brief.evaluate_pre_market_brief import _matches_gold
 from evaluate_service.e2e.pre_market_brief.parse_test_cases import parse_test_cases_file
 from evaluate_service.e2e.pre_market_brief.replay_akshare_raw_news import build_stream_payload
+from evaluate_service.e2e.pre_market_brief.run_pre_market_e2e import build_parser, _build_rebuild_payload
+
+
+def test_repo_root_and_default_output_dir_are_project_relative():
+    assert repo_root().name == "ai_theme_app"
+    assert default_output_dir("x").as_posix().endswith("evaluate_service/output/pre_market_e2e/x")
 
 
 def test_parse_test_cases_splits_input_and_gold_labels(tmp_path):
@@ -73,3 +84,24 @@ def test_alias_match_for_gold_labels():
 def test_ensure_no_gold_leak_accepts_clean_payload():
     ensure_no_gold_leak({"title": "新闻", "case_id": "pm_case_0001"})
 
+
+def test_rebuild_payload_includes_source_and_explicit_limit():
+    args = build_parser().parse_args(
+        [
+            "--trade-date",
+            "2026-05-16",
+            "--run-id",
+            "pm_e2e",
+            "--limit",
+            "100",
+            "--force-rebuild",
+        ]
+    )
+
+    assert _build_rebuild_payload(args) == {
+        "trade_date": "2026-05-16",
+        "source": "db_first",
+        "limit": 100,
+        "force": True,
+        "dry_run": False,
+    }
