@@ -481,31 +481,28 @@ class BuildPostMarketRecapJob:
             if isinstance(obj, Decimal): return float(obj)
             return obj
 
-        # ── 生成结构化 report（内嵌，不依赖独立 RecapReportTask）──
-        try:
-            from stock_service.repositories.report_repository import ReportRepository
-            from stock_service.config import StockServiceConfig
-            from stock_service.services.recap_service import RecapService
+        # ── 生成结构化 report（缺依赖必须失败，禁止写入半空 report）──
+        from stock_service.repositories.report_repository import ReportRepository
+        from stock_service.config import StockServiceConfig
+        from stock_service.services.recap_service import RecapService
 
-            report_cfg = StockServiceConfig()
-            report_repo = ReportRepository(report_cfg)
-            await report_repo.initialize()
-            try:
-                report_service = RecapService(report_repo)
-                report = await report_service.build_post_market_report(trade_date.isoformat())
-                recap_doc["report"] = {
-                    "report_type": report.report_type,
-                    "trade_date": report.trade_date,
-                    "title": report.title,
-                    "summary": report.summary,
-                    "highlights": list(report.highlights or []),
-                    "sections": [{"heading": h, "items": list(i or [])} for h, i in list(report.sections or [])],
-                    "metadata": dict(getattr(report, "metadata", {}) or {}),
-                }
-            finally:
-                await report_repo.close()
-        except Exception:
-            pass
+        report_cfg = StockServiceConfig()
+        report_repo = ReportRepository(report_cfg)
+        await report_repo.initialize()
+        try:
+            report_service = RecapService(report_repo)
+            report = await report_service.build_post_market_report(trade_date.isoformat())
+            recap_doc["report"] = {
+                "report_type": report.report_type,
+                "trade_date": report.trade_date,
+                "title": report.title,
+                "summary": report.summary,
+                "highlights": list(report.highlights or []),
+                "sections": [{"heading": h, "items": list(i or [])} for h, i in list(report.sections or [])],
+                "metadata": dict(getattr(report, "metadata", {}) or {}),
+            }
+        finally:
+            await report_repo.close()
 
         snapshot = PostMarketRecapSnapshot(
             trade_date=trade_date,

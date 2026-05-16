@@ -406,9 +406,17 @@ class DatabaseGateway:
 
     async def get_existing_pre_market_brief_snapshot(self, trade_date) -> Optional[Dict[str, Any]]:
         """股票域显式读取：盘前快照文档。"""
+        return await self.get_pre_market_brief_snapshot(trade_date)
+
+    async def get_pre_market_brief_snapshot(self, trade_date) -> Optional[Dict[str, Any]]:
+        """股票域显式读取：盘前快照文档。"""
         try:
             start_time = time.time()
-            result = await self._client.get_existing_pre_market_brief_snapshot(trade_date)
+            fn = getattr(self._client, "get_pre_market_brief_snapshot", None)
+            if callable(fn):
+                result = await fn(trade_date)
+            else:
+                result = await self._client.get_existing_pre_market_brief_snapshot(trade_date)
             self._record_request(True, start_time)
             return result
         except Exception as e:
@@ -1161,16 +1169,33 @@ class DatabaseGateway:
             logger.error(f"批量写入 theme_stock_leaderboard 失败: {e}")
             raise
 
-    async def upsert_pre_market_brief_snapshot(self, doc: Dict[str, Any]) -> int:
+    async def upsert_pre_market_brief_snapshot(self, doc: Dict[str, Any], force: bool = False) -> int:
         """股票域显式写入：pre_market_brief_snapshot。"""
         try:
             start_time = time.time()
-            result = await self._client.upsert_pre_market_brief_snapshot(doc)
+            try:
+                result = await self._client.upsert_pre_market_brief_snapshot(doc, force=force)
+            except TypeError:
+                if force:
+                    raise
+                result = await self._client.upsert_pre_market_brief_snapshot(doc)
             self._record_request(True, start_time)
             return int(result or 0)
         except Exception as e:
             self._record_request(False, start_time)
             logger.error(f"写入 pre_market_brief_snapshot 失败: {e}")
+            raise
+
+    async def finalize_pre_market_brief_snapshot(self, trade_date, force: bool = False) -> int:
+        """股票域显式冻结：pre_market_brief_snapshot。"""
+        try:
+            start_time = time.time()
+            result = await self._client.finalize_pre_market_brief_snapshot(trade_date, force=force)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"冻结 pre_market_brief_snapshot 失败: {e}")
             raise
 
     async def upsert_post_market_recap_snapshot(self, doc: Dict[str, Any]) -> int:

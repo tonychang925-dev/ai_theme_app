@@ -30,6 +30,20 @@ def _normalize_secret(value: Any) -> str:
     return str(value or "").strip().strip("\"'").strip()
 
 
+def _redact_cmd(cmd: list[str]) -> str:
+    rendered: list[str] = []
+    redact_next = False
+    for item in cmd:
+        if redact_next:
+            rendered.append("<redacted>")
+            redact_next = False
+            continue
+        rendered.append(item)
+        if item in {"--token", "--tushare-token", "--jyhf-token", "--api-key", "--deepseek-api-key"}:
+            redact_next = True
+    return " ".join(rendered)
+
+
 @dataclass
 class CollectionTaskState:
     key: str

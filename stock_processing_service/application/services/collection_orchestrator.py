@@ -183,17 +183,90 @@ class CollectionCommandPlanner:
             )
 
         if task_key == "recap_snapshot":
-            # 三步（修复时序：abnormal.signal 必须在 recap.report 之前）：
-            #   Step 1: recap.snapshot — 新链 W2S 数据生成 (BuildPostMarketRecapJob)
-            #   Step 2: abnormal.signal — 异动信号检测（report 依赖此数据）
-            #   Step 3: recap.report   — LLM 报告生成 (RecapService → upsert report 到快照)
+            # 盘后复盘必须先准备 report 依赖真源，再由 recap.snapshot 生成唯一快照。
+            # 禁止 recap.report 二次覆盖 payload.report，否则会在依赖表缺失时写入半空报告。
             return CollectionTaskPlan(
-                pre_logs=["recap_snapshot: Step1 W2S数据 + Step2 异动信号 + Step3 LLM报告"],
+                pre_logs=["recap_snapshot: prepare report truth sources, then build one final new-chain snapshot"],
                 steps=[
                     CollectionTaskStep(
-                        key="recap_data",
-                        runner_key="recap.snapshot",
-                        label="盘后复盘数据生成",
+                        key="stock_kline_judgements",
+                        runner_key="script.default",
+                        commands=[
+                            CollectionCommand(
+                                cmd=[
+                                    self._python_bin,
+                                    str(self._project_root / "database_service/scripts/build_stock_kline_judgements.py"),
+                                    "--trade-date",
+                                    trade_date,
+                                ]
+                            )
+                        ],
+                        label="个股K线位置与形态判断",
+                    ),
+                    CollectionTaskStep(
+                        key="market_environment_metrics",
+                        runner_key="script.default",
+                        commands=[
+                            CollectionCommand(
+                                cmd=[
+                                    self._python_bin,
+                                    str(self._project_root / "database_service/scripts/build_market_environment_metrics.py"),
+                                    "--trade-date",
+                                    trade_date,
+                                ]
+                            )
+                        ],
+                        label="市场环境指标生成",
+                    ),
+                    CollectionTaskStep(
+                        key="market_environment_judgement",
+                        runner_key="script.default",
+                        commands=[
+                            CollectionCommand(
+                                cmd=[
+                                    self._python_bin,
+                                    str(self._project_root / "database_service/scripts/build_market_environment_judgement.py"),
+                                    "--trade-date",
+                                    trade_date,
+                                ]
+                            )
+                        ],
+                        label="市场环境判断",
+                    ),
+                    CollectionTaskStep(
+                        key="theme_leader_candidate",
+                        runner_key="leader_llm.candidate",
+                        label="龙头候选构建",
+                    ),
+                    CollectionTaskStep(
+                        key="money_flow_enhanced",
+                        runner_key="script.default",
+                        commands=[
+                            CollectionCommand(
+                                cmd=[
+                                    self._python_bin,
+                                    str(self._project_root / "database_service/scripts/build_money_flow_enhanced.py"),
+                                    "--trade-date",
+                                    trade_date,
+                                ]
+                            )
+                        ],
+                        label="资金行为增强",
+                    ),
+                    CollectionTaskStep(
+                        key="theme_environment_judgement",
+                        runner_key="script.default",
+                        commands=[
+                            CollectionCommand(
+                                cmd=[
+                                    self._python_bin,
+                                    str(self._project_root / "database_service/scripts/build_theme_environment_judgement.py"),
+                                    "--trade-date",
+                                    trade_date,
+                                ]
+                            )
+                        ],
+                        label="板块环境判断",
                     ),
                     CollectionTaskStep(
                         key="abnormal_signal",
@@ -201,9 +274,9 @@ class CollectionCommandPlanner:
                         label="异动信号检测",
                     ),
                     CollectionTaskStep(
-                        key="recap_report",
-                        runner_key="recap.report",
-                        label="盘后复盘 LLM 报告生成",
+                        key="recap_data",
+                        runner_key="recap.snapshot",
+                        label="盘后复盘最终快照生成",
                     ),
                 ],
             )

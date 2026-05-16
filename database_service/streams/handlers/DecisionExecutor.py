@@ -246,8 +246,40 @@ class DecisionExecutor:
             await self._execute_publish_clustering_fixed(decision)
         elif action == 'clustering_result':
             await self._execute_clustering_result_fixed(decision)
+        elif action == 'human_review':
+            await self._execute_human_review_fixed(decision)
         else:
             raise ValueError(f"未知决策类型: {action}")
+
+    async def _execute_human_review_fixed(self, decision: Dict):
+        """执行人工复核决策：只入复核队列，不做题材匹配或股票推荐。"""
+        logger.info("   📝 执行人工复核决策")
+
+        event_data = decision.get("event_data") if isinstance(decision.get("event_data"), dict) else {}
+        event_id = event_data.get("event_id") or decision.get("event_id")
+        if not event_id:
+            raise ValueError("人工复核决策缺少 event_id")
+
+        if not hasattr(self.db_gateway, "enqueue_event_review"):
+            raise RuntimeError("db_gateway 不支持 enqueue_event_review")
+
+        theme_data = decision.get("theme_data") if isinstance(decision.get("theme_data"), dict) else {}
+        confidence = decision.get("confidence")
+        proposed_theme_confidence = float(confidence) if confidence is not None else None
+
+        ok = await self.db_gateway.enqueue_event_review(
+            event_id=int(event_id),
+            reason=decision.get("reason") or "theme_match_human_review",
+            source_channel=decision.get("source") or "structured_theme_match",
+            proposed_theme_name=theme_data.get("name"),
+            proposed_theme_confidence=proposed_theme_confidence,
+        )
+        if not ok:
+            self.stats["review_queue_enqueue_failed"] += 1
+            raise RuntimeError(f"写入人工复核队列失败: event_id={event_id}")
+
+        self.stats["review_queue_enqueued"] += 1
+        logger.info("   ✅ 已写入人工复核队列: event_id=%s", event_id)
     
     async def _execute_create_new_theme_fixed(self, decision: Dict):
         """

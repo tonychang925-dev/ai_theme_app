@@ -149,3 +149,62 @@ async def test_blocked_realtime_decision_enqueues_event_review_queue():
 
     redis.xadd.assert_awaited_once()
     gateway.enqueue_event_review.assert_awaited_once()
+
+
+# TC-ID: TC-P1P0-007
+@pytest.mark.asyncio
+async def test_human_review_action_enqueues_event_review_queue():
+    class _Gateway:
+        def __init__(self):
+            self.enqueue_event_review = AsyncMock(return_value=True)
+
+    redis = AsyncMock()
+    gateway = _Gateway()
+    exe = DecisionExecutor(redis_client=redis, db_gateway=gateway, consumer_name="ut_phase0")
+
+    decision = {
+        "decision_id": "d-007",
+        "event_id": 7007,
+        "event_data": {"event_id": 7007, "title": "待复核事件"},
+        "action": "human_review",
+        "reason": "theme_match_human_review",
+        "source": "structured_theme_match",
+        "confidence": 0.66,
+        "theme_data": {"name": "候选题材"},
+    }
+
+    await exe._execute_action_fixed("human_review", decision, "mid-007", {})
+
+    gateway.enqueue_event_review.assert_awaited_once_with(
+        event_id=7007,
+        reason="theme_match_human_review",
+        source_channel="structured_theme_match",
+        proposed_theme_name="候选题材",
+        proposed_theme_confidence=0.66,
+    )
+    assert exe.stats["review_queue_enqueued"] == 1
+
+
+# TC-ID: TC-P1P0-008
+@pytest.mark.asyncio
+async def test_unknown_action_still_uses_pending_not_human_review():
+    class _Gateway:
+        def __init__(self):
+            self.enqueue_event_review = AsyncMock(return_value=True)
+
+    redis = AsyncMock()
+    gateway = _Gateway()
+    exe = DecisionExecutor(redis_client=redis, db_gateway=gateway, consumer_name="ut_phase0")
+
+    decision = {
+        "decision_id": "d-008",
+        "event_id": 8008,
+        "event_data": {"event_id": 8008, "title": "unknown"},
+        "action": "publish_clustering",
+        "reason": "UNKNOWN",
+    }
+
+    await exe._execute_action_fixed("publish_clustering", decision, "mid-008", {})
+
+    redis.xadd.assert_awaited_once()
+    gateway.enqueue_event_review.assert_not_awaited()

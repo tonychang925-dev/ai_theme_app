@@ -11,6 +11,7 @@ class JyhfAppManager:
     def __init__(self, app_path: str, cdp_port: int) -> None:
         self._app_path = app_path
         self._cdp_port = cdp_port
+        self._launching: bool = False  # Guard against concurrent launch attempts
 
     def is_running_with_cdp(self) -> bool:
         try:
@@ -25,10 +26,38 @@ class JyhfAppManager:
         except Exception:
             return False
 
+    def stop_app(self) -> None:
+        """Kill any running JYHF app process so it can be cleanly restarted."""
+        try:
+            result = subprocess.run(
+                ["pkill", "-f", "久赢恒丰"],
+                capture_output=True, text=True, timeout=10,
+            )
+            if result.returncode == 0:
+                logger.info("JYHF app killed via pkill")
+                # Wait for port release
+                deadline = time.time() + 5
+                while time.time() < deadline:
+                    if not self.is_running_with_cdp():
+                        break
+                    time.sleep(0.5)
+        except Exception as exc:
+            logger.warning("failed to kill JYHF app: %s", exc)
+
     def ensure_running(self, should_stop: Callable[[], bool] | None = None) -> bool:
         if self.is_running_with_cdp():
             return True
-        return self._launch_and_wait(should_stop)
+        # Guard: if already launching, just wait — don't kill and restart
+        if self._launching:
+            logger.info("JYHF app launch already in progress, waiting...")
+            return False  # Let the capture loop retry next cycle
+        self._launching = True
+        try:
+            # Kill any stale instance before launching
+            self.stop_app()
+            return self._launch_and_wait(should_stop)
+        finally:
+            self._launching = False
 
     def _launch_and_wait(self, should_stop: Callable[[], bool] | None, attempt: int = 1) -> bool:
         logger.info("launching JYHF app with CDP (attempt %s)", attempt)
