@@ -1,6 +1,6 @@
 case_id,gold_theme_name,primary_theme_name,related_theme_names,status
-pm_case_0001,AI/AR眼镜,,,unknown
+pm_case_0001,AI/AR眼镜,AR眼镜,人工智能+消费|AI大娱乐|ChatGPT 5,exact_or_alias_primary
 pm_case_0002,AI/AR眼镜,AR眼镜,人工智能+消费|AI大娱乐|机器人之眼（机器视觉）|影石相机,exact_or_alias_primary
-pm_case_0003,AI/AR眼镜,,,unknown
-pm_case_0004,AI/AR眼镜,,,unknown
-pm_case_0005,AI/AR眼镜,,,unknown
+pm_case_0003,AI/AR眼镜,AR眼镜,人工智能硬件|中科院,exact_or_alias_primary
+pm_case_0004,AI/AR眼镜,AR眼镜,AI大娱乐|智能穿戴|华为三折叠屏手机|人工智能+消费,exact_or_alias_primary
+pm_case_0005,AI/AR眼镜,AR眼镜,,exact_or_alias_primary
