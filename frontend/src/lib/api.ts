@@ -197,6 +197,83 @@ export interface RecapDefaultsView {
   latest_pre_market_date?: string | null;
 }
 
+export interface PreMarketBriefEvent {
+  event_id?: string | number | null;
+  item_id?: string;
+  occurred_at?: string;
+  title?: string;
+  summary?: string;
+  subject_key?: string;
+  theme_name?: string;
+  confidence?: number | null;
+  impact_score?: number | null;
+  source_type?: string;
+  source_channel?: string;
+  reason?: string;
+}
+
+export interface PreMarketBriefTheme {
+  subject_key?: string;
+  theme_name?: string;
+  event_count?: number;
+  latest_event_title?: string;
+  confidence?: number | null;
+  impact_score?: number | null;
+  event_ids?: Array<string | number | null>;
+}
+
+export interface PreMarketOpportunityStock {
+  stock_id?: string;
+  stock_name?: string;
+  level?: "A" | "B" | "C" | string;
+  score?: number | null;
+  reason?: string;
+  risk?: string;
+  evidence?: Record<string, unknown>;
+}
+
+export interface PreMarketOpportunity {
+  subject_key?: string;
+  theme_name?: string;
+  event_count?: number;
+  latest_event_title?: string;
+  theme_confidence?: number | null;
+  tiers?: Record<string, PreMarketOpportunityStock[]>;
+  stocks?: PreMarketOpportunityStock[];
+}
+
+export interface PreMarketBriefSections {
+  market_overview?: unknown[];
+  overnight_global?: unknown[];
+  major_events?: PreMarketBriefEvent[];
+  matched_themes?: PreMarketBriefTheme[];
+  event_driven_opportunities?: PreMarketOpportunity[];
+  weak_to_strong_watch?: unknown[];
+  review_events?: PreMarketBriefEvent[];
+  unknown_watch?: PreMarketBriefEvent[];
+  risk_alerts?: Array<Record<string, unknown>>;
+}
+
+export interface PreMarketBriefPayload {
+  version?: string;
+  trade_date?: string;
+  status?: "draft" | "final" | "stale" | "partial" | string;
+  sections?: PreMarketBriefSections;
+  diagnostics?: Record<string, unknown>;
+}
+
+export interface PreMarketBriefView {
+  ok?: boolean;
+  trade_date: string;
+  snapshot_version?: string;
+  status?: string;
+  payload: PreMarketBriefPayload;
+  diagnostics?: Record<string, unknown>;
+  generated_at?: string | null;
+  finalized_at?: string | null;
+  updated_at?: string | null;
+}
+
 export interface CollectionAvailability {
   server_time: string;
   allowed: boolean;
@@ -621,6 +698,15 @@ export async function fetchRecapDefaults(): Promise<RecapDefaultsView> {
     throw new Error(`recap defaults request failed: ${response.status}`);
   }
   return response.json();
+}
+
+export async function fetchPreMarketBrief(tradeDate: string): Promise<PreMarketBriefView> {
+  const query = new URLSearchParams({ trade_date: tradeDate });
+  return fetchJsonWithTimeout<PreMarketBriefView>(
+    `/api/v2/pre-market-brief?${query.toString()}`,
+    undefined,
+    15000,
+  );
 }
 
 export async function fetchCollectionAvailability(tradeDate?: string): Promise<CollectionAvailability> {

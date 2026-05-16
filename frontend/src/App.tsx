@@ -9,6 +9,7 @@ import {
   LazyStrongStockWatchPage,
   LazyStrongStockWatchDetailPage,
   LazyRecapPage,
+  LazyPreMarketBriefPage,
   LazyMobileHomePage,
   LazyMobileRecapPage,
   LazyMobileScreenerPage,
@@ -196,6 +197,14 @@ function AppRoutes() {
         <LazyLoadErrorBoundary>
           <Suspense fallback={<LoadingFallback message="加载每日回顾..." />}>
             <LazyRecapPage />
+          </Suspense>
+        </LazyLoadErrorBoundary>
+      )}
+
+      {path.startsWith("/pre-market-brief") && (
+        <LazyLoadErrorBoundary>
+          <Suspense fallback={<LoadingFallback message="加载盘前必读..." />}>
+            <LazyPreMarketBriefPage />
           </Suspense>
         </LazyLoadErrorBoundary>
       )}
