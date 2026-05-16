@@ -29,6 +29,7 @@ from stock_processing_service.tests.replay._post_market_replay_runner import _Re
 from stock_processing_service.application.orchestrators.bootstrap import build_container
 from theme_service.repositories.phase1_read_repository import Phase1ReadRepository
 from stock_processing_service.application.services.intel_new_chain_adapter import NewChainIntelFeedAdapter
+from stock_processing_service.application.services.pre_market_brief_builder import PreMarketBriefBuilder
 from stock_processing_service.application.jobs.collection_job_manager import CollectionJobManager
 from stock_processing_service.domain.services.w2s_candidate_service import W2SCandidate
 from stock_processing_service.domain.services.w2s_confirm_service import W2SConfirmService
@@ -122,6 +123,19 @@ class CollectionStartRequest(BaseModel):
 
 class CollectionJobActionRequest(BaseModel):
     job_id: str
+
+
+class PreMarketBriefRebuildPayload(BaseModel):
+    trade_date: str
+    source: str = "db_first"
+    limit: int = Field(default=200, ge=1, le=500)
+    dry_run: bool = False
+    force: bool = False
+
+
+class PreMarketBriefFinalizePayload(BaseModel):
+    trade_date: str
+    force: bool = False
 
 
 class ScreenerExecutePayload(BaseModel):
@@ -1257,6 +1271,74 @@ async def get_post_market_snapshot(trade_date: str = Query(..., description="YYY
         "trade_date": str(row.get("trade_date") or trade_date),
         "snapshot_version": str(row.get("snapshot_version") or "unknown"),
         "payload": payload,
+    }
+
+
+@app.get("/api/v1/pre_market_brief")
+async def get_pre_market_brief(trade_date: str = Query(..., description="YYYY-MM-DD")) -> dict[str, Any]:
+    try:
+        d = date.fromisoformat(trade_date)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=f"invalid trade_date: {trade_date}") from exc
+    row = await app.state.gateway.get_pre_market_brief_snapshot(d)
+    if not row:
+        return {
+            "trade_date": trade_date,
+            "snapshot_version": "missing",
+            "status": "missing",
+            "payload": {},
+        }
+    return {
+        "trade_date": str(row.get("trade_date") or trade_date),
+        "snapshot_version": str(row.get("snapshot_version") or "unknown"),
+        "status": str(row.get("status") or (row.get("payload") or {}).get("status") or "draft"),
+        "payload": row.get("payload") or {},
+        "generated_at": str(row.get("generated_at") or "") or None,
+        "finalized_at": str(row.get("finalized_at") or "") or None,
+        "updated_at": str(row.get("updated_at") or "") or None,
+    }
+
+
+@app.post("/api/v1/pre_market_brief/rebuild")
+async def rebuild_pre_market_brief(payload: PreMarketBriefRebuildPayload) -> dict[str, Any]:
+    try:
+        d = date.fromisoformat(payload.trade_date)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=f"invalid trade_date: {payload.trade_date}") from exc
+    builder = PreMarketBriefBuilder(
+        read_gateway=app.state.gateway,
+        write_gateway=app.state.gateway,
+    )
+    doc = await builder.rebuild(
+        trade_date=d,
+        source=payload.source,
+        limit=payload.limit,
+        dry_run=payload.dry_run,
+        force=payload.force,
+    )
+    return {
+        "ok": True,
+        "trade_date": payload.trade_date,
+        "dry_run": payload.dry_run,
+        "status": doc.get("status", "draft"),
+        "payload": doc,
+    }
+
+
+@app.post("/api/v1/pre_market_brief/finalize")
+async def finalize_pre_market_brief(payload: PreMarketBriefFinalizePayload) -> dict[str, Any]:
+    try:
+        d = date.fromisoformat(payload.trade_date)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=f"invalid trade_date: {payload.trade_date}") from exc
+    affected = await app.state.gateway.finalize_pre_market_brief_snapshot(d, force=payload.force)
+    row = await app.state.gateway.get_pre_market_brief_snapshot(d)
+    return {
+        "ok": bool(affected),
+        "trade_date": payload.trade_date,
+        "affected_rows": affected,
+        "status": str((row or {}).get("status") or "missing"),
+        "payload": (row or {}).get("payload") or {},
     }
 
 

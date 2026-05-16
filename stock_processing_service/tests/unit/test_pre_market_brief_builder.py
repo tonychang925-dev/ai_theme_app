@@ -79,7 +79,7 @@ async def test_pre_market_brief_builder_aggregates_db_events_and_writes_snapshot
             "subject_key": "theme-a",
             "theme_name": "卫星互联网",
             "event_count": 2,
-            "latest_event_title": "卫星互联网事件",
+            "latest_event_title": "卫星互联网补充事件",
             "confidence": 0.86,
             "impact_score": 90.0,
             "event_ids": [101, 102],

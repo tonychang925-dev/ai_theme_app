@@ -177,12 +177,13 @@ class PreMarketBriefBuilder:
         themes: list[dict[str, Any]] = []
         for key, events in grouped.items():
             best = max(events, key=lambda row: float(row.get("confidence") or 0))
+            latest = max(events, key=lambda row: str(row.get("occurred_at") or ""))
             themes.append(
                 {
                     "subject_key": key,
                     "theme_name": best.get("theme_name") or key,
                     "event_count": len(events),
-                    "latest_event_title": events[0].get("title", ""),
+                    "latest_event_title": latest.get("title", ""),
                     "confidence": best.get("confidence"),
                     "impact_score": max(float(row.get("impact_score") or 0) for row in events),
                     "event_ids": [row.get("event_id") for row in events if row.get("event_id") is not None],
