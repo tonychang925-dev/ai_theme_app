@@ -70,8 +70,8 @@ class DBStockObjectGateway:
     async def upsert_theme_stock_leaderboard_rows(self, rows: list[dict[str, Any]]) -> int:
         return await self.upsert_theme_stock_leaderboard(rows)
 
-    async def upsert_pre_market_brief_snapshot(self, doc: dict[str, Any]) -> int:
-        return await self.upsert_pre_market_snapshot(doc)
+    async def upsert_pre_market_brief_snapshot(self, doc: dict[str, Any], force: bool = False) -> int:
+        return await self.upsert_pre_market_snapshot(doc, force=force)
 
     async def upsert_post_market_recap_snapshot(self, doc: dict[str, Any]) -> int:
         return await self.upsert_post_market_snapshot(doc)
@@ -109,9 +109,14 @@ class DBStockObjectGateway:
     async def upsert_theme_stock_leaderboard(self, rows: list[dict[str, Any]]) -> int:
         return await self._db.upsert_theme_stock_leaderboard_rows(rows)
 
-    async def upsert_pre_market_snapshot(self, row: dict[str, Any]) -> int:
+    async def upsert_pre_market_snapshot(self, row: dict[str, Any], force: bool = False) -> int:
         payload = self._to_dict(row)
-        return await self._db.upsert_pre_market_brief_snapshot(payload)
+        try:
+            return await self._db.upsert_pre_market_brief_snapshot(payload, force=force)
+        except TypeError:
+            if force:
+                raise
+            return await self._db.upsert_pre_market_brief_snapshot(payload)
 
     async def upsert_post_market_snapshot(self, row: dict[str, Any]) -> int:
         payload = self._json_safe(self._to_dict(row))

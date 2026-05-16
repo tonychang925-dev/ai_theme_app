@@ -6405,6 +6405,45 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             rows = await conn.fetch(sql, feed_date)
         return [dict(r) for r in rows]
 
+    async def get_pre_market_review_events(self, feed_date: date, limit: int = 200) -> List[Dict[str, Any]]:
+        """盘前必读待复核事件：event_review_queue + news_event + news_raw。"""
+        sql = """
+        SELECT
+            q.event_id,
+            ('review:' || q.event_id::text) AS item_id,
+            COALESCE(ne.created_at, nr.created_at, q.created_at) AS occurred_at,
+            COALESCE(NULLIF(nr.title, ''), NULLIF(ne.summary, ''), ne.event_type, ('待复核事件#' || q.event_id::text)) AS title,
+            COALESCE(ne.summary, nr.content, q.reason, '') AS summary,
+            q.proposed_theme_name AS theme_name,
+            q.proposed_theme_confidence AS confidence,
+            COALESCE(ne.severity_score, 0) AS impact_score,
+            q.reason,
+            q.source_channel,
+            'event_review_queue'::text AS source_type
+        FROM event_review_queue q
+        LEFT JOIN news_event ne ON ne.id = q.event_id
+        LEFT JOIN news_raw nr ON nr.id = ne.news_id
+        WHERE q.review_status = 'waiting'
+          AND (
+            ne.event_time::date = $1::date
+            OR ne.created_at::date = $1::date
+            OR nr.publish_date::date = $1::date
+            OR q.created_at::date = $1::date
+          )
+        ORDER BY COALESCE(ne.severity_score, 0) DESC, q.created_at DESC
+        LIMIT $2
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                exists = await conn.fetchval("SELECT to_regclass('public.event_review_queue')::text")
+                if not exists:
+                    return []
+                rows = await conn.fetch(sql, feed_date, int(limit))
+            return [dict(r) for r in rows]
+        except Exception as e:
+            logger.warning(f"读取 event_review_queue 失败（可能尚未迁移）: {e}")
+            return []
+
     async def upsert_stock_abnormal_signal_rows(self, rows: List[Dict[str, Any]]) -> int:
         """写入异动股票信号（stock_abnormal_signal 表）。"""
         sql = """
