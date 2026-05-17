@@ -56,6 +56,7 @@ async def run(args: argparse.Namespace) -> dict[str, Any]:
             run_id=args.run_id,
             dry_run=False,
             delete_final_snapshot=args.delete_final_snapshot,
+            clean_trade_date_all_e2e=args.clean_trade_date_all_e2e,
         )
         write_json(out_dir / "cleanup_result.json", cleanup_result)
 
@@ -362,6 +363,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--limit", type=int)
     parser.add_argument("--force-clean", action="store_true")
     parser.add_argument("--delete-final-snapshot", action="store_true")
+    parser.add_argument(
+        "--clean-trade-date-all-e2e",
+        action="store_true",
+        help="配合 --force-clean 使用：清理该 trade_date 下全部 akshare_replay E2E 数据，避免旧 run 污染报告。",
+    )
     parser.add_argument("--inject", action="store_true")
     parser.add_argument("--wait", action="store_true")
     parser.add_argument("--wait-timeout", type=int, default=180)

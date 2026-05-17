@@ -1,0 +1,50 @@
+{
+  "ok": true,
+  "trade_date": "2026-05-14",
+  "dry_run": false,
+  "status": "draft",
+  "payload": {
+    "version": "pre_market_brief.v1",
+    "trade_date": "2026-05-14",
+    "status": "draft",
+    "sections": {
+      "major_events": [],
+      "matched_themes": [],
+      "review_events": [
+        {
+          "event_id": 2866,
+          "item_id": "review:2866",
+          "occurred_at": "2026-05-17 07:54:42.754965",
+          "title": "蓝箭航天副总裁张静茹告诉《科创板日报》记者，蓝箭航天供应链600余家供应商覆盖全国90余城，民企占比近70%、国企30%",
+          "summary": "蓝箭航天副总裁透露供应链覆盖全国90余城，民企占比近70%，无锡装配基地冲刺建设。",
+          "subject_key": "",
+          "theme_name": "航天材料",
+          "confidence": 0.5,
+          "impact_score": 0.0,
+          "source_type": "event_review_queue",
+          "source_channel": "structured_theme_match",
+          "reason": "llm_accept_without_anchor_evidence"
+        }
+      ],
+      "unknown_watch": [],
+      "risk_alerts": [
+        {
+          "risk_type": "human_review_pending",
+          "count": 1,
+          "message": "存在待人工复核的高影响题材事件，暂不生成股票机会。"
+        }
+      ],
+      "event_driven_opportunities": []
+    },
+    "diagnostics": {
+      "source": "db_empty",
+      "event_count": 1,
+      "matched_event_count": 0,
+      "theme_count": 0,
+      "opportunity_count": 0,
+      "review_event_count": 1,
+      "unknown_event_count": 0,
+      "last_rebuild_at": "2026-05-16T23:54:50.779396+00:00"
+    }
+  }
+}

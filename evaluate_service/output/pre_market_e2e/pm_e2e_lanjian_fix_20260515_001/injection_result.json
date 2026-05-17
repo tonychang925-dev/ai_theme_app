@@ -1,0 +1,14 @@
+{
+  "run_id": "pm_e2e_lanjian_fix_20260515_001",
+  "trade_date": "2026-05-15",
+  "stream": "stream:news:raw",
+  "input_count": 1,
+  "injected_count": 1,
+  "items": [
+    {
+      "case_id": "pm_case_0001",
+      "external_id": "pm_e2e_lanjian_fix_20260515_001:pm_case_0001",
+      "stream_id": "1778975366626-0"
+    }
+  ]
+}

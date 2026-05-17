@@ -1,0 +1,52 @@
+{
+  "run_id": "pm_e2e_lanjian_fix_20260515_001",
+  "trade_date": "2026-05-15",
+  "counts": {
+    "expected_input_count": 1,
+    "news_raw_count": 1,
+    "news_event_count": 1,
+    "mapped_event_count": 0,
+    "event_subject_map_count": 0,
+    "event_theme_map_count": 0,
+    "review_queue_count": 1,
+    "decision_count": 1,
+    "pending_count": 0,
+    "dead_letter_count": 0
+  },
+  "redis_streams": {
+    "decision_stream": "stream:events:decision",
+    "pending_stream": "stream:events:pending",
+    "dead_letter_stream": "stream:dead:letter",
+    "decision_count": 1,
+    "pending_count": 0,
+    "dead_letter_count": 0,
+    "decision_entries": [
+      {
+        "stream_id": "1778975387231-0",
+        "case_id": null,
+        "event_id": "2863",
+        "decision": "{\"decision_id\": \"decision_1778975387_1778975373939-0\", \"decision_type\": \"phase0_human_review\", \"action\": \"human_review\", \"operations\": [\"publish_human_review\"], \"event_id\": 2863, \"trace_id\": \"trace_2863\", \"event_type\": \"structured\", \"event_title\": \"蓝箭航天副总裁张静茹告诉《科创板日报》记者，蓝箭航天供应链600余家供应商覆盖全国90余城，民企占比近70%、国企30%\", \"timestamp\": \"2026-05-17T07:49:47.231047\", \"processor\": \"theme_processor_e2e_pm_e2e_lanjian_fix_20260515_001\", \"event_data\": {\"event_id\": 2863, \"news_id\": 3197, \"title\": \"蓝箭航天副总裁张静茹告诉《科创板日报》记者，蓝箭航天供应链600余家供应商覆盖全国90余城，民企占比近70%、国企30%\", \"summary\": \"蓝箭航天副总裁透露公司供应链覆盖全国90余城，民企占比近70%，无锡装配基地冲刺建设。\", \"content\": \"蓝箭航天副总裁张静茹告诉《科创板日报》记者，蓝箭航天供应链600余家供应商覆盖全国90余城，民企占比近70%、国企30%。同时，无锡朱雀三号装配基地正冲刺建设，力争年底验收，2026年投用，专注火箭装配与智能制造。 (新闻来源：科创板日报)\", \"event_type\": \"行业观点\"}, \"confidence\": 0.5, \"reason\": \"llm_accept_without_anchor_evidence\", \"source\": \"structured_theme_match\", \"match_result\": {\"decision\": \"HUMAN_REVIEW\", \"event_id\": 2863, \"news_id\": 3197, \"confidence\": 0.5, \"reason_code\": \"llm_accept_without_anchor_evidence\", \"matched_subject_key\": \"9061860\", \"matched_theme_name\": \"航天材料\", \"matched_theme_id\": null, \"related_matches\": [], \"review_required\": true, \"audit\": {\"top_candidates\": [{\"subject_key\": \"9061860\", \"subject_name\": \"航天材料\", \"dense_score\": 0.0, \"rerank_score\": 0.6657, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [\"火箭\"], \"entity_hits\": [], \"support_hits\": [], \"anchor_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 1, \"conflict_score\": 0, \"evidence_summary\": {\"theme_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [\"火箭\"], \"conflict_terms\": []}}}, {\"subject_key\": \"9042073\", \"subject_name\": \"航空运输\", \"dense_score\": 0.6708, \"rerank_score\": 0.6476, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"support_hits\": [\"航空公司\"], \"anchor_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"evidence_summary\": {\"theme_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": []}}}, {\"subject_key\": \"9064884\", \"subject_name\": \"F5G\", \"dense_score\": 0.6142, \"rerank_score\": 0.6266, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"support_hits\": [], \"anchor_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"evidence_summary\": {\"theme_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": []}}}, {\"subject_key\": \"9023579\", \"subject_name\": \"高股息概念\", \"dense_score\": 0.0, \"rerank_score\": 0.6035, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [\"科创板\"], \"entity_hits\": [], \"support_hits\": [], \"anchor_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 1, \"conflict_score\": 0, \"evidence_summary\": {\"theme_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [\"科创板\"], \"conflict_terms\": []}}}, {\"subject_key\": \"9049868\", \"subject_name\": \"“苏超”联赛\", \"dense_score\": 0.6078, \"rerank_score\": 0.5949, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"support_hits\": [], \"anchor_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"evidence_summary\": {\"theme_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": []}}}], \"llm_result\": {\"verdict\": \"accept_match\", \"best_candidate\": \"C1\", \"best_theme_key\": \"9061860\", \"best_theme_name\": \"航天材料\", \"confidence\": 0.72, \"reason\": \"事件主对象为蓝箭航天（火箭公司），核心实体为朱雀三号火箭，与航天材料题材的火箭锚点匹配，且事件讨论供应链与制造，属于航天产业链范畴。\", \"new_theme_name\": \"\", \"new_theme_desc\": \"\"}, \"best_evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [\"火箭\"], \"entity_hits\": [], \"support_hits\": [], \"anchor_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 1, \"conflict_score\": 0, \"evidence_summary\": {\"theme_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [\"火箭\"], \"conflict_terms\": []}}}}, \"theme_data\": {\"subject_key\": \"9061860\", \"name\": \"航天材料\", \"id\": null}, \"run_id\": null, \"case_id\": null}"
+      }
+    ],
+    "pending_entries": [],
+    "dead_letter_entries": []
+  },
+  "rows": [
+    {
+      "case_id": "pm_case_0001",
+      "external_id": "pm_e2e_lanjian_fix_20260515_001:pm_case_0001",
+      "news_raw_id": 3197,
+      "news_event_id": 2863,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": "waiting",
+      "review_reason": "llm_accept_without_anchor_evidence",
+      "pending_status": null,
+      "dead_letter_status": null
+    }
+  ]
+}

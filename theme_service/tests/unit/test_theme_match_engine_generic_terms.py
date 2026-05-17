@@ -9,6 +9,7 @@ from theme_service.services.theme_match_engine import (
     _build_event_match_profile,
     _build_gate_evidence,
     _calc_feature_recall_score,
+    _build_feature_recall_rows,
 )
 from theme_service.services.theme_match_types import ThemeMatchRequest, ThemeProfile
 
@@ -33,6 +34,8 @@ def _profile(
     entity_hints: list[str] | None = None,
     semantic_type: str = "产业题材",
     strategy_type: str = "event_driven",
+    search_text: str | None = None,
+    rerank_text: str | None = None,
 ) -> ThemeProfile:
     return ThemeProfile(
         subject_key=subject_key,
@@ -49,9 +52,9 @@ def _profile(
         strong_terms=strong_terms or [],
         weak_terms=[],
         negative_terms=[],
-        search_text=name,
+        search_text=search_text or name,
         quality="test",
-        rerank_text=name,
+        rerank_text=rerank_text or name,
         aliases=aliases or [],
         entity_hints=entity_hints or [],
         core_objects=core_objects or [],
@@ -130,6 +133,169 @@ def test_generic_supplier_gate_terms_do_not_create_anchor_evidence():
     assert evidence["object_hits"] == []
     assert "供应链" in evidence["support_hits"]
     assert evidence["anchor_hits"] == []
+
+
+def test_composite_supplier_terms_are_downgraded_to_support_hits():
+    request = _lanjian_request()
+    event_profile = _build_event_match_profile(request)
+    profile = _profile(
+        "x",
+        "航天供应链",
+        must_terms=["航天供应链"],
+        strong_terms=["供应链体系"],
+        aliases=["包装物流"],
+        core_objects=["航天供应链", "供应链体系"],
+    )
+
+    evidence = _build_gate_evidence(_build_event_query_text(request, event_profile), profile, event_profile)
+
+    assert evidence["must_hits"] == []
+    assert evidence["strong_hits"] == []
+    assert evidence["object_hits"] == []
+    assert "航天供应链" in evidence["support_hits"]
+    assert evidence["anchor_hits"] == []
+
+
+def test_lanjian_entity_anchor_recalls_lanjian_ipo_profile_even_when_gate_terms_are_weak():
+    request = _lanjian_request()
+    event_profile = _build_event_match_profile(request)
+    lanjian_ipo = _profile(
+        "9062142",
+        "蓝箭航天IPO",
+        must_terms=["参股", "供货", "公司"],
+        strong_terms=["参股", "供货", "公司", "蓝箭航天IPO"],
+        should_terms=["民商火箭企业", "液体运载火箭研制", "朱雀一号运载火箭发射"],
+        core_objects=["参股", "供货", "蓝箭航天IPO"],
+        search_text="蓝箭航天IPO。蓝箭航天空间科技股份有限公司首次公开发行股票招股说明书被受理。",
+        rerank_text=(
+            "蓝箭航天IPO。蓝箭航天是国内最早成立的民商火箭企业之一，"
+            "涉及朱雀系列运载火箭、液氧甲烷火箭。"
+        ),
+        semantic_type="公司事件",
+        strategy_type="event_driven",
+    )
+    aviation_material = _profile(
+        "9061860",
+        "航天材料",
+        should_terms=["火箭"],
+        search_text="航天材料 火箭 材料",
+        rerank_text="航天材料，火箭材料与关键部件。",
+    )
+
+    evidence = _build_gate_evidence(_build_event_query_text(request, event_profile), lanjian_ipo, event_profile)
+    rows = _build_feature_recall_rows(
+        request,
+        {"9062142": lanjian_ipo, "9061860": aviation_material},
+        event_profile,
+        top_k=20,
+    )
+
+    assert "蓝箭航天" in evidence["profile_anchor_hits"]
+    assert "蓝箭航天" in evidence["anchor_hits"]
+    assert rows[0]["subject_key"] == "9062142"
+    assert any(row["subject_key"] == "9062142" for row in rows[:20])
+
+
+def test_related_matches_reject_alias_only_single_anchor_noise(monkeypatch):
+    monkeypatch.setenv("THEME_MATCH_ENABLE_MULTI_MATCH", "true")
+    primary = _profile("9030409", "AR眼镜")
+    alias_only = _profile("9035171", "AI大娱乐")
+    engine = ThemeMatchEngine(_Repo([primary, alias_only]))
+    candidate = Candidate(
+        subject_key="9035171",
+        subject_name="AI大娱乐",
+        dense_score=0.0,
+        rerank_score=0.8,
+        evidence={
+            "theme_name_direct_hit": True,
+            "theme_name_hit_terms": ["智能眼镜"],
+            "subject_name_direct_hit": False,
+            "subject_name_hit_terms": [],
+            "object_hits": ["智能眼镜"],
+            "must_hits": ["智能眼镜"],
+            "strong_hits": ["智能眼镜"],
+            "anchor_hits": ["智能眼镜"],
+            "profile_anchor_hits": [],
+            "entity_hits": [],
+            "conflict_score": 0,
+        },
+    )
+
+    related = engine._build_related_matches(
+        candidates=[candidate],
+        profile_map={"9030409": primary, "9035171": alias_only},
+        primary_subject_key="9030409",
+    )
+
+    assert related == []
+
+
+def test_related_matches_reject_single_profile_entity_anchor_noise(monkeypatch):
+    monkeypatch.setenv("THEME_MATCH_ENABLE_MULTI_MATCH", "true")
+    primary = _profile("9030409", "AR眼镜")
+    meta_noise = _profile("9036559", "ASIC芯片")
+    engine = ThemeMatchEngine(_Repo([primary, meta_noise]))
+    candidate = Candidate(
+        subject_key="9036559",
+        subject_name="ASIC芯片",
+        dense_score=0.0,
+        rerank_score=0.8,
+        evidence={
+            "theme_name_direct_hit": False,
+            "theme_name_hit_terms": [],
+            "subject_name_direct_hit": False,
+            "subject_name_hit_terms": [],
+            "object_hits": [],
+            "must_hits": [],
+            "strong_hits": [],
+            "anchor_hits": ["Meta"],
+            "profile_anchor_hits": ["Meta"],
+            "entity_hits": [],
+            "conflict_score": 0,
+        },
+    )
+
+    related = engine._build_related_matches(
+        candidates=[candidate],
+        profile_map={"9030409": primary, "9036559": meta_noise},
+        primary_subject_key="9030409",
+    )
+
+    assert related == []
+
+
+def test_related_matches_allow_subject_family_hit(monkeypatch):
+    monkeypatch.setenv("THEME_MATCH_ENABLE_MULTI_MATCH", "true")
+    primary = _profile("9030409", "AR眼镜")
+    family = _profile("9038540", "AR眼镜四大品牌")
+    engine = ThemeMatchEngine(_Repo([primary, family]))
+    candidate = Candidate(
+        subject_key="9038540",
+        subject_name="AR眼镜四大品牌",
+        dense_score=0.0,
+        rerank_score=0.8,
+        evidence={
+            "theme_name_direct_hit": False,
+            "theme_name_hit_terms": [],
+            "subject_name_direct_hit": False,
+            "subject_name_hit_terms": [],
+            "object_hits": [],
+            "must_hits": [],
+            "strong_hits": [],
+            "anchor_hits": ["Meta"],
+            "profile_anchor_hits": ["Meta"],
+            "entity_hits": [],
+            "conflict_score": 0,
+        },
+    )
+
+    related = engine._build_related_matches(
+        candidates=[candidate],
+        profile_map={"9030409": primary, "9038540": family},
+        primary_subject_key="9030409",
+    )
+
+    assert [item["subject_key"] for item in related] == ["9038540"]
 
 
 @pytest.mark.asyncio

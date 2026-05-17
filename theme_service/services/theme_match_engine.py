@@ -643,7 +643,37 @@ class _FinalLLMJudge:
         }
 
 
-def _collect_profile_hit_features(request: ThemeMatchRequest, profile: ThemeProfile) -> Dict[str, Any]:
+def _profile_text_anchor_hits(profile: ThemeProfile, event_profile: EventMatchProfile | None = None) -> List[str]:
+    if event_profile is None:
+        return []
+    profile_text = "\n".join(
+        [
+            profile.subject_name,
+            profile.concept,
+            " ".join(profile.aliases),
+            " ".join(profile.entity_hints),
+            " ".join(profile.core_objects),
+            profile.search_text,
+            profile.rerank_text,
+            profile.compact_text(),
+        ]
+    )
+    candidate_terms = _filter_generic_terms(
+        _unique(
+            event_profile.entity_anchors
+            + event_profile.product_anchors
+            + event_profile.technology_anchors
+            + [term for term in event_profile.domain_anchors if len(_safe_str(term)) >= 4]
+        )
+    )
+    return _unique([term for term in candidate_terms if _term_in_text(term, profile_text)])
+
+
+def _collect_profile_hit_features(
+    request: ThemeMatchRequest,
+    profile: ThemeProfile,
+    event_profile: EventMatchProfile | None = None,
+) -> Dict[str, Any]:
     event_text_norm = _normalize_text(request.event_text())
     entity_names = {_normalize_text(x) for x in _normalize_list(request.entities)}
 
@@ -685,16 +715,19 @@ def _collect_profile_hit_features(request: ThemeMatchRequest, profile: ThemeProf
     return {
         "exact_name_hits": _filter_generic_terms(exact_name_hits),
         "entity_align_hits": _filter_generic_terms(entity_align_hits),
+        "profile_anchor_hits": _profile_text_anchor_hits(profile, event_profile),
     }
 
 
 def _calc_rerank_feature_score(hit_features: Dict[str, Any]) -> float:
     exact_name_hit_n = len(hit_features.get("exact_name_hits", []))
     entity_align_n = len(hit_features.get("entity_align_hits", []))
+    profile_anchor_n = len(hit_features.get("profile_anchor_hits", []))
     score = 0.0
     score += exact_name_hit_n * 0.20
     score += entity_align_n * 0.25
-    return min(score, 0.45)
+    score += profile_anchor_n * 0.30
+    return min(score, 0.75)
 
 
 def _build_gate_evidence(
@@ -726,12 +759,19 @@ def _build_gate_evidence(
     entity_hits = _filter_generic_terms(
         [t for t in profile.entity_hints if t in search_terms or _term_in_text(t, event_text)]
     )
-    support_hits = _unique(
-        [t for t in profile.must_terms + profile.strong_terms + profile.should_terms + object_terms if t in support_terms or t in no_anchor_terms]
+    profile_anchor_hits = _profile_text_anchor_hits(profile, event_profile)
+    raw_support_hits = _unique(
+        [
+            t
+            for t in profile.must_terms + profile.strong_terms + profile.should_terms + object_terms
+            if _is_no_anchor_term(t, support_terms) or _is_no_anchor_term(t, no_anchor_terms)
+        ]
     )
 
     candidate_names = _unique([profile.subject_name, profile.concept] + profile.aliases)
+    subject_name_terms = _unique([profile.subject_name, profile.concept])
     theme_name_hit_terms: List[str] = []
+    subject_name_hit_terms: List[str] = []
     event_text_norm = _normalize_text(event_text)
     for name in candidate_names:
         s = _safe_str(name)
@@ -739,9 +779,29 @@ def _build_gate_evidence(
             continue
         if _normalize_text(s) in event_text_norm or s in event_text:
             theme_name_hit_terms.append(s)
+    for name in subject_name_terms:
+        s = _safe_str(name)
+        if not s:
+            continue
+        if _normalize_text(s) in event_text_norm or s in event_text:
+            subject_name_hit_terms.append(s)
 
-    theme_name_hit_terms = _filter_generic_terms(theme_name_hit_terms)
+    theme_name_hit_terms = [
+        term for term in _filter_generic_terms(theme_name_hit_terms)
+        if not _is_no_anchor_term(term, no_anchor_terms)
+    ]
+    subject_name_hit_terms = [
+        term for term in _filter_generic_terms(subject_name_hit_terms)
+        if not _is_no_anchor_term(term, no_anchor_terms)
+    ]
     theme_name_direct_hit = len(theme_name_hit_terms) > 0
+    subject_name_direct_hit = len(subject_name_hit_terms) > 0
+    must_hits = [t for t in must_hits if not _is_no_anchor_term(t, no_anchor_terms)]
+    strong_hits = [t for t in strong_hits if not _is_no_anchor_term(t, no_anchor_terms)]
+    object_hits = [t for t in object_hits if not _is_no_anchor_term(t, no_anchor_terms)]
+    should_hits = [t for t in should_hits if not _is_no_anchor_term(t, no_anchor_terms)]
+    entity_hits = [t for t in entity_hits if not _is_no_anchor_term(t, no_anchor_terms)]
+    support_hits = _unique(raw_support_hits + [t for t in must_hits + strong_hits + object_hits + should_hits if _is_no_anchor_term(t, no_anchor_terms)])
     theme_name_hit_score = 50 if theme_name_direct_hit else 0
     positive_score = (
         len(object_hits_llm) * 5
@@ -752,12 +812,15 @@ def _build_gate_evidence(
         + len(strong_hits_text)
         + len(should_hits)
         + len(entity_hits)
+        + len(profile_anchor_hits) * 6
         + theme_name_hit_score
     )
     conflict_score = len(_unique(not_hits + negative_hits))
     return {
         "theme_name_direct_hit": theme_name_direct_hit,
         "theme_name_hit_terms": theme_name_hit_terms,
+        "subject_name_direct_hit": subject_name_direct_hit,
+        "subject_name_hit_terms": subject_name_hit_terms,
         "theme_name_hit_score": theme_name_hit_score,
         "object_hits": object_hits,
         "must_hits": must_hits,
@@ -770,15 +833,17 @@ def _build_gate_evidence(
         "strong_hits_text": strong_hits_text,
         "should_hits": should_hits,
         "entity_hits": entity_hits,
+        "profile_anchor_hits": profile_anchor_hits,
         "support_hits": support_hits,
-        "anchor_hits": _unique(object_hits + must_hits + strong_hits + entity_hits + theme_name_hit_terms),
+        "anchor_hits": _unique(object_hits + must_hits + strong_hits + entity_hits + profile_anchor_hits + theme_name_hit_terms),
         "not_hits": not_hits,
         "negative_hits": negative_hits,
         "positive_score": positive_score,
         "conflict_score": conflict_score,
         "evidence_summary": {
             "theme_name_hits": theme_name_hit_terms[:5],
-            "anchor_terms": _unique(object_hits + must_hits + strong_hits)[:8],
+            "subject_name_hits": subject_name_hit_terms[:5],
+            "anchor_terms": _unique(object_hits + must_hits + strong_hits + profile_anchor_hits)[:8],
             "support_terms": _unique(should_hits + entity_hits)[:8],
             "conflict_terms": _unique(not_hits + negative_hits)[:8],
         },
@@ -820,6 +885,7 @@ def _calc_feature_recall_score(hit_features: Dict[str, Any], gate_evidence: Dict
     score += len(gate_evidence.get("object_hits") or []) * 0.35
     score += len(gate_evidence.get("must_hits") or []) * 0.35
     score += len(gate_evidence.get("strong_hits") or []) * 0.25
+    score += len(gate_evidence.get("profile_anchor_hits") or []) * 0.50
     score += len(gate_evidence.get("should_hits") or []) * 0.12
     score += len(gate_evidence.get("entity_hits") or []) * 0.12
     score -= len(gate_evidence.get("not_hits") or []) * 0.20
@@ -827,7 +893,10 @@ def _calc_feature_recall_score(hit_features: Dict[str, Any], gate_evidence: Dict
     return round(score, 6)
 
 
-def _anchor_terms(evidence: Dict[str, Any], fields: Tuple[str, ...] = ("object_hits", "must_hits", "strong_hits")) -> List[str]:
+def _anchor_terms(
+    evidence: Dict[str, Any],
+    fields: Tuple[str, ...] = ("object_hits", "must_hits", "strong_hits", "profile_anchor_hits"),
+) -> List[str]:
     terms: List[str] = []
     for field_name in fields:
         value = evidence.get(field_name) or []
@@ -846,6 +915,36 @@ def _has_only_generic_evidence(evidence: Dict[str, Any]) -> bool:
     return not _has_primary_anchor_evidence(evidence)
 
 
+def _is_no_anchor_term(term: str, no_anchor_terms: List[str] | set[str]) -> bool:
+    value = _safe_str(term)
+    if not value:
+        return False
+    terms = [_safe_str(item) for item in no_anchor_terms if _safe_str(item)]
+    return value in terms or any(item and item in value for item in terms)
+
+
+def _ontology_terms(profile: ThemeProfile) -> set[str]:
+    terms: set[str] = set()
+    for value in [profile.semantic_type, profile.strategy_type]:
+        if _safe_str(value):
+            terms.add(_safe_str(value))
+    ontology = profile.ontology_json if isinstance(profile.ontology_json, dict) else {}
+    for key in ("domain", "domains", "category", "categories", "industry", "industries", "parent", "ancestors"):
+        terms.update(_filter_generic_terms(_normalize_list(ontology.get(key))))
+        if _safe_str(ontology.get(key)) and not isinstance(ontology.get(key), (list, tuple, dict)):
+            terms.add(_safe_str(ontology.get(key)))
+    return {_safe_str(item) for item in terms if _safe_str(item)}
+
+
+def _same_industry_domain(left: ThemeProfile | None, right: ThemeProfile | None) -> bool:
+    if not left or not right:
+        return False
+    left_terms = _ontology_terms(left)
+    right_terms = _ontology_terms(right)
+    overlap = _filter_generic_terms(list(left_terms & right_terms))
+    return bool(overlap)
+
+
 def _build_feature_recall_rows(
     request: ThemeMatchRequest,
     profile_map: Dict[str, ThemeProfile],
@@ -855,7 +954,7 @@ def _build_feature_recall_rows(
     event_text = _build_event_query_text(request, event_profile)
     rows: List[Dict[str, Any]] = []
     for sk, profile in profile_map.items():
-        hit_features = _collect_profile_hit_features(request, profile)
+        hit_features = _collect_profile_hit_features(request, profile, event_profile)
         gate_evidence = _build_gate_evidence(event_text, profile, event_profile)
         feature_recall_score = _calc_feature_recall_score(hit_features, gate_evidence)
         if feature_recall_score <= 0:
@@ -1148,7 +1247,7 @@ class ThemeMatchEngine:
             if not profile:
                 continue
 
-            hit_features = _collect_profile_hit_features(request, profile)
+            hit_features = _collect_profile_hit_features(request, profile, event_profile)
             feature_score = _calc_rerank_feature_score(hit_features)
             semantic_score = self._cosine_similarity(query_vec, doc_vec)
             gate_evidence = _build_gate_evidence(event_text, profile, event_profile)
@@ -1214,26 +1313,23 @@ class ThemeMatchEngine:
                 continue
             anchor_terms = _anchor_terms(evidence)
             entity_hits = _filter_generic_terms(evidence.get("entity_hits") or [])
-            same_domain = bool(
-                primary_profile
-                and (
-                    (
-                        primary_profile.semantic_type
-                        and profile.semantic_type
-                        and primary_profile.semantic_type == profile.semantic_type
-                    )
-                    or (
-                        primary_profile.strategy_type
-                        and profile.strategy_type
-                        and primary_profile.strategy_type == profile.strategy_type
-                    )
+            profile_anchor_hits = _filter_generic_terms(evidence.get("profile_anchor_hits") or [])
+            same_domain = _same_industry_domain(primary_profile, profile)
+            subject_family_hit = False
+            if primary_profile:
+                primary_name = _safe_str(primary_profile.subject_name)
+                candidate_name = _safe_str(profile.subject_name)
+                subject_family_hit = (
+                    len(primary_name) >= 3
+                    and len(candidate_name) >= 3
+                    and (primary_name in candidate_name or candidate_name in primary_name)
                 )
-            )
-            strong_name_hit = bool(evidence.get("theme_name_direct_hit"))
+            strong_name_hit = bool(evidence.get("subject_name_direct_hit") or subject_family_hit)
             has_evidence = bool(
                 strong_name_hit
-                or len(anchor_terms) >= 2
-                or (same_domain and len(entity_hits) >= 1)
+                or len(profile_anchor_hits) >= 2
+                or (same_domain and len(anchor_terms) >= 2)
+                or (same_domain and len(entity_hits) >= 1 and len(anchor_terms) >= 2)
             )
             if int(evidence.get("conflict_score") or 0) > 0 and not strong_name_hit:
                 continue

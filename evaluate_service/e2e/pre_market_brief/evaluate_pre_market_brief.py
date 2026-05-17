@@ -57,6 +57,9 @@ def evaluate(
     recall5_hits = 0
     human_review_count = 0
     unknown_count = 0
+    wrong_related_count = 0
+    generic_only_related_count = 0
+    llm_anchor_guard_count = 0
 
     for row in trace.get("rows", []):
         case_id = row.get("case_id")
@@ -70,6 +73,12 @@ def evaluate(
         related_hit = any(_matches_gold(gold, name) for name in related_names)
         recall3_hit = any(_matches_gold(gold, name) for name in theme_names[:3])
         recall5_hit = any(_matches_gold(gold, name) for name in theme_names[:5])
+        wrong_related_count += sum(1 for name in related_names if not _matches_gold(gold, name))
+        generic_only_related_count += sum(
+            1 for item in row.get("related_mappings", []) if _is_generic_only_related(item)
+        )
+        if row.get("review_reason") == "llm_accept_without_anchor_evidence":
+            llm_anchor_guard_count += 1
         status = "unknown"
         if primary_hit:
             status = "exact_or_alias_primary"
@@ -109,6 +118,9 @@ def evaluate(
         "theme_set_recall@5": _rate(recall5_hits, total),
         "human_review_count": human_review_count,
         "unknown_count": unknown_count,
+        "wrong_related_count": wrong_related_count,
+        "generic_only_related_count": generic_only_related_count,
+        "llm_anchor_guard_count": llm_anchor_guard_count,
         "brief_major_event_count": len(sections.get("major_events") or []),
         "brief_theme_count": len(sections.get("matched_themes") or []),
         "brief_opportunity_count": len(sections.get("event_driven_opportunities") or []),
@@ -127,6 +139,29 @@ def evaluate(
 
 def _rate(value: int, total: int) -> float:
     return round(value / total, 4) if total else 0.0
+
+
+def _is_generic_only_related(item: dict[str, Any]) -> bool:
+    evidence = item.get("evidence_json") or {}
+    if isinstance(evidence, str):
+        try:
+            evidence = json.loads(evidence)
+        except Exception:
+            evidence = {}
+    if isinstance(evidence, dict) and isinstance(evidence.get("related_match"), dict):
+        evidence = evidence["related_match"].get("evidence") or {}
+    if not isinstance(evidence, dict):
+        return False
+    anchor_hits = evidence.get("anchor_hits") or []
+    strong_hits = (
+        evidence.get("theme_name_hit_terms")
+        or evidence.get("object_hits")
+        or evidence.get("must_hits")
+        or evidence.get("strong_hits")
+        or evidence.get("entity_hits")
+    )
+    support_hits = evidence.get("support_hits") or []
+    return bool(support_hits) and not bool(anchor_hits) and not bool(strong_hits)
 
 
 def _write_confusion(path: Path, rows: list[dict[str, Any]]) -> None:
@@ -154,6 +189,9 @@ def _write_summary(path: Path, report: dict[str, Any], trace_counts: dict[str, A
         f"- primary_hit_rate: {report['primary_hit_rate']}",
         f"- related_hit_rate: {report['related_hit_rate']}",
         f"- theme_set_recall@5: {report['theme_set_recall@5']}",
+        f"- wrong_related_count: {report['wrong_related_count']}",
+        f"- generic_only_related_count: {report['generic_only_related_count']}",
+        f"- llm_anchor_guard_count: {report['llm_anchor_guard_count']}",
         f"- brief_theme_count: {report['brief_theme_count']}",
         f"- brief_opportunity_count: {report['brief_opportunity_count']}",
         f"- 是否通过基础门禁: {_base_gate_passed(report, trace_counts)}",

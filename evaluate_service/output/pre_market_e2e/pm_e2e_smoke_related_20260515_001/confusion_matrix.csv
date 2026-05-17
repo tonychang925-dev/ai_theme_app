@@ -1,0 +1,6 @@
+case_id,gold_theme_name,primary_theme_name,related_theme_names,status
+pm_case_0001,AI/AR眼镜,AR眼镜,AI大娱乐|人工智能+消费|AR眼镜四大品牌|ASIC芯片|谷歌AI供货商,exact_or_alias_primary
+pm_case_0002,AI/AR眼镜,AR眼镜,人工智能+消费|AI大娱乐|AR眼镜四大品牌|ASIC芯片,exact_or_alias_primary
+pm_case_0003,AI/AR眼镜,AR眼镜,AR眼镜四大品牌|苹果MR,exact_or_alias_primary
+pm_case_0004,AI/AR眼镜,AR眼镜,AI大娱乐|智能穿戴|人工智能+消费|AI手机,exact_or_alias_primary
+pm_case_0005,AI/AR眼镜,,,unknown

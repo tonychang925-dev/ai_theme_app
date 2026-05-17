@@ -1,0 +1,1770 @@
+{
+  "run_id": "gate_quality_phase1",
+  "read_db": "stock_data_test",
+  "write_db_for_history": "stock_data",
+  "profile_count": 644,
+  "top_n": 50,
+  "subjects": [
+    {
+      "subject_key": "9046625",
+      "subject_name": "SHEIN/希音IPO",
+      "concept": "SHEIN/希音IPO",
+      "semantic_type": "公司事件",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9046625_gate.json",
+      "generic_anchor_ratio": 0.4286,
+      "must_generic_count": 3,
+      "alias_generic_count": 0,
+      "anchor_count": 4,
+      "negative_count": 8,
+      "nearby_overlap_score": 0.0,
+      "nearby_subject_keys": [],
+      "stock_pool_size": 17,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.3589,
+      "priority_score": 33.79,
+      "must_generic_terms": [
+        "包装及物流",
+        "上游合作",
+        "供应链"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "包装及物流",
+        "上游合作",
+        "供应链"
+      ],
+      "no_anchor_candidates": [
+        "包装及物流",
+        "上游合作",
+        "供应链",
+        "参股",
+        "渠道合作",
+        "物流体系",
+        "国际B2C快时尚电子商务公司"
+      ]
+    },
+    {
+      "subject_key": "9014764",
+      "subject_name": "军工9大集团",
+      "concept": "军工9大集团",
+      "semantic_type": "国防工业组织结构",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9014764_gate.json",
+      "generic_anchor_ratio": 0.8571,
+      "must_generic_count": 6,
+      "alias_generic_count": 0,
+      "anchor_count": 1,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.0,
+      "nearby_subject_keys": [],
+      "stock_pool_size": 91,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.7728,
+      "priority_score": 68.82,
+      "must_generic_terms": [
+        "中国核工业集团有限公司",
+        "中国航天科技集团有限公司",
+        "中国航天科工集团有限公司",
+        "中国航空工业集团有限公司",
+        "中国航空发动机集团有限公司",
+        "中国船舶集团有限公司"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "中国核工业集团有限公司",
+        "中国航天科技集团有限公司",
+        "中国航天科工集团有限公司",
+        "中国航空工业集团有限公司",
+        "中国航空发动机集团有限公司",
+        "中国船舶集团有限公司"
+      ],
+      "no_anchor_candidates": [
+        "中国核工业集团有限公司",
+        "中国航天科技集团有限公司",
+        "中国航天科工集团有限公司",
+        "中国航空工业集团有限公司",
+        "中国航空发动机集团有限公司",
+        "中国船舶集团有限公司",
+        "国防科研生产任务",
+        "生产经营活动"
+      ]
+    },
+    {
+      "subject_key": "9018216",
+      "subject_name": "石油",
+      "concept": "石油",
+      "semantic_type": "产业链/供应链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9018216_gate.json",
+      "generic_anchor_ratio": 0.6,
+      "must_generic_count": 3,
+      "alias_generic_count": 0,
+      "anchor_count": 2,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.2,
+      "nearby_subject_keys": [
+        "9064086",
+        "9010317"
+      ],
+      "stock_pool_size": 56,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.6375,
+      "priority_score": 56.77,
+      "must_generic_terms": [
+        "上游勘探",
+        "上游采油",
+        "上游钻井"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "上游勘探",
+        "上游采油",
+        "上游钻井"
+      ],
+      "no_anchor_candidates": [
+        "上游勘探",
+        "上游采油",
+        "上游钻井",
+        "下游销售"
+      ]
+    },
+    {
+      "subject_key": "9035331",
+      "subject_name": "本源量子",
+      "concept": "本源量子",
+      "semantic_type": "公司事件",
+      "strategy_type": "event_driven",
+      "source_gate_file": "subject_gates/9035331_gate.json",
+      "generic_anchor_ratio": 0.75,
+      "must_generic_count": 3,
+      "alias_generic_count": 0,
+      "anchor_count": 1,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.1429,
+      "nearby_subject_keys": [
+        "9058922",
+        "9026027"
+      ],
+      "stock_pool_size": 13,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.6889,
+      "priority_score": 52.23,
+      "must_generic_terms": [
+        "合作",
+        "参股",
+        "公司"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "合作",
+        "参股",
+        "公司"
+      ],
+      "no_anchor_candidates": [
+        "合作",
+        "参股",
+        "公司"
+      ]
+    },
+    {
+      "subject_key": "129",
+      "subject_name": "交通运输",
+      "concept": "交通运输",
+      "semantic_type": "产业链/供应链与政策驱动复合型题材",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/129_gate.json",
+      "generic_anchor_ratio": 0.5,
+      "must_generic_count": 2,
+      "alias_generic_count": 0,
+      "anchor_count": 2,
+      "negative_count": 8,
+      "nearby_overlap_score": 0.3333,
+      "nearby_subject_keys": [
+        "9061633",
+        "9042073"
+      ],
+      "stock_pool_size": 99,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.475,
+      "priority_score": 51.55,
+      "must_generic_terms": [
+        "物流行业",
+        "供应链行业"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "物流行业",
+        "供应链行业"
+      ],
+      "no_anchor_candidates": [
+        "物流行业",
+        "供应链行业"
+      ]
+    },
+    {
+      "subject_key": "9034539",
+      "subject_name": "特斯拉",
+      "concept": "特斯拉",
+      "semantic_type": "供应链关系",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9034539_gate.json",
+      "generic_anchor_ratio": 0.6667,
+      "must_generic_count": 2,
+      "alias_generic_count": 0,
+      "anchor_count": 1,
+      "negative_count": 2,
+      "nearby_overlap_score": 0.25,
+      "nearby_subject_keys": [
+        "9023131",
+        "9062206"
+      ],
+      "stock_pool_size": 55,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.5292,
+      "priority_score": 50.32,
+      "must_generic_terms": [
+        "皮卡供应商",
+        "一级供应商"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "皮卡供应商",
+        "一级供应商"
+      ],
+      "no_anchor_candidates": [
+        "皮卡供应商",
+        "一级供应商",
+        "间接供应商",
+        "第一大客户",
+        "生产"
+      ]
+    },
+    {
+      "subject_key": "9039983",
+      "subject_name": "云深处机器人",
+      "concept": "云深处机器人",
+      "semantic_type": "公司事件",
+      "strategy_type": "event_driven",
+      "source_gate_file": "subject_gates/9039983_gate.json",
+      "generic_anchor_ratio": 0.6,
+      "must_generic_count": 3,
+      "alias_generic_count": 0,
+      "anchor_count": 2,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.0,
+      "nearby_subject_keys": [],
+      "stock_pool_size": 16,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.6075,
+      "priority_score": 48.03,
+      "must_generic_terms": [
+        "合作",
+        "参股",
+        "公司"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "合作",
+        "参股",
+        "公司"
+      ],
+      "no_anchor_candidates": [
+        "合作",
+        "参股",
+        "公司"
+      ]
+    },
+    {
+      "subject_key": "9062904",
+      "subject_name": "航空发动机集团",
+      "concept": "航空发动机集团",
+      "semantic_type": "公司事件",
+      "strategy_type": "event_driven",
+      "source_gate_file": "subject_gates/9062904_gate.json",
+      "generic_anchor_ratio": 0.6667,
+      "must_generic_count": 2,
+      "alias_generic_count": 0,
+      "anchor_count": 1,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.0,
+      "nearby_subject_keys": [],
+      "stock_pool_size": 26,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.5717,
+      "priority_score": 47.71,
+      "must_generic_terms": [
+        "供应商",
+        "参股"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "供应商",
+        "参股"
+      ],
+      "no_anchor_candidates": [
+        "供应商",
+        "参股",
+        "关键部件制造"
+      ]
+    },
+    {
+      "subject_key": "9038372",
+      "subject_name": "黄金",
+      "concept": "黄金",
+      "semantic_type": "产业链/供应链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9038372_gate.json",
+      "generic_anchor_ratio": 0.5,
+      "must_generic_count": 2,
+      "alias_generic_count": 0,
+      "anchor_count": 2,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.2,
+      "nearby_subject_keys": [
+        "9064086",
+        "9010270"
+      ],
+      "stock_pool_size": 35,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.535,
+      "priority_score": 47.16,
+      "must_generic_terms": [
+        "上游资源勘探与开采",
+        "下游珠宝首饰制造与投资消费"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "上游资源勘探与开采",
+        "下游珠宝首饰制造与投资消费"
+      ],
+      "no_anchor_candidates": [
+        "上游资源勘探与开采",
+        "下游珠宝首饰制造与投资消费",
+        "上游采矿",
+        "下游加工",
+        "珠宝首饰制造消费"
+      ]
+    },
+    {
+      "subject_key": "9012443",
+      "subject_name": "中特估",
+      "concept": "中特估",
+      "semantic_type": "政策驱动型估值体系改革",
+      "strategy_type": "policy_driven",
+      "source_gate_file": "subject_gates/9012443_gate.json",
+      "generic_anchor_ratio": 0.4,
+      "must_generic_count": 2,
+      "alias_generic_count": 0,
+      "anchor_count": 3,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.2,
+      "nearby_subject_keys": [
+        "9016149"
+      ],
+      "stock_pool_size": 147,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.395,
+      "priority_score": 46.91,
+      "must_generic_terms": [
+        "央国企",
+        "中央企业控股上市公司"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "央国企",
+        "中央企业控股上市公司"
+      ],
+      "no_anchor_candidates": [
+        "央国企",
+        "中央企业控股上市公司"
+      ]
+    },
+    {
+      "subject_key": "9059060",
+      "subject_name": "乐聚IPO",
+      "concept": "乐聚IPO",
+      "semantic_type": "公司事件",
+      "strategy_type": "event_driven",
+      "source_gate_file": "subject_gates/9059060_gate.json",
+      "generic_anchor_ratio": 0.6667,
+      "must_generic_count": 2,
+      "alias_generic_count": 0,
+      "anchor_count": 1,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.2,
+      "nearby_subject_keys": [
+        "9059201"
+      ],
+      "stock_pool_size": 10,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.6017,
+      "priority_score": 46.65,
+      "must_generic_terms": [
+        "合作商",
+        "参股"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "合作商",
+        "参股"
+      ],
+      "no_anchor_candidates": [
+        "合作商",
+        "参股",
+        "公司"
+      ]
+    },
+    {
+      "subject_key": "9047066",
+      "subject_name": "淘宝",
+      "concept": "淘宝",
+      "semantic_type": "公司业务优势",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9047066_gate.json",
+      "generic_anchor_ratio": 0.5,
+      "must_generic_count": 2,
+      "alias_generic_count": 0,
+      "anchor_count": 2,
+      "negative_count": 3,
+      "nearby_overlap_score": 0.3333,
+      "nearby_subject_keys": [
+        "9021093",
+        "9047274",
+        "9057161"
+      ],
+      "stock_pool_size": 52,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.475,
+      "priority_score": 46.65,
+      "must_generic_terms": [
+        "供应链优势",
+        "跨境物流服务"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "供应链优势",
+        "跨境物流服务"
+      ],
+      "no_anchor_candidates": [
+        "供应链优势",
+        "跨境物流服务",
+        "物流合作商",
+        "阿里参股"
+      ]
+    },
+    {
+      "subject_key": "9061242",
+      "subject_name": "太空光伏",
+      "concept": "太空光伏",
+      "semantic_type": "产业链/供应链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9061242_gate.json",
+      "generic_anchor_ratio": 0.5,
+      "must_generic_count": 3,
+      "alias_generic_count": 0,
+      "anchor_count": 3,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.0,
+      "nearby_subject_keys": [],
+      "stock_pool_size": 50,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.4675,
+      "priority_score": 45.87,
+      "must_generic_terms": [
+        "SpaceX供应链",
+        "设备",
+        "产品"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "SpaceX供应链",
+        "设备",
+        "产品"
+      ],
+      "no_anchor_candidates": [
+        "SpaceX供应链",
+        "设备",
+        "产品"
+      ]
+    },
+    {
+      "subject_key": "9062142",
+      "subject_name": "蓝箭航天IPO",
+      "concept": "蓝箭航天IPO",
+      "semantic_type": "公司事件",
+      "strategy_type": "event_driven",
+      "source_gate_file": "subject_gates/9062142_gate.json",
+      "generic_anchor_ratio": 0.5,
+      "must_generic_count": 2,
+      "alias_generic_count": 0,
+      "anchor_count": 2,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.25,
+      "nearby_subject_keys": [
+        "9036191",
+        "9056783"
+      ],
+      "stock_pool_size": 21,
+      "recent_heat_score": 0.0333,
+      "false_positive_risk": 0.5425,
+      "priority_score": 45.74,
+      "must_generic_terms": [
+        "参股",
+        "公司"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "参股",
+        "公司"
+      ],
+      "no_anchor_candidates": [
+        "参股",
+        "公司"
+      ]
+    },
+    {
+      "subject_key": "9010168",
+      "subject_name": "锂电池",
+      "concept": "锂电池",
+      "semantic_type": "产业链/供应链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9010168_gate.json",
+      "generic_anchor_ratio": 0.4286,
+      "must_generic_count": 3,
+      "alias_generic_count": 0,
+      "anchor_count": 4,
+      "negative_count": 8,
+      "nearby_overlap_score": 0.1,
+      "nearby_subject_keys": [
+        "9056615"
+      ],
+      "stock_pool_size": 164,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.3739,
+      "priority_score": 45.69,
+      "must_generic_terms": [
+        "上游资源",
+        "中游制造",
+        "下游应用"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "上游资源",
+        "中游制造",
+        "下游应用"
+      ],
+      "no_anchor_candidates": [
+        "上游资源",
+        "中游制造",
+        "下游应用"
+      ]
+    },
+    {
+      "subject_key": "9064241",
+      "subject_name": "金刚石散热",
+      "concept": "金刚石散热",
+      "semantic_type": "产业链/供应链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9064241_gate.json",
+      "generic_anchor_ratio": 0.6667,
+      "must_generic_count": 2,
+      "alias_generic_count": 0,
+      "anchor_count": 1,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.0,
+      "nearby_subject_keys": [],
+      "stock_pool_size": 6,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.5717,
+      "priority_score": 44.21,
+      "must_generic_terms": [
+        "产品",
+        "设备"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "产品",
+        "设备"
+      ],
+      "no_anchor_candidates": [
+        "产品",
+        "设备"
+      ]
+    },
+    {
+      "subject_key": "9023196",
+      "subject_name": "合成生物",
+      "concept": "合成生物",
+      "semantic_type": "产业链/供应链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9023196_gate.json",
+      "generic_anchor_ratio": 0.5,
+      "must_generic_count": 3,
+      "alias_generic_count": 0,
+      "anchor_count": 3,
+      "negative_count": 1,
+      "nearby_overlap_score": 0.125,
+      "nearby_subject_keys": [
+        "9025153"
+      ],
+      "stock_pool_size": 58,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.4062,
+      "priority_score": 43.71,
+      "must_generic_terms": [
+        "合成生物制造产业",
+        "生物制造菌种计算设计",
+        "合成生物制造技术创新中心"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "合成生物制造产业",
+        "生物制造菌种计算设计",
+        "合成生物制造技术创新中心"
+      ],
+      "no_anchor_candidates": [
+        "合成生物制造产业",
+        "生物制造菌种计算设计",
+        "合成生物制造技术创新中心",
+        "合成生物制造产业创新发展行动计划",
+        "国际合作",
+        "新质生产力"
+      ]
+    },
+    {
+      "subject_key": "9010818",
+      "subject_name": "国企改革",
+      "concept": "国企改革",
+      "semantic_type": "政策主体",
+      "strategy_type": "policy_driven",
+      "source_gate_file": "subject_gates/9010818_gate.json",
+      "generic_anchor_ratio": 0.3333,
+      "must_generic_count": 1,
+      "alias_generic_count": 1,
+      "anchor_count": 4,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.1429,
+      "nearby_subject_keys": [
+        "9020774"
+      ],
+      "stock_pool_size": 154,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.3348,
+      "priority_score": 43.42,
+      "must_generic_terms": [
+        "国资国企改革"
+      ],
+      "alias_generic_terms": [
+        "国企改革"
+      ],
+      "generic_terms": [
+        "国企改革",
+        "国资国企改革"
+      ],
+      "no_anchor_candidates": [
+        "国资国企改革",
+        "国企改革"
+      ]
+    },
+    {
+      "subject_key": "140",
+      "subject_name": "风电",
+      "concept": "风电",
+      "semantic_type": "产业链/供应链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/140_gate.json",
+      "generic_anchor_ratio": 0.3333,
+      "must_generic_count": 2,
+      "alias_generic_count": 0,
+      "anchor_count": 4,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.125,
+      "nearby_subject_keys": [
+        "9064956",
+        "9013416",
+        "9044138"
+      ],
+      "stock_pool_size": 65,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.3571,
+      "priority_score": 42.09,
+      "must_generic_terms": [
+        "上游",
+        "下游"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "上游",
+        "下游"
+      ],
+      "no_anchor_candidates": [
+        "上游",
+        "下游"
+      ]
+    },
+    {
+      "subject_key": "9018638",
+      "subject_name": "海峡两岸",
+      "concept": "海峡两岸",
+      "semantic_type": "产业链/供应链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9018638_gate.json",
+      "generic_anchor_ratio": 0.4286,
+      "must_generic_count": 3,
+      "alias_generic_count": 0,
+      "anchor_count": 4,
+      "negative_count": 4,
+      "nearby_overlap_score": 0.1667,
+      "nearby_subject_keys": [
+        "9061871"
+      ],
+      "stock_pool_size": 54,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.3839,
+      "priority_score": 41.72,
+      "must_generic_terms": [
+        "两岸半导体产业链合作",
+        "精密制造",
+        "半导体产业链"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "两岸半导体产业链合作",
+        "精密制造",
+        "半导体产业链"
+      ],
+      "no_anchor_candidates": [
+        "两岸半导体产业链合作",
+        "精密制造",
+        "半导体产业链",
+        "福建制造加工",
+        "智能制造",
+        "文化IP合作",
+        "金融"
+      ]
+    },
+    {
+      "subject_key": "9050919",
+      "subject_name": "钇90",
+      "concept": "钇90",
+      "semantic_type": "技术突破",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9050919_gate.json",
+      "generic_anchor_ratio": 0.5,
+      "must_generic_count": 3,
+      "alias_generic_count": 0,
+      "anchor_count": 3,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.0,
+      "nearby_subject_keys": [],
+      "stock_pool_size": 23,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.4675,
+      "priority_score": 41.14,
+      "must_generic_terms": [
+        "生产技术路径",
+        "商用堆生产",
+        "辐照生产"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "生产技术路径",
+        "商用堆生产",
+        "辐照生产"
+      ],
+      "no_anchor_candidates": [
+        "生产技术路径",
+        "商用堆生产",
+        "辐照生产",
+        "批量化生产"
+      ]
+    },
+    {
+      "subject_key": "9011558",
+      "subject_name": "医疗信息化",
+      "concept": "医疗信息化",
+      "semantic_type": "医疗供应链管理",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9011558_gate.json",
+      "generic_anchor_ratio": 0.5,
+      "must_generic_count": 1,
+      "alias_generic_count": 0,
+      "anchor_count": 1,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.0,
+      "nearby_subject_keys": [],
+      "stock_pool_size": 30,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.4425,
+      "priority_score": 40.91,
+      "must_generic_terms": [
+        "SPD医疗供应链"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "SPD医疗供应链"
+      ],
+      "no_anchor_candidates": [
+        "SPD医疗供应链"
+      ]
+    },
+    {
+      "subject_key": "9058137",
+      "subject_name": "培育钻石",
+      "concept": "培育钻石",
+      "semantic_type": "产业链/供应链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9058137_gate.json",
+      "generic_anchor_ratio": 0.6667,
+      "must_generic_count": 2,
+      "alias_generic_count": 0,
+      "anchor_count": 1,
+      "negative_count": 3,
+      "nearby_overlap_score": 0.0,
+      "nearby_subject_keys": [],
+      "stock_pool_size": 13,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.4917,
+      "priority_score": 40.79,
+      "must_generic_terms": [
+        "设备",
+        "产品"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "设备",
+        "产品"
+      ],
+      "no_anchor_candidates": [
+        "设备",
+        "产品"
+      ]
+    },
+    {
+      "subject_key": "9036191",
+      "subject_name": "宇树机器人",
+      "concept": "宇树机器人",
+      "semantic_type": "产业链/供应链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9036191_gate.json",
+      "generic_anchor_ratio": 0.4,
+      "must_generic_count": 2,
+      "alias_generic_count": 0,
+      "anchor_count": 3,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.25,
+      "nearby_subject_keys": [
+        "9062142",
+        "9062497",
+        "9040224",
+        "9056783",
+        "9035538",
+        "9060591",
+        "9041982",
+        "9014636",
+        "9047427"
+      ],
+      "stock_pool_size": 40,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.4025,
+      "priority_score": 40.34,
+      "must_generic_terms": [
+        "参股",
+        "应用"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "参股",
+        "应用"
+      ],
+      "no_anchor_candidates": [
+        "参股",
+        "应用",
+        "本体制造"
+      ]
+    },
+    {
+      "subject_key": "9026444",
+      "subject_name": "染料",
+      "concept": "染料",
+      "semantic_type": "产业链/供应链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9026444_gate.json",
+      "generic_anchor_ratio": 0.3333,
+      "must_generic_count": 1,
+      "alias_generic_count": 0,
+      "anchor_count": 2,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.3333,
+      "nearby_subject_keys": [
+        "9049096",
+        "9048752"
+      ],
+      "stock_pool_size": 27,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.4258,
+      "priority_score": 39.42,
+      "must_generic_terms": [
+        "产品"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "产品"
+      ],
+      "no_anchor_candidates": [
+        "产品"
+      ]
+    },
+    {
+      "subject_key": "9048533",
+      "subject_name": "中美互降关税",
+      "concept": "中美互降关税",
+      "semantic_type": "技术突破",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9048533_gate.json",
+      "generic_anchor_ratio": 0.25,
+      "must_generic_count": 1,
+      "alias_generic_count": 0,
+      "anchor_count": 3,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.125,
+      "nearby_subject_keys": [
+        "9019349"
+      ],
+      "stock_pool_size": 81,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.2612,
+      "priority_score": 39.15,
+      "must_generic_terms": [
+        "轻工制造"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "轻工制造"
+      ],
+      "no_anchor_candidates": [
+        "轻工制造"
+      ]
+    },
+    {
+      "subject_key": "9063773",
+      "subject_name": "字节Seedance",
+      "concept": "字节Seedance",
+      "semantic_type": "技术合作与接入事件",
+      "strategy_type": "event_driven",
+      "source_gate_file": "subject_gates/9063773_gate.json",
+      "generic_anchor_ratio": 0.5,
+      "must_generic_count": 1,
+      "alias_generic_count": 0,
+      "anchor_count": 1,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.0,
+      "nearby_subject_keys": [],
+      "stock_pool_size": 19,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.4425,
+      "priority_score": 38.99,
+      "must_generic_terms": [
+        "AIDC广告代理合作接入"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "AIDC广告代理合作接入"
+      ],
+      "no_anchor_candidates": [
+        "AIDC广告代理合作接入",
+        "合作"
+      ]
+    },
+    {
+      "subject_key": "9011277",
+      "subject_name": "芯片大全",
+      "concept": "芯片大全",
+      "semantic_type": "产业链/供应链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9011277_gate.json",
+      "generic_anchor_ratio": 0.2857,
+      "must_generic_count": 2,
+      "alias_generic_count": 0,
+      "anchor_count": 5,
+      "negative_count": 8,
+      "nearby_overlap_score": 0.125,
+      "nearby_subject_keys": [
+        "9062454",
+        "9056319",
+        "9062339",
+        "9055826",
+        "9055378",
+        "9040800",
+        "9028660"
+      ],
+      "stock_pool_size": 118,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.258,
+      "priority_score": 38.96,
+      "must_generic_terms": [
+        "半导体制造",
+        "上游关键设备材料零部件"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "半导体制造",
+        "上游关键设备材料零部件"
+      ],
+      "no_anchor_candidates": [
+        "半导体制造",
+        "上游关键设备材料零部件",
+        "先进晶圆制造厂"
+      ]
+    },
+    {
+      "subject_key": "9055515",
+      "subject_name": "麒麟9020",
+      "concept": "麒麟9020",
+      "semantic_type": "技术突破与产业链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9055515_gate.json",
+      "generic_anchor_ratio": 0.3333,
+      "must_generic_count": 1,
+      "alias_generic_count": 0,
+      "anchor_count": 2,
+      "negative_count": 2,
+      "nearby_overlap_score": 0.0,
+      "nearby_subject_keys": [],
+      "stock_pool_size": 64,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.2958,
+      "priority_score": 38.36,
+      "must_generic_terms": [
+        "麒麟芯片制造"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "麒麟芯片制造"
+      ],
+      "no_anchor_candidates": [
+        "麒麟芯片制造",
+        "产业链问题解决"
+      ]
+    },
+    {
+      "subject_key": "9057205",
+      "subject_name": "哪吒汽车重组",
+      "concept": "哪吒汽车重组",
+      "semantic_type": "公司事件",
+      "strategy_type": "event_driven",
+      "source_gate_file": "subject_gates/9057205_gate.json",
+      "generic_anchor_ratio": 0.3333,
+      "must_generic_count": 1,
+      "alias_generic_count": 0,
+      "anchor_count": 2,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.3333,
+      "nearby_subject_keys": [
+        "9062416",
+        "9036888"
+      ],
+      "stock_pool_size": 19,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.4258,
+      "priority_score": 38.02,
+      "must_generic_terms": [
+        "合作"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "合作"
+      ],
+      "no_anchor_candidates": [
+        "合作",
+        "供应商",
+        "参股"
+      ]
+    },
+    {
+      "subject_key": "9047021",
+      "subject_name": "保税仓",
+      "concept": "保税仓",
+      "semantic_type": "产业链/供应链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9047021_gate.json",
+      "generic_anchor_ratio": 0.5,
+      "must_generic_count": 1,
+      "alias_generic_count": 0,
+      "anchor_count": 1,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.0,
+      "nearby_subject_keys": [],
+      "stock_pool_size": 13,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.4425,
+      "priority_score": 37.94,
+      "must_generic_terms": [
+        "跨境电商物流仓储"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "跨境电商物流仓储"
+      ],
+      "no_anchor_candidates": [
+        "跨境电商物流仓储"
+      ]
+    },
+    {
+      "subject_key": "9060250",
+      "subject_name": "日本九大核心企业",
+      "concept": "日本九大核心企业",
+      "semantic_type": "产业链/供应链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9060250_gate.json",
+      "generic_anchor_ratio": 0.1429,
+      "must_generic_count": 1,
+      "alias_generic_count": 0,
+      "anchor_count": 6,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.25,
+      "nearby_subject_keys": [
+        "9033890",
+        "9011398"
+      ],
+      "stock_pool_size": 85,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.2372,
+      "priority_score": 37.76,
+      "must_generic_terms": [
+        "半导体制造"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "半导体制造"
+      ],
+      "no_anchor_candidates": [
+        "半导体制造"
+      ]
+    },
+    {
+      "subject_key": "9058703",
+      "subject_name": "Remy APP",
+      "concept": "Remy APP",
+      "semantic_type": "公司事件",
+      "strategy_type": "event_driven",
+      "source_gate_file": "subject_gates/9058703_gate.json",
+      "generic_anchor_ratio": 0.5,
+      "must_generic_count": 1,
+      "alias_generic_count": 0,
+      "anchor_count": 1,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.0,
+      "nearby_subject_keys": [],
+      "stock_pool_size": 9,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.4425,
+      "priority_score": 37.24,
+      "must_generic_terms": [
+        "技术参股"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "技术参股"
+      ],
+      "no_anchor_candidates": [
+        "技术参股",
+        "参股"
+      ]
+    },
+    {
+      "subject_key": "9030409",
+      "subject_name": "AR眼镜",
+      "concept": "AR眼镜",
+      "semantic_type": "技术产业链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9030409_gate.json",
+      "generic_anchor_ratio": 0.0,
+      "must_generic_count": 0,
+      "alias_generic_count": 0,
+      "anchor_count": 16,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.0556,
+      "nearby_subject_keys": [
+        "9040603",
+        "9060591",
+        "9037499",
+        "9019349",
+        "9035171"
+      ],
+      "stock_pool_size": 84,
+      "recent_heat_score": 1.0,
+      "false_positive_risk": 0.0883,
+      "priority_score": 37.12,
+      "must_generic_terms": [],
+      "alias_generic_terms": [],
+      "generic_terms": [],
+      "no_anchor_candidates": [
+        "XR"
+      ]
+    },
+    {
+      "subject_key": "9013944",
+      "subject_name": "半导体",
+      "concept": "半导体",
+      "semantic_type": "产业链/供应链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9013944_gate.json",
+      "generic_anchor_ratio": 0.1429,
+      "must_generic_count": 1,
+      "alias_generic_count": 0,
+      "anchor_count": 6,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.1111,
+      "nearby_subject_keys": [
+        "9057299"
+      ],
+      "stock_pool_size": 141,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.2163,
+      "priority_score": 36.55,
+      "must_generic_terms": [
+        "半导体制造（晶圆制造）"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "半导体制造（晶圆制造）"
+      ],
+      "no_anchor_candidates": [
+        "半导体制造（晶圆制造）",
+        "设备"
+      ]
+    },
+    {
+      "subject_key": "9062416",
+      "subject_name": "中石化重组",
+      "concept": "中石化重组",
+      "semantic_type": "公司事件",
+      "strategy_type": "event_driven",
+      "source_gate_file": "subject_gates/9062416_gate.json",
+      "generic_anchor_ratio": 0.3333,
+      "must_generic_count": 1,
+      "alias_generic_count": 0,
+      "anchor_count": 2,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.3333,
+      "nearby_subject_keys": [
+        "9057205",
+        "9036888"
+      ],
+      "stock_pool_size": 10,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.4258,
+      "priority_score": 36.45,
+      "must_generic_terms": [
+        "中国石油化工集团有限公司"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "中国石油化工集团有限公司"
+      ],
+      "no_anchor_candidates": [
+        "中国石油化工集团有限公司",
+        "中国航空油料集团有限公司"
+      ]
+    },
+    {
+      "subject_key": "9011768",
+      "subject_name": "中字头",
+      "concept": "中字头",
+      "semantic_type": "政策驱动型投资主题",
+      "strategy_type": "policy_driven",
+      "source_gate_file": "subject_gates/9011768_gate.json",
+      "generic_anchor_ratio": 0.1667,
+      "must_generic_count": 1,
+      "alias_generic_count": 0,
+      "anchor_count": 5,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.0,
+      "nearby_subject_keys": [],
+      "stock_pool_size": 134,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.2092,
+      "priority_score": 36.13,
+      "must_generic_terms": [
+        "中央企业控股上市公司"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "中央企业控股上市公司"
+      ],
+      "no_anchor_candidates": [
+        "中央企业控股上市公司",
+        "金融",
+        "交通物流",
+        "新国企"
+      ]
+    },
+    {
+      "subject_key": "9024980",
+      "subject_name": "设备更新",
+      "concept": "设备更新",
+      "semantic_type": "政策驱动型产业升级",
+      "strategy_type": "policy_driven",
+      "source_gate_file": "subject_gates/9024980_gate.json",
+      "generic_anchor_ratio": 0.1667,
+      "must_generic_count": 1,
+      "alias_generic_count": 0,
+      "anchor_count": 5,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.0,
+      "nearby_subject_keys": [],
+      "stock_pool_size": 103,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.2092,
+      "priority_score": 36.13,
+      "must_generic_terms": [
+        "制造业新型技术改造城市试点"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "制造业新型技术改造城市试点"
+      ],
+      "no_anchor_candidates": [
+        "制造业新型技术改造城市试点",
+        "物流"
+      ]
+    },
+    {
+      "subject_key": "9025720",
+      "subject_name": "低空经济",
+      "concept": "低空经济",
+      "semantic_type": "产业链/供应链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9025720_gate.json",
+      "generic_anchor_ratio": 0.1429,
+      "must_generic_count": 1,
+      "alias_generic_count": 0,
+      "anchor_count": 6,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.0,
+      "nearby_subject_keys": [],
+      "stock_pool_size": 87,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.1997,
+      "priority_score": 35.58,
+      "must_generic_terms": [
+        "低空飞行器制造"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "低空飞行器制造"
+      ],
+      "no_anchor_candidates": [
+        "低空飞行器制造"
+      ]
+    },
+    {
+      "subject_key": "9047274",
+      "subject_name": "跨境贸易三大支柱",
+      "concept": "跨境贸易三大支柱",
+      "semantic_type": "产业链/供应链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9047274_gate.json",
+      "generic_anchor_ratio": 0.25,
+      "must_generic_count": 1,
+      "alias_generic_count": 0,
+      "anchor_count": 3,
+      "negative_count": 4,
+      "nearby_overlap_score": 0.25,
+      "nearby_subject_keys": [
+        "9047066",
+        "9021093"
+      ],
+      "stock_pool_size": 79,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.2,
+      "priority_score": 35.43,
+      "must_generic_terms": [
+        "跨境物流"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "跨境物流"
+      ],
+      "no_anchor_candidates": [
+        "跨境物流"
+      ]
+    },
+    {
+      "subject_key": "9058261",
+      "subject_name": "新凯来示波器",
+      "concept": "新凯来示波器",
+      "semantic_type": "产业链/供应链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9058261_gate.json",
+      "generic_anchor_ratio": 0.3333,
+      "must_generic_count": 1,
+      "alias_generic_count": 0,
+      "anchor_count": 2,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.2,
+      "nearby_subject_keys": [
+        "9043683"
+      ],
+      "stock_pool_size": 10,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.4058,
+      "priority_score": 35.29,
+      "must_generic_terms": [
+        "产品"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "产品"
+      ],
+      "no_anchor_candidates": [
+        "产品",
+        "参股"
+      ]
+    },
+    {
+      "subject_key": "9021645",
+      "subject_name": "荣耀IPO",
+      "concept": "荣耀IPO",
+      "semantic_type": "公司事件",
+      "strategy_type": "event_driven",
+      "source_gate_file": "subject_gates/9021645_gate.json",
+      "generic_anchor_ratio": 0.3333,
+      "must_generic_count": 1,
+      "alias_generic_count": 0,
+      "anchor_count": 2,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.0,
+      "nearby_subject_keys": [],
+      "stock_pool_size": 19,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.3758,
+      "priority_score": 35.12,
+      "must_generic_terms": [
+        "荣耀终端有限公司"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "荣耀终端有限公司"
+      ],
+      "no_anchor_candidates": [
+        "荣耀终端有限公司",
+        "深圳市智信新信息技术有限公司",
+        "国信资本有限责任公司",
+        "京东方科技集团股份有限公司"
+      ]
+    },
+    {
+      "subject_key": "9010473",
+      "subject_name": "包装",
+      "concept": "包装",
+      "semantic_type": "产业链/供应链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9010473_gate.json",
+      "generic_anchor_ratio": 0.1667,
+      "must_generic_count": 1,
+      "alias_generic_count": 0,
+      "anchor_count": 5,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.0,
+      "nearby_subject_keys": [],
+      "stock_pool_size": 72,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.2092,
+      "priority_score": 34.73,
+      "must_generic_terms": [
+        "包装制造"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "包装制造"
+      ],
+      "no_anchor_candidates": [
+        "包装制造"
+      ]
+    },
+    {
+      "subject_key": "9057299",
+      "subject_name": "英特尔",
+      "concept": "英特尔",
+      "semantic_type": "产业链/供应链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9057299_gate.json",
+      "generic_anchor_ratio": 0.3333,
+      "must_generic_count": 2,
+      "alias_generic_count": 0,
+      "anchor_count": 4,
+      "negative_count": 2,
+      "nearby_overlap_score": 0.1111,
+      "nearby_subject_keys": [
+        "9034134",
+        "9013944"
+      ],
+      "stock_pool_size": 50,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.275,
+      "priority_score": 34.7,
+      "must_generic_terms": [
+        "上游供货商",
+        "下游客户"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "上游供货商",
+        "下游客户"
+      ],
+      "no_anchor_candidates": [
+        "上游供货商",
+        "下游客户",
+        "参股/曾参股",
+        "合作"
+      ]
+    },
+    {
+      "subject_key": "9062846",
+      "subject_name": "台积电",
+      "concept": "台积电",
+      "semantic_type": "公司事件",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9062846_gate.json",
+      "generic_anchor_ratio": 0.3333,
+      "must_generic_count": 1,
+      "alias_generic_count": 0,
+      "anchor_count": 2,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.0,
+      "nearby_subject_keys": [],
+      "stock_pool_size": 15,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.3758,
+      "priority_score": 34.42,
+      "must_generic_terms": [
+        "专业集成电路制造服务"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "专业集成电路制造服务"
+      ],
+      "no_anchor_candidates": [
+        "专业集成电路制造服务",
+        "合作"
+      ]
+    },
+    {
+      "subject_key": "9045339",
+      "subject_name": "脑机接口",
+      "concept": "脑机接口",
+      "semantic_type": "产业链/供应链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9045339_gate.json",
+      "generic_anchor_ratio": 0.25,
+      "must_generic_count": 1,
+      "alias_generic_count": 0,
+      "anchor_count": 3,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.1429,
+      "nearby_subject_keys": [
+        "9060591",
+        "9062213",
+        "9041906"
+      ],
+      "stock_pool_size": 52,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.2639,
+      "priority_score": 34.41,
+      "must_generic_terms": [
+        "上游电极/芯片"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "上游电极/芯片"
+      ],
+      "no_anchor_candidates": [
+        "上游电极/芯片",
+        "下游应用"
+      ]
+    },
+    {
+      "subject_key": "9048934",
+      "subject_name": "九天无人机航母",
+      "concept": "九天无人机航母",
+      "semantic_type": "公司事件",
+      "strategy_type": "event_driven",
+      "source_gate_file": "subject_gates/9048934_gate.json",
+      "generic_anchor_ratio": 0.3333,
+      "must_generic_count": 1,
+      "alias_generic_count": 0,
+      "anchor_count": 2,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.0,
+      "nearby_subject_keys": [],
+      "stock_pool_size": 14,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.3758,
+      "priority_score": 34.25,
+      "must_generic_terms": [
+        "陕西无人装备科技有限责任公司"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "陕西无人装备科技有限责任公司"
+      ],
+      "no_anchor_candidates": [
+        "陕西无人装备科技有限责任公司",
+        "无人机制造"
+      ]
+    },
+    {
+      "subject_key": "9015778",
+      "subject_name": "存储芯片",
+      "concept": "存储芯片",
+      "semantic_type": "产业链/供应链",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9015778_gate.json",
+      "generic_anchor_ratio": 0.1818,
+      "must_generic_count": 2,
+      "alias_generic_count": 0,
+      "anchor_count": 9,
+      "negative_count": 8,
+      "nearby_overlap_score": 0.0,
+      "nearby_subject_keys": [],
+      "stock_pool_size": 73,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.1977,
+      "priority_score": 34.24,
+      "must_generic_terms": [
+        "DRAM制造",
+        "NAND Flash制造"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "DRAM制造",
+        "NAND Flash制造"
+      ],
+      "no_anchor_candidates": [
+        "DRAM制造",
+        "NAND Flash制造"
+      ]
+    },
+    {
+      "subject_key": "9011436",
+      "subject_name": "阿里巴巴股权相关",
+      "concept": "阿里巴巴股权相关",
+      "semantic_type": "公司商业生态与投资布局",
+      "strategy_type": "industry_chain",
+      "source_gate_file": "subject_gates/9011436_gate.json",
+      "generic_anchor_ratio": 0.2857,
+      "must_generic_count": 2,
+      "alias_generic_count": 0,
+      "anchor_count": 5,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.1,
+      "nearby_subject_keys": [
+        "9020414"
+      ],
+      "stock_pool_size": 27,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.3343,
+      "priority_score": 34.11,
+      "must_generic_terms": [
+        "金融",
+        "物流"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "金融",
+        "物流"
+      ],
+      "no_anchor_candidates": [
+        "金融",
+        "物流",
+        "物流行业",
+        "快递物流"
+      ]
+    },
+    {
+      "subject_key": "9058918",
+      "subject_name": "稻米造血",
+      "concept": "稻米造血",
+      "semantic_type": "公司事件",
+      "strategy_type": "event_driven",
+      "source_gate_file": "subject_gates/9058918_gate.json",
+      "generic_anchor_ratio": 0.3333,
+      "must_generic_count": 1,
+      "alias_generic_count": 0,
+      "anchor_count": 2,
+      "negative_count": 0,
+      "nearby_overlap_score": 0.0,
+      "nearby_subject_keys": [],
+      "stock_pool_size": 12,
+      "recent_heat_score": 0.0,
+      "false_positive_risk": 0.3758,
+      "priority_score": 33.9,
+      "must_generic_terms": [
+        "合作"
+      ],
+      "alias_generic_terms": [],
+      "generic_terms": [
+        "合作"
+      ],
+      "no_anchor_candidates": [
+        "合作",
+        "产品"
+      ]
+    }
+  ],
+  "generic_term_counts": {
+    "产品": 9,
+    "参股": 6,
+    "设备": 5,
+    "金融": 5,
+    "合作": 4,
+    "公司": 4,
+    "半导体制造": 4,
+    "物流": 3,
+    "中国航天科技集团有限公司": 2,
+    "中国航天科工集团有限公司": 2,
+    "中央企业控股上市公司": 2,
+    "下游应用": 2,
+    "卫星制造": 2,
+    "原子级制造": 2,
+    "VR": 2,
+    "中国核工业集团有限公司": 1,
+    "中国航空工业集团有限公司": 1,
+    "中国航空发动机集团有限公司": 1,
+    "中国船舶集团有限公司": 1,
+    "上游勘探": 1,
+    "上游采油": 1,
+    "上游钻井": 1,
+    "物流行业": 1,
+    "供应链行业": 1,
+    "皮卡供应商": 1,
+    "一级供应商": 1,
+    "供应商": 1,
+    "上游资源勘探与开采": 1,
+    "下游珠宝首饰制造与投资消费": 1,
+    "央国企": 1,
+    "合作商": 1,
+    "供应链优势": 1,
+    "跨境物流服务": 1,
+    "SpaceX供应链": 1,
+    "上游资源": 1,
+    "中游制造": 1,
+    "合成生物制造产业": 1,
+    "生物制造菌种计算设计": 1,
+    "合成生物制造技术创新中心": 1,
+    "国资国企改革": 1,
+    "国企改革": 1,
+    "上游": 1,
+    "下游": 1,
+    "两岸半导体产业链合作": 1,
+    "精密制造": 1,
+    "半导体产业链": 1,
+    "生产技术路径": 1,
+    "商用堆生产": 1,
+    "辐照生产": 1,
+    "SPD医疗供应链": 1
+  }
+}

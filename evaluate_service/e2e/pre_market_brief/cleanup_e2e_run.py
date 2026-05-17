@@ -28,6 +28,7 @@ async def cleanup_run(
     run_id: str,
     dry_run: bool = False,
     delete_final_snapshot: bool = False,
+    clean_trade_date_all_e2e: bool = False,
 ) -> dict[str, Any]:
     import asyncpg
 
@@ -37,25 +38,42 @@ async def cleanup_run(
         if not await table_exists(conn, "news_raw"):
             return {"db_name": db_name, "run_id": run_id, "skipped": "news_raw_missing"}
 
-        raw_where = """
-        source = $1
-        AND (
-          news_id::text LIKE $2
-          OR url::text LIKE $3
-          OR title::text LIKE $4
-          OR content::text LIKE $4
-        )
-        """
-        raw_ids = [
-            int(row["id"])
-            for row in await conn.fetch(
+        if clean_trade_date_all_e2e:
+            raw_where = """
+            source = $1
+            AND publish_date::date = $2::date
+            AND (
+              news_id::text LIKE 'pm_e2e_%'
+              OR url::text LIKE 'e2e://pm_e2e_%'
+              OR title::text LIKE '%pm_e2e_%'
+              OR content::text LIKE '%pm_e2e_%'
+            )
+            """
+        else:
+            raw_where = """
+            source = $1
+            AND (
+              news_id::text LIKE $2
+              OR url::text LIKE $3
+              OR title::text LIKE $4
+              OR content::text LIKE $4
+            )
+            """
+        if clean_trade_date_all_e2e:
+            raw_rows = await conn.fetch(
+                f"SELECT id FROM news_raw WHERE {raw_where}",
+                source,
+                parsed_trade_date,
+            )
+        else:
+            raw_rows = await conn.fetch(
                 f"SELECT id FROM news_raw WHERE {raw_where}",
                 source,
                 f"{run_id}:%",
                 f"e2e://{run_id}/%",
                 f"%{run_id}%",
             )
-        ]
+        raw_ids = [int(row["id"]) for row in raw_rows]
 
         event_ids: list[int] = []
         if raw_ids and await table_exists(conn, "news_event"):
@@ -79,6 +97,7 @@ async def cleanup_run(
                 "trade_date": trade_date,
                 "dry_run": True,
                 "delete_final_snapshot": delete_final_snapshot,
+                "clean_trade_date_all_e2e": clean_trade_date_all_e2e,
                 "counts": counts,
             }
 
@@ -122,6 +141,7 @@ async def cleanup_run(
             "trade_date": trade_date,
             "dry_run": False,
             "delete_final_snapshot": delete_final_snapshot,
+            "clean_trade_date_all_e2e": clean_trade_date_all_e2e,
             "counts": counts,
         }
     finally:
@@ -168,6 +188,11 @@ async def async_main() -> None:
     parser.add_argument("--allow-production", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--delete-final-snapshot", action="store_true")
+    parser.add_argument(
+        "--clean-trade-date-all-e2e",
+        action="store_true",
+        help="按 trade_date 清理所有 akshare_replay E2E 输入及其下游数据，避免同日期旧 run 污染报告。",
+    )
     parser.add_argument("--out")
     args = parser.parse_args()
 
@@ -179,6 +204,7 @@ async def async_main() -> None:
         run_id=args.run_id,
         dry_run=args.dry_run,
         delete_final_snapshot=args.delete_final_snapshot,
+        clean_trade_date_all_e2e=args.clean_trade_date_all_e2e,
     )
     if args.out:
         write_json(Path(args.out), result)

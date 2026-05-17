@@ -202,6 +202,31 @@ async def test_pre_market_brief_builder_prefers_event_subject_map_rows():
 
 
 @pytest.mark.asyncio
+async def test_pre_market_brief_builder_does_not_fallback_to_legacy_when_subject_map_empty():
+    read = _SubjectReadGateway(
+        subject_events=[],
+        fallback_matched=[
+            {
+                "item_id": "event:999:legacy",
+                "title": "旧链事件",
+                "theme_subject_keys": ["legacy"],
+                "theme_names": ["旧题材"],
+            }
+        ],
+    )
+    write = _WriteGateway()
+    builder = PreMarketBriefBuilder(read_gateway=read, write_gateway=write)
+
+    payload = await builder.rebuild(date(2026, 5, 16), dry_run=True)
+
+    assert read.used_subject_events is True
+    assert read.used_legacy_events is False
+    assert payload["sections"]["major_events"] == []
+    assert payload["sections"]["matched_themes"] == []
+    assert payload["diagnostics"]["matched_event_count"] == 0
+
+
+@pytest.mark.asyncio
 async def test_pre_market_brief_builder_falls_back_to_decision_stream_for_unknown_and_review():
     async def _decision_reader(feed_date, limit):
         return [
