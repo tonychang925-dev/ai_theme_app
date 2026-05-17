@@ -8,7 +8,7 @@ from evaluate_service.e2e.pre_market_brief.common import (
     repo_root,
     require_safe_db,
 )
-from evaluate_service.e2e.pre_market_brief.evaluate_pre_market_brief import _matches_gold
+from evaluate_service.e2e.pre_market_brief.evaluate_pre_market_brief import _is_generic_only_related, _matches_gold
 from evaluate_service.e2e.pre_market_brief.parse_test_cases import parse_test_cases_file
 from evaluate_service.e2e.pre_market_brief.replay_akshare_raw_news import build_stream_payload
 from evaluate_service.e2e.pre_market_brief.run_pre_market_e2e import build_parser, _build_rebuild_payload
@@ -81,6 +81,37 @@ def test_alias_match_for_gold_labels():
     assert not _matches_gold("可控核聚变", "AI智能眼镜")
 
 
+def test_generic_only_related_metric_detects_support_only_evidence():
+    assert _is_generic_only_related(
+        {
+            "evidence_json": {
+                "related_match": {
+                    "evidence": {
+                        "support_hits": ["供应链"],
+                        "anchor_hits": [],
+                        "object_hits": [],
+                        "must_hits": [],
+                        "strong_hits": [],
+                        "entity_hits": [],
+                    }
+                }
+            }
+        }
+    )
+    assert not _is_generic_only_related(
+        {
+            "evidence_json": {
+                "related_match": {
+                    "evidence": {
+                        "support_hits": ["供应链"],
+                        "anchor_hits": ["蓝箭航天"],
+                    }
+                }
+            }
+        }
+    )
+
+
 def test_ensure_no_gold_leak_accepts_clean_payload():
     ensure_no_gold_leak({"title": "新闻", "case_id": "pm_case_0001"})
 
@@ -144,3 +175,27 @@ def test_pre_market_e2e_snapshot_copy_is_explicit_opt_in():
 
     assert default_args.copy_snapshot_to_db is None
     assert copy_args.copy_snapshot_to_db == "stock_data_test"
+
+
+def test_pre_market_e2e_trade_date_cleanup_is_explicit_opt_in():
+    default_args = build_parser().parse_args(
+        [
+            "--trade-date",
+            "2026-05-16",
+            "--run-id",
+            "pm_e2e",
+        ]
+    )
+    clean_args = build_parser().parse_args(
+        [
+            "--trade-date",
+            "2026-05-16",
+            "--run-id",
+            "pm_e2e",
+            "--force-clean",
+            "--clean-trade-date-all-e2e",
+        ]
+    )
+
+    assert default_args.clean_trade_date_all_e2e is False
+    assert clean_args.clean_trade_date_all_e2e is True

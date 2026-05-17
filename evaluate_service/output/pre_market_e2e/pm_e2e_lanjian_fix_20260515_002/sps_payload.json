@@ -1,0 +1,365 @@
+{
+  "trade_date": "2026-05-15",
+  "snapshot_version": "pre_market_brief.v1",
+  "status": "draft",
+  "payload": {
+    "status": "draft",
+    "version": "pre_market_brief.v1",
+    "sections": {
+      "risk_alerts": [
+        {
+          "count": 1,
+          "message": "存在待人工复核的高影响题材事件，暂不生成股票机会。",
+          "risk_type": "human_review_pending"
+        }
+      ],
+      "major_events": [
+        {
+          "title": "《科创板日报》记者从知情人士方面了解到，智能体产品Manus背后公司蝴蝶效应正在计划新一轮融资，预计融资规模为1亿美元，估值15亿美元",
+          "reason": "llm_accept_match",
+          "item_id": "event:2860:9043089",
+          "summary": "智能体产品Manus背后公司蝴蝶效应计划新一轮融资，规模1亿美元，估值15亿美元，国资参与。",
+          "event_id": 2860,
+          "confidence": 0.95,
+          "theme_name": "AI智能体Manus",
+          "occurred_at": "2026-05-16 13:18:06.562853+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9043089",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        }
+      ],
+      "review_events": [
+        {
+          "title": "蓝箭航天副总裁张静茹告诉《科创板日报》记者，蓝箭航天供应链600余家供应商覆盖全国90余城，民企占比近70%、国企30%",
+          "reason": "llm_accept_without_anchor_evidence",
+          "item_id": "review:2864",
+          "summary": "蓝箭航天副总裁透露公司供应链覆盖全国90余城，民企占比近70%，无锡装配基地冲刺建设。",
+          "event_id": 2864,
+          "confidence": 0.5,
+          "theme_name": "航天材料",
+          "occurred_at": "2026-05-17 07:51:45.541624",
+          "source_type": "event_review_queue",
+          "subject_key": "",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        }
+      ],
+      "unknown_watch": [],
+      "matched_themes": [
+        {
+          "event_ids": [
+            2860
+          ],
+          "confidence": 0.95,
+          "theme_name": "AI智能体Manus",
+          "event_count": 1,
+          "subject_key": "9043089",
+          "impact_score": 0.0,
+          "latest_event_title": "《科创板日报》记者从知情人士方面了解到，智能体产品Manus背后公司蝴蝶效应正在计划新一轮融资，预计融资规模为1亿美元，估值15亿美元"
+        }
+      ],
+      "event_driven_opportunities": [
+        {
+          "tiers": {
+            "A": [],
+            "B": [],
+            "C": [
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 49.0,
+                "reason": "题材映射排名 1；龙头/核心映射",
+                "evidence": {
+                  "is_leader": true,
+                  "rank_order": 1,
+                  "cycle_state": "",
+                  "subject_key": "9043089",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 10.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 19.0,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 20.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002602",
+                "stock_name": "世纪华通"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 35.0,
+                "reason": "题材映射排名 2",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 2,
+                  "cycle_state": "",
+                  "subject_key": "9043089",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 19.0,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "603039",
+                "stock_name": "泛微网络"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 35.0,
+                "reason": "题材映射排名 3",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 3,
+                  "cycle_state": "",
+                  "subject_key": "9043089",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 19.0,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "603220",
+                "stock_name": "中贝通信"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 31.0,
+                "reason": "题材映射排名 9",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 9,
+                  "cycle_state": "",
+                  "subject_key": "9043089",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 19.0,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "001330",
+                "stock_name": "博纳影业"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 31.0,
+                "reason": "题材映射排名 5",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 5,
+                  "cycle_state": "",
+                  "subject_key": "9043089",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 19.0,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002253",
+                "stock_name": "ST智胜"
+              }
+            ]
+          },
+          "stocks": [
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 49.0,
+              "reason": "题材映射排名 1；龙头/核心映射",
+              "evidence": {
+                "is_leader": true,
+                "rank_order": 1,
+                "cycle_state": "",
+                "subject_key": "9043089",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 10.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 19.0,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 20.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002602",
+              "stock_name": "世纪华通"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 35.0,
+              "reason": "题材映射排名 2",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 2,
+                "cycle_state": "",
+                "subject_key": "9043089",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 19.0,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "603039",
+              "stock_name": "泛微网络"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 35.0,
+              "reason": "题材映射排名 3",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 3,
+                "cycle_state": "",
+                "subject_key": "9043089",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 19.0,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "603220",
+              "stock_name": "中贝通信"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 31.0,
+              "reason": "题材映射排名 9",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 9,
+                "cycle_state": "",
+                "subject_key": "9043089",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 19.0,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "001330",
+              "stock_name": "博纳影业"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 31.0,
+              "reason": "题材映射排名 5",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 5,
+                "cycle_state": "",
+                "subject_key": "9043089",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 19.0,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002253",
+              "stock_name": "ST智胜"
+            }
+          ],
+          "theme_name": "AI智能体Manus",
+          "event_count": 1,
+          "subject_key": "9043089",
+          "theme_confidence": 0.95,
+          "latest_event_title": "《科创板日报》记者从知情人士方面了解到，智能体产品Manus背后公司蝴蝶效应正在计划新一轮融资，预计融资规模为1亿美元，估值15亿美元"
+        }
+      ]
+    },
+    "trade_date": "2026-05-15",
+    "diagnostics": {
+      "source": "db",
+      "event_count": 2,
+      "theme_count": 1,
+      "last_rebuild_at": "2026-05-16T23:51:58.456752+00:00",
+      "opportunity_count": 1,
+      "review_event_count": 1,
+      "matched_event_count": 1,
+      "unknown_event_count": 0
+    }
+  },
+  "generated_at": "2026-05-16 23:51:58.456752+00:00",
+  "finalized_at": null,
+  "updated_at": "2026-05-16 23:51:58.457050+00:00"
+}

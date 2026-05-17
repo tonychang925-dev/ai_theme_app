@@ -1,0 +1,16 @@
+{
+  "db_name": "stock_data",
+  "run_id": "pm_e2e_smoke_related2_20260515_001",
+  "trade_date": "2026-05-15",
+  "dry_run": false,
+  "delete_final_snapshot": true,
+  "clean_trade_date_all_e2e": true,
+  "counts": {
+    "event_subject_map": 25,
+    "event_theme_map": 0,
+    "event_review_queue": 0,
+    "news_event": 5,
+    "news_raw": 5,
+    "pre_market_brief_snapshot": 1
+  }
+}

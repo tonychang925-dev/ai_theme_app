@@ -1,0 +1,52 @@
+{
+  "run_id": "pm_e2e_lanjian_anchor_20260513_001",
+  "trade_date": "2026-05-13",
+  "counts": {
+    "expected_input_count": 1,
+    "news_raw_count": 1,
+    "news_event_count": 1,
+    "mapped_event_count": 1,
+    "event_subject_map_count": 1,
+    "event_theme_map_count": 1,
+    "review_queue_count": 0,
+    "decision_count": 1,
+    "pending_count": 0,
+    "dead_letter_count": 0
+  },
+  "redis_streams": {
+    "decision_stream": "stream:events:decision",
+    "pending_stream": "stream:events:pending",
+    "dead_letter_stream": "stream:dead:letter",
+    "decision_count": 1,
+    "pending_count": 0,
+    "dead_letter_count": 0,
+    "decision_entries": [
+      {
+        "stream_id": "1778976949126-0",
+        "case_id": null,
+        "event_id": "2872",
+        "decision": "{\"decision_id\": \"decision_1778976949_1778976936721-0\", \"decision_type\": \"phase0_match\", \"action\": \"update_theme\", \"operations\": [\"update_theme_heat\", \"create_mapping\", \"publish_update\"], \"event_id\": 2872, \"trace_id\": \"trace_2872\", \"event_type\": \"structured\", \"event_title\": \"蓝箭航天副总裁张静茹告诉《科创板日报》记者，蓝箭航天供应链600余家供应商覆盖全国90余城，民企占比近70%、国企30%\", \"timestamp\": \"2026-05-17T08:15:49.126460\", \"processor\": \"theme_processor_e2e_pm_e2e_lanjian_anchor_20260513_001\", \"event_data\": {\"event_id\": 2872, \"news_id\": 3206, \"title\": \"蓝箭航天副总裁张静茹告诉《科创板日报》记者，蓝箭航天供应链600余家供应商覆盖全国90余城，民企占比近70%、国企30%\", \"summary\": \"蓝箭航天副总裁透露供应链覆盖全国90余城，民企占比近70%，无锡装配基地冲刺建设。\", \"content\": \"蓝箭航天副总裁张静茹告诉《科创板日报》记者，蓝箭航天供应链600余家供应商覆盖全国90余城，民企占比近70%、国企30%。同时，无锡朱雀三号装配基地正冲刺建设，力争年底验收，2026年投用，专注火箭装配与智能制造。 (新闻来源：科创板日报)\", \"event_type\": \"行业观点\"}, \"confidence\": 0.85, \"reason\": \"llm_accept_match\", \"source\": \"structured_theme_match\", \"match_result\": {\"decision\": \"MATCH\", \"event_id\": 2872, \"news_id\": 3206, \"confidence\": 0.85, \"reason_code\": \"llm_accept_match\", \"matched_subject_key\": \"9062142\", \"matched_theme_name\": \"蓝箭航天IPO\", \"matched_theme_id\": null, \"related_matches\": [], \"review_required\": false, \"audit\": {\"top_candidates\": [{\"subject_key\": \"9062142\", \"subject_name\": \"蓝箭航天IPO\", \"dense_score\": 0.0, \"rerank_score\": 1.0444, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"蓝箭航天\"], \"support_hits\": [], \"anchor_hits\": [\"蓝箭航天\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 6, \"conflict_score\": 0, \"evidence_summary\": {\"theme_name_hits\": [], \"anchor_terms\": [\"蓝箭航天\"], \"support_terms\": [], \"conflict_terms\": []}}}, {\"subject_key\": \"9061860\", \"subject_name\": \"航天材料\", \"dense_score\": 0.0, \"rerank_score\": 0.663, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [\"火箭\"], \"entity_hits\": [], \"profile_anchor_hits\": [], \"support_hits\": [], \"anchor_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 1, \"conflict_score\": 0, \"evidence_summary\": {\"theme_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [\"火箭\"], \"conflict_terms\": []}}}, {\"subject_key\": \"9042073\", \"subject_name\": \"航空运输\", \"dense_score\": 0.6646, \"rerank_score\": 0.6426, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [], \"support_hits\": [], \"anchor_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"evidence_summary\": {\"theme_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": []}}}, {\"subject_key\": \"9064884\", \"subject_name\": \"F5G\", \"dense_score\": 0.6151, \"rerank_score\": 0.6268, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [], \"support_hits\": [], \"anchor_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"evidence_summary\": {\"theme_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": []}}}, {\"subject_key\": \"9023579\", \"subject_name\": \"高股息概念\", \"dense_score\": 0.0, \"rerank_score\": 0.6, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [\"科创板\"], \"entity_hits\": [], \"profile_anchor_hits\": [], \"support_hits\": [], \"anchor_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 1, \"conflict_score\": 0, \"evidence_summary\": {\"theme_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [\"科创板\"], \"conflict_terms\": []}}}], \"llm_result\": {\"verdict\": \"accept_match\", \"best_candidate\": \"C1\", \"best_theme_key\": \"9062142\", \"best_theme_name\": \"蓝箭航天IPO\", \"confidence\": 0.85, \"reason\": \"事件主对象为蓝箭航天，核心叙事围绕其供应链与装配基地建设，与蓝箭航天IPO题材直接相关，且该题材包含蓝箭航天这一核心实体。\", \"new_theme_name\": \"\", \"new_theme_desc\": \"\"}}}, \"theme_data\": {\"subject_key\": \"9062142\", \"name\": \"蓝箭航天IPO\", \"id\": null}, \"run_id\": null, \"case_id\": null}"
+      }
+    ],
+    "pending_entries": [],
+    "dead_letter_entries": []
+  },
+  "rows": [
+    {
+      "case_id": "pm_case_0001",
+      "external_id": "pm_e2e_lanjian_anchor_20260513_001:pm_case_0001",
+      "news_raw_id": 3206,
+      "news_event_id": 2872,
+      "decision_id": null,
+      "primary_subject_key": "9062142",
+      "primary_theme_name": "蓝箭航天IPO",
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    }
+  ]
+}

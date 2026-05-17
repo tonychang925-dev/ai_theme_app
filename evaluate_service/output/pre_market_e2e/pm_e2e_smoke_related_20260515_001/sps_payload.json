@@ -1,0 +1,1584 @@
+{
+  "trade_date": "2026-05-15",
+  "snapshot_version": "pre_market_brief.v1",
+  "status": "draft",
+  "payload": {
+    "status": "draft",
+    "version": "pre_market_brief.v1",
+    "sections": {
+      "risk_alerts": [],
+      "major_events": [
+        {
+          "title": "2024年12月27日，三星电子近日宣布，将在 2025 年 1 月举行的 Galaxy Unpacked 活动上发布其 Galaxy S25 智能手机系列，以",
+          "reason": "llm_accept_match",
+          "item_id": "event:2876:9030409",
+          "summary": "三星电子宣布将在2025年1月Galaxy Unpacked活动上发布Galaxy S25系列、Galaxy Ring",
+          "event_id": 2876,
+          "confidence": 0.95,
+          "theme_name": "AR眼镜",
+          "occurred_at": "2026-05-17 00:22:32.792520+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9030409",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2024年12月27日，三星电子近日宣布，将在 2025 年 1 月举行的 Galaxy Unpacked 活动上发布其 Galaxy S25 智能手机系列，以",
+          "reason": "top_candidate_evidence_related",
+          "item_id": "event:2876:9035171",
+          "summary": "三星电子宣布将在2025年1月Galaxy Unpacked活动上发布Galaxy S25系列、Galaxy Ring",
+          "event_id": 2876,
+          "confidence": 0.636,
+          "theme_name": "AI大娱乐",
+          "occurred_at": "2026-05-17 00:22:32.792520+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9035171",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2024年12月27日，三星电子近日宣布，将在 2025 年 1 月举行的 Galaxy Unpacked 活动上发布其 Galaxy S25 智能手机系列，以",
+          "reason": "top_candidate_evidence_related",
+          "item_id": "event:2876:9031543",
+          "summary": "三星电子宣布将在2025年1月Galaxy Unpacked活动上发布Galaxy S25系列、Galaxy Ring",
+          "event_id": 2876,
+          "confidence": 0.6326,
+          "theme_name": "智能穿戴",
+          "occurred_at": "2026-05-17 00:22:32.792520+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9031543",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2024年12月27日，三星电子近日宣布，将在 2025 年 1 月举行的 Galaxy Unpacked 活动上发布其 Galaxy S25 智能手机系列，以",
+          "reason": "top_candidate_evidence_related",
+          "item_id": "event:2876:9040603",
+          "summary": "三星电子宣布将在2025年1月Galaxy Unpacked活动上发布Galaxy S25系列、Galaxy Ring",
+          "event_id": 2876,
+          "confidence": 0.63,
+          "theme_name": "人工智能+消费",
+          "occurred_at": "2026-05-17 00:22:32.792520+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9040603",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2024年12月27日，三星电子近日宣布，将在 2025 年 1 月举行的 Galaxy Unpacked 活动上发布其 Galaxy S25 智能手机系列，以",
+          "reason": "top_candidate_evidence_related",
+          "item_id": "event:2876:9023110",
+          "summary": "三星电子宣布将在2025年1月Galaxy Unpacked活动上发布Galaxy S25系列、Galaxy Ring",
+          "event_id": 2876,
+          "confidence": 0.6097,
+          "theme_name": "AI手机",
+          "occurred_at": "2026-05-17 00:22:32.792520+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9023110",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        }
+      ],
+      "review_events": [],
+      "unknown_watch": [],
+      "matched_themes": [
+        {
+          "event_ids": [
+            2876
+          ],
+          "confidence": 0.95,
+          "theme_name": "AR眼镜",
+          "event_count": 1,
+          "subject_key": "9030409",
+          "impact_score": 0.0,
+          "latest_event_title": "2024年12月27日，三星电子近日宣布，将在 2025 年 1 月举行的 Galaxy Unpacked 活动上发布其 Galaxy S25 智能手机系列，以"
+        },
+        {
+          "event_ids": [
+            2876
+          ],
+          "confidence": 0.636,
+          "theme_name": "AI大娱乐",
+          "event_count": 1,
+          "subject_key": "9035171",
+          "impact_score": 0.0,
+          "latest_event_title": "2024年12月27日，三星电子近日宣布，将在 2025 年 1 月举行的 Galaxy Unpacked 活动上发布其 Galaxy S25 智能手机系列，以"
+        },
+        {
+          "event_ids": [
+            2876
+          ],
+          "confidence": 0.6326,
+          "theme_name": "智能穿戴",
+          "event_count": 1,
+          "subject_key": "9031543",
+          "impact_score": 0.0,
+          "latest_event_title": "2024年12月27日，三星电子近日宣布，将在 2025 年 1 月举行的 Galaxy Unpacked 活动上发布其 Galaxy S25 智能手机系列，以"
+        },
+        {
+          "event_ids": [
+            2876
+          ],
+          "confidence": 0.63,
+          "theme_name": "人工智能+消费",
+          "event_count": 1,
+          "subject_key": "9040603",
+          "impact_score": 0.0,
+          "latest_event_title": "2024年12月27日，三星电子近日宣布，将在 2025 年 1 月举行的 Galaxy Unpacked 活动上发布其 Galaxy S25 智能手机系列，以"
+        },
+        {
+          "event_ids": [
+            2876
+          ],
+          "confidence": 0.6097,
+          "theme_name": "AI手机",
+          "event_count": 1,
+          "subject_key": "9023110",
+          "impact_score": 0.0,
+          "latest_event_title": "2024年12月27日，三星电子近日宣布，将在 2025 年 1 月举行的 Galaxy Unpacked 活动上发布其 Galaxy S25 智能手机系列，以"
+        }
+      ],
+      "event_driven_opportunities": [
+        {
+          "tiers": {
+            "A": [],
+            "B": [],
+            "C": [
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 42.7,
+                "reason": "题材映射排名 1；龙头/核心映射",
+                "evidence": {
+                  "is_leader": true,
+                  "rank_order": 1,
+                  "cycle_state": "",
+                  "subject_key": "9035171",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 10.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.7,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 20.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002181",
+                "stock_name": "粤 传 媒"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 28.7,
+                "reason": "题材映射排名 3",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 3,
+                  "cycle_state": "",
+                  "subject_key": "9035171",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.7,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "301171",
+                "stock_name": "易点天下"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 28.7,
+                "reason": "题材映射排名 2",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 2,
+                  "cycle_state": "",
+                  "subject_key": "9035171",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.7,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "603598",
+                "stock_name": "引力传媒"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 24.7,
+                "reason": "题材映射排名 4",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 4,
+                  "cycle_state": "",
+                  "subject_key": "9035171",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.7,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002174",
+                "stock_name": "游族网络"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 24.7,
+                "reason": "题材映射排名 6",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 6,
+                  "cycle_state": "",
+                  "subject_key": "9035171",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.7,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002291",
+                "stock_name": "遥望科技"
+              }
+            ]
+          },
+          "stocks": [
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 42.7,
+              "reason": "题材映射排名 1；龙头/核心映射",
+              "evidence": {
+                "is_leader": true,
+                "rank_order": 1,
+                "cycle_state": "",
+                "subject_key": "9035171",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 10.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.7,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 20.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002181",
+              "stock_name": "粤 传 媒"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 28.7,
+              "reason": "题材映射排名 3",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 3,
+                "cycle_state": "",
+                "subject_key": "9035171",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.7,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "301171",
+              "stock_name": "易点天下"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 28.7,
+              "reason": "题材映射排名 2",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 2,
+                "cycle_state": "",
+                "subject_key": "9035171",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.7,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "603598",
+              "stock_name": "引力传媒"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 24.7,
+              "reason": "题材映射排名 4",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 4,
+                "cycle_state": "",
+                "subject_key": "9035171",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.7,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002174",
+              "stock_name": "游族网络"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 24.7,
+              "reason": "题材映射排名 6",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 6,
+                "cycle_state": "",
+                "subject_key": "9035171",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.7,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002291",
+              "stock_name": "遥望科技"
+            }
+          ],
+          "theme_name": "AI大娱乐",
+          "event_count": 1,
+          "subject_key": "9035171",
+          "theme_confidence": 0.636,
+          "latest_event_title": "2024年12月27日，三星电子近日宣布，将在 2025 年 1 月举行的 Galaxy Unpacked 活动上发布其 Galaxy S25 智能手机系列，以"
+        },
+        {
+          "tiers": {
+            "A": [],
+            "B": [],
+            "C": [
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 42.2,
+                "reason": "题材映射排名 1；龙头/核心映射",
+                "evidence": {
+                  "is_leader": true,
+                  "rank_order": 1,
+                  "cycle_state": "",
+                  "subject_key": "9023110",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 10.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.2,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 20.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "600130",
+                "stock_name": "波导股份"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 28.2,
+                "reason": "题材映射排名 3",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 3,
+                  "cycle_state": "",
+                  "subject_key": "9023110",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.2,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002888",
+                "stock_name": "惠威科技"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 28.2,
+                "reason": "题材映射排名 2",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 2,
+                  "cycle_state": "",
+                  "subject_key": "9023110",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.2,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "688601",
+                "stock_name": "力芯微"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 24.2,
+                "reason": "题材映射排名 7",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 7,
+                  "cycle_state": "",
+                  "subject_key": "9023110",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.2,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002426",
+                "stock_name": "胜利精密"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 24.2,
+                "reason": "题材映射排名 8",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 8,
+                  "cycle_state": "",
+                  "subject_key": "9023110",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.2,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002600",
+                "stock_name": "领益智造"
+              }
+            ]
+          },
+          "stocks": [
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 42.2,
+              "reason": "题材映射排名 1；龙头/核心映射",
+              "evidence": {
+                "is_leader": true,
+                "rank_order": 1,
+                "cycle_state": "",
+                "subject_key": "9023110",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 10.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.2,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 20.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "600130",
+              "stock_name": "波导股份"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 28.2,
+              "reason": "题材映射排名 3",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 3,
+                "cycle_state": "",
+                "subject_key": "9023110",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.2,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002888",
+              "stock_name": "惠威科技"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 28.2,
+              "reason": "题材映射排名 2",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 2,
+                "cycle_state": "",
+                "subject_key": "9023110",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.2,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "688601",
+              "stock_name": "力芯微"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 24.2,
+              "reason": "题材映射排名 7",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 7,
+                "cycle_state": "",
+                "subject_key": "9023110",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.2,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002426",
+              "stock_name": "胜利精密"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 24.2,
+              "reason": "题材映射排名 8",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 8,
+                "cycle_state": "",
+                "subject_key": "9023110",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.2,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002600",
+              "stock_name": "领益智造"
+            }
+          ],
+          "theme_name": "AI手机",
+          "event_count": 1,
+          "subject_key": "9023110",
+          "theme_confidence": 0.6097,
+          "latest_event_title": "2024年12月27日，三星电子近日宣布，将在 2025 年 1 月举行的 Galaxy Unpacked 活动上发布其 Galaxy S25 智能手机系列，以"
+        },
+        {
+          "tiers": {
+            "A": [],
+            "B": [],
+            "C": [
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 49.0,
+                "reason": "题材映射排名 1；龙头/核心映射",
+                "evidence": {
+                  "is_leader": true,
+                  "rank_order": 1,
+                  "cycle_state": "",
+                  "subject_key": "9030409",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 10.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 19.0,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 20.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "688003",
+                "stock_name": "天准科技"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 35.0,
+                "reason": "题材映射排名 2",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 2,
+                  "cycle_state": "",
+                  "subject_key": "9030409",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 19.0,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "300433",
+                "stock_name": "蓝思科技"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 35.0,
+                "reason": "题材映射排名 3",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 3,
+                  "cycle_state": "",
+                  "subject_key": "9030409",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 19.0,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "300622",
+                "stock_name": "博士眼镜"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 31.0,
+                "reason": "题材映射排名 6",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 6,
+                  "cycle_state": "",
+                  "subject_key": "9030409",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 19.0,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002600",
+                "stock_name": "领益智造"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 31.0,
+                "reason": "题材映射排名 5",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 5,
+                  "cycle_state": "",
+                  "subject_key": "9030409",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 19.0,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "300081",
+                "stock_name": "ST恒信"
+              }
+            ]
+          },
+          "stocks": [
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 49.0,
+              "reason": "题材映射排名 1；龙头/核心映射",
+              "evidence": {
+                "is_leader": true,
+                "rank_order": 1,
+                "cycle_state": "",
+                "subject_key": "9030409",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 10.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 19.0,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 20.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "688003",
+              "stock_name": "天准科技"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 35.0,
+              "reason": "题材映射排名 2",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 2,
+                "cycle_state": "",
+                "subject_key": "9030409",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 19.0,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "300433",
+              "stock_name": "蓝思科技"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 35.0,
+              "reason": "题材映射排名 3",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 3,
+                "cycle_state": "",
+                "subject_key": "9030409",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 19.0,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "300622",
+              "stock_name": "博士眼镜"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 31.0,
+              "reason": "题材映射排名 6",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 6,
+                "cycle_state": "",
+                "subject_key": "9030409",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 19.0,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002600",
+              "stock_name": "领益智造"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 31.0,
+              "reason": "题材映射排名 5",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 5,
+                "cycle_state": "",
+                "subject_key": "9030409",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 19.0,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "300081",
+              "stock_name": "ST恒信"
+            }
+          ],
+          "theme_name": "AR眼镜",
+          "event_count": 1,
+          "subject_key": "9030409",
+          "theme_confidence": 0.95,
+          "latest_event_title": "2024年12月27日，三星电子近日宣布，将在 2025 年 1 月举行的 Galaxy Unpacked 活动上发布其 Galaxy S25 智能手机系列，以"
+        },
+        {
+          "tiers": {
+            "A": [],
+            "B": [],
+            "C": [
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 42.6,
+                "reason": "题材映射排名 1；龙头/核心映射",
+                "evidence": {
+                  "is_leader": true,
+                  "rank_order": 1,
+                  "cycle_state": "",
+                  "subject_key": "9040603",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 10.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.6,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 20.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002348",
+                "stock_name": "高乐股份"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 28.6,
+                "reason": "题材映射排名 2",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 2,
+                  "cycle_state": "",
+                  "subject_key": "9040603",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.6,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "300785",
+                "stock_name": "值得买"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 28.6,
+                "reason": "题材映射排名 3",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 3,
+                  "cycle_state": "",
+                  "subject_key": "9040603",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.6,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "300909",
+                "stock_name": "汇创达"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 24.6,
+                "reason": "题材映射排名 7",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 7,
+                  "cycle_state": "",
+                  "subject_key": "9040603",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.6,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002292",
+                "stock_name": "奥飞娱乐"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 24.6,
+                "reason": "题材映射排名 6",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 6,
+                  "cycle_state": "",
+                  "subject_key": "9040603",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.6,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002315",
+                "stock_name": "焦点科技"
+              }
+            ]
+          },
+          "stocks": [
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 42.6,
+              "reason": "题材映射排名 1；龙头/核心映射",
+              "evidence": {
+                "is_leader": true,
+                "rank_order": 1,
+                "cycle_state": "",
+                "subject_key": "9040603",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 10.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.6,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 20.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002348",
+              "stock_name": "高乐股份"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 28.6,
+              "reason": "题材映射排名 2",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 2,
+                "cycle_state": "",
+                "subject_key": "9040603",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.6,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "300785",
+              "stock_name": "值得买"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 28.6,
+              "reason": "题材映射排名 3",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 3,
+                "cycle_state": "",
+                "subject_key": "9040603",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.6,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "300909",
+              "stock_name": "汇创达"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 24.6,
+              "reason": "题材映射排名 7",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 7,
+                "cycle_state": "",
+                "subject_key": "9040603",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.6,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002292",
+              "stock_name": "奥飞娱乐"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 24.6,
+              "reason": "题材映射排名 6",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 6,
+                "cycle_state": "",
+                "subject_key": "9040603",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.6,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002315",
+              "stock_name": "焦点科技"
+            }
+          ],
+          "theme_name": "人工智能+消费",
+          "event_count": 1,
+          "subject_key": "9040603",
+          "theme_confidence": 0.63,
+          "latest_event_title": "2024年12月27日，三星电子近日宣布，将在 2025 年 1 月举行的 Galaxy Unpacked 活动上发布其 Galaxy S25 智能手机系列，以"
+        },
+        {
+          "tiers": {
+            "A": [],
+            "B": [],
+            "C": [
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 42.7,
+                "reason": "题材映射排名 1；龙头/核心映射",
+                "evidence": {
+                  "is_leader": true,
+                  "rank_order": 1,
+                  "cycle_state": "",
+                  "subject_key": "9031543",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 10.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.7,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 20.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002547",
+                "stock_name": "ST春兴"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 28.7,
+                "reason": "题材映射排名 3",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 3,
+                  "cycle_state": "",
+                  "subject_key": "9031543",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.7,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "300211",
+                "stock_name": "ST亿通"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 28.7,
+                "reason": "题材映射排名 2",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 2,
+                  "cycle_state": "",
+                  "subject_key": "9031543",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.7,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "688793",
+                "stock_name": "倍轻松"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 24.7,
+                "reason": "题材映射排名 6",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 6,
+                  "cycle_state": "",
+                  "subject_key": "9031543",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.7,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002241",
+                "stock_name": "歌尔股份"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 24.7,
+                "reason": "题材映射排名 5",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 5,
+                  "cycle_state": "",
+                  "subject_key": "9031543",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.7,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002351",
+                "stock_name": "漫步者"
+              }
+            ]
+          },
+          "stocks": [
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 42.7,
+              "reason": "题材映射排名 1；龙头/核心映射",
+              "evidence": {
+                "is_leader": true,
+                "rank_order": 1,
+                "cycle_state": "",
+                "subject_key": "9031543",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 10.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.7,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 20.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002547",
+              "stock_name": "ST春兴"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 28.7,
+              "reason": "题材映射排名 3",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 3,
+                "cycle_state": "",
+                "subject_key": "9031543",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.7,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "300211",
+              "stock_name": "ST亿通"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 28.7,
+              "reason": "题材映射排名 2",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 2,
+                "cycle_state": "",
+                "subject_key": "9031543",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.7,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "688793",
+              "stock_name": "倍轻松"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 24.7,
+              "reason": "题材映射排名 6",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 6,
+                "cycle_state": "",
+                "subject_key": "9031543",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.7,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002241",
+              "stock_name": "歌尔股份"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 24.7,
+              "reason": "题材映射排名 5",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 5,
+                "cycle_state": "",
+                "subject_key": "9031543",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.7,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002351",
+              "stock_name": "漫步者"
+            }
+          ],
+          "theme_name": "智能穿戴",
+          "event_count": 1,
+          "subject_key": "9031543",
+          "theme_confidence": 0.6326,
+          "latest_event_title": "2024年12月27日，三星电子近日宣布，将在 2025 年 1 月举行的 Galaxy Unpacked 活动上发布其 Galaxy S25 智能手机系列，以"
+        }
+      ]
+    },
+    "trade_date": "2026-05-15",
+    "diagnostics": {
+      "source": "db",
+      "event_count": 5,
+      "theme_count": 5,
+      "last_rebuild_at": "2026-05-17T00:23:29.481806+00:00",
+      "opportunity_count": 5,
+      "review_event_count": 0,
+      "matched_event_count": 5,
+      "unknown_event_count": 0
+    }
+  },
+  "generated_at": "2026-05-17 00:23:29.481806+00:00",
+  "finalized_at": null,
+  "updated_at": "2026-05-17 00:23:29.482799+00:00"
+}

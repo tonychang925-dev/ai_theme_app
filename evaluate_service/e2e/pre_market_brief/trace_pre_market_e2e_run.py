@@ -95,7 +95,9 @@ async def trace_run(
                 "primary_theme_name": primary.get("theme_name"),
                 "related_subject_keys": [item.get("subject_key") for item in event_mappings[1:]],
                 "related_theme_names": [item.get("theme_name") for item in event_mappings[1:]],
+                "related_mappings": event_mappings[1:],
                 "review_status": reviews.get(int(event_id), {}).get("review_status") if event_id is not None else None,
+                "review_reason": reviews.get(int(event_id), {}).get("reason") if event_id is not None else None,
                 "pending_status": None,
                 "dead_letter_status": None,
             }
@@ -149,6 +151,7 @@ async def _fetch_mappings(conn: Any, event_ids: list[int]) -> dict[int, list[dic
               confidence,
               {reason_expr} AS match_reason,
               relation_type,
+              evidence_json,
               created_at
             FROM event_subject_map
             WHERE event_id = ANY($1::int[])
