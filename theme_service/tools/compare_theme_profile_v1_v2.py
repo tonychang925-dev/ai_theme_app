@@ -36,16 +36,16 @@ from theme_service.tools.profile_quality_common import (
 )
 
 ALIAS_MAP: dict[str, list[str]] = {
-    "AI/AR眼镜": ["AI/AR眼镜", "AI智能眼镜", "AI眼镜", "AR眼镜", "智能眼镜", "XR眼镜"],
-    "AI智能体Manus": ["AI智能体Manus", "Manus", "智能体", "AI智能体", "Agent"],
-    "SpaceX": ["SpaceX", "星链", "商业航天", "卫星互联网", "星舰"],
-    "卫星互联": ["卫星互联", "卫星互联网", "星链", "低轨卫星", "商业航天", "SpaceX"],
+    "AI/AR眼镜": ["AI/AR眼镜", "AI智能眼镜", "AI眼镜", "AR眼镜", "AR眼镜四大品牌", "智能眼镜", "XR眼镜", "华为"],
+    "AI智能体Manus": ["AI智能体Manus", "Manus", "智能体", "AI智能体", "Agent", "多模态大模型"],
+    "SpaceX": ["SpaceX", "星链", "商业航天", "卫星互联网", "星舰", "马斯克四大产业"],
+    "卫星互联": ["卫星互联", "卫星互联网", "星链", "低轨卫星", "商业航天", "SpaceX", "广州商业航天", "商业航天8大IPO", "航天发射场"],
     "可控核聚变": ["可控核聚变", "核聚变", "人造太阳"],
     "对日制裁": ["对日制裁", "中日关系", "出口管制", "反制日本"],
     "稀土永磁": ["稀土永磁", "稀土", "中重稀土", "稀土出口管制"],
     "光刻胶": ["光刻胶", "半导体材料", "半导体", "光刻"],
-    "液冷数据中心": ["液冷数据中心", "液冷", "数据中心", "算力液冷", "IDC"],
-    "海洋经济": ["海洋经济", "海工装备", "航运", "港口", "海洋牧场", "海上风电"],
+    "液冷数据中心": ["液冷数据中心", "液冷", "数据中心", "算力液冷", "IDC", "服务器"],
+    "海洋经济": ["海洋经济", "海工装备", "海洋工程", "深海经济", "航运", "港口", "海洋牧场", "海上风电"],
 }
 
 
@@ -273,6 +273,32 @@ def _wrong_related_count(result, gold_terms: list[str]) -> int:
     )
 
 
+def _profile_version_for_subject(subject_key: str, active_v2_keys: set[str]) -> str:
+    key = safe_str(subject_key)
+    if not key:
+        return ""
+    return "v2" if key in active_v2_keys else "v1_fallback"
+
+
+def _related_attribution(result, gold_terms: list[str], active_v2_keys: set[str]) -> list[dict[str, Any]]:
+    out: list[dict[str, Any]] = []
+    for item in result.related_matches or []:
+        key = safe_str(item.get("subject_key"))
+        name = safe_str(item.get("theme_name"))
+        if not name or _matches_gold_terms(name, gold_terms):
+            continue
+        evidence = item.get("evidence") if isinstance(item.get("evidence"), dict) else {}
+        out.append(
+            {
+                "subject_key": key,
+                "theme_name": name,
+                "source_profile_version": _profile_version_for_subject(key, active_v2_keys),
+                "evidence_summary": evidence.get("evidence_summary") or {},
+            }
+        )
+    return out
+
+
 async def _load_v2_diagnostics(conn: Any, status: str | None) -> dict[str, Any]:
     if not await table_exists(conn, "theme_profile_v2"):
         return {
@@ -400,6 +426,7 @@ async def main() -> None:
                 "v2_fallback_to_v1": bool(args.v2_fallback_to_v1),
             }
         )
+        active_v2_keys = set(v2_diagnostics.get("v2_active_subject_keys") or [])
         v1_engine = ThemeMatchEngine(_StaticRepo(v1_profiles))
         v2_engine = ThemeMatchEngine(_StaticRepo(v2_profiles))
         disable_llm_for_engine(v1_engine, gate_only=args.gate_only)
@@ -444,6 +471,7 @@ async def main() -> None:
                     "v2_theme_set_recall_at_5": v2_recall5,
                     "v2_primary_hit": v2_hit,
                     "v2_wrong_related_count": _wrong_related_count(v2, gold_terms),
+                    "v2_wrong_related_attribution": _related_attribution(v2, gold_terms, active_v2_keys),
                     "v2_generic_only_related_count": count_generic_only_related(v2),
                     "recall5_regressed": bool(v1_recall5 and not v2_recall5),
                     "comparison": status,

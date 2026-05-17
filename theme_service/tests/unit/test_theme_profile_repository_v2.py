@@ -63,6 +63,25 @@ class _FakeGateway:
         ]
 
 
+class _FakeGatewayNoV2:
+    async def load_theme_match_profiles(self):
+        return [
+            {
+                "subject_key": "1001",
+                "subject_name": "旧题材A",
+                "concept": "旧题材A",
+                "must_terms": ["旧A"],
+                "strong_terms": [],
+                "should_terms": [],
+                "not_terms": [],
+                "weak_terms": [],
+                "negative_terms": [],
+                "search_text": "旧A",
+                "quality": "v1",
+            }
+        ]
+
+
 async def test_theme_profile_repository_v2_overlay_keeps_v1_fallback(monkeypatch):
     monkeypatch.setenv("THEME_PROFILE_VERSION", "v2")
     monkeypatch.setenv("THEME_PROFILE_V2_SUBJECT_KEYS", "1001")
@@ -84,3 +103,11 @@ async def test_theme_profile_repository_v1_default(monkeypatch):
     profiles = await ThemeProfileRepository(_FakeGateway()).load_active_profiles()
 
     assert {profile.subject_name for profile in profiles} == {"旧题材A", "旧题材B"}
+
+
+async def test_theme_profile_repository_v2_require_loaded_raises_when_gateway_missing(monkeypatch):
+    monkeypatch.setenv("THEME_PROFILE_VERSION", "v2")
+    monkeypatch.setenv("THEME_PROFILE_V2_REQUIRE_LOADED", "true")
+
+    with pytest.raises(RuntimeError, match="load_theme_profile_v2_profiles"):
+        await ThemeProfileRepository(_FakeGatewayNoV2()).load_active_profiles()

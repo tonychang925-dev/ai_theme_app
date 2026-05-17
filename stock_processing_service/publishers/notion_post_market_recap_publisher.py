@@ -74,14 +74,18 @@ class NotionPostMarketRecapPublisher:
     # ── database page CRUD ─────────────────────────────────────
 
     def _query_existing_page(self, report_id: str) -> dict[str, Any] | None:
-        payload = {
+        body: dict[str, Any] = {
             "filter": {
                 "property": self._report_id_prop,
                 "rich_text": {"equals": report_id},
             },
             "page_size": 5,
         }
-        resp = self._client.databases.query(database_id=self._database_id, **payload)
+        resp = self._client.request(
+            f"/v1/databases/{self._database_id}/query",
+            "POST",
+            body=body,
+        )
         results = resp.get("results") or []
         return results[0] if results else None
 
