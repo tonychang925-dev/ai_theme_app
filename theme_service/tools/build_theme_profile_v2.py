@@ -356,7 +356,7 @@ def _sanitize_profile(profile: dict[str, Any]) -> dict[str, Any]:
     return profile
 
 
-def _attach_audit_metrics(profile: dict[str, Any], audit_row: dict[str, Any]) -> dict[str, Any]:
+def _attach_audit_metrics(profile: dict[str, Any], audit_row: dict[str, Any], generation_mode: str) -> dict[str, Any]:
     metrics = profile.get("eval_metrics") if isinstance(profile.get("eval_metrics"), dict) else {}
     for key in (
         "generic_anchor_ratio",
@@ -373,7 +373,11 @@ def _attach_audit_metrics(profile: dict[str, Any], audit_row: dict[str, Any]) ->
         if key in audit_row:
             metrics[key] = audit_row.get(key)
     metrics.setdefault("hard_negative_reject_rate", None)
+    metrics["generation_mode"] = generation_mode
     profile["eval_metrics"] = metrics
+    source_blocks = profile.get("source_blocks") if isinstance(profile.get("source_blocks"), dict) else {}
+    source_blocks["generation_mode"] = generation_mode
+    profile["source_blocks"] = source_blocks
     return profile
 
 
@@ -501,14 +505,17 @@ async def main() -> None:
             if args.use_llm:
                 try:
                     profile = _llm_profile(material, events, confusion_keys, model=args.model)
+                    generation_mode = "llm"
                 except Exception as exc:
                     profile = _fallback_profile(material, events, confusion_keys)
                     profile.setdefault("quality_flags", []).append(f"llm_fallback:{type(exc).__name__}")
+                    generation_mode = "fallback"
             else:
                 profile = _fallback_profile(material, events, confusion_keys)
+                generation_mode = "fallback"
             profile["subject_key"] = subject_key
             profile["subject_name"] = safe_str(profile.get("subject_name") or material.get("subject_name"))
-            profiles.append(_sanitize_profile(_attach_audit_metrics(profile, top_rows.get(subject_key, {}))))
+            profiles.append(_sanitize_profile(_attach_audit_metrics(profile, top_rows.get(subject_key, {}), generation_mode)))
         write_jsonl(out_dir / "theme_profile_v2_top50.jsonl", profiles)
         written = 0
         if args.write_db:

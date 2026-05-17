@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+from types import SimpleNamespace
+
+from theme_service.tools.profile_eval_common import count_generic_only_related, hard_negative_wrong_hits
 from theme_service.tools.profile_quality_common import is_generic_term, split_generic
 from theme_service.tools.validate_theme_profile_v2 import validate_profile
 
@@ -64,3 +67,59 @@ def test_validate_theme_profile_v2_rejects_generic_anchor_profile():
     assert not result["passed"]
     assert "must_terms_contain_generic" in result["failures"]
     assert "aliases_contain_generic" in result["failures"]
+
+
+def test_validate_theme_profile_v2_rejects_low_hard_negative_rate():
+    result = validate_profile(
+        {
+            "subject_key": "9046625",
+            "subject_name": "SHEIN/希音IPO",
+            "aliases": ["SHEIN/希音IPO"],
+            "entity_anchors": ["SHEIN", "希音"],
+            "domain_anchors": ["快时尚"],
+            "product_anchors": [],
+            "technology_anchors": [],
+            "must_terms": ["SHEIN"],
+            "strong_terms": ["希音", "快时尚"],
+            "negative_terms": ["蓝箭航天"],
+            "confusion_subject_keys": ["9062142"],
+            "evidence_refs": [{"source": "theme_gate_profile"}],
+            "quality_score": 90,
+            "eval_metrics": {"hard_negative_reject_rate": 0.5},
+        }
+    )
+
+    assert not result["passed"]
+    assert "hard_negative_reject_rate_lt_0_80" in result["failures"]
+
+
+def test_hard_negative_wrong_hits_match_related_subject_and_name():
+    result = SimpleNamespace(
+        matched_subject_key="9062142",
+        matched_theme_name="蓝箭航天IPO",
+        related_matches=[
+            {"subject_key": "9046625", "theme_name": "SHEIN/希音IPO"},
+            {"subject_key": "9019807", "theme_name": "卫星互联网"},
+        ],
+    )
+    hits = hard_negative_wrong_hits(
+        result,
+        {
+            "must_not_subject_keys": ["9046625"],
+            "must_not_theme_names": ["航空发动机集团", "SHEIN/希音IPO"],
+        },
+    )
+
+    assert hits["subject_keys"] == ["9046625"]
+    assert hits["theme_names"] == ["SHEIN/希音IPO"]
+
+
+def test_count_generic_only_related_detects_polluted_related_evidence():
+    result = SimpleNamespace(
+        related_matches=[
+            {"evidence": {"anchor_terms": ["供应链", "供应商"]}},
+            {"evidence": {"anchor_terms": ["蓝箭航天", "供应链"]}},
+        ]
+    )
+
+    assert count_generic_only_related(result) == 1
