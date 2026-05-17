@@ -110,6 +110,12 @@ class ThemeProfileRepository:
             return merged_v1
 
         v2_rows = await self._load_v2_rows()
+        require_v2_loaded = os.getenv("THEME_PROFILE_V2_REQUIRE_LOADED", "false").lower() in {"1", "true", "yes", "on"}
+        if require_v2_loaded and not v2_rows:
+            raise RuntimeError(
+                "THEME_PROFILE_VERSION=v2 but no theme_profile_v2 rows were loaded; "
+                "check load_theme_profile_v2_profiles support, status, and subject key filter"
+            )
         v2_profiles = self._rows_to_v2_profiles(v2_rows)
         fallback_to_v1 = os.getenv("THEME_PROFILE_V2_FALLBACK_TO_V1", "true").lower() in {"1", "true", "yes", "on"}
         if not fallback_to_v1:
@@ -139,6 +145,8 @@ class ThemeProfileRepository:
     async def _load_v2_rows(self) -> List[Dict[str, Any]]:
         fn = getattr(self.database_gateway, "load_theme_profile_v2_profiles", None)
         if not callable(fn):
+            if os.getenv("THEME_PROFILE_V2_REQUIRE_LOADED", "false").lower() in {"1", "true", "yes", "on"}:
+                raise RuntimeError("database_gateway does not implement load_theme_profile_v2_profiles")
             return []
         status = os.getenv("THEME_PROFILE_V2_STATUS", "draft")
         subject_keys_raw = os.getenv("THEME_PROFILE_V2_SUBJECT_KEYS", "")
