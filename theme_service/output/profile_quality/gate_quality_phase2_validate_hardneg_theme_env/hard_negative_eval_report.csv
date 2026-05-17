@@ -1,0 +1,33 @@
+case_id,tags,positive_subject_keys,must_not_subject_keys,must_not_theme_names,v2_decision,v2_subject_key,v2_theme_name,v2_related_count,v2_wrong_subject_keys,v2_wrong_theme_names,v2_wrong_related_count,v2_generic_only_related_count,v2_rejected
+hn_lanjian_shein_001,"[""blue_arrow"", ""commercial_space"", ""generic_supply_chain""]","[""9062142"", ""9061851""]","[""9046625"", ""9062904""]","[""SHEIN/希音IPO"", ""航空发动机集团""]",MATCH,9062142,蓝箭航天IPO,1,"[""9046625""]","[""SHEIN/希音IPO""]",1,0,False
+hn_lanjian_engine_002,"[""blue_arrow"", ""rocket"", ""generic_supplier""]","[""9062142"", ""9061851""]","[""9062904"", ""9046625""]","[""航空发动机集团"", ""SHEIN/希音IPO""]",MATCH,9062142,蓝箭航天IPO,0,[],[],0,0,True
+hn_spacex_shein_003,"[""spacex"", ""satellite"", ""generic_supply_chain""]","[""9064166"", ""9019807"", ""9061851""]","[""9046625"", ""9062904""]","[""SHEIN/希音IPO"", ""航空发动机集团""]",MATCH,9061242,太空光伏,1,"[""9046625""]","[""SHEIN/希音IPO""]",1,0,False
+hn_commercial_space_004,"[""commercial_space"", ""rocket"", ""generic_partner""]","[""9061851"", ""9062142""]","[""9046625"", ""9062904""]","[""SHEIN/希音IPO"", ""航空发动机集团""]",MATCH,9062142,蓝箭航天IPO,0,[],[],0,0,True
+hn_shein_supply_chain_005,"[""shein"", ""ipo"", ""cross_border""]","[""9046625""]","[""9062142"", ""9061851"", ""9062904""]","[""蓝箭航天IPO"", ""商业航天8大IPO"", ""航空发动机集团""]",MATCH,9046625,SHEIN/希音IPO,0,[],[],0,0,True
+hn_crossborder_generic_006,"[""cross_border"", ""logistics"", ""generic_packaging""]","[""9047274"", ""9020414""]","[""9046625"", ""9062142"", ""9062904""]","[""SHEIN/希音IPO"", ""蓝箭航天IPO"", ""航空发动机集团""]",MATCH,9047066,淘宝,0,[],[],0,0,True
+hn_logistics_shein_007,"[""logistics"", ""generic_customer""]","[""9013055""]","[""9046625"", ""9047274""]","[""SHEIN/希音IPO"", ""跨境贸易三大支柱""]",MATCH,9046625,SHEIN/希音IPO,0,"[""9046625""]","[""SHEIN/希音IPO""]",0,0,False
+hn_shein_not_space_008,"[""shein"", ""ipo"", ""negative_space""]","[""9046625""]","[""9062142"", ""9061851"", ""9019807""]","[""蓝箭航天IPO"", ""商业航天8大IPO"", ""卫星互联网""]",MATCH,9046625,SHEIN/希音IPO,0,[],[],0,0,True
+hn_ai_glasses_009,"[""ai_glasses"", ""ar""]","[""9037499"", ""9030409"", ""9038540""]","[""9019349"", ""9012538""]","[""消费电子"", ""VR""]",MATCH,9030409,AR眼镜,0,[],[],0,0,True
+hn_ar_glasses_generic_010,"[""ar_glasses"", ""consumer_electronics""]","[""9030409"", ""9038540"", ""9037499""]","[""9019349"", ""9013055""]","[""消费电子"", ""物流""]",MATCH,9030409,AR眼镜,0,[],[],0,0,True
+hn_consumer_electronics_011,"[""consumer_electronics"", ""generic_order""]","[""9019349""]","[""9037499"", ""9030409"", ""9038540""]","[""AI眼镜"", ""AR眼镜"", ""AR眼镜四大品牌""]",MATCH,9048533,中美互降关税,0,[],[],0,0,True
+hn_vr_not_ai_glasses_012,"[""vr"", ""ai_glasses_negative""]","[""9012538""]","[""9037499"", ""9030409""]","[""AI眼镜"", ""AR眼镜""]",MATCH,9030409,AR眼镜,0,"[""9030409""]","[""AR眼镜""]",0,0,False
+hn_fusion_013,"[""fusion"", ""nuclear"", ""superconductivity""]","[""9017950""]","[""9017093"", ""9017116""]","[""核电"", ""室温超导""]",UNKNOWN,,,0,[],[],0,0,True
+hn_nuclear_power_014,"[""nuclear_power"", ""fusion_negative""]","[""9017093""]","[""9017950"", ""9017116""]","[""可控核聚变"", ""室温超导""]",MATCH,9061242,太空光伏,0,[],[],0,0,True
+hn_superconductor_015,"[""superconductor"", ""fusion_negative""]","[""9017116""]","[""9017950"", ""9017093""]","[""可控核聚变"", ""核电""]",UNKNOWN,,,0,[],[],0,0,True
+hn_fusion_supply_016,"[""fusion"", ""generic_supply_chain""]","[""9017950""]","[""9017093"", ""9017116""]","[""核电"", ""室温超导""]",UNKNOWN,,,0,[],[],0,0,True
+hn_rare_earth_017,"[""rare_earth"", ""order""]","[""9010367""]","[""9010270"", ""9035716""]","[""有色金属"", ""出口管制""]",UNKNOWN,,,0,[],[],0,0,True
+hn_nonferrous_018,"[""nonferrous"", ""rare_earth_negative""]","[""9010270""]","[""9010367"", ""9035716""]","[""稀土永磁"", ""出口管制""]",UNKNOWN,,,0,[],[],0,0,True
+hn_export_control_019,"[""export_control"", ""rare_earth_negative""]","[""9035716""]","[""9010367"", ""9010270""]","[""稀土永磁"", ""有色金属""]",UNKNOWN,,,0,[],[],0,0,True
+hn_rare_export_020,"[""rare_earth"", ""export_control""]","[""9010367"", ""9035716""]","[""9010270""]","[""有色金属""]",UNKNOWN,,,0,[],[],0,0,True
+hn_semicap_021,"[""semiconductor_equipment""]","[""9013944"", ""9018472""]","[""9018411"", ""9013933"", ""9024980""]","[""光刻胶"", ""共封装光学CPO"", ""设备更新""]",MATCH,9013944,半导体,0,[],[],0,0,True
+hn_photoresist_022,"[""photoresist"", ""semicap_negative""]","[""9018411""]","[""9013944"", ""9018472"", ""9013933""]","[""半导体"", ""光刻机"", ""共封装光学CPO""]",UNKNOWN,,,0,[],[],0,0,True
+hn_advanced_packaging_023,"[""advanced_packaging""]","[""9013933""]","[""9018472"", ""9018411"", ""9024980""]","[""光刻机"", ""光刻胶"", ""设备更新""]",MATCH,9011277,芯片大全,0,[],[],0,0,True
+hn_equipment_update_024,"[""equipment_update"", ""generic_manufacturing""]","[""9024980""]","[""9013944"", ""9018472"", ""9018411""]","[""半导体"", ""光刻机"", ""光刻胶""]",MATCH,9024980,设备更新,0,[],[],0,0,True
+hn_low_altitude_025,"[""low_altitude"", ""evtol""]","[""9025720""]","[""9049987"", ""9012065""]","[""无人机"", ""军工""]",MATCH,9025720,低空经济,0,[],[],0,0,True
+hn_drone_026,"[""drone"", ""low_altitude_negative""]","[""9049987""]","[""9025720"", ""9012065""]","[""低空经济"", ""军工""]",MATCH,9048934,九天无人机航母,0,[],[],0,0,True
+hn_military_027,"[""military"", ""order""]","[""9012065"", ""9014764""]","[""9025720"", ""9049987""]","[""低空经济"", ""无人机""]",MATCH,9011768,中字头,0,[],[],0,0,True
+hn_general_aviation_028,"[""general_aviation"", ""low_altitude""]","[""9025720""]","[""9049987"", ""9012065""]","[""无人机"", ""军工""]",UNKNOWN,,,0,[],[],0,0,True
+hn_humanoid_robot_029,"[""humanoid_robot""]","[""9014636""]","[""9027744"", ""9035874""]","[""国内机器人"", ""机器人之眼（机器视觉）""]",MATCH,9036191,宇树机器人,0,[],[],0,0,True
+hn_industrial_automation_030,"[""industrial_automation"", ""robot_negative""]","[""9035874""]","[""9014636"", ""9039041"", ""9043287""]","[""人形机器人"", ""特斯拉机器人"", ""智元机器人""]",MATCH,9024980,设备更新,0,[],[],0,0,True
+hn_tesla_robot_031,"[""tesla_robot""]","[""9039041"", ""9014636""]","[""9027744"", ""9035874""]","[""国内机器人"", ""机器人之眼（机器视觉）""]",MATCH,9034539,特斯拉,0,[],[],0,0,True
+hn_ai_application_032,"[""ai_application"", ""robot_negative""]","[""9062682"", ""9022152""]","[""9014636"", ""9035874""]","[""人形机器人"", ""机器人之眼（机器视觉）""]",UNKNOWN,,,0,[],[],0,0,True

@@ -11,6 +11,15 @@ ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from theme_service.services.theme_match_engine import ThemeMatchEngine
+from theme_service.services.theme_match_types import ThemeProfile
+from theme_service.tools.profile_eval_common import (
+    disable_llm_for_engine,
+    hard_negative_row,
+    request_from_hard_negative,
+    result_subject_keys,
+    result_theme_names,
+)
 from theme_service.tools.profile_quality_common import (
     add_db_args,
     connect,
@@ -24,6 +33,51 @@ from theme_service.tools.profile_quality_common import (
     write_csv,
     write_jsonl,
 )
+
+
+class _StaticRepo:
+    def __init__(self, profiles: list[ThemeProfile]):
+        self._profiles = profiles
+
+    async def load_active_profiles(self) -> list[ThemeProfile]:
+        return self._profiles
+
+    async def semantic_recall_candidates(self, query_embedding, top_k: int = 20):
+        return []
+
+    async def sparse_recall_candidates(self, query_text: str, top_k: int = 20):
+        return []
+
+
+def _profile_to_theme_profile(data: dict[str, Any]) -> ThemeProfile:
+    anchors = unique(
+        normalize_list(data.get("entity_anchors"))
+        + normalize_list(data.get("domain_anchors"))
+        + normalize_list(data.get("product_anchors"))
+        + normalize_list(data.get("technology_anchors"))
+    )
+    return ThemeProfile(
+        subject_key=safe_str(data.get("subject_key")),
+        subject_name=safe_str(data.get("subject_name")),
+        theme_master_id=None,
+        concept=safe_str(data.get("subject_name")),
+        semantic_type="profile_v2",
+        strategy_type="event_driven",
+        ontology_json={},
+        gate_json={},
+        must_terms=normalize_list(data.get("must_terms")),
+        should_terms=normalize_list(data.get("should_terms")),
+        not_terms=[],
+        strong_terms=normalize_list(data.get("strong_terms")),
+        weak_terms=normalize_list(data.get("weak_terms")),
+        negative_terms=normalize_list(data.get("negative_terms")),
+        search_text=" ".join(anchors + normalize_list(data.get("should_terms"))),
+        quality="v2",
+        rerank_text=" ".join(anchors + normalize_list(data.get("must_terms")) + normalize_list(data.get("strong_terms"))),
+        aliases=normalize_list(data.get("aliases")),
+        entity_hints=normalize_list(data.get("entity_anchors")),
+        core_objects=anchors,
+    )
 
 
 def validate_profile(profile: dict[str, Any]) -> dict[str, Any]:
@@ -88,6 +142,69 @@ def validate_profile(profile: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+async def _evaluate_hard_negatives(
+    profiles: list[dict[str, Any]],
+    cases: list[dict[str, Any]],
+    *,
+    gate_only: bool = False,
+) -> tuple[dict[str, dict[str, Any]], list[dict[str, Any]]]:
+    theme_profiles = [_profile_to_theme_profile(profile) for profile in profiles]
+    engine = ThemeMatchEngine(_StaticRepo(theme_profiles))
+    disable_llm_for_engine(engine, gate_only=gate_only)
+    profile_index = {safe_str(profile.get("subject_key")): profile for profile in profiles}
+    metrics = {
+        key: {
+            "hard_negative_case_count": 0,
+            "hard_negative_reject_count": 0,
+            "failed_hard_negative_cases": [],
+        }
+        for key in profile_index
+    }
+    case_rows: list[dict[str, Any]] = []
+    for idx, case in enumerate(cases, start=1):
+        result = await engine.match_event(request_from_hard_negative(case, idx))
+        result_keys = set(result_subject_keys(result))
+        result_names = result_theme_names(result)
+        must_not_keys = set(normalize_list(case.get("must_not_subject_keys")))
+        must_not_names = normalize_list(case.get("must_not_theme_names"))
+        applicable_keys = {key for key in must_not_keys if key in profile_index}
+        for key, profile in profile_index.items():
+            name = safe_str(profile.get("subject_name"))
+            if any(blocked and (blocked == name or blocked in name or name in blocked) for blocked in must_not_names):
+                applicable_keys.add(key)
+        wrong_keys = result_keys & applicable_keys
+        wrong_names = [
+            name
+            for name in result_names
+            if any(blocked and (blocked == name or blocked in name or name in blocked) for blocked in must_not_names)
+        ]
+        for key in applicable_keys:
+            metrics[key]["hard_negative_case_count"] += 1
+            profile_name = safe_str(profile_index[key].get("subject_name"))
+            failed = key in result_keys or any(name and (name == profile_name or name in profile_name or profile_name in name) for name in result_names)
+            if failed:
+                metrics[key]["failed_hard_negative_cases"].append(safe_str(case.get("case_id")))
+            else:
+                metrics[key]["hard_negative_reject_count"] += 1
+        case_rows.append(
+            {
+                "case_id": safe_str(case.get("case_id")),
+                "tags": normalize_list(case.get("tags")),
+                "positive_subject_keys": normalize_list(case.get("positive_subject_keys")),
+                "must_not_subject_keys": normalize_list(case.get("must_not_subject_keys")),
+                "must_not_theme_names": normalize_list(case.get("must_not_theme_names")),
+                **hard_negative_row(case, result, "v2"),
+            }
+        )
+    for key, metric in metrics.items():
+        total = int(metric["hard_negative_case_count"])
+        if total > 0:
+            metric["hard_negative_reject_rate"] = round(int(metric["hard_negative_reject_count"]) / total, 4)
+        else:
+            metric["hard_negative_reject_rate"] = None
+    return metrics, case_rows
+
+
 async def _load_db_profiles(db_name: str, status: str | None) -> list[dict[str, Any]]:
     conn = await connect(db_name)
     try:
@@ -104,6 +221,8 @@ async def main() -> None:
     add_db_args(parser)
     parser.add_argument("--input", type=Path)
     parser.add_argument("--status")
+    parser.add_argument("--hard-negative-file", type=Path)
+    parser.add_argument("--gate-only", action="store_true", help="Skip dense/rerank embeddings for quick local gate checks.")
     parser.add_argument("--run-id", default=datetime.now().strftime("profile_v2_validate_%Y%m%d_%H%M%S"))
     parser.add_argument("--output-dir", type=Path)
     args = parser.parse_args()
@@ -113,16 +232,40 @@ async def main() -> None:
         profiles = read_jsonl(args.input)
     else:
         profiles = await _load_db_profiles(args.write_db_name, args.status)
+    hard_negative_case_rows: list[dict[str, Any]] = []
+    if args.hard_negative_file:
+        cases = read_jsonl(args.hard_negative_file)
+        hard_negative_metrics, hard_negative_case_rows = await _evaluate_hard_negatives(profiles, cases, gate_only=args.gate_only)
+        for profile in profiles:
+            key = safe_str(profile.get("subject_key"))
+            metrics = profile.get("eval_metrics") if isinstance(profile.get("eval_metrics"), dict) else {}
+            metrics.update(hard_negative_metrics.get(key, {}))
+            profile["eval_metrics"] = metrics
     rows = [validate_profile(profile) for profile in profiles]
+    hard_negative_by_key = {
+        safe_str(profile.get("subject_key")): profile.get("eval_metrics", {})
+        for profile in profiles
+        if isinstance(profile.get("eval_metrics"), dict)
+    }
+    for row in rows:
+        metrics = hard_negative_by_key.get(row["subject_key"], {})
+        row["hard_negative_case_count"] = metrics.get("hard_negative_case_count", 0)
+        row["hard_negative_reject_count"] = metrics.get("hard_negative_reject_count", 0)
+        row["failed_hard_negative_cases"] = metrics.get("failed_hard_negative_cases", [])
     pass_count = sum(1 for row in rows if row["passed"])
     summary = {
         "total": len(rows),
         "passed": pass_count,
         "pass_rate": round(pass_count / max(1, len(rows)), 4),
         "threshold_passed": pass_count / max(1, len(rows)) >= 0.80,
+        "hard_negative_case_count": len(hard_negative_case_rows),
+        "hard_negative_checked_profiles": sum(1 for row in rows if row.get("hard_negative_case_count", 0) > 0),
     }
     write_jsonl(out_dir / "theme_profile_v2_validation.jsonl", rows)
     write_csv(out_dir / "theme_profile_v2_validation.csv", rows)
+    if hard_negative_case_rows:
+        write_jsonl(out_dir / "hard_negative_eval_report.jsonl", hard_negative_case_rows)
+        write_csv(out_dir / "hard_negative_eval_report.csv", hard_negative_case_rows)
     (out_dir / "theme_profile_v2_validation_summary.json").write_text(
         json.dumps(summary, ensure_ascii=False, indent=2),
         encoding="utf-8",
