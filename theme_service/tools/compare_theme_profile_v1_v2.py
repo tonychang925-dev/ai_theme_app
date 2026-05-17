@@ -37,10 +37,15 @@ from theme_service.tools.profile_quality_common import (
 
 ALIAS_MAP: dict[str, list[str]] = {
     "AI/AR眼镜": ["AI/AR眼镜", "AI智能眼镜", "AI眼镜", "AR眼镜", "智能眼镜", "XR眼镜"],
+    "AI智能体Manus": ["AI智能体Manus", "Manus", "智能体", "AI智能体", "Agent"],
     "SpaceX": ["SpaceX", "星链", "商业航天", "卫星互联网", "星舰"],
+    "卫星互联": ["卫星互联", "卫星互联网", "星链", "低轨卫星", "商业航天", "SpaceX"],
     "可控核聚变": ["可控核聚变", "核聚变", "人造太阳"],
     "对日制裁": ["对日制裁", "中日关系", "出口管制", "反制日本"],
     "稀土永磁": ["稀土永磁", "稀土", "中重稀土", "稀土出口管制"],
+    "光刻胶": ["光刻胶", "半导体材料", "半导体", "光刻"],
+    "液冷数据中心": ["液冷数据中心", "液冷", "数据中心", "算力液冷", "IDC"],
+    "海洋经济": ["海洋经济", "海工装备", "航运", "港口", "海洋牧场", "海上风电"],
 }
 
 
@@ -244,6 +249,11 @@ def _gold_hit(result, gold_terms: list[str]) -> bool:
     return any(term and term in joined for term in expanded)
 
 
+def _matches_gold_terms(name: str, gold_terms: list[str]) -> bool:
+    expanded = unique(alias for term in gold_terms for alias in ALIAS_MAP.get(term, [term]))
+    return any(term and name and (term in name or name in term) for term in expanded)
+
+
 def _theme_set_recall(result, gold_terms: list[str], k: int) -> bool:
     if not gold_terms:
         return False
@@ -251,6 +261,42 @@ def _theme_set_recall(result, gold_terms: list[str], k: int) -> bool:
     joined = " ".join(name for name in names[:k] if name)
     expanded = unique(alias for term in gold_terms for alias in ALIAS_MAP.get(term, [term]))
     return any(term and term in joined for term in expanded)
+
+
+def _wrong_related_count(result, gold_terms: list[str]) -> int:
+    if not gold_terms:
+        return 0
+    return sum(
+        1
+        for item in result.related_matches or []
+        if safe_str(item.get("theme_name")) and not _matches_gold_terms(safe_str(item.get("theme_name")), gold_terms)
+    )
+
+
+async def _load_v2_diagnostics(conn: Any, status: str | None) -> dict[str, Any]:
+    if not await table_exists(conn, "theme_profile_v2"):
+        return {
+            "theme_profile_version": "v2",
+            "v2_loaded_count": 0,
+            "v2_review_subject_keys": [],
+            "v2_status": status,
+        }
+    active_rows = await conn.fetch(
+        "SELECT subject_key FROM theme_profile_v2 WHERE ($1::text IS NULL OR status = $1) ORDER BY subject_key",
+        status,
+    )
+    review_rows = await conn.fetch(
+        "SELECT subject_key FROM theme_profile_v2 WHERE status = 'review' ORDER BY subject_key"
+    )
+    status_rows = await conn.fetch("SELECT status, count(*) AS count FROM theme_profile_v2 GROUP BY status ORDER BY status")
+    return {
+        "theme_profile_version": "v2",
+        "v2_status": status,
+        "v2_loaded_count": len(active_rows),
+        "v2_active_subject_keys": [safe_str(row["subject_key"]) for row in active_rows],
+        "v2_review_subject_keys": [safe_str(row["subject_key"]) for row in review_rows],
+        "v2_status_counts": {safe_str(row["status"]): int(row["count"] or 0) for row in status_rows},
+    }
 
 
 async def _compare_hard_negatives(
@@ -336,13 +382,24 @@ async def main() -> None:
             raise SystemExit("必须传 --events-jsonl、--trade-date 或 --hard-negative-file")
         v1_profiles = await _load_v1_profiles(read_conn)
         v2_profiles = await _load_v2_profiles(write_conn, args.v2_status)
+        v2_diagnostics = await _load_v2_diagnostics(write_conn, args.v2_status)
         if not v2_profiles:
             raise SystemExit("theme_profile_v2 无可用数据，请先运行 build_theme_profile_v2.py --write-db")
+        raw_v2_count = len(v2_profiles)
         if args.v2_fallback_to_v1:
             merged = {profile.subject_key: profile for profile in v1_profiles}
             for profile in v2_profiles:
                 merged[profile.subject_key] = profile
             v2_profiles = list(merged.values())
+        v2_diagnostics.update(
+            {
+                "v1_profile_count": len(v1_profiles),
+                "v2_profile_count_after_fallback": len(v2_profiles),
+                "v2_raw_profile_count": raw_v2_count,
+                "v1_fallback_count": max(0, len(v2_profiles) - raw_v2_count) if args.v2_fallback_to_v1 else 0,
+                "v2_fallback_to_v1": bool(args.v2_fallback_to_v1),
+            }
+        )
         v1_engine = ThemeMatchEngine(_StaticRepo(v1_profiles))
         v2_engine = ThemeMatchEngine(_StaticRepo(v2_profiles))
         disable_llm_for_engine(v1_engine, gate_only=args.gate_only)
@@ -374,14 +431,21 @@ async def main() -> None:
                     "v1_subject_key": v1.matched_subject_key,
                     "v1_theme_name": v1.matched_theme_name,
                     "v1_related_count": len(v1.related_matches),
+                    "v1_related_theme_names": [safe_str(item.get("theme_name")) for item in v1.related_matches],
                     "v1_theme_set_recall_at_5": v1_recall5,
+                    "v1_primary_hit": v1_hit,
+                    "v1_wrong_related_count": _wrong_related_count(v1, gold_terms),
                     "v1_generic_only_related_count": count_generic_only_related(v1),
                     "v2_decision": v2.decision,
                     "v2_subject_key": v2.matched_subject_key,
                     "v2_theme_name": v2.matched_theme_name,
                     "v2_related_count": len(v2.related_matches),
+                    "v2_related_theme_names": [safe_str(item.get("theme_name")) for item in v2.related_matches],
                     "v2_theme_set_recall_at_5": v2_recall5,
+                    "v2_primary_hit": v2_hit,
+                    "v2_wrong_related_count": _wrong_related_count(v2, gold_terms),
                     "v2_generic_only_related_count": count_generic_only_related(v2),
+                    "recall5_regressed": bool(v1_recall5 and not v2_recall5),
                     "comparison": status,
                 }
             )
@@ -401,6 +465,9 @@ async def main() -> None:
             "needs_review": sum(1 for row in rows if row["comparison"] == "needs_review"),
             "v1_generic_only_related_count": sum(int(row.get("v1_generic_only_related_count") or 0) for row in rows),
             "v2_generic_only_related_count": sum(int(row.get("v2_generic_only_related_count") or 0) for row in rows),
+            "v1_wrong_related_count": sum(int(row.get("v1_wrong_related_count") or 0) for row in rows),
+            "v2_wrong_related_count": sum(int(row.get("v2_wrong_related_count") or 0) for row in rows),
+            "recall5_regressed_count": sum(1 for row in rows if row.get("recall5_regressed")),
             "v1_theme_set_recall@5": round(
                 sum(1 for row in rows if row.get("v1_theme_set_recall_at_5")) / max(1, len(rows)),
                 4,
@@ -409,10 +476,18 @@ async def main() -> None:
                 sum(1 for row in rows if row.get("v2_theme_set_recall_at_5")) / max(1, len(rows)),
                 4,
             ),
+            **v2_diagnostics,
             **hard_summary,
         }
         write_jsonl(out_dir / "theme_profile_v1_v2_compare.jsonl", rows)
         write_csv(out_dir / "theme_profile_v1_v2_compare.csv", rows)
+        regression_rows = [
+            row
+            for row in rows
+            if row.get("comparison") == "regressed" or row.get("recall5_regressed") or int(row.get("v2_wrong_related_count") or 0) > int(row.get("v1_wrong_related_count") or 0)
+        ]
+        write_jsonl(out_dir / "regression_cases.jsonl", regression_rows)
+        write_csv(out_dir / "regression_cases.csv", regression_rows)
         if hard_rows:
             write_jsonl(out_dir / "hard_negative_eval_report.jsonl", hard_rows)
             write_csv(out_dir / "v1_v2_compare_report.csv", hard_rows)
@@ -428,6 +503,10 @@ async def main() -> None:
                     f"- total_events: {summary.get('total', 0)}",
                     f"- v1_theme_set_recall@5: {summary.get('v1_theme_set_recall@5')}",
                     f"- v2_theme_set_recall@5: {summary.get('v2_theme_set_recall@5')}",
+                    f"- recall5_regressed_count: {summary.get('recall5_regressed_count', 0)}",
+                    f"- v2_loaded_count: {summary.get('v2_loaded_count', 0)}",
+                    f"- v2_review_subject_keys: {summary.get('v2_review_subject_keys', [])}",
+                    f"- v1_fallback_count: {summary.get('v1_fallback_count', 0)}",
                     f"- hard_negative_total: {summary.get('hard_negative_total', 0)}",
                     f"- v1_hard_negative_reject_rate: {summary.get('v1_hard_negative_reject_rate')}",
                     f"- v2_hard_negative_reject_rate: {summary.get('v2_hard_negative_reject_rate')}",

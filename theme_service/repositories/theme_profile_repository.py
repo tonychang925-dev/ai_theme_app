@@ -1,11 +1,14 @@
 from __future__ import annotations
 
 import json
+import logging
 import os
 import re
 from typing import Any, Dict, List
 
 from theme_service.services.theme_match_types import ThemeProfile
+
+logger = logging.getLogger(__name__)
 
 CANONICAL_SUBJECT_KEY_MAP: Dict[str, str] = {
     "9037499": "9030409",
@@ -102,17 +105,35 @@ class ThemeProfileRepository:
         rows = await self.database_gateway.load_theme_match_profiles()
         v1_profiles = self._rows_to_v1_profiles(rows)
         if os.getenv("THEME_PROFILE_VERSION", "v1").lower() != "v2":
-            return _merge_profiles(v1_profiles)
+            merged_v1 = _merge_profiles(v1_profiles)
+            logger.info("ThemeProfileRepository loaded v1 profiles count=%s", len(merged_v1))
+            return merged_v1
 
         v2_rows = await self._load_v2_rows()
         v2_profiles = self._rows_to_v2_profiles(v2_rows)
         fallback_to_v1 = os.getenv("THEME_PROFILE_V2_FALLBACK_TO_V1", "true").lower() in {"1", "true", "yes", "on"}
         if not fallback_to_v1:
-            return _merge_profiles(v2_profiles)
+            merged_v2 = _merge_profiles(v2_profiles)
+            logger.info(
+                "ThemeProfileRepository loaded v2 only profiles v2_count=%s status=%s",
+                len(merged_v2),
+                os.getenv("THEME_PROFILE_V2_STATUS", "draft"),
+            )
+            return merged_v2
 
         merged = {profile.subject_key: profile for profile in _merge_profiles(v1_profiles)}
-        for profile in _merge_profiles(v2_profiles):
+        merged_v2 = _merge_profiles(v2_profiles)
+        for profile in merged_v2:
             merged[profile.subject_key] = profile
+        logger.info(
+            "ThemeProfileRepository loaded v2 overlay profiles v1_count=%s v2_loaded_count=%s "
+            "v1_fallback_count=%s status=%s subject_key_filter_count=%s",
+            len(_merge_profiles(v1_profiles)),
+            len(merged_v2),
+            max(0, len(merged) - len(merged_v2)),
+            os.getenv("THEME_PROFILE_V2_STATUS", "draft"),
+            len([item for item in re.split(r"[,，\s]+", os.getenv("THEME_PROFILE_V2_SUBJECT_KEYS", "")) if item.strip()]),
+        )
         return list(merged.values())
 
     async def _load_v2_rows(self) -> List[Dict[str, Any]]:
