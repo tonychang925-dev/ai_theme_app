@@ -1,0 +1,21 @@
+event_id,title,gold_terms,v1_decision,v1_subject_key,v1_theme_name,v1_related_count,v1_theme_set_recall_at_5,v1_generic_only_related_count,v2_decision,v2_subject_key,v2_theme_name,v2_related_count,v2_theme_set_recall_at_5,v2_generic_only_related_count,comparison
+0,2025年6月20日，Meta与Oakley合作开发的智能眼镜产品于6月20日举行发布会,"[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,1,True,0,MATCH,9030409,AR眼镜,1,True,0,unchanged
+0,2025年6月17日，Meta联手Oakley推出智能眼镜 ，为运动设计挑战运动相机,"[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,1,True,0,MATCH,9030409,AR眼镜,1,True,0,unchanged
+0,2025年1月3日，1月3日电，美国专利及商标局官网显示，英伟达公开了一项AR眼镜专利（US20250004275A1），名为“无背光增强现实数字全息技术”,"[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,1,True,0,MATCH,9030409,AR眼镜,1,True,0,unchanged
+0,2024年12月27日，三星电子近日宣布，将在 2025 年 1 月举行的 Galaxy Unpacked 活动上发布其 Galaxy S25 智能手机系列，以,"[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,0,True,0,MATCH,9035171,AI大娱乐,0,False,0,regressed
+0,2024年12月24日，24日讯，Meta正与眼镜集团EssilorLuxottica合作，计划在其售价300美元的太阳镜中加入显示屏,"[""AI/AR眼镜""]",HUMAN_REVIEW,9030409,AR眼镜,0,True,0,HUMAN_REVIEW,9036559,ASIC芯片,0,False,0,regressed
+0,24日讯，鸿海宣布，将携手Porotech进军AR眼镜市场,"[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,1,True,0,MATCH,9030409,AR眼镜,1,True,0,unchanged
+0,2024年12月13日，在Android XR发布会上，谷歌与国内消费级AR眼镜厂商XREAL达成了战略合作,"[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,1,True,0,MATCH,9030409,AR眼镜,1,True,0,unchanged
+0,2024年12月10日，10日讯，三星内部正积极推进名为Infinite的扩展现实（XR）项目，计划在明年1月召开的Galaxy Unpacked发布会上公开展,"[""AI/AR眼镜""]",UNKNOWN,,,0,False,0,HUMAN_REVIEW,9060250,日本九大核心企业,0,False,0,needs_review
+0,2024年11月27日，消息面上，智能眼镜厂商INMO影目科技将于11月29日在成都举办INMO2024新品发布会,"[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,1,True,0,MATCH,9030409,AR眼镜,1,True,0,unchanged
+0,2024年11月20日，云天励飞战略投资闪极科技 后者将推国内首款量产AI拍摄眼镜,"[""AI/AR眼镜""]",UNKNOWN,,,0,False,0,HUMAN_REVIEW,9064241,金刚石散热,0,False,0,needs_review
+0,"2024年11月5日,苹果公司可能已经重启其轻量级增强现实（AR）眼镜计划","[""AI/AR眼镜""]",HUMAN_REVIEW,9030409,AR眼镜,0,True,0,MATCH,9031543,智能穿戴,1,True,0,needs_review
+0,2024年10月25日，国家知识产权局官网消息，中国专利公布公告披露了名为“一种智能眼镜”的发明专利，申请公布日为2024年10月25日，申请人为华为技术有限公,"[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,1,True,0,HUMAN_REVIEW,9040603,人工智能+消费,0,False,0,regressed
+0,"2024年9月26日,近日，西湖大学国强讲席教授、副校长以及慕德微纳(杭州)科技有限公司首席科学家仇旻在浙江省科协大楼的科学咖啡馆展示了一副超轻薄的碳化硅AR眼","[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,2,True,0,MATCH,9030409,AR眼镜,2,True,0,unchanged
+0,2024年9月25日，Meta Connect 2024年度开发者大会将于今夜举行，据Meta官网贴出议程显示，公司CEO马克·扎克伯格将于当地时间上午10点（,"[""AI/AR眼镜""]",MATCH,9038540,AR眼镜四大品牌,1,True,0,MATCH,9038540,AR眼镜四大品牌,0,True,0,unchanged
+0,2024年9月23日，消息面上，Meta Connect 2024将于美国当地时间9月25日开始，扎克伯格将分享混合现实、AI和可穿戴设备的最新发展，新的MR头,"[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,1,True,0,HUMAN_REVIEW,9038540,AR眼镜四大品牌,0,True,0,needs_review
+0,2024年9月20日，据报道，Meta Connect2024大会将于9月25日至26日举办，马克·扎克伯格将分享Meta对人工智能和元宇宙的愿景，主题演讲将集,"[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,1,True,0,MATCH,9038540,AR眼镜四大品牌,1,True,0,needs_review
+0,2024年9月18日，科技公司Snap在美国加利福尼亚州圣莫尼卡举办的2024Snap全球生态合作伙伴大会上，发布旗下第五代SpectaclesAR眼镜,"[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,1,True,0,MATCH,9030409,AR眼镜,1,True,0,unchanged
+0,2024年9月12日，9月10日，星纪魅族与博士眼镜在北京举行战略合作签约仪式，双方将在智能眼镜领域展开更加深入的合作，共同推动星纪魅族XR品牌与XR智能眼镜的,"[""AI/AR眼镜""]",HUMAN_REVIEW,9030409,AR眼镜,0,True,0,HUMAN_REVIEW,9037499,AI眼镜,0,True,0,needs_review
+0,2024年9月9日，三星、谷歌、高通强强联手，正研发一款混合现实智能眼镜,"[""AI/AR眼镜""]",HUMAN_REVIEW,9031543,智能穿戴,0,False,0,MATCH,9031543,智能穿戴,1,False,0,needs_review
+0,2024年9月6日，星纪魅族AR智能眼镜StarV View正式发布，目前新品已在魅族商城、京东、天猫等官方渠道开启预售，预售价2499元,"[""AI/AR眼镜""]",HUMAN_REVIEW,9030409,AR眼镜,0,True,0,MATCH,9030409,AR眼镜,0,True,0,needs_review

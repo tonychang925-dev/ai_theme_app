@@ -1,0 +1,11 @@
+{
+  "total": 20,
+  "improved": 0,
+  "regressed": 7,
+  "unchanged": 4,
+  "needs_review": 9,
+  "v1_generic_only_related_count": 0,
+  "v2_generic_only_related_count": 0,
+  "v1_theme_set_recall@5": 0.85,
+  "v2_theme_set_recall@5": 0.5
+}

@@ -1307,6 +1307,34 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.error(f"加载题材匹配画像失败: {e}")
             raise
 
+    async def load_theme_profile_v2_profiles(
+        self,
+        status: str = "draft",
+        subject_keys: Optional[List[str]] = None,
+    ) -> List[Dict[str, Any]]:
+        """加载灰度用 theme_profile_v2 画像，不覆盖旧 theme_gate_profile。"""
+        try:
+            async with self.pool.acquire() as conn:
+                exists = await conn.fetchval("SELECT to_regclass('public.theme_profile_v2')::text")
+                if not exists:
+                    return []
+                rows = await conn.fetch(
+                    """
+                    SELECT *
+                    FROM theme_profile_v2
+                    WHERE ($1::text IS NULL OR status = $1)
+                      AND ($2::text[] IS NULL OR subject_key = ANY($2::text[]))
+                    ORDER BY subject_key
+                    """,
+                    status or None,
+                    subject_keys or None,
+                )
+                return [dict(row) for row in rows]
+
+        except Exception as e:
+            logger.error(f"加载 theme_profile_v2 画像失败: {e}")
+            raise
+
     async def semantic_recall_theme_candidates(
         self,
         query_embedding: List[float],
