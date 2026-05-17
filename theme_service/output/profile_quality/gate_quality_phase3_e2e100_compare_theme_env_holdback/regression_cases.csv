@@ -1,0 +1,4 @@
+event_id,title,gold_terms,v1_decision,v1_subject_key,v1_theme_name,v1_related_count,v1_theme_set_recall_at_5,v1_primary_hit,v1_wrong_related_count,v1_generic_only_related_count,v2_decision,v2_subject_key,v2_theme_name,v2_related_count,v2_theme_set_recall_at_5,v2_primary_hit,v2_wrong_related_count,v2_generic_only_related_count,recall5_regressed,comparison
+0,2024 年 10 月消息，武汉太紫微光电科技有限公司推出的 t150a 光刻胶产品，已通过半导体工艺量产验证，实现配方全自主设计，该产品对标国际头部企业主流,"[""光刻胶""]",HUMAN_REVIEW,9013944,半导体,0,False,False,0,0,MATCH,9018411,光刻胶,1,True,True,1,0,False,improved
+0,据“中国光谷”消息，光谷企业近日在半导体专用光刻胶领域实现重大突破:武汉太紫微光电科技有限公司推出的T150 A光刻胶产品，已通过半导体工艺量产验证，实现配方全,"[""光刻胶""]",HUMAN_REVIEW,9013944,半导体,0,False,False,0,0,MATCH,9018411,光刻胶,1,True,True,1,0,False,improved
+0,《科创板日报》记者从知情人士方面了解到，智能体产品Manus背后公司蝴蝶效应正在计划新一轮融资，预计融资规模为1亿美元，估值15亿美元,"[""AI智能体Manus""]",MATCH,9043089,AI智能体Manus,1,True,True,0,0,MATCH,9043089,AI智能体Manus,2,True,True,1,0,False,unchanged
