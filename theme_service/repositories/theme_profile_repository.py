@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 from typing import Any, Dict, List
 
@@ -99,6 +100,35 @@ class ThemeProfileRepository:
 
     async def load_active_profiles(self) -> List[ThemeProfile]:
         rows = await self.database_gateway.load_theme_match_profiles()
+        v1_profiles = self._rows_to_v1_profiles(rows)
+        if os.getenv("THEME_PROFILE_VERSION", "v1").lower() != "v2":
+            return _merge_profiles(v1_profiles)
+
+        v2_rows = await self._load_v2_rows()
+        v2_profiles = self._rows_to_v2_profiles(v2_rows)
+        fallback_to_v1 = os.getenv("THEME_PROFILE_V2_FALLBACK_TO_V1", "true").lower() in {"1", "true", "yes", "on"}
+        if not fallback_to_v1:
+            return _merge_profiles(v2_profiles)
+
+        merged = {profile.subject_key: profile for profile in _merge_profiles(v1_profiles)}
+        for profile in _merge_profiles(v2_profiles):
+            merged[profile.subject_key] = profile
+        return list(merged.values())
+
+    async def _load_v2_rows(self) -> List[Dict[str, Any]]:
+        fn = getattr(self.database_gateway, "load_theme_profile_v2_profiles", None)
+        if not callable(fn):
+            return []
+        status = os.getenv("THEME_PROFILE_V2_STATUS", "draft")
+        subject_keys_raw = os.getenv("THEME_PROFILE_V2_SUBJECT_KEYS", "")
+        subject_keys = [
+            item.strip()
+            for item in re.split(r"[,，\s]+", subject_keys_raw)
+            if item.strip()
+        ]
+        return await fn(status=status, subject_keys=subject_keys or None)
+
+    def _rows_to_v1_profiles(self, rows: List[Dict[str, Any]]) -> List[ThemeProfile]:
         profiles: List[ThemeProfile] = []
         generic_alias_stopwords = {"AI", "AR", "VR", "XR", "IPO", "APP", "GPT", "AIGC"}
 
@@ -166,7 +196,60 @@ class ThemeProfileRepository:
                 )
             )
 
-        return _merge_profiles(profiles)
+        return profiles
+
+    def _rows_to_v2_profiles(self, rows: List[Dict[str, Any]]) -> List[ThemeProfile]:
+        profiles: List[ThemeProfile] = []
+        for row in rows:
+            subject_key = _safe_str(row.get("subject_key"))
+            canonical_key = CANONICAL_SUBJECT_KEY_MAP.get(subject_key, subject_key)
+            subject_name = _safe_str(row.get("subject_name"))
+            anchors = _unique_keep_order(
+                _normalize_list(row.get("entity_anchors"))
+                + _normalize_list(row.get("domain_anchors"))
+                + _normalize_list(row.get("product_anchors"))
+                + _normalize_list(row.get("technology_anchors"))
+            )
+            aliases = _unique_keep_order([subject_name] + _normalize_list(row.get("aliases")))
+            search_terms = _unique_keep_order(
+                anchors
+                + _normalize_list(row.get("must_terms"))
+                + _normalize_list(row.get("strong_terms"))
+                + _normalize_list(row.get("should_terms"))
+            )
+            gate_json = {
+                "profile_version": "v2",
+                "support_terms": _normalize_list(row.get("support_terms")),
+                "weak_terms": _normalize_list(row.get("weak_terms")),
+                "no_anchor_terms": _normalize_list(row.get("no_anchor_terms")),
+                "boundary_rules": _load_json(row.get("boundary_rules")),
+                "eval_metrics": _load_json(row.get("eval_metrics")),
+            }
+            profiles.append(
+                ThemeProfile(
+                    subject_key=canonical_key,
+                    subject_name=subject_name,
+                    theme_master_id=None,
+                    concept=subject_name,
+                    semantic_type="profile_v2",
+                    strategy_type="event_driven",
+                    ontology_json={},
+                    gate_json=gate_json,
+                    must_terms=_normalize_list(row.get("must_terms")),
+                    should_terms=_normalize_list(row.get("should_terms")),
+                    not_terms=[],
+                    strong_terms=_normalize_list(row.get("strong_terms")),
+                    weak_terms=_normalize_list(row.get("weak_terms")),
+                    negative_terms=_normalize_list(row.get("negative_terms")),
+                    search_text=" ".join(search_terms),
+                    quality="v2",
+                    rerank_text=" ".join(_unique_keep_order(anchors + _normalize_list(row.get("must_terms")) + _normalize_list(row.get("strong_terms")))),
+                    aliases=aliases,
+                    entity_hints=_normalize_list(row.get("entity_anchors")),
+                    core_objects=anchors,
+                )
+            )
+        return profiles
 
     async def semantic_recall_candidates(
         self,

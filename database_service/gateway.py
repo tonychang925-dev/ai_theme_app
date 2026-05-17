@@ -2036,6 +2036,26 @@ class DatabaseGateway:
             logger.error(f"加载题材匹配画像失败: {e}")
             raise
 
+    async def load_theme_profile_v2_profiles(
+        self,
+        status: str = "draft",
+        subject_keys: Optional[List[str]] = None,
+    ) -> List[Dict[str, Any]]:
+        """加载灰度用 theme_profile_v2 画像。"""
+        try:
+            start_time = time.time()
+            source = self._read_source()
+            fn = getattr(source, "load_theme_profile_v2_profiles", None)
+            if not callable(fn):
+                return []
+            result = await fn(status=status, subject_keys=subject_keys)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"加载 theme_profile_v2 画像失败: {e}")
+            raise
+
     async def semantic_recall_theme_candidates(
         self,
         query_embedding: List[float],
