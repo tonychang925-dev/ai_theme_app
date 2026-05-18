@@ -314,10 +314,24 @@ async def _trace_once(args: argparse.Namespace, out_dir: Path, input_path: Path)
 async def _wait_for_trace(args: argparse.Namespace, out_dir: Path, input_path: Path) -> dict[str, Any]:
     deadline = time.monotonic() + args.wait_timeout
     last_trace: dict[str, Any] = {}
+    last_signature: tuple[Any, ...] | None = None
+    stable_since: float | None = None
     while time.monotonic() < deadline:
         last_trace = await _trace_once(args, out_dir, input_path)
         if _trace_ready(args, last_trace):
-            return last_trace
+            quiet_window = max(0.0, float(args.quiet_window_seconds or 0))
+            if quiet_window <= 0:
+                return last_trace
+            signature = _trace_progress_signature(last_trace)
+            now = time.monotonic()
+            if signature != last_signature:
+                last_signature = signature
+                stable_since = now
+            elif stable_since is not None and now - stable_since >= quiet_window:
+                return last_trace
+        else:
+            last_signature = None
+            stable_since = None
         await asyncio.sleep(args.wait_interval)
     return last_trace
 
@@ -328,15 +342,22 @@ def _trace_ready(args: argparse.Namespace, trace: dict[str, Any]) -> bool:
         return True
     counts = trace.get("counts", {})
     news_events = int(counts.get("news_event_count") or 0)
-    mapped_events = int(counts.get("mapped_event_count") or 0)
-    mapped = int(counts.get("event_subject_map_count") or counts.get("event_theme_map_count") or 0)
-    reviewed = int(counts.get("review_queue_count") or 0)
-    pending = int(counts.get("pending_count") or 0)
-    terminal_events = mapped_events + reviewed + pending
-    terminal_rows = mapped + reviewed + pending
+    terminal_events = int(counts.get("terminal_distinct_event_count") or 0)
     ready_ratio = max(0.0, min(1.0, float(args.min_ready_ratio)))
     expected_ready = max(1, int(expected * ready_ratio))
-    return news_events >= expected_ready and terminal_events >= expected_ready and terminal_rows > 0
+    return news_events >= expected_ready and terminal_events >= expected_ready
+
+
+def _trace_progress_signature(trace: dict[str, Any]) -> tuple[Any, ...]:
+    counts = trace.get("counts", {})
+    return (
+        counts.get("news_event_count"),
+        counts.get("decision_entry_count"),
+        counts.get("decision_distinct_event_count"),
+        counts.get("pending_entry_count"),
+        counts.get("dead_letter_entry_count"),
+        counts.get("terminal_distinct_event_count"),
+    )
 
 
 def _post_json(url: str, payload: dict[str, Any], *, timeout: int = 30) -> dict[str, Any]:
@@ -394,6 +415,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--wait", action="store_true")
     parser.add_argument("--wait-timeout", type=int, default=180)
     parser.add_argument("--wait-interval", type=int, default=5)
+    parser.add_argument(
+        "--quiet-window-seconds",
+        type=int,
+        default=0,
+        help="达到 ready 后继续要求 trace 关键计数稳定 N 秒；默认 0 保持兼容。",
+    )
     parser.add_argument("--min-ready-ratio", type=float, default=0.95)
     parser.add_argument("--http-timeout", type=int, default=180)
     parser.add_argument(
