@@ -1,0 +1,50 @@
+{
+  "run_id": "w2s_phase0_20260518_110202_4a246e8d",
+  "strategy_version": "w2s_signal_validation_v0.1",
+  "date_range": {
+    "start": "2026-04-01",
+    "end": "2026-05-15"
+  },
+  "data_quality": {
+    "candidate_dates": [
+      "2026-04-07",
+      "2026-04-08",
+      "2026-04-09",
+      "2026-04-10",
+      "2026-04-14",
+      "2026-04-15",
+      "2026-04-16",
+      "2026-04-17",
+      "2026-04-20",
+      "2026-04-21",
+      "2026-04-22",
+      "2026-04-23",
+      "2026-04-24",
+      "2026-04-27",
+      "2026-04-28",
+      "2026-04-29",
+      "2026-04-30",
+      "2026-05-06",
+      "2026-05-08",
+      "2026-05-11",
+      "2026-05-12",
+      "2026-05-13",
+      "2026-05-14",
+      "2026-05-15"
+    ],
+    "candidate_dates_total": 24,
+    "candidate_dates_missing": 0,
+    "total_candidates": 200,
+    "daily_bar_coverage_ratio": 1.0,
+    "auction_coverage_ratio": 0.8333333333333334,
+    "proxy_sample_ratio": 0.16666666666666663,
+    "warnings": [],
+    "blocked": false,
+    "block_reason": ""
+  },
+  "validation_summary": {
+    "run_id": "w2s_phase0_20260518_110202_4a246e8d",
+    "warning": "No validation data found",
+    "summaries": []
+  }
+}
