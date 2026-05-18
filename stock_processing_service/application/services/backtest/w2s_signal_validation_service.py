@@ -282,9 +282,9 @@ class W2SSignalValidationService:
         if callable(fn):
             return await fn(run_id)
         try:
-            rows = await self._gw.query(
+            rows = await self._gw._client.execute_query(
                 "SELECT * FROM strategy_signal_daily WHERE run_id = $1",
-                [run_id],
+                (run_id,),
             )
             return [_row_to_dict(r) for r in rows]
         except Exception as exc:

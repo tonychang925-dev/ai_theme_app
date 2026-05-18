@@ -58,6 +58,57 @@ GENERIC_MATCH_STOPWORDS = {
     "国企",
 }
 
+SOURCE_ORG_TERMS = {
+    "证券",
+    "东方证券",
+    "中信证券",
+    "华泰证券",
+    "招商证券",
+    "广发证券",
+    "海通证券",
+    "国泰君安",
+    "中金公司",
+    "中信建投",
+    "申万宏源",
+    "方正证券",
+    "国信证券",
+    "光大证券",
+    "财通证券",
+}
+
+LOCATION_TERMS = {
+    "北京",
+    "上海",
+    "深圳",
+    "广州",
+    "杭州",
+    "南京",
+    "成都",
+    "武汉",
+    "苏州",
+    "无锡",
+    "合肥",
+    "重庆",
+    "天津",
+    "西安",
+    "海南",
+}
+
+SHORT_GENERIC_THEME_TERMS = {
+    "中国",
+    "美国",
+    "深圳",
+    "证券",
+    "高温",
+    "金融",
+    "设备",
+    "产品",
+    "应用",
+}
+
+ROLE_BLOCKING_HIT_ROLES = {"source_org", "location", "generic_short_term", "support"}
+STRONG_SHORT_THEME_EXCEPTIONS = {"星链", "朱雀", "火箭"}
+
 
 def _safe_str(value: Any) -> str:
     return "" if value is None else str(value).strip()
@@ -153,6 +204,44 @@ def _filter_generic_terms(terms: List[str]) -> List[str]:
             continue
         out.append(value)
     return _unique(out)
+
+
+def _profile_gate_terms(profile: ThemeProfile, key: str) -> List[str]:
+    gate_json = profile.gate_json if isinstance(profile.gate_json, dict) else {}
+    return _normalize_list(gate_json.get(key))
+
+
+def _is_source_org_term(term: str, event_text: str) -> bool:
+    value = _safe_str(term)
+    if not value:
+        return False
+    if value in SOURCE_ORG_TERMS and value != "证券":
+        return True
+    if value == "证券":
+        return bool(
+            re.search(
+                r"(东方|中信|华泰|招商|广发|海通|国泰君安|中金|中信建投|申万宏源|方正|国信|光大|财通)证券",
+                event_text,
+            )
+            or re.search(r"证券(预测|认为|指出|研报|测算|表示|预计)", event_text)
+        )
+    return False
+
+
+def _is_location_term(term: str, event_text: str) -> bool:
+    value = _safe_str(term)
+    if value not in LOCATION_TERMS:
+        return False
+    if re.search(rf"(在|于|赴|落地|位于|举办|召开|举行|会场|总部|基地|园区)?{re.escape(value)}(市|省|举办|召开|举行|论坛|峰会|会议|会展|站|本地)?", event_text):
+        return True
+    return True
+
+
+def _is_short_generic_theme_term(term: str) -> bool:
+    value = _safe_str(term)
+    if not value or value in STRONG_SHORT_THEME_EXCEPTIONS:
+        return False
+    return value in SHORT_GENERIC_THEME_TERMS
 
 
 def _extract_event_tech_terms(request: ThemeMatchRequest) -> List[str]:
@@ -498,6 +587,8 @@ def _build_llm_prompt(
             f"strong_hits：{'、'.join(ev.get('strong_hits', [])) if ev.get('strong_hits') else '无'}\n"
             f"should_hits：{'、'.join(ev.get('should_hits', [])) if ev.get('should_hits') else '无'}\n"
             f"entity_hits：{'、'.join(ev.get('entity_hits', [])) if ev.get('entity_hits') else '无'}\n"
+            f"hit_term_roles：{json.dumps(ev.get('hit_term_roles', {}), ensure_ascii=False)}\n"
+            f"role_guard_blocked：{'是' if ev.get('role_guard_blocked') else '否'}\n"
             f"conflict_terms：{'、'.join(ev.get('not_hits', []) + ev.get('negative_hits', [])) if (ev.get('not_hits') or ev.get('negative_hits')) else '无'}\n"
             f"positive_score：{ev.get('positive_score', 0)}\n"
             f"conflict_score：{ev.get('conflict_score', 0)}"
@@ -518,7 +609,8 @@ def _build_llm_prompt(
 9. 如果所有候选都不够准确，才能输出 need_new_theme。
 10. 供应链、供应商、产业链、制造、生产、合作、参股、包装、物流、上游、下游等泛化经营词不可作为题材主证据。
 11. 只有命中题材名、专有实体、核心产品、核心技术或产业域锚点，才能 accept_match。
-12. 只输出 JSON，不要输出额外解释。
+12. 如果候选的 role_guard_blocked=是，说明命中只来自信息源机构、地点、短泛词或支撑词，不得 accept_match。
+13. 只输出 JSON，不要输出额外解释。
 
 输出格式：
 {{
@@ -712,8 +804,14 @@ def _collect_profile_hit_features(
         if norm in entity_names:
             entity_align_hits.append(term)
 
+    exact_name_hits = [
+        term
+        for term in _filter_generic_terms(exact_name_hits)
+        if _classify_hit_term_role(term, request.event_text(), profile, "theme_name_hit_terms", set())
+        not in ROLE_BLOCKING_HIT_ROLES
+    ]
     return {
-        "exact_name_hits": _filter_generic_terms(exact_name_hits),
+        "exact_name_hits": exact_name_hits,
         "entity_align_hits": _filter_generic_terms(entity_align_hits),
         "profile_anchor_hits": _profile_text_anchor_hits(profile, event_profile),
     }
@@ -737,7 +835,12 @@ def _build_gate_evidence(
 ) -> Dict[str, Any]:
     search_terms = set(event_profile.search_terms if event_profile else [])
     support_terms = set(event_profile.support_terms if event_profile else [])
+    support_terms.update(_profile_gate_terms(profile, "support_terms"))
+    support_terms.update(_profile_gate_terms(profile, "weak_terms"))
     no_anchor_terms = set(event_profile.no_anchor_terms if event_profile else [])
+    no_anchor_terms.update(_profile_gate_terms(profile, "no_anchor_terms"))
+    no_anchor_terms.update(_profile_gate_terms(profile, "support_terms"))
+    no_anchor_terms.update(_profile_gate_terms(profile, "weak_terms"))
 
     def _split_hits(terms: List[str]) -> tuple[List[str], List[str]]:
         llm_hits = _filter_generic_terms([t for t in terms if t in search_terms])
@@ -802,17 +905,36 @@ def _build_gate_evidence(
     should_hits = [t for t in should_hits if not _is_no_anchor_term(t, no_anchor_terms)]
     entity_hits = [t for t in entity_hits if not _is_no_anchor_term(t, no_anchor_terms)]
     support_hits = _unique(raw_support_hits + [t for t in must_hits + strong_hits + object_hits + should_hits if _is_no_anchor_term(t, no_anchor_terms)])
-    theme_name_hit_score = 50 if theme_name_direct_hit else 0
+    evidence_for_roles = {
+        "theme_name_hit_terms": theme_name_hit_terms,
+        "subject_name_hit_terms": subject_name_hit_terms,
+        "object_hits": object_hits,
+        "must_hits": must_hits,
+        "strong_hits": strong_hits,
+        "should_hits": should_hits,
+        "entity_hits": entity_hits,
+        "profile_anchor_hits": profile_anchor_hits,
+        "support_hits": support_hits,
+    }
+    role_meta = _annotate_evidence_hit_roles(
+        evidence_for_roles,
+        event_profile.raw_text if event_profile else event_text,
+        profile,
+        no_anchor_terms,
+    )
+    role_guard_blocked = bool(role_meta.get("role_guard_blocked"))
+    valid_anchor_set = set(role_meta.get("valid_anchor_terms") or [])
+    theme_name_hit_score = 50 if theme_name_direct_hit and not role_guard_blocked else 0
     positive_score = (
-        len(object_hits_llm) * 5
-        + len(object_hits_text) * 2
-        + len(must_hits_llm) * 5
-        + len(must_hits_text) * 2
-        + len(strong_hits_llm) * 3
-        + len(strong_hits_text)
-        + len(should_hits)
-        + len(entity_hits)
-        + len(profile_anchor_hits) * 6
+        len([t for t in object_hits_llm if t in valid_anchor_set]) * 5
+        + len([t for t in object_hits_text if t in valid_anchor_set]) * 2
+        + len([t for t in must_hits_llm if t in valid_anchor_set]) * 5
+        + len([t for t in must_hits_text if t in valid_anchor_set]) * 2
+        + len([t for t in strong_hits_llm if t in valid_anchor_set]) * 3
+        + len([t for t in strong_hits_text if t in valid_anchor_set])
+        + len([t for t in should_hits if t in valid_anchor_set])
+        + len([t for t in entity_hits if t in valid_anchor_set])
+        + len([t for t in profile_anchor_hits if t in valid_anchor_set]) * 6
         + theme_name_hit_score
     )
     conflict_score = len(_unique(not_hits + negative_hits))
@@ -840,12 +962,15 @@ def _build_gate_evidence(
         "negative_hits": negative_hits,
         "positive_score": positive_score,
         "conflict_score": conflict_score,
+        **role_meta,
         "evidence_summary": {
             "theme_name_hits": theme_name_hit_terms[:5],
             "subject_name_hits": subject_name_hit_terms[:5],
-            "anchor_terms": _unique(object_hits + must_hits + strong_hits + profile_anchor_hits)[:8],
+            "anchor_terms": _valid_anchor_terms({**evidence_for_roles, **role_meta})[:8],
             "support_terms": _unique(should_hits + entity_hits)[:8],
             "conflict_terms": _unique(not_hits + negative_hits)[:8],
+            "role_guard_blocked": role_guard_blocked,
+            "role_guard_reasons": role_meta.get("role_guard_reasons") or [],
         },
     }
 
@@ -879,15 +1004,16 @@ def _calc_feature_recall_score(hit_features: Dict[str, Any], gate_evidence: Dict
         score += 1.20
     if hit_features.get("entity_align_hits"):
         score += 1.00
-    if gate_evidence.get("theme_name_direct_hit"):
+    if gate_evidence.get("theme_name_direct_hit") and not gate_evidence.get("role_guard_blocked"):
         score += 2.50
 
-    score += len(gate_evidence.get("object_hits") or []) * 0.35
-    score += len(gate_evidence.get("must_hits") or []) * 0.35
-    score += len(gate_evidence.get("strong_hits") or []) * 0.25
-    score += len(gate_evidence.get("profile_anchor_hits") or []) * 0.50
-    score += len(gate_evidence.get("should_hits") or []) * 0.12
-    score += len(gate_evidence.get("entity_hits") or []) * 0.12
+    valid_anchor_set = set(_valid_anchor_terms(gate_evidence))
+    score += len([t for t in (gate_evidence.get("object_hits") or []) if t in valid_anchor_set]) * 0.35
+    score += len([t for t in (gate_evidence.get("must_hits") or []) if t in valid_anchor_set]) * 0.35
+    score += len([t for t in (gate_evidence.get("strong_hits") or []) if t in valid_anchor_set]) * 0.25
+    score += len([t for t in (gate_evidence.get("profile_anchor_hits") or []) if t in valid_anchor_set]) * 0.50
+    score += len([t for t in (gate_evidence.get("should_hits") or []) if t in valid_anchor_set]) * 0.12
+    score += len([t for t in (gate_evidence.get("entity_hits") or []) if t in valid_anchor_set]) * 0.12
     score -= len(gate_evidence.get("not_hits") or []) * 0.20
     score -= len(gate_evidence.get("negative_hits") or []) * 0.20
     return round(score, 6)
@@ -906,7 +1032,9 @@ def _anchor_terms(
 
 
 def _has_primary_anchor_evidence(evidence: Dict[str, Any]) -> bool:
-    return bool(evidence.get("theme_name_direct_hit") or _anchor_terms(evidence))
+    if evidence.get("role_guard_blocked"):
+        return bool(_valid_anchor_terms(evidence))
+    return bool((evidence.get("theme_name_direct_hit") and _valid_anchor_terms(evidence)) or _anchor_terms(evidence))
 
 
 def _has_only_generic_evidence(evidence: Dict[str, Any]) -> bool:
@@ -921,6 +1049,113 @@ def _is_no_anchor_term(term: str, no_anchor_terms: List[str] | set[str]) -> bool
         return False
     terms = [_safe_str(item) for item in no_anchor_terms if _safe_str(item)]
     return value in terms or any(item and item in value for item in terms)
+
+
+def _classify_hit_term_role(
+    term: str,
+    event_text: str,
+    profile: ThemeProfile | None = None,
+    evidence_field: str = "",
+    no_anchor_terms: List[str] | set[str] | None = None,
+) -> str:
+    value = _safe_str(term)
+    if not value:
+        return "support"
+    if _is_no_anchor_term(value, no_anchor_terms or set()):
+        return "support"
+    if _is_source_org_term(value, event_text):
+        return "source_org"
+    if _is_location_term(value, event_text):
+        return "location"
+    if _is_short_generic_theme_term(value):
+        return "generic_short_term"
+    if evidence_field in {"theme_name_hit_terms", "subject_name_hit_terms", "object_hits", "must_hits", "strong_hits", "profile_anchor_hits"}:
+        return "main_anchor"
+    if evidence_field == "entity_hits":
+        return "domain_anchor"
+    return "support"
+
+
+def _annotate_evidence_hit_roles(
+    evidence: Dict[str, Any],
+    event_text: str,
+    profile: ThemeProfile | None,
+    no_anchor_terms: List[str] | set[str],
+) -> Dict[str, Any]:
+    hit_terms: List[str] = []
+    term_roles: Dict[str, str] = {}
+    role_sources: Dict[str, List[str]] = {}
+    for field_name in (
+        "theme_name_hit_terms",
+        "subject_name_hit_terms",
+        "object_hits",
+        "must_hits",
+        "strong_hits",
+        "should_hits",
+        "entity_hits",
+        "profile_anchor_hits",
+        "support_hits",
+    ):
+        values = evidence.get(field_name) or []
+        if not isinstance(values, list):
+            continue
+        for term in values:
+            value = _safe_str(term)
+            if not value:
+                continue
+            role = _classify_hit_term_role(value, event_text, profile, field_name, no_anchor_terms)
+            hit_terms.append(value)
+            previous = term_roles.get(value)
+            if previous in ROLE_BLOCKING_HIT_ROLES and role not in ROLE_BLOCKING_HIT_ROLES:
+                term_roles[value] = role
+            else:
+                term_roles.setdefault(value, role)
+            role_sources.setdefault(value, []).append(field_name)
+
+    hit_terms = _unique(hit_terms)
+    valid_anchor_terms = [
+        term
+        for term in hit_terms
+        if term_roles.get(term) not in ROLE_BLOCKING_HIT_ROLES
+        and term in set(
+            _normalize_list(evidence.get("theme_name_hit_terms"))
+            + _normalize_list(evidence.get("subject_name_hit_terms"))
+            + _normalize_list(evidence.get("object_hits"))
+            + _normalize_list(evidence.get("must_hits"))
+            + _normalize_list(evidence.get("strong_hits"))
+            + _normalize_list(evidence.get("entity_hits"))
+            + _normalize_list(evidence.get("profile_anchor_hits"))
+        )
+    ]
+    blocking_terms = [term for term in hit_terms if term_roles.get(term) in ROLE_BLOCKING_HIT_ROLES]
+    has_any_hit = bool(hit_terms)
+    role_guard_blocked = has_any_hit and not valid_anchor_terms
+    return {
+        "hit_terms": hit_terms,
+        "hit_term_roles": term_roles,
+        "hit_term_role_sources": role_sources,
+        "valid_anchor_terms": _unique(valid_anchor_terms),
+        "role_guard_blocked": role_guard_blocked,
+        "role_guard_reasons": _unique([term_roles.get(term, "support") for term in blocking_terms]) if role_guard_blocked else [],
+        "blocking_hit_terms": blocking_terms if role_guard_blocked else [],
+    }
+
+
+def _valid_anchor_terms(evidence: Dict[str, Any]) -> List[str]:
+    terms = _normalize_list(evidence.get("valid_anchor_terms"))
+    if terms:
+        return terms
+    roles = evidence.get("hit_term_roles") if isinstance(evidence.get("hit_term_roles"), dict) else {}
+    raw = _unique(
+        _normalize_list(evidence.get("theme_name_hit_terms"))
+        + _normalize_list(evidence.get("subject_name_hit_terms"))
+        + _normalize_list(evidence.get("object_hits"))
+        + _normalize_list(evidence.get("must_hits"))
+        + _normalize_list(evidence.get("strong_hits"))
+        + _normalize_list(evidence.get("entity_hits"))
+        + _normalize_list(evidence.get("profile_anchor_hits"))
+    )
+    return [term for term in raw if roles.get(term) not in ROLE_BLOCKING_HIT_ROLES]
 
 
 def _ontology_terms(profile: ThemeProfile) -> set[str]:
@@ -1026,6 +1261,8 @@ def _collect_direct_hit_subject_keys(request: ThemeMatchRequest, profile_map: Di
             if not s:
                 continue
             if s.upper() in GENERIC_MATCH_STOPWORDS or s in GENERIC_MATCH_STOPWORDS:
+                continue
+            if _classify_hit_term_role(s, request.event_text(), profile, "theme_name_hit_terms", set()) in ROLE_BLOCKING_HIT_ROLES:
                 continue
             if _normalize_text(s) in event_text_norm:
                 out.append(sk)
@@ -1316,7 +1553,9 @@ class ThemeMatchEngine:
             profile = profile_map.get(cand.subject_key)
             if not profile:
                 continue
-            anchor_terms = _anchor_terms(evidence)
+            if evidence.get("role_guard_blocked"):
+                continue
+            valid_anchor_terms = _valid_anchor_terms(evidence)
             entity_hits = _filter_generic_terms(evidence.get("entity_hits") or [])
             profile_anchor_hits = _filter_generic_terms(evidence.get("profile_anchor_hits") or [])
             same_domain = _same_industry_domain(primary_profile, profile)
@@ -1329,12 +1568,12 @@ class ThemeMatchEngine:
                     and len(candidate_name) >= 3
                     and (primary_name in candidate_name or candidate_name in primary_name)
                 )
-            strong_name_hit = bool(evidence.get("subject_name_direct_hit") or subject_family_hit)
+            strong_name_hit = bool((evidence.get("subject_name_direct_hit") and valid_anchor_terms) or subject_family_hit)
             has_evidence = bool(
                 strong_name_hit
-                or len(profile_anchor_hits) >= 2
-                or (same_domain and len(anchor_terms) >= 2)
-                or (same_domain and len(entity_hits) >= 1 and len(anchor_terms) >= 2)
+                or len([t for t in profile_anchor_hits if t in set(valid_anchor_terms)]) >= 2
+                or (same_domain and len(valid_anchor_terms) >= 2)
+                or (same_domain and len(entity_hits) >= 1 and len(valid_anchor_terms) >= 2)
             )
             if int(evidence.get("conflict_score") or 0) > 0 and not strong_name_hit:
                 continue
@@ -1393,6 +1632,17 @@ class ThemeMatchEngine:
                 reason_code="no_candidate_hit",
                 review_required=False,
                 audit={"top_candidates": top_candidates},
+            )
+
+        if best_ev.get("role_guard_blocked"):
+            return ThemeDecisionEnvelope(
+                decision="HUMAN_REVIEW",
+                event_id=request.event_id,
+                news_id=request.news_id,
+                confidence=_squash01(0.5),
+                reason_code="role_guard_blocked",
+                review_required=True,
+                audit={"top_candidates": top_candidates, "best_evidence": best_ev},
             )
 
         if best.subject_key in direct_hit_set:
@@ -1525,6 +1775,16 @@ class ThemeMatchEngine:
                 )
             matched_candidate = next((c for c in candidates if c.subject_key == matched_theme.subject_key), None)
             matched_evidence = (matched_candidate.evidence if matched_candidate else {}) or {}
+            if matched_evidence.get("role_guard_blocked"):
+                return ThemeDecisionEnvelope(
+                    decision="HUMAN_REVIEW",
+                    event_id=request.event_id,
+                    news_id=request.news_id,
+                    confidence=min(conf, _squash01(0.5)),
+                    reason_code="llm_accept_role_guard_blocked",
+                    review_required=True,
+                    audit={**audit, "best_evidence": matched_evidence},
+                )
             if _has_only_generic_evidence(matched_evidence):
                 return ThemeDecisionEnvelope(
                     decision="HUMAN_REVIEW",

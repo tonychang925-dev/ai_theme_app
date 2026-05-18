@@ -69,8 +69,10 @@ class W2SSignalBuilderService:
         strategy_id: str,
     ) -> dict[str, Any] | None:
         """Build a single strategy_signal_daily row from a snapshot."""
-        confirm_level = str(snap.get("confirm_level") or "missing")
-        confirm_source = str(snap.get("confirm_source") or ConfirmSource.MISSING.value)
+        # Parse derived_feature_json for fields not in top-level columns
+        derived = _json_obj(snap.get("derived_feature_json"))
+        confirm_level = str(snap.get("confirm_level") or derived.get("confirm_level") or "missing")
+        confirm_source = str(derived.get("confirm_source") or ConfirmSource.MISSING.value)
 
         # Determine direction
         if confirm_level in {"A", "B"}:
@@ -157,9 +159,9 @@ class W2SSignalBuilderService:
 
         # Fallback: raw SQL
         try:
-            rows = await self._gw.query(
+            rows = await self._gw._client.execute_query(
                 "SELECT * FROM w2s_backtest_feature_snapshot WHERE run_id = $1",
-                [run_id],
+                (run_id,),
             )
             return [_row_to_dict(r) for r in rows]
         except Exception as exc:
@@ -254,6 +256,19 @@ class W2SSignalBuilderService:
             )
         except Exception:
             pass
+
+
+def _json_obj(value: Any) -> dict[str, Any]:
+    if value is None:
+        return {}
+    if isinstance(value, dict):
+        return dict(value)
+    if isinstance(value, str):
+        try:
+            return json.loads(value)
+        except Exception:
+            return {}
+    return {}
 
 
 def _parse_date(value: Any) -> date | None:
