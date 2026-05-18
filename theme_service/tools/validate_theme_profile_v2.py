@@ -88,6 +88,8 @@ def _profile_to_theme_profile(data: dict[str, Any]) -> ThemeProfile:
 
 
 def validate_profile(profile: dict[str, Any]) -> dict[str, Any]:
+    subject_key = safe_str(profile.get("subject_key"))
+    subject_name = safe_str(profile.get("subject_name"))
     must_terms = normalize_list(profile.get("must_terms"))
     strong_terms = normalize_list(profile.get("strong_terms"))
     aliases = normalize_list(profile.get("aliases"))
@@ -109,6 +111,14 @@ def validate_profile(profile: dict[str, Any]) -> dict[str, Any]:
     alias_generic = [term for term in aliases if is_generic_term(term)]
     strong_generic_ratio = len(strong_generic) / max(1, len(strong_terms))
     failures: list[str] = []
+    if not subject_name:
+        failures.append("subject_name_empty")
+    if subject_name and subject_name == subject_key:
+        failures.append("subject_name_equals_subject_key")
+    if subject_name and subject_name.isdigit():
+        failures.append("subject_name_numeric")
+    if aliases and all(alias.isdigit() or alias == subject_key for alias in aliases):
+        failures.append("aliases_only_numeric_subject_key")
     if must_generic:
         failures.append("must_terms_contain_generic")
     if strong_generic_ratio >= 0.10:
@@ -132,8 +142,8 @@ def validate_profile(profile: dict[str, Any]) -> dict[str, Any]:
     if not profile.get("evidence_refs"):
         failures.append("missing_evidence_refs")
     return {
-        "subject_key": safe_str(profile.get("subject_key")),
-        "subject_name": safe_str(profile.get("subject_name")),
+        "subject_key": subject_key,
+        "subject_name": subject_name,
         "passed": not failures,
         "failures": failures,
         "must_generic_terms": must_generic,

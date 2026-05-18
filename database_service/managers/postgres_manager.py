@@ -1274,6 +1274,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     , tpe AS (
                         SELECT DISTINCT ON (subject_key)
                             subject_key,
+                            summary,
+                            core_anchors,
                             rerank_text
                         FROM theme_profile_ext
                         ORDER BY subject_key
@@ -1281,7 +1283,19 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     SELECT
                         t.subject_key,
                         NULL::integer AS theme_master_id,
-                        COALESCE(fc.subject_name, t.concept, t.subject_key) AS subject_name,
+                        COALESCE(
+                            NULLIF(fc.subject_name, ''),
+                            CASE
+                                WHEN NULLIF(t.concept, '') IS NOT NULL AND t.concept !~ '^[0-9]+$'
+                                THEN t.concept
+                            END,
+                            NULLIF(substring(COALESCE(tpe.summary, '') from '^[0-9]+：一、([^[:space:]。；，,]+)'), ''),
+                            CASE
+                                WHEN jsonb_typeof(tpe.core_anchors) = 'array'
+                                THEN NULLIF(tpe.core_anchors->>0, '')
+                            END,
+                            t.subject_key
+                        ) AS subject_name,
                         t.concept,
                         t.semantic_type,
                         t.strategy_type,
@@ -1295,6 +1309,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                         t.negative_terms,
                         t.search_text,
                         t.quality,
+                        COALESCE(tpe.summary, '') AS profile_summary,
+                        COALESCE(tpe.core_anchors, '[]'::jsonb) AS profile_core_anchors,
                         COALESCE(tpe.rerank_text, '') AS rerank_text
                     FROM theme_gate_profile t
                     LEFT JOIN fc ON fc.subject_key = t.subject_key
@@ -6441,11 +6457,62 @@ class PostgresDatabaseManager(BaseDatabaseManager):
     async def get_intel_news_events(self, feed_date: date) -> List[Dict[str, Any]]:
         """盘前必读事件源：news_event + event_subject_map + news_raw，不依赖 theme_master。"""
         sql = """
-        WITH mapped AS (
+        WITH profile_names AS (
+            SELECT
+                subject_key,
+                COALESCE(
+                    NULLIF(subject_name, ''),
+                    subject_key
+                ) AS resolved_subject_name
+            FROM theme_profile_v2
+            WHERE COALESCE(status, '') IN ('draft', 'accepted')
+              AND subject_name IS NOT NULL
+              AND btrim(subject_name) <> ''
+              AND subject_name <> subject_key
+              AND subject_name !~ '^[0-9]+$'
+            UNION ALL
+            SELECT
+                t.subject_key,
+                COALESCE(
+                    CASE
+                        WHEN NULLIF(t.concept, '') IS NOT NULL AND t.concept !~ '^[0-9]+$'
+                        THEN t.concept
+                    END,
+                    NULLIF(substring(COALESCE(tpe.summary, '') from '^[0-9]+：一、([^[:space:]。；，,]+)'), ''),
+                    CASE
+                        WHEN jsonb_typeof(tpe.core_anchors) = 'array'
+                        THEN NULLIF(tpe.core_anchors->>0, '')
+                    END,
+                    t.subject_key
+                ) AS resolved_subject_name
+            FROM theme_gate_profile t
+            LEFT JOIN theme_profile_ext tpe ON tpe.subject_key = t.subject_key
+        ),
+        resolved_names AS (
+            SELECT DISTINCT ON (subject_key)
+                subject_key,
+                resolved_subject_name
+            FROM profile_names
+            WHERE resolved_subject_name IS NOT NULL
+              AND btrim(resolved_subject_name) <> ''
+              AND resolved_subject_name <> subject_key
+              AND resolved_subject_name !~ '^[0-9]+$'
+            ORDER BY subject_key
+        ),
+        mapped AS (
             SELECT DISTINCT ON (ne.id, esm.subject_key)
                 ne.id AS event_id,
                 esm.subject_key AS subject_key,
-                COALESCE(NULLIF(esm.subject_name, ''), esm.subject_key) AS theme_name,
+                COALESCE(
+                    CASE
+                        WHEN NULLIF(esm.subject_name, '') IS NOT NULL
+                          AND esm.subject_name <> esm.subject_key
+                          AND esm.subject_name !~ '^[0-9]+$'
+                        THEN esm.subject_name
+                    END,
+                    rn.resolved_subject_name,
+                    esm.subject_key
+                ) AS theme_name,
                 COALESCE(ne.created_at, esm.created_at, nr.created_at, nr.publish_date::timestamp) AS occurred_at,
                 COALESCE(NULLIF(nr.title, ''), NULLIF(ne.summary, ''), ne.event_type, ('事件#' || ne.id::text)) AS title,
                 COALESCE(ne.summary, nr.content, '') AS summary,
@@ -6454,6 +6521,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             FROM news_event ne
             LEFT JOIN news_raw nr ON nr.id = ne.news_id
             JOIN event_subject_map esm ON esm.event_id = ne.id
+            LEFT JOIN resolved_names rn ON rn.subject_key = esm.subject_key
             WHERE (
                 ne.created_at::date = $1::date
                 OR nr.publish_date::date = $1::date
@@ -6493,12 +6561,60 @@ class PostgresDatabaseManager(BaseDatabaseManager):
     ) -> List[Dict[str, Any]]:
         """读取指定交易日的事件-subject_key 映射，不依赖 theme_master。"""
         sql = """
+        WITH profile_names AS (
+            SELECT
+                subject_key,
+                subject_name AS resolved_subject_name
+            FROM theme_profile_v2
+            WHERE COALESCE(status, '') IN ('draft', 'accepted')
+              AND subject_name IS NOT NULL
+              AND btrim(subject_name) <> ''
+              AND subject_name <> subject_key
+              AND subject_name !~ '^[0-9]+$'
+            UNION ALL
+            SELECT
+                t.subject_key,
+                COALESCE(
+                    CASE
+                        WHEN NULLIF(t.concept, '') IS NOT NULL AND t.concept !~ '^[0-9]+$'
+                        THEN t.concept
+                    END,
+                    NULLIF(substring(COALESCE(tpe.summary, '') from '^[0-9]+：一、([^[:space:]。；，,]+)'), ''),
+                    CASE
+                        WHEN jsonb_typeof(tpe.core_anchors) = 'array'
+                        THEN NULLIF(tpe.core_anchors->>0, '')
+                    END,
+                    t.subject_key
+                ) AS resolved_subject_name
+            FROM theme_gate_profile t
+            LEFT JOIN theme_profile_ext tpe ON tpe.subject_key = t.subject_key
+        ),
+        resolved_names AS (
+            SELECT DISTINCT ON (subject_key)
+                subject_key,
+                resolved_subject_name
+            FROM profile_names
+            WHERE resolved_subject_name IS NOT NULL
+              AND btrim(resolved_subject_name) <> ''
+              AND resolved_subject_name <> subject_key
+              AND resolved_subject_name !~ '^[0-9]+$'
+            ORDER BY subject_key
+        )
         SELECT
             esm.id,
             esm.event_id,
             esm.news_id,
             esm.subject_key,
-            esm.subject_name,
+            COALESCE(
+                CASE
+                    WHEN NULLIF(esm.subject_name, '') IS NOT NULL
+                      AND esm.subject_name <> esm.subject_key
+                      AND esm.subject_name !~ '^[0-9]+$'
+                    THEN esm.subject_name
+                END,
+                rn.resolved_subject_name,
+                esm.subject_key
+            ) AS subject_name,
             esm.confidence,
             esm.relation_type,
             esm.match_reason,
@@ -6514,6 +6630,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         FROM event_subject_map esm
         JOIN news_event ne ON ne.id = esm.event_id
         LEFT JOIN news_raw nr ON nr.id = COALESCE(esm.news_id, ne.news_id)
+        LEFT JOIN resolved_names rn ON rn.subject_key = esm.subject_key
         WHERE (
             ne.created_at::date = $1::date
             OR nr.publish_date::date = $1::date

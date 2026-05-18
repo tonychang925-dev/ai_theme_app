@@ -93,6 +93,31 @@ def test_validate_theme_profile_v2_rejects_low_hard_negative_rate():
     assert "hard_negative_reject_rate_lt_0_80" in result["failures"]
 
 
+def test_validate_theme_profile_v2_rejects_numeric_subject_name():
+    result = validate_profile(
+        {
+            "subject_key": "9060949",
+            "subject_name": "9060949",
+            "aliases": ["9060949"],
+            "entity_anchors": ["SpaceX", "星舰", "星链"],
+            "domain_anchors": ["商业航天"],
+            "product_anchors": [],
+            "technology_anchors": [],
+            "must_terms": ["SpaceX"],
+            "strong_terms": ["星舰", "星链"],
+            "negative_terms": ["SHEIN"],
+            "confusion_subject_keys": [],
+            "evidence_refs": [{"source": "theme_profile_ext"}],
+            "quality_score": 90,
+        }
+    )
+
+    assert not result["passed"]
+    assert "subject_name_equals_subject_key" in result["failures"]
+    assert "subject_name_numeric" in result["failures"]
+    assert "aliases_only_numeric_subject_key" in result["failures"]
+
+
 def test_hard_negative_wrong_hits_match_related_subject_and_name():
     result = SimpleNamespace(
         matched_subject_key="9062142",
