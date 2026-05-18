@@ -119,8 +119,17 @@ def compute_auction_score(
     return max(Decimal("0"), min(raw_score, Decimal("100")))
 
 
-def compute_confirm_level_from_score(score: Decimal) -> str:
-    """Derive confirm level from auction score."""
+def compute_confirm_level_from_score(score: Decimal, *, use_quantile: bool = False) -> str:
+    """Derive confirm level from auction score.
+
+    v0.1 (fixed thresholds): A>=75, B>=60, C>=40, else X
+    v0.2 (quantile-based): calibrated via distribution
+
+    For real auction data, returns A/B/C/X.
+    For proxy data, caller should use classify_proxy_level() instead.
+    """
+    if use_quantile:
+        return _quantile_level(score)
     if score >= Decimal("75"):
         return "A"
     if score >= Decimal("60"):
@@ -128,6 +137,99 @@ def compute_confirm_level_from_score(score: Decimal) -> str:
     if score >= Decimal("40"):
         return "C"
     return "X"
+
+
+# ── v0.1 quantile thresholds (will be recalibrated from data) ──
+_QUANTILE_THRESHOLDS: dict[str, Decimal] = {
+    "A": Decimal("75"),
+    "B": Decimal("60"),
+    "C": Decimal("40"),
+}
+
+
+def _quantile_level(score: Decimal) -> str:
+    for level in ("A", "B", "C"):
+        if score >= _QUANTILE_THRESHOLDS[level]:
+            return level
+    return "X"
+
+
+def set_quantile_thresholds(a: Decimal, b: Decimal, c: Decimal) -> None:
+    """Set quantile-based thresholds dynamically (for calibration runs)."""
+    _QUANTILE_THRESHOLDS["A"] = a
+    _QUANTILE_THRESHOLDS["B"] = b
+    _QUANTILE_THRESHOLDS["C"] = c
+
+
+# ── Proxy level classification (fixed in v0.2) ──
+
+def classify_proxy_level(
+    *,
+    auction_open_pct: Decimal | None = None,
+    has_auction_snapshot: bool = False,
+    open_vs_pre_close: Decimal | None = None,
+    daily_pct_chg: Decimal | None = None,
+) -> str:
+    """Classify proxy confirm level for signals without real auction data.
+
+    Levels:
+      proxy_unconfirmed: no auction/bar data, truly unconfirmed
+      proxy_positive_open: T+1 open >= pre_close, favorable
+      proxy_negative_open: T+1 open < pre_close, unfavorable
+      proxy_X: explicitly rejected by proxy condition (extreme gap down, etc.)
+    """
+    # No data at all → truly unconfirmed
+    if auction_open_pct is None and daily_pct_chg is None:
+        return "proxy_unconfirmed"
+
+    # If we have auction snapshot (but not full series), use open_pct
+    pct = auction_open_pct if auction_open_pct is not None else daily_pct_chg
+
+    if pct is None:
+        return "proxy_unconfirmed"
+
+    # Explicit reject: extreme gap down (>5%)
+    if pct <= Decimal("-5"):
+        return "proxy_X"
+
+    # Positive open
+    if pct >= Decimal("0"):
+        return "proxy_positive_open"
+
+    # Negative but not extreme
+    if pct < Decimal("0"):
+        return "proxy_negative_open"
+
+    return "proxy_unconfirmed"
+
+
+def compute_proxy_confirm_score(
+    *,
+    auction_open_pct: Decimal | None = None,
+    daily_pct_chg: Decimal | None = None,
+    candidate_score: Decimal | None = None,
+) -> Decimal:
+    """Compute a simplified proxy confirmation score.
+
+    Uses available proxy data to estimate confirmation strength.
+    This is NOT a replacement for real auction scoring.
+    """
+    score = Decimal("50")  # neutral baseline
+    pct = auction_open_pct if auction_open_pct is not None else daily_pct_chg
+
+    if pct is not None:
+        # +5 per 1% positive open, capped at +25
+        if pct > Decimal("0"):
+            score += min(pct * Decimal("5"), Decimal("25"))
+        # -10 per 1% negative open, capped at -30
+        elif pct < Decimal("0"):
+            score += max(pct * Decimal("10"), Decimal("-30"))
+
+    # Boost from candidate quality
+    if candidate_score is not None:
+        score += min((candidate_score - Decimal("50")) * Decimal("0.2"), Decimal("10"))
+
+    return max(Decimal("0"), min(score, Decimal("100")))
 
 
 def compute_bull_stock_score(

@@ -74,7 +74,7 @@ class W2SSignalBuilderService:
         confirm_level = str(snap.get("confirm_level") or derived.get("confirm_level") or "missing")
         confirm_source = str(derived.get("confirm_source") or ConfirmSource.MISSING.value)
 
-        # Determine direction
+        # Determine direction (v0.2 semantics)
         if confirm_level in {"A", "B"}:
             direction = "buy"
             tradable = True
@@ -87,10 +87,22 @@ class W2SSignalBuilderService:
             direction = "reject"
             tradable = False
             reject_reason_code = "auction_reject"
-        elif confirm_level.startswith("proxy_"):
+        elif confirm_level == "proxy_unconfirmed":
             direction = "watch"
             tradable = False
-            reject_reason_code = "proxy_confirm_not_tradable"
+            reject_reason_code = "proxy_unconfirmed_no_data"
+        elif confirm_level == "proxy_positive_open":
+            direction = "watch"
+            tradable = False
+            reject_reason_code = "proxy_positive_no_auction"
+        elif confirm_level == "proxy_negative_open":
+            direction = "watch"
+            tradable = False
+            reject_reason_code = "proxy_negative_risk"
+        elif confirm_level == "proxy_X":
+            direction = "reject"
+            tradable = False
+            reject_reason_code = "proxy_explicit_reject"
         else:
             direction = "reject"
             tradable = False

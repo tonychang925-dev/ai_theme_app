@@ -20,10 +20,12 @@ from stock_processing_service.domain.backtest.w2s_feature_rules import (
     build_missing_features,
     classify_board_type,
     classify_leader_role_proxy,
+    classify_proxy_level,
     compute_auction_score,
     compute_bull_stock_score,
     compute_confirm_level_from_score,
     compute_leader_score_proxy,
+    compute_proxy_confirm_score,
     compute_two_board_quality_score,
     determine_auction_feature_mode,
     determine_confirm_source,
@@ -212,9 +214,29 @@ class W2SFeatureSnapshotService:
             last_minute_grab_score=None,  # First version: no minute data
         )
 
-        confirm_level = compute_confirm_level_from_score(auction_score)
-        if confirm_source == "daily_open_proxy":
-            confirm_level = "proxy_" + confirm_level
+        # v0.2: classify confirm_level differently for auction vs proxy
+        if confirm_source in ("real_auction", "auction_snapshot"):
+            # Real auction data: use auction score for A/B/C/X
+            confirm_level = compute_confirm_level_from_score(auction_score)
+        elif confirm_source == "daily_open_proxy":
+            # Proxy: classify independently. proxy_X only for explicit negatives.
+            bar = bars.get(stock_id)
+            daily_pct = _to_decimal(getattr(bar, "pct_chg", None)) if bar else None
+            confirm_level = classify_proxy_level(
+                auction_open_pct=open_strength,
+                has_auction_snapshot=False,
+                daily_pct_chg=daily_pct,
+            )
+            # Use proxy-specific scoring for confirmation_score
+            proxy_score = compute_proxy_confirm_score(
+                auction_open_pct=open_strength,
+                daily_pct_chg=daily_pct,
+                candidate_score=_to_decimal(candidate.get("candidate_score")),
+            )
+            auction_score = proxy_score
+        else:
+            # missing data
+            confirm_level = "proxy_unconfirmed"
 
         # ── Mainline features ──
         ml_state = mainline_states.get(subject_key, {})
