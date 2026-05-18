@@ -1,9 +1,13 @@
 from __future__ import annotations
 
 import json
+import hashlib
+import inspect
 import math
 import os
 import re
+import time
+from collections import OrderedDict
 from dataclasses import dataclass, field
 from difflib import SequenceMatcher
 from typing import Any, Dict, List, Tuple
@@ -108,6 +112,8 @@ SHORT_GENERIC_THEME_TERMS = {
 
 ROLE_BLOCKING_HIT_ROLES = {"source_org", "location", "generic_short_term", "support"}
 STRONG_SHORT_THEME_EXCEPTIONS = {"星链", "朱雀", "火箭"}
+_TEXT_TOKEN_CACHE_MAX = 256
+_TEXT_TOKEN_CACHE: OrderedDict[str, set[str]] = OrderedDict()
 
 
 def _safe_str(value: Any) -> str:
@@ -186,12 +192,32 @@ def _term_in_text(term: str, text: str) -> bool:
         return False
     if len(term) >= 4:
         return _normalize_text(term) in _normalize_text(text)
+    tokens = _token_set_for_text(text)
+    if tokens:
+        return term in tokens
+    return _normalize_text(term) in _normalize_text(text)
+
+
+def _token_set_for_text(text: str) -> set[str]:
+    text = _safe_str(text)
+    if not text:
+        return set()
+    cache_key = hashlib.sha1(text.encode("utf-8")).hexdigest()
+    cached = _TEXT_TOKEN_CACHE.get(cache_key)
+    if cached is not None:
+        _TEXT_TOKEN_CACHE.move_to_end(cache_key)
+        return cached
     try:
         import jieba
 
-        return term in set(jieba.lcut(text))
+        tokens = set(jieba.lcut(text))
     except Exception:
-        return _normalize_text(term) in _normalize_text(text)
+        tokens = set()
+    _TEXT_TOKEN_CACHE[cache_key] = tokens
+    _TEXT_TOKEN_CACHE.move_to_end(cache_key)
+    while len(_TEXT_TOKEN_CACHE) > _TEXT_TOKEN_CACHE_MAX:
+        _TEXT_TOKEN_CACHE.popitem(last=False)
+    return tokens
 
 
 def _filter_generic_terms(terms: List[str]) -> List[str]:
@@ -209,6 +235,25 @@ def _filter_generic_terms(terms: List[str]) -> List[str]:
 def _profile_gate_terms(profile: ThemeProfile, key: str) -> List[str]:
     gate_json = profile.gate_json if isinstance(profile.gate_json, dict) else {}
     return _normalize_list(gate_json.get(key))
+
+
+def _env_int(name: str, default: int) -> int:
+    try:
+        return int(os.getenv(name, str(default)))
+    except ValueError:
+        return default
+
+
+def _env_float(name: str, default: float) -> float:
+    try:
+        return float(os.getenv(name, str(default)))
+    except ValueError:
+        return default
+
+
+def _llm_judge_mode() -> str:
+    mode = os.getenv("THEME_MATCH_LLM_JUDGE_MODE", "always").strip().lower()
+    return mode if mode in {"always", "auto", "off"} else "always"
 
 
 def _is_source_org_term(term: str, event_text: str) -> bool:
@@ -1185,12 +1230,15 @@ def _build_feature_recall_rows(
     profile_map: Dict[str, ThemeProfile],
     event_profile: EventMatchProfile | None = None,
     top_k: int = 25,
+    evidence_cache: Dict[str, Dict[str, Any]] | None = None,
 ) -> List[Dict[str, Any]]:
     event_text = _build_event_query_text(request, event_profile)
     rows: List[Dict[str, Any]] = []
     for sk, profile in profile_map.items():
         hit_features = _collect_profile_hit_features(request, profile, event_profile)
         gate_evidence = _build_gate_evidence(event_text, profile, event_profile)
+        if evidence_cache is not None:
+            evidence_cache[sk] = gate_evidence
         feature_recall_score = _calc_feature_recall_score(hit_features, gate_evidence)
         if feature_recall_score <= 0:
             continue
@@ -1347,17 +1395,39 @@ class ThemeMatchEngine:
         self._sentence_model = None
         self._judge = _FinalLLMJudge()
         self._event_profile_extractor = _EventProfileLLMExtractor()
+        self._rerank_doc_vector_cache: OrderedDict[tuple[str, str], List[float]] = OrderedDict()
+        self._query_vector_cache: OrderedDict[str, List[float]] = OrderedDict()
 
     async def match_event(self, request: ThemeMatchRequest) -> ThemeDecisionEnvelope:
+        started_at = time.perf_counter()
+        last_stage_at = started_at
+        timing_ms: Dict[str, float] = {}
+        counters: Dict[str, Any] = {
+            "llm_judge_count": 0,
+            "event_profile_llm_count": 0,
+            "llm_judge_mode": _llm_judge_mode(),
+            "query_vector_cache_hit_count": 0,
+            "query_vector_cache_miss_count": 0,
+            "rerank_doc_vector_cache_hit_count": 0,
+            "rerank_doc_vector_cache_miss_count": 0,
+        }
+
+        def mark(stage: str) -> None:
+            nonlocal last_stage_at
+            now = time.perf_counter()
+            timing_ms[stage] = round((now - last_stage_at) * 1000, 3)
+            last_stage_at = now
+
         load_profile_map = getattr(self.profile_repository, "load_active_profile_map", None)
         if callable(load_profile_map):
             profile_map = await load_profile_map()
         else:
             profiles = await self.profile_repository.load_active_profiles()
             profile_map = {p.subject_key: p for p in profiles}
+        mark("load_profiles_ms")
 
         if not profile_map:
-            return ThemeDecisionEnvelope(
+            env = ThemeDecisionEnvelope(
                 decision="UNKNOWN",
                 event_id=request.event_id,
                 news_id=request.news_id,
@@ -1366,14 +1436,26 @@ class ThemeMatchEngine:
                 review_required=False,
                 audit={"top_candidates": []},
             )
+            timing_ms["total_match_ms"] = round((time.perf_counter() - started_at) * 1000, 3)
+            return self._attach_runtime_audit(env, timing_ms, counters)
 
+        counters["event_profile_llm_count"] = int(self._event_profile_extractor.enabled())
         event_profile = self._event_profile_extractor.extract(request, _build_event_match_profile(request))
+        mark("event_profile_extract_ms")
         recalled_rows = await self._dense_recall(request, event_profile)
+        mark("dense_recall_ms")
         sparse_rows = await self._sparse_recall(request, event_profile)
+        mark("sparse_recall_ms")
         hybrid_rows = _rrf_merge_rows(recalled_rows, sparse_rows)
-        feature_rows = _build_feature_recall_rows(request, profile_map, event_profile)
+        evidence_cache: Dict[str, Dict[str, Any]] = {}
+        feature_rows = _build_feature_recall_rows(request, profile_map, event_profile, evidence_cache=evidence_cache)
+        mark("feature_recall_ms")
         candidate_rows = _merge_recall_rows(hybrid_rows, feature_rows)
-        reranked_rows = self._rerank(request, candidate_rows, profile_map, event_profile)
+        if "counters" in inspect.signature(self._rerank).parameters:
+            reranked_rows = self._rerank(request, candidate_rows, profile_map, event_profile, counters=counters, evidence_cache=evidence_cache)
+        else:
+            reranked_rows = self._rerank(request, candidate_rows, profile_map, event_profile)
+        mark("rerank_ms")
         dynamic_topk = _compute_dynamic_topk(reranked_rows)
         direct_hit_keys = _collect_direct_hit_subject_keys(request, profile_map)
         final_rows = _inject_direct_hit_candidates(
@@ -1386,7 +1468,8 @@ class ThemeMatchEngine:
 
         candidates = self._materialize_candidates(final_rows, profile_map)
         if not candidates:
-            return ThemeDecisionEnvelope(
+            mark("final_decision_ms")
+            env = ThemeDecisionEnvelope(
                 decision="UNKNOWN",
                 event_id=request.event_id,
                 news_id=request.news_id,
@@ -1395,11 +1478,29 @@ class ThemeMatchEngine:
                 review_required=False,
                 audit={"top_candidates": []},
             )
+            timing_ms["llm_judge_ms"] = 0.0
+            timing_ms["total_match_ms"] = round((time.perf_counter() - started_at) * 1000, 3)
+            return self._attach_runtime_audit(env, timing_ms, counters)
 
-        if self._judge.enabled():
+        mode = _llm_judge_mode()
+        should_call_llm = self._judge.enabled() and mode != "off"
+        if mode == "auto" and should_call_llm:
+            should_call_llm = self._should_call_llm_auto(candidates, direct_hit_keys)
+        counters["llm_judge_skipped"] = int(not should_call_llm)
+        if should_call_llm:
+            llm_started = time.perf_counter()
             llm_result = self._judge.judge(request, candidates, profile_map, event_profile)
-            return self._final_decide_with_llm(request, candidates, profile_map, llm_result)
-        return self._final_decide_rule_only(request, candidates, direct_hit_keys, profile_map)
+            counters["llm_judge_count"] = 1
+            timing_ms["llm_judge_ms"] = round((time.perf_counter() - llm_started) * 1000, 3)
+            last_stage_at = time.perf_counter()
+            env = self._final_decide_with_llm(request, candidates, profile_map, llm_result)
+        else:
+            timing_ms["llm_judge_ms"] = 0.0
+            last_stage_at = time.perf_counter()
+            env = self._final_decide_rule_only(request, candidates, direct_hit_keys, profile_map)
+        mark("final_decision_ms")
+        timing_ms["total_match_ms"] = round((time.perf_counter() - started_at) * 1000, 3)
+        return self._attach_runtime_audit(env, timing_ms, counters)
 
     def _get_sentence_model(self):
         if self._sentence_model is not None:
@@ -1439,7 +1540,7 @@ class ThemeMatchEngine:
     async def _dense_recall(self, request: ThemeMatchRequest, event_profile: EventMatchProfile | None = None) -> List[Dict[str, Any]]:
         model = self._get_sentence_model()
         query_text = _build_event_query_text(request, event_profile)
-        query_vec = self._to_vector_list(model.encode(query_text))
+        query_vec = self._encode_query_vector(model, query_text)
         rows = await self.profile_repository.semantic_recall_candidates(query_vec, top_k=25)
         rows = _canonicalize_recall_rows(rows)
         rows.sort(
@@ -1462,18 +1563,21 @@ class ThemeMatchEngine:
         candidate_rows: List[Dict[str, Any]],
         profile_map: Dict[str, ThemeProfile],
         event_profile: EventMatchProfile | None = None,
+        counters: Dict[str, Any] | None = None,
+        evidence_cache: Dict[str, Dict[str, Any]] | None = None,
     ) -> List[Dict[str, Any]]:
         if not candidate_rows:
             return []
 
         model = self._get_sentence_model()
         event_text = _build_event_query_text(request, event_profile)
-        query_vec = self._to_vector_list(model.encode(event_text))
+        query_vec = self._encode_query_vector(model, event_text, counters)
         valid_rows: List[Dict[str, Any]] = []
         doc_texts: List[str] = []
         for cand in candidate_rows:
             row = dict(cand)
-            profile = profile_map.get(_safe_str(row.get("subject_key")))
+            subject_key = _safe_str(row.get("subject_key"))
+            profile = profile_map.get(subject_key)
             if not profile:
                 continue
             doc_text = _safe_str(row.get("rerank_text")) or profile.rerank_text or profile.compact_text()
@@ -1481,7 +1585,7 @@ class ThemeMatchEngine:
             valid_rows.append(row)
             doc_texts.append(doc_text)
 
-        doc_vectors = [self._to_vector_list(x) for x in model.encode(doc_texts)] if doc_texts else []
+        doc_vectors = self._encode_rerank_doc_vectors(model, valid_rows, doc_texts, counters)
         out: List[Dict[str, Any]] = []
 
         for row, doc_vec in zip(valid_rows, doc_vectors):
@@ -1492,7 +1596,12 @@ class ThemeMatchEngine:
             hit_features = _collect_profile_hit_features(request, profile, event_profile)
             feature_score = _calc_rerank_feature_score(hit_features)
             semantic_score = self._cosine_similarity(query_vec, doc_vec)
-            gate_evidence = _build_gate_evidence(event_text, profile, event_profile)
+            cache_key = _safe_str(row.get("subject_key"))
+            gate_evidence = (evidence_cache or {}).get(cache_key)
+            if gate_evidence is None:
+                gate_evidence = _build_gate_evidence(event_text, profile, event_profile)
+                if evidence_cache is not None and cache_key:
+                    evidence_cache[cache_key] = gate_evidence
             final_score = semantic_score + feature_score
 
             row["semantic_score"] = float(semantic_score)
@@ -1506,6 +1615,103 @@ class ThemeMatchEngine:
             key=lambda x: (-float(x.get("rerank_score") or 0.0), -float(x.get("dense_score") or 0.0), _safe_str(x.get("subject_key")))
         )
         return out
+
+    def _encode_query_vector(
+        self,
+        model: Any,
+        text: str,
+        counters: Dict[str, Any] | None = None,
+    ) -> List[float]:
+        max_cache_size = _env_int("THEME_MATCH_QUERY_VECTOR_CACHE_MAX", 512)
+        if max_cache_size <= 0:
+            return self._to_vector_list(model.encode(text))
+        cache_key = hashlib.sha1(_safe_str(text).encode("utf-8")).hexdigest()
+        cached = self._query_vector_cache.get(cache_key)
+        if cached is not None:
+            self._query_vector_cache.move_to_end(cache_key)
+            if counters is not None:
+                counters["query_vector_cache_hit_count"] = int(counters.get("query_vector_cache_hit_count") or 0) + 1
+            return cached
+        if counters is not None:
+            counters["query_vector_cache_miss_count"] = int(counters.get("query_vector_cache_miss_count") or 0) + 1
+        vector = self._to_vector_list(model.encode(text))
+        self._query_vector_cache[cache_key] = vector
+        self._query_vector_cache.move_to_end(cache_key)
+        while len(self._query_vector_cache) > max_cache_size:
+            self._query_vector_cache.popitem(last=False)
+        return vector
+
+    def _encode_rerank_doc_vectors(
+        self,
+        model: Any,
+        rows: List[Dict[str, Any]],
+        doc_texts: List[str],
+        counters: Dict[str, Any] | None = None,
+    ) -> List[List[float]]:
+        if not doc_texts:
+            return []
+        max_cache_size = _env_int("THEME_MATCH_RERANK_VECTOR_CACHE_MAX", 5000)
+        if max_cache_size <= 0:
+            encoded = model.encode(doc_texts)
+            return [self._to_vector_list(x) for x in encoded]
+
+        vectors: List[List[float] | None] = [None] * len(doc_texts)
+        miss_indexes: List[int] = []
+        miss_texts: List[str] = []
+        for idx, (row, doc_text) in enumerate(zip(rows, doc_texts)):
+            subject_key = _safe_str(row.get("subject_key"))
+            cache_key = (subject_key, hashlib.sha1(doc_text.encode("utf-8")).hexdigest())
+            cached = self._rerank_doc_vector_cache.get(cache_key)
+            if cached is not None:
+                self._rerank_doc_vector_cache.move_to_end(cache_key)
+                vectors[idx] = cached
+                if counters is not None:
+                    counters["rerank_doc_vector_cache_hit_count"] = int(counters.get("rerank_doc_vector_cache_hit_count") or 0) + 1
+                continue
+            row["_rerank_vector_cache_key"] = cache_key
+            miss_indexes.append(idx)
+            miss_texts.append(doc_text)
+            if counters is not None:
+                counters["rerank_doc_vector_cache_miss_count"] = int(counters.get("rerank_doc_vector_cache_miss_count") or 0) + 1
+
+        if miss_texts:
+            encoded = [self._to_vector_list(x) for x in model.encode(miss_texts)]
+            for idx, vector in zip(miss_indexes, encoded):
+                cache_key = rows[idx].get("_rerank_vector_cache_key")
+                if isinstance(cache_key, tuple):
+                    self._rerank_doc_vector_cache[cache_key] = vector
+                    self._rerank_doc_vector_cache.move_to_end(cache_key)
+                    while len(self._rerank_doc_vector_cache) > max_cache_size:
+                        self._rerank_doc_vector_cache.popitem(last=False)
+                vectors[idx] = vector
+
+        return [vector or [] for vector in vectors]
+
+    def _should_call_llm_auto(self, candidates: List[Candidate], direct_hit_keys: List[str]) -> bool:
+        if not candidates:
+            return False
+        best = candidates[0]
+        second = candidates[1] if len(candidates) > 1 else None
+        best_ev = best.evidence or {}
+        if best_ev.get("role_guard_blocked"):
+            return False
+        best_gap = float(best.rerank_score or 0.0) - (float(second.rerank_score or 0.0) if second else 0.0)
+        conflict_score = int(best_ev.get("conflict_score") or 0)
+        anchor_terms = _valid_anchor_terms(best_ev)
+        direct_hit_set = set(direct_hit_keys)
+        if best.subject_key in direct_hit_set and best_gap >= _env_float("THEME_MATCH_LLM_AUTO_DIRECT_GAP", 0.03) and anchor_terms and conflict_score == 0:
+            return False
+        if (
+            best_ev.get("theme_name_direct_hit")
+            and best_gap >= _env_float("THEME_MATCH_LLM_AUTO_NAME_GAP", 0.04)
+            and anchor_terms
+            and conflict_score == 0
+        ):
+            return False
+        top = candidates[: min(5, len(candidates))]
+        if top and all((c.evidence or {}).get("role_guard_blocked") or int((c.evidence or {}).get("positive_score") or 0) < 3 for c in top):
+            return False
+        return True
 
     def _materialize_candidates(self, rows: List[Dict[str, Any]], profile_map: Dict[str, ThemeProfile]) -> List[Candidate]:
         out: List[Candidate] = []
@@ -1524,6 +1730,30 @@ class ThemeMatchEngine:
                 )
             )
         return out
+
+    def _attach_runtime_audit(
+        self,
+        env: ThemeDecisionEnvelope,
+        timing_ms: Dict[str, float],
+        counters: Dict[str, Any],
+    ) -> ThemeDecisionEnvelope:
+        audit = env.audit if isinstance(env.audit, dict) else {}
+        repo_stats: Dict[str, Any] = {}
+        get_cache_stats = getattr(self.profile_repository, "get_cache_stats", None)
+        if callable(get_cache_stats):
+            try:
+                repo_stats = get_cache_stats()
+            except Exception:
+                repo_stats = {}
+        audit["performance"] = {
+            "timing_ms": timing_ms,
+            "counters": counters,
+            "profile_cache_stats": repo_stats,
+            "rerank_doc_vector_cache_size": len(self._rerank_doc_vector_cache),
+            "query_vector_cache_size": len(self._query_vector_cache),
+        }
+        env.audit = audit
+        return env
 
     def _build_related_matches(
         self,

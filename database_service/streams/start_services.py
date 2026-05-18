@@ -235,6 +235,20 @@ class StreamServicesManager:
                     "dependencies": ["event_bus"]
                 }
 
+            only_services_raw = os.getenv("STREAM_SERVICES_ONLY", "").strip()
+            if only_services_raw:
+                only_services = {
+                    item.strip()
+                    for item in only_services_raw.replace("，", ",").split(",")
+                    if item.strip()
+                }
+                services_config = {
+                    name: config
+                    for name, config in services_config.items()
+                    if name in only_services
+                }
+                logger.info("STREAM_SERVICES_ONLY 生效，仅启动服务: %s", sorted(services_config.keys()))
+
             # 创建服务实例
             dependencies = {
                 "stream_manager": stream_manager
