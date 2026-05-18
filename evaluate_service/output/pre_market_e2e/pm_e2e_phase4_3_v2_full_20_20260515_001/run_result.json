@@ -1,0 +1,56 @@
+{
+  "run_id": "pm_e2e_phase4_3_v2_full_20_20260515_001",
+  "trade_date": "2026-05-15",
+  "out_dir": "/Users/admin/Desktop/ai_theme_app/evaluate_service/output/pre_market_e2e/pm_e2e_phase4_3_v2_full_20_20260515_001",
+  "sps_base_url": "http://127.0.0.1:8090",
+  "trace_counts": {
+    "expected_input_count": 20,
+    "news_raw_count": 20,
+    "news_event_count": 20,
+    "mapped_event_count": 16,
+    "event_subject_map_count": 27,
+    "event_theme_map_count": 27,
+    "review_queue_count": 3,
+    "decision_count": 19,
+    "pending_count": 0,
+    "dead_letter_count": 0
+  },
+  "evaluation": {
+    "total": 20,
+    "primary_hit_count": 14,
+    "related_hit_count": 9,
+    "theme_set_recall_at_3_count": 14,
+    "theme_set_recall_at_5_count": 14,
+    "primary_hit_rate": 0.7,
+    "related_hit_rate": 0.45,
+    "theme_set_recall@3": 0.7,
+    "theme_set_recall@5": 0.7,
+    "human_review_count": 3,
+    "unknown_count": 1,
+    "wrong_related_count": 2,
+    "generic_only_related_count": 0,
+    "llm_anchor_guard_count": 0,
+    "brief_major_event_count": 20,
+    "brief_theme_count": 6,
+    "brief_opportunity_count": 6,
+    "diagnostics": {
+      "source": "db",
+      "event_count": 23,
+      "theme_count": 6,
+      "last_rebuild_at": "2026-05-18T04:05:54.198309+00:00",
+      "opportunity_count": 6,
+      "review_event_count": 3,
+      "matched_event_count": 20,
+      "unknown_event_count": 0
+    }
+  },
+  "snapshot_copy": {
+    "source_db": "stock_data",
+    "target_db": "stock_data_test",
+    "trade_date": "2026-05-15",
+    "snapshot_version": "pre_market_brief.v1",
+    "status": "draft",
+    "source_trace_id": "e2e_copy:pm_e2e_phase4_3_v2_full_20_20260515_001:db",
+    "copied": 1
+  }
+}

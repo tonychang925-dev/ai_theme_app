@@ -11,24 +11,96 @@ from typing import Any
 
 
 def classify_leader_role_proxy(row: dict[str, Any]) -> str:
-    """Classify leader role proxy from existing fields.
+    """Classify leader role proxy from existing fields (v0.3 multi-field fallback).
 
-    Returns: leader / card / assist / supplement / unknown
+    Priority: is_leader → rank_order → recent_limit_up → prior7 → watch_score → candidate_score
+
+    Returns: leader / card / assist / strong_trend / potential_leader / unknown
     """
     is_leader = _bool(row.get("is_leader"))
     rank_order = _int(row.get("rank_order"), 999)
     recent_limit_up = _int(row.get("recent_limit_up_count"), 0)
+    prior7_limitup = _int(row.get("prior7_limitup_days"), 0)
+    prior7_strong = _int(row.get("prior7_strong_days"), 0)
     same_subject_limit_up = _int(row.get("same_subject_limit_up_count"), 0)
+    watch_score = float(row.get("watch_score") or 0)
+    candidate_score = float(row.get("candidate_score") or 0)
 
-    if is_leader and recent_limit_up >= 2:
+    # Tier 1: explicit leader signals
+    if is_leader or (rank_order == 1 and recent_limit_up >= 1):
         return "leader"
-    if rank_order == 2 and recent_limit_up >= 1:
+
+    # Tier 2: card (rank 2 with some lead history)
+    if rank_order == 2 and (recent_limit_up >= 1 or prior7_limitup >= 1):
         return "card"
-    if 3 <= rank_order <= 5 and same_subject_limit_up >= 2:
+
+    # Tier 3: assist (ranks 3-5 with board effect)
+    if 3 <= rank_order <= 5 and (same_subject_limit_up >= 2 or prior7_limitup >= 2):
         return "assist"
-    if recent_limit_up == 0 and same_subject_limit_up >= 1:
-        return "supplement"
+
+    # Tier 4: strong trend (history-based, multi-field)
+    if prior7_strong >= 2 and watch_score >= 70:
+        return "strong_trend"
+
+    # Tier 5: potential leader (candidate quality signals)
+    if candidate_score >= 75 and prior7_limitup >= 1:
+        return "potential_leader"
+
+    # Tier 6: strong supplement (has history but lower rank)
+    if prior7_limitup >= 2 or (prior7_strong >= 3 and rank_order <= 10):
+        return "strong_trend"
+
     return "unknown"
+
+
+# ── Weak type quality scoring (v0.3) ──
+
+WEAK_TYPE_QUALITY: dict[str, dict[str, Any]] = {
+    "big_negative_line":   {"quality": "preferred", "score_bonus": Decimal("10")},
+    "bad_limit_up":        {"quality": "preferred", "score_bonus": Decimal("8")},
+    "upper_shadow":        {"quality": "neutral",   "score_bonus": Decimal("0")},
+    "fake_break":          {"quality": "neutral",   "score_bonus": Decimal("0")},
+    "high_open_low_close": {"quality": "danger",    "score_bonus": Decimal("-15")},
+}
+
+
+def classify_weak_type_quality(weak_type: str) -> str:
+    """Classify weak type into preferred / neutral / danger."""
+    return WEAK_TYPE_QUALITY.get(str(weak_type or "").strip().lower(), {}).get("quality", "unknown")
+
+
+def weak_type_score_bonus(weak_type: str) -> Decimal:
+    """Score adjustment based on weak type quality."""
+    return WEAK_TYPE_QUALITY.get(str(weak_type or "").strip().lower(), {}).get("score_bonus", Decimal("0"))
+
+
+def apply_weak_type_downgrade(
+    *,
+    weak_type: str,
+    pool_entry_type: str,
+    support_strength: Decimal | None = None,
+    mainline_strength_score: Decimal | None = None,
+    leader_role_proxy: str = "unknown",
+) -> str:
+    """v0.3: downgrade dangerous weak types unless supported by strong evidence.
+
+    high_open_low_close → observe_only unless:
+      - support_strength >= 70
+      - mainline_strength_score >= 70
+      - leader_role_proxy in {leader, card, strong_trend}
+    """
+    wt = str(weak_type or "").strip().lower()
+    quality = classify_weak_type_quality(wt)
+
+    if quality == "danger":
+        # Only allow formal if all three safety conditions met
+        ss = support_strength or Decimal("0")
+        ms = mainline_strength_score or Decimal("0")
+        if ss >= Decimal("70") and ms >= Decimal("70") and leader_role_proxy in {"leader", "card", "strong_trend"}:
+            return "formal"
+        return "observe_only"
+
+    return pool_entry_type
 
 
 def classify_board_type(stock_id: str) -> tuple[str, bool]:
