@@ -32,6 +32,7 @@
     "feedback-command": 6
   },
   "promptQueueUseCount": 255,
+  "showExpandedTodos": true,
   "cachedGrowthBookFeatures": {
     "tengu_feedback_survey_config": {
       "minTimeBeforeFeedbackMs": 600000,

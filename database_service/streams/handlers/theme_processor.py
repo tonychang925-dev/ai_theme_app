@@ -556,6 +556,18 @@ class ThemeProcessor:
             await self._ack_message(stream_name, message_id)
             self._update_structured_stats(result)
 
+        except asyncio.CancelledError:
+            self.stats["by_outcome"]["error"] += 1
+            logger.warning("structured路径处理被取消，写入死信并确认消息: %s", message_id)
+            try:
+                await self._move_to_dead_letter(
+                    stream_type,
+                    message_id,
+                    message_data,
+                    "processing_cancelled_before_terminal_decision",
+                )
+            finally:
+                raise
         except Exception as e:
             self.stats["by_outcome"]["error"] += 1
             logger.exception(f"structured路径处理失败 {message_id}: {e}")
@@ -1679,12 +1691,19 @@ class ThemeProcessor:
                 "moved_at": datetime.now().isoformat(),
                 "processor": self.consumer_name
             }
+            dead_letter_entry = {
+                key: json.dumps(value, ensure_ascii=False, default=str)
+                if isinstance(value, (dict, list))
+                else ("" if value is None else str(value))
+                for key, value in dead_letter_entry.items()
+            }
             
             await self.redis_client.xadd(
                 self.output_streams["dead_letter"],
                 dead_letter_entry,
                 maxlen=1000
             )
+            await self._ack_message(self.input_streams[stream_type], message_id)
             
             logger.warning(f"消息移动到死信队列: {message_id}")
             
