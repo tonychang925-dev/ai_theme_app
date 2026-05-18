@@ -103,8 +103,8 @@ class ThemeProfileRepository:
         self.database_gateway = database_gateway
         self._active_profiles_cache: List[ThemeProfile] | None = None
         self._active_profile_map_cache: Dict[str, ThemeProfile] | None = None
-        self._active_profiles_cache_key: tuple[str, str, str, str, str] | None = None
-        self._active_profile_map_cache_key: tuple[str, str, str, str, str] | None = None
+        self._active_profiles_cache_key: tuple[str, ...] | None = None
+        self._active_profile_map_cache_key: tuple[str, ...] | None = None
         self._active_profiles_loaded_at = 0.0
         self._active_profile_map_loaded_at = 0.0
         self._cache_stats: Dict[str, int] = {
@@ -170,13 +170,18 @@ class ThemeProfileRepository:
     def get_cache_stats(self) -> Dict[str, int]:
         return dict(self._cache_stats)
 
-    def _build_cache_key(self) -> tuple[str, str, str, str, str]:
+    def _build_cache_key(self) -> tuple[str, ...]:
         return (
             os.getenv("THEME_PROFILE_VERSION", "v1").lower(),
             os.getenv("THEME_PROFILE_V2_STATUS", "draft"),
             os.getenv("THEME_PROFILE_V2_SUBJECT_KEYS", ""),
             os.getenv("THEME_PROFILE_V2_FALLBACK_TO_V1", "true").lower(),
             os.getenv("THEME_PROFILE_V2_REQUIRE_LOADED", "false").lower(),
+            os.getenv("DB_NAME", ""),
+            os.getenv("PG_DATABASE", ""),
+            os.getenv("REPLAY_DB_NAME", ""),
+            os.getenv("READ_DB_NAME", ""),
+            os.getenv("WRITE_DB_NAME", ""),
         )
 
     @staticmethod

@@ -334,7 +334,8 @@ def _trace_ready(args: argparse.Namespace, trace: dict[str, Any]) -> bool:
     pending = int(counts.get("pending_count") or 0)
     terminal_events = mapped_events + reviewed + pending
     terminal_rows = mapped + reviewed + pending
-    expected_ready = max(1, int(expected * 0.95))
+    ready_ratio = max(0.0, min(1.0, float(args.min_ready_ratio)))
+    expected_ready = max(1, int(expected * ready_ratio))
     return news_events >= expected_ready and terminal_events >= expected_ready and terminal_rows > 0
 
 
@@ -393,6 +394,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--wait", action="store_true")
     parser.add_argument("--wait-timeout", type=int, default=180)
     parser.add_argument("--wait-interval", type=int, default=5)
+    parser.add_argument("--min-ready-ratio", type=float, default=0.95)
     parser.add_argument("--http-timeout", type=int, default=180)
     parser.add_argument(
         "--require-ready",

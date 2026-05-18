@@ -1,0 +1,9 @@
+{
+  "source_db": "stock_data",
+  "target_db": "stock_data_test",
+  "trade_date": "2026-05-15",
+  "snapshot_version": "pre_market_brief.v1",
+  "status": "draft",
+  "source_trace_id": "e2e_copy:pm_e2e_phase4_v2_full_100_20260515_001:db",
+  "copied": 1
+}

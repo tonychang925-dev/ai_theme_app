@@ -1,28 +1,21 @@
 # AI题材选股系统回测架构设计文档（新链 stock_processing_service 版）
 
-> 版本：v2.0  
-> 适用架构：`web_app_service + stock_processing_service + database_service.gateway` 新链  
+> 版本：v3.0
+> 适用架构：`web_app_service + stock_processing_service + database_service.gateway` 新链
 > 废弃约束：`stock_service` 目录下的旧链选股/回测扩展不再作为新功能落点；仅允许作为历史兼容参考或临时适配依赖。
 
 ---
 
-## 0. 本次修订背景
+## 0. 本次修订背景（v3.0）
 
-上一版文档把“策略信号验证 / 日线回测 / 策略实验室”放在旧链 `stock_service` 之后，这是不符合当前项目演进方向的。
+v2.0 确定了回测系统落点在新链 `stock_processing_service`，v3.0 在此基础上补充：
 
-根据代码核查，当前系统已经迁移到新链：
-
-```text
-web_app_service
-    ↓ HTTP proxy / read client
-stock_processing_service.api_app
-    ↓ DatabaseGateway / Ports / Application Jobs / Use Cases
-database_service.gateway
-    ↓
-PostgreSQL / Redis / 行情与题材数据表
-```
-
-因此，回测系统必须作为 `stock_processing_service` 的新能力建设，而不是继续扩展 `stock_service`。
+1. **新增 w2s_backtest_run 表**：所有回测输出绑定运行批次，支持多参数、多版本对比和幂等重跑。
+2. **新增 w2s_backtest_feature_snapshot 表**：冻结历史特征快照，保证回测可复现，原始特征与派生特征严格分离。
+3. **策略文档映射**：基于「弱转强买入法」「如何建立正确的交易体系」「集合竞价」「如何找出牛股」「如何抓涨停股」五份策略文档，提取可量化规则并映射至回测框架。
+4. **实验对照设计**：底层支持6组实验，前端第一版展示3组，先分组归因、再硬过滤。
+5. **竞价数据模式严格分离**：`confirm_source` 区分真实竞价和 proxy，不混算。
+6. **工程约束强化**：Phase 0 不生成买卖建议、confirm_source 作为一级分组、重跑幂等。
 
 ---
 
@@ -57,7 +50,7 @@ python -m uvicorn stock_processing_service.api_app:app --host 127.0.0.1 --port 8
 4. 提供 readyz/healthz 检查
 ```
 
-因此，未来前端不应直接依赖旧 `frontend_bff` 的选股接口，而应通过：
+未来前端不应直接依赖旧 `frontend_bff` 的选股接口，而应通过：
 
 ```text
 frontend
@@ -67,7 +60,27 @@ web_app_service /api/v2/*
 stock_processing_service /api/v1/*
 ```
 
-### 1.3 新链已有的核心能力
+### 1.3 新链弱转强核心代码落点
+
+**弱转强候选生成（唯一落点）：**
+
+```text
+stock_processing_service/application/use_cases/build_weak_to_strong_candidate.py
+  └─ BuildWeakToStrongCandidateUseCase.build_candidates()
+
+stock_processing_service/domain/services/w2s_candidate_service.py
+  └─ W2SCandidateService.explain_candidate()
+
+stock_processing_service/domain/services/w2s_confirm_service.py
+  └─ W2SConfirmService.confirm()
+
+stock_processing_service/domain/services/w2s_auction_scorer.py
+  └─ W2SAuctionScorer.score_one()
+```
+
+**禁止对新链回测系统引用旧链类名：`W2SCandidateService._classify_weak_type()` 等旧写法全部废弃。**
+
+### 1.4 新链已有核心能力
 
 当前 `stock_processing_service` 已经包含：
 
@@ -88,357 +101,196 @@ NewChainIntelFeedAdapter
 CollectionJobManager
 ```
 
-这意味着回测系统应接入这些新链产物，而不是旧链服务类。
+---
+
+## 2. 策略文档 → 回测规则映射
+
+基于五份策略文档提取的可量化规则：
+
+### 2.1 弱转强买入法
+
+| 阶段 | 规则 | 量化方法 |
+|------|------|---------|
+| T日分歧识别 | 烂板/首阴/冲高回落 | `weak_type ∈ {bad_limit_up, big_negative_line, upper_shadow, high_open_low_close}` |
+| T日支撑确认 | 关键均线/前低不破 | `support_type ∈ {gap_support, ma_support, platform_support, prev_low_support}` |
+| T+1盘前确认 | 集合竞价高开/抢筹 | `auction_open_pct >= 0 AND auction_amount 充沛` |
+| 龙头限定 | 只做龙头/次龙头 | `is_leader=true OR rank_order<=3 OR recent_limit_up_count>=2` |
+| 止损 | 跌破关键支撑 | `-5% 硬止损` |
+| 止盈 | 反包成功持股待涨 | `+10% 止盈` |
+
+### 2.2 如何建立正确的交易体系
+
+| 维度 | 权重 | 回测映射 |
+|------|------|---------|
+| 抓市场主线 | 35% | `mainline_strength_score >= 60 AND fade_confirmed = false` |
+| 看市场情绪/周期 | 30% | `cycle_state ∈ {forming, confirmed, fade, divergence, repair}` |
+| 盯龙头核心 | 20% | `leader_role_proxy ∈ {leader, card, assist, supplement, unknown}` |
+| 找准买点 | 15% | 日线用 `next_open` 近似；分钟级暂不支持 |
+
+### 2.3 集合竞价
+
+| 规则 | 量化方法 | 数据要求 |
+|------|---------|---------|
+| 竞价分时稳定性 | `std(9:20-9:25 prices)` | 需要竞价分时序列 |
+| 末分钟抢筹 | `vol_9:24-9:25 / avg_vol_9:20-9:24 >= 1.5` | 需要竞价分时序列 |
+| 量能承接 | `auction_amount / prev_day_max_minute >= 0.5` | 需要昨日分钟量 |
+| 高开幅度 | `auction_open_pct ∈ [0%, 5%]` | 已有 |
+
+### 2.4 如何找出牛股（牛股三绝）
+
+| 规则 | 量化方法 |
+|------|---------|
+| 高量不破 | `low_price > high_volume_bar_low` |
+| 倍量不穿 | `2nd_bottom >= 1st_bottom` |
+| 缺口不补 | `gap_not_filled == true` |
+| 均线多头排列 | `MA5 > MA10 > MA20 > MA60` |
+
+### 2.5 如何抓涨停股（二板定龙头）
+
+| 规则 | 量化方法 |
+|------|---------|
+| 涨停基因 | `prior7_limitup_days >= 1` |
+| 首板换手板优于一字板 | `turnover_rate_1st_board > 15%` |
+| 二板强度 | 缩量封死 > 放量分歧转一致 |
+| 板块效应 | `same_subject_limit_up_count >= 2` |
 
 ---
 
-## 2. 新链下的回测总体架构
-
-```mermaid
-flowchart TD
-
-subgraph A[数据源层]
-    A1[日K行情 / Tushare / AkShare]
-    A2[久赢恒丰题材库]
-    A3[财联社/实时新闻/情报流]
-    A4[竞价快照 / Auction Snapshot]
-end
-
-subgraph B[database_service.gateway]
-    B1[DatabaseGateway]
-    B2[PostgreSQL]
-    B3[Redis Cache]
-end
-
-subgraph C[stock_processing_service 新链处理层]
-    C1[BuildDailySnapshotJob]
-    C2[BuildCycleJudgementJob]
-    C3[BuildMainlineStateJob]
-    C4[BuildThemeCycleEvidenceDailyJob]
-    C5[BuildStrongStockTrackingUseCase]
-    C6[BuildWeakToStrongCandidateUseCase]
-    C7[BuildAuctionSnapshotJob]
-    C8[BuildAuctionSignalJob]
-    C9[BuildPostMarketRecapJob]
-    C10[BuildPreMarketBriefJob]
-    C11[NewChainIntelFeedAdapter]
-end
-
-subgraph D[新增：策略信号层]
-    D1[StrategySignalAdapter]
-    D2[StrategyPluginRegistry]
-    D3[WeakToStrongSignalStrategy]
-    D4[MainlineLeaderSignalStrategy]
-    D5[GapSupportReversalSignalStrategy]
-    D6[EventDrivenThemeSignalStrategy]
-    D7[(strategy_signal_daily)]
-end
-
-subgraph E[新增：信号验证层]
-    E1[SignalValidationUseCase]
-    E2[ForwardReturnCalculator]
-    E3[(strategy_signal_validation)]
-end
-
-subgraph F[新增：日线回测层]
-    F1[RunDailyBacktestUseCase]
-    F2[BacktestDataLoader]
-    F3[VirtualBroker]
-    F4[PortfolioManager]
-    F5[RiskManager]
-    F6[PerformanceAnalyzer]
-    F7[AttributionAnalyzer]
-end
-
-subgraph G[新增：回测结果存储]
-    G1[(backtest_run)]
-    G2[(backtest_order)]
-    G3[(backtest_trade)]
-    G4[(backtest_position)]
-    G5[(backtest_equity_curve)]
-    G6[(backtest_daily_metrics)]
-    G7[(backtest_attribution)]
-end
-
-subgraph H[对外访问层]
-    H1[stock_processing_service /api/v1/strategy-lab/*]
-    H2[stock_processing_service /api/v1/backtests/*]
-    H3[web_app_service /api/v2/strategy-lab/*]
-    H4[web_app_service /api/v2/backtests/*]
-    H5[frontend Strategy Lab]
-end
-
-A1 --> B1
-A2 --> B1
-A3 --> B1
-A4 --> B1
-B1 --> B2
-B1 --> B3
-
-B1 --> C1
-B1 --> C2
-B1 --> C3
-B1 --> C4
-B1 --> C5
-B1 --> C6
-B1 --> C7
-B1 --> C8
-B1 --> C9
-B1 --> C10
-B1 --> C11
-
-C3 --> D1
-C4 --> D1
-C5 --> D1
-C6 --> D1
-C7 --> D1
-C8 --> D1
-C9 --> D1
-C10 --> D1
-C11 --> D1
-
-D2 --> D3
-D2 --> D4
-D2 --> D5
-D2 --> D6
-D1 --> D7
-D3 --> D7
-D4 --> D7
-D5 --> D7
-D6 --> D7
-
-D7 --> E1
-B1 --> E2
-E2 --> E1
-E1 --> E3
-
-D7 --> F1
-B1 --> F2
-F2 --> F1
-F1 --> F3
-F3 --> F4
-F4 --> F5
-F5 --> F1
-F4 --> F6
-F6 --> F7
-
-F1 --> G1
-F3 --> G2
-F3 --> G3
-F4 --> G4
-F6 --> G5
-F6 --> G6
-F7 --> G7
-
-D7 --> H1
-E3 --> H1
-G1 --> H2
-G5 --> H2
-G7 --> H2
-H1 --> H3
-H2 --> H4
-H3 --> H5
-H4 --> H5
-```
-
----
-
-## 3. 新链服务边界
-
-### 3.1 `stock_processing_service`
-
-这是新增回测能力的唯一后端落点。
-
-职责：
-
-```text
-1. 生成策略信号
-2. 验证策略信号
-3. 执行日线回测
-4. 管理回测任务与结果
-5. 提供 /api/v1/strategy-lab/* 和 /api/v1/backtests/*
-6. 通过 DatabaseGateway 读写数据库
-7. 通过 application/use_cases 和 application/jobs 承载业务流程
-```
-
-### 3.2 `web_app_service`
-
-职责：
-
-```text
-1. 对前端提供 /api/v2/*
-2. 转发 Strategy Lab / Backtest API 到 stock_processing_service
-3. 管理 stock_processing_service 生命周期
-4. 提供 readyz 检查，确保 SPS 可用
-```
-
-### 3.3 `frontend_bff`
-
-旧过渡层。后续不再作为新功能主入口。
-
-```text
-允许：
-- 历史兼容
-- 临时代理
-- 旧前端尚未迁移时保留
-
-禁止：
-- 新增回测核心逻辑
-- 新增策略服务
-- 新增回测数据库写入逻辑
-```
-
-### 3.4 `stock_service`
-
-旧链目录。后续不再扩展。
-
-```text
-允许：
-- 临时复用个别稳定工具类
-- 历史代码参考
-- 迁移过程中的兼容 import
-
-禁止：
-- 新增策略信号模块
-- 新增回测模块
-- 新增数据库表管理
-- 新增 API 入口
-```
-
----
-
-## 4. 新链推荐目录结构
+## 3. 新链推荐目录结构（v3.0）
 
 ```text
 stock_processing_service/
   domain/
     backtest/
-      models.py
-      metrics.py
-      rules.py
-      constants.py
-
-    strategy_signal/
-      models.py
-      enums.py
-      policy.py
+      w2s_models.py                # 数据模型 + 枚举 + DTO
+      w2s_feature_rules.py         # 特征派生规则（leader_role_proxy等）
+      w2s_experiment_rules.py      # 6组实验条件定义
+      w2s_metrics.py               # 收益/胜率/回撤计算
 
   application/
-    use_cases/
-      generate_strategy_signals.py
-      validate_strategy_signals.py
-      run_daily_backtest.py
-      compare_backtest_runs.py
-
-    jobs/
-      build_strategy_signal_daily_job.py
-      validate_strategy_signal_daily_job.py
-      run_backtest_job.py
-
     services/
-      signal_adapters/
-        base.py
-        weak_to_strong_signal_adapter.py
-        mainline_leader_signal_adapter.py
-        stock_screener_signal_adapter.py
-        event_driven_signal_adapter.py
-
       backtest/
-        data_loader.py
-        virtual_broker.py
-        portfolio_manager.py
-        risk_manager.py
-        performance_analyzer.py
-        attribution_analyzer.py
+        w2s_data_quality_service.py        # 数据质量检查
+        w2s_feature_snapshot_service.py    # 特征快照生成
+        w2s_signal_builder_service.py      # 信号生成
+        w2s_signal_validation_service.py   # 未来收益计算
+        w2s_validation_summary_service.py  # 实验组汇总
 
   infrastructure/
     gateway_adapters/
-      strategy_signal_gateway.py
-      backtest_gateway.py
+      w2s_backtest_gateway_adapter.py      # 回测表读写
 
   api_app.py
 ```
 
----
-
-## 5. 新链策略信号层设计
-
-### 5.1 为什么必须新增策略信号层
-
-新链当前已有多类候选和信号来源：
-
-```text
-1. weak_to_strong_candidate_pool
-2. weak_to_strong auction confirm
-3. strong_stock_watch_pool
-4. post_market_recap_snapshot
-5. pre_market_brief_snapshot
-6. theme_cycle_judgement_v2
-7. mainline_state_daily
-8. theme_cycle_evidence_daily
-9. intel_feed
-```
-
-如果回测引擎直接读取这些业务表，会导致：
-
-```text
-1. 策略入口分散
-2. 回测口径不统一
-3. 难以做策略版本管理
-4. 难以防未来函数
-5. 难以做多策略比较
-```
-
-因此必须先统一成：
-
-```text
-strategy_signal_daily
-```
-
-### 5.2 策略信号统一模型
-
-```python
-@dataclass
-class StrategySignal:
-    signal_id: str
-    strategy_id: str
-    strategy_version: str
-    trade_date: date
-    signal_session: str          # post_market / pre_market / intraday
-    available_at: datetime
-    tradable_at: datetime
-
-    stock_id: str
-    stock_name: str
-    subject_key: str | None
-    theme_name: str | None
-
-    direction: str               # buy / watch / avoid / sell
-    signal_level: str            # A / B / C / X
-    score: float
-    confidence: float
-
-    entry_plan: dict
-    exit_plan: dict
-    risk_plan: dict
-    evidence_json: dict
-
-    source_chain: str            # stock_processing_service
-    source_table: str
-    source_id: str
-    source_snapshot_version: str
-    rule_version: str
-```
+**第一阶段不做 StrategyPluginRegistry / BaseStrategy 等插件抽象，等 Phase 3 后再考虑。**
 
 ---
 
-## 6. 推荐新增数据库表
+## 4. 数据库表设计（v3.0）
 
-### 6.1 策略信号表
+### 4.1 回测运行批次表
+
+```sql
+CREATE TABLE IF NOT EXISTS w2s_backtest_run (
+    run_id TEXT PRIMARY KEY,
+    strategy_id TEXT NOT NULL DEFAULT 'weak_to_strong',
+    strategy_version TEXT NOT NULL,
+    run_type VARCHAR(32) NOT NULL,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+
+    config_json JSONB NOT NULL DEFAULT '{}'::jsonb,
+    data_quality_json JSONB NOT NULL DEFAULT '{}'::jsonb,
+
+    status VARCHAR(32) NOT NULL DEFAULT 'pending',
+    error_message TEXT,
+
+    signal_count INTEGER DEFAULT 0,
+    validated_count INTEGER DEFAULT 0,
+
+    created_at TIMESTAMP DEFAULT now(),
+    started_at TIMESTAMP,
+    completed_at TIMESTAMP
+);
+```
+
+### 4.2 特征快照表
+
+```sql
+CREATE TABLE IF NOT EXISTS w2s_backtest_feature_snapshot (
+    snapshot_id TEXT PRIMARY KEY,
+    run_id TEXT NOT NULL REFERENCES w2s_backtest_run(run_id),
+    strategy_version TEXT NOT NULL,
+
+    candidate_trade_date DATE NOT NULL,
+    confirm_trade_date DATE,
+
+    stock_id VARCHAR(32) NOT NULL,
+    stock_name VARCHAR(64),
+
+    subject_key VARCHAR(64),
+    theme_name VARCHAR(128),
+
+    -- 候选层特征
+    candidate_id BIGINT,
+    pool_entry_type VARCHAR(32),
+    candidate_score NUMERIC(8,2),
+    candidate_type VARCHAR(64),
+    weak_type VARCHAR(64),
+
+    support_type VARCHAR(64),
+    support_strength NUMERIC(8,2),
+
+    -- 龙头身份层特征
+    is_leader BOOLEAN,
+    rank_order INTEGER,
+    recent_limit_up_count INTEGER,
+    prior7_limitup_days INTEGER,
+    prior7_strong_days INTEGER,
+
+    leader_role_proxy VARCHAR(32),
+    leader_score_proxy NUMERIC(8,2),
+    two_board_quality_score NUMERIC(8,2),
+    board_type VARCHAR(32),
+    is_20cm BOOLEAN DEFAULT false,
+
+    -- 主线题材层特征
+    mainline_strength_score NUMERIC(8,2),
+    fade_watch BOOLEAN,
+    fade_confirmed BOOLEAN,
+    cycle_state VARCHAR(64),
+
+    -- 竞价确认层特征
+    auction_feature_mode VARCHAR(32),
+    auction_open_pct NUMERIC(8,4),
+    auction_amount NUMERIC(18,2),
+    auction_score NUMERIC(8,2),
+    confirm_level VARCHAR(16),
+    confirmation_score NUMERIC(8,2),
+    auction_feature_quality VARCHAR(32),
+    missing_features JSONB NOT NULL DEFAULT '[]'::jsonb,
+
+    -- 牛股三绝特征评分
+    bull_stock_score NUMERIC(8,2),
+
+    -- 原始特征与派生特征分离
+    raw_feature_json JSONB NOT NULL DEFAULT '{}'::jsonb,
+    derived_feature_json JSONB NOT NULL DEFAULT '{}'::jsonb,
+
+    source_trace JSONB NOT NULL DEFAULT '{}'::jsonb,
+    created_at TIMESTAMP DEFAULT now(),
+
+    UNIQUE(run_id, strategy_version, candidate_trade_date, confirm_trade_date, stock_id)
+);
+```
+
+### 4.3 策略信号表
 
 ```sql
 CREATE TABLE IF NOT EXISTS strategy_signal_daily (
     signal_id TEXT PRIMARY KEY,
+    run_id TEXT NOT NULL REFERENCES w2s_backtest_run(run_id),
     strategy_id TEXT NOT NULL,
     strategy_version TEXT NOT NULL,
     trade_date DATE NOT NULL,
@@ -452,9 +304,14 @@ CREATE TABLE IF NOT EXISTS strategy_signal_daily (
     theme_name TEXT,
 
     direction TEXT NOT NULL,
+    tradable BOOLEAN DEFAULT false,
     signal_level TEXT,
     score NUMERIC(8,2),
     confidence NUMERIC(8,4),
+
+    confirm_level VARCHAR(16),
+    confirm_source VARCHAR(32),
+    reject_reason_code VARCHAR(64),
 
     entry_plan JSONB DEFAULT '{}'::jsonb,
     exit_plan JSONB DEFAULT '{}'::jsonb,
@@ -469,24 +326,16 @@ CREATE TABLE IF NOT EXISTS strategy_signal_daily (
 
     created_at TIMESTAMP DEFAULT now(),
 
-    UNIQUE(strategy_id, strategy_version, trade_date, signal_session, stock_id, source_id)
+    UNIQUE(run_id, strategy_id, strategy_version, trade_date, signal_session, stock_id, source_id)
 );
-
-CREATE INDEX IF NOT EXISTS idx_strategy_signal_daily_date
-ON strategy_signal_daily(trade_date);
-
-CREATE INDEX IF NOT EXISTS idx_strategy_signal_daily_strategy_date
-ON strategy_signal_daily(strategy_id, trade_date);
-
-CREATE INDEX IF NOT EXISTS idx_strategy_signal_daily_stock
-ON strategy_signal_daily(stock_id);
 ```
 
-### 6.2 策略信号验证表
+### 4.4 策略信号验证表
 
 ```sql
 CREATE TABLE IF NOT EXISTS strategy_signal_validation (
     signal_id TEXT PRIMARY KEY REFERENCES strategy_signal_daily(signal_id),
+    run_id TEXT NOT NULL REFERENCES w2s_backtest_run(run_id),
     strategy_id TEXT NOT NULL,
     strategy_version TEXT NOT NULL,
     trade_date DATE NOT NULL,
@@ -514,6 +363,8 @@ CREATE TABLE IF NOT EXISTS strategy_signal_validation (
     is_win_3d BOOLEAN,
     is_win_5d BOOLEAN,
 
+    loss_over_5pct BOOLEAN,
+
     validation_status TEXT DEFAULT 'ok',
     validation_error TEXT,
 
@@ -521,273 +372,271 @@ CREATE TABLE IF NOT EXISTS strategy_signal_validation (
 );
 ```
 
-### 6.3 回测任务表
+### 4.5 验证汇总表
 
 ```sql
-CREATE TABLE IF NOT EXISTS backtest_run (
-    run_id TEXT PRIMARY KEY,
-    strategy_id TEXT NOT NULL,
-    strategy_version TEXT NOT NULL,
+CREATE TABLE IF NOT EXISTS w2s_validation_summary (
+    run_id TEXT NOT NULL REFERENCES w2s_backtest_run(run_id),
+    experiment_id VARCHAR(32) NOT NULL,
+    confirm_source_group VARCHAR(32),
+    confirm_level VARCHAR(16),
 
-    start_date DATE NOT NULL,
-    end_date DATE NOT NULL,
+    sample_count INTEGER,
+    win_rate_1d NUMERIC(8,4),
+    win_rate_3d NUMERIC(8,4),
+    win_rate_5d NUMERIC(8,4),
+    avg_return_3d NUMERIC(12,6),
+    avg_return_5d NUMERIC(12,6),
+    max_drawdown_5d NUMERIC(12,6),
+    hit_limit_up_pct NUMERIC(8,4),
+    loss_over_5pct_pct NUMERIC(8,4),
 
-    initial_cash NUMERIC(18,2) NOT NULL,
-    benchmark TEXT,
-
-    fee_bps NUMERIC(8,4) DEFAULT 2.5,
-    slippage_bps NUMERIC(8,4) DEFAULT 30.0,
-
-    buy_price_mode TEXT DEFAULT 'next_open',
-    sell_price_mode TEXT DEFAULT 'close',
-    max_holding_days INTEGER DEFAULT 3,
-    stop_loss_pct NUMERIC(8,4) DEFAULT -0.05,
-    take_profit_pct NUMERIC(8,4) DEFAULT 0.10,
-
-    config_json JSONB DEFAULT '{}'::jsonb,
-    metrics_json JSONB DEFAULT '{}'::jsonb,
-
-    status TEXT NOT NULL DEFAULT 'pending',
-    error_message TEXT,
-
-    created_at TIMESTAMP DEFAULT now(),
-    completed_at TIMESTAMP
+    PRIMARY KEY(run_id, experiment_id, confirm_source_group, confirm_level)
 );
 ```
 
-### 6.4 虚拟订单、成交、持仓、净值
+---
+
+## 5. 实验设计（v3.0）
+
+### 5.1 底层支持6组实验
+
+```python
+EXPERIMENT_GROUPS = {
+    "EXP_A_BASELINE": {
+        "label": "全量基准",
+        "conditions": {"pool_entry_type": ("formal", "observe_only")},
+    },
+    "EXP_B_FORMAL_ONLY": {
+        "label": "仅formal候选",
+        "conditions": {"pool_entry_type": ("formal",)},
+    },
+    "EXP_C_MAINLINE": {
+        "label": "主线过滤",
+        "conditions": {
+            "pool_entry_type": ("formal",),
+            "mainline_strength_score_min": 60,
+            "fade_confirmed": False,
+        },
+    },
+    "EXP_D_LEADER": {
+        "label": "龙头过滤",
+        "conditions": {
+            "pool_entry_type": ("formal",),
+            "leader_role_proxy": ("leader", "card"),
+        },
+    },
+    "EXP_E_MAINLINE_LEADER": {
+        "label": "主线+龙头",
+        "conditions": {
+            "pool_entry_type": ("formal",),
+            "mainline_strength_score_min": 60,
+            "fade_confirmed": False,
+            "leader_role_proxy": ("leader", "card"),
+        },
+    },
+    "EXP_F_CONFIRMED_AB": {
+        "label": "主线+龙头+A/B确认",
+        "conditions": {
+            "pool_entry_type": ("formal",),
+            "mainline_strength_score_min": 60,
+            "fade_confirmed": False,
+            "leader_role_proxy": ("leader", "card"),
+            "confirm_level": ("A", "B"),
+        },
+    },
+}
+```
+
+### 5.2 前端第一版展示3组
+
+```python
+VISIBLE_EXPERIMENTS = ["EXP_A_BASELINE", "EXP_C_MAINLINE", "EXP_E_MAINLINE_LEADER"]
+```
+
+### 5.3 confirm_source 一级分组
+
+每组实验内按 `confirm_source` 分组输出：
+- `real_auction` — 真实竞价分时数据
+- `auction_snapshot` — 竞价快照（无分时序列）
+- `daily_open_proxy` — 日K代理
+- `missing` — 无数据
+
+---
+
+## 6. 竞价评分设计（v3.0）
+
+### 6.1 AuctionFeatureSet
+
+```python
+@dataclass
+class AuctionFeatureSet:
+    stock_id: str
+    auction_open_pct: Decimal | None
+    auction_amount: Decimal | None
+    tail_auction_vwap: Decimal | None
+
+    auction_stability_score: Decimal | None = None
+    last_minute_grab_score: Decimal | None = None
+    amount_vs_prev_max_minute: Decimal | None = None
+
+    feature_mode: str = "proxy"
+    feature_quality: str = "partial"
+```
+
+### 6.2 tail_vwap 重构
+
+```python
+# 旧逻辑：tail_signal = max(0, min(100, tail_vwap * 5))
+# 新逻辑（百分比化）：
+tail_strength = (tail_auction_vwap - pre_close) / pre_close * 100
+```
+
+### 6.3 权重重归一化
+
+```python
+components = [
+    ("open_strength", open_strength, Decimal("0.35")),
+    ("amount_strength", amount_strength, Decimal("0.30")),
+    ("tail_strength", tail_strength, Decimal("0.20")),
+    ("stability_score", stability_score, Decimal("0.10")),
+    ("last_minute_grab_score", last_minute_grab_score, Decimal("0.05")),
+]
+
+available = [(name, score, w) for name, score, w in components if score is not None]
+weight_sum = sum(w for _, _, w in available)
+raw_score = sum(score * w for _, score, w in available) / weight_sum
+final_score = raw_score - risk_penalty
+```
+
+**缺数据时权重重归一化，不将缺失当0分惩罚。**
+
+---
+
+## 7. 龙头身份代理（v3.0）
+
+```python
+def classify_leader_role_proxy(row: dict) -> str:
+    is_leader = bool(row.get("is_leader"))
+    rank_order = int(row.get("rank_order") or 999)
+    recent_limit_up = int(row.get("recent_limit_up_count") or 0)
+    same_subject_limit_up = int(row.get("same_subject_limit_up_count") or 0)
+
+    if is_leader and recent_limit_up >= 2:
+        return "leader"
+    if rank_order == 2 and recent_limit_up >= 1:
+        return "card"
+    if 3 <= rank_order <= 5 and same_subject_limit_up >= 2:
+        return "assist"
+    if recent_limit_up == 0 and same_subject_limit_up >= 1:
+        return "supplement"
+    return "unknown"
+
+
+def classify_board_type(stock_id: str) -> tuple[str, bool]:
+    if stock_id.startswith("3"):
+        return "chinext", True
+    if stock_id.startswith("688"):
+        return "star", True
+    if stock_id.startswith("8"):
+        return "beijing", False
+    return "main_board", False
+```
+
+**leader_role_proxy 和 board_type 独立存储，支持交叉分析。**
+
+---
+
+## 8. API 设计
+
+### 8.1 SPS API
+
+```text
+POST /api/v1/backtest/w2s/data-quality
+POST /api/v1/backtest/w2s/build-feature-snapshot
+POST /api/v1/backtest/w2s/validate-signals
+GET  /api/v1/backtest/w2s/runs/{run_id}
+GET  /api/v1/backtest/w2s/runs/{run_id}/summary
+GET  /api/v1/backtest/w2s/runs/{run_id}/signals
+```
+
+### 8.2 web_app_service 代理
+
+```text
+POST /api/v2/backtest/w2s/data-quality
+POST /api/v2/backtest/w2s/build-feature-snapshot
+POST /api/v2/backtest/w2s/validate-signals
+GET  /api/v2/backtest/w2s/runs/{run_id}
+GET  /api/v2/backtest/w2s/runs/{run_id}/summary
+GET  /api/v2/backtest/w2s/runs/{run_id}/signals
+```
+
+### 8.3 请求/响应格式
+
+**POST /api/v1/backtest/w2s/data-quality**
+```json
+{
+  "start_date": "2025-06-01",
+  "end_date": "2025-12-31",
+  "strategy_version": "w2s_v0.1"
+}
+```
+
+**POST /api/v1/backtest/w2s/build-feature-snapshot**
+```json
+{
+  "run_id": "<uuid>",
+  "force_rebuild": false
+}
+```
+
+**POST /api/v1/backtest/w2s/validate-signals**
+```json
+{
+  "run_id": "<uuid>",
+  "look_forward_days": [1, 2, 3, 5]
+}
+```
+
+---
+
+## 9. 工程约束
+
+### 9.1 Phase 0 不生成买卖建议
+
+Phase 0 只输出验证结论（胜率、收益、回撤等统计指标），不输出"推荐买入某股票"。
+
+### 9.2 confirm_source 必须作为一级分组
+
+报告内必须按 `real_auction / auction_snapshot / daily_open_proxy / missing` 分组统计，不混算。
+
+`daily_open_proxy` 占比高时必须在报告中提示：**当前结论主要基于日K代理确认，不等同真实竞价回测。**
+
+### 9.3 重跑幂等
+
+同一 `(run_id, strategy_version, start_date, end_date)` 重复执行时：
 
 ```sql
-CREATE TABLE IF NOT EXISTS backtest_order (
-    order_id TEXT PRIMARY KEY,
-    run_id TEXT NOT NULL REFERENCES backtest_run(run_id),
-    trade_date DATE NOT NULL,
-    stock_id TEXT NOT NULL,
-    stock_name TEXT,
-    side TEXT NOT NULL,
-    target_weight NUMERIC(8,4),
-    target_amount NUMERIC(18,2),
-    signal_id TEXT,
-    order_reason TEXT,
-    status TEXT,
-    reject_reason TEXT,
-    created_at TIMESTAMP DEFAULT now()
-);
+-- 先删除当前 run_id 下的中间表数据
+DELETE FROM w2s_backtest_feature_snapshot WHERE run_id = $1;
+DELETE FROM strategy_signal_daily WHERE run_id = $1;
+DELETE FROM strategy_signal_validation WHERE run_id = $1;
+DELETE FROM w2s_validation_summary WHERE run_id = $1;
 
-CREATE TABLE IF NOT EXISTS backtest_trade (
-    trade_id TEXT PRIMARY KEY,
-    run_id TEXT NOT NULL REFERENCES backtest_run(run_id),
-    trade_date DATE NOT NULL,
-    stock_id TEXT NOT NULL,
-    stock_name TEXT,
-    side TEXT NOT NULL,
-    fill_price NUMERIC(18,4),
-    fill_qty NUMERIC(18,2),
-    fill_amount NUMERIC(18,2),
-    fee NUMERIC(18,2),
-    slippage_cost NUMERIC(18,2),
-    order_id TEXT,
-    signal_id TEXT,
-    created_at TIMESTAMP DEFAULT now()
-);
-
-CREATE TABLE IF NOT EXISTS backtest_position (
-    run_id TEXT NOT NULL REFERENCES backtest_run(run_id),
-    trade_date DATE NOT NULL,
-    stock_id TEXT NOT NULL,
-    stock_name TEXT,
-    qty NUMERIC(18,2),
-    cost_price NUMERIC(18,4),
-    close_price NUMERIC(18,4),
-    market_value NUMERIC(18,2),
-    unrealized_pnl NUMERIC(18,2),
-    holding_days INTEGER,
-    subject_key TEXT,
-    theme_name TEXT,
-    PRIMARY KEY(run_id, trade_date, stock_id)
-);
-
-CREATE TABLE IF NOT EXISTS backtest_equity_curve (
-    run_id TEXT NOT NULL REFERENCES backtest_run(run_id),
-    trade_date DATE NOT NULL,
-    cash NUMERIC(18,2),
-    position_value NUMERIC(18,2),
-    total_equity NUMERIC(18,2),
-    daily_return NUMERIC(12,6),
-    drawdown NUMERIC(12,6),
-    PRIMARY KEY(run_id, trade_date)
-);
-
-CREATE TABLE IF NOT EXISTS backtest_attribution (
-    run_id TEXT NOT NULL REFERENCES backtest_run(run_id),
-    attribution_type TEXT NOT NULL, -- strategy / theme / market_state / signal_level
-    attribution_key TEXT NOT NULL,
-    trade_count INTEGER,
-    win_rate NUMERIC(8,4),
-    avg_return NUMERIC(12,6),
-    total_pnl NUMERIC(18,2),
-    max_drawdown NUMERIC(12,6),
-    evidence_json JSONB DEFAULT '{}'::jsonb,
-    PRIMARY KEY(run_id, attribution_type, attribution_key)
-);
+-- 再重新生成
 ```
+
+或使用 `ON CONFLICT ... DO UPDATE`。
+
+**不允许同一只股票同一天出现多条重复信号。**
+
+### 9.4 数据质量门禁
+
+`daily_bar_coverage_ratio < 95%` → 直接阻止验证。
 
 ---
 
-## 7. 新链 API 设计
-
-### 7.1 SPS API：`stock_processing_service/api_app.py`
-
-新增：
-
-```text
-POST /api/v1/strategy-lab/signals/generate
-GET  /api/v1/strategy-lab/signals
-POST /api/v1/strategy-lab/signals/validate
-GET  /api/v1/strategy-lab/validation-summary
-
-POST /api/v1/backtests/run
-GET  /api/v1/backtests/{run_id}
-GET  /api/v1/backtests/{run_id}/equity-curve
-GET  /api/v1/backtests/{run_id}/trades
-GET  /api/v1/backtests/{run_id}/positions
-GET  /api/v1/backtests/{run_id}/attribution
-GET  /api/v1/backtests/compare
-```
-
-### 7.2 Web API：`web_app_service/api/routes.py`
-
-新增代理：
-
-```text
-POST /api/v2/strategy-lab/signals/generate
-GET  /api/v2/strategy-lab/signals
-POST /api/v2/strategy-lab/signals/validate
-GET  /api/v2/strategy-lab/validation-summary
-
-POST /api/v2/backtests/run
-GET  /api/v2/backtests/{run_id}
-GET  /api/v2/backtests/{run_id}/equity-curve
-GET  /api/v2/backtests/{run_id}/trades
-GET  /api/v2/backtests/{run_id}/positions
-GET  /api/v2/backtests/{run_id}/attribution
-GET  /api/v2/backtests/compare
-```
-
----
-
-## 8. 第一阶段 MVP：最近半年/一年策略验证
-
-### 8.1 目标
-
-先不做完整资金回测，只验证历史信号：
-
-```text
-最近半年 / 一年：
-1. 策略信号数量
-2. 1/2/3/5日胜率
-3. 平均收益率
-4. 最大回撤
-5. 涨停概率
-6. A/B/C/X 信号等级区分度
-7. 题材周期分组表现
-8. 市场状态分组表现
-```
-
-### 8.2 第一优先策略：弱转强
-
-输入：
-
-```text
-stock_processing_service.application.use_cases.BuildWeakToStrongCandidateUseCase
-weak_to_strong_candidate_pool
-W2SConfirmService
-auction snapshot
-stock daily bars
-```
-
-信号生成：
-
-```text
-T 日 D1 候选：
-  BuildWeakToStrongCandidateUseCase 读取 strong watch pool 输入
-  产出 weak_to_strong_candidate_pool
-
-T+1 盘前确认：
-  W2SConfirmService 读取候选 + 竞价数据
-  输出 A/B/C/X 信号
-```
-
-验证：
-
-```text
-T+1 作为 buy_ref_date
-buy_ref_price = T+1 open 或 close
-统计未来 1/2/3/5 日收益
-```
-
-### 8.3 信号验证流程
-
-```mermaid
-sequenceDiagram
-    participant Web as web_app_service
-    participant SPS as stock_processing_service
-    participant GW as DatabaseGateway
-    participant DB as PostgreSQL
-
-    Web->>SPS: POST /api/v1/strategy-lab/signals/generate
-    SPS->>GW: read weak_to_strong candidates / strong watch / auction
-    GW->>DB: query source rows
-    DB-->>GW: source rows
-    SPS->>SPS: StrategySignalAdapter normalize
-    SPS->>GW: upsert strategy_signal_daily
-    GW->>DB: write signals
-
-    Web->>SPS: POST /api/v1/strategy-lab/signals/validate
-    SPS->>GW: read strategy_signal_daily + daily bars
-    GW->>DB: query bars
-    SPS->>SPS: ForwardReturnCalculator
-    SPS->>GW: upsert strategy_signal_validation
-    GW->>DB: write validation
-```
-
----
-
-## 9. 日线回测 MVP
-
-### 9.1 回测假设
-
-当前只有日K数据，因此第一版只做日线回测。
-
-默认假设：
-
-```text
-买入：信号 tradable_at 对应交易日的 next_open
-卖出：持有 N 天后 close
-滑点：默认 0.3%
-手续费：默认 0.025%
-涨停一字：视为买不到
-跌停一字：视为卖不出
-停牌/缺行情：跳过或延后
-```
-
-### 9.2 回测主循环
-
-```text
-for trade_date in trading_calendar:
-    1. 读取当天可交易信号
-    2. 过滤不可交易信号
-    3. 根据风险规则生成目标订单
-    4. VirtualBroker 用日K模拟成交
-    5. PortfolioManager 更新持仓
-    6. ExitRuleEngine 检查止损/止盈/持仓天数
-    7. PerformanceAnalyzer 计算净值与回撤
-    8. AttributionAnalyzer 记录题材/策略/市场状态归因
-```
-
----
-
-## 10. 新链下的防未来函数规则
+## 10. 防未来函数规则
 
 必须给每条信号写入：
 
@@ -813,12 +662,6 @@ pre_market 信号：
 
 intraday 信号：
   第一版不支持，后续有分钟数据再做
-
-recap / post_market_snapshot：
-  只能用于 T+1 交易，不能用于 T 日交易
-
-pre_market_brief：
-  若由 T-1 数据生成，可用于 T 日盘前决策
 ```
 
 ---
@@ -850,88 +693,94 @@ stock_processing_service/infrastructure/gateway_adapters
 
 ### 11.3 临时兼容 import
 
-当前 `stock_processing_service/api_app.py` 仍临时 import 了部分 `stock_service` 的 Tushare/Auction 工具类。这些应被标记为“兼容依赖”，不应成为新回测系统的扩展点。
+当前 `stock_processing_service/api_app.py` 仍临时 import 了部分 `stock_service` 的 Tushare/Auction 工具类。这些应被标记为"兼容依赖"，不应成为新回测系统的扩展点。
 
 ---
 
 ## 12. 开发路线
 
-### Phase 0：新链接口与 Gateway 补齐
+### Phase 0：数据质量 + 特征快照 + 信号验证闭环
 
-时间：2-3 个工作日
-
-任务：
-
-```text
-1. 新增 strategy_signal / backtest 的 Gateway 方法
-2. 新增 DDL migration
-3. 在 stock_processing_service 中增加空 API
-4. 在 web_app_service 中增加代理 API
-```
-
-### Phase 1：弱转强信号验证
-
-时间：4-7 个工作日
+时间：7-11 个工作日
 
 任务：
 
 ```text
-1. WeakToStrongSignalAdapter
-2. GenerateStrategySignalsUseCase
-3. ValidateStrategySignalsUseCase
-4. ForwardReturnCalculator
-5. 输出 validation summary
+1. 新增 DDL（w2s_backtest_run / w2s_backtest_feature_snapshot / 完善 strategy_signal 表族）
+2. 实现 w2s_data_quality_service.py（daily_bar 覆盖率检查 + 硬门禁）
+3. 实现 w2s_feature_snapshot_service.py（读取候选池 + 补充特征 + 冻结快照）
+4. 实现 w2s_signal_builder_service.py（从快照生成统一信号）
+5. 实现 w2s_signal_validation_service.py（1/3/5日收益计算）
+6. 实现 w2s_validation_summary_service.py（6组实验底层 + 3组前端展示）
+7. 接 SPS API（6个端点）
+8. 接 web_app_service 代理（6个代理端点）
 ```
 
 验收：
 
 ```text
-最近半年/一年：
-A/B/C/X 各等级信号数量、胜率、平均收益、最大回撤、涨停概率可查询。
+1. 输入 start_date / end_date / strategy_version → 生成 run_id
+2. run_id 下生成 feature_snapshot，不重复、不串版本
+3. 所有信号都有 candidate_trade_date 和 confirm_trade_date
+4. 所有信号都有 confirm_source
+5. 能统计真实竞价 vs proxy 样本比例
+6. 能输出 A/B/C/X 分组
+7. 能输出三组实验 A/B/C
+8. 能输出 1/3/5 日胜率、平均收益、最大回撤、涨停概率、亏损超 -5% 比例
+9. 能下载/查看信号明细
+10. 重跑同一 run_id 不产生重复数据
 ```
 
-### Phase 2：日线级回测 MVP
-
-时间：7-12 个工作日
-
-任务：
-
-```text
-1. RunDailyBacktestUseCase
-2. BacktestDataLoader
-3. VirtualBroker
-4. PortfolioManager
-5. PerformanceAnalyzer
-6. BacktestResult API
-```
-
-验收：
-
-```text
-可对 weak_to_strong 策略执行 T+1 开盘买入、持有 N 天、止损/止盈的资金曲线回测。
-```
-
-### Phase 3：Strategy Lab 前端
+### Phase 1：日线资金回测 MVP
 
 时间：5-8 个工作日
 
 任务：
 
 ```text
-1. 策略选择
-2. 日期范围选择
-3. 信号验证报告
-4. 回测报告
-5. 交易明细
-6. 净值曲线
-7. 分组归因
+1. RunDailyBacktestUseCase
+2. BacktestDataLoader
+3. VirtualBroker（T+1 开盘买入 / 持有N天收盘卖出 / 涨停买不到 / 跌停卖不出）
+4. PortfolioManager（等权最多5只）
+5. PerformanceAnalyzer（净值曲线 / 回撤）
+6. BacktestResult API
 ```
 
-### Phase 4：多策略扩展
+### Phase 2：竞价评分增强
 
-时间：2-4 周
+时间：2-3 个工作日
 
-策略：
+任务：
+
+```text
+1. tail_vwap 重构为百分比化
+2. 权重重归一化（缺数据不降权）
+3. 竞价模式区分（real_auction_series / auction_proxy）
+4. missing_features 记录
+```
+
+### Phase 3：牛股三绝 + 二板质量特征评分
+
+时间：3-4 个工作日
+
+```text
+1. bull_stock_score 计算（高量不破/倍量不穿/缺口不补/均线多头排列）
+2. two_board_quality_score 计算（首板换手率/二板强度/板块效应）
+3. 分组回测验证
+```
+
+### Phase 4：情绪周期动态仓位
+
+时间：2-3 个工作日
+
+```text
+1. cycle_position_sizer（按周期阶段动态调整仓位系数）
+2. 各周期阶段分组回测
+```
+
+### Phase 5：多策略组合回测
+
+时间：7-12 个工作日
 
 ```text
 1. 主线龙头策略
@@ -945,61 +794,32 @@ A/B/C/X 各等级信号数量、胜率、平均收益、最大回撤、涨停概
 
 ## 13. 主要难点
 
-### 13.1 Gateway 方法缺口
-
-新链强调 gateway-first，因此回测需要补齐：
-
-```text
-get_strategy_signals
-upsert_strategy_signals
-get_daily_bars_for_window
-upsert_signal_validations
-create_backtest_run
-upsert_backtest_orders
-upsert_backtest_trades
-upsert_backtest_positions
-upsert_equity_curve
-upsert_backtest_attribution
-```
-
-### 13.2 防未来函数
-
-这是最大风险。
+### 13.1 防未来函数
 
 必须严格区分：
 
 ```text
-候选生成日
-确认日
-可用时间
-可交易时间
-行情验证窗口
+候选生成日 → 确认日 → 可用时间 → 可交易时间 → 行情验证窗口
 ```
+
+### 13.2 竞价数据缺失
+
+第一版大量历史数据没有完整竞价分时，需要通过 `confirm_source` 严格标记：
+- 真实竞价样本和 proxy 样本分开统计
+- proxy 占比高时在报告中透明提示
 
 ### 13.3 日K回测的真实度限制
 
 没有分钟数据，不能验证：
-
-```text
-竞价尾盘抢筹细节
-盘中拉升回落
-开盘瞬间可成交性
-盘口承接
-盘中止盈/止损先后顺序
-```
+- 竞价尾盘抢筹细节
+- 盘中拉升回落
+- 开盘瞬间可成交性
 
 第一版只做日线统计和日线撮合。
 
 ### 13.4 旧链残留风险
 
-当前部分入口和工具仍在旧链。如果新回测继续调用旧链，未来废弃时会产生二次迁移成本。
-
-解决原则：
-
-```text
-新增代码一律落在 stock_processing_service；
-旧代码只迁移算法思想，不迁移服务依赖。
-```
+新增代码一律落在 `stock_processing_service`；旧代码只迁移算法思想，不迁移服务依赖。
 
 ---
 
@@ -1009,10 +829,9 @@ upsert_backtest_attribution
 
 ```text
 stock_processing_service
-  + strategy_signal layer
-  + signal_validation layer
-  + daily_backtest layer
-  + gateway adapters
+  + domain/backtest/
+  + application/services/backtest/
+  + infrastructure/gateway_adapters/w2s_backtest_gateway_adapter.py
 ```
 
 对外访问路径是：
@@ -1020,9 +839,9 @@ stock_processing_service
 ```text
 frontend
   ↓
-web_app_service /api/v2/strategy-lab/* /api/v2/backtests/*
+web_app_service /api/v2/backtest/w2s/*
   ↓
-stock_processing_service /api/v1/strategy-lab/* /api/v1/backtests/*
+stock_processing_service /api/v1/backtest/w2s/*
   ↓
 DatabaseGateway
   ↓
@@ -1032,21 +851,19 @@ PostgreSQL / Redis
 最小闭环从弱转强开始：
 
 ```text
-strong_stock_watch_pool
+weak_to_strong_candidate_pool (BuildWeakToStrongCandidateUseCase)
   ↓
-BuildWeakToStrongCandidateUseCase
+w2s_backtest_feature_snapshot (冻结特征快照)
   ↓
-weak_to_strong_candidate_pool
+strategy_signal_daily (统一信号)
   ↓
-W2SConfirmService
+strategy_signal_validation (未来收益验证)
   ↓
-strategy_signal_daily
-  ↓
-strategy_signal_validation
-  ↓
-最近半年/一年胜率与收益统计
+w2s_validation_summary (三组实验对照)
   ↓
 日线资金回测
 ```
 
-这一版跑通后，再扩展主线龙头、题材启动、缺口支撑反弹、事件驱动策略。
+第一阶段目标：**验证弱转强信号是否有统计区分度，并确认主线、龙头、竞价确认三个条件是否真的提升胜率和收益。**
+
+这一版跑通后，再扩展主线龙头、牛股三绝、竞价增强、情绪周期、多策略组合。

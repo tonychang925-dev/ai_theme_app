@@ -1,13 +1,10 @@
 from __future__ import annotations
 
-import logging
 import os
 from typing import Any
 
 from stock_processing_service.publishers.notion_block_builder import NotionBlockBuilder
 from stock_processing_service.publishers.notion_publish_models import NotionPublishResult
-
-logger = logging.getLogger(__name__)
 
 
 class NotionPostMarketRecapPublisher:
