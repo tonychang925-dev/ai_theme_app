@@ -124,6 +124,7 @@ def evaluate(
         "brief_major_event_count": len(sections.get("major_events") or []),
         "brief_theme_count": len(sections.get("matched_themes") or []),
         "brief_opportunity_count": len(sections.get("event_driven_opportunities") or []),
+        "performance": _extract_performance_summary(trace.get("counts", {})),
         "diagnostics": diagnostics,
     }
     stock_report = {
@@ -177,6 +178,7 @@ def _write_confusion(path: Path, rows: list[dict[str, Any]]) -> None:
 
 
 def _write_summary(path: Path, report: dict[str, Any], trace_counts: dict[str, Any]) -> None:
+    perf = report.get("performance") if isinstance(report.get("performance"), dict) else {}
     lines = [
         "# 盘前必读 E2E Summary",
         "",
@@ -192,11 +194,46 @@ def _write_summary(path: Path, report: dict[str, Any], trace_counts: dict[str, A
         f"- wrong_related_count: {report['wrong_related_count']}",
         f"- generic_only_related_count: {report['generic_only_related_count']}",
         f"- llm_anchor_guard_count: {report['llm_anchor_guard_count']}",
+        f"- avg_match_ms: {perf.get('avg_match_ms', trace_counts.get('avg_match_ms', 0))}",
+        f"- p50_match_ms: {perf.get('p50_match_ms', trace_counts.get('p50_match_ms', 0))}",
+        f"- p95_match_ms: {perf.get('p95_match_ms', trace_counts.get('p95_match_ms', 0))}",
+        f"- llm_judge_count: {perf.get('llm_judge_count', trace_counts.get('llm_judge_count', 0))}",
+        f"- event_profile_llm_count: {perf.get('event_profile_llm_count', trace_counts.get('event_profile_llm_count', 0))}",
+        f"- profile_load_count: {perf.get('profile_load_count', trace_counts.get('profile_load_count', 0))}",
+        f"- profile_cache_hit_count: {perf.get('profile_cache_hit_count', trace_counts.get('profile_cache_hit_count', 0))}",
+        f"- profile_cache_miss_count: {perf.get('profile_cache_miss_count', trace_counts.get('profile_cache_miss_count', 0))}",
+        f"- profile_map_cache_hit_count: {perf.get('profile_map_cache_hit_count', trace_counts.get('profile_map_cache_hit_count', 0))}",
+        f"- profile_map_cache_miss_count: {perf.get('profile_map_cache_miss_count', trace_counts.get('profile_map_cache_miss_count', 0))}",
+        f"- query_vector_cache_hit_count: {perf.get('query_vector_cache_hit_count', trace_counts.get('query_vector_cache_hit_count', 0))}",
+        f"- query_vector_cache_miss_count: {perf.get('query_vector_cache_miss_count', trace_counts.get('query_vector_cache_miss_count', 0))}",
+        f"- rerank_doc_vector_cache_hit_count: {perf.get('rerank_doc_vector_cache_hit_count', trace_counts.get('rerank_doc_vector_cache_hit_count', 0))}",
+        f"- rerank_doc_vector_cache_miss_count: {perf.get('rerank_doc_vector_cache_miss_count', trace_counts.get('rerank_doc_vector_cache_miss_count', 0))}",
         f"- brief_theme_count: {report['brief_theme_count']}",
         f"- brief_opportunity_count: {report['brief_opportunity_count']}",
         f"- 是否通过基础门禁: {_base_gate_passed(report, trace_counts)}",
     ]
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def _extract_performance_summary(trace_counts: dict[str, Any]) -> dict[str, Any]:
+    keys = [
+        "match_timing_sample_count",
+        "avg_match_ms",
+        "p50_match_ms",
+        "p95_match_ms",
+        "llm_judge_count",
+        "event_profile_llm_count",
+        "profile_load_count",
+        "profile_cache_hit_count",
+        "profile_cache_miss_count",
+        "profile_map_cache_hit_count",
+        "profile_map_cache_miss_count",
+        "query_vector_cache_hit_count",
+        "query_vector_cache_miss_count",
+        "rerank_doc_vector_cache_hit_count",
+        "rerank_doc_vector_cache_miss_count",
+    ]
+    return {key: trace_counts.get(key, 0) for key in keys}
 
 
 def _base_gate_passed(report: dict[str, Any], trace_counts: dict[str, Any]) -> bool:

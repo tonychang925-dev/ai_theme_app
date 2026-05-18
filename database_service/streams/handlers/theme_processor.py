@@ -1726,18 +1726,19 @@ class ThemeProcessor:
                 else:
                     logger.error(f"   创建消费者组失败 {stream_name}: {e}")
     
-    async def _process_stream(self, stream_type: str):
+    async def _process_stream(self, stream_type: str, worker_index: int = 0):
         """处理单个Stream"""
         stream_name = self.input_streams[stream_type]
         config = self.processing_config[stream_type]
+        consumer_suffix = stream_type if worker_index <= 0 else f"{stream_type}_{worker_index}"
         
-        logger.info(f"📥 开始处理 {stream_type} 流: {stream_name}")
+        logger.info(f"📥 开始处理 {stream_type} 流: {stream_name} worker={worker_index}")
         
         while self.running:
             try:
                 messages = await self.redis_client.xreadgroup(
                     groupname=self.consumer_group,
-                    consumername=f"{self.consumer_name}_{stream_type}",
+                    consumername=f"{self.consumer_name}_{consumer_suffix}",
                     streams={stream_name: ">"},
                     count=config["batch_size"],
                     block=config["block_time"]
@@ -1774,14 +1775,26 @@ class ThemeProcessor:
         await self._create_consumer_groups()
         
         # 启动监听任务
+        structured_concurrency = self._structured_concurrency()
         listener_tasks = [
-            asyncio.create_task(self._process_stream("structured"), name="structured_processor")
+            asyncio.create_task(
+                self._process_stream("structured", worker_index=index),
+                name=f"structured_processor_{index}",
+            )
+            for index in range(structured_concurrency)
         ]
         
         self.all_tasks.extend(listener_tasks)
         
         logger.info(f"✅ 启动完成，{len(listener_tasks)}个监听任务")
         return listener_tasks
+
+    @staticmethod
+    def _structured_concurrency() -> int:
+        try:
+            return max(1, min(8, int(os.getenv("THEME_PROCESSOR_STRUCTURED_CONCURRENCY", "1"))))
+        except ValueError:
+            return 1
     
     async def stop(self):
         """停止处理器 - 保持原有结构"""

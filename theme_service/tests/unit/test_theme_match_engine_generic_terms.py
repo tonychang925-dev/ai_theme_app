@@ -92,6 +92,14 @@ class _NoDenseThemeMatchEngine(ThemeMatchEngine):
         return out
 
 
+class _RaisingJudge:
+    def enabled(self):
+        return True
+
+    def judge(self, *args, **kwargs):
+        raise AssertionError("LLM judge should not be called")
+
+
 def _lanjian_request() -> ThemeMatchRequest:
     return ThemeMatchRequest(
         event_id=1,
@@ -102,6 +110,89 @@ def _lanjian_request() -> ThemeMatchRequest:
         event_type="行业观点",
         entities=["蓝箭航天", "朱雀三号", "火箭"],
     )
+
+
+@pytest.mark.asyncio
+async def test_match_event_attaches_performance_audit(monkeypatch):
+    monkeypatch.setenv("THEME_MATCH_LLM_JUDGE_MODE", "off")
+    engine = _NoDenseThemeMatchEngine(
+        _Repo([
+            _profile(
+                "9062142",
+                "蓝箭航天IPO",
+                aliases=["蓝箭航天IPO"],
+                core_objects=["蓝箭航天", "朱雀三号"],
+                must_terms=["蓝箭航天"],
+                strong_terms=["朱雀三号", "火箭"],
+            )
+        ])
+    )
+
+    result = await engine.match_event(_lanjian_request())
+
+    perf = result.audit.get("performance") or {}
+    assert result.decision == "MATCH"
+    assert perf.get("timing_ms", {}).get("total_match_ms") is not None
+    assert perf.get("counters", {}).get("llm_judge_mode") == "off"
+    assert perf.get("counters", {}).get("llm_judge_count") == 0
+
+
+@pytest.mark.asyncio
+async def test_llm_judge_off_skips_enabled_judge(monkeypatch):
+    monkeypatch.setenv("THEME_MATCH_LLM_JUDGE_MODE", "off")
+    engine = _NoDenseThemeMatchEngine(
+        _Repo([
+            _profile(
+                "9062142",
+                "蓝箭航天IPO",
+                aliases=["蓝箭航天IPO"],
+                core_objects=["蓝箭航天"],
+                must_terms=["蓝箭航天"],
+            )
+        ])
+    )
+    engine._judge = _RaisingJudge()
+
+    result = await engine.match_event(_lanjian_request())
+
+    assert result.decision == "MATCH"
+
+
+def test_rerank_doc_vector_cache_reuses_profile_vectors(monkeypatch):
+    monkeypatch.setenv("THEME_MATCH_RERANK_VECTOR_CACHE_MAX", "10")
+
+    class _FakeModel:
+        def __init__(self):
+            self.batch_encode_calls = 0
+
+        def encode(self, value):
+            if isinstance(value, list):
+                self.batch_encode_calls += 1
+                return [[1.0, 0.0] for _ in value]
+            return [1.0, 0.0]
+
+    engine = ThemeMatchEngine(_Repo([]))
+    fake_model = _FakeModel()
+    engine._sentence_model = fake_model
+    profile = _profile(
+        "9062142",
+        "蓝箭航天IPO",
+        aliases=["蓝箭航天IPO"],
+        core_objects=["蓝箭航天"],
+        must_terms=["蓝箭航天"],
+        rerank_text="蓝箭航天 朱雀三号 商业航天",
+    )
+    request = _lanjian_request()
+    rows = [{"subject_key": profile.subject_key, "dense_score": 0.1, "rerank_text": profile.rerank_text}]
+
+    first_counters = {}
+    second_counters = {}
+    engine._rerank(request, rows, {profile.subject_key: profile}, _build_event_match_profile(request), first_counters)
+    engine._rerank(request, rows, {profile.subject_key: profile}, _build_event_match_profile(request), second_counters)
+
+    assert first_counters.get("rerank_doc_vector_cache_miss_count") == 1
+    assert second_counters.get("rerank_doc_vector_cache_hit_count") == 1
+    assert fake_model.batch_encode_calls == 1
 
 
 def test_lanjian_event_profile_keeps_supplier_words_out_of_anchors():

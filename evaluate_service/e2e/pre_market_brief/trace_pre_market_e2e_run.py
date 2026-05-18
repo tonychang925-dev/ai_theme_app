@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+import json
 import sys
 from pathlib import Path
 from typing import Any
@@ -84,6 +85,7 @@ async def trace_run(
         event_id = row["news_event_id"]
         event_mappings = mappings.get(int(event_id), []) if event_id is not None else []
         primary = event_mappings[0] if event_mappings else {}
+        match_performance = _extract_mapping_performance(primary)
         trace_rows.append(
             {
                 "case_id": case_id,
@@ -100,6 +102,7 @@ async def trace_run(
                 "review_reason": reviews.get(int(event_id), {}).get("reason") if event_id is not None else None,
                 "pending_status": None,
                 "dead_letter_status": None,
+                "match_performance": match_performance,
             }
         )
 
@@ -111,6 +114,20 @@ async def trace_run(
         dead_letter_stream=dead_letter_stream,
         scan_limit=redis_scan_limit,
     )
+    decision_by_event_id = {
+        str(item.get("event_id")): item
+        for item in redis_trace.get("decision_entries", [])
+        if item.get("event_id") is not None
+    }
+    for row in trace_rows:
+        decision_entry = decision_by_event_id.get(str(row.get("news_event_id")))
+        if not decision_entry:
+            continue
+        row["decision_id"] = decision_entry.get("stream_id")
+        if not row.get("match_performance"):
+            row["match_performance"] = decision_entry.get("match_performance") or {}
+        if not row.get("review_reason") and decision_entry.get("reason_code"):
+            row["review_reason"] = decision_entry.get("reason_code")
     counts = {
         "expected_input_count": len(expected),
         "news_raw_count": len({row["news_raw_id"] for row in rows}),
@@ -123,6 +140,7 @@ async def trace_run(
         "pending_count": redis_trace["pending_count"],
         "dead_letter_count": redis_trace["dead_letter_count"],
     }
+    counts.update(_aggregate_match_performance(trace_rows))
     return {
         "run_id": run_id,
         "trade_date": trade_date,
@@ -255,6 +273,82 @@ async def _fetch_reviews(conn: Any, event_ids: list[int]) -> dict[int, dict[str,
     return {int(row["event_id"]): dict(row) for row in rows}
 
 
+def _extract_mapping_performance(mapping: dict[str, Any]) -> dict[str, Any]:
+    evidence = mapping.get("evidence_json") if isinstance(mapping, dict) else {}
+    if isinstance(evidence, str):
+        try:
+            evidence = json.loads(evidence)
+        except Exception:
+            evidence = {}
+    if not isinstance(evidence, dict):
+        return {}
+    audit = evidence.get("audit") if isinstance(evidence.get("audit"), dict) else {}
+    performance = audit.get("performance") if isinstance(audit.get("performance"), dict) else {}
+    return performance if isinstance(performance, dict) else {}
+
+
+def _aggregate_match_performance(rows: list[dict[str, Any]]) -> dict[str, Any]:
+    totals: list[float] = []
+    llm_judge_count = 0
+    event_profile_llm_count = 0
+    query_hit_count = 0
+    query_miss_count = 0
+    rerank_hit_count = 0
+    rerank_miss_count = 0
+    profile_cache_stats: dict[str, int] = {}
+    for row in rows:
+        perf = row.get("match_performance") if isinstance(row.get("match_performance"), dict) else {}
+        timing = perf.get("timing_ms") if isinstance(perf.get("timing_ms"), dict) else {}
+        total_ms = timing.get("total_match_ms")
+        if total_ms is not None:
+            try:
+                totals.append(float(total_ms))
+            except (TypeError, ValueError):
+                pass
+        counters = perf.get("counters") if isinstance(perf.get("counters"), dict) else {}
+        llm_judge_count += int(counters.get("llm_judge_count") or 0)
+        event_profile_llm_count += int(counters.get("event_profile_llm_count") or 0)
+        query_hit_count += int(counters.get("query_vector_cache_hit_count") or 0)
+        query_miss_count += int(counters.get("query_vector_cache_miss_count") or 0)
+        rerank_hit_count += int(counters.get("rerank_doc_vector_cache_hit_count") or 0)
+        rerank_miss_count += int(counters.get("rerank_doc_vector_cache_miss_count") or 0)
+        cache_stats = perf.get("profile_cache_stats") if isinstance(perf.get("profile_cache_stats"), dict) else {}
+        for key, value in cache_stats.items():
+            try:
+                profile_cache_stats[key] = max(profile_cache_stats.get(key, 0), int(value or 0))
+            except (TypeError, ValueError):
+                continue
+
+    totals.sort()
+    out: dict[str, Any] = {
+        "match_timing_sample_count": len(totals),
+        "llm_judge_count": llm_judge_count,
+        "event_profile_llm_count": event_profile_llm_count,
+        "query_vector_cache_hit_count": query_hit_count,
+        "query_vector_cache_miss_count": query_miss_count,
+        "rerank_doc_vector_cache_hit_count": rerank_hit_count,
+        "rerank_doc_vector_cache_miss_count": rerank_miss_count,
+    }
+    out.update(profile_cache_stats)
+    if not totals:
+        return out
+    out.update(
+        {
+            "avg_match_ms": round(sum(totals) / len(totals), 3),
+            "p50_match_ms": round(_percentile(totals, 0.50), 3),
+            "p95_match_ms": round(_percentile(totals, 0.95), 3),
+        }
+    )
+    return out
+
+
+def _percentile(values: list[float], pct: float) -> float:
+    if not values:
+        return 0.0
+    idx = min(len(values) - 1, max(0, int(round((len(values) - 1) * pct))))
+    return values[idx]
+
+
 async def _fetch_redis_trace(
     *,
     redis_url: str | None,
@@ -315,6 +409,7 @@ async def _scan_stream_for_run(client: Any, stream: str, run_id: str, scan_limit
                 "case_id": _first_matching_field(fields, "case_id"),
                 "event_id": _first_matching_field(fields, "event_id"),
                 "decision": _first_matching_field(fields, "decision", "action"),
+                **_extract_decision_payload_trace(fields),
             }
         )
     return list(reversed(matched))
@@ -325,6 +420,25 @@ def _first_matching_field(fields: dict[str, Any], *names: str) -> str | None:
         if fields.get(name):
             return str(fields[name])
     return None
+
+
+def _extract_decision_payload_trace(fields: dict[str, Any]) -> dict[str, Any]:
+    raw = fields.get("decision")
+    if not raw:
+        return {}
+    try:
+        payload = json.loads(raw) if isinstance(raw, str) else raw
+    except Exception:
+        return {}
+    if not isinstance(payload, dict):
+        return {}
+    match_result = payload.get("match_result") if isinstance(payload.get("match_result"), dict) else {}
+    audit = match_result.get("audit") if isinstance(match_result.get("audit"), dict) else {}
+    return {
+        "action": payload.get("action"),
+        "reason_code": match_result.get("reason_code") or payload.get("reason"),
+        "match_performance": audit.get("performance") if isinstance(audit.get("performance"), dict) else {},
+    }
 
 
 async def async_main() -> None:

@@ -121,7 +121,7 @@ class W2SFeatureSnapshotService:
                 if not stock_id:
                     continue
 
-                snapshot = self._build_one_snapshot(
+                snapshot = await self._build_one_snapshot(
                     candidate=candidate,
                     candidate_trade_date=current,
                     confirm_trade_date=confirm_trade_date,
@@ -148,7 +148,7 @@ class W2SFeatureSnapshotService:
             "written": written,
         }
 
-    def _build_one_snapshot(
+    async def _build_one_snapshot(
         self,
         *,
         candidate: dict[str, Any],
@@ -241,20 +241,46 @@ class W2SFeatureSnapshotService:
             # missing data
             confirm_level = "proxy_unconfirmed"
 
-        # ── Mainline features ──
+        # ── Mainline features (v0.4: feature store first, dynamic fallback) ──
+        subj_feat = await self._read_subject_feature(candidate_trade_date, subject_key) if subject_key else None
         ml_state = mainline_states.get(subject_key, {})
-        mainline_strength_score = _to_decimal(
-            candidate.get("mainline_strength_score")
-            or ml_state.get("mainline_strength_score")
-        )
-        fade_watch = bool(candidate.get("fade_watch") or False)
-        fade_confirmed = bool(candidate.get("fade_confirmed") or False)
 
-        # ── Leader features ──
-        leader_role_proxy = classify_leader_role_proxy(candidate)
+        if subj_feat:
+            mainline_strength_score = _to_decimal(subj_feat.get("mainline_strength_score"))
+            cycle_state_from_fs = str(subj_feat.get("cycle_state") or "unknown")
+            fade_watch = bool(subj_feat.get("fade_watch") or False)
+            fade_confirmed = bool(subj_feat.get("fade_confirmed") or False)
+        else:
+            mainline_strength_score = _to_decimal(
+                candidate.get("mainline_strength_score")
+                or ml_state.get("mainline_strength_score")
+            )
+            cycle_state_from_fs = candidate.get("cycle_state") or ml_state.get("state") or "unknown"
+            fade_watch = bool(candidate.get("fade_watch") or False)
+            fade_confirmed = bool(candidate.get("fade_confirmed") or False)
+
+        # ── Leader features (v0.4: feature store first, dynamic fallback) ──
+        stock_feat = await self._read_strong_stock_feature(candidate_trade_date, stock_id)
+
+        if stock_feat:
+            # Use feature store data
+            leader_role_proxy = str(stock_feat.get("leader_role_proxy") or "unknown")
+            # Also enrich candidate with feature store fields for classify_leader_role_proxy fallback
+            enriched = dict(candidate)
+            enriched["is_leader"] = stock_feat.get("is_leader", candidate.get("is_leader"))
+            enriched["rank_order"] = stock_feat.get("rank_order", candidate.get("rank_order"))
+            enriched["recent_limit_up_count"] = stock_feat.get("recent_limit_up_count", candidate.get("recent_limit_up_count"))
+            enriched["prior7_limitup_days"] = stock_feat.get("prior7_limitup_days", candidate.get("prior7_limitup_days"))
+            enriched["prior7_strong_days"] = stock_feat.get("prior7_strong_days", candidate.get("prior7_strong_days"))
+            enriched["watch_score"] = stock_feat.get("watch_score", candidate.get("watch_score"))
+            leader_score_proxy = compute_leader_score_proxy(enriched)
+            two_board_quality_score = compute_two_board_quality_score(enriched)
+        else:
+            leader_role_proxy = classify_leader_role_proxy(candidate)
+            leader_score_proxy = compute_leader_score_proxy(candidate)
+            two_board_quality_score = compute_two_board_quality_score(candidate)
+
         board_type, is_20cm = classify_board_type(stock_id)
-        leader_score_proxy = compute_leader_score_proxy(candidate)
-        two_board_quality_score = compute_two_board_quality_score(candidate)
 
         # ── v0.3 weak type quality ──
         weak_type = str(candidate.get("weak_type") or "")
@@ -333,11 +359,26 @@ class W2SFeatureSnapshotService:
             "weak_type": candidate.get("weak_type"),
             "support_type": candidate.get("support_type"),
             "support_strength": _to_float_str(candidate.get("support_strength")),
-            "is_leader": bool(candidate.get("is_leader")),
-            "rank_order": int(candidate.get("rank_order") or 999),
-            "recent_limit_up_count": int(candidate.get("recent_limit_up_count") or 0),
-            "prior7_limitup_days": int(candidate.get("prior7_limitup_days") or 0),
-            "prior7_strong_days": int(candidate.get("prior7_strong_days") or 0),
+            "is_leader": bool(
+                (stock_feat.get("is_leader") if stock_feat else None)
+                or candidate.get("is_leader")
+            ),
+            "rank_order": int(
+                (stock_feat.get("rank_order") if stock_feat else None)
+                or candidate.get("rank_order") or 999
+            ),
+            "recent_limit_up_count": int(
+                (stock_feat.get("recent_limit_up_count") if stock_feat else None)
+                or candidate.get("recent_limit_up_count") or 0
+            ),
+            "prior7_limitup_days": int(
+                (stock_feat.get("prior7_limitup_days") if stock_feat else None)
+                or candidate.get("prior7_limitup_days") or 0
+            ),
+            "prior7_strong_days": int(
+                (stock_feat.get("prior7_strong_days") if stock_feat else None)
+                or candidate.get("prior7_strong_days") or 0
+            ),
             "leader_role_proxy": leader_role_proxy,
             "leader_score_proxy": str(leader_score_proxy),
             "two_board_quality_score": str(two_board_quality_score),
@@ -346,7 +387,7 @@ class W2SFeatureSnapshotService:
             "mainline_strength_score": str(mainline_strength_score) if mainline_strength_score is not None else None,
             "fade_watch": fade_watch,
             "fade_confirmed": fade_confirmed,
-            "cycle_state": candidate.get("cycle_state"),
+            "cycle_state": cycle_state_from_fs,
             "auction_feature_mode": auction_feature_mode,
             "auction_open_pct": str(auction_open_pct) if auction_open_pct is not None else None,
             "auction_amount": str(auction_amount) if auction_amount is not None else None,
@@ -511,6 +552,48 @@ class W2SFeatureSnapshotService:
             except Exception as exc:
                 logger.error("Failed to write snapshot for %s: %s", s.get("stock_id"), exc)
         return written
+
+    async def _read_subject_feature(self, trade_date: date, subject_key: str) -> dict[str, Any] | None:
+        """Phase -1: read A-layer subject features from feature store."""
+        try:
+            rows = await self._gw._client.execute_query(
+                "SELECT * FROM subject_daily_feature WHERE trade_date = $1 AND subject_key = $2 AND rule_version = 'subject_feature_v0.1' LIMIT 1",
+                (trade_date, subject_key),
+            )
+            return _row_dict(rows[0]) if rows else None
+        except Exception:
+            return None
+
+    async def _read_strong_stock_feature(self, trade_date: date, stock_id: str) -> dict[str, Any] | None:
+        """Phase -1: read B-layer strong stock features from feature store.
+
+        Looks for the closest date <= trade_date (feature is available before or on the trade date).
+        Falls back to any date if exact match not found.
+        """
+        try:
+            sid = _normalize(str(stock_id))
+            # Try exact date match first
+            rows = await self._gw._client.execute_query(
+                "SELECT * FROM strong_stock_daily_feature WHERE trade_date = $1 AND stock_id = $2 AND rule_version = 'strong_stock_feature_v0.1' LIMIT 1",
+                (trade_date, sid),
+            )
+            if rows:
+                return _row_dict(rows[0])
+            # Fallback: most recent row before this date
+            rows = await self._gw._client.execute_query(
+                "SELECT * FROM strong_stock_daily_feature WHERE trade_date <= $1 AND stock_id = $2 AND rule_version = 'strong_stock_feature_v0.1' ORDER BY trade_date DESC LIMIT 1",
+                (trade_date, sid),
+            )
+            if rows:
+                return _row_dict(rows[0])
+            # Final fallback: any date
+            rows = await self._gw._client.execute_query(
+                "SELECT * FROM strong_stock_daily_feature WHERE stock_id = $1 AND rule_version = 'strong_stock_feature_v0.1' ORDER BY trade_date DESC LIMIT 1",
+                (sid,),
+            )
+            return _row_dict(rows[0]) if rows else None
+        except Exception:
+            return None
 
     async def _delete_run_snapshots(self, run_id: str) -> None:
         """Delete existing snapshots for a run_id (idempotent rebuild)."""
