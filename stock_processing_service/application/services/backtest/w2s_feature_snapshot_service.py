@@ -203,8 +203,8 @@ class W2SFeatureSnapshotService:
         has_daily_bar = stock_id in bars
 
         confirm_source = determine_confirm_source(
-            has_auction_snapshot=has_auction_series,
-            has_auction_series=has_auction_snapshot,
+            has_auction_snapshot=has_auction_snapshot,
+            has_auction_series=has_auction_series,
             has_daily_bar=has_daily_bar,
         )
         auction_feature_mode = determine_auction_feature_mode(has_auction_series)
@@ -332,14 +332,18 @@ class W2SFeatureSnapshotService:
             "bull_stock_score": str(bull_stock_score) if bull_stock_score is not None else None,
         }
 
-        # ── Source trace ──
+        # ── Source trace (with feature dates for audit) ──
         source_trace = {
             "candidate_source": "weak_to_strong_candidate_pool",
-            "candidate_input_fn": "get_w2s_candidate_inputs",
-            "mainline_source": "mainline_state_daily" if ml_state else "candidate_row",
-            "leader_source": "candidate_row_fields",
+            "candidate_input_fn": "get_w2s_candidates_by_trade_date",
+            "subject_feature_date": str(candidate_trade_date),
+            "subject_feature_source": "subject_daily_feature" if subj_feat else ("mainline_state_daily" if ml_state else "candidate_row"),
+            "strong_stock_feature_date": str(candidate_trade_date) if stock_feat else None,
+            "strong_stock_feature_source": "strong_stock_daily_feature" if stock_feat else "candidate_row_fields",
             "auction_source": "stock_auction_snapshot" if auction is not None else "missing",
             "daily_bar_source": "stock_daily_bars" if has_daily_bar else "missing",
+            "confirm_source": confirm_source,
+            "feature_rule_version": "w2s_feature_rules_v0.3",
         }
 
         return {
@@ -567,8 +571,9 @@ class W2SFeatureSnapshotService:
     async def _read_strong_stock_feature(self, trade_date: date, stock_id: str) -> dict[str, Any] | None:
         """Phase -1: read B-layer strong stock features from feature store.
 
-        Looks for the closest date <= trade_date (feature is available before or on the trade date).
-        Falls back to any date if exact match not found.
+        STRICT MODE: only exact date or most recent <= trade_date.
+        NO any-date fallback (future leak prevention).
+        Returns None if no valid feature found.
         """
         try:
             sid = _normalize(str(stock_id))
@@ -579,19 +584,15 @@ class W2SFeatureSnapshotService:
             )
             if rows:
                 return _row_dict(rows[0])
-            # Fallback: most recent row before this date
+            # Fallback: most recent row before or on this date
             rows = await self._gw._client.execute_query(
                 "SELECT * FROM strong_stock_daily_feature WHERE trade_date <= $1 AND stock_id = $2 AND rule_version = 'strong_stock_feature_v0.1' ORDER BY trade_date DESC LIMIT 1",
                 (trade_date, sid),
             )
             if rows:
                 return _row_dict(rows[0])
-            # Final fallback: any date
-            rows = await self._gw._client.execute_query(
-                "SELECT * FROM strong_stock_daily_feature WHERE stock_id = $1 AND rule_version = 'strong_stock_feature_v0.1' ORDER BY trade_date DESC LIMIT 1",
-                (sid,),
-            )
-            return _row_dict(rows[0]) if rows else None
+            # STRICT: no any-date fallback. Missing feature = marked as missing.
+            return None
         except Exception:
             return None
 
