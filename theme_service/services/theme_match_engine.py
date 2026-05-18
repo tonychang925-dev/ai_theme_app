@@ -237,6 +237,12 @@ def _profile_gate_terms(profile: ThemeProfile, key: str) -> List[str]:
     return _normalize_list(gate_json.get(key))
 
 
+def _profile_eval_metrics(profile: ThemeProfile) -> Dict[str, Any]:
+    gate_json = profile.gate_json if isinstance(profile.gate_json, dict) else {}
+    metrics = gate_json.get("eval_metrics")
+    return metrics if isinstance(metrics, dict) else {}
+
+
 def _env_int(name: str, default: int) -> int:
     try:
         return int(os.getenv(name, str(default)))
@@ -967,6 +973,22 @@ def _build_gate_evidence(
         profile,
         no_anchor_terms,
     )
+    broad_category_blocked = _broad_category_direct_hit_blocked(
+        event_text=event_text,
+        profile=profile,
+        evidence=evidence_for_roles,
+        negative_hits=negative_hits,
+        no_anchor_terms=no_anchor_terms,
+    )
+    if broad_category_blocked:
+        role_meta["role_guard_blocked"] = True
+        role_meta["role_guard_reasons"] = _unique(
+            _normalize_list(role_meta.get("role_guard_reasons")) + ["broad_category_strict"]
+        )
+        role_meta["blocking_hit_terms"] = _unique(
+            _normalize_list(role_meta.get("blocking_hit_terms")) + theme_name_hit_terms + subject_name_hit_terms
+        )
+        role_meta["valid_anchor_terms"] = []
     role_guard_blocked = bool(role_meta.get("role_guard_blocked"))
     valid_anchor_set = set(role_meta.get("valid_anchor_terms") or [])
     theme_name_hit_score = 50 if theme_name_direct_hit and not role_guard_blocked else 0
@@ -1005,6 +1027,7 @@ def _build_gate_evidence(
         "anchor_hits": _unique(object_hits + must_hits + strong_hits + entity_hits + profile_anchor_hits + theme_name_hit_terms),
         "not_hits": not_hits,
         "negative_hits": negative_hits,
+        "broad_category_blocked": broad_category_blocked,
         "positive_score": positive_score,
         "conflict_score": conflict_score,
         **role_meta,
@@ -1018,6 +1041,46 @@ def _build_gate_evidence(
             "role_guard_reasons": role_meta.get("role_guard_reasons") or [],
         },
     }
+
+
+def _broad_category_direct_hit_blocked(
+    *,
+    event_text: str,
+    profile: ThemeProfile,
+    evidence: Dict[str, Any],
+    negative_hits: List[str],
+    no_anchor_terms: List[str] | set[str],
+) -> bool:
+    if _safe_str(_profile_eval_metrics(profile).get("related_policy")) != "broad_category_strict":
+        return False
+    direct_hits = _normalize_list(evidence.get("theme_name_hit_terms")) + _normalize_list(
+        evidence.get("subject_name_hit_terms")
+    )
+    if not direct_hits:
+        return False
+    blocking_phrases = _unique(
+        _normalize_list(negative_hits)
+        + [
+            term
+            for term in _normalize_list(list(no_anchor_terms))
+            if len(term) > len(_safe_str(profile.subject_name)) and _term_in_text(term, event_text)
+        ]
+    )
+    if not blocking_phrases:
+        return False
+    strong_specific_hits = _unique(
+        [
+            term
+            for term in (
+                _normalize_list(evidence.get("object_hits"))
+                + _normalize_list(evidence.get("must_hits"))
+                + _normalize_list(evidence.get("strong_hits"))
+                + _normalize_list(evidence.get("profile_anchor_hits"))
+            )
+            if term not in direct_hits and not _is_no_anchor_term(term, no_anchor_terms)
+        ]
+    )
+    return not strong_specific_hits
 
 
 def _compute_dynamic_topk(
@@ -1301,6 +1364,7 @@ def _merge_recall_rows(
 
 def _collect_direct_hit_subject_keys(request: ThemeMatchRequest, profile_map: Dict[str, ThemeProfile]) -> List[str]:
     event_text_norm = _normalize_text(request.event_text())
+    event_text = request.event_text()
     out: List[str] = []
     for sk, profile in profile_map.items():
         candidate_names = _unique([profile.subject_name, profile.concept] + profile.aliases)
@@ -1312,10 +1376,31 @@ def _collect_direct_hit_subject_keys(request: ThemeMatchRequest, profile_map: Di
                 continue
             if _classify_hit_term_role(s, request.event_text(), profile, "theme_name_hit_terms", set()) in ROLE_BLOCKING_HIT_ROLES:
                 continue
+            if _broad_category_direct_hit_name_blocked(event_text, profile, s):
+                continue
             if _normalize_text(s) in event_text_norm:
                 out.append(sk)
                 break
     return _unique(out)
+
+
+def _broad_category_direct_hit_name_blocked(event_text: str, profile: ThemeProfile, hit_name: str) -> bool:
+    if _safe_str(_profile_eval_metrics(profile).get("related_policy")) != "broad_category_strict":
+        return False
+    if not hit_name or hit_name not in {_safe_str(profile.subject_name), _safe_str(profile.concept)}:
+        return False
+    blockers = (
+        _normalize_list(profile.negative_terms)
+        + _profile_gate_terms(profile, "no_anchor_terms")
+        + _profile_gate_terms(profile, "support_terms")
+    )
+    return any(
+        term
+        and len(term) > len(hit_name)
+        and hit_name in term
+        and (_term_in_text(term, event_text) or _normalize_text(term) in _normalize_text(event_text))
+        for term in blockers
+    )
 
 
 def _inject_direct_hit_candidates(

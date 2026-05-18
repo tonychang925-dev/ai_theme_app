@@ -9,6 +9,7 @@ from theme_service.services.theme_match_engine import (
     _build_event_match_profile,
     _build_gate_evidence,
     _calc_feature_recall_score,
+    _collect_direct_hit_subject_keys,
     _build_feature_recall_rows,
 )
 from theme_service.services.theme_match_types import ThemeMatchRequest, ThemeProfile
@@ -547,6 +548,39 @@ def test_source_org_securities_does_not_enter_related(monkeypatch):
     )
 
     assert related == []
+
+
+def test_broad_category_strict_blocks_child_topic_direct_hit():
+    request = ThemeMatchRequest(
+        event_id=7,
+        news_id=7,
+        title="国产刻蚀机和薄膜沉积设备进入多家晶圆厂验证",
+        content="国产刻蚀机和薄膜沉积设备进入多家晶圆厂验证，半导体设备订单持续增长。",
+        summary="半导体设备验证加快。",
+        event_type="产业事件",
+        entities=["刻蚀机", "薄膜沉积设备"],
+    )
+    profile = _profile(
+        "9013944",
+        "半导体",
+        must_terms=["半导体行业", "半导体板块"],
+        strong_terms=["晶圆制造"],
+        aliases=["半导体行业", "半导体板块"],
+        core_objects=["半导体行业", "半导体板块"],
+        negative_terms=["半导体设备", "刻蚀机", "薄膜沉积"],
+        gate_json={
+            "no_anchor_terms": ["半导体设备", "设备", "晶圆"],
+            "support_terms": ["芯片", "晶圆", "设备"],
+            "eval_metrics": {"related_policy": "broad_category_strict"},
+        },
+    )
+
+    evidence = _build_gate_evidence(request.event_text(), profile, _build_event_match_profile(request))
+
+    assert evidence["broad_category_blocked"] is True
+    assert evidence["role_guard_blocked"] is True
+    assert evidence["positive_score"] == 0
+    assert _collect_direct_hit_subject_keys(request, {"9013944": profile}) == []
 
 
 def test_location_name_shenzhen_does_not_enter_related(monkeypatch):
