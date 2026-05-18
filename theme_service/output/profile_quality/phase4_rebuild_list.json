@@ -1,0 +1,41 @@
+{
+  "run_id": "phase4_rebuild_list",
+  "description": "Phase 4 rebuild priorities from E2E100 fallback wrong-related attribution and v2 holdback profiles.",
+  "subjects": [
+    {
+      "subject_key": "9022064",
+      "subject_name": "碳化硅",
+      "priority_reason": "E2E100 wrong related source from v1_fallback: AI/AR眼镜 case related to 碳化硅.",
+      "fix_focus": "边界区分 AR眼镜/显示材料 与 碳化硅材料/第三代半导体；仅命中碳化硅材料、SiC、第三代半导体材料等锚点时匹配。",
+      "source": "phase3_e2e100_wrong_related"
+    },
+    {
+      "subject_key": "9036559",
+      "subject_name": "ASIC芯片",
+      "priority_reason": "E2E100 wrong related source from v1_fallback: Meta 可穿戴设备定制芯片新闻 related 到 ASIC芯片。",
+      "fix_focus": "区分公司自研芯片计划、消费硬件芯片 与 ASIC芯片专门题材；Meta/可穿戴/智能眼镜不能单独触发 ASIC。",
+      "source": "phase3_e2e100_wrong_related"
+    },
+    {
+      "subject_key": "9016841",
+      "subject_name": "证券",
+      "priority_reason": "E2E100 wrong related source from v1_fallback: 东方证券测算液冷市场规模新闻 related 到 证券。",
+      "fix_focus": "券商/研报来源词不得作为证券题材锚点；只有券商业务、证券行业政策、资本市场交易制度等主体锚点才可匹配。",
+      "source": "phase3_e2e100_wrong_related"
+    },
+    {
+      "subject_key": "9030409",
+      "subject_name": "AR眼镜",
+      "priority_reason": "v2 holdback: E2E20 recall regression when active; currently status=review and fallback to v1.",
+      "fix_focus": "保留 AI/AR眼镜召回，同时防止 VR/头显/未涉及智能眼镜等否定样本误召回。",
+      "source": "phase3_holdback"
+    },
+    {
+      "subject_key": "9064241",
+      "subject_name": "金刚石散热",
+      "priority_reason": "v2 holdback: E2E100 wrong related to AI智能体Manus financing news.",
+      "fix_focus": "补 negative_terms: Manus、AI智能体、融资、Agent、办公智能体、软件应用；仅金刚石散热/CVD金刚石/热管理/芯片散热/第三代半导体热管理等锚点可匹配。",
+      "source": "phase3_holdback"
+    }
+  ]
+}

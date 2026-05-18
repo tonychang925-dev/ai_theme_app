@@ -79,7 +79,8 @@ class NewsStreamProcessor:
             "enable_sentiment_analysis": self.config.get("enable_sentiment_analysis", False),
             "enable_topic_extraction": self.config.get("enable_topic_extraction", False),
             "batch_processing": self.config.get("batch_processing", True),
-            "batch_size": self.config.get("batch_size", 5)
+            "batch_size": self.config.get("batch_size", 5),
+            "run_id_filter": self.config.get("run_id_filter"),
         }
 
         self.local_triage_service = None
@@ -235,6 +236,15 @@ class NewsStreamProcessor:
                     logger.debug(f"检查事件类型: {event_type}, 监听类型: {self.processor_config['event_types']}")
 
                     if event_type in self.processor_config["event_types"]:
+                        run_id_filter = self.processor_config.get("run_id_filter")
+                        if run_id_filter and not self._event_matches_run_id(event_data, run_id_filter):
+                            logger.debug(
+                                "跳过非本轮 E2E 业务事件: message_id=%s expected_run_id=%s",
+                                msg_id,
+                                run_id_filter,
+                            )
+                            message_ids_to_ack.append(msg_id)
+                            continue
                         events.append({
                             'id': msg_id,
                             'event_type': event_type,
@@ -608,6 +618,8 @@ class NewsStreamProcessor:
                     "raw_event_json": news_data,
                     "structuring_version": "1.0",
                     "llm_request_id": None,
+                    "run_id": news_data.get("run_id"),
+                    "case_id": news_data.get("case_id"),
                 }
                 persistence = await self._persist_and_publish_structured_event(
                     basic_structured_event,
@@ -723,6 +735,8 @@ class NewsStreamProcessor:
                     "raw_event_json": news_data,
                     "structuring_version": "1.0",
                     "llm_request_id": None,
+                    "run_id": news_data.get("run_id"),
+                    "case_id": news_data.get("case_id"),
                 }
 
                 logger.info(
@@ -784,6 +798,8 @@ class NewsStreamProcessor:
             "raw_event_json": raw_event_json,
             "structuring_version": structured_result.get("structuring_version"),
             "llm_request_id": structured_result.get("llm_request_id"),
+            "run_id": news_data.get("run_id"),
+            "case_id": news_data.get("case_id"),
         }
 
     def _resolve_news_row_id(self, news_data: Dict[str, Any]) -> Any:
@@ -860,6 +876,8 @@ class NewsStreamProcessor:
                 "source": "news_stream_processor",
                 "structuring_version": structured_event.get("structuring_version"),
                 "llm_request_id": structured_event.get("llm_request_id"),
+                "run_id": structured_event.get("run_id"),
+                "case_id": structured_event.get("case_id"),
             }
 
             message_id = await self._publish_structured_event(structured_message)
@@ -895,6 +913,37 @@ class NewsStreamProcessor:
             return result
         logger.warning("⚠️ event_bus 不支持发布方法")
         return None
+
+    @staticmethod
+    def _event_matches_run_id(event_data: Dict[str, Any], run_id: str) -> bool:
+        if not run_id:
+            return True
+        candidates = [
+            event_data.get("run_id"),
+            event_data.get("case_run_id"),
+        ]
+        news_data = event_data.get("news_data")
+        if isinstance(news_data, dict):
+            candidates.extend(
+                [
+                    news_data.get("run_id"),
+                    news_data.get("case_run_id"),
+                    news_data.get("external_id"),
+                    news_data.get("news_id"),
+                    news_data.get("url"),
+                ]
+            )
+        raw_data = event_data.get("raw_data")
+        if isinstance(raw_data, dict):
+            candidates.extend(
+                [
+                    raw_data.get("run_id"),
+                    raw_data.get("external_id"),
+                    raw_data.get("news_id"),
+                    raw_data.get("url"),
+                ]
+            )
+        return any(run_id in str(value) for value in candidates if value is not None)
     
     async def _process_news_updated_event(self, news_data: Dict[str, Any]) -> Dict[str, Any]:
         """处理新闻更新事件"""

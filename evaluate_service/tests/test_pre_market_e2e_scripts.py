@@ -12,6 +12,8 @@ from evaluate_service.e2e.pre_market_brief.evaluate_pre_market_brief import _is_
 from evaluate_service.e2e.pre_market_brief.parse_test_cases import parse_test_cases_file
 from evaluate_service.e2e.pre_market_brief.replay_akshare_raw_news import build_stream_payload
 from evaluate_service.e2e.pre_market_brief.run_pre_market_e2e import build_parser, _build_rebuild_payload
+from evaluate_service.e2e.pre_market_brief.run_phase0_decision_services import build_parser as build_phase0_parser
+from evaluate_service.e2e.pre_market_brief.run_raw_news_services import build_parser as build_raw_services_parser
 
 
 def test_repo_root_and_default_output_dir_are_project_relative():
@@ -199,3 +201,25 @@ def test_pre_market_e2e_trade_date_cleanup_is_explicit_opt_in():
 
     assert default_args.clean_trade_date_all_e2e is False
     assert clean_args.clean_trade_date_all_e2e is True
+
+
+def test_e2e_service_groups_default_to_run_scoped_names():
+    raw_args = build_raw_services_parser().parse_args(["--run-id", "pm_e2e_run"])
+    phase0_args = build_phase0_parser().parse_args(["--run-id", "pm_e2e_run"])
+
+    assert raw_args.storage_group is None
+    assert raw_args.processor_group is None
+    assert phase0_args.decision_consumer_group is None
+
+
+def test_pre_market_e2e_http_timeout_defaults_to_long_rebuild_window():
+    args = build_parser().parse_args(
+        [
+            "--trade-date",
+            "2026-05-16",
+            "--run-id",
+            "pm_e2e",
+        ]
+    )
+
+    assert args.http_timeout >= 180

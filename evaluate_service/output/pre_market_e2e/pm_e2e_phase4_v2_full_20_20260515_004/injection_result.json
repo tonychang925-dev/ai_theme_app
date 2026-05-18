@@ -1,0 +1,109 @@
+{
+  "run_id": "pm_e2e_phase4_v2_full_20_20260515_004",
+  "trade_date": "2026-05-15",
+  "stream": "stream:news:raw",
+  "input_count": 20,
+  "injected_count": 20,
+  "items": [
+    {
+      "case_id": "pm_case_0001",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_004:pm_case_0001",
+      "stream_id": "1779062339203-0"
+    },
+    {
+      "case_id": "pm_case_0002",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_004:pm_case_0002",
+      "stream_id": "1779062339205-0"
+    },
+    {
+      "case_id": "pm_case_0003",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_004:pm_case_0003",
+      "stream_id": "1779062339208-0"
+    },
+    {
+      "case_id": "pm_case_0004",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_004:pm_case_0004",
+      "stream_id": "1779062339209-0"
+    },
+    {
+      "case_id": "pm_case_0005",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_004:pm_case_0005",
+      "stream_id": "1779062339210-0"
+    },
+    {
+      "case_id": "pm_case_0006",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_004:pm_case_0006",
+      "stream_id": "1779062339211-0"
+    },
+    {
+      "case_id": "pm_case_0007",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_004:pm_case_0007",
+      "stream_id": "1779062339211-1"
+    },
+    {
+      "case_id": "pm_case_0008",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_004:pm_case_0008",
+      "stream_id": "1779062339214-0"
+    },
+    {
+      "case_id": "pm_case_0009",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_004:pm_case_0009",
+      "stream_id": "1779062339214-1"
+    },
+    {
+      "case_id": "pm_case_0010",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_004:pm_case_0010",
+      "stream_id": "1779062339215-0"
+    },
+    {
+      "case_id": "pm_case_0011",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_004:pm_case_0011",
+      "stream_id": "1779062339215-1"
+    },
+    {
+      "case_id": "pm_case_0012",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_004:pm_case_0012",
+      "stream_id": "1779062339217-0"
+    },
+    {
+      "case_id": "pm_case_0013",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_004:pm_case_0013",
+      "stream_id": "1779062339218-0"
+    },
+    {
+      "case_id": "pm_case_0014",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_004:pm_case_0014",
+      "stream_id": "1779062339219-0"
+    },
+    {
+      "case_id": "pm_case_0015",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_004:pm_case_0015",
+      "stream_id": "1779062339221-0"
+    },
+    {
+      "case_id": "pm_case_0016",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_004:pm_case_0016",
+      "stream_id": "1779062339221-1"
+    },
+    {
+      "case_id": "pm_case_0017",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_004:pm_case_0017",
+      "stream_id": "1779062339223-0"
+    },
+    {
+      "case_id": "pm_case_0018",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_004:pm_case_0018",
+      "stream_id": "1779062339225-0"
+    },
+    {
+      "case_id": "pm_case_0019",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_004:pm_case_0019",
+      "stream_id": "1779062339226-0"
+    },
+    {
+      "case_id": "pm_case_0020",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_004:pm_case_0020",
+      "stream_id": "1779062339229-0"
+    }
+  ]
+}

@@ -31,6 +31,10 @@ async def run_services(args: argparse.Namespace) -> None:
     os.environ.setdefault("REPLAY_DB_NAME", args.db_name)
 
     redis_client = redis.Redis.from_url(args.redis_url, decode_responses=True)
+    if not args.storage_group:
+        args.storage_group = f"news_storage_handlers_e2e_{args.run_id}"
+    if not args.processor_group:
+        args.processor_group = f"news_business_processors_e2e_{args.run_id}"
     await _ensure_group_at_tail(redis_client, "stream:news:raw", args.storage_group)
     await _ensure_group_at_tail(redis_client, "stream:events:normal", args.processor_group)
     stream_config = SimpleNamespace(
@@ -66,6 +70,7 @@ async def run_services(args: argparse.Namespace) -> None:
             "triage_skip_threshold": -0.05,
             "batch_processing": True,
             "batch_size": args.batch_size,
+            "run_id_filter": args.run_id,
         },
     )
 
@@ -110,6 +115,8 @@ async def _ensure_group_at_tail(redis_client, stream: str, group: str) -> None:
         if "BUSYGROUP" not in str(exc):
             raise
         logging.info("Consumer group already exists: %s/%s", stream, group)
+        await redis_client.xgroup_setid(stream, group, "$")
+        logging.info("Moved consumer group to tail: %s/%s", stream, group)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -118,8 +125,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--run-id", required=True)
     parser.add_argument("--redis-url", default=os.getenv("REDIS_URL", "redis://127.0.0.1:6379/0"))
     parser.add_argument("--raw-stream", default="stream:news:raw")
-    parser.add_argument("--storage-group", default="news_storage_handlers_e2e")
-    parser.add_argument("--processor-group", default="news_business_processors_e2e")
+    parser.add_argument("--storage-group")
+    parser.add_argument("--processor-group")
     parser.add_argument("--batch-size", type=int, default=5)
     parser.add_argument("--allow-production", action="store_true")
     return parser
