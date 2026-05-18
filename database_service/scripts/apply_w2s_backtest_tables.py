@@ -250,7 +250,7 @@ async def _apply_ddl(gateway: DatabaseGateway) -> list[str]:
     client = gateway._client
     for idx, sql in enumerate(DDL_STATEMENTS):
         try:
-            await client.execute_raw(sql)
+            await client.execute_query(sql)
             applied.append(f"DDL #{idx+1} OK")
             logger.info("DDL #%d applied successfully", idx + 1)
         except Exception as exc:

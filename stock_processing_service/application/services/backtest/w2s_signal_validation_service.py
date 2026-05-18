@@ -303,7 +303,7 @@ class W2SSignalValidationService:
         written = 0
         for v in validations:
             try:
-                await self._gw.execute_raw(
+                await self._gw._client.execute_query(
                     """
                     INSERT INTO strategy_signal_validation (
                         signal_id, run_id, strategy_id, strategy_version,
@@ -366,7 +366,7 @@ class W2SSignalValidationService:
 
     async def _delete_run_validations(self, run_id: str) -> None:
         try:
-            await self._gw.execute_raw(
+            await self._gw._client.execute_query(
                 "DELETE FROM strategy_signal_validation WHERE run_id = $1",
                 [run_id],
             )
@@ -375,7 +375,7 @@ class W2SSignalValidationService:
 
     async def _update_run_validated_count(self, run_id: str, validated: int, written: int) -> None:
         try:
-            await self._gw.execute_raw(
+            await self._gw._client.execute_query(
                 "UPDATE w2s_backtest_run SET validated_count = $1, status = 'completed', completed_at = NOW() WHERE run_id = $2",
                 [validated, run_id],
             )
