@@ -1,0 +1,24 @@
+{
+  "run_id": "pm_e2e_subset_terminal_20260515_002",
+  "trade_date": "2026-05-15",
+  "stream": "stream:news:raw",
+  "input_count": 3,
+  "injected_count": 3,
+  "items": [
+    {
+      "case_id": "pm_case_0011",
+      "external_id": "pm_e2e_subset_terminal_20260515_002:pm_case_0011",
+      "stream_id": "1779107216293-0"
+    },
+    {
+      "case_id": "pm_case_0030",
+      "external_id": "pm_e2e_subset_terminal_20260515_002:pm_case_0030",
+      "stream_id": "1779107216294-0"
+    },
+    {
+      "case_id": "pm_case_0055",
+      "external_id": "pm_e2e_subset_terminal_20260515_002:pm_case_0055",
+      "stream_id": "1779107216297-0"
+    }
+  ]
+}

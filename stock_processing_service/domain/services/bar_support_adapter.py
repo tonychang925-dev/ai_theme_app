@@ -126,6 +126,7 @@ class BarSupportAdapter:
                 prev_low_struct = PreviousLowStructure(
                     level=prev_low_val,
                     distance_pct=dist * Decimal("100"),
+                    is_valid=dist <= Decimal("0.025"),
                 )
 
         # ── MA structures ──
@@ -137,6 +138,7 @@ class BarSupportAdapter:
                     ma_type=ma_label,
                     level=ma_val,
                     distance_pct=dist * Decimal("100"),
+                    is_valid=dist <= Decimal("0.02"),
                 ))
 
         # ── Resolve ──
