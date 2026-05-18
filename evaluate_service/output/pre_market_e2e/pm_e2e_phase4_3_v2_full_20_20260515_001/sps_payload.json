@@ -1,0 +1,2155 @@
+{
+  "trade_date": "2026-05-15",
+  "snapshot_version": "pre_market_brief.v1",
+  "status": "draft",
+  "payload": {
+    "status": "draft",
+    "version": "pre_market_brief.v1",
+    "sections": {
+      "risk_alerts": [
+        {
+          "count": 3,
+          "message": "存在待人工复核的高影响题材事件，暂不生成股票机会。",
+          "risk_type": "human_review_pending"
+        }
+      ],
+      "major_events": [
+        {
+          "title": "2024年9月9日，三星、谷歌、高通强强联手，正研发一款混合现实智能眼镜",
+          "reason": "llm_accept_match",
+          "item_id": "event:7604:9030409",
+          "summary": "三星、谷歌、高通合作研发混合现实智能眼镜",
+          "event_id": 7604,
+          "confidence": 0.95,
+          "theme_name": "AR眼镜",
+          "occurred_at": "2026-05-18 03:59:27.667897+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9030409",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2024年9月9日，三星、谷歌、高通强强联手，正研发一款混合现实智能眼镜",
+          "reason": "top_candidate_evidence_related",
+          "item_id": "event:7604:9058849",
+          "summary": "三星、谷歌、高通合作研发混合现实智能眼镜",
+          "event_id": 7604,
+          "confidence": 0.6038,
+          "theme_name": "高通",
+          "occurred_at": "2026-05-18 03:59:27.667897+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9058849",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2024年9月9日，三星、谷歌、高通强强联手，正研发一款混合现实智能眼镜",
+          "reason": "top_candidate_evidence_related",
+          "item_id": "event:7604:9038540",
+          "summary": "三星、谷歌、高通合作研发混合现实智能眼镜",
+          "event_id": 7604,
+          "confidence": 0.5902,
+          "theme_name": "AR眼镜四大品牌",
+          "occurred_at": "2026-05-18 03:59:27.667897+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9038540",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2024年9月12日，9月10日，星纪魅族与博士眼镜在北京举行战略合作签约仪式，双方将在智能眼镜领域展开更加深入的合作，共同推动星纪魅族XR品牌与XR智能眼镜的",
+          "reason": "llm_accept_match",
+          "item_id": "event:7603:9030409",
+          "summary": "星纪魅族与博士眼镜签约合作，共同推广XR智能眼镜。",
+          "event_id": 7603,
+          "confidence": 0.95,
+          "theme_name": "AR眼镜",
+          "occurred_at": "2026-05-18 03:59:26.946770+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9030409",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2024年9月20日，据报道，Meta Connect2024大会将于9月25日至26日举办，马克·扎克伯格将分享Meta对人工智能和元宇宙的愿景，主题演讲将集",
+          "reason": "llm_accept_match",
+          "item_id": "event:7601:9030409",
+          "summary": "Meta Connect2024大会将于9月25-26日举办，扎克伯格将分享AI和元宇宙愿景，发布Quest 3S和AR",
+          "event_id": 7601,
+          "confidence": 0.92,
+          "theme_name": "AR眼镜",
+          "occurred_at": "2026-05-18 03:59:13.834240+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9030409",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2024年9月20日，据报道，Meta Connect2024大会将于9月25日至26日举办，马克·扎克伯格将分享Meta对人工智能和元宇宙的愿景，主题演讲将集",
+          "reason": "top_candidate_evidence_related",
+          "item_id": "event:7601:9038540",
+          "summary": "Meta Connect2024大会将于9月25-26日举办，扎克伯格将分享AI和元宇宙愿景，发布Quest 3S和AR",
+          "event_id": 7601,
+          "confidence": 0.6582,
+          "theme_name": "AR眼镜四大品牌",
+          "occurred_at": "2026-05-18 03:59:13.834240+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9038540",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2024年9月25日，Meta Connect 2024年度开发者大会将于今夜举行，据Meta官网贴出议程显示，公司CEO马克·扎克伯格将于当地时间上午10点（",
+          "reason": "llm_accept_match",
+          "item_id": "event:7600:9038540",
+          "summary": "Meta Connect 2024开发者大会将于今夜举行，扎克伯格将分享MR、AI及可穿戴设备进展。",
+          "event_id": 7600,
+          "confidence": 0.92,
+          "theme_name": "AR眼镜四大品牌",
+          "occurred_at": "2026-05-18 03:59:10.220987+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9038540",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2024年9月25日，Meta Connect 2024年度开发者大会将于今夜举行，据Meta官网贴出议程显示，公司CEO马克·扎克伯格将于当地时间上午10点（",
+          "reason": "top_candidate_evidence_related",
+          "item_id": "event:7600:9030409",
+          "summary": "Meta Connect 2024开发者大会将于今夜举行，扎克伯格将分享MR、AI及可穿戴设备进展。",
+          "event_id": 7600,
+          "confidence": 0.6206,
+          "theme_name": "AR眼镜",
+          "occurred_at": "2026-05-18 03:59:10.220987+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9030409",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2024年9月26日,近日，西湖大学国强讲席教授、副校长以及慕德微纳(杭州)科技有限公司首席科学家仇旻在浙江省科协大楼的科学咖啡馆展示了一副超轻薄的碳化硅AR眼",
+          "reason": "llm_accept_match",
+          "item_id": "event:7599:9030409",
+          "summary": "西湖大学仇旻展示超轻薄碳化硅AR眼镜，实现单片全彩显示；Meta发布原型Orion。",
+          "event_id": 7599,
+          "confidence": 0.92,
+          "theme_name": "AR眼镜",
+          "occurred_at": "2026-05-18 03:59:09.468506+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9030409",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2024年9月26日,近日，西湖大学国强讲席教授、副校长以及慕德微纳(杭州)科技有限公司首席科学家仇旻在浙江省科协大楼的科学咖啡馆展示了一副超轻薄的碳化硅AR眼",
+          "reason": "top_candidate_evidence_related",
+          "item_id": "event:7599:9038540",
+          "summary": "西湖大学仇旻展示超轻薄碳化硅AR眼镜，实现单片全彩显示；Meta发布原型Orion。",
+          "event_id": 7599,
+          "confidence": 0.6597,
+          "theme_name": "AR眼镜四大品牌",
+          "occurred_at": "2026-05-18 03:59:09.468506+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9038540",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2024年9月26日,近日，西湖大学国强讲席教授、副校长以及慕德微纳(杭州)科技有限公司首席科学家仇旻在浙江省科协大楼的科学咖啡馆展示了一副超轻薄的碳化硅AR眼",
+          "reason": "top_candidate_evidence_related",
+          "item_id": "event:7599:9022064",
+          "summary": "西湖大学仇旻展示超轻薄碳化硅AR眼镜，实现单片全彩显示；Meta发布原型Orion。",
+          "event_id": 7599,
+          "confidence": 0.6066,
+          "theme_name": "碳化硅",
+          "occurred_at": "2026-05-18 03:59:09.468506+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9022064",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2024年10月25日，国家知识产权局官网消息，中国专利公布公告披露了名为“一种智能眼镜”的发明专利，申请公布日为2024年10月25日，申请人为华为技术有限公",
+          "reason": "llm_accept_match",
+          "item_id": "event:7598:9030409",
+          "summary": "华为智能眼镜发明专利获国家知识产权局公布",
+          "event_id": 7598,
+          "confidence": 0.95,
+          "theme_name": "AR眼镜",
+          "occurred_at": "2026-05-18 03:59:08.516059+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9030409",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2024年11月5日,苹果公司可能已经重启其轻量级增强现实（AR）眼镜计划",
+          "reason": "llm_accept_match",
+          "item_id": "event:7597:9030409",
+          "summary": "苹果重启轻量级AR眼镜计划，内部启动Atlas项目调研市场现有产品。",
+          "event_id": 7597,
+          "confidence": 0.95,
+          "theme_name": "AR眼镜",
+          "occurred_at": "2026-05-18 03:59:08.464873+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9030409",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2024年11月5日,苹果公司可能已经重启其轻量级增强现实（AR）眼镜计划",
+          "reason": "top_candidate_evidence_related",
+          "item_id": "event:7597:9038540",
+          "summary": "苹果重启轻量级AR眼镜计划，内部启动Atlas项目调研市场现有产品。",
+          "event_id": 7597,
+          "confidence": 0.6534,
+          "theme_name": "AR眼镜四大品牌",
+          "occurred_at": "2026-05-18 03:59:08.464873+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9038540",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2024年9月23日，消息面上，Meta Connect 2024将于美国当地时间9月25日开始，扎克伯格将分享混合现实、AI和可穿戴设备的最新发展，新的MR头",
+          "reason": "llm_accept_match",
+          "item_id": "event:7596:9030409",
+          "summary": "Meta Connect 2024将于9月25日举行，扎克伯格将分享混合现实、AI和可穿戴设备最新发展，MR头显和AR眼",
+          "event_id": 7596,
+          "confidence": 0.92,
+          "theme_name": "AR眼镜",
+          "occurred_at": "2026-05-18 03:59:08.446409+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9030409",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2024年9月23日，消息面上，Meta Connect 2024将于美国当地时间9月25日开始，扎克伯格将分享混合现实、AI和可穿戴设备的最新发展，新的MR头",
+          "reason": "top_candidate_evidence_related",
+          "item_id": "event:7596:9038540",
+          "summary": "Meta Connect 2024将于9月25日举行，扎克伯格将分享混合现实、AI和可穿戴设备最新发展，MR头显和AR眼",
+          "event_id": 7596,
+          "confidence": 0.6594,
+          "theme_name": "AR眼镜四大品牌",
+          "occurred_at": "2026-05-18 03:59:08.446409+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9038540",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2024年12月10日，10日讯，三星内部正积极推进名为Infinite的扩展现实（XR）项目，计划在明年1月召开的Galaxy Unpacked发布会上公开展",
+          "reason": "llm_accept_match",
+          "item_id": "event:7595:9032675",
+          "summary": "三星计划在2025年1月展示XR项目Infinite，并于第三季度发售，预计出货2-3万台。",
+          "event_id": 7595,
+          "confidence": 0.86,
+          "theme_name": "金融IT",
+          "occurred_at": "2026-05-18 03:58:58.459807+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9032675",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2024年11月27日，消息面上，智能眼镜厂商INMO影目科技将于11月29日在成都举办INMO2024新品发布会",
+          "reason": "llm_accept_match",
+          "item_id": "event:7594:9030409",
+          "summary": "INMO影目科技将于11月29日在成都举办新品发布会，预计发布两款AR眼镜。",
+          "event_id": 7594,
+          "confidence": 0.95,
+          "theme_name": "AR眼镜",
+          "occurred_at": "2026-05-18 03:58:58.279417+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9030409",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2024年12月13日，在Android XR发布会上，谷歌与国内消费级AR眼镜厂商XREAL达成了战略合作",
+          "reason": "llm_accept_match",
+          "item_id": "event:7592:9030409",
+          "summary": "谷歌与国内AR眼镜厂商XREAL在Android XR发布会上达成战略合作，XREAL近期发布搭载自研芯片的新品。",
+          "event_id": 7592,
+          "confidence": 0.95,
+          "theme_name": "AR眼镜",
+          "occurred_at": "2026-05-18 03:58:53.655085+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9030409",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "24日讯，鸿海宣布，将携手Porotech进军AR眼镜市场",
+          "reason": "llm_accept_match",
+          "item_id": "event:7591:9064628",
+          "summary": "鸿海与Porotech合作进军AR眼镜市场，计划在台中建MicroLED产线，2025年Q4量产。",
+          "event_id": 7591,
+          "confidence": 0.92,
+          "theme_name": "Micro LED CPO",
+          "occurred_at": "2026-05-18 03:58:53.636152+00:00",
+          "source_type": "event_subject_map",
+          "subject_key": "9064628",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        }
+      ],
+      "review_events": [
+        {
+          "title": "2024年9月18日，科技公司Snap在美国加利福尼亚州圣莫尼卡举办的2024Snap全球生态合作伙伴大会上，发布旗下第五代SpectaclesAR眼镜",
+          "reason": "llm_accept_role_guard_blocked",
+          "item_id": "review:7602",
+          "summary": "Snap在2024全球生态合作伙伴大会上发布第五代Spectacles AR眼镜，支持手机协作与旁观者模式。",
+          "event_id": 7602,
+          "confidence": 0.5,
+          "theme_name": "",
+          "occurred_at": "2026-05-18 11:59:17.384170",
+          "source_type": "event_review_queue",
+          "subject_key": "",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2024年11月20日，云天励飞战略投资闪极科技 后者将推国内首款量产AI拍摄眼镜",
+          "reason": "llm_accept_role_guard_blocked",
+          "item_id": "review:7593",
+          "summary": "云天励飞战略投资闪极科技，后者将推出国内首款量产AI拍摄眼镜。",
+          "event_id": 7593,
+          "confidence": 0.5,
+          "theme_name": "",
+          "occurred_at": "2026-05-18 11:58:57.228028",
+          "source_type": "event_review_queue",
+          "subject_key": "",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        },
+        {
+          "title": "2025年1月3日，1月3日电，美国专利及商标局官网显示，英伟达公开了一项AR眼镜专利（US20250004275A1），名为“无背光增强现实数字全息技术”",
+          "reason": "llm_accept_role_guard_blocked",
+          "item_id": "review:7588",
+          "summary": "英伟达公开AR眼镜专利，涉及无背光增强现实数字全息技术。",
+          "event_id": 7588,
+          "confidence": 0.5,
+          "theme_name": "",
+          "occurred_at": "2026-05-18 11:58:33.071800",
+          "source_type": "event_review_queue",
+          "subject_key": "",
+          "impact_score": 0.0,
+          "source_channel": "structured_theme_match"
+        }
+      ],
+      "unknown_watch": [],
+      "matched_themes": [
+        {
+          "event_ids": [
+            7604,
+            7603,
+            7601,
+            7600,
+            7599,
+            7598,
+            7597,
+            7596,
+            7594,
+            7592
+          ],
+          "confidence": 0.95,
+          "theme_name": "AR眼镜",
+          "event_count": 10,
+          "subject_key": "9030409",
+          "impact_score": 0.0,
+          "latest_event_title": "2024年9月9日，三星、谷歌、高通强强联手，正研发一款混合现实智能眼镜"
+        },
+        {
+          "event_ids": [
+            7604,
+            7601,
+            7600,
+            7599,
+            7597,
+            7596
+          ],
+          "confidence": 0.92,
+          "theme_name": "AR眼镜四大品牌",
+          "event_count": 6,
+          "subject_key": "9038540",
+          "impact_score": 0.0,
+          "latest_event_title": "2024年9月9日，三星、谷歌、高通强强联手，正研发一款混合现实智能眼镜"
+        },
+        {
+          "event_ids": [
+            7604
+          ],
+          "confidence": 0.6038,
+          "theme_name": "高通",
+          "event_count": 1,
+          "subject_key": "9058849",
+          "impact_score": 0.0,
+          "latest_event_title": "2024年9月9日，三星、谷歌、高通强强联手，正研发一款混合现实智能眼镜"
+        },
+        {
+          "event_ids": [
+            7599
+          ],
+          "confidence": 0.6066,
+          "theme_name": "碳化硅",
+          "event_count": 1,
+          "subject_key": "9022064",
+          "impact_score": 0.0,
+          "latest_event_title": "2024年9月26日,近日，西湖大学国强讲席教授、副校长以及慕德微纳(杭州)科技有限公司首席科学家仇旻在浙江省科协大楼的科学咖啡馆展示了一副超轻薄的碳化硅AR眼"
+        },
+        {
+          "event_ids": [
+            7595
+          ],
+          "confidence": 0.86,
+          "theme_name": "金融IT",
+          "event_count": 1,
+          "subject_key": "9032675",
+          "impact_score": 0.0,
+          "latest_event_title": "2024年12月10日，10日讯，三星内部正积极推进名为Infinite的扩展现实（XR）项目，计划在明年1月召开的Galaxy Unpacked发布会上公开展"
+        },
+        {
+          "event_ids": [
+            7591
+          ],
+          "confidence": 0.92,
+          "theme_name": "Micro LED CPO",
+          "event_count": 1,
+          "subject_key": "9064628",
+          "impact_score": 0.0,
+          "latest_event_title": "24日讯，鸿海宣布，将携手Porotech进军AR眼镜市场"
+        }
+      ],
+      "event_driven_opportunities": [
+        {
+          "tiers": {
+            "A": [],
+            "B": [],
+            "C": [
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 49.0,
+                "reason": "题材映射排名 1；龙头/核心映射",
+                "evidence": {
+                  "is_leader": true,
+                  "rank_order": 1,
+                  "cycle_state": "",
+                  "subject_key": "9030409",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 10.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 19.0,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 20.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "688003",
+                "stock_name": "天准科技"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 35.0,
+                "reason": "题材映射排名 2",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 2,
+                  "cycle_state": "",
+                  "subject_key": "9030409",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 19.0,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "300433",
+                "stock_name": "蓝思科技"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 35.0,
+                "reason": "题材映射排名 3",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 3,
+                  "cycle_state": "",
+                  "subject_key": "9030409",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 19.0,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "300622",
+                "stock_name": "博士眼镜"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 31.0,
+                "reason": "题材映射排名 6",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 6,
+                  "cycle_state": "",
+                  "subject_key": "9030409",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 19.0,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002600",
+                "stock_name": "领益智造"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 31.0,
+                "reason": "题材映射排名 5",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 5,
+                  "cycle_state": "",
+                  "subject_key": "9030409",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 19.0,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "300081",
+                "stock_name": "ST恒信"
+              }
+            ]
+          },
+          "stocks": [
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 49.0,
+              "reason": "题材映射排名 1；龙头/核心映射",
+              "evidence": {
+                "is_leader": true,
+                "rank_order": 1,
+                "cycle_state": "",
+                "subject_key": "9030409",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 10.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 19.0,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 20.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "688003",
+              "stock_name": "天准科技"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 35.0,
+              "reason": "题材映射排名 2",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 2,
+                "cycle_state": "",
+                "subject_key": "9030409",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 19.0,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "300433",
+              "stock_name": "蓝思科技"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 35.0,
+              "reason": "题材映射排名 3",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 3,
+                "cycle_state": "",
+                "subject_key": "9030409",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 19.0,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "300622",
+              "stock_name": "博士眼镜"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 31.0,
+              "reason": "题材映射排名 6",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 6,
+                "cycle_state": "",
+                "subject_key": "9030409",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 19.0,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002600",
+              "stock_name": "领益智造"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 31.0,
+              "reason": "题材映射排名 5",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 5,
+                "cycle_state": "",
+                "subject_key": "9030409",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 19.0,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "300081",
+              "stock_name": "ST恒信"
+            }
+          ],
+          "theme_name": "AR眼镜",
+          "event_count": 10,
+          "subject_key": "9030409",
+          "theme_confidence": 0.95,
+          "latest_event_title": "2024年9月9日，三星、谷歌、高通强强联手，正研发一款混合现实智能眼镜"
+        },
+        {
+          "tiers": {
+            "A": [],
+            "B": [],
+            "C": [
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 48.4,
+                "reason": "题材映射排名 1；龙头/核心映射",
+                "evidence": {
+                  "is_leader": true,
+                  "rank_order": 1,
+                  "cycle_state": "",
+                  "subject_key": "9038540",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 10.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 18.4,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 20.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "300622",
+                "stock_name": "博士眼镜"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 34.4,
+                "reason": "题材映射排名 3",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 3,
+                  "cycle_state": "",
+                  "subject_key": "9038540",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 18.4,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002600",
+                "stock_name": "领益智造"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 34.4,
+                "reason": "题材映射排名 2",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 2,
+                  "cycle_state": "",
+                  "subject_key": "9038540",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 18.4,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "300081",
+                "stock_name": "ST恒信"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 30.4,
+                "reason": "题材映射排名 10",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 10,
+                  "cycle_state": "",
+                  "subject_key": "9038540",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 18.4,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002343",
+                "stock_name": "慈文传媒"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 30.4,
+                "reason": "题材映射排名 7",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 7,
+                  "cycle_state": "",
+                  "subject_key": "9038540",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 18.4,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002354",
+                "stock_name": "天娱数科"
+              }
+            ]
+          },
+          "stocks": [
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 48.4,
+              "reason": "题材映射排名 1；龙头/核心映射",
+              "evidence": {
+                "is_leader": true,
+                "rank_order": 1,
+                "cycle_state": "",
+                "subject_key": "9038540",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 10.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 18.4,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 20.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "300622",
+              "stock_name": "博士眼镜"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 34.4,
+              "reason": "题材映射排名 3",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 3,
+                "cycle_state": "",
+                "subject_key": "9038540",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 18.4,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002600",
+              "stock_name": "领益智造"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 34.4,
+              "reason": "题材映射排名 2",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 2,
+                "cycle_state": "",
+                "subject_key": "9038540",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 18.4,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "300081",
+              "stock_name": "ST恒信"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 30.4,
+              "reason": "题材映射排名 10",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 10,
+                "cycle_state": "",
+                "subject_key": "9038540",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 18.4,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002343",
+              "stock_name": "慈文传媒"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 30.4,
+              "reason": "题材映射排名 7",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 7,
+                "cycle_state": "",
+                "subject_key": "9038540",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 18.4,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002354",
+              "stock_name": "天娱数科"
+            }
+          ],
+          "theme_name": "AR眼镜四大品牌",
+          "event_count": 6,
+          "subject_key": "9038540",
+          "theme_confidence": 0.92,
+          "latest_event_title": "2024年9月9日，三星、谷歌、高通强强联手，正研发一款混合现实智能眼镜"
+        },
+        {
+          "tiers": {
+            "A": [
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "A",
+                "score": 75.4,
+                "reason": "主线题材确认；周期状态 divergence；题材映射排名 1；龙头/核心映射",
+                "evidence": {
+                  "is_leader": true,
+                  "rank_order": 1,
+                  "cycle_state": "divergence",
+                  "subject_key": "9064628",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 10.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 18.4,
+                    "theme_cycle_score": 7.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 20.0,
+                    "theme_mainline_score": 20.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": true
+                },
+                "stock_id": "301486",
+                "stock_name": "致尚科技"
+              }
+            ],
+            "B": [
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "B",
+                "score": 61.4,
+                "reason": "主线题材确认；周期状态 divergence；题材映射排名 2",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 2,
+                  "cycle_state": "divergence",
+                  "subject_key": "9064628",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 18.4,
+                    "theme_cycle_score": 7.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 20.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": true
+                },
+                "stock_id": "300323",
+                "stock_name": "华灿光电"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "B",
+                "score": 61.4,
+                "reason": "主线题材确认；周期状态 divergence；题材映射排名 3",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 3,
+                  "cycle_state": "divergence",
+                  "subject_key": "9064628",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 18.4,
+                    "theme_cycle_score": 7.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 20.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": true
+                },
+                "stock_id": "300812",
+                "stock_name": "易天股份"
+              }
+            ],
+            "C": [
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 57.4,
+                "reason": "主线题材确认；周期状态 divergence；题材映射排名 5",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 5,
+                  "cycle_state": "divergence",
+                  "subject_key": "9064628",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 18.4,
+                    "theme_cycle_score": 7.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 20.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": true
+                },
+                "stock_id": "300545",
+                "stock_name": "联得装备"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 57.4,
+                "reason": "主线题材确认；周期状态 divergence；题材映射排名 8",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 8,
+                  "cycle_state": "divergence",
+                  "subject_key": "9064628",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 18.4,
+                    "theme_cycle_score": 7.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 20.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": true
+                },
+                "stock_id": "603501",
+                "stock_name": "豪威集团"
+              }
+            ]
+          },
+          "stocks": [
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "A",
+              "score": 75.4,
+              "reason": "主线题材确认；周期状态 divergence；题材映射排名 1；龙头/核心映射",
+              "evidence": {
+                "is_leader": true,
+                "rank_order": 1,
+                "cycle_state": "divergence",
+                "subject_key": "9064628",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 10.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 18.4,
+                  "theme_cycle_score": 7.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 20.0,
+                  "theme_mainline_score": 20.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": true
+              },
+              "stock_id": "301486",
+              "stock_name": "致尚科技"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "B",
+              "score": 61.4,
+              "reason": "主线题材确认；周期状态 divergence；题材映射排名 2",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 2,
+                "cycle_state": "divergence",
+                "subject_key": "9064628",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 18.4,
+                  "theme_cycle_score": 7.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 20.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": true
+              },
+              "stock_id": "300323",
+              "stock_name": "华灿光电"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "B",
+              "score": 61.4,
+              "reason": "主线题材确认；周期状态 divergence；题材映射排名 3",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 3,
+                "cycle_state": "divergence",
+                "subject_key": "9064628",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 18.4,
+                  "theme_cycle_score": 7.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 20.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": true
+              },
+              "stock_id": "300812",
+              "stock_name": "易天股份"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 57.4,
+              "reason": "主线题材确认；周期状态 divergence；题材映射排名 5",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 5,
+                "cycle_state": "divergence",
+                "subject_key": "9064628",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 18.4,
+                  "theme_cycle_score": 7.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 20.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": true
+              },
+              "stock_id": "300545",
+              "stock_name": "联得装备"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 57.4,
+              "reason": "主线题材确认；周期状态 divergence；题材映射排名 8",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 8,
+                "cycle_state": "divergence",
+                "subject_key": "9064628",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 18.4,
+                  "theme_cycle_score": 7.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 20.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": true
+              },
+              "stock_id": "603501",
+              "stock_name": "豪威集团"
+            }
+          ],
+          "theme_name": "Micro LED CPO",
+          "event_count": 1,
+          "subject_key": "9064628",
+          "theme_confidence": 0.92,
+          "latest_event_title": "24日讯，鸿海宣布，将携手Porotech进军AR眼镜市场"
+        },
+        {
+          "tiers": {
+            "A": [],
+            "B": [],
+            "C": [
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 52.1,
+                "reason": "题材映射排名 1；龙头/核心映射",
+                "evidence": {
+                  "is_leader": true,
+                  "rank_order": 1,
+                  "cycle_state": "",
+                  "subject_key": "9022064",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 10.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.1,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 20.0,
+                    "theme_mainline_score": 10.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "688478",
+                "stock_name": "晶升股份"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 38.1,
+                "reason": "题材映射排名 3",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 3,
+                  "cycle_state": "",
+                  "subject_key": "9022064",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.1,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 10.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002371",
+                "stock_name": "北方华创"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 38.1,
+                "reason": "题材映射排名 2",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 2,
+                  "cycle_state": "",
+                  "subject_key": "9022064",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.1,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 10.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "600584",
+                "stock_name": "长电科技"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 34.1,
+                "reason": "题材映射排名 10",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 10,
+                  "cycle_state": "",
+                  "subject_key": "9022064",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.1,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 10.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002156",
+                "stock_name": "通富微电"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 34.1,
+                "reason": "题材映射排名 9",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 9,
+                  "cycle_state": "",
+                  "subject_key": "9022064",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.1,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 10.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002903",
+                "stock_name": "宇环数控"
+              }
+            ]
+          },
+          "stocks": [
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 52.1,
+              "reason": "题材映射排名 1；龙头/核心映射",
+              "evidence": {
+                "is_leader": true,
+                "rank_order": 1,
+                "cycle_state": "",
+                "subject_key": "9022064",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 10.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.1,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 20.0,
+                  "theme_mainline_score": 10.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "688478",
+              "stock_name": "晶升股份"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 38.1,
+              "reason": "题材映射排名 3",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 3,
+                "cycle_state": "",
+                "subject_key": "9022064",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.1,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 10.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002371",
+              "stock_name": "北方华创"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 38.1,
+              "reason": "题材映射排名 2",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 2,
+                "cycle_state": "",
+                "subject_key": "9022064",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.1,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 10.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "600584",
+              "stock_name": "长电科技"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 34.1,
+              "reason": "题材映射排名 10",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 10,
+                "cycle_state": "",
+                "subject_key": "9022064",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.1,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 10.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002156",
+              "stock_name": "通富微电"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 34.1,
+              "reason": "题材映射排名 9",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 9,
+                "cycle_state": "",
+                "subject_key": "9022064",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.1,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 10.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002903",
+              "stock_name": "宇环数控"
+            }
+          ],
+          "theme_name": "碳化硅",
+          "event_count": 1,
+          "subject_key": "9022064",
+          "theme_confidence": 0.6066,
+          "latest_event_title": "2024年9月26日,近日，西湖大学国强讲席教授、副校长以及慕德微纳(杭州)科技有限公司首席科学家仇旻在浙江省科协大楼的科学咖啡馆展示了一副超轻薄的碳化硅AR眼"
+        },
+        {
+          "tiers": {
+            "A": [],
+            "B": [],
+            "C": [
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 47.2,
+                "reason": "题材映射排名 1；龙头/核心映射",
+                "evidence": {
+                  "is_leader": true,
+                  "rank_order": 1,
+                  "cycle_state": "",
+                  "subject_key": "9032675",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 10.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 17.2,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 20.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "300663",
+                "stock_name": "科蓝软件"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 33.2,
+                "reason": "题材映射排名 2",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 2,
+                  "cycle_state": "",
+                  "subject_key": "9032675",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 17.2,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "300339",
+                "stock_name": "润和软件"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 33.2,
+                "reason": "题材映射排名 3",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 3,
+                  "cycle_state": "",
+                  "subject_key": "9032675",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 17.2,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "688590",
+                "stock_name": "新致软件"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 29.2,
+                "reason": "题材映射排名 6",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 6,
+                  "cycle_state": "",
+                  "subject_key": "9032675",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 17.2,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002987",
+                "stock_name": "京北方"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 29.2,
+                "reason": "题材映射排名 7",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 7,
+                  "cycle_state": "",
+                  "subject_key": "9032675",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 17.2,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "300348",
+                "stock_name": "长亮科技"
+              }
+            ]
+          },
+          "stocks": [
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 47.2,
+              "reason": "题材映射排名 1；龙头/核心映射",
+              "evidence": {
+                "is_leader": true,
+                "rank_order": 1,
+                "cycle_state": "",
+                "subject_key": "9032675",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 10.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 17.2,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 20.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "300663",
+              "stock_name": "科蓝软件"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 33.2,
+              "reason": "题材映射排名 2",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 2,
+                "cycle_state": "",
+                "subject_key": "9032675",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 17.2,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "300339",
+              "stock_name": "润和软件"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 33.2,
+              "reason": "题材映射排名 3",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 3,
+                "cycle_state": "",
+                "subject_key": "9032675",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 17.2,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "688590",
+              "stock_name": "新致软件"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 29.2,
+              "reason": "题材映射排名 6",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 6,
+                "cycle_state": "",
+                "subject_key": "9032675",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 17.2,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002987",
+              "stock_name": "京北方"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 29.2,
+              "reason": "题材映射排名 7",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 7,
+                "cycle_state": "",
+                "subject_key": "9032675",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 17.2,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "300348",
+              "stock_name": "长亮科技"
+            }
+          ],
+          "theme_name": "金融IT",
+          "event_count": 1,
+          "subject_key": "9032675",
+          "theme_confidence": 0.86,
+          "latest_event_title": "2024年12月10日，10日讯，三星内部正积极推进名为Infinite的扩展现实（XR）项目，计划在明年1月召开的Galaxy Unpacked发布会上公开展"
+        },
+        {
+          "tiers": {
+            "A": [],
+            "B": [],
+            "C": [
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 42.1,
+                "reason": "题材映射排名 1；龙头/核心映射",
+                "evidence": {
+                  "is_leader": true,
+                  "rank_order": 1,
+                  "cycle_state": "",
+                  "subject_key": "9058849",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 10.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.1,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 20.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "600584",
+                "stock_name": "长电科技"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 28.1,
+                "reason": "题材映射排名 3",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 3,
+                  "cycle_state": "",
+                  "subject_key": "9058849",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.1,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "300812",
+                "stock_name": "易天股份"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 28.1,
+                "reason": "题材映射排名 2",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 2,
+                  "cycle_state": "",
+                  "subject_key": "9058849",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.1,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 16.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "600699",
+                "stock_name": "均胜电子"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 24.1,
+                "reason": "题材映射排名 7",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 7,
+                  "cycle_state": "",
+                  "subject_key": "9058849",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.1,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002881",
+                "stock_name": "美格智能"
+              },
+              {
+                "risk": "需观察竞价承接与题材持续性。",
+                "level": "C",
+                "score": 24.1,
+                "reason": "题材映射排名 5",
+                "evidence": {
+                  "is_leader": false,
+                  "rank_order": 5,
+                  "cycle_state": "",
+                  "subject_key": "9058849",
+                  "strong_watch": false,
+                  "weak_to_strong": false,
+                  "score_breakdown": {
+                    "leader_score": 0.0,
+                    "risk_penalty": 0.0,
+                    "event_theme_score": 12.1,
+                    "theme_cycle_score": 0.0,
+                    "strong_watch_score": 0.0,
+                    "jyhf_relation_score": 12.0,
+                    "theme_mainline_score": 0.0,
+                    "weak_to_strong_score": 0.0
+                  },
+                  "mainline_confirmed": false
+                },
+                "stock_id": "002975",
+                "stock_name": "博杰股份"
+              }
+            ]
+          },
+          "stocks": [
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 42.1,
+              "reason": "题材映射排名 1；龙头/核心映射",
+              "evidence": {
+                "is_leader": true,
+                "rank_order": 1,
+                "cycle_state": "",
+                "subject_key": "9058849",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 10.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.1,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 20.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "600584",
+              "stock_name": "长电科技"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 28.1,
+              "reason": "题材映射排名 3",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 3,
+                "cycle_state": "",
+                "subject_key": "9058849",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.1,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "300812",
+              "stock_name": "易天股份"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 28.1,
+              "reason": "题材映射排名 2",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 2,
+                "cycle_state": "",
+                "subject_key": "9058849",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.1,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 16.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "600699",
+              "stock_name": "均胜电子"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 24.1,
+              "reason": "题材映射排名 7",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 7,
+                "cycle_state": "",
+                "subject_key": "9058849",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.1,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002881",
+              "stock_name": "美格智能"
+            },
+            {
+              "risk": "需观察竞价承接与题材持续性。",
+              "level": "C",
+              "score": 24.1,
+              "reason": "题材映射排名 5",
+              "evidence": {
+                "is_leader": false,
+                "rank_order": 5,
+                "cycle_state": "",
+                "subject_key": "9058849",
+                "strong_watch": false,
+                "weak_to_strong": false,
+                "score_breakdown": {
+                  "leader_score": 0.0,
+                  "risk_penalty": 0.0,
+                  "event_theme_score": 12.1,
+                  "theme_cycle_score": 0.0,
+                  "strong_watch_score": 0.0,
+                  "jyhf_relation_score": 12.0,
+                  "theme_mainline_score": 0.0,
+                  "weak_to_strong_score": 0.0
+                },
+                "mainline_confirmed": false
+              },
+              "stock_id": "002975",
+              "stock_name": "博杰股份"
+            }
+          ],
+          "theme_name": "高通",
+          "event_count": 1,
+          "subject_key": "9058849",
+          "theme_confidence": 0.6038,
+          "latest_event_title": "2024年9月9日，三星、谷歌、高通强强联手，正研发一款混合现实智能眼镜"
+        }
+      ]
+    },
+    "trade_date": "2026-05-15",
+    "diagnostics": {
+      "source": "db",
+      "event_count": 23,
+      "theme_count": 6,
+      "last_rebuild_at": "2026-05-18T04:05:54.198309+00:00",
+      "opportunity_count": 6,
+      "review_event_count": 3,
+      "matched_event_count": 20,
+      "unknown_event_count": 0
+    }
+  },
+  "generated_at": "2026-05-18 04:05:54.198309+00:00",
+  "finalized_at": null,
+  "updated_at": "2026-05-18 04:05:54.201002+00:00"
+}

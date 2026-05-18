@@ -17,10 +17,12 @@ from decimal import Decimal
 from typing import Any
 
 from stock_processing_service.domain.backtest.w2s_feature_rules import (
+    apply_weak_type_downgrade,
     build_missing_features,
     classify_board_type,
     classify_leader_role_proxy,
     classify_proxy_level,
+    classify_weak_type_quality,
     compute_auction_score,
     compute_bull_stock_score,
     compute_confirm_level_from_score,
@@ -29,6 +31,7 @@ from stock_processing_service.domain.backtest.w2s_feature_rules import (
     compute_two_board_quality_score,
     determine_auction_feature_mode,
     determine_confirm_source,
+    weak_type_score_bonus,
 )
 
 logger = logging.getLogger(__name__)
@@ -253,6 +256,24 @@ class W2SFeatureSnapshotService:
         leader_score_proxy = compute_leader_score_proxy(candidate)
         two_board_quality_score = compute_two_board_quality_score(candidate)
 
+        # ── v0.3 weak type quality ──
+        weak_type = str(candidate.get("weak_type") or "")
+        weak_type_quality = classify_weak_type_quality(weak_type)
+
+        # Apply weak type downgrade for v0.3
+        original_pool_entry = str(candidate.get("pool_entry_type") or "observe_only")
+        adjusted_pool_entry = apply_weak_type_downgrade(
+            weak_type=weak_type,
+            pool_entry_type=original_pool_entry,
+            support_strength=_to_decimal(candidate.get("support_strength")),
+            mainline_strength_score=mainline_strength_score,
+            leader_role_proxy=leader_role_proxy,
+        )
+        candidate_score_adjusted = _to_decimal(candidate.get("candidate_score"))
+        if candidate_score_adjusted is None:
+            candidate_score_adjusted = Decimal("0")
+        candidate_score_adjusted += weak_type_score_bonus(weak_type)
+
         # ── Bull stock score (placeholder for Phase 3) ──
         bull_stock_score = None
 
@@ -268,6 +289,7 @@ class W2SFeatureSnapshotService:
         )
 
         # ── Derived features (computed by this service) ──
+        auction_feature_quality_val = "complete" if confirm_source == "real_auction" else "partial"
         derived_feature_json = {
             "leader_role_proxy": leader_role_proxy,
             "leader_score_proxy": str(leader_score_proxy),
@@ -278,8 +300,9 @@ class W2SFeatureSnapshotService:
             "confirm_level": confirm_level,
             "confirmation_score": str(auction_score),
             "auction_feature_mode": auction_feature_mode,
-            "auction_feature_quality": "complete" if confirm_source == "real_auction" else "partial",
+            "auction_feature_quality": auction_feature_quality_val,
             "confirm_source": confirm_source,
+            "weak_type_quality": weak_type_quality,
             "bull_stock_score": str(bull_stock_score) if bull_stock_score is not None else None,
         }
 
@@ -329,8 +352,11 @@ class W2SFeatureSnapshotService:
             "auction_amount": str(auction_amount) if auction_amount is not None else None,
             "auction_score": str(auction_score),
             "confirm_level": confirm_level,
+            "confirm_level_detail": confirm_level,
             "confirmation_score": str(auction_score),
-            "auction_feature_quality": "complete" if confirm_source == "real_auction" else "partial",
+            "auction_feature_quality": auction_feature_quality_val,
+            "confirm_source": confirm_source,
+            "weak_type_quality": weak_type_quality,
             "missing_features": json.dumps(missing_features, ensure_ascii=False),
             "bull_stock_score": str(bull_stock_score) if bull_stock_score is not None else None,
             "raw_feature_json": json.dumps(raw_feature_json, ensure_ascii=False, default=str),
@@ -415,13 +441,14 @@ class W2SFeatureSnapshotService:
                         auction_score, confirm_level, confirmation_score,
                         auction_feature_quality, missing_features,
                         bull_stock_score,
-                        raw_feature_json, derived_feature_json, source_trace
+                        raw_feature_json, derived_feature_json, source_trace,
+                        confirm_source, confirm_level_detail, weak_type_quality
                     ) VALUES (
                         $1, $2, $3, $4, $5, $6, $7, $8, $9, $10,
                         $11, $12, $13, $14, $15, $16, $17, $18, $19, $20,
                         $21, $22, $23, $24, $25, $26, $27, $28, $29, $30,
                         $31, $32, $33, $34, $35, $36, $37, $38, $39,
-                        $40, $41, $42
+                        $40, $41, $42, $43, $44, $45
                     )
                     ON CONFLICT (run_id, strategy_version, candidate_trade_date, confirm_trade_date, stock_id)
                     DO UPDATE SET
@@ -451,8 +478,11 @@ class W2SFeatureSnapshotService:
                         auction_amount = EXCLUDED.auction_amount,
                         auction_score = EXCLUDED.auction_score,
                         confirm_level = EXCLUDED.confirm_level,
+                        confirm_level_detail = EXCLUDED.confirm_level_detail,
                         confirmation_score = EXCLUDED.confirmation_score,
                         auction_feature_quality = EXCLUDED.auction_feature_quality,
+                        confirm_source = EXCLUDED.confirm_source,
+                        weak_type_quality = EXCLUDED.weak_type_quality,
                         missing_features = EXCLUDED.missing_features,
                         bull_stock_score = EXCLUDED.bull_stock_score,
                         raw_feature_json = EXCLUDED.raw_feature_json,
@@ -474,6 +504,7 @@ class W2SFeatureSnapshotService:
                         s["auction_feature_quality"], s["missing_features"],
                         s["bull_stock_score"],
                         s["raw_feature_json"], s["derived_feature_json"], s["source_trace"],
+                        s.get("confirm_source", "missing"), s["confirm_level_detail"], s["weak_type_quality"],
                     ],
                 )
                 written += 1

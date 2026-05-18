@@ -1,0 +1,109 @@
+{
+  "run_id": "pm_e2e_phase4_3_v2_full_20_20260515_001",
+  "trade_date": "2026-05-15",
+  "stream": "stream:news:raw",
+  "input_count": 20,
+  "injected_count": 20,
+  "items": [
+    {
+      "case_id": "pm_case_0001",
+      "external_id": "pm_e2e_phase4_3_v2_full_20_20260515_001:pm_case_0001",
+      "stream_id": "1779076689498-0"
+    },
+    {
+      "case_id": "pm_case_0002",
+      "external_id": "pm_e2e_phase4_3_v2_full_20_20260515_001:pm_case_0002",
+      "stream_id": "1779076689500-0"
+    },
+    {
+      "case_id": "pm_case_0003",
+      "external_id": "pm_e2e_phase4_3_v2_full_20_20260515_001:pm_case_0003",
+      "stream_id": "1779076689506-0"
+    },
+    {
+      "case_id": "pm_case_0004",
+      "external_id": "pm_e2e_phase4_3_v2_full_20_20260515_001:pm_case_0004",
+      "stream_id": "1779076689507-0"
+    },
+    {
+      "case_id": "pm_case_0005",
+      "external_id": "pm_e2e_phase4_3_v2_full_20_20260515_001:pm_case_0005",
+      "stream_id": "1779076689510-0"
+    },
+    {
+      "case_id": "pm_case_0006",
+      "external_id": "pm_e2e_phase4_3_v2_full_20_20260515_001:pm_case_0006",
+      "stream_id": "1779076689513-0"
+    },
+    {
+      "case_id": "pm_case_0007",
+      "external_id": "pm_e2e_phase4_3_v2_full_20_20260515_001:pm_case_0007",
+      "stream_id": "1779076689515-0"
+    },
+    {
+      "case_id": "pm_case_0008",
+      "external_id": "pm_e2e_phase4_3_v2_full_20_20260515_001:pm_case_0008",
+      "stream_id": "1779076689524-0"
+    },
+    {
+      "case_id": "pm_case_0009",
+      "external_id": "pm_e2e_phase4_3_v2_full_20_20260515_001:pm_case_0009",
+      "stream_id": "1779076689526-0"
+    },
+    {
+      "case_id": "pm_case_0010",
+      "external_id": "pm_e2e_phase4_3_v2_full_20_20260515_001:pm_case_0010",
+      "stream_id": "1779076689533-0"
+    },
+    {
+      "case_id": "pm_case_0011",
+      "external_id": "pm_e2e_phase4_3_v2_full_20_20260515_001:pm_case_0011",
+      "stream_id": "1779076689535-0"
+    },
+    {
+      "case_id": "pm_case_0012",
+      "external_id": "pm_e2e_phase4_3_v2_full_20_20260515_001:pm_case_0012",
+      "stream_id": "1779076689536-0"
+    },
+    {
+      "case_id": "pm_case_0013",
+      "external_id": "pm_e2e_phase4_3_v2_full_20_20260515_001:pm_case_0013",
+      "stream_id": "1779076689537-0"
+    },
+    {
+      "case_id": "pm_case_0014",
+      "external_id": "pm_e2e_phase4_3_v2_full_20_20260515_001:pm_case_0014",
+      "stream_id": "1779076689538-0"
+    },
+    {
+      "case_id": "pm_case_0015",
+      "external_id": "pm_e2e_phase4_3_v2_full_20_20260515_001:pm_case_0015",
+      "stream_id": "1779076689539-0"
+    },
+    {
+      "case_id": "pm_case_0016",
+      "external_id": "pm_e2e_phase4_3_v2_full_20_20260515_001:pm_case_0016",
+      "stream_id": "1779076689540-0"
+    },
+    {
+      "case_id": "pm_case_0017",
+      "external_id": "pm_e2e_phase4_3_v2_full_20_20260515_001:pm_case_0017",
+      "stream_id": "1779076689546-0"
+    },
+    {
+      "case_id": "pm_case_0018",
+      "external_id": "pm_e2e_phase4_3_v2_full_20_20260515_001:pm_case_0018",
+      "stream_id": "1779076689548-0"
+    },
+    {
+      "case_id": "pm_case_0019",
+      "external_id": "pm_e2e_phase4_3_v2_full_20_20260515_001:pm_case_0019",
+      "stream_id": "1779076689549-0"
+    },
+    {
+      "case_id": "pm_case_0020",
+      "external_id": "pm_e2e_phase4_3_v2_full_20_20260515_001:pm_case_0020",
+      "stream_id": "1779076689555-0"
+    }
+  ]
+}
