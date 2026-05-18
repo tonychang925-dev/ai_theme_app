@@ -103,10 +103,8 @@ class W2SSignalBuilderService:
         confirm_date = _parse_date(snap.get("confirm_trade_date"))
 
         # post_market signal: available T日 15:30, tradable T+1 09:30
-        from zoneinfo import ZoneInfo
-        cst = ZoneInfo("Asia/Shanghai")
-        available_at = datetime.combine(candidate_date, datetime.strptime("15:30:00", "%H:%M:%S").time(), tzinfo=cst) if candidate_date else datetime.now(cst)
-        tradable_at = datetime.combine(confirm_date, datetime.strptime("09:30:00", "%H:%M:%S").time(), tzinfo=cst) if confirm_date else datetime.now(cst)
+        available_at = datetime.combine(candidate_date, datetime.strptime("15:30:00", "%H:%M:%S").time()) if candidate_date else datetime.now()
+        tradable_at = datetime.combine(confirm_date, datetime.strptime("09:30:00", "%H:%M:%S").time()) if confirm_date else datetime.now()
 
         evidence = {
             "candidate_trade_date": str(snap.get("candidate_trade_date")),
@@ -224,7 +222,7 @@ class W2SSignalBuilderService:
                     """,
                     [
                         str(s["signal_id"]), str(s["run_id"]), str(s["strategy_id"]), str(s["strategy_version"]),
-                        s["trade_date"], str(s["signal_session"]), str(s["available_at"]), str(s["tradable_at"]),
+                        s["trade_date"], str(s["signal_session"]), s["available_at"], s["tradable_at"],
                         str(s["stock_id"]), str(s["stock_name"]), str(s["subject_key"]), str(s["theme_name"]),
                         str(s["direction"]), bool(s["tradable"]), str(s["signal_level"]), float(s.get("score") or 0), float(s.get("confidence") or 0),
                         str(s["confirm_level"]), str(s["confirm_source"]), s["reject_reason_code"],
