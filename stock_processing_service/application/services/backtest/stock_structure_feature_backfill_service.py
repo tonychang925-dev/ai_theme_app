@@ -1,10 +1,9 @@
-"""Phase -1.5a-refactor: Stock Structure Daily Feature Backfill Service.
+"""Phase -1.5a-refactor v0.3: Stock Structure Daily Feature Backfill Service.
 
 THIN ORCHESTRATOR: reads data → calls domain services → writes cache.
-Does NOT hardcode trading rules. All classification logic imported from domain.
-
-v0.2: Refactored to remove hardcoded _classify_weak_type, _detect_support,
-      WEAK_TYPE_QUALITY_MAP. Now imports from w2s_feature_rules.
+  - weak_type / weak_type_quality → w2s_feature_rules (domain/backtest)
+  - support / gap / ma → BarSupportAdapter → GapStructureDetector + SupportStructureResolver
+No hardcoded trading rules.
 """
 
 from __future__ import annotations
@@ -17,6 +16,9 @@ from typing import Any
 from stock_processing_service.domain.backtest.w2s_feature_rules import (
     classify_weak_type,
     classify_weak_type_quality,
+)
+from stock_processing_service.domain.services.bar_support_adapter import (
+    BarSupportAdapter,
 )
 
 logger = logging.getLogger(__name__)
@@ -134,29 +136,43 @@ class StockStructureFeatureBackfillService:
                 )
                 wtq = classify_weak_type_quality(weak_type)
 
-                # support_type / support_strength
-                supp_type, supp_str = _detect_support(
-                    low=low, close=close, pre_close=pre_close,
-                    prev_bar=prev_bar,
+                # ── Support resolution via domain services ──
+                # Build prior bar list (most recent first, max 40 bars)
+                prior_bar_list = []
+                for p7d in prior7_dates:
+                    p7_bars = bars_by_date.get(p7d, {})
+                    p7_bar = p7_bars.get(sid)
+                    if p7_bar:
+                        prior_bar_list.append(dict(p7_bar))
+
+                # Simple MA computation (lightweight, domain services accept pre-computed)
+                ma5 = _compute_simple_ma(sid, prior7_dates[:5], bars_by_date)
+                ma10 = _compute_simple_ma(sid, prior7_dates[:10], bars_by_date)
+
+                adapter = _get_support_adapter()
+                support_result = adapter.resolve(
+                    current_bar=dict(bar),
+                    prior_bars=prior_bar_list,
+                    ma5=Decimal(str(ma5)) if ma5 else None,
+                    ma10=Decimal(str(ma10)) if ma10 else None,
                 )
+                supp_type = support_result.support_type
+                supp_str = float(support_result.support_strength) if support_result.support_strength else None
+                gap_not_filled = support_result.gap_not_filled
+                ma_support_hit = support_result.ma_support_hit
 
-                # gap_not_filled: today's low > yesterday's high (approximate)
-                gap_not_filled = False
-                if prev_bar:
-                    prev_high = float(prev_bar.get("high_price") or 0)
-                    gap_not_filled = low > prev_high * 1.01
-
-                # ma_support_hit: today's low near the 5-day average close (simple)
-                ma5 = _simple_ma5(sid, prior7_dates, bars_by_date)
-                ma_support_hit = (low <= ma5 * 1.01 and low >= ma5 * 0.97) if ma5 > 0 else False
-
-                # source_trace
+                # source_trace with rule versions
                 trace = json.dumps({
                     "feature_date": td.isoformat(),
                     "lookback_start_date": prior7_dates[-1].isoformat() if prior7_dates else td.isoformat(),
                     "lookback_end_date": td.isoformat(),
                     "rule_version": rule_version,
                     "daily_bar_source": "stock_daily_snapshot",
+                    "weak_type_rule_version": "w2s_feature_rules.v0.3",
+                    "support_rule_version": support_result.rule_version,
+                    "support_source": support_result.source,
+                    "gap_source": "GapStructureDetector",
+                    "ma_support_source": "KlineSupportScorer" if ma_support_hit else None,
                 })
 
                 try:
@@ -216,65 +232,27 @@ class StockStructureFeatureBackfillService:
 
 
 # ═══════════════════════════════════════════════════════════════════
-# Module-level helpers (thin delegation layer)
-# TODO: _detect_support should delegate to SupportStructureResolver /
-#       KlineSupportScorer when DTO adapters are built
-#       _simple_ma5 should delegate to KlineSupportScorer
+# Module-level helpers
 # ═══════════════════════════════════════════════════════════════════
 
-def _detect_support(
-    *,
-    low: float,
-    close: float,
-    pre_close: float,
-    prev_bar: dict | None,
-) -> tuple[str, float | None]:
-    """Simple support detection from price levels."""
-    if prev_bar is None:
-        # Check pre_close support
-        dist = abs(low - pre_close) / pre_close if pre_close > 0 else 999
-        if dist < 0.03:
-            return "pre_close_support", 60.0 - dist * 500
-        return "weak_support", 40.0
-
-    prev_low = float(prev_bar.get("low_price") or 0)
-    prev_high = float(prev_bar.get("high_price") or 0)
-    prev_close_val = float(prev_bar.get("close_price") or 0)
-
-    # gap_support: today's low stayed above yesterday's high
-    if prev_high > 0 and low > prev_high * 0.98:
-        strength = min(90.0, 50.0 + (low - prev_high) / prev_high * 500)
-        return "gap_support", strength
-
-    # previous_low support
-    if prev_low > 0:
-        dist_pl = abs(low - prev_low) / prev_low
-        if dist_pl < 0.025:
-            return "previous_low", 75.0 - dist_pl * 500
-
-    # pre_close support (from yesterday)
-    if pre_close > 0:
-        dist_pc = abs(low - pre_close) / pre_close
-        if dist_pc < 0.025:
-            return "pre_close_support", 65.0 - dist_pc * 500
-
-    # ma_support: approximate 5-day average
-    if prev_close_val > 0:
-        dist_ma = abs(low - prev_close_val) / prev_close_val
-        if dist_ma < 0.03:
-            return "ma_support", 55.0 - dist_ma * 500
-
-    return "weak_support", 40.0
+_support_adapter: BarSupportAdapter | None = None
 
 
-def _simple_ma5(
+def _get_support_adapter() -> BarSupportAdapter:
+    global _support_adapter
+    if _support_adapter is None:
+        _support_adapter = BarSupportAdapter()
+    return _support_adapter
+
+
+def _compute_simple_ma(
     stock_id: str,
-    prior7_dates: list[date],
+    lookback_dates: list[date],
     bars_by_date: dict[date, dict[str, dict]],
-) -> float:
-    """Simple 5-day moving average of close prices."""
+) -> float | None:
+    """Compute simple moving average of close prices. Lightweight helper."""
     closes = []
-    for d in prior7_dates[:5]:
+    for d in lookback_dates:
         day_bars = bars_by_date.get(d, {})
         bar = day_bars.get(stock_id)
         if bar:
@@ -282,5 +260,5 @@ def _simple_ma5(
             if c > 0:
                 closes.append(c)
     if not closes:
-        return 0.0
+        return None
     return sum(closes) / len(closes)
