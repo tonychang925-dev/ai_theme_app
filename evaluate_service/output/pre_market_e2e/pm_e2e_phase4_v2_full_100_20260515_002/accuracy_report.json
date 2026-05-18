@@ -1,0 +1,29 @@
+{
+  "total": 100,
+  "primary_hit_count": 65,
+  "related_hit_count": 28,
+  "theme_set_recall_at_3_count": 67,
+  "theme_set_recall_at_5_count": 67,
+  "primary_hit_rate": 0.65,
+  "related_hit_rate": 0.28,
+  "theme_set_recall@3": 0.67,
+  "theme_set_recall@5": 0.67,
+  "human_review_count": 13,
+  "unknown_count": 3,
+  "wrong_related_count": 27,
+  "generic_only_related_count": 1,
+  "llm_anchor_guard_count": 13,
+  "brief_major_event_count": 100,
+  "brief_theme_count": 37,
+  "brief_opportunity_count": 36,
+  "diagnostics": {
+    "source": "db",
+    "event_count": 113,
+    "theme_count": 37,
+    "last_rebuild_at": "2026-05-18T02:09:37.564777+00:00",
+    "opportunity_count": 36,
+    "review_event_count": 13,
+    "matched_event_count": 100,
+    "unknown_event_count": 0
+  }
+}

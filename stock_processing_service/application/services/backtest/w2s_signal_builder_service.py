@@ -180,7 +180,7 @@ class W2SSignalBuilderService:
         written = 0
         for s in signals:
             try:
-                await self._gw.execute_raw(
+                await self._gw._client.execute_query(
                     """
                     INSERT INTO strategy_signal_daily (
                         signal_id, run_id, strategy_id, strategy_version,
@@ -239,7 +239,7 @@ class W2SSignalBuilderService:
 
     async def _delete_run_signals(self, run_id: str) -> None:
         try:
-            await self._gw.execute_raw(
+            await self._gw._client.execute_query(
                 "DELETE FROM strategy_signal_daily WHERE run_id = $1",
                 [run_id],
             )
@@ -248,7 +248,7 @@ class W2SSignalBuilderService:
 
     async def _update_run_signal_count(self, run_id: str, signal_count: int, written: int) -> None:
         try:
-            await self._gw.execute_raw(
+            await self._gw._client.execute_query(
                 "UPDATE w2s_backtest_run SET signal_count = $1 WHERE run_id = $2",
                 [signal_count, run_id],
             )

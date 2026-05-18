@@ -355,7 +355,7 @@ class W2SFeatureSnapshotService:
         written = 0
         for s in snapshots:
             try:
-                await self._gw.execute_raw(
+                await self._gw._client.execute_query(
                     """
                     INSERT INTO w2s_backtest_feature_snapshot (
                         snapshot_id, run_id, strategy_version,
@@ -444,7 +444,7 @@ class W2SFeatureSnapshotService:
             if callable(fn):
                 await fn(run_id)
             else:
-                await self._gw.execute_raw(
+                await self._gw._client.execute_query(
                     "DELETE FROM w2s_backtest_feature_snapshot WHERE run_id = $1",
                     [run_id],
                 )

@@ -2320,7 +2320,7 @@ async def backtest_w2s_build_feature_snapshot(payload: W2SBuildFeatureSnapshotRe
     end_date = _parse_trade_date(payload.end_date)
 
     try:
-        await app.state.gateway.execute_raw(
+        await app.state.gateway._client.execute_query(
             """INSERT INTO w2s_backtest_run (run_id, strategy_id, strategy_version, run_type, start_date, end_date, status, started_at)
                VALUES ($1, 'weak_to_strong', $2, 'signal_validation', $3, $4, 'running', NOW())
                ON CONFLICT (run_id) DO UPDATE SET status = 'running', started_at = NOW()""",
@@ -2338,7 +2338,7 @@ async def backtest_w2s_build_feature_snapshot(payload: W2SBuildFeatureSnapshotRe
     )
 
     try:
-        await app.state.gateway.execute_raw(
+        await app.state.gateway._client.execute_query(
             "UPDATE w2s_backtest_run SET status = 'completed', completed_at = NOW() WHERE run_id = $1",
             [payload.run_id],
         )
@@ -2383,7 +2383,7 @@ async def backtest_w2s_validate_signals(payload: W2SValidateSignalsRequest) -> d
 @app.get("/api/v1/backtest/w2s/runs/{run_id}")
 async def backtest_w2s_get_run(run_id: str) -> dict[str, Any]:
     """Get backtest run metadata."""
-    rows = await app.state.gateway.query(
+    rows = await app.state.gateway._client.execute_query(
         "SELECT * FROM w2s_backtest_run WHERE run_id = $1",
         [run_id],
     )
@@ -2399,7 +2399,7 @@ async def backtest_w2s_get_run_summary(run_id: str) -> dict[str, Any]:
 
     Returns 3 visible experiment summaries. confirm_source is a primary grouping dimension.
     """
-    rows = await app.state.gateway.query(
+    rows = await app.state.gateway._client.execute_query(
         "SELECT * FROM w2s_validation_summary WHERE run_id = $1 ORDER BY experiment_id, confirm_source_group, confirm_level",
         [run_id],
     )
@@ -2447,7 +2447,7 @@ async def backtest_w2s_get_run_signals(
 
     where_clause = " AND ".join(conditions)
 
-    count_rows = await app.state.gateway.query(
+    count_rows = await app.state.gateway._client.execute_query(
         f"""SELECT COUNT(*) as cnt FROM strategy_signal_validation v
             JOIN w2s_backtest_feature_snapshot s
               ON v.stock_id = s.stock_id AND v.trade_date = s.candidate_trade_date AND v.run_id = s.run_id
@@ -2456,7 +2456,7 @@ async def backtest_w2s_get_run_signals(
     )
     total = int(_row_to_dict(count_rows[0]).get("cnt", 0)) if count_rows else 0
 
-    rows = await app.state.gateway.query(
+    rows = await app.state.gateway._client.execute_query(
         f"""SELECT v.*, s.confirm_level as snap_confirm_level, s.confirm_source,
                    s.pool_entry_type, s.leader_role_proxy, s.mainline_strength_score,
                    s.board_type, s.is_20cm

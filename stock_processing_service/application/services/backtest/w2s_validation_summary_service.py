@@ -162,7 +162,7 @@ class W2SValidationSummaryService:
     async def _load_joined_rows(self, run_id: str) -> list[dict[str, Any]]:
         """Load validation rows joined with snapshot features."""
         try:
-            rows = await self._gw.query(
+            rows = await self._gw._client.execute_query(
                 """
                 SELECT
                     v.signal_id,
@@ -220,7 +220,7 @@ class W2SValidationSummaryService:
         written = 0
         for s in summaries:
             try:
-                await self._gw.execute_raw(
+                await self._gw._client.execute_query(
                     """
                     INSERT INTO w2s_validation_summary (
                         run_id, experiment_id, confirm_source_group, confirm_level,
@@ -257,7 +257,7 @@ class W2SValidationSummaryService:
 
     async def _delete_run_summaries(self, run_id: str) -> None:
         try:
-            await self._gw.execute_raw(
+            await self._gw._client.execute_query(
                 "DELETE FROM w2s_validation_summary WHERE run_id = $1",
                 [run_id],
             )
