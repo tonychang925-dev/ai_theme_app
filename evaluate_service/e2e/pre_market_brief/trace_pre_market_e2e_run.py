@@ -128,17 +128,48 @@ async def trace_run(
             row["match_performance"] = decision_entry.get("match_performance") or {}
         if not row.get("review_reason") and decision_entry.get("reason_code"):
             row["review_reason"] = decision_entry.get("reason_code")
+    decision_event_ids = _event_id_set(redis_trace.get("decision_entries", []))
+    pending_event_ids = _event_id_set(redis_trace.get("pending_entries", []))
+    dead_letter_event_ids = _event_id_set(redis_trace.get("dead_letter_entries", []))
+    mapped_event_ids = {str(event_id) for event_id in mappings}
+    review_event_ids = {str(event_id) for event_id in reviews}
+    terminal_event_ids = set(mapped_event_ids) | set(review_event_ids) | set(pending_event_ids)
+    duplicate_decision_event_ids = _duplicate_event_ids(redis_trace.get("decision_entries", []))
+    input_event_ids = {str(row["news_event_id"]) for row in rows if row["news_event_id"] is not None}
+    non_terminal_event_ids = sorted(
+        input_event_ids - terminal_event_ids - dead_letter_event_ids,
+        key=lambda value: int(value) if value.isdigit() else value,
+    )
+    decision_seen_but_no_output = sorted(
+        decision_event_ids - terminal_event_ids - dead_letter_event_ids,
+        key=lambda value: int(value) if value.isdigit() else value,
+    )
     counts = {
         "expected_input_count": len(expected),
         "news_raw_count": len({row["news_raw_id"] for row in rows}),
         "news_event_count": len({row["news_event_id"] for row in rows if row["news_event_id"] is not None}),
         "mapped_event_count": len(mappings),
+        "mapped_distinct_event_count": len(mapped_event_ids),
         "event_subject_map_count": sum(len(items) for items in mappings.values()),
         "event_theme_map_count": sum(len(items) for items in mappings.values()),
         "review_queue_count": len(reviews),
-        "decision_count": redis_trace["decision_count"],
-        "pending_count": redis_trace["pending_count"],
-        "dead_letter_count": redis_trace["dead_letter_count"],
+        "review_distinct_event_count": len(review_event_ids),
+        "decision_entry_count": redis_trace["decision_count"],
+        "decision_distinct_event_count": len(decision_event_ids),
+        "decision_count": len(decision_event_ids),
+        "pending_entry_count": redis_trace["pending_count"],
+        "pending_distinct_event_count": len(pending_event_ids),
+        "pending_count": len(pending_event_ids),
+        "dead_letter_entry_count": redis_trace["dead_letter_count"],
+        "dead_letter_distinct_event_count": len(dead_letter_event_ids),
+        "dead_letter_count": len(dead_letter_event_ids),
+        "terminal_distinct_event_count": len(terminal_event_ids),
+        "non_terminal_event_ids": non_terminal_event_ids,
+        "non_terminal_event_count": len(non_terminal_event_ids),
+        "decision_seen_but_no_output_event_ids": decision_seen_but_no_output,
+        "decision_seen_but_no_output_count": len(decision_seen_but_no_output),
+        "duplicate_decision_event_ids": duplicate_decision_event_ids,
+        "duplicate_decision_event_count": len(duplicate_decision_event_ids),
     }
     counts.update(_aggregate_match_performance(trace_rows))
     return {
@@ -148,6 +179,24 @@ async def trace_run(
         "redis_streams": redis_trace,
         "rows": trace_rows,
     }
+
+
+def _event_id_set(entries: list[dict[str, Any]]) -> set[str]:
+    return {str(item.get("event_id")) for item in entries if item.get("event_id") is not None}
+
+
+def _duplicate_event_ids(entries: list[dict[str, Any]]) -> list[str]:
+    seen: set[str] = set()
+    duplicates: set[str] = set()
+    for item in entries:
+        event_id = item.get("event_id")
+        if event_id is None:
+            continue
+        key = str(event_id)
+        if key in seen:
+            duplicates.add(key)
+        seen.add(key)
+    return sorted(duplicates, key=lambda value: int(value) if value.isdigit() else value)
 
 
 def _expected_cases(input_path: Path) -> dict[str, dict[str, Any]]:
@@ -403,13 +452,14 @@ async def _scan_stream_for_run(client: Any, stream: str, run_id: str, scan_limit
         haystack = str(fields)
         if run_id not in haystack:
             continue
+        payload_trace = _extract_decision_payload_trace(fields)
         matched.append(
             {
                 "stream_id": stream_id,
                 "case_id": _first_matching_field(fields, "case_id"),
-                "event_id": _first_matching_field(fields, "event_id"),
+                "event_id": _first_matching_field(fields, "event_id") or payload_trace.get("event_id"),
                 "decision": _first_matching_field(fields, "decision", "action"),
-                **_extract_decision_payload_trace(fields),
+                **payload_trace,
             }
         )
     return list(reversed(matched))
@@ -423,7 +473,13 @@ def _first_matching_field(fields: dict[str, Any], *names: str) -> str | None:
 
 
 def _extract_decision_payload_trace(fields: dict[str, Any]) -> dict[str, Any]:
-    raw = fields.get("decision")
+    raw = (
+        fields.get("decision")
+        or fields.get("payload")
+        or fields.get("event")
+        or fields.get("data")
+        or fields.get("message")
+    )
     if not raw:
         return {}
     try:
@@ -434,7 +490,9 @@ def _extract_decision_payload_trace(fields: dict[str, Any]) -> dict[str, Any]:
         return {}
     match_result = payload.get("match_result") if isinstance(payload.get("match_result"), dict) else {}
     audit = match_result.get("audit") if isinstance(match_result.get("audit"), dict) else {}
+    event_data = payload.get("event_data") if isinstance(payload.get("event_data"), dict) else {}
     return {
+        "event_id": payload.get("event_id") or event_data.get("event_id"),
         "action": payload.get("action"),
         "reason_code": match_result.get("reason_code") or payload.get("reason"),
         "match_performance": audit.get("performance") if isinstance(audit.get("performance"), dict) else {},

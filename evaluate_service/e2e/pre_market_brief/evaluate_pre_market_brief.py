@@ -21,12 +21,39 @@ ALIAS_MAP: dict[str, list[str]] = {
     "稀土永磁": ["稀土永磁", "稀土", "中重稀土", "稀土出口管制"],
 }
 
+COMMERCIAL_SPACE_TERMS = {
+    "SpaceX",
+    "星链",
+    "星舰",
+    "卫星互联网",
+    "卫星互联",
+    "商业航天",
+    "蓝箭航天",
+    "蓝箭航天IPO",
+    "火箭",
+    "运载火箭",
+    "航天发射",
+    "航天发射场",
+    "广州商业航天",
+    "商业航天8大IPO",
+}
+COMMERCIAL_SPACE_RELATED_LIMIT = 3
+
 
 def _matches_gold(gold: str, candidate: str | None) -> bool:
     if not gold or not candidate:
         return False
     aliases = ALIAS_MAP.get(gold, [gold])
     return any(alias and (alias in candidate or candidate in alias) for alias in aliases)
+
+
+def _is_commercial_space_neighbor(gold: str, primary: str | None, related: str | None) -> bool:
+    """商业航天族群近邻单独计数，避免把合理扩展直接混入 wrong related。"""
+    if not gold or not related:
+        return False
+    has_space_context = any(term in gold or term in (primary or "") for term in COMMERCIAL_SPACE_TERMS)
+    has_space_related = any(term in related for term in COMMERCIAL_SPACE_TERMS)
+    return has_space_context and has_space_related
 
 
 def _load_snapshot(path: Path | None) -> dict[str, Any]:
@@ -58,6 +85,8 @@ def evaluate(
     human_review_count = 0
     unknown_count = 0
     wrong_related_count = 0
+    neighbor_related_count = 0
+    over_expanded_related_count = 0
     generic_only_related_count = 0
     llm_anchor_guard_count = 0
 
@@ -73,7 +102,16 @@ def evaluate(
         related_hit = any(_matches_gold(gold, name) for name in related_names)
         recall3_hit = any(_matches_gold(gold, name) for name in theme_names[:3])
         recall5_hit = any(_matches_gold(gold, name) for name in theme_names[:5])
-        wrong_related_count += sum(1 for name in related_names if not _matches_gold(gold, name))
+        neighbor_related_names = [
+            name for name in related_names if _is_commercial_space_neighbor(gold, primary_name, name)
+        ]
+        neighbor_related_count += len(neighbor_related_names)
+        over_expanded_related_count += max(0, len(neighbor_related_names) - COMMERCIAL_SPACE_RELATED_LIMIT)
+        wrong_related_count += sum(
+            1
+            for name in related_names
+            if not _matches_gold(gold, name) and not _is_commercial_space_neighbor(gold, primary_name, name)
+        )
         generic_only_related_count += sum(
             1 for item in row.get("related_mappings", []) if _is_generic_only_related(item)
         )
@@ -119,6 +157,8 @@ def evaluate(
         "human_review_count": human_review_count,
         "unknown_count": unknown_count,
         "wrong_related_count": wrong_related_count,
+        "neighbor_related_count": neighbor_related_count,
+        "over_expanded_related_count": over_expanded_related_count,
         "generic_only_related_count": generic_only_related_count,
         "llm_anchor_guard_count": llm_anchor_guard_count,
         "brief_major_event_count": len(sections.get("major_events") or []),
@@ -186,12 +226,23 @@ def _write_summary(path: Path, report: dict[str, Any], trace_counts: dict[str, A
         f"- 注入/期望数量: {trace_counts.get('expected_input_count', 0)}",
         f"- news_raw_count: {trace_counts.get('news_raw_count', 0)}",
         f"- news_event_count: {trace_counts.get('news_event_count', 0)}",
+        f"- decision_entry_count: {trace_counts.get('decision_entry_count', trace_counts.get('decision_count', 0))}",
+        f"- decision_distinct_event_count: {trace_counts.get('decision_distinct_event_count', trace_counts.get('decision_count', 0))}",
+        f"- duplicate_decision_event_count: {trace_counts.get('duplicate_decision_event_count', 0)}",
+        f"- terminal_distinct_event_count: {trace_counts.get('terminal_distinct_event_count', 0)}",
+        f"- non_terminal_event_count: {trace_counts.get('non_terminal_event_count', 0)}",
+        f"- decision_seen_but_no_output_count: {trace_counts.get('decision_seen_but_no_output_count', 0)}",
         f"- event_subject_map_count: {trace_counts.get('event_subject_map_count', trace_counts.get('event_theme_map_count', 0))}",
+        f"- mapped_distinct_event_count: {trace_counts.get('mapped_distinct_event_count', trace_counts.get('mapped_event_count', 0))}",
         f"- review_queue_count: {trace_counts.get('review_queue_count', 0)}",
+        f"- review_distinct_event_count: {trace_counts.get('review_distinct_event_count', trace_counts.get('review_queue_count', 0))}",
+        f"- pending_distinct_event_count: {trace_counts.get('pending_distinct_event_count', trace_counts.get('pending_count', 0))}",
         f"- primary_hit_rate: {report['primary_hit_rate']}",
         f"- related_hit_rate: {report['related_hit_rate']}",
         f"- theme_set_recall@5: {report['theme_set_recall@5']}",
         f"- wrong_related_count: {report['wrong_related_count']}",
+        f"- neighbor_related_count: {report.get('neighbor_related_count', 0)}",
+        f"- over_expanded_related_count: {report.get('over_expanded_related_count', 0)}",
         f"- generic_only_related_count: {report['generic_only_related_count']}",
         f"- llm_anchor_guard_count: {report['llm_anchor_guard_count']}",
         f"- avg_match_ms: {perf.get('avg_match_ms', trace_counts.get('avg_match_ms', 0))}",

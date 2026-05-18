@@ -1,0 +1,43 @@
+# 盘前必读 E2E Summary
+
+- 测试库: stock_data
+- 注入/期望数量: 100
+- news_raw_count: 100
+- news_event_count: 100
+- decision_entry_count: 103
+- decision_distinct_event_count: 100
+- duplicate_decision_event_count: 3
+- terminal_distinct_event_count: 98
+- event_subject_map_count: 127
+- mapped_distinct_event_count: 79
+- review_queue_count: 19
+- review_distinct_event_count: 19
+- pending_distinct_event_count: 0
+- primary_hit_rate: 0.54
+- related_hit_rate: 0.27
+- theme_set_recall@5: 0.61
+- wrong_related_count: 21
+- generic_only_related_count: 0
+- llm_anchor_guard_count: 3
+- avg_match_ms: 12012.055
+- p50_match_ms: 8007.748
+- p95_match_ms: 33321.64
+- llm_judge_count: 30
+- event_profile_llm_count: 0
+- profile_load_count: 5
+- profile_cache_hit_count: 0
+- profile_cache_miss_count: 5
+- profile_map_cache_hit_count: 95
+- profile_map_cache_miss_count: 5
+- query_vector_cache_hit_count: 99
+- query_vector_cache_miss_count: 0
+- rerank_doc_vector_cache_hit_count: 2029
+- rerank_doc_vector_cache_miss_count: 525
+- brief_theme_count: 40
+- brief_opportunity_count: 39
+- 是否通过基础门禁: True
+
+## Runtime
+
+- sps_base_url: http://127.0.0.1:8090
+- copied_snapshot_to_db: stock_data_test

@@ -28,6 +28,8 @@ python evaluate_service/e2e/pre_market_brief/run_pre_market_e2e.py \
   --force-clean \
   --inject \
   --wait \
+  --require-ready \
+  --quiet-window-seconds 30 \
   --rebuild \
   --force-rebuild \
   --evaluate \
@@ -64,3 +66,5 @@ evaluate_service/output/pre_market_e2e/<run_id>/
 ```
 
 多题材映射增强不在这些脚本中实现；这些脚本只负责回放、追踪、评估。
+
+`--require-ready` 使用 `terminal_distinct_event_count` 作为终态门禁，避免重复 decision entry 造成误判。建议 20/100 条正式回归都配合 `--quiet-window-seconds 30` 使用，确保 ready 后关键计数稳定一段时间再 rebuild。
