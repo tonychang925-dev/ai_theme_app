@@ -65,6 +65,37 @@ def _unique_keep_order(items: List[str]) -> List[str]:
     return out
 
 
+def _is_invalid_subject_name(value: Any, subject_key: str = "") -> bool:
+    text = _safe_str(value)
+    key = _safe_str(subject_key)
+    return not text or text == key or bool(re.fullmatch(r"\d+", text))
+
+
+def _infer_subject_name_from_profile_ext(row: Dict[str, Any], subject_key: str) -> str:
+    """Best-effort display-name fallback for legacy JYHF rows with empty concept."""
+    summary = _safe_str(row.get("profile_summary") or row.get("summary"))
+    if summary:
+        match = re.search(r"^\s*\d+：一、([^\s。；，,]+)", summary)
+        if match and not _is_invalid_subject_name(match.group(1), subject_key):
+            return _safe_str(match.group(1))
+    for item in _normalize_list(row.get("profile_core_anchors") or row.get("core_anchors")):
+        if not _is_invalid_subject_name(item, subject_key):
+            return item
+    return ""
+
+
+def _resolve_subject_name(row: Dict[str, Any]) -> str:
+    subject_key = _safe_str(row.get("subject_key"))
+    for key in ("subject_name", "concept"):
+        value = _safe_str(row.get(key))
+        if not _is_invalid_subject_name(value, subject_key):
+            return value
+    inferred = _infer_subject_name_from_profile_ext(row, subject_key)
+    if inferred:
+        return inferred
+    return subject_key
+
+
 def _merge_profiles(profiles: List[ThemeProfile]) -> List[ThemeProfile]:
     merged: Dict[str, ThemeProfile] = {}
     for profile in profiles:
@@ -271,8 +302,11 @@ class ThemeProfileRepository:
                 core_objects.extend(_normalize_list(ontology.get(key)))
                 core_objects.extend(_normalize_list(gate.get(key)))
 
-            base_subject_name = _safe_str(row.get("subject_name"))
-            base_concept = _safe_str(row.get("concept"))
+            base_subject_name = _resolve_subject_name(row)
+            raw_concept = _safe_str(row.get("concept"))
+            base_concept = "" if _is_invalid_subject_name(raw_concept, _safe_str(row.get("subject_key"))) else raw_concept
+            if not base_concept:
+                base_concept = base_subject_name
             auto_aliases = [base_subject_name, base_concept]
             for source_text in [base_subject_name, base_concept]:
                 if not source_text:
@@ -324,6 +358,13 @@ class ThemeProfileRepository:
             subject_key = _safe_str(row.get("subject_key"))
             canonical_key = CANONICAL_SUBJECT_KEY_MAP.get(subject_key, subject_key)
             subject_name = _safe_str(row.get("subject_name"))
+            if _is_invalid_subject_name(subject_name, subject_key):
+                logger.warning(
+                    "skip invalid theme_profile_v2 subject_name subject_key=%s subject_name=%r",
+                    subject_key,
+                    subject_name,
+                )
+                continue
             anchors = _unique_keep_order(
                 _normalize_list(row.get("entity_anchors"))
                 + _normalize_list(row.get("domain_anchors"))

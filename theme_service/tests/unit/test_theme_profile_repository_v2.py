@@ -119,6 +119,38 @@ async def test_theme_profile_repository_v1_default(monkeypatch):
     assert {profile.subject_name for profile in profiles} == {"旧题材A", "旧题材B"}
 
 
+async def test_theme_profile_repository_infers_legacy_numeric_subject_name(monkeypatch):
+    monkeypatch.delenv("THEME_PROFILE_VERSION", raising=False)
+
+    class Gateway:
+        async def load_theme_match_profiles(self):
+            return [
+                {
+                    "subject_key": "9060949",
+                    "subject_name": "9060949",
+                    "concept": "",
+                    "profile_summary": "9060949：一、SpaceX产业动态 2026年1月22日 马斯克推进SpaceX IPO。",
+                    "profile_core_anchors": ["火箭发射", "卫星互联网"],
+                    "must_terms": ["星舰"],
+                    "strong_terms": ["星链"],
+                    "should_terms": [],
+                    "not_terms": [],
+                    "weak_terms": [],
+                    "negative_terms": [],
+                    "search_text": "",
+                    "quality": "v1",
+                }
+            ]
+
+    profiles = await ThemeProfileRepository(Gateway()).load_active_profiles()
+
+    assert len(profiles) == 1
+    assert profiles[0].subject_key == "9060949"
+    assert profiles[0].subject_name == "SpaceX产业动态"
+    assert profiles[0].concept == "SpaceX产业动态"
+    assert "9060949" not in profiles[0].aliases
+
+
 async def test_theme_profile_repository_v2_require_loaded_raises_when_gateway_missing(monkeypatch):
     monkeypatch.setenv("THEME_PROFILE_VERSION", "v2")
     monkeypatch.setenv("THEME_PROFILE_V2_REQUIRE_LOADED", "true")
