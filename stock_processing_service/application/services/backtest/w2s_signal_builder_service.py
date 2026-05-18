@@ -103,8 +103,10 @@ class W2SSignalBuilderService:
         confirm_date = _parse_date(snap.get("confirm_trade_date"))
 
         # post_market signal: available T日 15:30, tradable T+1 09:30
-        available_at = f"{candidate_date}T15:30:00+08:00" if candidate_date else ""
-        tradable_at = f"{confirm_date}T09:30:00+08:00" if confirm_date else ""
+        from zoneinfo import ZoneInfo
+        cst = ZoneInfo("Asia/Shanghai")
+        available_at = datetime.combine(candidate_date, datetime.strptime("15:30:00", "%H:%M:%S").time(), tzinfo=cst) if candidate_date else datetime.now(cst)
+        tradable_at = datetime.combine(confirm_date, datetime.strptime("09:30:00", "%H:%M:%S").time(), tzinfo=cst) if confirm_date else datetime.now(cst)
 
         evidence = {
             "candidate_trade_date": str(snap.get("candidate_trade_date")),
