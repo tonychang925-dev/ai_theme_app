@@ -180,6 +180,27 @@ class ScreenerExportPayload(BaseModel):
     format: str = "json"
 
 
+# ── W2S Backtest Request Models ──
+
+class W2SDataQualityRequest(BaseModel):
+    start_date: str
+    end_date: str
+    strategy_version: str = "w2s_v0.1"
+
+
+class W2SBuildFeatureSnapshotRequest(BaseModel):
+    run_id: str
+    strategy_version: str = "w2s_v0.1"
+    start_date: str
+    end_date: str
+    force_rebuild: bool = False
+
+
+class W2SValidateSignalsRequest(BaseModel):
+    run_id: str
+    look_forward_days: list[int] = Field(default=[1, 2, 3, 5])
+
+
 def _parse_trade_date(value: str | None) -> date:
     if not value:
         return date.today()
@@ -2235,3 +2256,240 @@ async def export_stock_screener_results(payload: ScreenerExportPayload) -> dict[
         "items": export_items,
         "download_url": "",
     }
+
+
+# ── W2S Backtest API Endpoints ──
+
+# Module imports for backtest services (imported inline to avoid circular imports)
+def _get_backtest_services():
+    """Lazy-load backtest services from application/services/backtest/."""
+    from stock_processing_service.application.services.backtest.w2s_data_quality_service import (
+        W2SDataQualityService,
+    )
+    from stock_processing_service.application.services.backtest.w2s_feature_snapshot_service import (
+        W2SFeatureSnapshotService,
+    )
+    from stock_processing_service.application.services.backtest.w2s_signal_builder_service import (
+        W2SSignalBuilderService,
+    )
+    from stock_processing_service.application.services.backtest.w2s_signal_validation_service import (
+        W2SSignalValidationService,
+    )
+    from stock_processing_service.application.services.backtest.w2s_validation_summary_service import (
+        W2SValidationSummaryService,
+    )
+    return (
+        W2SDataQualityService,
+        W2SFeatureSnapshotService,
+        W2SSignalBuilderService,
+        W2SSignalValidationService,
+        W2SValidationSummaryService,
+    )
+
+
+def _create_run_id() -> str:
+    return str(uuid.uuid4())
+
+
+@app.post("/api/v1/backtest/w2s/data-quality")
+async def backtest_w2s_data_quality(payload: W2SDataQualityRequest) -> dict[str, Any]:
+    """Check data quality before running W2S backtest.
+
+    Returns a DataQualityReport. Blocks if daily_bar_coverage < 95%.
+    """
+    W2SDataQualityService, *_rest = _get_backtest_services()
+    svc = W2SDataQualityService(app.state.read_port)
+    start_date = _parse_trade_date(payload.start_date)
+    end_date = _parse_trade_date(payload.end_date)
+    report = await svc.check(start_date=start_date, end_date=end_date)
+    return report.to_dict()
+
+
+@app.post("/api/v1/backtest/w2s/build-feature-snapshot")
+async def backtest_w2s_build_feature_snapshot(payload: W2SBuildFeatureSnapshotRequest) -> dict[str, Any]:
+    """Build feature snapshots for all W2S candidates in the date range.
+
+    Idempotent: if force_rebuild=True, deletes existing rows for this run_id first.
+    """
+    _dc, W2SFeatureSnapshotService, *_rest = _get_backtest_services()
+    svc = W2SFeatureSnapshotService(
+        read_ports=app.state.read_port,
+        gateway=app.state.gateway,
+    )
+    start_date = _parse_trade_date(payload.start_date)
+    end_date = _parse_trade_date(payload.end_date)
+
+    try:
+        await app.state.gateway.execute_raw(
+            """INSERT INTO w2s_backtest_run (run_id, strategy_id, strategy_version, run_type, start_date, end_date, status, started_at)
+               VALUES ($1, 'weak_to_strong', $2, 'signal_validation', $3, $4, 'running', NOW())
+               ON CONFLICT (run_id) DO UPDATE SET status = 'running', started_at = NOW()""",
+            [payload.run_id, payload.strategy_version, start_date, end_date],
+        )
+    except Exception:
+        pass  # Run record may already exist
+
+    result = await svc.build(
+        run_id=payload.run_id,
+        strategy_version=payload.strategy_version,
+        start_date=start_date,
+        end_date=end_date,
+        force_rebuild=payload.force_rebuild,
+    )
+
+    try:
+        await app.state.gateway.execute_raw(
+            "UPDATE w2s_backtest_run SET status = 'completed', completed_at = NOW() WHERE run_id = $1",
+            [payload.run_id],
+        )
+    except Exception:
+        pass
+
+    return result
+
+
+@app.post("/api/v1/backtest/w2s/validate-signals")
+async def backtest_w2s_validate_signals(payload: W2SValidateSignalsRequest) -> dict[str, Any]:
+    """Validate all signals for a run_id against future daily bars.
+
+    Computes 1/3/5-day forward returns, max drawdown, hit_limit_up, loss_over_5pct.
+    """
+    _dc, _fs, SignalBuilderSvc, ValidationSvc, SummarySvc = _get_backtest_services()
+
+    # Step 1: Build signals from snapshots
+    builder = SignalBuilderSvc(gateway=app.state.gateway)
+    signal_result = await builder.build(run_id=payload.run_id)
+    logger.info("Signal builder result: %s", signal_result)
+
+    # Step 2: Validate signals
+    validator = ValidationSvc(read_ports=app.state.read_port, gateway=app.state.gateway)
+    validation_result = await validator.validate(
+        run_id=payload.run_id,
+        look_forward_days=tuple(payload.look_forward_days),
+    )
+    logger.info("Validation result: %s", validation_result)
+
+    # Step 3: Build summary
+    summarizer = SummarySvc(gateway=app.state.gateway)
+    summary_result = await summarizer.build(run_id=payload.run_id)
+
+    return {
+        "signal_build": signal_result,
+        "validation": validation_result,
+        "summary": summary_result,
+    }
+
+
+@app.get("/api/v1/backtest/w2s/runs/{run_id}")
+async def backtest_w2s_get_run(run_id: str) -> dict[str, Any]:
+    """Get backtest run metadata."""
+    rows = await app.state.gateway.query(
+        "SELECT * FROM w2s_backtest_run WHERE run_id = $1",
+        [run_id],
+    )
+    if not rows:
+        raise HTTPException(status_code=404, detail=f"Run not found: {run_id}")
+    row = _row_to_dict(rows[0])
+    return {"run": row}
+
+
+@app.get("/api/v1/backtest/w2s/runs/{run_id}/summary")
+async def backtest_w2s_get_run_summary(run_id: str) -> dict[str, Any]:
+    """Get validation summary for a run.
+
+    Returns 3 visible experiment summaries. confirm_source is a primary grouping dimension.
+    """
+    rows = await app.state.gateway.query(
+        "SELECT * FROM w2s_validation_summary WHERE run_id = $1 ORDER BY experiment_id, confirm_source_group, confirm_level",
+        [run_id],
+    )
+    if not rows:
+        raise HTTPException(status_code=404, detail=f"No summaries found for run: {run_id}")
+
+    summaries = [_row_to_dict(r) for r in rows]
+    proxy_count = sum(
+        1 for s in summaries
+        if str(s.get("confirm_source_group", "")).startswith("daily_open_proxy")
+    )
+    total = sum(s.get("sample_count", 0) for s in summaries)
+
+    return {
+        "run_id": run_id,
+        "total_sample_count": total,
+        "proxy_sample_ratio": proxy_count / total if total > 0 else 0,
+        "summaries": summaries,
+        "recommendations": None,
+    }
+
+
+@app.get("/api/v1/backtest/w2s/runs/{run_id}/signals")
+async def backtest_w2s_get_run_signals(
+    run_id: str,
+    limit: int = Query(default=200, ge=1, le=2000),
+    offset: int = Query(default=0, ge=0),
+    confirm_level: str | None = Query(default=None),
+    confirm_source: str | None = Query(default=None),
+    experiment_id: str | None = Query(default=None),
+) -> dict[str, Any]:
+    """Get signal details for a run with optional filtering."""
+    conditions = ["v.run_id = $1"]
+    params: list[Any] = [run_id]
+    param_idx = 2
+
+    if confirm_level:
+        conditions.append(f"v.signal_level = ${param_idx}")
+        params.append(confirm_level)
+        param_idx += 1
+    if confirm_source:
+        conditions.append(f"s.confirm_source = ${param_idx}")
+        params.append(confirm_source)
+        param_idx += 1
+
+    where_clause = " AND ".join(conditions)
+
+    count_rows = await app.state.gateway.query(
+        f"""SELECT COUNT(*) as cnt FROM strategy_signal_validation v
+            JOIN w2s_backtest_feature_snapshot s
+              ON v.stock_id = s.stock_id AND v.trade_date = s.candidate_trade_date AND v.run_id = s.run_id
+            WHERE {where_clause}""",
+        params,
+    )
+    total = int(_row_to_dict(count_rows[0]).get("cnt", 0)) if count_rows else 0
+
+    rows = await app.state.gateway.query(
+        f"""SELECT v.*, s.confirm_level as snap_confirm_level, s.confirm_source,
+                   s.pool_entry_type, s.leader_role_proxy, s.mainline_strength_score,
+                   s.board_type, s.is_20cm
+            FROM strategy_signal_validation v
+            JOIN w2s_backtest_feature_snapshot s
+              ON v.stock_id = s.stock_id AND v.trade_date = s.candidate_trade_date AND v.run_id = s.run_id
+            WHERE {where_clause}
+            ORDER BY v.trade_date DESC, v.stock_id
+            LIMIT ${param_idx} OFFSET ${param_idx + 1}""",
+        params + [limit, offset],
+    )
+
+    # Apply experiment filter in Python if requested
+    signals = [_row_to_dict(r) for r in rows]
+    if experiment_id:
+        from stock_processing_service.domain.backtest.w2s_experiment_rules import filter_for_experiment
+        signals = filter_for_experiment(signals, experiment_id)
+
+    return {
+        "run_id": run_id,
+        "total": total if not experiment_id else len(signals),
+        "limit": limit,
+        "offset": offset,
+        "signals": signals,
+    }
+
+
+def _row_to_dict(row: Any) -> dict[str, Any]:
+    """Convert a database row to a dict."""
+    if isinstance(row, dict):
+        return dict(row)
+    if hasattr(row, "_asdict"):
+        return dict(row._asdict())
+    if hasattr(row, "__dict__"):
+        return {k: v for k, v in row.__dict__.items() if not k.startswith("_")}
+    return dict(row)

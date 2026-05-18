@@ -1069,3 +1069,105 @@ async def intel_stream(
             "X-Accel-Buffering": "no",
         },
     )
+
+
+# ── W2S Backtest Proxy Endpoints ──
+
+@router.post("/backtest/w2s/data-quality")
+async def backtest_w2s_data_quality(payload: dict) -> dict:
+    """Proxy: Check data quality before W2S backtest."""
+    data = await _proxy_stock_processing_request_json(
+        "POST",
+        "/api/v1/backtest/w2s/data-quality",
+        payload=payload,
+        timeout=120.0,
+    )
+    if isinstance(data, dict):
+        return data
+    raise HTTPException(status_code=502, detail="invalid backtest data-quality response")
+
+
+@router.post("/backtest/w2s/build-feature-snapshot")
+async def backtest_w2s_build_feature_snapshot(payload: dict) -> dict:
+    """Proxy: Build W2S feature snapshots."""
+    data = await _proxy_stock_processing_request_json(
+        "POST",
+        "/api/v1/backtest/w2s/build-feature-snapshot",
+        payload=payload,
+        timeout=600.0,
+    )
+    if isinstance(data, dict):
+        return data
+    raise HTTPException(status_code=502, detail="invalid backtest build-feature-snapshot response")
+
+
+@router.post("/backtest/w2s/validate-signals")
+async def backtest_w2s_validate_signals(payload: dict) -> dict:
+    """Proxy: Validate W2S signals."""
+    data = await _proxy_stock_processing_request_json(
+        "POST",
+        "/api/v1/backtest/w2s/validate-signals",
+        payload=payload,
+        timeout=600.0,
+    )
+    if isinstance(data, dict):
+        return data
+    raise HTTPException(status_code=502, detail="invalid backtest validate-signals response")
+
+
+@router.get("/backtest/w2s/runs/{run_id}")
+async def backtest_w2s_get_run(run_id: str) -> dict:
+    """Proxy: Get W2S backtest run metadata."""
+    data = await _proxy_stock_processing_request_json(
+        "GET",
+        f"/api/v1/backtest/w2s/runs/{run_id}",
+        timeout=30.0,
+    )
+    if isinstance(data, dict):
+        return data
+    raise HTTPException(status_code=502, detail="invalid backtest run response")
+
+
+@router.get("/backtest/w2s/runs/{run_id}/summary")
+async def backtest_w2s_get_run_summary(run_id: str) -> dict:
+    """Proxy: Get W2S validation summary."""
+    data = await _proxy_stock_processing_request_json(
+        "GET",
+        f"/api/v1/backtest/w2s/runs/{run_id}/summary",
+        timeout=30.0,
+    )
+    if isinstance(data, dict):
+        return data
+    raise HTTPException(status_code=502, detail="invalid backtest summary response")
+
+
+@router.get("/backtest/w2s/runs/{run_id}/signals")
+async def backtest_w2s_get_run_signals(
+    run_id: str,
+    limit: int = Query(default=200, ge=1, le=2000),
+    offset: int = Query(default=0, ge=0),
+    confirm_level: str | None = Query(default=None),
+    confirm_source: str | None = Query(default=None),
+    experiment_id: str | None = Query(default=None),
+) -> dict:
+    """Proxy: Get W2S signal details."""
+    params = {
+        "limit": limit,
+        "offset": offset,
+    }
+    if confirm_level:
+        params["confirm_level"] = confirm_level
+    if confirm_source:
+        params["confirm_source"] = confirm_source
+    if experiment_id:
+        params["experiment_id"] = experiment_id
+
+    data = await _proxy_stock_processing_request_json(
+        "GET",
+        f"/api/v1/backtest/w2s/runs/{run_id}/signals",
+        params=params,
+        timeout=30.0,
+    )
+    if isinstance(data, dict):
+        return data
+    raise HTTPException(status_code=502, detail="invalid backtest signals response")
