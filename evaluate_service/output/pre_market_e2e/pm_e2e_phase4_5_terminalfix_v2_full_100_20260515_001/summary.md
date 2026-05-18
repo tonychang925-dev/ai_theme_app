@@ -1,0 +1,47 @@
+# 盘前必读 E2E Summary
+
+- 测试库: stock_data
+- 注入/期望数量: 100
+- news_raw_count: 100
+- news_event_count: 100
+- decision_entry_count: 100
+- decision_distinct_event_count: 100
+- duplicate_decision_event_count: 0
+- terminal_distinct_event_count: 100
+- non_terminal_event_count: 0
+- decision_seen_but_no_output_count: 0
+- event_subject_map_count: 121
+- mapped_distinct_event_count: 81
+- review_queue_count: 17
+- review_distinct_event_count: 17
+- pending_distinct_event_count: 2
+- primary_hit_rate: 0.56
+- related_hit_rate: 0.27
+- theme_set_recall@5: 0.62
+- wrong_related_count: 7
+- neighbor_related_count: 8
+- over_expanded_related_count: 1
+- generic_only_related_count: 0
+- llm_anchor_guard_count: 3
+- avg_match_ms: 8923.242
+- p50_match_ms: 5501.794
+- p95_match_ms: 25942.014
+- llm_judge_count: 32
+- event_profile_llm_count: 0
+- profile_load_count: 3
+- profile_cache_hit_count: 0
+- profile_cache_miss_count: 3
+- profile_map_cache_hit_count: 97
+- profile_map_cache_miss_count: 3
+- query_vector_cache_hit_count: 99
+- query_vector_cache_miss_count: 0
+- rerank_doc_vector_cache_hit_count: 2066
+- rerank_doc_vector_cache_miss_count: 535
+- brief_theme_count: 37
+- brief_opportunity_count: 36
+- 是否通过基础门禁: True
+
+## Runtime
+
+- sps_base_url: http://127.0.0.1:8090
+- copied_snapshot_to_db: stock_data_test
