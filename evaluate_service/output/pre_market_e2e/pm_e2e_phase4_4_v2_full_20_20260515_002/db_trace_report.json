@@ -5,34 +5,34 @@
     "expected_input_count": 20,
     "news_raw_count": 20,
     "news_event_count": 20,
-    "mapped_event_count": 6,
-    "event_subject_map_count": 11,
-    "event_theme_map_count": 11,
-    "review_queue_count": 0,
-    "decision_count": 6,
+    "mapped_event_count": 12,
+    "event_subject_map_count": 20,
+    "event_theme_map_count": 20,
+    "review_queue_count": 3,
+    "decision_count": 16,
     "pending_count": 0,
     "dead_letter_count": 0,
-    "match_timing_sample_count": 6,
-    "llm_judge_count": 2,
+    "match_timing_sample_count": 16,
+    "llm_judge_count": 3,
     "event_profile_llm_count": 0,
-    "query_vector_cache_hit_count": 6,
+    "query_vector_cache_hit_count": 16,
     "query_vector_cache_miss_count": 0,
-    "rerank_doc_vector_cache_hit_count": 104,
-    "rerank_doc_vector_cache_miss_count": 88,
+    "rerank_doc_vector_cache_hit_count": 331,
+    "rerank_doc_vector_cache_miss_count": 152,
     "profile_load_count": 1,
     "profile_cache_hit_count": 0,
     "profile_cache_miss_count": 1,
-    "profile_map_cache_hit_count": 6,
+    "profile_map_cache_hit_count": 15,
     "profile_map_cache_miss_count": 1,
-    "avg_match_ms": 18699.393,
-    "p50_match_ms": 18167.338,
-    "p95_match_ms": 35647.952
+    "avg_match_ms": 11294.411,
+    "p50_match_ms": 6301.48,
+    "p95_match_ms": 30742.81
   },
   "redis_streams": {
     "decision_stream": "stream:events:decision",
     "pending_stream": "stream:events:pending",
     "dead_letter_stream": "stream:dead:letter",
-    "decision_count": 6,
+    "decision_count": 16,
     "pending_count": 0,
     "dead_letter_count": 0,
     "decision_entries": [
@@ -275,6 +275,406 @@
           "rerank_doc_vector_cache_size": 88,
           "query_vector_cache_size": 7
         }
+      },
+      {
+        "stream_id": "1779081861089-0",
+        "case_id": null,
+        "event_id": "7672",
+        "decision": "{\"decision_id\": \"decision_1779081861_1779081770801-0\", \"decision_type\": \"phase0_human_review\", \"action\": \"human_review\", \"operations\": [\"publish_human_review\"], \"event_id\": 7672, \"trace_id\": \"trace_7672\", \"event_type\": \"structured\", \"event_title\": \"2025年1月3日，1月3日电，美国专利及商标局官网显示，英伟达公开了一项AR眼镜专利（US20250004275A1），名为“无背光增强现实数字全息技术”\", \"timestamp\": \"2026-05-18T13:24:21.087808\", \"processor\": \"theme_processor_e2e_pm_e2e_phase4_4_v2_full_20_20260515_002\", \"event_data\": {\"event_id\": 7672, \"news_id\": 3839, \"title\": \"2025年1月3日，1月3日电，美国专利及商标局官网显示，英伟达公开了一项AR眼镜专利（US20250004275A1），名为“无背光增强现实数字全息技术”\", \"summary\": \"英伟达公开AR眼镜专利，涉及无背光增强现实数字全息技术。\", \"content\": \"2025年1月3日，1月3日电，美国专利及商标局官网显示，英伟达公开了一项AR眼镜专利（US20250004275A1），名为“无背光增强现实数字全息技术”。**\", \"event_type\": \"技术突破\"}, \"confidence\": 0.5, \"reason\": \"role_guard_blocked\", \"source\": \"structured_theme_match\", \"match_result\": {\"decision\": \"HUMAN_REVIEW\", \"event_id\": 7672, \"news_id\": 3839, \"confidence\": 0.5, \"reason_code\": \"role_guard_blocked\", \"matched_subject_key\": \"\", \"matched_theme_name\": \"\", \"matched_theme_id\": null, \"related_matches\": [], \"review_required\": true, \"audit\": {\"top_candidates\": [{\"subject_key\": \"9030409\", \"subject_name\": \"AR眼镜\", \"dense_score\": 0.7442, \"rerank_score\": 1.2066, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [\"AR眼镜\"], \"object_hits_text\": [], \"must_hits_llm\": [\"AR眼镜\"], \"must_hits_text\": [], \"strong_hits_llm\": [\"AR眼镜\"], \"strong_hits_text\": [], \"should_hits\": [\"增强现实\"], \"entity_hits\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"support_hits\": [\"AR眼镜\", \"AR智能眼镜\"], \"anchor_hits\": [\"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"hit_terms\": [\"增强现实\", \"AR眼镜\", \"AR智能眼镜\"], \"hit_term_roles\": {\"增强现实\": \"support\", \"AR眼镜\": \"support\", \"AR智能眼镜\": \"support\"}, \"hit_term_role_sources\": {\"增强现实\": [\"should_hits\"], \"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"AR智能眼镜\": [\"support_hits\"]}, \"valid_anchor_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"], \"blocking_hit_terms\": [\"增强现实\", \"AR眼镜\", \"AR智能眼镜\"], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [\"增强现实\"], \"conflict_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"]}}}, {\"subject_key\": \"9038540\", \"subject_name\": \"AR眼镜四大品牌\", \"dense_score\": 0.6789, \"rerank_score\": 0.9815, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"support_hits\": [\"AR眼镜四大品牌\", \"AR眼镜\", \"Rokid AR眼镜\"], \"anchor_hits\": [\"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"hit_terms\": [\"AR眼镜\", \"AR眼镜四大品牌\", \"Rokid AR眼镜\"], \"hit_term_roles\": {\"AR眼镜\": \"support\", \"AR眼镜四大品牌\": \"support\", \"Rokid AR眼镜\": \"support\"}, \"hit_term_role_sources\": {\"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"AR眼镜四大品牌\": [\"support_hits\"], \"Rokid AR眼镜\": [\"support_hits\"]}, \"valid_anchor_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"], \"blocking_hit_terms\": [\"AR眼镜\", \"AR眼镜四大品牌\", \"Rokid AR眼镜\"], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"]}}}, {\"subject_key\": \"9022942\", \"subject_name\": \"苹果MR\", \"dense_score\": 0.6629, \"rerank_score\": 0.9508, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [\"增强现实\"], \"entity_hits\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"support_hits\": [\"增强现实（AR）\"], \"anchor_hits\": [\"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"hit_terms\": [\"增强现实\", \"AR眼镜\", \"增强现实（AR）\"], \"hit_term_roles\": {\"增强现实\": \"support\", \"AR眼镜\": \"support\", \"增强现实（AR）\": \"support\"}, \"hit_term_role_sources\": {\"增强现实\": [\"should_hits\"], \"AR眼镜\": [\"profile_anchor_hits\"], \"增强现实（AR）\": [\"support_hits\"]}, \"valid_anchor_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"], \"blocking_hit_terms\": [\"增强现实\", \"AR眼镜\", \"增强现实（AR）\"], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [\"增强现实\"], \"conflict_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"]}}}, {\"subject_key\": \"9014001\", \"subject_name\": \"人工智能硬件\", \"dense_score\": 0.0, \"rerank_score\": 0.8159, \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"英伟达\"], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 50, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [], \"support_hits\": [], \"anchor_hits\": [\"英伟达\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 50, \"conflict_score\": 0, \"hit_terms\": [\"英伟达\"], \"hit_term_roles\": {\"英伟达\": \"main_anchor\"}, \"hit_term_role_sources\": {\"英伟达\": [\"theme_name_hit_terms\"]}, \"valid_anchor_terms\": [\"英伟达\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [\"英伟达\"], \"subject_name_hits\": [], \"anchor_terms\": [\"英伟达\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9034134\", \"subject_name\": \"中科院\", \"dense_score\": 0.0, \"rerank_score\": 0.7306, \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"英伟达\"], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 50, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [], \"support_hits\": [], \"anchor_hits\": [\"英伟达\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 50, \"conflict_score\": 0, \"hit_terms\": [\"英伟达\"], \"hit_term_roles\": {\"英伟达\": \"main_anchor\"}, \"hit_term_role_sources\": {\"英伟达\": [\"theme_name_hit_terms\"]}, \"valid_anchor_terms\": [\"英伟达\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [\"英伟达\"], \"subject_name_hits\": [], \"anchor_terms\": [\"英伟达\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}], \"best_evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [\"AR眼镜\"], \"object_hits_text\": [], \"must_hits_llm\": [\"AR眼镜\"], \"must_hits_text\": [], \"strong_hits_llm\": [\"AR眼镜\"], \"strong_hits_text\": [], \"should_hits\": [\"增强现实\"], \"entity_hits\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"support_hits\": [\"AR眼镜\", \"AR智能眼镜\"], \"anchor_hits\": [\"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"hit_terms\": [\"增强现实\", \"AR眼镜\", \"AR智能眼镜\"], \"hit_term_roles\": {\"增强现实\": \"support\", \"AR眼镜\": \"support\", \"AR智能眼镜\": \"support\"}, \"hit_term_role_sources\": {\"增强现实\": [\"should_hits\"], \"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"AR智能眼镜\": [\"support_hits\"]}, \"valid_anchor_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"], \"blocking_hit_terms\": [\"增强现实\", \"AR眼镜\", \"AR智能眼镜\"], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [\"增强现实\"], \"conflict_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"]}}, \"performance\": {\"timing_ms\": {\"load_profiles_ms\": 0.045, \"event_profile_extract_ms\": 6.607, \"dense_recall_ms\": 4302.61, \"sparse_recall_ms\": 24.508, \"feature_recall_ms\": 309.175, \"rerank_ms\": 6457.515, \"llm_judge_ms\": 0.0, \"final_decision_ms\": 0.373, \"total_match_ms\": 11167.435}, \"counters\": {\"llm_judge_count\": 0, \"event_profile_llm_count\": 0, \"llm_judge_mode\": \"auto\", \"query_vector_cache_hit_count\": 1, \"query_vector_cache_miss_count\": 0, \"rerank_doc_vector_cache_hit_count\": 19, \"rerank_doc_vector_cache_miss_count\": 9, \"llm_judge_skipped\": 1}, \"profile_cache_stats\": {\"profile_load_count\": 1, \"profile_cache_hit_count\": 0, \"profile_cache_miss_count\": 1, \"profile_map_cache_hit_count\": 7, \"profile_map_cache_miss_count\": 1}, \"rerank_doc_vector_cache_size\": 97, \"query_vector_cache_size\": 8}}}, \"theme_data\": {\"subject_key\": \"\", \"name\": \"\", \"id\": null}, \"run_id\": \"pm_e2e_phase4_4_v2_full_20_20260515_002\", \"case_id\": \"pm_case_0003\"}",
+        "action": "human_review",
+        "reason_code": "role_guard_blocked",
+        "match_performance": {
+          "timing_ms": {
+            "load_profiles_ms": 0.045,
+            "event_profile_extract_ms": 6.607,
+            "dense_recall_ms": 4302.61,
+            "sparse_recall_ms": 24.508,
+            "feature_recall_ms": 309.175,
+            "rerank_ms": 6457.515,
+            "llm_judge_ms": 0.0,
+            "final_decision_ms": 0.373,
+            "total_match_ms": 11167.435
+          },
+          "counters": {
+            "llm_judge_count": 0,
+            "event_profile_llm_count": 0,
+            "llm_judge_mode": "auto",
+            "query_vector_cache_hit_count": 1,
+            "query_vector_cache_miss_count": 0,
+            "rerank_doc_vector_cache_hit_count": 19,
+            "rerank_doc_vector_cache_miss_count": 9,
+            "llm_judge_skipped": 1
+          },
+          "profile_cache_stats": {
+            "profile_load_count": 1,
+            "profile_cache_hit_count": 0,
+            "profile_cache_miss_count": 1,
+            "profile_map_cache_hit_count": 7,
+            "profile_map_cache_miss_count": 1
+          },
+          "rerank_doc_vector_cache_size": 97,
+          "query_vector_cache_size": 8
+        }
+      },
+      {
+        "stream_id": "1779081877673-0",
+        "case_id": null,
+        "event_id": "7681",
+        "decision": "{\"decision_id\": \"decision_1779081877_1779081800459-0\", \"decision_type\": \"phase0_match\", \"action\": \"update_theme\", \"operations\": [\"update_theme_heat\", \"create_mapping\", \"publish_update\"], \"event_id\": 7681, \"trace_id\": \"trace_7681\", \"event_type\": \"structured\", \"event_title\": \"2024年9月25日，Meta Connect 2024年度开发者大会将于今夜举行，据Meta官网贴出议程显示，公司CEO马克·扎克伯格将于当地时间上午10点（\", \"timestamp\": \"2026-05-18T13:24:37.672580\", \"processor\": \"theme_processor_e2e_pm_e2e_phase4_4_v2_full_20_20260515_002\", \"event_data\": {\"event_id\": 7681, \"news_id\": 3850, \"title\": \"2024年9月25日，Meta Connect 2024年度开发者大会将于今夜举行，据Meta官网贴出议程显示，公司CEO马克·扎克伯格将于当地时间上午10点（\", \"summary\": \"Meta Connect 2024开发者大会将于今夜举行，扎克伯格将分享MR、AI及可穿戴设备进展。\", \"content\": \"2024年9月25日，Meta Connect 2024年度开发者大会将于今夜举行，据Meta官网贴出议程显示，公司CEO马克·扎克伯格将于当地时间上午10点（北京时间9月26日凌晨1点）发表主题演讲，并分享有关混合现实(MR)、人工智能(AI)，以及可穿戴设备的最新进展。\", \"event_type\": \"会议论坛\"}, \"confidence\": 0.92, \"reason\": \"llm_accept_match\", \"source\": \"structured_theme_match\", \"match_result\": {\"decision\": \"MATCH\", \"event_id\": 7681, \"news_id\": 3850, \"confidence\": 0.92, \"reason_code\": \"llm_accept_match\", \"matched_subject_key\": \"9038540\", \"matched_theme_name\": \"AR眼镜四大品牌\", \"matched_theme_id\": null, \"related_matches\": [{\"subject_key\": \"9030409\", \"theme_name\": \"AR眼镜\", \"confidence\": 0.6206, \"relation_type\": \"related\", \"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"Meta\"], \"support_hits\": [\"AI眼镜\", \"小米AI眼镜\", \"自研AI眼镜\", \"可穿戴设备\", \"虚拟现实设备\", \"360公司\", \"AI录音笔\", \"AI拍摄眼镜\", \"AI智能眼镜\"], \"anchor_hits\": [\"Meta\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 6, \"conflict_score\": 0, \"hit_terms\": [\"Meta\", \"AI眼镜\", \"小米AI眼镜\", \"自研AI眼镜\", \"可穿戴设备\", \"虚拟现实设备\", \"360公司\", \"AI录音笔\", \"AI拍摄眼镜\", \"AI智能眼镜\"], \"hit_term_roles\": {\"Meta\": \"main_anchor\", \"AI眼镜\": \"support\", \"小米AI眼镜\": \"support\", \"自研AI眼镜\": \"support\", \"可穿戴设备\": \"support\", \"虚拟现实设备\": \"support\", \"360公司\": \"support\", \"AI录音笔\": \"support\", \"AI拍摄眼镜\": \"support\", \"AI智能眼镜\": \"support\"}, \"hit_term_role_sources\": {\"Meta\": [\"profile_anchor_hits\"], \"AI眼镜\": [\"support_hits\"], \"小米AI眼镜\": [\"support_hits\"], \"自研AI眼镜\": [\"support_hits\"], \"可穿戴设备\": [\"support_hits\"], \"虚拟现实设备\": [\"support_hits\"], \"360公司\": [\"support_hits\"], \"AI录音笔\": [\"support_hits\"], \"AI拍摄眼镜\": [\"support_hits\"], \"AI智能眼镜\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"Meta\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [\"Meta\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}], \"review_required\": false, \"audit\": {\"top_candidates\": [{\"subject_key\": \"9038540\", \"subject_name\": \"AR眼镜四大品牌\", \"dense_score\": 0.0, \"rerank_score\": 1.0327, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"Meta\"], \"support_hits\": [], \"anchor_hits\": [\"Meta\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 6, \"conflict_score\": 0, \"hit_terms\": [\"Meta\"], \"hit_term_roles\": {\"Meta\": \"main_anchor\"}, \"hit_term_role_sources\": {\"Meta\": [\"profile_anchor_hits\"]}, \"valid_anchor_terms\": [\"Meta\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [\"Meta\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9030409\", \"subject_name\": \"AR眼镜\", \"dense_score\": 0.0, \"rerank_score\": 1.0057, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"Meta\"], \"support_hits\": [\"AI眼镜\", \"小米AI眼镜\", \"自研AI眼镜\", \"可穿戴设备\", \"虚拟现实设备\", \"360公司\", \"AI录音笔\", \"AI拍摄眼镜\", \"AI智能眼镜\"], \"anchor_hits\": [\"Meta\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 6, \"conflict_score\": 0, \"hit_terms\": [\"Meta\", \"AI眼镜\", \"小米AI眼镜\", \"自研AI眼镜\", \"可穿戴设备\", \"虚拟现实设备\", \"360公司\", \"AI录音笔\", \"AI拍摄眼镜\", \"AI智能眼镜\"], \"hit_term_roles\": {\"Meta\": \"main_anchor\", \"AI眼镜\": \"support\", \"小米AI眼镜\": \"support\", \"自研AI眼镜\": \"support\", \"可穿戴设备\": \"support\", \"虚拟现实设备\": \"support\", \"360公司\": \"support\", \"AI录音笔\": \"support\", \"AI拍摄眼镜\": \"support\", \"AI智能眼镜\": \"support\"}, \"hit_term_role_sources\": {\"Meta\": [\"profile_anchor_hits\"], \"AI眼镜\": [\"support_hits\"], \"小米AI眼镜\": [\"support_hits\"], \"自研AI眼镜\": [\"support_hits\"], \"可穿戴设备\": [\"support_hits\"], \"虚拟现实设备\": [\"support_hits\"], \"360公司\": [\"support_hits\"], \"AI录音笔\": [\"support_hits\"], \"AI拍摄眼镜\": [\"support_hits\"], \"AI智能眼镜\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"Meta\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [\"Meta\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9055826\", \"subject_name\": \"中昊芯英\", \"dense_score\": 0.0, \"rerank_score\": 0.981, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"Meta\"], \"support_hits\": [\"AI训练芯片“刹那”\", \"AI芯片\", \"AI训练芯片\", \"高性能AI芯片及计算集群研发\"], \"anchor_hits\": [\"Meta\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 6, \"conflict_score\": 0, \"hit_terms\": [\"Meta\", \"AI训练芯片“刹那”\", \"AI芯片\", \"AI训练芯片\", \"高性能AI芯片及计算集群研发\"], \"hit_term_roles\": {\"Meta\": \"main_anchor\", \"AI训练芯片“刹那”\": \"support\", \"AI芯片\": \"support\", \"AI训练芯片\": \"support\", \"高性能AI芯片及计算集群研发\": \"support\"}, \"hit_term_role_sources\": {\"Meta\": [\"profile_anchor_hits\"], \"AI训练芯片“刹那”\": [\"support_hits\"], \"AI芯片\": [\"support_hits\"], \"AI训练芯片\": [\"support_hits\"], \"高性能AI芯片及计算集群研发\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"Meta\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [\"Meta\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9036559\", \"subject_name\": \"ASIC芯片\", \"dense_score\": 0.0, \"rerank_score\": 0.9797, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"Meta\"], \"support_hits\": [\"AI芯片ASIC\", \"AI研发\"], \"anchor_hits\": [\"Meta\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 6, \"conflict_score\": 0, \"hit_terms\": [\"Meta\", \"AI芯片ASIC\", \"AI研发\"], \"hit_term_roles\": {\"Meta\": \"main_anchor\", \"AI芯片ASIC\": \"support\", \"AI研发\": \"support\"}, \"hit_term_role_sources\": {\"Meta\": [\"profile_anchor_hits\"], \"AI芯片ASIC\": [\"support_hits\"], \"AI研发\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"Meta\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [\"Meta\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9056553\", \"subject_name\": \"谷歌AI供货商\", \"dense_score\": 0.0, \"rerank_score\": 0.9688, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"Meta\"], \"support_hits\": [\"谷歌AI供货商\", \"AI护城河\", \"AI模型\", \"AI搜索产品\"], \"anchor_hits\": [\"Meta\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 6, \"conflict_score\": 0, \"hit_terms\": [\"Meta\", \"谷歌AI供货商\", \"AI护城河\", \"AI模型\", \"AI搜索产品\"], \"hit_term_roles\": {\"Meta\": \"main_anchor\", \"谷歌AI供货商\": \"support\", \"AI护城河\": \"support\", \"AI模型\": \"support\", \"AI搜索产品\": \"support\"}, \"hit_term_role_sources\": {\"Meta\": [\"profile_anchor_hits\"], \"谷歌AI供货商\": [\"support_hits\"], \"AI护城河\": [\"support_hits\"], \"AI模型\": [\"support_hits\"], \"AI搜索产品\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"Meta\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [\"Meta\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}], \"llm_result\": {\"verdict\": \"accept_match\", \"best_candidate\": \"C1\", \"best_theme_key\": \"9038540\", \"best_theme_name\": \"AR眼镜四大品牌\", \"confidence\": 0.92, \"reason\": \"事件主叙事是Meta Connect大会发布MR、AI及可穿戴设备进展，C1题材名直接包含Meta品牌且核心锚点为AR眼镜，与事件高度匹配。\", \"new_theme_name\": \"\", \"new_theme_desc\": \"\"}, \"performance\": {\"timing_ms\": {\"load_profiles_ms\": 0.056, \"event_profile_extract_ms\": 15.564, \"dense_recall_ms\": 7074.988, \"sparse_recall_ms\": 31.235, \"feature_recall_ms\": 1869.852, \"rerank_ms\": 12057.778, \"llm_judge_ms\": 2519.887, \"final_decision_ms\": 0.594, \"total_match_ms\": 23658.105}, \"counters\": {\"llm_judge_count\": 1, \"event_profile_llm_count\": 0, \"llm_judge_mode\": \"auto\", \"query_vector_cache_hit_count\": 1, \"query_vector_cache_miss_count\": 0, \"rerank_doc_vector_cache_hit_count\": 18, \"rerank_doc_vector_cache_miss_count\": 18, \"llm_judge_skipped\": 0}, \"profile_cache_stats\": {\"profile_load_count\": 1, \"profile_cache_hit_count\": 0, \"profile_cache_miss_count\": 1, \"profile_map_cache_hit_count\": 7, \"profile_map_cache_miss_count\": 1}, \"rerank_doc_vector_cache_size\": 115, \"query_vector_cache_size\": 8}}}, \"theme_data\": {\"subject_key\": \"9038540\", \"name\": \"AR眼镜四大品牌\", \"id\": null}, \"run_id\": \"pm_e2e_phase4_4_v2_full_20_20260515_002\", \"case_id\": \"pm_case_0014\"}",
+        "action": "update_theme",
+        "reason_code": "llm_accept_match",
+        "match_performance": {
+          "timing_ms": {
+            "load_profiles_ms": 0.056,
+            "event_profile_extract_ms": 15.564,
+            "dense_recall_ms": 7074.988,
+            "sparse_recall_ms": 31.235,
+            "feature_recall_ms": 1869.852,
+            "rerank_ms": 12057.778,
+            "llm_judge_ms": 2519.887,
+            "final_decision_ms": 0.594,
+            "total_match_ms": 23658.105
+          },
+          "counters": {
+            "llm_judge_count": 1,
+            "event_profile_llm_count": 0,
+            "llm_judge_mode": "auto",
+            "query_vector_cache_hit_count": 1,
+            "query_vector_cache_miss_count": 0,
+            "rerank_doc_vector_cache_hit_count": 18,
+            "rerank_doc_vector_cache_miss_count": 18,
+            "llm_judge_skipped": 0
+          },
+          "profile_cache_stats": {
+            "profile_load_count": 1,
+            "profile_cache_hit_count": 0,
+            "profile_cache_miss_count": 1,
+            "profile_map_cache_hit_count": 7,
+            "profile_map_cache_miss_count": 1
+          },
+          "rerank_doc_vector_cache_size": 115,
+          "query_vector_cache_size": 8
+        }
+      },
+      {
+        "stream_id": "1779081883984-0",
+        "case_id": null,
+        "event_id": "7673",
+        "decision": "{\"decision_id\": \"decision_1779081883_1779081770904-0\", \"decision_type\": \"phase0_human_review\", \"action\": \"human_review\", \"operations\": [\"publish_human_review\"], \"event_id\": 7673, \"trace_id\": \"trace_7673\", \"event_type\": \"structured\", \"event_title\": \"24日讯，鸿海宣布，将携手Porotech进军AR眼镜市场\", \"timestamp\": \"2026-05-18T13:24:43.984189\", \"processor\": \"theme_processor_e2e_pm_e2e_phase4_4_v2_full_20_20260515_002\", \"event_data\": {\"event_id\": 7673, \"news_id\": 3842, \"title\": \"24日讯，鸿海宣布，将携手Porotech进军AR眼镜市场\", \"summary\": \"鸿海与Porotech合作进军AR眼镜市场，计划在台中建MicroLED产线，2025年Q4量产。\", \"content\": \"24日讯，鸿海宣布，将携手Porotech进军AR眼镜市场。依双方合作内容，鸿海将加速在AR与MicroLED的战略布局，并计划在台中建立MicroLED晶圆制程产线，预计2025年第四季投入量产。\", \"event_type\": \"订单合作\"}, \"confidence\": 0.5, \"reason\": \"role_guard_blocked\", \"source\": \"structured_theme_match\", \"match_result\": {\"decision\": \"HUMAN_REVIEW\", \"event_id\": 7673, \"news_id\": 3842, \"confidence\": 0.5, \"reason_code\": \"role_guard_blocked\", \"matched_subject_key\": \"\", \"matched_theme_name\": \"\", \"matched_theme_id\": null, \"related_matches\": [], \"review_required\": true, \"audit\": {\"top_candidates\": [{\"subject_key\": \"9030409\", \"subject_name\": \"AR眼镜\", \"dense_score\": 0.7125, \"rerank_score\": 1.2421, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [\"AR眼镜\"], \"object_hits_text\": [], \"must_hits_llm\": [\"AR眼镜\"], \"must_hits_text\": [], \"strong_hits_llm\": [\"AR眼镜\"], \"strong_hits_text\": [], \"should_hits\": [\"量产\", \"MicroLED\"], \"entity_hits\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"support_hits\": [\"AR眼镜\", \"AR智能眼镜\"], \"anchor_hits\": [\"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"hit_terms\": [\"量产\", \"MicroLED\", \"AR眼镜\", \"AR智能眼镜\"], \"hit_term_roles\": {\"量产\": \"support\", \"MicroLED\": \"support\", \"AR眼镜\": \"support\", \"AR智能眼镜\": \"support\"}, \"hit_term_role_sources\": {\"量产\": [\"should_hits\"], \"MicroLED\": [\"should_hits\"], \"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"AR智能眼镜\": [\"support_hits\"]}, \"valid_anchor_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"], \"blocking_hit_terms\": [\"量产\", \"MicroLED\", \"AR眼镜\", \"AR智能眼镜\"], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [\"量产\", \"MicroLED\"], \"conflict_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"]}}}, {\"subject_key\": \"9064628\", \"subject_name\": \"Micro LED CPO\", \"dense_score\": 0.0, \"rerank_score\": 1.0296, \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"Micro\", \"LED\"], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 50, \"object_hits\": [\"Micro\"], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [\"Micro\"], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [], \"support_hits\": [], \"anchor_hits\": [\"Micro\", \"LED\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 52, \"conflict_score\": 0, \"hit_terms\": [\"Micro\", \"LED\"], \"hit_term_roles\": {\"Micro\": \"main_anchor\", \"LED\": \"main_anchor\"}, \"hit_term_role_sources\": {\"Micro\": [\"theme_name_hit_terms\", \"object_hits\"], \"LED\": [\"theme_name_hit_terms\"]}, \"valid_anchor_terms\": [\"Micro\", \"LED\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [\"Micro\", \"LED\"], \"subject_name_hits\": [], \"anchor_terms\": [\"Micro\", \"LED\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9038540\", \"subject_name\": \"AR眼镜四大品牌\", \"dense_score\": 0.695, \"rerank_score\": 0.9951, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"support_hits\": [\"AR眼镜四大品牌\", \"AR眼镜\", \"Rokid AR眼镜\"], \"anchor_hits\": [\"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"hit_terms\": [\"AR眼镜\", \"AR眼镜四大品牌\", \"Rokid AR眼镜\"], \"hit_term_roles\": {\"AR眼镜\": \"support\", \"AR眼镜四大品牌\": \"support\", \"Rokid AR眼镜\": \"support\"}, \"hit_term_role_sources\": {\"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"AR眼镜四大品牌\": [\"support_hits\"], \"Rokid AR眼镜\": [\"support_hits\"]}, \"valid_anchor_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"], \"blocking_hit_terms\": [\"AR眼镜\", \"AR眼镜四大品牌\", \"Rokid AR眼镜\"], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"]}}}, {\"subject_key\": \"9022942\", \"subject_name\": \"苹果MR\", \"dense_score\": 0.654, \"rerank_score\": 0.9653, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"support_hits\": [\"增强现实（AR）\"], \"anchor_hits\": [\"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"hit_terms\": [\"AR眼镜\", \"增强现实（AR）\"], \"hit_term_roles\": {\"AR眼镜\": \"support\", \"增强现实（AR）\": \"support\"}, \"hit_term_role_sources\": {\"AR眼镜\": [\"profile_anchor_hits\"], \"增强现实（AR）\": [\"support_hits\"]}, \"valid_anchor_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"], \"blocking_hit_terms\": [\"AR眼镜\", \"增强现实（AR）\"], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"]}}}, {\"subject_key\": \"9015387\", \"subject_name\": \"显示面板\", \"dense_score\": 0.0, \"rerank_score\": 0.8489, \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"OLED\"], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 50, \"object_hits\": [\"OLED\"], \"must_hits\": [\"OLED\"], \"strong_hits\": [\"OLED\"], \"object_hits_llm\": [], \"object_hits_text\": [\"OLED\"], \"must_hits_llm\": [], \"must_hits_text\": [\"OLED\"], \"strong_hits_llm\": [], \"strong_hits_text\": [\"OLED\"], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [], \"support_hits\": [], \"anchor_hits\": [\"OLED\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 55, \"conflict_score\": 0, \"hit_terms\": [\"OLED\"], \"hit_term_roles\": {\"OLED\": \"main_anchor\"}, \"hit_term_role_sources\": {\"OLED\": [\"theme_name_hit_terms\", \"object_hits\", \"must_hits\", \"strong_hits\"]}, \"valid_anchor_terms\": [\"OLED\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [\"OLED\"], \"subject_name_hits\": [], \"anchor_terms\": [\"OLED\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}], \"best_evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [\"AR眼镜\"], \"object_hits_text\": [], \"must_hits_llm\": [\"AR眼镜\"], \"must_hits_text\": [], \"strong_hits_llm\": [\"AR眼镜\"], \"strong_hits_text\": [], \"should_hits\": [\"量产\", \"MicroLED\"], \"entity_hits\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"support_hits\": [\"AR眼镜\", \"AR智能眼镜\"], \"anchor_hits\": [\"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"hit_terms\": [\"量产\", \"MicroLED\", \"AR眼镜\", \"AR智能眼镜\"], \"hit_term_roles\": {\"量产\": \"support\", \"MicroLED\": \"support\", \"AR眼镜\": \"support\", \"AR智能眼镜\": \"support\"}, \"hit_term_role_sources\": {\"量产\": [\"should_hits\"], \"MicroLED\": [\"should_hits\"], \"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"AR智能眼镜\": [\"support_hits\"]}, \"valid_anchor_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"], \"blocking_hit_terms\": [\"量产\", \"MicroLED\", \"AR眼镜\", \"AR智能眼镜\"], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [\"量产\", \"MicroLED\"], \"conflict_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"]}}, \"performance\": {\"timing_ms\": {\"load_profiles_ms\": 0.067, \"event_profile_extract_ms\": 94.087, \"dense_recall_ms\": 720.165, \"sparse_recall_ms\": 4.953, \"feature_recall_ms\": 518.547, \"rerank_ms\": 4934.244, \"llm_judge_ms\": 0.0, \"final_decision_ms\": 0.427, \"total_match_ms\": 6301.48}, \"counters\": {\"llm_judge_count\": 0, \"event_profile_llm_count\": 0, \"llm_judge_mode\": \"auto\", \"query_vector_cache_hit_count\": 1, \"query_vector_cache_miss_count\": 0, \"rerank_doc_vector_cache_hit_count\": 22, \"rerank_doc_vector_cache_miss_count\": 8, \"llm_judge_skipped\": 1}, \"profile_cache_stats\": {\"profile_load_count\": 1, \"profile_cache_hit_count\": 0, \"profile_cache_miss_count\": 1, \"profile_map_cache_hit_count\": 9, \"profile_map_cache_miss_count\": 1}, \"rerank_doc_vector_cache_size\": 123, \"query_vector_cache_size\": 10}}}, \"theme_data\": {\"subject_key\": \"\", \"name\": \"\", \"id\": null}, \"run_id\": \"pm_e2e_phase4_4_v2_full_20_20260515_002\", \"case_id\": \"pm_case_0006\"}",
+        "action": "human_review",
+        "reason_code": "role_guard_blocked",
+        "match_performance": {
+          "timing_ms": {
+            "load_profiles_ms": 0.067,
+            "event_profile_extract_ms": 94.087,
+            "dense_recall_ms": 720.165,
+            "sparse_recall_ms": 4.953,
+            "feature_recall_ms": 518.547,
+            "rerank_ms": 4934.244,
+            "llm_judge_ms": 0.0,
+            "final_decision_ms": 0.427,
+            "total_match_ms": 6301.48
+          },
+          "counters": {
+            "llm_judge_count": 0,
+            "event_profile_llm_count": 0,
+            "llm_judge_mode": "auto",
+            "query_vector_cache_hit_count": 1,
+            "query_vector_cache_miss_count": 0,
+            "rerank_doc_vector_cache_hit_count": 22,
+            "rerank_doc_vector_cache_miss_count": 8,
+            "llm_judge_skipped": 1
+          },
+          "profile_cache_stats": {
+            "profile_load_count": 1,
+            "profile_cache_hit_count": 0,
+            "profile_cache_miss_count": 1,
+            "profile_map_cache_hit_count": 9,
+            "profile_map_cache_miss_count": 1
+          },
+          "rerank_doc_vector_cache_size": 123,
+          "query_vector_cache_size": 10
+        }
+      },
+      {
+        "stream_id": "1779081884619-0",
+        "case_id": null,
+        "event_id": "7682",
+        "decision": "{\"decision_id\": \"decision_1779081884_1779081801014-0\", \"decision_type\": \"phase0_match\", \"action\": \"update_theme\", \"operations\": [\"update_theme_heat\", \"create_mapping\", \"publish_update\"], \"event_id\": 7682, \"trace_id\": \"trace_7682\", \"event_type\": \"structured\", \"event_title\": \"2024年9月23日，消息面上，Meta Connect 2024将于美国当地时间9月25日开始，扎克伯格将分享混合现实、AI和可穿戴设备的最新发展，新的MR头\", \"timestamp\": \"2026-05-18T13:24:44.618284\", \"processor\": \"theme_processor_e2e_pm_e2e_phase4_4_v2_full_20_20260515_002\", \"event_data\": {\"event_id\": 7682, \"news_id\": 3851, \"title\": \"2024年9月23日，消息面上，Meta Connect 2024将于美国当地时间9月25日开始，扎克伯格将分享混合现实、AI和可穿戴设备的最新发展，新的MR头\", \"summary\": \"Meta Connect 2024将于9月25日举行，扎克伯格将分享混合现实、AI和可穿戴设备最新进展，MR头显和AR眼\", \"content\": \"2024年9月23日，消息面上，Meta Connect 2024将于美国当地时间9月25日开始，扎克伯格将分享混合现实、AI和可穿戴设备的最新发展，新的MR头显以及AR眼镜产品有望同时亮相。\", \"event_type\": \"会议论坛\"}, \"confidence\": 0.98, \"reason\": \"direct_theme_name_hit\", \"source\": \"structured_theme_match\", \"match_result\": {\"decision\": \"MATCH\", \"event_id\": 7682, \"news_id\": 3851, \"confidence\": 0.98, \"reason_code\": \"direct_theme_name_hit\", \"matched_subject_key\": \"9030409\", \"matched_theme_name\": \"AR眼镜\", \"matched_theme_id\": null, \"related_matches\": [{\"subject_key\": \"9038540\", \"theme_name\": \"AR眼镜四大品牌\", \"confidence\": 0.6594, \"relation_type\": \"related\", \"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"Meta\", \"AR眼镜\"], \"support_hits\": [\"AR眼镜四大品牌\", \"AR眼镜\", \"Rokid AR眼镜\"], \"anchor_hits\": [\"Meta\", \"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 6, \"conflict_score\": 0, \"hit_terms\": [\"Meta\", \"AR眼镜\", \"AR眼镜四大品牌\", \"Rokid AR眼镜\"], \"hit_term_roles\": {\"Meta\": \"main_anchor\", \"AR眼镜\": \"support\", \"AR眼镜四大品牌\": \"support\", \"Rokid AR眼镜\": \"support\"}, \"hit_term_role_sources\": {\"Meta\": [\"profile_anchor_hits\"], \"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"AR眼镜四大品牌\": [\"support_hits\"], \"Rokid AR眼镜\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"Meta\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [\"Meta\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}], \"review_required\": false, \"audit\": {\"top_candidates\": [{\"subject_key\": \"9030409\", \"subject_name\": \"AR眼镜\", \"dense_score\": 0.0, \"rerank_score\": 1.5373, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [\"AR眼镜\"], \"object_hits_text\": [], \"must_hits_llm\": [\"AR眼镜\"], \"must_hits_text\": [], \"strong_hits_llm\": [\"AR眼镜\"], \"strong_hits_text\": [], \"should_hits\": [\"混合现实\"], \"entity_hits\": [], \"profile_anchor_hits\": [\"Meta\", \"AR眼镜\"], \"support_hits\": [\"AR眼镜\", \"AR智能眼镜\", \"AI眼镜\", \"小米AI眼镜\", \"产品代工\", \"自研AI眼镜\", \"可穿戴设备\", \"虚拟现实设备\", \"产品零售\", \"AI录音笔\", \"AI拍摄眼镜\", \"AI智能眼镜\"], \"anchor_hits\": [\"Meta\", \"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 6, \"conflict_score\": 0, \"hit_terms\": [\"混合现实\", \"Meta\", \"AR眼镜\", \"AR智能眼镜\", \"AI眼镜\", \"小米AI眼镜\", \"产品代工\", \"自研AI眼镜\", \"可穿戴设备\", \"虚拟现实设备\", \"产品零售\", \"AI录音笔\", \"AI拍摄眼镜\", \"AI智能眼镜\"], \"hit_term_roles\": {\"混合现实\": \"support\", \"Meta\": \"main_anchor\", \"AR眼镜\": \"support\", \"AR智能眼镜\": \"support\", \"AI眼镜\": \"support\", \"小米AI眼镜\": \"support\", \"产品代工\": \"support\", \"自研AI眼镜\": \"support\", \"可穿戴设备\": \"support\", \"虚拟现实设备\": \"support\", \"产品零售\": \"support\", \"AI录音笔\": \"support\", \"AI拍摄眼镜\": \"support\", \"AI智能眼镜\": \"support\"}, \"hit_term_role_sources\": {\"混合现实\": [\"should_hits\"], \"Meta\": [\"profile_anchor_hits\"], \"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"AR智能眼镜\": [\"support_hits\"], \"AI眼镜\": [\"support_hits\"], \"小米AI眼镜\": [\"support_hits\"], \"产品代工\": [\"support_hits\"], \"自研AI眼镜\": [\"support_hits\"], \"可穿戴设备\": [\"support_hits\"], \"虚拟现实设备\": [\"support_hits\"], \"产品零售\": [\"support_hits\"], \"AI录音笔\": [\"support_hits\"], \"AI拍摄眼镜\": [\"support_hits\"], \"AI智能眼镜\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"Meta\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [\"Meta\"], \"support_terms\": [\"混合现实\"], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9038540\", \"subject_name\": \"AR眼镜四大品牌\", \"dense_score\": 0.0, \"rerank_score\": 1.394, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"Meta\", \"AR眼镜\"], \"support_hits\": [\"AR眼镜四大品牌\", \"AR眼镜\", \"Rokid AR眼镜\"], \"anchor_hits\": [\"Meta\", \"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 6, \"conflict_score\": 0, \"hit_terms\": [\"Meta\", \"AR眼镜\", \"AR眼镜四大品牌\", \"Rokid AR眼镜\"], \"hit_term_roles\": {\"Meta\": \"main_anchor\", \"AR眼镜\": \"support\", \"AR眼镜四大品牌\": \"support\", \"Rokid AR眼镜\": \"support\"}, \"hit_term_role_sources\": {\"Meta\": [\"profile_anchor_hits\"], \"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"AR眼镜四大品牌\": [\"support_hits\"], \"Rokid AR眼镜\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"Meta\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [\"Meta\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9022942\", \"subject_name\": \"苹果MR\", \"dense_score\": 0.0, \"rerank_score\": 1.1913, \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"MR\"], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 50, \"object_hits\": [\"MR\"], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [\"MR\"], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"support_hits\": [\"增强现实（AR）\", \"产品代工\", \"整机产品\", \"制造设备\"], \"anchor_hits\": [\"MR\", \"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 52, \"conflict_score\": 0, \"hit_terms\": [\"MR\", \"AR眼镜\", \"增强现实（AR）\", \"产品代工\", \"整机产品\", \"制造设备\"], \"hit_term_roles\": {\"MR\": \"main_anchor\", \"AR眼镜\": \"support\", \"增强现实（AR）\": \"support\", \"产品代工\": \"support\", \"整机产品\": \"support\", \"制造设备\": \"support\"}, \"hit_term_role_sources\": {\"MR\": [\"theme_name_hit_terms\", \"object_hits\"], \"AR眼镜\": [\"profile_anchor_hits\"], \"增强现实（AR）\": [\"support_hits\"], \"产品代工\": [\"support_hits\"], \"整机产品\": [\"support_hits\"], \"制造设备\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"MR\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [\"MR\"], \"subject_name_hits\": [], \"anchor_terms\": [\"MR\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9012538\", \"subject_name\": \"VR\", \"dense_score\": 0.0, \"rerank_score\": 1.019, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [\"MR\"], \"entity_hits\": [], \"profile_anchor_hits\": [\"Meta\"], \"support_hits\": [\"整机产品\", \"AR/VR\", \"线上产品和服务\", \"低价产品\"], \"anchor_hits\": [\"Meta\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 6, \"conflict_score\": 0, \"hit_terms\": [\"MR\", \"Meta\", \"整机产品\", \"AR/VR\", \"线上产品和服务\", \"低价产品\"], \"hit_term_roles\": {\"MR\": \"support\", \"Meta\": \"main_anchor\", \"整机产品\": \"support\", \"AR/VR\": \"support\", \"线上产品和服务\": \"support\", \"低价产品\": \"support\"}, \"hit_term_role_sources\": {\"MR\": [\"should_hits\"], \"Meta\": [\"profile_anchor_hits\"], \"整机产品\": [\"support_hits\"], \"AR/VR\": [\"support_hits\"], \"线上产品和服务\": [\"support_hits\"], \"低价产品\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"Meta\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [\"Meta\"], \"support_terms\": [\"MR\"], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9031543\", \"subject_name\": \"智能穿戴\", \"dense_score\": 0.0, \"rerank_score\": 1.0107, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"Meta\"], \"support_hits\": [\"智能穿戴设备\", \"小米AI眼镜\", \"AR/VR市场\", \"AR&ER市场\", \"可穿戴设备业务\"], \"anchor_hits\": [\"Meta\"], \"not_hits\": [\"Meta\"], \"negative_hits\": [\"Meta\"], \"positive_score\": 6, \"conflict_score\": 1, \"hit_terms\": [\"Meta\", \"智能穿戴设备\", \"小米AI眼镜\", \"AR/VR市场\", \"AR&ER市场\", \"可穿戴设备业务\"], \"hit_term_roles\": {\"Meta\": \"main_anchor\", \"智能穿戴设备\": \"support\", \"小米AI眼镜\": \"support\", \"AR/VR市场\": \"support\", \"AR&ER市场\": \"support\", \"可穿戴设备业务\": \"support\"}, \"hit_term_role_sources\": {\"Meta\": [\"profile_anchor_hits\"], \"智能穿戴设备\": [\"support_hits\"], \"小米AI眼镜\": [\"support_hits\"], \"AR/VR市场\": [\"support_hits\"], \"AR&ER市场\": [\"support_hits\"], \"可穿戴设备业务\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"Meta\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [\"Meta\"], \"support_terms\": [], \"conflict_terms\": [\"Meta\"], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}], \"best_evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [\"AR眼镜\"], \"object_hits_text\": [], \"must_hits_llm\": [\"AR眼镜\"], \"must_hits_text\": [], \"strong_hits_llm\": [\"AR眼镜\"], \"strong_hits_text\": [], \"should_hits\": [\"混合现实\"], \"entity_hits\": [], \"profile_anchor_hits\": [\"Meta\", \"AR眼镜\"], \"support_hits\": [\"AR眼镜\", \"AR智能眼镜\", \"AI眼镜\", \"小米AI眼镜\", \"产品代工\", \"自研AI眼镜\", \"可穿戴设备\", \"虚拟现实设备\", \"产品零售\", \"AI录音笔\", \"AI拍摄眼镜\", \"AI智能眼镜\"], \"anchor_hits\": [\"Meta\", \"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 6, \"conflict_score\": 0, \"hit_terms\": [\"混合现实\", \"Meta\", \"AR眼镜\", \"AR智能眼镜\", \"AI眼镜\", \"小米AI眼镜\", \"产品代工\", \"自研AI眼镜\", \"可穿戴设备\", \"虚拟现实设备\", \"产品零售\", \"AI录音笔\", \"AI拍摄眼镜\", \"AI智能眼镜\"], \"hit_term_roles\": {\"混合现实\": \"support\", \"Meta\": \"main_anchor\", \"AR眼镜\": \"support\", \"AR智能眼镜\": \"support\", \"AI眼镜\": \"support\", \"小米AI眼镜\": \"support\", \"产品代工\": \"support\", \"自研AI眼镜\": \"support\", \"可穿戴设备\": \"support\", \"虚拟现实设备\": \"support\", \"产品零售\": \"support\", \"AI录音笔\": \"support\", \"AI拍摄眼镜\": \"support\", \"AI智能眼镜\": \"support\"}, \"hit_term_role_sources\": {\"混合现实\": [\"should_hits\"], \"Meta\": [\"profile_anchor_hits\"], \"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"AR智能眼镜\": [\"support_hits\"], \"AI眼镜\": [\"support_hits\"], \"小米AI眼镜\": [\"support_hits\"], \"产品代工\": [\"support_hits\"], \"自研AI眼镜\": [\"support_hits\"], \"可穿戴设备\": [\"support_hits\"], \"虚拟现实设备\": [\"support_hits\"], \"产品零售\": [\"support_hits\"], \"AI录音笔\": [\"support_hits\"], \"AI拍摄眼镜\": [\"support_hits\"], \"AI智能眼镜\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"Meta\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [\"Meta\"], \"support_terms\": [\"混合现实\"], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}, \"performance\": {\"timing_ms\": {\"load_profiles_ms\": 0.117, \"event_profile_extract_ms\": 32.383, \"dense_recall_ms\": 5903.923, \"sparse_recall_ms\": 3.566, \"feature_recall_ms\": 500.495, \"rerank_ms\": 17.111, \"llm_judge_ms\": 0.0, \"final_decision_ms\": 0.362, \"total_match_ms\": 6556.756}, \"counters\": {\"llm_judge_count\": 0, \"event_profile_llm_count\": 0, \"llm_judge_mode\": \"auto\", \"query_vector_cache_hit_count\": 1, \"query_vector_cache_miss_count\": 0, \"rerank_doc_vector_cache_hit_count\": 17, \"rerank_doc_vector_cache_miss_count\": 0, \"llm_judge_skipped\": 1}, \"profile_cache_stats\": {\"profile_load_count\": 1, \"profile_cache_hit_count\": 0, \"profile_cache_miss_count\": 1, \"profile_map_cache_hit_count\": 9, \"profile_map_cache_miss_count\": 1}, \"rerank_doc_vector_cache_size\": 123, \"query_vector_cache_size\": 10}}}, \"theme_data\": {\"subject_key\": \"9030409\", \"name\": \"AR眼镜\", \"id\": null}, \"run_id\": \"pm_e2e_phase4_4_v2_full_20_20260515_002\", \"case_id\": \"pm_case_0015\"}",
+        "action": "update_theme",
+        "reason_code": "direct_theme_name_hit",
+        "match_performance": {
+          "timing_ms": {
+            "load_profiles_ms": 0.117,
+            "event_profile_extract_ms": 32.383,
+            "dense_recall_ms": 5903.923,
+            "sparse_recall_ms": 3.566,
+            "feature_recall_ms": 500.495,
+            "rerank_ms": 17.111,
+            "llm_judge_ms": 0.0,
+            "final_decision_ms": 0.362,
+            "total_match_ms": 6556.756
+          },
+          "counters": {
+            "llm_judge_count": 0,
+            "event_profile_llm_count": 0,
+            "llm_judge_mode": "auto",
+            "query_vector_cache_hit_count": 1,
+            "query_vector_cache_miss_count": 0,
+            "rerank_doc_vector_cache_hit_count": 17,
+            "rerank_doc_vector_cache_miss_count": 0,
+            "llm_judge_skipped": 1
+          },
+          "profile_cache_stats": {
+            "profile_load_count": 1,
+            "profile_cache_hit_count": 0,
+            "profile_cache_miss_count": 1,
+            "profile_map_cache_hit_count": 9,
+            "profile_map_cache_miss_count": 1
+          },
+          "rerank_doc_vector_cache_size": 123,
+          "query_vector_cache_size": 10
+        }
+      },
+      {
+        "stream_id": "1779081888819-0",
+        "case_id": null,
+        "event_id": "7674",
+        "decision": "{\"decision_id\": \"decision_1779081888_1779081785732-0\", \"decision_type\": \"phase0_match\", \"action\": \"update_theme\", \"operations\": [\"update_theme_heat\", \"create_mapping\", \"publish_update\"], \"event_id\": 7674, \"trace_id\": \"trace_7674\", \"event_type\": \"structured\", \"event_title\": \"2024年12月13日，在Android XR发布会上，谷歌与国内消费级AR眼镜厂商XREAL达成了战略合作\", \"timestamp\": \"2026-05-18T13:24:48.818994\", \"processor\": \"theme_processor_e2e_pm_e2e_phase4_4_v2_full_20_20260515_002\", \"event_data\": {\"event_id\": 7674, \"news_id\": 3843, \"title\": \"2024年12月13日，在Android XR发布会上，谷歌与国内消费级AR眼镜厂商XREAL达成了战略合作\", \"summary\": \"谷歌与国内AR眼镜厂商XREAL在Android XR发布会上达成战略合作，XREAL近期发布搭载自研芯片X1的新品。\", \"content\": \"2024年12月13日，在Android XR发布会上，谷歌与国内消费级AR眼镜厂商XREAL达成了战略合作。《科创板日报》记者获悉，XREAL的产业链伙伴包括立讯精密、龙旗科技等。上周，XREAL刚刚发布了全新一代产品XREAL One，首次搭载了XREAL自研的空间计算芯片——X1。**\", \"event_type\": \"订单合作\"}, \"confidence\": 0.98, \"reason\": \"direct_theme_name_hit\", \"source\": \"structured_theme_match\", \"match_result\": {\"decision\": \"MATCH\", \"event_id\": 7674, \"news_id\": 3843, \"confidence\": 0.98, \"reason_code\": \"direct_theme_name_hit\", \"matched_subject_key\": \"9030409\", \"matched_theme_name\": \"AR眼镜\", \"matched_theme_id\": null, \"related_matches\": [], \"review_required\": false, \"audit\": {\"top_candidates\": [{\"subject_key\": \"9030409\", \"subject_name\": \"AR眼镜\", \"dense_score\": 0.7597, \"rerank_score\": 1.4461, \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"芯片\"], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 50, \"object_hits\": [\"芯片\"], \"must_hits\": [\"芯片\"], \"strong_hits\": [\"芯片\"], \"object_hits_llm\": [\"AR眼镜\"], \"object_hits_text\": [\"芯片\"], \"must_hits_llm\": [\"AR眼镜\"], \"must_hits_text\": [\"芯片\"], \"strong_hits_llm\": [\"AR眼镜\"], \"strong_hits_text\": [\"芯片\"], \"should_hits\": [\"芯片\"], \"entity_hits\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"support_hits\": [\"AR眼镜\", \"AR智能眼镜\", \"产品代工\", \"XR\", \"产品零售\", \"XR头显\", \"XR智能眼镜\"], \"anchor_hits\": [\"芯片\", \"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 56, \"conflict_score\": 0, \"hit_terms\": [\"芯片\", \"AR眼镜\", \"AR智能眼镜\", \"产品代工\", \"XR\", \"产品零售\", \"XR头显\", \"XR智能眼镜\"], \"hit_term_roles\": {\"芯片\": \"main_anchor\", \"AR眼镜\": \"support\", \"AR智能眼镜\": \"support\", \"产品代工\": \"support\", \"XR\": \"support\", \"产品零售\": \"support\", \"XR头显\": \"support\", \"XR智能眼镜\": \"support\"}, \"hit_term_role_sources\": {\"芯片\": [\"theme_name_hit_terms\", \"object_hits\", \"must_hits\", \"strong_hits\", \"should_hits\"], \"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"AR智能眼镜\": [\"support_hits\"], \"产品代工\": [\"support_hits\"], \"XR\": [\"support_hits\"], \"产品零售\": [\"support_hits\"], \"XR头显\": [\"support_hits\"], \"XR智能眼镜\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"芯片\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [\"芯片\"], \"subject_name_hits\": [], \"anchor_terms\": [\"芯片\"], \"support_terms\": [\"芯片\"], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9022942\", \"subject_name\": \"苹果MR\", \"dense_score\": 0.7665, \"rerank_score\": 1.0867, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"support_hits\": [\"增强现实（AR）\", \"产品代工\", \"整机产品\"], \"anchor_hits\": [\"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"hit_terms\": [\"AR眼镜\", \"增强现实（AR）\", \"产品代工\", \"整机产品\"], \"hit_term_roles\": {\"AR眼镜\": \"support\", \"增强现实（AR）\": \"support\", \"产品代工\": \"support\", \"整机产品\": \"support\"}, \"hit_term_role_sources\": {\"AR眼镜\": [\"profile_anchor_hits\"], \"增强现实（AR）\": [\"support_hits\"], \"产品代工\": [\"support_hits\"], \"整机产品\": [\"support_hits\"]}, \"valid_anchor_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"], \"blocking_hit_terms\": [\"AR眼镜\", \"增强现实（AR）\", \"产品代工\", \"整机产品\"], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"]}}}, {\"subject_key\": \"9038540\", \"subject_name\": \"AR眼镜四大品牌\", \"dense_score\": 0.7645, \"rerank_score\": 1.0693, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"support_hits\": [\"XREAL品牌\", \"AR眼镜四大品牌\", \"AR眼镜\", \"XREAL\", \"XREAL空间屏\", \"Rokid AR眼镜\"], \"anchor_hits\": [\"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"hit_terms\": [\"AR眼镜\", \"XREAL品牌\", \"AR眼镜四大品牌\", \"XREAL\", \"XREAL空间屏\", \"Rokid AR眼镜\"], \"hit_term_roles\": {\"AR眼镜\": \"support\", \"XREAL品牌\": \"support\", \"AR眼镜四大品牌\": \"support\", \"XREAL\": \"support\", \"XREAL空间屏\": \"support\", \"Rokid AR眼镜\": \"support\"}, \"hit_term_role_sources\": {\"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"XREAL品牌\": [\"support_hits\"], \"AR眼镜四大品牌\": [\"support_hits\"], \"XREAL\": [\"support_hits\"], \"XREAL空间屏\": [\"support_hits\"], \"Rokid AR眼镜\": [\"support_hits\"]}, \"valid_anchor_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"], \"blocking_hit_terms\": [\"AR眼镜\", \"XREAL品牌\", \"AR眼镜四大品牌\", \"XREAL\", \"XREAL空间屏\", \"Rokid AR眼镜\"], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"]}}}, {\"subject_key\": \"9036559\", \"subject_name\": \"ASIC芯片\", \"dense_score\": 0.6983, \"rerank_score\": 0.8832, \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"芯片\"], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 50, \"object_hits\": [\"芯片\"], \"must_hits\": [\"芯片\"], \"strong_hits\": [\"芯片\"], \"object_hits_llm\": [], \"object_hits_text\": [\"芯片\"], \"must_hits_llm\": [], \"must_hits_text\": [\"芯片\"], \"strong_hits_llm\": [], \"strong_hits_text\": [\"芯片\"], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [], \"support_hits\": [], \"anchor_hits\": [\"芯片\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 55, \"conflict_score\": 0, \"hit_terms\": [\"芯片\"], \"hit_term_roles\": {\"芯片\": \"main_anchor\"}, \"hit_term_role_sources\": {\"芯片\": [\"theme_name_hit_terms\", \"object_hits\", \"must_hits\", \"strong_hits\"]}, \"valid_anchor_terms\": [\"芯片\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [\"芯片\"], \"subject_name_hits\": [], \"anchor_terms\": [\"芯片\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9041842\", \"subject_name\": \"央企AI+行动\", \"dense_score\": 0.0, \"rerank_score\": 0.7896, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [], \"support_hits\": [], \"anchor_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"hit_terms\": [], \"hit_term_roles\": {}, \"hit_term_role_sources\": {}, \"valid_anchor_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}], \"best_evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"芯片\"], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 50, \"object_hits\": [\"芯片\"], \"must_hits\": [\"芯片\"], \"strong_hits\": [\"芯片\"], \"object_hits_llm\": [\"AR眼镜\"], \"object_hits_text\": [\"芯片\"], \"must_hits_llm\": [\"AR眼镜\"], \"must_hits_text\": [\"芯片\"], \"strong_hits_llm\": [\"AR眼镜\"], \"strong_hits_text\": [\"芯片\"], \"should_hits\": [\"芯片\"], \"entity_hits\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"support_hits\": [\"AR眼镜\", \"AR智能眼镜\", \"产品代工\", \"XR\", \"产品零售\", \"XR头显\", \"XR智能眼镜\"], \"anchor_hits\": [\"芯片\", \"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 56, \"conflict_score\": 0, \"hit_terms\": [\"芯片\", \"AR眼镜\", \"AR智能眼镜\", \"产品代工\", \"XR\", \"产品零售\", \"XR头显\", \"XR智能眼镜\"], \"hit_term_roles\": {\"芯片\": \"main_anchor\", \"AR眼镜\": \"support\", \"AR智能眼镜\": \"support\", \"产品代工\": \"support\", \"XR\": \"support\", \"产品零售\": \"support\", \"XR头显\": \"support\", \"XR智能眼镜\": \"support\"}, \"hit_term_role_sources\": {\"芯片\": [\"theme_name_hit_terms\", \"object_hits\", \"must_hits\", \"strong_hits\", \"should_hits\"], \"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"AR智能眼镜\": [\"support_hits\"], \"产品代工\": [\"support_hits\"], \"XR\": [\"support_hits\"], \"产品零售\": [\"support_hits\"], \"XR头显\": [\"support_hits\"], \"XR智能眼镜\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"芯片\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [\"芯片\"], \"subject_name_hits\": [], \"anchor_terms\": [\"芯片\"], \"support_terms\": [\"芯片\"], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}, \"performance\": {\"timing_ms\": {\"load_profiles_ms\": 0.054, \"event_profile_extract_ms\": 26.319, \"dense_recall_ms\": 551.668, \"sparse_recall_ms\": 2.763, \"feature_recall_ms\": 473.838, \"rerank_ms\": 3110.929, \"llm_judge_ms\": 0.0, \"final_decision_ms\": 0.305, \"total_match_ms\": 4190.091}, \"counters\": {\"llm_judge_count\": 0, \"event_profile_llm_count\": 0, \"llm_judge_mode\": \"auto\", \"query_vector_cache_hit_count\": 1, \"query_vector_cache_miss_count\": 0, \"rerank_doc_vector_cache_hit_count\": 26, \"rerank_doc_vector_cache_miss_count\": 8, \"llm_judge_skipped\": 1}, \"profile_cache_stats\": {\"profile_load_count\": 1, \"profile_cache_hit_count\": 0, \"profile_cache_miss_count\": 1, \"profile_map_cache_hit_count\": 11, \"profile_map_cache_miss_count\": 1}, \"rerank_doc_vector_cache_size\": 131, \"query_vector_cache_size\": 12}}}, \"theme_data\": {\"subject_key\": \"9030409\", \"name\": \"AR眼镜\", \"id\": null}, \"run_id\": \"pm_e2e_phase4_4_v2_full_20_20260515_002\", \"case_id\": \"pm_case_0007\"}",
+        "action": "update_theme",
+        "reason_code": "direct_theme_name_hit",
+        "match_performance": {
+          "timing_ms": {
+            "load_profiles_ms": 0.054,
+            "event_profile_extract_ms": 26.319,
+            "dense_recall_ms": 551.668,
+            "sparse_recall_ms": 2.763,
+            "feature_recall_ms": 473.838,
+            "rerank_ms": 3110.929,
+            "llm_judge_ms": 0.0,
+            "final_decision_ms": 0.305,
+            "total_match_ms": 4190.091
+          },
+          "counters": {
+            "llm_judge_count": 0,
+            "event_profile_llm_count": 0,
+            "llm_judge_mode": "auto",
+            "query_vector_cache_hit_count": 1,
+            "query_vector_cache_miss_count": 0,
+            "rerank_doc_vector_cache_hit_count": 26,
+            "rerank_doc_vector_cache_miss_count": 8,
+            "llm_judge_skipped": 1
+          },
+          "profile_cache_stats": {
+            "profile_load_count": 1,
+            "profile_cache_hit_count": 0,
+            "profile_cache_miss_count": 1,
+            "profile_map_cache_hit_count": 11,
+            "profile_map_cache_miss_count": 1
+          },
+          "rerank_doc_vector_cache_size": 131,
+          "query_vector_cache_size": 12
+        }
+      },
+      {
+        "stream_id": "1779081890788-0",
+        "case_id": null,
+        "event_id": "7683",
+        "decision": "{\"decision_id\": \"decision_1779081890_1779081804444-0\", \"decision_type\": \"phase0_match\", \"action\": \"update_theme\", \"operations\": [\"update_theme_heat\", \"create_mapping\", \"publish_update\"], \"event_id\": 7683, \"trace_id\": \"trace_7683\", \"event_type\": \"structured\", \"event_title\": \"2024年9月20日，据报道，Meta Connect2024大会将于9月25日至26日举办，马克·扎克伯格将分享Meta对人工智能和元宇宙的愿景，主题演讲将集\", \"timestamp\": \"2026-05-18T13:24:50.786440\", \"processor\": \"theme_processor_e2e_pm_e2e_phase4_4_v2_full_20_20260515_002\", \"event_data\": {\"event_id\": 7683, \"news_id\": 3852, \"title\": \"2024年9月20日，据报道，Meta Connect2024大会将于9月25日至26日举办，马克·扎克伯格将分享Meta对人工智能和元宇宙的愿景，主题演讲将集\", \"summary\": \"Meta Connect2024大会将于9月25-26日举办，扎克伯格将分享AI和元宇宙愿景，发布Quest 3S和AR\", \"content\": \"2024年9月20日，据报道，Meta Connect2024大会将于9月25日至26日举办，马克·扎克伯格将分享Meta对人工智能和元宇宙的愿景，主题演讲将集中在Meta新一代产品的发布，尤其是备受关注的Meta Quest 3S和一款成熟的AR眼镜原型。Meta Quest 3S是相较Quest 3更为经济实惠的虚拟现实头戴设备，预计将搭载Meta最新开发的大模型Llama 3.1。此外，Meta的首款AR眼镜原型Project Orion也备受期待，该款产品预计将带来真正的视觉增强现实体验，将为AR领域带来新的发展方向。\", \"event_type\": \"会议论坛\"}, \"confidence\": 0.98, \"reason\": \"direct_theme_name_hit\", \"source\": \"structured_theme_match\", \"match_result\": {\"decision\": \"MATCH\", \"event_id\": 7683, \"news_id\": 3852, \"confidence\": 0.98, \"reason_code\": \"direct_theme_name_hit\", \"matched_subject_key\": \"9030409\", \"matched_theme_name\": \"AR眼镜\", \"matched_theme_id\": null, \"related_matches\": [{\"subject_key\": \"9038540\", \"theme_name\": \"AR眼镜四大品牌\", \"confidence\": 0.6582, \"relation_type\": \"related\", \"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"Meta\", \"AR眼镜\"], \"support_hits\": [\"AR眼镜四大品牌\", \"AR眼镜\", \"Rokid AR眼镜\"], \"anchor_hits\": [\"Meta\", \"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 6, \"conflict_score\": 0, \"hit_terms\": [\"Meta\", \"AR眼镜\", \"AR眼镜四大品牌\", \"Rokid AR眼镜\"], \"hit_term_roles\": {\"Meta\": \"main_anchor\", \"AR眼镜\": \"support\", \"AR眼镜四大品牌\": \"support\", \"Rokid AR眼镜\": \"support\"}, \"hit_term_role_sources\": {\"Meta\": [\"profile_anchor_hits\"], \"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"AR眼镜四大品牌\": [\"support_hits\"], \"Rokid AR眼镜\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"Meta\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [\"Meta\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}], \"review_required\": false, \"audit\": {\"top_candidates\": [{\"subject_key\": \"9030409\", \"subject_name\": \"AR眼镜\", \"dense_score\": 0.0, \"rerank_score\": 1.5387, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [\"AR眼镜\"], \"object_hits_text\": [], \"must_hits_llm\": [\"AR眼镜\"], \"must_hits_text\": [], \"strong_hits_llm\": [\"AR眼镜\"], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"Meta\", \"AR眼镜\"], \"support_hits\": [\"AR眼镜\", \"AR智能眼镜\", \"AI眼镜\", \"小米AI眼镜\", \"产品代工\", \"自研AI眼镜\", \"可穿戴设备\", \"虚拟现实设备\", \"产品零售\", \"AI录音笔\", \"AI拍摄眼镜\", \"AI智能眼镜\"], \"anchor_hits\": [\"Meta\", \"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 6, \"conflict_score\": 0, \"hit_terms\": [\"Meta\", \"AR眼镜\", \"AR智能眼镜\", \"AI眼镜\", \"小米AI眼镜\", \"产品代工\", \"自研AI眼镜\", \"可穿戴设备\", \"虚拟现实设备\", \"产品零售\", \"AI录音笔\", \"AI拍摄眼镜\", \"AI智能眼镜\"], \"hit_term_roles\": {\"Meta\": \"main_anchor\", \"AR眼镜\": \"support\", \"AR智能眼镜\": \"support\", \"AI眼镜\": \"support\", \"小米AI眼镜\": \"support\", \"产品代工\": \"support\", \"自研AI眼镜\": \"support\", \"可穿戴设备\": \"support\", \"虚拟现实设备\": \"support\", \"产品零售\": \"support\", \"AI录音笔\": \"support\", \"AI拍摄眼镜\": \"support\", \"AI智能眼镜\": \"support\"}, \"hit_term_role_sources\": {\"Meta\": [\"profile_anchor_hits\"], \"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"AR智能眼镜\": [\"support_hits\"], \"AI眼镜\": [\"support_hits\"], \"小米AI眼镜\": [\"support_hits\"], \"产品代工\": [\"support_hits\"], \"自研AI眼镜\": [\"support_hits\"], \"可穿戴设备\": [\"support_hits\"], \"虚拟现实设备\": [\"support_hits\"], \"产品零售\": [\"support_hits\"], \"AI录音笔\": [\"support_hits\"], \"AI拍摄眼镜\": [\"support_hits\"], \"AI智能眼镜\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"Meta\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [\"Meta\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9038540\", \"subject_name\": \"AR眼镜四大品牌\", \"dense_score\": 0.0, \"rerank_score\": 1.3816, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"Meta\", \"AR眼镜\"], \"support_hits\": [\"AR眼镜四大品牌\", \"AR眼镜\", \"Rokid AR眼镜\"], \"anchor_hits\": [\"Meta\", \"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 6, \"conflict_score\": 0, \"hit_terms\": [\"Meta\", \"AR眼镜\", \"AR眼镜四大品牌\", \"Rokid AR眼镜\"], \"hit_term_roles\": {\"Meta\": \"main_anchor\", \"AR眼镜\": \"support\", \"AR眼镜四大品牌\": \"support\", \"Rokid AR眼镜\": \"support\"}, \"hit_term_role_sources\": {\"Meta\": [\"profile_anchor_hits\"], \"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"AR眼镜四大品牌\": [\"support_hits\"], \"Rokid AR眼镜\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"Meta\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [\"Meta\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9036559\", \"subject_name\": \"ASIC芯片\", \"dense_score\": 0.0, \"rerank_score\": 1.0224, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"Meta\"], \"support_hits\": [\"AI芯片ASIC\", \"AI研发\"], \"anchor_hits\": [\"Meta\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 6, \"conflict_score\": 0, \"hit_terms\": [\"Meta\", \"AI芯片ASIC\", \"AI研发\"], \"hit_term_roles\": {\"Meta\": \"main_anchor\", \"AI芯片ASIC\": \"support\", \"AI研发\": \"support\"}, \"hit_term_role_sources\": {\"Meta\": [\"profile_anchor_hits\"], \"AI芯片ASIC\": [\"support_hits\"], \"AI研发\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"Meta\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [\"Meta\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9055826\", \"subject_name\": \"中昊芯英\", \"dense_score\": 0.0, \"rerank_score\": 1.022, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"Meta\"], \"support_hits\": [\"AI训练芯片“刹那”\", \"AI芯片\", \"AI训练芯片\", \"高性能AI芯片及计算集群研发\"], \"anchor_hits\": [\"Meta\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 6, \"conflict_score\": 0, \"hit_terms\": [\"Meta\", \"AI训练芯片“刹那”\", \"AI芯片\", \"AI训练芯片\", \"高性能AI芯片及计算集群研发\"], \"hit_term_roles\": {\"Meta\": \"main_anchor\", \"AI训练芯片“刹那”\": \"support\", \"AI芯片\": \"support\", \"AI训练芯片\": \"support\", \"高性能AI芯片及计算集群研发\": \"support\"}, \"hit_term_role_sources\": {\"Meta\": [\"profile_anchor_hits\"], \"AI训练芯片“刹那”\": [\"support_hits\"], \"AI芯片\": [\"support_hits\"], \"AI训练芯片\": [\"support_hits\"], \"高性能AI芯片及计算集群研发\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"Meta\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [\"Meta\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9056553\", \"subject_name\": \"谷歌AI供货商\", \"dense_score\": 0.0, \"rerank_score\": 0.9992, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"Meta\"], \"support_hits\": [\"谷歌AI供货商\", \"AI护城河\", \"AI模型\", \"AI搜索产品\", \"企业级产品\"], \"anchor_hits\": [\"Meta\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 6, \"conflict_score\": 0, \"hit_terms\": [\"Meta\", \"谷歌AI供货商\", \"AI护城河\", \"AI模型\", \"AI搜索产品\", \"企业级产品\"], \"hit_term_roles\": {\"Meta\": \"main_anchor\", \"谷歌AI供货商\": \"support\", \"AI护城河\": \"support\", \"AI模型\": \"support\", \"AI搜索产品\": \"support\", \"企业级产品\": \"support\"}, \"hit_term_role_sources\": {\"Meta\": [\"profile_anchor_hits\"], \"谷歌AI供货商\": [\"support_hits\"], \"AI护城河\": [\"support_hits\"], \"AI模型\": [\"support_hits\"], \"AI搜索产品\": [\"support_hits\"], \"企业级产品\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"Meta\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [\"Meta\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}], \"best_evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [\"AR眼镜\"], \"object_hits_text\": [], \"must_hits_llm\": [\"AR眼镜\"], \"must_hits_text\": [], \"strong_hits_llm\": [\"AR眼镜\"], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"Meta\", \"AR眼镜\"], \"support_hits\": [\"AR眼镜\", \"AR智能眼镜\", \"AI眼镜\", \"小米AI眼镜\", \"产品代工\", \"自研AI眼镜\", \"可穿戴设备\", \"虚拟现实设备\", \"产品零售\", \"AI录音笔\", \"AI拍摄眼镜\", \"AI智能眼镜\"], \"anchor_hits\": [\"Meta\", \"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 6, \"conflict_score\": 0, \"hit_terms\": [\"Meta\", \"AR眼镜\", \"AR智能眼镜\", \"AI眼镜\", \"小米AI眼镜\", \"产品代工\", \"自研AI眼镜\", \"可穿戴设备\", \"虚拟现实设备\", \"产品零售\", \"AI录音笔\", \"AI拍摄眼镜\", \"AI智能眼镜\"], \"hit_term_roles\": {\"Meta\": \"main_anchor\", \"AR眼镜\": \"support\", \"AR智能眼镜\": \"support\", \"AI眼镜\": \"support\", \"小米AI眼镜\": \"support\", \"产品代工\": \"support\", \"自研AI眼镜\": \"support\", \"可穿戴设备\": \"support\", \"虚拟现实设备\": \"support\", \"产品零售\": \"support\", \"AI录音笔\": \"support\", \"AI拍摄眼镜\": \"support\", \"AI智能眼镜\": \"support\"}, \"hit_term_role_sources\": {\"Meta\": [\"profile_anchor_hits\"], \"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"AR智能眼镜\": [\"support_hits\"], \"AI眼镜\": [\"support_hits\"], \"小米AI眼镜\": [\"support_hits\"], \"产品代工\": [\"support_hits\"], \"自研AI眼镜\": [\"support_hits\"], \"可穿戴设备\": [\"support_hits\"], \"虚拟现实设备\": [\"support_hits\"], \"产品零售\": [\"support_hits\"], \"AI录音笔\": [\"support_hits\"], \"AI拍摄眼镜\": [\"support_hits\"], \"AI智能眼镜\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"Meta\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [\"Meta\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}, \"performance\": {\"timing_ms\": {\"load_profiles_ms\": 0.074, \"event_profile_extract_ms\": 28.078, \"dense_recall_ms\": 270.392, \"sparse_recall_ms\": 3618.351, \"feature_recall_ms\": 403.041, \"rerank_ms\": 1528.457, \"llm_judge_ms\": 0.0, \"final_decision_ms\": 0.275, \"total_match_ms\": 5876.588}, \"counters\": {\"llm_judge_count\": 0, \"event_profile_llm_count\": 0, \"llm_judge_mode\": \"auto\", \"query_vector_cache_hit_count\": 1, \"query_vector_cache_miss_count\": 0, \"rerank_doc_vector_cache_hit_count\": 19, \"rerank_doc_vector_cache_miss_count\": 4, \"llm_judge_skipped\": 1}, \"profile_cache_stats\": {\"profile_load_count\": 1, \"profile_cache_hit_count\": 0, \"profile_cache_miss_count\": 1, \"profile_map_cache_hit_count\": 11, \"profile_map_cache_miss_count\": 1}, \"rerank_doc_vector_cache_size\": 135, \"query_vector_cache_size\": 12}}}, \"theme_data\": {\"subject_key\": \"9030409\", \"name\": \"AR眼镜\", \"id\": null}, \"run_id\": \"pm_e2e_phase4_4_v2_full_20_20260515_002\", \"case_id\": \"pm_case_0016\"}",
+        "action": "update_theme",
+        "reason_code": "direct_theme_name_hit",
+        "match_performance": {
+          "timing_ms": {
+            "load_profiles_ms": 0.074,
+            "event_profile_extract_ms": 28.078,
+            "dense_recall_ms": 270.392,
+            "sparse_recall_ms": 3618.351,
+            "feature_recall_ms": 403.041,
+            "rerank_ms": 1528.457,
+            "llm_judge_ms": 0.0,
+            "final_decision_ms": 0.275,
+            "total_match_ms": 5876.588
+          },
+          "counters": {
+            "llm_judge_count": 0,
+            "event_profile_llm_count": 0,
+            "llm_judge_mode": "auto",
+            "query_vector_cache_hit_count": 1,
+            "query_vector_cache_miss_count": 0,
+            "rerank_doc_vector_cache_hit_count": 19,
+            "rerank_doc_vector_cache_miss_count": 4,
+            "llm_judge_skipped": 1
+          },
+          "profile_cache_stats": {
+            "profile_load_count": 1,
+            "profile_cache_hit_count": 0,
+            "profile_cache_miss_count": 1,
+            "profile_map_cache_hit_count": 11,
+            "profile_map_cache_miss_count": 1
+          },
+          "rerank_doc_vector_cache_size": 135,
+          "query_vector_cache_size": 12
+        }
+      },
+      {
+        "stream_id": "1779081892773-0",
+        "case_id": null,
+        "event_id": "7675",
+        "decision": "{\"decision_id\": \"decision_1779081892_1779081785736-0\", \"decision_type\": \"phase0_match\", \"action\": \"update_theme\", \"operations\": [\"update_theme_heat\", \"create_mapping\", \"publish_update\"], \"event_id\": 7675, \"trace_id\": \"trace_7675\", \"event_type\": \"structured\", \"event_title\": \"2024年12月10日，10日讯，三星内部正积极推进名为Infinite的扩展现实（XR）项目，计划在明年1月召开的Galaxy Unpacked发布会上公开展\", \"timestamp\": \"2026-05-18T13:24:52.772542\", \"processor\": \"theme_processor_e2e_pm_e2e_phase4_4_v2_full_20_20260515_002\", \"event_data\": {\"event_id\": 7675, \"news_id\": 3844, \"title\": \"2024年12月10日，10日讯，三星内部正积极推进名为Infinite的扩展现实（XR）项目，计划在明年1月召开的Galaxy Unpacked发布会上公开展\", \"summary\": \"三星计划在2025年1月展示XR项目Infinite，并于第三季度发售，预计出货2-3万台。\", \"content\": \"2024年12月10日，10日讯，三星内部正积极推进名为Infinite的扩展现实（XR）项目，计划在明年1月召开的Galaxy Unpacked发布会上公开展示，并会在2025年第三季度正式发售。三星电子已制定了XR设备的生产计划，预计在明年第三季度和第四季度分别出货2万至3万台以上。**\", \"event_type\": \"产品发布\"}, \"confidence\": 0.9413, \"reason\": \"direct_theme_name_hit\", \"source\": \"structured_theme_match\", \"match_result\": {\"decision\": \"MATCH\", \"event_id\": 7675, \"news_id\": 3844, \"confidence\": 0.9413, \"reason_code\": \"direct_theme_name_hit\", \"matched_subject_key\": \"9032675\", \"matched_theme_name\": \"金融IT\", \"matched_theme_id\": null, \"related_matches\": [], \"review_required\": false, \"audit\": {\"top_candidates\": [{\"subject_key\": \"9032675\", \"subject_name\": \"金融IT\", \"dense_score\": 0.0, \"rerank_score\": 0.7666, \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"IT\"], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 50, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [], \"support_hits\": [], \"anchor_hits\": [\"IT\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 50, \"conflict_score\": 0, \"hit_terms\": [\"IT\"], \"hit_term_roles\": {\"IT\": \"main_anchor\"}, \"hit_term_role_sources\": {\"IT\": [\"theme_name_hit_terms\"]}, \"valid_anchor_terms\": [\"IT\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [\"IT\"], \"subject_name_hits\": [], \"anchor_terms\": [\"IT\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9047087\", \"subject_name\": \"模拟芯片大全\", \"dense_score\": 0.7031, \"rerank_score\": 0.7144, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [], \"support_hits\": [\"通信设备\", \"医疗设备\"], \"anchor_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"hit_terms\": [\"通信设备\", \"医疗设备\"], \"hit_term_roles\": {\"通信设备\": \"support\", \"医疗设备\": \"support\"}, \"hit_term_role_sources\": {\"通信设备\": [\"support_hits\"], \"医疗设备\": [\"support_hits\"]}, \"valid_anchor_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"], \"blocking_hit_terms\": [\"通信设备\", \"医疗设备\"], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"]}}}, {\"subject_key\": \"9040246\", \"subject_name\": \"智能座舱\", \"dense_score\": 0.7073, \"rerank_score\": 0.7055, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [], \"support_hits\": [], \"anchor_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"hit_terms\": [], \"hit_term_roles\": {}, \"hit_term_role_sources\": {}, \"valid_anchor_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9043089\", \"subject_name\": \"AI智能体Manus\", \"dense_score\": 0.7036, \"rerank_score\": 0.7014, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [], \"support_hits\": [], \"anchor_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"hit_terms\": [], \"hit_term_roles\": {}, \"hit_term_role_sources\": {}, \"valid_anchor_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9059628\", \"subject_name\": \"钙钛矿电池\", \"dense_score\": 0.6885, \"rerank_score\": 0.6985, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [], \"support_hits\": [], \"anchor_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"hit_terms\": [], \"hit_term_roles\": {}, \"hit_term_role_sources\": {}, \"valid_anchor_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}], \"best_evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"IT\"], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 50, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [], \"support_hits\": [], \"anchor_hits\": [\"IT\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 50, \"conflict_score\": 0, \"hit_terms\": [\"IT\"], \"hit_term_roles\": {\"IT\": \"main_anchor\"}, \"hit_term_role_sources\": {\"IT\": [\"theme_name_hit_terms\"]}, \"valid_anchor_terms\": [\"IT\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [\"IT\"], \"subject_name_hits\": [], \"anchor_terms\": [\"IT\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}, \"performance\": {\"timing_ms\": {\"load_profiles_ms\": 0.044, \"event_profile_extract_ms\": 10.464, \"dense_recall_ms\": 372.004, \"sparse_recall_ms\": 1.639, \"feature_recall_ms\": 464.056, \"rerank_ms\": 1093.954, \"llm_judge_ms\": 0.0, \"final_decision_ms\": 0.317, \"total_match_ms\": 1975.575}, \"counters\": {\"llm_judge_count\": 0, \"event_profile_llm_count\": 0, \"llm_judge_mode\": \"auto\", \"query_vector_cache_hit_count\": 1, \"query_vector_cache_miss_count\": 0, \"rerank_doc_vector_cache_hit_count\": 25, \"rerank_doc_vector_cache_miss_count\": 4, \"llm_judge_skipped\": 1}, \"profile_cache_stats\": {\"profile_load_count\": 1, \"profile_cache_hit_count\": 0, \"profile_cache_miss_count\": 1, \"profile_map_cache_hit_count\": 13, \"profile_map_cache_miss_count\": 1}, \"rerank_doc_vector_cache_size\": 139, \"query_vector_cache_size\": 14}}}, \"theme_data\": {\"subject_key\": \"9032675\", \"name\": \"金融IT\", \"id\": null}, \"run_id\": \"pm_e2e_phase4_4_v2_full_20_20260515_002\", \"case_id\": \"pm_case_0008\"}",
+        "action": "update_theme",
+        "reason_code": "direct_theme_name_hit",
+        "match_performance": {
+          "timing_ms": {
+            "load_profiles_ms": 0.044,
+            "event_profile_extract_ms": 10.464,
+            "dense_recall_ms": 372.004,
+            "sparse_recall_ms": 1.639,
+            "feature_recall_ms": 464.056,
+            "rerank_ms": 1093.954,
+            "llm_judge_ms": 0.0,
+            "final_decision_ms": 0.317,
+            "total_match_ms": 1975.575
+          },
+          "counters": {
+            "llm_judge_count": 0,
+            "event_profile_llm_count": 0,
+            "llm_judge_mode": "auto",
+            "query_vector_cache_hit_count": 1,
+            "query_vector_cache_miss_count": 0,
+            "rerank_doc_vector_cache_hit_count": 25,
+            "rerank_doc_vector_cache_miss_count": 4,
+            "llm_judge_skipped": 1
+          },
+          "profile_cache_stats": {
+            "profile_load_count": 1,
+            "profile_cache_hit_count": 0,
+            "profile_cache_miss_count": 1,
+            "profile_map_cache_hit_count": 13,
+            "profile_map_cache_miss_count": 1
+          },
+          "rerank_doc_vector_cache_size": 139,
+          "query_vector_cache_size": 14
+        }
+      },
+      {
+        "stream_id": "1779081895076-0",
+        "case_id": null,
+        "event_id": "7684",
+        "decision": "{\"decision_id\": \"decision_1779081895_1779081827163-0\", \"decision_type\": \"phase0_human_review\", \"action\": \"human_review\", \"operations\": [\"publish_human_review\"], \"event_id\": 7684, \"trace_id\": \"trace_7684\", \"event_type\": \"structured\", \"event_title\": \"2024年9月18日，科技公司Snap在美国加利福尼亚州圣莫尼卡举办的2024Snap全球生态合作伙伴大会上，发布旗下第五代SpectaclesAR眼镜\", \"timestamp\": \"2026-05-18T13:24:55.075953\", \"processor\": \"theme_processor_e2e_pm_e2e_phase4_4_v2_full_20_20260515_002\", \"event_data\": {\"event_id\": 7684, \"news_id\": 3853, \"title\": \"2024年9月18日，科技公司Snap在美国加利福尼亚州圣莫尼卡举办的2024Snap全球生态合作伙伴大会上，发布旗下第五代SpectaclesAR眼镜\", \"summary\": \"Snap在2024全球生态合作伙伴大会上发布第五代Spectacles AR眼镜，支持手机协作与旁观者模式。\", \"content\": \"2024年9月18日，科技公司Snap在美国加利福尼亚州圣莫尼卡举办的2024Snap全球生态合作伙伴大会上，发布旗下第五代SpectaclesAR眼镜。据了解，Spectacles眼镜可与用户的移动设备实现无缝协作。通过Spectacles应用程序，用户可以将手机变为自定义游戏遥控器，与AR应用一起使用。用户打开旁观者模式之后，可以让没有Spectacles眼镜的朋友也能跟随体验，还可以实现手机投屏等功能\", \"event_type\": \"产品发布\"}, \"confidence\": 0.5, \"reason\": \"role_guard_blocked\", \"source\": \"structured_theme_match\", \"match_result\": {\"decision\": \"HUMAN_REVIEW\", \"event_id\": 7684, \"news_id\": 3853, \"confidence\": 0.5, \"reason_code\": \"role_guard_blocked\", \"matched_subject_key\": \"\", \"matched_theme_name\": \"\", \"matched_theme_id\": null, \"related_matches\": [], \"review_required\": true, \"audit\": {\"top_candidates\": [{\"subject_key\": \"9030409\", \"subject_name\": \"AR眼镜\", \"dense_score\": 0.7094, \"rerank_score\": 1.2114, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [\"AR眼镜\"], \"object_hits_text\": [], \"must_hits_llm\": [\"AR眼镜\"], \"must_hits_text\": [], \"strong_hits_llm\": [\"AR眼镜\"], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"support_hits\": [\"AR眼镜\", \"AR智能眼镜\", \"产品代工\", \"可穿戴设备\", \"虚拟现实设备\", \"产品零售\", \"360公司\"], \"anchor_hits\": [\"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"hit_terms\": [\"AR眼镜\", \"AR智能眼镜\", \"产品代工\", \"可穿戴设备\", \"虚拟现实设备\", \"产品零售\", \"360公司\"], \"hit_term_roles\": {\"AR眼镜\": \"support\", \"AR智能眼镜\": \"support\", \"产品代工\": \"support\", \"可穿戴设备\": \"support\", \"虚拟现实设备\": \"support\", \"产品零售\": \"support\", \"360公司\": \"support\"}, \"hit_term_role_sources\": {\"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"AR智能眼镜\": [\"support_hits\"], \"产品代工\": [\"support_hits\"], \"可穿戴设备\": [\"support_hits\"], \"虚拟现实设备\": [\"support_hits\"], \"产品零售\": [\"support_hits\"], \"360公司\": [\"support_hits\"]}, \"valid_anchor_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"], \"blocking_hit_terms\": [\"AR眼镜\", \"AR智能眼镜\", \"产品代工\", \"可穿戴设备\", \"虚拟现实设备\", \"产品零售\", \"360公司\"], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"]}}}, {\"subject_key\": \"9038540\", \"subject_name\": \"AR眼镜四大品牌\", \"dense_score\": 0.7194, \"rerank_score\": 1.0326, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"support_hits\": [\"AR眼镜四大品牌\", \"AR眼镜\", \"Rokid AR眼镜\"], \"anchor_hits\": [\"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"hit_terms\": [\"AR眼镜\", \"AR眼镜四大品牌\", \"Rokid AR眼镜\"], \"hit_term_roles\": {\"AR眼镜\": \"support\", \"AR眼镜四大品牌\": \"support\", \"Rokid AR眼镜\": \"support\"}, \"hit_term_role_sources\": {\"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"AR眼镜四大品牌\": [\"support_hits\"], \"Rokid AR眼镜\": [\"support_hits\"]}, \"valid_anchor_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"], \"blocking_hit_terms\": [\"AR眼镜\", \"AR眼镜四大品牌\", \"Rokid AR眼镜\"], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"]}}}, {\"subject_key\": \"9022942\", \"subject_name\": \"苹果MR\", \"dense_score\": 0.6804, \"rerank_score\": 0.9475, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"support_hits\": [\"增强现实（AR）\", \"产品代工\", \"整机产品\", \"制造设备\"], \"anchor_hits\": [\"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"hit_terms\": [\"AR眼镜\", \"增强现实（AR）\", \"产品代工\", \"整机产品\", \"制造设备\"], \"hit_term_roles\": {\"AR眼镜\": \"support\", \"增强现实（AR）\": \"support\", \"产品代工\": \"support\", \"整机产品\": \"support\", \"制造设备\": \"support\"}, \"hit_term_role_sources\": {\"AR眼镜\": [\"profile_anchor_hits\"], \"增强现实（AR）\": [\"support_hits\"], \"产品代工\": [\"support_hits\"], \"整机产品\": [\"support_hits\"], \"制造设备\": [\"support_hits\"]}, \"valid_anchor_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"], \"blocking_hit_terms\": [\"AR眼镜\", \"增强现实（AR）\", \"产品代工\", \"整机产品\", \"制造设备\"], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"]}}}, {\"subject_key\": \"9030805\", \"subject_name\": \"华为三折叠屏手机\", \"dense_score\": 0.0, \"rerank_score\": 0.8128, \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"手机\"], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 50, \"object_hits\": [\"手机\"], \"must_hits\": [\"手机\"], \"strong_hits\": [\"手机\"], \"object_hits_llm\": [], \"object_hits_text\": [\"手机\"], \"must_hits_llm\": [], \"must_hits_text\": [\"手机\"], \"strong_hits_llm\": [], \"strong_hits_text\": [\"手机\"], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [], \"support_hits\": [\"数码产品\"], \"anchor_hits\": [\"手机\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 55, \"conflict_score\": 0, \"hit_terms\": [\"手机\", \"数码产品\"], \"hit_term_roles\": {\"手机\": \"main_anchor\", \"数码产品\": \"support\"}, \"hit_term_role_sources\": {\"手机\": [\"theme_name_hit_terms\", \"object_hits\", \"must_hits\", \"strong_hits\"], \"数码产品\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"手机\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [\"手机\"], \"subject_name_hits\": [], \"anchor_terms\": [\"手机\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9011554\", \"subject_name\": \"游戏\", \"dense_score\": 0.0, \"rerank_score\": 0.7898, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [], \"support_hits\": [], \"anchor_hits\": [], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"hit_terms\": [], \"hit_term_roles\": {}, \"hit_term_role_sources\": {}, \"valid_anchor_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}], \"best_evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [\"AR眼镜\"], \"object_hits_text\": [], \"must_hits_llm\": [\"AR眼镜\"], \"must_hits_text\": [], \"strong_hits_llm\": [\"AR眼镜\"], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"support_hits\": [\"AR眼镜\", \"AR智能眼镜\", \"产品代工\", \"可穿戴设备\", \"虚拟现实设备\", \"产品零售\", \"360公司\"], \"anchor_hits\": [\"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"hit_terms\": [\"AR眼镜\", \"AR智能眼镜\", \"产品代工\", \"可穿戴设备\", \"虚拟现实设备\", \"产品零售\", \"360公司\"], \"hit_term_roles\": {\"AR眼镜\": \"support\", \"AR智能眼镜\": \"support\", \"产品代工\": \"support\", \"可穿戴设备\": \"support\", \"虚拟现实设备\": \"support\", \"产品零售\": \"support\", \"360公司\": \"support\"}, \"hit_term_role_sources\": {\"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"AR智能眼镜\": [\"support_hits\"], \"产品代工\": [\"support_hits\"], \"可穿戴设备\": [\"support_hits\"], \"虚拟现实设备\": [\"support_hits\"], \"产品零售\": [\"support_hits\"], \"360公司\": [\"support_hits\"]}, \"valid_anchor_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"], \"blocking_hit_terms\": [\"AR眼镜\", \"AR智能眼镜\", \"产品代工\", \"可穿戴设备\", \"虚拟现实设备\", \"产品零售\", \"360公司\"], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"]}}, \"performance\": {\"timing_ms\": {\"load_profiles_ms\": 0.055, \"event_profile_extract_ms\": 12.308, \"dense_recall_ms\": 1787.861, \"sparse_recall_ms\": 4.537, \"feature_recall_ms\": 422.39, \"rerank_ms\": 1846.232, \"llm_judge_ms\": 0.0, \"final_decision_ms\": 0.221, \"total_match_ms\": 4097.372}, \"counters\": {\"llm_judge_count\": 0, \"event_profile_llm_count\": 0, \"llm_judge_mode\": \"auto\", \"query_vector_cache_hit_count\": 1, \"query_vector_cache_miss_count\": 0, \"rerank_doc_vector_cache_hit_count\": 25, \"rerank_doc_vector_cache_miss_count\": 6, \"llm_judge_skipped\": 1}, \"profile_cache_stats\": {\"profile_load_count\": 1, \"profile_cache_hit_count\": 0, \"profile_cache_miss_count\": 1, \"profile_map_cache_hit_count\": 13, \"profile_map_cache_miss_count\": 1}, \"rerank_doc_vector_cache_size\": 145, \"query_vector_cache_size\": 14}}}, \"theme_data\": {\"subject_key\": \"\", \"name\": \"\", \"id\": null}, \"run_id\": \"pm_e2e_phase4_4_v2_full_20_20260515_002\", \"case_id\": \"pm_case_0017\"}",
+        "action": "human_review",
+        "reason_code": "role_guard_blocked",
+        "match_performance": {
+          "timing_ms": {
+            "load_profiles_ms": 0.055,
+            "event_profile_extract_ms": 12.308,
+            "dense_recall_ms": 1787.861,
+            "sparse_recall_ms": 4.537,
+            "feature_recall_ms": 422.39,
+            "rerank_ms": 1846.232,
+            "llm_judge_ms": 0.0,
+            "final_decision_ms": 0.221,
+            "total_match_ms": 4097.372
+          },
+          "counters": {
+            "llm_judge_count": 0,
+            "event_profile_llm_count": 0,
+            "llm_judge_mode": "auto",
+            "query_vector_cache_hit_count": 1,
+            "query_vector_cache_miss_count": 0,
+            "rerank_doc_vector_cache_hit_count": 25,
+            "rerank_doc_vector_cache_miss_count": 6,
+            "llm_judge_skipped": 1
+          },
+          "profile_cache_stats": {
+            "profile_load_count": 1,
+            "profile_cache_hit_count": 0,
+            "profile_cache_miss_count": 1,
+            "profile_map_cache_hit_count": 13,
+            "profile_map_cache_miss_count": 1
+          },
+          "rerank_doc_vector_cache_size": 145,
+          "query_vector_cache_size": 14
+        }
+      },
+      {
+        "stream_id": "1779081896778-0",
+        "case_id": null,
+        "event_id": "7676",
+        "decision": "{\"decision_id\": \"decision_1779081896_1779081785762-0\", \"decision_type\": \"phase0_match\", \"action\": \"update_theme\", \"operations\": [\"update_theme_heat\", \"create_mapping\", \"publish_update\"], \"event_id\": 7676, \"trace_id\": \"trace_7676\", \"event_type\": \"structured\", \"event_title\": \"2024年11月27日，消息面上，智能眼镜厂商INMO影目科技将于11月29日在成都举办INMO2024新品发布会\", \"timestamp\": \"2026-05-18T13:24:56.777747\", \"processor\": \"theme_processor_e2e_pm_e2e_phase4_4_v2_full_20_20260515_002\", \"event_data\": {\"event_id\": 7676, \"news_id\": 3845, \"title\": \"2024年11月27日，消息面上，智能眼镜厂商INMO影目科技将于11月29日在成都举办INMO2024新品发布会\", \"summary\": \"INMO影目科技将于11月29日在成都举办新品发布会，预计发布两款AR眼镜。\", \"content\": \"2024年11月27日，消息面上，智能眼镜厂商INMO影目科技将于11月29日在成都举办INMO2024新品发布会。有行业媒体报道称，届时或将发布INMO Air3、INMO Go2两款AR眼镜。根据贝哲斯智能眼镜市场研究报告显示，预计到2029年，智能眼镜市场规模将达到1067.78亿元，期间年复合增速高达18.56%。**\", \"event_type\": \"产品发布\"}, \"confidence\": 0.98, \"reason\": \"direct_theme_name_hit\", \"source\": \"structured_theme_match\", \"match_result\": {\"decision\": \"MATCH\", \"event_id\": 7676, \"news_id\": 3845, \"confidence\": 0.98, \"reason_code\": \"direct_theme_name_hit\", \"matched_subject_key\": \"9030409\", \"matched_theme_name\": \"AR眼镜\", \"matched_theme_id\": null, \"related_matches\": [], \"review_required\": false, \"audit\": {\"top_candidates\": [{\"subject_key\": \"9030409\", \"subject_name\": \"AR眼镜\", \"dense_score\": 0.7385, \"rerank_score\": 1.5062, \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"智能眼镜\"], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 50, \"object_hits\": [\"智能眼镜\"], \"must_hits\": [\"智能眼镜\"], \"strong_hits\": [\"智能眼镜\"], \"object_hits_llm\": [\"AR眼镜\", \"智能眼镜\"], \"object_hits_text\": [], \"must_hits_llm\": [\"AR眼镜\", \"智能眼镜\"], \"must_hits_text\": [], \"strong_hits_llm\": [\"AR眼镜\", \"智能眼镜\"], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [\"INMO影目科技\"], \"profile_anchor_hits\": [\"AR眼镜\", \"智能眼镜\"], \"support_hits\": [\"AR眼镜\", \"AR智能眼镜\", \"产品代工\", \"产品零售\"], \"anchor_hits\": [\"智能眼镜\", \"INMO影目科技\", \"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 70, \"conflict_score\": 0, \"hit_terms\": [\"智能眼镜\", \"INMO影目科技\", \"AR眼镜\", \"AR智能眼镜\", \"产品代工\", \"产品零售\"], \"hit_term_roles\": {\"智能眼镜\": \"main_anchor\", \"INMO影目科技\": \"domain_anchor\", \"AR眼镜\": \"support\", \"AR智能眼镜\": \"support\", \"产品代工\": \"support\", \"产品零售\": \"support\"}, \"hit_term_role_sources\": {\"智能眼镜\": [\"theme_name_hit_terms\", \"object_hits\", \"must_hits\", \"strong_hits\", \"profile_anchor_hits\"], \"INMO影目科技\": [\"entity_hits\"], \"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"AR智能眼镜\": [\"support_hits\"], \"产品代工\": [\"support_hits\"], \"产品零售\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"智能眼镜\", \"INMO影目科技\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [\"智能眼镜\"], \"subject_name_hits\": [], \"anchor_terms\": [\"智能眼镜\", \"INMO影目科技\"], \"support_terms\": [\"INMO影目科技\"], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9035171\", \"subject_name\": \"AI大娱乐\", \"dense_score\": 0.0, \"rerank_score\": 1.1389, \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"智能眼镜\"], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 50, \"object_hits\": [\"智能眼镜\"], \"must_hits\": [\"智能眼镜\"], \"strong_hits\": [\"智能眼镜\"], \"object_hits_llm\": [\"智能眼镜\"], \"object_hits_text\": [], \"must_hits_llm\": [\"智能眼镜\"], \"must_hits_text\": [], \"strong_hits_llm\": [\"智能眼镜\"], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"智能眼镜\"], \"support_hits\": [], \"anchor_hits\": [\"智能眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 69, \"conflict_score\": 0, \"hit_terms\": [\"智能眼镜\"], \"hit_term_roles\": {\"智能眼镜\": \"main_anchor\"}, \"hit_term_role_sources\": {\"智能眼镜\": [\"theme_name_hit_terms\", \"object_hits\", \"must_hits\", \"strong_hits\", \"profile_anchor_hits\"]}, \"valid_anchor_terms\": [\"智能眼镜\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [\"智能眼镜\"], \"subject_name_hits\": [], \"anchor_terms\": [\"智能眼镜\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9040603\", \"subject_name\": \"人工智能+消费\", \"dense_score\": 0.648, \"rerank_score\": 1.1353, \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"智能眼镜\"], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 50, \"object_hits\": [\"智能眼镜\"], \"must_hits\": [\"智能眼镜\"], \"strong_hits\": [\"智能眼镜\"], \"object_hits_llm\": [\"智能眼镜\"], \"object_hits_text\": [], \"must_hits_llm\": [\"智能眼镜\"], \"must_hits_text\": [], \"strong_hits_llm\": [\"智能眼镜\"], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"智能眼镜\"], \"support_hits\": [\"AR/VR\", \"AR&ER\"], \"anchor_hits\": [\"智能眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 69, \"conflict_score\": 0, \"hit_terms\": [\"智能眼镜\", \"AR/VR\", \"AR&ER\"], \"hit_term_roles\": {\"智能眼镜\": \"main_anchor\", \"AR/VR\": \"support\", \"AR&ER\": \"support\"}, \"hit_term_role_sources\": {\"智能眼镜\": [\"theme_name_hit_terms\", \"object_hits\", \"must_hits\", \"strong_hits\", \"profile_anchor_hits\"], \"AR/VR\": [\"support_hits\"], \"AR&ER\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"智能眼镜\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [\"智能眼镜\"], \"subject_name_hits\": [], \"anchor_terms\": [\"智能眼镜\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9038540\", \"subject_name\": \"AR眼镜四大品牌\", \"dense_score\": 0.6901, \"rerank_score\": 0.9956, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"support_hits\": [\"AR眼镜四大品牌\", \"AR眼镜\", \"Rokid AR眼镜\"], \"anchor_hits\": [\"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"hit_terms\": [\"AR眼镜\", \"AR眼镜四大品牌\", \"Rokid AR眼镜\"], \"hit_term_roles\": {\"AR眼镜\": \"support\", \"AR眼镜四大品牌\": \"support\", \"Rokid AR眼镜\": \"support\"}, \"hit_term_role_sources\": {\"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"AR眼镜四大品牌\": [\"support_hits\"], \"Rokid AR眼镜\": [\"support_hits\"]}, \"valid_anchor_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"], \"blocking_hit_terms\": [\"AR眼镜\", \"AR眼镜四大品牌\", \"Rokid AR眼镜\"], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"]}}}, {\"subject_key\": \"9022942\", \"subject_name\": \"苹果MR\", \"dense_score\": 0.6741, \"rerank_score\": 0.9416, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"support_hits\": [\"增强现实（AR）\", \"产品代工\", \"整机产品\"], \"anchor_hits\": [\"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 0, \"conflict_score\": 0, \"hit_terms\": [\"AR眼镜\", \"增强现实（AR）\", \"产品代工\", \"整机产品\"], \"hit_term_roles\": {\"AR眼镜\": \"support\", \"增强现实（AR）\": \"support\", \"产品代工\": \"support\", \"整机产品\": \"support\"}, \"hit_term_role_sources\": {\"AR眼镜\": [\"profile_anchor_hits\"], \"增强现实（AR）\": [\"support_hits\"], \"产品代工\": [\"support_hits\"], \"整机产品\": [\"support_hits\"]}, \"valid_anchor_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"], \"blocking_hit_terms\": [\"AR眼镜\", \"增强现实（AR）\", \"产品代工\", \"整机产品\"], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": true, \"role_guard_reasons\": [\"support\"]}}}], \"best_evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"智能眼镜\"], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 50, \"object_hits\": [\"智能眼镜\"], \"must_hits\": [\"智能眼镜\"], \"strong_hits\": [\"智能眼镜\"], \"object_hits_llm\": [\"AR眼镜\", \"智能眼镜\"], \"object_hits_text\": [], \"must_hits_llm\": [\"AR眼镜\", \"智能眼镜\"], \"must_hits_text\": [], \"strong_hits_llm\": [\"AR眼镜\", \"智能眼镜\"], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [\"INMO影目科技\"], \"profile_anchor_hits\": [\"AR眼镜\", \"智能眼镜\"], \"support_hits\": [\"AR眼镜\", \"AR智能眼镜\", \"产品代工\", \"产品零售\"], \"anchor_hits\": [\"智能眼镜\", \"INMO影目科技\", \"AR眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 70, \"conflict_score\": 0, \"hit_terms\": [\"智能眼镜\", \"INMO影目科技\", \"AR眼镜\", \"AR智能眼镜\", \"产品代工\", \"产品零售\"], \"hit_term_roles\": {\"智能眼镜\": \"main_anchor\", \"INMO影目科技\": \"domain_anchor\", \"AR眼镜\": \"support\", \"AR智能眼镜\": \"support\", \"产品代工\": \"support\", \"产品零售\": \"support\"}, \"hit_term_role_sources\": {\"智能眼镜\": [\"theme_name_hit_terms\", \"object_hits\", \"must_hits\", \"strong_hits\", \"profile_anchor_hits\"], \"INMO影目科技\": [\"entity_hits\"], \"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"AR智能眼镜\": [\"support_hits\"], \"产品代工\": [\"support_hits\"], \"产品零售\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"智能眼镜\", \"INMO影目科技\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [\"智能眼镜\"], \"subject_name_hits\": [], \"anchor_terms\": [\"智能眼镜\", \"INMO影目科技\"], \"support_terms\": [\"INMO影目科技\"], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}, \"performance\": {\"timing_ms\": {\"load_profiles_ms\": 0.045, \"event_profile_extract_ms\": 3.951, \"dense_recall_ms\": 454.788, \"sparse_recall_ms\": 1.611, \"feature_recall_ms\": 300.127, \"rerank_ms\": 915.885, \"llm_judge_ms\": 0.0, \"final_decision_ms\": 0.21, \"total_match_ms\": 1697.551}, \"counters\": {\"llm_judge_count\": 0, \"event_profile_llm_count\": 0, \"llm_judge_mode\": \"auto\", \"query_vector_cache_hit_count\": 1, \"query_vector_cache_miss_count\": 0, \"rerank_doc_vector_cache_hit_count\": 28, \"rerank_doc_vector_cache_miss_count\": 3, \"llm_judge_skipped\": 1}, \"profile_cache_stats\": {\"profile_load_count\": 1, \"profile_cache_hit_count\": 0, \"profile_cache_miss_count\": 1, \"profile_map_cache_hit_count\": 15, \"profile_map_cache_miss_count\": 1}, \"rerank_doc_vector_cache_size\": 148, \"query_vector_cache_size\": 16}}}, \"theme_data\": {\"subject_key\": \"9030409\", \"name\": \"AR眼镜\", \"id\": null}, \"run_id\": \"pm_e2e_phase4_4_v2_full_20_20260515_002\", \"case_id\": \"pm_case_0009\"}",
+        "action": "update_theme",
+        "reason_code": "direct_theme_name_hit",
+        "match_performance": {
+          "timing_ms": {
+            "load_profiles_ms": 0.045,
+            "event_profile_extract_ms": 3.951,
+            "dense_recall_ms": 454.788,
+            "sparse_recall_ms": 1.611,
+            "feature_recall_ms": 300.127,
+            "rerank_ms": 915.885,
+            "llm_judge_ms": 0.0,
+            "final_decision_ms": 0.21,
+            "total_match_ms": 1697.551
+          },
+          "counters": {
+            "llm_judge_count": 0,
+            "event_profile_llm_count": 0,
+            "llm_judge_mode": "auto",
+            "query_vector_cache_hit_count": 1,
+            "query_vector_cache_miss_count": 0,
+            "rerank_doc_vector_cache_hit_count": 28,
+            "rerank_doc_vector_cache_miss_count": 3,
+            "llm_judge_skipped": 1
+          },
+          "profile_cache_stats": {
+            "profile_load_count": 1,
+            "profile_cache_hit_count": 0,
+            "profile_cache_miss_count": 1,
+            "profile_map_cache_hit_count": 15,
+            "profile_map_cache_miss_count": 1
+          },
+          "rerank_doc_vector_cache_size": 148,
+          "query_vector_cache_size": 16
+        }
+      },
+      {
+        "stream_id": "1779081898355-0",
+        "case_id": null,
+        "event_id": "7685",
+        "decision": "{\"decision_id\": \"decision_1779081898_1779081827337-0\", \"decision_type\": \"phase0_match\", \"action\": \"update_theme\", \"operations\": [\"update_theme_heat\", \"create_mapping\", \"publish_update\"], \"event_id\": 7685, \"trace_id\": \"trace_7685\", \"event_type\": \"structured\", \"event_title\": \"2024年9月12日，9月10日，星纪魅族与博士眼镜在北京举行战略合作签约仪式，双方将在智能眼镜领域展开更加深入的合作，共同推动星纪魅族XR品牌与XR智能眼镜的\", \"timestamp\": \"2026-05-18T13:24:58.355288\", \"processor\": \"theme_processor_e2e_pm_e2e_phase4_4_v2_full_20_20260515_002\", \"event_data\": {\"event_id\": 7685, \"news_id\": 3854, \"title\": \"2024年9月12日，9月10日，星纪魅族与博士眼镜在北京举行战略合作签约仪式，双方将在智能眼镜领域展开更加深入的合作，共同推动星纪魅族XR品牌与XR智能眼镜的\", \"summary\": \"星纪魅族与博士眼镜签约合作，共同推广XR智能眼镜。\", \"content\": \"2024年9月12日，9月10日，星纪魅族与博士眼镜在北京举行战略合作签约仪式，双方将在智能眼镜领域展开更加深入的合作，共同推动星纪魅族XR品牌与XR智能眼镜的市场推广与销售。星纪魅族高级副总裁、XR事业部总裁卢勇与博士眼镜COO夏冰代表双方出席签约仪式并签署协议。\", \"event_type\": \"订单合作\"}, \"confidence\": 0.98, \"reason\": \"direct_theme_name_hit\", \"source\": \"structured_theme_match\", \"match_result\": {\"decision\": \"MATCH\", \"event_id\": 7685, \"news_id\": 3854, \"confidence\": 0.98, \"reason_code\": \"direct_theme_name_hit\", \"matched_subject_key\": \"9030409\", \"matched_theme_name\": \"AR眼镜\", \"matched_theme_id\": null, \"related_matches\": [], \"review_required\": false, \"audit\": {\"top_candidates\": [{\"subject_key\": \"9030409\", \"subject_name\": \"AR眼镜\", \"dense_score\": 0.7135, \"rerank_score\": 1.4015, \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"智能眼镜\"], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 50, \"object_hits\": [\"智能眼镜\"], \"must_hits\": [\"智能眼镜\"], \"strong_hits\": [\"智能眼镜\"], \"object_hits_llm\": [\"智能眼镜\"], \"object_hits_text\": [\"XR智能眼镜\"], \"must_hits_llm\": [\"智能眼镜\"], \"must_hits_text\": [], \"strong_hits_llm\": [\"智能眼镜\"], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"智能眼镜\"], \"support_hits\": [\"XR\", \"XR头显\", \"XR智能眼镜\"], \"anchor_hits\": [\"智能眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 69, \"conflict_score\": 0, \"hit_terms\": [\"智能眼镜\", \"XR\", \"XR头显\", \"XR智能眼镜\"], \"hit_term_roles\": {\"智能眼镜\": \"main_anchor\", \"XR\": \"support\", \"XR头显\": \"support\", \"XR智能眼镜\": \"support\"}, \"hit_term_role_sources\": {\"智能眼镜\": [\"theme_name_hit_terms\", \"object_hits\", \"must_hits\", \"strong_hits\", \"profile_anchor_hits\"], \"XR\": [\"support_hits\"], \"XR头显\": [\"support_hits\"], \"XR智能眼镜\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"智能眼镜\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [\"智能眼镜\"], \"subject_name_hits\": [], \"anchor_terms\": [\"智能眼镜\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9040603\", \"subject_name\": \"人工智能+消费\", \"dense_score\": 0.6941, \"rerank_score\": 1.1514, \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"智能眼镜\"], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 50, \"object_hits\": [\"智能眼镜\"], \"must_hits\": [\"智能眼镜\"], \"strong_hits\": [\"智能眼镜\"], \"object_hits_llm\": [\"智能眼镜\"], \"object_hits_text\": [], \"must_hits_llm\": [\"智能眼镜\"], \"must_hits_text\": [], \"strong_hits_llm\": [\"智能眼镜\"], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"智能眼镜\"], \"support_hits\": [], \"anchor_hits\": [\"智能眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 69, \"conflict_score\": 0, \"hit_terms\": [\"智能眼镜\"], \"hit_term_roles\": {\"智能眼镜\": \"main_anchor\"}, \"hit_term_role_sources\": {\"智能眼镜\": [\"theme_name_hit_terms\", \"object_hits\", \"must_hits\", \"strong_hits\", \"profile_anchor_hits\"]}, \"valid_anchor_terms\": [\"智能眼镜\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [\"智能眼镜\"], \"subject_name_hits\": [], \"anchor_terms\": [\"智能眼镜\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9035171\", \"subject_name\": \"AI大娱乐\", \"dense_score\": 0.0, \"rerank_score\": 1.126, \"evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"智能眼镜\"], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 50, \"object_hits\": [\"智能眼镜\"], \"must_hits\": [\"智能眼镜\"], \"strong_hits\": [\"智能眼镜\"], \"object_hits_llm\": [\"智能眼镜\"], \"object_hits_text\": [], \"must_hits_llm\": [\"智能眼镜\"], \"must_hits_text\": [], \"strong_hits_llm\": [\"智能眼镜\"], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"智能眼镜\"], \"support_hits\": [], \"anchor_hits\": [\"智能眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 69, \"conflict_score\": 0, \"hit_terms\": [\"智能眼镜\"], \"hit_term_roles\": {\"智能眼镜\": \"main_anchor\"}, \"hit_term_role_sources\": {\"智能眼镜\": [\"theme_name_hit_terms\", \"object_hits\", \"must_hits\", \"strong_hits\", \"profile_anchor_hits\"]}, \"valid_anchor_terms\": [\"智能眼镜\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [\"智能眼镜\"], \"subject_name_hits\": [], \"anchor_terms\": [\"智能眼镜\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9031543\", \"subject_name\": \"智能穿戴\", \"dense_score\": 0.0, \"rerank_score\": 0.9787, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"智能眼镜\"], \"support_hits\": [], \"anchor_hits\": [\"智能眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 6, \"conflict_score\": 0, \"hit_terms\": [\"智能眼镜\"], \"hit_term_roles\": {\"智能眼镜\": \"main_anchor\"}, \"hit_term_role_sources\": {\"智能眼镜\": [\"profile_anchor_hits\"]}, \"valid_anchor_terms\": [\"智能眼镜\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [\"智能眼镜\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}, {\"subject_key\": \"9023110\", \"subject_name\": \"AI手机\", \"dense_score\": 0.0, \"rerank_score\": 0.9783, \"evidence\": {\"theme_name_direct_hit\": false, \"theme_name_hit_terms\": [], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 0, \"object_hits\": [], \"must_hits\": [], \"strong_hits\": [], \"object_hits_llm\": [], \"object_hits_text\": [], \"must_hits_llm\": [], \"must_hits_text\": [], \"strong_hits_llm\": [], \"strong_hits_text\": [], \"should_hits\": [\"智能眼镜\"], \"entity_hits\": [], \"profile_anchor_hits\": [\"智能眼镜\"], \"support_hits\": [], \"anchor_hits\": [\"智能眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 7, \"conflict_score\": 0, \"hit_terms\": [\"智能眼镜\"], \"hit_term_roles\": {\"智能眼镜\": \"main_anchor\"}, \"hit_term_role_sources\": {\"智能眼镜\": [\"should_hits\", \"profile_anchor_hits\"]}, \"valid_anchor_terms\": [\"智能眼镜\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [], \"subject_name_hits\": [], \"anchor_terms\": [\"智能眼镜\"], \"support_terms\": [\"智能眼镜\"], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}}], \"best_evidence\": {\"theme_name_direct_hit\": true, \"theme_name_hit_terms\": [\"智能眼镜\"], \"subject_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"theme_name_hit_score\": 50, \"object_hits\": [\"智能眼镜\"], \"must_hits\": [\"智能眼镜\"], \"strong_hits\": [\"智能眼镜\"], \"object_hits_llm\": [\"智能眼镜\"], \"object_hits_text\": [\"XR智能眼镜\"], \"must_hits_llm\": [\"智能眼镜\"], \"must_hits_text\": [], \"strong_hits_llm\": [\"智能眼镜\"], \"strong_hits_text\": [], \"should_hits\": [], \"entity_hits\": [], \"profile_anchor_hits\": [\"智能眼镜\"], \"support_hits\": [\"XR\", \"XR头显\", \"XR智能眼镜\"], \"anchor_hits\": [\"智能眼镜\"], \"not_hits\": [], \"negative_hits\": [], \"positive_score\": 69, \"conflict_score\": 0, \"hit_terms\": [\"智能眼镜\", \"XR\", \"XR头显\", \"XR智能眼镜\"], \"hit_term_roles\": {\"智能眼镜\": \"main_anchor\", \"XR\": \"support\", \"XR头显\": \"support\", \"XR智能眼镜\": \"support\"}, \"hit_term_role_sources\": {\"智能眼镜\": [\"theme_name_hit_terms\", \"object_hits\", \"must_hits\", \"strong_hits\", \"profile_anchor_hits\"], \"XR\": [\"support_hits\"], \"XR头显\": [\"support_hits\"], \"XR智能眼镜\": [\"support_hits\"]}, \"valid_anchor_terms\": [\"智能眼镜\"], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"blocking_hit_terms\": [], \"evidence_summary\": {\"theme_name_hits\": [\"智能眼镜\"], \"subject_name_hits\": [], \"anchor_terms\": [\"智能眼镜\"], \"support_terms\": [], \"conflict_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}}, \"performance\": {\"timing_ms\": {\"load_profiles_ms\": 0.04, \"event_profile_extract_ms\": 7.212, \"dense_recall_ms\": 1414.019, \"sparse_recall_ms\": 3.361, \"feature_recall_ms\": 552.821, \"rerank_ms\": 994.35, \"llm_judge_ms\": 0.0, \"final_decision_ms\": 0.248, \"total_match_ms\": 2993.269}, \"counters\": {\"llm_judge_count\": 0, \"event_profile_llm_count\": 0, \"llm_judge_mode\": \"auto\", \"query_vector_cache_hit_count\": 1, \"query_vector_cache_miss_count\": 0, \"rerank_doc_vector_cache_hit_count\": 28, \"rerank_doc_vector_cache_miss_count\": 4, \"llm_judge_skipped\": 1}, \"profile_cache_stats\": {\"profile_load_count\": 1, \"profile_cache_hit_count\": 0, \"profile_cache_miss_count\": 1, \"profile_map_cache_hit_count\": 15, \"profile_map_cache_miss_count\": 1}, \"rerank_doc_vector_cache_size\": 152, \"query_vector_cache_size\": 16}}}, \"theme_data\": {\"subject_key\": \"9030409\", \"name\": \"AR眼镜\", \"id\": null}, \"run_id\": \"pm_e2e_phase4_4_v2_full_20_20260515_002\", \"case_id\": \"pm_case_0018\"}",
+        "action": "update_theme",
+        "reason_code": "direct_theme_name_hit",
+        "match_performance": {
+          "timing_ms": {
+            "load_profiles_ms": 0.04,
+            "event_profile_extract_ms": 7.212,
+            "dense_recall_ms": 1414.019,
+            "sparse_recall_ms": 3.361,
+            "feature_recall_ms": 552.821,
+            "rerank_ms": 994.35,
+            "llm_judge_ms": 0.0,
+            "final_decision_ms": 0.248,
+            "total_match_ms": 2993.269
+          },
+          "counters": {
+            "llm_judge_count": 0,
+            "event_profile_llm_count": 0,
+            "llm_judge_mode": "auto",
+            "query_vector_cache_hit_count": 1,
+            "query_vector_cache_miss_count": 0,
+            "rerank_doc_vector_cache_hit_count": 28,
+            "rerank_doc_vector_cache_miss_count": 4,
+            "llm_judge_skipped": 1
+          },
+          "profile_cache_stats": {
+            "profile_load_count": 1,
+            "profile_cache_hit_count": 0,
+            "profile_cache_miss_count": 1,
+            "profile_map_cache_hit_count": 15,
+            "profile_map_cache_miss_count": 1
+          },
+          "rerank_doc_vector_cache_size": 152,
+          "query_vector_cache_size": 16
+        }
       }
     ],
     "pending_entries": [],
@@ -412,17 +812,48 @@
       "external_id": "pm_e2e_phase4_4_v2_full_20_20260515_002:pm_case_0003",
       "news_raw_id": 3839,
       "news_event_id": 7672,
-      "decision_id": null,
+      "decision_id": "1779081861089-0",
       "primary_subject_key": null,
       "primary_theme_name": null,
       "related_subject_keys": [],
       "related_theme_names": [],
       "related_mappings": [],
-      "review_status": null,
-      "review_reason": null,
+      "review_status": "waiting",
+      "review_reason": "role_guard_blocked",
       "pending_status": null,
       "dead_letter_status": null,
-      "match_performance": {}
+      "match_performance": {
+        "timing_ms": {
+          "load_profiles_ms": 0.045,
+          "event_profile_extract_ms": 6.607,
+          "dense_recall_ms": 4302.61,
+          "sparse_recall_ms": 24.508,
+          "feature_recall_ms": 309.175,
+          "rerank_ms": 6457.515,
+          "llm_judge_ms": 0.0,
+          "final_decision_ms": 0.373,
+          "total_match_ms": 11167.435
+        },
+        "counters": {
+          "llm_judge_count": 0,
+          "event_profile_llm_count": 0,
+          "llm_judge_mode": "auto",
+          "query_vector_cache_hit_count": 1,
+          "query_vector_cache_miss_count": 0,
+          "rerank_doc_vector_cache_hit_count": 19,
+          "rerank_doc_vector_cache_miss_count": 9,
+          "llm_judge_skipped": 1
+        },
+        "profile_cache_stats": {
+          "profile_load_count": 1,
+          "profile_cache_hit_count": 0,
+          "profile_cache_miss_count": 1,
+          "profile_map_cache_hit_count": 7,
+          "profile_map_cache_miss_count": 1
+        },
+        "rerank_doc_vector_cache_size": 97,
+        "query_vector_cache_size": 8
+      }
     },
     {
       "case_id": "pm_case_0004",
@@ -540,68 +971,192 @@
       "external_id": "pm_e2e_phase4_4_v2_full_20_20260515_002:pm_case_0006",
       "news_raw_id": 3842,
       "news_event_id": 7673,
-      "decision_id": null,
+      "decision_id": "1779081883984-0",
       "primary_subject_key": null,
       "primary_theme_name": null,
       "related_subject_keys": [],
       "related_theme_names": [],
       "related_mappings": [],
-      "review_status": null,
-      "review_reason": null,
+      "review_status": "waiting",
+      "review_reason": "role_guard_blocked",
       "pending_status": null,
       "dead_letter_status": null,
-      "match_performance": {}
+      "match_performance": {
+        "timing_ms": {
+          "load_profiles_ms": 0.067,
+          "event_profile_extract_ms": 94.087,
+          "dense_recall_ms": 720.165,
+          "sparse_recall_ms": 4.953,
+          "feature_recall_ms": 518.547,
+          "rerank_ms": 4934.244,
+          "llm_judge_ms": 0.0,
+          "final_decision_ms": 0.427,
+          "total_match_ms": 6301.48
+        },
+        "counters": {
+          "llm_judge_count": 0,
+          "event_profile_llm_count": 0,
+          "llm_judge_mode": "auto",
+          "query_vector_cache_hit_count": 1,
+          "query_vector_cache_miss_count": 0,
+          "rerank_doc_vector_cache_hit_count": 22,
+          "rerank_doc_vector_cache_miss_count": 8,
+          "llm_judge_skipped": 1
+        },
+        "profile_cache_stats": {
+          "profile_load_count": 1,
+          "profile_cache_hit_count": 0,
+          "profile_cache_miss_count": 1,
+          "profile_map_cache_hit_count": 9,
+          "profile_map_cache_miss_count": 1
+        },
+        "rerank_doc_vector_cache_size": 123,
+        "query_vector_cache_size": 10
+      }
     },
     {
       "case_id": "pm_case_0007",
       "external_id": "pm_e2e_phase4_4_v2_full_20_20260515_002:pm_case_0007",
       "news_raw_id": 3843,
       "news_event_id": 7674,
-      "decision_id": null,
-      "primary_subject_key": null,
-      "primary_theme_name": null,
+      "decision_id": "1779081888819-0",
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
       "related_subject_keys": [],
       "related_theme_names": [],
       "related_mappings": [],
       "review_status": null,
-      "review_reason": null,
+      "review_reason": "direct_theme_name_hit",
       "pending_status": null,
       "dead_letter_status": null,
-      "match_performance": {}
+      "match_performance": {
+        "counters": {
+          "llm_judge_mode": "auto",
+          "llm_judge_count": 0,
+          "llm_judge_skipped": 1,
+          "event_profile_llm_count": 0,
+          "query_vector_cache_hit_count": 1,
+          "query_vector_cache_miss_count": 0,
+          "rerank_doc_vector_cache_hit_count": 26,
+          "rerank_doc_vector_cache_miss_count": 8
+        },
+        "timing_ms": {
+          "rerank_ms": 3110.929,
+          "llm_judge_ms": 0.0,
+          "total_match_ms": 4190.091,
+          "dense_recall_ms": 551.668,
+          "load_profiles_ms": 0.054,
+          "sparse_recall_ms": 2.763,
+          "feature_recall_ms": 473.838,
+          "final_decision_ms": 0.305,
+          "event_profile_extract_ms": 26.319
+        },
+        "profile_cache_stats": {
+          "profile_load_count": 1,
+          "profile_cache_hit_count": 0,
+          "profile_cache_miss_count": 1,
+          "profile_map_cache_hit_count": 11,
+          "profile_map_cache_miss_count": 1
+        },
+        "query_vector_cache_size": 12,
+        "rerank_doc_vector_cache_size": 131
+      }
     },
     {
       "case_id": "pm_case_0008",
       "external_id": "pm_e2e_phase4_4_v2_full_20_20260515_002:pm_case_0008",
       "news_raw_id": 3844,
       "news_event_id": 7675,
-      "decision_id": null,
-      "primary_subject_key": null,
-      "primary_theme_name": null,
+      "decision_id": "1779081892773-0",
+      "primary_subject_key": "9032675",
+      "primary_theme_name": "金融IT",
       "related_subject_keys": [],
       "related_theme_names": [],
       "related_mappings": [],
       "review_status": null,
-      "review_reason": null,
+      "review_reason": "direct_theme_name_hit",
       "pending_status": null,
       "dead_letter_status": null,
-      "match_performance": {}
+      "match_performance": {
+        "counters": {
+          "llm_judge_mode": "auto",
+          "llm_judge_count": 0,
+          "llm_judge_skipped": 1,
+          "event_profile_llm_count": 0,
+          "query_vector_cache_hit_count": 1,
+          "query_vector_cache_miss_count": 0,
+          "rerank_doc_vector_cache_hit_count": 25,
+          "rerank_doc_vector_cache_miss_count": 4
+        },
+        "timing_ms": {
+          "rerank_ms": 1093.954,
+          "llm_judge_ms": 0.0,
+          "total_match_ms": 1975.575,
+          "dense_recall_ms": 372.004,
+          "load_profiles_ms": 0.044,
+          "sparse_recall_ms": 1.639,
+          "feature_recall_ms": 464.056,
+          "final_decision_ms": 0.317,
+          "event_profile_extract_ms": 10.464
+        },
+        "profile_cache_stats": {
+          "profile_load_count": 1,
+          "profile_cache_hit_count": 0,
+          "profile_cache_miss_count": 1,
+          "profile_map_cache_hit_count": 13,
+          "profile_map_cache_miss_count": 1
+        },
+        "query_vector_cache_size": 14,
+        "rerank_doc_vector_cache_size": 139
+      }
     },
     {
       "case_id": "pm_case_0009",
       "external_id": "pm_e2e_phase4_4_v2_full_20_20260515_002:pm_case_0009",
       "news_raw_id": 3845,
       "news_event_id": 7676,
-      "decision_id": null,
-      "primary_subject_key": null,
-      "primary_theme_name": null,
+      "decision_id": "1779081896778-0",
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
       "related_subject_keys": [],
       "related_theme_names": [],
       "related_mappings": [],
       "review_status": null,
-      "review_reason": null,
+      "review_reason": "direct_theme_name_hit",
       "pending_status": null,
       "dead_letter_status": null,
-      "match_performance": {}
+      "match_performance": {
+        "counters": {
+          "llm_judge_mode": "auto",
+          "llm_judge_count": 0,
+          "llm_judge_skipped": 1,
+          "event_profile_llm_count": 0,
+          "query_vector_cache_hit_count": 1,
+          "query_vector_cache_miss_count": 0,
+          "rerank_doc_vector_cache_hit_count": 28,
+          "rerank_doc_vector_cache_miss_count": 3
+        },
+        "timing_ms": {
+          "rerank_ms": 915.885,
+          "llm_judge_ms": 0.0,
+          "total_match_ms": 1697.551,
+          "dense_recall_ms": 454.788,
+          "load_profiles_ms": 0.045,
+          "sparse_recall_ms": 1.611,
+          "feature_recall_ms": 300.127,
+          "final_decision_ms": 0.21,
+          "event_profile_extract_ms": 3.951
+        },
+        "profile_cache_stats": {
+          "profile_load_count": 1,
+          "profile_cache_hit_count": 0,
+          "profile_cache_miss_count": 1,
+          "profile_map_cache_hit_count": 15,
+          "profile_map_cache_miss_count": 1
+        },
+        "query_vector_cache_size": 16,
+        "rerank_doc_vector_cache_size": 148
+      }
     },
     {
       "case_id": "pm_case_0010",
@@ -765,85 +1320,285 @@
       "external_id": "pm_e2e_phase4_4_v2_full_20_20260515_002:pm_case_0014",
       "news_raw_id": 3850,
       "news_event_id": 7681,
-      "decision_id": null,
-      "primary_subject_key": null,
-      "primary_theme_name": null,
-      "related_subject_keys": [],
-      "related_theme_names": [],
-      "related_mappings": [],
+      "decision_id": "1779081877673-0",
+      "primary_subject_key": "9038540",
+      "primary_theme_name": "AR眼镜四大品牌",
+      "related_subject_keys": [
+        "9030409"
+      ],
+      "related_theme_names": [
+        "AR眼镜"
+      ],
+      "related_mappings": [
+        {
+          "event_id": 7681,
+          "subject_key": "9030409",
+          "theme_name": "AR眼镜",
+          "confidence": "0.6206",
+          "match_reason": "top_candidate_evidence_related",
+          "relation_type": "related",
+          "evidence_json": "{\"related_match\": {\"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"not_hits\": [], \"hit_terms\": [\"Meta\", \"AI眼镜\", \"小米AI眼镜\", \"自研AI眼镜\", \"可穿戴设备\", \"虚拟现实设备\", \"360公司\", \"AI录音笔\", \"AI拍摄眼镜\", \"AI智能眼镜\"], \"must_hits\": [], \"anchor_hits\": [\"Meta\"], \"entity_hits\": [], \"object_hits\": [], \"should_hits\": [], \"strong_hits\": [], \"support_hits\": [\"AI眼镜\", \"小米AI眼镜\", \"自研AI眼镜\", \"可穿戴设备\", \"虚拟现实设备\", \"360公司\", \"AI录音笔\", \"AI拍摄眼镜\", \"AI智能眼镜\"], \"must_hits_llm\": [], \"negative_hits\": [], \"conflict_score\": 0, \"hit_term_roles\": {\"Meta\": \"main_anchor\", \"AI眼镜\": \"support\", \"360公司\": \"support\", \"AI录音笔\": \"support\", \"AI拍摄眼镜\": \"support\", \"AI智能眼镜\": \"support\", \"小米AI眼镜\": \"support\", \"自研AI眼镜\": \"support\", \"可穿戴设备\": \"support\", \"虚拟现实设备\": \"support\"}, \"must_hits_text\": [], \"positive_score\": 6, \"object_hits_llm\": [], \"strong_hits_llm\": [], \"evidence_summary\": {\"anchor_terms\": [\"Meta\"], \"support_terms\": [], \"conflict_terms\": [], \"theme_name_hits\": [], \"subject_name_hits\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}, \"object_hits_text\": [], \"strong_hits_text\": [], \"blocking_hit_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"valid_anchor_terms\": [\"Meta\"], \"profile_anchor_hits\": [\"Meta\"], \"theme_name_hit_score\": 0, \"theme_name_hit_terms\": [], \"hit_term_role_sources\": {\"Meta\": [\"profile_anchor_hits\"], \"AI眼镜\": [\"support_hits\"], \"360公司\": [\"support_hits\"], \"AI录音笔\": [\"support_hits\"], \"AI拍摄眼镜\": [\"support_hits\"], \"AI智能眼镜\": [\"support_hits\"], \"小米AI眼镜\": [\"support_hits\"], \"自研AI眼镜\": [\"support_hits\"], \"可穿戴设备\": [\"support_hits\"], \"虚拟现实设备\": [\"support_hits\"]}, \"theme_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"subject_name_direct_hit\": false}, \"confidence\": 0.6206, \"theme_name\": \"AR眼镜\", \"subject_key\": \"9030409\", \"relation_type\": \"related\"}}",
+          "created_at": "2026-05-18 05:24:44.624707+00:00"
+        }
+      ],
       "review_status": null,
-      "review_reason": null,
+      "review_reason": "llm_accept_match",
       "pending_status": null,
       "dead_letter_status": null,
-      "match_performance": {}
+      "match_performance": {
+        "counters": {
+          "llm_judge_mode": "auto",
+          "llm_judge_count": 1,
+          "llm_judge_skipped": 0,
+          "event_profile_llm_count": 0,
+          "query_vector_cache_hit_count": 1,
+          "query_vector_cache_miss_count": 0,
+          "rerank_doc_vector_cache_hit_count": 18,
+          "rerank_doc_vector_cache_miss_count": 18
+        },
+        "timing_ms": {
+          "rerank_ms": 12057.778,
+          "llm_judge_ms": 2519.887,
+          "total_match_ms": 23658.105,
+          "dense_recall_ms": 7074.988,
+          "load_profiles_ms": 0.056,
+          "sparse_recall_ms": 31.235,
+          "feature_recall_ms": 1869.852,
+          "final_decision_ms": 0.594,
+          "event_profile_extract_ms": 15.564
+        },
+        "profile_cache_stats": {
+          "profile_load_count": 1,
+          "profile_cache_hit_count": 0,
+          "profile_cache_miss_count": 1,
+          "profile_map_cache_hit_count": 7,
+          "profile_map_cache_miss_count": 1
+        },
+        "query_vector_cache_size": 8,
+        "rerank_doc_vector_cache_size": 115
+      }
     },
     {
       "case_id": "pm_case_0015",
       "external_id": "pm_e2e_phase4_4_v2_full_20_20260515_002:pm_case_0015",
       "news_raw_id": 3851,
       "news_event_id": 7682,
-      "decision_id": null,
-      "primary_subject_key": null,
-      "primary_theme_name": null,
-      "related_subject_keys": [],
-      "related_theme_names": [],
-      "related_mappings": [],
+      "decision_id": "1779081884619-0",
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9038540"
+      ],
+      "related_theme_names": [
+        "AR眼镜四大品牌"
+      ],
+      "related_mappings": [
+        {
+          "event_id": 7682,
+          "subject_key": "9038540",
+          "theme_name": "AR眼镜四大品牌",
+          "confidence": "0.6594",
+          "match_reason": "top_candidate_evidence_related",
+          "relation_type": "related",
+          "evidence_json": "{\"related_match\": {\"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"not_hits\": [], \"hit_terms\": [\"Meta\", \"AR眼镜\", \"AR眼镜四大品牌\", \"Rokid AR眼镜\"], \"must_hits\": [], \"anchor_hits\": [\"Meta\", \"AR眼镜\"], \"entity_hits\": [], \"object_hits\": [], \"should_hits\": [], \"strong_hits\": [], \"support_hits\": [\"AR眼镜四大品牌\", \"AR眼镜\", \"Rokid AR眼镜\"], \"must_hits_llm\": [], \"negative_hits\": [], \"conflict_score\": 0, \"hit_term_roles\": {\"Meta\": \"main_anchor\", \"AR眼镜\": \"support\", \"Rokid AR眼镜\": \"support\", \"AR眼镜四大品牌\": \"support\"}, \"must_hits_text\": [], \"positive_score\": 6, \"object_hits_llm\": [], \"strong_hits_llm\": [], \"evidence_summary\": {\"anchor_terms\": [\"Meta\"], \"support_terms\": [], \"conflict_terms\": [], \"theme_name_hits\": [], \"subject_name_hits\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}, \"object_hits_text\": [], \"strong_hits_text\": [], \"blocking_hit_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"valid_anchor_terms\": [\"Meta\"], \"profile_anchor_hits\": [\"Meta\", \"AR眼镜\"], \"theme_name_hit_score\": 0, \"theme_name_hit_terms\": [], \"hit_term_role_sources\": {\"Meta\": [\"profile_anchor_hits\"], \"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"Rokid AR眼镜\": [\"support_hits\"], \"AR眼镜四大品牌\": [\"support_hits\"]}, \"theme_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"subject_name_direct_hit\": false}, \"confidence\": 0.6594, \"theme_name\": \"AR眼镜四大品牌\", \"subject_key\": \"9038540\", \"relation_type\": \"related\"}}",
+          "created_at": "2026-05-18 05:24:50.971738+00:00"
+        }
+      ],
       "review_status": null,
-      "review_reason": null,
+      "review_reason": "direct_theme_name_hit",
       "pending_status": null,
       "dead_letter_status": null,
-      "match_performance": {}
+      "match_performance": {
+        "counters": {
+          "llm_judge_mode": "auto",
+          "llm_judge_count": 0,
+          "llm_judge_skipped": 1,
+          "event_profile_llm_count": 0,
+          "query_vector_cache_hit_count": 1,
+          "query_vector_cache_miss_count": 0,
+          "rerank_doc_vector_cache_hit_count": 17,
+          "rerank_doc_vector_cache_miss_count": 0
+        },
+        "timing_ms": {
+          "rerank_ms": 17.111,
+          "llm_judge_ms": 0.0,
+          "total_match_ms": 6556.756,
+          "dense_recall_ms": 5903.923,
+          "load_profiles_ms": 0.117,
+          "sparse_recall_ms": 3.566,
+          "feature_recall_ms": 500.495,
+          "final_decision_ms": 0.362,
+          "event_profile_extract_ms": 32.383
+        },
+        "profile_cache_stats": {
+          "profile_load_count": 1,
+          "profile_cache_hit_count": 0,
+          "profile_cache_miss_count": 1,
+          "profile_map_cache_hit_count": 9,
+          "profile_map_cache_miss_count": 1
+        },
+        "query_vector_cache_size": 10,
+        "rerank_doc_vector_cache_size": 123
+      }
     },
     {
       "case_id": "pm_case_0016",
       "external_id": "pm_e2e_phase4_4_v2_full_20_20260515_002:pm_case_0016",
       "news_raw_id": 3852,
       "news_event_id": 7683,
-      "decision_id": null,
-      "primary_subject_key": null,
-      "primary_theme_name": null,
-      "related_subject_keys": [],
-      "related_theme_names": [],
-      "related_mappings": [],
+      "decision_id": "1779081890788-0",
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9038540"
+      ],
+      "related_theme_names": [
+        "AR眼镜四大品牌"
+      ],
+      "related_mappings": [
+        {
+          "event_id": 7683,
+          "subject_key": "9038540",
+          "theme_name": "AR眼镜四大品牌",
+          "confidence": "0.6582",
+          "match_reason": "top_candidate_evidence_related",
+          "relation_type": "related",
+          "evidence_json": "{\"related_match\": {\"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"not_hits\": [], \"hit_terms\": [\"Meta\", \"AR眼镜\", \"AR眼镜四大品牌\", \"Rokid AR眼镜\"], \"must_hits\": [], \"anchor_hits\": [\"Meta\", \"AR眼镜\"], \"entity_hits\": [], \"object_hits\": [], \"should_hits\": [], \"strong_hits\": [], \"support_hits\": [\"AR眼镜四大品牌\", \"AR眼镜\", \"Rokid AR眼镜\"], \"must_hits_llm\": [], \"negative_hits\": [], \"conflict_score\": 0, \"hit_term_roles\": {\"Meta\": \"main_anchor\", \"AR眼镜\": \"support\", \"Rokid AR眼镜\": \"support\", \"AR眼镜四大品牌\": \"support\"}, \"must_hits_text\": [], \"positive_score\": 6, \"object_hits_llm\": [], \"strong_hits_llm\": [], \"evidence_summary\": {\"anchor_terms\": [\"Meta\"], \"support_terms\": [], \"conflict_terms\": [], \"theme_name_hits\": [], \"subject_name_hits\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": []}, \"object_hits_text\": [], \"strong_hits_text\": [], \"blocking_hit_terms\": [], \"role_guard_blocked\": false, \"role_guard_reasons\": [], \"valid_anchor_terms\": [\"Meta\"], \"profile_anchor_hits\": [\"Meta\", \"AR眼镜\"], \"theme_name_hit_score\": 0, \"theme_name_hit_terms\": [], \"hit_term_role_sources\": {\"Meta\": [\"profile_anchor_hits\"], \"AR眼镜\": [\"profile_anchor_hits\", \"support_hits\"], \"Rokid AR眼镜\": [\"support_hits\"], \"AR眼镜四大品牌\": [\"support_hits\"]}, \"theme_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"subject_name_direct_hit\": false}, \"confidence\": 0.6582, \"theme_name\": \"AR眼镜四大品牌\", \"subject_key\": \"9038540\", \"relation_type\": \"related\"}}",
+          "created_at": "2026-05-18 05:24:55.355595+00:00"
+        }
+      ],
       "review_status": null,
-      "review_reason": null,
+      "review_reason": "direct_theme_name_hit",
       "pending_status": null,
       "dead_letter_status": null,
-      "match_performance": {}
+      "match_performance": {
+        "counters": {
+          "llm_judge_mode": "auto",
+          "llm_judge_count": 0,
+          "llm_judge_skipped": 1,
+          "event_profile_llm_count": 0,
+          "query_vector_cache_hit_count": 1,
+          "query_vector_cache_miss_count": 0,
+          "rerank_doc_vector_cache_hit_count": 19,
+          "rerank_doc_vector_cache_miss_count": 4
+        },
+        "timing_ms": {
+          "rerank_ms": 1528.457,
+          "llm_judge_ms": 0.0,
+          "total_match_ms": 5876.588,
+          "dense_recall_ms": 270.392,
+          "load_profiles_ms": 0.074,
+          "sparse_recall_ms": 3618.351,
+          "feature_recall_ms": 403.041,
+          "final_decision_ms": 0.275,
+          "event_profile_extract_ms": 28.078
+        },
+        "profile_cache_stats": {
+          "profile_load_count": 1,
+          "profile_cache_hit_count": 0,
+          "profile_cache_miss_count": 1,
+          "profile_map_cache_hit_count": 11,
+          "profile_map_cache_miss_count": 1
+        },
+        "query_vector_cache_size": 12,
+        "rerank_doc_vector_cache_size": 135
+      }
     },
     {
       "case_id": "pm_case_0017",
       "external_id": "pm_e2e_phase4_4_v2_full_20_20260515_002:pm_case_0017",
       "news_raw_id": 3853,
       "news_event_id": 7684,
-      "decision_id": null,
+      "decision_id": "1779081895076-0",
       "primary_subject_key": null,
       "primary_theme_name": null,
       "related_subject_keys": [],
       "related_theme_names": [],
       "related_mappings": [],
-      "review_status": null,
-      "review_reason": null,
+      "review_status": "waiting",
+      "review_reason": "role_guard_blocked",
       "pending_status": null,
       "dead_letter_status": null,
-      "match_performance": {}
+      "match_performance": {
+        "timing_ms": {
+          "load_profiles_ms": 0.055,
+          "event_profile_extract_ms": 12.308,
+          "dense_recall_ms": 1787.861,
+          "sparse_recall_ms": 4.537,
+          "feature_recall_ms": 422.39,
+          "rerank_ms": 1846.232,
+          "llm_judge_ms": 0.0,
+          "final_decision_ms": 0.221,
+          "total_match_ms": 4097.372
+        },
+        "counters": {
+          "llm_judge_count": 0,
+          "event_profile_llm_count": 0,
+          "llm_judge_mode": "auto",
+          "query_vector_cache_hit_count": 1,
+          "query_vector_cache_miss_count": 0,
+          "rerank_doc_vector_cache_hit_count": 25,
+          "rerank_doc_vector_cache_miss_count": 6,
+          "llm_judge_skipped": 1
+        },
+        "profile_cache_stats": {
+          "profile_load_count": 1,
+          "profile_cache_hit_count": 0,
+          "profile_cache_miss_count": 1,
+          "profile_map_cache_hit_count": 13,
+          "profile_map_cache_miss_count": 1
+        },
+        "rerank_doc_vector_cache_size": 145,
+        "query_vector_cache_size": 14
+      }
     },
     {
       "case_id": "pm_case_0018",
       "external_id": "pm_e2e_phase4_4_v2_full_20_20260515_002:pm_case_0018",
       "news_raw_id": 3854,
       "news_event_id": 7685,
-      "decision_id": null,
+      "decision_id": "1779081898355-0",
       "primary_subject_key": null,
       "primary_theme_name": null,
       "related_subject_keys": [],
       "related_theme_names": [],
       "related_mappings": [],
       "review_status": null,
-      "review_reason": null,
+      "review_reason": "direct_theme_name_hit",
       "pending_status": null,
       "dead_letter_status": null,
-      "match_performance": {}
+      "match_performance": {
+        "timing_ms": {
+          "load_profiles_ms": 0.04,
+          "event_profile_extract_ms": 7.212,
+          "dense_recall_ms": 1414.019,
+          "sparse_recall_ms": 3.361,
+          "feature_recall_ms": 552.821,
+          "rerank_ms": 994.35,
+          "llm_judge_ms": 0.0,
+          "final_decision_ms": 0.248,
+          "total_match_ms": 2993.269
+        },
+        "counters": {
+          "llm_judge_count": 0,
+          "event_profile_llm_count": 0,
+          "llm_judge_mode": "auto",
+          "query_vector_cache_hit_count": 1,
+          "query_vector_cache_miss_count": 0,
+          "rerank_doc_vector_cache_hit_count": 28,
+          "rerank_doc_vector_cache_miss_count": 4,
+          "llm_judge_skipped": 1
+        },
+        "profile_cache_stats": {
+          "profile_load_count": 1,
+          "profile_cache_hit_count": 0,
+          "profile_cache_miss_count": 1,
+          "profile_map_cache_hit_count": 15,
+          "profile_map_cache_miss_count": 1
+        },
+        "rerank_doc_vector_cache_size": 152,
+        "query_vector_cache_size": 16
+      }
     },
     {
       "case_id": "pm_case_0019",
