@@ -8,12 +8,17 @@ from evaluate_service.e2e.pre_market_brief.common import (
     repo_root,
     require_safe_db,
 )
-from evaluate_service.e2e.pre_market_brief.evaluate_pre_market_brief import _is_generic_only_related, _matches_gold
+from evaluate_service.e2e.pre_market_brief.evaluate_pre_market_brief import (
+    _is_commercial_space_neighbor,
+    _is_generic_only_related,
+    _matches_gold,
+)
 from evaluate_service.e2e.pre_market_brief.parse_test_cases import parse_test_cases_file
 from evaluate_service.e2e.pre_market_brief.replay_akshare_raw_news import build_stream_payload
 from evaluate_service.e2e.pre_market_brief.run_pre_market_e2e import build_parser, _build_rebuild_payload
 from evaluate_service.e2e.pre_market_brief.run_phase0_decision_services import build_parser as build_phase0_parser
 from evaluate_service.e2e.pre_market_brief.run_raw_news_services import build_parser as build_raw_services_parser
+from evaluate_service.e2e.pre_market_brief.trace_pre_market_e2e_run import _extract_decision_payload_trace
 
 
 def test_repo_root_and_default_output_dir_are_project_relative():
@@ -81,6 +86,20 @@ def test_alias_match_for_gold_labels():
     assert _matches_gold("AI/AR眼镜", "智能眼镜")
     assert _matches_gold("SpaceX", "卫星互联网")
     assert not _matches_gold("可控核聚变", "AI智能眼镜")
+
+
+def test_commercial_space_neighbor_is_separate_from_wrong_related():
+    assert _is_commercial_space_neighbor("卫星互联", "卫星互联网", "商业航天8大IPO")
+    assert _is_commercial_space_neighbor("SpaceX", "蓝箭航天IPO", "航天发射场")
+    assert not _is_commercial_space_neighbor("AI/AR眼镜", "AR眼镜", "商业航天8大IPO")
+
+
+def test_trace_extracts_event_id_from_nested_payload():
+    payload = {
+        "payload": '{"event_data": {"event_id": 12345}, "match_result": {"reason_code": "UNKNOWN"}}',
+    }
+
+    assert _extract_decision_payload_trace(payload)["event_id"] == 12345
 
 
 def test_generic_only_related_metric_detects_support_only_evidence():

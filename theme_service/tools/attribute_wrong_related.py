@@ -25,6 +25,23 @@ ROOT_CAUSES = {
     "eval_alias_error",
 }
 
+COMMERCIAL_SPACE_TERMS = {
+    "SpaceX",
+    "星链",
+    "星舰",
+    "卫星互联网",
+    "卫星互联",
+    "商业航天",
+    "蓝箭航天",
+    "蓝箭航天IPO",
+    "火箭",
+    "运载火箭",
+    "航天发射",
+    "航天发射场",
+    "广州商业航天",
+    "商业航天8大IPO",
+}
+
 
 def _read_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -52,6 +69,7 @@ def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         "evidence_summary",
         "hit_terms",
         "hit_term_roles",
+        "relation_assessment",
         "root_cause",
         "fix_action",
     ]
@@ -78,6 +96,14 @@ def _gold_terms_for_case(gold_by_case: dict[str, Any], case_id: str) -> list[str
 def _matches_gold(name: str, gold_terms: list[str]) -> bool:
     name = safe_str(name)
     return any(term and name and (term in name or name in term) for term in gold_terms)
+
+
+def _is_commercial_space_neighbor(gold_theme: str, primary_name: str, related_name: str) -> bool:
+    if not gold_theme or not related_name:
+        return False
+    has_space_context = any(term in gold_theme or term in primary_name for term in COMMERCIAL_SPACE_TERMS)
+    has_space_related = any(term in related_name for term in COMMERCIAL_SPACE_TERMS)
+    return has_space_context and has_space_related
 
 
 def _load_gold(path: Path | None) -> dict[str, Any]:
@@ -182,6 +208,7 @@ def build_report(
                     "evidence_summary": json.dumps(evidence.get("evidence_summary") or {}, ensure_ascii=False),
                     "hit_terms": json.dumps(_hit_terms(evidence), ensure_ascii=False),
                     "hit_term_roles": json.dumps(evidence.get("hit_term_roles") or {}, ensure_ascii=False),
+                    "relation_assessment": "wrong_primary",
                     "root_cause": root_cause if root_cause in ROOT_CAUSES else "profile_boundary_missing",
                     "fix_action": fix_action,
                 }
@@ -194,6 +221,11 @@ def build_report(
                 continue
             evidence = _unwrap_evidence(mapping.get("evidence_json") or mapping.get("evidence") or {})
             root_cause, fix_action = _classify_root_cause(title, wrong_name, evidence)
+            relation_assessment = "wrong_related"
+            if _is_commercial_space_neighbor(gold_theme, primary_name, wrong_name):
+                relation_assessment = "commercial_space_neighbor"
+                root_cause = "eval_alias_error"
+                fix_action = "classify_as_neighbor_or_limit_over_expansion"
             rows.append(
                 {
                     "case_id": case_id,
@@ -205,6 +237,7 @@ def build_report(
                     "evidence_summary": json.dumps(evidence.get("evidence_summary") or {}, ensure_ascii=False),
                     "hit_terms": json.dumps(_hit_terms(evidence), ensure_ascii=False),
                     "hit_term_roles": json.dumps(evidence.get("hit_term_roles") or {}, ensure_ascii=False),
+                    "relation_assessment": relation_assessment,
                     "root_cause": root_cause if root_cause in ROOT_CAUSES else "profile_boundary_missing",
                     "fix_action": fix_action,
                 }

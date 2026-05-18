@@ -135,6 +135,15 @@ async def trace_run(
     review_event_ids = {str(event_id) for event_id in reviews}
     terminal_event_ids = set(mapped_event_ids) | set(review_event_ids) | set(pending_event_ids)
     duplicate_decision_event_ids = _duplicate_event_ids(redis_trace.get("decision_entries", []))
+    input_event_ids = {str(row["news_event_id"]) for row in rows if row["news_event_id"] is not None}
+    non_terminal_event_ids = sorted(
+        input_event_ids - terminal_event_ids - dead_letter_event_ids,
+        key=lambda value: int(value) if value.isdigit() else value,
+    )
+    decision_seen_but_no_output = sorted(
+        decision_event_ids - terminal_event_ids - dead_letter_event_ids,
+        key=lambda value: int(value) if value.isdigit() else value,
+    )
     counts = {
         "expected_input_count": len(expected),
         "news_raw_count": len({row["news_raw_id"] for row in rows}),
@@ -155,6 +164,10 @@ async def trace_run(
         "dead_letter_distinct_event_count": len(dead_letter_event_ids),
         "dead_letter_count": len(dead_letter_event_ids),
         "terminal_distinct_event_count": len(terminal_event_ids),
+        "non_terminal_event_ids": non_terminal_event_ids,
+        "non_terminal_event_count": len(non_terminal_event_ids),
+        "decision_seen_but_no_output_event_ids": decision_seen_but_no_output,
+        "decision_seen_but_no_output_count": len(decision_seen_but_no_output),
         "duplicate_decision_event_ids": duplicate_decision_event_ids,
         "duplicate_decision_event_count": len(duplicate_decision_event_ids),
     }
@@ -439,13 +452,14 @@ async def _scan_stream_for_run(client: Any, stream: str, run_id: str, scan_limit
         haystack = str(fields)
         if run_id not in haystack:
             continue
+        payload_trace = _extract_decision_payload_trace(fields)
         matched.append(
             {
                 "stream_id": stream_id,
                 "case_id": _first_matching_field(fields, "case_id"),
-                "event_id": _first_matching_field(fields, "event_id"),
+                "event_id": _first_matching_field(fields, "event_id") or payload_trace.get("event_id"),
                 "decision": _first_matching_field(fields, "decision", "action"),
-                **_extract_decision_payload_trace(fields),
+                **payload_trace,
             }
         )
     return list(reversed(matched))
@@ -459,7 +473,13 @@ def _first_matching_field(fields: dict[str, Any], *names: str) -> str | None:
 
 
 def _extract_decision_payload_trace(fields: dict[str, Any]) -> dict[str, Any]:
-    raw = fields.get("decision")
+    raw = (
+        fields.get("decision")
+        or fields.get("payload")
+        or fields.get("event")
+        or fields.get("data")
+        or fields.get("message")
+    )
     if not raw:
         return {}
     try:
@@ -470,7 +490,9 @@ def _extract_decision_payload_trace(fields: dict[str, Any]) -> dict[str, Any]:
         return {}
     match_result = payload.get("match_result") if isinstance(payload.get("match_result"), dict) else {}
     audit = match_result.get("audit") if isinstance(match_result.get("audit"), dict) else {}
+    event_data = payload.get("event_data") if isinstance(payload.get("event_data"), dict) else {}
     return {
+        "event_id": payload.get("event_id") or event_data.get("event_id"),
         "action": payload.get("action"),
         "reason_code": match_result.get("reason_code") or payload.get("reason"),
         "match_performance": audit.get("performance") if isinstance(audit.get("performance"), dict) else {},
