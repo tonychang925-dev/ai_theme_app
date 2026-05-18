@@ -4,6 +4,7 @@ import json
 import logging
 import os
 import re
+import time
 from typing import Any, Dict, List
 
 from theme_service.services.theme_match_types import ThemeProfile
@@ -100,8 +101,93 @@ class ThemeProfileRepository:
 
     def __init__(self, database_gateway):
         self.database_gateway = database_gateway
+        self._active_profiles_cache: List[ThemeProfile] | None = None
+        self._active_profile_map_cache: Dict[str, ThemeProfile] | None = None
+        self._active_profiles_cache_key: tuple[str, str, str, str, str] | None = None
+        self._active_profile_map_cache_key: tuple[str, str, str, str, str] | None = None
+        self._active_profiles_loaded_at = 0.0
+        self._active_profile_map_loaded_at = 0.0
+        self._cache_stats: Dict[str, int] = {
+            "profile_load_count": 0,
+            "profile_cache_hit_count": 0,
+            "profile_cache_miss_count": 0,
+            "profile_map_cache_hit_count": 0,
+            "profile_map_cache_miss_count": 0,
+        }
 
     async def load_active_profiles(self) -> List[ThemeProfile]:
+        cache_key = self._build_cache_key()
+        now = time.time()
+        ttl = self._cache_ttl_seconds()
+        if (
+            ttl > 0
+            and self._active_profiles_cache is not None
+            and self._active_profiles_cache_key == cache_key
+            and now - self._active_profiles_loaded_at < ttl
+        ):
+            self._cache_stats["profile_cache_hit_count"] += 1
+            return self._active_profiles_cache
+
+        self._cache_stats["profile_cache_miss_count"] += 1
+        profiles = await self._load_active_profiles_uncached()
+        self._active_profiles_cache = profiles
+        self._active_profiles_cache_key = cache_key
+        self._active_profiles_loaded_at = now
+        self._active_profile_map_cache = None
+        self._active_profile_map_cache_key = None
+        self._active_profile_map_loaded_at = 0.0
+        return profiles
+
+    async def load_active_profile_map(self) -> Dict[str, ThemeProfile]:
+        cache_key = self._build_cache_key()
+        now = time.time()
+        ttl = self._cache_ttl_seconds()
+        if (
+            ttl > 0
+            and self._active_profile_map_cache is not None
+            and self._active_profile_map_cache_key == cache_key
+            and now - self._active_profile_map_loaded_at < ttl
+        ):
+            self._cache_stats["profile_map_cache_hit_count"] += 1
+            return self._active_profile_map_cache
+
+        self._cache_stats["profile_map_cache_miss_count"] += 1
+        profiles = await self.load_active_profiles()
+        profile_map = {p.subject_key: p for p in profiles}
+        self._active_profile_map_cache = profile_map
+        self._active_profile_map_cache_key = cache_key
+        self._active_profile_map_loaded_at = now
+        return profile_map
+
+    def clear_cache(self) -> None:
+        self._active_profiles_cache = None
+        self._active_profile_map_cache = None
+        self._active_profiles_cache_key = None
+        self._active_profile_map_cache_key = None
+        self._active_profiles_loaded_at = 0.0
+        self._active_profile_map_loaded_at = 0.0
+
+    def get_cache_stats(self) -> Dict[str, int]:
+        return dict(self._cache_stats)
+
+    def _build_cache_key(self) -> tuple[str, str, str, str, str]:
+        return (
+            os.getenv("THEME_PROFILE_VERSION", "v1").lower(),
+            os.getenv("THEME_PROFILE_V2_STATUS", "draft"),
+            os.getenv("THEME_PROFILE_V2_SUBJECT_KEYS", ""),
+            os.getenv("THEME_PROFILE_V2_FALLBACK_TO_V1", "true").lower(),
+            os.getenv("THEME_PROFILE_V2_REQUIRE_LOADED", "false").lower(),
+        )
+
+    @staticmethod
+    def _cache_ttl_seconds() -> int:
+        try:
+            return max(0, int(os.getenv("THEME_PROFILE_CACHE_TTL_SECONDS", "300")))
+        except ValueError:
+            return 300
+
+    async def _load_active_profiles_uncached(self) -> List[ThemeProfile]:
+        self._cache_stats["profile_load_count"] += 1
         rows = await self.database_gateway.load_theme_match_profiles()
         v1_profiles = self._rows_to_v1_profiles(rows)
         if os.getenv("THEME_PROFILE_VERSION", "v1").lower() != "v2":

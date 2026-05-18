@@ -1112,8 +1112,14 @@ class ThemeMatchEngine:
         self._event_profile_extractor = _EventProfileLLMExtractor()
 
     async def match_event(self, request: ThemeMatchRequest) -> ThemeDecisionEnvelope:
-        profiles = await self.profile_repository.load_active_profiles()
-        if not profiles:
+        load_profile_map = getattr(self.profile_repository, "load_active_profile_map", None)
+        if callable(load_profile_map):
+            profile_map = await load_profile_map()
+        else:
+            profiles = await self.profile_repository.load_active_profiles()
+            profile_map = {p.subject_key: p for p in profiles}
+
+        if not profile_map:
             return ThemeDecisionEnvelope(
                 decision="UNKNOWN",
                 event_id=request.event_id,
@@ -1124,7 +1130,6 @@ class ThemeMatchEngine:
                 audit={"top_candidates": []},
             )
 
-        profile_map = {p.subject_key: p for p in profiles}
         event_profile = self._event_profile_extractor.extract(request, _build_event_match_profile(request))
         recalled_rows = await self._dense_recall(request, event_profile)
         sparse_rows = await self._sparse_recall(request, event_profile)

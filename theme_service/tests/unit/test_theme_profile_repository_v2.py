@@ -82,6 +82,20 @@ class _FakeGatewayNoV2:
         ]
 
 
+class _CountingGateway(_FakeGateway):
+    def __init__(self):
+        self.v1_load_count = 0
+        self.v2_load_count = 0
+
+    async def load_theme_match_profiles(self):
+        self.v1_load_count += 1
+        return await super().load_theme_match_profiles()
+
+    async def load_theme_profile_v2_profiles(self, status="draft", subject_keys=None):
+        self.v2_load_count += 1
+        return await super().load_theme_profile_v2_profiles(status=status, subject_keys=subject_keys)
+
+
 async def test_theme_profile_repository_v2_overlay_keeps_v1_fallback(monkeypatch):
     monkeypatch.setenv("THEME_PROFILE_VERSION", "v2")
     monkeypatch.setenv("THEME_PROFILE_V2_SUBJECT_KEYS", "1001")
@@ -111,3 +125,57 @@ async def test_theme_profile_repository_v2_require_loaded_raises_when_gateway_mi
 
     with pytest.raises(RuntimeError, match="load_theme_profile_v2_profiles"):
         await ThemeProfileRepository(_FakeGatewayNoV2()).load_active_profiles()
+
+
+async def test_theme_profile_repository_caches_active_profiles(monkeypatch):
+    monkeypatch.setenv("THEME_PROFILE_VERSION", "v2")
+    monkeypatch.setenv("THEME_PROFILE_V2_SUBJECT_KEYS", "1001")
+    monkeypatch.setenv("THEME_PROFILE_V2_STATUS", "draft")
+    monkeypatch.setenv("THEME_PROFILE_V2_FALLBACK_TO_V1", "true")
+    monkeypatch.setenv("THEME_PROFILE_CACHE_TTL_SECONDS", "300")
+    gateway = _CountingGateway()
+    repo = ThemeProfileRepository(gateway)
+
+    first = await repo.load_active_profiles()
+    second = await repo.load_active_profiles()
+
+    assert first is second
+    assert gateway.v1_load_count == 1
+    assert gateway.v2_load_count == 1
+    assert repo.get_cache_stats()["profile_cache_hit_count"] == 1
+    assert repo.get_cache_stats()["profile_cache_miss_count"] == 1
+
+
+async def test_theme_profile_repository_clear_cache_forces_reload(monkeypatch):
+    monkeypatch.setenv("THEME_PROFILE_VERSION", "v2")
+    monkeypatch.setenv("THEME_PROFILE_V2_SUBJECT_KEYS", "1001")
+    monkeypatch.setenv("THEME_PROFILE_V2_STATUS", "draft")
+    monkeypatch.setenv("THEME_PROFILE_V2_FALLBACK_TO_V1", "true")
+    gateway = _CountingGateway()
+    repo = ThemeProfileRepository(gateway)
+
+    await repo.load_active_profiles()
+    repo.clear_cache()
+    await repo.load_active_profiles()
+
+    assert gateway.v1_load_count == 2
+    assert gateway.v2_load_count == 2
+
+
+async def test_theme_profile_repository_caches_profile_map(monkeypatch):
+    monkeypatch.setenv("THEME_PROFILE_VERSION", "v2")
+    monkeypatch.setenv("THEME_PROFILE_V2_SUBJECT_KEYS", "1001")
+    monkeypatch.setenv("THEME_PROFILE_V2_STATUS", "draft")
+    monkeypatch.setenv("THEME_PROFILE_V2_FALLBACK_TO_V1", "true")
+    gateway = _CountingGateway()
+    repo = ThemeProfileRepository(gateway)
+
+    first = await repo.load_active_profile_map()
+    second = await repo.load_active_profile_map()
+
+    assert first is second
+    assert set(first) == {"1001", "1002"}
+    assert gateway.v1_load_count == 1
+    assert gateway.v2_load_count == 1
+    assert repo.get_cache_stats()["profile_map_cache_hit_count"] == 1
+    assert repo.get_cache_stats()["profile_map_cache_miss_count"] == 1
