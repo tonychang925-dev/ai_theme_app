@@ -240,6 +240,12 @@ def _profile_gate_terms(profile: ThemeProfile, key: str) -> List[str]:
 def _profile_eval_metrics(profile: ThemeProfile) -> Dict[str, Any]:
     gate_json = profile.gate_json if isinstance(profile.gate_json, dict) else {}
     metrics = gate_json.get("eval_metrics")
+    if isinstance(metrics, str):
+        try:
+            parsed = json.loads(metrics)
+            return parsed if isinstance(parsed, dict) else {}
+        except Exception:
+            return {}
     return metrics if isinstance(metrics, dict) else {}
 
 
@@ -1063,7 +1069,8 @@ def _broad_category_direct_hit_blocked(
         + [
             term
             for term in _normalize_list(list(no_anchor_terms))
-            if len(term) > len(_safe_str(profile.subject_name)) and _term_in_text(term, event_text)
+            if len(term) > len(_safe_str(profile.subject_name))
+            and (_term_in_text(term, event_text) or _normalize_text(term) in _normalize_text(event_text))
         ]
     )
     if not blocking_phrases:
