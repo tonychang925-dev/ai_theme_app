@@ -31,8 +31,7 @@
     "agent-flag": 6,
     "feedback-command": 6
   },
-  "promptQueueUseCount": 253,
-  "showExpandedTodos": true,
+  "promptQueueUseCount": 254,
   "cachedGrowthBookFeatures": {
     "tengu_feedback_survey_config": {
       "minTimeBeforeFeedbackMs": 600000,
