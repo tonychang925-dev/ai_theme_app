@@ -36,6 +36,8 @@ def _profile(
     strategy_type: str = "event_driven",
     search_text: str | None = None,
     rerank_text: str | None = None,
+    gate_json: dict | None = None,
+    negative_terms: list[str] | None = None,
 ) -> ThemeProfile:
     return ThemeProfile(
         subject_key=subject_key,
@@ -45,13 +47,13 @@ def _profile(
         semantic_type=semantic_type,
         strategy_type=strategy_type,
         ontology_json={},
-        gate_json={},
+        gate_json=gate_json or {},
         must_terms=must_terms or [],
         should_terms=should_terms or [],
         not_terms=[],
         strong_terms=strong_terms or [],
         weak_terms=[],
-        negative_terms=[],
+        negative_terms=negative_terms or [],
         search_text=search_text or name,
         quality="test",
         rerank_text=rerank_text or name,
@@ -393,3 +395,137 @@ def test_llm_accept_match_without_anchor_evidence_is_human_review(monkeypatch):
 
     assert result.decision == "HUMAN_REVIEW"
     assert result.reason_code == "llm_accept_without_anchor_evidence"
+
+
+def test_microfluid_chip_cooling_does_not_anchor_high_temperature_theme():
+    request = ThemeMatchRequest(
+        event_id=2,
+        news_id=2,
+        title="微软与Corintis合作开发微流体冷却技术，可降低芯片最高温升65%",
+        content="微软与Corintis合作开发微流体冷却技术，可降低芯片最高温升65%。",
+        summary="芯片微流体冷却技术降低最高温升。",
+        event_type="产业技术",
+        entities=["微软", "Corintis", "微流体冷却"],
+    )
+    event_profile = _build_event_match_profile(request)
+    high_temp = _profile(
+        "9028694",
+        "高温",
+        must_terms=["高温"],
+        strong_terms=["高温"],
+        aliases=["高温"],
+        core_objects=["高温"],
+    )
+
+    evidence = _build_gate_evidence(_build_event_query_text(request, event_profile), high_temp, event_profile)
+
+    assert evidence["role_guard_blocked"] is True
+    assert evidence["hit_term_roles"]["高温"] == "generic_short_term"
+    assert evidence["positive_score"] == 0
+
+
+def test_source_org_securities_does_not_enter_related(monkeypatch):
+    monkeypatch.setenv("THEME_MATCH_ENABLE_MULTI_MATCH", "true")
+    primary = _profile("9013689", "液冷数据中心")
+    securities = _profile("9016841", "证券")
+    engine = ThemeMatchEngine(_Repo([primary, securities]))
+    candidate = Candidate(
+        subject_key="9016841",
+        subject_name="证券",
+        dense_score=0.0,
+        rerank_score=0.8,
+        evidence={
+            "theme_name_direct_hit": True,
+            "subject_name_direct_hit": True,
+            "theme_name_hit_terms": ["证券"],
+            "subject_name_hit_terms": ["证券"],
+            "object_hits": ["证券"],
+            "must_hits": ["证券"],
+            "strong_hits": ["证券"],
+            "valid_anchor_terms": [],
+            "hit_term_roles": {"证券": "source_org"},
+            "role_guard_blocked": True,
+            "conflict_score": 0,
+        },
+    )
+
+    related = engine._build_related_matches(
+        candidates=[candidate],
+        profile_map={"9013689": primary, "9016841": securities},
+        primary_subject_key="9013689",
+    )
+
+    assert related == []
+
+
+def test_location_name_shenzhen_does_not_enter_related(monkeypatch):
+    monkeypatch.setenv("THEME_MATCH_ENABLE_MULTI_MATCH", "true")
+    primary = _profile("9030409", "AI智能眼镜")
+    shenzhen = _profile("9033923", "深圳")
+    engine = ThemeMatchEngine(_Repo([primary, shenzhen]))
+    candidate = Candidate(
+        subject_key="9033923",
+        subject_name="深圳",
+        dense_score=0.0,
+        rerank_score=0.8,
+        evidence={
+            "theme_name_direct_hit": True,
+            "subject_name_direct_hit": True,
+            "theme_name_hit_terms": ["深圳"],
+            "subject_name_hit_terms": ["深圳"],
+            "valid_anchor_terms": [],
+            "hit_term_roles": {"深圳": "location"},
+            "role_guard_blocked": True,
+            "conflict_score": 0,
+        },
+    )
+
+    related = engine._build_related_matches(
+        candidates=[candidate],
+        profile_map={"9030409": primary, "9033923": shenzhen},
+        primary_subject_key="9030409",
+    )
+
+    assert related == []
+
+
+def test_llm_accept_role_guard_blocked_candidate_has_no_matched_subject(monkeypatch):
+    securities = _profile("9016841", "证券")
+    engine = ThemeMatchEngine(_Repo([securities]))
+    candidate = Candidate(
+        subject_key="9016841",
+        subject_name="证券",
+        dense_score=0.0,
+        rerank_score=0.8,
+        evidence={
+            "theme_name_direct_hit": True,
+            "theme_name_hit_terms": ["证券"],
+            "role_guard_blocked": True,
+            "hit_term_roles": {"证券": "source_org"},
+        },
+    )
+
+    result = engine._final_decide_with_llm(
+        request=ThemeMatchRequest(
+            event_id=3,
+            news_id=3,
+            title="东方证券预测谷歌服务器液冷市场提升",
+            content="东方证券预测2026年谷歌服务器液冷市场规模约180亿元。",
+            summary="东方证券预测服务器液冷市场规模提升。",
+            event_type="研报",
+            entities=["谷歌", "服务器液冷"],
+        ),
+        candidates=[candidate],
+        profile_map={"9016841": securities},
+        llm_result={
+            "verdict": "accept_match",
+            "best_candidate": "C1",
+            "best_theme_key": "9016841",
+            "confidence": 0.92,
+            "reason": "证券命中",
+        },
+    )
+
+    assert result.decision == "HUMAN_REVIEW"
+    assert result.reason_code == "llm_accept_role_guard_blocked"
+    assert result.matched_subject_key == ""

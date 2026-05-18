@@ -69,8 +69,9 @@ class W2SFeatureSnapshotService:
                 current += timedelta(days=1)
                 continue
 
+            # Phase 0: try direct pool read first, fall back to complex join
             try:
-                candidates = await self._read.get_w2s_candidate_inputs(current)
+                candidates = await self._get_candidates_for_date(current)
             except Exception as exc:
                 logger.warning("Failed to read candidates for %s: %s", current, exc)
                 candidates = []
@@ -310,10 +311,31 @@ class W2SFeatureSnapshotService:
             "auction_feature_quality": "complete" if confirm_source == "real_auction" else "partial",
             "missing_features": json.dumps(missing_features, ensure_ascii=False),
             "bull_stock_score": str(bull_stock_score) if bull_stock_score is not None else None,
-            "raw_feature_json": json.dumps(raw_feature_json, ensure_ascii=False),
-            "derived_feature_json": json.dumps(derived_feature_json, ensure_ascii=False),
+            "raw_feature_json": json.dumps(raw_feature_json, ensure_ascii=False, default=str),
+            "derived_feature_json": json.dumps(derived_feature_json, ensure_ascii=False, default=str),
             "source_trace": json.dumps(source_trace, ensure_ascii=False),
         }
+
+    async def _get_candidates_for_date(self, trade_date: date) -> list[dict[str, Any]]:
+        """Phase 0: read candidates directly from weak_to_strong_candidate_pool.
+
+        Falls back to get_w2s_candidate_inputs if pool is empty.
+        """
+        # Try direct pool read first (faster, reads actual candidates)
+        fn = getattr(self._gw, "get_w2s_candidates_by_trade_date", None)
+        if callable(fn):
+            try:
+                rows = await fn(trade_date, limit=200)
+                if rows:
+                    return [_row_dict(r) for r in rows]
+            except Exception:
+                pass
+
+        # Fallback: use ReadPort (complex join from strong_watch_pool)
+        try:
+            return await self._read.get_w2s_candidate_inputs(trade_date)
+        except Exception:
+            return []
 
     async def _load_auctions(self, trade_date: date) -> list[Any]:
         try:
@@ -377,7 +399,7 @@ class W2SFeatureSnapshotService:
                         $11, $12, $13, $14, $15, $16, $17, $18, $19, $20,
                         $21, $22, $23, $24, $25, $26, $27, $28, $29, $30,
                         $31, $32, $33, $34, $35, $36, $37, $38, $39,
-                        $40, $41, $42, $43
+                        $40, $41, $42
                     )
                     ON CONFLICT (run_id, strategy_version, candidate_trade_date, confirm_trade_date, stock_id)
                     DO UPDATE SET
@@ -474,6 +496,32 @@ def _normalize(s: str) -> str:
         if s.startswith(("4", "8")):
             return f"{s}.BJ"
     return s
+
+
+def _row_dict(row: Any) -> dict[str, Any]:
+    """Convert any row-like object to dict, with field name mapping."""
+    if isinstance(row, dict):
+        d = dict(row)
+    elif hasattr(row, "_asdict"):
+        d = dict(row._asdict())
+    elif hasattr(row, "__dict__"):
+        d = {k: v for k, v in row.__dict__.items() if not k.startswith("_")}
+    else:
+        d = dict(row)
+
+    # Field name mapping from weak_to_strong_candidate_pool to snapshot fields
+    _map(d, "prev_limit_up_count", "recent_limit_up_count")
+    _map(d, "is_dragon_head", "is_leader")
+    _map(d, "pool_entry_type_orig", "pool_entry_type")
+    # Ensure stock_id is normalized
+    if d.get("stock_id"):
+        d["stock_id"] = _normalize(str(d["stock_id"]))
+    return d
+
+
+def _map(d: dict[str, Any], src: str, dst: str) -> None:
+    if dst not in d and src in d:
+        d[dst] = d[src]
 
 
 def _to_decimal(value: Any) -> Decimal | None:
