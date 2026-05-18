@@ -13,6 +13,7 @@ from theme_service.services.theme_match_engine import (
     _build_feature_recall_rows,
 )
 from theme_service.services.theme_match_types import ThemeMatchRequest, ThemeProfile
+from theme_service.tools.profile_eval_common import hard_negative_wrong_hits
 
 
 LANJIAN_TITLE = "蓝箭航天副总裁张静茹告诉《科创板日报》记者，蓝箭航天供应链600余家供应商覆盖全国90余城，民企占比近70%、国企30%"
@@ -581,6 +582,23 @@ def test_broad_category_strict_blocks_child_topic_direct_hit():
     assert evidence["role_guard_blocked"] is True
     assert evidence["positive_score"] == 0
     assert _collect_direct_hit_subject_keys(request, {"9013944": profile}) == []
+
+
+def test_hard_negative_name_matching_does_not_block_specific_child_theme():
+    class _Result:
+        matched_subject_key = "9011398"
+        matched_theme_name = "半导体设备"
+        related_matches = []
+
+    hits = hard_negative_wrong_hits(
+        _Result(),
+        {
+            "must_not_subject_keys": ["9013944"],
+            "must_not_theme_names": ["半导体"],
+        },
+    )
+
+    assert hits == {"subject_keys": [], "theme_names": []}
 
 
 def test_location_name_shenzhen_does_not_enter_related(monkeypatch):

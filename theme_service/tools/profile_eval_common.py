@@ -87,9 +87,21 @@ def hard_negative_wrong_hits(result: Any, case: dict[str, Any]) -> dict[str, lis
     wrong_names = [
         name
         for name in names
-        if any(blocked and (blocked == name or blocked in name or name in blocked) for blocked in must_not_names)
+        if any(_must_not_name_matches(blocked, name) for blocked in must_not_names)
     ]
     return {"subject_keys": wrong_keys, "theme_names": wrong_names}
+
+
+def _must_not_name_matches(blocked: str, actual: str) -> bool:
+    blocked = safe_str(blocked)
+    actual = safe_str(actual)
+    if not blocked or not actual:
+        return False
+    if blocked == actual:
+        return True
+    # Allow a full must-not alias to catch shorter actual aliases, but do not let
+    # broad labels like "半导体" reject specific children like "半导体设备".
+    return actual in blocked and len(actual) >= 3
 
 
 def is_hard_negative_rejected(result: Any, case: dict[str, Any]) -> bool:
@@ -104,7 +116,7 @@ def count_wrong_related(result: Any, case: dict[str, Any]) -> int:
     for item in result.related_matches or []:
         key = safe_str(item.get("subject_key"))
         name = safe_str(item.get("theme_name"))
-        if key in must_not_keys or any(blocked and (blocked == name or blocked in name or name in blocked) for blocked in must_not_names):
+        if key in must_not_keys or any(_must_not_name_matches(blocked, name) for blocked in must_not_names):
             count += 1
     return count
 
