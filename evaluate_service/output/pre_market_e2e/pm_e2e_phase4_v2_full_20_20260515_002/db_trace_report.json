@@ -1,0 +1,930 @@
+{
+  "run_id": "pm_e2e_phase4_v2_full_20_20260515_002",
+  "trade_date": "2026-05-15",
+  "counts": {
+    "expected_input_count": 20,
+    "news_raw_count": 20,
+    "news_event_count": 40,
+    "mapped_event_count": 19,
+    "event_subject_map_count": 37,
+    "event_theme_map_count": 37,
+    "review_queue_count": 1,
+    "decision_count": 0,
+    "pending_count": 0,
+    "dead_letter_count": 0
+  },
+  "redis_streams": {
+    "decision_stream": "stream:events:decision",
+    "pending_stream": "stream:events:pending",
+    "dead_letter_stream": "stream:dead:letter",
+    "decision_count": 0,
+    "pending_count": 0,
+    "dead_letter_count": 0,
+    "decision_entries": [],
+    "pending_entries": [],
+    "dead_letter_entries": []
+  },
+  "rows": [
+    {
+      "case_id": "pm_case_0001",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0001",
+      "news_raw_id": 3217,
+      "news_event_id": 2883,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9038540"
+      ],
+      "related_theme_names": [
+        "AR眼镜四大品牌"
+      ],
+      "related_mappings": [
+        {
+          "event_id": 2883,
+          "subject_key": "9038540",
+          "theme_name": "AR眼镜四大品牌",
+          "confidence": "0.6183",
+          "match_reason": "top_candidate_evidence_related",
+          "relation_type": "related",
+          "evidence_json": "{\"related_match\": {\"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"not_hits\": [], \"must_hits\": [], \"anchor_hits\": [\"Meta\"], \"entity_hits\": [], \"object_hits\": [], \"should_hits\": [], \"strong_hits\": [], \"support_hits\": [], \"must_hits_llm\": [], \"negative_hits\": [], \"conflict_score\": 0, \"must_hits_text\": [], \"positive_score\": 6, \"object_hits_llm\": [], \"strong_hits_llm\": [], \"evidence_summary\": {\"anchor_terms\": [\"Meta\"], \"support_terms\": [], \"conflict_terms\": [], \"theme_name_hits\": [], \"subject_name_hits\": []}, \"object_hits_text\": [], \"strong_hits_text\": [], \"profile_anchor_hits\": [\"Meta\"], \"theme_name_hit_score\": 0, \"theme_name_hit_terms\": [], \"theme_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"subject_name_direct_hit\": false}, \"confidence\": 0.6183, \"theme_name\": \"AR眼镜四大品牌\", \"subject_key\": \"9038540\", \"relation_type\": \"related\"}}",
+          "created_at": "2026-05-17 14:33:50.738954+00:00"
+        }
+      ],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0001",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0001",
+      "news_raw_id": 3217,
+      "news_event_id": 3356,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0002",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0002",
+      "news_raw_id": 3218,
+      "news_event_id": 2884,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9038540"
+      ],
+      "related_theme_names": [
+        "AR眼镜四大品牌"
+      ],
+      "related_mappings": [
+        {
+          "event_id": 2884,
+          "subject_key": "9038540",
+          "theme_name": "AR眼镜四大品牌",
+          "confidence": "0.6263",
+          "match_reason": "top_candidate_evidence_related",
+          "relation_type": "related",
+          "evidence_json": "{\"related_match\": {\"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"not_hits\": [], \"must_hits\": [], \"anchor_hits\": [\"Meta\"], \"entity_hits\": [], \"object_hits\": [], \"should_hits\": [], \"strong_hits\": [], \"support_hits\": [], \"must_hits_llm\": [], \"negative_hits\": [], \"conflict_score\": 0, \"must_hits_text\": [], \"positive_score\": 6, \"object_hits_llm\": [], \"strong_hits_llm\": [], \"evidence_summary\": {\"anchor_terms\": [\"Meta\"], \"support_terms\": [], \"conflict_terms\": [], \"theme_name_hits\": [], \"subject_name_hits\": []}, \"object_hits_text\": [], \"strong_hits_text\": [], \"profile_anchor_hits\": [\"Meta\"], \"theme_name_hit_score\": 0, \"theme_name_hit_terms\": [], \"theme_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"subject_name_direct_hit\": false}, \"confidence\": 0.6263, \"theme_name\": \"AR眼镜四大品牌\", \"subject_key\": \"9038540\", \"relation_type\": \"related\"}}",
+          "created_at": "2026-05-17 14:34:06.042794+00:00"
+        }
+      ],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0002",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0002",
+      "news_raw_id": 3218,
+      "news_event_id": 3357,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0003",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0003",
+      "news_raw_id": 3219,
+      "news_event_id": 2885,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9038540"
+      ],
+      "related_theme_names": [
+        "AR眼镜四大品牌"
+      ],
+      "related_mappings": [
+        {
+          "event_id": 2885,
+          "subject_key": "9038540",
+          "theme_name": "AR眼镜四大品牌",
+          "confidence": "0.6182",
+          "match_reason": "top_candidate_evidence_related",
+          "relation_type": "related",
+          "evidence_json": "{\"related_match\": {\"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"not_hits\": [], \"must_hits\": [], \"anchor_hits\": [\"AR眼镜\"], \"entity_hits\": [], \"object_hits\": [], \"should_hits\": [], \"strong_hits\": [], \"support_hits\": [\"AR眼镜四大品牌\", \"AR眼镜\", \"Rokid AR眼镜\"], \"must_hits_llm\": [], \"negative_hits\": [], \"conflict_score\": 0, \"must_hits_text\": [], \"positive_score\": 6, \"object_hits_llm\": [], \"strong_hits_llm\": [], \"evidence_summary\": {\"anchor_terms\": [\"AR眼镜\"], \"support_terms\": [], \"conflict_terms\": [], \"theme_name_hits\": [], \"subject_name_hits\": []}, \"object_hits_text\": [], \"strong_hits_text\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"theme_name_hit_score\": 0, \"theme_name_hit_terms\": [], \"theme_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"subject_name_direct_hit\": false}, \"confidence\": 0.6182, \"theme_name\": \"AR眼镜四大品牌\", \"subject_key\": \"9038540\", \"relation_type\": \"related\"}}",
+          "created_at": "2026-05-17 14:34:18.989474+00:00"
+        }
+      ],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0003",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0003",
+      "news_raw_id": 3219,
+      "news_event_id": 3358,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0004",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0004",
+      "news_raw_id": 3220,
+      "news_event_id": 2887,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0004",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0004",
+      "news_raw_id": 3220,
+      "news_event_id": 3359,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0005",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0005",
+      "news_raw_id": 3221,
+      "news_event_id": 2888,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9038540"
+      ],
+      "related_theme_names": [
+        "AR眼镜四大品牌"
+      ],
+      "related_mappings": [
+        {
+          "event_id": 2888,
+          "subject_key": "9038540",
+          "theme_name": "AR眼镜四大品牌",
+          "confidence": "0.6234",
+          "match_reason": "top_candidate_evidence_related",
+          "relation_type": "related",
+          "evidence_json": "{\"related_match\": {\"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"not_hits\": [], \"must_hits\": [], \"anchor_hits\": [\"Meta\"], \"entity_hits\": [], \"object_hits\": [], \"should_hits\": [], \"strong_hits\": [], \"support_hits\": [], \"must_hits_llm\": [], \"negative_hits\": [], \"conflict_score\": 0, \"must_hits_text\": [], \"positive_score\": 6, \"object_hits_llm\": [], \"strong_hits_llm\": [], \"evidence_summary\": {\"anchor_terms\": [\"Meta\"], \"support_terms\": [], \"conflict_terms\": [], \"theme_name_hits\": [], \"subject_name_hits\": []}, \"object_hits_text\": [], \"strong_hits_text\": [], \"profile_anchor_hits\": [\"Meta\"], \"theme_name_hit_score\": 0, \"theme_name_hit_terms\": [], \"theme_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"subject_name_direct_hit\": false}, \"confidence\": 0.6234, \"theme_name\": \"AR眼镜四大品牌\", \"subject_key\": \"9038540\", \"relation_type\": \"related\"}}",
+          "created_at": "2026-05-17 14:35:04.975048+00:00"
+        }
+      ],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0005",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0005",
+      "news_raw_id": 3221,
+      "news_event_id": 3360,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0006",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0006",
+      "news_raw_id": 3222,
+      "news_event_id": 2886,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9038540"
+      ],
+      "related_theme_names": [
+        "AR眼镜四大品牌"
+      ],
+      "related_mappings": [
+        {
+          "event_id": 2886,
+          "subject_key": "9038540",
+          "theme_name": "AR眼镜四大品牌",
+          "confidence": "0.6195",
+          "match_reason": "top_candidate_evidence_related",
+          "relation_type": "related",
+          "evidence_json": "{\"related_match\": {\"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"not_hits\": [], \"must_hits\": [], \"anchor_hits\": [\"AR眼镜\"], \"entity_hits\": [], \"object_hits\": [], \"should_hits\": [], \"strong_hits\": [], \"support_hits\": [\"AR眼镜四大品牌\", \"AR眼镜\", \"Rokid AR眼镜\"], \"must_hits_llm\": [], \"negative_hits\": [], \"conflict_score\": 0, \"must_hits_text\": [], \"positive_score\": 6, \"object_hits_llm\": [], \"strong_hits_llm\": [], \"evidence_summary\": {\"anchor_terms\": [\"AR眼镜\"], \"support_terms\": [], \"conflict_terms\": [], \"theme_name_hits\": [], \"subject_name_hits\": []}, \"object_hits_text\": [], \"strong_hits_text\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"theme_name_hit_score\": 0, \"theme_name_hit_terms\": [], \"theme_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"subject_name_direct_hit\": false}, \"confidence\": 0.6195, \"theme_name\": \"AR眼镜四大品牌\", \"subject_key\": \"9038540\", \"relation_type\": \"related\"}}",
+          "created_at": "2026-05-17 14:34:39.103311+00:00"
+        }
+      ],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0006",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0006",
+      "news_raw_id": 3222,
+      "news_event_id": 3361,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0007",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0007",
+      "news_raw_id": 3223,
+      "news_event_id": 2889,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9038540"
+      ],
+      "related_theme_names": [
+        "AR眼镜四大品牌"
+      ],
+      "related_mappings": [
+        {
+          "event_id": 2889,
+          "subject_key": "9038540",
+          "theme_name": "AR眼镜四大品牌",
+          "confidence": "0.6269",
+          "match_reason": "top_candidate_evidence_related",
+          "relation_type": "related",
+          "evidence_json": "{\"related_match\": {\"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"not_hits\": [], \"must_hits\": [], \"anchor_hits\": [\"AR眼镜\"], \"entity_hits\": [], \"object_hits\": [], \"should_hits\": [], \"strong_hits\": [], \"support_hits\": [\"XREAL品牌\", \"AR眼镜四大品牌\", \"AR眼镜\", \"XREAL\", \"XREAL空间屏\", \"Rokid AR眼镜\"], \"must_hits_llm\": [], \"negative_hits\": [], \"conflict_score\": 0, \"must_hits_text\": [], \"positive_score\": 6, \"object_hits_llm\": [], \"strong_hits_llm\": [], \"evidence_summary\": {\"anchor_terms\": [\"AR眼镜\"], \"support_terms\": [], \"conflict_terms\": [], \"theme_name_hits\": [], \"subject_name_hits\": []}, \"object_hits_text\": [], \"strong_hits_text\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"theme_name_hit_score\": 0, \"theme_name_hit_terms\": [], \"theme_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"subject_name_direct_hit\": false}, \"confidence\": 0.6269, \"theme_name\": \"AR眼镜四大品牌\", \"subject_key\": \"9038540\", \"relation_type\": \"related\"}}",
+          "created_at": "2026-05-17 14:35:23.224042+00:00"
+        }
+      ],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0007",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0007",
+      "news_raw_id": 3223,
+      "news_event_id": 3362,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0008",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0008",
+      "news_raw_id": 3224,
+      "news_event_id": 2890,
+      "decision_id": null,
+      "primary_subject_key": "9032675",
+      "primary_theme_name": "金融IT",
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0008",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0008",
+      "news_raw_id": 3224,
+      "news_event_id": 3363,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0009",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0009",
+      "news_raw_id": 3225,
+      "news_event_id": 2892,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9038540"
+      ],
+      "related_theme_names": [
+        "AR眼镜四大品牌"
+      ],
+      "related_mappings": [
+        {
+          "event_id": 2892,
+          "subject_key": "9038540",
+          "theme_name": "AR眼镜四大品牌",
+          "confidence": "0.6196",
+          "match_reason": "top_candidate_evidence_related",
+          "relation_type": "related",
+          "evidence_json": "{\"related_match\": {\"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"not_hits\": [], \"must_hits\": [], \"anchor_hits\": [\"AR眼镜\"], \"entity_hits\": [], \"object_hits\": [], \"should_hits\": [], \"strong_hits\": [], \"support_hits\": [\"AR眼镜四大品牌\", \"AR眼镜\", \"Rokid AR眼镜\"], \"must_hits_llm\": [], \"negative_hits\": [], \"conflict_score\": 0, \"must_hits_text\": [], \"positive_score\": 6, \"object_hits_llm\": [], \"strong_hits_llm\": [], \"evidence_summary\": {\"anchor_terms\": [\"AR眼镜\"], \"support_terms\": [], \"conflict_terms\": [], \"theme_name_hits\": [], \"subject_name_hits\": []}, \"object_hits_text\": [], \"strong_hits_text\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"theme_name_hit_score\": 0, \"theme_name_hit_terms\": [], \"theme_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"subject_name_direct_hit\": false}, \"confidence\": 0.6196, \"theme_name\": \"AR眼镜四大品牌\", \"subject_key\": \"9038540\", \"relation_type\": \"related\"}}",
+          "created_at": "2026-05-17 14:36:23.255530+00:00"
+        }
+      ],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0009",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0009",
+      "news_raw_id": 3225,
+      "news_event_id": 3364,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0010",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0010",
+      "news_raw_id": 3226,
+      "news_event_id": 2891,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": "waiting",
+      "review_reason": "llm_accept_without_anchor_evidence",
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0010",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0010",
+      "news_raw_id": 3226,
+      "news_event_id": 3365,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0011",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0011",
+      "news_raw_id": 3227,
+      "news_event_id": 2893,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9038540"
+      ],
+      "related_theme_names": [
+        "AR眼镜四大品牌"
+      ],
+      "related_mappings": [
+        {
+          "event_id": 2893,
+          "subject_key": "9038540",
+          "theme_name": "AR眼镜四大品牌",
+          "confidence": "0.6539",
+          "match_reason": "top_candidate_evidence_related",
+          "relation_type": "related",
+          "evidence_json": "{\"related_match\": {\"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"not_hits\": [], \"must_hits\": [], \"anchor_hits\": [\"Meta\", \"AR眼镜\"], \"entity_hits\": [], \"object_hits\": [], \"should_hits\": [], \"strong_hits\": [], \"support_hits\": [\"AR眼镜四大品牌\", \"AR眼镜\", \"Rokid AR眼镜\"], \"must_hits_llm\": [], \"negative_hits\": [], \"conflict_score\": 0, \"must_hits_text\": [], \"positive_score\": 12, \"object_hits_llm\": [], \"strong_hits_llm\": [], \"evidence_summary\": {\"anchor_terms\": [\"Meta\", \"AR眼镜\"], \"support_terms\": [], \"conflict_terms\": [], \"theme_name_hits\": [], \"subject_name_hits\": []}, \"object_hits_text\": [], \"strong_hits_text\": [], \"profile_anchor_hits\": [\"Meta\", \"AR眼镜\"], \"theme_name_hit_score\": 0, \"theme_name_hit_terms\": [], \"theme_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"subject_name_direct_hit\": false}, \"confidence\": 0.6539, \"theme_name\": \"AR眼镜四大品牌\", \"subject_key\": \"9038540\", \"relation_type\": \"related\"}}",
+          "created_at": "2026-05-17 14:36:53.476649+00:00"
+        }
+      ],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0011",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0011",
+      "news_raw_id": 3227,
+      "news_event_id": 3366,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0012",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0012",
+      "news_raw_id": 3228,
+      "news_event_id": 2894,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0012",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0012",
+      "news_raw_id": 3228,
+      "news_event_id": 3370,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0013",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0013",
+      "news_raw_id": 3229,
+      "news_event_id": 2895,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9038540",
+        "9022064"
+      ],
+      "related_theme_names": [
+        "AR眼镜四大品牌",
+        "碳化硅"
+      ],
+      "related_mappings": [
+        {
+          "event_id": 2895,
+          "subject_key": "9038540",
+          "theme_name": "AR眼镜四大品牌",
+          "confidence": "0.6603",
+          "match_reason": "top_candidate_evidence_related",
+          "relation_type": "related",
+          "evidence_json": "{\"related_match\": {\"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"not_hits\": [], \"must_hits\": [], \"anchor_hits\": [\"Meta\", \"AR眼镜\"], \"entity_hits\": [], \"object_hits\": [], \"should_hits\": [], \"strong_hits\": [], \"support_hits\": [\"AR眼镜四大品牌\", \"AR眼镜\", \"Rokid AR眼镜\"], \"must_hits_llm\": [], \"negative_hits\": [], \"conflict_score\": 0, \"must_hits_text\": [], \"positive_score\": 12, \"object_hits_llm\": [], \"strong_hits_llm\": [], \"evidence_summary\": {\"anchor_terms\": [\"Meta\", \"AR眼镜\"], \"support_terms\": [], \"conflict_terms\": [], \"theme_name_hits\": [], \"subject_name_hits\": []}, \"object_hits_text\": [], \"strong_hits_text\": [], \"profile_anchor_hits\": [\"Meta\", \"AR眼镜\"], \"theme_name_hit_score\": 0, \"theme_name_hit_terms\": [], \"theme_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"subject_name_direct_hit\": false}, \"confidence\": 0.6603, \"theme_name\": \"AR眼镜四大品牌\", \"subject_key\": \"9038540\", \"relation_type\": \"related\"}}",
+          "created_at": "2026-05-17 14:37:52.016074+00:00"
+        },
+        {
+          "event_id": 2895,
+          "subject_key": "9022064",
+          "theme_name": "碳化硅",
+          "confidence": "0.6072",
+          "match_reason": "top_candidate_evidence_related",
+          "relation_type": "related",
+          "evidence_json": "{\"related_match\": {\"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"not_hits\": [], \"must_hits\": [], \"anchor_hits\": [\"碳化硅\"], \"entity_hits\": [], \"object_hits\": [\"碳化硅\"], \"should_hits\": [], \"strong_hits\": [\"碳化硅\"], \"support_hits\": [], \"must_hits_llm\": [], \"negative_hits\": [], \"conflict_score\": 0, \"must_hits_text\": [], \"positive_score\": 53, \"object_hits_llm\": [], \"strong_hits_llm\": [], \"evidence_summary\": {\"anchor_terms\": [\"碳化硅\"], \"support_terms\": [], \"conflict_terms\": [], \"theme_name_hits\": [\"碳化硅\"], \"subject_name_hits\": [\"碳化硅\"]}, \"object_hits_text\": [\"碳化硅\"], \"strong_hits_text\": [\"碳化硅\"], \"profile_anchor_hits\": [], \"theme_name_hit_score\": 50, \"theme_name_hit_terms\": [\"碳化硅\"], \"theme_name_direct_hit\": true, \"subject_name_hit_terms\": [\"碳化硅\"], \"subject_name_direct_hit\": true}, \"confidence\": 0.6072, \"theme_name\": \"碳化硅\", \"subject_key\": \"9022064\", \"relation_type\": \"related\"}}",
+          "created_at": "2026-05-17 14:37:52.019164+00:00"
+        }
+      ],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0013",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0013",
+      "news_raw_id": 3229,
+      "news_event_id": 3367,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0014",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0014",
+      "news_raw_id": 3230,
+      "news_event_id": 2896,
+      "decision_id": null,
+      "primary_subject_key": "9038540",
+      "primary_theme_name": "AR眼镜四大品牌",
+      "related_subject_keys": [
+        "9030409"
+      ],
+      "related_theme_names": [
+        "AR眼镜"
+      ],
+      "related_mappings": [
+        {
+          "event_id": 2896,
+          "subject_key": "9030409",
+          "theme_name": "AR眼镜",
+          "confidence": "0.6206",
+          "match_reason": "top_candidate_evidence_related",
+          "relation_type": "related",
+          "evidence_json": "{\"related_match\": {\"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"not_hits\": [], \"must_hits\": [], \"anchor_hits\": [\"Meta\"], \"entity_hits\": [], \"object_hits\": [], \"should_hits\": [], \"strong_hits\": [], \"support_hits\": [\"AI眼镜\", \"小米AI眼镜\", \"自研AI眼镜\", \"可穿戴设备\", \"虚拟现实设备\", \"360公司\", \"AI录音笔\", \"AI拍摄眼镜\", \"AI智能眼镜\"], \"must_hits_llm\": [], \"negative_hits\": [], \"conflict_score\": 0, \"must_hits_text\": [], \"positive_score\": 6, \"object_hits_llm\": [], \"strong_hits_llm\": [], \"evidence_summary\": {\"anchor_terms\": [\"Meta\"], \"support_terms\": [], \"conflict_terms\": [], \"theme_name_hits\": [], \"subject_name_hits\": []}, \"object_hits_text\": [], \"strong_hits_text\": [], \"profile_anchor_hits\": [\"Meta\"], \"theme_name_hit_score\": 0, \"theme_name_hit_terms\": [], \"theme_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"subject_name_direct_hit\": false}, \"confidence\": 0.6206, \"theme_name\": \"AR眼镜\", \"subject_key\": \"9030409\", \"relation_type\": \"related\"}}",
+          "created_at": "2026-05-17 14:38:17.790342+00:00"
+        }
+      ],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0014",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0014",
+      "news_raw_id": 3230,
+      "news_event_id": 3368,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0015",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0015",
+      "news_raw_id": 3231,
+      "news_event_id": 2897,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9038540",
+        "9022942"
+      ],
+      "related_theme_names": [
+        "AR眼镜四大品牌",
+        "苹果MR"
+      ],
+      "related_mappings": [
+        {
+          "event_id": 2897,
+          "subject_key": "9038540",
+          "theme_name": "AR眼镜四大品牌",
+          "confidence": "0.6594",
+          "match_reason": "top_candidate_evidence_related",
+          "relation_type": "related",
+          "evidence_json": "{\"related_match\": {\"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"not_hits\": [], \"must_hits\": [], \"anchor_hits\": [\"Meta\", \"AR眼镜\"], \"entity_hits\": [], \"object_hits\": [], \"should_hits\": [], \"strong_hits\": [], \"support_hits\": [\"AR眼镜四大品牌\", \"AR眼镜\", \"Rokid AR眼镜\"], \"must_hits_llm\": [], \"negative_hits\": [], \"conflict_score\": 0, \"must_hits_text\": [], \"positive_score\": 12, \"object_hits_llm\": [], \"strong_hits_llm\": [], \"evidence_summary\": {\"anchor_terms\": [\"Meta\", \"AR眼镜\"], \"support_terms\": [], \"conflict_terms\": [], \"theme_name_hits\": [], \"subject_name_hits\": []}, \"object_hits_text\": [], \"strong_hits_text\": [], \"profile_anchor_hits\": [\"Meta\", \"AR眼镜\"], \"theme_name_hit_score\": 0, \"theme_name_hit_terms\": [], \"theme_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"subject_name_direct_hit\": false}, \"confidence\": 0.6594, \"theme_name\": \"AR眼镜四大品牌\", \"subject_key\": \"9038540\", \"relation_type\": \"related\"}}",
+          "created_at": "2026-05-17 14:38:33.728705+00:00"
+        },
+        {
+          "event_id": 2897,
+          "subject_key": "9022942",
+          "theme_name": "苹果MR",
+          "confidence": "0.6391",
+          "match_reason": "top_candidate_evidence_related",
+          "relation_type": "related",
+          "evidence_json": "{\"related_match\": {\"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"not_hits\": [], \"must_hits\": [], \"anchor_hits\": [\"MR\", \"AR眼镜\"], \"entity_hits\": [], \"object_hits\": [\"MR\"], \"should_hits\": [], \"strong_hits\": [], \"support_hits\": [\"增强现实（AR）\", \"产品代工\", \"整机产品\", \"制造设备\"], \"must_hits_llm\": [], \"negative_hits\": [], \"conflict_score\": 0, \"must_hits_text\": [], \"positive_score\": 58, \"object_hits_llm\": [], \"strong_hits_llm\": [], \"evidence_summary\": {\"anchor_terms\": [\"MR\", \"AR眼镜\"], \"support_terms\": [], \"conflict_terms\": [], \"theme_name_hits\": [\"MR\"], \"subject_name_hits\": []}, \"object_hits_text\": [\"MR\"], \"strong_hits_text\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"theme_name_hit_score\": 50, \"theme_name_hit_terms\": [\"MR\"], \"theme_name_direct_hit\": true, \"subject_name_hit_terms\": [], \"subject_name_direct_hit\": false}, \"confidence\": 0.6391, \"theme_name\": \"苹果MR\", \"subject_key\": \"9022942\", \"relation_type\": \"related\"}}",
+          "created_at": "2026-05-17 14:38:33.735110+00:00"
+        }
+      ],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0015",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0015",
+      "news_raw_id": 3231,
+      "news_event_id": 3369,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0016",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0016",
+      "news_raw_id": 3232,
+      "news_event_id": 2898,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9038540"
+      ],
+      "related_theme_names": [
+        "AR眼镜四大品牌"
+      ],
+      "related_mappings": [
+        {
+          "event_id": 2898,
+          "subject_key": "9038540",
+          "theme_name": "AR眼镜四大品牌",
+          "confidence": "0.6581",
+          "match_reason": "top_candidate_evidence_related",
+          "relation_type": "related",
+          "evidence_json": "{\"related_match\": {\"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"not_hits\": [], \"must_hits\": [], \"anchor_hits\": [\"Meta\", \"AR眼镜\"], \"entity_hits\": [], \"object_hits\": [], \"should_hits\": [], \"strong_hits\": [], \"support_hits\": [\"AR眼镜四大品牌\", \"AR眼镜\", \"Rokid AR眼镜\"], \"must_hits_llm\": [], \"negative_hits\": [], \"conflict_score\": 0, \"must_hits_text\": [], \"positive_score\": 12, \"object_hits_llm\": [], \"strong_hits_llm\": [], \"evidence_summary\": {\"anchor_terms\": [\"Meta\", \"AR眼镜\"], \"support_terms\": [], \"conflict_terms\": [], \"theme_name_hits\": [], \"subject_name_hits\": []}, \"object_hits_text\": [], \"strong_hits_text\": [], \"profile_anchor_hits\": [\"Meta\", \"AR眼镜\"], \"theme_name_hit_score\": 0, \"theme_name_hit_terms\": [], \"theme_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"subject_name_direct_hit\": false}, \"confidence\": 0.6581, \"theme_name\": \"AR眼镜四大品牌\", \"subject_key\": \"9038540\", \"relation_type\": \"related\"}}",
+          "created_at": "2026-05-17 14:38:57.398239+00:00"
+        }
+      ],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0016",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0016",
+      "news_raw_id": 3232,
+      "news_event_id": 3371,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0017",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0017",
+      "news_raw_id": 3233,
+      "news_event_id": 2899,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9038540"
+      ],
+      "related_theme_names": [
+        "AR眼镜四大品牌"
+      ],
+      "related_mappings": [
+        {
+          "event_id": 2899,
+          "subject_key": "9038540",
+          "theme_name": "AR眼镜四大品牌",
+          "confidence": "0.6233",
+          "match_reason": "top_candidate_evidence_related",
+          "relation_type": "related",
+          "evidence_json": "{\"related_match\": {\"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"not_hits\": [], \"must_hits\": [], \"anchor_hits\": [\"AR眼镜\"], \"entity_hits\": [], \"object_hits\": [], \"should_hits\": [], \"strong_hits\": [], \"support_hits\": [\"AR眼镜四大品牌\", \"AR眼镜\", \"Rokid AR眼镜\"], \"must_hits_llm\": [], \"negative_hits\": [], \"conflict_score\": 0, \"must_hits_text\": [], \"positive_score\": 6, \"object_hits_llm\": [], \"strong_hits_llm\": [], \"evidence_summary\": {\"anchor_terms\": [\"AR眼镜\"], \"support_terms\": [], \"conflict_terms\": [], \"theme_name_hits\": [], \"subject_name_hits\": []}, \"object_hits_text\": [], \"strong_hits_text\": [], \"profile_anchor_hits\": [\"AR眼镜\"], \"theme_name_hit_score\": 0, \"theme_name_hit_terms\": [], \"theme_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"subject_name_direct_hit\": false}, \"confidence\": 0.6233, \"theme_name\": \"AR眼镜四大品牌\", \"subject_key\": \"9038540\", \"relation_type\": \"related\"}}",
+          "created_at": "2026-05-17 14:39:25.760667+00:00"
+        }
+      ],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0017",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0017",
+      "news_raw_id": 3233,
+      "news_event_id": 3374,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0018",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0018",
+      "news_raw_id": 3234,
+      "news_event_id": 2900,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9038540"
+      ],
+      "related_theme_names": [
+        "AR眼镜四大品牌"
+      ],
+      "related_mappings": [
+        {
+          "event_id": 2900,
+          "subject_key": "9038540",
+          "theme_name": "AR眼镜四大品牌",
+          "confidence": "0.5911",
+          "match_reason": "top_candidate_evidence_related",
+          "relation_type": "related",
+          "evidence_json": "{\"related_match\": {\"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"not_hits\": [], \"must_hits\": [], \"anchor_hits\": [], \"entity_hits\": [], \"object_hits\": [], \"should_hits\": [], \"strong_hits\": [], \"support_hits\": [\"XREAL品牌\", \"XREAL\", \"XREAL空间屏\"], \"must_hits_llm\": [], \"negative_hits\": [], \"conflict_score\": 0, \"must_hits_text\": [], \"positive_score\": 0, \"object_hits_llm\": [], \"strong_hits_llm\": [], \"evidence_summary\": {\"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": [], \"theme_name_hits\": [], \"subject_name_hits\": []}, \"object_hits_text\": [], \"strong_hits_text\": [], \"profile_anchor_hits\": [], \"theme_name_hit_score\": 0, \"theme_name_hit_terms\": [], \"theme_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"subject_name_direct_hit\": false}, \"confidence\": 0.5911, \"theme_name\": \"AR眼镜四大品牌\", \"subject_key\": \"9038540\", \"relation_type\": \"related\"}}",
+          "created_at": "2026-05-17 14:39:46.678878+00:00"
+        }
+      ],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0018",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0018",
+      "news_raw_id": 3234,
+      "news_event_id": 3372,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0019",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0019",
+      "news_raw_id": 3235,
+      "news_event_id": 2901,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [
+        "9058849",
+        "9038540"
+      ],
+      "related_theme_names": [
+        "高通",
+        "AR眼镜四大品牌"
+      ],
+      "related_mappings": [
+        {
+          "event_id": 2901,
+          "subject_key": "9058849",
+          "theme_name": "高通",
+          "confidence": "0.6038",
+          "match_reason": "top_candidate_evidence_related",
+          "relation_type": "related",
+          "evidence_json": "{\"related_match\": {\"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"not_hits\": [], \"must_hits\": [\"高通\"], \"anchor_hits\": [\"高通\"], \"entity_hits\": [], \"object_hits\": [\"高通\"], \"should_hits\": [], \"strong_hits\": [\"高通\"], \"support_hits\": [], \"must_hits_llm\": [], \"negative_hits\": [], \"conflict_score\": 0, \"must_hits_text\": [\"高通\"], \"positive_score\": 55, \"object_hits_llm\": [], \"strong_hits_llm\": [], \"evidence_summary\": {\"anchor_terms\": [\"高通\"], \"support_terms\": [], \"conflict_terms\": [], \"theme_name_hits\": [\"高通\"], \"subject_name_hits\": [\"高通\"]}, \"object_hits_text\": [\"高通\"], \"strong_hits_text\": [\"高通\"], \"profile_anchor_hits\": [], \"theme_name_hit_score\": 50, \"theme_name_hit_terms\": [\"高通\"], \"theme_name_direct_hit\": true, \"subject_name_hit_terms\": [\"高通\"], \"subject_name_direct_hit\": true}, \"confidence\": 0.6038, \"theme_name\": \"高通\", \"subject_key\": \"9058849\", \"relation_type\": \"related\"}}",
+          "created_at": "2026-05-17 14:40:12.468038+00:00"
+        },
+        {
+          "event_id": 2901,
+          "subject_key": "9038540",
+          "theme_name": "AR眼镜四大品牌",
+          "confidence": "0.5902",
+          "match_reason": "top_candidate_evidence_related",
+          "relation_type": "related",
+          "evidence_json": "{\"related_match\": {\"reason\": \"top_candidate_evidence_related\", \"evidence\": {\"not_hits\": [], \"must_hits\": [], \"anchor_hits\": [], \"entity_hits\": [], \"object_hits\": [], \"should_hits\": [], \"strong_hits\": [], \"support_hits\": [], \"must_hits_llm\": [], \"negative_hits\": [], \"conflict_score\": 0, \"must_hits_text\": [], \"positive_score\": 0, \"object_hits_llm\": [], \"strong_hits_llm\": [], \"evidence_summary\": {\"anchor_terms\": [], \"support_terms\": [], \"conflict_terms\": [], \"theme_name_hits\": [], \"subject_name_hits\": []}, \"object_hits_text\": [], \"strong_hits_text\": [], \"profile_anchor_hits\": [], \"theme_name_hit_score\": 0, \"theme_name_hit_terms\": [], \"theme_name_direct_hit\": false, \"subject_name_hit_terms\": [], \"subject_name_direct_hit\": false}, \"confidence\": 0.5902, \"theme_name\": \"AR眼镜四大品牌\", \"subject_key\": \"9038540\", \"relation_type\": \"related\"}}",
+          "created_at": "2026-05-17 14:40:12.472316+00:00"
+        }
+      ],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0019",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0019",
+      "news_raw_id": 3235,
+      "news_event_id": 3375,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0020",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0020",
+      "news_raw_id": 3236,
+      "news_event_id": 2902,
+      "decision_id": null,
+      "primary_subject_key": "9030409",
+      "primary_theme_name": "AR眼镜",
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    },
+    {
+      "case_id": "pm_case_0020",
+      "external_id": "pm_e2e_phase4_v2_full_20_20260515_002:pm_case_0020",
+      "news_raw_id": 3236,
+      "news_event_id": 3373,
+      "decision_id": null,
+      "primary_subject_key": null,
+      "primary_theme_name": null,
+      "related_subject_keys": [],
+      "related_theme_names": [],
+      "related_mappings": [],
+      "review_status": null,
+      "review_reason": null,
+      "pending_status": null,
+      "dead_letter_status": null
+    }
+  ]
+}

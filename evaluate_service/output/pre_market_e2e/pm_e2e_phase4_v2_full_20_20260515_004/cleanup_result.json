@@ -1,0 +1,16 @@
+{
+  "db_name": "stock_data",
+  "run_id": "pm_e2e_phase4_v2_full_20_20260515_004",
+  "trade_date": "2026-05-15",
+  "dry_run": false,
+  "delete_final_snapshot": true,
+  "clean_trade_date_all_e2e": true,
+  "counts": {
+    "event_subject_map": 110,
+    "event_theme_map": 0,
+    "event_review_queue": 3,
+    "news_event": 60,
+    "news_raw": 20,
+    "pre_market_brief_snapshot": 1
+  }
+}

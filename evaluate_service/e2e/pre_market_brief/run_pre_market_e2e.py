@@ -85,18 +85,26 @@ async def run(args: argparse.Namespace) -> dict[str, Any]:
         write_json(out_dir / "injection_result.json", injection_result)
 
     trace = await _wait_for_trace(args, out_dir, input_path) if args.wait else await _trace_once(args, out_dir, input_path)
+    if args.require_ready and not _trace_ready(args, trace):
+        counts = trace.get("counts", {})
+        raise RuntimeError(
+            "E2E wait 未达到终态门禁，已停止 rebuild: "
+            f"expected={args.limit or 0}, counts={counts}"
+        )
 
     snapshot_payload: dict[str, Any] = {}
     if args.rebuild:
         snapshot_payload = _post_json(
             f"{args.sps_base_url.rstrip('/')}/api/v1/pre_market_brief/rebuild",
             _build_rebuild_payload(args),
+            timeout=args.http_timeout,
         )
         write_json(out_dir / "brief_snapshot.json", snapshot_payload)
 
     sps_payload = _get_json(
         f"{args.sps_base_url.rstrip('/')}/api/v1/pre_market_brief",
         {"trade_date": args.trade_date},
+        timeout=args.http_timeout,
     )
     write_json(out_dir / "sps_payload.json", sps_payload)
     if not args.rebuild:
@@ -305,34 +313,47 @@ async def _trace_once(args: argparse.Namespace, out_dir: Path, input_path: Path)
 
 async def _wait_for_trace(args: argparse.Namespace, out_dir: Path, input_path: Path) -> dict[str, Any]:
     deadline = time.monotonic() + args.wait_timeout
-    expected = args.limit or 0
     last_trace: dict[str, Any] = {}
     while time.monotonic() < deadline:
         last_trace = await _trace_once(args, out_dir, input_path)
-        counts = last_trace.get("counts", {})
-        news_events = int(counts.get("news_event_count") or 0)
-        mapped_events = int(counts.get("mapped_event_count") or 0)
-        mapped = int(counts.get("event_subject_map_count") or counts.get("event_theme_map_count") or 0)
-        reviewed = int(counts.get("review_queue_count") or 0)
-        expected_ready = max(1, int(expected * 0.95))
-        if expected and news_events >= expected_ready and (mapped_events + reviewed) >= expected_ready and (mapped + reviewed) > 0:
+        if _trace_ready(args, last_trace):
             return last_trace
         await asyncio.sleep(args.wait_interval)
     return last_trace
 
 
-def _post_json(url: str, payload: dict[str, Any]) -> dict[str, Any]:
+def _trace_ready(args: argparse.Namespace, trace: dict[str, Any]) -> bool:
+    expected = args.limit or 0
+    if not expected:
+        return True
+    counts = trace.get("counts", {})
+    news_events = int(counts.get("news_event_count") or 0)
+    mapped_events = int(counts.get("mapped_event_count") or 0)
+    mapped = int(counts.get("event_subject_map_count") or counts.get("event_theme_map_count") or 0)
+    reviewed = int(counts.get("review_queue_count") or 0)
+    pending = int(counts.get("pending_count") or 0)
+    terminal_events = mapped_events + reviewed + pending
+    terminal_rows = mapped + reviewed + pending
+    expected_ready = max(1, int(expected * 0.95))
+    return news_events >= expected_ready and terminal_events >= expected_ready and terminal_rows > 0
+
+
+def _post_json(url: str, payload: dict[str, Any], *, timeout: int = 30) -> dict[str, Any]:
     data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
     req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"}, method="POST")
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return json.loads(resp.read().decode("utf-8"))
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            return json.loads(resp.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        body = exc.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"POST {url} failed: {exc.code} {body}") from exc
 
 
-def _get_json(url: str, params: dict[str, Any]) -> dict[str, Any]:
+def _get_json(url: str, params: dict[str, Any], *, timeout: int = 30) -> dict[str, Any]:
     query = urllib.parse.urlencode({key: value for key, value in params.items() if value is not None})
     full_url = f"{url}?{query}" if query else url
     try:
-        with urllib.request.urlopen(full_url, timeout=30) as resp:
+        with urllib.request.urlopen(full_url, timeout=timeout) as resp:
             return json.loads(resp.read().decode("utf-8"))
     except urllib.error.HTTPError as exc:
         body = exc.read().decode("utf-8", errors="replace")
@@ -372,6 +393,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--wait", action="store_true")
     parser.add_argument("--wait-timeout", type=int, default=180)
     parser.add_argument("--wait-interval", type=int, default=5)
+    parser.add_argument("--http-timeout", type=int, default=180)
+    parser.add_argument(
+        "--require-ready",
+        action="store_true",
+        help="配合 --wait 使用：未达到当前 run 的终态门禁时停止 rebuild/evaluate。",
+    )
     parser.add_argument("--redis-scan-limit", type=int, default=1000)
     parser.add_argument("--rebuild", action="store_true")
     parser.add_argument("--force-rebuild", action="store_true")

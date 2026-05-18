@@ -24,6 +24,8 @@ async def _ensure_group_at_tail(client, stream: str, group: str) -> None:
         if "BUSYGROUP" not in str(exc):
             raise
         logging.info("Consumer group already exists: %s/%s", stream, group)
+        await client.xgroup_setid(stream, group, "$")
+        logging.info("Moved consumer group to tail: %s/%s", stream, group)
 
 
 def _redis_host_port(redis_url: str) -> tuple[str, int]:
@@ -49,7 +51,8 @@ async def run_services(args: argparse.Namespace) -> None:
 
     theme_group = args.theme_consumer_group or f"theme_processors_e2e_{args.run_id}"
     await _ensure_group_at_tail(redis_client, args.structured_stream, theme_group)
-    await _ensure_group_at_tail(redis_client, args.decision_stream, args.decision_consumer_group)
+    decision_group = args.decision_consumer_group or f"decision_executors_e2e_{args.run_id}"
+    await _ensure_group_at_tail(redis_client, args.decision_stream, decision_group)
 
     gateway = await get_gateway(enable_retry=True)
     processor = ThemeProcessor(
@@ -64,6 +67,8 @@ async def run_services(args: argparse.Namespace) -> None:
             "stream_decision": args.decision_stream,
             "stream_pending": args.pending_stream,
             "stream_dead_letter": args.dead_letter_stream,
+            "run_id_filter": args.run_id,
+            "require_news_id": True,
         },
     )
     await processor.initialize()
@@ -74,7 +79,7 @@ async def run_services(args: argparse.Namespace) -> None:
         consumer_name=f"decision_executor_e2e_{args.run_id}",
     )
     executor.decision_stream = args.decision_stream
-    executor.consumer_group = args.decision_consumer_group
+    executor.consumer_group = decision_group
     executor.dead_letter_stream = args.dead_letter_stream
 
     stop_event = asyncio.Event()
@@ -93,7 +98,7 @@ async def run_services(args: argparse.Namespace) -> None:
         args.structured_stream,
         args.decision_stream,
         theme_group,
-        args.decision_consumer_group,
+        decision_group,
     )
 
     try:
@@ -117,7 +122,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--pending-stream", default="stream:events:pending")
     parser.add_argument("--dead-letter-stream", default="stream:dead:letter")
     parser.add_argument("--theme-consumer-group")
-    parser.add_argument("--decision-consumer-group", default="decision_executors")
+    parser.add_argument("--decision-consumer-group")
     parser.add_argument("--allow-production", action="store_true")
     return parser
 

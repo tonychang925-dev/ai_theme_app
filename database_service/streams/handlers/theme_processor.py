@@ -92,6 +92,8 @@ class ThemeProcessor:
             "consumer_name", 
             f"processor_{os.getpid()}_{int(time.time())}"
         )
+        self.run_id_filter = self.config.get("run_id_filter")
+        self.require_news_id = bool(self.config.get("require_news_id", False))
         
         # 处理配置（保持不变）
         self.processing_config = {
@@ -520,6 +522,15 @@ class ThemeProcessor:
         """Phase0 主路径：消费 structured 事件并生成统一 decision envelope"""
         try:
             payload = self._extract_structured_payload(message_data)
+            if self.run_id_filter and not self._structured_payload_matches_run_id(payload, self.run_id_filter):
+                logger.debug(
+                    "跳过非本轮 E2E structured 事件: message_id=%s expected_run_id=%s event_id=%s",
+                    message_id,
+                    self.run_id_filter,
+                    payload.get("event_id"),
+                )
+                await self._ack_message(stream_name, message_id)
+                return
             event_id = payload.get("event_id")
             if not event_id:
                 raise ValueError("structured payload 缺少 event_id")
@@ -527,6 +538,10 @@ class ThemeProcessor:
             event_row = await self.gateway.get_news_event_for_match(int(event_id))
             if not event_row:
                 raise ValueError(f"news_event 不存在: {event_id}")
+            if self.require_news_id and event_row.get("news_id") is None:
+                logger.warning("跳过缺少 news_id 的 structured 事件: event_id=%s message_id=%s", event_id, message_id)
+                await self._ack_message(stream_name, message_id)
+                return
             event_row.setdefault("run_id", payload.get("run_id"))
             event_row.setdefault("case_id", payload.get("case_id"))
 
@@ -574,6 +589,29 @@ class ThemeProcessor:
             except Exception:
                 return {}
         return {}
+
+    @staticmethod
+    def _structured_payload_matches_run_id(payload: Dict[str, Any], run_id: str) -> bool:
+        if not run_id:
+            return True
+        candidates = [
+            payload.get("run_id"),
+            payload.get("case_run_id"),
+            payload.get("case_id"),
+            payload.get("source_trace_id"),
+            payload.get("trace_id"),
+        ]
+        raw_event_json = payload.get("raw_event_json")
+        if isinstance(raw_event_json, dict):
+            candidates.extend(
+                [
+                    raw_event_json.get("run_id"),
+                    raw_event_json.get("external_id"),
+                    raw_event_json.get("news_id"),
+                    raw_event_json.get("url"),
+                ]
+            )
+        return any(run_id in str(value) for value in candidates if value is not None)
 
     def _build_structured_decision(self, event_row: Dict[str, Any], match_result: Dict[str, Any], message_id: str) -> Dict[str, Any]:
         decision = match_result.get("decision", "UNKNOWN")

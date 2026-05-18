@@ -1,0 +1,30 @@
+{
+  "count": 5,
+  "packets": [
+    {
+      "subject_key": "9022064",
+      "subject_name": "碳化硅",
+      "packet": "/Users/admin/Desktop/ai_theme_app/theme_service/output/profile_quality/phase4_rebuild_packets/theme_profile_manual_review/input_packets/9022064_碳化硅.md"
+    },
+    {
+      "subject_key": "9036559",
+      "subject_name": "ASIC芯片",
+      "packet": "/Users/admin/Desktop/ai_theme_app/theme_service/output/profile_quality/phase4_rebuild_packets/theme_profile_manual_review/input_packets/9036559_ASIC芯片.md"
+    },
+    {
+      "subject_key": "9016841",
+      "subject_name": "证券",
+      "packet": "/Users/admin/Desktop/ai_theme_app/theme_service/output/profile_quality/phase4_rebuild_packets/theme_profile_manual_review/input_packets/9016841_证券.md"
+    },
+    {
+      "subject_key": "9030409",
+      "subject_name": "AR眼镜",
+      "packet": "/Users/admin/Desktop/ai_theme_app/theme_service/output/profile_quality/phase4_rebuild_packets/theme_profile_manual_review/input_packets/9030409_AR眼镜.md"
+    },
+    {
+      "subject_key": "9064241",
+      "subject_name": "金刚石散热",
+      "packet": "/Users/admin/Desktop/ai_theme_app/theme_service/output/profile_quality/phase4_rebuild_packets/theme_profile_manual_review/input_packets/9064241_金刚石散热.md"
+    }
+  ]
+}

@@ -1,10 +1,13 @@
 from __future__ import annotations
 
+import logging
 import os
 from typing import Any
 
 from stock_processing_service.publishers.notion_block_builder import NotionBlockBuilder
 from stock_processing_service.publishers.notion_publish_models import NotionPublishResult
+
+logger = logging.getLogger(__name__)
 
 
 class NotionPostMarketRecapPublisher:
@@ -37,7 +40,7 @@ class NotionPostMarketRecapPublisher:
         if client is None:
             from notion_client import Client
 
-            client = Client(auth=token)
+            client = Client(auth=token, notion_version="2022-06-28")
 
         self._client = client
         self._database_id = database_id
@@ -82,7 +85,7 @@ class NotionPostMarketRecapPublisher:
             "page_size": 5,
         }
         resp = self._client.request(
-            f"/v1/databases/{self._database_id}/query",
+            f"/databases/{self._database_id}/query",
             "POST",
             body=body,
         )
@@ -150,6 +153,60 @@ class NotionPostMarketRecapPublisher:
         return []
 
     @classmethod
+    def _build_theme_name_map(cls, old_report: dict[str, Any] | None, recap_doc: dict[str, Any]) -> dict[str, str]:
+        """构建 subject_key → theme_name 映射。
+        来源1：旧链 report 文本（格式「题材名：subject_key 123；...」）
+        来源2：recap_doc 中带 subject_name 的条目（top_candidates, observe_candidates）
+        """
+        name_map: dict[str, str] = {}
+
+        # 来源1：旧链 report 文本
+        if old_report:
+            sections = old_report.get("sections") or []
+            if isinstance(sections, list):
+                for sec in sections:
+                    items = sec.get("items", []) if isinstance(sec, dict) else []
+                    for item in items:
+                        text = str(item)
+                        if "：" not in text:
+                            continue
+                        theme_name, _, body = text.partition("：")
+                        theme_name = theme_name.strip()
+                        if not theme_name or theme_name.isdigit():
+                            continue
+                        for part in body.split("；"):
+                            part = part.strip()
+                            if part.startswith("subject_key "):
+                                sk = part.replace("subject_key ", "").strip()
+                                if sk and sk not in name_map:
+                                    name_map[sk] = theme_name
+                                break
+
+        # 来源2：recap_doc 自身数据（top_candidates, observe_candidates）
+        for source_key in ("top_candidates", "observe_candidates", "candidate_diagnostics"):
+            entries = recap_doc.get(source_key) or []
+            if not isinstance(entries, list):
+                continue
+            for entry in entries:
+                sk = str(entry.get("subject_key") or "").strip()
+                sn = str(entry.get("subject_name") or "").strip()
+                if sk and sn and not sn.isdigit() and sn != sk:
+                    if sk not in name_map:
+                        name_map[sk] = sn
+
+        return name_map
+
+    @classmethod
+    def _resolve_theme_name(cls, subject_key: str, subject_name: str | None, name_map: dict[str, str]) -> str:
+        """解析题材显示名：优先 subject_name（非数字），其次 name_map，最后兜底。"""
+        resolved = (subject_name or "").strip()
+        if resolved and not resolved.isdigit():
+            return resolved
+        if subject_key in name_map:
+            return name_map[subject_key]
+        return f"{subject_key}"
+
+    @classmethod
     def build_blocks(cls, payload: dict[str, Any], trade_date: str) -> list[dict[str, Any]]:
         """从 normalized payload 构造 Notion blocks。"""
         B = NotionBlockBuilder
@@ -157,6 +214,7 @@ class NotionPostMarketRecapPublisher:
 
         recap_doc = cls._extract_recap_doc(payload)
         old_report = cls._extract_old_report(payload)
+        name_map = cls._build_theme_name_map(old_report, recap_doc)
 
         # ── 标题 ──────────────────────────────────────────────
         blocks.append(B.heading_1(f"{trade_date} 盘后复盘"))
@@ -199,7 +257,7 @@ class NotionPostMarketRecapPublisher:
                 evidence_str = " / ".join(str(e) for e in evidence[:3]) if evidence else "--"
                 rows.append([
                     cls._safe_str(c.get("stock_name", c.get("stock_id", ""))),
-                    cls._safe_str(c.get("subject_name", c.get("subject_key", ""))),
+                    cls._resolve_theme_name(cls._safe_str(c.get("subject_key", "")), c.get("subject_name"), name_map),
                     cls._safe_str(c.get("candidate_score", c.get("score", ""))),
                     cls._safe_str(c.get("candidate_level", "")),
                     cls._safe_str(c.get("transition_type", "")),
@@ -218,7 +276,7 @@ class NotionPostMarketRecapPublisher:
             rows: list[list[str]] = [
                 [
                     cls._safe_str(c.get("stock_name", c.get("stock_id", ""))),
-                    cls._safe_str(c.get("subject_key", "")),
+                    cls._resolve_theme_name(cls._safe_str(c.get("subject_key", "")), c.get("subject_name"), name_map),
                     cls._safe_str(c.get("candidate_score", "")),
                     cls._safe_str(c.get("support_type", "")),
                 ]
@@ -240,7 +298,7 @@ class NotionPostMarketRecapPublisher:
                 evidence_str = " / ".join(str(e) for e in evidence[:3]) if evidence else "--"
                 rows.append([
                     cls._safe_str(c.get("stock_name", c.get("stock_id", ""))),
-                    cls._safe_str(c.get("subject_name", c.get("subject_key", ""))),
+                    cls._resolve_theme_name(cls._safe_str(c.get("subject_key", "")), c.get("subject_name"), name_map),
                     cls._safe_str(c.get("candidate_score", "")),
                     cls._safe_str(c.get("support_type", "")),
                     cls._safe_str(c.get("support_score", "")),
@@ -259,7 +317,7 @@ class NotionPostMarketRecapPublisher:
             rows: list[list[str]] = [
                 [
                     cls._safe_str(h.get("stock_id", "")),
-                    cls._safe_str(h.get("subject_key", "")),
+                    cls._resolve_theme_name(cls._safe_str(h.get("subject_key", "")), h.get("subject_name"), name_map),
                     cls._safe_str(h.get("watch_status", "")),
                     cls._safe_str(h.get("strong_grade", "")),
                     cls._safe_str(h.get("watch_score", "")),
@@ -281,7 +339,7 @@ class NotionPostMarketRecapPublisher:
             rows: list[list[str]] = [
                 [
                     cls._safe_str(d.get("stock_id", "")),
-                    cls._safe_str(d.get("subject_key", "")),
+                    cls._resolve_theme_name(cls._safe_str(d.get("subject_key", "")), d.get("subject_name"), name_map),
                     cls._safe_str(d.get("candidate_score", "")),
                     cls._safe_str(d.get("support_type", "")),
                     cls._safe_str(d.get("support_score", "")),
@@ -298,22 +356,22 @@ class NotionPostMarketRecapPublisher:
         # ── 七、旧链文本报告（兼容折叠区）─────────────────────
         if old_report:
             blocks.append(B.heading_2("七、旧链文本报告（兼容）"))
-            old_blocks: list[dict[str, Any]] = []
             old_summary = old_report.get("summary") or ""
             if old_summary:
-                old_blocks.append(B.paragraph(old_summary))
+                blocks.append(B.paragraph(old_summary))
             old_sections = old_report.get("sections") or []
             if isinstance(old_sections, list):
-                for sec in old_sections[:30]:
+                for sec in old_sections[:8]:
                     heading = sec.get("heading", "") if isinstance(sec, dict) else str(sec)
                     items = sec.get("items", []) if isinstance(sec, dict) else []
-                    if heading:
-                        old_blocks.append(B.heading_3(str(heading)[:120]))
-                    for item in items[:20]:
-                        old_blocks.append(B.bullet(str(item)))
-            if old_blocks:
-                blocks.append(B.toggle("旧链文本报告（展开查看）", old_blocks))
-            else:
+                    sec_blocks: list[dict[str, Any]] = [
+                        B.paragraph(str(item)) for item in items[:5]
+                    ]
+                    if sec_blocks:
+                        blocks.append(B.toggle(str(heading)[:120], sec_blocks))
+                    elif heading:
+                        blocks.append(B.bullet(str(heading)[:120]))
+            if not old_summary and not old_sections:
                 blocks.append(B.empty_paragraph("旧链报告无内容"))
         else:
             blocks.append(B.heading_2("七、旧链文本报告（兼容）"))
@@ -350,7 +408,7 @@ class NotionPostMarketRecapPublisher:
 
         action = "created"
         if existing:
-            if self._overwrite_mode == "archive_and_recreate":
+            if force:
                 self._archive_page(existing["id"])
                 action = "recreated"
             else:
