@@ -473,6 +473,16 @@ def _first_matching_field(fields: dict[str, Any], *names: str) -> str | None:
 
 
 def _extract_decision_payload_trace(fields: dict[str, Any]) -> dict[str, Any]:
+    field_event_data: dict[str, Any] = {}
+    raw_event_data = fields.get("event_data")
+    if raw_event_data:
+        try:
+            parsed_event_data = json.loads(raw_event_data) if isinstance(raw_event_data, str) else raw_event_data
+            if isinstance(parsed_event_data, dict):
+                field_event_data = parsed_event_data
+        except Exception:
+            field_event_data = {}
+
     raw = (
         fields.get("decision")
         or fields.get("payload")
@@ -481,6 +491,13 @@ def _extract_decision_payload_trace(fields: dict[str, Any]) -> dict[str, Any]:
         or fields.get("message")
     )
     if not raw:
+        if field_event_data:
+            return {
+                "event_id": field_event_data.get("event_id"),
+                "action": fields.get("action"),
+                "reason_code": fields.get("reason") or fields.get("reason_code"),
+                "match_performance": {},
+            }
         return {}
     try:
         payload = json.loads(raw) if isinstance(raw, str) else raw
@@ -490,7 +507,8 @@ def _extract_decision_payload_trace(fields: dict[str, Any]) -> dict[str, Any]:
         return {}
     match_result = payload.get("match_result") if isinstance(payload.get("match_result"), dict) else {}
     audit = match_result.get("audit") if isinstance(match_result.get("audit"), dict) else {}
-    event_data = payload.get("event_data") if isinstance(payload.get("event_data"), dict) else {}
+    payload_event_data = payload.get("event_data") if isinstance(payload.get("event_data"), dict) else {}
+    event_data = {**field_event_data, **payload_event_data}
     return {
         "event_id": payload.get("event_id") or event_data.get("event_id"),
         "action": payload.get("action"),

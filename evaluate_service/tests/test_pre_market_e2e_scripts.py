@@ -102,6 +102,24 @@ def test_trace_extracts_event_id_from_nested_payload():
     assert _extract_decision_payload_trace(payload)["event_id"] == 12345
 
 
+def test_trace_extracts_event_id_from_top_level_event_data_field():
+    fields = {
+        "payload": '{"action": "publish_clustering"}',
+        "event_data": '{"event_id": 7934, "case_id": "pm_case_0030"}',
+    }
+
+    assert _extract_decision_payload_trace(fields)["event_id"] == 7934
+
+
+def test_trace_extracts_event_id_from_event_data_without_payload_field():
+    fields = {
+        "event_data": '{"event_id": 7962, "case_id": "pm_case_0055"}',
+        "reason_code": "pending_unknown",
+    }
+
+    assert _extract_decision_payload_trace(fields)["event_id"] == 7962
+
+
 def test_generic_only_related_metric_detects_support_only_evidence():
     assert _is_generic_only_related(
         {

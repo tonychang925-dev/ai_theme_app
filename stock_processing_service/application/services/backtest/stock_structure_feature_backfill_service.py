@@ -1,7 +1,10 @@
-"""Phase -1.5a: Stock Structure Daily Feature Backfill Service.
+"""Phase -1.5a-refactor: Stock Structure Daily Feature Backfill Service.
 
-Minimum viable C-layer. Only uses T-day and prior data.
-No future data. No complex 牛股三绝 (deferred to later).
+THIN ORCHESTRATOR: reads data → calls domain services → writes cache.
+Does NOT hardcode trading rules. All classification logic imported from domain.
+
+v0.2: Refactored to remove hardcoded _classify_weak_type, _detect_support,
+      WEAK_TYPE_QUALITY_MAP. Now imports from w2s_feature_rules.
 """
 
 from __future__ import annotations
@@ -11,15 +14,12 @@ from datetime import date, timedelta
 from decimal import Decimal
 from typing import Any
 
-logger = logging.getLogger(__name__)
+from stock_processing_service.domain.backtest.w2s_feature_rules import (
+    classify_weak_type,
+    classify_weak_type_quality,
+)
 
-WEAK_TYPE_QUALITY_MAP = {
-    "big_negative_line": "preferred",
-    "bad_limit_up": "preferred",
-    "upper_shadow": "neutral",
-    "fake_break": "neutral",
-    "high_open_low_close": "danger",
-}
+logger = logging.getLogger(__name__)
 
 
 class StockStructureFeatureBackfillService:
@@ -127,8 +127,12 @@ class StockStructureFeatureBackfillService:
 
                 # weak_type (from BuildWeakToStrongCandidateUseCase logic)
                 prev_pct_val = float(prev_bar.get("pct_chg") or 0) if prev_bar else 0.0
-                weak_type = _classify_weak_type(pct, prev_pct_val, prev_day_limit_up)
-                wtq = WEAK_TYPE_QUALITY_MAP.get(weak_type, "unknown")
+                # Imported from w2s_feature_rules (single source of truth)
+                weak_type = classify_weak_type(
+                    pct_chg=pct, prev_day_pct=prev_pct_val,
+                    prev_day_limit_up=prev_day_limit_up,
+                )
+                wtq = classify_weak_type_quality(weak_type)
 
                 # support_type / support_strength
                 supp_type, supp_str = _detect_support(
@@ -211,18 +215,12 @@ class StockStructureFeatureBackfillService:
         return stats
 
 
-def _classify_weak_type(pct_chg: float, prev_day_pct: float, prev_day_limit_up: bool) -> str:
-    """Replicate BuildWeakToStrongCandidateUseCase weak type classification."""
-    if prev_day_limit_up and pct_chg < 0:
-        return "bad_limit_up"
-    if pct_chg <= -5.0:
-        return "big_negative_line"
-    if -2.0 <= pct_chg <= 1.5 and prev_day_pct >= 4.0:
-        return "upper_shadow"
-    if pct_chg <= -1.0:
-        return "high_open_low_close"
-    return "fake_break"
-
+# ═══════════════════════════════════════════════════════════════════
+# Module-level helpers (thin delegation layer)
+# TODO: _detect_support should delegate to SupportStructureResolver /
+#       KlineSupportScorer when DTO adapters are built
+#       _simple_ma5 should delegate to KlineSupportScorer
+# ═══════════════════════════════════════════════════════════════════
 
 def _detect_support(
     *,

@@ -53,6 +53,31 @@ def classify_leader_role_proxy(row: dict[str, Any]) -> str:
     return "unknown"
 
 
+# ── Weak type classification (single source of truth, from BuildWeakToStrongCandidateUseCase) ──
+
+def classify_weak_type(
+    *,
+    pct_chg: float,
+    prev_day_pct: float = 0.0,
+    prev_day_limit_up: bool = False,
+) -> str:
+    """Classify weak type from daily bar data.
+
+    Replicates BuildWeakToStrongCandidateUseCase.build_candidates() logic.
+    This is the SINGLE SOURCE OF TRUTH — backfill services must import this,
+    not re-implement.
+    """
+    if prev_day_limit_up and pct_chg < 0:
+        return "bad_limit_up"
+    if pct_chg <= -5.0:
+        return "big_negative_line"
+    if -2.0 <= pct_chg <= 1.5 and prev_day_pct >= 4.0:
+        return "upper_shadow"
+    if pct_chg <= -1.0:
+        return "high_open_low_close"
+    return "fake_break"
+
+
 # ── Weak type quality scoring (v0.3) ──
 
 WEAK_TYPE_QUALITY: dict[str, dict[str, Any]] = {
