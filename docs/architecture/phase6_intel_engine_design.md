@@ -1291,12 +1291,12 @@ Phase 6 的核心策略是：
 
 | # | 检查项 | 状态 | 完成日期 | 备注 |
 |---|--------|------|----------|------|
-| 3.1 | `collect(days_back)` 实现 | 🔲 | | 支持增量抓取 |
-| 3.2 | AKShare `stock_info_disclosure()` 接入 | 🔲 | | 巨潮资讯 |
-| 3.3 | AKShare `stock_info_a_code_name()` 接入 | 🔲 | | 沪深京A股公告 |
-| 3.4 | `_standardize()` 列名自动适配 | 🔲 | | 复用 _find_column 模式 |
-| 3.5 | `build_dedupe_key()` / `compute_checksum()` 实现 | 🔲 | | 静态方法 |
-| 3.6 | 不依赖 DatabaseGateway | 🔲 | | 只输出 dict list，不写 DB |
+| 3.1 | `collect(days_back)` 实现 | ✅ | 2026-05-19 | 直接调 cninfo HTTP API，绕过 AKShare bug |
+| 3.2 | cninfo `hisAnnouncement/query` 接入 | ✅ | 2026-05-19 | 巨潮资讯，覆盖沪深京全部A股公告 |
+| 3.3 | 分页抓取 + 容错 | ✅ | 2026-05-19 | max_pages=30，单页504超时自动跳过继续 |
+| 3.4 | `_standardize()` 字段映射 | ✅ | 2026-05-19 | secCode→stock_code, Unix ms→datetime, adjunctUrl→pdf_url |
+| 3.5 | `build_dedupe_key()` / `compute_checksum()` 实现 | ✅ | 2026-05-19 | 静态方法，md5(title+code+time) |
+| 3.6 | 不依赖 DatabaseGateway | ✅ | 2026-05-19 | 只输出 dict list，async + run_in_executor |
 
 ### 6A-4：RawIntelIngestionService
 
