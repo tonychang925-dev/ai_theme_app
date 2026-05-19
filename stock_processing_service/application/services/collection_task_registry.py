@@ -102,6 +102,7 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
         JyhfImportHistoryRunner,
         JyhfImportStockDailyRunner,
         JyhfLoadSubjectNodeStagingRunner,
+        PostMarketReportContextRunner,
         JyhfSyncDetailsRunner,
         JyhfSyncHistoryRunner,
         JyhfSyncListsRunner,
@@ -123,6 +124,14 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
     registry.register("jyhf_history.sync", JyhfSyncHistoryRunner())
     registry.register("jyhf_history.import", JyhfImportHistoryRunner())
     registry.register("recap.snapshot", PostMarketRecapRunner())
+    registry.register(
+        "recap.market_environment_daily",
+        PostMarketReportContextRunner("market", "新链市场环境"),
+    )
+    registry.register(
+        "recap.theme_capital_flow_daily",
+        PostMarketReportContextRunner("theme_capital_flow", "新链题材资金流"),
+    )
     registry.register("abnormal.signal", BuildStockAbnormalSignalRunner())
     registry.register("dragon_tiger.object", BuildDragonTigerObjectRunner())
     registry.register("tushare.daily_bar", TushareKlineRunner())

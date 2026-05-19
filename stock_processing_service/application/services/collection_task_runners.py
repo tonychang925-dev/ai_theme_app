@@ -104,6 +104,65 @@ class BuildStockAbnormalSignalRunner:
             return CollectionTaskResult(status="failed", current_label="异动信号检测异常", error_message=str(e))
 
 
+class PostMarketReportContextRunner:
+    """新链盘后报告上下文 Runner。
+
+    该 Runner 不写旧表；它只触发 stock_processing_service 新链上下文查询，
+    用于在 recap.snapshot 前暴露市场环境/题材资金流的采集状态。
+    最终 report 仍由 BuildPostMarketRecapJob 写入 post_market_recap_snapshot。
+    """
+
+    def __init__(self, context_key: str, label: str) -> None:
+        self._context_key = context_key
+        self._label = label
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        if context.container is None:
+            return CollectionTaskResult(
+                status="failed",
+                current_label="容器未注入",
+                error_message="container is None: api_app 需要注入 container 到 CollectionJobManager",
+            )
+
+        try:
+            trade_date_val = date.fromisoformat(context.trade_date)
+            gateway = getattr(context.container, "report_context_gateway", None)
+            if gateway is None:
+                return CollectionTaskResult(
+                    status="failed",
+                    current_label=f"{self._label}异常",
+                    error_message="container missing report_context_gateway",
+                )
+
+            context_doc = await gateway.get_post_market_report_context(
+                trade_date=trade_date_val,
+                subject_keys=[],
+                stock_ids=[],
+            )
+            data = context_doc.get(self._context_key)
+            if isinstance(data, list):
+                count = len(data)
+                ok = count > 0
+                summary = f"{self._context_key} rows={count}"
+            else:
+                ok = bool(data)
+                source = (data or {}).get("source_type") if isinstance(data, dict) else ""
+                summary = f"{self._context_key} source={source or '--'}"
+
+            return CollectionTaskResult(
+                status="success" if ok else "failed",
+                current_label=f"{self._label}完成" if ok else f"{self._label}缺失",
+                logs=[summary],
+                error_message="" if ok else f"{self._context_key} missing for trade_date={context.trade_date}",
+            )
+        except Exception as e:
+            return CollectionTaskResult(
+                status="failed",
+                current_label=f"{self._label}异常",
+                error_message=str(e),
+            )
+
+
 class BuildDragonTigerObjectRunner:
     """龙虎榜对象构建 Runner — 新链 Job 架构。"""
 

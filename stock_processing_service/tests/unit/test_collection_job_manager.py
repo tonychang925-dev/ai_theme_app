@@ -103,15 +103,18 @@ def test_collection_planner_recap_command_preserves_skip_flags():
     assert plan.runner_key == ""
     assert [step.key for step in plan.steps] == [
         "stock_kline_judgements",
-        "market_environment_metrics",
-        "market_environment_judgement",
-        "theme_leader_candidate",
+        "market_environment_daily",
+        "theme_capital_flow_daily",
         "money_flow_enhanced",
-        "theme_environment_judgement",
         "abnormal_signal",
         "recap_data",
     ]
+    assert "market_environment_judgement" not in [step.key for step in plan.steps]
+    assert "theme_environment_judgement" not in [step.key for step in plan.steps]
+    assert "theme_leader_candidate" not in [step.key for step in plan.steps]
     assert "recap.report" not in [step.runner_key for step in plan.steps]
+    assert "recap.market_environment_daily" in [step.runner_key for step in plan.steps]
+    assert "recap.theme_capital_flow_daily" in [step.runner_key for step in plan.steps]
     assert plan.steps[-1].runner_key == "recap.snapshot"
 
 
@@ -121,6 +124,8 @@ def test_collection_registry_does_not_register_recap_report_overlay_runner():
     _register_default_runners(registry)
 
     assert registry.get("recap.snapshot") is not None
+    assert registry.get("recap.market_environment_daily") is not None
+    assert registry.get("recap.theme_capital_flow_daily") is not None
     assert registry.get("recap.report") is None
 
 

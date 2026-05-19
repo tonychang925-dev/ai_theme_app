@@ -478,6 +478,33 @@ class BuildPostMarketRecapJob:
             ],
         }
 
+        report_context_fn = getattr(self._read_port, "get_post_market_report_context", None)
+        if callable(report_context_fn):
+            report_subject_keys = sorted(
+                {
+                    str(item.get("subject_key") or "")
+                    for rows in (candidates, promoted_pool_rows, strong_watch_history)
+                    for item in rows
+                    if isinstance(item, dict) and str(item.get("subject_key") or "")
+                }
+            )
+            report_stock_ids = sorted(
+                {
+                    str(item.get("stock_id") or "")
+                    for rows in (candidates, promoted_pool_rows, strong_watch_history)
+                    for item in rows
+                    if isinstance(item, dict) and str(item.get("stock_id") or "")
+                }
+            )
+            try:
+                recap_doc["report_context"] = await report_context_fn(
+                    trade_date=trade_date,
+                    subject_keys=report_subject_keys,
+                    stock_ids=report_stock_ids,
+                )
+            except TypeError:
+                recap_doc["report_context"] = await report_context_fn(trade_date, report_subject_keys, report_stock_ids)
+
         # Convert Decimal values to float for JSON serialization
         def _serialize(obj):
             if isinstance(obj, dict): return {k: _serialize(v) for k, v in obj.items()}

@@ -89,6 +89,13 @@ class DatabaseGatewayStockFacade(Protocol):
         self, trade_date: date, subject_keys: list[str] | None = None
     ) -> list[dict[str, Any]]: ...
 
+    async def get_post_market_report_context(
+        self,
+        trade_date: date,
+        subject_keys: list[str] | None = None,
+        stock_ids: list[str] | None = None,
+    ) -> dict[str, Any]: ...
+
     async def get_mainline_state_daily(
         self, trade_date: date, subject_keys: list[str]
     ) -> list[dict[str, Any]]: ...
