@@ -25,6 +25,8 @@ class CollectorStatus(BaseModel):
     pushed_to_db_count_total: int = 0
     pushed_to_intel_count_total: int = 0
     review_queue_count_total: int = 0
+    token_extracted: bool = False
+    token_last_at: str | None = None
     last_error: str | None = None
 
 
