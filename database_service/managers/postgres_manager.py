@@ -6560,34 +6560,73 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         limit: int = 500,
     ) -> List[Dict[str, Any]]:
         """读取指定交易日的事件-subject_key 映射，不依赖 theme_master。"""
-        sql = """
+        async with self.pool.acquire() as conn:
+            exists = await conn.fetchval("SELECT to_regclass('public.event_subject_map')::text")
+            if not exists:
+                return []
+            has_theme_profile_v2 = bool(await conn.fetchval("SELECT to_regclass('public.theme_profile_v2')::text"))
+            has_theme_gate_profile = bool(await conn.fetchval("SELECT to_regclass('public.theme_gate_profile')::text"))
+            has_theme_profile_ext = bool(await conn.fetchval("SELECT to_regclass('public.theme_profile_ext')::text"))
+
+            profile_name_selects: List[str] = []
+            if has_theme_profile_v2:
+                profile_name_selects.append(
+                    """
+                    SELECT
+                        subject_key,
+                        subject_name AS resolved_subject_name
+                    FROM theme_profile_v2
+                    WHERE COALESCE(status, '') IN ('draft', 'accepted')
+                      AND subject_name IS NOT NULL
+                      AND btrim(subject_name) <> ''
+                      AND subject_name <> subject_key
+                      AND subject_name !~ '^[0-9]+$'
+                    """
+                )
+            if has_theme_gate_profile:
+                if has_theme_profile_ext:
+                    profile_name_selects.append(
+                        """
+                        SELECT
+                            t.subject_key,
+                            COALESCE(
+                                CASE
+                                    WHEN NULLIF(t.concept, '') IS NOT NULL AND t.concept !~ '^[0-9]+$'
+                                    THEN t.concept
+                                END,
+                                NULLIF(substring(COALESCE(tpe.summary, '') from '^[0-9]+：一、([^[:space:]。；，,]+)'), ''),
+                                CASE
+                                    WHEN jsonb_typeof(tpe.core_anchors) = 'array'
+                                    THEN NULLIF(tpe.core_anchors->>0, '')
+                                END,
+                                t.subject_key
+                            ) AS resolved_subject_name
+                        FROM theme_gate_profile t
+                        LEFT JOIN theme_profile_ext tpe ON tpe.subject_key = t.subject_key
+                        """
+                    )
+                else:
+                    profile_name_selects.append(
+                        """
+                        SELECT
+                            t.subject_key,
+                            COALESCE(
+                                CASE
+                                    WHEN NULLIF(t.concept, '') IS NOT NULL AND t.concept !~ '^[0-9]+$'
+                                    THEN t.concept
+                                END,
+                                t.subject_key
+                            ) AS resolved_subject_name
+                        FROM theme_gate_profile t
+                        """
+                    )
+            profile_names_sql = "\nUNION ALL\n".join(profile_name_selects) or (
+                "SELECT NULL::text AS subject_key, NULL::text AS resolved_subject_name WHERE false"
+            )
+
+            sql = f"""
         WITH profile_names AS (
-            SELECT
-                subject_key,
-                subject_name AS resolved_subject_name
-            FROM theme_profile_v2
-            WHERE COALESCE(status, '') IN ('draft', 'accepted')
-              AND subject_name IS NOT NULL
-              AND btrim(subject_name) <> ''
-              AND subject_name <> subject_key
-              AND subject_name !~ '^[0-9]+$'
-            UNION ALL
-            SELECT
-                t.subject_key,
-                COALESCE(
-                    CASE
-                        WHEN NULLIF(t.concept, '') IS NOT NULL AND t.concept !~ '^[0-9]+$'
-                        THEN t.concept
-                    END,
-                    NULLIF(substring(COALESCE(tpe.summary, '') from '^[0-9]+：一、([^[:space:]。；，,]+)'), ''),
-                    CASE
-                        WHEN jsonb_typeof(tpe.core_anchors) = 'array'
-                        THEN NULLIF(tpe.core_anchors->>0, '')
-                    END,
-                    t.subject_key
-                ) AS resolved_subject_name
-            FROM theme_gate_profile t
-            LEFT JOIN theme_profile_ext tpe ON tpe.subject_key = t.subject_key
+            {profile_names_sql}
         ),
         resolved_names AS (
             SELECT DISTINCT ON (subject_key)
@@ -6642,10 +6681,6 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                  esm.confidence DESC NULLS LAST
         LIMIT $3
         """
-        async with self.pool.acquire() as conn:
-            exists = await conn.fetchval("SELECT to_regclass('public.event_subject_map')::text")
-            if not exists:
-                return []
             rows = await conn.fetch(sql, trade_date, source, int(limit or 500))
         return [dict(r) for r in rows]
 

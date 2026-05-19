@@ -18,6 +18,9 @@
   "brief_major_event_count": 100,
   "brief_theme_count": 37,
   "brief_opportunity_count": 36,
+  "numeric_theme_name_count": 4,
+  "unnamed_theme_count": 12,
+  "subject_key_chip_count": 4,
   "performance": {
     "match_timing_sample_count": 100,
     "avg_match_ms": 8923.242,
@@ -38,11 +41,11 @@
   "diagnostics": {
     "source": "db",
     "event_count": 117,
-    "matched_event_count": 100,
     "theme_count": 37,
+    "last_rebuild_at": "2026-05-18T12:43:42.087634+00:00",
     "opportunity_count": 36,
     "review_event_count": 17,
-    "unknown_event_count": 0,
-    "last_rebuild_at": "2026-05-18T12:43:42.087634+00:00"
+    "matched_event_count": 100,
+    "unknown_event_count": 0
   }
 }
