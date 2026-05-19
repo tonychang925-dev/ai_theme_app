@@ -1,0 +1,217 @@
+{
+  "phase": "v2.0_capital_backtest_mvp",
+  "executed_at": "2026-05-19T12:56:07.926200",
+  "config": {
+    "initial_capital": 1000000.0,
+    "position_pct": 0.1,
+    "max_buys_per_day": 3,
+    "max_positions": 10,
+    "slippage": 0.001,
+    "commission": 0.0003,
+    "stamp_tax": 0.0005,
+    "signal_source": "w2s_signal_validation_v1_1b"
+  },
+  "all_results": {
+    "v2.0_all_signals_hold3d": {
+      "status": "ok",
+      "hold_days": 3,
+      "n_trades": 79,
+      "n_wins": 48,
+      "n_losses": 31,
+      "win_rate": 0.6075949367088608,
+      "profit_factor": 2.7213054997080905,
+      "total_return": 0.29774233000000006,
+      "annual_return": 2.8958414202430425,
+      "max_drawdown_amount": 47186.51,
+      "max_drawdown_pct": 0.04024153323616148,
+      "avg_return_per_trade": 0.04475283889434792,
+      "total_pnl": 281679.58,
+      "avg_win": 9277.55,
+      "avg_loss": -5278.81,
+      "max_single_loss": -13993.52,
+      "max_consecutive_losses": 6,
+      "avg_hold_days": 3.2,
+      "initial_capital": 1000000.0,
+      "final_equity": 1297742.33,
+      "monthly_returns": {
+        "2026-03": 0.1203586499999999,
+        "2026-04": 0.17571887999999988,
+        "2026-05": 0.29774233000000006
+      },
+      "skip_stats": {
+        "already_holding_skip": 19,
+        "limit_up_open_skip": 2,
+        "max_daily_positions_skip": 91
+      },
+      "skip_total": 112
+    },
+    "v2.0_all_signals_hold5d": {
+      "status": "ok",
+      "hold_days": 5,
+      "n_trades": 53,
+      "n_wins": 29,
+      "n_losses": 24,
+      "win_rate": 0.5471698113207547,
+      "profit_factor": 3.114901240854507,
+      "total_return": 0.34286284000000006,
+      "annual_return": 3.656406548061798,
+      "max_drawdown_amount": 28624.95,
+      "max_drawdown_pct": 0.02330422908873064,
+      "avg_return_per_trade": 0.06393548544313872,
+      "total_pnl": 274121.43,
+      "avg_win": 13921.92,
+      "avg_loss": -5400.6,
+      "max_single_loss": -15450.33,
+      "max_consecutive_losses": 6,
+      "avg_hold_days": 5.3,
+      "initial_capital": 1000000.0,
+      "final_equity": 1342862.84,
+      "monthly_returns": {
+        "2026-03": 0.13396856000000004,
+        "2026-04": 0.20560025,
+        "2026-05": 0.34286284000000006
+      },
+      "skip_stats": {
+        "already_holding_skip": 22,
+        "limit_up_open_skip": 2,
+        "max_daily_positions_skip": 38,
+        "max_positions_skip": 11
+      },
+      "skip_total": 73
+    },
+    "v2.0_previous_low_only_hold3d": {
+      "status": "ok",
+      "hold_days": 3,
+      "n_trades": 70,
+      "n_wins": 45,
+      "n_losses": 25,
+      "win_rate": 0.6428571428571429,
+      "profit_factor": 3.349130106866611,
+      "total_return": 0.3138421100000001,
+      "annual_return": 3.154716211971653,
+      "max_drawdown_amount": 33270.37,
+      "max_drawdown_pct": 0.02870871260389857,
+      "avg_return_per_trade": 0.054886606763334754,
+      "total_pnl": 297676.16,
+      "avg_win": 9430.97,
+      "avg_loss": -5068.7,
+      "max_single_loss": -12451.46,
+      "max_consecutive_losses": 3,
+      "avg_hold_days": 3.3,
+      "initial_capital": 1000000.0,
+      "final_equity": 1313842.11,
+      "monthly_returns": {
+        "2026-03": 0.09883631000000005,
+        "2026-04": 0.18980553000000003,
+        "2026-05": 0.3138421100000001
+      },
+      "skip_stats": {
+        "already_holding_skip": 10,
+        "max_daily_positions_skip": 37,
+        "limit_up_open_skip": 1
+      },
+      "skip_total": 48
+    },
+    "v2.0_previous_low_only_hold5d": {
+      "status": "ok",
+      "hold_days": 5,
+      "n_trades": 49,
+      "n_wins": 29,
+      "n_losses": 20,
+      "win_rate": 0.5918367346938775,
+      "profit_factor": 3.1004473508429338,
+      "total_return": 0.3304965900000001,
+      "annual_return": 3.436966132619813,
+      "max_drawdown_amount": 32520.32,
+      "max_drawdown_pct": 0.026333658109221492,
+      "avg_return_per_trade": 0.06610132831531751,
+      "total_pnl": 251407.86,
+      "avg_win": 12796.57,
+      "avg_loss": -5984.63,
+      "max_single_loss": -15818.2,
+      "max_consecutive_losses": 5,
+      "avg_hold_days": 5.4,
+      "initial_capital": 1000000.0,
+      "final_equity": 1330496.59,
+      "monthly_returns": {
+        "2026-03": 0.12171175,
+        "2026-04": 0.20311830000000006,
+        "2026-05": 0.3304965900000001
+      },
+      "skip_stats": {
+        "already_holding_skip": 16,
+        "max_daily_positions_skip": 14,
+        "limit_up_open_skip": 1,
+        "max_positions_skip": 8
+      },
+      "skip_total": 39
+    },
+    "v2.0_previous_low_support80_hold3d": {
+      "status": "ok",
+      "hold_days": 3,
+      "n_trades": 70,
+      "n_wins": 45,
+      "n_losses": 25,
+      "win_rate": 0.6428571428571429,
+      "profit_factor": 3.349130106866611,
+      "total_return": 0.3138421100000001,
+      "annual_return": 3.154716211971653,
+      "max_drawdown_amount": 33270.37,
+      "max_drawdown_pct": 0.02870871260389857,
+      "avg_return_per_trade": 0.054886606763334754,
+      "total_pnl": 297676.16,
+      "avg_win": 9430.97,
+      "avg_loss": -5068.7,
+      "max_single_loss": -12451.46,
+      "max_consecutive_losses": 3,
+      "avg_hold_days": 3.3,
+      "initial_capital": 1000000.0,
+      "final_equity": 1313842.11,
+      "monthly_returns": {
+        "2026-03": 0.09883631000000005,
+        "2026-04": 0.18980553000000003,
+        "2026-05": 0.3138421100000001
+      },
+      "skip_stats": {
+        "already_holding_skip": 10,
+        "max_daily_positions_skip": 37,
+        "limit_up_open_skip": 1
+      },
+      "skip_total": 48
+    },
+    "v2.0_previous_low_support80_hold5d": {
+      "status": "ok",
+      "hold_days": 5,
+      "n_trades": 49,
+      "n_wins": 29,
+      "n_losses": 20,
+      "win_rate": 0.5918367346938775,
+      "profit_factor": 3.1004473508429338,
+      "total_return": 0.3304965900000001,
+      "annual_return": 3.436966132619813,
+      "max_drawdown_amount": 32520.32,
+      "max_drawdown_pct": 0.026333658109221492,
+      "avg_return_per_trade": 0.06610132831531751,
+      "total_pnl": 251407.86,
+      "avg_win": 12796.57,
+      "avg_loss": -5984.63,
+      "max_single_loss": -15818.2,
+      "max_consecutive_losses": 5,
+      "avg_hold_days": 5.4,
+      "initial_capital": 1000000.0,
+      "final_equity": 1330496.59,
+      "monthly_returns": {
+        "2026-03": 0.12171175,
+        "2026-04": 0.20311830000000006,
+        "2026-05": 0.3304965900000001
+      },
+      "skip_stats": {
+        "already_holding_skip": 16,
+        "max_daily_positions_skip": 14,
+        "limit_up_open_skip": 1,
+        "max_positions_skip": 8
+      },
+      "skip_total": 39
+    }
+  }
+}
