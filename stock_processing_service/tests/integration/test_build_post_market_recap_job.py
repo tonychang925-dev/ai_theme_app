@@ -277,6 +277,21 @@ def test_build_post_market_recap_job_strong_watch_pool_flow() -> None:
         assert recap_doc["layer_c_input_mode"] == LAYER_C_INPUT_MODE
         assert recap_doc["layer_a_identity_hit_count"] >= 1
         assert recap_doc["layer_b_cycle_hit_count"] >= 1
+        report = recap_doc["report"]
+        assert set(report) == {
+            "report_type",
+            "trade_date",
+            "title",
+            "summary",
+            "highlights",
+            "sections",
+            "metadata",
+        }
+        assert report["report_type"] == "post_market"
+        assert report["trade_date"] == "2026-04-23"
+        assert report["metadata"]["source"] == "stock_processing_service.new_chain"
+        assert "theme_environment_judgement" not in str(report)
+        assert "theme_leader_candidate" not in str(report)
 
         # Idempotency check
         skipped = await job.execute(
@@ -303,6 +318,22 @@ def test_build_post_market_recap_job_no_longer_owns_layer_c_or_d_writes() -> Non
         "upsert_strong_watch_history_rows(",
         "get_w2s_candidate_inputs(",
         "upsert_weak_to_strong_candidate_pool_rows(",
+    )
+    for fragment in forbidden_fragments:
+        assert fragment not in source
+
+
+def test_build_post_market_recap_job_does_not_call_legacy_recap_service() -> None:
+    from pathlib import Path
+    import stock_processing_service.application.jobs.build_post_market_recap_job as module
+
+    source = Path(module.__file__).read_text(encoding="utf-8")
+    forbidden_fragments = (
+        "stock_service.repositories.report_repository",
+        "stock_service.services.recap_service",
+        "ReportRepository",
+        "RecapService",
+        "build_post_market_report(",
     )
     for fragment in forbidden_fragments:
         assert fragment not in source
