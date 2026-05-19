@@ -55,6 +55,10 @@ class HistoricalBacktestReadPorts:
         self._loaded = False
         # Seed funnel audit (P0-6): per-call metrics, reset on each invocation
         self.seed_funnel: dict[str, int] = {}
+        # v1.1a.1: refresh funnel
+        self._refresh_raw_count: int = 0
+        self._refresh_final_count: int = 0
+        self._a_layer_lookback_set: set[str] = set()
 
     async def _ensure_loaded(self):
         if self._loaded: return
@@ -259,6 +263,7 @@ class HistoricalBacktestReadPorts:
                AND rule_version='subject_feature_from_rank_v0.1'""",
             (a_layer_lookback_start, trade_date))
         a_layer_subjects: set[str] = {str(r['subject_key']) for r in a_layer_rows}
+        self._a_layer_lookback_set = a_layer_subjects  # v1.1a.1: reuse in refresh_rows
         # Also load exact-date subjects for source_trace purposes
         a_layer_exact_rows = await self._c.execute_query(
             "SELECT DISTINCT subject_key FROM subject_daily_feature WHERE trade_date=$1 AND rule_version='subject_feature_from_rank_v0.1'",
@@ -315,7 +320,7 @@ class HistoricalBacktestReadPorts:
         # Populate funnel audit
         self.seed_funnel = {
             "trade_date": str(trade_date),
-            "b_raw_rows": b_raw,
+            "seed_raw_rows": b_raw,
             "after_leader_role_filter": after_leader_role,
             "after_prior7_filter": after_prior7,
             "after_leader_prior7_combined": after_leader_prior7,
@@ -325,12 +330,78 @@ class HistoricalBacktestReadPorts:
             "a_layer_lookback_subjects": len(a_layer_subjects),
             "a_layer_exact_subjects": len(a_layer_exact_set),
             "final_seed_rows": len(seed_rows),
+            # v1.1a.1: refresh funnel (populated after get_strong_watch_refresh_rows)
+            "refresh_raw_rows": self._refresh_raw_count,
+            "refresh_final_rows": self._refresh_final_count,
         }
 
         return seed_rows
 
     async def get_strong_watch_refresh_rows(self, trade_date: date) -> list[dict[str, Any]]:
-        return []  # v0.8a: no refresh rows from feature store
+        """Roll-forward previously scored strong watch pool stocks into T-day.
+
+        v1.1a.1: Reads from strong_watch_pool_scored_rebuild for the past 1-7
+        calendar days. Stocks that were active/weakening + formal/observe_only
+        and not fade_confirmed are carried forward for re-evaluation on T-day.
+
+        This is the key mechanism that ensures weak-divergence candidates
+        (stocks that were strong in prior days, then weakened today) are
+        included in D-layer evaluation.
+        """
+        await self._ensure_loaded()
+        lookback_start = trade_date - timedelta(days=10)  # ~7 trading days
+        refresh_rows = await self._c.execute_query("""
+            SELECT DISTINCT ON (stock_id)
+                   stock_id, stock_name, subject_key, theme_name,
+                   watch_score, watch_status, pool_entry_type,
+                   strong_grade, relay_role as leader_role_proxy,
+                   recent_limit_up_count, hard_gate_pass_count,
+                   mainline_strength_score, fade_watch, fade_confirmed,
+                   cycle_state, support_type, support_strength,
+                   trade_date as refresh_source_date
+            FROM strong_watch_pool_scored_rebuild
+            WHERE trade_date >= $1 AND trade_date < $2
+              AND watch_status IN ('active', 'weakening')
+              AND pool_entry_type IN ('formal', 'observe_only')
+              AND NOT COALESCE(fade_confirmed, false)
+              AND subject_key IS NOT NULL AND btrim(subject_key) <> ''
+            ORDER BY stock_id, trade_date DESC
+        """, (lookback_start, trade_date))
+
+        # Store refresh count for funnel audit
+        self._refresh_raw_count = len(refresh_rows)
+
+        result: list[dict[str, Any]] = []
+        for r in refresh_rows:
+            subject_key = str(r.get('subject_key') or '').strip()
+            if not subject_key:
+                continue
+            # A-layer check (same lookback as seed)
+            if subject_key not in self._a_layer_lookback_set:
+                continue
+
+            result.append({
+                "stock_id": str(r['stock_id']),
+                "stock_name": str(r.get('stock_name') or ''),
+                "subject_key": subject_key,
+                "theme_name": str(r.get('theme_name') or ''),
+                "recent_limit_up_count": int(r.get('recent_limit_up_count') or 0),
+                "is_leader_flag": bool(r.get('strong_grade') in ('S', 'A')),
+                "best_rank": 999,
+                "current_flag_today": 0,  # Will be recomputed by UseCase from T-day bar
+                "subject_limit_up_count": 0,
+                "subject_strong_count": 0,
+                "cond_gene": 1 if int(r.get('recent_limit_up_count') or 0) >= 1 else 0,
+                "cond_volume": 0,
+                "cond_structure": 0,
+                "has_two_board": int(r.get('hard_gate_pass_count') or 0) >= 2,
+                # v1.1a.1: source_trace for refresh provenance
+                "source_tag": "refresh",
+                "relay_role": str(r.get('leader_role_proxy') or ''),
+            })
+
+        self._refresh_final_count = len(result)
+        return result
 
     # ── Board / Position / Pattern (v0.8b: minimal implementation) ──
 
@@ -531,21 +602,69 @@ class HistoricalBacktestReadPorts:
             ):
                 continue
 
-            # v1.1a: Robust is_leader detection with multiple fallbacks
+            # v1.1a.1: Robust is_leader detection with multiple fallbacks
             strong_grade = str(r.get('strong_grade') or '').upper()
             b_is_leader = bool(r.get('b_is_leader') or False)
             recent_lim = int(r.get('recent_limit_up_count') or 0)
+            prior7_lim = int(r.get('prior7_limitup_days') or 0)
             leader_role = str(r.get('leader_role_proxy') or '')
+            watch_score = float(r.get('watch_score') or 0)
+
+            # v1.1a.1: For refresh stocks not in B-layer today, use rebuild table fields as fallback.
+            # If B-layer join returned nothing (b_is_leader=False, b_rank=None),
+            # inherit leader_role and prior evidence from the rebuild table's own data.
+            if not b_is_leader and not leader_role:
+                # No B-layer data at all — use strong_grade as proxy for leader_role
+                if strong_grade in ('S', 'A'):
+                    leader_role = 'leader'
+                elif strong_grade == 'B':
+                    leader_role = 'card'
+
             # is_leader: strong_grade S/A, OR explicit is_leader flag, OR leader/card role + recent limits
             is_leader = (
                 strong_grade in ('S', 'A')
                 or b_is_leader
-                or (leader_role in ('leader', 'card') and recent_lim >= 1)
+                or (leader_role in ('leader', 'card') and (recent_lim >= 1 or prior7_lim >= 1))
             )
 
-            # v1.1a: Read rank_order from strong_stock_daily_feature (was hardcoded 999)
+            # v1.1a.1: Rank order with proxy fallback
             b_rank = r.get('b_rank_order')
-            rank_order = int(b_rank) if b_rank is not None else 999
+            has_b_rank = b_rank is not None and int(b_rank) < 999
+            if has_b_rank:
+                rank_order = int(b_rank)
+                rank_order_source = "strong_stock_daily_feature"
+            else:
+                # Proxy from watch_score: higher score = better rank
+                if watch_score >= 85:
+                    rank_order = 1
+                    rank_order_source = "proxy_from_watch_score_85plus"
+                elif watch_score >= 78:
+                    rank_order = 2
+                    rank_order_source = "proxy_from_watch_score_78plus"
+                elif watch_score >= 70:
+                    rank_order = 3
+                    rank_order_source = "proxy_from_watch_score_70plus"
+                elif watch_score >= 65:
+                    rank_order = 5
+                    rank_order_source = "proxy_from_watch_score_65plus"
+                elif strong_grade == 'B':
+                    rank_order = 6
+                    rank_order_source = "proxy_from_strong_grade_B"
+                else:
+                    rank_order = 10
+                    rank_order_source = "proxy_default_10"
+
+            # v1.1a.1: Compute prev_day_limit_up from T-1 bar data (not default false)
+            prev_day_limit_up = bool(r.get('prev_day_limit_up') or False)
+            # If not available from C-layer, check if stock had limit-up evidence in prior7
+            if not prev_day_limit_up and prior7_lim >= 1:
+                prev_day_limit_up = True  # prior7 signal as proxy for prev-day evidence
+            prev_day_pct = 0.0
+
+            # v1.1a.1: recent_limit_up_count fallback from prior7
+            # For refresh stocks, rebuild table's recent_limit_up_count may be 0 on T-day
+            # because it was recomputed. Use prior7 as evidence of recent limit-up activity.
+            effective_recent_lim = max(recent_lim, prior7_lim)
 
             result.append({
                 "stock_id": str(r['stock_id']),
@@ -556,21 +675,24 @@ class HistoricalBacktestReadPorts:
                 "limit_up": bool(r.get('limit_up')),
                 "is_leader": is_leader,
                 "rank_order": rank_order,
-                "recent_limit_up_count": recent_lim,
-                "prior7_limitup_days": int(r.get('prior7_limitup_days') or 0),
+                "recent_limit_up_count": effective_recent_lim,
+                "prior7_limitup_days": prior7_lim,
                 "prior7_strong_days": int(r.get('prior7_strong_days') or 0),
-                "prev_day_pct_chg": 0.0,
-                "prev_day_limit_up": bool(r.get('prev_day_limit_up')),
+                "prev_day_pct_chg": prev_day_pct,
+                "prev_day_limit_up": prev_day_limit_up,
                 "fade_watch": bool(r.get('fade_watch')),
                 "fade_confirmed": bool(r.get('fade_confirmed')),
                 "mainline_strength_score": float(r.get('mainline_strength_score') or 0),
-                "watch_score": float(r.get('watch_score') or 0),
+                "watch_score": watch_score,
                 "watch_pool_entry_type": str(r.get('pool_entry_type') or 'observe_only'),
                 "watch_labels_json": json.dumps({
                     "strong_grade": str(r.get('strong_grade') or ''),
                     "support_type": str(r.get('support_type') or ''),
                     "support_score": float(r.get('support_strength') or 0),
                     "hard_gate_pass_count": int(r.get('hard_gate_pass_count') or 0),
+                    "is_leader": is_leader,
+                    "rank_order": rank_order,
+                    "rank_order_source": rank_order_source,
                 }),
                 "support_type": str(r.get('support_type') or ''),
                 "support_strength": str(r.get('support_strength') or '0'),

@@ -16,6 +16,16 @@ PROJECT_ROOT = Path("/Users/admin/Desktop/ai_theme_app")
 PYTHON_BIN = str(PROJECT_ROOT / ".venv" / "bin" / "python")
 
 
+def _read_cdp_token_file() -> str:
+    """Read JYHF auth token from CDP-extracted token file (replaces mitmweb)."""
+    try:
+        with open("/tmp/jyhf_auth_token.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
+            return str(data.get("token", "")).strip()
+    except Exception:
+        return ""
+
+
 @dataclass
 class CollectionTaskState:
     key: str
@@ -358,6 +368,7 @@ class CollectionJobManager:
             payload.get("jyhf_token")
             or os.getenv("JYHF_AUTH_TOKEN", "")
             or env_file_values.get("JYHF_AUTH_TOKEN", "")
+            or _read_cdp_token_file()
         ).strip()
         deepseek_api_key = str(
             payload.get("deepseek_api_key")

@@ -31,6 +31,18 @@ def _normalize_secret(value: Any) -> str:
     return str(value or "").strip().strip("\"'").strip()
 
 
+def _read_cdp_token_file() -> str:
+    """Read JYHF auth token from CDP-extracted token file (replaces mitmweb)."""
+    import json
+    token_path = "/tmp/jyhf_auth_token.json"
+    try:
+        with open(token_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            return str(data.get("token", "")).strip()
+    except Exception:
+        return ""
+
+
 def _redact_cmd(cmd: list[str]) -> str:
     rendered: list[str] = []
     redact_next = False
@@ -360,6 +372,7 @@ class CollectionJobManager:
             payload.get("jyhf_token")
             or os.getenv("JYHF_AUTH_TOKEN", "")
             or env_file_values.get("JYHF_AUTH_TOKEN", "")
+            or _read_cdp_token_file()
         )
         deepseek_api_key = _normalize_secret(
             payload.get("deepseek_api_key")

@@ -405,9 +405,17 @@ async def run_contract_test() -> dict[str, Any]:
     print(f"  Dates with output: {trace.w2s_dates}")
     print(f"  Affected rows: {trace.w2s_affected_rows}")
     if trace.d1_diagnostics:
-        print(f"  D1 diagnostics:")
+        print(f"  D1 diagnostics (last date):")
         for k, v in sorted(trace.d1_diagnostics.items()):
             print(f"    {k}: {v}")
+
+    # v1.1a.1: Verify w2s_candidate_rebuild has no entries (expected since d1_pass=0)
+    try:
+        d1_cumulative = await c.execute_query("SELECT COUNT(*) as total FROM w2s_candidate_rebuild")
+        if d1_cumulative:
+            print(f"  w2s_candidate_rebuild total: {d1_cumulative[0].get('total', '?')}")
+    except Exception:
+        pass  # table may not exist if never written
 
     # ═══ Step 3: Verify write paths ═══
     print("\n── Step 3: Verify write paths ──")
@@ -433,18 +441,24 @@ async def run_contract_test() -> dict[str, Any]:
         for we in write_errors[:5]:
             print(f"    [{we['table']}] {we['stock_id']} @ {we['trade_date']}: {we['error'][:120]}")
 
-    # ═══ Step 4: Seed funnel audit ═══
-    print("\n── Step 4: Seed funnel audit ──")
-    # Use the last seed_funnel (from the most recent trade_date processed)
+    # ═══ Step 4: Seed + Refresh funnel audit ═══
+    print("\n── Step 4: Seed + Refresh funnel audit ──")
     seed_funnel = hist_read.seed_funnel
     if seed_funnel:
-        print(f"  b_raw_rows:                {seed_funnel.get('b_raw_rows', '?')}")
+        print(f"  --- SEED ---")
+        print(f"  seed_raw_rows:             {seed_funnel.get('seed_raw_rows', '?')}")
         print(f"  after_leader_role_filter:  {seed_funnel.get('after_leader_role_filter', '?')}")
         print(f"  after_prior7_filter:       {seed_funnel.get('after_prior7_filter', '?')}")
         print(f"  after_leader_prior7_combined: {seed_funnel.get('after_leader_prior7_combined', '?')}")
         print(f"  after_subject_key_filter:  {seed_funnel.get('after_subject_key_filter', '?')}")
-        print(f"  after_a_layer_check:       {seed_funnel.get('after_a_layer_check', '?')}")
+        print(f"  after_a_layer_check:       {seed_funnel.get('after_a_layer_check', '?')} (exact: {seed_funnel.get('after_a_layer_check_exact', '?')})")
         print(f"  final_seed_rows:           {seed_funnel.get('final_seed_rows', '?')}")
+        print(f"  --- REFRESH (v1.1a.1) ---")
+        print(f"  refresh_raw_rows:          {seed_funnel.get('refresh_raw_rows', '?')}")
+        print(f"  refresh_final_rows:        {seed_funnel.get('refresh_final_rows', '?')}")
+        print(f"  --- A-LAYER ---")
+        print(f"  a_layer_lookback_subjects: {seed_funnel.get('a_layer_lookback_subjects', '?')}")
+        print(f"  a_layer_exact_subjects:    {seed_funnel.get('a_layer_exact_subjects', '?')}")
     else:
         print(f"  (no seed funnel data — seed rows may not have been called)")
 

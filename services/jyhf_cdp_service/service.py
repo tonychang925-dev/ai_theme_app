@@ -151,8 +151,9 @@ class JyhfCdpCollectorService:
             raw_events, feed_date, body_text = self._extractor.read(cdp)
 
             # Phase 2: after navigation triggered API calls, read captured tokens
+            token_extracted = False
             try:
-                self._token_extractor.read_captured_tokens(cdp)
+                token_extracted = self._token_extractor.read_captured_tokens(cdp) is not None
             except Exception:
                 pass
         except PrepareRetryError:
@@ -166,6 +167,14 @@ class JyhfCdpCollectorService:
         if not feed_date:
             feed_date = capture_time.strftime("%Y-%m-%d")
             self._logger.warning("feed_date not found in DOM, using capture_time: %s", feed_date)
+
+        # Always update token status, even if no events captured
+        if token_extracted:
+            self._status.update(
+                token_extracted=True,
+                token_last_at=capture_time.isoformat(),
+            )
+
         if not raw_events:
             return
         if self._stop_event.is_set() or run_id != self._run_id:
@@ -207,9 +216,11 @@ class JyhfCdpCollectorService:
             pushed_to_stream_count_total=totals["pushed_to_stream_count_total"],
             pushed_to_intel_count_total=totals["pushed_to_intel_count_total"],
             uptime_seconds=self._uptime_seconds(capture_time),
+            token_extracted=bool(self._token_extractor.last_token),
+            token_last_at=datetime.fromtimestamp(self._token_extractor.last_extract_time, tz=CN_TZ).isoformat() if self._token_extractor.last_token else None,
             last_error=None,
         )
-        self._logger.info("capture ok events=%s new=%s", len(raw_events), new_count)
+        self._logger.info("capture ok events=%s new=%s token=%s", len(raw_events), new_count, "yes" if self._token_extractor.last_token else "no")
 
     async def _flush_db_events(self) -> None:
         if not self._db_sink:
