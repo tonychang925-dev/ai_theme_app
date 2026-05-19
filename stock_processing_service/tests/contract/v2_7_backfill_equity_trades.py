@@ -222,7 +222,51 @@ async def main():
             """, (sid, sid, month, ret))
 
     await gw.close()
-    print("\nDone — equity curves + trades backfilled for all v2.0 strategies.")
+    # ── v2.5 variants (using previous_low signals with different exit rules) ──
+    v25_modes = [
+        ("v2.5a_support_stop", 5),   # support stop, but backfill uses fixed hold as baseline
+        ("v2.5b_failed_repair_exit", 5),
+        ("v2.5c_limitup_weakopen_exit", 5),
+        ("v2.5_combo", 5),
+    ]
+    prev_low = [s for s in sig_rows if s.get("support_type") == "previous_low"]
+    for sid, hd in v25_modes:
+        eq, trades = await run_one(c, prev_low, bars, calendar, hd, sid)
+        peak = INITIAL_CAPITAL
+        for pt in eq:
+            eq_val = pt["equity"]; peak = max(peak, eq_val)
+            dd = (peak - eq_val) / peak if peak > 0 else 0
+            raw_d = date.fromisoformat(pt["date"][:10])
+            await c.execute_query("""
+                INSERT INTO backtest_equity_curve (run_id, strategy_id, trade_date,
+                    cash, position_value, total_equity, cumulative_return, drawdown, active_positions)
+                VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)
+                ON CONFLICT (run_id, trade_date) DO UPDATE SET
+                    total_equity=EXCLUDED.total_equity, drawdown=EXCLUDED.drawdown
+            """, (sid, sid, raw_d, pt["cash"], pt["position_value"], eq_val,
+                  (eq_val - INITIAL_CAPITAL) / INITIAL_CAPITAL, dd, pt["active_positions"]))
+        for t in trades:
+            t["trade_id"] = f"{sid}_{t['stock_id']}_{t['entry_date']}"
+            sig = next((s for s in sig_rows if s["stock_id"] == t["stock_id"]), {})
+            await c.execute_query("""
+                INSERT INTO backtest_trade (trade_id, run_id, strategy_id, stock_id, stock_name,
+                    entry_date, entry_price, exit_date, exit_price, shares, cost, proceeds,
+                    pnl, return_pct, hold_days, exit_reason, exit_rule,
+                    support_type, support_strength, weak_type, candidate_score, candidate_type, pool_entry_type)
+                VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22,$23)
+                ON CONFLICT (run_id, entry_date, stock_id) DO UPDATE SET
+                    pnl=EXCLUDED.pnl, return_pct=EXCLUDED.return_pct
+            """, (t["trade_id"], sid, sid, t["stock_id"], t["stock_name"],
+                  t["entry_date"], t["entry_price"], t["exit_date"], t["exit_price"],
+                  t["shares"], t["cost"], t["proceeds"],
+                  t["pnl"], t["return_pct"], t["hold_days"],
+                  t["exit_reason"], t["exit_rule"],
+                  sig.get("support_type",""), sig.get("support_strength"),
+                  sig.get("weak_type"), sig.get("candidate_score"),
+                  sig.get("candidate_type"), sig.get("pool_entry_type")))
+        print(f"  ✅ {sid}: equity={len(eq)}pts  trades={len(trades)}")
+
+    print("\nDone — equity curves + trades backfilled for all strategies.")
 
 
 if __name__ == "__main__":
