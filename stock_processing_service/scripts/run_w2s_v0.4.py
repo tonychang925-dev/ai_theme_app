@@ -1,6 +1,15 @@
 """
-W2S v0.4 — 3-Month Expansion Validation
-=========================================
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  STATUS: DEPRECATED_EXPERIMENT — DO NOT RUN                               ║
+║  Version: v0.4                                                            ║
+║  Deprecated by: v1.0_usecase_replay_contract (2026-05-19)                 ║
+║  Reason: Hand-written experiment logic, bypasses UseCases.                ║
+║  Revenue validation: STOPPED.                                             ║
+║  Migration: Use tests/contract/test_v1_0_usecase_replay_contract.py       ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+W2S v0.4 — 3-Month Expansion Validation (DEPRECATED)
+======================================================
 Phase -1 feature store enabled. 6 experiments. 3-month range.
 Strategy: w2s_signal_validation_v0.4_expand_3m
 """

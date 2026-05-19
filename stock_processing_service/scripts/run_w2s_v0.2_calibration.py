@@ -1,6 +1,15 @@
 """
-W2S Phase 0.6 — v0.2 Calibration Run
-=====================================
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  STATUS: DEPRECATED_EXPERIMENT — DO NOT RUN                               ║
+║  Version: v0.2                                                            ║
+║  Deprecated by: v1.0_usecase_replay_contract (2026-05-19)                 ║
+║  Reason: Hand-written experiment logic, bypasses UseCases.                ║
+║  Revenue validation: STOPPED.                                             ║
+║  Migration: Use tests/contract/test_v1_0_usecase_replay_contract.py       ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+W2S Phase 0.6 — v0.2 Calibration Run (DEPRECATED)
+===================================================
 Improvements over v0.1:
   P0: proxy_X semantics split (unconfirmed/positive_open/negative_open/X)
   P1: Candidate pool quality report (candidate_type, support_type, score buckets)

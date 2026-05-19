@@ -1,10 +1,10 @@
 {
-  "numStartups": 11,
+  "numStartups": 12,
   "hasSeenTasksHint": true,
   "tipsHistory": {
     "new-user-warmup": 7,
     "plan-mode-for-complex-tasks": 11,
-    "color-when-multi-clauding": 2,
+    "color-when-multi-clauding": 12,
     "memory-command": 2,
     "theme-command": 2,
     "colorterm-truecolor": 2,
@@ -34,7 +34,7 @@
     "rename-conversation": 11,
     "custom-commands": 11
   },
-  "promptQueueUseCount": 273,
+  "promptQueueUseCount": 276,
   "cachedGrowthBookFeatures": {
     "tengu_kestrel_arch": "OFF",
     "tengu_amber_prism": false,
@@ -501,7 +501,7 @@
         "gateway.py",
         "w2s_candidate_service.py"
       ],
-      "exampleFilesGeneratedAt": 1778548955899,
+      "exampleFilesGeneratedAt": 1779156686007,
       "lastCost": 5.626846,
       "lastAPIDuration": 2036198,
       "lastAPIDurationWithoutRetries": 2032286,

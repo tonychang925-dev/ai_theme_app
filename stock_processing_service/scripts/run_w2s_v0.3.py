@@ -1,6 +1,15 @@
 """
-W2S Phase 0.6 — v0.3 Weak Type Calibration Run
-=================================================
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  STATUS: DEPRECATED_EXPERIMENT — DO NOT RUN                               ║
+║  Version: v0.3                                                            ║
+║  Deprecated by: v1.0_usecase_replay_contract (2026-05-19)                 ║
+║  Reason: Hand-written experiment logic, bypasses UseCases.                ║
+║  Revenue validation: STOPPED.                                             ║
+║  Migration: Use tests/contract/test_v1_0_usecase_replay_contract.py       ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+W2S Phase 0.6 — v0.3 Weak Type Calibration Run (DEPRECATED)
+=============================================================
 v0.3 improvements:
   - confirm_source/confirm_level as standalone columns
   - weak_type_quality (preferred/neutral/danger) + scoring

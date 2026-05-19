@@ -1,6 +1,18 @@
 """
-v0.8_usecase_replay: Replay production UseCases against historical feature store.
-=================================================================================
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  STATUS: DEPRECATED_EXPERIMENT — DO NOT RUN                               ║
+║  Version: v0.8_usecase_replay (closest to v1.0, but experimental)         ║
+║  Deprecated by: v1.0_usecase_replay_contract (2026-05-19)                 ║
+║  Reason: v0.8a partial (no Position/Pattern/Board), experimental run.     ║
+║          Revenue validation: STOPPED.                                      ║
+║  Migration: v0.8's UseCase replay approach is preserved in v1.0 contract. ║
+║             Use tests/contract/test_v1_0_usecase_replay_contract.py       ║
+║  NOTE: v0.8 was the CORRECT approach — it calls UseCases.                 ║
+║        Its logic is the foundation for v1.0.                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+v0.8_usecase_replay: Replay production UseCases against historical feature store (DEPRECATED, absorbed by v1.0)
+=================================================================================================================
 v0.7 bypassed BuildStrongStockTrackingUseCase and BuildWeakToStrongCandidateUseCase.
 v0.8 CORRECTLY calls both UseCases through HistoricalBacktestReadPorts/WritePorts.
 

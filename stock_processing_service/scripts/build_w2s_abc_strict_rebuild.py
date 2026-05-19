@@ -1,6 +1,17 @@
 """
-Phase -1: Strict A/B/C → D Layer Reconstruction
-================================================
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  STATUS: DEPRECATED_EXPERIMENT — DO NOT RUN                               ║
+║  Version: Phase -1 (strict_rebuild)                                       ║
+║  Deprecated by: v1.0_usecase_replay_contract (2026-05-19)                 ║
+║  Reason: Hand-written detect_support(), compute_weak_type(),              ║
+║          compute_candidate_score(). Direct INSERT into candidate pool.    ║
+║          Violates execution contract rules #1, #3, #4, #7, #9.            ║
+║  Revenue validation: STOPPED.                                             ║
+║  Migration: Use tests/contract/test_v1_0_usecase_replay_contract.py       ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+Phase -1: Strict A/B/C → D Layer Reconstruction (DEPRECATED)
+=============================================================
 Rebuilds weak_to_strong_candidate_pool from raw daily bar data
 following the architecture document data flow:
 
