@@ -1,4 +1,10 @@
 """
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  STATUS: FROZEN BASELINE — v1.1c_signal_robustness                         ║
+║  Frozen: 2026-05-19                                                        ║
+║  Result: PASS — 时间/去重/可交易性 全通过                                    ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
 v1.1c_signal_robustness — Robustness checks before v2.0 capital backtest.
 =============================================================================
 1. Time-segmented validation (half-month)

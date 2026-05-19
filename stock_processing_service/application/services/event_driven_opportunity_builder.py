@@ -11,7 +11,7 @@ class EventDrivenOpportunityBuilder:
     structuring, theme matching, weak-to-strong selection, or StockMatchEngine.
     """
 
-    def __init__(self, read_gateway: Any, *, max_stocks_per_theme: int = 5) -> None:
+    def __init__(self, read_gateway: Any, *, max_stocks_per_theme: int = 6) -> None:
         self._read_gateway = read_gateway
         self._max_stocks_per_theme = max(1, int(max_stocks_per_theme))
 
@@ -125,14 +125,17 @@ class EventDrivenOpportunityBuilder:
         )
         cycle_state = str(cycle.get("final_cycle_state") or strong.get("cycle_state") or "").lower()
 
-        event_theme_score = min(max(confidence, 0.0), 1.0) * 20.0
-        theme_mainline_score = 20.0 if identity_confirmed else (10.0 if identity else 0.0)
+        event_theme_score = min(max(confidence, 0.0), 1.0) * 25.0
+        # Phase 4.7: identity exists even unconfirmed gets 15 (was 10)
+        theme_mainline_score = 20.0 if identity_confirmed else (15.0 if identity else 0.0)
         theme_cycle_score = self._cycle_score(cycle_state, bool(cycle.get("final_mainline_alive")))
         jyhf_relation_score = self._relation_score(rank)
         leader_score = 10.0 if is_leader else min(self._float(leaderboard.get("leader_score"), 0.0) / 10.0, 8.0)
         strong_watch_score = min(watch_score / 10.0, 10.0)
         weak_to_strong_score = min(w2s_score / 20.0, 5.0)
         risk_penalty = self._risk_penalty(cycle_state, strong)
+        # Phase 4.7: subject_stock_map presence is itself a valid signal
+        subject_presence_score = 5.0
 
         score = max(
             0.0,
@@ -145,6 +148,7 @@ class EventDrivenOpportunityBuilder:
                 + leader_score
                 + strong_watch_score
                 + weak_to_strong_score
+                + subject_presence_score
                 - risk_penalty,
             ),
         )
@@ -181,6 +185,7 @@ class EventDrivenOpportunityBuilder:
                     "strong_watch_score": round(strong_watch_score, 1),
                     "weak_to_strong_score": round(weak_to_strong_score, 1),
                     "risk_penalty": round(risk_penalty, 1),
+					"subject_presence_score": round(subject_presence_score, 1),
                 },
             },
         }
@@ -197,12 +202,18 @@ class EventDrivenOpportunityBuilder:
 
     @staticmethod
     def _relation_score(rank: int) -> float:
+        # Phase 4.7: more granular rank tiers so even mid-ranked
+        # stocks in subject_stock_map get meaningful bonus.
         if rank <= 1:
             return 20.0
         if rank <= 3:
-            return 16.0
+            return 17.0
         if rank <= 10:
+            return 14.0
+        if rank <= 20:
             return 12.0
+        if rank <= 50:
+            return 10.0
         return 8.0
 
     @staticmethod
@@ -215,9 +226,12 @@ class EventDrivenOpportunityBuilder:
 
     @staticmethod
     def _level(*, score: float, confidence: float, identity_confirmed: bool, is_leader: bool, has_strong: bool) -> str:
-        if score >= 75 and confidence >= 0.75 and identity_confirmed and (is_leader or has_strong):
+        # Phase 4.7: relaxed A-tier (add identity_confirmed as alternative path)
+        # and lowered B-tier (50→60) so stocks without leaderboard/strong_pool
+        # data can still earn B when they have subject_stock_map presence.
+        if score >= 70 and confidence >= 0.70 and (identity_confirmed or is_leader or has_strong):
             return "A"
-        if score >= 60 and confidence >= 0.65:
+        if score >= 50 and confidence >= 0.65:
             return "B"
         return "C"
 
