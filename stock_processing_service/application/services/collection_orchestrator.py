@@ -204,39 +204,14 @@ class CollectionCommandPlanner:
                         label="个股K线位置与形态判断",
                     ),
                     CollectionTaskStep(
-                        key="market_environment_metrics",
-                        runner_key="script.default",
-                        commands=[
-                            CollectionCommand(
-                                cmd=[
-                                    self._python_bin,
-                                    str(self._project_root / "database_service/scripts/build_market_environment_metrics.py"),
-                                    "--trade-date",
-                                    trade_date,
-                                ]
-                            )
-                        ],
-                        label="市场环境指标生成",
+                        key="market_environment_daily",
+                        runner_key="recap.market_environment_daily",
+                        label="新链市场环境生成",
                     ),
                     CollectionTaskStep(
-                        key="market_environment_judgement",
-                        runner_key="script.default",
-                        commands=[
-                            CollectionCommand(
-                                cmd=[
-                                    self._python_bin,
-                                    str(self._project_root / "database_service/scripts/build_market_environment_judgement.py"),
-                                    "--trade-date",
-                                    trade_date,
-                                ]
-                            )
-                        ],
-                        label="市场环境判断",
-                    ),
-                    CollectionTaskStep(
-                        key="theme_leader_candidate",
-                        runner_key="leader_llm.candidate",
-                        label="龙头候选构建",
+                        key="theme_capital_flow_daily",
+                        runner_key="recap.theme_capital_flow_daily",
+                        label="新链题材资金流生成",
                     ),
                     CollectionTaskStep(
                         key="money_flow_enhanced",
@@ -252,21 +227,6 @@ class CollectionCommandPlanner:
                             )
                         ],
                         label="资金行为增强",
-                    ),
-                    CollectionTaskStep(
-                        key="theme_environment_judgement",
-                        runner_key="script.default",
-                        commands=[
-                            CollectionCommand(
-                                cmd=[
-                                    self._python_bin,
-                                    str(self._project_root / "database_service/scripts/build_theme_environment_judgement.py"),
-                                    "--trade-date",
-                                    trade_date,
-                                ]
-                            )
-                        ],
-                        label="板块环境判断",
                     ),
                     CollectionTaskStep(
                         key="abnormal_signal",

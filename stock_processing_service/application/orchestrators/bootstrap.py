@@ -50,6 +50,7 @@ from stock_processing_service.ports.database_gateway_stock_facade import Databas
 
 @dataclass
 class StockProcessingContainer:
+    report_context_gateway: Any
     build_strong_stock_tracking: BuildStrongStockTrackingUseCase
     build_weak_to_strong_candidate: BuildWeakToStrongCandidateUseCase
     build_daily_snapshot: BuildDailySnapshotJob
@@ -89,6 +90,7 @@ def build_container(
     )
 
     return StockProcessingContainer(
+        report_context_gateway=theme_data_gateway,
         build_strong_stock_tracking=build_strong_stock_tracking,
         build_weak_to_strong_candidate=build_weak_to_strong_candidate,
         build_daily_snapshot=BuildDailySnapshotJob(

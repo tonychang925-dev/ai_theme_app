@@ -16,6 +16,9 @@ from stock_processing_service.application.use_cases.build_strong_stock_tracking 
 from stock_processing_service.application.use_cases.build_weak_to_strong_candidate import (
     BuildWeakToStrongCandidateUseCase,
 )
+from stock_processing_service.application.services.new_chain_post_market_report_builder import (
+    NewChainPostMarketReportBuilder,
+)
 from stock_processing_service.contracts.dto import (
     MainlineCycleDTO,
     MainlineIdentityDTO,
@@ -292,6 +295,20 @@ def test_build_post_market_recap_job_strong_watch_pool_flow() -> None:
         assert report["metadata"]["source"] == "stock_processing_service.new_chain"
         assert "theme_environment_judgement" not in str(report)
         assert "theme_leader_candidate" not in str(report)
+        assert [section["heading"] for section in report["sections"]] == [
+            "大盘环境总结",
+            "板块环境总结",
+            "主线与支线",
+            "主线资金流入前10",
+            "周期与动作",
+            "主线迁移监控",
+            "强势股分层",
+            "次日观察清单",
+            "主线股票资金流入前20",
+            "当日异动股与资金行为",
+            "资金行为增强",
+            "龙虎榜",
+        ]
 
         # Idempotency check
         skipped = await job.execute(
@@ -337,6 +354,45 @@ def test_build_post_market_recap_job_does_not_call_legacy_recap_service() -> Non
     )
     for fragment in forbidden_fragments:
         assert fragment not in source
+
+
+def test_new_chain_report_builder_groups_dragon_tiger_by_hot_money_seat() -> None:
+    report = NewChainPostMarketReportBuilder().build(
+        {
+            "trade_date": "2026-05-19",
+            "candidate_count": 1,
+            "candidate_count_formal": 1,
+            "top_candidates": [
+                {
+                    "stock_id": "002000.SZ",
+                    "stock_name": "SampleA",
+                    "subject_key": "ai_chip",
+                    "theme_name": "AI Chip",
+                    "candidate_score": 99,
+                }
+            ],
+            "report_context": {
+                "theme_name_map": {"ai_chip": "AI Chip"},
+                "dragon_tiger": [
+                    {
+                        "stock_id": "002000.SZ",
+                        "stock_name": "SampleA",
+                        "subject_key": "ai_chip",
+                        "theme_name": "AI Chip",
+                        "net_amount": 200000000,
+                        "seat_summary": [
+                            "买入席位 上海分公司 净额 200000000",
+                        ],
+                    }
+                ],
+            },
+        }
+    )
+
+    dragon_section = next(section for section in report["sections"] if section["heading"] == "龙虎榜")
+    assert dragon_section["items"] == [
+        "章盟主系：AI Chip / SampleA(002000) / 买入2.00亿",
+    ]
 
 
 def test_build_strong_stock_tracking_use_case_writes_layer_c_objects() -> None:

@@ -2012,10 +2012,19 @@ class PostgresDatabaseManager(BaseDatabaseManager):
               LIMIT 1
             ),
             (
+              SELECT NULLIF(v.theme_name, '')
+              FROM vw_subject_theme_binding v
+              WHERE v.subject_key = k.subject_key
+                AND NULLIF(v.theme_name, '') IS NOT NULL
+                AND v.theme_name !~ '^[0-9]+$'
+              LIMIT 1
+            ),
+            (
               SELECT NULLIF(sh.subject_name, '')
               FROM subject_history_staging sh
               WHERE sh.subject_key = k.subject_key
                 AND NULLIF(sh.subject_name, '') IS NOT NULL
+                AND sh.subject_name !~ '^[0-9]+$'
                 AND ($2::date IS NULL OR sh.rank_date <= $2::date)
               ORDER BY sh.rank_date DESC
               LIMIT 1
@@ -2355,7 +2364,11 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         eligible AS (
             SELECT
                 r.*,
-                COALESCE(v2.theme_name, r.subject_key) AS theme_name,
+                COALESCE(
+                    NULLIF(CASE WHEN v2.theme_name !~ '^[0-9]+$' THEN v2.theme_name ELSE '' END, ''),
+                    NULLIF(vtb.theme_name, ''),
+                    r.subject_key
+                ) AS theme_name,
                 COALESCE(mr.is_main_theme, FALSE) AS is_main_theme,
                 COALESCE(mr.identity_status, 'observed') AS identity_status,
                 (
@@ -2377,6 +2390,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             LEFT JOIN theme_cycle_judgement_v2 v2
               ON v2.trade_date = $1::date
              AND v2.subject_key = r.subject_key
+            LEFT JOIN vw_subject_theme_binding vtb
+              ON vtb.subject_key = r.subject_key
             LEFT JOIN subject_strength ss
               ON ss.subject_key = r.subject_key
             LEFT JOIN consecutive_boards cb
@@ -2852,7 +2867,13 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 w.stock_id,
                 COALESCE(s.stock_name, w.stock_name) AS stock_name,
                 COALESCE(NULLIF(w.subject_key, ''), s.subject_key) AS subject_key,
-                COALESCE(NULLIF(w.theme_name, ''), NULLIF(v2.theme_name, ''), s.subject_key, w.subject_key) AS theme_name,
+                COALESCE(
+                    NULLIF(CASE WHEN w.theme_name !~ '^[0-9]+$' THEN w.theme_name ELSE '' END, ''),
+                    NULLIF(CASE WHEN v2.theme_name !~ '^[0-9]+$' THEN v2.theme_name ELSE '' END, ''),
+                    NULLIF(vtb.theme_name, ''),
+                    s.subject_key,
+                    w.subject_key
+                ) AS theme_name,
                 COALESCE(s.rank_order, 999) AS rank_order,
                 COALESCE(s.pct_chg, 0) AS pct_chg,
                 COALESCE(s.low_price, 0) AS low_price,
@@ -2892,6 +2913,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             LEFT JOIN theme_cycle_judgement_v2 v2
               ON v2.trade_date = $1::date
              AND v2.subject_key = COALESCE(NULLIF(w.subject_key, ''), s.subject_key)
+            LEFT JOIN vw_subject_theme_binding vtb
+              ON vtb.subject_key = COALESCE(NULLIF(w.subject_key, ''), s.subject_key)
             LEFT JOIN theme_cycle_evidence_daily e
               ON e.trade_date = $1::date
              AND e.subject_key = COALESCE(NULLIF(w.subject_key, ''), s.subject_key)
@@ -2940,6 +2963,401 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         async with self.pool.acquire() as conn:
             rows = await conn.fetch(sql, trade_date)
         return [dict(r) for r in rows]
+
+    async def get_post_market_report_context(
+        self,
+        trade_date,
+        subject_keys: List[str] | None = None,
+        stock_ids: List[str] | None = None,
+    ) -> Dict[str, Any]:
+        """读取新链盘后报告装配所需事实，不调用旧 recap service。"""
+        subjects = sorted({str(x).strip() for x in (subject_keys or []) if str(x).strip()})
+        stocks = sorted(
+            {
+                value
+                for x in (stock_ids or [])
+                for value in (str(x).strip(), str(x).strip().split(".")[0])
+                if value
+            }
+        )
+        theme_name_map = await self.resolve_theme_name_map(subjects, trade_date) if subjects else {}
+        sql_market = """
+        WITH stock_base AS (
+            SELECT DISTINCT ON (split_part(stock_id, '.', 1))
+                split_part(stock_id, '.', 1) AS stock_code,
+                COALESCE(pct_chg, 0) AS pct_chg,
+                COALESCE(limit_up, FALSE) AS limit_up
+            FROM subject_stock_daily_snapshot
+            WHERE trade_date = $1::date
+            ORDER BY split_part(stock_id, '.', 1), ABS(COALESCE(pct_chg, 0)) DESC
+        ),
+        stock_stats AS (
+            SELECT
+                COUNT(*) AS stock_count,
+                COUNT(*) FILTER (WHERE pct_chg > 0) AS up_count,
+                COUNT(*) FILTER (WHERE pct_chg < 0) AS down_count,
+                COUNT(*) FILTER (WHERE limit_up OR pct_chg >= 9.8) AS limit_up_count,
+                COUNT(*) FILTER (WHERE pct_chg <= -9.8) AS limit_down_count,
+                COUNT(*) FILTER (WHERE pct_chg >= 5) AS strong_count,
+                COUNT(*) FILTER (WHERE pct_chg <= -5) AS weak_count
+            FROM stock_base
+        ),
+        mainline_stats AS (
+            SELECT
+                COUNT(*) FILTER (
+                    WHERE COALESCE(msd.is_mainline, FALSE)
+                      AND COALESCE(msd.state, v2.final_cycle_state, '') <> 'fade_confirmed'
+                ) AS alive_mainline_count,
+                COUNT(*) FILTER (WHERE COALESCE(v2.fade_watch, FALSE)) AS fade_watch_count,
+                COUNT(*) FILTER (WHERE COALESCE(v2.fade_confirmed, FALSE)) AS fade_confirmed_count,
+                AVG(COALESCE(msd.mainline_strength_score, v2.mainline_strength_score, 0)) AS avg_mainline_strength
+            FROM theme_cycle_judgement_v2 v2
+            LEFT JOIN mainline_state_daily msd
+              ON msd.trade_date = v2.trade_date
+             AND msd.subject_key = v2.subject_key
+            WHERE v2.trade_date = $1::date
+        ),
+        pool_stats AS (
+            SELECT
+                (
+                    SELECT COUNT(*)
+                    FROM strong_stock_watch_pool
+                    WHERE last_trade_date = $1::date
+                      AND COALESCE(watch_status, '') <> 'removed'
+                ) AS strong_watch_count,
+                (SELECT COUNT(*) FROM weak_to_strong_candidate_pool WHERE trade_date = $1::date) AS w2s_candidate_count
+        ),
+        scored AS (
+            SELECT
+                $1::date AS trade_date,
+                s.*,
+                m.alive_mainline_count,
+                m.fade_watch_count,
+                m.fade_confirmed_count,
+                COALESCE(m.avg_mainline_strength, 0) AS avg_mainline_strength,
+                p.strong_watch_count,
+                p.w2s_candidate_count,
+                CASE WHEN s.stock_count > 0 THEN s.up_count::numeric / s.stock_count ELSE 0 END AS up_ratio,
+                CASE WHEN s.stock_count > 0 THEN s.limit_up_count::numeric / s.stock_count ELSE 0 END AS limit_up_ratio,
+                CASE WHEN s.stock_count > 0 THEN s.limit_down_count::numeric / s.stock_count ELSE 0 END AS limit_down_ratio
+            FROM stock_stats s
+            CROSS JOIN mainline_stats m
+            CROSS JOIN pool_stats p
+        )
+        SELECT
+            trade_date,
+            ROUND(
+                LEAST(
+                    100,
+                    GREATEST(
+                        0,
+                        up_ratio * 35
+                        + LEAST(limit_up_count, 80) * 0.35
+                        + LEAST(alive_mainline_count, 12) * 2.2
+                        + LEAST(strong_watch_count, 200) * 0.06
+                        + avg_mainline_strength * 0.25
+                        - limit_down_count * 0.8
+                        - fade_confirmed_count * 4
+                    )
+                ),
+                4
+            ) AS market_health_score,
+            CASE
+                WHEN up_ratio >= 0.55 AND limit_up_count >= 50 THEN '进攻'
+                WHEN up_ratio >= 0.48 AND alive_mainline_count > 0 THEN '修复'
+                WHEN fade_confirmed_count > 0 OR limit_down_count >= 20 THEN '退潮'
+                ELSE '分歧'
+            END AS market_bias,
+            CASE
+                WHEN up_ratio >= 0.55 THEN '上涨家数占优'
+                WHEN up_ratio >= 0.45 THEN '涨跌接近平衡'
+                ELSE '下跌家数占优'
+            END AS breadth_status,
+            CASE
+                WHEN limit_up_count >= 60 AND strong_count >= weak_count THEN '短线情绪强'
+                WHEN limit_up_count >= 30 THEN '短线情绪修复'
+                ELSE '短线情绪谨慎'
+            END AS short_term_sentiment_status,
+            CASE
+                WHEN alive_mainline_count >= 3 AND strong_watch_count >= 80 THEN '接力生态活跃'
+                WHEN alive_mainline_count >= 1 THEN '接力生态可观察'
+                ELSE '接力生态偏弱'
+            END AS relay_sentiment_status,
+            CASE
+                WHEN fade_confirmed_count > 0 THEN '退潮确认'
+                WHEN fade_watch_count > 0 OR limit_down_count >= 10 THEN '分歧观察'
+                ELSE '未见明显退潮'
+            END AS intraday_fade_status,
+            CASE
+                WHEN up_ratio >= 0.55 AND alive_mainline_count > 0 THEN '主做主线'
+                WHEN up_ratio >= 0.45 THEN '精选弱转强'
+                ELSE '防守观察'
+            END AS action_bias,
+            CONCAT(
+                '新链市场环境：上涨 ', up_count, '，下跌 ', down_count,
+                '，涨停 ', limit_up_count, '，跌停 ', limit_down_count,
+                '，存活主线 ', alive_mainline_count,
+                '，强势池 ', strong_watch_count,
+                '，弱转强候选 ', w2s_candidate_count
+            ) AS conclusion,
+            jsonb_build_array(
+                CONCAT('advance_decline=', up_count, '/', down_count),
+                CONCAT('limit_up_down=', limit_up_count, '/', limit_down_count),
+                CONCAT('alive_mainlines=', alive_mainline_count),
+                CONCAT('strong_watch_pool=', strong_watch_count),
+                CONCAT('w2s_candidates=', w2s_candidate_count)
+            ) AS evidence,
+            'stock_processing_service.market_environment_daily' AS source_type,
+            'market_environment_daily.v1.new_chain' AS source_version,
+            'market_environment_daily.v1.new_chain' AS rule_version
+        FROM scored
+        """
+        sql_cycles = """
+        SELECT
+            v2.subject_key,
+            COALESCE(NULLIF(CASE WHEN v2.theme_name !~ '^[0-9]+$' THEN v2.theme_name ELSE '' END, ''), vtb.theme_name, v2.subject_key) AS theme_name,
+            v2.final_cycle_state,
+            v2.final_mainline_alive,
+            v2.fade_watch,
+            v2.fade_confirmed,
+            v2.mainline_strength_score,
+            v2.fade_risk_score,
+            msd.state AS mainline_state,
+            msd.mainline_strength_score AS state_strength_score
+        FROM theme_cycle_judgement_v2 v2
+        LEFT JOIN mainline_state_daily msd
+          ON msd.trade_date = v2.trade_date AND msd.subject_key = v2.subject_key
+        LEFT JOIN vw_subject_theme_binding vtb
+          ON vtb.subject_key = v2.subject_key
+        WHERE v2.trade_date = $1::date
+          AND ($2::text[] IS NULL OR v2.subject_key = ANY($2::text[]))
+        ORDER BY COALESCE(msd.mainline_strength_score, v2.mainline_strength_score, 0) DESC
+        """
+        sql_stock_facts = """
+        SELECT
+            s.subject_key,
+            COALESCE(vtb.theme_name, s.subject_key) AS theme_name,
+            s.stock_id,
+            s.stock_name,
+            s.rank_order,
+            s.pct_chg,
+            s.close_price,
+            s.limit_up,
+            s.is_leader,
+            CASE
+                WHEN jsonb_typeof(s.raw_json) = 'array' AND jsonb_array_length(s.raw_json) > 17
+                THEN NULLIF(s.raw_json->>17, '')::numeric
+                ELSE NULL
+            END AS volume_ratio,
+            CASE
+                WHEN jsonb_typeof(s.raw_json) = 'array' AND jsonb_array_length(s.raw_json) > 18
+                THEN NULLIF(s.raw_json->>18, '')::numeric
+                ELSE NULL
+            END AS turnover_rate,
+            CASE
+                WHEN jsonb_typeof(s.raw_json) = 'array' AND jsonb_array_length(s.raw_json) > 20
+                THEN NULLIF(s.raw_json->>20, '')::integer
+                ELSE NULL
+            END AS current_flag,
+            p.position_label,
+            p.ma_alignment_status,
+            p.trend_strength_score,
+            x.pattern_labels,
+            x.volume_pattern_status,
+            x.breakout_status,
+            x.pullback_status,
+            x.risk_pattern_status,
+            m.role_label,
+            m.role_enhanced,
+            m.composite_score AS money_composite_score,
+            m.money_flow_score,
+            m.money_flow_tier,
+            m.main_net_inflow,
+            m.dragon_tiger_net_amount,
+            m.institution_seat_count,
+            m.explanation AS money_explanation,
+            a.abnormal_composite_score,
+            a.abnormal_labels,
+            a.conclusion AS abnormal_conclusion,
+            a.volume_ratio_to_ma50,
+            a.main_net_inflow AS abnormal_main_net_inflow,
+            a.main_net_inflow_rank_in_theme,
+            a.hot_money_buy_names,
+            a.institution_net_buy
+        FROM subject_stock_daily_snapshot s
+        LEFT JOIN vw_subject_theme_binding vtb
+          ON vtb.subject_key = s.subject_key
+        LEFT JOIN stock_position_judgement p
+          ON p.trade_date = s.trade_date AND split_part(p.stock_id, '.', 1) = split_part(s.stock_id, '.', 1)
+        LEFT JOIN stock_pattern_judgement x
+          ON x.trade_date = s.trade_date AND split_part(x.stock_id, '.', 1) = split_part(s.stock_id, '.', 1)
+        LEFT JOIN money_flow_enhanced m
+          ON m.trade_date = s.trade_date AND m.subject_key = s.subject_key AND split_part(m.stock_id, '.', 1) = split_part(s.stock_id, '.', 1)
+        LEFT JOIN stock_abnormal_signal a
+          ON a.trade_date = s.trade_date AND a.subject_key = s.subject_key AND split_part(a.stock_id, '.', 1) = split_part(s.stock_id, '.', 1)
+        WHERE s.trade_date = $1::date
+          AND ($2::text[] IS NULL OR s.subject_key = ANY($2::text[]))
+          AND ($3::text[] IS NULL OR s.stock_id = ANY($3::text[]) OR split_part(s.stock_id, '.', 1) = ANY($3::text[]))
+        ORDER BY s.subject_key, COALESCE(s.rank_order, 999), COALESCE(s.pct_chg, 0) DESC
+        """
+        sql_money = """
+        SELECT m.*, COALESCE(vtb.theme_name, m.theme_name, m.subject_key) AS resolved_theme_name
+        FROM money_flow_enhanced m
+        LEFT JOIN vw_subject_theme_binding vtb ON vtb.subject_key = m.subject_key
+        WHERE m.trade_date = $1::date
+          AND ($2::text[] IS NULL OR m.subject_key = ANY($2::text[]))
+        ORDER BY COALESCE(m.money_flow_score, 0) DESC, COALESCE(m.main_net_inflow, 0) DESC
+        LIMIT 50
+        """
+        sql_theme_capital = """
+        WITH mainline AS MATERIALIZED (
+            SELECT
+                v2.trade_date,
+                v2.subject_key,
+                COALESCE(
+                    NULLIF(CASE WHEN v2.theme_name !~ '^[0-9]+$' THEN v2.theme_name ELSE '' END, ''),
+                    NULLIF(vtb.theme_name, ''),
+                    v2.subject_key
+                ) AS theme_name,
+                COALESCE(msd.state, v2.final_cycle_state) AS final_cycle_state,
+                COALESCE(msd.mainline_strength_score, v2.mainline_strength_score, 0) AS mainline_strength_score,
+                COALESCE(msd.is_mainline, FALSE) AS is_mainline
+            FROM theme_cycle_judgement_v2 v2
+            LEFT JOIN mainline_state_daily msd
+              ON msd.trade_date = v2.trade_date
+             AND msd.subject_key = v2.subject_key
+            LEFT JOIN vw_subject_theme_binding vtb
+              ON vtb.subject_key = v2.subject_key
+            WHERE v2.trade_date = $1::date
+              AND (
+                $2::text[] IS NULL
+                OR v2.subject_key = ANY($2::text[])
+                OR COALESCE(msd.is_mainline, FALSE) = TRUE
+              )
+              AND COALESCE(msd.state, v2.final_cycle_state, '') <> 'fade_confirmed'
+        ),
+        snapshot AS MATERIALIZED (
+            SELECT
+                subject_key,
+                stock_id,
+                rank_order,
+                COALESCE(is_leader, FALSE) AS is_leader,
+                CASE
+                    WHEN jsonb_typeof(raw_json) = 'array'
+                     AND jsonb_array_length(raw_json) > 35
+                     AND NULLIF(raw_json->>35, '') ~ '^-?[0-9]+(\\.[0-9]+)?$'
+                    THEN (raw_json->>35)::numeric
+                    ELSE 0
+                END AS main_net_inflow
+            FROM subject_stock_daily_snapshot
+            WHERE trade_date = $1::date
+        ),
+        base AS (
+            SELECT
+                m.subject_key,
+                m.theme_name,
+                m.final_cycle_state,
+                m.mainline_strength_score,
+                s.stock_id,
+                s.rank_order,
+                s.is_leader,
+                s.main_net_inflow
+            FROM mainline m
+            JOIN snapshot s
+              ON s.subject_key = m.subject_key
+        )
+        SELECT
+            subject_key,
+            theme_name,
+            final_cycle_state,
+            AVG(mainline_strength_score) AS mainline_strength_score,
+            SUM(main_net_inflow) AS main_net_inflow_sum,
+            AVG(main_net_inflow) AS main_net_inflow_avg,
+            SUM(CASE WHEN main_net_inflow > 0 THEN 1 ELSE 0 END) AS positive_inflow_stock_count,
+            SUM(CASE WHEN main_net_inflow < 0 THEN 1 ELSE 0 END) AS negative_inflow_stock_count,
+            COALESCE(MAX(CASE WHEN is_leader THEN main_net_inflow END), 0) AS leader_main_net_inflow,
+            SUM(CASE WHEN rank_order <= 3 THEN main_net_inflow ELSE 0 END) AS top3_main_net_inflow_sum,
+            COUNT(*) AS member_count,
+            ROUND(
+                LEAST(
+                    100,
+                    GREATEST(
+                        0,
+                        AVG(mainline_strength_score) * 0.45
+                        + LEAST(SUM(CASE WHEN main_net_inflow > 0 THEN 1 ELSE 0 END), 30) * 1.2
+                        + CASE WHEN SUM(main_net_inflow) > 0 THEN 20 ELSE 0 END
+                        + CASE WHEN COALESCE(MAX(CASE WHEN is_leader THEN main_net_inflow END), 0) > 0 THEN 10 ELSE 0 END
+                    )
+                ),
+                4
+            ) AS capital_focus_score,
+            'stock_processing_service.theme_capital_flow_daily' AS source_type,
+            'theme_capital_flow_daily.v1.new_chain' AS source_version,
+            'theme_capital_flow_daily.v1.new_chain' AS rule_version
+        FROM base
+        GROUP BY subject_key, theme_name, final_cycle_state
+        HAVING COUNT(*) > 0
+        ORDER BY
+            AVG(mainline_strength_score) DESC,
+            SUM(main_net_inflow) DESC,
+            theme_name ASC
+        LIMIT 50
+        """
+        sql_abnormal = """
+        SELECT a.*, COALESCE(vtb.theme_name, a.theme_name, a.subject_key) AS resolved_theme_name
+        FROM stock_abnormal_signal a
+        LEFT JOIN vw_subject_theme_binding vtb ON vtb.subject_key = a.subject_key
+        WHERE a.trade_date = $1::date
+        ORDER BY COALESCE(a.abnormal_composite_score, 0) DESC
+        LIMIT 50
+        """
+        sql_dragon = """
+        WITH linked AS (
+            SELECT DISTINCT ON (d.id)
+                d.*,
+                s.subject_key,
+                COALESCE(vtb.theme_name, s.subject_key, '') AS theme_name,
+                s.rank_order,
+                s.is_leader
+            FROM dragon_tiger_object d
+            LEFT JOIN subject_stock_daily_snapshot s
+              ON s.trade_date = d.trade_date
+             AND split_part(s.stock_id, '.', 1) = split_part(d.stock_id, '.', 1)
+            LEFT JOIN vw_subject_theme_binding vtb
+              ON vtb.subject_key = s.subject_key
+            WHERE d.trade_date = $1::date
+            ORDER BY
+                d.id,
+                CASE WHEN COALESCE(s.is_leader, FALSE) THEN 0 ELSE 1 END,
+                COALESCE(s.rank_order, 9999),
+                ABS(COALESCE(d.net_amount, 0)) DESC
+        )
+        SELECT *
+        FROM linked
+        ORDER BY
+            CASE WHEN COALESCE(is_leader, FALSE) THEN 0 ELSE 1 END,
+            ABS(COALESCE(net_amount, 0)) DESC,
+            COALESCE(rank_order, 9999)
+        LIMIT 120
+        """
+        async with self.pool.acquire() as conn:
+            market = await conn.fetchrow(sql_market, trade_date)
+            cycles = await conn.fetch(sql_cycles, trade_date, subjects if subjects else None)
+            stock_facts = await conn.fetch(sql_stock_facts, trade_date, subjects if subjects else None, stocks if stocks else None)
+            money = await conn.fetch(sql_money, trade_date, subjects if subjects else None)
+            theme_capital = await conn.fetch(sql_theme_capital, trade_date, subjects if subjects else None)
+            abnormal = await conn.fetch(sql_abnormal, trade_date)
+            dragon = await conn.fetch(sql_dragon, trade_date)
+        return {
+            "theme_name_map": theme_name_map,
+            "market": dict(market) if market else None,
+            "cycles": [dict(r) for r in cycles],
+            "theme_capital_flow": [dict(r) for r in theme_capital],
+            "stock_facts": [dict(r) for r in stock_facts],
+            "money_flow": [dict(r) for r in money],
+            "abnormal_signals": [dict(r) for r in abnormal],
+            "dragon_tiger": [dict(r) for r in dragon],
+        }
 
     async def get_theme_stock_leaderboard_by_trade_date(
         self,
