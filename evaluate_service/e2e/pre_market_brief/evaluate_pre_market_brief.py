@@ -19,6 +19,18 @@ ALIAS_MAP: dict[str, list[str]] = {
     "可控核聚变": ["可控核聚变", "核聚变", "人造太阳"],
     "对日制裁": ["对日制裁", "中日关系", "出口管制", "反制日本"],
     "稀土永磁": ["稀土永磁", "稀土", "中重稀土", "稀土出口管制"],
+    "卫星互联": ["卫星互联", "卫星互联网", "低轨卫星", "商业航天", "SpaceX", "星链"],
+    "液冷数据中心": ["液冷数据中心", "液冷", "数据中心液冷", "服务器液冷"],
+    "光刻胶": ["光刻胶", "半导体光刻胶", "KrF光刻胶", "EUV光刻胶"],
+    "AI智能体Manus": ["AI智能体Manus", "Manus", "AI智能体", "智能体"],
+    # ── Phase 4.6 P0-C2: 海洋经济 neighbor map ──
+    # 深海经济 is a valid sub-domain of 海洋经济 (deep-sea economy ⊆ marine economy).
+    # Events about broad marine economy policy/planning may match to 深海经济
+    # because the two subjects share "海洋" + "经济" semantics.
+    "海洋经济": [
+        "海洋经济", "深海经济", "海工装备", "海洋工程",
+        "航运", "港口", "海洋牧场", "海上风电",
+    ],
 }
 
 COMMERCIAL_SPACE_TERMS = {

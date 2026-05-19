@@ -583,6 +583,8 @@ class HistoricalBacktestReadPorts:
                    COALESCE(c.prior7_strong_days, 0) as prior7_strong_days,
                    COALESCE(c.weak_type, '') as weak_type,
                    COALESCE(c.weak_type_quality, '') as weak_type_quality,
+                   COALESCE(c.support_type, '') as c_support_type,
+                   COALESCE(c.support_strength, 0) as c_support_strength,
                    b.leader_role_proxy, b.is_leader as b_is_leader, b.rank_order as b_rank_order
             FROM strong_watch_pool_scored_rebuild p
             LEFT JOIN stock_structure_daily_feature c ON p.stock_id=c.stock_id AND p.trade_date=c.trade_date
@@ -687,15 +689,18 @@ class HistoricalBacktestReadPorts:
                 "watch_pool_entry_type": str(r.get('pool_entry_type') or 'observe_only'),
                 "watch_labels_json": json.dumps({
                     "strong_grade": str(r.get('strong_grade') or ''),
-                    "support_type": str(r.get('support_type') or ''),
-                    "support_score": float(r.get('support_strength') or 0),
+                    # v1.1a.2: C-layer support as primary; pool as fallback
+                    "support_type": str(r.get('c_support_type') or r.get('support_type') or ''),
+                    "support_score": float(r.get('c_support_strength') or r.get('support_strength') or 0),
+                    "support_source": "c_layer" if r.get('c_support_type') else ("pool" if r.get('support_type') else "none"),
                     "hard_gate_pass_count": int(r.get('hard_gate_pass_count') or 0),
                     "is_leader": is_leader,
                     "rank_order": rank_order,
                     "rank_order_source": rank_order_source,
                 }),
-                "support_type": str(r.get('support_type') or ''),
-                "support_strength": str(r.get('support_strength') or '0'),
+                # v1.1a.2: C-layer support data as primary source; pool data as fallback
+                "support_type": str(r.get('c_support_type') or r.get('support_type') or ''),
+                "support_strength": str(r.get('c_support_strength') or r.get('support_strength') or '0'),
                 "cycle_state": str(r.get('cycle_state') or ''),
                 "weak_type": str(r.get('weak_type') or ''),
                 "weak_type_quality": str(r.get('weak_type_quality') or ''),
