@@ -35,6 +35,7 @@
     "custom-commands": 11
   },
   "promptQueueUseCount": 287,
+  "showExpandedTodos": true,
   "cachedGrowthBookFeatures": {
     "tengu_kestrel_arch": "OFF",
     "tengu_amber_prism": false,

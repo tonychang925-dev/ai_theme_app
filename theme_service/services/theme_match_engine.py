@@ -379,6 +379,11 @@ def _build_event_match_profile(request: ThemeMatchRequest) -> EventMatchProfile:
     for pattern in PRODUCT_ANCHOR_PATTERNS:
         product_anchors.extend(re.findall(pattern, raw_text, flags=re.IGNORECASE))
     product_anchors = _filter_generic_terms(product_anchors)
+    if isinstance(evidence, str):
+        try:
+            evidence = json.loads(evidence)
+        except Exception:
+            evidence = {}
     technology_anchors = _filter_generic_terms(
         _normalize_list(evidence.get("tech_phrases")) + _normalize_list(evidence.get("core_concepts"))
     )
