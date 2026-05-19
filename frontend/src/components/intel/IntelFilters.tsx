@@ -78,7 +78,7 @@ export function IntelFilters({
       <button
         type="button"
         className="recap-filter-button"
-        onClick={() => navigateTo(`/recap?date=${recapDates.preMarket}&report_type=pre_market`)}
+        onClick={() => navigateTo(`/pre-market-brief?trade_date=${recapDates.preMarket}`)}
       >
         盘前必读
       </button>

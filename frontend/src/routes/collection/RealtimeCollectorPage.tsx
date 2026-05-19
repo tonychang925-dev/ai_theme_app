@@ -344,7 +344,7 @@ export function RealtimeCollectorPage() {
       }
     }
     return [...output, ...parts];
-  }, [output, jyhfLogs, logs, jyhfCollectorRunning, jyhfStatus?.service_running]);
+  }, [output, jyhfLogs, stackStatus, jyhfCollectorRunning, jyhfStatus?.service_running]);
 
   return (
     <div className="workspace-page">
@@ -576,9 +576,20 @@ export function RealtimeCollectorPage() {
         </section>
 
         <section className="workspace-card">
-          <span className="metric-label section-title">状态脚本原始输出</span>
+          <span className="metric-label section-title">新链组件状态</span>
           <pre className="collection-debug-json">
-            {statusResult ? `${statusResult.stdout}\n${statusResult.stderr}` : "暂无输出"}
+            {stackStatus
+              ? JSON.stringify({
+                  running: stackStatus.running,
+                  run_id: stackStatus.run_id,
+                  started_at: stackStatus.started_at,
+                  profile: `${stackStatus.profile_version}/${stackStatus.profile_status}`,
+                  raw_news_pid: stackStatus.raw_news_pid,
+                  decision_pid: stackStatus.decision_pid,
+                  pending_count: stackStatus.pending_count,
+                  dead_letter_count: stackStatus.dead_letter_count,
+                }, null, 2)
+              : "暂无状态"}
           </pre>
         </section>
       </main>
