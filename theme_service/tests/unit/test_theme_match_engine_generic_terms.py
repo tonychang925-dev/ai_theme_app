@@ -672,3 +672,72 @@ def test_llm_accept_role_guard_blocked_candidate_has_no_matched_subject(monkeypa
     assert result.decision == "HUMAN_REVIEW"
     assert result.reason_code == "llm_accept_role_guard_blocked"
     assert result.matched_subject_key == ""
+
+
+# ── Phase 4.6 P0-C1: AR glasses product-anchor protection ──────────
+
+
+def test_product_anchor_ar_event_survives_role_guard():
+    """AR智能眼镜论坛+鸿海+深圳 → "智能眼镜" is product_anchor, protects from role_guard."""
+    from theme_service.services.theme_match_engine import (
+        _is_product_anchor_term,
+        _classify_hit_term_role,
+    )
+    event = "AI智能眼镜高峰论坛在深圳举办，鸿海与Porotech宣布合作进军AR眼镜市场"
+
+    # Product anchors
+    assert _is_product_anchor_term("智能眼镜", event) is True
+    assert _is_product_anchor_term("AI智能眼镜", event) is True
+    assert _is_product_anchor_term("眼镜论坛", event) is True
+
+    # These remain blocking or domain roles — product_anchor only protects AR terms
+    assert _is_product_anchor_term("深圳", event) is False
+    assert _is_product_anchor_term("鸿海", event) is False
+    assert _is_product_anchor_term("论坛", event) is False
+
+    # Role classification: product_anchor beats blocking roles
+    assert _classify_hit_term_role("智能眼镜", event, None, "object_hits", {"论坛", "深圳"}) == "product_anchor"
+    assert _classify_hit_term_role("深圳", event, None, "object_hits", {"论坛", "深圳"}) == "support"  # no_anchor
+
+    # With no_anchor_terms but product_anchor — still gets product_anchor role
+    assert _classify_hit_term_role("AR眼镜", event, None, "profile_anchor_hits", {"论坛", "AR"}) == "product_anchor"
+
+
+def test_product_anchor_bare_glasses_context_markers():
+    """Bare '眼镜' only counts as product_anchor with AR/智能/manufacturer context."""
+    from theme_service.services.theme_match_engine import _is_product_anchor_term
+
+    # Positive: context markers present
+    assert _is_product_anchor_term("眼镜", "Meta与雷朋打造Ray-Ban Meta在社交网站走红") is True
+    assert _is_product_anchor_term("眼镜", "小米已开发出一款AI眼镜并将尽快推向市场") is True
+    assert _is_product_anchor_term("眼镜", "苹果重启其增强现实AR眼镜计划") is True
+    assert _is_product_anchor_term("眼镜", "三星、高通、谷歌强强联手研发智能眼镜") is True
+    assert _is_product_anchor_term("眼镜", "华为申请智能眼镜专利") is True
+
+    # Negative: no AR/manufacturer context
+    assert _is_product_anchor_term("眼镜", "今天天气很好适合戴太阳眼镜出门") is False
+    assert _is_product_anchor_term("眼镜", "参展商展示新款普通眼镜") is False
+
+
+def test_product_anchor_not_confused_with_qualcomm_or_location():
+    """高通/三星/深圳/合作 are NOT product anchors even in AR context."""
+    from theme_service.services.theme_match_engine import _is_product_anchor_term
+
+    event = "三星、谷歌、高通强强联手，正研发混合现实智能眼镜，在深圳举办合作论坛"
+    assert _is_product_anchor_term("智能眼镜", event) is True
+    assert _is_product_anchor_term("高通", event) is False  # pure company name
+    assert _is_product_anchor_term("深圳", event) is False  # location
+    assert _is_product_anchor_term("合作", event) is False  # generic
+    assert _is_product_anchor_term("论坛", event) is False  # generic
+
+
+def test_product_anchor_all_compound_patterns_detected():
+    """All AR_GLASS_PRODUCT_ANCHOR_PATTERNS are recognized."""
+    from theme_service.services.theme_match_engine import _is_product_anchor_term
+
+    for pattern in ["AI智能眼镜", "AR眼镜", "智能眼镜", "XR眼镜", "AI眼镜",
+                     "AI拍摄眼镜", "AR骑行镜", "眼镜计划", "眼镜产品",
+                     "眼镜合作", "眼镜论坛", "增强现实眼镜", "智能AI眼镜"]:
+        event = f"{pattern}发布会在北京举行"
+        assert _is_product_anchor_term(pattern, event) is True, \
+            f"Pattern '{pattern}' should be product_anchor"

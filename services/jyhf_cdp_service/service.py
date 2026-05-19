@@ -16,6 +16,7 @@ from services.jyhf_cdp_service.normalizer import JyhfEventNormalizer
 from services.jyhf_cdp_service.schemas import CollectorStatus, RawJyhfCdpEvent
 from services.jyhf_cdp_service.sinks import RawEventJsonlSink
 from services.jyhf_cdp_service.state import DedupStore, StatusStore
+from services.jyhf_cdp_service.token_extractor import TokenExtractor
 
 
 CN_TZ = ZoneInfo("Asia/Shanghai")
@@ -33,6 +34,7 @@ class JyhfCdpCollectorService:
         self._sink = RawEventJsonlSink(config.raw_event_dir)
         self._intel_pusher = IntelPusher(config, logger) if config.allow_push_intel else None
         self._db_sink = DatabaseSink(config, logger) if config.allow_push_db else None
+        self._token_extractor = TokenExtractor()
         self._task: asyncio.Task | None = None
         self._stop_event = asyncio.Event()
         self._lifecycle_lock = asyncio.Lock()
@@ -135,8 +137,24 @@ class JyhfCdpCollectorService:
         cdp = CDPClient(self._config.cdp_port)
         cdp.connect()
         try:
+            # Phase 1: inject network hooks BEFORE navigation so that
+            # the API calls triggered by prepare()/read() are intercepted.
+            # The JYHF app stores the JWT token in JS memory only
+            # (not localStorage/sessionStorage), so network interception
+            # is the primary extraction method.
+            try:
+                self._token_extractor.inject_hooks(cdp)
+            except Exception:
+                pass  # Hook injection failure must never block event capture
+
             self._extractor.prepare(cdp)
             raw_events, feed_date, body_text = self._extractor.read(cdp)
+
+            # Phase 2: after navigation triggered API calls, read captured tokens
+            try:
+                self._token_extractor.read_captured_tokens(cdp)
+            except Exception:
+                pass
         except PrepareRetryError:
             self._logger.warning("prepare not ready, will retry next cycle")
             return

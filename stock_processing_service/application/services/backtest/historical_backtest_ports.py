@@ -158,11 +158,20 @@ class HistoricalBacktestReadPorts:
         return result
 
     # ── A-layer: Mainline Identity / Cycle / Evidence ──
+    # v1.1a: Use 5-day lookback for A-layer data since subject_daily_feature
+    # only covers ~18 subjects per day but data persists across dates.
+
     async def get_mainline_identity_by_subject_keys(self, subject_keys: list[str], trade_date: date) -> list[MainlineIdentityDTO]:
         if not subject_keys: return []
+        lookback_start = trade_date - timedelta(days=10)  # ~5 trading days
         rows = await self._c.execute_query(
-            "SELECT * FROM subject_daily_feature WHERE trade_date=$1 AND subject_key=ANY($2) AND rule_version='subject_feature_from_rank_v0.1'",
-            (trade_date, subject_keys))
+            """SELECT DISTINCT ON (subject_key) *
+               FROM subject_daily_feature
+               WHERE trade_date >= $1 AND trade_date <= $2
+               AND subject_key=ANY($3)
+               AND rule_version='subject_feature_from_rank_v0.1'
+               ORDER BY subject_key, trade_date DESC""",
+            (lookback_start, trade_date, subject_keys))
         return [MainlineIdentityDTO(
             subject_key=str(r['subject_key']), identity_status='confirmed' if r.get('is_mainline_proxy') else 'observed',
             is_main_theme=bool(r.get('is_mainline_proxy')), rule_version='subject_feature_from_rank_v0.1')
@@ -170,9 +179,15 @@ class HistoricalBacktestReadPorts:
 
     async def get_mainline_cycle_by_subject_keys(self, subject_keys: list[str], trade_date: date) -> list[MainlineCycleDTO]:
         if not subject_keys: return []
+        lookback_start = trade_date - timedelta(days=10)  # ~5 trading days
         rows = await self._c.execute_query(
-            "SELECT * FROM subject_daily_feature WHERE trade_date=$1 AND subject_key=ANY($2) AND rule_version='subject_feature_from_rank_v0.1'",
-            (trade_date, subject_keys))
+            """SELECT DISTINCT ON (subject_key) *
+               FROM subject_daily_feature
+               WHERE trade_date >= $1 AND trade_date <= $2
+               AND subject_key=ANY($3)
+               AND rule_version='subject_feature_from_rank_v0.1'
+               ORDER BY subject_key, trade_date DESC""",
+            (lookback_start, trade_date, subject_keys))
         return [MainlineCycleDTO(
             trade_date=trade_date, subject_key=str(r['subject_key']),
             final_cycle_state=str(r.get('cycle_state','unknown')),
@@ -234,11 +249,21 @@ class HistoricalBacktestReadPorts:
             (trade_date,))
         after_prior7 = p7_rows[0]['n'] if p7_rows else 0
 
-        # Step 2: Batch-load A-layer subject keys for this trade_date (P1 fix)
+        # Step 2: Batch-load A-layer subject keys with lookback window (v1.1a fix).
+        # subject_daily_feature only covers ~18 subjects per day. Use a 5-day rolling window
+        # to capture subjects that have A-layer data on nearby trading days.
+        a_layer_lookback_start = trade_date - timedelta(days=10)  # ~5 trading days
         a_layer_rows = await self._c.execute_query(
+            """SELECT DISTINCT subject_key FROM subject_daily_feature
+               WHERE trade_date >= $1 AND trade_date <= $2
+               AND rule_version='subject_feature_from_rank_v0.1'""",
+            (a_layer_lookback_start, trade_date))
+        a_layer_subjects: set[str] = {str(r['subject_key']) for r in a_layer_rows}
+        # Also load exact-date subjects for source_trace purposes
+        a_layer_exact_rows = await self._c.execute_query(
             "SELECT DISTINCT subject_key FROM subject_daily_feature WHERE trade_date=$1 AND rule_version='subject_feature_from_rank_v0.1'",
             (trade_date,))
-        a_layer_subjects: set[str] = {str(r['subject_key']) for r in a_layer_rows}
+        a_layer_exact_set: set[str] = {str(r['subject_key']) for r in a_layer_exact_rows}
 
         # Step 3: Load board stats for this date (to populate subject counts in seed rows)
         board_stats = await self.get_subject_board_stats(trade_date)
@@ -249,6 +274,7 @@ class HistoricalBacktestReadPorts:
         seed_rows = []
         after_subject_key = 0
         after_a_layer = 0
+        after_a_layer_exact = 0
 
         for r in rows:
             subject_key = str(r.get('subject_key') or '').strip()
@@ -256,10 +282,12 @@ class HistoricalBacktestReadPorts:
                 continue
             after_subject_key += 1
 
-            # Batched A-layer check (no per-row SQL)
+            # A-layer check with lookback (no per-row SQL)
             if subject_key not in a_layer_subjects:
                 continue
             after_a_layer += 1
+            if subject_key in a_layer_exact_set:
+                after_a_layer_exact += 1
 
             recent_lim = int(r.get('recent_limit_up_count') or 0)
             is_leader = bool(r.get('is_leader') or False)
@@ -292,7 +320,10 @@ class HistoricalBacktestReadPorts:
             "after_prior7_filter": after_prior7,
             "after_leader_prior7_combined": after_leader_prior7,
             "after_subject_key_filter": after_subject_key,
-            "after_a_layer_check": after_a_layer,
+            "after_a_layer_check": after_a_layer,          # v1.1a: 5-day lookback
+            "after_a_layer_check_exact": after_a_layer_exact,  # exact date only
+            "a_layer_lookback_subjects": len(a_layer_subjects),
+            "a_layer_exact_subjects": len(a_layer_exact_set),
             "final_seed_rows": len(seed_rows),
         }
 
@@ -480,9 +511,11 @@ class HistoricalBacktestReadPorts:
                    COALESCE(c.prior7_limitup_days, 0) as prior7_limitup_days,
                    COALESCE(c.prior7_strong_days, 0) as prior7_strong_days,
                    COALESCE(c.weak_type, '') as weak_type,
-                   COALESCE(c.weak_type_quality, '') as weak_type_quality
+                   COALESCE(c.weak_type_quality, '') as weak_type_quality,
+                   b.leader_role_proxy, b.is_leader as b_is_leader, b.rank_order as b_rank_order
             FROM strong_watch_pool_scored_rebuild p
             LEFT JOIN stock_structure_daily_feature c ON p.stock_id=c.stock_id AND p.trade_date=c.trade_date
+            LEFT JOIN strong_stock_daily_feature b ON p.stock_id=b.stock_id AND p.trade_date=b.trade_date
             WHERE p.trade_date=$1
               AND NOT COALESCE(p.fade_confirmed, false)
         """, (trade_date,))
@@ -498,6 +531,22 @@ class HistoricalBacktestReadPorts:
             ):
                 continue
 
+            # v1.1a: Robust is_leader detection with multiple fallbacks
+            strong_grade = str(r.get('strong_grade') or '').upper()
+            b_is_leader = bool(r.get('b_is_leader') or False)
+            recent_lim = int(r.get('recent_limit_up_count') or 0)
+            leader_role = str(r.get('leader_role_proxy') or '')
+            # is_leader: strong_grade S/A, OR explicit is_leader flag, OR leader/card role + recent limits
+            is_leader = (
+                strong_grade in ('S', 'A')
+                or b_is_leader
+                or (leader_role in ('leader', 'card') and recent_lim >= 1)
+            )
+
+            # v1.1a: Read rank_order from strong_stock_daily_feature (was hardcoded 999)
+            b_rank = r.get('b_rank_order')
+            rank_order = int(b_rank) if b_rank is not None else 999
+
             result.append({
                 "stock_id": str(r['stock_id']),
                 "stock_name": str(r.get('stock_name') or ''),
@@ -505,9 +554,9 @@ class HistoricalBacktestReadPorts:
                 "theme_name": str(r.get('theme_name') or ''),
                 "pct_chg": float(r.get('pct_chg') or 0),
                 "limit_up": bool(r.get('limit_up')),
-                "is_leader": bool(r.get('strong_grade') in ('S','A')),
-                "rank_order": 999,
-                "recent_limit_up_count": int(r.get('recent_limit_up_count') or 0),
+                "is_leader": is_leader,
+                "rank_order": rank_order,
+                "recent_limit_up_count": recent_lim,
                 "prior7_limitup_days": int(r.get('prior7_limitup_days') or 0),
                 "prior7_strong_days": int(r.get('prior7_strong_days') or 0),
                 "prev_day_pct_chg": 0.0,
