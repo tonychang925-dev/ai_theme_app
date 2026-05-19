@@ -27,19 +27,6 @@ PROJECT_ROOT = Path("/Users/admin/Desktop/ai_theme_app")
 PYTHON_BIN = str(PROJECT_ROOT / ".venv" / "bin" / "python")
 
 
-def _run_async_runner_in_thread(runner, context) -> Any:
-    """在独立线程中运行 async runner，不阻塞 SPS 事件循环。
-
-    部分 runner 内部使用同步阻塞调用（如 subprocess.run、curl），
-    若在主事件循环中直接 await，会导致轮询请求无法被及时处理。
-    """
-    loop = asyncio.new_event_loop()
-    try:
-        return loop.run_until_complete(runner.run(context))
-    finally:
-        loop.close()
-
-
 def _normalize_secret(value: Any) -> str:
     return str(value or "").strip().strip("\"'").strip()
 
@@ -480,11 +467,7 @@ class CollectionJobManager:
                             sys.stderr = _TeeWriter(original_stderr, job)
                             result = None
                             try:
-                                # 在独立线程中运行 runner，避免同步阻塞调用（如 subprocess.run、curl）
-                                # 卡住 SPS 的 asyncio 事件循环，导致前端轮询请求无法被处理。
-                                result = await asyncio.to_thread(
-                                    _run_async_runner_in_thread, runner, step_context
-                                )
+                                result = await runner.run(step_context)
                             except Exception as e:
                                 task.status = "failed"
                                 task.error_message = str(e)

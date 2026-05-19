@@ -1,0 +1,63 @@
+case_id,tags,positive_subject_keys,must_not_subject_keys,must_not_theme_names,v2_decision,v2_subject_key,v2_theme_name,v2_related_count,v2_wrong_subject_keys,v2_wrong_theme_names,v2_wrong_related_count,v2_generic_only_related_count,v2_rejected
+hn_lanjian_shein_001,"[""blue_arrow"", ""commercial_space"", ""generic_supply_chain""]","[""9062142"", ""9061851""]","[""9046625"", ""9062904""]","[""SHEIN/希音IPO"", ""航空发动机集团""]",MATCH,9062142,蓝箭航天IPO,0,[],[],0,0,True
+hn_lanjian_engine_002,"[""blue_arrow"", ""rocket"", ""generic_supplier""]","[""9062142"", ""9061851""]","[""9062904"", ""9046625""]","[""航空发动机集团"", ""SHEIN/希音IPO""]",MATCH,9062142,蓝箭航天IPO,0,[],[],0,0,True
+hn_spacex_shein_003,"[""spacex"", ""satellite"", ""generic_supply_chain""]","[""9064166"", ""9019807"", ""9061851""]","[""9046625"", ""9062904""]","[""SHEIN/希音IPO"", ""航空发动机集团""]",MATCH,9060949,SpaceX产业动态,0,[],[],0,0,True
+hn_commercial_space_004,"[""commercial_space"", ""rocket"", ""generic_partner""]","[""9061851"", ""9062142""]","[""9046625"", ""9062904""]","[""SHEIN/希音IPO"", ""航空发动机集团""]",MATCH,9062142,蓝箭航天IPO,0,[],[],0,0,True
+hn_shein_supply_chain_005,"[""shein"", ""ipo"", ""cross_border""]","[""9046625""]","[""9062142"", ""9061851"", ""9062904""]","[""蓝箭航天IPO"", ""商业航天8大IPO"", ""航空发动机集团""]",MATCH,9046625,SHEIN/希音IPO,0,[],[],0,0,True
+hn_crossborder_generic_006,"[""cross_border"", ""logistics"", ""generic_packaging""]","[""9047274"", ""9020414""]","[""9046625"", ""9062142"", ""9062904""]","[""SHEIN/希音IPO"", ""蓝箭航天IPO"", ""航空发动机集团""]",HUMAN_REVIEW,9011436,阿里巴巴股权相关,0,[],[],0,0,True
+hn_logistics_shein_007,"[""logistics"", ""generic_customer""]","[""9013055""]","[""9046625"", ""9047274""]","[""SHEIN/希音IPO"", ""跨境贸易三大支柱""]",UNKNOWN,,,0,[],[],0,0,True
+hn_shein_not_space_008,"[""shein"", ""ipo"", ""negative_space""]","[""9046625""]","[""9062142"", ""9061851"", ""9019807""]","[""蓝箭航天IPO"", ""商业航天8大IPO"", ""卫星互联网""]",MATCH,9046625,SHEIN/希音IPO,0,[],[],0,0,True
+hn_ai_glasses_009,"[""ai_glasses"", ""ar""]","[""9037499"", ""9030409"", ""9038540""]","[""9019349"", ""9012538""]","[""消费电子"", ""VR""]",UNKNOWN,,,0,[],[],0,0,True
+hn_ar_glasses_generic_010,"[""ar_glasses"", ""consumer_electronics""]","[""9030409"", ""9038540"", ""9037499""]","[""9019349"", ""9013055""]","[""消费电子"", ""物流""]",MATCH,9048533,中美互降关税,0,[],[],0,0,True
+hn_consumer_electronics_011,"[""consumer_electronics"", ""generic_order""]","[""9019349""]","[""9037499"", ""9030409"", ""9038540""]","[""AI眼镜"", ""AR眼镜"", ""AR眼镜四大品牌""]",MATCH,9048533,中美互降关税,0,[],[],0,0,True
+hn_vr_not_ai_glasses_012,"[""vr"", ""ai_glasses_negative""]","[""9012538""]","[""9037499"", ""9030409""]","[""AI眼镜"", ""AR眼镜""]",MATCH,9011554,游戏,0,[],[],0,0,True
+hn_fusion_013,"[""fusion"", ""nuclear"", ""superconductivity""]","[""9017950""]","[""9017093"", ""9017116""]","[""核电"", ""室温超导""]",UNKNOWN,,,0,[],[],0,0,True
+hn_nuclear_power_014,"[""nuclear_power"", ""fusion_negative""]","[""9017093""]","[""9017950"", ""9017116""]","[""可控核聚变"", ""室温超导""]",UNKNOWN,,,0,[],[],0,0,True
+hn_superconductor_015,"[""superconductor"", ""fusion_negative""]","[""9017116""]","[""9017950"", ""9017093""]","[""可控核聚变"", ""核电""]",UNKNOWN,,,0,[],[],0,0,True
+hn_fusion_supply_016,"[""fusion"", ""generic_supply_chain""]","[""9017950""]","[""9017093"", ""9017116""]","[""核电"", ""室温超导""]",UNKNOWN,,,0,[],[],0,0,True
+hn_rare_earth_017,"[""rare_earth"", ""order""]","[""9010367""]","[""9010270"", ""9035716""]","[""有色金属"", ""出口管制""]",UNKNOWN,,,0,[],[],0,0,True
+hn_nonferrous_018,"[""nonferrous"", ""rare_earth_negative""]","[""9010270""]","[""9010367"", ""9035716""]","[""稀土永磁"", ""出口管制""]",UNKNOWN,,,0,[],[],0,0,True
+hn_export_control_019,"[""export_control"", ""rare_earth_negative""]","[""9035716""]","[""9010367"", ""9010270""]","[""稀土永磁"", ""有色金属""]",UNKNOWN,,,0,[],[],0,0,True
+hn_rare_export_020,"[""rare_earth"", ""export_control""]","[""9010367"", ""9035716""]","[""9010270""]","[""有色金属""]",UNKNOWN,,,0,[],[],0,0,True
+hn_semicap_021,"[""semiconductor_equipment""]","[""9013944"", ""9018472""]","[""9018411"", ""9013933"", ""9024980""]","[""光刻胶"", ""共封装光学CPO"", ""设备更新""]",HUMAN_REVIEW,,,0,[],[],0,0,True
+hn_photoresist_022,"[""photoresist"", ""semicap_negative""]","[""9018411""]","[""9013944"", ""9018472"", ""9013933""]","[""半导体"", ""光刻机"", ""共封装光学CPO""]",UNKNOWN,,,0,[],[],0,0,True
+hn_advanced_packaging_023,"[""advanced_packaging""]","[""9013933""]","[""9018472"", ""9018411"", ""9024980""]","[""光刻机"", ""光刻胶"", ""设备更新""]",MATCH,9011277,芯片大全,0,[],[],0,0,True
+hn_equipment_update_024,"[""equipment_update"", ""generic_manufacturing""]","[""9024980""]","[""9013944"", ""9018472"", ""9018411""]","[""半导体"", ""光刻机"", ""光刻胶""]",HUMAN_REVIEW,,,0,[],[],0,0,True
+hn_low_altitude_025,"[""low_altitude"", ""evtol""]","[""9025720""]","[""9049987"", ""9012065""]","[""无人机"", ""军工""]",MATCH,9025720,低空经济,0,[],[],0,0,True
+hn_drone_026,"[""drone"", ""low_altitude_negative""]","[""9049987""]","[""9025720"", ""9012065""]","[""低空经济"", ""军工""]",MATCH,9048934,九天无人机航母,0,[],[],0,0,True
+hn_military_027,"[""military"", ""order""]","[""9012065"", ""9014764""]","[""9025720"", ""9049987""]","[""低空经济"", ""无人机""]",UNKNOWN,,,0,[],[],0,0,True
+hn_general_aviation_028,"[""general_aviation"", ""low_altitude""]","[""9025720""]","[""9049987"", ""9012065""]","[""无人机"", ""军工""]",UNKNOWN,,,0,[],[],0,0,True
+hn_humanoid_robot_029,"[""humanoid_robot""]","[""9014636""]","[""9027744"", ""9035874""]","[""国内机器人"", ""机器人之眼（机器视觉）""]",MATCH,9036191,宇树机器人,0,[],[],0,0,True
+hn_industrial_automation_030,"[""industrial_automation"", ""robot_negative""]","[""9035874""]","[""9014636"", ""9039041"", ""9043287""]","[""人形机器人"", ""特斯拉机器人"", ""智元机器人""]",UNKNOWN,,,0,[],[],0,0,True
+hn_tesla_robot_031,"[""tesla_robot""]","[""9039041"", ""9014636""]","[""9027744"", ""9035874""]","[""国内机器人"", ""机器人之眼（机器视觉）""]",MATCH,9034539,特斯拉,0,[],[],0,0,True
+hn_ai_application_032,"[""ai_application"", ""robot_negative""]","[""9062682"", ""9022152""]","[""9014636"", ""9035874""]","[""人形机器人"", ""机器人之眼（机器视觉）""]",UNKNOWN,,,0,[],[],0,0,True
+hn_microfluid_cooling_033,"[""liquid_cooling"", ""short_generic_negative"", ""phase4_3""]","[""9013689""]","[""9028694""]","[""高温""]",MATCH,9024880,液冷数据中心,0,[],[],0,0,True
+hn_server_liquid_cooling_034,"[""liquid_cooling"", ""source_org_negative"", ""phase4_3""]","[""9013689""]","[""9016841""]","[""证券""]",MATCH,9024880,液冷数据中心,0,[],[],0,0,True
+hn_china_space_launch_035,"[""commercial_space"", ""broad_policy_negative"", ""phase4_3""]","[""9061851"", ""9062142""]","[""9011782""]","[""一带一路""]",UNKNOWN,,,0,[],[],0,0,True
+hn_ai_glasses_forum_shenzhen_036,"[""ai_glasses"", ""location_negative"", ""phase4_3""]","[""9030409""]","[""9033923""]","[""深圳""]",UNKNOWN,,,0,[],[],0,0,True
+hn_microled_cpo_ar_display_037,"[""ai_glasses"", ""microled_display"", ""short_generic_negative"", ""phase4_5""]","[""9030409"", ""9037499"", ""9038540""]","[""9064628""]","[""Micro LED CPO""]",UNKNOWN,,,0,[],[],0,0,True
+hn_financial_it_ai_glasses_forum_038,"[""ai_glasses"", ""financing_event"", ""finance_word_negative"", ""phase4_5""]","[""9030409"", ""9037499""]","[""9032675""]","[""金融IT""]",UNKNOWN,,,0,[],[],0,0,True
+hn_sic_ar_glasses_039,"[""ai_glasses"", ""sic_display_material"", ""material_descriptor_negative"", ""phase4_5""]","[""9030409"", ""9037499"", ""9038540""]","[""9022064""]","[""碳化硅""]",HUMAN_REVIEW,,,0,[],[],0,0,True
+hn_qualcomm_ar_glasses_partnership_040,"[""ai_glasses"", ""qualcomm_as_partner"", ""source_entity_negative"", ""phase4_5""]","[""9030409"", ""9031543"", ""9037499""]","[""9058849""]","[""高通""]",HUMAN_REVIEW,,,0,[],[],0,0,True
+hn_photoresist_not_semiconductor_broad_041,"[""photoresist"", ""broad_category_negative"", ""phase4_5_round2""]","[""9018411""]","[""9013944""]","[""半导体""]",UNKNOWN,,,0,[],[],0,0,True
+hn_semiconductor_equipment_not_semiconductor_broad_042,"[""semiconductor_equipment"", ""broad_category_negative"", ""phase4_5_round2""]","[""9018472""]","[""9013944""]","[""半导体""]",HUMAN_REVIEW,,,0,[],[],0,0,True
+hn_ar_custom_chip_not_asic_043,"[""ai_glasses"", ""asic_negative"", ""phase4_5_round2""]","[""9030409""]","[""9036559""]","[""ASIC芯片""]",UNKNOWN,,,0,[],[],0,0,True
+hn_liquid_cooling_asic_not_asic_theme_044,"[""liquid_cooling"", ""asic_negative"", ""phase4_5_round2""]","[""9013689""]","[""9036559""]","[""ASIC芯片""]",MATCH,9024880,液冷数据中心,0,[],[],0,0,True
+hn_liquid_cooling_not_server_broad_045,"[""liquid_cooling"", ""server_broad_negative"", ""phase4_5_round2""]","[""9013689""]","[""9016139""]","[""服务器""]",MATCH,9024880,液冷数据中心,0,[],[],0,0,True
+hn_ai_chip_demand_not_server_046,"[""ai_chip"", ""server_broad_negative"", ""phase4_5_round2""]","[""9018675"", ""9030872""]","[""9016139""]","[""服务器""]",HUMAN_REVIEW,,,0,[],[],0,0,True
+hn_space_data_center_not_idc_047,"[""commercial_space"", ""data_center_broad_negative"", ""phase4_5_round2""]","[""9062142"", ""9019807""]","[""9037857""]","[""数据中心""]",HUMAN_REVIEW,,,0,[],[],0,0,True
+hn_liquid_cooling_not_data_center_broad_048,"[""liquid_cooling"", ""data_center_broad_negative"", ""phase4_5_round2""]","[""9013689""]","[""9037857""]","[""数据中心""]",MATCH,9024880,液冷数据中心,0,[],[],0,0,True
+hn_ai_datacenter_chip_not_storage_049,"[""ai_chip"", ""storage_chip_negative"", ""phase4_5_round2""]","[""9018675"", ""9030872""]","[""9015778""]","[""存储芯片""]",HUMAN_REVIEW,,,0,[],[],0,0,True
+hn_server_liquid_cooling_not_storage_050,"[""liquid_cooling"", ""storage_chip_negative"", ""phase4_5_round2""]","[""9013689""]","[""9015778""]","[""存储芯片""]",MATCH,9024880,液冷数据中心,0,[],[],0,0,True
+hn_manus_agent_video_not_multimodal_broad_051,"[""ai_agent"", ""multimodal_broad_negative"", ""phase4_5_round2""]","[""9062682""]","[""9022415""]","[""多模态大模型""]",UNKNOWN,,,0,[],[],0,0,True
+hn_ai_glasses_forum_not_multimodal_052,"[""ai_glasses"", ""multimodal_broad_negative"", ""phase4_5_round2""]","[""9030409""]","[""9022415""]","[""多模态大模型""]",MATCH,9048533,中美互降关税,0,[],[],0,0,True
+hn_nvidia_vera_rubin_not_cas_053,"[""nvidia"", ""liquid_cooling"", ""institution_negative"", ""phase4_6_numeric_names""]","[""9013689"", ""9018675"", ""9030872""]","[""9034134""]","[""中科院""]",MATCH,9024880,液冷数据中心,0,[],[],0,0,True
+hn_ar_game_news_not_game_054,"[""ai_ar_glasses"", ""game_broad_negative"", ""phase4_6""]","[""9030409""]","[""9011554""]","[""游戏""]",MATCH,9048533,中美互降关税,0,[],[],0,0,True
+hn_spacex_valuation_not_musk_four_industries_055,"[""spacex"", ""musk_broad_negative"", ""phase4_6""]","[""9060949"", ""9064166""]","[""9062206""]","[""马斯克四大产业""]",MATCH,9060949,SpaceX产业动态,0,[],[],0,0,True
+hn_rare_earth_us_china_not_fentanyl_056,"[""rare_earth"", ""fentanyl_negative"", ""phase4_6""]","[""9014636""]","[""9042899""]","[""芬太尼""]",UNKNOWN,,,0,[],[],0,0,True
+hn_ocean_economy_not_port_057,"[""ocean_economy"", ""port_negative"", ""phase4_6""]","[""9032192""]","[""9014573""]","[""港口""]",UNKNOWN,,,0,[],[],0,0,True
+hn_satellite_launch_not_spacex_dynamic_058,"[""satellite_internet"", ""spacex_negative"", ""phase4_6""]","[""9019807""]","[""9060949""]","[""SpaceX产业动态"", ""9060949""]",UNKNOWN,,,0,[],[],0,0,True
+hn_photoresist_not_semiconductor_broad_059,"[""photoresist"", ""semiconductor_broad_negative"", ""phase4_6""]","[""9029903""]","[""9013944""]","[""半导体""]",UNKNOWN,,,0,[],[],0,0,True
+hn_nvidia_datacenter_chip_not_intel_060,"[""nvidia"", ""intel_negative"", ""phase4_6_liquid_recall""]","[""9024880"", ""9018675"", ""9030872""]","[""9057299""]","[""英特尔""]",HUMAN_REVIEW,,,0,[],[],0,0,True
+hn_nvidia_vera_rubin_not_hbm_061,"[""nvidia"", ""hbm_negative"", ""phase4_6_liquid_recall""]","[""9024880"", ""9018675"", ""9030872""]","[""9021399""]","[""HBM存储""]",MATCH,9024880,液冷数据中心,0,[],[],0,0,True
+hn_nvidia_liquid_cooling_not_intel_062,"[""liquid_cooling"", ""intel_negative"", ""phase4_6_liquid_recall""]","[""9024880""]","[""9057299""]","[""英特尔""]",MATCH,9024880,液冷数据中心,0,[],[],0,0,True

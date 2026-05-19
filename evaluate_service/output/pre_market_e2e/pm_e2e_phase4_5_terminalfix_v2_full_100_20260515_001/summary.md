@@ -40,8 +40,3 @@
 - brief_theme_count: 37
 - brief_opportunity_count: 36
 - 是否通过基础门禁: True
-
-## Runtime
-
-- sps_base_url: http://127.0.0.1:8090
-- copied_snapshot_to_db: stock_data_test

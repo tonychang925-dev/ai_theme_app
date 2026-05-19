@@ -1,0 +1,101 @@
+event_id,title,gold_terms,v1_decision,v1_subject_key,v1_theme_name,v1_related_count,v1_related_theme_names,v1_theme_set_recall_at_5,v1_primary_hit,v1_wrong_related_count,v1_generic_only_related_count,v2_decision,v2_subject_key,v2_theme_name,v2_related_count,v2_related_theme_names,v2_theme_set_recall_at_5,v2_primary_hit,v2_wrong_related_count,v2_wrong_related_attribution,v2_generic_only_related_count,recall5_regressed,comparison
+0,2025年6月20日，Meta与Oakley合作开发的智能眼镜产品于6月20日举行发布会,"[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,0,[],True,True,0,0,MATCH,9030409,AR眼镜,0,[],True,True,0,[],0,False,unchanged
+0,2025年6月17日，Meta联手Oakley推出智能眼镜 ，为运动设计挑战运动相机,"[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,0,[],True,True,0,0,MATCH,9030409,AR眼镜,0,[],True,True,0,[],0,False,unchanged
+0,2025年1月3日，1月3日电，美国专利及商标局官网显示，英伟达公开了一项AR眼镜专利（US20250004275A1），名为“无背光增强现实数字全息技术”,"[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,0,[],True,True,0,0,MATCH,9030409,AR眼镜,0,[],True,True,0,[],0,False,unchanged
+0,2024年12月27日，三星电子近日宣布，将在 2025 年 1 月举行的 Galaxy Unpacked 活动上发布其 Galaxy S25 智能手机系列，以,"[""AI/AR眼镜""]",HUMAN_REVIEW,9030409,AR眼镜,0,[],True,True,0,0,HUMAN_REVIEW,9030409,AR眼镜,0,[],True,True,0,[],0,False,unchanged
+0,2024年12月24日，24日讯，Meta正与眼镜集团EssilorLuxottica合作，计划在其售价300美元的太阳镜中加入显示屏,"[""AI/AR眼镜""]",MATCH,9034859,AI智能体,0,[],False,False,0,0,HUMAN_REVIEW,9034859,AI智能体,0,[],False,False,0,[],0,False,needs_review
+0,24日讯，鸿海宣布，将携手Porotech进军AR眼镜市场,"[""AI/AR眼镜""]",HUMAN_REVIEW,,,0,[],False,False,0,0,HUMAN_REVIEW,,,0,[],False,False,0,[],0,False,unchanged
+0,2024年12月13日，在Android XR发布会上，谷歌与国内消费级AR眼镜厂商XREAL达成了战略合作,"[""AI/AR眼镜""]",HUMAN_REVIEW,,,0,[],False,False,0,0,HUMAN_REVIEW,,,0,[],False,False,0,[],0,False,unchanged
+0,2024年12月10日，10日讯，三星内部正积极推进名为Infinite的扩展现实（XR）项目，计划在明年1月召开的Galaxy Unpacked发布会上公开展,"[""AI/AR眼镜""]",HUMAN_REVIEW,9029156,老龙头,0,[],False,False,0,0,HUMAN_REVIEW,9018216,石油,0,[],False,False,0,[],0,False,needs_review
+0,2024年11月27日，消息面上，智能眼镜厂商INMO影目科技将于11月29日在成都举办INMO2024新品发布会,"[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,0,[],True,True,0,0,MATCH,9030409,AR眼镜,0,[],True,True,0,[],0,False,unchanged
+0,2024年11月20日，云天励飞战略投资闪极科技 后者将推国内首款量产AI拍摄眼镜,"[""AI/AR眼镜""]",MATCH,9034920,东方头,0,[],False,False,0,0,HUMAN_REVIEW,9018216,石油,0,[],False,False,0,[],0,False,needs_review
+0,"2024年11月5日,苹果公司可能已经重启其轻量级增强现实（AR）眼镜计划","[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,0,[],True,True,0,0,MATCH,9030409,AR眼镜,0,[],True,True,0,[],0,False,unchanged
+0,2024年10月25日，国家知识产权局官网消息，中国专利公布公告披露了名为“一种智能眼镜”的发明专利，申请公布日为2024年10月25日，申请人为华为技术有限公,"[""AI/AR眼镜""]",MATCH,9033434,华为,0,[],True,True,0,0,MATCH,9033434,华为,0,[],True,True,0,[],0,False,unchanged
+0,"2024年9月26日,近日，西湖大学国强讲席教授、副校长以及慕德微纳(杭州)科技有限公司首席科学家仇旻在浙江省科协大楼的科学咖啡馆展示了一副超轻薄的碳化硅AR眼","[""AI/AR眼镜""]",MATCH,9022064,碳化硅,0,[],False,False,0,0,MATCH,9030409,AR眼镜,0,[],True,True,0,[],0,False,improved
+0,2024年9月25日，Meta Connect 2024年度开发者大会将于今夜举行，据Meta官网贴出议程显示，公司CEO马克·扎克伯格将于当地时间上午10点（,"[""AI/AR眼镜""]",MATCH,9034859,AI智能体,0,[],False,False,0,0,HUMAN_REVIEW,9034859,AI智能体,0,[],False,False,0,[],0,False,needs_review
+0,2024年9月23日，消息面上，Meta Connect 2024将于美国当地时间9月25日开始，扎克伯格将分享混合现实、AI和可穿戴设备的最新发展，新的MR头,"[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,0,[],True,True,0,0,MATCH,9030409,AR眼镜,0,[],True,True,0,[],0,False,unchanged
+0,2024年9月20日，据报道，Meta Connect2024大会将于9月25日至26日举办，马克·扎克伯格将分享Meta对人工智能和元宇宙的愿景，主题演讲将集,"[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,0,[],True,True,0,0,MATCH,9030409,AR眼镜,0,[],True,True,0,[],0,False,unchanged
+0,2024年9月18日，科技公司Snap在美国加利福尼亚州圣莫尼卡举办的2024Snap全球生态合作伙伴大会上，发布旗下第五代SpectaclesAR眼镜,"[""AI/AR眼镜""]",HUMAN_REVIEW,9011554,游戏,0,[],False,False,0,0,HUMAN_REVIEW,,,0,[],False,False,0,[],0,False,needs_review
+0,2024年9月12日，9月10日，星纪魅族与博士眼镜在北京举行战略合作签约仪式，双方将在智能眼镜领域展开更加深入的合作，共同推动星纪魅族XR品牌与XR智能眼镜的,"[""AI/AR眼镜""]",HUMAN_REVIEW,9030409,AR眼镜,0,[],True,True,0,0,HUMAN_REVIEW,9030409,AR眼镜,0,[],True,True,0,[],0,False,unchanged
+0,2024年9月9日，三星、谷歌、高通强强联手，正研发一款混合现实智能眼镜,"[""AI/AR眼镜""]",MATCH,9058849,高通,0,[],False,False,0,0,MATCH,9030409,AR眼镜,0,[],True,True,0,[],0,False,improved
+0,2024年9月6日，星纪魅族AR智能眼镜StarV View正式发布，目前新品已在魅族商城、京东、天猫等官方渠道开启预售，预售价2499元,"[""AI/AR眼镜""]",HUMAN_REVIEW,9030409,AR眼镜,0,[],True,True,0,0,HUMAN_REVIEW,9030409,AR眼镜,0,[],True,True,0,[],0,False,unchanged
+0,2024年9月3日，近日，行者X-lens AR骑行镜开售，该款骑行镜配备OLED微显示屏，支持触控交互，售价699元,"[""AI/AR眼镜""]",HUMAN_REVIEW,9015387,显示面板,0,[],False,False,0,0,HUMAN_REVIEW,9015387,显示面板,0,[],False,False,0,[],0,False,unchanged
+0,2024年8月29日，《科创板日报》29日讯，Meta此前计划打造自己的定制芯片，用于可穿戴消费设备系列，但由于公司持续努力控制成本，这一计划未能实施,"[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,0,[],True,True,0,0,MATCH,9030409,AR眼镜,0,[],True,True,0,[],0,False,unchanged
+0,2024年8月26日，小米已开发出一款AI眼镜，并将尽快推向市场,"[""AI/AR眼镜""]",HUMAN_REVIEW,,,0,[],False,False,0,0,HUMAN_REVIEW,,,0,[],False,False,0,[],0,False,unchanged
+0,消息面上，据媒体报道，北京多屏未来科技有限公司已于近日完成数百万美元的A轮融资,"[""AI/AR眼镜""]",HUMAN_REVIEW,,,0,[],False,False,0,0,HUMAN_REVIEW,,,0,[],False,False,0,[],0,False,unchanged
+0,2024年8月20日，AR智能眼镜企业Rokid今日宣布，8月22日，《黑神话：悟空》AR体验将开启直播,"[""AI/AR眼镜""]",HUMAN_REVIEW,9030409,AR眼镜,0,[],True,True,0,0,HUMAN_REVIEW,9030409,AR眼镜,0,[],True,True,0,[],0,False,unchanged
+0,2024年8月19日，Rokid官微8月19日预告：9月7日空降北京，Rokid开发者沙龙暨新品体验会开启报名,"[""AI/AR眼镜""]",UNKNOWN,,,0,[],False,False,0,0,HUMAN_REVIEW,9018216,石油,0,[],False,False,0,[],0,False,needs_review
+0,8月23日， 由维深信息主办，深圳市增强现实技术应用协会、深圳市眼镜行业协会协办的《全球AI智能眼镜高峰论坛暨投融资闭门对接会》议题已确定,"[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,0,[],True,True,0,0,MATCH,9030409,AR眼镜,0,[],True,True,0,[],0,False,unchanged
+0,2024年8月18日，根据公开资料统计，苹果、Meta等大厂均在布局智能眼镜产品,"[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,0,[],True,True,0,0,MATCH,9030409,AR眼镜,0,[],True,True,0,[],0,False,unchanged
+0,2024年8月15日，有“国产版Vision Pro头显”之称的Vision SE，今年7月30日通过了新版本的3C认证，制造商为深圳市亿境虚拟现实技术有限公司,"[""AI/AR眼镜""]",MATCH,9022942,苹果MR,0,[],False,False,0,0,MATCH,9022942,苹果MR,0,[],False,False,0,[],0,False,unchanged
+0,国家统计局：7月虚拟现实设备产品产量增长55.7%,"[""AI/AR眼镜""]",HUMAN_REVIEW,9011480,6G,0,[],False,False,0,0,HUMAN_REVIEW,9011480,6G,0,[],False,False,0,[],0,False,unchanged
+0,Meta预计发布首款内部测试版AR眼镜；同时，Meta预计将在9月发布价位更低的VR设备Quest3S，预计由腾讯引进国内发售,"[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,0,[],True,True,0,0,MATCH,9030409,AR眼镜,0,[],True,True,0,[],0,False,unchanged
+0,2024年8月14日，**字节跳动旗下XR头显厂商PICO已经确认，其下一代头显产品将于2024年8月20日在国内发布,"[""AI/AR眼镜""]",HUMAN_REVIEW,9029156,老龙头,0,[],False,False,0,0,HUMAN_REVIEW,9018216,石油,0,[],False,False,0,[],0,False,needs_review
+0,2024年8月13日，**近日，扎克伯格在 SPC 黑客松活动上的一场对谈分享，不限于 AI 、AR、创业以及团队管理等经验,"[""AI/AR眼镜""]",UNKNOWN,,,0,[],False,False,0,0,HUMAN_REVIEW,9018216,石油,0,[],False,False,0,[],0,False,needs_review
+0,根据科技记者马克·古尔曼最新一期《Power On》，苹果团队正继续试验开发多款智能眼镜产品，包括预计明年推出的平价版Vision Pro,"[""AI/AR眼镜""]",HUMAN_REVIEW,9030409,AR眼镜,0,[],True,True,0,0,HUMAN_REVIEW,9030409,AR眼镜,0,[],True,True,0,[],0,False,unchanged
+0,Meta与雷朋联合打造的Ray-Ban Meta在社交网站上走红，AI智能眼镜概念开始在A股活跃起来，龙头股博士眼镜最近持续大涨，今天上午再度20%涨停，迎来两,"[""AI/AR眼镜""]",MATCH,9030409,AR眼镜,0,[],True,True,0,0,MATCH,9030409,AR眼镜,0,[],True,True,0,[],0,False,unchanged
+0,2025年12月25日，据报道，白宫考虑将部分联邦野生动物保护用地划拨给SpaceX用于扩建火箭发射与生产基地,"[""SpaceX""]",MATCH,9064166,SpaceX,0,[],True,True,0,0,MATCH,9064166,SpaceX,0,[],True,True,0,[],0,False,unchanged
+0,2025年12月25日，据美国《空天部队》杂志网站12月19日报道，美国太空军下属的太空发展局当天宣布，向4家公司授予价值35亿美元的合同，用于采购总共72颗导,"[""SpaceX""]",MATCH,9030207,导弹,0,[],False,False,0,0,MATCH,9030207,导弹,0,[],False,False,0,[],0,False,unchanged
+0,2025年12月13日，SpaceX已正式向员工通报，公司正在为明年可能进行的首次公开募股(IPO)做准备，这一表态证实了近期的市场传闻,"[""SpaceX""]",MATCH,9064166,SpaceX,0,[],True,True,0,0,MATCH,9064166,SpaceX,0,[],True,True,0,[],0,False,unchanged
+0,2025年12月11日，北京时间12月11日，SpaceX的创始人马斯克在X上确认了“SpaceX计划明年通过首次公开募股（IPO）筹集数百亿美元资金”的消息,"[""SpaceX""]",MATCH,9064166,SpaceX,0,[],True,True,0,0,MATCH,9060949,SpaceX产业动态,0,[],True,True,0,[],0,False,needs_review
+0,"2025年12月7日,针对商业航天龙头SpaceX“冲击8000亿美元估值，并瞄准明年IPO”的最新传闻，世界首富马斯克在北京时间周日凌晨公开回应","[""SpaceX""]",MATCH,9064166,SpaceX,0,[],True,True,0,0,MATCH,9060949,SpaceX产业动态,0,[],True,True,0,[],0,False,needs_review
+0,中国科学院合肥物质科学研究院等离子体物理研究所科研团队宣布，有“人造太阳”之称的全超导托卡马克核聚变实验装置（EAST）实验证实托卡马克密度自由区的存在，找到突,"[""可控核聚变""]",HUMAN_REVIEW,9017116,室温超导,0,[],False,False,0,0,MATCH,9034134,中科院,0,[],False,False,0,[],0,False,needs_review
+0,可控核聚变创新联合体第二届锦江论坛于12月30日举办（新闻来源：财联社）,"[""可控核聚变""]",MATCH,9017950,可控核聚变,0,[],True,True,0,0,MATCH,9017950,可控核聚变,0,[],True,True,0,[],0,False,unchanged
+0,中信建投研报称，当前可控核聚变行业聚焦技术工程化与商业可行性突破，建设大科学装置及实验堆催生大额订单，高价值量投资机会集中于中上游环节（新闻来源：财联社）,"[""可控核聚变""]",MATCH,9017950,可控核聚变,0,[],True,True,0,0,MATCH,9017950,可控核聚变,0,[],True,True,0,[],0,False,unchanged
+0,特朗普旗下的媒体企业——特朗普媒体与科技集团，同意以全股票交易方式与核聚变能源企业TAE科技公司合并，交易总价值超60亿美元,"[""可控核聚变""]",MATCH,9034544,乌克兰重建,0,[],False,False,0,0,MATCH,9034544,乌克兰重建,0,[],False,False,0,[],0,False,unchanged
+0,国际能源署预测，到 2030年，全球核聚变市场规模有望接近5000亿美元(3.5万亿元人民币),"[""可控核聚变""]",HUMAN_REVIEW,9034544,乌克兰重建,0,[],False,False,0,0,HUMAN_REVIEW,9034544,乌克兰重建,0,[],False,False,0,[],0,False,unchanged
+0,中金公司研报表示，十五五规划将可控核聚变明确纳入国家未来产业体系，标志着其从前沿科学探索正式升级为战略性科技攻关方向,"[""可控核聚变""]",MATCH,9017950,可控核聚变,0,[],True,True,0,0,MATCH,9017950,可控核聚变,0,[],True,True,0,[],0,False,unchanged
+0,《中国国家原子能机构和法国原子能和替代能源委员会第十五个和平利用核能合作议定书》中提及将加强核基础研究、核技术应用、核聚变技术等合作,"[""可控核聚变""]",HUMAN_REVIEW,9034544,乌克兰重建,0,[],False,False,0,0,HUMAN_REVIEW,9034544,乌克兰重建,0,[],False,False,0,[],0,False,unchanged
+0,核聚变科技成果转化展览展示与对接活动在京举行，17家公司集中参加路演，推介核聚变装置及部件等的研究成果,"[""可控核聚变""]",MATCH,9017950,可控核聚变,0,[],True,True,0,0,MATCH,9017950,可控核聚变,0,[],True,True,0,[],0,False,unchanged
+0,开展燃烧等离子体物理研究、实现产出能量大于消耗能量、演示聚变能发电……11月24日上午，在位于安徽合肥未来大科学城的紧凑型聚变能实验装置（BEST）主机大厅，中,"[""可控核聚变""]",MATCH,9012584,电力央企,0,[],False,False,0,0,HUMAN_REVIEW,,,0,[],False,False,0,[],0,False,needs_review
+0,《科创板日报》17日讯，近日，聚变新能（安徽）有限公司采购项目发布，总金额超20亿元,"[""可控核聚变""]",HUMAN_REVIEW,9013718,房地产,0,[],False,False,0,0,HUMAN_REVIEW,,,0,[],False,False,0,[],0,False,needs_review
+0,商务部公告，根据《中华人民共和国出口管制法》等法律法规有关规定，为维护国家安全和利益、履行防扩散等国际义务，决定加强两用物项对日本出口管制,"[""对日制裁""]",MATCH,9035716,出口管制,0,[],True,True,0,0,MATCH,9035716,出口管制,0,[],True,True,0,[],0,False,unchanged
+0,据多家日媒爆料，日本首相高市早苗极有可能在12月26日这一天参拜靖国神社,"[""对日制裁""]",MATCH,9059919,对日制裁,0,[],True,True,0,0,MATCH,9059919,对日制裁,0,[],True,True,0,[],0,False,unchanged
+0,日本政坛正在上演一场危险的赌局,"[""对日制裁""]",UNKNOWN,,,0,[],False,False,0,0,UNKNOWN,,,0,[],False,False,0,[],0,False,unchanged
+0,据外交部官网，日本自卫队前统合幕僚长岩崎茂公然同“台独”分裂势力勾连，严重违背一个中国原则和中日四个政治文件精神，严重干涉中国内政，严重损害中国主权和领土完整,"[""对日制裁""]",MATCH,9059919,对日制裁,0,[],True,True,0,0,MATCH,9059919,对日制裁,0,[],True,True,0,[],0,False,unchanged
+0,据新华社，外交部发言人林剑12月1日表示，日本在口头上搪塞敷行，在行动上一意孤行，中方对此绝不接受,"[""对日制裁""]",UNKNOWN,,,0,[],False,False,0,0,UNKNOWN,,,0,[],False,False,0,[],0,False,unchanged
+0,据媒体披露，中方已做好对日实质反制准备,"[""对日制裁""]",UNKNOWN,,,0,[],False,False,0,0,UNKNOWN,,,0,[],False,False,0,[],0,False,unchanged
+0,据中国日报，可靠消息人士称，鉴于日本近期恶劣表现，中国政府正考虑针对性收紧2025年4月4日列管的中重稀土相关物项出口许可审查（新闻来源：中国日报）,"[""稀土永磁""]",MATCH,9010367,稀土永磁,0,[],True,True,0,0,MATCH,9010367,稀土永磁,0,[],True,True,0,[],0,False,unchanged
+0,在今天（18日）下午召开的商务部例行新闻发布会上，新闻发言人何亚东针对稀土相关物项出口管制的最新进展进行回应,"[""稀土永磁""]",MATCH,9035716,出口管制,0,[],False,False,0,0,MATCH,9035716,出口管制,0,[],False,False,0,[],0,False,unchanged
+0,记者从知情人士处获悉，金力永磁、中科三环、宁波韵升已获得通用出口许可证,"[""稀土永磁""]",MATCH,9010367,稀土永磁,0,[],True,True,0,0,MATCH,9010367,稀土永磁,0,[],True,True,0,[],0,False,unchanged
+0,内蒙古自治区党委关于制定国民经济和社会发展第十五个五年规划的建议发布,"[""稀土永磁""]",MATCH,9010367,稀土永磁,0,[],True,True,0,0,MATCH,9010367,稀土永磁,0,[],True,True,0,[],0,False,unchanged
+0,据央视新闻报道，当地时间10月30日中午，国家主席在韩国釜山同美国总统特朗普举行会晤,"[""稀土永磁""]",MATCH,9042899,芬太尼,0,[],False,False,0,0,HUMAN_REVIEW,,,0,[],False,False,0,[],0,False,needs_review
+0,美股稀土股盘前普涨，Critical Metals大涨38%，USA Rare Earth涨超11%，MP Materials涨超7%,"[""稀土永磁""]",MATCH,9010367,稀土永磁,0,[],True,True,0,0,MATCH,9010367,稀土永磁,0,[],True,True,0,[],0,False,unchanged
+0,包钢股份公告称，根据公司2022年年度股东大会审议通过的稀土精矿价格调整机制及计算公式，公司拟将2025年第四季度稀土精矿关联交易价格调整为不含税26205元/,"[""稀土永磁""]",MATCH,9053827,雅江水电最新互动,0,[],False,False,0,0,MATCH,9053827,雅江水电最新互动,0,[],False,False,0,[],0,False,unchanged
+0,商务部、海关总署发布公告2025年第56号，公布对部分稀土设备和原辅料相关物项实施出口管制的决定，根据《中华人民共和国出口管制法》《中华人民共和国对外贸易法》《,"[""稀土永磁""]",MATCH,9035716,出口管制,0,[],False,False,0,0,MATCH,9035716,出口管制,0,[],False,False,0,[],0,False,unchanged
+0,浙江省十四届人大常委会第二十一次会议近日审议并通过《浙江省海洋经济高质量发展促进条例》（以下简称《条例》）,"[""海洋经济""]",MATCH,9043698,深海经济,0,[],True,True,0,0,MATCH,9043698,深海经济,0,[],True,True,0,[],0,False,unchanged
+0,10月24日，中共中央举行新闻发布会介绍和解读党的二十届四中全会精神,"[""海洋经济""]",UNKNOWN,,,0,[],False,False,0,0,HUMAN_REVIEW,9057205,哪吒汽车重组,0,[],False,False,0,[],0,False,needs_review
+0,深圳市海洋发展局8月28日下午联合招商局港口集团股份有限公司、中集海工智能创新中心等龙头企业，在2025深圳（国际）通用人工智能大会暨产业博览会“Agent＋场,"[""海洋经济""]",MATCH,9014573,港口,0,[],True,True,0,0,MATCH,9014573,港口,0,[],True,True,0,[],0,False,unchanged
+0,国家发展改革委区域协调发展司副司长马维晨表示，按照中央财经委员会第六次会议部署，国家发展改革委正与相关部门一道着手“十五五”海洋经济发展规划以及相关领域专项规划,"[""海洋经济""]",HUMAN_REVIEW,140,风电,0,[],False,False,0,0,HUMAN_REVIEW,,,0,[],False,False,0,[],0,False,needs_review
+0,国家发展改革委区域协调发展司副司长马维晨表示，按照中央财经委员会第六次会议部署，国家发展改革委正与相关部门一道着手“十五五”海洋经济发展规划以及相关领域专项规划,"[""海洋经济""]",HUMAN_REVIEW,140,风电,0,[],False,False,0,0,HUMAN_REVIEW,,,0,[],False,False,0,[],0,False,needs_review
+0,日本实际上停止向中国出口光刻胶的状况被曝光（新闻来源：亚洲时报）,"[""光刻胶""]",MATCH,9018411,光刻胶,0,[],True,True,0,0,MATCH,9018411,光刻胶,0,[],True,True,0,[],0,False,unchanged
+0,消息面上，11月20-21日，2025·光刻胶及集成电路材料先进技术和产业应用研讨会将举行，主题“光刻突围 材聚绍兴”,"[""光刻胶""]",MATCH,9018411,光刻胶,0,[],True,True,0,0,MATCH,9018411,光刻胶,0,[],True,True,0,[],0,False,unchanged
+0,11月20-21日，2025·光刻胶及集成电路材料先进技术和产业应用研讨会将举行，主题“光刻突围 材聚绍兴”,"[""光刻胶""]",MATCH,9018411,光刻胶,0,[],True,True,0,0,MATCH,9018411,光刻胶,0,[],True,True,0,[],0,False,unchanged
+0,近日，北京大学化学与分子工程学院彭海琳教授团队及合作者通过冷冻电子断层扫描技术，首次在原位状态下解析了光刻胶分子在液相环境中的微观三维结构、界面分布与缠结行为，,"[""光刻胶""]",MATCH,9018411,光刻胶,0,[],True,True,0,0,MATCH,9018411,光刻胶,0,[],True,True,0,[],0,False,unchanged
+0,清华大学官网介绍，日前，清华大学化学系许华平教授团队在极紫外（EUV）光刻材料上取得重要进展，开发出一种基于聚碲氧烷的新型光刻胶，为先进半导体制造中的关键材料提,"[""光刻胶""]",MATCH,9018411,光刻胶,0,[],True,True,0,0,MATCH,9018411,光刻胶,0,[],True,True,0,[],0,False,unchanged
+0,据百川盈孚，因下游PCB行业需求持续增长，国内光引发剂多种牌号价格走高,"[""光刻胶""]",HUMAN_REVIEW,9028541,苹果手机,0,[],False,False,0,0,HUMAN_REVIEW,9028541,苹果手机,0,[],False,False,0,[],0,False,unchanged
+0,2024 年 10 月消息，武汉太紫微光电科技有限公司推出的 t150a 光刻胶产品，已通过半导体工艺量产验证，实现配方全自主设计，该产品对标国际头部企业主流,"[""光刻胶""]",HUMAN_REVIEW,9013944,半导体,0,[],True,True,0,0,MATCH,9018411,光刻胶,0,[],True,True,0,[],0,False,needs_review
+0,据“中国光谷”消息，光谷企业近日在半导体专用光刻胶领域实现重大突破:武汉太紫微光电科技有限公司推出的T150 A光刻胶产品，已通过半导体工艺量产验证，实现配方全,"[""光刻胶""]",HUMAN_REVIEW,9013944,半导体,0,[],True,True,0,0,MATCH,9018411,光刻胶,0,[],True,True,0,[],0,False,needs_review
+0,上交所公告，为了落实中国证监会《关于在科创板设置科创成长层 增强制度包容性适应性的意见》，进一步规范科技型企业适用科创板第五套上市标准，支持尚未形成一定收入规模,"[""卫星互联""]",MATCH,9053827,雅江水电最新互动,0,[],False,False,0,0,MATCH,9053827,雅江水电最新互动,0,[],False,False,0,[],0,False,unchanged
+0,12月26日7时26分，我国在海南商业航天发射场使用长征八号甲运载火箭，成功将卫星互联网低轨17组卫星发射升空，卫星顺利进入预定轨道，发射任务获得圆满成功,"[""卫星互联""]",MATCH,9019807,卫星互联网,0,[],True,True,0,0,MATCH,9019807,卫星互联网,0,[],True,True,0,[],0,False,unchanged
+0,中国航天今年已完成近90次发射，刷新历史纪录，其中商业发射占比显著提升,"[""卫星互联""]",UNKNOWN,,,0,[],False,False,0,0,UNKNOWN,,,0,[],False,False,0,[],0,False,unchanged
+0,蓝箭航天副总裁张静茹告诉《科创板日报》记者，蓝箭航天供应链600余家供应商覆盖全国90余城，民企占比近70%、国企30%,"[""卫星互联""]",MATCH,9062142,蓝箭航天IPO,0,[],False,False,0,0,MATCH,9062142,蓝箭航天IPO,0,[],False,False,0,[],0,False,unchanged
+0,在文昌国际航天城，年产1000颗卫星的超级工厂即将投产，可实现“卫星出厂即发射”的无缝衔接；目前20余家产业链上下游企业已签约落户，火箭研发、卫星制造、发射测控,"[""卫星互联""]",HUMAN_REVIEW,9012065,军工,0,[],False,False,0,0,HUMAN_REVIEW,9012065,军工,0,[],False,False,0,[],0,False,unchanged
+0,12月3日中午，朱雀三号遥一运载火箭在东风商业航天创新试验区发射升空，按程序完成了飞行任务，火箭二级进入预定轨道，火箭一子级回收失败,"[""卫星互联""]",MATCH,9063080,太空旅游,0,[],False,False,0,0,MATCH,9063080,太空旅游,0,[],False,False,0,[],0,False,unchanged
+0,从中国航天科技集团一院获悉，由该院抓总研制的我国首艘火箭网系回收海上平台于近日被命名为“领航者”并成功交付，标志着该院在可重复使用运载火箭技术链条上完成了重要一,"[""卫星互联""]",HUMAN_REVIEW,9059490,太空算力,0,[],False,False,0,0,HUMAN_REVIEW,9059490,太空算力,0,[],False,False,0,[],0,False,unchanged
+0,据国家航天局消息，该局已于近期设立商业航天司，相关业务正在逐步开展，标志着我国商业航天产业迎来专职监管机构（新闻来源：央视新闻）,"[""卫星互联""]",MATCH,9063080,太空旅游,0,[],False,False,0,0,MATCH,9063080,太空旅游,0,[],False,False,0,[],0,False,unchanged
+0,“智绘星空 胜算在天——太空数据中心建设工作推进会”召开，推进会由北京市科委、中关村管委会等单位组织召开,"[""卫星互联""]",MATCH,9037857,数据中心,0,[],False,False,0,0,HUMAN_REVIEW,,,0,[],False,False,0,[],0,False,needs_review
+0,北京蓝箭航天朱雀三号运载火箭首飞计划已进入最后准备阶段，计划于本周六即11月29日首飞,"[""卫星互联""]",MATCH,9062142,蓝箭航天IPO,0,[],False,False,0,0,MATCH,9062142,蓝箭航天IPO,0,[],False,False,0,[],0,False,unchanged
+0,英伟达首席财务官表示，数据中心芯片需求较此前预测的5000亿美元有所增长,"[""液冷数据中心""]",MATCH,9037857,数据中心,0,[],True,True,0,0,MATCH,9057299,英特尔,0,[],False,False,0,[],0,True,regressed
+0,考虑TPUv7出货量及单机柜液冷价值量等，根据东方证券测算，预计2026年谷歌服务器液冷市场规模约为180亿元左右，较2025年大幅提升（新闻来源：新浪财经）,"[""液冷数据中心""]",MATCH,9016139,服务器,0,[],True,True,0,0,MATCH,9024880,液冷数据中心,0,[],True,True,0,[],0,False,needs_review
+0,根据12月15日左右的市场信息，谷歌新一代TPUv7因单芯片功耗飙升至980W，其机柜将采用100%全液冷架构，标志着液冷从可选方案升级为ASIC阵营的强制标配,"[""液冷数据中心""]",MATCH,9011609,电源,0,[],False,False,0,0,HUMAN_REVIEW,9011609,电源,0,[],False,False,0,[],0,False,needs_review
+0,第五届国际AIDC液冷供应链干人峰会暨·国际数据中心液冷市场趋势分析会将于12月18日-19日召开,"[""液冷数据中心""]",MATCH,9037857,数据中心,0,[],True,True,0,0,MATCH,9037857,数据中心,0,[],True,True,0,[],0,False,unchanged
+0,中信建投研报指出，2025年是英伟达AI芯片液冷渗透大幅提升的一年，同时随着单芯片功耗的提升，后续液冷市场规模将明显增长,"[""液冷数据中心""]",MATCH,9024880,液冷数据中心,0,[],True,True,0,0,HUMAN_REVIEW,,,0,[],False,False,0,[],0,True,regressed
+0,英伟达透露，Vera Rubin计算架构底部配备了8个Rubin CPX GPU、BlueField-4数据处理器、两颗Vera CPU以及4个Rubin封装，,"[""液冷数据中心""]",HUMAN_REVIEW,9016139,服务器,0,[],True,True,0,0,HUMAN_REVIEW,9021399,HBM存储,0,[],False,False,0,[],0,True,regressed
+0,微软CEO萨提亚·纳德拉宣布，其团队已成功开发出微流体冷却技术；该技术能将芯片最高温升降低65%,"[""液冷数据中心""]",MATCH,9024880,液冷数据中心,0,[],True,True,0,0,MATCH,9024880,液冷数据中心,0,[],True,True,0,[],0,False,unchanged
+0,《科创板日报》15日讯，由于AI新平台Rubin与下一代Feynman平台功耗或高达2000W以上，现有散热方案无法应对，消息称英伟达要求供应商开发全新“微通道,"[""液冷数据中心""]",HUMAN_REVIEW,9023579,高股息概念,0,[],False,False,0,0,UNKNOWN,,,0,[],False,False,0,[],0,False,needs_review
+0,Meta宣布收购AI智能体公司Manus，以加速人工智能创新，具体交易条款未披露,"[""AI智能体Manus""]",MATCH,9034859,AI智能体,0,[],True,True,0,0,MATCH,9034859,AI智能体,0,[],True,True,0,[],0,False,unchanged
+0,Manus 推出文生视频功能，AI智能体几分钟内将文本转为视频故事:和大多数视频生成AI不同Manus这次可以通过连续拼接突破视频时长限制（新闻来源：财联社）,"[""AI智能体Manus""]",MATCH,9034859,AI智能体,0,[],True,True,0,0,MATCH,9034859,AI智能体,0,[],True,True,0,[],0,False,unchanged
+0,《科创板日报》记者从知情人士方面了解到，智能体产品Manus背后公司蝴蝶效应正在计划新一轮融资，预计融资规模为1亿美元，估值15亿美元,"[""AI智能体Manus""]",MATCH,9034859,AI智能体,0,[],True,True,0,0,MATCH,9034859,AI智能体,0,[],True,True,0,[],0,False,unchanged
+0,价格曾经炒到10万，一码难求的AI智能体平台Manus宣布开放注册，Manus在公告中表示，Manus向所有人开放，无需等待名单；所有用户每天可免费执行一项任务,"[""AI智能体Manus""]",MATCH,9034859,AI智能体,0,[],True,True,0,0,MATCH,9034859,AI智能体,0,[],True,True,0,[],0,False,unchanged
+0,据The Information报道，三位知情人士透露，Manus AI的团队正在与包括美国风投机构在内的潜在投资者进行谈判，计划以至少5亿美元(约合37.5亿,"[""AI智能体Manus""]",MATCH,9034859,AI智能体,0,[],True,True,0,0,MATCH,9034859,AI智能体,0,[],True,True,0,[],0,False,unchanged

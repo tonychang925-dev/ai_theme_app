@@ -187,7 +187,7 @@ async def _evaluate_hard_negatives(
         applicable_keys = {key for key in must_not_keys if key in profile_index}
         for key, profile in profile_index.items():
             name = safe_str(profile.get("subject_name"))
-            if any(blocked and (blocked == name or blocked in name or name in blocked) for blocked in must_not_names):
+            if any(blocked and blocked == name for blocked in must_not_names):
                 applicable_keys.add(key)
         wrong_keys = result_keys & applicable_keys
         wrong_names = [
@@ -198,7 +198,7 @@ async def _evaluate_hard_negatives(
         for key in applicable_keys:
             metrics[key]["hard_negative_case_count"] += 1
             profile_name = safe_str(profile_index[key].get("subject_name"))
-            failed = key in result_keys or any(name and (name == profile_name or name in profile_name or profile_name in name) for name in result_names)
+            failed = key in result_keys or any(name and name == profile_name for name in result_names)
             if failed:
                 metrics[key]["failed_hard_negative_cases"].append(safe_str(case.get("case_id")))
             else:

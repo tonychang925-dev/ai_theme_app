@@ -1,0 +1,3 @@
+event_id,title,gold_terms,v1_decision,v1_subject_key,v1_theme_name,v1_related_count,v1_related_theme_names,v1_theme_set_recall_at_5,v1_primary_hit,v1_wrong_related_count,v1_generic_only_related_count,v2_decision,v2_subject_key,v2_theme_name,v2_related_count,v2_related_theme_names,v2_theme_set_recall_at_5,v2_primary_hit,v2_wrong_related_count,v2_wrong_related_attribution,v2_generic_only_related_count,recall5_regressed,comparison
+0,《科创板日报》17日讯，近日，聚变新能（安徽）有限公司采购项目发布，总金额超20亿元,"[""可控核聚变""]",MATCH,9017950,可控核聚变,0,[],True,True,0,0,MATCH,9034134,中科院,0,[],False,False,0,[],0,True,regressed
+0,英伟达首席财务官表示，数据中心芯片需求较此前预测的5000亿美元有所增长,"[""液冷数据中心""]",MATCH,9037857,数据中心,0,[],True,True,0,0,HUMAN_REVIEW,,,0,[],False,False,0,[],0,True,regressed

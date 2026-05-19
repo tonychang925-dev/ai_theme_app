@@ -89,6 +89,7 @@ def evaluate(
     over_expanded_related_count = 0
     generic_only_related_count = 0
     llm_anchor_guard_count = 0
+    wrong_related_rows: list[dict[str, Any]] = []
 
     for row in trace.get("rows", []):
         case_id = row.get("case_id")
@@ -107,11 +108,15 @@ def evaluate(
         ]
         neighbor_related_count += len(neighbor_related_names)
         over_expanded_related_count += max(0, len(neighbor_related_names) - COMMERCIAL_SPACE_RELATED_LIMIT)
-        wrong_related_count += sum(
-            1
-            for name in related_names
-            if not _matches_gold(gold, name) and not _is_commercial_space_neighbor(gold, primary_name, name)
-        )
+        wrong_items = [
+            item
+            for item in row.get("related_mappings", [])
+            if not _matches_gold(gold, item.get("theme_name"))
+            and not _is_commercial_space_neighbor(gold, primary_name, item.get("theme_name"))
+        ]
+        wrong_related_count += len(wrong_items)
+        for item in wrong_items:
+            wrong_related_rows.append(_wrong_related_attribution_row(row, item, gold, primary_name))
         generic_only_related_count += sum(
             1 for item in row.get("related_mappings", []) if _is_generic_only_related(item)
         )
@@ -173,6 +178,7 @@ def evaluate(
     }
     write_json(out_dir / "accuracy_report.json", accuracy_report)
     write_json(out_dir / "stock_candidate_report.json", stock_report)
+    _write_wrong_related_attribution(out_dir, wrong_related_rows)
     _write_confusion(out_dir / "confusion_matrix.csv", evaluated_rows)
     _write_summary(out_dir / "summary.md", accuracy_report, trace.get("counts", {}))
     return accuracy_report
@@ -183,16 +189,7 @@ def _rate(value: int, total: int) -> float:
 
 
 def _is_generic_only_related(item: dict[str, Any]) -> bool:
-    evidence = item.get("evidence_json") or {}
-    if isinstance(evidence, str):
-        try:
-            evidence = json.loads(evidence)
-        except Exception:
-            evidence = {}
-    if isinstance(evidence, dict) and isinstance(evidence.get("related_match"), dict):
-        evidence = evidence["related_match"].get("evidence") or {}
-    if not isinstance(evidence, dict):
-        return False
+    evidence = _extract_related_evidence(item)
     anchor_hits = evidence.get("anchor_hits") or []
     strong_hits = (
         evidence.get("theme_name_hit_terms")
@@ -203,6 +200,101 @@ def _is_generic_only_related(item: dict[str, Any]) -> bool:
     )
     support_hits = evidence.get("support_hits") or []
     return bool(support_hits) and not bool(anchor_hits) and not bool(strong_hits)
+
+
+def _extract_related_evidence(item: dict[str, Any]) -> dict[str, Any]:
+    evidence = item.get("evidence_json") or {}
+    if isinstance(evidence, str):
+        try:
+            evidence = json.loads(evidence)
+        except Exception:
+            evidence = {}
+    if isinstance(evidence, dict) and isinstance(evidence.get("related_match"), dict):
+        evidence = evidence["related_match"].get("evidence") or {}
+    if not isinstance(evidence, dict):
+        return {}
+    return evidence
+
+
+def _wrong_related_attribution_row(
+    trace_row: dict[str, Any],
+    item: dict[str, Any],
+    gold: str,
+    primary_name: str | None,
+) -> dict[str, Any]:
+    evidence = _extract_related_evidence(item)
+    hit_terms = evidence.get("hit_terms") or evidence.get("anchor_hits") or []
+    hit_roles = evidence.get("hit_term_roles") if isinstance(evidence.get("hit_term_roles"), dict) else {}
+    summary = evidence.get("evidence_summary") if isinstance(evidence.get("evidence_summary"), dict) else {}
+    root_cause = _classify_wrong_related_root_cause(item, evidence)
+    return {
+        "case_id": trace_row.get("case_id"),
+        "event_title": trace_row.get("event_title") or trace_row.get("title") or "",
+        "gold_theme": gold,
+        "primary_theme_name": primary_name or "",
+        "wrong_subject_key": item.get("subject_key") or "",
+        "wrong_theme_name": item.get("theme_name") or "",
+        "confidence": item.get("confidence"),
+        "match_reason": item.get("match_reason") or "",
+        "source_profile_version": _profile_version_from_evidence(evidence),
+        "evidence_summary": json.dumps(summary or evidence, ensure_ascii=False, default=str),
+        "hit_terms": "|".join(str(x) for x in hit_terms),
+        "hit_term_roles": "|".join(f"{k}:{v}" for k, v in hit_roles.items()),
+        "root_cause": root_cause,
+        "fix_action": _fix_action_for_root_cause(root_cause),
+    }
+
+
+def _profile_version_from_evidence(evidence: dict[str, Any]) -> str:
+    version = evidence.get("profile_version") or evidence.get("source_profile_version")
+    if version:
+        return str(version)
+    return "unknown"
+
+
+def _classify_wrong_related_root_cause(item: dict[str, Any], evidence: dict[str, Any]) -> str:
+    theme_name = str(item.get("theme_name") or "")
+    hit_roles = evidence.get("hit_term_roles") if isinstance(evidence.get("hit_term_roles"), dict) else {}
+    roles = set(str(v) for v in hit_roles.values())
+    hit_terms = [str(x) for x in evidence.get("hit_terms") or evidence.get("anchor_hits") or []]
+    if roles and roles <= {"source_org", "speaker", "organizer"}:
+        return "source_org_as_anchor"
+    if roles and roles <= {"location"}:
+        return "location_as_anchor"
+    if roles and roles <= {"support", "generic_short_term"}:
+        return "matcher_related_gate_too_loose"
+    if theme_name in {"半导体", "服务器", "数据中心", "证券", "深圳", "高温", "一带一路", "游戏", "港口"}:
+        return "broad_policy_profile"
+    if len(theme_name) <= 2:
+        return "short_generic_theme"
+    return "profile_boundary_missing"
+
+
+def _fix_action_for_root_cause(root_cause: str) -> str:
+    return {
+        "source_org_as_anchor": "downgrade_source_org_terms_and_add_negative",
+        "location_as_anchor": "downgrade_location_terms_and_add_location_strict_rule",
+        "short_generic_theme": "add_short_theme_direct_hit_guard",
+        "broad_policy_profile": "rebuild_profile_v2_with_strict_related_policy",
+        "profile_boundary_missing": "rebuild_profile_v2_with_negative_terms",
+        "matcher_related_gate_too_loose": "tighten_related_gate",
+        "eval_alias_error": "update_alias_or_neighbor_map",
+    }.get(root_cause, "manual_review")
+
+
+def _write_wrong_related_attribution(out_dir: Path, rows: list[dict[str, Any]]) -> None:
+    path_jsonl = out_dir / "wrong_related_attribution_report.jsonl"
+    path_csv = out_dir / "wrong_related_attribution_report.csv"
+    with path_jsonl.open("w", encoding="utf-8") as fh:
+        for row in rows:
+            fh.write(json.dumps(row, ensure_ascii=False, default=str) + "\n")
+    if not rows:
+        path_csv.write_text("", encoding="utf-8")
+        return
+    with path_csv.open("w", encoding="utf-8", newline="") as fh:
+        writer = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
+        writer.writeheader()
+        writer.writerows(rows)
 
 
 def _write_confusion(path: Path, rows: list[dict[str, Any]]) -> None:
