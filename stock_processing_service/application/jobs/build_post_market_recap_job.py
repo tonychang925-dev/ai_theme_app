@@ -9,6 +9,9 @@ from typing import Any
 from uuid import uuid4
 
 from stock_processing_service.application.cache import SnapshotCacheWriter
+from stock_processing_service.application.services.new_chain_post_market_report_builder import (
+    NewChainPostMarketReportBuilder,
+)
 from stock_processing_service.application.use_cases.build_strong_stock_tracking import (
     LAYER_C_INPUT_MODE,
     BuildStrongStockTrackingUseCase,
@@ -51,6 +54,7 @@ class BuildPostMarketRecapJob:
         mainline_state_job: Any | None = None,  # BuildMainlineStateJob — Layer B 前置
         cycle_judgement_job: Any | None = None,  # BuildCycleJudgementJob — Layer B 前置
         evidence_job: Any | None = None,  # BuildThemeCycleEvidenceDailyJob — Layer B 证据
+        report_builder: NewChainPostMarketReportBuilder | None = None,
     ) -> None:
         self._read_port = read_port
         self._write_port = write_port
@@ -74,6 +78,7 @@ class BuildPostMarketRecapJob:
         self._mainline_state_job = mainline_state_job
         self._cycle_judgement_job = cycle_judgement_job
         self._evidence_job = evidence_job
+        self._report_builder = report_builder or NewChainPostMarketReportBuilder()
 
     @staticmethod
     def _d(value: Any) -> Decimal:
@@ -481,28 +486,7 @@ class BuildPostMarketRecapJob:
             if isinstance(obj, Decimal): return float(obj)
             return obj
 
-        # ── 生成结构化 report（缺依赖必须失败，禁止写入半空 report）──
-        from stock_service.repositories.report_repository import ReportRepository
-        from stock_service.config import StockServiceConfig
-        from stock_service.services.recap_service import RecapService
-
-        report_cfg = StockServiceConfig()
-        report_repo = ReportRepository(report_cfg)
-        await report_repo.initialize()
-        try:
-            report_service = RecapService(report_repo)
-            report = await report_service.build_post_market_report(trade_date.isoformat())
-            recap_doc["report"] = {
-                "report_type": report.report_type,
-                "trade_date": report.trade_date,
-                "title": report.title,
-                "summary": report.summary,
-                "highlights": list(report.highlights or []),
-                "sections": [{"heading": h, "items": list(i or [])} for h, i in list(report.sections or [])],
-                "metadata": dict(getattr(report, "metadata", {}) or {}),
-            }
-        finally:
-            await report_repo.close()
+        recap_doc["report"] = self._report_builder.build(recap_doc)
 
         snapshot = PostMarketRecapSnapshot(
             trade_date=trade_date,
