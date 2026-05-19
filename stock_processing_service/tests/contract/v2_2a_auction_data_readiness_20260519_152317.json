@@ -1,0 +1,396 @@
+{
+  "phase": "v2.2a_auction_data_readiness",
+  "timestamp": "2026-05-19T15:23:17.474794",
+  "overall": {
+    "total_signals": 192,
+    "skipped_no_next_day": 5,
+    "source_counts": {
+      "missing": 180,
+      "daily_open_proxy": 12
+    },
+    "source_pcts": {
+      "real_auction": 0.0,
+      "daily_open_proxy": 6.25,
+      "missing": 93.75
+    }
+  },
+  "per_date": {
+    "2026-02-27": {
+      "signals": 2,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 2
+    },
+    "2026-03-02": {
+      "signals": 1,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 1
+    },
+    "2026-03-03": {
+      "signals": 1,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 1
+    },
+    "2026-03-04": {
+      "signals": 1,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 1
+    },
+    "2026-03-05": {
+      "signals": 1,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 1
+    },
+    "2026-03-06": {
+      "signals": 3,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 3
+    },
+    "2026-03-09": {
+      "signals": 1,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 1
+    },
+    "2026-03-10": {
+      "signals": 2,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 2
+    },
+    "2026-03-11": {
+      "signals": 2,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 2
+    },
+    "2026-03-12": {
+      "signals": 3,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 3
+    },
+    "2026-03-13": {
+      "signals": 2,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 2
+    },
+    "2026-03-17": {
+      "signals": 1,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 1
+    },
+    "2026-03-26": {
+      "signals": 3,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 3
+    },
+    "2026-03-27": {
+      "signals": 1,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 1
+    },
+    "2026-03-31": {
+      "signals": 2,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 2
+    },
+    "2026-04-01": {
+      "signals": 3,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 3
+    },
+    "2026-04-02": {
+      "signals": 4,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 4
+    },
+    "2026-04-03": {
+      "signals": 4,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 4
+    },
+    "2026-04-07": {
+      "signals": 5,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 5
+    },
+    "2026-04-08": {
+      "signals": 5,
+      "real_auction": 0,
+      "daily_open_proxy": 1,
+      "missing": 4
+    },
+    "2026-04-09": {
+      "signals": 7,
+      "real_auction": 0,
+      "daily_open_proxy": 1,
+      "missing": 6
+    },
+    "2026-04-10": {
+      "signals": 10,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 10
+    },
+    "2026-04-13": {
+      "signals": 7,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 7
+    },
+    "2026-04-14": {
+      "signals": 10,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 10
+    },
+    "2026-04-15": {
+      "signals": 10,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 10
+    },
+    "2026-04-16": {
+      "signals": 7,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 7
+    },
+    "2026-04-17": {
+      "signals": 10,
+      "real_auction": 0,
+      "daily_open_proxy": 2,
+      "missing": 8
+    },
+    "2026-04-20": {
+      "signals": 10,
+      "real_auction": 0,
+      "daily_open_proxy": 2,
+      "missing": 8
+    },
+    "2026-04-21": {
+      "signals": 10,
+      "real_auction": 0,
+      "daily_open_proxy": 1,
+      "missing": 9
+    },
+    "2026-04-22": {
+      "signals": 9,
+      "real_auction": 0,
+      "daily_open_proxy": 3,
+      "missing": 6
+    },
+    "2026-04-23": {
+      "signals": 10,
+      "real_auction": 0,
+      "daily_open_proxy": 1,
+      "missing": 9
+    },
+    "2026-04-24": {
+      "signals": 10,
+      "real_auction": 0,
+      "daily_open_proxy": 1,
+      "missing": 9
+    },
+    "2026-04-27": {
+      "signals": 8,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 8
+    },
+    "2026-04-28": {
+      "signals": 7,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 7
+    },
+    "2026-04-29": {
+      "signals": 8,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 8
+    },
+    "2026-04-30": {
+      "signals": 7,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 7
+    },
+    "2026-05-06": {
+      "signals": 3,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 3
+    },
+    "2026-05-07": {
+      "signals": 2,
+      "real_auction": 0,
+      "daily_open_proxy": 0,
+      "missing": 2
+    }
+  },
+  "stock_coverage": {
+    "total_unique": 85,
+    "with_real_auction": 0,
+    "with_any_auction": 12,
+    "top_repeaters": [
+      {
+        "stock_id": "002491.SZ",
+        "n": 7,
+        "real": 0,
+        "proxy": 0
+      },
+      {
+        "stock_id": "002902.SZ",
+        "n": 7,
+        "real": 0,
+        "proxy": 1
+      },
+      {
+        "stock_id": "603618.SH",
+        "n": 6,
+        "real": 0,
+        "proxy": 0
+      },
+      {
+        "stock_id": "000890.SZ",
+        "n": 5,
+        "real": 0,
+        "proxy": 1
+      },
+      {
+        "stock_id": "002498.SZ",
+        "n": 5,
+        "real": 0,
+        "proxy": 0
+      },
+      {
+        "stock_id": "002361.SZ",
+        "n": 5,
+        "real": 0,
+        "proxy": 0
+      },
+      {
+        "stock_id": "001400.SZ",
+        "n": 4,
+        "real": 0,
+        "proxy": 0
+      },
+      {
+        "stock_id": "000534.SZ",
+        "n": 4,
+        "real": 0,
+        "proxy": 0
+      },
+      {
+        "stock_id": "002309.SZ",
+        "n": 4,
+        "real": 0,
+        "proxy": 0
+      },
+      {
+        "stock_id": "000402.SZ",
+        "n": 4,
+        "real": 0,
+        "proxy": 0
+      },
+      {
+        "stock_id": "605289.SH",
+        "n": 4,
+        "real": 0,
+        "proxy": 0
+      },
+      {
+        "stock_id": "000720.SZ",
+        "n": 3,
+        "real": 0,
+        "proxy": 0
+      },
+      {
+        "stock_id": "000788.SZ",
+        "n": 3,
+        "real": 0,
+        "proxy": 0
+      },
+      {
+        "stock_id": "301188.SZ",
+        "n": 3,
+        "real": 0,
+        "proxy": 0
+      },
+      {
+        "stock_id": "600488.SH",
+        "n": 3,
+        "real": 0,
+        "proxy": 0
+      },
+      {
+        "stock_id": "600594.SH",
+        "n": 3,
+        "real": 0,
+        "proxy": 0
+      },
+      {
+        "stock_id": "000919.SZ",
+        "n": 3,
+        "real": 0,
+        "proxy": 0
+      },
+      {
+        "stock_id": "300936.SZ",
+        "n": 3,
+        "real": 0,
+        "proxy": 0
+      },
+      {
+        "stock_id": "002051.SZ",
+        "n": 3,
+        "real": 0,
+        "proxy": 0
+      },
+      {
+        "stock_id": "300489.SZ",
+        "n": 3,
+        "real": 0,
+        "proxy": 0
+      }
+    ]
+  },
+  "auction_quality": {
+    "real_auction_rows": 0,
+    "proxy_rows": 12,
+    "has_end_drop_count": 0,
+    "has_end_spike_count": 0,
+    "is_red_zone_count": 0
+  },
+  "conclusions": {
+    "total_signals": 192,
+    "real_auction_count": 0,
+    "real_auction_pct": 0.0,
+    "daily_open_proxy_count": 12,
+    "daily_open_proxy_pct": 6.25,
+    "missing_count": 180,
+    "missing_pct": 93.75,
+    "unique_auction_dates": 22,
+    "unique_auction_stocks": 308,
+    "stocks_with_real_auction": 0,
+    "stocks_with_any_auction": 12,
+    "total_unique_stocks": 85,
+    "recommendation": "BLOCKED: Insufficient auction data. Prioritize data collection before v2.2."
+  }
+}
