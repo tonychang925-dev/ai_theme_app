@@ -1,8 +1,8 @@
 # AI投资助理：实时新闻事件、题材匹配与盘前必读事件驱动机会链路设计
 
-> 版本：v1.0  
-> 日期：2026-05-15  
-> 状态：设计稿  
+> 版本：v1.6  
+> 日期：2026-05-19  
+> 状态：主链路已实现，Theme Profile v2 灰度验证中，Phase 4.6 完整新链 E2E100 执行闭环通过，召回恢复待处理  
 > 适用项目：`tonychang925-dev/ai_theme_app`  
 > 设计原则：基于现有 Redis Stream + ThemeProcessor + ThemeMatchEngine + DecisionExecutor 架构做业务串联，不从零重造新闻荐股系统。
 
@@ -27,7 +27,7 @@
 → ThemeMatchEngine
 → stream:events:decision
 → DecisionExecutor
-→ event_theme_map / theme_heat / unknown_event_pool / review_queue / theme_updates
+→ event_subject_map / event_review_queue / pending / theme_updates
 ```
 
 这个链路已经被第二阶段架构文档定义为项目的题材匹配主链路，并且当前运行时 `ThemeMatchEngine` 已经按高精度离线裁决链路生产化，包括：
@@ -278,7 +278,7 @@ stream:events:decision
         ↓
 DecisionExecutor
         ↓
-event_theme_map / theme_heat / unknown_event_pool / review_queue
+event_subject_map / event_review_queue / pending
         ↓
 PreMarketBriefBuilder
         ↓
@@ -352,7 +352,7 @@ stock_processing_service/application/services/event_driven_opportunity_builder.p
 推荐顺序：
 
 ```text
-1. event_theme_map + news_event + theme_heat 等落库结果
+1. event_subject_map + news_event + event_review_queue / pending 等落库结果
 2. stream:events:decision 中的 structured decision
 3. 仅在调试或补偿场景下读取 stream:events:structured
 ```
@@ -422,7 +422,7 @@ sections.review_events
 `UNKNOWN` 不进入盘前主报告，建议进入：
 
 ```text
-unknown_event_pool
+pending
 sections.unknown_watch，可选展示
 ```
 
@@ -479,7 +479,7 @@ stale    数据不完整或生成异常
     "risk_alerts": []
   },
   "diagnostics": {
-    "source": "event_theme_map_or_stream_events_decision",
+    "source": "event_subject_map_or_stream_events_decision",
     "event_count": 0,
     "matched_event_count": 0,
     "theme_count": 0,
@@ -749,10 +749,9 @@ trade_date，可选，默认最近交易日或当前交易日
 ```text
 stream:events:decision
 → DecisionExecutor
-→ event_theme_map
-→ theme_heat
-→ unknown_event_pool
-→ review_queue
+→ event_subject_map
+→ event_review_queue
+→ pending
 ```
 
 核查项：
@@ -760,10 +759,10 @@ stream:events:decision
 ```text
 1. DecisionExecutor 是否存在并运行。
 2. stream:events:decision 是否有消费者组。
-3. MATCH 是否落库 event_theme_map。
-4. UNKNOWN 是否进入 unknown_event_pool。
-5. HUMAN_REVIEW 是否进入 review_queue。
-6. theme_heat 是否更新。
+3. MATCH 是否落库 event_subject_map。
+4. UNKNOWN 是否进入 pending。
+5. HUMAN_REVIEW 是否进入 event_review_queue。
+6. dead letter 是否为 0 或全部可解释。
 ```
 
 如果完整，后续从 DB 聚合；如果不完整，MVP 先从 decision stream 聚合。
@@ -918,10 +917,10 @@ Redis Stream 更适合实时增量，不适合长期作为报告真源。
 第一步先核查：
 1. DecisionExecutor 是否存在并运行。
 2. stream:events:decision 是否被消费。
-3. MATCH 是否已落库到 event_theme_map。
-4. UNKNOWN 是否进入 unknown_event_pool。
-5. HUMAN_REVIEW 是否进入 review_queue。
-6. theme_heat 是否更新。
+3. MATCH 是否已落库到 event_subject_map。
+4. UNKNOWN 是否进入 pending。
+5. HUMAN_REVIEW 是否进入 event_review_queue。
+6. dead letter 是否为 0 或全部可解释。
 
 如果落库链路完整：
 - PreMarketBriefBuilder 从数据库读取事件匹配结果。
@@ -959,7 +958,448 @@ Redis Stream 更适合实时增量，不适合长期作为报告真源。
 
 ---
 
-## 16. 最终结论
+## 16. 当前项目状态（2026-05-19）
+
+### 16.1 总体状态
+
+截至 2026-05-19，盘前必读已经从设计进入可运行的新链验证阶段。
+
+当前已经打通的主链路为：
+
+```text
+stream:news:raw
+→ news_raw / news_event
+→ stream:events:structured
+→ ThemeProcessor
+→ ThemeService.match_event()
+→ ThemeMatchEngine
+→ stream:events:decision
+→ DecisionExecutor
+→ event_subject_map / event_review_queue / pending
+→ PreMarketBriefBuilder
+→ EventDrivenOpportunityBuilder
+→ pre_market_brief_snapshot
+→ SPS /api/v1/pre_market_brief
+→ Vite proxy
+→ PreMarketBriefPage
+```
+
+当前明确移除的旧链依赖：
+
+```text
+frontend_bff:8003
+/api/v2/pre-market-brief
+theme_master 作为题材真源
+StockMatchEngine 作为盘前必读主链路
+旧 run_realtime_stack.sh 作为新链 E2E 启动入口
+```
+
+当前固定原则：
+
+```text
+1. 运行时事件与报告写入 stock_data。
+2. 题材画像、久赢恒丰题材股票池、强势池、弱转强池等只读数据优先读 stock_data_test。
+3. 题材主键为 subject_key。
+4. 事件题材映射主表为 event_subject_map。
+5. 前端只读 SPS /api/v1/pre_market_brief，不经过 frontend_bff。
+```
+
+### 16.2 已完成成果
+
+#### Phase 0：执行闭环与快照语义
+
+已完成：
+
+```text
+1. DecisionExecutor 支持 HUMAN_REVIEW action。
+2. HUMAN_REVIEW 写入 event_review_queue，不再进入 unknown action / dead letter。
+3. UNKNOWN 保持 pending / clustering 路径，不混入 HUMAN_REVIEW。
+4. pre_market_brief_snapshot 支持 draft/final/stale。
+5. final 默认不被普通 rebuild 覆盖，force=true 才允许覆盖。
+6. JSONB payload merge 顺序修正为旧 payload || 新 payload。
+7. source_trace_id / generated_at / finalized_at / updated_at 字段补齐。
+```
+
+#### Phase 1-3：报告聚合、API、股票机会层
+
+已完成：
+
+```text
+1. PreMarketBriefBuilder MVP。
+2. EventDrivenOpportunityBuilder 只读候选池聚合与规则评分。
+3. SPS API：
+   GET  /api/v1/pre_market_brief
+   POST /api/v1/pre_market_brief/rebuild
+   POST /api/v1/pre_market_brief/finalize
+4. 前端 PreMarketBriefPage 改为直接请求 /api/v1/pre_market_brief。
+5. frontend_bff 盘前必读代理已从新链中移除。
+6. 页面不再把 subject_key 当题材名展示。
+```
+
+#### Phase 4：E2E 与 Theme Profile v2 质量工程
+
+已完成：
+
+```text
+1. E2E 工具链：
+   parse_test_cases.py
+   replay_akshare_raw_news.py
+   cleanup_e2e_run.py
+   trace_pre_market_e2e_run.py
+   evaluate_pre_market_brief.py
+   run_pre_market_e2e.py
+
+2. 读写分离：
+   write_db = stock_data
+   read_db  = stock_data_test
+
+3. theme_profile_v2：
+   - 已新增 schema 与 validator。
+   - Top50 及后续高风险噪声源已进入 v2 draft 灰度。
+   - 当前 active draft v2 数量：68。
+   - 当前 holdback/review：
+     9030409 AR眼镜
+     9064241 金刚石散热
+
+4. hard-negative 样本集：
+   - 当前样本数：63。
+   - 覆盖蓝箭航天、SHEIN/希音IPO、航空发动机、中科院、液冷数据中心、英特尔、HBM、半导体大类、SpaceX、港口、游戏、芬太尼等高风险错配。
+
+5. ThemeMatchEngine 质量修复：
+   - 泛词证据污染治理。
+   - support/no_anchor 证据不再贡献强锚点。
+   - role-aware guard：source_org/location/generic_short_term/support 不得单独进入 related。
+   - alias direct hit + conflict evidence 时不再压过干净领域候选。
+   - EventMatchProfile fallback recall query 补正文片段，避免正文强锚点丢失。
+   - support_hits 只统计事件文本真实命中的 support/no_anchor 项，避免 profile 自身弱词虚假命中。
+```
+
+### 16.3 当前验证基线
+
+#### 最近稳定完整链路基线
+
+`pm_e2e_phase4_5_terminalfix_v2_full_100_20260515_001`：
+
+```text
+news_raw_count = 100
+news_event_count = 100
+decision_distinct_event_count = 100
+terminal_distinct_event_count = 100
+dead_letter_count = 0
+duplicate_decision_event_count = 0
+theme_set_recall@5 = 0.62
+wrong_related_count = 7
+generic_only_related_count = 0
+brief_theme_count = 37
+brief_opportunity_count = 36
+```
+
+该基线证明：
+
+```text
+1. ThemeProcessor / DecisionExecutor 执行闭环已稳定。
+2. event_subject_map / review / pending 终态统计闭合。
+3. report snapshot 与 opportunity builder 可生成非空报告。
+4. 前端可通过 SPS 快照展示盘前必读。
+```
+
+#### Phase 4.6 gate-only 最新结果
+
+`phase4_6_final_compare_gate_r2`：
+
+```text
+v2_loaded_count = 68
+v2_hard_negative_reject_rate = 1.0
+v1_theme_set_recall@5 = 0.55
+v2_theme_set_recall@5 = 0.58
+v2_wrong_related_count = 0
+v2_generic_only_related_count = 0
+recall5_regressed_count = 1
+```
+
+唯一剩余 gate-only recall regression：
+
+```text
+英伟达数据中心芯片需求
+→ 无液冷/冷却锚点
+→ v2 转 HUMAN_REVIEW
+```
+
+该口径可接受，因为它避免把“数据中心芯片需求”误判为液冷数据中心。
+
+### 16.4 Phase 4.6 完整新链 E2E100 结果
+
+已使用新链 stream-only 启动方式完成完整 E2E100：
+
+```text
+run_id = pm_e2e_phase4_6_stream_v2_full_100_20260515_001
+write_db = stock_data
+read_db = stock_data_test
+sps = http://127.0.0.1:8090
+theme_profile_version = v2
+theme_profile_v2_status = draft
+theme_profile_v2_fallback_to_v1 = true
+theme_profile_v2_require_loaded = true
+theme_match_llm_judge_mode = auto
+theme_processor_structured_concurrency = 2
+theme_match_enable_event_profile_llm = false
+```
+
+该轮验证使用新增脚本：
+
+```text
+evaluate_service/e2e/pre_market_brief/run_new_chain_e2e_stack.sh
+```
+
+脚本只启动：
+
+```text
+1. stock_processing_service 8090
+2. run_raw_news_services.py
+3. run_phase0_decision_services.py
+```
+
+明确不启动：
+
+```text
+frontend_bff:8003
+旧 collector
+旧 matcher
+旧 BFF proxy
+```
+
+本轮实际结果：
+
+```text
+news_raw_count = 100
+news_event_count = 100
+decision_entry_count = 101
+decision_distinct_event_count = 100
+duplicate_decision_event_count = 1
+terminal_distinct_event_count = 100
+non_terminal_event_count = 0
+decision_seen_but_no_output_count = 0
+dead_letter_count = 0
+
+mapped_distinct_event_count = 82
+review_distinct_event_count = 14
+pending_distinct_event_count = 4
+
+theme_set_recall@5 = 0.57
+primary_hit_rate = 0.57
+wrong_related_count = 0
+generic_only_related_count = 0
+llm_anchor_guard_count = 4
+
+brief_theme_count = 25
+brief_opportunity_count = 25
+numeric_theme_name_count = 0
+subject_key_chip_count = 0
+unnamed_theme_count = 7
+
+avg_match_ms = 6960.906
+p50_match_ms = 5187.793
+p95_match_ms = 16681.036
+llm_judge_count = 32
+event_profile_llm_count = 0
+profile_load_count = 3
+profile_map_cache_hit_count = 97
+profile_map_cache_miss_count = 3
+query_vector_cache_hit_count = 99
+rerank_doc_vector_cache_hit_count = 2179
+rerank_doc_vector_cache_miss_count = 507
+```
+
+结论：
+
+```text
+1. 新链 stream-only E2E 启动方式成立，不依赖 frontend_bff。
+2. ThemeProcessor / DecisionExecutor 终态闭环通过。
+3. pre_market_brief_snapshot rebuild 读写分离问题已修复。
+4. 数字题材名问题已在本轮快照中清零。
+5. wrong_related_count 已压到 0，generic_only_related_count 为 0。
+6. 召回与机会数量低于预期：
+   theme_set_recall@5 = 0.57，低于目标 0.60。
+   brief_opportunity_count = 25，低于目标 35。
+7. 本轮不能视为 Phase 4.6 完整验收通过，应进入召回恢复专项。
+```
+
+### 16.5 已知风险与当前处理策略
+
+#### 风险 1：旧快照仍可能包含数字题材名
+
+历史快照曾出现：
+
+```text
+9060949
+9043089
+9034859
+```
+
+原因：
+
+```text
+旧快照或 v1 fallback 使用 subject_key 作为展示名。
+```
+
+当前已修：
+
+```text
+1. 前端不再展示 subject_key chip。
+2. snapshot evaluation 新增：
+   numeric_theme_name_count
+   unnamed_theme_count
+   subject_key_chip_count
+3. 门槛：
+   numeric_theme_name_count = 0
+```
+
+说明：
+
+```text
+旧 run 的 sps_payload.json 仍可能显示 numeric_theme_name_count > 0。
+只有重新跑完整新链 E2E100 后，该指标才可作为当前结果判定。
+```
+
+#### 风险 2：旧 run_realtime_stack.sh 会启动 frontend_bff
+
+结论：
+
+```text
+run_realtime_stack.sh 不再用于盘前必读新链 E2E。
+```
+
+替代：
+
+```text
+run_new_chain_e2e_stack.sh
+```
+
+#### 风险 3：v2 仍是灰度，不应直接 Top100 全量扩容
+
+当前策略：
+
+```text
+错配源优先
+高频污染优先
+v1 fallback 噪声优先
+每轮都补 hard-negative
+每轮都跑 gate-only + 完整链路 E2E
+```
+
+不建议：
+
+```text
+立即 Top100 / Top150 机械扩容。
+```
+
+### 16.6 下一阶段规划
+
+#### P0：Phase 4.6 召回恢复专项
+
+当前完整 E2E100 已证明执行闭环稳定，但召回和机会数量偏低。下一步优先恢复召回，不继续扩 v2 数量。
+
+目标：
+
+```text
+1. 分析 43 个 recall miss / HUMAN_REVIEW / UNKNOWN 样本。
+2. 输出 recall_regression_attribution_report。
+3. 区分：
+   - 合理 HUMAN_REVIEW
+   - role guard 过严
+   - profile v2 过窄
+   - gold alias / neighbor map 不完整
+   - opportunity builder 股票池缺口
+4. 针对高频漏召回题材做定点修复。
+```
+
+重新验收门槛：
+
+```text
+news_raw_count = 100
+news_event_count = 100
+decision_distinct_event_count >= 99
+terminal_distinct_event_count >= 99
+dead_letter_count = 0
+structured PEL = 0
+decision PEL = 0
+
+theme_set_recall@5 >= 0.60
+wrong_related_count <= 7
+generic_only_related_count = 0
+brief_opportunity_count >= 35
+
+numeric_theme_name_count = 0
+subject_key_chip_count = 0
+```
+
+重点回归样本：
+
+```text
+1. Vera Rubin / 全液冷设计
+   应命中液冷数据中心，不得命中中科院。
+
+2. BEST / 托卡马克 / 核聚变采购
+   应命中可控核聚变，不得命中中科院。
+
+3. 数据中心芯片需求
+   无液冷/冷却锚点时，HUMAN_REVIEW 可接受。
+
+4. SpaceX / 星舰 / 星链 / 商业航天
+   不得显示数字题材名。
+
+5. 卫星互联网低轨组网发射
+   题材名必须为中文，不得显示 subject_key。
+```
+
+#### P1：固化 Phase 4.6 基线
+
+只有在召回恢复后完整 E2E100 通过，才执行：
+
+```text
+1. 将当前 68 条 draft v2 中稳定题材标记为 accepted_candidate。
+2. 保留 9030409 / 9064241 review holdback。
+3. 固化 hard-negative 样本集。
+4. 将 run_new_chain_e2e_stack.sh 写入 README 执行路径。
+5. 将 numeric_theme_name_count 纳入后续 E2E 必过门禁。
+```
+
+#### P2：剩余错配源定点治理
+
+如果完整 E2E100 仍有 wrong related：
+
+```text
+1. 生成 wrong_related_attribution_report。
+2. 按 root_cause 分组：
+   source_org_as_anchor
+   location_as_anchor
+   short_generic_theme
+   broad_policy_profile
+   profile_boundary_missing
+   matcher_related_gate_too_loose
+   eval_alias_error
+3. 仅精修高频错配源 profile。
+4. 每个新增 profile 必须补 hard-negative。
+```
+
+#### P3：扩展 v2 覆盖面
+
+只有在 Phase 4.6 完整 E2E100 通过后，才进入：
+
+```text
+Top80 / Top100 v2 覆盖扩展
+```
+
+扩展原则：
+
+```text
+不是按热度机械扩容，
+而是按 E2E wrong related 源头、fallback 噪声、高风险大类题材优先。
+```
+
+---
+
+## 17. 最终结论
 
 本阶段的正确方向是：
 

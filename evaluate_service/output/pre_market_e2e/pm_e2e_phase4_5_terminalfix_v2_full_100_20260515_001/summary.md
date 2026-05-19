@@ -39,4 +39,7 @@
 - rerank_doc_vector_cache_miss_count: 535
 - brief_theme_count: 37
 - brief_opportunity_count: 36
-- 是否通过基础门禁: True
+- numeric_theme_name_count: 4
+- unnamed_theme_count: 12
+- subject_key_chip_count: 4
+- 是否通过基础门禁: False

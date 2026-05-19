@@ -12,6 +12,7 @@ from evaluate_service.e2e.pre_market_brief.evaluate_pre_market_brief import (
     _is_commercial_space_neighbor,
     _is_generic_only_related,
     _matches_gold,
+    _snapshot_theme_name_quality,
     _wrong_related_attribution_row,
 )
 from evaluate_service.e2e.pre_market_brief.parse_test_cases import parse_test_cases_file
@@ -177,6 +178,25 @@ def test_wrong_related_attribution_extracts_evidence_roles():
     assert out["hit_terms"] == "芯片|Meta"
     assert "Meta:main_anchor" in out["hit_term_roles"]
     assert out["root_cause"] == "profile_boundary_missing"
+
+
+def test_snapshot_theme_name_quality_detects_numeric_display_names():
+    sections = {
+        "matched_themes": [
+            {"subject_key": "9060949", "theme_name": "9060949"},
+            {"subject_key": "9024880", "theme_name": "液冷数据中心"},
+            {"subject_key": "9017950", "name": ""},
+        ],
+        "event_driven_opportunities": [
+            {"subject_key": "9043089", "subject_name": "9043089"},
+        ],
+    }
+
+    quality = _snapshot_theme_name_quality(sections)
+
+    assert quality["numeric_theme_name_count"] == 2
+    assert quality["subject_key_chip_count"] == 2
+    assert quality["unnamed_theme_count"] == 1
 
 
 def test_ensure_no_gold_leak_accepts_clean_payload():

@@ -149,6 +149,7 @@ def evaluate(
     total = len(evaluated_rows)
     sections = snapshot.get("sections") or {}
     diagnostics = snapshot.get("diagnostics") or {}
+    snapshot_name_quality = _snapshot_theme_name_quality(sections)
     accuracy_report = {
         "total": total,
         "primary_hit_count": primary_hits,
@@ -169,6 +170,7 @@ def evaluate(
         "brief_major_event_count": len(sections.get("major_events") or []),
         "brief_theme_count": len(sections.get("matched_themes") or []),
         "brief_opportunity_count": len(sections.get("event_driven_opportunities") or []),
+        **snapshot_name_quality,
         "performance": _extract_performance_summary(trace.get("counts", {})),
         "diagnostics": diagnostics,
     }
@@ -297,6 +299,63 @@ def _write_wrong_related_attribution(out_dir: Path, rows: list[dict[str, Any]]) 
         writer.writerows(rows)
 
 
+DISPLAY_NAME_KEYS = {
+    "theme_name",
+    "subject_name",
+    "matched_theme_name",
+    "primary_theme_name",
+    "latest_theme_name",
+    "name",
+}
+
+
+def _snapshot_theme_name_quality(sections: dict[str, Any]) -> dict[str, int]:
+    numeric_count = 0
+    unnamed_count = 0
+    subject_key_chip_count = 0
+
+    def _is_numeric_name(value: Any) -> bool:
+        text = str(value).strip() if value is not None else ""
+        return bool(text) and text.isdigit()
+
+    def _visit(value: Any) -> None:
+        nonlocal numeric_count, unnamed_count, subject_key_chip_count
+        if isinstance(value, list):
+            for item in value:
+                _visit(item)
+            return
+        if not isinstance(value, dict):
+            return
+
+        subject_key = str(value.get("subject_key") or value.get("matched_subject_key") or "").strip()
+        saw_display_key = False
+        for key in DISPLAY_NAME_KEYS:
+            if key not in value:
+                continue
+            saw_display_key = True
+            text = str(value.get(key) or "").strip()
+            if not text:
+                unnamed_count += 1
+                continue
+            if _is_numeric_name(text):
+                numeric_count += 1
+            if subject_key and text == subject_key:
+                subject_key_chip_count += 1
+        if subject_key and not saw_display_key and any(k in value for k in ("theme_id", "confidence", "event_count")):
+            unnamed_count += 1
+
+        for item in value.values():
+            if isinstance(item, (dict, list)):
+                _visit(item)
+
+    _visit(sections)
+    return {
+        "numeric_theme_name_count": numeric_count,
+        "unnamed_theme_count": unnamed_count,
+        "subject_key_chip_count": subject_key_chip_count,
+    }
+
+
 def _write_confusion(path: Path, rows: list[dict[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as fh:
@@ -353,6 +412,9 @@ def _write_summary(path: Path, report: dict[str, Any], trace_counts: dict[str, A
         f"- rerank_doc_vector_cache_miss_count: {perf.get('rerank_doc_vector_cache_miss_count', trace_counts.get('rerank_doc_vector_cache_miss_count', 0))}",
         f"- brief_theme_count: {report['brief_theme_count']}",
         f"- brief_opportunity_count: {report['brief_opportunity_count']}",
+        f"- numeric_theme_name_count: {report.get('numeric_theme_name_count', 0)}",
+        f"- unnamed_theme_count: {report.get('unnamed_theme_count', 0)}",
+        f"- subject_key_chip_count: {report.get('subject_key_chip_count', 0)}",
         f"- 是否通过基础门禁: {_base_gate_passed(report, trace_counts)}",
     ]
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -386,6 +448,7 @@ def _base_gate_passed(report: dict[str, Any], trace_counts: dict[str, Any]) -> b
         and int(trace_counts.get("news_raw_count") or 0) >= expected
         and int(trace_counts.get("news_event_count") or 0) >= max(1, int(expected * 0.95))
         and report.get("brief_theme_count", 0) > 0
+        and int(report.get("numeric_theme_name_count") or 0) == 0
     )
 
 
