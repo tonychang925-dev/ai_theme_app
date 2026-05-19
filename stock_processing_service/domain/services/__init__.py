@@ -25,11 +25,23 @@ from .strong_stock_tracking_service import (
 )
 from .subject_cycle_evidence_builder import SubjectCycleEvidence, SubjectCycleEvidenceBuilder
 from .subject_cycle_judgement_service import SubjectCycleJudgement, SubjectCycleJudgementService
+from .auction_confirmation_service import (
+    AuctionConfirmationResult,
+    AuctionConfirmationService,
+    AuctionSnapshotData,
+    BoardAuctionData,
+    CandidateAuctionContext,
+)
 from .w2s_auction_scorer import AuctionScore, W2SAuctionScorer
 from .w2s_candidate_service import W2SCandidate, W2SCandidateService
 from .w2s_confirm_service import W2SConfirmedPick, W2SConfirmService
 
 __all__ = [
+    "AuctionConfirmationResult",
+    "AuctionConfirmationService",
+    "AuctionSnapshotData",
+    "BoardAuctionData",
+    "CandidateAuctionContext",
     "CycleEvidence",
     "CycleEvidenceBuilder",
     "CycleJudgement",

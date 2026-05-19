@@ -1,0 +1,29 @@
+{
+  "phase": "v2.2c_auction_confirmation_pipeline",
+  "timestamp": "2026-05-19T15:55:04.359974",
+  "architecture": "ReadPorts → AuctionConfirmationService → WritePorts",
+  "table": "w2s_auction_confirmation_rebuild (isolated)",
+  "summary": {
+    "total_confirmed": 226,
+    "total_written": 0,
+    "skipped_no_auction": 217,
+    "level_counts": {
+      "X": 218,
+      "proxy_B": 5,
+      "proxy_C": 2,
+      "C": 1
+    },
+    "source_counts": {
+      "missing": 217,
+      "daily_open_proxy": 9
+    },
+    "reject_reason_counts": {
+      "auction_data_missing": 217,
+      "score_below_threshold": 2,
+      "tail_drop": 1,
+      "pool_entry_not_formal": 1
+    },
+    "write_errors": 226
+  },
+  "note": "NO capital backtest. NO strategy conclusions. Architecture verification only."
+}

@@ -2,14 +2,13 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import {
   fetchJyhfCdpCollectorLogs,
   fetchJyhfCdpCollectorStatus,
-  fetchRealtimeCollectorLogs,
-  fetchRealtimeCollectorStatus,
   startJyhfCdpCollector,
-  startRealtimeCollector,
   stopJyhfCdpCollector,
-  stopRealtimeCollector,
+  fetchNewChainRealtimeStatus,
+  startNewChainRealtime,
+  stopNewChainRealtime,
   type JyhfCdpCollectorStatus,
-  type RealtimeCollectorCommandResult,
+  type NewChainRealtimeStatus,
 } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
 
@@ -27,52 +26,33 @@ export function RealtimeCollectorPage() {
   const [running, setRunning] = useState<"unknown" | "up" | "down">("unknown");
   const [mainBusy, setMainBusy] = useState(false);
   const [jyhfBusy, setJyhfBusy] = useState(false);
-  const [statusResult, setStatusResult] = useState<RealtimeCollectorCommandResult | null>(null);
+  const [stackStatus, setStackStatus] = useState<NewChainRealtimeStatus | null>(null);
   const [jyhfStatus, setJyhfStatus] = useState<JyhfCdpCollectorStatus | null>(null);
   const [jyhfError, setJyhfError] = useState<string | null>(null);
-  const [logs, setLogs] = useState<string[]>([]);
   const [jyhfLogs, setJyhfLogs] = useState<string[]>([]);
   const [output, setOutput] = useState<string[]>([]);
   const terminalRef = useRef<HTMLDivElement | null>(null);
   const initializedRef = useRef(false);
-  const logDigestRef = useRef<string>("");
-  const statusErrorNotifiedRef = useRef(false);
 
   function append(line: string) {
     setOutput((prev) => [...prev, `[${nowText()}] ${line}`].slice(-500));
   }
 
   async function refreshStatus() {
-    const result = await fetchRealtimeCollectorStatus();
-    setStatusResult(result);
-    const text = `${result.stdout}\n${result.stderr}`;
-    // NOTE: the status script only checks whether services are alive.
-    // "up" here means backend services are reachable, NOT that collection is active.
-    const servicesUp = text.includes("[up]   web_app_service") && text.includes("[up]   stock_processing_service");
-    if (result.return_code === 0 && servicesUp && text.includes("[down]")) {
-      // Mixed state: some services up, some down
+    try {
+      const status = await fetchNewChainRealtimeStatus();
+      setStackStatus(status);
+      setRunning(status.running ? "up" : "down");
+      append(
+        `[新链] running=${status.running} raw_pid=${status.raw_news_pid ?? "-"} ` +
+        `dec_pid=${status.decision_pid ?? "-"} v2=${status.profile_version}/${status.profile_status} ` +
+        `pending=${status.pending_count} dl=${status.dead_letter_count}`
+      );
+    } catch (err) {
       setRunning("down");
-    } else if (servicesUp) {
-      setRunning("up");
-    } else {
-      setRunning("down");
-    }
-    return result;
-  }
-
-  async function refreshLogs() {
-    const result = await fetchRealtimeCollectorLogs(120);
-    const preferredOrder = ["stock_processing_service_8090.log", "web_app_service_8000.log", "frontend_5173.log"];
-    const merged = preferredOrder.flatMap((name) => {
-      const lines = result.files[name] ?? [];
-      if (!lines.length) return [];
-      return [`===== ${name} =====`, ...lines, ""];
-    });
-    const nextLogs = merged.slice(-1500);
-    const digest = nextLogs.join("\n");
-    if (digest !== logDigestRef.current) {
-      logDigestRef.current = digest;
-      setLogs(nextLogs);
+      if (err instanceof Error && err.message.includes("timeout")) {
+        append("新链状态查询超时，SPS 可能未启动");
+      }
     }
   }
 
@@ -100,14 +80,7 @@ export function RealtimeCollectorPage() {
     append("实时事件采集控制台已加载");
 	    append(`[页面来源] href=${location.href} origin=${location.origin} port=${location.port}`);
 
-    refreshStatus()
-      .then(async (result) => {
-        const text = `${result.stdout}\n${result.stderr}`;
-        if (text.includes("[up]   web_app_service:8000") || text.includes("[up]   stock_processing_service:8090")) {
-          await refreshLogs();
-        }
-      })
-      .catch(() => {
+    refreshStatus().catch(() => {
         setRunning("down");
       });
     refreshJyhfCdpStatus().catch((err) => {
@@ -116,17 +89,17 @@ export function RealtimeCollectorPage() {
     refreshJyhfCdpLogs().catch(() => undefined);
   }, []);
 
+  const statusErrorNotifiedRef = useRef(false);
   useEffect(() => {
     const timer = window.setInterval(() => {
       refreshStatus().catch((err) => {
         setRunning("down");
         if (!statusErrorNotifiedRef.current) {
           const msg = err instanceof Error ? err.message : "状态检查失败";
-          append(`状态轮询失败，已判定为未运行：${msg}`);
+          append(`状态轮询失败：${msg}`);
           statusErrorNotifiedRef.current = true;
         }
       });
-      refreshLogs().catch(() => undefined);
     }, 8000);
     return () => window.clearInterval(timer);
   }, []);
@@ -154,36 +127,23 @@ export function RealtimeCollectorPage() {
     const panel = terminalRef.current;
     if (!panel) return;
     panel.scrollTop = panel.scrollHeight;
-  }, [logs, jyhfLogs, output]);
+  }, [jyhfLogs, output]);
 
   async function handleStart() {
     setMainBusy(true);
     if (running === "up") {
-      append("实时采集链路已在运行，跳过重复启动");
+      append("新链实时采集已在运行，跳过重复启动");
       setMainBusy(false);
       return;
     }
-    append("开始启动实时事件采集链路...");
+    append("[新链] 启动实时采集 (raw_news + theme_processor + decision_executor)...");
     try {
-      // 通过 web_app_service 触发启动时，不能重启 web_app_service 本身，否则会中断当前请求。
-      const result = await startRealtimeCollector({ restart: false, with_frontend: false });
-      append(`启动完成: rc=${result.return_code}`);
+      const result = await startNewChainRealtime();
+      append(`[新链] 启动完成: ok=${result.ok} status=${result.status}`);
       await refreshStatus();
-      await refreshLogs();
     } catch (err) {
-      const message = err instanceof Error ? err.message : "启动失败";
-      if (message.includes("request timeout")) {
-        append("启动请求超时（45s），正在刷新状态确认是否已在后台启动...");
-        try {
-          await refreshStatus();
-          await refreshLogs();
-          append("已完成状态刷新。若仍未运行，请再次点击“启动实时采集”。");
-        } catch {
-          append("启动超时后状态刷新失败，请确认 web_app_service(8000) 与 stock_processing_service(8090) 是否在线。");
-        }
-      } else {
-        append(message.startsWith("启动失败:") ? message : `启动失败: ${message}`);
-      }
+      const msg = err instanceof Error ? err.message : "启动失败";
+      append(`[新链] 启动失败: ${msg}`);
     } finally {
       setMainBusy(false);
     }
@@ -191,12 +151,11 @@ export function RealtimeCollectorPage() {
 
   async function handleStop() {
     setMainBusy(true);
-    append("开始停止实时事件采集链路...");
+    append("[新链] 停止实时采集...");
     try {
-      const result = await stopRealtimeCollector({ force: false, with_frontend: false });
-      append(`停止完成: rc=${result.return_code}`);
+      const result = await stopNewChainRealtime();
+      append(`[新链] 停止完成: ok=${result.ok} status=${result.status}`);
       await refreshStatus();
-      await refreshLogs();
     } catch (err) {
       const message = err instanceof Error ? err.message : "停止失败";
       append(message.startsWith("停止失败:") ? message : `停止失败: ${message}`);
@@ -209,8 +168,7 @@ export function RealtimeCollectorPage() {
     setMainBusy(true);
     try {
       await refreshStatus();
-      await refreshLogs();
-      append("已刷新状态与日志");
+      append("已刷新新链状态");
     } catch (err) {
       const message = err instanceof Error ? err.message : "刷新失败";
       append(`刷新失败: ${message}`);
@@ -364,11 +322,20 @@ export function RealtimeCollectorPage() {
 
   const mergedLogs = useMemo(() => {
     const parts: string[] = [];
-    // Section 1: 实时链路日志 (main collector)
-    if (logs.length) {
-      parts.push("── 实时链路日志 (AKShare) ──", ...logs, "");
+    // Phase 5: 新链日志 — show new chain status summary
+    if (stackStatus) {
+      parts.push(
+        `── 新链实时采集状态 (Phase 5) ──`,
+        `running: ${stackStatus.running}`,
+        `run_id: ${stackStatus.run_id || "-"}`,
+        `raw_news_pid: ${stackStatus.raw_news_pid ?? "-"}`,
+        `decision_pid: ${stackStatus.decision_pid ?? "-"}`,
+        `profile: ${stackStatus.profile_version}/${stackStatus.profile_status}`,
+        `pending: ${stackStatus.pending_count}  dead_letter: ${stackStatus.dead_letter_count}`,
+        `started_at: ${stackStatus.started_at ?? "-"}`,
+        "",
+      );
     }
-    // Section 2: JYHF CDP logs — label by state
     if (jyhfLogs.length) {
       if (jyhfCollectorRunning || jyhfStatus?.service_running) {
         parts.push("── JYHF DOM 采集日志 (运行中) ──", ...jyhfLogs, "");
@@ -394,20 +361,36 @@ export function RealtimeCollectorPage() {
 
       <main className="collection-debug-grid">
         <section className="workspace-card collection-debug-control">
-          <span className="metric-label section-title">控制面板 · 后端服务状态</span>
-          <p className="subtle" style={{marginTop:4,marginBottom:12}}>仅检测 web_app / SPS 是否在线，不代表采集正在运行</p>
+          <span className="metric-label section-title">控制面板 · 新链实时采集 (Phase 5)</span>
+          <p className="subtle" style={{marginTop:4,marginBottom:12}}>
+            raw_news + ThemeProcessor + DecisionExecutor → 盘前必读
+          </p>
           <div className="collection-debug-status">
             <div>
-              <span className="metric-label">后端服务</span>
-              <strong>{running === "up" ? "在线" : running === "down" ? "离线" : "检查中"}</strong>
+              <span className="metric-label">新链状态</span>
+              <strong>{running === "up" ? "🟢 运行中" : running === "down" ? "🔴 已停止" : "⚪ 检查中"}</strong>
+            </div>
+            {stackStatus?.run_id && (
+              <div>
+                <span className="metric-label">Run ID</span>
+                <strong>{stackStatus.run_id}</strong>
+              </div>
+            )}
+            <div>
+              <span className="metric-label">Profile</span>
+              <strong>{stackStatus?.profile_version ?? "?"}/{stackStatus?.profile_status ?? "?"}</strong>
             </div>
             <div>
-              <span className="metric-label">执行状态</span>
-              <strong>{mainBusy ? "执行中" : "空闲"}</strong>
+              <span className="metric-label">raw_news PID</span>
+              <strong>{stackStatus?.raw_news_pid ?? "-"}</strong>
             </div>
             <div>
-              <span className="metric-label">来源</span>
-              <strong>status_realtime_stack.sh</strong>
+              <span className="metric-label">decision PID</span>
+              <strong>{stackStatus?.decision_pid ?? "-"}</strong>
+            </div>
+            <div>
+              <span className="metric-label">Pending / DL</span>
+              <strong>{stackStatus?.pending_count ?? "?"} / {stackStatus?.dead_letter_count ?? "?"}</strong>
             </div>
           </div>
           <div className="collection-action-row">
@@ -443,11 +426,11 @@ export function RealtimeCollectorPage() {
             </button>
             <span className="collection-status-indicator">
               {mainBusy
-                ? "⏳ 正在执行，请稍候..."
+                ? "⏳ 正在执行..."
                 : running === "up"
-                  ? "🟢 后端服务在线（不代表采集运行中）"
+                  ? "🟢 新链实时采集运行中"
                   : running === "down"
-                    ? "🔴 后端服务离线"
+                    ? "🔴 新链已停止"
                     : "⚪ 状态检查中"}
             </span>
           </div>

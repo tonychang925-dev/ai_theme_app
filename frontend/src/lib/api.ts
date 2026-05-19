@@ -309,10 +309,32 @@ export interface CollectionJobStatus {
   } | null;
 }
 
-export interface RealtimeCollectorActionPayload {
-  with_frontend?: boolean;
-  restart?: boolean;
-  force?: boolean;
+// ── Phase 5: New-chain realtime stack status ──
+
+export interface NewChainRealtimeStatus {
+  running: boolean;
+  run_id: string;
+  started_at: string | null;
+  raw_news_pid: number | null;
+  decision_pid: number | null;
+  log_dir: string;
+  last_error: string;
+  profile_version: string;
+  profile_status: string;
+  profile_fallback: string;
+  llm_judge_mode: string;
+  structured_concurrency: number;
+  pending_count: number;
+  dead_letter_count: number;
+  redis_streams?: Record<string, { length: number; groups: number }>;
+  redis_error?: string;
+}
+
+export interface NewChainRealtimeResult {
+  ok: boolean;
+  status: string;
+  error?: string;
+  detail?: NewChainRealtimeStatus;
 }
 
 export interface RealtimeCollectorCommandResult {
@@ -321,6 +343,12 @@ export interface RealtimeCollectorCommandResult {
   stdout: string;
   stderr: string;
   command: string[];
+}
+
+export interface RealtimeCollectorActionPayload {
+  with_frontend?: boolean;
+  restart?: boolean;
+  force?: boolean;
 }
 
 export interface RealtimeCollectorLogs {
@@ -846,6 +874,32 @@ export async function fetchRealtimeCollectorLogs(lines = 200): Promise<RealtimeC
   } catch (err) {
     throw normalizeRealtimeCollectorError(err, "日志拉取");
   }
+}
+
+// ── Phase 5: New-chain realtime stack APIs (→ SPS:8090) ──
+
+export async function fetchNewChainRealtimeStatus(): Promise<NewChainRealtimeStatus> {
+  return fetchJsonWithTimeout<NewChainRealtimeStatus>(
+    "/api/v1/realtime/status",
+    { cache: "no-store" },
+    10000,
+  );
+}
+
+export async function startNewChainRealtime(): Promise<NewChainRealtimeResult> {
+  return fetchJsonWithTimeout<NewChainRealtimeResult>(
+    "/api/v1/realtime/start",
+    { method: "POST", headers: { "Content-Type": "application/json" } },
+    30000,
+  );
+}
+
+export async function stopNewChainRealtime(): Promise<NewChainRealtimeResult> {
+  return fetchJsonWithTimeout<NewChainRealtimeResult>(
+    "/api/v1/realtime/stop",
+    { method: "POST", headers: { "Content-Type": "application/json" } },
+    30000,
+  );
 }
 
 export async function fetchJyhfCdpCollectorStatus(): Promise<JyhfCdpCollectorStatus> {

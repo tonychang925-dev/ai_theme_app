@@ -29,6 +29,7 @@ from stock_processing_service.tests.replay._post_market_replay_runner import _Re
 from stock_processing_service.application.orchestrators.bootstrap import build_container
 from theme_service.repositories.phase1_read_repository import Phase1ReadRepository
 from stock_processing_service.application.services.intel_new_chain_adapter import NewChainIntelFeedAdapter
+from stock_processing_service.application.services.realtime_stack_manager import RealtimeStackManager
 from stock_processing_service.application.services.event_driven_opportunity_builder import (
     EventDrivenOpportunityBuilder,
 )
@@ -100,6 +101,11 @@ async def lifespan(app: FastAPI):
     app.state.collection_job_manager = CollectionJobManager(
         container=app.state.container,
         registry=get_default_registry(),
+    )
+    # Phase 5: new-chain realtime stack manager
+    app.state.realtime_manager = RealtimeStackManager(
+        redis_url=os.environ.get("REDIS_URL", "redis://127.0.0.1:6379/0"),
+        write_db=_db_name(),
     )
     await app.state.phase1_repo.initialize()
     try:
@@ -1413,6 +1419,30 @@ async def finalize_pre_market_brief(payload: PreMarketBriefFinalizePayload) -> d
         "status": str((row or {}).get("status") or "missing"),
         "payload": (row or {}).get("payload") or {},
     }
+
+
+# ── Phase 5: New-chain realtime stack control ─────────────────────
+
+
+@app.post("/api/v1/realtime/start")
+async def realtime_start() -> dict[str, Any]:
+    """启动新链实时采集：raw_news_services + phase0_decision_services。"""
+    manager: RealtimeStackManager = app.state.realtime_manager
+    return await manager.start()
+
+
+@app.post("/api/v1/realtime/stop")
+async def realtime_stop() -> dict[str, Any]:
+    """优雅停止新链实时采集。"""
+    manager: RealtimeStackManager = app.state.realtime_manager
+    return await manager.stop()
+
+
+@app.get("/api/v1/realtime/status")
+async def realtime_status() -> dict[str, Any]:
+    """查询新链实时采集运行状态与 Redis stream 指标。"""
+    manager: RealtimeStackManager = app.state.realtime_manager
+    return await manager.status()
 
 
 @app.get("/api/v1/mobile/screener/latest")
