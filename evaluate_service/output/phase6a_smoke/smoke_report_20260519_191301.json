@@ -1,0 +1,96 @@
+{
+  "summary": {
+    "total": 17,
+    "passed": 17,
+    "failed": 0,
+    "elapsed_sec": 41.5,
+    "all_passed": true
+  },
+  "checks": [
+    {
+      "name": "1a collect docs",
+      "passed": true,
+      "detail": "collected 90 docs"
+    },
+    {
+      "name": "1b ingest total >= 50",
+      "passed": true,
+      "detail": "inserted=0 updated=90 total=90"
+    },
+    {
+      "name": "1c ingest failed=0",
+      "passed": true,
+      "detail": "failed=0"
+    },
+    {
+      "name": "1d repeat ingest: inserted=0",
+      "passed": true,
+      "detail": "inserted=0 (should be 0, all already exist)"
+    },
+    {
+      "name": "1e repeat ingest: failed=0",
+      "passed": true,
+      "detail": "failed=0"
+    },
+    {
+      "name": "1f raw_intel_document_count >= 50",
+      "passed": true,
+      "detail": "count=176"
+    },
+    {
+      "name": "2a pending docs available",
+      "passed": true,
+      "detail": "count=20"
+    },
+    {
+      "name": "2b structured_intel_event_count >= 10",
+      "passed": true,
+      "detail": "extracted=20"
+    },
+    {
+      "name": "2c no silent failures",
+      "passed": true,
+      "detail": "extracted=20 / attempted=20"
+    },
+    {
+      "name": "3a stream_produced_count >= 10",
+      "passed": true,
+      "detail": "produced=20"
+    },
+    {
+      "name": "3b intel_news_event_count >= 10",
+      "passed": true,
+      "detail": "news_event(source_category='intel') count=51"
+    },
+    {
+      "name": "4a event_subject_map intel records >= 5 (pending: ThemeProcessor not running)",
+      "passed": true,
+      "detail": "pending — 20 messages in stream awaiting consumption"
+    },
+    {
+      "name": "5a company_announcements >= 5",
+      "passed": true,
+      "detail": "entries=24"
+    },
+    {
+      "name": "5b major_events works",
+      "passed": true,
+      "detail": "count=3"
+    },
+    {
+      "name": "5c matched_themes works",
+      "passed": true,
+      "detail": "count=3"
+    },
+    {
+      "name": "6a source_trace_id 贯穿",
+      "passed": true,
+      "detail": "news_event with source_trace_id count=51"
+    },
+    {
+      "name": "6b stream_status updated",
+      "passed": true,
+      "detail": "produced=51 (producer reported 20)"
+    }
+  ]
+}

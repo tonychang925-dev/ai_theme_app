@@ -12,6 +12,18 @@ export default defineConfig({
                 target: "http://127.0.0.1:8090",
                 changeOrigin: true
             },
+            "/api/v1/backtest": {
+                target: "http://127.0.0.1:8090",
+                changeOrigin: true
+            },
+            "/api/v1/strong_watch": {
+                target: "http://127.0.0.1:8090",
+                changeOrigin: true
+            },
+            "/api/v1/w2s_candidates": {
+                target: "http://127.0.0.1:8090",
+                changeOrigin: true
+            },
             "/api": {
                 target: "http://127.0.0.1:8000",
                 changeOrigin: true

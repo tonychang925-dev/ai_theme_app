@@ -926,6 +926,20 @@ class DatabaseGateway:
             logger.error(f"读取 event_review_queue 失败 feed_date={feed_date}: {e}")
             raise
 
+    async def get_intel_announcement_events(
+        self, trade_date, limit: int = 200
+    ) -> List[Dict[str, Any]]:
+        """读取 intel 公告事件（news_event JOIN structured_intel_event，读库）。"""
+        try:
+            start_time = time.time()
+            result = await self._read_source().get_intel_announcement_events(trade_date, limit)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error("get_intel_announcement_events 失败 trade_date=%s: %s", trade_date, e)
+            raise
+
     async def get_subject_stock_daily_snapshot_by_trade_date(
         self, trade_date
     ) -> List[Dict[str, Any]]:

@@ -805,8 +805,8 @@ export function RecapPage() {
             </button>
             <button
               type="button"
-              className={`tag tag-button ${reportType === "pre_market" ? "tag-active" : ""}`}
-              onClick={() => setReportType("pre_market")}
+              className={`tag tag-button`}
+              onClick={() => navigateTo(`/pre-market-brief?trade_date=${tradeDate}`)}
             >
               盘前必读
             </button>

@@ -1427,14 +1427,14 @@ async def finalize_pre_market_brief(payload: PreMarketBriefFinalizePayload) -> d
 # ── Phase 5: New-chain realtime stack control ─────────────────────
 
 
-@app.post("/api/v1/realtime/start")
+@app.api_route("/api/v1/realtime/start", methods=["GET", "POST"])
 async def realtime_start() -> dict[str, Any]:
     """启动新链实时采集：raw_news_services + phase0_decision_services。"""
     manager: RealtimeStackManager = app.state.realtime_manager
     return await manager.start()
 
 
-@app.post("/api/v1/realtime/stop")
+@app.api_route("/api/v1/realtime/stop", methods=["GET", "POST"])
 async def realtime_stop() -> dict[str, Any]:
     """优雅停止新链实时采集。"""
     manager: RealtimeStackManager = app.state.realtime_manager
@@ -2612,13 +2612,109 @@ async def backtest_trades(strategy_id: str = "", page: int = 1, page_size: int =
 
 
 async def _query_backtest(sql: str, params: list = None):
-    """Helper: run a read query against the backtest tables via DatabaseGateway."""
-    gw = app.state.db_gateway
-    if gw is None:
-        cfg = DatabaseConfig(db_type=DatabaseType.POSTGRESQL, postgres_database=os.getenv("DB_NAME", "stock_data_test"))
-        gw = await DatabaseGateway.initialize(config=cfg, auto_warm_cache=False)
-        app.state.db_gateway = gw
-    return await gw._client.execute_query(sql, *(params or []))
+    """Helper: run a read query against the backtest tables via the app gateway."""
+    gw = app.state.gateway
+    return await gw._client.execute_query(sql, tuple(params) if params else None)
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# v2.8a Strategy Lab API
+# ═══════════════════════════════════════════════════════════════════════════
+
+@app.get("/api/v1/backtest/param-schema")
+async def param_schema() -> dict[str, Any]:
+    """Return adjustable parameter ranges and defaults."""
+    return {
+        "parameters": {
+            "hold_days": {"type": "int", "default": 5, "min": 1, "max": 20, "options": [3, 5, 7, 10]},
+            "position_pct": {"type": "float", "default": 0.10, "min": 0.02, "max": 0.30, "options": [0.05, 0.10, 0.15]},
+            "max_daily_buys": {"type": "int", "default": 3, "min": 1, "max": 10, "options": [1, 2, 3, 5]},
+            "max_positions": {"type": "int", "default": 10, "min": 1, "max": 20, "options": [5, 10, 15]},
+            "support_types": {"type": "multi", "default": ["previous_low"],
+                "options": ["previous_low", "ma_support", "gap_support", "prev_low_support", "bb_lower_support"]},
+            "min_support_strength": {"type": "float", "default": 0, "min": 0, "max": 100,
+                "options": [0, 45, 60, 70, 80]},
+            "min_candidate_score": {"type": "float", "default": 0, "min": 0, "max": 100,
+                "options": [0, 60, 70, 80]},
+            "min_watch_score": {"type": "float", "default": 0, "min": 0, "max": 100,
+                "options": [0, 62, 70, 78]},
+            "exit_rule": {"type": "select", "default": "fixed_hold",
+                "options": ["fixed_hold", "limitup_weakopen"]},
+            "slippage": {"type": "float", "default": 0.001, "min": 0, "max": 0.01},
+            "commission": {"type": "float", "default": 0.0003, "min": 0, "max": 0.005},
+            "stamp_tax": {"type": "float", "default": 0.0005, "min": 0, "max": 0.005},
+        },
+        "signal_source": {"type": "fixed", "value": "w2s_signal_validation_v1_1b"},
+    }
+
+
+@app.post("/api/v1/backtest/run")
+async def run_backtest(payload: dict[str, Any]) -> dict[str, Any]:
+    """Submit parameters and run a single backtest. Returns run_id."""
+    try:
+        from stock_processing_service.application.services.backtest.parameterized_backtest_runner import ParameterizedBacktestRunner
+
+        gw = app.state.gateway
+        runner = ParameterizedBacktestRunner(gw._client)
+        params = payload.get("params", payload)
+        name = str(params.get("name", ""))
+        if not name:
+            params["name"] = f"lab_{datetime.now().strftime('%m%d_%H%M')}"
+
+        run_id = await runner.run(params)
+
+        rows = await _query_backtest(
+            "SELECT * FROM backtest_run WHERE run_id=$1", [run_id])
+        return {
+            "run_id": run_id,
+            "status": "completed" if rows else "empty",
+            "summary": dict(rows[0]) if rows else {"run_id": run_id, "trade_count": 0},
+        }
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/v1/backtest/runs")
+async def list_backtest_runs() -> dict[str, Any]:
+    """Return all backtest runs including lab experiments."""
+    rows = await _query_backtest(
+        """SELECT run_id, strategy_id, strategy_name, strategy_version, total_return,
+                  max_drawdown, win_rate, profit_factor, trade_count, config_json, created_at
+           FROM backtest_run ORDER BY created_at DESC NULLS LAST LIMIT 50""")
+    return {"runs": [dict(r) for r in rows]}
+
+
+@app.get("/api/v1/backtest/result/{run_id}")
+async def get_backtest_result(run_id: str) -> dict[str, Any]:
+    """Return full result for a run: summary + equity + monthly + trades."""
+    rows = await _query_backtest("SELECT * FROM backtest_run WHERE run_id=$1", [run_id])
+    if not rows:
+        raise HTTPException(status_code=404, detail=f"Run {run_id} not found")
+
+    eq_rows = await _query_backtest(
+        "SELECT trade_date, total_equity, cumulative_return, drawdown, active_positions FROM backtest_equity_curve WHERE run_id=$1 ORDER BY trade_date", [run_id])
+    trade_rows = await _query_backtest(
+        """SELECT trade_id, stock_id, stock_name, entry_date, entry_price, exit_date, exit_price,
+                  pnl, return_pct, hold_days, exit_reason, exit_rule,
+                  support_type, weak_type, candidate_score
+           FROM backtest_trade WHERE run_id=$1 ORDER BY entry_date DESC""", [run_id])
+    monthly = await _query_backtest(
+        "SELECT month, return_pct FROM backtest_monthly_return WHERE run_id=$1 ORDER BY month", [run_id])
+
+    return {
+        "run_id": run_id,
+        "summary": dict(rows[0]),
+        "equity_curve": [dict(r) for r in eq_rows],
+        "trades": [dict(r) for r in trade_rows],
+        "monthly_returns": [dict(r) for r in monthly],
+    }
+
+
+def _get_db_gateway():
+    """Get the DatabaseGateway singleton from app state."""
+    return app.state.gateway
 
 
 def _row_to_dict(row: Any) -> dict[str, Any]:

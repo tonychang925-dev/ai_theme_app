@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import inspect
+import json as _json
 import re
 from collections import defaultdict
 from datetime import date, datetime, timezone
@@ -63,10 +64,13 @@ class PreMarketBriefBuilder:
             )[:limit]
             unknown_events = stream_sections["unknown_events"][:limit]
 
+        intel_announcements = await self._load_intel_announcements(trade_date, limit)
+
         sections = self._build_sections(
             matched_events=matched_events,
             review_events=review_events,
             unknown_events=unknown_events,
+            intel_announcements=intel_announcements,
             limit=limit,
         )
         if self._opportunity_builder is not None:
@@ -83,6 +87,7 @@ class PreMarketBriefBuilder:
             "opportunity_count": len(sections["event_driven_opportunities"]),
             "review_event_count": len(review_events),
             "unknown_event_count": len(unknown_events),
+            "intel_announcement_count": len(sections["company_announcements"]),
             "last_rebuild_at": datetime.now(timezone.utc).isoformat(),
         }
         payload = {
@@ -115,6 +120,86 @@ class PreMarketBriefBuilder:
             return []
         rows = await fn(trade_date, limit=limit)
         return [self._normalize_event_row(row, "event_review_queue") for row in list(rows or [])[:limit]]
+
+    async def _load_intel_announcements(
+        self, trade_date: date, limit: int
+    ) -> list[dict[str, Any]]:
+        """读取 intel 公告事件（news_event JOIN structured_intel_event）。"""
+        fn = getattr(self._read_gateway, "get_intel_announcement_events", None)
+        if not callable(fn):
+            return []
+        rows = await fn(trade_date, limit=limit)
+        result: list[dict[str, Any]] = []
+        for row in (rows or []):
+            data = dict(row)
+            entities = data.get("entities") or {}
+            if isinstance(entities, str):
+                try:
+                    entities = _json.loads(entities)
+                except Exception:
+                    entities = {}
+            result.append({
+                "event_id": data.get("event_id"),
+                "stock_code": data.get("stock_code", ""),
+                "stock_name": data.get("stock_name", ""),
+                "title": data.get("title", ""),
+                "summary": data.get("summary", ""),
+                "event_type": data.get("event_type", ""),
+                "event_level": data.get("event_level", "normal"),
+                "publish_time": str(data.get("publish_time") or ""),
+                "confidence": self._float_or_none(data.get("confidence")),
+                "impact_score": self._float_or_zero(data.get("impact_score")),
+                "entities": entities,
+                "catalyst_tags": list(data.get("catalyst_tags") or []),
+                "risk_tags": list(data.get("risk_tags") or []),
+            })
+        return result
+
+    @staticmethod
+    def _build_company_announcements(
+        intel_events: list[dict[str, Any]],
+    ) -> list[dict[str, Any]]:
+        """按 stock_code 分组公告事件，生成 company_announcements section。"""
+        grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
+        for ev in intel_events:
+            code = str(ev.get("stock_code") or "").strip()
+            if not code:
+                continue
+            grouped[code].append(ev)
+
+        result: list[dict[str, Any]] = []
+        for code, events in grouped.items():
+            events_sorted = sorted(
+                events,
+                key=lambda e: float(e.get("impact_score") or 0),
+                reverse=True,
+            )
+            result.append({
+                "stock_code": code,
+                "stock_name": events_sorted[0].get("stock_name", ""),
+                "announcement_count": len(events_sorted),
+                "announcements": [
+                    {
+                        "event_id": e.get("event_id"),
+                        "title": e.get("title", ""),
+                        "summary": e.get("summary", ""),
+                        "event_type": e.get("event_type", ""),
+                        "event_level": e.get("event_level", "normal"),
+                        "publish_time": e.get("publish_time", ""),
+                        "confidence": e.get("confidence"),
+                        "impact_score": e.get("impact_score"),
+                        "catalyst_tags": e.get("catalyst_tags", []),
+                        "risk_tags": e.get("risk_tags", []),
+                    }
+                    for e in events_sorted
+                ],
+            })
+        # 按公告数量和最高 impact_score 排
+        result.sort(
+            key=lambda g: (-g["announcement_count"],
+                          -max((a.get("impact_score") or 0) for a in g["announcements"]))
+        )
+        return result
 
     async def _load_decision_stream(self, trade_date: date, limit: int) -> list[dict[str, Any]]:
         if self._decision_stream_reader is None:
@@ -185,6 +270,7 @@ class PreMarketBriefBuilder:
         matched_events: list[dict[str, Any]],
         review_events: list[dict[str, Any]],
         unknown_events: list[dict[str, Any]],
+        intel_announcements: list[dict[str, Any]],
         limit: int,
     ) -> dict[str, list[dict[str, Any]]]:
         matched_events = self._dedupe_by_key(matched_events, key_fields=("event_id", "subject_key", "title"))[:limit]
@@ -197,6 +283,12 @@ class PreMarketBriefBuilder:
             "unknown_watch": unknown_events,
             "risk_alerts": self._build_risk_alerts(review_events, unknown_events),
             "event_driven_opportunities": [],
+            # === Phase 6A: 一手信息 section ===
+            "company_announcements": self._build_company_announcements(intel_announcements),
+            "earnings_alerts": [],
+            "research_highlights": [],
+            "institutional_survey": [],
+            "opportunity_alerts": [],
         }
 
     def _build_matched_themes(self, matched_events: list[dict[str, Any]]) -> list[dict[str, Any]]:

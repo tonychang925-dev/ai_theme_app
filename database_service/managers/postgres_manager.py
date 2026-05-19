@@ -7198,6 +7198,49 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.error("create_news_event_with_intel 失败: %s", e)
             raise
 
+    async def get_intel_announcement_events(
+        self, trade_date: date, limit: int = 200
+    ) -> List[Dict[str, Any]]:
+        """读取指定交易日的 intel 公告事件（news_event JOIN structured_intel_event）。
+
+        用于 PreMarketBriefBuilder.company_announcements section。
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                rows = await conn.fetch(
+                    """
+                    SELECT
+                        ne.id AS event_id,
+                        ne.summary,
+                        ne.created_at AS occurred_at,
+                        sie.stock_code,
+                        sie.stock_name,
+                        sie.event_type,
+                        sie.event_level,
+                        sie.title,
+                        sie.publish_time,
+                        sie.confidence,
+                        sie.impact_score,
+                        sie.entities,
+                        sie.catalyst_tags,
+                        sie.risk_tags,
+                        sie.evidence_json
+                    FROM news_event ne
+                    JOIN structured_intel_event sie ON ne.structured_intel_event_id = sie.id
+                    WHERE ne.source_category = 'intel'
+                      AND ne.created_at::date = $1::date
+                    ORDER BY sie.impact_score DESC NULLS LAST,
+                             sie.publish_time DESC NULLS LAST
+                    LIMIT $2
+                    """,
+                    trade_date,
+                    int(limit),
+                )
+            return [dict(r) for r in rows]
+        except Exception as e:
+            logger.warning("get_intel_announcement_events 失败: %s", e)
+            return []
+
     async def upsert_stock_abnormal_signal_rows(self, rows: List[Dict[str, Any]]) -> int:
         """写入异动股票信号（stock_abnormal_signal 表）。"""
         sql = """
