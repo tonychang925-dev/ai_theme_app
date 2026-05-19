@@ -1,6 +1,6 @@
 # AI题材选股系统回测架构设计文档（新链 stock_processing_service 版）
 
-> 版本：v5.0（新增 §0.7 v1.0_usecase_replay_contract；停止收益验证）
+> 版本：v6.0（新增 §15 v2.0_backtest_baseline 冻结；全链路 v1.0→v2.0 验证完成）
 > 适用架构：`web_app_service + stock_processing_service + database_service.gateway` 新链
 > 废弃约束：`stock_service` 目录下的旧链选股/回测扩展不再作为新功能落点；仅允许作为历史兼容参考或临时适配依赖。
 
@@ -1063,3 +1063,177 @@ w2s_validation_summary (三组实验对照)
 第一阶段目标：**验证弱转强信号是否有统计区分度，并确认主线、龙头、竞价确认三个条件是否真的提升胜率和收益。**
 
 这一版跑通后，再扩展主线龙头、牛股三绝、竞价增强、情绪周期、多策略组合。
+
+---
+
+## 15. v2.0_backtest_baseline（冻结）
+
+> **状态：FROZEN — 不再修改。**
+> 冻结日期：2026-05-19
+> 基线版本：v2.0_backtest_baseline
+> 执行脚本：`stock_processing_service/tests/contract/run_v2_0_capital_backtest.py`
+
+### 15.1 版本路线回顾
+
+```
+v1.0  contract  ✅  UseCase 合规
+v1.1a data      ✅  A-layer + D1 field 修复
+v1.1a.1 refresh ✅  roll-forward 强势池
+v1.1a.2 support ✅  C-layer 支撑数据接入
+v1.1b signal    ✅  WR3d 58.9%, AR5d +5.29%（较好通过）
+v1.1c robust    ✅  时间/去重/可交易性 稳健性通过
+v2.0 backtest   ✅  资金回测基线（本节冻结）
+```
+
+### 15.2 信号来源
+
+| 维度 | 值 |
+|------|-----|
+| 输入表 | `w2s_candidate_rebuild` |
+| rule_version | `w2s_v1.0_usecase_replay` |
+| source_trace.usecase | `BuildWeakToStrongCandidateUseCase` |
+| 候选生成 | `BuildWeakToStrongCandidateUseCase.build_candidates()` |
+| C 层输入 | `StrongStockTrackingService.score_watch_row()` + `is_candidate_eligible()` |
+| B 层输入 | `StrongStockTrackingService.build_seed_candidates()` + refresh roll-forward |
+| A 层输入 | `get_mainline_identity_by_subject_keys()` + `get_mainline_cycle_by_subject_keys()` (5日 lookback) |
+| support_source | `c_layer`（`stock_structure_daily_feature`） |
+| 信号验证期 | 2026-02-15 → 2026-05-15 |
+| 验证版本 | v1.1b_signal_validation（`w2s_signal_validation_v1_1b`） |
+| 信号数 | 197（去重前）/ 87（first_signal_only）/ 141（cooldown_5d） |
+
+### 15.3 回测规则（硬编码，不可变）
+
+#### 买入规则
+
+| 规则 | 值 |
+|------|-----|
+| 买入时机 | **T+1 开盘价**（信号日的下一个交易日开盘） |
+| 买入价格 | `open_price * (1 + slippage)` |
+| 一字涨停跳过 | `open_pct >= 9.8%` → 不可买，记录 `limit_up_open_skip` |
+| 高开跳过 | `open_pct > 7%` → 跳过，记录 `open_pct_too_high_skip` |
+| 无行情/停牌跳过 | 无 bar 数据 → 跳过，记录 `no_bar_skip` |
+
+#### 卖出规则
+
+| 规则 | 值 |
+|------|-----|
+| 卖出时机 | 买入后持有 **3 日或 5 日**（两个独立版本），在最后一日收盘价卖出 |
+| 卖出价格 | `close_price` |
+| 无法卖出 | 无 bar 则继续持有至有 bar |
+
+#### 仓位规则
+
+| 规则 | 值 |
+|------|-----|
+| 初始资金 | **1,000,000** |
+| 单票仓位 | **10%**（基于当前现金） |
+| 单票最小股数 | **100 股**（不足则跳过） |
+| 每日最多买入 | **3 只** |
+| 最多同时持仓 | **10 只** |
+| 同一股票不重复买入 | 持仓期间跳过，记录 `already_holding_skip` |
+| 排序优先级 | `support_type=previous_low` → `support_strength DESC` → `candidate_score DESC` |
+
+#### 成本参数
+
+| 参数 | 值 |
+|------|-----|
+| 买入滑点 | 0.10% |
+| 卖出滑点 | 0.10% |
+| 佣金 | 0.03% |
+| 印花税 | 0.05%（仅卖出） |
+
+### 15.4 回测结果（FROZEN）
+
+#### 三版本总览
+
+| 版本 | 输入信号 | Hold | 交易数 | 总收益 | 年化收益 | 胜率 | 最大回撤 | 盈亏比 |
+|------|---------|------|--------|--------|---------|------|---------|--------|
+| **v2.0_all_signals** | 197 | 3d | 79 | +29.77% | 289.6% | 60.8% | 4.0% | 2.72 |
+| **v2.0_all_signals** | 197 | 5d | 53 | +34.29% | 365.6% | 54.7% | 2.3% | 3.11 |
+| **v2.0_prev_low** | 123 | 3d | 70 | +31.38% | 315.5% | **64.3%** | 2.9% | **3.35** |
+| **v2.0_prev_low** | 123 | 5d | 49 | **+33.05%** | 343.7% | 59.2% | **2.6%** | 3.10 |
+| **v2.0_prev_low_80** | 123 | 3d | 70 | +31.38% | 315.5% | 64.3% | 2.9% | 3.35 |
+| **v2.0_prev_low_80** | 123 | 5d | 49 | +33.05% | 343.7% | 59.2% | 2.6% | 3.10 |
+
+> 注：`v2.0_previous_low_only` 与 `v2.0_previous_low_support80` 结果相同，因为所有 `previous_low` 信号的 C-layer support_strength 均为 80。
+
+#### 最佳版本：v2.0_previous_low_only + hold_5d
+
+```
+Trades:              49
+Win rate:            59.2%
+Total return:        +33.05%
+Max drawdown:        2.6%
+Profit factor:       3.10
+Avg trade return:    +6.61%
+Avg hold days:       5.4 days
+Max single loss:     ¥15,818
+Max consec losses:   5
+```
+
+#### 月度收益
+
+| 月份 | 累计收益 |
+|------|---------|
+| 2026-03 | +12.17% |
+| 2026-04 | +20.31% |
+| 2026-05 | +33.05% |
+
+> 月度收益单调递增，非单月集中驱动。
+
+#### 跳过原因统计 (prev_low hold_5d)
+
+| 原因 | 次数 |
+|------|------|
+| `already_holding_skip` | 16 |
+| `max_daily_positions_skip` | 14 |
+| `max_positions_skip` | 8 |
+| `limit_up_open_skip` | 1 |
+| `open_pct_too_high_skip` | 0 |
+| `no_bar_skip` | 0 |
+| **总计** | **39** |
+
+### 15.5 v1.1b 信号验证基线（对比参考）
+
+| 指标 | v1.1b_usecase | v0.5_baseline（参考） |
+|------|-------------|---------------------|
+| N | 197 | ~100 |
+| WR3d | 58.9% | 61.0% |
+| AR5d | +5.29% | +5.18% |
+| Loss5% | 40.1% | 43.0% |
+| Excess vs market | +3.13% | — |
+
+### 15.6 v1.1c 稳健性验证（对比参考）
+
+| 检查项 | 结果 |
+|--------|------|
+| 时间分段主导 | 4 月占 82%（pipeline ramp-up，非策略集中） |
+| Core (Mar+Apr) prev_low WR3d | 62.6%，AR5d +6.35% |
+| 去重 cooldown_5d WR3d | 57.4% |
+| 去重 cooldown_5d AR5d | +4.51% |
+| 次日一字板不可买 | 2.0% |
+| ST/688/北交所污染 | 0 |
+| 总体 | ✅ PASS |
+
+### 15.7 禁止行为
+
+以下行为在 v2.0 冻结后禁止：
+
+- ❌ 修改回测参数（仓位/滑点/费用/持有天数）
+- ❌ 用 v0.5/v0.6-v0.9/v3_backfill 候选替代 v1.1b 信号
+- ❌ 修改 UseCase 阈值
+- ❌ 在手写脚本中重新生成 C/D 候选
+- ❌ 写入生产交易表
+- ❌ 在 v2.0 基线上直接做参数优化（应创建新版本）
+
+### 15.8 后续路线
+
+```
+v2.0_backtest_baseline（冻结）→ 不再修改
+    ↓
+v2.1_parameter_sweep（新版本）
+    ↓
+v2.2_multi_strategy_composite
+    ↓
+v3.0_paper_trading
+```

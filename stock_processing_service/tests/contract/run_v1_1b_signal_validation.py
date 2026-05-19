@@ -1,4 +1,10 @@
 """
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  STATUS: FROZEN BASELINE — v1.1b_signal_validation                         ║
+║  Frozen: 2026-05-19                                                        ║
+║  Output: w2s_signal_validation_v1_1b (197 rows, WR3d 58.9%, AR5d +5.29%)  ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
 v1.1b_signal_validation — Forward return validation of v1.0 UseCase candidates.
 ================================================================================
 Input: w2s_candidate_rebuild ONLY (rule_version=w2s_v1.0_usecase_replay).

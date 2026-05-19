@@ -1,252 +1,248 @@
 {
-  "session_goal": "完善AI投资分析系统：移动端web访问、用户认证、CDP实时采集、情报台优化、题材工作台数据补全",
-  "current_task": "修复题材详情页analytics数据显示不完全：主线与周期数据已通（阶段分歧/市场19.40），但资金流入总/前3/龙头净流入、稳定性仍为0.00，需核查旧链脚本迁移",
+  "session_goal": "Build compliant v1.0→v2.0 backtest pipeline for 弱转强 (weak-to-strong) trading strategy, freeze v2.0 baseline, and begin PDF strategy gap audit",
+  "current_task": "v2.1_pdf_strategy_gap_audit — comparing PDF trading documents against code implementation",
   "constraints": [
-    "新链架构：禁止直接SQL操作数据库，必须通过StockReadPort/SnapshotWritePort/AlgorithmStateWritePort/DatabaseGateway",
-    "SPS必须用theme_matcher_env（含torch/text2vec），不可用.venv",
-    "CDP数据只入库DB（subject_history_staging），不写本地JSONL/DOM快照",
-    "JWT认证使用localStorage存储token，SPA路由不刷新页面",
-    "Cloudflared免费隧道域名不稳定但可用nohup保持",
-    "移动端默认只显示event/new_theme类型情报项",
-    "前端无token时直接渲染LoginPage，不跳转闪烁"
+    "禁止修改 UseCase 阈值",
+    "禁止手写 C/D 候选逻辑",
+    "禁止读取 deprecated v0.x 实验结果作为依据",
+    "禁止写入生产表 (weak_to_strong_candidate_pool / strong_watch_pool)",
+    "所有回测写入必须使用 isolated rebuild 表",
+    "禁止 run script 直接 INSERT 候选池",
+    "禁止 prior7_limitup_days >= 1 直接生成候选",
+    "禁止复制 recent_limit_up_count 作为 prior7_limitup_days",
+    "所有访问必须通过 HistoricalBacktestReadPorts → UseCase 路径",
+    "先做 contract test，不跑收益",
+    "v2.0 已冻结，不允许修改",
+    "不跑资金回测以外的交易模拟 (v1.1b之前)",
+    "不改 BuildWeakToStrongCandidateUseCase 的 support 阈值"
   ],
   "decisions": [
     {
-      "topic": "JWT认证方案",
-      "decision": "login/register/me三个API端点 + AuthProvider全局状态 + localStorage存储token",
-      "reason": "无状态JWT，FastAPI原生支持"
+      "topic": "版本管理",
+      "decision": "v0.6-v0.9 全部标记 deprecated_experiment，收益验证已停止",
+      "reason": "这些版本绕过 UseCase，手写 C/D 逻辑"
     },
     {
-      "topic": "用户角色权限",
-      "decision": "user和admin两个角色，首用户自动admin，admin可管理用户",
-      "reason": "简单够用，不需要复杂RBAC"
+      "topic": "v1.0 合约入口",
+      "decision": "唯一合法入口为 tests/contract/test_v1_0_usecase_replay_contract.py",
+      "reason": "确保所有 C/D 逻辑通过正式 UseCase"
     },
     {
-      "topic": "远程访问",
-      "decision": "cloudflared tunnel (免费) + web_app:8000服务前后端",
-      "reason": "ngrok有警告页，cloudflared无广告"
+      "topic": "隔离写入表",
+      "decision": "w2s_candidate_rebuild 替代 production weak_to_strong_candidate_pool",
+      "reason": "回测不得污染生产数据"
     },
     {
-      "topic": "SPA鉴权",
-      "decision": "服务端根路径302 redirect + 客户端localStorage同步检查，无token直接渲染LoginPage",
-      "reason": "避免useAuth异步loading卡住页面"
+      "topic": "A-layer lookback",
+      "decision": "get_mainline_identity_by_subject_keys / get_mainline_cycle_by_subject_keys 使用 5日滚动窗口",
+      "reason": "subject_daily_feature 每日仅覆盖 ~18 subjects，lookback 将覆盖率从 10 提升到 31"
     },
     {
-      "topic": "CDP去重",
-      "decision": "从本地DedupStore JSON改为DB级ON CONFLICT + event_id hash作为subject_rank_id",
-      "reason": "本地缓存导致重复事件无法被识别为新事件"
+      "topic": "refresh 机制",
+      "decision": "get_strong_watch_refresh_rows 从 strong_watch_pool_scored_rebuild 拉取 1-7日前 active/weakening 股票 roll-forward",
+      "reason": "弱转强候选需要历史强势池延续，不能只看 T 日新 seed"
     },
     {
-      "topic": "CDP feed_date",
-      "decision": "DOM日期提取优先，失败fallback到subject_name解析（如'5月12日龙虎榜'），再fail back到capture_time",
-      "reason": "久赢恒丰App DOM可能不包含标准YYYY-MM-DD日期"
+      "topic": "D1 strong_history 修复",
+      "decision": "is_leader 多级 fallback (strong_grade → b_is_leader → leader_role+prior7_lim)，rank_order_proxy 从 watch_score 派生，recent_limit_up_count = max(recent_lim, prior7_lim)",
+      "reason": "refresh 股票可能在 T 日不在 B-layer，需从 rebuild 表继承历史强势证据"
     },
     {
-      "topic": "IntelFeed旧链数据",
-      "decision": "NewChainIntelFeedAdapter同时读取旧链news_event+subject_history和新链信号，event类型优先级最高",
-      "reason": "用户需要看到新闻事件，不是系统信号"
+      "topic": "support 数据修复",
+      "decision": "D1 input 以 C-layer (stock_structure_daily_feature) support 数据为主，pool 数据为 fallback",
+      "reason": "pool rebuild 表 support 字段大多为空或 0，C-layer 有真实支撑检测结果"
     },
     {
-      "topic": "证据层修复",
-      "decision": "BuildThemeCycleEvidenceDailyJob加入bootstrap容器，BuildPostMarketRecapJob.run先执行evidence再执行cycle",
-      "reason": "5/13 theme_cycle_evidence_daily为0行导致主线强度分全为0"
+      "topic": "v2.0 回测规则",
+      "decision": "T+1 开盘买入，hold3/hold5 收盘卖出，10%仓位，每日最多3只，最多10持仓，滑点0.1%，佣金0.03%，印花税0.05%",
+      "reason": "日线资金回测 MVP，先验证信号质量再考虑复杂规则"
     },
     {
-      "topic": "移动端日期导航",
-      "decision": "使用本地getFullYear/getMonth/getDate格式化替代toISOString()避免UTC时区偏移",
-      "reason": "toISOString在UTC+8会倒退一天导致右箭头无响应、左箭头退两天"
+      "topic": "v2.0 信号版本",
+      "decision": "三版本对比：all_signals / previous_low_only / previous_low_support80",
+      "reason": "previous_low 已验证为最强 support_type (WR3d 63.4%)"
     },
     {
-      "topic": "AI选股后端",
-      "decision": "移除前端top_n参数，由StockMatchEngine自主决定输出数量",
-      "reason": "Engine内部有Dynamic TopK + LLM Judge裁决机制"
+      "topic": "v2.0 冻结",
+      "decision": "v2.0_backtest_baseline 已冻结，架构文档更新至 v6.0，新增 §15",
+      "reason": "基线不可变，后续参数优化应从 v2.1 开始"
+    },
+    {
+      "topic": "下一优先级",
+      "decision": "v2.2 auction confirmation layer 应最优先做",
+      "reason": "当前系统落实度 ~55-60%，最大提升空间在盘前竞价确认层"
     }
   ],
   "files_touched": [
     {
-      "path": "web_app_service/main.py",
-      "summary": "添加JWT认证API(login/me/password/admin)+根路径302redirect+SPA fallback+静态文件服务",
+      "path": "docs/architecture/ai_theme_app_backtest_architecture_design_sps.md",
+      "summary": "版本 v4.0→v5.0→v6.0；新增 §0.5 deprecated 标记、§0.6 停止收益验证、§0.7 v1.0 contract、§15 v2.0_backtest_baseline 冻结",
       "type": "modified"
     },
     {
-      "path": "web_app_service/auth/__init__.py",
-      "summary": "JWT创建/验证模块，支持JWT_SECRET环境变量",
+      "path": "stock_processing_service/tests/contract/test_v1_0_usecase_replay_contract.py",
+      "summary": "v1.0 contract test — 476行，4个pytest用例，Instrumented wrappers追踪 UseCase 调用，违规扫描器覆盖 scripts/ + backtest/，输出 compliance JSON",
       "type": "created"
     },
     {
-      "path": "frontend/src/routes/auth/AuthProvider.tsx",
-      "summary": "AuthProvider全局状态：login后localStorage.setItem+window.location.replace(/mobile)",
+      "path": "stock_processing_service/tests/contract/__init__.py",
+      "summary": "Contract test suite init",
       "type": "created"
     },
     {
-      "path": "frontend/src/routes/auth/LoginPage.tsx",
-      "summary": "登录页：email+password+记住密码checkbox，直接捆绑进主JS",
+      "path": "stock_processing_service/application/services/backtest/historical_backtest_ports.py",
+      "summary": "核心修改：A-layer 5日lookback、refresh roll-forward、C-layer support接入、rank_order_proxy、is_eligible追踪、write error tracking、w2s_candidate_rebuild隔离表",
+      "type": "modified"
+    },
+    {
+      "path": "stock_processing_service/scripts/run_w2s_v0.2_calibration.py",
+      "summary": "添加 deprecated_experiment 标记",
+      "type": "modified"
+    },
+    {
+      "path": "stock_processing_service/scripts/run_w2s_v0.3.py",
+      "summary": "添加 deprecated_experiment 标记",
+      "type": "modified"
+    },
+    {
+      "path": "stock_processing_service/scripts/run_w2s_v0.4.py",
+      "summary": "添加 deprecated_experiment 标记",
+      "type": "modified"
+    },
+    {
+      "path": "stock_processing_service/scripts/run_w2s_phase0_first_validation.py",
+      "summary": "添加 deprecated_experiment 标记",
+      "type": "modified"
+    },
+    {
+      "path": "stock_processing_service/scripts/build_w2s_abc_strict_rebuild.py",
+      "summary": "添加 deprecated_experiment 标记（手写 detect_support/compute_weak_type/compute_candidate_score）",
+      "type": "modified"
+    },
+    {
+      "path": "stock_processing_service/scripts/run_w2s_v0.8_usecase_replay.py",
+      "summary": "添加 deprecated_experiment 标记（逻辑迁移至 v1.0）",
+      "type": "modified"
+    },
+    {
+      "path": "stock_processing_service/tests/contract/diagnose_v1_1a.py",
+      "summary": "A-layer 覆盖和 D1 strong_history 诊断脚本",
       "type": "created"
     },
     {
-      "path": "frontend/src/routes/auth/AdminPage.tsx",
-      "summary": "用户管理页：添加用户+列表+退出登录",
+      "path": "stock_processing_service/tests/contract/v1_1a_data_readiness_report.md",
+      "summary": "v1.1a 数据就绪诊断与修复报告",
       "type": "created"
     },
     {
-      "path": "frontend/src/routes/mobile/MobileHomePage.tsx",
-      "summary": "标题改为'AI投资助理'亮黄，用户图标右上角，移除badge栏",
-      "type": "modified"
-    },
-    {
-      "path": "frontend/src/routes/mobile/MobileIntelPage.tsx",
-      "summary": "实时情报移动端：调取/api/v2/intel/feed过滤event/new_theme类型",
+      "path": "stock_processing_service/tests/contract/audit_support_v1_1a_2.py",
+      "summary": "D1 support 失败审计脚本 — 分类 879 候选的支撑数据质量",
       "type": "created"
     },
     {
-      "path": "frontend/src/routes/mobile/MobileProfilePage.tsx",
-      "summary": "账户页：修改密码+退出登录",
+      "path": "stock_processing_service/tests/contract/run_v1_1b_signal_validation.py",
+      "summary": "v1.1b 信号验证 — 计算 197 候选的 1/3/5日 forward returns，输出 w2s_signal_validation_v1_1b",
       "type": "created"
     },
     {
-      "path": "frontend/src/App.tsx",
-      "summary": "AuthProvider包裹+简单localStorage同步鉴权+AuthGate组件",
-      "type": "modified"
+      "path": "stock_processing_service/tests/contract/run_v1_1c_signal_robustness.py",
+      "summary": "v1.1c 稳健性验证 — 时间分段、去重、可交易性筛选",
+      "type": "created"
     },
     {
-      "path": "stock_processing_service/application/services/intel_new_chain_adapter.py",
-      "summary": "情报台适配器：新链信号+旧链新闻事件合并、event优先级最高、新题材标记为new_theme、按时间降序排列",
-      "type": "modified"
+      "path": "stock_processing_service/tests/contract/run_v2_0_capital_backtest.py",
+      "summary": "v2.0 资金回测 MVP — VirtualBroker T+1买入/hold3&5/仓位管理/成本计算，三版本对比，FROZEN",
+      "type": "created"
     },
     {
-      "path": "stock_processing_service/application/jobs/build_stock_abnormal_signal_job.py",
-      "summary": "异动信号Job：全Gateway链路读取subject_stock_daily_snapshot+stock_daily_snapshot，写入stock_abnormal_signal",
-      "type": "modified"
+      "path": "docs/architecture/弱转强买入法.pdf",
+      "summary": "PDF 策略文档 — 读取用于 v2.1 gap audit",
+      "type": "read"
     },
     {
-      "path": "stock_processing_service/application/jobs/build_theme_cycle_evidence_daily_job.py",
-      "summary": "修复dict→SimpleNamespace转换、添加missing字段默认值、修复连接释放问题",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/application/jobs/build_post_market_recap_job.py",
-      "summary": "添加evidence_job依赖并在cycle_judgement之前执行",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/application/orchestrators/bootstrap.py",
-      "summary": "注册BuildThemeCycleEvidenceDailyJob并传递给BuildPostMarketRecapJob",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/api_app.py",
-      "summary": "主题工作台analytics构建(周期/排行/龙头)+stock enrichment+indentation修复",
-      "type": "modified"
-    },
-    {
-      "path": "database_service/managers/postgres_manager.py",
-      "summary": "添加user_accounts CRUD、stock_daily_snapshot查询、upsert_stock_abnormal_signal_rows、resolve_subject_keys_by_names、get_intel_subject_history",
-      "type": "modified"
-    },
-    {
-      "path": "database_service/gateway.py",
-      "summary": "Gateway层：用户管理、stock查询、abnormal_signal写入、subject history读取",
-      "type": "modified"
-    },
-    {
-      "path": "services/jyhf_cdp_service/service.py",
-      "summary": "CDP服务：移除本地DedupStore、feed_date fallback用capture_time、移除JSONL写入和DOM快照保存",
-      "type": "modified"
-    },
-    {
-      "path": "services/jyhf_cdp_service/db_sink.py",
-      "summary": "DB写入：subject_rank_id使用event_id hash去重、description使用正确事件类型前缀",
-      "type": "modified"
-    },
-    {
-      "path": "services/jyhf_cdp_service/extractors.py",
-      "summary": "提取器：日期正则改为\\d{4}-\\d{1,2}-\\d{1,2}支持无前导零、新题材更新标记、遇第二日期分栏停止",
-      "type": "modified"
-    },
-    {
-      "path": "stock_service/services/recap_service.py",
-      "summary": "复盘服务：leader_lines/watchlist_lines/abnormal_lines fallback从strong_stock_watch_pool读取",
-      "type": "modified"
-    },
-    {
-      "path": "docs/architecture/移动端web_app设计.md",
-      "summary": "添加用户管理模块设计+运维操作指南(启动/隧道/状态检查/问题排查)",
-      "type": "modified"
+      "path": "docs/architecture/集合竞价.pdf",
+      "summary": "PDF 策略文档 — 读取用于 v2.1 gap audit",
+      "type": "read"
     }
   ],
   "known_failures": [
     {
-      "type": "indentation_bug",
-      "location": "api_app.py get_theme_workspace",
-      "summary": "ev_row查询在async with conn:块外部导致'connection released'错误",
+      "type": "import_error",
+      "location": "test_v1_0_usecase_replay_contract.py",
+      "summary": "文件名含点号 (test_v1.0_usecase_replay_contract.py) 导致 Python import 失败",
       "resolved": true
     },
     {
-      "type": "missing_dependency",
-      "location": "web_app启动",
-      "summary": "passlib未安装在.venv导致ModuleNotFoundError，已pip install",
+      "type": "timeout",
+      "location": "historical_backtest_ports.py:_ensure_loaded",
+      "summary": "预加载 100+ 天全市场 bar 数据超时，改为 lazy-load per date",
       "resolved": true
     },
     {
-      "type": "dict_vs_dto",
-      "location": "BuildThemeCycleEvidenceDailyJob",
-      "summary": "DBThemeDataGateway返回dict但domain builder期望DTO对象，已用SimpleNamespace转换+字段映射",
+      "type": "missing_column",
+      "location": "historical_backtest_ports.py:get_strong_watch_refresh_rows",
+      "summary": "leader_role_proxy 列不存在于 strong_watch_pool_scored_rebuild，改用 relay_role as leader_role_proxy",
       "resolved": true
     },
     {
-      "type": "pool_acquire_pattern",
-      "location": "BuildStockAbnormalSignalJob",
-      "summary": "直接使用gw._client.pool.acquire()违反架构规则，已改为Gateway方法调用",
+      "type": "string_comparison_bug",
+      "location": "historical_backtest_ports.py:get_prior_stock_daily_snapshots",
+      "summary": "limit_up 使用字符串比较 ('9.9' >= '9.5' 为 True 但 '10.0' >= '9.5' 为 False)，改为 float 比较",
       "resolved": true
     },
     {
-      "type": "ON_CONFLICT_mismatch",
-      "location": "auction_watch_universe upsert",
-      "summary": "ON CONFLICT (trade_date,stock_id)不匹配唯一约束(trade_date,stock_id,subject_key)，已修复",
+      "type": "ma_order_bug",
+      "location": "historical_backtest_ports.py:get_stock_position_judgement",
+      "summary": "MA 计算取最早交易日而非最近交易日，改为 reverse chronological order",
       "resolved": true
     },
     {
-      "type": "leader_llm_pipeline",
-      "location": "collection pipeline",
-      "summary": "queued_count=0导致theme_leader_candidate为空，已手动补跑build_theme_leader_candidate.py",
+      "type": "exception_swallowing",
+      "location": "historical_backtest_ports.py:WritePorts",
+      "summary": "upsert 方法 except:pass 静默吞错，改为 error_count + error_samples 记录",
       "resolved": true
     },
     {
-      "type": "CDP_duplicate_events",
-      "location": "jyhf_cdp_service",
-      "summary": "本地DedupStore缓存导致新事件被标记为重复，已改为DB级去重",
+      "type": "cycle_truth_error",
+      "location": "BuildStrongStockTrackingUseCase.execute()",
+      "summary": "48/55 dates 因 missing Layer B cycle truth 失败，A-layer lookback 修复后归零",
       "resolved": true
     },
     {
-      "type": "spa_auth_guard_freezing",
-      "location": "App.tsx",
-      "summary": "多次尝试auth guard导致页面空白/卡验证身份，最终采用localStorage同步检查+直接渲染LoginPage",
+      "type": "d1_fail_history_zero",
+      "location": "BuildWeakToStrongCandidateUseCase.build_candidates()",
+      "summary": "16→0 fail_history 通过 refresh + is_leader fallback + rank_order_proxy 修复",
       "resolved": true
     },
     {
-      "type": "toISOString_timezone",
-      "location": "mobile date navigation",
-      "summary": "toISOString()在UTC+8导致日期偏移(右箭头无响应/左箭头退两天)，已改为本地格式化",
+      "type": "d1_fail_support_high",
+      "location": "get_w2s_candidate_inputs",
+      "summary": "C-layer support 列未 SELECT → d1_fail_support=18；修复后降至 12，d1_pass 从 0→6",
       "resolved": true
     }
   ],
   "open_questions": [
-    "资金流入(总/前3/龙头净流入)为0.00：需要theme_capital_flow脚本迁移到新链架构",
-    "稳定性0.00：evidence kline_layer缺少theme_support_score字段",
-    "大盘环境总结和资金行为增强section为空：依赖market_environment_judgement和money_flow_enhanced独立脚本",
-    "移动端AI选股与电脑端结果不同：SPS用.venv(无torch)导致StockMatchEngine失效退回关键词匹配，start_new_chain_stack.sh已改为theme_matcher_env但需验证"
+    "烂板 bad_limit_up 的盘口级识别（充分换手、炸板不跌、均线之上震荡、封单变小）尚未实现",
+    "前板价/前高压力位/涨停板价支撑尚未结构化",
+    "盘前竞价确认层（9:20-9:25走势稳定性、最后一分钟抢筹、板块联动评分）完全缺失",
+    "分时承接、均价线、盘中弱转强买点缺失",
+    "动态止盈止损（跌破支撑、反包失败、冲高回落）需后续实现",
+    "高量不破/倍量不穿/缩量回踩识别仅最小实现",
+    "v2.2 auction confirmation layer 设计待完成"
   ],
   "next_actions": [
-    "核查旧链theme_capital_flow/money_flow/market_environment脚本，按新链架构(WritePort→Gateway)迁移",
-    "补充evidence kline_layer的theme_support_score计算(ThemeKlineEvidenceBuilder)",
-    "验证SPS启动脚本theme_matcher_env切换后的AI选股一致性",
-    "在start_new_chain_stack.sh中固化SPS重启命令(避免手动kill)",
-    "leader_llm pipeline的queued_count=0问题排查：ThemeLeaderLlmQueueService.evaluate()为何判定所有主题不需要LLM审查"
+    "完成 v2.1 PDF strategy gap audit — 输出落实度评分、已落实/部分落实/未落实清单、P0-P4优先级、v2.2-v2.5设计草案",
+    "读取剩余PDF：如何建立正确的交易体系.pdf、如何找出牛股.pdf、如何抓涨停股.pdf、A股题材&强势股跟踪.pdf",
+    "审计 StrongStockTrackingService 五维评分与 PDF 策略的对应关系",
+    "审计 BuildWeakToStrongCandidateUseCase 弱势分类与 PDF 烂板定义的差距",
+    "审计 SupportStructureResolver/KlineSupportScorer/GapStructureDetector 与 PDF 支撑体系的对齐",
+    "输出 v2.1_gap_audit_report.md",
+    "设计 v2.2 auction confirmation layer（四维评分：price_strength/pattern_stability/last_minute_grab/plate_follow）"
   ],
   "metadata": {
-    "timestamp": "2026-05-14T02:13:57.554Z",
+    "timestamp": "2026-05-19T06:09:44.408Z",
     "model": "deepseek-v4-pro",
-    "level": "emergency",
+    "level": "light",
     "schema_version": "1.0"
   }
 }

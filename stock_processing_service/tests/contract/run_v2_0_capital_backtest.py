@@ -1,4 +1,10 @@
 """
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  STATUS: FROZEN — v2.0_backtest_baseline                                  ║
+║  Frozen: 2026-05-19                                                        ║
+║  DO NOT MODIFY. For parameter changes, create v2.1_parameter_sweep.       ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
 v2.0 capital backtest MVP — Daily-bar level, no intraday/auction execution.
 ================================================================================
 Input:  w2s_signal_validation_v1_1b (verified signals from v1.1b/v1.1c)

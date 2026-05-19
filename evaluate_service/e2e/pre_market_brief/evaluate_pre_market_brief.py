@@ -59,6 +59,42 @@ def _matches_gold(gold: str, candidate: str | None) -> bool:
     return any(alias and (alias in candidate or candidate in alias) for alias in aliases)
 
 
+def _split_opportunity_metrics(sections: dict[str, Any]) -> dict[str, int]:
+    """Phase 4.7: Split opportunity count into theme-level and stock-level metrics."""
+    opps = sections.get("event_driven_opportunities") or []
+    stock_total = 0
+    a_tier = 0
+    b_tier = 0
+    c_tier = 0
+    subject_keys: set[str] = set()
+    stock_ids: set[str] = set()
+    for card in opps:
+        sk = str(card.get("subject_key") or "")
+        if sk:
+            subject_keys.add(sk)
+        for stock in card.get("stocks") or []:
+            stock_total += 1
+            sid = str(stock.get("stock_id") or "")
+            if sid:
+                stock_ids.add(sid)
+            level = str(stock.get("level") or "C").upper()
+            if level == "A":
+                a_tier += 1
+            elif level == "B":
+                b_tier += 1
+            else:
+                c_tier += 1
+    return {
+        "brief_theme_opportunity_count": len(opps),
+        "brief_stock_opportunity_count": stock_total,
+        "a_tier_stock_count": a_tier,
+        "b_tier_stock_count": b_tier,
+        "c_tier_stock_count": c_tier,
+        "opportunity_subject_count": len(subject_keys),
+        "opportunity_stock_unique_count": len(stock_ids),
+    }
+
+
 def _is_commercial_space_neighbor(gold: str, primary: str | None, related: str | None) -> bool:
     """商业航天族群近邻单独计数，避免把合理扩展直接混入 wrong related。"""
     if not gold or not related:
@@ -182,6 +218,8 @@ def evaluate(
         "brief_major_event_count": len(sections.get("major_events") or []),
         "brief_theme_count": len(sections.get("matched_themes") or []),
         "brief_opportunity_count": len(sections.get("event_driven_opportunities") or []),
+        # ── Phase 4.7: split opportunity metrics ──
+        **_split_opportunity_metrics(sections),
         **snapshot_name_quality,
         "performance": _extract_performance_summary(trace.get("counts", {})),
         "diagnostics": diagnostics,
