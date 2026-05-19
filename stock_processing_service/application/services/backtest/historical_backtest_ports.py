@@ -53,22 +53,42 @@ class HistoricalBacktestReadPorts:
         self._bars_cache: dict[date, dict[str, dict]] = {}
         self._trade_dates: list[date] = []
         self._loaded = False
+        # Seed funnel audit (P0-6): per-call metrics, reset on each invocation
+        self.seed_funnel: dict[str, int] = {}
 
     async def _ensure_loaded(self):
         if self._loaded: return
         self._loaded = True
-        # Load trading days
+        # Load trading days only (bars loaded lazily per-date to avoid OOM/timeout)
         rows = await self._c.execute_query(
             "SELECT DISTINCT trade_date FROM stock_daily_snapshot WHERE trade_date>=$1 AND trade_date<=$2 AND source_name LIKE 'tushare%' ORDER BY trade_date",
             (self._start, self._end))
         self._trade_dates = [r['trade_date'] for r in rows]
-        # Preload bars
+
+    async def _ensure_bars_loaded(self, trade_date: date):
+        """Lazy-load bars for a specific date into cache."""
+        if trade_date in self._bars_cache:
+            return
         bar_rows = await self._c.execute_query(
-            "SELECT DISTINCT ON (trade_date,stock_id) trade_date,stock_id,stock_name,open_price,high_price,low_price,close_price,pre_close,pct_chg,volume,amount FROM stock_daily_snapshot WHERE trade_date>=$1 AND trade_date<=$2 AND source_name LIKE 'tushare%' ORDER BY trade_date,stock_id",
-            (self._start - timedelta(days=100), self._end))
+            "SELECT DISTINCT ON (stock_id) trade_date,stock_id,stock_name,open_price,high_price,low_price,close_price,pre_close,pct_chg,volume,amount FROM stock_daily_snapshot WHERE trade_date=$1 AND source_name LIKE 'tushare%'",
+            (trade_date,))
+        self._bars_cache[trade_date] = {str(r['stock_id']): r for r in bar_rows}
+
+    async def _ensure_bars_for_dates(self, dates: list[date]):
+        """Batch lazy-load bars for multiple dates that aren't cached yet."""
+        missing = [d for d in dates if d not in self._bars_cache]
+        if not missing:
+            return
+        bar_rows = await self._c.execute_query(
+            "SELECT DISTINCT ON (trade_date,stock_id) trade_date,stock_id,stock_name,open_price,high_price,low_price,close_price,pre_close,pct_chg,volume,amount FROM stock_daily_snapshot WHERE trade_date=ANY($1) AND source_name LIKE 'tushare%' ORDER BY trade_date,stock_id",
+            (missing,))
         for r in bar_rows:
             td = r['trade_date']
             self._bars_cache.setdefault(td, {})[str(r['stock_id'])] = r
+        # Ensure empty entries for dates with no data (avoids repeated queries)
+        for d in missing:
+            if d not in self._bars_cache:
+                self._bars_cache[d] = {}
 
     # ── Trade Calendar ──
     async def get_trade_calendar(self, trade_date: date) -> TradeCalendarDTO | None:
@@ -84,6 +104,7 @@ class HistoricalBacktestReadPorts:
     # ── Daily Bars ──
     async def get_stock_daily_bars(self, trade_date: date, stock_ids: list[str] | None = None) -> list[StockBarDTO]:
         await self._ensure_loaded()
+        await self._ensure_bars_loaded(trade_date)
         bars = self._bars_cache.get(trade_date, {})
         result = []
         for sid, b in bars.items():
@@ -99,6 +120,8 @@ class HistoricalBacktestReadPorts:
 
     async def get_stock_daily_bars_range(self, start_date: date, end_date: date, stock_ids: list[str] | None = None) -> list[StockBarDTO]:
         await self._ensure_loaded()
+        relevant_dates = [d for d in self._trade_dates if start_date <= d <= end_date]
+        await self._ensure_bars_for_dates(relevant_dates)
         result = []
         for td in self._trade_dates:
             if td < start_date or td > end_date: continue
@@ -117,8 +140,10 @@ class HistoricalBacktestReadPorts:
     # ── Prior Snapshots ──
     async def get_prior_stock_daily_snapshots(self, trade_date: date, lookback_days: int, stock_ids: list[str] | None = None) -> list[PriorSnapshotDTO]:
         await self._ensure_loaded()
-        result = []
         lookback_start = trade_date - timedelta(days=lookback_days * 2)
+        prior_dates = [d for d in self._trade_dates if lookback_start <= d < trade_date]
+        await self._ensure_bars_for_dates(prior_dates)
+        result = []
         for td in self._trade_dates:
             if td >= trade_date: break
             if td < lookback_start: continue
@@ -172,8 +197,18 @@ class HistoricalBacktestReadPorts:
             Rationale: strong stock watch requires recent limit-up evidence.
             Source trace: {'filter': 'prior7_limitup_days_ge_1', 'reason': 'no_recent_limit_up_evidence'}
           - NO LIMIT — all qualifying rows pass through; service-layer dedup/ranking handles capacity.
+
+        FUNNEL AUDIT: self.seed_funnel is populated with per-stage counts for diagnostics.
         """
         await self._ensure_loaded()
+
+        # Step 0: Query raw B-layer rows (before leader/prior7 filters) for funnel baseline
+        raw_b_rows = await self._c.execute_query(
+            "SELECT COUNT(*) as n FROM strong_stock_daily_feature WHERE trade_date=$1",
+            (trade_date,))
+        b_raw = raw_b_rows[0]['n'] if raw_b_rows else 0
+
+        # Step 1: Fetch B+C rows with leader_role + prior7 pre-filters
         rows = await self._c.execute_query("""
             SELECT b.stock_id, b.stock_name, b.subject_key, b.theme_name,
                    b.is_leader, b.recent_limit_up_count, b.prior7_limitup_days, b.prior7_strong_days,
@@ -185,23 +220,53 @@ class HistoricalBacktestReadPorts:
             WHERE b.trade_date=$1 AND b.leader_role_proxy!='unknown'
               AND b.prior7_limitup_days>=1
         """, (trade_date,))
+        after_leader_prior7 = len(rows)
+
+        # Count just the leader_role filter effect (separate query for granularity)
+        lr_rows = await self._c.execute_query(
+            "SELECT COUNT(*) as n FROM strong_stock_daily_feature WHERE trade_date=$1 AND leader_role_proxy!='unknown'",
+            (trade_date,))
+        after_leader_role = lr_rows[0]['n'] if lr_rows else 0
+
+        # Count the prior7 filter separately
+        p7_rows = await self._c.execute_query(
+            "SELECT COUNT(*) as n FROM strong_stock_daily_feature WHERE trade_date=$1 AND prior7_limitup_days>=1",
+            (trade_date,))
+        after_prior7 = p7_rows[0]['n'] if p7_rows else 0
+
+        # Step 2: Batch-load A-layer subject keys for this trade_date (P1 fix)
+        a_layer_rows = await self._c.execute_query(
+            "SELECT DISTINCT subject_key FROM subject_daily_feature WHERE trade_date=$1 AND rule_version='subject_feature_from_rank_v0.1'",
+            (trade_date,))
+        a_layer_subjects: set[str] = {str(r['subject_key']) for r in a_layer_rows}
+
+        # Step 3: Load board stats for this date (to populate subject counts in seed rows)
+        board_stats = await self.get_subject_board_stats(trade_date)
+        board_by_subject: dict[str, dict] = {
+            str(bs['subject_key']): bs for bs in board_stats
+        }
 
         seed_rows = []
+        after_subject_key = 0
+        after_a_layer = 0
+
         for r in rows:
             subject_key = str(r.get('subject_key') or '').strip()
-            # v0.8a: must have valid subject_key with A-layer data
             if not subject_key:
                 continue
-            # Verify A-layer has this subject on this date
-            a_check = await self._c.execute_query(
-                "SELECT COUNT(*) as n FROM subject_daily_feature WHERE trade_date=$1 AND subject_key=$2",
-                (trade_date, subject_key))
-            if a_check[0]['n'] == 0:
-                continue  # no A-layer data, can't score
+            after_subject_key += 1
+
+            # Batched A-layer check (no per-row SQL)
+            if subject_key not in a_layer_subjects:
+                continue
+            after_a_layer += 1
 
             recent_lim = int(r.get('recent_limit_up_count') or 0)
             is_leader = bool(r.get('is_leader') or False)
             has_two_board = int(r.get('prior7_limitup_days') or 0) >= 2
+
+            # Merge board stats into seed row
+            bs = board_by_subject.get(subject_key, {})
 
             seed_rows.append({
                 "stock_id": str(r['stock_id']), "stock_name": str(r.get('stock_name') or ''),
@@ -211,13 +276,26 @@ class HistoricalBacktestReadPorts:
                 "is_leader_flag": is_leader,
                 "best_rank": 999,
                 "current_flag_today": 2 if bool(r.get('limit_up')) else 1,
-                "subject_limit_up_count": 0,
-                "subject_strong_count": 0,
+                "subject_limit_up_count": int(bs.get('subject_limit_up_count', 0)),
+                "subject_strong_count": int(bs.get('subject_strong_count', 0)),
                 "cond_gene": 1 if recent_lim >= 1 else 0,
                 "cond_volume": 0,
                 "cond_structure": 0,
                 "has_two_board": has_two_board,
             })
+
+        # Populate funnel audit
+        self.seed_funnel = {
+            "trade_date": str(trade_date),
+            "b_raw_rows": b_raw,
+            "after_leader_role_filter": after_leader_role,
+            "after_prior7_filter": after_prior7,
+            "after_leader_prior7_combined": after_leader_prior7,
+            "after_subject_key_filter": after_subject_key,
+            "after_a_layer_check": after_a_layer,
+            "final_seed_rows": len(seed_rows),
+        }
+
         return seed_rows
 
     async def get_strong_watch_refresh_rows(self, trade_date: date) -> list[dict[str, Any]]:
@@ -232,6 +310,7 @@ class HistoricalBacktestReadPorts:
         and strong (>=5.0%) stocks per subject.
         """
         await self._ensure_loaded()
+        await self._ensure_bars_loaded(trade_date)
         bars = self._bars_cache.get(trade_date, {})
         if not bars: return []
 
@@ -263,6 +342,10 @@ class HistoricalBacktestReadPorts:
         trend_strength_score: 0-100 based on price vs MA5
         """
         await self._ensure_loaded()
+        # Load today + up to 20 prior days
+        prior_dates = sorted([d for d in self._trade_dates if d < trade_date], reverse=True)[:20]
+        all_dates = prior_dates + [trade_date]
+        await self._ensure_bars_for_dates(all_dates)
         bars_today = self._bars_cache.get(trade_date, {})
         if not bars_today: return []
 
@@ -324,6 +407,9 @@ class HistoricalBacktestReadPorts:
         Does NOT implement full 高量不破/倍量不穿 detection.
         """
         await self._ensure_loaded()
+        # Load today + prior day for volume comparison
+        prior_dates = sorted([d for d in self._trade_dates if d < trade_date], reverse=True)[:1]
+        await self._ensure_bars_for_dates(prior_dates + [trade_date])
         bars_today = self._bars_cache.get(trade_date, {})
         if not bars_today: return []
 
@@ -471,6 +557,9 @@ class HistoricalBacktestWritePorts:
         self._written_strong_pool = 0
         self._written_strong_history = 0
         self._written_w2s = 0
+        # Write error tracking (P0-5 fix: no silent exception swallowing)
+        self.write_errors: list[dict[str, Any]] = []
+        self.write_error_count: int = 0
 
     async def _ensure_tables(self):
         await self._c.execute_query("""
@@ -489,6 +578,35 @@ class HistoricalBacktestWritePorts:
                 rule_version VARCHAR(64), source_trace JSONB DEFAULT '{}'::jsonb,
                 created_at TIMESTAMP DEFAULT now(),
                 PRIMARY KEY (trade_date, stock_id)
+            )
+        """)
+        await self._c.execute_query("""
+            CREATE TABLE IF NOT EXISTS w2s_candidate_rebuild (
+                trade_date DATE NOT NULL, next_trade_date DATE,
+                stock_id VARCHAR(32) NOT NULL, stock_name VARCHAR(64),
+                subject_key VARCHAR(64), theme_name VARCHAR(128),
+                candidate_score VARCHAR(32), candidate_type VARCHAR(64),
+                rule_version VARCHAR(64),
+                weak_type VARCHAR(64), weak_intensity VARCHAR(32),
+                is_dragon_head BOOLEAN DEFAULT false, dragon_head_level VARCHAR(32),
+                prev_limit_up_count INTEGER DEFAULT 0,
+                max_consecutive_limit_up_days INTEGER DEFAULT 0,
+                support_type VARCHAR(64), support_level VARCHAR(32),
+                support_strength VARCHAR(32),
+                expected_open_low VARCHAR(32) DEFAULT '0',
+                expected_open_high VARCHAR(32) DEFAULT '0',
+                expected_auction_pattern VARCHAR(32) DEFAULT '',
+                need_last_minute_grab BOOLEAN DEFAULT false,
+                need_plate_follow BOOLEAN DEFAULT false,
+                evidence_json JSONB DEFAULT '{}'::jsonb,
+                pool_entry_type VARCHAR(32),
+                cycle_state VARCHAR(64),
+                mainline_strength_score VARCHAR(32),
+                fade_watch BOOLEAN DEFAULT false,
+                fade_confirmed BOOLEAN DEFAULT false,
+                source_trace JSONB DEFAULT '{}'::jsonb,
+                created_at TIMESTAMP DEFAULT now(),
+                PRIMARY KEY (next_trade_date, stock_id)
             )
         """)
 
@@ -530,7 +648,15 @@ class HistoricalBacktestWritePorts:
                       str(r.get('source_tag','')), str(r.get('relay_role','')),
                       int(r.get('recent_limit_up_count',0)), int(r.get('hard_gate_pass_count',0))))
                 written += 1
-            except Exception: pass
+            except Exception as e:
+                self.write_error_count += 1
+                if len(self.write_errors) < 20:
+                    self.write_errors.append({
+                        "table": "strong_watch_pool_scored_rebuild",
+                        "stock_id": str(r.get('stock_id', '?')),
+                        "trade_date": str(r.get('trade_date', '?')),
+                        "error": str(e)[:200],
+                    })
         self._written_strong_pool += written
         return written
 
@@ -538,44 +664,13 @@ class HistoricalBacktestWritePorts:
         self._written_strong_history += len(rows)
         return len(rows)
 
-    async def _ensure_w2s_rebuild_table(self):
-        await self._c.execute_query("""
-            CREATE TABLE IF NOT EXISTS w2s_candidate_rebuild (
-                trade_date DATE NOT NULL, next_trade_date DATE,
-                stock_id VARCHAR(32) NOT NULL, stock_name VARCHAR(64),
-                subject_key VARCHAR(64), theme_name VARCHAR(128),
-                candidate_score VARCHAR(32), candidate_type VARCHAR(64),
-                rule_version VARCHAR(64),
-                weak_type VARCHAR(64), weak_intensity VARCHAR(32),
-                is_dragon_head BOOLEAN DEFAULT false, dragon_head_level VARCHAR(32),
-                prev_limit_up_count INTEGER DEFAULT 0,
-                max_consecutive_limit_up_days INTEGER DEFAULT 0,
-                support_type VARCHAR(64), support_level VARCHAR(32),
-                support_strength VARCHAR(32),
-                expected_open_low VARCHAR(32) DEFAULT '0',
-                expected_open_high VARCHAR(32) DEFAULT '0',
-                expected_auction_pattern VARCHAR(32) DEFAULT '',
-                need_last_minute_grab BOOLEAN DEFAULT false,
-                need_plate_follow BOOLEAN DEFAULT false,
-                evidence_json JSONB DEFAULT '{}'::jsonb,
-                pool_entry_type VARCHAR(32),
-                cycle_state VARCHAR(64),
-                mainline_strength_score VARCHAR(32),
-                fade_watch BOOLEAN DEFAULT false,
-                fade_confirmed BOOLEAN DEFAULT false,
-                source_trace JSONB DEFAULT '{}'::jsonb,
-                created_at TIMESTAMP DEFAULT now(),
-                PRIMARY KEY (next_trade_date, stock_id)
-            )
-        """)
-
     async def upsert_weak_to_strong_candidate_pool_rows(self, rows: list[dict[str, Any]]) -> int:
         """Write D-layer candidates to isolated w2s_candidate_rebuild table.
 
         NEVER writes to production weak_to_strong_candidate_pool.
         """
         if not rows: return 0
-        await self._ensure_w2s_rebuild_table()
+        await self._ensure_tables()
         for r in rows:
             try:
                 await self._c.execute_query("""
@@ -604,7 +699,15 @@ class HistoricalBacktestWritePorts:
                       str(r.get('cycle_state','')), str(r.get('mainline_strength_score','0')),
                       bool(r.get('fade_watch',False)), bool(r.get('fade_confirmed',False))))
                 self._written_w2s += 1
-            except Exception: pass
+            except Exception as e:
+                self.write_error_count += 1
+                if len(self.write_errors) < 20:
+                    self.write_errors.append({
+                        "table": "w2s_candidate_rebuild",
+                        "stock_id": str(r.get('stock_id', '?')),
+                        "trade_date": str(r.get('trade_date', '?')),
+                        "error": str(e)[:200],
+                    })
         return self._written_w2s
 
     # Required stub methods
