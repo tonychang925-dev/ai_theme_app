@@ -1302,10 +1302,10 @@ Phase 6 的核心策略是：
 
 | # | 检查项 | 状态 | 完成日期 | 备注 |
 |---|--------|------|----------|------|
-| 4.1 | `ingest(docs)` 实现 | 🔲 | | 逐条计算 checksum/dedupe_key 后 upsert |
-| 4.2 | 返回统计 `{inserted, updated, skipped}` | 🔲 | | |
-| 4.3 | 重复 ingest 不产生重复行 | 🔲 | | ON CONFLICT DO UPDATE |
-| 4.4 | 单元测试覆盖 | 🔲 | | |
+| 4.1 | `ingest(docs)` 实现 | ✅ | 2026-05-19 | 逐条幂等 upsert + insert/update 判断 |
+| 4.2 | 返回统计 `{inserted, updated, failed, total}` | ✅ | 2026-05-19 | created_at==updated_at→inserted, else→updated |
+| 4.3 | 重复 ingest 不产生重复行 | ✅ | 2026-05-19 | ON CONFLICT DO UPDATE，90条首次inserted=90，二次inserted=0 |
+| 4.4 | 单元/集成测试覆盖 | ✅ | 2026-05-19 | 7个场景全覆盖（空输入/首次/重复/DB校验/单条/便捷方法） |
 
 ### 6A-5：IntelEventExtractor（公告类）
 
