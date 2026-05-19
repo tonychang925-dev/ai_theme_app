@@ -128,7 +128,8 @@ class HistoricalBacktestReadPorts:
                 result.append(PriorSnapshotDTO(
                     trade_date=td, stock_id=sid, snapshot_version="historical",
                     payload={"pct_chg": str(b.get('pct_chg','')), "close_price": str(b.get('close_price','')),
-                             "limit_up": str(b.get('pct_chg',0)) >= '9.5'}))
+                             # P0-4 fix: parse as float before comparison, not string
+                             "limit_up": float(b.get('pct_chg') or 0) >= 9.5}))
         return result
 
     # ── A-layer: Mainline Identity / Cycle / Evidence ──
@@ -161,7 +162,17 @@ class HistoricalBacktestReadPorts:
 
     # ── B-layer Seed / Refresh ──
     async def get_strong_watch_seed_rows(self, trade_date: date, lookback_days: int = 7) -> list[dict[str, Any]]:
-        """Map B-layer + C-layer to seed rows for StrongStockTrackingService."""
+        """Map B-layer + C-layer to seed rows for StrongStockTrackingService.
+
+        SEED PRE-FILTER AUDIT (P0-6):
+          - leader_role_proxy != 'unknown' — excludes unclassified stocks.
+            Rationale: unknown-role stocks lack leader identity, cannot be scored meaningfully.
+            Source trace: {'filter': 'leader_role_proxy_exclude_unknown', 'reason': 'no_leader_identity'}
+          - prior7_limitup_days >= 1 — requires at least one limit-up in prior 7 days.
+            Rationale: strong stock watch requires recent limit-up evidence.
+            Source trace: {'filter': 'prior7_limitup_days_ge_1', 'reason': 'no_recent_limit_up_evidence'}
+          - NO LIMIT — all qualifying rows pass through; service-layer dedup/ranking handles capacity.
+        """
         await self._ensure_loaded()
         rows = await self._c.execute_query("""
             SELECT b.stock_id, b.stock_name, b.subject_key, b.theme_name,
@@ -173,7 +184,6 @@ class HistoricalBacktestReadPorts:
             LEFT JOIN stock_structure_daily_feature c ON b.stock_id=c.stock_id AND b.trade_date=c.trade_date
             WHERE b.trade_date=$1 AND b.leader_role_proxy!='unknown'
               AND b.prior7_limitup_days>=1
-            LIMIT 500
         """, (trade_date,))
 
         seed_rows = []
@@ -263,13 +273,16 @@ class HistoricalBacktestReadPorts:
             if not bar: continue
 
             closes = []
-            for td in self._trade_dates:
-                if td >= trade_date: break
+            # P0-5 fix: iterate in REVERSE chronological order to get most recent N
+            # trading days before trade_date
+            prior_dates = sorted([d for d in self._trade_dates if d < trade_date], reverse=True)
+            for td in prior_dates:
                 day_bars = self._bars_cache.get(td, {})
                 b = day_bars.get(sid)
                 if b:
                     closes.append(float(b.get('close_price') or 0))
-                if len(closes) >= 20: break
+                if len(closes) >= 20:
+                    break
 
             if len(closes) < 5:
                 result.append({
@@ -361,9 +374,13 @@ class HistoricalBacktestReadPorts:
     async def get_w2s_candidate_inputs(self, trade_date: date) -> list[dict[str, Any]]:
         """Read D1 candidate inputs from scored strong_watch_pool_scored_rebuild.
 
-        Filters by is_candidate_eligible(): watch_status in active/weakening AND
-        pool_entry_type in formal/observe_only. Both formal AND observe_only pass through.
+        Calls StrongStockTrackingService.is_candidate_eligible() on every row to ensure
+        both formal AND observe_only pass through to D layer.
         """
+        from stock_processing_service.domain.services.strong_stock_tracking_service import (
+            StrongStockTrackingService,
+        )
+
         rows = await self._c.execute_query("""
             SELECT p.stock_id, p.stock_name, p.subject_key, p.theme_name,
                    p.watch_score, p.watch_status, p.pool_entry_type,
@@ -381,13 +398,20 @@ class HistoricalBacktestReadPorts:
             FROM strong_watch_pool_scored_rebuild p
             LEFT JOIN stock_structure_daily_feature c ON p.stock_id=c.stock_id AND p.trade_date=c.trade_date
             WHERE p.trade_date=$1
-              AND p.watch_status IN ('active','weakening')
-              AND p.pool_entry_type IN ('formal','observe_only')
               AND NOT COALESCE(p.fade_confirmed, false)
         """, (trade_date,))
 
         result = []
         for r in rows:
+            # P0-7: Explicit is_candidate_eligible() call — auditable in contract trace.
+            # Both formal AND observe_only must pass through to D layer.
+            if not StrongStockTrackingService.is_candidate_eligible(
+                watch_status=str(r.get('watch_status') or ''),
+                pool_entry_type=str(r.get('pool_entry_type') or ''),
+                candidate_source="strong_watch_pool",
+            ):
+                continue
+
             result.append({
                 "stock_id": str(r['stock_id']),
                 "stock_name": str(r.get('stock_name') or ''),
@@ -514,21 +538,59 @@ class HistoricalBacktestWritePorts:
         self._written_strong_history += len(rows)
         return len(rows)
 
+    async def _ensure_w2s_rebuild_table(self):
+        await self._c.execute_query("""
+            CREATE TABLE IF NOT EXISTS w2s_candidate_rebuild (
+                trade_date DATE NOT NULL, next_trade_date DATE,
+                stock_id VARCHAR(32) NOT NULL, stock_name VARCHAR(64),
+                subject_key VARCHAR(64), theme_name VARCHAR(128),
+                candidate_score VARCHAR(32), candidate_type VARCHAR(64),
+                rule_version VARCHAR(64),
+                weak_type VARCHAR(64), weak_intensity VARCHAR(32),
+                is_dragon_head BOOLEAN DEFAULT false, dragon_head_level VARCHAR(32),
+                prev_limit_up_count INTEGER DEFAULT 0,
+                max_consecutive_limit_up_days INTEGER DEFAULT 0,
+                support_type VARCHAR(64), support_level VARCHAR(32),
+                support_strength VARCHAR(32),
+                expected_open_low VARCHAR(32) DEFAULT '0',
+                expected_open_high VARCHAR(32) DEFAULT '0',
+                expected_auction_pattern VARCHAR(32) DEFAULT '',
+                need_last_minute_grab BOOLEAN DEFAULT false,
+                need_plate_follow BOOLEAN DEFAULT false,
+                evidence_json JSONB DEFAULT '{}'::jsonb,
+                pool_entry_type VARCHAR(32),
+                cycle_state VARCHAR(64),
+                mainline_strength_score VARCHAR(32),
+                fade_watch BOOLEAN DEFAULT false,
+                fade_confirmed BOOLEAN DEFAULT false,
+                source_trace JSONB DEFAULT '{}'::jsonb,
+                created_at TIMESTAMP DEFAULT now(),
+                PRIMARY KEY (next_trade_date, stock_id)
+            )
+        """)
+
     async def upsert_weak_to_strong_candidate_pool_rows(self, rows: list[dict[str, Any]]) -> int:
+        """Write D-layer candidates to isolated w2s_candidate_rebuild table.
+
+        NEVER writes to production weak_to_strong_candidate_pool.
+        """
         if not rows: return 0
+        await self._ensure_w2s_rebuild_table()
         for r in rows:
             try:
                 await self._c.execute_query("""
-                    INSERT INTO weak_to_strong_candidate_pool (
+                    INSERT INTO w2s_candidate_rebuild (
                         trade_date,next_trade_date,stock_id,stock_name,subject_key,theme_name,
                         candidate_score,candidate_type,rule_version,weak_type,weak_intensity,
                         is_dragon_head,dragon_head_level,prev_limit_up_count,max_consecutive_limit_up_days,
                         support_type,support_level,support_strength,
                         expected_open_low,expected_open_high,expected_auction_pattern,
                         need_last_minute_grab,need_plate_follow,evidence_json,
-                        pool_entry_type,cycle_state,mainline_strength_score,fade_watch,fade_confirmed)
-                    VALUES ($1,$2,$3,$4,$5,$6,$7,$8,'w2s_v0.8_usecase_replay',$9,$10,$11,$12,$13,0,$14,'0',$15,'0','0','',
-                        false,false,$16::jsonb,$17,$18,$19,$20,$21)
+                        pool_entry_type,cycle_state,mainline_strength_score,fade_watch,fade_confirmed,
+                        source_trace)
+                    VALUES ($1,$2,$3,$4,$5,$6,$7,$8,'w2s_v1.0_usecase_replay',$9,$10,$11,$12,$13,0,$14,'0',$15,'0','0','',
+                        false,false,$16::jsonb,$17,$18,$19,$20,$21,
+                        jsonb_build_object('usecase','BuildWeakToStrongCandidateUseCase','method','historical_replay','contract','v1.0'))
                     ON CONFLICT (next_trade_date,stock_id) DO NOTHING
                 """, (r['trade_date'], r.get('next_trade_date', r['trade_date']),
                       str(r.get('stock_id','')), str(r.get('stock_name','')),
@@ -562,4 +624,3 @@ class HistoricalBacktestWritePorts:
     async def upsert_theme_cycle_judgement_v2_rows(self, rows): return 0
     async def upsert_mainline_state_daily_rows(self, rows): return 0
     async def upsert_mainline_state_transition_rows(self, rows): return 0
-    async def upsert_strong_watch_history_rows(self, rows): return 0
