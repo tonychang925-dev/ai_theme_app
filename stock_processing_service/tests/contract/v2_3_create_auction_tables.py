@@ -126,14 +126,25 @@ async def main():
     gw = await DatabaseGateway.initialize(config=cfg, auto_warm_cache=False)
     c = gw._client
 
-    # Raw table
+    # Split multi-statement DDLs and execute individually
+    def _split_ddl(ddl: str) -> list[str]:
+        stmts = []
+        for s in ddl.split(";"):
+            s = s.strip()
+            if s and not s.startswith("--"):
+                stmts.append(s)
+        return stmts
+
+    # Raw table + indices
     print(f"\n  Creating pre_market_auction_timeline_raw...")
-    await c.execute_query(DDL_RAW)
+    for stmt in _split_ddl(DDL_RAW):
+        await c.execute_query(stmt + ";")
     print(f"  ✅ pre_market_auction_timeline_raw ready")
 
-    # Feature table
+    # Feature table + indices
     print(f"\n  Creating pre_market_auction_feature...")
-    await c.execute_query(DDL_FEATURE)
+    for stmt in _split_ddl(DDL_FEATURE):
+        await c.execute_query(stmt + ";")
     print(f"  ✅ pre_market_auction_feature ready")
 
     print(f"\n{'='*60}")

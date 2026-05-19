@@ -1,8 +1,9 @@
 # Phase 6：一手信息接入与预警引擎设计文档
 
 > 适用项目：AI Theme App / 盘前必读新链路  
-> 文档版本：v1.0  
+> 文档版本：v1.1  
 > 日期：2026-05-19  
+> 变更：Phase 6A 压缩为 8 个交付单元，AlertRuleEngine 后移 Phase 6B，新增 source_trace_id/stream_status 字段，新增 RawIntelIngestionService，新增 checklist 跟踪表  
 > 目标：在现有新闻驱动盘前必读链路基础上，新增公司公告、业绩预告、业绩快报、研报、机构调研等一手/准一手信息输入，形成“公告/财报/研报/调研 → LLM结构化 → 题材匹配 → 机会/风险预警 → 盘前必读”的完整闭环。
 
 ---
@@ -150,9 +151,10 @@ DecisionExecutor
 raw_intel_document
 structured_intel_event
 AnnouncementCollector
+RawIntelIngestionService
 IntelEventExtractor
 IntelStreamProducer
-AlertRuleEngine
+AlertRuleEngine（Phase 6B）
 PreMarketBriefBuilder section 扩展
 ```
 
@@ -236,6 +238,7 @@ CREATE TABLE IF NOT EXISTS raw_intel_document (
     dedupe_key      VARCHAR(256),
     parse_status    VARCHAR(32)  NOT NULL DEFAULT 'raw',
     llm_status      VARCHAR(32)  NOT NULL DEFAULT 'pending',
+    stream_status   VARCHAR(32)  NOT NULL DEFAULT 'pending',  -- pending / produced / skipped / failed
     created_at      TIMESTAMPTZ  NOT NULL DEFAULT now(),
     updated_at      TIMESTAMPTZ  NOT NULL DEFAULT now()
 );
@@ -287,6 +290,7 @@ CREATE TABLE IF NOT EXISTS structured_intel_event (
     urgency_score     NUMERIC(5,2),
     evidence_json     JSONB        NOT NULL DEFAULT '{}',
     llm_model         VARCHAR(64),
+    stream_status     VARCHAR(32)  NOT NULL DEFAULT 'pending',  -- pending / produced / skipped / failed
     created_at        TIMESTAMPTZ  NOT NULL DEFAULT now()
 );
 
@@ -314,13 +318,26 @@ MVP 阶段建议给 `news_event` 增加：
 ALTER TABLE news_event
 ADD COLUMN IF NOT EXISTS source_category VARCHAR(32) DEFAULT 'news',
 ADD COLUMN IF NOT EXISTS raw_intel_doc_id BIGINT,
-ADD COLUMN IF NOT EXISTS structured_intel_event_id BIGINT;
+ADD COLUMN IF NOT EXISTS structured_intel_event_id BIGINT,
+ADD COLUMN IF NOT EXISTS source_trace_id VARCHAR(128);
 ```
 
 用途：
 
 ```text
 source_category = news / intel
+source_trace_id  = {run_id}:{raw_doc_id}:{sie_id}
+```
+
+`source_trace_id` 贯穿全链路，用于追踪：
+
+```text
+raw_intel_document
+→ structured_intel_event
+→ news_event
+→ stream:events:structured
+→ event_subject_map
+→ pre_market_brief_snapshot
 ```
 
 intel event 写入 news_event 后，即可复用现有 ThemeProcessor。
@@ -337,13 +354,47 @@ intel event 写入 news_event 后，即可复用现有 ThemeProcessor。
 news_crawler_service/collectors/announcement_collector.py
 ```
 
+职责边界：
+
+```text
+Collector 只负责：抓取 + 标准化 → 输出 RawIntelDocumentDTO list
+Collector 不负责：入库、去重、写 DB
+```
+
 原因：
 
 - 与现有 AKShare base collector 体系一致
-- Collector 只负责抓取和标准化
-- 不负责 LLM 结构化
+- Collector 不依赖 DatabaseGateway，方便单测 mock
+- 入库逻辑由 RawIntelIngestionService 统一负责
 
-### 6.2 统一输出格式
+### 6.2 RawIntelIngestionService
+
+位置建议：
+
+```text
+stock_processing_service/application/services/raw_intel_ingestion_service.py
+```
+
+职责：
+
+```text
+1. 接收 Collector 产出的 RawIntelDocumentDTO list
+2. checksum 计算与 content_text 去重
+3. (source_system, source_id) 唯一性去重
+4. dedupe_key 构建
+5. 调用 DatabaseGateway.upsert_raw_intel_document() 入库
+6. 返回 upsert 统计 {inserted, updated, skipped}
+```
+
+不负责：
+
+```text
+LLM 结构化
+PDF 下载/解析
+stream 投递
+```
+
+### 6.3 统一输出格式
 
 ```json
 {
@@ -368,7 +419,7 @@ news_crawler_service/collectors/announcement_collector.py
 }
 ```
 
-### 6.3 MVP 策略
+### 6.4 MVP 策略
 
 Phase 6A 只做：
 
@@ -654,85 +705,370 @@ review/unknown 自动风险
 
 ## 11. 实施阶段
 
-### Phase 6A：公告接入 MVP
+### Phase 6A：公告接入 MVP（8 个交付单元）
 
-目标：
+**目标**：打通"公告采集 → 入库 → LLM 结构化 → 投递新链 → 盘前必读"最小闭环。
 
-```text
-公告能进 raw_intel_document
-→ 标题 LLM 结构化
-→ 进 stream:events:structured
-→ 进盘前必读
+**不改动**：ThemeProcessor / ThemeMatchEngine / DecisionExecutor / stream:news:raw
+
+**暂不做**：AlertRuleEngine、PDF 下载/OCR、研报/调研/财报专项
+
+---
+
+#### 6A-1：DDL
+
+| 项目 | 内容 |
+|---|---|
+| **文件** | `database_service/scripts/create_raw_intel_document.sql`（新建） |
+| | `database_service/scripts/create_structured_intel_event.sql`（新建） |
+| | `database_service/scripts/alter_news_event_for_intel.sql`（新建） |
+| **依赖** | 无 |
+| **估时** | 小 |
+
+**内容**：
+- `raw_intel_document` — 26 字段 + 6 索引（含 `stream_status` 字段）
+- `structured_intel_event` — 23 字段 + 5 索引（含 `stream_status` 字段，FK → raw_intel_document）
+- `news_event` — 新增 `source_category`、`raw_intel_doc_id`、`structured_intel_event_id`、`source_trace_id` 四字段
+
+**验证**：三个 SQL 文件均可通过 `psql -f` 执行成功，`\d` 显示表结构正确，FK 约束生效。
+
+---
+
+#### 6A-2：DB Gateway
+
+| 项目 | 内容 |
+|---|---|
+| **文件** | `database_service/managers/postgres_manager.py`（修改） |
+| | `database_service/gateway.py`（修改） |
+| **依赖** | 6A-1 |
+| **估时** | 中 |
+
+**PostgresManager 新增方法**：
+
+```python
+# raw_intel_document
+async def upsert_raw_intel_document(self, doc: dict) -> dict:
+    """INSERT ... ON CONFLICT (source_system, source_id) DO UPDATE ... RETURNING *"""
+
+async def get_raw_intel_documents_by_status(self, llm_status: str, limit: int = 100) -> list[dict]:
+    """SELECT * WHERE llm_status = $1 ORDER BY publish_time DESC"""
+
+async def update_raw_intel_llm_status(self, doc_id: int, status: str) -> None:
+
+# structured_intel_event
+async def insert_structured_intel_event(self, event: dict) -> dict:
+    """INSERT INTO structured_intel_event (...) VALUES (...) RETURNING *"""
+
+async def get_pending_intel_events_for_stream(self, limit: int = 50) -> list[dict]:
+    """SELECT ... WHERE stream_status = 'pending' ORDER BY publish_time DESC"""
+
+async def update_intel_event_stream_status(self, event_id: int, status: str) -> None:
 ```
 
-交付物：
+**DatabaseGateway 新增委托方法**：每个方法一行委托（写操作→ `self._client`，读操作→ `self._read_source()`）。
 
-1. raw_intel_document 表
-2. structured_intel_event 表
-3. AnnouncementCollector
-4. IntelEventExtractor 公告类 prompt
-5. IntelStreamProducer
-6. PreMarketBriefBuilder 新增 company_announcements
-7. Smoke test
+---
 
-验收标准：
+#### 6A-3：AnnouncementCollector
+
+| 项目 | 内容 |
+|---|---|
+| **文件** | `news_crawler_service/collectors/announcement_collector.py`（新建） |
+| **依赖** | 无（不依赖 DatabaseGateway） |
+| **估时** | 大 |
+
+**职责边界**：
 
 ```text
-能抓取并入库最近一天公告 ≥ 50 条
-重大合同/业绩预告/风险公告结构化 ≥ 10 条
-至少 5 条公告事件进入盘前必读 company_announcements
-不影响现有新闻 E2E100 基线
+Collector 只负责：抓取 + 标准化 → 输出 RawIntelDocumentDTO list
+Collector 不负责：入库、去重、写 DB
 ```
+
+**AKShare 接口**：
+
+| 接口 | source_system |
+|---|---|
+| `ak.stock_info_disclosure()` | `akshare_cninfo` |
+| `ak.stock_info_a_code_name()` | `akshare_a_notice` |
+
+**核心方法**：
+
+```python
+class AnnouncementCollector:
+    async def collect(self, days_back: int = 1) -> list[dict]:
+        """增量抓取最近N天公告，返回 RawIntelDocumentDTO dict list"""
+
+    def _standardize(self, raw_row, source_config) -> dict:
+        """AKShare DataFrame 行 → 统一 raw_intel_document dict"""
+
+    @staticmethod
+    def build_dedupe_key(source_system: str, source_type: str, source_id: str) -> str:
+        """{source_system}:{source_type}:{source_id}"""
+
+    @staticmethod
+    def compute_checksum(title: str, stock_code: str, publish_time: str) -> str:
+        """md5(title + stock_code + publish_time)"""
+```
+
+**MVP 只抓**：标题、公告类型、股票代码、股票名称、发布时间、PDF URL。
+
+**不做 PDF 下载/解析**。
+
+**验证**：`collect(days_back=1)` 返回 ≥ 50 条，每条包含必需字段。
+
+---
+
+#### 6A-4：RawIntelIngestionService
+
+| 项目 | 内容 |
+|---|---|
+| **文件** | `stock_processing_service/application/services/raw_intel_ingestion_service.py`（新建） |
+| **依赖** | 6A-2, 6A-3 |
+| **估时** | 中 |
+
+**职责**：
+
+```python
+class RawIntelIngestionService:
+    def __init__(self, gateway: DatabaseGateway):
+        self.gateway = gateway
+
+    async def ingest(self, docs: list[dict]) -> dict:
+        """
+        1. 逐条 compute checksum / dedupe_key
+        2. 调用 gateway.upsert_raw_intel_document()
+        3. ON CONFLICT (source_system, source_id) DO UPDATE
+        4. 返回 {inserted: N, updated: N, skipped: N}
+        """
+```
+
+**不负责**：LLM 结构化、PDF 处理、stream 投递。
+
+**验证**：
+- 首次 ingest 50 条 → inserted = 50
+- 重复 ingest 相同 50 条 → inserted = 0, updated = 50（或 skipped = 50）
+- 无 duplicate key 报错
+
+---
+
+#### 6A-5：IntelEventExtractor（公告类）
+
+| 项目 | 内容 |
+|---|---|
+| **文件** | `stock_processing_service/domain/services/intel_event_extractor.py`（新建） |
+| **依赖** | 6A-2 |
+| **估时** | 大 |
+
+**Phase 6A 只实现 `extract_announcement()`。** 其他接口（extract_performance / extract_research / extract_survey）预留在类中，Phase 6D/E 再实现。
+
+**支持的公告事件类型**：
+
+```text
+major_contract         重大合同
+capex_expansion        投资扩产
+mna_restructuring      并购重组
+shareholder_change     股权变动（增持/减持）
+regulatory_penalty     监管处罚/问询
+management_change      高管变动
+dividend_plan          分红方案
+other                  其他公告
+```
+
+**Prompt 约束**：
+
+1. 研报/调研类 `source_org` 不得进入 theme_candidates（本阶段先行约束）
+2. 输出必须包含 `evidence` 字段（保留原文关键表述）
+3. 信息不足以判断时，`confidence < 0.6`，`event_level = "normal"`
+4. 不强制要求 PDF 全文（只用标题 + 公告类型）
+
+**验证**：
+- "签署重大合同" → event_type="major_contract", event_level ∈ {important, critical}
+- "股东减持计划" → event_type="shareholder_change", risk_points 非空
+- 模糊标题 → confidence < 0.6, event_level="normal"
+
+---
+
+#### 6A-6：IntelStreamProducer
+
+| 项目 | 内容 |
+|---|---|
+| **文件** | `stock_processing_service/application/services/intel_stream_producer.py`（新建） |
+| **依赖** | 6A-2, 6A-5 |
+| **估时** | 中 |
+
+**MVP 方案**：structured_intel_event → 同步写入 news_event（`source_category='intel'`）→ 投递 `stream:events:structured`
+
+```python
+class IntelStreamProducer:
+    def __init__(self, gateway: DatabaseGateway, stream_bus):
+        ...
+
+    async def produce(self, intel_event_id: int) -> str:
+        """
+        1. 读取 structured_intel_event
+        2. 构建 news_event dict（source_category='intel', source_trace_id=...）
+        3. 写入 news_event → 获得 news_event_id
+        4. 构建 structured event envelope（payload.event_id = news_event_id）
+        5. xadd → stream:events:structured
+        6. UPDATE structured_intel_event SET stream_status='produced'
+        7. 返回 stream message_id
+        """
+
+    async def produce_batch(self, stream_status: str = 'pending', limit: int = 50) -> int:
+        """按 stream_status='pending' 批量投递"""
+```
+
+**Envelope 与现有 ThemeProcessor 兼容**：`payload.event_id` 对应 `news_event.id`，ThemeProcessor 通过 `gateway.get_news_event_for_match(event_id)` 查询，无需修改。
+
+**stream_status 过滤**：Producer 按 `sie.stream_status = 'pending'` 筛选，不按 `event_level != 'normal'` 筛选。避免遗漏 "normal 但有题材价值" 的公告。
+
+**验证**：
+- 投递一条 intel event → news_event 出现 `source_category='intel'` 行
+- stream:events:structured 收到消息
+- ThemeProcessor 消费不报错
+- structured_intel_event.stream_status 更新为 'produced'
+
+---
+
+#### 6A-7：PreMarketBriefBuilder 扩展
+
+| 项目 | 内容 |
+|---|---|
+| **文件** | `stock_processing_service/application/services/pre_market_brief_builder.py`（修改） |
+| **依赖** | 6A-6 |
+| **估时** | 中 |
+
+**新增 section**：
+
+```python
+sections = {
+    # === 现有不变 ===
+    "major_events": ...,
+    "matched_themes": ...,
+    "review_events": ...,
+    "unknown_watch": ...,
+    "event_driven_opportunities": ...,
+
+    # === 新增 ===
+    "company_announcements": [],   # 按 stock_code 分组的公告事件
+    "earnings_alerts": [],         # Phase 6D 再填充，先空数组
+    "research_highlights": [],     # Phase 6E 再填充，先空数组
+    "institutional_survey": [],    # Phase 6E 再填充，先空数组
+
+    # === 现有但扩展 ===
+    "risk_alerts": [],             # 现有 + 后续 Phase 6B AlertRuleEngine 补充
+    "opportunity_alerts": [],      # Phase 6B 填充
+}
+```
+
+**company_announcements 数据来源**：从 `event_subject_map` 中筛选 `source_category='intel'` 的事件，按 `stock_code` 分组。
+
+**Phase 6A 不实现**：AlertRuleEngine 的个股风险/机会判断。
+
+**验证**：
+- rebuild 后 `payload.sections.company_announcements` ≥ 5 条
+- `payload.sections.earnings_alerts` 为空数组（不报错）
+- 现有 section（major_events/matched_themes/opportunities）不受影响
+
+---
+
+#### 6A-8：Smoke Test + E2E100 回归
+
+| 项目 | 内容 |
+|---|---|
+| **文件** | `stock_processing_service/tests/contract/test_phase6a_smoke.py`（新建） |
+| **依赖** | 6A-1 ~ 6A-7 |
+| **估时** | 中 |
+
+**Smoke 流程**：
+
+```text
+AnnouncementCollector.collect(days_back=1)
+→ RawIntelIngestionService.ingest()
+→ raw_intel_document 入库
+→ IntelEventExtractor.extract_announcement()
+→ structured_intel_event 入库
+→ IntelStreamProducer.produce()
+→ news_event (source_category='intel')
+→ stream:events:structured
+→ ThemeProcessor / DecisionExecutor
+→ PreMarketBriefBuilder.rebuild()
+→ 验证 company_announcements
+```
+
+**验收标准**：
+
+| # | 指标 | 阈值 |
+|---|------|------|
+| 1 | raw_intel_document_count | ≥ 50 |
+| 2 | duplicate_insert_count | = 0 |
+| 3 | structured_intel_event_count | ≥ 10 |
+| 4 | intel_news_event_count | ≥ 10 |
+| 5 | stream_produced_count | ≥ 10 |
+| 6 | event_subject_map 中 source_category='intel' 记录数 | ≥ 5 |
+| 7 | pre_market_brief.company_announcements | ≥ 5 |
+| 8 | 新闻 E2E100 — recall@5 | ≥ 0.70 |
+| 9 | 新闻 E2E100 — wrong_related | = 0 |
+| 10 | 新闻 E2E100 — dead_letter | = 0 |
+| 11 | 新闻 E2E100 — terminal | = 100 |
+| 12 | 新闻 E2E100 — A+B stock count | ≥ 70 |
+
+---
 
 ### Phase 6B：AlertRuleEngine
 
-目标：
+**目标**：风险/机会规则引擎输出 risk_alerts / opportunity_alerts。
 
-```text
-风险/机会规则引擎输出 risk_alerts / opportunity_alerts
+| 项目 | 内容 |
+|---|---|
+| **文件** | `stock_processing_service/domain/services/alert_rule_engine.py`（新建） |
+| | `stock_processing_service/application/services/pre_market_brief_builder.py`（修改，集成告警） |
+| **依赖** | Phase 6A 完成 |
+| **估时** | 中 |
+
+**核心设计**：
+
+```python
+class AlertRuleEngine:
+    """纯规则引擎，不调用 LLM。
+       输入 structured_intel_event，输出 alert list。"""
+
+    # critical risk: 业绩大幅预亏、监管处罚、重大合同终止、实控人变更、
+    #                大额减持、商誉减值、ST 风险
+    CRITICAL_RISK_RULES: list[Rule]
+
+    # important risk: 业绩低于预期、问询函、毛利率下滑、现金流恶化、高管离职
+    IMPORTANT_RISK_RULES: list[Rule]
+
+    # opportunity: 重大合同金额高、新产品量产、产能扩张、业绩超预期、
+    #              回购增持、研报上调
+    OPPORTUNITY_RULES: list[Rule]
+
+    def evaluate(self, intel_event: dict) -> list[dict]: ...
+    def evaluate_batch(self, intel_events: list[dict]) -> list[dict]: ...
 ```
 
-验收标准：
+**验收标准**：
 
-```text
-risk_alerts 非空，至少 3 条
-opportunity_alerts 非空，至少 3 条
-严重级别分级正确
-```
+| # | 指标 | 阈值 |
+|---|------|------|
+| 1 | risk_alerts 非空 | ≥ 3 条 |
+| 2 | opportunity_alerts 非空 | ≥ 3 条 |
+| 3 | 严重级别分级正确 | critical / important / opportunity 无交叉错误 |
+
+---
 
 ### Phase 6C：PDF 正文解析
 
-目标：
-
-```text
-公告 PDF 下载
-正文提取
-证据页码
-长文档分块
-```
+目标：公告 PDF 下载 → 正文提取 → 证据页码 → 长文档分块。
 
 ### Phase 6D：业绩/财报专项
 
-目标：
-
-```text
-业绩预告
-业绩快报
-年报季报
-财务指标抽取
-业绩超预期/低预期判断
-```
+目标：业绩预告、业绩快报、年报季报的专用 prompt，财务指标抽取，业绩超预期/低预期判断。
 
 ### Phase 6E：研报/调研专项
 
-目标：
-
-```text
-个股研报
-机构调研
-调研纪要
-观点与事实分离
-```
+目标：个股研报、机构调研的结构化 prompt，观点与事实分离。
 
 ---
 
@@ -819,55 +1155,85 @@ A+B stock count >= 70
 覆盖：
 
 ```text
-raw_intel_document upsert
+raw_intel_document upsert（RawIntelIngestionService）
 structured_intel_event insert
-AnnouncementCollector 标准化
-IntelEventExtractor JSON schema
-IntelStreamProducer envelope
-AlertRuleEngine rules
+AnnouncementCollector 标准化（DataFrame → RawIntelDocumentDTO）
+IntelEventExtractor JSON schema（公告类 8 类型覆盖）
+IntelStreamProducer envelope 格式兼容性
+API：GET /api/v1/pre_market_brief company_announcements 非空
 ```
 
-### 13.2 Smoke Test
+### 13.2 Phase 6A Smoke Test
 
 流程：
 
 ```text
-抓取最近一天公告
-→ 入库 raw_intel_document
-→ LLM 结构化
-→ 写 structured_intel_event
-→ 投递 stream:events:structured
+AnnouncementCollector.collect(days_back=1)
+→ RawIntelIngestionService.ingest()
+→ raw_intel_document 入库
+→ IntelEventExtractor.extract_announcement()
+→ structured_intel_event 入库
+→ IntelStreamProducer.produce()
+→ news_event (source_category='intel')
+→ stream:events:structured
 → ThemeProcessor / DecisionExecutor
-→ rebuild 盘前必读
-→ 前端展示
+→ PreMarketBriefBuilder.rebuild()
+→ 前端展示 company_announcements
 ```
 
-### 13.3 E2E 门禁
+### 13.3 Phase 6A 验收门禁
 
-```text
-公告入库数 >= 50
-结构化成功数 >= 10
-company_announcements >= 5
-risk_alerts >= 3
-opportunity_alerts >= 3
-news E2E100 基线不回退
-```
+| # | 指标 | 阈值 | 自动化 |
+|---|------|------|--------|
+| 1 | raw_intel_document_count | ≥ 50 | ✅ |
+| 2 | duplicate_insert_count | = 0 | ✅ |
+| 3 | structured_intel_event_count | ≥ 10 | ✅ |
+| 4 | intel_news_event_count | ≥ 10 | ✅ |
+| 5 | stream_produced_count | ≥ 10 | ✅ |
+| 6 | event_subject_map 中 source_category='intel' 记录数 | ≥ 5 | ✅ |
+| 7 | pre_market_brief.company_announcements | ≥ 5 | ✅ |
+| 8 | 新闻 E2E100 — recall@5 | ≥ 0.70 | ✅ |
+| 9 | 新闻 E2E100 — wrong_related | = 0 | ✅ |
+| 10 | 新闻 E2E100 — dead_letter | = 0 | ✅ |
+| 11 | 新闻 E2E100 — terminal | = 100 | ✅ |
+| 12 | 新闻 E2E100 — A+B stock count | ≥ 70 | ✅ |
+
+### 13.4 Phase 6B 验收门禁
+
+| # | 指标 | 阈值 |
+|---|------|------|
+| 1 | risk_alerts 非空 | ≥ 3 条 |
+| 2 | opportunity_alerts 非空 | ≥ 3 条 |
+| 3 | 严重级别分级正确 | critical / important / opportunity 无交叉错误 |
 
 ---
 
 ## 14. 推荐开发顺序
 
 ```text
-1. DDL：raw_intel_document + structured_intel_event
-2. DatabaseGateway / PostgresManager 方法
-3. AnnouncementCollector MVP
-4. IntelEventExtractor 公告类
-5. structured_intel_event → news_event 兼容写入
-6. IntelStreamProducer
-7. PreMarketBriefBuilder 新增 company_announcements
-8. AlertRuleEngine
-9. Smoke test
-10. 回归 Phase 4.7 E2E100
+Phase 6A（8 个交付单元）：
+  1. 6A-1: DDL（3 个 SQL 文件）
+  2. 6A-2: PostgresManager + DatabaseGateway 方法
+  3. 6A-3: AnnouncementCollector（只抓取+标准化，不依赖 DB）
+  4. 6A-4: RawIntelIngestionService（去重+入库）
+  5. 6A-5: IntelEventExtractor 公告类（只实现 extract_announcement）
+  6. 6A-6: IntelStreamProducer（news_event 兼容写入 + stream 投递）
+  7. 6A-7: PreMarketBriefBuilder company_announcements section
+  8. 6A-8: Smoke Test + 新闻 E2E100 回归
+
+Phase 6B：
+  9. AlertRuleEngine
+  10. PreMarketBriefBuilder 集成 risk_alerts / opportunity_alerts
+  11. Phase 6B Smoke Test
+
+Phase 6C：
+  12. PDF 正文解析
+
+Phase 6D：
+  13. 业绩/财报专项 prompt + extractor
+
+Phase 6E：
+  14. 研报/调研专项 prompt + extractor
 ```
 
 ---
@@ -893,3 +1259,100 @@ Phase 6 的核心策略是：
 短期重点是 Phase 6A：公告接入 MVP。
 
 不要一开始就追求 PDF 全文、研报深度解析和复杂财务模型。先把公告标题/类型/摘要结构化接入盘前必读，形成最小闭环，再逐步扩展 PDF、财报、研报和调研。
+
+---
+
+## 16. Phase 6A Checklist 状态跟踪
+
+> 状态：🔲 待开始 | 🔄 进行中 | ✅ 已完成 | ⏸️ 暂缓 | ❌ 阻塞
+
+### 6A-1：DDL
+
+| # | 检查项 | 状态 | 完成日期 | 备注 |
+|---|--------|------|----------|------|
+| 1.1 | `create_raw_intel_document.sql` 创建并执行成功 | ✅ | 2026-05-19 | stock_data_test，27 列 + 6 索引 + unique(source_system,source_id) |
+| 1.2 | `create_structured_intel_event.sql` 创建并执行成功 | ✅ | 2026-05-19 | stock_data_test，24 列 + 6 索引 + FK→raw_intel_document(id) |
+| 1.3 | `alter_news_event_for_intel.sql` 执行成功 | ✅ | 2026-05-19 | stock_data_test，4 字段追加，127,597 行 source_category 默认 'news' |
+
+### 6A-2：DB Gateway
+
+| # | 检查项 | 状态 | 完成日期 | 备注 |
+|---|--------|------|----------|------|
+| 2.1 | `upsert_raw_intel_document()` 实现 | ✅ | 2026-05-19 | ON CONFLICT (source_system, source_id) DO UPDATE + datetime 类型转换 |
+| 2.2 | `get_raw_intel_documents_by_status()` 实现 | ✅ | 2026-05-19 | 按 llm_status 查询，publish_time DESC |
+| 2.3 | `update_raw_intel_llm_status()` 实现 | ✅ | 2026-05-19 | |
+| 2.4 | `insert_structured_intel_event()` 实现 | ✅ | 2026-05-19 | jsonb 序列化 + datetime 转换 |
+| 2.5 | `get_pending_intel_events_for_stream()` 实现 | ✅ | 2026-05-19 | JOIN raw_intel_document，WHERE stream_status = 'pending' |
+| 2.6 | `update_intel_event_stream_status()` 实现 | ✅ | 2026-05-19 | |
+| 2.7 | `create_news_event_with_intel()` 实现 | ✅ | 2026-05-19 | source_category='intel' + source_trace_id 贯穿 |
+| 2.8 | DatabaseGateway facade 方法全部添加 | ✅ | 2026-05-19 | 写→_client，读→_read_source()，7 个方法全部委托 |
+
+### 6A-3：AnnouncementCollector
+
+| # | 检查项 | 状态 | 完成日期 | 备注 |
+|---|--------|------|----------|------|
+| 3.1 | `collect(days_back)` 实现 | 🔲 | | 支持增量抓取 |
+| 3.2 | AKShare `stock_info_disclosure()` 接入 | 🔲 | | 巨潮资讯 |
+| 3.3 | AKShare `stock_info_a_code_name()` 接入 | 🔲 | | 沪深京A股公告 |
+| 3.4 | `_standardize()` 列名自动适配 | 🔲 | | 复用 _find_column 模式 |
+| 3.5 | `build_dedupe_key()` / `compute_checksum()` 实现 | 🔲 | | 静态方法 |
+| 3.6 | 不依赖 DatabaseGateway | 🔲 | | 只输出 dict list，不写 DB |
+
+### 6A-4：RawIntelIngestionService
+
+| # | 检查项 | 状态 | 完成日期 | 备注 |
+|---|--------|------|----------|------|
+| 4.1 | `ingest(docs)` 实现 | 🔲 | | 逐条计算 checksum/dedupe_key 后 upsert |
+| 4.2 | 返回统计 `{inserted, updated, skipped}` | 🔲 | | |
+| 4.3 | 重复 ingest 不产生重复行 | 🔲 | | ON CONFLICT DO UPDATE |
+| 4.4 | 单元测试覆盖 | 🔲 | | |
+
+### 6A-5：IntelEventExtractor（公告类）
+
+| # | 检查项 | 状态 | 完成日期 | 备注 |
+|---|--------|------|----------|------|
+| 5.1 | `extract_announcement()` 实现 | 🔲 | | 公告类 prompt 模板 |
+| 5.2 | 8 种公告事件类型支持 | 🔲 | | major_contract, capex_expansion, mna_restructuring, shareholder_change, regulatory_penalty, management_change, dividend_plan, other |
+| 5.3 | 输出 Schema 符合 Section 7.2 定义 | 🔲 | | event_type, event_level, summary, impact_assessment, risk_points, theme_candidates, confidence, evidence |
+| 5.4 | confidence < 0.6 时 event_level=normal | 🔲 | | 信息不足不强行判断 |
+| 5.5 | evidence 字段非空 | 🔲 | | 保留原文引用 |
+
+### 6A-6：IntelStreamProducer
+
+| # | 检查项 | 状态 | 完成日期 | 备注 |
+|---|--------|------|----------|------|
+| 6.1 | `produce(intel_event_id)` 实现 | 🔲 | | 单条投递 |
+| 6.2 | `produce_batch(limit)` 实现 | 🔲 | | 按 stream_status='pending' 批量 |
+| 6.3 | news_event 兼容写入（source_category='intel'） | 🔲 | | source_trace_id 贯穿 |
+| 6.4 | structured event envelope 与 ThemeProcessor 兼容 | 🔲 | | payload.event_id = news_event.id |
+| 6.5 | xadd → stream:events:structured 成功 | 🔲 | | |
+| 6.6 | stream_status 更新为 'produced' | 🔲 | | |
+
+### 6A-7：PreMarketBriefBuilder 扩展
+
+| # | 检查项 | 状态 | 完成日期 | 备注 |
+|---|--------|------|----------|------|
+| 7.1 | `company_announcements` section 新增 | 🔲 | | 按 stock_code 分组 intel 事件 |
+| 7.2 | `earnings_alerts` section 新增（空数组） | 🔲 | | Phase 6D 填充 |
+| 7.3 | `research_highlights` section 新增（空数组） | 🔲 | | Phase 6E 填充 |
+| 7.4 | `institutional_survey` section 新增（空数组） | 🔲 | | Phase 6E 填充 |
+| 7.5 | `_load_intel_events()` 从 event_subject_map 读取 | 🔲 | | WHERE source_category='intel' |
+| 7.6 | 现有 section 不受影响 | 🔲 | | major_events / matched_themes / opportunities 回归正常 |
+
+### 6A-8：Smoke Test + 回归
+
+| # | 检查项 | 状态 | 完成日期 | 备注 |
+|---|--------|------|----------|------|
+| 8.1 | Smoke 脚本：全链路验证 | 🔲 | | AnnouncementCollector → PreMarketBriefBuilder |
+| 8.2 | raw_intel_document_count ≥ 50 | 🔲 | | |
+| 8.3 | duplicate_insert_count = 0 | 🔲 | | 重复 ingest 不产生重复行 |
+| 8.4 | structured_intel_event_count ≥ 10 | 🔲 | | LLM 结构化成功 |
+| 8.5 | intel_news_event_count ≥ 10 | 🔲 | | news_event 兼容写入 |
+| 8.6 | stream_produced_count ≥ 10 | 🔲 | | stream:events:structured 投递 |
+| 8.7 | event_subject_map intel 记录 ≥ 5 | 🔲 | | 经 ThemeProcessor → DecisionExecutor |
+| 8.8 | company_announcements ≥ 5 | 🔲 | | 盘前必读 section |
+| 8.9 | E2E100 recall@5 ≥ 0.70 | 🔲 | | 新闻基线不回退 |
+| 8.10 | E2E100 wrong_related = 0 | 🔲 | | |
+| 8.11 | E2E100 dead_letter = 0 | 🔲 | | |
+| 8.12 | E2E100 terminal = 100 | 🔲 | | |
+| 8.13 | E2E100 A+B stock count ≥ 70 | 🔲 | | |

@@ -2681,6 +2681,96 @@ class DatabaseGateway:
                 'code': code
             }
 
+    # ========== Phase 6A: intel 门面方法 ==========
+
+    async def upsert_raw_intel_document(self, doc: Dict[str, Any]) -> Dict[str, Any]:
+        """幂等写入 raw_intel_document（写库）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_raw_intel_document(doc)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error("upsert_raw_intel_document 失败: %s", e)
+            raise
+
+    async def get_raw_intel_documents_by_status(
+        self, llm_status: str, limit: int = 100
+    ) -> List[Dict[str, Any]]:
+        """按 llm_status 读 raw_intel_document（读库）。"""
+        try:
+            start_time = time.time()
+            result = await self._read_source().get_raw_intel_documents_by_status(llm_status, limit)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error("get_raw_intel_documents_by_status 失败: %s", e)
+            raise
+
+    async def update_raw_intel_llm_status(self, doc_id: int, status: str) -> None:
+        """更新 raw_intel_document.llm_status（写库）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.update_raw_intel_llm_status(doc_id, status)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error("update_raw_intel_llm_status 失败 doc_id=%s: %s", doc_id, e)
+            raise
+
+    async def insert_structured_intel_event(self, event: Dict[str, Any]) -> Dict[str, Any]:
+        """插入 structured_intel_event（写库）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.insert_structured_intel_event(event)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error("insert_structured_intel_event 失败: %s", e)
+            raise
+
+    async def get_pending_intel_events_for_stream(
+        self, limit: int = 50
+    ) -> List[Dict[str, Any]]:
+        """按 stream_status='pending' 读待投递 intel events（读库）。"""
+        try:
+            start_time = time.time()
+            result = await self._read_source().get_pending_intel_events_for_stream(limit)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error("get_pending_intel_events_for_stream 失败: %s", e)
+            raise
+
+    async def update_intel_event_stream_status(self, event_id: int, status: str) -> None:
+        """更新 structured_intel_event.stream_status（写库）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.update_intel_event_stream_status(event_id, status)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error("update_intel_event_stream_status 失败 event_id=%s: %s", event_id, e)
+            raise
+
+    async def create_news_event_with_intel(self, event_data: Dict[str, Any]) -> Dict[str, Any]:
+        """写入 news_event（source_category='intel'）（写库）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.create_news_event_with_intel(event_data)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error("create_news_event_with_intel 失败: %s", e)
+            raise
+
 
 # 全局单例访问函数
 async def get_gateway() -> DatabaseGateway:

@@ -1,0 +1,55 @@
+{
+  "phase": "v2.6_pattern_enhanced_backtest",
+  "timestamp": "2026-05-19T16:54:01.346828",
+  "pattern_coverage": {
+    "total": 197,
+    "high_vol_unbroken": 113,
+    "double_vol_not_pierced": 90,
+    "shrink_pullback": 0,
+    "good_bad_limit_up": 1
+  },
+  "results": [
+    {
+      "version": "v2.0_prev_low_hold5",
+      "n_signals": 123,
+      "n_trades": 49,
+      "win_rate": 0.5918,
+      "profit_factor": 3.1,
+      "total_return": 0.3305,
+      "max_drawdown": 0.0263,
+      "avg_return": 0.0661,
+      "total_pnl": 251407.86,
+      "final_equity": 1330496.59
+    },
+    {
+      "version": "v2.6_high_vol_unbroken",
+      "n_signals": 78,
+      "n_trades": 41,
+      "win_rate": 0.6098,
+      "profit_factor": 2.95,
+      "total_return": 0.2399,
+      "max_drawdown": 0.0193,
+      "avg_return": 0.0641,
+      "total_pnl": 207221.03,
+      "final_equity": 1239922.76
+    },
+    {
+      "version": "v2.6_shrink_pullback",
+      "n_signals": 0,
+      "n_trades": 0,
+      "status": "empty"
+    },
+    {
+      "version": "v2.6_good_bad_limit_up",
+      "n_signals": 0,
+      "n_trades": 0,
+      "status": "empty"
+    },
+    {
+      "version": "v2.6_enhanced_combo",
+      "n_signals": 0,
+      "n_trades": 0,
+      "status": "empty"
+    }
+  ]
+}

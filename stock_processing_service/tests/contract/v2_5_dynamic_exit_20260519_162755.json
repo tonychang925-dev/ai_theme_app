@@ -1,0 +1,731 @@
+{
+  "phase": "v2.5_dynamic_exit_backtest",
+  "timestamp": "2026-05-19T16:27:55.838462",
+  "signal_set": "previous_low_only",
+  "signal_count": 123,
+  "exit_modes": [
+    {
+      "status": "ok",
+      "exit_mode": "v2.0_prev_low_hold5",
+      "hold_days": 5,
+      "n_trades": 49,
+      "n_wins": 29,
+      "n_losses": 20,
+      "win_rate": 0.5918,
+      "profit_factor": 3.1,
+      "total_return": 0.3305,
+      "annual_return": 3.437,
+      "max_drawdown_amount": 32520.32,
+      "max_drawdown_pct": 0.0263,
+      "avg_return_per_trade": 0.0661,
+      "total_pnl": 251407.86,
+      "avg_win": 12796.57,
+      "avg_loss": -5984.63,
+      "max_single_loss": -15818.2,
+      "max_consecutive_losses": 5,
+      "avg_hold_days": 5.4,
+      "initial_capital": 1000000.0,
+      "final_equity": 1330496.59,
+      "monthly_returns": {
+        "2026-03": 0.12171175,
+        "2026-04": 0.20311830000000006,
+        "2026-05": 0.3304965900000001
+      },
+      "skip_stats": {
+        "already_holding_skip": 16,
+        "max_daily_positions_skip": 14,
+        "limit_up_open_skip": 1,
+        "max_positions_skip": 8
+      },
+      "exit_reason_distribution": {
+        "hold5_expired": 49
+      },
+      "equity_curve": [
+        {
+          "date": "2026-03-02",
+          "cash": 900183.38,
+          "position_value": 118863.0,
+          "equity": 1019046.38,
+          "active_positions": 1,
+          "pnl_from_start": 19046.38
+        },
+        {
+          "date": "2026-03-03",
+          "cash": 810579.02,
+          "position_value": 196414.0,
+          "equity": 1006993.02,
+          "active_positions": 2,
+          "pnl_from_start": 6993.02
+        },
+        {
+          "date": "2026-03-04",
+          "cash": 729560.8,
+          "position_value": 297526.0,
+          "equity": 1027086.8,
+          "active_positions": 3,
+          "pnl_from_start": 27086.8
+        },
+        {
+          "date": "2026-03-06",
+          "cash": 729560.8,
+          "position_value": 325831.0,
+          "equity": 1055391.8,
+          "active_positions": 3,
+          "pnl_from_start": 55391.8
+        },
+        {
+          "date": "2026-03-09",
+          "cash": 769791.06,
+          "position_value": 291802.0,
+          "equity": 1061593.06,
+          "active_positions": 3,
+          "pnl_from_start": 61593.06
+        },
+        {
+          "date": "2026-03-11",
+          "cash": 881572.54,
+          "position_value": 183224.0,
+          "equity": 1064796.54,
+          "active_positions": 2,
+          "pnl_from_start": 64796.54
+        },
+        {
+          "date": "2026-03-12",
+          "cash": 794895.98,
+          "position_value": 286476.0,
+          "equity": 1081371.98,
+          "active_positions": 3,
+          "pnl_from_start": 81371.98
+        },
+        {
+          "date": "2026-03-13",
+          "cash": 645772.33,
+          "position_value": 422319.0,
+          "equity": 1068091.33,
+          "active_positions": 5,
+          "pnl_from_start": 68091.33
+        },
+        {
+          "date": "2026-03-16",
+          "cash": 689112.42,
+          "position_value": 386236.0,
+          "equity": 1075348.42,
+          "active_positions": 5,
+          "pnl_from_start": 75348.42
+        },
+        {
+          "date": "2026-03-18",
+          "cash": 781016.69,
+          "position_value": 297737.0,
+          "equity": 1078753.69,
+          "active_positions": 4,
+          "pnl_from_start": 78753.69
+        }
+      ]
+    },
+    {
+      "status": "ok",
+      "exit_mode": "v2.5a_support_stop",
+      "hold_days": 0,
+      "n_trades": 47,
+      "n_wins": 22,
+      "n_losses": 25,
+      "win_rate": 0.4681,
+      "profit_factor": 3.1,
+      "total_return": 0.3564,
+      "annual_return": 3.9073,
+      "max_drawdown_amount": 68343.55,
+      "max_drawdown_pct": 0.0535,
+      "avg_return_per_trade": 0.0548,
+      "total_pnl": 206899.79,
+      "avg_win": 13875.75,
+      "avg_loss": -3934.67,
+      "max_single_loss": -10699.45,
+      "max_consecutive_losses": 9,
+      "avg_hold_days": 5.6,
+      "initial_capital": 1000000.0,
+      "final_equity": 1356437.48,
+      "monthly_returns": {
+        "2026-03": 0.1512431000000001,
+        "2026-04": 0.21881873,
+        "2026-05": 0.35643748
+      },
+      "skip_stats": {
+        "already_holding_skip": 13,
+        "max_daily_positions_skip": 19,
+        "limit_up_open_skip": 1,
+        "max_positions_skip": 7
+      },
+      "exit_reason_distribution": {
+        "ma10_break:close=40.57<ma10=41.41": 1,
+        "ma10_break:close=19.05<ma10=19.89": 1,
+        "ma10_break:close=4.06<ma10=4.16": 1,
+        "ma10_break:close=9.30<ma10=9.59": 1,
+        "ma10_break:close=39.13<ma10=40.38": 1,
+        "ma10_break:close=2.50<ma10=2.50": 1,
+        "ma10_break:close=25.98<ma10=26.11": 1,
+        "ma10_break:close=4.76<ma10=4.83": 1,
+        "ma10_break:close=14.38<ma10=14.45": 1,
+        "ma10_break:close=14.21<ma10=15.44": 1,
+        "ma10_break:close=5.43<ma10=5.69": 1,
+        "ma10_break:close=4.40<ma10=4.80": 1,
+        "ma10_break:close=160.08<ma10=167.85": 1,
+        "ma10_break:close=5.91<ma10=6.35": 1,
+        "ma10_break:close=7.25<ma10=7.74": 1,
+        "ma10_break:close=4.33<ma10=4.60": 1,
+        "ma10_break:close=6.15<ma10=6.57": 1,
+        "ma10_break:close=23.31<ma10=23.43": 1,
+        "ma10_break:close=14.86<ma10=15.17": 1,
+        "ma10_break:close=29.30<ma10=29.77": 1,
+        "ma10_break:close=13.02<ma10=13.11": 1,
+        "ma10_break:close=13.84<ma10=14.01": 1,
+        "ma10_break:close=260.76<ma10=268.69": 1,
+        "ma10_break:close=51.81<ma10=52.41": 1,
+        "ma10_break:close=17.05<ma10=17.18": 1,
+        "ma10_break:close=2.87<ma10=2.88": 1,
+        "ma10_break:close=2.68<ma10=2.84": 1,
+        "ma10_break:close=15.65<ma10=15.79": 1,
+        "ma10_break:close=14.87<ma10=15.66": 1,
+        "ma10_break:close=10.65<ma10=11.25": 1,
+        "ma10_break:close=35.64<ma10=36.27": 1,
+        "ma10_break:close=59.00<ma10=60.91": 1,
+        "ma10_break:close=84.94<ma10=86.09": 1,
+        "ma10_break:close=71.10<ma10=73.42": 1,
+        "ma10_break:close=20.02<ma10=20.96": 1,
+        "ma10_break:close=53.81<ma10=55.32": 1,
+        "ma10_break:close=29.23<ma10=31.15": 1,
+        "ma10_break:close=4.04<ma10=4.08": 1,
+        "ma10_break:close=48.94<ma10=49.00": 1,
+        "ma10_break:close=69.22<ma10=69.59": 1,
+        "ma10_break:close=79.94<ma10=80.00": 1,
+        "ma10_break:close=15.80<ma10=16.40": 1,
+        "ma10_break:close=20.55<ma10=21.24": 1,
+        "ma10_break:close=14.67<ma10=14.67": 1,
+        "ma10_break:close=13.83<ma10=14.06": 1,
+        "ma10_break:close=37.43<ma10=37.87": 1,
+        "ma10_break:close=325.86<ma10=332.62": 1
+      },
+      "equity_curve": [
+        {
+          "date": "2026-03-02",
+          "cash": 900183.38,
+          "position_value": 118863.0,
+          "equity": 1019046.38,
+          "active_positions": 1,
+          "pnl_from_start": 19046.38
+        },
+        {
+          "date": "2026-03-03",
+          "cash": 810579.02,
+          "position_value": 196414.0,
+          "equity": 1006993.02,
+          "active_positions": 2,
+          "pnl_from_start": 6993.02
+        },
+        {
+          "date": "2026-03-04",
+          "cash": 729560.8,
+          "position_value": 297526.0,
+          "equity": 1027086.8,
+          "active_positions": 3,
+          "pnl_from_start": 27086.8
+        },
+        {
+          "date": "2026-03-06",
+          "cash": 729560.8,
+          "position_value": 325831.0,
+          "equity": 1055391.8,
+          "active_positions": 3,
+          "pnl_from_start": 55391.8
+        },
+        {
+          "date": "2026-03-09",
+          "cash": 729560.8,
+          "position_value": 330115.0,
+          "equity": 1059675.8,
+          "active_positions": 3,
+          "pnl_from_start": 59675.8
+        },
+        {
+          "date": "2026-03-11",
+          "cash": 729560.8,
+          "position_value": 338659.0,
+          "equity": 1068219.8,
+          "active_positions": 3,
+          "pnl_from_start": 68219.8
+        },
+        {
+          "date": "2026-03-12",
+          "cash": 661131.94,
+          "position_value": 424904.0,
+          "equity": 1086035.94,
+          "active_positions": 4,
+          "pnl_from_start": 86035.94
+        },
+        {
+          "date": "2026-03-13",
+          "cash": 585576.4,
+          "position_value": 486880.0,
+          "equity": 1072456.4,
+          "active_positions": 5,
+          "pnl_from_start": 72456.4
+        },
+        {
+          "date": "2026-03-16",
+          "cash": 647668.87,
+          "position_value": 437826.0,
+          "equity": 1085494.87,
+          "active_positions": 4,
+          "pnl_from_start": 85494.87
+        },
+        {
+          "date": "2026-03-18",
+          "cash": 733034.37,
+          "position_value": 370974.0,
+          "equity": 1104008.37,
+          "active_positions": 3,
+          "pnl_from_start": 104008.37
+        }
+      ]
+    },
+    {
+      "status": "ok",
+      "exit_mode": "v2.5b_failed_repair_exit",
+      "hold_days": 0,
+      "n_trades": 4,
+      "n_wins": 1,
+      "n_losses": 3,
+      "win_rate": 0.25,
+      "profit_factor": 0.0,
+      "total_return": 0.3438,
+      "annual_return": 3.673,
+      "max_drawdown_amount": 96709.2,
+      "max_drawdown_pct": 0.0775,
+      "avg_return_per_trade": -0.0707,
+      "total_pnl": -18056.35,
+      "avg_win": 12.14,
+      "avg_loss": -6022.83,
+      "max_single_loss": -9734.7,
+      "max_consecutive_losses": 3,
+      "avg_hold_days": 2.2,
+      "initial_capital": 1000000.0,
+      "final_equity": 1343777.08,
+      "monthly_returns": {
+        "2026-03": 0.14449230000000005,
+        "2026-04": 0.25668108000000006,
+        "2026-05": 0.34377708000000007
+      },
+      "skip_stats": {
+        "already_holding_skip": 9,
+        "max_positions_skip": 22
+      },
+      "exit_reason_distribution": {
+        "failed_repair:2d_no_yang_recovery,close=39.20": 1,
+        "failed_repair:3d_no_yang_recovery,close=4.01": 1,
+        "failed_repair:2d_no_yang_recovery,close=39.13": 1,
+        "failed_repair:2d_no_yang_recovery,close=14.75": 1
+      },
+      "equity_curve": [
+        {
+          "date": "2026-03-02",
+          "cash": 900183.38,
+          "position_value": 118863.0,
+          "equity": 1019046.38,
+          "active_positions": 1,
+          "pnl_from_start": 19046.38
+        },
+        {
+          "date": "2026-03-03",
+          "cash": 810579.02,
+          "position_value": 196414.0,
+          "equity": 1006993.02,
+          "active_positions": 2,
+          "pnl_from_start": 6993.02
+        },
+        {
+          "date": "2026-03-04",
+          "cash": 729560.8,
+          "position_value": 297526.0,
+          "equity": 1027086.8,
+          "active_positions": 3,
+          "pnl_from_start": 27086.8
+        },
+        {
+          "date": "2026-03-06",
+          "cash": 729560.8,
+          "position_value": 325831.0,
+          "equity": 1055391.8,
+          "active_positions": 3,
+          "pnl_from_start": 55391.8
+        },
+        {
+          "date": "2026-03-09",
+          "cash": 729560.8,
+          "position_value": 330115.0,
+          "equity": 1059675.8,
+          "active_positions": 3,
+          "pnl_from_start": 59675.8
+        },
+        {
+          "date": "2026-03-11",
+          "cash": 729560.8,
+          "position_value": 338659.0,
+          "equity": 1068219.8,
+          "active_positions": 3,
+          "pnl_from_start": 68219.8
+        },
+        {
+          "date": "2026-03-12",
+          "cash": 661131.94,
+          "position_value": 424904.0,
+          "equity": 1086035.94,
+          "active_positions": 4,
+          "pnl_from_start": 86035.94
+        },
+        {
+          "date": "2026-03-13",
+          "cash": 536367.92,
+          "position_value": 536633.0,
+          "equity": 1073000.92,
+          "active_positions": 6,
+          "pnl_from_start": 73000.92
+        },
+        {
+          "date": "2026-03-16",
+          "cash": 535947.31,
+          "position_value": 548219.0,
+          "equity": 1084166.31,
+          "active_positions": 6,
+          "pnl_from_start": 84166.31
+        },
+        {
+          "date": "2026-03-18",
+          "cash": 581546.57,
+          "position_value": 524589.0,
+          "equity": 1106135.57,
+          "active_positions": 5,
+          "pnl_from_start": 106135.57
+        }
+      ]
+    },
+    {
+      "status": "ok",
+      "exit_mode": "v2.5c_limitup_weakopen_exit",
+      "hold_days": 0,
+      "n_trades": 27,
+      "n_wins": 18,
+      "n_losses": 9,
+      "win_rate": 0.6667,
+      "profit_factor": 4.16,
+      "total_return": 0.3135,
+      "annual_return": 3.1485,
+      "max_drawdown_amount": 32560.11,
+      "max_drawdown_pct": 0.0261,
+      "avg_return_per_trade": 0.1057,
+      "total_pnl": 224967.8,
+      "avg_win": 16457.38,
+      "avg_loss": -7918.34,
+      "max_single_loss": -17598.87,
+      "max_consecutive_losses": 2,
+      "avg_hold_days": 9.1,
+      "initial_capital": 1000000.0,
+      "final_equity": 1313462.92,
+      "monthly_returns": {
+        "2026-03": 0.12727559000000008,
+        "2026-04": 0.22110774,
+        "2026-05": 0.3134629199999999
+      },
+      "skip_stats": {
+        "already_holding_skip": 11,
+        "max_positions_skip": 16,
+        "max_daily_positions_skip": 7
+      },
+      "exit_reason_distribution": {
+        "limitup_weakopen:prev_day_limitup,open_pct=-4.09%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-5.08%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-4.15%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-2.50%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-3.04%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-2.14%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-3.14%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-3.25%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-2.99%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-3.85%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-3.97%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-2.01%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-2.03%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-4.39%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-3.43%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-2.33%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-4.21%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-2.86%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-2.91%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-4.53%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-3.46%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-4.62%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-2.79%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-3.68%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-3.45%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-4.48%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-2.11%": 1
+      },
+      "equity_curve": [
+        {
+          "date": "2026-03-02",
+          "cash": 900183.38,
+          "position_value": 118863.0,
+          "equity": 1019046.38,
+          "active_positions": 1,
+          "pnl_from_start": 19046.38
+        },
+        {
+          "date": "2026-03-03",
+          "cash": 810579.02,
+          "position_value": 196414.0,
+          "equity": 1006993.02,
+          "active_positions": 2,
+          "pnl_from_start": 6993.02
+        },
+        {
+          "date": "2026-03-04",
+          "cash": 729560.8,
+          "position_value": 297526.0,
+          "equity": 1027086.8,
+          "active_positions": 3,
+          "pnl_from_start": 27086.8
+        },
+        {
+          "date": "2026-03-06",
+          "cash": 729560.8,
+          "position_value": 325831.0,
+          "equity": 1055391.8,
+          "active_positions": 3,
+          "pnl_from_start": 55391.8
+        },
+        {
+          "date": "2026-03-09",
+          "cash": 852995.37,
+          "position_value": 208671.0,
+          "equity": 1061666.37,
+          "active_positions": 2,
+          "pnl_from_start": 61666.37
+        },
+        {
+          "date": "2026-03-11",
+          "cash": 852995.37,
+          "position_value": 205572.0,
+          "equity": 1058567.37,
+          "active_positions": 2,
+          "pnl_from_start": 58567.37
+        },
+        {
+          "date": "2026-03-12",
+          "cash": 770880.73,
+          "position_value": 306588.0,
+          "equity": 1077468.73,
+          "active_positions": 3,
+          "pnl_from_start": 77468.73
+        },
+        {
+          "date": "2026-03-13",
+          "cash": 625888.44,
+          "position_value": 438703.0,
+          "equity": 1064591.44,
+          "active_positions": 5,
+          "pnl_from_start": 64591.44
+        },
+        {
+          "date": "2026-03-16",
+          "cash": 594677.59,
+          "position_value": 481673.0,
+          "equity": 1076350.59,
+          "active_positions": 6,
+          "pnl_from_start": 76350.59
+        },
+        {
+          "date": "2026-03-18",
+          "cash": 594677.59,
+          "position_value": 501239.0,
+          "equity": 1095916.59,
+          "active_positions": 6,
+          "pnl_from_start": 95916.59
+        }
+      ]
+    },
+    {
+      "status": "ok",
+      "exit_mode": "v2.5_combo",
+      "hold_days": 0,
+      "n_trades": 59,
+      "n_wins": 28,
+      "n_losses": 31,
+      "win_rate": 0.4746,
+      "profit_factor": 2.21,
+      "total_return": 0.3232,
+      "annual_return": 3.3118,
+      "max_drawdown_amount": 54709.07,
+      "max_drawdown_pct": 0.0447,
+      "avg_return_per_trade": 0.0263,
+      "total_pnl": 160757.35,
+      "avg_win": 10493.1,
+      "avg_loss": -4291.91,
+      "max_single_loss": -14489.25,
+      "max_consecutive_losses": 6,
+      "avg_hold_days": 3.2,
+      "initial_capital": 1000000.0,
+      "final_equity": 1323221.06,
+      "monthly_returns": {
+        "2026-03": 0.13587056000000006,
+        "2026-04": 0.17444293999999994,
+        "2026-05": 0.32322106000000006
+      },
+      "skip_stats": {
+        "already_holding_skip": 10,
+        "max_daily_positions_skip": 34,
+        "limit_up_open_skip": 1,
+        "max_positions_skip": 3
+      },
+      "exit_reason_distribution": {
+        "limitup_weakopen:prev_day_limitup,open_pct=-4.09%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-5.08%": 1,
+        "ma10_break:close=40.57<ma10=41.41": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-4.15%": 1,
+        "ma10_break:close=19.05<ma10=19.89": 1,
+        "ma10_break:close=4.06<ma10=4.16": 1,
+        "ma10_break:close=9.30<ma10=9.59": 1,
+        "ma10_break:close=39.13<ma10=40.38": 1,
+        "max_hold10_expired": 4,
+        "ma10_break:close=2.50<ma10=2.50": 1,
+        "ma10_break:close=25.98<ma10=26.11": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-3.25%": 1,
+        "failed_repair:2d_no_yang_recovery,close=172.98": 1,
+        "failed_repair:2d_no_yang_recovery,close=14.75": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-2.04%": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-3.97%": 1,
+        "ma10_break:close=4.40<ma10=4.80": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-2.03%": 1,
+        "ma10_break:close=5.91<ma10=6.35": 1,
+        "ma10_break:close=7.25<ma10=7.74": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-2.87%": 1,
+        "ma10_break:close=4.33<ma10=4.60": 1,
+        "ma10_break:close=6.15<ma10=6.57": 1,
+        "ma10_break:close=23.31<ma10=23.43": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-2.62%": 1,
+        "ma10_break:close=4.99<ma10=5.65": 1,
+        "ma10_break:close=2.20<ma10=2.27": 1,
+        "ma10_break:close=14.86<ma10=15.17": 1,
+        "ma10_break:close=13.02<ma10=13.11": 1,
+        "ma10_break:close=2.73<ma10=2.80": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-2.61%": 1,
+        "ma10_break:close=35.81<ma10=35.93": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-2.05%": 1,
+        "failed_repair:2d_no_yang_recovery,close=11.81": 1,
+        "ma10_break:close=260.76<ma10=268.69": 1,
+        "ma10_break:close=2.87<ma10=2.88": 1,
+        "ma10_break:close=10.81<ma10=11.26": 1,
+        "ma10_break:close=2.68<ma10=2.84": 1,
+        "ma10_break:close=15.65<ma10=15.79": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-4.53%": 1,
+        "ma10_break:close=16.75<ma10=16.83": 1,
+        "ma10_break:close=14.87<ma10=15.66": 1,
+        "ma10_break:close=10.65<ma10=11.25": 1,
+        "ma10_break:close=35.64<ma10=36.27": 1,
+        "ma10_break:close=20.02<ma10=20.96": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-2.79%": 1,
+        "ma10_break:close=53.81<ma10=55.32": 1,
+        "ma10_break:close=29.23<ma10=31.15": 1,
+        "limitup_weakopen:prev_day_limitup,open_pct=-2.01%": 1,
+        "ma10_break:close=4.04<ma10=4.08": 1,
+        "ma10_break:close=48.94<ma10=49.00": 1,
+        "ma10_break:close=69.22<ma10=69.59": 1,
+        "failed_repair:2d_no_yang_recovery,close=316.74": 1,
+        "ma10_break:close=20.55<ma10=21.24": 1,
+        "ma10_break:close=14.67<ma10=14.67": 1,
+        "ma10_break:close=13.83<ma10=14.06": 1
+      },
+      "equity_curve": [
+        {
+          "date": "2026-03-02",
+          "cash": 900183.38,
+          "position_value": 118863.0,
+          "equity": 1019046.38,
+          "active_positions": 1,
+          "pnl_from_start": 19046.38
+        },
+        {
+          "date": "2026-03-03",
+          "cash": 810579.02,
+          "position_value": 196414.0,
+          "equity": 1006993.02,
+          "active_positions": 2,
+          "pnl_from_start": 6993.02
+        },
+        {
+          "date": "2026-03-04",
+          "cash": 729560.8,
+          "position_value": 297526.0,
+          "equity": 1027086.8,
+          "active_positions": 3,
+          "pnl_from_start": 27086.8
+        },
+        {
+          "date": "2026-03-06",
+          "cash": 729560.8,
+          "position_value": 325831.0,
+          "equity": 1055391.8,
+          "active_positions": 3,
+          "pnl_from_start": 55391.8
+        },
+        {
+          "date": "2026-03-09",
+          "cash": 852995.37,
+          "position_value": 208671.0,
+          "equity": 1061666.37,
+          "active_positions": 2,
+          "pnl_from_start": 61666.37
+        },
+        {
+          "date": "2026-03-11",
+          "cash": 852995.37,
+          "position_value": 205572.0,
+          "equity": 1058567.37,
+          "active_positions": 2,
+          "pnl_from_start": 58567.37
+        },
+        {
+          "date": "2026-03-12",
+          "cash": 770880.73,
+          "position_value": 306588.0,
+          "equity": 1077468.73,
+          "active_positions": 3,
+          "pnl_from_start": 77468.73
+        },
+        {
+          "date": "2026-03-13",
+          "cash": 684400.32,
+          "position_value": 379509.0,
+          "equity": 1063909.32,
+          "active_positions": 4,
+          "pnl_from_start": 63909.32
+        },
+        {
+          "date": "2026-03-16",
+          "cash": 762925.73,
+          "position_value": 315844.0,
+          "equity": 1078769.73,
+          "active_positions": 3,
+          "pnl_from_start": 78769.73
+        },
+        {
+          "date": "2026-03-18",
+          "cash": 844103.37,
+          "position_value": 242074.0,
+          "equity": 1086177.37,
+          "active_positions": 2,
+          "pnl_from_start": 86177.37
+        }
+      ]
+    }
+  ],
+  "comparison_note": "All buy rules identical to v2.0. Only exit rules differ."
+}

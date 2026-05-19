@@ -84,7 +84,8 @@ class RealtimeStackManager:
             "PYTHON_CMD", os.environ.get("CONDA_PYTHON_CMD", "python")
         )
         self._redis_url = redis_url
-        self._write_db = write_db
+        # Phase 5: production uses single DB; E2E may override via env.
+        self._db_name = write_db or os.environ.get("PG_DATABASE", "stock_data_test")
         self._log_dir = Path(
             log_dir or os.environ.get("REALTIME_LOG_DIR", str(ROOT / "logs" / "realtime"))
         )
@@ -112,7 +113,7 @@ class RealtimeStackManager:
                 self._raw_process = await asyncio.create_subprocess_exec(
                     self._python_cmd,
                     str(ROOT / "evaluate_service/e2e/pre_market_brief/run_raw_news_services.py"),
-                    "--db-name", self._write_db,
+                    "--db-name", self._db_name,
                     "--run-id", run_id,
                     "--redis-url", self._redis_url,
                     "--allow-production",
@@ -123,7 +124,7 @@ class RealtimeStackManager:
                 self._decision_process = await asyncio.create_subprocess_exec(
                     self._python_cmd,
                     str(ROOT / "evaluate_service/e2e/pre_market_brief/run_phase0_decision_services.py"),
-                    "--db-name", self._write_db,
+                    "--db-name", self._db_name,
                     "--run-id", run_id,
                     "--redis-url", self._redis_url,
                     "--allow-production",
@@ -223,12 +224,12 @@ class RealtimeStackManager:
     def _build_env(self, run_id: str) -> dict[str, str]:
         env = os.environ.copy()
         env.update(BASELINE_ENV)
-        env["PG_DATABASE"] = self._write_db
-        env["DB_NAME"] = self._write_db
-        env["REPLAY_DB_NAME"] = self._write_db
+        env["PG_DATABASE"] = self._db_name
+        env["DB_NAME"] = self._db_name
         env["REDIS_URL"] = self._redis_url
         env["RUN_ID"] = run_id
-        env["READ_PG_DATABASE"] = os.environ.get("READ_PG_DATABASE", "stock_data_test")
+        # Phase 5: production uses single database; E2E may set READ_PG_DATABASE for isolation
+        env["READ_PG_DATABASE"] = os.environ.get("READ_PG_DATABASE", self._db_name)
         return env
 
     async def _cleanup_processes(self) -> None:
