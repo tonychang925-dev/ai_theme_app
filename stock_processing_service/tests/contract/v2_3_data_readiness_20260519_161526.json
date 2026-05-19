@@ -1,0 +1,24 @@
+{
+  "phase": "v2.3_auction_timeline_data_readiness",
+  "timestamp": "2026-05-19T16:15:26.392056",
+  "candidate_pairs": 197,
+  "raw_timeline": {
+    "matched": 6,
+    "coverage_pct": 3.05,
+    "has_0924": 0,
+    "has_0925": 6,
+    "points_distribution": {
+      "1": 6
+    }
+  },
+  "features": {
+    "matched": 6,
+    "coverage_pct": 3.05,
+    "data_status_counts": {
+      "synthetic_single_point": 6
+    },
+    "real_auction_pct": 0.0
+  },
+  "v2.4_ready": false,
+  "note": "synthetic_single_point data is NOT real_auction. Strategy conclusions blocked until real timeline data available."
+}

@@ -1,5 +1,5 @@
 {
-  "numStartups": 13,
+  "numStartups": 14,
   "hasSeenTasksHint": true,
   "tipsHistory": {
     "new-user-warmup": 7,
@@ -12,7 +12,7 @@
     "prompt-queue": 2,
     "enter-to-steer-in-relatime": 2,
     "todo-list": 2,
-    "ide-upsell-external-terminal": 10,
+    "ide-upsell-external-terminal": 14,
     "install-github-app": 12,
     "install-slack-app": 12,
     "drag-and-drop-images": 12,
@@ -25,7 +25,7 @@
     "web-app": 2,
     "mobile-app": 2,
     "frontend-design-plugin": 8,
-    "shift-enter": 4,
+    "shift-enter": 14,
     "subagent-fanout-nudge": 13,
     "custom-agents": 6,
     "agent-flag": 6,
@@ -34,8 +34,7 @@
     "rename-conversation": 11,
     "custom-commands": 11
   },
-  "promptQueueUseCount": 283,
-  "showExpandedTodos": true,
+  "promptQueueUseCount": 287,
   "cachedGrowthBookFeatures": {
     "tengu_kestrel_arch": "OFF",
     "tengu_amber_prism": false,

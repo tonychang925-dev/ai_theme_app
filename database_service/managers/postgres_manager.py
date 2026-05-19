@@ -15,6 +15,29 @@ from decimal import Decimal
 from datetime import date as _date, datetime as _datetime
 
 
+def _parse_timestamptz(value):
+    """将 ISO-8601 字符串解析为 timezone-aware datetime，供 asyncpg 使用。"""
+    if not value:
+        return None
+    if isinstance(value, _datetime):
+        return value
+    # 尝试标准格式
+    try:
+        dt = _datetime.fromisoformat(value)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt
+    except (ValueError, TypeError):
+        pass
+    # 尝试 date-only 格式
+    try:
+        d = _date.fromisoformat(value)
+        return _datetime(d.year, d.month, d.day, tzinfo=timezone.utc)
+    except (ValueError, TypeError):
+        pass
+    return None
+
+
 def _json_default(obj):
     """Postgres JSONB 安全序列化兜底。"""
     if isinstance(obj, Decimal):
@@ -6861,6 +6884,319 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         except Exception as e:
             logger.warning(f"读取 event_review_queue 失败（可能尚未迁移）: {e}")
             return []
+
+    # ========== Phase 6A: raw_intel_document ==========
+
+    async def upsert_raw_intel_document(self, doc: Dict[str, Any]) -> Dict[str, Any]:
+        """幂等写入 raw_intel_document，返回完整行（含 id）。
+
+        ON CONFLICT (source_system, source_id) DO UPDATE，保证重复抓取覆盖旧数据。
+        """
+        try:
+            import json
+
+            # 标准化时间字段为 datetime 对象（asyncpg 不接受字符串）
+            publish_time = doc.get("publish_time")
+            if isinstance(publish_time, str):
+                publish_time = _parse_timestamptz(publish_time)
+            fetch_time = doc.get("fetch_time")
+            if isinstance(fetch_time, str):
+                fetch_time = _parse_timestamptz(fetch_time)
+            elif fetch_time is None:
+                fetch_time = datetime.now(timezone.utc)
+
+            async with self.pool.acquire() as conn:
+                row = await conn.fetchrow(
+                    """
+                    INSERT INTO raw_intel_document (
+                        source_system, source_type, source_id, source_url,
+                        publish_time, fetch_time, market, stock_code, stock_name,
+                        company_name, title, content_text, content_html,
+                        pdf_url, pdf_path, doc_type, doc_subtype,
+                        announcement_type, report_period, checksum, dedupe_key,
+                        parse_status, llm_status, stream_status
+                    ) VALUES (
+                        $1, $2, $3, $4,
+                        $5, $6, $7, $8, $9,
+                        $10, $11, $12, $13,
+                        $14, $15, $16, $17,
+                        $18, $19, $20, $21,
+                        $22, $23, $24
+                    )
+                    ON CONFLICT (source_system, source_id) DO UPDATE SET
+                        source_url = COALESCE(EXCLUDED.source_url, raw_intel_document.source_url),
+                        publish_time = COALESCE(EXCLUDED.publish_time, raw_intel_document.publish_time),
+                        market = COALESCE(EXCLUDED.market, raw_intel_document.market),
+                        stock_code = COALESCE(EXCLUDED.stock_code, raw_intel_document.stock_code),
+                        stock_name = COALESCE(EXCLUDED.stock_name, raw_intel_document.stock_name),
+                        company_name = COALESCE(EXCLUDED.company_name, raw_intel_document.company_name),
+                        title = COALESCE(EXCLUDED.title, raw_intel_document.title),
+                        content_text = COALESCE(EXCLUDED.content_text, raw_intel_document.content_text),
+                        content_html = COALESCE(EXCLUDED.content_html, raw_intel_document.content_html),
+                        pdf_url = COALESCE(EXCLUDED.pdf_url, raw_intel_document.pdf_url),
+                        pdf_path = COALESCE(EXCLUDED.pdf_path, raw_intel_document.pdf_path),
+                        doc_type = COALESCE(EXCLUDED.doc_type, raw_intel_document.doc_type),
+                        doc_subtype = COALESCE(EXCLUDED.doc_subtype, raw_intel_document.doc_subtype),
+                        announcement_type = COALESCE(EXCLUDED.announcement_type, raw_intel_document.announcement_type),
+                        report_period = COALESCE(EXCLUDED.report_period, raw_intel_document.report_period),
+                        checksum = COALESCE(EXCLUDED.checksum, raw_intel_document.checksum),
+                        dedupe_key = COALESCE(EXCLUDED.dedupe_key, raw_intel_document.dedupe_key),
+                        updated_at = now()
+                    RETURNING *
+                    """,
+                    str(doc.get("source_system") or ""),
+                    str(doc.get("source_type") or ""),
+                    str(doc.get("source_id") or ""),
+                    doc.get("source_url"),
+                    publish_time,
+                    fetch_time,
+                    doc.get("market"),
+                    doc.get("stock_code"),
+                    doc.get("stock_name"),
+                    doc.get("company_name"),
+                    doc.get("title"),
+                    doc.get("content_text"),
+                    doc.get("content_html"),
+                    doc.get("pdf_url"),
+                    doc.get("pdf_path"),
+                    doc.get("doc_type"),
+                    doc.get("doc_subtype"),
+                    doc.get("announcement_type"),
+                    doc.get("report_period"),
+                    doc.get("checksum"),
+                    doc.get("dedupe_key"),
+                    str(doc.get("parse_status", "raw")),
+                    str(doc.get("llm_status", "pending")),
+                    str(doc.get("stream_status", "pending")),
+                )
+                if not row:
+                    raise RuntimeError("raw_intel_document upsert 返回空")
+                return dict(row)
+        except Exception as e:
+            logger.error("upsert_raw_intel_document 失败 source_system=%s source_id=%s: %s",
+                         doc.get("source_system"), doc.get("source_id"), e)
+            raise
+
+    async def get_raw_intel_documents_by_status(
+        self, llm_status: str, limit: int = 100
+    ) -> List[Dict[str, Any]]:
+        """按 llm_status 查询 raw_intel_document，按 publish_time DESC 排序。"""
+        try:
+            async with self.pool.acquire() as conn:
+                rows = await conn.fetch(
+                    """
+                    SELECT * FROM raw_intel_document
+                    WHERE llm_status = $1
+                    ORDER BY publish_time DESC
+                    LIMIT $2
+                    """,
+                    str(llm_status),
+                    int(limit),
+                )
+            return [dict(r) for r in rows]
+        except Exception as e:
+            logger.error("get_raw_intel_documents_by_status 失败: %s", e)
+            raise
+
+    async def update_raw_intel_llm_status(self, doc_id: int, status: str) -> None:
+        """更新 raw_intel_document.llm_status 和 updated_at。"""
+        try:
+            async with self.pool.acquire() as conn:
+                await conn.execute(
+                    """
+                    UPDATE raw_intel_document
+                    SET llm_status = $2, updated_at = now()
+                    WHERE id = $1
+                    """,
+                    int(doc_id),
+                    str(status),
+                )
+        except Exception as e:
+            logger.error("update_raw_intel_llm_status 失败 doc_id=%s: %s", doc_id, e)
+            raise
+
+    # ========== Phase 6A: structured_intel_event ==========
+
+    async def insert_structured_intel_event(self, event: Dict[str, Any]) -> Dict[str, Any]:
+        """插入 structured_intel_event 并返回完整行（含 id）。"""
+        try:
+            import json
+
+            # 标准化时间字段
+            publish_time = event.get("publish_time")
+            if isinstance(publish_time, str):
+                publish_time = _parse_timestamptz(publish_time)
+            event_date = event.get("event_date")
+            if isinstance(event_date, str):
+                try:
+                    event_date = _date.fromisoformat(event_date)
+                except (ValueError, TypeError):
+                    event_date = None
+
+            async with self.pool.acquire() as conn:
+                row = await conn.fetchrow(
+                    """
+                    INSERT INTO structured_intel_event (
+                        raw_doc_id, event_type, event_subtype, event_level,
+                        stock_code, stock_name, subject_keys, title, summary,
+                        event_date, publish_time, entities, financial_metrics,
+                        business_metrics, catalyst_tags, risk_tags,
+                        confidence, impact_score, urgency_score,
+                        evidence_json, llm_model, stream_status
+                    ) VALUES (
+                        $1, $2, $3, $4,
+                        $5, $6, $7, $8, $9,
+                        $10, $11, $12::jsonb, $13::jsonb,
+                        $14::jsonb, $15, $16,
+                        $17, $18, $19,
+                        $20::jsonb, $21, $22
+                    )
+                    RETURNING *
+                    """,
+                    int(event["raw_doc_id"]),
+                    str(event.get("event_type") or ""),
+                    event.get("event_subtype"),
+                    str(event.get("event_level", "normal")),
+                    event.get("stock_code"),
+                    event.get("stock_name"),
+                    event.get("subject_keys") or [],
+                    event.get("title"),
+                    event.get("summary"),
+                    event_date,
+                    publish_time,
+                    json.dumps(event.get("entities") or {}, ensure_ascii=False),
+                    json.dumps(event.get("financial_metrics") or {}, ensure_ascii=False),
+                    json.dumps(event.get("business_metrics") or {}, ensure_ascii=False),
+                    event.get("catalyst_tags") or [],
+                    event.get("risk_tags") or [],
+                    event.get("confidence"),
+                    event.get("impact_score"),
+                    event.get("urgency_score"),
+                    json.dumps(event.get("evidence_json") or {}, ensure_ascii=False),
+                    event.get("llm_model"),
+                    str(event.get("stream_status", "pending")),
+                )
+                if not row:
+                    raise RuntimeError("structured_intel_event insert 返回空")
+                return dict(row)
+        except Exception as e:
+            logger.error("insert_structured_intel_event 失败 raw_doc_id=%s: %s",
+                         event.get("raw_doc_id"), e)
+            raise
+
+    async def get_pending_intel_events_for_stream(
+        self, limit: int = 50
+    ) -> List[Dict[str, Any]]:
+        """按 stream_status = 'pending' 筛选待投递的 structured_intel_event。
+
+        JOIN raw_intel_document 以获取原始文档标题等上下文。
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                rows = await conn.fetch(
+                    """
+                    SELECT
+                        sie.*,
+                        rid.title AS raw_title,
+                        rid.source_system,
+                        rid.source_type
+                    FROM structured_intel_event sie
+                    JOIN raw_intel_document rid ON sie.raw_doc_id = rid.id
+                    WHERE sie.stream_status = 'pending'
+                    ORDER BY sie.publish_time DESC
+                    LIMIT $1
+                    """,
+                    int(limit),
+                )
+            return [dict(r) for r in rows]
+        except Exception as e:
+            logger.error("get_pending_intel_events_for_stream 失败: %s", e)
+            raise
+
+    async def update_intel_event_stream_status(self, event_id: int, status: str) -> None:
+        """更新 structured_intel_event.stream_status。"""
+        try:
+            async with self.pool.acquire() as conn:
+                await conn.execute(
+                    """
+                    UPDATE structured_intel_event
+                    SET stream_status = $2
+                    WHERE id = $1
+                    """,
+                    int(event_id),
+                    str(status),
+                )
+        except Exception as e:
+            logger.error("update_intel_event_stream_status 失败 event_id=%s: %s", event_id, e)
+            raise
+
+    # ========== Phase 6A: news_event intel 兼容写入 ==========
+
+    async def create_news_event_with_intel(self, event_data: Dict[str, Any]) -> Dict[str, Any]:
+        """将一手信息事件写入 news_event 表（source_category='intel'）。
+
+        复用现有 news_event 结构，使 intel 事件可被 ThemeProcessor 消费。
+        返回完整 news_event 行（含 id）。
+        """
+        try:
+            import json
+
+            # 标准化时间字段（news_event.event_time 是 timestamp without time zone）
+            event_time = event_data.get("event_time")
+            if isinstance(event_time, str):
+                dt = _parse_timestamptz(event_time)
+                event_time = dt.replace(tzinfo=None) if dt else None
+            elif isinstance(event_time, _datetime) and event_time.tzinfo is not None:
+                event_time = event_time.replace(tzinfo=None)
+
+            async with self.pool.acquire() as conn:
+                row = await conn.fetchrow(
+                    """
+                    INSERT INTO news_event (
+                        news_id, event_type, impact_industries, direction,
+                        confidence, summary, theme_directive,
+                        theme_directive_processed, severity_score,
+                        source_weight, event_time, entities,
+                        causal_claim, evidence_set, raw_event_json,
+                        source_category, raw_intel_doc_id,
+                        structured_intel_event_id, source_trace_id
+                    ) VALUES (
+                        $1, $2, $3, $4,
+                        $5, $6, $7::jsonb,
+                        $8, $9,
+                        $10, $11, $12::jsonb,
+                        $13::jsonb, $14::jsonb, $15::jsonb,
+                        $16, $17,
+                        $18, $19
+                    )
+                    RETURNING *
+                    """,
+                    event_data.get("news_id"),          # 可为 NULL（intel 事件无 news_raw 关联）
+                    str(event_data.get("event_type") or "intel_event"),
+                    event_data.get("impact_industries") or [],
+                    event_data.get("direction", "中性"),
+                    event_data.get("confidence"),
+                    event_data.get("summary"),
+                    json.dumps(event_data.get("theme_directive") or {}, ensure_ascii=False),
+                    event_data.get("theme_directive_processed", False),
+                    event_data.get("severity_score"),
+                    event_data.get("source_weight"),
+                    event_time,
+                    json.dumps(event_data.get("entities") or {}, ensure_ascii=False),
+                    json.dumps(event_data.get("causal_claim") or {}, ensure_ascii=False),
+                    json.dumps(event_data.get("evidence_set") or {}, ensure_ascii=False),
+                    json.dumps(event_data.get("raw_event_json") or {}, ensure_ascii=False),
+                    "intel",                            # source_category
+                    event_data.get("raw_intel_doc_id"),
+                    event_data.get("structured_intel_event_id"),
+                    event_data.get("source_trace_id"),
+                )
+                if not row:
+                    raise RuntimeError("create_news_event_with_intel 返回空")
+                return dict(row)
+        except Exception as e:
+            logger.error("create_news_event_with_intel 失败: %s", e)
+            raise
 
     async def upsert_stock_abnormal_signal_rows(self, rows: List[Dict[str, Any]]) -> int:
         """写入异动股票信号（stock_abnormal_signal 表）。"""

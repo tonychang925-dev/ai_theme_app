@@ -195,6 +195,9 @@ const routeChunks = {
     sse: () => import('../components/SSETestPanel').then((m) => ({ default: m.SSETestPanel })),
     memoryLeak: () => import('../components/MemoryLeakTestPanel').then((m) => ({ default: m.MemoryLeakTestPanel })),
   },
+  backtest: {
+    compare: () => import('../routes/backtest/BacktestComparePage').then((m) => ({ default: m.BacktestComparePage })),
+  },
 } as const;
 
 export function preloadRoute(routeKey: string): Promise<void> {
@@ -251,3 +254,4 @@ export const LazyRealtimeCollectorPage = createLazyComponent(routeChunks.collect
 export const LazyTestPage = createLazyComponent(routeChunks.stock.screenerTest, { name: 'TestPage', timeout: 5000 });
 export const LazySSETestPanel = createLazyComponent(routeChunks.test.sse, { name: 'SSETestPanel', timeout: 5000 });
 export const LazyMemoryLeakTestPanel = createLazyComponent(routeChunks.test.memoryLeak, { name: 'MemoryLeakTestPanel', timeout: 5000 });
+export const LazyBacktestComparePage = createLazyComponent(routeChunks.backtest.compare, { name: 'BacktestComparePage', timeout: 5000 });

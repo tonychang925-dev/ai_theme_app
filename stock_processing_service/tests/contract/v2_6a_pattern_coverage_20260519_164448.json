@@ -1,0 +1,28 @@
+{
+  "phase": "v2.6a_pattern_coverage_audit",
+  "n_candidates": 226,
+  "volume_pattern_distribution": {
+    "放量下跌": 27,
+    "平量": 184,
+    "缩量": 15
+  },
+  "breakout_distribution": {
+    "未显著突破": 226
+  },
+  "pullback_distribution": {
+    "下跌": 136,
+    "缩量回踩": 90
+  },
+  "pattern_label_distribution": {
+    "中阴线": 111,
+    "上影线": 184,
+    "十字星/窄幅": 51,
+    "大阴线": 64
+  },
+  "high_vol_bar_detected": 226,
+  "high_vol_unbroken": 139,
+  "bad_limit_up_count": 226,
+  "bad_limit_up_good_quality": 19,
+  "has_vol_surge": 0,
+  "has_vol_shrink": 15
+}

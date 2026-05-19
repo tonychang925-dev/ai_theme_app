@@ -29,6 +29,7 @@ from stock_processing_service.tests.replay._post_market_replay_runner import _Re
 from stock_processing_service.application.orchestrators.bootstrap import build_container
 from theme_service.repositories.phase1_read_repository import Phase1ReadRepository
 from stock_processing_service.application.services.intel_new_chain_adapter import NewChainIntelFeedAdapter
+from stock_processing_service.application.services.realtime_stack_manager import RealtimeStackManager
 from stock_processing_service.application.services.event_driven_opportunity_builder import (
     EventDrivenOpportunityBuilder,
 )
@@ -56,7 +57,10 @@ REALTIME_AUCTION_CACHE_PREFIX = "sps:w2s:pre_market_auction"
 
 
 def _db_name() -> str:
-    return str(os.getenv("REPLAY_DB_NAME") or os.getenv("DB_NAME") or "stock_data_test")
+    # Phase 5: production uses single read/write database.
+    # The read/write split (stock_data / stock_data_test) was an E2E isolation
+    # concern; in production all tables live in the same database.
+    return str(os.getenv("PG_DATABASE") or os.getenv("DB_NAME") or "stock_data_test")
 
 
 @asynccontextmanager
@@ -100,6 +104,11 @@ async def lifespan(app: FastAPI):
     app.state.collection_job_manager = CollectionJobManager(
         container=app.state.container,
         registry=get_default_registry(),
+    )
+    # Phase 5: new-chain realtime stack manager
+    app.state.realtime_manager = RealtimeStackManager(
+        redis_url=os.environ.get("REDIS_URL", "redis://127.0.0.1:6379/0"),
+        write_db=_db_name(),
     )
     await app.state.phase1_repo.initialize()
     try:
@@ -1415,6 +1424,30 @@ async def finalize_pre_market_brief(payload: PreMarketBriefFinalizePayload) -> d
     }
 
 
+# ── Phase 5: New-chain realtime stack control ─────────────────────
+
+
+@app.post("/api/v1/realtime/start")
+async def realtime_start() -> dict[str, Any]:
+    """启动新链实时采集：raw_news_services + phase0_decision_services。"""
+    manager: RealtimeStackManager = app.state.realtime_manager
+    return await manager.start()
+
+
+@app.post("/api/v1/realtime/stop")
+async def realtime_stop() -> dict[str, Any]:
+    """优雅停止新链实时采集。"""
+    manager: RealtimeStackManager = app.state.realtime_manager
+    return await manager.stop()
+
+
+@app.get("/api/v1/realtime/status")
+async def realtime_status() -> dict[str, Any]:
+    """查询新链实时采集运行状态与 Redis stream 指标。"""
+    manager: RealtimeStackManager = app.state.realtime_manager
+    return await manager.status()
+
+
 @app.get("/api/v1/mobile/screener/latest")
 async def get_mobile_screener(
     trade_date: str = Query(..., description="YYYY-MM-DD"),
@@ -2482,6 +2515,110 @@ async def backtest_w2s_get_run_signals(
         "offset": offset,
         "signals": signals,
     }
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# v2.7 Backtest Dashboard API
+# ═══════════════════════════════════════════════════════════════════════════
+
+@app.get("/api/v1/backtest/strategies")
+async def list_backtest_strategies() -> dict[str, Any]:
+    """Return all saved backtest strategy runs with summary metrics."""
+    rows = await _query_backtest("""
+        SELECT run_id, strategy_id, strategy_name, strategy_version,
+               total_return, max_drawdown, win_rate, profit_factor,
+               trade_count, avg_return_per_trade, avg_hold_days,
+               max_single_loss, max_consecutive_losses, config_json
+        FROM backtest_run ORDER BY total_return DESC NULLS LAST
+    """)
+    return {"strategies": [dict(r) for r in rows]}
+
+
+@app.get("/api/v1/backtest/summary")
+async def backtest_summary(strategy_ids: str = "") -> dict[str, Any]:
+    """Return summary metrics for selected strategies."""
+    ids = [s.strip() for s in strategy_ids.split(",") if s.strip()]
+    if ids:
+        rows = await _query_backtest(
+            f"""SELECT run_id, strategy_id, strategy_name, strategy_version,
+                       total_return, max_drawdown, win_rate, profit_factor,
+                       trade_count, avg_return_per_trade, avg_hold_days,
+                       max_single_loss, max_consecutive_losses, initial_capital, final_equity
+                FROM backtest_run WHERE strategy_id = ANY($1)
+                ORDER BY total_return DESC NULLS LAST""",
+            [ids])
+    else:
+        rows = await _query_backtest("""
+            SELECT * FROM backtest_run ORDER BY total_return DESC NULLS LAST LIMIT 10""")
+    return {"items": [dict(r) for r in rows]}
+
+
+@app.get("/api/v1/backtest/equity-curve")
+async def backtest_equity_curve(strategy_ids: str = "") -> dict[str, Any]:
+    """Return equity curve data for selected strategies."""
+    ids = [s.strip() for s in strategy_ids.split(",") if s.strip()]
+    if not ids:
+        return {"series": []}
+    rows = await _query_backtest(
+        """SELECT run_id, strategy_id, trade_date, total_equity, cumulative_return, drawdown, active_positions
+           FROM backtest_equity_curve WHERE strategy_id = ANY($1)
+           ORDER BY strategy_id, trade_date""",
+        [ids])
+    series: dict[str, list] = {}
+    for r in rows:
+        sid = r["strategy_id"]
+        if sid not in series:
+            series[sid] = []
+        series[sid].append({
+            "date": str(r["trade_date"]),
+            "equity": float(r["total_equity"] or 0),
+            "return_pct": float(r["cumulative_return"] or 0),
+            "drawdown": float(r["drawdown"] or 0),
+            "active_positions": int(r["active_positions"] or 0),
+        })
+    return {"series": [{"strategy_id": k, "points": v} for k, v in series.items()]}
+
+
+@app.get("/api/v1/backtest/monthly-returns")
+async def backtest_monthly_returns(strategy_id: str = "") -> dict[str, Any]:
+    """Return monthly returns for a strategy."""
+    if not strategy_id:
+        return {"items": []}
+    rows = await _query_backtest(
+        """SELECT run_id, strategy_id, month, return_pct
+           FROM backtest_monthly_return WHERE strategy_id = $1 ORDER BY month""",
+        [strategy_id])
+    return {"items": [dict(r) for r in rows]}
+
+
+@app.get("/api/v1/backtest/trades")
+async def backtest_trades(strategy_id: str = "", page: int = 1, page_size: int = 50) -> dict[str, Any]:
+    """Return trade details for a strategy."""
+    if not strategy_id:
+        return {"items": [], "total": 0}
+    offset = (page - 1) * page_size
+    total_row = await _query_backtest(
+        "SELECT COUNT(*) as cnt FROM backtest_trade WHERE strategy_id = $1", [strategy_id])
+    total = total_row[0]["cnt"] if total_row else 0
+    rows = await _query_backtest(
+        """SELECT trade_id, strategy_id, stock_id, stock_name, entry_date, entry_price,
+                  exit_date, exit_price, shares, pnl, return_pct, hold_days,
+                  exit_reason, exit_rule, support_type, support_strength,
+                  weak_type, candidate_score, candidate_type
+           FROM backtest_trade WHERE strategy_id = $1
+           ORDER BY entry_date DESC LIMIT $2 OFFSET $3""",
+        [strategy_id, page_size, offset])
+    return {"items": [dict(r) for r in rows], "total": total, "page": page, "page_size": page_size}
+
+
+async def _query_backtest(sql: str, params: list = None):
+    """Helper: run a read query against the backtest tables via DatabaseGateway."""
+    gw = app.state.db_gateway
+    if gw is None:
+        cfg = DatabaseConfig(db_type=DatabaseType.POSTGRESQL, postgres_database=os.getenv("DB_NAME", "stock_data_test"))
+        gw = await DatabaseGateway.initialize(config=cfg, auto_warm_cache=False)
+        app.state.db_gateway = gw
+    return await gw._client.execute_query(sql, *(params or []))
 
 
 def _row_to_dict(row: Any) -> dict[str, Any]:

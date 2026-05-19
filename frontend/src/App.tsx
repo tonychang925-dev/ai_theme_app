@@ -27,6 +27,7 @@ import {
   LazyTestPage,
   LazySSETestPanel,
   LazyMemoryLeakTestPanel,
+  LazyBacktestComparePage,
   LoadingFallback,
   LazyLoadErrorBoundary,
   preloadRoute
@@ -279,6 +280,14 @@ function AppRoutes() {
         <LazyLoadErrorBoundary>
           <Suspense fallback={<LoadingFallback message="加载内存泄漏测试面板..." />}>
             <LazyMemoryLeakTestPanel />
+          </Suspense>
+        </LazyLoadErrorBoundary>
+      )}
+
+      {path.startsWith("/backtest/compare") && (
+        <LazyLoadErrorBoundary>
+          <Suspense fallback={<LoadingFallback message="加载回测对比..." />}>
+            <LazyBacktestComparePage />
           </Suspense>
         </LazyLoadErrorBoundary>
       )}

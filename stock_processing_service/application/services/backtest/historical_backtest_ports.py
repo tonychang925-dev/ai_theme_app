@@ -707,8 +707,99 @@ class HistoricalBacktestReadPorts:
             })
         return result
 
+    # ── v2.2c: Auction confirmation read methods ──
+
+    async def get_w2s_auction_confirmation_inputs(self, confirm_trade_date: date) -> list[dict[str, Any]]:
+        """Load D1 candidates scheduled for D2 auction confirmation on confirm_trade_date.
+
+        Reads from isolated w2s_candidate_rebuild (NOT production weak_to_strong_candidate_pool).
+        """
+        rows = await self._c.execute_query(
+            """SELECT trade_date, next_trade_date, stock_id, stock_name,
+                      subject_key, theme_name, candidate_score, candidate_type,
+                      support_type, support_strength, support_level,
+                      weak_type, pool_entry_type, cycle_state,
+                      mainline_strength_score, fade_watch, fade_confirmed,
+                      expected_open_low, expected_open_high,
+                      need_last_minute_grab, need_plate_follow,
+                      is_dragon_head, evidence_json,
+                      dragon_head_level, prev_limit_up_count
+               FROM w2s_candidate_rebuild
+               WHERE next_trade_date = $1
+                 AND rule_version = 'w2s_v1.0_usecase_replay'
+               ORDER BY candidate_score::numeric DESC""",
+            (confirm_trade_date,),
+        )
+        return [dict(r) for r in rows]
+
+    async def get_auction_snapshot_for_candidates(
+        self, trade_date: date, stock_ids: list[str] | None = None
+    ) -> list[dict[str, Any]]:
+        """Load auction snapshots from pre_market_auction_snapshot for given date/stocks.
+
+        Returns full column set needed by AuctionConfirmationService including
+        shape_features, source_version, source_trace for data_status classification.
+        """
+        query = """SELECT trade_date, stock_id, stock_name,
+                          auction_open_price, pre_close, auction_open_pct,
+                          auction_volume, auction_amount,
+                          last_minute_amount, last_minute_ratio,
+                          prev_day_max_intraday_amount, carry_ratio,
+                          price_path_stability_score,
+                          is_red_zone, has_end_spike, has_end_drop,
+                          shape_features, source_type, source_version,
+                          source_trace, source_trace_id, rule_version
+                   FROM pre_market_auction_snapshot
+                   WHERE trade_date = $1"""
+        params: list[Any] = [trade_date]
+        if stock_ids:
+            query += " AND (stock_id = ANY($2) OR split_part(stock_id, '.', 1) = ANY($3))"
+            compact_ids = [sid.split(".", 1)[0] for sid in stock_ids if sid.strip()]
+            params.append(stock_ids)
+            params.append(compact_ids)
+        query += " ORDER BY stock_id"
+        rows = await self._c.execute_query(query, tuple(params))
+        return [dict(r) for r in rows]
+
+    async def get_subject_auction_board_context(
+        self, trade_date: date, subject_keys: list[str] | None = None
+    ) -> list[dict[str, Any]]:
+        """Compute subject-level auction board context from pre_market_auction_snapshot.
+
+        Returns per-subject plate_red_ratio and plate_leader_strength.
+        Falls back to subject_stock_daily_snapshot if auction data is sparse.
+        """
+        sql = """SELECT subject_key,
+                        AVG(CASE WHEN COALESCE(auction_open_pct, 0) > 0 THEN 1.0 ELSE 0.0 END) AS plate_red_ratio,
+                        AVG(CASE WHEN COALESCE(auction_open_pct, 0) >= 2.0 OR COALESCE(is_red_zone, FALSE) THEN 1.0 ELSE 0.0 END) AS plate_leader_strength
+                 FROM pre_market_auction_snapshot
+                 WHERE trade_date = $1
+                   AND subject_key IS NOT NULL AND subject_key <> ''"""
+        params: list[Any] = [trade_date]
+        if subject_keys:
+            sql += " AND subject_key = ANY($2)"
+            params.append(subject_keys)
+        sql += " GROUP BY subject_key"
+        rows = await self._c.execute_query(sql, tuple(params))
+        if rows:
+            return [dict(r) for r in rows]
+        # Fallback to daily snapshot
+        fallback_sql = """SELECT subject_key,
+                                 AVG(CASE WHEN COALESCE(pct_chg, 0) > 0 THEN 1.0 ELSE 0.0 END) AS plate_red_ratio,
+                                 AVG(CASE WHEN COALESCE(rank_order, 999) <= 3 OR COALESCE(is_leader, FALSE) THEN 1.0 ELSE 0.0 END) AS plate_leader_strength
+                          FROM subject_stock_daily_snapshot
+                          WHERE trade_date = $1
+                            AND subject_key IS NOT NULL AND subject_key <> ''"""
+        f_params: list[Any] = [trade_date]
+        if subject_keys:
+            fallback_sql += " AND subject_key = ANY($2)"
+            f_params.append(subject_keys)
+        fallback_sql += " GROUP BY subject_key"
+        rows = await self._c.execute_query(fallback_sql, tuple(f_params))
+        return [dict(r) for r in rows]
+
     # ── Remaining required methods (stubs) ──
-    async def get_stock_auction_snapshot(self, trade_date: date, stock_ids=None): return []
+    async def get_stock_auction_snapshot(self, trade_date: date, stock_ids=None): return []  # replaced by get_auction_snapshot_for_candidates
     async def get_subject_stock_pool_by_trade_date(self, trade_date): return []
     async def get_subject_context_by_subject_keys(self, subject_keys, trade_date): return []
     async def get_existing_pre_market_brief_snapshot(self, trade_date): return None
@@ -783,6 +874,45 @@ class HistoricalBacktestWritePorts:
                 source_trace JSONB DEFAULT '{}'::jsonb,
                 created_at TIMESTAMP DEFAULT now(),
                 PRIMARY KEY (next_trade_date, stock_id)
+            )
+        """)
+        # v2.2c: Auction confirmation rebuild table
+        await self._c.execute_query("""
+            CREATE TABLE IF NOT EXISTS w2s_auction_confirmation_rebuild (
+                id BIGSERIAL PRIMARY KEY,
+                candidate_trade_date DATE NOT NULL,
+                confirm_trade_date DATE NOT NULL,
+                stock_id VARCHAR(32) NOT NULL,
+                stock_name VARCHAR(64) NOT NULL DEFAULT '',
+                subject_key VARCHAR(64) NOT NULL DEFAULT '',
+                theme_name VARCHAR(128) NOT NULL DEFAULT '',
+                candidate_score NUMERIC(8,2),
+                candidate_type VARCHAR(64),
+                support_type VARCHAR(64),
+                support_strength NUMERIC(8,2),
+                weak_type VARCHAR(64),
+                price_strength_score NUMERIC(8,2) NOT NULL DEFAULT 0,
+                pattern_stability_score NUMERIC(8,2) NOT NULL DEFAULT 0,
+                last_minute_grab_score NUMERIC(8,2) NOT NULL DEFAULT 0,
+                plate_follow_score NUMERIC(8,2) NOT NULL DEFAULT 0,
+                risk_penalty NUMERIC(8,2) NOT NULL DEFAULT 0,
+                auction_confirm_score NUMERIC(8,2) NOT NULL DEFAULT 0,
+                auction_confirm_level VARCHAR(16) NOT NULL DEFAULT 'X',
+                auction_confirm_source VARCHAR(32) NOT NULL DEFAULT 'missing',
+                auction_open_pct NUMERIC(8,4),
+                auction_amount NUMERIC(18,2),
+                auction_path_volatility NUMERIC(8,2),
+                last_minute_volume_ratio NUMERIC(8,4),
+                has_end_drop BOOLEAN DEFAULT false,
+                has_end_spike BOOLEAN DEFAULT false,
+                is_red_zone BOOLEAN DEFAULT false,
+                plate_red_ratio NUMERIC(8,4),
+                plate_leader_strength NUMERIC(8,4),
+                evidence_json JSONB NOT NULL DEFAULT '{}'::jsonb,
+                rule_version VARCHAR(64) NOT NULL DEFAULT 'auction_confirmation.v2',
+                source_trace JSONB DEFAULT '{}'::jsonb,
+                created_at TIMESTAMP DEFAULT now(),
+                UNIQUE(candidate_trade_date, confirm_trade_date, stock_id)
             )
         """)
 
@@ -885,6 +1015,83 @@ class HistoricalBacktestWritePorts:
                         "error": str(e)[:200],
                     })
         return self._written_w2s
+
+    # ── v2.2c: Auction confirmation write ──
+
+    async def upsert_auction_confirmation_rebuild_rows(self, rows: list[dict[str, Any]]) -> int:
+        """Write D2 auction confirmation results to isolated rebuild table.
+
+        NEVER writes to production weak_to_strong_auction_signal.
+        """
+        if not rows:
+            return 0
+        await self._ensure_tables()
+        written = 0
+        for r in rows:
+            try:
+                await self._c.execute_query("""
+                    INSERT INTO w2s_auction_confirmation_rebuild (
+                        candidate_trade_date, confirm_trade_date, stock_id, stock_name,
+                        subject_key, theme_name,
+                        candidate_score, candidate_type, support_type, support_strength, weak_type,
+                        price_strength_score, pattern_stability_score,
+                        last_minute_grab_score, plate_follow_score,
+                        risk_penalty, auction_confirm_score,
+                        auction_confirm_level, auction_confirm_source,
+                        auction_open_pct, auction_amount, auction_path_volatility,
+                        last_minute_volume_ratio,
+                        has_end_drop, has_end_spike, is_red_zone,
+                        plate_red_ratio, plate_leader_strength,
+                        evidence_json, rule_version, source_trace)
+                    VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,
+                            $12,$13,$14,$15,$16,$17,$18,$19,
+                            $20,$21,$22,$23,$24,$25,$26,$27,$28,
+                            $29::jsonb,'auction_confirmation.v2',
+                            jsonb_build_object('usecase','BuildAuctionConfirmation','source',$30::text))
+                    ON CONFLICT (candidate_trade_date, confirm_trade_date, stock_id)
+                    DO UPDATE SET
+                        auction_confirm_score = EXCLUDED.auction_confirm_score,
+                        auction_confirm_level = EXCLUDED.auction_confirm_level,
+                        auction_confirm_source = EXCLUDED.auction_confirm_source,
+                        evidence_json = EXCLUDED.evidence_json
+                """, (
+                    r['candidate_trade_date'], r['confirm_trade_date'],
+                    str(r.get('stock_id', '')), str(r.get('stock_name', '')),
+                    str(r.get('subject_key', '')), str(r.get('theme_name', '')),
+                    float(r.get('candidate_score', 0)), str(r.get('candidate_type', '')),
+                    str(r.get('support_type', '')), float(r.get('support_strength', 0)),
+                    str(r.get('weak_type', '')),
+                    float(r.get('price_strength_score', 0)),
+                    float(r.get('pattern_stability_score', 0)),
+                    float(r.get('last_minute_grab_score', 0)),
+                    float(r.get('plate_follow_score', 0)),
+                    float(r.get('risk_penalty', 0)),
+                    float(r.get('auction_confirm_score', 0)),
+                    str(r.get('auction_confirm_level', 'X')),
+                    str(r.get('auction_confirm_source', 'missing')),
+                    float(r.get('auction_open_pct', 0)) if r.get('auction_open_pct') is not None else None,
+                    float(r.get('auction_amount', 0)) if r.get('auction_amount') is not None else None,
+                    float(r.get('auction_path_volatility', 0)) if r.get('auction_path_volatility') is not None else None,
+                    float(r.get('last_minute_volume_ratio', 0)) if r.get('last_minute_volume_ratio') is not None else None,
+                    bool(r.get('has_end_drop', False)),
+                    bool(r.get('has_end_spike', False)),
+                    bool(r.get('is_red_zone', False)),
+                    float(r.get('plate_red_ratio', 0)),
+                    float(r.get('plate_leader_strength', 0)),
+                    str(r.get('evidence_json', '{}')),
+                    str(r.get('auction_confirm_source', 'missing')),  # $30 for source_trace
+                ))
+                written += 1
+            except Exception as e:
+                self.write_error_count += 1
+                if len(self.write_errors) < 20:
+                    self.write_errors.append({
+                        "table": "w2s_auction_confirmation_rebuild",
+                        "stock_id": str(r.get('stock_id', '?')),
+                        "confirm_trade_date": str(r.get('confirm_trade_date', '?')),
+                        "error": str(e)[:200],
+                    })
+        return written
 
     # Required stub methods
     async def upsert_stock_daily_strategy_snapshot_rows(self, rows): return 0
