@@ -120,6 +120,26 @@ SHORT_GENERIC_THEME_TERMS = {
 
 ROLE_BLOCKING_HIT_ROLES = {"source_org", "location", "generic_short_term", "support"}
 STRONG_SHORT_THEME_EXCEPTIONS = {"星链", "朱雀", "火箭"}
+
+# ── Product anchor protection ──────────────────────────────────────
+# When these terms appear in event text, they serve as product_anchor
+# that cannot be killed by source_org / location / generic / support
+# role guards.  This prevents AR/智能眼镜 events from being blocked
+# merely because the event also mentions companies, cities, forums etc.
+
+AR_GLASS_PRODUCT_ANCHOR_PATTERNS = [
+    "AI智能眼镜", "AR眼镜", "智能眼镜", "智能AR眼镜",
+    "XR眼镜", "AI眼镜", "AI拍摄眼镜", "AR骑行镜",
+    "眼镜计划", "眼镜产品", "眼镜合作", "眼镜论坛",
+    "增强现实眼镜", "智能AI眼镜",
+]
+# "眼镜" alone must co-occur with a context marker.
+AR_GLASS_CONTEXT_MARKERS = {
+    "AI", "AR", "XR", "智能", "Meta", "苹果", "三星", "谷歌",
+    "高通", "Oakley", "Ray-Ban", "Snap", "Rokid", "XREAL",
+    "魅族", "小米", "华为", "OPPO", "vivo", "影目", "闪极",
+    "鸿海", "Porotech", "博士眼镜", "星纪魅族",
+}
 _TEXT_TOKEN_CACHE_MAX = 256
 _TEXT_TOKEN_CACHE: OrderedDict[str, set[str]] = OrderedDict()
 
@@ -958,20 +978,24 @@ def _build_gate_evidence(
 
     theme_name_hit_terms = [
         term for term in _filter_generic_terms(theme_name_hit_terms)
-        if not _is_no_anchor_term(term, no_anchor_terms)
+        if _is_product_anchor_term(term, event_text) or not _is_no_anchor_term(term, no_anchor_terms)
     ]
     subject_name_hit_terms = [
         term for term in _filter_generic_terms(subject_name_hit_terms)
-        if not _is_no_anchor_term(term, no_anchor_terms)
+        if _is_product_anchor_term(term, event_text) or not _is_no_anchor_term(term, no_anchor_terms)
     ]
     theme_name_direct_hit = len(theme_name_hit_terms) > 0
     subject_name_direct_hit = len(subject_name_hit_terms) > 0
-    must_hits = [t for t in must_hits if not _is_no_anchor_term(t, no_anchor_terms)]
-    strong_hits = [t for t in strong_hits if not _is_no_anchor_term(t, no_anchor_terms)]
-    object_hits = [t for t in object_hits if not _is_no_anchor_term(t, no_anchor_terms)]
-    should_hits = [t for t in should_hits if not _is_no_anchor_term(t, no_anchor_terms)]
-    entity_hits = [t for t in entity_hits if not _is_no_anchor_term(t, no_anchor_terms)]
-    support_hits = _unique(raw_support_hits + [t for t in must_hits + strong_hits + object_hits + should_hits if _is_no_anchor_term(t, no_anchor_terms)])
+    must_hits = [t for t in must_hits if _is_product_anchor_term(t, event_text) or not _is_no_anchor_term(t, no_anchor_terms)]
+    strong_hits = [t for t in strong_hits if _is_product_anchor_term(t, event_text) or not _is_no_anchor_term(t, no_anchor_terms)]
+    object_hits = [t for t in object_hits if _is_product_anchor_term(t, event_text) or not _is_no_anchor_term(t, no_anchor_terms)]
+    should_hits = [t for t in should_hits if _is_product_anchor_term(t, event_text) or not _is_no_anchor_term(t, no_anchor_terms)]
+    entity_hits = [t for t in entity_hits if _is_product_anchor_term(t, event_text) or not _is_no_anchor_term(t, no_anchor_terms)]
+    support_hits = _unique(
+        raw_support_hits
+        + [t for t in must_hits + strong_hits + object_hits + should_hits
+           if not _is_product_anchor_term(t, event_text) and _is_no_anchor_term(t, no_anchor_terms)]
+    )
     evidence_for_roles = {
         "theme_name_hit_terms": theme_name_hit_terms,
         "subject_name_hit_terms": subject_name_hit_terms,
@@ -1094,7 +1118,8 @@ def _broad_category_direct_hit_blocked(
                 + _normalize_list(evidence.get("strong_hits"))
                 + _normalize_list(evidence.get("profile_anchor_hits"))
             )
-            if term not in direct_hits and not _is_no_anchor_term(term, no_anchor_terms)
+            if term not in direct_hits
+            and (_is_product_anchor_term(term, event_text) or not _is_no_anchor_term(term, no_anchor_terms))
         ]
     )
     return not strong_specific_hits
@@ -1177,6 +1202,32 @@ def _has_blocking_conflict_evidence(evidence: Dict[str, Any]) -> bool:
     return not bool(evidence.get("subject_name_direct_hit"))
 
 
+def _is_product_anchor_term(term: str, event_text: str) -> bool:
+    """Return True when *term* is a recognised AR/XR/智能眼镜 product anchor.
+
+    Compound patterns (e.g. ``AI智能眼镜``) always count as product anchor.
+    Bare ``眼镜`` only counts when the event contains AR/XR/智能/AI or a known
+    manufacturer/ecosystem marker (e.g. Meta, Rokid, 小米).
+    """
+    value = _safe_str(term)
+    if not value:
+        return False
+    # Compound product anchor patterns
+    if value in AR_GLASS_PRODUCT_ANCHOR_PATTERNS:
+        return True
+    # Bare "眼镜" — only if event text has a context marker
+    if value == "眼镜":
+        ev_lower = _normalize_text(event_text)
+        for marker in AR_GLASS_CONTEXT_MARKERS:
+            if _normalize_text(marker) in ev_lower:
+                return True
+        # Also recognise "智能眼镜" and "AR眼镜" as compound markers
+        for pat in AR_GLASS_PRODUCT_ANCHOR_PATTERNS:
+            if _normalize_text(pat) in ev_lower:
+                return True
+    return False
+
+
 def _is_no_anchor_term(term: str, no_anchor_terms: List[str] | set[str]) -> bool:
     value = _safe_str(term)
     if not value:
@@ -1195,6 +1246,10 @@ def _classify_hit_term_role(
     value = _safe_str(term)
     if not value:
         return "support"
+    # Product anchors bypass all role guard blocking — legitimate AR/智能眼镜
+    # events must not be killed just because they mention a company or a city.
+    if _is_product_anchor_term(value, event_text):
+        return "product_anchor"
     if _is_no_anchor_term(value, no_anchor_terms or set()):
         return "support"
     if _is_source_org_term(value, event_text):

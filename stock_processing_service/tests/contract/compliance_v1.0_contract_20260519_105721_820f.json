@@ -1,0 +1,102 @@
+{
+  "contract_version": "v1.0_usecase_replay",
+  "run_id": "v1.0_contract_20260519_105721_820f",
+  "executed_at": "2026-05-19T10:58:07.467677",
+  "date_range": {
+    "start": "2026-02-15",
+    "end": "2026-05-15"
+  },
+  "compliance": {
+    "strong_tracking_usecase_called": true,
+    "build_seed_candidates_called": true,
+    "score_watch_row_called": true,
+    "is_candidate_eligible_called": false,
+    "w2s_usecase_called": true,
+    "build_candidates_called": true,
+    "no_handwritten_c_logic": true,
+    "no_handwritten_d_logic": true,
+    "no_direct_insert": true,
+    "no_prior7_gate_direct": true,
+    "no_recent_copy_as_prior7": true,
+    "b_layer_prior7_from_bar_data": true,
+    "all_writes_through_write_ports": true,
+    "write_errors_zero": true,
+    "future_leak_count": 0
+  },
+  "usecase_trace": {
+    "strong_tracking_dates": 55,
+    "strong_tracking_affected_rows": 806,
+    "seed_candidates_built": 10,
+    "score_watch_row_called": 806,
+    "is_candidate_eligible_called": 0,
+    "w2s_dates": 49,
+    "w2s_candidates_built": 0,
+    "build_candidates_called": 0,
+    "d1_diagnostics": {
+      "d1_total_in": 4,
+      "d1_pass": 0,
+      "d1_fail_pct_gate": 0,
+      "d1_fail_history": 4,
+      "d1_fail_gene": 0,
+      "d1_fail_strong": 0,
+      "d1_fail_support": 0
+    },
+    "strong_pool_writes": 810,
+    "w2s_pool_writes": 0,
+    "rule_version_used": "w2s_v1.0_usecase_replay"
+  },
+  "seed_funnel": {
+    "trade_date": "2026-05-15",
+    "b_raw_rows": 634,
+    "after_leader_role_filter": 230,
+    "after_prior7_filter": 150,
+    "after_leader_prior7_combined": 150,
+    "after_subject_key_filter": 96,
+    "after_a_layer_check": 10,
+    "final_seed_rows": 10
+  },
+  "write_audit": {
+    "error_count": 0,
+    "error_samples": []
+  },
+  "violation_scan": {
+    "scanned_files": [
+      "scripts/ab_compare_mainline_cycle.py",
+      "scripts/calc_b_confirmed_coverage.py",
+      "scripts/compare_strong_watch_7d_pool.py",
+      "scripts/compare_w2s_transition_samples.py",
+      "scripts/export_post_market_recap_baseline.py",
+      "scripts/regression_ab_compare.py",
+      "scripts/run_layer_a_backfill.py",
+      "scripts/run_layer_b_backfill.py",
+      "scripts/run_layer_c_backfill.py",
+      "scripts/run_layer_c_scale_diff_report.py",
+      "scripts/run_legacy_layer_c_output_report.py",
+      "scripts/run_pre_market_brief_scheduler.py",
+      "scripts/run_w2s_phase0_first_validation.py",
+      "scripts/run_w2s_v0.2_calibration.py",
+      "scripts/run_w2s_v0.3.py",
+      "scripts/run_w2s_v0.4.py",
+      "scripts/run_w2s_v0.8_usecase_replay.py",
+      "scripts/test_layer_c_7d_roll.py",
+      "scripts/test_lifeline_weike.py",
+      "scripts/test_tushare_kline_gray.py",
+      "backtest/__init__.py",
+      "backtest/historical_backtest_ports.py",
+      "backtest/stock_structure_feature_backfill_service.py",
+      "backtest/w2s_data_quality_service.py",
+      "backtest/w2s_feature_snapshot_service.py",
+      "backtest/w2s_signal_builder_service.py",
+      "backtest/w2s_signal_validation_service.py",
+      "backtest/w2s_validation_summary_service.py"
+    ],
+    "scanned_count": 28,
+    "violations_found": 0,
+    "violation_details": []
+  },
+  "status": "FAIL",
+  "failing_checks": [
+    "is_candidate_eligible_called",
+    "future_leak_count"
+  ]
+}
