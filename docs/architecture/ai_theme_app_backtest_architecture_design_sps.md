@@ -1,12 +1,208 @@
 # AI题材选股系统回测架构设计文档（新链 stock_processing_service 版）
 
-> 版本：v3.0
+> 版本：v5.0（新增 §0.7 v1.0_usecase_replay_contract；停止收益验证）
 > 适用架构：`web_app_service + stock_processing_service + database_service.gateway` 新链
 > 废弃约束：`stock_service` 目录下的旧链选股/回测扩展不再作为新功能落点；仅允许作为历史兼容参考或临时适配依赖。
 
 ---
 
-## 0. 本次修订背景（v3.0）
+## 0. 执行合同：回测开发强制约束（EXECUTION CONTRACT）
+
+> **本节约束优先级最高。任何回测开发任务必须首先满足本节要求，否则视为不合规。**
+
+### 0.1 核心原则
+
+**禁止在回测脚本、backfill service、run script 中手写策略规则。所有策略判断必须复用新链已有 domain service / UseCase。**
+
+### 0.2 强制复用清单（MUST USE）
+
+以下新链代码是回测链路中对应功能的**唯一合法来源**。禁止在回测代码中重新实现等价逻辑。
+
+#### A 层（题材主线/周期）
+
+| 能力 | 唯一合法来源 | 禁止行为 |
+|------|------------|---------|
+| 题材主线身份判定 | `get_mainline_identity_by_subject_keys()` → `MainlineIdentityDTO` | 禁止用 `mainline_strength_score >= 60` 手写替代 |
+| 题材周期状态 | `get_mainline_cycle_by_subject_keys()` → `MainlineCycleDTO` | 禁止从 `subject_daily_feature.cycle_state` 字符串直接判断 |
+| 题材周期证据 | `get_subject_cycle_evidence_daily()` | 禁止手写 event_continuity 计算 |
+| A 层数据源 | `subject_rank_daily`（久赢恒丰题材榜） | 禁止从 `candidate_pool` 字段拼凑 A 层数据 |
+
+#### B 层（强势股基因/龙头/入池）
+
+| 能力 | 唯一合法来源 | 禁止行为 |
+|------|------------|---------|
+| 种子行构建 | `StrongStockTrackingService.build_seed_candidates()` | 禁止手写 ST/688 排除、source_tag、relay_role |
+| 种子行数据 | `get_strong_watch_seed_rows()` → `HistoricalBacktestReadPorts` | 禁止从 `strong_stock_daily_feature` 直接扫描替代 |
+| 刷新行数据 | `get_strong_watch_refresh_rows()` → `HistoricalBacktestReadPorts` | 禁止省略 |
+| prior7 计算 | `stock_daily_snapshot` 逐日滚动窗口（7个交易日） | **禁止**用静态字段复制替代日期滚动计算 |
+| leader_role_proxy | `classify_leader_role_proxy()` in `w2s_feature_rules.py` | 禁止手写 leader/card/assist 分类 |
+
+#### C 层（强势股观察池）
+
+| 能力 | 唯一合法来源 | 禁止行为 |
+|------|------------|---------|
+| 强势股评分 | **`StrongStockTrackingService.score_watch_row()`** | **禁止手写五维评分。禁止用 `prior7_limitup_days >= 1` 替代。** |
+| 候选资格判定 | **`StrongStockTrackingService.is_candidate_eligible()`** | 禁止只取 formal 丢弃 observe_only |
+| C 层编排 | **`BuildStrongStockTrackingUseCase.execute()`** | 禁止手写 seed→score→write 流程 |
+| 板块统计 | `get_subject_board_stats()` | 禁止省略 BoardSnapshot |
+| 位置判断 | `get_stock_position_judgement()` | 禁止省略 PositionSnapshot |
+| 形态判断 | `get_stock_pattern_judgement()` | 禁止省略 PatternSnapshot |
+| 支撑评分 | `KlineSupportScorer` / `SupportStructureResolver` | 禁止手写 `_detect_support()` |
+
+#### D 层（弱转强候选）
+
+| 能力 | 唯一合法来源 | 禁止行为 |
+|------|------------|---------|
+| 候选生成 | **`BuildWeakToStrongCandidateUseCase.build_candidates()`** | **禁止手写 D 层候选逻辑。禁止 `prior7 >= 1` 直接写候选。** |
+| 候选输入 | `get_w2s_candidate_inputs()` → 来自 C 层 eligible 结果 | 禁止从全市场扫描替代 |
+| D 层诊断 | `BuildWeakToStrongCandidateUseCase._diagnostics` | 必须输出 d1_fail_pct/history/gene/strong/support |
+
+#### 弱类型/支撑特征
+
+| 能力 | 唯一合法来源 | 禁止行为 |
+|------|------------|---------|
+| 弱类型分类 | **`classify_weak_type()` in `w2s_feature_rules.py`** | 禁止在 backfill service 中手写 if/elif 分类 |
+| 弱类型品质 | **`classify_weak_type_quality()` in `w2s_feature_rules.py`** | 禁止重复定义 `WEAK_TYPE_QUALITY_MAP` |
+| 支撑检测 | **`BarSupportAdapter` → `GapStructureDetector` + `SupportStructureResolver`** | 禁止手写 `_detect_support()` |
+| 缺口检测 | `GapStructureDetector.detect()` | 禁止手写 gap 判断 |
+| K 线支撑 | `KlineSupportScorer` | 禁止手写 MA 支撑判断 |
+
+### 0.3 违规模式清单（FORBIDDEN PATTERNS）
+
+以下模式**已实际发生**，被明确禁止：
+
+| # | 违规模式 | 示例 | 正确做法 |
+|---|---------|------|---------|
+| 1 | 在 backfill service 中硬编码 if/elif 分类 | `if pct_chg <= -5.0: return "big_negative_line"` | 调用 `classify_weak_type()` |
+| 2 | 用 `prior7_limitup_days >= 1` 直接写 D 层候选 | v0.7 全量 | 调用 `BuildWeakToStrongCandidateUseCase` |
+| 3 | 手写 `_detect_support()` | `if prev_high > 0 and low > prev_high * 0.98: return "gap_support"` | 调用 `BarSupportAdapter` |
+| 4 | 手写 `WEAK_TYPE_QUALITY_MAP` 副本 | backfill service 中重复定义 | import `classify_weak_type_quality()` |
+| 5 | 手写 `_simple_ma5()` | backfill service 中自算均线 | 使用 `KlineSupportScorer` |
+| 6 | B 层 prior7 跨日期静态复制 | prior7_limitup_days 不随日期变化 | 每个 stock-date 从实际 bar 滚动计算 |
+| 7 | 手写 `compute_candidate_score()` | run script 中的局部函数 | 调用 `BuildWeakToStrongCandidateUseCase` |
+| 8 | 手写 `classify_leader_role_proxy()` | run script 中的局部函数 | import 已有实现 |
+| 9 | 绕过 UseCase 直接写候选池 | run script 中直接 INSERT | 通过 UseCase + WritePorts |
+| 10 | backfill service 承载交易规则 | `_classify_weak_type()` 在 backfill 中 | backfill service = thin orchestrator |
+
+### 0.4 合规验证
+
+每条 run 必须输出以下审计信息：
+
+```json
+{
+  "compliance": {
+    "strong_tracking_usecase_called": true,
+    "score_watch_row_called": true,
+    "is_candidate_eligible_called": true,
+    "w2s_usecase_called": true,
+    "classify_weak_type_imported": true,
+    "classify_weak_type_quality_imported": true,
+    "bar_support_adapter_used": true,
+    "no_handwritten_candidate_logic": true,
+    "no_handwritten_support_logic": true,
+    "no_handwritten_leader_logic": true,
+    "b_layer_prior7_from_bar_data": true,
+    "future_leak_count": 0
+  }
+}
+```
+
+### 0.5 版本标记
+
+不合规的中间实验版本必须明确标记：
+
+- `v0.5_fixed_baseline` — research baseline（简化回填，保留为对照基准）
+- `v0.6` — **deprecated_experiment**（全市场扫描，稀释强势股前提。已停止收益验证。）
+- `v0.7` — **deprecated_experiment**（prior7→D 手写逻辑，绕过 UseCase。已停止收益验证。）
+- `v0.8` — **deprecated_experiment**（UseCase replay 实验版，partial v0.8a。已停止收益验证。迁移至 v1.0）
+- `v0.9` — **deprecated_experiment**（预留槽位，未实际产出。已停止收益验证。）
+
+### 0.6 停止收益验证（STOP RETURNS VALIDATION）
+
+自 v5.0 起，**所有 v0.x 版本的收益验证均已停止**。以下行为被禁止：
+
+- ❌ `run_w2s_v0.2_calibration.py` → 已废弃，不执行
+- ❌ `run_w2s_v0.3.py` → 已废弃，不执行
+- ❌ `run_w2s_v0.4.py` → 已废弃，不执行
+- ❌ `run_w2s_phase0_first_validation.py` → 已废弃，不执行
+- ❌ `build_w2s_abc_strict_rebuild.py` → 已废弃，不执行
+- ❌ `run_w2s_v0.8_usecase_replay.py` → 已废弃，不执行
+- ❌ 任何通过 `W2SSignalValidationService.validate()` 计算 `next_1d/3d/5d_return` 的 v0.x 路径
+
+**唯一的 v1.0 入口**：`tests/contract/test_v1_0_usecase_replay_contract.py`（合约测试，不跑收益）
+
+### 0.7 v1.0_usecase_replay_contract（新）
+
+> **本节是 v5.0 新增的核心约束。v1.0 是唯一合法版本入口。**
+
+#### 0.7.1 硬性要求
+
+1. **禁止 run script 手写 C/D 层逻辑。**
+2. **禁止直接 INSERT 候选池。** 所有写入必须通过 `HistoricalBacktestWritePorts`。
+3. **禁止用 `prior7_limitup_days >= 1` 直接生成候选。** 必须通过 `BuildWeakToStrongCandidateUseCase.build_candidates()`。
+4. **禁止复制 `recent_limit_up_count` 作为 `prior7_limitup_days`。** prior7 必须从 bar 数据逐日滚动计算。
+5. **必须通过 `HistoricalBacktestReadPorts` 调用正式 UseCase。**
+6. **必须调用以下方法：**
+   - `BuildStrongStockTrackingUseCase.execute()`
+   - `StrongStockTrackingService.build_seed_candidates()`
+   - `StrongStockTrackingService.score_watch_row()`
+   - `StrongStockTrackingService.is_candidate_eligible()`
+   - `BuildWeakToStrongCandidateUseCase.build_candidates()`
+7. **先做 contract test，不跑收益。** `test_v1.0_usecase_replay_contract.py` 只验证 UseCase 调用链路完整性和合规性。
+8. **输出 UseCase 调用审计和违规扫描结果。**
+
+#### 0.7.2 v1.0 合规输出格式
+
+```json
+{
+  "contract_version": "v1.0_usecase_replay",
+  "compliance": {
+    "strong_tracking_usecase_called": true,
+    "build_seed_candidates_called": true,
+    "score_watch_row_called": true,
+    "is_candidate_eligible_called": true,
+    "w2s_usecase_called": true,
+    "build_candidates_called": true,
+    "no_handwritten_c_logic": true,
+    "no_handwritten_d_logic": true,
+    "no_direct_insert": true,
+    "no_prior7_gate_direct": true,
+    "no_recent_copy_as_prior7": true,
+    "b_layer_prior7_from_bar_data": true,
+    "all_writes_through_write_ports": true,
+    "future_leak_count": 0
+  },
+  "usecase_trace": {
+    "strong_tracking_dates": 0,
+    "strong_tracking_affected_rows": 0,
+    "seed_candidates_built": 0,
+    "w2s_dates": 0,
+    "w2s_candidates_built": 0,
+    "d1_diagnostics": {}
+  },
+  "violation_scan": {
+    "scanned_files": [],
+    "violations_found": 0,
+    "violation_details": []
+  }
+}
+```
+
+#### 0.7.3 版本路线
+
+```text
+v0.x (deprecated_experiment) → 停止收益验证
+    ↓
+v1.0_usecase_replay_contract → contract test only（当前）
+    ↓
+v1.1_usecase_replay_full → contract test pass + signal validation enabled
+    ↓
+v2.0_capital_backtest → full capital backtest with VirtualBroker
+```
+
+---
+
+## 0.6 本次修订背景（v3.0 → v4.0）
 
 v2.0 确定了回测系统落点在新链 `stock_processing_service`，v3.0 在此基础上补充：
 

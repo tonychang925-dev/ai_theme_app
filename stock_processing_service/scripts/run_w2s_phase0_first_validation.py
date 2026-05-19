@@ -1,6 +1,15 @@
 """
-W2S Backtest Phase 0 — First Round Empirical Validation
-========================================================
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  STATUS: DEPRECATED_EXPERIMENT — DO NOT RUN                               ║
+║  Version: Phase 0 (v0.1)                                                  ║
+║  Deprecated by: v1.0_usecase_replay_contract (2026-05-19)                 ║
+║  Reason: Bypasses UseCases, direct snapshot→signal→validation pipeline.   ║
+║  Revenue validation: STOPPED.                                             ║
+║  Migration: Use tests/contract/test_v1_0_usecase_replay_contract.py       ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+W2S Backtest Phase 0 — First Round Empirical Validation (DEPRECATED)
+=====================================================================
 Scope: Last N months signal validation only (no capital backtesting)
 Experiments: EXP_A_BASELINE / EXP_C_MAINLINE / EXP_E_MAINLINE_LEADER
 Metrics: 1/3/5 day win rate, avg return, max drawdown, hit_limit_up, loss_over_5pct
