@@ -4,6 +4,7 @@
 """
 from __future__ import annotations
 
+import asyncio
 from dataclasses import dataclass
 from datetime import date
 from typing import Any
@@ -46,8 +47,8 @@ class BuildDragonTigerObjectJob:
 
         td_str = trade_date.isoformat() if hasattr(trade_date, 'isoformat') else str(trade_date)
         snapshot_service = TushareDragonTigerSnapshotService(stock_config)
-        top_list_result = snapshot_service.fetch_or_cache_top_list(td_str)
-        top_inst_result = snapshot_service.fetch_or_cache_top_inst(td_str)
+        top_list_result = await asyncio.to_thread(snapshot_service.fetch_or_cache_top_list, td_str)
+        top_inst_result = await asyncio.to_thread(snapshot_service.fetch_or_cache_top_inst, td_str)
 
         service = DragonTigerObjectService()
         top_list_rows = service.normalize_top_list(top_list_result.records)

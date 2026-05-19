@@ -60,6 +60,11 @@ GENERIC_MATCH_STOPWORDS = {
     "合作伙伴",
     "民企",
     "国企",
+    "部件",
+    "关键部件",
+    "系统部件",
+    "项目",
+    "采购",
 }
 
 SOURCE_ORG_TERMS = {
@@ -106,6 +111,9 @@ SHORT_GENERIC_THEME_TERMS = {
     "高温",
     "金融",
     "设备",
+    "部件",
+    "项目",
+    "采购",
     "产品",
     "应用",
 }
@@ -361,6 +369,7 @@ def _build_event_match_profile(request: ThemeMatchRequest) -> EventMatchProfile:
             "锚点：" + "、".join(search_terms[:16]) if search_terms else "",
             request.title,
             request.summary,
+            request.content[:600] if request.content else "",
         ]
     ).strip()
     query_text_for_judge = "\n".join(
@@ -924,7 +933,8 @@ def _build_gate_evidence(
         [
             t
             for t in profile.must_terms + profile.strong_terms + profile.should_terms + object_terms
-            if _is_no_anchor_term(t, support_terms) or _is_no_anchor_term(t, no_anchor_terms)
+            if (t in search_terms or _term_in_text(t, event_text))
+            and (_is_no_anchor_term(t, support_terms) or _is_no_anchor_term(t, no_anchor_terms))
         ]
     )
 
@@ -1156,6 +1166,15 @@ def _has_only_generic_evidence(evidence: Dict[str, Any]) -> bool:
     if not evidence:
         return True
     return not _has_primary_anchor_evidence(evidence)
+
+
+def _has_blocking_conflict_evidence(evidence: Dict[str, Any]) -> bool:
+    if int(evidence.get("conflict_score") or 0) <= 0:
+        return False
+    # A literal subject-name hit can still be a legitimate match that needs LLM
+    # or review. Alias-only hits with explicit negative evidence are commonly
+    # source/nearby mentions and should not outrank a clean domain candidate.
+    return not bool(evidence.get("subject_name_direct_hit"))
 
 
 def _is_no_anchor_term(term: str, no_anchor_terms: List[str] | set[str]) -> bool:
@@ -1924,6 +1943,35 @@ class ThemeMatchEngine:
         direct_hit_keys: List[str],
         profile_map: Dict[str, ThemeProfile],
     ) -> ThemeDecisionEnvelope:
+        filtered_candidates = [
+            cand for cand in candidates if not _has_blocking_conflict_evidence(cand.evidence or {})
+        ]
+        if candidates and not filtered_candidates:
+            top_candidates = []
+            for cand in candidates[:5]:
+                profile = profile_map[cand.subject_key]
+                top_candidates.append(
+                    {
+                        "subject_key": cand.subject_key,
+                        "subject_name": profile.subject_name,
+                        "dense_score": round(cand.dense_score, 4),
+                        "rerank_score": round(cand.rerank_score, 4),
+                        "evidence": cand.evidence,
+                    }
+                )
+            return ThemeDecisionEnvelope(
+                decision="HUMAN_REVIEW",
+                event_id=request.event_id,
+                news_id=request.news_id,
+                confidence=_squash01(0.5),
+                reason_code="all_candidates_conflicting_evidence",
+                review_required=True,
+                audit={"top_candidates": top_candidates, "best_evidence": candidates[0].evidence or {}},
+            )
+        if filtered_candidates:
+            candidates = filtered_candidates
+            direct_hit_keys = [key for key in direct_hit_keys if any(c.subject_key == key for c in candidates)]
+
         top_candidates = []
         for cand in candidates[:5]:
             profile = profile_map[cand.subject_key]
@@ -2114,6 +2162,19 @@ class ThemeMatchEngine:
                     news_id=request.news_id,
                     confidence=min(conf, _squash01(0.5)),
                     reason_code="llm_accept_without_anchor_evidence",
+                    matched_subject_key=matched_theme.subject_key,
+                    matched_theme_name=matched_theme.subject_name,
+                    matched_theme_id=matched_theme.theme_master_id,
+                    review_required=True,
+                    audit={**audit, "best_evidence": matched_evidence},
+                )
+            if _has_blocking_conflict_evidence(matched_evidence):
+                return ThemeDecisionEnvelope(
+                    decision="HUMAN_REVIEW",
+                    event_id=request.event_id,
+                    news_id=request.news_id,
+                    confidence=min(conf, _squash01(0.5)),
+                    reason_code="llm_accept_conflicting_alias_evidence",
                     matched_subject_key=matched_theme.subject_key,
                     matched_theme_name=matched_theme.subject_name,
                     matched_theme_id=matched_theme.theme_master_id,

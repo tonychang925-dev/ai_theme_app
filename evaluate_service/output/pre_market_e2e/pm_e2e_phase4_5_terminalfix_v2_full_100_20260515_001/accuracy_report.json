@@ -38,11 +38,11 @@
   "diagnostics": {
     "source": "db",
     "event_count": 117,
+    "matched_event_count": 100,
     "theme_count": 37,
-    "last_rebuild_at": "2026-05-18T12:43:42.087634+00:00",
     "opportunity_count": 36,
     "review_event_count": 17,
-    "matched_event_count": 100,
-    "unknown_event_count": 0
+    "unknown_event_count": 0,
+    "last_rebuild_at": "2026-05-18T12:43:42.087634+00:00"
   }
 }

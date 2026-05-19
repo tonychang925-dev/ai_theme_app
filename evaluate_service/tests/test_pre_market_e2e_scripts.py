@@ -12,6 +12,7 @@ from evaluate_service.e2e.pre_market_brief.evaluate_pre_market_brief import (
     _is_commercial_space_neighbor,
     _is_generic_only_related,
     _matches_gold,
+    _wrong_related_attribution_row,
 )
 from evaluate_service.e2e.pre_market_brief.parse_test_cases import parse_test_cases_file
 from evaluate_service.e2e.pre_market_brief.replay_akshare_raw_news import build_stream_payload
@@ -149,6 +150,33 @@ def test_generic_only_related_metric_detects_support_only_evidence():
             }
         }
     )
+
+
+def test_wrong_related_attribution_extracts_evidence_roles():
+    row = {"case_id": "pm_case_x", "event_title": "测试事件"}
+    item = {
+        "subject_key": "9036559",
+        "theme_name": "ASIC芯片",
+        "confidence": "0.65",
+        "match_reason": "top_candidate_evidence_related",
+        "evidence_json": {
+            "related_match": {
+                "evidence": {
+                    "hit_terms": ["芯片", "Meta"],
+                    "hit_term_roles": {"芯片": "main_anchor", "Meta": "main_anchor"},
+                    "evidence_summary": {"anchor_terms": ["芯片", "Meta"]},
+                }
+            }
+        },
+    }
+
+    out = _wrong_related_attribution_row(row, item, "AI/AR眼镜", "AR眼镜")
+
+    assert out["wrong_subject_key"] == "9036559"
+    assert out["wrong_theme_name"] == "ASIC芯片"
+    assert out["hit_terms"] == "芯片|Meta"
+    assert "Meta:main_anchor" in out["hit_term_roles"]
+    assert out["root_cause"] == "profile_boundary_missing"
 
 
 def test_ensure_no_gold_leak_accepts_clean_payload():

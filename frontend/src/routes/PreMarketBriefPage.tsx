@@ -64,7 +64,6 @@ function EventList({ events, mode = "normal" }: { events: PreMarketBriefEvent[];
           <p className="workspace-note">{event.summary || event.reason || "暂无摘要"}</p>
           <div className="recap-tag-stack">
             {event.theme_name && <span className="recap-chip is-basis">{event.theme_name}</span>}
-            {event.subject_key && <span className="recap-chip is-status">{event.subject_key}</span>}
             {event.confidence !== undefined && <span className="recap-chip is-watch">置信度 {score(event.confidence)}</span>}
             {event.source_channel && <span className="recap-chip">{event.source_channel}</span>}
           </div>
@@ -94,10 +93,10 @@ function ThemeTable({ themes }: { themes: PreMarketBriefTheme[] }) {
               <td>
                 {theme.subject_key ? (
                   <button className="recap-theme-link" type="button" onClick={() => navigateTo(`/themes/${encodeURIComponent(theme.subject_key || "")}`)}>
-                    {theme.theme_name || theme.subject_key}
+                    {theme.theme_name || "未命名题材"}
                   </button>
                 ) : (
-                  theme.theme_name || "--"
+                  theme.theme_name || "未命名题材"
                 )}
               </td>
               <td>{theme.event_count ?? 0}</td>
@@ -140,7 +139,7 @@ function OpportunityCard({ item }: { item: PreMarketOpportunity }) {
     <article className="recap-table-card pre-market-opportunity">
       <div className="recap-table-head">
         <div>
-          <strong>{item.theme_name || item.subject_key || "未命名题材"}</strong>
+          <strong>{item.theme_name || "未命名题材"}</strong>
           <p className="workspace-note">{item.latest_event_title || "暂无最新事件标题"}</p>
         </div>
         <div className="recap-tag-stack">

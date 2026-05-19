@@ -5,6 +5,7 @@
 """
 from __future__ import annotations
 
+import asyncio
 from dataclasses import dataclass
 from datetime import date
 from typing import Any
@@ -36,7 +37,7 @@ class BuildTushareDailyBarJob:
 
         adapter = TushareAdapter(token)
         try:
-            quotes = adapter.fetch_daily_quotes(str(trade_date))
+            quotes = await asyncio.to_thread(adapter.fetch_daily_quotes, str(trade_date))
         except Exception as e:
             return BuildResult(
                 name="build_tushare_daily_bar", trade_date=str(trade_date),

@@ -1,0 +1,8 @@
+{
+  "total": 68,
+  "passed": 65,
+  "pass_rate": 0.9559,
+  "threshold_passed": true,
+  "hard_negative_case_count": 62,
+  "hard_negative_checked_profiles": 32
+}
