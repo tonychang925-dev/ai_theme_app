@@ -97,6 +97,7 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
         BuildLeaderCandidateRunner,
         BuildLeaderLLMJudgementRunner,
         BuildLeaderLLMQueueRunner,
+        BuildStockKlineJudgementsRunner,
         BuildStockAbnormalSignalRunner,
         CallLeaderLLMRunner,
         JyhfImportHistoryRunner,
@@ -113,6 +114,7 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
         TushareKlineRunner,
     )
     registry.register("script.default", ScriptCommandRunner())
+    registry.register("stock.kline_judgements", BuildStockKlineJudgementsRunner())
     registry.register("leader_llm.queue", BuildLeaderLLMQueueRunner())
     registry.register("leader_llm.judgement", BuildLeaderLLMJudgementRunner())
     registry.register("leader_llm.call", CallLeaderLLMRunner())

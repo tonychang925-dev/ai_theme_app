@@ -12,6 +12,7 @@ from stock_processing_service.application.services.pre_market_window import (
     PreMarketWindow,
     resolve_pre_market_window,
 )
+from stock_processing_service.domain.services.alert_rule_engine import AlertRuleEngine
 
 logger = logging.getLogger(__name__)
 
@@ -90,12 +91,19 @@ class PreMarketBriefBuilder:
             trade_date, limit, matched_only=True, start_at=start_at, end_at=end_at
         )
 
+        # P1-E: AlertRuleEngine — 从 Intel 公告生成风险/机会提醒
+        intel_alerts = AlertRuleEngine.evaluate_batch(intel_announcements_raw)
+        risk_alerts = [a for a in intel_alerts if a["alert_type"] == "risk"]
+        opportunity_alerts = [a for a in intel_alerts if a["alert_type"] == "opportunity"]
+
         sections = self._build_sections(
             matched_events=matched_events,
             review_events=review_events,
             unknown_events=unknown_events,
             intel_announcements_raw=intel_announcements_raw,
             intel_announcements_matched=intel_announcements_matched,
+            risk_alerts=risk_alerts,
+            opportunity_alerts=opportunity_alerts,
             limit=limit,
         )
         if self._opportunity_builder is not None:
@@ -347,19 +355,25 @@ class PreMarketBriefBuilder:
         unknown_events: list[dict[str, Any]],
         intel_announcements_raw: list[dict[str, Any]],
         intel_announcements_matched: list[dict[str, Any]],
-        limit: int,
+        risk_alerts: list[dict[str, Any]] | None = None,
+        opportunity_alerts: list[dict[str, Any]] | None = None,
+        limit: int = 200,
     ) -> dict[str, list[dict[str, Any]]]:
         matched_events = self._dedupe_by_key(matched_events, key_fields=("event_id", "subject_key", "title"))[:limit]
         review_events = self._dedupe_by_key(review_events, key_fields=("event_id", "title"))[:limit]
         unknown_events = self._dedupe_by_key(unknown_events, key_fields=("event_id", "title"))[:limit]
         company_announcements_raw = self._build_company_announcements(intel_announcements_raw)
         company_announcements_matched = self._build_company_announcements(intel_announcements_matched)
+        # P1-E: merge rule-based alerts with legacy review/unknown alerts
+        legacy_risk = self._build_risk_alerts(review_events, unknown_events)
+        all_risk = legacy_risk + (risk_alerts or [])[:limit]
         return {
             "major_events": sorted(matched_events, key=lambda row: float(row.get("impact_score") or 0), reverse=True)[:limit],
             "matched_themes": self._build_matched_themes(matched_events),
             "review_events": review_events,
             "unknown_watch": unknown_events,
-            "risk_alerts": self._build_risk_alerts(review_events, unknown_events),
+            "risk_alerts": all_risk,
+            "opportunity_alerts": (opportunity_alerts or [])[:limit],
             "event_driven_opportunities": [],
             # === Phase 6A: 一手信息 section ===
             "company_announcements": company_announcements_raw,
@@ -368,7 +382,6 @@ class PreMarketBriefBuilder:
             "earnings_alerts": [],
             "research_highlights": [],
             "institutional_survey": [],
-            "opportunity_alerts": [],
         }
 
     def _build_matched_themes(self, matched_events: list[dict[str, Any]]) -> list[dict[str, Any]]:

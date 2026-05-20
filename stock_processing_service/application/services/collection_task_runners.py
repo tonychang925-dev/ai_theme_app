@@ -104,6 +104,33 @@ class BuildStockAbnormalSignalRunner:
             return CollectionTaskResult(status="failed", current_label="异动信号检测异常", error_message=str(e))
 
 
+class BuildStockKlineJudgementsRunner:
+    """个股K线位置与形态判断 Runner — in-process 调用脚本入口。"""
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        try:
+            import sys as _sys
+            _orig = _sys.argv[:]
+            _sys.argv = ["build_stock_kline_judgements.py", "--trade-date", context.trade_date]
+            try:
+                from database_service.scripts.build_stock_kline_judgements import main_async
+                exit_code = await main_async()
+            finally:
+                _sys.argv = _orig
+            return CollectionTaskResult(
+                status="success" if (exit_code or 0) == 0 else "failed",
+                current_label=f"个股K线位置与形态判断完成 (exit={exit_code})",
+                logs=[f"stock_kline_judgements exit_code={exit_code}"],
+                error_message="" if (exit_code or 0) == 0 else f"stock_kline_judgements exit_code={exit_code}",
+            )
+        except Exception as e:
+            return CollectionTaskResult(
+                status="failed",
+                current_label="个股K线位置与形态判断异常",
+                error_message=f"{type(e).__name__}: {e!r}",
+            )
+
+
 class PostMarketReportContextRunner:
     """新链盘后报告上下文 Runner。
 

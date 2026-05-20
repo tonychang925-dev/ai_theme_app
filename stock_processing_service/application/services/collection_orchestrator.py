@@ -190,17 +190,7 @@ class CollectionCommandPlanner:
                 steps=[
                     CollectionTaskStep(
                         key="stock_kline_judgements",
-                        runner_key="script.default",
-                        commands=[
-                            CollectionCommand(
-                                cmd=[
-                                    self._python_bin,
-                                    str(self._project_root / "database_service/scripts/build_stock_kline_judgements.py"),
-                                    "--trade-date",
-                                    trade_date,
-                                ]
-                            )
-                        ],
+                        runner_key="stock.kline_judgements",
                         label="个股K线位置与形态判断",
                     ),
                     CollectionTaskStep(
