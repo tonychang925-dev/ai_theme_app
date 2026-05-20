@@ -90,7 +90,7 @@ class RealtimeStackManager:
         self._python_cmd = python_cmd or os.environ.get(
             "PYTHON_CMD", os.environ.get("CONDA_PYTHON_CMD", sys.executable)
         )
-        self._redis_url = redis_url
+        self._redis_url = _normalize_redis_url(redis_url)
         # P1-C: 当前阶段硬锁 stock_data_test 单库，禁止读写分离或 stock_data 混用
         self._db_name = write_db or os.environ.get("PG_DATABASE") or "stock_data_test"
         if self._db_name != "stock_data_test":
@@ -655,3 +655,12 @@ def _pid_alive(pid: int) -> bool:
 def _write_pidfile(path: Path, pid: int | None) -> None:
     if pid is not None:
         path.write_text(str(pid))
+
+
+def _normalize_redis_url(url: str | None) -> str:
+    v = (url or os.getenv("REDIS_URL") or "").strip().strip("'\"")
+    if not v:
+        v = "redis://127.0.0.1:6379/0"
+    if not v.startswith(("redis://", "rediss://", "unix://")):
+        raise RuntimeError(f"Invalid REDIS_URL: {v!r}")
+    return v

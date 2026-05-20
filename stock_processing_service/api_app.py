@@ -58,9 +58,16 @@ REALTIME_AUCTION_CACHE_PREFIX = "sps:w2s:pre_market_auction"
 
 def _db_name() -> str:
     # Phase 5: production uses single read/write database.
-    # The read/write split (stock_data / stock_data_test) was an E2E isolation
-    # concern; in production all tables live in the same database.
     return str(os.getenv("PG_DATABASE") or os.getenv("DB_NAME") or "stock_data_test")
+
+
+def _redis_url() -> str:
+    v = (os.getenv("REDIS_URL") or "").strip().strip("'\"")
+    if not v:
+        return "redis://127.0.0.1:6379/0"
+    if not v.startswith(("redis://", "rediss://", "unix://")):
+        raise RuntimeError(f"Invalid REDIS_URL: {v!r}")
+    return v
 
 
 async def _init_stock_match_engine_background(app: FastAPI) -> None:
@@ -153,7 +160,7 @@ async def lifespan(app: FastAPI):
     )
     # Phase 5: new-chain realtime stack manager
     app.state.realtime_manager = RealtimeStackManager(
-        redis_url=os.environ.get("REDIS_URL", "redis://127.0.0.1:6379/0"),
+        redis_url=_redis_url(),
         write_db=_db_name(),
     )
     await app.state.phase1_repo.initialize()
