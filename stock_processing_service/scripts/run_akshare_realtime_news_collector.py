@@ -37,6 +37,9 @@ def build_parser() -> argparse.ArgumentParser:
 
 async def async_main() -> None:
     args = build_parser().parse_args()
+    args.redis_url = (args.redis_url or "").strip() or "redis://127.0.0.1:6379/0"
+    if not args.redis_url.startswith(("redis://", "rediss://", "unix://")):
+        raise SystemExit(f"Invalid --redis-url: {args.redis_url!r}")
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
     collector = AkShareRealtimeNewsCollector(
         redis_url=args.redis_url,

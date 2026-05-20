@@ -34,7 +34,7 @@
     "rename-conversation": 11,
     "custom-commands": 11
   },
-  "promptQueueUseCount": 310,
+  "promptQueueUseCount": 318,
   "showExpandedTodos": true,
   "cachedGrowthBookFeatures": {
     "tengu_red_coaster": false,
@@ -576,6 +576,6 @@
   "officialMarketplaceAutoInstalled": true,
   "showSpinnerTree": false,
   "feedbackSurveyState": {
-    "lastShownTime": 1778841524957
+    "lastShownTime": 1779287133703
   }
 }
