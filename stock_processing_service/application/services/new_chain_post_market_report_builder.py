@@ -69,7 +69,14 @@ class NewChainPostMarketReportBuilder:
             },
             {
                 "heading": "主线与支线",
-                "items": self._theme_lines(top_candidates or formal_candidates, theme_name_map, cycles_by_theme, stock_fact_map, limit=12),
+                "items": self._theme_lines(
+                    top_candidates or formal_candidates,
+                    theme_name_map,
+                    cycles_by_theme,
+                    stock_fact_map,
+                    context,
+                    limit=12,
+                ),
             },
             {
                 "heading": "主线资金流入前10",
@@ -192,6 +199,7 @@ class NewChainPostMarketReportBuilder:
         theme_name_map: dict[str, str],
         cycles_by_theme: dict[str, dict[str, Any]],
         stock_fact_map: dict[tuple[str, str], dict[str, Any]],
+        context: dict[str, Any],
         *,
         limit: int,
     ) -> list[str]:
@@ -200,6 +208,9 @@ class NewChainPostMarketReportBuilder:
             item = dict(row or {})
             theme = NewChainPostMarketReportBuilder._theme_name(item, theme_name_map)
             grouped.setdefault(theme, []).append(item)
+        capital_by_subject = NewChainPostMarketReportBuilder._theme_capital_map(
+            context.get("theme_capital_flow") or []
+        )
         lines: list[str] = []
         for theme, items in list(grouped.items())[:limit]:
             top = sorted(items, key=lambda x: NewChainPostMarketReportBuilder._score(x), reverse=True)[:3]
@@ -208,12 +219,21 @@ class NewChainPostMarketReportBuilder:
             cycle = cycles_by_theme.get(theme, {})
             subject_key = str(top[0].get("subject_key") or "--") if top else "--"
             fact = NewChainPostMarketReportBuilder._fact_for(top[0] if top else {}, stock_fact_map)
+            capital = capital_by_subject.get(subject_key, {})
+            total_inflow = NewChainPostMarketReportBuilder._first_present(
+                capital.get("main_net_inflow_sum"),
+                NewChainPostMarketReportBuilder._inflow(fact),
+            )
+            leader_inflow = NewChainPostMarketReportBuilder._first_present(
+                capital.get("leader_main_net_inflow"),
+                NewChainPostMarketReportBuilder._inflow(fact),
+            )
             lines.append(
                 f"{theme}：subject_key {subject_key}；层级 main；主线存活 {'是' if cycle.get('final_mainline_alive') is not False else '否'}；"
                 f"状态 {cycle.get('final_cycle_state') or 'rebound'}；主线强度 {NewChainPostMarketReportBuilder._fmt(cycle.get('mainline_strength_score') or cycle.get('state_strength_score'))}；"
                 f"退潮风险 {NewChainPostMarketReportBuilder._fmt(cycle.get('fade_risk_score'))}；"
-                f"总净流入 {NewChainPostMarketReportBuilder._money(NewChainPostMarketReportBuilder._inflow(fact))}；"
-                f"龙头净流入 {NewChainPostMarketReportBuilder._money(NewChainPostMarketReportBuilder._inflow(fact))}；"
+                f"总净流入 {NewChainPostMarketReportBuilder._money(total_inflow)}；"
+                f"龙头净流入 {NewChainPostMarketReportBuilder._money(leader_inflow)}；"
                 f"题材K线 {NewChainPostMarketReportBuilder._kline_text(fact)}；代表股 {stocks or '--'}；事件 {best_score:.2f}"
             )
         return lines or ["暂无主线候选"]
@@ -357,10 +377,20 @@ class NewChainPostMarketReportBuilder:
             support_type = str(item.get("support_type") or fact.get("position_label") or "").strip()
             score_value = NewChainPostMarketReportBuilder._score(item)
             role = "龙头" if score_value >= 98 else "龙二" if score_value >= 90 else "补涨"
+            money_score = NewChainPostMarketReportBuilder._first_present(
+                fact.get("money_flow_score"),
+                fact.get("money_composite_score"),
+                fact.get("abnormal_composite_score"),
+                item.get("money_flow_score"),
+                item.get("money_composite_score"),
+                item.get("abnormal_composite_score"),
+                item.get("candidate_score"),
+                item.get("watch_score"),
+            )
             lines.append(
                 f"{theme}：{role} {stock_name or '--'}；综合分 {score}；"
                 f"正宗性 {score}×25%｜新链候选强度；领涨性 {NewChainPostMarketReportBuilder._fmt(fact.get('pct_chg'))}；"
-                f"资金量能 {NewChainPostMarketReportBuilder._fmt(fact.get('money_flow_score') or fact.get('money_composite_score') or fact.get('abnormal_composite_score'))}；"
+                f"资金量能 {NewChainPostMarketReportBuilder._fmt(money_score)}；"
                 f"结构位置 {NewChainPostMarketReportBuilder._fmt(fact.get('trend_strength_score'))}；"
                 f"抗跌承接 {NewChainPostMarketReportBuilder._fmt(fact.get('support_score') or item.get('support_score') or fact.get('trend_strength_score'))}；"
                 f"资金 {fact.get('money_flow_tier') or '新链候选'} / {fact.get('role_enhanced') or fact.get('role_label') or '强势观察'}；"
@@ -548,20 +578,41 @@ class NewChainPostMarketReportBuilder:
         result: dict[tuple[str, str], dict[str, Any]] = {}
         for row in rows:
             item = dict(row or {})
-            stock_id = str(item.get("stock_id") or "")
-            subject_key = str(item.get("subject_key") or "")
-            if not stock_id:
+            subject_key = str(item.get("subject_key") or "").strip()
+            stock_keys = NewChainPostMarketReportBuilder._stock_key_variants(item.get("stock_id"))
+            if not stock_keys:
                 continue
-            result[(stock_id.split(".")[0], subject_key)] = item
-            result[(stock_id, subject_key)] = item
+            for stock_id in stock_keys:
+                result[(subject_key, stock_id)] = item
         return result
 
     @staticmethod
     def _fact_for(item: Any, stock_fact_map: dict[tuple[str, str], dict[str, Any]]) -> dict[str, Any]:
         row = dict(item or {})
-        stock_id = str(row.get("stock_id") or "")
-        subject_key = str(row.get("subject_key") or "")
-        return stock_fact_map.get((stock_id, subject_key)) or stock_fact_map.get((stock_id.split(".")[0], subject_key)) or {}
+        subject_key = str(row.get("subject_key") or "").strip()
+        for stock_id in NewChainPostMarketReportBuilder._stock_key_variants(row.get("stock_id")):
+            fact = stock_fact_map.get((subject_key, stock_id))
+            if fact:
+                return fact
+        return {}
+
+    @staticmethod
+    def _stock_key_variants(value: Any) -> list[str]:
+        raw = str(value or "").strip().upper()
+        if not raw:
+            return []
+        base = raw.split(".")[0]
+        return list(dict.fromkeys([raw, base]))
+
+    @staticmethod
+    def _theme_capital_map(rows: list[Any]) -> dict[str, dict[str, Any]]:
+        result: dict[str, dict[str, Any]] = {}
+        for row in rows:
+            item = dict(row or {})
+            subject_key = str(item.get("subject_key") or "").strip()
+            if subject_key:
+                result[subject_key] = item
+        return result
 
     @staticmethod
     def _cycle_map(rows: list[Any], theme_name_map: dict[str, str]) -> dict[str, dict[str, Any]]:
@@ -623,6 +674,13 @@ class NewChainPostMarketReportBuilder:
     @staticmethod
     def _inflow(fact: dict[str, Any]) -> Any:
         return fact.get("main_net_inflow") or fact.get("abnormal_main_net_inflow") or fact.get("institution_net_buy")
+
+    @staticmethod
+    def _first_present(*values: Any) -> Any:
+        for value in values:
+            if value not in (None, ""):
+                return value
+        return None
 
     @staticmethod
     def _value_or_dash(value: Any) -> str:

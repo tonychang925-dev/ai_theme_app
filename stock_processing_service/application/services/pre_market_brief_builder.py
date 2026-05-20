@@ -91,10 +91,11 @@ class PreMarketBriefBuilder:
             trade_date, limit, matched_only=True, start_at=start_at, end_at=end_at
         )
 
-        # P1-E: AlertRuleEngine — 从 Intel 公告生成风险/机会提醒
-        intel_alerts = AlertRuleEngine.evaluate_batch(intel_announcements_raw)
-        risk_alerts = [a for a in intel_alerts if a["alert_type"] == "risk"]
-        opportunity_alerts = [a for a in intel_alerts if a["alert_type"] == "opportunity"]
+        # P1-E1: AlertRuleEngine — 从 Intel 公告生成分级/去重/截断的风险+机会提醒
+        intel_alerts = AlertRuleEngine.evaluate_batch(intel_announcements_raw,
+                                                       risk_top_n=5, opportunity_top_n=10)
+        risk_alerts = intel_alerts["risk_alerts"]
+        opportunity_alerts = intel_alerts["opportunity_alerts"]
 
         sections = self._build_sections(
             matched_events=matched_events,
