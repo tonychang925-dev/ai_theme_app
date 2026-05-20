@@ -1679,3 +1679,9 @@
 {"display":"[Pasted text #2 +69 lines]","pastedContents":{"2":{"id":2,"type":"text","contentHash":"ba13496f7520fcbb"}},"timestamp":1779253119605,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
 {"display":"[Pasted text #1 +100 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"b23d36fa4b4274c5"}},"timestamp":1779253724612,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
 {"display":"[Pasted text #1 +83 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"896d59422f9b6834"}},"timestamp":1779254161061,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"[Pasted text #1 +78 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"43f52aa4e89a9096"}},"timestamp":1779256724695,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"[Pasted text #1 +124 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"332810553024d6c5"}},"timestamp":1779257010605,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"为了提高效率，我建议以后的模拟测试数据直接从100条测试数据集中提取，这样测试效果更好！","pastedContents":{},"timestamp":1779257097431,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"我们之前有e2e100的测试用例代码，可以参考！","pastedContents":{},"timestamp":1779257167632,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"建议清空stream流中积压的数据","pastedContents":{},"timestamp":1779257384788,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"我们有清理strem的专门脚本","pastedContents":{},"timestamp":1779257420098,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
