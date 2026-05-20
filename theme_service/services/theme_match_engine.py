@@ -384,6 +384,8 @@ def _build_event_match_profile(request: ThemeMatchRequest) -> EventMatchProfile:
             evidence = json.loads(evidence)
         except Exception:
             evidence = {}
+        if not isinstance(evidence, dict):
+            evidence = {}
     technology_anchors = _filter_generic_terms(
         _normalize_list(evidence.get("tech_phrases")) + _normalize_list(evidence.get("core_concepts"))
     )

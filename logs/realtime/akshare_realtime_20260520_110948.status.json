@@ -1,9 +1,9 @@
 {
-  "run_id": "realtime_20260520_091956",
+  "run_id": "realtime_20260520_110948",
   "stream": "stream:news:raw",
   "running": true,
-  "started_at": "2026-05-20T17:19:59.048848+08:00",
-  "last_fetch_at": "2026-05-20T17:31:26.526186+08:00",
+  "started_at": "2026-05-20T19:09:48.344623+08:00",
+  "last_fetch_at": "2026-05-20T19:14:44.039689+08:00",
   "last_success_at": null,
   "fetched_count": 0,
   "pushed_count": 0,
@@ -13,8 +13,8 @@
   "filter_error_count": 0,
   "filter_mode": "rule",
   "last_filter_reason": null,
-  "error_count": 8,
-  "last_error": "Failed to perform, curl: (28) Connection timed out after 30002 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.",
+  "error_count": 4,
+  "last_error": "Failed to perform, curl: (28) Connection timed out after 30001 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.",
   "prefilter_stats": {
     "prompt_eval_count": 0,
     "prompt_pass_count": 0,
