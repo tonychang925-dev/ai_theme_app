@@ -2375,7 +2375,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 (
                     COALESCE(mr.is_main_theme, FALSE)
                     AND COALESCE(mr.identity_status, '') = 'confirmed'
-                    AND COALESCE(msd.state, COALESCE(v2.final_cycle_state, '')) <> 'fade_confirmed'
+                    AND COALESCE(v2.final_mainline_alive, FALSE) = TRUE
                     AND COALESCE(v2.fade_confirmed, FALSE) = FALSE
                 ) AS final_mainline_alive,
                 COALESCE(msd.mainline_strength_score, v2.mainline_strength_score, 0) AS mainline_strength_score,
@@ -2401,7 +2401,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 (
                     COALESCE(mr.is_main_theme, FALSE) = TRUE
                     AND COALESCE(mr.identity_status, '') = 'confirmed'
-                    AND COALESCE(msd.state, COALESCE(v2.final_cycle_state, '')) <> 'fade_confirmed'
+                    AND COALESCE(v2.final_mainline_alive, FALSE) = TRUE
                     AND COALESCE(v2.fade_confirmed, FALSE) = FALSE
                     AND (
                         COALESCE(ss.subject_limit_up_count, 0) >= 2
@@ -2462,6 +2462,9 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             p.*,
             COALESCE(sf.current_flag_today, 0) AS current_flag_today
         FROM strong_stock_watch_pool p
+        LEFT JOIN theme_cycle_judgement_v2 v2
+          ON v2.trade_date = $1::date
+         AND v2.subject_key = p.subject_key
         LEFT JOIN (
             SELECT
                 split_part(stock_id, '.', 1) AS stock_code,
@@ -2479,6 +2482,13 @@ class PostgresDatabaseManager(BaseDatabaseManager):
           ON sf.stock_code = split_part(p.stock_id, '.', 1)
         WHERE p.watch_status IN ('pending_seed', 'pending_refresh', 'active', 'weakening')
           AND p.last_trade_date <= $1::date
+          AND (
+              COALESCE(NULLIF(LOWER(p.labels_json->>'has_two_board'), ''), 'false') IN ('true', 't', '1', 'yes')
+              OR (
+                  COALESCE(v2.final_mainline_alive, FALSE) = TRUE
+                  AND COALESCE(v2.fade_confirmed, FALSE) = FALSE
+              )
+          )
         ORDER BY
             CASE
                 WHEN p.watch_status = 'pending_seed' THEN 0
@@ -6964,9 +6974,9 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     rn.resolved_subject_name,
                     esm.subject_key
                 ) AS theme_name,
-                COALESCE(ne.event_time, ne.created_at, esm.created_at, nr.created_at, nr.publish_date::timestamp) AS occurred_at,
+                COALESCE(ne.event_time, nr.publish_date::timestamp, ne.created_at, esm.created_at, nr.created_at) AS occurred_at,
                 COALESCE(NULLIF(nr.title, ''), NULLIF(ne.summary, ''), ne.event_type, ('事件#' || ne.id::text)) AS title,
-                COALESCE(ne.summary, nr.content, '') AS summary,
+                COALESCE(NULLIF(nr.content, ''), ne.summary, '') AS summary,
                 COALESCE(esm.confidence, ne.confidence) AS confidence,
                 0::double precision AS impact_score,
                 nr.source AS raw_source,
@@ -7128,7 +7138,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             esm.run_id,
             esm.created_at,
             esm.updated_at,
-            COALESCE(ne.event_time, ne.created_at, esm.created_at, nr.created_at, nr.publish_date::timestamp) AS occurred_at,
+            COALESCE(ne.event_time, nr.publish_date::timestamp, ne.created_at, esm.created_at, nr.created_at) AS occurred_at,
             COALESCE(NULLIF(nr.title, ''), NULLIF(ne.summary, ''), ne.event_type, ('事件#' || ne.id::text)) AS title,
             COALESCE(ne.summary, nr.content, '') AS summary,
             -- P1-B: 计算规范化 source_channel
