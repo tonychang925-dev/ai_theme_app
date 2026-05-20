@@ -105,6 +105,32 @@ async def _init_stock_match_engine_background(app: FastAPI) -> None:
 async def lifespan(app: FastAPI):
     cfg = DatabaseConfig(db_type=DatabaseType.POSTGRESQL, postgres_database=_db_name())
     gw = await DatabaseGateway.initialize(config=cfg, auto_warm_cache=False)
+
+    # P1-C: DB readiness hard guard — enforce single-DB stock_data_test
+    write_db = _db_name()
+    read_db = os.getenv("READ_PG_DATABASE", os.getenv("PG_DATABASE", ""))
+    if not read_db:
+        read_db = write_db
+    force_single = os.getenv("FORCE_SINGLE_DB", "true").lower()
+    same_db = (write_db == read_db)
+    db_info = {
+        "db_mode": "single_test" if (same_db and write_db == "stock_data_test") else "unknown",
+        "write_db": write_db,
+        "read_db": read_db,
+        "same_db": same_db,
+    }
+    if force_single in ("1", "true", "yes", "on"):
+        if write_db != "stock_data_test" or read_db != "stock_data_test":
+            raise RuntimeError(
+                f"DB guard: FORCE_SINGLE_DB=true but write_db={write_db}, read_db={read_db}. "
+                f"Both must be stock_data_test. Set FORCE_SINGLE_DB=false to bypass."
+            )
+    logger.warning(
+        "[DB_GUARD] db_mode=%s write_db=%s read_db=%s same_db=%s",
+        db_info["db_mode"], write_db, read_db, same_db,
+    )
+    app.state.db_info = db_info
+
     facade = _ReplayDatabaseStockFacade(gw)
     app.state.read_port = StockReadGatewayAdapter(facade)
     app.state.gateway = gw
@@ -1455,6 +1481,12 @@ async def realtime_start() -> dict[str, Any]:
 
 
 @app.api_route("/api/v1/realtime/stop", methods=["GET", "POST"])
+@app.get("/api/v1/db/info")
+async def db_info_endpoint() -> dict[str, Any]:
+    """P1-C: DB readiness 信息。启动时校验 write_db==read_db==stock_data_test。"""
+    return getattr(app.state, "db_info", {"error": "db_info not available"})
+
+
 async def realtime_stop() -> dict[str, Any]:
     """优雅停止新链实时采集。"""
     manager: RealtimeStackManager = app.state.realtime_manager
@@ -1472,7 +1504,7 @@ async def realtime_status() -> dict[str, Any]:
 async def intel_produce(limit: int = Query(50, ge=1, le=200)) -> dict[str, Any]:
     """手动触发 Intel 公告投递：从 structured_intel_event.pending 生产到 news_event + stream。
 
-    返回 produced/skipped/failed 计数。"""
+    自动继承当前 realtime stack 的 run_id（如果存在），确保 ThemeProcessor run_id_filter 匹配。"""
     from stock_processing_service.application.services.intel_stream_producer import (
         IntelStreamProducer,
     )
@@ -1482,10 +1514,13 @@ async def intel_produce(limit: int = Query(50, ge=1, le=200)) -> dict[str, Any]:
     import redis.asyncio as aioredis
     redis_url = os.environ.get("REDIS_URL", "redis://127.0.0.1:6379/0")
     redis_client = aioredis.Redis.from_url(redis_url, decode_responses=True)
+    # P1-C: inherit realtime stack run_id so ThemeProcessor's run_id_filter accepts intel envelopes
+    mgr = getattr(app.state, "realtime_manager", None)
+    run_id = mgr._state.run_id if mgr and mgr._state.run_id else os.environ.get("RUN_ID", "")
     try:
-        producer = IntelStreamProducer(gateway=gw, redis_client=redis_client)
+        producer = IntelStreamProducer(gateway=gw, redis_client=redis_client, run_id=run_id)
         count = await producer.produce_batch(limit=limit)
-        return {"ok": True, "produced": count, "stream": "stream:events:structured"}
+        return {"ok": True, "produced": count, "stream": "stream:events:structured", "run_id": run_id or None}
     except Exception as exc:
         return {"ok": False, "error": str(exc)}
     finally:

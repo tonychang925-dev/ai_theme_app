@@ -49,9 +49,14 @@ async def run_services(args: argparse.Namespace) -> None:
     host, port = _redis_host_port(args.redis_url)
     redis_client = redis.Redis.from_url(args.redis_url, decode_responses=True)
 
-    theme_group = args.theme_consumer_group or f"theme_processors_e2e_{args.run_id}"
+    # P1-C-pre: realtime 使用稳定 group 名，避免 e2e_{run_id} 被 cleanup 误删
+    if args.run_id and args.run_id.startswith("realtime_"):
+        theme_group = args.theme_consumer_group or "theme_processor_realtime"
+        decision_group = args.decision_consumer_group or "decision_executor_realtime"
+    else:
+        theme_group = args.theme_consumer_group or f"theme_processors_e2e_{args.run_id}"
+        decision_group = args.decision_consumer_group or f"decision_executors_e2e_{args.run_id}"
     await _ensure_group_at_tail(redis_client, args.structured_stream, theme_group)
-    decision_group = args.decision_consumer_group or f"decision_executors_e2e_{args.run_id}"
     await _ensure_group_at_tail(redis_client, args.decision_stream, decision_group)
 
     gateway = await get_gateway(enable_retry=True)

@@ -997,11 +997,10 @@ StockMatchEngine 作为盘前必读主链路
 当前固定原则：
 
 ```text
-1. 运行时事件与报告写入 stock_data。
-2. 题材画像、久赢恒丰题材股票池、强势池、弱转强池等只读数据优先读 stock_data_test。
-3. 题材主键为 subject_key。
-4. 事件题材映射主表为 event_subject_map。
-5. 前端只读 SPS /api/v1/pre_market_brief，不经过 frontend_bff。
+1. 生产数据库为 stock_data_test，所有读写均使用 stock_data_test。
+2. 题材主键为 subject_key。
+3. 事件题材映射主表为 event_subject_map。
+4. 前端只读 SPS /api/v1/pre_market_brief，不经过 frontend_bff。
 ```
 
 ### 16.2 已完成成果
@@ -1766,9 +1765,21 @@ P0-E DONE (2026-05-20)：
 - phase6a DDL 补齐: structured_intel_event.stream_message_id/stream_produced_at 列 + update 类型转换修复
 - pre_market_brief: company_announcements_raw=25 (真实cninfo公告)
 
-已知风险：RISK-01(AkShare网络), RISK-02(HUMAN_REVIEW样本), RISK-03(stock_data切换)
+已知风险：RISK-01(AkShare网络), RISK-02(HUMAN_REVIEW样本), RISK-03(Redis consumer group churn)
 
-当前未完成：P1 (AkShare稳定性、scheduler单测更新、diagnostics增强)
+P1-C IN_PROGRESS：stock_data_test 单库稳定性演练 (2026-05-20)
+- DB guard: FORCE_SINGLE_DB=true, SPS 启动校验 write_db==read_db==stock_data_test, fail-fast
+- RealtimeStackManager 子进程统一注入 PG_DATABASE=READ_PG_DATABASE=POSTGRES_DATABASE=stock_data_test
+- /api/v1/db/info 端点输出 db_mode/write_db/read_db/same_db
+- 废弃：读写分离（写 stock_data / 读 stock_data_test）
+- 废弃：stock_data 生产库演练计划
+
+P1-C0 PARTIAL / FIXED_PENDING_STABLE_SMOKE：
+- 已修复：require_news_id 对 intel 豁免
+- consumer group 稳定命名：theme_processor_realtime / decision_executor_realtime
+- 待复验：1 条窗口内 intel 公告端到端
+
+已知风险：RISK-01(AkShare网络), RISK-02(HUMAN_REVIEW样本), RISK-03(Redis consumer group churn)
 ```
 
 ### 17.11 统一验收清单
