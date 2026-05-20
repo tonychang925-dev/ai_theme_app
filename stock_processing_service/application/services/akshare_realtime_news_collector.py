@@ -51,6 +51,7 @@ class AkShareRealtimeNewsCollector:
         prefilter_mode: str = "rule",
         prefilter_model_path: str = "",
         prefilter_fail_open: bool = True,
+        prefilter_skip_log_path: str | Path | None = None,
     ) -> None:
         self.redis_url = redis_url
         self.stream = stream
@@ -59,6 +60,9 @@ class AkShareRealtimeNewsCollector:
         self.lookback_minutes = max(1, int(lookback_minutes))
         self.batch_size = max(1, int(batch_size))
         self.status_path = Path(status_path) if status_path else None
+        self._prefilter_skip_log = Path(prefilter_skip_log_path) if prefilter_skip_log_path else None
+        if self._prefilter_skip_log:
+            self._prefilter_skip_log.parent.mkdir(parents=True, exist_ok=True)
         self.stats = AkShareCollectorStats(run_id=run_id, stream=stream)
         self._seen: set[str] = set()
         self._redis = None
@@ -105,7 +109,8 @@ class AkShareRealtimeNewsCollector:
                 if not triage.pass_:
                     filtered += 1
                     self.stats.last_filter_reason = triage.reason
-                    self._seen.add(dedupe_key)  # filtered 也记 seen，避免反复评估
+                    self._seen.add(dedupe_key)
+                    self._write_skip_log(payload, triage)
                     continue
 
                 self.stats.filter_pass_count += 1
@@ -198,6 +203,22 @@ class AkShareRealtimeNewsCollector:
             return
         self.status_path.parent.mkdir(parents=True, exist_ok=True)
         self.status_path.write_text(json.dumps(asdict(self.stats), ensure_ascii=False, indent=2), encoding="utf-8")
+
+    def _write_skip_log(self, payload: dict[str, str], triage_result) -> None:
+        if not self._prefilter_skip_log:
+            return
+        try:
+            entry = {
+                "time": _now_iso(),
+                "title": str(payload.get("title", ""))[:200],
+                "reason": str(triage_result.reason)[:200],
+                "mode": str(triage_result.mode),
+                "source": str(payload.get("source", "")),
+            }
+            with open(self._prefilter_skip_log, "a", encoding="utf-8") as f:
+                f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+        except Exception:
+            pass  # skip log 不是关键路径
 
 
 def _pick(row: dict[str, Any], *keys: str) -> Any:

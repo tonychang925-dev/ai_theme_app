@@ -122,6 +122,7 @@ class RealtimeStackManager:
             rebuild_log = self._log_dir / f"brief_rebuild_{run_id}.log"
             intel_log = self._log_dir / f"intel_producer_{run_id}.log"
             akshare_status = self._log_dir / f"akshare_{run_id}.status.json"
+            akshare_skip_log = self._log_dir / f"akshare_{run_id}.prefilter_skipped.jsonl"
             rebuild_status = self._log_dir / f"brief_rebuild_{run_id}.status.json"
             intel_status = self._log_dir / f"intel_producer_{run_id}.status.json"
 
@@ -161,6 +162,7 @@ class RealtimeStackManager:
                     "--poll-interval-seconds", os.environ.get("AKSHARE_REALTIME_POLL_SECONDS", "60"),
                     "--lookback-minutes", os.environ.get("AKSHARE_REALTIME_LOOKBACK_MINUTES", "180"),
                     "--status-path", str(akshare_status),
+                    "--prefilter-skip-log", str(akshare_skip_log),
                     stdout=open(akshare_log, "w"),
                     stderr=asyncio.subprocess.STDOUT,
                     env=env,
