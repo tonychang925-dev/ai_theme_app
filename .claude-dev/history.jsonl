@@ -1685,3 +1685,10 @@
 {"display":"我们之前有e2e100的测试用例代码，可以参考！","pastedContents":{},"timestamp":1779257167632,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
 {"display":"建议清空stream流中积压的数据","pastedContents":{},"timestamp":1779257384788,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
 {"display":"我们有清理strem的专门脚本","pastedContents":{},"timestamp":1779257420098,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"[Pasted text #1]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"4866f306e5d046d2"}},"timestamp":1779258996079,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"为什么还在用stock_data数据库？！我们正式的生产环境的数据库是stock_data_test！不是stock_data！！","pastedContents":{},"timestamp":1779259968850,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"是的！必须全部清理掉！","pastedContents":{},"timestamp":1779260024449,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"继续 P1-C","pastedContents":{},"timestamp":1779260249377,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"[Pasted text #1 +249 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"7b09299e2dacf91d"}},"timestamp":1779262379876,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"继续 P1-C，先把 Redis consumer group 问题解决","pastedContents":{},"timestamp":1779262879140,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"把目前的碰到的问题列一个清单出来！卡了好久了！","pastedContents":{},"timestamp":1779263946138,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}

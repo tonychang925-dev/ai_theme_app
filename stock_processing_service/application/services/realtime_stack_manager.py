@@ -300,6 +300,9 @@ class RealtimeStackManager:
             "profile_fallback": BASELINE_ENV.get("THEME_PROFILE_V2_FALLBACK_TO_V1", "true"),
             "llm_judge_mode": BASELINE_ENV.get("THEME_MATCH_LLM_JUDGE_MODE", "auto"),
             "structured_concurrency": int(BASELINE_ENV.get("THEME_PROCESSOR_STRUCTURED_CONCURRENCY", "2")),
+            "write_db": self._db_name,
+            "read_db": self._db_name,
+            "same_db": True,
         }
 
     # ── Internal ───────────────────────────────────────────────────
@@ -307,12 +310,13 @@ class RealtimeStackManager:
     def _build_env(self, run_id: str) -> dict[str, str]:
         env = os.environ.copy()
         env.update(BASELINE_ENV)
+        # P1-C: 统一单库 stock_data_test — 所有子进程强制继承
         env["PG_DATABASE"] = self._db_name
         env["DB_NAME"] = self._db_name
+        env["READ_PG_DATABASE"] = self._db_name
+        env["POSTGRES_DATABASE"] = self._db_name
         env["REDIS_URL"] = self._redis_url
         env["RUN_ID"] = run_id
-        # Phase 5: production uses single database; E2E may set READ_PG_DATABASE for isolation
-        env["READ_PG_DATABASE"] = os.environ.get("READ_PG_DATABASE", self._db_name)
         return env
 
     async def _cleanup_processes(self) -> None:
