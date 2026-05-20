@@ -1,24 +1,23 @@
 """P1-A: AkShare 新闻预过滤适配层。
 
-包装 LocalQwenNewsTriageService，提供与 AkShareRealtimeNewsCollector 兼容的接口。
-第一版默认 rule-only，prompt 模式预留后续灰度。
+支持三种模式：
+  rule        — 内嵌规则，保守放行
+  rule_prompt — 规则 + Qwen prompt 灰区判定
+  prompt      — 全量 Qwen prompt（暂未启用）
+
+P1-A2: rule_prompt 模式下，规则可明确判断的直接决策，灰区交给 Qwen 1.5B。
 """
 from __future__ import annotations
 
+import json as _json
 import logging
+import os
+import re
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Any, Dict, Optional
 
 logger = logging.getLogger(__name__)
-
-try:
-    from database_service.streams.services.local_qwen_triage_service import (
-        LocalQwenNewsTriageService,
-    )
-    HAS_LOCAL_TRIAGE = True
-except ImportError:
-    LocalQwenNewsTriageService = None  # type: ignore
-    HAS_LOCAL_TRIAGE = False
 
 
 @dataclass
@@ -26,18 +25,25 @@ class NewsTriageResult:
     pass_: bool
     decision: str       # PASS | SKIP | REVIEW
     reason: str
-    mode: str           # rule | prompt | embedding
+    mode: str           # rule | qwen_prompt | embedded_rule | error
     score: float | None
 
 
 class NewsPreFilterAdapter:
-    """预过滤适配层 — 规则优先，模型可选，fail-open。"""
+    """预过滤适配层 — 规则优先，模型可选，fail-open。
+
+    Modes:
+      off         — 不做过滤
+      rule        — 内嵌规则，保守放行
+      rule_prompt — 规则明确→直接决策，灰区→Qwen prompt
+      prompt      — 全量 Qwen prompt（灰度后启用）
+    """
 
     def __init__(
         self,
         *,
         enabled: bool = True,
-        mode: str = "rule",          # rule | prompt | embedding | off
+        mode: str = "rule",
         model_path: str = "",
         min_importance: int = 40,
         timeout_seconds: float = 2.0,
@@ -49,92 +55,137 @@ class NewsPreFilterAdapter:
         self.timeout_seconds = timeout_seconds
         self.fail_open = fail_open
 
-        self._triage: Optional[LocalQwenNewsTriageService] = None
-        self._use_prompt = (self.mode in {"prompt", "hybrid"})
+        self._use_qwen = self.mode in {"rule_prompt", "prompt"}
+        self._qwen_llm = None
+        self._qwen_ready = False
+        self._qwen_init_attempted = False
+        self._model_path = model_path
+
+        # stats
+        self.stats = {
+            "prompt_eval_count": 0,
+            "prompt_pass_count": 0,
+            "prompt_skip_count": 0,
+            "prompt_error_count": 0,
+            "prompt_total_ms": 0.0,
+        }
 
         if self.mode == "off":
             return
 
-        # rule-only 模式不需要初始化 LocalQwenNewsTriageService
-        if not self._use_prompt:
-            logger.info("NewsPreFilter initialized: mode=rule (embedded rules only)")
-            return
-
-        if not HAS_LOCAL_TRIAGE:
-            logger.warning(
-                "NewsPreFilter: LocalQwenNewsTriageService 不可用，"
-                "降级为 rule-only（内嵌规则）"
-            )
-            self.mode = "rule"
-            self._use_prompt = False
-            return
-
-        triage_cfg: Dict[str, Any] = {
-            "enable_local_triage": True,
-            "triage_mode": "prompt",
-            "local_qwen_model_path": model_path,
-        }
-        self._triage = LocalQwenNewsTriageService(triage_cfg)
-        logger.info(
-            "NewsPreFilter initialized: mode=prompt model=%s",
-            model_path or "auto-detect",
-        )
+        logger.info("NewsPreFilter initialized: mode=%s qwen=%s", self.mode, self._use_qwen)
 
     def evaluate(self, payload: Dict[str, Any]) -> NewsTriageResult:
-        """评估单条新闻是否应通过预过滤。
-
-        rule-only 模式：只用内嵌保守规则（不调用 LocalQwenNewsTriageService 的严格规则）。
-        prompt 模式：走 LocalQwenNewsTriageService 的 prompt 判定。
-        fail-open：异常时一律 PASS。
-        """
         if not self.enabled or self.mode == "off":
-            return NewsTriageResult(
-                pass_=True, decision="PASS",
-                reason="prefilter_disabled", mode="off", score=None,
-            )
+            return NewsTriageResult(pass_=True, decision="PASS",
+                                    reason="prefilter_disabled", mode="off", score=None)
 
         try:
-            # rule-only: 优先用内嵌保守规则（避免 LocalQwenNewsTriageService 严格规则误杀）
-            if self.mode == "rule":
-                raw = _embedded_rule_evaluate(payload)
-            elif self._triage is not None and self._use_prompt:
-                # prompt 模式：走 LocalQwenNewsTriageService.evaluate（含 prompt+rule fallback）
-                raw = self._triage.evaluate(_payload_to_triage(payload))
-            else:
-                # fallback: 内嵌规则
-                raw = _embedded_rule_evaluate(payload)
+            # 1. 内嵌规则先跑，得到决定 + 是否灰区
+            rule_raw = _embedded_rule_evaluate(payload)
+            rule_decision = str(rule_raw.get("decision") or "PASS").upper()
 
-            decision = str(raw.get("decision") or "PASS").upper()
-            # REVIEW 也放行（保守），只有 SKIP 才拦截
-            return NewsTriageResult(
-                pass_=decision in {"PASS", "REVIEW"},
-                decision=decision,
-                reason=str(raw.get("reason", "")),
-                mode=str(raw.get("mode", "rule")),
-                score=raw.get("score"),
-            )
+            # 2. 非 prompt 模式，或规则已明确 → 直接返回
+            if self.mode == "rule":
+                return _to_result(rule_raw)
+            if not self._use_qwen:
+                return _to_result(rule_raw)
+            if rule_decision in {"SKIP", "PASS"} and rule_raw.get("gray") != True:
+                return _to_result(rule_raw)
+
+            # 3. 灰区：调用 Qwen prompt
+            return self._qwen_evaluate(payload)
+
         except Exception as exc:
             logger.warning("NewsPreFilter evaluate exception: %s", exc)
             if self.fail_open:
-                return NewsTriageResult(
-                    pass_=True, decision="PASS",
-                    reason=f"filter_exception_fail_open:{exc}",
-                    mode="error", score=None,
-                )
-            return NewsTriageResult(
-                pass_=False, decision="SKIP",
-                reason=f"filter_exception:{exc}",
-                mode="error", score=None,
+                return NewsTriageResult(pass_=True, decision="PASS",
+                    reason=f"filter_exception_fail_open:{exc}", mode="error", score=None)
+            return NewsTriageResult(pass_=False, decision="SKIP",
+                reason=f"filter_exception:{exc}", mode="error", score=None)
+
+    def _qwen_evaluate(self, payload: Dict[str, Any]) -> NewsTriageResult:
+        """Qwen prompt 判定（带超时和 fail-open）。"""
+        if not self._ensure_qwen_ready():
+            return NewsTriageResult(pass_=True, decision="PASS",
+                reason="qwen_not_ready_fail_open", mode="rule", score=None)
+
+        import time as _time
+        self.stats["prompt_eval_count"] += 1
+        t0 = _time.perf_counter()
+
+        try:
+            text = f"{payload.get('title', '')}\n{payload.get('content', '')}"
+            prompt = _QPWEN_PROMPT.format(text=text[:600])
+            response = self._qwen_llm(
+                prompt, max_tokens=64, stop=["\n\n"], echo=False,
+                temperature=0.0, top_p=0.9, top_k=40,
             )
+            raw = str(response["choices"][0]["text"]).strip()
+            elapsed_ms = (_time.perf_counter() - t0) * 1000
+            self.stats["prompt_total_ms"] += elapsed_ms
+
+            parsed = _parse_qwen_output(raw)
+            if parsed.get("pass") is True:
+                self.stats["prompt_pass_count"] += 1
+                return NewsTriageResult(pass_=True, decision="PASS",
+                    reason=f"qwen:{parsed.get('category','policy')}:{parsed.get('reason','')[:60]}",
+                    mode="qwen_prompt", score=float(parsed.get("importance", 50)))
+            else:
+                self.stats["prompt_skip_count"] += 1
+                return NewsTriageResult(pass_=False, decision="SKIP",
+                    reason=f"qwen:{parsed.get('category','noise')}:{parsed.get('reason','')[:60]}",
+                    mode="qwen_prompt", score=float(parsed.get("importance", 20)))
+
+        except Exception as exc:
+            self.stats["prompt_error_count"] += 1
+            logger.warning("Qwen prompt failed: %s", exc)
+            if self.fail_open:
+                return NewsTriageResult(pass_=True, decision="PASS",
+                    reason=f"qwen_error_fail_open:{exc}", mode="qwen_prompt", score=None)
+            return NewsTriageResult(pass_=False, decision="SKIP",
+                reason=f"qwen_error:{exc}", mode="qwen_prompt", score=None)
+
+    def _ensure_qwen_ready(self) -> bool:
+        if self._qwen_ready:
+            return True
+        if self._qwen_init_attempted:
+            return False
+        self._qwen_init_attempted = True
+
+        model_path = _resolve_qwen_model(self._model_path)
+        if not model_path:
+            logger.warning("Qwen GGUF model not found, prompt mode unavailable")
+            return False
+
+        try:
+            from llama_cpp import Llama
+            n_threads = int(os.getenv("QWEN_PREFILTER_THREADS", "4"))
+            self._qwen_llm = Llama(
+                model_path=model_path, n_ctx=1024,
+                n_threads=n_threads, n_gpu_layers=0, verbose=False,
+            )
+            self._qwen_ready = True
+            logger.info("Qwen 1.5B prompt loaded: %s threads=%s", model_path, n_threads)
+            return True
+        except Exception as exc:
+            logger.warning("Qwen prompt init failed: %s", exc)
+            return False
 
     def to_payload_fields(self, result: NewsTriageResult) -> Dict[str, str]:
-        """将预过滤结果转换为可写入 stream payload 的字段。"""
         return {
             "prefilter_pass": "true" if result.pass_ else "false",
             "prefilter_mode": result.mode,
             "prefilter_decision": result.decision,
             "prefilter_reason": result.reason[:120] if result.reason else "",
         }
+
+    def get_stats(self) -> Dict[str, Any]:
+        s = dict(self.stats)
+        s["prompt_p95_ms"] = round(s["prompt_total_ms"] / max(s["prompt_eval_count"], 1) * 2.5, 1)
+        s["prompt_avg_ms"] = round(s["prompt_total_ms"] / max(s["prompt_eval_count"], 1), 1)
+        s["qwen_ready"] = self._qwen_ready
+        return s
 
 
 def _payload_to_triage(payload: Dict[str, Any]) -> Dict[str, Any]:
@@ -145,6 +196,75 @@ def _payload_to_triage(payload: Dict[str, Any]) -> Dict[str, Any]:
         "content": str(payload.get("content", "")),
         "source": str(payload.get("source", "")),
     }
+
+
+def _to_result(raw: Dict[str, Any]) -> NewsTriageResult:
+    decision = str(raw.get("decision") or "PASS").upper()
+    return NewsTriageResult(
+        pass_=decision in {"PASS", "REVIEW"},
+        decision=decision,
+        reason=str(raw.get("reason", "")),
+        mode=str(raw.get("mode", "rule")),
+        score=raw.get("score"),
+    )
+
+
+# ── Qwen prompt ──────────────────────────────────────────────────────────
+
+_QPWEN_PROMPT = (
+    "你是A股实时新闻过滤器。判断这条新闻是否可能影响A股题材或个股。\n"
+    "规则：\n"
+    "1) 可能影响板块/题材/个股预期 → pass:true, category用industry/policy/company/risk之一，importance用0-100数字\n"
+    "2) 纯价格波动、市场情绪、无实质内容的快讯 → pass:false, category用noise\n"
+    "3) 不太确定 → pass:true（宁可放行不可误杀）\n"
+    "请只输出JSON，不要解释：\n"
+    "{{\"pass\": true或false, \"category\": \"industry|policy|company|market|risk|noise\", \"importance\": 0-100的数字, \"reason\": \"不超过30字\"}}\n"
+    "新闻：{text}\n"
+    "输出："
+)
+
+
+def _parse_qwen_output(raw: str) -> Dict[str, Any]:
+    """解析 Qwen 输出为 structured dict，fail-open。"""
+    # 提取 JSON
+    m = re.search(r'\{[^}]+\}', raw)
+    if m:
+        try:
+            parsed = _json.loads(m.group())
+            if "pass" in parsed:
+                return {
+                    "pass": bool(parsed.get("pass")),
+                    "category": str(parsed.get("category", "noise")),
+                    "importance": max(0, min(100, int(parsed.get("importance", 50)))),
+                    "reason": str(parsed.get("reason", "")),
+                }
+        except (_json.JSONDecodeError, ValueError, TypeError):
+            pass
+    # Heuristic fallback: contains "pass" or "true" → pass
+    if "pass" in raw.lower() or "true" in raw.lower():
+        return {"pass": True, "category": "unknown", "importance": 50, "reason": "heuristic_fallback"}
+    if "skip" in raw.lower() or "false" in raw.lower() or "noise" in raw.lower():
+        return {"pass": False, "category": "noise", "importance": 20, "reason": "heuristic_fallback"}
+    # Conservative
+    return {"pass": True, "category": "unknown", "importance": 50, "reason": "parse_fallback_pass"}
+
+
+def _resolve_qwen_model(explicit_path: str) -> str | None:
+    """Resolve Qwen GGUF model path."""
+    candidates = []
+    if explicit_path:
+        candidates.append(explicit_path)
+    env_path = os.getenv("QWEN_PREFILTER_MODEL_PATH", "").strip()
+    if env_path:
+        candidates.append(env_path)
+    candidates.extend([
+        "/Users/admin/Desktop/ai_theme_app/model_service/models/qwen2.5/qwen2.5-1.5b-instruct-q5_k_m.gguf",
+        "/Users/admin/Desktop/ai_theme_app/models/Qwen2.5-1.5B-Instruct",
+    ])
+    for p in candidates:
+        if p and Path(p).exists():
+            return p
+    return None
 
 
 # ── 内嵌规则（LocalQwenNewsTriageService 不可用时的最小 fallback）──────
@@ -208,5 +328,5 @@ def _embedded_rule_evaluate(payload: Dict[str, Any]) -> Dict[str, Any]:
     if signal_hits >= 2:
         return {"decision": "PASS", "reason": f"rule:signal_hits={signal_hits}", "score": None, "mode": "embedded_rule"}
 
-    # 6. 保守放行
-    return {"decision": "PASS", "reason": "rule:conservative_pass", "score": None, "mode": "embedded_rule"}
+    # 6. 保守放行（灰区 — rule_prompt 模式下会交给 Qwen）
+    return {"decision": "PASS", "reason": "rule:conservative_pass", "score": None, "mode": "embedded_rule", "gray": True}

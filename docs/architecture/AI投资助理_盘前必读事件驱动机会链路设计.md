@@ -1726,7 +1726,7 @@ BLOCKED     被外部依赖或上游决策阻塞
 | P0-E | INTEL-CHAIN-03 | P0 | DONE | DDL + gateway | 2026-05-20: create_news_event_with_intel() 幂等 (structured_intel_event_id), producer 不重复投递 (stream_status='produced' guard) | Intel 幂等验证通过 |
 | P0-E | INTEL-CHAIN-04 | P0 | DONE | INTEL-CHAIN-01~03 | 2026-05-20: pre_market_brief company_announcements_raw=25, 真实 cninfo 公告 (托普云农/康泰医学/华康洁净等), unified window (start=15:00, end=08:00) | full-chain smoke 完成 |
 | P1 | RT-AKS-05 | P1 | DONE | RT-AKS-04 | 2026-05-20: AkShareCollectorStats 增加 filtered/pass/filter_mode/last_filter_reason；status API 返回 akshare_collector | collector 指标已补全 |
-| P1-A | NEWS-FILTER-01 | P1 | DONE | P0-A | 2026-05-20: NewsPreFilterAdapter + 内嵌规则, rule-only 默认, 过滤率25% 零误杀, collector collect_once 已接入 prefilter hook | AkShare 预过滤 rule-only 完成 |
+| P1-A | NEWS-FILTER-01 | P1 | DONE | P0-A | 2026-05-20: NewsPreFilterAdapter + rule/rule_prompt双模式, Qwen1.5B GGUF 灰区判定, fail-open, avg=6.2s/p95=15.5s | AkShare 预过滤 rule+Qwen灰度完成 |
 | P1 | INTEL-FEED-04 | P1 | DONE | JYHF DB sink | 2026-05-20: load_subject_history_items() source_type/channel 不再清空 | JYHF source 字段已修复 |
 | P1 | INTEL-FEED-05 | P1 | PARTIAL | INTEL-FEED-02 | 前端已有 `event_review -> 待复核` 标签 | 需结合真实 feed 验证 |
 | P1 | JYHF-NE-04 | P1 | DONE | JYHF-NE-01 | 2026-05-20: idx_news_event_source_trace_id_not_null + idx_event_subject_map_event_subject_source 唯一索引, ON CONFLICT DO NOTHING | JYHF 幂等验证通过 |

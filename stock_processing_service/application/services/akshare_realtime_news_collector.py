@@ -201,8 +201,13 @@ class AkShareRealtimeNewsCollector:
     def _write_status(self) -> None:
         if not self.status_path:
             return
+        stats_dict = asdict(self.stats)
+        # Merge prefilter stats
+        pf_stats = getattr(self._prefilter, "get_stats", None)
+        if callable(pf_stats):
+            stats_dict["prefilter_stats"] = pf_stats()
         self.status_path.parent.mkdir(parents=True, exist_ok=True)
-        self.status_path.write_text(json.dumps(asdict(self.stats), ensure_ascii=False, indent=2), encoding="utf-8")
+        self.status_path.write_text(json.dumps(stats_dict, ensure_ascii=False, indent=2), encoding="utf-8")
 
     def _write_skip_log(self, payload: dict[str, str], triage_result) -> None:
         if not self._prefilter_skip_log:
