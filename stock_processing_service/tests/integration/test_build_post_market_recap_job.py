@@ -395,6 +395,45 @@ def test_new_chain_report_builder_groups_dragon_tiger_by_hot_money_seat() -> Non
     ]
 
 
+def test_new_chain_report_builder_uses_theme_capital_in_mainline_section() -> None:
+    report = NewChainPostMarketReportBuilder().build(
+        {
+            "trade_date": "2026-05-20",
+            "candidate_count": 1,
+            "candidate_count_formal": 1,
+            "top_candidates": [
+                {
+                    "stock_id": "002000.SZ",
+                    "stock_name": "SampleA",
+                    "subject_key": "ai_chip",
+                    "theme_name": "AI Chip",
+                    "candidate_score": 99,
+                }
+            ],
+            "report_context": {
+                "theme_name_map": {"ai_chip": "AI Chip"},
+                "theme_capital_flow": [
+                    {
+                        "subject_key": "ai_chip",
+                        "resolved_theme_name": "AI Chip",
+                        "main_net_inflow_sum": 320000000,
+                        "leader_main_net_inflow": 120000000,
+                        "top3_main_net_inflow_sum": 260000000,
+                    }
+                ],
+                "stock_facts": [],
+            },
+        }
+    )
+
+    mainline_section = next(section for section in report["sections"] if section["heading"] == "主线与支线")
+    assert "总净流入 3.20亿" in mainline_section["items"][0]
+    assert "龙头净流入 1.20亿" in mainline_section["items"][0]
+
+    strong_section = next(section for section in report["sections"] if section["heading"] == "强势股分层")
+    assert "资金量能 99.00" in strong_section["items"][0]
+
+
 def test_build_strong_stock_tracking_use_case_writes_layer_c_objects() -> None:
     async def _run() -> None:
         read_port = _FakeReadPort()
