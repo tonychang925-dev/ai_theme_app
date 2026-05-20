@@ -361,8 +361,8 @@ class NewChainIntelFeedAdapter:
                 "stock_names": [],
                 "confidence": float(row.get("confidence") or 0) if row.get("confidence") else None,
                 "impact_score": float(row.get("impact_score") or 0),
-                "source_type": "",
-                "source_channel": "",
+                "source_type": str(row.get("source_type") or "jyhf_cdp_dom"),
+                "source_channel": str(row.get("source_channel") or "jyhf_cdp"),
             })
         return items
 

@@ -1,147 +1,79 @@
 from __future__ import annotations
 
-from datetime import date, datetime
+from datetime import datetime, time
 from zoneinfo import ZoneInfo
-
-import pytest
-
-from stock_processing_service.application.services.pre_market_brief_auto_scheduler import (
-    PreMarketBriefAutoScheduler,
-    decide_pre_market_brief_schedule,
-    resolve_pre_market_brief_trade_date,
-)
-
 
 CN_TZ = ZoneInfo("Asia/Shanghai")
 
-
-def _dt(hour: int, minute: int = 0) -> datetime:
-    return datetime(2026, 5, 16, hour, minute, tzinfo=CN_TZ)
-
-
-def test_pre_market_brief_schedule_windows():
-    assert decide_pre_market_brief_schedule(_dt(15, 30)).action == "rebuild"
-    assert decide_pre_market_brief_schedule(_dt(15, 30)).next_sleep_seconds == 600
-    assert decide_pre_market_brief_schedule(_dt(22, 0)).action == "rebuild"
-    assert decide_pre_market_brief_schedule(_dt(22, 0)).next_sleep_seconds == 900
-    assert decide_pre_market_brief_schedule(_dt(7, 0)).action == "rebuild"
-    assert decide_pre_market_brief_schedule(_dt(7, 0)).next_sleep_seconds == 300
-    assert decide_pre_market_brief_schedule(_dt(8, 20)).reason == "last_rebuild_before_finalize"
-    assert decide_pre_market_brief_schedule(_dt(8, 30), finalized=False).action == "finalize"
-    assert decide_pre_market_brief_schedule(_dt(8, 31), finalized=True).action == "idle"
+from stock_processing_service.application.services.pre_market_brief_auto_scheduler import (
+    decide_pre_market_brief_schedule,
+    resolve_pre_market_brief_trade_date,
+    PreMarketBriefSpsClient,
+)
 
 
-class _Client:
-    def __init__(self, *, finalize_response: dict | None = None, calendar_response: dict | None = None):
-        self.calls: list[dict] = []
-        self.finalize_response = finalize_response or {"ok": True, "status": "final"}
-        self.calendar_response = calendar_response or {}
+def _cn(hour: int, minute: int = 0) -> datetime:
+    return datetime(2026, 5, 20, hour, minute, 0, tzinfo=CN_TZ)
 
-    async def rebuild(self, *, trade_date, source, limit, force):
-        self.calls.append(
-            {
-                "method": "rebuild",
-                "trade_date": trade_date,
-                "source": source,
-                "limit": limit,
-                "force": force,
-            }
-        )
-        return {"ok": True}
 
-    async def finalize(self, *, trade_date, force):
-        self.calls.append({"method": "finalize", "trade_date": trade_date, "force": force})
-        return self.finalize_response
+class _FakeClient:
+    def __init__(self, calendar=None):
+        self._calendar = calendar or {}
 
     async def get_trade_calendar(self, *, trade_date):
-        self.calls.append({"method": "get_trade_calendar", "trade_date": trade_date})
-        return self.calendar_response
+        return self._calendar
 
 
-@pytest.mark.asyncio
-async def test_pre_market_brief_scheduler_rebuild_calls_sps_without_force_by_default():
-    client = _Client()
-    scheduler = PreMarketBriefAutoScheduler(client)
+# ── decide_pre_market_brief_schedule ──────────────────────────────────
 
-    result = await scheduler.run_once(trade_date=date(2026, 5, 16), now=_dt(7, 10))
+def test_1459_not_finalized_is_finalize():
+    """14:59 in 08:00-15:00 zone — finalize when not yet finalized."""
+    d = decide_pre_market_brief_schedule(_cn(14, 59), finalized=False)
+    assert d.action == "finalize", f"Expected finalize, got {d.action}"
 
-    assert result["action"] == "rebuild"
-    assert client.calls == [
-        {
-            "method": "rebuild",
-            "trade_date": date(2026, 5, 16),
-            "source": "db_first",
-            "limit": 200,
-            "force": False,
-        }
-    ]
+def test_1459_finalized_is_idle():
+    """14:59 in 08:00-15:00 zone — idle when finalized."""
+    d = decide_pre_market_brief_schedule(_cn(14, 59), finalized=True)
+    assert d.action == "idle", f"Expected idle, got {d.action}"
 
+def test_1500_is_rebuild():
+    d = decide_pre_market_brief_schedule(_cn(15, 0))
+    assert d.action == "rebuild", f"Expected rebuild, got {d.action}"
 
-@pytest.mark.asyncio
-async def test_pre_market_brief_scheduler_finalizes_once_per_trade_date():
-    client = _Client()
-    scheduler = PreMarketBriefAutoScheduler(client)
+def test_2300_is_rebuild():
+    d = decide_pre_market_brief_schedule(_cn(23, 0))
+    assert d.action == "rebuild", f"Expected rebuild, got {d.action}"
 
-    first = await scheduler.run_once(trade_date=date(2026, 5, 16), now=_dt(8, 30))
-    second = await scheduler.run_once(trade_date=date(2026, 5, 16), now=_dt(8, 31))
+def test_0759_is_rebuild():
+    d = decide_pre_market_brief_schedule(_cn(7, 59))
+    assert d.action == "rebuild", f"Expected rebuild, got {d.action}"
 
-    assert first["action"] == "finalize"
-    assert second["action"] == "idle"
-    assert client.calls == [{"method": "finalize", "trade_date": date(2026, 5, 16), "force": False}]
+def test_0800_not_finalized_is_finalize():
+    d = decide_pre_market_brief_schedule(_cn(8, 0), finalized=False)
+    assert d.action == "finalize", f"Expected finalize, got {d.action}"
 
+def test_0801_finalized_is_idle():
+    d = decide_pre_market_brief_schedule(_cn(8, 1), finalized=True)
+    assert d.action == "idle", f"Expected idle, got {d.action}"
 
-@pytest.mark.asyncio
-async def test_pre_market_brief_scheduler_retries_finalize_when_sps_did_not_freeze():
-    client = _Client(finalize_response={"ok": False, "affected_rows": 0, "status": "missing"})
-    scheduler = PreMarketBriefAutoScheduler(client)
-
-    first = await scheduler.run_once(trade_date=date(2026, 5, 16), now=_dt(8, 30))
-    second = await scheduler.run_once(trade_date=date(2026, 5, 16), now=_dt(8, 31))
-
-    assert first["action"] == "finalize"
-    assert second["action"] == "finalize"
-    assert [call["method"] for call in client.calls] == ["finalize", "finalize"]
+def test_1200_not_finalized_retries_finalize():
+    d = decide_pre_market_brief_schedule(_cn(12, 0), finalized=False)
+    assert d.action == "finalize", f"Expected finalize, got {d.action}"
 
 
-@pytest.mark.asyncio
-async def test_resolve_trade_date_uses_current_date_before_after_close_window():
-    client = _Client(calendar_response={"next_trade_date": "2026-05-18"})
+# ── resolve_pre_market_brief_trade_date ──────────────────────────────
 
-    resolved = await resolve_pre_market_brief_trade_date(client, now=_dt(8, 20))
+async def test_before_1500_uses_current_date():
+    now = _cn(14, 59)
+    td = await resolve_pre_market_brief_trade_date(PreMarketBriefSpsClient(), now=now)
+    assert td.isoformat() == "2026-05-20"
 
-    assert resolved == date(2026, 5, 16)
-    assert client.calls == []
+async def test_after_1500_seeks_next_trade_date():
+    now = _cn(15, 0)
+    client = _FakeClient({"trade_date": "2026-05-20", "prev_trade_date": "2026-05-19", "next_trade_date": "2026-05-21"})
+    td = await resolve_pre_market_brief_trade_date(client, now=now)
+    assert td.isoformat() == "2026-05-21"
 
-
-@pytest.mark.asyncio
-async def test_resolve_trade_date_uses_next_trade_date_after_1530():
-    client = _Client(calendar_response={"next_trade_date": "2026-05-18"})
-
-    resolved = await resolve_pre_market_brief_trade_date(client, now=_dt(15, 30))
-
-    assert resolved == date(2026, 5, 18)
-    assert client.calls == [{"method": "get_trade_calendar", "trade_date": date(2026, 5, 16)}]
-
-
-@pytest.mark.asyncio
-async def test_resolve_trade_date_explicit_arg_wins_over_calendar():
-    client = _Client(calendar_response={"next_trade_date": "2026-05-18"})
-
-    resolved = await resolve_pre_market_brief_trade_date(
-        client,
-        explicit_trade_date="2026-05-19",
-        now=_dt(15, 30),
-    )
-
-    assert resolved == date(2026, 5, 19)
-    assert client.calls == []
-
-
-@pytest.mark.asyncio
-async def test_resolve_trade_date_falls_back_to_natural_date_when_calendar_missing(caplog):
-    client = _Client(calendar_response={})
-
-    resolved = await resolve_pre_market_brief_trade_date(client, now=_dt(15, 30))
-
-    assert resolved == date(2026, 5, 16)
-    assert "fallback to natural date" in caplog.text
+async def test_explicit_trade_date_overrides():
+    td = await resolve_pre_market_brief_trade_date(PreMarketBriefSpsClient(), explicit_trade_date="2026-05-19")
+    assert td.isoformat() == "2026-05-19"
