@@ -25,6 +25,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--batch-size", type=int, default=20)
     parser.add_argument("--status-path", default=None)
     parser.add_argument("--once", action="store_true")
+    # P1-A: prefilter
+    parser.add_argument("--prefilter-enabled", type=lambda x: x.lower() in ("1","true","yes","on"), default=True)
+    parser.add_argument("--prefilter-mode", default="rule", choices=["rule","prompt","embedding","off"])
+    parser.add_argument("--prefilter-model-path", default="")
+    parser.add_argument("--prefilter-fail-open", type=lambda x: x.lower() in ("1","true","yes","on"), default=True)
     return parser
 
 
@@ -39,6 +44,10 @@ async def async_main() -> None:
         lookback_minutes=args.lookback_minutes,
         batch_size=args.batch_size,
         status_path=args.status_path,
+        prefilter_enabled=args.prefilter_enabled,
+        prefilter_mode=args.prefilter_mode,
+        prefilter_model_path=args.prefilter_model_path,
+        prefilter_fail_open=args.prefilter_fail_open,
     )
     if args.once:
         result = await collector.collect_once()

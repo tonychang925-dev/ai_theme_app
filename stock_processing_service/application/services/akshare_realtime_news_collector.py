@@ -25,6 +25,11 @@ class AkShareCollectorStats:
     fetched_count: int = 0
     pushed_count: int = 0
     duplicate_count: int = 0
+    filtered_count: int = 0
+    filter_pass_count: int = 0
+    filter_error_count: int = 0
+    filter_mode: str = "off"
+    last_filter_reason: str | None = None
     error_count: int = 0
     last_error: str | None = None
 
@@ -42,6 +47,10 @@ class AkShareRealtimeNewsCollector:
         lookback_minutes: int = 180,
         status_path: str | Path | None = None,
         batch_size: int = 20,
+        prefilter_enabled: bool = True,
+        prefilter_mode: str = "rule",
+        prefilter_model_path: str = "",
+        prefilter_fail_open: bool = True,
     ) -> None:
         self.redis_url = redis_url
         self.stream = stream
@@ -53,6 +62,14 @@ class AkShareRealtimeNewsCollector:
         self.stats = AkShareCollectorStats(run_id=run_id, stream=stream)
         self._seen: set[str] = set()
         self._redis = None
+        # P1-A: 预过滤
+        self._prefilter = _init_prefilter(
+            enabled=prefilter_enabled,
+            mode=prefilter_mode,
+            model_path=prefilter_model_path,
+            fail_open=prefilter_fail_open,
+        )
+        self.stats.filter_mode = prefilter_mode if prefilter_enabled else "off"
 
     async def run_forever(self) -> None:
         self.stats.running = True
@@ -75,27 +92,41 @@ class AkShareRealtimeNewsCollector:
             self.stats.fetched_count += len(rows)
             pushed = 0
             duplicate = 0
+            filtered = 0
             for row in rows:
                 payload = self._normalize_payload(row)
                 dedupe_key = self._dedupe_key(payload)
                 if dedupe_key in self._seen:
                     duplicate += 1
                     continue
+
+                # P1-A: prefilter hook — SKIP 则不 publish
+                triage = self._prefilter.evaluate(payload)
+                if not triage.pass_:
+                    filtered += 1
+                    self.stats.last_filter_reason = triage.reason
+                    self._seen.add(dedupe_key)  # filtered 也记 seen，避免反复评估
+                    continue
+
+                self.stats.filter_pass_count += 1
+                payload.update(self._prefilter.to_payload_fields(triage))
                 self._seen.add(dedupe_key)
                 await self._publish(payload)
                 pushed += 1
+
             self.stats.pushed_count += pushed
             self.stats.duplicate_count += duplicate
+            self.stats.filtered_count += filtered
             self.stats.last_success_at = _now_iso()
             self.stats.last_error = None
             self._write_status()
-            return {"fetched": len(rows), "pushed": pushed, "duplicate": duplicate}
+            return {"fetched": len(rows), "pushed": pushed, "duplicate": duplicate, "filtered": filtered}
         except Exception as exc:
             self.stats.error_count += 1
             self.stats.last_error = str(exc)
             self._write_status()
             logger.exception("akshare realtime collect_once failed")
-            return {"fetched": 0, "pushed": 0, "duplicate": 0}
+            return {"fetched": 0, "pushed": 0, "duplicate": 0, "filtered": 0}
 
     async def _fetch_news(self) -> list[dict[str, Any]]:
         try:
@@ -179,3 +210,29 @@ def _pick(row: dict[str, Any], *keys: str) -> Any:
 
 def _now_iso() -> str:
     return datetime.now(CN_TZ).isoformat()
+
+
+def _init_prefilter(
+    *,
+    enabled: bool,
+    mode: str,
+    model_path: str,
+    fail_open: bool,
+):
+    """Initialize the prefilter adapter (lazy import to avoid blocking collector startup)."""
+    try:
+        from stock_processing_service.application.services.news_prefilter import (
+            NewsPreFilterAdapter,
+        )
+        return NewsPreFilterAdapter(
+            enabled=enabled,
+            mode=mode,
+            model_path=model_path,
+            fail_open=fail_open,
+        )
+    except ImportError as exc:
+        logger.warning("NewsPreFilterAdapter unavailable, prefilter disabled: %s", exc)
+        from stock_processing_service.application.services.news_prefilter import (
+            NewsPreFilterAdapter,
+        )
+        return NewsPreFilterAdapter(enabled=False)

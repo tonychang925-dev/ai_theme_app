@@ -6959,7 +6959,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 COALESCE(ne.summary, nr.content, '') AS summary,
                 COALESCE(esm.confidence, ne.confidence) AS confidence,
                 0::double precision AS impact_score,
-                nr.source AS raw_source
+                nr.source AS raw_source,
+                esm.source AS esm_source
             FROM news_event ne
             LEFT JOIN news_raw nr ON nr.id = ne.news_id
             JOIN event_subject_map esm ON esm.event_id = ne.id
@@ -6987,6 +6988,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             CASE
                 WHEN COALESCE(NULLIF(raw_source, ''), '') IN ('akshare_realtime', 'akshare', 'akshare_cls', 'akshare_replay')
                 THEN 'akshare_realtime'
+                WHEN esm_source = 'jyhf_dom_confirmed'
+                THEN 'jyhf_cdp'
                 ELSE 'realtime_news'
             END::text AS source_channel
         FROM mapped
