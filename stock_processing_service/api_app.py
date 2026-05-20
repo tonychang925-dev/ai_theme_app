@@ -1468,6 +1468,30 @@ async def realtime_status() -> dict[str, Any]:
     return await manager.status()
 
 
+@app.api_route("/api/v1/intel/produce", methods=["GET", "POST"])
+async def intel_produce(limit: int = Query(50, ge=1, le=200)) -> dict[str, Any]:
+    """手动触发 Intel 公告投递：从 structured_intel_event.pending 生产到 news_event + stream。
+
+    返回 produced/skipped/failed 计数。"""
+    from stock_processing_service.application.services.intel_stream_producer import (
+        IntelStreamProducer,
+    )
+    gw = getattr(app.state, "gateway", None)
+    if gw is None:
+        return {"ok": False, "error": "gateway not initialized"}
+    import redis.asyncio as aioredis
+    redis_url = os.environ.get("REDIS_URL", "redis://127.0.0.1:6379/0")
+    redis_client = aioredis.Redis.from_url(redis_url, decode_responses=True)
+    try:
+        producer = IntelStreamProducer(gateway=gw, redis_client=redis_client)
+        count = await producer.produce_batch(limit=limit)
+        return {"ok": True, "produced": count, "stream": "stream:events:structured"}
+    except Exception as exc:
+        return {"ok": False, "error": str(exc)}
+    finally:
+        await redis_client.aclose()
+
+
 @app.get("/api/v1/mobile/screener/latest")
 async def get_mobile_screener(
     trade_date: str = Query(..., description="YYYY-MM-DD"),

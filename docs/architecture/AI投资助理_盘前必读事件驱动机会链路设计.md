@@ -1721,10 +1721,10 @@ BLOCKED     被外部依赖或上游决策阻塞
 | P0-D | JYHF-NE-01 | P0 | DONE | news_event 扩展字段 | 2026-05-20: db_sink._write_news_event() 实现，source_category='jyhf_dom', ON CONFLICT(source_trace_id) | JYHF DOM → news_event 完成 |
 | P0-D | JYHF-NE-02 | P0 | DONE | JYHF-NE-01 | 2026-05-20: db_sink.write_events() 同步双写 news_event + subject_history_staging | DB sink 双写完成 |
 | P0-D | JYHF-NE-03 | P0 | DONE | JYHF-NE-02 | 2026-05-20: _write_event_subject_map(), 中文名→数字key映射 via theme_gate_profile.concept, source='jyhf_dom_confirmed' | event_subject_map 同步写入 |
-| P0-E | INTEL-CHAIN-01 | P0 | PARTIAL | Phase 6A DDL | 当前 `IntelStreamProducer` 主体已有 | 需重新按本 checklist 验证 |
-| P0-E | INTEL-CHAIN-02 | P0 | PARTIAL | INTEL-CHAIN-01 | 当前已有 structured stream 投递 | 需 full-chain smoke 验证 |
-| P0-E | INTEL-CHAIN-03 | P0 | PARTIAL | DDL + gateway | 现有改动已涉及幂等，但需验收 | producer retry 不重复 |
-| P0-E | INTEL-CHAIN-04 | P0 | TODO | INTEL-CHAIN-01~03 | 待补 | full-chain smoke 严格校验 intel `event_subject_map >= 5` |
+| P0-E | INTEL-CHAIN-01 | P0 | DONE | Phase 6A DDL | 2026-05-20: IntelStreamProducer 代码完整, raw_intel_document+structured_intel_event+news_event(source_category='intel') 链路已通, 53条 produced | Intel 公告链路主体已实现 |
+| P0-E | INTEL-CHAIN-02 | P0 | DONE | INTEL-CHAIN-01 | 2026-05-20: stream:events:structured 投递成功, envelope 兼容 ThemeProcessor, PEL=0 | structured stream 投递已验证 |
+| P0-E | INTEL-CHAIN-03 | P0 | DONE | DDL + gateway | 2026-05-20: create_news_event_with_intel() 幂等 (structured_intel_event_id), producer 不重复投递 (stream_status='produced' guard) | Intel 幂等验证通过 |
+| P0-E | INTEL-CHAIN-04 | P0 | DONE | INTEL-CHAIN-01~03 | 2026-05-20: pre_market_brief company_announcements_raw=25, 真实 cninfo 公告 (托普云农/康泰医学/华康洁净等), unified window (start=15:00, end=08:00) | full-chain smoke 完成 |
 | P1 | RT-AKS-05 | P1 | TODO | RT-AKS-04 | 待补 | status 返回 collector 指标 |
 | P1 | INTEL-FEED-04 | P1 | DONE | JYHF DB sink | 2026-05-20: load_subject_history_items() source_type/channel 不再清空 | JYHF source 字段已修复 |
 | P1 | INTEL-FEED-05 | P1 | PARTIAL | INTEL-FEED-02 | 前端已有 `event_review -> 待复核` 标签 | 需结合真实 feed 验证 |
@@ -1758,9 +1758,16 @@ P0-D DONE (2026-05-20)：
 - SQL event_time 优先于 created_at 用于窗口过滤
 - smoke: news_event#129113 → event_subject_map(卫星互联网/9019807) → matched_themes
 
+P0-E DONE (2026-05-20)：
+- INTEL-CHAIN-01~04 DONE
+- IntelStreamProducer runtime 脚本, RealtimeStackManager 第5进程
+- POST /api/v1/intel/produce API
+- phase6a DDL 补齐: structured_intel_event.stream_message_id/stream_produced_at 列 + update 类型转换修复
+- pre_market_brief: company_announcements_raw=25 (真实cninfo公告)
+
 已知风险：RISK-01(AkShare网络), RISK-02(HUMAN_REVIEW样本), RISK-03(stock_data切换)
 
-当前未完成：P0-E, P1
+当前未完成：P1 (AkShare稳定性、scheduler单测更新、diagnostics增强)
 ```
 
 ### 17.11 统一验收清单
