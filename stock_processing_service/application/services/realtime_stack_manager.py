@@ -133,7 +133,8 @@ class RealtimeStackManager:
             orphans = await self._sweep_orphans()
             if orphans:
                 logger.warning("[ORPHAN_SWEEP] found %d orphans: %s", len(orphans), json.dumps(orphans))
-                return {"ok": False, "status": "orphans_detected", "orphans": orphans}
+                # P1-C1: auto-clean orphans from pidfile before start
+                await self.cleanup_orphans()
 
             # P1-C1: pidfile 目录
             parent_pid = os.getpid()
@@ -146,7 +147,7 @@ class RealtimeStackManager:
                 "db": self._db_name,
             }, ensure_ascii=False, indent=2))
 
-            env = self._build_env(run_id)
+            env = self._build_env(run_id, parent_pid)
             akshare_log = self._log_dir / f"akshare_{run_id}.log"
             raw_log = self._log_dir / f"raw_news_{run_id}.log"
             decision_log = self._log_dir / f"decision_{run_id}.log"
@@ -350,7 +351,7 @@ class RealtimeStackManager:
 
     # ── Internal ───────────────────────────────────────────────────
 
-    def _build_env(self, run_id: str) -> dict[str, str]:
+    def _build_env(self, run_id: str, parent_pid: int = 0) -> dict[str, str]:
         env = os.environ.copy()
         env.update(BASELINE_ENV)
         # P1-C: 统一单库 stock_data_test — 所有子进程强制继承
@@ -459,7 +460,7 @@ class RealtimeStackManager:
         self._state.decision_pid = None
         self._state.rebuild_pid = None
         self._state.intel_producer_pid = None
-        # P1-C1: clean pidfiles
+        # P1-C1: clean pidfiles + old status files
         runtime_dir = self._log_dir / "runtime"
         for pattern in ["akshare_*.pid", "raw_news_*.pid", "decision_*.pid", "rebuild_*.pid", "intel_producer_*.pid"]:
             for pf in runtime_dir.glob(pattern):
@@ -468,6 +469,20 @@ class RealtimeStackManager:
         stack_json = runtime_dir / "realtime_stack.json"
         try: stack_json.unlink()
         except OSError: pass
+        # Clean old status/log files from previous runs (keep current run_id)
+        current_run = self._state.run_id
+        if current_run:
+            patterns_to_clean = [
+                "akshare_*.status.json", "akshare_*.prefilter_skipped.jsonl",
+                "brief_rebuild_*.status.json", "intel_producer_*.status.json",
+                "akshare_*.log", "raw_news_*.log", "decision_*.log",
+                "brief_rebuild_*.log", "intel_producer_*.log",
+            ]
+            for pattern in patterns_to_clean:
+                for f in self._log_dir.glob(pattern):
+                    if current_run not in f.name:
+                        try: f.unlink()
+                        except OSError: pass
 
     def _read_status_file(self, prefix: str) -> dict[str, Any]:
         if not self._state.run_id:
