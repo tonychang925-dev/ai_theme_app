@@ -30,6 +30,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--interval-seconds", type=int, default=300)
     parser.add_argument("--status-path", default=None)
     parser.add_argument("--once", action="store_true")
+    parser.add_argument("--parent-pid", type=int, default=None)
     return parser
 
 
@@ -39,6 +40,9 @@ async def async_main() -> None:
     client = PreMarketBriefSpsClient(base_url=args.sps_base_url)
     interval = max(30, int(args.interval_seconds))
     status_path = Path(args.status_path) if args.status_path else None
+
+    if args.parent_pid:
+        asyncio.create_task(_watch_parent(args.parent_pid))
 
     while True:
         now = datetime.now(CN_TZ)
@@ -88,6 +92,17 @@ def _write_status(path: Path | None, payload: dict) -> None:
         return
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+async def _watch_parent(parent_pid: int, interval: float = 5.0) -> None:
+    import os as _os
+    while True:
+        await asyncio.sleep(interval)
+        try:
+            _os.kill(parent_pid, 0)
+        except (ProcessLookupError, PermissionError):
+            logging.warning("parent pid %d died, exiting", parent_pid)
+            _os._exit(0)
 
 
 if __name__ == "__main__":
