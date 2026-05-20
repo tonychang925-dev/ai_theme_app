@@ -2,10 +2,18 @@ from __future__ import annotations
 
 import inspect
 import json as _json
+import logging
 import re
 from collections import defaultdict
 from datetime import date, datetime, timezone
 from typing import Any, Awaitable, Callable
+
+from stock_processing_service.application.services.pre_market_window import (
+    PreMarketWindow,
+    resolve_pre_market_window,
+)
+
+logger = logging.getLogger(__name__)
 
 
 DecisionStreamReader = Callable[[date, int], Awaitable[list[dict[str, Any]]] | list[dict[str, Any]]]
@@ -44,9 +52,20 @@ class PreMarketBriefBuilder:
         source = source or "db_first"
         limit = max(1, int(limit or 200))
 
-        matched_events = await self._load_matched_events_from_db(trade_date, limit)
+        # P0-B: 统一盘前窗口
+        window: PreMarketWindow = await resolve_pre_market_window(
+            trade_date, gateway=self._read_gateway
+        )
+        start_at = window.start_at
+        end_at = window.end_at
+
+        matched_events = await self._load_matched_events_from_db(
+            trade_date, limit, start_at=start_at, end_at=end_at
+        )
         db_matched_count = len(matched_events)
-        review_events = await self._load_review_events_from_db(trade_date, limit)
+        review_events = await self._load_review_events_from_db(
+            trade_date, limit, start_at=start_at, end_at=end_at
+        )
         unknown_events: list[dict[str, Any]] = []
         stream_decisions: list[dict[str, Any]] = []
 
@@ -64,8 +83,12 @@ class PreMarketBriefBuilder:
             )[:limit]
             unknown_events = stream_sections["unknown_events"][:limit]
 
-        intel_announcements_raw = await self._load_intel_announcements(trade_date, limit, matched_only=False)
-        intel_announcements_matched = await self._load_intel_announcements(trade_date, limit, matched_only=True)
+        intel_announcements_raw = await self._load_intel_announcements(
+            trade_date, limit, matched_only=False, start_at=start_at, end_at=end_at
+        )
+        intel_announcements_matched = await self._load_intel_announcements(
+            trade_date, limit, matched_only=True, start_at=start_at, end_at=end_at
+        )
 
         sections = self._build_sections(
             matched_events=matched_events,
@@ -93,6 +116,13 @@ class PreMarketBriefBuilder:
             "intel_announcement_raw_count": len(sections["company_announcements_raw"]),
             "intel_announcement_matched_count": len(sections["company_announcements_matched"]),
             "last_rebuild_at": datetime.now(timezone.utc).isoformat(),
+            "pre_market_window": {
+                "start_at": start_at.isoformat(),
+                "end_at": end_at.isoformat(),
+                "trade_date": window.trade_date.isoformat(),
+                "prev_trade_date": window.prev_trade_date.isoformat(),
+                "source": window.source,
+            },
         }
         payload = {
             "version": self.SNAPSHOT_VERSION,
@@ -107,10 +137,13 @@ class PreMarketBriefBuilder:
 
         return payload
 
-    async def _load_matched_events_from_db(self, trade_date: date, limit: int) -> list[dict[str, Any]]:
+    async def _load_matched_events_from_db(
+        self, trade_date: date, limit: int,
+        start_at: datetime | None = None, end_at: datetime | None = None,
+    ) -> list[dict[str, Any]]:
         fn = getattr(self._read_gateway, "get_pre_market_subject_events", None)
         if callable(fn):
-            rows = await fn(trade_date, limit=limit)
+            rows = await fn(trade_date, limit=limit, start_at=start_at, end_at=end_at)
             return [self._normalize_event_row(row, "event_subject_map") for row in list(rows or [])[:limit]]
         fn = getattr(self._read_gateway, "get_intel_news_events", None)
         if not callable(fn):
@@ -118,11 +151,14 @@ class PreMarketBriefBuilder:
         rows = await fn(trade_date)
         return [self._normalize_event_row(row, "db") for row in list(rows or [])[:limit]]
 
-    async def _load_review_events_from_db(self, trade_date: date, limit: int) -> list[dict[str, Any]]:
+    async def _load_review_events_from_db(
+        self, trade_date: date, limit: int,
+        start_at: datetime | None = None, end_at: datetime | None = None,
+    ) -> list[dict[str, Any]]:
         fn = getattr(self._read_gateway, "get_pre_market_review_events", None)
         if not callable(fn):
             return []
-        rows = await fn(trade_date, limit=limit)
+        rows = await fn(trade_date, limit=limit, start_at=start_at, end_at=end_at)
         return [self._normalize_event_row(row, "event_review_queue") for row in list(rows or [])[:limit]]
 
     async def _load_intel_announcements(
@@ -131,13 +167,16 @@ class PreMarketBriefBuilder:
         limit: int,
         *,
         matched_only: bool = False,
+        start_at: datetime | None = None,
+        end_at: datetime | None = None,
     ) -> list[dict[str, Any]]:
         """读取 intel 公告事件（news_event JOIN structured_intel_event）。"""
         fn = getattr(self._read_gateway, "get_intel_announcement_events", None)
         if not callable(fn):
             return []
         try:
-            rows = await fn(trade_date, limit=limit, matched_only=matched_only)
+            rows = await fn(trade_date, limit=limit, matched_only=matched_only,
+                           start_time=start_at, end_time=end_at)
         except TypeError:
             if matched_only:
                 return []

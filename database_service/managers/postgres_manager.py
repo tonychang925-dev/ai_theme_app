@@ -7004,8 +7004,14 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         trade_date: date,
         source: Optional[str] = None,
         limit: int = 500,
+        start_time: Optional[datetime] = None,
+        end_time: Optional[datetime] = None,
     ) -> List[Dict[str, Any]]:
-        """读取指定交易日的事件-subject_key 映射，不依赖 theme_master。"""
+        """读取指定交易日的事件-subject_key 映射，不依赖 theme_master。
+
+        支持可选的 start_time/end_time 时间窗口过滤（Asia/Shanghai），
+        过滤发生在 occurred_at（COALESCE of news_event.created_at / news_raw.publish_date）。
+        """
         async with self.pool.acquire() as conn:
             exists = await conn.fetchval("SELECT to_regclass('public.event_subject_map')::text")
             if not exists:
@@ -7116,9 +7122,17 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         JOIN news_event ne ON ne.id = esm.event_id
         LEFT JOIN news_raw nr ON nr.id = COALESCE(esm.news_id, ne.news_id)
         LEFT JOIN resolved_names rn ON rn.subject_key = esm.subject_key
+        -- time-window aware filter: use datetime range when provided, else fallback to calendar date
         WHERE (
-            ne.created_at::date = $1::date
-            OR nr.publish_date::date = $1::date
+            ($4::timestamptz IS NULL AND $5::timestamptz IS NULL AND (
+                ne.created_at::date = $1::date
+                OR nr.publish_date::date = $1::date
+            ))
+            OR (
+                $4::timestamptz IS NOT NULL AND $5::timestamptz IS NOT NULL
+                AND COALESCE(ne.created_at, esm.created_at, nr.created_at, nr.publish_date::timestamp) >= $4::timestamptz
+                AND COALESCE(ne.created_at, esm.created_at, nr.created_at, nr.publish_date::timestamp) < $5::timestamptz
+            )
         )
           AND ($2::varchar IS NULL OR esm.source = $2::varchar)
         ORDER BY COALESCE(ne.created_at, esm.created_at, nr.created_at, nr.publish_date::timestamp) DESC NULLS LAST,
@@ -7127,7 +7141,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                  esm.confidence DESC NULLS LAST
         LIMIT $3
         """
-            rows = await conn.fetch(sql, trade_date, source, int(limit or 500))
+            rows = await conn.fetch(sql, trade_date, source, int(limit or 500), start_time, end_time)
         return [dict(r) for r in rows]
 
     async def get_event_subject_mappings_by_event_ids(self, event_ids: List[int]) -> List[Dict[str, Any]]:
@@ -7170,12 +7184,16 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         trade_date: date,
         source: Optional[str] = None,
         limit: int = 500,
+        start_time: Optional[datetime] = None,
+        end_time: Optional[datetime] = None,
     ) -> List[Dict[str, Any]]:
-        """盘前必读 subject_key 事件行，供报告层直接聚合。"""
+        """盘前必读 subject_key 事件行，供报告层直接聚合。支持 start_time/end_time 时间窗口。"""
         mappings = await self.get_event_subject_mappings_by_trade_date(
             trade_date=trade_date,
             source=source,
             limit=limit,
+            start_time=start_time,
+            end_time=end_time,
         )
         rows: List[Dict[str, Any]] = []
         for item in mappings:
@@ -7270,8 +7288,14 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             rows = await conn.fetch(sql, feed_date)
         return [dict(r) for r in rows]
 
-    async def get_pre_market_review_events(self, feed_date: date, limit: int = 200) -> List[Dict[str, Any]]:
-        """盘前必读待复核事件：event_review_queue + news_event + news_raw。"""
+    async def get_pre_market_review_events(
+        self,
+        feed_date: date,
+        limit: int = 200,
+        start_time: Optional[datetime] = None,
+        end_time: Optional[datetime] = None,
+    ) -> List[Dict[str, Any]]:
+        """盘前必读待复核事件：event_review_queue + news_event + news_raw。支持 start_time/end_time 时间窗口。"""
         sql = """
         SELECT
             q.event_id,
@@ -7290,9 +7314,16 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         LEFT JOIN news_raw nr ON nr.id = ne.news_id
         WHERE q.review_status = 'waiting'
           AND (
-            ne.created_at::date = $1::date
-            OR nr.publish_date::date = $1::date
-            OR q.created_at::date = $1::date
+            ($3::timestamptz IS NULL AND $4::timestamptz IS NULL AND (
+                ne.created_at::date = $1::date
+                OR nr.publish_date::date = $1::date
+                OR q.created_at::date = $1::date
+            ))
+            OR (
+                $3::timestamptz IS NOT NULL AND $4::timestamptz IS NOT NULL
+                AND COALESCE(ne.created_at, nr.created_at, q.created_at) >= $3::timestamptz
+                AND COALESCE(ne.created_at, nr.created_at, q.created_at) < $4::timestamptz
+            )
           )
         ORDER BY q.created_at DESC
         LIMIT $2
@@ -7302,7 +7333,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 exists = await conn.fetchval("SELECT to_regclass('public.event_review_queue')::text")
                 if not exists:
                     return []
-                rows = await conn.fetch(sql, feed_date, int(limit))
+                rows = await conn.fetch(sql, feed_date, int(limit), start_time, end_time)
             return [dict(r) for r in rows]
         except Exception as e:
             logger.warning(f"读取 event_review_queue 失败（可能尚未迁移）: {e}")
@@ -7734,7 +7765,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 prev_day = trade_date - timedelta(days=1)
                 start_time = _datetime.combine(prev_day, time(15, 0), tzinfo=timezone(timedelta(hours=8)))
             if end_time is None:
-                end_time = _datetime.combine(trade_date, time(8, 30), tzinfo=timezone(timedelta(hours=8)))
+                # P0-B: 统一盘前窗口 end_at = trade_date 08:00 (was 08:30)
+                end_time = _datetime.combine(trade_date, time(8, 0), tzinfo=timezone(timedelta(hours=8)))
 
             async with self.pool.acquire() as conn:
                 rows = await conn.fetch(
