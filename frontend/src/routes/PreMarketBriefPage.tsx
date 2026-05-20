@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import {
   fetchPreMarketBrief,
+  type PreMarketAlert,
   type PreMarketBriefEvent,
   type PreMarketBriefTheme,
   type PreMarketBriefView,
@@ -193,11 +194,58 @@ function OpportunityCard({ item }: { item: PreMarketOpportunity }) {
   );
 }
 
+function alertLevelClass(level?: string): string {
+  const l = (level || "").toLowerCase();
+  if (l === "critical") return "is-risk";
+  if (l === "important") return "is-watch";
+  return "is-basis";
+}
+
+function RiskAlertCard({ alert }: { alert: PreMarketAlert }) {
+  return (
+    <article className={`pre-market-risk ${alertLevelClass(alert.alert_level)}`}>
+      <div className="pre-market-risk-head">
+        <span className={`recap-chip ${alertLevelClass(alert.alert_level)}`}>
+          {alert.alert_level?.toUpperCase() || "?"}
+        </span>
+        <strong>{alert.title || "风险提示"}</strong>
+        <span className="recap-chip is-status">S{score(alert.alert_score)}</span>
+      </div>
+      <p className="workspace-note">{alert.reason || alert.summary || ""}</p>
+      <div className="recap-tag-stack">
+        {alert.stock_name && <span className="recap-chip">{alert.stock_name}({alert.stock_code})</span>}
+        {alert.reason_code && <span className="recap-chip is-watch">{alert.reason_code}</span>}
+        {alert.publish_time && <span className="recap-chip">{String(alert.publish_time).slice(0, 16)}</span>}
+      </div>
+    </article>
+  );
+}
+
+function OpportunityAlertCard({ alert }: { alert: PreMarketAlert }) {
+  return (
+    <article className="pre-market-opportunity">
+      <div className="pre-market-opp-head">
+        <span className={`recap-chip ${alertLevelClass(alert.alert_level)}`}>
+          {alert.alert_level?.toUpperCase() || "?"}
+        </span>
+        <strong>{alert.title || "机会提醒"}</strong>
+        <span className="recap-chip is-status">S{score(alert.alert_score)}</span>
+      </div>
+      <p className="workspace-note">{alert.reason || alert.summary || ""}</p>
+      <div className="recap-tag-stack">
+        {alert.stock_name && <span className="recap-chip">{alert.stock_name}({alert.stock_code})</span>}
+        {alert.amount && <span className="recap-chip is-basis">{alert.amount}</span>}
+        {alert.reason_code && <span className="recap-chip is-watch">{alert.reason_code}</span>}
+      </div>
+    </article>
+  );
+}
+
 function DiagnosticsPanel({ payload }: { payload: PreMarketBriefView }) {
   const diagnostics = payload.payload?.diagnostics || payload.diagnostics || {};
   return (
     <details className="workspace-card pre-market-diagnostics">
-      <summary>diagnostics</summary>
+      <summary>📊 diagnostics（点击展开）</summary>
       <pre>{JSON.stringify(diagnostics, null, 2)}</pre>
     </details>
   );
@@ -241,6 +289,8 @@ export function PreMarketBriefPage() {
   const reviewEvents = sections.review_events || [];
   const unknownEvents = sections.unknown_watch || [];
   const riskAlerts = sections.risk_alerts || [];
+  const opportunityAlerts = sections.opportunity_alerts || [];
+  const announcementsRaw = sections.company_announcements_raw || [];
   const partial = Boolean(payload?.diagnostics?.partial || payload?.payload?.diagnostics?.partial);
 
   return (
@@ -287,8 +337,16 @@ export function PreMarketBriefPage() {
                 <strong>{matchedThemes.length}</strong>
               </div>
               <div className="workspace-card">
-                <span className="metric-label">事件机会</span>
-                <strong>{opportunities.length}</strong>
+                <span className="metric-label">公告</span>
+                <strong>{announcementsRaw.length}</strong>
+              </div>
+              <div className="workspace-card is-risk">
+                <span className="metric-label">风险预警</span>
+                <strong>{riskAlerts.length}</strong>
+              </div>
+              <div className="workspace-card is-basis">
+                <span className="metric-label">机会提醒</span>
+                <strong>{opportunityAlerts.length}</strong>
               </div>
               <div className="workspace-card">
                 <span className="metric-label">待复核</span>
@@ -314,20 +372,25 @@ export function PreMarketBriefPage() {
               <pre className="pre-market-json-block">{JSON.stringify(sections.weak_to_strong_watch, null, 2)}</pre>
             </SectionShell>
 
-            <SectionShell title="五、待复核事件" empty={reviewEvents.length + unknownEvents.length === 0}>
-              <EventList events={reviewEvents} mode="review" />
-              <EventList events={unknownEvents} mode="unknown" />
-            </SectionShell>
-
-            <SectionShell title="六、风险提示" empty={riskAlerts.length === 0}>
-              <div className="pre-market-risk-list">
-                {riskAlerts.map((risk, idx) => (
-                  <article className="pre-market-risk" key={`${text(risk.risk_type, "risk")}-${idx}`}>
-                    <strong>{text(risk.risk_type, `风险 ${idx + 1}`)}</strong>
-                    <p className="workspace-note">{text(risk.message || risk.reason || risk)}</p>
-                  </article>
+            <SectionShell title="四、公告机会" empty={opportunityAlerts.length === 0}>
+              <div className="pre-market-alert-list">
+                {opportunityAlerts.map((alert, idx) => (
+                  <OpportunityAlertCard alert={alert as PreMarketAlert} key={alert.dedupe_key || `opp-${idx}`} />
                 ))}
               </div>
+            </SectionShell>
+
+            <SectionShell title="五、风险预警" empty={riskAlerts.length === 0}>
+              <div className="pre-market-alert-list">
+                {riskAlerts.map((alert, idx) => (
+                  <RiskAlertCard alert={alert as PreMarketAlert} key={alert.dedupe_key || `risk-${idx}`} />
+                ))}
+              </div>
+            </SectionShell>
+
+            <SectionShell title="六、待复核事件" empty={reviewEvents.length + unknownEvents.length === 0}>
+              <EventList events={reviewEvents} mode="review" />
+              <EventList events={unknownEvents} mode="unknown" />
             </SectionShell>
 
             <DiagnosticsPanel payload={payload} />

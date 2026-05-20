@@ -242,6 +242,23 @@ export interface PreMarketOpportunity {
   stocks?: PreMarketOpportunityStock[];
 }
 
+export interface PreMarketAlert {
+  alert_type?: string;          // "risk" | "opportunity"
+  alert_level?: string;        // "critical" | "important" | "normal"
+  alert_score?: number;        // 0-100
+  reason_code?: string;        // R01_DELISTING, O01_CONTRACT, etc.
+  reason?: string;
+  title?: string;
+  summary?: string;
+  stock_code?: string;
+  stock_name?: string;
+  publish_time?: string;
+  dedupe_key?: string;
+  amount?: string;
+  impact_score?: number;
+  source_event_id?: number;
+}
+
 export interface PreMarketBriefSections {
   market_overview?: unknown[];
   overnight_global?: unknown[];
@@ -251,7 +268,10 @@ export interface PreMarketBriefSections {
   weak_to_strong_watch?: unknown[];
   review_events?: PreMarketBriefEvent[];
   unknown_watch?: PreMarketBriefEvent[];
-  risk_alerts?: Array<Record<string, unknown>>;
+  risk_alerts?: PreMarketAlert[];
+  opportunity_alerts?: PreMarketAlert[];
+  company_announcements_raw?: unknown[];
+  company_announcements_matched?: unknown[];
 }
 
 export interface PreMarketBriefPayload {
