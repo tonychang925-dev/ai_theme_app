@@ -421,7 +421,15 @@ def test_new_chain_report_builder_uses_theme_capital_in_mainline_section() -> No
                         "top3_main_net_inflow_sum": 260000000,
                     }
                 ],
-                "stock_facts": [],
+                "stock_facts": [
+                    {
+                        "stock_id": "002000",
+                        "stock_name": "SampleA",
+                        "subject_key": "ai_chip",
+                        "main_net_inflow": 88000000,
+                        "rank_order": 1,
+                    }
+                ],
             },
         }
     )
@@ -432,6 +440,9 @@ def test_new_chain_report_builder_uses_theme_capital_in_mainline_section() -> No
 
     strong_section = next(section for section in report["sections"] if section["heading"] == "强势股分层")
     assert "资金量能 99.00" in strong_section["items"][0]
+
+    stock_capital_section = next(section for section in report["sections"] if section["heading"] == "主线股票资金流入前20")
+    assert "主力净流入 0.88亿" in stock_capital_section["items"][0]
 
 
 def test_build_strong_stock_tracking_use_case_writes_layer_c_objects() -> None:

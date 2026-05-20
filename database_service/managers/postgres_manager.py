@@ -3173,7 +3173,16 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             m.composite_score AS money_composite_score,
             m.money_flow_score,
             m.money_flow_tier,
-            m.main_net_inflow,
+            COALESCE(
+                m.main_net_inflow,
+                CASE
+                    WHEN jsonb_typeof(s.raw_json) = 'array'
+                     AND jsonb_array_length(s.raw_json) > 35
+                     AND NULLIF(s.raw_json->>35, '') ~ '^-?[0-9]+(\\.[0-9]+)?$'
+                    THEN (s.raw_json->>35)::numeric
+                    ELSE NULL
+                END
+            ) AS main_net_inflow,
             m.dragon_tiger_net_amount,
             m.institution_seat_count,
             m.explanation AS money_explanation,
