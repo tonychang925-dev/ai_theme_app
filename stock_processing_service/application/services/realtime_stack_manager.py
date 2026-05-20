@@ -84,15 +84,21 @@ class RealtimeStackManager:
         *,
         python_cmd: str | None = None,
         redis_url: str = "redis://127.0.0.1:6379/0",
-        write_db: str = "stock_data",
+        write_db: str | None = None,
         log_dir: str | None = None,
     ) -> None:
         self._python_cmd = python_cmd or os.environ.get(
             "PYTHON_CMD", os.environ.get("CONDA_PYTHON_CMD", sys.executable)
         )
         self._redis_url = redis_url
-        # Phase 5: production uses single DB; E2E may override via env.
-        self._db_name = write_db or os.environ.get("PG_DATABASE", "stock_data_test")
+        # P1-C: 当前阶段硬锁 stock_data_test 单库，禁止读写分离或 stock_data 混用
+        self._db_name = write_db or os.environ.get("PG_DATABASE") or "stock_data_test"
+        if self._db_name != "stock_data_test":
+            raise RuntimeError(
+                f"RealtimeStackManager: 当前阶段只允许使用 stock_data_test, "
+                f"got write_db={write_db}, PG_DATABASE={os.environ.get('PG_DATABASE')}. "
+                f"设置 PG_DATABASE=stock_data_test 并移除 write_db 参数。"
+            )
         self._log_dir = Path(
             log_dir or os.environ.get("REALTIME_LOG_DIR", str(ROOT / "logs" / "realtime"))
         )
@@ -115,6 +121,14 @@ class RealtimeStackManager:
                 return {"ok": True, "status": "already_running", "detail": self.status_sync()}
 
             run_id = f"realtime_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')}"
+
+            # P1-C-pre: start 前 Redis group 诊断
+            group_diag = await self._diagnose_redis_groups()
+            logger.warning("[REDIS_DIAG] %s", json.dumps(group_diag, ensure_ascii=False))
+            if group_diag.get("alerts"):
+                for alert in group_diag["alerts"]:
+                    logger.warning("[REDIS_DIAG_ALERT] %s", alert)
+
             env = self._build_env(run_id)
             akshare_log = self._log_dir / f"akshare_{run_id}.log"
             raw_log = self._log_dir / f"raw_news_{run_id}.log"
@@ -318,6 +332,47 @@ class RealtimeStackManager:
         env["REDIS_URL"] = self._redis_url
         env["RUN_ID"] = run_id
         return env
+
+    async def _diagnose_redis_groups(self) -> dict[str, Any]:
+        """P1-C-pre: 启动前 Redis group 体检。"""
+        protected = {
+            "news_storage_realtime", "news_processor_realtime",
+            "theme_processor_realtime", "decision_executor_realtime",
+        }
+        result: dict[str, Any] = {"streams": {}, "alerts": []}
+        try:
+            import redis.asyncio as aioredis
+            r = aioredis.Redis.from_url(self._redis_url, decode_responses=True)
+            for stream in ["stream:news:raw", "stream:events:structured", "stream:events:decision"]:
+                info: dict[str, Any] = {"groups": [], "group_count": 0}
+                try:
+                    groups = await r.xinfo_groups(stream)
+                    for g in groups:
+                        gname = g.get("name", "")
+                        consumers = int(g.get("consumers", 0))
+                        pending = int(g.get("pending", 0))
+                        info["groups"].append({
+                            "name": gname, "consumers": consumers,
+                            "pending": pending, "protected": gname in protected,
+                        })
+                        if consumers == 0 and pending == 0 and gname not in protected:
+                            info["groups"][-1]["zombie"] = True
+                    info["group_count"] = len(info["groups"])
+                    zombie_count = sum(1 for g in info["groups"] if g.get("zombie"))
+                    if zombie_count > 0:
+                        result["alerts"].append(
+                            f"{stream}: {zombie_count} zombie groups (0 consumers, 0 pending)"
+                        )
+                    missing = protected - {g["name"] for g in info["groups"]}
+                    if missing:
+                        result["alerts"].append(f"{stream}: missing protected groups: {missing}")
+                except Exception:
+                    info["error"] = "unavailable"
+                result["streams"][stream] = info
+            await r.aclose()
+        except Exception as exc:
+            result["error"] = str(exc)
+        return result
 
     async def _cleanup_processes(self) -> None:
         for proc in [self._akshare_process, self._raw_process, self._decision_process, self._rebuild_process, self._intel_producer_process]:
