@@ -1731,7 +1731,7 @@ BLOCKED     被外部依赖或上游决策阻塞
 | P1 | INTEL-FEED-05 | P1 | PARTIAL | INTEL-FEED-02 | 前端已有 `event_review -> 待复核` 标签 | 需结合真实 feed 验证 |
 | P1 | JYHF-NE-04 | P1 | DONE | JYHF-NE-01 | 2026-05-20: idx_news_event_source_trace_id_not_null + idx_event_subject_map_event_subject_source 唯一索引, ON CONFLICT DO NOTHING | JYHF 幂等验证通过 |
 | P1 | INTEL-CHAIN-05 | P1 | PARTIAL | INTEL-CHAIN-04 | 当前已有 raw/matched section 雏形 | matched 公告需进入 matched sections/opportunities |
-| P1 | PMB-RT-03 | P1 | TODO | PMB-WIN-05 | 待补 | diagnostics `source_breakdown` |
+| P1 | PMB-RT-03 | P1 | DONE | PMB-WIN-05 | 2026-05-20: source_breakdown 含 akshare_realtime/jyhf_cdp/intel 三类来源统计, 窗口信息, 已集成到 rebuild diagnostics | diagnostics source_breakdown 完成 |
 | P1 | PMB-RT-04 | P1 | TODO | opportunity builder 输出稳定 | 待补 | diagnostics opportunity tier counts |
 | P1 | PMB-SCH-03 | P1 | TODO | PMB-SCH-01~02 | 待补 | 更新 scheduler 单测窗口样例 |
 
