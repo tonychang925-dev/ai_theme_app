@@ -27,8 +27,14 @@ CREATE TABLE IF NOT EXISTS structured_intel_event (
     evidence_json     JSONB        NOT NULL DEFAULT '{}'::jsonb,
     llm_model         VARCHAR(64),
     stream_status     VARCHAR(32)  NOT NULL DEFAULT 'pending', -- pending / produced / skipped / failed
+    stream_message_id  VARCHAR(128),
+    stream_produced_at TIMESTAMPTZ,
     created_at        TIMESTAMPTZ  NOT NULL DEFAULT now()
 );
+
+ALTER TABLE structured_intel_event
+    ADD COLUMN IF NOT EXISTS stream_message_id VARCHAR(128),
+    ADD COLUMN IF NOT EXISTS stream_produced_at TIMESTAMPTZ;
 
 -- 索引
 CREATE INDEX IF NOT EXISTS idx_sie_raw_doc
@@ -48,6 +54,9 @@ CREATE INDEX IF NOT EXISTS idx_sie_publish_time
 
 CREATE INDEX IF NOT EXISTS idx_sie_stream_status
     ON structured_intel_event(stream_status);
+
+CREATE UNIQUE INDEX IF NOT EXISTS idx_sie_raw_doc_model_event_unique
+    ON structured_intel_event(raw_doc_id, COALESCE(llm_model, ''), event_type);
 
 -- 验证表结构
 SELECT

@@ -64,13 +64,15 @@ class PreMarketBriefBuilder:
             )[:limit]
             unknown_events = stream_sections["unknown_events"][:limit]
 
-        intel_announcements = await self._load_intel_announcements(trade_date, limit)
+        intel_announcements_raw = await self._load_intel_announcements(trade_date, limit, matched_only=False)
+        intel_announcements_matched = await self._load_intel_announcements(trade_date, limit, matched_only=True)
 
         sections = self._build_sections(
             matched_events=matched_events,
             review_events=review_events,
             unknown_events=unknown_events,
-            intel_announcements=intel_announcements,
+            intel_announcements_raw=intel_announcements_raw,
+            intel_announcements_matched=intel_announcements_matched,
             limit=limit,
         )
         if self._opportunity_builder is not None:
@@ -87,7 +89,9 @@ class PreMarketBriefBuilder:
             "opportunity_count": len(sections["event_driven_opportunities"]),
             "review_event_count": len(review_events),
             "unknown_event_count": len(unknown_events),
-            "intel_announcement_count": len(sections["company_announcements"]),
+            "intel_announcement_count": len(sections["company_announcements_raw"]),
+            "intel_announcement_raw_count": len(sections["company_announcements_raw"]),
+            "intel_announcement_matched_count": len(sections["company_announcements_matched"]),
             "last_rebuild_at": datetime.now(timezone.utc).isoformat(),
         }
         payload = {
@@ -122,13 +126,22 @@ class PreMarketBriefBuilder:
         return [self._normalize_event_row(row, "event_review_queue") for row in list(rows or [])[:limit]]
 
     async def _load_intel_announcements(
-        self, trade_date: date, limit: int
+        self,
+        trade_date: date,
+        limit: int,
+        *,
+        matched_only: bool = False,
     ) -> list[dict[str, Any]]:
         """读取 intel 公告事件（news_event JOIN structured_intel_event）。"""
         fn = getattr(self._read_gateway, "get_intel_announcement_events", None)
         if not callable(fn):
             return []
-        rows = await fn(trade_date, limit=limit)
+        try:
+            rows = await fn(trade_date, limit=limit, matched_only=matched_only)
+        except TypeError:
+            if matched_only:
+                return []
+            rows = await fn(trade_date, limit=limit)
         result: list[dict[str, Any]] = []
         for row in (rows or []):
             data = dict(row)
@@ -138,6 +151,12 @@ class PreMarketBriefBuilder:
                     entities = _json.loads(entities)
                 except Exception:
                     entities = {}
+            matched_subjects = data.get("matched_subjects") or []
+            if isinstance(matched_subjects, str):
+                try:
+                    matched_subjects = _json.loads(matched_subjects)
+                except Exception:
+                    matched_subjects = []
             result.append({
                 "event_id": data.get("event_id"),
                 "stock_code": data.get("stock_code", ""),
@@ -152,6 +171,10 @@ class PreMarketBriefBuilder:
                 "entities": entities,
                 "catalyst_tags": list(data.get("catalyst_tags") or []),
                 "risk_tags": list(data.get("risk_tags") or []),
+                "theme_matched": bool(data.get("theme_matched")),
+                "matched_subjects": list(matched_subjects or []),
+                "source_trace_id": data.get("source_trace_id") or "",
+                "source_stage": "matched_intel_join" if data.get("theme_matched") else "raw_intel_join",
             })
         return result
 
@@ -190,6 +213,10 @@ class PreMarketBriefBuilder:
                         "impact_score": e.get("impact_score"),
                         "catalyst_tags": e.get("catalyst_tags", []),
                         "risk_tags": e.get("risk_tags", []),
+                        "theme_matched": bool(e.get("theme_matched")),
+                        "matched_subjects": e.get("matched_subjects", []),
+                        "source_stage": e.get("source_stage", "raw_intel_join"),
+                        "source_trace_id": e.get("source_trace_id", ""),
                     }
                     for e in events_sorted
                 ],
@@ -270,12 +297,15 @@ class PreMarketBriefBuilder:
         matched_events: list[dict[str, Any]],
         review_events: list[dict[str, Any]],
         unknown_events: list[dict[str, Any]],
-        intel_announcements: list[dict[str, Any]],
+        intel_announcements_raw: list[dict[str, Any]],
+        intel_announcements_matched: list[dict[str, Any]],
         limit: int,
     ) -> dict[str, list[dict[str, Any]]]:
         matched_events = self._dedupe_by_key(matched_events, key_fields=("event_id", "subject_key", "title"))[:limit]
         review_events = self._dedupe_by_key(review_events, key_fields=("event_id", "title"))[:limit]
         unknown_events = self._dedupe_by_key(unknown_events, key_fields=("event_id", "title"))[:limit]
+        company_announcements_raw = self._build_company_announcements(intel_announcements_raw)
+        company_announcements_matched = self._build_company_announcements(intel_announcements_matched)
         return {
             "major_events": sorted(matched_events, key=lambda row: float(row.get("impact_score") or 0), reverse=True)[:limit],
             "matched_themes": self._build_matched_themes(matched_events),
@@ -284,7 +314,9 @@ class PreMarketBriefBuilder:
             "risk_alerts": self._build_risk_alerts(review_events, unknown_events),
             "event_driven_opportunities": [],
             # === Phase 6A: 一手信息 section ===
-            "company_announcements": self._build_company_announcements(intel_announcements),
+            "company_announcements": company_announcements_raw,
+            "company_announcements_raw": company_announcements_raw,
+            "company_announcements_matched": company_announcements_matched,
             "earnings_alerts": [],
             "research_highlights": [],
             "institutional_survey": [],

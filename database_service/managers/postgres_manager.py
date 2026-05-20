@@ -7,7 +7,7 @@ import os
 from datetime import date
 import logging
 from typing import Dict, List, Any, Optional, AsyncContextManager
-from datetime import datetime, date, timezone
+from datetime import datetime, date, time, timezone, timedelta
 import asyncpg
 from asyncpg.pool import Pool
 import json
@@ -7452,54 +7452,110 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     event_date = None
 
             async with self.pool.acquire() as conn:
-                row = await conn.fetchrow(
+                existing = await conn.fetchrow(
                     """
-                    INSERT INTO structured_intel_event (
-                        raw_doc_id, event_type, event_subtype, event_level,
-                        stock_code, stock_name, subject_keys, title, summary,
-                        event_date, publish_time, entities, financial_metrics,
-                        business_metrics, catalyst_tags, risk_tags,
-                        confidence, impact_score, urgency_score,
-                        evidence_json, llm_model, stream_status
-                    ) VALUES (
-                        $1, $2, $3, $4,
-                        $5, $6, $7, $8, $9,
-                        $10, $11, $12::jsonb, $13::jsonb,
-                        $14::jsonb, $15, $16,
-                        $17, $18, $19,
-                        $20::jsonb, $21, $22
-                    )
-                    RETURNING *
+                    SELECT *
+                    FROM structured_intel_event
+                    WHERE raw_doc_id = $1
+                      AND llm_model IS NOT DISTINCT FROM $2
+                      AND event_type = $3
+                    ORDER BY id DESC
+                    LIMIT 1
                     """,
                     int(event["raw_doc_id"]),
-                    str(event.get("event_type") or ""),
-                    event.get("event_subtype"),
-                    str(event.get("event_level", "normal")),
-                    event.get("stock_code"),
-                    event.get("stock_name"),
-                    event.get("subject_keys") or [],
-                    event.get("title"),
-                    event.get("summary"),
-                    event_date,
-                    publish_time,
-                    json.dumps(event.get("entities") or {}, ensure_ascii=False),
-                    json.dumps(event.get("financial_metrics") or {}, ensure_ascii=False),
-                    json.dumps(event.get("business_metrics") or {}, ensure_ascii=False),
-                    event.get("catalyst_tags") or [],
-                    event.get("risk_tags") or [],
-                    event.get("confidence"),
-                    event.get("impact_score"),
-                    event.get("urgency_score"),
-                    json.dumps(event.get("evidence_json") or {}, ensure_ascii=False),
                     event.get("llm_model"),
-                    str(event.get("stream_status", "pending")),
+                    str(event.get("event_type") or ""),
                 )
+                if existing:
+                    return dict(existing)
+
+                try:
+                    row = await conn.fetchrow(
+                        """
+                        INSERT INTO structured_intel_event (
+                            raw_doc_id, event_type, event_subtype, event_level,
+                            stock_code, stock_name, subject_keys, title, summary,
+                            event_date, publish_time, entities, financial_metrics,
+                            business_metrics, catalyst_tags, risk_tags,
+                            confidence, impact_score, urgency_score,
+                            evidence_json, llm_model, stream_status
+                        ) VALUES (
+                            $1, $2, $3, $4,
+                            $5, $6, $7, $8, $9,
+                            $10, $11, $12::jsonb, $13::jsonb,
+                            $14::jsonb, $15, $16,
+                            $17, $18, $19,
+                            $20::jsonb, $21, $22
+                        )
+                        RETURNING *
+                        """,
+                        int(event["raw_doc_id"]),
+                        str(event.get("event_type") or ""),
+                        event.get("event_subtype"),
+                        str(event.get("event_level", "normal")),
+                        event.get("stock_code"),
+                        event.get("stock_name"),
+                        event.get("subject_keys") or [],
+                        event.get("title"),
+                        event.get("summary"),
+                        event_date,
+                        publish_time,
+                        json.dumps(event.get("entities") or {}, ensure_ascii=False),
+                        json.dumps(event.get("financial_metrics") or {}, ensure_ascii=False),
+                        json.dumps(event.get("business_metrics") or {}, ensure_ascii=False),
+                        event.get("catalyst_tags") or [],
+                        event.get("risk_tags") or [],
+                        event.get("confidence"),
+                        event.get("impact_score"),
+                        event.get("urgency_score"),
+                        json.dumps(event.get("evidence_json") or {}, ensure_ascii=False),
+                        event.get("llm_model"),
+                        str(event.get("stream_status", "pending")),
+                    )
+                except asyncpg.UniqueViolationError:
+                    row = await conn.fetchrow(
+                        """
+                        SELECT *
+                        FROM structured_intel_event
+                        WHERE raw_doc_id = $1
+                          AND llm_model IS NOT DISTINCT FROM $2
+                          AND event_type = $3
+                        ORDER BY id DESC
+                        LIMIT 1
+                        """,
+                        int(event["raw_doc_id"]),
+                        event.get("llm_model"),
+                        str(event.get("event_type") or ""),
+                    )
                 if not row:
                     raise RuntimeError("structured_intel_event insert 返回空")
                 return dict(row)
         except Exception as e:
             logger.error("insert_structured_intel_event 失败 raw_doc_id=%s: %s",
                          event.get("raw_doc_id"), e)
+            raise
+
+    async def get_intel_event_for_stream(self, intel_event_id: int) -> Optional[Dict[str, Any]]:
+        """按 id 精确读取 structured_intel_event 投递上下文。"""
+        try:
+            async with self.pool.acquire() as conn:
+                row = await conn.fetchrow(
+                    """
+                    SELECT
+                        sie.*,
+                        rid.title AS raw_title,
+                        rid.source_system,
+                        rid.source_type
+                    FROM structured_intel_event sie
+                    JOIN raw_intel_document rid ON sie.raw_doc_id = rid.id
+                    WHERE sie.id = $1
+                    LIMIT 1
+                    """,
+                    int(intel_event_id),
+                )
+            return dict(row) if row else None
+        except Exception as e:
+            logger.error("get_intel_event_for_stream 失败 event_id=%s: %s", intel_event_id, e)
             raise
 
     async def get_pending_intel_events_for_stream(
@@ -7531,18 +7587,29 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.error("get_pending_intel_events_for_stream 失败: %s", e)
             raise
 
-    async def update_intel_event_stream_status(self, event_id: int, status: str) -> None:
+    async def update_intel_event_stream_status(
+        self,
+        event_id: int,
+        status: str,
+        stream_message_id: Optional[str] = None,
+    ) -> None:
         """更新 structured_intel_event.stream_status。"""
         try:
             async with self.pool.acquire() as conn:
                 await conn.execute(
                     """
                     UPDATE structured_intel_event
-                    SET stream_status = $2
+                    SET stream_status = $2,
+                        stream_message_id = COALESCE($3, stream_message_id),
+                        stream_produced_at = CASE
+                            WHEN $2 = 'produced' THEN COALESCE(stream_produced_at, now())
+                            ELSE stream_produced_at
+                        END
                     WHERE id = $1
                     """,
                     int(event_id),
                     str(status),
+                    stream_message_id,
                 )
         except Exception as e:
             logger.error("update_intel_event_stream_status 失败 event_id=%s: %s", event_id, e)
@@ -7568,47 +7635,76 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 event_time = event_time.replace(tzinfo=None)
 
             async with self.pool.acquire() as conn:
-                row = await conn.fetchrow(
-                    """
-                    INSERT INTO news_event (
-                        news_id, event_type, impact_industries, direction,
-                        confidence, summary, theme_directive,
-                        theme_directive_processed, severity_score,
-                        source_weight, event_time, entities,
-                        causal_claim, evidence_set, raw_event_json,
-                        source_category, raw_intel_doc_id,
-                        structured_intel_event_id, source_trace_id
-                    ) VALUES (
-                        $1, $2, $3, $4,
-                        $5, $6, $7::jsonb,
-                        $8, $9,
-                        $10, $11, $12::jsonb,
-                        $13::jsonb, $14::jsonb, $15::jsonb,
-                        $16, $17,
-                        $18, $19
+                structured_intel_event_id = event_data.get("structured_intel_event_id")
+                if structured_intel_event_id is not None:
+                    existing = await conn.fetchrow(
+                        """
+                        SELECT *
+                        FROM news_event
+                        WHERE structured_intel_event_id = $1
+                        ORDER BY id DESC
+                        LIMIT 1
+                        """,
+                        structured_intel_event_id,
                     )
-                    RETURNING *
-                    """,
-                    event_data.get("news_id"),          # 可为 NULL（intel 事件无 news_raw 关联）
-                    str(event_data.get("event_type") or "intel_event"),
-                    event_data.get("impact_industries") or [],
-                    event_data.get("direction", "中性"),
-                    event_data.get("confidence"),
-                    event_data.get("summary"),
-                    json.dumps(event_data.get("theme_directive") or {}, ensure_ascii=False),
-                    event_data.get("theme_directive_processed", False),
-                    event_data.get("severity_score"),
-                    event_data.get("source_weight"),
-                    event_time,
-                    json.dumps(event_data.get("entities") or {}, ensure_ascii=False),
-                    json.dumps(event_data.get("causal_claim") or {}, ensure_ascii=False),
-                    json.dumps(event_data.get("evidence_set") or {}, ensure_ascii=False),
-                    json.dumps(event_data.get("raw_event_json") or {}, ensure_ascii=False),
-                    "intel",                            # source_category
-                    event_data.get("raw_intel_doc_id"),
-                    event_data.get("structured_intel_event_id"),
-                    event_data.get("source_trace_id"),
-                )
+                    if existing:
+                        return dict(existing)
+
+                try:
+                    row = await conn.fetchrow(
+                        """
+                        INSERT INTO news_event (
+                            news_id, event_type, impact_industries, direction,
+                            confidence, summary, theme_directive,
+                            theme_directive_processed, severity_score,
+                            source_weight, event_time, entities,
+                            causal_claim, evidence_set, raw_event_json,
+                            source_category, raw_intel_doc_id,
+                            structured_intel_event_id, source_trace_id
+                        ) VALUES (
+                            $1, $2, $3, $4,
+                            $5, $6, $7::jsonb,
+                            $8, $9,
+                            $10, $11, $12::jsonb,
+                            $13::jsonb, $14::jsonb, $15::jsonb,
+                            $16, $17,
+                            $18, $19
+                        )
+                        RETURNING *
+                        """,
+                        event_data.get("news_id"),          # 可为 NULL（intel 事件无 news_raw 关联）
+                        str(event_data.get("event_type") or "intel_event"),
+                        event_data.get("impact_industries") or [],
+                        event_data.get("direction", "中性"),
+                        event_data.get("confidence"),
+                        event_data.get("summary"),
+                        json.dumps(event_data.get("theme_directive") or {}, ensure_ascii=False),
+                        event_data.get("theme_directive_processed", False),
+                        event_data.get("severity_score"),
+                        event_data.get("source_weight"),
+                        event_time,
+                        json.dumps(event_data.get("entities") or {}, ensure_ascii=False),
+                        json.dumps(event_data.get("causal_claim") or {}, ensure_ascii=False),
+                        json.dumps(event_data.get("evidence_set") or {}, ensure_ascii=False),
+                        json.dumps(event_data.get("raw_event_json") or {}, ensure_ascii=False),
+                        "intel",                            # source_category
+                        event_data.get("raw_intel_doc_id"),
+                        structured_intel_event_id,
+                        event_data.get("source_trace_id"),
+                    )
+                except asyncpg.UniqueViolationError:
+                    if structured_intel_event_id is None:
+                        raise
+                    row = await conn.fetchrow(
+                        """
+                        SELECT *
+                        FROM news_event
+                        WHERE structured_intel_event_id = $1
+                        ORDER BY id DESC
+                        LIMIT 1
+                        """,
+                        structured_intel_event_id,
+                    )
                 if not row:
                     raise RuntimeError("create_news_event_with_intel 返回空")
                 return dict(row)
@@ -7617,20 +7713,49 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             raise
 
     async def get_intel_announcement_events(
-        self, trade_date: date, limit: int = 200
+        self,
+        trade_date: date,
+        limit: int = 200,
+        start_time: Optional[_datetime] = None,
+        end_time: Optional[_datetime] = None,
+        matched_only: bool = False,
     ) -> List[Dict[str, Any]]:
         """读取指定交易日的 intel 公告事件（news_event JOIN structured_intel_event）。
 
         用于 PreMarketBriefBuilder.company_announcements section。
         """
         try:
+            if start_time is None:
+                prev_day = trade_date - timedelta(days=1)
+                start_time = _datetime.combine(prev_day, time(15, 0), tzinfo=timezone(timedelta(hours=8)))
+            if end_time is None:
+                end_time = _datetime.combine(trade_date, time(8, 30), tzinfo=timezone(timedelta(hours=8)))
+
             async with self.pool.acquire() as conn:
                 rows = await conn.fetch(
                     """
+                    WITH matched AS (
+                        SELECT
+                            esm.event_id,
+                            jsonb_agg(
+                                jsonb_build_object(
+                                    'subject_key', esm.subject_key,
+                                    'subject_name', esm.subject_name,
+                                    'confidence', esm.confidence,
+                                    'relation_type', esm.relation_type
+                                )
+                                ORDER BY
+                                    CASE WHEN esm.relation_type = 'primary' THEN 0 ELSE 1 END,
+                                    esm.confidence DESC NULLS LAST
+                            ) AS matched_subjects
+                        FROM event_subject_map esm
+                        GROUP BY esm.event_id
+                    )
                     SELECT
                         ne.id AS event_id,
                         ne.summary,
                         ne.created_at AS occurred_at,
+                        ne.source_trace_id,
                         sie.stock_code,
                         sie.stock_name,
                         sie.event_type,
@@ -7642,16 +7767,23 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                         sie.entities,
                         sie.catalyst_tags,
                         sie.risk_tags,
-                        sie.evidence_json
+                        sie.evidence_json,
+                        COALESCE(matched.matched_subjects, '[]'::jsonb) AS matched_subjects,
+                        (matched.event_id IS NOT NULL) AS theme_matched
                     FROM news_event ne
                     JOIN structured_intel_event sie ON ne.structured_intel_event_id = sie.id
+                    LEFT JOIN matched ON matched.event_id = ne.id
                     WHERE ne.source_category = 'intel'
-                      AND ne.created_at::date = $1::date
+                      AND sie.publish_time >= $1
+                      AND sie.publish_time < $2
+                      AND ($3::boolean = false OR matched.event_id IS NOT NULL)
                     ORDER BY sie.impact_score DESC NULLS LAST,
                              sie.publish_time DESC NULLS LAST
-                    LIMIT $2
+                    LIMIT $4
                     """,
-                    trade_date,
+                    start_time,
+                    end_time,
+                    bool(matched_only),
                     int(limit),
                 )
             return [dict(r) for r in rows]

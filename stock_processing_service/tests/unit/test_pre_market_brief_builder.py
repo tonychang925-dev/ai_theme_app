@@ -66,6 +66,45 @@ class _OpportunityBuilder:
         ]
 
 
+class _IntelAnnouncementGateway(_ReadGateway):
+    async def get_intel_announcement_events(self, feed_date, limit=200, matched_only=False):
+        rows = [
+            {
+                "event_id": 701,
+                "stock_code": "000001",
+                "stock_name": "平安银行",
+                "title": "重大合同公告",
+                "summary": "签署重大合同",
+                "event_type": "major_contract",
+                "event_level": "important",
+                "publish_time": "2026-05-15T16:00:00+08:00",
+                "confidence": 0.8,
+                "impact_score": 80,
+                "theme_matched": True,
+                "matched_subjects": [{"subject_key": "theme-a", "subject_name": "机器人"}],
+                "source_trace_id": "trace-a",
+            },
+            {
+                "event_id": 702,
+                "stock_code": "000002",
+                "stock_name": "万科A",
+                "title": "普通公告",
+                "summary": "普通事项",
+                "event_type": "other",
+                "event_level": "normal",
+                "publish_time": "2026-05-15T17:00:00+08:00",
+                "confidence": 0.6,
+                "impact_score": 30,
+                "theme_matched": False,
+                "matched_subjects": [],
+                "source_trace_id": "trace-b",
+            },
+        ]
+        if matched_only:
+            rows = [row for row in rows if row["theme_matched"]]
+        return rows[:limit]
+
+
 @pytest.mark.asyncio
 async def test_pre_market_brief_builder_aggregates_db_events_and_writes_snapshot():
     read = _ReadGateway(
@@ -199,6 +238,26 @@ async def test_pre_market_brief_builder_prefers_event_subject_map_rows():
     assert read.used_legacy_events is False
     assert payload["sections"]["matched_themes"][0]["subject_key"] == "9030409"
     assert payload["sections"]["matched_themes"][0]["theme_name"] == "AR眼镜"
+
+
+@pytest.mark.asyncio
+async def test_pre_market_brief_builder_splits_raw_and_matched_intel_announcements():
+    builder = PreMarketBriefBuilder(
+        read_gateway=_IntelAnnouncementGateway(),
+        write_gateway=_WriteGateway(),
+    )
+
+    payload = await builder.rebuild(date(2026, 5, 16), dry_run=True)
+
+    assert len(payload["sections"]["company_announcements_raw"]) == 2
+    assert len(payload["sections"]["company_announcements_matched"]) == 1
+    assert payload["sections"]["company_announcements"] == payload["sections"]["company_announcements_raw"]
+    ann = payload["sections"]["company_announcements_matched"][0]["announcements"][0]
+    assert ann["theme_matched"] is True
+    assert ann["matched_subjects"][0]["subject_key"] == "theme-a"
+    assert ann["source_stage"] == "matched_intel_join"
+    assert payload["diagnostics"]["intel_announcement_raw_count"] == 2
+    assert payload["diagnostics"]["intel_announcement_matched_count"] == 1
 
 
 @pytest.mark.asyncio
