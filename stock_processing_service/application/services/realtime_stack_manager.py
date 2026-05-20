@@ -19,6 +19,7 @@ import json
 import logging
 import os
 import signal
+import sys
 import time
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -33,7 +34,7 @@ ROOT = Path(__file__).resolve().parents[3]
 
 BASELINE_ENV = {
     "THEME_PROFILE_VERSION": "v2",
-    "THEME_PROFILE_V2_STATUS": "draft",
+    "THEME_PROFILE_V2_STATUS": "accepted_candidate",
     "THEME_PROFILE_V2_FALLBACK_TO_V1": "true",
     "THEME_PROFILE_V2_REQUIRE_LOADED": "true",
     "THEME_PROFILE_CACHE_TTL_SECONDS": "300",
@@ -86,7 +87,7 @@ class RealtimeStackManager:
         log_dir: str | None = None,
     ) -> None:
         self._python_cmd = python_cmd or os.environ.get(
-            "PYTHON_CMD", os.environ.get("CONDA_PYTHON_CMD", "python")
+            "PYTHON_CMD", os.environ.get("CONDA_PYTHON_CMD", sys.executable)
         )
         self._redis_url = redis_url
         # Phase 5: production uses single DB; E2E may override via env.

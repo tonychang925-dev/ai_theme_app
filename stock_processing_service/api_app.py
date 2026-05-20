@@ -63,6 +63,44 @@ def _db_name() -> str:
     return str(os.getenv("PG_DATABASE") or os.getenv("DB_NAME") or "stock_data_test")
 
 
+async def _init_stock_match_engine_background(app: FastAPI) -> None:
+    """后台懒加载 StockMatchEngine，不阻塞 SPS 端口监听。"""
+    status = app.state.match_engine_status
+    status["loading"] = True
+    try:
+        from theme_service.services.stock_match_engine import StockMatchEngine
+        import aiohttp
+
+        deepseek_key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
+        if not deepseek_key:
+            status["error"] = "DEEPSEEK_API_KEY not set"
+            logger.warning("StockMatchEngine background init skipped: DEEPSEEK_API_KEY not set")
+            return
+
+        class DeepSeekLLM:
+            async def chat_completion(self, messages, temperature=0.1, max_tokens=512):
+                headers = {"Authorization": f"Bearer {deepseek_key}", "Content-Type": "application/json"}
+                payload = {"model": "deepseek-chat", "messages": messages,
+                           "temperature": temperature, "max_tokens": max_tokens, "stream": False}
+                async with aiohttp.ClientSession() as s:
+                    async with s.post("https://api.deepseek.com/v1/chat/completions",
+                                      headers=headers, json=payload,
+                                      timeout=aiohttp.ClientTimeout(total=60)) as r:
+                        data = await r.json()
+                        return {"content": data["choices"][0]["message"]["content"]}
+
+        engine = StockMatchEngine(llm_client=DeepSeekLLM())
+        await engine.initialize()
+        app.state.match_engine = engine
+        status["ready"] = True
+        status["loading"] = False
+        logger.info("StockMatchEngine initialized (DeepSeek LLM) for mobile news-recommend")
+    except Exception as exc:
+        status["error"] = str(exc)
+        status["loading"] = False
+        logger.warning("StockMatchEngine background init failed: %s", exc)
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     cfg = DatabaseConfig(db_type=DatabaseType.POSTGRESQL, postgres_database=_db_name())
@@ -74,32 +112,14 @@ async def lifespan(app: FastAPI):
     app.state.phase1_repo = Phase1ReadRepository()
     app.state.intel_adapter = NewChainIntelFeedAdapter(gw)
     # StockMatchEngine — 已有完整管线：LLM提取 → Gate匹配 → Rerank → Judge
+    # 默认不阻塞 SPS 启动；设置 SPS_ENABLE_STOCK_MATCH_ENGINE=true 启用（后台懒加载）
     app.state.match_engine = None
-    try:
-        from theme_service.services.stock_match_engine import StockMatchEngine
-        import aiohttp, os as _os
-
-        deepseek_key = _os.getenv("DEEPSEEK_API_KEY", "").strip()
-        if deepseek_key:
-            class DeepSeekLLM:
-                async def chat_completion(self, messages, temperature=0.1, max_tokens=512):
-                    headers = {"Authorization": f"Bearer {deepseek_key}", "Content-Type": "application/json"}
-                    payload = {"model": "deepseek-chat", "messages": messages,
-                               "temperature": temperature, "max_tokens": max_tokens, "stream": False}
-                    async with aiohttp.ClientSession() as s:
-                        async with s.post("https://api.deepseek.com/v1/chat/completions",
-                                          headers=headers, json=payload,
-                                          timeout=aiohttp.ClientTimeout(total=60)) as r:
-                            data = await r.json()
-                            return {"content": data["choices"][0]["message"]["content"]}
-            engine = StockMatchEngine(llm_client=DeepSeekLLM())
-            await engine.initialize()
-            app.state.match_engine = engine
-            logger.info("StockMatchEngine initialized (DeepSeek LLM) for mobile news-recommend")
-        else:
-            logger.warning("DEEPSEEK_API_KEY not set, StockMatchEngine not initialized")
-    except Exception as exc:
-        logger.warning("StockMatchEngine init failed: %s", exc)
+    app.state.match_engine_status = {"enabled": False, "ready": False, "loading": False, "error": None}
+    if os.environ.get("SPS_ENABLE_STOCK_MATCH_ENGINE", "false").lower() in ("1", "true", "yes", "on"):
+        app.state.match_engine_status["enabled"] = True
+        asyncio.create_task(_init_stock_match_engine_background(app))
+    else:
+        logger.info("StockMatchEngine disabled (set SPS_ENABLE_STOCK_MATCH_ENGINE=true to enable)")
     from stock_processing_service.application.services.collection_task_registry import get_default_registry
     app.state.collection_job_manager = CollectionJobManager(
         container=app.state.container,
