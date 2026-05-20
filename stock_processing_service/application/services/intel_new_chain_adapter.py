@@ -300,6 +300,36 @@ class NewChainIntelFeedAdapter:
             })
         return items
 
+    async def load_review_event_items(self, feed_date: date) -> List[Dict[str, Any]]:
+        """event_review_queue → event_review 情报项。"""
+        fn = getattr(self._gw, "get_pre_market_review_events", None)
+        if not callable(fn):
+            return []
+        try:
+            rows = await fn(feed_date, limit=200)
+        except Exception:
+            return []
+        items: List[Dict[str, Any]] = []
+        for row in rows or []:
+            theme_name = str(row.get("theme_name") or "")
+            source_channel = self._normalize_review_source_channel(row.get("source_channel"))
+            items.append({
+                "item_id": str(row.get("item_id") or f"review:{row.get('event_id', '')}"),
+                "item_type": "event_review",
+                "occurred_at": str(row.get("occurred_at") or ""),
+                "title": str(row.get("title") or ""),
+                "summary": str(row.get("summary") or row.get("reason") or ""),
+                "theme_subject_keys": [],
+                "theme_names": [theme_name] if theme_name else [],
+                "stock_ids": [],
+                "stock_names": [],
+                "confidence": float(row.get("confidence") or 0) if row.get("confidence") else None,
+                "impact_score": float(row.get("impact_score") or 0),
+                "source_type": str(row.get("source_type") or "event_review_queue"),
+                "source_channel": source_channel,
+            })
+        return items
+
     async def load_subject_history_items(self, feed_date: date) -> List[Dict[str, Any]]:
         """旧链：subject_history_staging JYHF CDP → event / new_theme 情报项。"""
         try:
@@ -361,6 +391,7 @@ class NewChainIntelFeedAdapter:
         all_items.extend(await _safe_load("strong_stock", self.load_strong_stock_items(feed_date)))
         # 旧链新闻事件
         all_items.extend(await _safe_load("news_event", self.load_news_event_items(feed_date)))
+        all_items.extend(await _safe_load("review_event", self.load_review_event_items(feed_date)))
         all_items.extend(await _safe_load("subject_history", self.load_subject_history_items(feed_date)))
 
         # session 过滤（仅 event 类 item 有实际时间，新链信号默认 post_market）
@@ -405,12 +436,19 @@ class NewChainIntelFeedAdapter:
             except Exception:
                 ts = 0
             # 事件类 -ts 实现时间降序（最新在上）
-            if it.get("item_type") in ("event", "new_theme"):
+            if it.get("item_type") in ("event", "event_review", "new_theme"):
                 return (-pri, -ts, -score)
             return (-pri, 0, -score)
 
         all_items.sort(key=_sort_key)
         return all_items[:limit]
+
+    @staticmethod
+    def _normalize_review_source_channel(value: Any) -> str:
+        source = str(value or "").strip()
+        if source in {"", "realtime_news", "structured_theme_match", "event_theme_matcher"}:
+            return "akshare_realtime"
+        return source
 
     async def get_latest_date(self) -> Optional[str]:
         """返回新链各源的最大日期，不做 fallback。"""

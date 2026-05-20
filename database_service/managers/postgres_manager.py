@@ -6958,7 +6958,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 COALESCE(NULLIF(nr.title, ''), NULLIF(ne.summary, ''), ne.event_type, ('事件#' || ne.id::text)) AS title,
                 COALESCE(ne.summary, nr.content, '') AS summary,
                 COALESCE(esm.confidence, ne.confidence) AS confidence,
-                0::double precision AS impact_score
+                0::double precision AS impact_score,
+                nr.source AS raw_source
             FROM news_event ne
             LEFT JOIN news_raw nr ON nr.id = ne.news_id
             JOIN event_subject_map esm ON esm.event_id = ne.id
@@ -6983,7 +6984,11 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             confidence,
             impact_score,
             'event_subject_map'::text AS source_type,
-            'realtime_news'::text AS source_channel
+            CASE
+                WHEN COALESCE(NULLIF(raw_source, ''), '') IN ('akshare_realtime', 'akshare', 'akshare_cls', 'akshare_replay')
+                THEN 'akshare_realtime'
+                ELSE 'realtime_news'
+            END::text AS source_channel
         FROM mapped
         ORDER BY occurred_at DESC NULLS LAST, event_id DESC, subject_key
         """

@@ -1,10 +1,12 @@
 """Phase 5: New-chain realtime stack manager.
 
-Manages start/stop/status of the stream-only realtime pipeline:
+Manages start/stop/status of the realtime pipeline:
+  - akshare realtime collector (writes stream:news:raw)
   - raw_news_services (NewsStreamHandler + NewsStreamProcessor)
   - phase0_decision_services (ThemeProcessor + DecisionExecutor)
+  - pre-market brief minimal rebuild loop
 
-Explicitly does NOT start: frontend_bff:8003, old collector, old matcher,
+Explicitly does NOT start: frontend_bff:8003, old matcher,
 old run_realtime_stack.sh.
 
 Environment is frozen to Phase 4.7 baseline (THEME_PROFILE_VERSION=v2 etc.).
@@ -13,18 +15,19 @@ Environment is frozen to Phase 4.7 baseline (THEME_PROFILE_VERSION=v2 etc.).
 from __future__ import annotations
 
 import asyncio
+import json
 import logging
 import os
 import signal
 import time
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 logger = logging.getLogger(__name__)
 
-ROOT = Path(__file__).resolve().parents[4]
+ROOT = Path(__file__).resolve().parents[3]
 
 # ── Phase 4.7 baseline environment ────────────────────────────────
 
@@ -62,8 +65,10 @@ class RealtimeStackState:
     running: bool = False
     started_at: str | None = None
     pid: int | None = None
+    akshare_pid: int | None = None
     raw_news_pid: int | None = None
     decision_pid: int | None = None
+    rebuild_pid: int | None = None
     run_id: str = ""
     last_error: str = ""
     log_dir: str = ""
@@ -92,8 +97,10 @@ class RealtimeStackManager:
         self._log_dir.mkdir(parents=True, exist_ok=True)
 
         self._state = RealtimeStackState()
+        self._akshare_process: asyncio.subprocess.Process | None = None
         self._raw_process: asyncio.subprocess.Process | None = None
         self._decision_process: asyncio.subprocess.Process | None = None
+        self._rebuild_process: asyncio.subprocess.Process | None = None
         self._lock = asyncio.Lock()
 
     # ── Public API ─────────────────────────────────────────────────
@@ -106,8 +113,12 @@ class RealtimeStackManager:
 
             run_id = f"realtime_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')}"
             env = self._build_env(run_id)
+            akshare_log = self._log_dir / f"akshare_{run_id}.log"
             raw_log = self._log_dir / f"raw_news_{run_id}.log"
             decision_log = self._log_dir / f"decision_{run_id}.log"
+            rebuild_log = self._log_dir / f"brief_rebuild_{run_id}.log"
+            akshare_status = self._log_dir / f"akshare_{run_id}.status.json"
+            rebuild_status = self._log_dir / f"brief_rebuild_{run_id}.status.json"
 
             try:
                 self._raw_process = await asyncio.create_subprocess_exec(
@@ -133,20 +144,56 @@ class RealtimeStackManager:
                     env=env,
                 )
 
-                # Brief warmup — give subprocesses time to start
+                # Let consumer groups settle before the source starts writing.
                 await asyncio.sleep(2)
+
+                self._akshare_process = await asyncio.create_subprocess_exec(
+                    self._python_cmd,
+                    str(ROOT / "stock_processing_service/scripts/run_akshare_realtime_news_collector.py"),
+                    "--redis-url", self._redis_url,
+                    "--stream", "stream:news:raw",
+                    "--run-id", run_id,
+                    "--poll-interval-seconds", os.environ.get("AKSHARE_REALTIME_POLL_SECONDS", "60"),
+                    "--lookback-minutes", os.environ.get("AKSHARE_REALTIME_LOOKBACK_MINUTES", "180"),
+                    "--status-path", str(akshare_status),
+                    stdout=open(akshare_log, "w"),
+                    stderr=asyncio.subprocess.STDOUT,
+                    env=env,
+                )
+                self._rebuild_process = await asyncio.create_subprocess_exec(
+                    self._python_cmd,
+                    str(ROOT / "stock_processing_service/scripts/run_pre_market_brief_rebuild_loop.py"),
+                    "--interval-seconds", os.environ.get("PRE_MARKET_BRIEF_REALTIME_REBUILD_SECONDS", "300"),
+                    "--source", "db_first",
+                    "--limit", os.environ.get("PRE_MARKET_BRIEF_REALTIME_LIMIT", "200"),
+                    "--status-path", str(rebuild_status),
+                    stdout=open(rebuild_log, "w"),
+                    stderr=asyncio.subprocess.STDOUT,
+                    env=env,
+                )
+
+                # Brief warmup — give subprocesses time to start
+                await asyncio.sleep(1)
 
                 self._state.running = True
                 self._state.started_at = datetime.now(timezone.utc).isoformat()
                 self._state.pid = os.getpid()
+                self._state.akshare_pid = self._akshare_process.pid
                 self._state.raw_news_pid = self._raw_process.pid
                 self._state.decision_pid = self._decision_process.pid
+                self._state.rebuild_pid = self._rebuild_process.pid
                 self._state.run_id = run_id
                 self._state.last_error = ""
                 self._state.log_dir = str(self._log_dir)
 
-                logger.info("realtime stack started: run_id=%s raw_pid=%d decision_pid=%d",
-                            run_id, self._raw_process.pid, self._decision_process.pid)
+                logger.info(
+                    "realtime stack started: run_id=%s akshare_pid=%d raw_pid=%d decision_pid=%d rebuild_pid=%d",
+                    run_id,
+                    self._akshare_process.pid,
+                    self._raw_process.pid,
+                    self._decision_process.pid,
+                    self._rebuild_process.pid,
+                )
                 return {"ok": True, "status": "started", "detail": self.status_sync()}
 
             except Exception as exc:
@@ -195,10 +242,19 @@ class RealtimeStackManager:
                 base["dead_letter_count"] = dl_info.get("length", 0)
             except Exception:
                 base["dead_letter_count"] = -1
+            try:
+                review_info = await r.xinfo_stream("stream:events:decision")
+                base["decision_stream_count"] = review_info.get("length", 0)
+            except Exception:
+                base["decision_stream_count"] = -1
             base["redis_streams"] = stream_info
             await r.aclose()
         except Exception as exc:
             base["redis_error"] = str(exc)
+
+        base["akshare_collector"] = self._read_status_file("akshare")
+        base["brief_rebuild"] = self._read_status_file("brief_rebuild")
+        base["review_queue_count"] = await self._read_review_queue_count()
 
         return base
 
@@ -208,8 +264,10 @@ class RealtimeStackManager:
             "running": self._state.running,
             "run_id": self._state.run_id,
             "started_at": self._state.started_at,
+            "akshare_pid": self._state.akshare_pid,
             "raw_news_pid": self._state.raw_news_pid,
             "decision_pid": self._state.decision_pid,
+            "rebuild_pid": self._state.rebuild_pid,
             "log_dir": self._state.log_dir,
             "last_error": self._state.last_error,
             "profile_version": BASELINE_ENV.get("THEME_PROFILE_VERSION", "v2"),
@@ -233,7 +291,7 @@ class RealtimeStackManager:
         return env
 
     async def _cleanup_processes(self) -> None:
-        for proc in [self._raw_process, self._decision_process]:
+        for proc in [self._akshare_process, self._raw_process, self._decision_process, self._rebuild_process]:
             if proc is None or proc.returncode is not None:
                 continue
             try:
@@ -242,12 +300,50 @@ class RealtimeStackManager:
                 pass
         # Give processes a moment to exit
         await asyncio.sleep(1)
-        for proc in [self._raw_process, self._decision_process]:
+        for proc in [self._akshare_process, self._raw_process, self._decision_process, self._rebuild_process]:
             if proc is None or proc.returncode is not None:
                 continue
             try:
                 proc.kill()
             except ProcessLookupError:
                 pass
+        self._akshare_process = None
         self._raw_process = None
         self._decision_process = None
+        self._rebuild_process = None
+        self._state.akshare_pid = None
+        self._state.raw_news_pid = None
+        self._state.decision_pid = None
+        self._state.rebuild_pid = None
+
+    def _read_status_file(self, prefix: str) -> dict[str, Any]:
+        if not self._state.run_id:
+            return {}
+        path = self._log_dir / f"{prefix}_{self._state.run_id}.status.json"
+        if not path.exists():
+            return {}
+        try:
+            return json.loads(path.read_text(encoding="utf-8"))
+        except Exception as exc:
+            return {"error": str(exc)}
+
+    async def _read_review_queue_count(self) -> int:
+        try:
+            import asyncpg
+
+            conn = await asyncpg.connect(
+                host=os.environ.get("PG_HOST", "localhost"),
+                port=int(os.environ.get("PG_PORT", "5432")),
+                database=self._db_name,
+                user=os.environ.get("PG_USERNAME", "postgres"),
+                password=os.environ.get("PG_PASSWORD", ""),
+            )
+            try:
+                exists = await conn.fetchval("SELECT to_regclass('public.event_review_queue')::text")
+                if not exists:
+                    return 0
+                return int(await conn.fetchval("SELECT count(*) FROM event_review_queue WHERE review_status = 'waiting'") or 0)
+            finally:
+                await conn.close()
+        except Exception:
+            return -1
