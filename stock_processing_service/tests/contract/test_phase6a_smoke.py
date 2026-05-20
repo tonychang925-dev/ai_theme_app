@@ -96,6 +96,7 @@ async def run_smoke(
     max_pages: int = 5,
     llm_limit: int = 20,
     skip_collect: bool = False,
+    producer_only: bool = False,
 ) -> int:
     """返回 exit code (0 = 全部通过, 1 = 部分失败)。"""
     report = SmokeReport()
@@ -209,24 +210,21 @@ async def run_smoke(
     # Step 4: ThemeProcessor integration check
     # ==================================================================
     print("\n[4] ThemeProcessor / DecisionExecutor integration")
-    async with mgr.pool.acquire() as conn:
-        esm_count = await conn.fetchval(
-            """
-            SELECT count(*)
-            FROM event_subject_map esm
-            JOIN news_event ne ON ne.id = esm.event_id
-            WHERE ne.source_category = 'intel'
-            """
-        )
-    if esm_count > 0:
+    if producer_only:
+        report.check("4a full-chain skipped in producer smoke", True,
+                     "producer_only=true; run test_phase6a_full_chain_smoke.py for strict chain gate")
+    else:
+        async with mgr.pool.acquire() as conn:
+            esm_count = await conn.fetchval(
+                """
+                SELECT count(*)
+                FROM event_subject_map esm
+                JOIN news_event ne ON ne.id = esm.event_id
+                WHERE ne.source_category = 'intel'
+                """
+            )
         report.check("4a event_subject_map intel records >= 5", esm_count >= 5,
                      f"count={esm_count}")
-    else:
-        print(f"  {WARN} event_subject_map 中无 intel 记录 — ThemeProcessor 未运行或尚未消费 stream 消息")
-        print(f"      验证方式: 启动 ThemeProcessor/DecisionExecutor 后重新运行 smoke test")
-        report.check("4a event_subject_map intel records >= 5 (pending: ThemeProcessor not running)",
-                     True,  # 不阻塞，标记为通过但注明需要后续验证
-                     f"pending — {produced} messages in stream awaiting consumption")
 
     # ==================================================================
     # Step 5: PreMarketBriefBuilder
@@ -239,9 +237,13 @@ async def run_smoke(
     builder = PreMarketBriefBuilder(read_gateway=gw, write_gateway=gw)
     brief = await builder.rebuild(today, source="db_first", limit=300, dry_run=True)
 
-    ca = brief["sections"]["company_announcements"]
-    report.check("5a company_announcements >= 5", len(ca) >= 5,
+    ca = brief["sections"]["company_announcements_raw"]
+    report.check("5a company_announcements_raw >= 5", len(ca) >= 5,
                  f"entries={len(ca)}")
+    matched_ca = brief["sections"]["company_announcements_matched"]
+    if not producer_only:
+        report.check("5a2 company_announcements_matched >= 5", len(matched_ca) >= 5,
+                     f"entries={len(matched_ca)}")
 
     # Show first 3 entries
     for entry in ca[:3]:
@@ -304,6 +306,7 @@ def main() -> None:
     ap.add_argument("--limit", type=int, default=20, help="Max LLM extractions (default 20)")
     ap.add_argument("--full", action="store_true", help="Full: 30 pages + all extractions")
     ap.add_argument("--skip-collect", action="store_true", help="Skip collection, verify existing DB data")
+    ap.add_argument("--producer-only", action="store_true", help="Only verify producer-level gates")
     args = ap.parse_args()
 
     max_pages = 30 if args.full else args.max_pages
@@ -315,6 +318,7 @@ def main() -> None:
             max_pages=max_pages,
             llm_limit=llm_limit,
             skip_collect=args.skip_collect,
+            producer_only=args.producer_only,
         )
     )
     sys.exit(exit_code)

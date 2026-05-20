@@ -927,16 +927,29 @@ class DatabaseGateway:
             raise
 
     async def get_intel_announcement_events(
-        self, trade_date, limit: int = 200
+        self,
+        trade_date,
+        limit: int = 200,
+        start_time=None,
+        end_time=None,
+        matched_only: bool = False,
     ) -> List[Dict[str, Any]]:
         """读取 intel 公告事件（news_event JOIN structured_intel_event，读库）。"""
+        window_start = start_time
+        window_end = end_time
+        started_at = time.time()
         try:
-            start_time = time.time()
-            result = await self._read_source().get_intel_announcement_events(trade_date, limit)
-            self._record_request(True, start_time)
+            result = await self._read_source().get_intel_announcement_events(
+                trade_date,
+                limit,
+                start_time=window_start,
+                end_time=window_end,
+                matched_only=matched_only,
+            )
+            self._record_request(True, started_at)
             return result
         except Exception as e:
-            self._record_request(False, start_time)
+            self._record_request(False, started_at)
             logger.error("get_intel_announcement_events 失败 trade_date=%s: %s", trade_date, e)
             raise
 
@@ -2761,11 +2774,35 @@ class DatabaseGateway:
             logger.error("get_pending_intel_events_for_stream 失败: %s", e)
             raise
 
-    async def update_intel_event_stream_status(self, event_id: int, status: str) -> None:
+    async def get_intel_event_for_stream(self, intel_event_id: int) -> Optional[Dict[str, Any]]:
+        """按 id 精确读取待投递/已投递 intel event（读库）。"""
+        try:
+            start_time = time.time()
+            result = await self._read_source().get_intel_event_for_stream(intel_event_id)
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error("get_intel_event_for_stream 失败 event_id=%s: %s", intel_event_id, e)
+            raise
+
+    async def update_intel_event_stream_status(
+        self,
+        event_id: int,
+        status: str,
+        stream_message_id: Optional[str] = None,
+    ) -> None:
         """更新 structured_intel_event.stream_status（写库）。"""
         try:
             start_time = time.time()
-            result = await self._client.update_intel_event_stream_status(event_id, status)
+            try:
+                result = await self._client.update_intel_event_stream_status(
+                    event_id,
+                    status,
+                    stream_message_id=stream_message_id,
+                )
+            except TypeError:
+                result = await self._client.update_intel_event_stream_status(event_id, status)
             self._record_request(True, start_time)
             return result
         except Exception as e:

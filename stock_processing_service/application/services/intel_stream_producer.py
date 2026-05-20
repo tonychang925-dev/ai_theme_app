@@ -61,16 +61,20 @@ class IntelStreamProducer:
         Returns:
             Redis stream message_id。
         """
-        # 1. 读取 structured_intel_event（含 JOIN raw_intel_document）
-        events = await self._gateway.get_pending_intel_events_for_stream(limit=1)
-        target = None
-        for ev in events:
-            if ev["id"] == intel_event_id:
-                target = ev
-                break
-        if target is None:
+        getter = getattr(self._gateway, "get_intel_event_for_stream", None)
+        if not callable(getter):
+            raise RuntimeError("gateway 不支持 get_intel_event_for_stream")
+        target = await getter(intel_event_id)
+        if not target:
             raise ValueError(
-                f"structured_intel_event id={intel_event_id} 不存在或 stream_status != 'pending'"
+                f"structured_intel_event id={intel_event_id} 不存在"
+            )
+        stream_status = str(target.get("stream_status") or "").lower()
+        if stream_status == "produced":
+            return str(target.get("stream_message_id") or "")
+        if stream_status != "pending":
+            raise ValueError(
+                f"structured_intel_event id={intel_event_id} stream_status={stream_status} 不可投递"
             )
 
         return await self._produce_one(target)
@@ -129,7 +133,7 @@ class IntelStreamProducer:
         message_id = await self._xadd(envelope)
 
         # 3. 更新 stream_status
-        await self._gateway.update_intel_event_stream_status(sie_id, "produced")
+        await self._update_stream_status(sie_id, "produced", message_id)
 
         logger.info(
             "IntelStreamProducer: 投递成功 sie_id=%s ne_id=%s stream_msg=%s stock=%s title=%s",
@@ -140,6 +144,16 @@ class IntelStreamProducer:
             str(intel_event.get("title", ""))[:50],
         )
         return message_id
+
+    async def _update_stream_status(self, sie_id: int, status: str, message_id: str | None = None) -> None:
+        try:
+            await self._gateway.update_intel_event_stream_status(
+                sie_id,
+                status,
+                stream_message_id=message_id,
+            )
+        except TypeError:
+            await self._gateway.update_intel_event_stream_status(sie_id, status)
 
     def _build_source_trace_id(self, *, raw_doc_id: int, sie_id: int) -> str:
         """贯穿全链路的追踪 ID。"""

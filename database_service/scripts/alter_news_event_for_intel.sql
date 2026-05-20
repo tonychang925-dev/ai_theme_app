@@ -10,6 +10,10 @@ ALTER TABLE news_event
     ADD COLUMN IF NOT EXISTS structured_intel_event_id BIGINT,
     ADD COLUMN IF NOT EXISTS source_trace_id VARCHAR(128);
 
+CREATE UNIQUE INDEX IF NOT EXISTS idx_news_event_structured_intel_event_id
+ON news_event(structured_intel_event_id)
+WHERE structured_intel_event_id IS NOT NULL;
+
 -- 验证新增字段
 SELECT
     column_name,
