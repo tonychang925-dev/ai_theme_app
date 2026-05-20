@@ -114,6 +114,7 @@ def test_collection_planner_recap_command_preserves_skip_flags():
     assert "theme_environment_judgement" not in [step.key for step in plan.steps]
     assert "theme_leader_candidate" not in [step.key for step in plan.steps]
     assert "recap.report" not in [step.runner_key for step in plan.steps]
+    assert "stock.kline_judgements" in [step.runner_key for step in plan.steps]
     assert "recap.prerequisites" in [step.runner_key for step in plan.steps]
     assert "recap.market_environment_daily" in [step.runner_key for step in plan.steps]
     assert "recap.theme_capital_flow_daily" in [step.runner_key for step in plan.steps]
