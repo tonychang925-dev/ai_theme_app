@@ -91,6 +91,7 @@ class AkShareRealtimeNewsCollector:
 
     async def collect_once(self) -> dict[str, int]:
         self.stats.last_fetch_at = _now_iso()
+        self._prefilter.new_batch()  # P1-A2.1: 重置批次 Qwen 预算
         try:
             rows = await self._fetch_news()
             self.stats.fetched_count += len(rows)

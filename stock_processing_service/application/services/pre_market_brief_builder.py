@@ -104,6 +104,14 @@ class PreMarketBriefBuilder:
                 matched_themes=sections["matched_themes"],
                 matched_events=matched_events,
             )
+        # P1-B: 全源 source_breakdown
+        source_breakdown = _build_source_breakdown(
+            matched_events=matched_events,
+            review_events=review_events,
+            unknown_events=unknown_events,
+            intel_raw=intel_announcements_raw,
+            intel_matched=intel_announcements_matched,
+        )
         diagnostics = {
             "source": self._diagnostic_source(source, db_matched_count, stream_decisions),
             "event_count": len(matched_events) + len(review_events) + len(unknown_events),
@@ -123,6 +131,7 @@ class PreMarketBriefBuilder:
                 "prev_trade_date": window.prev_trade_date.isoformat(),
                 "source": window.source,
             },
+            "source_breakdown": source_breakdown,
         }
         payload = {
             "version": self.SNAPSHOT_VERSION,
@@ -493,6 +502,34 @@ class PreMarketBriefBuilder:
             seen.add(key)
             result.append(row)
         return result
+
+
+def _build_source_breakdown(
+    *,
+    matched_events: list[dict[str, Any]],
+    review_events: list[dict[str, Any]],
+    unknown_events: list[dict[str, Any]],
+    intel_raw: list[dict[str, Any]],
+    intel_matched: list[dict[str, Any]],
+) -> dict[str, Any]:
+    """P1-B: 按来源统计事件分布。"""
+    from collections import defaultdict
+
+    def _count_by_source(events: list[dict], key: str = "source_channel") -> dict[str, int]:
+        counts: dict[str, int] = defaultdict(int)
+        for e in events:
+            ch = str(e.get(key) or e.get("source_type") or "unknown")
+            counts[ch] += 1
+        return dict(counts)
+
+    return {
+        "matched_by_source": _count_by_source(matched_events),
+        "review_by_source": _count_by_source(review_events),
+        "unknown_by_source": _count_by_source(unknown_events),
+        "intel_raw_announcements": len(intel_raw),
+        "intel_matched_announcements": len(intel_matched),
+        "total_events": len(matched_events) + len(review_events) + len(unknown_events),
+    }
 
 
 def diagnostic_ts(payload: dict[str, Any]) -> str:

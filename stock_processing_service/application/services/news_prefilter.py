@@ -61,6 +61,12 @@ class NewsPreFilterAdapter:
         self._qwen_init_attempted = False
         self._model_path = model_path
 
+        # P1-A2.1: performance protection
+        self._max_prompt_per_batch = int(os.getenv("PREFILTER_MAX_PROMPT_PER_BATCH", "3"))
+        self._prompt_this_batch = 0
+        self._degraded = False
+        self._degrade_reason = ""
+
         # stats
         self.stats = {
             "prompt_eval_count": 0,
@@ -68,12 +74,20 @@ class NewsPreFilterAdapter:
             "prompt_skip_count": 0,
             "prompt_error_count": 0,
             "prompt_total_ms": 0.0,
+            "prompt_noise_pass_count": 0,
+            "batch_budget_exhausted_count": 0,
+            "degraded": False,
+            "degrade_reason": "",
         }
 
         if self.mode == "off":
             return
 
         logger.info("NewsPreFilter initialized: mode=%s qwen=%s", self.mode, self._use_qwen)
+
+    def new_batch(self) -> None:
+        """每轮采集前调用，重置批次预算。"""
+        self._prompt_this_batch = 0
 
     def evaluate(self, payload: Dict[str, Any]) -> NewsTriageResult:
         if not self.enabled or self.mode == "off":
@@ -86,14 +100,26 @@ class NewsPreFilterAdapter:
             rule_decision = str(rule_raw.get("decision") or "PASS").upper()
 
             # 2. 非 prompt 模式，或规则已明确 → 直接返回
-            if self.mode == "rule":
+            if self.mode == "rule" or self._degraded:
                 return _to_result(rule_raw)
             if not self._use_qwen:
                 return _to_result(rule_raw)
             if rule_decision in {"SKIP", "PASS"} and rule_raw.get("gray") != True:
                 return _to_result(rule_raw)
 
-            # 3. 灰区：调用 Qwen prompt
+            # 3. 批次预算已耗尽 → fail-open PASS (rule:gray_budget_exhausted)
+            if self._prompt_this_batch >= self._max_prompt_per_batch:
+                self.stats["batch_budget_exhausted_count"] += 1
+                return NewsTriageResult(pass_=True, decision="PASS",
+                    reason=f"rule:batch_budget_exhausted(max={self._max_prompt_per_batch})",
+                    mode="rule", score=None)
+
+            # 4. 检查熔断
+            if self._check_degraded():
+                return _to_result(rule_raw)
+
+            # 5. 灰区：调用 Qwen prompt
+            self._prompt_this_batch += 1
             return self._qwen_evaluate(payload)
 
         except Exception as exc:
@@ -103,6 +129,26 @@ class NewsPreFilterAdapter:
                     reason=f"filter_exception_fail_open:{exc}", mode="error", score=None)
             return NewsTriageResult(pass_=False, decision="SKIP",
                 reason=f"filter_exception:{exc}", mode="error", score=None)
+
+    def _check_degraded(self) -> bool:
+        """熔断检查：p95 > 5000ms 或 error_rate > 20% → 降级 rule-only。"""
+        if self._degraded:
+            return True
+        s = self.stats
+        if s["prompt_eval_count"] >= 5:
+            avg_ms = s["prompt_total_ms"] / max(s["prompt_eval_count"], 1)
+            err_rate = s["prompt_error_count"] / max(s["prompt_eval_count"], 1)
+            if avg_ms > 5000 or err_rate > 0.20:
+                self._degraded = True
+                self._degrade_reason = (
+                    f"prompt_slow(avg={avg_ms:.0f}ms)" if avg_ms > 5000
+                    else f"prompt_error_rate({err_rate:.1%})"
+                )
+                self.stats["degraded"] = True
+                self.stats["degrade_reason"] = self._degrade_reason
+                logger.warning("NewsPreFilter degraded to rule-only: %s", self._degrade_reason)
+                return True
+        return False
 
     def _qwen_evaluate(self, payload: Dict[str, Any]) -> NewsTriageResult:
         """Qwen prompt 判定（带超时和 fail-open）。"""
@@ -126,16 +172,28 @@ class NewsPreFilterAdapter:
             self.stats["prompt_total_ms"] += elapsed_ms
 
             parsed = _parse_qwen_output(raw)
-            if parsed.get("pass") is True:
+            category = str(parsed.get("category", "unknown"))
+            importance = int(parsed.get("importance", 50))
+            qwen_pass = parsed.get("pass") is True
+
+            # P1-A2.1: noise + pass → 保守放行但记录 warning
+            if qwen_pass and category == "noise":
+                self.stats["prompt_noise_pass_count"] += 1
                 self.stats["prompt_pass_count"] += 1
                 return NewsTriageResult(pass_=True, decision="PASS",
-                    reason=f"qwen:{parsed.get('category','policy')}:{parsed.get('reason','')[:60]}",
-                    mode="qwen_prompt", score=float(parsed.get("importance", 50)))
+                    reason=f"qwen:noise_pass_conservative:{parsed.get('reason','')[:60]}",
+                    mode="qwen_prompt", score=float(importance))
+
+            if qwen_pass:
+                self.stats["prompt_pass_count"] += 1
+                return NewsTriageResult(pass_=True, decision="PASS",
+                    reason=f"qwen:{category}:{parsed.get('reason','')[:60]}",
+                    mode="qwen_prompt", score=float(importance))
             else:
                 self.stats["prompt_skip_count"] += 1
                 return NewsTriageResult(pass_=False, decision="SKIP",
-                    reason=f"qwen:{parsed.get('category','noise')}:{parsed.get('reason','')[:60]}",
-                    mode="qwen_prompt", score=float(parsed.get("importance", 20)))
+                    reason=f"qwen:{category}:{parsed.get('reason','')[:60]}",
+                    mode="qwen_prompt", score=float(importance))
 
         except Exception as exc:
             self.stats["prompt_error_count"] += 1

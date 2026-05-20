@@ -7120,7 +7120,15 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             esm.updated_at,
             COALESCE(ne.event_time, ne.created_at, esm.created_at, nr.created_at, nr.publish_date::timestamp) AS occurred_at,
             COALESCE(NULLIF(nr.title, ''), NULLIF(ne.summary, ''), ne.event_type, ('事件#' || ne.id::text)) AS title,
-            COALESCE(ne.summary, nr.content, '') AS summary
+            COALESCE(ne.summary, nr.content, '') AS summary,
+            -- P1-B: 计算规范化 source_channel
+            CASE
+                WHEN COALESCE(NULLIF(nr.source, ''), '') IN ('akshare_realtime', 'akshare', 'akshare_cls', 'akshare_replay')
+                THEN 'akshare_realtime'
+                WHEN esm.source = 'jyhf_dom_confirmed'
+                THEN 'jyhf_cdp'
+                ELSE 'realtime_news'
+            END::text AS source_channel
         FROM event_subject_map esm
         JOIN news_event ne ON ne.id = esm.event_id
         LEFT JOIN news_raw nr ON nr.id = COALESCE(esm.news_id, ne.news_id)
@@ -7219,7 +7227,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     "confidence": item.get("confidence"),
                     "impact_score": 0.0,
                     "source_type": "event_subject_map",
-                    "source_channel": item.get("source") or "structured_theme_match",
+                    "source_channel": item.get("source_channel") or item.get("source") or "structured_theme_match",
                     "relation_type": item.get("relation_type"),
                     "reason": item.get("match_reason") or "",
                 }
