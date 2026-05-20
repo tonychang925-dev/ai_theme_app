@@ -131,6 +131,64 @@ _ANNOUNCEMENT_EXTRACT_PROMPT = """\
 - 只输出 JSON，不要输出解释文字
 """
 
+_FULL_TEXT_PROMPT = """\
+请分析以下A股上市公司公告全文，提取结构化信息。
+
+股票代码: {stock_code}
+股票名称: {stock_name}
+公告标题: {title}
+公告类型码: {announcement_type}
+
+公告正文:
+{content_text}
+
+请严格按以下 JSON Schema 输出（不要输出其他内容）:
+
+{{
+  "event_type": "字符串，从以下类型中选择:
+    major_contract       - 重大合同（签署/中标/获得订单）
+    capex_expansion      - 投资扩产/产能建设/项目投资
+    mna_restructuring    - 并购重组/资产收购出售
+    shareholder_change   - 股权变动（增持/减持/转让/质押/解押）
+    equity_financing     - 定增/配股/可转债/IPO相关
+    share_repurchase     - 回购/股份注销
+    dividend_plan        - 分红派息/权益分派
+    regulatory_penalty   - 监管处罚/立案/问询/整改
+    management_change    - 高管变更/董事会监事会换届
+    guarantee_pledge     - 担保/质押/抵押
+    lawsuit_arbitration  - 诉讼/仲裁
+    goodwill_impairment  - 商誉减值/资产减值
+    delisting_risk       - 退市风险/ST相关
+    related_party_trade  - 关联交易
+    patent_license       - 专利/知识产权/药品注册/认证
+    corporate_governance - 公司治理/章程/制度
+    periodic_report      - 定期报告/年报/季报/业绩预告/业绩快报
+    other                - 其他公告",
+
+  "event_level": "normal / important / critical",
+
+  "summary": "一句话摘要(30字以内)",
+
+  "entity_anchors": ["业务相关实体名称。不含券商/律所/会所/评级机构"],
+  "product_anchors": ["涉及的产品/服务名称"],
+  "technology_anchors": ["涉及的技术/工艺名称"],
+  "business_actions": ["业务动作关键词"],
+  "amount": "涉及金额及单位(如有)",
+  "counterparty": "交易对手方/合作方(如有)",
+  "impact_assessment": "正面/负面/中性/不确定，一句话说明",
+  "catalyst_tags": ["个股催化标签"],
+  "risk_tags": ["风险标签"],
+  "confidence": 0.0-1.0,
+  "evidence": ["公告正文关键表述原文片段(至少2条)"]
+}}
+
+注意:
+- 充分利用公告正文内容，提取具体金额、合同细节、业绩数据、风险提示
+- 金额必须包含单位（如 8.5亿元、5000万元）
+- evidence 必须从正文中摘录原文
+- 只输出 JSON，不要输出解释文字
+"""
+
 
 # ---------------------------------------------------------------------------
 # Extractor
@@ -166,18 +224,33 @@ class IntelEventExtractor:
         stock_code = str(doc.get("stock_code") or "").strip()
         stock_name = str(doc.get("stock_name") or "").strip()
         ann_type = str(doc.get("announcement_type") or "").strip()
+        content_text = str(doc.get("content_text") or "").strip()
 
         if not title:
             raise ValueError(
                 f"extract_announcement: 标题为空，doc_id={doc.get('id')}"
             )
 
-        prompt = _ANNOUNCEMENT_EXTRACT_PROMPT.format(
-            stock_code=stock_code,
-            stock_name=stock_name,
-            title=title,
-            announcement_type=ann_type,
-        )
+        # P1-D: full_text 模式 — content_text >= 300 字符时使用正文
+        if content_text and len(content_text) >= 300:
+            prompt = _FULL_TEXT_PROMPT.format(
+                stock_code=stock_code,
+                stock_name=stock_name,
+                title=title,
+                announcement_type=ann_type,
+                content_text=content_text[:12000],
+            )
+            extraction_mode = "full_text"
+            prompt_version = "phase6d_announcement_full_text.v1"
+        else:
+            prompt = _ANNOUNCEMENT_EXTRACT_PROMPT.format(
+                stock_code=stock_code,
+                stock_name=stock_name,
+                title=title,
+                announcement_type=ann_type,
+            )
+            extraction_mode = "title_only"
+            prompt_version = "phase6a_announcement.v1"
 
         llm_output = await self._call_llm(prompt)
         if llm_output is None:
@@ -189,7 +262,7 @@ class IntelEventExtractor:
         # 后处理: 过滤污染实体
         llm_output = self._sanitize_anchors(llm_output)
 
-        return self._assemble_intel_event(doc, llm_output)
+        return self._assemble_intel_event(doc, llm_output, extraction_mode, prompt_version)
 
     async def extract_announcement_batch(
         self,
@@ -314,6 +387,8 @@ class IntelEventExtractor:
         self,
         doc: Dict[str, Any],
         llm_output: Dict[str, Any],
+        extraction_mode: str = "title_only",
+        prompt_version: str = "phase6a_announcement.v1",
     ) -> Dict[str, Any]:
         """将原始文档 + LLM 输出组装为 structured_intel_event dict。
 
@@ -339,9 +414,12 @@ class IntelEventExtractor:
 
         evidence_json = {
             "evidence": llm_output.get("evidence") or [],
-            "extraction_mode": "title_only",
-            "llm_prompt_version": "phase6a_announcement.v1",
+            "extraction_mode": extraction_mode,
+            "llm_prompt_version": prompt_version,
         }
+        if extraction_mode == "full_text":
+            ct = str(doc.get("content_text") or "")
+            evidence_json["content_text_chars"] = len(ct)
 
         return {
             "raw_doc_id": int(doc["id"]),
