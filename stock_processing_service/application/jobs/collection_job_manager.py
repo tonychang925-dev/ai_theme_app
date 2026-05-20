@@ -456,7 +456,10 @@ class CollectionJobManager:
                                     self._real = real; self._job = job; self._buf = ""
                                 def write(self, s):
                                     if self._real:
-                                        self._real.write(s)
+                                        try:
+                                            self._real.write(s)
+                                        except OSError:
+                                            pass
                                     self._buf += s
                                     if "\n" in self._buf:
                                         lines = self._buf.splitlines()
@@ -470,7 +473,10 @@ class CollectionJobManager:
                                                     self._job.logs = self._job.logs[-400:]
                                 def flush(self):
                                     if self._real:
-                                        self._real.flush()
+                                        try:
+                                            self._real.flush()
+                                        except OSError:
+                                            pass
                                     if self._buf.strip():
                                         self._job.logs.append(self._buf.strip()[:200])
                                         self._buf = ""
@@ -487,10 +493,12 @@ class CollectionJobManager:
                                 self._append_log(job, f"[STEP-RUNNER] {step.runner_key} 异常: {e}")
                                 return
                             finally:
-                                sys.stdout.flush()
-                                sys.stderr.flush()
-                                sys.stdout = original_stdout
-                                sys.stderr = original_stderr
+                                try:
+                                    sys.stdout.flush()
+                                    sys.stderr.flush()
+                                finally:
+                                    sys.stdout = original_stdout
+                                    sys.stderr = original_stderr
                             if result is None:
                                 return
                             # 传播 runner 自带的结构化日志到 job.logs
