@@ -116,6 +116,64 @@ class PostMarketReportContextRunner:
         self._context_key = context_key
         self._label = label
 
+    @staticmethod
+    def _db_pool(gateway):
+        facade = getattr(gateway, "_db", None)
+        db_client = getattr(facade, "_db", None)
+        return getattr(db_client, "pool", None)
+
+    async def _run_light_probe(self, gateway, trade_date_val: date) -> tuple[bool, str] | None:
+        pool = self._db_pool(gateway)
+        if pool is None:
+            return None
+
+        if self._context_key == "market":
+            sql = """
+            SELECT
+                COUNT(*) AS stock_count,
+                COUNT(*) FILTER (WHERE COALESCE(pct_chg, 0) > 0) AS up_count,
+                COUNT(*) FILTER (WHERE COALESCE(pct_chg, 0) < 0) AS down_count,
+                COUNT(*) FILTER (WHERE COALESCE(limit_up, FALSE) OR COALESCE(pct_chg, 0) >= 9.8) AS limit_up_count
+            FROM subject_stock_daily_snapshot
+            WHERE trade_date = $1::date
+            """
+            async with pool.acquire() as conn:
+                row = await conn.fetchrow(sql, trade_date_val)
+            stock_count = int((row or {}).get("stock_count") or 0)
+            summary = (
+                f"market stock_count={stock_count} "
+                f"up={int((row or {}).get('up_count') or 0)} "
+                f"down={int((row or {}).get('down_count') or 0)} "
+                f"limit_up={int((row or {}).get('limit_up_count') or 0)}"
+            )
+            return stock_count > 0, summary
+
+        if self._context_key == "theme_capital_flow":
+            sql = """
+            SELECT COUNT(*) AS row_count
+            FROM (
+                SELECT 1
+                FROM theme_cycle_judgement_v2 v2
+                LEFT JOIN mainline_state_daily msd
+                  ON msd.trade_date = v2.trade_date
+                 AND msd.subject_key = v2.subject_key
+                WHERE v2.trade_date = $1::date
+                  AND COALESCE(msd.state, v2.final_cycle_state, '') <> 'fade_confirmed'
+                  AND EXISTS (
+                      SELECT 1
+                      FROM subject_stock_daily_snapshot s
+                      WHERE s.trade_date = v2.trade_date
+                        AND s.subject_key = v2.subject_key
+                  )
+                LIMIT 50
+            ) t
+            """
+            async with pool.acquire() as conn:
+                row_count = int(await conn.fetchval(sql, trade_date_val) or 0)
+            return row_count > 0, f"theme_capital_flow rows={row_count}"
+
+        return None
+
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         if context.container is None:
             return CollectionTaskResult(
@@ -134,20 +192,24 @@ class PostMarketReportContextRunner:
                     error_message="container missing report_context_gateway",
                 )
 
-            context_doc = await gateway.get_post_market_report_context(
-                trade_date=trade_date_val,
-                subject_keys=[],
-                stock_ids=[],
-            )
-            data = context_doc.get(self._context_key)
-            if isinstance(data, list):
-                count = len(data)
-                ok = count > 0
-                summary = f"{self._context_key} rows={count}"
+            probe = await self._run_light_probe(gateway, trade_date_val)
+            if probe is not None:
+                ok, summary = probe
             else:
-                ok = bool(data)
-                source = (data or {}).get("source_type") if isinstance(data, dict) else ""
-                summary = f"{self._context_key} source={source or '--'}"
+                context_doc = await gateway.get_post_market_report_context(
+                    trade_date=trade_date_val,
+                    subject_keys=[],
+                    stock_ids=[],
+                )
+                data = context_doc.get(self._context_key)
+                if isinstance(data, list):
+                    count = len(data)
+                    ok = count > 0
+                    summary = f"{self._context_key} rows={count}"
+                else:
+                    ok = bool(data)
+                    source = (data or {}).get("source_type") if isinstance(data, dict) else ""
+                    summary = f"{self._context_key} source={source or '--'}"
 
             return CollectionTaskResult(
                 status="success" if ok else "failed",
@@ -159,6 +221,90 @@ class PostMarketReportContextRunner:
             return CollectionTaskResult(
                 status="failed",
                 current_label=f"{self._label}异常",
+                error_message=f"{type(e).__name__}: {e!r}",
+            )
+
+
+class PostMarketPrerequisitesRunner:
+    """Build new-chain post-market prerequisites before report context checks."""
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        if context.container is None:
+            return CollectionTaskResult(
+                status="failed",
+                current_label="容器未注入",
+                error_message="container is None: api_app 需要注入 container 到 CollectionJobManager",
+            )
+
+        try:
+            trade_date_val = date.fromisoformat(context.trade_date)
+            batch_id = uuid4().hex[:12]
+            trace_id = uuid4().hex[:12]
+            logs: list[str] = []
+
+            jobs = [
+                (
+                    "evidence",
+                    context.container.build_theme_cycle_evidence_daily.execute,
+                    {
+                        "trade_date": trade_date_val,
+                        "snapshot_version": "collection.recap_prereq.evidence.v1",
+                        "batch_id": batch_id,
+                        "trace_id": trace_id,
+                    },
+                ),
+                (
+                    "cycle",
+                    context.container.build_cycle_judgement.execute,
+                    {
+                        "trade_date": trade_date_val,
+                        "batch_id": batch_id,
+                        "trace_id": trace_id,
+                    },
+                ),
+                (
+                    "identity",
+                    context.container.build_identity.execute,
+                    {
+                        "trade_date": trade_date_val,
+                        "snapshot_version": "collection.recap_prereq.identity.v1",
+                        "batch_id": batch_id,
+                        "trace_id": trace_id,
+                    },
+                ),
+                (
+                    "mainline_state",
+                    context.container.build_mainline_state.execute,
+                    {
+                        "trade_date": trade_date_val,
+                        "batch_id": batch_id,
+                        "trace_id": trace_id,
+                    },
+                ),
+            ]
+
+            for name, fn, kwargs in jobs:
+                result = await fn(**kwargs)
+                status = str(getattr(result, "status", ""))
+                affected_rows = getattr(result, "affected_rows", 0)
+                logs.append(f"recap_prereq {name} status={status} rows={affected_rows}")
+                if status.startswith("failed") or status == "error":
+                    return CollectionTaskResult(
+                        status="failed",
+                        current_label=f"新链前置构建失败 ({name})",
+                        logs=logs,
+                        error_message=f"{name} failed: {status}",
+                    )
+
+            return CollectionTaskResult(
+                status="success",
+                current_label="新链盘后前置构建完成",
+                logs=logs,
+            )
+        except Exception as e:
+            return CollectionTaskResult(
+                status="failed",
+                current_label="新链盘后前置构建异常",
                 error_message=str(e),
             )
 
@@ -621,8 +767,10 @@ class PostMarketRecapRunner:
             f"recap affected_rows={result.affected_rows}",
         ]
 
+        ok = result.status in {"ok", "skipped_idempotent"}
         return CollectionTaskResult(
-            status="success" if result.status == "ok" else "failed",
+            status="success" if ok else "failed",
             current_label=f"盘后复盘快照生成完成 ({result.status})",
             logs=logs,
+            error_message="" if ok else f"recap status={result.status}",
         )

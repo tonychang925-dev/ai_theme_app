@@ -204,14 +204,19 @@ class CollectionCommandPlanner:
                         label="个股K线位置与形态判断",
                     ),
                     CollectionTaskStep(
+                        key="recap_prerequisites",
+                        runner_key="recap.prerequisites",
+                        label="新链盘后前置构建",
+                    ),
+                    CollectionTaskStep(
                         key="market_environment_daily",
                         runner_key="recap.market_environment_daily",
-                        label="新链市场环境生成",
+                        label="新链市场环境检查",
                     ),
                     CollectionTaskStep(
                         key="theme_capital_flow_daily",
                         runner_key="recap.theme_capital_flow_daily",
-                        label="新链题材资金流生成",
+                        label="新链题材资金流检查",
                     ),
                     CollectionTaskStep(
                         key="money_flow_enhanced",
