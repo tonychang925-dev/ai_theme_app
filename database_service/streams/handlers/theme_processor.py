@@ -538,10 +538,13 @@ class ThemeProcessor:
             event_row = await self.gateway.get_news_event_for_match(int(event_id))
             if not event_row:
                 raise ValueError(f"news_event 不存在: {event_id}")
+            # Intel events (source_category='intel') don't come from news_raw,
+            # so news_id is always NULL/0. Don't skip them.
             if self.require_news_id and event_row.get("news_id") is None:
-                logger.warning("跳过缺少 news_id 的 structured 事件: event_id=%s message_id=%s", event_id, message_id)
-                await self._ack_message(stream_name, message_id)
-                return
+                if str(event_row.get("source_category") or "").lower() != "intel":
+                    logger.warning("跳过缺少 news_id 的 structured 事件: event_id=%s message_id=%s", event_id, message_id)
+                    await self._ack_message(stream_name, message_id)
+                    return
             event_row.setdefault("run_id", payload.get("run_id"))
             event_row.setdefault("case_id", payload.get("case_id"))
 
