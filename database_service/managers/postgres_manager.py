@@ -1178,6 +1178,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             [
                 "ne.id,",
                 "ne.news_id,",
+                expr("source_category", "'news'::varchar") + ",",
                 expr("event_type", "NULL::text") + ",",
                 expr("summary", "NULL::text") + ",",
                 expr("entities", "NULL::jsonb") + ",",

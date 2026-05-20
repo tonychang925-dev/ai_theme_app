@@ -149,5 +149,17 @@ def main() -> None:
     asyncio.run(run_services(build_parser().parse_args()))
 
 
+async def _watch_parent(parent_pid: int, interval: float = 5.0) -> None:
+    """P1-C1: parent pid 不存在时主动退出。"""
+    import os as _os
+    while True:
+        await asyncio.sleep(interval)
+        try:
+            _os.kill(parent_pid, 0)
+        except (ProcessLookupError, PermissionError):
+            logging.warning("parent pid %d died, exiting raw_news", parent_pid)
+            _os._exit(0)
+
+
 if __name__ == "__main__":
     main()

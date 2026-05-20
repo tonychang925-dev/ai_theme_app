@@ -159,6 +159,7 @@ class RealtimeStackManager:
             intel_status = self._log_dir / f"intel_producer_{run_id}.status.json"
 
             try:
+                # raw_news/phase0 use REALTIME_PARENT_PID env var for watchdog (no --parent-pid CLI arg)
                 self._raw_process = await asyncio.create_subprocess_exec(
                     self._python_cmd,
                     str(ROOT / "evaluate_service/e2e/pre_market_brief/run_raw_news_services.py"),
@@ -166,7 +167,6 @@ class RealtimeStackManager:
                     "--run-id", run_id,
                     "--redis-url", self._redis_url,
                     "--allow-production",
-                    "--parent-pid", str(parent_pid),
                     stdout=open(raw_log, "w"),
                     stderr=asyncio.subprocess.STDOUT,
                     env=env,
@@ -178,14 +178,15 @@ class RealtimeStackManager:
                     "--run-id", run_id,
                     "--redis-url", self._redis_url,
                     "--allow-production",
-                    "--parent-pid", str(parent_pid),
                     stdout=open(decision_log, "w"),
                     stderr=asyncio.subprocess.STDOUT,
                     env=env,
                 )
 
-                # Let consumer groups settle before the source starts writing.
-                await asyncio.sleep(2)
+                # P1-C2-fix: group ready gate — 等待 critical groups 就绪
+                if not await self._wait_for_realtime_groups(run_id, timeout=45):
+                    logger.error("realtime critical groups not ready within 45s — continuing but group health degraded")
+                    # Don't kill processes — they may still be initializing
 
                 self._akshare_process = await asyncio.create_subprocess_exec(
                     self._python_cmd,
@@ -322,6 +323,7 @@ class RealtimeStackManager:
         base["akshare_collector"] = self._read_status_file("akshare")
         base["brief_rebuild"] = self._read_status_file("brief_rebuild")
         base["intel_producer"] = self._read_status_file("intel_producer")
+        base["realtime_groups"] = await self._read_realtime_groups()
         base["review_queue_count"] = await self._read_review_queue_count()
 
         return base
@@ -391,6 +393,48 @@ class RealtimeStackManager:
             except (ValueError, OSError):
                 pass
         return orphans
+
+    GATE_CRITICAL = {"theme_processor_realtime", "decision_executor_realtime"}
+
+    async def _wait_for_realtime_groups(self, run_id: str, timeout: int = 30) -> bool:
+        """P1-C2-fix: 等待 critical protected groups 就绪（structured + decision 流）。"""
+        expected = {
+            "stream:events:structured": "theme_processor_realtime",
+            "stream:events:decision": "decision_executor_realtime",
+            "stream:news:raw": "news_storage_realtime",
+            "stream:events:normal": "news_processor_realtime",
+        }
+        deadline = time.monotonic() + timeout
+        last_missing: set[str] = set(expected.values())
+        while time.monotonic() < deadline:
+            missing: set[str] = set()
+            try:
+                import redis.asyncio as aioredis
+                r = aioredis.Redis.from_url(self._redis_url, decode_responses=True)
+                try:
+                    for stream, group in expected.items():
+                        try:
+                            info = await r.xinfo_groups(stream)
+                            names = {g.get("name", "") for g in info}
+                            if group not in names:
+                                missing.add(group)
+                        except Exception:
+                            missing.add(group)
+                finally:
+                    await r.aclose()
+            except Exception:
+                missing = set(expected.values())
+
+            critical_missing = missing & self.GATE_CRITICAL
+            if not critical_missing:
+                logger.info("realtime critical groups ready (advisory missing: %s)", missing)
+                return True
+            if critical_missing != (last_missing & self.GATE_CRITICAL):
+                logger.warning("waiting for realtime groups: critical_missing=%s remaining=%.0fs", critical_missing, deadline - time.monotonic())
+            last_missing = missing
+            await asyncio.sleep(2)
+        logger.error("realtime groups timeout: missing=%s", last_missing)
+        return False
 
     async def _diagnose_redis_groups(self) -> dict[str, Any]:
         """P1-C-pre: 启动前 Redis group 体检。"""
@@ -494,6 +538,42 @@ class RealtimeStackManager:
             return json.loads(path.read_text(encoding="utf-8"))
         except Exception as exc:
             return {"error": str(exc)}
+
+    async def _read_realtime_groups(self) -> dict[str, Any]:
+        """P1-C2-fix: 读取四个 protected group 状态。"""
+        expected = {
+            "stream:events:structured": "theme_processor_realtime",
+            "stream:events:decision": "decision_executor_realtime",
+            "stream:news:raw": "news_storage_realtime",
+            "stream:events:normal": "news_processor_realtime",
+        }
+        result: dict[str, Any] = {}
+        try:
+            import redis.asyncio as aioredis
+            r = aioredis.Redis.from_url(self._redis_url, decode_responses=True)
+            try:
+                for stream, group in expected.items():
+                    try:
+                        info = await r.xinfo_groups(stream)
+                        for g in info:
+                            if g.get("name") == group:
+                                result[group] = {
+                                    "exists": True,
+                                    "stream": stream,
+                                    "consumers": int(g.get("consumers", 0)),
+                                    "pending": int(g.get("pending", 0)),
+                                    "last_delivered_id": g.get("last-delivered-id", ""),
+                                }
+                                break
+                        if group not in result:
+                            result[group] = {"exists": False, "stream": stream}
+                    except Exception:
+                        result[group] = {"exists": False, "stream": stream, "error": "stream_unavailable"}
+            finally:
+                await r.aclose()
+        except Exception as exc:
+            result["error"] = str(exc)
+        return result
 
     async def _read_review_queue_count(self) -> int:
         try:
