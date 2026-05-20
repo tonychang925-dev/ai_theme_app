@@ -848,17 +848,19 @@ class DatabaseGateway:
         trade_date,
         source: Optional[str] = None,
         limit: int = 500,
+        start_at=None,
+        end_at=None,
     ) -> List[Dict[str, Any]]:
         try:
-            start_time = time.time()
+            start_ts = time.time()
             fn = getattr(self._client, "get_pre_market_subject_events", None)
             if not callable(fn):
                 return []
-            result = await fn(trade_date, source=source, limit=limit)
-            self._record_request(True, start_time)
+            result = await fn(trade_date, source=source, limit=limit, start_time=start_at, end_time=end_at)
+            self._record_request(True, start_ts)
             return result
         except Exception as e:
-            self._record_request(False, start_time)
+            self._record_request(False, start_ts)
             logger.error(f"读取盘前 subject 事件失败 trade_date={trade_date}: {e}")
             raise
 
@@ -912,17 +914,19 @@ class DatabaseGateway:
             logger.error(f"读取 subject_history intel 失败 feed_date={feed_date}: {e}")
             raise
 
-    async def get_pre_market_review_events(self, feed_date, limit: int = 200) -> List[Dict[str, Any]]:
+    async def get_pre_market_review_events(
+        self, feed_date, limit: int = 200, start_at=None, end_at=None
+    ) -> List[Dict[str, Any]]:
         try:
-            start_time = time.time()
+            start_ts = time.time()
             fn = getattr(self._client, "get_pre_market_review_events", None)
             if not callable(fn):
                 return []
-            result = await fn(feed_date, limit=limit)
-            self._record_request(True, start_time)
+            result = await fn(feed_date, limit=limit, start_time=start_at, end_time=end_at)
+            self._record_request(True, start_ts)
             return result
         except Exception as e:
-            self._record_request(False, start_time)
+            self._record_request(False, start_ts)
             logger.error(f"读取 event_review_queue 失败 feed_date={feed_date}: {e}")
             raise
 

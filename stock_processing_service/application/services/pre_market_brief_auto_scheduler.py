@@ -41,19 +41,20 @@ def decide_pre_market_brief_schedule(
     local = now.astimezone(CN_TZ)
     current = local.time()
 
-    if time(15, 30) <= current < time(22, 0):
+    # P0-B: 统一盘前窗口 — rebuild 从 15:00 开始，finalize 在 08:00
+    if time(15, 0) <= current < time(22, 0):
         return PreMarketBriefScheduleDecision("rebuild", 10 * 60, "after_close_rebuild")
     if current >= time(22, 0) or current < time(7, 0):
         return PreMarketBriefScheduleDecision("rebuild", 15 * 60, "overnight_rebuild")
-    if time(7, 0) <= current < time(8, 20):
+    if time(7, 0) <= current < time(7, 55):
         return PreMarketBriefScheduleDecision("rebuild", 5 * 60, "pre_open_rebuild")
-    if time(8, 20) <= current < time(8, 30):
+    if time(7, 55) <= current < time(8, 0):
         return PreMarketBriefScheduleDecision("rebuild", 5 * 60, "last_rebuild_before_finalize")
-    if time(8, 30) <= current < time(15, 30):
+    if time(8, 0) <= current < time(15, 0):
         if finalized:
-            return PreMarketBriefScheduleDecision("idle", _seconds_until(local, time(15, 30)), "final_already_frozen")
-        return PreMarketBriefScheduleDecision("finalize", 60 * 60, "finalize_at_or_after_0830")
-    return PreMarketBriefScheduleDecision("idle", _seconds_until(local, time(15, 30)), "outside_rebuild_window")
+            return PreMarketBriefScheduleDecision("idle", _seconds_until(local, time(15, 0)), "final_already_frozen")
+        return PreMarketBriefScheduleDecision("finalize", 60 * 60, "finalize_at_or_after_0800")
+    return PreMarketBriefScheduleDecision("idle", _seconds_until(local, time(15, 0)), "outside_rebuild_window")
 
 
 class PreMarketBriefSpsClient:
@@ -110,7 +111,7 @@ async def resolve_pre_market_brief_trade_date(
 ) -> date:
     """Resolve scheduler target date.
 
-    Before 15:30 it uses the current China date. From 15:30 onward it targets
+    Before 15:00 it uses the current China date. From 15:00 onward it targets
     the next trading date from SPS trade calendar. If calendar lookup fails, it
     falls back to the current natural date and logs a warning.
     """
@@ -119,7 +120,8 @@ async def resolve_pre_market_brief_trade_date(
 
     local_now = (now or datetime.now(CN_TZ)).astimezone(CN_TZ)
     current_date = local_now.date()
-    if local_now.time() < time(15, 30):
+    # P0-B: 15:00 后 target 为下一交易日 (was 15:30)
+    if local_now.time() < time(15, 0):
         return current_date
 
     try:

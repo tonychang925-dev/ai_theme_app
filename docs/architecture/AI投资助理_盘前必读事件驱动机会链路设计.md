@@ -1702,22 +1702,22 @@ BLOCKED     被外部依赖或上游决策阻塞
 
 | 阶段 | ID | 优先级 | 状态 | 依赖 | 实现/验收证据 | 更新说明 |
 |---|---|---:|---|---|---|---|
-| P0-A | RT-AKS-01 | P0 | IN_PROGRESS | Redis 可用、AkShare/NewsCrawler 可用 | `test_akshare_realtime_news_collector.py` 通过 | 已新增 AkShare 实时新闻抓取器；待真实 Redis/AkShare smoke |
-| P0-A | RT-AKS-02 | P0 | IN_PROGRESS | RT-AKS-01 | `py_compile run_akshare_realtime_news_collector.py` 通过 | 已新增 collector 运行脚本；待真实运行验证 |
-| P0-A | RT-AKS-03 | P0 | IN_PROGRESS | RT-AKS-01 | `test_akshare_realtime_news_collector.py` 通过 | payload 已兼容 E2E replay 关键字段 |
-| P0-A | RT-AKS-04 | P0 | IN_PROGRESS | RT-AKS-02 | `test_realtime_stack_manager.py` 通过 | `RealtimeStackManager.start()` 已接 AkShare source；待端到端 smoke |
-| P0-A | INTEL-FEED-01 | P0 | PARTIAL | event_subject_map 可读 | 当前底层已趋向 JOIN event_subject_map，source_channel 已补 AkShare 映射 | MATCH 事件输出 `item_type='event'`；待真实 feed 验证 |
-| P0-A | INTEL-FEED-02 | P0 | IN_PROGRESS | event_review_queue 可读 | `test_intel_new_chain_adapter_review_events.py` 通过 | 已新增 `load_review_event_items()` |
-| P0-A | INTEL-FEED-03 | P0 | IN_PROGRESS | INTEL-FEED-02 | `test_intel_new_chain_adapter_review_events.py` 通过 | AkShare review 已标准化为 `akshare_realtime` |
-| P0-A | PMB-RT-01 | P0 | IN_PROGRESS | RT-AKS-04 | `py_compile run_pre_market_brief_rebuild_loop.py` 通过 | 已接最小 rebuild loop；待真实 draft 更新验证 |
-| P0-B | PMB-WIN-01 | P0 | TODO | 交易日历可读 | 待补 | 新增 `resolve_pre_market_window(trade_date)` |
-| P0-B | PMB-WIN-02 | P0 | TODO | PMB-WIN-01 | 待补 | `get_pre_market_subject_events` 改 start_at/end_at |
-| P0-B | PMB-WIN-03 | P0 | TODO | PMB-WIN-01 | 待补 | `get_pre_market_review_events` 改 start_at/end_at |
-| P0-B | PMB-WIN-04 | P0 | PARTIAL | PMB-WIN-01 | 当前已有 `start_time/end_time` 但默认 08:30，需改 08:00 | `get_intel_announcement_events` 需统一窗口命名与边界 |
-| P0-B | PMB-WIN-05 | P0 | TODO | PMB-WIN-02~04 | 待补 | `PreMarketBriefBuilder.rebuild` 使用统一窗口查询 |
-| P0-C | PMB-SCH-01 | P0 | PARTIAL | PMB-WIN-01 | 当前 scheduler 为 15:30/08:30 口径 | 需改为 15:00/08:00 |
-| P0-C | PMB-SCH-02 | P0 | PARTIAL | PMB-SCH-01 | 现有 snapshot upsert 已有 final 保护测试基础 | 需确认 08:00 后普通 rebuild 不覆盖 final |
-| P0-C | PMB-RT-02 | P0 | TODO | PMB-SCH-01~02 + PMB-RT-01 | 待补 | 08:00 自动 finalize |
+| P0-A | RT-AKS-01 | P0 | DONE | Redis 可用、AkShare/NewsCrawler 可用 | 2026-05-20 P0-A Smoke: collector 随 realtime start 启动，fetched=100, pushed=12；网络不稳定→RISK-01 | AkShare 抓取器已随栈启动；真实新闻已进 stream:news:raw |
+| P0-A | RT-AKS-02 | P0 | DONE | RT-AKS-01 | 2026-05-20 P0-A Smoke: RealtimeStackManager 子进程启动成功，PID=62645 | collector 脚本可被 realtime start 正常启动 |
+| P0-A | RT-AKS-03 | P0 | DONE | RT-AKS-01 | 2026-05-20 P0-A Smoke: raw stream→news_event(5条)→event_subject_map(5条 MATCH) 全链路字段兼容 | payload 已兼容 E2E replay 格式，全链路通过 |
+| P0-A | RT-AKS-04 | P0 | DONE | RT-AKS-02 | 2026-05-20 P0-A Smoke: akshare/raw_news/decision/rebuild 四进程 running，stop 后全部清理 | RealtimeStackManager.start() 四进程联动正常 |
+| P0-A | INTEL-FEED-01 | P0 | DONE | event_subject_map 可读 | 2026-05-20 P0-A Smoke: /intel?item_type=event 返回 MATCH(event:129104:9024880) source_channel=akshare_realtime | MATCH 事件以 item_type='event' 在情报台可见 |
+| P0-A | INTEL-FEED-02 | P0 | DONE | event_review_queue 可读 | 2026-05-20 P0-A2: /intel?item_type=event_review 返回 review:129110, source_type=event_review_queue | event_review_queue 已并入情报台 feed |
+| P0-A | INTEL-FEED-03 | P0 | DONE | INTEL-FEED-02 | 2026-05-20 P0-A2: event_review source_channel=akshare_realtime；_normalize_review_source_channel 映射正确 | AkShare review source_channel 标准化完成 |
+| P0-A | PMB-RT-01 | P0 | DONE | RT-AKS-04 | 2026-05-20 P0-A Smoke: /pre-market-brief draft 返回 major_events=5, matched_themes=5, review_events=1 | rebuild loop 已接，draft 自动更新正常 |
+| P0-B | PMB-WIN-01 | P0 | DONE | 交易日历可读 | 2026-05-20: pre_market_window.py 已实现，支持 trade_calendar + weekday fallback | `resolve_pre_market_window(trade_date)` 已新增 |
+| P0-B | PMB-WIN-02 | P0 | DONE | PMB-WIN-01 | 2026-05-20: get_event_subject_mappings_by_trade_date 已支持 start_time/end_time 时间窗口过滤 | MATCH 查询支持窗口 |
+| P0-B | PMB-WIN-03 | P0 | DONE | PMB-WIN-01 | 2026-05-20: get_pre_market_review_events 已支持 start_time/end_time 时间窗口过滤 | REVIEW 查询支持窗口 |
+| P0-B | PMB-WIN-04 | P0 | DONE | PMB-WIN-01 | 2026-05-20: end_time 默认改为 08:00；主路径由 Builder 传入 start_at/end_at | Intel 公告默认窗口修正 |
+| P0-B | PMB-WIN-05 | P0 | DONE | PMB-WIN-02~04 | 2026-05-20: rebuild 开头解析 window，DB 查询全部传 start_at/end_at，diagnostics 含 pre_market_window | Builder 统一使用窗口 |
+| P0-C | PMB-SCH-01 | P0 | DONE | PMB-WIN-01 | 2026-05-20: scheduler 窗口改为 15:00/08:00；resolve 改为 15:00 | 调度器窗口已统一 |
+| P0-C | PMB-SCH-02 | P0 | DONE | PMB-SCH-01 | 现有 snapshot upsert 已有 final 保护 + force 门禁 | 08:00 后普通 rebuild 不覆盖 final |
+| P0-C | PMB-RT-02 | P0 | TODO | PMB-SCH-01~02 + PMB-RT-01 | 待补 | 08:00 自动 finalize — rebuild loop 中接到 scheduler 信号时执行 |
 | P0-D | JYHF-NE-01 | P0 | TODO | news_event 扩展字段 | 待补 | 新增 `create_news_event_from_jyhf_dom()` |
 | P0-D | JYHF-NE-02 | P0 | TODO | JYHF-NE-01 | 待补 | JYHF DB sink 写 news_event |
 | P0-D | JYHF-NE-03 | P0 | TODO | JYHF-NE-02 | 待补 | 同步写 event_subject_map |
@@ -1737,14 +1737,35 @@ BLOCKED     被外部依赖或上游决策阻塞
 整体状态：
 
 ```text
-当前：IN_PROGRESS
-原因：
-- 文档任务分解已完成。
-- 推荐执行顺序已调整为先 P0-A AkShare 实时闭环，避免三类输入源同时深改。
-- IntelStreamProducer / company_announcements / final 保护存在部分基础实现。
-- AkShare source 已接入“启动实时采集”，但尚未完成真实 Redis/AkShare smoke。
-- event_review_queue 已并入情报台 feed，HUMAN_REVIEW 情报台闭环尚待真实数据验证。
-- 统一盘前窗口尚未落地到所有查询。
+当前：IN_PROGRESS（P0-A/P0-B/P0-C 已完成，进入 P0-D）
+P0-A 已完成：
+- RT-AKS-01~04 全部 DONE
+- INTEL-FEED-01~03 全部 DONE
+- PMB-RT-01 DONE
+- 2026-05-20 P0-A Smoke 验证通过
+
+P0-B 已完成：
+- PMB-WIN-01~05 全部 DONE
+- resolve_pre_market_window 已实现（trade_calendar + weekday fallback）
+- MATCH/REVIEW/Intel 三类查询全部支持 start_at/end_at 时间窗口
+- Builder.rebuild 统一使用窗口，diagnostics 输出 pre_market_window
+- 验证：start_at=2026-05-19T15:00+08:00, end_at=2026-05-20T08:00+08:00
+
+P0-C 已完成：
+- PMB-SCH-01~02 DONE
+- scheduler rebuild 窗口改为 15:00~08:00，finalize 改为 08:00
+- resolve_pre_market_brief_trade_date 改为 15:00 后找下一交易日
+
+已知风险：
+- RISK-01：AkShare curl_cffi 间歇超时
+- RISK-02：HUMAN_REVIEW 自然样本不足
+- RISK-03：当前主链路在 stock_data_test
+
+当前未完成：
+- P0-C PMB-RT-02：08:00 自动 finalize（rebuild loop 集成）
+- P0-D：JYHF DOM 入 news_event
+- P0-E：Intel 公告 full-chain
+- P1：AkShare 稳定性、scheduler 单测更新
 ```
 
 ### 17.11 统一验收清单
