@@ -1500,6 +1500,20 @@ async def realtime_status() -> dict[str, Any]:
     return await manager.status()
 
 
+@app.get("/api/v1/realtime/orphans")
+async def realtime_orphans() -> dict[str, Any]:
+    """P1-C1: 查询孤儿进程（pidfile 记录但父进程已死）。"""
+    manager: RealtimeStackManager = app.state.realtime_manager
+    return await manager.get_orphans()
+
+
+@app.api_route("/api/v1/realtime/cleanup-orphans", methods=["GET", "POST"])
+async def realtime_cleanup_orphans() -> dict[str, Any]:
+    """P1-C1: 清理 pidfile 记录的本项目 realtime 孤儿子进程。"""
+    manager: RealtimeStackManager = app.state.realtime_manager
+    return await manager.cleanup_orphans()
+
+
 @app.api_route("/api/v1/intel/produce", methods=["GET", "POST"])
 async def intel_produce(limit: int = Query(50, ge=1, le=200)) -> dict[str, Any]:
     """手动触发 Intel 公告投递：从 structured_intel_event.pending 生产到 news_event + stream。

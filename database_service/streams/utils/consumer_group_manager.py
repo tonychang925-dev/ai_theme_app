@@ -31,7 +31,7 @@ class ConsumerGroupManager:
 
         # 默认配置
         self.default_config = {
-            "cleanup_enabled": True,
+            "cleanup_enabled": os.getenv("REDIS_GROUP_CLEANUP_ENABLED", "false").lower() == "true",
             "max_group_age_hours": 24,
             "cleanup_interval_minutes": 60,
             "fixed_group_prefixes": [
@@ -50,7 +50,11 @@ class ConsumerGroupManager:
             ],
             "protected_groups": [
                 "news_storage_handlers",
-                "monitoring"
+                "news_storage_realtime",
+                "news_processor_realtime",
+                "theme_processor_realtime",
+                "decision_executor_realtime",
+                "monitoring",
             ]
         }
 
@@ -124,20 +128,24 @@ class ConsumerGroupManager:
                 return False
 
     async def cleanup_old_groups(self, pattern: Optional[str] = None,
-                               max_age_hours: Optional[int] = None) -> Dict[str, Any]:
+                               max_age_hours: Optional[int] = None,
+                               execute: bool = False) -> Dict[str, Any]:
         """
-        清理旧的消费者组（特别是测试创建的组）
+        清理旧的消费者组（特别是测试创建的组）。
+
+        P1-C-pre: 默认 dry-run，只清理 E2E group，保护 realtime group。
 
         Args:
             pattern: 匹配模式，如 "theme_processors_real_*"
             max_age_hours: 最大年龄（小时）
+            execute: 设为 True 才真正执行 xgroup_destroy
 
         Returns:
             清理结果统计
         """
         if not self.config["cleanup_enabled"]:
-            logger.info("清理功能已禁用")
-            return {"enabled": False, "cleaned": 0}
+            logger.info("清理功能已禁用 (set REDIS_GROUP_CLEANUP_ENABLED=true to enable)")
+            return {"enabled": False, "cleaned": 0, "execute": execute}
 
         max_age = max_age_hours or self.config["max_group_age_hours"]
         patterns = [pattern] if pattern else self.config["test_group_patterns"]
@@ -171,20 +179,31 @@ class ConsumerGroupManager:
                         )
 
                         if should_clean:
-                            # 执行清理
-                            success = await self._cleanup_single_group(stream, group_name)
-
-                            if success:
-                                cleanup_stats["groups_cleaned"] += 1
+                            cleanup_stats["would_clean"] = cleanup_stats.get("would_clean", 0) + 1
+                            if execute:
+                                # 执行清理
+                                success = await self._cleanup_single_group(stream, group_name)
+                                if success:
+                                    cleanup_stats["groups_cleaned"] += 1
+                                    if "would_clean" in cleanup_stats:
+                                        cleanup_stats["would_clean"] -= 1
+                                    cleanup_stats["details"].append({
+                                        "stream": stream,
+                                        "group": group_name,
+                                        "action": "cleaned",
+                                        "timestamp": datetime.now().isoformat()
+                                    })
+                                    logger.info(f"🧹 清理消费者组: {stream}/{group_name}")
+                                else:
+                                    cleanup_stats["errors"] += 1
+                            else:
                                 cleanup_stats["details"].append({
                                     "stream": stream,
                                     "group": group_name,
-                                    "action": "cleaned",
+                                    "action": "would_clean",
+                                    "reason": "dry_run",
                                     "timestamp": datetime.now().isoformat()
                                 })
-                                logger.info(f"🧹 清理消费者组: {stream}/{group_name}")
-                            else:
-                                cleanup_stats["errors"] += 1
                         else:
                             cleanup_stats["groups_protected"] += 1
 
@@ -197,9 +216,11 @@ class ConsumerGroupManager:
             self.stats["protected_groups"] += cleanup_stats["groups_protected"]
             self.stats["last_cleanup"] = datetime.now().isoformat()
 
+            would = cleanup_stats.get("would_clean", 0)
             logger.info(f"✅ 消费者组清理完成: 找到 {cleanup_stats['total_groups_found']} 个组, "
                        f"清理 {cleanup_stats['groups_cleaned']} 个, "
-                       f"保护 {cleanup_stats['groups_protected']} 个")
+                       f"保护 {cleanup_stats['groups_protected']} 个"
+                       + (f", dry-run: {would} would be cleaned (set execute=True to actually destroy)" if would else ""))
 
             return cleanup_stats
 
@@ -358,13 +379,20 @@ class ConsumerGroupManager:
     async def _should_cleanup_group(self, stream: str, group: str,
                                   group_info: Dict, patterns: List[str],
                                   max_age_hours: int) -> bool:
-        """判断是否应该清理消费者组"""
-        # 1. 检查是否为保护组
+        """判断是否应该清理消费者组。P1-C-pre: 只清理 e2e group，保护 realtime。"""
+        # 1. 硬保护：realtime group 永不清理
         if group in self.config["protected_groups"]:
             logger.debug(f"保护组跳过清理: {stream}/{group}")
             return False
+        if group.endswith("_realtime"):
+            logger.debug(f"realtime 组跳过清理: {stream}/{group}")
+            return False
 
-        # 2. 检查是否匹配清理模式
+        # 2. P1-C-pre: 默认只清理 e2e group
+        if "_e2e_" not in group and not group.startswith("e2e_"):
+            return False
+
+        # 3. 检查是否匹配清理模式
         matches_pattern = False
         for pattern in patterns:
             if re.match(pattern, group):

@@ -19,6 +19,11 @@ else:
 async def run_services(args: argparse.Namespace) -> None:
     import redis.asyncio as redis
 
+    # P1-C1: parent watchdog
+    parent_pid = int(os.environ.get("REALTIME_PARENT_PID", "0"))
+    if parent_pid:
+        asyncio.create_task(_watch_parent(parent_pid))
+
     from database_service.gateway import DatabaseGateway
     from database_service.managers.redis_stream_bus import UnifiedRedisStreamBus
     from database_service.streams.handlers.news_stream_handler import NewsStreamHandler
@@ -31,10 +36,17 @@ async def run_services(args: argparse.Namespace) -> None:
     os.environ.setdefault("REPLAY_DB_NAME", args.db_name)
 
     redis_client = redis.Redis.from_url(args.redis_url, decode_responses=True)
-    if not args.storage_group:
-        args.storage_group = f"news_storage_handlers_e2e_{args.run_id}"
-    if not args.processor_group:
-        args.processor_group = f"news_business_processors_e2e_{args.run_id}"
+    # P1-C-pre: realtime 使用稳定 group 名，避免 e2e 语义泄漏和 zombie group 堆积
+    if args.run_id and args.run_id.startswith("realtime_"):
+        if not args.storage_group:
+            args.storage_group = "news_storage_realtime"
+        if not args.processor_group:
+            args.processor_group = "news_processor_realtime"
+    else:
+        if not args.storage_group:
+            args.storage_group = f"news_storage_handlers_e2e_{args.run_id}"
+        if not args.processor_group:
+            args.processor_group = f"news_business_processors_e2e_{args.run_id}"
     await _ensure_group_at_tail(redis_client, "stream:news:raw", args.storage_group)
     await _ensure_group_at_tail(redis_client, "stream:events:normal", args.processor_group)
     stream_config = SimpleNamespace(

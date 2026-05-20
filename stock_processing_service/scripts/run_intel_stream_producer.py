@@ -36,6 +36,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--db-name", default=None)
     parser.add_argument("--run-id", default=None)
     parser.add_argument("--status-path", default=None)
+    parser.add_argument("--parent-pid", type=int, default=None)
     return parser
 
 
@@ -62,6 +63,9 @@ async def async_main() -> None:
 
     cfg = DatabaseConfig(db_type=DatabaseType.POSTGRESQL, postgres_database=db_name)
     gateway = await DatabaseGateway.initialize(config=cfg, auto_warm_cache=False)
+
+    if args.parent_pid:
+        asyncio.create_task(_watch_parent(args.parent_pid))
 
     run_id = args.run_id or os.environ.get("RUN_ID", f"intel_producer_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')}")
 
@@ -113,6 +117,18 @@ async def async_main() -> None:
         close_fn = getattr(gateway, "close", None)
         if callable(close_fn):
             await close_fn()
+
+
+async def _watch_parent(parent_pid: int, interval: float = 5.0) -> None:
+    """P1-C1: parent watch."""
+    import os as _os
+    while True:
+        await asyncio.sleep(interval)
+        try:
+            _os.kill(parent_pid, 0)
+        except (ProcessLookupError, PermissionError):
+            logging.warning("parent pid %d died, exiting", parent_pid)
+            _os._exit(0)
 
 
 if __name__ == "__main__":

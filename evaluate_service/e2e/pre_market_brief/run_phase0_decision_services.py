@@ -36,6 +36,11 @@ def _redis_host_port(redis_url: str) -> tuple[str, int]:
 async def run_services(args: argparse.Namespace) -> None:
     import redis.asyncio as redis
 
+    # P1-C1: parent watchdog
+    parent_pid = int(os.environ.get("REALTIME_PARENT_PID", "0"))
+    if parent_pid:
+        asyncio.create_task(_watch_parent(parent_pid))
+
     from database_service.streams.gateway_integration import get_gateway
     from database_service.streams.handlers.DecisionExecutor import DecisionExecutor
     from database_service.streams.handlers.theme_processor import ThemeProcessor
