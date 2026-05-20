@@ -7760,6 +7760,49 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.error("create_news_event_with_intel 失败: %s", e)
             raise
 
+    # ── P1-D: PDF 正文解析 ──────────────────────────────────────────
+
+    async def get_raw_intel_for_pdf_parse(
+        self, limit: int = 50, high_value_only: bool = True,
+    ) -> List[Dict[str, Any]]:
+        """获取待解析 PDF 的 raw_intel_document 行。high_value_only 优先标题含关键词。"""
+        high_value_kw = [
+            "中标", "合同", "订单", "业绩预告", "业绩快报", "回购",
+            "减持", "增持", "并购", "重组", "风险提示", "立案", "处罚",
+        ]
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                """SELECT * FROM raw_intel_document
+                   WHERE pdf_url IS NOT NULL AND pdf_url != ''
+                     AND COALESCE(content_text, '') = ''
+                     AND COALESCE(parse_status, 'raw') IN ('raw', 'download_failed', 'parse_failed')
+                   ORDER BY publish_time DESC NULLS LAST
+                   LIMIT $1""", int(limit),
+            )
+        results = [dict(r) for r in rows]
+        if high_value_only:
+            filtered = [r for r in results if any(kw in (r.get("title") or "") for kw in high_value_kw)]
+            if filtered:
+                return filtered
+        return results
+
+    async def update_raw_intel_content_text(
+        self, doc_id: int, *, content_text: str = "",
+        pdf_path: str | None = None, parse_status: str = "parsed",
+        parse_error: str | None = None, parse_method: str | None = None,
+    ) -> None:
+        """更新 raw_intel_document 的 PDF 解析结果。"""
+        async with self.pool.acquire() as conn:
+            await conn.execute(
+                """UPDATE raw_intel_document
+                   SET content_text = $2, pdf_path = COALESCE($3::text, pdf_path),
+                       parse_status = $4, updated_at = NOW()
+                   WHERE id = $1""",
+                doc_id, content_text, pdf_path, parse_status,
+            )
+
+    # ── Intel announcement events ────────────────────────────────────
+
     async def get_intel_announcement_events(
         self,
         trade_date: date,

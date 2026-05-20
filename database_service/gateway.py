@@ -930,6 +930,27 @@ class DatabaseGateway:
             logger.error(f"读取 event_review_queue 失败 feed_date={feed_date}: {e}")
             raise
 
+    # ── P1-D: PDF ──────────────────────────────────────────────────
+
+    async def get_raw_intel_for_pdf_parse(self, limit: int = 50, high_value_only: bool = True):
+        try:
+            fn = getattr(self._read_source(), "get_raw_intel_for_pdf_parse", None)
+            if not callable(fn):
+                return []
+            return await fn(limit=limit, high_value_only=high_value_only)
+        except Exception as e:
+            logger.error(f"get_raw_intel_for_pdf_parse 失败: {e}")
+            return []
+
+    async def update_raw_intel_content_text(self, doc_id: int, **kwargs):
+        try:
+            await self._client.update_raw_intel_content_text(doc_id, **kwargs)
+        except Exception as e:
+            logger.error(f"update_raw_intel_content_text 失败 doc_id={doc_id}: {e}")
+            raise
+
+    # ── Intel announcements ─────────────────────────────────────────
+
     async def get_intel_announcement_events(
         self,
         trade_date,
