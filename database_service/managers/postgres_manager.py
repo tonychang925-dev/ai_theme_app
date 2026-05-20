@@ -7635,10 +7635,10 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 await conn.execute(
                     """
                     UPDATE structured_intel_event
-                    SET stream_status = $2,
-                        stream_message_id = COALESCE($3, stream_message_id),
+                    SET stream_status = $2::varchar,
+                        stream_message_id = COALESCE($3::varchar, stream_message_id),
                         stream_produced_at = CASE
-                            WHEN $2 = 'produced' THEN COALESCE(stream_produced_at, now())
+                            WHEN $2::varchar = 'produced' THEN COALESCE(stream_produced_at, now())
                             ELSE stream_produced_at
                         END
                     WHERE id = $1

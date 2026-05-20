@@ -70,6 +70,7 @@ class RealtimeStackState:
     raw_news_pid: int | None = None
     decision_pid: int | None = None
     rebuild_pid: int | None = None
+    intel_producer_pid: int | None = None
     run_id: str = ""
     last_error: str = ""
     log_dir: str = ""
@@ -102,6 +103,7 @@ class RealtimeStackManager:
         self._raw_process: asyncio.subprocess.Process | None = None
         self._decision_process: asyncio.subprocess.Process | None = None
         self._rebuild_process: asyncio.subprocess.Process | None = None
+        self._intel_producer_process: asyncio.subprocess.Process | None = None
         self._lock = asyncio.Lock()
 
     # ── Public API ─────────────────────────────────────────────────
@@ -118,8 +120,10 @@ class RealtimeStackManager:
             raw_log = self._log_dir / f"raw_news_{run_id}.log"
             decision_log = self._log_dir / f"decision_{run_id}.log"
             rebuild_log = self._log_dir / f"brief_rebuild_{run_id}.log"
+            intel_log = self._log_dir / f"intel_producer_{run_id}.log"
             akshare_status = self._log_dir / f"akshare_{run_id}.status.json"
             rebuild_status = self._log_dir / f"brief_rebuild_{run_id}.status.json"
+            intel_status = self._log_dir / f"intel_producer_{run_id}.status.json"
 
             try:
                 self._raw_process = await asyncio.create_subprocess_exec(
@@ -172,6 +176,20 @@ class RealtimeStackManager:
                     stderr=asyncio.subprocess.STDOUT,
                     env=env,
                 )
+                # P0-E: Intel Stream Producer — 周期性投递 pending 公告到 stream:events:structured
+                self._intel_producer_process = await asyncio.create_subprocess_exec(
+                    self._python_cmd,
+                    str(ROOT / "stock_processing_service/scripts/run_intel_stream_producer.py"),
+                    "--db-name", self._db_name,
+                    "--redis-url", self._redis_url,
+                    "--run-id", run_id,
+                    "--poll-interval-seconds", os.environ.get("INTEL_PRODUCER_POLL_SECONDS", "30"),
+                    "--batch-size", os.environ.get("INTEL_PRODUCER_BATCH_SIZE", "50"),
+                    "--status-path", str(intel_status),
+                    stdout=open(intel_log, "w"),
+                    stderr=asyncio.subprocess.STDOUT,
+                    env=env,
+                )
 
                 # Brief warmup — give subprocesses time to start
                 await asyncio.sleep(1)
@@ -183,17 +201,19 @@ class RealtimeStackManager:
                 self._state.raw_news_pid = self._raw_process.pid
                 self._state.decision_pid = self._decision_process.pid
                 self._state.rebuild_pid = self._rebuild_process.pid
+                self._state.intel_producer_pid = self._intel_producer_process.pid
                 self._state.run_id = run_id
                 self._state.last_error = ""
                 self._state.log_dir = str(self._log_dir)
 
                 logger.info(
-                    "realtime stack started: run_id=%s akshare_pid=%d raw_pid=%d decision_pid=%d rebuild_pid=%d",
+                    "realtime stack started: run_id=%s akshare_pid=%d raw_pid=%d decision_pid=%d rebuild_pid=%d intel_pid=%d",
                     run_id,
                     self._akshare_process.pid,
                     self._raw_process.pid,
                     self._decision_process.pid,
                     self._rebuild_process.pid,
+                    self._intel_producer_process.pid,
                 )
                 return {"ok": True, "status": "started", "detail": self.status_sync()}
 
@@ -255,6 +275,7 @@ class RealtimeStackManager:
 
         base["akshare_collector"] = self._read_status_file("akshare")
         base["brief_rebuild"] = self._read_status_file("brief_rebuild")
+        base["intel_producer"] = self._read_status_file("intel_producer")
         base["review_queue_count"] = await self._read_review_queue_count()
 
         return base
@@ -269,6 +290,7 @@ class RealtimeStackManager:
             "raw_news_pid": self._state.raw_news_pid,
             "decision_pid": self._state.decision_pid,
             "rebuild_pid": self._state.rebuild_pid,
+            "intel_producer_pid": self._state.intel_producer_pid,
             "log_dir": self._state.log_dir,
             "last_error": self._state.last_error,
             "profile_version": BASELINE_ENV.get("THEME_PROFILE_VERSION", "v2"),
@@ -292,7 +314,7 @@ class RealtimeStackManager:
         return env
 
     async def _cleanup_processes(self) -> None:
-        for proc in [self._akshare_process, self._raw_process, self._decision_process, self._rebuild_process]:
+        for proc in [self._akshare_process, self._raw_process, self._decision_process, self._rebuild_process, self._intel_producer_process]:
             if proc is None or proc.returncode is not None:
                 continue
             try:
@@ -301,7 +323,7 @@ class RealtimeStackManager:
                 pass
         # Give processes a moment to exit
         await asyncio.sleep(1)
-        for proc in [self._akshare_process, self._raw_process, self._decision_process, self._rebuild_process]:
+        for proc in [self._akshare_process, self._raw_process, self._decision_process, self._rebuild_process, self._intel_producer_process]:
             if proc is None or proc.returncode is not None:
                 continue
             try:
@@ -312,10 +334,12 @@ class RealtimeStackManager:
         self._raw_process = None
         self._decision_process = None
         self._rebuild_process = None
+        self._intel_producer_process = None
         self._state.akshare_pid = None
         self._state.raw_news_pid = None
         self._state.decision_pid = None
         self._state.rebuild_pid = None
+        self._state.intel_producer_pid = None
 
     def _read_status_file(self, prefix: str) -> dict[str, Any]:
         if not self._state.run_id:
