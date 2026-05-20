@@ -460,7 +460,7 @@ class RealtimeStackManager:
         self._state.decision_pid = None
         self._state.rebuild_pid = None
         self._state.intel_producer_pid = None
-        # P1-C1: clean pidfiles
+        # P1-C1: clean pidfiles + old status files
         runtime_dir = self._log_dir / "runtime"
         for pattern in ["akshare_*.pid", "raw_news_*.pid", "decision_*.pid", "rebuild_*.pid", "intel_producer_*.pid"]:
             for pf in runtime_dir.glob(pattern):
@@ -469,6 +469,20 @@ class RealtimeStackManager:
         stack_json = runtime_dir / "realtime_stack.json"
         try: stack_json.unlink()
         except OSError: pass
+        # Clean old status/log files from previous runs (keep current run_id)
+        current_run = self._state.run_id
+        if current_run:
+            patterns_to_clean = [
+                "akshare_*.status.json", "akshare_*.prefilter_skipped.jsonl",
+                "brief_rebuild_*.status.json", "intel_producer_*.status.json",
+                "akshare_*.log", "raw_news_*.log", "decision_*.log",
+                "brief_rebuild_*.log", "intel_producer_*.log",
+            ]
+            for pattern in patterns_to_clean:
+                for f in self._log_dir.glob(pattern):
+                    if current_run not in f.name:
+                        try: f.unlink()
+                        except OSError: pass
 
     def _read_status_file(self, prefix: str) -> dict[str, Any]:
         if not self._state.run_id:
