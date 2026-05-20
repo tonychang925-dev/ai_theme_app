@@ -1,8 +1,8 @@
 {
   "running": true,
-  "last_rebuild_at": "2026-05-20T16:56:15.268469+08:00",
-  "trade_date": "2026-05-20",
-  "ok": true,
-  "status": "draft",
-  "error": null
+  "last_rebuild_at": null,
+  "trade_date": null,
+  "ok": false,
+  "status": "error",
+  "error": "All connection attempts failed"
 }

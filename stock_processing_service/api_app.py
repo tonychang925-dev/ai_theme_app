@@ -1480,13 +1480,13 @@ async def realtime_start() -> dict[str, Any]:
     return await manager.start()
 
 
-@app.api_route("/api/v1/realtime/stop", methods=["GET", "POST"])
 @app.get("/api/v1/db/info")
 async def db_info_endpoint() -> dict[str, Any]:
     """P1-C: DB readiness 信息。启动时校验 write_db==read_db==stock_data_test。"""
     return getattr(app.state, "db_info", {"error": "db_info not available"})
 
 
+@app.api_route("/api/v1/realtime/stop", methods=["GET", "POST"])
 async def realtime_stop() -> dict[str, Any]:
     """优雅停止新链实时采集。"""
     manager: RealtimeStackManager = app.state.realtime_manager
