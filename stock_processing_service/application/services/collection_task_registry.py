@@ -102,6 +102,7 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
         JyhfImportHistoryRunner,
         JyhfImportStockDailyRunner,
         JyhfLoadSubjectNodeStagingRunner,
+        PostMarketPrerequisitesRunner,
         PostMarketReportContextRunner,
         JyhfSyncDetailsRunner,
         JyhfSyncHistoryRunner,
@@ -123,6 +124,7 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
     registry.register("jyhf.import_stock_daily", JyhfImportStockDailyRunner())
     registry.register("jyhf_history.sync", JyhfSyncHistoryRunner())
     registry.register("jyhf_history.import", JyhfImportHistoryRunner())
+    registry.register("recap.prerequisites", PostMarketPrerequisitesRunner())
     registry.register("recap.snapshot", PostMarketRecapRunner())
     registry.register(
         "recap.market_environment_daily",
