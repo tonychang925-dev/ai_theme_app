@@ -1,8 +1,8 @@
 # AI投资助理：实时新闻事件、题材匹配与盘前必读事件驱动机会链路设计
 
-> 版本：v1.6  
-> 日期：2026-05-19  
-> 状态：主链路已实现，Theme Profile v2 灰度验证中，Phase 4.6 完整新链 E2E100 执行闭环通过，召回恢复待处理  
+> 版本：v1.7  
+> 日期：2026-05-20  
+> 状态：主链路已实现；新增实时采集、情报台、盘前必读统一链路任务分解；Phase 6A 严格闭环与实时 source 启动待落地  
 > 适用项目：`tonychang925-dev/ai_theme_app`  
 > 设计原则：基于现有 Redis Stream + ThemeProcessor + ThemeMatchEngine + DecisionExecutor 架构做业务串联，不从零重造新闻荐股系统。
 
@@ -1399,7 +1399,405 @@ Top80 / Top100 v2 覆盖扩展
 
 ---
 
-## 17. 最终结论
+## 17. 最新业务需求与任务分解（2026-05-20）
+
+### 17.1 新业务口径冻结
+
+本次改造目标是把“实时事件采集控制台”、“情报台”和“盘前必读”统一到同一条事件链路中。
+
+核心口径如下：
+
+```text
+启动实时采集
+≠ 只启动 Redis Stream 消费者
+
+启动实时采集
+= 启动 AkShare 新闻抓取源
++ 启动 raw_news_services
++ 启动 phase0_decision_services
++ 启动盘前必读增量 rebuild loop
+```
+
+三类输入源边界必须固定：
+
+```text
+AkShare 新闻
+→ stream:news:raw
+→ NewsStreamProcessor LLM 结构化
+→ news_event
+→ stream:events:structured
+→ ThemeProcessor / DecisionExecutor
+→ MATCH / HUMAN_REVIEW 分流
+
+JYHF DOM
+→ 已结构化事件
+→ 直接写 news_event(source_category='jyhf_dom')
+→ 如已有 subject_key/theme_name，直接写 event_subject_map(source='jyhf_dom_confirmed')
+→ 不进入 stream:news:raw
+→ 不触发 NewsStreamProcessor / LLM 结构化
+
+公告/通告等一手信息
+→ raw_intel_document
+→ structured_intel_event
+→ news_event(source_category='intel')
+→ stream:events:structured
+→ ThemeProcessor / DecisionExecutor
+→ MATCH / HUMAN_REVIEW 分流
+```
+
+情报台展示口径：
+
+```text
+MATCH
+→ /intel item_type='event'
+→ 盘前必读 matched_themes / major_events / opportunities
+
+HUMAN_REVIEW
+→ /intel?type=event_review item_type='event_review'
+→ 盘前必读 review_events
+
+JYHF DOM
+→ /intel item_type='event' 或 'new_theme'
+→ 不经过 LLM；若已确认题材则可进入 matched 事件流
+
+Intel 公告 raw
+→ company_announcements_raw 保留早展示
+
+Intel 公告 MATCH
+→ 与普通新闻 MATCH 同口径进入 matched_themes / opportunities
+```
+
+### 17.2 统一盘前窗口任务
+
+窗口定义：
+
+```text
+start_at = 上一交易日 15:00:00 Asia/Shanghai
+end_at   = trade_date 08:00:00 Asia/Shanghai
+
+查询口径：start_at <= occurred_at < end_at
+```
+
+实现任务：
+
+| ID | 优先级 | 任务 | 目标文件/接口 | 验收 |
+|---|---:|---|---|---|
+| PMB-WIN-01 | P0 | 新增 `resolve_pre_market_window(trade_date)` | `stock_processing_service/application/services/pre_market_window.py` | 能基于交易日历取上一交易日；无日历时工作日 fallback |
+| PMB-WIN-02 | P0 | `get_pre_market_subject_events` 支持 `start_at/end_at` | `database_service/gateway.py`, `database_service/managers/postgres_manager.py` | MATCH 事件只返回窗口内数据 |
+| PMB-WIN-03 | P0 | `get_pre_market_review_events` 支持 `start_at/end_at` | 同上 | HUMAN_REVIEW 只返回窗口内数据 |
+| PMB-WIN-04 | P0 | `get_intel_announcement_events` 支持 `start_at/end_at` | 同上 | Intel 公告按 `structured_intel_event.publish_time` 过滤 |
+| PMB-WIN-05 | P0 | `PreMarketBriefBuilder.rebuild` 使用窗口查询 | `pre_market_brief_builder.py` | 盘前必读只包含上一交易日 15:00 到当日 08:00 数据 |
+
+禁止继续使用单纯 `created_at::date = trade_date` 作为盘前必读主过滤条件。
+
+### 17.3 8:00 draft/final 调度任务
+
+新调度口径：
+
+```text
+15:00 <= now 或 now < 08:00
+→ 每 3~5 分钟 rebuild draft
+
+now >= 08:00
+→ finalize
+
+08:00 后
+→ 普通 rebuild 不覆盖 final
+→ 只有 force=true 允许重建 final
+```
+
+实现任务：
+
+| ID | 优先级 | 任务 | 目标文件/接口 | 验收 |
+|---|---:|---|---|---|
+| PMB-SCH-01 | P0 | 修改 `decide_pre_market_brief_schedule` 时间窗 | `pre_market_brief_auto_scheduler.py` | 15:00~08:00 返回 rebuild；08:00 返回 finalize |
+| PMB-SCH-02 | P0 | 08:00 后 final 保护 | `pre_market_brief_builder.py`, snapshot upsert | final 后普通 rebuild 不覆盖 |
+| PMB-SCH-03 | P1 | 调度测试更新 | `test_pre_market_brief_auto_scheduler.py` | 覆盖 14:59/15:00/07:59/08:00/08:01 |
+
+### 17.4 AkShare 实时采集任务
+
+当前阻断项：
+
+```text
+RealtimeStackManager 当前只启动：
+- run_raw_news_services.py
+- run_phase0_decision_services.py
+
+这两个脚本只消费消息，不抓取 AkShare 新闻。
+```
+
+必须把 `/realtime-collector` 的“启动实时采集”升级为完整链路启动。
+
+实现任务：
+
+| ID | 优先级 | 任务 | 目标文件/接口 | 验收 |
+|---|---:|---|---|---|
+| RT-AKS-01 | P0 | 新增 AkShare 实时新闻抓取器 | `stock_processing_service/application/services/akshare_realtime_news_collector.py` | 定时抓取新闻并写 `stream:news:raw` |
+| RT-AKS-02 | P0 | 新增运行脚本 | `stock_processing_service/scripts/run_akshare_realtime_news_collector.py` | 支持 `--redis-url --stream --run-id --poll-interval-seconds --lookback-minutes` |
+| RT-AKS-03 | P0 | payload 兼容 E2E replay | 输出字段同 `replay_akshare_raw_news.py` | 包含 `news_id/external_id/title/content/source/source_channel/publish_date/publish_time/collected_at/url/run_id/type=raw_news` |
+| RT-AKS-04 | P0 | `RealtimeStackManager.start()` 同步启动 AkShare source | `realtime_stack_manager.py` | 点击“启动实时采集”后 raw stream 有 AkShare 新增消息 |
+| RT-AKS-05 | P1 | collector 状态与去重指标 | status API | 返回 `last_fetch_at/last_success_at/fetched_count/pushed_count/duplicate_count/last_error` |
+
+run_id 规则：
+
+```text
+生产实时模式可以使用 run_id = realtime_YYYYMMDD_HHMMSS。
+如果 raw_news_services / phase0_decision_services 仍启用 run_id_filter，
+AkShare collector 必须使用同一个 run_id。
+```
+
+### 17.5 情报台统一 feed 任务
+
+实现任务：
+
+| ID | 优先级 | 任务 | 目标文件/接口 | 验收 |
+|---|---:|---|---|---|
+| INTEL-FEED-01 | P0 | `get_intel_news_events` 底层改为 `news_event JOIN event_subject_map` | `postgres_manager.py` | MATCH 事件以 `item_type='event'` 返回 |
+| INTEL-FEED-02 | P0 | 新增 `load_review_event_items()` | `intel_new_chain_adapter.py` | `event_review_queue` 以 `item_type='event_review'` 返回 |
+| INTEL-FEED-03 | P0 | review source_channel 标准化 | `event_review_queue` loader | AkShare review 显示 `source_channel='akshare_realtime'` |
+| INTEL-FEED-04 | P1 | 修复 JYHF source 字段丢失 | `load_subject_history_items()` | JYHF DOM 显示 `source_type='jyhf_cdp_dom'`, `source_channel='jyhf_cdp'` |
+| INTEL-FEED-05 | P1 | 前端来源标签校验 | `IntelListItem`, format utils | `event_review` 显示为“待复核” |
+
+### 17.6 JYHF DOM 入库 news_event 任务
+
+JYHF DOM 的关键约束：
+
+```text
+不进入 stream:news:raw
+不走 NewsStreamProcessor
+不触发 LLM 结构化
+```
+
+实现任务：
+
+| ID | 优先级 | 任务 | 目标文件/接口 | 验收 |
+|---|---:|---|---|---|
+| JYHF-NE-01 | P0 | 新增 `create_news_event_from_jyhf_dom()` | `database_service/gateway.py`, `postgres_manager.py` | 写入 `news_event(source_category='jyhf_dom')` |
+| JYHF-NE-02 | P0 | JYHF DB sink 写 news_event | `services/jyhf_cdp_service/db_sink.py` | 每条 DOM 事件生成或复用 news_event |
+| JYHF-NE-03 | P0 | 已有 subject_key/theme_name 时写 event_subject_map | `upsert_event_subject_relation()` | source=`jyhf_dom_confirmed` |
+| JYHF-NE-04 | P1 | 幂等去重 | news_event 索引/写入方法 | 同一 JYHF event_id 重复采集不重复插入 |
+
+建议 `source_trace_id`：
+
+```text
+jyhf_cdp:{event.event_id}
+```
+
+### 17.7 Intel 公告同链处理任务
+
+实现任务：
+
+| ID | 优先级 | 任务 | 目标文件/接口 | 验收 |
+|---|---:|---|---|---|
+| INTEL-CHAIN-01 | P0 | 确认 `structured_intel_event -> news_event(source_category='intel')` | `intel_stream_producer.py` | news_event 存在且 source_category='intel' |
+| INTEL-CHAIN-02 | P0 | 投递 `stream:events:structured` | 同上 | ThemeProcessor 能消费 |
+| INTEL-CHAIN-03 | P0 | producer 幂等 | DDL + gateway | `structured_intel_event/news_event/stream produce` 不重复 |
+| INTEL-CHAIN-04 | P0 | full-chain smoke 严格门禁 | `test_phase6a_full_chain_smoke.py` | `event_subject_map source_category='intel' >= 5` |
+| INTEL-CHAIN-05 | P1 | raw 与 matched 双展示 | `PreMarketBriefBuilder` | `company_announcements_raw` 保留；matched 公告进入 matched sections |
+
+### 17.8 盘前必读增量 rebuild 任务
+
+实现任务：
+
+| ID | 优先级 | 任务 | 目标文件/接口 | 验收 |
+|---|---:|---|---|---|
+| PMB-RT-01 | P0 | `RealtimeStackManager` 增加 brief rebuild loop | `realtime_stack_manager.py` | 采集运行期间 3~5 分钟 rebuild draft |
+| PMB-RT-02 | P0 | 08:00 自动 finalize | scheduler / rebuild loop | final 后普通 rebuild 不覆盖 |
+| PMB-RT-03 | P1 | diagnostics source_breakdown | `PreMarketBriefBuilder` | 输出 news/intel/jyhf/review 数量 |
+| PMB-RT-04 | P1 | opportunity tier counts | `PreMarketBriefBuilder` | diagnostics 输出 A/B/C 或 tier 分布 |
+
+### 17.9 推荐执行顺序
+
+```text
+第一阶段：P0-A AkShare 实时闭环（最高优先级）
+→ RT-AKS-01~04
+→ INTEL-FEED-01~03
+→ PMB-RT-01 最小版
+
+目标：
+点击“启动实时采集”后，系统自动抓取 AkShare 新闻，写入 stream:news:raw，
+经新链处理后，MATCH 在情报台显示为 event，HUMAN_REVIEW 显示为 event_review，
+并触发盘前必读 draft 更新。
+
+第一阶段暂不做：
+- JYHF DOM 入 news_event
+- Intel 公告 full-chain
+- 复杂 15:00~08:00 精确窗口
+- 08:00 final
+- diagnostics 完整增强
+
+第二阶段：P0-B 统一盘前窗口
+→ PMB-WIN-01~05
+
+目标：
+所有盘前必读数据统一使用：
+上一交易日 15:00 <= occurred_at < 当日 08:00。
+
+第三阶段：P0-C 8:00 final
+→ PMB-SCH-01~02
+→ PMB-RT-02
+
+目标：
+15:00~08:00 持续 rebuild draft；
+08:00 finalize；
+08:00 后普通 rebuild 不覆盖 final。
+
+第四阶段：P0-D JYHF DOM 入库同链
+→ JYHF-NE-01~03
+
+目标：
+JYHF DOM 不进 stream:news:raw，不触发 NewsStreamProcessor，不走 LLM；
+直接入 news_event，并在已有 subject_key/theme_name 时写 event_subject_map。
+
+第五阶段：P0-E Intel 公告 full-chain
+→ INTEL-CHAIN-01~04
+
+目标：
+严格验证 structured_intel_event → news_event(source_category='intel')
+→ stream:events:structured → ThemeProcessor → DecisionExecutor
+→ event_subject_map / event_review_queue。
+
+第六阶段：P1 体验与诊断
+→ RT-AKS-05
+→ INTEL-FEED-04~05
+→ JYHF-NE-04
+→ INTEL-CHAIN-05
+→ PMB-RT-03~04
+→ PMB-SCH-03
+```
+
+阶段一最小验收：
+
+```text
+1. 点击“启动实时采集”后，stream:news:raw 有 AkShare 新增消息。
+2. news_event 有 source_channel='akshare_realtime' 或等价来源字段。
+3. MATCH 事件进入 event_subject_map。
+4. HUMAN_REVIEW 事件进入 event_review_queue。
+5. /intel 能看到 MATCH 事件。
+6. /intel?type=event_review 能看到待复核事件。
+7. /pre-market-brief 有 major_events / matched_themes / opportunities 的 draft 新增内容。
+```
+
+### 17.10 实现状态 Checklist
+
+状态枚举：
+
+```text
+TODO        尚未开始
+IN_PROGRESS 已开始，未完成验收
+PARTIAL     主体已有，但与本节业务口径仍有偏差
+DONE        已实现并通过对应验收
+BLOCKED     被外部依赖或上游决策阻塞
+```
+
+更新规则：
+
+```text
+1. 每次代码实现或验收后，必须更新本 checklist。
+2. 只允许在有代码 diff、测试记录或人工核查证据时把状态推进。
+3. DONE 必须填写验收证据；没有证据不得标 DONE。
+4. 如果任务拆分变化，先更新 17.2~17.8 的任务表，再同步本 checklist。
+5. Phase 4.7 E2E100 和 Phase 6A full-chain smoke 未通过前，整体状态不得标闭环完成。
+```
+
+| 阶段 | ID | 优先级 | 状态 | 依赖 | 实现/验收证据 | 更新说明 |
+|---|---|---:|---|---|---|---|
+| P0-A | RT-AKS-01 | P0 | IN_PROGRESS | Redis 可用、AkShare/NewsCrawler 可用 | `test_akshare_realtime_news_collector.py` 通过 | 已新增 AkShare 实时新闻抓取器；待真实 Redis/AkShare smoke |
+| P0-A | RT-AKS-02 | P0 | IN_PROGRESS | RT-AKS-01 | `py_compile run_akshare_realtime_news_collector.py` 通过 | 已新增 collector 运行脚本；待真实运行验证 |
+| P0-A | RT-AKS-03 | P0 | IN_PROGRESS | RT-AKS-01 | `test_akshare_realtime_news_collector.py` 通过 | payload 已兼容 E2E replay 关键字段 |
+| P0-A | RT-AKS-04 | P0 | IN_PROGRESS | RT-AKS-02 | `test_realtime_stack_manager.py` 通过 | `RealtimeStackManager.start()` 已接 AkShare source；待端到端 smoke |
+| P0-A | INTEL-FEED-01 | P0 | PARTIAL | event_subject_map 可读 | 当前底层已趋向 JOIN event_subject_map，source_channel 已补 AkShare 映射 | MATCH 事件输出 `item_type='event'`；待真实 feed 验证 |
+| P0-A | INTEL-FEED-02 | P0 | IN_PROGRESS | event_review_queue 可读 | `test_intel_new_chain_adapter_review_events.py` 通过 | 已新增 `load_review_event_items()` |
+| P0-A | INTEL-FEED-03 | P0 | IN_PROGRESS | INTEL-FEED-02 | `test_intel_new_chain_adapter_review_events.py` 通过 | AkShare review 已标准化为 `akshare_realtime` |
+| P0-A | PMB-RT-01 | P0 | IN_PROGRESS | RT-AKS-04 | `py_compile run_pre_market_brief_rebuild_loop.py` 通过 | 已接最小 rebuild loop；待真实 draft 更新验证 |
+| P0-B | PMB-WIN-01 | P0 | TODO | 交易日历可读 | 待补 | 新增 `resolve_pre_market_window(trade_date)` |
+| P0-B | PMB-WIN-02 | P0 | TODO | PMB-WIN-01 | 待补 | `get_pre_market_subject_events` 改 start_at/end_at |
+| P0-B | PMB-WIN-03 | P0 | TODO | PMB-WIN-01 | 待补 | `get_pre_market_review_events` 改 start_at/end_at |
+| P0-B | PMB-WIN-04 | P0 | PARTIAL | PMB-WIN-01 | 当前已有 `start_time/end_time` 但默认 08:30，需改 08:00 | `get_intel_announcement_events` 需统一窗口命名与边界 |
+| P0-B | PMB-WIN-05 | P0 | TODO | PMB-WIN-02~04 | 待补 | `PreMarketBriefBuilder.rebuild` 使用统一窗口查询 |
+| P0-C | PMB-SCH-01 | P0 | PARTIAL | PMB-WIN-01 | 当前 scheduler 为 15:30/08:30 口径 | 需改为 15:00/08:00 |
+| P0-C | PMB-SCH-02 | P0 | PARTIAL | PMB-SCH-01 | 现有 snapshot upsert 已有 final 保护测试基础 | 需确认 08:00 后普通 rebuild 不覆盖 final |
+| P0-C | PMB-RT-02 | P0 | TODO | PMB-SCH-01~02 + PMB-RT-01 | 待补 | 08:00 自动 finalize |
+| P0-D | JYHF-NE-01 | P0 | TODO | news_event 扩展字段 | 待补 | 新增 `create_news_event_from_jyhf_dom()` |
+| P0-D | JYHF-NE-02 | P0 | TODO | JYHF-NE-01 | 待补 | JYHF DB sink 写 news_event |
+| P0-D | JYHF-NE-03 | P0 | TODO | JYHF-NE-02 | 待补 | 同步写 event_subject_map |
+| P0-E | INTEL-CHAIN-01 | P0 | PARTIAL | Phase 6A DDL | 当前 `IntelStreamProducer` 主体已有 | 需重新按本 checklist 验证 |
+| P0-E | INTEL-CHAIN-02 | P0 | PARTIAL | INTEL-CHAIN-01 | 当前已有 structured stream 投递 | 需 full-chain smoke 验证 |
+| P0-E | INTEL-CHAIN-03 | P0 | PARTIAL | DDL + gateway | 现有改动已涉及幂等，但需验收 | producer retry 不重复 |
+| P0-E | INTEL-CHAIN-04 | P0 | TODO | INTEL-CHAIN-01~03 | 待补 | full-chain smoke 严格校验 intel `event_subject_map >= 5` |
+| P1 | RT-AKS-05 | P1 | TODO | RT-AKS-04 | 待补 | status 返回 collector 指标 |
+| P1 | INTEL-FEED-04 | P1 | TODO | JYHF DB sink | 待补 | 修复 JYHF source 字段丢失 |
+| P1 | INTEL-FEED-05 | P1 | PARTIAL | INTEL-FEED-02 | 前端已有 `event_review -> 待复核` 标签 | 需结合真实 feed 验证 |
+| P1 | JYHF-NE-04 | P1 | TODO | JYHF-NE-01 | 待补 | JYHF 幂等去重 |
+| P1 | INTEL-CHAIN-05 | P1 | PARTIAL | INTEL-CHAIN-04 | 当前已有 raw/matched section 雏形 | matched 公告需进入 matched sections/opportunities |
+| P1 | PMB-RT-03 | P1 | TODO | PMB-WIN-05 | 待补 | diagnostics `source_breakdown` |
+| P1 | PMB-RT-04 | P1 | TODO | opportunity builder 输出稳定 | 待补 | diagnostics opportunity tier counts |
+| P1 | PMB-SCH-03 | P1 | TODO | PMB-SCH-01~02 | 待补 | 更新 scheduler 单测窗口样例 |
+
+整体状态：
+
+```text
+当前：IN_PROGRESS
+原因：
+- 文档任务分解已完成。
+- 推荐执行顺序已调整为先 P0-A AkShare 实时闭环，避免三类输入源同时深改。
+- IntelStreamProducer / company_announcements / final 保护存在部分基础实现。
+- AkShare source 已接入“启动实时采集”，但尚未完成真实 Redis/AkShare smoke。
+- event_review_queue 已并入情报台 feed，HUMAN_REVIEW 情报台闭环尚待真实数据验证。
+- 统一盘前窗口尚未落地到所有查询。
+```
+
+### 17.11 统一验收清单
+
+必须全部满足后，才能认为实时采集、情报台和盘前必读链路闭环完成：
+
+```text
+1. 点击“启动实时采集”后，AkShare collector 自动启动，并向 stream:news:raw 写入新闻。
+
+2. AkShare MATCH：
+   - news_event 存在
+   - event_subject_map 存在
+   - /intel 显示 item_type='event'
+   - pre_market_brief.matched_themes / major_events / opportunities 包含该事件
+
+3. AkShare HUMAN_REVIEW：
+   - event_review_queue(review_status='waiting') 存在
+   - /intel?type=event_review 显示为“待复核”
+   - pre_market_brief.review_events 包含该事件
+
+4. JYHF DOM：
+   - news_event(source_category='jyhf_dom') 存在
+   - 不进入 stream:news:raw
+   - 不触发 NewsStreamProcessor / LLM 结构化
+   - 已有 subject_key/theme_name 时 event_subject_map(source='jyhf_dom_confirmed') 存在
+   - /intel 显示 item_type='event' 或 'new_theme'
+
+5. Intel 公告：
+   - raw_intel_document -> structured_intel_event -> news_event(source_category='intel') 完成
+   - stream:events:structured 有消息
+   - MATCH 公告进入 event_subject_map
+   - HUMAN_REVIEW 公告进入 event_review_queue
+   - company_announcements_raw 保留
+   - matched 公告进入 matched_themes / opportunities
+
+6. 盘前必读窗口：
+   - 只包含上一交易日 15:00 <= occurred_at < 当日 08:00 的新闻/公告/JYHF 事件
+   - 历史补采 created_at 不污染当前盘前报告
+
+7. draft/final：
+   - 15:00~08:00 持续增量 rebuild draft
+   - 08:00 finalize
+   - 08:00 后普通 rebuild 不覆盖 final
+   - force=true 才允许覆盖
+
+8. 回归门禁：
+   - Phase 4.7 新闻 E2E100 仍通过
+   - Phase 6A full-chain smoke 中 intel event_subject_map >= 5
+   - dead_letter=0
+   - Redis PEL=0
+```
+
+## 18. 最终结论
 
 本阶段的正确方向是：
 

@@ -315,8 +315,10 @@ export interface NewChainRealtimeStatus {
   running: boolean;
   run_id: string;
   started_at: string | null;
+  akshare_pid?: number | null;
   raw_news_pid: number | null;
   decision_pid: number | null;
+  rebuild_pid?: number | null;
   log_dir: string;
   last_error: string;
   profile_version: string;
@@ -326,6 +328,10 @@ export interface NewChainRealtimeStatus {
   structured_concurrency: number;
   pending_count: number;
   dead_letter_count: number;
+  decision_stream_count?: number;
+  review_queue_count?: number;
+  akshare_collector?: Record<string, unknown>;
+  brief_rebuild?: Record<string, unknown>;
   redis_streams?: Record<string, { length: number; groups: number }>;
   redis_error?: string;
 }

@@ -44,9 +44,10 @@ export function RealtimeCollectorPage() {
       setStackStatus(status);
       setRunning(status.running ? "up" : "down");
       append(
-        `[新链] running=${status.running} raw_pid=${status.raw_news_pid ?? "-"} ` +
-        `dec_pid=${status.decision_pid ?? "-"} v2=${status.profile_version}/${status.profile_status} ` +
-        `pending=${status.pending_count} dl=${status.dead_letter_count}`
+        `[新链] running=${status.running} akshare_pid=${status.akshare_pid ?? "-"} ` +
+        `raw_pid=${status.raw_news_pid ?? "-"} dec_pid=${status.decision_pid ?? "-"} ` +
+        `rebuild_pid=${status.rebuild_pid ?? "-"} v2=${status.profile_version}/${status.profile_status} ` +
+        `pending=${status.pending_count} review=${status.review_queue_count ?? "-"} dl=${status.dead_letter_count}`
       );
     } catch (err) {
       setRunning("down");
@@ -136,7 +137,7 @@ export function RealtimeCollectorPage() {
       setMainBusy(false);
       return;
     }
-    append("[新链] 启动实时采集 (raw_news + theme_processor + decision_executor)...");
+    append("[新链] 启动实时采集 (akshare_collector + raw_news + theme_processor + decision_executor + brief_rebuild)...");
     try {
       const result = await startNewChainRealtime();
       append(`[新链] 启动完成: ok=${result.ok} status=${result.status}`);
