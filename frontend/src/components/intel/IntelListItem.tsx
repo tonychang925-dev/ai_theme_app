@@ -42,7 +42,7 @@ export function IntelListItem({ item, active, onClick }: IntelListItemProps) {
         <div className="intel-row-theme">
           <strong className="intel-row-theme-name">{primaryThemeName}</strong>
         </div>
-        <h3 className="intel-row-title">{item.summary || item.title || '无事件描述'}</h3>
+        <p className="intel-row-title">{item.summary || item.title || '无事件描述'}</p>
         {item.title && item.summary && item.title !== item.summary && (
           <p className="intel-row-summary">{item.title}</p>
         )}

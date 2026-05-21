@@ -141,7 +141,6 @@ def build_container(
             cycle_judgement_job=_cycle_job,
             evidence_job=_evidence_job,
             strong_stock_tracking_use_case=build_strong_stock_tracking,
-            weak_to_strong_candidate_use_case=build_weak_to_strong_candidate,
         ),
         build_pre_market_brief=BuildPreMarketBriefJob(
             read_port=theme_data_gateway,

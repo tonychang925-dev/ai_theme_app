@@ -24,7 +24,7 @@
     "desktop-app": 2,
     "web-app": 2,
     "mobile-app": 2,
-    "frontend-design-plugin": 8,
+    "frontend-design-plugin": 15,
     "shift-enter": 14,
     "subagent-fanout-nudge": 13,
     "custom-agents": 6,
@@ -34,7 +34,7 @@
     "rename-conversation": 11,
     "custom-commands": 11
   },
-  "promptQueueUseCount": 318,
+  "promptQueueUseCount": 326,
   "showExpandedTodos": true,
   "cachedGrowthBookFeatures": {
     "tengu_red_coaster": false,

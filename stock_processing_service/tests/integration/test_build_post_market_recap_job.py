@@ -333,8 +333,8 @@ def test_build_post_market_recap_job_no_longer_owns_layer_c_or_d_writes() -> Non
         "watch_pool_results",
         "upsert_strong_watch_pool_rows(",
         "upsert_strong_watch_history_rows(",
-        "get_w2s_candidate_inputs(",
         "upsert_weak_to_strong_candidate_pool_rows(",
+        "BuildWeakToStrongCandidateUseCase(",
     )
     for fragment in forbidden_fragments:
         assert fragment not in source

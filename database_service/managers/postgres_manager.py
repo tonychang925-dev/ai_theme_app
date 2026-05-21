@@ -3589,7 +3589,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         ),
         base AS (
             SELECT
-                p.watch_start_date::text AS trade_date,
+                p.trade_date::text AS trade_date,
                 p.stock_id,
                 p.stock_name,
                 p.subject_key,
@@ -3603,7 +3603,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 p.mainline_strength_score,
                 p.fade_watch,
                 p.fade_confirmed,
-                p.candidate_promoted AS promoted_to_candidate,
+                p.promoted_to_candidate,
                 p.support_type,
                 p.support_level,
                 p.support_score,
@@ -3613,14 +3613,14 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 COALESCE(NULLIF(s.raw_json->>20, ''), '0')::integer AS current_flag,
                 ROW_NUMBER() OVER (
                     PARTITION BY split_part(p.stock_id, '.', 1)
-                    ORDER BY p.watch_start_date DESC, p.watch_score DESC, p.watch_priority DESC
+                    ORDER BY p.trade_date DESC, p.watch_score DESC, p.watch_priority DESC
                 ) AS rn
-            FROM strong_stock_watch_pool p
+            FROM strong_stock_watch_history p
             LEFT JOIN subject_stock_daily_snapshot s
-              ON s.trade_date = p.last_trade_date
+              ON s.trade_date = p.trade_date
              AND split_part(s.stock_id, '.', 1) = split_part(p.stock_id, '.', 1)
              AND s.subject_key = p.subject_key
-            WHERE p.watch_start_date IN (SELECT trade_date FROM selected_trade_dates)
+            WHERE p.trade_date IN (SELECT trade_date FROM selected_trade_dates)
               AND ($3::boolean OR p.watch_status IN ('active', 'weakening'))
               AND ($4::text IS NULL OR split_part(p.stock_id, '.', 1) = split_part($4::text, '.', 1))
         )
@@ -6974,7 +6974,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     rn.resolved_subject_name,
                     esm.subject_key
                 ) AS theme_name,
-                COALESCE(ne.event_time, nr.publish_date::timestamp, ne.created_at, esm.created_at, nr.created_at) AS occurred_at,
+                COALESCE(ne.event_time, (nr.publish_date + nr.publish_time)::timestamp, ne.created_at, esm.created_at, nr.created_at) AS occurred_at,
                 COALESCE(NULLIF(nr.title, ''), NULLIF(ne.summary, ''), ne.event_type, ('事件#' || ne.id::text)) AS title,
                 COALESCE(NULLIF(nr.content, ''), ne.summary, '') AS summary,
                 COALESCE(esm.confidence, ne.confidence) AS confidence,
@@ -7138,7 +7138,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             esm.run_id,
             esm.created_at,
             esm.updated_at,
-            COALESCE(ne.event_time, nr.publish_date::timestamp, ne.created_at, esm.created_at, nr.created_at) AS occurred_at,
+            COALESCE(ne.event_time, (nr.publish_date + nr.publish_time)::timestamp, ne.created_at, esm.created_at, nr.created_at) AS occurred_at,
             COALESCE(NULLIF(nr.title, ''), NULLIF(ne.summary, ''), ne.event_type, ('事件#' || ne.id::text)) AS title,
             COALESCE(ne.summary, nr.content, '') AS summary,
             -- P1-B: 计算规范化 source_channel
@@ -7161,12 +7161,12 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             ))
             OR (
                 $4::timestamptz IS NOT NULL AND $5::timestamptz IS NOT NULL
-                AND COALESCE(ne.event_time, ne.created_at, esm.created_at, nr.created_at, nr.publish_date::timestamp) >= $4::timestamptz
-                AND COALESCE(ne.event_time, ne.created_at, esm.created_at, nr.created_at, nr.publish_date::timestamp) < $5::timestamptz
+                AND COALESCE(ne.event_time, ne.created_at, esm.created_at, nr.created_at, (nr.publish_date + nr.publish_time)::timestamp) >= $4::timestamptz
+                AND COALESCE(ne.event_time, ne.created_at, esm.created_at, nr.created_at, (nr.publish_date + nr.publish_time)::timestamp) < $5::timestamptz
             )
         )
           AND ($2::varchar IS NULL OR esm.source = $2::varchar)
-        ORDER BY COALESCE(ne.event_time, ne.created_at, esm.created_at, nr.created_at, nr.publish_date::timestamp) DESC NULLS LAST,
+        ORDER BY COALESCE(ne.event_time, ne.created_at, esm.created_at, nr.created_at, (nr.publish_date + nr.publish_time)::timestamp) DESC NULLS LAST,
                  esm.event_id DESC,
                  CASE WHEN esm.relation_type = 'primary' THEN 0 ELSE 1 END,
                  esm.confidence DESC NULLS LAST

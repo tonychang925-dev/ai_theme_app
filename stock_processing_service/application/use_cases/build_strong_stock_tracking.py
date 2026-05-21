@@ -257,6 +257,8 @@ class BuildStrongStockTrackingUseCase:
                 "history_written": history_written,
                 "history_count": len(history_rows),
                 "subject_key_count": len(all_subject_keys),
+                "identity_hit_count": len(identities_by_subject),
+                "cycle_hit_count": len(cycles_by_subject),
                 "stock_id_count": len(all_stock_ids),
                 "history_rows": history_rows,
                 "pool_rows": pool_write_rows,

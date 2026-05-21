@@ -181,11 +181,9 @@ class PostMarketReportContextRunner:
             FROM (
                 SELECT 1
                 FROM theme_cycle_judgement_v2 v2
-                LEFT JOIN mainline_state_daily msd
-                  ON msd.trade_date = v2.trade_date
-                 AND msd.subject_key = v2.subject_key
                 WHERE v2.trade_date = $1::date
-                  AND COALESCE(msd.state, v2.final_cycle_state, '') <> 'fade_confirmed'
+                  AND COALESCE(v2.final_mainline_alive, FALSE) = TRUE
+                  AND COALESCE(v2.fade_confirmed, FALSE) = FALSE
                   AND EXISTS (
                       SELECT 1
                       FROM subject_stock_daily_snapshot s
@@ -281,7 +279,7 @@ class PostMarketPrerequisitesRunner:
                     },
                 ),
                 (
-                    "cycle",
+                    "cycle_pre_identity",
                     context.container.build_cycle_judgement.execute,
                     {
                         "trade_date": trade_date_val,
@@ -295,6 +293,15 @@ class PostMarketPrerequisitesRunner:
                     {
                         "trade_date": trade_date_val,
                         "snapshot_version": "collection.recap_prereq.identity.v1",
+                        "batch_id": batch_id,
+                        "trace_id": trace_id,
+                    },
+                ),
+                (
+                    "cycle_post_identity",
+                    context.container.build_cycle_judgement.execute,
+                    {
+                        "trade_date": trade_date_val,
                         "batch_id": batch_id,
                         "trace_id": trace_id,
                     },
