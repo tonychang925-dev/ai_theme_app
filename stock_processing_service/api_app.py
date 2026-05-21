@@ -1268,6 +1268,74 @@ async def publish_post_market_recap_to_notion(payload: NotionPublishPayload) -> 
     }
 
 
+@app.get("/api/v1/theme/workspace/{subject_key}")
+async def get_theme_workspace(subject_key: str, trade_date: str = "") -> dict[str, Any]:
+    """题材工作台：读取 stock_data_test 中的题材相关数据。"""
+    try:
+        from asyncpg import connect
+        db = os.environ.get("PG_DATABASE", "stock_data_test")
+        conn = await connect(host="localhost", port=5432, database=db, user=os.environ.get("PG_USERNAME","postgres"), password=os.environ.get("PG_PASSWORD",""))
+    except Exception as e:
+        return {"theme_name": subject_key, "diagnostics": {"partial": True, "missing_sections": [str(e)]}}
+
+    td = trade_date or str((await conn.fetchrow("SELECT max(trade_date) FROM subject_stock_daily_snapshot"))[0] or "")
+    result: dict[str, Any] = {"theme_name": subject_key, "effective_trade_date": td}
+
+    try:
+        # Theme name from theme_gate_profile
+        name_row = await conn.fetchrow("SELECT concept FROM theme_gate_profile WHERE subject_key=$1", subject_key)
+        result["theme_name"] = name_row["concept"] if name_row else subject_key
+
+        # Theme detail from vw_theme_detail_joined (joins theme_master + theme_profile_ext + subject_detail)
+        v2 = await conn.fetchrow("SELECT theme_name, summary, detail_html, reason_short FROM vw_theme_detail_joined WHERE subject_key=$1 LIMIT 1", subject_key)
+        if v2:
+            result["theme_name"] = v2.get("theme_name") or result["theme_name"]
+            result["summary"] = v2.get("summary","")
+            result["detail_html"] = v2.get("detail_html","")
+            result["reason_short"] = v2.get("reason_short","")
+
+        # Summary row from theme_cycle_judgement_v2
+        cycle = await conn.fetchrow("SELECT * FROM theme_cycle_judgement_v2 WHERE subject_key=$1 ORDER BY trade_date DESC LIMIT 1", subject_key)
+        result["summary_row"] = dict(cycle) if cycle else None
+
+        # History items from subject_history_staging
+        hist = await conn.fetch("SELECT * FROM subject_history_staging WHERE subject_key=$1 ORDER BY rank_date DESC LIMIT 8", subject_key)
+        result["history_items"] = [dict(r) for r in hist]
+        result["history_count"] = len(result["history_items"])
+
+        # Child themes from subject_children_staging
+        child = await conn.fetch("SELECT * FROM subject_children_staging WHERE parent_key=$1 LIMIT 8", subject_key)
+        result["child_items"] = [dict(r) for r in child]
+        result["children_count"] = len(result["child_items"])
+
+        # Stock items from subject_stock_staging
+        stocks = await conn.fetch("SELECT * FROM subject_stock_staging WHERE subject_key=$1 LIMIT 12", subject_key)
+        result["stock_items"] = [dict(r) for r in stocks]
+        result["stock_count"] = len(result["stock_items"])
+
+        # Leader stocks
+        leaders = await conn.fetch("SELECT * FROM theme_stock_leaderboard WHERE subject_key=$1 ORDER BY leader_score DESC LIMIT 10", subject_key)
+        result["leader_stocks"] = [dict(r) for r in leaders]
+
+        # Recent rank rows for trend
+        ranks = await conn.fetch("SELECT * FROM subject_stock_staging WHERE subject_key=$1 ORDER BY trade_date DESC LIMIT 30", subject_key)
+        result["recent_rank_rows"] = [dict(r) for r in ranks]
+
+        # Ranked leader stocks (with pct_chg from daily snapshot)
+        ranked = await conn.fetch(
+            "SELECT l.*, s.close_price, s.pct_chg, s.trade_date FROM theme_stock_leaderboard l LEFT JOIN subject_stock_daily_snapshot s ON s.stock_id=l.stock_id AND s.subject_key=l.subject_key AND s.trade_date=$2 WHERE l.subject_key=$1 ORDER BY l.leader_score DESC LIMIT 20",
+            subject_key, td
+        )
+        result["ranked_leader_stocks"] = [dict(r) for r in ranked]
+
+        result["diagnostics"] = {"partial": False, "missing_sections": [], "source": "sps"}
+    except Exception as e:
+        result["diagnostics"] = {"partial": True, "missing_sections": [str(e)]}
+    finally:
+        await conn.close()
+    return result
+
+
 @app.get("/api/v1/stock/workspace/{stock_id}")
 async def get_stock_workspace(stock_id: str) -> dict[str, Any]:
     """个股工作台：读取 stock_data_test 中的个股相关数据。"""
@@ -1325,6 +1393,31 @@ async def get_stock_workspace(stock_id: str) -> dict[str, Any]:
             "SELECT * FROM stock_pattern_judgement WHERE split_part(stock_id,'.',1)=$1 ORDER BY trade_date DESC LIMIT 1", code
         )
         result["kline"] = {"position": dict(pos) if pos else None, "pattern": dict(pat) if pat else None}
+
+        # stock_lightspots
+        spots = await conn.fetch(
+            "SELECT content, biz_key, created_at FROM stock_lightspots WHERE split_part(stock_id,'.',1)=$1 ORDER BY created_at DESC LIMIT 10", code
+        )
+        result["lightspots"] = [dict(r) for r in spots]
+
+        # stock_profile_ext
+        prof = await conn.fetchrow(
+            "SELECT stock_name, profile_text, main_business_text, product_text, brand_text, fact_count FROM stock_profile_ext WHERE split_part(stock_id,'.',1)=$1", code
+        )
+        result["profile_ext"] = dict(prof) if prof else None
+
+        # stocks base info
+        stk = await conn.fetchrow(
+            "SELECT name, price, pct_chg, market_value, high, low, vol, detail_html FROM stocks WHERE split_part(stock_id,'.',1)=$1", code
+        )
+        result["stock_info"] = dict(stk) if stk else None
+
+        # recent daily snapshots
+        daily = await conn.fetch(
+            "SELECT trade_date, close_price, pre_close, subject_key FROM subject_stock_daily_snapshot WHERE split_part(stock_id,'.',1)=$1 ORDER BY trade_date DESC LIMIT 20", code
+        )
+        result["daily_snapshots"] = [dict(r) for r in daily]
+
         result["diagnostics"] = {"partial": False, "missing_sections": []}
     except Exception as e:
         result["diagnostics"] = {"partial": True, "missing_sections": [str(e)]}

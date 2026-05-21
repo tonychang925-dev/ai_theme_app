@@ -151,6 +151,10 @@ export type ThemeAnalyticsSummary = Record<string, unknown>;
 export interface StockWorkspaceView {
   stock_id: string;
   stock_detail?: Record<string, unknown> | null;
+  stock_info?: Record<string, unknown> | null;
+  profile_ext?: Record<string, unknown> | null;
+  lightspots?: Record<string, unknown>[] | null;
+  daily_snapshots?: Record<string, unknown>[] | null;
   themes?: Record<string, unknown>[] | null;
   money_flow?: Record<string, unknown>[] | null;
   dragon_tiger?: Record<string, unknown>[] | null;
@@ -629,7 +633,7 @@ export async function fetchThemeWorkspace(subjectKey: string, tradeDate?: string
     stocks_limit: "10"
   });
   if (tradeDate) query.set("trade_date", tradeDate);
-  const response = await fetch(`/api/v2/theme_workspace/${subjectKey}?${query.toString()}`);
+  const response = await fetch(`/api/v1/theme/workspace/${subjectKey}?${query.toString()}`);
   if (!response.ok) {
     throw new Error(`theme workspace request failed: ${response.status}`);
   }
