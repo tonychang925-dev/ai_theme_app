@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 interface ResultItem {
   result_id: string;
@@ -126,6 +126,12 @@ export function WeakToStrongTwoStageView(props: WeakToStrongTwoStageViewProps) {
         : stage2Status === 'partial'
           ? '确认未产出信号（可能超时或数据缺失）'
           : '未执行确认';
+
+  useEffect(() => {
+    if (runMode === 'post' && !isExecuting && candidateCount > 0) {
+      setTab('candidate');
+    }
+  }, [candidateCount, isExecuting, runMode]);
 
   return (
     <div className="screener-two-stage-wrap">

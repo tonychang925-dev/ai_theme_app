@@ -16,9 +16,6 @@ from stock_processing_service.application.use_cases.build_strong_stock_tracking 
     LAYER_C_INPUT_MODE,
     BuildStrongStockTrackingUseCase,
 )
-from stock_processing_service.application.use_cases.build_weak_to_strong_candidate import (
-    BuildWeakToStrongCandidateUseCase,
-)
 from stock_processing_service.contracts.dto import (
     BuildResult,
     SubjectStockPoolDTO,
@@ -70,10 +67,7 @@ class BuildPostMarketRecapJob:
             cache_ports=cache_port,
             tracking_service=self._tracking_service,
         )
-        self._weak_to_strong_candidate_use_case = weak_to_strong_candidate_use_case or BuildWeakToStrongCandidateUseCase(
-            read_ports=read_port,
-            write_ports=write_port,
-        )
+        self._weak_to_strong_candidate_use_case = weak_to_strong_candidate_use_case
         self._identity_job = identity_job
         self._mainline_state_job = mainline_state_job
         self._cycle_judgement_job = cycle_judgement_job
@@ -264,19 +258,22 @@ class BuildPostMarketRecapJob:
         )
         layer_c_metrics = dict(layer_c_result.metrics or {})
 
-        # ── Layer D1: 弱转强候选由独立 use case 负责，recap 只消费其结果 ──
-        d1_result = await self._weak_to_strong_candidate_use_case.execute(trade_date=trade_date)
-        d1_metrics = dict(d1_result.metrics or {})
-        d1_input_rows = list(d1_metrics.get("d1_input_rows") or [])
-        d1_candidates_for_pool = list(d1_metrics.get("d1_candidates_for_pool") or [])
-        _d1_total_in = int(d1_metrics.get("d1_total_in") or 0)
-        _d1_pass = int(d1_metrics.get("d1_pass") or 0)
-        _d1_fail_pct = int(d1_metrics.get("d1_fail_pct_gate") or 0)
-        _d1_fail_history = int(d1_metrics.get("d1_fail_history") or 0)
-        _d1_fail_gene = int(d1_metrics.get("d1_fail_gene") or 0)
-        _d1_fail_strong = int(d1_metrics.get("d1_fail_strong") or 0)
-        _d1_fail_support = int(d1_metrics.get("d1_fail_support") or 0)
-        d1_written = int(d1_metrics.get("d1_written") or 0)
+        # ── Layer D1: recap 只读取既有候选结果，不执行选股逻辑 ──
+        d1_input_rows = await self._read_port.get_w2s_candidate_inputs(trade_date)
+        read_existing_w2s = getattr(self._read_port, "get_w2s_candidates_by_trade_date", None)
+        d1_candidates_for_pool = (
+            list(await read_existing_w2s(trade_date, limit=10))
+            if callable(read_existing_w2s)
+            else []
+        )
+        _d1_total_in = len(d1_input_rows)
+        _d1_pass = len(d1_candidates_for_pool)
+        _d1_fail_pct = 0
+        _d1_fail_history = 0
+        _d1_fail_gene = 0
+        _d1_fail_strong = 0
+        _d1_fail_support = 0
+        d1_written = 0
 
         # 构建 recap_doc 所需元数据
         pool_rows: list[Any] = []  # 保留兼容性

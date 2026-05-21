@@ -27,6 +27,7 @@ def _install_strategy_repo(monkeypatch: pytest.MonkeyPatch) -> None:
 @pytest.mark.asyncio
 async def test_post_market_stage_does_not_require_confirm_date(monkeypatch: pytest.MonkeyPatch) -> None:
     _install_strategy_repo(monkeypatch)
+    seen: dict[str, object] = {}
 
     async def forbid_resolve_prev_trade_date(_trade_date: date) -> date:
         raise AssertionError("stage1-only should not resolve previous trade date in api layer")
@@ -35,6 +36,7 @@ async def test_post_market_stage_does_not_require_confirm_date(monkeypatch: pyte
         return None
 
     async def run_stage1(candidate_trade_date: date, stage1_limit: int):
+        seen["run_stage1"] = (candidate_trade_date, stage1_limit)
         assert candidate_trade_date == date(2024, 1, 2)
         assert stage1_limit == 10
         return {
@@ -42,7 +44,7 @@ async def test_post_market_stage_does_not_require_confirm_date(monkeypatch: pyte
             "source_trade_date": candidate_trade_date.isoformat(),
             "candidate_count": 1,
             "candidate_limit": stage1_limit,
-            "snapshot_version": "test",
+            "selection_job": "build_weak_to_strong_candidate",
         }
 
     async def fetch_candidates(candidate_trade_date: date, limit: int = 200):
@@ -70,8 +72,8 @@ async def test_post_market_stage_does_not_require_confirm_date(monkeypatch: pyte
         ]
 
     monkeypatch.setattr(api_app, "_resolve_prev_trade_date", forbid_resolve_prev_trade_date)
-    monkeypatch.setattr(api_app, "_run_post_market_recap_for_screener", run_stage1)
-    monkeypatch.setattr(api_app, "_fetch_recap_w2s_candidates", fetch_candidates)
+    monkeypatch.setattr(api_app, "_run_w2s_candidate_selection_for_screener", run_stage1)
+    monkeypatch.setattr(api_app, "_fetch_w2s_candidates", fetch_candidates)
     monkeypatch.setattr(api_app, "_normalize_result_theme_names", noop_normalize)
 
     payload = api_app.ScreenerExecutePayload(
@@ -90,11 +92,13 @@ async def test_post_market_stage_does_not_require_confirm_date(monkeypatch: pyte
     assert result["diagnostics"]["snapshot_trade_date"] is None
     assert result["diagnostics"]["stage1"]["status"] == "success"
     assert result["diagnostics"]["stage1"]["source_trade_date"] == "2024-01-02"
+    assert seen["run_stage1"] == (date(2024, 1, 2), 10)
 
 
 @pytest.mark.asyncio
 async def test_default_stage_flags_remain_post_market_only(monkeypatch: pytest.MonkeyPatch) -> None:
     _install_strategy_repo(monkeypatch)
+    seen: dict[str, object] = {}
 
     async def forbid_resolve_prev_trade_date(_trade_date: date) -> date:
         raise AssertionError("default request must not enter stage2 confirm flow")
@@ -103,13 +107,14 @@ async def test_default_stage_flags_remain_post_market_only(monkeypatch: pytest.M
         return None
 
     async def run_stage1(candidate_trade_date: date, stage1_limit: int):
+        seen["run_stage1"] = (candidate_trade_date, stage1_limit)
         assert candidate_trade_date == date(2024, 1, 2)
         return {
             "status": "success",
             "source_trade_date": candidate_trade_date.isoformat(),
             "candidate_count": 1,
             "candidate_limit": stage1_limit,
-            "snapshot_version": "test",
+            "selection_job": "build_weak_to_strong_candidate",
         }
 
     async def fetch_candidates(candidate_trade_date: date, limit: int = 200):
@@ -134,8 +139,8 @@ async def test_default_stage_flags_remain_post_market_only(monkeypatch: pytest.M
         ]
 
     monkeypatch.setattr(api_app, "_resolve_prev_trade_date", forbid_resolve_prev_trade_date)
-    monkeypatch.setattr(api_app, "_run_post_market_recap_for_screener", run_stage1)
-    monkeypatch.setattr(api_app, "_fetch_recap_w2s_candidates", fetch_candidates)
+    monkeypatch.setattr(api_app, "_run_w2s_candidate_selection_for_screener", run_stage1)
+    monkeypatch.setattr(api_app, "_fetch_w2s_candidates", fetch_candidates)
     monkeypatch.setattr(api_app, "_normalize_result_theme_names", noop_normalize)
 
     payload = api_app.ScreenerExecutePayload(
@@ -149,6 +154,7 @@ async def test_default_stage_flags_remain_post_market_only(monkeypatch: pytest.M
     assert result["diagnostics"]["run_stage1"] is True
     assert result["diagnostics"]["run_stage2"] is False
     assert result["diagnostics"]["confirm_trade_date"] is None
+    assert seen["run_stage1"] == (date(2024, 1, 2), 10)
 
 
 @pytest.mark.asyncio
@@ -204,7 +210,7 @@ async def test_pre_market_stage_uses_confirm_date_and_prior_candidate_pool(monke
         )
 
     monkeypatch.setattr(api_app, "_resolve_prev_trade_date", resolve_prev_trade_date)
-    monkeypatch.setattr(api_app, "_fetch_recap_w2s_candidates", fetch_candidates)
+    monkeypatch.setattr(api_app, "_fetch_w2s_candidates", fetch_candidates)
     monkeypatch.setattr(api_app, "_load_w2s_auctions_for_confirm", load_auctions)
     monkeypatch.setattr(api_app, "_normalize_result_theme_names", noop_normalize)
 
@@ -363,73 +369,6 @@ async def test_load_w2s_auctions_for_confirm_uses_db_channel_after_0930(monkeypa
     assert meta["channel"] == "db"
     assert meta["cache_writes"] == 0
     assert meta["persisted_rows"] == 0
-
-
-@pytest.mark.asyncio
-async def test_fetch_recap_w2s_candidates_builds_from_recap_snapshot(monkeypatch: pytest.MonkeyPatch) -> None:
-    async def get_snapshot(_trade_date: date):
-        return {
-            "payload": {
-                "recap_doc": {
-                    "top_candidates": [
-                        {
-                            "stock_id": "000001.SZ",
-                            "stock_name": "平安银行",
-                            "subject_key": "bank",
-                            "subject_name": "银行",
-                            "candidate_score": "82.0",
-                            "candidate_level": "formal",
-                            "transition_type": "trend_repair",
-                            "transition_confidence": "0.91",
-                            "trigger_flags": ["f1"],
-                            "evidence_rules": ["r1"],
-                        }
-                    ],
-                    "strong_watch_input_7d_preview": [
-                        {
-                            "stock_id": "000001.SZ",
-                            "support_type": "gap_support",
-                            "transition_type": "upgrade",
-                        }
-                    ],
-                    "strong_watch_history": [
-                        {
-                            "stock_id": "000001.SZ",
-                            "support_score": "88.0",
-                            "support_type": "gap_support",
-                        }
-                    ],
-                }
-            }
-        }
-
-    monkeypatch.setattr(api_app.app, "state", SimpleNamespace(gateway=SimpleNamespace(get_existing_post_market_recap_snapshot=get_snapshot)), raising=False)
-    monkeypatch.setattr(api_app, "_normalize_recap_payload", lambda row: row["payload"])
-
-    rows = await api_app._fetch_recap_w2s_candidates(date(2024, 1, 2), limit=10)
-
-    assert len(rows) == 1
-    assert rows[0]["id"] == 0
-    assert rows[0]["candidate_type"] == "trend_repair"
-    assert rows[0]["support_type"] == "gap_support"
-    assert rows[0]["support_strength"] == "88.0"
-    assert rows[0]["evidence_json"]["recap_top_candidate"]["transition_confidence"] == "0.91"
-    assert rows[0]["evidence_json"]["strong_watch_preview"]["support_type"] == "gap_support"
-
-
-@pytest.mark.asyncio
-async def test_fetch_recap_w2s_candidates_allows_snapshot_only_candidates(monkeypatch: pytest.MonkeyPatch) -> None:
-    async def get_snapshot(_trade_date: date):
-        return {"payload": {"recap_doc": {"top_candidates": [{"stock_id": "000001.SZ", "stock_name": "平安银行", "subject_key": "bank", "subject_name": "银行", "candidate_score": "82.0", "candidate_level": "formal"}]}}}
-
-    monkeypatch.setattr(api_app.app, "state", SimpleNamespace(gateway=SimpleNamespace(get_existing_post_market_recap_snapshot=get_snapshot)), raising=False)
-    monkeypatch.setattr(api_app, "_normalize_recap_payload", lambda row: row["payload"])
-
-    rows = await api_app._fetch_recap_w2s_candidates(date(2024, 1, 2), limit=10)
-
-    assert len(rows) == 1
-    assert rows[0]["stock_id"] == "000001.SZ"
-    assert rows[0]["support_type"] == ""
 
 
 @pytest.mark.asyncio

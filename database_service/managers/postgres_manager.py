@@ -3589,7 +3589,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         ),
         base AS (
             SELECT
-                p.watch_start_date::text AS trade_date,
+                p.trade_date::text AS trade_date,
                 p.stock_id,
                 p.stock_name,
                 p.subject_key,
@@ -3603,7 +3603,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 p.mainline_strength_score,
                 p.fade_watch,
                 p.fade_confirmed,
-                p.candidate_promoted AS promoted_to_candidate,
+                p.promoted_to_candidate,
                 p.support_type,
                 p.support_level,
                 p.support_score,
@@ -3613,14 +3613,14 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 COALESCE(NULLIF(s.raw_json->>20, ''), '0')::integer AS current_flag,
                 ROW_NUMBER() OVER (
                     PARTITION BY split_part(p.stock_id, '.', 1)
-                    ORDER BY p.watch_start_date DESC, p.watch_score DESC, p.watch_priority DESC
+                    ORDER BY p.trade_date DESC, p.watch_score DESC, p.watch_priority DESC
                 ) AS rn
-            FROM strong_stock_watch_pool p
+            FROM strong_stock_watch_history p
             LEFT JOIN subject_stock_daily_snapshot s
-              ON s.trade_date = p.last_trade_date
+              ON s.trade_date = p.trade_date
              AND split_part(s.stock_id, '.', 1) = split_part(p.stock_id, '.', 1)
              AND s.subject_key = p.subject_key
-            WHERE p.watch_start_date IN (SELECT trade_date FROM selected_trade_dates)
+            WHERE p.trade_date IN (SELECT trade_date FROM selected_trade_dates)
               AND ($3::boolean OR p.watch_status IN ('active', 'weakening'))
               AND ($4::text IS NULL OR split_part(p.stock_id, '.', 1) = split_part($4::text, '.', 1))
         )

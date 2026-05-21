@@ -683,78 +683,9 @@ def _obj(value: Any) -> Dict[str, Any]:
     return {}
 
 
-async def _fetch_recap_w2s_candidates(candidate_trade_date: date, limit: int = 200) -> List[Dict[str, Any]]:
-    """Read D1 weak-to-strong candidates from the frozen post-market recap snapshot."""
-    row = await app.state.gateway.get_existing_post_market_recap_snapshot(candidate_trade_date)
-    if not row:
-        return []
-    payload = _normalize_recap_payload(row)
-    recap_doc = dict(payload.get("recap_doc") or {})
-    top_candidates = list(recap_doc.get("top_candidates") or [])
-    if not top_candidates:
-        top_candidates = list(recap_doc.get("formal_top_candidates") or [])
-
-    def _by_stock(rows: list[Any]) -> dict[str, dict[str, Any]]:
-        out: dict[str, dict[str, Any]] = {}
-        for item in rows:
-            if isinstance(item, dict):
-                stock_id = str(item.get("stock_id") or "")
-                if stock_id and stock_id not in out:
-                    out[stock_id] = dict(item)
-        return out
-
-    preview_by_stock = _by_stock(list(recap_doc.get("strong_watch_input_7d_preview") or []))
-    history_by_stock = _by_stock(list(recap_doc.get("strong_watch_history") or []))
-    result: list[dict[str, Any]] = []
-    for idx, candidate in enumerate(top_candidates[: max(int(limit), 1)], start=1):
-        if not isinstance(candidate, dict):
-            continue
-        stock_id = str(candidate.get("stock_id") or "")
-        preview = preview_by_stock.get(stock_id, {})
-        history = history_by_stock.get(stock_id, {})
-        support_type = str(
-            candidate.get("support_type")
-            or history.get("support_type")
-            or preview.get("support_type")
-            or ""
-        )
-        support_strength = str(
-            candidate.get("support_score")
-            or candidate.get("support_strength")
-            or history.get("support_score")
-            or preview.get("support_score")
-            or ""
-        )
-        evidence_json = {
-            "source": "post_market_recap_snapshot",
-            "recap_top_candidate": dict(candidate),
-            "strong_watch_preview": dict(preview),
-            "strong_watch_history": dict(history),
-        }
-        result.append({
-            "id": 0,
-            "trade_date": candidate_trade_date,
-            "stock_id": stock_id,
-            "stock_name": str(candidate.get("stock_name") or ""),
-            "subject_key": str(candidate.get("subject_key") or ""),
-            "theme_name": str(candidate.get("subject_name") or candidate.get("theme_name") or ""),
-            "candidate_score": str(candidate.get("candidate_score") or "0"),
-            "pool_entry_type": str(candidate.get("candidate_level") or candidate.get("pool_entry_type") or "formal"),
-            "candidate_type": str(candidate.get("candidate_type") or candidate.get("transition_type") or "weak_to_strong"),
-            "weak_type": str(candidate.get("transition_type") or candidate.get("weak_type") or ""),
-            "support_type": support_type,
-            "support_strength": support_strength,
-            "expected_open_low": 0,
-            "expected_open_high": 0,
-            "evidence_json": evidence_json,
-            "rank": idx,
-        })
-    return result
-
-
 def _candidate_row_to_domain(candidate: Dict[str, Any]) -> W2SCandidate:
     evidence_json = _obj(candidate.get("evidence_json"))
-    top_candidate = _obj(evidence_json.get("recap_top_candidate"))
+    evidence_rules = evidence_json.get("evidence_rules") or evidence_json.get("trigger_flags") or []
     return W2SCandidate(
         trade_date=str(candidate.get("trade_date") or ""),
         stock_id=str(candidate.get("stock_id") or ""),
@@ -765,8 +696,8 @@ def _candidate_row_to_domain(candidate: Dict[str, Any]) -> W2SCandidate:
         momentum_score=_d(candidate.get("candidate_score")),
         candidate_score=_d(candidate.get("candidate_score")),
         candidate_level=str(candidate.get("pool_entry_type") or "formal"),
-        candidate_source="post_market_recap_snapshot",
-        evidence_rules=list(top_candidate.get("evidence_rules") or []),
+        candidate_source=str(candidate.get("candidate_source") or "weak_to_strong_candidate_pool"),
+        evidence_rules=list(evidence_rules) if isinstance(evidence_rules, list) else [],
     )
 
 
@@ -790,23 +721,19 @@ def _confirmed_pick_to_signal(pick: Any) -> Dict[str, Any]:
     }
 
 
-async def _run_post_market_recap_for_screener(trade_date: date, stage1_limit: int) -> Dict[str, Any]:
-    batch_id = f"screener_stage1_{uuid.uuid4().hex[:12]}"
-    trace_id = f"screener_stage1_{trade_date.isoformat()}_{int(time.time())}"
-    result = await app.state.container.build_post_market_recap.execute(
-        trade_date=trade_date,
-        snapshot_version="screener_stage1.v1",
-        batch_id=batch_id,
-        trace_id=trace_id,
-        lookback_days=7,
-    )
-    candidates = await _fetch_recap_w2s_candidates(trade_date, limit=stage1_limit)
+async def _run_w2s_candidate_selection_for_screener(trade_date: date, stage1_limit: int) -> Dict[str, Any]:
+    result = await app.state.container.build_weak_to_strong_candidate.execute(trade_date=trade_date)
+    candidates = await _fetch_w2s_candidates(trade_date, limit=stage1_limit)
+    metrics = dict(getattr(result, "metrics", None) or {})
     return {
         "status": str(result.status),
         "source_trade_date": trade_date.isoformat(),
         "candidate_count": len(candidates),
         "candidate_limit": stage1_limit,
-        "snapshot_version": "screener_stage1.v1",
+        "selection_job": "build_weak_to_strong_candidate",
+        "d1_total_in": int(metrics.get("d1_total_in") or 0),
+        "d1_pass": int(metrics.get("d1_pass") or 0),
+        "d1_written": int(metrics.get("d1_written") or 0),
     }
 
 
@@ -1001,7 +928,7 @@ async def _build_w2s_result_detail_from_snapshot(
     confirm_trade_date: Optional[date] = None,
     view: str | None = None,
 ) -> Dict[str, Any]:
-    candidates = await _fetch_recap_w2s_candidates(candidate_trade_date, limit=200)
+    candidates = await _fetch_w2s_candidates(candidate_trade_date, limit=200)
     candidate = next((row for row in candidates if str(row.get("stock_id") or "") == stock_id), None)
     if candidate is None:
         raise HTTPException(status_code=404, detail="result not found")
@@ -1114,9 +1041,18 @@ async def _execute_weak_to_strong_two_stage(payload: ScreenerExecutePayload, tra
     stage1_summary: Dict[str, Any] = {"status": "skipped", "candidate_count": 0}
     stage2_summary: Dict[str, Any] = {"status": "skipped", "level_count": {"A": 0, "B": 0, "C": 0, "X": 0}}
     candidate_limit = 2000 if run_stage2 else stage1_limit
-    # Stage 1: 直接从 weak_to_strong_candidate_pool 读取，不触发 recap job
-    candidates = await _fetch_recap_w2s_candidates(candidate_trade_date, limit=candidate_limit)
-    stage1_summary = {"status": "success", "candidate_count": len(candidates)}
+    if run_stage1:
+        stage1_summary = await _run_w2s_candidate_selection_for_screener(
+            candidate_trade_date,
+            stage1_limit,
+        )
+    candidates = await _fetch_w2s_candidates(candidate_trade_date, limit=candidate_limit)
+    if run_stage1:
+        stage1_summary = {
+            **stage1_summary,
+            "candidate_count": len(candidates),
+            "candidate_limit": stage1_limit,
+        }
     signals: Dict[str, Dict[str, Any]] = {}
     if run_stage2:
         assert confirm_trade_date is not None

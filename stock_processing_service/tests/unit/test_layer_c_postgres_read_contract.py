@@ -46,6 +46,16 @@ def test_legacy_layer_c_read_sql_does_not_recompute_alive_state() -> None:
     assert "COALESCE(msd.state" not in method
 
 
+def test_strong_watch_window_view_reads_layer_c_history_by_trade_date() -> None:
+    method = _method_source("get_strong_stock_watch_view_rows")
+
+    assert "FROM strong_stock_watch_history p" in method
+    assert "p.trade_date::text AS trade_date" in method
+    assert "WHERE p.trade_date IN (SELECT trade_date FROM selected_trade_dates)" in method
+    assert "FROM strong_stock_watch_pool p" not in method
+    assert "p.watch_start_date::text AS trade_date" not in method
+
+
 def test_post_market_report_context_uses_layer_b_truth_not_state_daily() -> None:
     method = _method_source("get_post_market_report_context")
 

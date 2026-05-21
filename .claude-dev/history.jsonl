@@ -1745,3 +1745,11 @@
 {"display":"怎么5/21情报台只显示一条待复核事件的新闻数据了 ？刚才还有10多条！","pastedContents":{},"timestamp":1779324252436,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
 {"display":"事件的显示时间又变成00:00！！","pastedContents":{},"timestamp":1779324541083,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
 {"display":"怎么一个时间显示问题都搞不定？？！！！","pastedContents":{},"timestamp":1779325486384,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"把情报台的新闻正文部分的文字颜色改为青色，并且不要用加粗","pastedContents":{},"timestamp":1779325622442,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"为什么“强势股跟踪”页面现在只显示一天了？！请恢复之前的样式！","pastedContents":{},"timestamp":1779325890662,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"继续","pastedContents":{},"timestamp":1779326207254,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"数据只显示一天","pastedContents":{},"timestamp":1779326265352,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"确认一下今天的“盘前必读”报告生成是否符合设计文档的逻辑，请审计日志和代码。","pastedContents":{},"timestamp":1779326900564,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"我没看到公告机会数据显示","pastedContents":{},"timestamp":1779326966406,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"强势股跟踪页面还是只显示1天的数据，只显示56条数据！","pastedContents":{},"timestamp":1779327229512,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"请核查原因：一条关键证据：/api/v1/strong_watch?trade_date=2026-05-20 的 7 日返回里，2026-05-20 有股票，2026-\n  05-19 到 2026-05-11 都是 stock_id=null 的占位行。页面不是把 7 天藏掉了，而是接口底层在这些交易日没有 C 层\n  历史明细可返回。","pastedContents":{},"timestamp":1779328352799,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
