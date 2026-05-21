@@ -1,22 +1,66 @@
 {
   "must": [
-    "产品",
-    "设备"
+    "金刚石散热",
+    "金刚石热沉",
+    "CVD金刚石散热"
   ],
-  "should": [],
-  "not": [],
+  "aliases": [
+    "金刚石散热",
+    "金刚石热沉"
+  ],
+  "core_objects": [
+    "CVD金刚石散热",
+    "功率器件散热"
+  ],
+  "strong": [
+    "半导体热管理",
+    "功率半导体散热",
+    "金刚石导热材料"
+  ],
+  "should": [
+    "高热导率",
+    "热沉",
+    "芯片散热",
+    "功率器件散热"
+  ],
+  "not": [
+    "培育钻石",
+    "人造钻石",
+    "珠宝",
+    "饰品",
+    "裸钻",
+    "钻石消费"
+  ],
+  "support_terms": [
+    "产品",
+    "设备",
+    "金刚石",
+    "CVD"
+  ],
+  "no_anchor_terms": [
+    "产品",
+    "设备",
+    "金刚石",
+    "CVD"
+  ],
+  "boundary_rules": {
+    "accept_requires_any": ["金刚石散热", "金刚石热沉", "CVD金刚石散热"],
+    "reject_if_only_hits": ["产品", "设备", "金刚石", "CVD"],
+    "reject_domains": ["珠宝消费", "钻石饰品"],
+    "nearby_confusions": ["培育钻石"]
+  },
   "evidence_refs": [
     {
-      "term": "产品",
+      "term": "金刚石散热",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "产品"
+      "span_text": "金刚石散热"
     },
     {
-      "term": "设备",
+      "term": "金刚石热沉",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "设备"
+      "span_text": "金刚石热沉"
     }
   ],
   "subject_id": "9064241",

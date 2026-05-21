@@ -1,11 +1,17 @@
 {
   "must": [
-    "设备",
-    "产品"
+    "培育钻石",
+    "人造钻石",
+    "CVD培育钻石",
+    "HPHT培育钻石"
+  ],
+  "strong": [
+    "人造金刚石单晶",
+    "人造金刚石微粉",
+    "培育钻石毛坯",
+    "培育钻石珠宝"
   ],
   "should": [
-    "人造金刚石微粉",
-    "人造金刚石单晶",
     "人造金刚石线锯",
     "人造金刚石砂轮",
     "超硬材料产品",
@@ -16,20 +22,41 @@
   "not": [
     "商务部",
     "海关总署",
-    "出口管制"
+    "出口管制",
+    "金刚石散热",
+    "金刚石热沉",
+    "半导体热管理",
+    "功率器件散热"
   ],
+  "support_terms": [
+    "设备",
+    "产品",
+    "超硬材料"
+  ],
+  "no_anchor_terms": [
+    "设备",
+    "产品",
+    "金刚石",
+    "超硬材料"
+  ],
+  "boundary_rules": {
+    "accept_requires_any": ["培育钻石", "人造钻石", "CVD培育钻石", "HPHT培育钻石"],
+    "reject_if_only_hits": ["设备", "产品", "金刚石", "超硬材料"],
+    "reject_domains": ["半导体散热", "热管理"],
+    "nearby_confusions": ["金刚石散热"]
+  },
   "evidence_refs": [
     {
-      "term": "设备",
+      "term": "培育钻石",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "设备"
+      "span_text": "培育钻石"
     },
     {
-      "term": "产品",
+      "term": "人造钻石",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "产品"
+      "span_text": "人造钻石"
     }
   ],
   "subject_id": "9058137",

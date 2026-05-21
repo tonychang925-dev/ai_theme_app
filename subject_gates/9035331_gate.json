@@ -1,8 +1,13 @@
 {
   "must": [
-    "合作",
-    "参股",
-    "公司"
+    "本源量子",
+    "本源悟空",
+    "本源量子计算机"
+  ],
+  "strong": [
+    "量子计算机",
+    "量子芯片",
+    "量子计算产业化"
   ],
   "should": [
     "微纳量子纠缠光源",
@@ -14,25 +19,45 @@
     "传输速率",
     "技术实力"
   ],
-  "not": [],
+  "not": [
+    "非本源量子",
+    "量子通信",
+    "量子保密通信"
+  ],
+  "support_terms": [
+    "合作",
+    "参股",
+    "公司"
+  ],
+  "no_anchor_terms": [
+    "合作",
+    "参股",
+    "公司"
+  ],
+  "boundary_rules": {
+    "accept_requires_any": ["本源量子", "本源悟空", "本源量子计算机"],
+    "reject_if_only_hits": ["合作", "参股", "公司", "量子"],
+    "reject_domains": ["量子通信"],
+    "nearby_confusions": ["量子保密通信"]
+  },
   "evidence_refs": [
     {
-      "term": "合作",
+      "term": "本源量子",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "合作"
+      "span_text": "本源量子"
     },
     {
-      "term": "参股",
+      "term": "本源悟空",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "参股"
+      "span_text": "本源悟空"
     },
     {
-      "term": "公司",
+      "term": "本源量子计算机",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "公司"
+      "span_text": "本源量子计算机"
     }
   ],
   "subject_id": "9035331",

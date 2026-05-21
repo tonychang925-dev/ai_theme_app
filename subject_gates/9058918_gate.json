@@ -1,24 +1,42 @@
 {
   "must": [
-    "竞品",
-    "合作"
+    "稻米造血",
+    "稻米造血技术"
+  ],
+  "strong": [
+    "造血干细胞",
+    "血液制品替代"
   ],
   "should": [
+    "产品",
+    "生物制造"
+  ],
+  "not": [
+    "普通竞品合作",
+    "食品稻米"
+  ],
+  "support_terms": [
+    "竞品",
+    "合作",
     "产品"
   ],
-  "not": [],
+  "no_anchor_terms": [
+    "竞品",
+    "合作",
+    "产品"
+  ],
   "evidence_refs": [
     {
-      "term": "竞品",
+      "term": "稻米造血",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "竞品"
+      "span_text": "稻米造血"
     },
     {
-      "term": "合作",
+      "term": "稻米造血技术",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "合作"
+      "span_text": "稻米造血技术"
     }
   ],
   "subject_id": "9058918",

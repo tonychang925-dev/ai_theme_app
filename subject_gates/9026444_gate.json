@@ -1,24 +1,52 @@
 {
   "must": [
-    "产品",
-    "原料"
+    "染料",
+    "分散染料",
+    "染料中间体"
+  ],
+  "strong": [
+    "活性染料",
+    "染料涨价",
+    "间苯二胺"
   ],
   "should": [
+    "助剂",
+    "染料产业",
+    "印染"
+  ],
+  "not": [
+    "医药原料",
+    "食品原料",
+    "电池原料"
+  ],
+  "support_terms": [
+    "产品",
+    "原料",
     "助剂"
   ],
-  "not": [],
+  "no_anchor_terms": [
+    "产品",
+    "原料",
+    "助剂"
+  ],
+  "boundary_rules": {
+    "accept_requires_any": ["染料", "分散染料", "活性染料", "染料中间体"],
+    "reject_if_only_hits": ["产品", "原料", "助剂"],
+    "reject_domains": ["医药原料", "食品原料", "电池原料"],
+    "nearby_confusions": ["化工原料"]
+  },
   "evidence_refs": [
     {
-      "term": "产品",
+      "term": "染料",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "产品"
+      "span_text": "染料"
     },
     {
-      "term": "原料",
+      "term": "分散染料",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "原料"
+      "span_text": "分散染料"
     }
   ],
   "subject_id": "9026444",

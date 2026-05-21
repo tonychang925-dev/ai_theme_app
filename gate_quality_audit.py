@@ -45,6 +45,14 @@ GLOBAL_NO_ANCHOR_TERMS = {
 PUBLIC_NEWS_TERMS = GLOBAL_NO_ANCHOR_TERMS | {"消息", "新闻", "相关", "推进", "披露"}
 MEDICAL_PUBLIC_HEALTH_TERMS = {"接收", "观察", "预防", "医生", "感染", "病毒", "公共卫生"}
 SOURCE_BUCKETS = {"primary_anchor", "secondary_anchor", "event_term", "descriptive_term", "knowledge_term"}
+B_P0_FLAGS = {
+    "ILLEGAL_MUST_TERM",
+    "MUST_ONLY_GENERIC",
+    "NO_HARD_ANCHOR",
+    "WEAK_GATE_WITH_EMPTY_NOT",
+    "PUBLIC_NEWS_FALSE_POSITIVE_RISK",
+    "MEDICAL_PUBLIC_HEALTH_FALSE_POSITIVE_RISK",
+}
 
 
 @dataclass
@@ -775,6 +783,15 @@ def write_rebuild_plan(path: Path, audit_rows: List[Dict[str, Any]]) -> None:
             ]
         )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def b_p0_reasons(row: Dict[str, Any]) -> List[str]:
+    reasons = [flag for flag in row.get("risk_flags", []) if flag in B_P0_FLAGS]
+    if float(row.get("confusability_score") or 0.0) >= 0.6:
+        reasons.append("CONFUSABILITY_GTE_0_60")
+    if int(row.get("false_positive_count") or 0) > 0:
+        reasons.append("HAS_FALSE_POSITIVE")
+    return _uniq(reasons)
 
 
 def main() -> None:

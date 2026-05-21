@@ -1,8 +1,13 @@
 {
   "must": [
-    "股权",
-    "公司",
-    "相机"
+    "影石相机",
+    "Insta360",
+    "影石全景相机"
+  ],
+  "strong": [
+    "360度影像",
+    "全景相机",
+    "FlowState防抖"
   ],
   "should": [
     "供应商",
@@ -14,25 +19,40 @@
     "AI自动剪辑",
     "FlowState防抖技术"
   ],
-  "not": [],
+  "not": [
+    "普通相机公司股权",
+    "手机相机"
+  ],
+  "support_terms": [
+    "股权",
+    "公司",
+    "相机",
+    "供应商"
+  ],
+  "no_anchor_terms": [
+    "股权",
+    "公司",
+    "相机",
+    "供应商"
+  ],
   "evidence_refs": [
     {
-      "term": "股权",
+      "term": "影石相机",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "股权"
+      "span_text": "影石相机"
     },
     {
-      "term": "公司",
+      "term": "Insta360",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "公司"
+      "span_text": "Insta360"
     },
     {
-      "term": "相机",
+      "term": "影石全景相机",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "相机"
+      "span_text": "影石全景相机"
     }
   ],
   "subject_id": "9047772",

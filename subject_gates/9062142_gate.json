@@ -1,8 +1,13 @@
 {
   "must": [
-    "参股",
-    "供货",
-    "公司"
+    "蓝箭航天IPO",
+    "蓝箭航天",
+    "朱雀火箭"
+  ],
+  "strong": [
+    "朱雀三号",
+    "液氧甲烷火箭",
+    "商业航天上市"
   ],
   "should": [
     "民商火箭企业",
@@ -14,25 +19,49 @@
     "朱雀一号运载火箭发射",
     "全系统试车成功"
   ],
-  "not": [],
+  "not": [
+    "蓝箭航天供应商",
+    "供货",
+    "参股",
+    "太空数据中心"
+  ],
+  "support_terms": [
+    "IPO",
+    "供货",
+    "参股",
+    "公司"
+  ],
+  "no_anchor_terms": [
+    "IPO",
+    "供货",
+    "参股",
+    "公司",
+    "商业航天"
+  ],
+  "boundary_rules": {
+    "accept_requires_any": ["蓝箭航天IPO", "蓝箭航天", "朱雀火箭", "朱雀三号"],
+    "reject_if_only_hits": ["IPO", "供货", "参股", "公司", "商业航天"],
+    "reject_domains": ["供应商映射", "太空数据中心"],
+    "nearby_confusions": ["商业航天", "卫星互联网"]
+  },
   "evidence_refs": [
     {
-      "term": "参股",
+      "term": "蓝箭航天IPO",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "参股"
+      "span_text": "蓝箭航天IPO"
     },
     {
-      "term": "供货",
+      "term": "蓝箭航天",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "供货"
+      "span_text": "蓝箭航天"
     },
     {
-      "term": "公司",
+      "term": "朱雀火箭",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "公司"
+      "span_text": "朱雀火箭"
     }
   ],
   "subject_id": "9062142",
