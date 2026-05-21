@@ -1,29 +1,57 @@
 {
   "must": [
-    "原料",
-    "产品"
+    "重组胶原蛋白",
+    "重组人源化胶原蛋白",
+    "胶原蛋白原料"
   ],
-  "should": [],
+  "strong": [
+    "胶原蛋白敷料",
+    "胶原蛋白医美",
+    "重组胶原材料"
+  ],
+  "should": [
+    "皮肤修复",
+    "医美材料",
+    "功效护肤"
+  ],
   "not": [
     "新氧",
     "股价拉涨",
     "青春诊所",
     "在营门店数量",
     "轻医美连锁品牌",
-    "门店数量榜首"
+    "门店数量榜首",
+    "玻尿酸",
+    "肉毒素"
   ],
+  "support_terms": [
+    "原料",
+    "产品",
+    "医美"
+  ],
+  "no_anchor_terms": [
+    "原料",
+    "产品",
+    "医美"
+  ],
+  "boundary_rules": {
+    "accept_requires_any": ["重组胶原蛋白", "重组人源化胶原蛋白", "胶原蛋白原料"],
+    "reject_if_only_hits": ["原料", "产品", "医美"],
+    "reject_domains": ["医美门店", "玻尿酸", "肉毒素"],
+    "nearby_confusions": ["轻医美连锁"]
+  },
   "evidence_refs": [
     {
-      "term": "原料",
+      "term": "重组胶原蛋白",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "原料"
+      "span_text": "重组胶原蛋白"
     },
     {
-      "term": "产品",
+      "term": "重组人源化胶原蛋白",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "产品"
+      "span_text": "重组人源化胶原蛋白"
     }
   ],
   "subject_id": "9049096",

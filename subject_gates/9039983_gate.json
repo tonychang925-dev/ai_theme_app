@@ -1,9 +1,13 @@
 {
   "must": [
-    "合作",
-    "参股",
-    "公司",
-    "云深处科技"
+    "云深处机器人",
+    "云深处科技",
+    "云深处机器狗"
+  ],
+  "strong": [
+    "四足机器人",
+    "山猫机器人",
+    "机器狗"
   ],
   "should": [
     "宇树科技",
@@ -15,31 +19,38 @@
     "技术突破",
     "智能机器人技术"
   ],
-  "not": [],
+  "not": [
+    "普通机器人合作",
+    "参股机器人公司"
+  ],
+  "support_terms": [
+    "合作",
+    "参股",
+    "公司"
+  ],
+  "no_anchor_terms": [
+    "合作",
+    "参股",
+    "公司"
+  ],
   "evidence_refs": [
     {
-      "term": "合作",
+      "term": "云深处机器人",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "合作"
-    },
-    {
-      "term": "参股",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "参股"
-    },
-    {
-      "term": "公司",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "公司"
+      "span_text": "云深处机器人"
     },
     {
       "term": "云深处科技",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
       "span_text": "云深处科技"
+    },
+    {
+      "term": "云深处机器狗",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "云深处机器狗"
     }
   ],
   "subject_id": "9039983",

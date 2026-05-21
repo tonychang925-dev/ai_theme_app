@@ -1,25 +1,53 @@
 {
   "must": [
-    "合作",
-    "重组"
+    "哪吒汽车重组",
+    "哪吒汽车",
+    "合众新能源"
+  ],
+  "strong": [
+    "破产重整",
+    "战略投资人",
+    "重整投资人"
   ],
   "should": [
     "供应商",
     "参股"
   ],
-  "not": [],
+  "not": [
+    "普通汽车合作",
+    "供应商合作",
+    "参股汽车公司"
+  ],
+  "support_terms": [
+    "合作",
+    "重组",
+    "供应商",
+    "参股"
+  ],
+  "no_anchor_terms": [
+    "合作",
+    "重组",
+    "供应商",
+    "参股"
+  ],
+  "boundary_rules": {
+    "accept_requires_any": ["哪吒汽车重组", "哪吒汽车", "合众新能源"],
+    "reject_if_only_hits": ["合作", "重组", "供应商", "参股"],
+    "reject_domains": ["普通汽车供应链合作"],
+    "nearby_confusions": ["汽车零部件"]
+  },
   "evidence_refs": [
     {
-      "term": "合作",
+      "term": "哪吒汽车重组",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "合作"
+      "span_text": "哪吒汽车重组"
     },
     {
-      "term": "重组",
+      "term": "哪吒汽车",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "重组"
+      "span_text": "哪吒汽车"
     }
   ],
   "subject_id": "9057205",

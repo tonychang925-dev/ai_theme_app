@@ -1,9 +1,13 @@
 {
   "must": [
-    "参股",
-    "供货",
-    "应用",
+    "宇树机器人",
+    "宇树科技",
     "人形机器人"
+  ],
+  "strong": [
+    "具身智能",
+    "机器人本体",
+    "商业化量产"
   ],
   "should": [
     "核心零部件",
@@ -19,25 +23,32 @@
     "新兴产业",
     "商业化量产"
   ],
-  "not": [],
+  "not": [
+    "普通机器人供货",
+    "参股机器人公司"
+  ],
+  "support_terms": [
+    "参股",
+    "供货",
+    "应用"
+  ],
+  "no_anchor_terms": [
+    "参股",
+    "供货",
+    "应用"
+  ],
   "evidence_refs": [
     {
-      "term": "参股",
+      "term": "宇树机器人",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "参股"
+      "span_text": "宇树机器人"
     },
     {
-      "term": "供货",
+      "term": "宇树科技",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "供货"
-    },
-    {
-      "term": "应用",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "应用"
+      "span_text": "宇树科技"
     },
     {
       "term": "人形机器人",

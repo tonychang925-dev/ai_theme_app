@@ -1,19 +1,48 @@
 {
   "must": [
-    "基建"
+    "琴澳一体化",
+    "横琴粤澳深度合作区",
+    "琴澳融合"
+  ],
+  "strong": [
+    "澳门横琴",
+    "琴澳跨境",
+    "横琴合作区"
   ],
   "should": [
     "金融",
     "物流",
     "国资企业"
   ],
-  "not": [],
+  "not": [
+    "普通基建",
+    "物流基建",
+    "金融基建"
+  ],
+  "support_terms": [
+    "基建",
+    "金融",
+    "物流",
+    "国资企业"
+  ],
+  "no_anchor_terms": [
+    "基建",
+    "金融",
+    "物流",
+    "国资企业"
+  ],
+  "boundary_rules": {
+    "accept_requires_any": ["琴澳一体化", "横琴粤澳深度合作区", "琴澳融合"],
+    "reject_if_only_hits": ["基建", "金融", "物流", "国资企业"],
+    "reject_domains": ["普通基建"],
+    "nearby_confusions": ["粤港澳大湾区"]
+  },
   "evidence_refs": [
     {
-      "term": "基建",
+      "term": "琴澳一体化",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "基建"
+      "span_text": "琴澳一体化"
     }
   ],
   "subject_id": "9035600",

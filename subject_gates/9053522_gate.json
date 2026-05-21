@@ -1,18 +1,56 @@
 {
   "must": [
-    "基建"
+    "西藏水电",
+    "西藏基建",
+    "西藏区域开发"
+  ],
+  "aliases": [
+    "西藏水电",
+    "西藏基建",
+    "西藏区域开发"
+  ],
+  "core_objects": [
+    "西藏水电",
+    "西藏区域开发"
+  ],
+  "strong": [
+    "西藏矿产",
+    "西藏政策",
+    "西藏城建"
   ],
   "should": [
     "旅游",
     "城建"
   ],
-  "not": [],
+  "not": [
+    "西藏游客",
+    "西藏旅游人数",
+    "进藏旅游攻略"
+  ],
+  "support_terms": [
+    "西藏",
+    "基建",
+    "旅游",
+    "城建"
+  ],
+  "no_anchor_terms": [
+    "西藏",
+    "基建",
+    "旅游",
+    "城建"
+  ],
+  "boundary_rules": {
+    "accept_requires_any": ["西藏水电", "西藏基建", "西藏区域开发", "西藏矿产", "西藏政策"],
+    "reject_if_only_hits": ["西藏", "基建", "旅游", "城建"],
+    "reject_domains": ["旅游客流", "旅游攻略"],
+    "nearby_confusions": ["西藏旅游"]
+  },
   "evidence_refs": [
     {
-      "term": "基建",
+      "term": "西藏基建",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "基建"
+      "span_text": "西藏基建"
     }
   ],
   "subject_id": "9053522",

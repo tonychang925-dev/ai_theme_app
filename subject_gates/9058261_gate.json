@@ -1,24 +1,50 @@
 {
   "must": [
-    "部件",
-    "产品"
+    "新凯来示波器",
+    "新凯来",
+    "示波器"
+  ],
+  "strong": [
+    "测试仪器",
+    "电子测量仪器",
+    "国产示波器"
   ],
   "should": [
     "参股"
   ],
-  "not": [],
+  "not": [
+    "泛半导体部件",
+    "参股",
+    "电子元器件产品"
+  ],
+  "support_terms": [
+    "部件",
+    "产品",
+    "参股"
+  ],
+  "no_anchor_terms": [
+    "部件",
+    "产品",
+    "参股"
+  ],
+  "boundary_rules": {
+    "accept_requires_any": ["新凯来示波器", "新凯来", "示波器"],
+    "reject_if_only_hits": ["部件", "产品", "参股"],
+    "reject_domains": ["电子元器件泛供应链"],
+    "nearby_confusions": ["半导体设备"]
+  },
   "evidence_refs": [
     {
-      "term": "部件",
+      "term": "新凯来示波器",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "部件"
+      "span_text": "新凯来示波器"
     },
     {
-      "term": "产品",
+      "term": "新凯来",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "产品"
+      "span_text": "新凯来"
     }
   ],
   "subject_id": "9058261",
