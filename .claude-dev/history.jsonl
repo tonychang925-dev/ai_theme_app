@@ -1753,3 +1753,6 @@
 {"display":"我没看到公告机会数据显示","pastedContents":{},"timestamp":1779326966406,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
 {"display":"强势股跟踪页面还是只显示1天的数据，只显示56条数据！","pastedContents":{},"timestamp":1779327229512,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
 {"display":"请核查原因：一条关键证据：/api/v1/strong_watch?trade_date=2026-05-20 的 7 日返回里，2026-05-20 有股票，2026-\n  05-19 到 2026-05-11 都是 stock_id=null 的占位行。页面不是把 7 天藏掉了，而是接口底层在这些交易日没有 C 层\n  历史明细可返回。","pastedContents":{},"timestamp":1779328352799,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"请核查“盘后复盘”页面，点击“发布到notion”按钮，报错：发布失败：error: request failed: 500","pastedContents":{},"timestamp":1779331154782,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"已经保存在.env.theme","pastedContents":{},"timestamp":1779331733240,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"仍然报错：发布失败：error: request failed: 500","pastedContents":{},"timestamp":1779331917525,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}

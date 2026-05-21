@@ -119,6 +119,34 @@ async def test_theme_profile_repository_v1_default(monkeypatch):
     assert {profile.subject_name for profile in profiles} == {"旧题材A", "旧题材B"}
 
 
+async def test_theme_profile_repository_v1_does_not_promote_public_must_terms_to_aliases(monkeypatch):
+    class Gateway:
+        async def load_theme_match_profiles(self):
+            return [
+                {
+                    "subject_key": "9043458",
+                    "subject_name": "中国星际之门",
+                    "concept": "中国星际之门",
+                    "must_terms": ["中国星际之门", "政府", "接收"],
+                    "strong_terms": [],
+                    "should_terms": [],
+                    "not_terms": [],
+                    "weak_terms": [],
+                    "negative_terms": [],
+                    "search_text": "中国星际之门",
+                    "quality": "weak",
+                }
+            ]
+
+    monkeypatch.delenv("THEME_PROFILE_VERSION", raising=False)
+
+    profile = (await ThemeProfileRepository(Gateway()).load_active_profiles())[0]
+
+    assert "中国星际之门" in profile.aliases
+    assert "政府" not in profile.aliases
+    assert "接收" not in profile.aliases
+
+
 async def test_theme_profile_repository_infers_legacy_numeric_subject_name(monkeypatch):
     monkeypatch.delenv("THEME_PROFILE_VERSION", raising=False)
 

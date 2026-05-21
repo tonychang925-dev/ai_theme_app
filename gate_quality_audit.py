@@ -1,20 +1,24 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-gate_quality_audit.py v1.1
+gate_quality_audit.py v1.2
 
 校准目标：
 - 下调 TITLE_NOT_ALIGNED / LOW_EVIDENCE_DIVERSITY / WEAK_NOT_BOUNDARY 的影响
 - 强化 generic_must_score / confusability_score / separability_score
 - 让 A 档更集中到“泛 must + 高误召回 + 近邻冲突”
+- 抓出公共新闻高频词伪装 hard anchor 的 gate
+- 同时审计 subject_gates 与运行时 theme_profile_v2
 """
 
 
 from __future__ import annotations
 
 import argparse
+import asyncio
 import json
 import math
+import os
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 from difflib import SequenceMatcher
@@ -33,6 +37,13 @@ GENERIC_SUSPECT_TERMS = {
     "产业链", "平台", "系统", "应用", "方案", "智能", "数字化", "终端", "服务",
     "产品", "设备", "公司", "合作", "美国", "卫星", "商业航天", "金融", "动力系统",
 }
+GLOBAL_NO_ANCHOR_TERMS = {
+    "政府", "中国", "美国", "国家", "企业", "公司", "项目", "平台", "系统", "服务",
+    "应用", "产业链", "政策", "部门", "机构", "集群", "建设", "合作", "发布", "申请",
+    "批准", "接收", "观察", "预防",
+}
+PUBLIC_NEWS_TERMS = GLOBAL_NO_ANCHOR_TERMS | {"消息", "新闻", "相关", "推进", "披露"}
+MEDICAL_PUBLIC_HEALTH_TERMS = {"接收", "观察", "预防", "医生", "感染", "病毒", "公共卫生"}
 SOURCE_BUCKETS = {"primary_anchor", "secondary_anchor", "event_term", "descriptive_term", "knowledge_term"}
 
 
@@ -50,6 +61,9 @@ class GateRecord:
     entity_hints: List[str]
     core_objects: List[str]
     evidence_refs: List[Dict[str, Any]]
+    quality: str = ""
+    source: str = "subject_gates"
+    no_anchor_terms: List[str] | None = None
 
     @property
     def title_terms(self) -> List[str]:
@@ -126,6 +140,36 @@ def _contains_related(term: str, title_terms: Iterable[str]) -> bool:
     return False
 
 
+def _strip_global_no_anchor_fragments(term: str) -> str:
+    remaining = _norm(term)
+    for value in sorted(GLOBAL_NO_ANCHOR_TERMS, key=len, reverse=True):
+        remaining = remaining.replace(value, "")
+    return remaining.strip(" /-_、，,。；;（）()[]【】")
+
+
+def _is_global_no_anchor_term(term: str) -> bool:
+    value = _norm(term)
+    return bool(value) and (value in GLOBAL_NO_ANCHOR_TERMS or not _strip_global_no_anchor_fragments(value))
+
+
+def _has_public_news_term(terms: Iterable[str]) -> bool:
+    return any(_is_global_no_anchor_term(term) or _norm(term) in PUBLIC_NEWS_TERMS for term in terms)
+
+
+def _has_medical_public_health_term(terms: Iterable[str]) -> bool:
+    return any(any(value in _norm(term) for value in MEDICAL_PUBLIC_HEALTH_TERMS) for term in terms)
+
+
+def _hard_anchor_terms(gate: GateRecord) -> List[str]:
+    candidates = gate.must + gate.strong + gate.entity_hints + gate.core_objects
+    no_anchor = set(gate.no_anchor_terms or [])
+    return [
+        term
+        for term in _uniq(candidates)
+        if term not in no_anchor and not _is_global_no_anchor_term(term)
+    ]
+
+
 def load_subject_names(path: Path) -> Dict[str, str]:
     names: Dict[str, str] = {}
     for row in _read_jsonl(path):
@@ -155,6 +199,82 @@ def load_gates(gate_dir: Path, subject_names: Dict[str, str]) -> List[GateRecord
                 entity_hints=_uniq(obj.get("entity_hints") or []),
                 core_objects=_uniq(obj.get("core_objects") or []),
                 evidence_refs=obj.get("evidence_refs") or [],
+                quality=_norm(obj.get("quality")),
+                source="subject_gates",
+                no_anchor_terms=[],
+            )
+        )
+    return gates
+
+
+def _normalize_json_list(value: Any) -> List[str]:
+    if isinstance(value, list):
+        return _uniq(value)
+    if isinstance(value, str) and value.strip():
+        try:
+            parsed = json.loads(value)
+        except Exception:
+            parsed = None
+        if isinstance(parsed, list):
+            return _uniq(parsed)
+        return _uniq(part for part in value.replace("，", ",").split(","))
+    return []
+
+
+async def load_v2_gates(db_name: str, status: str) -> List[GateRecord]:
+    import asyncpg
+
+    conn = await asyncpg.connect(
+        host=os.getenv("POSTGRES_HOST", os.getenv("DB_HOST", "localhost")),
+        port=int(os.getenv("POSTGRES_PORT", os.getenv("DB_PORT", "5432"))),
+        user=os.getenv("POSTGRES_USER", os.getenv("DB_USER", "postgres")),
+        password=os.getenv("POSTGRES_PASSWORD", os.getenv("DB_PASSWORD", "postgres")),
+        database=db_name,
+    )
+    try:
+        rows = await conn.fetch(
+            """
+            SELECT
+                subject_key, subject_name, status, aliases,
+                must_terms, strong_terms, should_terms, support_terms,
+                entity_anchors, domain_anchors, product_anchors, technology_anchors,
+                no_anchor_terms, negative_terms
+            FROM theme_profile_v2
+            WHERE ($1::text = 'all' OR status = $1::text)
+            ORDER BY subject_key
+            """,
+            status,
+        )
+    finally:
+        await conn.close()
+
+    gates: List[GateRecord] = []
+    for row in rows:
+        obj = dict(row)
+        gates.append(
+            GateRecord(
+                subject_key=_norm(obj.get("subject_key")),
+                subject_name=_norm(obj.get("subject_name") or obj.get("subject_key")),
+                strategy_type="event_driven",
+                semantic_type="profile_v2",
+                must=_normalize_json_list(obj.get("must_terms")),
+                should=_uniq(
+                    _normalize_json_list(obj.get("should_terms"))
+                    + _normalize_json_list(obj.get("support_terms"))
+                ),
+                not_terms=_normalize_json_list(obj.get("negative_terms")),
+                strong=_normalize_json_list(obj.get("strong_terms")),
+                aliases=_normalize_json_list(obj.get("aliases")),
+                entity_hints=_normalize_json_list(obj.get("entity_anchors")),
+                core_objects=_uniq(
+                    _normalize_json_list(obj.get("domain_anchors"))
+                    + _normalize_json_list(obj.get("product_anchors"))
+                    + _normalize_json_list(obj.get("technology_anchors"))
+                ),
+                evidence_refs=[],
+                quality="v2",
+                source=f"theme_profile_v2:{_norm(obj.get('status'))}",
+                no_anchor_terms=_normalize_json_list(obj.get("no_anchor_terms")),
             )
         )
     return gates
@@ -188,7 +308,7 @@ def build_backtest_stats(
     )
     pair_counter: Counter = Counter()
 
-    runtime_rows = _read_json(runtime_detail_path)
+    runtime_rows = _read_json(runtime_detail_path) if runtime_detail_path.exists() else []
     if isinstance(runtime_rows, list):
         for row in runtime_rows:
             gt = _norm(row.get("gt_subject_key"))
@@ -398,12 +518,13 @@ def compute_audit_rows(
         generic_components = []
         suspect_count = 0
         shared_count = 0
+        illegal_must_terms = [term for term in gate.must if _is_global_no_anchor_term(term)]
         for term in gate.must:
             freq = must_freq.get(term, 1)
             generic_components.append(min(1.0, math.log(1 + freq) / math.log(1 + max_freq)))
             if freq > 1:
                 shared_count += 1
-            if term in GENERIC_SUSPECT_TERMS or len(term) <= 2:
+            if term in GENERIC_SUSPECT_TERMS or _is_global_no_anchor_term(term) or len(term) <= 2:
                 suspect_count += 1
         generic_must_score = round(
             min(
@@ -443,6 +564,26 @@ def compute_audit_rows(
             4,
         )
         risk_flags = []
+        hard_anchor_terms = _hard_anchor_terms(gate)
+        must_only_generic = bool(gate.must) and len(illegal_must_terms) == len(gate.must)
+        no_hard_anchor = not hard_anchor_terms
+        empty_negative_boundary = not gate.not_terms and not (gate.no_anchor_terms or [])
+        if illegal_must_terms:
+            risk_flags.append("ILLEGAL_MUST_TERM")
+        if must_only_generic:
+            risk_flags.append("MUST_ONLY_GENERIC")
+        if no_hard_anchor:
+            risk_flags.append("NO_HARD_ANCHOR")
+        if gate.quality.lower() == "weak" and empty_negative_boundary:
+            risk_flags.append("WEAK_GATE_WITH_EMPTY_NOT")
+        if empty_negative_boundary:
+            risk_flags.append("EMPTY_NEGATIVE_BOUNDARY")
+        if _has_public_news_term(gate.must) and no_hard_anchor:
+            risk_flags.append("PUBLIC_NEWS_FALSE_POSITIVE_RISK")
+        if _has_medical_public_health_term(gate.must + gate.should) and no_hard_anchor:
+            risk_flags.append("MEDICAL_PUBLIC_HEALTH_FALSE_POSITIVE_RISK")
+        if gate.strategy_type == "policy_driven" and illegal_must_terms:
+            risk_flags.append("POLICY_WORD_OVERFIT")
         if generic_must_score >= 0.6:
             risk_flags.append("GENERIC_MUST")
         if must_shared_ratio >= 0.5:
@@ -480,7 +621,8 @@ def compute_audit_rows(
             or (confusability_score >= 0.55 and separability_score < 0.35)
         )
 
-        if overall_score < 0.42 or a_hard or a_combo:
+        public_anchor_rebuild = "ILLEGAL_MUST_TERM" in risk_flags and "NO_HARD_ANCHOR" in risk_flags
+        if public_anchor_rebuild or overall_score < 0.42 or a_hard or a_combo:
             risk_level = "A"
             suggested_action = "REBUILD"
         elif overall_score < 0.62:
@@ -513,6 +655,8 @@ def compute_audit_rows(
             {
                 "subject_key": gate.subject_key,
                 "subject_name": gate.subject_name,
+                "source": gate.source,
+                "quality": gate.quality,
                 "strategy_type": gate.strategy_type,
                 "must_count": len(gate.must),
                 "should_count": len(gate.should),
@@ -532,8 +676,10 @@ def compute_audit_rows(
                 "risk_flags": risk_flags,
                 "suggested_action": suggested_action,
                 "top_confused_subjects": top_confused_subjects,
+                "illegal_must_terms": illegal_must_terms,
+                "hard_anchor_terms": hard_anchor_terms,
                 "notes": " | ".join(notes),
-                "audit_version": "gate_audit.v1.1",
+                "audit_version": "gate_audit.v1.2",
             }
         )
     audit_rows.sort(key=lambda x: (x["risk_level"], x["overall_score"]))
@@ -555,7 +701,7 @@ def write_report(path: Path, audit_rows: List[Dict[str, Any]], neighbor_rows: Li
     neighbor_top = sorted(neighbor_rows, key=lambda x: x["confusion_score"], reverse=True)[:20]
 
     lines = [
-        "# gate_quality_audit.v1.1",
+        "# gate_quality_audit.v1.2",
         "",
         "## 1. 总览",
         f"- 总题材数: `{len(audit_rows)}`",
@@ -601,17 +747,53 @@ def write_report(path: Path, audit_rows: List[Dict[str, Any]], neighbor_rows: Li
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def write_rebuild_plan(path: Path, audit_rows: List[Dict[str, Any]]) -> None:
+    rebuild_rows = [row for row in audit_rows if row["risk_level"] == "A"]
+    light_fix_rows = [row for row in audit_rows if row["risk_level"] == "B"]
+    lines = [
+        "# Gate Rebuild Plan",
+        "",
+        "## A 档：必须重建",
+    ]
+    for row in rebuild_rows:
+        lines.extend(
+            [
+                f"- `{row['subject_key']}` `{row['subject_name']}` `{row['source']}`",
+                f"  - 问题: flags=`{','.join(row['risk_flags'])}` illegal_must=`{row['illegal_must_terms']}`",
+                f"  - 风险: overall=`{row['overall_score']}` generic=`{row['generic_must_score']}` conf=`{row['confusability_score']}`",
+                "  - 修复: 重建 hard anchor，剔除公共新闻词伪 anchor，补 no_anchor/negative 边界。",
+            ]
+        )
+    lines.extend(["", "## B 档：轻修边界"])
+    for row in light_fix_rows:
+        lines.extend(
+            [
+                f"- `{row['subject_key']}` `{row['subject_name']}` `{row['source']}`",
+                f"  - 问题: flags=`{','.join(row['risk_flags'])}`",
+                f"  - 风险: overall=`{row['overall_score']}` generic=`{row['generic_must_score']}` conf=`{row['confusability_score']}`",
+                "  - 修复: 复核 must 强度，补近邻 negative/no_anchor，避免扩大召回。",
+            ]
+        )
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def main() -> None:
-    parser = argparse.ArgumentParser(description="gate quality audit v1.1")
+    parser = argparse.ArgumentParser(description="gate quality audit v1.2")
+    parser.add_argument("--source", choices=("subject_gates", "theme_profile_v2"), default="subject_gates")
     parser.add_argument("--gate-dir", type=Path, default=DEFAULT_GATE_DIR)
     parser.add_argument("--theme-list", type=Path, default=DEFAULT_THEME_LIST)
     parser.add_argument("--runtime-detail", type=Path, default=DEFAULT_RUNTIME_DETAIL)
     parser.add_argument("--fullchain-report", type=Path, default=DEFAULT_FULLCHAIN_REPORT)
     parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
+    parser.add_argument("--read-db-name", default=os.getenv("READ_DB_NAME", "stock_data_test"))
+    parser.add_argument("--v2-status", default=os.getenv("THEME_PROFILE_V2_STATUS", "accepted_candidate"))
     args = parser.parse_args()
 
     subject_names = load_subject_names(args.theme_list)
-    gates = load_gates(args.gate_dir, subject_names)
+    if args.source == "theme_profile_v2":
+        gates = asyncio.run(load_v2_gates(args.read_db_name, args.v2_status))
+    else:
+        gates = load_gates(args.gate_dir, subject_names)
     backtest_stats, pair_counter = build_backtest_stats(args.runtime_detail, args.fullchain_report, subject_names)
     audit_rows, neighbor_rows = compute_audit_rows(gates, backtest_stats, pair_counter)
 
@@ -621,15 +803,18 @@ def main() -> None:
     write_jsonl(args.out_dir / "gate_neighbor_confusion.jsonl", neighbor_rows)
     write_jsonl(args.out_dir / "gate_match_backtest_stats.jsonl", backtest_rows)
     write_report(args.out_dir / "gate_quality_report.md", audit_rows, neighbor_rows)
+    write_rebuild_plan(args.out_dir / "gate_rebuild_plan.md", audit_rows)
 
     print(
         json.dumps(
             {
                 "gates": len(gates),
+                "source": args.source,
                 "audit_path": str(args.out_dir / "gate_quality_audit.jsonl"),
                 "neighbor_path": str(args.out_dir / "gate_neighbor_confusion.jsonl"),
                 "backtest_path": str(args.out_dir / "gate_match_backtest_stats.jsonl"),
                 "report_path": str(args.out_dir / "gate_quality_report.md"),
+                "rebuild_plan_path": str(args.out_dir / "gate_rebuild_plan.md"),
                 "risk_distribution": dict(Counter(row["risk_level"] for row in audit_rows)),
             },
             ensure_ascii=False,

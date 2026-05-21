@@ -1,24 +1,25 @@
 {
   "must": [
-    "政府企业集群",
-    "政府"
+    "中国星际之门",
+    "星际之门"
   ],
   "should": [
-    "集群"
+    "中国星际之门",
+    "星际之门"
   ],
   "not": [],
   "evidence_refs": [
     {
-      "term": "政府企业集群",
+      "term": "中国星际之门",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "政府企业集群"
+      "span_text": "中国星际之门"
     },
     {
-      "term": "政府",
+      "term": "星际之门",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
-      "span_text": "政府"
+      "span_text": "星际之门"
     }
   ],
   "subject_id": "9043458",
