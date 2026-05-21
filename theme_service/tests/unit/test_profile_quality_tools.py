@@ -2,6 +2,9 @@ from __future__ import annotations
 
 from types import SimpleNamespace
 
+import pytest
+
+from theme_service.tools.compare_theme_profile_v1_v2 import _normalize_and_validate_db_args
 from theme_service.tools.profile_eval_common import count_generic_only_related, hard_negative_wrong_hits
 from theme_service.tools.profile_quality_common import is_generic_term, split_generic
 from theme_service.tools.validate_theme_profile_v2 import validate_profile
@@ -148,3 +151,26 @@ def test_count_generic_only_related_detects_polluted_related_evidence():
     )
 
     assert count_generic_only_related(result) == 1
+
+
+def test_compare_tool_defaults_write_db_to_read_db():
+    args = SimpleNamespace(read_db_name="stock_data_test", write_db_name=None, allow_cross_db=False)
+
+    _normalize_and_validate_db_args(args)
+
+    assert args.write_db_name == "stock_data_test"
+
+
+def test_compare_tool_rejects_cross_db_without_explicit_allow():
+    args = SimpleNamespace(read_db_name="stock_data_test", write_db_name="stock_data", allow_cross_db=False)
+
+    with pytest.raises(RuntimeError, match="Refuse cross-db validation"):
+        _normalize_and_validate_db_args(args)
+
+
+def test_compare_tool_allows_explicit_cross_db():
+    args = SimpleNamespace(read_db_name="stock_data_test", write_db_name="stock_data", allow_cross_db=True)
+
+    _normalize_and_validate_db_args(args)
+
+    assert args.write_db_name == "stock_data"

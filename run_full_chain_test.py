@@ -28,7 +28,8 @@ from database_service.streams.handlers.theme_processor import ThemeProcessor
 RAW_PATH = PROJECT_ROOT / "evaluate_service/data/raw/test_cases.txt"
 GT_OVERRIDE_PATH = PROJECT_ROOT / "structured_events_with_gt.jsonl"
 OUT_PATH = PROJECT_ROOT / "tmp/p2_phase0_full_chain_100_to_decision.report.json"
-SAMPLE_SIZE = 2
+OUT_PATH = Path(os.getenv("E2E_REPORT_PATH", str(OUT_PATH)))
+SAMPLE_SIZE = int(os.getenv("E2E_SAMPLE_SIZE", "2"))
 TEST_NEWS_PREFIX = "p2_full_chain%"
 
 THEME_KEY_MAP = {
@@ -77,6 +78,38 @@ def _pg_kwargs() -> Dict[str, Any]:
         "user": os.getenv("POSTGRES_USER", "postgres"),
         "password": os.getenv("POSTGRES_PASSWORD", "zxbzj~925"),
         "database": os.getenv("POSTGRES_DATABASE", "stock_data_test"),
+    }
+
+
+def _assert_phase4_env_lock() -> None:
+    if os.getenv("PHASE4_ENV_LOCK", "").lower() not in {"1", "true", "yes", "on"}:
+        return
+    expected = {
+        "THEME_PROFILE_VERSION": "v2",
+        "THEME_PROFILE_V2_STATUS": "accepted_candidate",
+        "THEME_PROFILE_V2_FALLBACK_TO_V1": "true",
+        "THEME_PROFILE_V2_REQUIRE_LOADED": "true",
+        "PG_DATABASE": "stock_data_test",
+        "DB_NAME": "stock_data_test",
+        "READ_PG_DATABASE": "stock_data_test",
+        "POSTGRES_DATABASE": "stock_data_test",
+    }
+    mismatches = {
+        key: {"expected": value, "actual": os.getenv(key)}
+        for key, value in expected.items()
+        if (os.getenv(key) or "") != value
+    }
+    if mismatches:
+        raise RuntimeError(f"Phase4 E2E env lock failed: {mismatches}")
+
+
+def _summarize_match_result(match_result: Dict[str, Any]) -> Dict[str, Any]:
+    audit = match_result.get("audit") if isinstance(match_result.get("audit"), dict) else {}
+    return {
+        "related_matches": match_result.get("related_matches") or [],
+        "top_candidates": audit.get("top_candidates") or [],
+        "best_evidence": audit.get("best_evidence") or {},
+        "audit": audit,
     }
 
 
@@ -129,7 +162,7 @@ class _RedisStructuredEventBus:
         self.structured_stream = structured_stream
 
     async def publish_to_stream(self, stream_key: str, data: Dict[str, Any]):
-        target = self.structured_stream if stream_key == "stream:events:structured" else stream_key
+        target = self.structured_stream if stream_key in {"stream:events:structured", "events_structured"} else stream_key
         payload = {"payload": json.dumps(data, ensure_ascii=False)}
         return await self.redis_client.xadd(target, payload, maxlen=10000)
 
@@ -139,7 +172,7 @@ def _build_v2_payload(raw_text: str, news_id: str, sequence: int, batch_id: str,
         "_t": "news",
         "_v": 2,
         "id": news_id,
-        "t": "",
+        "t": raw_text[:120],
         "c": raw_text,
         "s": "cls",
         "d": "2026-03-01",
@@ -267,6 +300,7 @@ def _build_report(details: List[Dict[str, Any]]) -> Dict[str, Any]:
 async def main() -> None:
     if not os.getenv("DEEPSEEK_API_KEY"):
         raise RuntimeError("DEEPSEEK_API_KEY 未设置")
+    _assert_phase4_env_lock()
 
     run_id = uuid.uuid4().hex[:8]
     batch_id = f"p2_full_chain_100_{run_id}"
@@ -331,7 +365,11 @@ async def main() -> None:
     )
     news_processor = NewsStreamProcessor(
         event_bus=_RedisStructuredEventBus(redis_client, structured_stream),
-        config={"database_gateway": base_gateway},
+        config={
+            "database_gateway": base_gateway,
+            "enable_local_triage": False,
+            "enable_ai_analysis": os.getenv("E2E_ENABLE_AI_ANALYSIS", "true").lower() in {"1", "true", "yes", "on"},
+        },
     )
 
     samples = _parse_test_cases(SAMPLE_SIZE)
@@ -511,6 +549,7 @@ async def main() -> None:
                     "theme_name": sample["theme_name"],
                     "expected_theme_name": sample["theme_name"],
                     "expected_subject_key": sample["expected_subject_key"],
+                    "raw_text": sample["raw_text"],
                     "news_id": external_news_id,
                     "news_event_id": news_event_id,
                     "decision_type": decision.get("decision_type"),
@@ -519,6 +558,7 @@ async def main() -> None:
                     "matched_theme_name": match_result.get("matched_theme_name"),
                     "confidence": match_result.get("confidence"),
                     "reason_code": match_result.get("reason_code"),
+                    **_summarize_match_result(match_result),
                     "top1_hit": top1_hit,
                     "equivalent_top1_hit": equivalent_top1_hit,
                     "equivalent_subject_keys": sample.get("equivalent_subject_keys") or [],

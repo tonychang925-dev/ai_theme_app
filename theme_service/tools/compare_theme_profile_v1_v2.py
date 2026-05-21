@@ -432,6 +432,17 @@ async def _compare_hard_negatives(
     return rows, summary
 
 
+def _normalize_and_validate_db_args(args: argparse.Namespace) -> argparse.Namespace:
+    if not args.write_db_name:
+        args.write_db_name = args.read_db_name
+    if args.read_db_name != args.write_db_name and not args.allow_cross_db:
+        raise RuntimeError(
+            f"Refuse cross-db validation: read={args.read_db_name}, write={args.write_db_name}. "
+            "Pass --allow-cross-db only if this is intentional."
+        )
+    return args
+
+
 async def main() -> None:
     parser = argparse.ArgumentParser(description="Compare ThemeMatchEngine v1 profiles with theme_profile_v2 profiles.")
     add_db_args(parser)
@@ -448,13 +459,7 @@ async def main() -> None:
     parser.add_argument("--run-id", default=datetime.now().strftime("profile_v1_v2_compare_%Y%m%d_%H%M%S"))
     parser.add_argument("--output-dir", type=Path)
     args = parser.parse_args()
-    if not args.write_db_name:
-        args.write_db_name = args.read_db_name
-    if args.read_db_name != args.write_db_name and not args.allow_cross_db:
-        raise RuntimeError(
-            f"Refuse cross-db validation: read={args.read_db_name}, write={args.write_db_name}. "
-            "Pass --allow-cross-db only if this is intentional."
-        )
+    _normalize_and_validate_db_args(args)
     out_dir = args.output_dir or default_output_dir(args.run_id)
     read_conn = await connect(args.read_db_name)
     write_conn = await connect(args.write_db_name)
