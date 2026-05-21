@@ -24,6 +24,7 @@ from theme_service.tools.profile_quality_common import (
     add_db_args,
     connect,
     default_output_dir,
+    is_generic_term,
     load_json,
     normalize_list,
     read_jsonl,
@@ -158,7 +159,11 @@ async def _load_v1_profiles(conn: Any) -> list[ThemeProfile]:
         data = dict(row)
         ontology = load_json(data.get("ontology_json"), {})
         gate = load_json(data.get("gate_json"), {})
-        aliases = unique([safe_str(data.get("subject_name")), safe_str(data.get("concept"))])
+        aliases = unique(
+            normalize_list(gate.get("aliases"))
+            + [safe_str(data.get("subject_name")), safe_str(data.get("concept"))]
+            + [term for term in normalize_list(data.get("must_terms")) if not is_generic_term(term)]
+        )
         profiles.append(
             ThemeProfile(
                 subject_key=safe_str(data.get("subject_key")),
@@ -180,7 +185,13 @@ async def _load_v1_profiles(conn: Any) -> list[ThemeProfile]:
                 rerank_text=safe_str(data.get("rerank_text")),
                 aliases=aliases,
                 entity_hints=normalize_list(data.get("supporting_entities")),
-                core_objects=normalize_list(data.get("core_anchors")),
+                core_objects=unique(
+                    normalize_list(gate.get("core_objects"))
+                    + normalize_list(gate.get("objects"))
+                    + normalize_list(gate.get("anchors"))
+                    + normalize_list(gate.get("anchor_terms"))
+                    + normalize_list(data.get("core_anchors"))
+                ),
             )
         )
     return profiles
@@ -268,6 +279,40 @@ def _theme_set_recall(result, gold_terms: list[str], k: int) -> bool:
     joined = " ".join(name for name in names[:k] if name)
     expanded = unique(alias for term in gold_terms for alias in ALIAS_MAP.get(term, [term]))
     return any(term and term in joined for term in expanded)
+
+
+def _top_candidate_rank(result, expected_subject_key: str) -> int | None:
+    key = safe_str(expected_subject_key)
+    if not key:
+        return None
+    audit = result.audit if isinstance(result.audit, dict) else {}
+    top_candidates = audit.get("top_candidates") if isinstance(audit.get("top_candidates"), list) else []
+    for idx, candidate in enumerate(top_candidates, start=1):
+        if safe_str(candidate.get("subject_key")) == key:
+            return idx
+    if safe_str(result.matched_subject_key) == key:
+        return 1
+    return None
+
+
+def _top_candidate_keys(result) -> list[str]:
+    audit = result.audit if isinstance(result.audit, dict) else {}
+    top_candidates = audit.get("top_candidates") if isinstance(audit.get("top_candidates"), list) else []
+    return [safe_str(candidate.get("subject_key")) for candidate in top_candidates if safe_str(candidate.get("subject_key"))]
+
+
+def _positive_rank_case_pass(result, row: dict[str, Any]) -> tuple[bool | None, int | None, bool]:
+    expected_key = safe_str(row.get("expected_subject_key"))
+    if not expected_key:
+        return None, None, False
+    rank = _top_candidate_rank(result, expected_key)
+    top_k = int(row.get("must_rank_top_k") or 1)
+    blocked_primary_keys = set(normalize_list(row.get("must_not_primary_subject_keys")))
+    blocked_primary_names = normalize_list(row.get("must_not_primary_theme_names"))
+    primary_blocked = safe_str(result.matched_subject_key) in blocked_primary_keys or any(
+        blocked and blocked == safe_str(result.matched_theme_name) for blocked in blocked_primary_names
+    )
+    return bool(rank is not None and rank <= top_k and not primary_blocked), rank, primary_blocked
 
 
 def _wrong_related_count(result, gold_terms: list[str]) -> int:
@@ -448,6 +493,8 @@ async def main() -> None:
             v2_hit = _gold_hit(v2, gold_terms)
             v1_recall5 = _theme_set_recall(v1, gold_terms, 5)
             v2_recall5 = _theme_set_recall(v2, gold_terms, 5)
+            v1_rank_pass, v1_expected_rank, v1_primary_blocked = _positive_rank_case_pass(v1, row)
+            v2_rank_pass, v2_expected_rank, v2_primary_blocked = _positive_rank_case_pass(v2, row)
             if v2_hit and not v1_hit:
                 status = "improved"
             elif v1_hit and not v2_hit:
@@ -468,6 +515,10 @@ async def main() -> None:
                     "v1_related_theme_names": [safe_str(item.get("theme_name")) for item in v1.related_matches],
                     "v1_theme_set_recall_at_5": v1_recall5,
                     "v1_primary_hit": v1_hit,
+                    "v1_positive_rank_pass": v1_rank_pass,
+                    "v1_expected_rank": v1_expected_rank,
+                    "v1_primary_blocked": v1_primary_blocked,
+                    "v1_top_candidate_subject_keys": _top_candidate_keys(v1),
                     "v1_wrong_related_count": _wrong_related_count(v1, gold_terms),
                     "v1_generic_only_related_count": count_generic_only_related(v1),
                     "v2_decision": v2.decision,
@@ -477,6 +528,10 @@ async def main() -> None:
                     "v2_related_theme_names": [safe_str(item.get("theme_name")) for item in v2.related_matches],
                     "v2_theme_set_recall_at_5": v2_recall5,
                     "v2_primary_hit": v2_hit,
+                    "v2_positive_rank_pass": v2_rank_pass,
+                    "v2_expected_rank": v2_expected_rank,
+                    "v2_primary_blocked": v2_primary_blocked,
+                    "v2_top_candidate_subject_keys": _top_candidate_keys(v2),
                     "v2_wrong_related_count": _wrong_related_count(v2, gold_terms),
                     "v2_wrong_related_attribution": _related_attribution(v2, gold_terms, active_v2_keys),
                     "v2_generic_only_related_count": count_generic_only_related(v2),
@@ -503,6 +558,9 @@ async def main() -> None:
             "v1_wrong_related_count": sum(int(row.get("v1_wrong_related_count") or 0) for row in rows),
             "v2_wrong_related_count": sum(int(row.get("v2_wrong_related_count") or 0) for row in rows),
             "recall5_regressed_count": sum(1 for row in rows if row.get("recall5_regressed")),
+            "positive_rank_case_count": sum(1 for row in rows if row.get("v2_positive_rank_pass") is not None),
+            "v1_positive_rank_pass_count": sum(1 for row in rows if row.get("v1_positive_rank_pass") is True),
+            "v2_positive_rank_pass_count": sum(1 for row in rows if row.get("v2_positive_rank_pass") is True),
             "v1_theme_set_recall@5": round(
                 sum(1 for row in rows if row.get("v1_theme_set_recall_at_5")) / max(1, len(rows)),
                 4,
@@ -539,6 +597,9 @@ async def main() -> None:
                     f"- v1_theme_set_recall@5: {summary.get('v1_theme_set_recall@5')}",
                     f"- v2_theme_set_recall@5: {summary.get('v2_theme_set_recall@5')}",
                     f"- recall5_regressed_count: {summary.get('recall5_regressed_count', 0)}",
+                    f"- positive_rank_case_count: {summary.get('positive_rank_case_count', 0)}",
+                    f"- v1_positive_rank_pass_count: {summary.get('v1_positive_rank_pass_count', 0)}",
+                    f"- v2_positive_rank_pass_count: {summary.get('v2_positive_rank_pass_count', 0)}",
                     f"- v2_loaded_count: {summary.get('v2_loaded_count', 0)}",
                     f"- v2_review_subject_keys: {summary.get('v2_review_subject_keys', [])}",
                     f"- v1_fallback_count: {summary.get('v1_fallback_count', 0)}",

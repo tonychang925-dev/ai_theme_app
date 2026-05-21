@@ -1,0 +1,4 @@
+{"case_id":"gate_phase3_b_p0_hn_9020631","event_text":"小米SU7交付提速，汽车供应链讨论机身配套与代工安排。","must_not_subject_keys":["9020631"],"must_not_theme_names":["小米手机"],"reason":"小米汽车和泛配套词不能匹配小米手机。","tags":["gate_phase3","b_p0","xiaomi_phone"]}
+{"case_id":"gate_phase3_b_p0_hn_9059060","event_text":"机器人展会披露多家合作商参股消息，公司交流活跃。","must_not_subject_keys":["9059060"],"must_not_theme_names":["乐聚IPO"],"reason":"合作商、参股和泛机器人新闻不能匹配乐聚IPO。","tags":["gate_phase3","b_p0","lejv_ipo"]}
+{"case_id":"gate_phase3_b_p0_hn_9053538","event_text":"电力运营公司受益电价机制调整，电网设备和普通水泵采购同步推进。","must_not_subject_keys":["9053538"],"must_not_theme_names":["水电站设备"],"reason":"电力运营与泛电网设备新闻不能匹配水电站设备。","tags":["gate_phase3","b_p0","hydropower_equipment"]}
+{"case_id":"gate_phase3_b_p0_hn_9061242","event_text":"户用光伏装机改善，地面光伏电站组件排产提升。","must_not_subject_keys":["9061242"],"must_not_theme_names":["太空光伏"],"reason":"地面光伏需求不能匹配太空光伏。","tags":["gate_phase3","b_p0","space_pv"]}

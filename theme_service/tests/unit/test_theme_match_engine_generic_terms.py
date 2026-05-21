@@ -584,6 +584,82 @@ def test_broad_category_strict_blocks_child_topic_direct_hit():
     assert _collect_direct_hit_subject_keys(request, {"9013944": profile}) == []
 
 
+def test_broad_primary_direct_hit_yields_review_when_specific_candidate_has_nested_anchor():
+    request = ThemeMatchRequest(
+        event_id=8,
+        news_id=8,
+        title="CVD金刚石热沉材料用于功率半导体散热",
+        content="高导热金刚石材料用于功率半导体散热。",
+        summary="功率半导体散热材料进展。",
+        event_type="产业事件",
+        entities=["CVD金刚石热沉"],
+    )
+    broad = _profile("9013944", "半导体")
+    specific = _profile("9064241", "金刚石散热")
+    engine = ThemeMatchEngine(_Repo([broad, specific]))
+    result = engine._final_decide_rule_only(
+        request=request,
+        candidates=[
+            Candidate(
+                subject_key="9013944",
+                subject_name="半导体",
+                dense_score=0.0,
+                rerank_score=1.2,
+                evidence={
+                    "subject_name_direct_hit": True,
+                    "theme_name_direct_hit": True,
+                    "valid_anchor_terms": ["半导体"],
+                    "conflict_score": 0,
+                },
+            ),
+            Candidate(
+                subject_key="9064241",
+                subject_name="金刚石散热",
+                dense_score=0.0,
+                rerank_score=1.0,
+                evidence={
+                    "valid_anchor_terms": ["功率半导体散热", "CVD金刚石热沉"],
+                    "conflict_score": 0,
+                },
+            ),
+        ],
+        direct_hit_keys=["9013944"],
+        profile_map={"9013944": broad, "9064241": specific},
+    )
+
+    assert result.decision == "HUMAN_REVIEW"
+    assert result.reason_code == "broad_primary_specific_candidate_review"
+    assert result.matched_subject_key == "9013944"
+
+
+def test_no_anchor_term_blocks_bare_word_without_suppressing_configured_compound_anchor():
+    request = ThemeMatchRequest(
+        event_id=9,
+        news_id=9,
+        title="CVD金刚石热沉材料用于功率半导体散热",
+        content="CVD金刚石热沉材料用于功率半导体散热。",
+        summary="金刚石热沉材料进展。",
+        event_type="产业事件",
+        entities=["CVD金刚石热沉"],
+    )
+    profile = _profile(
+        "9064241",
+        "金刚石散热",
+        must_terms=["金刚石", "金刚石热沉", "CVD金刚石热沉"],
+        core_objects=["金刚石热沉"],
+        gate_json={
+            "no_anchor_terms": ["金刚石"],
+            "boundary_rules": {"accept_requires_any": ["金刚石热沉", "CVD金刚石热沉"]},
+        },
+    )
+
+    evidence = _build_gate_evidence(request.event_text(), profile, _build_event_match_profile(request))
+
+    assert "金刚石" not in evidence["must_hits"]
+    assert "金刚石热沉" in evidence["must_hits"]
+    assert "CVD金刚石热沉" in evidence["must_hits"]
+
+
 def test_hard_negative_name_matching_does_not_block_specific_child_theme():
     class _Result:
         matched_subject_key = "9011398"

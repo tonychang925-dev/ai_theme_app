@@ -776,6 +776,18 @@ export async function publishRecapToNotion(tradeDate: string): Promise<NotionPub
   );
 }
 
+export async function publishPreMarketBriefToNotion(tradeDate: string): Promise<NotionPublishResult> {
+  return fetchJsonWithTimeout<NotionPublishResult>(
+    "/api/v1/pre_market_brief/publish-notion",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ trade_date: tradeDate }),
+    },
+    45000,
+  );
+}
+
 export async function fetchPreMarketBrief(tradeDate: string): Promise<PreMarketBriefView> {
   const query = new URLSearchParams({ trade_date: tradeDate });
   return fetchJsonWithTimeout<PreMarketBriefView>(

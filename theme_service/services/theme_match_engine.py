@@ -84,7 +84,6 @@ GENERIC_MATCH_STOPWORDS = {
     "项目",
     "采购",
 }
-
 SOURCE_ORG_TERMS = {
     "证券",
     "东方证券",
@@ -953,6 +952,7 @@ def _build_gate_evidence(
     no_anchor_terms.update(_profile_gate_terms(profile, "no_anchor_terms"))
     no_anchor_terms.update(_profile_gate_terms(profile, "support_terms"))
     no_anchor_terms.update(_profile_gate_terms(profile, "weak_terms"))
+    accepted_anchor_terms = set(_profile_boundary_accept_terms(profile))
 
     def _split_hits(terms: List[str]) -> tuple[List[str], List[str]]:
         llm_hits = _filter_generic_terms([t for t in terms if t in search_terms])
@@ -1012,9 +1012,9 @@ def _build_gate_evidence(
     ]
     theme_name_direct_hit = len(theme_name_hit_terms) > 0
     subject_name_direct_hit = len(subject_name_hit_terms) > 0
-    must_hits = [t for t in must_hits if _is_product_anchor_term(t, event_text) or not _is_no_anchor_term(t, no_anchor_terms)]
-    strong_hits = [t for t in strong_hits if _is_product_anchor_term(t, event_text) or not _is_no_anchor_term(t, no_anchor_terms)]
-    object_hits = [t for t in object_hits if _is_product_anchor_term(t, event_text) or not _is_no_anchor_term(t, no_anchor_terms)]
+    must_hits = [t for t in must_hits if _is_product_anchor_term(t, event_text) or _is_compound_accepted_anchor(t, accepted_anchor_terms, no_anchor_terms) or not _is_no_anchor_term(t, no_anchor_terms)]
+    strong_hits = [t for t in strong_hits if _is_product_anchor_term(t, event_text) or _is_compound_accepted_anchor(t, accepted_anchor_terms, no_anchor_terms) or not _is_no_anchor_term(t, no_anchor_terms)]
+    object_hits = [t for t in object_hits if _is_product_anchor_term(t, event_text) or _is_compound_accepted_anchor(t, accepted_anchor_terms, no_anchor_terms) or not _is_no_anchor_term(t, no_anchor_terms)]
     should_hits = [t for t in should_hits if _is_product_anchor_term(t, event_text) or not _is_no_anchor_term(t, no_anchor_terms)]
     entity_hits = [t for t in entity_hits if _is_product_anchor_term(t, event_text) or not _is_no_anchor_term(t, no_anchor_terms)]
     support_hits = _unique(
@@ -1038,6 +1038,7 @@ def _build_gate_evidence(
         event_profile.raw_text if event_profile else event_text,
         profile,
         no_anchor_terms,
+        accepted_anchor_terms,
     )
     broad_category_blocked = _broad_category_direct_hit_blocked(
         event_text=event_text,
@@ -1190,6 +1191,11 @@ def _calc_feature_recall_score(hit_features: Dict[str, Any], gate_evidence: Dict
     score += len([t for t in (gate_evidence.get("profile_anchor_hits") or []) if t in valid_anchor_set]) * 0.50
     score += len([t for t in (gate_evidence.get("should_hits") or []) if t in valid_anchor_set]) * 0.12
     score += len([t for t in (gate_evidence.get("entity_hits") or []) if t in valid_anchor_set]) * 0.12
+    long_specific_anchor_terms = [
+        term for term in valid_anchor_set if len(_normalize_text(term)) >= 5
+    ]
+    if len(long_specific_anchor_terms) >= 2:
+        score += min(len(long_specific_anchor_terms) * 0.25, 1.0)
     score -= len(gate_evidence.get("not_hits") or []) * 0.20
     score -= len(gate_evidence.get("negative_hits") or []) * 0.20
     return round(score, 6)
@@ -1217,6 +1223,39 @@ def _has_only_generic_evidence(evidence: Dict[str, Any]) -> bool:
     if not evidence:
         return True
     return not _has_primary_anchor_evidence(evidence)
+
+
+def _specific_candidate_challenges_broad_primary(best: Candidate, competitors: List[Candidate]) -> bool:
+    best_evidence = best.evidence or {}
+    best_terms = _valid_anchor_terms(best_evidence)
+    best_name = _safe_str(best.subject_name)
+    if not best_terms or not best_name:
+        return False
+
+    # Broad title candidates are frequently short category names. They may still
+    # be valid, but a nested longer anchor in a nearby child candidate should
+    # force judge/review instead of an immediate direct-hit match.
+    best_is_broad = len(best_name) <= 4 or any(_normalize_text(term) == _normalize_text(best_name) for term in best_terms)
+    if not best_is_broad:
+        return False
+
+    best_markers = _unique([best_name] + best_terms)
+    for competitor in competitors[:3]:
+        evidence = competitor.evidence or {}
+        if evidence.get("role_guard_blocked") or _has_blocking_conflict_evidence(evidence):
+            continue
+        competitor_terms = _unique([_safe_str(competitor.subject_name)] + _valid_anchor_terms(evidence))
+        for broad_term in best_markers:
+            broad_norm = _normalize_text(broad_term)
+            if len(broad_norm) < 2:
+                continue
+            for specific_term in competitor_terms:
+                specific_norm = _normalize_text(specific_term)
+                if len(specific_norm) <= len(broad_norm) + 1:
+                    continue
+                if broad_norm in specific_norm:
+                    return True
+    return False
 
 
 def _has_blocking_conflict_evidence(evidence: Dict[str, Any]) -> bool:
@@ -1262,12 +1301,33 @@ def _is_no_anchor_term(term: str, no_anchor_terms: List[str] | set[str]) -> bool
     return value in terms or any(item and item in value for item in terms)
 
 
+def _profile_boundary_accept_terms(profile: ThemeProfile) -> List[str]:
+    gate = profile.gate_json if isinstance(profile.gate_json, dict) else {}
+    boundary_rules = gate.get("boundary_rules")
+    if isinstance(boundary_rules, dict):
+        return _normalize_list(boundary_rules.get("accept_requires_any"))
+    return []
+
+
+def _is_compound_accepted_anchor(
+    term: str,
+    accepted_anchor_terms: set[str],
+    no_anchor_terms: List[str] | set[str],
+) -> bool:
+    value = _safe_str(term)
+    if value not in accepted_anchor_terms:
+        return False
+    blocked_terms = [_safe_str(item) for item in no_anchor_terms if _safe_str(item)]
+    return any(item and item in value and len(item) < len(value) for item in blocked_terms)
+
+
 def _classify_hit_term_role(
     term: str,
     event_text: str,
     profile: ThemeProfile | None = None,
     evidence_field: str = "",
     no_anchor_terms: List[str] | set[str] | None = None,
+    accepted_anchor_terms: set[str] | None = None,
 ) -> str:
     value = _safe_str(term)
     if not value:
@@ -1276,6 +1336,8 @@ def _classify_hit_term_role(
     # events must not be killed just because they mention a company or a city.
     if _is_product_anchor_term(value, event_text):
         return "product_anchor"
+    if _is_compound_accepted_anchor(value, accepted_anchor_terms or set(), no_anchor_terms or set()):
+        return "main_anchor"
     if _is_no_anchor_term(value, no_anchor_terms or set()):
         return "support"
     if _is_source_org_term(value, event_text):
@@ -1296,6 +1358,7 @@ def _annotate_evidence_hit_roles(
     event_text: str,
     profile: ThemeProfile | None,
     no_anchor_terms: List[str] | set[str],
+    accepted_anchor_terms: set[str] | None = None,
 ) -> Dict[str, Any]:
     hit_terms: List[str] = []
     term_roles: Dict[str, str] = {}
@@ -1318,7 +1381,14 @@ def _annotate_evidence_hit_roles(
             value = _safe_str(term)
             if not value:
                 continue
-            role = _classify_hit_term_role(value, event_text, profile, field_name, no_anchor_terms)
+            role = _classify_hit_term_role(
+                value,
+                event_text,
+                profile,
+                field_name,
+                no_anchor_terms,
+                accepted_anchor_terms,
+            )
             hit_terms.append(value)
             previous = term_roles.get(value)
             if previous in ROLE_BLOCKING_HIT_ROLES and role not in ROLE_BLOCKING_HIT_ROLES:
@@ -1891,6 +1961,8 @@ class ThemeMatchEngine:
         conflict_score = int(best_ev.get("conflict_score") or 0)
         anchor_terms = _valid_anchor_terms(best_ev)
         direct_hit_set = set(direct_hit_keys)
+        if _specific_candidate_challenges_broad_primary(best, candidates[1:]):
+            return True
         if best.subject_key in direct_hit_set and best_gap >= _env_float("THEME_MATCH_LLM_AUTO_DIRECT_GAP", 0.03) and anchor_terms and conflict_score == 0:
             return False
         if (
@@ -2092,6 +2164,20 @@ class ThemeMatchEngine:
                 news_id=request.news_id,
                 confidence=_squash01(0.5),
                 reason_code="role_guard_blocked",
+                review_required=True,
+                audit={"top_candidates": top_candidates, "best_evidence": best_ev},
+            )
+
+        if _specific_candidate_challenges_broad_primary(best, candidates[1:]):
+            return ThemeDecisionEnvelope(
+                decision="HUMAN_REVIEW",
+                event_id=request.event_id,
+                news_id=request.news_id,
+                confidence=_squash01(0.5),
+                reason_code="broad_primary_specific_candidate_review",
+                matched_subject_key=best.subject_key,
+                matched_theme_name=best_profile.subject_name,
+                matched_theme_id=best_profile.theme_master_id,
                 review_required=True,
                 audit={"top_candidates": top_candidates, "best_evidence": best_ev},
             )

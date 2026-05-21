@@ -1,12 +1,51 @@
 {
   "must": [
-    "合作商",
-    "参股"
+    "乐聚IPO",
+    "乐聚机器人IPO",
+    "乐聚机器人上市"
+  ],
+  "aliases": [
+    "乐聚IPO",
+    "乐聚机器人IPO"
+  ],
+  "core_objects": [
+    "乐聚机器人",
+    "乐聚IPO"
+  ],
+  "strong": [
+    "乐聚机器人辅导",
+    "乐聚机器人上市",
+    "乐聚人形机器人IPO"
   ],
   "should": [
-    "公司"
+    "招股",
+    "上市辅导",
+    "人形机器人"
   ],
-  "not": [],
+  "not": [
+    "普通合作商",
+    "参股公告",
+    "供应商合作",
+    "机器人展会"
+  ],
+  "support_terms": [
+    "合作商",
+    "参股",
+    "公司",
+    "IPO"
+  ],
+  "no_anchor_terms": [
+    "合作商",
+    "参股",
+    "公司",
+    "IPO"
+  ],
+  "boundary_rules": {
+    "accept_requires_any": ["乐聚IPO", "乐聚机器人IPO", "乐聚机器人上市", "乐聚机器人辅导"],
+    "reject_if_only_hits": ["合作商", "参股", "公司", "IPO"],
+    "reject_domains": ["普通合作", "参股公告", "机器人展会"],
+    "nearby_confusions": ["机器人", "IPO"]
+  },
   "evidence_refs": [
     {
       "term": "合作商",
