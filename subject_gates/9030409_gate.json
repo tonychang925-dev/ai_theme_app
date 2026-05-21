@@ -4,20 +4,24 @@
     "智能眼镜",
     "AR智能眼镜",
     "AI眼镜",
-    "摄像头",
-    "光学模组",
-    "CPU处理中心",
-    "微显示屏",
-    "光学方案"
+    "AI智能眼镜",
+    "Ray-Ban Meta",
+    "Oakley Meta",
+    "Rokid眼镜",
+    "XREAL眼镜",
+    "小米AI眼镜"
   ],
   "strong": [
     "AI智能眼镜",
-    "XR头显",
     "XR智能眼镜",
     "AI拍摄眼镜",
     "混合现实智能眼镜",
     "碳化硅AR眼镜",
-    "AR眼镜原型"
+    "AR眼镜原型",
+    "可穿戴眼镜",
+    "拍摄眼镜",
+    "音频眼镜",
+    "眼镜形态终端"
   ],
   "should": [
     "架托",
@@ -59,10 +63,56 @@
     "智能眼镜",
     "AR智能眼镜",
     "AI眼镜",
-    "XR头显",
+    "AI智能眼镜",
     "AI拍摄眼镜"
   ],
-  "not": [],
+  "not": [
+    "VR",
+    "VR头显",
+    "虚拟现实",
+    "头显",
+    "Meta Quest",
+    "Quest",
+    "Pico",
+    "VR游戏",
+    "VR内容",
+    "VR设备",
+    "沉浸式头显",
+    "MR头显",
+    "苹果Vision Pro",
+    "Vision Pro",
+    "未涉及智能眼镜",
+    "未涉及AR眼镜",
+    "未涉及AI眼镜"
+  ],
+  "support_terms": [
+    "XR",
+    "MR",
+    "VR",
+    "头显",
+    "摄像头",
+    "光学模组",
+    "CPU处理中心",
+    "微显示屏",
+    "光学方案"
+  ],
+  "no_anchor_terms": [
+    "XR",
+    "MR",
+    "VR",
+    "头显",
+    "摄像头",
+    "光学模组",
+    "CPU处理中心",
+    "微显示屏",
+    "光学方案"
+  ],
+  "boundary_rules": {
+    "accept_requires_any": ["AR眼镜", "智能眼镜", "AR智能眼镜", "AI眼镜", "AI智能眼镜", "Ray-Ban Meta", "Oakley Meta", "Rokid眼镜", "XREAL眼镜", "小米AI眼镜", "可穿戴眼镜", "拍摄眼镜", "音频眼镜", "眼镜形态终端"],
+    "reject_if_only_hits": ["VR", "XR", "MR", "头显", "虚拟现实", "摄像头", "光学模组", "微显示屏"],
+    "reject_domains": ["VR内容", "VR游戏", "Meta Quest", "Pico", "Vision Pro", "沉浸式头显"],
+    "nearby_confusions": ["VR头显", "MR头显", "Meta Quest", "苹果Vision Pro"]
+  },
   "evidence_refs": [
     {
       "term": "AR眼镜",

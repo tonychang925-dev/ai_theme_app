@@ -1091,6 +1091,7 @@ def _build_gate_evidence(
         "entity_hits": entity_hits,
         "profile_anchor_hits": profile_anchor_hits,
         "support_hits": support_hits,
+        "accepted_anchor_hits": _unique([term for term in valid_anchor_set if term in accepted_anchor_terms]),
         "anchor_hits": _unique(object_hits + must_hits + strong_hits + entity_hits + profile_anchor_hits + theme_name_hit_terms),
         "not_hits": not_hits,
         "negative_hits": negative_hits,
@@ -1196,6 +1197,11 @@ def _calc_feature_recall_score(hit_features: Dict[str, Any], gate_evidence: Dict
     ]
     if len(long_specific_anchor_terms) >= 2:
         score += min(len(long_specific_anchor_terms) * 0.25, 1.0)
+    accepted_anchor_hits = [
+        term for term in (gate_evidence.get("accepted_anchor_hits") or []) if term in valid_anchor_set
+    ]
+    if accepted_anchor_hits:
+        score += 4.00 + min(max(0, len(accepted_anchor_hits) - 1) * 0.25, 1.0)
     score -= len(gate_evidence.get("not_hits") or []) * 0.20
     score -= len(gate_evidence.get("negative_hits") or []) * 0.20
     return round(score, 6)

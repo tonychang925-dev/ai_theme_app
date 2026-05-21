@@ -1,11 +1,10 @@
 {
   "must": [
     "小米AI眼镜",
-    "芯片",
-    "零部件",
-    "产品代工",
     "自研AI眼镜",
-    "AI眼镜"
+    "AI眼镜",
+    "智能眼镜",
+    "眼镜形态终端"
   ],
   "should": [
     "产品零售",
@@ -26,8 +25,30 @@
     "智能眼镜新品",
     "打车功能",
     "百镜大战",
-    "周鸿祎"
+    "周鸿祎",
+    "VR",
+    "VR头显",
+    "虚拟现实",
+    "头显",
+    "Meta Quest",
+    "Quest",
+    "Pico",
+    "VR游戏",
+    "VR内容",
+    "VR设备",
+    "沉浸式头显",
+    "MR头显",
+    "苹果Vision Pro",
+    "未涉及智能眼镜"
   ],
+  "support_terms": ["芯片", "零部件", "产品代工", "产品零售", "AI", "机器人", "XR", "VR", "MR", "头显"],
+  "no_anchor_terms": ["芯片", "零部件", "产品代工", "产品零售", "AI", "机器人", "XR", "VR", "MR", "头显"],
+  "boundary_rules": {
+    "accept_requires_any": ["小米AI眼镜", "自研AI眼镜", "AI眼镜", "智能眼镜", "眼镜形态终端"],
+    "reject_if_only_hits": ["芯片", "零部件", "产品代工", "AI", "XR", "VR", "MR", "头显"],
+    "reject_domains": ["VR内容", "VR游戏", "Meta Quest", "Pico", "Vision Pro", "沉浸式头显"],
+    "nearby_confusions": ["AR眼镜", "VR头显", "MR头显"]
+  },
   "evidence_refs": [
     {
       "term": "小米AI眼镜",

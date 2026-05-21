@@ -1268,6 +1268,71 @@ async def publish_post_market_recap_to_notion(payload: NotionPublishPayload) -> 
     }
 
 
+@app.get("/api/v1/stock/workspace/{stock_id}")
+async def get_stock_workspace(stock_id: str) -> dict[str, Any]:
+    """个股工作台：读取 stock_data_test 中的个股相关数据。"""
+    try:
+        from asyncpg import connect
+        db = os.environ.get("PG_DATABASE", "stock_data_test")
+        conn = await connect(
+            host="localhost", port=5432, database=db,
+            user=os.environ.get("PG_USERNAME", "postgres"),
+            password=os.environ.get("PG_PASSWORD", ""),
+        )
+    except Exception as e:
+        return {"stock_id": stock_id, "diagnostics": {"partial": True, "missing_sections": [str(e)]}}
+
+    code = stock_id.split(".")[0] if "." in stock_id else stock_id
+    result: dict[str, Any] = {"stock_id": stock_id}
+
+    try:
+        # stock_detail
+        row = await conn.fetchrow(
+            "SELECT stock_id, stock_name, close_price as price, close_price as pct_chg FROM subject_stock_daily_snapshot WHERE split_part(stock_id,'.',1)=$1 ORDER BY trade_date DESC LIMIT 1", code
+        )
+        result["stock_detail"] = dict(row) if row else {"name": stock_id}
+
+        # themes
+        themes = await conn.fetch(
+            "SELECT DISTINCT subject_key, theme_name FROM strong_stock_watch_pool WHERE split_part(stock_id,'.',1)=$1 AND watch_status!='removed'", code
+        )
+        result["themes"] = [dict(r) for r in themes]
+
+        # money_flow
+        mf = await conn.fetch(
+            "SELECT * FROM money_flow_enhanced WHERE split_part(stock_id,'.',1)=$1 ORDER BY trade_date DESC LIMIT 6", code
+        )
+        result["money_flow"] = [dict(r) for r in mf]
+
+        # dragon_tiger
+        dt = await conn.fetch(
+            "SELECT * FROM dragon_tiger_object WHERE split_part(stock_id,'.',1)=$1 ORDER BY trade_date DESC LIMIT 5", code
+        )
+        result["dragon_tiger"] = [dict(r) for r in dt]
+
+        # auction_validation
+        av = await conn.fetch(
+            "SELECT * FROM pre_market_auction_signal_validation WHERE split_part(stock_id,'.',1)=$1 ORDER BY trade_date DESC LIMIT 6", code
+        )
+        result["auction_validation"] = [dict(r) for r in av]
+
+        # kline position
+        pos = await conn.fetchrow(
+            "SELECT * FROM stock_position_judgement WHERE split_part(stock_id,'.',1)=$1 ORDER BY trade_date DESC LIMIT 1", code
+        )
+        # kline pattern
+        pat = await conn.fetchrow(
+            "SELECT * FROM stock_pattern_judgement WHERE split_part(stock_id,'.',1)=$1 ORDER BY trade_date DESC LIMIT 1", code
+        )
+        result["kline"] = {"position": dict(pos) if pos else None, "pattern": dict(pat) if pat else None}
+        result["diagnostics"] = {"partial": False, "missing_sections": []}
+    except Exception as e:
+        result["diagnostics"] = {"partial": True, "missing_sections": [str(e)]}
+    finally:
+        await conn.close()
+    return result
+
+
 @app.get("/api/v1/pre_market_brief")
 async def get_pre_market_brief(trade_date: str = Query(..., description="YYYY-MM-DD")) -> dict[str, Any]:
     try:

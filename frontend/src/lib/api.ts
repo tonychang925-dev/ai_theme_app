@@ -643,7 +643,7 @@ export async function fetchStockWorkspace(stockId: string): Promise<StockWorkspa
     mapping_scope: "all",
     themes_limit: "10"
   });
-  const response = await fetch(`/api/v2/stock_workspace/${stockId}?${query.toString()}`);
+  const response = await fetch(`/api/v1/stock/workspace/${stockId}`);
   if (!response.ok) {
     throw new Error(`stock workspace request failed: ${response.status}`);
   }

@@ -220,7 +220,7 @@ async def _load_v2_profiles(conn: Any, status: str | None) -> list[ThemeProfile]
                     "support_terms": normalize_list(data.get("support_terms")),
                     "weak_terms": normalize_list(data.get("weak_terms")),
                     "no_anchor_terms": normalize_list(data.get("no_anchor_terms")),
-                    "boundary_rules": data.get("boundary_rules") or [],
+                    "boundary_rules": load_json(data.get("boundary_rules"), {}),
                     "eval_metrics": data.get("eval_metrics") or {},
                 },
                 must_terms=normalize_list(data.get("must_terms")),
@@ -435,6 +435,7 @@ async def _compare_hard_negatives(
 async def main() -> None:
     parser = argparse.ArgumentParser(description="Compare ThemeMatchEngine v1 profiles with theme_profile_v2 profiles.")
     add_db_args(parser)
+    parser.set_defaults(write_db_name=None)
     parser.add_argument("--events-jsonl", type=Path)
     parser.add_argument("--gold-labels-jsonl", type=Path)
     parser.add_argument("--hard-negative-file", type=Path)
@@ -443,9 +444,17 @@ async def main() -> None:
     parser.add_argument("--limit", type=int, default=100)
     parser.add_argument("--v2-status")
     parser.add_argument("--v2-fallback-to-v1", action="store_true")
+    parser.add_argument("--allow-cross-db", action="store_true")
     parser.add_argument("--run-id", default=datetime.now().strftime("profile_v1_v2_compare_%Y%m%d_%H%M%S"))
     parser.add_argument("--output-dir", type=Path)
     args = parser.parse_args()
+    if not args.write_db_name:
+        args.write_db_name = args.read_db_name
+    if args.read_db_name != args.write_db_name and not args.allow_cross_db:
+        raise RuntimeError(
+            f"Refuse cross-db validation: read={args.read_db_name}, write={args.write_db_name}. "
+            "Pass --allow-cross-db only if this is intentional."
+        )
     out_dir = args.output_dir or default_output_dir(args.run_id)
     read_conn = await connect(args.read_db_name)
     write_conn = await connect(args.write_db_name)

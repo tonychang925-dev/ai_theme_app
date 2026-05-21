@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useThemeWorkspace } from '../../hooks/useThemeWorkspace';
 import { WorkspaceHeader } from '../../components/theme/WorkspaceHeader';
 import { OverviewCard } from '../../components/theme/OverviewCard';
@@ -19,34 +20,17 @@ function q(name: string) {
 
 export function ThemeWorkspacePage({ subjectKey }: Props) {
   const tradeDate = q("date");
+  const [activeTab, setActiveTab] = useState<"dynamics" | "detail">("dynamics");
   const {
-    payload,
-    loading,
-    error,
-    historyItems,
-    childItems,
-    stockItems,
-    analytics,
-    summaryRow,
-    recentRankRows,
-    leaderStocks,
-    rankedLeaderStocks,
-    diagnostics,
-    themeName,
-    summary,
-    detailHtml,
-    reasonShort,
-    nodeLevel,
-    parentSubjectKey,
-    historyCount,
-    childrenCount,
-    stockCount,
-    bindingStatus,
-    effectiveTradeDate,
-    trendStats,
+    payload, loading, error,
+    historyItems, childItems, stockItems,
+    analytics, summaryRow, recentRankRows,
+    leaderStocks, rankedLeaderStocks, diagnostics,
+    themeName, summary, detailHtml, reasonShort,
+    nodeLevel, parentSubjectKey, historyCount,
+    childrenCount, stockCount, bindingStatus,
+    effectiveTradeDate, trendStats,
   } = useThemeWorkspace(subjectKey, { tradeDate: tradeDate || undefined });
-
-
 
   return (
     <div className="workspace-page">
@@ -57,7 +41,35 @@ export function ThemeWorkspacePage({ subjectKey }: Props) {
 
       {!loading && !error && payload && (
         <main className="workspace-layout single">
-          <section className="workspace-column">
+          {/* Tab bar */}
+          <nav className="theme-tab-bar">
+            <button
+              className={`theme-tab ${activeTab === "dynamics" ? "active" : ""}`}
+              onClick={() => setActiveTab("dynamics")}
+            >
+              题材动态
+            </button>
+            <button
+              className={`theme-tab ${activeTab === "detail" ? "active" : ""}`}
+              onClick={() => setActiveTab("detail")}
+            >
+              题材详情
+            </button>
+          </nav>
+
+          {/* Tab: 题材动态 */}
+          <section className="workspace-column" style={{ display: activeTab === "dynamics" ? "block" : "none" }}>
+            <PrimaryCycleCard summaryRow={summaryRow} />
+            <TrendCard recentRankRows={recentRankRows} trendStats={trendStats} />
+            <LeaderInflowCard rankedLeaderStocks={rankedLeaderStocks} />
+            <LeaderTechCard leaderStocks={leaderStocks} />
+            <HistoryCard historyItems={historyItems} />
+            <ChildThemesCard childItems={childItems} />
+            <StockPoolCard stockItems={stockItems} limit={12} />
+          </section>
+
+          {/* Tab: 题材详情 */}
+          <section className="workspace-column" style={{ display: activeTab === "detail" ? "block" : "none" }}>
             <OverviewCard
               themeName={themeName}
               payload={payload}
@@ -73,20 +85,6 @@ export function ThemeWorkspacePage({ subjectKey }: Props) {
               stockCount={stockCount}
               bindingStatus={bindingStatus}
             />
-
-            <PrimaryCycleCard summaryRow={summaryRow} />
-
-            <TrendCard recentRankRows={recentRankRows} trendStats={trendStats} />
-
-            <LeaderInflowCard rankedLeaderStocks={rankedLeaderStocks} />
-
-            <LeaderTechCard leaderStocks={leaderStocks} />
-
-            <HistoryCard historyItems={historyItems} />
-
-            <ChildThemesCard childItems={childItems} />
-
-            <StockPoolCard stockItems={stockItems} limit={12} />
           </section>
         </main>
       )}
