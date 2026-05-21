@@ -281,7 +281,40 @@ class ThemeProfileRepository:
 
     def _rows_to_v1_profiles(self, rows: List[Dict[str, Any]]) -> List[ThemeProfile]:
         profiles: List[ThemeProfile] = []
-        generic_alias_stopwords = {"AI", "AR", "VR", "XR", "IPO", "APP", "GPT", "AIGC"}
+        generic_alias_stopwords = {
+            "AI",
+            "AR",
+            "VR",
+            "XR",
+            "IPO",
+            "APP",
+            "GPT",
+            "AIGC",
+            "政府",
+            "中国",
+            "美国",
+            "国家",
+            "企业",
+            "公司",
+            "项目",
+            "平台",
+            "系统",
+            "服务",
+            "应用",
+            "产业链",
+            "政策",
+            "部门",
+            "机构",
+            "集群",
+            "建设",
+            "合作",
+            "发布",
+            "申请",
+            "批准",
+            "接收",
+            "观察",
+            "预防",
+        }
 
         for row in rows:
             ontology = _load_json(row.get("ontology_json"))

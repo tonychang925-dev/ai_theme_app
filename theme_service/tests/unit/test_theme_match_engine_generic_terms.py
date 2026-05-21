@@ -632,6 +632,26 @@ def test_location_name_shenzhen_does_not_enter_related(monkeypatch):
     assert related == []
 
 
+def test_public_news_alias_does_not_create_direct_hit_candidate():
+    request = ThemeMatchRequest(
+        event_id=4,
+        news_id=4,
+        title="捷克将接收一名曾接触埃博拉病毒感染者的美籍医生",
+        content="捷克应美国请求接收一名曾接触埃博拉感染者的美籍医生，进行预防性观察。",
+        summary="公共卫生观察事件。",
+        event_type="国际新闻",
+        entities=["捷克", "美国"],
+    )
+    profile = _profile(
+        "9043458",
+        "中国星际之门",
+        aliases=["政府"],
+        must_terms=["政府"],
+    )
+
+    assert _collect_direct_hit_subject_keys(request, {"9043458": profile}) == []
+
+
 def test_llm_accept_role_guard_blocked_candidate_has_no_matched_subject(monkeypatch):
     securities = _profile("9016841", "证券")
     engine = ThemeMatchEngine(_Repo([securities]))
