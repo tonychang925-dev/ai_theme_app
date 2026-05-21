@@ -221,7 +221,8 @@ class BuildPostMarketRecapJob:
             )
 
         # ── Layer A/B 前置（新链自闭环）──
-        # 执行顺序: Evidence → Cycle → Identity → MainlineState
+        # 执行顺序: Evidence → Cycle(pre) → Identity → Cycle(post) → MainlineState。
+        # pre cycle 支撑已确认主线继承；post cycle 覆盖 Identity 当日新确认 subject。
         if self._evidence_job is not None:
             await self._evidence_job.execute(
                 trade_date=trade_date,
@@ -239,6 +240,12 @@ class BuildPostMarketRecapJob:
             await self._identity_job.execute(
                 trade_date=trade_date,
                 snapshot_version="recap_identity.v1",
+                batch_id=batch_id,
+                trace_id=trace_id,
+            )
+        if self._cycle_judgement_job is not None:
+            await self._cycle_judgement_job.execute(
+                trade_date=trade_date,
                 batch_id=batch_id,
                 trace_id=trace_id,
             )
@@ -289,8 +296,8 @@ class BuildPostMarketRecapJob:
         layer_c_shadow_enabled = False
         layer_a_identity_source = "theme_mainline_identity_registry"
         layer_b_cycle_source = "theme_cycle_judgement_v2"
-        layer_a_identity_hit_count = int(layer_c_metrics.get("subject_key_count") or 0)
-        layer_b_cycle_hit_count = int(layer_c_metrics.get("subject_key_count") or 0)
+        layer_a_identity_hit_count = int(layer_c_metrics.get("identity_hit_count") or 0)
+        layer_b_cycle_hit_count = int(layer_c_metrics.get("cycle_hit_count") or 0)
         input_fingerprint = LAYER_C_INPUT_MODE
         # 构建兼容 recap_doc 的 candidates 列表
         candidates = [

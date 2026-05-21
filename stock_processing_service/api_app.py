@@ -684,138 +684,72 @@ def _obj(value: Any) -> Dict[str, Any]:
 
 
 async def _fetch_recap_w2s_candidates(candidate_trade_date: date, limit: int = 200) -> List[Dict[str, Any]]:
-    """D1 弱转强候选 — 实时从强势池跑算法，等价旧链 WeakToStrongCandidateBuilder.build()。
-
-    流程：读池 → 硬约束 → 评分 → classify_pool_entry → 排序 → Top 10。
-    """
-    import json as _json
-    rows = await app.state.gateway.get_w2s_candidate_inputs(candidate_trade_date)
-    if not rows:
+    """Read D1 weak-to-strong candidates from the frozen post-market recap snapshot."""
+    row = await app.state.gateway.get_existing_post_market_recap_snapshot(candidate_trade_date)
+    if not row:
         return []
+    payload = _normalize_recap_payload(row)
+    recap_doc = dict(payload.get("recap_doc") or {})
+    top_candidates = list(recap_doc.get("top_candidates") or [])
+    if not top_candidates:
+        top_candidates = list(recap_doc.get("formal_top_candidates") or [])
 
-    d1_candidates: list[dict] = []
-    for row in rows:
-        pct_chg = float(row.get("pct_chg") or 0)
-        limit_up = bool(row.get("limit_up") or False)
-        is_leader = bool(row.get("is_leader") or False)
-        rank_order = int(row.get("rank_order") or 999)
-        recent_limit_up_count = int(row.get("recent_limit_up_count") or 0)
-        prior7_limitup_days = int(row.get("prior7_limitup_days") or 0)
-        prior7_strong_days = int(row.get("prior7_strong_days") or 0)
-        prev_day_pct = float(row.get("prev_day_pct_chg") or 0.0)
-        prev_day_limit_up = bool(row.get("prev_day_limit_up") or False)
-        fade_watch_val = bool(row.get("fade_watch") or False)
-        mainline_strength = float(row.get("mainline_strength_score") or 0.0)
-        watch_score = float(row.get("watch_score") or 0.0)
-        watch_pool_entry_type = str(row.get("watch_pool_entry_type") or "observe_only")
-        watch_labels = row.get("watch_labels_json") or {}
-        if isinstance(watch_labels, str):
-            watch_labels = _json.loads(watch_labels) if watch_labels else {}
-        strong_grade = str(watch_labels.get("strong_grade") or "").upper()
-        support_type = str(watch_labels.get("support_type") or "")
-        support_strength = float(watch_labels.get("support_score") or 0)
+    def _by_stock(rows: list[Any]) -> dict[str, dict[str, Any]]:
+        out: dict[str, dict[str, Any]] = {}
+        for item in rows:
+            if isinstance(item, dict):
+                stock_id = str(item.get("stock_id") or "")
+                if stock_id and stock_id not in out:
+                    out[stock_id] = dict(item)
+        return out
 
-        # ── 硬约束 ──
-        if pct_chg >= 0.0 or limit_up: continue
-        if pct_chg > -1.0: continue
-        strong_history = (is_leader or prev_day_limit_up or recent_limit_up_count >= 1 or rank_order <= 5)
-        if not strong_history: continue
-        if prior7_limitup_days < 1: continue
-        if prior7_strong_days < 1: continue
-        if support_type in {"", "none"} or support_strength < 45.0: continue
-
-        # ── _classify_weak_type ──
-        if prev_day_limit_up and pct_chg < 0:
-            weak_type, weak_intensity = "bad_limit_up", min(100.0, abs(pct_chg) * 12.0 + 20.0)
-        elif pct_chg <= -5.0:
-            weak_type, weak_intensity = "big_negative_line", min(100.0, abs(pct_chg) * 10.0)
-        elif -2.0 <= pct_chg <= 1.5 and prev_day_pct >= 4.0:
-            weak_type, weak_intensity = "upper_shadow", 55.0
-        elif pct_chg <= -1.0:
-            weak_type, weak_intensity = "high_open_low_close", min(100.0, abs(pct_chg) * 8.0 + 10.0)
-        else:
-            weak_type, weak_intensity = "fake_break", 40.0
-
-        # ── _day_weak_score / _prev_day_weak_score ──
-        if pct_chg < -4.0: day_weak_score = 20.0
-        elif pct_chg < -2.0: day_weak_score = 16.0
-        elif pct_chg < -1.0: day_weak_score = 10.0
-        else: day_weak_score = 6.0
-        if prev_day_pct < -3.0: prev_day_weak_score = 10.0
-        elif prev_day_pct < -1.5: prev_day_weak_score = 8.0
-        elif prev_day_pct < 0: prev_day_weak_score = 5.0
-        else: prev_day_weak_score = 0.0
-
-        # ── classify_pool_entry ──
-        strong_background = (is_leader or recent_limit_up_count >= 2 or rank_order <= 3)
-        d1_pool_entry = "reject"
-        if support_strength >= 45 and strong_background and day_weak_score >= 4 and prev_day_weak_score >= 2:
-            d1_pool_entry = "formal"
-        elif support_strength >= 60 and day_weak_score >= 3 and prev_day_weak_score >= 2:
-            d1_pool_entry = "observe_only"
-        if d1_pool_entry == "reject": continue
-
-        # ── _candidate_score ──
-        score = 45.0
-        if is_leader: score += 18.0
-        if limit_up: score += 10.0
-        score += min(recent_limit_up_count * 4.0, 12.0)
-        if rank_order <= 3: score += 8.0
-        score += min(weak_intensity * 0.08, 8.0)
-        score += min(support_strength * 0.1, 9.0)
-        score += day_weak_score + prev_day_weak_score
-        score += min(mainline_strength * 0.08, 8.0)
-        if fade_watch_val:
-            if mainline_strength >= 75.0: score -= 4.0
-            elif mainline_strength >= 60.0: score -= 8.0
-            else: score -= 12.0
-        score = max(0.0, min(score, 100.0))
-
-        # ── _apply_watch_context ──
-        if d1_pool_entry == "observe_only": score = min(score, 69.0)
-        if d1_pool_entry == "formal": score = min(100.0, max(score, 70.0))
-        if strong_grade == "B": score = min(69.0, score)
-        elif strong_grade in {"S", "A"}: score = min(100.0, max(score, 72.0))
-        score_boost = min(max(watch_score * 0.08, 0.0), 8.0)
-        if strong_grade in {"S", "A"}: score_boost = min(12.0, score_boost + 3.0)
-        score = round(min(100.0, score + score_boost), 2)
-
-        d1_candidates.append({
-            "stock_id": str(row.get("stock_id") or ""),
-            "stock_name": str(row.get("stock_name") or ""),
-            "subject_key": str(row.get("subject_key") or ""),
-            "theme_name": str(row.get("theme_name") or ""),
-            "candidate_score": str(score),
-            "pool_entry_type": d1_pool_entry,
-            "candidate_type": "weak_to_strong",
-            "weak_type": weak_type,
+    preview_by_stock = _by_stock(list(recap_doc.get("strong_watch_input_7d_preview") or []))
+    history_by_stock = _by_stock(list(recap_doc.get("strong_watch_history") or []))
+    result: list[dict[str, Any]] = []
+    for idx, candidate in enumerate(top_candidates[: max(int(limit), 1)], start=1):
+        if not isinstance(candidate, dict):
+            continue
+        stock_id = str(candidate.get("stock_id") or "")
+        preview = preview_by_stock.get(stock_id, {})
+        history = history_by_stock.get(stock_id, {})
+        support_type = str(
+            candidate.get("support_type")
+            or history.get("support_type")
+            or preview.get("support_type")
+            or ""
+        )
+        support_strength = str(
+            candidate.get("support_score")
+            or candidate.get("support_strength")
+            or history.get("support_score")
+            or preview.get("support_score")
+            or ""
+        )
+        evidence_json = {
+            "source": "post_market_recap_snapshot",
+            "recap_top_candidate": dict(candidate),
+            "strong_watch_preview": dict(preview),
+            "strong_watch_history": dict(history),
+        }
+        result.append({
+            "id": 0,
+            "trade_date": candidate_trade_date,
+            "stock_id": stock_id,
+            "stock_name": str(candidate.get("stock_name") or ""),
+            "subject_key": str(candidate.get("subject_key") or ""),
+            "theme_name": str(candidate.get("subject_name") or candidate.get("theme_name") or ""),
+            "candidate_score": str(candidate.get("candidate_score") or "0"),
+            "pool_entry_type": str(candidate.get("candidate_level") or candidate.get("pool_entry_type") or "formal"),
+            "candidate_type": str(candidate.get("candidate_type") or candidate.get("transition_type") or "weak_to_strong"),
+            "weak_type": str(candidate.get("transition_type") or candidate.get("weak_type") or ""),
             "support_type": support_type,
-            "support_strength": str(support_strength),
-            "evidence_json": _json.dumps({"source": "strong_watch_pool", "pct_chg": str(pct_chg), "support_type": support_type, "support_strength": str(support_strength)}),
+            "support_strength": support_strength,
+            "expected_open_low": 0,
+            "expected_open_high": 0,
+            "evidence_json": evidence_json,
+            "rank": idx,
         })
-
-    # 去重 + 排序 + Top 10
-    dedup: dict[str, dict] = {}
-    for c in d1_candidates:
-        sid = str(c.get("stock_id") or "")
-        if sid not in dedup or float(c.get("candidate_score") or 0) > float(dedup[sid].get("candidate_score") or 0):
-            dedup[sid] = c
-    ranked = sorted(dedup.values(), key=lambda x: float(x.get("candidate_score") or 0), reverse=True)
-    top = ranked[:10]
-
-    out: List[Dict[str, Any]] = []
-    for c in top:
-        out.append({
-            "id": 0, "trade_date": candidate_trade_date,
-            "stock_id": c["stock_id"], "stock_name": c["stock_name"],
-            "subject_key": c["subject_key"], "theme_name": c["theme_name"],
-            "candidate_score": c["candidate_score"], "pool_entry_type": c["pool_entry_type"],
-            "candidate_type": c["candidate_type"], "weak_type": c["weak_type"],
-            "support_type": c["support_type"], "support_strength": c.get("support_strength", 0),
-            "expected_open_low": 0, "expected_open_high": 0,
-            "evidence_json": c["evidence_json"],
-        })
-    return out
+    return result
 
 
 def _candidate_row_to_domain(candidate: Dict[str, Any]) -> W2SCandidate:

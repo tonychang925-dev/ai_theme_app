@@ -71,10 +71,7 @@ class BuildWeakToStrongCandidateUseCase:
             support_type = str(watch_labels.get("support_type") or "")
             support_strength = float(watch_labels.get("support_score") or 0)
 
-            if pct_chg >= 0.0 or limit_up:
-                self._diagnostics["d1_fail_pct_gate"] += 1
-                continue
-            if pct_chg > -1.0:
+            if not (pct_chg < 0.0 or limit_up):
                 self._diagnostics["d1_fail_pct_gate"] += 1
                 continue
             strong_history = is_leader or prev_day_limit_up or recent_limit_up_count >= 1 or rank_order <= 5

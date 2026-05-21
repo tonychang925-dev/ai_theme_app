@@ -109,7 +109,7 @@ class PreMarketBriefBuilder:
         )
         if self._opportunity_builder is not None:
             sections["event_driven_opportunities"] = await self._opportunity_builder.build(
-                trade_date=trade_date,
+                trade_date=window.prev_trade_date,
                 matched_themes=sections["matched_themes"],
                 matched_events=matched_events,
             )

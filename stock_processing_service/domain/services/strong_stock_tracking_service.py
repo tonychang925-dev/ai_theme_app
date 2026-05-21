@@ -378,14 +378,14 @@ class StrongStockTrackingService:
         # 硬门禁判定：
         #   - 常规路径：4选3（pass_count >= 3）
         #   - 主线承接豁免：(rule_b_theme AND recent_limit_up_count >= 2)
-        #   - 独立龙头豁免：has_two_board=True 直接通过，不依赖主线/量价/结构
-        #     入池后受监控约束（支撑破位、7日到期剔除）
+        #   - 独立龙头豁免：has_two_board=True 且基因+量价/结构至少 2 条件，
+        #     不依赖主线身份确认，入池后受监控约束（支撑破位、7日到期剔除）
         passed = bool(
             rule_a_gene
             and (
                 pass_count >= 3
                 or (rule_b_theme and recent_limit_up_count >= 2)
-                or has_two_board
+                or (has_two_board and pass_count >= 2)
             )
         )
         return {
@@ -740,7 +740,7 @@ class StrongStockTrackingService:
             "support_strength": support_strength,
             "support_broken": support_broken,
         })
-        if has_two_board and not cycle_state:
+        if has_two_board:
             labels.update({
                 "entry_path": "independent_leader",
                 "identity_scope": "independent_stock_signal",
@@ -796,7 +796,7 @@ class StrongStockTrackingService:
             },
             "phase": "phase1_seed_refresh_history",
         }
-        if has_two_board and not cycle_state:
+        if has_two_board:
             evidence.update({
                 "entry_path": "independent_leader",
                 "identity_scope": "independent_stock_signal",

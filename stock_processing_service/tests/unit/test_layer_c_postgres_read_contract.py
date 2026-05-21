@@ -30,3 +30,25 @@ def test_layer_c_refresh_sql_does_not_replay_pool_rows_without_layer_b_or_two_bo
     assert "p.labels_json->>'has_two_board'" in method
     assert "COALESCE(v2.final_mainline_alive, FALSE) = TRUE" in method
     assert "COALESCE(v2.fade_confirmed, FALSE) = FALSE" in method
+
+
+def test_layer_d_sql_uses_layer_b_truth_without_recomputing_alive_state() -> None:
+    method = _method_source("get_w2s_candidate_inputs")
+
+    assert "COALESCE(v2.final_mainline_alive, FALSE) AS final_mainline_alive" in method
+    assert "COALESCE(msd.state" not in method
+
+
+def test_legacy_layer_c_read_sql_does_not_recompute_alive_state() -> None:
+    method = _method_source("get_legacy_strong_watch_candidate_inputs")
+
+    assert "COALESCE(v2.final_mainline_alive, FALSE) AS final_mainline_alive" in method
+    assert "COALESCE(msd.state" not in method
+
+
+def test_post_market_report_context_uses_layer_b_truth_not_state_daily() -> None:
+    method = _method_source("get_post_market_report_context")
+
+    assert "v2.final_mainline_alive" in method
+    assert "mainline_state_daily msd" not in method
+    assert "COALESCE(msd.state" not in method
