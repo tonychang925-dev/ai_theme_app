@@ -1,6 +1,5 @@
 import React from 'react';
 import type { IntelSession, IntelItemType } from '../../lib/api';
-import { navigateTo } from '../../lib/navigation';
 
 interface IntelFiltersProps {
   date: string;
@@ -22,7 +21,6 @@ export function IntelFilters({
   setSession,
   type,
   setType,
-  recapDates,
 }: IntelFiltersProps) {
   return (
     <section className="intel-filters">
@@ -54,48 +52,6 @@ export function IntelFilters({
           <option value="stock_move">异动</option>
         </select>
       </label>
-      <button
-        type="button"
-        className="recap-filter-button"
-        onClick={() => navigateTo("/realtime-collector")}
-      >
-        启动实时采集
-      </button>
-      <button
-        type="button"
-        className="recap-filter-button"
-        onClick={() => navigateTo("/collection")}
-      >
-        日采集控制台
-      </button>
-      <button
-        type="button"
-        className="recap-filter-button"
-        onClick={() => navigateTo(`/recap?date=${recapDates.postMarket}&report_type=post_market`)}
-      >
-        当日复盘
-      </button>
-      <button
-        type="button"
-        className="recap-filter-button"
-        onClick={() => navigateTo(`/pre-market-brief?trade_date=${recapDates.preMarket}`)}
-      >
-        盘前必读
-      </button>
-      <button
-        type="button"
-        className="recap-filter-button"
-        onClick={() => navigateTo('/screener')}
-      >
-        AI选股
-      </button>
-      <button
-        type="button"
-        className="recap-filter-button"
-        onClick={() => navigateTo(`/intel/strong-stocks/watch?date=${date}&window_days=7`)}
-      >
-        强势股跟踪
-      </button>
     </section>
   );
 }

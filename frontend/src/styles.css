@@ -1634,7 +1634,7 @@ select {
 
 .intel-filters {
   display: grid;
-  grid-template-columns: repeat(9, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
   margin-bottom: 14px;
 }
@@ -1689,6 +1689,157 @@ select {
 .recap-filter-button:active {
   transform: translateY(0);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ── Icon Button ── */
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid #444444;
+  background: linear-gradient(135deg, #2a2a2a 0%, #252525 100%);
+  color: #d0d0d0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 13px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+.icon-button:hover {
+  border-color: #78a9ff;
+  background: linear-gradient(135deg, #2f2f2f 0%, #2a2a2a 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+.icon-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.icon-button-img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* ── Intel Status Row ── */
+.intel-status-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+.intel-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+.intel-status-badge.live {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+}
+.intel-status-badge.connecting {
+  background: rgba(250, 204, 21, 0.15);
+  color: #facc15;
+}
+.intel-status-badge.fallback {
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+}
+.intel-status-icon {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+.intel-live-count {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  background: #78a9ff;
+  color: #0d0d0d;
+  animation: pulse-badge 1.5s ease-in-out infinite;
+}
+@keyframes pulse-badge {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* ── Auth Icons ── */
+.auth-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+/* ── Intel Quick Actions ── */
+.intel-quick-actions {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.quick-action-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 12px 14px;
+  border: 1px solid #383838;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1e1e1e 0%, #1a1a1a 100%);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+.quick-action-card:hover {
+  border-color: #78a9ff;
+  background: linear-gradient(135deg, #242424 0%, #1e1e1e 100%);
+  box-shadow: 0 4px 14px rgba(120, 169, 255, 0.15);
+  transform: translateY(-2px);
+}
+.quick-action-card:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.quick-action-icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+.quick-action-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #b0b0b0;
+}
+.quick-action-card:hover .quick-action-label {
+  color: #ffffff;
+}
+
+/* 响应式：窄屏自动换行 */
+@media (max-width: 900px) {
+  .intel-quick-actions {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .intel-quick-actions {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .strong-watch-page {

@@ -11,7 +11,7 @@ import json
 import logging
 import signal
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 if __package__ in (None, ""):
@@ -21,7 +21,7 @@ from stock_processing_service.application.services.intel_stream_producer import 
     IntelStreamProducer,
 )
 
-CN_TZ = timezone(timezone.utc)
+CN_TZ = timezone(timedelta(hours=8))
 
 
 def build_parser() -> argparse.ArgumentParser:

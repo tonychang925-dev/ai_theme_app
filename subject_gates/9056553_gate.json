@@ -1,11 +1,21 @@
 {
   "must": [
+    "谷歌AI供货商",
+    "Google AI供货商",
+    "谷歌AI供应链",
+    "Google AI供应链"
+  ],
+  "strong": [
+    "谷歌光模块供应商",
+    "Google光模块供应商",
+    "谷歌AI硬件供应商",
+    "Google AI硬件供应商"
+  ],
+  "should": [
     "光模块",
     "光纤",
     "PCB",
-    "电源"
-  ],
-  "should": [
+    "电源",
     "光模块放量",
     "硬件供应商",
     "定制芯片",
@@ -19,10 +29,58 @@
     "美股持仓",
     "总市值"
   ],
+  "support_terms": [
+    "光模块",
+    "光纤",
+    "PCB",
+    "电源",
+    "硬件供应商"
+  ],
+  "no_anchor_terms": [
+    "光模块",
+    "光纤",
+    "PCB",
+    "电源",
+    "硬件供应商",
+    "AI模型",
+    "AI搜索产品"
+  ],
   "not": [
     "安卓操作系统",
-    "在线广告技术"
+    "在线广告技术",
+    "光引发剂",
+    "907牌号",
+    "PCB行业需求",
+    "PCB材料涨价"
   ],
+  "boundary_rules": {
+    "accept_requires_any": [
+      "谷歌AI供货商",
+      "Google AI供货商",
+      "谷歌AI供应链",
+      "Google AI供应链",
+      "谷歌光模块供应商",
+      "Google光模块供应商",
+      "谷歌AI硬件供应商",
+      "Google AI硬件供应商"
+    ],
+    "reject_if_only_hits": [
+      "光模块",
+      "光纤",
+      "PCB",
+      "电源",
+      "硬件供应商"
+    ],
+    "reject_domains": [
+      "PCB材料价格",
+      "光引发剂价格"
+    ],
+    "nearby_confusions": [
+      "PCB印制电路板",
+      "光刻胶",
+      "电子布Low-DK"
+    ]
+  },
   "evidence_refs": [
     {
       "term": "光模块",

@@ -21,7 +21,15 @@
     "高层数",
     "特殊工艺"
   ],
-  "not": [],
+  "not": ["光引发剂", "光刻胶", "光刻胶树脂", "907牌号"],
+  "support_terms": ["PCB"],
+  "no_anchor_terms": ["PCB"],
+  "boundary_rules": {
+    "accept_requires_any": ["PCB（印刷电路板）", "覆铜板", "铜箔", "高多层板", "HDI（高密度互连）", "高速基材"],
+    "reject_if_only_hits": ["PCB"],
+    "reject_domains": ["光引发剂材料", "半导体光刻胶"],
+    "nearby_confusions": ["光刻胶", "电子布Low-DK"]
+  },
   "evidence_refs": [
     {
       "term": "PCB（印刷电路板）",

@@ -17,7 +17,15 @@
     "服务器",
     "E-glass中低端"
   ],
-  "not": [],
+  "not": ["光刻胶", "KrF光刻胶", "ArF光刻胶", "半导体光刻胶", "感光剂"],
+  "support_terms": ["树脂", "PCB"],
+  "no_anchor_terms": ["树脂", "PCB"],
+  "boundary_rules": {
+    "accept_requires_any": ["覆铜板", "铜箔", "玻纤布", "Low-DK超高端", "电子布"],
+    "reject_if_only_hits": ["树脂", "PCB"],
+    "reject_domains": ["半导体光刻胶", "光刻胶树脂"],
+    "nearby_confusions": ["光刻胶", "半导体材料"]
+  },
   "evidence_refs": [
     {
       "term": "覆铜板",

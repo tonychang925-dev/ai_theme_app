@@ -8,7 +8,15 @@
     "空",
     "陆"
   ],
-  "not": [],
+  "not": ["导弹预警", "导弹预警和跟踪卫星", "低地球轨道星座", "太空发展局"],
+  "support_terms": ["导弹"],
+  "no_anchor_terms": ["导弹"],
+  "boundary_rules": {
+    "accept_requires_any": ["反无人机", "巴基斯坦军事", "巴基斯坦导弹"],
+    "reject_if_only_hits": ["导弹"],
+    "reject_domains": ["导弹预警卫星", "太空预警星座"],
+    "nearby_confusions": ["SpaceX", "导弹"]
+  },
   "evidence_refs": [
     {
       "term": "反无人机",

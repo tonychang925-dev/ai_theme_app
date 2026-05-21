@@ -1276,58 +1276,64 @@ async def get_theme_workspace(subject_key: str, trade_date: str = "") -> dict[st
         db = os.environ.get("PG_DATABASE", "stock_data_test")
         conn = await connect(host="localhost", port=5432, database=db, user=os.environ.get("PG_USERNAME","postgres"), password=os.environ.get("PG_PASSWORD",""))
     except Exception as e:
-        return {"theme_name": subject_key, "diagnostics": {"partial": True, "missing_sections": [str(e)]}}
+        return {"subject_key": subject_key, "detail": {}, "diagnostics": {"partial": True, "missing_sections": [str(e)]}}
 
-    td = trade_date or str((await conn.fetchrow("SELECT max(trade_date) FROM subject_stock_daily_snapshot"))[0] or "")
-    result: dict[str, Any] = {"theme_name": subject_key, "effective_trade_date": td}
+    td_raw = trade_date or str((await conn.fetchrow("SELECT max(trade_date) FROM subject_stock_daily_snapshot"))[0] or "")
+    td_date = date.fromisoformat(td_raw) if td_raw else date.today()
+    result: dict[str, Any] = {"subject_key": subject_key, "trade_date": td_raw, "detail": {}, "analytics": {}}
 
     try:
         # Theme name from theme_gate_profile
         name_row = await conn.fetchrow("SELECT concept FROM theme_gate_profile WHERE subject_key=$1", subject_key)
-        result["theme_name"] = name_row["concept"] if name_row else subject_key
+        theme_name = name_row["concept"] if name_row else subject_key
 
-        # Theme detail from vw_theme_detail_joined (joins theme_master + theme_profile_ext + subject_detail)
+        # Build detail dict
+        detail: dict[str, Any] = {"theme_name": theme_name}
         v2 = await conn.fetchrow("SELECT theme_name, summary, detail_html, reason_short FROM vw_theme_detail_joined WHERE subject_key=$1 LIMIT 1", subject_key)
         if v2:
-            result["theme_name"] = v2.get("theme_name") or result["theme_name"]
-            result["summary"] = v2.get("summary","")
-            result["detail_html"] = v2.get("detail_html","")
-            result["reason_short"] = v2.get("reason_short","")
-
-        # Summary row from theme_cycle_judgement_v2
-        cycle = await conn.fetchrow("SELECT * FROM theme_cycle_judgement_v2 WHERE subject_key=$1 ORDER BY trade_date DESC LIMIT 1", subject_key)
-        result["summary_row"] = dict(cycle) if cycle else None
+            detail["theme_name"] = v2.get("theme_name") or theme_name
+            detail["summary"] = v2.get("summary","")
+            detail["detail_html"] = v2.get("detail_html","")
+            detail["reason_short"] = v2.get("reason_short","")
 
         # History items from subject_history_staging
         hist = await conn.fetch("SELECT * FROM subject_history_staging WHERE subject_key=$1 ORDER BY rank_date DESC LIMIT 8", subject_key)
-        result["history_items"] = [dict(r) for r in hist]
-        result["history_count"] = len(result["history_items"])
+        result["history"] = [dict(r) for r in hist]
+        detail["history_count"] = len(result["history"])
 
         # Child themes from subject_children_staging
-        child = await conn.fetch("SELECT * FROM subject_children_staging WHERE parent_key=$1 LIMIT 8", subject_key)
-        result["child_items"] = [dict(r) for r in child]
-        result["children_count"] = len(result["child_items"])
+        child = await conn.fetch("SELECT * FROM subject_children_staging WHERE parent_subject_key=$1 LIMIT 8", subject_key)
+        result["children"] = [dict(r) for r in child]
+        detail["children_count"] = len(result["children"])
 
         # Stock items from subject_stock_staging
         stocks = await conn.fetch("SELECT * FROM subject_stock_staging WHERE subject_key=$1 LIMIT 12", subject_key)
-        result["stock_items"] = [dict(r) for r in stocks]
-        result["stock_count"] = len(result["stock_items"])
+        result["stocks"] = [dict(r) for r in stocks]
+        detail["stock_count"] = len(result["stocks"])
 
-        # Leader stocks
-        leaders = await conn.fetch("SELECT * FROM theme_stock_leaderboard WHERE subject_key=$1 ORDER BY leader_score DESC LIMIT 10", subject_key)
-        result["leader_stocks"] = [dict(r) for r in leaders]
+        result["detail"] = detail
 
-        # Recent rank rows for trend
-        ranks = await conn.fetch("SELECT * FROM subject_stock_staging WHERE subject_key=$1 ORDER BY trade_date DESC LIMIT 30", subject_key)
-        result["recent_rank_rows"] = [dict(r) for r in ranks]
+        # Analytics: summary from theme_cycle_judgement_v2
+        cycle = await conn.fetchrow("SELECT * FROM theme_cycle_judgement_v2 WHERE subject_key=$1 ORDER BY trade_date DESC LIMIT 1", subject_key)
+        analytics_summary = dict(cycle) if cycle else None
 
-        # Ranked leader stocks (with pct_chg from daily snapshot)
+        # Analytics: recent rank for trend (from subject_history_staging)
+        ranks = await conn.fetch("SELECT * FROM subject_history_staging WHERE subject_key=$1 ORDER BY rank_date DESC LIMIT 5", subject_key)
+        recent_rank = [dict(r) for r in ranks]
+
+        # Analytics: leader stocks (with pct_chg from daily snapshot)
         ranked = await conn.fetch(
             "SELECT l.*, s.close_price, s.pct_chg, s.trade_date FROM theme_stock_leaderboard l LEFT JOIN subject_stock_daily_snapshot s ON s.stock_id=l.stock_id AND s.subject_key=l.subject_key AND s.trade_date=$2 WHERE l.subject_key=$1 ORDER BY l.leader_score DESC LIMIT 20",
-            subject_key, td
+            subject_key, td_date
         )
-        result["ranked_leader_stocks"] = [dict(r) for r in ranked]
+        leader_stocks = [dict(r) for r in ranked]
 
+        result["analytics"] = {
+            "trade_date": td_raw,
+            "summary": analytics_summary,
+            "recent_rank": recent_rank,
+            "leader_stocks": leader_stocks,
+        }
         result["diagnostics"] = {"partial": False, "missing_sections": [], "source": "sps"}
     except Exception as e:
         result["diagnostics"] = {"partial": True, "missing_sections": [str(e)]}

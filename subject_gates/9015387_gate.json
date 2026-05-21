@@ -27,8 +27,20 @@
     "上升趋势",
     "出货量",
     "同比增长",
-    "重塑设计"
+    "重塑设计",
+    "AR眼镜",
+    "AR骑行镜",
+    "智能眼镜",
+    "AI眼镜"
   ],
+  "support_terms": ["OLED"],
+  "no_anchor_terms": ["OLED"],
+  "boundary_rules": {
+    "accept_requires_any": ["显示面板", "LCD面板", "MiniLED", "OLED面板", "中段组立", "后段模组组装"],
+    "reject_if_only_hits": ["OLED"],
+    "reject_domains": ["AR眼镜终端", "智能眼镜终端"],
+    "nearby_confusions": ["AI/AR眼镜", "MicroOLED眼镜"]
+  },
   "evidence_refs": [
     {
       "term": "显示面板",

@@ -14,11 +14,12 @@ export default defineConfig({
           });
         },
       },
+      "/api/v1/theme": "http://127.0.0.1:8090",
       "/api/v1/stock": "http://127.0.0.1:8090",
       "/api/v1/pre_market_brief": "http://127.0.0.1:8090",
       "/api/v1/intel": "http://127.0.0.1:8090",
       "/api/v1/db": "http://127.0.0.1:8090",
-      "/api": "http://127.0.0.1:8000",
+      "/api/v2": "http://127.0.0.1:8000",
     },
   },
   build: { target: "es2020" },

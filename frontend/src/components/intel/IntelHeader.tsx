@@ -32,13 +32,27 @@ export function IntelHeader({
         <p className="eyebrow">AI Investment Assistant</p>
         <h1>情报台</h1>
         <p className="subtle">按时间顺序展示归属到题材的事件流，点击任一事件直接进入题材详情</p>
+        <div className="intel-status-row">
+          <span className={`intel-status-badge ${liveStatus}`}>
+            <img src={`/icons/status-${liveStatus}.png`} alt="" className="intel-status-icon" />
+            {liveStatusText}
+          </span>
+          {liveNewCount > 0 && (
+            <span className="intel-live-count">+{liveNewCount}</span>
+          )}
+          <span className="topbar-meta">{sourceSummary} · {payloadCount} 条</span>
+        </div>
       </div>
       {user && (
         <div className="auth-user-bar" style={{ marginRight: 12 }}>
+          <img src="/icons/user.png" alt="" className="auth-icon" />
           <strong>{user.email}</strong> ({user.role})
           {user.role === 'admin' && <a href="/admin" style={{ color: '#ffd700', fontSize: 12, marginLeft: 8 }}>用户管理</a>}
           <a href="/mobile" style={{ color: '#5dade2', fontSize: 12, marginLeft: 6 }}>移动端</a>
-          <button className="auth-logout-btn" onClick={logout}>退出</button>
+          <button className="auth-logout-btn" onClick={logout}>
+            <img src="/icons/logout.png" alt="退出" className="auth-icon" />
+            退出
+          </button>
         </div>
       )}
     </header>

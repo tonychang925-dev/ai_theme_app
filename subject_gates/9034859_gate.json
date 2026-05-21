@@ -1,6 +1,5 @@
 {
   "must": [
-    "智能体",
     "OpenAI",
     "GPT-5",
     "DeepSeek-V4"
@@ -21,8 +20,20 @@
   ],
   "not": [
     "人工智能+制造政策",
-    "MiniMax上市"
+    "MiniMax上市",
+    "Manus",
+    "AI智能体Manus",
+    "Manus开放注册",
+    "Manus文生视频"
   ],
+  "support_terms": ["智能体", "AI智能体"],
+  "no_anchor_terms": ["智能体", "AI智能体"],
+  "boundary_rules": {
+    "accept_requires_any": ["OpenAI", "GPT-5", "DeepSeek-V4", "通用AI智能体"],
+    "reject_if_only_hits": ["智能体", "AI智能体"],
+    "reject_domains": ["Manus具体产品事件"],
+    "nearby_confusions": ["AI智能体Manus", "文生视频"]
+  },
   "evidence_refs": [
     {
       "term": "智能体",
