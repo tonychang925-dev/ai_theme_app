@@ -1293,6 +1293,36 @@ async def get_pre_market_brief(trade_date: str = Query(..., description="YYYY-MM
     }
 
 
+@app.post("/api/v1/pre_market_brief/publish-notion")
+async def publish_pre_market_brief_to_notion(payload: PreMarketBriefFinalizePayload) -> dict[str, Any]:
+    try:
+        d = date.fromisoformat(payload.trade_date)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=f"invalid trade_date: {payload.trade_date}") from exc
+
+    row = await app.state.gateway.get_pre_market_brief_snapshot(d)
+    if not row:
+        raise HTTPException(status_code=404, detail="pre_market_brief_snapshot not found")
+
+    publisher = NotionPostMarketRecapPublisher.from_env()
+    result = publisher.publish_snapshot(
+        row=row,
+        payload=row.get("payload") or {},
+        force=payload.force,
+        dry_run=False,
+        report_type="pre_market_brief",
+    )
+    return {
+        "ok": True,
+        "page_id": result.page_id,
+        "page_url": result.page_url,
+        "action": result.action,
+        "report_id": result.report_id,
+        "report_type": "pre_market_brief",
+        "trade_date": result.trade_date,
+    }
+
+
 @app.get("/api/v1/trade_calendar")
 async def get_trade_calendar(trade_date: str = Query(..., description="YYYY-MM-DD")) -> dict[str, Any]:
     try:

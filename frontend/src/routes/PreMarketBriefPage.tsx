@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import {
   fetchPreMarketBrief,
+  publishPreMarketBriefToNotion,
   type PreMarketAlert,
   type PreMarketBriefEvent,
   type PreMarketBriefTheme,
@@ -258,6 +259,7 @@ export function PreMarketBriefPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [refreshNonce, setRefreshNonce] = useState(0);
+  const [publishing, setPublishing] = useState(false);
 
   useEffect(() => {
     let active = true;
@@ -318,6 +320,24 @@ export function PreMarketBriefPage() {
         </div>
         <button className="tag tag-button" type="button" onClick={() => setRefreshNonce((prev) => prev + 1)}>
           刷新
+        </button>
+        <button
+          className="tag tag-button is-pass"
+          type="button"
+          disabled={publishing}
+          onClick={async () => {
+            setPublishing(true);
+            try {
+              const result = await publishPreMarketBriefToNotion(tradeDate);
+              alert(`已发布到 Notion: ${result.page_url || result.action}`);
+            } catch (err: any) {
+              alert(`发布失败: ${err.message}`);
+            } finally {
+              setPublishing(false);
+            }
+          }}
+        >
+          {publishing ? "发布中..." : "发布到 Notion"}
         </button>
       </section>
 

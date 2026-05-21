@@ -92,11 +92,11 @@ class NotionPostMarketRecapPublisher:
     def _archive_page(self, page_id: str) -> None:
         self._client.pages.update(page_id=page_id, archived=True)
 
-    def _create_page(self, trade_date: str, title: str, report_id: str, snapshot_version: str, summary: str) -> dict[str, Any]:
+    def _create_page(self, trade_date: str, title: str, report_id: str, snapshot_version: str, summary: str, report_type: str = "post_market_recap") -> dict[str, Any]:
         properties: dict[str, Any] = {
             self._title_prop: {"title": NotionBlockBuilder._rich_text(title, limit=120)},
             self._trade_date_prop: {"date": {"start": trade_date}},
-            self._report_type_prop: {"select": {"name": "post_market_recap"}},
+            self._report_type_prop: {"select": {"name": report_type}},
             self._report_id_prop: {"rich_text": NotionBlockBuilder._rich_text(report_id)},
             self._snapshot_version_prop: {"rich_text": NotionBlockBuilder._rich_text(snapshot_version)},
             self._summary_prop: {"rich_text": NotionBlockBuilder._rich_text(summary)},
@@ -202,6 +202,85 @@ class NotionPostMarketRecapPublisher:
         if subject_key in name_map:
             return name_map[subject_key]
         return f"{subject_key}"
+
+    def _build_pre_market_blocks(self, payload: dict[str, Any], trade_date: str) -> list[dict[str, Any]]:
+        B = NotionBlockBuilder
+        sections = payload.get("sections") or {}
+        diagnostics = payload.get("diagnostics") or {}
+        blocks: list[dict[str, Any]] = []
+
+        blocks.append(B.heading_2("一、今日重大事件"))
+        major = sections.get("major_events") or []
+        if major:
+            for e in major[:10]:
+                title = str(e.get("title") or "?")
+                summary = str(e.get("summary") or "")
+                theme = str(e.get("theme_name") or "")
+                source = str(e.get("source_channel") or "")
+                blocks.append(B.callout(f"**{title}**\n{summary}\n🏷 {theme} | {source}", icon="📰"))
+        else:
+            blocks.append(B.empty_paragraph("暂无重大事件"))
+        blocks.append(B.divider())
+
+        blocks.append(B.heading_2("二、重点题材"))
+        themes = sections.get("matched_themes") or []
+        if themes:
+            for t in themes[:10]:
+                name = str(t.get("theme_name") or "?")
+                count = int(t.get("event_count") or 0)
+                blocks.append(B.bullet(f"**{name}** — {count} 条事件"))
+        else:
+            blocks.append(B.empty_paragraph("暂无匹配题材"))
+        blocks.append(B.divider())
+
+        blocks.append(B.heading_2("三、事件驱动机会"))
+        opps = sections.get("event_driven_opportunities") or []
+        if opps:
+            for o in opps[:5]:
+                theme = str(o.get("theme_name") or "?")
+                stocks = o.get("stocks") or []
+                for s in stocks[:3]:
+                    name = str(s.get("stock_name") or s.get("stock_id") or "?")
+                    level = str(s.get("level") or "?")
+                    score = str(s.get("score") or "?")
+                    blocks.append(B.bullet(f"{theme} → {name} [{level}档, {score}分]"))
+        else:
+            blocks.append(B.empty_paragraph("暂无事件驱动机会"))
+        blocks.append(B.divider())
+
+        blocks.append(B.heading_2("四、风险预警"))
+        risks = sections.get("risk_alerts") or []
+        if risks:
+            for r in risks[:5]:
+                reason = str(r.get("reason") or "?")
+                level = str(r.get("alert_level") or "?")
+                stock = str(r.get("stock_name") or "")
+                blocks.append(B.callout(f"**[{level.upper()}] {stock}** — {reason}", icon="⚠️"))
+        else:
+            blocks.append(B.empty_paragraph("暂无风险预警"))
+        blocks.append(B.divider())
+
+        blocks.append(B.heading_2("五、公告机会"))
+        opp_alerts = sections.get("opportunity_alerts") or []
+        if opp_alerts:
+            for a in opp_alerts[:5]:
+                reason = str(a.get("reason") or "?")
+                stock = str(a.get("stock_name") or "")
+                amount = str(a.get("amount") or "")
+                extra = f" 💰{amount}" if amount else ""
+                blocks.append(B.bullet(f"**{stock}** — {reason}{extra}"))
+        else:
+            blocks.append(B.empty_paragraph("暂无公告机会"))
+        blocks.append(B.divider())
+
+        sb = diagnostics.get("source_breakdown") or {}
+        blocks.append(B.callout(
+            f"📊 数据诊断\nmatched: {sb.get('matched_by_source',{})}\n"
+            f"intel_raw: {sb.get('intel_raw_announcements',0)} matched: {sb.get('intel_matched_announcements',0)}\n"
+            f"window: {diagnostics.get('pre_market_window',{}).get('start_at','?')} ~ {diagnostics.get('pre_market_window',{}).get('end_at','?')}",
+            icon="📊"
+        ))
+        return blocks
 
     @classmethod
     def build_blocks(cls, payload: dict[str, Any], trade_date: str) -> list[dict[str, Any]]:
@@ -385,10 +464,11 @@ class NotionPostMarketRecapPublisher:
         *,
         force: bool = False,
         dry_run: bool = False,
+        report_type: str = "post_market_recap",
     ) -> NotionPublishResult:
         trade_date = str(row.get("trade_date") or "")
         snapshot_version = str(row.get("snapshot_version") or "unknown")
-        report_id = self._make_report_id(trade_date)
+        report_id = self._make_report_id(trade_date) if report_type == "post_market_recap" else f"pre_market_brief:{trade_date}"
 
         existing = self._query_existing_page(report_id)
 
@@ -399,7 +479,7 @@ class NotionPostMarketRecapPublisher:
                 page_url=existing.get("url", "") if existing else "",
                 action=f"dry_run:{'would_recreate' if existing else 'would_create'}",
                 report_id=report_id,
-                report_type="post_market_recap",
+                report_type=report_type,
                 trade_date=trade_date,
             )
 
@@ -414,11 +494,11 @@ class NotionPostMarketRecapPublisher:
                     page_url=existing.get("url", ""),
                     action="exists",
                     report_id=report_id,
-                    report_type="post_market_recap",
+                    report_type=report_type,
                     trade_date=trade_date,
                 )
 
-        title = f"{trade_date} 盘后复盘"
+        title = f"{trade_date} 盘后复盘" if report_type == "post_market_recap" else f"{trade_date} 盘前必读"
         summary = self._build_summary(payload)
 
         page = self._create_page(
@@ -427,9 +507,13 @@ class NotionPostMarketRecapPublisher:
             report_id=report_id,
             snapshot_version=snapshot_version,
             summary=summary,
+            report_type=report_type,
         )
 
-        blocks = self.build_blocks(payload, trade_date)
+        if report_type == "pre_market_brief":
+            blocks = self._build_pre_market_blocks(payload, trade_date)
+        else:
+            blocks = self.build_blocks(payload, trade_date)
         self._append_children(page["id"], blocks)
 
         return NotionPublishResult(
@@ -437,7 +521,7 @@ class NotionPostMarketRecapPublisher:
             page_url=page.get("url", ""),
             action=action,
             report_id=report_id,
-            report_type="post_market_recap",
+            report_type=report_type,
             trade_date=trade_date,
         )
 
