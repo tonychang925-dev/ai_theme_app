@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { navigateTo } from '../../lib/navigation';
 import { useIntelFeed } from '../../hooks/useIntelFeed';
 import { IntelHeader } from '../../components/intel/IntelHeader';
+import { IntelQuickActions } from '../../components/intel/IntelQuickActions';
 import { IntelFilters } from '../../components/intel/IntelFilters';
 import { IntelList } from '../../components/intel/IntelList';
 import { ThreeColumnLayout } from '../../components/ThreeColumnLayout';
@@ -161,6 +162,8 @@ export function IntelPage() {
         sseConnectionState={sseConnectionState}
         liveNewCount={liveNewCount}
       />
+
+      <IntelQuickActions date={date} recapDates={recapDates} />
 
       <IntelFilters
         date={date}

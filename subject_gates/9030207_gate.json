@@ -4,8 +4,7 @@
     "雷达",
     "红外",
     "惯性",
-    "地形匹配",
-    "卫星"
+    "地形匹配"
   ],
   "should": [
     "地面",
@@ -29,8 +28,23 @@
     "铀浓缩问题",
     "以色列总理",
     "伊朗核目标",
-    "特朗普表示"
+    "特朗普表示",
+    "导弹预警",
+    "导弹预警和跟踪卫星",
+    "导弹预警卫星",
+    "跟踪卫星",
+    "低地球轨道星座",
+    "卫星采购合同",
+    "太空发展局"
   ],
+  "support_terms": ["导弹", "卫星", "预警", "跟踪"],
+  "no_anchor_terms": ["导弹", "卫星", "预警", "跟踪"],
+  "boundary_rules": {
+    "accept_requires_any": ["导弹", "防空导弹", "03式中程防空导弹", "地形匹配"],
+    "reject_if_only_hits": ["卫星", "导弹预警", "跟踪卫星", "低地球轨道星座"],
+    "reject_domains": ["导弹预警卫星采购", "卫星星座跟踪预警"],
+    "nearby_confusions": ["卫星互联网", "SpaceX", "导弹预警卫星"]
+  },
   "evidence_refs": [
     {
       "term": "导弹",
@@ -61,12 +75,6 @@
       "source": "primary_anchor",
       "source_id": "primary_anchor",
       "span_text": "地形匹配"
-    },
-    {
-      "term": "卫星",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "卫星"
     }
   ],
   "subject_id": "9030207",

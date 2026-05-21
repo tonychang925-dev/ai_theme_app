@@ -1,5 +1,9 @@
 {
   "must": [
+    "Manus",
+    "AI智能体Manus",
+    "Manus开放注册",
+    "Manus文生视频",
     "真格基金",
     "武汉夜莺",
     "虚拟机技术"
@@ -15,6 +19,17 @@
     "app"
   ],
   "not": [],
+  "aliases": ["Manus", "AI智能体Manus"],
+  "entity_hints": ["Manus"],
+  "core_objects": ["Manus", "AI智能体Manus"],
+  "support_terms": ["AI智能体", "智能体", "开放注册", "文生视频"],
+  "no_anchor_terms": ["AI智能体", "智能体"],
+  "boundary_rules": {
+    "accept_requires_any": ["Manus", "AI智能体Manus", "Manus开放注册", "Manus文生视频"],
+    "reject_if_only_hits": ["AI智能体", "智能体", "开放注册", "文生视频"],
+    "reject_domains": ["泛AI智能体"],
+    "nearby_confusions": ["AI智能体", "OpenAI智能体"]
+  },
   "evidence_refs": [
     {
       "term": "真格基金",

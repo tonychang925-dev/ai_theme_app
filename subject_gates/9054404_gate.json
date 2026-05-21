@@ -1,9 +1,8 @@
 {
   "must": [
     "中国核心资产",
-    "能源",
-    "金融",
-    "通信"
+    "全球第一",
+    "行业龙头"
   ],
   "should": [
     "家电第一",
@@ -19,31 +18,21 @@
     "重要影响力",
     "领先地位"
   ],
-  "not": [],
+  "not": ["核聚变", "聚变能源", "能源企业合并", "人工智能产业能源"],
+  "support_terms": ["能源", "金融", "通信"],
+  "no_anchor_terms": ["能源", "金融", "通信", "关键地位", "领先地位"],
+  "boundary_rules": {
+    "accept_requires_any": ["中国核心资产", "全球第一", "行业龙头"],
+    "reject_if_only_hits": ["能源", "金融", "通信", "关键地位", "领先地位"],
+    "reject_domains": ["核聚变能源", "普通行业能源新闻"],
+    "nearby_confusions": ["可控核聚变", "能源产业"]
+  },
   "evidence_refs": [
     {
       "term": "中国核心资产",
       "source": "primary_anchor",
       "source_id": "primary_anchor",
       "span_text": "中国核心资产"
-    },
-    {
-      "term": "能源",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "能源"
-    },
-    {
-      "term": "金融",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "金融"
-    },
-    {
-      "term": "通信",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "通信"
     }
   ],
   "subject_id": "9054404",

@@ -1777,3 +1777,23 @@
 {"display":"/compact","pastedContents":{},"timestamp":1779344679878,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
 {"display":"我现在有很多UI元素需要从png图票里提取给我的项目提供图标、背景图、登录框设计等，如何实现？","pastedContents":{},"timestamp":1779345069687,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"376e3d07-cda8-4254-96e4-e95c831a9655"}
 {"display":"可以","pastedContents":{},"timestamp":1779345176567,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"376e3d07-cda8-4254-96e4-e95c831a9655"}
+{"display":"把问题清单列出来！！为什么这么简单的问题都解决不了？！！！","pastedContents":{},"timestamp":1779346559579,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"折腾半天了，毫无进展！！！","pastedContents":{},"timestamp":1779346611439,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"折腾半天了，毫无进展！！！","pastedContents":{},"timestamp":1779346626916,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"现在是直接报错：Unexpected token '<', \"<!doctype \"... is not valid JSON！到底在搞什么？？？！！！！！","pastedContents":{},"timestamp":1779346674803,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"现在题材详情页面报错：Unexpected token '<', \"<!doctype \"... is not valid JSON！到底是怎么回事？！越改越烂！！！","pastedContents":{},"timestamp":1779346930522,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"这么简单的问题都搞不定吗？？！！！","pastedContents":{},"timestamp":1779346956727,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"这么简单的问题都搞不定吗？？！！！\n不要再打补丁了！！！仔细阅读代码架构，从根源上解决！！！先阅读项目设计文档，没有阅读文档之前，不允许瞎改代码！！！！！！","pastedContents":{},"timestamp":1779347047463,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"个人投资助理项目-前端技术设计（第四阶段）.md","pastedContents":{},"timestamp":1779347164202,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"登录页面报错：Failed to execute 'json' on 'Response': Unexpected end of JSON input","pastedContents":{},"timestamp":1779347500548,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"现在分析“情报台”首页，核查：1、“主题雷达”栏目，为什么“热度 2 | 阶段 UNKNOWN | 关联股 0”，只有热度有数据，其他都是没有数据？2、“市场验证”栏，为什么数据不变化？而且一直显示“Fallback原因: SSE连接错误”？","pastedContents":{},"timestamp":1779348719599,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"不应该啊！我的实时采集页面是已经启动了实时事件采集功能了，为什么会Intel Producer 已停止运行？","pastedContents":{},"timestamp":1779349553658,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"实时采集页面的终端信息：[Pasted text #1 +216 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"de6eed95d41b11c2"}},"timestamp":1779349599105,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":" Intel Producer到底是实现什么功能？","pastedContents":{},"timestamp":1779349891982,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"这个正常！因为现在我的VPN是开启的！导致一些api接口访问不了！但是akshare数据应该是有采集到的啊，请核查。","pastedContents":{},"timestamp":1779350151036,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"我需要给“情报台”首页增加一些图标按钮，美化一下界面，该如何操作？","pastedContents":{},"timestamp":1779350395448,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"图标太丑！我需要我自己UI风格的图标，图标在web_ui\\bac2ead2-7967-4fdc-9cc0-f30eecf6d0e2.png","pastedContents":{},"timestamp":1779350540814,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"但是需要将图标全部截取出来，有什么方案？","pastedContents":{},"timestamp":1779350578420,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"放弃！我自己截图.","pastedContents":{},"timestamp":1779350803165,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"你程序来截图icon吧，我看到你截取了一些图片，还可以","pastedContents":{},"timestamp":1779350966562,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}
+{"display":"[Pasted text #1 +190 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"666f9ea5c45f28a4"}},"timestamp":1779351077400,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"8eb33c21-93d6-4838-8dcc-c11dce5bdb16"}

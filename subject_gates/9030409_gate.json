@@ -9,7 +9,8 @@
     "Oakley Meta",
     "Rokid眼镜",
     "XREAL眼镜",
-    "小米AI眼镜"
+    "小米AI眼镜",
+    "AR骑行镜"
   ],
   "strong": [
     "AI智能眼镜",
@@ -21,7 +22,8 @@
     "可穿戴眼镜",
     "拍摄眼镜",
     "音频眼镜",
-    "眼镜形态终端"
+    "眼镜形态终端",
+    "骑行镜"
   ],
   "should": [
     "架托",
@@ -108,7 +110,7 @@
     "光学方案"
   ],
   "boundary_rules": {
-    "accept_requires_any": ["AR眼镜", "智能眼镜", "AR智能眼镜", "AI眼镜", "AI智能眼镜", "Ray-Ban Meta", "Oakley Meta", "Rokid眼镜", "XREAL眼镜", "小米AI眼镜", "可穿戴眼镜", "拍摄眼镜", "音频眼镜", "眼镜形态终端"],
+    "accept_requires_any": ["AR眼镜", "智能眼镜", "AR智能眼镜", "AI眼镜", "AI智能眼镜", "Ray-Ban Meta", "Oakley Meta", "Rokid眼镜", "XREAL眼镜", "小米AI眼镜", "AR骑行镜", "可穿戴眼镜", "拍摄眼镜", "音频眼镜", "眼镜形态终端", "骑行镜"],
     "reject_if_only_hits": ["VR", "XR", "MR", "头显", "虚拟现实", "摄像头", "光学模组", "微显示屏"],
     "reject_domains": ["VR内容", "VR游戏", "Meta Quest", "Pico", "Vision Pro", "沉浸式头显"],
     "nearby_confusions": ["VR头显", "MR头显", "Meta Quest", "苹果Vision Pro"]

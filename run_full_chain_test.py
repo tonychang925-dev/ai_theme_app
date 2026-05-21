@@ -575,6 +575,7 @@ async def main() -> None:
             )
 
         report = _build_report(details)
+        OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
         OUT_PATH.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
         print(
             json.dumps(
