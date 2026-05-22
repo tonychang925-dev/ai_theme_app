@@ -103,6 +103,18 @@ def _parse_date_value(value: Any) -> date | None:
         return None
 
 
+def _next_weekday(d: date) -> date:
+    """Return the next weekday (Mon-Fri), skipping weekends."""
+    n = d + timedelta(days=1)
+    # Saturday → Monday (+2)
+    if n.weekday() == 5:
+        return n + timedelta(days=2)
+    # Sunday → Monday (+1)
+    if n.weekday() == 6:
+        return n + timedelta(days=1)
+    return n
+
+
 async def resolve_pre_market_brief_trade_date(
     client: Any,
     *,
@@ -112,8 +124,8 @@ async def resolve_pre_market_brief_trade_date(
     """Resolve scheduler target date.
 
     Before 15:00 it uses the current China date. From 15:00 onward it targets
-    the next trading date from SPS trade calendar. If calendar lookup fails, it
-    falls back to the current natural date and logs a warning.
+    the next trading date from SPS trade calendar. If calendar lookup fails or
+    returns no next date, falls back to the next weekday (Mon-Fri).
     """
     if explicit_trade_date:
         return date.fromisoformat(explicit_trade_date)
@@ -132,13 +144,16 @@ async def resolve_pre_market_brief_trade_date(
             if next_trade_date:
                 return next_trade_date
     except Exception as exc:
-        logger.warning("pre_market_brief trade calendar lookup failed, fallback to natural date: %s", exc)
+        logger.warning("pre_market_brief trade calendar lookup failed, using next weekday: %s", exc)
 
+    fallback = _next_weekday(current_date)
     logger.warning(
-        "pre_market_brief next_trade_date unavailable after 15:30, fallback to natural date=%s",
+        "pre_market_brief next_trade_date unavailable from calendar, "
+        "fallback to next weekday: current=%s → target=%s",
         current_date.isoformat(),
+        fallback.isoformat(),
     )
-    return current_date
+    return fallback
 
 
 class PreMarketBriefAutoScheduler:

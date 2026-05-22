@@ -3183,6 +3183,10 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             m.composite_score AS money_composite_score,
             m.money_flow_score,
             m.money_flow_tier,
+            l.candidate_rank AS leader_candidate_rank,
+            l.role_label AS leader_role_label,
+            l.composite_score AS leader_composite_score,
+            l.capital_score AS leader_capital_score,
             COALESCE(
                 m.main_net_inflow,
                 CASE
@@ -3213,6 +3217,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
           ON x.trade_date = s.trade_date AND split_part(x.stock_id, '.', 1) = split_part(s.stock_id, '.', 1)
         LEFT JOIN money_flow_enhanced m
           ON m.trade_date = s.trade_date AND m.subject_key = s.subject_key AND split_part(m.stock_id, '.', 1) = split_part(s.stock_id, '.', 1)
+        LEFT JOIN theme_leader_candidate l
+          ON l.trade_date = s.trade_date AND l.subject_key = s.subject_key AND split_part(l.stock_id, '.', 1) = split_part(s.stock_id, '.', 1)
         LEFT JOIN stock_abnormal_signal a
           ON a.trade_date = s.trade_date AND a.subject_key = s.subject_key AND split_part(a.stock_id, '.', 1) = split_part(s.stock_id, '.', 1)
         WHERE s.trade_date = $1::date

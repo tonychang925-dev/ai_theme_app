@@ -1,4 +1,5 @@
 import asyncio
+import argparse
 import json
 import os
 import re
@@ -113,7 +114,7 @@ def _summarize_match_result(match_result: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 
-def _parse_test_cases(limit: int) -> List[Dict[str, Any]]:
+def _parse_test_cases(limit: int, start_index: int = 1) -> List[Dict[str, Any]]:
     text = RAW_PATH.read_text(encoding="utf-8")
     parts = re.split(r"(?=测试集\d+:题材名称:)", text)
     rows: List[Dict[str, str]] = []
@@ -151,9 +152,12 @@ def _parse_test_cases(limit: int) -> List[Dict[str, Any]]:
                 }
             )
 
-    if len(rows) < limit:
-        raise RuntimeError(f"原始测试样本不足 {limit} 条，当前 {len(rows)} 条")
-    return rows[:limit]
+    stop_index = start_index + limit - 1
+    if start_index < 1:
+        raise RuntimeError(f"start_index 必须从 1 开始，当前 {start_index}")
+    if len(rows) < stop_index:
+        raise RuntimeError(f"原始测试样本不足 start={start_index} size={limit}，当前 {len(rows)} 条")
+    return rows[start_index - 1 : stop_index]
 
 
 class _RedisStructuredEventBus:
@@ -248,7 +252,11 @@ async def _cleanup_previous_test_data(conn: asyncpg.Connection) -> None:
     await conn.execute("DELETE FROM news_raw WHERE news_id LIKE $1", TEST_NEWS_PREFIX)
 
 
-def _build_report(details: List[Dict[str, Any]]) -> Dict[str, Any]:
+def _build_report(
+    details: List[Dict[str, Any]],
+    event_count: Optional[int] = None,
+    structuring_stats: Optional[Dict[str, Any]] = None,
+) -> Dict[str, Any]:
     processed = len(details)
     top1_hits = sum(1 for row in details if row.get("top1_hit"))
     equivalent_top1_hits = sum(1 for row in details if row.get("equivalent_top1_hit"))
@@ -284,21 +292,72 @@ def _build_report(details: List[Dict[str, Any]]) -> Dict[str, Any]:
         )
     per_theme_metrics.sort(key=lambda x: x["gt_subject_key"])
 
+    structuring_stats = structuring_stats or {}
     return {
-        "events": SAMPLE_SIZE,
+        "events": event_count if event_count is not None else SAMPLE_SIZE,
         "processed": processed,
         "top1_hits": top1_hits,
         "top1_accuracy": round(top1_hits / processed, 4) if processed else 0.0,
         "equivalent_top1_hits": equivalent_top1_hits,
         "equivalent_top1_accuracy": round(equivalent_top1_hits / processed, 4) if processed else 0.0,
         "failed": sum(1 for row in details if row.get("status") == "failed"),
+        "structuring_success_count": int(structuring_stats.get("structuring_success_count") or 0),
+        "structuring_timeout_count": int(structuring_stats.get("structuring_timeout_count") or 0),
+        "structuring_error_count": int(structuring_stats.get("structuring_error_count") or 0),
+        "fallback_structured_count": int(structuring_stats.get("fallback_structured_count") or 0),
+        "processed_after_fallback_count": int(structuring_stats.get("processed_after_fallback_count") or 0),
+        "dead_letter_count": int(structuring_stats.get("dead_letter_count") or 0),
+        "llm_retry_count": int(structuring_stats.get("llm_retry_count") or 0),
+        "circuit_breaker_open_count": int(structuring_stats.get("circuit_breaker_open_count") or 0),
+        "circuit_breaker_open": bool(structuring_stats.get("circuit_breaker_open")),
+        "circuit_breaker_open_at": structuring_stats.get("circuit_breaker_open_at"),
         "per_theme_metrics": per_theme_metrics,
         "details": details,
     }
 
 
-async def main() -> None:
-    if not os.getenv("DEEPSEEK_API_KEY"):
+def _parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Run full P2 Phase0 news -> structuring -> theme E2E.")
+    parser.add_argument("--sample-size", type=int, default=SAMPLE_SIZE)
+    parser.add_argument("--start-index", type=int, default=int(os.getenv("E2E_START_INDEX", "1")))
+    parser.add_argument("--resume-from-report", type=Path)
+    parser.add_argument("--skip-existing", action="store_true")
+    return parser.parse_args(argv)
+
+
+def _load_resume_details(report_path: Optional[Path]) -> List[Dict[str, Any]]:
+    if not report_path:
+        return []
+    payload = json.loads(report_path.read_text(encoding="utf-8"))
+    rows = payload.get("details") or []
+    return [row for row in rows if isinstance(row, dict)]
+
+
+def _completed_indices(details: List[Dict[str, Any]]) -> set[int]:
+    return {
+        int(row["index"])
+        for row in details
+        if row.get("status") == "ok" and isinstance(row.get("index"), int)
+    }
+
+
+def _structuring_fields(processor_result: Dict[str, Any]) -> Dict[str, Any]:
+    structuring = processor_result.get("structuring") if isinstance(processor_result.get("structuring"), dict) else {}
+    return {
+        "structuring_status": structuring.get("status"),
+        "structuring_error": structuring.get("error"),
+        "structuring_attempts": structuring.get("attempts"),
+        "structuring_llm_retry_count": structuring.get("llm_retry_count"),
+        "processed_after_fallback": structuring.get("status") == "fallback_minimal",
+        "structuring_circuit_breaker_open": bool(structuring.get("circuit_breaker_open")),
+        "structuring_circuit_breaker_open_at": structuring.get("open_at_index"),
+    }
+
+
+async def main(args: Optional[argparse.Namespace] = None) -> None:
+    args = args or _parse_args([])
+    enable_ai_analysis = os.getenv("E2E_ENABLE_AI_ANALYSIS", "true").lower() in {"1", "true", "yes", "on"}
+    if enable_ai_analysis and not os.getenv("DEEPSEEK_API_KEY"):
         raise RuntimeError("DEEPSEEK_API_KEY 未设置")
     _assert_phase4_env_lock()
 
@@ -368,19 +427,25 @@ async def main() -> None:
         config={
             "database_gateway": base_gateway,
             "enable_local_triage": False,
-            "enable_ai_analysis": os.getenv("E2E_ENABLE_AI_ANALYSIS", "true").lower() in {"1", "true", "yes", "on"},
+            "enable_ai_analysis": enable_ai_analysis,
+            "structuring_connect_timeout_s": float(os.getenv("STRUCTURING_CONNECT_TIMEOUT_S", "10")),
+            "structuring_read_timeout_s": float(os.getenv("STRUCTURING_READ_TIMEOUT_S", "60")),
+            "structuring_total_timeout_s": float(os.getenv("STRUCTURING_TOTAL_TIMEOUT_S", "90")),
+            "structuring_max_retries": int(os.getenv("STRUCTURING_MAX_RETRIES", "2")),
+            "structuring_circuit_breaker_threshold": int(os.getenv("STRUCTURING_CIRCUIT_BREAKER_THRESHOLD", "5")),
         },
     )
 
-    samples = _parse_test_cases(SAMPLE_SIZE)
+    samples = _parse_test_cases(args.sample_size, args.start_index)
     created_news_raw_ids: List[int] = []
     created_news_event_ids: List[int] = []
     seen_decision_ids: set[str] = set()
-    details: List[Dict[str, Any]] = []
+    details: List[Dict[str, Any]] = _load_resume_details(args.resume_from_report)
+    skip_indices = _completed_indices(details) if args.skip_existing else set()
     conn = await asyncpg.connect(**_pg_kwargs())
 
     try:
-        print(f"开始真实全链路 100 条 QA，样本数={SAMPLE_SIZE}", flush=True)
+        print(f"开始真实全链路 100 条 QA，样本数={args.sample_size}, start_index={args.start_index}", flush=True)
         await _cleanup_previous_test_data(conn)
         await news_handler.start_storage_service()
         print("正在初始化 ThemeProcessor...", flush=True)
@@ -392,7 +457,10 @@ async def main() -> None:
         await theme_processor.start()
         print("ThemeProcessor 启动完成", flush=True)
 
-        for idx, sample in enumerate(samples, start=1):
+        for idx, sample in enumerate(samples, start=args.start_index):
+            if idx in skip_indices:
+                _print_progress("resume skip existing", idx, args.start_index + args.sample_size - 1)
+                continue
             external_news_id = f"{batch_id}_{idx:03d}_{uuid.uuid4().hex[:6]}"
             payload = _build_v2_payload(
                 raw_text=sample["raw_text"],
@@ -403,13 +471,13 @@ async def main() -> None:
             )
 
             await stream_bus.publish_to_stream("news_raw", {"payload": payload})
-            _print_progress("news_raw injected", idx, SAMPLE_SIZE, external_news_id)
+            _print_progress("news_raw injected", idx, args.start_index + args.sample_size - 1, external_news_id)
 
             stored_news = await _wait_for_news_raw(base_gateway, external_news_id, timeout_s=60.0)
             if not stored_news:
                 raise RuntimeError(f"news_raw 未落库: {external_news_id}")
             created_news_raw_ids.append(int(stored_news["id"]))
-            _print_progress("news_raw persisted", idx, SAMPLE_SIZE, f"id={stored_news['id']}")
+            _print_progress("news_raw persisted", idx, args.start_index + args.sample_size - 1, f"id={stored_news['id']}")
 
             stored_message = {
                 "payload": {
@@ -446,12 +514,13 @@ async def main() -> None:
                         "confidence": None,
                         "reason_code": processor_result.get("error") or "news_stream_processor_failed",
                         "top1_hit": False,
+                        **_structuring_fields(processor_result),
                     }
                 )
                 _print_progress(
                     "structuring failed",
                     idx,
-                    SAMPLE_SIZE,
+                    args.start_index + args.sample_size - 1,
                     str(processor_result.get("error") or "unknown_error"),
                 )
                 continue
@@ -475,12 +544,13 @@ async def main() -> None:
                         "confidence": None,
                         "reason_code": "news_event_not_created",
                         "top1_hit": False,
+                        **_structuring_fields(processor_result),
                     }
                 )
-                _print_progress("news_event missing", idx, SAMPLE_SIZE)
+                _print_progress("news_event missing", idx, args.start_index + args.sample_size - 1)
                 continue
             created_news_event_ids.append(int(news_event_id))
-            _print_progress("news_event persisted", idx, SAMPLE_SIZE, f"event_id={news_event_id}")
+            _print_progress("news_event persisted", idx, args.start_index + args.sample_size - 1, f"event_id={news_event_id}")
 
             if not processor_result.get("structured_stream_published"):
                 details.append(
@@ -500,11 +570,12 @@ async def main() -> None:
                         "confidence": None,
                         "reason_code": "structured_stream_not_published",
                         "top1_hit": False,
+                        **_structuring_fields(processor_result),
                     }
                 )
-                _print_progress("structured stream missing", idx, SAMPLE_SIZE, f"event_id={news_event_id}")
+                _print_progress("structured stream missing", idx, args.start_index + args.sample_size - 1, f"event_id={news_event_id}")
                 continue
-            _print_progress("structured event published", idx, SAMPLE_SIZE)
+            _print_progress("structured event published", idx, args.start_index + args.sample_size - 1)
 
             new_decisions = await _wait_for_decisions(
                 redis_client,
@@ -531,9 +602,10 @@ async def main() -> None:
                         "confidence": None,
                         "reason_code": "decision_not_received",
                         "top1_hit": False,
+                        **_structuring_fields(processor_result),
                     }
                 )
-                _print_progress("decision missing", idx, SAMPLE_SIZE, f"event_id={news_event_id}")
+                _print_progress("decision missing", idx, args.start_index + args.sample_size - 1, f"event_id={news_event_id}")
                 continue
 
             decision = new_decisions[0]
@@ -563,6 +635,7 @@ async def main() -> None:
                     "equivalent_top1_hit": equivalent_top1_hit,
                     "equivalent_subject_keys": sample.get("equivalent_subject_keys") or [],
                     "equivalent_theme_names": sample.get("equivalent_theme_names") or [],
+                    **_structuring_fields(processor_result),
                 }
             )
             current_hits = sum(1 for row in details if row["top1_hit"])
@@ -570,11 +643,13 @@ async def main() -> None:
             _print_progress(
                 "decision received",
                 idx,
-                SAMPLE_SIZE,
+                args.start_index + args.sample_size - 1,
                 f"{decision.get('action')} -> {predicted} | top1={current_hits/idx:.4f} | eq_top1={current_equivalent_hits/idx:.4f}",
             )
 
-        report = _build_report(details)
+        processor_stats = await news_processor.get_business_stats()
+        processor_stats["dead_letter_count"] = await redis_client.xlen(dead_letter_stream)
+        report = _build_report(details, event_count=args.sample_size, structuring_stats=processor_stats)
         OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
         OUT_PATH.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
         print(
@@ -607,4 +682,4 @@ async def main() -> None:
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    asyncio.run(main(_parse_args()))

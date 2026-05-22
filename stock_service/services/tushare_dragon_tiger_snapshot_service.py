@@ -100,7 +100,9 @@ class TushareDragonTigerSnapshotService:
     ) -> TushareDragonTigerSnapshotResult:
         if not force_refresh:
             cached = self._load_cached(dataset_name=dataset_name, trade_date=trade_date)
-            if cached is not None:
+            # Tushare may publish Dragon Tiger rows after an early post-close poll.
+            # Do not let a zero-row snapshot pin the whole trading day to empty data.
+            if cached is not None and cached.row_count > 0:
                 return cached
 
         if dataset_name == "dragon_tiger_top_list":

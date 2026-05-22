@@ -77,3 +77,19 @@ async def test_after_1500_seeks_next_trade_date():
 async def test_explicit_trade_date_overrides():
     td = await resolve_pre_market_brief_trade_date(PreMarketBriefSpsClient(), explicit_trade_date="2026-05-19")
     assert td.isoformat() == "2026-05-19"
+
+
+async def test_after_1500_calendar_null_falls_back_to_next_weekday():
+    """When trade calendar returns no next_trade_date, fallback to next weekday."""
+    now = _cn(15, 0)
+    client = _FakeClient({"trade_date": "2026-05-20", "prev_trade_date": "2026-05-19"})  # no next_trade_date
+    td = await resolve_pre_market_brief_trade_date(client, now=now)
+    assert td.isoformat() == "2026-05-21"  # Wed→Thu
+
+
+async def test_after_1500_friday_falls_back_to_monday():
+    """Friday after 15:00 → fallback to Monday."""
+    now = datetime(2026, 5, 22, 15, 0, 0, tzinfo=CN_TZ)  # Friday
+    client = _FakeClient({})  # no data at all
+    td = await resolve_pre_market_brief_trade_date(client, now=now)
+    assert td.isoformat() == "2026-05-25"  # Friday→Monday

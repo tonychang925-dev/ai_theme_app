@@ -20,7 +20,6 @@ import httpx
 import os
 
 from frontend_bff.repositories.bff_repository import FrontendBffRepository
-from frontend_bff.services.collection_job_manager import CollectionJobManager
 from frontend_bff.realtime_service import realtime_service
 from frontend_bff.middleware.security_middleware import setup_security_middleware
 from stock_service.config import DEFAULT_CONFIG
@@ -116,7 +115,6 @@ except ImportError as e:
 
 
 bff_repo = FrontendBffRepository()
-collection_job_manager = CollectionJobManager()
 sse_push_service: Optional[SSEPushService] = None
 stock_screener_repo = StockScreenerRepository(DEFAULT_CONFIG)
 stock_screener_service = StockScreenerService(stock_screener_repo)
@@ -1907,44 +1905,63 @@ async def publish_recap_to_notion_proxy(payload: PublishNotionProxyPayload):
 @app.get("/api/collection/availability")
 @app.get("/api/v2/collection/availability")
 async def get_collection_availability(trade_date: Optional[str] = Query(default=None)):
-    return collection_job_manager.availability(trade_date)
+    url = f"{_sps_base_url()}/api/v1/collection/availability"
+    params = {"trade_date": trade_date} if trade_date else None
+    return await _proxy_sps_collection("GET", url, params=params)
 
 
 @app.post("/api/collection/start")
 @app.post("/api/v2/collection/start")
 async def start_collection(payload: CollectionStartRequest):
-    availability = collection_job_manager.availability(payload.trade_date)
-    if not availability["allowed"]:
-        raise HTTPException(status_code=400, detail=availability["message"])
-    job = collection_job_manager.create_job(payload.trade_date, payload.model_dump())
-    return job.to_dict()
+    url = f"{_sps_base_url()}/api/v1/collection/start"
+    return await _proxy_sps_collection("POST", url, json_payload=_model_to_dict(payload))
 
 
 @app.get("/api/collection/status")
 @app.get("/api/v2/collection/status")
 async def get_collection_status(job_id: str = Query(...)):
-    job = collection_job_manager.get_job(job_id)
-    if not job:
-        raise HTTPException(status_code=404, detail="job not found")
-    return job.to_dict()
+    url = f"{_sps_base_url()}/api/v1/collection/status"
+    return await _proxy_sps_collection("GET", url, params={"job_id": job_id})
 
 
 @app.post("/api/collection/cancel")
 @app.post("/api/v2/collection/cancel")
 async def cancel_collection(payload: CollectionJobActionRequest):
-    job = await collection_job_manager.cancel_job(payload.job_id)
-    if not job:
-        raise HTTPException(status_code=404, detail="job not found")
-    return job.to_dict()
+    url = f"{_sps_base_url()}/api/v1/collection/cancel"
+    return await _proxy_sps_collection("POST", url, json_payload=_model_to_dict(payload))
 
 
 @app.post("/api/collection/continue")
 @app.post("/api/v2/collection/continue")
 async def continue_collection(payload: CollectionJobActionRequest):
-    job = await collection_job_manager.continue_job(payload.job_id)
-    if not job:
-        raise HTTPException(status_code=404, detail="job not found")
-    return job.to_dict()
+    url = f"{_sps_base_url()}/api/v1/collection/continue"
+    return await _proxy_sps_collection("POST", url, json_payload=_model_to_dict(payload))
+
+
+async def _proxy_sps_collection(
+    method: str,
+    url: str,
+    *,
+    params: dict[str, Any] | None = None,
+    json_payload: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    try:
+        async with httpx.AsyncClient(timeout=45.0) as client:
+            response = await client.request(method, url, params=params, json=json_payload)
+            response.raise_for_status()
+            payload = response.json()
+            return payload if isinstance(payload, dict) else {}
+    except httpx.HTTPStatusError as exc:
+        raise HTTPException(status_code=exc.response.status_code, detail=exc.response.text)
+    except Exception as exc:
+        raise HTTPException(
+            status_code=503,
+            detail={
+                "code": "SPS_COLLECTION_UNAVAILABLE",
+                "message": str(exc),
+                "upstream": url,
+            },
+        )
 
 
 def _project_root() -> Path:

@@ -46,7 +46,7 @@ def test_layer_c_two_board_requires_at_least_two_hard_gate_hits() -> None:
     assert passed["passed"] is True
 
 
-def test_layer_d_allows_limit_up_day_by_design_contract() -> None:
+def test_layer_d_rejects_limit_up_day_before_weak_to_strong_confirmation() -> None:
     use_case = BuildWeakToStrongCandidateUseCase(read_ports=object(), write_ports=object())  # type: ignore[arg-type]
 
     rows = use_case.build_candidates(
@@ -76,5 +76,5 @@ def test_layer_d_allows_limit_up_day_by_design_contract() -> None:
         ],
     )
 
-    assert len(rows) == 1
-    assert rows[0]["stock_id"] == "000001.SZ"
+    assert rows == []
+    assert use_case._diagnostics["d1_fail_pct_gate"] == 1

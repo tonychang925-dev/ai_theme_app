@@ -1,0 +1,32 @@
+{
+  "run_id": "realtime_20260521_235153",
+  "stream": "stream:news:raw",
+  "running": false,
+  "started_at": "2026-05-22T07:51:53.320913+08:00",
+  "last_fetch_at": "2026-05-22T08:22:14.601881+08:00",
+  "last_success_at": "2026-05-22T08:22:15.720793+08:00",
+  "fetched_count": 620,
+  "pushed_count": 25,
+  "duplicate_count": 595,
+  "filtered_count": 0,
+  "filter_pass_count": 25,
+  "filter_error_count": 0,
+  "filter_mode": "rule",
+  "last_filter_reason": null,
+  "error_count": 0,
+  "last_error": null,
+  "prefilter_stats": {
+    "prompt_eval_count": 0,
+    "prompt_pass_count": 0,
+    "prompt_skip_count": 0,
+    "prompt_error_count": 0,
+    "prompt_total_ms": 0.0,
+    "prompt_noise_pass_count": 0,
+    "batch_budget_exhausted_count": 0,
+    "degraded": false,
+    "degrade_reason": "",
+    "prompt_p95_ms": 0.0,
+    "prompt_avg_ms": 0.0,
+    "qwen_ready": false
+  }
+}

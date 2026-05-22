@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64"><defs><linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00D4FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0052FF;stop-opacity:1" />
+    </linearGradient>
+    
+    
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8C00;stop-opacity:1" />
+    </linearGradient>
+
+    
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+      <feMerge>
+        <feMergeNode in="coloredBlur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glowStrong" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur" />
+      <feMerge>
+        <feMergeNode in="coloredBlur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    
+    <radialGradient id="bgGrad1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0a15;stop-opacity:1" />
+    </radialGradient>
+
+    
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E1E2E;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#14141F;stop-opacity:0.95" />
+    </linearGradient>
+    
+    
+    <radialGradient id="techGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#00D4FF;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#00D4FF;stop-opacity:0" />
+    </radialGradient>
+  </defs><g transform="translate(-335.33,-335.33) scale(0.9667)"><rect x="60" y="30" width="60" height="60" rx="14" fill="#141420" stroke="url(#cyanGrad)" stroke-width="1.5" />
+    
+    <polygon points="90,38 94,48 104,50 97,57 98,67 90,62 82,67 83,57 76,50 86,48" fill="url(#goldGrad)" />
+    
+    <rect x="78" y="55" width="24" height="28" rx="3" fill="none" stroke="#55556B" stroke-width="1.5" />
+    <line x1="82" y1="62" x2="96" y2="62" stroke="#55556B" stroke-width="1" />
+    <line x1="82" y1="68" x2="94" y2="68" stroke="#55556B" stroke-width="1" />
+    </g></svg>
