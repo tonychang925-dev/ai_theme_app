@@ -160,6 +160,67 @@ async def test_llm_judge_off_skips_enabled_judge(monkeypatch):
     assert result.decision == "MATCH"
 
 
+@pytest.mark.asyncio
+async def test_high_noise_v1_fallback_match_is_downgraded_to_review(monkeypatch):
+    monkeypatch.setenv("THEME_MATCH_LLM_JUDGE_MODE", "off")
+    engine = _NoDenseThemeMatchEngine(
+        _Repo([
+            _profile(
+                "9034920",
+                "东方头",
+                aliases=["东方头"],
+                core_objects=["科技"],
+                must_terms=["科技"],
+            )
+        ])
+    )
+
+    result = await engine.match_event(
+        ThemeMatchRequest(
+            event_id=2,
+            news_id=2,
+            title="东方头相关消息进入题材匹配",
+            content="东方头 fallback gate 触发测试。",
+            summary="东方头",
+            event_type="公告",
+        )
+    )
+
+    assert result.decision == "HUMAN_REVIEW"
+    assert result.reason_code == "high_noise_v1_fallback_review"
+    assert result.audit["high_noise_fallback_guard"]["runtime_profile_source"] == "v1_fallback"
+
+
+@pytest.mark.asyncio
+async def test_high_noise_v2_profile_keeps_match(monkeypatch):
+    monkeypatch.setenv("THEME_MATCH_LLM_JUDGE_MODE", "off")
+    engine = _NoDenseThemeMatchEngine(
+        _Repo([
+            _profile(
+                "9050084",
+                "精酿啤酒",
+                aliases=["精酿啤酒"],
+                core_objects=["精酿啤酒"],
+                must_terms=["精酿啤酒"],
+                gate_json={"profile_version": "v2"},
+            )
+        ])
+    )
+
+    result = await engine.match_event(
+        ThemeMatchRequest(
+            event_id=3,
+            news_id=3,
+            title="精酿啤酒新品带动小酒馆消费升温",
+            content="精酿啤酒消费链路。",
+            summary="精酿啤酒消费",
+            event_type="产业",
+        )
+    )
+
+    assert result.decision == "MATCH"
+
+
 def test_rerank_doc_vector_cache_reuses_profile_vectors(monkeypatch):
     monkeypatch.setenv("THEME_MATCH_RERANK_VECTOR_CACHE_MAX", "10")
 

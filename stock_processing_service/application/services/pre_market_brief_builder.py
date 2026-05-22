@@ -360,7 +360,9 @@ class PreMarketBriefBuilder:
         opportunity_alerts: list[dict[str, Any]] | None = None,
         limit: int = 200,
     ) -> dict[str, list[dict[str, Any]]]:
-        matched_events = self._dedupe_by_key(matched_events, key_fields=("event_id", "subject_key", "title"))[:limit]
+        matched_events = self._dedupe_by_key(matched_events, key_fields=("event_id", "subject_key", "title"))
+        matched_events = self._select_primary_event_matches(matched_events)
+        major_events = [row for row in matched_events if not self._is_low_value_major_event(row)][:limit]
         review_events = self._dedupe_by_key(review_events, key_fields=("event_id", "title"))[:limit]
         unknown_events = self._dedupe_by_key(unknown_events, key_fields=("event_id", "title"))[:limit]
         company_announcements_raw = self._build_company_announcements(intel_announcements_raw)
@@ -369,8 +371,8 @@ class PreMarketBriefBuilder:
         legacy_risk = self._build_risk_alerts(review_events, unknown_events)
         all_risk = legacy_risk + (risk_alerts or [])[:limit]
         return {
-            "major_events": sorted(matched_events, key=lambda row: float(row.get("impact_score") or 0), reverse=True)[:limit],
-            "matched_themes": self._build_matched_themes(matched_events),
+            "major_events": sorted(major_events, key=lambda row: float(row.get("impact_score") or 0), reverse=True)[:limit],
+            "matched_themes": self._build_matched_themes(major_events),
             "review_events": review_events,
             "unknown_watch": unknown_events,
             "risk_alerts": all_risk,
@@ -407,6 +409,52 @@ class PreMarketBriefBuilder:
                 }
             )
         return sorted(themes, key=lambda row: (-int(row["event_count"]), -float(row.get("impact_score") or 0))) 
+
+    @staticmethod
+    def _select_primary_event_matches(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        primary_by_event: dict[Any, dict[str, Any]] = {}
+        passthrough: list[dict[str, Any]] = []
+        for row in rows:
+            event_id = row.get("event_id")
+            if event_id in (None, ""):
+                passthrough.append(row)
+                continue
+            previous = primary_by_event.get(event_id)
+            if previous is None or PreMarketBriefBuilder._primary_rank_key(row) > PreMarketBriefBuilder._primary_rank_key(previous):
+                primary_by_event[event_id] = row
+        return [*primary_by_event.values(), *passthrough]
+
+    @staticmethod
+    def _primary_rank_key(row: dict[str, Any]) -> tuple[float, float, str]:
+        return (
+            float(row.get("confidence") or 0.0),
+            float(row.get("impact_score") or 0.0),
+            str(row.get("occurred_at") or ""),
+        )
+
+    @staticmethod
+    def _is_low_value_major_event(row: dict[str, Any]) -> bool:
+        text = " ".join(str(row.get(field) or "") for field in ("title", "summary"))
+        low_value_terms = (
+            "减持",
+            "回购",
+            "澄清",
+            "交易监管",
+            "限制开仓",
+            "天气预警",
+            "暴雨",
+            "山洪",
+            "地震灾害",
+            "灾后应急",
+            "列车停运",
+            "旅客列车停",
+            "任命",
+            "选举",
+            "一季度财报",
+            "季度财报",
+            "发布财报",
+        )
+        return any(term in text for term in low_value_terms)
 
     def _build_risk_alerts(
         self,

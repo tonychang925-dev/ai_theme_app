@@ -1666,6 +1666,20 @@ class ThemeMatchEngine:
         self._rerank_doc_vector_cache: OrderedDict[tuple[str, str], List[float]] = OrderedDict()
         self._query_vector_cache: OrderedDict[str, List[float]] = OrderedDict()
 
+    _HIGH_NOISE_FALLBACK_SUBJECT_KEYS = {
+        "9053827",  # 雅江水电最新互动
+        "9050084",  # 精酿啤酒
+        "9022889",  # 著名IP
+        "9034544",  # 乌克兰重建
+        "9024042",  # 全国文旅
+        "9034920",  # 东方头
+        "9051378",  # 陆军
+        "9059230",  # 美国缺电
+        "9020124",  # 天然气重卡
+        "9023110",  # AI手机
+        "9013587",  # 传媒
+    }
+
     async def match_event(self, request: ThemeMatchRequest) -> ThemeDecisionEnvelope:
         started_at = time.perf_counter()
         last_stage_at = started_at
@@ -1768,7 +1782,36 @@ class ThemeMatchEngine:
             env = self._final_decide_rule_only(request, candidates, direct_hit_keys, profile_map)
         mark("final_decision_ms")
         timing_ms["total_match_ms"] = round((time.perf_counter() - started_at) * 1000, 3)
+        env = self._guard_high_noise_fallback_match(env, profile_map)
         return self._attach_runtime_audit(env, timing_ms, counters)
+
+    def _guard_high_noise_fallback_match(
+        self,
+        env: ThemeDecisionEnvelope,
+        profile_map: Dict[str, ThemeProfile],
+    ) -> ThemeDecisionEnvelope:
+        if env.decision != "MATCH" or env.matched_subject_key not in self._HIGH_NOISE_FALLBACK_SUBJECT_KEYS:
+            return env
+        profile = profile_map.get(env.matched_subject_key)
+        gate_json = profile.gate_json if profile and isinstance(profile.gate_json, dict) else {}
+        if gate_json.get("profile_version") == "v2":
+            return env
+
+        audit = env.audit if isinstance(env.audit, dict) else {}
+        audit["high_noise_fallback_guard"] = {
+            "blocked": True,
+            "subject_key": env.matched_subject_key,
+            "previous_decision": env.decision,
+            "previous_reason_code": env.reason_code,
+            "runtime_profile_source": "v1_fallback",
+        }
+        env.decision = "HUMAN_REVIEW"
+        env.confidence = min(float(env.confidence or 0.0), _squash01(0.5))
+        env.reason_code = "high_noise_v1_fallback_review"
+        env.related_matches = []
+        env.review_required = True
+        env.audit = audit
+        return env
 
     def _get_sentence_model(self):
         if self._sentence_model is not None:

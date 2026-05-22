@@ -1,50 +1,81 @@
 {
   "must": [
-    "投资者互动",
-    "发布财报",
-    "公告",
-    "管理层解读"
+    "雅江水电最新互动",
+    "雅江水电互动易",
+    "雅江水电e互动"
+  ],
+  "strong": [
+    "雅江水电投资者互动",
+    "雅江水电投资者关系"
   ],
   "should": [
-    "交易所平台",
-    "上交所“e互动”",
-    "深交所“互动易”",
-    "公司官网专栏",
+    "雅江水电",
+    "互动易",
+    "e互动",
     "投资者关系专区",
-    "管理层解读业绩并回应关切",
-    "路演与开放日",
-    "雪球"
+    "投资者问答"
   ],
-  "not": [],
-  "evidence_refs": [
-    {
-      "term": "投资者互动",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "投资者互动"
-    },
-    {
-      "term": "发布财报",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "发布财报"
-    },
-    {
-      "term": "公告",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "公告"
-    },
-    {
-      "term": "管理层解读",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "管理层解读"
-    }
+  "support_terms": [
+    "公告",
+    "发布财报",
+    "管理层解读",
+    "雪球",
+    "路演"
   ],
+  "no_anchor_terms": [
+    "公告",
+    "发布财报",
+    "管理层解读",
+    "投资者互动",
+    "互动易",
+    "e互动",
+    "雪球",
+    "路演"
+  ],
+  "not": [
+    "减持",
+    "回购",
+    "交易监管",
+    "限制开仓",
+    "普通财报",
+    "普通公告"
+  ],
+  "negative": [
+    "减持公告",
+    "回购公告",
+    "交易所监管公告",
+    "普通投资者互动",
+    "普通管理层解读"
+  ],
+  "boundary_rules": {
+    "accept_requires_any": [
+      "雅江水电最新互动",
+      "雅江水电互动易",
+      "雅江水电e互动",
+      "雅江水电投资者互动"
+    ],
+    "reject_if_only_hits": [
+      "公告",
+      "发布财报",
+      "管理层解读",
+      "投资者互动",
+      "互动易",
+      "e互动"
+    ],
+    "reject_domains": [
+      "减持公告",
+      "回购公告",
+      "交易监管",
+      "普通公司公告"
+    ],
+    "nearby_confusions": [
+      "雅江水电站",
+      "投资者关系"
+    ]
+  },
   "subject_id": "9053827",
-  "quality": "strong",
-  "generated_at": "2026-04-01T02:25:33",
+  "quality": "accepted_candidate",
+  "generated_at": "2026-05-22T08:40:00",
   "semantic_type": "资本市场沟通机制",
   "strategy_type": "event_driven",
   "source_type": 1
