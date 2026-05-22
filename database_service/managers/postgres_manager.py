@@ -7153,6 +7153,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 THEN 'akshare_realtime'
                 WHEN esm.source = 'jyhf_dom_confirmed'
                 THEN 'jyhf_cdp'
+                WHEN esm.source LIKE 'product_runtime_%'
+                THEN esm.source
                 ELSE 'realtime_news'
             END::text AS source_channel
         FROM event_subject_map esm

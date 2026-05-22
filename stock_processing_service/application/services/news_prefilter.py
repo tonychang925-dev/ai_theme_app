@@ -236,6 +236,38 @@ class NewsPreFilterAdapter:
             logger.warning("Qwen prompt init failed: %s", exc)
             return False
 
+    # ── Qwen semantic dedup ────────────────────────────────────────────
+
+    def check_semantic_duplicate(self, title_a: str, title_b: str) -> bool | None:
+        """Use Qwen to judge if two news items are the same event.
+
+        Returns True if duplicates, False if distinct, None if Qwen unavailable.
+        """
+        if not self._ensure_qwen_ready():
+            return None
+        try:
+            prompt = (
+                "判断以下两条A股财经新闻是否在报道同一事件。\n"
+                "只输出JSON，不要解释：\n"
+                '{"same": true或false, "reason": "不超过20字"}\n'
+                f"新闻A: {title_a[:200]}\n"
+                f"新闻B: {title_b[:200]}\n"
+                "输出："
+            )
+            response = self._qwen_llm(
+                prompt, max_tokens=48, stop=["\n\n"], echo=False,
+                temperature=0.0, top_p=0.9, top_k=40,
+            )
+            raw = str(response["choices"][0]["text"]).strip()
+            import re as _re
+            m = _re.search(r'\{[^}]+\}', raw)
+            if m:
+                parsed = _json.loads(m.group())
+                return bool(parsed.get("same", False))
+            return "same" in raw.lower() and "true" in raw.lower()
+        except Exception:
+            return None  # fail-open: don't dedup if uncertain
+
     def to_payload_fields(self, result: NewsTriageResult) -> Dict[str, str]:
         return {
             "prefilter_pass": "true" if result.pass_ else "false",

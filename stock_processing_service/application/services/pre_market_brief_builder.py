@@ -162,7 +162,12 @@ class PreMarketBriefBuilder:
         fn = getattr(self._read_gateway, "get_pre_market_subject_events", None)
         if callable(fn):
             rows = await fn(trade_date, limit=limit, start_at=start_at, end_at=end_at)
-            return [self._normalize_event_row(row, "event_subject_map") for row in list(rows or [])[:limit]]
+            normalized = [self._normalize_event_row(row, "event_subject_map") for row in list(rows or [])]
+            return [
+                row
+                for row in normalized
+                if not str(row.get("source_channel") or "").startswith("product_runtime_")
+            ][:limit]
         fn = getattr(self._read_gateway, "get_intel_news_events", None)
         if not callable(fn):
             return []
