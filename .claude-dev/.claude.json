@@ -34,7 +34,8 @@
     "rename-conversation": 11,
     "custom-commands": 11
   },
-  "promptQueueUseCount": 378,
+  "promptQueueUseCount": 381,
+  "showExpandedTodos": true,
   "cachedGrowthBookFeatures": {
     "tengu_ember_latch": false,
     "tengu-off-switch": {
