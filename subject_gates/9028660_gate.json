@@ -1,71 +1,97 @@
 {
+  "subject_id": "9028660",
+  "quality": "accepted_candidate",
+  "generated_at": "2026-05-22T00:00:00",
+  "semantic_type": "华为半导体供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1,
   "must": [
-    "芯片",
-    "服务器",
-    "AI芯片昇腾910D",
-    "先进封装",
-    "华为"
+    "华为芯片链",
+    "华为芯片",
+    "海思",
+    "昇腾",
+    "鲲鹏",
+    "华为算力芯片",
+    "华为半导体供应链"
+  ],
+  "strong": [
+    "华为先进封装",
+    "昇腾910",
+    "海思芯片",
+    "鲲鹏芯片",
+    "华为AI芯片"
   ],
   "should": [
-    "一体机",
-    "软硬件系统",
-    "大模型",
-    "国产框架原生大模型",
-    "国产硬件平台",
-    "中国信息通信研究院",
-    "华为云",
-    "盛合晶微",
-    "哈勃投资",
-    "桥接技术",
-    "多芯片封装整合",
-    "HBM技术"
+    "国产AI芯片",
+    "国产算力芯片",
+    "先进封装",
+    "算力服务器",
+    "华为云"
+  ],
+  "support_terms": [
+    "芯片",
+    "半导体",
+    "代工",
+    "晶圆",
+    "封装",
+    "制造",
+    "国产替代"
+  ],
+  "no_anchor_terms": [
+    "芯片",
+    "半导体",
+    "代工",
+    "晶圆",
+    "封装",
+    "制造",
+    "国产替代",
+    "服务器"
   ],
   "not": [
-    "美国政府",
-    "台积电",
-    "南京厂",
-    "验证最终用户",
-    "VEU地位",
-    "申请许可",
-    "采购美系半导体设备",
-    "三星"
+    "泛半导体新闻",
+    "普通晶圆代工",
+    "普通封装测试",
+    "英伟达供应链",
+    "苹果芯片链",
+    "非华为芯片产业链"
   ],
-  "evidence_refs": [
-    {
-      "term": "芯片",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "芯片"
-    },
-    {
-      "term": "服务器",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "服务器"
-    },
-    {
-      "term": "AI芯片昇腾910D",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "AI芯片昇腾910D"
-    },
-    {
-      "term": "先进封装",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "先进封装"
-    },
-    {
-      "term": "华为",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "华为"
-    }
+  "negative": [
+    "泛半导体新闻",
+    "普通晶圆代工",
+    "普通封装测试",
+    "英伟达供应链",
+    "苹果芯片链",
+    "非华为芯片产业链"
   ],
-  "subject_id": "9028660",
-  "quality": "medium",
-  "generated_at": "2026-03-10T11:57:10",
-  "semantic_type": "技术突破与产业链协同",
-  "strategy_type": "industry_chain",
-  "source_type": 1
+  "boundary_rules": {
+    "accept_requires_any": [
+      "华为芯片链",
+      "华为芯片",
+      "海思",
+      "昇腾",
+      "鲲鹏",
+      "华为算力芯片",
+      "华为半导体供应链"
+    ],
+    "reject_if_only_hits": [
+      "芯片",
+      "半导体",
+      "代工",
+      "晶圆",
+      "封装",
+      "制造",
+      "国产替代"
+    ],
+    "reject_domains": [
+      "泛半导体",
+      "普通晶圆代工",
+      "普通封装测试",
+      "非华为供应链"
+    ],
+    "nearby_confusions": [
+      "英伟达供应链",
+      "苹果芯片链",
+      "半导体制造"
+    ]
+  }
 }

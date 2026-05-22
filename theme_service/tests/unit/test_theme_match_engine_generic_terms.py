@@ -221,6 +221,66 @@ async def test_high_noise_v2_profile_keeps_match(monkeypatch):
     assert result.decision == "MATCH"
 
 
+@pytest.mark.asyncio
+async def test_weak_v1_alias_direct_hit_is_downgraded_to_review(monkeypatch):
+    monkeypatch.setenv("THEME_MATCH_LLM_JUDGE_MODE", "off")
+    engine = _NoDenseThemeMatchEngine(
+        _Repo([
+            _profile(
+                "phase2b-v1-region",
+                "福建题材",
+                aliases=["福建"],
+                must_terms=["福建"],
+            )
+        ])
+    )
+
+    result = await engine.match_event(
+        ThemeMatchRequest(
+            event_id=4,
+            news_id=4,
+            title="福建发布天气预警",
+            content="福建地方新闻触发旧 fallback direct hit。",
+            summary="福建天气",
+            event_type="地方新闻",
+        )
+    )
+
+    assert result.decision == "HUMAN_REVIEW"
+    assert result.reason_code == "weak_v1_direct_hit_review"
+    assert result.audit["v1_direct_hit_guard"]["runtime_profile_source"] == "v1_fallback"
+    assert result.audit["v1_direct_hit_guard"]["direct_hit_terms"] == ["福建"]
+
+
+@pytest.mark.asyncio
+async def test_full_v1_subject_name_direct_hit_keeps_match(monkeypatch):
+    monkeypatch.setenv("THEME_MATCH_LLM_JUDGE_MODE", "off")
+    engine = _NoDenseThemeMatchEngine(
+        _Repo([
+            _profile(
+                "phase2b-v1-full-name",
+                "科技类重组",
+                aliases=["科技类重组"],
+                must_terms=["科技类重组"],
+            )
+        ])
+    )
+
+    result = await engine.match_event(
+        ThemeMatchRequest(
+            event_id=5,
+            news_id=5,
+            title="科技类重组预期升温",
+            content="科技类重组出现专名证据。",
+            summary="科技类重组",
+            event_type="产业",
+        )
+    )
+
+    assert result.decision == "MATCH"
+    assert result.reason_code == "direct_theme_name_hit"
+
+
 def test_rerank_doc_vector_cache_reuses_profile_vectors(monkeypatch):
     monkeypatch.setenv("THEME_MATCH_RERANK_VECTOR_CACHE_MAX", "10")
 

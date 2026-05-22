@@ -43,7 +43,7 @@ class NewsPreFilterAdapter:
         self,
         *,
         enabled: bool = True,
-        mode: str = "rule",
+        mode: str = "rule_prompt",
         model_path: str = "",
         min_importance: int = 40,
         timeout_seconds: float = 2.0,
@@ -100,8 +100,14 @@ class NewsPreFilterAdapter:
             rule_decision = str(rule_raw.get("decision") or "PASS").upper()
 
             # 2. 非 prompt 模式，或规则已明确 → 直接返回
+            #    rule-only（含降级）模式下，灰区默认 SKIP，不再保守放行
             if self.mode == "rule" or self._degraded:
-                return _to_result(rule_raw)
+                result = _to_result(rule_raw)
+                if rule_raw.get("gray") and result.pass_:
+                    return NewsTriageResult(
+                        pass_=False, decision="SKIP",
+                        reason="rule:gray_conservative_skip", mode="rule", score=None)
+                return result
             if not self._use_qwen:
                 return _to_result(rule_raw)
             if rule_decision in {"SKIP", "PASS"} and rule_raw.get("gray") != True:

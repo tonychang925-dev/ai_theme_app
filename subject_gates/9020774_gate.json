@@ -1,44 +1,90 @@
 {
+  "subject_id": "9020774",
+  "quality": "accepted_candidate",
+  "generated_at": "2026-05-22T00:00:00",
+  "semantic_type": "证券行业并购整合",
+  "strategy_type": "event_driven",
+  "source_type": 1,
   "must": [
-    "券商",
-    "并购重组",
-    "重大资产重组"
+    "券商重组",
+    "证券公司重组",
+    "券商合并",
+    "证券公司合并",
+    "券商并购",
+    "证券行业整合"
+  ],
+  "strong": [
+    "券商牌照整合",
+    "证券牌照整合",
+    "国泰海通",
+    "国泰君安海通合并"
   ],
   "should": [
-    "上市券商",
-    "券商板块",
-    "国泰君安",
-    "海通证券",
-    "自营账户",
-    "资管账户",
-    "融资融券账户",
-    "西部证券"
+    "证券公司",
+    "券商",
+    "并购整合",
+    "股权划转",
+    "吸收合并"
   ],
-  "not": [],
-  "evidence_refs": [
-    {
-      "term": "券商",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "券商"
-    },
-    {
-      "term": "并购重组",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "并购重组"
-    },
-    {
-      "term": "重大资产重组",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "重大资产重组"
-    }
+  "support_terms": [
+    "收购",
+    "并购",
+    "重组",
+    "股权",
+    "资产"
   ],
-  "subject_id": "9020774",
-  "quality": "weak",
-  "generated_at": "2026-04-01T15:23:46",
-  "semantic_type": "公司事件",
-  "strategy_type": "event_driven",
-  "source_type": 1
+  "no_anchor_terms": [
+    "券商",
+    "证券",
+    "收购",
+    "并购",
+    "重组",
+    "股权转让",
+    "资产注入",
+    "上市公司并购"
+  ],
+  "not": [
+    "普通上市公司收购",
+    "产业并购",
+    "基金并购",
+    "非券商资产重组",
+    "非证券行业重组"
+  ],
+  "negative": [
+    "普通上市公司收购",
+    "产业并购",
+    "基金并购",
+    "非券商资产重组",
+    "非证券行业重组"
+  ],
+  "boundary_rules": {
+    "accept_requires_any": [
+      "券商重组",
+      "证券公司重组",
+      "券商合并",
+      "证券公司合并",
+      "券商并购",
+      "证券行业整合"
+    ],
+    "reject_if_only_hits": [
+      "券商",
+      "证券",
+      "收购",
+      "并购",
+      "重组",
+      "股权",
+      "资产"
+    ],
+    "reject_domains": [
+      "普通上市公司收购",
+      "产业并购",
+      "基金并购",
+      "非证券行业重组"
+    ],
+    "nearby_confusions": [
+      "科技类重组",
+      "并购基金",
+      "产业并购"
+    ]
+  }
 }

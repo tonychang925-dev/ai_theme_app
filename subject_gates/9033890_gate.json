@@ -1,48 +1,93 @@
 {
+  "subject_id": "9033890",
+  "quality": "accepted_candidate",
+  "generated_at": "2026-05-22T00:00:00",
+  "semantic_type": "科技资产并购重组",
+  "strategy_type": "event_driven",
+  "source_type": 1,
   "must": [
-    "半导体设备",
-    "半导体材料",
-    "芯片"
+    "科技类重组",
+    "科技资产重组",
+    "科技公司并购重组",
+    "科技资产注入",
+    "科技企业借壳",
+    "科技公司控制权变更"
+  ],
+  "strong": [
+    "科技资产并购",
+    "科技资产整合",
+    "科技企业重大资产重组"
   ],
   "should": [
-    "通信",
-    "量子计算",
-    "机器人",
-    "算力与服务器",
-    "新材料",
-    "并购交易规模",
-    "并购基金管理人",
-    "科技产业金融一体化",
-    "国际竞争力",
-    "专业并购基金",
-    "并购案例",
-    "并购重组"
+    "控制权变更",
+    "资产注入",
+    "借壳",
+    "并购重组",
+    "科技资产"
   ],
-  "not": [],
-  "evidence_refs": [
-    {
-      "term": "半导体设备",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "半导体设备"
-    },
-    {
-      "term": "半导体材料",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "半导体材料"
-    },
-    {
-      "term": "芯片",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "芯片"
-    }
+  "support_terms": [
+    "科技",
+    "重组",
+    "并购",
+    "投资",
+    "上市",
+    "基金",
+    "产业"
   ],
-  "subject_id": "9033890",
-  "quality": "weak",
-  "generated_at": "2026-04-02T06:49:52",
-  "semantic_type": "产业链/供应链",
-  "strategy_type": "industry_chain",
-  "source_type": 1
+  "no_anchor_terms": [
+    "科技",
+    "重组",
+    "并购",
+    "投资",
+    "上市",
+    "基金",
+    "产业投资",
+    "战略合作",
+    "芯片"
+  ],
+  "not": [
+    "普通科技新闻",
+    "普通产品发布",
+    "普通产业基金",
+    "非重组公告",
+    "非科技资产并购"
+  ],
+  "negative": [
+    "普通科技新闻",
+    "普通产品发布",
+    "普通产业基金",
+    "非重组公告",
+    "非科技资产并购"
+  ],
+  "boundary_rules": {
+    "accept_requires_any": [
+      "科技类重组",
+      "科技资产重组",
+      "科技公司并购重组",
+      "科技资产注入",
+      "科技企业借壳",
+      "科技公司控制权变更"
+    ],
+    "reject_if_only_hits": [
+      "科技",
+      "重组",
+      "并购",
+      "投资",
+      "上市",
+      "基金",
+      "产业投资",
+      "战略合作"
+    ],
+    "reject_domains": [
+      "普通科技新闻",
+      "产品发布",
+      "普通产业基金",
+      "非重组公告"
+    ],
+    "nearby_confusions": [
+      "券商重组预期",
+      "普通并购",
+      "科技产业基金"
+    ]
+  }
 }
