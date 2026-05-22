@@ -53,61 +53,100 @@ function SectionShell({ title, children, empty }: { title: string; children: Rea
   );
 }
 
-function EventList({ events, mode = "normal" }: { events: PreMarketBriefEvent[]; mode?: "normal" | "review" | "unknown" }) {
+function EventTable({ events, mode = "normal" }: { events: PreMarketBriefEvent[]; mode?: "normal" | "review" | "unknown" }) {
   if (!events.length) return null;
+  const isReviewMode = mode !== "normal";
   return (
-    <div className="pre-market-event-list">
-      {events.map((event, idx) => (
-        <article className={`pre-market-event is-${mode}`} key={eventKey(event, idx)}>
-          <div className="pre-market-event-head">
-            <strong>{event.title || "未命名事件"}</strong>
-            <span className="recap-chip is-status">{score(event.impact_score)}</span>
-          </div>
-          <p className="workspace-note">{event.summary || event.title || "暂无摘要"}</p>
-          <div className="recap-tag-stack">
-            {event.theme_name && <span className="recap-chip is-basis">{event.theme_name}</span>}
-            {event.confidence !== undefined && <span className="recap-chip is-watch">置信度 {score(event.confidence)}</span>}
-            {event.reason && <span className="recap-chip">{event.reason}</span>}
-            {event.source_channel && <span className="recap-chip">{event.source_channel}</span>}
-          </div>
-        </article>
-      ))}
+    <div className="recap-table-wrap">
+      <table className="recap-table pre-market-event-table">
+        <thead>
+          <tr>
+            {isReviewMode && <th>类型</th>}
+            <th>标题</th>
+            <th>题材</th>
+            <th>影响分</th>
+            <th>置信度</th>
+            <th>来源</th>
+            <th>摘要</th>
+          </tr>
+        </thead>
+        <tbody>
+          {events.map((event, idx) => (
+            <tr key={eventKey(event, idx)} className={isReviewMode ? `row-${mode}` : ""}>
+              {isReviewMode && (
+                <td>
+                  <span className={`recap-chip ${mode === "review" ? "is-watch" : "is-risk"}`}>
+                    {mode === "review" ? "待复核" : "未匹配"}
+                  </span>
+                </td>
+              )}
+              <td className="recap-cell-wrap"><strong>{event.title || "未命名事件"}</strong></td>
+              <td>{event.theme_name ? <span className="recap-chip is-basis">{event.theme_name}</span> : "--"}</td>
+              <td>{score(event.impact_score)}</td>
+              <td>{event.confidence !== undefined ? score(event.confidence) : "--"}</td>
+              <td>{event.source_channel ? <span className="recap-chip">{event.source_channel}</span> : "--"}</td>
+              <td className="recap-cell-wrap">{event.summary || event.reason || "--"}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
 
-function AnnouncementList({ announcements }: { announcements: any[] }) {
+function AnnouncementTable({ announcements }: { announcements: any[] }) {
   if (!announcements.length) return null;
+  // 展平分组结构为单层列表
+  const flat: any[] = [];
+  for (const group of announcements) {
+    for (const a of group.announcements || []) {
+      flat.push({ ...a, _stock_code: group.stock_code, _stock_name: group.stock_name });
+    }
+  }
   return (
-    <div className="pre-market-event-list">
-      {announcements.map((group: any, gi: number) => (
-        <div key={gi} className="pre-market-event is-announcement">
-          <div className="pre-market-event-head">
-            <strong>{group.stock_code} {group.stock_name}</strong>
-            <span className="recap-chip">{group.announcement_count} 条公告</span>
-          </div>
-          {group.announcements.map((a: any, ai: number) => (
-            <div key={ai} style={{ marginTop: ai > 0 ? 8 : 4, paddingTop: ai > 0 ? 8 : 0, borderTop: ai > 0 ? '1px solid #2a2a2a' : 'none' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 8 }}>
-                <strong style={{ fontSize: 13, flex: 1 }}>{a.title}</strong>
-                {a.pdf_url && (
-                  <a href={a.pdf_url} target="_blank" rel="noopener noreferrer"
-                     style={{ fontSize: 11, color: '#78a9ff', whiteSpace: 'nowrap', textDecoration: 'none' }}
-                     title="查看PDF原文">
-                    PDF原文 &#8599;
-                  </a>
+    <div className="recap-table-wrap">
+      <table className="recap-table pre-market-announcement-table">
+        <thead>
+          <tr>
+            <th>股票</th>
+            <th>公告标题</th>
+            <th>级别</th>
+            <th>发布时间</th>
+            <th>PDF</th>
+            <th>摘要</th>
+          </tr>
+        </thead>
+        <tbody>
+          {flat.map((a: any, idx: number) => (
+            <tr key={`${a.event_id || idx}`}>
+              <td style={{ whiteSpace: "nowrap" }}>
+                <span className="recap-chip">{a._stock_code}</span>{" "}
+                <strong>{a._stock_name || ""}</strong>
+              </td>
+              <td className="recap-cell-wrap">{a.title}</td>
+              <td>
+                {a.event_level === "important" ? (
+                  <span className="recap-chip is-risk">重要</span>
+                ) : (
+                  <span className="recap-chip is-pending">{a.event_level || "普通"}</span>
                 )}
-              </div>
-              <p className="workspace-note" style={{ marginTop: 2 }}>
-                {a.summary || "暂无摘要"}
-                {a.publish_time && <span style={{ marginLeft: 8, color: '#888' }}>{String(a.publish_time).replace('T', ' ').slice(0, 16)}</span>}
-                {a.event_level === 'important' && <span className="recap-chip is-risk" style={{ marginLeft: 6 }}>重要</span>}
-                {a.event_type && <span className="recap-chip" style={{ marginLeft: 4 }}>{a.event_type}</span>}
-              </p>
-            </div>
+              </td>
+              <td style={{ whiteSpace: "nowrap" }}>
+                {a.publish_time ? String(a.publish_time).replace("T", " ").slice(0, 16) : "--"}
+              </td>
+              <td>
+                {a.pdf_url ? (
+                  <a href={a.pdf_url} target="_blank" rel="noopener noreferrer"
+                     style={{ fontSize: 11, color: "#78a9ff", whiteSpace: "nowrap", textDecoration: "none" }}>
+                    PDF &#8599;
+                  </a>
+                ) : "--"}
+              </td>
+              <td className="recap-cell-wrap">{a.summary || "--"}</td>
+            </tr>
           ))}
-        </div>
-      ))}
+        </tbody>
+      </table>
     </div>
   );
 }
@@ -174,18 +213,36 @@ function OpportunityCard({ item }: { item: PreMarketOpportunity }) {
   const tierOrder = ["A", "B", "C"];
   const tiers = item.tiers || {};
   const fallbackStocks = item.stocks || [];
+
+  const renderStockTable = (stocks: PreMarketOpportunityStock[]) => (
+    <div className="recap-table-wrap">
+      <table className="recap-table pre-market-stock-table">
+        <thead>
+          <tr>
+            <th>股票</th>
+            <th>档位</th>
+            <th>分数</th>
+            <th>理由</th>
+            <th>风险</th>
+          </tr>
+        </thead>
+        <tbody>{stocks.map((stock, idx) => <OpportunityStockRow stock={stock} key={`${stock.stock_id || "stock"}-${idx}`} />)}</tbody>
+      </table>
+    </div>
+  );
+
   return (
-    <article className="recap-table-card pre-market-opportunity">
-      <div className="recap-table-head">
-        <div>
-          <strong>{item.theme_name || "未命名题材"}</strong>
-          <p className="workspace-note">{item.latest_event_title || "暂无最新事件标题"}</p>
-        </div>
+    <div className="pre-market-opportunity">
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+        <strong style={{ color: "#ffd85e" }}>{item.theme_name || "未命名题材"}</strong>
         <div className="recap-tag-stack">
           <span className="recap-chip is-status">事件 {item.event_count ?? 0}</span>
           <span className="recap-chip is-watch">置信度 {score(item.theme_confidence)}</span>
         </div>
       </div>
+      {item.latest_event_title && (
+        <p className="workspace-note" style={{ marginBottom: 8 }}>{item.latest_event_title}</p>
+      )}
       {tierOrder.some((tier) => (tiers[tier] || []).length > 0) ? (
         <div className="pre-market-tier-stack">
           {tierOrder.map((tier) => {
@@ -194,41 +251,15 @@ function OpportunityCard({ item }: { item: PreMarketOpportunity }) {
             return (
               <div className="pre-market-tier" key={`${item.subject_key}-${tier}`}>
                 <span className={`recap-chip ${tier === "A" ? "is-pass" : tier === "B" ? "is-watch" : "is-pending"}`}>{tier}档</span>
-                <div className="recap-table-wrap">
-                  <table className="recap-table pre-market-stock-table">
-                    <thead>
-                      <tr>
-                        <th>股票</th>
-                        <th>档位</th>
-                        <th>分数</th>
-                        <th>理由</th>
-                        <th>风险</th>
-                      </tr>
-                    </thead>
-                    <tbody>{stocks.map((stock, idx) => <OpportunityStockRow stock={stock} key={`${stock.stock_id || "stock"}-${idx}`} />)}</tbody>
-                  </table>
-                </div>
+                {renderStockTable(stocks)}
               </div>
             );
           })}
         </div>
       ) : (
-        <div className="recap-table-wrap">
-          <table className="recap-table pre-market-stock-table">
-            <thead>
-              <tr>
-                <th>股票</th>
-                <th>档位</th>
-                <th>分数</th>
-                <th>理由</th>
-                <th>风险</th>
-              </tr>
-            </thead>
-            <tbody>{fallbackStocks.map((stock, idx) => <OpportunityStockRow stock={stock} key={`${stock.stock_id || "stock"}-${idx}`} />)}</tbody>
-          </table>
-        </div>
+        renderStockTable(fallbackStocks)
       )}
-    </article>
+    </div>
   );
 }
 
@@ -239,56 +270,58 @@ function alertLevelClass(level?: string): string {
   return "is-basis";
 }
 
-function RiskAlertCard({ alert }: { alert: PreMarketAlert }) {
-  const subEvents: any[] = (alert as any).events || [];
+function RiskAlertTable({ alerts }: { alerts: PreMarketAlert[] }) {
+  if (!alerts.length) return null;
   return (
-    <article className={`pre-market-risk ${alertLevelClass(alert.alert_level)}`}>
-      <div className="pre-market-risk-head">
-        <span className={`recap-chip ${alertLevelClass(alert.alert_level)}`}>
-          {alert.alert_level?.toUpperCase() || "!"}
-        </span>
-        <strong>{alert.title || alert.reason || "风险提示"}</strong>
-        <span className="recap-chip is-status">{alert.count || ""}</span>
-      </div>
-      <p className="workspace-note">{alert.summary || alert.message || ""}</p>
-      {subEvents.length > 0 && (
-        <div style={{ marginTop: 8 }}>
-          {subEvents.map((e: any, i: number) => (
-            <div key={i} className="workspace-note" style={{ fontSize: 12, padding: '4px 0', borderTop: i > 0 ? '1px solid #2a2a2a' : 'none' }}>
-              <strong>{e.title}</strong>
-              {e.theme_name && <span className="recap-chip is-basis" style={{ marginLeft: 6 }}>{e.theme_name}</span>}
-              {e.reason && <span className="recap-chip" style={{ marginLeft: 4 }}>{e.reason}</span>}
-              <br />{e.summary}
-            </div>
-          ))}
-        </div>
-      )}
-      <div className="recap-tag-stack">
-        {alert.stock_name && <span className="recap-chip">{alert.stock_name}({alert.stock_code})</span>}
-        {alert.reason_code && <span className="recap-chip is-watch">{alert.reason_code}</span>}
-        {alert.publish_time && <span className="recap-chip">{String(alert.publish_time).slice(0, 16)}</span>}
-      </div>
-    </article>
-  );
-}
-
-function OpportunityAlertCard({ alert }: { alert: PreMarketAlert }) {
-  return (
-    <article className="pre-market-opportunity">
-      <div className="pre-market-opp-head">
-        <span className={`recap-chip ${alertLevelClass(alert.alert_level)}`}>
-          {alert.alert_level?.toUpperCase() || "?"}
-        </span>
-        <strong>{alert.title || "机会提醒"}</strong>
-        <span className="recap-chip is-status">S{score(alert.alert_score)}</span>
-      </div>
-      <p className="workspace-note">{alert.reason || alert.summary || ""}</p>
-      <div className="recap-tag-stack">
-        {alert.stock_name && <span className="recap-chip">{alert.stock_name}({alert.stock_code})</span>}
-        {alert.amount && <span className="recap-chip is-basis">{alert.amount}</span>}
-        {alert.reason_code && <span className="recap-chip is-watch">{alert.reason_code}</span>}
-      </div>
-    </article>
+    <div className="recap-table-wrap">
+      <table className="recap-table pre-market-risk-table">
+        <thead>
+          <tr>
+            <th>级别</th>
+            <th>原因 / 标题</th>
+            <th>股票</th>
+            <th>原因代码</th>
+            <th>发布时间</th>
+            <th>关联事件</th>
+            <th>摘要</th>
+          </tr>
+        </thead>
+        <tbody>
+          {alerts.map((alert, idx) => {
+            const subCount = ((alert as any).events || []).length;
+            return (
+              <tr key={alert.dedupe_key || `risk-${idx}`}>
+                <td>
+                  <span className={`recap-chip ${alertLevelClass(alert.alert_level)}`}>
+                    {alert.alert_level?.toUpperCase() || "!"}
+                  </span>
+                </td>
+                <td className="recap-cell-wrap"><strong>{alert.title || alert.reason || "风险提示"}</strong></td>
+                <td style={{ whiteSpace: "nowrap" }}>
+                  {alert.stock_name ? `${alert.stock_name}(${alert.stock_code})` : "--"}
+                </td>
+                <td>
+                  {alert.reason_code ? (
+                    <span className="recap-chip is-watch">{alert.reason_code}</span>
+                  ) : "--"}
+                </td>
+                <td style={{ whiteSpace: "nowrap" }}>
+                  {alert.publish_time ? String(alert.publish_time).slice(0, 16) : "--"}
+                </td>
+                <td>
+                  {subCount > 0 ? (
+                    <span className="recap-chip is-status" title={(alert as any).events?.map((e: any) => e.title).join("\n")}>
+                      {subCount} 条
+                    </span>
+                  ) : "--"}
+                </td>
+                <td className="recap-cell-wrap">{alert.summary || alert.message || "--"}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
@@ -435,7 +468,7 @@ export function PreMarketBriefPage() {
             </div>
 
             <SectionShell title="一、隔夜重大事件" empty={majorEvents.length === 0}>
-              <EventList events={majorEvents} />
+              <EventTable events={majorEvents} />
             </SectionShell>
 
             <SectionShell title="二、今日重点题材" empty={matchedThemes.length === 0}>
@@ -453,20 +486,16 @@ export function PreMarketBriefPage() {
             </SectionShell>
 
             <SectionShell title="四、公告机会" empty={announcementsWithOpportunity.length === 0}>
-              <AnnouncementList announcements={announcementsWithOpportunity} />
+              <AnnouncementTable announcements={announcementsWithOpportunity} />
             </SectionShell>
 
             <SectionShell title="五、风险预警" empty={riskAlerts.length === 0}>
-              <div className="pre-market-alert-list">
-                {riskAlerts.map((alert, idx) => (
-                  <RiskAlertCard alert={alert as PreMarketAlert} key={alert.dedupe_key || `risk-${idx}`} />
-                ))}
-              </div>
+              <RiskAlertTable alerts={riskAlerts} />
             </SectionShell>
 
             <SectionShell title="六、待复核事件" empty={reviewEvents.length + unknownEvents.length === 0}>
-              <EventList events={reviewEvents} />
-              <EventList events={unknownEvents} />
+              <EventTable events={reviewEvents} mode="review" />
+              <EventTable events={unknownEvents} mode="unknown" />
             </SectionShell>
 
             <DiagnosticsPanel payload={payload} />
