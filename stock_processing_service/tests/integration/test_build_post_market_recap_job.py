@@ -769,3 +769,196 @@ def test_layer_c_contract_two_board_enters_pool_without_layer_a_b_state() -> Non
             assert forbidden_key not in evidence
 
     asyncio.run(_run())
+
+
+def test_theme_lines_event_and_market_scores():
+    """验证 主线与支线 section 的事件分/市场分 来自 cycle 数据且正确输出到文本。
+
+    对应设计文档 §13.3.4：复盘主体不依赖 D1 candidate_score，
+    事件分 = mainline_strength_score，市场分 = fade_risk_score。
+    """
+    builder = NewChainPostMarketReportBuilder()
+
+    recap_doc = {
+        "trade_date": "2026-05-22",
+        "snapshot_version": "test.v1",
+        "candidate_count": 5,
+        "candidate_count_formal": 3,
+        "candidate_count_observe": 2,
+        "strong_watch_history_count": 10,
+        "strong_watch_pool_written": 10,
+        "promoted_pool_preview": [],
+        "strong_watch_history": [],
+        "top_candidates": [],
+        "formal_top_candidates": [],
+        "observe_candidates": [],
+        "candidate_diagnostics": [],
+        "layer_b_cycle_hit_count": 2,
+        "layer_a_identity_hit_count": 2,
+        "report_context": {
+            "theme_name_map": {},
+            "market": None,
+            "cycles": [
+                {
+                    "subject_key": "S001",
+                    "theme_name": "国产算力",
+                    "final_cycle_state": "rebound",
+                    "final_mainline_alive": True,
+                    "fade_watch": False,
+                    "fade_confirmed": False,
+                    "mainline_strength_score": 83.20,
+                    "fade_risk_score": 12.50,
+                },
+                {
+                    "subject_key": "S002",
+                    "theme_name": "AI应用",
+                    "final_cycle_state": "divergence",
+                    "final_mainline_alive": True,
+                    "fade_watch": False,
+                    "fade_confirmed": False,
+                    "mainline_strength_score": 67.80,
+                    "fade_risk_score": 28.00,
+                },
+            ],
+            "stock_facts": [
+                {
+                    "subject_key": "S001",
+                    "stock_id": "000001",
+                    "stock_name": "测试股A",
+                    "theme_name": "国产算力",
+                    "rank_order": 1,
+                    "pct_chg": 9.8,
+                    "is_leader": True,
+                    "leader_composite_score": 85.0,
+                    "leader_capital_score": 60.0,
+                },
+                {
+                    "subject_key": "S002",
+                    "stock_id": "000002",
+                    "stock_name": "测试股B",
+                    "theme_name": "AI应用",
+                    "rank_order": 1,
+                    "pct_chg": 5.2,
+                    "is_leader": False,
+                    "leader_composite_score": 70.0,
+                    "leader_capital_score": 50.0,
+                },
+            ],
+            "theme_capital_flow": [],
+            "money_flow": [],
+            "abnormal_signals": [],
+            "dragon_tiger": [],
+        },
+    }
+
+    report = builder.build(recap_doc)
+
+    # 验证 section 存在
+    sections_by_heading = {sec["heading"]: sec for sec in report["sections"]}
+    assert "主线与支线" in sections_by_heading, f"headings: {list(sections_by_heading)}"
+
+    theme_section = sections_by_heading["主线与支线"]
+    items = theme_section["items"]
+    assert len(items) == 2, f"expected 2 theme lines, got {len(items)}: {items}"
+
+    # 验证每行包含正确的 事件/市场 数值
+    # 国产算力：事件=83.20，市场=12.50
+    item0 = items[0]
+    assert "国产算力" in item0, item0
+    assert "事件 83.20" in item0, f"missing '事件 83.20' in: {item0}"
+    assert "市场 12.50" in item0, f"missing '市场 12.50' in: {item0}"
+
+    # AI应用：事件=67.80，市场=28.00
+    item1 = items[1]
+    assert "AI应用" in item1, item1
+    assert "事件 67.80" in item1, f"missing '事件 67.80' in: {item1}"
+    assert "市场 28.00" in item1, f"missing '市场 28.00' in: {item1}"
+
+    # 验证 debug metadata
+    debug = report["metadata"].get("theme_line_debug")
+    assert debug is not None, "metadata missing theme_line_debug"
+    assert len(debug) == 2, f"expected 2 debug entries, got {len(debug)}"
+
+    d0 = debug[0]
+    assert d0["theme"] == "国产算力"
+    assert d0["subject_key"] == "S001"
+    assert d0["cycle_found"] is True
+    assert d0["event_score_resolved"] == 83.20
+    assert d0["market_score_resolved"] == 12.50
+    assert d0["event_score_source"] == "cycle"
+    assert d0["market_score_source"] == "cycle"
+
+    d1 = debug[1]
+    assert d1["theme"] == "AI应用"
+    assert d1["subject_key"] == "S002"
+    assert d1["cycle_found"] is True
+    assert d1["event_score_resolved"] == 67.80
+    assert d1["market_score_resolved"] == 28.00
+    assert d1["event_score_source"] == "cycle"
+    assert d1["market_score_source"] == "cycle"
+
+
+def test_theme_lines_missing_cycle_falls_back_to_other_sources():
+    """当 cycle 数据缺失时，事件分/市场分从其他数据源兜底。"""
+    builder = NewChainPostMarketReportBuilder()
+
+    recap_doc = {
+        "trade_date": "2026-05-22",
+        "snapshot_version": "test.v1",
+        "candidate_count": 0,
+        "candidate_count_formal": 0,
+        "candidate_count_observe": 0,
+        "strong_watch_history_count": 0,
+        "strong_watch_pool_written": 0,
+        "promoted_pool_preview": [],
+        "strong_watch_history": [],
+        "top_candidates": [],
+        "formal_top_candidates": [],
+        "observe_candidates": [],
+        "candidate_diagnostics": [],
+        "layer_b_cycle_hit_count": 0,
+        "layer_a_identity_hit_count": 0,
+        "report_context": {
+            "theme_name_map": {},
+            # cycles 为空 —— 模拟 get_post_market_report_context 返回空的情况
+            "cycles": [],
+            "stock_facts": [
+                {
+                    "subject_key": "S001",
+                    "stock_id": "000001",
+                    "stock_name": "测试股A",
+                    "theme_name": "国产算力",
+                    "rank_order": 1,
+                    "pct_chg": 9.8,
+                    "is_leader": True,
+                    "leader_composite_score": 85.0,
+                    "leader_capital_score": 60.0,
+                },
+            ],
+            "theme_capital_flow": [
+                {
+                    "subject_key": "S001",
+                    "mainline_strength_score": 55.0,
+                    "fade_risk_score": 18.0,
+                },
+            ],
+            "money_flow": [],
+            "abnormal_signals": [],
+            "dragon_tiger": [],
+        },
+    }
+
+    report = builder.build(recap_doc)
+    sections_by_heading = {sec["heading"]: sec for sec in report["sections"]}
+    theme_items = sections_by_heading["主线与支线"]["items"]
+
+    # cycle 为空，应从 theme_capital_flow 兜底
+    item0 = theme_items[0]
+    assert "事件 55.00" in item0, f"missing fallback event score: {item0}"
+    assert "市场 18.00" in item0, f"missing fallback market score: {item0}"
+
+    debug = report["metadata"]["theme_line_debug"]
+    d0 = debug[0]
+    assert d0["cycle_found"] is False
+    assert d0["event_score_source"] == "capital"
+    assert d0["market_score_source"] == "capital"

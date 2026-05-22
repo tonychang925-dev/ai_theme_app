@@ -72,14 +72,16 @@ class NewChainPostMarketReportBuilder:
             },
             {
                 "heading": "主线与支线",
-                "items": self._theme_lines(
-                    recap_theme_rows,
-                    theme_name_map,
-                    cycles_by_theme,
-                    stock_fact_map,
-                    context,
-                    limit=12,
-                ),
+                "items": (
+                    _theme_lines_result := self._theme_lines(
+                        recap_theme_rows,
+                        theme_name_map,
+                        cycles_by_theme,
+                        stock_fact_map,
+                        context,
+                        limit=12,
+                    )
+                )[0],
             },
             {
                 "heading": "主线资金流入前10",
@@ -144,6 +146,7 @@ class NewChainPostMarketReportBuilder:
                     "strong_watch_history_count": strong_watch_count,
                     "strong_watch_pool_written": pool_written,
                 },
+                "theme_line_debug": _theme_lines_result[1],
             },
         }
 
@@ -244,7 +247,11 @@ class NewChainPostMarketReportBuilder:
         context: dict[str, Any],
         *,
         limit: int,
-    ) -> list[str]:
+    ) -> tuple[list[str], list[dict[str, Any]]]:
+        """返回 (lines, debug).
+
+        debug 每项包含该题材的分数字段来源，用于诊断「事件分/市场分为空」问题。
+        """
         grouped: dict[str, list[dict[str, Any]]] = {}
         for row in rows:
             item = dict(row or {})
@@ -254,6 +261,7 @@ class NewChainPostMarketReportBuilder:
             context.get("theme_capital_flow") or []
         )
         lines: list[str] = []
+        debug: list[dict[str, Any]] = []
         for theme, items in list(grouped.items())[:limit]:
             top = sorted(items, key=lambda x: NewChainPostMarketReportBuilder._score(x), reverse=True)[:3]
             stocks = "、".join(str(x.get("stock_name") or x.get("stock_id") or "") for x in top)
@@ -265,6 +273,25 @@ class NewChainPostMarketReportBuilder:
             )
             fact = NewChainPostMarketReportBuilder._fact_for(top[0] if top else {}, stock_fact_map)
             capital = capital_by_subject.get(subject_key, {})
+
+            # 多源兜底：事件分 = mainline_strength_score
+            # 来源优先级：cycle → theme_capital_flow → stock_fact → top item
+            event_score = NewChainPostMarketReportBuilder._first_present(
+                cycle.get("mainline_strength_score"),
+                cycle.get("state_strength_score"),
+                capital.get("mainline_strength_score"),
+                fact.get("mainline_strength_score"),
+                (top[0] or {}).get("mainline_strength_score") if top else None,
+            )
+            # 多源兜底：市场分 = fade_risk_score
+            market_score = NewChainPostMarketReportBuilder._first_present(
+                cycle.get("fade_risk_score"),
+                capital.get("fade_risk_score"),
+                fact.get("fade_risk_score"),
+                (top[0] or {}).get("fade_risk_score") if top else None,
+            )
+
+            capital = capital_by_subject.get(subject_key, {})
             total_inflow = NewChainPostMarketReportBuilder._first_present(
                 capital.get("main_net_inflow_sum"),
                 NewChainPostMarketReportBuilder._inflow(fact),
@@ -273,13 +300,32 @@ class NewChainPostMarketReportBuilder:
                 capital.get("leader_main_net_inflow"),
                 NewChainPostMarketReportBuilder._inflow(fact),
             )
-            # 事件分 = 主线强度 (Layer B cycle judgement)，市场分 = 退潮风险
-            # 设计文档 §13.3.4：复盘主体不依赖 D1 candidate_score
-            event_score = NewChainPostMarketReportBuilder._first_present(
-                cycle.get("mainline_strength_score"),
-                cycle.get("state_strength_score"),
-            )
-            market_score = cycle.get("fade_risk_score")
+
+            debug.append({
+                "theme": theme,
+                "subject_key": subject_key,
+                "cycle_found": bool(cycle),
+                "cycle_keys": sorted(cycle.keys()) if cycle else [],
+                "cycle_mainline_strength_score": cycle.get("mainline_strength_score"),
+                "cycle_fade_risk_score": cycle.get("fade_risk_score"),
+                "event_score_resolved": event_score,
+                "market_score_resolved": market_score,
+                "event_score_source": (
+                    "cycle" if event_score == cycle.get("mainline_strength_score")
+                    else "capital" if event_score == capital.get("mainline_strength_score")
+                    else "fact" if fact and event_score == fact.get("mainline_strength_score")
+                    else "top_item" if top and event_score == (top[0] or {}).get("mainline_strength_score")
+                    else "none"
+                ),
+                "market_score_source": (
+                    "cycle" if market_score == cycle.get("fade_risk_score")
+                    else "capital" if market_score == capital.get("fade_risk_score")
+                    else "fact" if fact and market_score == fact.get("fade_risk_score")
+                    else "top_item" if top and market_score == (top[0] or {}).get("fade_risk_score")
+                    else "none"
+                ),
+            })
+
             lines.append(
                 f"{theme}：subject_key {subject_key}；层级 main；主线存活 {'是' if cycle.get('final_mainline_alive') is not False else '否'}；"
                 f"状态 {cycle.get('final_cycle_state') or 'rebound'}；主线强度 {NewChainPostMarketReportBuilder._fmt(cycle.get('mainline_strength_score') or cycle.get('state_strength_score'))}；"
@@ -288,7 +334,7 @@ class NewChainPostMarketReportBuilder:
                 f"龙头净流入 {NewChainPostMarketReportBuilder._money(leader_inflow)}；"
                 f"题材K线 {NewChainPostMarketReportBuilder._kline_text(fact)}；代表股 {stocks or '--'}；事件 {NewChainPostMarketReportBuilder._fmt(event_score)}；市场 {NewChainPostMarketReportBuilder._fmt(market_score)}"
             )
-        return lines or ["暂无主线候选"]
+        return (lines or ["暂无主线候选"], debug)
 
     @staticmethod
     def _theme_environment_lines(

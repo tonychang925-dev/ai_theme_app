@@ -1,8 +1,0 @@
-{
-  "running": true,
-  "last_rebuild_at": null,
-  "trade_date": null,
-  "ok": false,
-  "status": "error",
-  "error": "Server disconnected without sending a response."
-}

@@ -1175,6 +1175,25 @@ class DatabaseGateway:
             logger.error(f"读取 subject_cycle_evidence_daily 失败 trade_date={trade_date}: {e}")
             raise
 
+    async def get_post_market_report_context(
+        self,
+        trade_date,
+        subject_keys: List[str] | None = None,
+        stock_ids: List[str] | None = None,
+    ) -> Dict[str, Any]:
+        """读取盘后复盘所需全部事实上下文（委托 PostgresDatabaseManager）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_post_market_report_context(
+                trade_date, subject_keys, stock_ids
+            )
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 post_market_report_context 失败 trade_date={trade_date}: {e}")
+            raise
+
     async def get_subject_market_stats(
         self, trade_date, subject_keys: List[str] | None = None, lookback_days: int = 7
     ) -> List[Dict[str, Any]]:
