@@ -25,6 +25,55 @@ from database_service.gateway import DatabaseGateway
 logger = logging.getLogger(__name__)
 
 
+LOW_VALUE_DROP_REASON_CODES = {
+    "low_value_event_match_blocked",
+    "low_value_regulatory_event_blocked",
+    "ordinary_earnings_low_value",
+    "clarification_risk_notice_low_value",
+    "weather_disaster_low_value",
+    "ordinary_ipo_low_value",
+    "duplicate_news_low_value",
+    "low_value_event_dropped",
+}
+LOW_VALUE_REVIEW_TERMS = (
+    "行政监管措施",
+    "行政监管",
+    "监管函",
+    "警示函",
+    "责令改正",
+    "问询函",
+    "关注函",
+    "审核问询函",
+    "澄清",
+    "风险提示",
+    "交易异动",
+    "连续涨停",
+    "连板",
+    "无注入",
+    "不涉及",
+    "无算力计划",
+    "天气预警",
+    "山洪",
+    "暴雨",
+    "地震",
+    "列车停运",
+    "第一季度",
+    "一季度",
+    "Q1",
+    "财报",
+    "营收",
+    "净利润",
+    "回购",
+    "减持",
+    "权益变动",
+    "触及1%整数倍",
+    "投资者接待日",
+    "集体接待日",
+    "业绩说明会",
+    "上市聆讯",
+)
+
+
 class EventReviewWriter:
     """事件复核队列写入服务"""
 
@@ -133,6 +182,12 @@ class EventReviewWriter:
                 payload = json.loads(payload_str)
                 logger.debug(f"解析后payload: {payload}")
 
+                if self._is_low_value_drop_payload(payload):
+                    logger.info("跳过低价值/已丢弃事件复核入队: message_id=%s", message_id)
+                    self.stats["skipped"] += 1
+                    processed_ids.append(message_id)
+                    continue
+
                 # 检查是否需要复核（新口径：只要命中有效题材即入复核，不再强依赖review_required）
                 review_required = payload.get("review_required", False)
                 logger.info(
@@ -215,6 +270,30 @@ class EventReviewWriter:
 
         self.stats["last_processed_at"] = datetime.now()
         return processed_ids
+
+    @staticmethod
+    def _is_low_value_drop_payload(payload: Dict[str, Any]) -> bool:
+        action = str(payload.get("action") or "")
+        if action == "drop_event":
+            return True
+        reason = str(payload.get("reason") or payload.get("reason_code") or "")
+        match_result = payload.get("match_result") if isinstance(payload.get("match_result"), dict) else {}
+        reason_code = str(match_result.get("reason_code") or reason)
+        if reason_code in LOW_VALUE_DROP_REASON_CODES:
+            return True
+        text = " ".join(
+            str(value or "")
+            for value in (
+                payload.get("title"),
+                payload.get("summary"),
+                payload.get("event_title"),
+                reason,
+            )
+        )
+        event_data = payload.get("event_data") if isinstance(payload.get("event_data"), dict) else {}
+        if event_data:
+            text = " ".join([text, str(event_data.get("title") or ""), str(event_data.get("summary") or "")])
+        return any(term in text for term in LOW_VALUE_REVIEW_TERMS)
 
     def _extract_event_id_number(self, event_id) -> int:
         """从事件ID中提取数字ID"""

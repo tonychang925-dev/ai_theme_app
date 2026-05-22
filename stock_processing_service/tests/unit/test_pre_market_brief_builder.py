@@ -289,6 +289,57 @@ async def test_pre_market_brief_builder_keeps_primary_match_and_filters_low_valu
 
 
 @pytest.mark.asyncio
+async def test_pre_market_brief_builder_filters_regulatory_notices_and_dedupes_bracket_title_variants():
+    read = _SubjectReadGateway(
+        subject_events=[
+            {
+                "event_id": 611,
+                "title": "智度股份：收到广东证监局行政监管措施决定书",
+                "summary": "监管措施公告",
+                "subject_key": "9060389",
+                "theme_name": "广东",
+                "confidence": 0.95,
+                "source_type": "event_subject_map",
+            },
+            {
+                "event_id": 612,
+                "title": "【产业催化事件】产业催化事件正文补充",
+                "summary": "同题材多源标题变体",
+                "subject_key": "theme-catalyst",
+                "theme_name": "产业题材",
+                "confidence": 0.92,
+                "source_type": "event_subject_map",
+            },
+            {
+                "event_id": 613,
+                "title": "产业催化事件",
+                "summary": "同题材普通标题",
+                "subject_key": "theme-catalyst",
+                "theme_name": "产业题材",
+                "confidence": 0.91,
+                "source_type": "event_subject_map",
+            },
+        ]
+    )
+    builder = PreMarketBriefBuilder(read_gateway=read, write_gateway=_WriteGateway())
+
+    payload = await builder.rebuild(date(2026, 5, 16), dry_run=True)
+
+    assert [row["event_id"] for row in payload["sections"]["major_events"]] == [612]
+    assert payload["sections"]["matched_themes"] == [
+        {
+            "subject_key": "theme-catalyst",
+            "theme_name": "产业题材",
+            "event_count": 1,
+            "latest_event_title": "【产业催化事件】产业催化事件正文补充",
+            "confidence": 0.92,
+            "impact_score": 0.0,
+            "event_ids": [612],
+        }
+    ]
+
+
+@pytest.mark.asyncio
 async def test_pre_market_brief_builder_splits_raw_and_matched_intel_announcements():
     builder = PreMarketBriefBuilder(
         read_gateway=_IntelAnnouncementGateway(),
@@ -382,6 +433,53 @@ async def test_pre_market_brief_builder_falls_back_to_decision_stream_for_unknow
         "human_review_pending",
         "unknown_event_watch",
     }
+
+
+@pytest.mark.asyncio
+async def test_pre_market_brief_builder_drops_low_value_review_events_from_product_sections():
+    read = _SubjectReadGateway(
+        subject_events=[
+            {
+                "event_id": 601,
+                "title": "国光电器：收到广东监管局行政监管措施决定书",
+                "summary": "低价值监管披露",
+                "subject_key": "9060389",
+                "theme_name": "广东",
+                "confidence": 0.86,
+                "source_type": "event_subject_map",
+            }
+        ],
+        review=[
+            {
+                "event_id": 602,
+                "title": "智度股份：收到广东证监局行政监管措施决定书",
+                "summary": "行政监管措施决定书",
+                "proposed_theme_name": "广东",
+                "proposed_theme_confidence": 0.5,
+                "reason": "low_value_event_match_blocked",
+                "source_type": "event_review_queue",
+            },
+            {
+                "event_id": 603,
+                "title": "海外科技公司发布AI芯片限制新规",
+                "summary": "题材不确定但具备产业影响",
+                "proposed_theme_name": "AI芯片",
+                "proposed_theme_confidence": 0.55,
+                "reason": "ambiguous_top_candidate",
+                "source_type": "event_review_queue",
+            },
+        ],
+    )
+    builder = PreMarketBriefBuilder(read_gateway=read, write_gateway=_WriteGateway())
+
+    payload = await builder.rebuild(date(2026, 5, 25), dry_run=True)
+
+    assert payload["sections"]["major_events"] == []
+    assert [row["event_id"] for row in payload["sections"]["review_events"]] == [603]
+    assert payload["sections"]["risk_alerts"][0]["count"] == 1
+    assert payload["diagnostics"]["dropped_event_count"] == 2
+    assert payload["diagnostics"]["low_value_dropped_count"] == 2
+    assert payload["diagnostics"]["regulatory_notice_dropped_count"] == 2
 
 
 @pytest.mark.asyncio

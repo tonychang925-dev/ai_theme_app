@@ -72,7 +72,11 @@ start_if_absent() {
     return
   fi
   echo "[start] ${name}"
-  (cd "$ROOT_DIR" && nohup bash -lc "$cmd" >"$log_file" 2>&1 &)
+  if command -v setsid >/dev/null 2>&1; then
+    (cd "$ROOT_DIR" && setsid nohup bash -lc "$cmd" >"$log_file" 2>&1 < /dev/null &)
+  else
+    (cd "$ROOT_DIR" && nohup bash -lc "$cmd" >"$log_file" 2>&1 < /dev/null &)
+  fi
   sleep 1
 }
 
@@ -111,7 +115,11 @@ ensure_bff_running() {
   fi
 
   echo "[start] frontend_bff:8003"
-  (cd "$ROOT_DIR" && nohup bash -lc "$cmd" >"$log_file" 2>&1 &)
+  if command -v setsid >/dev/null 2>&1; then
+    (cd "$ROOT_DIR" && setsid nohup bash -lc "$cmd" >"$log_file" 2>&1 < /dev/null &)
+  else
+    (cd "$ROOT_DIR" && nohup bash -lc "$cmd" >"$log_file" 2>&1 < /dev/null &)
+  fi
   sleep 1
 }
 
@@ -294,11 +302,19 @@ if [[ "$WITH_FRONTEND" == "true" ]]; then
         pkill -f "$FRONTEND_PATTERN" || true
         sleep 1
         echo "[start] frontend vite"
-        (cd "$ROOT_DIR/frontend" && nohup npm run dev -- --host >"$LOG_DIR/frontend_vite.log" 2>&1 &)
+        if command -v setsid >/dev/null 2>&1; then
+          (cd "$ROOT_DIR/frontend" && setsid nohup npm run dev -- --host >"$LOG_DIR/frontend_vite.log" 2>&1 < /dev/null &)
+        else
+          (cd "$ROOT_DIR/frontend" && nohup npm run dev -- --host >"$LOG_DIR/frontend_vite.log" 2>&1 < /dev/null &)
+        fi
       fi
     else
       echo "[start] frontend vite"
-      (cd "$ROOT_DIR/frontend" && nohup npm run dev -- --host >"$LOG_DIR/frontend_vite.log" 2>&1 &)
+      if command -v setsid >/dev/null 2>&1; then
+        (cd "$ROOT_DIR/frontend" && setsid nohup npm run dev -- --host >"$LOG_DIR/frontend_vite.log" 2>&1 < /dev/null &)
+      else
+        (cd "$ROOT_DIR/frontend" && nohup npm run dev -- --host >"$LOG_DIR/frontend_vite.log" 2>&1 < /dev/null &)
+      fi
     fi
   else
     echo "[warn] frontend not started (missing npm or frontend/package.json)"

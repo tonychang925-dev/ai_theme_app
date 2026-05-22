@@ -19,6 +19,24 @@ logger = logging.getLogger(__name__)
 
 DecisionStreamReader = Callable[[date, int], Awaitable[list[dict[str, Any]]] | list[dict[str, Any]]]
 
+LOW_VALUE_DROP_REASON_CODES = {
+    "low_value_event_match_blocked",
+    "low_value_regulatory_event_blocked",
+    "ordinary_earnings_low_value",
+    "clarification_risk_notice_low_value",
+    "weather_disaster_low_value",
+    "ordinary_ipo_low_value",
+    "duplicate_news_low_value",
+    "low_value_event_dropped",
+    "rule_low_value_regulatory",
+    "rule_low_value_clarification",
+    "rule_low_value_disaster",
+    "rule_low_value_earnings",
+    "rule_low_value_disclosure",
+    "rule_low_value_ordinary_personnel",
+    "rule_low_value_ordinary_ipo",
+}
+
 
 class PreMarketBriefBuilder:
     """Build the event/theme sections of pre_market_brief_snapshot.
@@ -107,6 +125,7 @@ class PreMarketBriefBuilder:
             opportunity_alerts=opportunity_alerts,
             limit=limit,
         )
+        dropped_diagnostics = sections.pop("_dropped_diagnostics", {})
         if self._opportunity_builder is not None:
             sections["event_driven_opportunities"] = await self._opportunity_builder.build(
                 trade_date=window.prev_trade_date,
@@ -141,6 +160,7 @@ class PreMarketBriefBuilder:
                 "source": window.source,
             },
             "source_breakdown": source_breakdown,
+            **dropped_diagnostics,
         }
         payload = {
             "version": self.SNAPSHOT_VERSION,
@@ -369,14 +389,26 @@ class PreMarketBriefBuilder:
     ) -> dict[str, list[dict[str, Any]]]:
         matched_events = self._dedupe_by_key(matched_events, key_fields=("event_id", "subject_key", "title"))
         matched_events = self._select_primary_event_matches(matched_events)
-        major_events = [row for row in matched_events if not self._is_low_value_major_event(row)][:limit]
-        review_events = self._dedupe_by_key(review_events, key_fields=("event_id", "title"))[:limit]
-        unknown_events = self._dedupe_by_key(unknown_events, key_fields=("event_id", "title"))[:limit]
+        matched_events = self._dedupe_major_event_title_variants(matched_events)
+        major_drop_rows = [row for row in matched_events if self._is_low_value_major_event(row)]
+        major_events = [row for row in matched_events if row not in major_drop_rows][:limit]
+        review_events_all = self._dedupe_by_key(review_events, key_fields=("event_id", "title"))
+        unknown_events_all = self._dedupe_by_key(unknown_events, key_fields=("event_id", "title"))
+        review_drop_rows = [row for row in review_events_all if self._is_dropped_or_low_value_event(row)]
+        unknown_drop_rows = [row for row in unknown_events_all if self._is_dropped_or_low_value_event(row)]
+        review_events = [row for row in review_events_all if row not in review_drop_rows][:limit]
+        unknown_events = [row for row in unknown_events_all if row not in unknown_drop_rows][:limit]
         company_announcements_raw = self._build_company_announcements(intel_announcements_raw)
         company_announcements_matched = self._build_company_announcements(intel_announcements_matched)
         # P1-E: merge rule-based alerts with legacy review/unknown alerts
         legacy_risk = self._build_risk_alerts(review_events, unknown_events)
-        all_risk = legacy_risk + (risk_alerts or [])[:limit]
+        all_risk = [
+            row
+            for row in legacy_risk + (risk_alerts or [])[:limit]
+            if not self._is_dropped_or_low_value_alert(row)
+        ]
+        dropped_rows = [*major_drop_rows, *review_drop_rows, *unknown_drop_rows]
+        dropped_diagnostics = self._build_dropped_diagnostics(dropped_rows)
         return {
             "major_events": sorted(major_events, key=lambda row: float(row.get("impact_score") or 0), reverse=True)[:limit],
             "matched_themes": self._build_matched_themes(major_events),
@@ -385,6 +417,7 @@ class PreMarketBriefBuilder:
             "risk_alerts": all_risk,
             "opportunity_alerts": (opportunity_alerts or [])[:limit],
             "event_driven_opportunities": [],
+            "_dropped_diagnostics": dropped_diagnostics,
             # === Phase 6A: 一手信息 section ===
             "company_announcements": company_announcements_raw,
             "company_announcements_raw": company_announcements_raw,
@@ -440,6 +473,30 @@ class PreMarketBriefBuilder:
         )
 
     @staticmethod
+    def _dedupe_major_event_title_variants(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        best_by_story: dict[tuple[str, str], dict[str, Any]] = {}
+        passthrough: list[dict[str, Any]] = []
+        for row in rows:
+            subject_key = str(row.get("subject_key") or "").strip()
+            title_key = PreMarketBriefBuilder._canonical_major_event_title(row.get("title"))
+            if not subject_key or not title_key:
+                passthrough.append(row)
+                continue
+            story_key = (subject_key, title_key)
+            previous = best_by_story.get(story_key)
+            if previous is None or PreMarketBriefBuilder._primary_rank_key(row) > PreMarketBriefBuilder._primary_rank_key(previous):
+                best_by_story[story_key] = row
+        return [*best_by_story.values(), *passthrough]
+
+    @staticmethod
+    def _canonical_major_event_title(value: Any) -> str:
+        title = str(value or "").strip()
+        bracket_title = re.match(r"^【([^】]+)】", title)
+        if bracket_title:
+            title = bracket_title.group(1)
+        return re.sub(r"[\s【】]+", "", title)
+
+    @staticmethod
     def _is_low_value_major_event(row: dict[str, Any]) -> bool:
         text = " ".join(str(row.get(field) or "") for field in ("title", "summary"))
         low_value_terms = (
@@ -447,6 +504,8 @@ class PreMarketBriefBuilder:
             "回购",
             "澄清",
             "交易监管",
+            "问询函",
+            "关注函",
             "限制开仓",
             "天气预警",
             "暴雨",
@@ -457,11 +516,88 @@ class PreMarketBriefBuilder:
             "旅客列车停",
             "任命",
             "选举",
+            "权益变动",
+            "投资者接待日",
+            "集体接待日",
+            "业绩说明会",
+            "行政监管",
+            "监管措施决定书",
+            "警示函",
+            "应诉通知书",
             "一季度财报",
             "季度财报",
             "发布财报",
         )
         return any(term in text for term in low_value_terms)
+
+    @classmethod
+    def _is_dropped_or_low_value_event(cls, row: dict[str, Any]) -> bool:
+        reason = str(row.get("reason") or row.get("reason_code") or "")
+        if reason in LOW_VALUE_DROP_REASON_CODES:
+            return True
+        action = str(row.get("action") or "")
+        if action == "drop_event":
+            return True
+        decision = str(row.get("decision") or "").upper()
+        if decision in {"DROPPED", "SKIPPED"}:
+            return True
+        return cls._is_low_value_major_event(row)
+
+    @staticmethod
+    def _is_dropped_or_low_value_alert(row: dict[str, Any]) -> bool:
+        text = _json.dumps(row, ensure_ascii=False) if isinstance(row, dict) else str(row)
+        return any(term in text for term in LOW_VALUE_DROP_REASON_CODES) or any(
+            term in text
+            for term in (
+                "行政监管",
+                "监管函",
+                "警示函",
+                "责令改正",
+                "问询函",
+                "关注函",
+                "澄清",
+                "风险提示",
+                "交易异动",
+                "连板",
+                "天气预警",
+                "山洪",
+                "暴雨",
+                "地震",
+                "列车停运",
+                "回购",
+                "减持",
+                "权益变动",
+                "投资者接待日",
+                "集体接待日",
+                "业绩说明会",
+                "第一季度",
+                "一季度",
+                "财报",
+                "营收",
+                "净利润",
+                "上市聆讯",
+            )
+        )
+
+    @staticmethod
+    def _build_dropped_diagnostics(rows: list[dict[str, Any]]) -> dict[str, int]:
+        diagnostics = {
+            "dropped_event_count": len(rows),
+            "low_value_dropped_count": len(rows),
+            "duplicate_dropped_count": 0,
+            "regulatory_notice_dropped_count": 0,
+            "ordinary_earnings_dropped_count": 0,
+        }
+        for row in rows:
+            reason = str(row.get("reason") or "")
+            text = " ".join(str(row.get(field) or "") for field in ("title", "summary", "reason"))
+            if "duplicate" in reason or "重复" in text:
+                diagnostics["duplicate_dropped_count"] += 1
+            if any(term in text for term in ("行政监管", "监管函", "警示函", "责令改正")):
+                diagnostics["regulatory_notice_dropped_count"] += 1
+            if any(term in text for term in ("第一季度", "一季度", "Q1", "财报", "营收", "净利润")):
+                diagnostics["ordinary_earnings_dropped_count"] += 1
+        return diagnostics
 
     def _build_risk_alerts(
         self,

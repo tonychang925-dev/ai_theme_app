@@ -222,7 +222,7 @@ async def test_high_noise_v2_profile_keeps_match(monkeypatch):
 
 
 @pytest.mark.asyncio
-async def test_weak_v1_alias_direct_hit_is_downgraded_to_review(monkeypatch):
+async def test_low_value_v1_alias_direct_hit_is_dropped(monkeypatch):
     monkeypatch.setenv("THEME_MATCH_LLM_JUDGE_MODE", "off")
     engine = _NoDenseThemeMatchEngine(
         _Repo([
@@ -246,8 +246,9 @@ async def test_weak_v1_alias_direct_hit_is_downgraded_to_review(monkeypatch):
         )
     )
 
-    assert result.decision == "HUMAN_REVIEW"
-    assert result.reason_code == "low_value_event_match_blocked"
+    assert result.decision == "DROPPED"
+    assert result.reason_code == "weather_disaster_low_value"
+    assert result.review_required is False
     assert result.audit["low_value_event_rule_only_guard"]["blocked"] is True
 
 
@@ -278,6 +279,35 @@ async def test_full_v1_subject_name_direct_hit_keeps_match(monkeypatch):
 
     assert result.decision == "MATCH"
     assert result.reason_code == "direct_theme_name_hit"
+
+
+@pytest.mark.asyncio
+async def test_v1_location_subject_direct_hit_regulatory_notice_is_blocked(monkeypatch):
+    monkeypatch.setenv("THEME_MATCH_LLM_JUDGE_MODE", "off")
+    engine = _NoDenseThemeMatchEngine(
+        _Repo([
+            _profile(
+                "9060389",
+                "广东",
+                aliases=["广东"],
+                must_terms=["国资", "粤字辈"],
+            )
+        ])
+    )
+
+    result = await engine.match_event(
+        ThemeMatchRequest(
+            event_id=6,
+            news_id=6,
+            title="智度股份：收到广东证监局行政监管措施决定书",
+            content="智度股份因信息披露违规收到广东证监局行政监管措施决定书，将积极整改。",
+            summary="广东监管措施公告。",
+            event_type="公告",
+        )
+    )
+
+    assert result.decision != "MATCH"
+    assert result.matched_subject_key != "9060389"
 
 
 def test_rerank_doc_vector_cache_reuses_profile_vectors(monkeypatch):
@@ -915,8 +945,9 @@ def test_llm_accept_safety_gate_blocks_low_value_v1_accept():
 
     result = engine._post_llm_accept_safety_gate(env, request=request, profile=profile, evidence=evidence)
 
-    assert result.decision == "HUMAN_REVIEW"
+    assert result.decision == "DROPPED"
     assert result.reason_code == "low_value_event_match_blocked"
+    assert result.review_required is False
 
 
 def test_no_anchor_term_blocks_bare_word_without_suppressing_configured_compound_anchor():

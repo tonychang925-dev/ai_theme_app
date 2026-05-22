@@ -1,0 +1,6 @@
+{"case_id":"phase3_pos_policy_001","title":"部委发布产业政策支持商业航天卫星制造","content":"政策明确支持商业航天扩产投产，推动卫星产业链发展。","expected_decision":"PASS","tags":["macro_policy","theme_catalyst"]}
+{"case_id":"phase3_pos_order_002","title":"某公司中标重大订单并签署供货合同","content":"公司公告中标重大订单，合同将提升产业链供给能力。","expected_decision":"PASS","tags":["order","company_catalyst"]}
+{"case_id":"phase3_pos_restructuring_003","title":"公司披露重大资产重组并购方案","content":"重大资产重组涉及科技资产并购重组。","expected_decision":"PASS","tags":["restructuring","company_catalyst"]}
+{"case_id":"phase3_pos_breakthrough_004","title":"新材料技术突破推动先进封装扩产","content":"核心材料首次突破并启动产线扩产。","expected_decision":"PASS","tags":["breakthrough","theme_catalyst"]}
+{"case_id":"phase3_pos_supply_005","title":"行业供给短缺推动氦气价格上涨","content":"海外供应收紧，行业价格上涨并出现需求激增。","expected_decision":"PASS","tags":["supply_demand","sector_supply_demand"]}
+{"case_id":"phase3_pos_overseas_006","title":"海外AI服务器需求激增带动液冷产业链订单","content":"海外科技厂商扩产，A股液冷供应商获得重大订单。","expected_decision":"PASS","tags":["overseas","theme_catalyst"]}

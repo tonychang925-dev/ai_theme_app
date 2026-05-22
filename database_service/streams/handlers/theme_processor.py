@@ -634,12 +634,15 @@ class ThemeProcessor:
             "MATCH": "update_theme",
             "UNKNOWN": "publish_clustering",
             "HUMAN_REVIEW": "human_review",
+            "DROPPED": "drop_event",
+            "SKIPPED": "drop_event",
         }
         action = action_map.get(decision, "publish_clustering")
         operations_map = {
             "update_theme": ["update_theme_heat", "create_mapping", "publish_update"],
             "publish_clustering": ["publish_to_pending"],
             "human_review": ["publish_human_review"],
+            "drop_event": ["drop_event"],
         }
         event_id = int(event_row.get("id") or event_row.get("event_id"))
         news_id_raw = event_row.get("news_id")
