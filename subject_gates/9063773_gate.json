@@ -1,14 +1,82 @@
 {
   "must": [
-    "AIDC广告代理合作接入"
+    "字节Seedance",
+    "Seedance",
+    "字节跳动视频生成模型",
+    "AI视频生成"
+  ],
+  "strong": [
+    "视频生成模型",
+    "豆包视频生成",
+    "即梦",
+    "Dreamina",
+    "Seedance2.0"
   ],
   "should": [
+    "导演级视频生成",
+    "多模态视频生成",
+    "文生视频",
+    "图生视频"
+  ],
+  "support_terms": [
+    "字节跳动",
+    "视频模型",
+    "生成式AI"
+  ],
+  "no_anchor_terms": [
+    "IPO",
+    "创业板",
+    "上市",
+    "上会",
+    "生物",
+    "融资",
+    "普通公司名",
+    "于2026",
     "广告代理",
     "AIDC",
     "合作",
     "接入"
   ],
-  "not": [],
+  "not": [
+    "普通IPO",
+    "创业板IPO",
+    "普通公司上市",
+    "生物公司IPO",
+    "非字节Seedance"
+  ],
+  "boundary_rules": {
+    "accept_requires_any": [
+      "字节Seedance",
+      "Seedance",
+      "字节跳动视频生成模型",
+      "AI视频生成",
+      "视频生成模型",
+      "豆包视频生成"
+    ],
+    "reject_if_only_hits": [
+      "IPO",
+      "创业板",
+      "上市",
+      "上会",
+      "生物",
+      "融资",
+      "于2026",
+      "广告代理",
+      "AIDC",
+      "合作",
+      "接入"
+    ],
+    "reject_domains": [
+      "普通IPO",
+      "普通公司上市",
+      "生物公司IPO"
+    ],
+    "nearby_confusions": [
+      "字节跳动",
+      "著名IP",
+      "普通创业板IPO"
+    ]
+  },
   "evidence_refs": [
     {
       "term": "AIDC广告代理合作接入",
@@ -18,7 +86,7 @@
     }
   ],
   "subject_id": "9063773",
-  "quality": "weak",
+  "quality": "accepted_candidate",
   "generated_at": "2026-04-02T09:27:36",
   "semantic_type": "技术合作与接入事件",
   "strategy_type": "event_driven",

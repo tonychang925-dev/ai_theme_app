@@ -1897,3 +1897,25 @@
 {"display":"实际再测试一下，看看最终的过滤率是多少","pastedContents":{},"timestamp":1779431794292,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
 {"display":"commit all changes","pastedContents":{},"timestamp":1779432496554,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
 {"display":"push this to remote","pastedContents":{},"timestamp":1779432558540,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":"核查一下：为什么5/25日盘前必读的事件高达177个？是刚才做的模拟测试的数据吗？","pastedContents":{},"timestamp":1779434649220,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":"重建 5/25 快照，修正窗口","pastedContents":{},"timestamp":1779434801271,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":"删除测试数据","pastedContents":{},"timestamp":1779434808890,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":"继续","pastedContents":{},"timestamp":1779435027645,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":"5/22日是周5，5/23-24日不交易","pastedContents":{},"timestamp":1779435106138,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":"为什么这么多待复核事件，而且都不是重大新闻事件？","pastedContents":{},"timestamp":1779435520464,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":"清理掉！","pastedContents":{},"timestamp":1779435579775,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":"现在5/25日的待复核事件有17条，全是公告，请核查公告事件有没有过滤处理？","pastedContents":{},"timestamp":1779437475741,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":"公告的信息展示太简略，我希望可以有基本的信息展示，比如点击可以看到更详细一点的说明或者提供公告链接，请确认如何快速实现，不需要增加额外的复杂开发","pastedContents":{},"timestamp":1779438314054,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":" 至少要看到公告的主体、时间、大概简略的说明等，详细信息可以提供外部链接","pastedContents":{},"timestamp":1779438402371,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":"没有看到变化","pastedContents":{},"timestamp":1779438847928,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":"重启服务也不行","pastedContents":{},"timestamp":1779438917535,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":"没有必要把所有的公告都列出来，我只关注公告机会的详情信息","pastedContents":{},"timestamp":1779439140284,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":"现在看到17条公告，但是只有2条公告机会，为什么要显示出17条呢？","pastedContents":{},"timestamp":1779439178549,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":"现在看到的公告是4条，但是公告机会是2条，为什么不一致？","pastedContents":{},"timestamp":1779439324791,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":"不合理！应该保持一致，过滤掉的就不要展示","pastedContents":{},"timestamp":1779439481260,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":"我建议吧“公告机会”和“公告机会详情”合在一起","pastedContents":{},"timestamp":1779439723198,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":"还有“待复核事件”要和“隔夜重大事件”一样的展示格式，现在太简略","pastedContents":{},"timestamp":1779439792517,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":"风险预警也要提供外部链接，便于了解详情","pastedContents":{},"timestamp":1779439913540,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":"现在盘前必读的内容排版比较混乱，建议每个栏目都采用表单的展示形式","pastedContents":{},"timestamp":1779440379587,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":"继续最近一次的话题讨论","pastedContents":{},"timestamp":1779440548552,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"989feae7-168d-42b5-82eb-f3f123e05e39"}
+{"display":"现在盘前必读的内容排版比较混乱，建议每个栏目都采用表单的展示形式，但是开始之前要先评估notion发布功能是否受到格式调整的影响。","pastedContents":{},"timestamp":1779440731707,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"989feae7-168d-42b5-82eb-f3f123e05e39"}

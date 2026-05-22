@@ -37,8 +37,7 @@ async def resolve_pre_market_window(
 
     优先从 trade calendar 取上一交易日；无日历或失败时使用工作日 fallback。
     """
-    prev_trade_date = await _resolve_prev_trade_date(trade_date, gateway=gateway, now=now)
-    source = "trade_calendar" if gateway else "weekday_fallback"
+    prev_trade_date, source = await _resolve_prev_trade_date(trade_date, gateway=gateway, now=now)
 
     start_at = datetime.combine(prev_trade_date, time(15, 0), tzinfo=CN_TZ)
     end_at = datetime.combine(trade_date, time(8, 0), tzinfo=CN_TZ)
@@ -57,8 +56,10 @@ async def _resolve_prev_trade_date(
     *,
     gateway: object | None = None,
     now: datetime | None = None,
-) -> date:
-    """获取上一交易日。"""
+) -> tuple[date, str]:
+    """获取上一交易日，返回 (date, source)。"""
+    weekday_fallback = _weekday_before(trade_date)
+
     if gateway is not None:
         fn = getattr(gateway, "get_trade_calendar", None)
         if callable(fn):
@@ -68,13 +69,16 @@ async def _resolve_prev_trade_date(
                 if prev:
                     parsed = _parse_date(prev)
                     if parsed:
+                        # 取 trade_calendar 和 weekday_fallback 中较晚的日期
+                        # （防止 DB 中缺少近期交易日数据导致窗口过宽）
+                        effective = max(parsed, weekday_fallback)
+                        source = "trade_calendar" if effective == parsed else "weekday_fallback(calendar_stale)"
                         logger.info(
-                            "pre_market_window resolved via trade_calendar: "
-                            "trade_date=%s prev_trade_date=%s",
-                            trade_date.isoformat(),
-                            parsed.isoformat(),
+                            "pre_market_window resolved: trade_date=%s prev_trade_date=%s (calendar=%s fallback=%s source=%s)",
+                            trade_date.isoformat(), effective.isoformat(),
+                            parsed.isoformat(), weekday_fallback.isoformat(), source,
                         )
-                        return parsed
+                        return effective, source
             except Exception as exc:
                 logger.warning(
                     "pre_market_window trade_calendar lookup failed for %s: %s",
@@ -82,14 +86,12 @@ async def _resolve_prev_trade_date(
                     exc,
                 )
 
-    # Fallback: simple weekday rollback
-    prev = _weekday_before(trade_date)
     logger.info(
         "pre_market_window fallback to weekday: trade_date=%s prev_trade_date=%s",
         trade_date.isoformat(),
-        prev.isoformat(),
+        weekday_fallback.isoformat(),
     )
-    return prev
+    return weekday_fallback, "weekday_fallback"
 
 
 def _weekday_before(d: date) -> date:

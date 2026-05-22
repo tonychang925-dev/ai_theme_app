@@ -186,9 +186,24 @@ async def async_main() -> None:
                     "pending", limit=args.extraction_limit
                 )
                 if pending:
-                    logging.info("[Stage 3] Extracting %s pending docs", len(pending))
-                    extracted = 0
+                    # 预过滤：跳过例行公告（无投资价值）
+                    skipped_routine = 0
+                    filtered_pending = []
                     for doc in pending:
+                        title = str(doc.get("title") or "").strip()
+                        if _is_routine_announcement(title):
+                            skipped_routine += 1
+                            await gateway.update_raw_intel_llm_status(doc["id"], "skipped_routine")
+                            continue
+                        filtered_pending.append(doc)
+
+                    if skipped_routine:
+                        logging.info("[Stage 3] Skipped %s routine announcements", skipped_routine)
+
+                    logging.info("[Stage 3] Extracting %s pending docs (filtered from %s)",
+                                 len(filtered_pending), len(pending))
+                    extracted = 0
+                    for doc in filtered_pending:
                         try:
                             result = await extractor.extract_announcement(doc)
                             await gateway.insert_structured_intel_event(result)
@@ -233,6 +248,69 @@ async def async_main() -> None:
         close_fn = getattr(gateway, "close", None)
         if callable(close_fn):
             await close_fn()
+
+
+# ── 公告例行性过滤 ──────────────────────────────────────────────────────
+
+_ROUTINE_TITLE_PATTERNS = [
+    # 股东会相关
+    "股东会通知", "股东会决议", "年度股东会", "临时股东会", "股东大会通知",
+    "股东会法律意见", "股东大会决议", "股东大会通知",
+    # 董事会/监事会
+    "董事会决议", "监事会决议", "董事会换届", "监事会换届",
+    "董事会第", "监事会第",  # 董事会第X次会议 / 监事会第X次会议
+    "独立董事", "董事候选人", "监事候选人",
+    "董事会会议", "监事会会议", "董事会召开",
+    # 法律/审计/会计
+    "法律意见书", "律师事务所", "会计师事务所",
+    "审计报告", "内控报告", "内部控制评价",
+    # 章程/制度
+    "章程修订", "公司章程", "修改公司章程",
+    "公司制度", "管理制度",
+    # 募集资金/定增例行报告
+    "募集资金使用", "募集资金存放", "募集资金年度",
+    # 权益分派
+    "权益分派", "利润分配",
+    # 投资者关系
+    "投资者关系活动", "调研记录", "投资者接待",
+    # 其他例行
+    "薪酬委员会", "提名委员会", "审计委员会",
+    "续聘", "更换会计师事务所",
+    "独立董事述职",
+    # 担保
+    "对外担保进展", "对外担保公告", "为子公司提供担保",
+    # 高管变动
+    "变更财务总监", "变更董事会秘书", "变更监事",
+    "聘任副总经理", "聘任财务总监", "聘任董事会秘书",
+]
+
+_MATERIAL_KEYWORDS = [
+    "定增", "发行股份", "购买资产", "重大资产重组", "增发",
+    "并购", "收购", "要约收购",
+    "业绩预告", "业绩快报", "业绩修正",
+    "中标", "合同", "订单", "投资协议",
+    "退市风险", "撤销退市", "ST", "*ST",
+    "立案调查", "行政处罚", "证监会",
+    "减持计划", "减持结果", "增持计划", "回购",
+]
+
+
+def _is_routine_announcement(title: str) -> bool:
+    """判断是否为无投资价值的例行公告。
+
+    如果标题命中了例行模式且未命中重要关键词 → skip。
+    """
+    if not title:
+        return False
+    # 如果包含重要关键词 → 非例行，保留
+    for kw in _MATERIAL_KEYWORDS:
+        if kw in title:
+            return False
+    # 检查例行模式
+    for pat in _ROUTINE_TITLE_PATTERNS:
+        if pat in title:
+            return True
+    return False
 
 
 async def _watch_parent(parent_pid: int, interval: float = 5.0) -> None:
