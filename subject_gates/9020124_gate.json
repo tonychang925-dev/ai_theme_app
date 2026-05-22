@@ -1,66 +1,87 @@
 {
   "must": [
     "天然气重卡",
-    "整车",
-    "发动机",
-    "气瓶",
-    "催化剂"
+    "LNG重卡",
+    "燃气重卡"
+  ],
+  "strong": [
+    "CNG重卡",
+    "天然气商用车",
+    "LNG商用车",
+    "燃气重卡销量"
   ],
   "should": [
-    "重卡行业",
-    "重卡市场",
-    "同比稳定增长",
-    "政策支持",
-    "出口市场",
-    "海外市场",
-    "渗透率",
-    "燃气重卡销量",
-    "单月渗透率"
+    "重卡运输",
+    "物流卡车",
+    "气瓶系统",
+    "燃气发动机",
+    "重卡渗透率"
+  ],
+  "support_terms": [
+    "天然气",
+    "LNG",
+    "CNG",
+    "重卡",
+    "商用车"
+  ],
+  "no_anchor_terms": [
+    "天然气",
+    "LNG",
+    "CNG",
+    "重卡",
+    "商用车",
+    "新能源汽车",
+    "汽车财报",
+    "蔚来",
+    "理想",
+    "小鹏"
   ],
   "not": [
-    "大规模设备更新",
-    "消费品以旧换新",
-    "超长期特别国债",
-    "更新为低排放货车",
-    "补贴",
-    "三季度营收"
+    "乘用车财报",
+    "新能源汽车销量",
+    "普通天然气项目",
+    "LNG接收站",
+    "燃气发电"
   ],
-  "evidence_refs": [
-    {
-      "term": "天然气重卡",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "天然气重卡"
-    },
-    {
-      "term": "整车",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "整车"
-    },
-    {
-      "term": "发动机",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "发动机"
-    },
-    {
-      "term": "气瓶",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "气瓶"
-    },
-    {
-      "term": "催化剂",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "催化剂"
-    }
+  "negative": [
+    "乘用车季度财报",
+    "新能源汽车销量",
+    "普通LNG项目",
+    "LNG接收站",
+    "燃气发电"
   ],
+  "boundary_rules": {
+    "accept_requires_any": [
+      "天然气重卡",
+      "LNG重卡",
+      "燃气重卡",
+      "CNG重卡",
+      "天然气商用车",
+      "LNG商用车"
+    ],
+    "reject_if_only_hits": [
+      "天然气",
+      "LNG",
+      "CNG",
+      "重卡",
+      "商用车"
+    ],
+    "reject_domains": [
+      "乘用车财报",
+      "新能源汽车",
+      "普通天然气项目",
+      "燃气发电"
+    ],
+    "nearby_confusions": [
+      "天然气",
+      "商用车",
+      "乘用车"
+    ]
+  },
   "subject_id": "9020124",
-  "quality": "weak",
-  "generated_at": "2026-03-31T21:56:18",
-  "semantic_type": "产业链/供应链",
+  "quality": "accepted_candidate",
+  "generated_at": "2026-05-22T09:20:00",
+  "semantic_type": "燃气商用车链路",
   "strategy_type": "industry_chain",
   "source_type": 1
 }

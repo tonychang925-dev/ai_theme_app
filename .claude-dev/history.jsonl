@@ -1851,3 +1851,5 @@
 {"display":"请核查，是否存在非重要事件也进入匹配，给出分析评估","pastedContents":{},"timestamp":1779376330564,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
 {"display":"另外没有一条公告机会，也请核查根源","pastedContents":{},"timestamp":1779376578711,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
 {"display":"把 Stage 1-3 也加入 RealtimeStackManager 自动化调度","pastedContents":{},"timestamp":1779406560701,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":"请核查代码，确认一下我们用akshare采集的新闻事件是否有过滤“重要”消息的处理，而不是所有消息都接收？","pastedContents":{},"timestamp":1779412388998,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":"我想确认，在源头上财联社的新闻采集模块akshare是否有应用只采集“重要”消息的过滤，我记得它的api有这个参数过滤，我们代码中有使用吗？我希望在源头上就要过滤！","pastedContents":{},"timestamp":1779413065117,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
