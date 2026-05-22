@@ -67,12 +67,12 @@ class NewsCrawlerService:
             logger.error(f"❌ 财联社采集器初始化失败: {e}")
             self.collector = None
     
-    async def crawl_real_news(self, symbol: str = "全部", limit: int = 10) -> Dict[str, Any]:
+    async def crawl_real_news(self, symbol: str = "重点", limit: int = 10) -> Dict[str, Any]:
         """
         抓取真实财联社新闻 - 主接口
         
         Args:
-            symbol: 股票代码或"全部"
+            symbol: 股票代码或"重点"（只采集A/B级重要电报）
             limit: 最大返回数量
             
         Returns:
@@ -175,7 +175,7 @@ class NewsCrawlerService:
             
             # 根据可用性选择模式（仅真实）
             if real_available:
-                result = await self.crawl_real_news("全部", count)
+                result = await self.crawl_real_news("重点", count)
                 result["operation"] = operation
                 result["mode"] = "real"
             else:
@@ -224,7 +224,7 @@ class NewsCrawlerService:
                         operation,
                         "无法使用real模式"
                     )
-                result = await self.crawl_real_news("全部", batch_size)
+                result = await self.crawl_real_news("重点", batch_size)
                 
             else:  # auto模式
                 # 智能选择

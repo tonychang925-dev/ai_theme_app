@@ -1783,6 +1783,7 @@ class ThemeMatchEngine:
         mark("final_decision_ms")
         timing_ms["total_match_ms"] = round((time.perf_counter() - started_at) * 1000, 3)
         env = self._guard_high_noise_fallback_match(env, profile_map)
+        env = self._guard_weak_v1_direct_hit_match(env, profile_map)
         return self._attach_runtime_audit(env, timing_ms, counters)
 
     def _guard_high_noise_fallback_match(
@@ -1808,6 +1809,62 @@ class ThemeMatchEngine:
         env.decision = "HUMAN_REVIEW"
         env.confidence = min(float(env.confidence or 0.0), _squash01(0.5))
         env.reason_code = "high_noise_v1_fallback_review"
+        env.related_matches = []
+        env.review_required = True
+        env.audit = audit
+        return env
+
+    def _guard_weak_v1_direct_hit_match(
+        self,
+        env: ThemeDecisionEnvelope,
+        profile_map: Dict[str, ThemeProfile],
+    ) -> ThemeDecisionEnvelope:
+        if env.decision != "MATCH" or env.reason_code != "direct_theme_name_hit":
+            return env
+        profile = profile_map.get(env.matched_subject_key)
+        gate_json = profile.gate_json if profile and isinstance(profile.gate_json, dict) else {}
+        if not profile or gate_json.get("profile_version") == "v2":
+            return env
+
+        audit = env.audit if isinstance(env.audit, dict) else {}
+        evidence = audit.get("best_evidence") if isinstance(audit.get("best_evidence"), dict) else {}
+        accepted_anchor_hits = _normalize_list(evidence.get("accepted_anchor_hits"))
+        if accepted_anchor_hits:
+            return env
+
+        subject_name_hits = _normalize_list(evidence.get("subject_name_hit_terms"))
+        subject_name = _normalize_text(profile.subject_name)
+        if subject_name and any(_normalize_text(term) == subject_name for term in subject_name_hits):
+            return env
+
+        direct_hit_terms = _unique(
+            _normalize_list(evidence.get("theme_name_hit_terms"))
+            + subject_name_hits
+        )
+        term_roles = evidence.get("hit_term_roles") if isinstance(evidence.get("hit_term_roles"), dict) else {}
+        specific_alias_hits = [
+            term
+            for term in direct_hit_terms
+            if len(_normalize_text(term)) >= 4
+            and term in _filter_generic_terms([term])
+            and term_roles.get(term) not in ROLE_BLOCKING_HIT_ROLES
+        ]
+        if specific_alias_hits:
+            return env
+
+        audit["v1_direct_hit_guard"] = {
+            "blocked": True,
+            "subject_key": env.matched_subject_key,
+            "previous_decision": env.decision,
+            "previous_reason_code": env.reason_code,
+            "runtime_profile_source": "v1_fallback",
+            "direct_hit_terms": direct_hit_terms,
+            "accepted_anchor_hits": accepted_anchor_hits,
+            "term_roles": {term: term_roles.get(term, "") for term in direct_hit_terms},
+        }
+        env.decision = "HUMAN_REVIEW"
+        env.confidence = min(float(env.confidence or 0.0), _squash01(0.5))
+        env.reason_code = "weak_v1_direct_hit_review"
         env.related_matches = []
         env.review_required = True
         env.audit = audit

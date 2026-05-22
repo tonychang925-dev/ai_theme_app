@@ -1,53 +1,96 @@
 {
+  "subject_id": "9059277",
+  "quality": "accepted_candidate",
+  "generated_at": "2026-05-22T00:00:00",
+  "semantic_type": "福建区域发展",
+  "strategy_type": "policy_driven",
+  "source_type": 1,
   "must": [
-    "平潭岛（海坛岛）",
-    "厦门",
-    "推动闽台基础设施互联互通",
-    "构建立体式综合性对台通道枢纽"
+    "福建区域发展",
+    "福建自贸区",
+    "福建海洋经济",
+    "福建两岸融合",
+    "福建平潭",
+    "福建本地股",
+    "福建政策催化"
+  ],
+  "strong": [
+    "闽台融合发展",
+    "平潭两岸融合",
+    "平潭综合实验区",
+    "福建区域基建"
   ],
   "should": [
+    "福建基建",
     "两岸经贸合作",
-    "人员往来",
-    "文化交流",
-    "两岸融合平台建设",
-    "国家级台湾农民创业园",
-    "台湾海峡",
-    "台湾省新竹港",
-    "东临台湾海峡",
-    "与台湾省新竹港相距仅68海里",
-    "中国大陆距台湾最近的地方"
+    "海洋经济",
+    "平潭",
+    "闽台基础设施互联互通"
   ],
-  "not": [],
-  "evidence_refs": [
-    {
-      "term": "平潭岛（海坛岛）",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "平潭岛（海坛岛）"
-    },
-    {
-      "term": "厦门",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "厦门"
-    },
-    {
-      "term": "推动闽台基础设施互联互通",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "推动闽台基础设施互联互通"
-    },
-    {
-      "term": "构建立体式综合性对台通道枢纽",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "构建立体式综合性对台通道枢纽"
-    }
+  "support_terms": [
+    "福建",
+    "厦门",
+    "福州",
+    "泉州",
+    "地方政策"
   ],
-  "subject_id": "9059277",
-  "quality": "medium",
-  "generated_at": "2026-03-31T22:22:09",
-  "semantic_type": "区域融合与地缘经济",
-  "strategy_type": "policy_driven",
-  "source_type": 1
+  "no_anchor_terms": [
+    "福建",
+    "厦门",
+    "福州",
+    "泉州",
+    "地方新闻",
+    "天气",
+    "交通",
+    "旅游"
+  ],
+  "not": [
+    "普通地方新闻",
+    "天气预警",
+    "交通停运",
+    "旅游出行",
+    "地震灾害",
+    "非产业政策"
+  ],
+  "negative": [
+    "普通地方新闻",
+    "天气预警",
+    "交通停运",
+    "旅游出行",
+    "地震灾害",
+    "非产业政策"
+  ],
+  "boundary_rules": {
+    "accept_requires_any": [
+      "福建区域发展",
+      "福建自贸区",
+      "福建海洋经济",
+      "福建两岸融合",
+      "福建平潭",
+      "福建本地股",
+      "福建政策催化",
+      "闽台融合发展"
+    ],
+    "reject_if_only_hits": [
+      "福建",
+      "厦门",
+      "福州",
+      "泉州",
+      "地方政策",
+      "交通",
+      "旅游"
+    ],
+    "reject_domains": [
+      "普通地方新闻",
+      "天气预警",
+      "交通停运",
+      "地震灾害",
+      "非产业政策"
+    ],
+    "nearby_confusions": [
+      "全国文旅",
+      "地方灾害",
+      "普通区域新闻"
+    ]
+  }
 }

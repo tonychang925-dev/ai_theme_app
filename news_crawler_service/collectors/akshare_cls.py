@@ -16,7 +16,7 @@ class AkshareClsCollector(BaseCollector):
     
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.symbol = "全部"  # 可配置化
+        self.symbol = "重点"  # 只采集A/B级重要电报，过滤普通消息
         self.last_request_time = 0
         
     @property
@@ -158,7 +158,7 @@ class AkshareClsCollector(BaseCollector):
         """健康检查：测试akshare是否可用"""
         try:
             loop = asyncio.get_event_loop()
-            df = await loop.run_in_executor(None, ak.stock_info_global_cls, "全部")
+            df = await loop.run_in_executor(None, ak.stock_info_global_cls, "重点")
             return df is not None and not df.empty
         except Exception:
             return False

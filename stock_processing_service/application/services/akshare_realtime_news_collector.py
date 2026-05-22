@@ -48,7 +48,7 @@ class AkShareRealtimeNewsCollector:
         status_path: str | Path | None = None,
         batch_size: int = 20,
         prefilter_enabled: bool = True,
-        prefilter_mode: str = "rule",
+        prefilter_mode: str = "rule_prompt",
         prefilter_model_path: str = "",
         prefilter_fail_open: bool = True,
         prefilter_skip_log_path: str | Path | None = None,

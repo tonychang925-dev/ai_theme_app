@@ -28,7 +28,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--parent-pid", type=int, default=None)
     # P1-A: prefilter
     parser.add_argument("--prefilter-enabled", type=lambda x: x.lower() in ("1","true","yes","on"), default=True)
-    parser.add_argument("--prefilter-mode", default="rule", choices=["rule","prompt","embedding","off"])
+    parser.add_argument("--prefilter-mode", default="rule_prompt", choices=["rule","rule_prompt","prompt","embedding","off"])
     parser.add_argument("--prefilter-model-path", default="")
     parser.add_argument("--prefilter-fail-open", type=lambda x: x.lower() in ("1","true","yes","on"), default=True)
     parser.add_argument("--prefilter-skip-log", default=None)

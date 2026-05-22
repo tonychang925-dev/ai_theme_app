@@ -6,7 +6,7 @@ class AkshareClsCollector(AkshareBaseCollector):
     """财联社电报（已有，适配新基类）"""
     
     def __init__(self, **kwargs):
-        super().__init__(fetch_function=lambda: ak.stock_info_global_cls(symbol="全部"), **kwargs)
+        super().__init__(fetch_function=lambda: ak.stock_info_global_cls(symbol="重点"), **kwargs)
     
     @property
     def source_name(self) -> str:
