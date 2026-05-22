@@ -1,23 +1,76 @@
 {
   "must": [
-    "消费"
+    "东盟自贸区",
+    "中国东盟自贸区",
+    "中国东盟自由贸易区"
+  ],
+  "strong": [
+    "东盟自由贸易区",
+    "东盟贸易协定",
+    "中国东盟经贸合作"
   ],
   "should": [
-    "交通"
+    "东盟",
+    "自贸区升级",
+    "区域贸易",
+    "关税安排",
+    "经贸往来"
   ],
-  "not": [],
-  "evidence_refs": [
-    {
-      "term": "消费",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "消费"
-    }
+  "support_terms": [
+    "消费",
+    "交通",
+    "贸易",
+    "进口",
+    "出口"
   ],
+  "no_anchor_terms": [
+    "消费",
+    "交通",
+    "英国",
+    "消费者信心",
+    "零售",
+    "宏观数据"
+  ],
+  "not": [
+    "英国消费者信心",
+    "普通消费数据",
+    "非东盟宏观新闻",
+    "普通零售数据"
+  ],
+  "negative": [
+    "英国消费者信心指数",
+    "非东盟消费数据",
+    "普通宏观经济数据"
+  ],
+  "boundary_rules": {
+    "accept_requires_any": [
+      "东盟自贸区",
+      "中国东盟自贸区",
+      "中国东盟自由贸易区",
+      "东盟自由贸易区",
+      "东盟贸易协定"
+    ],
+    "reject_if_only_hits": [
+      "消费",
+      "交通",
+      "零售",
+      "贸易"
+    ],
+    "reject_domains": [
+      "英国宏观数据",
+      "普通消费数据",
+      "非东盟经济新闻"
+    ],
+    "nearby_confusions": [
+      "消费",
+      "宏观数据",
+      "其他自贸区"
+    ]
+  },
   "subject_id": "9046378",
-  "quality": "weak",
-  "generated_at": "2026-04-04T16:13:01",
-  "semantic_type": "节庆消费事件",
+  "quality": "accepted_candidate",
+  "generated_at": "2026-05-22T09:35:00",
+  "semantic_type": "区域经贸合作",
   "strategy_type": "event_driven",
   "source_type": 1
 }

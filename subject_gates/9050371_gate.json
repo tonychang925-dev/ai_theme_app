@@ -1,75 +1,83 @@
 {
   "must": [
-    "新兴人工智能和边缘计算公司",
-    "传统工业自动化/软件巨头",
-    "工业软件和物联网平台",
-    "人工智能",
-    "边缘计算",
-    "工业软件"
+    "工业智能体",
+    "工业AI智能体",
+    "工业软件智能体"
+  ],
+  "strong": [
+    "工业自动化智能体",
+    "工业边缘AI",
+    "工业物联网智能体",
+    "制造业智能体"
   ],
   "should": [
-    "特定解决方案提供商",
-    "云服务商",
-    "物联网平台",
-    "新兴公司",
-    "传统巨头",
-    "平台提供商",
-    "人工智能规模化商业化应用",
-    "人工智能创新生态",
-    "人工智能治理格局",
-    "人工智能科创新时代",
-    "数据要素与人工智能技术融合创新",
-    "电子信息制造业数字化转型"
+    "工业软件",
+    "工业自动化",
+    "工业物联网",
+    "边缘计算",
+    "制造执行"
+  ],
+  "support_terms": [
+    "人工智能",
+    "AI系统",
+    "智能体",
+    "平台",
+    "软件"
+  ],
+  "no_anchor_terms": [
+    "人工智能",
+    "AI",
+    "AI系统",
+    "医疗",
+    "肥胖",
+    "医学",
+    "图灵测试",
+    "尖端模型"
   ],
   "not": [
-    "世界人工智能大会",
-    "科创板改革",
-    "科创板改革“1+6”政策",
-    "中国国际大数据产业博览会",
-    "数博会"
+    "医学AI研究",
+    "医疗评估",
+    "AI图灵测试",
+    "通用AI模型审查"
   ],
-  "evidence_refs": [
-    {
-      "term": "新兴人工智能和边缘计算公司",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "新兴人工智能和边缘计算公司"
-    },
-    {
-      "term": "传统工业自动化/软件巨头",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "传统工业自动化/软件巨头"
-    },
-    {
-      "term": "工业软件和物联网平台",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "工业软件和物联网平台"
-    },
-    {
-      "term": "人工智能",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "人工智能"
-    },
-    {
-      "term": "边缘计算",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "边缘计算"
-    },
-    {
-      "term": "工业软件",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "工业软件"
-    }
+  "negative": [
+    "医学AI研究",
+    "医疗AI系统",
+    "肥胖医学评估",
+    "通用AI模型新闻"
   ],
+  "boundary_rules": {
+    "accept_requires_any": [
+      "工业智能体",
+      "工业AI智能体",
+      "工业软件智能体",
+      "工业自动化智能体",
+      "工业物联网智能体",
+      "制造业智能体"
+    ],
+    "reject_if_only_hits": [
+      "人工智能",
+      "AI",
+      "AI系统",
+      "智能体",
+      "工业软件"
+    ],
+    "reject_domains": [
+      "医学AI",
+      "通用AI研究",
+      "模型治理",
+      "医疗评估"
+    ],
+    "nearby_confusions": [
+      "人工智能硬件",
+      "医疗AI",
+      "通用AI智能体"
+    ]
+  },
   "subject_id": "9050371",
-  "quality": "weak",
-  "generated_at": "2026-04-02T05:34:56",
-  "semantic_type": "技术突破与产业链融合",
+  "quality": "accepted_candidate",
+  "generated_at": "2026-05-22T09:35:00",
+  "semantic_type": "工业AI应用",
   "strategy_type": "industry_chain",
   "source_type": 1
 }

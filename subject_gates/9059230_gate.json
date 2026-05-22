@@ -1,54 +1,83 @@
 {
   "must": [
-    "电力",
-    "电力储存",
-    "电力生产",
-    "电力设备"
+    "美国缺电",
+    "美国电力短缺",
+    "美国电力供应不足"
+  ],
+  "strong": [
+    "美国电网压力",
+    "美国数据中心用电激增",
+    "AI数据中心用电",
+    "美国AI算力用电"
   ],
   "should": [
+    "美国电网",
+    "数据中心负荷",
+    "电力供应缺口",
+    "算力中心用电",
+    "电网扩容"
+  ],
+  "support_terms": [
+    "电力",
+    "电力设备",
+    "能源",
+    "用电",
+    "电力生产"
+  ],
+  "no_anchor_terms": [
+    "电力",
+    "电力设备",
+    "能源",
+    "用电",
     "电费",
     "数据中心",
-    "科技公司",
-    "人工智能"
+    "股东减持"
   ],
   "not": [
-    "特朗普",
-    "拜登",
-    "民主党人",
-    "公用事业账单",
-    "微软",
-    "重大变革"
+    "减持",
+    "回购",
+    "普通电力设备",
+    "普通能源项目",
+    "普通电价新闻"
   ],
-  "evidence_refs": [
-    {
-      "term": "电力",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "电力"
-    },
-    {
-      "term": "电力储存",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "电力储存"
-    },
-    {
-      "term": "电力生产",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "电力生产"
-    },
-    {
-      "term": "电力设备",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "电力设备"
-    }
+  "negative": [
+    "公司股东减持",
+    "普通电力设备新闻",
+    "普通能源项目",
+    "非美国电网压力"
   ],
+  "boundary_rules": {
+    "accept_requires_any": [
+      "美国缺电",
+      "美国电力短缺",
+      "美国电力供应不足",
+      "美国电网压力",
+      "美国数据中心用电激增",
+      "美国AI算力用电"
+    ],
+    "reject_if_only_hits": [
+      "电力",
+      "电力设备",
+      "能源",
+      "用电",
+      "数据中心"
+    ],
+    "reject_domains": [
+      "股东减持",
+      "普通电力设备",
+      "普通能源项目",
+      "非美国电力新闻"
+    ],
+    "nearby_confusions": [
+      "电力运营",
+      "电网设备",
+      "AI算力"
+    ]
+  },
   "subject_id": "9059230",
-  "quality": "weak",
-  "generated_at": "2026-04-02T07:03:43",
-  "semantic_type": "能源基础设施",
-  "strategy_type": "industry_chain",
+  "quality": "accepted_candidate",
+  "generated_at": "2026-05-22T09:20:00",
+  "semantic_type": "美国电力供需",
+  "strategy_type": "event_driven",
   "source_type": 1
 }

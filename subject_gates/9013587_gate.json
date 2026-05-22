@@ -1,71 +1,90 @@
 {
   "must": [
-    "IP持有人",
-    "开发/制作商",
-    "发行商",
-    "渠道",
-    "媒体平台",
-    "内容创作和策划"
+    "影视传媒",
+    "传媒内容平台",
+    "广告营销传媒"
+  ],
+  "strong": [
+    "短剧内容平台",
+    "院线传媒",
+    "出版传媒",
+    "游戏传媒",
+    "IP运营传媒"
   ],
   "should": [
-    "广告商",
-    "支付渠道",
-    "广告变现",
-    "会员模式",
-    "游戏",
-    "直播",
-    "增值服务",
-    "线上内容与商品销售",
-    "印刷",
-    "物资供应",
-    "AI技术公司",
-    "生成式AI工具集"
+    "影视制作",
+    "游戏发行",
+    "广告营销",
+    "内容平台",
+    "院线",
+    "出版",
+    "短剧",
+    "IP运营"
+  ],
+  "support_terms": [
+    "媒体",
+    "宣传",
+    "内容",
+    "平台",
+    "政策"
+  ],
+  "no_anchor_terms": [
+    "媒体",
+    "发布",
+    "宣传",
+    "内容",
+    "平台",
+    "政策",
+    "商务部",
+    "乡村振兴"
   ],
   "not": [
-    "南京照相馆"
+    "政府宣传",
+    "政策发布",
+    "乡村振兴",
+    "普通公告",
+    "非传媒产业政策"
   ],
-  "evidence_refs": [
-    {
-      "term": "IP持有人",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "IP持有人"
-    },
-    {
-      "term": "开发/制作商",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "开发/制作商"
-    },
-    {
-      "term": "发行商",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "发行商"
-    },
-    {
-      "term": "渠道",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "渠道"
-    },
-    {
-      "term": "媒体平台",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "媒体平台"
-    },
-    {
-      "term": "内容创作和策划",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "内容创作和策划"
-    }
+  "negative": [
+    "商务部乡村振兴",
+    "政府宣传报道",
+    "普通政策发布",
+    "非传媒行业政策"
   ],
+  "boundary_rules": {
+    "accept_requires_any": [
+      "影视传媒",
+      "传媒内容平台",
+      "广告营销传媒",
+      "短剧内容平台",
+      "院线传媒",
+      "出版传媒",
+      "IP运营传媒"
+    ],
+    "reject_if_only_hits": [
+      "媒体",
+      "发布",
+      "宣传",
+      "内容",
+      "平台",
+      "政策"
+    ],
+    "reject_domains": [
+      "政府宣传",
+      "政策发布",
+      "乡村振兴",
+      "普通公告"
+    ],
+    "nearby_confusions": [
+      "著名IP",
+      "游戏",
+      "政府宣传"
+    ]
+  },
   "subject_id": "9013587",
-  "quality": "strong",
-  "generated_at": "2026-04-01T06:02:55",
-  "semantic_type": "产业链/价值链",
+  "quality": "accepted_candidate",
+  "generated_at": "2026-05-22T09:20:00",
+  "semantic_type": "传媒产业链",
   "strategy_type": "industry_chain",
   "source_type": 1
 }
