@@ -2741,20 +2741,21 @@ select {
 
 .pre-market-summary-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 10px;
   margin-bottom: 12px;
 }
 
 .pre-market-summary-grid .workspace-card {
-  min-height: 84px;
+  min-height: 72px;
   display: grid;
   align-content: center;
-  gap: 6px;
+  gap: 4px;
+  padding: 10px 12px;
 }
 
 .pre-market-summary-grid strong {
-  font-size: 28px;
+  font-size: 24px;
   line-height: 1;
   color: #f7d45a;
 }
@@ -2772,35 +2773,21 @@ select {
   padding: 8px 0;
 }
 
-.pre-market-event-list,
-.pre-market-risk-list,
 .pre-market-tier-stack {
   display: grid;
   gap: 10px;
 }
 
-.pre-market-event,
-.pre-market-risk,
 .pre-market-opportunity,
 .pre-market-tier {
-  padding: 12px;
-  border-radius: 8px;
-  background: #141922;
-  border: 1px solid #2d3542;
+  padding: 12px 0;
 }
 
-.pre-market-event.is-review,
-.pre-market-risk {
-  border-color: #735b23;
-  background: rgba(247, 212, 90, 0.08);
+.pre-market-tier {
+  padding-left: 8px;
+  border-left: 2px solid #2d3542;
 }
 
-.pre-market-event.is-unknown {
-  border-color: #5d3540;
-  background: rgba(255, 122, 122, 0.08);
-}
-
-.pre-market-event-head,
 .pre-market-toolbar .recap-tag-stack,
 .pre-market-opportunity .recap-table-head {
   display: flex;
@@ -2815,6 +2802,27 @@ select {
 
 .pre-market-stock-table {
   min-width: 960px;
+}
+
+.pre-market-event-table {
+  min-width: 900px;
+}
+
+.pre-market-announcement-table {
+  min-width: 980px;
+}
+
+.pre-market-risk-table {
+  min-width: 880px;
+}
+
+/* 待复核/未匹配行底色 */
+.row-review {
+  background: rgba(247, 212, 90, 0.06);
+}
+
+.row-unknown {
+  background: rgba(255, 122, 122, 0.06);
 }
 
 .pre-market-json-block,
@@ -2950,14 +2958,13 @@ select {
   }
 
   .pre-market-toolbar,
-  .pre-market-event-head,
   .pre-market-opportunity .recap-table-head {
     flex-direction: column;
     align-items: stretch;
   }
 
   .pre-market-summary-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .detail-metrics {

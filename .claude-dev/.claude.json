@@ -24,7 +24,7 @@
     "desktop-app": 17,
     "web-app": 17,
     "mobile-app": 17,
-    "frontend-design-plugin": 15,
+    "frontend-design-plugin": 18,
     "shift-enter": 14,
     "subagent-fanout-nudge": 16,
     "custom-agents": 6,
@@ -35,7 +35,6 @@
     "custom-commands": 11
   },
   "promptQueueUseCount": 376,
-  "showExpandedTodos": true,
   "cachedGrowthBookFeatures": {
     "tengu_ember_latch": false,
     "tengu-off-switch": {
