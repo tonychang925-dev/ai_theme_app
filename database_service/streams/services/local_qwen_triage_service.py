@@ -64,14 +64,9 @@ class LocalQwenNewsTriageService:
         text = self._build_text(news_data)
         rule_features = self._rule_features(text)
 
-        # 硬过滤：仅价格波动 + 无具体催化，或模板化小作文，直接SKIP
-        if rule_features["strict_trivial_skip"]:
-            return {
-                "decision": "SKIP",
-                "reason": "rule:strict_trivial_price_move",
-                "score": None,
-                "mode": "rule",
-            }
+        # 硬过滤已关闭 — 全部交由 Qwen prompt 判定
+        # if rule_features["strict_trivial_skip"]:
+        #     return {"decision": "SKIP", ...}
 
         if not self.enabled:
             return self._rule_decision(rule_features, reason_prefix="local_triage_disabled")

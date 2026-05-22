@@ -198,7 +198,7 @@ class RealtimeStackManager:
                     "--redis-url", self._redis_url,
                     "--stream", "stream:news:raw",
                     "--run-id", run_id,
-                    "--poll-interval-seconds", os.environ.get("AKSHARE_REALTIME_POLL_SECONDS", "60"),
+                    "--poll-interval-seconds", os.environ.get("AKSHARE_REALTIME_POLL_SECONDS", "180"),
                     "--lookback-minutes", os.environ.get("AKSHARE_REALTIME_LOOKBACK_MINUTES", "180"),
                     "--status-path", str(akshare_status),
                     "--prefilter-skip-log", str(akshare_skip_log),

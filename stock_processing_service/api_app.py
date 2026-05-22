@@ -1302,6 +1302,13 @@ LOW_VALUE_EVENT_TERMS = (
     "普通财报",
     "季度财报",
 )
+LLM_ACCEPT_SAFETY_REVIEW_CODES = {
+    "weak_v1_llm_accept_review",
+    "llm_accept_without_hard_evidence",
+    "llm_accept_generic_only_review",
+    "low_conf_llm_accept_review",
+    "low_value_event_match_blocked",
+}
 
 
 def _debug_repo_root() -> Path:
@@ -1472,6 +1479,13 @@ def _write_phase2c_reports(out_dir: Path, *, run_id: str, rows: list[dict[str, A
         and (row.get("match_reason") == "direct_theme_name_hit" or row.get("reason_code") == "weak_v1_direct_hit_review")
         for row in rows
     )
+    llm_accept_match_count = sum(row.get("match_reason") == "llm_accept_match" for row in rows)
+    llm_accept_blocked_count = sum(row.get("reason_code") in LLM_ACCEPT_SAFETY_REVIEW_CODES for row in rows)
+    weak_v1_llm_accept_review_count = sum(row.get("reason_code") == "weak_v1_llm_accept_review" for row in rows)
+    llm_accept_without_hard_evidence_count = sum(row.get("reason_code") == "llm_accept_without_hard_evidence" for row in rows)
+    llm_accept_generic_only_review_count = sum(row.get("reason_code") == "llm_accept_generic_only_review" for row in rows)
+    low_conf_llm_accept_review_count = sum(row.get("reason_code") == "low_conf_llm_accept_review" for row in rows)
+    low_value_event_match_blocked_count = sum(row.get("reason_code") == "low_value_event_match_blocked" for row in rows)
     new_obvious_wrong_match_count = sum(row.get("auto_label") in {"obvious_wrong", "guard_miss"} for row in rows)
     new_positive_fail_count = sum(row.get("auto_label") == "positive_fail" for row in rows)
     low_value_major = sum(row.get("is_low_value_event") and row.get("decision") == "MATCH" for row in rows)
@@ -1525,6 +1539,13 @@ def _write_phase2c_reports(out_dir: Path, *, run_id: str, rows: list[dict[str, A
         "new_weak_v1_direct_hit_review_count": new_weak_review_count,
         "new_direct_hit_match_count": new_direct_hit_match_count,
         "new_direct_hit_review_count": new_direct_hit_review_count,
+        "llm_accept_match_count": llm_accept_match_count,
+        "llm_accept_blocked_count": llm_accept_blocked_count,
+        "weak_v1_llm_accept_review_count": weak_v1_llm_accept_review_count,
+        "llm_accept_without_hard_evidence_count": llm_accept_without_hard_evidence_count,
+        "llm_accept_generic_only_review_count": llm_accept_generic_only_review_count,
+        "low_conf_llm_accept_review_count": low_conf_llm_accept_review_count,
+        "low_value_event_match_blocked_count": low_value_event_match_blocked_count,
         "new_obvious_wrong_match_count": new_obvious_wrong_match_count,
         "new_positive_fail_count": new_positive_fail_count,
         "low_value_major": low_value_major,
@@ -1686,6 +1707,10 @@ async def live_direct_hit_replay(payload: LiveDirectHitReplayRequest) -> dict[st
                 auto_label = "positive_fail"
                 root_cause = "expected_match_missing"
                 suggested_fix = "inspect_positive_recall"
+            elif decision.get("reason_code") in LLM_ACCEPT_SAFETY_REVIEW_CODES:
+                auto_label = "guarded_review"
+                root_cause = "llm_accept_safety_gate"
+                suggested_fix = "no_action_unless_repeated"
             elif is_low_value and decision.get("decision") == "MATCH":
                 auto_label = "low_value"
                 root_cause = "display_layer"
