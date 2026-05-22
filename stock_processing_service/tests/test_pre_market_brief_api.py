@@ -37,7 +37,13 @@ class _Gateway:
             }
         ]
 
-    async def get_pre_market_review_events(self, feed_date: date, limit: int = 200):
+    async def get_pre_market_review_events(
+        self,
+        feed_date: date,
+        limit: int = 200,
+        start_at=None,
+        end_at=None,
+    ):
         return []
 
     async def get_subject_stock_pool_by_trade_date(self, trade_date: date):

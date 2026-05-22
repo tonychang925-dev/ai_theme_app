@@ -15,7 +15,7 @@ class _ReadGateway:
     async def get_intel_news_events(self, feed_date):
         return self.matched
 
-    async def get_pre_market_review_events(self, feed_date, limit=200):
+    async def get_pre_market_review_events(self, feed_date, limit=200, start_at=None, end_at=None):
         return self.review[:limit]
 
 
@@ -46,7 +46,7 @@ class _SubjectReadGateway(_ReadGateway):
         self.used_subject_events = False
         self.used_legacy_events = False
 
-    async def get_pre_market_subject_events(self, feed_date, source=None, limit=200):
+    async def get_pre_market_subject_events(self, feed_date, source=None, limit=200, start_at=None, end_at=None):
         self.used_subject_events = True
         return self.subject_events[:limit]
 
@@ -67,7 +67,14 @@ class _OpportunityBuilder:
 
 
 class _IntelAnnouncementGateway(_ReadGateway):
-    async def get_intel_announcement_events(self, feed_date, limit=200, matched_only=False):
+    async def get_intel_announcement_events(
+        self,
+        feed_date,
+        limit=200,
+        matched_only=False,
+        start_time=None,
+        end_time=None,
+    ):
         rows = [
             {
                 "event_id": 701,
@@ -238,6 +245,47 @@ async def test_pre_market_brief_builder_prefers_event_subject_map_rows():
     assert read.used_legacy_events is False
     assert payload["sections"]["matched_themes"][0]["subject_key"] == "9030409"
     assert payload["sections"]["matched_themes"][0]["theme_name"] == "AR眼镜"
+
+
+@pytest.mark.asyncio
+async def test_pre_market_brief_builder_keeps_primary_match_and_filters_low_value_major_events():
+    read = _SubjectReadGateway(
+        subject_events=[
+            {
+                "event_id": 601,
+                "title": "同一事件高置信主匹配",
+                "summary": "产业催化",
+                "subject_key": "theme-primary",
+                "theme_name": "主题材",
+                "confidence": 0.95,
+                "source_type": "event_subject_map",
+            },
+            {
+                "event_id": 601,
+                "title": "同一事件高置信主匹配",
+                "summary": "产业催化",
+                "subject_key": "theme-related",
+                "theme_name": "关联题材",
+                "confidence": 0.84,
+                "source_type": "event_subject_map",
+            },
+            {
+                "event_id": 602,
+                "title": "某公司股东拟减持不超3%股份",
+                "summary": "减持公告",
+                "subject_key": "theme-noise",
+                "theme_name": "噪声题材",
+                "confidence": 0.96,
+                "source_type": "event_subject_map",
+            },
+        ]
+    )
+    builder = PreMarketBriefBuilder(read_gateway=read, write_gateway=_WriteGateway())
+
+    payload = await builder.rebuild(date(2026, 5, 16), dry_run=True)
+
+    assert [row["subject_key"] for row in payload["sections"]["major_events"]] == ["theme-primary"]
+    assert [row["subject_key"] for row in payload["sections"]["matched_themes"]] == ["theme-primary"]
 
 
 @pytest.mark.asyncio

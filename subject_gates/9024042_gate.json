@@ -1,50 +1,82 @@
 {
   "must": [
+    "全国文旅",
+    "文旅消费",
+    "文旅项目",
+    "文旅政策"
+  ],
+  "strong": [
+    "景区运营",
+    "旅游度假区",
+    "旅游休闲街区",
+    "夜间文旅经济"
+  ],
+  "should": [
+    "红色旅游",
+    "乡村旅游",
+    "旅游产品",
+    "景区",
+    "度假区"
+  ],
+  "support_terms": [
     "广西",
     "云南",
     "福建",
-    "重庆"
+    "重庆",
+    "低空飞行"
   ],
-  "should": [
-    "夜间文旅经济",
-    "夜间消费业态",
-    "消费集聚商业区升级改造",
-    "低空飞行旅游产品",
-    "红色旅游经典景区",
-    "旅游度假区",
-    "旅游休闲街区",
-    "乡村旅游重点村镇"
+  "no_anchor_terms": [
+    "广西",
+    "云南",
+    "福建",
+    "重庆",
+    "旅游",
+    "出行"
   ],
-  "not": [],
-  "evidence_refs": [
-    {
-      "term": "广西",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "广西"
-    },
-    {
-      "term": "云南",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "云南"
-    },
-    {
-      "term": "福建",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "福建"
-    },
-    {
-      "term": "重庆",
-      "source": "primary_anchor",
-      "source_id": "primary_anchor",
-      "span_text": "重庆"
-    }
+  "not": [
+    "天气预警",
+    "山洪",
+    "地震灾害",
+    "列车停运"
   ],
+  "negative": [
+    "地方灾害新闻",
+    "天气灾害预警",
+    "交通停运",
+    "普通地名新闻"
+  ],
+  "boundary_rules": {
+    "accept_requires_any": [
+      "全国文旅",
+      "文旅消费",
+      "文旅项目",
+      "文旅政策",
+      "景区运营",
+      "旅游度假区",
+      "夜间文旅经济"
+    ],
+    "reject_if_only_hits": [
+      "广西",
+      "云南",
+      "福建",
+      "重庆",
+      "旅游",
+      "出行"
+    ],
+    "reject_domains": [
+      "天气灾害",
+      "地震救灾",
+      "列车停运",
+      "普通地方新闻"
+    ],
+    "nearby_confusions": [
+      "旅游",
+      "地方区域"
+    ]
+  },
   "subject_id": "9024042",
-  "quality": "weak",
-  "generated_at": "2026-04-01T14:47:17",
+  "quality": "accepted_candidate",
+  "generated_at": "2026-05-22T08:40:00",
   "semantic_type": "地理行政区域",
   "strategy_type": "event_driven",
   "source_type": 1
