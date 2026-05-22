@@ -257,9 +257,12 @@ class NewChainPostMarketReportBuilder:
         for theme, items in list(grouped.items())[:limit]:
             top = sorted(items, key=lambda x: NewChainPostMarketReportBuilder._score(x), reverse=True)[:3]
             stocks = "、".join(str(x.get("stock_name") or x.get("stock_id") or "") for x in top)
-            best_score = NewChainPostMarketReportBuilder._score(top[0]) if top else 0.0
-            cycle = cycles_by_theme.get(theme, {})
             subject_key = str(top[0].get("subject_key") or "--") if top else "--"
+            cycle = NewChainPostMarketReportBuilder._cycle_for(
+                cycles_by_theme,
+                subject_key=subject_key,
+                theme=theme,
+            )
             fact = NewChainPostMarketReportBuilder._fact_for(top[0] if top else {}, stock_fact_map)
             capital = capital_by_subject.get(subject_key, {})
             total_inflow = NewChainPostMarketReportBuilder._first_present(
@@ -270,13 +273,20 @@ class NewChainPostMarketReportBuilder:
                 capital.get("leader_main_net_inflow"),
                 NewChainPostMarketReportBuilder._inflow(fact),
             )
+            # 事件分 = 主线强度 (Layer B cycle judgement)，市场分 = 退潮风险
+            # 设计文档 §13.3.4：复盘主体不依赖 D1 candidate_score
+            event_score = NewChainPostMarketReportBuilder._first_present(
+                cycle.get("mainline_strength_score"),
+                cycle.get("state_strength_score"),
+            )
+            market_score = cycle.get("fade_risk_score")
             lines.append(
                 f"{theme}：subject_key {subject_key}；层级 main；主线存活 {'是' if cycle.get('final_mainline_alive') is not False else '否'}；"
                 f"状态 {cycle.get('final_cycle_state') or 'rebound'}；主线强度 {NewChainPostMarketReportBuilder._fmt(cycle.get('mainline_strength_score') or cycle.get('state_strength_score'))}；"
                 f"退潮风险 {NewChainPostMarketReportBuilder._fmt(cycle.get('fade_risk_score'))}；"
                 f"总净流入 {NewChainPostMarketReportBuilder._money(total_inflow)}；"
                 f"龙头净流入 {NewChainPostMarketReportBuilder._money(leader_inflow)}；"
-                f"题材K线 {NewChainPostMarketReportBuilder._kline_text(fact)}；代表股 {stocks or '--'}；事件 {best_score:.2f}"
+                f"题材K线 {NewChainPostMarketReportBuilder._kline_text(fact)}；代表股 {stocks or '--'}；事件 {NewChainPostMarketReportBuilder._fmt(event_score)}；市场 {NewChainPostMarketReportBuilder._fmt(market_score)}"
             )
         return lines or ["暂无主线候选"]
 
@@ -294,7 +304,12 @@ class NewChainPostMarketReportBuilder:
             best = max((NewChainPostMarketReportBuilder._score(x) for x in items), default=0.0)
             action = "可主做" if best >= 98 else "可做弱转强" if best >= 90 else "可观察"
             health = "板块健康" if best >= 95 else "板块尚可"
-            cycle = cycles_by_theme.get(theme, {})
+            subj_key = str((items[0] or {}).get("subject_key") or "").strip() if items else ""
+            cycle = NewChainPostMarketReportBuilder._cycle_for(
+                cycles_by_theme,
+                subject_key=subj_key,
+                theme=theme,
+            )
             fade = "退潮确认" if cycle.get("fade_confirmed") else "退潮观察" if cycle.get("fade_watch") else "退潮未确认"
             lines.append(f"{theme}：{health}；板块联动待竞价确认；龙头仍活跃；后排跟随待观察；{fade}；动作 {action}")
         return lines or ["暂无板块环境"]
@@ -351,7 +366,11 @@ class NewChainPostMarketReportBuilder:
             total_inflow = sum(float(x.get("main_net_inflow") or 0) for x in money_rows)
             top3_inflow = sum(float(x.get("main_net_inflow") or 0) for x in money_rows[:3])
             leader_inflow = float((money_rows[0] or {}).get("main_net_inflow") or 0) if money_rows else 0.0
-            cycle = cycles_by_theme.get(theme, {})
+            cycle = NewChainPostMarketReportBuilder._cycle_for(
+                cycles_by_theme,
+                subject_key=subject_key,
+                theme=theme,
+            )
             lines.append(
                 f"{theme}：subject_key {subject_key}；层级 main；状态 {cycle.get('final_cycle_state') or 'rebound'}；"
                 f"总净流入 {NewChainPostMarketReportBuilder._money(total_inflow)}；前3净流入 {NewChainPostMarketReportBuilder._money(top3_inflow)}；龙头净流入 {NewChainPostMarketReportBuilder._money(leader_inflow)}；"
@@ -372,7 +391,11 @@ class NewChainPostMarketReportBuilder:
         for row in rows:
             item = dict(row or {})
             theme = NewChainPostMarketReportBuilder._theme_name(item, theme_name_map)
-            cycle = cycles_by_theme.get(theme, {})
+            cycle = NewChainPostMarketReportBuilder._cycle_for(
+                cycles_by_theme,
+                subject_key=item.get("subject_key", ""),
+                theme=NewChainPostMarketReportBuilder._theme_name(item, theme_name_map),
+            )
             state = str(cycle.get("final_cycle_state") or item.get("final_cycle_state") or item.get("cycle_state") or "rebound")
             if theme not in grouped:
                 grouped[theme] = state
@@ -393,7 +416,11 @@ class NewChainPostMarketReportBuilder:
         for row in rows:
             item = dict(row or {})
             theme = NewChainPostMarketReportBuilder._theme_name(item, theme_name_map)
-            cycle = cycles_by_theme.get(theme, {})
+            cycle = NewChainPostMarketReportBuilder._cycle_for(
+                cycles_by_theme,
+                subject_key=item.get("subject_key", ""),
+                theme=NewChainPostMarketReportBuilder._theme_name(item, theme_name_map),
+            )
             state = str(cycle.get("final_cycle_state") or item.get("final_cycle_state") or item.get("cycle_state") or "rebound")
             grouped.setdefault(theme, state)
         return [
@@ -434,16 +461,16 @@ class NewChainPostMarketReportBuilder:
                 else "补涨"
             )
             money_score = NewChainPostMarketReportBuilder._first_present(
-                fact.get("leader_capital_score"),
+                fact.get("leader_capital_score"),       # Layer C: theme_leader_candidate.capital_score
                 item.get("leader_capital_score"),
-                fact.get("money_flow_score"),
+                fact.get("money_flow_score"),           # money_flow_enhanced
                 fact.get("money_composite_score"),
-                fact.get("abnormal_composite_score"),
+                fact.get("abnormal_composite_score"),   # stock_abnormal_signal
                 item.get("money_flow_score"),
                 item.get("money_composite_score"),
                 item.get("abnormal_composite_score"),
-                item.get("candidate_score"),
-                item.get("watch_score"),
+                # 不 fallback 到 D1 的 candidate_score/watch_score
+                # 设计文档 §13.3.4：强势股分层主体不依赖 D1 候选池
             )
             lines.append(
                 f"{theme}：{role} {stock_name or '--'}；综合分 {score}；"
@@ -472,7 +499,11 @@ class NewChainPostMarketReportBuilder:
             item = dict(row or {})
             theme = NewChainPostMarketReportBuilder._theme_name(item, theme_name_map)
             fact = NewChainPostMarketReportBuilder._fact_for(item, stock_fact_map)
-            cycle = cycles_by_theme.get(theme, {})
+            cycle = NewChainPostMarketReportBuilder._cycle_for(
+                cycles_by_theme,
+                subject_key=item.get("subject_key", ""),
+                theme=NewChainPostMarketReportBuilder._theme_name(item, theme_name_map),
+            )
             subject_key = str(item.get("subject_key") or "--")
             stock_name = str(item.get("stock_name") or item.get("stock_id") or "--")
             support_type = str(item.get("support_type") or fact.get("position_label") or "--")
@@ -615,8 +646,17 @@ class NewChainPostMarketReportBuilder:
 
     @staticmethod
     def _score(item: dict[str, Any]) -> float:
+        """取 stock_fact 的 Layer C 龙头综合分，不依赖 D1 candidate_score/watch_score。
+
+        设计文档（第三阶段 §13.3.4）：
+        「post_market_recap_snapshot 不以 D1 候选池作为复盘主体真源」
+        """
         try:
-            return float(item.get("candidate_score") or item.get("watch_score") or 0)
+            return float(
+                item.get("leader_composite_score")
+                or item.get("leader_capital_score")
+                or 0
+            )
         except Exception:
             return 0.0
 
@@ -689,12 +729,44 @@ class NewChainPostMarketReportBuilder:
 
     @staticmethod
     def _cycle_map(rows: list[Any], theme_name_map: dict[str, str]) -> dict[str, dict[str, Any]]:
+        """以 subject_key 为主键构建 cycle 索引。
+
+        sql_cycles 和 sql_stock_facts 的 theme_name 解析逻辑不同
+        （前者优先 v2.theme_name，后者优先 vtb.theme_name），
+        因此必须用 subject_key 作为可靠键，避免主题名不匹配导致 cycle 查找失败。
+        """
         result: dict[str, dict[str, Any]] = {}
         for row in rows:
             item = dict(row or {})
+            sk = str(item.get("subject_key") or "").strip()
+            if not sk:
+                continue
+            # subject_key 是主键（可靠）
+            if sk not in result:
+                result[sk] = item
+            # 同时用解析后的 theme_name 做别名，兼容旧调用
             theme = NewChainPostMarketReportBuilder._theme_name(item, theme_name_map)
-            result[theme] = item
+            if theme and theme not in result:
+                result[theme] = item
         return result
+
+    @staticmethod
+    def _cycle_for(
+        cycles_by_theme: dict[str, dict[str, Any]],
+        *,
+        subject_key: str = "",
+        theme: str = "",
+    ) -> dict[str, Any]:
+        """按 subject_key → theme 顺序查找 cycle 数据。"""
+        if subject_key:
+            item = cycles_by_theme.get(subject_key)
+            if item:
+                return item
+        if theme:
+            item = cycles_by_theme.get(theme)
+            if item:
+                return item
+        return {}
 
     @staticmethod
     def _fmt(value: Any) -> str:

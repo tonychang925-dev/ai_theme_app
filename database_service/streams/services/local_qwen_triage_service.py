@@ -4,6 +4,8 @@
 目标：在进入大模型事件提取前做轻量分流，减少不必要的LLM调用。
 默认优先使用 Qwen2.5-1.5B (GGUF + llama_cpp) 的 prompt 判定。
 """
+import hashlib
+import json
 import logging
 import os
 import re
@@ -24,7 +26,7 @@ class LocalQwenNewsTriageService:
         self.skip_threshold = float(cfg.get("triage_skip_threshold", -0.02))
         self.min_text_len = int(cfg.get("triage_min_text_len", 40))
         self.model_path = str(cfg.get("local_qwen_model_path") or "").strip()
-        self.prompt_max_tokens = int(cfg.get("triage_prompt_max_tokens", 2))
+        self.prompt_max_tokens = int(cfg.get("triage_prompt_max_tokens", 420))
 
         # prompt judge (Qwen1.5B gguf)
         self._prompt_llm = None
@@ -64,12 +66,12 @@ class LocalQwenNewsTriageService:
         text = self._build_text(news_data)
         rule_features = self._rule_features(text)
 
-        # 硬过滤已关闭 — 全部交由 Qwen prompt 判定
-        # if rule_features["strict_trivial_skip"]:
-        #     return {"decision": "SKIP", ...}
+        forced_result = self._rule_prefilter(news_data, text, rule_features)
+        if forced_result is not None:
+            return forced_result
 
         if not self.enabled:
-            return self._rule_decision(rule_features, reason_prefix="local_triage_disabled")
+            return self._rule_decision(news_data, rule_features, reason_prefix="local_triage_disabled")
 
         # 1) prompt判定优先
         if self.mode in {"prompt", "hybrid"} and self._ensure_prompt_ready():
@@ -79,44 +81,62 @@ class LocalQwenNewsTriageService:
 
         # 2) 仅prompt模式下直接回退规则
         if self.mode == "prompt":
-            return self._rule_decision(rule_features, reason_prefix="prompt_unavailable")
+            return self._rule_decision(news_data, rule_features, reason_prefix="prompt_unavailable")
 
         # 3) embedding 回退
         if not self._ensure_qwen_ready():
-            return self._rule_decision(rule_features, reason_prefix="qwen_unavailable")
+            return self._rule_decision(news_data, rule_features, reason_prefix="qwen_unavailable")
 
         try:
             vec = self._matcher._encode_single_direct(text)
             if vec is None:
-                return self._rule_decision(rule_features, reason_prefix="qwen_encode_empty")
+                return self._rule_decision(news_data, rule_features, reason_prefix="qwen_encode_empty")
 
             pos = float(self._matcher._cosine_similarity(vec, self._positive_anchor))
             neg = float(self._matcher._cosine_similarity(vec, self._negative_anchor))
             score = pos - neg
 
             if score >= self.pass_threshold:
-                return {
-                    "decision": "PASS",
-                    "reason": f"embedding_score={score:.4f} >= pass_threshold={self.pass_threshold:.4f}",
-                    "score": score,
-                    "mode": "local_qwen_embedding",
-                }
+                return self._build_result(
+                    news_data,
+                    decision="PASS",
+                    importance_level="B",
+                    event_value_type="theme_catalyst",
+                    reason_code="embedding_importance_pass",
+                    reason=f"embedding_score={score:.4f} >= pass_threshold={self.pass_threshold:.4f}",
+                    confidence=min(1.0, max(0.0, score + 0.5)),
+                    score=score,
+                    mode="local_qwen_embedding",
+                    evidence=["embedding_score"],
+                )
             if score <= self.skip_threshold and not rule_features["strong_signal"]:
-                return {
-                    "decision": "SKIP",
-                    "reason": f"embedding_score={score:.4f} <= skip_threshold={self.skip_threshold:.4f}",
-                    "score": score,
-                    "mode": "local_qwen_embedding",
-                }
-            return {
-                "decision": "REVIEW",
-                "reason": f"embedding_score={score:.4f}, between thresholds",
-                "score": score,
-                "mode": "local_qwen_embedding",
-            }
+                return self._build_result(
+                    news_data,
+                    decision="SKIP",
+                    importance_level="D",
+                    event_value_type="market_noise",
+                    reason_code="embedding_importance_skip",
+                    reason=f"embedding_score={score:.4f} <= skip_threshold={self.skip_threshold:.4f}",
+                    confidence=min(1.0, max(0.0, 0.5 - score)),
+                    score=score,
+                    mode="local_qwen_embedding",
+                    evidence=["embedding_score"],
+                )
+            return self._build_result(
+                news_data,
+                decision="REVIEW",
+                importance_level="C",
+                event_value_type="market_noise",
+                reason_code="embedding_importance_review",
+                reason=f"embedding_score={score:.4f}, between thresholds",
+                confidence=0.5,
+                score=score,
+                mode="local_qwen_embedding",
+                evidence=["embedding_score"],
+            )
         except Exception as e:
             logger.warning(f"本地Qwen预筛选异常，降级规则模式: {e}")
-            return self._rule_decision(rule_features, reason_prefix="qwen_exception")
+            return self._rule_decision(news_data, rule_features, reason_prefix="qwen_exception")
 
     def _ensure_prompt_ready(self) -> bool:
         if self._prompt_ready:
@@ -161,31 +181,37 @@ class LocalQwenNewsTriageService:
                 top_p=0.9,
                 top_k=40,
             )
-            raw = str(response["choices"][0]["text"]).strip().upper()
-
-            if raw.startswith("SKIP"):
-                return {"decision": "SKIP", "reason": "prompt:SKIP", "score": None, "mode": "qwen1.5b_prompt", "raw": raw}
-            if raw.startswith("PASS"):
-                return {"decision": "PASS", "reason": "prompt:PASS", "score": None, "mode": "qwen1.5b_prompt", "raw": raw}
-            if raw.startswith("REVIEW"):
-                return {"decision": "REVIEW", "reason": "prompt:REVIEW", "score": None, "mode": "qwen1.5b_prompt", "raw": raw}
+            raw = str(response["choices"][0]["text"]).strip()
+            parsed = self._parse_prompt_json(raw)
+            if parsed is not None:
+                parsed["mode"] = "qwen1.5b_prompt"
+                parsed["raw"] = raw
+                return self._normalize_result(parsed, fallback_text=text)
 
             # 非法输出兜底
             if features.get("trivial_price_move") and not features.get("has_catalyst"):
-                return {
-                    "decision": "SKIP",
-                    "reason": "prompt_invalid_but_rule_skip",
-                    "score": None,
-                    "mode": "qwen1.5b_prompt",
-                    "raw": raw,
-                }
-            return {
-                "decision": "REVIEW",
-                "reason": "prompt_invalid_output",
-                "score": None,
-                "mode": "qwen1.5b_prompt",
-                "raw": raw,
-            }
+                return self._build_result_from_text(
+                    text,
+                    decision="SKIP",
+                    importance_level="D",
+                    event_value_type="market_noise",
+                    reason_code="prompt_invalid_rule_skip",
+                    reason="prompt_invalid_but_rule_skip",
+                    confidence=0.8,
+                    mode="qwen1.5b_prompt",
+                    raw=raw,
+                )
+            return self._build_result_from_text(
+                text,
+                decision="REVIEW",
+                importance_level="C",
+                event_value_type="market_noise",
+                reason_code="prompt_invalid_output",
+                reason="prompt_invalid_output",
+                confidence=0.4,
+                mode="qwen1.5b_prompt",
+                raw=raw,
+            )
         except Exception as e:
             logger.warning(f"Qwen1.5B prompt判定异常: {e}")
             return None
@@ -194,12 +220,13 @@ class LocalQwenNewsTriageService:
     def _build_prompt(text: str) -> str:
         short_text = text[:420]
         return (
-            "你是A股实时新闻过滤器。目标：剔除无交易价值的小事件，保留可能影响题材/板块预期的事件。\n"
-            "规则：\n"
-            "1) 仅股价涨跌、突破、回调、震荡，且没有明确催化（政策/业绩/并购/订单/监管/行业供需变化）=> SKIP。\n"
-            "2) 有明确催化并可能影响题材、板块或资金预期 => PASS。\n"
-            "3) 信息不足或争议较大 => REVIEW。\n"
-            "只输出一个词：PASS 或 REVIEW 或 SKIP。\n"
+            "你是A股盘前新闻重要性预筛选器，只输出严格JSON。\n"
+            "目标：只有重要产业/公司/宏观催化进入LLM结构化和题材匹配。\n"
+            "默认SKIP：普通财报、回购、减持、澄清、风险提示、连板公告、行政监管措施、监管函、警示函、责令改正、天气灾害、列车停运、普通人事任命、普通IPO。\n"
+            "地域词、监管机构所在地、公司行业属性不能构成PASS。重复事件输出DUPLICATE。\n"
+            "PASS仅用于明确题材催化、公司重大订单/中标/并购重组、产业政策、技术突破、行业供需价格变化、海外产业链催化。\n"
+            "信息有交易价值但证据不足输出REVIEW。\n"
+            'JSON schema: {"decision":"PASS|REVIEW|SKIP|DUPLICATE","importance_level":"S|A|B|C|D","event_value_type":"theme_catalyst|company_catalyst|macro_policy|sector_supply_demand|risk_alert|low_value_disclosure|market_noise|duplicate","should_structurize":true,"should_publish_structured_stream":true,"should_enter_theme_match":true,"should_enter_premarket_major_events":true,"reason_code":"string","confidence":0.0,"evidence":["最多3条"],"dedupe_key":"规范化事件key"}\n'
             f"新闻：{short_text}\n"
             "输出："
         )
@@ -278,6 +305,180 @@ class LocalQwenNewsTriageService:
         content = str(news_data.get("content") or "").strip()
         return f"{title}\n{content}"[:1200]
 
+    @staticmethod
+    def _dedupe_key_from_text(text: str) -> str:
+        normalized = re.sub(r"[\W_【】（）()]", "", text.lower())[:240]
+        return hashlib.sha1(normalized.encode("utf-8")).hexdigest()[:24] if normalized else ""
+
+    @staticmethod
+    def _routing_flags(decision: str) -> Dict[str, bool]:
+        should_continue = decision == "PASS"
+        return {
+            "should_structurize": should_continue,
+            "should_publish_structured_stream": should_continue,
+            "should_enter_theme_match": should_continue,
+            "should_enter_premarket_major_events": should_continue,
+        }
+
+    def _build_result(
+        self,
+        news_data: Dict[str, Any],
+        *,
+        decision: str,
+        importance_level: str,
+        event_value_type: str,
+        reason_code: str,
+        reason: str,
+        confidence: float,
+        score: float | None = None,
+        mode: str = "rule",
+        evidence: list[str] | None = None,
+        raw: str | None = None,
+    ) -> Dict[str, Any]:
+        return self._build_result_from_text(
+            self._build_text(news_data),
+            decision=decision,
+            importance_level=importance_level,
+            event_value_type=event_value_type,
+            reason_code=reason_code,
+            reason=reason,
+            confidence=confidence,
+            score=score,
+            mode=mode,
+            evidence=evidence,
+            raw=raw,
+        )
+
+    def _build_result_from_text(
+        self,
+        text: str,
+        *,
+        decision: str,
+        importance_level: str,
+        event_value_type: str,
+        reason_code: str,
+        reason: str,
+        confidence: float,
+        score: float | None = None,
+        mode: str = "rule",
+        evidence: list[str] | None = None,
+        raw: str | None = None,
+    ) -> Dict[str, Any]:
+        normalized_decision = decision if decision in {"PASS", "REVIEW", "SKIP", "DUPLICATE"} else "REVIEW"
+        result = {
+            "decision": normalized_decision,
+            "importance_level": importance_level if importance_level in {"S", "A", "B", "C", "D"} else "C",
+            "event_value_type": event_value_type,
+            **self._routing_flags(normalized_decision),
+            "reason_code": reason_code,
+            "reason": reason,
+            "confidence": min(1.0, max(0.0, float(confidence))),
+            "evidence": list(evidence or [])[:3],
+            "dedupe_key": self._dedupe_key_from_text(text),
+            "score": score,
+            "mode": mode,
+        }
+        if raw is not None:
+            result["raw"] = raw
+        return result
+
+    def _normalize_result(self, raw: Dict[str, Any], *, fallback_text: str) -> Dict[str, Any]:
+        decision = str(raw.get("decision") or "REVIEW").strip().upper()
+        event_value_type = str(raw.get("event_value_type") or "market_noise").strip()
+        evidence = raw.get("evidence") if isinstance(raw.get("evidence"), list) else []
+        result = self._build_result_from_text(
+            fallback_text,
+            decision=decision,
+            importance_level=str(raw.get("importance_level") or "C").strip().upper(),
+            event_value_type=event_value_type,
+            reason_code=str(raw.get("reason_code") or f"prompt_{decision.lower()}"),
+            reason=str(raw.get("reason") or raw.get("reason_code") or f"prompt:{decision}"),
+            confidence=float(raw.get("confidence") or 0.5),
+            score=raw.get("score"),
+            mode=str(raw.get("mode") or "qwen1.5b_prompt"),
+            evidence=[str(item) for item in evidence],
+            raw=str(raw.get("raw")) if raw.get("raw") is not None else None,
+        )
+        result["dedupe_key"] = str(raw.get("dedupe_key") or result["dedupe_key"])
+        return result
+
+    @staticmethod
+    def _parse_prompt_json(raw: str) -> Dict[str, Any] | None:
+        match = re.search(r"\{.*\}", raw, flags=re.DOTALL)
+        if not match:
+            return None
+        try:
+            parsed = json.loads(match.group(0))
+        except Exception:
+            return None
+        return parsed if isinstance(parsed, dict) else None
+
+    def _rule_prefilter(self, news_data: Dict[str, Any], text: str, features: Dict[str, Any]) -> Dict[str, Any] | None:
+        strong_catalysts = {
+            "重大订单", "中标", "签署合同", "重大合同", "重大并购", "重大资产重组",
+            "并购重组", "产业政策", "技术突破", "首次突破", "供给短缺", "价格上涨",
+            "价格大涨", "需求激增", "出口管制", "获批上市", "投产", "扩产",
+        }
+        low_value_groups = {
+            "rule_low_value_regulatory": (
+                "行政监管措施", "行政监管", "监管函", "警示函", "责令改正",
+                "问询函", "关注函", "审核问询函",
+            ),
+            "rule_low_value_clarification": (
+                "澄清", "风险提示", "交易异动", "连续涨停", "连板",
+                "无注入", "不涉及", "无算力计划", "不存在", "未开展",
+            ),
+            "rule_low_value_disaster": ("天气预警", "山洪", "暴雨", "地震", "列车停运"),
+            "rule_low_value_earnings": ("第一季度", "一季度", "Q1", "财报", "营收", "净利润"),
+            "rule_low_value_disclosure": ("回购", "减持"),
+            "rule_low_value_rights_change": ("权益变动", "触及1%整数倍"),
+            "rule_low_value_investor_event": ("投资者接待日", "集体接待日", "业绩说明会"),
+            "rule_low_value_ordinary_personnel": ("任命", "辞任", "选举"),
+            "rule_low_value_ordinary_ipo": ("IPO", "上市聆讯", "递表", "招股书"),
+        }
+        for reason_code, terms in low_value_groups.items():
+            hits = [term for term in terms if term in text]
+            if hits:
+                return self._build_result(
+                    news_data,
+                    decision="SKIP",
+                    importance_level="D",
+                    event_value_type="low_value_disclosure",
+                    reason_code=reason_code,
+                    reason=f"{reason_code}:{','.join(hits[:3])}",
+                    confidence=0.98,
+                    mode="rule_prefilter",
+                    evidence=hits,
+                )
+
+        catalyst_hits = [term for term in strong_catalysts if term in text]
+        if catalyst_hits:
+            return self._build_result(
+                news_data,
+                decision="PASS",
+                importance_level="B",
+                event_value_type="theme_catalyst",
+                reason_code="rule_strong_catalyst_pass",
+                reason=f"rule_strong_catalyst:{','.join(catalyst_hits[:3])}",
+                confidence=0.9,
+                mode="rule_prefilter",
+                evidence=catalyst_hits,
+            )
+
+        if features.get("strict_trivial_skip"):
+            return self._build_result(
+                news_data,
+                decision="SKIP",
+                importance_level="D",
+                event_value_type="market_noise",
+                reason_code="rule_trivial_market_noise",
+                reason="rule:strict_trivial_skip",
+                confidence=0.9,
+                mode="rule_prefilter",
+                evidence=["price_move_without_catalyst"],
+            )
+        return None
+
     def _rule_features(self, text: str) -> Dict[str, Any]:
         lower = text.lower()
         keyword_hits = sum(
@@ -328,11 +529,45 @@ class LocalQwenNewsTriageService:
             "empty": len(lower.strip()) == 0,
         }
 
-    def _rule_decision(self, feat: Dict[str, Any], reason_prefix: str) -> Dict[str, Any]:
+    def _rule_decision(self, news_data: Dict[str, Any], feat: Dict[str, Any], reason_prefix: str) -> Dict[str, Any]:
         if feat["empty"] or feat["text_len"] < self.min_text_len:
-            return {"decision": "SKIP", "reason": f"{reason_prefix}:short_or_empty", "score": None, "mode": "rule"}
+            return self._build_result(
+                news_data,
+                decision="SKIP",
+                importance_level="D",
+                event_value_type="market_noise",
+                reason_code="rule_short_or_empty",
+                reason=f"{reason_prefix}:short_or_empty",
+                confidence=0.9,
+            )
         if feat["strong_signal"]:
-            return {"decision": "PASS", "reason": f"{reason_prefix}:strong_signal", "score": None, "mode": "rule"}
+            return self._build_result(
+                news_data,
+                decision="PASS",
+                importance_level="B",
+                event_value_type="theme_catalyst",
+                reason_code="rule_strong_signal",
+                reason=f"{reason_prefix}:strong_signal",
+                confidence=0.7,
+                evidence=["strong_signal"],
+            )
         if feat["weak_signal"]:
-            return {"decision": "REVIEW", "reason": f"{reason_prefix}:weak_signal", "score": None, "mode": "rule"}
-        return {"decision": "SKIP", "reason": f"{reason_prefix}:no_signal", "score": None, "mode": "rule"}
+            return self._build_result(
+                news_data,
+                decision="REVIEW",
+                importance_level="C",
+                event_value_type="market_noise",
+                reason_code="rule_weak_signal_review",
+                reason=f"{reason_prefix}:weak_signal",
+                confidence=0.5,
+                evidence=["weak_signal"],
+            )
+        return self._build_result(
+            news_data,
+            decision="SKIP",
+            importance_level="D",
+            event_value_type="market_noise",
+            reason_code="rule_no_signal_skip",
+            reason=f"{reason_prefix}:no_signal",
+            confidence=0.8,
+        )

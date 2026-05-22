@@ -86,6 +86,9 @@ GENERIC_MATCH_STOPWORDS = {
     "人工智能",
     "游戏",
     "酒",
+    "银行",
+    "基金",
+    "期货",
     "IPO",
     "上市",
     "创业板",
@@ -112,6 +115,7 @@ SOURCE_ORG_TERMS = {
 LOCATION_TERMS = {
     "北京",
     "上海",
+    "广东",
     "深圳",
     "广州",
     "杭州",
@@ -133,6 +137,9 @@ SHORT_GENERIC_THEME_TERMS = {
     "美国",
     "深圳",
     "证券",
+    "银行",
+    "基金",
+    "期货",
     "高温",
     "金融",
     "设备",
@@ -184,6 +191,11 @@ LOW_VALUE_EVENT_TERMS = {
     "连续涨停",
     "连板",
     "股票交易异常波动",
+    "行政监管",
+    "行政监管措施",
+    "监管措施决定书",
+    "警示函",
+    "应诉通知书",
     "IPO",
     "创业板IPO",
     "上会",
@@ -214,6 +226,15 @@ LLM_ACCEPT_SAFETY_REVIEW_CODES = {
     "llm_accept_generic_only_review",
     "low_conf_llm_accept_review",
     "low_value_event_match_blocked",
+}
+LOW_VALUE_DROP_REASON_CODES = {
+    "low_value_event_match_blocked",
+    "low_value_regulatory_event_blocked",
+    "ordinary_earnings_low_value",
+    "clarification_risk_notice_low_value",
+    "weather_disaster_low_value",
+    "ordinary_ipo_low_value",
+    "duplicate_news_low_value",
 }
 
 # ── Product anchor protection ──────────────────────────────────────
@@ -1308,6 +1329,51 @@ def _is_low_value_event_text(event_text: str) -> bool:
     return any(term and term in event_text for term in LOW_VALUE_EVENT_TERMS)
 
 
+def _low_value_drop_reason_code(event_text: str) -> str:
+    if any(term in event_text for term in ("行政监管", "监管措施决定书", "监管函", "警示函", "责令改正")):
+        return "low_value_regulatory_event_blocked"
+    if any(term in event_text for term in ("第一季度", "一季度", "Q1", "财报", "营收", "净利润")):
+        return "ordinary_earnings_low_value"
+    if any(term in event_text for term in ("澄清", "风险提示", "交易异动", "连续涨停", "连板", "无注入", "不涉及", "无算力计划")):
+        return "clarification_risk_notice_low_value"
+    if any(term in event_text for term in ("天气预警", "山洪", "暴雨", "地震", "列车停运")):
+        return "weather_disaster_low_value"
+    if any(term in event_text for term in ("IPO", "创业板IPO", "上市聆讯", "上会")):
+        return "ordinary_ipo_low_value"
+    return "low_value_event_match_blocked"
+
+
+def _drop_low_value_envelope(
+    *,
+    request: ThemeMatchRequest,
+    reason_code: str,
+    confidence: float = 0.0,
+    matched_subject_key: str = "",
+    matched_theme_name: str = "",
+    matched_theme_id: int | None = None,
+    audit: Dict[str, Any] | None = None,
+) -> ThemeDecisionEnvelope:
+    payload = dict(audit or {})
+    payload["drop_event"] = {
+        "action": "drop_event",
+        "review_required": False,
+        "reason_code": reason_code,
+    }
+    return ThemeDecisionEnvelope(
+        decision="DROPPED",
+        event_id=request.event_id,
+        news_id=request.news_id,
+        confidence=min(float(confidence or 0.0), _squash01(0.5)),
+        reason_code=reason_code,
+        matched_subject_key=matched_subject_key,
+        matched_theme_name=matched_theme_name,
+        matched_theme_id=matched_theme_id,
+        related_matches=[],
+        review_required=False,
+        audit=payload,
+    )
+
+
 def _is_v2_profile(profile: ThemeProfile | None) -> bool:
     gate = profile.gate_json if profile and isinstance(profile.gate_json, dict) else {}
     return gate.get("profile_version") == "v2"
@@ -2004,8 +2070,7 @@ class ThemeMatchEngine:
             return env
 
         subject_name_hits = _normalize_list(evidence.get("subject_name_hit_terms"))
-        subject_name = _normalize_text(profile.subject_name)
-        if subject_name and any(_normalize_text(term) == subject_name for term in subject_name_hits):
+        if _has_full_non_generic_subject_hit(evidence, profile):
             return env
 
         direct_hit_terms = _unique(
@@ -2061,7 +2126,7 @@ class ThemeMatchEngine:
         reason_code = ""
 
         if is_low_value and not is_v2:
-            reason_code = "low_value_event_match_blocked"
+            reason_code = _low_value_drop_reason_code(request.event_text())
         elif not is_v2 and not (has_accepted_anchor or has_full_subject_hit):
             reason_code = "weak_v1_llm_accept_review"
         elif generic_only:
@@ -2089,6 +2154,17 @@ class ThemeMatchEngine:
             "accepted_anchor_hits": _normalize_list(evidence.get("accepted_anchor_hits")),
             "valid_anchor_terms": _valid_anchor_terms(evidence),
         }
+        if reason_code in LOW_VALUE_DROP_REASON_CODES:
+            return _drop_low_value_envelope(
+                request=request,
+                reason_code=reason_code,
+                confidence=env.confidence,
+                matched_subject_key=env.matched_subject_key,
+                matched_theme_name=env.matched_theme_name,
+                matched_theme_id=env.matched_theme_id,
+                audit=audit,
+            )
+
         env.decision = "HUMAN_REVIEW"
         env.confidence = min(float(env.confidence or 0.0), _squash01(0.5))
         env.reason_code = reason_code
@@ -2516,16 +2592,12 @@ class ThemeMatchEngine:
             )
 
         if _is_low_value_event_text(request.event_text()):
-            return ThemeDecisionEnvelope(
-                decision="HUMAN_REVIEW",
-                event_id=request.event_id,
-                news_id=request.news_id,
-                confidence=_squash01(0.5),
-                reason_code="low_value_event_match_blocked",
+            return _drop_low_value_envelope(
+                request=request,
+                reason_code=_low_value_drop_reason_code(request.event_text()),
                 matched_subject_key=best.subject_key,
                 matched_theme_name=best_profile.subject_name,
                 matched_theme_id=best_profile.theme_master_id,
-                review_required=True,
                 audit={
                     "top_candidates": top_candidates,
                     "best_evidence": best_ev,

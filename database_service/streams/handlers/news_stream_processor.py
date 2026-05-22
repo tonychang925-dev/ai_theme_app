@@ -122,6 +122,14 @@ class NewsStreamProcessor:
             "processed_after_fallback_count": 0,
             "llm_retry_count": 0,
             "circuit_breaker_open_count": 0,
+            "triage_pass_count": 0,
+            "triage_review_count": 0,
+            "triage_skip_count": 0,
+            "triage_duplicate_count": 0,
+            "triage_structuring_saved_count": 0,
+            "low_value_triage_skip_count": 0,
+            "duplicate_triage_skip_count": 0,
+            "triage_false_positive_review_count": 0,
             "sentiment_analysis_count": 0,
             "topic_extraction_count": 0,
             "business_results": []
@@ -611,9 +619,18 @@ class NewsStreamProcessor:
             triage_decision = str(triage_result.get("decision") or "PASS").upper()
             business_results["results"]["local_triage"] = triage_result
             business_results["processing_steps"].append("local_triage")
+            self._record_triage_stats(triage_result)
 
-            if triage_decision == "SKIP" and self.processor_config["triage_block_on_skip"]:
-                logger.info(f"⏭️ 本地预筛选判定跳过大模型: {news_id}, reason={triage_result.get('reason')}")
+            should_structurize = triage_result.get("should_structurize")
+            if should_structurize is None:
+                should_structurize = triage_decision == "PASS"
+            if triage_decision in {"REVIEW", "SKIP", "DUPLICATE"} or not bool(should_structurize):
+                logger.info(
+                    "⏭️ 重要性预筛选停在结构化前: %s, decision=%s, reason=%s",
+                    news_id,
+                    triage_decision,
+                    triage_result.get("reason_code") or triage_result.get("reason"),
+                )
                 basic_structured_event = {
                     "news_id": self._resolve_news_row_id(news_data),
                     "event_type": "news.stored",
@@ -624,7 +641,8 @@ class NewsStreamProcessor:
                     "theme_directive": {
                         "structuring_version": "1.0",
                         "llm_request_id": None,
-                        "reason": f"triage_skip:{triage_result.get('reason')}",
+                        "reason": f"triage_{triage_decision.lower()}:{triage_result.get('reason')}",
+                        "triage_result": triage_result,
                     },
                     "theme_directive_processed": False,
                     "severity_score": 0.2,
@@ -884,6 +902,26 @@ class NewsStreamProcessor:
             return False
         news_id = str(news_data.get("news_id") or "").strip().lower()
         return news_id.startswith("stress_test_")
+
+    def _record_triage_stats(self, triage_result: Dict[str, Any]) -> None:
+        decision = str(triage_result.get("decision") or "PASS").upper()
+        stat_key = {
+            "PASS": "triage_pass_count",
+            "REVIEW": "triage_review_count",
+            "SKIP": "triage_skip_count",
+            "DUPLICATE": "triage_duplicate_count",
+        }.get(decision)
+        if stat_key:
+            self.business_stats[stat_key] += 1
+        if decision != "PASS" or triage_result.get("should_structurize") is False:
+            self.business_stats["triage_structuring_saved_count"] += 1
+        event_value_type = str(triage_result.get("event_value_type") or "")
+        if decision == "SKIP" and event_value_type == "low_value_disclosure":
+            self.business_stats["low_value_triage_skip_count"] += 1
+        if decision == "DUPLICATE" or event_value_type == "duplicate":
+            self.business_stats["duplicate_triage_skip_count"] += 1
+        if decision == "REVIEW" and event_value_type in {"low_value_disclosure", "market_noise"}:
+            self.business_stats["triage_false_positive_review_count"] += 1
 
     def _build_structured_news_event(self, news_data: Dict[str, Any], structured_result: Dict[str, Any]) -> Dict[str, Any]:
         """将 ModelService 输出规范化为 news_event 落库结构"""
@@ -1198,6 +1236,14 @@ class NewsStreamProcessor:
             "processed_after_fallback_count": self.business_stats["processed_after_fallback_count"],
             "llm_retry_count": self.business_stats["llm_retry_count"],
             "circuit_breaker_open_count": self.business_stats["circuit_breaker_open_count"],
+            "triage_pass_count": self.business_stats["triage_pass_count"],
+            "triage_review_count": self.business_stats["triage_review_count"],
+            "triage_skip_count": self.business_stats["triage_skip_count"],
+            "triage_duplicate_count": self.business_stats["triage_duplicate_count"],
+            "triage_structuring_saved_count": self.business_stats["triage_structuring_saved_count"],
+            "low_value_triage_skip_count": self.business_stats["low_value_triage_skip_count"],
+            "duplicate_triage_skip_count": self.business_stats["duplicate_triage_skip_count"],
+            "triage_false_positive_review_count": self.business_stats["triage_false_positive_review_count"],
             "circuit_breaker_open": self._structuring_circuit_breaker_open,
             "circuit_breaker_open_at": self._structuring_circuit_breaker_open_at,
             "sentiment_analysis_count": self.business_stats["sentiment_analysis_count"],

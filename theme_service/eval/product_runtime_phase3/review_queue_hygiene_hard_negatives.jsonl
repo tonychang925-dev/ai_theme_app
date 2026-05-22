@@ -1,0 +1,11 @@
+{"case_id":"rq_hn_regulatory_zhidu_0525","title":"智度股份：收到广东证监局行政监管措施决定书","summary":"公司及相关人员收到广东证监局行政监管措施决定书。","expected_decision":"DROPPED","must_not_enter_review":true,"reason_family":"low_value_regulatory_event"}
+{"case_id":"rq_hn_regulatory_guoguang_0525","title":"国光电器：收到广东监管局行政监管措施决定书","summary":"公司收到广东监管局行政监管措施决定书。","expected_decision":"DROPPED","must_not_enter_review":true,"reason_family":"low_value_regulatory_event"}
+{"case_id":"rq_hn_ordinary_earnings_netease","title":"网易第一季度营收306亿元","summary":"公司披露一季度营收和净利润。","expected_decision":"DROPPED","must_not_enter_review":true,"reason_family":"ordinary_earnings_low_value"}
+{"case_id":"rq_hn_clarification_weilong","title":"7连板威龙股份：无注入算力计划","summary":"公司发布澄清公告，不涉及算力资产注入。","expected_decision":"DROPPED","must_not_enter_review":true,"reason_family":"clarification_risk_notice_low_value"}
+{"case_id":"rq_hn_weather_sichuan","title":"四川发布山洪灾害蓝色预警","summary":"天气预警和山洪灾害提示。","expected_decision":"DROPPED","must_not_enter_review":true,"reason_family":"weather_disaster_low_value"}
+{"case_id":"rq_hn_buyback","title":"某公司公告回购股份方案","summary":"公司拟以集中竞价方式回购股份。","expected_decision":"DROPPED","must_not_enter_review":true,"reason_family":"low_value_disclosure"}
+{"case_id":"rq_hn_reduction","title":"某公司股东计划减持不超过1%股份","summary":"股东披露减持计划。","expected_decision":"DROPPED","must_not_enter_review":true,"reason_family":"low_value_disclosure"}
+{"case_id":"rq_hn_ordinary_ipo","title":"某公司通过港交所上市聆讯","summary":"普通IPO和上市聆讯进展。","expected_decision":"DROPPED","must_not_enter_review":true,"reason_family":"ordinary_ipo_low_value"}
+{"case_id":"rq_hn_inquiry_letter","title":"回复并购重组审核问询函","summary":"公司回复交易所审核问询函。","expected_decision":"DROPPED","must_not_enter_review":true,"reason_family":"low_value_regulatory_event"}
+{"case_id":"rq_hn_rights_change","title":"持股5%以上股东权益变动触及1%整数倍","summary":"股东权益变动触及1%整数倍。","expected_decision":"DROPPED","must_not_enter_review":true,"reason_family":"low_value_disclosure"}
+{"case_id":"rq_hn_investor_event","title":"参加投资者网上集体接待日活动","summary":"公司参加投资者网上集体接待日。","expected_decision":"DROPPED","must_not_enter_review":true,"reason_family":"market_noise"}

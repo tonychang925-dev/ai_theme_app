@@ -248,8 +248,18 @@ class DecisionExecutor:
             await self._execute_clustering_result_fixed(decision)
         elif action == 'human_review':
             await self._execute_human_review_fixed(decision)
+        elif action == 'drop_event':
+            await self._execute_drop_event_fixed(decision)
         else:
             raise ValueError(f"未知决策类型: {action}")
+
+    async def _execute_drop_event_fixed(self, decision: Dict):
+        """执行低价值终态丢弃：只记录日志，不入复核、不入聚类、不建映射。"""
+        event_data = decision.get("event_data") if isinstance(decision.get("event_data"), dict) else {}
+        event_id = event_data.get("event_id") or decision.get("event_id")
+        reason = decision.get("reason") or "low_value_event_dropped"
+        logger.info("   🧹 低价值事件已丢弃: event_id=%s reason=%s", event_id, reason)
+        self.stats["decisions_dropped"] = self.stats.get("decisions_dropped", 0) + 1
 
     async def _execute_human_review_fixed(self, decision: Dict):
         """执行人工复核决策：只入复核队列，不做题材匹配或股票推荐。"""

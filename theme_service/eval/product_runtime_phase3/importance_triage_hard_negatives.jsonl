@@ -1,0 +1,9 @@
+{"case_id":"phase3_hn_zhidu_regulatory_001","title":"智度股份：收到广东证监局行政监管措施决定书","content":"智度股份因信息披露违规收到广东证监局行政监管措施决定书，将积极整改。","expected_decision":"SKIP","tags":["regulatory","low_value_disclosure"]}
+{"case_id":"phase3_hn_guoguang_regulatory_002","title":"国光电器：收到广东监管局行政监管措施决定书","content":"国光电器因多项违规被广东监管局出具警示函。","expected_decision":"SKIP","tags":["regulatory","low_value_disclosure"]}
+{"case_id":"phase3_hn_weilong_clarify_003","title":"7连板威龙股份：无注入算力计划","content":"公司发布风险提示及澄清公告，不涉及算力资产注入。","expected_decision":"SKIP","tags":["clarification","low_value_disclosure"]}
+{"case_id":"phase3_hn_netease_q1_004","title":"网易第一季度营收306亿元","content":"公司披露一季度财报，净利润同比变化。","expected_decision":"SKIP","tags":["earnings","low_value_disclosure"]}
+{"case_id":"phase3_hn_sichuan_flood_005","title":"四川发布山洪灾害蓝色预警","content":"暴雨可能引发山洪灾害，公众注意防范。","expected_decision":"SKIP","tags":["disaster","market_noise"]}
+{"case_id":"phase3_hn_hainan_train_006","title":"海南部分旅客列车停运","content":"受天气影响列车停运，旅客关注出行安排。","expected_decision":"SKIP","tags":["transport","market_noise"]}
+{"case_id":"phase3_hn_buyback_007","title":"某公司拟回购股份用于员工持股计划","content":"公司公告普通回购安排。","expected_decision":"SKIP","tags":["buyback","low_value_disclosure"]}
+{"case_id":"phase3_hn_reduce_008","title":"某股东计划减持不超过1%股份","content":"公司发布减持公告。","expected_decision":"SKIP","tags":["reduction","low_value_disclosure"]}
+{"case_id":"phase3_hn_supervision_009","title":"交易所向某公司下发监管函","content":"公司收到监管函并表示将整改。","expected_decision":"SKIP","tags":["regulatory","low_value_disclosure"]}

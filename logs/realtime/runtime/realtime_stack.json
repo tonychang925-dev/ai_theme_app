@@ -1,6 +1,6 @@
 {
-  "run_id": "realtime_20260522_082018",
-  "parent_pid": 1865,
-  "started_at": "2026-05-22T08:20:18.940534+00:00",
+  "run_id": "realtime_20260522_131206",
+  "parent_pid": 37706,
+  "started_at": "2026-05-22T13:12:06.051940+00:00",
   "db": "stock_data_test"
 }
