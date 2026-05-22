@@ -1,14 +1,14 @@
 {
   "running": true,
   "run_id": "realtime_20260522_121545",
-  "cycles": 2,
-  "collected_total": 300,
-  "ingested_total": 300,
+  "cycles": 4,
+  "collected_total": 600,
+  "ingested_total": 600,
   "ingested_failed": 0,
-  "extracted_total": 20,
-  "extraction_failed": 20,
-  "last_collect_at": "2026-05-22T12:26:33.063992+00:00",
-  "last_ingest_at": "2026-05-22T12:26:33.209285+00:00",
-  "last_extract_at": "2026-05-22T12:26:51.991126+00:00",
+  "extracted_total": 36,
+  "extraction_failed": 44,
+  "last_collect_at": "2026-05-22T12:47:28.199395+00:00",
+  "last_ingest_at": "2026-05-22T12:47:28.574380+00:00",
+  "last_extract_at": "2026-05-22T12:47:45.680210+00:00",
   "last_error": null
 }

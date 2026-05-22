@@ -1,8 +1,8 @@
 {
   "running": true,
-  "last_rebuild_at": "2026-05-22T20:36:13.950575+08:00",
-  "trade_date": "2026-05-25",
-  "ok": true,
-  "status": "draft",
-  "error": null
+  "last_rebuild_at": null,
+  "trade_date": null,
+  "ok": false,
+  "status": "error",
+  "error": "Server disconnected without sending a response."
 }

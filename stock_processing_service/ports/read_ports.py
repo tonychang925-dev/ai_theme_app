@@ -113,6 +113,13 @@ class StockReadPort(Protocol):
         self, trade_date: date
     ) -> list[dict[str, Any]]: ...
 
+    async def get_post_market_report_context(
+        self,
+        trade_date: date,
+        subject_keys: list[str] | None = None,
+        stock_ids: list[str] | None = None,
+    ) -> dict[str, Any]: ...
+
 
 # Backward-compatible alias
 StockReadPorts = StockReadPort
