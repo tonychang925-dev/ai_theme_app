@@ -1281,6 +1281,463 @@ async def runtime_guard_smoke() -> dict[str, Any]:
     }
 
 
+class LiveDirectHitReplayRequest(BaseModel):
+    cases_path: str = "theme_service/eval/product_runtime_phase2/live_direct_hit_replay_cases.jsonl"
+    trade_date: str = "2026-05-22"
+    run_id: str | None = None
+    persist: bool = True
+    out_dir: str = "tmp/product_runtime_phase2c"
+
+
+LOW_VALUE_EVENT_TERMS = (
+    "减持",
+    "回购",
+    "澄清公告",
+    "交易监管",
+    "天气预警",
+    "山洪",
+    "地震救灾",
+    "列车停运",
+    "普通人事任命",
+    "普通财报",
+    "季度财报",
+)
+
+
+def _debug_repo_root() -> Path:
+    return Path(__file__).resolve().parents[1]
+
+
+def _safe_rel_path(path_raw: str) -> Path:
+    root = _debug_repo_root()
+    path = Path(path_raw)
+    if not path.is_absolute():
+        path = root / path
+    path = path.resolve()
+    if root not in path.parents and path != root:
+        raise HTTPException(status_code=400, detail=f"path outside repo is not allowed: {path_raw}")
+    return path
+
+
+def _load_jsonl_cases(path: Path) -> list[dict[str, Any]]:
+    if not path.exists():
+        raise HTTPException(status_code=404, detail=f"cases file not found: {path}")
+    rows: list[dict[str, Any]] = []
+    for lineno, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        try:
+            row = json.loads(line)
+        except Exception as exc:
+            raise HTTPException(status_code=400, detail=f"invalid jsonl at {path}:{lineno}: {exc}") from exc
+        if not isinstance(row, dict):
+            raise HTTPException(status_code=400, detail=f"jsonl row must be object at {path}:{lineno}")
+        rows.append(row)
+    return rows
+
+
+async def _upsert_phase2c_replay_event(
+    conn: Any,
+    *,
+    case: dict[str, Any],
+    run_id: str,
+    trade_date: str,
+) -> int:
+    case_id = str(case.get("case_id") or uuid.uuid4().hex)
+    trace_id = f"{run_id}:{case_id}"[:128]
+    event_time = datetime.fromisoformat(f"{trade_date}T07:30:00")
+    raw_event_json = {
+        "phase": "product_runtime_phase2c",
+        "run_id": run_id,
+        "case_id": case_id,
+        "title": case.get("title") or "",
+        "summary": case.get("summary") or "",
+        "content": case.get("content") or case.get("event_text") or "",
+        "expected_decision": case.get("expected_decision"),
+        "expected_subject_key": case.get("expected_subject_key"),
+        "must_not_subject_keys": case.get("must_not_subject_keys") or [],
+        "tags": case.get("tags") or [],
+    }
+    row = await conn.fetchrow(
+        """
+        INSERT INTO news_event (
+            news_id,
+            event_type,
+            direction,
+            confidence,
+            summary,
+            event_time,
+            entities,
+            causal_claim,
+            evidence_set,
+            raw_event_json,
+            source_category,
+            source_trace_id
+        )
+        VALUES (
+            NULL,
+            $1,
+            $2,
+            $3,
+            $4,
+            $5,
+            $6::jsonb,
+            $7::jsonb,
+            $8::jsonb,
+            $9::jsonb,
+            $10,
+            $11
+        )
+        ON CONFLICT (source_trace_id) WHERE source_trace_id IS NOT NULL DO UPDATE SET
+            event_type = EXCLUDED.event_type,
+            summary = EXCLUDED.summary,
+            event_time = EXCLUDED.event_time,
+            entities = EXCLUDED.entities,
+            causal_claim = EXCLUDED.causal_claim,
+            evidence_set = EXCLUDED.evidence_set,
+            raw_event_json = EXCLUDED.raw_event_json
+        RETURNING id
+        """,
+        str(case.get("event_type") or "product_runtime_phase2c_live_replay"),
+        str(case.get("direction") or "neutral"),
+        float(case.get("confidence") or 0.8),
+        str(case.get("summary") or case.get("title") or case.get("event_text") or ""),
+        event_time,
+        json.dumps(case.get("entities") or [], ensure_ascii=False),
+        json.dumps(case.get("causal_claim") or [], ensure_ascii=False),
+        json.dumps(case.get("evidence_set") or {}, ensure_ascii=False),
+        json.dumps(raw_event_json, ensure_ascii=False),
+        "product_runtime_phase2c",
+        trace_id,
+    )
+    return int(row["id"])
+
+
+def _replay_case_to_event_row(case: dict[str, Any], *, event_id: int, run_id: str) -> dict[str, Any]:
+    event_text = str(case.get("event_text") or "")
+    title = str(case.get("title") or event_text[:120])
+    summary = str(case.get("summary") or event_text or title)
+    content = str(case.get("content") or event_text or summary)
+    return {
+        "event_id": event_id,
+        "id": event_id,
+        "news_id": event_id,
+        "title": title,
+        "summary": summary,
+        "content": content,
+        "event_type": str(case.get("event_type") or "product_runtime_phase2c_live_replay"),
+        "entities": case.get("entities") or [],
+        "causal_claim": case.get("causal_claim") or [],
+        "evidence_set": case.get("evidence_set") or {},
+        "raw_event_json": {
+            "phase": "product_runtime_phase2c",
+            "run_id": run_id,
+            "case_id": case.get("case_id"),
+            "tags": case.get("tags") or [],
+        },
+        "trace_id": f"{run_id}:{case.get('case_id') or event_id}",
+    }
+
+
+def _extract_hits(evidence: dict[str, Any], *keys: str) -> list[str]:
+    values: list[str] = []
+    for key in keys:
+        raw = evidence.get(key)
+        if isinstance(raw, list):
+            values.extend(str(item) for item in raw if item not in (None, ""))
+        elif isinstance(raw, str) and raw:
+            values.append(raw)
+    return list(dict.fromkeys(values))
+
+
+def _write_phase2c_reports(out_dir: Path, *, run_id: str, rows: list[dict[str, Any]]) -> dict[str, Any]:
+    out_dir.mkdir(parents=True, exist_ok=True)
+    result_path = out_dir / "live_replay_results.jsonl"
+    result_path.write_text(
+        "\n".join(json.dumps(row, ensure_ascii=False, default=str) for row in rows) + "\n",
+        encoding="utf-8",
+    )
+
+    new_rows_after_guard = len(rows)
+    new_match_count = sum(row.get("decision") == "MATCH" for row in rows)
+    new_human_review_count = sum(row.get("decision") == "HUMAN_REVIEW" for row in rows)
+    new_weak_review_count = sum(row.get("reason_code") == "weak_v1_direct_hit_review" for row in rows)
+    new_direct_hit_match_count = sum(
+        row.get("decision") == "MATCH" and row.get("match_reason") == "direct_theme_name_hit"
+        for row in rows
+    )
+    new_direct_hit_review_count = sum(
+        row.get("decision") == "HUMAN_REVIEW"
+        and (row.get("match_reason") == "direct_theme_name_hit" or row.get("reason_code") == "weak_v1_direct_hit_review")
+        for row in rows
+    )
+    new_obvious_wrong_match_count = sum(row.get("auto_label") in {"obvious_wrong", "guard_miss"} for row in rows)
+    new_positive_fail_count = sum(row.get("auto_label") == "positive_fail" for row in rows)
+    low_value_major = sum(row.get("is_low_value_event") and row.get("decision") == "MATCH" for row in rows)
+    duplicate_primary = 0
+    titles_seen: set[str] = set()
+    for row in rows:
+        if row.get("decision") != "MATCH":
+            continue
+        title_key = str(row.get("title") or "").strip()
+        if title_key and title_key in titles_seen:
+            duplicate_primary += 1
+        titles_seen.add(title_key)
+
+    attribution_rows: list[dict[str, Any]] = []
+    for row in rows:
+        evidence = row.get("best_evidence") if isinstance(row.get("best_evidence"), dict) else {}
+        attribution_rows.append(
+            {
+                "event_id": row.get("event_id"),
+                "case_id": row.get("case_id"),
+                "title": row.get("title") or "",
+                "matched_subject_key": row.get("matched_subject_key") or "",
+                "matched_theme_name": row.get("matched_theme_name") or "",
+                "confidence": row.get("confidence"),
+                "decision": row.get("decision"),
+                "match_reason": row.get("match_reason") or row.get("reason_code") or "",
+                "runtime_source": row.get("runtime_source") or "",
+                "best_evidence": evidence,
+                "direct_hit_terms": _extract_hits(evidence, "direct_hit_terms", "direct_hits", "direct_theme_name_hits", "theme_name_hit_terms", "subject_name_hit_terms"),
+                "accepted_anchor_hits": _extract_hits(evidence, "accepted_anchor_hits", "anchor_hits", "must_hits", "strong_hits"),
+                "no_anchor_hits": _extract_hits(evidence, "no_anchor_hits", "weak_hits"),
+                "negative_hits": _extract_hits(evidence, "negative_hits", "not_hits", "reject_hits"),
+                "is_low_value_event": bool(row.get("is_low_value_event")),
+                "is_duplicate_primary": False,
+                "auto_label": row.get("auto_label") or "",
+                "root_cause": row.get("root_cause") or "",
+                "suggested_fix": row.get("suggested_fix") or "",
+            }
+        )
+
+    (out_dir / "product_match_quality_attribution.jsonl").write_text(
+        "\n".join(json.dumps(row, ensure_ascii=False, default=str) for row in attribution_rows) + "\n",
+        encoding="utf-8",
+    )
+
+    metrics = {
+        "run_id": run_id,
+        "new_rows_after_guard": new_rows_after_guard,
+        "new_match_count": new_match_count,
+        "new_human_review_count": new_human_review_count,
+        "new_weak_v1_direct_hit_review_count": new_weak_review_count,
+        "new_direct_hit_match_count": new_direct_hit_match_count,
+        "new_direct_hit_review_count": new_direct_hit_review_count,
+        "new_obvious_wrong_match_count": new_obvious_wrong_match_count,
+        "new_positive_fail_count": new_positive_fail_count,
+        "low_value_major": low_value_major,
+        "duplicate_primary": duplicate_primary,
+    }
+    lines = [
+        "# Product Runtime Phase 2C Live Replay Attribution",
+        "",
+        f"- run_id: {run_id}",
+    ]
+    lines.extend(f"- {key}: {value}" for key, value in metrics.items() if key != "run_id")
+    lines.extend(
+        [
+            "",
+            "| case_id | decision | reason | runtime_source | subject | title |",
+            "|---|---|---|---|---|---|",
+        ]
+    )
+    for row in rows:
+        title = str(row.get("title") or "").replace("|", "/")
+        lines.append(
+            f"| {row.get('case_id')} | {row.get('decision')} | {row.get('reason_code')} | "
+            f"{row.get('runtime_source') or ''} | {row.get('matched_subject_key') or ''} {row.get('matched_theme_name') or ''} | {title} |"
+        )
+    (out_dir / "product_match_quality_attribution.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+    direct_counter: dict[tuple[str, str, str], dict[str, Any]] = {}
+    for row in rows:
+        if row.get("match_reason") != "direct_theme_name_hit" and row.get("reason_code") != "weak_v1_direct_hit_review":
+            continue
+        key = (
+            str(row.get("matched_subject_key") or ""),
+            str(row.get("matched_theme_name") or ""),
+            str(row.get("runtime_source") or ""),
+        )
+        item = direct_counter.setdefault(
+            key,
+            {"subject_key": key[0], "subject_name": key[1], "runtime_source": key[2], "n": 0, "review_n": 0, "match_n": 0},
+        )
+        item["n"] += 1
+        item["review_n"] += int(row.get("decision") == "HUMAN_REVIEW")
+        item["match_n"] += int(row.get("decision") == "MATCH")
+
+    direct_rows = sorted(direct_counter.values(), key=lambda item: (-int(item["n"]), item["subject_key"]))
+    direct_lines = [
+        "# Product Runtime Phase 2C Direct Theme Name Hit Audit",
+        "",
+        f"- run_id: {run_id}",
+        f"- direct_hit_rows: {sum(int(row['n']) for row in direct_rows)}",
+        f"- v1_fallback_direct_hit_rows: {sum(int(row['n']) for row in direct_rows if row['runtime_source'] == 'v1_fallback')}",
+        f"- weak_v1_direct_hit_review_count: {new_weak_review_count}",
+        "",
+        "| subject_key | subject_name | runtime_source | n | match_n | review_n |",
+        "|---|---|---|---:|---:|---:|",
+    ]
+    for row in direct_rows:
+        direct_lines.append(
+            f"| {row['subject_key']} | {row['subject_name']} | {row['runtime_source']} | "
+            f"{row['n']} | {row['match_n']} | {row['review_n']} |"
+        )
+    (out_dir / "direct_theme_name_hit_audit.md").write_text("\n".join(direct_lines) + "\n", encoding="utf-8")
+    return metrics
+
+
+@app.post("/api/v1/debug/product_runtime_phase2c/live_direct_hit_replay")
+async def live_direct_hit_replay(payload: LiveDirectHitReplayRequest) -> dict[str, Any]:
+    """Replay high-risk direct-hit samples through the live SPS process and active DB profiles."""
+    from theme_service.services.theme_service import ThemeService
+
+    cases_path = _safe_rel_path(payload.cases_path)
+    out_dir = _safe_rel_path(payload.out_dir)
+    cases = _load_jsonl_cases(cases_path)
+    if not cases:
+        raise HTTPException(status_code=400, detail="no replay cases loaded")
+
+    run_id = payload.run_id or f"product_runtime_phase2c_live_{datetime.now(ZoneInfo('Asia/Shanghai')).strftime('%Y%m%d_%H%M%S')}"
+    svc = getattr(app.state, "phase2c_theme_service", None)
+    if svc is None:
+        svc = ThemeService(enable_clustering=False)
+        svc.set_database_gateway(app.state.gateway)
+        app.state.phase2c_theme_service = svc
+
+    rows: list[dict[str, Any]] = []
+    async with app.state.gateway._client.pool.acquire() as conn:
+        for case in cases:
+            case_id = str(case.get("case_id") or uuid.uuid4().hex)
+            case["case_id"] = case_id
+            event_id = await _upsert_phase2c_replay_event(conn, case=case, run_id=run_id, trade_date=payload.trade_date)
+            event_row = _replay_case_to_event_row(case, event_id=event_id, run_id=run_id)
+            decision = await svc.match_event(event_row, database_gateway=app.state.gateway)
+            audit = decision.get("audit") if isinstance(decision.get("audit"), dict) else {}
+            best_evidence = audit.get("best_evidence") if isinstance(audit.get("best_evidence"), dict) else {}
+            guard = audit.get("v1_direct_hit_guard") if isinstance(audit.get("v1_direct_hit_guard"), dict) else {}
+            high_noise_guard = audit.get("high_noise_fallback_guard") if isinstance(audit.get("high_noise_fallback_guard"), dict) else {}
+            runtime_source = (
+                guard.get("runtime_profile_source")
+                or high_noise_guard.get("runtime_profile_source")
+                or best_evidence.get("runtime_profile_source")
+                or ("v1_fallback" if guard or high_noise_guard else "")
+            )
+            matched_subject_key = str(decision.get("matched_subject_key") or "")
+            if matched_subject_key and not runtime_source:
+                has_v2 = await conn.fetchval(
+                    "SELECT 1 FROM theme_profile_v2 WHERE subject_key=$1 AND status='accepted_candidate' LIMIT 1",
+                    matched_subject_key,
+                )
+                runtime_source = "v2_accepted" if has_v2 else "v1_fallback"
+            match_reason = guard.get("previous_reason_code") or high_noise_guard.get("previous_reason_code") or decision.get("reason_code")
+            text = f"{event_row['title']} {event_row['summary']} {event_row['content']}"
+            is_low_value = bool(case.get("is_low_value_event")) or any(term in text for term in LOW_VALUE_EVENT_TERMS)
+
+            if payload.persist and decision.get("decision") == "MATCH" and decision.get("matched_subject_key"):
+                await app.state.gateway.upsert_event_subject_relation(
+                    event_id,
+                    str(decision.get("matched_subject_key")),
+                    news_id=event_id,
+                    subject_name=decision.get("matched_theme_name"),
+                    confidence=float(decision.get("confidence") or 0.0),
+                    relation_type="primary",
+                    match_reason=str(decision.get("reason_code") or ""),
+                    evidence_json={
+                        **best_evidence,
+                        "audit": audit,
+                        "phase": "product_runtime_phase2c",
+                        "case_id": case_id,
+                    },
+                    source="product_runtime_phase2c_live_replay",
+                    source_trace_id=f"{run_id}:{case_id}"[:128],
+                    run_id=run_id,
+                )
+            elif payload.persist and decision.get("decision") == "HUMAN_REVIEW":
+                await app.state.gateway.enqueue_event_review(
+                    event_id=event_id,
+                    reason=str(decision.get("reason_code") or "product_runtime_phase2c_review"),
+                    source_channel="product_runtime_phase2c",
+                    proposed_theme_name=decision.get("matched_theme_name"),
+                    proposed_theme_confidence=float(decision.get("confidence") or 0.0),
+                )
+
+            auto_label = "ok"
+            root_cause = ""
+            suggested_fix = "no_action"
+            must_not = {str(item) for item in (case.get("must_not_subject_keys") or [])}
+            expected_subject = str(case.get("expected_subject_key") or "")
+            expected_decision = str(case.get("expected_decision") or "").upper()
+            if decision.get("matched_subject_key") and str(decision.get("matched_subject_key")) in must_not:
+                auto_label = "obvious_wrong"
+                root_cause = "live_replay_must_not_violation"
+                suggested_fix = "phase2c_delta_repair_required"
+            elif expected_decision in {"UNKNOWN", "HUMAN_REVIEW"} and decision.get("decision") == "MATCH":
+                auto_label = "guard_miss" if expected_decision == "HUMAN_REVIEW" else "obvious_wrong"
+                root_cause = "weak_runtime_guard_gap" if expected_decision == "HUMAN_REVIEW" else "unexpected_match"
+                suggested_fix = "inspect_runtime_guard_or_llm_veto"
+            elif expected_subject and decision.get("decision") == "MATCH" and str(decision.get("matched_subject_key")) != expected_subject:
+                auto_label = "wrong_subject"
+                root_cause = "positive_rank_or_gate_issue"
+                suggested_fix = "inspect_positive_rank"
+            elif expected_decision == "MATCH" and decision.get("decision") != "MATCH":
+                auto_label = "positive_fail"
+                root_cause = "expected_match_missing"
+                suggested_fix = "inspect_positive_recall"
+            elif is_low_value and decision.get("decision") == "MATCH":
+                auto_label = "low_value"
+                root_cause = "display_layer"
+                suggested_fix = "keep_out_of_major_events"
+            elif decision.get("reason_code") == "weak_v1_direct_hit_review":
+                auto_label = "guarded_review"
+                root_cause = "weak_v1_direct_hit_guard"
+                suggested_fix = "no_action_unless_repeated"
+
+            rows.append(
+                {
+                    "run_id": run_id,
+                    "case_id": case_id,
+                    "event_id": event_id,
+                    "title": event_row["title"],
+                    "summary": event_row["summary"],
+                    "decision": decision.get("decision"),
+                    "reason_code": decision.get("reason_code"),
+                    "match_reason": match_reason,
+                    "runtime_source": runtime_source,
+                    "matched_subject_key": decision.get("matched_subject_key") or "",
+                    "matched_theme_name": decision.get("matched_theme_name") or "",
+                    "confidence": decision.get("confidence"),
+                    "review_required": decision.get("review_required"),
+                    "best_evidence": best_evidence,
+                    "top_candidates": audit.get("top_candidates") or [],
+                    "guard_applied": bool(guard.get("blocked") or high_noise_guard.get("blocked")),
+                    "is_low_value_event": is_low_value,
+                    "auto_label": auto_label,
+                    "root_cause": root_cause,
+                    "suggested_fix": suggested_fix,
+                    "expected_subject_key": expected_subject,
+                    "must_not_subject_keys": list(must_not),
+                    "tags": case.get("tags") or [],
+                }
+            )
+
+    metrics = _write_phase2c_reports(out_dir, run_id=run_id, rows=rows)
+    return {
+        "ok": True,
+        "run_id": run_id,
+        "cases": len(rows),
+        "metrics": metrics,
+        "out_dir": str(out_dir.relative_to(_debug_repo_root())),
+        "reports": [
+            str((out_dir / "live_replay_results.jsonl").relative_to(_debug_repo_root())),
+            str((out_dir / "product_match_quality_attribution.md").relative_to(_debug_repo_root())),
+            str((out_dir / "direct_theme_name_hit_audit.md").relative_to(_debug_repo_root())),
+        ],
+    }
+
+
 @app.get("/api/v1/recap/defaults")
 async def get_recap_defaults() -> dict[str, Any]:
     """返回最近的盘后复盘和盘前简报日期。"""

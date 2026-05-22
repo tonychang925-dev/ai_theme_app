@@ -64,7 +64,9 @@ class AkShareRealtimeNewsCollector:
         if self._prefilter_skip_log:
             self._prefilter_skip_log.parent.mkdir(parents=True, exist_ok=True)
         self.stats = AkShareCollectorStats(run_id=run_id, stream=stream)
-        self._seen: set[str] = set()
+        self._seen: set[str] = set()       # 已推送成功的 key（永久去重）
+        self._filtered: set[str] = set()   # 被 prefilter 过滤的 key（定期清空，允许重评）
+        self._filtered_cycles = 0
         self._redis = None
         # P1-A: 预过滤
         self._prefilter = _init_prefilter(
@@ -89,11 +91,25 @@ class AkShareRealtimeNewsCollector:
             if self._redis is not None:
                 await self._redis.aclose()
 
+    # ── Source priority for cross-source dedup ─────────────────────────
+    _SOURCE_PRIORITY: dict[str, int] = {
+        "cls": 100,
+        "akshare_em": 80,
+        "akshare_futu": 70,
+        "akshare_ths": 60,
+        "akshare_sina": 50,
+        "akshare_cctv": 40,
+    }
+
     async def collect_once(self) -> dict[str, int]:
         self.stats.last_fetch_at = _now_iso()
         self._prefilter.new_batch()  # P1-A2.1: 重置批次 Qwen 预算
         try:
             rows = await self._fetch_news()
+            # 跨源语义去重
+            before_dedup = len(rows)
+            rows = await self._cross_source_dedup(rows)
+            cross_dedup = before_dedup - len(rows)
             self.stats.fetched_count += len(rows)
             pushed = 0
             duplicate = 0
@@ -101,6 +117,8 @@ class AkShareRealtimeNewsCollector:
             for row in rows:
                 payload = self._normalize_payload(row)
                 dedupe_key = self._dedupe_key(payload)
+
+                # 已在成功集中 → 永久去重
                 if dedupe_key in self._seen:
                     duplicate += 1
                     continue
@@ -110,7 +128,8 @@ class AkShareRealtimeNewsCollector:
                 if not triage.pass_:
                     filtered += 1
                     self.stats.last_filter_reason = triage.reason
-                    self._seen.add(dedupe_key)
+                    # 加入 _filtered（非 _seen），允许 prefilter 变更后重评
+                    self._filtered.add(dedupe_key)
                     self._write_skip_log(payload, triage)
                     continue
 
@@ -119,6 +138,12 @@ class AkShareRealtimeNewsCollector:
                 self._seen.add(dedupe_key)
                 await self._publish(payload)
                 pushed += 1
+
+            # 每 10 个周期清空 _filtered，避免无限增长且允许重评
+            self._filtered_cycles += 1
+            if self._filtered_cycles >= 10:
+                self._filtered.clear()
+                self._filtered_cycles = 0
 
             self.stats.pushed_count += pushed
             self.stats.duplicate_count += duplicate
@@ -135,17 +160,154 @@ class AkShareRealtimeNewsCollector:
             return {"fetched": 0, "pushed": 0, "duplicate": 0, "filtered": 0}
 
     async def _fetch_news(self) -> list[dict[str, Any]]:
+        """Fetch from CLS (有重要性过滤) + 4 additional sources in parallel."""
+        results: list[dict[str, Any]] = []
+
+        # Source 1: CLS 财联社 (primary, with importance filter)
         try:
             from news_crawler_service.services.news_crawler_service import get_news_crawler_service
-
             service = get_news_crawler_service()
             result = await service.crawl_news_auto(count=self.batch_size, prefer_real=True)
             if result.get("status") == "success":
-                return list((result.get("response") or {}).get("news_list") or [])
-            raise RuntimeError(str(result.get("error") or "crawl_news_auto failed"))
-        except Exception as crawler_exc:
-            logger.warning("news_crawler_service unavailable, fallback to direct akshare: %s", crawler_exc)
+                cls_rows = list((result.get("response") or {}).get("news_list") or [])
+                for r in cls_rows:
+                    r["source_channel"] = "cls"
+                results.extend(cls_rows)
+        except Exception as exc:
+            logger.warning("CLS fetch failed, continuing with other sources: %s", exc)
+
+        # Sources 2-5: 东方财富 / 新浪 / 同花顺 / 富途 (parallel)
+        other_rows = await self._fetch_multi_source()
+        results.extend(other_rows)
+
+        if not results:
+            logger.warning("All sources failed, fallback to direct akshare")
             return await asyncio.to_thread(self._fetch_direct_akshare)
+
+        return results
+
+    async def _fetch_multi_source(self) -> list[dict[str, Any]]:
+        """Fetch from 东方财富/新浪/同花顺/富途 in parallel via thread executor."""
+        import akshare as ak
+
+        sources: list[tuple[str, Any, str]] = [
+            ("eastmoney", ak.stock_info_global_em, "em"),
+            ("sina",      ak.stock_info_global_sina, "sina"),
+            ("ths",       ak.stock_info_global_ths, "ths"),
+            ("futu",      ak.stock_info_global_futu, "futu"),
+            ("cctv",      ak.news_cctv, "cctv"),
+        ]
+
+        async def _fetch_one(label: str, func, channel: str) -> list[dict[str, Any]]:
+            try:
+                df = await asyncio.to_thread(func)
+                if df is None or df.empty:
+                    return []
+                records = df.to_dict("records")
+                for r in records:
+                    r["source_channel"] = f"akshare_{channel}"
+                    # 新浪特殊处理: 只有"时间"和"内容"两列，无标题
+                    if channel == "sina":
+                        content_text = str(r.get("内容", ""))
+                        r["title"] = content_text[:40]  # 前40字作为标题
+                        r["publish_time"] = str(r.get("时间", ""))
+                        r["publish_date"] = datetime.now(CN_TZ).date().isoformat()
+                return [dict(row) for row in records]
+            except Exception as exc:
+                logger.warning("Source %s fetch failed: %s", label, exc)
+                return []
+
+        tasks = [asyncio.create_task(_fetch_one(label, func, ch)) for label, func, ch in sources]
+        gathered = await asyncio.gather(*tasks, return_exceptions=True)
+
+        all_rows: list[dict[str, Any]] = []
+        for i, rows in enumerate(gathered):
+            if isinstance(rows, Exception):
+                logger.warning("Source %s exception: %s", sources[i][0], rows)
+            else:
+                all_rows.extend(rows)
+                if rows:
+                    logger.info("Source %s: %d rows", sources[i][0], len(rows))
+        return all_rows
+
+    async def _cross_source_dedup(self, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        """跨源语义去重：标题相似度 + Qwen 1.5B 判定。
+
+        策略:
+          1. 按 normalize(title[:30]) 分桶（快速粗筛）
+          2. 桶内 pair 计算 SequenceMatcher 相似度
+             - > 0.85 → 自动判为重复
+             - 0.5-0.85 → 调用 Qwen 判定
+             - < 0.5 → 保留两者
+          3. 重复对中保留 source_channel 优先级高的
+        """
+        if len(rows) <= 1:
+            return rows
+
+        import difflib
+
+        # 1. 按标题前缀分桶
+        import re as _regex
+
+        def _norm_title(s: str) -> str:
+            return _regex.sub(r'[^\w]', '', str(s)[:30]).lower()
+
+        buckets: dict[str, list[int]] = {}  # norm_key → list of indices
+        for i, row in enumerate(rows):
+            raw_title = (_pick(row, "title", "新闻标题", "标题")
+                         or _pick(row, "content", "内容", "摘要")
+                         or "")
+            bucket_key = _norm_title(raw_title)
+            buckets.setdefault(bucket_key, []).append(i)
+
+        # 2. 找出需要去重的对
+        dup_pairs: list[tuple[int, int]] = []  # (keeper_idx, dropped_idx)
+        for indices in buckets.values():
+            if len(indices) < 2:
+                continue
+            for a in range(len(indices)):
+                for b in range(a + 1, len(indices)):
+                    ia, ib = indices[a], indices[b]
+                    title_a = str(_pick(rows[ia], "title", "新闻标题", "标题") or "")
+                    title_b = str(_pick(rows[ib], "title", "新闻标题", "标题") or "")
+                    if not title_a or not title_b:
+                        continue
+
+                    ratio = difflib.SequenceMatcher(None, title_a, title_b).ratio()
+
+                    is_dup = False
+                    if ratio > 0.85:
+                        is_dup = True
+                    elif ratio > 0.5:
+                        # 灰区：交给 Qwen
+                        result = self._prefilter.check_semantic_duplicate(title_a, title_b)
+                        if result is True:
+                            is_dup = True
+                        elif result is None:
+                            # Qwen 不可用，高相似度 (>0.75) 保守去重
+                            is_dup = ratio > 0.75
+
+                    if is_dup:
+                        # 保留 source_channel 优先级高的
+                        ch_a = str(_pick(rows[ia], "source_channel") or "")
+                        ch_b = str(_pick(rows[ib], "source_channel") or "")
+                        pri_a = self._SOURCE_PRIORITY.get(ch_a, 0)
+                        pri_b = self._SOURCE_PRIORITY.get(ch_b, 0)
+                        if pri_a >= pri_b:
+                            dup_pairs.append((ia, ib))
+                        else:
+                            dup_pairs.append((ib, ia))
+
+        if dup_pairs:
+            dropped = {d for _, d in dup_pairs}
+            logger.info(
+                "cross-source dedup: %d pairs merged, dropping %d rows (%.0f%%)",
+                len(dup_pairs), len(dropped),
+                len(dropped) / max(len(rows), 1) * 100,
+            )
+            rows = [r for i, r in enumerate(rows) if i not in dropped]
+
+        return rows
 
     def _fetch_direct_akshare(self) -> list[dict[str, Any]]:
         import akshare as ak
@@ -158,8 +320,9 @@ class AkShareRealtimeNewsCollector:
 
     def _normalize_payload(self, row: dict[str, Any]) -> dict[str, str]:
         title = _pick(row, "title", "新闻标题", "标题") or ""
-        content = _pick(row, "content", "新闻内容", "内容") or title
+        content = _pick(row, "content", "新闻内容", "内容", "摘要") or title
         source = _pick(row, "source", "新闻来源", "来源") or "akshare"
+        source_channel = _pick(row, "source_channel") or "akshare_realtime"
         url = _pick(row, "url", "链接", "新闻链接") or ""
         publish_date = _pick(row, "publish_date", "date", "日期")
         publish_time = _pick(row, "publish_time", "time", "发布时间", "时间")
@@ -169,7 +332,7 @@ class AkShareRealtimeNewsCollector:
         publish_time_text = str(publish_time or now.strftime("%H:%M:%S"))
         external_id = _pick(row, "external_id", "news_id", "id")
         if not external_id:
-            external_id = "akshare:" + hashlib.sha1(f"{title}|{content}|{publish_date}|{publish_time_text}".encode()).hexdigest()[:24]
+            external_id = f"{source_channel}:" + hashlib.sha1(f"{title}|{content}|{publish_date}|{publish_time_text}".encode()).hexdigest()[:24]
 
         payload = {
             "news_id": str(external_id),
@@ -177,7 +340,7 @@ class AkShareRealtimeNewsCollector:
             "title": str(title),
             "content": str(content),
             "source": "akshare_realtime",
-            "source_channel": "akshare_realtime",
+            "source_channel": str(source_channel),
             "publish_date": str(publish_date)[:10],
             "publish_time": publish_time_text,
             "collected_at": _now_iso(),
