@@ -1197,6 +1197,90 @@ async def healthz() -> dict[str, str]:
     return {"status": "ok", "db": _db_name()}
 
 
+@app.get("/api/v1/debug/runtime_guard_smoke")
+async def runtime_guard_smoke() -> dict[str, Any]:
+    """Internal smoke for the v1 fallback weak direct-hit guard in the live SPS process."""
+    from theme_service.services.theme_match_engine import (
+        ThemeMatchEngine,
+        _build_gate_evidence,
+        _calc_feature_recall_score,
+    )
+    from theme_service.services.theme_match_types import ThemeMatchRequest, ThemeProfile
+
+    class _StaticRepo:
+        async def load_active_profiles(self):
+            return [
+                ThemeProfile(
+                    subject_key="runtime-smoke-v1-fallback",
+                    subject_name="福建题材",
+                    theme_master_id=None,
+                    concept="福建题材",
+                    semantic_type="smoke",
+                    strategy_type="event_driven",
+                    ontology_json={},
+                    gate_json={},
+                    must_terms=["福建"],
+                    should_terms=[],
+                    not_terms=[],
+                    strong_terms=[],
+                    weak_terms=[],
+                    negative_terms=[],
+                    search_text="福建",
+                    quality="smoke",
+                    rerank_text="福建",
+                    aliases=["福建"],
+                    entity_hints=[],
+                    core_objects=[],
+                )
+            ]
+
+    class _SmokeEngine(ThemeMatchEngine):
+        async def _dense_recall(self, request, event_profile=None):
+            return []
+
+        async def _sparse_recall(self, request, event_profile=None):
+            return []
+
+        def _rerank(self, request, candidate_rows, profile_map, event_profile=None, counters=None, evidence_cache=None):
+            rows = []
+            event_text = request.event_text()
+            for row in candidate_rows or []:
+                item = dict(row)
+                profile = profile_map[item["subject_key"]]
+                evidence = _build_gate_evidence(event_text, profile, event_profile)
+                item["evidence"] = evidence
+                item["rerank_score"] = _calc_feature_recall_score({}, evidence)
+                rows.append(item)
+            rows.sort(key=lambda item: (-float(item.get("rerank_score") or 0.0), str(item.get("subject_key"))))
+            return rows
+
+    engine = _SmokeEngine(_StaticRepo())
+    if getattr(engine, "_judge", None) is not None:
+        engine._judge.api_key = ""
+    if getattr(engine, "_event_profile_extractor", None) is not None:
+        engine._event_profile_extractor.api_key = ""
+    result = await engine.match_event(
+        ThemeMatchRequest(
+            event_id=0,
+            news_id=0,
+            title="福建发布天气预警",
+            content="福建普通地方新闻触发旧 v1 fallback direct hit。",
+            summary="福建天气预警",
+            event_type="runtime_guard_smoke",
+        )
+    )
+    guard = result.audit.get("v1_direct_hit_guard") if isinstance(result.audit, dict) else {}
+    return {
+        "ok": result.decision == "HUMAN_REVIEW" and result.reason_code == "weak_v1_direct_hit_review",
+        "decision": result.decision,
+        "reason_code": result.reason_code,
+        "runtime_source": "v1_fallback",
+        "match_reason": guard.get("previous_reason_code") or "direct_theme_name_hit",
+        "guard_applied": bool(guard.get("blocked")),
+        "guard": guard,
+    }
+
+
 @app.get("/api/v1/recap/defaults")
 async def get_recap_defaults() -> dict[str, Any]:
     """返回最近的盘后复盘和盘前简报日期。"""
