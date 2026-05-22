@@ -83,6 +83,13 @@ GENERIC_MATCH_STOPWORDS = {
     "系统部件",
     "项目",
     "采购",
+    "人工智能",
+    "游戏",
+    "酒",
+    "IPO",
+    "上市",
+    "创业板",
+    "上会",
 }
 SOURCE_ORG_TERMS = {
     "证券",
@@ -161,6 +168,45 @@ LOW_VALUE_EVENT_TERMS = {
     "发布财报",
     "业绩说明会",
     "普通业绩说明会",
+    "第一季度",
+    "一季度",
+    "Q1",
+    "q1",
+    "营收",
+    "净利润",
+    "业绩披露",
+    "无注入",
+    "不涉及",
+    "不存在",
+    "未开展",
+    "风险提示",
+    "交易异动",
+    "连续涨停",
+    "连板",
+    "股票交易异常波动",
+    "IPO",
+    "创业板IPO",
+    "上会",
+    "监管要求",
+    "非法销售风险",
+    "开户须临柜核实",
+    "核实资金来源",
+    "严防非法销售",
+}
+LOW_VALUE_CATALYST_EXCEPTIONS = {
+    "游戏版号",
+    "新游上线",
+    "爆款游戏",
+    "游戏流水",
+    "游戏出海",
+    "AI游戏",
+    "云游戏",
+    "字节Seedance",
+    "Seedance",
+    "AI视频生成",
+    "视频生成模型",
+    "乐聚机器人",
+    "乐聚IPO",
 }
 LLM_ACCEPT_SAFETY_REVIEW_CODES = {
     "weak_v1_llm_accept_review",
@@ -1257,6 +1303,8 @@ def _has_primary_anchor_evidence(evidence: Dict[str, Any]) -> bool:
 
 
 def _is_low_value_event_text(event_text: str) -> bool:
+    if any(term and term in event_text for term in LOW_VALUE_CATALYST_EXCEPTIONS):
+        return False
     return any(term and term in event_text for term in LOW_VALUE_EVENT_TERMS)
 
 
@@ -2465,6 +2513,27 @@ class ThemeMatchEngine:
                 matched_theme_id=best_profile.theme_master_id,
                 review_required=True,
                 audit={"top_candidates": top_candidates, "best_evidence": best_ev},
+            )
+
+        if _is_low_value_event_text(request.event_text()):
+            return ThemeDecisionEnvelope(
+                decision="HUMAN_REVIEW",
+                event_id=request.event_id,
+                news_id=request.news_id,
+                confidence=_squash01(0.5),
+                reason_code="low_value_event_match_blocked",
+                matched_subject_key=best.subject_key,
+                matched_theme_name=best_profile.subject_name,
+                matched_theme_id=best_profile.theme_master_id,
+                review_required=True,
+                audit={
+                    "top_candidates": top_candidates,
+                    "best_evidence": best_ev,
+                    "low_value_event_rule_only_guard": {
+                        "blocked": True,
+                        "requires_accepted_anchor_to_match": True,
+                    },
+                },
             )
 
         if best.subject_key in direct_hit_set:

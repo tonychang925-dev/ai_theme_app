@@ -235,6 +235,7 @@ class PreMarketBriefBuilder:
                 "risk_tags": list(data.get("risk_tags") or []),
                 "theme_matched": bool(data.get("theme_matched")),
                 "matched_subjects": list(matched_subjects or []),
+                "pdf_url": data.get("pdf_url") or "",
                 "source_trace_id": data.get("source_trace_id") or "",
                 "source_stage": "matched_intel_join" if data.get("theme_matched") else "raw_intel_join",
             })
@@ -277,6 +278,7 @@ class PreMarketBriefBuilder:
                         "risk_tags": e.get("risk_tags", []),
                         "theme_matched": bool(e.get("theme_matched")),
                         "matched_subjects": e.get("matched_subjects", []),
+                        "pdf_url": e.get("pdf_url", ""),
                         "source_stage": e.get("source_stage", "raw_intel_join"),
                         "source_trace_id": e.get("source_trace_id", ""),
                     }
@@ -473,6 +475,16 @@ class PreMarketBriefBuilder:
                     "risk_type": "human_review_pending",
                     "count": len(review_events),
                     "message": "存在待人工复核的高影响题材事件，暂不生成股票机会。",
+                    "events": [
+                        {
+                            "event_id": e.get("event_id"),
+                            "title": e.get("title", ""),
+                            "summary": e.get("summary", ""),
+                            "theme_name": e.get("theme_name", ""),
+                            "reason": e.get("reason", ""),
+                        }
+                        for e in review_events[:5]
+                    ],
                 }
             )
         if unknown_events:
@@ -481,6 +493,14 @@ class PreMarketBriefBuilder:
                     "risk_type": "unknown_event_watch",
                     "count": len(unknown_events),
                     "message": "存在未匹配题材事件，仅进入观察区。",
+                    "events": [
+                        {
+                            "event_id": e.get("event_id"),
+                            "title": e.get("title", ""),
+                            "summary": e.get("summary", ""),
+                        }
+                        for e in unknown_events[:5]
+                    ],
                 }
             )
         return alerts

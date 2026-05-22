@@ -7906,9 +7906,11 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                         sie.risk_tags,
                         sie.evidence_json,
                         COALESCE(matched.matched_subjects, '[]'::jsonb) AS matched_subjects,
-                        (matched.event_id IS NOT NULL) AS theme_matched
+                        (matched.event_id IS NOT NULL) AS theme_matched,
+                        rid.pdf_url
                     FROM news_event ne
                     JOIN structured_intel_event sie ON ne.structured_intel_event_id = sie.id
+                    LEFT JOIN raw_intel_document rid ON sie.raw_doc_id = rid.id
                     LEFT JOIN matched ON matched.event_id = ne.id
                     WHERE ne.source_category = 'intel'
                       AND sie.publish_time >= $1

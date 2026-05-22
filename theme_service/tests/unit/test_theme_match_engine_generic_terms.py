@@ -247,9 +247,8 @@ async def test_weak_v1_alias_direct_hit_is_downgraded_to_review(monkeypatch):
     )
 
     assert result.decision == "HUMAN_REVIEW"
-    assert result.reason_code == "weak_v1_direct_hit_review"
-    assert result.audit["v1_direct_hit_guard"]["runtime_profile_source"] == "v1_fallback"
-    assert result.audit["v1_direct_hit_guard"]["direct_hit_terms"] == ["福建"]
+    assert result.reason_code == "low_value_event_match_blocked"
+    assert result.audit["low_value_event_rule_only_guard"]["blocked"] is True
 
 
 @pytest.mark.asyncio

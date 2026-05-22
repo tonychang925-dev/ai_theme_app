@@ -254,6 +254,8 @@ export interface PreMarketAlert {
   reason?: string;
   title?: string;
   summary?: string;
+  message?: string;            // 汇总类告警的描述
+  count?: number;              // 关联事件数量
   stock_code?: string;
   stock_name?: string;
   publish_time?: string;
@@ -261,6 +263,14 @@ export interface PreMarketAlert {
   amount?: string;
   impact_score?: number;
   source_event_id?: number;
+  risk_type?: string;          // human_review_pending | unknown_event_watch
+  events?: Array<{             // 关联的子事件
+    event_id?: number;
+    title?: string;
+    summary?: string;
+    theme_name?: string;
+    reason?: string;
+  }>;
 }
 
 export interface PreMarketBriefSections {
