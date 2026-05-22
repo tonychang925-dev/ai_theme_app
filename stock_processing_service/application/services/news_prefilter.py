@@ -62,7 +62,7 @@ class NewsPreFilterAdapter:
         self._model_path = model_path
 
         # P1-A2.1: performance protection
-        self._max_prompt_per_batch = int(os.getenv("PREFILTER_MAX_PROMPT_PER_BATCH", "3"))
+        self._max_prompt_per_batch = int(os.getenv("PREFILTER_MAX_PROMPT_PER_BATCH", "15"))
         self._prompt_this_batch = 0
         self._degraded = False
         self._degrade_reason = ""
@@ -113,16 +113,25 @@ class NewsPreFilterAdapter:
             if rule_decision in {"SKIP", "PASS"} and rule_raw.get("gray") != True:
                 return _to_result(rule_raw)
 
-            # 3. 批次预算已耗尽 → fail-open PASS (rule:gray_budget_exhausted)
+            # 3. 先检查熔断，再检查批次预算（避免降级后被 budget 拦截至 fail-open）
+            if self._check_degraded():
+                result = _to_result(rule_raw)
+                if rule_raw.get("gray") and result.pass_:
+                    return NewsTriageResult(
+                        pass_=False, decision="SKIP",
+                        reason="rule:gray_conservative_skip", mode="rule", score=None)
+                return result
+
+            # 4. 批次预算已耗尽 → 此时确认为未降级，灰区默认 SKIP（不依赖 Qwen）
             if self._prompt_this_batch >= self._max_prompt_per_batch:
                 self.stats["batch_budget_exhausted_count"] += 1
+                if rule_raw.get("gray"):
+                    return NewsTriageResult(
+                        pass_=False, decision="SKIP",
+                        reason="rule:gray_budget_exhausted_skip", mode="rule", score=None)
                 return NewsTriageResult(pass_=True, decision="PASS",
                     reason=f"rule:batch_budget_exhausted(max={self._max_prompt_per_batch})",
                     mode="rule", score=None)
-
-            # 4. 检查熔断
-            if self._check_degraded():
-                return _to_result(rule_raw)
 
             # 5. 灰区：调用 Qwen prompt
             self._prompt_this_batch += 1
@@ -144,7 +153,7 @@ class NewsPreFilterAdapter:
         if s["prompt_eval_count"] >= 5:
             avg_ms = s["prompt_total_ms"] / max(s["prompt_eval_count"], 1)
             err_rate = s["prompt_error_count"] / max(s["prompt_eval_count"], 1)
-            if avg_ms > 5000 or err_rate > 0.20:
+            if avg_ms > 20000 or err_rate > 0.20:
                 self._degraded = True
                 self._degrade_reason = (
                     f"prompt_slow(avg={avg_ms:.0f}ms)" if avg_ms > 5000
@@ -170,8 +179,8 @@ class NewsPreFilterAdapter:
             text = f"{payload.get('title', '')}\n{payload.get('content', '')}"
             prompt = _QPWEN_PROMPT.format(text=text[:600])
             response = self._qwen_llm(
-                prompt, max_tokens=64, stop=["\n\n"], echo=False,
-                temperature=0.0, top_p=0.9, top_k=40,
+                prompt, max_tokens=16, stop=["}", "\n", "\n\n"], echo=False,
+                temperature=0.0,
             )
             raw = str(response["choices"][0]["text"]).strip()
             elapsed_ms = (_time.perf_counter() - t0) * 1000
@@ -226,11 +235,12 @@ class NewsPreFilterAdapter:
             from llama_cpp import Llama
             n_threads = int(os.getenv("QWEN_PREFILTER_THREADS", "4"))
             self._qwen_llm = Llama(
-                model_path=model_path, n_ctx=1024,
+                model_path=model_path, n_ctx=256,
                 n_threads=n_threads, n_gpu_layers=0, verbose=False,
             )
             self._qwen_ready = True
-            logger.info("Qwen 1.5B prompt loaded: %s threads=%s", model_path, n_threads)
+            model_name = model_path.split('/')[-1].replace('.gguf', '')
+            logger.info("Qwen prefilter loaded: %s threads=%s n_ctx=256", model_name, n_threads)
             return True
         except Exception as exc:
             logger.warning("Qwen prompt init failed: %s", exc)
@@ -308,40 +318,26 @@ def _to_result(raw: Dict[str, Any]) -> NewsTriageResult:
 # ── Qwen prompt ──────────────────────────────────────────────────────────
 
 _QPWEN_PROMPT = (
-    "你是A股实时新闻过滤器。判断这条新闻是否可能影响A股题材或个股。\n"
-    "规则：\n"
-    "1) 可能影响板块/题材/个股预期 → pass:true, category用industry/policy/company/risk之一，importance用0-100数字\n"
-    "2) 纯价格波动、市场情绪、无实质内容的快讯 → pass:false, category用noise\n"
-    "3) 不太确定 → pass:true（宁可放行不可误杀）\n"
-    "请只输出JSON，不要解释：\n"
-    "{{\"pass\": true或false, \"category\": \"industry|policy|company|market|risk|noise\", \"importance\": 0-100的数字, \"reason\": \"不超过30字\"}}\n"
+    "判断A股新闻重要性。只输出JSON，勿解释。\n"
+    "重要(影响板块/个股预期)→{{\"p\":1}}\n"
+    "不重要(纯波动/情绪/无内容)→{{\"p\":0}}\n"
     "新闻：{text}\n"
     "输出："
 )
 
 
 def _parse_qwen_output(raw: str) -> Dict[str, Any]:
-    """解析 Qwen 输出为 structured dict，fail-open。"""
-    # 提取 JSON
-    m = re.search(r'\{[^}]+\}', raw)
+    """解析 Qwen 紧凑输出 {\"p\":1} 或 {\"p\":0}，fail-open。"""
+    m = re.search(r'\{[^}]*["\']p["\']\s*:\s*(\d+)[^}]*\}', raw)
     if m:
-        try:
-            parsed = _json.loads(m.group())
-            if "pass" in parsed:
-                return {
-                    "pass": bool(parsed.get("pass")),
-                    "category": str(parsed.get("category", "noise")),
-                    "importance": max(0, min(100, int(parsed.get("importance", 50)))),
-                    "reason": str(parsed.get("reason", "")),
-                }
-        except (_json.JSONDecodeError, ValueError, TypeError):
-            pass
-    # Heuristic fallback: contains "pass" or "true" → pass
-    if "pass" in raw.lower() or "true" in raw.lower():
-        return {"pass": True, "category": "unknown", "importance": 50, "reason": "heuristic_fallback"}
-    if "skip" in raw.lower() or "false" in raw.lower() or "noise" in raw.lower():
-        return {"pass": False, "category": "noise", "importance": 20, "reason": "heuristic_fallback"}
-    # Conservative
+        p_val = int(m.group(1))
+        return {"pass": p_val == 1, "category": "qwen", "importance": 50, "reason": "qwen_compact"}
+    # Fallback: scan for pass/true indicators
+    if '"p":1' in raw or '"p": 1' in raw:
+        return {"pass": True, "category": "qwen", "importance": 50, "reason": "qwen_fallback_pass"}
+    if '"p":0' in raw or '"p": 0' in raw:
+        return {"pass": False, "category": "noise", "importance": 20, "reason": "qwen_fallback_skip"}
+    # Conservative fail-open
     return {"pass": True, "category": "unknown", "importance": 50, "reason": "parse_fallback_pass"}
 
 
@@ -354,6 +350,7 @@ def _resolve_qwen_model(explicit_path: str) -> str | None:
     if env_path:
         candidates.append(env_path)
     candidates.extend([
+        "/Users/admin/Desktop/ai_theme_app/model_service/models/qwen2.5/qwen2.5-0.5b-instruct-q4_k_m.gguf",
         "/Users/admin/Desktop/ai_theme_app/model_service/models/qwen2.5/qwen2.5-1.5b-instruct-q5_k_m.gguf",
         "/Users/admin/Desktop/ai_theme_app/models/Qwen2.5-1.5B-Instruct",
     ])
@@ -409,20 +406,25 @@ def _embedded_rule_evaluate(payload: Dict[str, Any]) -> Dict[str, Any]:
             if catalyst_count < 2 and not has_stock:
                 return {"decision": "SKIP", "reason": f"rule:trivial_price_move:{pattern[:15]}", "score": None, "mode": "embedded_rule"}
 
-    # 3. 明确催化 → PASS
+    # 3. 明确催化 ≥ 2 → PASS（单关键词太宽松，提高门槛）
+    import re
+    has_stock = bool(re.search(r"[036]\d{5}", text))
     catalyst_hits = sum(1 for k in _EMBEDDED_CATALYST_KEYWORDS if k in text)
-    if catalyst_hits >= 1:
+    if catalyst_hits >= 2:
         return {"decision": "PASS", "reason": f"rule:catalyst_hits={catalyst_hits}", "score": None, "mode": "embedded_rule"}
 
-    # 4. 股票代码 → PASS（个股相关）
-    import re
-    if re.search(r"[036]\d{5}", text):
-        return {"decision": "PASS", "reason": "rule:stock_code_hit", "score": None, "mode": "embedded_rule"}
+    # 4. 1个催化 + 股票代码 → PASS（个股相关事件）
+    if catalyst_hits >= 1 and has_stock:
+        return {"decision": "PASS", "reason": f"rule:catalyst+stock", "score": None, "mode": "embedded_rule"}
 
-    # 5. 题材信号 ≥ 2 → PASS
+    # 5. 股票代码 + 信号词 → PASS
     signal_hits = sum(1 for k in _EMBEDDED_SIGNAL_KEYWORDS if k in text)
-    if signal_hits >= 2:
+    if has_stock and signal_hits >= 1:
+        return {"decision": "PASS", "reason": "rule:stock+signal", "score": None, "mode": "embedded_rule"}
+
+    # 6. 题材信号 ≥ 3 → PASS（从2提高到3）
+    if signal_hits >= 3:
         return {"decision": "PASS", "reason": f"rule:signal_hits={signal_hits}", "score": None, "mode": "embedded_rule"}
 
-    # 6. 保守放行（灰区 — rule_prompt 模式下会交给 Qwen）
-    return {"decision": "PASS", "reason": "rule:conservative_pass", "score": None, "mode": "embedded_rule", "gray": True}
+    # 7. 灰区 → SKIP（单催化词/单信号词/无明确特征）
+    return {"decision": "PASS", "reason": "rule:gray_default_skip", "score": None, "mode": "embedded_rule", "gray": True}

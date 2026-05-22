@@ -27,6 +27,7 @@ class AkShareCollectorStats:
     duplicate_count: int = 0
     filtered_count: int = 0
     filter_pass_count: int = 0
+    cross_dedup_count: int = 0
     filter_error_count: int = 0
     filter_mode: str = "off"
     last_filter_reason: str | None = None
@@ -48,7 +49,7 @@ class AkShareRealtimeNewsCollector:
         status_path: str | Path | None = None,
         batch_size: int = 20,
         prefilter_enabled: bool = True,
-        prefilter_mode: str = "rule_prompt",
+        prefilter_mode: str = "rule",
         prefilter_model_path: str = "",
         prefilter_fail_open: bool = True,
         prefilter_skip_log_path: str | Path | None = None,
@@ -110,6 +111,7 @@ class AkShareRealtimeNewsCollector:
             before_dedup = len(rows)
             rows = await self._cross_source_dedup(rows)
             cross_dedup = before_dedup - len(rows)
+            self.stats.cross_dedup_count += cross_dedup
             self.stats.fetched_count += len(rows)
             pushed = 0
             duplicate = 0
@@ -191,19 +193,22 @@ class AkShareRealtimeNewsCollector:
         import akshare as ak
 
         sources: list[tuple[str, Any, str]] = [
-            ("eastmoney", ak.stock_info_global_em, "em"),
             ("sina",      ak.stock_info_global_sina, "sina"),
             ("ths",       ak.stock_info_global_ths, "ths"),
             ("futu",      ak.stock_info_global_futu, "futu"),
             ("cctv",      ak.news_cctv, "cctv"),
         ]
 
+        # Per-source row limits to balance coverage vs noise
+        _SOURCE_LIMITS = {"em": 50, "sina": 20, "ths": 20, "futu": 50, "cctv": 12}
+
         async def _fetch_one(label: str, func, channel: str) -> list[dict[str, Any]]:
             try:
                 df = await asyncio.to_thread(func)
                 if df is None or df.empty:
                     return []
-                records = df.to_dict("records")
+                limit = _SOURCE_LIMITS.get(channel, 50)
+                records = df.head(limit).to_dict("records")
                 for r in records:
                     r["source_channel"] = f"akshare_{channel}"
                     # 新浪特殊处理: 只有"时间"和"内容"两列，无标题

@@ -77,7 +77,7 @@ async def run_services(args: argparse.Namespace) -> None:
             "enable_ai_analysis": True,
             "enable_local_triage": True,
             "triage_mode": "hybrid",
-            "triage_block_on_skip": False,
+            "triage_block_on_skip": True,
             "triage_pass_threshold": 0.03,
             "triage_skip_threshold": -0.05,
             "batch_processing": True,

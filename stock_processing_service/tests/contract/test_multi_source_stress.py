@@ -301,47 +301,67 @@ async def run_stress_test(per_source: int = 100, use_qwen: bool = False) -> Stre
     print(f"Phase 1: 采集阶段 (每源目标 ≥ {per_source} 条)")
     print(f"{'='*70}")
 
-    max_rounds = 50
+    # Per-source unique-key tracking (for newness detection)
+    per_source_keys: dict[str, set[str]] = {ch: set() for ch in SOURCES}
+    stalled_rounds = 0
+
+    max_rounds = 60
     for round_idx in range(1, max_rounds + 1):
         stats.rounds = round_idx
         rows = await collect_all_sources()
         stats.total_raw += len(rows)
 
-        # Count per source
+        # Count per source WITH internal dedup
         source_counts: dict[str, int] = {}
+        new_this_round = 0
         for r in rows:
             ch = str(_pick(r, "source_channel") or "unknown")
-            source_counts[ch] = source_counts.get(ch, 0) + 1
-            if ch in accum:
-                accum[ch].append(r)
-
-        # Exact dedup check
-        for r in rows:
+            if ch not in accum:
+                continue
             key = _dedupe_key(r)
-            if key in all_exact_keys:
+            source_counts[ch] = source_counts.get(ch, 0) + 1
+            # Per-source exact dedup
+            if key not in per_source_keys[ch]:
+                per_source_keys[ch].add(key)
+                accum[ch].append(r)
+                new_this_round += 1
+                # Also track global exact dedup
+                if key in all_exact_keys:
+                    stats.total_exact_dup += 1
+                all_exact_keys.add(key)
+            else:
                 stats.total_exact_dup += 1
-            all_exact_keys.add(key)
+
+        # Stalled detection
+        if new_this_round == 0:
+            stalled_rounds += 1
+        else:
+            stalled_rounds = 0
 
         # Progress
         counts_str = " | ".join(
             f"{SOURCES[ch]['label']}: {len(accum[ch])}/{per_source}"
-            for ch in SOURCES if ch in accum
+            for ch in SOURCES if len(accum[ch]) > 0 or ch in source_counts
         )
         this_round = " | ".join(
             f"{k}={v}" for k, v in sorted(source_counts.items())
         )
-        print(f"  Round {round_idx:2d}: {this_round}")
-        print(f"    Accum: {counts_str}")
+        print(f"  Round {round_idx:2d}: new={new_this_round} | {this_round}")
+        print(f"    Unique: {counts_str}")
 
-        # Check if all sources reached target
-        all_done = all(len(accum[ch]) >= per_source for ch in SOURCES if ch in accum)
-        if all_done:
-            print(f"\n  所有源均达到目标！{round_idx} 轮完成")
+        # Check done: all sources with data have >= target, or stalled 3+ rounds
+        active_sources = [ch for ch in SOURCES if len(accum[ch]) > 0]
+        all_hit_target = all(len(accum[ch]) >= per_source for ch in active_sources)
+        if all_hit_target:
+            print(f"\n  所有活跃源均达到目标！{round_idx} 轮完成")
+            break
+        if stalled_rounds >= 3:
+            print(f"\n  连续 {stalled_rounds} 轮无新数据，提前结束")
             break
 
-        await asyncio.sleep(2)  # brief pause between rounds
+        await asyncio.sleep(3)
 
-    stats.total_fetched = sum(len(v) for v in accum.values())
+    stats.total_fetched = sum(len(v) for v in accum.values())  # unique per source
 
     # ── Phase 2: Source availability report ─────────────────────────────
     print(f"\n{'='*70}")
