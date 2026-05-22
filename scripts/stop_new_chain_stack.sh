@@ -5,6 +5,11 @@ set -euo pipefail
 ROOT_DIR="/Users/admin/Desktop/ai_theme_app"
 WEB_APP_PATTERN="uvicorn web_app_service.main:app --host 0.0.0.0 --port 8000"
 SPS_PATTERN="uvicorn stock_processing_service.api_app:app --host 127.0.0.1 --port 8090"
+LAUNCHD_LABELS=(
+  "com.ai_theme.web_app_service"
+  "com.ai_theme.stock_processing_service"
+  "com.ai_theme.new_chain_stack"
+)
 
 WITH_FRONTEND=false
 FORCE=false
@@ -34,7 +39,16 @@ fi
 if [[ "$FORCE" == "true" ]]; then
   ARGS+=(--force)
 fi
+# stop launchd-managed services first, otherwise KeepAlive may respawn them
+for label in "${LAUNCHD_LABELS[@]}"; do
+  launchctl disable "gui/$(id -u)/${label}" >/dev/null 2>&1 || true
+  launchctl bootout "gui/$(id -u)/${label}" >/dev/null 2>&1 || true
+done
+
 # stop new-chain surface first
+screen -S ai_theme_sps_8090 -X quit >/dev/null 2>&1 || true
+screen -S ai_theme_web_8000 -X quit >/dev/null 2>&1 || true
+screen -S ai_theme_frontend_5173 -X quit >/dev/null 2>&1 || true
 pkill -f "node.*vite.*5173" >/dev/null 2>&1 || true
 pkill -f "vite --host" >/dev/null 2>&1 || true
 
@@ -65,6 +79,10 @@ if pgrep -f "$SPS_PATTERN" >/dev/null 2>&1; then
 else
   echo "[skip] stock_processing_service:8090 not running"
 fi
+
+rm -f "$ROOT_DIR/logs/realtime/web_app_service_8000.pid" \
+      "$ROOT_DIR/logs/realtime/stock_processing_service_8090.pid" \
+      "$ROOT_DIR/logs/realtime/start_new_chain_stack.detached.pid" >/dev/null 2>&1 || true
 
 echo
 echo "New-chain stack stopped."
