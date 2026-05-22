@@ -81,6 +81,12 @@ class NewsStreamProcessor:
             "batch_processing": self.config.get("batch_processing", True),
             "batch_size": self.config.get("batch_size", 5),
             "run_id_filter": self.config.get("run_id_filter"),
+            "structuring_connect_timeout_s": float(self.config.get("structuring_connect_timeout_s", 10)),
+            "structuring_read_timeout_s": float(self.config.get("structuring_read_timeout_s", 60)),
+            "structuring_total_timeout_s": float(self.config.get("structuring_total_timeout_s", 90)),
+            "structuring_max_retries": int(self.config.get("structuring_max_retries", 2)),
+            "structuring_retry_delay_s": float(self.config.get("structuring_retry_delay_s", 1)),
+            "structuring_circuit_breaker_threshold": int(self.config.get("structuring_circuit_breaker_threshold", 5)),
         }
 
         self.local_triage_service = None
@@ -109,10 +115,20 @@ class NewsStreamProcessor:
             "failed_events": 0,
             "ai_analysis_count": 0,
             "ai_real_analysis_count": 0,
+            "structuring_success_count": 0,
+            "structuring_timeout_count": 0,
+            "structuring_error_count": 0,
+            "fallback_structured_count": 0,
+            "processed_after_fallback_count": 0,
+            "llm_retry_count": 0,
+            "circuit_breaker_open_count": 0,
             "sentiment_analysis_count": 0,
             "topic_extraction_count": 0,
             "business_results": []
         }
+        self._structuring_consecutive_timeouts = 0
+        self._structuring_circuit_breaker_open = False
+        self._structuring_circuit_breaker_open_at = None
         
         logger.info(f"🧠 新闻Stream业务处理器初始化")
         logger.info(f"   处理器组: {self.processor_config['processor_group']}")
@@ -340,6 +356,7 @@ class NewsStreamProcessor:
             result = await self._process_single_event(stream_event, source_type="stored_news_message")
             structured = result.get("business_results", {}).get("results", {}).get("structured_event", {})
             persistence = result.get("business_results", {}).get("results", {}).get("news_event_persistence", {})
+            structuring = result.get("business_results", {}).get("results", {}).get("structuring", {})
 
             return {
                 "success": bool(result["processing_success"] and persistence.get("news_event_id")),
@@ -351,6 +368,7 @@ class NewsStreamProcessor:
                 "error": result.get("error") or (None if persistence.get("news_event_id") else "news_event_not_created"),
                 "source_type": result.get("source_type"),
                 "structured_event": structured,
+                "structuring": structuring,
                 "structured_stream_published": persistence.get("structured_stream_published", False),
             }
             
@@ -651,7 +669,11 @@ class NewsStreamProcessor:
                     logger.info(f"🧠 开始{service_name}分析: {news_id}")
                     
                     if hasattr(ai_service, 'extract_event'):
-                        ai_result = await ai_service.extract_event(news_data)
+                        ai_result, structuring_meta = await self._extract_event_with_stability(
+                            ai_service,
+                            news_data,
+                        )
+                        business_results["results"]["structuring"] = structuring_meta
                         
                         if ai_result and ai_result.get("status") == "success":
                             structured_event = self._build_structured_news_event(news_data, ai_result.get("response", {}))
@@ -713,13 +735,17 @@ class NewsStreamProcessor:
                 )
 
                 # 创建基本的结构化事件
+                structuring_result = business_results["results"].get("structuring") or {}
+                structuring_error = str(structuring_result.get("error") or "ai_disabled")
                 basic_structured_event = {
                     "news_id": fallback_news_row_id,
-                    "event_type": "news.stored",
+                    "event_type": "unknown",
                     "impact_industries": [],
                     "direction": "neutral",
                     "confidence": 0.5,
                     "summary": news_data.get('title', '无标题新闻'),
+                    "title": news_data.get("title", ""),
+                    "content": news_data.get("content", ""),
                     "theme_directive": {
                         "structuring_version": "1.0",
                         "llm_request_id": None,
@@ -734,6 +760,8 @@ class NewsStreamProcessor:
                     "evidence_set": {},
                     "raw_event_json": news_data,
                     "structuring_version": "1.0",
+                    "structuring_status": "fallback_minimal",
+                    "structuring_error": structuring_error,
                     "llm_request_id": None,
                     "run_id": news_data.get("run_id"),
                     "case_id": news_data.get("case_id"),
@@ -747,6 +775,18 @@ class NewsStreamProcessor:
 
                 business_results["results"]["structured_event"] = basic_structured_event
                 business_results["results"]["news_event_persistence"] = persistence
+                business_results["results"].setdefault(
+                    "structuring",
+                    {
+                        "status": "fallback_minimal",
+                        "error": structuring_error,
+                        "attempts": 0,
+                        "llm_retry_count": 0,
+                    },
+                )
+                self.business_stats["fallback_structured_count"] += 1
+                if persistence.get("structured_stream_published"):
+                    self.business_stats["processed_after_fallback_count"] += 1
                 if persistence.get("structured_stream_published"):
                     business_results["processing_steps"].append("structured_event_publish_fallback")
                     logger.info(f"✅ 基本结构化事件发布成功: {fallback_news_display_id}")
@@ -758,6 +798,80 @@ class NewsStreamProcessor:
                 logger.error(f"❌ 创建基本结构化事件失败: {e}", exc_info=True)
 
         return business_results
+
+    async def _extract_event_with_stability(self, ai_service: Any, news_data: Dict[str, Any]) -> tuple[Optional[Dict[str, Any]], Dict[str, Any]]:
+        """Bound one LLM structuring item so one external stall cannot block the stream."""
+        if self._structuring_circuit_breaker_open:
+            return None, {
+                "status": "fallback_minimal",
+                "error": "structuring_circuit_breaker_open",
+                "attempts": 0,
+                "llm_retry_count": 0,
+                "circuit_breaker_open": True,
+                "open_at_index": self._structuring_circuit_breaker_open_at,
+            }
+
+        attempts = 0
+        last_error = ""
+        last_status = "structuring_error"
+        max_attempts = max(1, self.processor_config["structuring_max_retries"] + 1)
+        for attempt in range(1, max_attempts + 1):
+            attempts = attempt
+            if attempt > 1:
+                self.business_stats["llm_retry_count"] += 1
+                await asyncio.sleep(self.processor_config["structuring_retry_delay_s"])
+            try:
+                ai_result = await asyncio.wait_for(
+                    ai_service.extract_event(news_data),
+                    timeout=self.processor_config["structuring_total_timeout_s"],
+                )
+                if ai_result and ai_result.get("status") == "success":
+                    self._structuring_consecutive_timeouts = 0
+                    self.business_stats["structuring_success_count"] += 1
+                    return ai_result, {
+                        "status": "success",
+                        "error": None,
+                        "attempts": attempts,
+                        "llm_retry_count": max(0, attempts - 1),
+                        "timeout": self._structuring_timeout_config(),
+                    }
+                last_status = "structuring_error"
+                last_error = str((ai_result or {}).get("error") or "AI structuring returned no success")
+            except (asyncio.TimeoutError, TimeoutError):
+                last_status = "structuring_timeout"
+                last_error = "LLM structuring timeout"
+            except Exception as exc:
+                last_status = "structuring_error"
+                last_error = str(exc)
+
+        if last_status == "structuring_timeout":
+            self.business_stats["structuring_timeout_count"] += 1
+            self._structuring_consecutive_timeouts += 1
+            if self._structuring_consecutive_timeouts >= self.processor_config["structuring_circuit_breaker_threshold"]:
+                self._structuring_circuit_breaker_open = True
+                self._structuring_circuit_breaker_open_at = news_data.get("sequence") or news_data.get("news_id")
+                self.business_stats["circuit_breaker_open_count"] += 1
+        else:
+            self.business_stats["structuring_error_count"] += 1
+            self._structuring_consecutive_timeouts = 0
+
+        return None, {
+            "status": last_status,
+            "error": last_error,
+            "attempts": attempts,
+            "llm_retry_count": max(0, attempts - 1),
+            "fallback_action": "fallback_minimal",
+            "timeout": self._structuring_timeout_config(),
+            "circuit_breaker_open": self._structuring_circuit_breaker_open,
+            "open_at_index": self._structuring_circuit_breaker_open_at,
+        }
+
+    def _structuring_timeout_config(self) -> Dict[str, float]:
+        return {
+            "connect_timeout_s": self.processor_config["structuring_connect_timeout_s"],
+            "read_timeout_s": self.processor_config["structuring_read_timeout_s"],
+            "total_timeout_s": self.processor_config["structuring_total_timeout_s"],
+        }
 
     @staticmethod
     def _is_stress_test_news(news_data: Dict[str, Any]) -> bool:
@@ -1077,6 +1191,15 @@ class NewsStreamProcessor:
             "failed_events": self.business_stats["failed_events"],
             "ai_analysis_count": self.business_stats["ai_analysis_count"],
             "ai_real_analysis_count": self.business_stats["ai_real_analysis_count"],
+            "structuring_success_count": self.business_stats["structuring_success_count"],
+            "structuring_timeout_count": self.business_stats["structuring_timeout_count"],
+            "structuring_error_count": self.business_stats["structuring_error_count"],
+            "fallback_structured_count": self.business_stats["fallback_structured_count"],
+            "processed_after_fallback_count": self.business_stats["processed_after_fallback_count"],
+            "llm_retry_count": self.business_stats["llm_retry_count"],
+            "circuit_breaker_open_count": self.business_stats["circuit_breaker_open_count"],
+            "circuit_breaker_open": self._structuring_circuit_breaker_open,
+            "circuit_breaker_open_at": self._structuring_circuit_breaker_open_at,
             "sentiment_analysis_count": self.business_stats["sentiment_analysis_count"],
             "topic_extraction_count": self.business_stats["topic_extraction_count"],
             "processing_success_rate": self.business_stats["processed_events"] / total_events,

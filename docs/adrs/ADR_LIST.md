@@ -753,3 +753,63 @@
   - 前端契约稳定；需要清理或标记非生产路由。
 - Trigger
   - 新增前端页面、改 `/api/v2/*` DTO、或迁移旧页面时。
+
+### ADR-P3-PM-001: 日采集控制面只允许 SPS 新链单真源
+- Context
+  - 当前前端 `/collection` 命中 `frontend_bff` 自有 `CollectionJobManager`，该 manager 仍直接拉起旧脚本；`stock_processing_service` 同时存在新链 collection API、planner 与 runner registry。
+- Decision
+  - 生产日采集只能由 SPS collection API 驱动。BFF 只能做鉴权、错误转换与代理，不得持有生产任务编排器，不得直接启动 recap 旧脚本。
+- Alternatives
+  - 继续让 BFF 旧脚本编排与 SPS 新链编排并存。
+- Consequences
+  - 任务真源、job id、状态机和失败原因收口；需要迁移前端状态轮询接口并删除 BFF 旧任务入口。
+- Trigger
+  - `/collection` 继续承担 JYHF、Tushare、龙虎榜、异动、复盘生成等交易日日采集工作时。
+
+### ADR-P3-PM-002: BuildPostMarketRecapJob 必须拥有 D1 构建职责
+- Context
+  - 第三阶段设计文档将 `BuildPostMarketRecapJob` 定义为 D1 构建驱动者，但当前代码只读取已存在 D1 候选，导致 2026-05-21 候选池为空时仍发布空复盘快照。
+- Decision
+  - `BuildPostMarketRecapJob` 在 Layer C refresh 后必须显式执行 D1 candidate use case，再汇总候选证据写 `post_market_recap_snapshot`。
+- Alternatives
+  - 继续要求其他隐式前置任务先生成 `weak_to_strong_candidate_pool`。
+- Consequences
+  - 盘后复盘成为自闭环 job；D1 候选池仍保留为审计与 D2 输入，但不再成为隐式外部前置。
+- Trigger
+  - 生成 `post_market_recap_snapshot` 或回补历史盘后复盘时。
+
+### ADR-P3-PM-003: 盘后快照核心空产出必须显式声明质量状态
+- Context
+  - 2026-05-21 快照 A/B/C dependency metadata 显示完整，但 D1 候选为 0，四个核心 section 落成 `暂无...` 占位仍被发布为成功快照。
+- Decision
+  - 快照必须输出 `quality_status` 与 `degraded_reasons`。当强势池与主线资金上下文存在而 D1 驱动 section 为空时，不得 silent success。
+- Alternatives
+  - 继续把空 section 当正常内容，由页面展示占位文案。
+- Consequences
+  - 控制台和页面能区分策略无候选、依赖缺失、链路退化；需要补质量门禁与回归样本。
+- Trigger
+  - 盘后复盘生成、历史回补或发布 Notion 前。
+
+### ADR-P3-PM-002 Supersession Note: Recap 不拥有 D1 候选生成职责
+- Context
+  - 2026-05-21 复核时，业务边界被再次澄清：每日复盘提供数据准备，D1 候选池由弱转强 Stage1 盘后选股显式生成。
+- Decision
+  - `ADR-P3-PM-002` 不作为最终职责裁决，由 `ADR-P3-PM-004` 替代。第三阶段主文档中“BuildPostMarketRecapJob 驱动 D1”的歧义表述需要修订。
+- Alternatives
+  - 继续把 D1 隐式塞回 recap job。
+- Consequences
+  - 复盘生成链与弱转强选股链解耦；需要修复新链 report builder 的 section 数据源。
+- Trigger
+  - 继续设计 `/recap`、弱转强 Stage1 或 collection job 职责时。
+
+### ADR-P3-PM-004: 复盘 section 必须由复盘事实驱动而非 D1 候选驱动
+- Context
+  - 旧 `RecapService` 的主线、强势股、观察清单、资金 top section 分别来自主线/周期/leader/资金/异动事实；当前新链 builder 却把四段绑定到 D1 `top_candidates/formal_candidates`，导致 2026-05-21 D1 为空时四段全空。
+- Decision
+  - `post_market_recap_snapshot.report.sections` 的复盘主体必须从新链复盘事实对象构建。D1 候选只能作为弱转强选股结果或可选补充 section，不得作为主线与强势股复盘 section 的唯一输入。
+- Alternatives
+  - 继续让 recap builder 以 D1 候选作为复盘骨架。
+- Consequences
+  - 复盘在没有执行弱转强 Stage1 时仍能完整展示日复盘；需要补 section source contract 与 2026-05-21 回归样本。
+- Trigger
+  - 构建 `post_market_recap_snapshot` 或调整 recap report builder 时。

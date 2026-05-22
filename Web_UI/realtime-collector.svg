@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="baseGrad" x1="80" y1="60" x2="430" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#132640"/>
+      <stop offset="0.55" stop-color="#07111F"/>
+      <stop offset="1" stop-color="#092A35"/>
+    </linearGradient>
+    <linearGradient id="cyanBlue" x1="80" y1="80" x2="430" y2="430" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#38D9FF"/>
+      <stop offset="0.5" stop-color="#247BFF"/>
+      <stop offset="1" stop-color="#34F5C6"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="120" y1="90" x2="390" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFE27A"/>
+      <stop offset="1" stop-color="#FF9E2C"/>
+    </linearGradient>
+    <linearGradient id="redGrad" x1="120" y1="80" x2="420" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF7A4D"/>
+      <stop offset="1" stop-color="#FF2F6D"/>
+    </linearGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.05 0 0 0 0 0.8 0 0 0 0 1 0 0 0 0.7 0"/>
+      <feBlend in="SourceGraphic" mode="screen"/>
+    </filter>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#001322" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+  <rect x="46" y="46" width="420" height="420" rx="96" fill="url(#baseGrad)" filter="url(#shadow)"/>
+  <rect x="58" y="58" width="396" height="396" rx="84" stroke="url(#cyanBlue)" stroke-width="5" opacity="0.8"/>
+  <rect x="72" y="72" width="368" height="368" rx="74" stroke="#B8E9FF" stroke-width="2" opacity="0.25"/>
+  
+  <g filter="url(#softGlow)">
+    <circle cx="256" cy="256" r="124" stroke="url(#cyanBlue)" stroke-width="4" opacity="0.85"/>
+    <circle cx="256" cy="256" r="82" stroke="url(#cyanBlue)" stroke-width="3" opacity="0.65"/>
+    <circle cx="256" cy="256" r="38" stroke="#E8FFFF" stroke-width="4" opacity="0.95"/>
+    <path d="M256 256 L350 158" stroke="#55F7FF" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="350" cy="158" r="10" fill="#E8FFFF"/>
+    <path d="M132 272H190L205 244L224 306L245 218L266 292L285 260H380" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="256" cy="256" r="16" fill="#BFFFFF"/>
+  </g>
+  <g opacity="0.8">
+    <path d="M120 348 C176 322 214 312 256 312 C298 312 336 322 392 348" stroke="url(#cyanBlue)" stroke-width="5" stroke-linecap="round"/>
+    <path d="M154 382 C196 356 224 348 256 348 C288 348 316 356 358 382" stroke="url(#cyanBlue)" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+</svg>

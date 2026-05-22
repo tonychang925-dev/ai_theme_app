@@ -62,3 +62,11 @@ def test_post_market_report_context_uses_layer_b_truth_not_state_daily() -> None
     assert "v2.final_mainline_alive" in method
     assert "mainline_state_daily msd" not in method
     assert "COALESCE(msd.state" not in method
+
+
+def test_post_market_report_context_carries_leader_scores_for_recap_strong_section() -> None:
+    method = _method_source("get_post_market_report_context")
+
+    assert "LEFT JOIN theme_leader_candidate l" in method
+    assert "l.composite_score AS leader_composite_score" in method
+    assert "l.capital_score AS leader_capital_score" in method

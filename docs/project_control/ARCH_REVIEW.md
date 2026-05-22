@@ -395,3 +395,232 @@
 - 不把旧 SQL 直接复制到 `stock_processing_service`。
 - 不让前端直接调用脚本或数据库。
 - 不在旧链 dry-run 未完成前宣称 Layer C 已复刻完成。
+
+---
+
+# ARCH REVIEW - P3.phase2 日采集控制面与盘后复盘快照核查（2026-05-21）
+
+## 1. 当前架构摘要（Current Architecture Summary）
+
+本次核查对照 `docs/architecture/个人投资助理-项目架构设计-第三阶段.md` 与 2026-05-21 盘后复盘现状，范围锁定：
+
+- `/collection` 日采集控制台
+- `BuildPostMarketRecapJob`
+- `post_market_recap_snapshot`
+- 盘后页四个空区块：`主线与支线`、`强势股分层`、`次日观察清单`、`主线股票资金流入前20`
+
+设计文档已经冻结了两个关键边界：
+
+1. 盘后页面、BFF、Notion 一律读取 `post_market_recap_snapshot`，不得直读 `weak_to_strong_candidate_pool`。
+2. `BuildPostMarketRecapJob` 的职责包括“驱动 D1 候选构建”，再汇总强势池、异动、排行榜与候选证据生成最终快照。
+
+当前代码只完成了第 1 条，违背了第 2 条：
+
+- 前端复盘页确实只读 `/api/v2/post_market_snapshot` 并解析快照内 `report.sections`。
+- `BuildPostMarketRecapJob` 当前先构建 Layer C，再把 D1 处理改成“读取既有 `weak_to_strong_candidate_pool`”，没有调用已注入的 `BuildWeakToStrongCandidateUseCase`。
+- 前端 `/collection` 控制台仍经 `frontend_bff` 的内存 `CollectionJobManager` 拉起旧脚本；同时 `stock_processing_service` 又提供了新链 `CollectionJobManager + CollectionCommandPlanner + Runner Registry`。这不是兼容别名，而是两套会生产复盘结果的控制面。
+
+## 2. 风险矩阵（Risk Matrix）
+
+| 风险ID | 等级 | 风险描述 | 影响范围 | 概率 | 发现难度 | Trigger | 缓解措施 | Owner |
+|---|---|---|---|---|---|---|---|---|
+| R-P3-PM-001 | P0 | D1 未由盘后 job 构建，空候选仍发布成功快照 | 盘后四个核心区块、Notion 复盘 | 高 | 中 | 当日 `weak_to_strong_candidate_pool` 未提前生成 | 恢复 `BuildPostMarketRecapJob -> BuildWeakToStrongCandidateUseCase` 职责，空产出门禁化 | SPS |
+| R-P3-PM-002 | P0 | `/collection` 存在 BFF 旧脚本控制面与 SPS 新链控制面双写语义 | 日采集、回补、故障定位 | 高 | 中 | 前端继续命中 BFF `/api/v2/collection/*` | 前端/BFF 只代理 SPS collection API，删除 BFF 业务编排器 | FE/BFF/SPS |
+| R-P3-PM-003 | P1 | 快照依赖状态只检查 A/B/C 命中，不检查 D1 非空或 D1 执行状态 | 快照质量门禁 | 高 | 中 | A/B/C 正常而 D1 空 | 快照 metadata 增加 D1 build status、candidate coverage、degraded reason | SPS/QA |
+| R-P3-PM-004 | P1 | `money_flow_enhanced` 在新链 planner 中仍由 `script.default` 运行脚本 | 资金增强与控制面收口 | 中 | 低 | 保留脚本 runner 生产路径 | 抽成 SPS runner/job，经 Port/Gateway 写读 | SPS/Data |
+
+## 3. 维度化发现
+
+### 3.1 现象与证据
+
+2026-05-21 的 `post_market_recap_snapshot` 已经落库，`snapshot_version=collection.post_market_recap.v1`，且快照中存在 12 个 section。但四个页面空区块在快照里已经是占位文本，不是前端渲染丢失：
+
+| section | 快照首项 |
+|---|---|
+| `主线与支线` | `暂无主线候选` |
+| `强势股分层` | `暂无强势股候选` |
+| `次日观察清单` | `暂无次日观察候选` |
+| `主线股票资金流入前20` | `暂无主线股票资金数据` |
+
+同一快照的关键计数为：
+
+- `candidate_count=0`
+- `candidate_count_formal=0`
+- `candidate_count_observe=0`
+- `top_candidates` 数组长度为 0
+- `strong_watch_input_7d_count=2640`
+- `strong_watch_pool_written=87`
+- `report_context.stock_facts=132`
+- `report_context.theme_capital_flow=8`
+
+因此故障断点不是“JYHF/Tushare 全部没数据”，也不是前端 section 名称错误，而是“盘后快照依赖的 D1 候选列表为空，builder 把空候选转换成了 `暂无...` 并正常发布”。
+
+### 3.2 契约与一致性
+
+第三阶段文档对 D1 与复盘的定义是：
+
+- D1 只能读取 Strong Watch refresh 后结果。
+- 候选池保留为回放、详情证据、D2 输入，不允许页面直读。
+- `BuildPostMarketRecapJob` 驱动 D1 候选构建，然后生成 `post_market_recap_snapshot`。
+
+当前实现的实际语义是：
+
+- `BuildPostMarketRecapJob` 驱动 A/B 前置与 Layer C。
+- D1 阶段只调用 `get_w2s_candidate_inputs()` 与 `get_w2s_candidates_by_trade_date()`。
+- `weak_to_strong_candidate_use_case` 虽然注入到 job，但未被执行。
+
+结果是：复盘 job 从“拥有 D1 生产职责”退化成了“假设 D1 已由别处先生产”。一旦日采集控制台没有先跑 D1，或当日候选池没有落库，复盘快照仍会成功但核心 section 为空。
+
+### 3.3 控制面分叉
+
+当前 `/collection` 不是 SPS 新链控制台：
+
+- 前端请求 `/api/v2/collection/*`。
+- `frontend_bff` 直接持有自己的 `collection_job_manager`。
+- BFF 的 `recap_snapshot` 任务直接执行 `scripts/build_post_market_recap.py`。
+
+与此同时，SPS 另有：
+
+- `/api/v1/collection/*`
+- `stock_processing_service/application/jobs/collection_job_manager.py`
+- `CollectionCommandPlanner`
+- Runner Registry 与 `recap.snapshot` 新链 runner
+
+这两套机制的任务名称相似，但业务含义不同，无法作为长期兼容层共存。继续保留会导致：
+
+1. 前端看到的“采集成功”不等于新链快照依赖已准备。
+2. 旧脚本复盘与 SPS 新链复盘都可能写 `post_market_recap_snapshot`。
+3. 故障定位时无法先判断结果由哪条链生产。
+
+### 3.4 可观测性与门禁
+
+当前新链 report builder 的 dependency status 只关注 A/B/C 是否命中。2026-05-21 A/B/C 命中后 `missing_new_chain_dependencies=[]`，但 D1 候选仍为 0。这个 metadata 会误导控制台和页面把“核心内容缺失”解释成“新链依赖完整”。
+
+## 4. 目标架构（Target Architecture）
+
+日采集与盘后复盘只保留 SPS 新链单控制面：
+
+```text
+frontend /collection
+  -> frontend_bff collection proxy only
+  -> SPS /api/v1/collection/*
+  -> SPS CollectionJobManager
+  -> Runner / Job / UseCase
+  -> frozen object: post_market_recap_snapshot
+  -> frontend /recap, Notion publisher
+```
+
+`BuildPostMarketRecapJob` 必须恢复文档职责：
+
+```text
+recap prerequisites
+  -> Layer A identity
+  -> Layer B cycle
+  -> Layer C strong watch
+  -> Layer D1 weak-to-strong candidate build
+  -> report context assembly
+  -> post_market_recap_snapshot quality gate
+```
+
+目标控制台不是“勾选一批脚本”，而是“观察 SPS 日采集 contract 的执行与质量”：
+
+- 只展示一套 job id、step graph、runner/job、输入覆盖、输出对象、失败原因。
+- 对每个交易日显示冻结对象状态：`stock_daily_snapshot`、`subject_stock_daily_snapshot`、`stock_abnormal_event`、`theme_stock_leaderboard`、`post_market_recap_snapshot`。
+- 对复盘显示 A/B/C/D 质量摘要：identity hits、cycle hits、strong watch rows、D1 candidate rows、report sections degraded reason。
+- 明确区分 `failed`、`degraded`、`success`，不得把核心 section 空占位当作纯成功。
+
+## 5. 迁移计划（Migration Plan）
+
+1. P0：让前端 `/api/v2/collection/*` 改成 BFF 代理 SPS collection API；删除 BFF 旧 `CollectionJobManager` 生产入口与旧脚本 `recap_snapshot` 调用。
+2. P0：让 `BuildPostMarketRecapJob` 在 Layer C 后显式执行 `BuildWeakToStrongCandidateUseCase`，再读取 D1 结果写快照。
+3. P0：为 2026-05-21 这类空 D1 场景增加质量门禁：当 Strong Watch/主线资金上下文存在而核心 D1 section 为空时，快照必须标记 degraded 或失败，禁止 silent success。
+4. P1：把 `money_flow_enhanced` 从 `script.default` 抽为 SPS runner/job，清理新链 planner 内剩余脚本生产路径。
+5. P1：补一条端到端验收：`/collection` 启动 -> SPS job -> D1 candidate build -> `post_market_recap_snapshot` -> `/recap` 四个区块非占位或返回明确 degraded reason。
+
+## 6. 子阶段方案
+
+| 子阶段 | 核心目标 | 验收门禁 | 回滚 |
+|---|---|---|---|
+| P3.pm0 | 控制面单一化 | 前端 collection 只代理 SPS；BFF 不再执行 recap 脚本 | 临时关闭前端启动入口，仅保留 SPS API |
+| P3.pm1 | 复盘 job 恢复 D1 所有权 | `BuildPostMarketRecapJob` 单测断言 D1 use case 被执行 | 回滚到上一 snapshot_version，不恢复旧脚本 |
+| P3.pm2 | 快照质量门禁 | 空 D1/空 section 输出 degraded/fail，2026-05-21 回归覆盖 | 控制台显示 degraded，页面继续只读快照 |
+| P3.pm3 | 新链脚本残留清理 | planner 不再以 `script.default` 执行资金增强 | 保留同一 SPS runner 的降级路径 |
+
+## 7. ADR 建议清单
+
+- ADR-P3-PM-001：日采集控制面只允许 SPS 新链单真源。
+- ADR-P3-PM-002：`BuildPostMarketRecapJob` 必须拥有 D1 构建职责。
+- ADR-P3-PM-003：盘后快照必须声明质量状态，核心 section 空产出不可 silent success。
+
+## 8. 冲突裁决记录
+
+| 冲突 | 裁决 | 理由 |
+|---|---|---|
+| 文档定义 `BuildPostMarketRecapJob` 驱动 D1，但代码只读 D1 | 以第三阶段设计文档为准，恢复 job 所有权 | 页面不能依赖隐式前置调用 |
+| BFF 旧脚本 collection 与 SPS 新链 collection 是否共存 | 不共存，前端只允许命中 SPS | 两套生产控制面会破坏可追溯性 |
+| 快照空候选是否算成功 | 不允许无状态成功 | 用户看到的是核心复盘空白，必须显式暴露质量退化 |
+
+## 9. 非目标范围（Non-Goals）
+
+- 不恢复前端直读过程表或候选池。
+- 不用旧脚本作为新链的长期 fallback。
+- 不把 2026-05-21 的空候选直接解释为策略上“当天没有机会”，在 D1 build ownership 与质量门禁恢复前只能判定为链路质量问题。
+
+## 10. 复核修正：复盘与 D1 的职责裁决（2026-05-21）
+
+用户复核后明确业务边界：
+
+1. 每日盘后复盘负责生成复盘与选股所需的日频事实、主线、周期、强势股、资金、异动等数据准备。
+2. D1 候选池应在“弱转强”盘后选股阶段按策略筛选生成，而不是在复盘页面/复盘 report builder 内隐式生成。
+3. 旧链的复盘 section 组装口径应作为对照：复盘 section 不应被 D1 候选池是否为空整体卡死。
+
+基于二次核查，前述第 1、3、5、8 节中“恢复 `BuildPostMarketRecapJob` 对 D1 构建 ownership”不再作为本次最终裁决，改由以下结论覆盖。
+
+### 10.1 设计文档冲突
+
+第三阶段主文档存在冲突表述：
+
+- `13.3.4` 与 `15.3.3` 将 D1 对外落点、`BuildPostMarketRecapJob` 描述为与 `post_market_recap_snapshot` 强绑定。
+- 弱转强两阶段设计与当前 SPS screener API 则把 D1 视为弱转强 Stage1 执行产物：
+  - `api_app._run_w2s_candidate_selection_for_screener()` 显式执行 `build_weak_to_strong_candidate`；
+  - `StockScreener` 弱转强两阶段页面把 Stage1 作为盘后选股过程。
+
+裁决：以本次业务澄清为准，修订第三阶段主文档中“recap job 驱动 D1”的歧义描述。盘后复盘可为 D1 提供输入事实，不拥有 D1 候选池生成职责。D1 Stage1 结果先落盘到 `weak_to_strong_candidate_pool`；是否再回填为复盘快照的附加投影，由装配契约决定，不能把 `post_market_recap_snapshot` 写成 D1 固定归宿。
+
+### 10.2 旧链与新链 section 依赖对照
+
+旧 `RecapService` 的 section 来源不是 D1 候选池：
+
+| section | 旧链主要来源 |
+|---|---|
+| `主线与支线` | 主线状态、周期、题材资金、题材 K 线 |
+| `强势股分层` | `theme_leader_candidate`、LLM 角色裁决、K 线与资金增强 |
+| `次日观察清单` | 龙头候选、主线存活、异动、龙虎榜、量价形态 |
+| `主线股票资金流入前20` | 股票资金流入 top 事实 |
+
+当前新链 `NewChainPostMarketReportBuilder` 把上述四段统一改为基于 `top_candidates or formal_candidates`。这些字段来自 D1 候选投影，D1 为空时四段一起降级为 `暂无...`。
+
+这就是 2026-05-21 的直接根因：
+
+```text
+复盘事实存在
+-> D1 候选为空
+-> 新链 report builder 仍用 D1 候选驱动主线/强势股/观察/资金 section
+-> 四段同时空白
+```
+
+### 10.3 修正后的 P0
+
+| ID | P0 事项 | 正确动作 |
+|---|---|---|
+| P0-A | 日采集双控制面 | 前端/BFF 只代理 SPS collection，删除 BFF 旧脚本生产编排 |
+| P0-B | 复盘 section 错绑 D1 | `NewChainPostMarketReportBuilder` 改回复盘事实驱动：主线/leader/资金/异动/强势股对象，不以 D1 候选为空作为四段空白条件 |
+| P0-C | 文档职责歧义 | 修订第三阶段文档：Recap 数据准备与 W2S Stage1 D1 选股职责分离 |
+| P0-D | 快照质量门禁 | 复盘 section 缺复盘事实时 fail/degraded；D1 为空只能影响弱转强选股 section，不得清空主线与强势股复盘 |
+
+### 10.4 保留的裁决
+
+- 旧链生产入口仍必须剥离。
+- `post_market_recap_snapshot` 仍是 `/recap` 与 Notion 的唯一对外真源。
+- D1 候选池仍不得被 `/recap` 页面直接读取。
+- 弱转强选股可以消费复盘准备好的冻结对象/日频事实，再由 Stage1 显式生成 D1。

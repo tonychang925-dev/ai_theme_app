@@ -1596,251 +1596,165 @@ select {
   cursor: pointer;
 }
 
-.intel-topbar {
+/* ── Intel Toolbar (single row) ── */
+.intel-toolbar {
   display: flex;
-  justify-content: space-between;
-  gap: 24px;
-  align-items: flex-end;
-  margin-bottom: 14px;
-}
-
-.eyebrow {
-  margin: 0 0 8px;
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #9f9f9f;
-}
-
-.intel-topbar h1 {
-  margin: 0;
-  font-size: 52px;
-  line-height: 0.95;
-  letter-spacing: -0.05em;
-  color: #78a9ff;
-}
-
-.subtle {
-  color: #9f9f9f;
-}
-
-.topbar-meta {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  font-size: 13px;
-  color: #9f9f9f;
-}
-
-.intel-filters {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
-  margin-bottom: 14px;
-}
-
-.intel-filters label {
-  display: grid;
-  gap: 4px;
-  padding: 8px 10px;
-  border-radius: 6px;
-  background: #1a1a1a;
-  border: 1px solid #2a2a2a;
-  box-shadow: none;
-  min-width: 0; /* 允许label收缩 */
-}
-
-.intel-filters span {
-  font-size: 12px;
-  color: #9f9f9f;
-}
-
-.intel-filters input,
-.intel-filters select {
-  border: none;
-  background: transparent;
-  color: #f5f5f5;
-  outline: none;
-}
-
-.recap-filter-button {
-  border: 1px solid #444444;
-  background: linear-gradient(135deg, #2a2a2a 0%, #252525 100%);
-  color: #ffea63;
-  border-radius: 8px;
-  padding: 8px 12px;
-  cursor: pointer;
-  text-align: center;
-  white-space: nowrap; /* 防止按钮文字换行 */
-  min-width: 0; /* 允许按钮收缩 */
-  font-weight: 500;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease;
-}
-
-.recap-filter-button:hover {
-  border-color: #78a9ff;
-  background: linear-gradient(135deg, #2f2f2f 0%, #2a2a2a 100%);
-  color: #fff07a;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transform: translateY(-1px);
-}
-
-.recap-filter-button:active {
-  transform: translateY(0);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-/* ── Icon Button ── */
-.icon-button {
-  display: inline-flex;
   align-items: center;
-  gap: 7px;
-  border: 1px solid #444444;
-  background: linear-gradient(135deg, #2a2a2a 0%, #252525 100%);
-  color: #d0d0d0;
+  gap: 12px;
+  padding: 10px 16px;
+  margin-bottom: 10px;
+  background: #212327;
+  border: 1px solid #37393d;
   border-radius: 8px;
-  padding: 8px 12px;
-  cursor: pointer;
-  white-space: nowrap;
-  font-weight: 500;
-  font-size: 13px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
-.icon-button:hover {
-  border-color: #78a9ff;
-  background: linear-gradient(135deg, #2f2f2f 0%, #2a2a2a 100%);
-  color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transform: translateY(-1px);
-}
-.icon-button:active {
-  transform: translateY(0);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-.icon-button-img {
-  width: 18px;
-  height: 18px;
-  object-fit: contain;
+
+.intel-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   flex-shrink: 0;
 }
-
-/* ── Intel Status Row ── */
-.intel-status-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 8px;
-  flex-wrap: wrap;
-}
-.intel-status-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 12px;
-  padding: 3px 10px;
-  border-radius: 12px;
-  font-weight: 600;
-}
-.intel-status-badge.live {
-  background: rgba(74, 222, 128, 0.15);
-  color: #4ade80;
-}
-.intel-status-badge.connecting {
-  background: rgba(250, 204, 21, 0.15);
-  color: #facc15;
-}
-.intel-status-badge.fallback {
-  background: rgba(248, 113, 113, 0.15);
-  color: #f87171;
-}
-.intel-status-icon {
-  width: 14px;
-  height: 14px;
+.intel-logo {
+  width: 112px;
+  height: 112px;
   object-fit: contain;
 }
-.intel-live-count {
-  display: inline-flex;
-  align-items: center;
-  padding: 2px 8px;
-  border-radius: 12px;
-  font-size: 11px;
+.intel-title {
+  margin: 0;
+  font-size: 72px;
   font-weight: 700;
-  background: #78a9ff;
-  color: #0d0d0d;
-  animation: pulse-badge 1.5s ease-in-out infinite;
-}
-@keyframes pulse-badge {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
+  color: #78a9ff;
+  white-space: nowrap;
 }
 
-/* ── Auth Icons ── */
-.auth-icon {
-  width: 16px;
-  height: 16px;
-  object-fit: contain;
-  vertical-align: middle;
-  margin-right: 2px;
-}
-
-/* ── Intel Quick Actions ── */
+/* Quick actions in toolbar */
 .intel-quick-actions {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 12px;
-  margin-bottom: 14px;
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+  margin-left: auto;
 }
 .quick-action-card {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  padding: 18px 12px 14px;
-  border: 1px solid #383838;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #1e1e1e 0%, #1a1a1a 100%);
+  justify-content: center;
+  padding: 6px 10px;
+  border: none;
+  background: none;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-}
-.quick-action-card:hover {
-  border-color: #78a9ff;
-  background: linear-gradient(135deg, #242424 0%, #1e1e1e 100%);
-  box-shadow: 0 4px 14px rgba(120, 169, 255, 0.15);
-  transform: translateY(-2px);
-}
-.quick-action-card:active {
-  transform: translateY(0);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  position: relative;
 }
 .quick-action-icon {
-  width: 56px;
-  height: 56px;
+  width: 128px;
+  height: 64px;
   object-fit: contain;
-  border-radius: 10px;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
 }
-.quick-action-label {
-  font-size: 13px;
-  font-weight: 500;
-  color: #b0b0b0;
+.quick-action-card:hover .quick-action-icon {
+  transform: scale(2);
 }
-.quick-action-card:hover .quick-action-label {
-  color: #ffffff;
+.quick-action-tooltip {
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: 600;
+  color: #78a9ff;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+.quick-action-card:hover .quick-action-tooltip {
+  opacity: 1;
 }
 
-/* 响应式：窄屏自动换行 */
-@media (max-width: 900px) {
-  .intel-quick-actions {
-    grid-template-columns: repeat(3, 1fr);
-  }
+/* Filters in toolbar */
+.intel-filters {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+  align-items: center;
 }
-@media (max-width: 480px) {
-  .intel-quick-actions {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.intel-filter-select {
+  border: 1px solid #383838;
+  background: #1e1e1e;
+  color: #c8c8c8;
+  border-radius: 5px;
+  padding: 8px 10px;
+  font-size: 14px;
+  outline: none;
+  height: 42px;
+  box-sizing: border-box;
 }
+
+/* Status dot */
+.intel-status-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+}
+.intel-status-dot.live { background: #4ade80; }
+.intel-status-dot.connecting { background: #facc15; animation: pulse-dot 1s infinite; }
+.intel-status-dot.fallback { background: #f87171; }
+.intel-live-badge {
+  position: absolute;
+  top: -8px;
+  right: -18px;
+  font-size: 10px;
+  font-weight: 700;
+  background: #78a9ff;
+  color: #0d0d0d;
+  border-radius: 6px;
+  padding: 0 4px;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* User bar */
+.intel-user-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+.intel-admin-link {
+  color: #ffd700;
+  font-size: 44px;
+  text-decoration: none;
+}
+.intel-user-btn {
+  background: none;
+  border: none;
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  padding: 0;
+}
+.intel-user-btn:hover {
+  background: #252525;
+  transform: scale(1.1);
+}
+.intel-user-avatar {
+  font-size: 32px;
+  font-weight: 700;
+  color: #c8c8c8;
+}
+
 
 .strong-watch-page {
   display: grid;
@@ -2995,17 +2909,8 @@ select {
     padding: 12px;
   }
 
-  .intel-topbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .intel-topbar h1 {
-    font-size: 40px;
-  }
-
-  .intel-filters {
-    grid-template-columns: 1fr;
+  .intel-toolbar {
+    flex-wrap: wrap;
   }
 
   .strong-watch-summary {

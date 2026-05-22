@@ -250,12 +250,18 @@ class ReliableDeepSeekParser(DeepSeekParser):
         logger.debug(f"发送请求到DeepSeek API，模型: {self.model_name}, 内容长度: {len(content)}")
         
         try:
-            timeout_value = self.config.get('timeout', 45)
+            timeout_value = self.config.get('timeout', 90)
+            connect_timeout = self.config.get('connect_timeout', 10)
+            read_timeout = self.config.get('read_timeout', 60)
             async with self._session.post(
                 self.api_url,
                 headers=headers,
                 json=payload,
-                timeout=aiohttp.ClientTimeout(total=timeout_value)
+                timeout=aiohttp.ClientTimeout(
+                    total=timeout_value,
+                    connect=connect_timeout,
+                    sock_read=read_timeout,
+                )
             ) as response:
                 
                 # 检查HTTP状态

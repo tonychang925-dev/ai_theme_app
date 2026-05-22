@@ -395,6 +395,26 @@ def test_new_chain_report_builder_groups_dragon_tiger_by_hot_money_seat() -> Non
     ]
 
 
+def test_new_chain_report_builder_dragon_tiger_does_not_fallback_to_watch_rows() -> None:
+    report = NewChainPostMarketReportBuilder().build(
+        {
+            "trade_date": "2026-05-21",
+            "strong_watch_history": [
+                {
+                    "stock_id": "002000.SZ",
+                    "stock_name": "SampleA",
+                    "subject_key": "ai_chip",
+                    "subject_name": "AI Chip",
+                }
+            ],
+            "report_context": {"dragon_tiger": []},
+        }
+    )
+
+    dragon_section = next(section for section in report["sections"] if section["heading"] == "龙虎榜")
+    assert dragon_section["items"] == ["暂无龙虎榜新链数据"]
+
+
 def test_new_chain_report_builder_uses_theme_capital_in_mainline_section() -> None:
     report = NewChainPostMarketReportBuilder().build(
         {
@@ -427,6 +447,10 @@ def test_new_chain_report_builder_uses_theme_capital_in_mainline_section() -> No
                         "stock_name": "SampleA",
                         "subject_key": "ai_chip",
                         "main_net_inflow": 88000000,
+                        "money_flow_score": 99,
+                        "leader_composite_score": 88,
+                        "leader_capital_score": 77,
+                        "leader_candidate_rank": 1,
                         "rank_order": 1,
                     }
                 ],
@@ -439,9 +463,76 @@ def test_new_chain_report_builder_uses_theme_capital_in_mainline_section() -> No
     assert "龙头净流入 1.20亿" in mainline_section["items"][0]
 
     strong_section = next(section for section in report["sections"] if section["heading"] == "强势股分层")
-    assert "资金量能 99.00" in strong_section["items"][0]
+    assert "综合分 88" in strong_section["items"][0]
+    assert "资金量能 77.00" in strong_section["items"][0]
 
     stock_capital_section = next(section for section in report["sections"] if section["heading"] == "主线股票资金流入前20")
+    assert "主力净流入 0.88亿" in stock_capital_section["items"][0]
+
+
+def test_new_chain_report_builder_recap_sections_use_facts_without_d1_candidates() -> None:
+    report = NewChainPostMarketReportBuilder().build(
+        {
+            "trade_date": "2026-05-21",
+            "candidate_count": 0,
+            "candidate_count_formal": 0,
+            "candidate_count_observe": 0,
+            "top_candidates": [],
+            "formal_top_candidates": [],
+            "observe_candidates": [],
+            "report_context": {
+                "theme_name_map": {"ai_chip": "AI Chip"},
+                "cycles": [
+                    {
+                        "subject_key": "ai_chip",
+                        "theme_name": "AI Chip",
+                        "final_cycle_state": "repair",
+                        "final_mainline_alive": True,
+                        "mainline_strength_score": 82,
+                        "fade_risk_score": 18,
+                    }
+                ],
+                "theme_capital_flow": [
+                    {
+                        "subject_key": "ai_chip",
+                        "resolved_theme_name": "AI Chip",
+                        "final_cycle_state": "repair",
+                        "main_net_inflow_sum": 320000000,
+                        "leader_main_net_inflow": 120000000,
+                        "top3_main_net_inflow_sum": 260000000,
+                    }
+                ],
+                "stock_facts": [
+                    {
+                        "stock_id": "002000.SZ",
+                        "stock_name": "SampleA",
+                        "subject_key": "ai_chip",
+                        "theme_name": "AI Chip",
+                        "rank_order": 1,
+                        "pct_chg": 7.5,
+                        "is_leader": True,
+                        "main_net_inflow": 88000000,
+                        "money_flow_score": 96,
+                        "trend_strength_score": 75,
+                        "position_label": "突破前高",
+                        "pattern_labels": ["高量不破"],
+                        "volume_ratio": 2.1,
+                        "turnover_rate": 11.2,
+                        "current_flag": 2,
+                    }
+                ],
+            },
+        }
+    )
+
+    mainline_section = next(section for section in report["sections"] if section["heading"] == "主线与支线")
+    strong_section = next(section for section in report["sections"] if section["heading"] == "强势股分层")
+    watch_section = next(section for section in report["sections"] if section["heading"] == "次日观察清单")
+    stock_capital_section = next(section for section in report["sections"] if section["heading"] == "主线股票资金流入前20")
+
+    assert "AI Chip" in mainline_section["items"][0]
+    assert "SampleA" in strong_section["items"][0]
+    assert "SampleA" in watch_section["items"][0]
     assert "主力净流入 0.88亿" in stock_capital_section["items"][0]
 
 

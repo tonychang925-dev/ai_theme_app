@@ -105,9 +105,9 @@ class DeepSeekParser(BaseLLMParser):
     def _create_timeout(self) -> aiohttp.ClientTimeout:
         """创建超时配置"""
         return aiohttp.ClientTimeout(
-            total=180,
-            connect=45,
-            sock_read=90
+            total=float(os.getenv("STRUCTURING_TOTAL_TIMEOUT_S", "90")),
+            connect=float(os.getenv("STRUCTURING_CONNECT_TIMEOUT_S", "10")),
+            sock_read=float(os.getenv("STRUCTURING_READ_TIMEOUT_S", "60")),
         )
     
     async def _ensure_session(self):

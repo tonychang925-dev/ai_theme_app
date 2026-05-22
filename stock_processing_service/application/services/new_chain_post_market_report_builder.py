@@ -27,6 +27,9 @@ class NewChainPostMarketReportBuilder:
         theme_name_map = dict(context.get("theme_name_map") or {})
         stock_fact_map = self._stock_fact_map(context.get("stock_facts") or [])
         cycles_by_theme = self._cycle_map(context.get("cycles") or [], theme_name_map)
+        recap_stock_rows = self._recap_stock_rows(context)
+        recap_strong_rows = self._recap_strong_rows(recap_stock_rows)
+        recap_theme_rows = self._recap_theme_rows(context, recap_stock_rows)
 
         dependency_status = self._dependency_status(recap_doc)
         missing_dependencies = [name for name, ok in dependency_status.items() if not ok]
@@ -70,7 +73,7 @@ class NewChainPostMarketReportBuilder:
             {
                 "heading": "主线与支线",
                 "items": self._theme_lines(
-                    top_candidates or formal_candidates,
+                    recap_theme_rows,
                     theme_name_map,
                     cycles_by_theme,
                     stock_fact_map,
@@ -92,15 +95,15 @@ class NewChainPostMarketReportBuilder:
             },
             {
                 "heading": "强势股分层",
-                "items": self._strong_stock_lines(top_candidates or formal_candidates, theme_name_map, stock_fact_map, limit=20),
+                "items": self._strong_stock_lines(recap_strong_rows, theme_name_map, stock_fact_map, limit=20),
             },
             {
                 "heading": "次日观察清单",
-                "items": self._watchlist_lines(top_candidates or formal_candidates, theme_name_map, stock_fact_map, cycles_by_theme, limit=20),
+                "items": self._watchlist_lines(recap_stock_rows, theme_name_map, stock_fact_map, cycles_by_theme, limit=20),
             },
             {
                 "heading": "主线股票资金流入前20",
-                "items": self._stock_capital_lines(top_candidates or formal_candidates, theme_name_map, stock_fact_map, limit=20),
+                "items": self._stock_capital_lines(recap_stock_rows, theme_name_map, stock_fact_map, limit=20),
             },
             {
                 "heading": "当日异动股与资金行为",
@@ -112,7 +115,7 @@ class NewChainPostMarketReportBuilder:
             },
             {
                 "heading": "龙虎榜",
-                "items": self._dragon_tiger_lines(context.get("dragon_tiger") or strong_watch_history or promoted_pool, theme_name_map, limit=20),
+                "items": self._dragon_tiger_lines(context.get("dragon_tiger") or [], theme_name_map, limit=20),
             },
         ]
 
@@ -157,6 +160,45 @@ class NewChainPostMarketReportBuilder:
                 or self._int(recap_doc.get("strong_watch_promoted_count")) > 0
             ),
         }
+
+    @staticmethod
+    def _recap_stock_rows(context: dict[str, Any]) -> list[dict[str, Any]]:
+        rows = [dict(row or {}) for row in context.get("stock_facts") or []]
+        return sorted(
+            rows,
+            key=lambda item: (
+                0 if item.get("is_leader") else 1,
+                NewChainPostMarketReportBuilder._rank(item),
+                -NewChainPostMarketReportBuilder._float(NewChainPostMarketReportBuilder._inflow(item)),
+                -NewChainPostMarketReportBuilder._float(item.get("pct_chg")),
+            ),
+        )
+
+    @staticmethod
+    def _recap_theme_rows(context: dict[str, Any], stock_rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        if stock_rows:
+            return stock_rows
+        capital_rows = [dict(row or {}) for row in context.get("theme_capital_flow") or []]
+        if capital_rows:
+            return capital_rows
+        return [dict(row or {}) for row in context.get("cycles") or []]
+
+    @staticmethod
+    def _recap_strong_rows(stock_rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        leader_rows = [
+            row
+            for row in stock_rows
+            if row.get("leader_composite_score") not in (None, "")
+        ]
+        return sorted(
+            leader_rows,
+            key=lambda item: (
+                NewChainPostMarketReportBuilder._rank(
+                    {"rank_order": item.get("leader_candidate_rank")}
+                ),
+                -NewChainPostMarketReportBuilder._float(item.get("leader_composite_score")),
+            ),
+        ) or stock_rows
 
     @staticmethod
     def _market_lines(
@@ -373,11 +415,27 @@ class NewChainPostMarketReportBuilder:
             theme = NewChainPostMarketReportBuilder._theme_name(item, theme_name_map)
             fact = NewChainPostMarketReportBuilder._fact_for(item, stock_fact_map)
             stock_name = str(item.get("stock_name") or item.get("stock_id") or "").strip()
-            score = str(item.get("candidate_score") or item.get("watch_score") or "--").strip()
+            score = str(
+                NewChainPostMarketReportBuilder._first_present(
+                    fact.get("leader_composite_score"),
+                    item.get("leader_composite_score"),
+                    item.get("candidate_score"),
+                    item.get("watch_score"),
+                    "--",
+                )
+            ).strip()
             support_type = str(item.get("support_type") or fact.get("position_label") or "").strip()
             score_value = NewChainPostMarketReportBuilder._score(item)
-            role = "龙头" if score_value >= 98 else "龙二" if score_value >= 90 else "补涨"
+            role = (
+                "龙头"
+                if fact.get("is_leader") or item.get("is_leader") or score_value >= 98
+                else "龙二"
+                if fact.get("rank_order") == 2 or item.get("rank_order") == 2 or score_value >= 90
+                else "补涨"
+            )
             money_score = NewChainPostMarketReportBuilder._first_present(
+                fact.get("leader_capital_score"),
+                item.get("leader_capital_score"),
                 fact.get("money_flow_score"),
                 fact.get("money_composite_score"),
                 fact.get("abnormal_composite_score"),
@@ -418,8 +476,9 @@ class NewChainPostMarketReportBuilder:
             subject_key = str(item.get("subject_key") or "--")
             stock_name = str(item.get("stock_name") or item.get("stock_id") or "--")
             support_type = str(item.get("support_type") or fact.get("position_label") or "--")
+            role = "龙头" if fact.get("is_leader") or item.get("is_leader") else "观察"
             lines.append(
-                f"弱转强：{theme}｜subject_key {subject_key}｜{stock_name}｜角色 候选｜"
+                f"次日观察：{theme}｜subject_key {subject_key}｜{stock_name}｜角色 {role}｜"
                 f"阶段 {cycle.get('final_cycle_state') or 'rebound'}｜动作 观察竞价承接｜"
                 f"量比 {NewChainPostMarketReportBuilder._fmt(fact.get('volume_ratio'))}｜"
                 f"形态 {NewChainPostMarketReportBuilder._pattern_text(fact) or support_type}｜flag {fact.get('current_flag') or '--'}"
@@ -539,6 +598,20 @@ class NewChainPostMarketReportBuilder:
             return int(value or 0)
         except Exception:
             return 0
+
+    @staticmethod
+    def _float(value: Any) -> float:
+        try:
+            return float(value or 0)
+        except Exception:
+            return 0.0
+
+    @staticmethod
+    def _rank(item: dict[str, Any]) -> int:
+        try:
+            return int(item.get("rank_order") or 9999)
+        except Exception:
+            return 9999
 
     @staticmethod
     def _score(item: dict[str, Any]) -> float:
