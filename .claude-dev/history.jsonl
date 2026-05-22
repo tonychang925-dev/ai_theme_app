@@ -1861,3 +1861,4 @@
 {"display":"去重是如何处理的？","pastedContents":{},"timestamp":1779416344289,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
 {"display":"如和保证去重不会误杀重要新闻？","pastedContents":{},"timestamp":1779416448630,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
 {"display":"能否让qwen 1.5b来参与去重处理？","pastedContents":{},"timestamp":1779416564832,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}
+{"display":"下面要一组强化测试，统计一下：1、5个源的可用性；2、去重率统计；3、去重质量评估；4、误杀率如何？每个源至少强化采集100条新闻事件测试","pastedContents":{},"timestamp":1779417237789,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"f549138c-bd64-41d7-b077-d8343f21d95f"}

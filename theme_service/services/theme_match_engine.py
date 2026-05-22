@@ -138,6 +138,37 @@ SHORT_GENERIC_THEME_TERMS = {
 
 ROLE_BLOCKING_HIT_ROLES = {"source_org", "location", "generic_short_term", "support"}
 STRONG_SHORT_THEME_EXCEPTIONS = {"星链", "朱雀", "火箭"}
+LOW_VALUE_EVENT_TERMS = {
+    "减持",
+    "回购",
+    "澄清",
+    "澄清公告",
+    "交易监管",
+    "异常波动",
+    "问询函",
+    "关注函",
+    "天气预警",
+    "山洪",
+    "暴雨",
+    "地震",
+    "地震灾害",
+    "列车停运",
+    "旅客列车停",
+    "人事任命",
+    "普通人事任命",
+    "季度财报",
+    "普通季度财报",
+    "发布财报",
+    "业绩说明会",
+    "普通业绩说明会",
+}
+LLM_ACCEPT_SAFETY_REVIEW_CODES = {
+    "weak_v1_llm_accept_review",
+    "llm_accept_without_hard_evidence",
+    "llm_accept_generic_only_review",
+    "low_conf_llm_accept_review",
+    "low_value_event_match_blocked",
+}
 
 # ── Product anchor protection ──────────────────────────────────────
 # When these terms appear in event text, they serve as product_anchor
@@ -1225,6 +1256,98 @@ def _has_primary_anchor_evidence(evidence: Dict[str, Any]) -> bool:
     return bool((evidence.get("theme_name_direct_hit") and _valid_anchor_terms(evidence)) or _anchor_terms(evidence))
 
 
+def _is_low_value_event_text(event_text: str) -> bool:
+    return any(term and term in event_text for term in LOW_VALUE_EVENT_TERMS)
+
+
+def _is_v2_profile(profile: ThemeProfile | None) -> bool:
+    gate = profile.gate_json if profile and isinstance(profile.gate_json, dict) else {}
+    return gate.get("profile_version") == "v2"
+
+
+def _has_full_non_generic_subject_hit(evidence: Dict[str, Any], profile: ThemeProfile | None) -> bool:
+    if not profile:
+        return False
+    subject_name = _safe_str(profile.subject_name)
+    if not subject_name:
+        return False
+    if subject_name in GENERIC_MATCH_STOPWORDS or subject_name.upper() in GENERIC_MATCH_STOPWORDS:
+        return False
+    if _is_location_term(subject_name, "") or _is_short_generic_theme_term(subject_name):
+        return False
+    subject_hits = {_safe_str(term) for term in _normalize_list(evidence.get("subject_name_hit_terms"))}
+    theme_hits = {_safe_str(term) for term in _normalize_list(evidence.get("theme_name_hit_terms"))}
+    return subject_name in subject_hits or subject_name in theme_hits
+
+
+def _has_accepted_anchor_evidence(evidence: Dict[str, Any]) -> bool:
+    return bool(_normalize_list(evidence.get("accepted_anchor_hits")))
+
+
+def _non_blocking_text_anchor_terms(evidence: Dict[str, Any]) -> List[str]:
+    roles = evidence.get("hit_term_roles") if isinstance(evidence.get("hit_term_roles"), dict) else {}
+    terms = _unique(
+        _normalize_list(evidence.get("must_hits_text"))
+        + _normalize_list(evidence.get("strong_hits_text"))
+        + _normalize_list(evidence.get("object_hits_text"))
+        + _normalize_list(evidence.get("profile_anchor_hits"))
+    )
+    out: List[str] = []
+    for term in terms:
+        value = _safe_str(term)
+        if not value:
+            continue
+        if value in GENERIC_MATCH_STOPWORDS or value.upper() in GENERIC_MATCH_STOPWORDS:
+            continue
+        if roles.get(value) in ROLE_BLOCKING_HIT_ROLES:
+            continue
+        out.append(value)
+    return _unique(out)
+
+
+def _has_hard_evidence(evidence: Dict[str, Any], profile: ThemeProfile | None) -> bool:
+    if not evidence:
+        return False
+    if evidence.get("role_guard_blocked") or _has_blocking_conflict_evidence(evidence):
+        return False
+    if _has_accepted_anchor_evidence(evidence):
+        return True
+    if _has_full_non_generic_subject_hit(evidence, profile):
+        return True
+    return bool(_non_blocking_text_anchor_terms(evidence))
+
+
+def _is_generic_only_llm_evidence(evidence: Dict[str, Any], profile: ThemeProfile | None) -> bool:
+    if not evidence:
+        return True
+    if _has_accepted_anchor_evidence(evidence) or _has_full_non_generic_subject_hit(evidence, profile):
+        return False
+    if evidence.get("role_guard_blocked") or _has_blocking_conflict_evidence(evidence):
+        return True
+    if _non_blocking_text_anchor_terms(evidence):
+        return False
+    return True
+
+
+def _is_broad_v2_profile_without_accepted_anchor(evidence: Dict[str, Any], profile: ThemeProfile | None) -> bool:
+    if not _is_v2_profile(profile) or _has_accepted_anchor_evidence(evidence):
+        return False
+    gate = profile.gate_json if profile and isinstance(profile.gate_json, dict) else {}
+    boundary_rules = gate.get("boundary_rules") if isinstance(gate.get("boundary_rules"), dict) else {}
+    eval_metrics = gate.get("eval_metrics") if isinstance(gate.get("eval_metrics"), dict) else {}
+    subject_name = _safe_str(profile.subject_name if profile else "")
+    if boundary_rules.get("requires_subject_or_entity_anchor"):
+        return True
+    if "大全" in subject_name:
+        return True
+    try:
+        if float(eval_metrics.get("generic_anchor_ratio") or 0.0) >= 0.25:
+            return True
+    except Exception:
+        return False
+    return False
+
+
 def _has_only_generic_evidence(evidence: Dict[str, Any]) -> bool:
     if not evidence:
         return True
@@ -1870,6 +1993,62 @@ class ThemeMatchEngine:
         env.audit = audit
         return env
 
+    def _post_llm_accept_safety_gate(
+        self,
+        env: ThemeDecisionEnvelope,
+        *,
+        request: ThemeMatchRequest,
+        profile: ThemeProfile | None,
+        evidence: Dict[str, Any],
+    ) -> ThemeDecisionEnvelope:
+        if env.decision != "MATCH" or env.reason_code != "llm_accept_match":
+            return env
+
+        is_v2 = _is_v2_profile(profile)
+        is_low_value = _is_low_value_event_text(request.event_text())
+        has_hard_evidence = _has_hard_evidence(evidence, profile)
+        has_accepted_anchor = _has_accepted_anchor_evidence(evidence)
+        has_full_subject_hit = _has_full_non_generic_subject_hit(evidence, profile)
+        generic_only = _is_generic_only_llm_evidence(evidence, profile)
+        reason_code = ""
+
+        if is_low_value and not is_v2:
+            reason_code = "low_value_event_match_blocked"
+        elif not is_v2 and not (has_accepted_anchor or has_full_subject_hit):
+            reason_code = "weak_v1_llm_accept_review"
+        elif generic_only:
+            reason_code = "llm_accept_generic_only_review"
+        elif float(env.confidence or 0.0) < 0.90 and not has_hard_evidence:
+            reason_code = "low_conf_llm_accept_review"
+        elif not has_hard_evidence or _is_broad_v2_profile_without_accepted_anchor(evidence, profile):
+            reason_code = "llm_accept_without_hard_evidence"
+
+        if not reason_code:
+            return env
+
+        audit = env.audit if isinstance(env.audit, dict) else {}
+        audit["llm_accept_safety_gate"] = {
+            "blocked": True,
+            "reason_code": reason_code,
+            "runtime_profile_source": "v2_accepted" if is_v2 else "v1_fallback",
+            "subject_key": env.matched_subject_key,
+            "subject_name": env.matched_theme_name,
+            "is_low_value_event": is_low_value,
+            "has_hard_evidence": has_hard_evidence,
+            "has_accepted_anchor": has_accepted_anchor,
+            "has_full_subject_hit": has_full_subject_hit,
+            "generic_only_evidence": generic_only,
+            "accepted_anchor_hits": _normalize_list(evidence.get("accepted_anchor_hits")),
+            "valid_anchor_terms": _valid_anchor_terms(evidence),
+        }
+        env.decision = "HUMAN_REVIEW"
+        env.confidence = min(float(env.confidence or 0.0), _squash01(0.5))
+        env.reason_code = reason_code
+        env.related_matches = []
+        env.review_required = True
+        env.audit = audit
+        return env
+
     def _get_sentence_model(self):
         if self._sentence_model is not None:
             return self._sentence_model
@@ -2454,7 +2633,7 @@ class ThemeMatchEngine:
                     review_required=True,
                     audit={**audit, "best_evidence": matched_evidence},
                 )
-            return ThemeDecisionEnvelope(
+            env = ThemeDecisionEnvelope(
                 decision="MATCH",
                 event_id=request.event_id,
                 news_id=request.news_id,
@@ -2465,7 +2644,13 @@ class ThemeMatchEngine:
                 matched_theme_id=matched_theme.theme_master_id,
                 related_matches=related_matches,
                 review_required=False,
-                audit=audit,
+                audit={**audit, "best_evidence": matched_evidence},
+            )
+            return self._post_llm_accept_safety_gate(
+                env,
+                request=request,
+                profile=matched_theme,
+                evidence=matched_evidence,
             )
 
         if verdict in ("need_new_theme", "no_match"):

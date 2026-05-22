@@ -12,7 +12,7 @@ from theme_service.services.theme_match_engine import (
     _collect_direct_hit_subject_keys,
     _build_feature_recall_rows,
 )
-from theme_service.services.theme_match_types import ThemeMatchRequest, ThemeProfile
+from theme_service.services.theme_match_types import ThemeDecisionEnvelope, ThemeMatchRequest, ThemeProfile
 from theme_service.tools.profile_eval_common import hard_negative_wrong_hits
 
 
@@ -751,6 +751,173 @@ def test_broad_primary_direct_hit_yields_review_when_specific_candidate_has_nest
     assert result.decision == "HUMAN_REVIEW"
     assert result.reason_code == "broad_primary_specific_candidate_review"
     assert result.matched_subject_key == "9013944"
+
+
+def test_llm_accept_safety_gate_blocks_weak_v1_accept_without_full_subject_hit():
+    request = ThemeMatchRequest(
+        event_id=10,
+        news_id=10,
+        title="摄影课堂介绍夜景曝光技巧和暗房显影方法",
+        content="该新闻属于摄影教学和兴趣培训。",
+        summary="摄影爱好者学习曝光、显影等基础术语。",
+        event_type="普通新闻",
+    )
+    profile = _profile("9018472", "光刻机", must_terms=["光刻机", "曝光", "显影"])
+    engine = ThemeMatchEngine(_Repo([profile]))
+    env = ThemeDecisionEnvelope(
+        decision="MATCH",
+        event_id=10,
+        news_id=10,
+        confidence=0.95,
+        reason_code="llm_accept_match",
+        matched_subject_key="9018472",
+        matched_theme_name="光刻机",
+        audit={},
+    )
+    evidence = {
+        "must_hits_text": ["曝光", "显影"],
+        "strong_hits_text": ["曝光", "显影"],
+        "object_hits_text": ["曝光", "显影"],
+        "accepted_anchor_hits": [],
+        "subject_name_hit_terms": [],
+        "theme_name_hit_terms": ["曝光", "显影"],
+        "hit_term_roles": {"曝光": "main_anchor", "显影": "main_anchor"},
+        "valid_anchor_terms": ["曝光", "显影"],
+        "conflict_score": 0,
+    }
+
+    result = engine._post_llm_accept_safety_gate(env, request=request, profile=profile, evidence=evidence)
+
+    assert result.decision == "HUMAN_REVIEW"
+    assert result.reason_code == "weak_v1_llm_accept_review"
+    assert result.audit["llm_accept_safety_gate"]["runtime_profile_source"] == "v1_fallback"
+
+
+def test_llm_accept_safety_gate_allows_v2_accepted_anchor_match():
+    request = ThemeMatchRequest(
+        event_id=11,
+        news_id=11,
+        title="华为芯片链关注昇腾和海思供应链协同",
+        content="昇腾、鲲鹏和海思芯片带动华为半导体供应链关注度提升。",
+        summary="华为算力芯片与先进封装链路活跃。",
+        event_type="产业新闻",
+    )
+    profile = _profile(
+        "9028660",
+        "华为芯片链",
+        must_terms=["华为芯片链", "华为芯片", "海思", "昇腾"],
+        gate_json={"profile_version": "v2", "boundary_rules": {"accept_requires_any": ["华为芯片链", "昇腾"]}},
+    )
+    engine = ThemeMatchEngine(_Repo([profile]))
+    env = ThemeDecisionEnvelope(
+        decision="MATCH",
+        event_id=11,
+        news_id=11,
+        confidence=0.95,
+        reason_code="llm_accept_match",
+        matched_subject_key="9028660",
+        matched_theme_name="华为芯片链",
+        audit={},
+    )
+    evidence = {
+        "must_hits_text": ["华为芯片链", "海思", "昇腾"],
+        "accepted_anchor_hits": ["华为芯片链", "昇腾"],
+        "subject_name_hit_terms": [],
+        "theme_name_hit_terms": [],
+        "hit_term_roles": {"华为芯片链": "main_anchor", "海思": "main_anchor", "昇腾": "main_anchor"},
+        "valid_anchor_terms": ["华为芯片链", "海思", "昇腾"],
+        "conflict_score": 0,
+    }
+
+    result = engine._post_llm_accept_safety_gate(env, request=request, profile=profile, evidence=evidence)
+
+    assert result.decision == "MATCH"
+    assert result.reason_code == "llm_accept_match"
+
+
+def test_llm_accept_safety_gate_blocks_broad_v2_without_accepted_anchor():
+    request = ThemeMatchRequest(
+        event_id=12,
+        news_id=12,
+        title="晶圆代工厂提升先进封装产能",
+        content="该事件属于泛半导体制造新闻。",
+        summary="半导体制造和封装测试环节景气改善。",
+        event_type="普通新闻",
+    )
+    profile = _profile(
+        "9011277",
+        "芯片大全",
+        must_terms=["芯片大全", "先进封装"],
+        gate_json={
+            "profile_version": "v2",
+            "boundary_rules": {"requires_subject_or_entity_anchor": True},
+            "eval_metrics": {"generic_anchor_ratio": 0.2857},
+        },
+    )
+    engine = ThemeMatchEngine(_Repo([profile]))
+    env = ThemeDecisionEnvelope(
+        decision="MATCH",
+        event_id=12,
+        news_id=12,
+        confidence=0.92,
+        reason_code="llm_accept_match",
+        matched_subject_key="9011277",
+        matched_theme_name="芯片大全",
+        audit={},
+    )
+    evidence = {
+        "must_hits_text": ["先进封装"],
+        "strong_hits_text": ["先进封装"],
+        "object_hits_text": ["先进封装"],
+        "accepted_anchor_hits": [],
+        "subject_name_hit_terms": [],
+        "theme_name_hit_terms": ["先进封装"],
+        "hit_term_roles": {"先进封装": "main_anchor"},
+        "valid_anchor_terms": ["先进封装"],
+        "conflict_score": 0,
+    }
+
+    result = engine._post_llm_accept_safety_gate(env, request=request, profile=profile, evidence=evidence)
+
+    assert result.decision == "HUMAN_REVIEW"
+    assert result.reason_code == "llm_accept_without_hard_evidence"
+
+
+def test_llm_accept_safety_gate_blocks_low_value_v1_accept():
+    request = ThemeMatchRequest(
+        event_id=13,
+        news_id=13,
+        title="公司公告股东拟减持股份",
+        content="股东计划通过集中竞价方式减持部分股份。",
+        summary="普通减持公告。",
+        event_type="公告",
+    )
+    profile = _profile("9000001", "普通题材", must_terms=["公司公告"])
+    engine = ThemeMatchEngine(_Repo([profile]))
+    env = ThemeDecisionEnvelope(
+        decision="MATCH",
+        event_id=13,
+        news_id=13,
+        confidence=0.92,
+        reason_code="llm_accept_match",
+        matched_subject_key="9000001",
+        matched_theme_name="普通题材",
+        audit={},
+    )
+    evidence = {
+        "must_hits_text": ["公司公告"],
+        "accepted_anchor_hits": [],
+        "subject_name_hit_terms": [],
+        "theme_name_hit_terms": [],
+        "hit_term_roles": {"公司公告": "main_anchor"},
+        "valid_anchor_terms": ["公司公告"],
+        "conflict_score": 0,
+    }
+
+    result = engine._post_llm_accept_safety_gate(env, request=request, profile=profile, evidence=evidence)
+
+    assert result.decision == "HUMAN_REVIEW"
+    assert result.reason_code == "low_value_event_match_blocked"
 
 
 def test_no_anchor_term_blocks_bare_word_without_suppressing_configured_compound_anchor():
