@@ -208,16 +208,17 @@ class StreamServicesManager:
                     "class": ThemeProcessor,
                     "config": {
                         "consumer_group": "theme_processor_realtime",
-                        "input_stream": "stream:events:structured",
-                        "output_stream": "stream:events:decision",
-                        "batch_size": 10,
-                        "block_ms": 5000,
+                        "stream_structured": "stream:events:structured",
+                        "stream_decision": "stream:events:decision",
+                        "structured_batch_size": 10,
+                        "structured_block_time": 5000,
                     },
-                    "dependencies": ["stream_manager"]
+                    "dependencies": []
                 },
                 "decision_executor": {
                     "class": DecisionExecutor,
                     "config": {},
+                    "pass_config": False,
                     "param_map": {
                         "redis_client": "stream_manager._client",
                         "db_gateway": "database_gateway",
@@ -292,8 +293,9 @@ class StreamServicesManager:
                     service_class = service_config["class"]
                     config = service_config["config"]
 
-                    # 构建依赖参数
-                    kwargs = {"config": config}
+                    # 构建依赖参数（支持 pass_config=False 跳过 config 注入）
+                    pass_config = service_config.get("pass_config", True)
+                    kwargs = {"config": config} if pass_config else {}
                     for dep in service_config.get("dependencies", []):
                         if dep in dependencies:
                             kwargs[dep] = dependencies[dep]
