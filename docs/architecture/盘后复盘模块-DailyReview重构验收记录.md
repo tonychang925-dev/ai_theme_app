@@ -1,7 +1,9 @@
 # 盘后复盘模块 DailyReview 重构验收记录
 
-> 第一阶段完成日期：2026-05-23
-> 分支：`codex/bugfix/phase6a-intel-producer`
+> **阶段一完成** · 2026-05-23
+> Commit: `f8503d0b4` · 分支: `codex/bugfix/phase6a-intel-producer`
+> 验收: 6/6 smoke tests passed
+> 下一阶段: DailyReview 内容质量增强（Phase 2）
 
 ## 架构变更
 
@@ -112,4 +114,20 @@ cd frontend && npm run build  # TypeScript 零错误
 
 如需回退到旧 sections 解析模式：
 - 前端 `RecapPage.tsx` 中 `dailyReview?.theme_reviews?.length` 返回 falsy 时自动 fallback
+- 后端恢复生成不依赖 `_build_theme_reviews()` 即可
+
+---
+
+## 第二阶段：DailyReview 内容质量增强
+
+> 状态：待开工
+
+| # | 任务 | 说明 |
+|---|------|------|
+| 1 | `action_advice` 升级 | 从空字符串升级为策略建议（如 "可做弱转强"） |
+| 2 | `conclusion` 升级 | 从空字符串升级为复盘结论 |
+| 3 | `capital_validation` 升级 | 从 `NEUTRAL` 升级为真实资金确认 (CONFIRM/NEUTRAL/DENY) |
+| 4 | `event_chain` 填充 | 填入真实驱动事件，替代空数组 |
+| 5 | `leader_stocks` 角色化 | 增加龙头/龙二/补涨/套利角色标签 |
+| 6 | Notion 发布改造 | 改用结构化 DailyReview 渲染，替代文本 section 拼接
 - 后端恢复生成不依赖 `_build_theme_reviews()` 即可

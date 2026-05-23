@@ -2,7 +2,7 @@ import asyncio
 import json
 import logging
 import os
-from typing import AsyncIterator
+from typing import Any, AsyncIterator
 
 import httpx
 from fastapi import APIRouter, HTTPException, Query, Request
@@ -47,14 +47,10 @@ def _normalize_theme_stage(item: dict) -> str:
 
 
 def _stage_priority(stage: str) -> int:
-    normalized = (stage or "UNKNOWN").upper()
-    if normalized == "CONFIRMED":
-        return 3
-    if normalized == "FORMING":
-        return 2
-    if normalized == "FADE":
-        return 1
-    return 0
+    normalized = (stage or "UNKNOWN").strip().lower()
+    if normalized in ("unknown", "", "none"):
+        return 0
+    return 1  # 任何有效周期状态优先级都高于 UNKNOWN
 
 
 def _normalize_theme_name(value: object) -> str:
@@ -835,64 +831,56 @@ async def workspace_theme_radar(
     session: str = Query(default="all"),
     limit: int = Query(default=30, ge=1, le=200),
 ) -> dict:
-    feed = await client.get_intel_feed(
-        date=date,
-        session=session,
-        item_type="all",
-        limit=limit,
+    # 并发获取 intel feed + daily_review
+    feed_task = client.get_intel_feed(date=date, session=session, item_type="all", limit=limit)
+    dr_task = client.get_json("/api/v1/daily_review", {"trade_date": date}) if date else None
+
+    feed_result, dr_result = await asyncio.gather(
+        feed_task,
+        dr_task or asyncio.sleep(0),
+        return_exceptions=True,
     )
+    feed = feed_result if isinstance(feed_result, dict) else {}
     items = list(feed.get("items") or [])
-    # Root-source stage enrichment: use post-market snapshot recap_doc when available.
+
     stage_by_subject_key: dict[str, str] = {}
     stage_by_theme_name: dict[str, str] = {}
-    if date:
-        snapshot = (await client.get_post_market_snapshot(str(date))).model_dump()
-        payload = dict(snapshot.get("payload") or {})
-        recap_doc = dict(payload.get("recap_doc") or {})
+    stock_count_by_subject_key: dict[str, int] = {}
+    stock_count_by_theme_name: dict[str, int] = {}
+    daily_review: dict[str, Any] = {}
+    if isinstance(dr_result, dict):
+        try:
+            daily_review = dr_result
+            for tr in daily_review.get("theme_reviews") or []:
+                sk = str(tr.get("subject_key") or "").strip()
+                tn = str(tr.get("theme_name") or "").strip()
+                stage = str(tr.get("final_cycle_state") or "")
+                sc = len(tr.get("leader_stocks") or [])
+                if sk:
+                    if _stage_priority(stage) > _stage_priority(stage_by_subject_key.get(sk, "UNKNOWN")):
+                        stage_by_subject_key[sk] = stage
+                    stock_count_by_subject_key[sk] = max(stock_count_by_subject_key.get(sk, 0), sc)
+                if tn:
+                    if _stage_priority(stage) > _stage_priority(stage_by_theme_name.get(tn, "UNKNOWN")):
+                        stage_by_theme_name[tn] = stage
+                    stock_count_by_theme_name[tn] = max(stock_count_by_theme_name.get(tn, 0), sc)
+        except Exception:
+            pass
 
-        def _collect_stage_rows(rows: list[dict]) -> None:
-            for row in rows:
-                if not isinstance(row, dict):
-                    continue
-                sk = str(row.get("subject_key") or "").strip()
-                sn = _normalize_theme_name(row.get("subject_name") or row.get("theme_name"))
-                stage = _normalize_theme_stage(row)
-                if sk and _stage_priority(stage) > _stage_priority(stage_by_subject_key.get(sk, "UNKNOWN")):
-                    stage_by_subject_key[sk] = stage
-                if sn and _stage_priority(stage) > _stage_priority(stage_by_theme_name.get(sn, "UNKNOWN")):
-                    stage_by_theme_name[sn] = stage
-
-        _collect_stage_rows(list(recap_doc.get("strong_watch_history") or []))
-        _collect_stage_rows(list(recap_doc.get("top_candidates") or []))
-
-    # Secondary source for stage enrichment: strong_watch/w2s snapshots of same trade_date.
-    effective_date = str(date or "")
-    strong_watch_payload = (await client.get_strong_watch(effective_date)).model_dump() if effective_date else {"stocks": []}
-    w2s_payload = (await client.get_w2s_candidates(effective_date)).model_dump() if effective_date else {"candidates": []}
-    for row in list(strong_watch_payload.get("stocks") or []):
-        sk = str(row.get("subject_key") or "").strip()
-        sn = _normalize_theme_name(row.get("subject_name") or row.get("theme_name"))
-        if not sk:
-            sk = ""
-        stage = _normalize_theme_stage(row)
-        if sk and _stage_priority(stage) > _stage_priority(stage_by_subject_key.get(sk, "UNKNOWN")):
-            stage_by_subject_key[sk] = stage
-        if sn and _stage_priority(stage) > _stage_priority(stage_by_theme_name.get(sn, "UNKNOWN")):
-            stage_by_theme_name[sn] = stage
-    for row in list(w2s_payload.get("candidates") or []):
-        sk = str(row.get("subject_key") or "").strip()
-        sn = _normalize_theme_name(row.get("subject_name") or row.get("theme_name"))
-        if not sk:
-            sk = ""
-        stage = _normalize_theme_stage(row)
-        if sk and _stage_priority(stage) > _stage_priority(stage_by_subject_key.get(sk, "UNKNOWN")):
-            stage_by_subject_key[sk] = stage
-        if sn and _stage_priority(stage) > _stage_priority(stage_by_theme_name.get(sn, "UNKNOWN")):
-            stage_by_theme_name[sn] = stage
     by_theme: dict[str, dict] = {}
     for item in items:
         theme_names = item.get("theme_names") or []
+        theme_subject_keys = item.get("theme_subject_keys") or []
         subject_key = str(item.get("subject_key") or "")
+        # 用 theme_subject_keys 做桥接匹配 daily-review 的 stage/stock_count
+        matched_stage = "UNKNOWN"
+        matched_stock_count = 0
+        for tsk in theme_subject_keys:
+            tsk = str(tsk).strip()
+            if tsk and tsk in stage_by_subject_key and matched_stage == "UNKNOWN":
+                matched_stage = stage_by_subject_key[tsk]
+            if tsk and tsk in stock_count_by_subject_key:
+                matched_stock_count = max(matched_stock_count, stock_count_by_subject_key[tsk])
         for theme_name in theme_names[:3]:
             key = subject_key or str(theme_name)
             row = by_theme.setdefault(
@@ -903,26 +891,96 @@ async def workspace_theme_radar(
                     "heat": 0,
                     "stage": "UNKNOWN",
                     "stock_count": 0,
+                    "_subject_keys": [],
                 },
             )
             row["heat"] += 1
-            row["stock_count"] = max(row["stock_count"], len(item.get("stock_ids") or []))
-            stage = _normalize_theme_stage(item)
-            if row["stage"] == "UNKNOWN" and stage != "UNKNOWN":
-                row["stage"] = stage
+            # 累积所有 theme_subject_keys，用于后续回填
+            for tsk in theme_subject_keys:
+                tsk = str(tsk).strip()
+                if tsk and tsk not in row["_subject_keys"]:
+                    row["_subject_keys"].append(tsk)
+            # stage: theme_subject_keys 桥接 > subject_key > theme_name
+            if row["stage"] == "UNKNOWN" and matched_stage != "UNKNOWN":
+                row["stage"] = matched_stage
             if row["stage"] == "UNKNOWN" and subject_key:
-                sw_stage = stage_by_subject_key.get(subject_key, "UNKNOWN")
-                if sw_stage != "UNKNOWN":
-                    row["stage"] = sw_stage
+                row["stage"] = stage_by_subject_key.get(subject_key, "UNKNOWN")
             if row["stage"] == "UNKNOWN":
-                name_stage = stage_by_theme_name.get(_normalize_theme_name(theme_name), "UNKNOWN")
-                if name_stage != "UNKNOWN":
-                    row["stage"] = name_stage
+                row["stage"] = stage_by_theme_name.get(_normalize_theme_name(theme_name), "UNKNOWN")
+            # stock_count: theme_subject_keys 桥接 > subject_key > theme_name
+            if matched_stock_count > 0:
+                row["stock_count"] = max(row["stock_count"], matched_stock_count)
+            if subject_key and subject_key in stock_count_by_subject_key:
+                row["stock_count"] = max(row["stock_count"], stock_count_by_subject_key[subject_key])
+            if row["stock_count"] == 0 and _normalize_theme_name(theme_name) in stock_count_by_theme_name:
+                row["stock_count"] = max(row["stock_count"], stock_count_by_theme_name[_normalize_theme_name(theme_name)])
+            # 兜底：intel item 自身的 stock_ids
+            row["stock_count"] = max(row["stock_count"], len(item.get("stock_ids") or []))
+    # 注入 daily-review 中有周期数据但无新闻的主题（heat=0，排在有新闻的主题之后）
+    daily_review_sks_seen: set[str] = set()
+    for row in by_theme.values():
+        if row.get("stage") != "UNKNOWN":
+            daily_review_sks_seen.add(str(row.get("theme_id") or ""))
+    for tr in (daily_review.get("theme_reviews") or []):
+        sk = str(tr.get("subject_key") or "").strip()
+        tn = str(tr.get("theme_name") or "").strip()
+        if not sk or not tn:
+            continue
+        if sk in daily_review_sks_seen:
+            continue
+        by_theme.setdefault(sk, {
+            "theme_id": sk,
+            "theme_name": tn,
+            "heat": 0,
+            "stage": str(tr.get("final_cycle_state") or "UNKNOWN"),
+            "stock_count": len(tr.get("leader_stocks") or []),
+        })
+
+    # 对 stage 仍为 UNKNOWN 的主题，通过 theme_subject_keys 并发查询最近周期状态
+    unknown_themes = [t for t in by_theme.values() if t["stage"] == "UNKNOWN"]
+    MAX_FALLBACK = 3
+    fallback_tasks: list[tuple[str, dict]] = []  # (sk, theme_row)
+    seen_sks: set[str] = set()
+    for t in unknown_themes:
+        if len(fallback_tasks) >= MAX_FALLBACK:
+            break
+        sks = t.pop("_subject_keys", []) or []
+        for sk in sks:
+            if len(fallback_tasks) >= MAX_FALLBACK:
+                break
+            sk = str(sk).strip()
+            if not sk or sk in seen_sks:
+                continue
+            seen_sks.add(sk)
+            fallback_tasks.append((sk, t))
+
+    async def _fetch_one(sk: str) -> tuple[str, dict[str, Any]]:
+        try:
+            tw = await client.get_json(f"/api/v1/theme/workspace/{sk}")
+            return (sk, tw)
+        except Exception:
+            return (sk, {})
+
+    if fallback_tasks:
+        results = await asyncio.gather(*[_fetch_one(sk) for sk, _ in fallback_tasks], return_exceptions=True)
+        for i, result in enumerate(results):
+            if isinstance(result, BaseException):
+                continue
+            sk, tw = result
+            t = fallback_tasks[i][1]
+            summary = (tw.get("analytics") or {}).get("summary") or {}
+            recent_stage = str(summary.get("final_cycle_state") or "")
+            if recent_stage and _stage_priority(recent_stage) > _stage_priority(t["stage"]):
+                t["stage"] = recent_stage
+            ls = (tw.get("analytics") or {}).get("leader_stocks") or []
+            if ls:
+                t["stock_count"] = max(t["stock_count"], len(ls))
+
     themes = sorted(by_theme.values(), key=lambda x: (-int(x["heat"]), x["theme_name"]))[:limit]
     return {
         "date": date,
         "themes": themes,
-        "source": "intel_feed_aggregate",
+        "source": "intel_feed_daily_review_merge",
         "diagnostics": dict(feed.get("diagnostics") or {}),
     }
 
@@ -995,6 +1053,41 @@ async def workspace_market_validation(
     support_type = str(chosen.get("support_type") or "unknown")
     support_score = _to_float_or_none(chosen.get("support_score"))
     reject_reasons = list(chosen.get("reject_reasons") or [])
+
+    # 主题级验证：从 daily-review 或历史数据获取
+    theme_validation = None
+    if subject_key:
+        try:
+            daily_review = await client.get_json("/api/v1/daily_review", {"trade_date": trade_date})
+            for tr in daily_review.get("theme_reviews") or []:
+                if str(tr.get("subject_key") or "") == subject_key:
+                    theme_validation = {
+                        "theme_name": tr.get("theme_name"),
+                        "cycle_stage": tr.get("final_cycle_state"),
+                        "mainline_strength": tr.get("mainline_strength_score"),
+                        "fade_risk": tr.get("fade_risk_score"),
+                        "mainline_alive": tr.get("final_mainline_alive"),
+                        "leader_stocks": [
+                            {"name": ls.get("stock_name"), "score": ls.get("leader_composite_score"), "pct_chg": ls.get("pct_chg")}
+                            for ls in (tr.get("leader_stocks") or [])[:5]
+                        ],
+                    }
+                    break
+            if not theme_validation:
+                tw = await client.get_json(f"/api/v1/theme/workspace/{subject_key}")
+                s = (tw.get("analytics") or {}).get("summary") or {}
+                theme_validation = {
+                    "theme_name": s.get("theme_name"),
+                    "cycle_stage": s.get("final_cycle_state"),
+                    "mainline_strength": float(s.get("mainline_strength_score") or 0),
+                    "fade_risk": float(s.get("fade_risk_score") or 0),
+                    "mainline_alive": s.get("final_mainline_alive"),
+                    "leader_stocks": [],
+                    "source": "historical",
+                }
+        except Exception:
+            pass
+
     return {
         "trade_date": trade_date,
         "subject_key": subject_key,
@@ -1006,7 +1099,7 @@ async def workspace_market_validation(
         "strong_watch_count": len(sw_stocks),
         "w2s_candidate_count": len(w2s_candidates),
         "stock_validation": stock_view,
-        "source": "strong_watch_w2s_aggregate",
+        "theme_validation": theme_validation,
     }
 
 

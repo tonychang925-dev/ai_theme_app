@@ -187,30 +187,8 @@ class LocalQwenNewsTriageService:
                 parsed["raw"] = raw
                 return self._normalize_result(parsed, fallback_text=text)
 
-            # 非法输出兜底
-            if features.get("trivial_price_move") and not features.get("has_catalyst"):
-                return self._build_result_from_text(
-                    text,
-                    decision="SKIP",
-                    importance_level="D",
-                    event_value_type="market_noise",
-                    reason_code="prompt_invalid_rule_skip",
-                    reason="prompt_invalid_but_rule_skip",
-                    confidence=0.8,
-                    mode="qwen1.5b_prompt",
-                    raw=raw,
-                )
-            return self._build_result_from_text(
-                text,
-                decision="REVIEW",
-                importance_level="C",
-                event_value_type="market_noise",
-                reason_code="prompt_invalid_output",
-                reason="prompt_invalid_output",
-                confidence=0.4,
-                mode="qwen1.5b_prompt",
-                raw=raw,
-            )
+            # 非法输出兜底 → 回退规则判定，不阻塞事件
+            return None  # 让外层 _rule_decision 接管
         except Exception as e:
             logger.warning(f"Qwen1.5B prompt判定异常: {e}")
             return None

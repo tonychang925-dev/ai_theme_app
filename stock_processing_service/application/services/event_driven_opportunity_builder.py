@@ -55,6 +55,13 @@ class EventDrivenOpportunityBuilder:
         theme_by_key = {str(row.get("subject_key") or ""): row for row in matched_themes}
         events_by_key = self._group_events(matched_events)
 
+        # 预取 JYHF 映射理由（补充字段，不影响评分排名）
+        # 去掉后缀 .SH/.SZ/.BJ，与 theme_stock_map 的 stock_id 格式对齐
+        all_stock_ids = list(dict.fromkeys(
+            str(self._stock_id(row)).split(".")[0] for row in subject_rows
+        ))
+        jyhf_reasons = await self._fetch_jyhf_reasons(all_stock_ids, subject_keys)
+
         opportunities: list[dict[str, Any]] = []
         for subject_key in subject_keys:
             theme = theme_by_key.get(subject_key, {})
@@ -72,8 +79,13 @@ class EventDrivenOpportunityBuilder:
                     w2s=w2s.get(key, {}),
                     identity=identity.get(subject_key, {}),
                     cycle=cycle.get(subject_key, {}),
+                    jyhf_reason=jyhf_reasons.get((subject_key, str(self._stock_id(row)).split(".")[0]), ""),
                 )
                 if scored:
+                    # 补充 JYHF 映射理由
+                    jr = jyhf_reasons.get((subject_key, str(self._stock_id(row)).split(".")[0]))
+                    if jr:
+                        scored["jyhf_reason"] = jr
                     stock_items.append(scored)
 
             stock_items.sort(key=lambda item: (-float(item.get("score") or 0), item.get("stock_id", "")))
@@ -113,6 +125,7 @@ class EventDrivenOpportunityBuilder:
         w2s: dict[str, Any],
         identity: dict[str, Any],
         cycle: dict[str, Any],
+        jyhf_reason: str = "",
     ) -> dict[str, Any]:
         confidence = self._float(event_theme.get("confidence"), 0.0)
         rank = self._int(stock.get("rank_order") or leaderboard.get("leaderboard_rank"), 99)
@@ -166,7 +179,7 @@ class EventDrivenOpportunityBuilder:
             "stock_name": str(stock.get("stock_name") or strong.get("stock_name") or w2s.get("stock_name") or ""),
             "level": level,
             "score": round(score, 1),
-            "reason": self._reason(identity_confirmed, cycle_state, is_leader, bool(strong), bool(w2s), rank),
+            "reason": self._reason(identity_confirmed, cycle_state, is_leader, bool(strong), bool(w2s), rank, jyhf_reason=jyhf_reason),
             "risk": self._risk_text(cycle_state, strong),
             "evidence": {
                 "subject_key": subject_key,
@@ -236,7 +249,8 @@ class EventDrivenOpportunityBuilder:
         return "C"
 
     @staticmethod
-    def _reason(identity_confirmed: bool, cycle_state: str, is_leader: bool, has_strong: bool, has_w2s: bool, rank: int) -> str:
+    @staticmethod
+    def _reason(identity_confirmed: bool, cycle_state: str, is_leader: bool, has_strong: bool, has_w2s: bool, rank: int, *, jyhf_reason: str = "") -> str:
         parts = []
         if identity_confirmed:
             parts.append("主线题材确认")
@@ -250,7 +264,11 @@ class EventDrivenOpportunityBuilder:
             parts.append("强势池支撑")
         if has_w2s:
             parts.append("弱转强候选加分")
-        return "；".join(parts) or "题材映射成立"
+        algo = "；".join(parts) or "题材映射成立"
+        # 移动端理由优先级：算法理由在前，JYHF 映射理由在括号内补充
+        if jyhf_reason:
+            return f"{algo}（{jyhf_reason}）"
+        return algo
 
     @staticmethod
     def _risk_text(cycle_state: str, strong: dict[str, Any]) -> str:
@@ -259,6 +277,89 @@ class EventDrivenOpportunityBuilder:
         if cycle_state == "fade_watch" or bool(strong.get("fade_watch")):
             return "题材退潮预警，需降低仓位预期。"
         return "需观察竞价承接与题材持续性。"
+
+    async def _fetch_jyhf_reasons(
+        self, stock_ids: list[str], subject_keys: list[str]
+    ) -> dict[tuple[str, str], str]:
+        """从 theme_stock_map 获取 JYHF 映射理由（补充字段，不影响评分）。
+
+        返回 {(subject_key, stock_id): jyhf_reason}
+        """
+        if not stock_ids or not subject_keys:
+            return {}
+        try:
+            import asyncpg
+            import logging
+            _log = logging.getLogger(__name__)
+            conn = await asyncpg.connect(
+                user="postgres", password="postgres",
+                host="localhost", port=5432, database="stock_data_test"
+            )
+            try:
+                rows = await conn.fetch(
+                    """SELECT DISTINCT ON (tsm.stock_id, tsm.subject_key)
+                        tsm.stock_id, tsm.subject_key,
+                        tsm.reason, tgp.concept AS theme_concept,
+                        scs.child_name, scs.full_name AS child_full_name,
+                        scsr.reason AS child_stock_reason
+                    FROM theme_stock_map tsm
+                    LEFT JOIN theme_gate_profile tgp ON tsm.subject_key = tgp.subject_key
+                    LEFT JOIN subject_children_staging scs
+                        ON scs.parent_subject_key = tsm.subject_key
+                        AND scs.lead_stock_id = tsm.stock_id
+                    LEFT JOIN subject_child_stock_reason scsr
+                        ON scsr.subject_key = tsm.subject_key
+                        AND scsr.stock_id = tsm.stock_id
+                        AND scsr.source_type = 'cdp_dom_detailed'
+                    WHERE tsm.subject_key = ANY($1::varchar[])
+                      AND tsm.stock_id = ANY($2::varchar[])
+                    """, subject_keys, stock_ids,
+                )
+                # 免责声明截断模式
+                _DISCLAIMER_PATTERNS = [
+                    "软件局限性说明", "风险揭示", "免责声明",
+                    "投资有风险", "不构成投资建议", "据此操作风险自担",
+                ]
+
+                def _clean_reason(text: str) -> str:
+                    """截断 CDP 理由中的免责声明尾部。"""
+                    if not text:
+                        return ""
+                    for pat in _DISCLAIMER_PATTERNS:
+                        idx = text.find(pat)
+                        if idx >= 0:
+                            text = text[:idx].rstrip("，。；;,. ")
+                    return text.strip()
+
+                result: dict[tuple[str, str], str] = {}
+                for r in rows:
+                    parts = []
+                    child_full = r.get("child_full_name") or ""
+                    child_name = r.get("child_name") or ""
+                    theme_concept = r.get("theme_concept") or ""
+                    child_reason = _clean_reason(r.get("child_stock_reason") or "")
+                    if child_full:
+                        parts.append(child_full)
+                    elif child_name:
+                        parts.append(f"{theme_concept}-{child_name}" if theme_concept else child_name)
+                    elif theme_concept:
+                        parts.append(theme_concept)
+                    if child_reason and "lead_stock" not in child_reason.lower():
+                        parts.append(child_reason)
+                    sk = str(r["subject_key"] or "")
+                    sid = str(r["stock_id"] or "").split(".")[0]
+                    if sk and sid:
+                        jyhf = " | ".join(parts)
+                        if jyhf:
+                            result[(sk, sid)] = jyhf
+                _log.info("_fetch_jyhf_reasons: %d subjects, %d stocks → %d reasons",
+                          len(subject_keys), len(stock_ids), len(result))
+                return result
+            finally:
+                await conn.close()
+        except Exception as e:
+            _log.warning("_fetch_jyhf_reasons failed: %s", e)
+            return {}
 
     async def _safe_call(self, name: str, *args, **kwargs) -> list[dict[str, Any]]:
         fn = getattr(self._read_gateway, name, None)

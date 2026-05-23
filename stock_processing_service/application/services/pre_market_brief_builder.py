@@ -507,8 +507,14 @@ class PreMarketBriefBuilder:
         return re.sub(r"[\s【】]+", "", title)
 
     @staticmethod
+    @staticmethod
     def _is_low_value_major_event(row: dict[str, Any]) -> bool:
-        text = " ".join(str(row.get(field) or "") for field in ("title", "summary"))
+        title = str(row.get("title") or "").strip()
+        summary = str(row.get("summary") or "").strip()
+        # CNINFO 公告 LLM 提取摘要：title==summary 且很短，不是原始新闻
+        if title and title == summary and len(title) < 40:
+            return True
+        text = f"{title} {summary}"
         low_value_terms = (
             "减持",
             "回购",

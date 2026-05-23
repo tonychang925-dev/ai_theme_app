@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { NotionPublishResult, RecapViewModelV2 } from "../../lib/api";
 import { fetchRecapSnapshot, fetchDailyReview, publishRecapToNotion, type DailyReviewView } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
+import recapIcon from "../../assets/intel-icons/当日复盘.png";
 
 const DISPLAY_REPLACEMENTS: Array<[string, string]> = [
   ["risk_off", "避险防御"],
@@ -844,68 +845,40 @@ export function RecapPage() {
 
   return (
     <div className="workspace-page">
-      <header className="workspace-topbar">
-        <button className="back-button" type="button" onClick={() => navigateTo("/intel")}>
-          返回情报台
-        </button>
-        <div>
-          <p className="eyebrow">Recap Workspace</p>
-          <h1>{payload?.title ?? "复盘工作台"}</h1>
-          <p className="subtle">{payload?.summary ?? "读取 P3.phase2 真源表生成的盘前 / 盘后报告。"}</p>
-        </div>
-      </header>
-
-      <section className="workspace-card">
-        <div className="recap-toolbar">
-          <label className="recap-toolbar-date">
-            <span>交易日</span>
-            <input type="date" value={tradeDate} onChange={(event) => setTradeDate(event.target.value)} />
+      <section className="strong-watch-toolbar">
+        <img src={recapIcon} alt="" style={{ height: 64, width: 64, flexShrink: 0 }} />
+        <h1 className="strong-watch-title">{reportType === "post_market" ? "当日复盘" : "盘前必读"}</h1>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, marginLeft: "auto" }}>
+          <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
+            <span style={{ fontSize: 12, color: "#9f9f9f" }}>交易日</span>
+            <input type="date" value={tradeDate} onChange={(event) => setTradeDate(event.target.value)}
+              style={{ border: "1px solid #2a2a2a", borderRadius: 6, background: "#1a1a1a", color: "#f5f5f5", padding: "4px 8px" }} />
           </label>
           <div className="recap-switch">
-            <button
-              type="button"
-              className={`tag tag-button ${reportType === "post_market" ? "tag-active" : ""}`}
-              onClick={() => setReportType("post_market")}
-            >
+            <button type="button" className={`tag tag-button ${reportType === "post_market" ? "tag-active" : ""}`}
+              style={{ fontSize: 16, padding: "8px 16px" }} onClick={() => setReportType("post_market")}>
               当日复盘
             </button>
-            <button
-              type="button"
-              className={`tag tag-button`}
-              onClick={() => navigateTo(`/pre-market-brief?trade_date=${tradeDate}`)}
-            >
+            <button type="button" className="tag tag-button" style={{ fontSize: 16, padding: "8px 16px" }}
+              onClick={() => navigateTo(`/pre-market-brief?trade_date=${tradeDate}`)}>
               盘前必读
             </button>
           </div>
-        </div>
-        {reportType === "post_market" && (
-          <div className="recap-toolbar" style={{ marginTop: 8 }}>
-            <button
-              className="tag tag-button"
-              type="button"
-              disabled={publishing || loading}
-              onClick={handlePublishNotion}
-            >
+          {reportType === "post_market" && (
+            <button className="tag tag-button is-pass" type="button" style={{ fontSize: 16, padding: "8px 16px" }}
+              disabled={publishing || loading} onClick={handlePublishNotion}>
               {publishing ? "发布中..." : "发布到 Notion"}
             </button>
-            {publishResult?.page_url && (
-              <a
-                href={publishResult.page_url}
-                target="_blank"
-                rel="noreferrer"
-                className="tag"
-                style={{ marginLeft: 8 }}
-              >
-                打开 Notion 页面
-              </a>
-            )}
-            {publishResult && !publishResult.ok && (
-              <span className="tag" style={{ marginLeft: 8, color: "var(--color-risk)" }}>
-                发布失败：{publishResult.action}
-              </span>
-            )}
-          </div>
-        )}
+          )}
+          {publishResult?.page_url && (
+            <a href={publishResult.page_url} target="_blank" rel="noreferrer" className="tag">
+              打开 Notion 页面
+            </a>
+          )}
+        </div>
+        <button className="back-button" type="button" onClick={() => navigateTo("/intel")}>
+          返回
+        </button>
       </section>
 
       {loading && <div className="empty-state">正在加载复盘视图...</div>}

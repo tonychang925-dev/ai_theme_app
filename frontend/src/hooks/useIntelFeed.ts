@@ -95,12 +95,20 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
 
   // Data fetching with useApi
   const fetcher = useCallback(async () => {
-    const ctx = await fetchWorkspaceIntelContext({ date, session, limit, subjectKey: subjectKey || undefined });
-    const rawItems = ctx.items || [];
-    const filteredItems = type === 'all' ? rawItems : rawItems.filter((item) => item.item_type === type);
+    const ctx = await fetchWorkspaceIntelContext({ date, session, limit });
+    let rawItems = ctx.items || [];
+    // 前端过滤：按 type 和 theme_name 过滤（后端 subject_key 为 None，不支持精确过滤）
+    if (type !== 'all') {
+      rawItems = rawItems.filter((item) => item.item_type === type);
+    }
+    if (subjectKey) {
+      rawItems = rawItems.filter((item) =>
+        (item.theme_names || []).some((name) => name === subjectKey)
+      );
+    }
     const data: IntelFeedView = {
-      items: filteredItems,
-      count: filteredItems.length,
+      items: rawItems,
+      count: rawItems.length,
       date: ctx.date || date,
       session,
       type,
@@ -121,7 +129,7 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
   } = useApi(fetcher, {
     initialData: null,
     immediate: true,
-    deps: [date, type, session],
+    deps: [date, type, session, subjectKey],
   });
 
   // UI state
@@ -150,13 +158,24 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
     }
   }, [selectedItemId, setPayload]);
 
-  // Function to merge incoming items
+  // Function to merge incoming items (respects subjectKey filter)
   const mergeIncomingItems = useCallback((incomingItems: IntelFeedItem[]) => {
     if (incomingItems.length === 0) return;
+    // 前端过滤：按 type 和 subjectKey 过滤 SSE 推送的 items
+    let scopedItems = incomingItems;
+    if (type !== 'all') {
+      scopedItems = scopedItems.filter((item) => item.item_type === type);
+    }
+    if (subjectKey) {
+      scopedItems = scopedItems.filter((item) =>
+        (item.theme_names || []).some((name) => name === subjectKey)
+      );
+    }
+    if (scopedItems.length === 0) return;
     setPayload((current) => {
       const currentItems = current?.items ?? [];
       const existingIds = new Set(currentItems.map((item) => item.item_id));
-      const freshItems = incomingItems.filter((item) => !existingIds.has(item.item_id));
+      const freshItems = scopedItems.filter((item) => !existingIds.has(item.item_id));
       if (freshItems.length === 0) return current;
 
       setLiveNewCount((value) => value + freshItems.length);
@@ -170,7 +189,7 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
         diagnostics: current?.diagnostics,
       };
     });
-  }, [date, session, type, limit, setPayload]);
+  }, [date, session, type, limit, subjectKey, setPayload]);
 
   // Fetch recap defaults
   useEffect(() => {
@@ -199,6 +218,35 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
   useEffect(() => {
     setLiveNewCount(0);
   }, [date, type, session]);
+
+  // 初始数据加载成功后标记为 live
+  useEffect(() => {
+    if (!loading && payload && payload.items.length > 0) {
+      setLiveStatus('live');
+    }
+  }, [loading, payload]);
+
+  // 实时采集栈状态（最高优先级，实时栈停止时强制红色）
+  const [realtimeRunning, setRealtimeRunning] = useState(true);
+  useEffect(() => {
+    let active = true;
+    const checkRealtime = async () => {
+      try {
+        const resp = await fetch('/api/v1/realtime/status');
+        if (!active) return;
+        const data = await resp.json();
+        setRealtimeRunning(data?.running !== false);
+      } catch {
+        // 接口不可用时不改变状态
+      }
+    };
+    checkRealtime();
+    const timer = setInterval(checkRealtime, 30000);
+    return () => { active = false; clearInterval(timer); };
+  }, []);
+
+  // 实时栈停止时强制 fallback
+  const effectiveLiveStatus = !realtimeRunning ? 'fallback' : liveStatus;
 
   // SSE manager effect
   const normalizeIntelItem = useCallback((raw: IntelFeedEvent["item"]): IntelFeedItem | null => {
@@ -232,7 +280,6 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
       sseManagerRef.current = null;
     }
 
-    setLiveStatus('connecting');
     setSseConnectionState(null);
     setFallbackActive(false);
     setFallbackReason(null);
@@ -300,7 +347,7 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
         sseManagerRef.current = null;
       }
     };
-  }, [date, type, session]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [date, type, session, subjectKey]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Polling effect
   useEffect(() => {
@@ -320,13 +367,19 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
           date,
           session,
           limit,
-          subjectKey: subjectKey || undefined,
         });
-        const rawItems = ctx.items || [];
-        const scopedItems = type === 'all' ? rawItems : rawItems.filter((item) => item.item_type === type);
+        let rawItems = ctx.items || [];
+        if (type !== 'all') {
+          rawItems = rawItems.filter((item) => item.item_type === type);
+        }
+        if (subjectKey) {
+          rawItems = rawItems.filter((item) =>
+            (item.theme_names || []).some((name) => name === subjectKey)
+          );
+        }
         const data: IntelFeedView = {
-          items: scopedItems,
-          count: scopedItems.length,
+          items: rawItems,
+          count: rawItems.length,
           date: ctx.date || date,
           session,
           type,
@@ -412,7 +465,7 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
     setSelectedItemId,
 
     // Real-time state
-    liveStatus,
+    liveStatus: effectiveLiveStatus,
     liveNewCount,
     sseConnectionState,
     streamDiagnostics: {
