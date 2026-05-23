@@ -8,6 +8,8 @@ import os
 from datetime import datetime
 from typing import Dict, List, Optional, Any, Union
 
+from database_service.streams.services.review_eligibility import should_enter_human_review
+
 logger = logging.getLogger(__name__)
 
 
@@ -266,6 +268,20 @@ class DecisionExecutor:
         logger.info("   📝 执行人工复核决策")
 
         event_data = decision.get("event_data") if isinstance(decision.get("event_data"), dict) else {}
+        eligibility = should_enter_human_review(
+            event_data,
+            decision.get("match_result") if isinstance(decision.get("match_result"), dict) else {},
+            self._extract_triage_result(decision),
+        )
+        if not eligibility.get("should_keep_review"):
+            logger.info(
+                "   🧹 人工复核资格不满足，归档事件: reason=%s drop_reason=%s",
+                eligibility.get("reason_code"),
+                eligibility.get("drop_reason"),
+            )
+            self.stats["review_queue_ineligible_dropped"] = self.stats.get("review_queue_ineligible_dropped", 0) + 1
+            return
+
         event_id = event_data.get("event_id") or decision.get("event_id")
         if not event_id:
             raise ValueError("人工复核决策缺少 event_id")
@@ -290,6 +306,16 @@ class DecisionExecutor:
 
         self.stats["review_queue_enqueued"] += 1
         logger.info("   ✅ 已写入人工复核队列: event_id=%s", event_id)
+
+    @staticmethod
+    def _extract_triage_result(decision: Dict[str, Any]) -> Dict[str, Any]:
+        triage = decision.get("triage_result")
+        if isinstance(triage, dict):
+            return triage
+        event_data = decision.get("event_data") if isinstance(decision.get("event_data"), dict) else {}
+        directive = event_data.get("theme_directive") if isinstance(event_data.get("theme_directive"), dict) else {}
+        triage = directive.get("triage_result")
+        return triage if isinstance(triage, dict) else {}
     
     async def _execute_create_new_theme_fixed(self, decision: Dict):
         """

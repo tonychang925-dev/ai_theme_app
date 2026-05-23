@@ -239,3 +239,22 @@ class DBThemeDataGateway:
         if callable(fn):
             return [self._as_dict(r) for r in await fn(trade_date)]
         raise RuntimeError("DatabaseGateway missing get_subject_board_stats")
+
+    async def get_post_market_report_context(
+        self,
+        trade_date,
+        subject_keys: list[str] | None = None,
+        stock_ids: list[str] | None = None,
+    ) -> dict[str, Any]:
+        """显式委托到 DatabaseGateway.get_post_market_report_context。
+
+        不依赖 __getattr__ 双跳，确保 BuildPostMarketRecapJob 能可靠获取复盘上下文。
+        """
+        fn = getattr(self._db, "get_post_market_report_context", None)
+        if callable(fn):
+            return await fn(
+                trade_date=trade_date,
+                subject_keys=subject_keys,
+                stock_ids=stock_ids,
+            )
+        raise RuntimeError("DatabaseGateway missing get_post_market_report_context")

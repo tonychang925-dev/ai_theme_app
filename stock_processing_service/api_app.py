@@ -1834,6 +1834,45 @@ async def publish_post_market_recap_to_notion(payload: NotionPublishPayload) -> 
     }
 
 
+@app.get("/api/v1/daily_review")
+async def get_daily_review(trade_date: str = Query(..., description="YYYY-MM-DD")) -> dict[str, Any]:
+    """结构化每日复盘 — 从 post_market_recap_snapshot 派生。
+
+    返回 DailyReview = { review_date, market_summary, theme_reviews, capital_reviews, trading_principle, diagnostics }。
+    """
+    try:
+        d = date.fromisoformat(trade_date)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=f"invalid trade_date: {trade_date}") from exc
+
+    row = await app.state.gateway.get_existing_post_market_recap_snapshot(d)
+    if not row:
+        return {
+            "trade_date": trade_date,
+            "market_summary": {},
+            "theme_reviews": [],
+            "capital_reviews": [],
+            "trading_principle": {},
+            "diagnostics": {
+                "partial": True,
+                "snapshot_status": "missing",
+                "missing_sections": ["post_market_recap_snapshot"],
+            },
+        }
+
+    payload = _normalize_recap_payload(row)
+    recap_doc = payload.get("recap_doc") or payload
+
+    return {
+        "trade_date": trade_date,
+        "market_summary": recap_doc.get("market_summary") or {},
+        "theme_reviews": recap_doc.get("theme_reviews") or [],
+        "capital_reviews": recap_doc.get("capital_reviews") or [],
+        "trading_principle": recap_doc.get("trading_principle") or {},
+        "diagnostics": recap_doc.get("diagnostics") or {},
+    }
+
+
 @app.get("/api/v1/theme/workspace/{subject_key}")
 async def get_theme_workspace(subject_key: str, trade_date: str = "") -> dict[str, Any]:
     """题材工作台：读取 stock_data_test 中的题材相关数据。"""
@@ -1887,9 +1926,28 @@ async def get_theme_workspace(subject_key: str, trade_date: str = "") -> dict[st
         ranks = await conn.fetch("SELECT * FROM subject_history_staging WHERE subject_key=$1 ORDER BY rank_date DESC LIMIT 5", subject_key)
         recent_rank = [dict(r) for r in ranks]
 
-        # Analytics: leader stocks (with pct_chg from daily snapshot)
+        # Analytics: leader stocks (enriched with daily snapshot + money_flow + position + pattern)
         ranked = await conn.fetch(
-            "SELECT l.*, s.close_price, s.pct_chg, s.trade_date FROM theme_stock_leaderboard l LEFT JOIN subject_stock_daily_snapshot s ON s.stock_id=l.stock_id AND s.subject_key=l.subject_key AND s.trade_date=$2 WHERE l.subject_key=$1 ORDER BY l.leader_score DESC LIMIT 20",
+            """SELECT l.*,
+               s.close_price, s.pct_chg, s.trade_date,
+               s.is_leader, s.rank_order,
+               CASE WHEN jsonb_typeof(s.raw_json)='array' AND jsonb_array_length(s.raw_json)>17
+                    THEN NULLIF(s.raw_json->>17,'')::numeric END AS volume_ratio,
+               CASE WHEN jsonb_typeof(s.raw_json)='array' AND jsonb_array_length(s.raw_json)>20
+                    THEN NULLIF(s.raw_json->>20,'')::integer END AS current_flag,
+               COALESCE(m.main_net_inflow,
+                 CASE WHEN jsonb_typeof(s.raw_json)='array' AND jsonb_array_length(s.raw_json)>35
+                      THEN NULLIF(s.raw_json->>35,'')::numeric END
+               ) AS main_net_inflow,
+               m.money_flow_tier, m.role_enhanced,
+               p.position_label,
+               x.pattern_labels
+            FROM theme_stock_leaderboard l
+            LEFT JOIN subject_stock_daily_snapshot s ON s.stock_id=l.stock_id AND s.subject_key=l.subject_key AND s.trade_date=$2
+            LEFT JOIN money_flow_enhanced m ON m.trade_date=s.trade_date AND m.subject_key=s.subject_key AND split_part(m.stock_id,'.',1)=split_part(s.stock_id,'.',1)
+            LEFT JOIN stock_position_judgement p ON p.trade_date=s.trade_date AND split_part(p.stock_id,'.',1)=split_part(s.stock_id,'.',1)
+            LEFT JOIN stock_pattern_judgement x ON x.trade_date=s.trade_date AND split_part(x.stock_id,'.',1)=split_part(s.stock_id,'.',1)
+            WHERE l.subject_key=$1 ORDER BY l.leader_score DESC LIMIT 20""",
             subject_key, td_date
         )
         leader_stocks = [dict(r) for r in ranked]
@@ -2599,19 +2657,43 @@ async def get_theme_workspace(
                 "WHERE subject_key = $1 AND rank_date <= $2::date ORDER BY rank_date DESC LIMIT 5",
                 subject_key, td,
             )
-            # 龙头股票（含资金/技术数据）
+            # 龙头股票（含资金/技术数据 — P5 补齐字段）
             leader_rows = await conn.fetch("""
                 SELECT tlc.stock_id, tlc.stock_name, tlc.role_label, tlc.candidate_rank,
                        tlc.composite_score, tlc.purity_score, tlc.leading_score,
                        tlc.capital_score, tlc.structure_score,
                        COALESCE(sds.pct_chg, 0) AS pct_chg,
-                       COALESCE(sds.main_net_inflow, 0) AS main_net_inflow
+                       COALESCE(sds.main_net_inflow, 0) AS main_net_inflow,
+                       sds.is_leader,
+                       sds.rank_order,
+                       sds.volume_ratio,
+                       sds.current_flag,
+                       sds.position_label,
+                       sds.pattern_labels,
+                       sds.money_flow_tier,
+                       sds.role_enhanced
                 FROM theme_leader_candidate tlc
                 LEFT JOIN LATERAL (
-                    SELECT pct_chg,
-                           COALESCE(NULLIF(raw_json->>35, ''), '0')::numeric AS main_net_inflow
-                    FROM subject_stock_daily_snapshot
-                    WHERE trade_date = $2::date AND subject_key = $1 AND stock_id = tlc.stock_id
+                    SELECT sds_inner.pct_chg,
+                           COALESCE(NULLIF(sds_inner.raw_json->>35, ''), '0')::numeric AS main_net_inflow,
+                           sds_inner.is_leader,
+                           sds_inner.rank_order,
+                           CASE WHEN jsonb_typeof(sds_inner.raw_json)='array' AND jsonb_array_length(sds_inner.raw_json)>17
+                                THEN NULLIF(sds_inner.raw_json->>17,'')::numeric END AS volume_ratio,
+                           CASE WHEN jsonb_typeof(sds_inner.raw_json)='array' AND jsonb_array_length(sds_inner.raw_json)>20
+                                THEN NULLIF(sds_inner.raw_json->>20,'')::integer END AS current_flag,
+                           spj.position_label,
+                           spat.pattern_labels,
+                           mfe.money_flow_tier,
+                           mfe.role_enhanced
+                    FROM subject_stock_daily_snapshot sds_inner
+                    LEFT JOIN stock_position_judgement spj
+                      ON spj.trade_date = sds_inner.trade_date AND split_part(spj.stock_id,'.',1)=split_part(sds_inner.stock_id,'.',1)
+                    LEFT JOIN stock_pattern_judgement spat
+                      ON spat.trade_date = sds_inner.trade_date AND split_part(spat.stock_id,'.',1)=split_part(sds_inner.stock_id,'.',1)
+                    LEFT JOIN money_flow_enhanced mfe
+                      ON mfe.trade_date = sds_inner.trade_date AND mfe.subject_key = sds_inner.subject_key AND split_part(mfe.stock_id,'.',1)=split_part(sds_inner.stock_id,'.',1)
+                    WHERE sds_inner.trade_date = $2::date AND sds_inner.subject_key = $1 AND sds_inner.stock_id = tlc.stock_id
                     LIMIT 1
                 ) sds ON TRUE
                 WHERE tlc.trade_date = $2::date AND tlc.subject_key = $1

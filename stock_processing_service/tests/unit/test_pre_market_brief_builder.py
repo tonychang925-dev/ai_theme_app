@@ -169,7 +169,8 @@ async def test_pre_market_brief_builder_aggregates_db_events_and_writes_snapshot
             "event_ids": [101, 102],
         }
     ]
-    assert len(payload["sections"]["review_events"]) == 1
+    assert len(payload["sections"]["review_events"]) == 0
+    assert payload["diagnostics"]["review_ineligible_dropped_count"] == 1
     assert payload["diagnostics"]["source"] == "db"
     assert payload["diagnostics"]["matched_event_count"] == 2
     assert len(write.docs) == 1
@@ -427,12 +428,9 @@ async def test_pre_market_brief_builder_falls_back_to_decision_stream_for_unknow
 
     assert payload["diagnostics"]["source"] == "decision_stream_fallback"
     assert len(payload["sections"]["matched_themes"]) == 1
-    assert payload["sections"]["review_events"][0]["event_id"] == 302
+    assert payload["sections"]["review_events"] == []
     assert payload["sections"]["unknown_watch"][0]["event_id"] == 303
-    assert {row["risk_type"] for row in payload["sections"]["risk_alerts"]} == {
-        "human_review_pending",
-        "unknown_event_watch",
-    }
+    assert {row["risk_type"] for row in payload["sections"]["risk_alerts"]} == {"unknown_event_watch"}
 
 
 @pytest.mark.asyncio

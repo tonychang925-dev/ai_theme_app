@@ -3207,7 +3207,11 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             a.main_net_inflow AS abnormal_main_net_inflow,
             a.main_net_inflow_rank_in_theme,
             a.hot_money_buy_names,
-            a.institution_net_buy
+            a.institution_net_buy,
+            cyc.mainline_strength_score,
+            cyc.fade_risk_score,
+            cyc.final_cycle_state AS cycle_final_cycle_state,
+            cyc.final_mainline_alive AS cycle_final_mainline_alive
         FROM subject_stock_daily_snapshot s
         LEFT JOIN vw_subject_theme_binding vtb
           ON vtb.subject_key = s.subject_key
@@ -3221,6 +3225,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
           ON l.trade_date = s.trade_date AND l.subject_key = s.subject_key AND split_part(l.stock_id, '.', 1) = split_part(s.stock_id, '.', 1)
         LEFT JOIN stock_abnormal_signal a
           ON a.trade_date = s.trade_date AND a.subject_key = s.subject_key AND split_part(a.stock_id, '.', 1) = split_part(s.stock_id, '.', 1)
+        LEFT JOIN theme_cycle_judgement_v2 cyc
+          ON cyc.trade_date = s.trade_date AND cyc.subject_key = s.subject_key
         WHERE s.trade_date = $1::date
           AND ($2::text[] IS NULL OR s.subject_key = ANY($2::text[]))
           AND ($3::text[] IS NULL OR s.stock_id = ANY($3::text[]) OR split_part(s.stock_id, '.', 1) = ANY($3::text[]))

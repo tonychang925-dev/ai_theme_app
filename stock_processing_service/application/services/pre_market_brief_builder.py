@@ -13,6 +13,7 @@ from stock_processing_service.application.services.pre_market_window import (
     resolve_pre_market_window,
 )
 from stock_processing_service.domain.services.alert_rule_engine import AlertRuleEngine
+from database_service.streams.services.review_eligibility import STRONG_CATALYST_TERMS, should_enter_human_review
 
 logger = logging.getLogger(__name__)
 
@@ -142,12 +143,12 @@ class PreMarketBriefBuilder:
         )
         diagnostics = {
             "source": self._diagnostic_source(source, db_matched_count, stream_decisions),
-            "event_count": len(matched_events) + len(review_events) + len(unknown_events),
+            "event_count": len(sections["major_events"]) + len(sections["review_events"]) + len(sections["unknown_watch"]),
             "matched_event_count": len(matched_events),
             "theme_count": len(sections["matched_themes"]),
             "opportunity_count": len(sections["event_driven_opportunities"]),
-            "review_event_count": len(review_events),
-            "unknown_event_count": len(unknown_events),
+            "review_event_count": len(sections["review_events"]),
+            "unknown_event_count": len(sections["unknown_watch"]),
             "intel_announcement_count": len(sections["company_announcements_raw"]),
             "intel_announcement_raw_count": len(sections["company_announcements_raw"]),
             "intel_announcement_matched_count": len(sections["company_announcements_matched"]),
@@ -394,9 +395,17 @@ class PreMarketBriefBuilder:
         major_events = [row for row in matched_events if row not in major_drop_rows][:limit]
         review_events_all = self._dedupe_by_key(review_events, key_fields=("event_id", "title"))
         unknown_events_all = self._dedupe_by_key(unknown_events, key_fields=("event_id", "title"))
-        review_drop_rows = [row for row in review_events_all if self._is_dropped_or_low_value_event(row)]
+        review_eligibility = [
+            (row, should_enter_human_review(row, self._match_result_from_review_row(row), self._triage_from_row(row)))
+            for row in review_events_all
+        ]
+        review_drop_rows = [
+            row
+            for row, eligibility in review_eligibility
+            if self._is_dropped_or_low_value_event(row) or not eligibility.get("should_keep_review")
+        ]
         unknown_drop_rows = [row for row in unknown_events_all if self._is_dropped_or_low_value_event(row)]
-        review_events = [row for row in review_events_all if row not in review_drop_rows][:limit]
+        review_events = [row for row in review_events_all if row not in review_drop_rows][: min(limit, 20)]
         unknown_events = [row for row in unknown_events_all if row not in unknown_drop_rows][:limit]
         company_announcements_raw = self._build_company_announcements(intel_announcements_raw)
         company_announcements_matched = self._build_company_announcements(intel_announcements_matched)
@@ -409,6 +418,7 @@ class PreMarketBriefBuilder:
         ]
         dropped_rows = [*major_drop_rows, *review_drop_rows, *unknown_drop_rows]
         dropped_diagnostics = self._build_dropped_diagnostics(dropped_rows)
+        dropped_diagnostics.update(self._build_review_eligibility_diagnostics(review_eligibility, review_events))
         return {
             "major_events": sorted(major_events, key=lambda row: float(row.get("impact_score") or 0), reverse=True)[:limit],
             "matched_themes": self._build_matched_themes(major_events),
@@ -598,6 +608,59 @@ class PreMarketBriefBuilder:
             if any(term in text for term in ("第一季度", "一季度", "Q1", "财报", "营收", "净利润")):
                 diagnostics["ordinary_earnings_dropped_count"] += 1
         return diagnostics
+
+    @staticmethod
+    def _build_review_eligibility_diagnostics(
+        rows: list[tuple[dict[str, Any], dict[str, Any]]],
+        kept_rows: list[dict[str, Any]],
+    ) -> dict[str, int]:
+        diagnostics = {
+            "review_ineligible_dropped_count": 0,
+            "low_value_review_dropped_count": 0,
+            "weak_evidence_review_dropped_count": 0,
+            "duplicate_review_dropped_count": 0,
+            "high_value_review_count": len(kept_rows),
+        }
+        for _, eligibility in rows:
+            if eligibility.get("should_keep_review"):
+                continue
+            reason = str(eligibility.get("reason_code") or "")
+            diagnostics["review_ineligible_dropped_count"] += 1
+            if "low_value" in reason or "ordinary" in str(eligibility.get("drop_reason") or ""):
+                diagnostics["low_value_review_dropped_count"] += 1
+            if "weak" in reason or "generic_only" in reason:
+                diagnostics["weak_evidence_review_dropped_count"] += 1
+            if "duplicate" in reason:
+                diagnostics["duplicate_review_dropped_count"] += 1
+        return diagnostics
+
+    @staticmethod
+    def _match_result_from_review_row(row: dict[str, Any]) -> dict[str, Any]:
+        match_result = row.get("match_result") if isinstance(row.get("match_result"), dict) else {}
+        return {
+            **match_result,
+            "reason_code": match_result.get("reason_code") or row.get("reason"),
+            "runtime_source": match_result.get("runtime_source") or row.get("runtime_source"),
+            "match_reason": match_result.get("match_reason") or row.get("match_reason"),
+            "confidence": row.get("confidence"),
+        }
+
+    @staticmethod
+    def _triage_from_row(row: dict[str, Any]) -> dict[str, Any]:
+        triage = row.get("triage_result")
+        if isinstance(triage, dict):
+            return triage
+        text = " ".join(str(row.get(field) or "") for field in ("title", "summary", "reason"))
+        hits = [term for term in STRONG_CATALYST_TERMS if term in text]
+        if hits:
+            return {
+                "decision": "REVIEW",
+                "importance_level": "B",
+                "event_value_type": "theme_catalyst",
+                "evidence": hits[:3],
+                "should_enter_review": True,
+            }
+        return {}
 
     def _build_risk_alerts(
         self,
