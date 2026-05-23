@@ -83,6 +83,8 @@ class StreamServicesManager:
 
             try:
                 from database_service.streams.handlers.news_stream_processor import NewsStreamProcessor
+                from database_service.streams.handlers.theme_processor import ThemeProcessor
+                from database_service.streams.handlers.DecisionExecutor import DecisionExecutor  # noqa: F811
                 HAS_NEWS_STREAM_PROCESSOR = True
             except ImportError as e:
                 HAS_NEWS_STREAM_PROCESSOR = False
@@ -201,6 +203,26 @@ class StreamServicesManager:
                         "skip_generic_theme": True,
                     },
                     "dependencies": ["stream_manager", "database_gateway"]
+                },
+                "theme_processor": {
+                    "class": ThemeProcessor,
+                    "config": {
+                        "consumer_group": "theme_processor_realtime",
+                        "input_stream": "stream:events:structured",
+                        "output_stream": "stream:events:decision",
+                        "batch_size": 10,
+                        "block_ms": 5000,
+                    },
+                    "dependencies": ["stream_manager"]
+                },
+                "decision_executor": {
+                    "class": DecisionExecutor,
+                    "config": {},
+                    "param_map": {
+                        "redis_client": "stream_manager._client",
+                        "db_gateway": "database_gateway",
+                    },
+                    "dependencies": ["stream_manager", "database_gateway"]
                 }
             }
 
@@ -277,6 +299,19 @@ class StreamServicesManager:
                             kwargs[dep] = dependencies[dep]
                         elif dep == "stream_manager":
                             kwargs["stream_manager"] = stream_manager
+
+                    # 支持 param_map：将依赖对象映射到构造函数参数名
+                    param_map = service_config.get("param_map", {})
+                    for param_name, dep_path in param_map.items():
+                        parts = dep_path.split(".")
+                        obj = dependencies.get(parts[0])
+                        if obj is not None:
+                            for attr in parts[1:]:
+                                obj = getattr(obj, attr, None)
+                                if obj is None:
+                                    break
+                        if obj is not None:
+                            kwargs[param_name] = obj
 
                     # 创建服务实例
                     service_instance = service_class(**kwargs)

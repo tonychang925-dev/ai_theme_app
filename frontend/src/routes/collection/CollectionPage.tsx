@@ -10,6 +10,7 @@ import {
   type CollectionTaskItem,
 } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
+import collectionIcon from "../../assets/intel-icons/采集控制台.png";
 
 const COLLECTION_JOB_STORAGE_KEY = "collection:latest-job";
 
@@ -292,32 +293,22 @@ export function CollectionPage() {
 
   return (
     <div className="workspace-page">
-      <header className="workspace-topbar">
-        <button className="back-button" type="button" onClick={() => navigateTo(`/?date=${tradeDate}`)}>
-          返回情报台
+      <section className="strong-watch-toolbar">
+        <img src={collectionIcon} alt="" style={{ height: 64, width: 64, flexShrink: 0 }} />
+        <h1 className="strong-watch-title">采集控制</h1>
+        <button
+          className="tag tag-button"
+          type="button"
+          style={{ fontSize: 16, padding: "8px 16px", marginLeft: "auto" }}
+          onClick={handleReset}
+          title="清除缓存并重置页面状态，用于从异常中恢复"
+        >
+          重置页面
         </button>
-        <div>
-          <p className="eyebrow">Collection Workspace</p>
-          <h1>日采集控制台</h1>
-          <p className="subtle">16:30后执行日采集与盘后复盘更新。当前页面已接入后台任务状态机。</p>
-          <div className="collection-action-row">
-            <button className="tag tag-button" type="button" onClick={() => navigateTo("/realtime-collector")}>
-              打开实时采集控制台
-            </button>
-            <button className="tag tag-button" type="button" onClick={() => navigateTo("/collection-debug")}>
-              打开终端调试页
-            </button>
-            <button
-              className="tag tag-button"
-              type="button"
-              onClick={handleReset}
-              title="清除缓存并重置页面状态，用于从异常中恢复"
-            >
-              重置页面
-            </button>
-          </div>
-        </div>
-      </header>
+        <button className="back-button" type="button" onClick={() => navigateTo(`/?date=${tradeDate}`)}>
+          返回
+        </button>
+      </section>
 
       <section className={`workspace-card collection-guard ${availability?.allowed ? "is-open" : "is-locked"}`}>
         <div>

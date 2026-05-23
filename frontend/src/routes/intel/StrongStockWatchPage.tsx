@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { fetchStrongStockWatch, type StrongStockWatchItem } from "../../lib/api";
 import { useApi } from "../../lib/hooks/useApi";
 import { navigateTo } from "../../lib/navigation";
+import strongwatchIcon from "../../assets/intel-icons/强势股跟踪.png";
 
 function todayString() {
   return new Date().toISOString().slice(0, 10);
@@ -242,35 +243,29 @@ export function StrongStockWatchPage() {
 
   return (
     <div className="workspace-page strong-watch-page">
-      <header className="workspace-header">
-        <button type="button" className="back-button" onClick={() => navigateTo("/")}>
-          返回情报台
-        </button>
-        <h1>强势股跟踪</h1>
-      </header>
-
       <section className="strong-watch-toolbar">
-        <label>
-          <span>截至日期</span>
-          <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
-        </label>
-        <label>
-          <span>窗口天数</span>
-          <select value={windowDays} onChange={(e) => setWindowDays(Number(e.target.value))}>
-            <option value={7}>7日</option>
-            <option value={10}>10日</option>
-            <option value={15}>15日</option>
-            <option value={20}>20日</option>
-          </select>
-        </label>
-        <div className="strong-watch-summary">
-          <strong>{totalCount}</strong>
-          <span>{windowDays}个交易日在池强势股展示（明细 {detailCount} 条）</span>
-          <span>debug: watch-page-v2026-04-30-bff-only</span>
-          <span>
-            原始 {dedupStats.rawCount} / 过滤后 {dedupStats.filteredCount} / 去重后 {dedupStats.dedupedCount} / 去重移除 {dedupStats.removedCount}
-          </span>
+        <img src={strongwatchIcon} alt="" style={{ height: 64, width: 64, flexShrink: 0 }} />
+        <h1 className="strong-watch-title">强势股跟踪</h1>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, marginLeft: "auto" }}>
+          <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
+            <span style={{ fontSize: 12, color: "#9f9f9f" }}>截至日期</span>
+            <input type="date" value={date} onChange={(e) => setDate(e.target.value)}
+              style={{ border: "1px solid #2a2a2a", borderRadius: 6, background: "#1a1a1a", color: "#f5f5f5", padding: "4px 8px" }} />
+          </label>
+          <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
+            <span style={{ fontSize: 12, color: "#9f9f9f" }}>窗口天数</span>
+            <select value={windowDays} onChange={(e) => setWindowDays(Number(e.target.value))}
+              style={{ border: "1px solid #2a2a2a", borderRadius: 6, background: "#1a1a1a", color: "#f5f5f5", padding: "4px 8px" }}>
+              <option value={7}>7日</option>
+              <option value={10}>10日</option>
+              <option value={15}>15日</option>
+              <option value={20}>20日</option>
+            </select>
+          </label>
         </div>
+        <button type="button" className="back-button" onClick={() => navigateTo("/")}>
+          返回
+        </button>
       </section>
 
       {loading && <div className="empty-state">加载强势股跟踪中...</div>}
@@ -287,41 +282,51 @@ export function StrongStockWatchPage() {
                 <span>共{group.items.length}只</span>
               </header>
               <div className="strong-watch-board-col-body strong-watch-market-body">
-                <div className="strong-watch-level-row">
-                  <div className="strong-watch-level-tag"></div>
-                  <div className="strong-watch-level-content">
-                    {group.items.length === 0 ? (
+                {group.items.length === 0 ? (
+                  <div className="strong-watch-level-row">
+                    <div className="strong-watch-level-tag">--</div>
+                    <div className="strong-watch-level-content">
                       <div className="strong-watch-level-empty">--</div>
-                    ) : (
-                      group.items.map((item) => (
-                        <button
-                          key={`${group.key}-${item.stock_id}`}
-                          type="button"
-                          className={`strong-watch-market-item ${toneClass(item)}`}
-                          onClick={() =>
-                            navigateTo(
-                              `/intel/strong-stocks/detail?stock_id=${encodeURIComponent(item.stock_id)}&date=${encodeURIComponent(
-                                date,
-                              )}&window_days=${windowDays}`,
-                            )
-                          }
-                        >
-                          <strong>{item.stock_name}</strong>
-                          <span className="strong-watch-pct">{formatPct(parsePctChg(item))}</span>
-                          <span className="strong-watch-board">
-                            {boardLabel(parseBoardLevel(dedupStats.latestByCode.get(normalizeStockCode(item.stock_id)) ?? item))}
-                          </span>
-                          <em>{item.theme_name || item.subject_key || "--"}</em>
-                        </button>
-                      ))
-                    )}
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  group.items.map((item) => {
+                    const lv = parseBoardLevel(dedupStats.latestByCode.get(normalizeStockCode(item.stock_id)) ?? item);
+                    return (
+                      <div className="strong-watch-level-row" key={`${group.key}-${item.stock_id}`}>
+                        <div className="strong-watch-level-tag">{boardLabel(lv)}</div>
+                        <div className="strong-watch-level-content">
+                          <button
+                            type="button"
+                            className={`strong-watch-market-item ${toneClass(item)}`}
+                            onClick={() =>
+                              navigateTo(
+                                `/intel/strong-stocks/detail?stock_id=${encodeURIComponent(item.stock_id)}&date=${encodeURIComponent(
+                                  date,
+                                )}&window_days=${windowDays}`,
+                              )
+                            }
+                          >
+                            <strong>{item.stock_name}</strong>
+                            <span className="strong-watch-pct">{formatPct(parsePctChg(item))}</span>
+                            <em>{item.theme_name || item.subject_key || "--"}</em>
+                          </button>
+                        </div>
+                      </div>
+                    );
+                  })
+                )}
               </div>
             </article>
           ))}
         </section>
       )}
+
+      <div className="strong-watch-summary">
+        <strong>{totalCount}</strong>
+        <span>{windowDays}个交易日在池强势股展示（明细 {detailCount} 条）</span>
+        <span>原始 {dedupStats.rawCount} / 去重后 {dedupStats.dedupedCount}</span>
+      </div>
     </div>
   );
 }

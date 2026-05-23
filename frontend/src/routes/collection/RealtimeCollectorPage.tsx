@@ -11,6 +11,7 @@ import {
   type NewChainRealtimeStatus,
 } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
+import realtimeIcon from "../../assets/intel-icons/实时采集.png";
 
 function nowText() {
   return new Date().toLocaleString("zh-CN", {
@@ -344,16 +345,13 @@ export function RealtimeCollectorPage() {
 
   return (
     <div className="workspace-page">
-      <header className="workspace-topbar">
-        <button className="back-button" type="button" onClick={() => navigateTo("/")}>
-          返回情报台
+      <section className="strong-watch-toolbar">
+        <img src={realtimeIcon} alt="" style={{ height: 64, width: 64, flexShrink: 0 }} />
+        <h1 className="strong-watch-title">实时采集</h1>
+        <button className="back-button" type="button" style={{ marginLeft: "auto" }} onClick={() => navigateTo("/")}>
+          返回
         </button>
-        <div>
-          <p className="eyebrow">Realtime Event Collection</p>
-          <h1>实时事件采集控制台</h1>
-          <p className="subtle">用于启动/停止实时采集链路（AKShare新闻→结构化→匹配→情报SSE）。</p>
-        </div>
-      </header>
+      </section>
 
       <main className="collection-debug-grid">
         <section className="workspace-card collection-debug-control">

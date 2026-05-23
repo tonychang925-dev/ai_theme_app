@@ -112,6 +112,10 @@ class StockProcessingReadClient:
             },
         }
 
+    async def get_json(self, path: str, params: dict[str, Any] | None = None) -> dict[str, Any]:
+        """公开的 JSON GET 请求，供路由层直接调用 SPS API。"""
+        return await self._get_json(path, params or {})
+
     async def _get_json(self, path: str, params: dict[str, Any]) -> dict[str, Any]:
         url = f"{self._base_url}{path}"
         clean_params = {k: v for k, v in params.items() if v is not None and v != ""}

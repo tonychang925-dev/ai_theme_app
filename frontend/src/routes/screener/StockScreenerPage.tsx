@@ -9,6 +9,7 @@ import { ExportPanel } from './components/ExportPanel';
 import { WeakToStrongTwoStageView } from './components/WeakToStrongTwoStageView';
 import { NetworkStatusAlert } from '../../components/common/NetworkStatusAlert';
 import { navigateTo } from '../../lib/navigation';
+import screenerIcon from '../../assets/intel-icons/AI选股.png';
 
 function getShanghaiNowParts(): { date: string; hour: number; minute: number } {
   const formatter = new Intl.DateTimeFormat('en-CA', {
@@ -328,27 +329,21 @@ export function StockScreenerPage() {
       {/* 网络状态提示 */}
       <NetworkStatusAlert onRetry={handleRetryConnection} suppress={store.isExecuting} />
 
-      <header className="workspace-topbar">
-        <button className="back-button" type="button" onClick={() => navigateTo('/')}>
-          返回情报台
-        </button>
-        <div>
-          <p className="eyebrow">Screener Workspace</p>
-          <h1>AI选股器</h1>
-          <p className="subtle">基于35%/30%/20%/15%决策序列的系统化选股工具</p>
-          <p className="subtle" style={{ color: '#b42318', fontWeight: 700 }}>
-            P4-SCREENER-MARKER-20260502
-          </p>
-          <div className="collection-action-row">
-            <button className="tag tag-button" type="button" onClick={handleExportResults}>
-              导出结果
-            </button>
-            <button className="tag tag-button" type="button" onClick={() => {/* 打开策略编辑器 */}}>
-              新建策略
-            </button>
-          </div>
+      <section className="strong-watch-toolbar">
+        <img src={screenerIcon} alt="" style={{ height: 64, width: 64, flexShrink: 0 }} />
+        <h1 className="strong-watch-title">AI选股</h1>
+        <div className="collection-action-row" style={{ display: "flex", gap: 8, marginLeft: "auto" }}>
+          <button className="tag tag-button" type="button" onClick={handleExportResults} style={{ fontSize: 16, padding: "8px 16px" }}>
+            导出结果
+          </button>
+          <button className="tag tag-button" type="button" onClick={() => {/* 打开策略编辑器 */}} style={{ fontSize: 16, padding: "8px 16px" }}>
+            新建策略
+          </button>
         </div>
-      </header>
+        <button className="back-button" type="button" onClick={() => navigateTo('/')}>
+          返回
+        </button>
+      </section>
 
       <main className="collection-grid">
         <section className="workspace-card collection-config-card">

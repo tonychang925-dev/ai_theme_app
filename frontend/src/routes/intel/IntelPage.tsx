@@ -3,6 +3,8 @@ import { navigateTo } from '../../lib/navigation';
 import { useIntelFeed } from '../../hooks/useIntelFeed';
 import { IntelHeader } from '../../components/intel/IntelHeader';
 import { IntelList } from '../../components/intel/IntelList';
+import { ThemeRadarPanel } from '../../components/intel/ThemeRadarPanel';
+import { MarketValidationPanel } from '../../components/intel/MarketValidationPanel';
 import { ThreeColumnLayout } from '../../components/ThreeColumnLayout';
 import {
   fetchWorkspaceMarketValidation,
@@ -77,42 +79,23 @@ export function IntelPage() {
   }, [date, payload, selectedItemId, selectedTheme]);
 
   const leftPanel = (
-    <section className="workspace-card">
-      <h3>主题雷达</h3>
-      <label className="workspace-note" style={{ display: "block", marginBottom: 8 }}>
-        <input type="checkbox" checked={themeFilterEnabled}
-          onChange={(e) => setThemeFilterEnabled(e.target.checked)}
-          style={{ marginRight: 6 }} />
-        按左栏主题过滤中栏
-      </label>
-      <ul className="workspace-list">
-        {themeRadar.map((row) => (
-          <li key={row.theme_id}>
-            <button type="button" className="link-button" onClick={() => setSelectedTheme(row.theme_id)}>{row.theme_name}</button>
-            <p className="workspace-note">热度 {row.heat} | 阶段 {row.stage} | 关联股 {row.stock_count}</p>
-          </li>
-        ))}
-      </ul>
-    </section>
+    <ThemeRadarPanel
+      themes={themeRadar}
+      loading={false}
+      error={workspaceErrors.themeRadar}
+      selectedTheme={selectedTheme}
+      onThemeClick={setSelectedTheme}
+      themeFilterEnabled={themeFilterEnabled}
+      onToggleFilter={setThemeFilterEnabled}
+    />
   );
 
   const rightPanel = (
-    <section className="workspace-card">
-      <h3>市场验证</h3>
-      <p className="workspace-note">候选级别: {marketValidation?.candidate_level || "--"}</p>
-      <p className="workspace-note">支撑类型: {marketValidation?.support_type || "--"}</p>
-      <p className="workspace-note">支撑分数: {marketValidation?.support_score ?? "--"}</p>
-      <p className="workspace-note">强势池数量: {marketValidation?.strong_watch_count ?? "--"}</p>
-      <p className="workspace-note">弱转强候选数量: {marketValidation?.w2s_candidate_count ?? "--"}</p>
-      <p className="workspace-note">Fallback状态: {streamDiagnostics.fallbackActive ? "开启" : "关闭"}</p>
-      <p className="workspace-note">Fallback原因: {streamDiagnostics.fallbackReason || "--"}</p>
-      <p className="workspace-note">流恢复时间: {streamDiagnostics.streamRecoveredAt || "--"}</p>
-      {!!marketValidation?.reject_reasons?.length && (
-        <ul className="workspace-list">{marketValidation.reject_reasons.map((r) => <li key={r}>{r}</li>)}</ul>
-      )}
-      {workspaceErrors.themeRadar && <p className="workspace-note">ThemeRadar异常: {workspaceErrors.themeRadar}</p>}
-      {workspaceErrors.marketValidation && <p className="workspace-note">MarketValidation异常: {workspaceErrors.marketValidation}</p>}
-    </section>
+    <MarketValidationPanel
+      data={marketValidation}
+      loading={false}
+      error={workspaceErrors.marketValidation}
+    />
   );
 
   return (

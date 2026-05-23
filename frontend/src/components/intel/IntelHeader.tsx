@@ -2,7 +2,7 @@ import React from 'react';
 import { useAuth } from '../../routes/auth/AuthProvider';
 import { navigateTo } from '../../lib/navigation';
 import type { SSEConnectionState } from '../../lib/api';
-import logoImg from '../../assets/intel-icons/logo.png';
+import logoImg from '../../assets/intel-icons/logo_1.png';
 import realtimeIcon from '../../assets/intel-icons/实时采集.png';
 import collectionIcon from '../../assets/intel-icons/采集控制台.png';
 import recapIcon from '../../assets/intel-icons/当日复盘.png';
@@ -66,16 +66,23 @@ export function IntelHeader({
           <img src={strongwatchIcon} alt="强势股跟踪" className="quick-action-icon" />
           <span className="quick-action-tooltip">强势股跟踪</span>
         </button>
+        {user && user.role === 'admin' && (
+          <button type="button" className="quick-action-card" onClick={() => navigateTo('/admin')} title="用户管理">
+            <span className="quick-action-icon" style={{ fontSize: 48, lineHeight: "64px", width: 128, textAlign: "center", display: "inline-block" }}>⚙</span>
+            <span className="quick-action-tooltip">用户管理</span>
+          </button>
+        )}
       </nav>
 
-      {/* Filters */}
-      <div className="intel-filters">
+      {/* Right-aligned: Filters + Status + User */}
+      <div style={{ display: "flex", alignItems: "center", gap: 10, marginLeft: "auto" }}>
         <select value={session} onChange={(e) => setSession(e.target.value)} className="intel-filter-select">
           <option value="all">全部时段</option>
           <option value="pre">盘前</option>
           <option value="intra">盘中</option>
           <option value="post">盘后</option>
         </select>
+        <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="intel-filter-select" />
         <select value={type} onChange={(e) => setType(e.target.value)} className="intel-filter-select">
           <option value="all">全部类型</option>
           <option value="recap">复盘</option>
@@ -86,23 +93,20 @@ export function IntelHeader({
           <option value="event">新事件</option>
           <option value="stock_move">异动</option>
         </select>
-        <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="intel-filter-select" />
+        <span style={{ fontSize: 14, color: "#9f9f9f", whiteSpace: "nowrap" }}>连结状态</span>
+        <span className={`intel-status-dot ${liveStatus}`} title={liveStatusText} />
+        {user && (
+          <div className="intel-user-bar">
+            <button className="intel-user-btn" onClick={logout} title="退出登录">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#9f9f9f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                <polyline points="16 17 21 12 16 7" />
+                <line x1="21" y1="12" x2="9" y2="12" />
+              </svg>
+            </button>
+          </div>
+        )}
       </div>
-
-      {/* Connection Status */}
-      <span className={`intel-status-dot ${liveStatus}`} title={liveStatusText}>
-        {liveNewCount > 0 && <span className="intel-live-badge">{liveNewCount}</span>}
-      </span>
-
-      {/* User */}
-      {user && (
-        <div className="intel-user-bar">
-          {user.role === 'admin' && <a href="/admin" className="intel-admin-link" title="用户管理">⚙</a>}
-          <button className="intel-user-btn" onClick={logout} title="退出登录">
-            <span className="intel-user-avatar">{user.email?.[0]?.toUpperCase() || 'U'}</span>
-          </button>
-        </div>
-      )}
     </header>
   );
 }

@@ -74,7 +74,15 @@ export interface MarketValidationView {
   strong_watch_count: number;
   w2s_candidate_count: number;
   stock_validation?: Record<string, unknown> | null;
-  source?: string;
+  theme_validation?: {
+    theme_name?: string;
+    cycle_stage?: string;
+    mainline_strength?: number;
+    fade_risk?: number;
+    mainline_alive?: boolean;
+    leader_stocks?: Array<{ name?: string; score?: number; pct_chg?: number }>;
+    source?: string;
+  } | null;
 }
 
 export interface StrongStockWatchItem {
@@ -300,6 +308,7 @@ export interface PreMarketOpportunityStock {
   level?: "A" | "B" | "C" | string;
   score?: number | null;
   reason?: string;
+  jyhf_reason?: string;
   risk?: string;
   evidence?: Record<string, unknown>;
 }
@@ -601,7 +610,7 @@ export async function fetchWorkspaceThemeRadar(params: {
   if (params.date) query.set("date", params.date);
   if (params.session) query.set("session", params.session);
   if (params.limit) query.set("limit", String(params.limit));
-  return fetchJsonWithTimeout<ThemeRadarView>(`/api/v2/workspace/theme-radar?${query.toString()}`, undefined, 10000);
+  return fetchJsonWithTimeout<ThemeRadarView>(`/api/v2/workspace/theme-radar?${query.toString()}`, undefined, 20000);
 }
 
 export async function fetchWorkspaceIntelContext(params: {

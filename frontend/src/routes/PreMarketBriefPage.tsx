@@ -10,6 +10,7 @@ import {
   type PreMarketOpportunityStock,
 } from "../lib/api";
 import { navigateTo } from "../lib/navigation";
+import premarketIcon from "../assets/intel-icons/盘前必读.png";
 
 function todayIso(): string {
   return new Date().toISOString().slice(0, 10);
@@ -390,47 +391,45 @@ export function PreMarketBriefPage() {
 
   return (
     <div className="workspace-page pre-market-page">
-      <header className="workspace-topbar">
+      <section className="strong-watch-toolbar">
+        <img src={premarketIcon} alt="" style={{ height: 64, width: 64, flexShrink: 0 }} />
+        <h1 className="strong-watch-title">盘前必读</h1>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, marginLeft: "auto" }}>
+          <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
+            <span style={{ fontSize: 12, color: "#9f9f9f" }}>交易日</span>
+            <input type="date" value={tradeDate} onChange={(event) => setTradeDate(event.target.value)}
+              style={{ border: "1px solid #2a2a2a", borderRadius: 6, background: "#1a1a1a", color: "#f5f5f5", padding: "4px 8px" }} />
+          </label>
+          <div className="recap-tag-stack">
+            <span className={`recap-chip ${statusClass(status)}`}>{status}</span>
+            {partial && <span className="recap-chip is-risk">partial</span>}
+            <span className="recap-chip">updated {text(payload?.updated_at || payload?.generated_at)}</span>
+          </div>
+          <button className="tag tag-button" type="button" style={{ fontSize: 16, padding: "8px 16px" }} onClick={() => setRefreshNonce((prev) => prev + 1)}>
+            刷新
+          </button>
+          <button
+            className="tag tag-button is-pass"
+            style={{ fontSize: 16, padding: "8px 16px" }}
+            type="button"
+            disabled={publishing}
+            onClick={async () => {
+              setPublishing(true);
+              try {
+                const result = await publishPreMarketBriefToNotion(tradeDate);
+                alert(`已发布到 Notion: ${result.page_url || result.action}`);
+              } catch (err: any) {
+                alert(`发布失败: ${err.message}`);
+              } finally {
+                setPublishing(false);
+              }
+            }}
+          >
+            {publishing ? "发布中..." : "发布到 Notion"}
+          </button>
+        </div>
         <button className="back-button" type="button" onClick={() => navigateTo("/intel")}>
-          返回情报台
-        </button>
-        <div>
-          <p className="eyebrow">Pre-Market Brief</p>
-          <h1>盘前必读</h1>
-          <p className="subtle">只读 pre_market_brief_snapshot 快照，展示事件驱动机会报告。</p>
-        </div>
-      </header>
-
-      <section className="workspace-card pre-market-toolbar">
-        <label className="recap-toolbar-date">
-          <span>交易日</span>
-          <input type="date" value={tradeDate} onChange={(event) => setTradeDate(event.target.value)} />
-        </label>
-        <div className="recap-tag-stack">
-          <span className={`recap-chip ${statusClass(status)}`}>{status}</span>
-          {partial && <span className="recap-chip is-risk">partial</span>}
-          <span className="recap-chip">updated {text(payload?.updated_at || payload?.generated_at)}</span>
-        </div>
-        <button className="tag tag-button" type="button" onClick={() => setRefreshNonce((prev) => prev + 1)}>
-          刷新
-        </button>
-        <button
-          className="tag tag-button is-pass"
-          type="button"
-          disabled={publishing}
-          onClick={async () => {
-            setPublishing(true);
-            try {
-              const result = await publishPreMarketBriefToNotion(tradeDate);
-              alert(`已发布到 Notion: ${result.page_url || result.action}`);
-            } catch (err: any) {
-              alert(`发布失败: ${err.message}`);
-            } finally {
-              setPublishing(false);
-            }
-          }}
-        >
-          {publishing ? "发布中..." : "发布到 Notion"}
+          返回
         </button>
       </section>
 
