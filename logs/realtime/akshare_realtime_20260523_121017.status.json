@@ -1,9 +1,9 @@
 {
   "run_id": "realtime_20260523_121017",
   "stream": "stream:news:raw",
-  "running": true,
+  "running": false,
   "started_at": "2026-05-23T20:10:18.792884+08:00",
-  "last_fetch_at": null,
+  "last_fetch_at": "2026-05-23T20:10:18.800493+08:00",
   "last_success_at": null,
   "fetched_count": 0,
   "pushed_count": 0,
