@@ -180,7 +180,8 @@ class StreamServicesManager:
                         "batch_size": 10,
                         "max_retries": 3
                     },
-                    "dependencies": ["stream_manager"]
+                    "dependencies": ["stream_manager"],
+                    "legacy": True,
                 },
                 "sse_pusher": {
                     "class": SSEPushService,
@@ -202,7 +203,8 @@ class StreamServicesManager:
                         "min_review_confidence": 0.6,
                         "skip_generic_theme": True,
                     },
-                    "dependencies": ["stream_manager", "database_gateway"]
+                    "dependencies": ["stream_manager", "database_gateway"],
+                    "legacy": True,
                 },
                 "theme_processor": {
                     "class": ThemeProcessor,
@@ -220,12 +222,21 @@ class StreamServicesManager:
                     "config": {},
                     "pass_config": False,
                     "param_map": {
-                        "redis_client": "stream_manager._client",
+                        "redis_client": "stream_manager.redis",
                         "db_gateway": "database_gateway",
+                        "consumer_group": "decision_executor_realtime",
                     },
                     "dependencies": ["stream_manager", "database_gateway"]
                 }
             }
+
+            # 默认关闭 legacy 服务（event_matcher / event_review_writer）
+            if os.getenv("ENABLE_LEGACY_EVENT_MATCHER", "false").lower() != "true":
+                services_config = {
+                    k: v for k, v in services_config.items()
+                    if not v.get("legacy")
+                }
+                logger.info("已过滤 legacy 服务（event_matcher/event_review_writer）")
 
             # 条件添加现有处理器服务
             if HAS_NEWS_STREAM_HANDLER and HAS_UNIFIED_STREAM_BUS and HAS_DATABASE_GATEWAY:

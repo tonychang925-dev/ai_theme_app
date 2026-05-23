@@ -24,12 +24,13 @@ class DecisionExecutor:
     3. 增强错误处理和数据验证
     """
     
-    def __init__(self, redis_client, db_gateway, consumer_name: str = None):
+    def __init__(self, redis_client, db_gateway, consumer_name: str = None, consumer_group: str = "decision_executors"):
         self.redis = redis_client
         self.db_gateway = db_gateway
         self.consumer_name = consumer_name or f"decision_{os.getpid()}"
+        self.consumer_group = consumer_group
         self.running = False
-        
+
         # Stream配置（保持原有）
         self.decision_stream = "stream:events:decision"
         self.dead_letter_stream = "stream:dead:letter"
@@ -254,6 +255,10 @@ class DecisionExecutor:
             await self._execute_drop_event_fixed(decision)
         else:
             raise ValueError(f"未知决策类型: {action}")
+
+        # 非 DROP 事件发布到 stream:event:feed，供 SSE 前端实时展示
+        if action != 'drop_event':
+            await self._publish_to_feed(action, decision, message_id)
 
     async def _execute_drop_event_fixed(self, decision: Dict):
         """执行低价值终态丢弃：只记录日志，不入复核、不入聚类、不建映射。"""
@@ -1294,5 +1299,30 @@ class DecisionExecutor:
             logger.info(f"\n最近错误 ({len(recent_errors)}个):")
             for error in recent_errors:
                 logger.info(f"  {error['time']} - {error['action']}: {error['error'][:100]}")
-        
+
         logger.info("="*60)
+
+    # ── Feed 发布（Phase 4B：DecisionResult → stream:event:feed → SSE → 前端）──
+
+    async def _publish_to_feed(self, action: str, decision: Dict, message_id: str):
+        """将非 DROP 的决策结果发布到 stream:event:feed，供 SSE 前端实时展示。"""
+        try:
+            event_data = decision.get("event_data") if isinstance(decision.get("event_data"), dict) else {}
+            feed_item = {
+                "event_id": event_data.get("event_id") or decision.get("event_id"),
+                "news_id": event_data.get("news_id") or decision.get("news_id"),
+                "event_type": "event",
+                "title": str(event_data.get("title") or decision.get("title") or ""),
+                "summary": str(event_data.get("summary") or decision.get("summary") or ""),
+                "decision": action,
+                "subject_key": str(event_data.get("subject_key") or decision.get("subject_key") or ""),
+                "theme_name": str(event_data.get("theme_name") or decision.get("theme_name") or ""),
+                "confidence": float(decision.get("confidence") or 0),
+                "reason_code": str(decision.get("reason_code") or decision.get("reason") or action),
+                "source": "decision_executor_feed",
+                "dropped": False,
+                "created_at": str(decision.get("created_at") or ""),
+            }
+            self.redis.xadd("stream:event:feed", feed_item, maxlen=2000)
+        except Exception as e:
+            logger.warning("发布 feed 失败: %s", e)
