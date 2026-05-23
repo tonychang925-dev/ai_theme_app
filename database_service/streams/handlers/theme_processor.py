@@ -1832,12 +1832,19 @@ class ThemeProcessor:
         if self.running:
             logger.warning("处理器已在运行")
             return self.all_tasks
-        
+
+        # 确保初始化完成（start_services.py 不会单独调用 initialize）
+        if self.redis_client is None or self.gateway is None:
+            logger.info("ThemeProcessor 未初始化，自动调用 initialize()...")
+            ok = await self.initialize()
+            if not ok:
+                raise RuntimeError("ThemeProcessor initialize() 失败，无法启动")
+
         self.running = True
         self.stats["started_at"] = datetime.now().isoformat()
-        
+
         logger.info("🚀 启动ThemeProcessor...")
-        
+
         # 创建消费者组
         await self._create_consumer_groups()
         
