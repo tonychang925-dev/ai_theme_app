@@ -224,6 +224,8 @@ class StreamServicesManager:
                     "param_map": {
                         "redis_client": "stream_manager.redis",
                         "db_gateway": "database_gateway",
+                    },
+                    "param_values": {
                         "consumer_group": "decision_executor_realtime",
                     },
                     "dependencies": ["stream_manager", "database_gateway"]
@@ -325,6 +327,10 @@ class StreamServicesManager:
                                     break
                         if obj is not None:
                             kwargs[param_name] = obj
+
+                    # 支持 param_values：直接传常量
+                    for pn, pv in service_config.get("param_values", {}).items():
+                        kwargs[pn] = pv
 
                     # 创建服务实例
                     service_instance = service_class(**kwargs)

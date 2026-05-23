@@ -1,14 +1,14 @@
 {
   "running": true,
-  "run_id": "realtime_20260523_121017",
+  "run_id": "realtime_20260523_122502",
   "cycles": 1,
   "collected_total": 150,
   "ingested_total": 150,
   "ingested_failed": 0,
   "extracted_total": 0,
   "extraction_failed": 0,
-  "last_collect_at": "2026-05-23T12:10:31.453173+00:00",
-  "last_ingest_at": "2026-05-23T12:10:33.330604+00:00",
+  "last_collect_at": "2026-05-23T12:25:16.488039+00:00",
+  "last_ingest_at": "2026-05-23T12:25:18.157921+00:00",
   "last_extract_at": null,
   "last_error": null
 }
