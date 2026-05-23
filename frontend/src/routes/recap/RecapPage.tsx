@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import type { NotionPublishResult, RecapViewModelV2 } from "../../lib/api";
-import { fetchRecapSnapshot, publishRecapToNotion } from "../../lib/api";
+import { fetchRecapSnapshot, fetchDailyReview, publishRecapToNotion, type DailyReviewView } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
 
 const DISPLAY_REPLACEMENTS: Array<[string, string]> = [
@@ -578,6 +578,61 @@ function sectionMap(payload: RecapViewModelV2 | null) {
   return map;
 }
 
+function DailyReviewTable({ dailyReview }: { dailyReview: DailyReviewView }) {
+  if (!dailyReview?.theme_reviews?.length) return null;
+  const { theme_reviews, diagnostics } = dailyReview;
+  const cov = (diagnostics as any)?.coverage;
+  return (
+    <div className="workspace-card" style={{ marginBottom: 12 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+        <span className="metric-label section-title">主线与支线（结构化）</span>
+        {cov?.snapshot_status === "partial" && (
+          <span className="recap-chip is-watch">
+            快照不完整：{cov.cycle_joined_count}/{cov.theme_count} 题材有周期数据
+          </span>
+        )}
+      </div>
+      <div className="recap-table-wrap">
+        <table className="recap-table" style={{ minWidth: 960 }}>
+          <thead>
+            <tr>
+              <th>题材</th>
+              <th>阶段</th>
+              <th>事件分</th>
+              <th>市场分</th>
+              <th>主线存活</th>
+              <th>龙头股</th>
+            </tr>
+          </thead>
+          <tbody>
+            {theme_reviews.map((tr) => (
+              <tr key={tr.subject_key}>
+                <td>
+                  <button className="recap-theme-link" type="button"
+                    onClick={() => navigateTo(`/themes/${encodeURIComponent(tr.subject_key)}`)}>
+                    {tr.theme_name}
+                  </button>
+                </td>
+                <td>{zh(tr.theme_stage)}</td>
+                <td>{tr.mainline_strength_score > 0 ? tr.mainline_strength_score.toFixed(2) : "--"}</td>
+                <td>{tr.fade_risk_score > 0 ? tr.fade_risk_score.toFixed(2) : "--"}</td>
+                <td>{tr.final_mainline_alive ? "是" : "否"}</td>
+                <td className="recap-cell-wrap">
+                  {tr.leader_stocks?.slice(0, 3).map((ls, i) => (
+                    <span key={i}>
+                      {i > 0 && "、"}{ls.stock_name || ls.stock_id}
+                    </span>
+                  )) || "--"}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
 export function RecapPage() {
   const today = useMemo(() => new Date().toISOString().slice(0, 10), []);
   const initialType = window.location.search.includes("report_type=pre_market") ? "pre_market" : "post_market";
@@ -753,6 +808,16 @@ export function RecapPage() {
     };
   }, [tradeDate, reportType]);
 
+  const [dailyReview, setDailyReview] = useState<DailyReviewView | null>(null);
+  useEffect(() => {
+    let active = true;
+    if (reportType !== "post_market") return;
+    fetchDailyReview(tradeDate)
+      .then((data) => { if (active) setDailyReview(data); })
+      .catch(() => { if (active) setDailyReview(null); });
+    return () => { active = false; };
+  }, [tradeDate, reportType]);
+
   function toggleAbnormalSort(key: "score" | "turnoverRate" | "volumeRatio" | "volumeVsMa50") {
     if (abnormalSortKey === key) {
       setAbnormalSortDir((prev) => (prev === "desc" ? "asc" : "desc"));
@@ -894,7 +959,10 @@ export function RecapPage() {
                 </div>
               )}
 
-              {(sections.get("主线与支线") ?? sections.get("可做主线与支线") ?? []).length > 0 && (
+              {/* P4: 优先渲染结构化 DailyReview，fallback 到旧 sections 解析 */}
+              {dailyReview?.theme_reviews?.length ? (
+                <DailyReviewTable dailyReview={dailyReview} />
+              ) : (sections.get("主线与支线") ?? sections.get("可做主线与支线") ?? []).length > 0 && (
                 <div className="workspace-card">
                   <span className="metric-label section-title">{payload.report_type === "post_market" ? "主线与支线" : "可做主线与支线"}</span>
                   {payload.report_type === "post_market" ? (

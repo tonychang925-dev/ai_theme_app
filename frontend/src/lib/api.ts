@@ -190,6 +190,74 @@ export interface RecapViewModelV2 extends MarketReportView {
   };
 }
 
+// ── DailyReview 结构化接口（P3） ──
+
+export interface ThemeReview {
+  subject_key: string;
+  theme_name: string;
+  theme_stage: string;
+  theme_strength?: string;
+  mainline_strength_score: number;
+  fade_risk_score: number;
+  final_cycle_state: string;
+  final_mainline_alive: boolean;
+  capital_validation?: string;
+  leader_stocks: LeaderStockBrief[];
+  event_chain: ThemeEventItem[];
+  action_advice: string;
+  conclusion: string;
+  diagnostics?: {
+    cycle_joined: boolean;
+    capital_joined: boolean;
+    leader_count: number;
+  };
+}
+
+export interface LeaderStockBrief {
+  stock_id?: string;
+  stock_name?: string;
+  leader_composite_score?: number;
+  leader_capital_score?: number;
+  pct_chg?: number;
+}
+
+export interface ThemeEventItem {
+  event_id?: string;
+  event_date?: string;
+  title?: string;
+  description?: string;
+  event_level?: string;
+  credibility?: string;
+}
+
+export interface CapitalReview {
+  stock_code?: string;
+  stock_name?: string;
+  net_buy_amount?: number;
+  seat_type?: string;
+  related_theme?: string;
+  ai_comment?: string;
+}
+
+export interface DailyReviewView {
+  trade_date: string;
+  market_summary: Record<string, unknown>;
+  theme_reviews: ThemeReview[];
+  capital_reviews: CapitalReview[];
+  trading_principle: Record<string, unknown>;
+  diagnostics?: Record<string, unknown>;
+}
+
+export async function fetchDailyReview(date: string): Promise<DailyReviewView> {
+  return fetchJsonWithTimeout<DailyReviewView>(
+    `/api/v2/daily-review?date=${encodeURIComponent(date)}`,
+    undefined,
+    10000,
+  );
+}
+
+// ──
+
 interface PostMarketSnapshotView {
   trade_date: string;
   snapshot_version: string;
@@ -643,7 +711,7 @@ export async function fetchThemeWorkspace(subjectKey: string, tradeDate?: string
     stocks_limit: "10"
   });
   if (tradeDate) query.set("trade_date", tradeDate);
-  const response = await fetch(`/api/v1/theme/workspace/${subjectKey}?${query.toString()}`);
+  const response = await fetch(`/api/v2/theme_workspace/${encodeURIComponent(subjectKey)}?${query.toString()}`);
   if (!response.ok) {
     throw new Error(`theme workspace request failed: ${response.status}`);
   }
@@ -657,7 +725,7 @@ export async function fetchStockWorkspace(stockId: string): Promise<StockWorkspa
     mapping_scope: "all",
     themes_limit: "10"
   });
-  const response = await fetch(`/api/v1/stock/workspace/${stockId}?${query.toString()}`);
+  const response = await fetch(`/api/v2/stock_workspace/${encodeURIComponent(stockId)}?${query.toString()}`);
   if (!response.ok) {
     throw new Error(`stock workspace request failed: ${response.status}`);
   }

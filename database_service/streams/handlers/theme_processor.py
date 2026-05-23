@@ -15,6 +15,7 @@ from datetime import datetime
 from typing import Dict, List, Optional, Any
 
 import redis.asyncio as redis
+from database_service.streams.services.review_eligibility import should_enter_human_review
 
 # 添加项目路径
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -630,6 +631,22 @@ class ThemeProcessor:
 
     def _build_structured_decision(self, event_row: Dict[str, Any], match_result: Dict[str, Any], message_id: str) -> Dict[str, Any]:
         decision = match_result.get("decision", "UNKNOWN")
+        review_eligibility: Dict[str, Any] = {}
+        if decision == "HUMAN_REVIEW":
+            review_eligibility = should_enter_human_review(
+                event_row,
+                match_result,
+                self._extract_triage_result(event_row),
+            )
+            if not review_eligibility.get("should_keep_review"):
+                decision = "DROPPED"
+                match_result = {
+                    **match_result,
+                    "decision": "DROPPED",
+                    "review_required": False,
+                    "reason_code": review_eligibility.get("reason_code") or "review_ineligible_dropped",
+                    "review_eligibility": review_eligibility,
+                }
         action_map = {
             "MATCH": "update_theme",
             "UNKNOWN": "publish_clustering",
@@ -675,6 +692,8 @@ class ThemeProcessor:
             "reason": match_result.get("reason_code", ""),
             "source": "structured_theme_match",
             "match_result": match_result,
+            "review_eligibility": review_eligibility,
+            "review_required": bool(review_eligibility.get("should_keep_review")) if review_eligibility else bool(match_result.get("review_required")),
             "theme_data": {
                 "subject_key": match_result.get("matched_subject_key", ""),
                 "name": match_result.get("matched_theme_name", ""),
@@ -683,6 +702,29 @@ class ThemeProcessor:
             "run_id": event_row.get("run_id"),
             "case_id": event_row.get("case_id"),
         }
+
+    @staticmethod
+    def _extract_triage_result(event_row: Dict[str, Any]) -> Dict[str, Any]:
+        for key in ("triage_result", "local_triage"):
+            value = event_row.get(key)
+            if isinstance(value, dict):
+                return value
+        raw_event_json = event_row.get("raw_event_json")
+        if isinstance(raw_event_json, str):
+            try:
+                raw_event_json = json.loads(raw_event_json)
+            except Exception:
+                raw_event_json = {}
+        if isinstance(raw_event_json, dict):
+            directive = raw_event_json.get("theme_directive")
+            if isinstance(directive, dict) and isinstance(directive.get("triage_result"), dict):
+                return directive["triage_result"]
+            if isinstance(raw_event_json.get("triage_result"), dict):
+                return raw_event_json["triage_result"]
+        directive = event_row.get("theme_directive")
+        if isinstance(directive, dict) and isinstance(directive.get("triage_result"), dict):
+            return directive["triage_result"]
+        return {}
 
     def _update_structured_stats(self, result: Dict[str, Any]) -> None:
         self.stats["total_processed"] += 1

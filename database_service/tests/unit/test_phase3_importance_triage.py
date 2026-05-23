@@ -5,10 +5,12 @@ import pytest
 
 from database_service.streams.handlers.news_stream_processor import NewsStreamProcessor
 from database_service.streams.services.local_qwen_triage_service import LocalQwenNewsTriageService
+from database_service.streams.services.review_eligibility import should_enter_human_review
 
 
 ROOT = Path(__file__).resolve().parents[3]
 PHASE3_EVAL = ROOT / "theme_service" / "eval" / "product_runtime_phase3"
+PHASE3B_EVAL = ROOT / "theme_service" / "eval" / "product_runtime_phase3b"
 
 
 class _EventBus:
@@ -43,6 +45,11 @@ def _jsonl(name):
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
 
 
+def _jsonl_phase3b(name):
+    path = PHASE3B_EVAL / name
+    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+
+
 @pytest.mark.parametrize("case", _jsonl("importance_triage_hard_negatives.jsonl"), ids=lambda row: row["case_id"])
 def test_tc_phase3_low_value_cases_skip_before_structuring(case):
     service = LocalQwenNewsTriageService({"enable_local_triage": False})
@@ -70,6 +77,7 @@ def test_tc_phase3a_low_value_cases_skip_and_must_not_enter_review(case):
     assert result["should_enter_theme_match"] is False
     assert result["should_enter_premarket_major_events"] is False
     assert result["event_value_type"] == "low_value_disclosure"
+    assert result["should_enter_review"] is False
 
 
 @pytest.mark.parametrize("case", _jsonl("importance_triage_positive_cases.jsonl"), ids=lambda row: row["case_id"])
@@ -82,6 +90,30 @@ def test_tc_phase3_important_cases_pass_to_structuring(case):
     assert result["should_structurize"] is True
     assert result["should_enter_theme_match"] is True
     assert result["importance_level"] in {"S", "A", "B"}
+
+
+@pytest.mark.parametrize("case", _jsonl_phase3b("review_eligibility_hard_negatives.jsonl"), ids=lambda row: row["case_id"])
+def test_tc_phase3b_low_value_and_weak_events_do_not_enter_review(case):
+    result = should_enter_human_review(
+        {"title": case["title"], "summary": case["summary"]},
+        {"reason_code": case["reason_code"], "runtime_source": "v1_fallback"},
+        case.get("triage_result") or {},
+    )
+
+    assert result["should_keep_review"] is case["expected_should_keep_review"]
+    assert result["suggested_action"] == case["expected_suggested_action"]
+
+
+@pytest.mark.parametrize("case", _jsonl_phase3b("review_eligibility_positive_cases.jsonl"), ids=lambda row: row["case_id"])
+def test_tc_phase3b_high_value_uncertain_events_can_enter_review(case):
+    result = should_enter_human_review(
+        {"title": case["title"], "summary": case["summary"]},
+        {"reason_code": case["reason_code"], "runtime_source": "v2_accepted"},
+        case["triage_result"],
+    )
+
+    assert result["should_keep_review"] is case["expected_should_keep_review"]
+    assert result["suggested_action"] == "keep_review"
 
 
 @pytest.mark.asyncio

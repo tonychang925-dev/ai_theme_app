@@ -342,6 +342,21 @@ async def theme_workspace(subject_key: str, request: Request) -> dict:
     return await _proxy_stock_processing_json(f"/api/v1/theme_workspace/{subject_key}", params)
 
 
+@router.get("/daily-review")
+async def daily_review(date: str = Query(..., description="YYYY-MM-DD")) -> dict:
+    return await _proxy_stock_processing_json(
+        "/api/v1/daily_review",
+        {"trade_date": date},
+    )
+
+
+@router.get("/stock_workspace/{stock_id}")
+@router.get("/stock-workspace/{stock_id}")
+async def stock_workspace(stock_id: str, request: Request) -> dict:
+    params = {k: v for k, v in request.query_params.items()}
+    return await _proxy_stock_processing_json(f"/api/v1/stock/workspace/{stock_id}", params)
+
+
 @router.get("/mobile/defaults")
 async def mobile_defaults() -> dict:
     return await _proxy_stock_processing_json("/api/v1/mobile/defaults", {})

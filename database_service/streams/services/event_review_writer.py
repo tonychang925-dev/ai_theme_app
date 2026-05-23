@@ -21,6 +21,7 @@ import time
 
 from database_service.streams.utils.retry_manager import RetryManager
 from database_service.gateway import DatabaseGateway
+from database_service.streams.services.review_eligibility import should_enter_human_review
 
 logger = logging.getLogger(__name__)
 
@@ -188,7 +189,8 @@ class EventReviewWriter:
                     processed_ids.append(message_id)
                     continue
 
-                # 检查是否需要复核（新口径：只要命中有效题材即入复核，不再强依赖review_required）
+                # 检查是否需要复核。Phase 3B 起：HUMAN_REVIEW 只保留高价值不确定事件，
+                # 不能再用“命中有效题材”作为入队条件。
                 review_required = payload.get("review_required", False)
                 logger.info(
                     f"检查复核要求: message_id={message_id}, review_required={review_required}, payload_keys={list(payload.keys())}"
@@ -229,6 +231,23 @@ class EventReviewWriter:
                 if float(confidence or 0.0) < self.min_review_confidence:
                     logger.info(
                         f"跳过事件 (置信度低): {message_id}, confidence={float(confidence or 0.0):.2f}, threshold={self.min_review_confidence:.2f}"
+                    )
+                    self.stats["skipped"] += 1
+                    processed_ids.append(message_id)
+                    continue
+
+                eligibility = should_enter_human_review(
+                    self._event_from_payload(payload),
+                    self._match_result_from_payload(payload),
+                    self._triage_result_from_payload(payload),
+                )
+                if not eligibility.get("should_keep_review"):
+                    logger.info(
+                        "跳过事件 (复核资格不满足): message_id=%s event_id=%s reason=%s action=%s",
+                        message_id,
+                        event_id,
+                        eligibility.get("reason_code"),
+                        eligibility.get("suggested_action"),
                     )
                     self.stats["skipped"] += 1
                     processed_ids.append(message_id)
@@ -294,6 +313,39 @@ class EventReviewWriter:
         if event_data:
             text = " ".join([text, str(event_data.get("title") or ""), str(event_data.get("summary") or "")])
         return any(term in text for term in LOW_VALUE_REVIEW_TERMS)
+
+    @staticmethod
+    def _event_from_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
+        event_data = payload.get("event_data") if isinstance(payload.get("event_data"), dict) else {}
+        return {
+            **event_data,
+            "title": payload.get("title") or payload.get("event_title") or event_data.get("title"),
+            "summary": payload.get("summary") or event_data.get("summary") or payload.get("reason"),
+            "content": payload.get("content") or event_data.get("content"),
+            "reason": payload.get("reason"),
+            "reason_code": payload.get("reason_code"),
+        }
+
+    @staticmethod
+    def _match_result_from_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
+        match_result = payload.get("match_result") if isinstance(payload.get("match_result"), dict) else {}
+        return {
+            **match_result,
+            "reason_code": match_result.get("reason_code") or payload.get("reason_code") or payload.get("reason"),
+            "runtime_source": match_result.get("runtime_source") or payload.get("runtime_source"),
+            "match_reason": match_result.get("match_reason") or payload.get("match_reason"),
+            "accepted_anchor_hits": match_result.get("accepted_anchor_hits") or payload.get("accepted_anchor_hits"),
+            "best_evidence": match_result.get("best_evidence") or payload.get("best_evidence"),
+        }
+
+    @staticmethod
+    def _triage_result_from_payload(payload: Dict[str, Any]) -> Dict[str, Any]:
+        triage = payload.get("triage_result") if isinstance(payload.get("triage_result"), dict) else {}
+        if not triage:
+            event_data = payload.get("event_data") if isinstance(payload.get("event_data"), dict) else {}
+            directive = event_data.get("theme_directive") if isinstance(event_data.get("theme_directive"), dict) else {}
+            triage = directive.get("triage_result") if isinstance(directive.get("triage_result"), dict) else {}
+        return triage
 
     def _extract_event_id_number(self, event_id) -> int:
         """从事件ID中提取数字ID"""

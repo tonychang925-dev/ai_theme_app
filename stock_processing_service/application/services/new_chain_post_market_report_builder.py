@@ -262,7 +262,17 @@ class NewChainPostMarketReportBuilder:
         )
         lines: list[str] = []
         debug: list[dict[str, Any]] = []
-        for theme, items in list(grouped.items())[:limit]:
+
+        # 有 cycle 数据的题材优先展示（事件分/市场分需要 cycle 数据）
+        def _theme_rank(theme: str, items: list[dict[str, Any]]) -> tuple[int, float]:
+            top_sk = str((items[0] or {}).get("subject_key") or "").strip() if items else ""
+            has_cycle = 1 if cycles_by_theme.get(top_sk) else 0
+            best = max((NewChainPostMarketReportBuilder._score(x) for x in items), default=0.0)
+            # 有 cycle → 排在前面（has_cycle=0 means YES, 1 means NO for ascending sort）
+            return (0 if has_cycle else 1, -best)
+
+        ranked_themes = sorted(grouped.items(), key=lambda kv: _theme_rank(kv[0], kv[1]))
+        for theme, items in ranked_themes[:limit]:
             top = sorted(items, key=lambda x: NewChainPostMarketReportBuilder._score(x), reverse=True)[:3]
             stocks = "、".join(str(x.get("stock_name") or x.get("stock_id") or "") for x in top)
             subject_key = str(top[0].get("subject_key") or "--") if top else "--"

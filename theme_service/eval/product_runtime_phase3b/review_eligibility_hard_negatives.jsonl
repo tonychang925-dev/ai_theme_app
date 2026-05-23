@@ -1,0 +1,6 @@
+{"case_id":"hn_review_regulatory_notice_001","title":"智度股份：收到广东证监局行政监管措施决定书","summary":"公司及相关人员收到广东证监局行政监管措施决定书。","reason_code":"weak_v1_direct_hit_review","expected_should_keep_review":false,"expected_suggested_action":"drop_low_value"}
+{"case_id":"hn_review_ordinary_earnings_002","title":"网易第一季度营收306亿元","summary":"网易发布2026年第一季度财报，披露营收和净利润。","reason_code":"weak_v1_llm_accept_review","expected_should_keep_review":false,"expected_suggested_action":"drop_low_value"}
+{"case_id":"hn_review_clarification_003","title":"7连板威龙股份：无注入算力计划","summary":"公司澄清不涉及算力资产注入并提示交易风险。","reason_code":"ambiguous_top_candidate","expected_should_keep_review":false,"expected_suggested_action":"drop_low_value"}
+{"case_id":"hn_review_weather_004","title":"四川发布山洪灾害蓝色预警","summary":"多地有暴雨和山洪灾害风险。","reason_code":"weak_v1_direct_hit_review","expected_should_keep_review":false,"expected_suggested_action":"drop_low_value"}
+{"case_id":"hn_review_buyback_reduction_005","title":"神马电力股东拟减持不超过1%股份","summary":"公司公告股东减持计划。","reason_code":"weak_v1_llm_accept_review","expected_should_keep_review":false,"expected_suggested_action":"drop_low_value"}
+{"case_id":"hn_review_ordinary_ipo_006","title":"格林生物创业板IPO获受理","summary":"公司递交创业板上市申请。","reason_code":"llm_accept_without_hard_evidence","expected_should_keep_review":false,"expected_suggested_action":"drop_low_value"}

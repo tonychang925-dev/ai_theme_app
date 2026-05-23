@@ -41,15 +41,14 @@ class LocalQwenNewsTriageService:
         self._negative_anchor = None
 
         self._catalyst_keywords = {
-            "政策", "业绩", "预增", "预亏", "并购", "重组", "订单", "中标",
-            "回购", "减持", "停牌", "复牌", "监管", "财政", "降息", "加息",
-            "关税", "出口", "制裁", "突破技术", "新品", "扩产", "事故", "诉讼",
+            "政策", "预增", "预亏", "并购", "重组", "订单", "中标",
+            "财政", "降息", "加息", "关税", "出口", "制裁", "突破技术",
+            "新品", "扩产", "投产", "供给短缺", "价格上涨", "技术突破",
         }
         self._concrete_catalyst_keywords = {
-            "公告", "中标", "签约", "订单", "业绩预告", "净利润", "收入", "回购计划",
-            "减持计划", "并购", "重组", "监管函", "处罚", "停牌", "复牌", "增持",
-            "分红", "问询函", "产能", "投产", "召回", "诉讼", "获批", "批文",
-            "补贴", "关税", "出口管制", "降息", "加息", "财政刺激",
+            "中标", "签约", "订单", "业绩预告", "并购", "重组", "停牌",
+            "复牌", "产能", "投产", "召回", "获批", "批文", "补贴",
+            "关税", "出口管制", "降息", "加息", "财政刺激", "重大合同",
         }
         self._generic_move_phrases = {
             "市场分析认为与政策面变化有关",
@@ -226,7 +225,8 @@ class LocalQwenNewsTriageService:
             "地域词、监管机构所在地、公司行业属性不能构成PASS。重复事件输出DUPLICATE。\n"
             "PASS仅用于明确题材催化、公司重大订单/中标/并购重组、产业政策、技术突破、行业供需价格变化、海外产业链催化。\n"
             "信息有交易价值但证据不足输出REVIEW。\n"
-            'JSON schema: {"decision":"PASS|REVIEW|SKIP|DUPLICATE","importance_level":"S|A|B|C|D","event_value_type":"theme_catalyst|company_catalyst|macro_policy|sector_supply_demand|risk_alert|low_value_disclosure|market_noise|duplicate","should_structurize":true,"should_publish_structured_stream":true,"should_enter_theme_match":true,"should_enter_premarket_major_events":true,"reason_code":"string","confidence":0.0,"evidence":["最多3条"],"dedupe_key":"规范化事件key"}\n'
+            "C/D级REVIEW不得进入人工复核，只有S/A/B且有明确催化证据的REVIEW才可should_enter_review=true。\n"
+            'JSON schema: {"decision":"PASS|REVIEW|SKIP|DUPLICATE","importance_level":"S|A|B|C|D","event_value_type":"theme_catalyst|company_catalyst|macro_policy|sector_supply_demand|major_risk_alert|low_value_disclosure|market_noise|duplicate","should_structurize":true,"should_publish_structured_stream":true,"should_enter_theme_match":true,"should_enter_review":false,"should_enter_premarket_major_events":true,"reason_code":"string","confidence":0.0,"evidence":["最多3条"],"dedupe_key":"规范化事件key"}\n'
             f"新闻：{short_text}\n"
             "输出："
         )
@@ -311,12 +311,24 @@ class LocalQwenNewsTriageService:
         return hashlib.sha1(normalized.encode("utf-8")).hexdigest()[:24] if normalized else ""
 
     @staticmethod
-    def _routing_flags(decision: str) -> Dict[str, bool]:
+    def _routing_flags(decision: str, importance_level: str = "C", event_value_type: str = "market_noise") -> Dict[str, bool]:
         should_continue = decision == "PASS"
+        should_enter_review = (
+            decision == "REVIEW"
+            and importance_level in {"S", "A", "B"}
+            and event_value_type in {
+                "theme_catalyst",
+                "company_catalyst",
+                "macro_policy",
+                "sector_supply_demand",
+                "major_risk_alert",
+            }
+        )
         return {
             "should_structurize": should_continue,
             "should_publish_structured_stream": should_continue,
             "should_enter_theme_match": should_continue,
+            "should_enter_review": should_enter_review,
             "should_enter_premarket_major_events": should_continue,
         }
 
@@ -365,11 +377,12 @@ class LocalQwenNewsTriageService:
         raw: str | None = None,
     ) -> Dict[str, Any]:
         normalized_decision = decision if decision in {"PASS", "REVIEW", "SKIP", "DUPLICATE"} else "REVIEW"
+        normalized_importance = importance_level if importance_level in {"S", "A", "B", "C", "D"} else "C"
         result = {
             "decision": normalized_decision,
-            "importance_level": importance_level if importance_level in {"S", "A", "B", "C", "D"} else "C",
+            "importance_level": normalized_importance,
             "event_value_type": event_value_type,
-            **self._routing_flags(normalized_decision),
+            **self._routing_flags(normalized_decision, normalized_importance, event_value_type),
             "reason_code": reason_code,
             "reason": reason,
             "confidence": min(1.0, max(0.0, float(confidence))),
@@ -400,6 +413,19 @@ class LocalQwenNewsTriageService:
             raw=str(raw.get("raw")) if raw.get("raw") is not None else None,
         )
         result["dedupe_key"] = str(raw.get("dedupe_key") or result["dedupe_key"])
+        for key in (
+            "should_structurize",
+            "should_publish_structured_stream",
+            "should_enter_theme_match",
+            "should_enter_review",
+            "should_enter_premarket_major_events",
+        ):
+            if key in raw and isinstance(raw.get(key), bool):
+                result[key] = bool(raw[key])
+        if result["decision"] in {"SKIP", "DUPLICATE"}:
+            result["should_enter_review"] = False
+        if result["decision"] == "REVIEW" and result["importance_level"] in {"C", "D"}:
+            result["should_enter_review"] = False
         return result
 
     @staticmethod
