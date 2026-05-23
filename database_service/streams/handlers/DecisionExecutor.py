@@ -35,8 +35,7 @@ class DecisionExecutor:
         self.decision_stream = "stream:events:decision"
         self.dead_letter_stream = "stream:dead:letter"
         self.theme_updates_stream = "stream:themes:updates"
-        self.consumer_group = "decision_executors"
-        
+
         # 执行状态追踪（优化版）
         self.execution_context = {
             'last_execution_time': None,
