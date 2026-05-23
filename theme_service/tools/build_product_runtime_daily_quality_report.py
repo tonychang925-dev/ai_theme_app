@@ -223,10 +223,16 @@ def _snapshot_counts(snapshot: dict[str, Any]) -> dict[str, Any]:
             duplicate_primary += 1
         seen_event_ids.add(key)
     return {
-        "major_events": len(major_events),
-        "matched_themes": len(matched_themes),
+        "major_events_count": len(major_events),
+        "matched_themes_count": len(matched_themes),
+        "review_events_count": len(_as_list(sections.get("review_events"))),
+        "unknown_watch_count": len(_as_list(sections.get("unknown_watch"))),
         "low_value_major_count": low_value_major,
         "duplicate_primary_count": duplicate_primary,
+        "dropped_event_count": int(diagnostics.get("dropped_event_count") or 0),
+        "low_value_dropped_count": int(diagnostics.get("low_value_dropped_count") or 0),
+        "review_ineligible_dropped_count": int(diagnostics.get("review_ineligible_dropped_count") or 0),
+        "high_value_review_count": int(diagnostics.get("high_value_review_count") or 0),
         "match_count": int(diagnostics.get("matched_event_count") or len(major_events) or 0),
         "human_review_count": int(diagnostics.get("review_event_count") or 0),
         "unknown_count": int(diagnostics.get("unknown_event_count") or 0),
@@ -291,19 +297,22 @@ def _write_quality_report(path: Path, trade_date: date, metrics: dict[str, Any],
         f"- trade_date: {trade_date.isoformat()}",
     ]
     for key in [
-        "major_events",
-        "matched_themes",
+        "major_events_count",
+        "matched_themes_count",
+        "review_events_count",
+        "unknown_watch_count",
+        "dropped_event_count",
+        "low_value_dropped_count",
+        "review_ineligible_dropped_count",
+        "high_value_review_count",
+        "duplicate_primary_count",
+        "low_value_major_count",
+        "hard_negative_violation_count",
         "match_count",
         "human_review_count",
         "unknown_count",
         "direct_theme_name_hit_count",
-        "llm_accept_match_count",
         "llm_accept_blocked_count",
-        "weak_v1_llm_accept_review_count",
-        "low_conf_llm_accept_review_count",
-        "low_value_event_match_blocked_count",
-        "low_value_major_count",
-        "duplicate_primary_count",
         "v1_fallback_match_count",
         "v2_accepted_match_count",
         "obvious_wrong_match_sample_count",
@@ -314,8 +323,9 @@ def _write_quality_report(path: Path, trade_date: date, metrics: dict[str, Any],
             "",
             "## Observation Notes",
             "",
-            "- This report is observational. Do not enter Phase 2E unless real new data triggers a Phase 2E condition.",
-            "- `HUMAN_REVIEW` growth caused by weak evidence is expected after Phase 2D.",
+            "- This report is observational. Do not enter Phase 3C unless real new data triggers a Phase 3C condition.",
+            "- Phase 3B baseline: product review should only contain high-value uncertain events.",
+            "- Do not continue gate repair unless a Phase 3C trigger is observed.",
             "",
             "## Obvious Wrong Match Candidates",
             "",
@@ -333,6 +343,26 @@ def _write_quality_report(path: Path, trade_date: date, metrics: dict[str, Any],
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def _hard_negative_violation_count(summary_path: Path | None) -> int:
+    candidates = []
+    if summary_path is not None:
+        candidates.append(summary_path)
+    candidates.extend(
+        [
+            Path("tmp/product_runtime_phase3b/full_hard_negative_active_v2/theme_profile_v1_v2_compare_summary.json"),
+            Path("tmp/product_runtime_phase3/full_hard_negative_active_v2/theme_profile_v1_v2_compare_summary.json"),
+        ]
+    )
+    for path in candidates:
+        if not path.exists():
+            continue
+        data = _as_json(path.read_text(encoding="utf-8"))
+        total = int(data.get("hard_negative_total") or 0)
+        rate = float(data.get("v2_hard_negative_reject_rate") or 0.0)
+        return max(0, round(total * (1.0 - rate)))
+    return 0
+
+
 def _write_direct_hit_audit(path: Path, details: list[dict[str, Any]]) -> None:
     grouped: Counter[tuple[str, str, str]] = Counter()
     for row in details:
@@ -348,6 +378,49 @@ def _write_direct_hit_audit(path: Path, details: list[dict[str, Any]]) -> None:
     ]
     for (subject_key, subject_name, runtime_source), count in grouped.most_common():
         lines.append(f"| {subject_key} | {subject_name} | {runtime_source} | {count} |")
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def _write_match_audit(path: Path, details: list[dict[str, Any]]) -> None:
+    by_subject: Counter[tuple[str, str, str]] = Counter()
+    by_reason: Counter[str] = Counter()
+    for row in details:
+        by_subject[(str(row.get("subject_key")), str(row.get("subject_name")), str(row.get("runtime_source")))] += 1
+        by_reason[str(row.get("match_reason") or "")] += 1
+    lines = [
+        "# Match Audit",
+        "",
+        f"- match_rows: {len(details)}",
+        "",
+        "## By Match Reason",
+    ]
+    lines.extend(f"- {reason or 'unknown'}: {count}" for reason, count in by_reason.most_common())
+    lines.extend(["", "## By Subject", "", "| subject_key | subject_name | runtime_source | n |", "|---|---|---|---:|"])
+    for (subject_key, subject_name, runtime_source), count in by_subject.most_common(80):
+        lines.append(f"| {subject_key} | {subject_name} | {runtime_source} | {count} |")
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def _write_review_audit(path: Path, reviews: list[dict[str, Any]]) -> None:
+    by_status = Counter(str(row.get("review_status") or "") for row in reviews)
+    by_reason = Counter(str(row.get("reason") or "") for row in reviews)
+    lines = [
+        "# Review Audit",
+        "",
+        f"- review_queue_rows_in_window: {len(reviews)}",
+        "",
+        "## By Status",
+    ]
+    lines.extend(f"- {status or 'unknown'}: {count}" for status, count in by_status.most_common())
+    lines.extend(["", "## By Reason", ""])
+    lines.extend(f"- {reason or 'unknown'}: {count}" for reason, count in by_reason.most_common(30))
+    lines.extend(["", "## Detail", "", "| event_id | status | reason | proposed_theme | title |", "|---|---|---|---|---|"])
+    for row in reviews[:120]:
+        title = str(row.get("title") or "").replace("|", "/")
+        lines.append(
+            f"| {row.get('event_id')} | {row.get('review_status')} | {row.get('reason') or ''} | "
+            f"{row.get('proposed_theme_name') or ''} | {title} |"
+        )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
@@ -405,11 +478,29 @@ def _write_low_value_audit(path: Path, details: list[dict[str, Any]], reviews: l
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def _write_drop_audit(path: Path, metrics: dict[str, Any], reviews: list[dict[str, Any]]) -> None:
+    dropped_reviews = [row for row in reviews if str(row.get("review_status") or "") == "dropped"]
+    by_reason = Counter(str(row.get("reason") or "") for row in dropped_reviews)
+    lines = [
+        "# Drop Audit",
+        "",
+        f"- dropped_event_count: {metrics.get('dropped_event_count', 0)}",
+        f"- low_value_dropped_count: {metrics.get('low_value_dropped_count', 0)}",
+        f"- review_ineligible_dropped_count: {metrics.get('review_ineligible_dropped_count', 0)}",
+        f"- dropped_review_queue_rows_in_window: {len(dropped_reviews)}",
+        "",
+        "## Dropped Review Queue Reasons",
+    ]
+    lines.extend(f"- {reason or 'unknown'}: {count}" for reason, count in by_reason.most_common(30))
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 async def _main() -> None:
     parser = argparse.ArgumentParser(description="Build daily product runtime quality observation report.")
     parser.add_argument("--db-name", default="stock_data_test")
     parser.add_argument("--trade-date", required=True)
     parser.add_argument("--out-dir", type=Path, default=None)
+    parser.add_argument("--hard-negative-summary", type=Path, default=None)
     args = parser.parse_args()
 
     trade_date = date.fromisoformat(args.trade_date)
@@ -444,11 +535,15 @@ async def _main() -> None:
         "v1_fallback_match_count": sum(row.get("runtime_source") == "v1_fallback" for row in details),
         "v2_accepted_match_count": sum(row.get("runtime_source") == "v2_accepted" for row in details),
         "obvious_wrong_match_sample_count": len(candidates),
+        "hard_negative_violation_count": _hard_negative_violation_count(args.hard_negative_summary),
     }
     metrics.pop("diagnostics", None)
 
     _write_jsonl(out_dir / "quality_detail.jsonl", details)
     _write_quality_report(out_dir / "quality_report.md", trade_date, metrics, candidates)
+    _write_review_audit(out_dir / "review_audit.md", review_rows)
+    _write_drop_audit(out_dir / "drop_audit.md", metrics, review_rows)
+    _write_match_audit(out_dir / "match_audit.md", details)
     _write_direct_hit_audit(out_dir / "direct_hit_audit.md", details)
     _write_llm_accept_audit(out_dir / "llm_accept_audit.md", details, review_rows)
     _write_low_value_audit(out_dir / "low_value_audit.md", details, review_rows)

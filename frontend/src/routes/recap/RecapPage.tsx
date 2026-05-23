@@ -811,6 +811,7 @@ export function RecapPage() {
   const [dailyReview, setDailyReview] = useState<DailyReviewView | null>(null);
   useEffect(() => {
     let active = true;
+    setDailyReview(null);
     if (reportType !== "post_market") return;
     fetchDailyReview(tradeDate)
       .then((data) => { if (active) setDailyReview(data); })

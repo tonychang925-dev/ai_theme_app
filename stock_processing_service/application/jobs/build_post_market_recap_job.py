@@ -759,6 +759,8 @@ class BuildPostMarketRecapJob:
 
     # ── P2: theme_reviews 结构化生成 ──
 
+    MAX_THEME_REVIEWS = 20
+
     @staticmethod
     async def _build_theme_context_map(
         trade_date: date,
@@ -766,7 +768,8 @@ class BuildPostMarketRecapJob:
     ) -> dict[str, dict[str, Any]]:
         """按 subject_key 统一 JOIN cycles + capital_flow + stock_facts。
 
-        字段兼容多种可能的键名，避免硬编码导致断链。
+        主题宇宙 = cycles.keys() + capital 中匹配的 key。
+        stock_facts 只能 enrich，不能反向扩张主题宇宙。
         """
         cycles = (
             report_context.get("cycles")
@@ -784,7 +787,7 @@ class BuildPostMarketRecapJob:
             or []
         )
 
-        # 按 subject_key 索引
+        # 索引
         cycle_by_sk: dict[str, dict[str, Any]] = {}
         for c in cycles:
             sk = str((c or {}).get("subject_key") or "").strip()
@@ -803,22 +806,32 @@ class BuildPostMarketRecapJob:
             if sk:
                 stock_facts_by_sk.setdefault(sk, []).append(dict(sf or {}))
 
-        # 收集所有出现的 subject_key
-        all_sks: set[str] = set()
-        all_sks.update(cycle_by_sk.keys())
-        all_sks.update(capital_by_sk.keys())
-        all_sks.update(stock_facts_by_sk.keys())
+        # 主题宇宙：只从 cycles + capital 确定，禁止 stock_facts 扩张
+        base_sks: set[str] = set()
+        base_sks.update(cycle_by_sk.keys())
+        base_sks.update(capital_by_sk.keys())
+        if not base_sks:
+            # 兜底：取 theme_rows / themes / main_themes
+            theme_rows = (
+                report_context.get("theme_rows")
+                or report_context.get("themes")
+                or report_context.get("main_themes")
+                or report_context.get("theme_summary")
+                or []
+            )
+            for row in theme_rows:
+                sk = str((row or {}).get("subject_key") or "").strip()
+                if sk:
+                    base_sks.add(sk)
 
         result: dict[str, dict[str, Any]] = {}
-        for sk in sorted(all_sks):
+        for sk in base_sks:
             cycle = cycle_by_sk.get(sk, {})
             sf_list = stock_facts_by_sk.get(sk, [])
-            # 按 leader_composite_score 排序取 top 股票
             sf_list.sort(
                 key=lambda x: float(x.get("leader_composite_score") or 0),
                 reverse=True,
             )
-
             result[sk] = {
                 "subject_key": sk,
                 "cycle": cycle,
@@ -827,6 +840,14 @@ class BuildPostMarketRecapJob:
             }
 
         return result
+
+    @staticmethod
+    def _to_bool(value: Any) -> bool:
+        """安全 bool 转换：处理数据库返回的字符串 'false'、'False'、'0' 等。"""
+        if isinstance(value, bool):
+            return value
+        text = str(value or "").strip().lower()
+        return text in {"1", "true", "yes", "y", "是"}
 
     @staticmethod
     def _build_theme_reviews(
@@ -839,14 +860,12 @@ class BuildPostMarketRecapJob:
             capital = ctx.get("capital") or {}
             sf_list = ctx.get("stock_facts") or []
 
-            # 主题名来源：cycle → stock_fact top1 → subject_key 兜底
             theme_name = (
                 str(cycle.get("theme_name") or "").strip()
                 or str((sf_list[0] or {}).get("theme_name") or "").strip()
                 or sk
             )
 
-            # 龙头上股票
             leader_stocks = []
             for sf in sf_list[:5]:
                 leader_stocks.append({
@@ -857,7 +876,6 @@ class BuildPostMarketRecapJob:
                     "pct_chg": float(sf.get("pct_chg") or 0),
                 })
 
-            # 主线强度打分
             mainline_strength_score = float(
                 cycle.get("mainline_strength_score")
                 or cycle.get("state_strength_score")
@@ -866,13 +884,14 @@ class BuildPostMarketRecapJob:
             fade_risk_score = float(cycle.get("fade_risk_score") or 0)
             final_cycle_state = str(cycle.get("final_cycle_state") or "")
 
-            # 强度标签
             if mainline_strength_score >= 70:
                 strength_label = "STRONG"
             elif mainline_strength_score >= 40:
                 strength_label = "MEDIUM"
             else:
                 strength_label = "WEAK"
+
+            cycle_joined = bool(cycle)
 
             reviews.append({
                 "subject_key": sk,
@@ -882,20 +901,33 @@ class BuildPostMarketRecapJob:
                 "mainline_strength_score": mainline_strength_score,
                 "fade_risk_score": fade_risk_score,
                 "final_cycle_state": final_cycle_state,
-                "final_mainline_alive": bool(cycle.get("final_mainline_alive")),
+                "final_mainline_alive": BuildPostMarketRecapJob._to_bool(
+                    cycle.get("final_mainline_alive")
+                ),
                 "capital_validation": "NEUTRAL",
                 "leader_stocks": leader_stocks,
                 "event_chain": [],
                 "action_advice": "",
                 "conclusion": "",
                 "diagnostics": {
-                    "cycle_joined": bool(cycle),
+                    "cycle_joined": cycle_joined,
                     "capital_joined": bool(capital),
                     "leader_count": len(leader_stocks),
                 },
             })
 
-        return reviews
+        # 排序：有 cycle > 无 cycle，再按主线强度降序
+        reviews.sort(
+            key=lambda x: (
+                not x["diagnostics"]["cycle_joined"],
+                -float(x.get("mainline_strength_score") or 0),
+                -len(x.get("leader_stocks") or []),
+                x.get("subject_key") or "",
+            )
+        )
+
+        # 硬限制
+        return reviews[: BuildPostMarketRecapJob.MAX_THEME_REVIEWS]
 
     @staticmethod
     def _build_theme_review_coverage(

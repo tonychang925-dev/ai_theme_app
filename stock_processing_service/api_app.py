@@ -2600,6 +2600,7 @@ async def get_intel_feed_debug_counts(feed_date: str = Query(...)) -> dict[str, 
 
 
 @app.get("/api/v1/theme_workspace/{subject_key}")
+@app.get("/api/v1/theme/workspace/{subject_key}")
 async def get_theme_workspace(
     subject_key: str,
     trade_date: str | None = Query(default=None),
@@ -2675,13 +2676,17 @@ async def get_theme_workspace(
                 FROM theme_leader_candidate tlc
                 LEFT JOIN LATERAL (
                     SELECT sds_inner.pct_chg,
-                           COALESCE(NULLIF(sds_inner.raw_json->>35, ''), '0')::numeric AS main_net_inflow,
+                           CASE WHEN jsonb_typeof(sds_inner.raw_json)='array' AND jsonb_array_length(sds_inner.raw_json)>35
+                                AND (sds_inner.raw_json->>35) ~ '^-?[0-9]+(\.[0-9]+)?$'
+                                THEN (sds_inner.raw_json->>35)::numeric ELSE 0 END AS main_net_inflow,
                            sds_inner.is_leader,
                            sds_inner.rank_order,
                            CASE WHEN jsonb_typeof(sds_inner.raw_json)='array' AND jsonb_array_length(sds_inner.raw_json)>17
-                                THEN NULLIF(sds_inner.raw_json->>17,'')::numeric END AS volume_ratio,
+                                AND (sds_inner.raw_json->>17) ~ '^-?[0-9]+(\.[0-9]+)?$'
+                                THEN (sds_inner.raw_json->>17)::numeric END AS volume_ratio,
                            CASE WHEN jsonb_typeof(sds_inner.raw_json)='array' AND jsonb_array_length(sds_inner.raw_json)>20
-                                THEN NULLIF(sds_inner.raw_json->>20,'')::integer END AS current_flag,
+                                AND (sds_inner.raw_json->>20) ~ '^-?[0-9]+$'
+                                THEN (sds_inner.raw_json->>20)::integer END AS current_flag,
                            spj.position_label,
                            spat.pattern_labels,
                            mfe.money_flow_tier,
@@ -2701,7 +2706,7 @@ async def get_theme_workspace(
             """, subject_key, td)
             # 全量资金流入（用于汇总/前3）
             inflow_rows = await conn.fetch(
-                "SELECT stock_id, COALESCE(NULLIF(raw_json->>35, ''), '0')::numeric AS main_net_inflow "
+                "SELECT stock_id, CASE WHEN jsonb_typeof(raw_json)='array' AND jsonb_array_length(raw_json)>35 AND (raw_json->>35) ~ '^-?[0-9]+(\\.[0-9]+)?$' THEN (raw_json->>35)::numeric ELSE 0 END AS main_net_inflow "
                 "FROM subject_stock_daily_snapshot WHERE subject_key = $1 AND trade_date = $2::date",
                 subject_key, td,
             )
