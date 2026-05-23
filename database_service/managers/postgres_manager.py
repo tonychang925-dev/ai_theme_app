@@ -7022,6 +7022,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 THEN 'akshare_realtime'
                 WHEN esm_source = 'jyhf_dom_confirmed'
                 THEN 'jyhf_cdp'
+                WHEN COALESCE(NULLIF(raw_source, ''), '') = '' AND esm_source NOT IN ('jyhf_dom_confirmed')
+                THEN 'cninfo_announcement'
                 ELSE 'realtime_news'
             END::text AS source_channel
         FROM mapped
