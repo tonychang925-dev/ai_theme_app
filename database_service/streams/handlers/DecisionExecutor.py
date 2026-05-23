@@ -1316,12 +1316,15 @@ class DecisionExecutor:
                 "decision": action,
                 "subject_key": str(event_data.get("subject_key") or decision.get("subject_key") or ""),
                 "theme_name": str(event_data.get("theme_name") or decision.get("theme_name") or ""),
-                "confidence": float(decision.get("confidence") or 0),
+                "confidence": str(decision.get("confidence") or "0"),
                 "reason_code": str(decision.get("reason_code") or decision.get("reason") or action),
                 "source": "decision_executor_feed",
-                "dropped": False,
+                "dropped": "false",
                 "created_at": str(decision.get("created_at") or ""),
             }
-            self.redis.xadd("stream:event:feed", feed_item, maxlen=2000)
+            msg_id = await self.redis.xadd("stream:event:feed", feed_item, maxlen=2000)
+            logger.info("📤 已发布 feed: event_id=%s action=%s msg_id=%s title=%s",
+                        feed_item.get("event_id", ""), action, msg_id,
+                        str(feed_item.get("title", ""))[:60])
         except Exception as e:
-            logger.warning("发布 feed 失败: %s", e)
+            logger.error("发布 feed 失败: action=%s error=%s", action, e)
