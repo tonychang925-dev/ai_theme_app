@@ -1029,9 +1029,9 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     INSERT INTO event_subject_map (
                         event_id, news_id, subject_key, subject_name, confidence,
                         relation_type, match_reason, evidence_json, source,
-                        source_trace_id, run_id
+                        source_trace_id, run_id, created_at, updated_at
                     )
-                    VALUES ($1, $2, $3, $4, $5, $6, $7, $8::jsonb, $9, $10, $11)
+                    VALUES ($1, $2, $3, $4, $5, $6, $7, $8::jsonb, $9, $10, $11, now(), now())
                     ON CONFLICT (event_id, subject_key, relation_type) DO UPDATE SET
                         news_id = COALESCE(EXCLUDED.news_id, event_subject_map.news_id),
                         subject_name = COALESCE(EXCLUDED.subject_name, event_subject_map.subject_name),
@@ -1853,6 +1853,37 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         """
         async with self.pool.acquire() as conn:
             rows = await conn.fetch(sql, start_date, end_date, stock_ids if stock_ids else None)
+            return [dict(row) for row in rows]
+
+    async def get_subject_stock_daily_bars_range(
+        self,
+        start_date,
+        end_date,
+        stock_ids: Optional[List[str]] = None,
+        subject_keys: Optional[List[str]] = None,
+    ) -> List[Dict[str, Any]]:
+        """读取 subject_stock_daily_snapshot 区间K线证据（设计文档 §13.2 冻结对象）。"""
+        sql = """
+        SELECT DISTINCT ON (trade_date, stock_id)
+            trade_date, stock_id, stock_name,
+            open_price, high_price, low_price, close_price, pre_close, pct_chg,
+            volume, amount,
+            COALESCE(limit_up, FALSE) AS limit_up,
+            COALESCE((raw_json->>'limit_up_price')::numeric, close_price * 1.10) AS limit_up_price,
+            COALESCE((raw_json->>'limit_down_price')::numeric, close_price * 0.90) AS limit_down_price
+        FROM subject_stock_daily_snapshot
+        WHERE trade_date >= $1::date
+          AND trade_date <= $2::date
+          AND ($3::text[] IS NULL OR stock_id = ANY($3::text[]))
+          AND ($4::text[] IS NULL OR subject_key = ANY($4::text[]))
+        ORDER BY trade_date ASC, stock_id, created_at DESC NULLS LAST
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                sql, start_date, end_date,
+                stock_ids if stock_ids else None,
+                subject_keys if subject_keys else None,
+            )
             return [dict(row) for row in rows]
 
     async def get_stock_auction_snapshot(self, trade_date, stock_ids: Optional[List[str]] = None) -> List[Dict[str, Any]]:

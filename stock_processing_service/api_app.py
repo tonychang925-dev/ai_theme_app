@@ -2783,9 +2783,11 @@ async def get_theme_workspace(
                 "main_net_inflow_sum": main_net_inflow_sum,
                 "top3_main_net_inflow_sum": top3_main_net_inflow_sum,
                 "leader_main_net_inflow": leader_inflow,
-                "event_chain_score": float(el.get("event_strength_score", 0) or 0),
+                "event_chain_score": float(
+                    el.get("event_strength_score", 0) or 0
+                ) or float(cycle_row.get("mainline_strength_score") or 0),
                 "market_recognition_score": float(cycle_row["mainline_strength_score"] or 0),
-                "mainline_stability_score": mainline_stability_score,
+                "mainline_stability_score": mainline_stability_score or float(cycle_row.get("fade_risk_score") or 0),
                 "board_health_status": board_health,
                 "board_effect_status": board_effect,
                 "leader_support_status": leader_support,

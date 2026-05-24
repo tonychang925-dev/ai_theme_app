@@ -841,7 +841,7 @@ async def workspace_theme_radar(
         return_exceptions=True,
     )
     feed = feed_result if isinstance(feed_result, dict) else {}
-    items = list(feed.get("items") or [])
+    items = [i for i in (feed.get("items") or []) if i.get("source_channel") != "cninfo_announcement"]
 
     stage_by_subject_key: dict[str, str] = {}
     stage_by_theme_name: dict[str, str] = {}
@@ -1001,12 +1001,13 @@ async def workspace_intel_context(
         stock_id=stock_id,
         limit=limit,
     )
+    items = [i for i in (feed.get("items") or []) if i.get("source_channel") != "cninfo_announcement"]
     return {
         "date": date,
         "subject_key": subject_key,
         "stock_id": stock_id,
-        "items": list(feed.get("items") or []),
-        "count": int(feed.get("count") or 0),
+        "items": items,
+        "count": len(items),
         "diagnostics": dict(feed.get("diagnostics") or {}),
         "source": "intel_feed_proxy",
     }
