@@ -206,7 +206,7 @@ class AkShareRealtimeNewsCollector:
 
         async def _fetch_one(label: str, func, channel: str) -> list[dict[str, Any]]:
             try:
-                df = await asyncio.to_thread(func)
+                df = await asyncio.wait_for(asyncio.to_thread(func), timeout=45)
                 if df is None or df.empty:
                     return []
                 limit = _SOURCE_LIMITS.get(channel, 50)
@@ -334,6 +334,15 @@ class AkShareRealtimeNewsCollector:
         publish_date = _pick(row, "publish_date", "date", "日期")
         publish_time = _pick(row, "publish_time", "time", "发布时间", "时间")
         now = datetime.now(CN_TZ)
+        # Validate publish_date: reject dates older than 7 days (stale source data)
+        if publish_date:
+            try:
+                pd = date.fromisoformat(str(publish_date)[:10])
+                if pd < (now.date() - timedelta(days=7)):
+                    logger.debug("Rejecting stale publish_date=%s, using today", pd)
+                    publish_date = None
+            except ValueError:
+                publish_date = None
         if not publish_date:
             publish_date = now.date().isoformat()
         publish_time_text = str(publish_time or now.strftime("%H:%M:%S"))

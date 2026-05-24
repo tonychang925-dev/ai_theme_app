@@ -7017,7 +7017,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     rn.resolved_subject_name,
                     esm.subject_key
                 ) AS theme_name,
-                COALESCE(ne.event_time, (nr.publish_date + nr.publish_time)::timestamp, ne.created_at, esm.created_at, nr.created_at) AS occurred_at,
+                COALESCE(ne.event_time, ne.created_at, (nr.publish_date + nr.publish_time)::timestamp, esm.created_at, nr.created_at) AS occurred_at,
                 COALESCE(NULLIF(nr.title, ''), NULLIF(ne.summary, ''), ne.event_type, ('事件#' || ne.id::text)) AS title,
                 COALESCE(NULLIF(nr.content, ''), ne.summary, '') AS summary,
                 COALESCE(esm.confidence, ne.confidence) AS confidence,
@@ -7183,7 +7183,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             esm.run_id,
             esm.created_at,
             esm.updated_at,
-            COALESCE(ne.event_time, (nr.publish_date + nr.publish_time)::timestamp, ne.created_at, esm.created_at, nr.created_at) AS occurred_at,
+            COALESCE(ne.event_time, ne.created_at, (nr.publish_date + nr.publish_time)::timestamp, esm.created_at, nr.created_at) AS occurred_at,
             COALESCE(NULLIF(nr.title, ''), NULLIF(ne.summary, ''), ne.event_type, ('事件#' || ne.id::text)) AS title,
             COALESCE(ne.summary, nr.content, '') AS summary,
             -- P1-B: 计算规范化 source_channel

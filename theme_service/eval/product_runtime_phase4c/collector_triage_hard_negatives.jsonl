@@ -1,0 +1,9 @@
+{"title": "王沪宁会见哈萨克斯坦议会下院议长", "expected_decision": "SKIP", "expected_reason_code": "rule_low_value_routine_government_affairs", "category": "routine_diplomatic_meeting"}
+{"title": "韩正会见哈萨克斯坦议会下院议长", "expected_decision": "SKIP", "expected_reason_code": "rule_low_value_routine_government_affairs", "category": "routine_diplomatic_meeting"}
+{"title": "李强在贵州调研", "expected_decision": "SKIP", "expected_reason_code": "rule_low_value_routine_government_affairs", "category": "routine_government_inspection"}
+{"title": "中央纪委国家监委公开通报八起违规吃喝典型问题", "expected_decision": "SKIP", "expected_reason_code": "rule_low_value_discipline_notice", "category": "discipline_notice"}
+{"title": "王沪宁在京会见哈萨克斯坦议会下院议长，双方就深化中哈命运共同体建设达成共识", "expected_decision": "SKIP", "expected_reason_code": "rule_low_value_routine_government_affairs", "category": "routine_diplomatic_meeting"}
+{"title": "全国政协十三届常委会第二十二次会议闭幕", "expected_decision": "SKIP", "expected_reason_code": "rule_low_value_routine_government_affairs", "category": "routine_meeting_closing"}
+{"title": "习近平向第十五届海峡论坛致贺信", "expected_decision": "SKIP", "expected_reason_code": "rule_low_value_routine_government_affairs", "category": "routine_government_congratulation"}
+{"title": "赵乐际出席全国人大常委会会议", "expected_decision": "SKIP", "expected_reason_code": "rule_low_value_routine_government_affairs", "category": "routine_government_meeting"}
+{"title": "某省纪委监委通报5起违反中央八项规定精神典型问题", "expected_decision": "SKIP", "expected_reason_code": "rule_low_value_discipline_notice", "category": "discipline_notice"}

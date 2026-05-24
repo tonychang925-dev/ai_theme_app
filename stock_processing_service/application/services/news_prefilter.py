@@ -100,13 +100,13 @@ class NewsPreFilterAdapter:
             rule_decision = str(rule_raw.get("decision") or "PASS").upper()
 
             # 2. 非 prompt 模式，或规则已明确 → 直接返回
-            #    rule-only（含降级）模式下，灰区默认 PASS（保守放行），标记 gray_pass
+            #    rule-only（含降级）模式下，灰区默认 HOLD：不进 raw，但写 audit
             if self.mode == "rule" or self._degraded:
                 result = _to_result(rule_raw)
                 if rule_raw.get("gray") and result.pass_:
                     return NewsTriageResult(
-                        pass_=True, decision="PASS",
-                        reason="rule:gray_conservative_pass", mode="rule", score=None)
+                        pass_=False, decision="HOLD",
+                        reason="rule:gray_hold", mode="rule", score=None)
                 return result
             if not self._use_qwen:
                 return _to_result(rule_raw)
@@ -118,8 +118,8 @@ class NewsPreFilterAdapter:
                 result = _to_result(rule_raw)
                 if rule_raw.get("gray") and result.pass_:
                     return NewsTriageResult(
-                        pass_=True, decision="PASS",
-                        reason="rule:gray_degraded_pass", mode="rule", score=None)
+                        pass_=False, decision="HOLD",
+                        reason="rule:gray_hold", mode="rule", score=None)
                 return result
 
             # 4. 批次预算已耗尽 → 此时确认为未降级，灰区默认 SKIP（不依赖 Qwen）
@@ -383,6 +383,27 @@ _EMBEDDED_SIGNAL_KEYWORDS = {
 }
 
 
+
+	# Phase 4C: routine government / discipline terms for embedded prefilter
+	_EMBEDDED_ROUTINE_GOV_TERMS = (
+	    "会见", "在京会见", "双方就深化", "友好合作", "命运共同体",
+	    "达成共识", "赴", "调研", "会议闭幕", "致辞", "讲话", "慰问",
+	    "议长", "总统", "总理", "部长", "代表团", "致贺信", "出席会议",
+	    "全国人大常委会", "常委会会议", "海峡论坛", "全国政协",
+	)
+	_EMBEDDED_DISCIPLINE_TERMS = (
+	    "中央纪委", "国家监委", "违规吃喝", "典型问题",
+	    "公开通报", "纪律处分", "党纪政务处分", "立案审查调查",
+	)
+	_EMBEDDED_STRONG_INDUSTRY_TERMS = (
+	    "出台", "发布", "印发", "审议通过", "实施方案", "产业政策",
+	    "行动方案", "财政补贴", "设备更新", "人工智能", "算力",
+	    "半导体", "新能源", "低空经济", "机器人", "数据中心",
+	    "出口管制", "关税", "重大订单", "中标", "签约",
+	    "项目开工", "投产", "扩产", "供需", "价格上涨",
+	    "技术突破", "重大合同", "并购重组", "获批上市",
+	)
+
 def _embedded_rule_evaluate(payload: Dict[str, Any]) -> Dict[str, Any]:
     """内嵌规则评估（最小实现，不依赖外部类）。
 
@@ -395,6 +416,16 @@ def _embedded_rule_evaluate(payload: Dict[str, Any]) -> Dict[str, Any]:
     # 1. 硬过滤：过短文本
     if len(text.strip()) < 15:
         return {"decision": "SKIP", "reason": "rule:too_short", "score": None, "mode": "embedded_rule"}
+
+    # Phase 4C: 政务/纪委硬SKIP（除非含强产业催化词）
+    gov_hits = [t for t in _EMBEDDED_ROUTINE_GOV_TERMS if t in text]
+    disc_hits = [t for t in _EMBEDDED_DISCIPLINE_TERMS if t in text]
+    industry_hits = [t for t in _EMBEDDED_STRONG_INDUSTRY_TERMS if t in text]
+    if gov_hits and not industry_hits:
+        return {"decision": "SKIP", "reason": f"rule:routine_gov:{",".join(gov_hits[:2])}", "score": None, "mode": "embedded_rule"}
+    if disc_hits:
+        return {"decision": "SKIP", "reason": f"rule:discipline:{",".join(disc_hits[:2])}", "score": None, "mode": "embedded_rule"}
+
 
     # 2. 硬模板过滤：纯价格波动 + 通用分析语
     #    模板命中时需 >= 2 个催化词才能放行，避免"政策面变化"等弱词误触发
@@ -427,4 +458,4 @@ def _embedded_rule_evaluate(payload: Dict[str, Any]) -> Dict[str, Any]:
         return {"decision": "PASS", "reason": f"rule:signal_hits={signal_hits}", "score": None, "mode": "embedded_rule"}
 
     # 7. 灰区 → SKIP（单催化词/单信号词/无明确特征）
-    return {"decision": "PASS", "reason": "rule:gray_default_skip", "score": None, "mode": "embedded_rule", "gray": True}
+    return {"decision": "PASS", "reason": "rule:gray_pass_to_triage", "score": None, "mode": "embedded_rule", }

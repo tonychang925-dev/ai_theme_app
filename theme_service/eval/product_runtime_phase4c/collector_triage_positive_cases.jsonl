@@ -1,0 +1,8 @@
+{"title": "商务部发布服务贸易开放路线图，涉及金融、电信、文旅等六大领域", "expected_decision": "PASS", "expected_reason_code": "rule_strong_catalyst_pass", "category": "industry_policy"}
+{"title": "发改委印发算力基础设施高质量发展行动方案", "expected_decision": "PASS", "expected_reason_code": "rule_strong_catalyst_pass", "category": "industry_policy"}
+{"title": "贵州省发布低空经济发展规划，到2028年产业规模突破500亿元", "expected_decision": "PASS", "expected_reason_code": "rule_strong_catalyst_pass", "category": "industry_policy_with_location"}
+{"title": "紫光国微：拟19亿元购买瑞能半导100%股权，整合功率半导体产品矩阵", "expected_decision": "PASS", "expected_reason_code": "rule_strong_catalyst_pass", "category": "major_acquisition"}
+{"title": "国务院常务会议审议通过设备更新和消费品以旧换新实施方案", "expected_decision": "PASS", "expected_reason_code": "rule_strong_catalyst_pass", "category": "policy_with_industry_impact"}
+{"title": "美国商务部将12家中国半导体企业列入实体清单，涉及EDA软件出口管制", "expected_decision": "PASS", "expected_reason_code": "rule_strong_catalyst_pass", "category": "export_control_semiconductor"}
+{"title": "宁德时代与福特签署电池技术授权协议，投资额超35亿美元", "expected_decision": "PASS", "expected_reason_code": "rule_strong_catalyst_pass", "category": "major_order_energy"}
+{"title": "华为宣布昇腾AI芯片新一代量产，算力提升3倍", "expected_decision": "PASS", "expected_reason_code": "rule_strong_catalyst_pass", "category": "tech_breakthrough_ai_chip"}

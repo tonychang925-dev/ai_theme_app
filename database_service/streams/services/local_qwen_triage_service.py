@@ -423,6 +423,69 @@ class LocalQwenNewsTriageService:
             "并购重组", "产业政策", "技术突破", "首次突破", "供给短缺", "价格上涨",
             "价格大涨", "需求激增", "出口管制", "获批上市", "投产", "扩产",
         }
+        # Phase 4C: strong industry/policy catalyst whitelist
+        # — only these can override routine government / discipline SKIP
+        _strong_policy_industry_terms = (
+            "出台", "发布", "印发", "审议通过", "实施方案",
+            "产业政策", "行动方案", "财政补贴", "设备更新", "设备更新换代",
+            "人工智能", "算力", "半导体", "新能源", "低空经济",
+            "机器人", "数据中心", "出口管制", "关税", "重大订单",
+            "中标", "签约", "投资额", "项目开工", "投产", "扩产",
+            "供需", "价格上涨", "供给短缺", "产能", "技术突破",
+            "重大合同", "并购重组", "资产重组", "获批上市",
+            "服务贸易", "开放路线图", "产业规划", "集成电路",
+            "芯片", "光刻", "新材料", "创新药", "商业航天",
+            "量子计算", "脑机", "自动驾驶", "固态电池",
+        )
+
+        # Phase 4C: routine government affairs → SKIP
+        # unless strong industry/policy catalyst present
+        _routine_government_terms = (
+            "会见", "在京会见", "双方就深化", "友好合作",
+            "命运共同体", "达成共识", "赴", "调研",
+            "会议闭幕", "致辞", "讲话", "慰问",
+            "议长", "总统", "总理", "部长", "代表团",
+            "致贺信", "出席会议", "全国人大常委会",
+            "常委会会议", "海峡论坛", "全国政协",
+        )
+        _routine_discipline_terms = (
+            "中央纪委", "国家监委", "违规吃喝", "典型问题",
+            "公开通报", "纪律处分", "党纪政务处分",
+            "立案审查调查",
+        )
+
+        # Check routine government first (with whitelist exception)
+        gov_hits = [term for term in _routine_government_terms if term in text]
+        if gov_hits:
+            industry_hits = [term for term in _strong_policy_industry_terms if term in text]
+            if not industry_hits:
+                return self._build_result(
+                    news_data,
+                    decision="SKIP",
+                    importance_level="D",
+                    event_value_type="routine_government_affairs",
+                    reason_code="rule_low_value_routine_government_affairs",
+                    reason=f"rule_low_value_routine_government_affairs:{','.join(gov_hits[:3])}",
+                    confidence=0.97,
+                    mode="rule_prefilter",
+                    evidence=gov_hits,
+                )
+
+        # Check discipline notice (always SKIP — no catalyst override)
+        disc_hits = [term for term in _routine_discipline_terms if term in text]
+        if disc_hits:
+            return self._build_result(
+                news_data,
+                decision="SKIP",
+                importance_level="D",
+                event_value_type="discipline_notice",
+                reason_code="rule_low_value_discipline_notice",
+                reason=f"rule_low_value_discipline_notice:{','.join(disc_hits[:3])}",
+                confidence=0.98,
+                mode="rule_prefilter",
+                evidence=disc_hits,
+            )
+
         low_value_groups = {
             "rule_low_value_regulatory": (
                 "行政监管措施", "行政监管", "监管函", "警示函", "责令改正",
