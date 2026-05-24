@@ -386,6 +386,18 @@ class SemanticEventDeduper:
             self._write_audit(title_a, title_b, ratio, "ratio", "dup", action, row_a, row_b)
             return result
 
+        # ── Qwen warmup 未完成保护 ──
+        if not self.stats.get("qwen_dedup_ready"):
+            # warmup 未完成时不调 Qwen，避免首次调用触发同步模型加载
+            if ratio > 0.75:
+                result["is_dup"] = True
+                result["method"] = "conservative_warmup"
+                result["keeper_idx"] = self._select_keeper(row_a, row_b, 0, 1)
+                self._write_audit(title_a, title_b, ratio, "conservative_warmup", "dup", action, row_a, row_b)
+            else:
+                self._write_audit(title_a, title_b, ratio, "warmup_not_ready", "distinct", action, row_a, row_b)
+            return result
+
         # ── Qwen 预算检查 ──
         if self._qwen_this_round >= self._qwen_max_per_round:
             self.stats["qwen_dedup_budget_exhausted"] += 1
