@@ -124,10 +124,11 @@ def main() -> int:
         errors, warnings = check_entry(entry, i, len(raw_entries),
                                        phase4e_only=args.require_phase4e_only)
 
-        if not errors and not warnings:
-            valid_entries += 1
-        elif not entry.get("collector_name", "").strip() and args.require_phase4e_only:
+        is_old = not entry.get("collector_name", "").strip()
+        if is_old and args.require_phase4e_only:
             skipped_old += 1
+        elif not errors and not warnings:
+            valid_entries += 1
 
         all_errors.extend(errors)
         all_warnings.extend(warnings)
