@@ -67,6 +67,8 @@ class RealtimeStackState:
     started_at: str | None = None
     pid: int | None = None
     akshare_pid: int | None = None
+    akshare_collector_enabled: bool = False
+    akshare_legacy_mode: bool = False
     raw_news_pid: int | None = None
     decision_pid: int | None = None
     rebuild_pid: int | None = None
@@ -192,21 +194,49 @@ class RealtimeStackManager:
                     logger.error("realtime critical groups not ready within 45s — continuing but group health degraded")
                     # Don't kill processes — they may still be initializing
 
-                self._akshare_process = await asyncio.create_subprocess_exec(
-                    self._python_cmd,
-                    str(ROOT / "stock_processing_service/scripts/run_akshare_realtime_news_collector.py"),
-                    "--redis-url", self._redis_url,
-                    "--stream", "stream:news:raw",
-                    "--run-id", run_id,
-                    "--poll-interval-seconds", os.environ.get("AKSHARE_REALTIME_POLL_SECONDS", "180"),
-                    "--lookback-minutes", os.environ.get("AKSHARE_REALTIME_LOOKBACK_MINUTES", "180"),
-                    "--status-path", str(akshare_status),
-                    "--prefilter-skip-log", str(akshare_skip_log),
-                    "--parent-pid", str(parent_pid),
-                    stdout=open(akshare_log, "w"),
-                    stderr=asyncio.subprocess.STDOUT,
-                    env=env,
-                )
+                # Phase 4E: AkShare collector gating
+                _akshare_enabled = os.environ.get("ENABLE_AKSHARE_REALTIME_COLLECTOR", "false").lower() == "true"
+                _akshare_legacy = os.environ.get("ENABLE_LEGACY_AKSHARE_COLLECTOR", "false").lower() == "true"
+                self._state.akshare_collector_enabled = _akshare_enabled
+                self._state.akshare_legacy_mode = _akshare_legacy
+
+                if _akshare_enabled or _akshare_legacy:
+                    # Legacy mode: physically isolated stream, NEVER formal raw
+                    _akshare_stream = "stream:news:raw:legacy" if _akshare_legacy else "stream:news:raw"
+                    if _akshare_legacy:
+                        logger.warning(
+                            "AkShare LEGACY mode: writing to %s ONLY, NOT to stream:news:raw",
+                            _akshare_stream,
+                        )
+
+                    self._akshare_process = await asyncio.create_subprocess_exec(
+                        self._python_cmd,
+                        str(ROOT / "stock_processing_service/scripts/run_akshare_realtime_news_collector.py"),
+                        "--redis-url", self._redis_url,
+                        "--stream", _akshare_stream,
+                        "--run-id", run_id,
+                        "--poll-interval-seconds", os.environ.get("AKSHARE_REALTIME_POLL_SECONDS", "180"),
+                        "--lookback-minutes", os.environ.get("AKSHARE_REALTIME_LOOKBACK_MINUTES", "180"),
+                        "--status-path", str(akshare_status),
+                        "--prefilter-skip-log", str(akshare_skip_log),
+                        "--parent-pid", str(parent_pid),
+                        stdout=open(akshare_log, "w"),
+                        stderr=asyncio.subprocess.STDOUT,
+                        env=env,
+                    )
+                    logger.info(
+                        "AkShare collector subprocess started: pid=%d stream=%s legacy=%s",
+                        self._akshare_process.pid,
+                        _akshare_stream,
+                        _akshare_legacy,
+                    )
+                else:
+                    logger.info(
+                        "AkShare collector DISABLED (ENABLE_AKSHARE_REALTIME_COLLECTOR=false, "
+                        "ENABLE_LEGACY_AKSHARE_COLLECTOR=false) — "
+                        "RealTimeNewsCollector is the sole raw stream producer"
+                    )
+                    self._akshare_process = None
                 self._rebuild_process = await asyncio.create_subprocess_exec(
                     self._python_cmd,
                     str(ROOT / "stock_processing_service/scripts/run_pre_market_brief_rebuild_loop.py"),
@@ -255,7 +285,8 @@ class RealtimeStackManager:
                 await asyncio.sleep(1)
 
                 # P1-C1: write pidfiles for lifecycle tracking
-                _write_pidfile(runtime_dir / f"akshare_{run_id}.pid", self._akshare_process.pid)
+                if self._akshare_process is not None:
+                    _write_pidfile(runtime_dir / f"akshare_{run_id}.pid", self._akshare_process.pid)
                 _write_pidfile(runtime_dir / f"raw_news_{run_id}.pid", self._raw_process.pid)
                 _write_pidfile(runtime_dir / f"decision_{run_id}.pid", self._decision_process.pid)
                 _write_pidfile(runtime_dir / f"rebuild_{run_id}.pid", self._rebuild_process.pid)
@@ -265,7 +296,7 @@ class RealtimeStackManager:
                 self._state.running = True
                 self._state.started_at = datetime.now(timezone.utc).isoformat()
                 self._state.pid = os.getpid()
-                self._state.akshare_pid = self._akshare_process.pid
+                self._state.akshare_pid = self._akshare_process.pid if self._akshare_process else None
                 self._state.raw_news_pid = self._raw_process.pid
                 self._state.decision_pid = self._decision_process.pid
                 self._state.rebuild_pid = self._rebuild_process.pid
@@ -276,9 +307,9 @@ class RealtimeStackManager:
                 self._state.log_dir = str(self._log_dir)
 
                 logger.info(
-                    "realtime stack started: run_id=%s akshare_pid=%d raw_pid=%d decision_pid=%d rebuild_pid=%d intel_pid=%d intel_collection_pid=%d",
+                    "realtime stack started: run_id=%s akshare_pid=%s raw_pid=%d decision_pid=%d rebuild_pid=%d intel_pid=%d intel_collection_pid=%d",
                     run_id,
-                    self._akshare_process.pid,
+                    self._state.akshare_pid or "disabled",
                     self._raw_process.pid,
                     self._decision_process.pid,
                     self._rebuild_process.pid,

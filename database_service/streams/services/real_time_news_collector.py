@@ -1,42 +1,65 @@
 """
-实时新闻采集服务 (RealTimeNewsCollector)
+实时新闻采集服务 (RealTimeNewsCollector) — Phase 4E 升级版。
 
-基于全链路打通方案，定期调用news_crawler_service，将新闻发布到Redis Stream `stream:news:raw`。
-实现新闻采集→Stream断点的打通。
+唯一正式新闻采集入口。主流程：
+  fetch (crawler only, 不做过滤/去重)
+  → normalize (NewsPayloadNormalizer)
+  → prefilter (NewsPreFilterAdapter, 统一规则)
+  → semantic dedup batch (SemanticEventDeduper)
+  → semantic dedup recent (SemanticEventDeduper)
+  → publish stream:news:raw
+  → add to recent cache
 
-功能：
-- 配置化采集频率（默认：每5分钟）
-- 仅支持真实新闻采集
-- 异常处理和重试机制
-- 采集统计和监控
+Phase 4E (2026-05-24):
+  - 接入 SemanticEventDeduper（batch + recent + Qwen + 预算保护 + 硬保护）
+  - 接入 NewsPayloadNormalizer（标准化 + collector_name 标记）
+  - 统一 prefilter 为 NewsPreFilterAdapter
+  - Qwen 启动时异步预热
+  - 统计增强
 """
+from __future__ import annotations
 
 import asyncio
 import json
 import logging
-from datetime import datetime, timedelta
-from typing import Dict, List, Optional, Any
-from enum import Enum
+import os
 import time
+from datetime import datetime, timedelta
+from enum import Enum
+from typing import Any, Dict, List, Optional
 
 logger = logging.getLogger(__name__)
 
+# Phase 4E: 统一 prefilter — NewsPreFilterAdapter（替换 LocalQwenNewsTriageService）
 try:
-    from database_service.streams.services.local_qwen_triage_service import LocalQwenNewsTriageService
-    HAS_LOCAL_QWEN_TRIAGE = True
+    from database_service.streams.services.news_prefilter_adapter import NewsPreFilterAdapter
+    HAS_NEWS_PREFILTER = True
 except Exception:
-    LocalQwenNewsTriageService = None  # type: ignore
-    HAS_LOCAL_QWEN_TRIAGE = False
+    NewsPreFilterAdapter = None  # type: ignore
+    HAS_NEWS_PREFILTER = False
+
+# Phase 4E: 语义去重器
+try:
+    from database_service.streams.services.semantic_event_deduper import SemanticEventDeduper
+    HAS_SEMANTIC_DEDUPER = True
+except Exception:
+    SemanticEventDeduper = None  # type: ignore
+    HAS_SEMANTIC_DEDUPER = False
+
+# Phase 4E: Payload 标准化器
+try:
+    from database_service.streams.services.news_payload_normalizer import normalize_news_payload
+except Exception:
+    normalize_news_payload = None  # type: ignore
 
 
 class CollectionMode(Enum):
-    """采集模式枚举"""
-    REAL = "real"      # 真实新闻采集
-    AUTO = "auto"      # 自动选择（仅真实，不再降级到模拟）
+    REAL = "real"
+    AUTO = "auto"
 
 
 class RealTimeNewsCollector:
-    """实时新闻采集服务"""
+    """实时新闻采集服务 — 唯一正式入口。"""
 
     def __init__(
         self,
@@ -45,58 +68,78 @@ class RealTimeNewsCollector:
         news_producer=None,
         config: Optional[Dict] = None
     ):
-        """
-        初始化实时新闻采集服务
-
-        Args:
-            stream_manager: Redis Stream管理器
-            crawler_service_client: 爬虫服务客户端（可选）
-            news_producer: 新闻生产者（可选）
-            config: 配置字典
-        """
         self.stream_manager = stream_manager
         self.crawler_client = crawler_service_client
         self.news_producer = news_producer
         self.config = config or {}
 
         # 配置参数
-        self.collection_interval = self.config.get("collection_interval", 300)  # 默认5分钟（秒）
+        self.collection_interval = self.config.get("collection_interval", 300)
         self.max_retries = self.config.get("max_retries", 3)
-        self.retry_delay = self.config.get("retry_delay", 10)  # 重试延迟（秒）
+        self.retry_delay = self.config.get("retry_delay", 10)
         default_mode_value = str(self.config.get("default_mode", "auto")).lower()
         if default_mode_value == "mock":
             logger.warning("检测到 default_mode=mock，核心链路已禁用mock，自动改为auto")
             default_mode_value = "auto"
         self.default_mode = CollectionMode(default_mode_value)
+
+        # prefilter
         self.enable_collector_prefilter = bool(self.config.get("enable_collector_prefilter", True))
         self.collector_drop_on_skip = bool(self.config.get("collector_drop_on_skip", True))
-        self.collector_prefilter_use_prompt = bool(self.config.get("collector_prefilter_use_prompt", False))
+
+        # news_id 短窗口去重（保留作为快速第一层）
         self.dedup_window_seconds = int(self.config.get("collector_dedup_window_seconds", 1800))
         self._recent_news_ids: Dict[str, float] = {}
 
-        self.local_triage_service = None
-        if self.enable_collector_prefilter and HAS_LOCAL_QWEN_TRIAGE:
-            triage_cfg = {
-                # collector 侧默认走轻量规则预筛，避免重复/高成本调用
-                "enable_local_triage": self.collector_prefilter_use_prompt,
-                "triage_mode": "prompt",
-                "local_qwen_model_path": self.config.get("local_qwen_model_path", ""),
-                "triage_pass_threshold": self.config.get("triage_pass_threshold", 0.06),
-                "triage_skip_threshold": self.config.get("triage_skip_threshold", -0.02),
-            }
-            self.local_triage_service = LocalQwenNewsTriageService(triage_cfg)
-            logger.info(
-                "新闻采集前预筛选已启用: mode=%s, drop_on_skip=%s",
-                "prompt" if self.collector_prefilter_use_prompt else "rule",
-                self.collector_drop_on_skip,
+        # Phase 4E: 统一 prefilter — NewsPreFilterAdapter
+        self._prefilter: Optional[NewsPreFilterAdapter] = None
+        if self.enable_collector_prefilter and HAS_NEWS_PREFILTER:
+            self._prefilter = NewsPreFilterAdapter(
+                enabled=True,
+                mode="rule",
+                fail_open=True,
             )
+            logger.info("新闻采集前预筛选已启用: NewsPreFilterAdapter mode=rule")
         elif self.enable_collector_prefilter:
-            logger.warning("新闻采集前预筛选启用失败: LocalQwenNewsTriageService 不可用")
+            logger.warning("新闻采集前预筛选启用失败: NewsPreFilterAdapter 不可用")
+
+        # Phase 4E: 语义去重器
+        self._deduper: Optional[SemanticEventDeduper] = None
+        self.enable_semantic_dedup = bool(self.config.get("enable_semantic_dedup", True))
+        if self.enable_semantic_dedup and HAS_SEMANTIC_DEDUPER and self._prefilter:
+            model_path = str(self.config.get("semantic_dedup_model_path", ""))
+            self._deduper = SemanticEventDeduper(
+                prefilter=NewsPreFilterAdapter(
+                    enabled=True,
+                    mode=str(self.config.get("semantic_dedup_mode", "rule_prompt")),
+                    model_path=model_path,
+                    fail_open=True,
+                ),
+                recent_max_size=int(self.config.get("semantic_dedup_recent_max_size", 500)),
+                recent_max_age_hours=int(self.config.get("semantic_dedup_recent_max_age_hours", 6)),
+                qwen_max_per_round=int(self.config.get("qwen_max_per_round", 20)),
+                qwen_max_candidates_per_news=int(self.config.get("qwen_max_candidates_per_news", 5)),
+                qwen_max_recent_comparisons=int(self.config.get("qwen_max_recent_comparisons", 50)),
+                audit_dir=self.config.get("semantic_dedup_audit_dir",
+                    "tmp/product_runtime_phase4e_semantic_dedupe"),
+            )
+            logger.info(
+                "语义去重已启用: mode=%s budget=%d/%d/%d",
+                self.config.get("semantic_dedup_mode", "rule_prompt"),
+                int(self.config.get("qwen_max_per_round", 20)),
+                int(self.config.get("qwen_max_candidates_per_news", 5)),
+                int(self.config.get("qwen_max_recent_comparisons", 50)),
+            )
+        elif self.enable_semantic_dedup:
+            logger.warning("语义去重启用失败: SemanticEventDeduper 或 prefilter 不可用")
+
+        # Phase 4E: Qwen warmup 标记
+        self._qwen_warmup = bool(self.config.get("qwen_dedup_warmup", True))
 
         # 运行状态
         self.is_running = False
         self.collection_task: Optional[asyncio.Task] = None
-        self.stats = {
+        self.stats: Dict[str, Any] = {
             "started_at": None,
             "total_collections": 0,
             "successful_collections": 0,
@@ -107,20 +150,25 @@ class RealTimeNewsCollector:
             "news_published": 0,
             "news_prefilter_skipped": 0,
             "news_dedup_skipped": 0,
-            "errors": []
+            "active_collector": "RealTimeNewsCollector",
+            "collector_version": "phase4e",
+            "errors": [],
         }
 
-        logger.info(f"RealTimeNewsCollector 初始化完成")
-        logger.info(f"  采集间隔: {self.collection_interval}秒")
-        logger.info(f"  默认模式: {self.default_mode.value}")
-        logger.info(f"  最大重试: {self.max_retries}")
+        logger.info("RealTimeNewsCollector 初始化完成 (Phase 4E)")
+        logger.info("  采集间隔: %ss", self.collection_interval)
+        logger.info("  默认模式: %s", self.default_mode.value)
+        logger.info("  语义去重: %s", "enabled" if self._deduper else "disabled")
+        logger.info("  Qwen warmup: %s", self._qwen_warmup)
+
+    async def warmup_semantic_dedup(self) -> None:
+        """启动时异步预热 Qwen，不阻塞采集循环。"""
+        if not self._deduper or not self._qwen_warmup:
+            return
+        logger.info("Qwen dedup warmup started (background task)")
+        await self._deduper.warmup()
 
     async def start_collection_loop(self) -> None:
-        """
-        启动采集循环
-
-        启动后，服务将按照配置的间隔定期采集新闻并发布到Stream。
-        """
         if self.is_running:
             logger.warning("采集循环已经在运行中")
             return
@@ -128,13 +176,14 @@ class RealTimeNewsCollector:
         self.is_running = True
         self.stats["started_at"] = datetime.now().isoformat()
 
-        # 启动采集任务
-        self.collection_task = asyncio.create_task(self._collection_loop())
+        # Phase 4E: 启动前异步预热 Qwen
+        if self._deduper and self._qwen_warmup:
+            asyncio.create_task(self._deduper.warmup())
 
-        logger.info(f"新闻采集循环已启动，间隔: {self.collection_interval}秒")
+        self.collection_task = asyncio.create_task(self._collection_loop())
+        logger.info("新闻采集循环已启动，间隔: %ss", self.collection_interval)
 
     async def stop_collection_loop(self) -> None:
-        """停止采集循环"""
         if not self.is_running:
             logger.warning("采集循环未在运行")
             return
@@ -151,13 +200,10 @@ class RealTimeNewsCollector:
         logger.info("新闻采集循环已停止")
 
     async def _collection_loop(self):
-        """采集循环主逻辑"""
         while self.is_running:
             try:
-                # 执行单次采集
                 result = await self.collect_and_publish()
 
-                # 更新统计
                 self.stats["total_collections"] += 1
                 if result.get("success"):
                     self.stats["successful_collections"] += 1
@@ -168,48 +214,48 @@ class RealTimeNewsCollector:
                 self.stats["last_collection_time"] = datetime.now().isoformat()
                 self.stats["last_collection_result"] = result
 
-                logger.info(f"新闻采集完成: 成功={result.get('success')}, "
-                          f"发布新闻={result.get('news_published', 0)}条, "
-                          f"模式={result.get('mode')}")
+                logger.info(
+                    "新闻采集完成: 成功=%s, 发布=%s条, "
+                    "dedup_batch=%s, dedup_recent=%s, qwen_calls=%s",
+                    result.get("success"),
+                    result.get("news_published", 0),
+                    result.get("semantic_dedup_batch_count", 0),
+                    result.get("semantic_dedup_recent_count", 0),
+                    result.get("qwen_dedup_call_count", 0),
+                )
 
             except asyncio.CancelledError:
                 break
             except Exception as e:
-                logger.error(f"采集循环发生错误: {e}")
+                logger.error("采集循环发生错误: %s", e)
                 self.stats["errors"].append({
                     "time": datetime.now().isoformat(),
                     "error": str(e)
                 })
 
-            # 等待下一次采集
             try:
                 await asyncio.sleep(self.collection_interval)
             except asyncio.CancelledError:
                 break
 
     async def collect_and_publish(self, mode: str = "auto") -> Dict:
-        """
-        执行单次新闻采集并发布到Stream
-
-        Args:
-            mode: 采集模式 ("real", "auto")
-
-        Returns:
-            采集结果字典
-        """
         start_time = time.time()
-        result = {
+        result: Dict[str, Any] = {
             "success": False,
             "mode": mode,
             "news_collected": 0,
             "news_published": 0,
+            "news_prefilter_skipped": 0,
+            "news_dedup_skipped": 0,
+            "semantic_dedup_batch_count": 0,
+            "semantic_dedup_recent_count": 0,
+            "qwen_dedup_call_count": 0,
             "error": None,
             "duration": 0,
             "timestamp": datetime.now().isoformat()
         }
 
         try:
-            # 确定实际采集模式
             actual_mode = self._determine_collection_mode(mode)
             result["mode"] = actual_mode.value
             self.stats["mode_history"].append({
@@ -217,63 +263,163 @@ class RealTimeNewsCollector:
                 "mode": actual_mode.value
             })
 
-            # 采集新闻
+            # Phase 4E: 重置 deduper 每轮预算
+            if self._deduper:
+                self._deduper.new_round()
+
+            # 1. 采集新闻 (crawler only, 不做过滤/去重)
             news_items = await self._collect_news(actual_mode)
             result["news_collected"] = len(news_items)
 
             if not news_items:
-                logger.info(f"采集模式 {actual_mode.value}: 未采集到新闻")
-                result["success"] = True  # 无新闻也是成功
-                result["duration"] = time.time() - start_time
-                return result
-
-            # 采集前预筛选：命中SKIP直接丢弃，不进入stream:news:raw
-            news_items, prefilter_skipped = self._prefilter_news(news_items)
-            result["news_prefilter_skipped"] = prefilter_skipped
-            result["news_after_prefilter"] = len(news_items)
-            self.stats["news_prefilter_skipped"] += prefilter_skipped
-
-            # 采集侧短窗口去重：避免同一news_id在短时间内重复下游处理
-            news_items, dedup_skipped = self._dedup_news_items(news_items)
-            result["news_dedup_skipped"] = dedup_skipped
-            result["news_after_dedup"] = len(news_items)
-            self.stats["news_dedup_skipped"] += dedup_skipped
-
-            if not news_items:
-                logger.info("采集预处理后无可发布新闻（预筛选/去重后全部丢弃）")
+                logger.info("采集模式 %s: 未采集到新闻", actual_mode.value)
                 result["success"] = True
                 result["duration"] = time.time() - start_time
                 return result
 
-            # 发布新闻到Stream
+            # 2. 标准化 (Normalizer)
+            news_items = self._normalize_news_batch(news_items)
+
+            # 3. 低质量预筛选 (统一 NewsPreFilterAdapter)
+            news_items, prefilter_skipped = self._prefilter_news(news_items)
+            result["news_prefilter_skipped"] = prefilter_skipped
+            self.stats["news_prefilter_skipped"] += prefilter_skipped
+
+            if not news_items:
+                logger.info("预筛选后无可发布新闻")
+                result["success"] = True
+                result["duration"] = time.time() - start_time
+                return result
+
+            # 4. news_id 短窗口去重（快速第一层）
+            news_items, dedup_skipped = self._dedup_news_items(news_items)
+            result["news_dedup_skipped"] = dedup_skipped
+            self.stats["news_dedup_skipped"] += dedup_skipped
+
+            # 5. batch 内语义去重 (SemanticEventDeduper)
+            if self._deduper:
+                before = len(news_items)
+                news_items = await self._deduper.dedup_batch(news_items)
+                result["semantic_dedup_batch_count"] = before - len(news_items)
+
+            if not news_items:
+                logger.info("语义去重后无可发布新闻")
+                result["success"] = True
+                result["duration"] = time.time() - start_time
+                return result
+
+            # 6. 跨周期去重 (SemanticEventDeduper)
+            if self._deduper:
+                before = len(news_items)
+                news_items = await self._deduper.dedup_against_recent(news_items)
+                result["semantic_dedup_recent_count"] = before - len(news_items)
+
+            if not news_items:
+                logger.info("跨周期去重后无可发布新闻")
+                result["success"] = True
+                result["duration"] = time.time() - start_time
+                return result
+
+            # 7. 发布到 stream:news:raw
             published_count = await self._publish_news_to_stream(news_items)
             result["news_published"] = published_count
             result["success"] = published_count > 0
 
-            logger.info(f"采集模式 {actual_mode.value}: 采集{len(news_items)}条新闻, "
-                        f"发布{published_count}条到stream:news:raw")
+            # 8. 写入 recent cache（仅成功发布的）
+            if self._deduper and published_count > 0:
+                for item in news_items[:published_count]:
+                    self._deduper.add_to_recent(item)
+
+            # 9. 附加 deduper stats
+            if self._deduper:
+                ds = self._deduper.get_stats()
+                result["qwen_dedup_call_count"] = ds.get("qwen_dedup_call_count", 0)
+                result["qwen_dedup_ready"] = ds.get("qwen_dedup_ready", False)
+                result["qwen_dedup_budget_exhausted"] = ds.get("qwen_dedup_budget_exhausted", 0)
+                result["hard_protect_count"] = ds.get("hard_protect_count", 0)
+
+            logger.info(
+                "采集模式 %s: 采集%d条 → 发布%d条到stream:news:raw "
+                "(预筛跳%d, dedup跳%d, batch_dedup=%d, recent_dedup=%d)",
+                actual_mode.value,
+                result["news_collected"],
+                published_count,
+                prefilter_skipped,
+                dedup_skipped,
+                result.get("semantic_dedup_batch_count", 0),
+                result.get("semantic_dedup_recent_count", 0),
+            )
 
         except Exception as e:
-            logger.error(f"新闻采集发布失败: {e}")
+            logger.error("新闻采集发布失败: %s", e)
             result["error"] = str(e)
             result["success"] = False
 
         result["duration"] = time.time() - start_time
         return result
 
+    def _normalize_news_batch(self, news_items: List[Dict]) -> List[Dict]:
+        """使用 NewsPayloadNormalizer 标准化整批新闻。"""
+        if normalize_news_payload is None:
+            return news_items
+
+        normalized = []
+        run_id = os.getenv("RUN_ID", "")
+        for item in news_items:
+            try:
+                payload = normalize_news_payload(
+                    item,
+                    run_id=run_id,
+                    default_source="db_collector",
+                    collector_name="RealTimeNewsCollector",
+                    collector_version="phase4e",
+                )
+                normalized.append(payload)
+            except Exception:
+                logger.exception("标准化新闻失败，保留原始条目")
+                normalized.append(item)
+        return normalized
+
+    def _prefilter_news(self, news_items: List[Dict]) -> (List[Dict], int):
+        """统一 prefilter — NewsPreFilterAdapter。"""
+        if not self.enable_collector_prefilter or not self._prefilter:
+            return news_items, 0
+
+        kept: List[Dict] = []
+        skipped = 0
+
+        for news in news_items:
+            try:
+                triage = self._prefilter.evaluate(news)
+                decision = str(triage.decision).upper()
+                news_id = str(news.get("news_id", "unknown"))
+
+                if decision == "SKIP" and self.collector_drop_on_skip:
+                    skipped += 1
+                    logger.debug("prefilter SKIP: %s reason=%s", news_id, triage.reason)
+                    continue
+
+                # 记录 prefilter 元数据
+                news.update(self._prefilter.to_payload_fields(triage))
+            except Exception as e:
+                logger.warning("prefilter 异常，保留该新闻: %s", e)
+
+            kept.append(news)
+
+        return kept, skipped
+
     def _dedup_news_items(self, news_items: List[Dict[str, Any]]) -> tuple[List[Dict[str, Any]], int]:
-        """基于news_id做短窗口去重，减少重复事件噪音。"""
+        """基于 news_id 短窗口去重（快速第一层）。"""
         if not news_items:
             return news_items, 0
 
         now_ts = time.time()
-        # 清理过期键
         expired = [
-            news_id for news_id, ts in self._recent_news_ids.items()
+            nid for nid, ts in self._recent_news_ids.items()
             if now_ts - ts > self.dedup_window_seconds
         ]
-        for news_id in expired:
-            self._recent_news_ids.pop(news_id, None)
+        for nid in expired:
+            self._recent_news_ids.pop(nid, None)
 
         filtered: List[Dict[str, Any]] = []
         skipped = 0
@@ -285,7 +431,7 @@ class RealTimeNewsCollector:
 
             if news_id in self._recent_news_ids:
                 skipped += 1
-                logger.info("🚫 采集侧去重跳过重复新闻: %s", news_id)
+                logger.debug("news_id 去重: %s", news_id)
                 continue
 
             self._recent_news_ids[news_id] = now_ts
@@ -294,17 +440,7 @@ class RealTimeNewsCollector:
         return filtered, skipped
 
     def _determine_collection_mode(self, requested_mode: str) -> CollectionMode:
-        """
-        确定实际采集模式
-
-        Args:
-            requested_mode: 请求的模式 ("real", "auto")
-
-        Returns:
-            实际的采集模式
-        """
         if requested_mode == "auto":
-            # 自动模式：仅真实链路；真实不可用时返回REAL并在采集阶段返回空数据
             if self._is_real_mode_available():
                 return CollectionMode.REAL
             else:
@@ -314,56 +450,37 @@ class RealTimeNewsCollector:
             try:
                 return CollectionMode(requested_mode)
             except ValueError:
-                logger.warning(f"无效的采集模式: {requested_mode}，使用默认模式")
+                logger.warning("无效的采集模式: %s，使用默认模式", requested_mode)
                 return self.default_mode
 
     def _is_real_mode_available(self) -> bool:
-        """检查真实采集模式是否可用"""
-        # 检查爬虫服务客户端是否可用
         if not self.crawler_client:
-            logger.debug("真实模式不可用: 缺少爬虫服务客户端")
             return False
-
-        # 可以添加更多检查，如网络连接等
         return True
 
     async def _collect_news(self, mode: CollectionMode) -> List[Dict]:
-        """
-        根据指定模式采集新闻
-
-        Args:
-            mode: 采集模式
-
-        Returns:
-            新闻列表
-        """
         if mode == CollectionMode.REAL:
             return await self._collect_real_news()
         else:
             raise ValueError(f"不支持的采集模式: {mode}")
 
     async def _collect_real_news(self) -> List[Dict]:
-        """采集真实新闻"""
         try:
-            # 尝试导入并调用news_crawler_service
             try:
                 from news_crawler_service.services.news_crawler_service import get_news_crawler_service
                 crawler_service = get_news_crawler_service()
-
-                # 使用智能抓取模式
                 result = await crawler_service.crawl_news_auto(count=10, prefer_real=True)
 
                 if result.get("status") == "success":
                     news_items = result.get("response", {}).get("news_list", [])
-
-                    # 转换新闻格式为标准化格式
                     standardized_news = []
                     for news in news_items:
                         standardized_news.append({
                             "news_id": news.get("news_id", f"news_{datetime.now().timestamp()}"),
                             "title": news.get("title", ""),
-                            "content": news.get("content", news.get("title", "")),  # 如果没有content，使用title
+                            "content": news.get("content", news.get("title", "")),
                             "source": news.get("source", "unknown"),
+                            "source_channel": news.get("source_channel", news.get("source", "unknown")),
                             "publish_date": news.get("publish_date", datetime.now().strftime("%Y-%m-%d")),
                             "publish_time": news.get("publish_time", datetime.now().strftime("%H:%M:%S")),
                             "url": news.get("url", ""),
@@ -371,25 +488,20 @@ class RealTimeNewsCollector:
                             "collected_at": datetime.now().isoformat()
                         })
 
-                    logger.info(f"通过news_crawler_service采集到 {len(standardized_news)} 条真实新闻")
+                    logger.info("通过news_crawler_service采集到 %d 条真实新闻", len(standardized_news))
                     return standardized_news
                 else:
-                    logger.warning(f"news_crawler_service采集失败: {result.get('error', 'unknown error')}")
+                    logger.warning("news_crawler_service采集失败: %s", result.get("error", "unknown error"))
                     return []
 
             except ImportError as e:
-                logger.warning(f"无法导入news_crawler_service: {e}")
-                # 降级到使用外部客户端（如果提供）
+                logger.warning("无法导入news_crawler_service: %s", e)
                 if self.crawler_client:
-                    # 调用爬虫服务客户端获取新闻
-                    # 这里需要根据实际的爬虫服务API进行调整
                     news_items = await self.crawler_client.fetch_news(
-                        sources=["stock_news_em"],  # 示例：东方财富股票新闻
+                        sources=["stock_news_em"],
                         limit=50,
-                        hours=1  # 最近1小时的新闻
+                        hours=1
                     )
-
-                    # 转换新闻格式为标准化格式
                     standardized_news = []
                     for news in news_items:
                         standardized_news.append({
@@ -397,44 +509,32 @@ class RealTimeNewsCollector:
                             "title": news.get("title", ""),
                             "content": news.get("content", ""),
                             "source": news.get("source", "unknown"),
+                            "source_channel": news.get("source_channel", news.get("source", "unknown")),
                             "publish_date": news.get("publish_date", datetime.now().strftime("%Y-%m-%d")),
                             "publish_time": news.get("publish_time", datetime.now().strftime("%H:%M:%S")),
                             "url": news.get("url", ""),
                             "keywords": news.get("keywords", []),
                             "collected_at": datetime.now().isoformat()
                         })
-
                     return standardized_news
                 else:
                     logger.warning("无法采集真实新闻: 缺少爬虫服务客户端")
                     return []
 
         except Exception as e:
-            logger.error(f"真实新闻采集失败: {e}")
+            logger.error("真实新闻采集失败: %s", e)
             return []
 
     async def _publish_news_to_stream(self, news_items: List[Dict]) -> int:
-        """
-        发布新闻到Redis Stream
-
-        Args:
-            news_items: 新闻列表
-
-        Returns:
-            成功发布的新闻数量
-        """
         if not news_items:
             return 0
 
         published_count = 0
-
         try:
-            # 使用新闻生产者（如果提供）
             if self.news_producer:
                 message_ids = await self.news_producer.publish_batch(news_items, "raw")
                 published_count = sum(1 for mid in message_ids if mid is not None)
             else:
-                # 直接使用stream_manager发布
                 for news in news_items:
                     try:
                         message_data = {
@@ -442,84 +542,66 @@ class RealTimeNewsCollector:
                             "title": news.get("title"),
                             "content": news.get("content"),
                             "source": news.get("source"),
+                            "source_channel": news.get("source_channel", ""),
                             "publish_date": news.get("publish_date"),
                             "publish_time": news.get("publish_time"),
                             "collected_at": news.get("collected_at"),
-                            "type": "raw_news"
+                            "run_id": news.get("run_id", ""),
+                            "type": "raw_news",
+                            "collector_name": news.get("collector_name", "RealTimeNewsCollector"),
+                            "collector_version": news.get("collector_version", "phase4e"),
                         }
-
-                        # 发布到stream:news:raw
                         message_id = await self.stream_manager.publish("stream:news:raw", message_data)
                         if message_id:
                             published_count += 1
-                            logger.debug(f"新闻发布成功: {news.get('news_id')} -> {message_id}")
+                            logger.debug("新闻发布成功: %s -> %s", news.get("news_id"), message_id)
                     except Exception as e:
-                        logger.error(f"发布单条新闻失败 {news.get('news_id')}: {e}")
+                        logger.error("发布单条新闻失败 %s: %s", news.get("news_id"), e)
 
         except Exception as e:
-            logger.error(f"批量发布新闻失败: {e}")
+            logger.error("批量发布新闻失败: %s", e)
 
         return published_count
 
-    def _prefilter_news(self, news_items: List[Dict]) -> (List[Dict], int):
-        """在采集侧对新闻做预筛选，命中SKIP时可直接丢弃。"""
-        if not self.enable_collector_prefilter or not self.local_triage_service:
-            return news_items, 0
-
-        kept: List[Dict] = []
-        skipped = 0
-
-        for news in news_items:
-            try:
-                triage_result = self.local_triage_service.evaluate(news)
-                decision = str(triage_result.get("decision") or "PASS").upper()
-                news_id = news.get("news_id", "unknown")
-
-                if decision == "SKIP" and self.collector_drop_on_skip:
-                    skipped += 1
-                    logger.info(
-                        "🚫 采集前预筛选丢弃小事件: %s, reason=%s",
-                        news_id,
-                        triage_result.get("reason"),
-                    )
-                    continue
-            except Exception as e:
-                logger.warning(f"采集前预筛选异常，保留该新闻继续流转: {e}")
-
-            kept.append(news)
-
-        return kept, skipped
-
     async def get_collection_stats(self) -> Dict:
-        """获取采集统计信息"""
-        stats = self.stats.copy()
+        stats = dict(self.stats)
 
-        # 计算成功率
         total = stats["total_collections"]
         successful = stats["successful_collections"]
-        if total > 0:
-            stats["success_rate"] = successful / total * 100
-        else:
-            stats["success_rate"] = 0
+        stats["success_rate"] = (successful / total * 100) if total > 0 else 0
 
-        # 添加运行状态
         stats["is_running"] = self.is_running
         stats["collection_interval"] = self.collection_interval
 
-        # 最近错误（仅保留最近10条）
         if stats["errors"]:
             stats["recent_errors"] = stats["errors"][-10:]
         else:
             stats["recent_errors"] = []
 
+        # Phase 4E: deduper stats
+        if self._deduper:
+            ds = self._deduper.get_stats()
+            stats.update({
+                "semantic_dedup_batch_count": ds.get("semantic_dedup_batch_count", 0),
+                "semantic_dedup_recent_count": ds.get("semantic_dedup_recent_count", 0),
+                "qwen_dedup_call_count": ds.get("qwen_dedup_call_count", 0),
+                "qwen_dedup_ready": ds.get("qwen_dedup_ready", False),
+                "qwen_dedup_unavailable_count": ds.get("qwen_dedup_unavailable_count", 0),
+                "qwen_dedup_budget_exhausted": ds.get("qwen_dedup_budget_exhausted", 0),
+                "hard_protect_count": ds.get("hard_protect_count", 0),
+                "recent_cache_size": ds.get("recent_cache_size", 0),
+            })
+
         return stats
 
     def get_config(self) -> Dict:
-        """获取当前配置"""
         return {
             "collection_interval": self.collection_interval,
             "max_retries": self.max_retries,
             "retry_delay": self.retry_delay,
             "default_mode": self.default_mode.value,
-            "is_real_mode_available": self._is_real_mode_available()
+            "is_real_mode_available": self._is_real_mode_available(),
+            "enable_semantic_dedup": self._deduper is not None,
+            "active_collector": "RealTimeNewsCollector",
+            "collector_version": "phase4e",
         }
