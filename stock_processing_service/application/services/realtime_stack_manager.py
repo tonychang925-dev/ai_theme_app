@@ -77,6 +77,8 @@ class RealtimeStackState:
     rebuild_pid: int | None = None
     intel_producer_pid: int | None = None
     intel_collection_pid: int | None = None
+    db_collector_pid: int | None = None  # Phase 4F
+    db_collector_enabled: bool = False    # Phase 4F
     run_id: str = ""
     last_error: str = ""
     log_dir: str = ""
@@ -117,6 +119,7 @@ class RealtimeStackManager:
         self._rebuild_process: asyncio.subprocess.Process | None = None
         self._intel_producer_process: asyncio.subprocess.Process | None = None
         self._intel_collection_process: asyncio.subprocess.Process | None = None
+        self._stream_services_process: asyncio.subprocess.Process | None = None  # Phase 4E: RealTimeNewsCollector
         self._lock = asyncio.Lock()
 
     # ── Public API ─────────────────────────────────────────────────
@@ -161,11 +164,13 @@ class RealtimeStackManager:
             rebuild_log = self._log_dir / f"brief_rebuild_{run_id}.log"
             intel_log = self._log_dir / f"intel_producer_{run_id}.log"
             intel_collection_log = self._log_dir / f"intel_collection_{run_id}.log"
+            db_collector_log = self._log_dir / f"db_collector_{run_id}.log"          # Phase 4F
             akshare_status = self._log_dir / f"akshare_{run_id}.status.json"
             akshare_skip_log = self._log_dir / f"akshare_{run_id}.prefilter_skipped.jsonl"
             rebuild_status = self._log_dir / f"brief_rebuild_{run_id}.status.json"
             intel_status = self._log_dir / f"intel_producer_{run_id}.status.json"
             intel_collection_status = self._log_dir / f"intel_collection_{run_id}.status.json"
+            db_collector_status = self._log_dir / f"db_collector_{run_id}.status.json"  # Phase 4F
 
             try:
                 # raw_news/phase0 use REALTIME_PARENT_PID env var for watchdog (no --parent-pid CLI arg)
@@ -240,6 +245,34 @@ class RealtimeStackManager:
                         "RealTimeNewsCollector is the sole raw stream producer"
                     )
                     self._akshare_process = None
+
+                # Phase 4F: DB RealTimeNewsCollector — 唯一正式新闻采集入口
+                self._state.db_collector_enabled = os.environ.get("ENABLE_DB_REALTIME_COLLECTOR", "true").lower() != "false"
+                if self._state.db_collector_enabled:
+                    self._db_collector_process = await asyncio.create_subprocess_exec(
+                        self._python_cmd,
+                        str(ROOT / "database_service/streams/run_realtime_news_collector.py"),
+                        "--redis-url", self._redis_url,
+                        "--db-name", self._db_name,
+                        "--run-id", run_id,
+                        "--collection-interval",
+                        os.environ.get("DB_COLLECTOR_INTERVAL_SECONDS", "300"),
+                        "--status-path", str(db_collector_status),
+                        "--parent-pid", str(parent_pid),
+                        stdout=open(db_collector_log, "w"),
+                        stderr=asyncio.subprocess.STDOUT,
+                        env=env,
+                    )
+                    self._state.db_collector_pid = self._db_collector_process.pid
+                    logger.info(
+                        "DB RealTimeNewsCollector started: pid=%d run_id=%s (Phase 4F)",
+                        self._db_collector_process.pid, run_id,
+                    )
+                else:
+                    logger.warning("DB RealTimeNewsCollector DISABLED (ENABLE_DB_REALTIME_COLLECTOR=false)")
+                    self._db_collector_process = None
+                    self._state.db_collector_pid = None
+
                 self._rebuild_process = await asyncio.create_subprocess_exec(
                     self._python_cmd,
                     str(ROOT / "stock_processing_service/scripts/run_pre_market_brief_rebuild_loop.py"),
@@ -295,6 +328,8 @@ class RealtimeStackManager:
                 _write_pidfile(runtime_dir / f"rebuild_{run_id}.pid", self._rebuild_process.pid)
                 _write_pidfile(runtime_dir / f"intel_producer_{run_id}.pid", self._intel_producer_process.pid)
                 _write_pidfile(runtime_dir / f"intel_collection_{run_id}.pid", self._intel_collection_process.pid)
+                if self._db_collector_process is not None:
+                    _write_pidfile(runtime_dir / f"db_collector_{run_id}.pid", self._db_collector_process.pid)
 
                 self._state.running = True
                 self._state.started_at = datetime.now(timezone.utc).isoformat()
@@ -310,8 +345,9 @@ class RealtimeStackManager:
                 self._state.log_dir = str(self._log_dir)
 
                 logger.info(
-                    "realtime stack started: run_id=%s akshare_pid=%s raw_pid=%d decision_pid=%d rebuild_pid=%d intel_pid=%d intel_collection_pid=%d",
+                    "realtime stack started: run_id=%s db_collector_pid=%s akshare_pid=%s raw_pid=%s decision_pid=%s rebuild_pid=%s intel_pid=%s intel_collection_pid=%s",
                     run_id,
+                    self._state.db_collector_pid or "disabled",
                     self._state.akshare_pid or "disabled",
                     self._raw_process.pid,
                     self._decision_process.pid,
@@ -401,6 +437,11 @@ class RealtimeStackManager:
             "rebuild_pid": self._state.rebuild_pid,
             "intel_producer_pid": self._state.intel_producer_pid,
             "intel_collection_pid": self._state.intel_collection_pid,
+            # Phase 4F: DB RealTimeNewsCollector
+            "db_collector_pid": self._state.db_collector_pid,
+            "db_collector_enabled": self._state.db_collector_enabled,
+            "active_collector": "RealTimeNewsCollector" if self._state.db_collector_enabled else "none",
+            "collector_version": "phase4e",
             "log_dir": self._state.log_dir,
             "last_error": self._state.last_error,
             "profile_version": BASELINE_ENV.get("THEME_PROFILE_VERSION", "v2"),
@@ -542,7 +583,7 @@ class RealtimeStackManager:
         return result
 
     async def _cleanup_processes(self) -> None:
-        for proc in [self._akshare_process, self._raw_process, self._decision_process, self._rebuild_process, self._intel_producer_process, self._intel_collection_process]:
+        for proc in [self._akshare_process, self._db_collector_process, self._raw_process, self._decision_process, self._rebuild_process, self._intel_producer_process, self._intel_collection_process]:
             if proc is None or proc.returncode is not None:
                 continue
             try:
@@ -551,7 +592,7 @@ class RealtimeStackManager:
                 pass
         # Give processes a moment to exit
         await asyncio.sleep(1)
-        for proc in [self._akshare_process, self._raw_process, self._decision_process, self._rebuild_process, self._intel_producer_process, self._intel_collection_process]:
+        for proc in [self._akshare_process, self._db_collector_process, self._raw_process, self._decision_process, self._rebuild_process, self._intel_producer_process, self._intel_collection_process]:
             if proc is None or proc.returncode is not None:
                 continue
             try:
@@ -563,6 +604,8 @@ class RealtimeStackManager:
         self._decision_process = None
         self._rebuild_process = None
         self._intel_producer_process = None
+        self._db_collector_process = None
+        self._db_collector_process = None
         self._intel_collection_process = None
         self._state.akshare_pid = None
         self._state.raw_news_pid = None
@@ -570,9 +613,10 @@ class RealtimeStackManager:
         self._state.rebuild_pid = None
         self._state.intel_producer_pid = None
         self._state.intel_collection_pid = None
+        self._state.db_collector_pid = None  # Phase 4F
         # P1-C1: clean pidfiles + old status files
         runtime_dir = self._log_dir / "runtime"
-        for pattern in ["akshare_*.pid", "raw_news_*.pid", "decision_*.pid", "rebuild_*.pid", "intel_producer_*.pid", "intel_collection_*.pid"]:
+        for pattern in ["akshare_*.pid", "db_collector_*.pid", "raw_news_*.pid", "decision_*.pid", "rebuild_*.pid", "intel_producer_*.pid", "intel_collection_*.pid"]:
             for pf in runtime_dir.glob(pattern):
                 try: pf.unlink()
                 except OSError: pass
