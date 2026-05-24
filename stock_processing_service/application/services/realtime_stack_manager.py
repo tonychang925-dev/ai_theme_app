@@ -1,10 +1,13 @@
 """Phase 5: New-chain realtime stack manager.
 
 Manages start/stop/status of the realtime pipeline:
-  - akshare realtime collector (writes stream:news:raw)
+  - AkShare realtime collector (DEPRECATED since Phase 4E, disabled by default)
+    Legacy mode writes stream:news:raw:legacy only.
+    Formal raw stream producer is RealTimeNewsCollector (database_service/streams/).
   - raw_news_services (NewsStreamHandler + NewsStreamProcessor)
   - phase0_decision_services (ThemeProcessor + DecisionExecutor)
   - pre-market brief minimal rebuild loop
+  - Intel Stream Producer + Intel Collection Pipeline
 
 Explicitly does NOT start: frontend_bff:8003, old matcher,
 old run_realtime_stack.sh.
@@ -389,7 +392,10 @@ class RealtimeStackManager:
             "running": self._state.running,
             "run_id": self._state.run_id,
             "started_at": self._state.started_at,
+            # Phase 4E: AkShare collector status
             "akshare_pid": self._state.akshare_pid,
+            "akshare_collector_enabled": self._state.akshare_collector_enabled,
+            "akshare_legacy_mode": self._state.akshare_legacy_mode,
             "raw_news_pid": self._state.raw_news_pid,
             "decision_pid": self._state.decision_pid,
             "rebuild_pid": self._state.rebuild_pid,
