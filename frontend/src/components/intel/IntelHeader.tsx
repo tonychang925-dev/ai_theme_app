@@ -3,6 +3,7 @@ import { useAuth } from '../../routes/auth/AuthProvider';
 import { navigateTo } from '../../lib/navigation';
 import type { SSEConnectionState } from '../../lib/api';
 import logoImg from '../../assets/intel-icons/logo_1.png';
+import logo2Img from '../../assets/intel-icons/logo_2.png';
 import realtimeIcon from '../../assets/intel-icons/实时采集.png';
 import collectionIcon from '../../assets/intel-icons/采集控制台.png';
 import recapIcon from '../../assets/intel-icons/当日复盘.png';
@@ -37,7 +38,7 @@ export function IntelHeader({
       {/* Logo + Title */}
       <div className="intel-brand">
         <img src={logoImg} alt="Logo" className="intel-logo" />
-        <h1 className="intel-title">AI投资助理</h1>
+        <img src={logo2Img} alt="AI投资助理" style={{ height: 88, width: "auto", flexShrink: 0 }} />
       </div>
 
       {/* Quick Actions */}

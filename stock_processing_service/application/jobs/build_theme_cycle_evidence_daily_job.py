@@ -94,8 +94,32 @@ class BuildThemeCycleEvidenceDailyJob:
                 r.setdefault("limit_up", False); r.setdefault("is_leader", False)
         pool_rows = [_ns(r) for r in pool_rows_raw]
         subject_keys = sorted({r.subject_key for r in pool_rows})
-        bars_raw = await self._read_port.get_stock_daily_bars(trade_date)
-        bars = [_ns(b) for b in bars_raw]
+        bars_raw = await self._read_port.get_subject_stock_daily_bars_range(
+            start_date=trade_date,
+            end_date=trade_date,
+            subject_keys=subject_keys,
+        )
+        from collections import namedtuple
+        from decimal import Decimal as _D
+        _Bar = namedtuple("_Bar", ["trade_date", "stock_id", "stock_name", "open_price", "high_price", "low_price", "close_price", "pre_close", "pct_chg", "volume", "amount", "limit_up", "limit_up_price", "limit_down_price"])
+        bars = [
+            _Bar(
+                trade_date=str(b.get("trade_date", "")),
+                stock_id=str(b.get("stock_id", "")),
+                stock_name=str(b.get("stock_name", "")),
+                open_price=_D(str(b.get("open_price", 0))),
+                high_price=_D(str(b.get("high_price", 0))),
+                low_price=_D(str(b.get("low_price", 0))),
+                close_price=_D(str(b.get("close_price", 0))),
+                pre_close=_D(str(b.get("pre_close", 0))),
+                pct_chg=_D(str(b.get("pct_chg", 0))),
+                volume=_D(str(b.get("volume", 0))),
+                amount=_D(str(b.get("amount", 0))),
+                limit_up=bool(b.get("limit_up", False)),
+                limit_up_price=_D(str(b.get("limit_up_price", 0))),
+                limit_down_price=_D(str(b.get("limit_down_price", 0))),
+            ) for b in bars_raw
+        ]
 
         # Heat scores: read from pool metadata.
         heat_scores: dict[str, Decimal] = {}
@@ -168,12 +192,34 @@ class BuildThemeCycleEvidenceDailyJob:
             all_pool_stock_ids = sorted({r.stock_id for r in pool_rows if r.stock_id})
             unique_stock_count = len(all_pool_stock_ids)
             history_query_scope = "pool_stock_ids" if all_pool_stock_ids else "all_stocks_empty_pool"
-            history_bars = await self._read_port.get_stock_daily_bars_range(
+            history_bars = await self._read_port.get_subject_stock_daily_bars_range(
                 start_date=start_date,
                 end_date=trade_date,
                 stock_ids=all_pool_stock_ids if all_pool_stock_ids else None,
+                subject_keys=subject_keys,
             )
             history_bar_count = len(history_bars)
+            # Convert dict rows to attribute-accessible objects (K-line builder expects .stock_id etc.)
+            from collections import namedtuple
+            _Bar = namedtuple("_Bar", ["trade_date", "stock_id", "stock_name", "open_price", "high_price", "low_price", "close_price", "pre_close", "pct_chg", "volume", "amount", "limit_up", "limit_up_price", "limit_down_price"])
+            history_bars = [
+                _Bar(
+                    trade_date=str(b.get("trade_date", "")),
+                    stock_id=str(b.get("stock_id", "")),
+                    stock_name=str(b.get("stock_name", "")),
+                    open_price=Decimal(str(b.get("open_price", 0))),
+                    high_price=Decimal(str(b.get("high_price", 0))),
+                    low_price=Decimal(str(b.get("low_price", 0))),
+                    close_price=Decimal(str(b.get("close_price", 0))),
+                    pre_close=Decimal(str(b.get("pre_close", 0))),
+                    pct_chg=Decimal(str(b.get("pct_chg", 0))),
+                    volume=Decimal(str(b.get("volume", 0))),
+                    amount=Decimal(str(b.get("amount", 0))),
+                    limit_up=bool(b.get("limit_up", False)),
+                    limit_up_price=Decimal(str(b.get("limit_up_price", 0))),
+                    limit_down_price=Decimal(str(b.get("limit_down_price", 0))),
+                ) for b in history_bars
+            ]
             # Group by date
             bars_by_date: dict[str, list[object]] = {}
             trade_dates_set: set[str] = set()

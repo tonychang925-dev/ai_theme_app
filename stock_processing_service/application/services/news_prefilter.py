@@ -100,13 +100,13 @@ class NewsPreFilterAdapter:
             rule_decision = str(rule_raw.get("decision") or "PASS").upper()
 
             # 2. 非 prompt 模式，或规则已明确 → 直接返回
-            #    rule-only（含降级）模式下，灰区默认 SKIP，不再保守放行
+            #    rule-only（含降级）模式下，灰区默认 PASS（保守放行），标记 gray_pass
             if self.mode == "rule" or self._degraded:
                 result = _to_result(rule_raw)
                 if rule_raw.get("gray") and result.pass_:
                     return NewsTriageResult(
-                        pass_=False, decision="SKIP",
-                        reason="rule:gray_conservative_skip", mode="rule", score=None)
+                        pass_=True, decision="PASS",
+                        reason="rule:gray_conservative_pass", mode="rule", score=None)
                 return result
             if not self._use_qwen:
                 return _to_result(rule_raw)
@@ -118,8 +118,8 @@ class NewsPreFilterAdapter:
                 result = _to_result(rule_raw)
                 if rule_raw.get("gray") and result.pass_:
                     return NewsTriageResult(
-                        pass_=False, decision="SKIP",
-                        reason="rule:gray_conservative_skip", mode="rule", score=None)
+                        pass_=True, decision="PASS",
+                        reason="rule:gray_degraded_pass", mode="rule", score=None)
                 return result
 
             # 4. 批次预算已耗尽 → 此时确认为未降级，灰区默认 SKIP（不依赖 Qwen）

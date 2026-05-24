@@ -175,7 +175,15 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
     setPayload((current) => {
       const currentItems = current?.items ?? [];
       const existingIds = new Set(currentItems.map((item) => item.item_id));
-      const freshItems = scopedItems.filter((item) => !existingIds.has(item.item_id));
+      // 内容去重：title+source_channel 防 JYHF CDP 重复发布
+      const existingKeys = new Set(currentItems.map((item) => `${item.title}|${(item as any).source_channel || ''}`));
+      const freshItems = scopedItems.filter((item) => {
+        if (existingIds.has(item.item_id)) return false;
+        const key = `${item.title}|${(item as any).source_channel || ''}`;
+        if (existingKeys.has(key)) return false;
+        existingKeys.add(key);
+        return true;
+      });
       if (freshItems.length === 0) return current;
 
       setLiveNewCount((value) => value + freshItems.length);
@@ -256,6 +264,8 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
     const stockIds = Array.isArray(raw.stock_ids) ? raw.stock_ids : [];
     const stockNames = Array.isArray(raw.stock_names) ? raw.stock_names : [];
     if (!raw.item_id || !raw.item_type || !raw.occurred_at) return null;
+    // 过滤 CNINFO 公告（source_channel=cninfo_announcement）
+    if (String((raw as any).source_channel || "") === "cninfo_announcement") return null;
     return {
       item_id: String(raw.item_id),
       item_type: raw.item_type,

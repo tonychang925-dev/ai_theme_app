@@ -1603,7 +1603,7 @@ select {
   gap: 12px;
   padding: 10px 16px;
   margin-bottom: 10px;
-  background: linear-gradient(to right, #15161b 0%, #15161b 200px, #212327 320px);
+  background: linear-gradient(to right, #15161b 0%, #15161b 500px, #212327 620px);
   border: 1px solid #37393d;
   border-radius: 8px;
   flex-wrap: nowrap;

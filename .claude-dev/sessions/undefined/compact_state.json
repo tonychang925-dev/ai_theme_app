@@ -1,307 +1,244 @@
 {
-  "session_goal": "P0-P1 盘前必读全链路闭环验证与优化：从 AkShare 实时采集到 Intel 公告、JYHF DOM、PDF 解析、AlertRuleEngine、Notion 发布、前端展示的完整产品化",
-  "current_task": "修复题材详情页面 404 错误 — 将 /api/v2/theme_workspace 从已下线 BFF(8003) 迁移到 SPS(8090) /api/v1/theme/workspace/{subject_key}",
+  "session_goal": "修复盘后复盘模块数据管线：AkShare实时新闻采集→结构化→决策→前端展示全链路打通，解决CNINFO公告混入新闻、Theme Workspace数据为空、evidence子维度全0等问题",
+  "current_task": "CLS采集源切换：恢复'重点'（红标电报）+ 新增akshare stock_info_global_cls作为补充源",
   "constraints": [
-    "仅使用 stock_data_test 数据库(单库模式)",
-    "不依赖已下线的前端 BFF(port 8003)",
-    "所有新 API 必须挂在 SPS(8090)",
-    "Redis consumer group 默认禁用自动清理",
-    "Python subprocess 必须 watchdog 父子进程同生共死",
-    "REDIS_URL 空字符串等同于未设置"
+    "绝不允许违反设计文档逻辑的瞎改",
+    "绝不能让低质量事件进入匹配流程",
+    "设计文档指定subject_stock_daily_snapshot为冻结真源",
+    "复盘主体不依赖D1候选池",
+    "triage_block_on_skip=True保持，REVIEW事件不进入结构化管道"
   ],
   "decisions": [
     {
-      "topic": "DB 统一",
-      "decision": "废弃读写分离，所有链路统一使用 stock_data_test，FORCE_SINGLE_DB=true 硬校验",
-      "reason": "当前阶段不需要读写分离，减少排查复杂度"
+      "topic": "DailyReview架构",
+      "decision": "后端生成结构化theme_reviews[]替代前端解析中文section字符串",
+      "reason": "设计文档§13.3.4要求复盘主体不依赖D1候选池，前端不再解析报告文本"
     },
     {
-      "topic": "Redis Group 治理",
-      "decision": "consumer_group_manager cleanup_enabled 默认 false，仅清理 _e2e_ 组，保护 _realtime 组，默认 dry-run",
-      "reason": "旧 cleanup 误删 realtime group 导致 consumer 消失"
+      "topic": "前端toolbar统一",
+      "decision": "6页面统一使用strong-watch-toolbar布局（图标+标题+右对齐控件）",
+      "reason": "提升一致性和可维护性"
     },
     {
-      "topic": "子进程生命周期",
-      "decision": "所有 5 个 realtime 子进程写 pidfile + --parent-pid watchdog，父进程死亡 6s 内子进程自动退出",
-      "reason": "SPS 被杀后 orphan 进程持续累积并干扰新 group 创建"
+      "topic": "DecisionExecutor feed发布",
+      "decision": "非DROP事件发布到stream:event:feed，source=decision_executor_feed",
+      "reason": "统一主链路：AkShare→DecisionExecutor→feed→SSE→前端"
     },
     {
-      "topic": "Intel require_news_id 豁免",
-      "decision": "theme_processor.py 中 source_category='intel' 不因 news_id=NULL 被跳过；get_news_event_for_match 的 SELECT 增加 source_category 列",
-      "reason": "Intel 公告无 news_raw，news_id 永远为 NULL"
+      "topic": "CNINFO公告过滤",
+      "decision": "SQL层标记为cninfo_announcement，web_app和前端SSE双重过滤",
+      "reason": "公告不应混入实时新闻事件"
     },
     {
-      "topic": "Intel run_id_filter 修复",
-      "decision": "IntelStreamProducer envelope 带 realtime run_id，api_app.py produce 端点继承实时 run_id",
-      "reason": "ThemeProcessor run_id_filter 会静默跳过 run_id 不匹配的消息"
+      "topic": "evidence builder修复",
+      "decision": "改用subject_stock_daily_snapshot替代stock_daily_snapshot",
+      "reason": "设计文档冻结对象，且stock_id格式匹配（6位无后缀 vs .SZ后缀不匹配导致bar数据全空）"
     },
     {
-      "topic": "盘前必读机会层",
-      "decision": "EventDrivenOpportunityBuilder 使用 window.prev_trade_date 而非 trade_date 查询股票池",
-      "reason": "盘前必读数据窗口是前一日15:00~当日08:00，股票池应用前一天收盘数据"
+      "topic": "CLS采集源",
+      "decision": "CLS爬虫保持'重点'（A/B级红标），新增akshare stock_info_global_cls覆盖全量电报",
+      "reason": "红标电报质量高，akshare CLS补充覆盖面"
     },
     {
-      "topic": "盘前必读 Notion 发布",
-      "decision": "新增 POST /api/v1/pre_market_brief/publish-notion, Notebooks 数据库标题改为 '盘后复盘&盘前必读'",
-      "reason": "用户需要同时发布盘后复盘和盘前必读到 Notion"
-    },
-    {
-      "topic": "公告价值分类",
-      "decision": "AnnouncementValueClassifier 将公告分为 A/B/C/D 四级，PDF 解析队列只取 A 类，D 类中介材料排除",
-      "reason": "大量券商督导/保荐/法律意见书污染 PDF 解析队列"
-    },
-    {
-      "topic": "BFF 下线 API 迁移",
-      "decision": "将 /api/v2/stock_workspace 和 /api/v2/theme_workspace 迁移到 SPS /api/v1/stock/workspace 和 /api/v1/theme/workspace",
-      "reason": "前端 BFF(8003) 已下线但前端仍调用这些端点导致 404/HTML 错误"
-    },
-    {
-      "topic": "前端题材详情",
-      "decision": "题材详情页改为双标签: 题材详情(概览/摘要/详情) + 题材动态(周期/走势/资金/历史/子题材/股票池)，默认显示题材动态",
-      "reason": "原页面将所有内容堆在一个页面太长"
-    },
-    {
-      "topic": "新闻发布时间显示",
-      "decision": "SQL occurred_at 使用 (nr.publish_date + nr.publish_time)::timestamp 替代 nr.publish_date::timestamp",
-      "reason": "publish_date::timestamp 丢失时间部分导致显示 00:00:00"
-    },
-    {
-      "topic": "新闻正文选择",
-      "decision": "SQL summary 优先使用 nr.content(原始正文) 而非 ne.summary(AI 总结)",
-      "reason": "盘前必读重大事件应展示原始新闻正文而非 AI 摘要"
+      "topic": "Theme Workspace数据源",
+      "decision": "优先使用theme_cycle_judgement_v2复合评分，evidence仅作补充",
+      "reason": "evidence子维度周末为0，cycle评分不受影响"
     }
   ],
   "files_touched": [
     {
+      "path": "stock_processing_service/application/jobs/build_post_market_recap_job.py",
+      "summary": "新增_build_theme_context_map/_build_theme_reviews/_to_bool/MAX_THEME_REVIEWS=20",
+      "type": "modified"
+    },
+    {
+      "path": "stock_processing_service/application/services/new_chain_post_market_report_builder.py",
+      "summary": "_score改用leader_composite_score，_theme_lines多源兜底，_cycle_map双索引",
+      "type": "modified"
+    },
+    {
       "path": "stock_processing_service/api_app.py",
-      "summary": "新增 DB guard, /api/v1/db/info, /api/v1/intel/produce(run_id继承), /api/v1/realtime/orphans+cleanup-orphans, /api/v1/pre_market_brief/publish-notion, /api/v1/stock/workspace/{stock_id}, /api/v1/theme/workspace/{subject_key}",
+      "summary": "新增/api/v1/daily_review端点，leader_stocks SQL JOIN 5表补齐字段，event_chain_score/mainline_stability_score兜底",
       "type": "modified"
     },
     {
-      "path": "stock_processing_service/application/services/realtime_stack_manager.py",
-      "summary": "DB hard-lock stock_data_test, pidfile writing, orphan sweep, group ready gate, realtime_groups status, _normalize_redis_url, 子进程 --parent-pid 参数",
-      "type": "modified"
-    },
-    {
-      "path": "database_service/streams/handlers/theme_processor.py",
-      "summary": "Intel 事件 require_news_id 豁免和 run_id_filter 匹配",
-      "type": "modified"
-    },
-    {
-      "path": "database_service/managers/postgres_manager.py",
-      "summary": "get_news_event_for_match 增加 source_category, occurred_at 使用 publish_date+publish_time, summary 优先 nr.content, 新增 get_raw_intel_for_pdf_parse/update_raw_intel_content_text, 窗口过滤 COALESCE 修复",
-      "type": "modified"
-    },
-    {
-      "path": "database_service/streams/utils/consumer_group_manager.py",
-      "summary": "cleanup_enabled 默认 false, protected_groups 增加 realtime 组, 只清理 _e2e_ 组, execute=false 默认 dry-run",
-      "type": "modified"
-    },
-    {
-      "path": "database_service/gateway.py",
-      "summary": "get_intel_announcement_events end_time 改为 08:00, 新增 get_raw_intel_for_pdf_parse/update_raw_intel_content_text 代理",
-      "type": "modified"
-    },
-    {
-      "path": "evaluate_service/e2e/pre_market_brief/run_raw_news_services.py",
-      "summary": "realtime 使用稳定 group 名 + _watch_parent 定义",
-      "type": "modified"
-    },
-    {
-      "path": "evaluate_service/e2e/pre_market_brief/run_phase0_decision_services.py",
-      "summary": "realtime 使用稳定 group 名 + _watch_parent 定义",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/application/services/akshare_realtime_news_collector.py",
-      "summary": "新增 prefilter hook, filtered stats, skip log",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/application/services/news_prefilter.py",
-      "summary": "NewsPreFilterAdapter 规则+Qwen prompt 灰区判定，fail-open",
-      "type": "created"
-    },
-    {
-      "path": "stock_processing_service/application/services/pre_market_window.py",
-      "summary": "resolve_pre_market_window 统一盘前窗口解析",
-      "type": "created"
-    },
-    {
-      "path": "stock_processing_service/application/services/pre_market_brief_builder.py",
-      "summary": "窗口参数传递, AlertRuleEngine 集成, opportunity_builder 使用 prev_trade_date, source_breakdown 诊断",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/application/services/pre_market_brief_auto_scheduler.py",
-      "summary": "调度窗口 15:30/08:30 改为 15:00/08:00",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/scripts/run_intel_stream_producer.py",
-      "summary": "IntelStreamProducer 周期轮询脚本",
-      "type": "created"
-    },
-    {
-      "path": "stock_processing_service/application/services/intel_new_chain_adapter.py",
-      "summary": "load_review_event_items 和 source_channel 标准化",
-      "type": "modified"
-    },
-    {
-      "path": "services/jyhf_cdp_service/db_sink.py",
-      "summary": "写入 news_event(source_category=jyhf_dom) + event_subject_map(source=jyhf_dom_confirmed)",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/application/services/pdf_content_extractor.py",
-      "summary": "PDF 下载+解析: pdftotext→pdfplumber→pypdf fallback 链",
-      "type": "created"
-    },
-    {
-      "path": "stock_processing_service/domain/services/alert_rule_engine.py",
-      "summary": "公告风险/机会规则引擎，评分/去重/reason_code",
-      "type": "created"
-    },
-    {
-      "path": "stock_processing_service/domain/services/announcement_value_classifier.py",
-      "summary": "A/B/C/D 四级公告价值分类",
-      "type": "created"
-    },
-    {
-      "path": "stock_processing_service/domain/services/intel_event_extractor.py",
-      "summary": "新增 full_text prompt，content_text>=300 自动切换",
-      "type": "modified"
-    },
-    {
-      "path": "theme_service/services/theme_match_engine.py",
-      "summary": "evidence_json str→dict 兼容修复",
-      "type": "modified"
-    },
-    {
-      "path": "stock_processing_service/publishers/notion_post_market_recap_publisher.py",
-      "summary": "支持 report_type 参数和 _build_pre_market_blocks",
-      "type": "modified"
-    },
-    {
-      "path": "frontend/src/routes/PreMarketBriefPage.tsx",
-      "summary": "RiskAlertCard/OpportunityAlertCard 组件, 发布到 Notion 按钮, 公告/风险/机会计数",
-      "type": "modified"
-    },
-    {
-      "path": "frontend/src/routes/theme/ThemeWorkspacePage.tsx",
-      "summary": "双标签页: 题材详情+题材动态, 默认题材动态",
-      "type": "modified"
-    },
-    {
-      "path": "frontend/src/routes/stock/StockWorkspacePage.tsx",
-      "summary": "全面展示个股数据: 行情/亮点/题材/走势/概况/资金/K线/龙虎榜/竞价",
+      "path": "web_app_service/api/routes.py",
+      "summary": "新增/api/v2/daily-review和/api/v2/stock_workspace代理，theme-radar改从daily-review取stage，过滤cninfo_announcement",
       "type": "modified"
     },
     {
       "path": "frontend/src/lib/api.ts",
-      "summary": "新增 PreMarketAlert 类型, publishPreMarketBriefToNotion, StockWorkspaceView 扩展, fetchThemeWorkspace/fetchStockWorkspace 改为 SPS 端点",
+      "summary": "fetchThemeWorkspace/fetchStockWorkspace切/v2，新增DailyReviewView+fetchDailyReview，MarketValidationView加theme_validation",
       "type": "modified"
     },
     {
-      "path": "frontend/src/components/intel/IntelListItem.tsx",
-      "summary": "h3→p 取消加粗",
+      "path": "frontend/src/routes/recap/RecapPage.tsx",
+      "summary": "新增DailyReviewTable组件优先渲染结构化数据，旧sections保留为fallback",
       "type": "modified"
     },
     {
-      "path": "frontend/src/components/theme/ChildThemesCard.tsx",
-      "summary": "子题材 span→button 可点击跳转",
+      "path": "frontend/src/hooks/useIntelFeed.ts",
+      "summary": "SSE+轮询加cninfo_announcement过滤，mergeIncomingItems加title+source_channel内容去重，实时栈检测加fallback",
       "type": "modified"
     },
     {
-      "path": "frontend/src/routes/collection/RealtimeCollectorPage.tsx",
-      "summary": "删除 CDP 红色诊断条",
+      "path": "database_service/managers/postgres_manager.py",
+      "summary": "sql_stock_facts加LEFT JOIN theme_cycle_judgement_v2 cyc，新增get_subject_stock_daily_bars_range，SQL CASE加cninfo_announcement分支",
+      "type": "modified"
+    },
+    {
+      "path": "database_service/gateway.py",
+      "summary": "新增get_post_market_report_context显式方法",
+      "type": "modified"
+    },
+    {
+      "path": "database_service/streams/handlers/DecisionExecutor.py",
+      "summary": "新增_publish_to_feed方法(await修复)，consumer_group不再写死，_execute_action_fixed加feed调用",
+      "type": "modified"
+    },
+    {
+      "path": "database_service/streams/start_services.py",
+      "summary": "加theme_processor/decision_executor到services_config，pass_config支持，param_values支持，legacy默认关闭",
+      "type": "modified"
+    },
+    {
+      "path": "database_service/streams/handlers/theme_processor.py",
+      "summary": "start()加initialize()自动调用",
+      "type": "modified"
+    },
+    {
+      "path": "database_service/streams/services/local_qwen_triage_service.py",
+      "summary": "_prompt_decision非法输出改为return None回退规则，_stage_priority修复",
+      "type": "modified"
+    },
+    {
+      "path": "stock_processing_service/application/jobs/build_theme_cycle_evidence_daily_job.py",
+      "summary": "get_stock_daily_bars_range改为get_subject_stock_daily_bars_range，dict转StockBarDTO",
+      "type": "modified"
+    },
+    {
+      "path": "frontend/src/components/intel/IntelHeader.tsx",
+      "summary": "标题改logo_2.png(88px)，toolbar渐变，#222528背景，连结状态+退出图标，CLS图标",
+      "type": "modified"
+    },
+    {
+      "path": "frontend/src/components/intel/ThemeRadarPanel.tsx",
+      "summary": "新建左栏主题雷达组件（热度条+阶段标签+过滤checkbox）",
+      "type": "created"
+    },
+    {
+      "path": "frontend/src/components/intel/MarketValidationPanel.tsx",
+      "summary": "新建右栏市场验证组件（池状态+主题验证+龙头股票）",
+      "type": "created"
+    },
+    {
+      "path": "frontend/src/routes/intel/StrongStockWatchPage.tsx",
+      "summary": "布局重构：板数移左列，toolbar单行，图标+灰色背景",
+      "type": "modified"
+    },
+    {
+      "path": "news_crawler_service/services/news_crawler_service.py",
+      "summary": "CLS采集切换：重点↔电报↔重点（最终恢复重点）",
+      "type": "modified"
+    },
+    {
+      "path": "stock_processing_service/application/services/akshare_realtime_news_collector.py",
+      "summary": "新增akshare stock_info_global_cls源，_SOURCE_LIMITS加cls:30",
+      "type": "modified"
+    },
+    {
+      "path": "stock_processing_service/application/services/event_driven_opportunity_builder.py",
+      "summary": "新增_fetch_jyhf_reasons从theme_stock_map取JYHF映射理由，jyhf_reason嵌入reason字段",
+      "type": "modified"
+    },
+    {
+      "path": "frontend/src/routes/PreMarketBriefPage.tsx",
+      "summary": "统一toolbar布局，卡片→表格展示，事件驱动机会理由加JYHF补充",
+      "type": "modified"
+    },
+    {
+      "path": "stock_processing_service/ports/read_ports.py",
+      "summary": "StockReadPort加get_post_market_report_context和get_subject_stock_daily_bars_range",
       "type": "modified"
     },
     {
       "path": "frontend/src/styles.css",
-      "summary": "情报台正文青色 #00e5ff, 题材标签页样式",
-      "type": "modified"
-    },
-    {
-      "path": "frontend/vite.config.ts",
-      "summary": "新增 /api/v1/stock 和 /api/v1/intel 和 /api/v1/db 代理到 8090",
-      "type": "modified"
-    },
-    {
-      "path": "docs/architecture/AI投资助理_盘前必读事件驱动机会链路设计.md",
-      "summary": "Checklist 更新 P0-A~P1-D 状态为 DONE",
-      "type": "modified"
-    },
-    {
-      "path": ".env.theme",
-      "summary": "修复 NOTION_DATABASE_ID 为正确的 reports 数据库 ID",
+      "summary": "全面更新：pre-market表格、strong-watch布局、intel-toolbar渐变、theme-radar-panel、连结状态指示灯",
       "type": "modified"
     }
   ],
   "known_failures": [
     {
-      "type": "config",
-      "location": "REDIS_URL 环境变量",
-      "summary": "REDIS_URL 设为空字符串时 os.environ.get 返回 '' 而非默认值，导致 AkShare collector Redis URL 解析失败",
+      "type": "bug",
+      "location": "DecisionExecutor._publish_to_feed line 1325",
+      "summary": "xadd缺少await导致feed不写入Redis",
       "resolved": true
     },
     {
-      "type": "runtime",
-      "location": "run_raw_news_services.py / run_phase0_decision_services.py",
-      "summary": "_watch_parent 函数定义未成功插入文件，NameError 导致进程秒退",
+      "type": "bug",
+      "location": "DecisionExecutor._publish_to_feed",
+      "summary": "dropped:False(bool)和confidence(float)导致redis xadd报Invalid input type",
       "resolved": true
     },
     {
-      "type": "infrastructure",
-      "location": "Redis consumer group",
-      "summary": "旧 start_services.py consumer_group_cleanup_loop 每 30min 清理 consumer group，误删 realtime group",
+      "type": "bug",
+      "location": "DecisionExecutor.__init__ line 38",
+      "summary": "consumer_group=consumer_group参数被后续self.consumer_group='decision_executors'写死覆盖",
       "resolved": true
     },
     {
-      "type": "code",
-      "location": "theme_processor.py require_news_id",
-      "summary": "get_news_event_for_match 的 SELECT 不含 source_category，导致 intel 豁免条件永远不满足",
-      "resolved": true
-    },
-    {
-      "type": "code",
-      "location": "theme_match_engine.py _build_event_match_profile",
-      "summary": "evidence_json 为字符串时 json.loads 后未检查是否为 dict，导致 .get() 失败",
-      "resolved": true
-    },
-    {
-      "type": "config",
-      "location": ".env.theme NOTION_DATABASE_ID",
-      "summary": "数据库 ID 指向 Page 而非 Database，Notion API 返回 400",
-      "resolved": true
-    },
-    {
-      "type": "config",
-      "location": "Vite proxy",
-      "summary": "/api 代理到 8000(web_app) 而非 8090(SPS)，新端点返回 HTML 而非 JSON",
+      "type": "bug",
+      "location": "event_driven_opportunity_builder._score_stock line 180",
+      "summary": "jyhf_reasons变量在_score_stock作用域外，NameError",
       "resolved": true
     },
     {
       "type": "data",
-      "location": "news_raw.publish_time",
-      "summary": "publish_time 列为空字符串时 ::time 类型转换失败，导致 SQL 语法错误",
+      "location": "theme_cycle_evidence_daily表",
+      "summary": "event_strength_score/red_ratio/theme_support_score全为0：stock_daily_snapshot的.SZ后缀与pool_rows的6位ID不匹配",
+      "resolved": true
+    },
+    {
+      "type": "data",
+      "location": "stream:event:feed",
+      "summary": "SSEPushService未运行导致DecisionExecutor发布的feed无法推送到前端",
+      "resolved": false
+    },
+    {
+      "type": "pipeline",
+      "location": "intel_producer",
+      "summary": "produced=0，decision stream 1137事件堵积，根因ThemeProcessor/DecisionExecutor未启动",
+      "resolved": true
+    },
+    {
+      "type": "pipeline",
+      "location": "intel_collection",
+      "summary": "CNINFO extracted=0，DeepSeek提取阶段无产出",
+      "resolved": false
+    },
+    {
+      "type": "config",
+      "location": "Qwen triage第二层过滤",
+      "summary": "500条通过预筛选但embedding评分落在REVIEW区间全部被拦截，0条进入结构化管道",
       "resolved": false
     }
   ],
   "open_questions": [
-    "SPS 多次重启导致 ThemeProcessor 子进程退出后未自动重启，需要手动 start realtime stack",
-    "VPN 关闭后 AkShare 采集恢复但 curl 间歇返回 Empty reply from server",
-    "strong_stock_watch_pool 5/20 仅 56 条活跃数据，采集任务可能被中断需重新跑",
-    "publish_time 空字符串 SQL 修复已回退，待后续处理"
+    "SSEPushService如何接入DecisionExecutor的stream:event:feed并推送到前端？",
+    "CNINFO DeepSeek提取阶段为何extracted=0？",
+    "triage阈值是否需要调整以增加PASS事件数量？",
+    "stream_manager.redis属性是否存在（RetryEnhancedRedisStreamManager的实际redis属性名）？",
+    "start_services.py的DecisionExecutor配置是否真正生效（param_map vs param_values）？"
   ],
   "next_actions": [
-    "主题 workspace 端点已添加，前端已构建，需要重启 vite dev server 加载新 proxy 配置",
-    "确认 SPS 端 /api/v1/theme/workspace/{subject_key} 正常响应",
-    "确认点击题材链接不再报 404",
-    "考虑将 publish_time 空字符串问题用 CASE WHEN 安全处理"
+    "等待CLS+akshare CLS双源采集完成第一个周期，验证采集量",
+    "验证Qwen triage是否有PASS事件通过进入结构化管道",
+    "排查CNINFO DeepSeek提取extracted=0根因",
+    "启动SSEPushService连接stream:event:feed推送到前端",
+    "验证5/24前端是否有AkShare新闻事件展示"
   ],
   "metadata": {
-    "timestamp": "2026-05-21T06:29:33.753Z",
+    "timestamp": "2026-05-24T03:03:24.965Z",
     "model": "deepseek-v4-pro",
     "level": "emergency",
     "schema_version": "1.0"
