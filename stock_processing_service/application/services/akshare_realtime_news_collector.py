@@ -1,3 +1,16 @@
+"""
+Deprecated since Phase 4E (2026-05-24).
+
+本采集器的能力已迁移至:
+  - database_service.streams.services.news_prefilter_adapter.NewsPreFilterAdapter
+  - database_service.streams.services.semantic_event_deduper.SemanticEventDeduper
+  - database_service.streams.services.news_payload_normalizer.normalize_news_payload
+  - database_service.streams.services.real_time_news_collector.RealTimeNewsCollector
+
+本类仅保留用于回归对比（ENABLE_LEGACY_AKSHARE_COLLECTOR=true）。
+Legacy 模式强制写入 stream:news:raw:legacy，绝不写正式 raw stream。
+生产入口: RealTimeNewsCollector (database_service/streams/)
+"""
 from __future__ import annotations
 
 import asyncio

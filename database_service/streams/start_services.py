@@ -158,18 +158,25 @@ class StreamServicesManager:
             services_config = {
                 "news_collector": {
                     "class": RealTimeNewsCollector,
+                    "enabled": os.environ.get("ENABLE_DB_REALTIME_COLLECTOR", "true").lower() != "false",
                     "config": {
                         "collection_interval": 300,  # 5分钟
                         "default_mode": "auto",
                         "max_retries": 3,
-                        # 采集前预筛选：小事件直接丢弃，不进入stream:news:raw、不触发后续落库
+                        # 统一 prefilter（NewsPreFilterAdapter，替换 LocalQwenNewsTriageService）
                         "enable_collector_prefilter": True,
                         "collector_drop_on_skip": True,
-                        # 为节省资源，collector侧默认仅用规则预筛；如需可切换为True启用Qwen prompt
-                        "collector_prefilter_use_prompt": False,
-                        "local_qwen_model_path": "/Users/admin/Desktop/ai_theme_app/model_service/models/qwen2.5/qwen2.5-1.5b-instruct-q5_k_m.gguf",
-                        "triage_pass_threshold": 0.06,
-                        "triage_skip_threshold": -0.02,
+                        # Phase 4E: semantic dedup
+                        "enable_semantic_dedup": True,
+                        "semantic_dedup_mode": "rule_prompt",
+                        "semantic_dedup_model_path": "/Users/admin/Desktop/ai_theme_app/model_service/models/qwen2.5/qwen2.5-1.5b-instruct-q5_k_m.gguf",
+                        "semantic_dedup_recent_max_size": 500,
+                        "semantic_dedup_recent_max_age_hours": 6,
+                        "semantic_dedup_audit_dir": "tmp/product_runtime_phase4e_semantic_dedupe",
+                        "qwen_dedup_warmup": True,
+                        "qwen_max_per_round": 20,
+                        "qwen_max_candidates_per_news": 5,
+                        "qwen_max_recent_comparisons": 50,
                     },
                     "dependencies": ["stream_manager", "crawler_service_client"]
                 },
@@ -284,6 +291,11 @@ class StreamServicesManager:
                     if name in only_services
                 }
                 logger.info("STREAM_SERVICES_ONLY 生效，仅启动服务: %s", sorted(services_config.keys()))
+
+            # Phase 4E: ENABLE_DB_REALTIME_COLLECTOR 门控
+            if os.getenv("ENABLE_DB_REALTIME_COLLECTOR", "true").lower() == "false":
+                services_config.pop("news_collector", None)
+                logger.info("DB RealTimeNewsCollector 已通过 ENABLE_DB_REALTIME_COLLECTOR=false 禁用")
 
             # 创建服务实例
             dependencies = {
@@ -540,7 +552,13 @@ class StreamServicesManager:
         status = {
             "is_running": self.is_running,
             "services": [],
-            "timestamp": time.time()
+            "timestamp": time.time(),
+            # Phase 4E: collector identity
+            "active_collector": "RealTimeNewsCollector" if self.is_running else "none",
+            "raw_stream_writer_count": 1 if self.is_running else 0,
+            "db_realtime_collector_enabled": os.environ.get("ENABLE_DB_REALTIME_COLLECTOR", "true").lower() != "false",
+            "akshare_legacy_collector_enabled": os.environ.get("ENABLE_LEGACY_AKSHARE_COLLECTOR", "false").lower() == "true",
+            "akshare_realtime_collector_enabled": os.environ.get("ENABLE_AKSHARE_REALTIME_COLLECTOR", "false").lower() == "true",
         }
 
         for service_info in self.services:
