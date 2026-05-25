@@ -771,6 +771,11 @@ async def intel_feed(
         stock_id=stock_id,
         limit=limit,
     )
+    if isinstance(data, dict):
+        # Phase 4E: 过滤 cninfo_announcement（公告/研报走独立 intel 管线，不混入新闻事件流）
+        items = [i for i in (data.get("items") or []) if i.get("source_channel") != "cninfo_announcement"]
+        data["items"] = items
+        data["count"] = len(items)
     return data if isinstance(data, dict) else {"items": [], "count": 0, "diagnostics": {"partial": True}}
 
 

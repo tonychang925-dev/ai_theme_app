@@ -3531,6 +3531,73 @@ async def get_backtest_result(run_id: str) -> dict[str, Any]:
     }
 
 
+# ── P1-A: 久赢恒丰行情接口直采 ──────────────────────────────────────────
+
+@app.get("/api/v1/jyhf-market/status")
+async def jyhf_market_status():
+    """返回行情采集器状态。"""
+    from stock_processing_service.application.services.jyhf_market_runtime import get_jyhf_market_collector
+    c = get_jyhf_market_collector()
+    return {"ok": True, **c.status()}
+
+
+@app.post("/api/v1/jyhf-market/collector/start")
+async def jyhf_market_collector_start():
+    """启动行情采集循环。"""
+    from stock_processing_service.application.services.jyhf_market_runtime import get_jyhf_market_collector
+    c = get_jyhf_market_collector()
+    await c.start()
+    return {"ok": True, "message": "collector started", **c.status()}
+
+
+@app.post("/api/v1/jyhf-market/collector/stop")
+async def jyhf_market_collector_stop():
+    """停止行情采集循环。"""
+    from stock_processing_service.application.services.jyhf_market_runtime import get_jyhf_market_collector
+    c = get_jyhf_market_collector()
+    await c.stop()
+    return {"ok": True, "message": "collector stopped", **c.status()}
+
+
+@app.get("/api/v1/jyhf-market/quote/{stock_id}")
+async def jyhf_market_quote(stock_id: str):
+    """查询个股实时行情。"""
+    from stock_processing_service.application.services.jyhf_market_runtime import get_jyhf_market_collector
+    c = get_jyhf_market_collector()
+    try:
+        raw = await c._api.get_stock_realtime(stock_id)
+        return {"ok": True, "stock_id": stock_id, "raw": raw}
+    except Exception as exc:
+        from fastapi.responses import JSONResponse
+        return JSONResponse(status_code=502, content={"ok": False, "error": str(exc)})
+
+
+@app.get("/api/v1/jyhf-market/subject/{subject_id}/stocks")
+async def jyhf_market_subject_stocks(subject_id: str, start: int = 0, end: int = 50):
+    """查询题材下实时股票列表。"""
+    from stock_processing_service.application.services.jyhf_market_runtime import get_jyhf_market_collector
+    c = get_jyhf_market_collector()
+    try:
+        raw = await c._api.get_subject_stocks_realtime(subject_id, start=start, end=end)
+        return {"ok": True, "subject_id": subject_id, "raw": raw}
+    except Exception as exc:
+        from fastapi.responses import JSONResponse
+        return JSONResponse(status_code=502, content={"ok": False, "error": str(exc)})
+
+
+@app.get("/api/v1/jyhf-market/index")
+async def jyhf_market_index():
+    """查询指数实时行情。"""
+    from stock_processing_service.application.services.jyhf_market_runtime import get_jyhf_market_collector
+    c = get_jyhf_market_collector()
+    try:
+        raw = await c._api.get_index_realtime()
+        return {"ok": True, "raw": raw}
+    except Exception as exc:
+        from fastapi.responses import JSONResponse
+        return JSONResponse(status_code=502, content={"ok": False, "error": str(exc)})
+
+
 def _get_db_gateway():
     """Get the DatabaseGateway singleton from app state."""
     return app.state.gateway

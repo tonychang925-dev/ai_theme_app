@@ -58,7 +58,7 @@ def normalize_news_payload(
     title = _pick(row, "title", "新闻标题", "标题") or ""
     content = _pick(row, "content", "新闻内容", "内容", "摘要") or title
     source = _pick(row, "source", "新闻来源", "来源") or default_source
-    source_channel = _pick(row, "source_channel") or source
+    source_channel = _pick(row, "source_channel") or default_source
     url = _pick(row, "url", "链接", "新闻链接") or ""
     publish_date = _pick(row, "publish_date", "date", "日期")
     publish_time = _pick(row, "publish_time", "time", "发布时间", "时间")
@@ -90,7 +90,7 @@ def normalize_news_payload(
         "external_id": str(external_id),
         "title": str(title),
         "content": str(content),
-        "source": str(source),
+        "source": "akshare_realtime",       # Phase 4E: 固定标识，与旧 AkShare collector 兼容
         "source_channel": str(source_channel),
         "publish_date": str(publish_date)[:10],
         "publish_time": str(publish_time_text),

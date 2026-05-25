@@ -20,12 +20,14 @@ Phase 4E (2026-05-24):
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import json
 import logging
 import os
 import time
 from datetime import datetime, timedelta
 from enum import Enum
+from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 logger = logging.getLogger(__name__)
@@ -91,15 +93,33 @@ class RealTimeNewsCollector:
         self.dedup_window_seconds = int(self.config.get("collector_dedup_window_seconds", 1800))
         self._recent_news_ids: Dict[str, float] = {}
 
+        # 永久去重（同 _seen set）：SHA1，同进程生命周期内不重发
+        self._seen_dedupe_keys: set[str] = set()
+
+        # prefilter 被过滤的 key（定期清空，允许 prefilter 变更后重评）
+        self._filtered_keys: set[str] = set()
+        self._filtered_cycles = 0
+
+        # prefilter skip log（调试用）
+        prefilter_skip_log = self.config.get("prefilter_skip_log_path", "")
+        self._prefilter_skip_log = Path(prefilter_skip_log) if prefilter_skip_log else None
+        if self._prefilter_skip_log:
+            try:
+                self._prefilter_skip_log.parent.mkdir(parents=True, exist_ok=True)
+            except Exception:
+                pass
+
         # Phase 4E: 统一 prefilter — NewsPreFilterAdapter
         self._prefilter: Optional[NewsPreFilterAdapter] = None
         if self.enable_collector_prefilter and HAS_NEWS_PREFILTER:
+            model_path = str(self.config.get("semantic_dedup_model_path", ""))
             self._prefilter = NewsPreFilterAdapter(
                 enabled=True,
-                mode="rule",
+                mode="rule_prompt",  # Phase 4E: 灰区 Qwen 判定，减少噪音入 stream
+                model_path=model_path,
                 fail_open=True,
             )
-            logger.info("新闻采集前预筛选已启用: NewsPreFilterAdapter mode=rule")
+            logger.info("新闻采集前预筛选已启用: NewsPreFilterAdapter mode=rule_prompt")
         elif self.enable_collector_prefilter:
             logger.warning("新闻采集前预筛选启用失败: NewsPreFilterAdapter 不可用")
 
@@ -291,10 +311,24 @@ class RealTimeNewsCollector:
                 result["duration"] = time.time() - start_time
                 return result
 
-            # 4. news_id 短窗口去重（快速第一层）
+            # 4. 永久去重（SHA1 dedupe key） + news_id 短窗口去重
+            news_items, perm_dup_skipped = self._dedupe_permanent(news_items)
+            result["news_dedup_skipped_permanent"] = perm_dup_skipped
             news_items, dedup_skipped = self._dedup_news_items(news_items)
-            result["news_dedup_skipped"] = dedup_skipped
-            self.stats["news_dedup_skipped"] += dedup_skipped
+            result["news_dedup_skipped"] = dedup_skipped + perm_dup_skipped
+            self.stats["news_dedup_skipped"] += result["news_dedup_skipped"]
+
+            # 每 10 个周期清空 _filtered，允许 prefilter 重评
+            self._filtered_cycles += 1
+            if self._filtered_cycles >= 10:
+                self._filtered_keys.clear()
+                self._filtered_cycles = 0
+
+            if not news_items:
+                logger.info("去重后无可发布新闻")
+                result["success"] = True
+                result["duration"] = time.time() - start_time
+                return result
 
             # 5. batch 内语义去重 (SemanticEventDeduper)
             if self._deduper:
@@ -325,9 +359,11 @@ class RealTimeNewsCollector:
             result["news_published"] = published_count
             result["success"] = published_count > 0
 
-            # 8. 写入 recent cache（仅成功发布的）
-            if self._deduper and published_count > 0:
-                for item in news_items[:published_count]:
+            # 8. 写入永久去重集 + recent cache（仅成功发布的）
+            for item in news_items[:published_count]:
+                key = _make_dedupe_key(item)
+                self._seen_dedupe_keys.add(key)
+                if self._deduper:
                     self._deduper.add_to_recent(item)
 
             # 9. 附加 deduper stats
@@ -393,9 +429,17 @@ class RealTimeNewsCollector:
                 triage = self._prefilter.evaluate(news)
                 decision = str(triage.decision).upper()
                 news_id = str(news.get("news_id", "unknown"))
+                dedupe_key = _make_dedupe_key(news)
+
+                # 已在 _filtered_keys 中 → 跳过（除非 prefilter 变更允许重评）
+                if dedupe_key in self._filtered_keys:
+                    skipped += 1
+                    continue
 
                 if decision == "SKIP" and self.collector_drop_on_skip:
                     skipped += 1
+                    self._filtered_keys.add(dedupe_key)
+                    self._write_prefilter_skip_log(news, triage)
                     logger.debug("prefilter SKIP: %s reason=%s", news_id, triage.reason)
                     continue
 
@@ -407,6 +451,21 @@ class RealTimeNewsCollector:
             kept.append(news)
 
         return kept, skipped
+
+    def _dedupe_permanent(self, news_items: List[Dict[str, Any]]) -> tuple[List[Dict[str, Any]], int]:
+        """SHA1 永久去重：同进程生命周期内不重发同一 dedupe_key。"""
+        if not news_items:
+            return news_items, 0
+
+        filtered: List[Dict[str, Any]] = []
+        skipped = 0
+        for item in news_items:
+            key = _make_dedupe_key(item)
+            if key in self._seen_dedupe_keys:
+                skipped += 1
+                continue
+            filtered.append(item)
+        return filtered, skipped
 
     def _dedup_news_items(self, news_items: List[Dict[str, Any]]) -> tuple[List[Dict[str, Any]], int]:
         """基于 news_id 短窗口去重（快速第一层）。"""
@@ -439,6 +498,25 @@ class RealTimeNewsCollector:
 
         return filtered, skipped
 
+    def _write_prefilter_skip_log(self, payload: Dict, triage_result) -> None:
+        """记录 prefilter skip 事件到 JSONL（调试用）。"""
+        if not self._prefilter_skip_log:
+            return
+        try:
+            import json as _json
+            from datetime import datetime as _dt
+            entry = {
+                "time": _dt.now().isoformat(),
+                "title": str(payload.get("title", ""))[:200],
+                "reason": str(triage_result.reason)[:200],
+                "mode": str(triage_result.mode),
+                "source": str(payload.get("source", "")),
+            }
+            with open(self._prefilter_skip_log, "a", encoding="utf-8") as f:
+                f.write(_json.dumps(entry, ensure_ascii=False) + "\n")
+        except Exception:
+            pass
+
     def _determine_collection_mode(self, requested_mode: str) -> CollectionMode:
         if requested_mode == "auto":
             if self._is_real_mode_available():
@@ -465,65 +543,121 @@ class RealTimeNewsCollector:
             raise ValueError(f"不支持的采集模式: {mode}")
 
     async def _collect_real_news(self) -> List[Dict]:
+        """多源并行采集：CLS + 东方财富/新浪/同花顺/富途/CCTV。"""
+        results: List[Dict] = []
+
+        # Source 1: CLS 财联社 (primary, via news_crawler_service)
         try:
+            from news_crawler_service.services.news_crawler_service import get_news_crawler_service
+            crawler_service = get_news_crawler_service()
+            raw = await crawler_service.crawl_news_auto(count=10, prefer_real=True)
+            if raw.get("status") == "success":
+                cls_items = raw.get("response", {}).get("news_list", [])
+                for item in cls_items:
+                    item["source_channel"] = "cls"
+                results.extend(cls_items)
+                logger.debug("CLS fetch: %d items", len(cls_items))
+            else:
+                logger.warning("CLS fetch failed: %s", raw.get("error", "unknown"))
+        except ImportError:
+            logger.debug("news_crawler_service not available, skipping CLS")
+        except Exception as exc:
+            logger.warning("CLS fetch exception: %s", exc)
+
+        # Sources 2-5: akshare native sources in parallel
+        try:
+            akshare_rows = await self._fetch_akshare_multi_source()
+            results.extend(akshare_rows)
+        except Exception as exc:
+            logger.warning("akshare multi-source fetch failed: %s", exc)
+
+        # Fallback: direct akshare if all sources failed
+        if not results:
+            logger.warning("All sources empty, trying fallback akshare direct")
             try:
-                from news_crawler_service.services.news_crawler_service import get_news_crawler_service
-                crawler_service = get_news_crawler_service()
-                result = await crawler_service.crawl_news_auto(count=10, prefer_real=True)
+                import akshare as ak
+                df = await asyncio.to_thread(ak.stock_news_em)
+                if df is not None and not df.empty:
+                    for _, row in df.head(20).iterrows():
+                        r = row.to_dict()
+                        r["source_channel"] = "akshare_em"
+                        results.append(r)
+                    logger.info("Fallback akshare_em: %d items", len(results))
+            except Exception as exc:
+                logger.warning("Fallback akshare also failed: %s", exc)
 
-                if result.get("status") == "success":
-                    news_items = result.get("response", {}).get("news_list", [])
-                    standardized_news = []
-                    for news in news_items:
-                        standardized_news.append({
-                            "news_id": news.get("news_id", f"news_{datetime.now().timestamp()}"),
-                            "title": news.get("title", ""),
-                            "content": news.get("content", news.get("title", "")),
-                            "source": news.get("source", "unknown"),
-                            "source_channel": news.get("source_channel", news.get("source", "unknown")),
-                            "publish_date": news.get("publish_date", datetime.now().strftime("%Y-%m-%d")),
-                            "publish_time": news.get("publish_time", datetime.now().strftime("%H:%M:%S")),
-                            "url": news.get("url", ""),
-                            "keywords": news.get("keywords", []),
-                            "collected_at": datetime.now().isoformat()
-                        })
-
-                    logger.info("通过news_crawler_service采集到 %d 条真实新闻", len(standardized_news))
-                    return standardized_news
-                else:
-                    logger.warning("news_crawler_service采集失败: %s", result.get("error", "unknown error"))
-                    return []
-
-            except ImportError as e:
-                logger.warning("无法导入news_crawler_service: %s", e)
-                if self.crawler_client:
-                    news_items = await self.crawler_client.fetch_news(
-                        sources=["stock_news_em"],
-                        limit=50,
-                        hours=1
-                    )
-                    standardized_news = []
-                    for news in news_items:
-                        standardized_news.append({
-                            "news_id": news.get("id", f"news_{datetime.now().timestamp()}"),
-                            "title": news.get("title", ""),
-                            "content": news.get("content", ""),
-                            "source": news.get("source", "unknown"),
-                            "source_channel": news.get("source_channel", news.get("source", "unknown")),
-                            "publish_date": news.get("publish_date", datetime.now().strftime("%Y-%m-%d")),
-                            "publish_time": news.get("publish_time", datetime.now().strftime("%H:%M:%S")),
-                            "url": news.get("url", ""),
-                            "keywords": news.get("keywords", []),
-                            "collected_at": datetime.now().isoformat()
-                        })
-                    return standardized_news
-                else:
-                    logger.warning("无法采集真实新闻: 缺少爬虫服务客户端")
-                    return []
-
-        except Exception as e:
-            logger.error("真实新闻采集失败: %s", e)
+        if not results:
+            logger.warning("All collection sources returned empty")
             return []
+
+        # Standardize
+        standardized = []
+        now = datetime.now()
+        for n in results:
+            standardized.append({
+                "news_id": str(n.get("news_id", "")),
+                "title": str(n.get("title", "")),
+                "content": str(n.get("content") or n.get("内容") or n.get("title", "")),
+                "source": str(n.get("source", "unknown")),
+                "source_channel": str(n.get("source_channel") or "unknown"),
+                "publish_date": str(n.get("publish_date", now.strftime("%Y-%m-%d"))),
+                "publish_time": str(n.get("publish_time", now.strftime("%H:%M:%S"))),
+                "url": str(n.get("url", "")),
+                "keywords": n.get("keywords", []),
+                "collected_at": now.isoformat(),
+            })
+
+        logger.info("多源采集完成: %d 条 (CLS+akshare)", len(standardized))
+        return standardized
+
+    async def _fetch_akshare_multi_source(self) -> List[Dict]:
+        """Parallel fetch from 东方财富/新浪/同花顺/富途/CCTV via akshare。"""
+        import akshare as ak
+
+        sources: list[tuple[str, Any, str]] = [
+            ("sina",  ak.stock_info_global_sina, "sina"),
+            ("ths",   ak.stock_info_global_ths,  "ths"),
+            ("futu",  ak.stock_info_global_futu, "futu"),
+            ("cctv",  ak.news_cctv,              "cctv"),
+        ]
+        _LIMITS = {"sina": 20, "ths": 20, "futu": 50, "cctv": 12}
+
+        async def _fetch_one(label: str, func, channel: str) -> List[Dict]:
+            try:
+                df = await asyncio.wait_for(asyncio.to_thread(func), timeout=45)
+                if df is None or getattr(df, "empty", True):
+                    return []
+                limit = _LIMITS.get(channel, 50)
+                records = df.head(limit).to_dict("records")
+                for r in records:
+                    r["source_channel"] = f"akshare_{channel}"
+                    if channel == "sina":
+                        content_text = str(r.get("内容", ""))
+                        r["title"] = content_text[:40]
+                        r["content"] = content_text
+                        r["publish_time"] = str(r.get("时间", ""))
+                        r["publish_date"] = datetime.now().strftime("%Y-%m-%d")
+                return [dict(row) for row in records]
+            except asyncio.TimeoutError:
+                logger.warning("akshare %s fetch timeout", label)
+                return []
+            except Exception as exc:
+                logger.warning("akshare %s fetch failed: %s", label, exc)
+                return []
+
+        tasks = [asyncio.create_task(_fetch_one(label, func, ch)) for label, func, ch in sources]
+        gathered = await asyncio.gather(*tasks, return_exceptions=True)
+
+        all_rows: List[Dict] = []
+        for i, rows in enumerate(gathered):
+            if isinstance(rows, Exception):
+                logger.warning("akshare source %s crashed: %s", sources[i][0], rows)
+            else:
+                if rows:
+                    logger.info("akshare %s: %d items", sources[i][0], len(rows))
+                all_rows.extend(rows)
+
+        return all_rows
 
     async def _publish_news_to_stream(self, news_items: List[Dict]) -> int:
         if not news_items:
@@ -605,3 +739,11 @@ class RealTimeNewsCollector:
             "active_collector": "RealTimeNewsCollector",
             "collector_version": "phase4e",
         }
+
+
+def _make_dedupe_key(payload: Dict[str, Any]) -> str:
+    """SHA1 dedupe key，与旧 AkShare collector 兼容。"""
+    value = str(payload.get("external_id") or payload.get("news_id") or "")
+    if not value:
+        value = f"{payload.get('title', '')}|{payload.get('content', '')}"
+    return hashlib.sha1(str(value).encode()).hexdigest()
