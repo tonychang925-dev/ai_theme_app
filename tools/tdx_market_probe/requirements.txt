@@ -1,1 +1,1 @@
-mootdx[all]>=0.12.0
+mootdx[all]>=0.11.0

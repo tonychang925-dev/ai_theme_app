@@ -51,12 +51,17 @@ class JyhfMarketRedisPusher:
             "current": str(quote.current) if quote.current is not None else "",
             "pct_chg": str(quote.pct_chg) if quote.pct_chg is not None else "",
             "rank_no": str(quote.rank_no) if quote.rank_no else "",
-        })
+        }, extra_key=quote.subject_id)
 
-    async def _push(self, data: dict) -> str | None:
+    async def _push(self, data: dict, extra_key: str = "") -> str | None:
         try:
             r = await self._get_redis()
-            data["item_id"] = f"jyhf_{data['item_type']}:{data['trade_date']}:{data.get('stock_id', data.get('index_code',''))}:{datetime.now(TZ_CN).strftime('%H%M%S')}"
+            # item_type 为 subject_stock_quote 时，用 subject_id:stock_id 防重复
+            if data["item_type"] == "subject_stock_quote" and extra_key:
+                key = f"{extra_key}:{data.get('stock_id','')}"
+            else:
+                key = data.get('stock_id', data.get('index_code', ''))
+            data["item_id"] = f"jyhf_{data['item_type']}:{data['trade_date']}:{key}:{datetime.now(TZ_CN).strftime('%H%M%S')}"
             mid = await r.xadd(self._stream, data, maxlen=self._maxlen)
             self._pushed += 1
             return mid

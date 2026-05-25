@@ -22,6 +22,7 @@ import time
 from collections import defaultdict
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+import pandas as pd
 
 # ── paths ──
 PROBE_DIR = Path(__file__).resolve().parent
@@ -104,17 +105,17 @@ class TdxP0Probe:
 
     def _init_client(self):
         from mootdx.quotes import Quotes
-        import json as _json
+        import json as _json, socket
 
-        # 尝试 1：默认自动选服
+        # 尝试 1：默认自动选服（依赖 BESTIP 或 bestip 自动探测）
         try:
-            self.client = Quotes.factory(market="std", multithread=True, heartbeat=True)
-            logger.info("mootdx Quotes client initialized (auto server)")
+            self.client = Quotes.factory(market="std", bestip=True, timeout=10)
+            logger.info("mootdx Quotes client initialized (auto/bestip)")
             return
         except Exception as exc:
-            logger.warning("auto server selection failed: %s, trying manual servers...", exc)
+            logger.warning("auto/bestip failed: %s", exc)
 
-        # 尝试 2：从 mootdx 配置文件中读取服务器列表逐个尝试
+        # 尝试 2：从 mootdx 配置读取服务器列表，socket 预检后逐个尝试
         config_path = Path.home() / ".mootdx" / "config.json"
         servers = []
         if config_path.exists():
@@ -123,34 +124,42 @@ class TdxP0Probe:
                 servers = cfg.get("SERVER", {}).get("HQ", [])
             except Exception:
                 pass
-
         if not servers:
-            # 硬编码几个常用服务器兜底
             servers = [
                 ["深圳双线主站1", "110.41.147.114", 7709],
                 ["深圳双线主站2", "8.129.13.54", 7709],
-                ["深圳双线主站4", "47.113.94.204", 7709],
                 ["上海双线主站1", "124.70.176.52", 7709],
-                ["广州双线主站1", "124.71.85.110", 7709],
             ]
 
-        last_err = None
+        # socket 预检
+        reachable = []
         for name, ip, port in servers:
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            s.settimeout(1.5)
+            try:
+                s.connect((ip, int(port)))
+                s.close()
+                reachable.append((name, ip, int(port)))
+            except Exception:
+                pass
+
+        logger.info("reachable servers: %d/%d", len(reachable), len(servers))
+        if not reachable:
+            raise RuntimeError("No reachable TDX servers")
+
+        last_err = None
+        for name, ip, port in reachable:
             try:
                 self.client = Quotes.factory(
-                    market="std", server=(ip, int(port)),
-                    multithread=True, heartbeat=True,
+                    market="std", bestip=True, server=(ip, port), timeout=10,
                 )
-                # 立即测试一次调用验证
-                self.client.quotes(symbol=["000001"])
                 logger.info("mootdx connected via %s (%s:%s)", name, ip, port)
                 return
             except Exception as exc:
                 last_err = exc
-                logger.debug("server %s (%s:%s) failed: %s", name, ip, port, exc)
                 continue
 
-        raise RuntimeError(f"All TDX servers failed, last error: {last_err}")
+        raise RuntimeError(f"All reachable servers failed, last: {last_err}")
 
     def _probe_quote(self, symbol: str) -> dict | None:
         """返回单只股票的 quote 原始 dict。"""
@@ -180,9 +189,14 @@ class TdxP0Probe:
             df = self.client.bars(symbol=symbol, frequency=frequency, offset=offset)
             if df is None:
                 return []
-            return df.reset_index().to_dict(orient="records")
+            # mootdx bars 返回的 DF 以 datetime 为 index
+            # reset_index 在 index 列名冲突时会抛 ValueError，改用 assign + to_dict
+            if isinstance(df.index, pd.DatetimeIndex):
+                df = df.copy()
+                df.insert(0, "dt", df.index.astype(str))
+            return df.to_dict(orient="records")
         except Exception as exc:
-            logger.warning("bars(%s, freq=%s, offset=%s) failed: %s", symbol, frequency, exc)
+            logger.warning("bars(%s, freq=%s, offset=%s) failed: %s", symbol, frequency, offset, str(exc))
             return None
 
     def run_once(self, collect_samples: bool = True) -> dict:
@@ -318,9 +332,11 @@ class TdxP0Probe:
         # ── L2 字段检测 ──
         lines.append("## 3. L2 字段检测")
         l2_keywords = [
-            "bid2", "bid3", "bid4", "bid5", "bid6", "bid7", "bid8", "bid9", "bid10",
-            "ask2", "ask3", "ask4", "ask5", "ask6", "ask7", "ask8", "ask9", "ask10",
-            "bid2_vol", "ask2_vol", "buy_order", "sell_order", "entrust",
+            "bid6", "bid7", "bid8", "bid9", "bid10",
+            "ask6", "ask7", "ask8", "ask9", "ask10",
+            "bid6_vol", "bid7_vol", "bid8_vol", "bid9_vol", "bid10_vol",
+            "ask6_vol", "ask7_vol", "ask8_vol", "ask9_vol", "ask10_vol",
+            "buy_order", "sell_order", "entrust",
             "transaction", "tick", "detail", "queue",
         ]
         l2_found: dict[str, list[str]] = {}
